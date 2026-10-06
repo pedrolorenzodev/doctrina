@@ -1,0 +1,900 @@
+{
+ "book": "John",
+ "chapter": 6,
+ "versification": "English (KJV/NRSV); 71 verses",
+ "editions": [
+  {
+   "id": "bsb",
+   "name": "Berean Standard Bible",
+   "language": "en",
+   "year": 2023,
+   "tradition": "Evangelical (interdenominational)",
+   "basis": "Greek (critical text, NA/UBS-type)",
+   "license": "Public domain (dedicated to the public domain by BSB Publishing on 30 April 2023)",
+   "url": "https://ebible.org/engbsb/",
+   "sourceFile": "https://ebible.org/Scriptures/engbsb_vpl.zip",
+   "versesPresent": 71
+  },
+  {
+   "id": "kjv",
+   "name": "King James Version (1769 standard text)",
+   "language": "en",
+   "year": 1611,
+   "tradition": "Anglican / Protestant",
+   "basis": "Greek Textus Receptus",
+   "license": "Public domain (outside the UK; in the UK the KJV is under perpetual Crown patent, administered by Cambridge University Press)",
+   "url": "https://ebible.org/eng-kjv2006/",
+   "sourceFile": "https://ebible.org/Scriptures/eng-kjv2006_vpl.zip",
+   "versesPresent": 71
+  },
+  {
+   "id": "web",
+   "name": "World English Bible",
+   "language": "en",
+   "year": 2020,
+   "tradition": "Ecumenical (Protestant canon edition)",
+   "basis": "Greek Majority Text",
+   "license": "Public domain. \"World English Bible\" is a trademark of eBible.org: if the text is changed, it must not be called WEB.",
+   "url": "https://ebible.org/engwebp/",
+   "sourceFile": "https://ebible.org/Scriptures/engwebp_vpl.zip",
+   "versesPresent": 71
+  },
+  {
+   "id": "dra",
+   "name": "Douay-Rheims (Challoner revision, American edition 1899)",
+   "language": "en",
+   "year": 1899,
+   "tradition": "Catholic",
+   "basis": "Latin Vulgate",
+   "license": "Public domain",
+   "url": "https://ebible.org/engDRA/",
+   "sourceFile": "https://ebible.org/Scriptures/engDRA_vpl.zip",
+   "versification": "Vulgate",
+   "versesPresent": 71
+  },
+  {
+   "id": "ylt",
+   "name": "Young's Literal Translation",
+   "language": "en",
+   "year": 1898,
+   "tradition": "Protestant (literal)",
+   "basis": "Greek Textus Receptus",
+   "license": "Public domain",
+   "url": "https://ebible.org/engylt/",
+   "sourceFile": "https://ebible.org/Scriptures/engylt_vpl.zip",
+   "versesPresent": 71
+  },
+  {
+   "id": "rv1909",
+   "name": "Reina-Valera 1909",
+   "language": "es",
+   "year": 1909,
+   "tradition": "Protestant",
+   "basis": "Greek Textus Receptus",
+   "license": "Public domain",
+   "url": "https://ebible.org/spaRV1909/",
+   "sourceFile": "https://ebible.org/Scriptures/spaRV1909_vpl.zip",
+   "versesPresent": 71
+  },
+  {
+   "id": "scio",
+   "name": "Felipe Scío de San Miguel, Nuevo Testamento (2nd ed. 1797)",
+   "language": "es",
+   "year": 1797,
+   "tradition": "Catholic",
+   "basis": "Latin Vulgate",
+   "license": "Public domain (CrossWire SWORD module SpaScioNT, DistributionLicense=Public Domain)",
+   "url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=SpaScioNT",
+   "sourceFile": "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/SpaScioNT.zip",
+   "note": "Historical 18th-century spelling (dixo, quanto, Jesu-Christo) kept as in source. Module already uses KJV versification.",
+   "versesPresent": 71
+  },
+  {
+   "id": "blm",
+   "name": "Santa Biblia libre para el mundo",
+   "language": "es",
+   "year": 2024,
+   "tradition": "Ecumenical (modern, open)",
+   "basis": "Greek (translated by D. Williams & M. P. Johnson)",
+   "license": "Public domain",
+   "url": "https://ebible.org/spablm/",
+   "sourceFile": "https://ebible.org/Scriptures/spablm_vpl.zip",
+   "note": "Publisher describes it as a draft under revision (\"borrador de traducción\").",
+   "versesPresent": 71
+  }
+ ],
+ "nativeRefs": {
+  "dra": {
+   "51": [
+    "John.6.51",
+    "John.6.52"
+   ],
+   "52": [
+    "John.6.53"
+   ],
+   "53": [
+    "John.6.54"
+   ],
+   "54": [
+    "John.6.55"
+   ],
+   "55": [
+    "John.6.56"
+   ],
+   "56": [
+    "John.6.57"
+   ],
+   "57": [
+    "John.6.58"
+   ],
+   "58": [
+    "John.6.59"
+   ],
+   "59": [
+    "John.6.60"
+   ],
+   "60": [
+    "John.6.61"
+   ],
+   "61": [
+    "John.6.62"
+   ],
+   "62": [
+    "John.6.63"
+   ],
+   "63": [
+    "John.6.64"
+   ],
+   "64": [
+    "John.6.65"
+   ],
+   "65": [
+    "John.6.66"
+   ],
+   "66": [
+    "John.6.67"
+   ],
+   "67": [
+    "John.6.68"
+   ],
+   "68": [
+    "John.6.69"
+   ],
+   "69": [
+    "John.6.70"
+   ],
+   "70": [
+    "John.6.71"
+   ],
+   "71": [
+    "John.6.72"
+   ]
+  }
+ },
+ "excludedForLicense": [
+  {
+   "name": "Biblia Platense (Juan Straubinger, 1948-51)",
+   "reason": "CrossWire lists it as public domain, but Straubinger died in 1956: protected in Argentina until 1 Jan 2027 (life + 70) and in Spain until 2037; not used until cleared."
+  },
+  {
+   "name": "Torres Amat (1825)",
+   "reason": "Public domain, but no verse-structured digital text found (only Internet Archive scans/OCR). Could be built from OCR later."
+  },
+  {
+   "name": "NVI, RVR1960, Biblia de Jerusalén, Nácar-Colunga, Biblia de América, LBLA, NBLA, ESV, NIV, NABRE, RSV-CE",
+   "reason": "Copyrighted; require a licence from the publisher."
+  }
+ ],
+ "verses": {
+  "1": {
+   "bsb": "After this, Jesus crossed to the other side of the Sea of Galilee (that is, the Sea of Tiberias).",
+   "kjv": "After these things Jesus went over the sea of Galilee, which is [the sea] of Tiberias.",
+   "web": "After these things, Jesus went away to the other side of the sea of Galilee, which is also called the Sea of Tiberias.",
+   "dra": "After these things Jesus went over the sea of Galilee, which is that of Tiberias.",
+   "ylt": "After these things Jesus went away beyond the sea of Galilee (of Tiberias),",
+   "rv1909": "PASADAS estas cosas, fuése Jesús de la otra parte de la mar de Galilea, [que es] de Tiberias.",
+   "scio": "Despues de esto pasó Jesús á la otra parte de la mar de Galiléa, que es de Tiberíades:",
+   "blm": "Después de estas cosas, Jesús se fue al otro lado del mar de Galilea, que también se llama mar de Tiberíades."
+  },
+  "2": {
+   "bsb": "A large crowd followed Him because they saw the signs He was performing on the sick.",
+   "kjv": "And a great multitude followed him, because they saw his miracles which he did on them that were diseased.",
+   "web": "A great multitude followed him, because they saw his signs which he did on those who were sick.",
+   "dra": "And a great multitude followed him, because they saw the miracles which he did on them that were diseased.",
+   "ylt": "and there was following him a great multitude, because they were seeing his signs that he was doing on the ailing;",
+   "rv1909": "Y seguíale grande multitud, porque veían sus señales que hacía en los enfermos.",
+   "scio": "Y le seguía una grande multitud de gente, porque veían los milagros que hacía sobre los enfermos.",
+   "blm": "Le seguía una gran multitud, porque veían las señales que hacía con los enfermos."
+  },
+  "3": {
+   "bsb": "Then Jesus went up on the mountain and sat down with His disciples.",
+   "kjv": "And Jesus went up into a mountain, and there he sat with his disciples.",
+   "web": "Jesus went up into the mountain, and he sat there with his disciples.",
+   "dra": "Jesus therefore went up into a mountain, and there he sat with his disciples.",
+   "ylt": "and Jesus went up to the mount, and he was there sitting with his disciples,",
+   "rv1909": "Y subió Jesús á un monte, y se sentó allí con sus discípulos.",
+   "scio": "Subió pues Jesús á un monte: y se sentó allí con sus discípulos.",
+   "blm": "Jesús subió al monte y se sentó allí con sus discípulos."
+  },
+  "4": {
+   "bsb": "Now the Jewish Feast of the Passover was near.",
+   "kjv": "And the passover, a feast of the Jews, was nigh.",
+   "web": "Now the Passover, the feast of the Jews, was at hand.",
+   "dra": "Now the pasch, the festival day of the Jews, was near at hand.",
+   "ylt": "and the passover was nigh, the feast of the Jews.",
+   "rv1909": "Y estaba cerca la Pascua, la fiesta de los Judíos.",
+   "scio": "Y estaba cerca la Pascua, día de la fiesta de los Judíos.",
+   "blm": "Se acercaba la Pascua, la fiesta de los judíos."
+  },
+  "5": {
+   "bsb": "When Jesus looked up and saw a large crowd coming toward Him, He said to Philip, “Where can we buy bread for these people to eat?”",
+   "kjv": "¶ When Jesus then lifted up [his] eyes, and saw a great company come unto him, he saith unto Philip, Whence shall we buy bread, that these may eat?",
+   "web": "Jesus therefore, lifting up his eyes and seeing that a great multitude was coming to him, said to Philip, “Where are we to buy bread, that these may eat?”",
+   "dra": "When Jesus therefore had lifted up his eyes, and seen that a very great multitude cometh to him, he said to Philip: Whence shall we buy bread, that these may eat?",
+   "ylt": "Jesus then having lifted up [his] eyes and having seen that a great multitude doth come to him, saith unto Philip, 'Whence shall we buy loaves, that these may eat?' —",
+   "rv1909": "Y como alzó Jesús los ojos, y vió que había venido á él grande multitud, dice á Felipe: ¿De dónde compraremos pan para que coman éstos?",
+   "scio": "Y habiendo alzado Jesús los ojos, y viendo que venía á él una tan gran multitud, dixo á Phelipe: ¿De dónde comprarémos pan, para que coman estos?",
+   "blm": "Entonces Jesús, alzando los ojos y viendo que se acercaba a él una gran multitud, dijo a Felipe: «¿Dónde vamos a comprar pan para que coman estos?»"
+  },
+  "6": {
+   "bsb": "But He was asking this to test him, for He knew what He was about to do.",
+   "kjv": "And this he said to prove him: for he himself knew what he would do.",
+   "web": "He said this to test him, for he himself knew what he would do.",
+   "dra": "And this he said to try him; for he himself knew what he would do.",
+   "ylt": "and this he said, trying him, for he himself had known what he was about to do.",
+   "rv1909": "Mas esto decía para probarle; porque él sabía lo que había de hacer.",
+   "scio": "Esto decía por probarle: porque él sabia lo que había de hacer.",
+   "blm": "Decía esto para ponerle a prueba, pues él mismo sabía lo que iba a hacer."
+  },
+  "7": {
+   "bsb": "Philip answered, “Two hundred denarii would not buy enough bread for each of them to have a small piece.”",
+   "kjv": "Philip answered him, Two hundred pennyworth of bread is not sufficient for them, that every one of them may take a little.",
+   "web": "Philip answered him, “Two hundred denarii worth of bread is not sufficient for them, that every one of them may receive a little.”",
+   "dra": "Philip answered him: Two hundred pennyworth of bread is not sufficient for them, that every one may take a little.",
+   "ylt": "Philip answered him, 'Two hundred denaries' worth of loaves are not sufficient to them, that each of them may receive some little;'",
+   "rv1909": "Respondióle Felipe: Doscientos denarios de pan no les bastarán, para que cada uno de ellos tome un poco.",
+   "scio": "Phelipe le respondió: doscientos denarios de pan no les bastan, para que cada uno tome un poco.",
+   "blm": "Felipe le respondió: «No les bastaría con doscientos denarios de pan, para que cada uno reciba un poco»."
+  },
+  "8": {
+   "bsb": "One of His disciples, Andrew, Simon Peter’s brother, said to Him,",
+   "kjv": "One of his disciples, Andrew, Simon Peter’s brother, saith unto him,",
+   "web": "One of his disciples, Andrew, Simon Peter’s brother, said to him,",
+   "dra": "One of his disciples, Andrew, the brother of Simon Peter, saith to him:",
+   "ylt": "one of his disciples — Andrew, the brother of Simon Peter — saith to him,",
+   "rv1909": "Dícele uno de sus discípulos, Andrés, hermano de Simón Pedro:",
+   "scio": "Uno de sus discípulos, Andrés hermano de Simón Pedro le dixo:",
+   "blm": "Uno de sus discípulos, Andrés, hermano de Simón Pedro, le dijo:"
+  },
+  "9": {
+   "bsb": "“Here is a boy with five barley loaves and two small fish. But what difference will these make among so many?”",
+   "kjv": "There is a lad here, which hath five barley loaves, and two small fishes: but what are they among so many?",
+   "web": "“There is a boy here who has five barley loaves and two fish, but what are these among so many?”",
+   "dra": "There is a boy here that hath five barley loaves, and two fishes; but what are these among so many?",
+   "ylt": "'There is one little lad here who hath five barley loaves, and two fishes, but these — what are they to so many?'",
+   "rv1909": "Un muchacho está aquí que tiene cinco panes de cebada y dos pececillos; ¿mas qué es esto entre tantos?",
+   "scio": "Aquí hay un muchacho, que tiene cinco panes de cebada, y dos peces, mas qué es esto para tanta gente?",
+   "blm": "«Hay aquí un muchacho que tiene cinco panes de cebada y dos peces, pero ¿qué son éstos entre tantos?»"
+  },
+  "10": {
+   "bsb": "“Have the people sit down,” Jesus said. Now there was plenty of grass in that place, so the men sat down, about five thousand of them.",
+   "kjv": "And Jesus said, Make the men sit down. Now there was much grass in the place. So the men sat down, in number about five thousand.",
+   "web": "Jesus said, “Have the people sit down.” Now there was much grass in that place. So the men sat down, in number about five thousand.",
+   "dra": "Then Jesus said: Make the men sit down. Now there was much grass in the place. The men therefore sat down, in number about five thousand.",
+   "ylt": "And Jesus said, 'Make the men to sit down;' and there was much grass in the place, the men then sat down, in number, as it were, five thousand,",
+   "rv1909": "Entonces Jesús dijo: Haced recostar la gente. Y había mucha hierba en aquel lugar: y recostáronse como número de cinco mil varones.",
+   "scio": "Y dixo Jesús: Haced sentar la gente. En aquel lugar había mucho heno. Y se sentáron á comer, como en número de cinco mil hombres.",
+   "blm": "Jesús dijo: «Haced que la gente se siente». Había mucha hierba en aquel lugar. Así que los hombres se sentaron, en número de unos cinco mil."
+  },
+  "11": {
+   "bsb": "Then Jesus took the loaves and the fish, gave thanks, and distributed to those who were seated as much as they wanted.",
+   "kjv": "And Jesus took the loaves; and when he had given thanks, he distributed to the disciples, and the disciples to them that were set down; and likewise of the fishes as much as they would.",
+   "web": "Jesus took the loaves, and having given thanks, he distributed to the disciples, and the disciples to those who were sitting down, likewise also of the fish as much as they desired.",
+   "dra": "And Jesus took the loaves: and when he had given thanks, he distributed to them that were set down. In like manner also of the fishes, as much as they would.",
+   "ylt": "and Jesus took the loaves, and having given thanks he distributed to the disciples, and the disciples to those reclining, in like manner, also of the little fishes as much as they wished.",
+   "rv1909": "Y tomó Jesús aquellos panes, y habiendo dado gracias, repartió á los discípulos, y los discípulos á los que estaban recostados: asimismo de los peces, cuanto querían.",
+   "scio": "Tomó pues Jesús los panes y habiendo dado gracias, los repartió entre los que estaban sentados: y asimismo de los peces, quanto querian.",
+   "blm": "Jesús tomó los panes, y habiendo dado gracias, los repartió a los discípulos, y los discípulos a los que estaban sentados, asimismo de los peces cuanto quisieron."
+  },
+  "12": {
+   "bsb": "And when everyone was full, He said to His disciples, “Gather the pieces that are left over, so that nothing will be wasted.”",
+   "kjv": "When they were filled, he said unto his disciples, Gather up the fragments that remain, that nothing be lost.",
+   "web": "When they were filled, he said to his disciples, “Gather up the broken pieces which are left over, that nothing be lost.”",
+   "dra": "And when they were filled, he said to his disciples: Gather up the fragments that remain, lest they be lost.",
+   "ylt": "And when they were filled, he saith to his disciples, 'Gather together the broken pieces that are over, that nothing may be lost;'",
+   "rv1909": "Y como fueron saciados, dijo á sus discípulos: Recoged los pedazos que han quedado, porque no se pierda nada.",
+   "scio": "Y quando se hubiéron saciado, dixo á sus discípulos: Recoged los pedazos, que han sobrado, que no se pierdan.",
+   "blm": "Cuando se saciaron, dijo a sus discípulos: «Recoged los trozos que han sobrado, para que no se pierda nada»."
+  },
+  "13": {
+   "bsb": "So they collected them and filled twelve baskets with the pieces of the five barley loaves left over by those who had eaten.",
+   "kjv": "Therefore they gathered [them] together, and filled twelve baskets with the fragments of the five barley loaves, which remained over and above unto them that had eaten.",
+   "web": "So they gathered them up, and filled twelve baskets with broken pieces from the five barley loaves, which were left over by those who had eaten.",
+   "dra": "They gathered up therefore, and filled twelve baskets with the fragments of the five barley loaves, which remained over and above to them that had eaten.",
+   "ylt": "they gathered together, therefore, and filled twelve hand-baskets with broken pieces, from the five barley loaves that were over to those having eaten.",
+   "rv1909": "Cogieron pues, é hinchieron doce cestas de pedazos de los cinco panes de cebada, que sobraron á los que habían comido.",
+   "scio": "Y así recogiéron, y llenáron doce canastos de pedazos de los cinco panes de cebada, que sobráron á los que habían comido.",
+   "blm": "Así que los recogieron y llenaron doce cestas con los trozos de los cinco panes de cebada que habían sobrado a los que habían comido."
+  },
+  "14": {
+   "bsb": "When the people saw the sign that Jesus had performed, they began to say, “Truly this is the Prophet who is to come into the world.”",
+   "kjv": "Then those men, when they had seen the miracle that Jesus did, said, This is of a truth that prophet that should come into the world.",
+   "web": "When therefore the people saw the sign which Jesus did, they said, “This is truly the prophet who comes into the world.”",
+   "dra": "Now those men, when they had seen what a miracle Jesus had done, said: This is of a truth the prophet, that is to come into the world.",
+   "ylt": "The men, then, having seen the sign that Jesus did, said — 'This is truly the Prophet, who is coming to the world;'",
+   "rv1909": "Aquellos hombres entonces, como vieron la señal que Jesús había hecho, decían: Este verdaderamente es el profeta que había de venir al mundo.",
+   "scio": "Aquellos hombres, quando viéron el milagro que había hecho Jesús, decían: Este es verdaderamente el Propheta, que ha de venir al mundo.",
+   "blm": "Al ver la gente la señal que Jesús había hecho, dijeron: «Este es verdaderamente el profeta que viene al mundo»."
+  },
+  "15": {
+   "bsb": "Then Jesus, realizing that they were about to come and make Him king by force, withdrew again to a mountain by Himself.",
+   "kjv": "¶ When Jesus therefore perceived that they would come and take him by force, to make him a king, he departed again into a mountain himself alone.",
+   "web": "Jesus therefore, perceiving that they were about to come and take him by force to make him king, withdrew again to the mountain by himself.",
+   "dra": "Jesus therefore, when he knew that they would come to take him by force, and make him king, fled again into the mountain himself alone.",
+   "ylt": "Jesus, therefore, having known that they are about to come, and to take him by force that they may make him king, retired again to the mountain himself alone.",
+   "rv1909": "Y entendiendo Jesús que habían de venir para arrebatarle, y hacerle rey, volvió á retirarse al monte, él solo.",
+   "scio": "Y Jesús quando entendió, que habían de venir para arrebatarle, y hacerle Rey, huyó otra vez al monte él solo.",
+   "blm": "Jesús, pues, percibiendo que iban a venir a prenderle por la fuerza para hacerle rey, se retiró de nuevo al monte, a solas."
+  },
+  "16": {
+   "bsb": "When evening came, His disciples went down to the sea,",
+   "kjv": "And when even was [now] come, his disciples went down unto the sea,",
+   "web": "When evening came, his disciples went down to the sea.",
+   "dra": "And when evening was come, his disciples went down to the sea.",
+   "ylt": "And when evening came, his disciples went down to the sea,",
+   "rv1909": "Y como se hizo tarde, descendieron sus discípulos á la mar;",
+   "scio": "Y como se hiciese tarde, descendiéron sus discípulos al mar.",
+   "blm": "Al atardecer, sus discípulos bajaron al mar."
+  },
+  "17": {
+   "bsb": "got into a boat, and started across the sea to Capernaum. It was already dark, and Jesus had not yet gone out to them.",
+   "kjv": "And entered into a ship, and went over the sea toward Capernaum. And it was now dark, and Jesus was not come to them.",
+   "web": "They entered into the boat, and were going over the sea to Capernaum. It was now dark, and Jesus had not come to them.",
+   "dra": "And when they had gone up into a ship, they went over the sea to Capharnaum; and it was now dark, and Jesus was not come unto them.",
+   "ylt": "and having entered into the boat, they were going over the sea to Capernaum, and darkness had already come, and Jesus had not come unto them,",
+   "rv1909": "Y entrando en un barco, venían de la otra parte de la mar hacia Capernaum. Y era ya oscuro, y Jesús no había venido á ellos.",
+   "scio": "Y habiendo entrado en un barco, pasáron de la otra parte del mar ácia Capharnaúm: y era ya obscuro: y no había venido Jesús á ellos.",
+   "blm": "Entraron en la barca y atravesaron el mar hacia Capernaum. Ya había oscurecido, y Jesús no había venido a ellos."
+  },
+  "18": {
+   "bsb": "A strong wind was blowing, and the sea grew agitated.",
+   "kjv": "And the sea arose by reason of a great wind that blew.",
+   "web": "The sea was tossed by a great wind blowing.",
+   "dra": "And the sea arose, by reason of a great wind that blew.",
+   "ylt": "the sea also — a great wind blowing — was being raised,",
+   "rv1909": "Y levantábase la mar con un gran viento que soplaba.",
+   "scio": "Y se levantaba el mar con el viento recio, que soplaba.",
+   "blm": "El mar estaba agitado por un gran viento que soplaba."
+  },
+  "19": {
+   "bsb": "When they had rowed about three or four miles, they saw Jesus approaching the boat, walking on the sea—and they were terrified.",
+   "kjv": "So when they had rowed about five and twenty or thirty furlongs, they see Jesus walking on the sea, and drawing nigh unto the ship: and they were afraid.",
+   "web": "When therefore they had rowed about twenty-five or thirty stadia, they saw Jesus walking on the sea and drawing near to the boat; and they were afraid.",
+   "dra": "When they had rowed therefore about five and twenty or thirty furlongs, they see Jesus walking upon the sea, and drawing nigh to the ship, and they were afraid.",
+   "ylt": "having pushed onwards, therefore, about twenty-five or thirty furlongs, they behold Jesus walking on the sea, and coming nigh to the boat, and they were afraid;",
+   "rv1909": "Y como hubieron navegado como veinticinco ó treinta estadios, ven á Jesús que andaba sobre la mar, y se acercaba al barco: y tuvieron miedo.",
+   "scio": "Y quando hubiéron remado como unos veinte y cinco ó treinta estadios, viéron á Jesús andando sobre el mar, y que se acercaba al barco, y tuviéron miedo.",
+   "blm": "Por lo tanto, cuando habían remado unos veinticinco o treinta estadios, vieron a Jesús que caminaba sobre el mar y se acercaba a la barca; y tuvieron miedo."
+  },
+  "20": {
+   "bsb": "But Jesus spoke up: “It is I; do not be afraid.”",
+   "kjv": "But he saith unto them, It is I; be not afraid.",
+   "web": "But he said to them, “It is I. Don’t be afraid.”",
+   "dra": "But he saith to them: It is I; be not afraid.",
+   "ylt": "and he saith to them, 'I am [he], be not afraid;'",
+   "rv1909": "Mas él les dijo: Yo soy; no tengáis miedo.",
+   "scio": "Mas él les dice: Yo soy, no temáis.",
+   "blm": "Pero él les dijo: «Soy yo. No tengáis miedo»."
+  },
+  "21": {
+   "bsb": "Then they were willing to take Him into the boat, and at once the boat reached the shore where they were heading.",
+   "kjv": "Then they willingly received him into the ship: and immediately the ship was at the land whither they went.",
+   "web": "They were willing therefore to receive him into the boat. Immediately the boat was at the land where they were going.",
+   "dra": "They were willing therefore to take him into the ship; and presently the ship was at the land to which they were going.",
+   "ylt": "they were willing then to receive him into the boat, and immediately the boat came unto the land to which they were going.",
+   "rv1909": "Ellos entonces gustaron recibirle en el barco: y luego el barco llegó á la tierra donde iban.",
+   "scio": "Y ellos quisiéron recibirle en el barco: y el barco llegó luego á la tierra, á donde iban.",
+   "blm": "Por lo tanto, estaban dispuestos a recibirlo en la barca. En seguida la barca llegó a la tierra a la que se dirigían."
+  },
+  "22": {
+   "bsb": "The next day, the crowd that had remained on the other side of the sea realized that only one boat had been there, and that Jesus had not boarded it with His disciples, but they had gone away alone.",
+   "kjv": "¶ The day following, when the people which stood on the other side of the sea saw that there was none other boat there, save that one whereinto his disciples were entered, and that Jesus went not with his disciples into the boat, but [that] his disciples were gone away alone;",
+   "web": "On the next day, the multitude that stood on the other side of the sea saw that there was no other boat there, except the one in which his disciples had embarked, and that Jesus hadn’t entered with his disciples into the boat, but his disciples had gone away alone.",
+   "dra": "The next day, the multitude that stood on the other side of the sea, saw that there was no other ship there but one, and that Jesus had not entered into the ship with his disciples, but that his disciples were gone away alone.",
+   "ylt": "On the morrow, the multitude that was standing on the other side of the sea, having seen that there was no other little boat there except one — that into which his disciples entered — and that Jesus went not in with his disciples into the little boat, but his disciples went away alone,",
+   "rv1909": "El día siguiente, la gente que estaba de la otra parte de la mar, como vió que no había allí otra navecilla sino una, y que Jesús no había entrado con sus discípulos en ella, sino que sus discípulos se habían ido solos;",
+   "scio": "El día siguiente la gente que estaba de la otra parte del mar, vió, que no había allí sino un solo barco, y que Jesús no había entrado en el barco con sus discípulos, sino que sus discípulos se habían ido solos.",
+   "blm": "Al día siguiente, la multitud que estaba al otro lado del mar vio que no había allí ninguna otra barca, sino aquella en la que se habían embarcado sus discípulos, y que Jesús no había entrado con sus discípulos en la barca, sino que sus discípulos se habían ido solos."
+  },
+  "23": {
+   "bsb": "However, some boats from Tiberias landed near the place where the people had eaten the bread after the Lord had given thanks.",
+   "kjv": "(Howbeit there came other boats from Tiberias nigh unto the place where they did eat bread, after that the Lord had given thanks:)",
+   "web": "However, boats from Tiberias came near to the place where they ate the bread after the Lord had given thanks.",
+   "dra": "But other ships came in from Tiberias; nigh unto the place where they had eaten the bread, the Lord giving thanks.",
+   "ylt": "(and other little boats came from Tiberias, nigh the place where they did eat the bread, the Lord having given thanks),",
+   "rv1909": "Y que otras navecillas habían arribado de Tiberias junto al lugar donde habían comido el pan después de haber el Señor dado gracias;",
+   "scio": "Y llegáron otros barcos de Tiberíades, cerca del lugar en donde habían comido el pan, después de haber dado gracias al Señor.",
+   "blm": "Sin embargo, unas barcas procedentes de Tiberíades se acercaron al lugar donde comieron el pan después de que el Señor diera las gracias."
+  },
+  "24": {
+   "bsb": "So when the crowd saw that neither Jesus nor His disciples were there, they got into the boats and went to Capernaum to look for Him.",
+   "kjv": "When the people therefore saw that Jesus was not there, neither his disciples, they also took shipping, and came to Capernaum, seeking for Jesus.",
+   "web": "When the multitude therefore saw that Jesus wasn’t there, nor his disciples, they themselves got into the boats and came to Capernaum, seeking Jesus.",
+   "dra": "When therefore the multitude saw that Jesus was not there, nor his disciples, they took shipping, and came to Capharnaum, seeking for Jesus.",
+   "ylt": "when therefore the multitude saw that Jesus is not there, nor his disciples, they also themselves did enter into the boats, and came to Capernaum seeking Jesus;",
+   "rv1909": "Como vió pues la gente que Jesús no estaba allí, ni sus discípulos, entraron ellos en las navecillas, y vinieron á Capernaum buscando á Jesús.",
+   "scio": "Pues quando vió la gente que no estaba allí Jesús, ni sus discípulos, entraron en los barcos, y fueron á Capharnaúm en busca de Jesús.",
+   "blm": "Al ver, pues, la multitud que Jesús no estaba allí, ni sus discípulos, subieron ellos mismos a las barcas y vinieron a Capernaum, buscando a Jesús."
+  },
+  "25": {
+   "bsb": "When they found Him on the other side of the sea, they asked Him, “Rabbi, when did You get here?”",
+   "kjv": "And when they had found him on the other side of the sea, they said unto him, Rabbi, when camest thou hither?",
+   "web": "When they found him on the other side of the sea, they asked him, “Rabbi, when did you come here?”",
+   "dra": "And when they had found him on the other side of the sea, they said to him: Rabbi, when camest thou hither?",
+   "ylt": "and having found him on the other side of the sea, they said to him, 'Rabbi, when hast thou come hither?'",
+   "rv1909": "Y hallándole de la otra parte de la mar, dijéronle: Rabbí, ¿cuándo llegaste acá?",
+   "scio": "Y quando le halláron de la otra parte del mar le dixéron: ¿Maestro, quando llegaste acá?",
+   "blm": "Cuando lo encontraron al otro lado del mar, le preguntaron: «Rabí, ¿cuándo has venido aquí?»"
+  },
+  "26": {
+   "bsb": "Jesus replied, “Truly, truly, I tell you, it is not because you saw these signs that you are looking for Me, but because you ate the loaves and had your fill.",
+   "kjv": "Jesus answered them and said, Verily, verily, I say unto you, Ye seek me, not because ye saw the miracles, but because ye did eat of the loaves, and were filled.",
+   "web": "Jesus answered them, “Most certainly I tell you, you seek me, not because you saw signs, but because you ate of the loaves and were filled.",
+   "dra": "Jesus answered them, and said: Amen, amen I say to you, you seek me, not because you have seen miracles, but because you did eat of the loaves, and were filled.",
+   "ylt": "Jesus answered them and said, 'Verily, verily, I say to you, Ye seek me, not because ye saw signs, but because ye did eat of the loaves, and were satisfied;",
+   "rv1909": "Respondióles Jesús, y dijo: De cierto, de cierto os digo, que me buscáis, no porque habéis visto las señales, sino porque comisteis el pan y os hartasteis.",
+   "scio": "Jesús les respondió, y dijo: En verdad, en verdad os digo: Que me buscáis, no por los milagros que visteis, mas porque comisteis del pan, y os saciasteis.",
+   "blm": "Jesús les respondió: «Os aseguro que me buscáis, no porque hayáis visto señales, sino porque habéis comido de los panes y os habéis saciado."
+  },
+  "27": {
+   "bsb": "Do not work for food that perishes, but for food that endures to eternal life, which the Son of Man will give you. For on Him God the Father has placed His seal of approval.”",
+   "kjv": "Labour not for the meat which perisheth, but for that meat which endureth unto everlasting life, which the Son of man shall give unto you: for him hath God the Father sealed.",
+   "web": "Don’t work for the food which perishes, but for the food which remains to eternal life, which the Son of Man will give to you. For God the Father has sealed him.”",
+   "dra": "Labour not for the meat which perisheth, but for that which endureth unto life everlasting, which the Son of man will give you. For him hath God, the Father, sealed.",
+   "ylt": "work not for the food that is perishing, but for the food that is remaining to life age-during, which the Son of Man will give to you, for him did the Father seal — [even] God.'",
+   "rv1909": "Trabajad no por la comida que perece, mas por la comida que á vida eterna permanece, la cual el Hijo del hombre os dará: porque á éste señaló el Padre, [que es] Dios.",
+   "scio": "Trabajad, no por la comida que perece, mas por la que permanece para vida eterna, la que os dará el Hijo del hombre. Porque á éste señaló el padre el Dios.",
+   "blm": "No trabajéis por el alimento que perece, sino por el que permanece para la vida eterna, que os dará el Hijo del Hombre. Porque Dios el Padre lo ha sellado»."
+  },
+  "28": {
+   "bsb": "Then they inquired, “What must we do to perform the works of God?”",
+   "kjv": "Then said they unto him, What shall we do, that we might work the works of God?",
+   "web": "They said therefore to him, “What must we do, that we may work the works of God?”",
+   "dra": "They said therefore unto him: What shall we do, that we may work the works of God?",
+   "ylt": "They said therefore unto him, 'What may we do that we may work the works of God?'",
+   "rv1909": "Y dijéronle: ¿Qué haremos para que obremos las obras de Dios?",
+   "scio": "Y le dixéron: ¿Qué harémos para hacer las obras de Dios?",
+   "blm": "Entonces le dijeron: «¿Qué debemos hacer, para que podamos obrar las obras de Dios?»"
+  },
+  "29": {
+   "bsb": "Jesus replied, “The work of God is this: to believe in the One He has sent.”",
+   "kjv": "Jesus answered and said unto them, This is the work of God, that ye believe on him whom he hath sent.",
+   "web": "Jesus answered them, “This is the work of God, that you believe in him whom he has sent.”",
+   "dra": "Jesus answered, and said to them: This is the work of God, that you believe in him whom he hath sent.",
+   "ylt": "Jesus answered and said to them, 'This is the work of God, that ye may believe in him whom He did send.'",
+   "rv1909": "Respondió Jesús, y díjoles: Esta es la obra de Dios, que creáis en el que él ha enviado.",
+   "scio": "Respondió Jesús, y les dixo: Esta es la obra de Dios, que creáis en aquel que él envió.",
+   "blm": "Jesús les respondió: «Esta es la obra de Dios, que creáis en el que él ha enviado»."
+  },
+  "30": {
+   "bsb": "So they asked Him, “What sign then will You perform, so that we may see it and believe You? What will You do?",
+   "kjv": "They said therefore unto him, What sign shewest thou then, that we may see, and believe thee? what dost thou work?",
+   "web": "They said therefore to him, “What then do you do for a sign, that we may see and believe you? What work do you do?",
+   "dra": "They said therefore to him: What sign therefore dost thou shew, that we may see, and may believe thee? What dost thou work?",
+   "ylt": "They said therefore to him, 'What sign, then, dost thou, that we may see and may believe thee? what dost thou work?",
+   "rv1909": "Dijéronle entonces: ¿Qué señal pues haces tú, para que veamos, y te creamos? ¿Qué obras?",
+   "scio": "Entonces le dixéron: ¿Pues qué milagro haces, para que lo veamos, y te creamos? ¿qué obras tú?",
+   "blm": "Por eso le dijeron: “¿Qué señal haces, pues, para que te veamos y te creamos? ¿Qué obra haces?"
+  },
+  "31": {
+   "bsb": "Our fathers ate the manna in the wilderness, as it is written: ‘He gave them bread from heaven to eat.’”",
+   "kjv": "Our fathers did eat manna in the desert; as it is written, He gave them bread from heaven to eat.",
+   "web": "Our fathers ate the manna in the wilderness. As it is written, ‘He gave them bread out of heaven to eat.’”",
+   "dra": "Our fathers did eat manna in the desert, as it is written: He gave them bread from heaven to eat.",
+   "ylt": "our fathers the manna did eat in the wilderness, according as it is having been written, Bread out of the heaven He gave them to eat.'",
+   "rv1909": "Nuestros padres comieron el maná en el desierto, como está escrito: Pan del cielo les dió á comer.",
+   "scio": "Nuestros padres comiéron el manná en el desierto, como está escrito: Pan del Cielo les dió á comer.",
+   "blm": "Nuestros padres comieron el maná en el desierto. Como está escrito: ‘Les dio a comer pan del cielo’”."
+  },
+  "32": {
+   "bsb": "Jesus said to them, “Truly, truly, I tell you, it was not Moses who gave you the bread from heaven, but it is My Father who gives you the true bread from heaven.",
+   "kjv": "Then Jesus said unto them, Verily, verily, I say unto you, Moses gave you not that bread from heaven; but my Father giveth you the true bread from heaven.",
+   "web": "Jesus therefore said to them, “Most certainly, I tell you, it wasn’t Moses who gave you the bread out of heaven, but my Father gives you the true bread out of heaven.",
+   "dra": "Then Jesus said to them: Amen, amen I say to you; Moses gave you not bread from heaven, but my Father giveth you the true bread from heaven.",
+   "ylt": "Jesus, therefore, said to them, 'Verily, verily, I say to you, Moses did not give you the bread out of the heaven; but my Father doth give you the true bread out of the heaven;",
+   "rv1909": "Y Jesús les dijo: De cierto, de cierto os digo: No os dió Moisés pan del cielo; mas mi Padre os da el verdadero pan del cielo.",
+   "scio": "Y Jesús les dixo: En verdad, en verdad os digo: Que no os dió Moysés pan del Cielo, mas mi Padre os dá el pan verdadero del Cielo.",
+   "blm": "Entonces Jesús les dijo: «Os aseguro que no fue Moisés quien os dio el pan del cielo, sino que mi Padre os da el verdadero pan del cielo."
+  },
+  "33": {
+   "bsb": "For the bread of God is He who comes down from heaven and gives life to the world.”",
+   "kjv": "For the bread of God is he which cometh down from heaven, and giveth life unto the world.",
+   "web": "For the bread of God is that which comes down out of heaven and gives life to the world.”",
+   "dra": "For the bread of God is that which cometh down from heaven, and giveth life to the world.",
+   "ylt": "for the bread of God is that which is coming down out of the heaven, and giving life to the world.'",
+   "rv1909": "Porque el pan de Dios es aquel que descendió del cielo y da vida al mundo.",
+   "scio": "Porque el pan de Dios es aquel que descendió del Cielo, y dá vida al mundo.",
+   "blm": "Porque el pan de Dios es el que baja del cielo y da vida al mundo»."
+  },
+  "34": {
+   "bsb": "“Sir,” they said, “give us this bread at all times.”",
+   "kjv": "Then said they unto him, Lord, evermore give us this bread.",
+   "web": "They said therefore to him, “Lord, always give us this bread.”",
+   "dra": "They said therefore unto him: Lord, give us always this bread.",
+   "ylt": "They said, therefore, unto him, 'Sir, always give us this bread.'",
+   "rv1909": "Y dijéronle: Señor, danos siempre este pan.",
+   "scio": "Ellos pues le dixéron; Señor, danos siempre este pan.",
+   "blm": "Por eso le dijeron: «Señor, danos siempre este pan»."
+  },
+  "35": {
+   "bsb": "Jesus answered, “I am the bread of life. Whoever comes to Me will never hunger, and whoever believes in Me will never thirst.",
+   "kjv": "And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.",
+   "web": "Jesus said to them, “I am the bread of life. Whoever comes to me will not be hungry, and whoever believes in me will never be thirsty.",
+   "dra": "And Jesus said to them: I am the bread of life: he that cometh to me shall not hunger: and he that believeth in me shall never thirst.",
+   "ylt": "And Jesus said to them, 'I am the bread of the life; he who is coming unto me may not hunger, and he who is believing in me may not thirst — at any time;",
+   "rv1909": "Y Jesús les dijo: Yo soy el pan de vida: el que á mí viene, nunca tendrá hambre; y el que en mí cree, no tendrá sed jamás.",
+   "scio": "Y Jesús les dixo: Yo soy el pan de la vida: el que á mí viene, no tendrá hambre: y el que en mí cree, nunca jamas tendrá sed.",
+   "blm": "Jesús les dijo: «Yo soy el pan de vida. El que viene a mí no tendrá hambre, y el que cree en mí nunca tendrá sed."
+  },
+  "36": {
+   "bsb": "But as I stated, you have seen Me and still you do not believe.",
+   "kjv": "But I said unto you, That ye also have seen me, and believe not.",
+   "web": "But I told you that you have seen me, and yet you don’t believe.",
+   "dra": "But I said unto you, that you also have seen me, and you believe not.",
+   "ylt": "but I said to you, that ye also have seen me, and ye believe not;",
+   "rv1909": "Mas os he dicho, que aunque me habéis visto, no creéis.",
+   "scio": "Mas ya os he dicho, que me habéis visto, y no creéis.",
+   "blm": "Pero os he dicho que me habéis visto, y sin embargo no creéis."
+  },
+  "37": {
+   "bsb": "Everyone the Father gives Me will come to Me, and the one who comes to Me I will never drive away.",
+   "kjv": "All that the Father giveth me shall come to me; and him that cometh to me I will in no wise cast out.",
+   "web": "All those whom the Father gives me will come to me. He who comes to me I will in no way throw out.",
+   "dra": "All that the Father giveth to me shall come to me; and him that cometh to me, I will not cast out.",
+   "ylt": "all that the Father doth give to me will come unto me; and him who is coming unto me, I may in no wise cast without,",
+   "rv1909": "Todo lo que el Padre me da, vendrá á mí; y al que á mí viene, no [le] hecho fuera.",
+   "scio": "Todo lo que me dá el Padre, á mí vendrá: y aquel que á mí viene, no le echaré fuera;",
+   "blm": "Todos los que el Padre me dé vendrán a mí. Al que venga a mí no lo echaré de ninguna manera."
+  },
+  "38": {
+   "bsb": "For I have come down from heaven, not to do My own will, but to do the will of Him who sent Me.",
+   "kjv": "For I came down from heaven, not to do mine own will, but the will of him that sent me.",
+   "web": "For I have come down from heaven, not to do my own will, but the will of him who sent me.",
+   "dra": "Because I came down from heaven, not to do my own will, but the will of him that sent me.",
+   "ylt": "because I have come down out of the heaven, not that I may do my will, but the will of Him who sent me.",
+   "rv1909": "Porque he descendido del cielo, no para hacer mi voluntad, mas la voluntad del que me envió.",
+   "scio": "Porque descendí del Cielo, no para hacer mi voluntad, sino la voluntad de aquel que me envió.",
+   "blm": "Porque he bajado del cielo, no para hacer mi propia voluntad, sino la voluntad del que me ha enviado."
+  },
+  "39": {
+   "bsb": "And this is the will of Him who sent Me, that I shall lose none of those He has given Me, but raise them up at the last day.",
+   "kjv": "And this is the Father’s will which hath sent me, that of all which he hath given me I should lose nothing, but should raise it up again at the last day.",
+   "web": "This is the will of my Father who sent me, that of all he has given to me I should lose nothing, but should raise him up at the last day.",
+   "dra": "Now this is the will of the Father who sent me: that of all that he hath given me, I should lose nothing; but should raise it up again in the last day.",
+   "ylt": "'And this is the will of the Father who sent me, that all that He hath given to me I may not lose of it, but may raise it up in the last day;",
+   "rv1909": "Y esta es la voluntad del que me envió, del Padre: Que todo lo que me diere, no pierda de ello, sino que lo resucite en el día postrero.",
+   "scio": "Y ésta es la voluntad de aquel Padre, que me envió: Que nada pierda de todo aquello que él me dió, sino que lo resucite en el último día.",
+   "blm": "Esta es la voluntad de mi Padre que me ha enviado: que de todo lo que me ha dado no pierda nada, sino que lo resucite en el último día."
+  },
+  "40": {
+   "bsb": "For it is My Father’s will that everyone who looks to the Son and believes in Him shall have eternal life, and I will raise him up at the last day.”",
+   "kjv": "And this is the will of him that sent me, that every one which seeth the Son, and believeth on him, may have everlasting life: and I will raise him up at the last day.",
+   "web": "This is the will of the one who sent me, that everyone who sees the Son and believes in him should have eternal life; and I will raise him up at the last day.”",
+   "dra": "And this is the will of my Father that sent me: that every one who seeth the Son, and believeth in him, may have life everlasting, and I will raise him up in the last day.",
+   "ylt": "and this is the will of Him who sent me, that every one who is beholding the Son, and is believing in him, may have life age-during, and I will raise him up in the last day.'",
+   "rv1909": "Y esta es la voluntad del que me ha enviado: Que todo aquel que ve al Hijo, y cree en él, tenga vida eterna: y yo le resucitaré en el día postrero.",
+   "scio": "Y la voluntad de mi Padre, que me envió es ésta: Que todo aquel que vé al Hijo, y cree en él, tenga vida eterna, y yo lo resucitaré en el último día.",
+   "blm": "Esta es la voluntad del que me ha enviado: que todo el que vea al Hijo y crea en él tenga vida eterna; y yo lo resucitaré en el último día»."
+  },
+  "41": {
+   "bsb": "At this, the Jews began to grumble about Jesus because He had said, “I am the bread that came down from heaven.”",
+   "kjv": "The Jews then murmured at him, because he said, I am the bread which came down from heaven.",
+   "web": "The Jews therefore murmured concerning him, because he said, “I am the bread which came down out of heaven.”",
+   "dra": "The Jews therefore murmured at him, because he had said: I am the living bread which came down from heaven.",
+   "ylt": "The Jews, therefore, were murmuring at him, because he said, 'I am the bread that came down out of the heaven;'",
+   "rv1909": "Murmuraban entonces de él los Judíos, porque había dicho: Yo soy el pan que descendí del cielo.",
+   "scio": "Los Judíos pues murmuraban de él, porque había dicho: Yo soy el pan vivo, que descendí del Cielo.",
+   "blm": "Los judíos, pues, murmuraban de él, porque decía: «Yo soy el pan bajado del cielo»."
+  },
+  "42": {
+   "bsb": "They were asking, “Is this not Jesus, the son of Joseph, whose father and mother we know? How then can He say, ‘I have come down from heaven?’”",
+   "kjv": "And they said, Is not this Jesus, the son of Joseph, whose father and mother we know? how is it then that he saith, I came down from heaven?",
+   "web": "They said, “Isn’t this Jesus, the son of Joseph, whose father and mother we know? How then does he say, ‘I have come down out of heaven’?”",
+   "dra": "And they said: Is not this Jesus, the son of Joseph, whose father and mother we know? How then saith he, I came down from heaven?",
+   "ylt": "and they said, 'Is not this Jesus, the son of Joseph, whose father and mother we have known? how then saith this one — Out of the heaven I have come down?'",
+   "rv1909": "Y decían: ¿No es éste Jesús, el hijo de José, cuyo padre y madre nosotros conocemos? ¿cómo, pues, dice éste: Del cielo he descendido?",
+   "scio": "Y decian: ¿No es éste Jesús el hijo de Joseph, cuyo padre y madre nosotros conocemos? ¿Pues cómo dice éste: Que del Cielo descendí?",
+   "blm": "Dijeron: “¿No es éste Jesús, el hijo de José, cuyo padre y madre conocemos? ¿Cómo, pues, dice: ‘He bajado del cielo’?”"
+  },
+  "43": {
+   "bsb": "“Stop grumbling among yourselves,” Jesus replied.",
+   "kjv": "Jesus therefore answered and said unto them, Murmur not among yourselves.",
+   "web": "Therefore Jesus answered them, “Don’t murmur among yourselves.",
+   "dra": "Jesus therefore answered, and said to them: Murmur not among yourselves.",
+   "ylt": "Jesus answered, therefore, and said to them, 'Murmur not one with another;",
+   "rv1909": "Y Jesús respondió, y díjoles: No murmuréis entre vosotros.",
+   "scio": "Mas Jesús respondió, y les dixo: No murmureis entre vosotros.",
+   "blm": "Por eso Jesús les respondió: “No murmuréis entre vosotros."
+  },
+  "44": {
+   "bsb": "“No one can come to Me unless the Father who sent Me draws him, and I will raise him up at the last day.",
+   "kjv": "No man can come to me, except the Father which hath sent me draw him: and I will raise him up at the last day.",
+   "web": "No one can come to me unless the Father who sent me draws him; and I will raise him up in the last day.",
+   "dra": "No man can come to me, except the Father, who hath sent me, draw him; and I will raise him up in the last day.",
+   "ylt": "no one is able to come unto me, if the Father who sent me may not draw him, and I will raise him up in the last day;",
+   "rv1909": "Ninguno puede venir á mí, si el Padre que me envió no le trajere; y yo le resucitaré en el día postrero.",
+   "scio": "Nadie puede venir á mí, si no le traxere el Padre que me envió: y yo le resucitaré en el postrimero día.",
+   "blm": "Nadie puede venir a mí si el Padre que me envió no lo atrae; y yo lo resucitaré en el último día."
+  },
+  "45": {
+   "bsb": "It is written in the Prophets: ‘And they will all be taught by God.’ Everyone who has heard the Father and learned from Him comes to Me—",
+   "kjv": "It is written in the prophets, And they shall be all taught of God. Every man therefore that hath heard, and hath learned of the Father, cometh unto me.",
+   "web": "It is written in the prophets, ‘They will all be taught by God.’ Therefore everyone who hears from the Father and has learned, comes to me.",
+   "dra": "It is written in the prophets: And they shall all be taught of God. Every one that hath heard of the Father, and hath learned, cometh to me.",
+   "ylt": "it is having been written in the prophets, And they shall be all taught of God; every one therefore who heard from the Father, and learned, cometh to me;",
+   "rv1909": "Escrito está en los profetas: Y serán todos enseñados de Dios. Así que, todo aquel que oyó del Padre, y aprendió, viene á mí.",
+   "scio": "Escrito está en los Prophetas: Y serán todos enseñados de Dios. Todo aquel que oyó del Padre, y aprendió, viene á mí.",
+   "blm": "Está escrito en los profetas: ‘Todos serán enseñados por Dios’. Por eso, todo el que oye del Padre y ha aprendido, viene a mí."
+  },
+  "46": {
+   "bsb": "not that anyone has seen the Father except the One who is from God; only He has seen the Father.",
+   "kjv": "Not that any man hath seen the Father, save he which is of God, he hath seen the Father.",
+   "web": "Not that anyone has seen the Father, except he who is from God. He has seen the Father.",
+   "dra": "Not that any man hath seen the Father; but he who is of God, he hath seen the Father.",
+   "ylt": "not that any one hath seen the Father, except he who is from God, he hath seen the Father.",
+   "rv1909": "No que alguno haya visto al Padre, sino aquel que vino de Dios, éste ha visto al Padre.",
+   "scio": "No porque alguno ha visto al Padre, sino aquel que vino de Dios, éste ha visto al padre.",
+   "blm": "No es que alguien haya visto al Padre, sino el que viene de Dios. Él ha visto al Padre."
+  },
+  "47": {
+   "bsb": "Truly, truly, I tell you, he who believes has eternal life.",
+   "kjv": "Verily, verily, I say unto you, He that believeth on me hath everlasting life.",
+   "web": "Most certainly, I tell you, he who believes in me has eternal life.",
+   "dra": "Amen, amen I say unto you: He that believeth in me, hath everlasting life.",
+   "ylt": "'Verily, verily, I say to you, He who is believing in me, hath life age-during;",
+   "rv1909": "De cierto, de cierto os digo: El que cree en mí, tiene vida eterna.",
+   "scio": "En verdad, en verdad os digo: Que aquel que cree en mí, tiene vida eterna.",
+   "blm": "De cierto os digo que el que cree en mí tiene vida eterna."
+  },
+  "48": {
+   "bsb": "I am the bread of life.",
+   "kjv": "I am that bread of life.",
+   "web": "I am the bread of life.",
+   "dra": "I am the bread of life.",
+   "ylt": "I am the bread of the life;",
+   "rv1909": "Yo soy el pan de vida.",
+   "scio": "Yo soy el pan de la vida.",
+   "blm": "Yo soy el pan de vida."
+  },
+  "49": {
+   "bsb": "Your fathers ate the manna in the wilderness, yet they died.",
+   "kjv": "Your fathers did eat manna in the wilderness, and are dead.",
+   "web": "Your fathers ate the manna in the wilderness and they died.",
+   "dra": "Your fathers did eat manna in the desert, and are dead.",
+   "ylt": "your fathers did eat the manna in the wilderness, and they died;",
+   "rv1909": "Vuestros padres comieron el maná en el desierto, y son muertos.",
+   "scio": "Vuestros padres comiéron el manná en el desierto, y murieron.",
+   "blm": "Vuestros padres comieron el maná en el desierto y murieron."
+  },
+  "50": {
+   "bsb": "This is the bread that comes down from heaven, so that anyone may eat of it and not die.",
+   "kjv": "This is the bread which cometh down from heaven, that a man may eat thereof, and not die.",
+   "web": "This is the bread which comes down out of heaven, that anyone may eat of it and not die.",
+   "dra": "This is the bread which cometh down from heaven; that if any man eat of it, he may not die.",
+   "ylt": "this is the bread that out of the heaven is coming down, that any one may eat of it, and not die.",
+   "rv1909": "Este es el pan que desciende del cielo, para que el que de él comiere, no muera.",
+   "scio": "Este es el pan, que desciende del Cielo; para que el que comiere de él, no muera.",
+   "blm": "Este es el pan que baja del cielo, para que cualquiera coma de él y no muera."
+  },
+  "51": {
+   "bsb": "I am the living bread that came down from heaven. If anyone eats of this bread, he will live forever. And this bread, which I will give for the life of the world, is My flesh.”",
+   "kjv": "I am the living bread which came down from heaven: if any man eat of this bread, he shall live for ever: and the bread that I will give is my flesh, which I will give for the life of the world.",
+   "web": "I am the living bread which came down out of heaven. If anyone eats of this bread, he will live forever. Yes, the bread which I will give for the life of the world is my flesh.”",
+   "dra": "I am the living bread which came down from heaven. If any man eat of this bread, he shall live for ever; and the bread that I will give, is my flesh, for the life of the world.",
+   "ylt": "'I am the living bread that came down out of the heaven; if any one may eat of this bread he shall live — to the age; and the bread also that I will give is my flesh, that I will give for the life of the world.'",
+   "rv1909": "Yo soy el pan vivo que he descendido del cielo: si alguno comiere de este pan, vivirá para siempre; y el pan que yo daré es mi carne, la cual yo daré por la vida del mundo.",
+   "scio": "Yo soy el pan vivo, que descendí del Cielo. Si alguno comiere de éste pan, vivirá eternamente, y el pan que yo daré, es mi carne por la vida del mundo.",
+   "blm": "Yo soy el pan vivo que ha bajado del cielo. Si alguien come de este pan, vivirá para siempre. Sí, el pan que daré para la vida del mundo es mi carne”."
+  },
+  "52": {
+   "bsb": "At this, the Jews began to argue among themselves, “How can this man give us His flesh to eat?”",
+   "kjv": "The Jews therefore strove among themselves, saying, How can this man give us [his] flesh to eat?",
+   "web": "The Jews therefore contended with one another, saying, “How can this man give us his flesh to eat?”",
+   "dra": "The Jews therefore strove among themselves, saying: How can this man give us his flesh to eat?",
+   "ylt": "The Jews, therefore, were striving with one another, saying, 'How is this one able to give us [his] flesh to eat?'",
+   "rv1909": "Entonces los Judíos contendían entre sí, diciendo: ¿Cómo puede éste darnos su carne á comer?",
+   "scio": "Comenzáron entonces los Judíos á altercar unos con otros, y decían: ¿Cómo nos puede dar éste su carne á comer?",
+   "blm": "Los judíos, pues, discutían entre sí, diciendo: «¿Cómo puede éste darnos a comer su carne?»"
+  },
+  "53": {
+   "bsb": "So Jesus said to them, “Truly, truly, I tell you, unless you eat the flesh and drink the blood of the Son of Man, you have no life in you.",
+   "kjv": "Then Jesus said unto them, Verily, verily, I say unto you, Except ye eat the flesh of the Son of man, and drink his blood, ye have no life in you.",
+   "web": "Jesus therefore said to them, “Most certainly I tell you, unless you eat the flesh of the Son of Man and drink his blood, you don’t have life in yourselves.",
+   "dra": "Then Jesus said to them: Amen, amen I say unto you: Except you eat the flesh of the Son of man, and drink his blood, you shall not have life in you.",
+   "ylt": "Jesus, therefore, said to them, 'Verily, verily, I say to you, If ye may not eat the flesh of the Son of Man, and may not drink his blood, ye have no life in yourselves;",
+   "rv1909": "Y Jesús les dijo: De cierto, de cierto os digo: Si no comiereis la carne del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros.",
+   "scio": "Y Jesús les dixo: En verdad, en verdad os digo: Que si no comiéreis la carne del Hijo del hombre, y bebiéreis su sangre, no tendréis vida en vosotros.",
+   "blm": "Por eso Jesús les dijo: «Os aseguro que si no coméis la carne del Hijo del Hombre y no bebéis su sangre, no tenéis vida en vosotros mismos."
+  },
+  "54": {
+   "bsb": "Whoever eats My flesh and drinks My blood has eternal life, and I will raise him up at the last day.",
+   "kjv": "Whoso eateth my flesh, and drinketh my blood, hath eternal life; and I will raise him up at the last day.",
+   "web": "He who eats my flesh and drinks my blood has eternal life, and I will raise him up at the last day.",
+   "dra": "He that eateth my flesh, and drinketh my blood, hath everlasting life: and I will raise him up in the last day.",
+   "ylt": "he who is eating my flesh, and is drinking my blood, hath life age-during, and I will raise him up in the last day;",
+   "rv1909": "El que come mi carne y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el día postrero.",
+   "scio": "El que come mi carne, y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el último día:",
+   "blm": "El que come mi carne y bebe mi sangre tiene vida eterna, y yo lo resucitaré en el último día."
+  },
+  "55": {
+   "bsb": "For My flesh is real food, and My blood is real drink.",
+   "kjv": "For my flesh is meat indeed, and my blood is drink indeed.",
+   "web": "For my flesh is food indeed, and my blood is drink indeed.",
+   "dra": "For my flesh is meat indeed: and my blood is drink indeed.",
+   "ylt": "for my flesh truly is food, and my blood truly is drink;",
+   "rv1909": "Porque mi carne es verdadera comida, y mi sangre es verdadera bebida.",
+   "scio": "Porque mi carne verdaderamente es comida: y mi sangre verdaderamente es bebida.",
+   "blm": "Porque mi carne es verdadera comida y mi sangre es verdadera bebida."
+  },
+  "56": {
+   "bsb": "Whoever eats My flesh and drinks My blood remains in Me, and I in him.",
+   "kjv": "He that eateth my flesh, and drinketh my blood, dwelleth in me, and I in him.",
+   "web": "He who eats my flesh and drinks my blood lives in me, and I in him.",
+   "dra": "He that eateth my flesh, and drinketh my blood, abideth in me, and I in him.",
+   "ylt": "he who is eating my flesh, and is drinking my blood, doth remain in me, and I in him.",
+   "rv1909": "El que come mi carne y bebe mi sangre, en mí permanece, y yo en él.",
+   "scio": "El que come mi carne, y bebe mi sangre, en mí mora, y yo en él.",
+   "blm": "El que come mi carne y bebe mi sangre vive en mí, y yo en él."
+  },
+  "57": {
+   "bsb": "Just as the living Father sent Me and I live because of the Father, so also the one who feeds on Me will live because of Me.",
+   "kjv": "As the living Father hath sent me, and I live by the Father: so he that eateth me, even he shall live by me.",
+   "web": "As the living Father sent me, and I live because of the Father, so he who feeds on me will also live because of me.",
+   "dra": "As the living Father hath sent me, and I live by the Father; so he that eateth me, the same also shall live by me.",
+   "ylt": "'According as the living Father sent me, and I live because of the Father, he also who is eating me, even that one shall live because of me;",
+   "rv1909": "Como me envió el Padre viviente, y yo vivo por el Padre, asimismo el que me come, él también vivirá por mí.",
+   "scio": "Como me envió el Padre viviente, y yo vivo por el Padre: así también el que me come, él mismo vivirá por mí.",
+   "blm": "Como el Padre viviente me envió, y yo vivo por el Padre, así el que se alimenta de mí también vivirá por mí."
+  },
+  "58": {
+   "bsb": "This is the bread that came down from heaven. Unlike your fathers, who ate the manna and died, the one who eats this bread will live forever.”",
+   "kjv": "This is that bread which came down from heaven: not as your fathers did eat manna, and are dead: he that eateth of this bread shall live for ever.",
+   "web": "This is the bread which came down out of heaven—not as our fathers ate the manna and died. He who eats this bread will live forever.”",
+   "dra": "This is the bread that came down from heaven. Not as your fathers did eat manna, and are dead. He that eateth this bread, shall live for ever.",
+   "ylt": "this is the bread that came down out of the heaven; not as your fathers did eat the manna, and died; he who is eating this bread shall live — to the age.'",
+   "rv1909": "Este es el pan que descendió del cielo: no como vuestros padres comieron el maná, y son muertos: el que come de este pan, vivirá eternamente.",
+   "scio": "Este es el pan que descendió del Cielo. No como el manná, que comieron vuestros padres, y murieron. Quien come éste pan, vivirá eternamente.",
+   "blm": "Este es el pan que bajó del cielo, no como vuestros padres que comieron el maná y murieron. El que come este pan vivirá para siempre»."
+  },
+  "59": {
+   "bsb": "Jesus said this while teaching in the synagogue in Capernaum.",
+   "kjv": "These things said he in the synagogue, as he taught in Capernaum.",
+   "web": "He said these things in the synagogue, as he taught in Capernaum.",
+   "dra": "These things he said, teaching in the synagogue, in Capharnaum.",
+   "ylt": "These things he said in a synagogue, teaching in Capernaum;",
+   "rv1909": "Estas cosas dijo en la sinagoga, enseñando en Capernaum.",
+   "scio": "Esto dixo en la Synagoga, enseñando en Capharnaúm.",
+   "blm": "Estas cosas las decía en la sinagoga, mientras enseñaba en Capernaum."
+  },
+  "60": {
+   "bsb": "On hearing it, many of His disciples said, “This is a difficult teaching. Who can accept it?”",
+   "kjv": "Many therefore of his disciples, when they had heard [this], said, This is an hard saying; who can hear it?",
+   "web": "Therefore many of his disciples, when they heard this, said, “This is a hard saying! Who can listen to it?”",
+   "dra": "Many therefore of his disciples, hearing it, said: This saying is hard, and who can hear it?",
+   "ylt": "many, therefore, of his disciples having heard, said, 'This word is hard; who is able to hear it?'",
+   "rv1909": "Y muchos de sus discípulos oyéndo[lo], dijeron: Dura es esta palabra: ¿quién la puede oir?",
+   "scio": "Mas muchos de sus discípulos, que esto oyéron, dixéron: Duro es éste razonamiento, ¿y quién lo puede oír?",
+   "blm": "Por eso, muchos de sus discípulos, al oír esto, dijeron: «¡Qué dura es esta palabra! ¿Quién puede escucharla?»"
+  },
+  "61": {
+   "bsb": "Aware that His disciples were grumbling about this teaching, Jesus asked them, “Does this offend you?",
+   "kjv": "When Jesus knew in himself that his disciples murmured at it, he said unto them, Doth this offend you?",
+   "web": "But Jesus knowing in himself that his disciples murmured at this, said to them, “Does this cause you to stumble?",
+   "dra": "But Jesus, knowing in himself, that his disciples murmured at this, said to them: Doth this scandalize you?",
+   "ylt": "And Jesus having known in himself that his disciples are murmuring about this, said to them, 'Doth this stumble you?",
+   "rv1909": "Y sabiendo Jesús en sí mismo que sus discípulos murmuraban de esto, díjoles: ¿Esto os escandaliza?",
+   "scio": "Y Jesús sabiendo en sí mismo, que murmuraban sus discípulos de esto, les dixo: ¿Esto os escandaliza?",
+   "blm": "Pero Jesús, sabiendo en sí mismo que sus discípulos murmuraban de esto, les dijo: «¿Esto os hace tropezar?"
+  },
+  "62": {
+   "bsb": "Then what will happen if you see the Son of Man ascend to where He was before?",
+   "kjv": "[What] and if ye shall see the Son of man ascend up where he was before?",
+   "web": "Then what if you would see the Son of Man ascending to where he was before?",
+   "dra": "If then you shall see the Son of man ascend up where he was before?",
+   "ylt": "if then ye may behold the Son of Man going up where he was before?",
+   "rv1909": "¿Pues [qué], si viereis al Hijo del hombre que sube donde estaba primero?",
+   "scio": "¿Pues qué si viereis al Hijo del hombre subir adonde estaba antes?",
+   "blm": "¿Y si vierais al Hijo del Hombre subir adonde estaba antes?"
+  },
+  "63": {
+   "bsb": "The Spirit gives life; the flesh profits nothing. The words I have spoken to you are spirit and they are life.",
+   "kjv": "It is the spirit that quickeneth; the flesh profiteth nothing: the words that I speak unto you, [they] are spirit, and [they] are life.",
+   "web": "It is the spirit who gives life. The flesh profits nothing. The words that I speak to you are spirit, and are life.",
+   "dra": "It is the spirit that quickeneth: the flesh profiteth nothing. The words that I have spoken to you, are spirit and life.",
+   "ylt": "the spirit it is that is giving life; the flesh doth not profit anything; the sayings that I speak to you are spirit, and they are life;",
+   "rv1909": "El espíritu es el que da vida; la carne nada aprovecha: las palabras que yo os he hablado, son espíritu, y son vida.",
+   "scio": "El espíritu es el que dá vida: la carne nada aprovecha. Las palabras que yo os he dicho, espíritu y vida son.",
+   "blm": "El espíritu es el que da la vida. La carne no aprovecha nada. Las palabras que yo os digo son espíritu y son vida."
+  },
+  "64": {
+   "bsb": "However, there are some of you who do not believe.” (For Jesus had known from the beginning which of them did not believe and who would betray Him.)",
+   "kjv": "But there are some of you that believe not. For Jesus knew from the beginning who they were that believed not, and who should betray him.",
+   "web": "But there are some of you who don’t believe.” For Jesus knew from the beginning who they were who didn’t believe, and who it was who would betray him.",
+   "dra": "But there are some of you that believe not. For Jesus knew from the beginning, who they were that did not believe, and who he was, that would betray him.",
+   "ylt": "but there are certain of you who do not believe;' for Jesus had known from the beginning who they are who are not believing, and who is he who will deliver him up,",
+   "rv1909": "Mas hay algunos de vosotros que no creen. Porque Jesús desde el principio sabía quiénes eran los que no creían, y quién le había de entregar.",
+   "scio": "Mas hay algunos de vosotros, que no creen. Porque Jesús sabía desde el principio quiénes eran los que no creían, y quién le había de entregar.",
+   "blm": "Pero hay algunos de vosotros que no creen». Porque Jesús sabía desde el principio quiénes eran los que no creían, y quiénes eran los que lo iban a traicionar."
+  },
+  "65": {
+   "bsb": "Then Jesus said, “This is why I told you that no one can come to Me unless the Father has granted it to him.”",
+   "kjv": "And he said, Therefore said I unto you, that no man can come unto me, except it were given unto him of my Father.",
+   "web": "He said, “For this cause I have said to you that no one can come to me, unless it is given to him by my Father.”",
+   "dra": "And he said: Therefore did I say to you, that no man can come to me, unless it be given him by my Father.",
+   "ylt": "and he said, 'Because of this I have said to you — No one is able to come unto me, if it may not have been given him from my Father.'",
+   "rv1909": "Y dijo: Por eso os he dicho que ninguno puede venir á mí, si no le fuere dado del Padre.",
+   "scio": "Y decía: Por esto os he dicho, que ninguno puede venir á mí, si no le fuere dado de mi Padre.",
+   "blm": "Dijo: «Por eso os he dicho que nadie puede venir a mí, si no le es dado por mi Padre»."
+  },
+  "66": {
+   "bsb": "From that time on many of His disciples turned back and no longer walked with Him.",
+   "kjv": "¶ From that [time] many of his disciples went back, and walked no more with him.",
+   "web": "At this, many of his disciples went back and walked no more with him.",
+   "dra": "After this many of his disciples went back; and walked no more with him.",
+   "ylt": "From this [time] many of his disciples went away backward, and were no more walking with him,",
+   "rv1909": "Desde esto, muchos de sus discípulos volvieron atrás, y ya no andaban con él.",
+   "scio": "Desde entónces muchos de sus discípulos volvieron atrás, y no andaban ya con él.",
+   "blm": "Al oír esto, muchos de sus discípulos volvieron atrás y ya no andaban con él."
+  },
+  "67": {
+   "bsb": "So Jesus asked the Twelve, “Do you want to leave too?”",
+   "kjv": "Then said Jesus unto the twelve, Will ye also go away?",
+   "web": "Jesus said therefore to the twelve, “You don’t also want to go away, do you?”",
+   "dra": "Then Jesus said to the twelve: Will you also go away?",
+   "ylt": "Jesus, therefore, said to the twelve, 'Do ye also wish to go away?'",
+   "rv1909": "Dijo entonces Jesús á los doce: ¿Queréis vosotros iros también?",
+   "scio": "Y dixo Jesús á los doce: ¿Y vosotros queréis también iros?",
+   "blm": "Entonces Jesús dijo a los doce: «¿Acaso queréis iros también vosotros?»"
+  },
+  "68": {
+   "bsb": "Simon Peter replied, “Lord, to whom would we go? You have the words of eternal life.",
+   "kjv": "Then Simon Peter answered him, Lord, to whom shall we go? thou hast the words of eternal life.",
+   "web": "Simon Peter answered him, “Lord, to whom would we go? You have the words of eternal life.",
+   "dra": "And Simon Peter answered him: Lord, to whom shall we go? thou hast the words of eternal life.",
+   "ylt": "Simon Peter, therefore, answered him, 'Sir, unto whom shall we go? thou hast sayings of life age-during;",
+   "rv1909": "Y respondióle Simón Pedro: Señor, ¿á quién iremos? tú tienes palabras de vida eterna.",
+   "scio": "Y Simón Pedro le respondió: ¿Señor, á quién irémos? tú tienes palabras de vida eterna.",
+   "blm": "Simón Pedro le respondió: «Señor, ¿a quién vamos a ir? Tú tienes palabras de vida eterna."
+  },
+  "69": {
+   "bsb": "We believe and know that You are the Holy One of God.”",
+   "kjv": "And we believe and are sure that thou art that Christ, the Son of the living God.",
+   "web": "We have come to believe and know that you are the Christ, the Son of the living God.”",
+   "dra": "And we have believed and have known, that thou art the Christ, the Son of God.",
+   "ylt": "and we have believed, and we have known, that thou art the Christ, the Son of the living God.'",
+   "rv1909": "Y nosotros creemos y conocemos que tú eres el Cristo, el Hijo de Dios viviente.",
+   "scio": "Y nosotros hemos creído y conocido, que tú eres el Christo el Hijo de Dios.",
+   "blm": "Hemos creído y hemos conocido que tú eres el Cristo, el Hijo de Dios vivo»."
+  },
+  "70": {
+   "bsb": "Jesus answered them, “Have I not chosen you, the Twelve? Yet one of you is a devil!”",
+   "kjv": "Jesus answered them, Have not I chosen you twelve, and one of you is a devil?",
+   "web": "Jesus answered them, “Didn’t I choose you, the twelve, and one of you is a devil?”",
+   "dra": "Jesus answered them: Have not I chosen you twelve; and one of you is a devil?",
+   "ylt": "Jesus answered them, 'Did not I choose you — the twelve? and of you — one is a devil.",
+   "rv1909": "Jesús le respondió: ¿No he escogido yo á vosotros doce, y uno de vosotros es diablo?",
+   "scio": "Jesús les respondió: ¿No os escogí yo á los doce, y el uno de vosotros es diablo?",
+   "blm": "Jesús les respondió: «¿No os he elegido a vosotros, los doce, y uno de vosotros es un demonio?»"
+  },
+  "71": {
+   "bsb": "He was speaking about Judas, the son of Simon Iscariot. For although Judas was one of the Twelve, he was later to betray Jesus.",
+   "kjv": "He spake of Judas Iscariot [the son] of Simon: for he it was that should betray him, being one of the twelve.",
+   "web": "Now he spoke of Judas, the son of Simon Iscariot, for it was he who would betray him, being one of the twelve.",
+   "dra": "Now he meant Judas Iscariot, the son of Simon: for this same was about to betray him, whereas he was one of the twelve.",
+   "ylt": "And he spake of Judas, Simon's [son], Iscariot, for he was about to deliver him up, being one of the twelve.",
+   "rv1909": "Y hablaba de Judas Iscariote, [hijo] de Simón, porque éste era el que le había de entregar, el cual era uno de los doce.",
+   "scio": "Y hablaba de Júdas Iscariotes, hijo de Simón: porque éste, que era uno de los doce, le había de entregar.",
+   "blm": "Ahora bien, hablaba de Judas, hijo de Simón Iscariote, porque era él quien lo iba a traicionar, siendo uno de los doce."
+  }
+ }
+}

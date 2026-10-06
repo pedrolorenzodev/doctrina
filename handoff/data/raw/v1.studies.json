@@ -1,0 +1,435 @@
+{
+  "studies": [
+    {
+      "traditionId": "catholic",
+      "position": {
+        "summary": {
+          "es": "El pan y el vino se convierten realmente en el cuerpo y la sangre de Cristo. Permanecen las apariencias; cambia la sustancia. La Iglesia llama a este cambio transubstanciación.",
+          "en": "The bread and wine truly become the body and blood of Christ. The appearances remain; the substance changes. The Church calls this change transubstantiation."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "Cristo está contenido en la Eucaristía verdadera, real y sustancialmente: cuerpo, sangre, alma y divinidad.",
+              "en": "Christ is contained in the Eucharist truly, really and substantially: body, blood, soul and divinity."
+            },
+            "authority": {
+              "level": "dogma"
+            },
+            "citations": [
+              {
+                "sourceId": "trent",
+                "locator": {
+                  "es": "Sesión XIII (1551), Decreto sobre la Eucaristía, canon 1",
+                  "en": "Session XIII (1551), Decree on the Eucharist, canon 1"
+                },
+                "text": {
+                  "es": "Si alguno negare que en el santísimo sacramento de la Eucaristía se contienen verdadera, real y sustancialmente el cuerpo y la sangre juntamente con el alma y la divinidad de nuestro Señor Jesucristo, y por consiguiente Cristo entero; sino que dijere que solo está en él como en señal, o en figura, o por su virtud; sea anatema.",
+                  "en": "If any one denieth, that, in the sacrament of the most holy Eucharist, are contained truly, really, and substantially, the body and blood together with the soul and divinity of our Lord Jesus Christ, and consequently the whole Christ; but saith that He is only therein as in a sign, or in figure, or virtue; let him be anathema."
+                },
+                "originalLanguage": "la"
+              },
+              {
+                "sourceId": "ccc",
+                "locator": {
+                  "es": "§1374",
+                  "en": "§1374"
+                },
+                "text": {
+                  "es": "En el santísimo sacramento de la Eucaristía están «contenidos verdadera, real y sustancialmente el Cuerpo y la Sangre junto con el alma y la divinidad de nuestro Señor Jesucristo, y, por consiguiente, Cristo entero».",
+                  "en": "In the most blessed sacrament of the Eucharist 'the body and blood, together with the soul and divinity, of our Lord Jesus Christ and, therefore, the whole Christ is truly, really, and substantially contained.'"
+                },
+                "url": "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html"
+              }
+            ]
+          },
+          {
+            "text": {
+              "es": "Por la consagración, toda la sustancia del pan se convierte en la sustancia del cuerpo de Cristo, y toda la sustancia del vino en la de su sangre.",
+              "en": "By the consecration, the whole substance of the bread is converted into the substance of Christ's body, and the whole substance of the wine into that of his blood."
+            },
+            "citations": [
+              {
+                "sourceId": "trent",
+                "locator": {
+                  "es": "Sesión XIII, Decreto sobre la Eucaristía, cap. 4",
+                  "en": "Session XIII, Decree on the Eucharist, ch. 4"
+                },
+                "text": {
+                  "es": "Por la consagración del pan y del vino se realiza la conversión de toda la sustancia del pan en la sustancia del cuerpo de Cristo nuestro Señor, y de toda la sustancia del vino en la sustancia de su sangre; conversión que la santa Iglesia Católica llama, con propiedad y exactitud, transubstanciación.",
+                  "en": "By the consecration of the bread and of the wine, a conversion is made of the whole substance of the bread into the substance of the body of Christ our Lord, and of the whole substance of the wine into the substance of His blood; which conversion is, by the holy Catholic Church, suitably and properly called Transubstantiation."
+                },
+                "originalLanguage": "la"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "Las palabras de Jesús («esto es mi cuerpo», «mi carne es verdadera comida») se leen en sentido literal, como las entendieron los cristianos desde el siglo II.",
+              "en": "Jesus' words ('this is my body', 'my flesh is real food') are read literally, as Christians understood them from the second century."
+            },
+            "citations": [
+              {
+                "sourceId": "ignatius-smyrnaeans",
+                "locator": {
+                  "es": "7:1",
+                  "en": "7:1"
+                },
+                "text": {
+                  "es": "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, que padeció por nuestros pecados y que el Padre, en su bondad, resucitó.",
+                  "en": "They abstain from the Eucharist and from prayer, because they confess not the Eucharist to be the flesh of our Saviour Jesus Christ, which suffered for our sins, and which the Father, of His goodness, raised up again."
+                },
+                "originalLanguage": "grc"
+              },
+              {
+                "sourceId": "justin-first-apology",
+                "locator": {
+                  "es": "cap. 66",
+                  "en": "ch. 66"
+                },
+                "text": {
+                  "es": "No recibimos estas cosas como pan común ni bebida común, sino que […] se nos ha enseñado que el alimento bendecido por la oración de su palabra […] es la carne y la sangre de aquel Jesús que se hizo carne.",
+                  "en": "Not as common bread and common drink do we receive these; but […] we have been taught that the food which is blessed by the prayer of His word […] is the flesh and blood of that Jesus who was made flesh."
+                },
+                "originalLanguage": "grc"
+              }
+            ]
+          }
+        ]
+      },
+      "keyTerms": [
+        {
+          "term": {
+            "es": "Transubstanciación",
+            "en": "Transubstantiation"
+          },
+          "meaning": {
+            "es": "Cambio de toda la sustancia del pan y del vino en la del cuerpo y la sangre de Cristo, permaneciendo solo las apariencias (especies) del pan y del vino.",
+            "en": "Change of the whole substance of bread and wine into that of Christ's body and blood, with only the appearances (species) of bread and wine remaining."
+          }
+        }
+      ]
+    },
+    {
+      "traditionId": "orthodox",
+      "position": {
+        "summary": {
+          "es": "El pan y el vino se transforman verdaderamente en el cuerpo y la sangre de Cristo. La Iglesia confiesa el hecho como misterio y no lo define con una teoría filosófica.",
+          "en": "The bread and wine are truly changed into the body and blood of Christ. The Church confesses the fact as a mystery and does not define it with a philosophical theory."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "Después de la consagración, el pan es transmutado en el mismo cuerpo del Señor y el vino en su misma sangre.",
+              "en": "After the consecration, the bread is changed into the very body of the Lord and the wine into his very blood."
+            },
+            "authority": {
+              "level": "confession"
+            },
+            "citations": [
+              {
+                "sourceId": "dositheus",
+                "locator": {
+                  "es": "Decreto 17",
+                  "en": "Decree 17"
+                },
+                "text": {
+                  "es": "Creemos que […] después de la consagración del pan y del vino, el pan es transmutado, transubstanciado, convertido y transformado en el verdadero cuerpo mismo del Señor […] y el vino es convertido y transubstanciado en la verdadera sangre misma del Señor.",
+                  "en": "We believe that […] after the consecration of the bread and of the wine, the bread is transmuted, transubstantiated, converted and transformed into the true Body Itself of the Lord […] and the wine is converted and transubstantiated into the true Blood Itself of the Lord."
+                },
+                "originalLanguage": "grc"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "El testimonio unánime de los Padres y de la liturgia: la Iglesia siempre adoró la Eucaristía como el cuerpo de Cristo, sin necesidad de explicar el «cómo».",
+              "en": "The unanimous witness of the Fathers and the liturgy: the Church always worshipped the Eucharist as Christ's body, without needing to explain the 'how'."
+            },
+            "citations": [
+              {
+                "sourceId": "ignatius-smyrnaeans",
+                "locator": {
+                  "es": "7:1",
+                  "en": "7:1"
+                },
+                "text": {
+                  "es": "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo.",
+                  "en": "They abstain from the Eucharist and from prayer, because they confess not the Eucharist to be the flesh of our Saviour Jesus Christ."
+                },
+                "originalLanguage": "grc"
+              }
+            ]
+          }
+        ]
+      },
+      "keyTerms": [
+        {
+          "term": {
+            "es": "Metousiosis",
+            "en": "Metousiosis"
+          },
+          "meaning": {
+            "es": "Término griego usado en 1672 para «cambio de sustancia». La teología ortodoxa lo acepta como descripción, pero rechaza atarse a la metafísica aristotélica de sustancia y accidentes.",
+            "en": "Greek term used in 1672 for 'change of substance'. Orthodox theology accepts it as a description but refuses to bind itself to the Aristotelian metaphysics of substance and accidents."
+          }
+        }
+      ]
+    },
+    {
+      "traditionId": "lutheran",
+      "position": {
+        "summary": {
+          "es": "El verdadero cuerpo y la verdadera sangre de Cristo están realmente presentes «en, con y bajo» el pan y el vino, y se reciben con la boca. El pan sigue siendo pan.",
+          "en": "Christ's true body and blood are really present 'in, with and under' the bread and wine, and are received with the mouth. The bread remains bread."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "El cuerpo y la sangre de Cristo están verdaderamente presentes y se distribuyen a los que comen la Cena.",
+              "en": "Christ's body and blood are truly present and distributed to those who eat the Supper."
+            },
+            "authority": {
+              "level": "confession"
+            },
+            "citations": [
+              {
+                "sourceId": "augsburg",
+                "locator": {
+                  "es": "Artículo X",
+                  "en": "Article X"
+                },
+                "text": {
+                  "es": "De la Cena del Señor enseñan que el cuerpo y la sangre de Cristo están verdaderamente presentes y se distribuyen a los que comen en la Cena del Señor; y rechazan a los que enseñan lo contrario.",
+                  "en": "Of the Supper of the Lord they teach that the Body and Blood of Christ are truly present, and are distributed to those who eat the Supper of the Lord; and they reject those that teach otherwise."
+                },
+                "originalLanguage": "la"
+              },
+              {
+                "sourceId": "small-catechism",
+                "locator": {
+                  "es": "El Sacramento del Altar, pregunta 1",
+                  "en": "The Sacrament of the Altar, question 1"
+                },
+                "text": {
+                  "es": "Es el verdadero cuerpo y la verdadera sangre de nuestro Señor Jesucristo bajo el pan y el vino, para que nosotros los cristianos lo comamos y bebamos, instituido por Cristo mismo.",
+                  "en": "It is the true body and blood of our Lord Jesus Christ under the bread and wine, for us Christians to eat and to drink, instituted by Christ Himself."
+                },
+                "originalLanguage": "de"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "«Esto es mi cuerpo» se toma al pie de la letra, pero sin especular sobre un cambio de sustancia: la Escritura afirma la presencia, no la transubstanciación.",
+              "en": "'This is my body' is taken at face value, but without speculating about a change of substance: Scripture affirms the presence, not transubstantiation."
+            },
+            "citations": [
+              {
+                "sourceId": "rv1909",
+                "locator": {
+                  "es": "1 Corintios 10:16",
+                  "en": "1 Corinthians 10:16"
+                },
+                "text": {
+                  "es": "El pan que partimos, ¿no es la comunión del cuerpo de Cristo?",
+                  "en": "Is not the bread that we break a participation in the body of Christ?"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "keyTerms": [
+        {
+          "term": {
+            "es": "Unión sacramental",
+            "en": "Sacramental union"
+          },
+          "meaning": {
+            "es": "El cuerpo de Cristo y el pan están unidos en el sacramento sin que uno se convierta en el otro. La fórmula clásica es «en, con y bajo».",
+            "en": "Christ's body and the bread are united in the sacrament without one becoming the other. The classic formula is 'in, with and under'."
+          }
+        }
+      ]
+    },
+    {
+      "traditionId": "reformed",
+      "position": {
+        "summary": {
+          "es": "Cristo está real pero espiritualmente presente para la fe de los creyentes. El pan y el vino no cambian; quien recibe con fe se alimenta de Cristo crucificado.",
+          "en": "Christ is really but spiritually present to the faith of believers. The bread and wine do not change; whoever receives in faith feeds on Christ crucified."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "Los que reciben dignamente se alimentan de Cristo de verdad, pero espiritualmente y no de manera carnal o corporal.",
+              "en": "Worthy receivers really feed on Christ, yet spiritually and not carnally or corporally."
+            },
+            "authority": {
+              "level": "confession"
+            },
+            "citations": [
+              {
+                "sourceId": "westminster",
+                "locator": {
+                  "es": "cap. 29, §7",
+                  "en": "ch. 29, §7"
+                },
+                "text": {
+                  "es": "Los que reciben dignamente, al participar exteriormente de los elementos visibles de este sacramento, también reciben interiormente por la fe, real y verdaderamente, aunque no de manera carnal y corporal sino espiritual, a Cristo crucificado y todos los beneficios de su muerte: no estando entonces el cuerpo y la sangre de Cristo corporal o carnalmente en, con o bajo el pan y el vino, pero sí tan real, aunque espiritualmente, presentes a la fe de los creyentes en esa ordenanza como los elementos mismos lo están a sus sentidos exteriores.",
+                  "en": "Worthy receivers, outwardly partaking of the visible elements in this sacrament, do then also inwardly by faith, really and indeed, yet not carnally and corporally, but spiritually, receive and feed upon Christ crucified, and all benefits of his death: the body and blood of Christ being then not corporally or carnally in, with, or under the bread and wine; yet as really, but spiritually, present to the faith of believers in that ordinance, as the elements themselves are to their outward senses."
+                },
+                "originalLanguage": "en"
+              }
+            ]
+          },
+          {
+            "text": {
+              "es": "La transubstanciación se rechaza como contraria a la Escritura y a la razón.",
+              "en": "Transubstantiation is rejected as contrary to Scripture and reason."
+            },
+            "citations": [
+              {
+                "sourceId": "westminster",
+                "locator": {
+                  "es": "cap. 29, §6",
+                  "en": "ch. 29, §6"
+                },
+                "text": {
+                  "es": "La doctrina que sostiene un cambio de la sustancia del pan y del vino en la sustancia del cuerpo y la sangre de Cristo (comúnmente llamada transubstanciación) por la consagración de un sacerdote o de cualquier otro modo, repugna no solo a la Escritura sino aun al sentido común y a la razón.",
+                  "en": "That doctrine which maintains a change of the substance of bread and wine, into the substance of Christ's body and blood (commonly called transubstantiation) by consecration of a priest, or by any other way, is repugnant, not to Scripture alone, but even to common sense and reason."
+                },
+                "originalLanguage": "en"
+              },
+              {
+                "sourceId": "heidelberg",
+                "locator": {
+                  "es": "Pregunta 78",
+                  "en": "Question 78"
+                },
+                "text": {
+                  "es": "¿Se convierten entonces el pan y el vino en el verdadero cuerpo y sangre de Cristo? No; […] el pan de la Cena no se convierte en el cuerpo mismo de Cristo, aunque conforme a la naturaleza y uso de los sacramentos se le llame cuerpo de Cristo.",
+                  "en": "Do then the bread and wine become the very body and blood of Christ? No; […] the bread in the Lord's Supper is not changed into the very body of Christ, though agreeably to the nature and properties of sacraments it is called the body of Christ."
+                },
+                "originalLanguage": "de"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "El cuerpo glorificado de Cristo está en el cielo; el Espíritu une al creyente con Él en la Cena. «Esto es mi cuerpo» es lenguaje sacramental, como «la roca era Cristo».",
+              "en": "Christ's glorified body is in heaven; the Spirit unites the believer with him in the Supper. 'This is my body' is sacramental language, like 'the rock was Christ'."
+            },
+            "citations": [
+              {
+                "sourceId": "rv1909",
+                "locator": {
+                  "es": "1 Corintios 10:16",
+                  "en": "1 Corinthians 10:16"
+                },
+                "text": {
+                  "es": "La copa de bendición que bendecimos, ¿no es la comunión de la sangre de Cristo?",
+                  "en": "Is not the cup of blessing that we bless a participation in the blood of Christ?"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "keyTerms": []
+    },
+    {
+      "traditionId": "baptist",
+      "position": {
+        "summary": {
+          "es": "La Cena es un acto simbólico de obediencia: la iglesia recuerda la muerte del Redentor y anticipa su regreso. El pan y el vino son símbolos.",
+          "en": "The Supper is a symbolic act of obedience: the church remembers the Redeemer's death and anticipates his return. The bread and wine are symbols."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "La Cena del Señor es un acto simbólico que memoriza la muerte de Cristo.",
+              "en": "The Lord's Supper is a symbolic act memorializing Christ's death."
+            },
+            "authority": {
+              "level": "confession"
+            },
+            "citations": [
+              {
+                "sourceId": "baptist-faith-message",
+                "locator": {
+                  "es": "Artículo VII, «Bautismo y Cena del Señor»",
+                  "en": "Article VII, “Baptism and the Lord's Supper”"
+                },
+                "text": {
+                  "es": "La Cena del Señor es un acto simbólico de obediencia por el cual los miembros de la iglesia, al participar del pan y del fruto de la vid, conmemoran la muerte del Redentor y anticipan su segunda venida.",
+                  "en": "The Lord's Supper is a symbolic act of obedience whereby members of the church, through partaking of the bread and the fruit of the vine, memorialize the death of the Redeemer and anticipate His second coming."
+                },
+                "url": "https://bfm.sbc.net/bfm2000/#vii"
+              }
+            ]
+          },
+          {
+            "text": {
+              "es": "Los bautistas reformados (1689) sostienen, como Westminster, una presencia espiritual real para la fe.",
+              "en": "Reformed Baptists (1689) hold, like Westminster, a real spiritual presence to faith."
+            },
+            "citations": [
+              {
+                "sourceId": "london-baptist-1689",
+                "locator": {
+                  "es": "cap. 30, §7",
+                  "en": "ch. 30, §7"
+                },
+                "text": {
+                  "es": "Los que reciben dignamente […] también reciben interiormente por la fe, real y verdaderamente, aunque no de manera carnal y corporal sino espiritual, a Cristo crucificado y todos los beneficios de su muerte.",
+                  "en": "Worthy receivers […] do then also inwardly by faith, really and indeed, yet not carnally and corporally, but spiritually receive, and feed upon Christ crucified, and all the benefits of his death."
+                },
+                "originalLanguage": "en"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "«Haced esto en memoria de mí»: el propósito declarado de la Cena es recordar. Jesús habló en figuras muchas veces («yo soy la puerta», «yo soy la vid»).",
+              "en": "'Do this in remembrance of me': the Supper's stated purpose is to remember. Jesus often spoke in figures ('I am the door', 'I am the vine')."
+            },
+            "citations": [
+              {
+                "sourceId": "rv1909",
+                "locator": {
+                  "es": "1 Corintios 11:24–25",
+                  "en": "1 Corinthians 11:24–25"
+                },
+                "text": {
+                  "es": "Haced esto en memoria de mí.",
+                  "en": "Do this in remembrance of Me."
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "keyTerms": []
+    }
+  ],
+  "commonGround": {
+    "es": "Todas las tradiciones celebran la Cena que Jesús instituyó, la consideran un mandato suyo y afirman que en ella el creyente recibe a Cristo y sus beneficios. Discrepan en el modo de esa presencia y en qué le ocurre al pan y al vino.",
+    "en": "Every tradition celebrates the Supper Jesus instituted, treats it as his command, and affirms that in it the believer receives Christ and his benefits. They disagree on the mode of that presence and on what happens to the bread and wine."
+  },
+  "question": {
+    "es": "¿Qué pasa con el pan y el vino en la Cena del Señor?",
+    "en": "What happens to the bread and wine in the Lord's Supper?"
+  }
+}

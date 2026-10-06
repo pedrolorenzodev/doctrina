@@ -1,0 +1,1035 @@
+[
+ {
+  "id": "didache",
+  "kind": "church-father",
+  "title": {
+   "es": "Didaché (Doctrina de los Doce Apóstoles)",
+   "en": "Didache (Teaching of the Twelve Apostles)"
+  },
+  "author": {
+   "es": "Anónimo",
+   "en": "Anonymous"
+  },
+  "date": "c. 50–120",
+  "recognizedBy": [],
+  "edition": {
+   "name": "ANF vol. 7 (Roberts & Donaldson)",
+   "year": 1885,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/0714.htm"
+  },
+  "year": 50,
+  "yearEnd": 120,
+  "approx": true
+ },
+ {
+  "id": "justin-dialogue",
+  "kind": "church-father",
+  "title": {
+   "es": "Diálogo con Trifón",
+   "en": "Dialogue with Trypho"
+  },
+  "author": {
+   "es": "Justino Mártir",
+   "en": "Justin Martyr"
+  },
+  "date": "c. 155–160",
+  "recognizedBy": [],
+  "edition": {
+   "name": "ANF vol. 1 (Roberts & Donaldson)",
+   "year": 1885,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/0128.htm"
+  },
+  "year": 155,
+  "yearEnd": 160,
+  "approx": true
+ },
+ {
+  "id": "irenaeus-against-heresies",
+  "kind": "church-father",
+  "title": {
+   "es": "Contra las herejías",
+   "en": "Against Heresies"
+  },
+  "author": {
+   "es": "Ireneo de Lyon",
+   "en": "Irenaeus of Lyon"
+  },
+  "date": "c. 180",
+  "recognizedBy": [],
+  "edition": {
+   "name": "ANF vol. 1 (Roberts & Rambaut)",
+   "year": 1885,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/0103.htm"
+  },
+  "year": 180,
+  "approx": true
+ },
+ {
+  "id": "tertullian-against-marcion",
+  "kind": "church-father",
+  "title": {
+   "es": "Contra Marción",
+   "en": "Against Marcion"
+  },
+  "author": {
+   "es": "Tertuliano",
+   "en": "Tertullian"
+  },
+  "date": "c. 207–208",
+  "recognizedBy": [],
+  "edition": {
+   "name": "ANF vol. 3 (Holmes)",
+   "year": 1885,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/03124.htm"
+  },
+  "year": 207,
+  "yearEnd": 208,
+  "approx": true
+ },
+ {
+  "id": "cyril-jerusalem-mystagogical",
+  "kind": "church-father",
+  "title": {
+   "es": "Catequesis mistagógicas (Catequesis 19–23)",
+   "en": "Mystagogical Catecheses (Catechetical Lectures 19–23)"
+  },
+  "author": {
+   "es": "Cirilo de Jerusalén (atribuido)",
+   "en": "Cyril of Jerusalem (attributed)"
+  },
+  "date": "c. 350–390",
+  "recognizedBy": [],
+  "edition": {
+   "name": "NPNF2 vol. 7 (Gifford)",
+   "year": 1890,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/310123.htm"
+  },
+  "year": 350,
+  "yearEnd": 390,
+  "approx": true
+ },
+ {
+  "id": "ambrose-on-the-mysteries",
+  "kind": "church-father",
+  "title": {
+   "es": "Sobre los misterios",
+   "en": "On the Mysteries"
+  },
+  "author": {
+   "es": "Ambrosio de Milán",
+   "en": "Ambrose of Milan"
+  },
+  "date": "c. 387–391",
+  "recognizedBy": [],
+  "edition": {
+   "name": "NPNF2 vol. 10 (de Romestin)",
+   "year": 1890,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/3405.htm"
+  },
+  "year": 387,
+  "yearEnd": 391,
+  "approx": true
+ },
+ {
+  "id": "chrysostom-hom-hebrews",
+  "kind": "church-father",
+  "title": {
+   "es": "Homilías sobre Hebreos",
+   "en": "Homilies on Hebrews"
+  },
+  "author": {
+   "es": "Juan Crisóstomo",
+   "en": "John Chrysostom"
+  },
+  "date": "c. 403–404",
+  "recognizedBy": [],
+  "edition": {
+   "name": "NPNF1 vol. 14 (Gardiner)",
+   "year": 1890,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/240217.htm"
+  },
+  "year": 403,
+  "yearEnd": 404,
+  "approx": true
+ },
+ {
+  "id": "augustine-on-christian-doctrine",
+  "kind": "church-father",
+  "title": {
+   "es": "Sobre la doctrina cristiana",
+   "en": "On Christian Doctrine"
+  },
+  "author": {
+   "es": "Agustín de Hipona",
+   "en": "Augustine of Hippo"
+  },
+  "date": "c. 396–397 (Books I–III.35)",
+  "recognizedBy": [],
+  "edition": {
+   "name": "NPNF1 vol. 2 (Shaw)",
+   "year": 1890,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/12023.htm"
+  },
+  "year": 396,
+  "yearEnd": 397,
+  "approx": true
+ },
+ {
+  "id": "theodoret-eranistes",
+  "kind": "church-father",
+  "title": {
+   "es": "Eranistes (Diálogos)",
+   "en": "Eranistes (Dialogues)"
+  },
+  "author": {
+   "es": "Teodoreto de Ciro",
+   "en": "Theodoret of Cyrus"
+  },
+  "date": "c. 447",
+  "recognizedBy": [],
+  "edition": {
+   "name": "NPNF2 vol. 3 (Jackson)",
+   "year": 1890,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/27032.htm"
+  },
+  "year": 447,
+  "approx": true
+ },
+ {
+  "id": "john-damascus-exact-exposition",
+  "kind": "church-father",
+  "title": {
+   "es": "Exposición exacta de la fe ortodoxa",
+   "en": "An Exact Exposition of the Orthodox Faith"
+  },
+  "author": {
+   "es": "Juan Damasceno",
+   "en": "John of Damascus"
+  },
+  "date": "c. 743",
+  "recognizedBy": [],
+  "edition": {
+   "name": "NPNF2 vol. 9 (Salmond)",
+   "year": 1890,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/33044.htm"
+  },
+  "year": 743,
+  "approx": true
+ },
+ {
+  "id": "chrysostom-hom-john",
+  "kind": "church-father",
+  "title": {
+   "es": "Homilías sobre el Evangelio de Juan",
+   "en": "Homilies on the Gospel of John"
+  },
+  "author": {
+   "es": "Juan Crisóstomo",
+   "en": "John Chrysostom"
+  },
+  "date": "c. 391",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Nicene and Post-Nicene Fathers, First Series, Vol. 14 (rev. Kevin Knight, New Advent)",
+   "translator": "Charles Marriott",
+   "year": 1889,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/2401.htm"
+  },
+  "year": 391,
+  "approx": true
+ },
+ {
+  "id": "augustine-tractates-john",
+  "kind": "church-father",
+  "title": {
+   "es": "Tratados sobre el Evangelio de Juan",
+   "en": "Tractates on the Gospel of John"
+  },
+  "author": {
+   "es": "Agustín de Hipona",
+   "en": "Augustine of Hippo"
+  },
+  "date": "c. 406-420",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Nicene and Post-Nicene Fathers, First Series, Vol. 7 (rev. Kevin Knight, New Advent)",
+   "translator": "John Gibb",
+   "year": 1888,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/1701.htm"
+  },
+  "year": 406,
+  "yearEnd": 420,
+  "approx": true
+ },
+ {
+  "id": "augustine-contra-faustum",
+  "kind": "church-father",
+  "title": {
+   "es": "Réplica a Fausto el maniqueo",
+   "en": "Reply to Faustus the Manichaean"
+  },
+  "author": {
+   "es": "Agustín de Hipona",
+   "en": "Augustine of Hippo"
+  },
+  "date": "c. 400",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Nicene and Post-Nicene Fathers, First Series, Vol. 4 (rev. Kevin Knight, New Advent)",
+   "translator": "Richard Stothert",
+   "year": 1887,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/1406.htm"
+  },
+  "year": 400,
+  "approx": true
+ },
+ {
+  "id": "aquinas-summa",
+  "kind": "theologian",
+  "title": {
+   "es": "Suma teológica",
+   "en": "Summa Theologiae"
+  },
+  "author": {
+   "es": "Tomás de Aquino",
+   "en": "Thomas Aquinas"
+  },
+  "date": "1265-1274",
+  "recognizedBy": [
+   "catholic"
+  ],
+  "edition": {
+   "name": "Summa Theologica, 2nd rev. ed. (Benziger), New Advent",
+   "translator": "Fathers of the English Dominican Province",
+   "year": 1920,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/summa/"
+  },
+  "year": 1265,
+  "yearEnd": 1274
+ },
+ {
+  "id": "ecclesia-de-eucharistia",
+  "kind": "papal",
+  "title": {
+   "es": "Ecclesia de Eucharistia (encíclica)",
+   "en": "Ecclesia de Eucharistia (encyclical)"
+  },
+  "author": {
+   "es": "Juan Pablo II",
+   "en": "John Paul II"
+  },
+  "date": "2003",
+  "recognizedBy": [
+   "catholic"
+  ],
+  "edition": {
+   "name": "Official vatican.va texts (English and Spanish)",
+   "year": 2003,
+   "license": "fair-use-excerpt",
+   "url": "https://www.vatican.va/content/john-paul-ii/es/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+  },
+  "year": 2003
+ },
+ {
+  "id": "florence-cantate-domino",
+  "kind": "council",
+  "title": {
+   "es": "Concilio de Florencia, Bula de unión con los coptos (Cantate Domino)",
+   "en": "Council of Florence, Bull of Union with the Copts (Cantate Domino)"
+  },
+  "author": {
+   "es": "Concilio de Florencia (Eugenio IV)",
+   "en": "Council of Florence (Eugene IV)"
+  },
+  "date": "1442",
+  "recognizedBy": [
+   "catholic"
+  ],
+  "edition": {
+   "name": "Decrees of the Ecumenical Councils, ed. N. P. Tanner (via papalencyclicals.net)",
+   "year": 1990,
+   "license": "fair-use-excerpt",
+   "url": "https://www.papalencyclicals.net/councils/ecum17.htm"
+  },
+  "year": 1442
+ },
+ {
+  "id": "liturgy-chrysostom",
+  "kind": "liturgy",
+  "title": {
+   "es": "Divina Liturgia de San Juan Crisóstomo",
+   "en": "Divine Liturgy of St John Chrysostom"
+  },
+  "author": {
+   "es": "Tradición bizantina (atribuida a San Juan Crisóstomo)",
+   "en": "Byzantine tradition (attributed to St John Chrysostom)"
+  },
+  "date": "c. 4th-5th c.; textus receptus later",
+  "recognizedBy": [
+   "orthodox",
+   "catholic"
+  ],
+  "edition": {
+   "name": "The Liturgies of SS. Mark, James, Clement, Chrysostom, and Basil, and the Church of Malabar (7th ed.)",
+   "translator": "J. M. Neale and R. F. Littledale",
+   "year": 1890,
+   "license": "public-domain",
+   "url": "https://archive.org/details/liturgiesofssmar00cathiala"
+  },
+  "year": 0,
+  "approx": true
+ },
+ {
+  "id": "liturgy-basil",
+  "kind": "liturgy",
+  "title": {
+   "es": "Divina Liturgia de San Basilio el Grande",
+   "en": "Divine Liturgy of St Basil the Great"
+  },
+  "author": {
+   "es": "Atribuida a San Basilio el Grande",
+   "en": "Attributed to St Basil the Great"
+  },
+  "date": "c. 4th c.",
+  "recognizedBy": [
+   "orthodox",
+   "catholic"
+  ],
+  "edition": {
+   "name": "The Liturgies of SS. Mark, James, Clement, Chrysostom, and Basil, and the Church of Malabar (7th ed.)",
+   "translator": "J. M. Neale and R. F. Littledale",
+   "year": 1890,
+   "license": "public-domain",
+   "url": "https://archive.org/details/liturgiesofssmar00cathiala"
+  },
+  "year": 0,
+  "approx": true
+ },
+ {
+  "id": "hapgood-service-book",
+  "kind": "liturgy",
+  "title": {
+   "es": "Libro de servicio de la Santa Iglesia Ortodoxa Católica Apostólica",
+   "en": "Service Book of the Holy Orthodox-Catholic Apostolic Church"
+  },
+  "author": {
+   "es": "Isabel F. Hapgood (comp. y trad.)",
+   "en": "Isabel F. Hapgood (comp. and trans.)"
+  },
+  "date": "1906; rev. 1922",
+  "recognizedBy": [
+   "orthodox"
+  ],
+  "edition": {
+   "name": "Service Book of the Holy Orthodox-Catholic Apostolic Church, revised edition (New York: Association Press)",
+   "translator": "Isabel Florence Hapgood",
+   "year": 1922,
+   "license": "public-domain",
+   "url": "https://archive.org/details/03510459.emory.edu"
+  },
+  "year": 1906
+ },
+ {
+  "id": "cabasilas-divine-liturgy",
+  "kind": "theologian",
+  "title": {
+   "es": "Comentario a la Divina Liturgia",
+   "en": "A Commentary on the Divine Liturgy"
+  },
+  "author": {
+   "es": "Nicolás Cabasilas",
+   "en": "Nicholas Cabasilas"
+  },
+  "date": "c. 1350",
+  "recognizedBy": [
+   "orthodox"
+  ],
+  "edition": {
+   "name": "A Commentary on the Divine Liturgy (London: SPCK)",
+   "translator": "J. M. Hussey and P. A. McNulty",
+   "year": 1960,
+   "license": "fair-use-excerpt"
+  },
+  "year": 1350,
+  "approx": true
+ },
+ {
+  "id": "philaret-longer-catechism",
+  "kind": "catechism",
+  "title": {
+   "es": "Catecismo extenso de la Iglesia ortodoxa, católica y oriental",
+   "en": "The Longer Catechism of the Orthodox, Catholic, Eastern Church"
+  },
+  "author": {
+   "es": "San Filareto (Drozdov) de Moscú",
+   "en": "St Philaret (Drozdov) of Moscow"
+  },
+  "date": "1830 (approved by the Russian Holy Synod)",
+  "recognizedBy": [
+   "orthodox"
+  ],
+  "edition": {
+   "name": "The Doctrine of the Russian Church (Aberdeen), reprinted in P. Schaff, The Creeds of Christendom, vol. 2 (1877)",
+   "translator": "R. W. Blackmore",
+   "year": 1845,
+   "license": "public-domain",
+   "url": "http://www.pravoslavieto.com/docs/eng/Orthodox_Catechism_of_Philaret.htm"
+  },
+  "year": 1830
+ },
+ {
+  "id": "mogila-orthodox-confession",
+  "kind": "confession",
+  "title": {
+   "es": "Confesión ortodoxa de la Iglesia católica y apostólica oriental",
+   "en": "The Orthodox Confession of the Catholic and Apostolic Eastern Church"
+  },
+  "author": {
+   "es": "San Pedro Mogila de Kiev (revisada por Meletios Syrigos)",
+   "en": "St Peter Mogila of Kiev (revised by Meletius Syrigos)"
+  },
+  "date": "1640; approved 1642-1643",
+  "recognizedBy": [
+   "orthodox"
+  ],
+  "edition": {
+   "name": "The Orthodox Confession of the Catholic and Apostolic Eastern Church (18th-century English translation, as reproduced online)",
+   "license": "public-domain",
+   "url": "https://maksimologija.org/mogila-orthodox-confession/"
+  },
+  "year": 1640
+ },
+ {
+  "id": "cyprian-on-the-lapsed",
+  "kind": "church-father",
+  "title": {
+   "es": "Sobre los caídos",
+   "en": "On the Lapsed"
+  },
+  "author": {
+   "es": "San Cipriano de Cartago",
+   "en": "St Cyprian of Carthage"
+  },
+  "date": "c. 251",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Ante-Nicene Fathers, vol. 5",
+   "translator": "Ernest Wallis",
+   "year": 1886,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/050703.htm"
+  },
+  "year": 251,
+  "approx": true
+ },
+ {
+  "id": "apostolic-constitutions",
+  "kind": "church-father",
+  "title": {
+   "es": "Constituciones apostólicas",
+   "en": "Apostolic Constitutions"
+  },
+  "author": {
+   "es": "Compilación siria anónima",
+   "en": "Anonymous Syrian compilation"
+  },
+  "date": "c. 380",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Ante-Nicene Fathers, vol. 7",
+   "translator": "James Donaldson",
+   "year": 1886,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/07158.htm"
+  },
+  "year": 380,
+  "approx": true
+ },
+ {
+  "id": "augustine-merits-remission",
+  "kind": "church-father",
+  "title": {
+   "es": "Sobre los méritos y el perdón de los pecados, y el bautismo de los niños",
+   "en": "On the Merits and Remission of Sins, and on the Baptism of Infants"
+  },
+  "author": {
+   "es": "San Agustín de Hipona",
+   "en": "St Augustine of Hippo"
+  },
+  "date": "412",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Nicene and Post-Nicene Fathers, First Series, vol. 5",
+   "translator": "Peter Holmes and Robert Ernest Wallis, rev. Benjamin B. Warfield",
+   "year": 1887,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/15011.htm"
+  },
+  "year": 412
+ },
+ {
+  "id": "apology-augsburg",
+  "kind": "confession",
+  "title": {
+   "es": "Apología de la Confesión de Augsburgo",
+   "en": "Apology of the Augsburg Confession"
+  },
+  "author": {
+   "es": "Felipe Melanchthon",
+   "en": "Philip Melanchthon"
+  },
+  "date": "1531",
+  "recognizedBy": [
+   "lutheran"
+  ],
+  "edition": {
+   "name": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church",
+   "translator": "F. Bente and W. H. T. Dau",
+   "year": "1921",
+   "license": "public-domain",
+   "url": "https://bookofconcord.org/defense/"
+  },
+  "year": 1531
+ },
+ {
+  "id": "smalcald-articles",
+  "kind": "confession",
+  "title": {
+   "es": "Artículos de Esmalcalda",
+   "en": "Smalcald Articles"
+  },
+  "author": {
+   "es": "Martín Lutero",
+   "en": "Martin Luther"
+  },
+  "date": "1537",
+  "recognizedBy": [
+   "lutheran"
+  ],
+  "edition": {
+   "name": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church",
+   "translator": "F. Bente and W. H. T. Dau",
+   "year": "1921",
+   "license": "public-domain",
+   "url": "https://bookofconcord.org/smalcald-articles/"
+  },
+  "year": 1537
+ },
+ {
+  "id": "large-catechism",
+  "kind": "catechism",
+  "title": {
+   "es": "Catecismo Mayor",
+   "en": "Large Catechism"
+  },
+  "author": {
+   "es": "Martín Lutero",
+   "en": "Martin Luther"
+  },
+  "date": "1529",
+  "recognizedBy": [
+   "lutheran"
+  ],
+  "edition": {
+   "name": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church",
+   "translator": "F. Bente and W. H. T. Dau",
+   "year": "1921",
+   "license": "public-domain",
+   "url": "https://bookofconcord.org/large-catechism/"
+  },
+  "year": 1529
+ },
+ {
+  "id": "formula-concord-epitome",
+  "kind": "confession",
+  "title": {
+   "es": "Fórmula de Concordia, Epítome",
+   "en": "Formula of Concord, Epitome"
+  },
+  "author": {
+   "es": "Jakob Andreae, Martín Chemnitz y otros",
+   "en": "Jakob Andreae, Martin Chemnitz, et al."
+  },
+  "date": "1577",
+  "recognizedBy": [
+   "lutheran"
+  ],
+  "edition": {
+   "name": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church",
+   "translator": "F. Bente and W. H. T. Dau",
+   "year": "1921",
+   "license": "public-domain",
+   "url": "https://bookofconcord.org/epitome/"
+  },
+  "year": 1577
+ },
+ {
+  "id": "formula-concord-sd",
+  "kind": "confession",
+  "title": {
+   "es": "Fórmula de Concordia, Declaración Sólida",
+   "en": "Formula of Concord, Solid Declaration"
+  },
+  "author": {
+   "es": "Jakob Andreae, Martín Chemnitz y otros",
+   "en": "Jakob Andreae, Martin Chemnitz, et al."
+  },
+  "date": "1577",
+  "recognizedBy": [
+   "lutheran"
+  ],
+  "edition": {
+   "name": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church",
+   "translator": "F. Bente and W. H. T. Dau",
+   "year": "1921",
+   "license": "public-domain",
+   "url": "https://bookofconcord.org/solid-declaration/"
+  },
+  "year": 1577
+ },
+ {
+  "id": "luther-confession-lords-supper-1528",
+  "kind": "theologian",
+  "title": {
+   "es": "Confesión acerca de la Cena de Cristo (Gran Confesión)",
+   "en": "Confession Concerning Christ's Supper (Vom Abendmahl Christi, Bekenntnis)"
+  },
+  "author": {
+   "es": "Martín Lutero",
+   "en": "Martin Luther"
+  },
+  "date": "1528",
+  "recognizedBy": [
+   "lutheran"
+  ],
+  "edition": {
+   "name": "D. Martin Luthers Werke (Weimarer Ausgabe), vol. 26, pp. 261-509 (German original); paraphrased, no public-domain English translation used",
+   "year": "1909",
+   "license": "public-domain"
+  },
+  "year": 1528
+ },
+ {
+  "id": "marburg-articles",
+  "kind": "confession",
+  "title": {
+   "es": "Artículos de Marburgo",
+   "en": "Marburg Articles"
+  },
+  "author": {
+   "es": "Martín Lutero, Ulrico Zuinglio y otros",
+   "en": "Martin Luther, Ulrich Zwingli, et al."
+  },
+  "date": "1529",
+  "recognizedBy": [
+   "lutheran",
+   "reformed"
+  ],
+  "edition": {
+   "name": "German History in Documents and Images (German Historical Institute, Washington DC), from WA 30/3:160-171",
+   "translator": "Ellen Yutzy Glebe",
+   "license": "fair-use-excerpt",
+   "url": "https://germanhistorydocs.org/en/from-the-reformations-to-the-thirty-years-war-1500-1648/the-marburg-colloquy-the-marburg-articles-1529"
+  },
+  "year": 1529
+ },
+ {
+  "id": "belgic",
+  "kind": "confession",
+  "title": {
+   "es": "Confesión Belga",
+   "en": "Belgic Confession"
+  },
+  "author": {
+   "es": "Guido de Brès",
+   "en": "Guido de Brès"
+  },
+  "date": "1561 (rev. 1619)",
+  "recognizedBy": [
+   "reformed"
+  ],
+  "edition": {
+   "name": "Schaff, The Creeds of Christendom, vol. 3 (French and English)",
+   "year": 1877,
+   "license": "public-domain",
+   "url": "https://ccel.org/ccel/schaff/creeds3/creeds3.iv.viii.html"
+  },
+  "year": 1561
+ },
+ {
+  "id": "calvin-institutes",
+  "kind": "theologian",
+  "title": {
+   "es": "Institución de la religión cristiana",
+   "en": "Institutes of the Christian Religion"
+  },
+  "author": {
+   "es": "Juan Calvino",
+   "en": "John Calvin"
+  },
+  "date": "1559",
+  "recognizedBy": [
+   "reformed"
+  ],
+  "edition": {
+   "name": "Institutes of the Christian Religion",
+   "translator": "Henry Beveridge",
+   "year": 1845,
+   "license": "public-domain",
+   "url": "https://www.ccel.org/ccel/calvin/institutes"
+  },
+  "year": 1559
+ },
+ {
+  "id": "westminster-larger-catechism",
+  "kind": "catechism",
+  "title": {
+   "es": "Catecismo Mayor de Westminster",
+   "en": "Westminster Larger Catechism"
+  },
+  "author": {
+   "es": "Asamblea de Westminster",
+   "en": "Westminster Assembly"
+  },
+  "date": "1647",
+  "recognizedBy": [
+   "reformed"
+  ],
+  "edition": {
+   "name": "Orthodox Presbyterian Church text",
+   "license": "public-domain",
+   "url": "https://www.opc.org/lc.html"
+  },
+  "year": 1647
+ },
+ {
+  "id": "augustine-letters",
+  "kind": "church-father",
+  "title": {
+   "es": "Cartas",
+   "en": "Letters"
+  },
+  "author": {
+   "es": "Agustín de Hipona",
+   "en": "Augustine of Hippo"
+  },
+  "date": "c. 386-430",
+  "recognizedBy": [],
+  "edition": {
+   "name": "NPNF, First Series, vol. 1",
+   "translator": "J. G. Cunningham",
+   "year": 1886,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/1102.htm"
+  },
+  "year": 386,
+  "yearEnd": 430,
+  "approx": true
+ },
+ {
+  "id": "athanasius-on-the-incarnation",
+  "kind": "church-father",
+  "title": {
+   "es": "Sobre la Encarnación del Verbo",
+   "en": "On the Incarnation of the Word"
+  },
+  "author": {
+   "es": "Atanasio de Alejandría",
+   "en": "Athanasius of Alexandria"
+  },
+  "date": "c. 318-337",
+  "recognizedBy": [],
+  "edition": {
+   "name": "NPNF, Second Series, vol. 4",
+   "translator": "Archibald Robertson",
+   "year": 1892,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/2802.htm"
+  },
+  "year": 318,
+  "yearEnd": 337,
+  "approx": true
+ },
+ {
+  "id": "chalcedon-definition",
+  "kind": "council",
+  "title": {
+   "es": "Definición de fe del Concilio de Calcedonia",
+   "en": "Definition of Faith of the Council of Chalcedon"
+  },
+  "author": {
+   "es": "Concilio de Calcedonia",
+   "en": "Council of Chalcedon"
+  },
+  "date": "451",
+  "recognizedBy": [
+   "catholic",
+   "orthodox",
+   "lutheran",
+   "reformed",
+   "baptist"
+  ],
+  "edition": {
+   "name": "NPNF, Second Series, vol. 14",
+   "translator": "Henry R. Percival",
+   "year": 1900,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/3811.htm"
+  },
+  "year": 451
+ },
+ {
+  "id": "abstract-of-principles",
+  "kind": "confession",
+  "title": {
+   "es": "Principios Abstractos",
+   "en": "Abstract of Principles"
+  },
+  "author": {
+   "es": "Basil Manly Jr. (Seminario Teológico Bautista del Sur)",
+   "en": "Basil Manly Jr. (Southern Baptist Theological Seminary)"
+  },
+  "date": "1858",
+  "recognizedBy": [
+   "baptist"
+  ],
+  "edition": {
+   "name": "Abstract of Principles (sbts.edu)",
+   "year": 1858,
+   "license": "public-domain",
+   "url": "https://www.sbts.edu/about/abstract/"
+  },
+  "year": 1858
+ },
+ {
+  "id": "new-hampshire-1833",
+  "kind": "confession",
+  "title": {
+   "es": "Confesión de Fe de New Hampshire",
+   "en": "New Hampshire Confession of Faith"
+  },
+  "author": {
+   "es": "John Newton Brown y la Convención Bautista de New Hampshire",
+   "en": "John Newton Brown and the New Hampshire Baptist Convention"
+  },
+  "date": "1833",
+  "recognizedBy": [
+   "baptist"
+  ],
+  "edition": {
+   "name": "New Hampshire Baptist Confession (gracegems.org transcription)",
+   "year": 1833,
+   "license": "public-domain",
+   "url": "https://www.gracegems.org/new_hampshire_baptist_confes.htm"
+  },
+  "year": 1833
+ },
+ {
+  "id": "augustine-contra-adimantum",
+  "kind": "church-father",
+  "title": {
+   "es": "Contra Adimanto, discípulo de Manes",
+   "en": "Against Adimantus, Disciple of Mani"
+  },
+  "author": {
+   "es": "Agustín de Hipona",
+   "en": "Augustine of Hippo"
+  },
+  "date": "c. 394",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Patrologia Latina 42 (Migne), Latin text on Wikisource",
+   "year": 1845,
+   "license": "public-domain",
+   "url": "https://la.wikisource.org/wiki/Contra_Adimantum_(ed._Migne)"
+  },
+  "year": 394,
+  "approx": true
+ },
+ {
+  "id": "augustine-expositions-psalms",
+  "kind": "church-father",
+  "title": {
+   "es": "Comentarios a los Salmos",
+   "en": "Expositions on the Psalms"
+  },
+  "author": {
+   "es": "Agustín de Hipona",
+   "en": "Augustine of Hippo"
+  },
+  "date": "c. 392-422",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Nicene and Post-Nicene Fathers, Series I, vol. 8",
+   "translator": "J. E. Tweed",
+   "year": 1888,
+   "license": "public-domain",
+   "url": "https://www.newadvent.org/fathers/1801.htm"
+  },
+  "year": 392,
+  "yearEnd": 422,
+  "approx": true
+ },
+ {
+  "id": "gelasius-two-natures",
+  "kind": "church-father",
+  "title": {
+   "es": "Sobre las dos naturalezas en Cristo, contra Eutiques y Nestorio",
+   "en": "On the Two Natures in Christ, against Eutyches and Nestorius"
+  },
+  "author": {
+   "es": "Papa Gelasio I",
+   "en": "Pope Gelasius I"
+  },
+  "date": "c. 492-496",
+  "recognizedBy": [],
+  "edition": {
+   "name": "Latin text in A. Thiel, Epistolae Romanorum Pontificum (1868); not fetched",
+   "year": 1868,
+   "license": "public-domain"
+  },
+  "year": 492,
+  "yearEnd": 496,
+  "approx": true
+ },
+ {
+  "id": "bible",
+  "kind": "scripture",
+  "title": {
+   "es": "Sagrada Escritura",
+   "en": "Holy Scripture"
+  },
+  "author": {
+   "es": "Biblia",
+   "en": "Bible"
+  },
+  "date": "",
+  "year": 0,
+  "recognizedBy": [
+   "catholic",
+   "orthodox",
+   "lutheran",
+   "reformed",
+   "baptist"
+  ],
+  "edition": {
+   "name": "Reina-Valera 1909 (es), Berean Standard Bible (en)",
+   "license": "public-domain",
+   "url": "https://ebible.org/spaRV1909/"
+  }
+ }
+]

@@ -1,0 +1,807 @@
+{
+  "eucharist": {
+    "id": "eucharist",
+    "slug": {
+      "es": "eucaristia",
+      "en": "eucharist"
+    },
+    "title": {
+      "es": "La Eucaristía",
+      "en": "The Eucharist"
+    },
+    "question": {
+      "es": "¿Qué pasa con el pan y el vino en la Cena del Señor?",
+      "en": "What happens to the bread and wine in the Lord's Supper?"
+    },
+    "commonGround": {
+      "es": "Todas las tradiciones celebran la Cena que Jesús instituyó, la consideran un mandato suyo y afirman que en ella el creyente recibe a Cristo y sus beneficios. Discrepan en el modo de esa presencia y en qué le ocurre al pan y al vino.",
+      "en": "Every tradition celebrates the Supper Jesus instituted, treats it as his command, and affirms that in it the believer receives Christ and his benefits. They disagree on the mode of that presence and on what happens to the bread and wine."
+    },
+    "scripture": [
+      {
+        "sourceId": "rv1909",
+        "locator": "Juan 6:53–55",
+        "text": {
+          "es": "De cierto, de cierto os digo: Si no comiereis la carne del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros. El que come mi carne y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el día postrero. Porque mi carne es verdadera comida, y mi sangre es verdadera bebida.",
+          "en": "Truly, truly, I tell you, unless you eat the flesh of the Son of Man and drink His blood, you have no life in you. Whoever eats My flesh and drinks My blood has eternal life, and I will raise him up at the last day. For My flesh is real food, and My blood is real drink."
+        }
+      },
+      {
+        "sourceId": "rv1909",
+        "locator": "1 Corintios 11:23–26",
+        "text": {
+          "es": "Porque yo recibí del Señor lo que también os he enseñado: Que el Señor Jesús, la noche que fué entregado, tomó pan; y habiendo dado gracias, lo partió, y dijo: Tomad, comed: esto es mi cuerpo que por vosotros es partido: haced esto en memoria de mí.",
+          "en": "For I received from the Lord what I also passed on to you: The Lord Jesus, on the night He was betrayed, took bread, and when He had given thanks, He broke it and said, 'This is My body, which is for you; do this in remembrance of Me.'"
+        }
+      },
+      {
+        "sourceId": "rv1909",
+        "locator": "1 Corintios 10:16",
+        "text": {
+          "es": "La copa de bendición que bendecimos, ¿no es la comunión de la sangre de Cristo? El pan que partimos, ¿no es la comunión del cuerpo de Cristo?",
+          "en": "Is not the cup of blessing that we bless a participation in the blood of Christ? And is not the bread that we break a participation in the body of Christ?"
+        }
+      }
+    ],
+    "positions": [
+      {
+        "traditionId": "catholic",
+        "summary": {
+          "es": "El pan y el vino se convierten realmente en el cuerpo y la sangre de Cristo. Permanecen las apariencias; cambia la sustancia. La Iglesia llama a este cambio transubstanciación.",
+          "en": "The bread and wine truly become the body and blood of Christ. The appearances remain; the substance changes. The Church calls this change transubstantiation."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "Cristo está contenido en la Eucaristía verdadera, real y sustancialmente: cuerpo, sangre, alma y divinidad.",
+              "en": "Christ is contained in the Eucharist truly, really and substantially: body, blood, soul and divinity."
+            },
+            "citations": [
+              {
+                "sourceId": "trent",
+                "locator": "Sesión XIII (1551), Decreto sobre la Eucaristía, canon 1",
+                "text": {
+                  "es": "Si alguno negare que en el santísimo sacramento de la Eucaristía se contienen verdadera, real y sustancialmente el cuerpo y la sangre juntamente con el alma y la divinidad de nuestro Señor Jesucristo, y por consiguiente Cristo entero; sino que dijere que solo está en él como en señal, o en figura, o por su virtud; sea anatema.",
+                  "en": "If any one denieth, that, in the sacrament of the most holy Eucharist, are contained truly, really, and substantially, the body and blood together with the soul and divinity of our Lord Jesus Christ, and consequently the whole Christ; but saith that He is only therein as in a sign, or in figure, or virtue; let him be anathema."
+                },
+                "originalLanguage": "la"
+              },
+              {
+                "sourceId": "ccc",
+                "locator": "§1374",
+                "text": {
+                  "es": "En el santísimo sacramento de la Eucaristía están «contenidos verdadera, real y sustancialmente el Cuerpo y la Sangre junto con el alma y la divinidad de nuestro Señor Jesucristo, y, por consiguiente, Cristo entero».",
+                  "en": "In the most blessed sacrament of the Eucharist 'the body and blood, together with the soul and divinity, of our Lord Jesus Christ and, therefore, the whole Christ is truly, really, and substantially contained.'"
+                },
+                "url": "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html"
+              }
+            ]
+          },
+          {
+            "text": {
+              "es": "Por la consagración, toda la sustancia del pan se convierte en la sustancia del cuerpo de Cristo, y toda la sustancia del vino en la de su sangre.",
+              "en": "By the consecration, the whole substance of the bread is converted into the substance of Christ's body, and the whole substance of the wine into that of his blood."
+            },
+            "citations": [
+              {
+                "sourceId": "trent",
+                "locator": "Sesión XIII, Decreto sobre la Eucaristía, cap. 4",
+                "text": {
+                  "es": "Por la consagración del pan y del vino se realiza la conversión de toda la sustancia del pan en la sustancia del cuerpo de Cristo nuestro Señor, y de toda la sustancia del vino en la sustancia de su sangre; conversión que la santa Iglesia Católica llama, con propiedad y exactitud, transubstanciación.",
+                  "en": "By the consecration of the bread and of the wine, a conversion is made of the whole substance of the bread into the substance of the body of Christ our Lord, and of the whole substance of the wine into the substance of His blood; which conversion is, by the holy Catholic Church, suitably and properly called Transubstantiation."
+                },
+                "originalLanguage": "la"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "Las palabras de Jesús («esto es mi cuerpo», «mi carne es verdadera comida») se leen en sentido literal, como las entendieron los cristianos desde el siglo II.",
+              "en": "Jesus' words ('this is my body', 'my flesh is real food') are read literally, as Christians understood them from the second century."
+            },
+            "citations": [
+              {
+                "sourceId": "ignatius-smyrnaeans",
+                "locator": "7:1",
+                "text": {
+                  "es": "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, que padeció por nuestros pecados y que el Padre, en su bondad, resucitó.",
+                  "en": "They abstain from the Eucharist and from prayer, because they confess not the Eucharist to be the flesh of our Saviour Jesus Christ, which suffered for our sins, and which the Father, of His goodness, raised up again."
+                },
+                "originalLanguage": "grc"
+              },
+              {
+                "sourceId": "justin-first-apology",
+                "locator": "cap. 66",
+                "text": {
+                  "es": "No recibimos estas cosas como pan común ni bebida común, sino que […] se nos ha enseñado que el alimento bendecido por la oración de su palabra […] es la carne y la sangre de aquel Jesús que se hizo carne.",
+                  "en": "Not as common bread and common drink do we receive these; but […] we have been taught that the food which is blessed by the prayer of His word […] is the flesh and blood of that Jesus who was made flesh."
+                },
+                "originalLanguage": "grc"
+              }
+            ]
+          }
+        ],
+        "keyTerms": [
+          {
+            "term": {
+              "es": "Transubstanciación",
+              "en": "Transubstantiation"
+            },
+            "meaning": {
+              "es": "Cambio de toda la sustancia del pan y del vino en la del cuerpo y la sangre de Cristo, permaneciendo solo las apariencias (especies) del pan y del vino.",
+              "en": "Change of the whole substance of bread and wine into that of Christ's body and blood, with only the appearances (species) of bread and wine remaining."
+            }
+          }
+        ]
+      },
+      {
+        "traditionId": "orthodox",
+        "summary": {
+          "es": "El pan y el vino se transforman verdaderamente en el cuerpo y la sangre de Cristo. La Iglesia confiesa el hecho como misterio y no lo define con una teoría filosófica.",
+          "en": "The bread and wine are truly changed into the body and blood of Christ. The Church confesses the fact as a mystery and does not define it with a philosophical theory."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "Después de la consagración, el pan es transmutado en el mismo cuerpo del Señor y el vino en su misma sangre.",
+              "en": "After the consecration, the bread is changed into the very body of the Lord and the wine into his very blood."
+            },
+            "citations": [
+              {
+                "sourceId": "dositheus",
+                "locator": "Decreto 17",
+                "text": {
+                  "es": "Creemos que […] después de la consagración del pan y del vino, el pan es transmutado, transubstanciado, convertido y transformado en el verdadero cuerpo mismo del Señor […] y el vino es convertido y transubstanciado en la verdadera sangre misma del Señor.",
+                  "en": "We believe that […] after the consecration of the bread and of the wine, the bread is transmuted, transubstantiated, converted and transformed into the true Body Itself of the Lord […] and the wine is converted and transubstantiated into the true Blood Itself of the Lord."
+                },
+                "originalLanguage": "grc"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "El testimonio unánime de los Padres y de la liturgia: la Iglesia siempre adoró la Eucaristía como el cuerpo de Cristo, sin necesidad de explicar el «cómo».",
+              "en": "The unanimous witness of the Fathers and the liturgy: the Church always worshipped the Eucharist as Christ's body, without needing to explain the 'how'."
+            },
+            "citations": [
+              {
+                "sourceId": "ignatius-smyrnaeans",
+                "locator": "7:1",
+                "text": {
+                  "es": "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo.",
+                  "en": "They abstain from the Eucharist and from prayer, because they confess not the Eucharist to be the flesh of our Saviour Jesus Christ."
+                },
+                "originalLanguage": "grc"
+              }
+            ]
+          }
+        ],
+        "keyTerms": [
+          {
+            "term": {
+              "es": "Metousiosis",
+              "en": "Metousiosis"
+            },
+            "meaning": {
+              "es": "Término griego usado en 1672 para «cambio de sustancia». La teología ortodoxa lo acepta como descripción, pero rechaza atarse a la metafísica aristotélica de sustancia y accidentes.",
+              "en": "Greek term used in 1672 for 'change of substance'. Orthodox theology accepts it as a description but refuses to bind itself to the Aristotelian metaphysics of substance and accidents."
+            }
+          }
+        ]
+      },
+      {
+        "traditionId": "lutheran",
+        "summary": {
+          "es": "El verdadero cuerpo y la verdadera sangre de Cristo están realmente presentes «en, con y bajo» el pan y el vino, y se reciben con la boca. El pan sigue siendo pan.",
+          "en": "Christ's true body and blood are really present 'in, with and under' the bread and wine, and are received with the mouth. The bread remains bread."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "El cuerpo y la sangre de Cristo están verdaderamente presentes y se distribuyen a los que comen la Cena.",
+              "en": "Christ's body and blood are truly present and distributed to those who eat the Supper."
+            },
+            "citations": [
+              {
+                "sourceId": "augsburg",
+                "locator": "Artículo X",
+                "text": {
+                  "es": "De la Cena del Señor enseñan que el cuerpo y la sangre de Cristo están verdaderamente presentes y se distribuyen a los que comen en la Cena del Señor; y rechazan a los que enseñan lo contrario.",
+                  "en": "Of the Supper of the Lord they teach that the Body and Blood of Christ are truly present, and are distributed to those who eat the Supper of the Lord; and they reject those that teach otherwise."
+                },
+                "originalLanguage": "la"
+              },
+              {
+                "sourceId": "small-catechism",
+                "locator": "El Sacramento del Altar, pregunta 1",
+                "text": {
+                  "es": "Es el verdadero cuerpo y la verdadera sangre de nuestro Señor Jesucristo bajo el pan y el vino, para que nosotros los cristianos lo comamos y bebamos, instituido por Cristo mismo.",
+                  "en": "It is the true body and blood of our Lord Jesus Christ under the bread and wine, for us Christians to eat and to drink, instituted by Christ Himself."
+                },
+                "originalLanguage": "de"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "«Esto es mi cuerpo» se toma al pie de la letra, pero sin especular sobre un cambio de sustancia: la Escritura afirma la presencia, no la transubstanciación.",
+              "en": "'This is my body' is taken at face value, but without speculating about a change of substance: Scripture affirms the presence, not transubstantiation."
+            },
+            "citations": [
+              {
+                "sourceId": "rv1909",
+                "locator": "1 Corintios 10:16",
+                "text": {
+                  "es": "El pan que partimos, ¿no es la comunión del cuerpo de Cristo?",
+                  "en": "Is not the bread that we break a participation in the body of Christ?"
+                }
+              }
+            ]
+          }
+        ],
+        "keyTerms": [
+          {
+            "term": {
+              "es": "Unión sacramental",
+              "en": "Sacramental union"
+            },
+            "meaning": {
+              "es": "El cuerpo de Cristo y el pan están unidos en el sacramento sin que uno se convierta en el otro. La fórmula clásica es «en, con y bajo».",
+              "en": "Christ's body and the bread are united in the sacrament without one becoming the other. The classic formula is 'in, with and under'."
+            }
+          }
+        ]
+      },
+      {
+        "traditionId": "reformed",
+        "summary": {
+          "es": "Cristo está real pero espiritualmente presente para la fe de los creyentes. El pan y el vino no cambian; quien recibe con fe se alimenta de Cristo crucificado.",
+          "en": "Christ is really but spiritually present to the faith of believers. The bread and wine do not change; whoever receives in faith feeds on Christ crucified."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "Los que reciben dignamente se alimentan de Cristo de verdad, pero espiritualmente y no de manera carnal o corporal.",
+              "en": "Worthy receivers really feed on Christ, yet spiritually and not carnally or corporally."
+            },
+            "citations": [
+              {
+                "sourceId": "westminster",
+                "locator": "cap. 29, §7",
+                "text": {
+                  "es": "Los que reciben dignamente, al participar exteriormente de los elementos visibles de este sacramento, también reciben interiormente por la fe, real y verdaderamente, aunque no de manera carnal y corporal sino espiritual, a Cristo crucificado y todos los beneficios de su muerte: no estando entonces el cuerpo y la sangre de Cristo corporal o carnalmente en, con o bajo el pan y el vino, pero sí tan real, aunque espiritualmente, presentes a la fe de los creyentes en esa ordenanza como los elementos mismos lo están a sus sentidos exteriores.",
+                  "en": "Worthy receivers, outwardly partaking of the visible elements in this sacrament, do then also inwardly by faith, really and indeed, yet not carnally and corporally, but spiritually, receive and feed upon Christ crucified, and all benefits of his death: the body and blood of Christ being then not corporally or carnally in, with, or under the bread and wine; yet as really, but spiritually, present to the faith of believers in that ordinance, as the elements themselves are to their outward senses."
+                },
+                "originalLanguage": "en"
+              }
+            ]
+          },
+          {
+            "text": {
+              "es": "La transubstanciación se rechaza como contraria a la Escritura y a la razón.",
+              "en": "Transubstantiation is rejected as contrary to Scripture and reason."
+            },
+            "citations": [
+              {
+                "sourceId": "westminster",
+                "locator": "cap. 29, §6",
+                "text": {
+                  "es": "La doctrina que sostiene un cambio de la sustancia del pan y del vino en la sustancia del cuerpo y la sangre de Cristo (comúnmente llamada transubstanciación) por la consagración de un sacerdote o de cualquier otro modo, repugna no solo a la Escritura sino aun al sentido común y a la razón.",
+                  "en": "That doctrine which maintains a change of the substance of bread and wine, into the substance of Christ's body and blood (commonly called transubstantiation) by consecration of a priest, or by any other way, is repugnant, not to Scripture alone, but even to common sense and reason."
+                },
+                "originalLanguage": "en"
+              },
+              {
+                "sourceId": "heidelberg",
+                "locator": "Pregunta 78",
+                "text": {
+                  "es": "¿Se convierten entonces el pan y el vino en el verdadero cuerpo y sangre de Cristo? No; […] el pan de la Cena no se convierte en el cuerpo mismo de Cristo, aunque conforme a la naturaleza y uso de los sacramentos se le llame cuerpo de Cristo.",
+                  "en": "Do then the bread and wine become the very body and blood of Christ? No; […] the bread in the Lord's Supper is not changed into the very body of Christ, though agreeably to the nature and properties of sacraments it is called the body of Christ."
+                },
+                "originalLanguage": "de"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "El cuerpo glorificado de Cristo está en el cielo; el Espíritu une al creyente con Él en la Cena. «Esto es mi cuerpo» es lenguaje sacramental, como «la roca era Cristo».",
+              "en": "Christ's glorified body is in heaven; the Spirit unites the believer with him in the Supper. 'This is my body' is sacramental language, like 'the rock was Christ'."
+            },
+            "citations": [
+              {
+                "sourceId": "rv1909",
+                "locator": "1 Corintios 10:16",
+                "text": {
+                  "es": "La copa de bendición que bendecimos, ¿no es la comunión de la sangre de Cristo?",
+                  "en": "Is not the cup of blessing that we bless a participation in the blood of Christ?"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "traditionId": "baptist-evangelical",
+        "summary": {
+          "es": "La Cena es un acto simbólico de obediencia: la iglesia recuerda la muerte del Redentor y anticipa su regreso. El pan y el vino son símbolos.",
+          "en": "The Supper is a symbolic act of obedience: the church remembers the Redeemer's death and anticipates his return. The bread and wine are symbols."
+        },
+        "claims": [
+          {
+            "text": {
+              "es": "La Cena del Señor es un acto simbólico que memoriza la muerte de Cristo.",
+              "en": "The Lord's Supper is a symbolic act memorializing Christ's death."
+            },
+            "citations": [
+              {
+                "sourceId": "baptist-faith-message",
+                "locator": "Artículo VII, «Bautismo y Cena del Señor»",
+                "text": {
+                  "es": "La Cena del Señor es un acto simbólico de obediencia por el cual los miembros de la iglesia, al participar del pan y del fruto de la vid, conmemoran la muerte del Redentor y anticipan su segunda venida.",
+                  "en": "The Lord's Supper is a symbolic act of obedience whereby members of the church, through partaking of the bread and the fruit of the vine, memorialize the death of the Redeemer and anticipate His second coming."
+                },
+                "url": "https://bfm.sbc.net/bfm2000/#vii"
+              }
+            ]
+          },
+          {
+            "text": {
+              "es": "Los bautistas reformados (1689) sostienen, como Westminster, una presencia espiritual real para la fe.",
+              "en": "Reformed Baptists (1689) hold, like Westminster, a real spiritual presence to faith."
+            },
+            "citations": [
+              {
+                "sourceId": "london-baptist-1689",
+                "locator": "cap. 30, §7",
+                "text": {
+                  "es": "Los que reciben dignamente […] también reciben interiormente por la fe, real y verdaderamente, aunque no de manera carnal y corporal sino espiritual, a Cristo crucificado y todos los beneficios de su muerte.",
+                  "en": "Worthy receivers […] do then also inwardly by faith, really and indeed, yet not carnally and corporally, but spiritually receive, and feed upon Christ crucified, and all the benefits of his death."
+                },
+                "originalLanguage": "en"
+              }
+            ]
+          }
+        ],
+        "reasons": [
+          {
+            "text": {
+              "es": "«Haced esto en memoria de mí»: el propósito declarado de la Cena es recordar. Jesús habló en figuras muchas veces («yo soy la puerta», «yo soy la vid»).",
+              "en": "'Do this in remembrance of me': the Supper's stated purpose is to remember. Jesus often spoke in figures ('I am the door', 'I am the vine')."
+            },
+            "citations": [
+              {
+                "sourceId": "rv1909",
+                "locator": "1 Corintios 11:24–25",
+                "text": {
+                  "es": "Haced esto en memoria de mí.",
+                  "en": "Do this in remembrance of Me."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "related": [
+      "justification",
+      "sola-scriptura"
+    ],
+    "status": "draft",
+    "updatedAt": "2026-10-01"
+  },
+  "sources": [
+    {
+      "id": "rv1909",
+      "kind": "scripture",
+      "title": {
+        "es": "Biblia Reina-Valera 1909",
+        "en": "Reina-Valera 1909 Bible"
+      },
+      "author": {
+        "es": "Casiodoro de Reina, rev. Cipriano de Valera",
+        "en": "Casiodoro de Reina, rev. Cipriano de Valera"
+      },
+      "date": "1909",
+      "recognizedBy": [
+        "catholic",
+        "orthodox",
+        "lutheran",
+        "reformed",
+        "baptist-evangelical"
+      ],
+      "edition": {
+        "name": "Reina-Valera 1909",
+        "year": 1909,
+        "license": "public-domain",
+        "url": "https://ebible.org/spaRV1909/"
+      }
+    },
+    {
+      "id": "bsb",
+      "kind": "scripture",
+      "title": {
+        "es": "Berean Standard Bible",
+        "en": "Berean Standard Bible"
+      },
+      "author": {
+        "es": "Bible Hub",
+        "en": "Bible Hub"
+      },
+      "date": "2016–2023",
+      "recognizedBy": [
+        "catholic",
+        "orthodox",
+        "lutheran",
+        "reformed",
+        "baptist-evangelical"
+      ],
+      "edition": {
+        "name": "BSB",
+        "year": 2023,
+        "license": "public-domain",
+        "url": "https://berean.bible/"
+      }
+    },
+    {
+      "id": "ignatius-smyrnaeans",
+      "kind": "church-father",
+      "title": {
+        "es": "Carta a los Esmirniotas",
+        "en": "Epistle to the Smyrnaeans"
+      },
+      "author": {
+        "es": "Ignacio de Antioquía",
+        "en": "Ignatius of Antioch"
+      },
+      "date": "c. 107",
+      "recognizedBy": [
+        "catholic",
+        "orthodox",
+        "lutheran",
+        "reformed",
+        "baptist-evangelical"
+      ],
+      "edition": {
+        "name": "Ante-Nicene Fathers, vol. 1",
+        "translator": "Roberts & Donaldson",
+        "year": 1885,
+        "license": "public-domain",
+        "url": "https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_I/IGNATIUS/The_Epistle_of_Ignatius_to_the_Smyrnaeans"
+      }
+    },
+    {
+      "id": "justin-first-apology",
+      "kind": "church-father",
+      "title": {
+        "es": "Primera Apología",
+        "en": "First Apology"
+      },
+      "author": {
+        "es": "Justino Mártir",
+        "en": "Justin Martyr"
+      },
+      "date": "c. 155",
+      "recognizedBy": [
+        "catholic",
+        "orthodox",
+        "lutheran",
+        "reformed",
+        "baptist-evangelical"
+      ],
+      "edition": {
+        "name": "Ante-Nicene Fathers, vol. 1",
+        "translator": "Roberts & Donaldson",
+        "year": 1885,
+        "license": "public-domain",
+        "url": "https://en.wikisource.org/wiki/Ante-Nicene_Fathers/Volume_I/JUSTIN_MARTYR/The_First_Apology_of_Justin"
+      }
+    },
+    {
+      "id": "trent",
+      "kind": "council",
+      "title": {
+        "es": "Concilio de Trento",
+        "en": "Council of Trent"
+      },
+      "author": {
+        "es": "Iglesia Católica",
+        "en": "Catholic Church"
+      },
+      "date": "1545–1563",
+      "recognizedBy": [
+        "catholic"
+      ],
+      "edition": {
+        "name": "The Canons and Decrees of the Sacred and Oecumenical Council of Trent",
+        "translator": "J. Waterworth",
+        "year": 1848,
+        "license": "public-domain",
+        "url": "https://history.hanover.edu/texts/trent.html"
+      }
+    },
+    {
+      "id": "ccc",
+      "kind": "catechism",
+      "title": {
+        "es": "Catecismo de la Iglesia Católica",
+        "en": "Catechism of the Catholic Church"
+      },
+      "author": {
+        "es": "Iglesia Católica",
+        "en": "Catholic Church"
+      },
+      "date": "1992 / 1997",
+      "recognizedBy": [
+        "catholic"
+      ],
+      "edition": {
+        "name": "Catecismo de la Iglesia Católica (vatican.va)",
+        "year": 1997,
+        "license": "fair-use-excerpt",
+        "url": "https://www.vatican.va/archive/catechism_sp/index_sp.html"
+      }
+    },
+    {
+      "id": "dositheus",
+      "kind": "confession",
+      "title": {
+        "es": "Confesión de Dositeo (Sínodo de Jerusalén)",
+        "en": "Confession of Dositheus (Synod of Jerusalem)"
+      },
+      "author": {
+        "es": "Dositeo II de Jerusalén",
+        "en": "Dositheus II of Jerusalem"
+      },
+      "date": "1672",
+      "recognizedBy": [
+        "orthodox"
+      ],
+      "edition": {
+        "name": "The Acts and Decrees of the Synod of Jerusalem",
+        "translator": "J. N. W. B. Robertson",
+        "year": 1899,
+        "license": "public-domain"
+      }
+    },
+    {
+      "id": "augsburg",
+      "kind": "confession",
+      "title": {
+        "es": "Confesión de Augsburgo",
+        "en": "Augsburg Confession"
+      },
+      "author": {
+        "es": "Philipp Melanchthon",
+        "en": "Philipp Melanchthon"
+      },
+      "date": "1530",
+      "recognizedBy": [
+        "lutheran"
+      ],
+      "edition": {
+        "name": "Concordia Triglotta",
+        "year": 1921,
+        "license": "public-domain",
+        "url": "https://bookofconcord.org/augsburg-confession/"
+      }
+    },
+    {
+      "id": "small-catechism",
+      "kind": "catechism",
+      "title": {
+        "es": "Catecismo Menor",
+        "en": "Small Catechism"
+      },
+      "author": {
+        "es": "Martín Lutero",
+        "en": "Martin Luther"
+      },
+      "date": "1529",
+      "recognizedBy": [
+        "lutheran"
+      ],
+      "edition": {
+        "name": "Concordia Triglotta",
+        "year": 1921,
+        "license": "public-domain",
+        "url": "https://bookofconcord.org/small-catechism/"
+      }
+    },
+    {
+      "id": "westminster",
+      "kind": "confession",
+      "title": {
+        "es": "Confesión de Fe de Westminster",
+        "en": "Westminster Confession of Faith"
+      },
+      "author": {
+        "es": "Asamblea de Westminster",
+        "en": "Westminster Assembly"
+      },
+      "date": "1646",
+      "recognizedBy": [
+        "reformed"
+      ],
+      "edition": {
+        "name": "Texto de 1646",
+        "year": 1646,
+        "license": "public-domain",
+        "url": "https://www.ccel.org/ccel/anonymous/westminster3.i.html"
+      }
+    },
+    {
+      "id": "heidelberg",
+      "kind": "catechism",
+      "title": {
+        "es": "Catecismo de Heidelberg",
+        "en": "Heidelberg Catechism"
+      },
+      "author": {
+        "es": "Zacharias Ursinus y otros",
+        "en": "Zacharias Ursinus et al."
+      },
+      "date": "1563",
+      "recognizedBy": [
+        "reformed"
+      ],
+      "edition": {
+        "name": "Traducción de 1563 (histórica)",
+        "year": 1563,
+        "license": "public-domain"
+      }
+    },
+    {
+      "id": "london-baptist-1689",
+      "kind": "confession",
+      "title": {
+        "es": "Segunda Confesión Bautista de Londres",
+        "en": "Second London Baptist Confession"
+      },
+      "author": {
+        "es": "Bautistas particulares de Londres",
+        "en": "London Particular Baptists"
+      },
+      "date": "1689",
+      "recognizedBy": [
+        "baptist-evangelical"
+      ],
+      "edition": {
+        "name": "Texto de 1689",
+        "year": 1689,
+        "license": "public-domain"
+      }
+    },
+    {
+      "id": "baptist-faith-message",
+      "kind": "confession",
+      "title": {
+        "es": "Fe y Mensaje Bautistas",
+        "en": "Baptist Faith and Message"
+      },
+      "author": {
+        "es": "Convención Bautista del Sur",
+        "en": "Southern Baptist Convention"
+      },
+      "date": "2000",
+      "recognizedBy": [
+        "baptist-evangelical"
+      ],
+      "edition": {
+        "name": "BF&M 2000 (sbc.net)",
+        "year": 2000,
+        "license": "fair-use-excerpt",
+        "url": "https://bfm.sbc.net/bfm2000/"
+      }
+    }
+  ],
+  "traditions": [
+    {
+      "id": "catholic",
+      "name": {
+        "es": "Iglesia Católica",
+        "en": "Catholic Church"
+      },
+      "short": {
+        "es": "Católica",
+        "en": "Catholic"
+      },
+      "selfDescription": {
+        "es": "La Iglesia fundada por Cristo sobre Pedro, que enseña con la autoridad de la Escritura y la Tradición bajo el Magisterio.",
+        "en": "The Church founded by Christ upon Peter, teaching with the authority of Scripture and Tradition under the Magisterium."
+      },
+      "normativeSources": [
+        "trent",
+        "ccc",
+        "vatican-i",
+        "vatican-ii"
+      ]
+    },
+    {
+      "id": "orthodox",
+      "name": {
+        "es": "Iglesia Ortodoxa",
+        "en": "Orthodox Church"
+      },
+      "short": {
+        "es": "Ortodoxa",
+        "en": "Orthodox"
+      },
+      "selfDescription": {
+        "es": "La Iglesia de los siete Concilios Ecuménicos, que guarda la fe apostólica sin añadir ni quitar.",
+        "en": "The Church of the seven Ecumenical Councils, keeping the apostolic faith without addition or subtraction."
+      },
+      "normativeSources": [
+        "nicaea-ii",
+        "dositheus",
+        "john-damascene"
+      ]
+    },
+    {
+      "id": "lutheran",
+      "name": {
+        "es": "Iglesias Luteranas",
+        "en": "Lutheran Churches"
+      },
+      "short": {
+        "es": "Luterana",
+        "en": "Lutheran"
+      },
+      "selfDescription": {
+        "es": "Las iglesias de la Confesión de Augsburgo: la Escritura sola como norma, la justificación por la fe sola.",
+        "en": "The churches of the Augsburg Confession: Scripture alone as norm, justification by faith alone."
+      },
+      "normativeSources": [
+        "augsburg",
+        "small-catechism",
+        "formula-of-concord"
+      ]
+    },
+    {
+      "id": "reformed",
+      "name": {
+        "es": "Iglesias Reformadas",
+        "en": "Reformed Churches"
+      },
+      "short": {
+        "es": "Reformada",
+        "en": "Reformed"
+      },
+      "selfDescription": {
+        "es": "Las iglesias de las confesiones reformadas (Westminster, Heidelberg, Belga): la soberanía de Dios y la Escritura como única regla de fe.",
+        "en": "The churches of the Reformed confessions (Westminster, Heidelberg, Belgic): God's sovereignty and Scripture as the only rule of faith."
+      },
+      "normativeSources": [
+        "westminster",
+        "heidelberg",
+        "belgic"
+      ]
+    },
+    {
+      "id": "baptist-evangelical",
+      "name": {
+        "es": "Bautistas y evangélicos",
+        "en": "Baptist & Evangelical"
+      },
+      "short": {
+        "es": "Evangélica",
+        "en": "Evangelical"
+      },
+      "selfDescription": {
+        "es": "Iglesias de creyentes profesantes, con la Biblia como única autoridad y la conversión personal como centro.",
+        "en": "Churches of professing believers, with the Bible as sole authority and personal conversion at the center."
+      },
+      "normativeSources": [
+        "london-baptist-1689",
+        "baptist-faith-message"
+      ]
+    }
+  ]
+}
