@@ -65,7 +65,7 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 12. Pedro's visual approval comes before handing over the commit message.
 - Proposals use real Doctrina content (v2 lesson: proposal canvases with real content beat building a whole new version).
 - Parallel subagents only with disjoint file ownership and a shared brief; one coordinator owns shared files (indexes, shared components).
-- When Pedro brainstorms in loose notes, record them in the same session in Pedro's words: what was decided goes to `DECISIONS.md`, what stays open goes to `ROADMAP.md`. There is no separate notes log.
+- When Pedro gives a note, idea or fix (e.g. on a proposal), don't write it to the repo yet: first say how you understood it, correct or object where needed, and discuss until both agree. Only then record it in Pedro's words: decided items go to `DECISIONS.md`, open ones to `ROADMAP.md`. If the session may end mid-discussion, record the pending point in `ROADMAP.md` marked "under discussion, not agreed". There is no separate notes log.
 
 ## Verification
 

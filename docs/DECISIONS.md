@@ -2,6 +2,30 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-06 · Unknown birth dates are shown as unknown, with sourced estimates (Pedro chose)
+**Chosen:** when no ancient source gives a person's birth date, the UI says so instead of omitting it: "Nacimiento: desconocido; suele estimarse c. 35 (algunos, hasta c. 50)", with the estimate's source. On the timeline, a life span whose start is estimated begins with a faint or dashed stroke. Applies to every such person, not only Ignatius; anonymous works show their composition range instead.
+**Why:** Pedro couldn't find Ignatius' birth on P1·09. Our data leaves it empty because it is unattested: "c. 35" is a modern estimate (English Wikipedia says c. 33 with no citation; other sources give c. 35 to 50), while his death has ancient support (Eusebius). Showing both in the same format would make the estimate look as solid as the attested date.
+**Discarded:** omitting unknown births; filling them with an estimate formatted like an attested date.
+
+## 2026-10-06 · Death dates: words, and † where space is tight (Pedro chose)
+**Chosen:** no "m." abbreviation (Pedro didn't read it as "murió"). Where there is room, words: "Nació c. 69", "Murió 155" (en: "Born", "Died"). In compact places (timeline labels, lists, compact cards), "†" before the date, with a tooltip saying "murió" and visually hidden text for screen readers ("murió en 155"). The † is used only for death, never as a footnote mark or anything else.
+**Why:** † is a known convention for death; screen readers read it as "dagger"; a young reader may not know it, so it only replaces words where space forces it. It is a meaningful typographic sign, not a cross as decoration (allowed by the design principles).
+**Discarded:** "m." / "d."; † everywhere.
+
+## 2026-10-06 · Read the whole Bible in the site (Pedro chose)
+**Chosen:** a feature of its own, independent of the page-structure choice: any book and chapter, read continuously, with the same reader as the other sources; every verse opens its detail.
+- Canon: the 66 books plus the deuterocanonical books in a separate section that says Catholics and Orthodox receive them as Scripture and Protestants don't; its heading gives both names (deuterocanonical / apocrypha).
+- Deuterocanonical books in Spanish: shown in English (Douay-Rheims) with a notice that Spanish isn't available yet; an OCR and correction project for Torres Amat (1825, public domain) comes later. Straubinger is not used until its legal status is checked (public domain in Argentina from 2027-01-01, protected in Spain until 2037, and the site is read in both).
+- Default translations: Reina-Valera 1909 in Spanish (the only complete public-domain one; old spelling), BSB in English; the others are selectable.
+- Two phases: first text-only reading as static pages (1,189 chapters, no database needed); then word by word for the whole Bible (STEPBible TAGNT + TAHOT) with the Supabase reference corpus.
+**Why:** the full 66-book text and the tagged Greek NT and Hebrew Bible are openly available (`docs/research/data.md`); a separate section is the most neutral way to show a contested canon; text-only reading doesn't need the database.
+**Discarded:** a canon selector (more complexity); Spanish only with the 66 books (Catholic and Orthodox readers would miss books); waiting for Straubinger.
+
+## 2026-10-06 · Discuss Pedro's notes before recording them (Pedro chose)
+**Chosen:** a note, idea or fix from Pedro is not written to the repo right away. The agent first states how it understood it, corrects or objects where needed, and both discuss until they agree; only then is it recorded (decided items here, open ones in `ROADMAP.md`). If a session may end mid-discussion, the pending point goes to `ROADMAP.md` marked "under discussion, not agreed". Rule in `AGENTS.md`, Work process.
+**Why:** Pedro wants to be sure the agent understood and to settle corrections before anything is recorded. The "under discussion" fallback is the agent's addition, accepted by Pedro: the agent remembers nothing between sessions.
+**Discarded:** recording notes immediately, before agreement.
+
 ## 2026-10-05 · Motion rule adapted to Doctrina (Pedro chose)
 **Chosen:** the origin project's UI rule "motion is a central part of the site" is dropped; kept: every non-trivial animation goes through the main rule, `prefers-reduced-motion` is mandatory, a motion library is chosen only in a proposal. How much motion Doctrina has is part of the design direction.
 **Why:** the rule came from a visual site; Doctrina's principles so far are calm, with motion only in response to the reader (v2: nothing animates on load).
@@ -11,6 +35,7 @@ Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v
 **Chosen:** Pedro's loose notes are recorded in the same session, in Pedro's words: decided items here, open items in `ROADMAP.md`. The old `UX-NOTES.md` (append-only log, in `~/Desktop/dev/doctrina-v2/docs/`) was distilled into this file and the roadmap.
 **Why:** one place per fact; the doc system has no notes file.
 **Discarded:** a `docs/NOTES.md` inbox.
+**Replaced in part by:** 2026-10-06 · Discuss Pedro's notes before recording them (when to record; there is still no notes log).
 
 ## 2026-10-05 · Where the handoff material went (Pedro chose)
 **Chosen:** `data/raw`, `data/site`, `data/scripts` at the root; research reports in `docs/research/`; the 14 v2 screenshots in `docs/research/v2-screens/`. The v1/v2 plans and design systems were distilled into the docs instead of copied; the originals are identical to `docs/PLAN.md` and `docs/DESIGN.md` in `~/Desktop/dev/doctrina-v1-archivo` and `~/Desktop/dev/doctrina-v2`.
