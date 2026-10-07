@@ -51,7 +51,7 @@ Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don
 - Verify flagged content: `docs/research/content-notes.md`, `docs/research/history-notes.md`, plus v2 bugs: Spanish locators mixing English ("Tratados on John", "Decreto on the Eucharist"); Ignatius *Smyrnaeans* context (6.2, 7.2) and the Greek in the round-2 mockups, written from memory.
 - Whole-Bible reading, phase 1: text-only reader as static pages (66 books + separate deuterocanonical section; RV1909 / BSB by default; deuterocanonical books in English with a notice). Plan in `DECISIONS.md`.
 - History data: for the 7 persons with no birth year (Clement of Rome, Ignatius, Melito of Sardis, Theophilus of Antioch, Methodius of Olympus, Optatus of Milevis, Vincent of Lérins), find sourced estimates and store them apart from attested dates (`DECISIONS.md`, 2026-10-06).
-- Search ⌘K with "Recientes" and "Seguir donde dejaste".
+- Search ⌘K with "Recientes" and "Seguir donde dejaste": base is P1's component with self-explaining results (`DECISIONS.md`, 2026-10-06). **Decide visually:** how the date is separated from the breadcrumb path.
 - Horizontal general timeline (T1, one density, the component scrolls sideways).
 - Attribution page (STEP Bible, OpenGNT, SermonIndex, "WEB" trademark rule).
 - Validation hooks: PostHog events, fake door, one-question survey, email capture.

@@ -2,6 +2,15 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-06 · Search: P1's component, with results that explain themselves (Pedro chose)
+**Chosen:** after comparing the four search screens (UX round 2, screen 11), P1's is the base: the cleanest, and its breadcrumb path ("La Eucaristía / Católica / Objeción") gives the key information simply. Changes, each result having at most two lines under its title:
+- Line 1: the breadcrumb path and, on the same line but clearly apart, the date when the item has one (verses, objections and words have none). How to separate them is tried visually in a proposal: date at the far right with no symbol (agent's recommendation), a thin vertical rule, or a small symbol (Pedro's idea; note the design principles ban "·"-joined strings).
+- Line 2: why the item matched, with the query highlighted in yellow as in P3: an explanatory phrase (Docetismo: "Negaba la realidad de la carne de Cristo", as in P4) or, for Fathers and sources, a verbatim fragment of the quote, visibly marked as a quote (Spanish guillemets «…», "…" when cut; never rewritten to fit).
+- Line 2 always comes from the result's real text, never from hidden keywords. If the match came another way ("carne" → σάρξ; later, semantic search by meaning), the line says so ("sarx, «carne» en griego").
+- The yellow highlight is the functional mark for a match, not a second decorative accent; it needs a dark-mode variant that stays readable.
+**Why:** in P1, searching "carne" returned Ignacio de Antioquía and Docetismo through hidden keywords, with nothing on screen explaining why; a reader new to the subject couldn't tell.
+**Discarded:** P2–P4 search layouts as the base; showing results matched only by invisible keywords.
+
 ## 2026-10-06 · Unknown birth dates are shown as unknown, with sourced estimates (Pedro chose)
 **Chosen:** when no ancient source gives a person's birth date, the UI says so instead of omitting it: "Nacimiento: desconocido; suele estimarse c. 35 (algunos, hasta c. 50)", with the estimate's source. On the timeline, a life span whose start is estimated begins with a faint or dashed stroke. Applies to every such person, not only Ignatius; anonymous works show their composition range instead.
 **Why:** Pedro couldn't find Ignatius' birth on P1·09. Our data leaves it empty because it is unattested: "c. 35" is a modern estimate (English Wikipedia says c. 33 with no citation; other sources give c. 35 to 50), while his death has ancient support (Eusebius). Showing both in the same format would make the estimate look as solid as the attested date.
