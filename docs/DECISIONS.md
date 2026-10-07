@@ -2,6 +2,21 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-07 · Launch with many doctrines, number not set (Pedro chose)
+**Chosen:** launch with many doctrines, the most important ones; how many isn't decided. Candidates and current state in `PROJECT.md`, "Content model".
+**Why:** Pedro's plan for the launch changed.
+**Discarded:** 5 doctrines at launch plus a 10-doctrine stretch list (from the v1 plan).
+
+## 2026-10-07 · Proposals never show internal states (Pedro chose)
+**Chosen:** proposal Artifacts show the product as the user would see it at launch: no "en preparación", "draft" or placeholders for unbuilt content. Rule in `AGENTS.md`, under the main rule.
+**Why:** the user will never see those states; they distort how a screen reads.
+**Discarded:** marking unbuilt items as "en preparación" in proposals (UX round 2 did).
+
+## 2026-10-07 · Connected doctrines link only to published doctrines (Pedro chose)
+**Chosen:** a doctrine page shows connections only to doctrines already published; a newly published doctrine appears by itself in the others' connections. The user never sees "en preparación".
+**Why:** the Eucharist connects to 8 doctrines in the data and some (sacrifice of the Mass, priesthood, sacraments and ordinances) may not exist at launch even with many doctrines; a card that invites a visit and leads nowhere is a dead affordance.
+**Discarded:** showing unpublished connections as disabled or "en preparación".
+
 ## 2026-10-07 · Navigation: P1's tree sidebar, documentation style (Pedro chose; to validate in a polished proposal)
 **Chosen:** the navigation of UX round 2's P1: a tree sidebar always present on desktop, in the style of code documentation. Collapsible and expandable, open by default. It marks the current page and shows what surrounds it; jumping between distant branches ("Doctrinas / Eucaristía / Católica / Objeciones / x" → "Doctrinas / Sacerdocio / Católica / Objeciones / x", or to the Bible) keeps the visited branches expanded, so the tree doubles as a visual history the reader can collapse. Expanded branches reset on each visit (not remembered between visits). The content of each screen is still being decided.
 - Agent proposals to test in the polished proposal, not yet confirmed by Pedro: a "collapse all but where I am" control; the sidebar scrolls itself to the current branch; the Bible tree goes down to book → chapter only (verses are picked on the chapter page); a small filter inside the sidebar for long lists (56 Fathers, 41 councils); on mobile the sidebar becomes a menu that opens on demand (review P1's mobile screens 12–14); around 1024px the sidebar starts collapsed.

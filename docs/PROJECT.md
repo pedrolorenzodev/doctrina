@@ -25,7 +25,7 @@ A bilingual (Spanish / English) **deep-study resource on Christian doctrine**. F
 - **One tradition at a time** is the default reading mode; the others are one click away. Side-by-side comparison only inside specific features (liked as "compare this question" within a page, not as the default).
 - **Neutral (global) sections**, shared and never assigned to a modern tradition: common ground; history of the doctrine; **earliest witnesses** (what Apostolic and Church Fathers literally wrote); patristic commentary on verses. Claiming Ignatius or Irenaeus for one tradition is itself contested. Patristic cutoff is open; the conventional end is John of Damascus (d. c. 749), which keeps Jerome and Augustine.
 - **Scripture dossier per tradition**: the passages *that* tradition argues from, typology included (manna, Melchizedek), never a single shared reading.
-- **Launch doctrines:** Eucharist (pilot, drafted), justification, the papacy, sola Scriptura, Mary. Stretch: baptism, purgatory / intermediate state, saints and intercession, canon of Scripture, church authority / apostolic succession.
+- **Launch doctrines:** many, the most important ones; the number isn't set yet (changed 2026-10-07, see `DECISIONS.md`). Drafted so far: the Eucharist (pilot). Candidates named earlier: justification, the papacy, sola Scriptura, Mary, baptism, purgatory / intermediate state, saints and intercession, canon of Scripture, church authority / apostolic succession.
 
 ## Scope (owner verdicts)
 

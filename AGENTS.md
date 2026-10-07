@@ -24,6 +24,8 @@ The proposal page must:
 - State what is discarded and why, including the AI-slop list it avoids (`docs/DECISIONS.md`, "Design principles").
 - End with what has to be decided, and stop.
 
+Proposals show the product as the user would see it at launch: no internal states such as "en preparación", "draft" or placeholders for content that isn't built.
+
 Iterate on the same page, keeping the previous version beside it. When approved, record the link in `docs/DECISIONS.md`. Artifacts are private; Pedro decides whether to share them.
 
 ## Trust and neutrality (product invariants)
