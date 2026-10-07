@@ -3,14 +3,15 @@
 ## Current state
 > Overwritten at the end of every session. 15 lines max.
 
-**2026-10-05.** Project restarted. Done: Next 16 scaffold (`src/` structure, no pages yet, `npm run verify` passes), the agent doc system, the git guard hook, and the handoff material carried over (`data/`, `docs/research/`). No UI exists and none may be built until the page structure and design direction are approved.
+**2026-10-07.** Base project in place (Next 16 scaffold with no pages, doc system, git hook, handoff data in `data/` and `docs/research/`); `npm run verify` passes. No UI is built yet.
+Since then, reviewing UX round 2 with Pedro: navigation chosen (P1's tree sidebar, to validate in a polished proposal); search component chosen (P1's, with self-explaining results); site-wide conventions for dates and objection attribution; whole-Bible reading added to scope. All in `DECISIONS.md`. Notes on P1 screens (sources, reader and passage detail, word study, timeline) are under "Now".
 Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don't run).
-**Next step:** Pedro reviews UX round 2 (P1–P4) and picks a structure or a mix.
+**Next step:** Pedro keeps deciding the content of each screen; then a polished proposal of the whole structure.
 
 ## Now
 
-1. **Decide: page structure / navigation.** Pedro's feedback on [UX round 2](https://claude.ai/artifact/CiD9tLWApMVoskyJG2KwDV): P1 sidebar tree, P2 editorial landing, P3 text + "Conexiones" rail, P4 v2 polished (summaries in `DECISIONS.md`). Iterate through the main rule (proposal page, 2–4 options). Inputs: round 1 verdicts and design principles in `DECISIONS.md`, `docs/research/`.
-   - **Pedro's note on P1, screen 05 (source), 2026-10-06. Applies only if P1 (or its sidebar) is chosen; Pedro hasn't reviewed P2–P4 yet.** In the left sidebar's "Fuentes" section:
+1. **Decide: the content of each screen**, on top of P1's tree sidebar (navigation chosen 2026-10-07, to be validated in a polished proposal; see `DECISIONS.md`). Pedro's feedback on [UX round 2](https://claude.ai/artifact/CiD9tLWApMVoskyJG2KwDV) continues screen by screen; the notes below on P1 screens are inputs for that polished proposal, not final. Iterate through the main rule (proposal page, 2–4 options). Inputs: round 1 verdicts and design principles in `DECISIONS.md`, `docs/research/`.
+   - **Pedro's note on P1, screen 05 (source), 2026-10-06. Input for the polished proposal (P1's navigation chosen 2026-10-07; screen contents still open).** In the left sidebar's "Fuentes" section:
      - An author with more than one source appears once, at the same level as the other sources, by name (e.g. "Ignacio de Antioquía"); clicking it shows all of that author's sources. Careful with 2 Clement and similar cases.
      - Possibly: sources that every tradition clearly attributes to one specific tradition (Council of Trent, Catechism of the Catholic Church…) are grouped under that tradition, to find them faster. Never patristic sources, homilies and the like: they stay neutral, unless clearly from one tradition.
      - Agent notes: the registry already has `recognizedBy` per source (`data/site/sources.extra.json`). Sources recognized by several traditions (Chalcedon, Byzantine liturgies, Marburg Articles) stay neutral. Group by author only when the attribution is secure: pseudonymous works under their own name (2 Clement, Pseudo-Dionysius), debated or anonymous ones loose (Mystagogical Catecheses, Didache, Gelasius). Grouping needs an author id; today the same author appears under different strings ("Agustín" / "San Agustín"). Open: does author grouping also apply inside a tradition (Luther has 3 Lutheran sources)? Mixing authors and single works at one level may confuse; the proposal should also show "always by author".
