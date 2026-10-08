@@ -2,6 +2,21 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-08 · Tradition switcher that keeps your section (Pedro chose)
+**Chosen:** on every page inside a tradition (03 and the pages under it), a switcher with the traditions at the top of the content column, sticky so it can be used from any section. Picking another tradition marks it as selected, changes the content and moves the sidebar's current page to the new tradition. Each tradition is its own page with its own URL (shared links, Back and search engines keep working); switching lands on the same section ("Cómo se vive" → "Cómo se vive"); from an objection page (04), which has no equivalent, it lands on the other tradition's "Objeciones". The sidebar follows the navigation decision: the new branch is current and the previous one stays expanded. The traditions keep one fixed order across the whole site, so none reads as a ranking.
+**Why:** Pedro first thought the sidebar alone was enough; the research recommended a Stripe Docs-style switcher (`docs/research/analogs.md`; verified 2026-10-07 that Stripe's "Accept a payment" has page variants carried in the URL). Keeping the section is our addition on top of that pattern, and it is what the sidebar can't do.
+**Discarded:** switching traditions only through the sidebar; a switcher that swaps content in place without a URL per tradition; `position: fixed` (sticky gives the same reach without covering the sidebar or content).
+
+## 2026-10-08 · No "Citar esta página" (Pedro chose)
+**Chosen:** no "cite this page" control for Doctrina's own pages. Citing a source stays in the passage detail ("Citar").
+**Why:** Pedro saw no reason for it, and none of the four 03 screens had it (it was only in P2's 02 header; the agent had moved it to 03 by mistake). If readers ask to cite Doctrina, it can be added.
+**Discarded:** "Citar esta página" in 02 or 03.
+
+## 2026-10-08 · Authority categories are glossary terms (Pedro chose)
+**Chosen:** the categories of authority ("Dogma", "Doctrina", "Disciplina"…) enter the glossary, defined per tradition from that tradition's own documents. Where a statement shows its category, the label opens its definition. How tradition pages present them: `ROADMAP.md`, screen 03.
+**Why:** the label alone was unclear to Pedro ("Dogma: Trento…" in 02), and each tradition has different categories; showing one a tradition doesn't have would suggest it does.
+**Discarded:** category labels without an explanation.
+
 ## 2026-10-07 · Launch with many doctrines, number not set (Pedro chose)
 **Chosen:** launch with many doctrines, the most important ones; how many isn't decided. Candidates and current state in `PROJECT.md`, "Content model".
 **Why:** Pedro's plan for the launch changed.
@@ -24,7 +39,7 @@ Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v
 **Discarded:** P2, P3 and P4's header navigation. Remembering expanded branches between visits.
 
 ## 2026-10-06 · Who raises an objection: out of previews, quiet on the objection page (Pedro chose)
-**Chosen:** objection previews (doctrine pages, screen 02 in every proposal) show only the objection and the position it targets, not who raises it. The objection's own page keeps the attribution once, quietly ("Suelen plantearla reformados y bautistas"), not as a highlighted fact.
+**Chosen:** objection previews (doctrine pages, screen 02 in every proposal; also the objection list on tradition pages, 03, Pedro 2026-10-08) show only the objection and the position it targets, not who raises it. The objection's own page keeps the attribution once, quietly ("Suelen plantearla reformados y bautistas"), not as a highlighted fact.
 **Why:** Pedro cares about the objection, not who raises it; in a preview it is noise. On the objection page the attribution protects neutrality: an objection with no owner reads as the site making it, while an attributed one shows the site reports rather than attacks; it also helps a reader place an argument met in real life. `raisedBy` is editorial judgment flagged for review (`docs/research/content-notes.md`), so showing it less lowers the risk of misattribution.
 **Discarded:** removing the attribution everywhere; keeping it in previews. If P2 is chosen, its "Quién objeta a quién" grid needs rethinking under this decision.
 
