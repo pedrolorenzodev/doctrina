@@ -2,6 +2,44 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-09 · Spanish translations in three levels, no paid reviewers (Pedro chose)
+**Chosen:**
+1. Where a public-domain Spanish translation exists (Cyprian 1807, López de Ayala's Trent 1785, Zorita's Roman Catechism 1819…), it is used as printed; no review needed.
+2. Otherwise Doctrina translates from the original with AI, always labelled as such (e.g. "Traducción de Doctrina asistida por IA, desde [edición]"), with the original and the public-domain English translation one tap away.
+3. Passages quoted on doctrine pages get a second, independent AI check against the original and the English translation, and Pedro reads them in Spanish against the English, as far as he can. A quote he hasn't read yet is marked as unreviewed (trust invariant).
+**Why:** Pedro: no paid reviewers (money and time), same spirit as "no permissions for now". A mistranslated Father quoted on a doctrine page is the largest trust risk, so review effort goes there; those quotes are tens per doctrine, not thousands.
+**Discarded:** recruiting reviewers and a "serious review" mechanism before launch (was in `ROADMAP.md`); publishing unlabelled AI translations; human review of every translated text.
+
+## 2026-10-09 · No permissions for now: only what is legal without asking (Pedro chose)
+**Chosen:** no permission letters, lawyers or licence negotiations for now. Doctrina offers as many sources as it can get legally without asking anyone. When we don't hold a source in full, its citation offers to go to a legal page with the full text (the publisher's or the official site), never an unofficial copy.
+**Why:** Pedro: permissions can take months, money and legal work he didn't plan for; the goal is the most sources possible without them. Research on likely answers and timelines: `docs/research/sources.md` §6.5 and `docs/research/sources/critic.md` D5 (drafts kept there for later).
+**Discarded:** sending the permission letters now (LEV, Christian Unity, SBC…); a legal consult before launch (moved to "Later" in `ROADMAP.md`).
+
+## 2026-10-09 · Full text only if free in the US, Spain and all of Latin America (Pedro chose)
+**Chosen:** a text is published in full only if it is free in the US (hosting), Spain and every Latin American country. Main audiences are Argentina and the US. A text that fails shows that it isn't available for now and links to a legal page with the full text; no "se libera en [año]" calendar in the UI.
+**Why:** a reader in any of those countries exposes us to that country's law. In 2026 the binding line is the same for all of them (a translator who died in 1945 or earlier); Mexico only becomes stricter from 2033 (`docs/research/sources/legal-gaps.md`, 2.2). Pedro: the goal is to offer as many sources as possible.
+**Discarded:** only the US and Argentina (frees a handful more texts, by translators who died 1946–1955, at the cost of risk in Spain, Colombia, Panama and Mexico); geo-split serving per country; a public "free on" calendar.
+
+## 2026-10-09 · Reina-Valera 1909 stays the Spanish default; PDDPT selectable (Pedro chose)
+**Chosen:** the 2026-10-06 default holds (RV1909). *Palabra de Dios para ti – Biblia Latinoamericana Textual* (PDDPT, CC BY 4.0, eBible `spapddpt`) is added as a selectable modern Spanish translation.
+**Why:** Pedro wants a traditional text for deep study. PDDPT is literal, not a simplified Bible, but on the agent's comparison of real verses it renders Rom 3:28 as "declarado justo", which takes a side on justification, and transliterates divine names ("el Espíritu de ʼElohim", Gen 1:2). It does read in today's Spanish and is more precise in places ("puertas del Hades", Mt 16:18).
+**Discarded:** PDDPT as the default.
+
+## 2026-10-09 · Every text is rebuilt from a dated print scan (Pedro chose)
+**Chosen:** every source text comes from a dated print scan (archive.org, HathiTrust, BNE, Google Books) with our own OCR, and keeps its provenance per paragraph (scan id + page). Wikisource and Project Gutenberg are only aids or collation witnesses, usable as text only where scan-backed or proofread. The registry's current sources are re-sourced this way (21 of 44 entries cite New Advent; others come from Hanover, Tanner and CCEL; findings in `docs/research/sources/registry-audit.md`). A licence badge on Hugging Face or GitHub is evidence of nothing: every text is traced to a dated print.
+**Why:** the agent's recommendation in `docs/research/sources.md` §6.1, accepted. Aggregators' terms are contract, not copyright, and several forbid commercial use or claim rights on their edited text; "no citation without an edition" needs a real printed edition behind each one.
+**Discarded:** accepting Wikisource or Gutenberg text as-is; asking CCEL for a licence to skip the OCR work.
+
+## 2026-10-09 · Our own translations are proprietary, for now (Pedro chose)
+**Chosen:** Doctrina's translations are made from the underlying public-domain print (Migne, pre-1931 editions…), never from a CC BY-SA file; BY-SA files are used only as witnesses. Word data comes only from CC BY sources (TAGNT, MACULA without the UBS fields, TFLSJ). Opening the translations later stays possible.
+**Why:** the agent's recommendation in `docs/research/sources.md` §6.2, accepted: translating from a BY-SA file would make our translation BY-SA too; opening later is easy, closing something already open is impossible.
+**Discarded:** publishing our translations under CC BY-SA (the Sefaria model); a mixed licence.
+
+## 2026-10-09 · Anglican tradition after launch (Pedro chose)
+**Chosen:** the launch has five traditions; Anglican is added later.
+**Why:** it adds the Crown copyright question for UK readers, and the only Spanish Books of Common Prayer available are from the 18th–19th centuries (`docs/research/sources/critic.md`, D10).
+**Discarded:** Anglican as a sixth tradition at launch.
+
 ## 2026-10-08 · Tradition switcher that keeps your section (Pedro chose)
 **Chosen:** on every page inside a tradition (03 and the pages under it), a switcher with the traditions at the top of the content column, sticky so it can be used from any section. Picking another tradition marks it as selected, changes the content and moves the sidebar's current page to the new tradition. Each tradition is its own page with its own URL (shared links, Back and search engines keep working); switching lands on the same section ("Cómo se vive" → "Cómo se vive"); from an objection page (04), which has no equivalent, it lands on the other tradition's "Objeciones". The sidebar follows the navigation decision: the new branch is current and the previous one stays expanded. The traditions keep one fixed order across the whole site, so none reads as a ranking.
 **Why:** Pedro first thought the sidebar alone was enough; the research recommended a Stripe Docs-style switcher (`docs/research/analogs.md`; verified 2026-10-07 that Stripe's "Accept a payment" has page variants carried in the URL). Keeping the section is our addition on top of that pattern, and it is what the sidebar can't do.

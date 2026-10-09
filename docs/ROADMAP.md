@@ -3,8 +3,9 @@
 ## Current state
 > Overwritten at the end of every session. 15 lines max.
 
-**2026-10-08.** Base project in place (Next 16 scaffold with no pages, doc system, git hook, handoff data in `data/` and `docs/research/`); `npm run verify` passes. No UI is built yet.
-Since then, reviewing UX round 2 with Pedro: navigation chosen (P1's tree sidebar, to validate in a polished proposal); search component chosen (P1's, with self-explaining results); tradition switcher; site-wide conventions for dates and objection attribution; whole-Bible reading added to scope. All in `DECISIONS.md`. Screen notes under "Now": 01, 02 and 03 covered; 05–08 partly. Next to review: 04 (objection), then 09.
+**2026-10-09.** Base project in place (Next 16 scaffold with no pages, doc system, git hook, handoff data in `data/` and `docs/research/`); `npm run verify` passes. No UI is built yet.
+Reviewing UX round 2 with Pedro: navigation, search component, tradition switcher, date and attribution conventions and whole-Bible reading are decided (`DECISIONS.md`). Screen notes under "Now": 01, 02 and 03 covered; 05–08 partly. Next to review: 04 (objection), then 09.
+Overnight source research (`docs/research/sources.md`) reviewed with Pedro on 2026-10-09: every text from a dated print scan, proprietary translations, full text only if free in the US + Spain + Latin America, no permissions for now (link out instead), three-level Spanish translation policy, RV1909 default + PDDPT selectable, Anglican after launch.
 Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don't run).
 **Next step:** Pedro keeps deciding the content of each screen; then a polished proposal of the whole structure.
 
@@ -77,6 +78,7 @@ Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don
 - **Decide: where the data-access layer lives.** CONTEXT §8 says `src/data/*` (async `getDoctrine`, `getVerse`, `getFather`…); the base structure has no such folder and `lib/` must stay domain-free. Options: per-feature `data/` folders, a shared domain layer between `features` and `components/ui`, or a dedicated feature. Decide before the first page reads data.
 - Port the screenshot tool (`tools/shot.mjs`, Playwright, from v2) and add an `npm run shot` script, with the first UI block.
 - Adapt `data/scripts/` before running them: outputs still target v2's `src/content/data/`; raw downloads are expected in `data/raw/src/` (copy them from `~/Desktop/dev/doctrina-v2/data/raw/src/` or re-download, recording the date).
+- Re-source the 44 registry entries and the Eucharist pilot quotes to dated print scans (`DECISIONS.md`, 2026-10-09; findings and replacements in `docs/research/sources/registry-audit.md`). In `john6`, withhold the 5 passages wrongly labelled public domain.
 - Eucharist pilot in the chosen structure, block by block, each verified and approved.
 - Verify flagged content: `docs/research/content-notes.md`, `docs/research/history-notes.md`, plus v2 bugs: Spanish locators mixing English ("Tratados on John", "Decreto on the Eucharist"); Ignatius *Smyrnaeans* context (6.2, 7.2) and the Greek in the round-2 mockups, written from memory.
 - Whole-Bible reading, phase 1: text-only reader as static pages (66 books + separate deuterocanonical section; RV1909 / BSB by default; deuterocanonical books in English with a notice). Plan in `DECISIONS.md`.
@@ -96,15 +98,14 @@ Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don
 - Spanish deuterocanonical books: OCR and correction of Torres Amat (1825). Check Straubinger's legal status before any use (Argentina 2027-01-01, Spain 2037).
 - **Decide:** which doctrines and how many at launch (many, the most important; candidates in `PROJECT.md`), then draft them.
 - Complete texts of every source, whenever licensing allows (Pedro: don't give up looking for ways to get them); copyrighted ones only as short excerpts plus a link.
-- Spanish translations of patristic texts (AI-assisted draft + human review, labelled as translation).
+- Spanish translations of patristic texts, following the three-level policy in `DECISIONS.md` (2026-10-09).
 - Videos: 7 of 15 Eucharist objections have none; confirm the affiliation of the small channels flagged in `content-notes.md`.
 - Very low priority, for the final-details stage (Pedro, 2026-10-08): let readers send videos to add to a tradition's Videos section ("this video explains and defends tradition X much better"). Decide then whether to build it.
 - "Cómo se vive" full page (screen 03's "Leer cómo se vive, completo"), only if it justifies a page of its own.
 - Payments (Gumroad/Polar + Mercado Pago) after validation.
 - **Decide:** name and domain ("Doctrina" is provisional).
-- **Decide:** Anglican as a sixth tradition.
+- Research in depth before charging money (Pedro, 2026-10-09: no lawyer for now): the Argentine FNA levy on public-domain works (Res. 662/2022, probably reaching our own translations), the operating entity, Spain's shorter-term rule for 1931–63 US works, the Vatican term, Pius XI in the US. Questions in `docs/research/sources/legal-gaps.md` §11 and `critic.md` D4.
 - **Decide:** patristic cutoff (conventional: John of Damascus, d. c. 749).
-- **Decide:** reviewer recruitment and the "serious review" mechanism (required before launch).
 - **Decide:** the unreviewed brainstorm groups (Learning, Video/audio, Trust).
 - **Decide:** connected-doctrines format (tentative direction under "Now", screen 02).
 - Candidates from the v1 plan, never re-confirmed for the deep-study vision: "Report an error" on every citation; a source registry page (every source, its license, what cites it); tradition pages; an about / method page (neutrality policy, reviewers); a footer with method, sources and licenses (v2 critique); a language switch that keeps the reader's place; a persisted Auto / Light / Dark theme; print stylesheet.
