@@ -2,6 +2,21 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-14 · Every highlighted point on a timeline states its exact date (Pedro chose)
+**Chosen:** any timeline that highlights an element (the small ones in the citation modal and in "Fuentes citadas", screen 08, any future one) marks that element's exact date on the axis, not just round years (0, 500, 1000…). On desktop the small timelines in a source list use the available width, all on one shared axis so they compare at a glance.
+**Why:** Pedro: in P1·04 the blue dot can't be read as a date, and "c. 391" in grey blends into the surrounding grey note.
+**Discarded:** axis labels only at round years; the date only in the caption text.
+
+## 2026-10-14 · Edition, translation and licence leave the citation modal (Pedro chose)
+**Chosen:** the citation modal shows the quote, who said it and its date, clearly. Edition, translation and licence move to the source's own page (the full-text reader, reached with "Abrir la fuente completa"), placed so they never come first nor get in the way of the text; the footer and a method page explain the general policy. Copy around citations no longer announces what the modal contains (e.g. P1's "Toda cita se abre aquí mismo con su texto, fecha, edición y licencia" goes).
+**Why:** Pedro: most readers care about the quote, not its edition, and the note distracts from it. Keeping the edition one click away still honours "no citation without an edition"; a footer or FAQ alone would not.
+**Discarded:** edition and licence inside the modal (P1); only in the footer or a FAQ.
+
+## 2026-10-14 · No tradition switcher on objection pages; every breadcrumb step leads somewhere real (Pedro chose)
+**Chosen:** the objection page (04) has no tradition switcher: switching from a detail page lands on a different objection, which is confusing. The tradition is given by the breadcrumb and the sidebar. In the breadcrumb, "Objeciones" leads to the "Objeciones" section of the tradition page (03); there is no separate objections page. Rule for the whole site: each breadcrumb step leads to a real place (a page or a section of a page); a step with nowhere to go is not shown.
+**Why:** Pedro: a switcher fits a page listing all objections of a tradition, not a detail page; and a breadcrumb step that isn't a real destination misleads.
+**Discarded:** the switcher on 04 landing on the other tradition's "Objeciones" (2026-10-08 decision, that part); a standalone "Objeciones" page.
+
 ## 2026-10-09 · Spanish translations in three levels, no paid reviewers (Pedro chose)
 **Chosen:**
 1. Where a public-domain Spanish translation exists (Cyprian 1807, López de Ayala's Trent 1785, Zorita's Roman Catechism 1819…), it is used as printed; no review needed.
@@ -43,6 +58,7 @@ Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v
 ## 2026-10-08 · Tradition switcher that keeps your section (Pedro chose)
 **Chosen:** on every page inside a tradition (03 and the pages under it), a switcher with the traditions at the top of the content column, sticky so it can be used from any section. Picking another tradition marks it as selected, changes the content and moves the sidebar's current page to the new tradition. Each tradition is its own page with its own URL (shared links, Back and search engines keep working); switching lands on the same section ("Cómo se vive" → "Cómo se vive"); from an objection page (04), which has no equivalent, it lands on the other tradition's "Objeciones". The sidebar follows the navigation decision: the new branch is current and the previous one stays expanded. The traditions keep one fixed order across the whole site, so none reads as a ranking.
 **Why:** Pedro first thought the sidebar alone was enough; the research recommended a Stripe Docs-style switcher (`docs/research/analogs.md`; verified 2026-10-07 that Stripe's "Accept a payment" has page variants carried in the URL). Keeping the section is our addition on top of that pattern, and it is what the sidebar can't do.
+**Replaced in part by** 2026-10-14 (no switcher on objection pages).
 **Discarded:** switching traditions only through the sidebar; a switcher that swaps content in place without a URL per tradition; `position: fixed` (sticky gives the same reach without covering the sidebar or content).
 
 ## 2026-10-08 · No "Citar esta página" (Pedro chose)
