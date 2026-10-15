@@ -21,7 +21,7 @@ A bilingual (Spanish / English) **deep-study resource on Christian doctrine**. F
 
 ## Content model (owner-confirmed)
 
-- **Traditions (MVP):** Catholic, Orthodox, Lutheran, Reformed, Baptist/Evangelical. No Anglican for now (open).
+- **Traditions (MVP):** Catholic, Orthodox (Eastern only), Lutheran, Reformed, Baptist, Pentecostal (`DECISIONS.md`, 2026-10-14). Anglican after launch.
 - **One tradition at a time** is the default reading mode; the others are one click away. Side-by-side comparison only inside specific features (liked as "compare this question" within a page, not as the default).
 - **Neutral (global) sections**, shared and never assigned to a modern tradition: common ground; history of the doctrine; **earliest witnesses** (what Apostolic and Church Fathers literally wrote); patristic commentary on verses. Claiming Ignatius or Irenaeus for one tradition is itself contested. Patristic cutoff is open; the conventional end is John of Damascus (d. c. 749), which keeps Jerome and Augustine.
 - **Scripture dossier per tradition**: the passages *that* tradition argues from, typology included (manna, Melchizedek), never a single shared reading.
@@ -44,7 +44,7 @@ A bilingual (Spanish / English) **deep-study resource on Christian doctrine**. F
 
 **Not yet reviewed by Pedro** (don't build): the "Learning", "Video/audio" and "Trust" brainstorm groups.
 
-**Out for now**: accounts, bookmarks, notes, AI Q&A, comments, audio, PDF export, more than 5 traditions, mobile app. Accounts, bookmarks and notes come back with Supabase. **Generated chat answers are out for good** (they break neutrality and trust, and cost per query with no revenue).
+**Out for now**: accounts, bookmarks, notes, AI Q&A, comments, audio, PDF export, more than 6 traditions, mobile app. Accounts, bookmarks and notes come back with Supabase. **Generated chat answers are out for good** (they break neutrality and trust, and cost per query with no revenue).
 
 **Validation hooks** (still intended): events `read_complete` (≥ 75% scroll + 90 s), `citation_open`, `tradition_switch`, `language_switch`, `email_signup`, `price_click`. Fake door on doctrine pages ("Full guide: 30 doctrines, printable PDF + citation tables" with a price → honest "not built yet" + email). One-question survey after `read_complete` ("What are you using this for?"). Analytics: PostHog free tier.
 

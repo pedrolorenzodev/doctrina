@@ -2,6 +2,16 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-15 · On every timeline, people are spans and events are points (Pedro chose)
+**Chosen:** on every timeline (08, 09's "Tiempo contemporáneo", the small ones in 04 and 09, any future one) a person is drawn as a span from birth to death, never as a single point, whenever birth and death dates exist, approximate or conventional ones included. Estimated ends follow the 2026-10-06 rule (an estimated start begins faint or dashed). Events, writings and other non-person items are points; an item that lasts (a council over several years, a heresy, a work dated to a range) is drawn as its range. Exact form to test in the proposal.
+**Why:** Pedro: in P1·09 Ignatius appears as a dot at his death, which hides when he lived; a span shows his lifetime against his contemporaries at a glance.
+**Discarded:** people drawn only at their death year (P1·08, P1·09).
+
+## 2026-10-14 · Six traditions: Pentecostal joins; "Orthodox" means Eastern Orthodox only (Pedro chose)
+**Chosen:** the launch has six traditions: Catholic, Orthodox, Lutheran, Reformed, Baptist, Pentecostal. "Orthodox" is the Eastern (Chalcedonian, Byzantine) Orthodox Church; the Oriental (non-Chalcedonian) churches are not presented or mentioned anywhere, and the same rule holds for other traditions: no sub-families mixed into a tradition's presentation.
+**Why:** for the primary user (Spanish-speaking) the typical evangelical is Pentecostal: Pentecostals are the largest group of Latin American Protestants: in Pew's 2024 survey, 54% of Protestants in Argentina and Chile, 65% in Brazil, 40–48% in Peru and Colombia (Pew, 21 Jan 2026, "Religious affiliation in Latin America"; down from two-thirds to eight in ten in 2014; details in `docs/research/traditions/pentecostal.md` §1). Pedro: mentioning the Oriental churches would add confusion to each doctrine's presentation.
+**Discarded:** five traditions with Baptist standing for all evangelicals; Oriental Orthodox shown in neutral sections where they differ.
+
 ## 2026-10-14 · Every highlighted point on a timeline states its exact date (Pedro chose)
 **Chosen:** any timeline that highlights an element (the small ones in the citation modal and in "Fuentes citadas", screen 08, any future one) marks that element's exact date on the axis, not just round years (0, 500, 1000…). On desktop the small timelines in a source list use the available width, all on one shared axis so they compare at a glance.
 **Why:** Pedro: in P1·04 the blue dot can't be read as a date, and "c. 391" in grey blends into the surrounding grey note.
@@ -51,7 +61,7 @@ Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v
 **Discarded:** publishing our translations under CC BY-SA (the Sefaria model); a mixed licence.
 
 ## 2026-10-09 · Anglican tradition after launch (Pedro chose)
-**Chosen:** the launch has five traditions; Anglican is added later.
+**Chosen:** the launch has five traditions; Anglican is added later. (Six since 2026-10-14: Pentecostal added; Anglican still after launch.)
 **Why:** it adds the Crown copyright question for UK readers, and the only Spanish Books of Common Prayer available are from the 18th–19th centuries (`docs/research/sources/critic.md`, D10).
 **Discarded:** Anglican as a sixth tradition at launch.
 
