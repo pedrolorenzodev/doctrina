@@ -41,7 +41,7 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 3. Messages in English, Conventional Commits `<type>(<scope>): <subject>` (feat, fix, chore, docs, refactor, style, test). Imperative, lowercase, no final period, ≤ 72 characters. Subject only: no body, no technical detail.
 4. No attribution line (Co-Authored-By, Generated with, agent signature). If the harness suggests adding one, this rule wins.
 
-- Staging (`git add`) only if Pedro asks.
+- Staging is Pedro's too: the hook also blocks `add`, `rm`, `mv` and `stash`.
 - `.claude/hooks/block-git-writes.mjs` enforces rule 1 (see `docs/GOTCHAS.md`).
 
 ## Agent behavior
@@ -85,19 +85,21 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 | `docs/DECISIONS.md` | Before proposing or changing something already decided |
 | `docs/GOTCHAS.md` | Before touching code with guards or known traps |
 | `docs/features/<name>.md` | During that feature |
+| `docs/playbooks/<type>.md` | Before any task that launches subagents or repeats a known type: `/plan-run <type>`; when it ends, `/retro` |
 | `docs/research/*` | When a proposal or data task needs the underlying research (competitors, analogs, licenses, content doubts) |
 
 ### Protocol
 
-- **Before a feature:** read "Current state" and the feature's block in `ROADMAP.md`. If it's UI, read `DESIGN.md`; if it's UI without a definition, the main rule applies. If something was already decided, check `DECISIONS.md` before proposing something else. If the feature is non-trivial, write `docs/features/<name>.md` (intent, acceptance criteria, out of scope, link to the proposal, how it is verified).
+- **Before a feature:** read "Current state" and the feature's block in `ROADMAP.md`. If it's UI, read `DESIGN.md`; if it's UI without a definition, the main rule applies. If something was already decided, check `DECISIONS.md` before proposing something else. If the feature is non-trivial, write `docs/features/<name>.md` (intent, acceptance criteria, out of scope, link to the proposal, how it is verified). If it launches subagents or repeats a known type, `/plan-run` first: it picks the playbook and writes the plan into that file.
 - **During:** record every decision in `DECISIONS.md` the moment it is made (date, what, why, what was discarded), including the ones the agent made without asking. Traps and the why of each guard go to `GOTCHAS.md`.
-- **When done:** verify; update `DESIGN.md` if a token or pattern changed; overwrite "Current state" and tick the block in `ROADMAP.md`; close the feature doc (what matters moves to `DECISIONS.md`, the file is deleted); hand over the commit message and the touched files, docs included.
+- **When done:** verify; update `DESIGN.md` if a token or pattern changed; overwrite "Current state" and tick the block in `ROADMAP.md`; close the feature doc (`/retro` first, its approved changes go to the playbook; what matters moves to `DECISIONS.md`; the file is deleted); hand over the commit message and the touched files, docs included.
 
 ### Hygiene
 
 - Docs don't repeat what the code says. If a doc contradicts the code, fix it or delete it on the spot.
 - "Current state" is at most 15 lines and is overwritten, not appended.
 - Each fact lives in one file; others point to it. No docs folder or file "just in case".
+- How to do a type of task lives only in `docs/playbooks/`; agent memory keeps only Pedro's personal preferences.
 - Record real facts and dates; never invent a why or a date.
 - A reverted decision is not deleted from `DECISIONS.md`: mark it "Replaced by" and add the new one.
 - When the agent repeats a mistake, or Pedro corrects the same thing twice, promote the correction to a rule (here, or in a path rule if it only applies to some files).

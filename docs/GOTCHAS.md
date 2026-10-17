@@ -14,7 +14,7 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 ## Git and environment
 
 - **`.env*` in `.gitignore` would also ignore `.env.example`.** · The scaffold's ignore pattern is broad. · `.gitignore` → `!.env.example` re-includes it; keep that line below `.env*`.
-- **The git hook matches the whole command text, not just the command.** · It is a regex over the Bash string: `echo 'run git push later'` is blocked too, and so is `git restore --staged` (unstaging). Rephrase the command or let Pedro run it. · `.claude/hooks/block-git-writes.mjs`.
+- **The git hook matches the whole command text, not just the command.** · It is a regex over the Bash string: `echo 'run git push later'` is blocked too, and so is `git restore --staged` (unstaging). It also blocks `add`, `rm`, `mv` and `stash` (2026-10-17): `git rm --cached` once slipped through and staged a deletion, while the undo was blocked. Because it matches text, a heredoc or script passed inline that merely mentions those commands is blocked too: write the script to a file first. Rephrase the command or let Pedro run it. · `.claude/hooks/block-git-writes.mjs`.
 
 ## Data scripts
 

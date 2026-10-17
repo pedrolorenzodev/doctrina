@@ -24,7 +24,10 @@ const blockedSubcommands = [
   String.raw`branch\s+(?:\S+\s+)*-\w*D`,
   String.raw`checkout\s+(?:--\s+)?\.(?:\s|$)`,
   String.raw`restore\b`,
-  String.raw`stash\s+(?:drop|clear)\b`,
+  String.raw`stash\b`,
+  String.raw`add\b`,
+  String.raw`rm\b`,
+  String.raw`mv\b`,
 ];
 
 const blocked = blockedSubcommands.some((sub) =>
