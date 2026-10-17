@@ -6,7 +6,7 @@
 **2026-10-14.** Base project in place (Next 16 scaffold with no pages, doc system, git hook, handoff data in `data/` and `docs/research/`); `npm run verify` passes. No UI is built yet.
 Reviewing UX round 2 with Pedro: navigation, search component, tradition switcher, date and attribution conventions and whole-Bible reading are decided (`DECISIONS.md`). Screen notes under "Now": 01, 02, 03, 04 and 09 covered; 05–08 partly. Next to review: 10 (witnesses).
 Overnight source research (`docs/research/sources.md`) reviewed with Pedro on 2026-10-09: every text from a dated print scan, proprietary translations, full text only if free in the US + Spain + Latin America, no permissions for now (link out instead), three-level Spanish translation policy, RV1909 default + PDDPT selectable, Anglican after launch.
-Tradition source universe (2026-10-14): six maps in `docs/research/traditions/` (official sources, authority grades, editions, doctrine index); Lutheran, Reformed, Catholic, Baptist, Pentecostal verified (`verification-*.md`), Orthodox not yet. Each map ends with open questions for Pedro.
+Tradition source universe done (2026-10-15): six maps in `docs/research/traditions/` verified, corrected and made consistent (`consistency.md`); Pedro's answers to their open questions are in `DECISIONS.md` (2026-10-15).
 Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don't run).
 **Next step:** Pedro keeps deciding the content of each screen; then a polished proposal of the whole structure.
 
@@ -97,7 +97,10 @@ Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don
 - Port the screenshot tool (`tools/shot.mjs`, Playwright, from v2) and add an `npm run shot` script, with the first UI block.
 - Adapt `data/scripts/` before running them: outputs still target v2's `src/content/data/`; raw downloads are expected in `data/raw/src/` (copy them from `~/Desktop/dev/doctrina-v2/data/raw/src/` or re-download, recording the date).
 - Re-source the 44 registry entries and the Eucharist pilot quotes to dated print scans (`DECISIONS.md`, 2026-10-09; findings and replacements in `docs/research/sources/registry-audit.md`). In `john6`, withhold the 5 passages wrongly labelled public domain.
-- **Tradition source universe: verify, correct, consistency pass, then Pedro's open questions; then the Eucharist rebuild and expert review.** Runs in a separate session; handoff and state in `docs/features/tradition-universe.md`.
+- **Eucharist rebuild per tradition inside the source universe** (`docs/research/traditions/`; who speaks for each tradition and which texts: `DECISIONS.md` 2026-10-15), then a simulated-expert review per tradition plus a hostile critic. Write `docs/features/eucharist-rebuild.md` first. Fix New Hampshire "1833" → 1853 in `data/site/sources.extra.json` (`new-hampshire-1833`), `data/raw/eucharist.content.json` and `data/site/eucharist.v2.json`.
+- Prototype the scan → OCR → numbered divisions → collation pipeline on one real work, measuring error rate and cost (`DECISIONS.md` 2026-10-15).
+- After the Eucharist rebuild: a neutral source universe for the shared sections (Fathers, councils, heresies), needed by screen 09.
+- Tradition maps, leftovers (`docs/research/traditions/consistency.md` §5): §4 sub-heading styles differ between maps; a few facts stay unconfirmed.
 - Eucharist pilot in the chosen structure, block by block, each verified and approved.
 - Verify flagged content: `docs/research/content-notes.md`, `docs/research/history-notes.md`, plus v2 bugs: Spanish locators mixing English ("Tratados on John", "Decreto on the Eucharist"); Ignatius *Smyrnaeans* context (6.2, 7.2) and the Greek in the round-2 mockups, written from memory.
 - Whole-Bible reading, phase 1: text-only reader as static pages (66 books + separate deuterocanonical section; RV1909 / BSB by default; deuterocanonical books in English with a notice). Plan in `DECISIONS.md`.
