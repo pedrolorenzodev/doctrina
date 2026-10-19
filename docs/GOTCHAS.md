@@ -14,6 +14,7 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 ## Git and environment
 
 - **`.env*` in `.gitignore` would also ignore `.env.example`.** · The scaffold's ignore pattern is broad. · `.gitignore` → `!.env.example` re-includes it; keep that line below `.env*`.
+- **`tools/review-page/check.mjs` needs `playwright-core`, which this repo doesn't install.** · It requires `process.env.PLAYWRIGHT_CORE || 'playwright-core'`; point the variable at any local copy (e.g. `PLAYWRIGHT_CORE=~/Desktop/zapatillas-research/node_modules/playwright-core`). Blocked Google Fonts requests show as 4 "Failed to load resource" errors per run: expected. Template markers in `shell.html` are `__DATA__` and `__APP__`. · `tools/review-page/`.
 - **The git hook matches the whole command text, not just the command.** · It is a regex over the Bash string: `echo 'run git push later'` is blocked too, and so is `git restore --staged` (unstaging). It also blocks `add`, `rm`, `mv` and `stash` (2026-10-17): `git rm --cached` once slipped through and staged a deletion, while the undo was blocked. Because it matches text, a heredoc or script passed inline that merely mentions those commands is blocked too: write the script to a file first. Rephrase the command or let Pedro run it. · `.claude/hooks/block-git-writes.mjs`.
 
 ## Data scripts

@@ -39,9 +39,9 @@ Pedro's direction (2026-10-17, 23:00): only Catholic dossiers across several doc
 - Session cron jobs fire only when idle and can fire late (one-shot ran 45 min late); a network drop killed one agent, resuming by SendMessage worked.
 - Coordinator must read each review page in full before publishing (~60k tokens per page): keep `data.js` lean.
 
-**Scratch material (outside the repo, survives until the Mac reboots).** Scratchpad `/private/tmp/claude-501/-Users-pedrolorenzo-Desktop-dev-doctrina/e0312757-8967-4bde-817a-aa2702aa00ff/scratchpad/`:
-- `review-build-common/` (shell.html, app.js, build.py: `python3 build.py <data.js> <out.html> "<title>"`), `review-build-<slug>/data.js` per doctrine (Eucharist's is the older `review-build/`), `review-check/check.js` (headless check). Published pages can also be re-read with the Artifact tool.
-- Fetched texts reused by agents: `dl/` (Waterworth Trent), `v/` (page-split OCR of López de Ayala 1785 and Waterworth), `just-apply/trig/` (1921 Concordia Triglotta print scan text, replaces the © 1996 NPH e-text), and `<doctrine>-cat/`, `-ver/`, `-exp/`, `-crit/`, `-apply/` folders. If lost, agents re-fetch from archive.org (ids are in the dossiers).
+**Review pages.** Tool in `tools/review-page/` (how-to in `docs/playbooks/content-dossier.md`, step 8); data per doctrine in `docs/research/doctrines/<slug>/review-page.data.js`. The Eucharist Artifact was published with the earlier version of the tool; its data file is converted to the shared format (same `storeKey`) and builds and checks clean, but it was not republished.
+
+**Scratch (outside the repo, until the Mac reboots).** Fetched texts agents reuse: `/private/tmp/claude-501/-Users-pedrolorenzo-Desktop-dev-doctrina/e0312757-8967-4bde-817a-aa2702aa00ff/scratchpad/` `dl/` (Waterworth Trent), `v/` (page-split OCR of López de Ayala 1785), `just-apply/trig/` (1921 Concordia Triglotta scan text). If lost, agents re-fetch from archive.org (ids are in the dossiers).
 
 ## Retro
 
