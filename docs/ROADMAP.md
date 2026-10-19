@@ -6,7 +6,7 @@
 **2026-10-14.** Base project in place (Next 16 scaffold with no pages, doc system, git hook, handoff data in `data/` and `docs/research/`); `npm run verify` passes. No UI is built yet.
 Reviewing UX round 2 with Pedro: navigation, search component, tradition switcher, date and attribution conventions and whole-Bible reading are decided (`DECISIONS.md`). Screen notes under "Now": 01, 02, 03, 04 and 09 covered; 05–08 partly. Next to review: 10 (witnesses).
 Overnight source research (`docs/research/sources.md`) reviewed with Pedro on 2026-10-09: every text from a dated print scan, proprietary translations, full text only if free in the US + Spain + Latin America, no permissions for now (link out instead), three-level Spanish translation policy, RV1909 default + PDDPT selectable, Anglican after launch.
-Tradition source universe done (2026-10-15): six maps in `docs/research/traditions/` verified, corrected and made consistent (`consistency.md`); Pedro's answers to their open questions are in `DECISIONS.md` (2026-10-15).
+Tradition source universe done (2026-10-15). Content, Catholic first (Pedro, 2026-10-17): five Catholic dossiers through draft, verification, expert, critic and corrections (Eucharist, Justification, Baptism, Papacy, Sola Scriptura) in `docs/research/doctrines/`; each has a review Artifact waiting for Pedro's notes (links and handoff: `docs/features/catholic-wave-1.md`). Neutral universe: part A done (`docs/research/neutral/`), B–D later.
 Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don't run).
 **Next step:** Pedro keeps deciding the content of each screen; then a polished proposal of the whole structure.
 
