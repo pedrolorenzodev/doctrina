@@ -88,3 +88,54 @@ Task 2: «Texto de 1647. Lo quitaron la PCUSA (1903), la OPC (1936) y la PCA; la
 - Which Westminster Confession text the INPM adopts (1647 or 1903): the 2002 Constitution names the Confession without an edition; the INPM's current constitution (2003 edition per a secondary snippet, not read) and the Publicaciones El Faro edition were not found. The copy read is a congregation's upload, not the INPM's own site.
 - Church of Scotland: the Panel on Doctrine's report and the 1986 Assembly minutes were not read; the Act itself is read in full. The Act quotes 25.6 in a form that differs slightly from the 1647 text; where the site quotes the Church of Scotland it should quote the Act.
 - Holy See licence: the legal effect of the Terms on short scholarly quotation, and whether the Terms are the whole story (the texts' Latin or translator copyright, e.g. LEV editions of the Catechism, is a separate layer). No date is printed on the Legal Notes page, so the version read is "as fetched 2026-10-19".
+
+## Follow-up 2026-10-20
+
+### Progress
+
+- Status: done
+- Done: identified the INPM-backed Westminster text; read Munich 1982, Ravenna 2007, Chieti 2016 and Alexandria 2023; searched official Greek and Russian church sources for withdrawal or qualification; updated the proposed Spanish lines.
+- In progress: none.
+- Next: Task 3, doctrine fingerprint dates.
+
+### (a) INPM Westminster text
+
+**Updated answer.** The best located evidence points to the 1647 wording, not the 1903 American revision. The INPM constitution still does not identify an edition, so this is evidence of the text the denomination approved and publishes rather than a newly located constitutional adoption clause. Confidence: medium-high.
+
+- The text edition is *Confesión de fe de Westminster*, translated by Mariano Ávila Arteaga, Carlos Sandoval Bennett and Donald Lagerwey, Publicaciones El Faro, printed in Mexico in 2001. A complete scan is readable at https://studylib.es/doc/7353647/confesi%C3%B3n-de-fe (read 2026-10-20) `[verified]`.
+- Its foreword says the General Assembly of the Iglesia Nacional Presbiteriana de México, through its Department of Theology, read the translation, approved it with satisfaction and supported immediate publication. The translators' introduction is dated Coyoacán, 1977. `[verified]`
+- Chapter XXV.F retains the clause: “ni puede en ningún sentido el papa de Roma ser cabeza de ella; ya que es aquel anticristo, aquel hombre de pecado e hijo de perdición”. `[verified]`
+- The table of contents ends at chapter XXXIII. There are no 1903 chapters XXXIV, “Del Espíritu Santo”, or XXXV, “Del Evangelio del amor de Dios y las Misiones”. A text derived from this translation but prepared independently in Argentina explicitly adds those 1903 chapters; it does not prove that the INPM edition contains them. `[verified]`
+- Publicaciones El Faro's current store still sells *Confesión de fe de Westminster* under SKU/ISBN 9789687197050, https://publicacioneselfaro.com.mx/producto/confesion-de-fe-de-westminster-texto/ (read 2026-10-20), but the product page does not expose its text or edition statement. `[verified]`
+- Wayback's CDX index returned captures of publicacioneselfaro.com.mx beginning in 2006, but no archived Westminster product page with inspectable edition data was located. No Westminster capture was returned for the INPM's current domain. `[verified]`
+- Conservative conclusion: the denomination-backed edition actually located preserves the antichrist sentence and lacks the characteristic 1903 additions. Doctrina may say that the INPM publishes/approved a text retaining the 1647 clause. It should not say that the constitution expressly chooses “the 1647 edition,” because the constitution itself remains silent.
+
+### (b) Orthodox–Catholic dialogue documents
+
+All four official texts were read on 2026-10-20.
+
+| Document | Official source | 1848 | 1895 | Finding |
+|---|---|---:|---:|---|
+| Munich 1982, *The Mystery of the Church and of the Eucharist* | https://www.christianunity.va/content/unitacristiani/it/dialoghi/sezione-orientale/chiese-ortodosse-di-tradizione-bizantina/commissione-mista-internazionale-per-il-dialogo-teologico-tra-la/documenti-di-dialogo/1982-documento-di-monaco-di-baviera---il-mistero-della-chiesa-e-/testo-in-inglese.html | no | no | No mention of either encyclical, Pius IX, Leo XIII, or the nineteenth-century controversy. `[verified]` |
+| Ravenna 2007, *Ecclesial Communion, Conciliarity and Authority* | https://www.christianunity.va/content/unitacristiani/en/dialoghi/sezione-orientale/chiese-ortodosse-di-tradizione-bizantina/commissione-mista-internazionale-per-il-dialogo-teologico-tra-la/documenti-di-dialogo/testo-in-inglese.html | no | no | No mention of either encyclical. It says the parties disagree over historical evidence about Roman primacy in the first millennium; it does not address the nineteenth-century texts. `[verified]` |
+| Chieti 2016, *Synodality and Primacy during the First Millennium* | https://www.christianunity.va/content/unitacristiani/fr/dialoghi/sezione-orientale/chiese-ortodosse-di-tradizione-bizantina/commissione-mista-internazionale-per-il-dialogo-teologico-tra-la/documenti-di-dialogo/2016-sinodalita-e-primato-nel-primo-millennio--verso-una-comune-.html | no | no | No mention of either encyclical; its scope is the first millennium. The site's English-language document is exposed through the language selector even though the stable parent URL is French. `[verified]` |
+| Alexandria 2023, *Synodality and Primacy in the Second Millennium and Today* | https://www.christianunity.va/content/unitacristiani/fr/dialoghi/sezione-orientale/chiese-ortodosse-di-tradizione-bizantina/commissione-mista-internazionale-per-il-dialogo-teologico-tra-la/documenti-di-dialogo/document-d-alexandrie---synodalite-et-primaute-au-deuxieme-mille.html | yes | yes | §3.2 says the four Eastern patriarchs issued the 1848 patriarchal and synodical encyclical and argued against papal supremacy. §3.11 says Anthimus VII and his synod wrote the 1895 letter, expressed a strongly negative view of uniatism and rejected Leo XIII's invitation. `[verified]` |
+
+The previous report's statement that no dialogue document read addresses either encyclical is therefore superseded. Alexandria does not withdraw either text. It places both in a jointly narrated history. In §3.10, immediately before the 1895 paragraph, the Commission says that Orthodox arguments about papal infallibility were “often invoked in a polemical way, and not in a historical-critical manner.” That is a joint qualification of the argumentative manner in the surrounding history, not a synodal repeal of either encyclical. `[verified]`
+
+### (c) Greek and Russian official-source search
+
+No synodal act withdrawing either encyclical or its anti-papal wording was found. The official-source evidence located instead shows continuing citation, with important limits on what that establishes.
+
+- Ecumenical Patriarchate, Greek-language article by Bishop Kyrillos of Abydos, https://ec-patr.org/22/01/00/00/piskopoy-vydoy-kyrilloy-lt-b-gt-thr-nos-t-s-konstantinoyp-leos-st/ (read 2026-10-20): cites the 1848 letter as rejecting papal primacy and uses it in a contemporary dispute about primacy. This is hosted by the Patriarchate but is a named bishop's article, not a Holy Synod act. `[verified]`
+- Moscow Patriarchate, Secretariat of the Synodal Biblical and Theological Commission, 2019 commentary, https://mospat.ru/en/news/46337/ (read 2026-10-20): quotes the 1895 patriarchal and synodical encyclical at length to defend “first among equals” and also invokes the 1848 encyclical. This is an official synodal-commission commentary, but not an act declaring either text permanently binding in every phrase. `[verified]`
+- Russian Orthodox Church official site, “Священное Писание и Священное Предание: православный взгляд”, https://patriarchia.ru/article/96117 (search-result text read 2026-10-20) `[snippet]`: lists the 1848 and 1895 texts among later works sometimes called Orthodox symbolic books and reports Archbishop Basil Krivoshein's view that such writings have “secondary authority” because they arose amid strong non-Orthodox influence. This is a theological qualification of genre/authority attributed to one archbishop, not a synodal withdrawal and not specifically a retraction of the anti-papal wording.
+- Greek searches used `ανάκληση`, `αναθεώρηση` and `διευκρίνιση`; Russian searches used `отозвано`, `отменено` and `пересмотрено`, restricted to ec-patr.org, churchofgreece.gr, patriarchia.ru and mospat.ru. No responsive withdrawal act appeared. `[inference]`
+
+The evidence now supports a narrower, stronger statement: no withdrawal was located; official Orthodox channels still cite the documents, while one Russian theological source describes this class of later polemical documents as secondary in authority. It does not support calling either encyclical a universally binding present-day synodal confession in every sentence.
+
+### Updated proposed Spanish status lines
+
+**Orthodox encyclicals:** «Encíclicas patriarcales de 1848 y 1895: no se encontró una retractación sinodal. El diálogo católico-ortodoxo de Alejandría (2023) menciona ambas: presenta la de 1848 como una respuesta contra la supremacía papal y la de 1895 como rechazo de la invitación de León XIII y crítica del uniatismo. Fuentes oficiales ortodoxas todavía las citan, pero eso no demuestra que cada frase tenga hoy autoridad universal.»
+
+**INPM:** «Iglesia Nacional Presbiteriana de México: su Constitución incluye la Confesión de Westminster entre los símbolos doctrinales sin nombrar una edición. La traducción de Publicaciones El Faro avalada por su Asamblea General conserva en XXV.6 la frase “aquel anticristo” y no incluye los capítulos agregados en 1903; por eso la evidencia disponible apunta al texto de 1647, aunque no se encontró un acta constitucional que lo diga con esas palabras.»
