@@ -3,12 +3,13 @@
 ## Current state
 > Overwritten at the end of every session. 15 lines max.
 
-**2026-10-14.** Base project in place (Next 16 scaffold with no pages, doc system, git hook, handoff data in `data/` and `docs/research/`); `npm run verify` passes. No UI is built yet.
-Reviewing UX round 2 with Pedro: navigation, search component, tradition switcher, date and attribution conventions and whole-Bible reading are decided (`DECISIONS.md`). Screen notes under "Now": 01, 02, 03, 04 and 09 covered; 05–08 partly. Next to review: 10 (witnesses).
-Overnight source research (`docs/research/sources.md`) reviewed with Pedro on 2026-10-09: every text from a dated print scan, proprietary translations, full text only if free in the US + Spain + Latin America, no permissions for now (link out instead), three-level Spanish translation policy, RV1909 default + PDDPT selectable, Anglican after launch.
-Tradition source universe done (2026-10-15). Content, Catholic first (Pedro, 2026-10-17): five Catholic dossiers through draft, verification, expert, critic and corrections (Eucharist, Justification, Baptism, Papacy, Sola Scriptura) in `docs/research/doctrines/`; each has a review Artifact waiting for Pedro's notes (links and handoff: `docs/features/catholic-wave-1.md`). Neutral universe: part A done (`docs/research/neutral/`), B–D later.
+**2026-10-19.** Base project in place (Next 16 scaffold with no pages, doc system, git hook, handoff data in `data/` and `docs/research/`); `npm run verify` passes. No UI is built yet.
+UX round 2 with Pedro: navigation, search, tradition switcher, dates, attribution and whole-Bible reading decided (`DECISIONS.md`). Screen notes under "Now": 01–04 and 09 covered; 05–08 partly; 10 next.
+Content, Catholic first: five Catholic dossiers done (Eucharist, Justification, Baptism, Papacy, Sola Scriptura), each with a review Artifact; Pedro hasn't reviewed them. The six cross-cutting questions are on one page, not answered yet (`docs/features/catholic-wave-1.md`, Handoff).
+Visual direction round (2026-10-19, under "Now" item 2): living time ruler, doctrine fingerprint and right-edge tick ruler decided; Craig Mod and Asterisk discarded; The Met set aside; woodcut images "interesting to test"; Pedro's Pinterest notes pending.
+Usage limits for this week: agent memory `usage-plan-oct-2026` (weekly ≤ 60% by Tue 06:00, ≤ 80% by Wed 06:00).
 Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don't run).
-**Next step:** Pedro keeps deciding the content of each screen; then a polished proposal of the whole structure.
+**Next step:** Pedro answers the six-decisions page and gives notes on the review Artifacts; in parallel, continue the visual direction (his Pinterest references, then a polished proposal of the whole structure).
 
 ## Now
 
@@ -91,6 +92,9 @@ Open doubts: where the data-access layer lives; `data/scripts/` not adapted (don
      - Key for Pedro: on the line itself, the selection draws its span (a Father's life from birth to death; today Fathers are drawn only at their death year, though 44 of 56 have a birth year) and marks its years on the axis.
      - "c." and contested dates stay visible: more noticeable must not look more certain (Polycarp: 155 or 156; Eusebius c. 167).
 2. **Design direction approved → write `docs/DESIGN.md`** (tokens, type, color, spacing, motion, components, don'ts). Consider Google Labs' DESIGN.md format (alpha; drop it if it gets in the way).
+   - **Visual direction round, started 2026-10-19.** Pedro isn't fully convinced by the current direction («tal vez lo veo y pienso que es algo muy básico, aburrido y triste»); goal: professional and calm, but alive and high-quality. References researched in `docs/research/visual-references.md` (screenshots in `docs/research/visual-references/`). Decided: living time ruler, doctrine fingerprint with Stripe Press motion, right-edge tick ruler (above, screen 02); discarded: Craig Mod, Asterisk; set aside: The Met (`DECISIONS.md`, 2026-10-19). Reviewed one by one with Pedro up to reference 9; references 10 (Quran.com word tooltip), 11 (Rauno) and the synthesis's three directions not yet discussed. Reference 2 (Maggie Appleton): Pedro couldn't picture it; agent offered a switch on a real screen, not built.
+   - **Interesting to test (Pedro, 2026-10-19), not decided:** one public-domain woodcut per doctrine page, printed in the lapis ink (Works in Progress, reference 9). Proposal with three placements (wide band, in the column, beside the title) and an "original colors" switch: https://claude.ai/artifact/8zUgKBTGBEpPWKkJeeejXL (Dürer, *The Last Supper*, 1510, National Gallery of Art, CC0). Weak point: dark mode. Needs a rule for choosing images (e.g. biblical scenes in public-domain prints) so art doesn't always come from one tradition.
+   - **Under discussion, not agreed (Pedro's Pinterest notes, 2026-10-19).** (1) A type specimen pin, https://pin.it/69lp76Swy: he loves the "Eyebrows", "Headlines", "Quotes" and "Paragraph" styles, not "Decorative" (too strange, hard to read); analyze and test which fit. Agent caution: eyebrows are usually tracked caps, on the AI-slop list; take the face, drop the caps. (2) The same pin in dark mode, https://pin.it/4E82F7FBu: its black background and text color are «on point»; copy them if the analysis agrees. (3) A light-mode background reference, https://pin.it/2Y5n5uSFm: only the background, a wall-like texture to break the flat white; to test, also in dark mode; try each reference's exact color separately. The agent has not seen the images yet (Pedro asked to wait; fetch them or have him paste them).
 
 ## Next
 

@@ -2,6 +2,21 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-19 · Asterisk reference discarded entirely (Pedro chose)
+**Chosen:** nothing from reference 8 (`docs/research/visual-references.md`, Asterisk magazine): no left-margin section ruler, no large accent-colored title, no accent citation numerals, no warmer paper with pure black text.
+**Why:** Pedro: the right-edge Stripe Press ruler already shows the page's sections ahead and where the reader is, so the margin ruler adds nothing; «descartemos la referencia entera».
+**Discarded:** keeping the accent title, accent numerals or warm paper while dropping only the ruler (agent's question).
+
+## 2026-10-19 · The Met "museum object" page set aside, for now (Pedro chose)
+**Chosen:** reference 6's direction (a person page laid out like The Met's object page) is not pursued for now, nor its image treatments (painting as the object, full-width with text over it, lapis monotone). Demo: https://claude.ai/artifact/Qt9MmFmXnZdSyLDpaf6dqG
+**Why:** Pedro: «no me gustaron los diseños y propuestas de artifact», «por ahora ignoramos».
+**Discarded:** the four versions of the demo. Whether person pages carry historical images at all stays unanswered.
+
+## 2026-10-19 · No Craig Mod typographic devices (Pedro chose)
+**Chosen:** none of reference 7's devices (`docs/research/visual-references.md`): heavy drop cap opening sections, italic standfirst, tight title tracking, short centered rule between sections, hyphenation. Guide: https://claude.ai/artifact/Jrbb9kDqqQBkPco141bHLP
+**Why:** Pedro: «no lo banco para nada, lo descartamos».
+**Discarded:** the guide's "Estilo Craig Mod" preset and each switch on its own.
+
 ## 2026-10-19 · Doctrine fingerprint, with Stripe Press motion (Pedro chose)
 **Chosen:** each doctrine gets a "fingerprint": a strip from year 1 to 2026 with one thin tick per text or event the site cites, at its year (ranges as a faint band); hovering shows what each tick is. Motion is version 2 of the proposal, Stripe Press's ruler copied from the frame-by-frame analysis (`docs/research/stripe-press-ruler.md`): short ticks at rest, a wide cosine bulge (2.5 + 2·cos, up to ×4.5) that follows the pointer at 200 ms `ease`, the label fading in while rising 5 px, and ticks drawing in one after another on load. It appears everywhere the component is shown: doctrine header, doctrine cards (including comparison lists such as "Doctrinas conectadas") and, as a still image, the share preview. The entry animation is not repeated across the site; it may be tried on the right-edge page ruler. Proposal: https://claude.ai/artifact/LfBS993NPdDeVmDug3gyhq
 **Why:** Pedro: «le da una muy buena estética»; the entry animation is «sumamente smooth, aunque sutil, y es MUY gustosa de ver». Motion approach to keep for the future: subtle, smooth, driven by the reader, few signature animations rather than the same one everywhere.

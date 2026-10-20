@@ -1,6 +1,6 @@
 # Design proposal
 
-Any UI without a precise definition goes through a proposal Artifact first. The rule itself and what the page must contain are in `AGENTS.md` ("Main rule"); this playbook is how to run it. Last validated: 2026-10-17.
+Any UI without a precise definition goes through a proposal Artifact first. The rule itself and what the page must contain are in `AGENTS.md` ("Main rule"); this playbook is how to run it. Last validated: 2026-10-19.
 
 ## Before
 
@@ -13,6 +13,8 @@ Any UI without a precise definition goes through a proposal Artifact first. The 
 - 2–4 comparable options, plus what exists today; interactive, real fonts, colors and curves, working on mobile.
 - Each option: where it goes, which reference it comes from, what it costs.
 - What is discarded and why, including the AI-slop list.
+- A reference idea is explained with a small demo on real Doctrina content, never with values in words (sizes, hex, "levers"). For "copy it exactly", an agent first measures the original (source code plus per-frame DOM measurements with Playwright).
+- Before showing a reference agent's description, check each visual claim against its screenshot.
 - Ends with what has to be decided, and stops.
 
 ## Iterating
@@ -27,3 +29,6 @@ Any UI without a precise definition goes through a proposal Artifact first. The 
 
 - v2 (before 2026-10-05) · A full build was the costly way to learn the structure was wrong → proposal canvases with real content.
 - 2026-10-07 · Notes over several messages lost nuance after compaction → scratch file.
+- 2026-10-19 · Pedro couldn't judge references described with numbers and "levers" (Maggie Appleton, Ciechanowski, Linear, The Met, Craig Mod); a small demo on real content settled each in one look → demo rule in "The page".
+- 2026-10-19 · The reference agent called Craig Mod's drop cap «I» "a solid black bar" → check visual claims against the screenshot.
+- 2026-10-19 · A frame-by-frame agent rebuilt Stripe Press's ruler to two decimals in 11 min (`docs/research/stripe-press-ruler.md`) → measure before copying.

@@ -1,13 +1,13 @@
 # Visual references: calm, deep, and alive
 
-_Research for the visual-direction proposal (2026-10-19). Goal: find sites that are calm and content-deep yet feel alive and premium, and name the levers that create that feeling. Builds on `analogs.md` (structure and patterns) without repeating it. Screenshots live outside the repo, in the session scratchpad `refs/` folder; filenames are listed per reference._
+_Research for the visual-direction proposal (2026-10-19). Goal: find sites that are calm and content-deep yet feel alive and premium, and name the levers that create that feeling. Builds on `analogs.md` (structure and patterns) without repeating it. Screenshots are in `docs/research/visual-references/` (compressed to JPG, max 1440px); filenames are listed per reference with their original extension, saved as `.jpg`._
 
 Tags: `[verified]` = seen on the live site or in a screenshot taken for this report; `[memory]` = not re-checked.
 
 ## Progress
 
 - 2026-10-19: done. 11 site references plus a cross-site motion measurement (12 entries), a counter-example list, and the synthesis with three directions.
-- Screenshots: 27 images (PNG, one JPG) in `/private/tmp/claude-501/-Users-pedrolorenzo-Desktop-dev-doctrina/605747c9-b45b-424d-a17b-3e137c382055/scratchpad/refs/` (scratchpad, not the repo; copy what the proposal needs before the session ends).
+- Screenshots: 27 images, copied on 2026-10-19 to `docs/research/visual-references/` as JPG.
 - Not done: Mobbin was not used; motion was measured from CSS only (no interactions recorded); no dictionary/reference site qualified, so group 4 relies on Sefaria, Quran.com and the analogs in `analogs.md`.
 
 ---
@@ -59,7 +59,7 @@ Tags: `[verified]` = seen on the live site or in a screenshot taken for this rep
   - Instead of photos, most posts get an **abstract hairline drawing**: a coiled line, a field of vertical ticks thickening toward the middle, a fan of rays. They are monochrome, drawn with the same 1px stroke as the UI, so the page gets imagery without breaking calm.
   - Inter Variable at the in-between weight **510**, title 48/48 with −1.06px tracking, card titles 20/26.6. Text `#F7F8F8` on `#08090A`. Meta "Andrew Moedinger · Oct 13, 2026" in muted grey at the foot.
   - Filter row is plain words, the active one brighter, no pills. Columns are divided by vertical hairlines, not gaps.
-- **What Doctrina could take:** generative line figures made from Doctrina's own data instead of pictures: the ticks of a century, the dated dots of a doctrine's witnesses, a fan of citations. Each doctrine or Father could get a small drawn "fingerprint" from its dates. In-between weights (Commissioner is variable too) for UI labels.
+- **What Doctrina could take:** generative line figures made from Doctrina's own data instead of pictures: the ticks of a century, the dated dots of a doctrine's witnesses, a fan of citations.  y. In-between weights (Commissioner is variable too) for UI labels.
 - **Avoid:** dark-first, the SaaS feel, and Inter itself (on the slop list as "Inter + centered bold hero"). The "·" meta string is also on the list.
 - **Supports:** C (data-drawn imagery), A (weight discipline).
 - **Screenshots:** `23-linear-now.png`.
@@ -93,8 +93,8 @@ Tags: `[verified]` = seen on the live site or in a screenshot taken for this rep
 - **Groups:** 1 typography.
 - **What makes it alive and premium** `[verified]`:
   - FF Meta Serif title at 50/50 weight 400 with −1px tracking, italic standfirst right under it, body 20/30 in `#333` on white. Hyphenation is on, so the 745px column has an even right edge without justification.
-  - The first paragraph opens with a **solid black bar** in place of a drop cap: a block initial that is graphic rather than ornamental. A 150px grey rule separates sections.
-- **What Doctrina could take:** a non-ornamental section opener (a short lapis bar, or the century number in the margin), CSS hyphenation in Spanish (`hyphens: auto` with `lang="es"`), tight title tracking at large sizes.
+  - The first paragraph opens with a heavy three-line drop cap (the letter «I» of "I love fast software"; corrected 2026-10-19 by the coordinator on the screenshot: it is a letter, not a bar). A 150px grey rule separates sections.
+- **What Doctrina could take:** a heavy drop cap as section opener (in ink or lapis), CSS hyphenation in Spanish (`hyphens: auto` with `lang="es"`), tight title tracking at large sizes.
 - **Avoid:** the grey ALL-CAPS tracked nav (slop list).
 - **Supports:** A.
 - **Screenshots:** `11-craigmod-essay.png`.

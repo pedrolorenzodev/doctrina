@@ -17,6 +17,8 @@ How to run subagents on Pedro's account. Every other playbook assumes this one. 
 | 6 agents, 4 on Fable | ~2.5 % / min | 2026-10-14 |
 | 3–4 agents, Opus/Sonnet | ~0.2 % / min | 2026-10-15 |
 | 2 Opus research agents, ~7 min each | ~4 points of session | 2026-10-17 |
+| 1 Opus agent, web + Playwright screenshots, 11 min | ~5 points of session, ~1 weekly point | 2026-10-19 |
+| 1 Opus agent, Playwright frame analysis, 11 min | ~4 points of session, ~1 weekly point | 2026-10-19 |
 
 - At once: 2–3 Opus + at most 1 Fable; Sonnet as needed.
 - Before a batch of a new shape: run one agent of each model for ~5 min and measure.

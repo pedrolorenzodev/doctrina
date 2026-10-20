@@ -1,13 +1,13 @@
 # Stripe Press tick ruler: reverse-engineered
 
-_Research for rebuilding the left-edge tick ruler of https://press.stripe.com and reusing its hover motion on Doctrina's horizontal "fingerprint" strip (2026-10-19). Scripts and frames live outside the repo, in the session scratchpad `stripe-ruler/` folder._
+_Research for rebuilding the left-edge tick ruler of https://press.stripe.com and reusing its hover motion on Doctrina's horizontal "fingerprint" strip (2026-10-19). The three contact sheets are in `docs/research/stripe-press-ruler/` (JPG); scripts and raw frames were in a session scratchpad and are not kept._
 
 Tags: `[verified]` = measured in the live page or read in its source; `[inferred]` = deduced, not measured.
 
 ## Progress
 
 - 2026-10-19: done. Source read (controller, page controller, CSS), live measurements at 1440/1024/900/768/390, per-frame JSON for hover in, hover out, step and sweep, screencast crops, rebuild spec and a tested 50-line sketch. Gaps listed at the end.
-- Scratchpad: `/private/tmp/claude-501/-Users-pedrolorenzo-Desktop-dev-doctrina/605747c9-b45b-424d-a17b-3e137c382055/scratchpad/stripe-ruler/` (scripts `measure.mjs`, `record3.mjs`, `screencast.mjs`, `scroll.mjs`, `sketch.js`, `sketch-test.html`; data `rec1440-gpu/`; frames `cast/`).
+- Working files (scripts `measure.mjs`, `record3.mjs`, `screencast.mjs`, `scroll.mjs`, `sketch.js`, `sketch-test.html`; data `rec1440-gpu/`; frames) were in the session scratchpad and are not kept; the contact sheets `sheet-in-all`, `sheet-out`, `sheet-sweep` are in `docs/research/stripe-press-ruler/`, and the rebuild sketch is in the Rebuild spec below.
 
 ## Source facts (read in the bundles) `[verified]`
 
