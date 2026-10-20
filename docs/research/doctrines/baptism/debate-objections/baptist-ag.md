@@ -1,6 +1,6 @@
 # Baptist and Assemblies of God: debate objections to Catholic Baptism
 
-_Agent A of the debate-objections pilot (`BRIEF.md`, plan `docs/features/debate-objections-pilot.md`). Agent-written (Opus), 2026-10-20. Not reviewed by Pedro. Nothing here is site copy. All access dates are 2026-10-20 unless stated._
+_Agent A of the debate-objections pilot (`BRIEF.md`, plan `docs/playbooks/debate-objections.md` (the pilot's plan and retro, closed 2026-10-20, now live there and in `DECISIONS.md`)). Agent-written (Opus), 2026-10-20. Not reviewed by Pedro. Nothing here is site copy. All access dates are 2026-10-20 unless stated._
 
 ## Progress
 

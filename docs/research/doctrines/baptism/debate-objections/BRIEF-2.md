@@ -1,6 +1,6 @@
 # Brief, second pass: objections and answers from YouTube debates (Baptism)
 
-Read `BRIEF.md` in this folder first: its "Why", "Read first", "For each candidate objection" and "Rules" still hold. This pass fixes what the first one missed (`verification.md`, `docs/features/debate-objections-pilot.md`): the first pass found "no debates" because it looked for published transcripts. There are many organized debates on YouTube between Catholics and evangelicals or other traditions, with popular apologists and large audiences. Those are the main source now.
+Read `BRIEF.md` in this folder first: its "Why", "Read first", "For each candidate objection" and "Rules" still hold. This pass fixes what the first one missed (`verification.md`, `docs/playbooks/debate-objections.md` (the pilot's plan and retro, closed 2026-10-20, now live there and in `DECISIONS.md`)): the first pass found "no debates" because it looked for published transcripts. There are many organized debates on YouTube between Catholics and evangelicals or other traditions, with popular apologists and large audiences. Those are the main source now.
 
 ## Method
 1. **Start from the Catholic side.** List the baptism objections that Catholic apologists answer most (Catholic Answers tracts and videos, Trent Horn, Jimmy Akin, Joe Heschmeyer, Spanish-language Catholic apologists). This is the index of what is frequent.

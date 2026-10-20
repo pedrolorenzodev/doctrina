@@ -1,6 +1,6 @@
 # Brief: debate objections to the Catholic position on Baptism (pilot)
 
-Shared by the three group agents. Plan: `docs/features/debate-objections-pilot.md`. Rule being tested: `docs/DECISIONS.md` 2026-10-20 "Objections from debates: a 'frequent in debate' layer, anchored in official texts".
+Shared by the three group agents. Plan: `docs/playbooks/debate-objections.md` (the pilot's plan and retro, closed 2026-10-20, now live there and in `DECISIONS.md`). Rule being tested: `docs/DECISIONS.md` 2026-10-20 "Objections from debates: a 'frequent in debate' layer, anchored in official texts".
 
 ## Why
 Doctrina's screen 04 shows, for each tradition's position, the objections other traditions raise and the answer in that tradition's own words. Until now objections came only from official texts, which left Baptists and the Assemblies of God with none on Baptism, although in real debate they object most. This pilot finds the objections people actually meet in debate, and checks whether each can be anchored in the objecting tradition's official texts. Pedro will judge from the result whether the process works.

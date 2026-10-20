@@ -1,6 +1,6 @@
 # Agent operations (base for every playbook)
 
-How to run subagents on Pedro's account, and research on his Codex agent. Every other playbook assumes this one. Last validated: 2026-10-20.
+How to run subagents on Pedro's account, and research on his Codex agent. Every other playbook assumes this one. Last validated: 2026-10-20 (retro of the debate-objections pilot).
 
 ## Models
 
@@ -19,6 +19,7 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 | 2 Opus research agents, ~7 min each | ~4 points of session | 2026-10-17 |
 | 1 Opus agent, web + Playwright screenshots, 11 min | ~5 points of session, ~1 weekly point | 2026-10-19 |
 | 1 Opus agent, Playwright frame analysis, 11 min | ~4 points of session, ~1 weekly point | 2026-10-19 |
+| Debate-objections pilot: 6 Opus (web and YouTube) + 3 Sonnet (verify, apply), three passes over 2 h 15 min | ~52 points of session (with coordination), ~9 weekly; the single Spanish YouTube pass ~15–20 session | 2026-10-20 |
 
 - At once: 2–3 Opus + at most 1 Fable; Sonnet as needed.
 - Before a batch of a new shape: run one agent of each model for ~5 min and measure.
@@ -46,6 +47,7 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 7. Shared resources and how to back off: the WebSearch quota is shared and has run out in every long run (do search-heavy items first; fall back to direct fetches, catalogue APIs, archive.org); a shared browser if any.
 8. Progress block at the top of its file, updated after each item; checkpoint protocol: if messaged, write everything including what it was about to do next, then stop.
 9. Reply format: a short summary (counts, problems, anything outside its files that needs fixing).
+10. Tools: name the ones the task needs from "Tools agents have" (Playwright, yt-dlp, Pedro's saved sessions). A source is never declared missing before trying them.
 
 ## Control during a run
 
@@ -102,3 +104,4 @@ Pedro runs research in his Codex app (`/goal`), not in Claude subagents: web res
 - 2026-10-15 · A handoff's "the other session owns DECISIONS" outlived its reason → ownership rules state reason and expiry.
 - 2026-10-20 · The overnight Codex watchdog script failed on every attempt (`unexpected argument '-s'`, a flag written from memory) and nothing reported it; Codex finished on its own → test any unattended script once, end to end, before leaving it running.
 - 2026-10-20 · The Baptism debate pilot found "no debates" because the brief asked for published transcripts and the agents didn't use YouTube; Pedro: there are many, with large audiences → "Tools agents have" (yt-dlp, Playwright) and every brief that touches debates names them.
+- 2026-10-20 · Retro of the debate-objections pilot: the brief named no video tools, so the first pass declared "no debates" → brief item 10 (tools, never declare a source missing before trying them).

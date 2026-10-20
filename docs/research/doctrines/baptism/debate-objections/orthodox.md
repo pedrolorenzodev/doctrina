@@ -1,6 +1,6 @@
 # Orthodox: debate objections to Catholic Baptism
 
-_Agent C of the debate-objections pilot (brief: `BRIEF.md` in this folder; plan: `docs/features/debate-objections-pilot.md`). Run of 2026-10-20. Tags as in the brief: `[verified]` = read today, 2026-10-20, on the URL given; `[snippet]` = seen only in a search result; `[memory]` = never counts; `[not found]`. "Secondary quotation" means the page read today quotes the book; the book itself was not read. Official texts: allowed set per DECISIONS 2026-10-15 and the Catholic dossier's method line (councils, Crete's list, 17th-century confessions with approval act, Philaret, and the patriarchal-synodal acts of the map's Tier 4, which include the 1755 Oros and the 1848 and 1895 encyclicals)._
+_Agent C of the debate-objections pilot (brief: `BRIEF.md` in this folder; plan: `docs/playbooks/debate-objections.md` (the pilot's plan and retro, closed 2026-10-20, now live there and in `DECISIONS.md`)). Run of 2026-10-20. Tags as in the brief: `[verified]` = read today, 2026-10-20, on the URL given; `[snippet]` = seen only in a search result; `[memory]` = never counts; `[not found]`. "Secondary quotation" means the page read today quotes the book; the book itself was not read. Official texts: allowed set per DECISIONS 2026-10-15 and the Catholic dossier's method line (councils, Crete's list, 17th-century confessions with approval act, Philaret, and the patriarchal-synodal acts of the map's Tier 4, which include the 1755 Oros and the 1848 and 1895 encyclicals)._
 
 ## Progress
 
