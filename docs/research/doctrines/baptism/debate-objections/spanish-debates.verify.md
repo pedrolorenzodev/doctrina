@@ -1,0 +1,154 @@
+# Verification of `spanish-debates.md` (third pass), the seven approved objections
+
+_Independent verifier (Sonnet), 2026-10-20. Checked: `spanish-debates.md` F-1, F-2, F-3, F-4, F-5, F-6, F-8 (F-7 and the re-count table only where they feed these). Nothing here is site copy. Tags in the checked file were not trusted._
+
+## Progress
+
+- **Status:** done (18:17–18:27, 2026-10-20)
+- **Done:** all seven objections: (a) quotes re-read against the downloaded subtitle/transcript files (about 120 quotes, matched by script, then the doubtful ones read in context); (b) counts re-made; (c) anchors re-read live (BF&M 2000 at bfm.sbc.net; AG Statement of Fundamental Truths PDF at ag.org); (d) Catholic texts re-read on vatican.va (CCC 403, 405, 845, 1094, 1215, 1219, 1221, 1226, 1239, 1250, 1252, 1253, 1257–1262) and in `../catholic.md` (Trent V can. 4; Trent VII bapt. can. 2, 13; CIC 854); (e) metadata for 16 videos with yt-dlp (no 429).
+- **Not done:** F-7 rows; D's and E's own timestamps (Ryan 28:28 and 30:08, Crawford 73:28, Ortlund 4:26 spot-checked only); Heschmeyer and Horn answer timestamps in F-8 not re-read; the audio itself (captions only).
+- **Method note:** the transcript `.txt` files group captions in cues of ~30 s, so a timestamp can be off by up to one cue (about 35 s) without being wrong. Where a quote sits in a different cue, it is listed under corrections. Transcripts carry no speaker labels: who speaks was decided from context.
+
+## Legend
+
+CONFIRMED = quotes and count hold (small fixes only). PARTLY = quotes hold, count or anchor needs correcting. WRONG = quote or count does not hold.
+
+## Verdict per objection
+
+| # | Objection | Evidence | Corrected count (independent people) |
+|---|---|---|---|
+| 1 | «Muéstreme en la Biblia un solo bebé bautizado» (F-1) | **PARTLY** | **7** (6 without caller), file says 10 |
+| 2 | «Un bebé no puede creer ni arrepentirse…» (F-2) | **PARTLY** | **10** (7 without callers), file says 12 |
+| 3 | «El bautismo no salva: lo que salva es la sangre de Cristo» (F-5) | **PARTLY** | **11** at most (8 firm debaters), file says 12 |
+| 4 | «Los niños no tienen pecado…» (F-3) | **CONFIRMED** (small fixes, anchor wording) | **9** as file says, but 1 is partial (8 firm) |
+| 5 | Grouped verses (F-8) | **CONFIRMED** | **6** as file says (5 in debate) |
+| 6 | «Bautizar es sumergir…» (F-4) | **CONFIRMED** (flag on Toro softened) | **5** as file says |
+| 7 | «El ladrón en la cruz no se bautizó» (F-6) | **PARTLY** | **6** (5 without caller), file says 7 |
+
+## 1 · «Muéstreme en la Biblia un solo bebé bautizado» (F-1) — PARTLY
+
+**(a) Quotes.** All seven Spanish quotes are in the captions at (or one cue from) the given minute:
+- wUZAwQlzuzs 42:40 «en la biblia no aparece nunca que un niño haya sido bautizado pequeño»: CONFIRMED (the speaker is the pastor; the caption has no label, but Toro answers it).
+- 6megVqykqjk 34:34 «un solo verso que diga que un niño o un bebé fue bautizado»: CONFIRMED, and 34:34–35:06 adds «de ellos ya de por sí es el reino de Dios» (so it also feeds F-3).
+- I7eQtNoMSII 1:15:06 «los únicos bautismos registrados en la Biblia fueron ejecutados sobre adultos»: CONFIRMED, said twice in the caption.
+- nGRL2esaTcI 0:43:03 «siete pruebas bíblicas que el bautismo de niños no aparece en la palabra de Dios»: CONFIRMED (Barragán).
+- 7TI5ZEZnG1s 2:57:12 «un texto de la Biblia que diga recién nacidos o meses»: CONFIRMED (Richard).
+- Bsp7gy3o87s 0:03 «no hubo ningún testimonio de que se bautizasen niños»: CONFIRMED in words, but the stream starts mid-call and shows no name. «Miguel» is inferred from the host's greeting at 15:18 («Miguel justo se hermano…»). Keep, mark the name as inferred.
+- DaLNaXc29vU 9:56 «Jesús nunca mandó bautizar a ningún niño. Él dio el ejemplo bautizándose a los 30 años»: the words are there, but Arnaldo says Jesus gave no *command* and baptized at 30; he never says no baby is shown baptized (I grepped the whole caption). This is the F-7 row «Jesús se bautizó a los 30», not F-1. **Weak, count separately.**
+
+**(b) Count.** The file adds D's three (Castro, Knechtle, Ortlund) to the 7 new. Re-read against what each says:
+- Castro (G2t2B728Sv8 0:00: «no encuentro ahí a un bebé siendo bautizado… Muéstrame»): counts. This is the exact wording of the objection.
+- Knechtle (via 8psAjYo0RiI 1:04–1:35, a Catholic channel replaying a clip): says an infant «doesn't know what's going on», so it doesn't count. That is F-2, not F-1, and it is second-hand.
+- Ortlund (X3msUZ-Ijyw 9:49): early-church evidence for credobaptism, not «no baby in the Bible». That is the F-7 «early Church» row.
+- Firm: wUZA pastor, 6megV Pentecostal pastor, Isaac Fuentes, Barragán, Richard, Miguel (caller), Castro = **7** (6 without caller). With Arnaldo (weak) 8. Not 10.
+- Duplicates: none found. nGRL2esaTcI = ae9bz-0lYvo (76 % overlap of 6-word runs), same Barragán as Z9Js8wECyAM (counted once). wUZAwQlzuzs = nidsQjbCCL0 (39 % overlap despite caption variants; the file already counts once). The Escuela de Biblia series (i4uh, dhAN, ZwbK) shows no text overlap with wUZA, so «Mario» is not shown to be the wUZA pastor (not shown to be a different one either; neither is counted twice within one objection).
+- The teaser man of efKf9b_tbyg 0:02: not counted, correct. (His words, «el bautismo… no aparece en la Biblia, porque son chiquiticos y no tienen de qué se van a arrepentir», fit F-1 and F-2 equally.)
+
+**(c) Anchor.** BF&M 2000 VII, read live: «Christian baptism is the immersion of a believer in water… an act of obedience symbolizing the believer's faith». It follows by inference (it says «believer», never «infant»). AG SFT 6(a), read in the ag.org PDF: «All who repent and believe on Christ as Savior and Lord are to be baptized» (the file writes «Saviour»; the AG PDF has «Savior»). Same inference. Useful extra, not in the file: BF&M VII's own proof-text list includes Acts 16:30–33 (the jailer's household) and Acts 2:41–42, the passages Catholic debaters answer with.
+
+**(d) Catholic answer.** CCC 1252 re-read: «es muy posible que… cuando "casas" enteras recibieron el Bautismo (cf Hch 16,15.33; 18,8; 1 Co 1,16), se haya bautizado también a los niños». Confirmed. The file's «CCC 1221… [memory]» is now verified: 1221 reads the Red Sea as announcing baptism and does not mention infants; **CCC 1094 does cite 1 Co 10:1–6** (and 1 P 3:21), so the 1 Cor 10 argument has an official text behind it, only for baptism in general. No debater answer here contradicts official teaching. The household and circumcision arguments (Toro, Santiago, Alex) are apologetics, as the file says.
+
+**(e) Metadata.** wUZAwQlzuzs: 579,420 views, 2022-07-29, «Raymundo Saucedo Raygoza - Padre Luis Toro.» OK. 6megVqykqjk: 109,868, 2024-12-01, Alex Apologeta Catolico OK. I7eQtNoMSII: 46,601, 2024-03-25, Rincon Apologetico OK. DaLNaXc29vU: 75,653, 2026-01-06 OK. 7TI5ZEZnG1s: **520,959 views, 2025-01-25**, Padre Luis Toro (the file's table has the date as «?» and 520,907).
+
+## 2 · «Un bebé no puede creer ni arrepentirse…» (F-2) — PARTLY
+
+**(a) Quotes.** All checked and present: Barragán nGRL2esaTcI 0:42:30 («credobautistas»), 0:43:37, 0:45:50; Arnaldo DaLNaXc29vU 11:03; Pentecostal pastor 6megVqykqjk 23:28; Isaac Fuentes I7eQtNoMSII 1:13:29; Richard 7TI5ZEZnG1s 2:43:07 («personas que tienen discernimiento»), 3:14:29, 3:15:35; wUZA pastor 2:14, 22:25 (eunuch), 23:00; Gusti tIJUzWvA8ao 4:22; Anita k1-wNV9MfxM 4:36, 20:15; Miguel Bsp7gy3o87s 3:29. «Anita» is the name the host uses («Ana Belén… Anita»); «Gusti» appears as the host's «pero Gusti» at 6:02. Caption error to flag: in DaLNaXc29vU 39:05 the caption reads «Segunda de Arnaldo capítulo 2» for a Bible book (not used in the file).
+
+**(b) Count.** Spanish 9 hold (6 without callers). D's side: Castro 13:45 («un niño es capaz de arrepentirse… no»): counts. Knechtle: partial (second-hand clip). Ortlund: does not say it (see 1). **Corrected: 10 firm (7 without callers), 11 with Knechtle; not 12.** Still passes with margin.
+
+**(c) Anchor.** Same as 1. BF&M VII «believer», AG 6a «All who repent and believe». Inference. BF&M VII proof-texts include Acts 8:35–39 (the eunuch), which is the verse the debaters use here.
+
+**(d) Catholic answer.** CCC 1253 re-read: «La fe que se requiere para el Bautismo no es una fe perfecta y madura, sino un comienzo»; «Sólo en la fe de la Iglesia puede creer cada uno de los fieles». Confirmed. **Missing, and the best text:** Trent VII, baptism, can. 13 (in `../catholic.md`, verified there): anathema on saying infants «eo quod actum credendi non habent» must be re-baptized at the age of discretion, or that it is better to omit their baptism «quam eos non actu proprio credentes baptizari in sola fide Ecclesiae». It answers this objection literally; add it. Debater answers to flag: Toro 7TI5ZEZnG1s ~3:19:26–3:20 «la fe del papá sirve para la familia» (Acts 16) puts parental faith where CCC 1253 and Trent can. 13 say «fe de la Iglesia»; apologetics, not a contradiction, but the page must not use that sentence.
+
+**(e) Metadata.** k1-wNV9MfxM 65,649 views, 2026-03-25; Bsp7gy3o87s 70,431, 2025-01-17; tIJUzWvA8ao 42,811, 2026-01-16; nGRL2esaTcI 22,161, 2023-10-27, Católicos por Convicción. All match the table.
+
+## 3 · «El bautismo no salva: lo que salva es la sangre de Cristo» (F-5) — PARTLY
+
+**(a) Quotes.**
+- o3DHLXUHTSc 5:38: «El bautizo no es para salvación. En lo que nos salva es la sangre de Jesucristo»: CONFIRMED verbatim (the woman is addressed as «Perla» in the same stretch; the file's «Perla or Marta» is fair). Immediately: «sería otro tema el bautismo», as the file says.
+- Z9Js8wECyAM 0:43:12, 0:39:52, 1:09:29: CONFIRMED. **1:08:22 is not «el bautismo está catalogado como una obra»**: the caption there reads «el bautismo es una obra del padre o es una obra de uno» (Titus 3:5 argument). The quoted sentence is at **0:37:40** («el bautismo está catalogado como una obra, como una obra, pero es una obra donde nosotros damos testimonio público…»).
+- DaLNaXc29vU 19:52 («el bautismo es simplemente un símbolo») and 36:17 («Hay gente que fueron bautizados y no se arrepintieron»): CONFIRMED. 36:17 reads verbatim «El bautismo no salva a nadie. Hay gente que fueron bautizados y no se arrepintieron. De todas maneras no son salvos».
+- tIJUzWvA8ao 3:50 (Gusti: «el bautismo para mí es una señal, como el que se casa»; «No creo que el bautismo tenga un poder para transformar nuestras vidas»): CONFIRMED.
+- dhANd84wIyg 9:14 (Mario): «por el agua… no lo voy a salvar a nadie. El [agua] no salva nadie»: CONFIRMED with caption errors («El Alfa» for «el agua»; «mineo» for Himeneo). The 1 Cor 10:5 and Hymenaeus and Alexander (1 Tim 1:19–20) argument is at 3:19–9:37 as the file says. Quote it with [agua].
+- cV5Ojp7LUS8 (Powell, English): 2:25 «Baptism is a picture. It is not literally what saves us», 2:43 «If I put on a wedding ring, that's not what makes me married»: CONFIRMED. His own video says (0:11) «baptism cannot save you». Views 11,714, published 2026-09-16.
+- 7TI5ZEZnG1s 3:13:20 (Richard): «Cuál es la clave: invocar el nombre de Jesucristo para ser salvo» is about the thief («no fue bajado de la cruz y fue bautizado en agua para ser salvo»). He never says «el bautismo no salva» in the passage. **Move Richard from F-5 to F-6 only.**
+
+**(b) Count.** Firm: woman, Barragán, Arnaldo, Mario, Powell, Gusti (caller), Ryan, Crawford = **8** (7 without caller). Ortlund (JGwECD_Dv3k 4:26, spot-checked) says «i just don't understand it to be the cause of regeneration» but he holds baptism gives grace and rejects «just a symbol»: **partial**, a different position from the objection's wording. Rhea, Morris: written, not re-checked. **Corrected: 11 at most (8 firm + Ortlund partial + 2 written), not 12.** Passes.
+
+**(c) Anchor.** BF&M VII: «an act of obedience symbolizing the believer's faith…» (read live); IV: «by His own blood obtained eternal redemption for the believer… There is no salvation apart from personal faith in Jesus Christ as Lord». AG 6a «Thus they declare to the world…». **Better anchor for «sangre», not cited by the file: AG SFT 5, first sentence: «Man's only hope of redemption is through the shed blood of Jesus Christ the Son of God»**, then «Salvation is received through repentance toward God and faith toward the Lord Jesus Christ». The objection follows directly from BF&M IV + VII and AG 5 + 6a.
+
+**(d) Catholic answer.** CCC 1257 re-read («Dios ha vinculado la salvación al sacramento del Bautismo, sin embargo, Él no queda sometido a sus sacramentos»), CCC 1213/1215/1263 per `../catholic.md`. Toro to Mario (ZwbKNMzKWuI 4:51–5:06: «el bautismo sí es para la salvación, pero no quiere decir que si usted se porta mal de todas maneras se va a salvar») matches CCC 1128 in substance. No contradiction.
+
+**(e) Metadata.** o3DHLXUHTSc 106,123, 2026-05-27; Z9Js8wECyAM 9,531, 2020-02-16, «apologista evengelico barragan salvador» (below 10,000, as the file notes); dhANd84wIyg 35,675, 2023-04-27, Escuela de Biblia. OK.
+
+## 4 · «Los niños no tienen pecado: de ellos es el reino de los cielos» (F-3) — CONFIRMED
+
+**(a) Quotes.** Present at the minute: 6megVqykqjk 8:22 and 14:27 (caption: «los niños cuando todavía no disciernen entre su derecha y su izquierda… ellos no tienen de qué bautizarse»; the «de los niños es el reino» sentence is at 34:34); DaLNaXc29vU 5:34, 11:37; I7eQtNoMSII 1:12:19, 2:12:10 («mis pecados no van a pasar a mi hijo»); 7TI5ZEZnG1s 3:16:43; wUZAwQlzuzs 39:49, 42:40; tIJUzWvA8ao 1:05, 2:12; Bsp7gy3o87s 5:44; k1-wNV9MfxM 4:03; Ew7cxsXdT-M 24:13.
+- **DaLNaXc29vU 39:05 is truncated in the file.** Actual: «mientras son niños, mientras son inocentes, son salvos. No necesitan ni bautizarse ni arrepentirse porque son inocentes». The file prints «no necesitan ni ba[utismo]»; replace.
+- I7eQtNoMSII 1:12:19: «un niño no tiene pecado practicado, conclusión no debe ser bautizado» is Isaac Fuentes reading his argument; the line is followed by the host recapping. Fine. Timestamps are those of the reaction video (Rincon Apologetico), not the original debate (not located).
+- Ew7cxsXdT-M 24:13: Gutiérrez says «lo que separa al hombre de Dios no es el pecado original sino el pecado cometido» (Jas 1:13). He rejects original sin as the reason to baptize infants; he does not say «children have no sin» or mention the kingdom. **Partial.**
+- 7TI5ZEZnG1s 3:16:43 (Richard): «un niño de 6 meses… ya es salvo porque el señor dijo deja que los niños vengan a mí porque los tales es el reino de los cielos y no lo bautizó»: the strongest quote of the set (it is the objection almost word for word); consider it for the page.
+- «un niño no tiene pecado» (6megV 8:22, DaLNaXc29vU, Isaac) are exact phrases. The kingdom verse in these debates is Mt 19:14/Mk 10:14.
+
+**(b) Count.** 9 as stated: pastor 6megV, Arnaldo, Isaac, Richard, wUZA pastor, Gusti, Miguel, Anita, Gutiérrez. Gutiérrez is partial, so **8 firm (5 without callers) + 1 partial**. No duplicates found. Passes.
+
+**(c) Anchor.** BF&M 2000 III, read live today, verbatim as the file quotes: «his posterity inherit a nature and an environment inclined toward sin. Therefore, as soon as they are capable of moral action, they become transgressors and are under condemnation». The file says it «follows directly»: it follows only **by inference**. The text says condemnation starts with moral action; it says nothing about infants' salvation or the kingdom, and it affirms an inherited inclination. AG: SFT 4 («man by voluntary transgression fell and thereby incurred… spiritual death», Rom 5:12–19) and AG 5 are silent on infants; the file's «not found» holds.
+
+**(d) Catholic answer.** Re-read on vatican.va: **CCC 403** («la Iglesia concede el Bautismo para la remisión de los pecados incluso a los niños que no han cometido pecado personal»), **CCC 405** («el pecado original no tiene, en ningún descendiente de Adán, un carácter de falta personal»), CCC 1250: all confirmed (the file had 403–405 as [memory]). Trent V can. 4 (in `../catholic.md`, verified): infants «qui nihil peccatorum in semetipsis adhuc committere potuerunt» are baptized «in remissionem peccatorum… ut… mundetur, quod generatione contraxerunt». **Add CCC 1261**, which cites Mk 10:14 («Dejad que los niños se acerquen a mí») and answers the «reino de los cielos» half directly: unbaptized infants are entrusted «a la misericordia divina… nos permiten confiar en que haya un camino de salvación». Isaac Fuentes's reading of 1261 (I7eQtNoMSII 0:58:29: «un segundo Camino de salvación para los infantes sin la necesidad del bautismo») is confirmed. Limbo: the file's flag (Gusti 2:12 «no creo que un niño… se vaya al limbo») is right; the caption also shows Gusti attributing it to Catholic doctrine («la doctrina que yo escuché por ahí», 17:48). Santiago's «no puedo asegurar que va al cielo» (k1-wNV9MfxM 30:06) found; consistent with 1261 in substance.
+
+**(e) Metadata.** 6megVqykqjk, DaLNaXc29vU, I7eQtNoMSII, tIJUzWvA8ao, Bsp7gy3o87s, k1-wNV9MfxM, Ew7cxsXdT-M: see the other blocks; **Ew7cxsXdT-M is 70,368 views, 2020-08-29**, Reflexiones del Pastor punto com (file: «~2019, ~70,000»).
+
+## 5 · «Los versículos que citan los católicos no enseñan que el bautismo salve» (F-8) — CONFIRMED (as a group)
+
+**(a) Quotes.** Present: Ryan dWFlknJgLIY 51:38 (aspirin), 53:48 (ark/judgment), 26:51 (Jn 3:5 «doesn't even use the word baptism»), 49:24, 2:32:26; Ortlund X3msUZ-Ijyw 3:45 (Jn 3:5, «three reasons»); Barragán Z9Js8wECyAM 1:13:21, 1:14:28 («Cristo fue bautizado en las ondas y en las olas de la ira de Dios»), 1:05:31; Arnaldo DaLNaXc29vU 19:19; Barragán nGRL2esaTcI 0:44:09 (declines the *eis* question: «de propósito o es de resultado… no voy a explicar eso»). **Crawford (oNWseAsfcGM 75:40) is reworded:** the file prints «Keep reading: not as a removal of dirt from the body»; the caption is «when I continue to read it not as a removal of dirt from the body… but as a pledge for a conscience». He does not argue the ark; he points to the next clause. Quote the caption or paraphrase openly. Crawford on Mk 16:16 (78:25) confirmed.
+
+**(b) Count.** Group = people who re-read at least one verse: Ryan, Crawford, Ortlund, Barragán, Arnaldo (debate) + Morris (written, not re-checked) = **6, 5 in debate**: confirmed. Per verse as the file says (Acts 2:38 *eis* 2; 1 Pet 3:21 3; Mk 16:16 2; Jn 3:5 4; 1 Cor 1:17 1; Titus 3:5 1) holds. 1 Cor 1:17 comes from an anonymous super-chat question read by Ryan (not a debater's own claim) and Titus 3:5 from Barragán alone; both stay «detail», as the file says. No duplicate persons.
+
+**(c) Anchor.** Neither BF&M nor AG reads these verses against baptismal regeneration, as the file says. Two facts worth recording: AG 6(a) cites Mk 16:16 and Rom 6:4 as proof for baptism of believers (it uses Mk 16:16 for the command, not against salvation); BF&M VII cites Acts 2:41–42, 8:35–39, 16:30–33, Rom 6:3–5, Col 2:12 and not Jn 3:5, 1 Pet 3:21. Anchor stays general (BF&M IV, VII; AG 5, 6a).
+
+**(d) Catholic answer.** The file's `[memory]` cells are now verified on vatican.va: **CCC 1226** cites Acts 2:38; **CCC 1262** cites Acts 2:38 and Jn 3:5 («los dos efectos principales… la purificación de los pecados y el nuevo nacimiento»); **CCC 1094** cites 1 P 3:21; **CCC 1219** reads the ark through 1 P 3:20; **CCC 845** cites 1 P 3:20–21; CCC 1215 cites Tt 3:5 and Jn 3:5; CCC 1257 cites Jn 3:5 and Mk 16:16. So the file's note that «`../catholic.md` Catholic texts do not use 1 Pet 3:21» is outdated: CCC 1094, 1219, 845 do. 1 Cor 1:17: no official text found by the file; I did not search it.
+
+**(e) Metadata.** dWFlknJgLIY: 193,443 views per D's file; I re-checked only the rest of the set (Z9Js8wECyAM 9,531).
+
+## 6 · «Bautizar es sumergir: un poquito de agua en la cabeza no es bautismo» (F-4) — CONFIRMED
+
+**(a) Quotes.** Castro G2t2B728Sv8 45:07: «¿el mismo bautismo por inmersión en el agua o solo como lo hacen ustedes, le tiran un poquito de agua?»: CONFIRMED, and Toro's answer follows in the same cue («si usted es adulto y quiere bautizarse por inmersión lo sumergimos y si no quiere se le echa agua en la cabeza»). Pentecostal pastor 6megVqykqjk 5:05–6:11, 13:21–14:27 («no dice le echaron una jicarita»), 8:22: CONFIRMED; the caption reads **«tanita agua»**, so «tantita agua» needs the [ ] mark. Arnaldo DaLNaXc29vU 26:28 («el bautismo tiene que ser por inmersión»; he adds «Vos la vas a sumergir y la vas a ahogar», a good popular line); Mario dhANd84wIyg 15:00–17:39; Gutiérrez Ew7cxsXdT-M 30:09–30:55 («no es la regla sino el defecto»): CONFIRMED. The F-4 «not counted» rows (Barragán as reported by Rigo, nGRL2esaTcI 1:11:33; wUZA pastor 9:39) are right.
+
+**(b) Count.** Castro, Pentecostal pastor, Arnaldo, Mario, Gutiérrez = **5**, as stated. No duplicates. Passes.
+
+**(c) Anchor.** BF&M VII (live): «Christian baptism is the immersion of a believer in water»; AG 6(a) (ag.org PDF): «The ordinance of baptism by immersion is commanded in the Scriptures». Direct, the strongest anchor of the set.
+
+**(d) Catholic answer.** CCC 1239 re-read: «el Bautismo es realizado de la manera más significativa mediante la triple inmersión… desde la antigüedad puede ser también conferido derramando tres veces agua sobre la cabeza»; CIC 854 and Trent VII bapt. can. 2 per `../catholic.md` (verified there). Toro's G2t2B728Sv8 45:07 line («si usted es adulto… lo sumergimos») **agrees** with CCC 1239; add that as the safe quote. **Flag on Toro ZwbKNMzKWuI 3:25 stands but is softened:** he says «el agua pasa a ser solamente símbolo del bautismo, entonces puedo bautizarlo con un poquito de agua o con mucha agua… porque el agua es símbolo más nada», then «el de Cristo es distinto». The passage opens with «Ah entonces…», so it may be a reductio of Mario's position, but «A mí qué me importa… sumergirme en el Espíritu Santo» reads as his own view. It is in tension with Trent VII bapt. can. 2 (water «verdadera y natural» is necessary), but he never says water is unnecessary: the file's «contradicts» is too strong; say «in tension with» and that his intent is ambiguous. The «immersion was John's baptism, not Christ's» line (ZwbK 0:00–3:17; Alex 10:03) pulls against CCC 1239 as the file says.
+
+**(e) Metadata.** G2t2B728Sv8, ZwbKNMzKWuI, Ew7cxsXdT-M see above; DaLNaXc29vU, 6megVqykqjk OK.
+
+## 7 · «El ladrón en la cruz no se bautizó» (F-6) — PARTLY
+
+**(a) Quotes.** Richard 7TI5ZEZnG1s 3:13:20 («El ladrón… era un malhechor, no era bautizado… no fue bajado de la cruz y fue bautizado en agua para ser salvo»): CONFIRMED. Arnaldo DaLNaXc29vU 19:52 («El ladrón en la cruz no se bautizó cuando él se arrepintió. Y Jesús le dijo, "Hoy vas a estar conmigo." Y él no tuvo oportunidad de bautizarse»): CONFIRMED. Barragán Z9Js8wECyAM 0:28:12 («ese ladrón en la cruz no tuvo que bautizarse… lo único que tuvo que hacer es creer»): CONFIRMED. Gusti tIJUzWvA8ao 15:03: CONFIRMED but weak («gente que se ha muerto antes de ser bautizada… justamente… el ladrón de la cruz»); Santiago's 0:01 line («como vos decí, el ladrón en la cruz») is his own anticipation. Powell cV5Ojp7LUS8 0:19: CONFIRMED («the thief on the cross was actually forgiven of his sins without baptism»); Cornelius at 1:43 is in the caption (Acts 10:47). Ryan dWFlknJgLIY 33:24 (D's): CONFIRMED («how the thief on the cross was saved, Cornelius in Acts 10… all without baptism»).
+- Barragán error on baptism of desire: **CONFIRMED, but the timestamp is 1:04:57.** At 1:04:24 he is still reading Trent VI ch. 4 aloud; at 1:04:57–1:05:20: «no existe un bautismo de deseo en el concilio de Trento, esa es una de tantas innovaciones que tiene la iglesia católica carismática nueva después del concilio vaticano 2». Trent VI ch. 4 (`../catholic.md`, verified) has «sine lavacro regenerationis, aut ejus voto». His error stands.
+
+**(b) Count.** The file says 7 on the thief: Richard, Arnaldo, Barragán, Gusti, Powell, Ryan, Graham. Graham is a written answer by a historical figure that D itself tagged weak and `[memory]`; under BRIEF-2 historical authors are support, not frequency. **Corrected: 6 independent (5 without Gusti), Graham as support.** Cornelius: Ryan, Barragán, Powell, plus Ortlund (D) = 4 as the file says (Barragán's nGRL2esaTcI 0:50:13 passage is about the Spirit before baptism; he names no one in the cue I read: the Cornelius reading is inferred there; his Cornelius mention is at Z9Js 0:29:50). Passes.
+
+**(c) Anchor.** BF&M IV («There is no salvation apart from personal faith in Jesus Christ as Lord»; read live) and AG 5 (faith and repentance are the conditions): by inference only; neither text mentions the thief or says baptism is unnecessary.
+
+**(d) Catholic answer.** CCC 1257–1261 re-read in full: **none of them names the thief.** What they say: 1257 baptism is necessary for those to whom the Gospel has been proclaimed and who could ask for it, and «Él no queda sometido a sus sacramentos»; 1258 baptism of blood; 1259 explicit desire; 1260 those who ignore the Gospel and seek the truth; 1261 unbaptized infants. So the thief's case is answered by *application* of 1257–1260, as the file says («as D-2»), but **the DECISIONS entry 2026-10-20 («the Catechism already allows salvation without the rite in the thief's case») overstates it**: the Catechism never says it of the thief. Debater answers: Santiago tIJUzWvA8ao 0:01 («no se le puede demandar a alguien algo que no puede hacer») matches 1257's «tengan la posibilidad de pedir este sacramento»; Alex o3DHLXUHTSc 42:25 «una excepción» fine; Otálora Z9Js 0:52:10 «casos aislados» (baptism of blood) is not quite the thief (he did not die for the faith): apologetic. **Toro's 7TI5ZEZnG1s 3:17:48 «El ladrón estaba en el Antiguo Testamento… el Nuevo Testamento entra en vigencia cuando Cristo muere»** is confirmed in the caption and is his own argument; the Catechism does not use it, and it does not contradict the Catechism, but the page should not use it.
+
+**(e) Metadata.** 7TI5ZEZnG1s, Z9Js8wECyAM, tIJUzWvA8ao, cV5Ojp7LUS8 (11,714; Matt Powell OFFICIAL; 2026-09-16) as above.
+
+## Corrections the file needs
+
+1. **F-1 count 10 → 7 firm** (6 without the caller Miguel; 8 if the weak Arnaldo is kept). Remove Knechtle (F-2, second-hand clip) and Ortlund (early-church evidence = F-7) from F-1's «With D's» total; only Castro (G2t2B728Sv8 0:00) carries over. Move Arnaldo's «Jesús nunca mandó bautizar…» to the F-7 «Jesús se bautizó a los 30» row or mark it weak.
+2. **F-2 count 12 → 10 firm** (11 with Knechtle as partial; 7 without callers); Ortlund does not say it.
+3. **F-5 count 12 → 11 at most** (8 firm debaters, Ortlund partial because he holds baptism gives grace, Rhea and Morris written and unchecked). Remove Richard 7TI5ZEZnG1s 3:13:20 from F-5 (his passage is the thief; it stays in F-6). Barragán's «catalogado como una obra» is at **0:37:40**, not 1:08:22 (1:08:22 is «el bautismo es una obra del padre o es una obra de uno»). Quote Mario's 9:14 with [agua] for the captured «Alfa»/«El Alfa».
+4. **F-6 count 7 → 6** (Graham is historical and written: support, not frequency). Correct the Barragán desire-of-baptism timestamp to 1:04:57–1:05:20 (1:04:24 is Trent being read).
+5. **Quotes that are not verbatim:** (a) F-3, Arnaldo DaLNaXc29vU 39:05: actual «mientras son niños, mientras son inocentes, son salvos. No necesitan ni bautizarse ni arrepentirse porque son inocentes»; (b) F-8, Crawford oNWseAsfcGM 75:40: actual «when I continue to read it not as a removal of dirt from the body… but as a pledge for a conscience»; (c) F-2/F-1 Catholic answer, Toro wUZAwQlzuzs 24:50: «confunde la enseñanza con el bautismo» is not in the caption; the caption is «no me está comprobando que es tener uso de razón y capacidad de mente para bautizarse, son dos cosas muy distintas, no confunda la chicha con la limonada»; (d) F-4, Pentecostal pastor 6megVqykqjk 8:22 caption is «tanita agua»: mark [tantita].
+6. **F-3 anchor wording:** BF&M III says infants-as-such nothing; «It follows directly» → «follows by inference». F-3 Gutiérrez (Ew7cxsXdT-M 24:13) is partial (denies original sin, does not say children are sinless or mention the kingdom): 9 → 8 firm + 1 partial. Consider Richard 7TI5ZEZnG1s 3:16:43 as the cleanest quote of the objection.
+7. **F-3 official texts:** replace `[memory]` for CCC 403–405 with verified quotes (CCC 403: baptism «incluso a los niños que no han cometido pecado personal»; CCC 405: original sin «no tiene… un carácter de falta personal») and **add CCC 1261** (cites Mk 10:14, the «dejad que los niños vengan» verse) as the direct reply to the kingdom half.
+8. **F-2 official texts:** add **Trent VII, baptism, can. 13** (already verified in `../catholic.md`): the literal answer to «infants make no act of faith» («in sola fide Ecclesiae»). Note Toro's «la fe del papá sirve para la familia» (7TI5ZEZnG1s ~3:19:26) is not the Church's wording.
+9. **`[memory]` cells now verified (vatican.va, 2026-10-20):** CCC 1226 and 1262 (Acts 2:38), CCC 1094, 845, 1219 (1 Pet 3:20–21; 1094 also 1 Co 10:1–6), CCC 1221 (Red Sea, no infants), CCC 403–405. The F-8 note that the Catholic texts «do not use 1 Pet 3:21» is out of date: CCC 1094, 845 and 1219 do.
+10. **F-4 flag on Toro softened:** ZwbKNMzKWuI 3:25 is «in tension with» Trent VII bapt. can. 2, not «contradicts» (he never says water is unnecessary; the passage may be a reductio of Mario). Add Toro's G2t2B728Sv8 45:07 «si usted es adulto… lo sumergimos» as an answer consistent with CCC 1239.
+11. **DECISIONS 2026-10-20 (thief):** CCC 1257–1261 do not mention the thief; the answer rests on 1257 («no queda sometido a sus sacramentos»), 1258–1260. Reword «the Catechism already allows salvation without the rite in the thief's case» to «CCC 1257–1260 already allow salvation without the rite» before it reaches the site.
+12. **Anchors:** AG SFT 6(a) spells «Savior» (BF&M: «Saviour»); add AG 5 first sentence («Man's only hope of redemption is through the shed blood of Jesus Christ the Son of God») as the direct anchor for «la sangre de Cristo» in F-5. BF&M IV (live) «by His own blood obtained eternal redemption» also fits. BF&M VII's own proof-texts (Acts 2:41–42; 8:35–39; 16:30–33; Rom 6:3–5; Col 2:12) can be noted.
+13. **Table fixes:** 7TI5ZEZnG1s date 2025-01-25 and 520,959 views (file: «?», 520,907); Ew7cxsXdT-M 2020-08-29, 70,368 views (file: «~2019»); cV5Ojp7LUS8 11,714 views, 2026-09-16 (file «~11,000»); other rows match within a few views.
+14. **Reaction video I7eQtNoMSII:** every Isaac Fuentes timestamp is the Rincon Apologetico reaction video's, not the original debate's (not located); the name «Isaac Fuentes» comes only from the host's introduction at 5:36. Say so in F-1, F-2, F-3.
+15. **Name inferences:** «Miguel» (Bsp7gy3o87s) and «Gusti» (tIJUzWvA8ao) are names the host uses in the caption, with no on-screen check; Bsp7gy3o87s opens mid-call. Mark as inferred.

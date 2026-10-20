@@ -1,0 +1,34 @@
+# Debate objections
+
+Find, for one doctrine, the objections people actually meet in debate against a tradition's position, worded as they are said, and keep those that pass the criteria. Rule: `DECISIONS.md` 2026-10-20 "Objections from debates…" and "Answers from apologetics…". Read `agent-ops.md` first (YouTube tools and rate limits). Last validated: 2026-10-20 (Baptism pilot, `docs/features/debate-objections-pilot.md`).
+
+## Before launching
+
+1. Read the tradition's dossier for the doctrine (`docs/research/doctrines/<slug>/<tradition>.md`, its official-layer objections) and the objecting traditions' maps (`docs/research/traditions/`).
+2. `/plan-run debate-objections`. One shared `BRIEF.md` in `docs/research/doctrines/<slug>/debate-objections/` (copy the Baptism one and its `BRIEF-2.md` method, change the doctrine).
+
+## Running
+
+- **Start from the answering side.** List the objections its apologists answer most (Catholic Answers and similar for Catholics): that is the index of what is frequent.
+- **YouTube first, Spanish and English.** Organized debates with popular apologists and large audiences are the main source (Spanish: Padre Luis Toro, Alex Apologeta, Rincón Apologético, Salvador Barragán, and their opponents). Views decide which debates count as famous, never which objection is best. Books, tracts and articles are support.
+- **One downloading agent at a time** (YouTube rate-limits the IP after ~20 subtitle downloads in a few minutes): yt-dlp without login with sleeps until the first 429, then the Playwright scripts with Pedro's saved session (`agent-ops.md`, "Tools agents have"). Group agents by objecting tradition only for the reading and writing, not for parallel downloads.
+- **Per objection:** popular wording exactly as said (Spanish when a Spanish debate has it); debates with minute, speaker, one short quotation; independent people (different people not quoting each other; re-uploads once; lay callers counted apart); the answering side's answer heard and the official text it rests on; the anchor in the objecting tradition's official text, verbatim with locator; overlap with the official layer; who the proponent is (recorded, never a fail).
+- **Passes:** ≥ 3 independent people, answered by the other side, anchored in an official text of the objecting tradition, aimed at what the answered tradition teaches today. Re-readings of the same proof texts are one grouped objection, counted as a group.
+
+## After
+
+1. A verification pass (Sonnet is enough) on the passing objections: transcript passages at the minute, counts, anchors, metadata.
+2. Answers: official texts first. A debater's answer that contradicts official teaching never reaches the site; apologetics only where official texts are silent, anchored in official teaching.
+3. Pedro reviews the list in Spanish (popular wording, counts, one line each) and keeps what he wants; the kept ones go to `DECISIONS.md` and into the dossier.
+4. `/retro`.
+
+## Sizing
+
+Baptism, 2026-10-20: three passes (3 Opus web/books; 2 Opus YouTube in parallel, blocked by the rate limit; 1 Opus Spanish YouTube) plus 2 Sonnet verifiers ≈ 45 session points and ~7 weekly. The third pass alone (one agent, 25 videos, ~40 min) gave most of the kept objections: start there.
+
+## Lessons
+
+- 2026-10-20 · The first pass asked for published transcripts and found "no debates"; YouTube was the source all along (Pedro).
+- 2026-10-20 · Two agents downloading subtitles at once triggered a 429 and a "not a bot" wall for ~20 minutes.
+- 2026-10-20 · Requiring the proponent to belong to the column's official line excluded every real debater; the anchor in the official text is what ties an objection to a tradition.
+- 2026-10-20 · Popular Catholic debaters sometimes contradict official teaching («el agua pasa a ser solamente símbolo»): answers come from official texts first.
