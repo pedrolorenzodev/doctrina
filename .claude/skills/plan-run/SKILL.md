@@ -1,6 +1,6 @@
 ---
 name: plan-run
-description: Plan a Doctrina task before running it. Picks the playbook for the task type in docs/playbooks/, checks DECISIONS.md, writes the plan into docs/features/<task>.md and asks Pedro to approve. Use before any task that launches subagents or repeats a known task type (research fan-out, verification, applying corrections, content dossier, design proposal, decisions page), and before writing a playbook for a new task type.
+description: Plan a Doctrina task before running it. Picks the playbook for the task type in docs/playbooks/, checks DECISIONS.md, writes the plan into docs/features/<task>.md and asks Pedro to approve. Use before any task that launches subagents or repeats a known task type (research fan-out, verification, applying corrections, content dossier, debate objections, design proposal, decisions page), and before writing a playbook for a new task type.
 ---
 
 # Plan a run
