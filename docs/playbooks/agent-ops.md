@@ -1,6 +1,6 @@
 # Agent operations (base for every playbook)
 
-How to run subagents on Pedro's account. Every other playbook assumes this one. Last validated: 2026-10-17.
+How to run subagents on Pedro's account, and research on his Codex agent. Every other playbook assumes this one. Last validated: 2026-10-20.
 
 ## Models
 
@@ -27,7 +27,7 @@ How to run subagents on Pedro's account. Every other playbook assumes this one. 
 
 ## Usage guard
 
-Use Pedro's `usage-guard` skill (user skill, outside the repo) for any run with subagents: one-off check before launching, Monitor every 5 min. Thresholds: 65 % no new agents; 70 % checkpoint message to every running agent; 75 % hard stop; weekly 80 % warn Pedro. Re-arm the Monitor before its 30-minute expiry.
+Use Pedro's `usage-guard` skill (user skill, outside the repo) for any run with subagents: one-off check before launching, Monitor every 5 min. Thresholds: the ones Pedro sets for the run (he changes them often; the week's plan is in agent memory `usage-plan-oct-2026`); if he set none, 65 % no new agents; 70 % checkpoint message to every running agent; 75 % hard stop; weekly 80 % warn Pedro. Re-arm the Monitor before its 30-minute expiry.
 
 ## The brief (every subagent prompt has all of these)
 
@@ -55,6 +55,25 @@ Use Pedro's `usage-guard` skill (user skill, outside the repo) for any run with 
 - Pedro keeps the terminal open, the Mac awake (`caffeinate -dis`) and online.
 - At the 5-hour cap: checkpoint, stop, then wait for the reset with a background `until` loop on the usage script and relaunch from Progress blocks.
 
+## Background work
+
+We are racing the clock (`AGENTS.md`): the queue in `ROADMAP.md`, "Background queue", should always have something running while Pedro talks or decides.
+
+- A task qualifies when it depends on no pending decision of Pedro's: research, verification, applying corrections, preparing data. Never content or UI that a pending "Decide:" could invalidate.
+- Codex first (its quota is separate from the shared Claude account). Claude agents only for work that needs this session's context, such as building proposal Artifacts.
+- Queue items are already approved: launch the next one without asking, and tell Pedro in one line what started and where it writes. A Claude run with more than one agent, or any Fable agent, still needs `/plan-run` and his ok.
+- Check usage before launching (Claude: `usage-guard`; Codex: below). When a task ends, mark it in the queue, review its output, and launch the next.
+- Keep the queue at three or more ready items. When a conversation produces new work that qualifies, add it.
+
+## Codex (research agent)
+
+Pedro runs research in his Codex app (`/goal`), not in Claude subagents: web research, verification, licensing, source hunting, applying corrections to research files. The agent writes the prompt; Pedro pastes it (`pbcopy < <file>` puts it on his clipboard).
+
+- The prompt is self-contained: Codex knows nothing. It names the files to read first (`AGENTS.md`, `PROJECT.md`, the `DECISIONS.md` entries that bound it, the playbook, prior research), the exact question, one output file per task, the tags, no git writes, write-as-you-go with a Progress block and the line `Status: done` when finished, the usage cap, and a reply in Spanish with a commit message.
+- Usage: `f=$(ls -t ~/.codex/sessions/*/*/*/*.jsonl | head -1); grep -o '"primary":{[^}]*}\|"secondary":{[^}]*}' "$f" | tail -2` (`secondary` = weekly, `primary` = 5 hours; `resets_at` is a Unix time). Pedro's Codex app shows usage inverted (remaining, not used): confirm which one he means.
+- Pedro pastes Codex's summary back; the agent reads the output files and gives a critical take before anything depends on them. A research output still needs a verification pass (`research-fanout.md`).
+- Sizing: one verification task at extra-high effort took ~8 weekly points in ~22 min (2026-10-20). The overnight run of 2026-10-20 (eight tasks, high effort, cap 35 %) finished all eight; its final usage wasn't recorded. Add a row after each run.
+
 ## Files and parallel sessions
 
 - One output file per agent; disjoint ownership. One coordinator owns shared files (indexes, `BRIEF.md`, playbooks).
@@ -74,3 +93,4 @@ Use Pedro's `usage-guard` skill (user skill, outside the repo) for any run with 
 - 2026-10-15 · The consistency agent wrote its log only at the end of 58 min → the 15-minute mtime check.
 - 2026-10-15 · Apply agents reported each other's diffs as unknown → brief item 6 (siblings).
 - 2026-10-15 · A handoff's "the other session owns DECISIONS" outlived its reason → ownership rules state reason and expiry.
+- 2026-10-20 · The overnight Codex watchdog script failed on every attempt (`unexpected argument '-s'`, a flag written from memory) and nothing reported it; Codex finished on its own → test any unattended script once, end to end, before leaving it running.

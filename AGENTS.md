@@ -50,6 +50,7 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 6. Report results as they are: if something failed, is half done or wasn't verified, say so. Never call something done that wasn't checked.
 7. Before writing Next code, read the relevant guide in `node_modules/next/dist/docs/` (Next 16: `params`/`searchParams` are Promises, global `LayoutProps` type, Turbopack by default, `middleware` is now `proxy`).
 - If a rule, the structure or the doc system is ambiguous, ask Pedro before inventing.
+- **We are racing the clock** (Pedro, 2026-10-20; no deadline set). Whenever Claude and Codex usage allows, important work runs in the background while we talk or Pedro decides. At the start of every session and after each background task ends, launch the next item of "Background queue" in `ROADMAP.md`. Which tasks qualify and how: `docs/playbooks/agent-ops.md`, "Background work".
 
 ## Code
 
