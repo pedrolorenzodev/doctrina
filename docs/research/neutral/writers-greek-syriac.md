@@ -3,9 +3,9 @@
 ## Progress
 
 - Status: done
-- Done: applied the clavis/patrology membership rule; defined 23 Tier 1 entities, 22 Tier 2 entities and explicit exclusions; supplied screen-09 biographical fields, work groups, authenticity/transmission, editions and licence routes; recorded owner questions and a verification queue.
+- Done: applied the clavis/patrology membership rule; defined 23 Tier 1 entities, 22 Tier 2 entities and explicit exclusions; supplied screen-09 biographical fields, work groups, authenticity/transmission, editions and licence routes; applied the independent sample verification from `verification.md` on 2026-10-20.
 - In progress: none.
-- Next: Task 6, Latin writers 325–749. Task 8 must check the items marked `[memory]` and the edition/licence samples listed in §5 before product use.
+- Next: unsampled life/work chronologies marked `[memory]` remain unconfirmed in `verification.md` Part B §7 and must be checked before product use.
 
 Research date: 2026-10-20. This file applies `BRIEF.md`; it does not decide what any modern tradition teaches.
 
@@ -29,11 +29,11 @@ The 749 endpoint is provisional. It includes John of Damascus so Pedro can later
 
 | Route | Coverage and status |
 |---|---|
-| OpenGreekAndLatin First1KGreek | CC BY-SA 4.0 TEI for selected Athanasius, Gregory of Nazianzus, Epiphanius, Chrysostom, Cyril of Alexandria and Theodoret. Exact inventory and limits: `sources/greek-fathers.md` §2 and §5. `[verified: reuse]` |
-| Patristic Text Archive | Per-file CC BY/CC BY-SA critical texts, especially Athanasius and Theodoret; licence must be read in each TEI header. `sources/greek-fathers.md` §2. `[verified: reuse]` |
+| OpenGreekAndLatin First1KGreek | CC BY-SA 4.0 TEI for selected Athanasius, Gregory of Nazianzus, Epiphanius, Chrysostom, Cyril of Alexandria and Theodoret. The repository licence and sampled *De incarnatione* TEI header agree ([verified: `verification.md` Part B, First1KGreek row]). Exact inventory and limits: `sources/greek-fathers.md` §2 and §5. |
+| Patristic Text Archive | Licences differ by file; the sampled `pta0001.pta001` header says CC BY-SA 4.0 ([verified: `verification.md` Part B, PTA row]). Read every selected TEI header; do not infer a blanket PTA licence. `sources/greek-fathers.md` §2. |
 | Migne, *Patrologia Graeca* | Nineteenth-century Greek/Latin print scans, public domain; usable as scan-backed fallbacks, but its attributions and text are not automatically critical. Roger Pearse's list identifies scan volumes; `sources/greek-fathers.md` §2. `[verified: reuse]` |
-| NPNF, series 2 | Buffalo/New York print volumes 4–9 and 14 (1892–1900), public domain and scan-backed. New Advent and CCEL are not the edition. `sources/greek-fathers.md` §3. `[verified: reuse]` |
-| Digital Syriac Corpus | Syriac texts encoded under CC BY; each work page states its base edition. `sources/oriental-fathers.md` §2.0. `[verified: reuse]` |
+| NPNF, series 2 | Buffalo/New York print volumes 4–9 and 14 (1892–1900), public domain and scan-backed. The 1900 scan identifies Second Series, volume XIV and Henry R. Percival ([verified: `verification.md` Part B, NPNF row]). New Advent and CCEL are not the edition. `sources/greek-fathers.md` §3. |
+| Digital Syriac Corpus | The raw [repository XML](https://github.com/srophe/syriac-corpus) is CC BY 4.0; the [public website/documentation layer](https://syriaccorpus.org/documentation/index.html) displays CC BY-NC 4.0 ([verified: `verification.md` Part B, Digital Syriac Corpus row]). Product reuse must identify and ingest the exact repository XML, not infer that every website layer is CC BY. Each work record still identifies its base edition. |
 | CSCO / GCS / SC / OECT | Name as modern critical references; do not reproduce a modern translation without permission. Public-domain predecessors are specified per entry. |
 
 ## 2. Tier 1 entries
@@ -48,9 +48,9 @@ He is the earliest substantial Syriac prose writer whose corpus survives under h
 
 | Works | Date | Authenticity / transmission | Edition and reusable text |
 |---|---|---|---|
-| *Taḥwiyāthā / Demonstrations / Demostraciones* 1–10 | 337 | accepted corpus; Syriac manuscript transmission | Parisot, *Patrologia Syriaca* 1–2 is the standard older edition; DSC CC BY has all 23. Gwynn, NPNF2 13 has eight; Hallock has 2 and 7 with jurisdiction caveats. `[verified: reuse]` |
-| Demonstrations 11–22 | 344 | accepted | DSC CC BY; public-domain English is incomplete. |
-| Demonstration 23, “On the Grape” | 345 | accepted; alphabetic sequence completed separately | DSC CC BY; own translation required for full bilingual coverage. |
+| *Taḥwiyāthā / Demonstrations / Demostraciones* 1–10 | 337 | accepted corpus; Syriac manuscript transmission | Parisot, *Patrologia Syriaca* 1–2 is the standard older edition; the DSC repository XML (CC BY 4.0) has all 23. Gwynn, NPNF2 13 has eight; Hallock has 2 and 7 with jurisdiction caveats. `[verified: reuse]` |
+| Demonstrations 11–22 | 344 | accepted | DSC repository XML (CC BY 4.0); public-domain English is incomplete. |
+| Demonstration 23, “On the Grape” | 345 | accepted; alphabetic sequence completed separately | DSC repository XML (CC BY 4.0); own translation required for full bilingual coverage. |
 
 **Dates and authenticity:** the corpus's internal Seleucid-era dates are stronger evidence than the later biographical traditions; birth, death and episcopal office should remain “unknown” rather than harmonised from hagiography. **Checklist:** `sources/oriental-fathers.md` §§2.1, 2.6, 2.13.
 
@@ -62,7 +62,7 @@ Ephrem composed metrical homilies, teaching hymns and prose commentaries. His ge
 
 | Works | Date | Authenticity / transmission | Edition and reusable text |
 |---|---|---|---|
-| Hymns on Faith, Nativity, Unleavened Bread, Crucifixion, Church, Virginity; Nisibene Hymns | 4th c.; several groups after 363 | core Syriac collections; individual cycles and sequence need edition-level checking | Beck CSCO is the modern reference; DSC CC BY includes Nativity and Nisibene material. Lamy 1882–1902 is a PD Syriac fallback. `[verified: reuse]` |
+| Hymns on Faith, Nativity, Unleavened Bread, Crucifixion, Church, Virginity; Nisibene Hymns | 4th c.; several groups after 363 | core Syriac collections; individual cycles and sequence need edition-level checking | Beck CSCO is the modern reference; DSC repository XML (CC BY 4.0) includes Nativity and Nisibene material. Lamy 1882–1902 is a PD Syriac fallback. `[verified: reuse]` |
 | *Mēmrē* and prose commentaries, including Genesis and Exodus | 4th c. | genuine core with corpus-level attribution problems | CSCO/modern critical references; use DSC or PD Syriac editions where present. |
 | *Commentary on the Diatessaron* | 4th c. | Syriac fragments and a fuller Armenian version; transmission is indirect | Chester Beatty Syriac witness and modern editions are references; no blanket reusable modern translation. `[memory: verify]` |
 | Greek *Ephrem* corpus and Testament | 4th c. onward | mixed, much pseudonymous; the [Testament authority](https://syriaca.org/work/1387) records separate witnesses and editions | keep each work as pseudo-Ephrem unless a critical catalogue accepts it. |
@@ -232,20 +232,20 @@ His metrical homilies treat scripture, feasts, liturgy, sacraments and moral for
 
 | Works | Date | Authenticity / transmission | Edition and reusable text |
 |---|---|---|---|
-| Four liturgical/sacramental homilies | late 5th c. | accepted within the Narsai corpus; manuscript numbering varies | Mingana edition in DSC CC BY; Connolly 1909 English is US/Argentina PD but Spain only from 2029. `[verified: reuse]` |
+| Four liturgical/sacramental homilies | late 5th c. | accepted within the Narsai corpus; manuscript numbering varies | Mingana edition in DSC repository XML (CC BY 4.0); Connolly 1909 English is US/Argentina PD but Spain only from 2029. `[verified: reuse]` |
 | Remaining *mēmrē* | late 5th c. | 70+ transmitted; individual attribution must follow a catalogue | DSC has Syriac; no general PD English. |
 
 **Dates and authenticity:** use “c.” for both life endpoints and title each homily from the cited edition. **Checklist:** `sources/oriental-fathers.md` §2.3.
 
 ### 2.15 Jacob of Serugh
 
-**Names:** ܝܥܩܘܒ ܕܣܪܘܓ · Jacob of Serugh · Jacobo de Sarug. **Dates/office/language:** c. 451–521; bishop of Batnan da-Sarug 519–521; Syriac. [Syriaca person 42](https://syriaca.org/person/42) gives the dates, office and handbook bibliography `[verified]`.
+**Names:** ܝܥܩܘܒ ܕܣܪܘܓ · Jacob of Serugh · Jacobo de Sarug. **Dates/office/language:** c. 451–521; bishop of Batnan da-Sarug 519–521; Syriac. [Syriaca person 42](https://syriaca.org/person/42) gives the dates and office, but the record says `Status: draft`; corroborate it with the cited *Gorgias Encyclopedic Dictionary of the Syriac Heritage* entry before treating it as final authority ([verified with source-status caveat: `verification.md` Part B, Jacob row]).
 
 His corpus is dominated by metrical homilies on biblical narratives, feasts, figures and pastoral subjects, plus letters. Hundreds of poems circulate under his name; attribution and edition are work-level questions.
 
 | Works | Date | Authenticity / transmission | Edition and reusable text |
 |---|---|---|---|
-| Metrical homilies (*mēmrē*) | late 5th–early 6th c. | large corpus with genuine, doubtful and spurious items | Bedjan 1905–10 PD scans; DSC CC BY has 39; modern Gorgias critical volumes reference-only. `[verified: reuse]` |
+| Metrical homilies (*mēmrē*) | late 5th–early 6th c. | large corpus with genuine, doubtful and spurious items | Bedjan 1905–10 PD scans; DSC repository XML (CC BY 4.0) has 39; modern Gorgias critical volumes reference-only. `[verified: reuse]` |
 | Letters | before 521 | accepted core and disputed items | Olinder/modern reference; manuscript-specific check required. |
 
 **Dates and authenticity:** the site must not infer attribution from a Bedjan heading alone. **Checklist:** `sources/oriental-fathers.md` §2.7.
@@ -258,7 +258,7 @@ He wrote ascetic discourses, letters, polemical works and biblical commentary, a
 
 | Works | Date | Authenticity / transmission | Edition and reusable text |
 |---|---|---|---|
-| Thirteen *Discourses* | c. 485–500 | accepted | Budge 1894 Syriac/English PD; DSC works 374–386 CC BY. `[verified: reuse]` |
+| Thirteen *Discourses* | c. 485–500 | accepted | Budge 1894 Syriac/English PD; DSC repository XML works 374–386 are CC BY 4.0. `[verified: reuse]` |
 | Three letters and polemical works | late 5th–early 6th c. | accepted individually; catalogue required | Vaschalde 1902 PD status outside US/Spain needs death-year check; short quotation pending verification. |
 | Philoxenian New Testament revision | 508 | revision sponsored by Philoxenus and produced by Polycarp; not an authored “translation by Philoxenus” | manuscript/edition references; do not list as his sole-authored work. `[memory: verify]` |
 
@@ -290,7 +290,7 @@ His homilies, letters and polemical treatises are major first-person sources for
 
 ### 2.19 Sophronius of Jerusalem
 
-**Names:** Σωφρόνιος Ἱεροσολύμων · Sophronius of Jerusalem · Sofronio de Jerusalén. **Dates/office/language:** born c. 560; died 638; patriarch of Jerusalem from 634; Greek. [Syriaca person 757](https://syriaca.org/person/757) confirms office and death year `[verified]`.
+**Names:** Σωφρόνιος Ἱεροσολύμων · Sophronius of Jerusalem · Sofronio de Jerusalén. **Dates/office/language:** born c. 560 [memory; unconfirmed in `verification.md` Part B, Sophronius row]; died 638; patriarch of Jerusalem from 634; Greek. [Syriaca person 757](https://syriaca.org/person/757) confirms only office and death year `[verified: verification.md Part B, Sophronius row]`.
 
 | Works | Date | Authenticity / transmission | Edition and reusable text |
 |---|---|---|---|
@@ -330,7 +330,7 @@ His homilies, letters and polemical treatises are major first-person sources for
 
 | Works | Date | Authenticity / transmission | Edition and reusable text |
 |---|---|---|---|
-| First Part, ascetical homilies | late 7th c. | accepted core; Greek translation greatly shaped later reception | Bedjan Syriac in DSC CC BY; Wensinck 1923 English PD everywhere and aligned; 1497 Seville Spanish is archaic PD. `[verified: reuse]` |
+| First Part, ascetical homilies | late 7th c. | accepted core; Greek translation greatly shaped later reception | Bedjan Syriac in DSC repository XML (CC BY 4.0); Wensinck 1923 English PD everywhere and aligned; 1497 Seville Spanish is archaic PD. `[verified: reuse]` |
 | Second Part and later collections | 7th c., discovered/published in modern period | work set and attribution require modern catalogue; modern translations copyrighted | reference-only until a reusable source is identified. |
 
 **Dates and authenticity:** use a floruit, not invented life dates; label the part/recension. **Checklist:** `sources/oriental-fathers.md` §2.4.
@@ -369,7 +369,7 @@ Each paragraph is deliberately short but remains eligible for a history-entity p
 - **Sozomen** (c. 400–c. 450), Greek lawyer and church historian; history covers 324–425 and depends partly on Socrates plus independent sources. Bidez/Hansen GCS; NPNF2 2 PD. `[memory: verify]`
 - **Evagrius Scholasticus** (c. 536–after 594), Greek lawyer and historian; *Church History* covers 431–594. Bidez/Parmentier GCS and First1KGreek; older English PD. `[verified: reuse for Greek corpus; dates memory]`
 - **Pseudo-Zachariah Rhetor**, anonymous Syriac compiler (c. 568/569), adapted a lost Greek history by Zacharias of Mytilene and added Syriac materials. Name compiler, source layers and translation separately. `[memory: verify]`
-- **Book of Steps** (*Liber Graduum*), anonymous Syriac collection of thirty discourses, usually dated late 4th/early 5th century. DSC Syriac is CC BY; complete English is copyrighted. `[verified: reuse: oriental-fathers.md summary]`
+- **Book of Steps** (*Liber Graduum*), anonymous Syriac collection of thirty discourses, usually dated late 4th/early 5th century. The DSC repository XML is CC BY 4.0; the website/documentation layer is not the reuse source. Complete English is copyrighted. `[verified: reuse: oriental-fathers.md summary]`
 - **Anastasius of Sinai** (active later 7th c.), Greek monk and writer; *Hodegos*, questions/answers and homilies have a complex genuine/pseudonymous corpus. PG 89 PD; modern critical editions decide attribution. `[memory: verify]`
 - **Andrew of Crete** (c. 660–740), Greek bishop of Gortyna and hymnographer; *Great Canon* and homilies, with attribution/date checks by work. PG 97 Greek PD; no verified PD English. `[verified: reuse]`
 - **Germanus I of Constantinople** (c. 634–733), Greek bishop; letters, homilies and a liturgical exposition, with some disputed works. PG 98 Greek PD; no PD English found for the exposition. `[verified: reuse]`
@@ -400,3 +400,14 @@ Task 8 should prioritise:
 12. John of Damascus' death date and the attribution history of *Barlaam and Ioasaph*.
 13. Licence sample: open one TEI header each from First1KGreek, PTA and DSC; open the exact scan title page for one PG, one NPNF and one Syriac PD edition.
 14. Whole file: no New Advent or CCEL item is used as an edition; no modern copyrighted translation is offered for full-text reuse.
+
+### 5.1 Applied verification verdicts (2026-10-20)
+
+- Jacob of Serugh — confirmed with draft-record caveat; GEDSH remains the intended authority.
+- Sophronius — office and death upgraded to `[verified]`; `c. 560` birth remains `[memory]`, unconfirmed in `verification.md` Part B, Sophronius row.
+- First1KGreek — repository and sampled TEI licence confirmed as CC BY-SA 4.0.
+- PTA — per-file licensing confirmed; sampled file is CC BY-SA 4.0, with no blanket licence inferred.
+- Digital Syriac Corpus — wrong unqualified route corrected to repository XML CC BY 4.0 versus website/documentation CC BY-NC 4.0.
+- NPNF — 1900 Percival volume XIV scan identity confirmed; New Advent/CCEL remain excluded as editions.
+- Forbidden-edition grep — confirmed: New Advent and CCEL occur only in the warning.
+- Unsampled `[memory]` life/work chronologies — retained as unconfirmed in `verification.md` Part B §7; no tertiary item was promoted.

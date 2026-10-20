@@ -3,9 +3,9 @@
 ## Progress
 
 - Status: done
-- Done: applied the CPL/patrology rule; inventoried 21 Tier 1 and 21 Tier 2 writers/corpora; supplied dates, offices, regions, languages, principal works and dates, attribution/transmission cautions, critical references and reusable editions; recorded exclusions, owner questions and verification targets.
+- Done: applied the CPL/patrology rule; inventoried 21 Tier 1 and 21 Tier 2 writers/corpora; supplied dates, offices, regions, languages, principal works and dates, attribution/transmission cautions, critical references and reusable editions; applied the independent sample verification from `verification.md` on 2026-10-20.
 - In progress: none.
-- Next: Task 7, councils and movements. Task 8 must check sampled dates, CPL numbers, critical editions and licences before product use.
+- Next: unsampled CPL numbers and work chronologies remain unconfirmed in `verification.md` Part C §7 and must be checked before product use.
 
 Research date: 2026-10-20. `[verified: reuse]` points to the hands-on source and licence checks in `docs/research/sources/latin-fathers.md` and `latin-fathers.verify.md`; `[memory]` is deliberately not upgraded without a fresh authority.
 
@@ -29,9 +29,9 @@ Part A owns writers whose work is mostly pre-325. Named movements and their frag
 
 | Resource | Use |
 |---|---|
-| OpenGreekAndLatin `csel-dev` | 331 work-level TEI texts from public-domain CSEL volumes; each checked file carries CC BY-SA 4.0 and links its scan. Best open Latin for Augustine, Ambrose, Hilary, Jerome, Rufinus, Cassian and others. `[verified: reuse]` |
+| OpenGreekAndLatin `csel-dev` | 331 work-level TEI texts from public-domain CSEL volumes. The repository has no root licence: the sampled Augustine *Confessions* file names Knöll, CSEL 33 (1896), links its scan, and carries CC BY-SA 4.0, but every selected TEI header must be checked independently ([verified with scope limit: `verification.md` Part C, OGL row]). Best open Latin for Augustine, Ambrose, Hilary, Jerome, Rufinus, Cassian and others. |
 | OGL `patrologia_latina-dev` | CC BY-SA 4.0 OCR/correction of PL 3–85 for works absent from CSEL; “adequate,” not automatically critical, and attribution follows the old print unless corrected. `[verified: reuse]` |
-| Original ANF/NPNF scans | Public-domain print editions, 1885–1900. Use scans, not New Advent's revised pages or CCEL's restricted transcription. `[verified: reuse]` |
+| Original ANF/NPNF scans | Public-domain print editions, 1885–1900. The sampled Percival scan confirms the 1900 print identity; apply the same title-page provenance rule to NPNF2 9 and every selected volume ([verified: `verification.md` Part C, NPNF row]). Use scans, not New Advent's revised pages or CCEL's restricted transcription. |
 | Tertullian Project “Additional Texts” | Per-page public-domain releases for Optatus, Pacian, Ambrose letters, Salvian, Gregory's *Dialogues* and other gaps; permission statement applies to this collection, not its modern Tertullian Latin files. `[verified: reuse]` |
 | Spanish scans | Augustine, Ambrose, Jerome, Vincent and Gregory have specific pre-20th-century routes in `latin-fathers.md` §2B; no blanket Spanish corpus exists. |
 
@@ -250,7 +250,7 @@ The canons of Orange II belong to Part D even though Caesarius convoked/presided
 | Works | Date | Transmission/authenticity | Edition and licence |
 |---|---|---|---|
 | *Moralia in Job* | begun before 590, revised/published later | accepted, 35 books | Adriaen CCSL 143–143B reference; PL/OGL; 1844–50 English PD; 1527 Spanish gothic scan. `[verified: reuse]` |
-| *Pastoral Rule* | c. 590–591 | accepted | Judic CCSL/SC reference; PL/OGL; NPNF2 12; Alfaro 1769 Spanish complete. `[verified: reuse]` |
+| *Pastoral Rule* | c. 590–591 | accepted | Judic CCSL/SC reference; PL/OGL; NPNF2 12; Alfaro 1769 Spanish volume. Its appended *Doce abusiones* is pseudo-Cyprianic material outside Gregory's *Pastoral Rule* ([verified: `verification.md` Part C, Gregory row]). |
 | Homilies on Gospels/Ezekiel | 590s | accepted collections | CCSL 141/142; PL/OGL; no complete verified PD English for Gospels. |
 | *Dialogues* | c. 593–594 | traditional attribution retained but authorship has been challenged and defended | de Vogüé SC; PL/OGL; 1911 English via TP; 1532 Spanish gothic scan. |
 | *Register of Letters* | 590–604 | documentary corpus with later arrangement | Norberg CCSL 140/140A; PL/OGL; NPNF2 12–13 selection. |
@@ -270,7 +270,7 @@ The canons of Orange II belong to Part D even though Caesarius convoked/presided
 
 ### 2.21 Bede
 
-**Names:** Beda Venerabilis · Bede · Beda el Venerable. **Dates/function/region/language:** c. 672/673–26 May 735; monk and presbyter at Wearmouth-Jarrow; Northumbria; Latin. `[memory: verify 672/673 convention]`
+**Names:** Beda Venerabilis · Bede · Beda el Venerable. **Dates/function/region/language:** c. 672/673–26 May 735; monk and presbyter at Wearmouth-Jarrow; Northumbria; Latin. The British Library catalogue gives `b. c. 673, d. 735`; HE V.24 supplies Bede's autobiographical chronology, its continuation supplies 735, and Cuthbert's separate *Letter on the Death of Bede* supports 26 May ([verified: `verification.md` Part C, Bede row]).
 
 | Works | Date | Transmission/authenticity | Edition and licence |
 |---|---|---|---|
@@ -328,3 +328,12 @@ The canons of Orange II belong to Part D even though Caesarius convoked/presided
 13. Bede: birth convention, exact death date source and HE V.24/continuations.
 14. Licence sample: original scan title pages for NPNF2 9, Optatus 1917, Gregory *Pastoral Rule* 1769, and one OGL TEI header each from CSEL and PL.
 15. Whole file: New Advent and CCEL are not editions; no modern ACW/FOTC/CCSL translation is offered as reusable full text.
+
+### 5.1 Applied verification verdicts (2026-10-20)
+
+- OGL `csel-dev` — sampled *Confessions* TEI confirmed as CC BY-SA 4.0; the report now requires a header check for every selected file because no root licence exists.
+- Gregory I — the 1769 Spanish volume route is retained; appended *Doce abusiones* is now identified as pseudo-Cyprianic and outside the *Pastoral Rule*.
+- Bede — dates and three source layers upgraded from `[memory]` to `[verified]` with the British Library catalogue, HE V.24/continuation, and Cuthbert distinction.
+- NPNF — sampled Percival scan identity confirmed; every volume must still be cited from its title-page scan.
+- Forbidden-edition grep — confirmed: New Advent and CCEL occur only in warnings, and modern protected translations are not offered for reuse.
+- Unsampled CPL numbers and work chronologies — retained as unconfirmed in `verification.md` Part C §7; no unsampled `[memory]` claim was promoted.
