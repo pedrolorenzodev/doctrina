@@ -27,7 +27,8 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 
 ## Usage guard
 
-Use Pedro's `usage-guard` skill (user skill, outside the repo) for any run with subagents: one-off check before launching, Monitor every 5 min. Thresholds: the ones Pedro sets for the run (he changes them often; the week's plan is in agent memory `usage-plan-oct-2026`); if he set none, 65 % no new agents; 70 % checkpoint message to every running agent; 75 % hard stop; weekly 80 % warn Pedro. Re-arm the Monitor before its 30-minute expiry.
+- **Claude, 5-hour session ≤ 70 %** (Pedro, 2026-10-20): at 65 % no new agents; at 68 % every agent saves its progress (checkpoint message) and the run stops. It applies to the main session and to its subagents alike. At night, or close to the window's reset, more only when Pedro authorizes it explicitly, up to the number he gives. The weekly cap is set per run (this week's plan: agent memory `usage-plan-oct-2026`).
+- Use Pedro's `usage-guard` skill (user skill, outside the repo) for any run with subagents: one-off check before launching, Monitor every 5 min, re-armed before its 30-minute expiry. The main session working alone checks it before each heavy step.
 
 ## The brief (every subagent prompt has all of these)
 
