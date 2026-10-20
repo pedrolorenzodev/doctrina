@@ -71,6 +71,7 @@ Pedro runs research in his Codex app (`/goal`), not in Claude subagents: web res
 
 - The prompt is self-contained: Codex knows nothing. It names the files to read first (`AGENTS.md`, `PROJECT.md`, the `DECISIONS.md` entries that bound it, the playbook, prior research), the exact question, one output file per task, the tags, no git writes, write-as-you-go with a Progress block and the line `Status: done` when finished, the usage cap, and a reply in Spanish with a commit message.
 - Usage: `f=$(ls -t ~/.codex/sessions/*/*/*/*.jsonl | head -1); grep -o '"primary":{[^}]*}\|"secondary":{[^}]*}' "$f" | tail -2` (`secondary` = weekly, `primary` = 5 hours; `resets_at` is a Unix time). Pedro's Codex app shows usage inverted (remaining, not used): confirm which one he means.
+- Caps (Pedro, 2026-10-20): **5-hour session ≤ 70 %** (no new task at 65 %, checkpoint and stop at 68 %) and a weekly cap set per run. Every Codex prompt states both, with the check every 20 minutes and before each task; a paused run writes `Paused: <which limit>` and the reset time in its Progress block, and Pedro resumes it.
 - Pedro pastes Codex's summary back; the agent reads the output files and gives a critical take before anything depends on them. A research output still needs a verification pass (`research-fanout.md`).
 - Sizing: one verification task at extra-high effort took ~8 weekly points in ~22 min (2026-10-20). The overnight run of 2026-10-20 (eight tasks, high effort, cap 35 %) finished all eight; its final usage wasn't recorded. Add a row after each run.
 
