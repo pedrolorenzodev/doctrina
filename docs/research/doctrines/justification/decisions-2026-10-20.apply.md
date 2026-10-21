@@ -75,3 +75,12 @@ Source: `../open-tags-verification.md`, section Justification.
 - Row 4 (Athanasius, Letters to Serapion 359–361): UNCONFIRMABLE as a firm date; kept as «plausible», not `[verified]`; the entry stays a dossier note (the site line carries only †373); Question 23 updated.
 - Row 5 (1999 Official Common Statement approval chain): CONFIRMED via the Cassidy presentation, found only in the EWTN copy; `[snippet]` upgraded to `[verified]` with the provenance caveat in the QE-9 label line and the forbidden-sources check. Locations 17, 21 and 751 are history/question text that still say `[snippet]` as of that date and were left as the record; QE-9 stays off-site per Question 18.
 - Row 6 (Catholic Response date 25 June 1998): CONFIRMED, locator WRONG; re-cited to the Cassidy presentation, old Official Common Statement §2 locator kept as «corrected 2026-10-21».
+
+## Objection titles (2026-10-21)
+
+2026-10-21 · Pedro: OB-2, 3, 4, 6 titles rewritten in informal-debate language; OB-1, 5, 7 kept.
+- OB-2: «La justicia que justifica es la de Cristo imputada, no una justicia infundida» → «Dios no me hace justo por dentro: me declara justo por Cristo»
+- OB-3: «"El pecado que mora en mí": lo que queda en el bautizado es verdadero pecado, y el creyente es "a la vez justo y pecador"» → «Después del bautismo, lo que queda adentro sigue siendo pecado»
+- OB-4: «"La dádiva de Dios es vida eterna": las obras de los justificados no la merecen» → «El cielo es un regalo: no se gana con obras»
+- OB-6: «En la conversión, la voluntad humana no coopera: el hombre es pasivo hasta que la gracia lo renueva» → «La salvación es obra de Dios solo: uno no pone nada»
+Files: `catholic.md` (headings), `review-page.data.js` (titles). Question ids unchanged.
