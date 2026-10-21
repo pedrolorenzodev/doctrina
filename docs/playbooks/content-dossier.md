@@ -1,6 +1,6 @@
 # Content dossier (one doctrine, per tradition)
 
-The content of one doctrine for the six traditions, written as Markdown dossiers before anything enters `data/`. It feeds screens 02 (doctrine), 03 (tradition) and 04 (objection). Read `agent-ops.md` first. Status: written 2026-10-17, not yet run; the first run (the Eucharist) validates it.
+The content of one doctrine for the six traditions, written as Markdown dossiers before anything enters `data/`. It feeds screens 02 (doctrine), 03 (tradition) and 04 (objection). Read `agent-ops.md` first. Status: run for five Catholic doctrines (Eucharist, Justification, Baptism, Papacy, Sola Scriptura) since 2026-10-17; sizing in `docs/features/catholic-wave-1.md`. Lessons are still to be folded in by `/retro`.
 
 ## Inputs
 

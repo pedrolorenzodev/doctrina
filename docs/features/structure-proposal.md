@@ -46,6 +46,8 @@ Usage limits for the night (Pedro): weekly ≤ ~59 % (no new agents at 55, check
 
 ## Decided by the agent, to confirm
 
+Superseded by v2, approved 2026-10-21 (DECISIONS «Structure proposal v2 approved»): the fingerprint dates are in `fingerprint-dates.md`, the Ignatius birth and letter descriptions in `neutral/births-and-ignatius.md` and `neutral/ignatius-letters-descriptions.md`. Still open: the Pentecostal tradition has no content, so it stays absent.
+
 - Only five traditions appear (Catholic, Orthodox, Lutheran, Reformed, Baptist): the Pentecostal tradition joined on 2026-10-14 but has no Eucharist content yet, and showing it empty would be a placeholder.
 - Fingerprints of the connected-doctrine cards use the dates from «todo junto» (written from memory); `docs/research/doctrines/fingerprint-dates.md` was "not started" at 01:08.
 - Links to pages outside the proposal show a small proposal note instead of navigating (no dead affordances, no fake pages).
@@ -56,6 +58,8 @@ Usage limits for the night (Pedro): weekly ≤ ~59 % (no new agents at 55, check
 - Fingerprints follow Codex's `fingerprint-dates.md` (Status: done by 02:20): «La justificación» with its twelve dates; Eucharist with the corrections listed there (Didache tick at c. 100 inside c. 50–120, Augustine 397, Paschasius 831 and Ratramnus c. 844 split, Calvin 1536 and Consensus Tigurinus 1549 split, Westminster 1647). Artifact version 2.
 
 ## Questions for Codex
+
+All answered (2026-10-20/21): `neutral/births-and-ignatius.md`, `neutral/ignatius-letters-descriptions.md`, `doctrines/eucharist/rv1909-verses.md`.
 
 - A sourced estimate of Ignatius' birth (the "c. 35" in DECISIONS 2026-10-06), with edition.
 - Titles and years of the works behind each dating of Ignatius (Decrept, Pervo, Barnes, Vinzent), now cited by name only.

@@ -31,10 +31,10 @@ Pedro chose option A at 22:40: the pilot gate holds (the other five Eucharist tr
 
 1. [done 22:33] Catholic Eucharist: apply verifier + expert + critic (`catholic.md`, "Reviews applied").
 2. [done 23:04] Review Artifact for the Catholic pilot, https://claude.ai/artifact/M9eoQq4bpGawrihps2U3rh (source: scratchpad/review-build/, `build.py` rebuilds; waits for Pedro's notes) (Opus builds the HTML in the scratchpad; the coordinator publishes it and leaves the link here and in "Para Pedro").
-3. [ ] Neutral universe (`docs/features/neutral-universe.md`): A ante-Nicene, B Greek and Syriac 325–749, C Latin 325–749, D councils and condemned movements; then a Sonnet verification pass.
-4. [ ] Justification, Catholic pilot (`docs/features/justification-pilot.md`): draft (Opus) → verify (Sonnet) + expert (Fable) → critic (Fable) → apply (Opus).
-5. [ ] Small fixes (Sonnet): `docs/research/traditions/consistency.md` §5 leftovers; New Hampshire 1833 → 1853 (ROADMAP item).
-6. [ ] If weekly remains: Baptism, Catholic pilot, same shape as 4.
+3. [x] Neutral universe (`docs/features/neutral-universe.md`): A ante-Nicene, B Greek and Syriac 325–749, C Latin 325–749, D councils and condemned movements; then a Sonnet verification pass.
+4. [x] Justification, Catholic pilot (`docs/features/justification-pilot.md`): draft (Opus) → verify (Sonnet) + expert (Fable) → critic (Fable) → apply (Opus).
+5. [ ] (partly done) Small fixes (Sonnet): `docs/research/traditions/consistency.md` §5 leftovers; New Hampshire 1833 → 1853 (ROADMAP item).
+6. [x] If weekly remains: Baptism, Catholic pilot, same shape as 4.
 
 Run log (newest first):
 - 22:15 · Sola Scriptura review page published (read in full first): https://claude.ai/artifact/GzS9WbPRk5PrKxZf6rQocp. All five Catholic dossiers now have review Artifacts; waiting for Pedro's notes. Nothing running.

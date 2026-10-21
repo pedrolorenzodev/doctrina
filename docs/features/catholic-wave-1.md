@@ -9,7 +9,7 @@ Pedro's direction (2026-10-17, 23:00): only Catholic dossiers across several doc
 - **Pedro's notes on the Eucharist review Artifact** go to running agents as they arrive and to the playbook.
 - **Expected cost:** ~55–65 session points per doctrine (estimate from the Eucharist pilot).
 
-## Review Artifacts
+## Review Artifacts (v1, superseded by v2 below)
 
 - Eucharist: https://claude.ai/artifact/M9eoQq4bpGawrihps2U3rh
 - Justification: https://claude.ai/artifact/UYET6eBuUnNkusfX3imGWn
@@ -27,14 +27,9 @@ Pedro's direction (2026-10-17, 23:00): only Catholic dossiers across several doc
 
 ## Handoff (2026-10-19, for the next session)
 
-**State.** Eucharist, Justification, Baptism, Papacy and Sola Scriptura (Catholic column only) are through the whole `content-dossier` cycle: draft → verification → expert → critic → apply ("Reviews applied" closes each Progress block). Files per doctrine in `docs/research/doctrines/<slug>/`: `catholic.md` (the dossier, ends with "Questions for Pedro"), `verification-catholic.md`, `review-catholic.md`, `critic-catholic.md`. Review Artifacts above; Pedro has not reviewed any yet. Run log with times and costs: `docs/features/eucharist-rebuild.md`, "Overnight queue". Nothing is committed since 0e72744.
+**State.** Eucharist, Justification, Baptism, Papacy and Sola Scriptura (Catholic column only) are through the whole `content-dossier` cycle: draft → verification → expert → critic → apply ("Reviews applied" closes each Progress block). Files per doctrine in `docs/research/doctrines/<slug>/`: `catholic.md` (the dossier, ends with "Questions for Pedro"), `verification-catholic.md`, `review-catholic.md`, `critic-catholic.md`. Review pages: v2 below (the v1 pages are superseded). Run log with times and costs: `docs/features/eucharist-rebuild.md`, "Overnight queue".
 
-**Waiting on Pedro.**
-1. Notes on the five review Artifacts (each has "Copiar respuestas"; he pastes the text into the session).
-2. Six questions repeated in every dossier, answered once on one decisions page, built 2026-10-19 and not answered yet (Pedro planned a 4-hour session on it): https://claude.ai/artifact/Wmy81AwbGJ4THaf2rGe9MZ (options shown on real dossier text; "Copiar respuestas" gives the text to paste back; sub-questions on positive statements under an objection and on the DJ 41–42 line). The six: Bible wording (RV1909 or the documents' own); what counts as an objection (do exclusive definitions such as BF&M VII "immersion of a believer" count; all reviewers say yes); how answers end (Trent's canon, plus DJ 41–42 on Lutheran objections in Justification); harsh language (Antichrist, "papists") shown with a current-status line, one rule for all; honest-gap lines when Catholic texts don't answer a point; insider terms (glossary modal plus a few inline glosses).
-3. The framing rule for a tradition that rejects a doctrine named after a claim (applied in Sola Scriptura: open with the Church's own stated position, then what it teaches instead). Proposed, not confirmed; asked in chat on 2026-10-19, no answer yet.
-4. Neutral universe parts B–D and its verification: paused by Pedro ("más adelante").
-5. Open checks settled on 2026-10-19 (`docs/research/doctrines/wave-1-open-checks.md`, one Sonnet agent, not independently re-verified): no Orthodox withdrawal of the 1848/1895 wording found (absence of evidence, English-only search); Church of Scotland Declaratory Act V (1986) no longer affirms WCF 25.6's antichrist clause; INPM's text (1647 or 1903) still unknown. Proposed status lines are in that file, to apply with Pedro's harsh-language decision. **Flag for Pedro:** vatican.va's Terms of Use allow "personal and non-profit use only" and require prior written authorisation for reproduction, with no quotation clause; how that sits with quoting Holy See texts under the "no permissions for now" decision (2026-10-09) was researched on 2026-10-20 by a Codex agent: `docs/research/sources/holy-see-quotation.md` (not re-verified by us). Short, necessary quotations inside analysis are defensible without permission; full documents or a reader are not; Spain's art. 32 and the vatican.va browsewrap (which even claims permission for links) are the open points; three working rules (A strict 50 words, B balanced 100 words, C permissive 250 words per document per page) await Pedro's choice and counsel. Check the dossiers' quotation lengths against the chosen rule before anything reaches `data/`.
+**Waiting on Pedro (updated 2026-10-21).** Items 2, 3 and 5 of the 2026-10-19 handoff were decided 2026-10-20 (DECISIONS «Catholic Eucharist review», «Opening a doctrine a tradition rejects», «Harsh language») and applied (`docs/research/doctrines/*/decisions-2026-10-20.apply.md`); item 4 (neutral universe B–D) is done. Open: (1) Pedro's review of the v2 review pages (below; the Eucharist one is answered and applied); (2) the Holy See quotation rule A/B/C (50 / 100 / 250 words, `docs/research/sources/holy-see-quotation.md`), tracked in ROADMAP «Now».
 
 **After his notes.** Apply them to the five dossiers and to `docs/playbooks/content-dossier.md`; then `/retro` for this wave and the Eucharist run (candidates below); then, once Pedro is happy with the Catholic format, the other five traditions per doctrine (Catholic as the model of format, not frame), starting with a contrast check on the sparsest one (Baptist Eucharist).
 
@@ -48,7 +43,7 @@ Pedro's direction (2026-10-17, 23:00): only Catholic dossiers across several doc
 - Session cron jobs fire only when idle and can fire late (one-shot ran 45 min late); a network drop killed one agent, resuming by SendMessage worked.
 - Coordinator must read each review page in full before publishing (~60k tokens per page): keep `data.js` lean.
 
-**Review pages.** Tool in `tools/review-page/` (how-to in `docs/playbooks/content-dossier.md`, step 8); data per doctrine in `docs/research/doctrines/<slug>/review-page.data.js`. The Eucharist Artifact was published with the earlier version of the tool; its data file is converted to the shared format (same `storeKey`) and builds and checks clean, but it was not republished.
+**Review pages.** Tool in `tools/review-page/` (how-to in `docs/playbooks/content-dossier.md`, step 8); data per doctrine in `docs/research/doctrines/<slug>/review-page.data.js`. The Eucharist page was rebuilt as v2 on 2026-10-21.
 
 **Scratch (outside the repo, until the Mac reboots).** Fetched texts agents reuse: `/private/tmp/claude-501/-Users-pedrolorenzo-Desktop-dev-doctrina/e0312757-8967-4bde-817a-aa2702aa00ff/scratchpad/` `dl/` (Waterworth Trent), `v/` (page-split OCR of López de Ayala 1785), `just-apply/trig/` (1921 Concordia Triglotta scan text). If lost, agents re-fetch from archive.org (ids are in the dossiers).
 
