@@ -8,7 +8,7 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 |---|---|---|
 | Sonnet | Mechanical work: fetching, downloading, OCR, link checks, exact-string verification | Default for anything without judgment. |
 | Opus (effort high) | Judgment: synthesis, licensing calls, applying corrections, consistency, briefs | Default for research areas. |
-| Fable | Where judgment dominates: simulated expert review, hostile critic, hard synthesis | At most one Fable agent at a time. Costs ~2.5× Opus per token and still counts against the 5-hour session. Its weekly bar is separate; whether it also counts against the all-models weekly bar is unmeasured. |
+| Fable | Where judgment dominates: simulated expert review, hostile critic, hard synthesis | At most one Fable agent at a time. Costs ~2.5× Opus per token and still counts against the 5-hour session. It counts against the all-models weekly bar too (measured 2026-10-17: 45 → 51 % in 20 min with Fable expert and critic). |
 
 ## Sizing (measured; add a row after every run)
 
@@ -20,6 +20,10 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 | 1 Opus agent, web + Playwright screenshots, 11 min | ~5 points of session, ~1 weekly point | 2026-10-19 |
 | 1 Opus agent, Playwright frame analysis, 11 min | ~4 points of session, ~1 weekly point | 2026-10-19 |
 | Debate-objections pilot: 6 Opus (web and YouTube) + 3 Sonnet (verify, apply), three passes over 2 h 15 min | ~52 points of session (with coordination), ~9 weekly; the single Spanish YouTube pass ~15–20 session | 2026-10-20 |
+| Eucharist pilot: Fable expert + Sonnet verifier 20 min (0 → 14 %), then Fable critic alone 10 min (14 → 32 %, ~1.8 %/min) | ~32 points of session, ~6 weekly | 2026-10-17 |
+| Overnight Catholic wave: 3 Opus + 1 Fable at once; one doctrine through the full cycle | ~4 session points/min and ~0.7 weekly/min; ~55–70 session points per doctrine | 2026-10-18 |
+| Structure proposal: 4 Opus builders (3 at once) + 1 Fable critic + 2 Opus fixers, ~70 min; the Fable critic alone ~9 session and ~2 weekly per 5 min | ~36 points of session, ~6 weekly | 2026-10-20 |
+| Neutral universe: Opus writer for 325-and-earlier, 44 min | one of four area agents (B–D ran after a weekly reset) | 2026-10-17 |
 
 - At once: 2–3 Opus + at most 1 Fable; Sonnet as needed.
 - Before a batch of a new shape: run one agent of each model for ~5 min and measure.
@@ -97,6 +101,10 @@ Pedro runs research in his Codex app (`/goal`), not in Claude subagents: web res
 
 ## Lessons
 
+- 2026-10-17 · The usage endpoint returned 429 when polled every 60 s and a 5-minute poll missed a 72 → 80 % jump → poll every 150–240 s, every 2 min above 65 %.
+- 2026-10-18 · Other sessions on the account burned ~26 session points overnight with none of the run's agents running → session % is shared; check it before a long run and don't read it as only this run's.
+- 2026-10-18 · A cron one-shot fired 45 min late and a network drop killed one agent → cron fires only when idle; resume a dead agent by SendMessage with "done: X; continue from Y".
+- 2026-10-20 · The Fable critic of the structure proposal was the most expensive step of the night → give a Fable reviewer a 15-minute cap in its brief.
 - 2026-10-14 · Six agents with four on Fable burned ~2.5 %/min unannounced → measure-first rule and the Fable limit.
 - 2026-10-14 · Stopping a parent left a helper running → `ListAgents` after stopping.
 - 2026-10-15 · The consistency agent wrote its log only at the end of 58 min → the 15-minute mtime check.

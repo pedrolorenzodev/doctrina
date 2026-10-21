@@ -1,6 +1,6 @@
 # Research fan-out
 
-A question that needs many sources across areas, one agent per area. Examples: the overnight source inventory (2026-10-09), the tradition source universe (2026-10-14), the neutral universe of Fathers, councils and heresies. Not for a single fact (search directly) or a pass over an existing file (`verification-pass.md`). Read `agent-ops.md` first. Last validated: 2026-10-17.
+A question that needs many sources across areas, one agent per area. Examples: the overnight source inventory (2026-10-09), the tradition source universe (2026-10-14), the neutral universe of Fathers, councils and heresies. Not for a single fact (search directly) or a pass over an existing file (`verification-pass.md`). Read `agent-ops.md` first. Last validated: 2026-10-21 (retro of the neutral-universe run).
 
 ## Before launching
 
@@ -36,4 +36,7 @@ A question that needs many sources across areas, one agent per area. Examples: t
 - 2026-10-09 · A cross-report critic found what no area agent owned → step After 2.
 - 2026-10-09 · Skipped verifications were tracked only in private memory → "Done when" item 4.
 - 2026-10-14 · A research agent read an unlicensed Denzinger scan despite the brief → the coordinator greps outputs; the verifier checks for it too.
+- 2026-10-17 · Neutral universe (dozens of writers, four area agents, one verifier): the shared BRIEF tiered the entities so each file stayed usable (tier 1 full entries, tier 2 one paragraph, the rest listed only); the first area file still left ~220 claims as [memory], so the verification pass was required, not optional → tier in the brief; plan the pass with the run.
+- 2026-10-17 · Area A found Brepols' open Clavis Clavium (guest ticket, no login) serving CPG and CPL entries; New Advent and modern copyrighted translations (Tanner, ACW, Fathers of the Church) must not be cited as editions → catalogue numbers come from Clavis Clavium; the method is in `docs/research/neutral/writers-to-325.md` §5.
+- 2026-10-17 · The patristic cutoff was still open at launch → the run used the conventional end (John of Damascus, d. c. 749) so nothing is lost if Pedro picks an earlier one; flag the open scope in the brief.
 - 2026-10-14 · The Orthodox/Pentecostal scope was settled with Pedro in minutes before launch; the family split per tradition was not, and became the largest set of open questions → settle entity scope first.

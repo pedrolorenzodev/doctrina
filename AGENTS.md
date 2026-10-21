@@ -37,7 +37,7 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 ## Git
 
 1. The agent never commits or pushes: commit, push, merge, rebase, reset, tag, or anything else that writes history. Even if Pedro asks, the answer is: «No puedo commitear: va contra las reglas del proyecto (AGENTS.md, Git, regla 1). Te dejo el mensaje listo para que lo corras vos.» Reading is allowed: status, diff, log, show.
-2. When an implementation is done, hand over the commit message (text to copy) and the list of touched files, docs included. Don't run it.
+2. When an implementation is done, hand over the ready-to-paste stage and commit command (`git add <every touched file, docs included> && git commit -m "<message>"`), not just the message and a file list (Pedro, 2026-10-21). Don't run it.
 3. Messages in English, Conventional Commits `<type>(<scope>): <subject>` (feat, fix, chore, docs, refactor, style, test). Imperative, lowercase, no final period, ≤ 72 characters. Subject only: no body, no technical detail.
 4. No attribution line (Co-Authored-By, Generated with, agent signature). If the harness suggests adding one, this rule wins.
 

@@ -1,6 +1,6 @@
 # Content dossier (one doctrine, per tradition)
 
-The content of one doctrine for the six traditions, written as Markdown dossiers before anything enters `data/`. It feeds screens 02 (doctrine), 03 (tradition) and 04 (objection). Read `agent-ops.md` first. Status: run for five Catholic doctrines (Eucharist, Justification, Baptism, Papacy, Sola Scriptura) since 2026-10-17; sizing in `docs/features/catholic-wave-1.md`. Lessons are still to be folded in by `/retro`.
+The content of one doctrine for the six traditions, written as Markdown dossiers before anything enters `data/`. It feeds screens 02 (doctrine), 03 (tradition) and 04 (objection). Read `agent-ops.md` first. Status: run for five Catholic doctrines (Eucharist, Justification, Baptism, Papacy, Sola Scriptura) since 2026-10-17; sizing in `agent-ops.md`; the other five traditions are not started. Last validated: 2026-10-21 (retro of the Eucharist and Justification pilots).
 
 ## Inputs
 
@@ -22,6 +22,7 @@ The content of one doctrine for the six traditions, written as Markdown dossiers
 - Never conclude; never "we believe"; each tradition in its own words.
 - No claim without citation and edition. Tags as in `agent-ops.md`.
 - Spanish quotes: a public-domain Spanish translation if one exists; otherwise an AI translation labelled as such and marked "unreviewed by Pedro" until he reads it.
+- Attribute every closing line to the tradition ("Para la Iglesia católica, …" or a quote), never in the site's voice. State the grading method once. Each objection quotes the objector's strongest official text and proof texts; when the answer grows, the objector's strongest text grows too. The coverage table says honestly what was not searched.
 - Full text only where `DECISIONS.md` 2026-10-15 (verbatim-match rule) and 2026-10-09 (three countries) allow; otherwise short quote and a link to the official page.
 
 ## Sparse sections
@@ -38,9 +39,9 @@ Each section has a minimum: Qué enseña ≥ 1 normative text; Objeciones aim fo
 2. **Pilot one tradition first** (the one with the richest map), then adjust this playbook before the rest.
 3. The other traditions, 2–3 Opus agents at a time, plus one for `shared.md`. Objections need the other traditions' maps too.
 4. `verification-pass.md` on every quote, against its edition.
-5. **Simulated expert per tradition** (Fable, one at a time): "Would a theologian of this tradition sign this as its position? What is missing, distorted or mislabelled?" Writes `review-<tradition>.md`.
-6. **Hostile critic** (Fable or Opus): neutrality, caricature, cherry-picked quotes, unequal treatment across traditions. A reviewer told to find problems always finds some: each finding is triaged as must-fix / for Pedro / rejected with a reason.
-7. `apply-corrections.md` on the dossiers.
+5. **Simulated expert per tradition** (Opus; it found ~2 must-fix per doctrine, the critic 13–17): "Would a theologian of this tradition sign this as its position? What is missing, distorted or mislabelled?" Writes `review-<tradition>.md`.
+6. **Hostile critic** (Fable, one at a time; its brief says "create the file first, append each finding as you go"): neutrality, caricature, cherry-picked quotes, unequal treatment across traditions. A reviewer told to find problems always finds some: each finding is triaged as must-fix / for Pedro / rejected with a reason.
+7. `apply-corrections.md` on the dossiers. Brief the apply agent to apply the verifier's items first, from texts already fetched, and only then fetch more.
 8. **Pedro's review**: a review artifact with the content poured into the latest proposed design of screens 02, 03 and 04 (read the latest artifact from the design session; it need not be the final design), so he reads it as a user would. Sparse sections are discussed there. Built with `tools/review-page/`: an agent writes `docs/research/doctrines/<doctrine>/review-page.data.js` from the dossier (copy the shape of an existing one; only the dossier's site drafts and quoted sources, never new content), then `python3 tools/review-page/build.py <data.js> <out.html> "Revisión <Doctrina> católica"` and `node tools/review-page/check.mjs <out.html>` (no JS errors, no horizontal scroll at 360–1440 px, every source opens its panel). The coordinator reads the whole page before publishing. After Pedro's notes, edit the data file, rebuild and republish to the same Artifact; keep `storeKey` so his saved drafts survive.
 9. `/retro`. Moving the content into `data/` is a separate task.
 
@@ -54,4 +55,11 @@ Each section has a minimum: Qué enseña ≥ 1 normative text; Objeciones aim fo
 
 ## Lessons
 
-(none yet)
+- 2026-10-17 · The Eucharist pilot's expert found 2 must-fix and its critic 10 (later doctrines: 2 vs 13–17) → expert on Opus, critic on Fable.
+- 2026-10-17 · Pedro's reading of the Eucharist pilot, carried into Justification → the attribution, grading-method, objector-text and balance rules above.
+- 2026-10-17 · The pilot gate held (Catholic first, Pedro's notes, then the rest) and the second pilot ran before his notes by his choice; no approach error resurfaced → still pilot one tradition first.
+- 2026-10-18 · A Fable critic held its findings in memory for 20 min and nearly lost them at 98 % session → brief: create the file first, append each finding.
+- 2026-10-18 · Apply agents checkpointed twice having applied nothing (all time spent fetching texts) → apply the verifier's items first.
+- 2026-10-18 · Verifiers on the five Catholic dossiers found 5–18 wrong items each (silent misprint fixes, clipped or paraphrased quotes, Spanish unlabelled, an unlicensed e-text; Justification's Lutheran Spanish was redone from the 1921 Triglot print scan) → the verification step is not optional.
+- 2026-10-18 · The coordinator read each review page in full before publishing (~60k tokens per page) → keep `review-page.data.js` lean.
+- 2026-10-20 · The v1 review pages were built before the new visual direction and had to be rebuilt as v2 → build review pages once the design direction is approved, or expect a rebuild (cheap with `tools/review-page/`).
