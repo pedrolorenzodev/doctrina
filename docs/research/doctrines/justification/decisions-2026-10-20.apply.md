@@ -65,3 +65,13 @@ Source: `verification-catholic-2.md`. Edited only `catholic.md` and this log.
 - F2 (UNCONFIRMABLE), CIC can. 989 in §5: kept, marked "unconfirmed in verification-catholic-2.md F2".
 - A19 / A20 (UNCONFIRMABLE), Ayala ch. 15 (§1 entry and §3 row) and pp. 86–88, 98–99 (OB-4 ch. 16 locator): kept `[verified: OCR]` with "unconfirmed in verification-catholic-2.md A19 / A20".
 - Not applied: none. Ch. 11 «á» is the one judgement call (see above).
+
+## Open tags applied (2026-10-21)
+
+Source: `../open-tags-verification.md`, section Justification.
+- Row 1 (Waterworth, Dolman 1848): CONFIRMED; `[memory]` replaced in §4 Trento-Waterworth row, Weak spots and Question list; the issue read stays Burns and Oates.
+- Row 2 (De natura et gratia c. 415): CONFIRMED only within a range; 413–415 now written, single year dropped (Augustine entry).
+- Row 3 (De gratia et libero arbitrio 426–427): CONFIRMED; `[memory]` replaced with the Piscitelli/Balido edition citation.
+- Row 4 (Athanasius, Letters to Serapion 359–361): UNCONFIRMABLE as a firm date; kept as «plausible», not `[verified]`; the entry stays a dossier note (the site line carries only †373); Question 23 updated.
+- Row 5 (1999 Official Common Statement approval chain): CONFIRMED via the Cassidy presentation, found only in the EWTN copy; `[snippet]` upgraded to `[verified]` with the provenance caveat in the QE-9 label line and the forbidden-sources check. Locations 17, 21 and 751 are history/question text that still say `[snippet]` as of that date and were left as the record; QE-9 stays off-site per Question 18.
+- Row 6 (Catholic Response date 25 June 1998): CONFIRMED, locator WRONG; re-cited to the Cassidy presentation, old Official Common Statement §2 locator kept as «corrected 2026-10-21».

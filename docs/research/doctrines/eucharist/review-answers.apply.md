@@ -69,3 +69,12 @@ Source: `verification-catholic-2.md`, "Corrections the dossier needs".
 - 6 (C6): note added in OB-5/OB-6 sources that CEC 1371 and SCa 13 attribute the Catequesis to Cyril without reserve; the hedge is the site's.
 - 7 (D1, A12): listed as unchecked in Weak spots; not applied (no source read).
 - Not applied elsewhere: the earlier line in this file's "Open questions" (item 5) and the "writers-greek-syriac.md" note still call 388 a snippet; outside scope, for the coordinator.
+
+## Open tags applied (2026-10-21)
+
+Source: `../open-tags-verification.md`, section Eucharist.
+- Row 1 (Ignatius c. 107–110): UNCONFIRMABLE; kept as «traditional and disputed», marked unconfirmed, not `[verified]`; `[memory]` tag replaced by the Schaff/Lightfoot note (line 273, not site text).
+- Row 2 (Justin c. 150–155): UNCONFIRMABLE; edition range 148–161 added, narrower range kept as unconfirmed (line 273).
+- Row 3 (1689 Second London Confession): CONFIRMED; `[memory]` replaced with ch. 30.2 and 30.6 quotes (Baptist scope note).
+- Row 4 (Eastern Churches, leavened bread): CONFIRMED; claim restored as «most Eastern Churches», source CCEO Instruction n. 67 (practice-facts note).
+- Row 5 (1895 Encyclical current status): CONFIRMED in qualified wording; ST-1895 kept, citation added; Question 6 and the review-log line updated.

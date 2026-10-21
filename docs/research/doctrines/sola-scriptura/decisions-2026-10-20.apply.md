@@ -75,3 +75,14 @@ Source: `verification-catholic-2.md`. Only `catholic.md` and this file written.
 - J5 (UNCONFIRMABLE): Trent session dates 8 Apr 1546 and 13 Jan 1547 removed from the site-facing "Fuentes citadas" of OB-1 and OB-3; the dossier line (opening, source 2) keeps 8 Apr 1546 tagged "unconfirmed in verification-catholic-2.md J5".
 
 Not applied: none. Outside my files: nothing new. Items 5 and 8 of the verifier's list are the two choices above (Augustine dropped from site text; CCC 2042 not cited, lead-in reworded).
+
+## Open tags applied (2026-10-21)
+
+Source: `../open-tags-verification.md`, section Sola Scriptura.
+- Row 1 (Waterworth, Dolman 1848): CONFIRMED; `[memory]` replaced in the Trento-Waterworth row and the Unconfirmable list; the Dolman issue is distinguished from the Burns and Oates issue read.
+- Row 2 (no public-domain Spanish Dei Filius): UNCONFIRMABLE; universal negative restated as «none was located in this research» in Conventions, Question 17 and the Unconfirmable list; not `[verified]`.
+- Row 3 (Tridentine profession sworn 1564 until 1967/1989): UNCONFIRMABLE; claim stays unused, unconfirmed note at the profession III entry and the review log.
+- Row 4 (Jerome, Commentary on Isaiah 408–410): CONFIRMED; `[memory]` replaced by Scheck 2015 (DV 25 note, Other Fathers entry, Weak spots).
+- Row 5 (Augustine, Contra epistulam fundamenti): WRONG as a range; 396 written in the Augustine entry, the site-facing quote line (OB, «hacia 396–397» to «396»), Question 20 and Weak spots; old wording kept as «corrected». Spanish title «Réplica…» stays unconfirmed (F5).
+- Row 6 (drafting-history background): UNCONFIRMABLE; stays unused, unconfirmed note in the certainty-not-missing-content note and the review log; no historical claim added.
+- Not listed in the verification and left untouched: Aperuit illis `[memory: title, date, content]` (Question 1 of Weak spots/Open questions).

@@ -17,6 +17,14 @@ Pedro's direction (2026-10-17, 23:00): only Catholic dossiers across several doc
 - Papacy: https://claude.ai/artifact/JoqYV7ckZa54sZaTH2VMKU
 - Sola Scriptura: https://claude.ai/artifact/GzS9WbPRk5PrKxZf6rQocp
 
+## Review pages v2 (2026-10-21, rebuilt from the dossiers after the 2026-10-20 decisions; `storeKey` `-v2`)
+
+- Eucharist: https://claude.ai/artifact/8fAQrmvQcfPConK7Bphmjf (4 open questions)
+- Justification: https://claude.ai/artifact/KDGFosk5Qm41XPVDFNVHsp (17)
+- Baptism: https://claude.ai/artifact/Bis5wn2aZDtgq76R5qt2He (15)
+- Papacy: https://claude.ai/artifact/TLsvtNUR8yiE3UhTCSp2Nm (16)
+- Sola Scriptura: https://claude.ai/artifact/3Du7AwcYCHYEfW8tQsMt2F (13)
+
 ## Handoff (2026-10-19, for the next session)
 
 **State.** Eucharist, Justification, Baptism, Papacy and Sola Scriptura (Catholic column only) are through the whole `content-dossier` cycle: draft → verification → expert → critic → apply ("Reviews applied" closes each Progress block). Files per doctrine in `docs/research/doctrines/<slug>/`: `catholic.md` (the dossier, ends with "Questions for Pedro"), `verification-catholic.md`, `review-catholic.md`, `critic-catholic.md`. Review Artifacts above; Pedro has not reviewed any yet. Run log with times and costs: `docs/features/eucharist-rebuild.md`, "Overnight queue". Nothing is committed since 0e72744.

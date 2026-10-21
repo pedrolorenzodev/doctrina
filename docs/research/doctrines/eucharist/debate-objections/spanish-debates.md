@@ -111,3 +111,13 @@ The 52,753-view Rincón Apologético upload `S51eWPWQdAs` is the same Díaz/Plas
 - A speaker's denominational label is not a licence to attribute their words to that tradition. Medardo Gómez is the clearest warning: his “bread remains bread / Christ remains at the right hand” argument conflicts with the Formula of Concord's official Lutheran account.
 - The existing §4 answer to OB-1 is already materially adequate. For EO-4, keep Trent XIII ch. 1's distinction between natural and sacramental modes prominent; otherwise the answer sounds like bare appeal to omnipotence.
 - For John 6:63, Task A's official-source finding materially improves the future answer: John Paul II, General Audience, 1989-09-13 §4, directly distinguishes the hearers' material understanding from the life-giving work of the Spirit and then applies the passage to Christ giving his body and blood in the Eucharist.
+
+## Second pass (2026-10-21)
+
+### Progress
+
+- Status: in progress.
+- Done: reopened the first-pass evidence and method; read the Baptism verification audit to carry forward its corrections on independent-person counts, verbatim wording, inferred speakers, reaction-video provenance, timestamps, official anchors, and the distinction between full and partial support.
+- In progress: building the second-pass video inventory, Spanish first and then English, without recounting reuploads or the five first-pass exchanges as new people.
+- Exactly next: identify and rank at least fifteen additional independent debates or long-form exchanges so the merged corpus reaches at least twenty; retrieve transcripts serially; read the three most-viewed newly admitted full transcripts from beginning to end; append each checked exchange and update objection counts as evidence is written.
+- Decided by the agent, to confirm: “at least 20” means twenty distinct exchanges across both passes, while recurrence is counted by independent people; a reupload, reaction excerpt, or repeat appearance can support wording but cannot inflate either total.

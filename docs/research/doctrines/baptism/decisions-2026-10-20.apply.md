@@ -65,3 +65,11 @@ Source: `verification-catholic-2.md` ("Corrections the dossier needs"). Only `ca
 - **15 (A11–A13)** XIV can. 2 Latin labelled «orthography normalized» with the print's «Pœnitentiæ», «ideó», «recté», «hæc»; image check for XIV ch. 2, XIV can. 2 and V can. 5 still not done.
 - **A15 (UNCONFIRMABLE)** Florence and Lateran IV Spanish: kept, retagged in OB-3, OB-6a, OB-6b, DO-6 source lines «carried from verification-catholic.md B1/B2; unconfirmed in verification-catholic-2.md A15» (no longer `[verified]`).
 - **Not applied:** none. G7 needs no change (the page frame «Desde la tradición X se objeta que…» is kept).
+
+## Open tags applied (2026-10-21)
+
+Source: `../open-tags-verification.md`, section Baptism.
+- Row 1 (Justin First Apology c. 150–155): UNCONFIRMABLE as a narrow range; 148–161 (BiblIndex CPG 1073) written, narrower range kept as unconfirmed, not `[verified]` (Other Fathers entry, Weak spots; dossier notes, not site text).
+- Row 2 (Irenaeus Demonstration c. 190): UNCONFIRMABLE as a single year; 177–200 written, c. 190 kept as unconfirmed (same places).
+- Row 3 (Tertullian De paenitentia c. 203): CONFIRMED within a range; 198–204 written (OB sources line, Weak spots).
+- Row 4 (Pastoralis actio, 20 Oct 1980, papal approval): CONFIRMED; `[memory]` and "approval formula not read" replaced with the vatican.va German text (map gap entry, Weak spots, Question 14 wording). AAS full page range stays unconfirmed; CCC 1252 gives only n. 4 at AAS 72 (1980) 1139.

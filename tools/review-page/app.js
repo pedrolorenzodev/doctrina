@@ -273,6 +273,7 @@
     let h = `<div class="qwrap">`;
     h += `<h1 class="q-h1">Preguntas para Pedro (${QUESTIONS.length})</h1>`;
     h += `<p class="q-lede">Decisiones abiertas del dosier, con sus opciones y la recomendación del agente (una recomendación, no una decisión). Respondé las que quieras y anotá cada sección; todo se guarda como borrador en este navegador. «Copiar respuestas» arma un texto numerado para pegar en la conversación.</p>`;
+    if (META.qIntro) h += `<p class="q-lede">${esc(META.qIntro)}</p>`;
     h += `<details class="weak"><summary>Puntos débiles tras la verificación</summary><ul>${WEAK.map(function(w){ return `<li>${esc(w)}</li>`; }).join(``)}</ul></details>`;
     h += copyBlock(`top`);
     QUESTIONS.forEach(function(q){

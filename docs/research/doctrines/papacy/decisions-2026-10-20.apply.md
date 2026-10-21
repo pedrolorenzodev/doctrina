@@ -76,3 +76,12 @@ Not applied:
 - Correction 15 (re-verify LCMS art. II, ELCA ch. 2, El Faro scan, Triglot Latin, Florence): sources not reachable; stays open, those items carry the unconfirmed tags above.
 - Irenaeus «entre 175 y 189» (see 11).
 - E2's page typo «éÉl» in CEC 553: the dossier keeps «Él» (typo on the page), unchanged.
+
+## Open tags applied (2026-10-21)
+
+Source: `../open-tags-verification.md`, section Papacy.
+- Row 1 (Gregory to Eulogius, date): UNCONFIRMABLE; «fecha pendiente» kept, unconfirmed note added (line 141 note, not site text).
+- Row 2 (Irenaeus Adv. haer. 3.3.2 c. 180–189): CONFIRMED; `[memory]` replaced by the internal terminus (Eleutherius) and edition; updated in the Irenaeus entry, the CEC 834 note and Question 14.
+- Row 3 (Ignatius Romans c. 107–110): UNCONFIRMABLE as stated; dispute label kept, not `[verified]`; 135–140 proposal flagged as needing its own edition (Ignatius entry, CEC 834 note, Question 14).
+- Row 4 (Church of Scotland Act V 1986): CONFIRMED; old «estado no verificado» line kept in the History note as superseded; the current ST-WCF line already carried the act; `[memory]` mentions in History and the review log updated.
+- Row 5 (Lateran V renewed Unam sanctam, 1516): UNCONFIRMABLE; stays unused, unconfirmed note in Question 8 and the review log; not for the site.
