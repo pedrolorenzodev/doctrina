@@ -25,3 +25,13 @@ paths:
 - Tap targets ≥ 44px effective on touch (v2's citation numerals were 10×15px).
 - Print stylesheet: hide chrome, show sources inline.
 - Sentence case for all UI copy; Spanish-first.
+- Text in every button, chip and tab is centred on both axes: check it in each block's screenshots before calling the block done (Pedro, 2026-10-20: a small error that is costly; seen in 03 «Videos» filters).
+
+## Before calling a block done (Pedro, 2026-10-20)
+
+Check each item on the block's screenshots and in the browser; the independent critique pass (`AGENTS.md`, rule 13) gets this same list and checks it item by item.
+1. Edge states: every counter, button and list in its last state. A «Mostrar N más» disappears or changes when nothing is left (never «Mostrar 0 más»); empty and single-item lists tried.
+2. Centring: text in buttons, chips and tabs centred on both axes (rule above).
+3. Decided patterns applied everywhere they belong: each agreed animation or hover (list cascade, link hover, the "Ola" ruler…) on every component of that kind, not only where it was first tried. Patterns: `docs/DESIGN.md`.
+4. Hover and focus on everything clickable, in its pattern's style: links, rows, buttons, sources.
+5. Smooth scroll on every in-page navigation (index links, the right-edge ruler, links to sections); none under `prefers-reduced-motion`.

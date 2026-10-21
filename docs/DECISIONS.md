@@ -2,6 +2,21 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-20 · Structure proposal: the design direction holds (Pedro's verdict)
+**Chosen:** everything in the structure proposal (https://claude.ai/artifact/EDPtLnLWu2fHscbBgmu7rM, screens 02, 03, 04, 09 in the new direction) that Pedro did not correct counts as approved for now: styles, colours, fonts, spacing, animations, components, hovers. His notes are listed under ROADMAP "Now" item 1 ("Pedro's notes on the structure proposal"); anything approved by silence is reopened only if he gives feedback on it later.
+**Why:** Pedro: «tené en cuenta todo lo que no te corrijo… como que me encantó»; «está MUY bien la orientación del diseño y el resultado».
+**Discarded:** nothing.
+
+## 2026-10-20 · Videos show their cover image (Pedro chose)
+**Chosen:** every video in a «Videos» section shows its cover image as a preview that opens the video, besides the link. The structure proposal shows none, most likely because proposal pages can't load outside images (the Artifact page blocks them; covers would have to be embedded); its builder recorded no reason. Not a design choice.
+**Why:** Pedro wants the cover in the design.
+**Open:** the source and terms for showing the covers (YouTube's own thumbnails linked to the video, or our own poster frame as `docs/research/analogs.md` suggested) — to verify before the build.
+
+## 2026-10-20 · «Objeciones» is its own page in the sidebar (Pedro chose)
+**Chosen:** option 1 of https://claude.ai/artifact/Ba4iz7c78D8wXr4p8MEr3Y. Under each tradition, «Objeciones» opens its own page, an index of the objections to that tradition's position («Objeciones a la posición católica»); it takes the normal selected state and stays marked as ancestor while an objection page (04) is open. In the tradition page (03) the «Objeciones» section shows a few objections plus «Ver las N objeciones», like «Ver los N pasajes». The page has the tradition switcher (Pedro, 2026-10-20), keeping the reader on the objections page of the tradition picked. Replaces in part 2026-10-14 ("no separate objections page"); the breadcrumb's «Objeciones» now leads to this page.
+**Why:** the anchor sat at the same level as the page «Pasajes» and read as a page but never showed as selected. Research (`docs/research/sidebar-sections.md`, 12 sites): 7 make a group its own overview page (Docusaurus, Next.js, Stripe, GitBook, Vercel, Mintlify, Sefaria); no site mixes page and section links at one level and highlights the sections. Making «Objeciones» a page puts it on the same footing as «Pasajes».
+**Discarded:** a grey caption over the objection pages (Apple Developer); an expand-only group (Tailwind, Mintlify, MDN); highlighting sections in the left tree (only Wikipedia, whose sidebar has no pages).
+
 ## 2026-10-20 · Opening a doctrine a tradition rejects: the reader's question, the tradition's answer (Pedro chose)
 **Chosen:** option C of https://claude.ai/artifact/CjA4GXmm8tNgWjiz9rhQt8. When a tradition's page covers a doctrine it rejects (e.g. the Catholic page on Sola Scriptura), "Qué enseña" opens with the question as readers ask it («¿Solo la Escritura?»), answered by the tradition's own text (Dei Verbum 9: «no deriva solamente de la Sagrada Escritura…»), then its positive teaching; the definition only affirms. The question is the reader's, the answer is the tradition's: the site never says «no acepta». Applies to every such case (e.g. a Baptist page on the Papacy). Pedro also praised the page's distribution of content, colours and text styles («MUY buena»): a reference for the structure proposal.
 **Why:** Pedro's preference after seeing the three options on real text.
@@ -141,6 +156,7 @@ Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v
 **Chosen:** the objection page (04) has no tradition switcher: switching from a detail page lands on a different objection, which is confusing. The tradition is given by the breadcrumb and the sidebar. In the breadcrumb, "Objeciones" leads to the "Objeciones" section of the tradition page (03); there is no separate objections page. Rule for the whole site: each breadcrumb step leads to a real place (a page or a section of a page); a step with nowhere to go is not shown.
 **Why:** Pedro: a switcher fits a page listing all objections of a tradition, not a detail page; and a breadcrumb step that isn't a real destination misleads.
 **Discarded:** the switcher on 04 landing on the other tradition's "Objeciones" (2026-10-08 decision, that part); a standalone "Objeciones" page.
+**Replaced in part by** 2026-10-20 («Objeciones» is its own page): the standalone objections page now exists, and the breadcrumb's «Objeciones» leads to it. The rest holds (no switcher on 04).
 
 ## 2026-10-09 · Spanish translations in three levels, no paid reviewers (Pedro chose)
 **Chosen:**
