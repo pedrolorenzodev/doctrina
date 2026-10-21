@@ -1,0 +1,137 @@
+# Verification 2: texts added or changed in the Catholic papacy dossier on 2026-10-20/21
+
+## Progress
+- Status: done (2026-10-21; one session, about 45 minutes)
+- Done: apply log and the changed parts of `catholic.md` (git diff scoped what changed tonight): the five status lines, six new citations, RV1909 verse wording, three verse titles (RVR1960 / BSB), the eight rewritten answers (all quotes, locators, connecting sentences), Pasajes lines, CV-1/CV-2, Fathers' dates, and a sample of the objector texts as re-laid out (English quotes).
+- Not re-read: Concordia Triglotta Latin (archive.org `concordiatriglot00unse` returned HTTP 500 today, so Latin pages stay as the 2026-10-18 verifier left them), Mansi (Florence), Schaff page numbers, LCMS constitution art. II, ELCA constitution ch. 2 (lcms.org and elca.org serve no readable text), the El Faro Westminster scan (studylib blocks the fetch), Ayala/Waterworth (Eucharist only, not used by this dossier).
+- In progress: none.
+- Next: apply step over "Corrections the dossier needs" (end of file).
+
+Method. Pages fetched fresh today with curl; HTML converted to text; each quote matched after lowercasing and stripping accents, punctuation, digits and footnote marks (only wording differences count), then the locator (paragraph number) was derived from the page. Sources: vatican.va es pages (CCC 85–100, 551–553, 815–870, 880–896, 1369, 1441–1444, 2244–2246; LG; GS; UR; UUS es and en; CDF *El primado* 1998; *Mysterium Ecclesiae*; *Sempiternus Rex Christus*; CIC 204–207 and 747–755; *Pastor aeternus* Latin), ebible.org `spaRV1909_vpl.zip` and `engbsb_vpl.zip`, Bible Gateway RVR1960, bookofconcord.org (SA, Treatise, signatories, FC Ep), Fordham 1848 Encyclical, archive.org OCR (Metallinos 1896 `answerofgreatchu0000eust`, Robertson 1899 `actsdecreesofsyn00orth`, WCF 1894 `confessionoffaith00chur`, Schaff `creedschristendo02scha`), PCA/OPC preface PDF, Church of Scotland Act V PDF, ipch.cl statute PDF, Project Wittenberg *Brief Statement*, christianunity.va Alexandria 2023, mospat.ru 2019, Wikipedia (secondary, dates only). Automated pass over every quoted string in the eight answers: 78 quotes matched a vatican.va page word for word; the rest were *Pastor aeternus* (checked by hand against the Latin on vatican.va) or fragments split by nested quotes (checked by hand).
+Legend: CONFIRMED / WRONG / PARTLY / UNCONFIRMABLE.
+
+## Items
+
+### A. Bible wording (RV1909, ebible.org `spaRV1909_vpl.txt`)
+| # | Item (dossier place) | Status | Evidence |
+|---|---|---|---|
+| A1 | Conventions: RV1909 «Dominio Público»; BSB "Public Domain" | CONFIRMED | `spaRV1909_about.htm` contains «Dominio Público»; `engbsb_about.htm` contains "Public Domain". The download date/time (01:15 -03) is not checkable |
+| A2 | §3 Mt 16:16-19 «Tú eres Pedro, y sobre esta piedra edificaré mi iglesia… Y á ti daré las llaves del reino de los cielos» | CONFIRMED | MAT 16:18 «…que tú eres Pedro, y sobre esta piedra edificaré mi iglesia»; 16:19 «Y á ti daré las llaves del reino de los cielos». Capital T is the dossier's |
+| A3 | §3 Jn 1:42 «Tú serás llamado Cephas (que quiere decir, Piedra)» | CONFIRMED | JOH 1:42 identical. The repair of the first draft («Cefas») is right |
+| A4 | §3 Jn 21:15-17 «Apacienta mis ovejas» | CONFIRMED | JOH 21:16 and 21:17 |
+| A5 | §3 Lc 22:32 «Mas yo he rogado por ti que tu fe no falte: y tú, una vez vuelto, confirma á tus hermanos» | CONFIRMED | LUK 22:32 identical |
+| A6 | §3 Jn 20:21 «Como me envió el Padre, así también yo os envío» | CONFIRMED | JOH 20:21 (capital C after the colon is the dossier's) |
+| A7 | §3 Jn 17:21 «Para que todos sean una cosa» | CONFIRMED | JOH 17:21 |
+| A8 | OB-1 synthesis Col 1:18 «él es la cabeza del cuerpo que es la iglesia» and Mt 23:9-10 | CONFIRMED | COL 1:18 «Y él es la cabeza del cuerpo [que es] la iglesia» (the dossier says it drops the brackets); MAT 23:9-10 exact with the […] |
+| A9 | OB-2 synthesis Mt 16:16, 18; 18:18; Jn 20:23; Jn 21:16-17 | CONFIRMED | all five strings found: «Tú eres el Cristo, el Hijo del Dios viviente», «todo lo que ligareis en la tierra», «A los que remitiereis los pecados» |
+| A10 | OB-3 synthesis Lc 22:25-26 «Los reyes de las gentes se enseñorean de ellas… Mas vosotros, no así» | CONFIRMED | LUK 22:25–26 |
+| A11 | OB-7 synthesis 2 Ts 2:3-4 «oponiéndose, y levantándose contra todo lo que se llama Dios», «tanto que se asiente en el templo de Dios como Dios» | CONFIRMED | 2TH 2:4 exact |
+| A12 | OB-8 synthesis Jn 18:36 «Mi reino no es de este mundo» | CONFIRMED | JOH 18:36 |
+
+### B. Verse titles (RVR1960 Bible Gateway; BSB ebible.org)
+| # | Item | Status | Evidence |
+|---|---|---|---|
+| B1 | OB-1 «la cabeza del cuerpo que es la iglesia» (Col 1:18, RVR1960); EN "the head of the body, the church" | CONFIRMED | RVR1960 Col 1:18 «y él es la cabeza del cuerpo que es la iglesia»; BSB "And He is the head of the body, the church" |
+| B2 | OB-2 «Sobre esta roca edificaré mi iglesia» (Mt 16:18, RVR1960); EN "On this rock I will build My church" | CONFIRMED | RVR1960 «sobre esta roca edificaré mi iglesia»; BSB "on this rock I will build My church". The dossier's remark that RV1909 reads «piedra» is right |
+| B3 | OB-8 «Mi reino no es de este mundo» (Jn 18:36); EN "My kingdom is not of this world" | CONFIRMED | RVR1960 and BSB (RV1909 identical) |
+| B4 | Licence of the three Spanish titles | PARTLY | Bible Gateway prints «Reina-Valera 1960 © Sociedades Bíblicas en América Latina, 1960»: the titles are short quotations from a copyrighted text. Not an accuracy error, but the Conventions line should say "short quotation, © SBAL" like the other © texts |
+
+### C. The six new citations
+| # | Item | Status | Evidence |
+|---|---|---|---|
+| C1 | CEC 881 in OB-1, two sentences | CONFIRMED | Paragraph 881: «El Señor hizo de Simón, al que dio el nombre de Pedro, y solamente de él, la piedra de su Iglesia. Le entregó las llaves de ella (cf. Mt 16, 18-19); lo instituyó pastor de todo el rebaño (cf. Jn 21, 15-17)…» and «Este oficio pastoral de Pedro y de los demás Apóstoles pertenece a los cimientos de la Iglesia. Se continúa por los obispos bajo el primado del Papa.» The dossier writes "cf Mt" without the period; harmless |
+| C2 | CDF-Primado §3 in OB-2 («la imagen de Pedro quedó fijada…») | CONFIRMED | In n. 3 (also the OB-4 quotes «atestiguadas por la tradición…», «pertenece a la estructura perenne…»). The page reads «–atestiguadas por la tradición literaria y arqueológica más antigua–» as the dossier says |
+| C3 | CEC 834 in OB-4, with [...] for the inner references and the Maximus sentence | CONFIRMED | Paragraph 834; Ignatius (*Epistula ad Romanos* 1,1) and Irenaeus (*Adv. haer.* 3,3,2, «citado por Concilio Vaticano I: DS 3057») are the CCC's own references. The two dates: see I1, I2 |
+| C4 | CEC 884 in OB-5 | CONFIRMED | Paragraph 884 «La potestad del colegio de los Obispos sobre toda la Iglesia se ejerce de modo solemne en el Concilio Ecuménico "(CIC can 337, 1)». The stray quotation mark is on the page, as the dossier says |
+| C5 | GS 42 in OB-8 | CONFIRMED | GS 42: «La misión propia que Cristo confió a su Iglesia no es de orden político, económico o social. El fin que le asignó es de orden religioso.» |
+| C6 | GS 76 in OB-8 (closing text) and the claim that it is the sentence CEC 2245 quotes with an ellipsis | CONFIRMED | GS 76: «La Iglesia, que por razón de su misión y de su competencia no se confunde en modo alguno con la comunidad política ni está ligada a sistema político alguno, es a la vez signo y salvaguardia del carácter trascendente de la persona humana»; CEC 2245 prints «…no se confunde en modo alguno con la comunidad política [...] es a la vez signo y salvaguardia…» (GS 76, 3). CEC 2246 cites «GS 76, 5», so «citando Gaudium et spes 76» is right |
+
+### D. The five status lines
+| # | Line | Status | Evidence |
+|---|---|---|---|
+| D1 | ST-WCF: 1647 text; PCUSA 1903 and OPC 1936 removed it; PCA uses the OPC text | CONFIRMED | OPC preface (PCA Stated Clerk PDF, pp. viii–ix): 1903 «Chapter 25.6… was rewritten, and the identification of the Roman Catholic pope as the Antichrist was removed»; 1936 «…the removal of the reference to the pope as the Antichrist (but not the other changes) in chapter 25.6 be retained. The Assembly adopted these recommendations»; «republished here as the Confession and Catechisms of the Presbyterian Church in America». The dossier's quotation of the preface (OB-1 history) matches |
+| D2 | ST-WCF: IPCH «adopta el texto de 1903, sin esta frase» | CONFIRMED | `ipch.cl/documentos/Estatuto-IPCH.pdf` lines 87, 493, 711: «Confesión de Fe de Westminster del año mil novecientos tres». «Sin esta frase» is a chain (the statute does not mention the clause; the OPC preface says 1903 removed it): inference, correctly not quoted |
+| D3 | ST-WCF: Church of Scotland 1986 Act V: «ya no afirma»; «no exige a sus ministros creerla» | PARTLY | Act V, 21 May 1986: «This Church no longer affirms the following contents… Chap. 25, Section 6…» and «does not require its office-bearers to believe them». «Ministros» narrows «office-bearers» (ministers, elders, deacons). Everything else matches, including that the Act's own quotation reads «Antichrist», not «that antichrist» |
+| D4 | ST-WCF: INPM includes Westminster without naming an edition; El Faro edition (General Assembly approved) keeps «aquel anticristo» in XXV.6 and lacks the 1903 chapters | UNCONFIRMABLE | The follow-up's source (studylib scan of *Confesión de fe de Westminster*, El Faro 2001) is not reachable today (page returns 5 KB shell). The line agrees with `wave-1-open-checks.md` Follow-up 2026-10-20 (a) and drops its «apunta al texto de 1647» inference, so it does not go beyond that source |
+| D5 | ST-LUT: LCMS accepts «sin reservas» all books of the Book of Concord, SA and Treatise included (Constitution art. II; *Brief Statement* §45) | UNCONFIRMABLE | §45 reads «We accept as our confession all the symbols contained in the Book of Concord of the year 1580.» It does not say «without reservation» and names neither SA nor Treatise (they are in the 1580 book). The words «sin reservas» rest on the Constitution art. II, which the dossier itself tags `[unconfirmed in V A26]`; lcms.org serves no readable text today. The quotation marks around «sin reservas» are therefore unsupported by the cited §45 |
+| D6 | ST-LUT: ELCA accepts them as «otras interpretaciones válidas de la fe de la Iglesia» (Constitución, cap. 2) | UNCONFIRMABLE | Not re-fetched (elca.org returned no constitution text). The dossier relies on V A25 (`[verified]` on 2026-10-18). The Spanish is AI, flagged as such |
+| D7 | ST-LUT-AC: LCMS 1932 *Brief Statement* §43, both quotations | CONFIRMED | Project Wittenberg `statement.asc`: «43. …the prophecies of the Holy Scriptures concerning the Antichrist, 2 Thess. 2:3-12; 1 John 2:18, have been fulfilled in the Pope of Rome and his dominion.» and «Hence we subscribe to the statement of our Confessions that the Pope is ``the very Antichrist.''». Header «[Adopted 1932]». Spanish «el mismo Anticristo» for "the very Antichrist" is fair |
+| D8 | ST-1848: no retraction found; Alexandria 2023 presents it as a reply against papal supremacy | CONFIRMED | Alexandria §3.2: the four patriarchs «reacted and issued their patriarchal and synodical encyclical letter of 1848, in which, among other issues, they argued against papal supremacy» |
+| D9 | ST-1895: Alexandria presents it as rejecting Leo XIII's invitation and criticizing uniatism | CONFIRMED | Alexandria §3.11: «…to express their strongly negative opinion of uniatism as a method of proselytizing Orthodox Christians. They also rejected Pope Leo's invitation.» |
+| D10 | ST-1848 and ST-1895: «Fuentes oficiales ortodoxas todavía la citan» | PARTLY | Moscow Patriarchate (mospat.ru/en/news/46337, 2019) quotes the 1895 text at length and says «the Encyclical of the Eastern Patriarchs of 1848 dwells on the topic of primacy…»: official commission commentary, both texts. The Ecumenical Patriarchate item is a Greek article by a named bishop (it cites the 1848 letter), which `wave-1-open-checks.md` (c) itself calls "not a Holy Synod act". «Oficiales» is generous for ST-1848 and for ST-1895 rests on one source |
+| D11 | Each harsh text carries its status line | CONFIRMED | Walked every objector bullet: WCF XXV.6 (OB-1, OB-7), SA II.4.4/10-11, Tr ¶36–41, 57, ¶1–4, ¶33, ¶36, Enc-1848 §11, 13–15, 17, Enc-1895 §XIV–XIX each have ST-WCF/ST-LUT/ST-LUT-AC/ST-1848/ST-1895 beside them. Melanchthon's subscription, Dositheus, WCF I.10, FC Ep carry none and have no harsh wording |
+
+### E. Answers (Catholic texts, official pages read today)
+| # | Answer | Status | Evidence |
+|---|---|---|---|
+| E1 | OB-1 | PARTLY | Every quote found: UUS 97 (n. 97 «Esta función de Pedro debe permanecer…»), LG 19, CEC 869, CEC 881, LG 18/22 («Vicario de Cristo», «cabeza visible de toda la Iglesia» both in LG 18), LG 23, UUS 95 («vicarios y legados de Cristo»; «pertenece a su "colegio"»). *Pastor aeternus* ch. 1 canon matches the Latin («Si quis igitur dixerit… directe et immediate accepisse; anathema sit»). Problem: «…y es cabeza visible *porque* es "el principio y fundamento perpetuo y visible de unidad…"» (LG 23): the «porque» is the dossier's link; LG 23 says the pope is the principle of unity, it does not say that is why he is head. See F1 |
+| E2 | OB-2 | PARTLY | Quotes found and located: CEC 552, 1441, 1444, 553 (page prints «éÉl», dossier has «Él»), LG 22, UUS 91, CDF-Primado n. 3. PA ch. 1: «Unum enim Simonem, cui iam pridem dixerat: Tu vocaberis Cephas… Tu es Christus, Filius Dei vivi» and «uni Simoni Petro contulit Iesus post suam resurrectionem…» and the condemnation («pravae eorum sententiae… non immediate, directeque ipsi beato Petro, sed Ecclesiae, et per hanc illi ut ipsius Ecclesiae ministro delatum fuisse») all match; Spanish AI is faithful. Problem: UUS 91 says «es precisamente como si, desde la debilidad humana de Pedro, se manifestara de un modo pleno que su ministerio… procede totalmente de la gracia»; the answer says John Paul II «ve en su debilidad la prueba de que su ministerio "procede totalmente de la gracia"»: «la prueba» removes the «como si». Same hardening in the §3 row for Mt 16:23. See F4 |
+| E3 | OB-3 | CONFIRMED | UUS 88, 94, 95; CDF-Primado nn. 6–7 (the «Episcopado y Primado… de institución divina» sentence is in n. 6, «no es un oficio de coordinación…» in n. 7); PA ch. 4 opening and ch. 3 canon match the Latin; *Sempiternus Rex Christus* (8 Sep 1951) quote found whole and in order; Florence: not re-read (see UNCONFIRMABLE list). The pending note names the four points and nothing else |
+| E4 | OB-4 | CONFIRMED | CDF-Primado n. 3 (the page says «presencia y… muerte de Pedro en Roma – atestiguadas por la tradición literaria y arqueológica más antigua», and «el ministerio de la unidad, encomendado a Pedro, pertenece a la estructura perenne…»), n. 4, n. 6; UUS 90 (see E10); CEC 834; PA ch. 2 canon matches («perpetuos successores… in eodem primatu successorem; anathema sit») |
+| E5 | OB-5 | CONFIRMED | CEC 884; LG 22; LG 25; CDF-Primado n. 10 («prima sedes a nemine iudicatur» with the «no significa que el Papa tenga un poder absoluto» sentence); *Sempiternus*: the three quotations are in the page; PA ch. 4 «nunc convocatis oecumenicis Conciliis aut explorata Ecclesiae per orbem dispersae sententia… sacris Scripturis et apostolicis Traditionibus consentanea» and ch. 3 «Quare a recto veritatis tramite aberrant, qui affirmant, licere ab iudiciis Romanorum Pontificum ad oecumenicum Concilium tamquam ad auctoritatem Romano Pontifice superiorem appellare» match. «Antes de definir» is the dossier's connective: PA says they defined *by* those means; fair |
+| E6 | OB-6 | CONFIRMED | PA ch. 4 «Neque enim Petri successoribus Spiritus Sanctus promissus est…fidei depositum sancte custodirent et fideliter exponerent» and the definition («docemus et divinitus revelatum dogma esse definimus… ex sese… irreformabiles esse… praesumpserit; anathema sit») match; the […] stands for «(que Dios no permita)», placed slightly differently in the Spanish: harmless. ME 2–3, LG 12, 25, CIC 749 §3, CDF-Primado n. 15, UR 6, CEC 85–86 all found with the locators cited |
+| E7 | OB-7 | PARTLY | CEC 85, 86, 838, CDF-Primado n. 7, LG 14, UR 3, UUS 88, 96, PA ch. 3 («Haec est catholicae veritatis doctrina, a qua deviare salva fide atque salute nemo potest») and ch. 4 all match. Problem: «Para la Iglesia católica, la unidad con el sucesor de Pedro pertenece a la fe: el Vaticano I llama a la doctrina del primado…»: the first clause is the dossier's gloss under the Church's opening; PA's sentence closes the whole teaching on the pope's jurisdiction and unity. See F2 |
+| E8 | OB-8 | PARTLY | PA ch. 3 («quae ad fidem et mores… quae ad disciplinam et regimen Ecclesiae per totum orbem diffusae pertinent»), GS 42, CEC 2246 (cites «GS 76, 5»; the quote stops before «y al bien de todos según la diversidad de tiempos y condiciones» without a mark), CDF-Primado nn. 7 and 2, GS 76 all found. Problem: «la potestad del papa que el Vaticano I definió se refiere a la Iglesia»: PA lists what the power covers; it does not say it does not reach other matters. The gloss answers the objection (kingdoms) in the dossier's words. See F3 |
+| E9 | The six «Respuesta apologética pendiente (capa de debate)» notes | CONFIRMED | OB-1, 3, 4, 6, 7, 8 each carry only the marked note on the named points, no other sentence; the OB-7 and OB-8 site sentences «Ningún canon… responde» / «los documentos citados no tratan…» are gone from the answer blocks (they survive only in the "Sources of the answer" notes as history) |
+| E10 | UUS 90 «la Iglesia de Pedro y de Pablo» attributed to John Paul II | CONFIRMED | UUS 90 prints it inside quotation marks; note 150 (en page) is «Address to the Cardinals and the Roman Curia (28 June 1985), 3»: his own earlier words, so «Juan Pablo II la llama» holds |
+| E11 | No answer sentence in the site's voice | PARTLY | Every sentence opens with a document or «Para la Iglesia católica». Exceptions are the four glosses above (F1–F4); everything else is introduced and cited |
+
+### F. Sentences that speak for the Church beyond their quote
+| # | Place | Status | Note |
+|---|---|---|---|
+| F1 | OB-1 ¶3 «y es cabeza visible porque es "el principio y fundamento…"» | PARTLY | Causal link not in LG 18, 22 or 23. Split into two cited sentences or drop «porque» |
+| F2 | OB-7 ¶2 «la unidad con el sucesor de Pedro pertenece a la fe» | PARTLY | Not a quotation. Drop it and open with «El Vaticano I llama a la doctrina…» |
+| F3 | OB-8 ¶1 «se refiere a la Iglesia» | PARTLY | Not stated by PA. Open with «El Vaticano I define esta potestad "en las cosas que pertenecen a la fe y a las costumbres" y "en la disciplina y el régimen…"» |
+| F4 | OB-2 ¶3 «ve en su debilidad la prueba de que…» (and §3 Mt 16:23 row «su debilidad muestra que…») | PARTLY | UUS 91 hedges («es como si»). Quote the sentence whole |
+
+### G. Language fixes and layout
+| # | Item | Status | Evidence |
+|---|---|---|---|
+| G1 | ELCA phrase now in Spanish in ST-LUT and the three lines that had English | CONFIRMED | ST-LUT reads «otras interpretaciones válidas de la fe de la Iglesia»; ST-LUT-AC includes ST-LUT; the OB-3 and OB-8 lines point to ST-LUT. English survives only in history notes (OB-7 «History, 2026-10-18 line») |
+| G2 | Eight Pasajes lines in Spanish | CONFIRMED | OB-1…OB-8 read in Spanish. Contents re-checked: OB-4 «ninguna da versículos de Hechos 15» (no "Acts xv" in either encyclical); OB-5 «ni la respuesta ni los textos… citan versículos» (no verse in 1895 §XVI or 1848 §15); OB-7 refs (Rev 12 appears in SA II.4.4; Gal 1:8, Acts 5:29, Mt 7:15, 2 Cor 6:14 in Tr; Tit 3 as «Titus 3»); OB-8 refs (Tr ¶31: Matt 28:19-20, John 20:21, John 18:36, 2 Cor 1:24, 10:4) |
+| G3 | CV-1 and CV-2 | CONFIRMED | CEC 1369, CDF-Primado §11, CIC 205 (read on `cann204-207`), 751, CEC 817–818 quotes all found. «Para la Iglesia católica» is in CV-1 as stated |
+| G4 | «Para la Iglesia» → «Para la Iglesia católica» | PARTLY | Done in CV-1 and the one §3 row. The §5 introduction (lines ~604–606, not changed tonight) still has «porque, para la Iglesia…» and «Para la Iglesia, la mayor parte de lo que enseña el papa no son definiciones infalibles», the second with no citation for «la mayor parte» (see Outside scope) |
+| G5 | Layout: four texts per objection, one [se muestra]; moved texts listed under "Also read" | CONFIRMED | Counts match the apply log (OB-1 4, OB-2 3, OB-3 4, OB-4 2, OB-5 3, OB-6 4, OB-7 4, OB-8 1) |
+
+### H. Objector texts as re-laid out tonight (English quotations)
+| # | Item | Status | Evidence |
+|---|---|---|---|
+| H1 | 46 English quotes against bookofconcord.org (SA, Treatise, signatories, FC Ep), Fordham 1848, Metallinos 1895 OCR, Robertson 1899 OCR, WCF 1894 OCR | CONFIRMED | all matched word for word after normalization; WCF XXV.6 and 1848 §15 differ only by OCR marks («n» of the proof-text letter; «Counci1») |
+| H2 | Tr ¶23 English | PARTLY | Quoted as «…the entire assembly of apostles, as appears from the text itself… And what is here said in the singular number…» but bookofconcord prints «[and does not speak for himself alone, but for all the apostles]», «said [to Peter alone]» and «expressed [to their entire number]». The dossier's own convention says bracketed words translate the German; dropping them without […] while keeping quotation marks is a silent edit |
+| H3 | Enc-1895 §XIV «(Col. i. 18)» and «(Matt. xxviii. 20)» inside the quotation (OB-1 and OB-2 texts) | PARTLY | The OCR shows footnote marks after «the Church» and «the world», not inline references (`'He is the Head of the body, the Church ','` … `the end of the world*`). The references are probably the print's footnotes. Put them outside the quotation marks |
+| H4 | Edition notes for Enc-1848 (Fordham), Enc-1895 (Metallinos 1896, archive.org id), Dositheus (Robertson 1899), WCF 1894 | CONFIRMED | Texts exist where named; text of §XVI-XVII 1895 locators agree (§XVI «Each particular self-governing Church…»). Metallinos page numbers not re-derived |
+
+### I. Fathers' dates (OB-4 and PQ-6)
+| # | Item | Status | Evidence |
+|---|---|---|---|
+| I1 | Irenaeus, *Adv. haer.*, «hacia 180–189» | PARTLY | Neutral file `writers-to-325.md` gives c. 180–189 `[memory]` (Eleutherus bishop of Rome, c. 174–189). Wikipedia: AH 3.3.3 names Eleutherus as current bishop, so book 3 is dated "with some certainty to the period between 175 and 189". The narrower start is the neutral file's; no primary source read |
+| I2 | Ignatius, *Carta a los Romanos*, «hacia 107–110» | PARTLY | The neutral file calls c. 107–110 «conventional date» and lists dissenting dates (Decrept 116; Pervo 135–140; Barnes 140s; forgery thesis). PQ-6 repeats «disputed»; the site-facing answer (OB-4) prints the date flat. English Wikipedia: "died c. 108" and, as of 2020, most authors date the letters mid-late 110s or ~150 or later. The date is for the letters' composition, which the neutral file says «share the death date» |
+| I3 | QE-5 / 1848 §11 Basil: «fecha pendiente» | PARTLY | The marker exists only in a note under PQ-6/«Other Fathers» (dossier text). The OB-4 shown text quotes «the great Basil (Ep. 48 Athan.)» with no date or marker next to the author, which is what the Conventions line asks for. Gregory's letter to Eulogius is marked in QE-5 as claimed |
+
+## Counts
+60 rows (A 12, B 4, C 6, D 11, E 11, F 4, G 5, H 4, I 3). The E rows each cover 8 to 20 quotes (78 matched by script, about 20 checked by hand against the Latin or the page).
+- CONFIRMED: 39
+- PARTLY: 18 (B4, D3, D10, E1, E2, E7, E8, E11, F1, F2, F3, F4, G4, H2, H3, I1, I2, I3; F1–F4 are the glosses already counted in E1, E2, E7, E8, E11)
+- WRONG: 0
+- UNCONFIRMABLE: 3 (D4, D5, D6), plus what was not re-read (Progress: Triglot Latin pages, Florence in OB-3, Schaff page numbers)
+
+## Outside tonight's scope (seen on the way, unchanged by the apply)
+- Tr ¶10 in OB-3 (dossier text): «"neither ordained nor confirmed by Peter"»; bookofconcord prints «neither ordained nor confirmed and endorsed by Peter» (also «Paul was… [by Peter]» bracketing). Silent omission of «and endorsed» inside quotation marks.
+- §5 introduction: «Para la Iglesia, la mayor parte de lo que enseña el papa no son definiciones infalibles» has no cited text for that clause (can. 752 supports only the assent).
+
+## Corrections the dossier needs
+1. ST-LUT (and ST-LUT-AC, which includes it): the quoted «sin reservas» is not in the cited *Brief Statement* §45 and the Constitution art. II is still unconfirmed. Either read the LCMS Constitution art. II from an LCMS-hosted text and quote it, or write «acepta como confesión todos los símbolos del Libro de Concordia de 1580 (Breve Declaración de 1932, §45)» without quotation marks around «sin reservas».
+2. ST-WCF: «no exige a sus ministros creerla» → «no exige a sus oficiales (office-bearers) creerla», or quote the Act's «does not require its office-bearers to believe them» in the AI-Spanish label.
+3. ST-1848 and ST-1895: replace «Fuentes oficiales ortodoxas todavía la citan» with the narrower fact: «un comentario de la comisión sinodal del Patriarcado de Moscú (2019) la cita» (1895) / «…y un artículo de un obispo del Patriarcado Ecuménico» (1848).
+4. OB-1 ¶3: remove the causal «porque»; give «Vicario de Cristo… cabeza visible» (LG 22, 18) and «principio y fundamento…» (LG 23) as two separate cited sentences.
+5. OB-7 ¶2: drop «la unidad con el sucesor de Pedro pertenece a la fe»; start with «El Vaticano I llama a la doctrina del primado…».
+6. OB-8 ¶1: drop «se refiere a la Iglesia»; state what PA ch. 3 says the power covers, as a quotation, nothing about what it excludes.
+7. OB-2 ¶3 and the §3 Mt 16:23 row: quote UUS 91 whole («Es precisamente como si, desde la debilidad humana de Pedro, se manifestara de un modo pleno que su ministerio particular en la Iglesia procede totalmente de la gracia») instead of «prueba»/«muestra».
+8. OB-4 answer: Ignatius «hacia 107–110» → add «fecha tradicional; discutida» (the neutral file lists the dissenting dates), or move the date to the dossier note only; Irenaeus: «hacia 180–189» may stay (neutral file) but Wikipedia's range for AH 3 is 175–189: say «entre 175 y 189» if a secondary check is allowed.
+9. OB-4 shown text (1848 §11): put «fecha pendiente» beside «the great Basil (Ep. 48 Athan.)» in the shown block, not only in the dossier note.
+10. Tr ¶23 English (OB-2): mark the dropped bracketed words with […] or quote them; Tr ¶10 English (OB-3, pre-existing): restore «and endorsed».
+11. Enc-1895 §XIV (OB-1, OB-2): move «(Col. i. 18)» and «(Matt. xxviii. 20)» out of the quotation marks (the print shows footnote marks).
+12. CEC 2246 quote (OB-8): add […] or close at «Evangelio» with the rest of the sentence.
+13. Conventions «Bible wording»: say the three RVR1960 title quotations are short quotations from a © text (Sociedades Bíblicas en América Latina).
+14. §5 introduction (not tonight's): «Para la Iglesia, la mayor parte de lo que enseña el papa no son definiciones infalibles» needs a cited text or a «Para la Iglesia católica» + quotation form; the two «para la Iglesia» there still lack «católica».
+15. Re-verify when reachable: LCMS Constitution art. II and ELCA ch. 2 (D5, D6); the El Faro Westminster scan (D4); Triglot Latin pages and Florence (*Laetentur caeli*, Mansi 31) text in OB-3.
