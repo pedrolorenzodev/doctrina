@@ -139,3 +139,84 @@ The dates reproduce YouTube's `datePublished` metadata. The fourth row's 2025-11
 - For J-5, retain the confessions' qualification after “passive”: this concerns conversion before renewal, not a permanently inert Christian life.
 - Audio-check especially: `ZmMV212gzqQ` 01:29:56 and 02:02:01; `eg9dl70R-gY` 15:03–17:17 and 52:22–55:17; `kOIDksoeeqc` 40:44–45:32 and 01:58:34–02:00:04.
 - Recheck `kOIDksoeeqc`'s anomalous future publication date before publication. The finding does not depend on it.
+
+## Second pass (2026-10-21)
+
+### Progress
+
+- Status: in progress.
+- Done: preserved the completed first pass and inventoried its four distinct exchanges and three independent objectors; built a provisional Spanish-first/English-expansion pool exceeding sixteen additional candidates; retrieved the two highest-priority available transcripts; excluded the 562K Horn–White upload because no transcript was recoverable; completely read and wrote D5 (`b89-eAsjmjk`, 606K), which is admitted as a distinct exchange but repeats Carlos Veloz; read and wrote D6 through transcript line 390 / 51:05.
+- In progress: complete the high-view D6 transcript, then retrieve and review the remainder of the corpus.
+- Exactly next: after the window resets, resume D6 (`jkgsD6zNX2o`, Akin–Cooper, 168K) at transcript line 391 / approximately 51:06; continue without rereading lines 1–390; append remaining objection/answer evidence and mark it fully read; then retrieve/inspect remaining candidates serially. First-pass `ZmMV212gzqQ` (137K) is already a complete read, so the three-full-read requirement will be satisfied once D6 is done unless later metadata reveals a higher-view admitted exchange.
+- Decided by the agent, to confirm: as in the Eucharist pass, “at least 20” means twenty distinct admitted exchanges across both passes, while recurrence is counted by independent people; reuploads, reactions, and repeat guests cannot inflate either count.
+- Paused: session no-new-step threshold (75 %). Latest check: primary 75%, weekly 82%; no new research step was opened at or above the threshold.
+
+### Discovery log
+
+The saved-session search `debate justificacion sola fide catolico protestante` returned the following provisional Spanish-first candidates on 2026-10-21. View labels are discovery snapshots. Admission requires a recoverable long-form exchange with both sides' own words; titles alone do not establish that.
+
+| Candidate ID | Title/channel shorthand | Views | Provisional disposition |
+|---|---|---:|---|
+| `THCYDeJbx9Y` | *Are We Saved by Faith Alone? Catholic vs. Protestant Debate* · Rubén Hernández | 1.3K | Inspect/admit if full exchange |
+| `nB0XI1wvLNk` | *Católico pone en aprietos a protestante: ¿Puedes defender la Sola Fide?* · Simple Gospel Studios | 9.1K | Inspect/admit if title is not an edited reaction |
+| `5PY1HjhBzEU` | *Debate: Católico y Protestante sobre la Justificación por la Fe Sola* · El Papista | 6.6K | Inspect/admit |
+| `S3SxJz31NMY` | *Debate “Sola Fide” católico vs protestante* | 982 | Inspect/admit |
+| `77bl3qxnpCM` | *Gran Debate, 2da parte: Catolicismo vs Reforma Protestante “Solo Fe”* · La Fe de la Iglesia | 7.5K | Inspect; pair with part 1 without double-counting speakers |
+| `b89-eAsjmjk` | *Catholic priest destroys Protestant apologist* · Rincón Apologético | 606K | High-view priority; inspect for continuous exchange and neutralize title rhetoric |
+| `NleHtsFvrO4` | *La Sola Fide: católica Betty vs protestante Alex Serrato* | 5K | Inspect/admit |
+| `SZd2cyxbVnY` | *Sola Fide vs Roma: ¿Somos salvos solo por la fe?* · Edgar Pacheco | 23K | Inspect; Pacheco is a repeat person but the exchange may be distinct |
+| `nmvjyta2A6U` | *Salvation: By Faith Alone? Interview with HosannaInExcelsis* · Rincón Apologético | 23K | Inspect whether it is a bilateral long-form exchange |
+| `bODXOz7yAHc` | *Sola Fide o fe obrante: dos católicos vs dos protestantes* | 295 | Inspect/admit |
+| `BDAwvtaPIYQ` | *Debate en vivo: justificación solo por fe, católico vs protestante* · En pos de la Verdad | 3.2K | Inspect/admit |
+| `Jqme95DT5WI` | *Gran Debate, 1ra parte: Catolicismo vs Reforma Protestante “Solo Fe”* · La Fe de la Iglesia | 17K | Inspect; pair with part 2 without double-counting speakers |
+| `_tlzEibCFnk` | *Diálogo sobre la Justificación y el Error Protestante* · La Fe de la Iglesia | 7K | Inspect for an actual objector rather than a Catholic-only presentation |
+
+Excluded at discovery: `_C4q8WM-GTw` appears from title as a Catholic monologue rather than an exchange; `uLUUWLP5JN0` and `LpjJkB2MK4Y` are explicitly reactions. The two first-pass hits (`ZmMV212gzqQ`, `eg9dl70R-gY`) remain deduplicated.
+
+The English expansion search `Trent Horn James White justification debate Catholic Protestant` added two high-priority organized exchanges:
+
+| Candidate ID | Title/channel shorthand | Views | Provisional disposition |
+|---|---|---:|---|
+| `72TRODe8BdA` | *Can a Christian Lose Their Salvation? Trent Horn vs. James White* · Catholic Answers Live | 562K | High-view priority; organized debate, inspect/admit |
+| `ivf9I8TE6Fw` | *The Justification 2x2 Debate (Horn/Akin vs. Nesan/Boyce)* · Counsel of Trent | 63K | High-priority exact-topic organized debate, inspect/admit |
+
+Discovery exclusions from that search: `0LwEgFig00A`, `P1ylRMQx7Go`, `efMRpIps7_w`, and `lLlAfDuoixM` are one-sided presentations/rebuttals by title; `68kCTawop8w` and `rKede6Eu0-U` are highlights; `QhvPXYk9CJ0`, `nLX3yDgw5lk`, `2mO9uGdqQBY`, `CV01DNwNmig`, `kn7qdPSHSJk`, `Zhm5_AXcqcA`, and `ibYS0NF_ZRI` concern other doctrines; `bA1TQ6qYZ7Q` is a reaction. `6m7MqOQ1j6w` and `zxyO2mn4lAA` appear to be reuploads of the Horn–White salvation debate and cannot inflate the corpus.
+
+A second English search added three exact-topic exchanges and one duplicate:
+
+| Candidate ID | Title/channel shorthand | Views | Provisional disposition |
+|---|---|---:|---|
+| `jkgsD6zNX2o` | *Lutheran Debates Catholic on Justification: Jordan B. Cooper vs. Jimmy Akin* · Matt Fradd | 168K | High-view priority; organized debate, inspect/admit |
+| `u3brDgB322I` | *Jimmy Akin vs. James White: Justification* · Jimmy Akin | 73K | High-view exact-topic debate, inspect/admit |
+| `uuz3vuFxAaU` | *Catholicism Debate with Jimmy Akin & Steve Gregg, Part 4: Salvation & Sacraments* | 3.1K | Inspect/admit if this installment preserves the bilateral exchange |
+| `jQbVCUXf_yM` | Reupload of Akin–Cooper justification debate | 11K | Exclude as duplicate of `jkgsD6zNX2o` |
+
+One-sided interviews, call-in shows, podcasts, rebuttals, and reviews from this search are not admitted merely to reach twenty. The provisional pool now exceeds the sixteen additional exchanges required, leaving room to discard edited or one-sided items after transcript inspection.
+
+### Retrieval log
+
+- `b89-eAsjmjk` (606K): `yt-dlp` retrieved the Spanish automatic captions, then received HTTP 429 on the English caption request. Per protocol, the stream switched to the saved-session extractor, which recovered a 252-line transcript and confirmed the title/channel/view snapshot. The transcript must be inspected for continuity before admission.
+- `jkgsD6zNX2o` (168K): saved-session extractor recovered a 1,048-line transcript for the Akin–Cooper organized justification debate. Provisional admission; if admitted, it is a required complete read because of its view rank.
+- `72TRODe8BdA` (562K): the saved-session extractor found no transcript button. Exclude from the admitted corpus unless a recoverable official transcript appears; do not lower the evidentiary rule merely because it is highly viewed. Reuploads cannot create another exchange or inflate recurrence.
+- Current likely three-full-read set among transcript-admitted exchanges: `b89-eAsjmjk` (606K), `jkgsD6zNX2o` (168K), and first-pass `ZmMV212gzqQ` (137K, already read completely). This ranking remains provisional until `b89-eAsjmjk` passes the continuity check and all remaining candidate metadata are inspected.
+
+### Second-pass corpus and findings
+
+#### D5 · Carlos Veloz with Fr. Raúl / Rincón Apologético (`b89-eAsjmjk`, 606K)
+
+- **Admission and scope [verified].** The complete 33:08 transcript was read. It preserves a continuous, hostile but bilateral live exchange rather than a reaction compilation. Carlos Veloz is the same Baptist objector already counted in the first pass, so D5 increases the exchange corpus but adds no independent person.
+- **J-1/J-4 wording.** Veloz says evangelicals receive justification «una vez y para siempre» and therefore hold `sola fide` together with `sola gratia` (0:56–1:19): https://www.youtube.com/watch?v=b89-eAsjmjk&t=56s. He asks when the priest has «justificación plena» and the Spirit's seal, contrasting Catholic uncertainty with evangelical salvation once for all and progressive sanctification (2:32–3:13): https://www.youtube.com/watch?v=b89-eAsjmjk&t=152s. At 10:38–11:19 he repeats that Trent allegedly prevents a Catholic from claiming full, definitive salvation and cites Romans 3 for justification by faith apart from works: https://www.youtube.com/watch?v=b89-eAsjmjk&t=638s. These reinforce J-1/J-4 and the failed assurance candidate but do not increase their people counts.
+- **Catholic answer actually heard.** The priest says salvation is offered by Christ's cross and received by knowing, obeying, and following Christ; he invokes James to reject both a bare verbal profession and a faith/works binary (3:38–5:21). The rest of the exchange turns mainly to salvation of the unevangelized, Romans 2, and Matthew 25. That material is a distinct soteriology question and does not supply a precise answer to the forensic/progressive-justification issue. The site's doctrinal answer must remain Trent VI.5–10, 13–16, CCC 1991–2011, and the Joint Declaration locators already identified in the first pass.
+- **Excluded tangents and rhetoric.** The dispute over Muslims, invincible ignorance, Bible inspiration, prior reaction videos, and explicit knowledge of Christ is not counted as a new justification objection. The speakers repeatedly accuse one another of lying, cowardice, interruption, and bad faith. Per the harsh-language rule, none of that framing is publishable; only the recoverable propositions and answers are retained.
+- **Count effect.** One new distinct exchange, zero new independent objectors, no new objection family. D5 is nevertheless one of the three mandatory complete reads because it is the highest-view transcript-admitted exchange found.
+
+#### D6 · Jordan B. Cooper with Jimmy Akin (`jkgsD6zNX2o`, 168K) — partial read through 51:05
+
+- **Identity and scope [verified].** Cooper identifies himself as a Lutheran theologian and ordained Lutheran and describes his work in classical Lutheran theology (1:37–3:04): https://www.youtube.com/watch?v=jkgsD6zNX2o&t=97s. Akin identifies himself as a Catholic Answers senior apologist (3:04–4:04). This is an organized question-led dialogue specifically on justification, not a reupload or reaction.
+- **Methodological delimiters.** Cooper explicitly rejects the caricature that Trent/Catholic teaching is Pelagian and the opposite caricature that Protestants regard good works or avoidance of mortal sin as optional (4:27–5:28): https://www.youtube.com/watch?v=jkgsD6zNX2o&t=267s. He also distinguishes his confessional Lutheran account from the U.S. Reformed majority framing (5:36–6:29). These caveats materially confirm the first pass's rule against a generic “Protestant view.”
+- **J-2: forensic/imputed righteousness.** Cooper says justifying righteousness is Christ's righteousness imputed, counted, or clothing the believer; he acknowledges that no single verse states the whole formula and presents it as a synthesis of Pauline texts (12:04–14:21): https://www.youtube.com/watch?v=jkgsD6zNX2o&t=724s. He later distinguishes passive righteousness received for salvation from active righteousness performed for the neighbour under God's law (20:01–22:33): https://www.youtube.com/watch?v=jkgsD6zNX2o&t=1201s. This adds one independent, transcript-verified Lutheran person to J-2.
+- **J-4 nuance: ongoing but forensic justification.** Cooper says historic Lutheran sources can call justification a daily or repeatedly given declaration, not only an entrance event; what remains excluded is progressive internal transformation as the basis of that verdict (22:41–26:02): https://www.youtube.com/watch?v=jkgsD6zNX2o&t=1361s. He uses Abraham and David in Romans 4 to argue that the cited justifications concern already-believing people (24:55–25:55). This supports J-4's forensic/transformative distinction but corrects the first-pass shorthand “definitive act”: it cannot be attributed without qualification to confessional Lutheranism.
+- **Catholic answer heard so far.** Akin distinguishes initial forgiveness/renewal from growth in righteousness, uses Abraham's Genesis 12/15/22 sequence, and argues that Trent did not condemn every possible use of “faith alone” but faith severed from charity (14:21–19:53; 26:08–33:41). These are apologetic explanations. The official answer remains Trent VI.7–10 and canons 9/11/24, CCC 1991–2000, and the Joint Declaration; later portions of the transcript still need review before this entry is complete.
+- **Romans 4 objection.** Cooper presses that Abraham in Romans 4 is already a believer, yet Paul's contrast with works and Psalm 32's forgiveness language still looks forensic rather than like internal growth (33:59–36:40): https://www.youtube.com/watch?v=jkgsD6zNX2o&t=2039s. This is a precise Lutheran form of J-2/J-4 rather than a new family. Akin answers with his own exegesis: “works of the law” are Mosaic-law obedience, David exemplifies reacquired righteousness after sin, and Genesis 15 exemplifies grace-enabled growth (36:49–43:18). The latter is an apologetic exegesis; it must not be presented as if every detail were defined by Trent.
+- **J-1: faith alone means trusting reception of Christ, not bare assent.** Cooper defines faith as knowledge, assent, and especially trust/reliance; it justifies not by its virtue or merit but because it grasps Christ and receives his righteousness (43:41–48:12): https://www.youtube.com/watch?v=jkgsD6zNX2o&t=2621s. He expressly rejects the reduction to saying a prayer and being permanently safe regardless of life. This adds Cooper as an independent Lutheran person to J-1 while also delimiting the objection through Apology IV's living/trusting faith rather than a generic evangelical slogan.
+- **Catholic response on kinds of faith.** Akin agrees Scripture can use “faith” for bare doctrinal assent, assent plus trust, or faith working through charity, and begins distinguishing these senses from James 2, the Gospels, Romans 14 and Galatians 5 (48:12–51:05). The response continues beyond the current read boundary; do not treat it as complete yet.
