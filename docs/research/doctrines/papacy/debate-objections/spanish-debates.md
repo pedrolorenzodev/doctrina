@@ -169,3 +169,65 @@ This ledger preserves the search trail behind the final pass/fail table.
 - **Apologetic gaps inherited from the dossier:** the individual historical cases of Liberius, Zosimus, Vigilius and Honorius remain pending; so do some narrower historical claims around Nicaea, pseudo-Isidore, Phocas and Jerome. This report does not fill them from memory.
 - **Independent-count caution:** César Vidal is counted once from a direct recorded clip. The unnamed pastor paraphrased in the Luis Toro video is never counted. Search views identify famous material; they do not rank the objections.
 - **Agent decision to confirm:** P-3 groups the Scripture, succession, Rome and early-history variants because the same speakers move among them and because the playbook says repeated readings of the same proof-text complex form one objection. If Pedro wants a narrower UI title, “¿Dónde instituye la Biblia un oficio romano perpetuo?” preserves the core without asserting that all three speakers used identical words.
+
+## Second pass (2026-10-21)
+
+### Progress
+
+- Status: in progress.
+- Done: preserved the completed six-source first pass; confirmed that it does not satisfy the requested twenty-exchange deep-pass depth and therefore must not be treated as the final Papacy result.
+- Done: inventoried the local Papacy transcript cache; built a twelve-item Spanish-first pool and a five-item English expansion pool; retrieved and excluded `PRNzn0UQ_8U` because it is an eight-minute Catholic answer to a second-hand objection; retrieved, inspected, admitted, and wrote D7 (`StryxiGUk8s`, Pacheco–Champagne, 60K), a complete 1:39 formal debate. D7 adds one exchange but no new person, strengthens P-1/P-3, and raises the John 21/Luke 22 restoration candidate to two independent people, still below threshold.
+- In progress: none; the daytime no-new-step threshold was reached immediately after D7 was safely written.
+- Exactly next: retrieve and inspect the remaining Spanish candidates in discovery-table order, starting with `FdLdMSN7bos`, then `8E4ggDpwU_g`, `vcFxJAAsmIc`, `bgwYJbrEFSQ`, `wKu4fAXQQ4E`, `bAoqgjJevj4`, `pxRSRUGTtbk`, `RDDeF57njDI`, `w4wCfttkrBk`, `sjj00QISHfE`, and `vt8wxl_LkYI`. Admit only complete bilateral exchanges, deduplicate Pacheco and every repeat guest, append each finding immediately, and use the English pool only after the Spanish pool. Bring the merged corpus to at least twenty, confirm the three highest-view admitted full reads, then write the independent-person PASS/FAIL audit.
+- Paused before starting a new step: daytime no-new-step threshold (78%); resume after the five-hour reset.
+- Decided by the agent, to confirm: the earlier `Status: done` refers only to the six-source first pass. The user's later explicit twenty-exchange requirement controls this second pass, so Papacy remains unfinished.
+
+### Second-pass discovery log
+
+The saved-session search `debate papado primacia de Pedro catolico protestante` produced the following Spanish-first pool. Titles and view labels are discovery metadata only; every item still requires transcript recovery and inspection for a complete bilateral exchange.
+
+| Candidate ID | Discovery title/channel shorthand | Views | Initial disposition |
+|---|---|---:|---|
+| `FdLdMSN7bos` | Edgar Pacheco · *¿Fue Pedro el primer papa? Refutando a José Placencia, parte 1* | 51K | Inspect whether Placencia is heard directly; Pacheco is a repeat person |
+| `8E4ggDpwU_g` | El Papista · *¿Fue Pedro líder de toda la Iglesia?* | 25K | Retrieve and inspect organized debate |
+| `vcFxJAAsmIc` | Rincón Apologético · *Debate bíblico con un protestante: Pedro fue el primer papa* | 30K | Retrieve and inspect; neutralize title rhetoric |
+| `StryxiGUk8s` | Edgar Pacheco · *¿Se encuentra el papado romano en las Escrituras?* | 60K | High-priority exact-topic debate; Pacheco is a repeat person |
+| `bgwYJbrEFSQ` | Católicos por Convicción · *Primado de Pedro a pastor protestante* | 965 | Inspect for continuous exchange rather than reaction |
+| `wKu4fAXQQ4E` | La Iglesia Católica Apostólica Romana · *Debate final: primado de la Iglesia romana* | 105 | Retrieve and inspect complete exchange |
+| `bAoqgjJevj4` | same channel · *¿Quién es mayor, Pedro o Pablo?* | 212 | Inspect scope and whether both sides are heard |
+| `pxRSRUGTtbk` | Católicos por Convicción · *La primacía de Pedro: debate católico vs. protestante* | 20K | Retrieve and inspect organized debate |
+| `RDDeF57njDI` | same channel · *Argumentos sobre el papado que el protestante no esperaba* | 1.8K | Inspect; title may conceal call-in or reaction format |
+| `w4wCfttkrBk` | Alex Apologeta · *Pedro no fue el primer papa* | 8K | Inspect for direct long-form exchange |
+| `sjj00QISHfE` | Huella Católica · Noé Martínez vs. Carlos Blanco, supremacía de Pedro | 4K | Retrieve and inspect organized debate |
+| `vt8wxl_LkYI` | Teología, apologeta del evangelio · *Primacía de Pedro, invento de hombres* | 28 | Inspect only if bilateral and long-form |
+
+Deduplicated from this search: `3F6xgXz4Nyw` is already in the first pass and remains second-hand rather than an admitted independent exchange. `XF3iocFfGsw` is titled as a one-sided “15 pruebas” presentation and is excluded provisionally unless inspection shows a real interlocutor. `74AXVmET4hI` concerns *sola Scriptura* and belongs to the later doctrine, not Papacy.
+
+The English expansion search `Catholic Protestant debate papacy Peter pope Gavin Ortlund James White Trent Horn` added these candidates:
+
+| Candidate ID | Discovery title/channel shorthand | Views | Initial disposition |
+|---|---|---:|---|
+| `HWVsYp2TdrE` | Capturing Christianity · *Is the Papacy Affirmed in the New Testament?* | 78K | High-priority organized exact-topic debate |
+| `vYj_6POocaA` | Gospel Simplicity · *Intense Discussion on the Papacy* | 111K | Inspect as a bilateral long-form exchange |
+| `PRNzn0UQ_8U` | Matt Fradd · Protestant asks Scott Hahn to prove the papacy | 682K | Highest-view candidate; inspect continuity and read fully if admitted |
+| `QI1eFowelbk` | Matt Fradd · Trent Horn and Gavin Ortlund, *Are Protestants Their Own Pope?* | 22K | Inspect whether it is a sustained bilateral Papacy exchange |
+| `GB6kQi50hS4` | Counsel of Trent · friendly discussion with Gavin Ortlund | 196K | Inspect scope and whether both sides' Papacy arguments are preserved |
+
+Provisional exclusions: `TG6pnAjHX1k`, `z7zwIN8vEkA`, `N2CbLHUBcs4`, `Ka8LgyAhUXc`, and `4IVEe66zUJA` are one-sided presentations or rebuttals by title; they may inform discovery but cannot satisfy the exchange corpus. `2mO9uGdqQBY` appears to excerpt James White and Trent Horn rather than preserve their full exchange. `4toc6nAwGO4` concerns Augustine, while the other returned videos concern purgatory, perseverance, *sola Scriptura*, canon, or the gospel.
+
+### Second-pass retrieval log
+
+- `PRNzn0UQ_8U` (682K): the saved-session extractor recovered only an 8:00, 61-line edited segment. Cameron Bertuzzi summarizes Gavin Ortlund's objection at 0:02–1:33, but Ortlund is not present or heard; Scott Hahn supplies the remainder of the clip. **Excluded** as a short Catholic response to a second-hand objection, not a debate or long-form bilateral exchange. Its large view count cannot lower the admission rule and it does not enter the full-read ranking.
+
+### Second-pass corpus and findings
+
+#### D7 · Edgar Pacheco with Nicolás Champagne (`StryxiGUk8s`, 60K)
+
+- **Admission and continuity.** The saved-session extractor recovered a 773-line transcript. It is a complete 1:39 formally moderated debate: the moderator announces two fifteen-minute openings, two ten-minute refutations, four seven-minute counterargument rounds, and two three-minute closings ([2:59](https://www.youtube.com/watch?v=StryxiGUk8s&t=179s)–3:58); both debaters close and agree to a future patristic debate at 1:31:35–1:39:17. Count it as one distinct exchange. Pacheco is the Methodist objector already counted in the first pass, so it adds no independent person. Champagne speaks for the Catholic position; the exchange places him in Canada but does not state a church office.
+- **P-1: the rock/confession, not a papal office.** Pacheco quotes Augustine to argue that the rock is Christ or the truth Peter confessed, then says Matthew 16 cannot make Peter the unique foundation because Scripture also calls Christ the rock and the apostles collectively the foundation ([21:46](https://www.youtube.com/watch?v=StryxiGUk8s&t=1306s)–28:37). He adds that Matthew 18 gives binding and loosing to all apostles and therefore rejects an exclusive Petrine inference ([29:00](https://www.youtube.com/watch?v=StryxiGUk8s&t=1740s)–30:22). This is repeat-person evidence for P-1, not a new proof-text family.
+- **P-3: no early Roman office follows from the proof-text complex.** Pacheco argues that no apostolic Father used Matthew 16 to establish universal Roman jurisdiction, that the application appears only centuries later, and that even admitting Petrine prominence would not establish Vatican I's supremacy, succession, and infallibility ([24:41](https://www.youtube.com/watch?v=StryxiGUk8s&t=1481s)–27:23; [1:31:35](https://www.youtube.com/watch?v=StryxiGUk8s&t=5495s)–1:33:41). In cross-examination he asks why Roman succession is exclusive if Peter also had an earlier Antiochene see ([1:09:16](https://www.youtube.com/watch?v=StryxiGUk8s&t=4156s)–1:10:44). This strengthens P-3 from a repeat person.
+- **John 21/Luke 22 restoration candidate.** Pacheco reads the triple commission and “strengthen your brothers” as Peter's restoration after denial rather than universal papal jurisdiction ([32:45](https://www.youtube.com/watch?v=StryxiGUk8s&t=1965s)–35:30). Because he is a new independent speaker for this wording, the standalone candidate rises from one to two people (Fabio Ubierna and Pacheco) but still **FAILS frequency**. The official Orthodox 1848 anchor remains relevant without manufacturing a third debate voice.
+- **Catholic answers actually heard.** Champagne constructs a biblical typology of one chief within a wider college, succession, the keys, and Petrine shepherding (opening [5:50](https://www.youtube.com/watch?v=StryxiGUk8s&t=350s)–21:03). He answers that Christ and Peter can both be called rock under delegated imagery, that all apostles can share the keys while Peter holds a primatial role, and that succession is broader than only one local church but centered in Rome ([36:30](https://www.youtube.com/watch?v=StryxiGUk8s&t=2190s)–41:16; 1:09:39–1:10:44). His Old Testament analogies and patristic attributions require primary-source checking and are not substituted for the official Catholic answer in CCC 552–553, *Lumen gentium* 22, *Pastor aeternus* chs. 1–2, and CDF §§3–7.
+- **Official anchors and limits.** The Lutheran Treatise ¶¶1, 12, 23–25 and the Orthodox 1848/1895 encyclicals remain exact tradition-level anchors for P-1/P-3 and the restoration candidate. They are not assigned to Pacheco merely because he is Methodist. No Methodist official text specific to these claims was identified in this exchange.
+- **Excluded claims and rhetoric.** Pacheco's exact patristic counts, claimed dates of first use, quotations from modern Catholic historians, and claim that papal proof texts arose from popes seeking power require primary-edition verification and do not create separate objections. Both sides' remarks about ignorance, insincerity, myth, or inability to answer are excluded under the harsh-language rule.
+- **Count effect.** One new distinct exchange, zero new independent objectors. P-1 and P-3 gain repeat-person recurrence; the John 21/Luke 22 restoration candidate reaches two independent people and still fails. The merged corpus now contains seven reviewed exchanges/sources, but the 198K second-hand program and the 2.6K rebroadcast still require final admission classification before the twenty-exchange count is fixed.
