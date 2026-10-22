@@ -30,6 +30,7 @@ Baptism, 2026-10-20 (measured): three passes over 2 h 15 min, 6 Opus + 3 Sonnet 
 
 ## Lessons
 
+- 2026-10-22 · Papacy's deep pass couldn't reach 20 complete exchanges after a whole night of searching → Pedro's rule: after a bounded extra search (~1 h), close with what exists, log where it searched and why the pool is exhausted, mark the corpus sparse, and move on.
 - 2026-10-20 · The first pass asked for published transcripts and found "no debates"; YouTube was the source all along (Pedro).
 - 2026-10-20 · Two agents downloading subtitles at once triggered a 429 and a "not a bot" wall for ~20 minutes.
 - 2026-10-20 · Requiring the proponent to belong to the column's official line excluded every real debater; the anchor in the official text is what ties an objection to a tradition.

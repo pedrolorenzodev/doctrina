@@ -25,6 +25,31 @@ Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v
 **Discarded:** «Trazo más firme»; the diagonal and vertical theme sweeps; the sidebar mark that cut between items; the «Leer el detalle» button.
 **Open, not decided** (ROADMAP "Now"): the date-title format in 09 «Fechas y autenticidad»; whether the page-change fade stays; a fast drag on the ruler breaks the filter animation (a trap to handle in the implementation, not now).
 
+## 2026-10-22 · Holy See quotation rule: option B, with A for sensitive texts (Pedro chose)
+**Chosen:** option B of `docs/research/sources/holy-see-quotation.md` §7: at most 100 words or one short paragraph (whichever is shorter) per Holy See document per page, and 250 words from that document across one lesson; at least as much of our own analysis as quoted text; no serial excerpts; full source record. Option A (50 words or one sentence per page, 100 per lesson) for short documents, the Joint Declaration (1999) and any source available only under restrictive site terms.
+**Why:** the research's recommendation; most useful while keeping risk moderate. These are internal product limits, not legal thresholds; counsel questions (§8) stay for before monetization.
+**Discarded:** A everywhere (too tight for doctrinal propositions); C (too close to substituting the document).
+
+## 2026-10-22 · Implementation start: the six open calls (Pedro chose)
+**Chosen (all the recommended options, `docs/features/implementation-start.md`):** (D3) English at launch: shell and UI strings only; English content pages appear when their copy is drafted and reviewed, in one batch once the Spanish content is stable; (D8) after import, `src/content` is the source of truth for site copy and the dossiers stay the research record; (D7) psalm and verse numbering: RV1909's in site text, each document's own inside its quotes; (D9) links to pages that don't exist yet render as plain text, no dead links or disabled tabs; (D12) every size, colour and duration is a named token in one place, one-off values included; (spike) a throwaway script outside `src/` converts the five reviewed dossiers and type-checks them against the model before building on it.
+**Why:** Pedro: «todas a». English: translating now would mean translating again as the dossiers keep changing; review rules for English are still undecided.
+**Discarded:** AI-drafted English content marked draft; no `/en`; dossiers as source of truth; Vulgate numbering on Catholic pages; disabled tabs; arbitrary values for one-offs; skipping the spike.
+
+## 2026-10-22 · Screen 03 «Qué enseña»: five statements, more when an objection's target would be hidden (Pedro chose)
+**Chosen:** five statements visible by default, then «Mostrar N afirmaciones más»; exception: if a statement the objections answer would land in «ver más», it stays visible (Baptism shows six: QE-1, QE-2, QE-11, QE-3, QE-4, QE-5). Justification shows five.
+**Why:** Baptism's objections target QE-3 to QE-5; hiding one would hide what is being discussed. Pedro asked whether Baptism's six clashed with Justification's five; option (b) keeps one simple rule.
+**Discarded:** always five (QE-4 or QE-5 of Baptism into «ver más»); a free count per doctrine.
+
+## 2026-10-22 · Verse wording in titles and short quotes; harsh titles keep their status on 03 (Pedro chose)
+**Chosen:** (1) A verse quoted in an objection title or a short quote uses RVR1960 wording when the publisher's quotation allowance permits it (Codex is checking the terms), otherwise RV1909; the full reader stays RV1909. Standing rule: don't ask Pedro again. (2) An objection title with harsh words (Papacy OB-7 «…: es el Anticristo») is shown whole on screen 03, with a status line under it in the 03 objection list; to try in the proposal, since 03's list has no slot for it today. (3) Papacy QE-7 shows its basis line with no «Dogma» label, because the Church's classification names the primacy and infallibility, not the proem's principle of unity.
+**Why:** Pedro: «si se puede la RVR1960 genial, sino la que tenemos actualmente RV1909»; he prefers the whole title on 03 «siempre que el espacio lo permita»; «Dogma» only if technically correct.
+**Discarded:** OB-7 with a title without the identification; a «Dogma» label on QE-7.
+
+## 2026-10-22 · Research order: content first, debate layer paused (Pedro chose)
+**Chosen:** Codex's research runs in this order: each tradition's doctrine dossiers (official layer, objections included); the Bibles in Spanish and English, Protestant and Catholic (66 and 73 books); the Church Fathers with verified dates and works; complete, verified historical sources; small checks. The YouTube debate layer (deep passes, audio checks, debate layer for other traditions) is paused; Papacy's deep pass closes now as a sparse corpus. A deep pass that can't reach 20 exchanges after a bounded extra search (~1 h) closes with what exists.
+**Why:** Pedro: the debate layer was taking too long (Papacy took a whole night) while the base content, Bibles and Fathers matter first.
+**Discarded:** finishing the Sola Scriptura deep pass and the audio check before the rest.
+
 ## 2026-10-22 · Reader notes: «Notas al costado», filters «Campo y menú» (Pedro chose)
 **Chosen:** notes per source (general, and anchored to ≥ 1 word) shown as «Notas al costado» on wide screens, switching to «Marca en el margen» with its animation when the right panel opens, kept exactly as built (proposal https://claude.ai/artifact/NYBF1wY8WNz2rpDAPPKutn). A note on a selection that spans verses takes the whole range (Juan 6:53 into part of 6:58 → «Juan 6:53-58»). «Borrar nota» asks for a deliberate confirmation (hold ~3 s, subtle red details). In the panel, verse labels such as «Juan 6:53:» use the yellow `#d6a865`. Filters in «Tus notas»: «Campo y menú» (search field + «Mostrar» / «Ordenar» pickers; text search shows the matching excerpt; highlights by colour). Research: `docs/research/reader-notes.md`. Saving per user decided later.
 **Why:** Pedro: «Notas al costado» is «increíblemente pensado»; «Campo y menú» convinced him by its simplicity («si recibo feedback estoy dispuesto a modificarlo»).

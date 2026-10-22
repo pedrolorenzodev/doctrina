@@ -2,6 +2,8 @@
 
 Doctrina's visual system, as approved in the structure proposal v2 (https://claude.ai/artifact/EDPtLnLWu2fHscbBgmu7rM, Pedro 2026-10-21). Read before any UI (`.claude/rules/ui.md`). Values are copied from the proposal's code; the why of each choice lives in `DECISIONS.md` (entry titles cited as «DEC date · title»). `[inference]` marks what was not read from code or DECISIONS. Approved by silence counts as approved (DEC 2026-10-20 · Structure proposal: the design direction holds); anything here may reopen on Pedro's feedback.
 
+Reader (05, 06) and the clean-site fixes: proposal https://claude.ai/artifact/NYBF1wY8WNz2rpDAPPKutn (DEC 2026-10-21 · Screens 05 (source) and 06 (verse): the reader's structure; 2026-10-22 · Reader notes). Code: `docs/research/proposals/reader-05-06/` (current files, not `v5/`), `site-clean/`.
+
 Tokens map 1:1 to Tailwind v4 `@theme` variables in `src/app/globals.css`. Dark mode is `[data-theme="dark"]` on `<html>`, wired as a custom variant (`@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *))`) [inference: Tailwind mechanism]; tokens are redefined under that selector, never duplicated per component.
 
 ## 1. Color
@@ -24,7 +26,11 @@ Tokens map 1:1 to Tailwind v4 `@theme` variables in `src/app/globals.css`. Dark 
 | `--color-panel` | `#efece6` | `#262625` | citation window, search box |
 | `--color-tip-bg` / `--color-tip-ink` | `#1c1713` / `#f4f1ea` | `#f2f2f0` / `#1d1d1c` | tooltips, marker labels |
 | `--color-hover` | `rgb(28 23 19 / .05)` | `rgb(255 255 255 / .05)` | hover fill of rows and buttons |
-| `--color-mark` | `rgb(240 200 60 / .45)` | `rgb(214 168 101 / .28)` | search match, reader highlight |
+| `--color-mark` | `rgb(240 200 60 / .45)` | `rgb(214 168 101 / .28)` | search match, arrival highlight in the reader, text found in «Tus notas» |
+| `--color-mark-user` | `rgb(240 200 60 / .28)` | `rgb(214 168 101 / .20)` | the user's highlight without a colour; = `hl-yellow` (§1 tones) |
+| `--color-danger` / `--color-danger-weak` | `#9c2f28` / `rgb(156 47 40 / .14)` | `#e8918a` / `rgb(232 145 138 / .2)` | hold-to-delete dialog only: top 2 px, «Borrar», button border and fill (on `panel`: 6.25 light, 6.38 dark) |
+| `--color-danger-fill` | `rgb(156 47 40 / .28)` | `rgb(232 145 138 / .34)` | the hold button's fill while pressed |
+| `--color-scrim-strong` | `rgb(28 23 19 / .4)` | `rgb(0 0 0 / .55)` | behind the delete dialog |
 | scrim | `rgb(0 0 0 / .35)` | same | drawer, bottom sheet, search |
 | shadow (floating only) | `0 18px 40px -18px rgb(0 0 0 / .45)` (search `.5`) | same | citation window, search box; nothing else has a shadow |
 
@@ -40,7 +46,22 @@ Contrast (WCAG, flat background; computed 2026-10-21):
 | cite | 7.73 / 8.25 | 7.75 / 6.96 |
 
 - Light contrast is «Prosa oscura» (Pedro, v2 note 8). Measure light-mode text on the texture, not on flat `bg`: the old `#6b665e` passed flat (4.53) and failed on texture (4.0 darkest).
-- Accent and cite are the only hues. No colour per tradition.
+- Accent and cite are the only hues. No colour per tradition. The highlight tones below are the one exception: the reader's own marks, chosen by the user (DEC 2026-10-21 · Reader: highlighting by sentence and by dragged words).
+
+**Highlight tones** (reader, five; soft fill, never an underline: underline means link). Names are the proposal's Spanish ones in English [inference: names].
+
+| Token | Light fill | Dark fill | Swatch light / dark | Text on fill, on texture at its lowest (light / dark) |
+|---|---|---|---|---|
+| `--color-hl-yellow` | `rgb(240 200 60 / .28)` | `rgb(214 168 101 / .20)` | `#e3bb3c` / `#cfa463` | 10.8 / 7.7 |
+| `--color-hl-green` | `rgb(110 175 90 / .26)` | `rgb(125 190 110 / .18)` | `#76aa5e` / `#86b878` | 9.6 / 8.2 |
+| `--color-hl-sky` | `rgb(70 170 205 / .22)` | `rgb(95 180 215 / .18)` | `#4fa6c9` / `#6fb3d2` | 9.8 / 8.3 |
+| `--color-hl-pink` | `rgb(225 115 150 / .22)` | `rgb(225 125 165 / .18)` | `#d6789a` / `#d48aa6` | 9.6 / 8.5 |
+| `--color-hl-orange` | `rgb(235 140 55 / .26)` | `rgb(230 140 70 / .20)` | `#e08a3c` / `#d6935c` | 9.6 / 8.1 |
+
+Swatch tokens `--color-hls-*` (12 px dot, inset 1px `rgb(0 0 0 / .12)`). Sky is greener than `accent` so it is not mistaken for the open sentence. Measured values come from the proposal's page (index.html), not recomputed here; flat-background recomputation on 2026-10-22 gives 10.0–11.1 light and 7.3–8.1 dark.
+- Four marks, never mixed up: the browser's own selection; the sentence open in the panel (`accent-weak`); the arrival from a citation (`mark`, fades); the user's highlight (tone, stays). The 2 px `accent` bar at the left of the paragraph (`.was`) marks where you came from.
+- Overlap: a new colour over an old one wins; two of the same colour that touch merge into one.
+- Notes have no colour of their own and do not mark the text; the verse label in the panel («Juan 6:53:») and the place line in lists use `cite` (dark `#d6a865`, light `#5f3d0c`; DEC 2026-10-22 · Reader notes: «Notas al costado»…). No new token.
 
 **Texture.** Every page surface carries an SVG noise layer: `feTurbulence type=fractalNoise numOctaves=4 seed=7 stitchTiles=stitch` → `feDiffuseLighting lighting-color=#fff diffuseConstant=1`, `feDistantLight azimuth=235`; light `baseFrequency .85, surfaceScale 1.6, elevation 62`, dark `.7, 2.6, 52`; tile 420 px, `mix-blend-mode: multiply`, opacity light `.4`, dark `1`; fixed, `pointer-events: none`. Each opaque sticky or overlay surface (top bar, living ruler, tradition switcher, 09 fixed strip, mobile drawer, reader) repeats the layer so it matches the page.
 
@@ -90,7 +111,13 @@ Scale (desktop → ≤720 px). `font-variation-settings: "opsz" n` as listed; da
 | `--spacing-scroll-offset` | 24px; on pages with the switcher: switcher height + 20 | `scroll-padding-top` = top + offset |
 | `--spacing-section` | 140px → 96px (≤720) | between sections listed in the right-edge ruler only («Mucho aire», v2 note 11) |
 | `--container-col` | 720px | reading column (60–75 characters) |
-| `--container-wide` | 1040px | sections that use the width (02, 04 sources, 09) |
+| `--container-wide` | 1040px | sections that use the width (02, 04 sources, 09); 06 sections with a side column |
+| `--container-reader-wide` | 1100px | reader column when «Latín · original» is «Al lado» (two columns of 720 → 1fr 1fr, gap 40) |
+| `--spacing-panel` | 400px | reader side panel (= citation window width) |
+| `--spacing-note-card` | 240px | «Notas al costado» card, 40 px right of the column; ≥ 1280 px and panel closed |
+| `--spacing-dt-side` | 250px | 06 side column («Citar», «Dónde se usa»), gap 56, left border `rule`, padding-left 22; ≥ 1100 px |
+| `--spacing-word-card` | 300px | 06 word-by-word card column, gap 40, sticky at top bar + 24 |
+| `--text-reader` (`--rd-fs`) | 17 · 19 · 21 · 23 · 25 · 27 · 29px (default 19) | reader paragraphs; also Latin (size − 2) |
 | main padding | ≥1100: 34 112 140 64 · ≤1099: 30 104 120 48 · ≤899: 26 32 110 · ≤720: 22 16 96 | right padding leaves room for the edge ruler |
 
 Breakpoints in the proposal (max-width): **1099** sidebar becomes a drawer; **899** right-edge ruler hidden, 02 practice table switches to its phone pattern, switcher hint hidden; **720** phone layout. Build with Tailwind's defaults (`ui.md`), mapped 1099 → `lg` 1024, 899 → `md` 768, 720 → `sm` 640 (agent, 2026-10-21); check each layout switch on screenshots at the new widths.
@@ -99,7 +126,9 @@ Radii (`--radius-*`): 2 (inline link fill, ticks) · 3 (focus ring, position blo
 
 Lines: hairline 1px `rule`; lists draw a top line per item and a bottom line on the last. Borders on boxes 1px `rule-2`. Focus: `2px solid accent`, offset 2px, radius 3 on every `a, button, [tabindex], input, summary`.
 
-Z-layers (`--z-*` [inference: names]): page texture 0 · frame 1 · 09 cue 3 · 09 fixed strip 4 · living ruler 5 · switcher 30 · edge ruler 30 · top bar 40 · drawer scrim 59 / drawer 60 · window scrim 69 / citation window 70 · reader 80 · search 90.
+Breakpoints of the reader (max-width): **1099** side panel becomes a half sheet (52vh) and 06's side column drops under the text; **899** division numbers go above the paragraph, word card under the words, notes marks move to the right edge, «Al lado» is not offered; **720** phone (selection toolbar docks, «Subrayados» button moves under the title, A−/A+ leave the bar, «Latín · original» moves under the title); **420** the back button says «Volver» (the rest stays for screen readers). Min-width **1100** panel at the right, **1280** note cards (Tailwind `xl`; 1100 has no default, use arbitrary or `lg`+ check [inference]).
+
+Z-layers (`--z-*` [inference: names]): page texture 0 · frame 1 · 09 cue 3 · 09 fixed strip 4 · living ruler 5 · switcher 30 · edge ruler 30 · reader-page back strip 31 · side panel (page) 35 · top bar 40 · reader-page bar 41 · translation list 45 · drawer scrim 59 / drawer 60 (the drawer starts at top 0, over the top bar; it repeats the texture) · window scrim 69 / citation window 70 · reader 80 · side panel (inside the reader) 85 · selection toolbar 86 · search 90 · undo bar 95 · delete dialog 140.
 
 ## 4. Motion
 
@@ -114,9 +143,9 @@ Rule: subtle, smooth, driven by the reader; few signature animations (DEC 2026-1
 | `--ease-exit` | `cubic-bezier(0.4, 0, 1, 1)` | tradition content exit |
 | `--ease-sweep` | `cubic-bezier(0.65, 0, 0.35, 1)` | theme arc |
 | ease-in-out cubic (JS) | `t<.5 ? 4t³ : 1−(−2t+2)³/2` | programmatic scroll |
-| durations | 120 · 140 · 150 (`fast`) · 160 · 180 · 200 (`mid`) · 220 · 240 · 260 · 300 · 340 · 360 · 380 · 420 · 650 · 700 ms | per pattern below |
+| durations | 100 · 120 · 140 · 150 (`fast`) · 160 · 180 · 200 (`mid`) · 220 · 240 · 260 · 300 · 340 · 360 · 380 · 420 · 650 · 700 ms; reader timers: 400 (autosave) · 1200 (arrival fade) · 1600 («copied» label) · 1800 (arrival hold) · 2400 (return flash) · 3000 (hold to delete) · 5000 (undo bar) ms | per pattern below |
 | staggers | 20 (tree) · 30 (fingerprint ticks, switcher parts) · 40 (FLIP enter) · 60 (scroll reveal) · 80 (title parts) · 100 (edge-ruler ticks) ms; cap 8 steps | |
-| distances | rise 8px (lists) · 16px (switcher) · 5px (labels) · 6px (window) · exit scale .96 | |
+| distances | rise 8px (lists) · 16px (switcher, panel content) · 5px (labels) · 6px (window, undo bar, dialog) · 4px (selection toolbar) · 24px (side panel) · exit scale .96 | |
 
 Durations have no Tailwind namespace; keep them as plain variables in `@theme` [inference].
 
@@ -140,7 +169,19 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 | Edge-ruler entry | load | ticks draw in scaleX 0→1, 300 ms ease, delay 900 + 100 × i ms | — | static |
 | Citation window | open / close | desktop: opacity + 6 px, 200 ms ease; phone sheet: translateY(100 %) → 0, 260 ms `ease-move`, scrim 200 ms | — | instant |
 | Reader highlight | reader opened at a paragraph | paragraph fill `mark` in 200 ms, holds 1.8 s, fades over 1200 ms; a 2 px accent bar stays on its left | — | fill without fade |
-| Mobile drawer | menu button | translateX(−102 %) → 0, 240 ms `ease-move`; scrim 240 ms | CSS | instant |
+| Mobile drawer | menu button | translateX(−102 %) → 0, 240 ms `ease-move`; scrim 240 ms; the drawer sits above its scrim and the top bar | CSS | instant |
+| Reader layer | tap a citation's «Abrir la fuente completa» | layer fades 200 ms (`mid`); focus to «Volver a donde estabas». Close: layer fades, the origin link flashes `mark` (2.4 s keyframes: 8 % → 70 % held, then out) and takes focus | Esc closes only if the panel and the delete dialog are closed | instant; no flash fade |
+| Side panel «Panel al costado» | tap a sentence or verse (a tap with text selected does nothing) | ≥ 1100: opacity 200 ms + translateX 24 → 0, 260 ms `ease-move`; the text column makes room (padding-right = panel + 48; layer: panel width). < 1100: half sheet (52vh, radius 14 14 0 0, grip 28×4), translateY(100 %) → 0, 260 ms `ease-move`, text never narrows, its bottom padding grows | tap another sentence retargets; the content swaps (tabs below) | instant |
+| Panel tabs «Deslizar» (Pestañas) | tab | same as the tradition switch: indicator 340 ms `ease-reveal`; body exit 140 ms `ease-exit` (−16 px × direction), enter 260 ms `ease-reveal` | as the switch | instant |
+| Translation picker | button | list opens as «Despliegue»: height 0 → full 220 ms `ease-reveal`, options fade 200 ms 20 ms apart; closes 120 ms fade, 160 ms height; chevron 90° in 200 ms; flips up when there is less room below than needed and more above; list max 420 px or the room, scrolls inside | opens one at a time | instant |
+| «Leer en latín» of one paragraph | panel button, or «Ocultar» | opens 220 ms `ease-reveal` (height) with the label and text fading 200 ms, 20 ms apart; closes 120 + 160 ms | continues from current height | instant |
+| Selection toolbar | pointer up on dragged words (10 ms later; on touch 400 ms after the selection settles) | appears 150 ms `ease-reveal` (opacity + 4 px up); leaves 100 ms `ease`; docked version slides from the bottom edge | hides on scroll (floating one), Esc, or an empty selection | instant |
+| Highlight add / remove | «Subrayar», a colour dot, key S | fill changes 200 ms; undo bar fades + rises 6 px, 150 ms, stays 5 s; a new change restarts the 5 s | «Deshacer» restores the previous list | instant |
+| Notes «Notas al costado» → «Marca en el margen» | window ≥ 1280 and panel closed → cards; panel opens or window narrows → marks | marks fade in 200 ms `ease-out`; cards appear in place, no tween: this is exactly what Pedro approved («Esto lo mantenemos tal cual», DECISIONS 2026-10-22 «Reader notes»); the proposal's «mismo movimiento» wording is stale; both repaint on resize (150 ms debounce) | repaint cancels the previous set | instant |
+| Note editor | «Nota» | opens in the panel: height 0 → full + fade 220 ms `ease-reveal`; saves 400 ms after the last key, label «Guardada»; Esc or ⌘/Ctrl+Enter saves and closes | — | instant |
+| Hold to delete | press and hold «Mantener para borrar» (pointer, Enter, Space) | dialog: backdrop 150 ms, box rises 6 px 200 ms `ease-reveal`; fill grows scaleX 0 → 1 linearly over 3000 ms; at 1 the note is deleted and the undo bar shows «Nota borrada.» + «Deshacer» | release, blur or pointer cancel returns the fill in 220 ms `ease-reveal` and says «Soltaste antes de tiempo. La nota no se borró.» | the hold stays 3 s; fills without tween |
+| Text size A− / A+ | button | instant change; the paragraph at the top of the viewport keeps its place; the ends disable the button (opacity .4) | — | same |
+| «Dónde se usa» «Ver N más» · «Comparar traducciones» filter | button · filter | list changes as FLIP (§4 list change); the filter's indicator travels 340 ms `ease-reveal` | — | instant |
 
 ## 5. Components
 
@@ -263,8 +304,43 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 - Top-bar trigger: 36 px, up to `min(380px, 40vw)`, 1px `rule`, radius 6, `card`, placeholder «Buscar doctrinas, versículos, Padres, palabras», ⌘K key; icon only ≤ 720.
 - Overlay (scrim, 12vh from top); box 620 px, `panel`, radius 10, shadow; input 52 px, 16 px; results: title head 18 ink; line 1 path (12.5 ink-3) with the date at the far right; line 2 why it matched (13.5 ink-2), query in `mark`. Empty query shows «Recientes». No match: «Nada coincide con «q»…». ↑/↓ moves, Enter opens, Esc closes.
 
-### Full-text reader
-- Full-screen layer over the page, `bg` + texture, fade 200 ms; bar with «Volver a donde estabas»; column 720; title head 300 44/1.08 (34 phone); paragraphs body 300 19/1.66 with their division number in the left margin (ui 12 ink-3; above the paragraph on phones). Opens scrolled to the cited paragraph (140 px from the top) with the highlight of §4. Edition and licence at the foot.
+### Full-text reader (05) — DEC 2026-10-21 · Screens 05 (source) and 06 (verse): the reader's structure
+- **Layer** over the page (never a page with a «Volver» strip, DEC discarded): `bg` + texture, fade per §4, takes over the viewport (page scroll locked). Bar 56 px: «Volver a donde estabas» (ui 500 14, min-height 40; «Volver» ≤ 420) + where you came from (13.5 ink-3, ellipsis) + tools at the right; bottom hairline `rule`. Column 720, padding 44 20 120; title head 300 44/1.08 (34 phone); division number in the left margin (ui 12 ink-3, 56 px wide, 66 px left; above the paragraph ≤ 899); paragraphs body 300 `--rd-fs`/1.66 ink-2, padding 8 12, radius 6. Opens at the cited paragraph, 140 px from the top, with the arrival mark of §4. Close returns focus to the origin link (flash per §4). 06 as a page: the same strip sticks under the top bar (`bk`, hairline once stuck).
+- **Bar tools** (right, left to right): «Tus notas n» (or «Nota» when there is none; hidden ≤ 720, moves under the title) · A− A+ (segmented, 30 px, seven steps 17–29, disabled at the ends, keeps your place) · hairline · translation picker (Bible only) · «Latín · original» No / Debajo / Al lado (documents with Latin; ≤ 720 under the title without «Al lado»). Touch: 44 px targets.
+- **Translation picker** (05 bar and 06): one button showing only the abbreviation («RSV», 34 px in the bar, 44 px in 06); the list (340 px max, `panel`, 1px `rule-2`, radius 8, floating shadow) in two groups «Español» / «Inglés» (group head 12.5 ink-3; no «Todas»), each row «Revised Standard Version (RSV)» (full name, abbreviation in ink-3), min-height 44, current = `accent-weak` + inset 2 px accent. Listbox: ↑ ↓ Home End Enter Esc. Flips up near the bottom; list z above the sticky strip. Selected from the same data as «Comparar traducciones».
+- **«Latín · original»** (`og`): label 12.5 ink-3 + segmented No / Debajo / Al lado (3px pad, 1px `rule`, radius 8; pressed `accent-weak`). Debajo: each Latin paragraph under its translation; Al lado: two columns inside `container-reader-wide` (≥ 1100 only). «Leer en latín» (panel): only that paragraph's Latin under it, tag «Latín · original» (ui 12 500) + «Ocultar».
+- **Latin look «Con raya»** (all Latin in the reader): indented 18 px, 1px `rule-2` line at the left, body 300 at reader size − 2, line-height 1.6, `ink-prose`; never the translation's size or colour.
+- **Edition and licence** at the foot (`h2` 22, 14 ink-3, max 640), with the edition select; whether «Fecha» and «Edición y licencia» stay at the foot is open (DEC 2026-10-21 · Screens 05 and 06: Open).
+
+### Reader side panel «Pestañas» — DEC 2026-10-21 · Screens 05 and 06
+- Right column `--spacing-panel` (400), `bg` + texture, left border `rule`; from 1100 it covers the full height inside the reader and its header (56 px, ref in head 400 19 + close) lines up with the reader bar's hairline; page: under the top bar. < 1100: half sheet with grip. Body scrolls inside (overscroll contained, padding 20 22 40).
+- Content = the decided minimum, in this order [inference: order of the proposal's markup]: reference; «Abrir el detalle completo»; «Subrayar» with the five colour dots; «Nota»; «Leer en latín» (documents); «Citar» (short, per DEC «Citar» copies the short citation) and «Copiar enlace»; «Dónde se usa en Doctrina» (≈ 55 px below «Citar»). It never repeats the selected text or shows Latin by default.
+- Tabs: «Términos», «Usos», «Traducciones» and «Notas n» (only when the division has notes), segmented (3px pad, 1px `rule`, radius 8, min-height 34, count 12 ink-3) with the «Deslizar» indicator; content under a tab list rows of `pr-row` (title ui 500 15 + count, preview 13.5 ink-3 one line, chevron) that open a compact detail (title head 400 24, text body 300 17/1.6, sections separated by a hairline, 24 above).
+
+### Highlighting — DEC 2026-10-21 · Reader: highlighting by sentence and by dragged words
+- Two ways, one result: «Subrayar» in the panel marks the whole sentence/verse (with a highlight already there it says «Quitar subrayado»); dragging over words opens the **selection toolbar**. Selection snaps out to whole words. A touch with text selected opens nothing.
+- **Selection toolbar** (`hl-tb`): `panel`, 1px `rule-2`, radius 8, floating shadow, padding 3, buttons min-height 36 radius 6 ui 500 13.5: five colour dots (32 px; 44 on touch; current ringed `ink` 1.5 px over a 2 px `panel` gap), «Subrayar», «Nota», hairline, «Copiar cita», «Buscar». Below the selection, left-aligned to it inside the column; above it if no room. Phone or touch: docked to the bottom edge, `bg` + texture, top hairline, safe-area padding, buttons 44 px, full width. Keys: S highlights, C copies the citation, N writes a note, Esc closes. No «Copiar enlace» here (it stays in the panel).
+- **Colours in the bar** («Colores en la barra»): the five dots are always visible in the toolbar and the panel; tapping one highlights in that colour. In «Subrayados» a coloured dot marks each item.
+- **Undo bar** (`hl-undo`): centred bottom (24 px + safe area; at the top, under the top bar, ≤ 720), `panel`, 1px `rule-2`, radius 8, shadow, text 13.5 + «Deshacer»; «Subrayado.», «Subrayado quitado.», «Nota borrada.». 5 s.
+- **«Subrayados»** list (panel, in text order): quote 3 lines body 300 16.5/1.55, place in `cite` 13 + date 13 ink-3, «Copiar todos con sus citas», «Se guardan en este navegador». In the Bible a highlight shows only in the translation where it was made. Not on 06 yet: only in the reader.
+
+### Notes — DEC 2026-10-22 · Reader notes: «Notas al costado»…
+- **Scopes:** about the whole source (general), about a sentence/verse/division, about words (several verses: the range takes first to last verse touched, «Juan 6:53-58»). A note on a unit shows in every translation; a note on words stays in its edition and shows in the others at its division («Juan 6:53, en BSB»); if its words are gone it moves to «Sin ubicar» and is never deleted.
+- **«Notas al costado»** (default ≥ 1280 and panel closed): card at the right, 240 px, 40 px from the column, at its division's height (pushed down to keep 8 px between cards): left border 1px `rule-2` → `accent` on hover/focus, padding 6 8 8 14; place 12 ink-3, text body 300 15/1.5 two lines ink-2, date 12 tabular. Hover or focus marks the note's words with `accent-weak`.
+- **«Marca en el margen»** (< 1280 or panel open): «1 nota» / «N notas» under the division number (ui 12 ink-3, no icon; Bible: after the verse number), hit area padded 12/8; hover underline + ink; opens the panel on «Notas». ≤ 899 at the right edge of the paragraph.
+- **Entry points:** «Nota» in the selection toolbar (N) and in the panel; Shift+N or «Nota» in the bar for a note on the whole source; on 06 «Nota» beside «Leer el capítulo completo». Whole-source note shows as a `btn-more` «Tu nota sobre esta fuente» that unfolds.
+- **Editor** (in the panel; half sheet on phone): ref line 13.5 ink-3 (2 lines), «Esta frase» / «Todo el capítulo» segmented in Trento, textarea (min-height 88, auto-grow, 1px `rule-2`, radius 6, body 300 16.5/1.55), footer 12.5 ink-3: «Guardada», date, «Borrar nota».
+- **Delete dialog** (`alertdialog`, modal, rest of the page inert): `panel`, 400 px max, radius 8, top 2 px `danger`, title head 400 23 with «Borrar» in `danger`, the note's place (13.5 ink-3) and its first 90 characters (14.5), «Cancelar» + «Mantener para borrar» (1px `danger`, `danger` text, fill grows while held, 3 s). Keyboard: hold Enter/Space; focus starts on «Cancelar» and is trapped; Esc closes without deleting; status line in `aria-live`.
+- **«Tus notas n»** (bar → panel): tabs «Notas» / «Subrayados» with the sliding indicator; «Notas» order: whole source, then «En el texto» by position, then «Sin ubicar»; each row: place 13 ink-3 (struck through when lost), text 3 lines body 300 16, date 12.5. Export: «Copiar todas con sus citas» (short citation), «Copiar en Markdown (.md)» (a download on the site; the proposal copies the text).
+- **Filters «Campo y menú»**: search field (min-height 40, 1px `rule`, radius 6, `/` focuses, Esc clears, ignores case and accents, shows the matching excerpt with `mark`) + two small pickers «Mostrar» (Todas / Sobre la fuente / En el texto; in «Subrayados» the five colours) and «Ordenar» (Texto / Recientes) in the translation picker's style; status «n de N notas» (`aria-live`). Empty: one line («Ninguna nota dice «q».») + «Quitar filtros». Discarded: filter by chapter; with/without note in highlights.
+- Saving per user (browser storage at launch) is open (ROADMAP «Now» 4).
+
+### 06 verse
+- Header: the strip's hairline sits 30 px (22 phone) from the title, the same as 03's switcher-to-title. «Citar» and «Dónde se usa en Doctrina» in a side column (≥ 1100, `--spacing-dt-side`) beside «Traducción»; «En griego, palabra por palabra» and «Comparar traducciones» use the full width. Passage: previous/next division in body 300 17/1.6 ink-3 (3 lines + «Mostrar más»), the current one 21/1.62 ink (Bible: head 300 27/1.42), number column 52 px.
+- **«Citar»**: `ci-t` short citation (body 300 15.5 in the column) + «Citar» (copies the short form → «Cita copiada» 1.6 s) and «Citar con texto» side by side, «Copiar enlace» below. The full citation lives only on the source page.
+- **«Dónde se usa en Doctrina»**: place + text, hairline rows (title body 15.5, line 14.5 ink-3); one item and «Ver N más» (`btn-more`; FLIP; «Ver menos» hides again).
+- **«En griego, palabra por palabra»** «Ficha al lado»: the words as buttons (min-height 44; Greek head `--font-greek` 22 + gloss 13 ink-2) in a wrapping row; on hover, tap or focus the card column shows: Greek 32, transliteration 14 ink-3, `dl` (118 px term | value): **Strong** first, **En el Nuevo Testamento** (count) second, then Significa, Forma, Palabra base; «Abrir el estudio de …» (`btn-go`). Sticky; ≤ 899 under the words. OpenGNT licence is open (DEC Open).
+- **«Comparar traducciones»**: segmented filter «Español con español» (default) / «Inglés con inglés» / «Todas» (travelling indicator; starts on «Todas» when each language has one translation), chips per translation, rows name 14 500 + abbreviation, text body 300 17/1.6, list as FLIP.
 
 ### Top bar
 - Sticky, 56 px, `bg` + texture, bottom hairline: menu button (≤ 1099), logo, search, ES / EN (13 px; current ink 500; hidden ≤ 720), theme button.
@@ -276,12 +352,14 @@ Why each order and content: ROADMAP «Now» item 1 (screen notes) and the DECISI
 | Screen | Header | Sections in order |
 |---|---|---|
 | 02 Doctrine | crumbs · h1 · lede (the question) · fingerprint + caption · link legend | Lo que todas comparten (with «Lo que se discute») · Las cinco respuestas · Lo que escribieron los primeros cristianos (living ruler; then link to the full history) · La práctica · Doctrinas conectadas (always last) |
-| 03 Tradition | crumbs · switcher · h1 «La posición católica» · lede «Cómo la Iglesia católica entiende la Eucaristía, con sus propias fuentes.» | Qué enseña (5 statements + «Mostrar»; grade, a 1px × 14 px `rule-2` divider, sources) · Por qué · La Escritura que usa («Ver los N pasajes») · Objeciones (3 + «Ver las N objeciones») · Cómo se vive · Grado de autoridad · Videos |
+| 03 Tradition | crumbs · switcher · h1 «La posición católica» · lede «Cómo la Iglesia católica entiende la Eucaristía, con sus propias fuentes.» | Qué enseña (5 statements by default, more when one the objections target would otherwise be hidden — Baptism 6, DECISIONS 2026-10-22 — + «Mostrar»; grade, a 1px × 14 px `rule-2` divider, sources) · Por qué · La Escritura que usa («Ver los N pasajes») · Objeciones (3 + «Ver las N objeciones») · Cómo se vive · Grado de autoridad · Videos |
 | Objeciones page | crumbs · switcher · h1 «Objeciones a la posición …» · lede | the objection list (44 px below the header) |
 | 04 Objection | crumbs · kicker · h1 | La objeción · La respuesta católica · Fuentes citadas · Pasajes · Videos · Otras objeciones · footer previous / next |
+| 05 Source (reader) | layer bar: «Volver a donde estabas», tools · crumbs · title · meta | the text by division (chapters as 12.5 ink-3 heads) · edition and licence at the foot; side panel on tap |
+| 06 Verse | strip «Volver a donde estabas» · crumbs · title · lede | the passage with the division before and after · «Citar» + «Dónde se usa en Doctrina» (side column) · En griego, palabra por palabra · Comparar traducciones |
 | 09 History entity | crumbs · kicker («Uno de los Padres apostólicos») · h1 · facts · «Ver en la línea de tiempo» | Tiempo contemporáneo · Quién fue (text + facts table) · Sus escritos · Fechas y autenticidad · Dónde aparece en Doctrina (place in a left column, 150 px) · footer previous / next |
 
-Not designed yet: 01 home, 05 source / passage detail, 06 verse, 07 word study, 08 timeline, 10 witnesses, 11 search screen (the ⌘K component above is designed).
+Not designed yet: 01 home, 10 witnesses, 11 search screen (the ⌘K component above is designed). 07 word study and 08 timeline have an open proposal, not approved.
 
 ## 7. Don'ts
 
