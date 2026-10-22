@@ -604,3 +604,9 @@ Verses: RV1909 `[verified]` (ACT 17:11; 1TH 2:13). The 1 Thess 2:13 sentence is 
 | Sola Scriptura | OB-6 Rom 3:2, Lk 24:44 | no | 0 verified (Michuta `[snippet]`) | no |
 
 **Before any draft reaches the site:** a verification pass (playbook `verification-pass.md`) on the quoted strings, the caption passages at their minutes (someone listens to the ~20 seconds and confirms words and speaker), and the `[memory]` items still open (Aquinas and Gregory dates; CCC 83, *Unam sanctam* 1302 and CCC 675–676 are now confirmed; Gagnon's spelling and the 2024 "Patriarch of the West" restoration stay unconfirmed). No Catholic critique of any shared answer was found; that is `[not found]`, not proof that none exists.
+
+## Pedro's answers (2026-10-22)
+1. *Catholic Encyclopedia* (1907–1912): kept where its information is relevant and faithful to the sources, with the label that fits best (e.g. «historia católica, 1907–1912», not «apologista actual»).
+2. Catholic authors who concede historical facts (Fortescue on the epiclesis, Fanning on immersion, Saltet on the pseudo-Isidorian decretals): said openly, taking care never to caricature any tradition.
+3. The two debaters left out (Luis Toro, Fradd): fine for now.
+4. Baptism OB-4's marked note: removed (it is about the scope of a canon, not a popular objection) — to apply in `baptism/catholic.md`.
