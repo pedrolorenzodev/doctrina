@@ -35,3 +35,12 @@ Check each item on the block's screenshots and in the browser; the independent c
 3. Decided patterns applied everywhere they belong: each agreed animation or hover (list cascade, link hover, the "Ola" ruler…) on every component of that kind, not only where it was first tried. Patterns: `docs/DESIGN.md`.
 4. Hover and focus on everything clickable, in its pattern's style: links, rows, buttons, sources.
 5. Smooth scroll on every in-page navigation (index links, the right-edge ruler, links to sections); none under `prefers-reduced-motion`.
+
+## Pixel-perfect verification (Pedro, 2026-10-22)
+
+- Build UI in small blocks (one component or section). Before calling a block done, its agent launches a Sonnet 5.5 verifier (Agent tool, model `sonnet`).
+- Reference: the approved design's code, archived in `docs/research/proposals/site-clean/` (and `reader-05-06/`, `structure-v2/` for states it lacks), served locally. Same viewport (360, 390, 768, 1440), theme (light, dark), fonts loaded, and state (open, hovered, filtered…) on both sides.
+- Static: screenshot the block's region in both, diff with pixelmatch; report the share of differing pixels and an overlay image. Anything above anti-aliasing noise is a defect to fix, not to explain away.
+- Motion: drive time explicitly (Playwright clock, or pause CSS/Web Animations and set `currentTime`) and compare frames at fixed points (0, 25, 50, 75, 100 % of each animation, plus interruption mid-way); durations and curves must match DESIGN.md.
+- Behaviour: every interaction of the block in the browser (keyboard, touch emulation, reduced motion, edge states from the checklist above); no console errors, no horizontal overflow.
+- The verifier writes its result next to the block's feature doc; the block is done only when it passes, then Pedro approves.

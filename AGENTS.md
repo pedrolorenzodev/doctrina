@@ -66,6 +66,7 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 
 10. Work in blocks (a component or a section), not whole pages: one at a time, verified before moving on. If it's big, split it; when in doubt, smaller. Never move on with the previous block half done.
 11. A page or section is finished and approved before opening the ones that depend on it.
+- **Dailies (Pedro, from Saturday 2026-10-24):** every morning Pedro has a daily where he must have finished all the tasks set for him the day before and understand them well enough to explain briefly what he did. So at the end of each day, and whenever asked, the agent gives Pedro a concise, explanatory table of his tasks for the next day (what, why, where, how long), and in the morning helps him prepare the short explanation.
 12. Pedro's visual approval comes before handing over the commit message.
 - Proposals use real Doctrina content (v2 lesson: proposal canvases with real content beat building a whole new version).
 - Parallel subagents only with disjoint file ownership and a shared brief; one coordinator owns shared files (indexes, shared components).

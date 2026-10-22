@@ -67,12 +67,17 @@ iframe{display:block;border:0;background:var(--bg);width:100%;height:100%}
   .xrow{display:grid;grid-template-columns:1fr}
   .xs{width:100%;min-height:40px}
 }
+html[data-ver="v1"] .nv-2,html[data-ver="v2"] .nv-1{display:none}
+.vtag{display:inline-block;margin-left:6px;padding:1px 6px;border:1px solid var(--rule-2);border-radius:5px;font-size:11.5px;font-weight:500;color:var(--ink-3);vertical-align:2px}
 @media (prefers-reduced-motion: reduce){ *{transition:none!important} }
 </style>
 
 <div class="bar">
   <div class="row">
     <span class="name">Doctrina<span>07 palabra y 08 línea de tiempo</span></span>
+    <div class="grp"><span class="grp-l keep">Versión</span><div class="seg" id="g-v" role="group" aria-label="Versión de la propuesta">
+      <button type="button" data-v="v2">v2</button><button type="button" data-v="v1">v1</button>
+    </div></div>
     <div class="grp"><span class="grp-l">Pantalla</span><div class="seg" id="g-s" role="group" aria-label="Pantalla">
       <button type="button" data-v="07">07 σάρξ</button><button type="button" data-v="08">08 Línea de tiempo</button>
     </div></div>
@@ -91,9 +96,17 @@ iframe{display:block;border:0;background:var(--bg);width:100%;height:100%}
   </div>
   <div class="row xrow" id="xrow">
     <span class="x-h" title="En cada selector, la primera opción es lo de hoy o lo más cercano a lo aprobado">Probar</span>
-    <select class="xs" id="xs-sig" data-k="sig" data-s="07" aria-label="El léxico"></select>
-    <select class="xs" id="xs-dnd" data-k="dnd" data-s="07" aria-label="Los libros"></select>
-    <select class="xs" id="xs-flt" data-k="flt" data-s="07" aria-label="El filtro"></select>
+    <select class="xs" id="xs-sig" data-k="sig" data-s="07" data-ver="v1" aria-label="El léxico"></select>
+    <select class="xs" id="xs-dnd" data-k="dnd" data-s="07" data-ver="v1" aria-label="Los libros"></select>
+    <select class="xs" id="xs-flt" data-k="flt" data-s="07" data-ver="v1" aria-label="El filtro"></select>
+    <select class="xs" id="xs-sen" data-k="sen" data-s="07" data-ver="v2" aria-label="Los sentidos de la palabra"></select>
+    <select class="xs" id="xs-lug" data-k="lug" data-s="07" data-ver="v2" aria-label="La lista de lugares"></select>
+    <select class="xs" id="xs-pad" data-k="pad" data-s="07" data-ver="v2" aria-label="La sección de los Padres"></select>
+    <select class="xs" id="xs-trv" data-k="trv" data-s="07" data-ver="v2" aria-label="La transliteración"></select>
+    <select class="xs" id="xs-tsch" data-k="tsch" data-s="07" data-ver="v2" aria-label="El esquema de transliteración"></select>
+    <select class="xs" id="xs-fch" data-k="fch" data-s="07" data-ver="v2" aria-label="Los datos de la cabecera"></select>
+    <select class="xs" id="xs-ctx" data-k="ctx" data-s="07" data-ver="v2" aria-label="De dónde vino el lector"></select>
+    <select class="xs" id="xs-ecu" data-k="ecu" data-s="08" data-ver="v2" aria-label="Los concilios ecuménicos"></select>
     <select class="xs" id="xs-sel" data-k="sel" data-s="08" aria-label="Lo elegido en la línea"></select>
     <select class="xs" id="xs-dfmt" data-k="dfmt" data-s="08" aria-label="Las fechas del detalle"></select>
     <select class="xs" id="xs-tdv" data-k="tdv" data-s="08" aria-label="Dónde se ve el detalle"></select>
@@ -104,6 +117,7 @@ iframe{display:block;border:0;background:var(--bg);width:100%;height:100%}
 
 <aside class="notes" id="notes" aria-label="Cómo leer esta propuesta">
   <button class="x" type="button" id="notes-x" aria-label="Cerrar">×</button>
+  <div class="nv nv-1">
   <h2>La palabra y la línea de tiempo, versión 1</h2>
   <p>Las pantallas 07 y 08 en la dirección aprobada (DESIGN.md), con tus notas sobre P1·07 y P1·08. Para recorrerla: en <button class="go-b" type="button" data-goto="07">07 σάρξ</button> tocá un libro en «Dónde aparece»; en <button class="go-b" type="button" data-goto="08">08 Línea de tiempo</button> tocá personas, concilios y corrientes, y bajá hasta el detalle. Cada recuadro punteado azul en la pantalla es un punto para decidir; «Sin opciones» los oculta.</p>
 
@@ -175,58 +189,144 @@ iframe{display:block;border:0;background:var(--bg);width:100%;height:100%}
     <li>07: el léxico (español o inglés), los libros (filas o grilla), el filtro (como Videos o deslizar).</li>
     <li>08: lo elegido en la línea (eje, banda o guías), las fechas del detalle (una línea, con rótulo o grandes), dónde se ve el detalle (avance fijo o panel), recorrer los años (deslizar o regla).</li>
   </ul>
+  </div>
+  <div class="nv nv-2">
+  <h2>La palabra y la línea, versión 2</h2>
+  <p>Esta ronda aplica tus elecciones de <button class="go-b" type="button" data-goto="07">07 σάρξ</button> y <button class="go-b" type="button" data-goto="08">08 Línea de tiempo</button>. Lo elegido lleva la marca «elegido» y es lo que se ve al abrir; las otras opciones siguen a un toque por si querés volver a mirarlas. Solo quedan dos puntos sin decidir: «Qué significa» y la marca de los concilios ecuménicos. La v1 sigue en «Versión».</p>
+  <p>Todos los datos salen de fuentes con licencia del repo: texto griego y análisis, STEPBible TAGNT (CC BY 4.0); léxico, STEPBible TBESG (CC BY); texto español, Reina-Valera 1909 (dominio público); concilios, fechas y escritos, <i>history.json</i> y la investigación neutral del repo. La transliteración se genera con un algoritmo fijo.</p>
+
+  <h3>Para decidir</h3>
+  <div class="xt" data-k="sen"><h4>1. 07 · «Qué significa»</h4><div class="seg" role="group" aria-label="Los sentidos"></div>
+    <ul><li><b>Todos abiertos:</b> seis sentidos, cada uno con un título en lenguaje llano, una explicación corta, un versículo de ejemplo con la palabra marcada y, a un toque, los lugares que cita el léxico. De dónde viene el uso va como etiqueta chica («Uso griego», «Modo de hablar hebreo»), no como título. Se lee entero sin tocar nada.</li>
+    <li><b>Un renglón por sentido, plegado:</b> el título, la etiqueta y el ejemplo en una línea; al tocar, se abre lo demás, como en «Los lugares». Ocupa menos, pero hay que abrir cada uno.</li></ul>
+    <p class="xt-n">Los seis sentidos son los del léxico de Abbott-Smith en la versión de STEPBible: la carne del cuerpo, el cuerpo entero, todo ser humano, el parentesco natural, la debilidad humana y la naturaleza inclinada al pecado en Pablo. No hay cuenta por sentido: el léxico cita lugares, pero no dice cuántas apariciones corresponden a cada uno, y TAGNT no las asigna.</p></div>
+  <div class="xt" data-k="ecu"><h4>2. 08 · Los concilios ecuménicos</h4><div class="seg" role="group" aria-label="Los concilios ecuménicos"></div>
+    <ul><li><b>Marca en la línea y leyenda:</b> los siete concilios que las Iglesias católica y ortodoxa reciben como ecuménicos (Nicea I, Constantinopla I, Éfeso, Calcedonia, Constantinopla II y III, Nicea II) llevan un punto dentro del círculo; una línea de leyenda lo explica. Al elegirlos, el detalle dice quién los recibe, con las palabras de <i>history.json</i>. El Concilio de Jerusalén (año 49) no lleva marca.</li>
+    <li><b>Solo en el detalle:</b> la línea queda sin marca y cada concilio dice en su detalle quién lo recibe y quién no (por ejemplo, Calcedonia: católica y ortodoxa; las ortodoxas orientales aceptan solo los tres primeros). Sin ruido en la línea, pero hay que tocar cada concilio.</li></ul>
+    <p class="xt-n">«Ecuménico» siempre va atribuido a una Iglesia, nunca como un hecho del sitio (investigación neutral, §1.3 y §2.1).</p></div>
+
+  <h3>Ya elegido (podés volver a probar otra)</h3>
+  <div class="xt" data-k="lug"><h4>07 · «Los lugares»</h4><div class="seg" role="group" aria-label="La lista de lugares"></div>
+    <ul><li><b>Por libros, plegado</b> (elegido), con el filtro por forma como el de Videos (03). Una pantalla y poco al abrir.</li>
+    <li>Las otras: todo abierto (unas 13 pantallas en escritorio), referencias con vista previa, primeros doce con «Mostrar más».</li></ul></div>
+  <div class="xt" data-k="pad"><h4>07 · «En los Padres»</h4><div class="seg" role="group" aria-label="La sección de los Padres"></div>
+    <ul><li><b>Español primero, con la ficha de la palabra</b> (elegido).</li></ul></div>
+  <div class="xt" data-k="trv"><h4>07 · Transliteración</h4><div class="seg" role="group" aria-label="La transliteración"></div>
+    <ul><li><b>Interruptor «Transliteración»</b> (elegido): arriba a la derecha de la página; el sitio recuerda la elección.</li></ul></div>
+  <div class="xt" data-k="tsch"><h4>07 · Esquema</h4><div class="seg" role="group" aria-label="El esquema"></div>
+    <ul><li><b>Académica</b> (elegida): ē, ō, ph, ch. Coincide con la de STEPBible en las 147 apariciones de σάρξ.</li></ul></div>
+  <div class="xt" data-k="fch"><h4>07 · Datos de la cabecera</h4><div class="seg" role="group" aria-label="Los datos de la cabecera"></div>
+    <ul><li><b>En fila</b> (elegido).</li></ul></div>
+  <div class="xt" data-k="ctx"><h4>07 · «Viniste desde …»</h4><div class="seg" role="group" aria-label="De dónde vino el lector"></div>
+    <ul><li><b>Desde un versículo o un lugar</b> (elegido): la línea muestra lo que corresponda, aquí Juan 6:53 o «Ignacio de Antioquía». Con un versículo, el pie lleva a las palabras vecinas de ese versículo.</li>
+    <li><b>De cualquier parte:</b> sin la línea; el pie lleva a la palabra anterior y la siguiente del léxico.</li></ul></div>
+  <div class="xt" data-k="sel"><h4>08 · Lo elegido en la línea</h4><div class="seg" role="group" aria-label="Lo elegido en la línea"></div>
+    <ul><li><b>Banda de su época</b> (elegido).</li></ul></div>
+  <div class="xt" data-k="dfmt"><h4>08 · Fechas del detalle</h4><div class="seg" role="group" aria-label="Las fechas del detalle"></div>
+    <ul><li><b>Con rótulo</b> (elegido).</li></ul></div>
+  <div class="xt" data-k="tdv"><h4>08 · Dónde se ve el detalle</h4><div class="seg" role="group" aria-label="Dónde se ve el detalle"></div>
+    <ul><li><b>Panel fijo, al costado</b> (elegido): el panel de 05 y 06 a la derecha, media hoja en el celular. Lo leí como el panel al costado, no como el avance fijo; si querías el avance, está en la opción de al lado.</li></ul></div>
+  <div class="xt" data-k="nav"><h4>08 · Recorrer los años</h4><div class="seg" role="group" aria-label="Recorrer los años"></div>
+    <ul><li><b>Regla de arriba</b> (elegida), con la ventana de 190 años.</li></ul></div>
+
+  <h3>Decidido por el agente (vetalo si no va)</h3>
+  <ul>
+    <li><b>«Sus formas» sigue en la página,</b> entre «Qué significa» y «Los lugares»: tu orden no la nombraba y «Ver los N versículos» de cada forma filtra la lista de abajo.</li>
+    <li><b>La regla de 188 años no tenía razón de diseño:</b> era cuántos años caben en tu pantalla con 5,85 px por año. Ahora, desde 1100 px de ancho, la escala se calcula para que la ventana muestre 190 años con el panel cerrado; con el panel abierto muestra menos (122 a 1440 px). Debajo de 1100 px queda la escala de antes.</li>
+    <li><b>Soltar lo elegido:</b> tocar de nuevo el elegido, Esc o la × del panel. La banda y los años del eje desaparecen y el panel sale deslizándose; el texto no se borra hasta que se cierra. En pantallas de menos de 1100 px la línea abre sin nada elegido, para que la media hoja no tape la línea al entrar.</li>
+    <li><b>Escritos de cada Padre</b> (solo personas, sin concilios, corrientes ni escritos anónimos): título de las obras principales y «Y N obras más». <b>Solo Clemente de Roma lleva fecha</b> (Primera carta a los corintios, c. 95–96, Clavis CPG 1001): es la única fecha de un escrito que la investigación del repo marca como verificada. Hay una línea chica que lo dice. Los títulos de ocho autores (Clemente, Ignacio, Policarpo, Justino, Ireneo, Tertuliano, Orígenes, Cipriano) tienen número del Clavis; los de los otros quince salen de las fichas de la investigación sin etiqueta [memory] sobre la obra, pero sin número del Clavis. Dejé fuera lo dudoso: la Vida de Antonio de Atanasio y los Diálogos de Gregorio Magno.</li>
+    <li><b>Dónde se ve «Viniste desde …» en la 07:</b> bajo la ruta, solo con esa opción; con un versículo el pie cambia a las palabras vecinas.</li>
+    <li>«Los sentidos» llevan en el ejemplo la Reina-Valera 1909 con «carne» marcada; el ejemplo de cada uno está entre los lugares que cita el léxico para ese sentido.</li>
+  </ul>
+
+  <h3>Qué se descarta</h3>
+  <ul>
+    <li>En «Qué significa»: la estructura 1 / a / b del léxico y los títulos «Como en el griego clásico» y «Como en el modo de hablar hebreo»; una cuenta por sentido (no hay dato); el tecnicismo «sentido ético».</li>
+    <li>Marcar los concilios con color, con una cruz o con un texto «ecuménico» sobre la línea; una insignia por Iglesia.</li>
+    <li>Mostrar fechas de escritos sin verificar con «c.»: parecerían más seguras de lo que son.</li>
+    <li>De la lista de lo genérico: tarjetas con sombra, degradados, mayúsculas espaciadas, emoji, íconos en cuadrados de color y elementos que no hacen nada.</li>
+  </ul>
+
+  <h3>Qué hay que decidir</h3>
+  <ul>
+    <li>07 «Qué significa»: todos abiertos o un renglón plegado.</li>
+    <li>08 concilios ecuménicos: marca en la línea con leyenda, o solo en el detalle.</li>
+    <li>Si «Panel fijo» era el panel al costado.</li>
+  </ul>
+  </div>
 </aside>
 
 <script>
 const X = {
+  lug: [['libros', 'Por libros, plegado'], ['hoy', 'Hoy, todo abierto'], ['refs', 'Referencias con vista previa'], ['mas', 'Primeros y «Mostrar más»']],
+  pad: [['ficha', 'Español primero, con la ficha de la palabra'], ['apilado', 'Apilado: griego, transliteración, español'], ['columnas', 'Dos columnas: griego y español']],
+  trv: [['toggle', 'Interruptor «Transliteración»'], ['inline', 'Siempre al lado']],
+  tsch: [['acad', 'Académica (ē, ō, ph, ch)'], ['simple', 'Simple (e, o, f, kh)']],
+  fch: [['fila', 'En fila'], ['ficha', 'Ficha compacta']],
+  sen: [['abierto', 'Todos abiertos'], ['plegado', 'Un renglón por sentido, plegado']],
+  ctx: [['juan653', 'Llegó desde un versículo (Juan 6:53)'], ['lugar', 'Llegó desde un lugar (Ignacio de Antioquía)'], ['none', 'Llegó de cualquier parte']],
+  ecu: [['marca', 'Marca en la línea y leyenda'], ['detalle', 'Solo en el detalle']],
   sig: [['es', 'Sentidos en español'], ['en', 'Entrada en inglés (P1·07)']],
   dnd: [['filas', 'Filas con barra'], ['grilla', 'Grilla por grupos']],
   flt: [['videos', 'Como el de Videos (03)'], ['deslizar', 'Deslizar (como Objeciones)']],
   sel: [['eje', 'Años en el eje (09)'], ['banda', 'Banda de su época'], ['guias', 'Guías hasta el eje']],
   dfmt: [['linea', 'Una línea (09)'], ['rotulo', 'Con rótulo'], ['grande', 'Grandes, con su tramo']],
-  tdv: [['avance', 'Avance fijo (09)'], ['panel', 'Panel al costado']],
+  tdv: [['avance', 'Avance fijo (09)'], ['panel', 'Panel fijo, al costado']],
   nav: [['deslizar', 'Solo deslizar'], ['regla', 'Regla de arriba']]
 };
-const DEF = {sig: 'es', dnd: 'filas', flt: 'videos', sel: 'banda', dfmt: 'rotulo', tdv: 'avance', nav: 'deslizar'};
-const XL = {sig: 'Léxico', dnd: 'Libros', flt: 'Filtro', sel: 'Lo elegido', dfmt: 'Fechas', tdv: 'Detalle', nav: 'Recorrer'};
-const SCR = {'07': 's07.html', '08': 's08.html'};
-const S = {s: '07', m: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', w: 'desk', c: '0'};
-const XS = Object.assign({}, DEF);
-const LS = 'dz-0708-v1';
-try { const v = JSON.parse(localStorage.getItem(LS) || '{}'); ['s', 'm', 'w', 'c'].forEach(k => { if (v[k]) S[k] = v[k]; }); if (v.x) Object.keys(v.x).forEach(k => { if (X[k] && X[k].some(o => o[0] === v.x[k])) XS[k] = v.x[k]; }); } catch (e) {}
-const h0 = location.hash.replace('#s', '');
-if (SCR[h0]) S.s = h0;
+const DEFV = {
+  v1: {sig: 'es', dnd: 'filas', flt: 'videos', sel: 'banda', dfmt: 'rotulo', tdv: 'avance', nav: 'deslizar'},
+  v2: {lug: 'libros', pad: 'ficha', trv: 'toggle', tsch: 'acad', fch: 'fila', sen: 'abierto', ctx: 'juan653', ecu: 'marca', sel: 'banda', dfmt: 'rotulo', tdv: 'panel', nav: 'regla'}
+};
+const CHOSEN = {v2: {lug: 'libros', pad: 'ficha', trv: 'toggle', tsch: 'acad', fch: 'fila', ctx: 'juan653', sel: 'banda', dfmt: 'rotulo', tdv: 'panel', nav: 'regla'}};
+const XL = {sen: 'Sentidos', ecu: 'Ecuménicos', lug: 'Lugares', pad: 'Padres', trv: 'Transliteración', tsch: 'Esquema', fch: 'Cabecera', ctx: 'Llegada', sig: 'Léxico', dnd: 'Libros', flt: 'Filtro', sel: 'Lo elegido', dfmt: 'Fechas', tdv: 'Detalle', nav: 'Recorrer'};
+const SCRV = {v1: {'07': 's07.html', '08': 's08v1.html'}, v2: {'07': 's07v2.html', '08': 's08.html'}};
+const S = {v: 'v2', s: '07', m: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', w: 'desk', c: '0'};
+const XSV = {v1: Object.assign({}, DEFV.v1), v2: Object.assign({}, DEFV.v2)};
+const XS = {};
+const loadXS = v => { Object.keys(XS).forEach(k => { delete XS[k]; }); Object.assign(XS, XSV[v]); };
+const LS = 'dz-0708-v2';
+const SCR = {'07': 1, '08': 1};
+try { const v = JSON.parse(localStorage.getItem(LS) || '{}'); ['s', 'm', 'w', 'c', 'v'].forEach(k => { if (v[k]) S[k] = v[k]; }); ['v1', 'v2'].forEach(ver => { const xv = (v.x || {})[ver]; if (xv) Object.keys(xv).forEach(k => { if (X[k] && k in XSV[ver] && X[k].some(o => o[0] === xv[k])) XSV[ver][k] = xv[k]; }); }); } catch (e) {}
+const hm = location.hash.match(/^#s(07|08)(v1|v2)?$/);
+if (hm) { S.s = hm[1]; if (hm[2]) S.v = hm[2]; }
+if (S.v !== 'v1' && S.v !== 'v2') S.v = 'v2';
+loadXS(S.v);
 if (!SCR[S.s]) S.s = '07';
 const fr = document.getElementById('fr'), stage = document.getElementById('stage');
-const save = () => { try { localStorage.setItem(LS, JSON.stringify({s: S.s, m: S.m, w: S.w, c: S.c, x: XS})); } catch (e) {} };
+const save = () => { try { localStorage.setItem(LS, JSON.stringify({v: S.v, s: S.s, m: S.m, w: S.w, c: S.c, x: XSV})); } catch (e) {} };
 const ss = (k, v) => { try { sessionStorage.setItem('dz-' + k, JSON.stringify(v)); } catch (e) {} };
 const press = (id, v) => document.querySelectorAll('#' + id + ' button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
 const post = msg => { try { fr.contentWindow.postMessage(msg, '*'); } catch (e) {} };
 function pick(key) {
   S.s = key; press('g-s', key); save();
   Object.keys(XS).forEach(k => ss('pp-' + k, XS[k]));
-  document.querySelectorAll('.xs').forEach(x => { x.hidden = x.dataset.s !== key; });
-  try { history.replaceState(null, '', '#s' + key); } catch (e) {}
-  fr.src = SCR[key] + '?theme=' + S.m + (S.c === '1' ? '&clean=1' : '');
+  document.querySelectorAll('.xs').forEach(x => { x.hidden = x.dataset.s !== key || (x.dataset.ver && x.dataset.ver !== S.v); });
+  try { history.replaceState(null, '', '#s' + key + (S.v === 'v1' ? 'v1' : '')); } catch (e) {}
+  fr.src = SCRV[S.v][key] + '?theme=' + S.m + (S.c === '1' ? '&clean=1' : '');
 }
+function setVer(v) { S.v = v; loadXS(v); Object.keys(X).forEach(k => { fillSel(k); paintX(k); }); press('g-v', v); document.documentElement.dataset.ver = v; save(); pick(S.s); }
 function setMode(m) { S.m = m; press('g-m', m); save(); document.documentElement.dataset.theme = m; post({dz: 'theme', theme: m}); }
 function setClean(c) { S.c = c; press('g-c', c); save(); post({dz: 'clean', on: c === '1'}); }
 function setWidth(w) { S.w = w; press('g-w', w); stage.classList.toggle('phone', w === 'phone'); save(); }
 const paintX = k => {
+  if (XS[k] == null) return;
   document.getElementById('xs-' + k).value = XS[k];
   document.querySelectorAll('.xt[data-k="' + k + '"] .seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === XS[k])));
 };
-const setXOpt = (k, v, fromPage) => { XS[k] = v; paintX(k); save(); ss('pp-' + k, v); if (!fromPage) post({dz: 'pp', key: k, value: v}); };
+const setXOpt = (k, v, fromPage) => { XS[k] = v; XSV[S.v][k] = v; paintX(k); save(); ss('pp-' + k, v); if (!fromPage) post({dz: 'pp', key: k, value: v}); };
+const fillSel = k => { const sel = document.getElementById('xs-' + k); sel.innerHTML = X[k].map(([v, l]) => '<option value="' + v + '">' + XL[k] + ': ' + l.charAt(0).toLowerCase() + l.slice(1) + (CHOSEN.v2[k] === v && S.v === 'v2' ? ' (elegido)' : '') + '</option>').join(''); };
 Object.keys(X).forEach(k => {
   const sel = document.getElementById('xs-' + k);
-  sel.innerHTML = X[k].map(([v, l]) => '<option value="' + v + '">' + XL[k] + ': ' + l.charAt(0).toLowerCase() + l.slice(1) + '</option>').join('');
+  fillSel(k);
   sel.addEventListener('change', () => setXOpt(k, sel.value));
   document.querySelectorAll('.xt[data-k="' + k + '"] .seg').forEach(seg => {
-    seg.innerHTML = X[k].map(([v, l]) => '<button type="button" data-v="' + v + '">' + l + '</button>').join('');
-    seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; setXOpt(k, b.dataset.v); const s = document.getElementById('xs-' + k).dataset.s; if (s !== S.s) pick(s); });
+    seg.innerHTML = X[k].map(([v, l]) => '<button type="button" data-v="' + v + '">' + l + (CHOSEN.v2[k] === v && seg.closest('.nv-2') ? ' <span class="vtag">elegido</span>' : '') + '</button>').join('');
+    seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; setXOpt(k, b.dataset.v); const xe = document.getElementById('xs-' + k), s = xe.dataset.s; if (xe.dataset.ver && xe.dataset.ver !== S.v) setVer(xe.dataset.ver); if (s !== S.s) pick(s); });
   });
   paintX(k);
 });
+document.getElementById('g-v').addEventListener('click', e => { const b = e.target.closest('button'); if (b && b.dataset.v !== S.v) setVer(b.dataset.v); });
 document.getElementById('g-s').addEventListener('click', e => { const b = e.target.closest('button'); if (b) pick(b.dataset.v); });
 document.getElementById('g-m').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setMode(b.dataset.v); });
 document.getElementById('g-c').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setClean(b.dataset.v); });
@@ -239,9 +339,9 @@ xb.addEventListener('click', () => { xb.setAttribute('aria-expanded', String(xb.
 small.addEventListener('change', fitX); fitX();
 addEventListener('message', e => {
   const d = e.data || {};
-  if (d.dz === 'go' && SCR[d.screen]) pick(d.screen);
+  if (d.dz === 'go' && SCRV[S.v][d.screen]) pick(d.screen);
   if (d.dz === 'ready') { Object.keys(XS).forEach(k => post({dz: 'pp', key: k, value: XS[k]})); if (S.c === '1') post({dz: 'clean', on: true}); }
-  if (d.dz === 'ppset' && X[d.key] && X[d.key].some(o => o[0] === d.value)) setXOpt(d.key, d.value, true);
+  if (d.dz === 'ppset' && X[d.key] && document.getElementById('xs-' + d.key) && X[d.key].some(o => o[0] === d.value)) setXOpt(d.key, d.value, true);
   if (d.dz === 'theme') { S.m = d.theme; press('g-m', d.theme); document.documentElement.dataset.theme = d.theme; save(); }
 });
 const nb = document.getElementById('notes-b'), notes = document.getElementById('notes');
@@ -250,7 +350,7 @@ nb.addEventListener('click', () => setNotes(!notes.classList.contains('open')));
 document.getElementById('notes-b2').addEventListener('click', () => setNotes(true));
 document.getElementById('notes-x').addEventListener('click', () => { setNotes(false); (nb.offsetParent ? nb : document.getElementById('notes-b2')).focus(); });
 addEventListener('keydown', e => { if (e.key === 'Escape') setNotes(false); });
-document.documentElement.dataset.theme = S.m; press('g-m', S.m);
+document.documentElement.dataset.theme = S.m; document.documentElement.dataset.ver = S.v; press('g-m', S.m); press('g-v', S.v);
 setWidth(S.w); press('g-c', S.c);
 pick(S.s);
 </script>

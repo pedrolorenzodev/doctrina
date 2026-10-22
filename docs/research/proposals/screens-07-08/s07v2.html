@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>σάρξ, estudio de la palabra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<script>document.documentElement.dataset.ent='title-fade'</script>
+<style>
+[lang="grc"]{font-family:var(--greek);font-size:1.04em}
+.tl{font-family:var(--ui);font-style:italic;font-weight:400;font-size:.8em;letter-spacing:0;color:var(--ink-3);margin-left:.45em;white-space:nowrap}
+.tlb{margin:6px 0 0;font-family:var(--ui);font-style:italic;font-size:15px;line-height:1.6;color:var(--ink-3)}
+html[data-tl="off"] .tl,html[data-tl="off"] .tlb{display:none}
+
+.wd-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;margin-bottom:40px}
+.wd-bar .crumbs{margin:0}
+.tl-t{display:inline-flex;align-items:center;gap:9px;min-height:36px;padding:6px 8px 6px 10px;margin-right:-8px;border:0;border-radius:6px;background:transparent;font-size:13px;color:var(--ink-3);cursor:pointer;transition:background-color var(--fast) ease,color var(--fast) ease}
+.tl-t:hover{background:var(--hover);color:var(--ink)}
+.tl-t .sw{position:relative;width:26px;height:15px;border:1px solid var(--rule-2);border-radius:8px;transition:background-color var(--fast) ease,border-color var(--fast) ease}
+.tl-t .sw::after{content:"";position:absolute;top:2px;left:2px;width:9px;height:9px;border-radius:50%;background:var(--ink-3);transition:transform var(--mid) var(--ease),background-color var(--fast) ease}
+.tl-t[aria-pressed="true"]{color:var(--ink-2)}
+.tl-t[aria-pressed="true"] .sw{background:var(--accent-weak);border-color:var(--accent)}
+.tl-t[aria-pressed="true"] .sw::after{transform:translateX(11px);background:var(--accent)}
+html[data-pp-trv="inline"] .tl-t{display:none}
+html[data-pp-trv="inline"] .wd-bar{margin-bottom:40px}
+
+.ctx{display:none;margin:-22px 0 28px;font-size:13.5px;color:var(--ink-3)}
+html[data-arr="verse"] .ctx,html[data-arr="place"] .ctx{display:block}
+.wd-k{margin:0 0 10px}
+.wd-h1{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 22px}
+.wd-h1 [lang="grc"]{font-family:var(--greek);font-weight:400;font-size:64px;line-height:1.05;letter-spacing:0}
+.wd-h1 .tr{font-family:var(--head);font-style:italic;font-weight:300;font-size:30px;color:var(--ink-2);font-variation-settings:"opsz" 36}
+html[data-tl="off"] .wd-h1 .tr{display:none}
+.facts{display:flex;flex-wrap:wrap;gap:18px 44px;margin:26px 0 0;padding:0}
+.facts > div{min-width:0}
+.facts dt{margin:0 0 3px;font-size:12.5px;color:var(--ink-3)}
+.facts dd{margin:0;font-family:var(--body);font-size:18px;line-height:1.4;color:var(--ink);font-variant-numeric:tabular-nums}
+.facts dd .muted{font-size:15px;color:var(--ink-3)}
+.facts dd .ln-side{font-family:var(--body);font-size:18px}
+.facts dd .dv{display:block}
+.facts dd .dv + .dv{margin-top:2px}
+.facts dd .dv .muted{margin-left:6px}
+.facts dd.st{font-family:var(--ui);font-size:15px;color:var(--ink-2);letter-spacing:.01em}
+html[data-pp-fch="ficha"] .facts{display:block;max-width:600px;gap:0;margin-top:28px;border-top:1px solid var(--rule)}
+html[data-pp-fch="ficha"] .facts > div{display:grid;grid-template-columns:170px minmax(0,1fr);gap:4px 18px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--rule)}
+html[data-pp-fch="ficha"] .facts dt{margin:0}
+html[data-pp-fch="ficha"] .facts dd{font-size:17px}
+html[data-pp-fch="ficha"] .facts dd .ln-side{font-size:17px}
+
+.sn-l{list-style:none;margin:28px 0 0;padding:0}
+.sn-g{border-top:1px solid var(--rule);padding:22px 0 20px}
+.sn-l > li:last-child{border-bottom:1px solid var(--rule)}
+.sn-gh{margin:0 0 12px;font-family:var(--head);font-weight:400;font-size:21px;line-height:1.3;color:var(--ink);font-variation-settings:"opsz" 24}
+.sn-gh .nm{display:inline-block;min-width:28px;font-family:var(--ui);font-size:13px;font-weight:500;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.sn{display:grid;grid-template-columns:28px minmax(0,1fr);gap:0 0;margin:12px 0 0}
+.sn .lt{font-size:13px;font-weight:500;color:var(--ink-3);padding-top:3px}
+.sn p{margin:0;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2);max-width:640px}
+.sn p .refs{display:block;margin-top:4px;font-family:var(--ui);font-size:14px;line-height:1.7;color:var(--ink-3)}
+.sn p .refs a{color:var(--ink-2);white-space:nowrap}
+.sn-note{margin:16px 0 0;font-size:13px;line-height:1.55;color:var(--ink-3);max-width:640px}
+.as-en{margin:0;padding:16px 0 0;font-family:var(--body);font-weight:300;font-size:15.5px;line-height:1.6;color:var(--ink-2);white-space:pre-line;max-width:680px}
+.as-ex{margin:22px 0 0;padding:16px 20px;border:1px solid var(--rule-2);border-radius:6px}
+.as-ex .lab2{margin:0 0 6px;font-size:12.5px;color:var(--ink-3)}
+.as-ex p.q{margin:0;font-family:var(--body);font-weight:300;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.as-ex .ln-go{display:inline-block;margin-top:10px;font-size:14px}
+html[data-pp-sig="es"] .sig-en{display:none}
+html[data-pp-sig="en"] .sig-es{display:none}
+
+.fm-l{list-style:none;margin:24px 0 0;padding:0;max-width:820px}
+.fm-r{display:grid;grid-template-columns:170px minmax(0,1fr) 110px 150px;align-items:center;gap:4px 24px;padding:12px 0;border-top:1px solid var(--rule)}
+.fm-l > li:last-child{border-bottom:1px solid var(--rule)}
+.fm-f{font-family:var(--greek);font-size:22px;line-height:1.3;color:var(--ink)}
+.fm-f .tl{font-size:14px}
+.fm-c{font-size:15px;color:var(--ink-2)}
+.fm-n{display:flex;align-items:center;gap:10px;font-variant-numeric:tabular-nums;font-weight:500;color:var(--ink);font-size:15px}
+.fm-n .bar{height:6px;border-radius:3px;background:var(--ink-3);opacity:.5;min-width:3px}
+.fm-n b{font-weight:500;min-width:2ch;text-align:right}
+.fm-a{justify-self:end;border:0;background:transparent;padding:6px 8px;margin:-6px -8px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);cursor:pointer;white-space:nowrap;transition:background-color var(--fast) ease,color var(--fast) ease}
+.fm-a:hover{background:var(--hover);color:var(--ink)}
+
+.corpus{margin:18px 0 0;font-family:var(--head);font-weight:400;font-size:21px;line-height:1.35;color:var(--ink);font-variation-settings:"opsz" 24}
+.corpus-e{margin:4px 0 22px;font-size:13px;color:var(--ink-3)}
+.bk-l{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:0 56px;margin:26px 0 0;max-width:960px}
+.bk-col{list-style:none;margin:0;padding:0}
+.bk-gh{margin:0;padding:16px 0 6px;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.bk-col > li:first-child .bk-gh{padding-top:0}
+.bk-r{display:grid;grid-template-columns:132px minmax(0,1fr) 34px;align-items:center;gap:0 14px;width:100%;min-height:36px;margin:0;padding:4px 6px;border:0;border-top:1px solid var(--rule);border-radius:0;background:transparent;font:inherit;text-align:left;color:var(--ink-2);font-size:14.5px;cursor:pointer;transition:background-color var(--fast) ease,color var(--fast) ease}
+button.bk-r:hover{background:var(--hover);color:var(--ink)}
+.bk-r .bar{height:6px;border-radius:3px;background:var(--ink-3);opacity:.5;transition:opacity var(--fast) ease,background-color var(--fast) ease}
+button.bk-r:hover .bar{opacity:.8}
+.bk-r .c{text-align:right;font-variant-numeric:tabular-nums;font-weight:500;color:var(--ink)}
+.bk-r.z{cursor:default;color:var(--ink-3)}
+.bk-r.z .c{color:var(--ink-3);font-weight:400}
+.bk-r[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink);font-weight:500}
+.bk-r[aria-pressed="true"] .bar{background:var(--accent);opacity:1}
+.bk-g{display:none;margin:26px 0 0;max-width:1000px}
+.bk-g .gh{margin:18px 0 8px;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.bk-g .gh:first-child{margin-top:0}
+.bk-cells{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px}
+.bk-c{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:6px;min-height:74px;padding:9px 11px 10px;border:1px solid var(--rule);border-radius:6px;background:color-mix(in srgb,var(--ink) calc(var(--k) * 13%),transparent);font:inherit;text-align:left;color:var(--ink-2);cursor:pointer;transition:border-color var(--fast) ease}
+button.bk-c:hover{border-color:var(--ink-3)}
+.bk-c .n0{font-size:13px;line-height:1.25}
+.bk-c .c{font-family:var(--head);font-size:24px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;font-variation-settings:"opsz" 24}
+.bk-c.z{cursor:default;border-style:dashed;color:var(--ink-3)}
+.bk-c.z .c{color:var(--ink-3)}
+.bk-c[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+html[data-pp-dnd="grilla"] .bk-l{display:none}
+html[data-pp-dnd="grilla"] .bk-g{display:block}
+.dn-tip{margin:14px 0 0;font-size:13px;color:var(--ink-3)}
+
+/* the senses */
+.sen-l{list-style:none;margin:26px 0 0;padding:0;max-width:760px}
+.sen-l > li{border-top:1px solid var(--rule);padding:20px 0 18px}
+.sen-l > li:last-child{border-bottom:1px solid var(--rule)}
+.sen-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.sen-t{margin:0;font-family:var(--head);font-weight:400;font-size:21px;line-height:1.3;color:var(--ink);font-variation-settings:"opsz" 24}
+.otag{display:inline-block;padding:1px 8px;border:1px solid var(--rule-2);border-radius:5px;font-family:var(--ui);font-size:12.5px;line-height:1.5;color:var(--ink-3);white-space:nowrap}
+.sen-d{margin:10px 0 0;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2);max-width:640px}
+.sen-q{margin:14px 0 0;padding:0 0 0 16px;border-left:2px solid var(--rule-2);max-width:640px}
+.sen-q p{margin:0;font-family:var(--head);font-style:italic;font-weight:300;font-size:19px;line-height:1.45;color:var(--ink);font-variation-settings:"opsz" 24}
+.sen-q p::before{content:"«"}.sen-q p::after{content:"»"}
+.sen-q a{display:inline-block;margin-top:6px;font-size:14px}
+.sen-m{margin:12px 0 0;font-size:13.5px;color:var(--ink-3)}
+.sen-m summary{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:5px 0;cursor:pointer;color:var(--ink-2);font-weight:500;border-radius:4px;list-style:none}
+.sen-m summary::-webkit-details-marker{display:none}
+.sen-m summary::before{content:"+";display:inline-block;width:12px;text-align:center;color:var(--ink-3);transition:transform var(--mid) ease}
+.sen-m[open] summary::before{transform:rotate(45deg)}
+.sen-m summary:hover{color:var(--ink)}
+.sen-m .refs{margin:4px 0 0;line-height:1.8;font-size:14px}
+.sen-m .refs a{color:var(--ink-2);white-space:nowrap}
+.sen-b{display:grid;grid-template-columns:minmax(0,1fr) 16px;grid-template-areas:"h c" "e c";align-items:center;gap:4px 12px;width:100%;margin:-20px 0 -18px;padding:20px 0 18px;border:0;background:transparent;font:inherit;text-align:left;color:var(--ink);cursor:pointer}
+.sen-b .sen-h{grid-area:h}
+.sen-b .sen-1{grid-area:e;min-width:0;font-family:var(--body);font-weight:300;font-size:16px;line-height:1.5;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sen-b .sen-1 mark{color:var(--ink)}
+.sen-b svg{grid-area:c;color:var(--ink-3);transition:transform var(--mid) ease}
+.sen-b[aria-expanded="true"] svg{transform:rotate(90deg)}
+.sen-b[aria-expanded="true"] .sen-1{display:none}
+.sen-b:hover .sen-t{text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:4px}
+.sen-x{padding:6px 0 2px}
+.sen-x .sen-d{margin-top:4px}
+.pp .ch{margin-left:6px;padding:0 6px;border:1px solid var(--accent-mid);border-radius:4px;font-size:11.5px;color:var(--accent)}
+
+/* the places */
+.lg-st{margin:0 0 16px;font-size:13.5px;line-height:1.5;color:var(--ink-3)}
+.lg-f{display:flex;flex-wrap:wrap;align-items:center;gap:8px 8px;margin:0 0 16px;font-size:13.5px;color:var(--ink-3)}
+.lg-f[hidden]{display:none}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:4px 6px 4px 10px;border:1px solid var(--rule-2);border-radius:6px;background:transparent;font-size:13.5px;color:var(--ink);cursor:pointer;transition:border-color var(--fast) ease,background-color var(--fast) ease}
+.chip:hover{border-color:var(--ink);background:var(--hover)}
+.chip svg{color:var(--ink-3)}
+.lg-clear{border:0;background:none;padding:6px 8px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);cursor:pointer}
+.lg-clear:hover{background:var(--hover);color:var(--ink)}
+.lg-l{list-style:none;margin:0;padding:0;max-width:880px}
+.lg-l > li{border-top:1px solid var(--rule);padding:16px 0 14px}
+.lg-l > li:last-child{border-bottom:1px solid var(--rule)}
+.lg-b{margin:0 0 6px;font-size:13px;font-weight:500;color:var(--ink-3)}
+.lg-b .n{font-weight:400;margin-left:6px;font-variant-numeric:tabular-nums}
+.lg-v{list-style:none;margin:10px 0 0;padding:0}
+.lg-v li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 18px;padding:10px 0 0}
+.lg-v .rf{font-size:14px;padding-top:3px}
+.lg-v .tx{margin:0;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.lg-v .tg{grid-column:2;margin:-2px 0 0}
+mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
+.tg{font-size:12.5px;line-height:1.4;color:var(--ink-3);white-space:nowrap}
+.tg [lang="grc"]{font-size:15px;color:var(--ink-2)}
+.tg .tl{font-size:12.5px}
+.lg-ed{margin:14px 0 0;font-size:13px;line-height:1.55;color:var(--ink-3);max-width:700px}
+
+.lg-bh{display:grid;grid-template-columns:minmax(0,1fr) auto 16px;align-items:center;gap:0 12px;width:100%;min-height:44px;margin:-16px 0 -14px;padding:16px 0 14px;border:0;background:transparent;font:inherit;text-align:left;color:var(--ink);cursor:pointer}
+.lg-bh:hover .nm{text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:4px}
+.lg-bh .nm{font-family:var(--head);font-size:19px;font-variation-settings:"opsz" 24}
+.lg-bh .n{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.lg-bh svg{color:var(--ink-3);transition:transform var(--mid) ease}
+.lg-bh[aria-expanded="true"] svg{transform:rotate(90deg)}
+.lg-p{overflow:hidden}
+.lg-p[hidden]{display:none}
+.kw-l{list-style:none;margin:18px 0 0;padding:0 0 2px}
+.kw{display:grid;grid-template-columns:104px minmax(0,1fr) auto;align-items:baseline;gap:2px 22px;padding:9px 0;border-top:1px solid var(--rule)}
+.kw:first-child{border-top:0}
+.kw .rf{font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.kw .fr{margin:0;min-width:0;font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.5;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kw .fr mark{font-weight:400;color:var(--ink)}
+.kw .tg{text-align:right}
+.lg-l > li.kw{padding:9px 0;border-top:1px solid var(--rule)}
+.lg-l > li.kw .rf{font-size:14px}
+
+.rf-l{display:flex;flex-wrap:wrap;gap:0 8px;margin:6px 0 0;padding:0;list-style:none}
+.rp{border:0;background:transparent;padding:4px 7px;margin:0 -1px;border-radius:5px;font:inherit;font-size:15px;line-height:1.5;color:var(--ink-2);font-variant-numeric:tabular-nums;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--rule-2);transition:background-color var(--fast) ease,text-decoration-color var(--fast) ease}
+.rp:hover,.rp[aria-expanded="true"]{background:var(--accent-weak);text-decoration-color:currentColor;color:var(--ink)}
+.pv{position:absolute;z-index:30;width:min(380px,calc(100vw - 32px));padding:14px 16px 14px;border:1px solid var(--rule-2);border-radius:8px;background:var(--panel);box-shadow:0 10px 30px rgb(0 0 0 / .16)}
+.pv[hidden]{display:none}
+.pv-r{margin:0 0 6px;font-size:13px;font-weight:500;color:var(--ink-3)}
+.pv-t{margin:0;font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.55;color:var(--ink-2)}
+.pv .tg{display:block;white-space:normal;margin:10px 0 0}
+.pv .ln-go{display:inline-block;margin-top:10px;font-size:14px}
+
+.lg-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin:0 0 18px}
+.pk{position:relative}
+.pk-b{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:6px 12px;border:1px solid var(--rule);border-radius:8px;background:transparent;font-size:13.5px;color:var(--ink);cursor:pointer;transition:border-color var(--fast) ease}
+.pk-b:hover{border-color:var(--rule-2)}
+.pk-b .k{color:var(--ink-3)}
+.pk-b svg{color:var(--ink-3);transform:rotate(90deg);transition:transform var(--mid) ease}
+.pk-b[aria-expanded="true"] svg{transform:rotate(-90deg)}
+.pk-l{position:absolute;z-index:35;left:0;top:calc(100% + 6px);width:min(340px,calc(100vw - 32px));max-height:min(420px,60vh);overflow:auto;padding:4px;border:1px solid var(--rule-2);border-radius:8px;background:var(--panel);box-shadow:0 10px 30px rgb(0 0 0 / .16)}
+.pk-l.up{top:auto;bottom:calc(100% + 6px)}
+.pk-l[hidden]{display:none}
+.pk-gh{margin:0;padding:10px 10px 4px;font-size:12.5px;color:var(--ink-3)}
+.pk-o{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:44px;padding:6px 10px;border:0;border-radius:6px;background:transparent;font-size:14.5px;color:var(--ink-2);text-align:left;cursor:pointer}
+.pk-o:hover,.pk-o:focus-visible{background:var(--hover);color:var(--ink)}
+.pk-o .n{font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.pk-o[aria-selected="true"]{background:var(--accent-weak);box-shadow:inset 0 0 0 2px var(--accent);color:var(--ink)}
+.vf{display:inline-flex;flex-wrap:wrap;gap:2px;margin:0;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.vf button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:34px;line-height:1.2;padding:6px 12px;border:0;border-radius:6px;background:transparent;font-size:13.5px;color:var(--ink-2);cursor:pointer;transition:background-color var(--fast) ease,color var(--fast) ease}
+.vf button:hover{background:var(--hover);color:var(--ink)}
+.vf button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink);font-weight:500}
+.vf [lang="grc"]{font-size:15px;font-weight:400}
+.vf .tl{font-size:12px;margin-left:5px;font-weight:400}
+.vf .n{line-height:1.2;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;font-weight:400}
+.lg-ft{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin:10px 0 0}
+.lg-ft .ct{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+html:not([data-pp-lug="hoy"]) .only-hoy,html:not([data-pp-lug="libros"]) .only-libros,html:not([data-pp-lug="refs"]) .only-refs,html:not([data-pp-lug="mas"]) .only-mas{display:none}
+.lg-ctl{display:none}
+html[data-pp-lug="mas"] .lg-ctl,html[data-pp-lug="libros"] .lg-ctl{display:flex}
+html:not([data-pp-lug="mas"]) .pk{display:none}
+
+/* the Fathers */
+.pa-l{list-style:none;margin:26px 0 0;padding:0;max-width:880px}
+.pa-l > li{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0 20px}
+.pa-g{margin:0;font-family:var(--greek);font-size:19px;line-height:1.65;color:var(--ink-2)}
+.pa-g b{font-weight:700;color:var(--ink)}
+.pa-es{margin:14px 0 0;font-family:var(--head);font-style:italic;font-weight:300;font-size:20px;line-height:1.45;color:var(--ink);font-variation-settings:"opsz" 24}
+.pa-es::before{content:"«"}.pa-es::after{content:"»"}
+.pa-es b{font-weight:400}
+.pa-w{margin:12px 0 0;font-size:14px;line-height:1.5;color:var(--ink-3)}
+.pa-w b{font-weight:500;color:var(--ink)}
+.pa-w .ln-side{font-size:14px}
+.pa-lab{margin:10px 0 0;font-size:12.5px;color:var(--ink-3)}
+.pa-lb{margin:0 0 6px;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.pa-v2{display:none;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0 44px}
+.pa-v2 .pa-es{margin:0}
+.pa-v3{display:none}
+.pa-v3 .pa-es{margin:0;font-size:22px}
+.pa-v3 .pa-g{margin-top:16px;font-size:18px}
+.pa-v3 .wd-box{margin:18px 0 0;padding:14px 16px;border:1px solid var(--rule-2);border-radius:6px;max-width:520px}
+.pa-v3 .wd-box .lb{margin:0 0 6px;font-size:12.5px;color:var(--ink-3)}
+.pa-v3 .wd-box .fw{margin:0;font-family:var(--greek);font-size:22px;line-height:1.3;color:var(--ink)}
+.pa-v3 .wd-box .fd{margin:4px 0 0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.pa-v3 .wd-box .ln-go{display:inline-block;margin-top:8px;font-size:14px}
+.pa-v3 .pa-g b{padding:0 2px;border-radius:2px;background:var(--mark);color:inherit;font-weight:400}
+html[data-pp-pad="apilado"] .pa-v1{display:block}
+html[data-pp-pad="columnas"] .pa-v1,html[data-pp-pad="ficha"] .pa-v1{display:none}
+html[data-pp-pad="columnas"] .pa-v2{display:grid}
+html[data-pp-pad="ficha"] .pa-v3{display:block}
+
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:84px;max-width:1040px}
+.pn a{display:block;padding:14px 18px 15px;border:1px solid var(--rule);border-radius:6px;text-decoration:none;color:var(--ink);transition:border-color var(--fast) ease,background-color var(--fast) ease}
+.pn a:hover{border-color:var(--rule-2);background:var(--hover)}
+.pn .nx{text-align:right}
+.pn small{display:block;margin-bottom:4px;font-size:12.5px;color:var(--ink-3)}
+.pn span{font-family:var(--body);font-size:16.5px;line-height:1.4}
+.pn span [lang="grc"]{font-size:18px}
+.pn .tl{font-size:13.5px}
+.pn-c{display:none}
+html[data-arr="verse"] .pn-c{display:grid}
+html[data-arr="verse"] .pn-d{display:none}
+
+@media (pointer:coarse){ .bk-r{min-height:44px} .sn p .refs a{display:inline-block;padding-block:8px;line-height:1.2} .rp{min-height:44px} .fm-a{min-height:44px} }
+@media (max-width:1099px){ .bk-l{column-gap:40px} .bk-r{grid-template-columns:118px minmax(0,1fr) 30px} }
+@media (max-width:860px){
+  .fm-r{grid-template-columns:minmax(0,1fr) auto;gap:2px 16px}
+  .fm-a{justify-self:start}
+  .fm-c{grid-column:1 / -1;order:3}
+  .fm-n{grid-column:2;grid-row:1}
+  .fm-a{grid-column:1 / -1;order:4;justify-self:start}
+  .pa-v2{grid-template-columns:1fr;gap:18px 0}
+}
+@media (max-width:720px){
+  .wd-h1 [lang="grc"]{font-size:50px}
+  .wd-h1 .tr{font-size:24px}
+  .facts{gap:14px 28px}
+  .facts > div{flex:1 1 40%}
+  html[data-pp-fch="ficha"] .facts > div{display:grid;grid-template-columns:1fr;gap:2px;flex:none}
+  .bk-l{grid-template-columns:1fr}
+  .bk-col + .bk-col > li:first-child .bk-gh{padding-top:16px}
+  .bk-cells{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bk-c{min-height:66px;padding:8px 9px}
+  .bk-c .n0{font-size:12.5px}
+  .vf{display:flex;width:100%}
+  .vf button{flex:1 1 auto;padding:6px 8px}
+  .lg-v li{grid-template-columns:1fr;gap:2px}
+  .lg-v .tg{grid-column:1}
+  .pn{grid-template-columns:1fr}
+  .pn .nx{text-align:left}
+  .sn{grid-template-columns:22px minmax(0,1fr)}
+  .kw{grid-template-columns:auto minmax(0,1fr);gap:4px 12px;padding:11px 0}
+  .kw .fr{grid-column:1 / -1;order:3;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .kw .tg{grid-column:2;grid-row:1;white-space:normal;min-width:0}
+  .pk{flex:1 1 100%}
+  .pk-b{width:100%;justify-content:space-between}
+}
+</style>
+</head>
+<body data-page="w-sarx">
+<main class="main" lang="es">
+  <div class="col wd-head" data-label="σάρξ">
+    <div class="wd-bar">
+      <nav class="crumbs" aria-label="Ruta"><a href="#" data-nb>Biblia</a><span class="sl" aria-hidden="true">/</span><a href="#" data-nb>Nuevo Testamento</a><span class="sl" aria-hidden="true">/</span><span aria-current="page"><span lang="grc">σάρξ</span></span></nav>
+      <button class="tl-t" type="button" id="tl-t" aria-pressed="true"><span>Transliteración</span><span class="sw" aria-hidden="true"></span></button>
+    </div>
+    <p class="ctx">Viniste desde <a class="ln-go" href="#" data-nb>Juan 6:53</a></p>
+    <div class="pp" data-pp="trv" data-chosen="toggle" data-label="Probar: la transliteración" data-opts="inline=Siempre al lado|toggle=Interruptor «Transliteración»" data-default="toggle"><b>Siempre al lado:</b> cada palabra griega lleva su transliteración, en cursiva chica y gris; no hay nada que activar. <b>Interruptor:</b> igual, pero el lector la apaga o la prende con «Transliteración» (arriba a la derecha) y el sitio lo recuerda. En ambas, los párrafos griegos llevan la transliteración debajo.</div>
+    <div class="pp" data-pp="tsch" data-chosen="acad" data-label="Probar: el esquema" data-opts="acad=Académica (ē, ō, ph, ch)|simple=Simple (e, o, f, kh)" data-default="acad"><b>Académica:</b> la que usan STEPBible y las ediciones críticas: ē, ō, ph, ch. <b>Simple:</b> sin macrones, pensada para leerla en español: e, o, f, kh. Mismo algoritmo para toda palabra griega; la académica coincide con la transliteración de STEPBible en las 147 formas de σάρξ.</div>
+    <div class="pp" data-pp="ctx" data-chosen="juan653" data-label="Probar: de dónde vino el lector" data-opts="juan653=Llegó desde un versículo (Juan 6:53)|lugar=Llegó desde un lugar (Ignacio de Antioquía)|none=Llegó de cualquier parte" data-default="juan653"><b>Desde un versículo o un lugar:</b> aparece «Viniste desde …» con el versículo o el lugar de donde vino el lector, y con un versículo el pie lleva a las palabras vecinas de ese versículo. <b>De cualquier parte:</b> la página no nombra ningún pasaje y el pie lleva a la palabra anterior y siguiente del léxico.</div>
+    <p class="kicker wd-k">Estudio de una palabra griega</p>
+    <h1 class="wd-h1"><span lang="grc">σάρξ</span><span class="tr" data-g="σάρξ"></span></h1>
+    <p class="lede">Carne. El léxico distingue la sustancia del cuerpo, el cuerpo entero, «toda carne» como todo ser viviente, el parentesco natural y la naturaleza humana sujeta al deseo.</p>
+    <div class="pp" data-pp="fch" data-chosen="fila" data-label="Probar: los datos de la cabecera" data-opts="fila=En fila|ficha=Ficha compacta" data-default="fila"><b>En fila:</b> datos sueltos con rótulo chico arriba y valor en serif, como en 09. <b>Ficha compacta:</b> los mismos datos en dos columnas, rótulo a la izquierda y valor a la derecha, separados por una línea; ocupa más alto pero se lee de corrido.</div>
+    <dl class="facts" id="facts"></dl>
+  </div>
+
+  <section class="sec wide" id="donde" data-label="Dónde aparece">
+    <h2>Dónde aparece</h2>
+    <p class="corpus">En el Nuevo Testamento</p>
+    <p class="corpus-e">Versículos por libro, en el orden del canon.</p>
+    <div class="pp" data-pp="dnd" data-chosen="filas" data-label="Probar: los libros" data-opts="filas=Filas con barra|grilla=Grilla por grupos" data-default="filas"><b>Filas con barra:</b> los 27 libros en orden, con una barra por cantidad y los ceros. <b>Grilla por grupos:</b> evangelios, Hechos, cartas y Apocalipsis en bloques; cada libro una celda con su número. Sin cambios respecto de la v1; tocar un libro deja solo sus versículos abajo.</div>
+    <div class="bk-l" id="bk-l"></div>
+    <div class="bk-g" id="bk-g"></div>
+    <p class="dn-tip">Tocá un libro para ver sus versículos.</p>
+  </section>
+
+  <section class="sec col" id="significa" data-label="Qué significa">
+    <h2>Qué significa</h2>
+    <p class="sub">Los usos que el léxico de Abbott-Smith (1922) distingue, con un versículo de ejemplo de cada uno. La etiqueta dice de dónde viene el uso.</p>
+    <div class="pp" data-pp="sen" data-label="Probar: los sentidos" data-opts="abierto=Todos abiertos|plegado=Un renglón por sentido, plegado" data-default="abierto"><b>Todos abiertos:</b> cada sentido con su título, una explicación corta, un versículo de ejemplo y, a un toque, los lugares que cita el léxico. <b>Un renglón por sentido, plegado:</b> el título y el ejemplo en una línea; al tocar, se abre la explicación y el versículo entero. Es el mismo despliegue de «Los lugares».</div>
+    <ol class="sen-l" id="sen"></ol>
+    <p class="sn-note">Traducción de Doctrina asistida por IA, desde Abbott-Smith, <i>A Manual Greek Lexicon of the New Testament</i> (1922, dominio público), en la versión de STEPBible (CC BY 4.0). Texto de los ejemplos: Reina-Valera 1909.</p>
+    <button class="btn-more" type="button" id="as-b" aria-expanded="false" aria-controls="as-en">${plus}<span>Ver la entrada original, en inglés</span></button>
+    <p class="as-en" id="as-en" lang="en" hidden></p>
+  </section>
+
+  <section class="sec col" id="formas" data-label="Sus formas">
+    <h2>Sus formas</h2>
+    <p class="sub">El griego cambia la terminación según el caso y el número de la palabra en la frase. Estas son las seis formas que aparecen en el Nuevo Testamento, con las veces que se usa cada una.</p>
+    <ul class="fm-l" id="fm"></ul>
+    <p class="sn-note">Caso y número de cada aparición: análisis de <button class="ln-side" type="button" data-cite="na28src">STEPBible (TAGNT)</button>.</p>
+  </section>
+
+  <section class="sec wide" id="lugares" data-label="Los lugares">
+    <h2>Los lugares, uno por uno</h2>
+    <p class="lg-st" id="lg-st"></p>
+    <div class="pp" data-pp="lug" data-chosen="libros" data-label="Probar: la lista de lugares" data-opts="hoy=Hoy, todo abierto|libros=Por libros, plegado|refs=Referencias con vista previa|mas=Primeros y «Mostrar más»" data-default="libros"><b>Hoy, todo abierto:</b> la lista de la v1 con el texto de cada uno de los 126 versículos; sirve para ver cuánto mide. <b>Por libros, plegado:</b> un renglón por libro con su cantidad y, arriba, el filtro por forma como el de Videos (03); al abrir un libro, sus versículos como fragmentos de una línea con la palabra marcada. <b>Referencias con vista previa:</b> solo las referencias, agrupadas por libro; al pasar o tocar una se ve el versículo. <b>Primeros y «Mostrar más»:</b> una lista de fragmentos con los primeros 12, «Mostrar 12 más» y filtros por libro y por forma.</div>
+    <div class="lg-ctl" id="lg-ctl">
+      <div class="pk" id="pk"><button class="pk-b" type="button" id="pk-b" aria-haspopup="listbox" aria-expanded="false" aria-controls="pk-l"><span class="k">Libro</span><span class="v" id="pk-v">Todos</span></button><div class="pk-l" id="pk-l" role="listbox" aria-label="Libro" hidden></div></div>
+      <div class="vf" id="vf" role="group" aria-label="Forma"></div>
+    </div>
+    <div class="lg-f" id="lg-f" hidden></div>
+    <ul class="lg-l" id="lg"></ul>
+    <div class="lg-ft only-mas" id="lg-ft"></div>
+    <p class="lg-ed">Texto en español: Reina-Valera 1909 (dominio público). Está marcada la palabra «carne» donde la traducción la usa. Efesios 2:15 corresponde a 2:14 en la numeración del NA28.</p>
+  </section>
+
+  <section class="sec col" id="padres" data-label="En los Padres">
+    <h2>En los Padres que cita Doctrina</h2>
+    <p class="sub">Dónde aparece la palabra en los textos griegos de los Padres que Doctrina ya cita.</p>
+    <div class="pp" data-pp="pad" data-chosen="ficha" data-label="Probar: la estructura de la sección" data-opts="apilado=Apilado: griego, transliteración, español|columnas=Dos columnas: griego y español|ficha=Español primero, con la ficha de la palabra" data-default="ficha"><b>Apilado:</b> lo de la v1 con la transliteración debajo del griego; es lo más simple y se lee de arriba abajo. <b>Dos columnas:</b> el griego con su transliteración a un lado y la traducción al otro, para recorrer las dos juntas; en el celular van una debajo de otra. <b>Español primero:</b> la traducción manda, el griego va debajo con la palabra marcada, y una ficha dice qué forma es y cuántas veces aparece en el Nuevo Testamento.</div>
+    <ul class="pa-l"><li>
+      <div class="pa-v1">
+        <p class="pa-g" lang="grc" id="pa-g1"></p>
+        <p class="tlb" data-gb="pa-g1"></p>
+        <p class="pa-es" id="pa-es1"></p>
+        <p class="pa-w" id="pa-w1"></p>
+        <p class="pa-lab">Griego de la edición de Kirsopp Lake (1912). Traducción de Doctrina asistida por IA.</p>
+      </div>
+      <div class="pa-v2">
+        <div><p class="pa-lb">Griego</p><p class="pa-g" lang="grc" id="pa-g2"></p><p class="tlb" data-gb="pa-g2"></p></div>
+        <div><p class="pa-lb">Español</p><p class="pa-es" id="pa-es2"></p></div>
+        <p class="pa-w" id="pa-w2" style="grid-column:1 / -1"></p>
+        <p class="pa-lab" style="grid-column:1 / -1">Griego de la edición de Kirsopp Lake (1912). Traducción de Doctrina asistida por IA.</p>
+      </div>
+      <div class="pa-v3">
+        <p class="pa-es" id="pa-es3"></p>
+        <p class="pa-g" lang="grc" id="pa-g3"></p>
+        <p class="tlb" data-gb="pa-g3"></p>
+        <div class="wd-box"><p class="lb">La palabra en esta cita</p><p class="fw"><span lang="grc">σάρκα</span><i class="tl" data-g="σάρκα"></i></p><p class="fd" id="pa-fd"></p><a class="ln-go" href="#" id="pa-ver" data-nb>Ver los 37 lugares con esta forma</a></div>
+        <p class="pa-w" id="pa-w3"></p>
+        <p class="pa-lab">Griego de la edición de Kirsopp Lake (1912). Traducción de Doctrina asistida por IA.</p>
+      </div>
+    </li></ul>
+  </section>
+
+
+  <nav class="pn pn-d" aria-label="Otras palabras">
+    <a href="#" data-nb><small>Palabra anterior</small><span><span lang="grc">σάρκινος</span><i class="tl" data-g="σάρκινος"></i>, «de carne»</span></a>
+    <a class="nx" href="#" data-nb><small>Palabra siguiente</small><span><span lang="grc">Σερούχ</span><i class="tl" data-g="Σερούχ"></i>, un nombre propio</span></a>
+  </nav>
+  <nav class="pn pn-c" aria-label="Otras palabras de Juan 6:53">
+    <a href="#" data-nb><small>Palabra anterior en Juan 6:53</small><span><span lang="grc">φάγητε</span><i class="tl" data-g="φάγητε"></i>, de <span lang="grc">φαγεῖν</span><i class="tl" data-g="φαγεῖν"></i>, «comer»</span></a>
+    <a class="nx" href="#" data-nb><small>Palabra siguiente en Juan 6:53</small><span><span lang="grc">υἱοῦ</span><i class="tl" data-g="υἱοῦ"></i>, de <span lang="grc">υἱός</span><i class="tl" data-g="υἱός"></i>, «hijo»</span></a>
+  </nav>
+</main>
+<script src="base.js"></script>
+<script src="translit.js"></script>
+<script src="data07.js"></script>
+<script>
+(() => {
+const esc = D.esc, $ = D.$, $$ = D.$$;
+const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.btn-more').forEach(b => { b.innerHTML = b.innerHTML.replace('${plus}', D.ic.plus); });
+const BK = [['Matt', 'Mateo', 'ev'], ['Mark', 'Marcos', 'ev'], ['Luke', 'Lucas', 'ev'], ['John', 'Juan', 'ev'], ['Acts', 'Hechos', 'he'], ['Rom', 'Romanos', 'pa'], ['1Cor', '1 Corintios', 'pa'], ['2Cor', '2 Corintios', 'pa'], ['Gal', 'Gálatas', 'pa'], ['Eph', 'Efesios', 'pa'], ['Phil', 'Filipenses', 'pa'], ['Col', 'Colosenses', 'pa'], ['1Thess', '1 Tesalonicenses', 'pa'], ['2Thess', '2 Tesalonicenses', 'pa'], ['1Tim', '1 Timoteo', 'pa'], ['2Tim', '2 Timoteo', 'pa'], ['Titus', 'Tito', 'pa'], ['Phlm', 'Filemón', 'pa'], ['Heb', 'Hebreos', 'ot'], ['Jas', 'Santiago', 'ot'], ['1Pet', '1 Pedro', 'ot'], ['2Pet', '2 Pedro', 'ot'], ['1John', '1 Juan', 'ot'], ['2John', '2 Juan', 'ot'], ['3John', '3 Juan', 'ot'], ['Jude', 'Judas', 'ot'], ['Rev', 'Apocalipsis', 'ap']];
+const GN = {ev: 'Evangelios', he: 'Hechos', pa: 'Cartas de Pablo', ot: 'Hebreos y las otras cartas', ap: 'Apocalipsis'};
+BK.forEach(b => { b[1] = b[1].replace(/^(\d) /, '$1 '); });
+const name = Object.fromEntries(BK.map(b => [b[0], b[1]]));
+const idx = Object.fromEntries(BK.map((b, i) => [b[0], i]));
+const SX = window.SARX;
+const CASE = {N: 'nominativo', G: 'genitivo', D: 'dativo', A: 'acusativo'}, CASEA = {N: 'nom.', G: 'gen.', D: 'dat.', A: 'acus.'};
+const NUM = {S: 'singular', P: 'plural'}, NUMA = {S: 'sing.', P: 'pl.'};
+const morphOf = m => { const p = m.split('-')[1]; return {c: p[0], n: p[1]}; };
+const caseLong = m => { const x = morphOf(m); return CASE[x.c] + ' ' + NUM[x.n]; };
+const caseShort = m => { const x = morphOf(m); return CASEA[x.c] + ' ' + NUMA[x.n]; };
+
+/* verses */
+const VM = {};
+SX.occ.forEach(([b, c, v, form, morph]) => {
+  const k = b + '.' + c + '.' + v;
+  const e = VM[k] || (VM[k] = {k, b, c, v, forms: [], text: SX.rv[k]});
+  e.forms.push({form, morph});
+});
+const V = Object.values(VM).sort((x, y) => idx[x.b] - idx[y.b] || x.c - y.c || x.v - y.v);
+const nOcc = SX.occ.length, nVs = V.length;
+const byBook = {};
+V.forEach(e => { (byBook[e.b] = byBook[e.b] || []).push(e); });
+const cnt = b => (byBook[b] || []).length;
+const MAX = Math.max(...BK.map(b => cnt(b[0])));
+const refOf = e => name[e.b] + ' ' + e.c + ':' + e.v;
+const short = e => e.c + ':' + e.v;
+
+/* forms in textbook order */
+const FORM_ORDER = ['N-NSF', 'N-GSF', 'N-DSF', 'N-ASF', 'N-GPF', 'N-APF'];
+const FORMS = FORM_ORDER.map(m => {
+  const o = SX.occ.filter(x => x[4] === m);
+  return {morph: m, form: o[0][3], n: o.length, vs: new Set(o.map(x => x[0] + '.' + x[1] + '.' + x[2])).size};
+});
+const FMAX = Math.max(...FORMS.map(f => f.n));
+
+/* transliteration */
+let scheme = 'acad';
+const tr = g => trGreek(g, scheme);
+const gk = g => '<span lang="grc">' + esc(g) + '</span><i class="tl" data-g="' + esc(g) + '"></i>';
+const paintTl = root => {
+  (root || document).querySelectorAll('.tl[data-g], .tr[data-g]').forEach(el => { el.textContent = tr(el.dataset.g); });
+  (root || document).querySelectorAll('.tlb[data-gb]').forEach(el => { el.textContent = tr(document.getElementById(el.dataset.gb).textContent); });
+};
+const tlState = () => (D.store.get('tl', 'on') === 'off' ? 'off' : 'on');
+const applyTl = () => {
+  const inline = document.documentElement.getAttribute('data-pp-trv') === 'inline';
+  const on = inline || tlState() === 'on';
+  document.documentElement.dataset.tl = on ? 'on' : 'off';
+  $('#tl-t').setAttribute('aria-pressed', String(tlState() === 'on'));
+};
+$('#tl-t').addEventListener('click', () => { D.store.set('tl', tlState() === 'on' ? 'off' : 'on'); applyTl(); });
+
+/* header facts */
+const dv = (g, n, extra) => '<span class="dv">' + gk(g) + (extra || '') + '</span>';
+$('#facts').innerHTML =
+  '<div><dt>Significado literal</dt><dd>carne</dd></div>' +
+  '<div><dt>Clase de palabra</dt><dd>sustantivo femenino</dd></div>' +
+  '<div><dt>En el Nuevo Testamento</dt><dd><button class="ln-side" type="button" data-cite="na28src">' + nOcc + ' veces</button> <span class="muted">en ' + nVs + ' versículos</span></dd></div>' +
+  '<div><dt>Genitivo</dt><dd>' + gk('σαρκός') + '</dd></div>' +
+  '<div><dt>Palabras derivadas</dt><dd>' + dv('σαρκικός', 0, '<span class="muted">' + SX.rel.G4559.n + ' veces</span>') + dv('σάρκινος', 0, '<span class="muted">' + SX.rel.G4560.n + ' veces</span>') + '</dd></div>' +
+  '<div><dt>Número de Strong</dt><dd class="st">G4561</dd></div>';
+const paintCtx = () => {
+  const v = document.documentElement.getAttribute('data-pp-ctx') || 'juan653';
+  const c = $('.ctx');
+  c.innerHTML = v === 'lugar' ? 'Viniste desde <a class="ln-go" href="#" data-nb>Ignacio de Antioquía</a>' : 'Viniste desde <a class="ln-go" href="#" data-nb>Juan 6:53</a>';
+  document.documentElement.dataset.arr = v === 'juan653' ? 'verse' : v === 'lugar' ? 'place' : 'none';
+};
+$('#lg-st').textContent = 'Los ' + nVs + ' versículos del Nuevo Testamento donde aparece, en el orden del canon, con la Reina-Valera 1909.';
+
+/* senses (Abbott-Smith, translated) */
+const a = (txt, lab) => '<a class="ln-go" href="#" data-nb' + (lab ? ' aria-label="' + esc(lab) + '"' : '') + '>' + esc(txt) + '</a>';
+const ref = (b, cv) => name[b] + ' ' + cv;
+const SENSES = [
+  {k: 's1', t: 'La carne del cuerpo', tag: 'Uso griego', d: 'La sustancia blanda del cuerpo de un ser vivo: «carne y huesos». En plural, la carne de muchos.', v: ['Luke.24.39', 'Lucas 24:39'], refs: [['1Cor', '15:39'], ['2Cor', '12:7'], ['Gal', '6:13'], ['Luke', '24:39'], ['Rev', '17:16'], ['Rev', '19:18'], ['Jas', '5:3']]},
+  {k: 's2', t: 'El cuerpo entero', tag: 'Uso griego', d: 'Todo el cuerpo, como $SOMA: «una sola carne». También lo material del ser humano frente a lo inmaterial (el espíritu, el alma), la vida presente «en la carne» y la vida terrena de Cristo.', v: ['Matt.19.5', 'Mateo 19:5'], refs: [['Acts', '2:26'], ['Mark', '10:8'], ['Matt', '19:5'], ['1Cor', '6:16'], ['Eph', '5:31'], ['1Cor', '5:5'], ['2Cor', '7:1'], ['1Pet', '3:18'], ['Gal', '2:20'], ['Phil', '1:22'], ['Heb', '5:7']]},
+  {k: 's3', t: 'Todo ser humano', tag: 'Modo de hablar hebreo', d: 'Un ser viviente: «toda carne» es todo ser humano, sobre todo en su condición mortal. También «venido en carne».', v: ['Luke.3.6', 'Lucas 3:6'], refs: [['Matt', '24:22'], ['Mark', '13:20'], ['1Pet', '1:24'], ['John', '1:14'], ['Luke', '3:6'], ['John', '17:2'], ['Acts', '2:17'], ['1John', '4:2'], ['1Tim', '3:16']]},
+  {k: 's4', t: 'El parentesco natural', tag: 'Modo de hablar hebreo', d: 'El origen y el parentesco naturales: «los hijos de la carne», «según la carne».', v: ['Rom.9.8', 'Romanos 9:8'], refs: [['Rom', '9:8'], ['Rom', '9:3'], ['Rom', '9:5'], ['1Cor', '10:18'], ['Gal', '4:23'], ['Gal', '4:29'], ['Rom', '11:14']]},
+  {k: 's5', t: 'La debilidad humana', tag: 'Uso griego', d: 'La naturaleza física, sujeta a la sensación y al deseo, sin juicio moral: opuesta al espíritu («el espíritu está dispuesto, pero la carne es débil»), «la voluntad de la carne», «el deseo de la carne».', v: ['Matt.26.41', 'Mateo 26:41'], refs: [['Rom', '7:18'], ['Rom', '13:14'], ['Matt', '26:41'], ['Mark', '14:38'], ['John', '1:13'], ['1John', '2:16'], ['1Pet', '4:1']]},
+  {k: 's6', t: 'La naturaleza inclinada al pecado, en Pablo', tag: 'Uso griego', d: 'En sentido ético, sobre todo en las cartas de Pablo: la carne como sede y vehículo de los deseos que llevan al pecado; opuesta a la mente y al espíritu.', v: ['Gal.5.17', 'Gálatas 5:17'], refs: [['Rom', '7:25'], ['Rom', '8:4–9'], ['Rom', '8:12'], ['Gal', '5:16'], ['Gal', '5:17'], ['Gal', '5:19'], ['Gal', '6:8']]}
+];
+const senOpen = new Set();
+const senHtml = (g, folded) => {
+  const text = SX.rv[g.v[0]];
+  const refs = g.refs.map(r => a(ref(r[0], r[1]))).join(', ');
+  const body = '<p class="sen-d">' + esc(g.d).replace('$SOMA', gk('σῶμα')) + '</p><blockquote class="sen-q"><p>' + hl(esc(text)) + '</p><a class="ln-go" href="#" data-nb>' + esc(g.v[1]) + '</a></blockquote><details class="sen-m"><summary>Los ' + g.refs.length + ' lugares que cita el léxico</summary><p class="refs">' + refs + '</p></details>';
+  if (!folded) return '<li class="sen" data-fk="' + g.k + '"><div class="sen-h"><h3 class="sen-t">' + esc(g.t) + '</h3><span class="otag">' + esc(g.tag) + '</span></div>' + body + '</li>';
+  const op = senOpen.has(g.k);
+  return '<li class="sen" data-fk="' + g.k + '"><button class="sen-b" type="button" aria-expanded="' + op + '" aria-controls="sp-' + g.k + '" data-sen="' + g.k + '"><span class="sen-h"><span class="sen-t">' + esc(g.t) + '</span><span class="otag">' + esc(g.tag) + '</span></span><span class="sen-1">' + fragment(text, 26, 40) + '</span>' + D.ic.chev + '</button><div class="lg-p" id="sp-' + g.k + '"' + (op ? '' : ' hidden') + '><div class="sen-x">' + body + '</div></div></li>';
+};
+const paintSen = () => { const f = document.documentElement.getAttribute('data-pp-sen') === 'plegado'; $('#sen').innerHTML = SENSES.map(g => senHtml(g, f)).join(''); paintTl($('#sen')); };
+const AS = 'σάρξ, σαρκός, ἡ\n[in LXX chiefly for בָּשָׂר ;]\nflesh;\n1. as in cl. generally,\n(a) prop., of the soft substance of the animal body: 1Co.15:39, 2Co.12:7, Gal.6:13, al.; σ. καὶ αἷμα, 1Co.5:50; σ. καὶ ὀστέα, Luk.24:39; pl., of the flesh of many or parts of the flesh of one (cl.), Rev.17:16 19:18; φαγεῖν, Re, ll. with (cf. κατεσθίειν, 4Ki.9:36, al., and βιβρώσκειν, frequently in l.); metaphorically, Jas.5:3; mystically, φ. (τρώγειν) τὴν σ. τοῦ υἱοῦ τ. ἀνθρώπου, Jhn.6:52-56;\n(b) Of the whole substance of the body, = σῶμα: Act.2:26 (LXX), 31, 2Co.12:7, Gal.4:14, Eph.5:29; μία σ., Mrk.10:8; εἰς σ. μίαν (Gen.2:24), Mat.19:5, Mrk.10:8, 1Co.6:16, Eph.5:31; hence, of the material as opposite to the immaterial part of man (cf. Lft., Notes, 88): opposite to πνεῦμα, 1Co.5:5, 2Co.7:1, Col.2:5, 1Pe.3:18, 4:6; to ψύχη, Act.2:31, Rec.; of the present life, ἐν (τῇ) σ., Rom.7:5, Gal.2:20, Php.1:22, 24 1Pe.4:2; of Christ\'s life on earth, αἱ ἡμέραι τ. σαρκὸς αὐτοῦ, Heb.5:7; of things pertaining to the body, ἐν (τῇ) σ., Gal.6:12, 13 Php.3:3, 4.\n2. As in Heb. idiom,\n(a) of a living creature: πᾶσα σ. (Heb. כָּל־בָּשָׂר; cf. Bl., §47, 9), Mat.24:22, Mrk.13:20, 1Pe.1:24; esp. of man and his mortality (Psa.55 (56):5, Sir.28:5, al.), Jhn.1:14; πᾶσα σ. (see supr.), Luk.3:6, Jhn.17:2, Act.2:17, ἐν σ., 1Jo.4:2, 1Ti.3:16;\n(b) of natural origin and relationship (Gen.2:24, Isa.58:7, al.): τέκνα τῆς σ., Rom.9:8; κατὰ σάρκα, ib. 3, 5, 1Co.10:18, Gal.4:23, 29; ἡ σ. μου, Rom.11:14 (cf. Jdg.9:2, 2Ki.5:1, al.).\n3. Of the physical nature as subject to sensation and desire (Plut.),\n(a) without any ethical disparagement: Rom.7:18 13:14; opposite to πνεῦμα, Mat.26:41, Mrk.14:38; τ. θέλημα τῆς σ., Jhn.1:13; ἡ ἐπιθυμία τῆς σ., 1Jn.2:16; pl., 2Pe.2:18; παθεῖν σαρκί, 1Pe.4:1;\n(b) in ethical sense, esp. in Pauline Epp., of the flesh as the seat and vehicle of sinful desires: opposite to νοῦς, Rom.7:25; to πνεῦμα, Rom.8:4-9, 12, 13, Gal.5:16, 17 19 6:8 (cf. DB, ii, 14f.; iv, 165f.; Cremer, 844ff.).\n(AS)';
+$('#as-en').textContent = AS;
+const asb = $('#as-b'), asp = $('#as-en');
+asb.addEventListener('click', () => {
+  const op = asp.hidden;
+  asp.hidden = !op;
+  asb.setAttribute('aria-expanded', String(op));
+  asb.querySelector('span').textContent = op ? 'Ocultar la entrada original' : 'Ver la entrada original, en inglés';
+  if (op && !reduce()) asp.animate([{opacity: 0, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: 420, easing: 'cubic-bezier(0.22, 1, 0.36, 1)'});
+});
+
+/* forms */
+$('#fm').innerHTML = FORMS.map(f => '<li class="fm-r" data-fk="' + esc(f.morph) + '"><span class="fm-f">' + gk(f.form) + '</span><span class="fm-c">' + caseLong(f.morph).replace(/^./, c => c.toUpperCase()) + '</span><span class="fm-n"><span class="bar" style="width:' + Math.max(3, f.n / FMAX * 72) + 'px"></span><b>' + f.n + '</b></span><button class="fm-a" type="button" data-form="' + esc(f.morph) + '">' + (f.vs === 1 ? 'Ver el versículo' : 'Ver los ' + f.vs + ' versículos') + '</button></li>').join('');
+
+/* where it appears */
+const order = ['ev', 'he', 'pa', 'ot', 'ap'];
+const colOf = gs => '<ul class="bk-col">' + gs.map(g => {
+  const bs = BK.filter(b => b[2] === g);
+  return '<li><p class="bk-gh">' + GN[g] + '</p>' + bs.map(b => {
+    const n = cnt(b[0]);
+    const bar = n ? '<span class="bar" style="width:' + Math.max(3, n / MAX * 100) + '%"></span>' : '<span></span>';
+    return n ? '<button class="bk-r" type="button" data-bk="' + b[0] + '" aria-pressed="false"><span>' + esc(b[1]) + '</span>' + bar + '<span class="c">' + n + '</span></button>'
+      : '<div class="bk-r z"><span>' + esc(b[1]) + '</span><span></span><span class="c">0</span></div>';
+  }).join('') + '</li>';
+}).join('') + '</ul>';
+$('#bk-l').innerHTML = colOf(['ev', 'he', 'pa']) + colOf(['ot', 'ap']);
+$('#bk-g').innerHTML = order.map(g => '<p class="gh">' + GN[g] + '</p><div class="bk-cells">' + BK.filter(b => b[2] === g).map(b => {
+  const n = cnt(b[0]);
+  return n ? '<button class="bk-c" type="button" data-bk="' + b[0] + '" aria-pressed="false" style="--k:' + (n / MAX).toFixed(3) + '"><span class="n0">' + esc(b[1]) + '</span><span class="c">' + n + '</span></button>'
+    : '<div class="bk-c z" style="--k:0"><span class="n0">' + esc(b[1]) + '</span><span class="c">0</span></div>';
+}).join('') + '</div>').join('');
+
+/* the places */
+let book = null, formF = null, shown = 12, variant = 'libros';
+const STEP = 12;
+const open = new Set();
+const isVar = v => document.documentElement.getAttribute('data-pp-lug') === v;
+const vis = () => V.filter(e => (!book || e.b === book) && (!formF || e.forms.some(f => f.morph === formF)));
+const hl = s => s.replace(/(carn\w*)/gi, '<mark>$1</mark>');
+const fragment = (t, before, after) => {
+  const m = /carn\w*/i.exec(t);
+  if (!m) { const s = t.slice(0, before + after); const cut = s.length < t.length ? s.replace(/\s\S*$/, '') : s; return esc(cut) + (cut.length < t.length ? '…' : ''); }
+  let s = Math.max(0, m.index - before), e = Math.min(t.length, m.index + m[0].length + after);
+  if (s > 0) s = t.indexOf(' ', s) + 1 || s;
+  if (e < t.length) { const sp = t.lastIndexOf(' ', e); if (sp > m.index + m[0].length) e = sp; }
+  return (s > 0 ? '…' : '') + hl(esc(t.slice(s, e))) + (e < t.length ? '…' : '');
+};
+const tag = e => {
+  const seen = new Set();
+  return e.forms.filter(f => !seen.has(f.morph + f.form) && seen.add(f.morph + f.form)).map(f => '<span class="tg">' + gk(f.form) + ' · ' + caseShort(f.morph) + '</span>').join('');
+};
+const tagOne = e => '<span class="tg">' + e.forms.filter((f, i, arr) => arr.findIndex(g => g.form === f.form && g.morph === f.morph) === i).map(f => gk(f.form) + ' · ' + caseShort(f.morph)).join(' ; ') + '</span>';
+const kwRow = (e, full, tagName) => '<' + (tagName || 'div') + ' class="kw" data-fk="' + e.k + '"><a class="ln-go rf" href="#" data-nb aria-label="' + esc(refOf(e)) + '">' + esc(full ? refOf(e) : short(e)) + '</a><p class="fr">' + fragment(e.text, 30, 50) + '</p>' + tagOne(e) + '</' + (tagName || 'div') + '>';
+const hoyRows = () => BK.filter(b => cnt(b[0]) && vis().some(e => e.b === b[0])).map(b => {
+  const vs = vis().filter(e => e.b === b[0]);
+  return '<li data-fk="' + b[0] + '"><p class="lg-b">' + esc(b[1]) + '<span class="n">' + vs.length + (vs.length === 1 ? ' versículo' : ' versículos') + '</span></p><ul class="lg-v">' + vs.map(e => '<li><span class="rf">' + a(short(e), refOf(e)) + '</span><p class="tx">' + hl(esc(e.text)) + '</p>' + tagOne(e) + '</li>').join('') + '</ul></li>';
+}).join('');
+const librosRows = () => BK.filter(b => vis().some(e => e.b === b[0])).map(b => {
+  const vs = vis().filter(e => e.b === b[0]);
+  const op = open.has(b[0]) || book === b[0];
+  return '<li data-fk="' + b[0] + '"><button class="lg-bh" type="button" aria-expanded="' + op + '" aria-controls="p-' + b[0] + '" data-open="' + b[0] + '"><span class="nm">' + esc(b[1]) + '</span><span class="n">' + vs.length + (vs.length === 1 ? ' versículo' : ' versículos') + '</span>' + D.ic.chev + '</button><div class="lg-p" id="p-' + b[0] + '"' + (op ? '' : ' hidden') + '><div class="kw-l">' + vs.map(e => kwRow(e, false)).join('') + '</div></div></li>';
+}).join('');
+const refsRows = () => BK.filter(b => vis().some(e => e.b === b[0])).map(b => {
+  const vs = vis().filter(e => e.b === b[0]);
+  return '<li data-fk="' + b[0] + '"><p class="lg-b">' + esc(b[1]) + '<span class="n">' + vs.length + (vs.length === 1 ? ' versículo' : ' versículos') + '</span></p><ul class="rf-l">' + vs.map(e => '<li><button class="rp" type="button" data-pv="' + e.k + '" aria-expanded="false">' + esc(short(e)) + '</button></li>').join('') + '</ul></li>';
+}).join('');
+const masRows = () => vis().slice(0, shown).map(e => '<li class="kw" data-fk="' + e.k + '"><a class="ln-go rf" href="#" data-nb aria-label="' + esc(refOf(e)) + '">' + esc(refOf(e)) + '</a><p class="fr">' + fragment(e.text, 30, 50) + '</p>' + tagOne(e) + '</li>').join('');
+const lg = $('#lg');
+const rows = () => (isVar('hoy') ? hoyRows : isVar('refs') ? refsRows : isVar('mas') ? masRows : librosRows)();
+const paintFilters = () => {
+  const f = $('#lg-f');
+  const parts = [];
+  if (book) parts.push('<button class="chip" type="button" data-clear="book" aria-label="Quitar el filtro ' + esc(name[book]) + '"><span>' + esc(name[book]) + '</span>' + D.ic.x + '</button>');
+  if (formF) { const ff = FORMS.find(x => x.morph === formF); parts.push('<button class="chip" type="button" data-clear="form" aria-label="Quitar el filtro de la forma ' + esc(ff.form) + '"><span>' + gk(ff.form) + '</span>' + D.ic.x + '</button>'); }
+  const n = vis().length;
+  f.hidden = !parts.length;
+  f.innerHTML = parts.length ? '<span>' + n + ' de ' + nVs + ' versículos</span>' + parts.join('') + '<button class="lg-clear" type="button" data-clear="all">Quitar filtros</button>' : '';
+  paintTl(f);
+};
+const paintFooter = () => {
+  const ft = $('#lg-ft');
+  const all = vis().length;
+  if (!isVar('mas')) { ft.innerHTML = ''; return; }
+  const left = all - shown;
+  ft.innerHTML = (left > 0 ? '<button class="btn-more" type="button" data-more="1">' + D.ic.plus + '<span>Mostrar ' + Math.min(STEP, left) + ' más</span></button>' : (all > STEP ? '<button class="btn-more" type="button" data-more="0">' + D.ic.plus + '<span>Mostrar menos</span></button>' : '')) + '<span class="ct">Ves ' + Math.min(shown, all) + ' de ' + all + '</span>';
+  const m = ft.querySelector('[data-more="0"]'); if (m) m.setAttribute('aria-expanded', 'true');
+};
+const draw = () => { lg.innerHTML = rows(); paintTl(lg); paintFilters(); paintFooter(); paintCtl(); if (isVar('refs')) closePv(); };
+const redraw = flip => { if (flip && !reduce()) D.flip(lg, draw); else draw(); };
+
+/* "Forma" slide (Deslizar) */
+const vf = $('#vf');
+const formCount = m => V.filter(e => (!book || e.b === book) && e.forms.some(f => f.morph === m)).length;
+const paintVf = () => {
+  const opts = [[null, 'Todas', V.filter(e => !book || e.b === book).length]].concat(FORMS.map(f => [f.morph, f.form, formCount(f.morph)]));
+  vf.innerHTML = opts.map(o => '<button type="button" data-fm="' + (o[0] || '') + '" aria-pressed="' + (o[0] === formF) + '">' + (o[0] ? gk(o[1]) : esc(o[1])) + '<span class="n">' + o[2] + '</span></button>').join('');
+  paintTl(vf);
+};
+vf.addEventListener('click', e => {
+  const b = e.target.closest('button[data-fm]'); if (!b) return;
+  const m = b.dataset.fm || null;
+  if (m === formF) return;
+  setFilters({form: m}, true);
+});
+const paintCtl = () => {
+  $('#pk-v').textContent = book ? name[book] : 'Todos';
+  paintVf();
+  $$('#pk-l [role="option"]').forEach(o => o.setAttribute('aria-selected', String((o.dataset.pk || '') === (book || ''))));
+};
+
+/* Libro picker (Despliegue) */
+const pkB = $('#pk-b'), pkL = $('#pk-l');
+pkL.innerHTML = '<button class="pk-o" type="button" role="option" data-pk="" aria-selected="true"><span>Todos los libros</span><span class="n">' + nVs + '</span></button>' + order.map(g => '<p class="pk-gh" role="presentation">' + GN[g] + '</p>' + BK.filter(b => b[2] === g && cnt(b[0])).map(b => '<button class="pk-o" type="button" role="option" data-pk="' + b[0] + '" aria-selected="false"><span>' + esc(b[1]) + '</span><span class="n">' + cnt(b[0]) + '</span></button>').join('')).join('');
+const pkOpen = op => {
+  pkB.setAttribute('aria-expanded', String(op));
+  if (op) {
+    pkL.hidden = false;
+    const r = pkB.getBoundingClientRect();
+    pkL.classList.toggle('up', innerHeight - r.bottom < 300 && r.top > innerHeight - r.bottom);
+    if (!reduce()) { const h = pkL.offsetHeight; pkL.animate([{height: '0px', opacity: 0}, {height: h + 'px', opacity: 1}], {duration: 220, easing: 'cubic-bezier(0.22, 1, 0.36, 1)'}); }
+    const cur = pkL.querySelector('[aria-selected="true"]'); (cur || pkL.querySelector('.pk-o')).focus({preventScroll: true}); if (cur) cur.scrollIntoView({block: 'nearest'});
+  } else pkL.hidden = true;
+};
+pkB.addEventListener('click', () => pkOpen(pkL.hidden));
+pkL.addEventListener('click', e => { const o = e.target.closest('.pk-o'); if (!o) return; pkOpen(false); pkB.focus(); setFilters({book: o.dataset.pk || null}, true); });
+pkL.addEventListener('keydown', e => {
+  const os = $$('#pk-l .pk-o'); const i = os.indexOf(document.activeElement);
+  if (e.key === 'ArrowDown') { e.preventDefault(); os[Math.min(os.length - 1, i + 1)].focus(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); os[Math.max(0, i - 1)].focus(); }
+  else if (e.key === 'Home') { e.preventDefault(); os[0].focus(); }
+  else if (e.key === 'End') { e.preventDefault(); os[os.length - 1].focus(); }
+  else if (e.key === 'Escape') { e.preventDefault(); pkOpen(false); pkB.focus(); }
+  else if (e.key === 'Tab') pkOpen(false);
+});
+document.addEventListener('click', e => { if (!pkL.hidden && !e.target.closest('#pk')) pkOpen(false); });
+
+/* state changes */
+function setFilters(p, flip) {
+  if ('book' in p) book = p.book;
+  if ('form' in p) formF = p.form;
+  shown = STEP;
+  redraw(flip);
+}
+const paintBooks = () => $$('[data-bk]').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.bk === book)));
+document.addEventListener('click', e => {
+  const b = e.target.closest('button[data-bk]');
+  if (b) {
+    if (book === b.dataset.bk) { setFilters({book: null}, true); paintBooks(); return; }
+    setFilters({book: b.dataset.bk}, true); paintBooks();
+    D.scrollToEl($('#lugares'));
+    return;
+  }
+  const f = e.target.closest('button[data-form]');
+  if (f) { setFilters({form: f.dataset.form}, true); D.scrollToEl($('#lugares')); return; }
+  const c = e.target.closest('[data-clear]');
+  if (c) { const k = c.dataset.clear; setFilters(k === 'book' ? {book: null} : k === 'form' ? {form: null} : {book: null, form: null}, true); paintBooks(); return; }
+  const m = e.target.closest('[data-more]');
+  if (m) {
+    const total = vis().length;
+    if (m.dataset.more === '1') { shown = Math.min(total, shown + STEP); redraw(true); }
+    else { shown = STEP; const top = lg.getBoundingClientRect().top; redraw(true); if (top < 0) D.scrollToEl($('#lugares')); }
+    return;
+  }
+  const sb = e.target.closest('button[data-sen]');
+  if (sb) {
+    const id = sb.dataset.sen, panel = $('#sp-' + id), want = panel.hidden;
+    if (want) senOpen.add(id); else senOpen.delete(id);
+    sb.setAttribute('aria-expanded', String(want));
+    if (want) {
+      panel.hidden = false;
+      if (!reduce()) { const h = panel.offsetHeight; panel.animate([{height: '0px', opacity: 0}, {height: h + 'px', opacity: 1}], {duration: 220, easing: 'cubic-bezier(0.22, 1, 0.36, 1)'}); }
+    } else if (!reduce()) {
+      const h = panel.offsetHeight;
+      panel.animate([{height: h + 'px', opacity: 1}, {height: '0px', opacity: 0}], {duration: 160, easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)'}).finished.then(() => { panel.hidden = true; }, () => { panel.hidden = true; });
+    } else panel.hidden = true;
+    return;
+  }
+  const op = e.target.closest('button[data-open]');
+  if (op) {
+    const id = op.dataset.open, panel = $('#p-' + id), want = panel.hidden;
+    if (want) open.add(id); else open.delete(id);
+    op.setAttribute('aria-expanded', String(want));
+    if (want) {
+      panel.hidden = false;
+      if (!reduce()) { const h = panel.offsetHeight; panel.animate([{height: '0px', opacity: 0}, {height: h + 'px', opacity: 1}], {duration: 220, easing: 'cubic-bezier(0.22, 1, 0.36, 1)'}); }
+    } else if (!reduce()) {
+      const h = panel.offsetHeight;
+      panel.animate([{height: h + 'px', opacity: 1}, {height: '0px', opacity: 0}], {duration: 160, easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)'}).finished.then(() => { panel.hidden = true; }, () => { panel.hidden = true; });
+    } else panel.hidden = true;
+  }
+});
+
+/* preview (Referencias con vista previa) */
+const pv = document.createElement('div');
+pv.className = 'pv'; pv.hidden = true; pv.setAttribute('role', 'dialog'); pv.setAttribute('aria-label', 'Vista previa del versículo'); pv.tabIndex = -1;
+document.body.appendChild(pv);
+let pvOwner = null, pvPinned = false, pvT = 0;
+function closePv() { pv.hidden = true; if (pvOwner) pvOwner.setAttribute('aria-expanded', 'false'); pvOwner = null; pvPinned = false; }
+function openPv(btn, pinned) {
+  clearTimeout(pvT);
+  if (pvOwner && pvOwner !== btn) pvOwner.setAttribute('aria-expanded', 'false');
+  const e = VM[btn.dataset.pv];
+  pv.innerHTML = '<p class="pv-r">' + esc(refOf(e)) + '</p><p class="pv-t">' + hl(esc(e.text)) + '</p>' + tagOne(e).replace('class="tg"', 'class="tg"') + '<a class="ln-go" href="#" data-nb>Abrir el versículo</a>';
+  paintTl(pv);
+  pv.hidden = false; pvOwner = btn; pvPinned = !!pinned;
+  btn.setAttribute('aria-expanded', 'true');
+  const r = btn.getBoundingClientRect(), w = pv.offsetWidth, h = pv.offsetHeight;
+  let x = Math.max(16, Math.min(innerWidth - w - 16, r.left + scrollX - 12));
+  let y = r.bottom + scrollY + 8;
+  if (r.bottom + h + 12 > innerHeight && r.top > h + 12) y = r.top + scrollY - h - 8;
+  pv.style.left = x + 'px'; pv.style.top = y + 'px';
+}
+lg.addEventListener('pointerenter', e => { const b = e.target.closest && e.target.closest('[data-pv]'); if (b && e.pointerType === 'mouse' && !pvPinned) openPv(b, false); }, true);
+lg.addEventListener('pointerleave', e => { const b = e.target.closest && e.target.closest('[data-pv]'); if (b && e.pointerType === 'mouse' && !pvPinned) pvT = setTimeout(closePv, 220); }, true);
+pv.addEventListener('pointerenter', () => clearTimeout(pvT));
+pv.addEventListener('pointerleave', () => { if (!pvPinned) pvT = setTimeout(closePv, 220); });
+lg.addEventListener('focusin', e => { const b = e.target.closest('[data-pv]'); if (b && !pvPinned) openPv(b, false); });
+lg.addEventListener('click', e => {
+  const b = e.target.closest('[data-pv]'); if (!b) return;
+  if (pvOwner === b && pvPinned) closePv(); else openPv(b, true);
+});
+document.addEventListener('click', e => { if (!pv.hidden && !e.target.closest('[data-pv]') && !e.target.closest('.pv')) closePv(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !pv.hidden) { const o = pvOwner; closePv(); if (o) o.focus(); } });
+addEventListener('scroll', () => { if (!pv.hidden && !pvPinned) closePv(); }, {passive: true});
+
+/* the Fathers */
+const GR = 'Εὐχαριστίας καὶ προσευχῆς ἀπέχονται, διὰ τὸ μὴ ὁμολογεῖν τὴν εὐχαριστίαν σάρκα εἶναι τοῦ σωτῆρος ἡμῶν Ἰησοῦ Χριστοῦ τὴν ὑπὲρ τῶν ἁμαρτιῶν ἡμῶν παθοῦσαν, ἣν τῇ χρηστότητι ὁ πατὴρ ἤγειρεν.';
+const ES = 'Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la <b>carne</b> de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.';
+const W = '<b>Ignacio de Antioquía</b>, <button class="ln-side" type="button" data-cite="smyrn71">Carta a los Esmirniotas 7.1</button>, c. 107–110';
+['1', '2', '3'].forEach(n => {
+  $('#pa-g' + n).innerHTML = GR.replace('σάρκα', '<b>σάρκα</b>');
+  $('#pa-es' + n).innerHTML = ES;
+  $('#pa-w' + n).innerHTML = W;
+});
+const fSarka = FORMS.find(f => f.form === 'σάρκα');
+$('#pa-fd').textContent = 'Caso y número: acusativo singular, la misma forma que aparece ' + fSarka.n + ' veces en el Nuevo Testamento.';
+$('#pa-ver').textContent = 'Ver los ' + fSarka.vs + ' versículos con esta forma';
+$('#pa-ver').addEventListener('click', e => { e.preventDefault(); setFilters({form: fSarka.morph}, true); D.scrollToEl($('#lugares')); });
+$$('.tlb[data-gb]').forEach(el => { el.dataset.g = ''; });
+
+/* citation: the source of the counts */
+D.CITES.na28src = {forceKicker: true, kicker: 'Fuente', who: 'Texto griego NA28', work: 'datos de STEPBible (Tyndale House), CC BY 4.0', note: 'Apariciones de σάρξ (G4561) en el texto NA28: ' + nOcc + ' veces en ' + nVs + ' versículos.', ext: {url: 'https://github.com/STEPBible/STEPBible-Data', label: 'Ver los datos en STEPBible'}};
+D.READERS['r-ignatius'] = {
+  kicker: 'Ignacio de Antioquía', title: 'Carta a los Esmirniotas', meta: 'c. 107–110', target: '7.1',
+  sections: [{h: 'Capítulo 7', paras: [{n: '7.1', t: 'Se abstienen de la eucaristía y de la oración, porque no confiesan que la eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y a la que el Padre, en su bondad, resucitó. Así, los que contradicen el don de Dios mueren en sus disputas; más les valdría amar, para resucitar también ellos.'}]}],
+  foot: [
+    {h: 'Fecha y autenticidad', p: 'c. 107–110, la fecha tradicional. Otros autores proponen fechas más tardías: las reúne la sección «Fechas y autenticidad» de su ficha.'},
+    {h: 'Edición y licencia', p: 'Traducción al español de Doctrina, hecha desde el texto griego de la edición de Lake y cotejada con la traducción inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885.'}
+  ]
+};
+D.CITES.smyrn71 = {kicker: 'Cita', quote: 'Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.', who: 'Ignacio de Antioquía', work: 'Carta a los Esmirniotas', loc: '7.1', date: 'c. 107–110', y: 107, y2: 110, reader: 'r-ignatius', target: '7.1'};
+
+/* reactions to the proposal switches */
+addEventListener('pp', e => {
+  const k = e.detail.key;
+  if (k === 'tsch') { scheme = e.detail.value === 'simple' ? 'simple' : 'acad'; paintTl(); }
+  if (k === 'trv') applyTl();
+  if (k === 'lug') { shown = STEP; draw(); }
+  if (k === 'sen') paintSen();
+  if (k === 'ctx') paintCtx();
+});
+document.addEventListener('DOMContentLoaded', () => { $$('.pp[data-chosen]').forEach(el => { const b = el.querySelector('button[data-v="' + el.dataset.chosen + '"]'); if (b && !b.querySelector('.ch')) b.insertAdjacentHTML('beforeend', '<span class="ch">elegido</span>'); }); });
+scheme = document.documentElement.getAttribute('data-pp-tsch') === 'simple' ? 'simple' : 'acad';
+applyTl();
+paintTl();
+paintSen();
+paintCtx();
+draw();
+paintBooks();
+})();
+</script>
+</body>
+</html>

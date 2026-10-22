@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Línea de tiempo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<script>document.documentElement.dataset.ent='title-fade'</script>
+<style>
+body.s08 .main{padding-right:64px}
+.tlh .crumbs{margin-bottom:36px}
+.tlh h1{margin-bottom:10px}
+.tlh .sub{margin:0;max-width:640px}
+.tl-sec{margin-top:34px}
+.tl-hint{margin:0 0 10px;font-size:12.5px;color:var(--ink-3)}
+
+.ov{position:relative;height:54px;margin:0 0 8px;touch-action:none;user-select:none;-webkit-user-select:none;display:none}
+html[data-pp-nav="regla"] .ov{display:block}
+.ov-ax{position:absolute;left:0;right:0;top:30px;height:1px;background:var(--rule-2)}
+.ov-tk{position:absolute;top:26px;width:1px;height:5px;background:var(--rule-2)}
+.ov-tn{position:absolute;top:36px;transform:translateX(-50%);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.ov-tn.e0{transform:none}.ov-tn.e1{transform:translateX(-100%)}
+.ov-it{position:absolute;top:21px;height:7px;border-radius:2px;background:var(--ink-3);opacity:.28;min-width:2px}
+.ov-it.on{background:var(--accent);opacity:1}
+.ov-win{position:absolute;top:14px;height:22px;border:1px solid var(--accent);border-radius:4px;background:var(--accent-weak);cursor:grab}
+.ov-win:active{cursor:grabbing}
+.ov-win::before{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:44px;transform:translateY(-50%)}
+.ov-yrs{position:absolute;top:-1px;font-size:11px;font-weight:500;color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums;transform:translateX(-50%)}
+
+.tl-box{position:relative;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--rule-2) transparent;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);cursor:default}
+.tl-box.drag{cursor:grabbing;user-select:none}
+.tl-in{position:relative}
+.tl-gw{border-top:1px solid var(--rule)}
+.tl-gw:first-of-type{border-top:0}
+.tl-g{position:sticky;left:0;z-index:2;width:max-content;margin:0;padding:12px 10px 4px 0;font-size:12.5px;color:var(--ink-3);background:transparent}
+.tl-row{position:relative;height:40px}
+.tl-grid{position:absolute;top:0;bottom:0;width:1px;background:var(--rule);opacity:.5;pointer-events:none}
+.tl-band{position:absolute;top:0;bottom:0;background:var(--accent-weak);pointer-events:none;display:none}
+html[data-pp-sel="banda"] .tl-band{display:block}
+.tl-guide{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed var(--ink-3);pointer-events:none;display:none}
+html[data-pp-sel="guias"] .tl-guide{display:block}
+.ti{position:absolute;top:4px;height:34px;border:0;background:none;padding:0;margin:0;cursor:pointer;text-align:left;color:var(--ink-2);font-family:var(--ui);font-size:13.5px;line-height:1;white-space:nowrap;border-radius:4px}
+.ti .bar{position:absolute;top:6px;height:6px;border-radius:3px;background:var(--rule-2);transition:background-color var(--fast) ease}
+.ti .bar.dash{background:none;border-top:2px dashed var(--rule-2);height:0;top:8px;border-radius:0}
+.ti .dot{position:absolute;top:8px;width:2.5px;height:2.5px;border-radius:50%;background:var(--ink-3)}
+.ti .ring{position:absolute;top:4px;width:10px;height:10px;margin-left:-5px;border-radius:50%;border:1.5px solid var(--ink-3);background:var(--bg);transition:border-color var(--fast) ease,background-color var(--fast) ease}
+.ti .rng{position:absolute;top:7px;height:4px;border-radius:2px;background:var(--ink-3);opacity:.55}
+.ti .cl{position:absolute;top:7px;height:4px;border-radius:2px;background:var(--rule-2)}
+.ti .cl.open{border-radius:2px 0 0 2px}
+.ti .tx{position:absolute;top:19px;padding:0 1px;color:var(--ink-2);transition:color var(--fast) ease}
+.ti:hover .tx{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:3px}
+.ti:hover .bar:not(.dash){background:var(--ink-3)}
+.ti:hover .bar.dash{border-color:var(--ink-3)}
+.ti:hover .ring{border-color:var(--ink)}
+.ti[aria-pressed="true"] .tx{color:var(--ink);font-weight:600}
+.ti[aria-pressed="true"] .bar:not(.dash),.ti[aria-pressed="true"] .rng,.ti[aria-pressed="true"] .cl{background:var(--ink);opacity:1}
+.ti[aria-pressed="true"] .bar.dash{border-color:var(--ink)}
+.ti[aria-pressed="true"] .dot{background:var(--ink)}
+.ti[aria-pressed="true"] .ring{border-color:var(--ink);background:var(--ink)}
+.tl-ax{position:relative;height:40px;border-top:1px solid var(--ink-3)}
+.tl-ax.top{height:34px;border-top:0;border-bottom:1px solid var(--ink-3)}
+.tl-ax .tk{position:absolute;top:0;width:1px;height:6px;background:var(--ink-3)}
+.tl-ax.top .tk{top:auto;bottom:0}
+.tl-ax .tn{position:absolute;top:10px;transform:translateX(-50%);font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tl-ax.top .tn{top:auto;bottom:10px}
+.tl-ax .tn.e0{transform:none}.tl-ax .tn.e1{transform:translateX(-100%)}
+.tl-ax .sel{position:absolute;top:-3px;height:5px;background:var(--ink);border-radius:2px;min-width:3px}
+.tl-ax.top .sel{top:auto;bottom:-3px}
+.tl-ax .seln{position:absolute;top:10px;transform:translateX(-50%);font-size:12.5px;font-weight:600;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums;background:var(--bg);padding:0 4px;z-index:1}
+.tl-ax.top .seln{top:auto;bottom:9px}
+.tl-key{display:flex;flex-wrap:wrap;gap:6px 22px;margin:12px 0 0;padding:0;list-style:none;font-size:12.5px;color:var(--ink-3)}
+.tl-key li{display:flex;align-items:center;gap:8px}
+.tl-key svg{flex:none;color:var(--rule-2)}
+
+.td-peek-w{position:sticky;bottom:env(safe-area-inset-bottom,0px);z-index:4;height:0}
+.td-peek{position:absolute;left:0;right:0;bottom:0;height:64px;display:none;border-top:1px solid var(--rule-2);background:var(--bg);opacity:var(--pk-o,1)}
+.td-peek::before{content:"";position:absolute;inset:0;background-image:var(--tex);background-size:420px 420px;opacity:var(--tex-op);mix-blend-mode:multiply;pointer-events:none}
+.td-peek.on{display:block}
+html[data-pp-tdv="panel"] .td-peek{display:none}
+.td-peek.off{visibility:hidden;pointer-events:none}
+.pk-in{position:relative;display:flex;align-items:center;gap:8px 20px;height:100%}
+.pk-t{flex:1;min-width:0;font-size:14px;line-height:1.45;margin:0}
+.pk-t b{font-family:var(--head);font-weight:400;font-size:18px;color:var(--ink);font-variation-settings:"opsz" 24}
+.pk-t .pk-d{margin-left:12px;color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
+.pk-h{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pk-t .pk-s{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--ink-2)}
+.pk-a{position:relative;flex:none;font-size:14px;white-space:nowrap}
+.pk-a::before{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;transform:translateY(-50%)}
+
+.td-below{margin-top:18px;padding:18px 0 4px;border-top:1px solid var(--rule);min-height:150px;max-width:860px}
+html[data-pp-tdv="panel"] .td-below{display:none}
+.td{font-family:var(--ui)}
+.td-k{margin:0 0 4px;font-size:12.5px;color:var(--ink-3)}
+.td-n{width:fit-content;margin:0;font-family:var(--head);font-weight:400;font-size:24px;line-height:1.2;color:var(--ink);font-variation-settings:"opsz" 30}
+.td-n:focus{outline:none}
+.td-n:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.td-d{margin:6px 0 0;max-width:68ch;font-size:14px;line-height:1.5;color:var(--ink);font-weight:500}
+.td-t{margin:10px 0 0;font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.55;color:var(--ink-2);max-width:62ch}
+.td-a{display:inline-block;margin-top:10px;font-size:14px}
+.td-x{margin:6px 0 0;font-size:14px;line-height:1.5;color:var(--ink-3);max-width:62ch}
+.td-f{display:flex;flex-wrap:wrap;gap:10px 40px;margin:12px 0 0;padding:0}
+.td-f > div{min-width:0}
+.td-f dt{margin:0 0 3px;font-size:12.5px;color:var(--ink-3)}
+.td-f dd{margin:0;font-family:var(--body);font-size:18px;line-height:1.35;color:var(--ink);font-variant-numeric:tabular-nums}
+html[data-pp-dfmt="grande"] .td-f{gap:10px 48px;margin-top:14px}
+html[data-pp-dfmt="grande"] .td-f dd{font-family:var(--head);font-weight:300;font-size:34px;line-height:1.1;font-variation-settings:"opsz" 48}
+html[data-pp-dfmt="grande"] .td-f dd.w{font-size:24px;line-height:1.25}
+.td-mini{max-width:520px;margin:14px 0 0;display:none}
+html[data-pp-dfmt="grande"] .td-mini{display:block}
+.td-mini .mini{margin:0}
+html[data-pp-dfmt="linea"] .td-f{display:none}
+html:not([data-pp-dfmt="linea"]) .td-d{display:none}
+.td-empty{margin:0;font-size:14px;line-height:1.5;color:var(--ink-3)}
+
+.rp{position:fixed;z-index:35;top:var(--top-h);right:0;bottom:0;width:380px;display:flex;flex-direction:column;background:var(--bg);border-left:1px solid var(--rule);opacity:0;transform:translateX(24px);pointer-events:none;transition:opacity 200ms ease,transform 260ms cubic-bezier(.4,0,.2,1)}
+.rp::before{content:"";position:absolute;inset:0;background-image:var(--tex);background-size:420px 420px;opacity:var(--tex-op);mix-blend-mode:multiply;pointer-events:none}
+.rp > *{position:relative}
+.rp.open{opacity:1;transform:none;pointer-events:auto}
+.rp-h{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:6px 10px 6px 22px;border-bottom:1px solid var(--rule);font-size:12.5px;color:var(--ink-3)}
+.rp-b{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:18px 22px 40px}
+.rp-grip{display:none}
+html[data-pp-tdv="panel"] body.rp-open .frame{padding-right:380px}
+@media (max-width:1099px){
+  .rp{top:auto;left:0;width:auto;height:52vh;height:52dvh;border-left:0;border-top:1px solid var(--rule-2);border-radius:14px 14px 0 0;transform:translateY(100%);opacity:1;padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 18px 40px -18px rgb(0 0 0 / .45)}
+  .rp.open{transform:none}
+  .rp-grip{display:block;width:28px;height:4px;margin:8px auto 0;border-radius:2px;background:var(--rule-2)}
+  html[data-pp-tdv="panel"] body.rp-open .frame{padding-right:0}
+  html[data-pp-tdv="panel"] body.rp-open .main{padding-bottom:56vh}
+}
+@media (max-width:720px){
+  body.s08 .main{padding-right:16px}
+  .tl-box{margin:0 -16px;padding:0 16px}
+  .td-peek{left:-16px;right:-16px;height:auto;min-height:64px;padding:8px 16px}
+  .pk-in{flex-wrap:wrap;gap:2px 16px}
+  .pk-t{flex-basis:100%}
+  .pk-t b{font-size:16.5px}
+  html[data-pp-dfmt="grande"] .td-f dd{font-size:28px}
+  .td-f{gap:10px 28px}
+}
+@media (prefers-reduced-motion: reduce){ .rp{transition:none} }
+@media (pointer:coarse){ .ti{height:40px;top:0} .ti .bar,.ti .dot,.ti .ring,.ti .rng,.ti .cl,.ti .tx{margin-top:4px} }
+</style>
+</head>
+<body class="s08" data-page="tl">
+<main class="main" lang="es">
+  <div class="tlh">
+    <nav class="crumbs" aria-label="Ruta"><a href="#" data-nb>Historia</a><span class="sl" aria-hidden="true">/</span><span aria-current="page">Línea de tiempo</span></nav>
+    <h1>Línea de tiempo</h1>
+    <p class="sub">Padres y escritores, escritos anónimos, concilios y corrientes condenadas, del año 30 al 800. Tocá un nombre para ver sus fechas.</p>
+  </div>
+
+  <section class="tl-sec" id="linea" aria-label="La línea">
+    <div class="pp" data-pp="sel" data-label="Probar: lo elegido en la línea" data-opts="eje=Años en el eje (09)|banda=Banda de su época|guias=Guías hasta el eje" data-default="banda"><b>Años en el eje:</b> como en 09; la barra elegida se oscurece y sus años se escriben en el eje, arriba y abajo. <b>Banda de su época:</b> además, una franja azul tenue cruza todas las filas de su nacimiento a su muerte: se ve de un vistazo quién vivió al mismo tiempo. <b>Guías hasta el eje:</b> en vez de la franja, dos líneas punteadas finas bajan de sus extremos hasta el eje.</div>
+    <div class="pp" data-pp="nav" data-label="Probar: recorrer los años" data-opts="deslizar=Solo deslizar|regla=Regla de arriba" data-default="deslizar"><b>Solo deslizar:</b> la línea se desliza hacia los costados con el dedo, el trackpad o arrastrando con el mouse. <b>Regla de arriba:</b> además, una regla de los 770 años con una ventana que marca lo que estás viendo; arrastrás la ventana o tocás la regla para ir a otra época. Toma el aspecto de la ventana de la regla viva de 02.</div>
+    <p class="tl-hint">Deslizá la línea hacia los costados para recorrer los años.</p>
+    <div class="ov" id="ov" aria-hidden="true"></div>
+    <div class="tl-box" id="tl-box"><div class="tl-in" id="tl-in"></div></div>
+    <ul class="tl-key" aria-label="Cómo leer la línea">
+      <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><rect x="0" y="0" width="28" height="6" rx="3" fill="currentColor"/></svg>Vida de una persona</li>
+      <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><path d="M0 3h12" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/><rect x="13" y="0" width="15" height="6" rx="3" fill="currentColor"/></svg>Fecha estimada</li>
+      <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><circle cx="2" cy="3" r="1" fill="currentColor" opacity=".35"/><circle cx="8" cy="3" r="1" fill="currentColor" opacity=".6"/><circle cx="14" cy="3" r="1" fill="currentColor"/><rect x="18" y="0" width="10" height="6" rx="3" fill="currentColor"/></svg>Nacimiento desconocido</li>
+      <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.2" fill="none" stroke="var(--ink-3)" stroke-width="1.5"/></svg>Concilio</li>
+      <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><rect x="0" y="1" width="28" height="4" rx="2" fill="currentColor"/></svg>Lo que dura años</li>
+    </ul>
+    <div class="pp" data-pp="dfmt" data-label="Probar: las fechas del detalle" data-opts="linea=Una línea (09)|rotulo=Con rótulo|grande=Grandes, con su tramo" data-default="rotulo" style="margin-top:22px"><b>Una línea:</b> como en 09, una oración en tinta bajo el nombre. <b>Con rótulo:</b> cada fecha es un dato aparte, «Nació» y «Murió», con el estilo de los datos de la cabecera de 09; lo discutido va debajo, en gris. <b>Grandes, con su tramo:</b> las mismas fechas con la letra de los títulos, grandes, y la mini línea de las citas con su tramo marcado. En las tres, «c.» y las fechas discutidas siguen a la vista.</div>
+    <div class="pp" data-pp="tdv" data-label="Probar: dónde se ve el detalle" data-opts="avance=Avance fijo (09)|panel=Panel al costado" data-default="avance"><b>Avance fijo:</b> lo aprobado en 09: el detalle abajo de la línea y una franja fija abajo de la pantalla con nombre, fechas y enlace mientras el detalle no se ve. <b>Panel al costado:</b> el panel de 05 y 06 a la derecha (media hoja en el celular); la línea se angosta para no quedar tapada.</div>
+    <div class="td-peek-w"><div class="td-peek" id="td-peek"><div class="pk-in" id="pk-in"></div></div></div>
+    <div class="td-below" id="td-below" aria-live="polite"></div>
+  </section>
+</main>
+<script src="base.js"></script>
+<script>
+(() => {
+const esc = D.esc;
+const LO = 30, HI = 800, PX = 5.85;
+const W = Math.round((HI - LO) * PX);
+const X = y => (Math.max(LO, Math.min(HI, y)) - LO) * PX;
+const P = 'Padres y escritores', O = 'Escritos anónimos', C = 'Concilios', R = 'Corrientes condenadas';
+const per = (id, name, kind, b, d, o) => Object.assign({g: P, id, name, kind, b, d}, o);
+const T = [
+  per('clem', 'Clemente de Roma', 'Obispo de Roma', null, 99, {d2: 101, dl: '†c. 99–101', sr: 'murió c. 99–101', f: [['Nació', 'desconocido'], ['Murió', 'c. 99–101']], x: 'La fecha de su muerte es solo la tradicional.', text: 'Figura destacada de la Iglesia de Roma a fines del siglo I. Su carta a los corintios es uno de los escritos cristianos no canónicos más antiguos que se conservan.'}),
+  per('ig', 'Ignacio de Antioquía', 'Obispo de Antioquía', null, 107, {d2: 110, dl: '†c. 107–110', sr: 'murió c. 107–110', f: [['Nació', 'desconocido'], ['Murió', 'c. 107–110']], x: 'Mártir en Roma; es la fecha tradicional, según Eusebio. Otros proponen fechas más tardías: las reúne su página.', text: 'Según la tradición, fue llevado preso a Roma y martirizado bajo Trajano. Escribió en el camino las siete cartas que se conservan.'}),
+  per('pol', 'Policarpo de Esmirna', 'Obispo de Esmirna', 69, 155, {bc: 1, d2: 156, dl: 'c. 69–155', f: [['Nació', 'c. 69'], ['Murió', '155 o 156']], x: 'El nacimiento se deduce de sus «86 años» sirviendo a Cristo. Eusebio sitúa la muerte c. 167.', text: 'Según Ireneo, había conocido al apóstol Juan. Su martirio, narrado en el Martirio de Policarpo, es el relato de martirio cristiano más antiguo que se conserva fuera del Nuevo Testamento.'}),
+  per('jus', 'Justino Mártir', 'Filósofo laico y apologista', 100, 165, {bc: 1, dc: 1, dl: 'c. 100–c. 165', f: [['Nació', 'c. 100'], ['Murió', 'c. 165']], x: 'Mártir en Roma bajo el prefecto Rústico, entre c. 162 y 168.', text: 'Filósofo nacido en Flavia Neápolis, en Samaria, que tras su conversión enseñó en Roma y defendió la fe ante emperadores y ante interlocutores judíos.'}),
+  per('ire', 'Ireneo de Lyon', 'Obispo de Lyon', 130, 202, {bc: 1, dc: 1, dl: 'c. 130–c. 202', f: [['Nació', 'c. 130–140'], ['Murió', 'c. 200–202']], x: 'Que murió mártir lo dice una tradición posterior, sin confirmar.', text: 'Originario de Asia Menor, donde de joven escuchó a Policarpo, fue obispo de Lyon tras la persecución de 177. Su obra Contra las herejías refuta los sistemas gnósticos.'}),
+  per('ter', 'Tertuliano', 'Teólogo y apologista de Cartago', 155, 220, {bc: 1, open: 240, dl: 'c. 155–después de 220', f: [['Nació', 'c. 155–160'], ['Murió', 'después de c. 220']], x: 'La muerte es desconocida; algunos la sitúan c. 240.', text: 'Primer gran autor cristiano en latín; su vocabulario teológico (trinitas, persona, substantia) influyó en toda la tradición occidental.'}),
+  per('ori', 'Orígenes', 'Maestro, exégeta y presbítero', 185, 253, {bc: 1, dc: 1, d2: 254, dl: 'c. 185–c. 253', f: [['Nació', 'c. 185'], ['Murió', 'c. 253–254']], x: 'Murió en Tiro, tras las torturas de la persecución de Decio.', text: 'Maestro en Alejandría y luego en Cesarea de Palestina, el exégeta bíblico más prolífico de la Iglesia antigua; compiló la Hexapla.'}),
+  per('cip', 'Cipriano de Cartago', 'Obispo de Cartago', 200, 258, {bc: 1, dl: 'c. 200–258', f: [['Nació', 'c. 200–210'], ['Murió', '258']], x: 'Decapitado en Cartago bajo Valeriano.', text: 'Retórico convertido que llegó a obispo de Cartago y gobernó su iglesia durante las persecuciones de Decio y Valeriano.'}),
+  per('ata', 'Atanasio de Alejandría', 'Obispo de Alejandría', 296, 373, {bc: 1, dl: 'c. 296–373', f: [['Nació', 'c. 296–298'], ['Murió', '373']], x: '', text: 'Diácono en Nicea (325) y obispo de Alejandría desde 328, defendió el homoousios niceno y sufrió cinco exilios.'}),
+  per('efr', 'Efrén de Siria', 'Diácono, poeta y teólogo', 306, 373, {bc: 1, dl: 'c. 306–373', f: [['Nació', 'c. 306'], ['Murió', '373']], x: '', text: 'Diácono de Nísibis que se trasladó a Edesa en 363; el mayor poeta de la tradición siríaca.'}),
+  per('bas', 'Basilio de Cesarea', 'Obispo de Cesarea de Capadocia', 330, 379, {bc: 1, dl: 'c. 330–379', f: [['Nació', 'c. 330'], ['Murió', '379']], x: 'Es la fecha tradicional; algunos estudiosos proponen 377 o 378.', text: 'Uno de los tres Padres Capadocios, obispo de Cesarea desde 370, organizador del monacato oriental.'}),
+  per('gna', 'Gregorio Nacianceno', 'Obispo de Constantinopla (379–381)', 329, 389, {bc: 1, d2: 390, dl: 'c. 329–390', f: [['Nació', 'c. 329–330'], ['Murió', '389 o 390']], x: '', text: 'Padre Capadocio, amigo de Basilio, que presidió por un tiempo el Concilio de 381 antes de renunciar.'}),
+  per('gni', 'Gregorio de Nisa', 'Obispo de Nisa', 335, 395, {bc: 1, dc: 1, dl: 'c. 335–c. 395', f: [['Nació', 'c. 335'], ['Murió', 'c. 394–395 o después']], x: '', text: 'Hermano menor de Basilio, obispo de Nisa y participante en el Concilio de Constantinopla (381).'}),
+  per('amb', 'Ambrosio de Milán', 'Obispo de Milán', 339, 397, {bc: 1, dl: 'c. 339–397', f: [['Nació', 'c. 339–340'], ['Murió', '397']], x: '', text: 'Gobernador romano elegido obispo de Milán por aclamación en 374, cuando aún era catecúmeno.'}),
+  per('cri', 'Juan Crisóstomo', 'Obispo de Constantinopla (398–404)', 347, 407, {bc: 1, dl: 'c. 347–407', f: [['Nació', 'c. 347–349'], ['Murió', '407']], x: 'Murió en el destierro.', text: 'Predicador de Antioquía, apodado «Boca de Oro», elegido obispo de Constantinopla en 398.'}),
+  per('jer', 'Jerónimo de Estridón', 'Presbítero, traductor y exégeta', 347, 420, {bc: 1, dl: 'c. 347–420', f: [['Nació', 'c. 342–347'], ['Murió', '420']], x: 'El nacimiento es discutido; la muerte, tradicional (a veces 419).', text: 'Erudito nacido en Dalmacia, monje en Belén desde 386; su traducción es la base de la Vulgata.'}),
+  per('agu', 'Agustín de Hipona', 'Obispo de Hipona', 354, 430, {dl: '354–430', f: [['Nació', '354'], ['Murió', '430']], x: '', text: 'Retórico nacido en Tagaste, convertido en Milán en 386 y obispo de Hipona desde 395 o 396.'}),
+  per('cir', 'Cirilo de Alejandría', 'Obispo de Alejandría (412–444)', 376, 444, {bc: 1, dl: 'c. 376–444', f: [['Nació', 'c. 376–378'], ['Murió', '444']], x: '', text: 'Principal opositor de Nestorio; su teología de la unión en la única persona del Verbo dominó el Concilio de Éfeso (431).'}),
+  per('leo', 'León Magno', 'Obispo de Roma (440–461)', 400, 461, {bc: 1, dl: 'c. 400–461', f: [['Nació', 'c. 400'], ['Murió', '461']], x: '', text: 'Su Tomo a Flaviano expuso las dos naturalezas de Cristo en una sola persona y fue recibido en el Concilio de Calcedonia (451).'}),
+  per('gre', 'Gregorio Magno', 'Obispo de Roma (590–604)', 540, 604, {bc: 1, dl: 'c. 540–604', f: [['Nació', 'c. 540'], ['Murió', '604']], x: '', text: 'Prefecto de Roma convertido en monje y elegido obispo de Roma en 590; su Regla pastoral fue un manual clásico para obispos.'}),
+  per('isi', 'Isidoro de Sevilla', 'Obispo de Sevilla', 560, 636, {bc: 1, dl: 'c. 560–636', f: [['Nació', 'c. 560'], ['Murió', '636']], x: '', text: 'Obispo de Sevilla desde c. 600, en la Hispania visigoda; sus Etimologías fueron uno de los libros más copiados de la Edad Media.'}),
+  per('max', 'Máximo el Confesor', 'Monje y teólogo', 580, 662, {bc: 1, dl: 'c. 580–662', f: [['Nació', 'c. 580'], ['Murió', '662']], x: 'Murió en el exilio. Su origen es discutido.', text: 'Defendió que Cristo tiene dos voluntades, divina y humana, frente al monotelismo apoyado por la corte imperial.'}),
+  per('bed', 'Beda el Venerable', 'Monje y presbítero de Jarrow', 673, 735, {bc: 1, dl: 'c. 673–735', f: [['Nació', 'c. 672–673'], ['Murió', '735']], x: '', text: 'Monje de Wearmouth-Jarrow, en Northumbria; su Historia eclesiástica es la fuente principal sobre la cristianización de Inglaterra.'}),
+  per('dam', 'Juan Damasceno', 'Monje y presbítero de Mar Saba', 675, 749, {bc: 1, dc: 1, dl: 'c. 675–c. 749', f: [['Nació', 'c. 675–676'], ['Murió', 'c. 749']], x: 'Es la fecha tradicional; algunos proponen 753–754.', text: 'Funcionario cristiano en Damasco que se hizo monje en Mar Saba; defendió la veneración de las imágenes contra el iconoclasmo.'}),
+  {g: O, id: 'did', name: 'Didajé', kind: 'Escrito anónimo', s: 50, e: 120, dl: 'c. 50–120', f: [['Escrita', 'c. 50–120']], x: 'Fecha muy discutida; a menudo, fines del siglo I.', text: 'Breve manual de enseñanza moral, bautismo, ayuno, oración y Eucaristía, probablemente compilado en Siria o Palestina.'},
+  {g: O, id: 'dio', name: 'Carta a Diogneto', kind: 'Escrito anónimo', s: 120, e: 200, dl: 'c. 120–200', f: [['Escrita', 'c. 120–200']], x: 'Fecha y lugar desconocidos; las propuestas van de c. 120 a c. 200.', text: 'Breve apología dirigida a un pagano culto, conocida por su descripción de los cristianos como «el alma del mundo».'},
+  {g: C, id: 'jer49', name: 'Concilio de Jerusalén', kind: 'Asamblea de Jerusalén (Hechos 15)', y: 49, dl: 'c. 49', f: [['Fecha', 'c. 48–50']], x: '', text: 'Resolvió que los gentiles que creían en Cristo no debían circuncidarse ni asumir toda la ley mosaica.'},
+  {g: C, id: 'nic1', name: 'Primer Concilio de Nicea', lab: 'Nicea I', kind: 'Concilio, en Nicea', y: 325, dl: '325', f: [['Fecha', '325']], x: '', text: 'Condenó la enseñanza de Arrio de que el Hijo es una criatura y promulgó el Credo niceno, que confiesa al Hijo «consustancial» al Padre.'},
+  {g: C, id: 'con1', name: 'Primer Concilio de Constantinopla', lab: 'Constantinopla I', kind: 'Concilio, en Constantinopla', y: 381, dl: '381', f: [['Fecha', '381']], x: '', text: 'Reafirmó la fe de Nicea; se le atribuye el Credo niceno-constantinopolitano, que amplía el artículo sobre el Espíritu Santo.'},
+  {g: C, id: 'efe', name: 'Concilio de Éfeso', lab: 'Éfeso', kind: 'Concilio, en Éfeso', y: 431, dl: '431', f: [['Fecha', '431']], x: '', text: 'Presidido por Cirilo de Alejandría, depuso a Nestorio y confesó a María como Theotokos.'},
+  {g: C, id: 'cal', name: 'Concilio de Calcedonia', lab: 'Calcedonia', kind: 'Concilio, en Calcedonia', y: 451, dl: '451', f: [['Fecha', '451']], x: '', text: 'Promulgó la Definición de Calcedonia: un solo y mismo Cristo, «reconocido en dos naturalezas, sin confusión, sin cambio, sin división, sin separación».'},
+  {g: C, id: 'con2', name: 'Segundo Concilio de Constantinopla', lab: 'Constantinopla II', kind: 'Concilio, en Constantinopla', y: 553, dl: '553', f: [['Fecha', '553']], x: '', text: 'Condenó los «Tres Capítulos»: escritos de Teodoro de Mopsuestia, de Teodoreto y de Ibas de Edesa.'},
+  {g: C, id: 'con3', name: 'Tercer Concilio de Constantinopla', lab: 'Constantinopla III', kind: 'Concilio, en Constantinopla', s: 680, e: 681, dl: '680–681', f: [['Fecha', '680–681']], x: '', text: 'Definió que en Cristo hay dos voluntades y dos operaciones naturales, divina y humana.'},
+  {g: C, id: 'nic2', name: 'Segundo Concilio de Nicea', lab: 'Nicea II', kind: 'Concilio, en Nicea', y: 787, dl: '787', f: [['Fecha', '24 sep–13 oct 787']], x: 'La reunión final, en Constantinopla el 23 de octubre, es la llamada octava sesión; su estatus documental se discute.', text: 'Restableció la veneración de los íconos y distinguió la veneración que pasa a la imagen de la adoración, debida solo a Dios.'},
+  {g: R, id: 'ari', name: 'Arrianismo', kind: 'Corriente', s: 318, e: 381, dl: 'c. 318–381', f: [['Desde', 'c. 318'], ['Hasta', '381, en el Imperio']], x: 'El final es una estimación: en los reinos germánicos siguió hasta el siglo VII.', text: 'Sostenía que el Hijo es la primera criatura de Dios, no eterno: «hubo un tiempo en que no era». Lo condenó el Primer Concilio de Nicea (325).'},
+  {g: R, id: 'don', name: 'Donatismo', kind: 'Corriente', s: 311, e: 411, dl: '311–411', f: [['Desde', '311'], ['Hasta', '411']], x: 'El final es una estimación: siguió, residual, hasta el siglo VII.', text: 'Sostenía que eran inválidos los sacramentos de clérigos que habían entregado las Escrituras en la persecución. La conferencia de Cartago (411) se pronunció contra ellos.'},
+  {g: R, id: 'pel', name: 'Pelagianismo', kind: 'Corriente', s: 405, e: 431, dl: 'c. 405–431', f: [['Desde', 'c. 405'], ['Hasta', '431']], x: 'El final es una estimación: 431 es la condena de Celestio en Éfeso.', text: 'Negaba que el pecado de Adán se transmitiera a sus descendientes. Lo condenaron el concilio de Cartago (418) y el de Éfeso (431).'},
+  {g: R, id: 'mon', name: 'Monotelismo', kind: 'Corriente', s: 633, e: 681, dl: '633–681', f: [['Desde', '633'], ['Hasta', '681']], x: '', text: 'Afirmaba que en Cristo hay una sola operación y luego una sola voluntad. Lo condenó el Tercer Concilio de Constantinopla (680–681).'},
+  {g: R, id: 'ico', name: 'Iconoclasia', kind: 'Corriente', s: 726, e: 787, s2: 815, e2: 843, dl: '726–787 y 815–843', f: [['Desde', '726 o 730'], ['Hasta', '843']], x: 'En dos períodos: de 726 o 730 a 787, y de 815 a 843.', text: 'Sostenía que venerar imágenes de Cristo y de los santos es idolatría. El Segundo Concilio de Nicea (787) la rechazó.'}
+];
+T.forEach(t => { t.link = 'Ir a la página ' + (t.g === P ? 'de ' + t.name : t.g === C ? 'del ' + t.name : t.g === O ? 'de la ' + t.name : t.id === 'ico' ? 'de la iconoclasia' : 'del ' + t.name.toLowerCase()); });
+const byId = Object.fromEntries(T.map(t => [t.id, t]));
+let sel = 'pol';
+const box = document.getElementById('tl-in'), boxEl = document.getElementById('tl-box');
+const meas = document.createElement('span');
+meas.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-family:var(--ui);font-size:13.5px;font-weight:600';
+document.body.appendChild(meas);
+const tw = s => { meas.textContent = s; return meas.offsetWidth + 6; };
+const labTxt = t => (t.lab || t.name) + ', ' + t.dl;
+const labHtml = t => {
+  const dl = t.dl.startsWith('†') ? '<span aria-hidden="true" title="murió">' + esc(t.dl) + '</span><span class="sr">' + esc(t.sr) + '</span>' : esc(t.dl);
+  return esc(t.lab || t.name) + ', ' + dl;
+};
+const b0 = t => t.bc ? t.b - 8 : t.b;
+const span = t => {
+  if (t.y != null) return [t.y, t.y];
+  if (t.s != null) return [t.s, t.e2 || t.e];
+  if (t.b == null) return [t.d, t.d2 || t.d];
+  return [b0(t), t.open || t.d2 || t.d];
+};
+const selSpan = t => {
+  if (t.y != null) return [t.y, t.y];
+  if (t.s != null) return [t.s, t.e2 || t.e];
+  if (t.b == null) return [t.d, t.d2 || t.d];
+  return [t.b, t.d2 || t.d];
+};
+function marks(t, o) {
+  const x = y => X(y) - o;
+  if (t.g === P && t.b == null) {
+    const a = x(t.d), b = x(t.d2 || t.d);
+    return [.25, .45, .7, 1].map((op, i) => '<span class="dot" style="left:' + (a - 28 + i * 7) + 'px;opacity:' + op + '"></span>').join('') + '<span class="bar" style="left:' + a + 'px;width:' + Math.max(6, b - a) + 'px"></span>';
+  }
+  if (t.g === P) {
+    const s0 = x(b0(t)), m = x(t.b), z = x(t.d2 || t.d);
+    let h = t.bc ? '<span class="bar dash" style="left:' + s0 + 'px;width:' + (m - s0) + 'px"></span>' : '';
+    h += '<span class="bar" style="left:' + m + 'px;width:' + (z - m) + 'px"></span>';
+    if (t.open) h += '<span class="bar dash" style="left:' + z + 'px;width:' + (x(t.open) - z) + 'px"></span>';
+    return h;
+  }
+  if (t.g === O || (t.g === C && t.s != null)) return '<span class="rng" style="left:' + x(t.s) + 'px;width:' + Math.max(6, x(t.e) - x(t.s)) + 'px"></span>';
+  if (t.g === R) return '<span class="cl" style="left:' + x(t.s) + 'px;width:' + (x(t.e) - x(t.s)) + 'px"></span>' + (t.s2 ? '<span class="cl' + (t.e2 > HI ? ' open' : '') + '" style="left:' + x(t.s2) + 'px;width:' + (x(Math.min(t.e2, HI)) - x(t.s2)) + 'px"></span>' : '');
+  return '<span class="ring" style="left:' + x(t.y) + 'px"></span>';
+}
+function item(t) {
+  const [a, b] = span(t);
+  const x0 = X(a), x1 = X(Math.min(b, HI));
+  const w = tw(labTxt(t));
+  const lead = t.g === P && t.b == null ? 30 : 0;
+  const start = Math.max(0, x0 - lead - (t.y != null ? 5 : 0));
+  let lx = start;
+  if (start + w > W) lx = Math.max(0, x1 + (t.y != null ? 5 : 0) - w);
+  const l = Math.min(lx, start), r = Math.min(W, Math.max(lx + w, x1 + 6));
+  return {t, lx, w, l, r};
+}
+const GROUPS = [P, C, O, R];
+let placedAll = [];
+function render() {
+  let h = '';
+  placedAll = [];
+  GROUPS.forEach(g => {
+    h += '<div class="tl-gw"><p class="tl-g">' + esc(g) + '</p>';
+    const rows = [];
+    T.filter(t => t.g === g).map(item).sort((p, q) => p.l - q.l).forEach(p => {
+      let r = rows.find(row => row.end + 18 <= p.l);
+      if (!r) rows.push(r = {end: -1e9, its: []});
+      r.its.push(p); r.end = p.r;
+    });
+    rows.forEach(r => {
+      h += '<div class="tl-row">';
+      r.its.forEach(p => {
+        placedAll.push(p);
+        const t = p.t;
+        h += '<button type="button" class="ti" data-ti="' + t.id + '" aria-pressed="' + (t.id === sel) + '" style="left:' + p.l + 'px;width:' + (p.r - p.l) + 'px">' + marks(t, p.l) + '<span class="tx" style="left:' + (p.lx - p.l) + 'px">' + labHtml(t) + '</span></button>';
+      });
+      h += '</div>';
+    });
+    h += '</div>';
+  });
+  const grid = [];
+  for (let y = 50; y < HI; y += 50) grid.push('<span class="tl-grid" style="left:' + X(y) + 'px"></span>');
+  const s = byId[sel];
+  let band = '';
+  if (s) {
+    const [a, z] = selSpan(s);
+    const bx = X(a), bw = Math.max(2, X(Math.min(z, HI)) - bx);
+    band = '<span class="tl-band" style="left:' + bx + 'px;width:' + bw + 'px"></span><span class="tl-guide" style="left:' + bx + 'px"></span>' + (bw > 3 ? '<span class="tl-guide" style="left:' + (bx + bw) + 'px"></span>' : '');
+  }
+  box.style.width = W + 'px';
+  box.innerHTML = axis(true) + '<div class="tl-rows" style="position:relative">' + grid.join('') + band + h + '</div>' + axis(false);
+  detail();
+  paintOv();
+}
+function axis(top) {
+  let ax = '<div class="tl-ax' + (top ? ' top' : '') + '" aria-hidden="true">';
+  const s = byId[sel];
+  let selLabs = [];
+  if (s) {
+    const [a, z] = selSpan(s);
+    const ends = s.g === P ? [s.b == null ? null : (s.bc ? 'c. ' : '') + s.b, (s.dc ? 'c. ' : '') + (s.d2 ? s.d + '–' + s.d2 : s.d)] : s.y != null ? [String(s.y)] : [String(s.s), String(s.e2 || s.e)];
+    ax += '<span class="sel" style="left:' + X(a) + 'px;width:' + Math.max(3, X(Math.min(z, HI)) - X(a)) + 'px"></span>';
+    if (ends.length === 2 && ends[0] && X(z) - X(a) > tw(ends[0]) / 2 + tw(ends[1]) / 2 + 14) selLabs = [[X(a), ends[0]], [X(Math.min(z, HI)), ends[1]]];
+    else selLabs = [[(X(a) + X(Math.min(z, HI))) / 2, ends.filter(Boolean).length === 2 ? ends.join('–') : (s.b == null && s.g === P ? '†' + ends[1] : ends.filter(Boolean)[0])]];
+  }
+  for (let m = 50; m <= HI; m += 50) {
+    const x = X(m);
+    ax += '<span class="tk" style="left:' + x + 'px;' + (m % 100 ? 'height:4px;' : '') + '"></span>';
+    if (m % 100 && m !== 50) continue;
+    if (selLabs.some(([sx, t]) => Math.abs(sx - x) < tw(t) / 2 + 22)) continue;
+    ax += '<span class="tn' + (m === HI ? ' e1' : '') + '" style="left:' + x + 'px">' + m + '</span>';
+  }
+  if (!selLabs.some(([sx, t]) => sx < tw(t) / 2 + 30)) ax += '<span class="tk" style="left:0"></span><span class="tn e0" style="left:0">30</span>';
+  selLabs.forEach(([x, t]) => { const w = tw(t); ax += '<span class="seln" style="left:' + Math.min(Math.max(x, w / 2), W - w / 2) + 'px">' + esc(t) + '</span>'; });
+  return ax + '</div>';
+}
+const factsHtml = t => '<dl class="td-f">' + t.f.map(([k, v]) => '<div><dt>' + esc(k) + '</dt><dd' + (v.length > 14 ? ' class="w"' : '') + '>' + esc(v) + '</dd></div>').join('') + '</dl>';
+const oneLine = t => t.f.map(([k, v]) => (v === 'desconocido' ? k + ': desconocido' : k + ' ' + v)).join('. ') + '.';
+function detailHtml(t) {
+  const [a, z] = selSpan(t);
+  const mini = D.mini(a, z > a ? z : null, [LO, HI, [30, 200, 400, 600, 800]], t.dl.replace('†', ''));
+  return '<div class="td"><p class="td-k">' + esc(t.kind) + '</p><h3 class="td-n" tabindex="-1">' + esc(t.name) + '</h3>' +
+    '<p class="td-d">' + esc(oneLine(t)) + (t.x ? ' ' + esc(t.x) : '') + '</p>' + factsHtml(t) + '<div class="td-mini">' + mini + '</div>' +
+    (t.x ? '<p class="td-x x2">' + esc(t.x) + '</p>' : '') +
+    '<p class="td-t">' + esc(t.text) + '</p><a class="ln-go td-a" href="#" data-nb>' + esc(t.link) + '</a></div>';
+}
+const below = document.getElementById('td-below');
+let rp = null;
+const tdv = () => document.documentElement.getAttribute('data-pp-tdv') || 'avance';
+function ensureRp() {
+  if (rp) return rp;
+  rp = document.createElement('aside');
+  rp.className = 'rp'; rp.setAttribute('aria-label', 'Detalle de lo elegido');
+  rp.innerHTML = '<span class="rp-grip" aria-hidden="true"></span><div class="rp-h"><span>Lo elegido en la línea</span><button class="cw-x" type="button" aria-label="Cerrar el panel">' + D.ic.x + '</button></div><div class="rp-b" aria-live="polite"></div>';
+  document.body.appendChild(rp);
+  rp.querySelector('.cw-x').addEventListener('click', () => { rp.classList.remove('open'); document.body.classList.remove('rp-open'); requestAnimationFrame(render); });
+  return rp;
+}
+function detail() {
+  const t = byId[sel];
+  const html = t ? detailHtml(t) : '<p class="td-empty">Elegí una persona, un concilio o una corriente para ver sus fechas.</p>';
+  below.innerHTML = html;
+  if (tdv() === 'panel' && t) {
+    ensureRp().querySelector('.rp-b').innerHTML = html;
+    if (!rp.classList.contains('open')) { rp.classList.add('open'); document.body.classList.add('rp-open'); }
+  }
+  hideDup();
+}
+const hideDup = () => document.querySelectorAll('.td-d').forEach(n => { if (document.documentElement.getAttribute('data-pp-dfmt') !== 'linea') return; const x = n.parentNode.querySelector('.x2'); if (x) x.hidden = true; });
+
+/* «Avance fijo», as approved in 09 */
+const EASE_R = D.bez(0.22, 1, 0.36, 1);
+const head = () => (tdv() === 'panel' && rp ? rp : below).querySelector('.td-n');
+const peekEl = document.getElementById('td-peek'), pin = document.getElementById('pk-in');
+let pkRaf = 0;
+const peekUpdate = () => {
+  pkRaf = 0;
+  if (!peekEl.classList.contains('on')) return;
+  const t = below.getBoundingClientRect().top - 18 - innerHeight;
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const was = !peekEl.classList.contains('off');
+  const o = still ? (was ? (t > -30 ? 1 : 0) : (t > -10 ? 1 : 0)) : Math.max(0, Math.min(1, (t + 40) / 70));
+  peekEl.style.setProperty('--pk-o', o.toFixed(3));
+  peekEl.classList.toggle('off', o < .5);
+};
+const peekFrame = () => { if (!pkRaf) pkRaf = requestAnimationFrame(peekUpdate); };
+addEventListener('scroll', peekFrame, {passive: true});
+addEventListener('resize', peekFrame);
+const afterSelect = kbd => {
+  const t = byId[sel];
+  if (!t) return;
+  if (tdv() === 'avance') {
+    const was = peekEl.classList.contains('on');
+    pin.innerHTML = '<p class="pk-t"><span class="pk-h"><b>' + esc(t.name) + '</b><span class="pk-d">' + esc(t.dl.replace('†', 'murió ')) + '</span></span><span class="pk-s">' + esc(t.text) + '</span></p><a class="ln-go pk-a" href="#" data-nb>' + esc(t.link) + '</a>';
+    peekEl.classList.add('on');
+    peekFrame();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (!was) pin.animate([{opacity: 0, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: 240, easing: 'cubic-bezier(0.22, 1, 0.36, 1)'});
+      else pin.animate([{opacity: 0}, {opacity: 1}], {duration: 160, easing: 'ease-out'});
+    }
+  }
+  if (kbd && head()) head().focus({preventScroll: tdv() === 'panel'});
+  requestAnimationFrame(showSel);
+};
+const showSel = () => {
+  const b = box.querySelector('.ti[data-ti="' + sel + '"]'); if (!b) return;
+  const r = b.getBoundingClientRect(), br = boxEl.getBoundingClientRect();
+  if (r.left > br.right - 60 || r.right < br.left + 60) { const t = boxEl.scrollLeft + r.left - br.left - 40; if (matchMedia('(prefers-reduced-motion: reduce)').matches) boxEl.scrollLeft = t; else boxEl.scrollTo({left: t, behavior: 'smooth'}); }
+};
+
+/* overview ruler («Regla de arriba») */
+const ov = document.getElementById('ov');
+const OVX = y => (y - LO) / (HI - LO) * 100;
+function paintOv() {
+  if (!ov.offsetParent) return;
+  let h = '<div class="ov-ax"></div>';
+  [30, 100, 200, 300, 400, 500, 600, 700, 800].forEach((m, i, A) => { h += '<span class="ov-tk" style="left:' + OVX(m) + '%"></span><span class="ov-tn' + (i === 0 ? ' e0' : i === A.length - 1 ? ' e1' : '') + '" style="left:' + OVX(m) + '%">' + m + '</span>'; });
+  T.forEach(t => { const [a, z] = span(t); h += '<span class="ov-it' + (t.id === sel ? ' on' : '') + '" style="left:' + OVX(Math.max(a, LO)) + '%;width:' + Math.max(.25, OVX(Math.min(z, HI)) - OVX(Math.max(a, LO))) + '%"></span>'; });
+  h += '<span class="ov-win" id="ov-win"></span><span class="ov-yrs" id="ov-yrs"></span>';
+  ov.innerHTML = h;
+  ovWin();
+}
+function ovWin() {
+  const w = document.getElementById('ov-win'); if (!w) return;
+  const f0 = boxEl.scrollLeft / W, f1 = Math.min(1, (boxEl.scrollLeft + boxEl.clientWidth) / W);
+  w.style.left = (f0 * 100) + '%'; w.style.width = Math.max(2, (f1 - f0) * 100) + '%';
+  const y0 = Math.round(LO + f0 * (HI - LO)), y1 = Math.round(LO + f1 * (HI - LO));
+  const yr = document.getElementById('ov-yrs');
+  yr.textContent = y0 + '–' + y1;
+  yr.style.left = Math.min(Math.max((f0 + f1) / 2 * 100, 6), 94) + '%';
+}
+boxEl.addEventListener('scroll', () => requestAnimationFrame(ovWin), {passive: true});
+let ovDrag = null;
+const ovTo = (cx, grabFrac) => {
+  const r = ov.getBoundingClientRect();
+  const f = (cx - r.left) / r.width - (grabFrac || 0);
+  boxEl.scrollLeft = f * W - (grabFrac == null ? boxEl.clientWidth / 2 : 0);
+};
+ov.addEventListener('pointerdown', e => {
+  const w = document.getElementById('ov-win'), r = ov.getBoundingClientRect();
+  const onWin = e.target === w;
+  const grab = onWin ? (e.clientX - w.getBoundingClientRect().left) / r.width : null;
+  ovDrag = {grab};
+  ov.setPointerCapture(e.pointerId);
+  if (!onWin) {
+    const target = ((e.clientX - r.left) / r.width) * W - boxEl.clientWidth / 2;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) boxEl.scrollLeft = target; else boxEl.scrollTo({left: target, behavior: 'smooth'});
+    ovDrag = {grab: boxEl.clientWidth / 2 / W, smooth: true};
+  }
+});
+ov.addEventListener('pointermove', e => { if (!ovDrag || ovDrag.smooth && e.buttons === 0) return; if (ovDrag.smooth) { ovDrag.smooth = false; } ovTo(e.clientX, ovDrag.grab); });
+const ovEnd = () => { ovDrag = null; };
+ov.addEventListener('pointerup', ovEnd); ov.addEventListener('pointercancel', ovEnd);
+
+/* drag to pan with the mouse */
+let pan = null;
+boxEl.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; pan = {x: e.clientX, l: boxEl.scrollLeft, moved: false}; });
+addEventListener('pointermove', e => { if (!pan) return; const dx = e.clientX - pan.x; if (Math.abs(dx) > 5) { pan.moved = true; boxEl.classList.add('drag'); } if (pan.moved) boxEl.scrollLeft = pan.l - dx; });
+addEventListener('pointerup', () => { if (pan && pan.moved) { boxEl._justPanned = true; setTimeout(() => { boxEl._justPanned = false; }, 0); } pan = null; boxEl.classList.remove('drag'); });
+
+box.addEventListener('click', e => {
+  if (boxEl._justPanned) return;
+  const b = e.target.closest('.ti');
+  if (!b) return;
+  sel = b.dataset.ti;
+  render();
+  const nb = box.querySelector('.ti[data-ti="' + sel + '"]');
+  if (nb) nb.focus({preventScroll: true});
+  afterSelect(e.detail === 0);
+});
+box.addEventListener('keydown', e => {
+  if (!['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.key)) return;
+  const btns = [...box.querySelectorAll('.ti')];
+  const i = btns.findIndex(b => b === document.activeElement);
+  if (i < 0) return;
+  e.preventDefault();
+  const n = btns[(i + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1) + btns.length) % btns.length];
+  n.focus();
+  const r = n.getBoundingClientRect(), br = boxEl.getBoundingClientRect();
+  if (r.left < br.left + 40 || r.left > br.right - 120) boxEl.scrollLeft += r.left - br.left - br.width / 3;
+});
+addEventListener('pp', e => {
+  if (e.detail.key === 'tdv') {
+    peekEl.classList.remove('on', 'off');
+    if (e.detail.value !== 'panel' && rp) { rp.classList.remove('open'); document.body.classList.remove('rp-open'); }
+    requestAnimationFrame(() => { render(); afterSelect(false); });
+  }
+  if (e.detail.key === 'nav') requestAnimationFrame(paintOv);
+  if (e.detail.key === 'dfmt') { detail(); if (rp && rp.classList.contains('open')) rp.querySelector('.rp-b').innerHTML = below.innerHTML; }
+  if (e.detail.key === 'sel') render();
+});
+let rt = 0;
+addEventListener('resize', () => { cancelAnimationFrame(rt); rt = requestAnimationFrame(() => { render(); }); });
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { render(); afterSelect(false); if (innerWidth <= 720) boxEl.scrollLeft = X(58); });
+render();
+})();
+</script>
+</body>
+</html>

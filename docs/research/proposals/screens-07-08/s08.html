@@ -11,6 +11,7 @@
 <script>document.documentElement.dataset.ent='title-fade'</script>
 <style>
 body.s08 .main{padding-right:64px}
+.pp .ch{margin-left:6px;padding:0 6px;border:1px solid var(--accent-mid);border-radius:4px;font-size:11.5px;color:var(--accent)}
 .tlh .crumbs{margin-bottom:36px}
 .tlh h1{margin-bottom:10px}
 .tlh .sub{margin:0;max-width:640px}
@@ -140,7 +141,24 @@ html[data-pp-tdv="panel"] body.rp-open .frame{padding-right:380px}
   html[data-pp-dfmt="grande"] .td-f dd{font-size:28px}
   .td-f{gap:10px 28px}
 }
-@media (prefers-reduced-motion: reduce){ .rp{transition:none} }
+html[data-pp-ecu="detalle"] .key-ec{display:none}
+.ti .ring.ec::after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;background:var(--ink-3);transition:background-color var(--fast) ease}
+html[data-pp-ecu="detalle"] .ti .ring.ec::after{display:none}
+.ti:hover .ring.ec::after{background:var(--ink)}
+.ti[aria-pressed="true"] .ring.ec::after{background:var(--bg)}
+html[data-pp-tdv="panel"] .frame{transition:padding-right 260ms cubic-bezier(.4,0,.2,1)}
+.td-ec{margin:14px 0 0;max-width:62ch}
+.td-ec .td-k{margin:0 0 3px}
+.td-ect{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.td-w{margin:22px 0 0;padding:16px 0 0;border-top:1px solid var(--rule);max-width:62ch}
+.td-w .td-k{margin:0 0 6px}
+.td-wl{list-style:none;margin:0;padding:0}
+.td-wl li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 16px;padding:8px 0;border-top:1px solid var(--rule);font-family:var(--body);font-size:16px;line-height:1.4;color:var(--ink)}
+.td-wl li:first-child{border-top:0}
+.td-wl .wd{font-family:var(--ui);font-size:13.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.td-wl .wc{flex:1 1 100%;margin-top:-2px;font-family:var(--ui);font-size:13px;color:var(--ink-3)}
+.td-wn{margin:8px 0 0;font-size:13px;line-height:1.5;color:var(--ink-3)}
+@media (prefers-reduced-motion: reduce){ .rp{transition:none} html[data-pp-tdv="panel"] .frame{transition:none} }
 @media (pointer:coarse){ .ti{height:40px;top:0} .ti .bar,.ti .dot,.ti .ring,.ti .rng,.ti .cl,.ti .tx{margin-top:4px} }
 </style>
 </head>
@@ -153,20 +171,22 @@ html[data-pp-tdv="panel"] body.rp-open .frame{padding-right:380px}
   </div>
 
   <section class="tl-sec" id="linea" aria-label="La línea">
-    <div class="pp" data-pp="sel" data-label="Probar: lo elegido en la línea" data-opts="eje=Años en el eje (09)|banda=Banda de su época|guias=Guías hasta el eje" data-default="banda"><b>Años en el eje:</b> como en 09; la barra elegida se oscurece y sus años se escriben en el eje, arriba y abajo. <b>Banda de su época:</b> además, una franja azul tenue cruza todas las filas de su nacimiento a su muerte: se ve de un vistazo quién vivió al mismo tiempo. <b>Guías hasta el eje:</b> en vez de la franja, dos líneas punteadas finas bajan de sus extremos hasta el eje.</div>
-    <div class="pp" data-pp="nav" data-label="Probar: recorrer los años" data-opts="deslizar=Solo deslizar|regla=Regla de arriba" data-default="deslizar"><b>Solo deslizar:</b> la línea se desliza hacia los costados con el dedo, el trackpad o arrastrando con el mouse. <b>Regla de arriba:</b> además, una regla de los 770 años con una ventana que marca lo que estás viendo; arrastrás la ventana o tocás la regla para ir a otra época. Toma el aspecto de la ventana de la regla viva de 02.</div>
+    <div class="pp" data-pp="sel" data-chosen="banda" data-label="Probar: lo elegido en la línea" data-opts="eje=Años en el eje (09)|banda=Banda de su época|guias=Guías hasta el eje" data-default="banda"><b>Años en el eje:</b> como en 09; la barra elegida se oscurece y sus años se escriben en el eje, arriba y abajo. <b>Banda de su época:</b> además, una franja azul tenue cruza todas las filas de su nacimiento a su muerte: se ve de un vistazo quién vivió al mismo tiempo. <b>Guías hasta el eje:</b> en vez de la franja, dos líneas punteadas finas bajan de sus extremos hasta el eje.</div>
+    <div class="pp" data-pp="nav" data-chosen="regla" data-label="Probar: recorrer los años" data-opts="deslizar=Solo deslizar|regla=Regla de arriba" data-default="regla"><b>Solo deslizar:</b> la línea se desliza hacia los costados con el dedo, el trackpad o arrastrando con el mouse. <b>Regla de arriba:</b> además, una regla de los 770 años con una ventana de 190 años (en pantallas anchas) que marca lo que estás viendo; arrastrás la ventana o tocás la regla para ir a otra época. Toma el aspecto de la ventana de la regla viva de 02.</div>
     <p class="tl-hint">Deslizá la línea hacia los costados para recorrer los años.</p>
     <div class="ov" id="ov" aria-hidden="true"></div>
     <div class="tl-box" id="tl-box"><div class="tl-in" id="tl-in"></div></div>
+    <div class="pp" data-pp="ecu" data-label="Probar: los concilios ecuménicos" data-opts="marca=Marca en la línea y leyenda|detalle=Solo en el detalle" data-default="marca" style="margin-top:22px"><b>Marca en la línea y leyenda:</b> los siete concilios que las Iglesias católica y ortodoxa reciben como ecuménicos llevan un punto dentro del círculo, y una línea de leyenda lo explica; al elegirlos, el detalle dice quién los recibe. <b>Solo en el detalle:</b> la línea queda como está; el detalle de cada concilio dice, con las palabras de cada Iglesia, quién lo recibe como ecuménico y quién no.</div>
     <ul class="tl-key" aria-label="Cómo leer la línea">
       <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><rect x="0" y="0" width="28" height="6" rx="3" fill="currentColor"/></svg>Vida de una persona</li>
       <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><path d="M0 3h12" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/><rect x="13" y="0" width="15" height="6" rx="3" fill="currentColor"/></svg>Fecha estimada</li>
       <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><circle cx="2" cy="3" r="1" fill="currentColor" opacity=".35"/><circle cx="8" cy="3" r="1" fill="currentColor" opacity=".6"/><circle cx="14" cy="3" r="1" fill="currentColor"/><rect x="18" y="0" width="10" height="6" rx="3" fill="currentColor"/></svg>Nacimiento desconocido</li>
       <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.2" fill="none" stroke="var(--ink-3)" stroke-width="1.5"/></svg>Concilio</li>
+      <li class="key-ec"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.2" fill="none" stroke="var(--ink-3)" stroke-width="1.5"/><circle cx="6" cy="6" r="1.7" fill="var(--ink-3)"/></svg>Lo reciben como ecuménico las Iglesias católica y ortodoxa</li>
       <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><rect x="0" y="1" width="28" height="4" rx="2" fill="currentColor"/></svg>Lo que dura años</li>
     </ul>
-    <div class="pp" data-pp="dfmt" data-label="Probar: las fechas del detalle" data-opts="linea=Una línea (09)|rotulo=Con rótulo|grande=Grandes, con su tramo" data-default="rotulo" style="margin-top:22px"><b>Una línea:</b> como en 09, una oración en tinta bajo el nombre. <b>Con rótulo:</b> cada fecha es un dato aparte, «Nació» y «Murió», con el estilo de los datos de la cabecera de 09; lo discutido va debajo, en gris. <b>Grandes, con su tramo:</b> las mismas fechas con la letra de los títulos, grandes, y la mini línea de las citas con su tramo marcado. En las tres, «c.» y las fechas discutidas siguen a la vista.</div>
-    <div class="pp" data-pp="tdv" data-label="Probar: dónde se ve el detalle" data-opts="avance=Avance fijo (09)|panel=Panel al costado" data-default="avance"><b>Avance fijo:</b> lo aprobado en 09: el detalle abajo de la línea y una franja fija abajo de la pantalla con nombre, fechas y enlace mientras el detalle no se ve. <b>Panel al costado:</b> el panel de 05 y 06 a la derecha (media hoja en el celular); la línea se angosta para no quedar tapada.</div>
+    <div class="pp" data-pp="dfmt" data-chosen="rotulo" data-label="Probar: las fechas del detalle" data-opts="linea=Una línea (09)|rotulo=Con rótulo|grande=Grandes, con su tramo" data-default="rotulo" style="margin-top:22px"><b>Una línea:</b> como en 09, una oración en tinta bajo el nombre. <b>Con rótulo:</b> cada fecha es un dato aparte, «Nació» y «Murió», con el estilo de los datos de la cabecera de 09; lo discutido va debajo, en gris. <b>Grandes, con su tramo:</b> las mismas fechas con la letra de los títulos, grandes, y la mini línea de las citas con su tramo marcado. En las tres, «c.» y las fechas discutidas siguen a la vista.</div>
+    <div class="pp" data-pp="tdv" data-chosen="panel" data-label="Probar: dónde se ve el detalle" data-opts="avance=Avance fijo (09)|panel=Panel fijo, al costado" data-default="panel"><b>Avance fijo:</b> lo aprobado en 09: el detalle abajo de la línea y una franja fija abajo de la pantalla con nombre, fechas y enlace mientras el detalle no se ve. <b>Panel al costado:</b> el panel de 05 y 06 a la derecha (media hoja en el celular); la línea se angosta para no quedar tapada.</div>
     <div class="td-peek-w"><div class="td-peek" id="td-peek"><div class="pk-in" id="pk-in"></div></div></div>
     <div class="td-below" id="td-below" aria-live="polite"></div>
   </section>
@@ -175,9 +195,15 @@ html[data-pp-tdv="panel"] body.rp-open .frame{padding-right:380px}
 <script>
 (() => {
 const esc = D.esc;
-const LO = 30, HI = 800, PX = 5.85;
-const W = Math.round((HI - LO) * PX);
+const LO = 30, HI = 800;
+let PX = 5.85, W = Math.round((HI - LO) * PX);
 const X = y => (Math.max(LO, Math.min(HI, y)) - LO) * PX;
+const calcPx = () => {
+  const be = document.getElementById('tl-box');
+  const full = be.clientWidth + (document.body.classList.contains('rp-open') && innerWidth >= 1100 ? 380 : 0);
+  PX = innerWidth >= 1100 && full > 600 ? full / 190 : 5.85;
+  W = Math.round((HI - LO) * PX);
+};
 const P = 'Padres y escritores', O = 'Escritos anónimos', C = 'Concilios', R = 'Corrientes condenadas';
 const per = (id, name, kind, b, d, o) => Object.assign({g: P, id, name, kind, b, d}, o);
 const T = [
@@ -221,9 +247,12 @@ const T = [
   {g: R, id: 'mon', name: 'Monotelismo', kind: 'Corriente', s: 633, e: 681, dl: '633–681', f: [['Desde', '633'], ['Hasta', '681']], x: '', text: 'Afirmaba que en Cristo hay una sola operación y luego una sola voluntad. Lo condenó el Tercer Concilio de Constantinopla (680–681).'},
   {g: R, id: 'ico', name: 'Iconoclasia', kind: 'Corriente', s: 726, e: 787, s2: 815, e2: 843, dl: '726–787 y 815–843', f: [['Desde', '726 o 730'], ['Hasta', '843']], x: 'En dos períodos: de 726 o 730 a 787, y de 815 a 843.', text: 'Sostenía que venerar imágenes de Cristo y de los santos es idolatría. El Segundo Concilio de Nicea (787) la rechazó.'}
 ];
+const EC = {"jer49": {"e": false, "t": "No se cuenta entre los concilios ecuménicos; todas las tradiciones lo consideran una asamblea apostólica y un modelo para los concilios posteriores."}, "nic1": {"e": true, "t": "Iglesia católica, Iglesia ortodoxa, Iglesias ortodoxas orientales e Iglesia del Oriente; muchas iglesias protestantes aceptan su credo como fiel a la Escritura."}, "con1": {"e": true, "t": "Iglesia católica, Iglesia ortodoxa, Iglesias ortodoxas orientales e Iglesia del Oriente; muchas iglesias protestantes aceptan su credo. Fue un concilio solo de obispos orientales y su carácter ecuménico se reconoció después, sobre todo en Calcedonia (451)."}, "efe": {"e": true, "t": "Iglesia católica, Iglesia ortodoxa e Iglesias ortodoxas orientales; no lo acepta la Iglesia del Oriente. Muchas iglesias protestantes aceptan su enseñanza cristológica."}, "cal": {"e": true, "t": "Iglesia católica e Iglesia ortodoxa; muchas iglesias protestantes aceptan su definición cristológica. Las Iglesias ortodoxas orientales lo rechazan (aceptan solo los tres primeros concilios)."}, "con2": {"e": true, "t": "Iglesia católica e Iglesia ortodoxa. Las Iglesias ortodoxas orientales no lo aceptan; muchas iglesias protestantes dan menos peso a los concilios quinto a séptimo."}, "con3": {"e": true, "t": "Iglesia católica e Iglesia ortodoxa. Las Iglesias ortodoxas orientales no lo aceptan."}, "nic2": {"e": true, "t": "Iglesia católica e Iglesia ortodoxa. Las Iglesias ortodoxas orientales no lo cuentan entre sus concilios. La mayoría de las iglesias protestantes no aceptan su enseñanza sobre la veneración de imágenes."}};
+const WK = {"clem": {"w": [["Primera carta a los corintios", "c. 95–96"]], "n": 0}, "ig": {"w": [["Siete cartas", "", "autenticidad discutida por una minoría"]], "n": 0}, "pol": {"w": [["Carta a los filipenses", "", "integridad discutida"]], "n": 0}, "jus": {"w": [["Primera apología"], ["Segunda apología"], ["Diálogo con Trifón"]], "n": 0}, "ire": {"w": [["Contra las herejías"], ["Demostración de la predicación apostólica"]], "n": 1}, "ter": {"w": [["Apologético"], ["Contra Marción"], ["Prescripciones contra todas las herejías"], ["Contra Práxeas"]], "n": 26}, "ori": {"w": [["Sobre los principios"], ["Contra Celso"], ["Sobre la oración"], ["Exhortación al martirio"]], "n": 12}, "cip": {"w": [["Cartas"], ["Sobre la unidad de la Iglesia católica"], ["Sobre los que cayeron"], ["Testimonios a Quirino"]], "n": 10}, "ata": {"w": [["Sobre la encarnación"], ["Contra los paganos"], ["Discursos contra los arrianos"]], "n": 4}, "efr": {"w": [["Himnos"], ["Homilías métricas"], ["Comentario al Diatesarón"]], "n": 0}, "bas": {"w": [["Contra Eunomio"], ["Sobre el Espíritu Santo"], ["Hexamerón"], ["Cartas"]], "n": 3}, "gna": {"w": [["Discursos teológicos"], ["Cartas a Cledonio"], ["Poemas"]], "n": 0}, "gni": {"w": [["Contra Eunomio"], ["Gran discurso catequético"], ["Vida de Moisés"], ["Sobre la hechura del hombre"]], "n": 2}, "amb": {"w": [["Sobre los misterios"], ["Sobre los deberes"], ["Sobre la fe"], ["Sobre el Espíritu Santo"]], "n": 3}, "cri": {"w": [["Homilías sobre Mateo, Juan, Hechos y las cartas de Pablo"], ["Sobre el sacerdocio"], ["Al pueblo de Antioquía"]], "n": 2}, "jer": {"w": [["Cartas"], ["Sobre los varones ilustres"], ["Contra Helvidio, Contra Joviniano, Contra Vigilancio"]], "n": 0}, "agu": {"w": [["Confesiones"], ["Sobre la doctrina cristiana"], ["Sobre la Trinidad"], ["La ciudad de Dios"]], "n": 3}, "cir": {"w": [["Comentario a Juan"], ["Tesoro"], ["Que Cristo es uno"]], "n": 2}, "leo": {"w": [["Sermones"], ["Cartas, entre ellas la Carta 28 a Flaviano («Tomo»)"]], "n": 0}, "gre": {"w": [["Moralia sobre Job"], ["Regla pastoral"], ["Homilías sobre los Evangelios y sobre Ezequiel"]], "n": 1}, "isi": {"w": [["Etimologías"], ["Sentencias"], ["Sobre los oficios eclesiásticos"]], "n": 1}, "max": {"w": [["Ambigua"], ["Mistagogía"], ["Cuestiones a Talasio"]], "n": 2}, "bed": {"w": [["Historia eclesiástica del pueblo inglés"], ["Sobre el cómputo del tiempo"]], "n": 0}, "dam": {"w": [["Fuente del conocimiento"], ["Tres discursos sobre las imágenes"]], "n": 0}};
+T.forEach(t => { const e = EC[t.id]; if (e) { t.ecr = e.t; t.ec = e.e; } });
 T.forEach(t => { t.link = 'Ir a la página ' + (t.g === P ? 'de ' + t.name : t.g === C ? 'del ' + t.name : t.g === O ? 'de la ' + t.name : t.id === 'ico' ? 'de la iconoclasia' : 'del ' + t.name.toLowerCase()); });
 const byId = Object.fromEntries(T.map(t => [t.id, t]));
-let sel = 'pol';
+let sel = innerWidth >= 1100 ? 'pol' : null;
 const box = document.getElementById('tl-in'), boxEl = document.getElementById('tl-box');
 const meas = document.createElement('span');
 meas.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-family:var(--ui);font-size:13.5px;font-weight:600';
@@ -247,6 +276,7 @@ const selSpan = t => {
   if (t.b == null) return [t.d, t.d2 || t.d];
   return [t.b, t.d2 || t.d];
 };
+const ptY = t => t.y != null ? t.y : (t.s + t.e) / 2;
 function marks(t, o) {
   const x = y => X(y) - o;
   if (t.g === P && t.b == null) {
@@ -260,19 +290,20 @@ function marks(t, o) {
     if (t.open) h += '<span class="bar dash" style="left:' + z + 'px;width:' + (x(t.open) - z) + 'px"></span>';
     return h;
   }
-  if (t.g === O || (t.g === C && t.s != null)) return '<span class="rng" style="left:' + x(t.s) + 'px;width:' + Math.max(6, x(t.e) - x(t.s)) + 'px"></span>';
+  if (t.g === O) return '<span class="rng" style="left:' + x(t.s) + 'px;width:' + Math.max(6, x(t.e) - x(t.s)) + 'px"></span>';
   if (t.g === R) return '<span class="cl" style="left:' + x(t.s) + 'px;width:' + (x(t.e) - x(t.s)) + 'px"></span>' + (t.s2 ? '<span class="cl' + (t.e2 > HI ? ' open' : '') + '" style="left:' + x(t.s2) + 'px;width:' + (x(Math.min(t.e2, HI)) - x(t.s2)) + 'px"></span>' : '');
-  return '<span class="ring" style="left:' + x(t.y) + 'px"></span>';
+  return '<span class="ring' + (t.ec ? ' ec' : '') + '" style="left:' + x(ptY(t)) + 'px"></span>';
 }
 function item(t) {
   const [a, b] = span(t);
   const x0 = X(a), x1 = X(Math.min(b, HI));
   const w = tw(labTxt(t));
   const lead = t.g === P && t.b == null ? 30 : 0;
-  const start = Math.max(0, x0 - lead - (t.y != null ? 5 : 0));
+  const ring = t.g === C ? 5 : 0, c0 = t.g === C ? X(ptY(t)) : x0, c1 = t.g === C ? c0 : x1;
+  const start = Math.max(0, c0 - lead - ring);
   let lx = start;
-  if (start + w > W) lx = Math.max(0, x1 + (t.y != null ? 5 : 0) - w);
-  const l = Math.min(lx, start), r = Math.min(W, Math.max(lx + w, x1 + 6));
+  if (start + w > W) lx = Math.max(0, c1 + ring - w);
+  const l = Math.min(lx, start), r = Math.min(W, Math.max(lx + w, c1 + 6));
   return {t, lx, w, l, r};
 }
 const GROUPS = [P, C, O, R];
@@ -337,16 +368,23 @@ function axis(top) {
 }
 const factsHtml = t => '<dl class="td-f">' + t.f.map(([k, v]) => '<div><dt>' + esc(k) + '</dt><dd' + (v.length > 14 ? ' class="w"' : '') + '>' + esc(v) + '</dd></div>').join('') + '</dl>';
 const oneLine = t => t.f.map(([k, v]) => (v === 'desconocido' ? k + ': desconocido' : k + ' ' + v)).join('. ') + '.';
+const ecHtml = t => t.ecr ? '<div class="td-ec"><p class="td-k">' + (t.ec ? 'Lo reciben como concilio ecuménico' : 'Concilio ecuménico') + '</p><p class="td-ect">' + esc(t.ecr) + '</p></div>' : '';
+const wkHtml = t => {
+  const k = WK[t.id];
+  if (!k) return '';
+  return '<div class="td-w"><p class="td-k">Escritos que se conservan</p><ul class="td-wl">' + k.w.map(w => '<li><span>' + esc(w[0]) + '</span>' + (w[1] ? '<span class="wd">' + esc(w[1]) + '</span>' : '') + (w[2] ? '<span class="wc">' + esc(w[2][0].toUpperCase() + w[2].slice(1)) + '</span>' : '') + '</li>').join('') + '</ul><p class="td-wn">' + (k.n ? 'Y ' + k.n + (k.n === 1 ? ' obra más. ' : ' obras más. ') : '') + 'La fecha de cada escrito se indica solo cuando está verificada.</p></div>';
+};
 function detailHtml(t) {
   const [a, z] = selSpan(t);
   const mini = D.mini(a, z > a ? z : null, [LO, HI, [30, 200, 400, 600, 800]], t.dl.replace('†', ''));
   return '<div class="td"><p class="td-k">' + esc(t.kind) + '</p><h3 class="td-n" tabindex="-1">' + esc(t.name) + '</h3>' +
     '<p class="td-d">' + esc(oneLine(t)) + (t.x ? ' ' + esc(t.x) : '') + '</p>' + factsHtml(t) + '<div class="td-mini">' + mini + '</div>' +
     (t.x ? '<p class="td-x x2">' + esc(t.x) + '</p>' : '') +
-    '<p class="td-t">' + esc(t.text) + '</p><a class="ln-go td-a" href="#" data-nb>' + esc(t.link) + '</a></div>';
+    '<p class="td-t">' + esc(t.text) + '</p>' + ecHtml(t) + '<a class="ln-go td-a" href="#" data-nb>' + esc(t.link) + '</a>' + wkHtml(t) + '</div>';
 }
 const below = document.getElementById('td-below');
 let rp = null;
+const closePanel = () => { if (rp) rp.classList.remove('open'); document.body.classList.remove('rp-open'); };
 const tdv = () => document.documentElement.getAttribute('data-pp-tdv') || 'avance';
 function ensureRp() {
   if (rp) return rp;
@@ -354,13 +392,14 @@ function ensureRp() {
   rp.className = 'rp'; rp.setAttribute('aria-label', 'Detalle de lo elegido');
   rp.innerHTML = '<span class="rp-grip" aria-hidden="true"></span><div class="rp-h"><span>Lo elegido en la línea</span><button class="cw-x" type="button" aria-label="Cerrar el panel">' + D.ic.x + '</button></div><div class="rp-b" aria-live="polite"></div>';
   document.body.appendChild(rp);
-  rp.querySelector('.cw-x').addEventListener('click', () => { rp.classList.remove('open'); document.body.classList.remove('rp-open'); requestAnimationFrame(render); });
+  rp.querySelector('.cw-x').addEventListener('click', () => deselect(true));
   return rp;
 }
 function detail() {
   const t = byId[sel];
-  const html = t ? detailHtml(t) : '<p class="td-empty">Elegí una persona, un concilio o una corriente para ver sus fechas.</p>';
+  const html = t ? detailHtml(t) : '<p class="td-empty">Elegí una persona, un concilio o una corriente para ver sus fechas. Tocá de nuevo lo elegido para soltarlo.</p>';
   below.innerHTML = html;
+  if (tdv() === 'panel' && !t && rp) closePanel();
   if (tdv() === 'panel' && t) {
     ensureRp().querySelector('.rp-b').innerHTML = html;
     if (!rp.classList.contains('open')) { rp.classList.add('open'); document.body.classList.add('rp-open'); }
@@ -389,7 +428,7 @@ addEventListener('scroll', peekFrame, {passive: true});
 addEventListener('resize', peekFrame);
 const afterSelect = kbd => {
   const t = byId[sel];
-  if (!t) return;
+  if (!t) { peekEl.classList.remove('on', 'off'); return; }
   if (tdv() === 'avance') {
     const was = peekEl.classList.contains('on');
     pin.innerHTML = '<p class="pk-t"><span class="pk-h"><b>' + esc(t.name) + '</b><span class="pk-d">' + esc(t.dl.replace('†', 'murió ')) + '</span></span><span class="pk-s">' + esc(t.text) + '</span></p><a class="ln-go pk-a" href="#" data-nb>' + esc(t.link) + '</a>';
@@ -431,6 +470,7 @@ function ovWin() {
   yr.style.left = Math.min(Math.max((f0 + f1) / 2 * 100, 6), 94) + '%';
 }
 boxEl.addEventListener('scroll', () => requestAnimationFrame(ovWin), {passive: true});
+if (window.ResizeObserver) new ResizeObserver(() => requestAnimationFrame(ovWin)).observe(boxEl);
 let ovDrag = null;
 const ovTo = (cx, grabFrac) => {
   const r = ov.getBoundingClientRect();
@@ -463,12 +503,22 @@ box.addEventListener('click', e => {
   if (boxEl._justPanned) return;
   const b = e.target.closest('.ti');
   if (!b) return;
+  if (b.dataset.ti === sel) { deselect(false, b.dataset.ti); return; }
   sel = b.dataset.ti;
   render();
   const nb = box.querySelector('.ti[data-ti="' + sel + '"]');
   if (nb) nb.focus({preventScroll: true});
   afterSelect(e.detail === 0);
 });
+function deselect(fromPanel, id) {
+  const prev = id || sel;
+  sel = null;
+  render();
+  afterSelect(false);
+  const nb = box.querySelector('.ti[data-ti="' + prev + '"]');
+  if (nb && !fromPanel) nb.focus({preventScroll: true});
+}
+addEventListener('keydown', e => { if (e.key === 'Escape' && sel && !document.querySelector('.cw.open, .rd.open')) deselect(false); });
 box.addEventListener('keydown', e => {
   if (!['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.key)) return;
   const btns = [...box.querySelectorAll('.ti')];
@@ -483,16 +533,18 @@ box.addEventListener('keydown', e => {
 addEventListener('pp', e => {
   if (e.detail.key === 'tdv') {
     peekEl.classList.remove('on', 'off');
-    if (e.detail.value !== 'panel' && rp) { rp.classList.remove('open'); document.body.classList.remove('rp-open'); }
+    if (e.detail.value !== 'panel' && rp) closePanel();
     requestAnimationFrame(() => { render(); afterSelect(false); });
   }
   if (e.detail.key === 'nav') requestAnimationFrame(paintOv);
   if (e.detail.key === 'dfmt') { detail(); if (rp && rp.classList.contains('open')) rp.querySelector('.rp-b').innerHTML = below.innerHTML; }
   if (e.detail.key === 'sel') render();
 });
+document.addEventListener('DOMContentLoaded', () => { D.$$('.pp[data-chosen]').forEach(el => { const b = el.querySelector('button[data-v="' + el.dataset.chosen + '"]'); if (b && !b.querySelector('.ch')) b.insertAdjacentHTML('beforeend', '<span class="ch">elegido</span>'); }); });
 let rt = 0;
-addEventListener('resize', () => { cancelAnimationFrame(rt); rt = requestAnimationFrame(() => { render(); }); });
-(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { render(); afterSelect(false); if (innerWidth <= 720) boxEl.scrollLeft = X(58); });
+addEventListener('resize', () => { cancelAnimationFrame(rt); rt = requestAnimationFrame(() => { calcPx(); render(); }); });
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { calcPx(); render(); afterSelect(false); if (innerWidth <= 720) boxEl.scrollLeft = X(58); });
+calcPx();
 render();
 })();
 </script>
