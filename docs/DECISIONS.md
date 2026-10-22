@@ -25,6 +25,14 @@ Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v
 **Discarded:** «Trazo más firme»; the diagonal and vertical theme sweeps; the sidebar mark that cut between items; the «Leer el detalle» button.
 **Open, not decided** (ROADMAP "Now"): the date-title format in 09 «Fechas y autenticidad»; whether the page-change fade stays; a fast drag on the ruler breaks the filter animation (a trap to handle in the implementation, not now).
 
+## 2026-10-22 · Glossary open points 1–5 (Pedro chose)
+**Chosen:** the terms-window entry for «Oros» describes the 1755/56 document (what it is, date, the three signing patriarchs), not an Orthodox definition of the word. In Baptism nothing changes: the *Oros* stays the Orthodox objector text of OB-6a/OB-6b with its status line ST-OROS. Reading the Greek (Mansi 38:617–622) and redoing the Spanish from it goes to Codex at low priority (Baptism comes after the Eucharist pilot).
+**Why:** it is not in the 2026-10-15 Orthodox list, so it does not define terms for the tradition; Pedro already approved quoting it in Baptism (Baptism question 14, 2026-10-22).
+**Discarded:** adding it to the Orthodox list of 2026-10-15; dropping it; a check of Greek vs Russian practice (the status line no longer claims it).
+**Also chosen (open points 2–5, recommendations accepted):** A23 «Iglesia militante»: the Roman Catechism (1566) is admitted for this entry only, dated (a Holy See publication; the CEC does not use the phrase). A9 «Tradición»: the Lutheran cell is `[not found]` on the site (AC XV.3 judges «tradiciones humanas», it does not define the word). B13: the Spanish switches to the 1880 Shorter Catechism Q. 88 after Codex checks it against the 1647 text. C1 Baptist: each language shows its official BF&M text as printed, the Spanish with a short note that the English says «righteousness», not «gracia».
+**Why (2–5):** no definition is invented where the text gives none; printed public-domain Spanish beats AI translation; choosing one BF&M edition would be the site deciding for the tradition. Details in each entry of `docs/research/glossary-terms.md`.
+
+
 ## 2026-10-22 · Apologetic answers: Pedro's four calls (Pedro chose)
 **Chosen:** the *Catholic Encyclopedia* (1907–1912) stays where relevant and faithful to its sources, labelled as what it is (Catholic history of that date, not current apologetics); Catholic authors conceding historical facts are quoted openly, never caricaturing any tradition; the two debaters whose lines pull against official teaching stay out for now; Baptism OB-4's marked note is removed. Recorded in `docs/research/doctrines/apologetic-answers.md` («Pedro's answers»).
 **Why:** Pedro's answers to the apologetic-answers research, 2026-10-22.

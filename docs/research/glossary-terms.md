@@ -127,6 +127,7 @@ _Dónde:_ Sola Scriptura (C 23: «the whole OB-3 answer rests on the capital let
 - es (traducción asistida por IA desde el inglés del Triglot, sin revisar por Pedro): «Se les advierte también que las tradiciones humanas instituidas para aplacar a Dios, para merecer la gracia y para satisfacer por los pecados son contrarias al Evangelio y a la doctrina de la fe.»
 - en: "They are admonished also that human traditions instituted to propitiate God, to merit grace, and to make satisfaction for sins, are opposed to the Gospel and the doctrine of faith." — AC XV.3, Triglot p. 49 `[verified: OCR]`
 - Reformed, Baptist, Pentecostal: a definition of «tradición» `[not found]` in WCF-1647, BF&M, AG-SFT (searched for "tradition"); WCF I.6 only excludes "traditions of men" (not re-quoted here).
+- Pedro, 2026-10-22 (Open 3): on the site the Lutheran cell is `[not found]`; AC XV.3 stays here as use, not definition.
 
 ### A10 · analogía de la fe
 _Dónde:_ Sola Scriptura (C 23). Uso divergente: no.
@@ -240,6 +241,7 @@ _Dónde:_ Papado (C 27; Vatican I can. 1). Uso divergente: no.
 - es: «Dos señaladamente son las partes de la Iglesia, de las cuales una se llama Triunfante y otra Militante. […] La Iglesia militante es el escuadron de todos los fieles que aun viven en la tierra, la cual por eso se llama militante, porque está en guerra continua con los cruelísimos enemigos, mundo, carne y satanás.» — *Catecismo del Santo Concilio de Trento para los párrocos*, tr. Zorita, Barcelona: Sierra y Martí (Complutense copy, archive.org `catecismodelsan00unkngoog`), parte I, art. 9, §5, t. I p. 92 or 93 (OCR page marker) `[verified: OCR]`
 - en: "The Church militant is the society of all the faithful still dwelling on earth, and is called militant, because it wages eternal war with those implacable enemies, the world, the flesh and the devil." — *The Catechism of the Council of Trent*, tr. J. Donovan, Baltimore: Lucas Brothers, 1829, archive.org `thecatechismofth00donouoft` `[verified: OCR]`
 - The current Catechism does not use the phrase (`[not found]` in CEC es); it speaks of the disciples who «peregrinan en la tierra» (CEC 954, not re-read for this entry).
+- Pedro, 2026-10-22 (Open 2): the Roman Catechism is admitted for this entry only, with its date shown.
 
 ### A24 · cisma
 _Dónde:_ Papado (C 27; CV-2). Uso divergente: no definition from another tradition found.
@@ -384,6 +386,7 @@ _Dónde:_ Sola Scriptura (objector's text: WCF I.7). Uso divergente: no.
 - es: «no solo los eruditos, sino aun los que no lo son, pueden alcanzar un conocimiento suficiente de ellas, por el debido uso de los médios ordinários.» — Westminster I.7, WCF-1880 (OCR «i)ueden» read as «pueden») `[verified: OCR]`
 - en: "not only the learned, but the unlearned, in a due use of the ordinary means, may attain unto a sufficient understanding of them." — WCF I.7, WCF-1647 `[verified: OCR]`
 - Closest definition, Larger Catechism 154: "The outward and ordinary means whereby Christ communicates to his church the benefits of his mediation, are all his ordinances; especially the word, sacraments, and prayer" — WCF-1647 volume `[verified: OCR]`; es (traducción asistida por IA, sin revisar por Pedro; the 1880 Spanish of the Larger Catechism not looked up): «Los medios externos y ordinarios por los que Cristo comunica a su iglesia los beneficios de su mediación son todas sus ordenanzas, especialmente la palabra, los sacramentos y la oración». Whether I.7's "ordinary means" has exactly this sense is `[inference]`.
+- Pedro, 2026-10-22 (Open 4): switch the Spanish to WCF-1880 Shorter Catechism Q. 88 once it is checked word for word against the 1647 SC 88 `[pending: Codex, low priority]`.
 
 ### B14 · ministerialmente
 _Dónde:_ Sola Scriptura (objector's text: WCF XXXI.3, 1647 numbering). Uso divergente: no.
@@ -427,7 +430,7 @@ _Dónde:_ Justificación (whole dossier). Uso divergente: **sí** (Catholic: for
 
 **Bautista**
 - es: «Justificación, es la obra de gracia de Dios y la completa absolución basada en los principios de su gracia hacia todos los pecadores que se arrepienten y creen en Cristo. La justificación coloca al creyente en una relación de paz y favor con Dios.» — *Fe y Mensaje Bautistas*, art. IV.B `[verified]`
-- en: "Justification is God's gracious and full acquittal upon principles of His righteousness of all sinners who repent and believe in Christ. Justification brings the believer unto a relationship of peace and favor with God." — BF&M 2000, art. IV.B `[verified]`. (The two editions differ: "principles of His righteousness" / «principios de su gracia»; noted, not resolved.)
+- en: "Justification is God's gracious and full acquittal upon principles of His righteousness of all sinners who repent and believe in Christ. Justification brings the believer unto a relationship of peace and favor with God." — BF&M 2000, art. IV.B `[verified]`. (The two editions differ: "principles of His righteousness" / «principios de su gracia». Pedro, 2026-10-22 (Open 5): each language shows its official text as printed; the Spanish carries a short note that the English says «justicia» (righteousness), not «gracia».)
 
 - Pentecostal: a definition `[not found]`; AG-SFT 5 only uses the word: "being justified by grace through faith" / «la justificación por la gracia a través de la fe» `[verified]`. Orthodox: Dositheus uses the word (Robertson, Decree XIII) without a definition read today `[not found]`.
 
@@ -810,6 +813,7 @@ _Dónde:_ Bautismo (OB-6a, OB-6b; ST-OROS). Uso divergente: no (an Orthodox term
 **Ortodoxa**
 - The word names a conciliar definition. The Orthodox map gives Ὅρος (δογματικὸς ὅρος) = «Definición dogmática (horos) de un Concilio Ecuménico» / "Dogmatic definition of an Ecumenical Council", with the councils' "dogmatic definitions … understood to be inspired by God" (OCA) — `traditions/orthodox.md` §3, row 4 `[verified in map]`. In the Baptism dossier it names one document, the *Oros* of Constantinople 1755/56 on the baptism of converts: "we receive those who come over to the Orthodox faith, who were baptized without being baptized, as being unbaptized" (Metallinos' English, https://www.oodegr.com/english/biblia/baptisma1/par2.htm) `[verified in map]`; es (traducción asistida por IA, sin revisar por Pedro): «recibimos a los que vienen a la fe ortodoxa, bautizados sin haber sido bautizados, como no bautizados».
 - A definition of the word in an official Orthodox text read today `[not found]`; the map's gloss is the map's.
+- Window (Pedro, 2026-10-22, Open 1): the entry describes the document (what it is, date, the three signing patriarchs), not an Orthodox definition of the word. In Baptism the *Oros* stays the Orthodox objector text of OB-6a/OB-6b with ST-OROS. Greek (Mansi 38:617–622) `[pending: Codex, low priority]`.
 
 ### D28 · credobautista
 _Dónde:_ Bautismo (debate layer: a debater's self-description). Uso divergente: no.
@@ -870,8 +874,8 @@ _Dónde:_ Papado (OB-8, objector's text: Treatise; *Unam sanctam*). Uso divergen
 ## Open for Pedro
 
 Not decided here; recorded from the verification (`glossary-terms.verify.md`, "Notes for the apply step").
-1. D27 Oros: the 1755/56 *Oros* is not among the Orthodox texts of DECISIONS 2026-10-15 and the copy is a website transcription (oodegr.com). Does it count as an official Orthodox text for the window, or only for the Baptism debate layer?
-2. A23 Iglesia militante: the Roman Catechism (1566) is not in the 2026-10-15 list of universal-magisterium sources (CEC, councils, CIC, Holy See documents). Is it admitted as a Catholic source?
-3. A9 Lutheran cell: AC XV.3 evaluates «tradiciones humanas» and does not define «tradición». Mark it as use, not definition, or leave the Lutheran cell `[not found]`?
-4. B13: the 1880 Spanish volume has the Shorter Catechism Q. 88 (the «medios exteriores y ordinarios» sentence), an official-edition Spanish, instead of the AI translation of Larger Catechism 154. Switch to it? (Not verified word for word against the 1647 SC.)
-5. C1 Baptist: the English BF&M says "principles of His righteousness", the official Spanish «principios de su gracia». Show both as printed, or which one leads?
+1. **Answered 2026-10-22 (Pedro), see D27.** D27 Oros: the 1755/56 *Oros* is not among the Orthodox texts of DECISIONS 2026-10-15 and the copy is a website transcription (oodegr.com). Does it count as an official Orthodox text for the window, or only for the Baptism debate layer?
+2. **Answered 2026-10-22 (Pedro), see A23.** A23 Iglesia militante: the Roman Catechism (1566) is not in the 2026-10-15 list of universal-magisterium sources (CEC, councils, CIC, Holy See documents). Is it admitted as a Catholic source?
+3. **Answered 2026-10-22 (Pedro), see A9.** A9 Lutheran cell: AC XV.3 evaluates «tradiciones humanas» and does not define «tradición». Mark it as use, not definition, or leave the Lutheran cell `[not found]`?
+4. **Answered 2026-10-22 (Pedro), see B13.** B13: the 1880 Spanish volume has the Shorter Catechism Q. 88 (the «medios exteriores y ordinarios» sentence), an official-edition Spanish, instead of the AI translation of Larger Catechism 154. Switch to it? (Not verified word for word against the 1647 SC.)
+5. **Answered 2026-10-22 (Pedro), see C1.** C1 Baptist: the English BF&M says "principles of His righteousness", the official Spanish «principios de su gracia». Show both as printed, or which one leads?

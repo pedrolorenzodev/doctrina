@@ -609,4 +609,4 @@ Verses: RV1909 `[verified]` (ACT 17:11; 1TH 2:13). The 1 Thess 2:13 sentence is 
 1. *Catholic Encyclopedia* (1907–1912): kept where its information is relevant and faithful to the sources, with the label that fits best (e.g. «historia católica, 1907–1912», not «apologista actual»).
 2. Catholic authors who concede historical facts (Fortescue on the epiclesis, Fanning on immersion, Saltet on the pseudo-Isidorian decretals): said openly, taking care never to caricature any tradition.
 3. The two debaters left out (Luis Toro, Fradd): fine for now.
-4. Baptism OB-4's marked note: removed (it is about the scope of a canon, not a popular objection) — to apply in `baptism/catholic.md`.
+4. Baptism OB-4's marked note: removed (it is about the scope of a canon, not a popular objection) — applied in `baptism/catholic.md` 2026-10-22.
