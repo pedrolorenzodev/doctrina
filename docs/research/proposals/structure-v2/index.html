@@ -1,0 +1,332 @@
+<title>Doctrina, estructura completa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1d1d1c; --ink:#f2f2f0; --ink-2:#d0d0cc; --ink-3:#9a9a96; --rule:#3a3a38; --rule-2:#4d4d4a; --accent:#9eb3ee; --accent-weak:rgb(158 179 238 / .14); --panel:#262625; --stage:#151514;
+  --head:Newsreader, Georgia, serif; --ui:'Work Sans', system-ui, sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){ --bg:#e8e5de; --ink:#1c1713; --ink-2:#2a2620; --ink-3:#5c574f; --rule:#c9c5bc; --rule-2:#aeaba4; --accent:#2c4a9e; --accent-weak:rgb(44 74 158 / .1); --panel:#efece6; --stage:#d9d6cf; color-scheme:light } }
+:root[data-theme="light"]{ --bg:#e8e5de; --ink:#1c1713; --ink-2:#2a2620; --ink-3:#5c574f; --rule:#c9c5bc; --rule-2:#aeaba4; --accent:#2c4a9e; --accent-weak:rgb(44 74 158 / .1); --panel:#efece6; --stage:#d9d6cf; color-scheme:light }
+html,body{height:100%}
+body{margin:0;background:var(--stage);color:var(--ink);font-family:var(--ui);font-size:14px;display:flex;flex-direction:column}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+button,select{font:inherit;color:inherit}
+:is(a,button,select):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-direction:column;gap:8px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--bg);border-bottom:1px solid var(--rule)}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px}
+.name{font-family:var(--head);font-size:19px;font-weight:400;margin-right:6px}
+.name span{color:var(--ink-3);font-family:var(--ui);font-size:13px;margin-left:8px}
+.grp{display:flex;align-items:center;gap:8px}
+.grp-l{font-size:12.5px;color:var(--ink-3)}
+.seg{display:flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.seg button{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:6px 11px;border-radius:6px;font-size:13px;line-height:1.2;font-weight:500;color:var(--ink-3);cursor:pointer;min-height:32px;transition:background-color 150ms ease,color 150ms ease}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button:disabled{opacity:.4;cursor:default}
+.notes-b,.x-b{display:inline-flex;align-items:center;justify-content:center;min-height:34px;border:1px solid var(--rule-2);background:transparent;border-radius:7px;padding:6px 12px;font-size:13px;line-height:1.2;font-weight:500;cursor:pointer;transition:border-color 150ms ease,background-color 150ms ease}
+.notes-b{margin-left:auto}
+.notes-b:hover,.x-b:hover{border-color:var(--ink);background:var(--accent-weak)}
+.x-b,.notes-b.sm{display:none}
+.xrow{gap:8px}
+.xrow[hidden]{display:none}
+.x-h{font-size:12.5px;font-weight:500;color:var(--accent)}
+.xs{min-height:34px;max-width:100%;padding:5px 28px 5px 10px;border:1px solid var(--rule);border-radius:7px;background:var(--panel);font-size:13px;line-height:1.2;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat;transition:border-color 150ms ease}
+.xs:hover{border-color:var(--rule-2)}
+.xs.changed{border-color:var(--accent)}
+.stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:flex-start;overflow:auto;padding-block:0}
+.stage.phone{padding:24px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px))}
+iframe{display:block;border:0;background:var(--bg);width:100%;height:100%}
+.stage.phone iframe{width:min(390px,100%);height:min(844px,calc(100dvh - 140px));min-height:560px;border:1px solid var(--rule-2);border-radius:30px;box-shadow:0 0 0 7px var(--bg),0 0 0 8px var(--rule-2)}
+.notes{position:fixed;z-index:20;top:0;right:0;bottom:0;width:min(600px,100%);overflow-y:auto;background:var(--panel);border-left:1px solid var(--rule-2);padding:24px max(22px,env(safe-area-inset-right,0px)) 60px 26px;transform:translateX(102%);transition:transform 240ms cubic-bezier(.4,0,.2,1)}
+.notes.open{transform:none}
+.notes h2{margin:0 0 12px;font-family:var(--head);font-weight:300;font-size:30px;line-height:1.15;text-wrap:balance}
+.notes h3{margin:28px 0 8px;font-size:14px;font-weight:600}
+.notes h4{margin:0 0 8px;font-family:var(--head);font-weight:400;font-size:19px;line-height:1.3}
+.notes p,.notes li{font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.notes ul{margin:0;padding-left:20px}
+.notes li + li{margin-top:6px}
+.notes b{color:var(--ink);font-weight:600}
+.gl,.xt{margin:14px 0 0;padding:14px 0 0;border-top:1px solid var(--rule)}
+.gl-l{display:block;margin-bottom:8px;font-weight:500;color:var(--ink)}
+.gl .seg,.xt .seg{display:inline-flex}
+.gl-n,.xt-n{margin:8px 0 0;font-size:13px!important;color:var(--ink-3)!important}
+.xt ul{margin-top:10px}
+.xt li{font-size:13.5px}
+.notes .x{position:sticky;top:0;float:right;display:grid;place-items:center;border:0;background:var(--panel);border-radius:6px;width:40px;height:40px;cursor:pointer;font-size:20px;line-height:1}
+@media (max-width:1499px){ .grp-l:not(.keep),.name span{display:none} }
+@media (max-width:640px){
+  .grp-l{display:none} .name span{display:none} .row{gap:8px 10px} .seg button{padding:6px 8px}
+  .stage.phone{padding-block:12px}
+  .x-b,.notes-b.sm{display:inline-flex}
+  .notes-b{margin-left:0}
+  #notes-b{display:none}
+  .xrow{display:grid;grid-template-columns:1fr 1fr}
+  .xrow .x-h{grid-column:1 / -1}
+  .xs{width:100%;min-height:40px}
+  .xrow[hidden]{display:none}
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+
+<div class="bar">
+  <div class="row">
+    <span class="name">Doctrina<span>propuesta de estructura</span></span>
+    <div class="grp"><span class="grp-l">Versión</span><div class="seg" id="g-v" role="group" aria-label="Versión">
+      <button type="button" data-v="v2">v2</button><button type="button" data-v="v1">v1</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Pantalla</span><div class="seg" id="g-s" role="group" aria-label="Pantalla">
+      <button type="button" data-v="02">02 Doctrina</button><button type="button" data-v="03">03 Tradición</button><button type="button" data-v="ob">Objeciones</button><button type="button" data-v="04">04 Objeción</button><button type="button" data-v="09">09 Ignacio</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Modo</span><div class="seg" id="g-m" role="group" aria-label="Modo">
+      <button type="button" data-v="dark">Oscuro</button><button type="button" data-v="light">Claro</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Ancho</span><div class="seg" id="g-w" role="group" aria-label="Ancho">
+      <button type="button" data-v="desk">Escritorio</button><button type="button" data-v="phone">Celular</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Opciones</span><div class="seg" id="g-c" role="group" aria-label="Opciones a probar dentro de las pantallas">
+      <button type="button" data-v="0">Con opciones</button><button type="button" data-v="1">Sin opciones</button>
+    </div></div>
+    <button class="notes-b" type="button" id="notes-b" aria-expanded="false" aria-controls="notes">Cómo leerla</button>
+    <button class="x-b" type="button" id="x-b" aria-expanded="false" aria-controls="xrow">Probar</button>
+    <button class="notes-b sm" type="button" id="notes-b2" aria-controls="notes">Cómo leer</button>
+  </div>
+  <div class="row xrow" id="xrow">
+    <span class="x-h" title="En cada selector, la primera opción es la elegida">Probar</span>
+    <select class="xs" id="xs-tree" data-k="tree" aria-label="Barra lateral, al abrir una rama"></select>
+    <select class="xs" id="xs-mark" data-k="mark" aria-label="Barra lateral, marca de dónde estás"></select>
+    <select class="xs" id="xs-theme" data-k="theme" aria-label="Cambio de tema"></select>
+    <select class="xs" id="xs-trad" data-k="trad" aria-label="Cambio de tradición, en Objeciones"></select>
+    <select class="xs" id="xs-contrast" data-k="contrast" aria-label="Contraste en modo claro"></select>
+    <select class="xs" id="xs-gap" data-k="gap" aria-label="Espacio entre secciones"></select>
+    <select class="xs" id="xs-scroll" data-k="scroll" aria-label="Scroll suave con la rueda"></select>
+  </div>
+</div>
+<div class="stage" id="stage"><iframe id="fr" title="Pantalla de la propuesta"></iframe></div>
+
+<aside class="notes" id="notes" aria-label="Cómo leer esta propuesta">
+  <button class="x" type="button" id="notes-x" aria-label="Cerrar">×</button>
+  <div id="notes-v2">
+    <h2>La estructura, versión 2</h2>
+    <p>Las mismas cuatro pantallas con tus notas aplicadas y una pantalla nueva, «Objeciones». Contenido real del piloto de Eucaristía. Arriba, «v1» muestra la versión anterior tal como la viste; «v2» vuelve a esta.</p>
+    <h3>Vuelta final, aprobada</h3>
+    <ul>
+      <li><b>Marca de la barra lateral:</b> «Viaja», ahora por defecto.</li>
+      <li><b>09, detalle de la línea:</b> «Avance fijo», por defecto. La franja ya no tiene «Leer el detalle»: lleva el mismo enlace que el detalle («Ir a la página de Clemente de Roma»). Al bajar, la franja se suelta justo encima del detalle y se apaga a medida que el detalle entra, atada al scroll: sin saltos ni parpadeo en el borde, también si cambiás de elección con la franja a la vista.</li>
+      <li><b>09, fechas propuestas:</b> en orden cronológico por la fecha estimada, la más temprana primero (un rango cuenta por su primer año). Es una sola lista: cerrada muestra las tres principales en orden; «Mostrar las 7 de la historia del debate» intercala las otras siete en su lugar cronológico, con la cascada de las listas. El formato de los títulos queda como está, para decidir después. El tramo del reinado de Adriano en Harnack (1878), aprobado.</li>
+    </ul>
+    <h3>Vuelta 4, notas 21 y 22 (09)</h3>
+    <ul>
+      <li><b>Que se note el detalle de la línea</b> (09, «Tiempo contemporáneo»): un selector arriba de la línea con lo actual y las tres opciones de la investigación de Codex (nueve productos reales; ninguno mueve la página en cada elección): <b>La primera vez</b> (tu idea: baja lo mínimo solo la primera vez y deja una marca «Ver el detalle abajo»), <b>Avance fijo</b> (una franja pegada al borde de abajo con la fecha, el nombre y «Leer el detalle»; la página nunca se mueve) y <b>Solo si no se ve</b> (baja lo justo en cada elección, nunca sube, se corta si movés la rueda). Ninguna se combina con otra, como recomienda la investigación.</li>
+      <li><b>Las fechas propuestas</b> (09, «Fechas y autenticidad»): cada fecha dice qué se fecha (la muerte, las cartas, la colección) y según quién; el nombre del estudioso se ve como fuente y abre la ventana con quién es, su obra y sus años (los vivos, hasta hoy, en la línea chica). Arriba quedan la fecha tradicional, Decrept y Barnes; las otras siete, de Zahn a Lechner, en «Mostrar las 7 de la historia del debate». Solo se muestran las dataciones que el verificador pudo confirmar en su fuente: Pervo, Vinzent, Schoedel y Joly vuelven cuando se abran sus páginas. Con las correcciones del verificador: Lake y Harnack (1878) resumen lo que sostenía la crítica, y así lo dice su fila; sin «vive» ni abreviaturas en los años de vida. Nuevo y por defecto, para que lo apruebes: donde la fecha es un reinado (Harnack, 1878: «últimos años de Adriano»), la línea chica dibuja el reinado como un tramo con sus años escritos. La de 1897 ya tiene años (110–117, quizá 117–125), así que se dibuja como las demás. Hay un selector para el formato: el de Codex une datos con «·» y «—», que está en la lista de lo genérico; por eso propongo la fecha arriba y debajo qué se fecha.</li>
+    </ul>
+    <h3>Vuelta 3, con tus notas 8 a 14</h3>
+    <ul>
+      <li><b>Elegidos, ahora por defecto:</b> contraste «Prosa oscura», tema «Arco botón», «Mucho aire» entre secciones y scroll «Apenas». Siguen en los selectores como primera opción (y marcados «elegido» acá abajo), por si querés volver a compararlos. «Trazo firme» salió.</li>
+      <li><b>Cambio de tradición:</b> la marca que viaja queda igual. El contenido ahora sigue el orden de las pestañas: si elegís una tradición a la derecha, lo anterior sale hacia la izquierda y lo nuevo entra desde la derecha; hacia la izquierda, al revés. 16 px y fundido; la salida dura 0,14 s y la entrada 0,26 s. Si tocás varias seguidas, no se acumulan: entra la última.</li>
+      <li><b>03, «Por qué»:</b> el bloque de autor, obra y fecha usa el espacio libre de la derecha, como en 02, sin tocar la regla del borde. Los números de un lugar ya no quedan solos en una línea («homilía 1, 6» va siempre junto), en todas las fuentes y citas del sitio.</li>
+      <li><b>Marca de dónde estás en la barra lateral:</b> abajo, en «Para probar», con cuatro variantes.</li>
+    </ul>
+    <h3>Vuelta 2, con tus primeras notas</h3>
+    <ul>
+      <li><b>Cascada en todas las listas.</b> 02: con «Objeciones plegadas», al tocar «Ver las objeciones que recibe» las filas entran en cascada y la caja crece; al ocultarlas, las filas se apagan en 0,18 s (la salida de sura-clon) y después la caja se pliega. Revisé de nuevo las cinco pantallas y sumé las que faltaban: las cinco respuestas, las preguntas de «Lo que se discute», las filas de «La práctica» (tabla y teléfono), los Padres de «Por qué», el «Grado de autoridad», los datos de 09, los textos de la objeción en 04 y los resultados del buscador.</li>
+      <li><b>Entrada al bajar.</b> Cada fila entra la primera vez que llega a la pantalla, por tandas: las que aparecen juntas, una cada 60 ms. Se ve en los testigos de 02. Si filtrás con la regla, las filas nuevas que quedan fuera de la pantalla esperan a que llegues para entrar, así las dos animaciones no se pisan.</li>
+      <li><b>La cita abierta queda marcada.</b> Mientras la ventana de cita o de glosario está abierta, el enlace que la abrió mantiene su estilo de hover; se va al cerrarla. Vale para todas las citas, términos del glosario, fuentes de «La práctica» y citas numeradas.</li>
+      <li><b>Barra lateral, tema y tradición:</b> abajo, en «Para probar».</li>
+    </ul>
+    <h3>Qué cambió, ya decidido</h3>
+    <ul>
+      <li><b>Objeciones</b> es su propia página: en la barra lateral está bajo cada tradición, al nivel de «Pasajes», y queda seleccionada. Tiene el selector de tradición y te deja en las objeciones de la tradición que elegís. En 03 la sección muestra tres y «Ver las 7 objeciones»; la ruta y el pie de 04 llevan a esa página.</li>
+      <li><b>Entradas:</b> «Título» en todas las páginas (el encabezado aparece en 0,7 s, cada parte 80 ms después) y el fundido de 0,22 s al cambiar de pantalla.</li>
+      <li><b>Listas en cascada</b>, copiadas de sura-clon: al llegar a una lista, las filas suben 8 px y aparecen en 0,42 s, una cada 60 ms. Al filtrar o mostrar más (la regla viva de 02, los idiomas de los videos, los «Mostrar más»), las filas que quedan se deslizan a su lugar en 0,38 s, las que salen se desvanecen en 0,18 s y las nuevas entran 0,12 s después, una cada 40 ms. Arrastrá sobre la regla de «Lo que escribieron los primeros cristianos» para verlo.</li>
+      <li><b>02:</b> «transubstanciación» abre el glosario. Las fuentes de «La práctica» siguen grises y discretas, con hover, y abren la ventana de cita. «Objeciones que recibe» queda igual.</li>
+      <li><b>04:</b> en «Fuentes citadas», la marca de cada regla dice solo el año; a la izquierda, la fecha completa cuando existe («17 sep 1562»). El pie dice adónde lleva cada lado: «Anterior: todas las objeciones» y «Siguiente objeción».</li>
+      <li><b>09:</b> sin el nombre griego bajo cada carta. Cada carta tiene una descripción nueva, escrita con lo que comparten maestros católicos, ortodoxos, luteranos, reformados, evangélicos y bautistas, comprobado contra las cartas, y una cita breve que abre la ventana.</li>
+      <li><b>Texto centrado</b> en botones, chips y pestañas, medido en cada pantalla (los filtros de videos de 03 estaban corridos).</li>
+    </ul>
+
+    <h3>Para probar</h3>
+    <p>Los seis selectores de la segunda fila de arriba (en el celular, tras «Probar»). Cambian la pantalla en vivo, sin recargar. Empiezan en lo actual.</p>
+    <div class="xt" data-k="tree"><h4>Barra lateral, al abrir y cerrar una rama</h4><div class="seg" role="group" aria-label="Barra lateral"></div>
+      <ul>
+        <li><b>Despliegue</b> (elegida, ahora la de entrada): al abrir, la rama crece de alto en 0,22 s y los hijos aparecen cada 20 ms. Nuevo: al cerrar, los hijos se apagan en 0,12 s y la rama se pliega en 0,16 s, más rápido que al abrir. Si tocás de nuevo a mitad de camino, sigue desde donde está.</li>
+        <li><b>De golpe</b> (v1), <b>Cascada</b> y <b>Como listas</b> quedan para comparar; todas cierran con el mismo pliegue.</li>
+      </ul></div>
+    <div class="xt" data-k="mark"><h4>Barra lateral, marca de dónde estás</h4><div class="seg" role="group" aria-label="Marca de dónde estás"></div>
+      <ul>
+        <li><b>Actual:</b> la marca se apaga en el ítem anterior y se enciende en el nuevo, sin transición.</li>
+        <li><b>Viaja</b> (elegido): la misma marca, fondo y raya, se desliza por el árbol del ítem anterior al nuevo en 0,36 s, como la marca de las tradiciones. Lo más continuo; en saltos largos (de 02 a Ignacio) recorre medio árbol.</li>
+        <li><b>Raya:</b> solo la raya del borde izquierdo viaja por el árbol; el fondo del nuevo ítem aparece cuando la raya llega. Más liviano que «Viaja» y sigue diciendo de dónde venís.</li>
+        <li><b>Pausa:</b> la marca anterior se apaga en 0,16 s y la nueva aparece 80 ms después, en 0,22 s. Sin movimiento; lo más quieto.</li>
+      </ul>
+      <p class="xt-n">Probalo moviéndote entre pantallas con los enlaces o la barra lateral, y cambiando de tradición en «Objeciones». En el sitio real la barra lateral queda fija al cambiar de página; acá la propuesta recarga la pantalla, así que la marca arranca desde dónde estabas antes.</p></div>
+    <div class="xt" data-k="theme"><h4>Cambio de tema</h4><div class="seg" role="group" aria-label="Cambio de tema"></div>
+      <ul>
+        <li><b>Fundido</b> (actual): fondo y texto cambian de color en 0,2 s.</li>
+        <li><b>Arco esquina:</b> el claro entra desde la esquina de arriba a la izquierda con el borde en arco, en 0,75 s; el oscuro, desde la de abajo a la derecha. Lo más cercano a tu diagonal, sin línea recta.</li>
+        <li><b>Arco botón</b> (elegido): el mismo arco, pero crece desde el sol o la luna que tocaste, en 0,65 s. El movimiento sale de donde está tu mano; se ve más cuando cambiás con el botón del sitio que con «Modo» arriba.</li>
+        <li><b>Onda:</b> el barrido a todo el ancho de arriba abajo (el oscuro, de abajo arriba), con el borde en una onda baja que se desplaza mientras baja, en 0,75 s. Lo más vivo de las cuatro.</li>
+        <li><b>Difuminado:</b> el barrido diagonal, con el borde esfumado en lugar de un corte, en 0,85 s. Lo más sobrio; el borde se lee menos como una línea.</li>
+      </ul>
+      <p class="xt-n">Las cuatro cuestan lo mismo: una transición de vista del navegador. Si el navegador no la tiene, el tema cambia sin animación. Las dos rectas de la vuelta anterior (diagonal y vertical) salieron.</p></div>
+    <div class="xt" data-k="trad"><h4>Cambio de tradición</h4><div class="seg" role="group" aria-label="Cambio de tradición"></div>
+      <ul>
+        <li><b>Deslizar</b> (elegido): lo anterior sale 16 px hacia el lado contrario en 0,14 s y lo nuevo entra 16 px desde el lado de la tradición elegida en 0,26 s, según el orden de las pestañas; la marca de la pestaña viaja de una tradición a la otra en 0,34 s, sin apagarse nunca. Si tocás otra a mitad de camino, la marca cambia de rumbo desde donde está. El ancho de cada pestaña ya no cambia al marcarla, así las otras no se corren.</li>
+        <li><b>Fundido</b> (v1): el fundido de página de 0,22 s; la marca salta.</li>
+      </ul>
+      <p class="xt-n">Se prueba en «Objeciones», la única pantalla con las cinco tradiciones cargadas. El corte de «La marca viaja» venía de que la marca era una copia que se creaba y se borraba en cada cambio: al terminar, se borraba y aparecía el fondo propio de la pestaña. Ahora hay una sola marca, siempre presente, que solo se mueve.</p></div>
+    <div class="xt" data-k="contrast"><h4>Contraste en modo claro</h4><div class="seg" role="group" aria-label="Contraste en modo claro"></div>
+      <ul>
+        <li><b>Actual:</b> gris #6B665E, 4,53 a 1 sobre la lámina lisa, pero 4,3 en promedio sobre la textura (4,0 en sus partes más oscuras): no llega al mínimo de 4,5.</li>
+        <li><b>Un tono más:</b> solo el gris baja a #5C574F (5,7 a 1 lisa; 5,4 sobre la textura, nunca menos de 5,0). Pesos y demás colores, iguales.</li>
+        <li><b>Prosa oscura</b> (elegida): el gris de rótulos a #615C54 (5,0 sobre la textura) y la prosa gris en serif (lecturas de «La Escritura que usa», síntesis de objeciones, descripciones) a #4F4B44 (6,6 sobre la textura). Es donde lo viste; separa un poco más rótulos y prosa.</li>
+        </ul>
+      <p class="xt-n">Pasá a «Claro» y mirá 03, «La Escritura que usa». El modo oscuro no cambia en ninguna.</p></div>
+    <div class="xt" data-k="gap"><h4>Espacio entre secciones</h4><div class="seg" role="group" aria-label="Espacio entre secciones"></div>
+      <ul>
+        <li><b>Actual:</b> 84 px entre secciones (64 en el teléfono).</li>
+        <li><b>Más aire:</b> 112 px (80 en el teléfono).</li>
+        <li><b>Mucho aire</b> (elegido): 140 px (96 en el teléfono).</li>
+      </ul>
+      <p class="xt-n">Solo entre las secciones que lista la regla del borde derecho («Qué enseña», «Por qué»…); dentro de cada sección no cambia nada. Cuesta páginas un poco más largas.</p></div>
+    <div class="xt" data-k="scroll"><h4>Scroll suave con la rueda</h4><div class="seg" role="group" aria-label="Scroll suave"></div>
+      <ul>
+        <li><b>Ninguno</b> (actual): el scroll del navegador.</li>
+        <li><b>Apenas</b> (elegido; Lenis, lerp 0,3): la mitad de un golpe de rueda llega en unos 40 ms y casi todo en 130 ms. Le saca el salto a la rueda del mouse; con trackpad casi no se nota.</li>
+        <li><b>Sutil</b> (0,18): mitad en unos 65 ms, 90 % en 210 ms. Entre el nativo y lo que usan los autores de Lenis en su propio sitio (0,125).</li>
+        <li><b>Notable</b> (0,1): el valor por defecto de Lenis, el que usa jobs.netflix.com (90 % en unos 390 ms). Es el límite: con trackpad de Mac se siente suelto, la queja más común.</li>
+      </ul>
+      <p class="xt-n">Lenis 1.3.26. En el teléfono el scroll sigue siendo el nativo, y con «reducir movimiento» no hay ninguno. Probalo con trackpad y con un mouse de rueda: se sienten muy distintos. Valores y fuentes: docs/research/smooth-scroll.md.</p></div>
+
+    <h3>Opciones de la versión 1 que siguen</h3>
+    <div class="gl" data-k="links"><span class="gl-l">Lo que se abre al lado (citas)</span><div class="seg" role="group" aria-label="Color de lo que se abre al lado"><button type="button" data-v="brown">Marrón</button><button type="button" data-v="accent">Solo el acento</button></div></div>
+    <div class="gl" data-k="ruler"><span class="gl-l">Regla del borde derecho, marca activa</span><div class="seg" role="group" aria-label="Marca activa"><button type="button" data-v="fade">Cambia de color</button><button type="button" data-v="glide">Se desliza</button></div></div>
+    <div class="gl" data-k="cwmem"><span class="gl-l">Ventana de cita</span><div class="seg" role="group" aria-label="Ventana de cita"><button type="button" data-v="yes">Recuerda dónde la dejaste</button><button type="button" data-v="no">Vuelve a la derecha</button></div></div>
+
+    <h3>Decidido por mí, para que confirmes</h3>
+    <ul>
+      <li>En «Objeciones», las otras cuatro tradiciones muestran solo los títulos que ya estaban en 02; sus síntesis no están escritas. La católica las tiene, en el orden de la barra lateral (03 las tenía en otro orden; ahora coinciden).</li>
+      <li>Las etiquetas cortas de esas objeciones en la barra lateral («La epíclesis sobra», «Un cuerpo en un solo lugar»…) son mías, como las católicas de la v1.</li>
+      <li>09: las descripciones nuevas reemplazan las notas sobre los manuscritos de cada carta. Las citas son traducciones de Doctrina asistidas por IA desde la edición de Lake (1912), y la ventana lo dice; todavía no las leíste.</li>
+      <li>02, La práctica: abren la ventana con su texto las fuentes que ya tienen texto en español en el repositorio (Catecismo, Código, Westminster 29.4 y 29.5); las demás abren la ventana con su nombre, su lugar y su fecha.</li>
+      <li>En la barra lateral, las cuatro animaciones paran a los 8 hijos, como la cascada de sura-clon al filtrar; si no, «Padres» tardaría más de tres segundos.</li>
+    </ul>
+
+    <h3>Qué se descarta y por qué</h3>
+    <ul>
+      <li>Las otras entradas de texto («Sin», «Asentarse», «Listas», «Título por líneas», «Dreamorphics»): elegiste «Título» y la cascada de sura-clon.</li>
+      <li>Animar el árbol también al cerrar una rama: cerrar es sacar algo del medio, mejor al instante.</li>
+      <li>Un scroll más flotante que el de Lenis por defecto (lerp menor que 0,1): es lo que la investigación marca como pasarse.</li>
+      <li>Un contraste nuevo también para el oscuro: no lo pediste y ahí pasa el mínimo.</li>
+      <li>De la lista de lo genérico: crema con terracota, dorado sobre azul, pergamino, imágenes de archivo, cruces de adorno, tarjetas redondeadas con sombra, degradados, mayúsculas espaciadas, datos unidos con «·», «→» pegado a los enlaces, emoji, íconos en cuadrados de color, comillas gigantes, localizadores en monoespaciada, un color por tradición, columnas apretadas en el teléfono y elementos que no hacen nada.</li>
+    </ul>
+    <h3>Qué hay que decidir</h3>
+    <ul>
+      <li>Marca de dónde estás en la barra lateral: actual, viaja, raya o pausa.</li>
+      <li>Si el contenido al cambiar de tradición queda así (salida y entrada según el orden).</li>
+      <li>09: cómo se nota el detalle de la línea (actual, la primera vez, avance fijo o solo si no se ve).</li>
+      <li>09: el formato de las fechas (fecha arriba y qué se fecha debajo, o una línea como propone Codex).</li>
+      <li>Las descripciones de las cartas de Ignacio y sus traducciones.</li>
+    </ul>
+  </div>
+  <div id="notes-v1" hidden>
+    <h2>La versión 1</h2>
+    <p>La propuesta de estructura tal como la viste el 20 de octubre, sin tus notas aplicadas. La pantalla «Objeciones» no existía: ahí se muestra la sección «Objeciones» de 03. Los selectores de «Probar» no actúan sobre la v1. Volvé a «v2» arriba para ver los cambios.</p>
+  </div>
+</aside>
+
+<script>
+const X = {
+  tree: [['unfold', 'Despliegue (elegido)'], ['now', 'De golpe'], ['cascade', 'Cascada'], ['sura', 'Como listas']],
+  mark: [['travel', 'Viaja (elegido)'], ['now', 'Actual'], ['rail', 'Raya'], ['fade', 'Pausa']],
+  theme: [['button', 'Arco botón (elegido)'], ['now', 'Fundido'], ['arc', 'Arco esquina'], ['wave', 'Onda'], ['feather', 'Difuminado']],
+  trad: [['slide', 'Deslizar (elegido)'], ['fade', 'Fundido']],
+  contrast: [['b', 'Prosa oscura (elegida)'], ['now', 'Actual'], ['a', 'Un tono más']],
+  gap: [['c', 'Mucho aire (elegido)'], ['a', 'Actual'], ['b', 'Más aire']],
+  scroll: [['apenas', 'Apenas (elegido)'], ['none', 'Ninguno'], ['sutil', 'Sutil'], ['notable', 'Notable']]
+};
+const XL = {tree: 'Árbol', mark: 'Marca', theme: 'Tema', trad: 'Tradición', contrast: 'Contraste', gap: 'Secciones', scroll: 'Scroll'};
+const S = {v: 'v2', s: '02', m: 'dark', w: 'desk', c: '0'};
+const XS = {}; Object.keys(X).forEach(k => { XS[k] = X[k][0][0]; });
+const G = {links: 'brown', ruler: 'fade', cwmem: 'yes'};
+const SCREENS = ['02', '03', 'ob', '04', '09'];
+try { const v = JSON.parse(localStorage.getItem('dz-shell-v4') || '{}'); ['v', 'm', 'w', 'c'].forEach(k => { if (v[k]) S[k] = v[k]; }); if (v.g) Object.assign(G, v.g); if (v.x) Object.keys(v.x).forEach(k => { if (X[k] && X[k].some(o => o[0] === v.x[k])) XS[k] = v.x[k]; }); } catch (e) {}
+const h = location.hash.replace('#s', '');
+if (SCREENS.includes(h)) S.s = h;
+const fr = document.getElementById('fr'), stage = document.getElementById('stage');
+const save = () => { try { localStorage.setItem('dz-shell-v4', JSON.stringify({v: S.v, m: S.m, w: S.w, c: S.c, g: G, x: XS})); } catch (e) {} };
+const press = (id, v) => document.querySelectorAll('#' + id + ' button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+const post = msg => { try { fr.contentWindow.postMessage(msg, '*'); } catch (e) {} };
+function load(hash) {
+  const v1 = S.v === 'v1';
+  let file = 's' + S.s + '.html';
+  if (S.s === 'ob') { file = v1 ? 's03.html' : 'sob.html'; if (v1 && !hash) hash = 'objeciones'; }
+  const xq = v1 ? '' : Object.keys(XS).map(k => '&x' + k + '=' + XS[k]).join('');
+  fr.src = (v1 ? 'v1/' : '') + file + '?theme=' + S.m + (S.c === '1' ? '&clean=1' : '') + xq + (hash ? '#' + hash : '');
+  try { history.replaceState(null, '', '#s' + S.s); } catch (e) {}
+  press('g-s', S.s);
+}
+function setMode(m) { S.m = m; press('g-m', m); save(); document.documentElement.dataset.theme = m; post({dz: 'theme', theme: m}); }
+function setClean(c) { S.c = c; press('g-c', c); save(); post({dz: 'clean', on: c === '1'}); }
+function setWidth(w) { S.w = w; press('g-w', w); stage.classList.toggle('phone', w === 'phone'); save(); }
+function setVersion(v) {
+  S.v = v; press('g-v', v); save();
+  document.getElementById('notes-v2').hidden = v !== 'v2';
+  document.getElementById('notes-v1').hidden = v !== 'v1';
+  document.querySelectorAll('.xs').forEach(s => { s.disabled = v === 'v1'; });
+  load();
+}
+const paintX = k => {
+  const sel = document.getElementById('xs-' + k);
+  sel.value = XS[k];
+  sel.classList.toggle('changed', XS[k] !== X[k][0][0]);
+  document.querySelectorAll('.xt[data-k="' + k + '"] .seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === XS[k])));
+};
+const setXOpt = (k, v) => { XS[k] = v; paintX(k); save(); post({dz: 'x', key: k, value: v}); };
+Object.keys(X).forEach(k => {
+  const sel = document.getElementById('xs-' + k);
+  sel.innerHTML = X[k].map(([v, l], i) => '<option value="' + v + '">' + XL[k] + ': ' + l.replace(/ \(elegid[oa]\)/, '').toLowerCase() + '</option>').join('');
+  sel.addEventListener('change', () => setXOpt(k, sel.value));
+  const seg = document.querySelector('.xt[data-k="' + k + '"] .seg');
+  seg.innerHTML = X[k].map(([v, l]) => '<button type="button" data-v="' + v + '">' + l + '</button>').join('');
+  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) setXOpt(k, b.dataset.v); });
+  paintX(k);
+});
+document.getElementById('g-v').addEventListener('click', e => { const b = e.target.closest('button'); if (b && b.dataset.v !== S.v) setVersion(b.dataset.v); });
+document.getElementById('g-s').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { S.s = b.dataset.v; load(); } });
+document.getElementById('g-m').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setMode(b.dataset.v); });
+document.getElementById('g-c').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setClean(b.dataset.v); });
+document.getElementById('g-w').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setWidth(b.dataset.v); });
+const xb = document.getElementById('x-b'), xrow = document.getElementById('xrow');
+const small = matchMedia('(max-width:640px)');
+const fitX = () => { const open = !small.matches || xb.getAttribute('aria-expanded') === 'true'; xrow.hidden = !open; };
+xb.addEventListener('click', () => { xb.setAttribute('aria-expanded', String(xb.getAttribute('aria-expanded') !== 'true')); fitX(); });
+small.addEventListener('change', fitX); fitX();
+addEventListener('message', e => {
+  const d = e.data || {};
+  if (d.dz === 'go' && SCREENS.includes(d.screen)) { S.s = d.screen; load(d.hash); }
+  if (d.dz === 'ready') { Object.keys(G).forEach(k => post({dz: 'pp', key: k, value: G[k]})); if (S.c === '1') post({dz: 'clean', on: true}); }
+  if (d.dz === 'theme') { S.m = d.theme; press('g-m', d.theme); document.documentElement.dataset.theme = d.theme; save(); }
+});
+const nb = document.getElementById('notes-b'), notes = document.getElementById('notes');
+const setNotes = op => { notes.classList.toggle('open', op); nb.setAttribute('aria-expanded', String(op)); if (op) document.getElementById('notes-x').focus(); };
+nb.addEventListener('click', () => setNotes(!notes.classList.contains('open')));
+document.getElementById('notes-b2').addEventListener('click', () => setNotes(true));
+document.getElementById('notes-x').addEventListener('click', () => { setNotes(false); (nb.offsetParent ? nb : document.getElementById('notes-b2')).focus(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') setNotes(false); });
+document.querySelectorAll('.gl').forEach(g => {
+  const k = g.dataset.k;
+  const paint = () => g.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === G[k])));
+  paint();
+  g.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; G[k] = b.dataset.v; paint(); save(); post({dz: 'pp', key: k, value: G[k]}); });
+});
+document.documentElement.dataset.theme = S.m; press('g-m', S.m);
+setWidth(S.w); press('g-c', S.c); press('g-v', S.v);
+document.getElementById('notes-v2').hidden = S.v !== 'v2';
+document.getElementById('notes-v1').hidden = S.v !== 'v1';
+document.querySelectorAll('.xs').forEach(s => { s.disabled = S.v === 'v1'; });
+load();
+</script>

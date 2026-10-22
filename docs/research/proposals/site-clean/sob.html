@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Objeciones a la posición católica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<script>(function(){var d=document.documentElement;d.dataset.ent='title-fade';var t=null;try{t=localStorage.getItem('dz-sitio-theme')}catch(e){}d.dataset.theme=t==='light'||t==='dark'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');})()</script>
+<style>
+.hd-crumbs .crumbs{margin:0}
+.tsw{position:sticky;top:var(--top-h);z-index:30;display:flex;align-items:center;gap:6px 18px;margin:14px -112px 0 -64px;padding:10px 112px 10px 64px;background:var(--bg);border-bottom:1px solid transparent;transition:border-color var(--fast) ease}
+.tsw::before{content:"";position:absolute;inset:0;background-image:var(--tex);background-size:420px 420px;opacity:var(--tex-op);mix-blend-mode:multiply;pointer-events:none}
+.tsw > *{position:relative}
+.tsw.stuck{border-bottom-color:var(--rule)}
+.tsw-l{flex:none;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.tsw ul{position:relative;display:flex;gap:2px;margin:0;padding:0;list-style:none;min-width:0;overflow-x:auto;scrollbar-width:none}
+.tsw ul::-webkit-scrollbar{display:none}
+.tsw ul.fade{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 44px),transparent)}
+.tsw a{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-height:36px;padding:8px 11px;border-radius:6px;font-size:14px;line-height:1.2;color:var(--ink-2);text-decoration:none;white-space:nowrap;transition:background-color var(--fast) ease,color var(--fast) ease}
+.tsw a:hover{background:var(--hover);color:var(--ink)}
+.tsw a[aria-current="page"]{color:var(--ink);font-weight:500;background:var(--accent-weak);box-shadow:inset 0 -2px 0 var(--accent)}
+.tsw.has-ind a[aria-current="page"]{background:transparent;box-shadow:none}
+.tsw a > span{display:inline-grid}
+.tsw a > span::after{content:attr(data-t);height:0;overflow:hidden;visibility:hidden;font-weight:500}
+.tsw-ind{position:absolute;top:0;left:0;z-index:0;width:0;border-radius:6px;background:var(--accent-weak);box-shadow:inset 0 -2px 0 var(--accent);pointer-events:none}
+.tsw-h{margin-left:auto;font-size:12.5px;color:var(--ink-3);white-space:nowrap}
+.obx-head{margin-top:30px}
+.obx-list{margin-top:44px}
+.obj-list > li.bare{padding:16px 0 18px}
+@media (max-width:1099px){ .tsw{margin:14px -104px 0 -48px;padding:10px 104px 10px 48px} }
+@media (max-width:899px){ .tsw{margin:14px -32px 0;padding:10px 32px} .tsw-h{display:none} }
+@media (max-width:720px){
+  .tsw{margin:12px -16px 0;padding:6px 16px;gap:8px}
+  .tsw-l{display:none}
+  .tsw a{padding:8px 9px;font-size:13.5px}
+  .obx-head{margin-top:22px}
+  .obx-list{margin-top:32px}
+}
+</style>
+</head>
+<body data-page="eu-cat-obs">
+<script>(function(){var t=location.hash.slice(1);if(['ort','lut','ref','bau'].indexOf(t)>=0)document.body.dataset.page='eu-'+t+'-obs'})()</script>
+<main class="main" lang="es">
+  <div class="col hd-crumbs">
+    <nav class="crumbs" aria-label="Ruta" id="obx-crumbs"></nav>
+  </div>
+  <nav class="tsw has-ind" id="tsw" aria-label="Tradición">
+    <span class="tsw-l">Tradición</span>
+    <ul id="tsw-ul"></ul>
+    <span class="tsw-h">Al cambiar, sigues en las objeciones.</span>
+  </nav>
+  <div class="col obx-head" id="obx-head">
+    <h1 id="obx-h1"></h1>
+    <p class="lede" id="obx-lede"></p>
+  </div>
+  <section class="col obx-list" aria-labelledby="obx-h1">
+    <ul class="obj-list" id="obx-list"></ul>
+  </section>
+
+</main>
+<script src="base.js"></script>
+<script>
+(() => {
+const $ = D.$, $$ = D.$$, esc = D.esc;
+const TR = D.TRADS, OB = D.OBJS;
+const ids = TR.map(t => t[0]);
+let cur = ids.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'cat';
+const ul = $('#tsw-ul');
+ul.innerHTML = '<span class="tsw-ind" aria-hidden="true"></span>' + TR.map(([t, l]) => '<li><a href="sob.html' + (t === 'cat' ? '' : '#' + t) + '" data-t="' + t + '"><span data-t="' + l + '">' + l + '</span></a></li>').join('');
+const render = t => {
+  const [, name, adj] = TR.find(x => x[0] === t);
+  $('#obx-crumbs').innerHTML = '<a href="#" data-nb>Doctrinas</a><span class="sl" aria-hidden="true">/</span><a href="s02.html" data-go="02">La Eucaristía</a><span class="sl" aria-hidden="true">/</span>' + (t === 'cat' ? '<a href="s03.html" data-go="03">Católica</a>' : '<a href="#" data-nb>' + name + '</a>') + '<span class="sl" aria-hidden="true">/</span><span aria-current="page">Objeciones</span>';
+  $('#obx-h1').textContent = 'Objeciones a la posición ' + adj;
+  $('#obx-lede').textContent = 'Lo que otras tradiciones objetan a la postura ' + adj + ' sobre la Eucaristía. Cada objeción abre su página, con la respuesta ' + adj + '.';
+  $('#obx-list').innerHTML = OB[t].map(o => '<li' + (o.s ? '' : ' class="bare"') + ' data-fk="' + t + o.k + '"><a class="ln-go obj-t" href="' + (o.go ? 's04.html" data-go="' + o.go + '"' : '#" data-nb') + '>' + esc(o.t) + '</a>' + (o.s ? '<p class="obj-s">' + esc(o.s) + '</p>' : '') + '</li>').join('');
+  $$('a', ul).forEach(a => { if (a.dataset.t === t) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  document.title = 'Objeciones a la posición ' + adj;
+};
+render(cur);
+
+const reduce = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+const ind = $('.tsw-ind', ul);
+$('#tsw').classList.add('has-ind');
+const boxOf = el => { const ur = ul.getBoundingClientRect(), r = el.getBoundingClientRect(); return {x: r.left - ur.left + ul.scrollLeft, y: r.top - ur.top, w: r.width, h: r.height}; };
+const place = b => Object.assign(ind.style, {width: b.w + 'px', height: b.h + 'px', transform: 'translate(' + b.x + 'px,' + b.y + 'px)'});
+const moveInd = (to, animate) => {
+  const from = boxOf(ind);
+  ind.getAnimations().forEach(a => a.cancel());
+  const b = boxOf(to);
+  place(b);
+  if (!animate || reduce() || !from.w) return;
+  ind.animate([{transform: 'translate(' + from.x + 'px,' + from.y + 'px)', width: from.w + 'px'}, {transform: 'translate(' + b.x + 'px,' + b.y + 'px)', width: b.w + 'px'}], {duration: 340, easing: EASE});
+};
+let shownT = cur, exiting = null;
+const parts = () => [$('#obx-head'), $('#obx-list')];
+const enterContent = dir => parts().forEach((el, i) => el.animate([{opacity: .001, transform: 'translateX(' + (dir * 16) + 'px)'}, {opacity: 1, transform: 'none'}], {duration: 260, delay: i * 30, easing: EASE, fill: 'backwards', id: 'obx'}));
+const showContent = () => {
+  const dir = ids.indexOf(cur) > ids.indexOf(shownT) ? 1 : -1;
+  shownT = cur;
+  parts().forEach(el => el.getAnimations().forEach(a => a.cancel()));
+  render(cur);
+  enterContent(dir);
+};
+const switchTo = t => {
+  if (t === cur) return;
+  cur = t;
+  try { history.replaceState(null, '', '#' + t); } catch (e) {}
+  D.setPage('eu-' + t + '-obs');
+  const mode = 'slide';
+  const toTab = $('a[data-t="' + t + '"]', ul);
+  $$('a', ul).forEach(a => { if (a === toTab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  moveInd(toTab, mode === 'slide');
+  const tl = toTab.offsetLeft, tr = tl + toTab.offsetWidth;
+  if (tl < ul.scrollLeft || tr > ul.scrollLeft + ul.clientWidth) ul.scrollTo({left: Math.max(0, tl - 24), behavior: reduce() ? 'auto' : 'smooth'});
+  if (reduce()) { shownT = cur; render(cur); return; }
+  if (mode !== 'slide') { shownT = cur; render(cur); D.pageFade($('main.main')); return; }
+  if (exiting) return;
+  if (cur === shownT) return;
+  const dir = ids.indexOf(cur) > ids.indexOf(shownT) ? 1 : -1;
+  const from = parts().map(el => parseFloat(getComputedStyle(el).opacity));
+  parts().forEach(el => el.getAnimations().forEach(a => a.cancel()));
+  exiting = Promise.all(parts().map((el, i) => el.animate([{opacity: from[i], transform: 'none'}, {opacity: 0, transform: 'translateX(' + (-dir * 16) + 'px)'}], {duration: 140, easing: 'cubic-bezier(0.4, 0, 1, 1)', fill: 'forwards', id: 'obx'}).finished)).then(() => { exiting = null; showContent(); }, () => { exiting = null; });
+};
+requestAnimationFrame(() => moveInd($('a[data-t="' + cur + '"]', ul), false));
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => moveInd($('a[data-t="' + cur + '"]', ul), false));
+addEventListener('resize', () => moveInd($('a[data-t="' + cur + '"]', ul), false));
+ul.addEventListener('click', e => { const a = e.target.closest('a[data-t]'); if (!a) return; e.preventDefault(); switchTo(a.dataset.t); });
+D.setPage(document.body.dataset.page);
+
+const tsw = $('#tsw');
+const setOffset = () => document.documentElement.style.setProperty('--scroll-offset', (tsw.offsetHeight + 20) + 'px');
+const stuck = () => {
+  const top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--top-h')) || 56;
+  tsw.classList.toggle('stuck', tsw.getBoundingClientRect().top <= top + .5 && scrollY > 4);
+};
+const fade = () => ul.classList.toggle('fade', ul.scrollWidth - ul.clientWidth - ul.scrollLeft > 2);
+ul.addEventListener('scroll', fade, {passive: true});
+setOffset(); stuck(); fade();
+addEventListener('resize', () => { setOffset(); stuck(); fade(); });
+addEventListener('scroll', stuck, {passive: true});
+})();
+</script>
+</body>
+</html>

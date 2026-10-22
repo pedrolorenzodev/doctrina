@@ -1,0 +1,631 @@
+<!doctype html>
+<!-- (copy of the approved 03, structure v2) Progress (02:20): done: every section and switch, smoke clean (1440/390, dark/light, no overflow, no errors), interactions tested; next: nothing pending, waiting for coordinator; requests to coordinator: (1) D.mini labels drop «c.» for approximate dates (Ambrose c. 390 shows 390); (2) base has no slot for an external button without a URL, so s03 wraps D.openCite to add a data-nb «Leer en vatican.va» for CIC canons whose page the dossier does not give; (3) .rd-p .dn is 30px wide, too narrow for «Cap. 1»/«Can. 11»: widened in s03 only; (4) if «Enlace de texto» wins for the external button, move html[data-pp-extbtn] styles to base so 02/04/09 match; decided by agent, to confirm: h1 «La posición católica» as in P1; four rows in Grado de autoridad (dossier rec. 3); grade basis shown inside each grade's window, not beside the label; Fathers dated as «Murió en 407» (Chrysostom, work undated) and «c. 390» (Ambrose, work date from history.json); CCC dated 1992; definition without a grade line; emoji and hashtag removed from two video titles; Cómo se vive shows 8 of 14 items with a show-more; Escritura shows 4 of 14 passages | fix34 (critic round, done): links/cwmem switches removed (moved to shell); extbtn moved below the Qué enseña list, only «orden» above Qué enseña (first statement at y≈1017 at 390); named citations keep «(» glued to the first button at every width (.nw per citation, buttons wrap inside below 420); objection syntheses rewritten to 2–3 lines without who raises them, shared verbatim with 04; locators unified (ses. XIII, cap. 1 / n. 1374 / nn. / Ecclesia de Eucharistia 12 / const. 1; reader labels lowercase cap./can.); notes updated; decided by agent, to confirm (fix34): OB-2 keeps only what Lutherans and Reformed say together (heaven/Acts 3:21 and «contra el sentido» dropped: Westminster-only, unattributed it would read as both); OB-3/OB-5 drop the last clause (idolatry charge; masses for the dead) to fit 2–3 lines; window shows «n. 1366» while running text says «Catecismo 1366»; reader headers keep «Sesión XIII» as a title -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La posición católica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="fuente.css">
+<script>(function(){var q=new URLSearchParams(location.search),d=document.documentElement;d.dataset.ent=q.get('entrada')||'title-fade';if(q.get('cambio')==='fundido')d.dataset.pf='1'})()</script>
+<style>
+.hd-crumbs .crumbs{margin:0}
+.nw{white-space:nowrap}
+.nw > .ln-side{white-space:normal;max-width:calc(100% - 1.6em);text-align:left}
+.tsw{position:sticky;top:var(--top-h);z-index:30;display:flex;align-items:center;gap:6px 18px;margin:14px -112px 0 -64px;padding:10px 112px 10px 64px;background:var(--bg);border-bottom:1px solid transparent;transition:border-color var(--fast) ease}
+.tsw::before{content:"";position:absolute;inset:0;background-image:var(--tex);background-size:420px 420px;opacity:var(--tex-op);mix-blend-mode:multiply;pointer-events:none}
+.tsw > *{position:relative}
+.tsw.stuck{border-bottom-color:var(--rule)}
+.tsw-l{flex:none;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.tsw ul{display:flex;gap:2px;margin:0;padding:0;list-style:none;min-width:0;overflow-x:auto;scrollbar-width:none}
+.tsw ul::-webkit-scrollbar{display:none}
+.tsw ul.fade{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 44px),transparent)}
+.tsw a{display:block;padding:8px 11px;border-radius:6px;font-size:14px;color:var(--ink-2);text-decoration:none;white-space:nowrap;transition:background-color var(--fast) ease,color var(--fast) ease}
+.tsw a:hover{background:var(--hover);color:var(--ink)}
+.tsw a[aria-current="page"]{color:var(--ink);font-weight:500;background:var(--accent-weak);box-shadow:inset 0 -2px 0 var(--accent)}
+.tsw-h{margin-left:auto;font-size:12.5px;color:var(--ink-3);white-space:nowrap}
+.hd{margin-top:30px}
+
+.defn{margin:0 0 30px;font-family:var(--head);font-weight:300;font-size:23px;line-height:1.5;color:var(--ink);font-variation-settings:"opsz" 24}
+.qe-list{list-style:none;margin:0;padding:0}
+.qe-list > li{padding:22px 0 24px;border-top:1px solid var(--rule)}
+.qe-list > li:last-child{border-bottom:1px solid var(--rule)}
+.qe-list > li[hidden]{display:none}
+.qe-t{margin:0}
+.qe-line{margin:12px 0 0;font-size:14px;line-height:1.7;color:var(--ink-3)}
+.qe-c .term{font-family:var(--ui);font-size:14px;font-weight:600;color:var(--ink-2)}
+.qe-s .ln-side{font-size:14px}
+.qe-sep{display:inline-block;width:1px;height:14px;margin:0 12px;vertical-align:-2px;background:var(--rule-2)}
+.qe-mg{display:none}
+.qe-line.v-b,.qe-line.v-c{display:none}
+html[data-pp-qecat="b"] .qe-line.v-a,html[data-pp-qecat="c"] .qe-line.v-a{display:none}
+html[data-pp-qecat="b"] .qe-line.v-b{display:block}
+html[data-pp-qecat="b"] .qe-list > li{display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 22px}
+html[data-pp-qecat="b"] .qe-list > li[hidden]{display:none}
+html[data-pp-qecat="b"] .qe-mg{display:block;padding-top:5px;font-size:14px;line-height:1.5}
+html[data-pp-qecat="b"] .qe-mg .term{display:inline;text-align:left;font-family:var(--ui);font-size:14px;font-weight:600;color:var(--ink-2)}
+html[data-pp-qecat="b"] .qe-mg .and{display:block;margin:2px 0;font-size:12.5px;color:var(--ink-3)}
+html[data-pp-qecat="c"] .qe-line.v-c{display:grid}
+.qe-line.v-c{grid-template-columns:max-content minmax(0,1fr);gap:4px 14px;margin-top:14px}
+.qe-line.v-c dt{font-size:12.5px;font-weight:500;color:var(--ink-3);padding-top:1px}
+.qe-line.v-c dd{margin:0}
+.qe-more{margin-top:14px}
+.pp-end{margin:22px 0 0}
+
+.pq-intro{margin-bottom:44px}
+.fq{display:grid;grid-template-columns:minmax(0,670px) fit-content(340px);gap:30px 78px;margin:0 0 64px}
+.fq figure{grid-column:1 / -1;display:grid;grid-template-columns:subgrid;row-gap:10px;margin:0;align-items:start}
+.fq .lead{grid-column:1 / -1;margin:0 0 -2px;font-size:14px;color:var(--ink-3)}
+.fq .quote{grid-column:1;margin-left:30px}
+.fq figcaption{grid-column:2;grid-row:2;padding-top:6px;border-top:1px solid var(--rule);font-size:14px;line-height:1.5}
+.fq figcaption b{display:block;font-weight:500;color:var(--ink)}
+.fq figcaption .w{display:block;color:var(--ink-3)}
+.fq figcaption .d{display:block;margin-top:6px;font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.fq figcaption .ln-side{margin-top:8px;display:inline-block;font-size:13.5px}
+.punch{margin:0 0 18px;font-family:var(--head);font-weight:400;font-size:22px;line-height:1.5;color:var(--ink);font-variation-settings:"opsz" 24}
+.pq-note{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-3)}
+.pq-note .ln-go{color:var(--ink-2)}
+.c-num{display:none}
+html[data-pp-pqcite="num"] .c-named{display:none}
+html[data-pp-pqcite="num"] .c-num{display:inline}
+.cn{display:inline-grid;place-items:center;position:relative;min-width:18px;height:18px;margin:0 1px 0 2px;padding:0 4px;border:1px solid currentColor;border-radius:9px;background:none;font-family:var(--ui);font-size:11px;font-weight:600;line-height:1;color:var(--cite);vertical-align:3px;cursor:pointer;transition:background-color var(--fast) ease}
+.cn::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
+.cn:hover,.cn.is-open{background:var(--cite-weak)}
+html[data-pp-links="accent"] .cn{color:var(--accent)}
+html[data-pp-links="accent"] .cn:hover{background:var(--accent-weak)}
+
+.esc-list{list-style:none;margin:0;padding:0}
+.esc-list > li{padding:25px 0;border-top:1px solid var(--rule)}
+.esc-list > li:last-child{border-bottom:1px solid var(--rule)}
+.esc-t{font-family:var(--body);font-size:19px;line-height:1.4;font-weight:500;font-variation-settings:"opsz" 18}
+.esc-d{margin:8px 0 0;font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.6;color:var(--ink-3)}
+.sec-foot{margin-top:22px}
+
+.cv-intro p{margin:0}
+.cv-intro p + p{margin-top:.55em}
+.cv-intro{margin-bottom:30px}
+.cv-list{list-style:none;margin:0;padding:0}
+.cv-list > li{display:grid;grid-template-columns:168px minmax(0,1fr);gap:4px 24px;padding:16px 0;border-top:1px solid var(--rule)}
+.cv-list > li:last-child{border-bottom:1px solid var(--rule)}
+.cv-list > li[hidden]{display:none}
+.cv-l{margin:0;padding-top:3px;font-size:14px;font-weight:500;line-height:1.45;color:var(--ink-3)}
+.cv-x{margin:0;font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.6;color:var(--ink-2)}
+
+.gr{width:100%;border-collapse:collapse}
+.gr th,.gr td{padding:18px 0;border-top:1px solid var(--rule);text-align:left;vertical-align:top}
+.gr tr:last-child th,.gr tr:last-child td{border-bottom:1px solid var(--rule)}
+.gr th{width:190px;padding-right:24px;font-family:var(--head);font-weight:400;font-size:20px;line-height:1.35;font-variation-settings:"opsz" 24}
+.gr .m{margin:0;font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.6;color:var(--ink-2)}
+.gr .on{margin:10px 0 0;font-size:13.5px;line-height:1.7;color:var(--ink-3)}
+.gr .on a{color:var(--ink-2);text-underline-offset:3px;text-decoration-color:var(--rule-2);transition:text-decoration-color var(--fast) ease}
+.gr .on a:hover{text-decoration-color:currentColor}
+
+.vf{display:inline-flex;gap:2px;margin:0 0 18px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.vf button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:34px;line-height:1.2;padding:6px 12px;border:0;border-radius:6px;background:transparent;font-size:13.5px;color:var(--ink-2);cursor:pointer;transition:background-color var(--fast) ease,color var(--fast) ease}
+.vf button:hover{background:var(--hover);color:var(--ink)}
+.vf button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink);font-weight:500}
+.vf .n{line-height:1.2;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;font-weight:400}
+.vl{list-style:none;margin:0;padding:0}
+.vl > li{padding:15px 0;border-top:1px solid var(--rule)}
+.vl > li:last-child{border-bottom:1px solid var(--rule)}
+.vl a{font-family:var(--body);font-size:17.5px;line-height:1.45;font-weight:500}
+.vl .m{margin:4px 0 0;font-size:13.5px;color:var(--ink-3)}
+.vmore{display:flex;align-items:center;gap:14px;margin-top:12px}
+.vmore .c{font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+html[data-pp-extbtn="link"] .cw-acts a.btn-go.ext{border-color:transparent;background:none;padding-left:6px;padding-right:6px;font-weight:400;color:var(--ink-2);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:4px}
+html[data-pp-extbtn="link"] .cw-acts a.btn-go.ext:hover{color:var(--ink);text-decoration-color:currentColor}
+.rd-p .dn{left:-72px;width:62px}
+
+.btn-demo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:12px 0 4px}
+.btn-demo > div{padding:14px;border:1px solid var(--rule);border-radius:8px}
+.btn-demo p{margin:10px 0 0;font-size:13px;color:var(--ink-3)}
+
+@media (max-width:1099px){
+  .tsw{margin:14px -104px 0 -48px;padding:10px 104px 10px 48px}
+  .fq{grid-template-columns:minmax(0,1fr) fit-content(300px);column-gap:62px}
+}
+@media (max-width:899px){
+  .tsw{margin:14px -32px 0;padding:10px 32px}
+  .tsw-h{display:none}
+}
+@media (max-width:720px){
+  .tsw{margin:12px -16px 0;padding:6px 16px;gap:8px}
+  .tsw-l{display:none}
+  .tsw a{padding:8px 9px;font-size:13.5px}
+  .hd{margin-top:22px}
+  .defn{font-size:20px}
+  html[data-pp-qecat="b"] .qe-list > li{display:block}
+  html[data-pp-qecat="b"] .qe-mg{padding:0 0 6px}
+  html[data-pp-qecat="b"] .qe-mg .and{display:inline;margin:0 4px}
+  .fq{grid-template-columns:minmax(0,1fr)}
+  .fq figcaption{grid-column:1;grid-row:auto;margin-left:30px}
+  .punch{font-size:20px}
+  .cv-list > li{grid-template-columns:minmax(0,1fr)}
+  .cv-l{padding-top:0}
+  .gr,.gr tbody,.gr tr,.gr th,.gr td{display:block;width:auto}
+  .gr th{padding:16px 0 4px;font-size:19px}
+  .gr td{border-top:0;padding:0 0 16px}
+  .gr tr:last-child th{border-bottom:0}
+  .gr tr:last-child td{border-bottom:1px solid var(--rule)}
+  .vf{display:flex;width:100%}
+  .vf button{flex:1;justify-content:center;padding:6px 8px}
+  .vl a{font-size:16.5px}
+  .btn-demo{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body data-page="eu-cat">
+<main class="main" lang="es">
+  <div class="col hd-crumbs">
+    <nav class="crumbs" aria-label="Ruta"><a href="#" data-nb>Doctrinas</a><span class="sl" aria-hidden="true">/</span><a href="s02.html" data-go="02">La Eucaristía</a><span class="sl" aria-hidden="true">/</span><span aria-current="page">Católica</span></nav>
+  </div>
+  <nav class="tsw" id="tsw" aria-label="Tradición">
+    <span class="tsw-l">Tradición</span>
+    <ul>
+      <li><a href="s03.html" aria-current="page">Católica</a></li>
+      <li><a href="#" data-nb>Ortodoxa</a></li>
+      <li><a href="#" data-nb>Luterana</a></li>
+      <li><a href="#" data-nb>Reformada</a></li>
+      <li><a href="#" data-nb>Bautista</a></li>
+    </ul>
+    <span class="tsw-h">Al cambiar, sigues en la misma sección.</span>
+  </nav>
+  <div class="col hd" data-label="La posición católica">
+    <h1>La posición católica</h1>
+    <p class="lede">Cómo la Iglesia católica entiende la Eucaristía, con sus propias fuentes.</p>
+  </div>
+
+  <div class="col" style="margin-top:44px">
+    <div class="pp" data-pp="order" data-label="Probar: orden de las secciones" data-opts="agent=Propuesta: Grado de autoridad al final|p1=Orden de P1" data-default="agent">Propuesta del agente (ROADMAP 03): «La Escritura que usa» junto a «Por qué», donde se lee como argumento, y el grado de autoridad abajo, como referencia, porque cada grado ya se abre desde «Qué enseña». P1 lo ponía tercero.</div>
+  </div>
+
+  <section class="sec" id="que-ensena" data-label="Qué enseña">
+    <div class="col">
+      <h2>Qué enseña</h2>
+      <p class="sub">Lo que la Iglesia católica enseña sobre la Eucaristía, con el grado de autoridad que le corresponde según las categorías de la Iglesia.</p>
+      <p class="defn" id="defn"></p>
+      <div class="pp" data-pp="qecat" data-label="Probar: cómo se separa el grado de las fuentes" data-opts="a=Grado y raya|b=Grado al margen|c=Dos renglones" data-default="a">A: el grado en negrita, una raya fina y las fuentes. B: el grado en el margen izquierdo, junto a la afirmación (usa el ancho; en el teléfono va arriba). C: dos renglones rotulados, como en el buscador. Sin «·» ni insignias de color en ninguna.</div>
+      <ol class="qe-list" id="qe-list"></ol>
+      <button class="btn-more qe-more" type="button" id="qe-more" aria-expanded="false" aria-controls="qe-list"></button>
+      <div class="pp pp-end" data-pp="extbtn" data-label="Probar: botón que sale del sitio" data-opts="btn=Botón con marca|link=Enlace de texto" data-default="link">Para textos con derechos (Catecismo, Código) la ventana muestra un extracto breve y «Leer en vatican.va». Abrí «Catecismo 1374» y «Trento, ses. XIII, can. 1» para comparar con «Abrir la fuente completa», que se queda en el sitio.</div>
+    </div>
+  </section>
+
+  <section class="sec" id="por-que" data-label="Por qué">
+    <div class="col">
+      <h2>Por qué</h2>
+      <div class="pp" data-pp="pqcite" data-label="Probar: citas en el texto" data-opts="named=Con nombre|num=Numeradas" data-default="named">Con nombre, como en P1·04 («Trento, ses. XIII, cap. 1»): se sabe qué se cita antes de abrirlo. Numeradas: menos ruido en la lectura, con un área de toque de 44 px. Las dos abren la cita aquí mismo.</div>
+      <p class="p pq-intro" id="pq-intro"></p>
+    </div>
+    <div class="wide fq" id="fq"></div>
+    <div class="col">
+      <p class="punch" id="pq-punch"></p>
+      <p class="pq-note">Los mismos textos los leen de otro modo otras tradiciones: lo verás en <a class="ln-go" href="s02.html" data-go="02" data-hash="s-prim">Lo que escribieron los primeros cristianos</a>, que es una sección neutral.</p>
+    </div>
+  </section>
+
+  <section class="sec col" id="escritura" data-label="La Escritura que usa">
+    <h2>La Escritura que usa</h2>
+    <p class="sub">Los pasajes que los documentos católicos citan sobre la Eucaristía, y cómo los leen.</p>
+    <ul class="esc-list" id="esc-list"></ul>
+    <div class="sec-foot"><a class="btn-go" href="#" data-nb>Ver los 14 pasajes</a></div>
+  </section>
+
+  <section class="sec col" id="objeciones" data-label="Objeciones">
+    <h2>Objeciones</h2>
+    <p class="sub">Objeciones a la postura católica. Abre cada una para leer en profundidad la respuesta católica.</p>
+    <ul class="obj-list" id="obj-list"></ul>
+    <div class="sec-foot"><a class="btn-go" id="obj-all" href="sob.html" data-go="ob"></a></div>
+  </section>
+
+  <section class="sec col" id="como-se-vive" data-label="Cómo se vive">
+    <h2>Cómo se vive</h2>
+    <div class="cv-intro" id="cv-intro"></div>
+    <ul class="cv-list" id="cv-list"></ul>
+    <button class="btn-more qe-more" type="button" id="cv-more" aria-expanded="false" aria-controls="cv-list"></button>
+  </section>
+
+  <section class="sec col" id="autoridad" data-label="Grado de autoridad">
+    <h2>Grado de autoridad</h2>
+    <p class="sub">Qué significa, para la Iglesia católica, que una enseñanza sea dogma, doctrina definitiva, magisterio auténtico o disciplina.</p>
+    <table class="gr" id="gr"><tbody></tbody></table>
+  </section>
+
+  <section class="sec col" id="videos" data-label="Videos">
+    <h2>Videos</h2>
+    <p class="sub">Creadores católicos explican y defienden esta postura. Los videos se abren en YouTube.</p>
+    <div class="vf" role="group" aria-label="Idioma de los videos" id="vf"></div>
+    <ul class="vl" id="vl"></ul>
+    <div class="vmore"><button class="btn-more" type="button" id="v-more"></button><span class="c" id="v-count"></span></div>
+  </section>
+
+  <section class="pp-after" id="notas">
+    <h2>Sobre esta propuesta</h2>
+    <p>La página de una tradición (pantalla 03) con el contenido real del dosier católico de la Eucaristía, tal como la vería un lector el día del lanzamiento. Todo lo que dice «Probar» es una opción a decidir; lo demás sigue lo acordado el 2026-10-08 y el 2026-10-14.</p>
+    <h3>Qué tiene</h3>
+    <ul>
+      <li><b>Selector de tradición</b> fijo arriba de la columna, en el orden de siempre (católica, ortodoxa, luterana, reformada, bautista). Las otras cuatro no están en esta propuesta. La pentecostal entró el 2026-10-14 pero todavía no tiene contenido sobre la Eucaristía, así que no aparece.</li>
+      <li><b>Qué enseña:</b> la definición breve y nueve afirmaciones; se ven cinco y el botón muestra las otras cuatro y las vuelve a esconder. Cada grado abre su definición con lo que dice la Iglesia y, abajo, por qué esa afirmación tiene ese grado. Cada fuente abre la ventana con el texto citado; Trento y Letrán IV abren además el lector, solo con los capítulos y cánones que tiene el dosier.</li>
+      <li><b>Por qué:</b> el formato de P2 (introducción, dos Padres tal como los cita el Catecismo, una frase de cierre con fuerza y la nota neutral que lleva a 02).</li>
+      <li><b>Objeciones</b> (v2): muestra tres y «Ver las 7 objeciones», que lleva a la página propia de «Objeciones» (pantalla nueva). El mismo componente y el mismo texto que «Otras objeciones» en 04, sin conteos. Cada síntesis está escrita a su largo (2 o 3 líneas, oraciones enteras, sin «…») y no dice quién la plantea. Solo la primera tiene página en esta propuesta.</li>
+      <li><b>Grado de autoridad:</b> las cuatro categorías de la Iglesia con su definición y, debajo, qué afirmaciones de esta página tienen cada una.</li>
+      <li><b>«Transubstanciación»</b> (v2), en «Qué enseña», abre el glosario. Los filtros de videos ahora tienen el texto centrado y la lista cambia con la cascada de sura-clon.</li>
+      <li><b>Videos:</b> los 15 del archivo, con título, canal e idioma reales; sin miniaturas ni reproductor; se cargan de a 5. Es el mismo componente que en 04.</li>
+      <li><b>Citas en el texto:</b> con nombre, entre paréntesis y en la letra de la prosa («… (Trento, ses. XXII, cap. 1)»): ahora es la regla de todo el sitio, también en 04. El paréntesis nunca queda solo al final de una línea. Los localizadores usan una sola gramática: «ses. XXII, cap. 1», «Catecismo 1366», «Confesión de Westminster 29.2».</li>
+      <li><b>Opciones a probar:</b> una sola arriba («orden de las secciones»); las demás están junto a lo que cambian. El color de las citas y la memoria de la ventana pasaron al marco de la propuesta porque valen para todas las pantallas.</li>
+    </ul>
+    <h3>Los dos botones</h3>
+    <p>«Ampliar aquí» y «llevarte a otra página» se ven distintos en toda la página. Lado a lado:</p>
+    <div class="btn-demo">
+      <div><button class="btn-more" type="button" id="demo-more" aria-expanded="false"></button><p>Ampliar aquí: sin borde, con el signo más que gira. «Qué enseña», «Cómo se vive» y «Videos».</p></div>
+      <div><a class="btn-go" href="#" data-nb>Ver los 14 pasajes</a><p>Ir a otra página: con borde. «La Escritura que usa». En la ventana de cita, «Abrir la fuente completa».</p></div>
+    </div>
+    <h3>Qué se descartó y por qué</h3>
+    <ul>
+      <li>«Citar esta página» (2026-10-08), «La plantean…» y los conteos en las objeciones (2026-10-06, 2026-10-08).</li>
+      <li>El grado como insignia de color o como «Dogma (de fe definida)»: el rótulo es una palabra simple y su significado se abre al lado.</li>
+      <li>«Explicación teológica (escuela tomista)» de P1 a P4: no es una de las categorías de la Iglesia; el dosier la deja fuera.</li>
+      <li>«La carne nada aprovecha» y «Dios prohibió beber sangre»: no aparecen en los textos oficiales de ninguna tradición objetora, así que el dosier no las lleva.</li>
+      <li>La lista de fuentes al pie de «Por qué» y el reproductor de video dentro del sitio.</li>
+      <li>De la lista de «AI slop»: crema con terracota, dorado sobre azul, pergamino, imágenes de stock, cruces decorativas, tarjetas con sombra, degradados, rótulos en mayúsculas espaciadas, datos unidos con «·», «→» pegada a los enlaces, emoji (se quitó el 🔥 del título de un video), íconos en cuadrados de color, comillas gigantes, localizadores en monoespaciada, un color por tradición y columnas apretadas en el teléfono.</li>
+    </ul>
+    <h3>Qué hay que decidir</h3>
+    <ul>
+      <li>Orden de las secciones: la propuesta o el de P1.</li>
+      <li>Grado y fuentes en «Qué enseña»: A, B o C.</li>
+      <li>Citas en «Por qué»: con nombre o numeradas.</li>
+      <li>«Leer en vatican.va»: botón con marca o enlace de texto.</li>
+      <li>Grado de autoridad con cuatro filas (recomendación del dosier) o solo las tres que usan las afirmaciones de esta página.</li>
+    </ul>
+  </section>
+</main>
+<script src="base.js"></script>
+<script>
+(function () {
+const $ = D.$, $$ = D.$$;
+
+const URL_CCC = 'https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html';
+const URL_CCC_1457 = 'https://www.vatican.va/archive/catechism_sp/p2s2c2a4_sp.html';
+const URL_EDE = 'https://www.vatican.va/content/john-paul-ii/es/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html';
+const URL_SC = 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_sp.html';
+const URL_LG = 'https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_sp.html';
+const URL_CIC3 = 'https://www.vatican.va/archive/cod-iuris-canonici/esp/documents/cic_libro3_cann747-755_sp.html';
+const URL_DV = 'https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19900524_theologian-vocation_sp.html';
+const VAT = 'Leer en vatican.va';
+const ANAT = '«Sea excomulgado» traduce el latín «anathema sit».';
+
+const TR = {
+  13: {who: 'Concilio de Trento', ses: 'ses. XIII', date: '11 de octubre de 1551', y: 1551, reader: 'tr13'},
+  21: {who: 'Concilio de Trento', ses: 'ses. XXI', date: '16 de julio de 1562', y: 1562, reader: 'tr21'},
+  22: {who: 'Concilio de Trento', ses: 'ses. XXII', date: '17 de septiembre de 1562', y: 1562, reader: 'tr22'}
+};
+const tr = (s, div, quote, extra) => Object.assign({kicker: 'Fuente', quote, who: TR[s].who, work: TR[s].ses + ', ' + div.toLowerCase(), date: TR[s].date, y: TR[s].y, reader: TR[s].reader, target: div.toLowerCase()}, /^Can/.test(div) ? {note: ANAT} : {}, extra || {});
+const ccc = (n, quote, url) => ({kicker: 'Fuente', quote, who: 'Catecismo de la Iglesia Católica', work: (/ y /.test(n) ? 'nn. ' : 'n. ') + n, date: '1992', y: 1992, ext: {label: VAT, url: url || URL_CCC}});
+const cic = (n, quote, url) => ({kicker: 'Fuente', quote, who: 'Código de Derecho Canónico', work: n, date: '1983', y: 1983, ext: url ? {label: VAT, url} : null, extnb: !url});
+const ede = (n, quote) => ({kicker: 'Fuente', quote, who: 'Juan Pablo II', work: 'Ecclesia de Eucharistia ' + n, date: '17 de abril de 2003', y: 2003, ext: {label: VAT, url: URL_EDE}});
+
+Object.assign(D.CITES, {
+  t13c1: tr(13, 'Cap. 1', 'En primer lugar enseña el santo Concilio, y clara y sencillamente confiesa, que despues de la consagracion del pan y del vino, se contiene en el saludable Sacramento de la santa Eucaristía, verdadera, real y substancialmente nuestro señor Jesu-Cristo, verdadero Dios y hombre, bajo las especies de aquellas cosas sensibles.'),
+  t13c1b: tr(13, 'Cap. 1', '…quando despues de haber bendecido el pan y el vino, testificó á sus Apóstoles con claras y enérgicas palabras, que les daba su propio cuerpo y su propia sangre.'),
+  t13c2: tr(13, 'Cap. 2', '…y como un antidoto con que nos libremos de las culpas veniales, y nos preservemos de las mortales.'),
+  t13c3: tr(13, 'Cap. 3', 'Por esta causa es certísimo que se contiene tanto baxo cada una de las dos especies, como baxo de ambas juntas; pues existe Cristo todo, y entero baxo las especies de pan, y baxo qualquiera parte de esta especie; y todo tambien existe baxo la especie de vino y de sus partes.'),
+  t13c4: tr(13, 'Cap. 4', '…que por la consagracion del pan y del vino, se convierte toda la substancia del pan en la substancia del cuerpo de nuestro señor Jesu-Cristo, y toda la substancia del vino en la substancia de su sangre, cuya conversion ha llamado oportuna, y propiamente Transubstanciacion la santa Iglesia Católica.'),
+  t13c4b: tr(13, 'Cap. 4', 'Mas, por quanto dixo Jesu-Cristo nuestro Redentor, que era verdaderamente su cuerpo lo que ofrecia bajo la especie de pan; ha creido por lo mismo perpetuamente la Iglesia de Dios…'),
+  t13c5: tr(13, 'Cap. 5', 'No queda pues, motivo alguno de duda en que todos los fieles cristianos hayan de venerar á este santísimo Sacramento, y prestarle, segun la costumbre siempre recibida en la Iglesia católica, el culto de latría que se debe al mismo Dios.'),
+  t13k1: tr(13, 'Can. 1', 'Si alguno negáre, que en el santisimo Sacramento de la Eucaristia se contiene verdadera, real y substancialmente el cuerpo y la sangre juntamente con el alma y divinidad de nuestro señor Jesu-Cristo, y por conseqüencia todo Cristo; sino por el contrario dixere, que solamente está en él como en señal, ó en figura, ó virtualmente; sea excomulgado.'),
+  t13k2: tr(13, 'Can. 2', 'Si alguno dixere, que en el sacrosanto Sacramento de la Eucaristia queda substancia de pan y de vino juntamente con el cuerpo y sangre de nuestro señor Jesu-Cristo; y negare aquella admirable y singular conversion de toda la substancia del pan en el cuerpo, y de toda la substancia del vino en la sangre, permaneciendo solamente las especies de pan y vino; conversion que la Iglesia Católica propisimamente llama Transubstanciacion; sea excomulgado.'),
+  t13k5: tr(13, 'Can. 5', 'Si alguno dixere, ó que el principal fruto de la sacrosanta Eucaristía es el perdon de los pecados, ó que no provienen de ella otros efectos; sea excomulgado.'),
+  t13k6: tr(13, 'Can. 6', 'Si alguno dixere, que en el santo Sacramento de la Eucaristía no se debe adorar á Cristo hijo unigenito de Dios con el culto de latría, ni aun con el externo; […] ó que no se debe exponer públicamente al pueblo para que le adore, y que los que le adoran son idólatras; sea excomulgado.'),
+  t13k11: tr(13, 'Can. 11', '…establece y declara el mismo santo Concilio, que los que se sienten gravados con conciencia de pecado mortal, por contritos que se crean, deben para recibirle, anticipar necesariamente la confesion sacramental habiendo confesor.'),
+  t21c1: tr(21, 'Cap. 1', '…segun las varias interpretaciones de los santos Padres y doctores…'),
+  t21c2: tr(21, 'Cap. 2', '…ha aprobado, movida de graves y justas causas, la de comulgar bajo una sola especie, decretando que esta se observase como ley; la misma que no es permitido reprobar, ni mudar arbitrariamente sin la autoridad de la misma Iglesia.'),
+  t21k1: tr(21, 'Can. 1', 'Si alguno dixere, que todos y cada uno de los fieles cristianos están obligados por precepto divino, ó de necesidad para conseguir la salvacion, á recibir una y otra especie del santísimo Sacramento de la Eucaristía; sea excomulgado.'),
+  t21k3: tr(21, 'Can. 3', 'Si alguno negáre que Cristo, fuente y autor de todas las gracias, se recibe todo entero bajo la sola especie de pan, dando por razon, como falsamente afirman algunos, que no se recibe, segun lo estableció el mismo Jesu-Cristo, en las dos especies; sea excomulgado.'),
+  t22c1: tr(22, 'Cap. 1', '…para dexar en la última cena, de la noche misma en que era entregado, á su amada Esposa la Iglesia un sacrificio visible, segun requiere la condicion de los hombres, en el que se representase el sacrificio cruento que por una vez se habia de hacer en la cruz…'),
+  t22c2: tr(22, 'Cap. 2', '…porque la hostia es una misma, uno el mismo que ahora ofrece por el ministerio de los sacerdotes, que el que entonces se ofreció á sí mismo en la cruz, con sola la diferencia del modo de ofrecerse.'),
+  t22k1: tr(22, 'Can. 1', 'Si alguno dixere, que no se ofrece á Dios en la Misa verdadero y propio sacrificio; ó que el ofrecerse este no es otra cosa que darnos á Cristo para que le comamos; sea excomulgado.'),
+  t22k2: tr(22, 'Can. 2', 'Si alguno dixere, que en aquellas palabras: Haced esto en mi memoria, no instituyó Cristo sacerdotes á los Apóstoles; ó que no los ordenó para que ellos, y los demas sacerdotes ofreciesen su cuerpo, y su sangre; sea excomulgado.'),
+  t22k3: tr(22, 'Can. 3', 'Si alguno dixere, que el sacrificio de la Misa es solo sacrificio de alabanza, y de accion de gracias, ó mero recuerdo del sacrificio consumado en la cruz, mas que no es propiciatorio; ó que solo aprovecha al que lo recibe; y que no se debe ofrecer por los vivos, ni por los difuntos, por los pecados, penas, satisfacciones, ni otras necesidades; sea excomulgado.'),
+  l4: {kicker: 'Fuente', quote: '…cuyo Cuerpo y Sangre están realmente en el Sacramento del Altar, baxo las especies de pan y de vino, transubstanciándose el pan en el Cuerpo de Jesu-Christo, y el vino en su Sangre, mediante el poder divino…', who: 'Concilio de Letrán IV', work: 'const. 1', date: '1215', y: 1215, reader: 'l4', target: 'const. 1'},
+  l4b: {kicker: 'Fuente', quote: 'Nadie puede consagrar este misterio, sino solo el Sacerdote legitimamente ordenado, segun la potestad de las llaves de la Iglesia, que Jesu-Christo concedió á los Apóstoles, y á sus succesores', who: 'Concilio de Letrán IV', work: 'const. 1', date: '1215', y: 1215, reader: 'l4', target: 'const. 1'},
+  c1336: ccc(1336, 'El primer anuncio de la Eucaristía dividió a los discípulos, igual que el anuncio de la pasión los escandalizó: «Es duro este lenguaje, ¿quién puede escucharlo?» (Jn 6,60).'),
+  c1338: {kicker: 'Fuente', title: 'Catecismo 1338', who: 'Catecismo de la Iglesia Católica', work: 'n. 1338', date: '1992', y: 1992, ext: {label: VAT, url: URL_CCC}},
+  c1341: {kicker: 'Fuente', title: 'Catecismo 1341 y 1363', who: 'Catecismo de la Iglesia Católica', work: 'nn. 1341 y 1363', date: '1992', y: 1992, ext: {label: VAT, url: URL_CCC}},
+  c1365: ccc(1365, 'El carácter sacrificial de la Eucaristía se manifiesta en las palabras mismas de la institución: «Esto es mi Cuerpo que será entregado por vosotros» y «Esta copa es la nueva Alianza en mi sangre, que será derramada por vosotros» (Lc 22,19-20).'),
+  c1366: ccc('1366 y 1367', 'La Eucaristía es, pues, un sacrificio porque representa (= hace presente) el sacrificio de la cruz, porque es su memorial y aplica su fruto. […] El sacrificio de Cristo y el sacrificio de la Eucaristía son, pues, un único sacrificio.'),
+  c1374: ccc(1374, 'Esta presencia se denomina «real», no a título exclusivo, como si las otras presencias no fuesen «reales», sino por excelencia, porque es substancial, y por ella Cristo, Dios y hombre, se hace totalmente presente.'),
+  c1378: ccc(1378, 'La Iglesia católica ha dado y continua dando este culto de adoración que se debe al sacramento de la Eucaristía no solamente durante la misa, sino también fuera de su celebración…'),
+  c1389: ccc(1389, '…recomienda vivamente a los fieles recibir la santa Eucaristía los domingos y los días de fiesta, o con más frecuencia aún, incluso todos los días.'),
+  c1390: ccc(1390, 'Por razones pastorales, esta manera de comulgar se ha establecido legítimamente como la más habitual en el rito latino. «La comunión tiene una expresión más plena por razón del signo cuando se hace bajo las dos especies»…'),
+  c1396: ccc(1396, 'La Eucaristía hace la Iglesia. Los que reciben la Eucaristía se unen más estrechamente a Cristo. Por ello mismo, Cristo los une a todos los fieles en un solo cuerpo: la Iglesia.'),
+  c1401: ccc(1401, 'Si, a juicio del Ordinario, se presenta una necesidad grave, los ministros católicos pueden administrar los sacramentos (Eucaristía, Penitencia, Unción de los enfermos) a cristianos que no están en plena comunión con la Iglesia católica […]: en tal caso se precisa que profesen la fe católica respecto a estos sacramentos y estén bien dispuestos.'),
+  c1411: ccc(1411, 'Sólo los presbíteros válidamente ordenados pueden presidir la Eucaristía y consagrar el pan y el vino para que se conviertan en el Cuerpo y la Sangre del Señor.'),
+  c1457: ccc(1457, 'Quien tenga conciencia de hallarse en pecado grave que no comulgue el Cuerpo del Señor sin acudir antes a la confesión sacramental […] a no ser que concurra un motivo grave y no haya posibilidad de confesarse…', URL_CCC_1457),
+  c1346: ccc(1346, '…la liturgia de la Palabra, con las lecturas, la homilía y la oración universal; la liturgia eucarística, con la presentación del pan y del vino, la acción de gracias consecratoria y la comunión.'),
+  c1348: ccc(1348, '…es quien preside invisiblemente toda celebración eucarística.'),
+  ede12: ede(12, 'La Misa hace presente el sacrificio de la Cruz, no se le añade y no lo multiplica. Lo que se repite es su celebración memorial…'),
+  ede16: ede(16, 'No se trata de un alimento metafórico: «Mi carne es verdadera comida y mi sangre verdadera bebida» (Jn 6, 55).'),
+  ede35: ede(35, 'La celebración de la Eucaristía, no obstante, no puede ser el punto de partida de la comunión, que la presupone previamente, para consolidarla y llevarla a perfección.'),
+  ede45: ede(45, '…el objetivo es satisfacer una grave necesidad espiritual para la salvación eterna de los fieles, singularmente considerados, pero no realizar una intercomunión, que no es posible mientras no se hayan restablecido del todo los vínculos visibles de la comunión eclesial.'),
+  jn655: {kicker: 'Escritura', quote: 'Mi carne es verdadera comida y mi sangre verdadera bebida', who: 'Juan 6:55', work: 'como lo cita Ecclesia de Eucharistia 16'},
+  sc47: {kicker: 'Fuente', quote: 'Nuestro Salvador, en la Última Cena, la noche que le traicionaban, instituyó el Sacrificio Eucarístico de su Cuerpo y Sangre, con lo cual iba a perpetuar por los siglos, hasta su vuelta, el Sacrificio de la Cruz…', who: 'Concilio Vaticano II', work: 'Sacrosanctum Concilium 47', date: '4 de diciembre de 1963', y: 1963, ext: {label: VAT, url: URL_SC}},
+  sc55: {kicker: 'Fuente', quote: 'Manteniendo firmes los principios dogmáticos declarados por el Concilio de Trento, la comunión bajo ambas especies puede concederse en los casos que la Sede Apostólica determine…', who: 'Concilio Vaticano II', work: 'Sacrosanctum Concilium 55', date: '4 de diciembre de 1963', y: 1963, ext: {label: VAT, url: URL_SC}},
+  lg11: {kicker: 'Fuente', quote: 'fuente y cumbre de toda la vida cristiana', who: 'Concilio Vaticano II', work: 'Lumen gentium 11', date: '21 de noviembre de 1964', y: 1964, ext: {label: VAT, url: URL_LG}},
+  k900: cic('can. 900 §1', 'Sólo el sacerdote válidamente ordenado es ministro capaz de confeccionar el sacramento de la Eucaristía, actuando en la persona de Cristo.'),
+  k901: cic('can. 901', 'El sacerdote tiene facultad para aplicar la Misa por cualesquiera, tanto vivos como difuntos.'),
+  k913: cic('cann. 913 §1 y 914', '…previa confesión sacramental…'),
+  k916: cic('can. 916', 'Quien tenga conciencia de hallarse en pecado grave, no celebre la Misa ni comulgue el Cuerpo del Señor sin acudir antes a la confesión sacramental, a no ser que concurra un motivo grave y no haya oportunidad de confesarse…'),
+  k919: cic('can. 919', '…al menos desde una hora antes de la sagrada comunión, a excepción sólo del agua y de las medicinas.'),
+  k920: cic('can. 920', '…por lo menos una vez al año […] durante el tiempo pascual, a no ser que por causa justa se cumpla en otro tiempo dentro del año.'),
+  k921: {kicker: 'Fuente', who: 'Código de Derecho Canónico', work: 'can. 921 §§1–2', date: '1983', y: 1983, extnb: true},
+  k924: cic('cann. 924 y 926', '…exclusivamente de trigo y hecho recientemente […] natural, del fruto de la vid […] según la antigua tradición de la Iglesia latina…'),
+  k925: cic('can. 925', 'Adminístrese la sagrada comunión bajo la sola especie del pan o, de acuerdo con las leyes litúrgicas, bajo las dos especies; en caso de necesidad, también bajo la sola especie del vino.'),
+  k938: cic('cann. 938 y 940', '…en un solo sagrario […] Ante el sagrario en el que está reservada la santísima Eucaristía ha de lucir constantemente una lámpara especial, con la que se indique y honre la presencia de Cristo.'),
+  k941: cic('cann. 941 y 944', '…sobre todo en la solemnidad del Cuerpo y Sangre de Cristo…'),
+  k844: cic('can. 844', '…profesen la fe católica respecto a esos sacramentos…'),
+  k1247: cic('can. 1247', 'El domingo y las demás fiestas de precepto los fieles tienen obligación de participar en la Misa.')
+});
+
+D.CITES.f_chr = {kicker: 'Fuente', quote: 'No es el hombre quien hace que las cosas ofrecidas se conviertan en Cuerpo y Sangre de Cristo, sino Cristo mismo que fue crucificado por nosotros. El sacerdote, figura de Cristo, pronuncia estas palabras, pero su eficacia y su gracia provienen de Dios. Esto es mi Cuerpo, dice. Esta palabra transforma las cosas ofrecidas.', who: 'Juan Crisóstomo', work: 'De proditione Iudae, homilía 1, 6; citado en el Catecismo 1375', date: 'Nació c. 347, murió en 407', ext: {label: VAT, url: URL_CCC}};
+D.CITES.f_amb = {kicker: 'Fuente', quote: 'Estemos bien persuadidos de que esto no es lo que la naturaleza ha producido, sino lo que la bendición ha consagrado, y de que la fuerza de la bendición supera a la de la naturaleza, porque por la bendición la naturaleza misma resulta cambiada.', who: 'Ambrosio de Milán', work: 'Sobre los misterios 9, 50 y 52; citado en el Catecismo 1375', date: 'c. 390', y: 390, ext: {label: VAT, url: URL_CCC}};
+
+const GRADE = {
+  dogma: {t: 'Dogma', def: '«Se ha de creer con fe divina y católica todo aquello que se contiene en la palabra de Dios escrita o transmitida por tradición […] y que además es propuesto como revelado por Dios, ya sea por el magisterio solemne de la Iglesia, ya por su magisterio ordinario y universal».', work: 'can. 750 §1', key: 'k750'},
+  definitiva: {t: 'Doctrina definitiva', def: '«Se han de aceptar y retener firmemente todas y cada una de las cosas sobre la doctrina de la fe y las costumbres propuestas de modo definitivo por el magisterio de la Iglesia».', work: 'can. 750 §2', key: 'k750b'},
+  autentico: {t: 'Magisterio auténtico', def: '«Se ha de prestar un asentimiento religioso del entendimiento y de la voluntad, sin que llegue a ser de fe, a la doctrina que el Sumo Pontífice o el Colegio de los Obispos, en el ejercicio de su magisterio auténtico, enseñan acerca de la fe y de las costumbres».', work: 'can. 752', key: 'k752'},
+  disciplina: {t: 'Disciplina', def: '«Las decisiones magisteriales en materia de disciplina, aunque no estén garantizadas por el carisma de la infalibilidad, no están desprovistas de la asistencia divina y requieren la adhesión de los fieles.»', who: 'Congregación para la Doctrina de la Fe', work: 'Donum veritatis 17', date: '24 de mayo de 1990', y: 1990, url: URL_DV, key: 'dv17'}
+};
+const gradeCite = (g, why) => {
+  const G = GRADE[g];
+  return {kicker: 'Grado de autoridad', title: G.t, def: G.def + (why ? '<span style="display:block;margin-top:14px;font-family:var(--ui);font-size:14px;line-height:1.55;color:var(--ink-2)"><b style="font-weight:500;color:var(--ink)">En esta afirmación.</b> ' + why + '</span>' : ''), who: G.who || 'Código de Derecho Canónico', work: G.work, date: G.date || '1983', y: G.y || 1983, ext: {label: VAT, url: G.url || URL_CIC3}};
+};
+Object.keys(GRADE).forEach(g => { D.CITES[GRADE[g].key] = Object.assign(gradeCite(g), {kicker: 'Fuente', title: null}); D.CITES['g-' + g] = gradeCite(g); });
+
+const QE = [
+  {id: 'qe-1', short: 'La presencia real', lc: 'la presencia real', t: 'En la Eucaristía, después de la consagración, está contenido verdadera, real y sustancialmente Cristo entero: su cuerpo y su sangre, con su alma y su divinidad. No está solo como en un signo o una figura. La Iglesia la llama presencia «real» por excelencia, no porque las otras presencias de Cristo (en su Palabra, en la oración de la Iglesia, en los sacramentos) no sean reales.',
+    g: [['dogma', 'Así lo clasifica la Congregación para la Doctrina de la Fe (1998).']], s: [['t13k1', 'Trento, ses. XIII, can. 1'], ['t13c1', 'Trento, ses. XIII, cap. 1'], ['c1374', 'Catecismo 1374']]},
+  {id: 'qe-2', short: 'La transubstanciación', lc: 'la transubstanciación', t: 'Por la consagración, toda la sustancia del pan se convierte en la sustancia del cuerpo de Cristo y toda la sustancia del vino en la de su sangre; del pan y del vino quedan solo las especies (lo que se ve, se toca y se gusta). La Iglesia llama a este cambio <button class="term" type="button" data-cite="g-transub">transubstanciación</button>.',
+    g: [['dogma', 'Definido por Trento (ses. XIII, cap. 4 y can. 2); la Iglesia no lo ha clasificado por separado.']], s: [['t13c4', 'Trento, ses. XIII, cap. 4'], ['t13k2', 'Trento, ses. XIII, can. 2'], ['l4', 'Letrán IV, const. 1']]},
+  {id: 'qe-3', short: 'El sacrificio de la Misa', lc: 'el sacrificio de la Misa', t: 'La Misa es un sacrificio verdadero y propio: sacrificio de acción de gracias y de alabanza al Padre, y memorial de la Pascua de Cristo. No es otro sacrificio distinto del de la cruz: la víctima y el que ofrece son los mismos, Cristo, y solo cambia el modo de ofrecerse, que ahora es incruento. Por eso la Iglesia enseña que es también propiciatorio y que puede ofrecerse por vivos y difuntos.',
+    g: [['dogma', 'Así lo clasifica la Congregación para la Doctrina de la Fe (1998).']], s: [['t22k1', 'Trento, ses. XXII, can. 1'], ['t22c2', 'Trento, ses. XXII, cap. 2'], ['t22k3', 'Trento, ses. XXII, can. 3'], ['c1366', 'Catecismo 1366–1367'], ['ede12', 'Ecclesia de Eucharistia 12']]},
+  {id: 'qe-4', short: 'Cristo entero en cada especie', lc: 'Cristo entero en cada especie', t: 'Bajo la especie del pan y bajo la del vino está Cristo entero, y también en cada parte de cada una: partir la hostia no divide a Cristo. Por eso quien comulga solo con el pan recibe a Cristo entero.',
+    g: [['dogma', 'Definido por Trento (ses. XIII, can. 3; ses. XXI, can. 3); la Iglesia no lo ha clasificado por separado.']], s: [['t13c3', 'Trento, ses. XIII, cap. 3'], ['t21k3', 'Trento, ses. XXI, can. 3']]},
+  {id: 'qe-5', short: 'La adoración', lc: 'la adoración', t: 'Como Cristo mismo está presente, a la Eucaristía se le da el culto de adoración que se debe solo a Dios. Por eso se la guarda en el sagrario, se la lleva a los enfermos, se la expone para la adoración y se la lleva en procesión.',
+    g: [['dogma', 'Definido por Trento (ses. XIII, cann. 6 y 7); la Iglesia no lo ha clasificado por separado.'], ['disciplina', 'Las formas concretas (la exposición, las procesiones, el sagrario y su lámpara) las regula el Código de Derecho Canónico (cann. 934–944).']], s: [['t13c5', 'Trento, ses. XIII, cap. 5'], ['t13k6', 'Trento, ses. XIII, can. 6'], ['c1378', 'Catecismo 1378']]},
+  {id: 'qe-6', short: 'El sacerdocio', lc: 'el sacerdocio', t: 'Con las palabras «Hagan esto en memoria mía», Cristo hizo sacerdotes a los apóstoles y les mandó ofrecer su cuerpo y su sangre. Por eso solo un sacerdote válidamente ordenado, obispo o presbítero, puede consagrar la Eucaristía.',
+    g: [['dogma', 'Definido por Trento (ses. XXII, can. 2) para la institución de los apóstoles como sacerdotes. Que solo un sacerdote consagra lo enseñan Letrán IV, el Código y el Catecismo; la Iglesia no ha precisado su grado por separado.']], s: [['t22k2', 'Trento, ses. XXII, can. 2'], ['l4b', 'Letrán IV, const. 1'], ['c1411', 'Catecismo 1411']]},
+  {id: 'qe-7', short: 'La comunión bajo una especie', lc: 'la comunión bajo una especie', t: 'Ningún mandato divino obliga a los fieles a comulgar con las dos especies, porque bajo cualquiera de ellas se recibe a Cristo entero. Comulgar solo con el pan es una ley de la Iglesia, que ella puede cambiar; hoy, en el rito latino, se permite también la comunión bajo las dos especies; en los ritos orientales católicos es la forma habitual ([[c1390|Catecismo 1390]]).',
+    g: [['dogma', 'Que ningún mandato divino obliga a comulgar con las dos especies, y que bajo una se recibe a Cristo entero: definido por Trento (ses. XXI, cann. 1 y 3); la Iglesia no lo ha clasificado por separado.'], ['disciplina', 'Que se comulgue solo con el pan: Trento lo llama una ley de la Iglesia (ses. XXI, cap. 2); hoy lo regulan el Código de Derecho Canónico (can. 925) y Sacrosanctum Concilium 55.']], s: [['t21k1', 'Trento, ses. XXI, can. 1'], ['t21c2', 'Trento, ses. XXI, cap. 2'], ['sc55', 'Sacrosanctum Concilium 55'], ['k925', 'Código de Derecho Canónico, can. 925']]},
+  {id: 'qe-8', short: 'Los frutos de la comunión', lc: 'los frutos de la comunión', t: 'Comulgar une más a Cristo, perdona los pecados veniales y preserva de los graves. No está ordenada a perdonar los pecados mortales: para eso está la confesión. Quien tiene conciencia de pecado grave debe confesarse antes de comulgar, salvo que haya un motivo grave y no pueda confesarse; en ese caso debe hacer un acto de contrición perfecta, con el propósito de confesarse cuanto antes.',
+    g: [['dogma', 'Que el perdón de los pecados no es el fruto principal y que hay otros efectos: definido por Trento (ses. XIII, can. 5); la Iglesia no lo ha clasificado por separado.'], ['disciplina', 'La confesión antes de comulgar, en su forma concreta (Código de Derecho Canónico, can. 916; Catecismo 1457).']], s: [['t13c2', 'Trento, ses. XIII, cap. 2'], ['t13k5', 'Trento, ses. XIII, can. 5'], ['t13k11', 'Trento, ses. XIII, can. 11'], ['c1457', 'Catecismo 1457']]},
+  {id: 'qe-9', short: 'La Eucaristía hace la Iglesia', lc: 'la Eucaristía hace la Iglesia', t: 'Para la Iglesia católica, la Eucaristía es «fuente y cumbre de toda la vida cristiana» y «hace la Iglesia»: quienes la reciben se unen más a Cristo y, por eso, Cristo los une entre sí en un solo cuerpo ([[c1396|Catecismo 1396]]). Por la misma razón enseña que celebrarla «no puede ser el punto de partida de la comunión, que la presupone previamente» ([[ede35|Ecclesia de Eucharistia 35]]). Reconoce en las Iglesias ortodoxas verdaderos sacramentos, y sobre todo el sacerdocio y la Eucaristía; con las comunidades nacidas de la Reforma no admite la intercomunión. Distingue de la intercomunión el caso de una necesidad espiritual grave, en el que puede darse la comunión a otros cristianos que comparten la fe católica sobre este sacramento ([[c1401|Catecismo 1401]]; [[ede45|Ecclesia de Eucharistia 45]]).',
+    g: [['autentico', 'Lo enseñan el Concilio Vaticano II (Lumen gentium 11; Unitatis redintegratio 15 y 22) y la encíclica Ecclesia de Eucharistia.'], ['disciplina', 'Las normas sobre quién puede comulgar (Código de Derecho Canónico, can. 844).']], s: [['lg11', 'Lumen gentium 11'], ['c1396', 'Catecismo 1396'], ['ede35', 'Ecclesia de Eucharistia 35'], ['c1401', 'Catecismo 1401']]}
+];
+const SHOWN = 5;
+
+const rich = s => s.replace(/(\(?)\[\[([\w-]+)\|([^\]]+)\]\]([).,;]*)/g, (m, pre, k, l, post) => '<span class="nw">' + pre + '<button class="ln-side" type="button" data-cite="' + k + '">' + l + '</button>' + post + '</span>');
+let cn = 0;
+const pqc = s => s.replace(/ ?\(\(([^)]+)\)\)([.,;:]?)/g, (m, inner, post) => {
+  const parts = inner.split(';').map(p => p.trim().split('|'));
+  const named = '<span class="c-named"> ' + parts.map(([k, l], i) => '<span class="nw">' + (i ? '' : '(') + '<button class="ln-side" type="button" data-cite="' + k + '">' + l + '</button>' + (i === parts.length - 1 ? ')' + post : ';') + '</span>').join(' ') + '</span>';
+  const num = '<span class="c-num">' + parts.map(([k, l]) => '<button class="cn" type="button" data-cite="' + k + '" aria-label="Fuente: ' + D.esc(l) + '">' + (++cn) + '</button>').join('') + '</span>';
+  return named + num + '<span class="c-num">' + post + '</span>';
+});
+
+$('#defn').innerHTML = 'Para la Iglesia católica, la Eucaristía es el sacrificio del cuerpo y la sangre de Cristo, instituido en la última Cena para hacer presente el sacrificio de la cruz hasta que él vuelva, y a la vez el banquete en el que se recibe a Cristo mismo. <span style="font-family:var(--ui);font-size:14.5px;white-space:nowrap">' + rich('[[sc47|Sacrosanctum Concilium 47]]') + '</span>';
+
+const catHtml = (q, cls) => q.g.map(([g, why], i) => (i ? '<span class="and"> y </span>' : '') + '<button class="term" type="button" data-cite="g:' + q.id + ':' + g + '">' + (i && cls !== 'mg' ? GRADE[g].t.toLowerCase() : GRADE[g].t) + '</button>').join('');
+const srcHtml = q => q.s.map(([k, l]) => '<button class="ln-side" type="button" data-cite="' + k + '">' + l + '</button>').join(', ');
+$('#qe-list').innerHTML = QE.map((q, i) => {
+  q.g.forEach(([g, why]) => { D.CITES['g:' + q.id + ':' + g] = gradeCite(g, why); });
+  return '<li id="' + q.id + '"' + (i >= SHOWN ? ' hidden' : '') + '>' +
+    '<div class="qe-mg">' + catHtml(q, 'mg') + '</div>' +
+    '<div class="qe-b"><p class="p qe-t">' + rich(q.t) + '</p>' +
+    '<p class="qe-line v-a"><span class="qe-c">' + catHtml(q) + '</span><span class="qe-sep" aria-hidden="true"></span><span class="qe-s">' + srcHtml(q) + '</span></p>' +
+    '<p class="qe-line v-b"><span class="qe-s">' + srcHtml(q) + '</span></p>' +
+    '<dl class="qe-line v-c"><dt>Grado</dt><dd class="qe-c">' + catHtml(q) + '</dd><dt>Fuentes</dt><dd class="qe-s">' + srcHtml(q) + '</dd></dl>' +
+    '</div></li>';
+}).join('');
+
+const moreBtn = (btn, list, n, labelMore, onToggle) => {
+  const paint = () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.innerHTML = D.ic.plus + (open ? 'Mostrar menos' : labelMore);
+  };
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', String(open));
+    D.flip(list, () => $$(':scope > li', list).forEach((li, i) => { if (i >= n) li.hidden = !open; }));
+    paint();
+    if (!open) { const r = list.getBoundingClientRect(); if (r.bottom < D.offset()) D.scrollToEl(list); }
+    D.rebuildRuler();
+  });
+  paint();
+};
+moreBtn($('#qe-more'), $('#qe-list'), SHOWN, 'Mostrar ' + (QE.length - SHOWN) + ' afirmaciones más');
+
+cn = 0;
+$('#pq-intro').innerHTML = pqc('La Iglesia católica funda esta enseñanza, ante todo, en las palabras de Cristo en la última Cena, tomadas en su sentido propio: «Esto es mi cuerpo» ((t13c1b|Trento, ses. XIII, cap. 1)). Las lee junto con el discurso del pan de vida (Juan 6) y con las palabras «entregado por ustedes» y «derramada por muchos», que muestran un sacrificio ((c1336|Catecismo 1336; c1365|Catecismo 1365)). Y sostiene que la Iglesia siempre lo creyó así ((t13c4b|Trento, ses. XIII, cap. 4)).');
+$('#fq').innerHTML = [
+  {lead: 'El Catecismo cita a san Juan Crisóstomo:', q: D.CITES.f_chr.quote, who: 'Juan Crisóstomo', w: 'De proditione Iudae, homilía 1, 6', d: 'Murió en 407', k: 'f_chr'},
+  {lead: 'Y a san Ambrosio:', q: D.CITES.f_amb.quote, who: 'Ambrosio de Milán', w: 'Sobre los misterios 9, 50 y 52', d: 'c. 390', k: 'f_amb'}
+].map(f => '<figure><p class="lead">' + f.lead + '</p><blockquote class="quote">' + f.q + '</blockquote><figcaption><b>' + f.who + '</b><span class="w">' + f.w + '</span><span class="d">' + f.d + '</span><button class="ln-side" type="button" data-cite="' + f.k + '">Citado en el Catecismo 1375</button></figcaption></figure>').join('');
+$('#pq-punch').innerHTML = pqc('Para la Iglesia católica, Juan 6 no admite una lectura metafórica: ante el asombro de los oyentes, Jesús se ve obligado, dice Juan Pablo II, «a recalcar la verdad objetiva de sus palabras»: «Mi carne es verdadera comida y mi sangre verdadera bebida» ((jn655|Juan 6:55)). Y concluye: «No se trata de un alimento metafórico» ((ede16|Ecclesia de Eucharistia 16)).');
+
+const ESC = [
+  {t: 'Mateo 26:26-28; Marcos 14:22-24; Lucas 22:19-20; 1 Corintios 11:23-26', d: '«Esto es mi cuerpo… esta es mi sangre» se lee en su sentido propio: Cristo dio a los apóstoles su propio cuerpo y su propia sangre ([[t13c1b|Trento, ses. XIII, cap. 1]]). «Entregado por vosotros» y «derramada… para remisión de los pecados» muestran que es un sacrificio ([[c1365|Catecismo 1365]]).'},
+  {t: 'Juan 6:51-58; 6:60-69', d: 'Para la Iglesia católica, el discurso del pan de vida prepara la institución de la Eucaristía ([[c1338|Catecismo 1338]]). Ante el asombro de los oyentes, Jesús «recalca la verdad objetiva de sus palabras»: «mi carne es verdadera comida» (Juan 6:55); por eso, según [[ede16|Ecclesia de Eucharistia 16]], no es «un alimento metafórico». Trento, por su parte, usa Juan 6 «segun las varias interpretaciones de los santos Padres y doctores» ([[t21c1|ses. XXI, cap. 1]]).'},
+  {t: 'Lucas 22:19', d: 'Con estas palabras Cristo hizo sacerdotes a los apóstoles y les mandó ofrecer su cuerpo y su sangre ([[t22k2|Trento, ses. XXII, can. 2]]). El memorial no es solo recordar: es la celebración litúrgica que hace presente lo que recuerda ([[c1341|Catecismo 1341, 1363]]).'},
+  {t: '1 Corintios 10:16-17', d: '«La copa de bendición… ¿no es comunión con la sangre de Cristo?» La Eucaristía une a Cristo y, por eso, une entre sí a los que comulgan en un solo cuerpo, la Iglesia ([[c1396|Catecismo 1396]]).'}
+];
+$('#esc-list').innerHTML = ESC.map(e => '<li><a class="ln-go esc-t" href="#" data-nb>' + e.t + '</a><p class="esc-d">' + rich(e.d) + '</p></li>').join('');
+
+const OBJ = D.OBJS.cat, OBJ_SHOWN = 3;
+$('#obj-list').innerHTML = OBJ.slice(0, OBJ_SHOWN).map(o => '<li><a class="ln-go obj-t" href="' + (o.go ? 's04.html" data-go="04"' : '#" data-nb') + '>' + o.t + '</a><p class="obj-s">' + o.s + '</p></li>').join('');
+$('#obj-all').textContent = 'Ver las ' + OBJ.length + ' objeciones';
+
+$('#cv-intro').innerHTML = '<p class="p">' + rich('La Eucaristía se celebra en la Misa. Los católicos tienen la obligación de participar en ella los domingos y las demás fiestas de precepto, y deben comulgar al menos una vez al año, en tiempo pascual (Código de Derecho Canónico, [[k1247|can. 1247]] y [[k920|can. 920]]). Pero la Iglesia no se queda en ese mínimo: «recomienda vivamente a los fieles recibir la santa Eucaristía los domingos y los días de fiesta, o con más frecuencia aún, incluso todos los días» ([[c1389|Catecismo 1389]]).') + '</p><p class="p">' + rich('Solo un sacerdote válidamente ordenado preside y consagra ([[k900|can. 900]]). La Iglesia pide comulgar en gracia de Dios: quien tiene conciencia de pecado grave se confiesa antes ([[k916|can. 916]]). Como, para la Iglesia, Cristo sigue presente mientras duran las especies, las hostias consagradas se guardan en el sagrario, desde donde se llevan a los enfermos y ante el que se reza y se adora ([[k938|cann. 938–941]]; [[c1378|Catecismo 1378–1379]]).') + '</p>';
+const CV = [
+  ['La Misa: Palabra y Eucaristía', 'La celebración tiene «dos grandes momentos que forman una unidad básica»: la liturgia de la Palabra, «con las lecturas, la homilía y la oración universal», y la liturgia eucarística, «con la presentación del pan y del vino, la acción de gracias consecratoria y la comunión»; juntas constituyen «un solo acto de culto» ([[c1346|Catecismo 1346]]).'],
+  ['Misa del domingo', '«El domingo y las demás fiestas de precepto los fieles tienen obligación de participar en la Misa» ([[k1247|Código de Derecho Canónico, can. 1247]]).'],
+  ['Comunión frecuente; mínimo anual', 'La Iglesia recomienda comulgar cada vez que se participa en la Misa, incluso a diario; obliga a hacerlo «por lo menos una vez al año», «durante el tiempo pascual, a no ser que por causa justa se cumpla en otro tiempo dentro del año» ([[k920|Código de Derecho Canónico, can. 920]]; [[c1389|Catecismo 1389]]).'],
+  ['En gracia de Dios', '«Quien tenga conciencia de hallarse en pecado grave, no celebre la Misa ni comulgue el Cuerpo del Señor sin acudir antes a la confesión sacramental, a no ser que concurra un motivo grave y no haya oportunidad de confesarse», y en ese caso debe hacer un acto de contrición perfecta con propósito de confesarse cuanto antes ([[k916|Código de Derecho Canónico, can. 916]]).'],
+  ['Ayuno eucarístico', 'Abstenerse de comida y bebida «al menos desde una hora antes de la sagrada comunión, a excepción sólo del agua y de las medicinas»; los mayores, los enfermos y quienes los cuidan quedan exentos ([[k919|Código de Derecho Canónico, can. 919]]).'],
+  ['Quién preside', '«Sólo el sacerdote válidamente ordenado es ministro capaz de confeccionar el sacramento de la Eucaristía, actuando en la persona de Cristo» ([[k900|Código de Derecho Canónico, can. 900]]). Cristo mismo «es quien preside invisiblemente toda celebración eucarística» ([[c1348|Catecismo 1348]]).'],
+  ['Pan y vino', 'Pan «exclusivamente de trigo y hecho recientemente»; vino «natural, del fruto de la vid», con «un poco de agua»; en la Iglesia latina, pan ázimo «según la antigua tradición de la Iglesia latina» ([[k924|Código de Derecho Canónico, cann. 924 y 926]]).'],
+  ['Una o dos especies', 'Se comulga con el pan solo o, según las leyes litúrgicas, con las dos especies; bajo cualquiera se recibe a Cristo entero ([[k925|Código de Derecho Canónico, can. 925]]; [[c1390|Catecismo 1390]]).'],
+  ['Primera comunión', 'Los niños que han llegado al uso de razón, con preparación y «previa confesión sacramental»; deben poder recibir el Cuerpo del Señor «con fe y devoción» ([[k913|Código de Derecho Canónico, cann. 913 y 914]]).'],
+  ['Quién puede comulgar', 'En principio, los católicos; con condiciones, los fieles de las Iglesias orientales que lo piden espontáneamente y están bien dispuestos; otros cristianos solo en peligro de muerte u otra necesidad grave, si «profesen la fe católica respecto a esos sacramentos» ([[k844|Código de Derecho Canónico, can. 844]]; [[c1401|Catecismo 1401]]).'],
+  ['El sagrario', 'La Eucaristía se reserva «en un solo sagrario», en un lugar «verdaderamente noble», ante el que «ha de lucir constantemente una lámpara especial, con la que se indique y honre la presencia de Cristo» ([[k938|Código de Derecho Canónico, cann. 938 y 940]]).'],
+  ['Adoración y procesiones', 'Exposición del Santísimo (no durante la Misa) y, donde el obispo lo juzgue posible, procesión por las calles «sobre todo en la solemnidad del Cuerpo y Sangre de Cristo» ([[k941|Código de Derecho Canónico, cann. 941 y 944]]; [[c1378|Catecismo 1378]]).'],
+  ['Viático', 'A quien está en peligro de muerte se le da la comunión como Viático, aunque haya comulgado ese mismo día ([[k921|Código de Derecho Canónico, can. 921]]).'],
+  ['Misa por vivos y difuntos', '«El sacerdote tiene facultad para aplicar la Misa por cualesquiera, tanto vivos como difuntos» ([[k901|Código de Derecho Canónico, can. 901]]).']
+];
+const CV_SHOWN = 8;
+$('#cv-list').innerHTML = CV.map((c, i) => '<li' + (i >= CV_SHOWN ? ' hidden' : '') + '><p class="cv-l">' + c[0] + '</p><p class="cv-x">' + rich(c[1]) + '</p></li>').join('');
+moreBtn($('#cv-more'), $('#cv-list'), CV_SHOWN, 'Mostrar ' + (CV.length - CV_SHOWN) + ' más');
+
+const onPage = g => QE.filter(q => q.g.some(x => x[0] === g));
+$('#gr tbody').innerHTML = ['dogma', 'definitiva', 'autentico', 'disciplina'].map(g => {
+  const G = GRADE[g], qs = onPage(g);
+  const src = G.who ? G.work : 'Código de Derecho Canónico, ' + G.work;
+  return '<tr><th scope="row">' + G.t + '</th><td><p class="m">' + G.def + ' ' + rich('([[' + G.key + '|' + src + ']])') + '</p><p class="on">' + (qs.length ? 'En esta página: ' + qs.map(q => '<a href="#' + q.id + '">' + q.lc + '</a>').join(', ') + '.' : 'Ninguna afirmación de esta página tiene este grado.') + '</p></td></tr>';
+}).join('');
+
+const VIDS = [
+  ['mJXAFHw_ARQ', 'What Does John 6 Say About the Eucharist? | Dr. Brant Pitre', 'Catholic Productions', 'en'],
+  ['I7yY0zSUm20', 'Does This Verse Disprove the Eucharist?', 'Shameless Popery', 'en'],
+  ['PQRXRs4FNhE', 'Does the Mass Put Jesus Back on the Cross?', 'Shameless Popery', 'en'],
+  ['Vn9Z2QUYESw', 'Do Catholics Re-Crucify Jesus During Mass?', 'Catholic Answers Live', 'en'],
+  ['xS29MKkkxpU', 'Is Receiving the Eucharist Cannibalism? | Karlo Broussard | Catholic Answers Live', 'Catholic Answers Live', 'en'],
+  ['rDnLoBKRcCk', 'How is the Eucharist Not Cannibalism?', 'Catholic Answers Live', 'en'],
+  ['UzCPu_lEhe8', 'The Real Presence of Jesus in the Eucharist // Bishop Barron at 2020 Religious Education Congress', 'Bishop Robert Barron', 'en'],
+  ['AzqLMZ1x0zM', 'Biblical PROOF The Eucharist is Truly Jesus | Father Mike Schmitz SEEK Rewind', 'FOCUS Catholic', 'en'],
+  ['NFmgYbC3OYw', 'Jesus and the Jewish Roots of the Eucharist | Dr. Brant Pitre', 'Catholic Productions', 'en'],
+  ['epr44J8X8ys', '¿Realmente dijo Jesús que su carne no servía para nada en Juan 6:63?', 'Dios Te Salve', 'es'],
+  ['LSCZGU1HnIM', '“Los protestantes dicen que Dios prohíbe comer sangre… pero rechazan la Eucaristía”', 'Dogma vs Reforma', 'es'],
+  ['f7e7gBV4dn8', 'AT. Estaba prohibido comer sangre. ¿Ya podemos comer sangre? Padre Luis Toro.', 'Raymundo Saucedo Raygoza - Padre Luis Toro.', 'es'],
+  ['TeEflrqTBvU', 'La Santa Misa: El Único Sacrificio de Cristo (Sacramento de la Eucaristía)', 'La Fe de la Iglesia', 'es'],
+  ['7mc74gnF5M4', 'La presencia real de Cristo en la Eucaristía', 'En ti confío', 'es'],
+  ['PucLuJsfekA', 'Answering a Protestant Objection to the Eucharist (John 6:63) w/ @JimmyAkin', 'Catholic Answers Live', 'en']
+];
+const LANG = {es: 'en español', en: 'en inglés'};
+const STEP = 5;
+let vLang = 'all', vN = STEP;
+const vPool = () => VIDS.filter(v => vLang === 'all' || v[3] === vLang);
+$('#vf').innerHTML = [['all', 'Todos'], ['es', 'Español'], ['en', 'Inglés']].map(([k, l]) => '<button type="button" data-l="' + k + '" aria-pressed="' + (k === 'all') + '">' + l + '<span class="n">' + VIDS.filter(v => k === 'all' || v[3] === k).length + '</span></button>').join('');
+const vPaint = (from) => {
+  const pool = vPool(), shown = pool.slice(0, vN);
+  $('#vl').innerHTML = shown.map(v => '<li><a class="ln-go ext" href="https://www.youtube.com/watch?v=' + v[0] + '" target="_blank" rel="noopener" lang="' + v[3] + '">' + D.esc(v[1]) + '</a><p class="m">' + D.esc(v[2]) + ', ' + LANG[v[3]] + '</p></li>').join('');
+  const left = pool.length - shown.length;
+  const mb = $('#v-more');
+  mb.hidden = left <= 0;
+  mb.innerHTML = D.ic.plus + 'Mostrar ' + Math.min(STEP, left) + ' más';
+  $('#v-count').textContent = left > 0 ? 'Ves ' + shown.length + ' de ' + pool.length : '';
+  if (from != null) { const a = $$('#vl a')[from]; if (a) a.focus({preventScroll: true}); }
+};
+$('#vf').addEventListener('click', e => {
+  const b = e.target.closest('button[data-l]'); if (!b) return;
+  vLang = b.dataset.l; vN = STEP;
+  $$('#vf button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  D.flip($('#vl'), () => vPaint());
+});
+$('#v-more').addEventListener('click', () => { const from = vN; vN += STEP; D.flip($('#vl'), () => vPaint(from)); });
+vPaint();
+
+const demo = $('#demo-more');
+const paintDemo = () => { demo.innerHTML = D.ic.plus + (demo.getAttribute('aria-expanded') === 'true' ? 'Mostrar menos' : 'Mostrar 4 afirmaciones más'); };
+demo.addEventListener('click', () => { demo.setAttribute('aria-expanded', String(demo.getAttribute('aria-expanded') !== 'true')); paintDemo(); });
+paintDemo();
+
+const AYALA = {h: 'Edición y licencia', p: '<i>El sacrosanto y ecuménico concilio de Trento</i>, traducido al idioma castellano por Don Ignacio López de Ayala, 2.ª edición, Madrid: Imprenta Real, 1785. Dominio público. Se conserva la ortografía de la edición. «Sea excomulgado» traduce el latín «anathema sit».'};
+D.READERS.tr13 = {kicker: 'Concilio de Trento', title: 'Decreto sobre el santísimo sacramento de la Eucaristía', meta: 'Sesión XIII, 11 de octubre de 1551', sections: [
+  {h: 'Capítulos', paras: [
+    {n: 'cap. 1', t: D.CITES.t13c1.quote + ' […] ' + D.CITES.t13c1b.quote.replace(/^…/, '') + ' Y siendo constante que dichas palabras, mencionadas por los santos Evangelistas, y repetidas despues por el Apostol san Pablo, incluyen en sí mismas aquella propia y patentísima significacion que les han dado los santos Padres; es sin duda maldad exécrable, que ciertos hombres contenciosos y corrompidos las tuerzan, violenten y expliquen en sentido figurado, ficticio, é imaginario; por el que niegan la realidad de la carne y sangre de Jesu-Cristo, contra la inteligencia unanime de la Iglesia […]'},
+    {n: 'cap. 2', t: 'Quiso ademas que se recibiese este Sacramento como un manjar espiritual de las almas, con el que se alimenten y conforten los que viven por la vida del mismo Jesu-Cristo […] y como un antidoto con que nos libremos de las culpas veniales, y nos preservemos de las mortales. […]'},
+    {n: 'cap. 3', t: '[…] ' + D.CITES.t13c3.quote + ' […]'},
+    {n: 'cap. 4', t: 'Mas, por quanto dixo Jesu-Cristo nuestro Redentor, que era verdaderamente su cuerpo lo que ofrecia bajo la especie de pan; ha creido por lo mismo perpetuamente la Iglesia de Dios, y lo mismo declara ahora de nuevo este mismo santo Concilio, que por la consagracion del pan y del vino, se convierte toda la substancia del pan en la substancia del cuerpo de nuestro señor Jesu-Cristo, y toda la substancia del vino en la substancia de su sangre, cuya conversion ha llamado oportuna, y propiamente Transubstanciacion la santa Iglesia Católica.'},
+    {n: 'cap. 5', t: D.CITES.t13c5.quote + ' […]'},
+    {n: 'cap. 6', t: 'Es tan antigua la costumbre de guardar en el sagrario la santa Eucaristía, que ya se conocia en el siglo en que se celebró el concilio Niceno […]'}
+  ]},
+  {h: 'Cánones', paras: [
+    {n: 'can. 1', t: D.CITES.t13k1.quote}, {n: 'can. 2', t: D.CITES.t13k2.quote}, {n: 'can. 5', t: D.CITES.t13k5.quote},
+    {n: 'can. 6', t: D.CITES.t13k6.quote},
+    {n: 'can. 11', t: 'Si alguno dixere, que sola la fe es preparacion suficiente para recibir el Sacramento de la santísima Eucaristía; sea excomulgado. Y para que no se reciba indignamente tan grande Sacramento, y por consequencia cause muerte y condenacion; establece y declara el mismo santo Concilio, que los que se sienten gravados con conciencia de pecado mortal, por contritos que se crean, deben para recibirle, anticipar necesariamente la confesion sacramental habiendo confesor. Y si alguno presumiere enseñar, predicar ó afirmar con pertinacia lo contrario, ó tambien defenderlo en disputas públicas; quede por el mismo caso excomulgado.'}
+  ]}
+], foot: [AYALA]};
+D.READERS.tr21 = {kicker: 'Concilio de Trento', title: 'Doctrina sobre la comunión bajo las dos especies y la de los párvulos', meta: 'Sesión XXI, 16 de julio de 1562', sections: [
+  {h: 'Capítulos', paras: [
+    {n: 'cap. 1', t: '[…] ' + D.CITES.t21c1.quote.replace(/^…|…$/g, '') + ' […]'},
+    {n: 'cap. 2', t: '[…] ' + D.CITES.t21c2.quote.replace(/^…/, '')}
+  ]},
+  {h: 'Cánones', paras: [{n: 'can. 1', t: D.CITES.t21k1.quote}, {n: 'can. 3', t: D.CITES.t21k3.quote}]}
+], foot: [AYALA]};
+D.READERS.tr22 = {kicker: 'Concilio de Trento', title: 'Doctrina sobre el sacrificio de la Misa', meta: 'Sesión XXII, 17 de septiembre de 1562', sections: [
+  {h: 'Capítulos', paras: [
+    {n: 'cap. 1', t: 'El mismo Dios pues, y señor nuestro, aunque se había de ofrecer á sí mismo á Dios Padre, una vez, por medio de la muerte en el ara de la cruz, para obrar desde ella la redencion eterna; con todo, como su sacerdocio no habia de acabarse con su muerte; para dexar en la última cena, de la noche misma en que era entregado, á su amada Esposa la Iglesia un sacrificio visible, segun requiere la condicion de los hombres, en el que se representase el sacrificio cruento que por una vez se habia de hacer en la cruz, y permaneciese su memoria hasta el fin del mundo, y se aplicase su saludable virtud á la remision de los pecados que cotidianamente cometemos […]'},
+    {n: 'cap. 2', t: '[…] porque la hostia es una misma, uno el mismo que ahora ofrece por el ministerio de los sacerdotes, que el que entonces se ofreció á sí mismo en la cruz, con sola la diferencia del modo de ofrecerse. Los frutos por cierto de aquella oblacion cruenta, se logran abundantisimamente por esta incruenta: tan lejos está que esta derogue de modo alguno á aquella. […]'}
+  ]},
+  {h: 'Cánones', paras: [
+    {n: 'can. 1', t: D.CITES.t22k1.quote}, {n: 'can. 2', t: D.CITES.t22k2.quote}, {n: 'can. 3', t: D.CITES.t22k3.quote},
+    {n: 'can. 4', t: 'Si alguno dixere, que se comete blasfemia contra el santisimo sacrificio que Cristo consumó en la cruz, por el sacrificio de la Misa; ó que por este se deroga á aquel; sea excomulgado.'}
+  ]}
+], foot: [AYALA]};
+D.READERS.l4 = {kicker: 'Concilio de Letrán IV', title: 'Constitución 1, sobre la fe católica', meta: '1215', sections: [
+  {h: 'Constitución 1', paras: [{n: 'const. 1', t: D.CITES.l4.quote + ' […] ' + D.CITES.l4b.quote + ' […]'}]}
+], foot: [{h: 'Edición y licencia', p: '<i>Los sacrosantos concilios generales y particulares</i>, tomo V, Madrid: Antonio Espinosa, 1794, pp. 170–171, traducido al castellano desde una versión francesa. Dominio público. Se conserva la ortografía de la edición.'}]};
+
+const openCite0 = D.openCite;
+D.openCite = (key, opener) => {
+  openCite0(key, opener);
+  const c = typeof key === 'string' ? D.CITES[key] : key;
+  if (!c || !c.extnb) return;
+  const cw = $('.cw'); if (!cw) return;
+  let acts = $('.cw-acts', cw);
+  if (!acts) { acts = document.createElement('div'); acts.className = 'cw-acts'; $('.cw-b', cw).appendChild(acts); }
+  const a = document.createElement('a');
+  a.className = 'btn-go ext'; a.href = '#'; a.setAttribute('data-nb', ''); a.textContent = VAT;
+  const cp = $('.cw-copy', acts);
+  acts.insertBefore(a, cp);
+};
+
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#qe-"]');
+  if (!a) return;
+  const t = document.getElementById(a.getAttribute('href').slice(1));
+  if (t && t.hidden) $('#qe-more').click();
+}, true);
+
+const tsw = $('#tsw');
+const setOffset = () => document.documentElement.style.setProperty('--scroll-offset', (tsw.offsetHeight + 20) + 'px');
+const stuck = () => {
+  const top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--top-h')) || 56;
+  tsw.classList.toggle('stuck', tsw.getBoundingClientRect().top <= top + .5 && scrollY > 4);
+};
+const tul = $('ul', tsw);
+const fade = () => tul.classList.toggle('fade', tul.scrollWidth - tul.clientWidth - tul.scrollLeft > 2);
+tul.addEventListener('scroll', fade, {passive: true});
+setOffset(); stuck(); fade();
+addEventListener('resize', () => { setOffset(); stuck(); fade(); });
+addEventListener('scroll', stuck, {passive: true});
+
+const ORDERS = {
+  agent: ['que-ensena', 'por-que', 'escritura', 'objeciones', 'como-se-vive', 'autoridad', 'videos'],
+  p1: ['que-ensena', 'por-que', 'autoridad', 'escritura', 'objeciones', 'como-se-vive', 'videos']
+};
+const applyOrder = v => {
+  const main = $('main.main'), notes = $('#notas');
+  (ORDERS[v] || ORDERS.agent).forEach(id => main.insertBefore(document.getElementById(id), notes));
+  if (document.readyState !== 'loading') D.rebuildRuler();
+};
+addEventListener('pp', e => { if (e.detail.key === 'order') applyOrder(e.detail.value); });
+})();
+</script>
+<script src="data.js"></script>
+<script src="fuente.js"></script>
+</body>
+</html>

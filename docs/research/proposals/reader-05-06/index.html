@@ -1,0 +1,508 @@
+<meta charset="utf-8">
+<title>Doctrina, fuente y versículo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* proposal frame: a sticky control bar over the screen, notes in a drawer (same shell as the structure proposal) */
+:root{
+  --bg:#e8e5de; --ink:#1c1713; --ink-2:#2a2620; --ink-3:#5c574f; --rule:#c9c5bc; --rule-2:#aeaba4; --accent:#2c4a9e; --accent-weak:rgb(44 74 158 / .1); --panel:#efece6; --stage:#d9d6cf;
+  --head:Newsreader, Georgia, serif; --ui:'Work Sans', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#1d1d1c; --ink:#f2f2f0; --ink-2:#d0d0cc; --ink-3:#9a9a96; --rule:#3a3a38; --rule-2:#4d4d4a; --accent:#9eb3ee; --accent-weak:rgb(158 179 238 / .14); --panel:#262625; --stage:#151514; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#1d1d1c; --ink:#f2f2f0; --ink-2:#d0d0cc; --ink-3:#9a9a96; --rule:#3a3a38; --rule-2:#4d4d4a; --accent:#9eb3ee; --accent-weak:rgb(158 179 238 / .14); --panel:#262625; --stage:#151514; color-scheme:dark }
+html,body{height:100%}
+body{margin:0;background:var(--stage);color:var(--ink);font-family:var(--ui);font-size:14px;display:flex;flex-direction:column}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+button,select{font:inherit;color:inherit}
+:is(a,button,select):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-direction:column;gap:8px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--bg);border-bottom:1px solid var(--rule)}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px}
+.name{font-family:var(--head);font-size:19px;font-weight:400;margin-right:6px}
+.name span{color:var(--ink-3);font-family:var(--ui);font-size:13px;margin-left:8px}
+.grp{display:flex;align-items:center;gap:8px}
+.grp-l{font-size:12.5px;color:var(--ink-3)}
+.seg{display:flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.seg button{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:6px 11px;border-radius:6px;font-size:13px;line-height:1.2;font-weight:500;color:var(--ink-3);cursor:pointer;min-height:32px;transition:background-color 150ms ease,color 150ms ease}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.notes-b,.x-b{display:inline-flex;align-items:center;justify-content:center;min-height:34px;border:1px solid var(--rule-2);background:transparent;border-radius:7px;padding:6px 12px;font-size:13px;line-height:1.2;font-weight:500;cursor:pointer;transition:border-color 150ms ease,background-color 150ms ease}
+.notes-b{margin-left:auto}
+.notes-b:hover,.x-b:hover{border-color:var(--ink);background:var(--accent-weak)}
+.x-b,.notes-b.sm{display:none}
+.xrow{gap:8px}
+.xrow[hidden]{display:none}
+.x-h{font-size:12.5px;font-weight:500;color:var(--accent)}
+.xs{min-height:34px;max-width:100%;padding:5px 28px 5px 10px;border:1px solid var(--rule);border-radius:7px;background-color:var(--panel);font-size:13px;line-height:1.2;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat;transition:border-color 150ms ease}
+.xs:hover{border-color:var(--rule-2)}
+.xs.changed{border-color:var(--accent)}
+.stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:flex-start;overflow:auto}
+.stage.phone{padding:24px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px))}
+iframe{display:block;border:0;background:var(--bg);width:100%;height:100%}
+.stage.phone iframe{width:min(390px,100%);height:min(844px,calc(100dvh - 140px));min-height:560px;border:1px solid var(--rule-2);border-radius:30px;box-shadow:0 0 0 7px var(--bg),0 0 0 8px var(--rule-2)}
+.notes{position:fixed;z-index:20;top:0;right:0;bottom:0;width:min(620px,100%);overflow-y:auto;background:var(--panel);border-left:1px solid var(--rule-2);padding:24px max(22px,env(safe-area-inset-right,0px)) 60px 26px;transform:translateX(102%);transition:transform 240ms cubic-bezier(.4,0,.2,1)}
+.notes.open{transform:none}
+.notes h2{margin:0 0 12px;font-family:var(--head);font-weight:300;font-size:30px;line-height:1.15;text-wrap:balance}
+.notes h3{margin:30px 0 8px;font-size:14px;font-weight:600}
+.notes h4{margin:0 0 8px;font-family:var(--head);font-weight:400;font-size:19px;line-height:1.3}
+.notes p,.notes li{font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.notes ul{margin:0;padding-left:20px}
+.notes li + li{margin-top:6px}
+.notes b{color:var(--ink);font-weight:600}
+.xt{margin:16px 0 0;padding:16px 0 0;border-top:1px solid var(--rule)}
+.xt .seg{display:inline-flex;margin:2px 0 4px}
+.xt ul{margin-top:10px}
+.xt li{font-size:14px}
+.xt-n{margin:10px 0 0;font-size:13px!important;color:var(--ink-3)!important}
+.go-b{border:0;background:none;padding:0;color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.notes .x{position:sticky;top:0;float:right;display:grid;place-items:center;border:0;background:var(--panel);border-radius:6px;width:40px;height:40px;cursor:pointer;font-size:20px;line-height:1}
+@media (max-width:1499px){ .grp-l:not(.keep),.name span{display:none} }
+@media (max-width:640px){
+  .grp-l{display:none} .name span{display:none} .row{gap:8px 10px} .seg button{padding:6px 8px}
+  .stage.phone{padding-block:12px}
+  .x-b,.notes-b.sm{display:inline-flex}
+  .notes-b{margin-left:0}
+  #notes-b{display:none}
+  .xrow{display:grid;grid-template-columns:1fr 1fr}
+  .xrow .x-h{grid-column:1 / -1}
+  .xs{width:100%;min-height:40px}
+  .xrow[hidden]{display:none}
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+
+<div class="bar">
+  <div class="row">
+    <span class="name">Doctrina<span>05 fuente y 06 versículo</span></span>
+    <div class="grp"><span class="grp-l">Versión</span><div class="seg" id="g-v" role="group" aria-label="Versión">
+      <button type="button" data-v="v5">v5</button><button type="button" data-v="v4">v4</button><button type="button" data-v="v3">v3</button><button type="button" data-v="v2">v2</button><button type="button" data-v="v1">v1</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Pantalla</span><div class="seg" id="g-s" role="group" aria-label="Pantalla">
+      <button type="button" data-v="03">03 Llegada</button><button type="button" data-v="05t">05 Trento</button><button type="button" data-v="05j">05 Juan 6</button><button type="button" data-v="06j">06 Juan 6:53</button><button type="button" data-v="06t">06 Trento, cap. 1</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Modo</span><div class="seg" id="g-m" role="group" aria-label="Modo">
+      <button type="button" data-v="dark">Oscuro</button><button type="button" data-v="light">Claro</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Ancho</span><div class="seg" id="g-w" role="group" aria-label="Ancho">
+      <button type="button" data-v="desk">Escritorio</button><button type="button" data-v="phone">Celular</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Opciones</span><div class="seg" id="g-c" role="group" aria-label="Opciones a probar dentro de las pantallas">
+      <button type="button" data-v="0">Con opciones</button><button type="button" data-v="1">Sin opciones</button>
+    </div></div>
+    <button class="notes-b" type="button" id="notes-b" aria-expanded="false" aria-controls="notes">Cómo leerla</button>
+    <button class="x-b" type="button" id="x-b" aria-expanded="false" aria-controls="xrow">Probar</button>
+    <button class="notes-b sm" type="button" id="notes-b2" aria-controls="notes">Cómo leer</button>
+  </div>
+  <div class="row xrow" id="xrow">
+    <span class="x-h" title="En cada selector, la primera opción es lo de hoy o lo más simple">Probar</span>
+    <select class="xs" id="xs-back" data-k="back" aria-label="El lector es"></select>
+    <select class="xs" id="xs-rdsel" data-k="rdsel" aria-label="Al tocar una frase"></select>
+    <select class="xs" id="xs-dtend" data-k="dtend" aria-label="Dónde van Citar y Dónde se usa"></select>
+    <select class="xs" id="xs-wbw" data-k="wbw" aria-label="Palabra por palabra"></select>
+    <select class="xs" id="xs-notas" data-k="notas" aria-label="Notas"></select>
+    <select class="xs" id="xs-filt" data-k="filt" aria-label="Filtros en Tus notas"></select>
+    <select class="xs" id="xs-hl" data-k="hl" aria-label="Subrayar"></select>
+    <select class="xs" id="xs-hlc" data-k="hlc" aria-label="Color del subrayado"></select>
+    <select class="xs" id="xs-pnl" data-k="pnl" aria-label="El panel"></select>
+    <select class="xs" id="xs-tabmo" data-k="tabmo" aria-label="El cambio de pestaña"></select>
+    <select class="xs" id="xs-lat" data-k="lat" aria-label="El latín de un párrafo"></select>
+  </div>
+</div>
+<div class="stage" id="stage"><iframe id="fr" title="Pantalla de la propuesta"></iframe></div>
+
+<aside class="notes" id="notes" aria-label="Cómo leer esta propuesta">
+  <button class="x" type="button" id="notes-x" aria-label="Cerrar">×</button>
+  <div id="notes-v5">
+  <h2>La fuente y el versículo, versión 5</h2>
+  <p>Subrayar y el tamaño del texto, según la investigación (docs/research/reader-highlighting-and-features.md). «v4» arriba muestra la versión anterior. Para probar: en <button class="go-b" type="button" data-goto="05t">05 Trento</button> o <button class="go-b" type="button" data-goto="05j">05 Juan 6</button>, tocá una frase y usá «Subrayar» en el panel; con la otra opción, arrastrá sobre unas palabras.</p>
+  <h3>Elegido en la ronda del latín</h3>
+  <ul>
+    <li><b>Pestañas que se deslizan</b>, con el movimiento del selector de tradición de «Objeciones».</li>
+    <li><b>El latín de un párrafo «Con raya»:</b> sangrado, una raya fina a la izquierda, 17 px en gris, con «Latín · original» y «Ocultar». Lo abre «Leer en latín» en el panel.</li>
+    <li><b>Todo el texto en latín:</b> el mismo selector «Latín · original» (No, Debajo, Al lado), puesto en la barra de arriba, a la derecha de «Volver a donde estabas». En el celular baja al texto, bajo el título, y queda sin «Al lado». El latín de todo el texto usa la misma forma «Con raya».</li>
+    <li>La cita corta en pantalla y en lo que se copia; la completa, al pie del lector.</li>
+  </ul>
+  <h3>Notas</h3>
+  <p>Según la investigación (docs/research/reader-notes.md). Para probar: en <button class="go-b" type="button" data-goto="05t">05 Trento</button> tocá una frase y «Nota» en el panel, o arrastrá sobre unas palabras y «Nota» (tecla N); Mayúscula+N escribe una nota sobre toda la fuente. En <button class="go-b" type="button" data-goto="06j">06 Juan 6:53</button>, «Nota» junto a «Leer el capítulo completo».</p>
+  <div class="xt" data-k="notas"><h4>Elegido: cómo se ven las notas, «Notas al costado»</h4><div class="seg" role="group" aria-label="Notas"></div>
+    <ul>
+      <li><b>Marca en el margen:</b> bajo el número de la división, «1 nota», en gris, sin ícono (el ícono de Kindle es «jarring» para sus lectores). Al pasar o llegar con el teclado, se marcan sus palabras; al tocar, el panel se abre en «Notas». Como las marcas de Hypothesis al costado de las líneas. En la Biblia, la marca va junto al número del versículo.</li>
+      <li><b>Notas al costado</b> (elegido, por defecto): desde 1280 px y con el panel cerrado, cada nota como una tarjeta de dos líneas a la derecha, a la altura de su división, como Genius y Readwise. Más angosto, o con el panel abierto, pasa a «Marca en el margen» con el mismo movimiento. Lo que más se ve y lo más caro.</li>
+      <li><b>Solo en tu cuaderno:</b> nada en el texto; las notas están en «Tus notas» y en el panel. Lo más callado, pero no avisa al releer, la queja más clara de los lectores.</li>
+    </ul></div>
+  <ul>
+    <li><b>Una nota sobre varios versículos o divisiones:</b> al arrastrar de un versículo a otro, la nota toma todo el rango, del primero al último que tocaste, aunque el último esté elegido a medias («Juan 6:53-58»); en Trento, igual con las divisiones. Sobre una sola, queda como antes.</li>
+    <li><b>Borrar:</b> «Borrar nota» abre una ventana chica; para confirmar hay que mantener pulsado el botón unos 3 segundos (con el teclado, Enter o Espacio). Soltar antes lo cancela. Esc o «Cancelar» la cierran, y después de borrar queda «Deshacer».</li>
+    <li><b>Dónde se escriben:</b> «Nota» en la barra de arrastre (tecla N) y en el panel de la frase o el versículo; una nota sobre toda la fuente con Mayúscula+N o con «Nota» en la barra de arriba. El editor se abre en el panel (media hoja en el celular, que nunca angosta el texto), se guarda mientras escribís («Guardada») y tiene «Borrar nota» con «Deshacer».</li>
+    <li><b>Sobre qué:</b> en Trento, «Esta frase» o «Todo el capítulo»; en la Biblia, el versículo. Una nota sobre una frase, un versículo o una división se ve en todas las traducciones; una nota sobre palabras queda en su edición y en las otras se ve en su división («Juan 6:53, en BSB»). Si el texto de una edición cambia y la nota ya no encuentra sus palabras, pasa a «Sin ubicar»: nunca se borra.</li>
+    <li><b>La lista:</b> «Tus notas n» en la barra (reemplaza a «Subrayados»), con las pestañas «Notas» y «Subrayados» y la marca que viaja. Arriba, la nota sobre toda la fuente; después, en el orden del texto. «Copiar todas con sus citas» (con la cita corta) y «Copiar en Markdown (.md)». En el panel de una frase, la pestaña «Notas n» aparece solo si esa división tiene notas.</li>
+    <li>Las notas no tienen color propio y no marcan el texto. Se guardan en este navegador.</li>
+  </ul>
+  <div class="xt" data-k="filt"><h4>Elegido: cómo se filtra «Tus notas», «Campo y menú»</h4><div class="seg" role="group" aria-label="Filtros en Tus notas"></div>
+    <ul>
+      <li><b>Campo a la vista:</b> la búsqueda siempre arriba de la lista; en «Subrayados», los cinco colores como botones debajo. Lo más directo; sin extras.</li>
+      <li><b>«Filtrar» plegado:</b> un botón callado que despliega (con el despliegue aprobado) la búsqueda, los colores, «Todas / Sobre la fuente / En el texto» y el orden, con la marca que viaja. Un punto azul avisa cuando hay un filtro puesto. Lo más callado.</li>
+      <li><b>Campo y menú</b> (elegido, por defecto): la búsqueda a la vista y dos menús chicos, «Mostrar» y «Ordenar», con el mismo estilo que el selector de traducción.</li>
+    </ul>
+    <p class="xt-n">La búsqueda no distingue mayúsculas ni tildes («eucaristia» encuentra «Eucaristía») y muestra unas palabras alrededor de lo encontrado, marcado. En «Notas» busca en lo que escribiste; en «Subrayados», en lo subrayado. La lista cambia con la cascada; sin resultados, una línea y «Quitar filtros». Tecla «/» para buscar, Esc para borrar. Extras elegidos: notas generales o en el texto, y el orden (texto o recientes). Descartados por ruido: filtrar por capítulo (la lista ya va en el orden del texto) y «con nota / sin nota» en los subrayados (las notas no marcan el texto, así que la relación sería poco clara).</p></div>
+  <ul>
+    <li><b>Lo que no pude:</b> el botón para descargar el .md. La vista de los Artifacts bloquea las descargas, así que en la propuesta el mismo texto se copia al portapapeles; en el sitio sería una descarga.</li>
+  </ul>
+  <h3>Tus notas sobre 05</h3>
+  <ul>
+    <li><b>Tamaño del texto:</b> el mínimo queda en 17 px y el máximo sube a 29 px (siete pasos: 17, 19, 21, 23, 25, 27 y 29).</li>
+    <li><b>Traducción</b> en la barra de arriba, a la derecha de A− A+ y separada por una raya fina: el mismo selector de 06 (sigla a la vista, lista en dos grupos). Reemplaza el botón que estaba sobre el texto.</li>
+    <li>La barra que aparece al arrastrar ya no tiene «Copiar enlace»: «Subrayar», «Copiar cita» y «Buscar».</li>
+    <li>En celulares de menos de 420 px, la barra dice «Volver» (sin «a donde estabas», que sigue para lectores de pantalla), para que entren A− A+ y la traducción.</li>
+  </ul>
+  <div class="xt" data-k="hlc"><h4>Elegido: el color del subrayado, «Colores en la barra»</h4><div class="seg" role="group" aria-label="Color del subrayado"></div>
+    <ul>
+      <li><b>Muestra junto a Subrayar:</b> «Subrayar» usa el último color elegido; un punto chico al lado abre los cinco tonos para cambiarlo antes de subrayar. Lo más callado: un solo punto a la vista.</li>
+      <li><b>Colores en la barra</b> (elegido, por defecto): los cinco tonos siempre a la vista, en la barra de arrastre y en el panel; tocar uno subraya con ese color (como los puntos de Bible Gateway, docs/research/reader-highlighting-and-features.md). Un toque menos, más ruido.</li>
+      <li><b>Un solo tono:</b> como antes, sin elegir.</li>
+    </ul>
+    <p class="xt-n">Cinco tonos (amarillo, verde, celeste, rosa, naranja), en la gama de YouVersion y Bible Gateway pero apagados para el papel y el modo oscuro, con su variante oscura. Si un subrayado nuevo de otro color pisa uno viejo, gana el nuevo; dos del mismo color que se tocan se unen. El texto sobre cada tono, medido sobre la textura en su punto más bajo: en claro 10,8 (amarillo), 9,6, 9,8, 9,6 y 9,6 a 1; en oscuro 7,7, 8,2, 8,3, 8,5 y 8,1 a 1. El celeste es más verde que el azul de «dónde estás», para no confundirse con la frase abierta. La lista «Subrayados» muestra el punto de color de cada uno.</p></div>
+  <h3>Tus notas sobre 06</h3>
+  <ul>
+    <li><b>Traducción:</b> un solo botón con la sigla («RV1909»); abre una lista en dos grupos, Español e Inglés, con el nombre completo y la sigla («Reina-Valera 1909 (RV1909)»), con el despliegue aprobado. Teclado: flechas, Inicio, Fin, Enter y Esc. Lo mismo en el lector.</li>
+    <li><b>Dónde se usa en Doctrina</b>, en la columna de la derecha: un lugar y «Ver N más»; los demás entran en cascada y «Ver menos» los vuelve a esconder.</li>
+    <li><b>En griego, palabra por palabra</b> usa todo el ancho y queda «Ficha al lado» (elegido): al pasar el puntero, tocar o llegar con el teclado a una palabra, la ficha muestra primero el número de Strong y cuántas veces aparece en el Nuevo Testamento.</li>
+    <li><b>Comparar traducciones:</b> «Español con español» (por defecto, la lengua del lector), «Inglés con inglés» o «Todas», con la marca que viaja del selector de tradición; la lista cambia con la cascada. En Trento, con una sola traducción por lengua, empieza en «Todas».</li>
+    <li>El encabezado de 06 deja 30 px entre la raya de «Volver a donde estabas» y «Evangelio según san Juan», lo mismo que 03 entre el selector y el título (22 px en el celular).</li>
+  </ul>
+  <h3>Elegido: cómo se subraya</h3>
+  <p><b>«Frase, y palabras si arrastras» (C)</b>, ahora por defecto. Reemplaza el acuerdo del 2026-10-06 «no hay selección libre de texto»: la unidad sigue siendo la división para navegar, citar y enlazar, pero ahora se pueden elegir palabras sueltas para subrayar, copiar con su cita o buscar. «Frase entera» queda en «Probar» para comparar.</p>
+  <div class="xt" data-k="hl"><div class="seg" role="group" aria-label="Subrayar"></div>
+    <ul>
+      <li><b>Frase entera</b> (A, lo más chico): el panel que abre el toque suma «Subrayar» a «Citar» y «Copiar enlace», y marca la frase o el versículo entero; en algo ya subrayado dice «Quitar subrayado». Como YouVersion. Sin gesto nuevo; no se pueden marcar partes.</li>
+      <li><b>Frase, y palabras si arrastras</b> (C, la recomendación si importan las partes): lo mismo, y al arrastrar sobre unas palabras aparece una barra chica debajo de lo elegido (aparece en 0,15 s) con «Subrayar», «Copiar cita», «Copiar enlace» y «Buscar»; en el celular, la barra queda abajo de la pantalla para no tapar el menú del sistema. Teclas: S subraya, C copia la cita, Esc cierra. Como Hypothesis, Logos y Bible Gateway (este último la pega abajo en el celular). El toque sigue abriendo el panel: si hay texto elegido, el toque no hace nada.</li>
+    </ul>
+    </div>
+  <h3>Cómo funciona en las dos</h3>
+  <ul>
+    <li><b>Un solo estilo, sin colores</b> ni subrayado de línea (la línea ya quiere decir enlace): un relleno suave, nuevo token <code>--color-mark-user</code>, más tenue que el resaltado de llegada (claro <code>rgb(240 200 60 / .28)</code>, oscuro <code>rgb(214 168 101 / .20)</code>; el texto sobre el subrayado, medido sobre la textura: 10,8 a 1 en claro y 7,7 a 1 en oscuro, en su punto más bajo). Cuatro marcas distintas: tu selección del navegador, la frase abierta en el panel (ahora en el azul de «dónde estás», <code>accent-weak</code>), la llegada desde una cita (el amarillo de siempre, que se apaga) y tu subrayado, que queda.</li>
+    <li>Dos subrayados que se tocan se unen en uno. Cada cambio muestra «Subrayado. Deshacer» por 5 segundos. En la barra de arriba aparece «Subrayados» con la cantidad: abre la lista en el panel, en el orden del texto, con su lugar y su fecha, y «Copiar todos con sus citas». Debajo: «Se guardan en este navegador».</li>
+    <li>En la Biblia, un subrayado se ve en la traducción en la que se hizo.</li>
+    <li><b>Tamaño del texto:</b> A− y A+ en la barra, cuatro pasos (17, 19, 21 y 23 px), con el mismo control que «Latín · original». Mantiene tu lugar en el texto al cambiar.</li>
+  </ul>
+  <h3>Qué no está</h3>
+  <ul>
+    <li>Notas (vuelven con las cuentas), colores, subrayados «populares» (van contra la neutralidad) y explicaciones generadas: descartados por la investigación.</li>
+    <li>El subrayado en la página de detalle (06): por ahora solo en el lector.</li>
+  </ul>
+  <h3>Qué hay que decidir</h3>
+  <ul>
+    <li>Si se lanza solo en este navegador o se espera a las cuentas.</li>
+    <li>El tamaño del texto en el lector.</li>
+  </ul>
+  </div>
+  <div id="notes-v4" hidden>
+  <h2>La fuente y el versículo, versión 4</h2>
+  <p>Tus notas de la ronda del panel. «v3», «v2» y «v1» arriba muestran las versiones anteriores. Para recorrerla: en <button class="go-b" type="button" data-goto="05t">05 Trento</button> tocá una frase del capítulo 4, después «Leer en latín» y las pestañas del panel.</p>
+
+  <h3>Elegido, ahora por defecto</h3>
+  <ul>
+    <li><b>El panel con pestañas.</b> Las otras dos composiciones siguen en «Probar» para comparar.</li>
+    <li><b>La cita, corta.</b> En pantalla y en lo que se copia: «Citar» copia «Concilio de Trento, ses. XIII, cap. 4 (1551)»; «Citar con texto» copia el texto entre comillas, la cita corta y el enlace de Doctrina. La cita completa, con traducción, edición y páginas, aparece solo en la página de la fuente, al pie del lector («Cita completa»), y en ningún botón. El selector corta o completa salió.</li>
+  </ul>
+
+  <h3>Para decidir</h3>
+  <div class="xt" data-k="tabmo"><h4>1. El cambio de pestaña</h4><div class="seg" role="group" aria-label="El cambio de pestaña"></div>
+    <ul>
+      <li><b>Deslizar</b> (por defecto): el mismo movimiento aprobado en el selector de tradición de «Objeciones» (DESIGN §4): una sola marca, siempre presente, que viaja a la pestaña elegida en 0,34 s y cambia de rumbo si tocás otra a mitad de camino; el contenido sale 16 px hacia el lado contrario en 0,14 s y entra 16 px desde el lado de la pestaña en 0,26 s. Varios toques seguidos no se acumulan: entra el último.</li>
+      <li><b>Al instante</b> (v3): sin movimiento.</li>
+    </ul></div>
+  <div class="xt" data-k="lat"><h4>2. El latín de un párrafo</h4><div class="seg" role="group" aria-label="El latín de un párrafo"></div>
+    <ul>
+      <li>«Leer en latín» ya no enciende el latín de todo el texto: abre solo el de ese párrafo, justo debajo, con el despliegue aprobado de la barra lateral (se abre en 0,22 s, se cierra en 0,16 s); «Ocultar» o el mismo botón del panel lo pliegan. Las tres formas llevan el rótulo «Latín · original» y se distinguen de la traducción a primera vista.</li>
+      <li><b>Con raya:</b> sangrado, una raya fina a la izquierda, 17 px y en el gris de la prosa secundaria. Es como se ven las citas largas en un libro; la traducción sigue siendo lo principal.</li>
+      <li><b>Otra letra:</b> mismo tamaño, pero con la letra de los títulos (Newsreader) en lugar de la de lectura (Source Serif). Se compara de igual a igual; la diferencia es más sutil.</li>
+      <li><b>En recuadro:</b> el recuadro fino de «La objeción» (04), 17 px. Lo más separado; agrega una caja más al texto.</li>
+    </ul>
+    <p class="xt-n">Descartada: frase por frase entre las dos lenguas, porque las frases no coinciden entre ediciones (decisión del 2026-10-06).</p></div>
+  <div class="xt" data-k="todo"><h4>3. Leer todo el texto en latín</h4><div class="seg" role="group" aria-label="Leer todo en latín"></div>
+    <ul>
+      <li><b>Selector en el texto</b> (v3): «Latín · original» con No, Debajo y Al lado, arriba del texto.</li>
+      <li><b>Idioma en la barra:</b> Español, Latín o Los dos, chico, a la derecha de la barra de «Volver a donde estabas», como el menú de idioma de Sefaria (Source, Translation, Source with Translation; docs/research/reader-side-panel.md). Con «Latín» se lee solo el original; con «Los dos», cada división con su latín debajo. No ocupa lugar en el texto.</li>
+      <li><b>Páginas enfrentadas:</b> un botón, «Leer con el latín enfrentado», que pone el latín a la izquierda y la traducción a la derecha, división por división, como las ediciones bilingües de Loeb; en el celular, uno debajo del otro.</li>
+    </ul>
+    <p class="xt-n">El latín de todo el texto usa la misma forma elegida en el punto 2, así se distingue igual. Las divisiones cuyo latín no está en el repo (capítulos 2 y 6, cánones 5, 6 y 11) siguen en español.</p></div>
+
+  <h3>Qué no se construye todavía</h3>
+  <ul>
+    <li>Resaltar o subrayar palabras arrastrando el mouse, y los otros pedidos de lectura: los está investigando otro agente.</li>
+  </ul>
+
+  <h3>Qué hay que decidir</h3>
+  <ul>
+    <li>El cambio de pestaña: deslizar o al instante.</li>
+    <li>El latín de un párrafo: con raya, otra letra o en recuadro.</li>
+    <li>Leer todo en latín: selector en el texto, idioma en la barra o páginas enfrentadas.</li>
+    <li>Siguen abiertas: palabra por palabra en el detalle, las glosas CC BY-SA y el pie del lector.</li>
+  </ul>
+  </div>
+  <div id="notes-v3" hidden>
+  <h2>La fuente y el versículo, versión 3</h2>
+  <p>El panel al costado con el contenido que propone la investigación (docs/research/reader-side-panel.md) y el original en el texto. «v2» y «v1» arriba muestran las versiones anteriores. Para recorrerla: en <button class="go-b" type="button" data-goto="05t">05 Trento</button> tocá una frase del capítulo 4; en <button class="go-b" type="button" data-goto="05j">05 Juan 6</button>, el versículo 53. Las opciones del panel están en «Probar».</p>
+
+  <h3>Lo que cambió</h3>
+  <ul>
+    <li><b>El panel ya no repite el texto.</b> Arriba solo la referencia («Juan 6:53», «Sesión XIII, capítulo 4»); el texto sigue marcado en el lector. Después, «Citar» y «Copiar enlace», y una fila por cada cosa que existe para ese pasaje, con su cantidad y una línea de muestra. Cada fila se abre dentro del panel, con «‹ Juan 6:53» para volver; al final, «Ver el detalle completo». Así lo hacen Sefaria y Catena (ninguno de los 13 productos revisados repite el texto tocado).</li>
+    <li><b>El latín va en el texto, no en el panel.</b> En el lector de Trento, «Latín · original»: No, Debajo o Al lado (al lado solo desde 1100 px; en el celular, debajo). Mismo tamaño que la traducción. En el panel, «Leer en latín» lo enciende y baja hasta esa división. El panel guarda solo el análisis palabra por palabra, que hoy existe para el griego.</li>
+    <li><b>En el celular</b>, media hoja (52 % de la pantalla), con la frase visible arriba, como en Sefaria y YouVersion.</li>
+  </ul>
+
+  <h3>Para decidir: cómo se arma el panel</h3>
+  <div class="xt" data-k="pnl"><div class="seg" role="group" aria-label="El panel"></div>
+    <ul>
+      <li><b>Índice con cantidades</b> (la recomendación de la investigación): todo plegado en filas con cantidad y muestra; se ve de un vistazo qué hay y cuánto. Sefaria y Logos. Costo medio: el ir y volver dentro del panel.</li>
+      <li><b>Lo clave abierto:</b> igual, pero lo principal ya abierto: en un versículo, el griego palabra por palabra; en una frase de Trento, «Términos» si hay, o «Dónde se usa». Catena y Blue Letter Bible. Cero toques para el griego, pero el panel se alarga y cambia de forma entre Biblia y fuentes.</li>
+      <li><b>Pestañas:</b> una pestaña por sección con su cantidad (Catena, NET). Familiar, pero esconde qué sección está vacía o llena hasta abrirla, y con seis tradiciones la fila se alarga; en el celular las de Catena ya no entran.</li>
+    </ul></div>
+
+  <h3>Qué filas aparecen, y cuáles no</h3>
+  <ul>
+    <li><b>Juan 6:53:</b> el griego palabra por palabra (28 palabras), otras traducciones (7) y dónde se usa en Doctrina (5).</li>
+    <li><b>Trento, sesión XIII:</b> «Leer en latín» donde el repo tiene el latín de esa división, «Términos» donde aparece «transubstanciación» (capítulo 4 y canon 2, con la definición del glosario aprobado en v2), dónde se usa y la traducción inglesa si existe.</li>
+    <li><b>No están</b>, porque el repo no tiene contenido verificado: «Lo que escribieron los Padres» (ningún pasaje patrístico sobre Juan 6 está en español verificado), «Cómo la usa cada tradición» (solo la lectura católica está revisada, y una sola tradición rompería la neutralidad), «Objeciones sobre este versículo» (ninguna página de objeción cita Juan 6:53) y «La Escritura que cita» de Trento (no está relevada). Aparecen cuando haya datos; nunca vacías.</li>
+    <li>En el lector, las divisiones de Trento cuyo latín no está en el repo (capítulos 2 y 6, cánones 5, 6 y 11) se ven solo en español también con «Latín · original» encendido; al lanzar, el latín sale del escaneo de 1785.</li>
+  </ul>
+
+  <h3>Qué se descarta y por qué</h3>
+  <ul>
+    <li>Repetir el texto tocado o el texto entero de cada traducción en el primer nivel del panel, y el latín como bloque en el panel (tu nota; ningún producto revisado lo hace).</li>
+    <li>La hoja a pantalla completa en el celular (Catena) y el panel que desaparece en el celular (NET).</li>
+    <li>Resúmenes generados (Bible Gateway), comentarios de un solo lado (Logos, Blue Letter Bible) y listas de pasajes paralelos sin filtrar, que ya son una lectura.</li>
+    <li>De la lista de lo genérico: crema con terracota, dorado sobre azul, pergamino, imágenes de archivo, cruces de adorno, tarjetas redondeadas con sombra, degradados, mayúsculas espaciadas, datos unidos con «·», «→» pegado a los enlaces, emoji, íconos en cuadrados de color, comillas gigantes, localizadores en monoespaciada, un color por tradición, columnas apretadas en el celular y elementos que no hacen nada.</li>
+  </ul>
+
+  <h3>Qué hay que decidir</h3>
+  <ul>
+    <li>El panel: índice con cantidades, lo clave abierto o pestañas.</li>
+    <li>El original en el texto con «Latín · original» (no, debajo, al lado), y el panel solo con palabra por palabra.</li>
+    <li>Siguen abiertas de antes: la cita en pantalla (corta o completa), palabra por palabra en el detalle, las glosas CC BY-SA y el pie del lector.</li>
+  </ul>
+  </div>
+  <div id="notes-v2" hidden>
+  <h2>La fuente y el versículo, versión 2</h2>
+  <p>Tus respuestas aplicadas. Arriba, «v1» muestra la versión anterior tal como la viste; «v2» vuelve a esta. Para recorrerla: en <button class="go-b" type="button" data-goto="03">03 Llegada</button>, abrí «Trento, ses. XIII, cap. 1» en «Qué enseña», tocá «Abrir la fuente completa» y después una frase.</p>
+
+  <h3>Elegido, ahora por defecto</h3>
+  <ul>
+    <li><b>El lector es una capa</b> sobre la página de donde venís; «Volver a donde estabas» la cierra y quedás en el mismo lugar.</li>
+    <li><b>Al tocar una frase o un versículo, el panel al costado</b> (media hoja en el celular). Su contenido queda reducido a lo ya decidido mientras se investiga qué debe tener: la referencia, «Abrir el detalle completo», «Citar» y «Dónde se usa en Doctrina». Ya no repite el texto elegido ni muestra el latín.</li>
+    <li><b>«Citar» y «Dónde se usa» en una columna al costado</b> del detalle, desde 1100 px (más angosto, van al final). «Dónde se usa en Doctrina» queda 55 px debajo del bloque «Citar». Al final de «Citar», «Citar» y «Citar con texto» uno al lado del otro y «Copiar enlace» debajo; lo mismo en el panel y al final de la página.</li>
+  </ul>
+
+  <h3>Nuevo, para decidir</h3>
+  <div class="xt" data-k="cite"><h4>La cita en pantalla</h4><div class="seg" role="group" aria-label="La cita en pantalla"></div>
+    <ul>
+      <li><b>Corta</b> (por defecto): «Concilio de Trento, ses. XIII, cap. 4 (1551)». Se lee de un vistazo y hace menos ruido. Lo que copian «Citar» y «Citar con texto» sigue siendo la cita completa, con edición y páginas, y la edición sigue al pie del lector, así que la regla «ninguna cita sin edición» se cumple en lo que el lector se lleva.</li>
+      <li><b>Completa:</b> la misma cita que se copia, con traducción, edición y páginas. Dice de entrada qué edición se cita, a costa de unas siete líneas en la columna de 250 px.</li>
+    </ul>
+    <p class="xt-n">En Juan 6:53 casi no cambia: la versión corta es «Juan 6:53 (Reina-Valera 1909)». El selector está arriba en cada detalle (06).</p></div>
+
+  <h3>Sigue abierto</h3>
+  <div class="xt" data-k="wbw"><h4>Palabra por palabra</h4><div class="seg" role="group" aria-label="Palabra por palabra"></div>
+    <ul>
+      <li><b>Fichas</b> (P1·06): la ficha se abre en la ventana de siempre. <b>Filas:</b> una palabra por fila, la ficha se despliega en la fila (Catena). <b>Ficha al lado:</b> la ficha fija a la derecha, cambia al pasar o tocar (STEP).</li>
+    </ul></div>
+  <ul>
+    <li>Las glosas en español son de Open Greek New Testament (CC BY-SA); la decisión del 2026-10-09 pide datos de palabras solo CC BY.</li>
+    <li>Si «Fecha» y «Edición y licencia» quedan al pie del lector.</li>
+  </ul>
+
+  <h3>Para comparar</h3>
+  <p>Las opciones descartadas siguen en los selectores de «Probar» (el lector como página, la tarjeta debajo, el toque directo, «Citar» al final o bajo el pasaje), con lo elegido marcado.</p>
+
+  <h3>Qué se descarta y por qué</h3>
+  <ul>
+    <li>El texto elegido repetido en el panel, más chico que en el texto (no suma nada) y el bloque de latín en el panel tal como estaba (tu nota).</li>
+    <li>De la lista de lo genérico: crema con terracota, dorado sobre azul, pergamino, imágenes de archivo, cruces de adorno, tarjetas redondeadas con sombra, degradados, mayúsculas espaciadas, datos unidos con «·», «→» pegado a los enlaces, emoji, íconos en cuadrados de color, comillas gigantes, localizadores en monoespaciada, un color por tradición, columnas apretadas en el celular y elementos que no hacen nada.</li>
+  </ul>
+
+  <h3>Qué hay que decidir</h3>
+  <ul>
+    <li>La cita en pantalla: corta o completa.</li>
+    <li>Palabra por palabra: fichas, filas o ficha al lado.</li>
+    <li>Las glosas en español y el pie del lector.</li>
+  </ul>
+  </div>
+  <div id="notes-v1" hidden>
+  <p><b>Versión 1</b>, tal como la viste. Los selectores de «Probar» no actúan sobre ella; empieza con las opciones de entonces. Volvé a «v2» arriba para ver los cambios.</p>
+  <h2>La fuente y el versículo</h2>
+  <p>Las pantallas 05 (una fuente que se abre desde una cita) y 06 (el detalle de un pasaje, el mismo para la Biblia y para cualquier otra fuente), sobre la estructura aprobada y con contenido real del repo: Trento, sesión XIII, en la traducción de López de Ayala (1785), con el latín de la misma edición y el inglés de Waterworth; Juan 6 en la Reina-Valera 1909, con el griego de STEP Bible.</p>
+  <p><b>Para empezar:</b> en <button class="go-b" type="button" data-goto="03">03 Llegada</button>, abrí «Trento, ses. XIII, cap. 1» en «Qué enseña» (la primera afirmación) y tocá «Abrir la fuente completa». En el lector, tocá una frase. Después probá «Volver a donde estabas». La fila «Probar» de arriba cambia las cuatro cosas abiertas sin recargar; en el celular está tras «Probar».</p>
+
+  <h3>Ya decidido (no cambia acá)</h3>
+  <ul>
+    <li>Toda fuente se lee entera, la Biblia incluida, en el mismo lector: una cita abre la ventana de siempre y «Abrir la fuente completa» lleva al texto entero, en la división citada, resaltada un momento (DESIGN, «Full-text reader»).</li>
+    <li>La unidad es la división propia de la obra (versículo, capítulo, canon), con su propia dirección. Dentro de una división que no es bíblica se puede tocar cada frase: abre el detalle de la división con esa frase resaltada, y la dirección lleva la frase. Citar, traducciones y original quedan a nivel de división.</li>
+    <li>Un solo detalle para Biblia y no Biblia, el de P1·06: el pasaje con el anterior arriba y el siguiente abajo (recortados, con «Ver completo»); las secciones salen de los datos y la que no tiene datos no aparece (en esta propuesta ninguna página cita el capítulo 6 de Trento, así que su detalle no tiene «Dónde se usa»).</li>
+    <li>«Fecha» y «Edición y licencia» viven en el lector, al pie; la ventana de cita no los muestra (2026-10-14).</li>
+    <li>Reina-Valera 1909 por defecto; las otras se eligen (2026-10-06, 2026-10-09). Palabra por palabra solo para griego, latín y hebreo; con la misma forma en fuentes no bíblicas.</li>
+  </ul>
+
+  <h3>Lo abierto, con sus opciones</h3>
+  <div class="xt" data-k="back"><h4>1. Cómo se llega y cómo se vuelve</h4><div class="seg" role="group" aria-label="El lector es"></div>
+    <ul>
+      <li><b>Una capa</b> (lo aprobado en v2): el lector cubre la página de donde venías; «Volver a donde estabas» lo cierra y quedás exactamente donde estabas, con la cita marcada un momento. Barata: ya está hecha. Sin barra lateral ni buscador mientras leés.</li>
+      <li><b>Una página</b> del sitio: barra lateral (Fuentes, Concilio de Trento, Sesión XIII), ruta y una franja fija «Volver a donde estabas: La posición católica, Qué enseña» que te devuelve al mismo punto. Referencia: P1·05 y el «‹ Resources» de Sefaria (docs/research/niche.md). Cuesta guardar el punto de origen, que el navegador no da solo.</li>
+    </ul>
+    <p class="xt-n">En las dos, el detalle (06) es una página propia y tiene la misma franja para volver al texto. Si llegás por un enlace compartido, no hay franja.</p></div>
+  <div class="xt" data-k="rdsel"><h4>2. Cómo se toca una frase (o un versículo) en el lector</h4><div class="seg" role="group" aria-label="Al tocar una frase"></div>
+    <ul>
+      <li><b>Directo:</b> la frase se ilumina al pasar y al tocarla abre el detalle. Lo más simple; referencia, Biblia de Logos (versículo a página). Cuesta un cambio de página por cada consulta.</li>
+      <li><b>Tarjeta debajo:</b> la frase queda marcada y bajo su párrafo se abre una tarjeta con lo que tiene el detalle («El texto latino», «Se cita en 3 lugares de Doctrina») y «Ver el detalle». Referencias: The Faith Received en el celular y el «Tools» de Blue Letter Bible, que se abre en el lugar (niche.md). Empuja el texto hacia abajo.</li>
+      <li><b>Panel al costado:</b> el detalle compacto se abre a la derecha y el texto sigue ahí; en el celular, media hoja abajo con el texto visible arriba. Referencia: el lector de Sefaria y el de Catena (niche.md). Lo más rico; cuesta una segunda versión, más corta, del detalle.</li>
+    </ul></div>
+  <div class="xt" data-k="dtend"><h4>3. Dónde van «Dónde se usa en Doctrina» y «Citar» en el detalle</h4><div class="seg" role="group" aria-label="Citar y dónde se usa"></div>
+    <ul>
+      <li><b>Al final:</b> después de las secciones de estudio, primero «Dónde se usa» y al último «Citar», como en P1·05. Lo más simple.</li>
+      <li><b>Citar bajo el pasaje:</b> una fila de acciones (copiar la cita, con el texto, el enlace) justo debajo del texto; «Dónde se usa» al final. Referencia: la fila de acciones bajo el versículo que recomienda niche.md (Biblia de Logos). Se copia sin bajar.</li>
+      <li><b>Columna al costado:</b> desde 1100 px, las dos en una columna fija a la derecha, con una raya fina, como la de temas relacionados de Our World in Data (analogs.md). Usa el ancho que pediste usar en 02; más angosto, vuelven al final.</li>
+    </ul></div>
+  <div class="xt" data-k="wbw"><h4>4. Palabra por palabra</h4><div class="seg" role="group" aria-label="Palabra por palabra"></div>
+    <ul>
+      <li><b>Fichas</b> (P1·06, tu preferida): transliteración, griego y sentido en cada palabra; la ficha se abre en la ventana de siempre, con el tipo «Palabra griega».</li>
+      <li><b>Filas:</b> una palabra por fila (griego, sentido, transliteración), y la ficha se despliega en la fila, como el acordeón griego de Catena (niche.md). Se lee de arriba abajo, más largo.</li>
+      <li><b>Ficha al lado:</b> la ficha queda fija a la derecha y cambia al pasar el mouse o al tocar, como el análisis de palabra de STEP (niche.md); en el celular queda debajo. No abre nada encima.</li>
+    </ul>
+    <p class="xt-n">La ficha dice el sentido literal primero, la forma en palabras (sin códigos), la palabra base con su número de Strong y cuántas veces aparece en el Nuevo Testamento, y lleva al estudio de la palabra (07, fuera de esta propuesta). Para una fuente en latín o en griego patrístico, la sección sería igual con el título «En latín, palabra por palabra».</p></div>
+
+  <h3>Decidido por mí, para que confirmes</h3>
+  <ul>
+    <li>El texto latino de Trento va en su propia sección, «En latín», como texto (no hay análisis por palabra del latín en el repo); «Comparar traducciones» compara la española y la inglesa.</li>
+    <li>La cita de «Citar» sigue la traducción elegida arriba: con Waterworth, cita la edición inglesa y sus páginas.</li>
+    <li>En el detalle, tocar otra frase del pasaje mueve el resaltado y la dirección sin recargar.</li>
+    <li>Los números del anterior y el siguiente llevan a su detalle; «Leer el capítulo completo» lleva al lector en ese versículo.</li>
+    <li>«Volver a donde estabas» guarda hasta ocho pasos (03, lector, detalle y vuelta). Ir por la barra lateral o el buscador lo borra, porque es otro camino.</li>
+    <li>Juan 6:53 muestra en «Dónde se usa» las cuatro tradiciones cuyo dosier usa el pasaje (católica, ortodoxa, reformada, bautista) y el testigo de Agustín; los dosieres no católicos son los del piloto.</li>
+  </ul>
+
+  <h3>Lo que no está, y por qué</h3>
+  <ul>
+    <li>El decreto de Trento no está entero en el repo: el lector muestra las divisiones que el dosier tiene verificadas, con «[…]» donde falta texto. Al lanzar, el texto completo sale del escaneo de 1785.</li>
+    <li>«Lo que escribieron los Padres», «Cómo lo lee cada tradición» y «Videos» del detalle no están. De los 18 pasajes patrísticos que el índice de SermonIndex asocia a Juan 6:53, ninguno tiene texto en español en el repo; el único Padre en español sobre ese versículo es Agustín en 02 (Sobre la doctrina cristiana III.16.24), que lo lee como figura, y mostrarlo solo inclinaría la lectura. Las lecturas de las tradiciones no católicas y sus videos no están verificados. Siguen el diseño de P1·06.</li>
+    <li>Las glosas en español son de Open Greek New Testament, con licencia CC BY-SA; la decisión del 2026-10-09 pide datos de palabras solo CC BY. Para lanzar hacen falta glosas propias o aceptar esa capa aparte.</li>
+  </ul>
+
+  <h3>Qué se descarta y por qué</h3>
+  <ul>
+    <li>La frase como unidad, la selección libre de texto y deshabilitar una fuente entera sin original (2026-10-06).</li>
+    <li>«Antes y después» como sección aparte (2026-10-06) y la edición o la licencia dentro de la ventana de cita (2026-10-14).</li>
+    <li>El cartel de STEP arriba de la pantalla al pasar por una palabra, las cinco filas de colores con códigos de Bible Hub y las columnas de traducciones de Bible Gateway, que en el celular quedan de 70 px (niche.md).</li>
+    <li>Las glosas de P1 que decían STEP Bible, CC BY: no es su fuente ni su licencia.</li>
+    <li>De la lista de lo genérico: crema con terracota, dorado sobre azul, pergamino, imágenes de archivo, cruces de adorno, tarjetas redondeadas con sombra, degradados, mayúsculas espaciadas, datos unidos con «·», «→» pegado a los enlaces, emoji, íconos en cuadrados de color, comillas gigantes, localizadores en monoespaciada, un color por tradición, columnas apretadas en el celular y elementos que no hacen nada.</li>
+  </ul>
+
+  <h3>Qué hay que decidir</h3>
+  <ul>
+    <li>El lector: una capa o una página.</li>
+    <li>Al tocar una frase: directo, tarjeta debajo o panel al costado.</li>
+    <li>«Dónde se usa» y «Citar»: al final, citar bajo el pasaje o columna al costado.</li>
+    <li>Palabra por palabra: fichas, filas o ficha al lado.</li>
+    <li>Las glosas en español: propias o la capa CC BY-SA.</li>
+  </ul>
+  </div>
+</aside>
+
+<script>
+const X = {
+  back: [['capa', 'Una capa (elegido)'], ['pagina', 'Una página']],
+  rdsel: [['costado', 'Panel al costado (elegido)'], ['directo', 'Directo'], ['tarjeta', 'Tarjeta debajo']],
+  dtend: [['costado', 'Columna al costado (elegido)'], ['final', 'Al final'], ['arriba', 'Citar bajo el pasaje']],
+  wbw: [['lado', 'Ficha al lado (elegido)'], ['fichas', 'Fichas (P1·06)'], ['filas', 'Filas']],
+  pnl: [['pestanas', 'Pestañas (elegido)'], ['indice', 'Índice con cantidades'], ['clave', 'Lo clave abierto']],
+  tabmo: [['deslizar', 'Deslizar (elegido)'], ['instante', 'Al instante (v3)']],
+  lat: [['raya', 'Con raya (elegido)'], ['letra', 'Otra letra'], ['caja', 'En recuadro']],
+  hl: [['rango', 'Frase, y palabras si arrastras (elegido)'], ['frase', 'Frase entera']],
+  filt: [['menu', 'Campo y menú (elegido)'], ['campo', 'Campo a la vista'], ['plegado', '«Filtrar» plegado']],
+  notas: [['costado', 'Notas al costado (elegido)'], ['margen', 'Marca en el margen'], ['cuaderno', 'Solo en tu cuaderno']],
+  hlc: [['barra', 'Colores en la barra (elegido)'], ['muestra', 'Muestra junto a Subrayar'], ['uno', 'Un solo tono']]
+};
+const VPP = {v1: {back: 'capa', rdsel: 'directo', dtend: 'final', wbw: 'fichas'}, v2: {back: 'capa', rdsel: 'costado', dtend: 'costado', wbw: 'fichas', cite: 'corta'}, v3: {back: 'capa', rdsel: 'costado', dtend: 'costado', wbw: 'fichas', cite: 'corta', pnl: 'indice'}, v4: {todo: 'actual'}};
+const V1PP = {back: 'capa', rdsel: 'directo', dtend: 'final', wbw: 'fichas'};
+const XL = {filt: 'Filtros', notas: 'Notas', hlc: 'Color', hl: 'Subrayar', back: 'Lector', rdsel: 'Frase', dtend: 'Citar', wbw: 'Palabras', cite: 'Cita', pnl: 'Panel', tabmo: 'Pestañas', lat: 'Latín del párrafo', todo: 'Todo en latín'};
+const SCR = {
+  '03': {file: 's03.html', hash: '', nav: []},
+  '05t': {file: 's05.html', hash: 'tr13/cap-1', nav: [{screen: '03', hash: '', y: null, label: 'La posición católica, Qué enseña', cite: 't13c1', ci: 0, anchor: 'que-ensena'}]},
+  '05j': {file: 's05.html', hash: 'jn6/51-58', nav: [{screen: '03', hash: '', y: null, label: 'La posición católica, La Escritura que usa', rdr: 'jn6', ci: 0, anchor: 'escritura'}]},
+  '06j': {file: 's06.html', hash: 'jn6/53', nav: [{screen: '05', hash: 'jn6/53', y: null, label: 'Juan 6', u: '53'}]},
+  '06t': {file: 's06.html', hash: 'tr13/cap-1~2', nav: [{screen: '05', hash: 'tr13/cap-1~2', y: null, label: 'Concilio de Trento, sesión XIII', u: 'cap-1~2'}]}
+};
+const S = {v: 'v5', s: '03', m: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', w: 'desk', c: '0'};
+const XS = {}; Object.keys(X).forEach(k => { XS[k] = X[k][0][0]; });
+const LS = 'dz-0506-v5c';
+try { const v = JSON.parse(localStorage.getItem(LS) || '{}'); ['v', 'm', 'w', 'c'].forEach(k => { if (v[k]) S[k] = v[k]; }); if (v.x) Object.keys(v.x).forEach(k => { if (X[k] && X[k].some(o => o[0] === v.x[k])) XS[k] = v.x[k]; }); } catch (e) {}
+const h0 = location.hash.replace('#s', '');
+if (SCR[h0]) S.s = h0;
+const fr = document.getElementById('fr'), stage = document.getElementById('stage');
+const save = () => { try { localStorage.setItem(LS, JSON.stringify({v: S.v, m: S.m, w: S.w, c: S.c, x: XS})); } catch (e) {} };
+const ss = (k, v) => { try { if (v == null) sessionStorage.removeItem('dz-' + k); else sessionStorage.setItem('dz-' + k, JSON.stringify(v)); } catch (e) {} };
+const press = (id, v) => document.querySelectorAll('#' + id + ' button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+const post = msg => { try { fr.contentWindow.postMessage(msg, '*'); } catch (e) {} };
+const syncPP = () => Object.keys(XS).forEach(k => ss('pp-' + k, VPP[S.v] && VPP[S.v][k] ? VPP[S.v][k] : XS[k]));
+function loadFile(file, hash) {
+  syncPP();
+  fr.src = (S.v === 'v5' ? '' : S.v + '/') + file + '?theme=' + S.m + (S.c === '1' ? '&clean=1' : '') + (hash ? '#' + hash : '');
+}
+function pick(key) {
+  const sc = SCR[key];
+  S.s = key; press('g-s', key);
+  ss('nav', sc.nav); ss('ret', null); ss('fwd', sc.nav.length ? 1 : null);
+  try { history.replaceState(null, '', '#s' + key); } catch (e) {}
+  loadFile(sc.file, sc.hash);
+}
+const keyFor = (screen, hash) => screen === '03' ? '03' : screen === '05' ? (/^jn6/.test(hash) ? '05j' : '05t') : screen === '06' ? (/^jn6/.test(hash) ? '06j' : '06t') : null;
+function setMode(m) { S.m = m; press('g-m', m); save(); document.documentElement.dataset.theme = m; post({dz: 'theme', theme: m}); }
+function setClean(c) { S.c = c; press('g-c', c); save(); post({dz: 'clean', on: c === '1'}); }
+function setWidth(w) { S.w = w; press('g-w', w); stage.classList.toggle('phone', w === 'phone'); save(); }
+const paintX = k => {
+  const sel = document.getElementById('xs-' + k);
+  sel.value = XS[k];
+  sel.classList.toggle('changed', XS[k] !== X[k][0][0]);
+  document.querySelectorAll('.xt[data-k="' + k + '"] .seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === XS[k])));
+};
+const setXOpt = (k, v, fromPage) => { if (S.v !== 'v5') return; XS[k] = v; paintX(k); save(); ss('pp-' + k, v); if (!fromPage) post({dz: 'pp', key: k, value: v}); };
+function setVersion(v) { S.v = v; press('g-v', v); save(); ['v5', 'v4', 'v3', 'v2', 'v1'].forEach(n => { document.getElementById('notes-' + n).hidden = v !== n; }); document.querySelectorAll('.xs').forEach(x => { x.disabled = v !== 'v5'; }); pick(S.s); }
+Object.keys(X).forEach(k => {
+  const sel = document.getElementById('xs-' + k);
+  sel.innerHTML = X[k].map(([v, l]) => '<option value="' + v + '">' + XL[k] + ': ' + l.toLowerCase().replace('p1·06', 'P1·06') + '</option>').join('');
+  if (!document.querySelector('.xt[data-k="' + k + '"] .seg')) { sel.addEventListener('change', () => setXOpt(k, sel.value)); paintX(k); return; }
+  sel.addEventListener('change', () => setXOpt(k, sel.value));
+  document.querySelectorAll('.xt[data-k="' + k + '"] .seg').forEach(seg => {
+    seg.innerHTML = X[k].map(([v, l]) => '<button type="button" data-v="' + v + '">' + l + '</button>').join('');
+    seg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) setXOpt(k, b.dataset.v); });
+  });
+  paintX(k);
+});
+document.getElementById('g-v').addEventListener('click', e => { const b = e.target.closest('button'); if (b && b.dataset.v !== S.v) setVersion(b.dataset.v); });
+document.getElementById('g-s').addEventListener('click', e => { const b = e.target.closest('button'); if (b) pick(b.dataset.v); });
+document.getElementById('g-m').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setMode(b.dataset.v); });
+document.getElementById('g-c').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setClean(b.dataset.v); });
+document.getElementById('g-w').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setWidth(b.dataset.v); });
+document.querySelectorAll('[data-goto]').forEach(b => b.addEventListener('click', () => { pick(b.dataset.goto); setNotes(false); }));
+const xb = document.getElementById('x-b'), xrow = document.getElementById('xrow');
+const small = matchMedia('(max-width:640px)');
+const fitX = () => { const open = !small.matches || xb.getAttribute('aria-expanded') === 'true'; xrow.hidden = !open; };
+xb.addEventListener('click', () => { xb.setAttribute('aria-expanded', String(xb.getAttribute('aria-expanded') !== 'true')); fitX(); });
+small.addEventListener('change', fitX); fitX();
+addEventListener('message', e => {
+  const d = e.data || {};
+  if (d.dz === 'go') { const file = {'03': 's03.html', '05': 's05.html', '06': 's06.html'}[d.screen]; if (!file) return; const k = keyFor(d.screen, d.hash || ''); if (k) { S.s = k; press('g-s', k); try { history.replaceState(null, '', '#s' + k); } catch (err) {} } loadFile(file, d.hash); }
+  if (d.dz === 'ready') { if (S.v === 'v5') Object.keys(XS).forEach(k => post({dz: 'pp', key: k, value: XS[k]})); if (S.c === '1') post({dz: 'clean', on: true}); }
+  if (d.dz === 'ppset' && X[d.key] && X[d.key].some(o => o[0] === d.value) && XS[d.key] !== d.value) setXOpt(d.key, d.value, true);
+  if (d.dz === 'theme') { S.m = d.theme; press('g-m', d.theme); document.documentElement.dataset.theme = d.theme; save(); }
+});
+const nb = document.getElementById('notes-b'), notes = document.getElementById('notes');
+const setNotes = op => { notes.classList.toggle('open', op); nb.setAttribute('aria-expanded', String(op)); if (op) document.getElementById('notes-x').focus(); };
+nb.addEventListener('click', () => setNotes(!notes.classList.contains('open')));
+document.getElementById('notes-b2').addEventListener('click', () => setNotes(true));
+document.getElementById('notes-x').addEventListener('click', () => { setNotes(false); (nb.offsetParent ? nb : document.getElementById('notes-b2')).focus(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') setNotes(false); });
+document.documentElement.dataset.theme = S.m; press('g-m', S.m);
+setWidth(S.w); press('g-c', S.c);
+setVersion(S.v);
+</script>

@@ -71,6 +71,7 @@ Status: plan only (drafted 2026-10-21 by a Plan agent; not yet discussed with Pe
 
 ## 5. Can start now, without crossing the gate
 
+- The 05/06 reader decisions (DECISIONS 2026-10-21 «Screens 05 (source) and 06 (verse)», «Reader: highlighting…», and 2026-10-22 «Reader notes…») extend the blocks after the milestone (reader layer, side panel, highlighting, notes), not the first milestone.
 - Doc fixes: prune the per-screen notes now in DESIGN from ROADMAP "Now"; Apology numbering is decided (ROADMAP "Next", `.claude/rules/content.md` still call it open); the data-access item in ROADMAP "Next" moves to D4.
 - Pedro's calls as he makes them: D3 (EN content), D8, D9, D12, psalm numbering.
 - Archive the approved v2 proposal's files in the repo (e.g. `docs/research/structure-proposal-v2/`) so blocks compare against real values.
@@ -82,7 +83,7 @@ Status: plan only (drafted 2026-10-21 by a Plan agent; not yet discussed with Pe
 - R1 No English site copy → D3.
 - R2 Drift dossier / review data / `src/content` → D8 + a diff report per conversion re-run.
 - R3 Holy See quotation rule A/B/C open (ROADMAP "Now" 3) → no public deploy until decided; excerpt length enforced in the citation.
-- R4 Proposal source not in the repo → archive (§5).
+- R4 Proposal source: archived 2026-10-22 in `docs/research/proposals/` (`structure-v2/`, `reader-05-06/`, `screens-07-08/`; source files only, the published artifacts are the reference for behaviour).
 - R5 Texture cost (`feTurbulence` on every sticky layer with Lenis) [inference] → render the tile once to a static image in B1; measure in B5.
 - R6 Animations across navigation need persistent client components above the changing segment → check remounts in B4.
 - R7 Two View Transition users (theme arc vs. React `<ViewTransition>`) → keep one mechanism.

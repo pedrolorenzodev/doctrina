@@ -1,0 +1,256 @@
+<meta charset="utf-8">
+<title>Doctrina, palabra y línea</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* proposal frame: sticky control bar over the screen, notes in a drawer (same shell as the 05-06 proposal) */
+:root{
+  --bg:#e8e5de; --ink:#1c1713; --ink-2:#2a2620; --ink-3:#5c574f; --rule:#c9c5bc; --rule-2:#aeaba4; --accent:#2c4a9e; --accent-weak:rgb(44 74 158 / .1); --panel:#efece6; --stage:#d9d6cf;
+  --head:Newsreader, Georgia, serif; --ui:'Work Sans', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#1d1d1c; --ink:#f2f2f0; --ink-2:#d0d0cc; --ink-3:#9a9a96; --rule:#3a3a38; --rule-2:#4d4d4a; --accent:#9eb3ee; --accent-weak:rgb(158 179 238 / .14); --panel:#262625; --stage:#151514; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#1d1d1c; --ink:#f2f2f0; --ink-2:#d0d0cc; --ink-3:#9a9a96; --rule:#3a3a38; --rule-2:#4d4d4a; --accent:#9eb3ee; --accent-weak:rgb(158 179 238 / .14); --panel:#262625; --stage:#151514; color-scheme:dark }
+html,body{height:100%}
+body{margin:0;background:var(--stage);color:var(--ink);font-family:var(--ui);font-size:14px;display:flex;flex-direction:column}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+button,select{font:inherit;color:inherit}
+:is(a,button,select):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-direction:column;gap:8px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--bg);border-bottom:1px solid var(--rule)}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px}
+.name{font-family:var(--head);font-size:19px;font-weight:400;margin-right:6px}
+.name span{color:var(--ink-3);font-family:var(--ui);font-size:13px;margin-left:8px}
+.grp{display:flex;align-items:center;gap:8px}
+.grp-l{font-size:12.5px;color:var(--ink-3)}
+.seg{display:flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.seg button{display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;padding:6px 11px;border-radius:6px;font-size:13px;line-height:1.2;font-weight:500;color:var(--ink-3);cursor:pointer;min-height:32px;transition:background-color 150ms ease,color 150ms ease}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.notes-b,.x-b{display:inline-flex;align-items:center;justify-content:center;min-height:34px;border:1px solid var(--rule-2);background:transparent;border-radius:7px;padding:6px 12px;font-size:13px;line-height:1.2;font-weight:500;cursor:pointer;transition:border-color 150ms ease,background-color 150ms ease}
+.notes-b{margin-left:auto}
+.notes-b:hover,.x-b:hover{border-color:var(--ink);background:var(--accent-weak)}
+.x-b,.notes-b.sm{display:none}
+.xrow{gap:8px}
+.xrow[hidden]{display:none}
+.x-h{font-size:12.5px;font-weight:500;color:var(--accent)}
+.xs{min-height:34px;max-width:100%;padding:5px 28px 5px 10px;border:1px solid var(--rule);border-radius:7px;background-color:var(--panel);font-size:13px;line-height:1.2;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat;transition:border-color 150ms ease}
+.xs:hover{border-color:var(--rule-2)}
+.xs[hidden]{display:none}
+.stage{flex:1;min-height:0;display:flex;justify-content:center;align-items:flex-start;overflow:auto}
+.stage.phone{padding:24px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px))}
+iframe{display:block;border:0;background:var(--bg);width:100%;height:100%}
+.stage.phone iframe{width:min(390px,100%);height:min(844px,calc(100dvh - 140px));min-height:560px;border:1px solid var(--rule-2);border-radius:30px;box-shadow:0 0 0 7px var(--bg),0 0 0 8px var(--rule-2)}
+.notes{position:fixed;z-index:20;top:0;right:0;bottom:0;width:min(640px,100%);overflow-y:auto;background:var(--panel);border-left:1px solid var(--rule-2);padding:24px max(22px,env(safe-area-inset-right,0px)) 60px 26px;transform:translateX(102%);transition:transform 240ms cubic-bezier(.4,0,.2,1)}
+.notes.open{transform:none}
+.notes h2{margin:0 0 12px;font-family:var(--head);font-weight:300;font-size:30px;line-height:1.15;text-wrap:balance}
+.notes h3{margin:30px 0 8px;font-size:14px;font-weight:600}
+.notes h4{margin:0 0 8px;font-family:var(--head);font-weight:400;font-size:19px;line-height:1.3}
+.notes p,.notes li{font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.notes ul{margin:0;padding-left:20px}
+.notes li + li{margin-top:6px}
+.notes b{color:var(--ink);font-weight:600}
+.xt{margin:16px 0 0;padding:16px 0 0;border-top:1px solid var(--rule)}
+.xt .seg{display:inline-flex;margin:2px 0 4px}
+.xt ul{margin-top:10px}
+.xt li{font-size:14px}
+.xt-n{margin:10px 0 0;font-size:13px!important;color:var(--ink-3)!important}
+.go-b{border:0;background:none;padding:0;color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.notes .x{position:sticky;top:0;float:right;display:grid;place-items:center;border:0;background:var(--panel);border-radius:6px;width:40px;height:40px;cursor:pointer;font-size:20px;line-height:1}
+@media (max-width:1299px){ .grp-l:not(.keep),.name span{display:none} }
+@media (max-width:640px){
+  .grp-l{display:none} .row{gap:8px 10px} .seg button{padding:6px 8px}
+  .stage.phone{padding-block:12px}
+  .x-b,.notes-b.sm{display:inline-flex}
+  .notes-b{margin-left:0}
+  #notes-b{display:none}
+  .xrow{display:grid;grid-template-columns:1fr}
+  .xs{width:100%;min-height:40px}
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+
+<div class="bar">
+  <div class="row">
+    <span class="name">Doctrina<span>07 palabra y 08 línea de tiempo</span></span>
+    <div class="grp"><span class="grp-l">Pantalla</span><div class="seg" id="g-s" role="group" aria-label="Pantalla">
+      <button type="button" data-v="07">07 σάρξ</button><button type="button" data-v="08">08 Línea de tiempo</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Modo</span><div class="seg" id="g-m" role="group" aria-label="Modo">
+      <button type="button" data-v="dark">Oscuro</button><button type="button" data-v="light">Claro</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Ancho</span><div class="seg" id="g-w" role="group" aria-label="Ancho">
+      <button type="button" data-v="desk">Escritorio</button><button type="button" data-v="phone">Celular</button>
+    </div></div>
+    <div class="grp"><span class="grp-l">Opciones</span><div class="seg" id="g-c" role="group" aria-label="Opciones a probar dentro de las pantallas">
+      <button type="button" data-v="0">Con opciones</button><button type="button" data-v="1">Sin opciones</button>
+    </div></div>
+    <button class="notes-b" type="button" id="notes-b" aria-expanded="false" aria-controls="notes">Cómo leerla</button>
+    <button class="x-b" type="button" id="x-b" aria-expanded="false" aria-controls="xrow">Probar</button>
+    <button class="notes-b sm" type="button" id="notes-b2" aria-controls="notes">Cómo leer</button>
+  </div>
+  <div class="row xrow" id="xrow">
+    <span class="x-h" title="En cada selector, la primera opción es lo de hoy o lo más cercano a lo aprobado">Probar</span>
+    <select class="xs" id="xs-sig" data-k="sig" data-s="07" aria-label="El léxico"></select>
+    <select class="xs" id="xs-dnd" data-k="dnd" data-s="07" aria-label="Los libros"></select>
+    <select class="xs" id="xs-flt" data-k="flt" data-s="07" aria-label="El filtro"></select>
+    <select class="xs" id="xs-sel" data-k="sel" data-s="08" aria-label="Lo elegido en la línea"></select>
+    <select class="xs" id="xs-dfmt" data-k="dfmt" data-s="08" aria-label="Las fechas del detalle"></select>
+    <select class="xs" id="xs-tdv" data-k="tdv" data-s="08" aria-label="Dónde se ve el detalle"></select>
+    <select class="xs" id="xs-nav" data-k="nav" data-s="08" aria-label="Recorrer los años"></select>
+  </div>
+</div>
+<div class="stage" id="stage"><iframe id="fr" title="Pantalla de la propuesta"></iframe></div>
+
+<aside class="notes" id="notes" aria-label="Cómo leer esta propuesta">
+  <button class="x" type="button" id="notes-x" aria-label="Cerrar">×</button>
+  <h2>La palabra y la línea de tiempo, versión 1</h2>
+  <p>Las pantallas 07 y 08 en la dirección aprobada (DESIGN.md), con tus notas sobre P1·07 y P1·08. Para recorrerla: en <button class="go-b" type="button" data-goto="07">07 σάρξ</button> tocá un libro en «Dónde aparece»; en <button class="go-b" type="button" data-goto="08">08 Línea de tiempo</button> tocá personas, concilios y corrientes, y bajá hasta el detalle. Cada recuadro punteado azul en la pantalla es un punto para decidir; «Sin opciones» los oculta.</p>
+
+  <h3>Ya decidido, reutilizado sin cambios</h3>
+  <ul>
+    <li>Todo el armazón aprobado: barra de arriba, árbol lateral con «Viaja» y «Despliegue», regla del borde derecho, textura, «Arco botón», «Título», cascada de listas y FLIP, «Apenas».</li>
+    <li>Ventana de cita (en 07, «Esmirniotas 7.1» la abre) y lector completo («Abrir la fuente completa»), con la mini línea de fechas.</li>
+    <li>De 09: la línea con personas como tramos, nacimiento estimado punteado, desconocido en puntos que se desvanecen, «†» solo donde no entra la palabra; el detalle debajo y «Avance fijo».</li>
+    <li>Datos de cabecera de 09 (rótulo chico arriba, valor en serif), pie anterior y siguiente de 04 y 09, botón «Ver la entrada original» con el estilo de «Mostrar».</li>
+    <li>De tus notas: en 07 los 27 libros en orden del canon, con los ceros, y la línea del corpus bajo «Dónde aparece», con la edición en chico; sin «Palabras griegas» en el árbol. En 08, la fecha como dato propio con rótulo, separada de la categoría; la selección dibuja su tramo y escribe sus años en el eje; «c.» y las fechas discutidas siguen a la vista.</li>
+  </ul>
+
+  <h3>Para decidir en 07, la palabra</h3>
+  <div class="xt" data-k="sig"><h4>1. El léxico</h4><div class="seg" role="group" aria-label="El léxico"></div>
+    <ul><li><b>Sentidos en español:</b> los seis sentidos de Abbott-Smith en su orden (1a a 3b), traducidos y rotulados «Traducción de Doctrina asistida por IA», con sus lugares como enlaces; el original en inglés, a un toque. Referencia: P1·07, Logos y BDAG ordenan así las entradas. Costo: traducir y revisar cada entrada del léxico (miles de palabras).</li>
+    <li><b>Entrada en inglés (P1·07):</b> lo de hoy, un fragmento en inglés y un enlace. Sin costo, pero el lector hispano no lo lee.</li></ul></div>
+  <div class="xt" data-k="dnd"><h4>2. Los libros de «Dónde aparece»</h4><div class="seg" role="group" aria-label="Los libros"></div>
+    <ul><li><b>Filas con barra:</b> la lista de P1·07 en orden del canon, en dos columnas, con barra por cantidad y los ceros en gris. Se compara la cantidad de un vistazo. Costo bajo.</li>
+    <li><b>Grilla por grupos:</b> evangelios, Hechos, cartas de Pablo, Hebreos y las otras cartas, Apocalipsis; una celda por libro, más oscura cuanto más aparece, los ceros punteados. Se ve el canon entero sin bajar, también en el celular. Costo bajo.</li></ul>
+    <p class="xt-n">En los dos, tocar un libro filtra «Los lugares» y baja hasta ahí.</p></div>
+  <div class="xt" data-k="flt"><h4>3. El filtro de «Los lugares»</h4><div class="seg" role="group" aria-label="El filtro"></div>
+    <ul><li><b>Como el de Videos (03):</b> el filtro aprobado tal cual; la opción elegida se pinta y la lista cambia con FLIP.</li>
+    <li><b>Deslizar (como Objeciones):</b> el mismo filtro con la marca única que viaja entre opciones del selector de tradición (0,34 s, cambia de rumbo si tocás otra a mitad). Es la regla nueva del playbook: un componente parecido a uno con movimiento aprobado ofrece reutilizarlo.</li></ul></div>
+
+  <h3>Para decidir en 08, la línea de tiempo</h3>
+  <div class="xt" data-k="sel"><h4>4. Lo elegido en la línea</h4><div class="seg" role="group" aria-label="Lo elegido en la línea"></div>
+    <ul><li><b>Años en el eje (09):</b> la barra se oscurece y sus años se escriben en el eje. Como la línea es alta, el eje va arriba y abajo.</li>
+    <li><b>Banda de su época:</b> además, una franja azul tenue cruza todas las filas: se ve quién vivió al mismo tiempo (Ireneo y Policarpo, Atanasio y Efrén). Es la franja de la entidad de la página en 09.</li>
+    <li><b>Guías hasta el eje:</b> dos líneas punteadas desde sus extremos; más discreta que la banda.</li></ul></div>
+  <div class="xt" data-k="dfmt"><h4>5. Las fechas del detalle</h4><div class="seg" role="group" aria-label="Las fechas del detalle"></div>
+    <ul><li><b>Una línea (09):</b> lo de hoy en 09, una oración en tinta. Para comparar.</li>
+    <li><b>Con rótulo:</b> «Nació c. 69», «Murió 155 o 156» como datos aparte (concilio: «Fecha»; corriente: «Desde», «Hasta»; escrito: «Escrita»), con el estilo aprobado de los datos de 09; lo discutido debajo, en gris.</li>
+    <li><b>Grandes, con su tramo:</b> los mismos datos en letra de título, grandes, y la mini línea de 30 a 800 con el tramo marcado. Lo que más se nota; ocupa más alto.</li></ul></div>
+  <div class="xt" data-k="tdv"><h4>6. Dónde se ve el detalle</h4><div class="seg" role="group" aria-label="Dónde se ve el detalle"></div>
+    <ul><li><b>Avance fijo (09):</b> lo aprobado, reutilizado: el detalle abajo y la franja fija mientras no se ve. La fecha de la franja pasa de gris a tinta, por tu nota.</li>
+    <li><b>Panel al costado:</b> el panel de 05 y 06 a la derecha (media hoja en el celular). La línea y el detalle se ven juntos sin bajar; la línea se angosta 380 px.</li></ul></div>
+  <div class="xt" data-k="nav"><h4>7. Recorrer los 770 años</h4><div class="seg" role="group" aria-label="Recorrer los años"></div>
+    <ul><li><b>Solo deslizar:</b> la densidad decidida (como «Siglos IV y V» de la ronda 1, 5,85 px por año) y la línea que se desliza: dedo, trackpad o arrastrando con el mouse.</li>
+    <li><b>Regla de arriba:</b> además, una regla de 30 a 800 con todo marcado y una ventana con los años que estás viendo; se arrastra o se toca. La crítica de v2 rescataba «el resumen fijo con selector» del índice de historia. Costo: un componente más.</li></ul></div>
+
+  <h3>Decidido por el agente (vetalo si no va)</h3>
+  <ul>
+    <li>07 no marca fila en el árbol, porque las palabras ya no están en él; la ruta es «Biblia / Nuevo Testamento / σάρξ» y el pie lleva a la palabra anterior y siguiente de Juan 6:53.</li>
+    <li>07 «Sus formas en Juan 6»: solo las dos formas que el repo tiene analizadas (σάρξ, σάρκα); el cuadro de P1 con las cuatro formas no tenía fuente.</li>
+    <li>07 cuenta versículos por libro, no apariciones: el repo tiene las 147 apariciones del total, pero por libro solo los 126 versículos.</li>
+    <li>08: rótulo de cada ítem con el cargo de history.json («Obispo de Esmirna») en vez de «Padre de la Iglesia», que no todos reciben; ninguno se asigna a una tradición.</li>
+    <li>08 empieza con Policarpo elegido, para que se vea el detalle; sus fechas son las más discutidas de la línea.</li>
+  </ul>
+
+  <h3>Qué no está y por qué</h3>
+  <ul>
+    <li><b>Glosas en español de OpenGNT:</b> no se usan. Son CC BY-SA y la decisión del 2026-10-09 admite solo datos CC BY; «carne» es una glosa propia. Sigue abierto en ROADMAP («Now» 4).</li>
+    <li><b>Recuentos en los Padres:</b> el único corpus griego patrístico etiquetado (Open Greek Corpus) es CC BY-SA y automático. 07 muestra solo el pasaje que Doctrina ya cita (Esmirniotas 7.1, griego verificado contra Lake 1912).</li>
+    <li><b>ἀνάμνησις:</b> no está en el repo (el léxico cubre Juan 6). Por eso el ejemplo es σάρξ.</li>
+    <li><b>Texto español de los versículos fuera de Juan 6:</b> el repo tiene la Reina-Valera 1909 solo de Juan 6; el resto va como referencia que abre el versículo.</li>
+    <li><b>Fechas:</b> salen de data/raw/history.json (años; «c.» donde es estimación). En la investigación neutral casi todas las vidas siguen marcadas sin verificar a nivel de fuente; solo se verificaron las del Clavis (Policarpo †155, Ireneo c. 202, Cipriano 258) y los días de Nicea II. Por eso no hay días, salvo Nicea II.</li>
+    <li><b>Después de 800:</b> concilios medievales y la Reforma están en history.json, pero no en el universo neutral verificado; la línea llega hasta 800.</li>
+  </ul>
+
+  <h3>Qué se descarta</h3>
+  <ul>
+    <li>En 07: ordenar los libros por cantidad (tu nota: orden del canon); el listado «Palabras griegas» fijo; el número de Strong a la vista (códigos crudos); el cuadro de casos sin fuente.</li>
+    <li>En 08: pestañas de zoom (descartadas en la ronda 1); dibujar a los Padres solo en su muerte; mover la página en cada elección; fechas más grandes sin el «c.», que parecerían más seguras.</li>
+    <li>De la lista de lo genérico: crema con terracota, dorado sobre azul, pergamino, imágenes de archivo, cruces de adorno, tarjetas redondeadas con sombra, degradados, mayúsculas espaciadas, datos unidos con «·», «→» pegado a los enlaces, emoji, íconos en cuadrados de color, comillas gigantes, localizadores en monoespaciada, un color por tradición, columnas apretadas en el celular y elementos que no hacen nada.</li>
+  </ul>
+
+  <h3>Qué hay que decidir</h3>
+  <ul>
+    <li>07: el léxico (español o inglés), los libros (filas o grilla), el filtro (como Videos o deslizar).</li>
+    <li>08: lo elegido en la línea (eje, banda o guías), las fechas del detalle (una línea, con rótulo o grandes), dónde se ve el detalle (avance fijo o panel), recorrer los años (deslizar o regla).</li>
+  </ul>
+</aside>
+
+<script>
+const X = {
+  sig: [['es', 'Sentidos en español'], ['en', 'Entrada en inglés (P1·07)']],
+  dnd: [['filas', 'Filas con barra'], ['grilla', 'Grilla por grupos']],
+  flt: [['videos', 'Como el de Videos (03)'], ['deslizar', 'Deslizar (como Objeciones)']],
+  sel: [['eje', 'Años en el eje (09)'], ['banda', 'Banda de su época'], ['guias', 'Guías hasta el eje']],
+  dfmt: [['linea', 'Una línea (09)'], ['rotulo', 'Con rótulo'], ['grande', 'Grandes, con su tramo']],
+  tdv: [['avance', 'Avance fijo (09)'], ['panel', 'Panel al costado']],
+  nav: [['deslizar', 'Solo deslizar'], ['regla', 'Regla de arriba']]
+};
+const DEF = {sig: 'es', dnd: 'filas', flt: 'videos', sel: 'banda', dfmt: 'rotulo', tdv: 'avance', nav: 'deslizar'};
+const XL = {sig: 'Léxico', dnd: 'Libros', flt: 'Filtro', sel: 'Lo elegido', dfmt: 'Fechas', tdv: 'Detalle', nav: 'Recorrer'};
+const SCR = {'07': 's07.html', '08': 's08.html'};
+const S = {s: '07', m: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', w: 'desk', c: '0'};
+const XS = Object.assign({}, DEF);
+const LS = 'dz-0708-v1';
+try { const v = JSON.parse(localStorage.getItem(LS) || '{}'); ['s', 'm', 'w', 'c'].forEach(k => { if (v[k]) S[k] = v[k]; }); if (v.x) Object.keys(v.x).forEach(k => { if (X[k] && X[k].some(o => o[0] === v.x[k])) XS[k] = v.x[k]; }); } catch (e) {}
+const h0 = location.hash.replace('#s', '');
+if (SCR[h0]) S.s = h0;
+if (!SCR[S.s]) S.s = '07';
+const fr = document.getElementById('fr'), stage = document.getElementById('stage');
+const save = () => { try { localStorage.setItem(LS, JSON.stringify({s: S.s, m: S.m, w: S.w, c: S.c, x: XS})); } catch (e) {} };
+const ss = (k, v) => { try { sessionStorage.setItem('dz-' + k, JSON.stringify(v)); } catch (e) {} };
+const press = (id, v) => document.querySelectorAll('#' + id + ' button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+const post = msg => { try { fr.contentWindow.postMessage(msg, '*'); } catch (e) {} };
+function pick(key) {
+  S.s = key; press('g-s', key); save();
+  Object.keys(XS).forEach(k => ss('pp-' + k, XS[k]));
+  document.querySelectorAll('.xs').forEach(x => { x.hidden = x.dataset.s !== key; });
+  try { history.replaceState(null, '', '#s' + key); } catch (e) {}
+  fr.src = SCR[key] + '?theme=' + S.m + (S.c === '1' ? '&clean=1' : '');
+}
+function setMode(m) { S.m = m; press('g-m', m); save(); document.documentElement.dataset.theme = m; post({dz: 'theme', theme: m}); }
+function setClean(c) { S.c = c; press('g-c', c); save(); post({dz: 'clean', on: c === '1'}); }
+function setWidth(w) { S.w = w; press('g-w', w); stage.classList.toggle('phone', w === 'phone'); save(); }
+const paintX = k => {
+  document.getElementById('xs-' + k).value = XS[k];
+  document.querySelectorAll('.xt[data-k="' + k + '"] .seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === XS[k])));
+};
+const setXOpt = (k, v, fromPage) => { XS[k] = v; paintX(k); save(); ss('pp-' + k, v); if (!fromPage) post({dz: 'pp', key: k, value: v}); };
+Object.keys(X).forEach(k => {
+  const sel = document.getElementById('xs-' + k);
+  sel.innerHTML = X[k].map(([v, l]) => '<option value="' + v + '">' + XL[k] + ': ' + l.charAt(0).toLowerCase() + l.slice(1) + '</option>').join('');
+  sel.addEventListener('change', () => setXOpt(k, sel.value));
+  document.querySelectorAll('.xt[data-k="' + k + '"] .seg').forEach(seg => {
+    seg.innerHTML = X[k].map(([v, l]) => '<button type="button" data-v="' + v + '">' + l + '</button>').join('');
+    seg.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; setXOpt(k, b.dataset.v); const s = document.getElementById('xs-' + k).dataset.s; if (s !== S.s) pick(s); });
+  });
+  paintX(k);
+});
+document.getElementById('g-s').addEventListener('click', e => { const b = e.target.closest('button'); if (b) pick(b.dataset.v); });
+document.getElementById('g-m').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setMode(b.dataset.v); });
+document.getElementById('g-c').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setClean(b.dataset.v); });
+document.getElementById('g-w').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setWidth(b.dataset.v); });
+document.querySelectorAll('[data-goto]').forEach(b => b.addEventListener('click', () => { pick(b.dataset.goto); setNotes(false); }));
+const xb = document.getElementById('x-b'), xrow = document.getElementById('xrow');
+const small = matchMedia('(max-width:640px)');
+const fitX = () => { xrow.hidden = small.matches && xb.getAttribute('aria-expanded') !== 'true'; };
+xb.addEventListener('click', () => { xb.setAttribute('aria-expanded', String(xb.getAttribute('aria-expanded') !== 'true')); fitX(); });
+small.addEventListener('change', fitX); fitX();
+addEventListener('message', e => {
+  const d = e.data || {};
+  if (d.dz === 'go' && SCR[d.screen]) pick(d.screen);
+  if (d.dz === 'ready') { Object.keys(XS).forEach(k => post({dz: 'pp', key: k, value: XS[k]})); if (S.c === '1') post({dz: 'clean', on: true}); }
+  if (d.dz === 'ppset' && X[d.key] && X[d.key].some(o => o[0] === d.value)) setXOpt(d.key, d.value, true);
+  if (d.dz === 'theme') { S.m = d.theme; press('g-m', d.theme); document.documentElement.dataset.theme = d.theme; save(); }
+});
+const nb = document.getElementById('notes-b'), notes = document.getElementById('notes');
+const setNotes = op => { notes.classList.toggle('open', op); nb.setAttribute('aria-expanded', String(op)); if (op) document.getElementById('notes-x').focus(); };
+nb.addEventListener('click', () => setNotes(!notes.classList.contains('open')));
+document.getElementById('notes-b2').addEventListener('click', () => setNotes(true));
+document.getElementById('notes-x').addEventListener('click', () => { setNotes(false); (nb.offsetParent ? nb : document.getElementById('notes-b2')).focus(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') setNotes(false); });
+document.documentElement.dataset.theme = S.m; press('g-m', S.m);
+setWidth(S.w); press('g-c', S.c);
+pick(S.s);
+</script>

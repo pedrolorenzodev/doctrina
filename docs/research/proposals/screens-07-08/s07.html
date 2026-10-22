@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>σάρξ, estudio de la palabra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<script>document.documentElement.dataset.ent='title-fade'</script>
+<style>
+[lang="grc"]{font-family:var(--greek);font-size:1.04em}
+.wd-head .crumbs{margin-bottom:40px}
+.wd-k{margin:0 0 10px}
+.wd-h1{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 22px}
+.wd-h1 [lang="grc"]{font-family:var(--greek);font-weight:400;font-size:64px;line-height:1.05;letter-spacing:0}
+.wd-h1 .tr{font-family:var(--head);font-style:italic;font-weight:300;font-size:30px;color:var(--ink-2);font-variation-settings:"opsz" 36}
+.wd-back{display:inline-block;margin:0 0 18px;font-size:13.5px}
+.facts{display:flex;flex-wrap:wrap;gap:18px 44px;margin:26px 0 0;padding:0}
+.facts > div{min-width:0}
+.facts dt{margin:0 0 3px;font-size:12.5px;color:var(--ink-3)}
+.facts dd{margin:0;font-family:var(--body);font-size:18px;line-height:1.4;color:var(--ink);font-variant-numeric:tabular-nums}
+.facts dd .muted{font-size:15px;color:var(--ink-3)}
+.wd-src{margin:16px 0 0;font-size:13px;line-height:1.5;color:var(--ink-3);max-width:620px}
+
+.sn-l{list-style:none;margin:28px 0 0;padding:0}
+.sn-g{border-top:1px solid var(--rule);padding:22px 0 20px}
+.sn-l > li:last-child{border-bottom:1px solid var(--rule)}
+.sn-gh{margin:0 0 12px;font-family:var(--head);font-weight:400;font-size:21px;line-height:1.3;color:var(--ink);font-variation-settings:"opsz" 24}
+.sn-gh .nm{display:inline-block;min-width:28px;font-family:var(--ui);font-size:13px;font-weight:500;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.sn{display:grid;grid-template-columns:28px minmax(0,1fr);gap:0 0;margin:12px 0 0}
+.sn .lt{font-size:13px;font-weight:500;color:var(--ink-3);padding-top:3px}
+.sn p{margin:0;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2);max-width:640px}
+.sn p .refs{display:block;margin-top:4px;font-family:var(--ui);font-size:14px;line-height:1.7;color:var(--ink-3)}
+.sn p .refs a{color:var(--ink-2);white-space:nowrap}
+.sn-note{margin:16px 0 0;font-size:13px;line-height:1.55;color:var(--ink-3);max-width:640px}
+.as-en{margin:0;padding:16px 0 0;font-family:var(--body);font-weight:300;font-size:15.5px;line-height:1.6;color:var(--ink-2);white-space:pre-line;max-width:680px}
+.as-ex{margin:22px 0 0;padding:16px 20px;border:1px solid var(--rule-2);border-radius:6px}
+.as-ex .lab2{margin:0 0 6px;font-size:12.5px;color:var(--ink-3)}
+.as-ex p.q{margin:0;font-family:var(--body);font-weight:300;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.as-ex .ln-go{display:inline-block;margin-top:10px;font-size:14px}
+html[data-pp-sig="es"] .sig-en{display:none}
+html[data-pp-sig="en"] .sig-es{display:none}
+
+.fm{width:100%;max-width:680px;margin:24px 0 0;border-collapse:collapse;font-size:15px}
+.fm th{text-align:left;font-weight:500;font-size:13px;color:var(--ink-3);padding:0 14px 8px 0;border-bottom:1px solid var(--rule-2)}
+.fm td{padding:12px 14px 12px 0;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-2);line-height:1.5}
+.fm td:first-child{font-family:var(--greek);font-size:20px;color:var(--ink);white-space:nowrap}
+.fm td:first-child i{display:block;font-family:var(--ui);font-style:normal;font-size:13px;color:var(--ink-3)}
+.fm .vs a{white-space:nowrap}
+
+.corpus{margin:18px 0 0;font-family:var(--head);font-weight:400;font-size:21px;line-height:1.35;color:var(--ink);font-variation-settings:"opsz" 24}
+.corpus-e{margin:4px 0 22px;font-size:13px;color:var(--ink-3)}
+.bk-l{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:0 56px;margin:26px 0 0;max-width:960px}
+.bk-col{list-style:none;margin:0;padding:0}
+.bk-gh{margin:0;padding:16px 0 6px;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.bk-col > li:first-child .bk-gh{padding-top:0}
+.bk-r{display:grid;grid-template-columns:132px minmax(0,1fr) 34px;align-items:center;gap:0 14px;width:100%;min-height:36px;margin:0;padding:4px 6px;border:0;border-top:1px solid var(--rule);border-radius:0;background:transparent;font:inherit;text-align:left;color:var(--ink-2);font-size:14.5px;cursor:pointer;transition:background-color var(--fast) ease,color var(--fast) ease}
+button.bk-r:hover{background:var(--hover);color:var(--ink)}
+.bk-r .bar{height:6px;border-radius:3px;background:var(--ink-3);opacity:.5;transition:opacity var(--fast) ease,background-color var(--fast) ease}
+button.bk-r:hover .bar{opacity:.8}
+.bk-r .c{text-align:right;font-variant-numeric:tabular-nums;font-weight:500;color:var(--ink)}
+.bk-r.z{cursor:default;color:var(--ink-3)}
+.bk-r.z .c{color:var(--ink-3);font-weight:400}
+.bk-r[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink);font-weight:500}
+.bk-r[aria-pressed="true"] .bar{background:var(--accent);opacity:1}
+.bk-g{display:none;margin:26px 0 0;max-width:1000px}
+.bk-g .gh{margin:18px 0 8px;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.bk-g .gh:first-child{margin-top:0}
+.bk-cells{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px}
+.bk-c{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:6px;min-height:74px;padding:9px 11px 10px;border:1px solid var(--rule);border-radius:6px;background:color-mix(in srgb,var(--ink) calc(var(--k) * 13%),transparent);font:inherit;text-align:left;color:var(--ink-2);cursor:pointer;transition:border-color var(--fast) ease}
+button.bk-c:hover{border-color:var(--ink-3)}
+.bk-c .n0{font-size:13px;line-height:1.25}
+.bk-c .c{font-family:var(--head);font-size:24px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;font-variation-settings:"opsz" 24}
+.bk-c.z{cursor:default;border-style:dashed;color:var(--ink-3)}
+.bk-c.z .c{color:var(--ink-3)}
+.bk-c[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+html[data-pp-dnd="grilla"] .bk-l{display:none}
+html[data-pp-dnd="grilla"] .bk-g{display:block}
+.dn-tip{margin:14px 0 0;font-size:13px;color:var(--ink-3)}
+
+.vf{position:relative;display:inline-flex;flex-wrap:wrap;gap:2px;margin:22px 0 22px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.vf button{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:34px;line-height:1.2;padding:6px 12px;border:0;border-radius:6px;background:transparent;font-size:13.5px;color:var(--ink-2);cursor:pointer;transition:background-color var(--fast) ease,color var(--fast) ease}
+.vf button:hover{background:var(--hover);color:var(--ink)}
+.vf button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink);font-weight:500}
+.vf .lb{display:inline-grid}
+.vf .lb::after{content:attr(data-l);font-weight:500;visibility:hidden;height:0;overflow:hidden}
+.vf .n{line-height:1.2;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;font-weight:400}
+.vf-ind{position:absolute;top:0;left:0;z-index:0;width:0;border-radius:6px;background:var(--accent-weak);box-shadow:inset 0 -2px 0 var(--accent);pointer-events:none;display:none}
+html[data-pp-flt="deslizar"] .vf-ind{display:block}
+html[data-pp-flt="deslizar"] .vf button[aria-pressed="true"]{background:transparent}
+.vf .x{margin-left:2px;color:var(--ink-3)}
+.lg-l{list-style:none;margin:0;padding:0;max-width:820px}
+.lg-l > li{border-top:1px solid var(--rule);padding:16px 0 14px}
+.lg-l > li:last-child{border-bottom:1px solid var(--rule)}
+.lg-b{margin:0 0 6px;font-size:13px;font-weight:500;color:var(--ink-3)}
+.lg-b .n{font-weight:400;margin-left:6px;font-variant-numeric:tabular-nums}
+.lg-rf{display:flex;flex-wrap:wrap;gap:2px 16px;margin:0;font-size:15px;line-height:1.9}
+.lg-rf a{font-variant-numeric:tabular-nums}
+.lg-v{list-style:none;margin:10px 0 0;padding:0}
+.lg-v li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 18px;padding:10px 0 0}
+.lg-v .rf{font-size:14px;padding-top:3px}
+.lg-v .tx{margin:0;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.lg-v .tx b{font-weight:500;color:var(--ink)}
+.lg-ed{margin:14px 0 0;font-size:13px;color:var(--ink-3)}
+
+.pa-l{list-style:none;margin:26px 0 0;padding:0;max-width:760px}
+.pa-l > li{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0 20px}
+.pa-g{margin:0;font-family:var(--greek);font-size:19px;line-height:1.65;color:var(--ink-2)}
+.pa-g b{font-weight:700;color:var(--ink)}
+.pa-tr{margin:4px 0 0;font-size:13px;color:var(--ink-3)}
+.pa-es{margin:14px 0 0;font-family:var(--head);font-style:italic;font-weight:300;font-size:20px;line-height:1.45;color:var(--ink);font-variation-settings:"opsz" 24}
+.pa-es::before{content:"«"}.pa-es::after{content:"»"}
+.pa-es b{font-weight:400}
+.pa-w{margin:12px 0 0;font-size:14px;line-height:1.5;color:var(--ink-3)}
+.pa-w b{font-weight:500;color:var(--ink)}
+.pa-w .ln-side{font-size:14px}
+.pa-lab{margin:10px 0 0;font-size:12.5px;color:var(--ink-3)}
+
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:84px;max-width:1040px}
+.pn a{display:block;padding:14px 18px 15px;border:1px solid var(--rule);border-radius:6px;text-decoration:none;color:var(--ink);transition:border-color var(--fast) ease,background-color var(--fast) ease}
+.pn a:hover{border-color:var(--rule-2);background:var(--hover)}
+.pn .nx{text-align:right}
+.pn small{display:block;margin-bottom:4px;font-size:12.5px;color:var(--ink-3)}
+.pn span{font-family:var(--body);font-size:16.5px;line-height:1.4}
+.pn span [lang="grc"]{font-size:18px}
+
+@media (pointer:coarse){ .bk-r{min-height:44px} .lg-rf a,.sn p .refs a,.fm .vs a{display:inline-block;padding-block:8px;line-height:1.2} }
+@media (max-width:1099px){ .bk-l{column-gap:40px} .bk-r{grid-template-columns:118px minmax(0,1fr) 30px} }
+@media (max-width:720px){
+  .wd-h1 [lang="grc"]{font-size:50px}
+  .wd-h1 .tr{font-size:24px}
+  .facts{gap:14px 28px}
+  .facts > div{flex:1 1 40%}
+  .bk-l{grid-template-columns:1fr}
+  .bk-col + .bk-col > li:first-child .bk-gh{padding-top:16px}
+  .bk-cells{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bk-c{min-height:66px;padding:8px 9px}
+  .bk-c .n0{font-size:12.5px}
+  .vf{display:flex;width:100%}
+  .vf button{flex:1 1 auto;padding:6px 8px}
+  .lg-v li{grid-template-columns:1fr;gap:2px}
+  .pn{grid-template-columns:1fr}
+  .pn .nx{text-align:left}
+  .sn{grid-template-columns:22px minmax(0,1fr)}
+}
+</style>
+</head>
+<body data-page="w-sarx">
+<main class="main" lang="es">
+  <div class="col wd-head" data-label="σάρξ">
+    <nav class="crumbs" aria-label="Ruta"><a href="#" data-nb>Biblia</a><span class="sl" aria-hidden="true">/</span><a href="#" data-nb>Nuevo Testamento</a><span class="sl" aria-hidden="true">/</span><span aria-current="page"><span lang="grc">σάρξ</span></span></nav>
+    <p class="kicker wd-k">Estudio de una palabra griega</p>
+    <h1 class="wd-h1"><span lang="grc">σάρξ</span><span class="tr">sarx</span></h1>
+    <p class="lede">Carne. El léxico distingue la sustancia del cuerpo, el cuerpo entero, «toda carne» como todo ser viviente, el parentesco natural y la naturaleza humana sujeta al deseo.</p>
+    <dl class="facts">
+      <div><dt>Significado literal</dt><dd>carne</dd></div>
+      <div><dt>Clase de palabra</dt><dd>sustantivo femenino</dd></div>
+      <div><dt>En el Nuevo Testamento</dt><dd>147 veces <span class="muted">en 126 versículos</span></dd></div>
+      <div><dt>En Juan 6</dt><dd>7 veces <span class="muted">en 7 versículos</span></dd></div>
+    </dl>
+    <p class="wd-src">Recuentos sobre el texto griego NA28, con los datos de STEPBible (Tyndale House, CC BY 4.0).</p>
+  </div>
+
+  <section class="sec col" id="significa" data-label="Qué significa">
+    <h2>Qué significa</h2>
+    <p class="sub">Los sentidos del léxico de Abbott-Smith (1922), en su orden, con los lugares que él mismo cita.</p>
+    <div class="pp" data-pp="sig" data-label="Probar: el léxico" data-opts="es=Sentidos en español|en=Entrada en inglés (P1·07)" data-default="es"><b>Sentidos en español:</b> cada sentido del léxico traducido, con sus lugares como enlaces; la entrada original queda a un toque. <b>Entrada en inglés:</b> como en P1·07, un fragmento de la entrada en inglés y el enlace a la entrada completa.</div>
+    <div class="sig-es">
+      <ol class="sn-l" id="sn"></ol>
+      <p class="sn-note">Traducción de Doctrina asistida por IA, desde Abbott-Smith, <i>A Manual Greek Lexicon of the New Testament</i> (1922, dominio público), en la versión de STEPBible (CC BY 4.0).</p>
+      <button class="btn-more" type="button" id="as-b" aria-expanded="false" aria-controls="as-en">${plus}<span>Ver la entrada original, en inglés</span></button>
+      <p class="as-en" id="as-en" lang="en" hidden></p>
+    </div>
+    <div class="sig-en">
+      <div class="as-ex"><p class="lab2">Qué dice el léxico</p><p class="q" lang="en">flesh; 1. as in cl. generally, (a) prop., of the soft substance of the animal body: 1Co.15:39, 2Co.12:7, Gal.6:13, al.; σ. καὶ αἷμα […]; mystically, φ. (τρώγειν) τὴν σ. τοῦ υἱοῦ τ. ἀνθρώπου, Jhn.6:52-56; (b) Of the whole substance of the body, = σῶμα […]</p><a class="ln-go" href="#" data-nb>Leer la entrada completa del léxico</a></div>
+      <p class="sn-note">Abbott-Smith, <i>A Manual Greek Lexicon of the New Testament</i> (1922, dominio público), en la versión de STEPBible (CC BY 4.0). En inglés.</p>
+    </div>
+  </section>
+
+  <section class="sec col" id="formas" data-label="Sus formas">
+    <h2>Sus formas en Juan 6</h2>
+    <p class="sub">El griego cambia la terminación según la función de la palabra en la frase.</p>
+    <table class="fm">
+      <thead><tr><th scope="col">Forma</th><th scope="col">Función</th><th scope="col">Versículos</th></tr></thead>
+      <tbody>
+        <tr><td><span lang="grc">σάρξ</span><i>sarx</i></td><td>Nominativo: la carne es el sujeto. «Mi carne es verdadera comida».</td><td class="vs"><a class="ln-go" href="#" data-nb>6:51</a>, <a class="ln-go" href="#" data-nb>6:55</a>, <a class="ln-go" href="#" data-nb>6:63</a></td></tr>
+        <tr><td><span lang="grc">σάρκα</span><i>sarka</i></td><td>Acusativo: la carne es lo que se come o se da. «Si no comiereis la carne del Hijo del hombre».</td><td class="vs"><a class="ln-go" href="#" data-nb>6:52</a>, <a class="ln-go" href="#" data-nb>6:53</a>, <a class="ln-go" href="#" data-nb>6:54</a>, <a class="ln-go" href="#" data-nb>6:56</a></td></tr>
+      </tbody>
+    </table>
+    <p class="sn-note">Análisis de STEPBible (TAGNT), singular femenino en las siete apariciones.</p>
+  </section>
+
+  <section class="sec wide" id="donde" data-label="Dónde aparece">
+    <h2>Dónde aparece</h2>
+    <p class="corpus">En el Nuevo Testamento griego (27 libros)</p>
+    <p class="corpus-e">Versículos por libro, en el orden del canon, sobre el texto NA28 (datos de STEPBible).</p>
+    <div class="pp" data-pp="dnd" data-label="Probar: los libros" data-opts="filas=Filas con barra|grilla=Grilla por grupos" data-default="filas"><b>Filas con barra:</b> los 27 libros en orden, con una barra por cantidad, como en P1·07 pero sin ordenar por número y con los ceros. <b>Grilla por grupos:</b> evangelios, Hechos, cartas y Apocalipsis en bloques; cada libro una celda con su número, más oscura cuanto más aparece. Tocar un libro deja solo sus versículos abajo.</div>
+    <div class="bk-l" id="bk-l"></div>
+    <div class="bk-g" id="bk-g"></div>
+    <p class="dn-tip">Tocá un libro para ver sus versículos.</p>
+  </section>
+
+  <section class="sec wide" id="lugares" data-label="Los lugares">
+    <h2>Los lugares, uno por uno</h2>
+    <div class="pp" data-pp="flt" data-label="Probar: el filtro" data-opts="videos=Como el de Videos (03)|deslizar=Deslizar (como Objeciones)" data-default="videos"><b>Como el de Videos:</b> el filtro aprobado en 03, la opción elegida se pinta y la lista cambia con el movimiento de listas (FLIP). <b>Deslizar:</b> el mismo filtro, con la marca que viaja de opción en opción del selector de tradición de «Objeciones» (0,34 s); la lista cambia igual.</div>
+    <div class="vf" role="group" aria-label="Qué versículos mostrar" id="vf"></div>
+    <ul class="lg-l" id="lg"></ul>
+    <p class="lg-ed">Texto en español: Reina-Valera 1909, donde Doctrina ya lo tiene (Juan 6). Cada referencia abre el versículo.</p>
+  </section>
+
+  <section class="sec col" id="padres" data-label="En los Padres">
+    <h2>En los Padres que cita Doctrina</h2>
+    <p class="sub">Dónde aparece la palabra en los textos griegos de los Padres que Doctrina ya cita.</p>
+    <ul class="pa-l">
+      <li>
+        <p class="pa-g" lang="grc">Εὐχαριστίας καὶ προσευχῆς ἀπέχονται, διὰ τὸ μὴ ὁμολογεῖν τὴν εὐχαριστίαν <b>σάρκα</b> εἶναι τοῦ σωτῆρος ἡμῶν Ἰησοῦ Χριστοῦ τὴν ὑπὲρ τῶν ἁμαρτιῶν ἡμῶν παθοῦσαν, ἣν τῇ χρηστότητι ὁ πατὴρ ἤγειρεν.</p>
+        <p class="pa-es">Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la <b>carne</b> de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.</p>
+        <p class="pa-w"><b>Ignacio de Antioquía</b>, <button class="ln-side" type="button" data-cite="smyrn71">Carta a los Esmirniotas 7.1</button>, c. 107–110</p>
+        <p class="pa-lab">Griego de la edición de Kirsopp Lake (1912). Traducción de Doctrina asistida por IA.</p>
+      </li>
+    </ul>
+  </section>
+
+  <nav class="pn" aria-label="Otras palabras de Juan 6:53">
+    <a href="#" data-nb><small>Palabra anterior en Juan 6:53</small><span><span lang="grc">φάγητε</span>, de <span lang="grc">φαγεῖν</span>, «comer»</span></a>
+    <a class="nx" href="#" data-nb><small>Palabra siguiente en Juan 6:53</small><span><span lang="grc">υἱοῦ</span>, de <span lang="grc">υἱός</span>, «hijo»</span></a>
+  </nav>
+</main>
+<script src="base.js"></script>
+<script>
+(() => {
+const esc = D.esc, $ = D.$;
+document.querySelectorAll('.btn-more').forEach(b => { b.innerHTML = b.innerHTML.replace('${plus}', D.ic.plus); });
+const BK = [['Matt', 'Mateo', 'ev'], ['Mark', 'Marcos', 'ev'], ['Luke', 'Lucas', 'ev'], ['John', 'Juan', 'ev'], ['Acts', 'Hechos', 'he'], ['Rom', 'Romanos', 'pa'], ['1Cor', '1 Corintios', 'pa'], ['2Cor', '2 Corintios', 'pa'], ['Gal', 'Gálatas', 'pa'], ['Eph', 'Efesios', 'pa'], ['Phil', 'Filipenses', 'pa'], ['Col', 'Colosenses', 'pa'], ['1Thess', '1 Tesalonicenses', 'pa'], ['2Thess', '2 Tesalonicenses', 'pa'], ['1Tim', '1 Timoteo', 'pa'], ['2Tim', '2 Timoteo', 'pa'], ['Titus', 'Tito', 'pa'], ['Phlm', 'Filemón', 'pa'], ['Heb', 'Hebreos', 'ot'], ['Jas', 'Santiago', 'ot'], ['1Pet', '1 Pedro', 'ot'], ['2Pet', '2 Pedro', 'ot'], ['1John', '1 Juan', 'ot'], ['2John', '2 Juan', 'ot'], ['3John', '3 Juan', 'ot'], ['Jude', 'Judas', 'ot'], ['Rev', 'Apocalipsis', 'ap']];
+const GN = {ev: 'Evangelios', he: 'Hechos', pa: 'Cartas de Pablo', ot: 'Hebreos y las otras cartas', ap: 'Apocalipsis'};
+const REFS = ["Matt.16.17", "Matt.19.5", "Matt.19.6", "Matt.24.22", "Matt.26.41", "Mark.10.8", "Mark.13.20", "Mark.14.38", "Luke.3.6", "Luke.24.39", "John.1.13", "John.1.14", "John.3.6", "John.6.51", "John.6.52", "John.6.53", "John.6.54", "John.6.55", "John.6.56", "John.6.63", "John.8.15", "John.17.2", "Acts.2.17", "Acts.2.26", "Acts.2.31", "Rom.1.3", "Rom.2.28", "Rom.3.20", "Rom.4.1", "Rom.6.19", "Rom.7.5", "Rom.7.18", "Rom.7.25", "Rom.8.3", "Rom.8.4", "Rom.8.5", "Rom.8.6", "Rom.8.7", "Rom.8.8", "Rom.8.9", "Rom.8.12", "Rom.8.13", "Rom.9.3", "Rom.9.5", "Rom.9.8", "Rom.11.14", "Rom.13.14", "1Cor.1.26", "1Cor.1.29", "1Cor.5.5", "1Cor.6.16", "1Cor.7.28", "1Cor.10.18", "1Cor.15.39", "1Cor.15.50", "2Cor.1.17", "2Cor.4.11", "2Cor.5.16", "2Cor.7.1", "2Cor.7.5", "2Cor.10.2", "2Cor.10.3", "2Cor.11.18", "2Cor.12.7", "Gal.1.16", "Gal.2.16", "Gal.2.20", "Gal.3.3", "Gal.4.13", "Gal.4.14", "Gal.4.23", "Gal.4.29", "Gal.5.13", "Gal.5.16", "Gal.5.17", "Gal.5.19", "Gal.5.24", "Gal.6.8", "Gal.6.12", "Gal.6.13", "Eph.2.3", "Eph.2.11", "Eph.2.14", "Eph.5.29", "Eph.5.31", "Eph.6.5", "Eph.6.12", "Phil.1.22", "Phil.1.24", "Phil.3.3", "Phil.3.4", "Col.1.22", "Col.1.24", "Col.2.1", "Col.2.5", "Col.2.11", "Col.2.13", "Col.2.18", "Col.2.23", "Col.3.22", "1Tim.3.16", "Phlm.1.16", "Heb.2.14", "Heb.5.7", "Heb.9.10", "Heb.9.13", "Heb.10.20", "Heb.12.9", "Jas.5.3", "1Pet.1.24", "1Pet.3.18", "1Pet.3.21", "1Pet.4.1", "1Pet.4.2", "1Pet.4.6", "2Pet.2.10", "2Pet.2.18", "1John.2.16", "1John.4.2", "2John.1.7", "Jude.1.7", "Jude.1.8", "Jude.1.23", "Rev.17.16", "Rev.19.18", "Rev.19.21"];
+const RV = {
+  '6.51': 'Yo soy el pan vivo que he descendido del cielo: si alguno comiere de este pan, vivirá para siempre; y el pan que yo daré es mi <b>carne</b>, la cual yo daré por la vida del mundo.',
+  '6.52': 'Entonces los Judíos contendían entre sí, diciendo: ¿Cómo puede éste darnos su <b>carne</b> á comer?',
+  '6.53': 'Y Jesús les dijo: De cierto, de cierto os digo: Si no comiereis la <b>carne</b> del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros.',
+  '6.54': 'El que come mi <b>carne</b> y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el día postrero.',
+  '6.55': 'Porque mi <b>carne</b> es verdadera comida, y mi sangre es verdadera bebida.',
+  '6.56': 'El que come mi <b>carne</b> y bebe mi sangre, en mí permanece, y yo en él.',
+  '6.63': 'El espíritu es el que da vida; la <b>carne</b> nada aprovecha: las palabras que yo os he hablado, son espíritu, y son vida.'
+};
+BK.forEach(b => { b[1] = b[1].replace(/^(\d) /, '$1\u00a0'); });
+const name = Object.fromEntries(BK.map(b => [b[0], b[1]]));
+const grp = Object.fromEntries(BK.map(b => [b[0], b[2]]));
+const byBook = {};
+REFS.forEach(r => { const [b, c, v] = r.split('.'); (byBook[b] = byBook[b] || []).push(c + ':' + v); });
+const cnt = b => (byBook[b] || []).length;
+const MAX = Math.max(...BK.map(b => cnt(b[0])));
+const ref = (b, cv) => (BK.find(x => x[0] === b)[1]) + ' ' + cv;
+const a = (txt, lab) => '<a class="ln-go" href="#" data-nb' + (lab ? ' aria-label="' + esc(lab) + '"' : '') + '>' + esc(txt) + '</a>';
+
+/* senses (Abbott-Smith, translated) */
+const SN = [
+  {n: '1', h: 'Como en el griego clásico', s: [
+    ['a', 'En sentido propio, la sustancia blanda del cuerpo de un ser vivo. «Carne y huesos»; en plural, la carne de muchos. En sentido figurado, en Santiago; en sentido místico, «comer la carne del Hijo del hombre».', [['1Cor', '15:39'], ['2Cor', '12:7'], ['Gal', '6:13'], ['Luke', '24:39'], ['Rev', '17:16'], ['Rev', '19:18'], ['Jas', '5:3'], ['John', '6:52–56']]],
+    ['b', 'El cuerpo entero, como σῶμα; «una sola carne». De ahí lo material frente a lo inmaterial del ser humano (opuesta a espíritu y a alma), la vida presente «en la carne» y la vida terrena de Cristo, «los días de su carne».', [['Acts', '2:26'], ['Mark', '10:8'], ['Matt', '19:5'], ['1Cor', '6:16'], ['Eph', '5:31'], ['1Cor', '5:5'], ['2Cor', '7:1'], ['1Pet', '3:18'], ['Gal', '2:20'], ['Phil', '1:22'], ['Heb', '5:7']]]
+  ]},
+  {n: '2', h: 'Como en el modo de hablar hebreo', s: [
+    ['a', 'Un ser viviente: «toda carne» es todo ser humano, sobre todo en su condición mortal; «venido en carne».', [['Matt', '24:22'], ['Mark', '13:20'], ['1Pet', '1:24'], ['John', '1:14'], ['Luke', '3:6'], ['John', '17:2'], ['Acts', '2:17'], ['1John', '4:2'], ['1Tim', '3:16']]],
+    ['b', 'El origen y el parentesco naturales: «los hijos de la carne», «según la carne».', [['Rom', '9:8'], ['Rom', '9:3'], ['Rom', '9:5'], ['1Cor', '10:18'], ['Gal', '4:23'], ['Gal', '4:29'], ['Rom', '11:14']]]
+  ]},
+  {n: '3', h: 'La naturaleza física, sujeta a la sensación y al deseo', s: [
+    ['a', 'Sin juicio moral: opuesta al espíritu («el espíritu está dispuesto, pero la carne es débil»), «la voluntad de la carne», «el deseo de la carne».', [['Rom', '7:18'], ['Rom', '13:14'], ['Matt', '26:41'], ['Mark', '14:38'], ['John', '1:13'], ['1John', '2:16'], ['1Pet', '4:1']]],
+    ['b', 'En sentido ético, sobre todo en las cartas de Pablo: la carne como sede y vehículo de los deseos que llevan al pecado; opuesta a la mente y al espíritu.', [['Rom', '7:25'], ['Rom', '8:4–9'], ['Rom', '8:12'], ['Gal', '5:16'], ['Gal', '5:17'], ['Gal', '5:19'], ['Gal', '6:8']]]
+  ]}
+];
+$('#sn').innerHTML = SN.map(g => '<li class="sn-g"><h3 class="sn-gh"><span class="nm">' + g.n + '</span>' + esc(g.h) + '</h3>' + g.s.map(s => '<div class="sn"><span class="lt">' + s[0] + '</span><p>' + esc(s[1]).replace(/σῶμα/, '<span lang="grc">σῶμα</span>') + '<span class="refs">' + s[2].map(r => a(ref(r[0], r[1]))).join(', ') + '</span></p></div>').join('') + '</li>').join('');
+const AS = 'σάρξ, σαρκός, ἡ\n[in LXX chiefly for בָּשָׂר ;]\nflesh;\n1. as in cl. generally,\n(a) prop., of the soft substance of the animal body: 1Co.15:39, 2Co.12:7, Gal.6:13, al.; σ. καὶ αἷμα, 1Co.5:50; σ. καὶ ὀστέα, Luk.24:39; pl., of the flesh of many or parts of the flesh of one (cl.), Rev.17:16 19:18; φαγεῖν, Re, ll. with (cf. κατεσθίειν, 4Ki.9:36, al., and βιβρώσκειν, frequently in l.); metaphorically, Jas.5:3; mystically, φ. (τρώγειν) τὴν σ. τοῦ υἱοῦ τ. ἀνθρώπου, Jhn.6:52-56;\n(b) Of the whole substance of the body, = σῶμα: Act.2:26 (LXX), 31, 2Co.12:7, Gal.4:14, Eph.5:29; μία σ., Mrk.10:8; εἰς σ. μίαν (Gen.2:24), Mat.19:5, Mrk.10:8, 1Co.6:16, Eph.5:31; hence, of the material as opposite to the immaterial part of man (cf. Lft., Notes, 88): opposite to πνεῦμα, 1Co.5:5, 2Co.7:1, Col.2:5, 1Pe.3:18, 4:6; to ψύχη, Act.2:31, Rec.; of the present life, ἐν (τῇ) σ., Rom.7:5, Gal.2:20, Php.1:22, 24 1Pe.4:2; of Christ\'s life on earth, αἱ ἡμέραι τ. σαρκὸς αὐτοῦ, Heb.5:7; of things pertaining to the body, ἐν (τῇ) σ., Gal.6:12, 13 Php.3:3, 4.\n2. As in Heb. idiom,\n(a) of a living creature: πᾶσα σ. (Heb. כָּל־בָּשָׂר; cf. Bl., §47, 9), Mat.24:22, Mrk.13:20, 1Pe.1:24; esp. of man and his mortality (Psa.55 (56):5, Sir.28:5, al.), Jhn.1:14; πᾶσα σ. (see supr.), Luk.3:6, Jhn.17:2, Act.2:17, ἐν σ., 1Jo.4:2, 1Ti.3:16;\n(b) of natural origin and relationship (Gen.2:24, Isa.58:7, al.): τέκνα τῆς σ., Rom.9:8; κατὰ σάρκα, ib. 3, 5, 1Co.10:18, Gal.4:23, 29; ἡ σ. μου, Rom.11:14 (cf. Jdg.9:2, 2Ki.5:1, al.).\n3. Of the physical nature as subject to sensation and desire (Plut.),\n(a) without any ethical disparagement: Rom.7:18 13:14; opposite to πνεῦμα, Mat.26:41, Mrk.14:38; τ. θέλημα τῆς σ., Jhn.1:13; ἡ ἐπιθυμία τῆς σ., 1Jn.2:16; pl., 2Pe.2:18; παθεῖν σαρκί, 1Pe.4:1;\n(b) in ethical sense, esp. in Pauline Epp., of the flesh as the seat and vehicle of sinful desires: opposite to νοῦς, Rom.7:25; to πνεῦμα, Rom.8:4-9, 12, 13, Gal.5:16, 17 19 6:8 (cf. DB, ii, 14f.; iv, 165f.; Cremer, 844ff.).\n(AS)';
+$('#as-en').textContent = AS;
+const asb = $('#as-b'), asp = $('#as-en');
+asb.addEventListener('click', () => {
+  const op = asp.hidden;
+  asp.hidden = !op;
+  asb.setAttribute('aria-expanded', String(op));
+  asb.querySelector('span').textContent = op ? 'Ocultar la entrada original' : 'Ver la entrada original, en inglés';
+  if (op && !matchMedia('(prefers-reduced-motion: reduce)').matches) asp.animate([{opacity: 0, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: 420, easing: 'cubic-bezier(0.22, 1, 0.36, 1)'});
+});
+
+/* where it appears */
+let book = null, flt = 'all';
+const order = ['ev', 'he', 'pa', 'ot', 'ap'];
+const colOf = gs => '<ul class="bk-col">' + gs.map(g => {
+  const bs = BK.filter(b => b[2] === g);
+  return '<li><p class="bk-gh">' + GN[g] + '</p>' + bs.map(b => {
+    const n = cnt(b[0]);
+    const bar = n ? '<span class="bar" style="width:' + Math.max(3, n / MAX * 100) + '%"></span>' : '<span></span>';
+    return n ? '<button class="bk-r" type="button" data-bk="' + b[0] + '" aria-pressed="false"><span>' + esc(b[1]) + '</span>' + bar + '<span class="c">' + n + '</span></button>'
+      : '<div class="bk-r z"><span>' + esc(b[1]) + '</span><span></span><span class="c">0</span></div>';
+  }).join('') + '</li>';
+}).join('') + '</ul>';
+const lh = colOf(['ev', 'he', 'pa']) + colOf(['ot', 'ap']);
+$('#bk-l').innerHTML = lh;
+$('#bk-g').innerHTML = order.map(g => '<p class="gh">' + GN[g] + '</p><div class="bk-cells">' + BK.filter(b => b[2] === g).map(b => {
+  const n = cnt(b[0]);
+  return n ? '<button class="bk-c" type="button" data-bk="' + b[0] + '" aria-pressed="false" style="--k:' + (n / MAX).toFixed(3) + '"><span class="n0">' + esc(b[1]) + '</span><span class="c">' + n + '</span></button>'
+    : '<div class="bk-c z" style="--k:0"><span class="n0">' + esc(b[1]) + '</span><span class="c">0</span></div>';
+}).join('') + '</div>').join('');
+
+/* the places, one by one */
+const FL = [['all', 'Todo el Nuevo Testamento', () => true], ['John', 'Juan', b => b === 'John'], ['pa', 'Cartas de Pablo', b => grp[b] === 'pa'], ['ot', 'Otros', b => b !== 'John' && grp[b] !== 'pa']];
+const total = f => BK.filter(b => f(b[0])).reduce((s, b) => s + cnt(b[0]), 0);
+const vf = $('#vf');
+const paintVf = () => {
+  const opts = FL.map(f => [f[0], f[1], total(f[2])]);
+  if (book) opts.push(['bk', name[book], cnt(book)]);
+  vf.innerHTML = '<span class="vf-ind" aria-hidden="true"></span>' + opts.map(o => '<button type="button" data-f="' + o[0] + '" aria-pressed="' + (o[0] === flt) + '"><span class="lb" data-l="' + esc(o[1]) + '">' + esc(o[1]) + '</span><span class="n">' + o[2] + '</span></button>').join('');
+};
+const lg = $('#lg');
+const rows = () => {
+  const f = flt === 'bk' ? (b => b === book) : FL.find(x => x[0] === flt)[2];
+  return BK.filter(b => cnt(b[0]) && f(b[0])).map(b => {
+    const vs = byBook[b[0]];
+    const j6 = b[0] === 'John' ? vs.filter(v => RV[v.replace(':', '.')]) : [];
+    const plain = vs.filter(v => !j6.includes(v));
+    return '<li data-fk="' + b[0] + '"><p class="lg-b">' + esc(b[1]) + '<span class="n">' + vs.length + (vs.length === 1 ? ' versículo' : ' versículos') + '</span></p>' +
+      (plain.length ? '<p class="lg-rf">' + plain.map(v => a(v, b[1] + ' ' + v)).join('') + '</p>' : '') +
+      (j6.length ? '<ul class="lg-v">' + j6.map(v => '<li><span class="rf">' + a(b[1] + ' ' + v) + '</span><p class="tx">' + RV[v.replace(':', '.')] + '</p></li>').join('') + '</ul>' : '') + '</li>';
+  }).join('');
+};
+const draw = () => { lg.innerHTML = rows(); };
+const indTo = animate => {
+  const ind = vf.querySelector('.vf-ind'), to = vf.querySelector('[aria-pressed="true"]');
+  if (!ind || !to) return;
+  const sr = vf.getBoundingClientRect(), r = to.getBoundingClientRect();
+  const from = ind._b;
+  const b = {x: r.left - sr.left - 1, y: r.top - sr.top - 1, w: r.width, h: r.height};
+  Object.assign(ind.style, {width: b.w + 'px', height: b.h + 'px', transform: 'translate(' + b.x + 'px,' + b.y + 'px)'});
+  ind._b = b;
+  if (animate && from && !matchMedia('(prefers-reduced-motion: reduce)').matches) ind.animate([{transform: 'translate(' + from.x + 'px,' + from.y + 'px)', width: from.w + 'px', height: from.h + 'px'}, {transform: 'translate(' + b.x + 'px,' + b.y + 'px)', width: b.w + 'px', height: b.h + 'px'}], {duration: 340, easing: 'cubic-bezier(0.22, 1, 0.36, 1)'});
+};
+const paintBooks = () => document.querySelectorAll('[data-bk]').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.bk === book && flt === 'bk')));
+const setFlt = (f, keepBook) => {
+  const prev = vf.querySelector('.vf-ind');
+  const prevB = prev && prev._b;
+  if (f !== 'bk' && !keepBook) book = null;
+  flt = f;
+  const rebuild = f === 'bk' || vf.querySelectorAll('button').length !== FL.length + (book ? 1 : 0);
+  if (rebuild) paintVf(); else vf.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === f)));
+  const ind = vf.querySelector('.vf-ind'); if (prevB) ind._b = prevB;
+  indTo(true);
+  paintBooks();
+  D.flip(lg, draw);
+};
+vf.addEventListener('click', e => { const b = e.target.closest('button[data-f]'); if (b && b.dataset.f !== flt) setFlt(b.dataset.f); });
+document.addEventListener('click', e => {
+  const b = e.target.closest('button[data-bk]');
+  if (!b) return;
+  if (book === b.dataset.bk && flt === 'bk') { setFlt('all'); return; }
+  book = b.dataset.bk;
+  setFlt('bk', true);
+  D.scrollToEl($('#lugares'));
+});
+paintVf(); draw(); requestAnimationFrame(() => indTo(false));
+addEventListener('resize', () => indTo(false));
+addEventListener('pp', e => { if (e.detail.key === 'flt') requestAnimationFrame(() => indTo(false)); });
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => indTo(false));
+
+/* Ignatius quote: same citation and reader as 09 */
+D.READERS['r-ignatius'] = {
+  kicker: 'Ignacio de Antioquía', title: 'Carta a los Esmirniotas', meta: 'c. 107–110', target: '7.1',
+  sections: [{h: 'Capítulo 7', paras: [{n: '7.1', t: 'Se abstienen de la eucaristía y de la oración, porque no confiesan que la eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y a la que el Padre, en su bondad, resucitó. Así, los que contradicen el don de Dios mueren en sus disputas; más les valdría amar, para resucitar también ellos.'}]}],
+  foot: [
+    {h: 'Fecha y autenticidad', p: 'c. 107–110, la fecha tradicional. Otros autores proponen fechas más tardías: las reúne la sección «Fechas y autenticidad» de su ficha.'},
+    {h: 'Edición y licencia', p: 'Traducción al español de Doctrina, hecha desde el texto griego de la edición de Lake y cotejada con la traducción inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885.'}
+  ]
+};
+D.CITES.smyrn71 = {kicker: 'Cita', quote: 'Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.', who: 'Ignacio de Antioquía', work: 'Carta a los Esmirniotas', loc: '7.1', date: 'c. 107–110', y: 107, y2: 110, reader: 'r-ignatius', target: '7.1'};
+})();
+</script>
+</body>
+</html>

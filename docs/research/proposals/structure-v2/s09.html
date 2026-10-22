@@ -1,0 +1,740 @@
+<!doctype html>
+<!-- Progress (fix29): done: critic fixes 1–5 (letter blurbs cut to verified transmission facts, places of writing removed; one shared escritos axis under the header; dating rows name their scholars, «hacia 2020» and the 17th-century row removed, forgery range 161–180 in chart and text; timeline starts with nothing selected and a hint; header labels Nacimiento/Muerte/Lengua; Sobre esta propuesta updated); next: nothing (smoke and shoot-all clean, screenshots checked); requests to coordinator: none; decided by agent, to confirm: letter lines use only [verified] transmission facts from writers-to-325.md (Magnesios, Tralianos, Filadelfios have no line); dating citations are author names (years only for Joly, Hübner, Lechner): the repo has no titles, and the file verified them via Wikipedia; traditional date cited to the Clavis «sub Traiano»; forgery range unified to 161–180 (the file also gives c. 165–175); Quién fue paragraph and facts left as they were (not flagged); Ignatius reader foot rewritten to point to Fechas y autenticidad; no birth estimate; letter names open the reader; prev/next skip Didajé -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ignacio de Antioquía</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<script>(function(){var q=new URLSearchParams(location.search),d=document.documentElement;d.dataset.ent=q.get('entrada')||'title-fade';if(q.get('cambio')==='fundido')d.dataset.pf='1'})()</script>
+<style>
+.ig-head .crumbs{margin-bottom:40px}
+.ig-k{margin:0 0 10px}
+.facts{display:flex;flex-wrap:wrap;gap:18px 44px;margin:26px 0 0;padding:0}
+.facts > div{min-width:0}
+.facts dt{margin:0 0 3px;font-size:12.5px;color:var(--ink-3)}
+.facts dd{margin:0;font-family:var(--body);font-size:18px;line-height:1.4;color:var(--ink)}
+.facts dd .muted{font-size:15px}
+.ig-tl-link{display:inline-block;margin-top:24px;font-size:14px}
+
+.tlw{position:relative}
+.tl-box{position:relative}
+.tl-in{position:relative;padding:4px 0 0}
+.tl-gw{border-top:1px solid var(--rule)}
+.tl-gw:first-of-type{border-top:0}
+.tl-g{position:sticky;left:0;width:max-content;margin:0;padding:14px 0 4px;font-size:12.5px;color:var(--ink-3)}
+.tl-gw:first-of-type .tl-g{padding-top:2px}
+.tl-hint{display:none;margin:0 0 10px;font-size:12.5px;color:var(--ink-3)}
+.tl-row{position:relative;height:40px}
+.tl-band{position:absolute;top:0;bottom:30px;background:var(--accent-weak);pointer-events:none}
+.tl-grid{position:absolute;top:0;bottom:30px;width:1px;background:var(--rule);opacity:.6;pointer-events:none}
+.ti{position:absolute;top:4px;height:34px;border:0;background:none;padding:0;margin:0;cursor:pointer;text-align:left;color:var(--ink-2);font-family:var(--ui);font-size:13.5px;line-height:1;white-space:nowrap;border-radius:4px}
+.ti .bar{position:absolute;top:6px;height:6px;border-radius:3px;background:var(--rule-2);transition:background-color var(--fast) ease}
+.ti .bar.dash{background:none;border-top:2px dashed var(--rule-2);height:0;top:8px;border-radius:0}
+.ti .dot{position:absolute;top:8px;width:2.5px;height:2.5px;border-radius:50%;background:var(--ink-3)}
+.ti .ring{position:absolute;top:4px;width:10px;height:10px;margin-left:-5px;border-radius:50%;border:1.5px solid var(--ink-3);background:var(--bg);transition:border-color var(--fast) ease,background-color var(--fast) ease}
+.ti .rng{position:absolute;top:7px;height:4px;border-radius:2px;background:var(--ink-3);opacity:.55}
+.ti .cl{position:absolute;top:7px;height:4px;border-radius:2px;background:var(--rule-2)}
+.ti .cl.open{border-radius:2px 0 0 2px}
+.ti .tx{position:absolute;top:19px;padding:0 1px;color:var(--ink-2);transition:color var(--fast) ease}
+.ti:hover .tx{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:3px}
+.ti:hover .bar{background:var(--ink-3)}
+.ti:hover .ring{border-color:var(--ink)}
+.ti[aria-pressed="true"] .tx{color:var(--ink);font-weight:600}
+.ti[aria-pressed="true"] .bar,.ti[aria-pressed="true"] .rng,.ti[aria-pressed="true"] .cl{background:var(--ink);opacity:1}
+.ti[aria-pressed="true"] .ring{border-color:var(--ink);background:var(--ink)}
+.ti.hl .bar{background:var(--accent)}
+.ti.hl .tx{color:var(--accent);font-weight:500}
+.ti.hl[aria-pressed="true"] .tx{font-weight:600}
+.ti.hl .dot{background:var(--accent)}
+.tl-ax{position:relative;height:46px;border-top:1px solid var(--ink-3);margin-top:6px}
+.tl-ax .tk{position:absolute;top:0;width:1px;height:6px;background:var(--ink-3)}
+.tl-ax .tn{position:absolute;top:10px;transform:translateX(-50%);font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tl-ax .tn.e0{transform:none}.tl-ax .tn.e1{transform:translateX(-100%)}
+.tl-ax .hlb{position:absolute;top:-3px;height:5px;background:var(--accent);border-radius:2px}
+.tl-ax .hln{position:absolute;top:10px;transform:translateX(-50%);font-size:12.5px;font-weight:600;color:var(--accent);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tl-ax .sel{position:absolute;top:-3px;height:5px;background:var(--ink);border-radius:2px;min-width:3px}
+.tl-ax .seln{position:absolute;top:27px;transform:translateX(-50%);font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tl-key{display:flex;flex-wrap:wrap;gap:6px 22px;margin:4px 0 0;padding:0;list-style:none;font-size:12.5px;color:var(--ink-3)}
+.tl-key li{display:flex;align-items:center;gap:8px}
+.tl-key svg{flex:none;color:var(--rule-2)}
+
+
+.td-peek-w{position:sticky;bottom:env(safe-area-inset-bottom,0px);z-index:4;height:0}
+.td-peek{position:absolute;left:0;right:0;bottom:0;height:64px;display:none;border-top:1px solid var(--rule-2);background:var(--bg);opacity:var(--pk-o,1)}
+.td-peek::before{content:"";position:absolute;inset:0;background-image:var(--tex);background-size:420px 420px;opacity:var(--tex-op);mix-blend-mode:multiply;pointer-events:none}
+html[data-pp-tvis="b"] .td-peek.on{display:block}
+.td-peek.off{visibility:hidden;pointer-events:none}
+.pk-in{position:relative;display:flex;align-items:center;gap:8px 20px;height:100%}
+.pk-t{flex:1;min-width:0;font-size:14px;line-height:1.45}
+.pk-t b{font-family:var(--head);font-weight:400;font-size:18px;color:var(--ink);font-variation-settings:"opsz" 24}
+.pk-t .pk-d{margin-left:10px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.pk-h{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pk-t .pk-s{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--ink-2)}
+.pk-a{position:relative;flex:none;font-size:14px;white-space:nowrap}
+.pk-a::before{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;transform:translateY(-50%)}
+.td-cue{position:absolute;top:14px;z-index:3;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:24px;padding:2px 8px;border:1px solid var(--accent-mid);border-radius:5px;background:var(--bg);font-size:12.5px;font-weight:500;line-height:1.2;color:var(--accent);white-space:nowrap;cursor:pointer;transition:background-color var(--fast) ease}
+.td-cue::before{content:"";position:absolute;left:-2px;right:-2px;top:50%;height:44px;transform:translateY(-50%)}
+.td-cue:hover{background:var(--accent-weak)}
+.td-n:focus{outline:none}
+.td-n:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+@media (max-width:720px){ .td-peek{left:-16px;right:-16px;height:auto;min-height:64px;padding:8px 16px} .pk-in{flex-wrap:wrap;gap:2px 16px} .pk-t{flex-basis:100%} .pk-t b{font-size:16.5px} }
+.td{font-family:var(--ui)}
+.td-k{margin:0 0 4px;font-size:12.5px;color:var(--ink-3)}
+.td-n{margin:0;font-family:var(--head);font-weight:400;font-size:24px;line-height:1.2;color:var(--ink);font-variation-settings:"opsz" 30}
+.td-d{margin:6px 0 0;max-width:68ch;font-size:14px;line-height:1.5;color:var(--ink);font-weight:500}
+.td-t{margin:8px 0 0;font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.55;color:var(--ink-2);max-width:62ch}
+.td-a{display:inline-block;margin-top:10px;font-size:14px}
+.td-below{margin-top:18px;padding:18px 0 4px;border-top:1px solid var(--rule);min-height:150px}
+.td-below:has(.td-empty){min-height:0}
+.td-empty{margin:0;font-size:14px;line-height:1.5;color:var(--ink-3)}
+.td-side{display:none}
+.td-row{display:none}
+html[data-pp-tdet="side"] .tlw.has-side{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:0 32px;align-items:start}
+html[data-pp-tdet="side"] .tlw.has-side .td-side{display:block;position:sticky;top:calc(var(--top-h) + 24px);padding:2px 0 0 22px;border-left:1px solid var(--rule)}
+html[data-pp-tdet="side"] .tlw.has-side .td-side .td-n{font-size:22px}
+html[data-pp-tdet="side"] .tlw.has-side .td-below{display:none}
+html[data-pp-tdet="row"] .td-below{display:none}
+html[data-pp-tdet="row"] .td-row{display:block;position:relative;padding:4px 0 14px}
+.td-row .td{position:relative;max-width:440px;padding:12px 16px 14px;border:1px solid var(--rule-2);border-radius:6px;background:var(--bg);white-space:normal}
+.td-row .td-n{font-size:20px}
+.td-row .td-t{font-size:15.5px}
+
+.qf{container-type:inline-size}
+.qf-g{display:block}
+.qf-t .p:last-child{margin-bottom:0}
+.qf-d{margin:28px 0 0;padding:0}
+.qf-d > div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:10px 0;border-top:1px solid var(--rule)}
+.qf-d > div:last-child{border-bottom:1px solid var(--rule)}
+.qf-d dt{font-size:13px;color:var(--ink-3);padding-top:2px}
+.qf-d dd{margin:0;font-family:var(--body);font-size:16.5px;line-height:1.45;color:var(--ink)}
+@container (min-width:900px){
+  .qf-g{display:grid;grid-template-columns:minmax(0,640px) 260px;gap:0 56px;align-items:start}
+  .qf-d{margin:6px 0 0}
+  .qf-d > div{grid-template-columns:1fr;gap:2px}
+}
+.srcl-n .ln-side{text-align:left}
+.srcl-n em{font-style:normal}
+#escr.srcl > li{grid-template-columns:minmax(0,1fr) 104px}
+#escr.srcl > li > span:empty{display:none}
+#escr .srcl-desc{max-width:680px}
+.esc-ax{display:grid;grid-template-columns:auto minmax(180px,300px);gap:6px 20px;align-items:start;justify-content:start;margin:0 0 20px}
+.esc-axl{margin:0;padding-top:2px;font-size:13.5px;color:var(--ink-3)}
+.esc-ax .mini{margin:0}
+.grc{font-family:var(--greek);font-size:1.04em}
+.nw{white-space:nowrap}
+
+.h3s{margin:40px 0 10px;font-family:var(--head);font-weight:400;font-size:24px;line-height:1.25;font-variation-settings:"opsz" 30}
+.h3s:first-of-type{margin-top:6px}
+.dch{list-style:none;margin:6px 0 18px;padding:0}
+.dch > li{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:4px 24px;align-items:center;padding:11px 0;border-top:1px solid var(--rule)}
+.dch-l{margin:0;font-size:14.5px;line-height:1.45;color:var(--ink-3)}
+.dch-l b{display:block;font-weight:500;color:var(--ink)}
+.dch-tr{position:relative;height:20px}
+.dch-tr .ax{position:absolute;left:0;right:0;top:10px;height:1px;background:var(--rule)}
+.dch-tr .bd{position:absolute;top:7px;height:7px;border-radius:2px;background:var(--ink-3)}
+.dch-tr .dpt{position:absolute;top:6px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--ink-3)}
+.dch-tr .bd.reign{background:none;border:1px solid var(--ink-3);height:7px;top:7px;opacity:.8}
+.dch-tr .rl{position:absolute;top:17px;font-size:11px;line-height:1.2;color:var(--ink-3);white-space:nowrap}
+.dch li:has(.rl) .dch-tr{height:32px}
+.dch-tr .end{position:absolute;top:5px;width:2px;height:11px;margin-left:-1px;background:var(--ink-3)}
+.dch-tr .bd.open{top:10px;height:0;border-radius:0;background:none;border-top:2px dashed var(--ink-3);margin-top:-1px}
+.dch-more-b{margin-top:10px}
+.dch-l .ln-side{font-size:inherit}
+.dch-c b{font-weight:500}
+.dch li.hl .bd{background:var(--accent)}
+.dch li.hl .dch-l b{color:var(--accent)}
+.dch-axis{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;border-top:1px solid var(--rule-2)}
+.dch-axis .ln{position:relative;height:22px}
+.dch-axis span{position:absolute;top:5px;transform:translateX(-50%);font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.dch-axis span.e0{transform:none}.dch-axis span.e1{transform:translateX(-100%)}
+.rec{list-style:none;margin:8px 0 0;padding:0}
+.rec > li{display:grid;grid-template-columns:170px minmax(0,1fr);gap:4px 24px;padding:14px 0;border-top:1px solid var(--rule)}
+.rec > li:last-child{border-bottom:1px solid var(--rule)}
+.rec-n{margin:0;padding-top:2px;font-size:15px;font-weight:500;color:var(--ink)}
+.rec-n small{display:block;margin-top:2px;font-size:13px;font-weight:400;color:var(--ink-3)}
+.rec .p-s{font-size:16.5px}
+.rec li.ok .rec-n small{color:var(--ink-2)}
+
+.wg{padding:0}
+.wg + .wg{margin-top:0}
+.wg-h{margin:0;font-size:13.5px;font-weight:500;color:var(--ink-3)}
+.wl{list-style:none;margin:0;padding:0}
+.wl > li{padding:13px 0;border-top:1px solid var(--rule)}
+.wl-t{font-family:var(--body);font-size:18px;line-height:1.4}
+.wl-r{margin:4px 0 0;font-family:var(--body);font-weight:300;font-size:16px;line-height:1.5;color:var(--ink-3)}
+.wl-r b{font-weight:400;color:var(--ink-2)}
+html[data-pp-donde="left"] .wg{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 24px;border-top:1px solid var(--rule)}
+html[data-pp-donde="left"] .wg:last-of-type{border-bottom:1px solid var(--rule)}
+html[data-pp-donde="left"] .wg-h{padding-top:16px}
+html[data-pp-donde="left"] .wl > li:first-child{border-top:0}
+html[data-pp-donde="head"] .wg{margin-top:30px}
+html[data-pp-donde="head"] .wg:first-of-type{margin-top:0}
+html[data-pp-donde="head"] .wg-h{margin-bottom:6px}
+html[data-pp-donde="head"] .wl > li:last-child{border-bottom:1px solid var(--rule)}
+
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:84px}
+.pn a{display:block;padding:14px 18px 15px;border:1px solid var(--rule);border-radius:6px;text-decoration:none;color:var(--ink);transition:border-color var(--fast) ease,background-color var(--fast) ease}
+.pn a:hover{border-color:var(--rule-2);background:var(--hover)}
+.pn .nx{text-align:right}
+.pn small{display:block;margin-bottom:4px;font-size:12.5px;color:var(--ink-3)}
+.pn span{font-family:var(--body);font-size:16.5px;line-height:1.4}
+.rd-p .dn{width:52px;left:-62px}
+.dch-after{margin-top:22px}
+
+@media (max-width:720px){
+  .dch > li,.dch-axis{grid-template-columns:1fr;gap:6px}
+  .dch-axis > div:first-child{display:none}
+  .rec > li{grid-template-columns:1fr}
+  .esc-ax{grid-template-columns:minmax(0,1fr);max-width:320px}
+  html[data-pp-donde="left"] .wg{grid-template-columns:1fr}
+  html[data-pp-donde="left"] .wg-h{padding-top:14px}
+  html[data-pp-donde="left"] .wl > li:first-child{padding-top:6px}
+  .pn{grid-template-columns:1fr}
+  .pn .nx{text-align:left}
+  .facts{gap:14px 28px}
+  .facts > div{flex:1 1 40%}
+  .tl-box{overflow-x:auto;overscroll-behavior-x:contain;margin:0 -16px;padding:0 16px;scrollbar-width:thin}
+  .tl-in{width:780px}
+  .tl-hint{display:block}
+  .td-row .td{max-width:300px}
+}
+</style>
+</head>
+<body data-page="ig">
+<main class="main" lang="es">
+  <div class="col ig-head" data-label="Ignacio de Antioquía">
+    <nav class="crumbs" aria-label="Ruta"><a href="#" data-nb>Historia</a><span class="sl" aria-hidden="true">/</span><a href="#" data-nb>Padres</a><span class="sl" aria-hidden="true">/</span><span aria-current="page">Ignacio de Antioquía</span></nav>
+    <p class="kicker ig-k">Uno de los Padres apostólicos</p>
+    <h1>Ignacio de Antioquía</h1>
+    <dl class="facts">
+      <div><dt>Nacimiento</dt><dd>desconocido</dd></div>
+      <div><dt>Muerte</dt><dd>c. 107–110, en Roma</dd></div>
+      <div><dt>Obispo de</dt><dd>Antioquía, Siria</dd></div>
+      <div><dt>Lengua</dt><dd>griego</dd></div>
+    </dl>
+    <a class="ln-go ig-tl-link" href="#" data-nb>Ver en la línea de tiempo</a>
+  </div>
+
+  <section class="sec wide" id="tiempo" data-label="Tiempo contemporáneo">
+    <h2>Tiempo contemporáneo</h2>
+    <p class="sub">Su vida junto a la de quienes vivieron en su época, del año 30 al 170.</p>
+    <div class="pp" data-pp="tvis" data-label="Probar: que se note el detalle" data-opts="b=Avance fijo (elegido)|now=Actual|a=La primera vez|c=Solo si no se ve" data-default="b"><b>Actual:</b> el detalle cambia debajo de la línea y nada más. <b>La primera vez:</b> tu idea; solo con la primera elección de la visita, si el detalle está fuera de la pantalla, la página baja lo mínimo para mostrar su título (0,36 s) y una marca «Ver el detalle abajo» queda junto a lo elegido hasta que lo veas; después, nada se mueve. <b>Avance fijo:</b> la página nunca se mueve; una franja de 64 px pegada al borde de abajo de la pantalla muestra el nombre, la fecha, una línea y el mismo enlace que el detalle («Ir a la página de…»). Al bajar, la franja se suelta justo encima del detalle y se apaga a medida que el detalle entra, sin saltos. Lo más claro al elegir varias veces, pero tapa un poco de la línea. <b>Solo si no se ve:</b> en cada elección, si el título del detalle está fuera de la pantalla, la página baja lo justo para mostrarlo con un poco de texto (0,32 s), nunca sube, se corta si movés la rueda o tocás la pantalla, y lo elegido sigue a la vista. Es la que más se nota y la única que mueve la página cada vez. Vienen de nueve productos reales (docs/research/timeline-detail-visibility.md); ninguno mueve la página en cada elección.</div>
+    <div class="tlw" id="tlw">
+      <div>
+        <p class="tl-hint">Desliza la línea hacia los lados para recorrer los años.</p>
+        <div class="tl-box" id="tl-box"><div class="tl-in" id="tl-in"></div></div>
+        <ul class="tl-key" aria-label="Cómo leer la línea">
+          <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><rect x="0" y="0" width="28" height="6" rx="3" fill="currentColor"/></svg>Vida de una persona</li>
+          <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><path d="M0 3h12" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/><rect x="13" y="0" width="15" height="6" rx="3" fill="currentColor"/></svg>Nacimiento estimado</li>
+          <li><svg width="28" height="6" viewBox="0 0 28 6" aria-hidden="true"><circle cx="2" cy="3" r="1" fill="currentColor" opacity=".35"/><circle cx="8" cy="3" r="1" fill="currentColor" opacity=".6"/><circle cx="14" cy="3" r="1" fill="currentColor"/><rect x="18" y="0" width="10" height="6" rx="3" fill="currentColor"/></svg>Nacimiento desconocido</li>
+          <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.2" fill="none" stroke="var(--ink-3)" stroke-width="1.5"/></svg>Hecho</li>
+        </ul>
+        <div class="td-peek-w"><div class="td-peek" id="td-peek"><div class="pk-in" id="pk-in"></div></div></div>
+        <div class="td-below" id="td-below" aria-live="polite"></div>
+      </div>
+      <aside class="td-side" id="td-side" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section class="sec wide qf" id="quien" data-label="Quién fue">
+    <h2>Quién fue</h2>
+    <div class="qf-g">
+      <div class="qf-t">
+        <p class="p">Obispo de Antioquía que, según la tradición, fue llevado preso a Roma y martirizado bajo Trajano. Las siete cartas que escribió durante el viaje insisten en la unidad en torno al obispo, presbíteros y diáconos, y polemizan contra quienes negaban la realidad de la carne de Cristo.</p>
+        <p class="p">Sus adversarios son los <a class="ln-go" href="#" data-nb>docetas</a>. Camino del martirio, repite que Cristo «verdaderamente» nació de María, comió, bebió, fue crucificado y resucitó, y argumenta que si solo aparentó sufrir, su propio martirio no tendría sentido (Tralianos 9–10; Esmirniotas 1–7). Una de sus cartas está dirigida a <a class="ln-go" href="#" data-nb>Policarpo de Esmirna</a>, que retoma la fórmula de la primera carta de Juan: confesar que Jesucristo «ha venido en carne» (1 Juan 4:2).</p>
+      </div>
+      <dl class="qf-d">
+        <div><dt>Región</dt><dd>Siria; ciudad de Antioquía</dd></div>
+        <div><dt>Lengua</dt><dd>Griego</dd></div>
+        <div><dt>Función</dt><dd>Obispo de Antioquía</dd></div>
+        <div><dt>Muerte</dt><dd>c. 107–110, en Roma, según Eusebio</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec wide" id="escritos" data-label="Sus escritos">
+    <h2>Sus escritos</h2>
+    <p class="sub">Siete cartas, las que enumera Eusebio (Historia eclesiástica 3.36). Seis se conservan en griego en un solo códice de Florencia, del siglo XI. Cada nombre abre su texto completo.</p>
+    <div class="esc-ax" id="esc-ax"><p class="esc-axl">Las siete, c. 107–110</p></div>
+    <ul id="escr"></ul>
+  </section>
+
+  <section class="sec wide" id="fechas" data-label="Fechas y autenticidad">
+    <h2>Fechas y autenticidad</h2>
+    <div class="col">
+      <h3 class="h3s">Las fechas propuestas</h3>
+      <p class="p">Ninguna fuente antigua da la fecha de su nacimiento. Según la fecha tradicional, murió c. 107–110, bajo el emperador Trajano (98–117). Otros autores proponen fechas más tardías, para su muerte o para las cartas. Cada nombre abre quién es.</p>
+      <div class="pp" data-pp="dfmt" data-label="Probar: cómo se escribe cada fecha" data-opts="two=Fecha y, debajo, qué se fecha|codex=Una línea, como propone Codex" data-default="two">Las dos usan la misma forma para la fecha, la que propone la investigación: «julio de 116», «c. 110», «105–117», «años 140», «época de Trajano (98–117)», «segunda mitad del siglo II»; siempre dicen qué se fecha (la muerte, la persecución, las cartas). <b>Fecha y, debajo:</b> conserva el diseño actual, la fecha arriba y debajo qué se fecha y según quién. <b>Una línea:</b> la forma exacta de Codex, «Decrept · julio de 116 — persecución en Antioquía»; la dejo para comparar, pero une datos con «·» y «—», que está en la lista de lo genérico que evitamos.</div>
+    </div>
+    <ul class="dch" id="dch" aria-label="Fechas propuestas"></ul>
+    <div class="col dch-after">
+      <h3 class="h3s">Tres formas de las cartas</h3>
+      <p class="p">Las cartas llegaron hasta hoy en tres formas distintas, que los estudiosos llaman recensiones.</p>
+      <ul class="rec">
+        <li class="ok"><p class="rec-n">Recensión media<small>La que acepta la mayoría</small></p><p class="p-s">Las siete cartas que enumera Eusebio en su Historia eclesiástica (3.36). Es el texto que esta página presenta y el que Doctrina cita.</p></li>
+        <li><p class="rec-n">Recensión larga<small>Siglo IV</small></p><p class="p-s">Las siete cartas con añadidos y seis cartas más. Se considera espuria; suele atribuirse al compilador de las Constituciones apostólicas.</p></li>
+        <li><p class="rec-n">Recensión corta<small>Publicada en 1845</small></p><p class="p-s">Un resumen en siríaco de tres cartas: a los Efesios, a los Romanos y a Policarpo.</p></li>
+      </ul>
+      <h3 class="h3s">Cómo se recuperó el texto</h3>
+      <ul class="rec">
+        <li><p class="rec-n">Edad Media</p><p class="p-s">Solo circulaba la recensión larga, también en las primeras ediciones impresas.</p></li>
+        <li><p class="rec-n">1845</p><p class="p-s">William Cureton publicó la versión siríaca de tres cartas y sostuvo que era la original, lo que abrió un segundo debate.</p></li>
+        <li><p class="rec-n">1873 y 1885</p><p class="p-s">Theodor Zahn y J. B. Lightfoot mostraron que el texto siríaco es un resumen. Desde entonces, la recensión media es el consenso; la edición de Lightfoot sigue siendo la última edición crítica completa.</p></li>
+        <li><p class="rec-n">Desde los años 1970</p><p class="p-s">Una minoría (R. M. Hübner, T. Lechner) sostiene que las siete cartas son de otra mano, de la segunda mitad del siglo II. La mayoría sigue aceptándolas.</p></li>
+        <li><p class="rec-n">Hoy</p><p class="p-s">Todavía no existe un estudio de la relación entre todos los manuscritos, y antes de Eusebio ningún autor cita con claridad más que unas pocas cartas.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec col" id="donde" data-label="Dónde aparece en Doctrina">
+    <h2>Dónde aparece en Doctrina</h2>
+    <p class="sub">Las páginas que lo citan, agrupadas por lugar.</p>
+    <div class="pp" data-pp="donde" data-label="Probar: cómo se agrupan" data-opts="left=Lugar al margen|head=Lugar como título" data-default="left"><b>Al margen:</b> el estilo de P1 (etiqueta gris a la izquierda) con la agrupación por lugar de P2; se recorre de un vistazo. <b>Como título:</b> cada lugar encabeza su lista; más simple, pero más largo y más parecido a un índice.</div>
+    <div class="wg"><p class="wg-h">En una doctrina</p><ul class="wl">
+      <li><a class="ln-go wl-t" href="s02.html#s-prim" data-go="02" data-hash="s-prim">La Eucaristía: lo que escribieron los primeros cristianos</a><p class="wl-r">Testigo: «la Eucaristía es la carne de nuestro Salvador Jesucristo» (Carta a los Esmirniotas 7.1).</p></li>
+      <li><a class="ln-go wl-t" href="#" data-nb>La presencia «espiritual» es una ausencia real con otro nombre</a><p class="wl-r"><b>Objeción a la postura reformada.</b> La objeción lo cita junto a Justino; la respuesta explica cómo leen los reformados su lenguaje.</p></li>
+      <li><a class="ln-go wl-t" href="#" data-nb>La Iglesia antigua creía que el pan es la carne de Cristo</a><p class="wl-r"><b>Objeción a la postura bautista.</b> La objeción cita Esmirniotas 7; la respuesta lo lee dentro de su polémica contra los docetas.</p></li>
+    </ul></div>
+    <div class="wg"><p class="wg-h">En la Biblia</p><ul class="wl">
+      <li><a class="ln-go wl-t" href="#" data-nb>Juan 6:53</a><p class="wl-r">Entre los Padres que comentan el versículo: la Carta a los Efesios llama al pan partido «medicina de inmortalidad» (20.2).</p></li>
+    </ul></div>
+    <div class="wg"><p class="wg-h">En la historia</p><ul class="wl">
+      <li><a class="ln-go wl-t" href="#" data-nb>Docetismo</a><p class="wl-r">La corriente contra la que escribe (Tralianos 9–10; Esmirniotas 1–7).</p></li>
+      <li><a class="ln-go wl-t" href="#" data-nb>Judaizantes</a><p class="wl-r">Advierte contra «judaizar» (Magnesios 8–10).</p></li>
+      <li><a class="ln-go wl-t" href="#" data-nb>Policarpo de Esmirna</a><p class="wl-r">Destinatario de una de sus siete cartas.</p></li>
+    </ul></div>
+    <nav class="pn" aria-label="Padres anterior y siguiente">
+      <a href="#" data-nb><small>Anterior</small><span>Clemente de Roma</span></a>
+      <a class="nx" href="#" data-nb><small>Siguiente</small><span>Papías de Hierápolis</span></a>
+    </nav>
+  </section>
+  <section class="pp-after" aria-label="Sobre esta propuesta">
+    <h2>Sobre esta propuesta</h2>
+    <p>La ficha de Ignacio de Antioquía (pantalla 09) en el orden de tu copia de P1·09 («MODIFICACIONES MIAS»): encabezado, Tiempo contemporáneo, Quién fue, Sus escritos, Fechas y autenticidad, Dónde aparece en Doctrina, anterior y siguiente. Todo sale del repo: history.json, writers-to-325.md, eucharist.v2.json y john6.json. Sin imágenes de personas y sin el diseño tipo museo (DECISIONS 2026-10-19).</p>
+    <h3>Qué cambió en esta vuelta (v2)</h3>
+    <ul>
+      <li>Sus escritos: sin el nombre griego bajo cada carta, como pediste. Cada carta tiene una descripción nueva, escrita con el método acordado: lo que comparten maestros católicos, ortodoxos, luteranos, reformados, evangélicos y bautistas, comprobado contra el texto de Lake (1912), sin las lecturas de un solo lado (<i>ignatius-letters-descriptions.md</i>). Cada una termina con una cita breve; el lugar abre la ventana de cita, que dice que la traducción es de Doctrina asistida por IA. Reemplazan las notas sobre cómo llegó cada carta.</li>
+      <li>Las listas entran en cascada y la página hace el fundido, como el resto.</li>
+    </ul>
+    <h3>Tiempo contemporáneo</h3>
+    <ul>
+      <li>La línea grande de P2, del año 30 al 170. <b>Las personas son tramos de vida</b>; los hechos, aros o rangos cortos; las corrientes que combatió, rangos finos (DECISIONS 2026-10-15). Ignacio va en el acento, con su fecha exacta escrita sobre el eje, y una franja suave cruza todas las filas: se ve de un vistazo quién vivía cuando murió. Lo que elegís también escribe sus fechas sobre el eje (DECISIONS 2026-10-14).</li>
+      <li><b>Nacimientos:</b> estimado, el tramo empieza punteado (Papías, Policarpo, Justino); desconocido, unos puntos que se apagan, de largo fijo y sin año de inicio (Clemente, Ignacio), para no dibujar un año que nadie registró. En el encabezado dice «desconocido» a secas: el repo no tiene una fuente para «suele estimarse c. 35», y la regla pide la estimación solo con su fuente.</li>
+      <li>«†» solo en las etiquetas de la línea, con «murió» como tooltip y para lectores de pantalla; en el resto, palabras.</li>
+      <li><b>Detalle del elemento elegido</b> (switch): debajo de la línea, en su fila o al costado. Las tres reemplazan la etiqueta azul; cada nota del switch dice qué cuesta.</li>
+      <li><b>Teléfono:</b> la línea se desliza hacia los lados dentro de su caja (la página nunca), arranca centrada en Ignacio y los nombres de grupo quedan fijos a la izquierda. Descarté pasarla a vertical: se pierde la comparación de tramos, que es el sentido de la sección.</li>
+    </ul>
+    <h3>Sus escritos</h3>
+    <ul>
+      <li>El mismo componente que «Fuentes citadas» de 04, sin el eje en cada fila: como las siete comparten c. 107–110, el eje va una vez arriba (100 a 180, el mismo del gráfico de Fechas y autenticidad). Con autores cuyas obras se reparten en el tiempo (Agustín), cada fila vuelve a tener su eje.</li>
+      <li>Diferencia con 04: acá <b>el nombre abre la carta completa</b>, no la ventana de cita, porque es una obra entera y no un pasaje. La cita de cada descripción sí abre la ventana. Solo Esmirniotas tiene texto completo en el repo; las otras seis avisan que no son parte de la propuesta.</li>
+    </ul>
+    <h3>Fechas y autenticidad</h3>
+    <ul>
+      <li>Un gráfico chico con las fechas propuestas (la tradicional en el acento), las tres recensiones y cómo se recuperó el texto. La fecha, la autenticidad y la edición de cada carta quedan en su lector (DECISIONS 2026-10-06), para no repetir.</li>
+      <li>«Recensión» queda como texto y no como término del glosario: el repo todavía no la define. La frase la explica en contexto.</li>
+    </ul>
+    <h3>Dónde aparece en Doctrina</h3>
+    <ul>
+      <li>Agrupado por lugar, como en P2, en la columna principal y con el estilo de P1. No incluye el «Por qué» de la postura católica: el dosier católico no cita a Ignacio (el Catecismo sí, en 1331 y 1405, pero el dosier no usa esas citas).</li>
+      <li>Anterior y siguiente: Clemente de Roma y Papías de Hierápolis. La Didajé queda en medio en el orden del repo, pero es una obra anónima, no una persona.</li>
+    </ul>
+    <h3>Lo que se descarta</h3>
+    <ul>
+      <li>La etiqueta azul para el elemento elegido; «m.»; Ignacio como un punto en su muerte; un año de nacimiento sin fuente; la columna lateral de «Dónde aparece».</li>
+      <li>AI-slop que evita: tarjetas con sombra, gradientes, títulos en mayúsculas espaciadas, «·» uniendo datos, «→» pegado a los enlaces, cruces como adorno (el † es signo de muerte y solo va en la línea), un color por tradición, columnas apretadas en el teléfono.</li>
+    </ul>
+    <h3>Qué hay que decidir</h3>
+    <ul>
+      <li>Cómo se nota el detalle de la línea: actual, la primera vez, avance fijo o solo si no se ve (v2). El detalle queda debajo de la línea, como pediste.</li>
+      <li>El formato de las fechas propuestas: fecha arriba y qué se fecha debajo, o una línea como propone Codex (v2).</li>
+      <li>Las descripciones nuevas de las cartas y sus traducciones (todavía no las leíste).</li>
+      <li>La franja de Ignacio cruzando toda la línea: ¿suma o alcanza con la marca del eje?</li>
+      <li>Sus escritos: ¿el nombre abre la carta (como acá) o la ventana de cita (como en 04)?</li>
+      <li>Dónde aparece: lugar al margen o como título.</li>
+      <li>Nacimiento: «desconocido» hasta tener la fuente de la estimación, o buscarla.</li>
+    </ul>
+  </section>
+</main>
+<script src="base.js"></script>
+<script>
+(() => {
+const esc = D.esc;
+const LO = 30, HI = 170;
+const pct = y => (Math.max(LO, Math.min(HI, y)) - LO) / (HI - LO) * 100;
+const T = [
+  {g: 'Personas', id: 'clem', kind: 'Padre de la Iglesia', name: 'Clemente de Roma', lab: 'Clemente de Roma', dl: '†c. 99', sr: 'murió c. 99', unk: true, d1: 99, d2: 101,
+    dates: 'Nacimiento desconocido. Murió c. 99–101, según la tradición.',
+    text: 'Figura destacada de la Iglesia de Roma a fines del siglo I. Su carta a los corintios (c. 96) es uno de los escritos cristianos no canónicos más antiguos que se conservan.', link: 'Ir a la página de Clemente de Roma'},
+  {g: 'Personas', id: 'ig', kind: 'Padre de la Iglesia', name: 'Ignacio de Antioquía', lab: 'Ignacio de Antioquía', dl: '†c. 107–110', sr: 'murió c. 107–110', unk: true, d1: 107, d2: 110, hl: true,
+    dates: 'Nacimiento desconocido. Murió c. 107–110, mártir en Roma, bajo Trajano.',
+    text: 'Obispo de Antioquía. Llevado preso a Roma, escribió en el camino las siete cartas que se conservan.'},
+  {g: 'Personas', id: 'pap', kind: 'Padre de la Iglesia', name: 'Papías de Hierápolis', lab: 'Papías de Hierápolis', dl: 'c. 70–130', ends: ['c. 70', 'c. 130'], b0: 60, b: 70, d1: 130,
+    dates: 'Nació c. 60–70 y murió c. 130. Las dos fechas son estimaciones.',
+    text: 'Obispo de Hierápolis que, según Ireneo, había escuchado a Juan y fue compañero de Policarpo. Su obra se perdió; los fragmentos que se conservan contienen las noticias más antiguas sobre el origen de los evangelios de Marcos y Mateo.', link: 'Ir a la página de Papías de Hierápolis'},
+  {g: 'Personas', id: 'pol', kind: 'Padre de la Iglesia', name: 'Policarpo de Esmirna', lab: 'Policarpo de Esmirna', dl: 'c. 69–155', ends: ['c. 69', '155'], b0: 61, b: 69, d1: 155,
+    dates: 'Nació c. 69, según su propia cuenta de 86 años sirviendo a Cristo. Murió mártir en Esmirna en 155 o 156; Eusebio lo sitúa c. 167.',
+    text: 'Obispo de Esmirna que, según Ireneo, había conocido al apóstol Juan. Ignacio le escribió una de sus siete cartas.', link: 'Ir a la página de Policarpo de Esmirna'},
+  {g: 'Personas', id: 'jus', kind: 'Padre de la Iglesia', name: 'Justino Mártir', lab: 'Justino Mártir', dl: 'c. 100–165', ends: ['c. 100', 'c. 165'], b0: 92, b: 100, d1: 165,
+    dates: 'Nació c. 100. Murió mártir en Roma c. 162–168; suele darse 165.',
+    text: 'Filósofo nacido en Flavia Neápolis, en Samaria, que tras su conversión enseñó en Roma y defendió la fe ante emperadores y ante interlocutores judíos.', link: 'Ir a la página de Justino Mártir'},
+  {g: 'Corrientes que combatió', id: 'jud', kind: 'Corriente', name: 'Judaizantes', lab: 'Judaizantes', dl: 's. I', ends: ['s. I'], s: 45, e: 100,
+    dates: 'Siglo I',
+    text: 'Sostenían que los cristianos de origen gentil debían circuncidarse y observar la Ley de Moisés. Ignacio advierte contra «judaizar» en la Carta a los Magnesios (8–10).', link: 'Ir a la página de los judaizantes'},
+  {g: 'Corrientes que combatió', id: 'doc', kind: 'Corriente', name: 'Docetismo', lab: 'Docetismo', dl: 'fines del s. I al s. II', ends: ['fines del s. I al s. II'], s: 90, e: 250,
+    dates: 'Desde fines del siglo I hasta el siglo II',
+    text: 'Enseñaba que Cristo solo «parecía» tener un cuerpo humano y sufrir. Ignacio insiste en que «verdaderamente» nació, sufrió y resucitó.', link: 'Ir a la página del docetismo'},
+  {g: 'Hechos', id: 'cru', kind: 'Hecho', name: 'Crucifixión y resurrección de Jesús', lab: 'Crucifixión y resurrección', dl: 'c. 30 o 33', s: 30, e: 33,
+    dates: 'c. 30 o 33', text: 'En Jerusalén. Son las dos fechas que prefieren la mayoría de los estudiosos.'},
+  {g: 'Hechos', id: 'jer', kind: 'Hecho', name: 'Concilio de Jerusalén', lab: 'Concilio de Jerusalén', dl: 'c. 49', y: 49,
+    dates: 'c. 48–50', text: 'Los apóstoles y presbíteros de Jerusalén resolvieron que los gentiles que creían en Cristo no debían circuncidarse ni asumir toda la ley mosaica (Hechos 15).'},
+  {g: 'Hechos', id: 'ner', kind: 'Hecho', name: 'Persecución de Nerón', lab: 'Persecución de Nerón', dl: '64', y: 64,
+    dates: '64', text: 'Incendio de Roma y persecución de Nerón contra los cristianos (Tácito, Anales 15.44).'},
+  {g: 'Hechos', id: 'tem', kind: 'Hecho', name: 'Caída de Jerusalén', lab: 'Caída de Jerusalén y del Templo', dl: '70', y: 70,
+    dates: '70', text: 'Las legiones de Tito toman Jerusalén y destruyen el Segundo Templo, en la revuelta judía de 66–73.'},
+  {g: 'Hechos', id: 'tra', kind: 'Hecho', name: 'Trajano, emperador', lab: 'Trajano, emperador', dl: '98–117', ends: ['98', '117'], s: 98, e: 117,
+    dates: '98–117', text: 'Según la fecha tradicional, Ignacio murió durante su reinado.'},
+  {g: 'Hechos', id: 'pli', kind: 'Hecho', name: 'Plinio escribe a Trajano', lab: 'Plinio escribe a Trajano', dl: 'c. 112', y: 112,
+    dates: 'c. 112, cuando gobernaba Bitinia (c. 110–113)', text: 'Carta de Plinio el Joven al emperador sobre los cristianos de Bitinia, que «cantan un himno a Cristo como a un dios».'},
+  {g: 'Hechos', id: 'bar', kind: 'Hecho', name: 'Revuelta de Bar Kojba', lab: 'Revuelta de Bar Kojba', dl: '132–135', s: 132, e: 135,
+    dates: '132–135', text: 'Tras la revuelta, Adriano refunda Jerusalén como Aelia Capitolina y prohíbe la entrada a los judíos.'},
+  {g: 'Hechos', id: 'mar', kind: 'Hecho', name: 'Marción rompe con Roma', lab: 'Marción rompe con Roma', dl: 'c. 144', y: 144,
+    dates: 'c. 144', text: 'Marción rompe con la Iglesia de Roma y difunde su propio canon: un Evangelio de Lucas recortado y diez cartas de Pablo.'}
+];
+const byId = Object.fromEntries(T.map(t => [t.id, t]));
+let sel = null;
+const box = document.getElementById('tl-in');
+const meas = document.createElement('span');
+meas.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-family:var(--ui);font-size:13.5px;font-weight:600';
+document.body.appendChild(meas);
+const tw = s => { meas.textContent = s; return meas.offsetWidth + 6; };
+const labTxt = t => t.lab + ', ' + t.dl;
+const labHtml = t => {
+  const dl = t.dl.startsWith('†') ? '<span aria-hidden="true" title="murió">' + esc(t.dl) + '</span><span class="sr">' + esc(t.sr) + '</span>' : esc(t.dl);
+  return esc(t.lab) + ', ' + dl;
+};
+const span = t => {
+  if (t.y != null) return [t.y, t.y];
+  if (t.s != null) return [t.s, t.e];
+  return [t.b0 != null ? t.b0 : t.d1, t.d2 || t.d1];
+};
+function marks(t, W, o) {
+  const X = y => pct(y) / 100 * W - o;
+  if (t.unk) {
+    const a = X(t.d1), b = X(t.d2);
+    return [.25, .45, .7, 1].map((op, i) => '<span class="dot" style="left:' + (a - 28 + i * 7) + 'px;opacity:' + op + '"></span>').join('') + '<span class="bar" style="left:' + a + 'px;width:' + Math.max(6, b - a) + 'px"></span>';
+  }
+  if (t.b != null) {
+    const a = X(t.b0), m = X(t.b), z = X(t.d1);
+    return '<span class="bar dash" style="left:' + a + 'px;width:' + (m - a) + 'px"></span><span class="bar" style="left:' + m + 'px;width:' + (z - m) + 'px"></span>';
+  }
+  if (t.g === 'Hechos' && t.s != null) return '<span class="rng" style="left:' + X(t.s) + 'px;width:' + Math.max(6, X(t.e) - X(t.s)) + 'px"></span>';
+  if (t.s != null) return '<span class="cl' + (t.e > HI ? ' open' : '') + '" style="left:' + X(t.s) + 'px;width:' + (X(t.e) - X(t.s)) + 'px"></span>';
+  return '<span class="ring" style="left:' + X(t.y) + 'px"></span>';
+}
+function item(t, W) {
+  const [a, b] = span(t);
+  const x0 = pct(a) / 100 * W, x1 = pct(Math.min(b, HI)) / 100 * W;
+  const w = tw(labTxt(t));
+  const lead = t.unk ? 30 : 0;
+  const start = Math.max(0, x0 - lead - (t.y != null ? 5 : 0));
+  let lx, align = 'l';
+  if (start + w <= W) lx = start;
+  else { lx = Math.max(0, x1 + (t.y != null ? 5 : 0) - w); align = 'r'; }
+  const l = Math.min(lx, start), r = Math.min(W, Math.max(lx + w, x1 + 6));
+  return {t, lx, w, l, r, align};
+}
+function render() {
+  const W = box.clientWidth;
+  if (!W) return;
+  const groups = [];
+  T.forEach(t => { let g = groups.find(x => x.g === t.g); if (!g) groups.push(g = {g: t.g, items: []}); g.items.push(t); });
+  let h = '';
+  const band = pct(byId.ig.d1), bandW = pct(byId.ig.d2) - band;
+  groups.forEach(g => {
+    h += '<div class="tl-gw"><p class="tl-g">' + esc(g.g) + '</p>';
+    const rows = [];
+    const placed = g.items.map(t => item(t, W));
+    if (g.g === 'Hechos') {
+      placed.sort((p, q) => p.l - q.l).forEach(p => {
+        let r = rows.find(row => row.end + 14 <= p.l);
+        if (!r) rows.push(r = {end: -1e9, its: []});
+        r.its.push(p); r.end = p.r;
+      });
+    } else placed.forEach(p => rows.push({its: [p]}));
+    rows.forEach(r => {
+      h += '<div class="tl-row">';
+      r.its.forEach(p => {
+        const t = p.t;
+        h += '<button type="button" class="ti' + (t.hl ? ' hl' : '') + '" data-ti="' + t.id + '" aria-pressed="' + (t.id === sel) + '" style="left:' + p.l + 'px;width:' + (p.r - p.l) + 'px">' +
+          marks(t, W, p.l) + '<span class="tx" style="left:' + (p.lx - p.l) + 'px">' + labHtml(t) + '</span></button>';
+      });
+      h += '</div>';
+    });
+    h += '</div>';
+  });
+  const axm = [30, 50, 70, 90, 110, 130, 150, 170];
+  const hlTxt = 'c. 107–110', hlX = (pct(107) + pct(110)) / 2 / 100 * W, hlW = tw(hlTxt);
+  const s = byId[sel], [sa, sb] = s ? span(s) : [0, 0];
+  const showSel = !!s && sel !== 'ig';
+  const clampX = (x, w) => Math.min(Math.max(x, w / 2), W - w / 2);
+  let ax = '<div class="tl-ax" aria-hidden="true">';
+  axm.forEach((m, i) => {
+    const x = pct(m) / 100 * W;
+    ax += '<span class="tk" style="left:' + pct(m) + '%"></span>';
+    if (Math.abs(x - hlX) < hlW / 2 + 16) return;
+    ax += '<span class="tn' + (i === 0 ? ' e0' : i === axm.length - 1 ? ' e1' : '') + '" style="left:' + pct(m) + '%">' + m + '</span>';
+  });
+  ax += '<span class="hlb" style="left:' + band + '%;width:' + bandW + '%"></span><span class="hln" style="left:' + Math.min(Math.max(hlX, hlW / 2), W - hlW / 2) + 'px">' + hlTxt + '</span>';
+  if (showSel) {
+    const a = s.b != null ? s.b : sa, z = Math.min(sb, HI);
+    const ends = s.ends || [s.dl.replace('†', 'murió ')];
+    ax += '<span class="sel" style="left:' + pct(a) + '%;width:' + (pct(z) - pct(a)) + '%"></span>';
+    if (ends.length === 2 && (pct(z) - pct(a)) / 100 * W > tw(ends[0]) / 2 + tw(ends[1]) / 2 + 12) {
+      ax += '<span class="seln" style="left:' + clampX(pct(a) / 100 * W, tw(ends[0])) + 'px">' + esc(ends[0]) + '</span><span class="seln" style="left:' + clampX(pct(z) / 100 * W, tw(ends[1])) + 'px">' + esc(ends[1]) + '</span>';
+    } else {
+      const t1 = ends.length === 2 ? s.dl : ends[0];
+      ax += '<span class="seln" style="left:' + clampX((pct(a) + pct(z)) / 2 / 100 * W, tw(t1)) + 'px">' + esc(t1) + '</span>';
+    }
+  }
+  ax += '</div>';
+  box.innerHTML = '<span class="tl-band" style="left:' + band + '%;width:' + bandW + '%"></span>' + h + ax;
+  detail();
+}
+function detailHtml(t) {
+  return '<div class="td"><p class="td-k">' + esc(t.kind) + '</p><h3 class="td-n" tabindex="-1">' + esc(t.name) + '</h3><p class="td-d">' + esc(t.dates) + '</p><p class="td-t">' + esc(t.text) + '</p>' +
+    (t.link ? '<a class="ln-go td-a" href="#" data-nb>' + esc(t.link) + '</a>' : t.kind === 'Hecho' ? '<a class="ln-go td-a" href="#" data-nb>Verlo en la línea de tiempo</a>' : '') + '</div>';
+}
+function detail() {
+  const t = byId[sel];
+  box.querySelectorAll('.td-row').forEach(n => n.remove());
+  if (!t) {
+    const hint = '<p class="td-empty">Elige una persona o un hecho de la línea para ver sus fechas y quién fue.</p>';
+    document.getElementById('td-below').innerHTML = hint;
+    document.getElementById('td-side').innerHTML = hint;
+    return;
+  }
+  document.getElementById('td-below').innerHTML = detailHtml(t);
+  document.getElementById('td-side').innerHTML = detailHtml(t);
+  const btn = box.querySelector('.ti[data-ti="' + sel + '"]');
+  if (btn) {
+    const row = btn.closest('.tl-row');
+    const W = box.clientWidth;
+    const p = item(t, W);
+    const r = document.createElement('div');
+    r.className = 'td-row';
+    r.setAttribute('aria-live', 'polite');
+    const maxw = Math.min(440, innerWidth <= 720 ? 300 : 440);
+    r.innerHTML = '<div style="margin-left:' + Math.max(0, Math.min(p.l, W - maxw)) + 'px">' + detailHtml(t) + '</div>';
+    row.after(r);
+  }
+}
+const tlw = document.getElementById('tlw');
+const sideOn = () => tlw.classList.toggle('has-side', innerWidth >= 1180);
+const tvis = () => document.documentElement.getAttribute('data-pp-tvis') || 'b';
+const head = () => document.querySelector('#td-below .td-n');
+const vh = () => innerHeight;
+const EASE_R = D.bez(0.22, 1, 0.36, 1);
+const focusHead = kbd => { if (kbd && head()) head().focus({preventScroll: true}); };
+const seenKey = 'tl-detail-seen';
+let detailSeen = D.store.get(seenKey, false);
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting && sel) { if (!detailSeen) { detailSeen = true; D.store.set(seenKey, true); } box.querySelectorAll('.td-cue').forEach(c => c.remove()); }
+}), {rootMargin: '0px 0px -10% 0px'}) : null;
+if (io) io.observe(document.getElementById('td-below'));
+const detailVisible = () => { const h = head(); if (!h) return true; const r = h.getBoundingClientRect(); return r.top < vh() * .9 && r.bottom > D.offset(); };
+const cue = () => {
+  box.querySelectorAll('.td-cue').forEach(c => c.remove());
+  if (tvis() !== 'a' || detailSeen || detailVisible()) return;
+  const btn = box.querySelector('.ti[data-ti="' + sel + '"]'); if (!btn) return;
+  const row = btn.closest('.tl-row'), W = box.clientWidth, p = item(byId[sel], W);
+  const c = document.createElement('button');
+  c.type = 'button'; c.className = 'td-cue';
+  c.innerHTML = 'Ver el detalle abajo<svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg>';
+  row.appendChild(c);
+  const cw = c.offsetWidth, after = p.lx + p.w + 12;
+  c.style.left = (after + cw <= W ? after : Math.max(0, p.lx - cw - 12)) + 'px';
+  c.style.top = '17px';
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) c.animate([{opacity: 0}, {opacity: 1}], {duration: 200, easing: 'ease-out'});
+};
+const toHead = (kbd, extra) => { const h = head(); if (!h) return; D.scrollToY(h.getBoundingClientRect().top + scrollY - D.offset() - (extra || 24), () => focusHead(kbd), {ms: 360, ease: EASE_R}); };
+const afterSelect = kbd => {
+  const mode = tvis(), h = head();
+  if (!h) return;
+  const r = h.getBoundingClientRect();
+  if (mode === 'a') {
+    if (!detailSeen && r.top > vh() * .72) {
+      let d = r.top - vh() * .72;
+      if (d > vh() * .4) d = Math.min(d, r.bottom - vh() + 8);
+      if (d > 0) D.scrollToY(scrollY + d, () => focusHead(kbd), {ms: 360, ease: EASE_R});
+    }
+    cue();
+  } else if (mode === 'b') {
+    const peek = document.getElementById('td-peek'), pin = document.getElementById('pk-in'), t = byId[sel];
+    const was = peek.classList.contains('on');
+    const link = t.link || (t.kind === 'Hecho' ? 'Verlo en la línea de tiempo' : '');
+    pin.innerHTML = '<p class="pk-t" style="margin:0"><span class="pk-h"><b>' + esc(t.name) + '</b><span class="pk-d">' + esc(t.dates) + '</span></span><span class="pk-s">' + esc(t.text) + '</span></p>' + (link ? '<a class="ln-go pk-a" href="#" data-nb>' + esc(link) + '</a>' : '');
+    peek.classList.add('on');
+    peekFrame();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (!was) pin.animate([{opacity: 0, transform: 'translateY(8px)'}, {opacity: 1, transform: 'none'}], {duration: 240, easing: 'cubic-bezier(0.22, 1, 0.36, 1)'});
+      else pin.animate([{opacity: 0}, {opacity: 1}], {duration: 160, easing: 'ease-out'});
+    }
+  } else if (mode === 'c') {
+    const firstP = document.querySelector('#td-below .td-t');
+    const vis = r.top < vh() && r.bottom > D.offset();
+    if (!vis && r.top >= vh()) {
+      let d = (r.top + 96) - (vh() - 10);
+      const btn = box.querySelector('.ti[data-ti="' + sel + '"]');
+      if (btn) d = Math.min(d, btn.getBoundingClientRect().top - D.offset() - 8);
+      if (d > 0) D.scrollToY(scrollY + d, () => focusHead(kbd), {ms: 320, ease: EASE_R});
+    }
+  }
+};
+const peekEl = document.getElementById('td-peek'), belowEl = document.getElementById('td-below');
+let pkRaf = 0;
+const peekUpdate = () => {
+  pkRaf = 0;
+  if (!peekEl.classList.contains('on')) return;
+  const t = belowEl.getBoundingClientRect().top - 18 - innerHeight;
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const was = !peekEl.classList.contains('off');
+  const o = still ? (was ? (t > -30 ? 1 : 0) : (t > -10 ? 1 : 0)) : Math.max(0, Math.min(1, (t + 40) / 70));
+  peekEl.style.setProperty('--pk-o', o.toFixed(3));
+  peekEl.classList.toggle('off', o < .5);
+};
+const peekFrame = () => { if (!pkRaf) pkRaf = requestAnimationFrame(peekUpdate); };
+addEventListener('scroll', peekFrame, {passive: true});
+addEventListener('resize', peekFrame);
+box.addEventListener('click', e => {
+  if (e.target.closest('.td-cue')) { toHead(e.detail === 0); return; }
+  const b = e.target.closest('.ti');
+  if (!b || e.target.closest('.td-row')) return;
+  sel = b.dataset.ti;
+  render();
+  const nb = box.querySelector('.ti[data-ti="' + sel + '"]');
+  if (nb) nb.focus({preventScroll: true});
+  afterSelect(e.detail === 0);
+});
+addEventListener('pp', e => { if (e.detail.key === 'tvis') { box.querySelectorAll('.td-cue').forEach(c => c.remove()); document.getElementById('td-peek').classList.remove('on', 'off'); if (sel) afterSelect(false); } });
+box.addEventListener('keydown', e => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+  const btns = [...box.querySelectorAll('.ti')];
+  const i = btns.findIndex(b => b === document.activeElement);
+  if (i < 0) return;
+  e.preventDefault();
+  const n = btns[(i + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1) + btns.length) % btns.length];
+  n.focus();
+});
+sideOn();
+let rt = 0;
+addEventListener('resize', () => { cancelAnimationFrame(rt); rt = requestAnimationFrame(() => { sideOn(); render(); }); });
+addEventListener('pp', e => { if (e.detail.key === 'tdet') requestAnimationFrame(render); });
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => {
+  render();
+  if (innerWidth <= 720) {
+    const bx = document.getElementById('tl-box');
+    bx.scrollLeft = pct(100) / 100 * box.clientWidth - bx.clientWidth / 2;
+  }
+});
+render();
+})();
+(() => {
+const esc = D.esc;
+D.READERS['r-ignatius'] = {
+  kicker: 'Ignacio de Antioquía', title: 'Carta a los Esmirniotas', meta: 'c. 107–110', target: '7.1',
+  sections: [{h: 'Capítulo 7', paras: [{n: '7.1', t: 'Se abstienen de la eucaristía y de la oración, porque no confiesan que la eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y a la que el Padre, en su bondad, resucitó. Así, los que contradicen el don de Dios mueren en sus disputas; más les valdría amar, para resucitar también ellos.'}]}],
+  foot: [
+    {h: 'Fecha y autenticidad', p: 'c. 107–110, la fecha tradicional. Otros autores proponen fechas más tardías: las reúne la sección «Fechas y autenticidad» de su ficha.'},
+    {h: 'Edición y licencia', p: 'Traducción al español de Doctrina, hecha desde el texto griego de la edición de Lake (First1KGreek) y cotejada con la traducción inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885.'}
+  ]
+};
+D.CITES.smyrn71 = {kicker: 'Cita', quote: 'Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.', who: 'Ignacio de Antioquía', work: 'Carta a los Esmirniotas', loc: '7.1', date: 'c. 107–110', y: 107, y2: 110, reader: 'r-ignatius', target: '7.1'};
+const LAKE = 'Traducción de Doctrina asistida por IA, desde la edición de Kirsopp Lake (The Apostolic Fathers, vol. 1, 1912).';
+const LET = [
+  ['A los Efesios', 'r-eph', 'Desde Esmirna, Ignacio agradece a la iglesia de Éfeso la visita de Onésimo y su delegación, y la anima a mantenerse unida frente a enseñanzas extrañas, con la vida, muerte y resurrección reales de Jesús en el centro. La imagina como un coro: «unidos en concordia, reciban al unísono el tono de Dios y canten con una sola voz al Padre por medio de Jesucristo»', 'Efesios', '4.2', 'unidos en concordia, reciban al unísono el tono de Dios y canten con una sola voz al Padre por medio de Jesucristo'],
+  ['A los Magnesios', 'r-mag', 'Desde Esmirna, Ignacio escribe a la iglesia de Magnesia después de recibir a una delegación encabezada por el joven obispo Damas: pide que su edad no sea motivo de menosprecio y llama a toda la comunidad a vivir en concordia. En su polémica contra quienes mezclaban prácticas, condensa el contraste así: «Es absurdo hablar de Jesucristo y practicar el judaísmo»', 'Magnesios', '10.3', 'Es absurdo hablar de Jesucristo y practicar el judaísmo'],
+  ['A los Tralianos', 'r-tral', 'Desde Esmirna, Ignacio agradece a la iglesia de Tralles la visita de su obispo Polibio y la previene contra enseñanzas que convertían la vida y la pasión de Jesús en una mera apariencia. Su resumen no deja lugar a esa lectura: Jesús «nació verdaderamente, comió y bebió, fue perseguido verdaderamente bajo Poncio Pilato, fue crucificado verdaderamente y murió»', 'Tralianos', '9.1', 'nació verdaderamente, comió y bebió, fue perseguido verdaderamente bajo Poncio Pilato, fue crucificado verdaderamente y murió'],
+  ['A los Romanos', 'r-rom', 'Desde Esmirna, Ignacio escribe a una iglesia de Roma que no había enviado delegados para pedirle que no impida su ejecución y que ore para que él sostenga hasta el final lo que dice desear. La imagen que domina la carta es extrema e inolvidable: «Soy trigo de Dios y los dientes de las fieras me muelen, para que sea hallado pan puro de Cristo»', 'Romanos', '4.1', 'Soy trigo de Dios y los dientes de las fieras me muelen, para que sea hallado pan puro de Cristo'],
+  ['A los Filadelfios', 'r-phld', 'Desde Troas, Ignacio escribe a la iglesia de Filadelfia después de una visita marcada por disputas: pide una sola reunión en torno a Jesús y solicita que envíen un diácono a celebrar la paz recuperada en Antioquía. Frente a quienes exigían documentos como criterio, responde: «Para mí, los archivos son Jesucristo; el archivo inviolable es su cruz, su muerte y su resurrección»', 'Filadelfios', '8.2', 'Para mí, los archivos son Jesucristo; el archivo inviolable es su cruz, su muerte y su resurrección'],
+  ['A los Esmirniotas', 'r-ignatius', 'Desde Troas, Ignacio escribe a la iglesia de Esmirna para agradecer su hospitalidad, combatir la idea de que Jesús solo parecía tener cuerpo y pedir un enviado que celebre la paz de Antioquía. Lo afirma de forma directa: «Sé y creo que estaba en la carne incluso después de la resurrección»', 'Esmirniotas', '3.1', 'Sé y creo que estaba en la carne incluso después de la resurrección'],
+  ['A Policarpo', 'r-pol', 'Desde Troas, Ignacio le escribe a Policarpo de Esmirna una breve guía pastoral: atender a cada persona, proteger a las viudas, tratar con cuidado la esclavitud y el matrimonio, y sostener a la comunidad mientras organiza un mensajero para Antioquía. Su consejo más visual es también el más breve: «Mantente firme como un yunque golpeado»', 'A Policarpo', '3.1', 'Mantente firme como un yunque golpeado']
+];
+LET.forEach((l, i) => { D.CITES['let' + i] = {kicker: 'Cita', quote: l[5], who: 'Ignacio de Antioquía', work: 'Carta ' + l[0].charAt(0).toLowerCase() + l[0].slice(1), loc: l[4], date: 'c. 107–110', y: 107, y2: 110, note: LAKE}; });
+const ul = document.getElementById('escr');
+D.sourceList(ul, LET.map((l, i) => ({name: l[0], date: 'c. 107–110', desc: esc(l[2]) + ' <span class="nw">(<button class="ln-side" type="button" data-cite="let' + i + '">' + esc(l[3] + ' ' + l[4]) + '</button>).</span>', cite: 'x'})));
+document.getElementById('esc-ax').insertAdjacentHTML('beforeend', D.mini(107, 110, [100, 180, [100, 120, 140, 160, 180]], 'c. 107–110'));
+[...ul.children].forEach((li, i) => {
+  const l = LET[i];
+  const b = li.querySelector('.srcl-n .ln-side');
+  b.removeAttribute('data-cite');
+  b.dataset.reader = l[1];
+  if (l[1] === 'r-ignatius') b.dataset.target = '7.1';
+});
+const SPAN_S = [1800, 2026, [1800, 1900, 2026]];
+const SCH = {
+  decrept: {who: 'Étienne Decrept', work: 'Historiador del cristianismo antiguo y de la Antigüedad tardía', def: 'Reconstruye una persecución en Antioquía en julio de 116, después del terremoto del 13 de diciembre de 115, como el marco de la condena y el viaje de Ignacio. Fecha ese marco, no cada carta por separado.<br><br>«Circonstances et interprétations du voyage d’Ignace d’Antioche», <i>Revue des Sciences Religieuses</i> 82/3 (2008), 389–399.'},
+  pervo: {who: 'Richard I. Pervo', work: 'Estudioso estadounidense del Nuevo Testamento y del cristianismo primitivo', dateLabel: 'Vida', date: '1942–2017', y: 1942, y2: 2017, def: 'Fecha la muerte de Ignacio c. 135–140: considera que Eusebio ubicó a Ignacio bajo Trajano por razones de cronología, y que el uso de Pablo en las cartas es posterior.<br><br><i>The Making of Paul</i> (Minneapolis: Fortress Press, 2010), 134–135.'},
+  barnes: {who: 'Timothy D. Barnes', work: 'Historiador británico de la Antigüedad y del cristianismo antiguo; enseñó en la Universidad de Toronto', dateLabel: 'Vida', date: 'Nació en 1942', y: 1942, y2: 2026, mlab: 'nació en 1942', def: 'Sostiene que las cartas probablemente se escribieron en los años 140: la fecha de Eusebio, bajo Trajano (98–117), no puede tomarse como segura, y ve en ellas conocimiento de los escritos del gnóstico Ptolomeo.<br><br>«The Date of Ignatius», <i>The Expository Times</i> 120 (2008), 119–130.'},
+  vinzent: {who: 'Markus Vinzent', work: 'Teólogo alemán, estudioso de la patrística y de la Edad Media; King’s College London', dateLabel: 'Vida', date: 'Nació en 1959', y: 1959, y2: 2026, mlab: 'nació en 1959', def: 'Distingue dos etapas de la colección: una de tres cartas, después de 150, y la de las siete, después de 170 y, a más tardar, hacia 177. Fecha la colección, no el martirio.<br><br><i>Christ’s Torah</i> (Abingdon: Routledge, 2023), 28–31.'},
+  lightfoot: {who: 'Joseph Barber Lightfoot', work: 'Estudioso inglés del Nuevo Testamento y de los Padres apostólicos; obispo anglicano', dateLabel: 'Vida', date: '1828–1889', y: 1828, y2: 1889, def: 'Defendió las siete cartas de la recensión media y ubicó el martirio a pocos años de c. 110, antes o después, sin dar por segura la fecha tradicional de 107.<br><br><i>The Apostolic Fathers. Part II: S. Ignatius, S. Polycarp</i>, 2.ª ed. (Londres: Macmillan, 1889), vol. 1, 30.'},
+  zahn: {who: 'Theodor Zahn', work: 'Teólogo protestante alemán, estudioso del Nuevo Testamento', dateLabel: 'Vida', date: '1838–1933', y: 1838, y2: 1933, def: 'Defendió la recensión media y admitió cualquier año entre 105 y 117 para el viaje, las cartas y la muerte, sin fijar uno solo.<br><br><i>Ignatius von Antiochien</i> (Gotha: Perthes, 1873), 61.'},
+  harnack: {who: 'Adolf von Harnack', work: 'Teólogo protestante alemán e historiador de la Iglesia', dateLabel: 'Vida', date: '1851–1930', y: 1851, y2: 1930, def: 'Cambió de posición. En 1878 tomó como establecido lo que, según él, sostenía la mayoría de los historiadores: que las cartas no podían ser anteriores a los últimos años del reinado de Adriano. En su cronología de 1897 las consideró auténticas y escritas en los últimos años de Trajano (110–117), o quizá algunos años después (117–125).<br><br><i>Die Zeit des Ignatius</i> (Leipzig: Hinrichs, 1878), 1–9; <i>Die Chronologie</i>, vol. 1 (Leipzig: Hinrichs, 1897), 400–406.'},
+  lake: {who: 'Kirsopp Lake', work: 'Estudioso inglés del Nuevo Testamento e historiador de la Iglesia; enseñó en Harvard', dateLabel: 'Vida', date: '1872–1946', y: 1872, y2: 1946, def: 'Recoge el año 108 de Eusebio y resume que, aunque los críticos modernos no coinciden, hay una tendencia general a pensar que Ignacio fue mártir en Roma en tiempos de Trajano (98–117). Es su resumen de la crítica, no una datación propia.<br><br><i>The Apostolic Fathers</i>, vol. 1 (Londres: Heinemann, 1912), 165–166.'},
+  schoedel: {who: 'William R. Schoedel', work: 'Estudioso del cristianismo primitivo nacido en Canadá; profesor en la Universidad de Illinois', dateLabel: 'Vida', date: 'Nació en 1929 o 1930; murió en 2024', y: 1930, y2: 2024, mlab: 'murió en 2024', def: 'Parte de la defensa de la recensión media de Lightfoot y Zahn y toma c. 110 como marco de trabajo, aunque reconoce que la cronología externa no es segura.<br><br><i>Ignatius of Antioch: A Commentary</i> (Filadelfia: Fortress Press, 1985), 1–7.'},
+  joly: {who: 'Robert Joly', work: 'Helenista belga e historiador de las fuentes del cristianismo', dateLabel: 'Vida', date: '1922–2011', y: 1922, y2: 2011, def: 'Consideró las siete cartas seudoepígrafas, escritas hacia 165 en Esmirna.<br><br><i>Le dossier d’Ignace d’Antioche</i> (Bruselas: Éditions de l’Université de Bruxelles, 1979).'},
+  hubner: {who: 'Reinhard M. Hübner', work: 'Teólogo católico alemán, profesor emérito de historia de la Iglesia antigua y patrística en la Universidad de Múnich', dateLabel: 'Vida', date: 'Nació en 1937', y: 1937, y2: 2026, mlab: 'nació en 1937', def: 'Reabrió la datación tardía: considera las siete cartas seudoepígrafas y las ubica, en general, en la segunda mitad del siglo II.<br><br>«Thesen zur Echtheit und Datierung der sieben Briefe des Ignatius von Antiochien», <i>Zeitschrift für Antikes Christentum</i> 1 (1997), 44–72.'},
+  lechner: {who: 'Thomas Lechner', work: 'Teólogo alemán; doctor por la Universidad de Múnich', dateLabel: 'Vida', date: 'Nació en 1962', def: 'Defiende una datación tardía de las cartas, leyendo partes de la carta a los Efesios como polémica contra los valentinianos. No da un rango propio que se muestre acá: el de 160–180 es la agrupación de un estudio reciente (S. Schreiber), que reúne su propuesta con las de Hübner y M. Theobald.<br><br><i>Ignatius adversus Valentinianos?</i> (Leiden: Brill, 1999), 75–115.'}
+};
+Object.keys(SCH).forEach(k => { const c = SCH[k]; D.CITES['sch-' + k] = Object.assign({}, c, {kicker: 'Quién es', forceKicker: true, span: SPAN_S, title: c.who, who: null, work: null, def: '<span style="display:block;font-family:var(--ui);font-size:14px;line-height:1.5;color:var(--ink-3)">' + c.work + '</span><br>' + c.def}); });
+const SN = {decrept: 'Decrept', pervo: 'Pervo', barnes: 'Barnes', vinzent: 'Vinzent', lightfoot: 'Lightfoot', zahn: 'Zahn', harnack: 'Harnack', lake: 'Lake', schoedel: 'Schoedel', joly: 'Joly', hubner: 'Hübner', lechner: 'Lechner'};
+const DL = [
+  {b: 'c. 107–110', o: 'Su muerte', c: 'muerte', w: 'fecha tradicional, bajo Trajano (Clavis Patrum Graecorum)', s: 107, e: 110, hl: true},
+  {b: 'julio de 116', o: 'La persecución en Antioquía que habría llevado a su condena', c: 'persecución en Antioquía', k: 'decrept', yr: 2008, s: 116},
+  {b: 'años 140', o: 'Las cartas', c: 'cartas', k: 'barnes', yr: 2008, s: 140, e: 149}
+];
+const DH = [
+  {b: '105–117', o: 'El viaje, las cartas y la muerte', c: 'viaje, cartas y muerte', k: 'zahn', yr: 1873, s: 105, e: 117},
+  {b: 'últimos años de Adriano o después', o: 'Las cartas, según la mayoría de los historiadores, como lo recoge', c: 'cartas, según la mayoría', k: 'harnack', yr: 1878, s: 117, e: 138, reign: 'reinado de Adriano, 117–138'},
+  {b: 'c. 110', o: 'Su martirio', c: 'martirio', k: 'lightfoot', yr: 1889, s: 110},
+  {b: '110–117, o quizá 117–125', o: 'Las cartas, auténticas', c: 'cartas, auténticas', k: 'harnack', yr: 1897, s: 110, e: 117, maybe: 125},
+  {b: 'época de Trajano (98–117)', o: 'Su martirio, según la tendencia general de los críticos que resume', c: 'martirio, tendencia de los críticos', k: 'lake', yr: 1912, s: 98, e: 117},
+  {b: 'segunda mitad del siglo II', o: 'Las siete cartas, de otra mano', c: 'corpus de siete cartas', k: 'hubner', yr: 1997, s: 150, e: 200},
+  {b: '160–180', o: 'Las siete cartas, de otra mano, en la agrupación de un estudio reciente que incluye a', c: 'corpus de siete cartas, agrupación de Schreiber', k: 'lechner', yr: 1999, s: 160, e: 180}
+];
+const A = 95, Z = 200, X = y => (Math.max(A, Math.min(Z, y)) - A) / (Z - A) * 100;
+const who = d => d.k ? '<button class="ln-side" type="button" data-cite="sch-' + d.k + '">' + SN[d.k] + '</button>' : '';
+const track = d => '<div class="dch-tr" aria-hidden="true"><span class="ax"></span>' + (d.s == null ? '' : d.open ? '<span class="dpt" style="left:' + X(d.s) + '%"></span><span class="bd open" style="left:' + X(d.s) + '%;width:' + (X(Z) - X(d.s)) + '%"></span>' : d.reign ? '<span class="bd reign" style="left:' + X(d.s) + '%;width:' + (X(d.e) - X(d.s)) + '%"></span><span class="rl" style="left:' + X(d.s) + '%">' + esc(d.reign) + '</span>' : d.upto ? '<span class="dpt" style="left:' + X(d.s) + '%"></span><span class="bd open" style="left:' + X(d.s) + '%;width:' + (X(d.e) - X(d.s)) + '%"></span><span class="end" style="left:' + X(d.e) + '%"></span>' : d.e ? '<span class="bd" style="left:' + X(d.s) + '%;width:' + (X(d.e) - X(d.s)) + '%"></span>' + (d.maybe ? '<span class="bd open" style="left:' + X(d.e) + '%;width:' + (X(d.maybe) - X(d.e)) + '%"></span>' : '') : '<span class="dpt" style="left:' + X(d.s) + '%"></span>') + '</div>';
+const rowTwo = d => '<p class="dch-l"><b>' + esc(d.b) + '</b>' + esc(d.o) + (d.k ? (/(recoge|resume|incluye a|,)$/.test(d.o) ? ' ' : ', según ') + who(d) + ' (' + d.yr + ')' : ', ' + esc(d.w)) + '.</p>';
+const rowCodex = d => '<p class="dch-l dch-c"><b>' + (d.k ? who(d) + (d.k === 'harnack' ? ' (' + d.yr + ')' : '') : 'Fecha tradicional') + ' · ' + esc(d.b) + ' — ' + esc(d.c) + '</b></p>';
+const ALL = DL.map(d => Object.assign({main: true}, d)).concat(DH.map(d => Object.assign({main: false}, d)));
+ALL.forEach((d, i) => { d.id = 'd' + i; });
+const startOf = d => d.s == null ? 1e9 : d.s;
+const chrono = L => L.slice().sort((a, b) => startOf(a) - startOf(b) || (a.e || a.s || 0) - (b.e || b.s || 0) || (a.yr || 0) - (b.yr || 0));
+let expanded = false;
+const dch = document.getElementById('dch');
+const rowsHtml = () => {
+  const codex = document.documentElement.getAttribute('data-pp-dfmt') === 'codex';
+  return chrono(ALL.filter(d => expanded || d.main)).map(d => '<li data-fk="' + d.id + '"' + (d.hl ? ' class="hl"' : '') + '>' + (codex ? rowCodex(d) : rowTwo(d)) + track(d) + '</li>').join('');
+};
+const draw = () => { dch.innerHTML = rowsHtml(); D.glue(document.getElementById('fechas')); };
+draw();
+addEventListener('pp', e => { if (e.detail.key === 'dfmt') draw(); });
+const axm = [100, 120, 140, 160, 180, 200];
+const hidden = ALL.length - DL.length;
+dch.insertAdjacentHTML('afterend', '<div class="dch-axis" aria-hidden="true"><div></div><div class="ln">' + axm.map((m, i) => '<span class="' + (i === axm.length - 1 ? 'e1' : '') + '" style="left:' + X(m) + '%">' + m + '</span>').join('') + '</div></div><button class="btn-more dch-more-b" type="button" aria-expanded="false" aria-controls="dch">' + D.ic.plus + '<span>Mostrar las ' + hidden + ' de la historia del debate</span></button>');
+const mb = document.querySelector('.dch-more-b');
+mb.addEventListener('click', () => {
+  expanded = !expanded;
+  mb.setAttribute('aria-expanded', String(expanded));
+  mb.querySelector('span').textContent = expanded ? 'Ocultar la historia del debate' : 'Mostrar las ' + hidden + ' de la historia del debate';
+  D.flip(dch, draw);
+});
+})();
+</script>
+</body>
+</html>
