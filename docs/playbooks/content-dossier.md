@@ -23,6 +23,11 @@ The content of one doctrine for the six traditions, written as Markdown dossiers
 - No claim without citation and edition. Tags as in `agent-ops.md`.
 - Spanish quotes: a public-domain Spanish translation if one exists; otherwise an AI translation labelled as such and marked "unreviewed by Pedro" until he reads it.
 - Attribute every closing line to the tradition ("Para la Iglesia católica, …" or a quote), never in the site's voice. State the grading method once. Each objection quotes the objector's strongest official text and proof texts; when the answer grows, the objector's strongest text grows too. The coverage table says honestly what was not searched.
+- Quote originals from the print scan; e-texts only to locate a passage (the Lutheran pilot's 4 wrong Book of Concord quotes were e-text slips). Name each tradition's scan OCR path in the drafter's brief.
+- Spanish renderings only from the original language, never from an English translation.
+- Status lines go next to harsh words wherever they show, screen 03 included; they state facts about church bodies (approval, current constitution), never theologians' opinions. The shared ones (Trent, Dositheus, Westminster, Smalcald…) live in one file the coordinator owns, so every dossier says the same.
+- An objection's synthesis ends on the objector's own words, never an argument its text doesn't make; show the objector's positive formulation the answer addresses; a confession's portrait of its 16th-century opponents is not a later body's position.
+- Every agent writes each section to its file as soon as it is done; Progress describes only what is on disk. The coordinator checks headings (`grep '^## '`) and mtimes, not the Progress line.
 - Full text only where `DECISIONS.md` 2026-10-15 (verbatim-match rule) and 2026-10-09 (three countries) allow; otherwise short quote and a link to the official page.
 
 ## Sparse sections
@@ -41,7 +46,9 @@ Each section has a minimum: Qué enseña ≥ 1 normative text; Objeciones aim fo
 4. `verification-pass.md` on every quote, against its edition.
 5. **Simulated expert per tradition** (Opus; it found ~2 must-fix per doctrine, the critic 13–17): "Would a theologian of this tradition sign this as its position? What is missing, distorted or mislabelled?" Writes `review-<tradition>.md`.
 6. **Hostile critic** (Fable, one at a time; its brief says "create the file first, append each finding as you go"): neutrality, caricature, cherry-picked quotes, unequal treatment across traditions. A reviewer told to find problems always finds some: each finding is triaged as must-fix / for Pedro / rejected with a reason.
+Order that worked (Lutheran pilot): verifier and expert in parallel right after the draft, then the critic; the apply agent may start on the verifier and expert items while the critic runs, on a frozen copy of the draft so line numbers resolve.
 7. `apply-corrections.md` on the dossiers. Brief the apply agent to apply the verifier's items first, from texts already fetched, and only then fetch more.
+   7b. A short Sonnet re-verification of everything the apply step added or redid.
 8. **Pedro's review**: a review artifact with the content poured into the latest proposed design of screens 02, 03 and 04 (read the latest artifact from the design session; it need not be the final design), so he reads it as a user would. Sparse sections are discussed there. Built with `tools/review-page/`: an agent writes `docs/research/doctrines/<doctrine>/review-page.data.js` from the dossier (copy the shape of an existing one; only the dossier's site drafts and quoted sources, never new content), then `python3 tools/review-page/build.py <data.js> <out.html> "Revisión <Doctrina> católica"` and `node tools/review-page/check.mjs <out.html>` (no JS errors, no horizontal scroll at 360–1440 px, every source opens its panel). The coordinator reads the whole page before publishing. After Pedro's notes, edit the data file, rebuild and republish to the same Artifact; keep `storeKey` so his saved drafts survive.
 9. `/retro`. Moving the content into `data/` is a separate task.
 
@@ -55,6 +62,7 @@ Each section has a minimum: Qué enseña ≥ 1 normative text; Objeciones aim fo
 
 ## Lessons
 
+- 2026-10-21 · Lutheran Eucharist pilot (first non-Catholic dossier, ~55 min): drafter's Progress ran ahead of the file, e-text slips, Spanish from English, harsh words without status on screen 03 → the five rules above and step 7b.
 - 2026-10-17 · The Eucharist pilot's expert found 2 must-fix and its critic 10 (later doctrines: 2 vs 13–17) → expert on Opus, critic on Fable.
 - 2026-10-17 · Pedro's reading of the Eucharist pilot, carried into Justification → the attribution, grading-method, objector-text and balance rules above.
 - 2026-10-17 · The pilot gate held (Catholic first, Pedro's notes, then the rest) and the second pilot ran before his notes by his choice; no approach error resurfaced → still pilot one tradition first.

@@ -25,6 +25,16 @@ Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v
 **Discarded:** «Trazo más firme»; the diagonal and vertical theme sweeps; the sidebar mark that cut between items; the «Leer el detalle» button.
 **Open, not decided** (ROADMAP "Now"): the date-title format in 09 «Fechas y autenticidad»; whether the page-change fade stays; a fast drag on the ruler breaks the filter animation (a trap to handle in the implementation, not now).
 
+## 2026-10-21 · Reader: highlighting by sentence and by dragged words (Pedro chose)
+**Chosen:** option C of `docs/research/reader-highlighting-and-features.md`: «Subrayar» in the side panel marks the whole sentence or verse, and dragging over words opens a small toolbar («Subrayar», «Copiar cita», «Copiar enlace», «Buscar»), below the selection on desktop, docked at the bottom on touch. A soft fill, never an underline (underline means link); colours chosen before highlighting (Pedro, 2026-10-21, later the same night: «diferentes colores», in tones that fit the design system, with the least visual noise). The drag toolbar has no «Copiar enlace». Five tones (amarillo, verde, celeste, rosa, naranja, each with a dark variant) and «Muestra junto a Subrayar»: «Subrayar» uses the last colour, a small dot beside it opens the five (Pedro: «tremenda»). Reader text size 17–29 px in seven steps; the 06 translation picker also at the far right of 05's reader bar (Pedro, 2026-10-21). How highlights are saved per user is decided later. Proposal: https://claude.ai/artifact/NYBF1wY8WNz2rpDAPPKutn.
+**Why:** Pedro: «Me interesa el C, eso es lo que quiero». Readers' top complaint in reviews is losing highlights (research, 437 mentions).
+**Discarded:** A (whole sentence only). Replaces the 2026-10-06 agreement of no free text selection in the reader.
+
+## 2026-10-21 · «Citar» copies the short citation (Pedro chose)
+**Chosen:** «Citar» copies the short form, e.g. «Concilio de Trento, ses. XIII, cap. 4 (1551)»; «Citar con texto» copies the quoted text + the short form + the Doctrina link; the full form with edition and page lives only on the source page (reached by the link), not in any button. On screen the citation is also short.
+**Why:** Pedro: in YouTube debates the citation shown under a quote of a Father or source is always the short form; the target readers cite in debates, videos and social posts. The short form is unambiguous (session/chapter/canon numbering is the same across serious editions), and the edition stays one click away.
+**Discarded:** a «Cita académica» button with the full form; copying the full form by default.
+
 ## 2026-10-21 · DESIGN.md gaps: first-visit theme, folded objections, and the agent's calls (Pedro chose two)
 **Chosen:** (1) first visit follows the device's light/dark setting (Pedro); (2) 02 «Objeciones que recibe» starts folded (Pedro). Agent's calls, open to Pedro's veto: touch hit areas ≥ 44 px without changing visible size (`ui.md` wins over the proposal); Tailwind's default breakpoints, 1099 → 1024, 899 → 768, 720 → 640; «Con las preguntas» on, as decided; the travelling tradition indicator also on 03's switcher; prev/next footer hides the missing side.
 **Why:** gaps and contradictions found while drafting `docs/DESIGN.md` from the approved v2.

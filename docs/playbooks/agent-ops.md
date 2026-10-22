@@ -19,6 +19,7 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 | 2 Opus research agents, ~7 min each | ~4 points of session | 2026-10-17 |
 | 1 Opus agent, web + Playwright screenshots, 11 min | ~5 points of session, ~1 weekly point | 2026-10-19 |
 | 1 Opus agent, Playwright frame analysis, 11 min | ~4 points of session, ~1 weekly point | 2026-10-19 |
+| Dossier pilot, one tradition (Lutheran Eucharist): Opus drafter 24 min, Sonnet verifier 14 min, Opus expert 6.5 min, Fable critic 5 min, Opus apply 16 min | ~29 points of session, ~4 weekly points | 2026-10-21 |
 | Debate-objections pilot: 6 Opus (web and YouTube) + 3 Sonnet (verify, apply), three passes over 2 h 15 min | ~52 points of session (with coordination), ~9 weekly; the single Spanish YouTube pass ~15–20 session | 2026-10-20 |
 | Eucharist pilot: Fable expert + Sonnet verifier 20 min (0 → 14 %), then Fable critic alone 10 min (14 → 32 %, ~1.8 %/min) | ~32 points of session, ~6 weekly | 2026-10-17 |
 | Overnight Catholic wave: 3 Opus + 1 Fable at once; one doctrine through the full cycle | ~4 session points/min and ~0.7 weekly/min; ~55–70 session points per doctrine | 2026-10-18 |

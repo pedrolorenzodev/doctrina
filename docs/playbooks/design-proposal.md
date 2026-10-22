@@ -15,6 +15,7 @@ Any UI without a precise definition goes through a proposal Artifact first. The 
 - What is discarded and why, including the AI-slop list.
 - A reference idea is explained with a small demo on real Doctrina content, never with values in words (sizes, hex, "levers"). For "copy it exactly", an agent first measures the original (source code plus per-frame DOM measurements with Playwright).
 - Before showing a reference agent's description, check each visual claim against its screenshot.
+- When a component resembles one whose animation or interaction Pedro already approved (`DESIGN.md`), one option is always reusing that approved pattern (Pedro, 2026-10-21: the reader's tabs should move like the Objeciones tradition switcher).
 - Ends with what has to be decided, and stops.
 
 ## Multi-screen proposal (the structure proposal, overnight 2026-10-20)
@@ -27,7 +28,7 @@ Any UI without a precise definition goes through a proposal Artifact first. The 
 
 ## Iterating
 
-- Iterate on the same page, keeping the previous version beside it.
+- Iterate on the same page, keeping the previous version beside it. A new «v[n]» label only for a substantial round of changes; small fixes and picks go into the current version (Pedro, 2026-10-21).
 - Pedro's notes: restate how you understood each, object where needed, agree, and only then record (decided → `DECISIONS.md`; open → `ROADMAP.md`, "under discussion, not agreed" if the session may end).
 - When Pedro sends notes over several messages, save them to a scratch file at once; compaction has lost nuances before.
 - "mi canvas [n]" means Pedro's edited copy of screen n in the [UX round 2 canvas](https://claude.ai/artifact/CiD9tLWApMVoskyJG2KwDV): find it in `project/canvas.json` by title ("… copy" or "(MODIFICACIONES MIAS)", placed to the left/bottom) and diff it against the original P-board; it shows the approach he prefers, not a final design.
