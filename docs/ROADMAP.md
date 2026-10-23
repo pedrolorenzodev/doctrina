@@ -126,6 +126,7 @@ Work that depends on no pending decision of Pedro's, ready to launch while we ta
 - Tradition maps, leftovers (`docs/research/traditions/consistency.md` §5): §4 sub-heading styles differ between maps; a few facts stay unconfirmed.
 - Eucharist pilot in the chosen structure, block by block, each verified and approved.
 - Whole-Bible reading, phase 1: text-only reader as static pages (66 books + separate deuterocanonical section; RV1909 / BSB by default; deuterocanonical books in English with a notice). Plan in `DECISIONS.md`.
+  - **Pedro, 2026-10-23:** previous/next chapter must be reachable wherever the reader is in the chapter while reading, not only in the footer; simple, same design rules as always. UI without a precise definition: proposal with demos first (mobile: a fixed control must not cover the text; e.g. shown on scroll-up, or a quiet edge control).
 - History data: 7 persons have no birth year (Clement of Rome, Ignatius, Melito of Sardis, Theophilus of Antioch, Methodius of Olympus, Optatus of Milevis, Vincent of Lérins). `docs/research/neutral/births-and-ignatius.md` found only one estimate (Optatus), not strong enough: **decide** whether they stay null (DECISIONS 2026-10-06 keeps estimates apart from attested dates).
 - Search ⌘K with "Recientes" and "Seguir donde dejaste": base is P1's component with self-explaining results (`DECISIONS.md`, 2026-10-06). **Decide visually:** how the date is separated from the breadcrumb path.
 - Horizontal general timeline (T1, one density, the component scrolls sideways).
