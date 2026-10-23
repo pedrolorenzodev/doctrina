@@ -123,3 +123,6 @@ Pedro runs research in his Codex app (`/goal`), not in Claude subagents: web res
 - 2026-10-21 · A 4-hour blind sleep missed the start of the night window → the runner rechecks every 15 minutes.
 - 2026-10-21 · Two chains started two runners on the same session → a chain waits for both the runner and `codex exec` to end, with a head start before it checks.
 - 2026-10-21 · `usage-guard` read 1 % as 100 % → the endpoint reports percent, not a fraction (fixed).
+- 2026-10-23 · A Codex session resumed for two days grew to a 127 MB history and sent ~450k input tokens per step; two night windows burned 87 % and 92 % in ~25 min each → a fresh session per work order (`codex-resume-run-2.sh` accepts `new` as session id plus `PROMPT_FILE`, and `SESSION_CAP`/`NIGHT_CAP`/`KILL_AT`) and context-economy rules in the prompt. First fresh window still went 0 → 79 % in 30 min (~200k tokens per step after 15 min), so context alone is not the cause; next test: reasoning effort "medium" (global `~/.codex/config.toml`).
+- 2026-10-23 · A Claude session left open overnight costs one cache rebuild (~120k tokens) on return, but the larger cost is length: per-request context grew from ~78k to ~197k over the session → hand off to a fresh session before a new block of work.
+- 2026-10-23 · Codex wrote downloads to `tmp/` in the repo root → prompts say scratch goes outside the repo.

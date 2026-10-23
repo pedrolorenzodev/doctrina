@@ -242,3 +242,5 @@ Losing notes is the top negative in the corpus (256 reviews) and Safari's 7-day 
 6. **Word notes in another translation:** shown at their division with «1 nota en RV1909» (recommended), or only in the edition where they were written?
 7. **Site-wide «Tus notas»** at launch, or only the per-source list?
 8. **Auto-linked references** inside notes («Jn 6,53» becomes a link): at launch or later?
+
+**Pedro's answers (2026-10-23):** 1 A, notes in this browser at launch with «Descargar» and «Importar»; before launch, research well how notes survive on Safari (and every browser) for as long as possible, ideally never lost. 6 shown at their division with «1 nota en RV1909», «el menor ruido visual posible». 7 after launch, very low priority. 8 after launch, low priority («Está buena la idea»).
