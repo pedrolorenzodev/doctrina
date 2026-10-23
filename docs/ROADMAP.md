@@ -115,8 +115,6 @@ Work that depends on no pending decision of Pedro's, ready to launch while we ta
 
 ## Next
 
-- **Decide: where the data-access layer lives.** `PROJECT.md` ("Data architecture") needs an async data-access layer (`getDoctrine`, `getVerse`, `getFather`…); the base structure has no such folder and `lib/` must stay domain-free. Options: per-feature `data/` folders, a shared domain layer between `features` and `components/ui`, or a dedicated feature. Decide before the first page reads data.
-- Port the screenshot tool (`tools/shot.mjs`, Playwright, from v2) and add an `npm run shot` script, with the first UI block.
 - Adapt `data/scripts/` before running them: outputs still target v2's `src/content/data/`; raw downloads are expected in `data/raw/src/` (copy them from `~/Desktop/dev/doctrina-v2/data/raw/src/` or re-download, recording the date).
 - Apply `docs/research/sources/registry-resourcing.md` (44/44 entries and 127/127 Eucharist quotes re-sourced to dated print scans; DECISIONS 2026-10-09) to the data: the «replace» rows need Pedro's decision first. In `john6`, withhold the 5 passages wrongly labelled public domain.
 - When Ema's repo arrives: analyze its agent and documentation practices and propose what to adopt as version 2 of the process system (`docs/playbooks/`, proposal https://claude.ai/artifact/VcXgkZVt6kyToMmM69Sbje).

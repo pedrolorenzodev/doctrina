@@ -65,7 +65,7 @@ All content is **draft**. The dossiers in `docs/research/doctrines/` are the sou
 
 ## Stack
 
-Next.js 16.3 (App Router, Turbopack) · React 19.2 · TypeScript (strict) · Tailwind CSS 4 (CSS-first, `@theme` tokens, no `tailwind.config`, PostCSS via `@tailwindcss/postcss`) · ESLint 9 · npm. Exact versions: `package.json`.
+Next.js 16.3 (App Router, Turbopack) · React 19.2 · TypeScript (strict plus five stricter flags) · Tailwind CSS 4 (CSS-first, `@theme` tokens, no `tailwind.config`, PostCSS via `@tailwindcss/postcss`) · ESLint 9 · Prettier · Playwright (screenshots) · Node 24 (`.nvmrc`) · npm. CI: GitHub Actions runs `npm ci` + `npm run verify`. Exact versions: `package.json`.
 
 Carried from v1/v2, not yet re-confirmed (revisit freely): `next/font` self-hosted; static generation (SSG / ISR); Vercel hosting; editorial content as typed files / JSON in git (no CMS); bilingual routing under `/{es|en}`; PostHog; Gumroad/Polar + Mercado Pago.
 
@@ -75,6 +75,7 @@ Carried from v1/v2, not yet re-confirmed (revisit freely): `next/font` self-host
 src/
   app/                routing only: layouts, pages, metadata, globals.css
   features/<feature>/ one folder per domain: components/, and hooks, types, data… only when needed
+  content/            editorial content as typed modules + the async data-access layer (getters by locale)
   components/ui/      reusable primitives with no domain logic
   lib/                pure functions and constants, no React, no domain
 data/                 content drafts and builder scripts (not imported by code yet)
@@ -84,7 +85,7 @@ docs/                 these docs; docs/research/ holds the research reports and 
 - **`app/`**: only what Next needs to route. Pages are thin: they import a feature component and pass props; no business logic, state or complex UI in a `page.tsx`. Route groups `(group)` when different layouts are needed.
 - **`features/<name>/`**: everything of one domain together. A change or bug in that domain is solved in one folder; deleting the feature is deleting the folder.
 - **`components/ui/`**: generic primitives (button, tag, card…). If only one feature uses it, it lives in that feature.
-- **Dependencies flow one way: `app → features → components/ui → lib`.** A feature never imports from another feature; shared code moves up to `components/` or `lib/`.
+- **Dependencies flow one way: `app → features → content | components → lib`.** A feature never imports from another feature; shared code moves up to `components/` or `lib/`; `components/` never imports `content/`. Enforced by the `doctrina/layers` lint rule (`tools/eslint-plugin-doctrina.mjs`), which also bans `../` imports.
 - **Server Components by default**; `"use client"` as low in the tree as possible.
 - Start minimal. Any other folder (`hooks/`, `types/`, `config/`, `services/`…) is created when a concrete piece needs it. Over-structuring, giant global components and business logic inside pages are documented mistakes.
 - Root keeps only `public/`, `.env.*`, configs, docs and tool scripts.
@@ -100,7 +101,7 @@ docs/                 these docs; docs/research/ holds the research reports and 
 - **User data** (accounts, recents / "Seguir donde dejaste", bookmarks, notes, progress, error reports, email list) → Supabase with Auth and row-level security.
 - Pages stay static / ISR; only search and personal data query at runtime. Doctrines reference verses by OSIS id (`John.6.53`).
 - **AI**: (1) semantic search (pgvector) over our curated content, user-visible, the demo feature; (2) internal tooling with human review: draft Spanish translations of Fathers (labelled as translation), citation checking against editions, cross-link and glossary suggestions. No generated chat answers.
-- Prepared from the start: table-shaped data with stable ids (OSIS refs, slugs, source ids); provenance on every record (license, edition, verified flag); `.env.example`, no secrets in the repo. Pages never import JSON directly: they go through an async data-access layer (`getDoctrine`, `getVerse`, `getFather`…), so swapping to Supabase touches only that layer. **Where that layer lives is open** (see `ROADMAP.md`).
+- Prepared from the start: table-shaped data with stable ids (OSIS refs, slugs, source ids); provenance on every record (license, edition, verified flag); `.env.example`, no secrets in the repo. Pages never import JSON directly: they go through an async data-access layer (`getDoctrine`, `getVerse`, `getFather`…), so swapping to Supabase touches only that layer. The layer is `src/content/` (DECISIONS 2026-10-23, «Block 0»).
 - Rough table sketch: books, verses, words (verse, position, original, transliteration, lemma, morphology, glosses), lemmas (Strong's, definition, counts), verse_texts (verse, edition, text), editions (license); works, patristic_passages (text, locator, license) + passage_verses; persons, councils, heresies, divisions, events; profiles, history, bookmarks, notes, progress, error_reports.
 - Supabase limits and prices: verify before deciding.
 

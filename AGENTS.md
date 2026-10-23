@@ -55,10 +55,10 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 
 ## Code
 
-8. Language: the whole repo is in English (docs, code, names, comments, commits). Only site content and UI strings are bilingual (es/en). Conversation with Pedro is in Spanish.
+8. Language: the whole repo is in English (docs, code, names, comments, commits). Only site content and UI strings are bilingual (es/en). Conversation with Pedro is in Spanish. `npm run lint` rejects Spanish file names and identifiers (DECISIONS 2026-10-23); never add an exception to silence it.
 9. Comments: only `TODO` or to silence a tool (`eslint-disable`, `@ts-expect-error`). Nothing that explains what the code does or why a value was chosen, including doc-comments on types, props and data. If something only makes sense with a paragraph beside it, the code is the problem: a better name, or split it. What the comment would have said goes to `docs/GOTCHAS.md`.
    **Single exception: the guard.** One line, only where an innocent local edit silently breaks something non-local. It doesn't explain, it warns that there is a wire; its why goes to `GOTCHAS.md`. Before writing one, try to make the constraint unbreakable (a name that says it). Applies going forward; don't clean existing comments unless asked.
-- Structure: `src/app` (routing only) → `src/features` (one domain per folder) → `src/components/ui` → `src/lib`. Dependencies flow one way, no imports between features. Server Components by default; `"use client"` only where interactivity requires it, as low in the tree as possible. Details and rationale: `docs/PROJECT.md`.
+- Structure: `src/app` (routing only) → `src/features` (one domain per folder) → `src/content` (data access) | `src/components` → `src/lib`. Dependencies flow one way, no imports between features; a lint rule enforces it. Server Components by default; `"use client"` only where interactivity requires it, as low in the tree as possible. Details and rationale: `docs/PROJECT.md`.
 - Files in kebab-case that say what they do. Named exports, one main component per file; default exports only where Next requires them (`page`, `layout`, `not-found`, `loading`, `error`, `template`, `default`, metadata image files). Imports via `@/…`, never long relative paths.
 - Componentize and reuse before writing new code. No over-engineering, no abstraction for a second use case that doesn't exist yet. Folders, tokens, components and abstractions are created only when a concrete piece needs them.
 
@@ -109,4 +109,4 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 
 ## Commands
 
-`npm run dev` · `npm run verify` (= `typecheck` + `lint` + `build`) · `npm run typecheck` (`next typegen && tsc --noEmit`).
+Node 24: `nvm use` first. `npm run dev` · `npm run verify` (= `typecheck` + `lint` with its rule fixtures + `format:check` + `build`) · `npm run typecheck` (`next typegen && tsc --noEmit`) · `npm run format` · `npm run shot -- <route> <out.png> [w] [h] [full] [theme]` · `npm run components [word]`.

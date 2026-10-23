@@ -11,10 +11,16 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **`next build` warns "Next.js ignored package-lock.json in /Users/pedrolorenzo/Desktop/dev".** · A stray lockfile exists one level above the repo. Harmless: Next picks this repo. Don't set `turbopack.root` to silence it. · `~/Desktop/dev/package-lock.json` (outside the repo).
 - **ESLint also lints `data/scripts/*.mjs`** (and `handoff/` while it exists): today only `no-unused-vars` warnings. · The flat config lints every JS file not ignored. · `eslint.config.mjs`.
 
+- **Node 23 instead of 24 in a new shell.** · nvm's global default is still 23 (left as is); the repo pins 24 in `.nvmrc` and `engines`. · Run `nvm use` in the repo before `npm`; `npm install` on 23 warns about `engines`.
+- **A lint rule change can silently stop catching what it should.** · Selectors and regexes in `eslint.config.mjs` fail open (no match, no error). · `tools/check-lint-rules.mjs` holds one fixture per forbidden edge and allowed case; add one with every rule change. It runs inside `npm run lint`.
+- **Tailwind arbitrary values are caught only in string literals of `.tsx` files.** · The lint checks literals and template parts, not strings assembled in `.ts` helpers. · `eslint.config.mjs`; keep class strings in `.tsx`.
+
+- **The English-names check only knows the words in its list.** · `tools/spanish-words.mjs` is a denylist: a Spanish word not in it passes, and English-looking Spanish words (`general`, `final`, `color`) are deliberately left out. · Add each miss to the list and a fixture to `tools/check-english-names.mjs` or `tools/check-lint-rules.mjs`.
+
 ## Git and environment
 
 - **`.env*` in `.gitignore` would also ignore `.env.example`.** · The scaffold's ignore pattern is broad. · `.gitignore` → `!.env.example` re-includes it; keep that line below `.env*`.
-- **`tools/review-page/check.mjs` needs `playwright-core`, which this repo doesn't install.** · It requires `process.env.PLAYWRIGHT_CORE || 'playwright-core'`; point the variable at any local copy (e.g. `PLAYWRIGHT_CORE=~/Desktop/zapatillas-research/node_modules/playwright-core`). Blocked Google Fonts requests show as 4 "Failed to load resource" errors per run: expected. Template markers in `shell.html` are `__DATA__` and `__APP__`. · `tools/review-page/`.
+- **`tools/review-page/check.mjs` requires `playwright-core`** (`process.env.PLAYWRIGHT_CORE || 'playwright-core'`); since 2026-10-23 the repo installs it through `playwright`. Blocked Google Fonts requests show as 4 "Failed to load resource" errors per run: expected. Template markers in `shell.html` are `__DATA__` and `__APP__`. · `tools/review-page/`.
 - **The git hook matches the whole command text, not just the command.** · It is a regex over the Bash string: `echo 'run git push later'` is blocked too, and so is `git restore --staged` (unstaging). It also blocks `add`, `rm`, `mv` and `stash` (2026-10-17): `git rm --cached` once slipped through and staged a deletion, while the undo was blocked. Because it matches text, a heredoc or script passed inline that merely mentions those commands is blocked too: write the script to a file first. Rephrase the command or let Pedro run it. · `.claude/hooks/block-git-writes.mjs`.
 
 ## Data scripts

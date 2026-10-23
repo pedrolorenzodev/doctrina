@@ -1,0 +1,8 @@
+*.md
+docs/
+data/
+handoff/
+tmp/
+.claude/
+tools/review-page/
+package-lock.json
