@@ -22,6 +22,7 @@
 
 # data downloads
 /data/raw/src/
+/data/corpus/
 
 # misc
 .DS_Store
