@@ -16,6 +16,7 @@ export const en: UiText = {
     collapseAll: "Collapse all but where I am",
     expand: "Expand {label}",
     collapse: "Collapse {label}",
+    sections: "Page sections",
   },
   notFound: {
     title: "This page doesn't exist",

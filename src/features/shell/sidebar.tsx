@@ -272,6 +272,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
         <nav
           ref={navRef}
           aria-label={text.navLabel}
+          data-lenis-prevent
           onClick={onClick}
           className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule lg:pt-5.5"
         >

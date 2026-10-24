@@ -14,6 +14,7 @@ export const es = {
     collapseAll: "Contraer todo menos dónde estoy",
     expand: "Expandir {label}",
     collapse: "Contraer {label}",
+    sections: "Secciones de la página",
   },
   notFound: {
     title: "Esta página no existe",
