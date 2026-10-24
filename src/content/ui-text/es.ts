@@ -23,6 +23,23 @@ export const es = {
     copied: "Cita copiada",
     dateLabel: "Fecha",
     dateUnconfirmed: "sin confirmar",
+    scriptureKind: "Escritura",
+    gradeKind: "Grado de autoridad",
+    gradeBasis: "En esta afirmación",
+    scriptureEdition: "RV1909",
+  },
+  doctrine: {
+    teach: "Qué enseña",
+    showMoreStatements: "Mostrar {n} afirmaciones más",
+    showLess: "Mostrar menos",
+    gradeAnd: "y",
+    unclassified: {
+      "taught-by-council": "Enseñado por un concilio",
+      "taught-by-catechism": "Enseñado por el Catecismo",
+      "ecumenical-agreement": "Acuerdo ecuménico",
+      undeclared: "Sin grado declarado",
+      "no-own-grade": "Sin grado propio",
+    },
   },
   notFound: {
     title: "Esta página no existe",

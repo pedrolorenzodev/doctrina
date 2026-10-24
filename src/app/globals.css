@@ -39,10 +39,30 @@
   --text-ui-2xs: 12px;
   --text-ui-xs: 13px;
   --text-btn: 13.5px;
+  --text-line: 14px;
+  --text-line--line-height: 1.7;
   --text-meta: 14px;
   --text-meta--line-height: 1.5;
   --text-micro: 10.5px;
   --text-micro-lg: 11.5px;
+  --text-h3: 22px;
+  --text-h3--line-height: 1.3;
+  --text-definition: 17px;
+  --text-definition--line-height: 1.6;
+  --text-prose: 19px;
+  --text-prose--line-height: 1.66;
+  --text-prose-mobile: 18px;
+  --text-prose-mobile--line-height: 1.66;
+  --text-h2: 36px;
+  --text-h2--line-height: 1.15;
+  --text-h2-mobile: 29px;
+  --text-h2-mobile--line-height: 1.15;
+  --text-sub: 14.5px;
+  --text-sub--line-height: 1.55;
+  --text-defn: 23px;
+  --text-defn--line-height: 1.5;
+  --text-defn-mobile: 20px;
+  --text-defn-mobile--line-height: 1.5;
   --text-quote-window: 20px;
   --text-quote-window--line-height: 1.45;
   --text-label: 12.5px;
@@ -62,12 +82,14 @@
 
   --spacing-top: 56px;
   --spacing-sidebar: 272px;
+  --spacing-section: 140px;
   --spacing-scroll-offset: 24px;
   --container-col: 720px;
   --container-drawer: min(320px, 86vw);
 
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
   --ease-move: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
 
   --shadow-current: inset 2px 0 0 var(--color-accent);
   --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45);
@@ -113,6 +135,7 @@
 @media (width < 40rem) {
   :root {
     --spacing-top: 52px;
+    --spacing-section: 96px;
   }
 }
 
@@ -271,6 +294,10 @@
   }
 }
 
+@utility scroll-mt-offset {
+  scroll-margin-top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
+}
+
 @utility window-max-height {
   max-height: min(560px, calc(100vh - 96px));
 }
@@ -368,6 +395,29 @@
   }
 }
 
+@utility opsz-18 {
+  font-variation-settings: "opsz" 18;
+}
+
+@utility opsz-60 {
+  font-variation-settings: "opsz" 60;
+}
+
+@utility divider-inline {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  margin: 0 12px;
+  vertical-align: -2px;
+  background-color: var(--color-rule-2);
+}
+
+@utility flip-ghosts {
+  & * {
+    animation: none !important;
+  }
+}
+
 @utility opsz-24 {
   font-variation-settings: "opsz" 24;
 }
@@ -404,6 +454,29 @@ html.theme-switching ::after {
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-rv="armed"] {
+    opacity: 0;
+  }
+
+  [data-rv="shown"] {
+    animation: row-reveal 420ms var(--ease-reveal) backwards;
+    animation-delay: calc(var(--reveal-index, 0) * 60ms);
+  }
+}
+
+@keyframes row-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

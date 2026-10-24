@@ -109,4 +109,4 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 
 ## Commands
 
-Node 24: `nvm use` first. `npm run dev` · `npm run verify` (= `typecheck` + `lint` with its rule fixtures + `format:check` + `build`) · `npm run typecheck` (`next typegen && tsc --noEmit`) · `npm run format` · `npm run shot -- <route> <out.png> [w] [h] [full] [theme]` · `npm run components [word]`.
+Node 24: `nvm use` first. `npm run dev` · `npm run verify` (= `typecheck` + `lint` with its rule fixtures and tool checks + `format:check` + `build`) · `npm run e2e` (Playwright specs in `e2e/`, after a build; every animation, focus and scroll behaviour is tested there) · `npm run typecheck` (`next typegen && tsc --noEmit`) · `npm run format` · `npm run shot -- <route> <out.png> [w] [h] [full] [theme]` · `npm run components [word]`.

@@ -12,6 +12,7 @@
     "lint": "eslint && node tools/check-lint-rules.mjs && node tools/check-english-names.mjs && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/check-theme-script.mjs && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/check-inline-refs.mjs && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./tools/register-alias.mjs tools/check-content.mjs && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/check-window-position.mjs && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./tools/register-alias.mjs tools/check-formats.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "e2e": "playwright test",
     "typecheck": "next typegen && tsc --noEmit",
     "shot": "node tools/shot.mjs",
     "components": "node tools/components.mjs",
@@ -24,6 +25,7 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^24",
     "@types/react": "^19",

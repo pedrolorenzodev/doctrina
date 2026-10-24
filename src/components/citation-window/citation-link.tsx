@@ -6,14 +6,15 @@ import { InPlaceLink } from "@/components/ui/in-place-link";
 
 type CitationLinkProps = {
   id: string;
+  kind?: "citation" | "term";
   children: ReactNode;
 };
 
-export function CitationLink({ id, children }: CitationLinkProps) {
+export function CitationLink({ id, kind = "citation", children }: CitationLinkProps) {
   const { openId, open, close } = useCitation();
   return (
     <InPlaceLink
-      kind="citation"
+      kind={kind}
       open={openId === id}
       onClick={(event) => (openId === id ? close() : open(id, event.currentTarget))}
     >

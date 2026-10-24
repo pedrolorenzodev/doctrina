@@ -25,6 +25,23 @@ export const en: UiText = {
     copied: "Citation copied",
     dateLabel: "Date",
     dateUnconfirmed: "unconfirmed",
+    scriptureKind: "Scripture",
+    gradeKind: "Degree of authority",
+    gradeBasis: "For this statement",
+    scriptureEdition: "RV1909",
+  },
+  doctrine: {
+    teach: "What it teaches",
+    showMoreStatements: "Show {n} more statements",
+    showLess: "Show less",
+    gradeAnd: "and",
+    unclassified: {
+      "taught-by-council": "Taught by a council",
+      "taught-by-catechism": "Taught by the Catechism",
+      "ecumenical-agreement": "Ecumenical agreement",
+      undeclared: "No declared degree",
+      "no-own-grade": "No degree of its own",
+    },
   },
   notFound: {
     title: "This page doesn't exist",

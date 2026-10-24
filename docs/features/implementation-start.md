@@ -1,6 +1,6 @@
 # Implementation start: first coding milestone
 
-Status: plan only (drafted 2026-10-21 by a Plan agent). Pedro's calls D3, D7 (psalms), D8, D9, D12 and the spike: all the recommended options (DECISIONS 2026-10-22 «Implementation start: the six open calls»). Coding still waits for Pedro's explicit go. Gate: coding starts once Pedro has reviewed the five Catholic dossiers (DECISIONS 2026-10-21). Inputs: `DESIGN.md`, DECISIONS, `docs/research/doctrines/*/catholic.md` and `review-page.data.js`, Next 16 docs (`02-guides/internationalization.md`, `04-functions/next-root-params.md`, `03-file-conventions/layout.md`, `02-guides/preventing-flash-before-hydration.md`, `02-components/font.md`, `02-guides/view-transitions.md`).
+Status: B0–B8 built (2026-10-24); see ROADMAP «Current state». Original plan drafted 2026-10-21 by a Plan agent. Pedro's calls D3, D7 (psalms), D8, D9, D12 and the spike: all the recommended options (DECISIONS 2026-10-22 «Implementation start: the six open calls»). Coding still waits for Pedro's explicit go. Gate: coding starts once Pedro has reviewed the five Catholic dossiers (DECISIONS 2026-10-21). Inputs: `DESIGN.md`, DECISIONS, `docs/research/doctrines/*/catholic.md` and `review-page.data.js`, Next 16 docs (`02-guides/internationalization.md`, `04-functions/next-root-params.md`, `03-file-conventions/layout.md`, `02-guides/preventing-flash-before-hydration.md`, `02-components/font.md`, `02-guides/view-transitions.md`).
 
 ## 1. First milestone
 

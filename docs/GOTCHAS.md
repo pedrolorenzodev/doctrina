@@ -17,6 +17,9 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 
 - **The English-names check only knows the words in its list.** · `tools/spanish-words.mjs` is a denylist: a Spanish word not in it passes, and English-looking Spanish words (`general`, `final`, `color`) are deliberately left out. · Add each miss to the list and a fixture to `tools/check-english-names.mjs` or `tools/check-lint-rules.mjs`.
 
+- **`npm run e2e` needs a build and port 3100.** · The config starts `next start`; without a fresh `npm run build` the specs test stale output. Locally it reuses a server already on 3100; in CI it always starts one. · `playwright.config.ts`.
+- **Animation assertions use `getAnimations()`, not sampled frames.** · Frame sampling failed under parallel load; checking `transitionProperty` right after the click is deterministic and also catches the `translate`-versus-`transform` trap. · `e2e/citation-window.spec.ts`, `e2e/sidebar.spec.ts`.
+
 ## Git and environment
 
 - **`.env*` in `.gitignore` would also ignore `.env.example`.** · The scaffold's ignore pattern is broad. · `.gitignore` → `!.env.example` re-includes it; keep that line below `.env*`.
@@ -43,6 +46,8 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **View transition for the theme: `html.theme-switching` and its CSS must stay together.** · The class turns every CSS transition off while the circle reveals, and `::view-transition-old/new(root)` need `animation: none; mix-blend-mode: normal`, or the browser cross-fades instead of sweeping. · `src/features/shell/theme-toggle.tsx`, `src/app/globals.css`.
 - **`texture-layer` needs a positioned element and a layer above its content.** · The noise is an absolutely placed `::after`; the element must be `sticky`, `relative` or `absolute`, and its direct children are lifted to `z-index: 1` by the utility. · Top bar now; every opaque sticky surface later (DESIGN §1 Texture).
 - **`html` has `line-height: normal`, not Tailwind's 1.5.** · The clean site was built on the browser default; with 1.5 every unspecified line came out taller (logo 34 px instead of 23). · `src/app/globals.css`, base layer; roles whose DESIGN row gives a line height set it in their `--text-*` token.
+- **Never `whitespace-nowrap` on citation labels.** · Labels like «Mysterium fidei 10, 24, 46» are wider than a phone; the non-breaking space before each number already keeps locators together. A nowrap on a source span made the page 840 px wider at 360 px. · `teach-section.tsx`.
+- **Reveal states live in `data-rv` on the list items, set by `list-motion.ts`, not by React.** · `armed` (opacity 0) is released when the item passes above the viewport; React must not render `data-rv`. · `src/lib/list-motion.ts`, `globals.css`.
 - **Tailwind v4 `translate-*`, `scale-*` and `rotate-*` set the `translate`, `scale` and `rotate` properties, not `transform`.** · A transition on `transform` does not animate them (the drawer slid in 60 ms, the window did not rise). Use `transition-transform` (covers the four) or list `translate` explicitly. · `drawer-motion`, `window-motion` in `globals.css`.
 - **The citation window panel is always mounted, closed.** · Mounting it already open skips the enter transition; its content is rendered only when a view exists. · `citation-window.tsx`.
 - **Esc goes through `escape-stack.ts`, never a local listener.** · Priority decides which layer closes (search, reader, window, drawer). · `src/lib/escape-stack.ts`.

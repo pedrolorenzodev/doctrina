@@ -64,7 +64,7 @@ export function CitationWindow() {
   }
 
   async function copy() {
-    if (!view) return;
+    if (!view?.copyText) return;
     try {
       await navigator.clipboard.writeText(view.copyText);
     } catch {
@@ -137,15 +137,25 @@ type WindowBodyProps = {
 function WindowBody({ view, text, copied, onCopy }: WindowBodyProps) {
   return (
     <div data-lenis-prevent className="overflow-y-auto overscroll-contain p-4.5">
+      {view.title ? <h3 className="mb-2.5 font-head text-h3 font-normal text-ink">{view.title}</h3> : null}
       {view.quote ? (
         <p lang={view.quote.lang} className="font-head text-quote-window font-light text-ink italic opsz-24 guillemets">
           {view.quote.text}
         </p>
       ) : null}
-      <p className="mt-3.5 text-meta">
-        <span className="font-medium">{view.who}</span>
-        {view.locator ? <span className="block text-ink-3">{view.locator}</span> : null}
-      </p>
+      {view.definition ? <p className="font-body text-definition font-light text-ink-2">{view.definition}</p> : null}
+      {view.who || view.locator ? (
+        <p className="mt-3.5 text-meta">
+          {view.who ? <span className="font-medium">{view.who}</span> : null}
+          {view.locator ? <span className="block text-ink-3">{view.locator}</span> : null}
+        </p>
+      ) : null}
+      {view.note ? (
+        <p className="mt-3.5 text-meta text-ink-2">
+          <span className="block text-ui-xs text-ink-3">{view.note.label}</span>
+          {view.note.text}
+        </p>
+      ) : null}
       {view.date ? (
         <>
           <p className="mt-3.5 flex items-baseline gap-2.5 text-ui-xs text-ink-3">
@@ -155,22 +165,26 @@ function WindowBody({ view, text, copied, onCopy }: WindowBodyProps) {
           <MiniTimeline start={view.date.start} end={view.date.end} label={view.date.label} />
         </>
       ) : null}
-      <div className="mt-4.5 flex flex-wrap items-center gap-x-2.5 gap-y-2">
-        {view.externalLink ? (
-          <span className="text-btn">
-            <PageLink href={view.externalLink.href} external>
-              {view.externalLink.label}
-            </PageLink>
-          </span>
-        ) : null}
-        <button
-          type="button"
-          onClick={onCopy}
-          className="cursor-pointer rounded-6 px-1.5 py-2 text-btn text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
-        >
-          {copied ? text.copied : text.copy}
-        </button>
-      </div>
+      {view.externalLink || view.copyText ? (
+        <div className="mt-4.5 flex flex-wrap items-center gap-x-2.5 gap-y-2">
+          {view.externalLink ? (
+            <span className="text-btn">
+              <PageLink href={view.externalLink.href} external>
+                {view.externalLink.label}
+              </PageLink>
+            </span>
+          ) : null}
+          {view.copyText ? (
+            <button
+              type="button"
+              onClick={onCopy}
+              className="cursor-pointer rounded-6 px-1.5 py-2 text-btn text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
+            >
+              {copied ? text.copied : text.copy}
+            </button>
+          ) : null}
+        </div>
+      ) : null}
       <span role="status" className="sr-only">
         {copied ? text.copied : ""}
       </span>
