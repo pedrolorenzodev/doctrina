@@ -34,6 +34,10 @@
   --text-lede-mobile: 20px;
   --text-lede-mobile--line-height: 1.38;
   --text-ui-base: 15px;
+  --text-ui-sm: 14px;
+
+  --radius-3: 3px;
+  --radius-7: 7px;
 
   --spacing-top: 56px;
   --spacing-scroll-offset: 24px;
@@ -112,7 +116,7 @@
   :is(a, button, [tabindex], input, summary):focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
-    border-radius: 3px;
+    border-radius: var(--radius-3);
   }
 }
 

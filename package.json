@@ -9,7 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint && node tools/check-lint-rules.mjs && node tools/check-english-names.mjs",
+    "lint": "eslint && node tools/check-lint-rules.mjs && node tools/check-english-names.mjs && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tools/check-theme-script.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "next typegen && tsc --noEmit",

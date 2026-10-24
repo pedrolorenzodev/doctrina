@@ -359,6 +359,8 @@ Why each order and content: ROADMAP «Now» item 1 (screen notes) and the DECISI
 | 06 Verse | strip «Volver a donde estabas» · crumbs · title · lede | the passage with the division before and after · «Citar» + «Dónde se usa en Doctrina» (side column) · En griego, palabra por palabra · Comparar traducciones |
 | 09 History entity | crumbs · kicker («Uno de los Padres apostólicos») · h1 · facts · «Ver en la línea de tiempo» | Tiempo contemporáneo · Quién fue (text + facts table) · Sus escritos · Fechas y autenticidad · Dónde aparece en Doctrina (place in a left column, 150 px) · footer previous / next |
 
+Error shell (not from the proposal; built in B1b from the tokens): 404 and 500 pages use the `display` h1 and the `lede` for the message and `btn-go`-style actions (min-height 44, `--radius-7`, `text-ui-sm`); the global 404 and 500 show Spanish and English one after the other, because they render outside the locale layout. Spanish system copy is neutral («vuelva», «Intentar de nuevo»), no voseo.
+
 Not designed yet: 01 home, 10 witnesses, 11 search screen (the ⌘K component above is designed). 07 word study and 08 timeline have an open proposal, not approved.
 
 ## 7. Don'ts
