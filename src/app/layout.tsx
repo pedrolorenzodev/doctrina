@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { fontVariables } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,8 +10,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="es" className={fontVariables}>
+      <body className="texture-page bg-bg font-ui text-ui-base text-ink antialiased">
+        <div className="relative z-1">{children}</div>
+      </body>
     </html>
   );
 }

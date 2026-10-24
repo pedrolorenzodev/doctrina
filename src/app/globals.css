@@ -1,1 +1,127 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #e8e5de;
+  --color-ink: #1c1713;
+  --color-ink-2: #2a2620;
+  --color-ink-3: #615c54;
+  --color-ink-prose: #4f4b44;
+  --color-rule: #c9c5bc;
+  --color-rule-2: #aeaba4;
+  --color-accent: #2c4a9e;
+  --color-accent-weak: rgb(44 74 158 / 0.1);
+  --color-accent-mid: rgb(44 74 158 / 0.45);
+  --color-cite: #5f3d0c;
+  --color-cite-weak: rgb(95 61 12 / 0.09);
+  --color-card: rgb(255 255 255 / 0.35);
+  --color-panel: #efece6;
+  --color-tip-bg: #1c1713;
+  --color-tip-ink: #f4f1ea;
+  --color-hover: rgb(28 23 19 / 0.05);
+  --color-mark: rgb(240 200 60 / 0.45);
+
+  --text-display: 60px;
+  --text-display--line-height: 1.03;
+  --text-display--letter-spacing: -0.01em;
+  --text-display-mobile: 42px;
+  --text-display-mobile--line-height: 1.03;
+  --text-display-mobile--letter-spacing: -0.01em;
+  --text-lede: 24px;
+  --text-lede--line-height: 1.38;
+  --text-lede-mobile: 20px;
+  --text-lede-mobile--line-height: 1.38;
+  --text-ui-base: 15px;
+
+  --spacing-top: 56px;
+  --spacing-scroll-offset: 24px;
+  --container-col: 720px;
+}
+
+@theme inline {
+  --font-head: var(--font-newsreader), Georgia, serif;
+  --font-body: var(--font-source-serif), Georgia, serif;
+  --font-ui: var(--font-work-sans), system-ui, sans-serif;
+}
+
+:root {
+  --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.85%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%221.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2262%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
+  --texture-opacity: 0.4;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --color-bg: #1d1d1c;
+  --color-ink: #f2f2f0;
+  --color-ink-2: #d0d0cc;
+  --color-ink-3: #9a9a96;
+  --color-ink-prose: #9a9a96;
+  --color-rule: #3a3a38;
+  --color-rule-2: #4d4d4a;
+  --color-accent: #9eb3ee;
+  --color-accent-weak: rgb(158 179 238 / 0.12);
+  --color-accent-mid: rgb(158 179 238 / 0.45);
+  --color-cite: #d6a865;
+  --color-cite-weak: rgb(214 168 101 / 0.12);
+  --color-card: rgb(255 255 255 / 0.03);
+  --color-panel: #262625;
+  --color-tip-bg: #f2f2f0;
+  --color-tip-ink: #1d1d1c;
+  --color-hover: rgb(255 255 255 / 0.05);
+  --color-mark: rgb(214 168 101 / 0.28);
+  --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
+  --texture-opacity: 1;
+  color-scheme: dark;
+}
+
+@media (width < 40rem) {
+  :root {
+    --spacing-top: 52px;
+  }
+}
+
+@utility texture-page {
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: var(--texture-image);
+    background-size: 420px 420px;
+    opacity: var(--texture-opacity);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+}
+
+@utility opsz-72 {
+  font-variation-settings: "opsz" 72;
+}
+
+@utility opsz-36 {
+  font-variation-settings: "opsz" 36;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
+  }
+
+  :is(a, button, [tabindex], input, summary):focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
