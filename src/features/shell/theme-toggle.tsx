@@ -1,6 +1,7 @@
 "use client";
 
 import type { MouseEvent } from "react";
+import { IconButton } from "@/components/ui/icon-button";
 import { storeTheme, themeSweepEasing, themeSweepMs, type Theme } from "@/lib/theme";
 
 type ThemeToggleProps = {
@@ -45,11 +46,7 @@ export function ThemeToggle({ toLight, toDark }: ThemeToggleProps) {
   }
 
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      className="grid size-9 cursor-pointer place-items-center rounded-6 text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:size-11"
-    >
+    <IconButton onClick={toggle}>
       <span className="sr-only dark:hidden">{toDark}</span>
       <span className="sr-only hidden dark:inline">{toLight}</span>
       <svg
@@ -77,6 +74,6 @@ export function ThemeToggle({ toLight, toDark }: ThemeToggleProps) {
       >
         <path d="M14.5 11.2A6.5 6.5 0 0 1 6.8 3.5a6.5 6.5 0 1 0 7.7 7.7z" />
       </svg>
-    </button>
+    </IconButton>
   );
 }

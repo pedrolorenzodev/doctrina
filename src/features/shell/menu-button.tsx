@@ -1,18 +1,19 @@
 "use client";
 
+import { IconButton } from "@/components/ui/icon-button";
 import { useDrawer } from "@/features/shell/drawer";
 
 export function MenuButton({ label }: { label: string }) {
   const { open, setOpen, menuRef } = useDrawer();
   return (
-    <button
+    <IconButton
       ref={menuRef}
-      type="button"
+      size="md"
+      tone="primary"
       aria-label={label}
       aria-expanded={open}
       aria-controls="site-sidebar"
       onClick={() => setOpen(!open)}
-      className="-ml-2 grid size-10 cursor-pointer place-items-center rounded-6 transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:size-11 lg:hidden"
     >
       <svg
         width="20"
@@ -25,6 +26,6 @@ export function MenuButton({ label }: { label: string }) {
       >
         <path d="M3 6h14M3 10h14M3 14h14" />
       </svg>
-    </button>
+    </IconButton>
   );
 }
