@@ -34,6 +34,7 @@ export type Work = {
   short: string;
   kind: WorkKind;
   speaker: Speaker;
+  // TODO: fill from the dossiers once they state each work's original language
   originalLang?: DocLang;
   scheme: readonly LocatorKind[];
   date?: DateInfo;

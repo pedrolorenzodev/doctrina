@@ -303,6 +303,7 @@ const BOOKS = {
   "2 Timoteo": "2Tim", "Tito": "Titus", "Hebreos": "Heb", "Santiago": "Jas", "1 Pedro": "1Pet", "2 Pedro": "2Pet", "1 Juan": "1John",
   "Judas": "Jude", "Apocalipsis": "Rev",
 };
+// TODO: a parenthetical such as «Hebreos 1:6 (Salmo 97:7)» becomes two separate references; keep the link between them
 function refToOsis(ref) {
   ref = ref.replace(/\s*\(([^)]*\d+:\d+[^)]*)\)/g, "; $1");
   const segs = [];
@@ -375,7 +376,8 @@ function parseFatherAttr(attr) {
 function buildPage(d) {
   const x = RAW[d];
   const osisList = (refs) => refs.flatMap((r) => (refToOsis(r) ?? "").split(",")).filter(Boolean);
-  const objItems = x.OB_ORDER.map((id) => {
+  const objectionIds = Object.keys(x.OBJ).sort((a, b) => a.slice(0, 2).localeCompare(b.slice(0, 2)) * -1 || parseInt(a.slice(3)) - parseInt(b.slice(3)));
+  const objItems = objectionIds.map((id) => {
     const o = x.OBJ[id];
     const debate = id.startsWith("DO-");
     let title = o.title;
@@ -423,7 +425,7 @@ function buildPage(d) {
       note: prose(d, x.PORQUE.note), closing: prose(d, x.PORQUE.closing),
     },
     scripture: x.ESCRITURA.map((e) => { const osis = refToOsis(e.ref); if (!osis) throw new Error("scripture ref not understood: " + e.ref); return { refs: osis.split(","), text: prose(d, e.d) }; }),
-    objections: { order: x.OB_ORDER, ...(x.OB_LIST_NOTE ? { silentTraditions: prose(d, x.OB_LIST_NOTE) } : {}), items: objItems },
+    objections: { order: objectionIds, ...(x.OB_LIST_NOTE ? { silentTraditions: prose(d, x.OB_LIST_NOTE) } : {}), items: objItems },
     life: { intro: x.VIVE.intro.map((t) => prose(d, t)), items: x.VIVE.items.map((i) => ({ id: i.id, label: i.l, text: prose(d, i.d), sources: i.s.map((p) => srcRef(d, p)) })) },
     authority: { grades, other },
   };

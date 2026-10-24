@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 const actionClassName =
-  "inline-flex cursor-pointer min-h-11 items-center justify-center gap-2.5 rounded-7 border border-rule-2 bg-card px-4 text-ui-sm font-medium text-ink no-underline transition-colors duration-150 hover:border-ink hover:bg-hover";
+  "inline-flex cursor-pointer min-h-11 items-center justify-center gap-2.5 rounded-7 border border-rule-2 bg-card px-4 text-ui-sm font-medium text-ink no-underline transition-colors duration-150 ease-standard hover:border-ink hover:bg-hover";
 
 type ActionLinkProps = {
   href: string;

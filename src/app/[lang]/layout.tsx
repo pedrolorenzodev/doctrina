@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Document } from "@/components/document";
+import { TopBar } from "@/features/shell/top-bar";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { currentLocale } from "@/lib/current-locale";
 import { locales } from "@/lib/locale";
@@ -17,5 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
-  return <Document lang={await currentLocale()}>{children}</Document>;
+  return (
+    <Document lang={await currentLocale()}>
+      <TopBar />
+      {children}
+    </Document>
+  );
 }

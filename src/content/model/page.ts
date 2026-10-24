@@ -59,6 +59,7 @@ export type Objection<C extends string = string> = {
   raisedBy: { traditions: TraditionId[]; line: string };
   objectorTexts: { shown: C[]; more: C[] };
   answer: AnswerBlock[];
+  // TODO: drop with the debate layer's pending answers; the site never shows a pending marker
   apologeticAnswer?: "pending";
   sourcesCited: CitationGroup<C>[];
   passages: { answer: string[]; objector: string[]; objectorNote?: Rich };

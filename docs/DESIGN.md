@@ -343,6 +343,7 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 - **«Comparar traducciones»**: segmented filter «Español con español» (default) / «Inglés con inglés» / «Todas» (travelling indicator; starts on «Todas» when each language has one translation), chips per translation, rows name 14 500 + abbreviation, text body 300 17/1.6, list as FLIP.
 
 ### Top bar
+- Built in B3: logo, language switch, theme button; menu button (B4) and search trigger are not built yet.
 - Sticky, 56 px, `bg` + texture, bottom hairline: menu button (≤ 1099), logo, search, ES / EN (13 px; current ink 500; hidden ≤ 720), theme button.
 
 ## 6. Screens (order of sections)

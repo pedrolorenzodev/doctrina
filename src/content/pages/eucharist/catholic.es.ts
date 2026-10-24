@@ -435,7 +435,7 @@ export const eucharistCatholic = {
     },
   ],
   objections: {
-    order: ["OB-1", "OB-2", "OB-3", "OB-4", "OB-6", "OB-7", "OB-5", "DO-1", "DO-2"],
+    order: ["OB-1", "OB-2", "OB-3", "OB-4", "OB-5", "OB-6", "OB-7", "DO-1", "DO-2"],
     silentTraditions:
       "Los textos que hablan por los bautistas en Doctrina (Fe y Mensaje Bautistas 2000, art. VII; Confesión de New Hampshire 1853, art. XIV) presentan la Cena como símbolo y memorial y no formulan objeciones a la doctrina católica; lo mismo la Declaración de Verdades Fundamentales de las Asambleas de Dios, art. 6.",
     items: [
@@ -817,6 +817,95 @@ export const eucharistCatholic = {
         },
       },
       {
+        id: "OB-5",
+        layer: "official",
+        title: "Misas privadas y misas por los difuntos: la Cena convertida en una obra que vale por sí sola",
+        synthesis:
+          "Cristo instituyó la Cena para que la comunidad comulgue y los creyentes reciban con fe el perdón. Misas sin comulgantes, multiplicadas y aplicadas a cambio de dinero por vivos y difuntos, hacen de ella una obra que valdría por el solo hecho de celebrarse, sin la fe de quien la recibe. Y la Cena se instituyó para los vivos: aplicarla por los difuntos no tiene testimonio ni mandato en la Escritura.",
+        raisedBy: {
+          traditions: ["lutheran", "reformed"],
+          line: "Suelen plantearla luteranos y reformados.",
+        },
+        objectorTexts: {
+          shown: ["AC24b"],
+          more: ["AP24b", "SA2212", "WCF2924", "STWCF"],
+        },
+        answer: [
+          {
+            type: "p",
+            text: 'Para la Iglesia católica, que un sacramento obre _ex opere operato_ no significa que obre sin fe. El Catecismo define: «los sacramentos obran ex opere operato (según las palabras mismas del Concilio: "por el hecho mismo de que la acción es realizada"), es decir, en virtud de la obra salvífica de Cristo, realizada de una vez por todas», y añade: «Sin embargo, los frutos de los sacramentos dependen también de las disposiciones del que los recibe» {c:CEC1128|Catecismo 1128}. Trento dice de la Misa que sus frutos se alcanzan «si nos acercamos al Señor contritos y penitentes, si con sincero corazon, y recta fe, si con temor y reverencia» {c:T22c2|ses. XXII, cap. 2}.',
+          },
+          {
+            type: "p",
+            text: "Para la Iglesia católica, lo deseable es que los fieles comulguen en cada Misa. Trento: «Quisiera por cierto el sacrosanto Concilio que todos los fieles que asistiesen á las Misas comulgasen en ellas, no solo espiritualmente, sino recibiendo tambien sacramentalmente la Eucaristía» {c:T22c6|ses. XXII, cap. 6}. Pero no condena las misas en que solo comulga el sacerdote, porque «se deben tambien tener con toda verdad por comunes de todos; parte porque el pueblo comulga espiritualmente en ellas, y parte porque se celebran por un ministro público de la Iglesia, no solo por sí, sino por todos los fieles que son miembros del cuerpo de Cristo» {c:T22c6|cap. 6}. Pablo VI: «toda misa, aunque sea celebrada privadamente por un sacerdote, no es acción privada, sino acción de Cristo y de la Iglesia, la cual, en el sacrifico que ofrece, aprende a ofrecerse a sí misma como sacrificio universal, y aplica a la salvación del mundo entero la única e infinita virtud redentora del sacrificio de la Cruz» {c:MF32|Mysterium fidei 32}.",
+          },
+          {
+            type: "p",
+            text: 'Para la Iglesia católica, la Misa se ofrece también por los difuntos. Trento enseña que se ofrece, «segun la tradicion de los Apóstoles, por los que han muerto en Cristo sin estar plenamente purgados» {c:T22c2|ses. XXII, cap. 2}. El Catecismo: «El Sacrificio Eucarístico es también ofrecido por los fieles difuntos "que han muerto en Cristo y todavía no están plenamente purificados" […], para que puedan entrar en la luz y la paz de Cristo» {c:CEC1371|Catecismo 1371}, y cita las _Catequesis mistagógicas_ atribuidas a san Cirilo de Jerusalén (c. 350–390): «Presentando a Dios nuestras súplicas por los que han muerto, aunque fuesen pecadores […], presentamos a Cristo inmolado por nuestros pecados, haciendo propicio para ellos y para nosotros al Dios amigo de los hombres» {c:CEC1371|Catecismo 1371}. Y resume: «En cuanto sacrificio, la Eucaristía es ofrecida también en reparación de los pecados de los vivos y los difuntos» {c:CEC1414|Catecismo 1414}.',
+          },
+          {
+            type: "p",
+            text: "Para la Iglesia católica, el dinero no compra la Misa. El mismo Concilio de Trento mandó a los obispos prohibir «las condiciones de pagas de qualquiera especie, los contratos» por la celebración de misas y las cobranzas que «no distan mucho del pecado de Simonía», y desterrar «el abuso de decir cierto número de Misas con determinado número de luces, inventado mas bien por espíritu de supersticion que de verdadera religion» {c:T22decr|Trento, ses. XXII, decreto sobre lo que se ha de observar en la celebración de la Misa}. Hoy el Código manda: «En materia de ofrendas de Misas, evítese hasta la más pequeña apariencia de negociación o comercio» {c:CIC947|can. 947}, y recomienda a los sacerdotes celebrar «por las intenciones de los fieles, sobre todo de los necesitados, aunque no reciban ninguna ofrenda» {c:CIC945|can. 945 §2}.",
+          },
+          {
+            type: "quote",
+            text: [
+              "Si alguno dixere, que las Misas en que solo el sacerdote comulga sacramentalmente, son ilícitas, y que por esta causa se deben abrogar; sea excomulgado.",
+              "Si alguno dixere, que el sacrificio de la Misa […] solo aprovecha al que lo recibe; y que no se debe ofrecer por los vivos, ni por los difuntos, por los pecados, penas, satisfacciones, ni otras necesidades; sea excomulgado.",
+            ],
+            attribution: "{c:T22can8,T22can|Trento, sesión XXII, cánones 8 y 3}",
+          },
+        ],
+        sourcesCited: [
+          {
+            citations: ["CEC1128", "CEC1371", "CEC1414"],
+            name: "Catecismo de la Iglesia Católica 1128, 1371 (con las Catequesis mistagógicas atribuidas a san Cirilo de Jerusalén, c. 350–390), 1414",
+            dates: [
+              {
+                year: 1992,
+                alsoYears: [1997],
+              },
+            ],
+          },
+          {
+            citations: ["T22c2", "T22c6", "T22can8", "T22can", "T22decr"],
+            name: "Concilio de Trento, sesión XXII, caps. 2 y 6, cann. 3 y 8, y decreto sobre la celebración de la Misa",
+            dates: [
+              {
+                year: 1562,
+                month: 9,
+                day: 17,
+              },
+            ],
+          },
+          {
+            citations: ["MF32"],
+            name: "Pablo VI, Mysterium fidei 32",
+            dates: [
+              {
+                year: 1965,
+                month: 9,
+                day: 3,
+              },
+            ],
+          },
+          {
+            citations: ["CIC945", "CIC947"],
+            name: "Código de Derecho Canónico, cann. 945 §2 y 947",
+            dates: [
+              {
+                year: 1983,
+              },
+            ],
+          },
+        ],
+        passages: {
+          answer: [],
+          objector: ["1Cor.11.27", "1Cor.11.33", "Matt.15.9"],
+          objectorNote: "Confesión de Augsburgo XXIV.12, 39; Artículos de Esmalcalda II.2.2.",
+        },
+      },
+      {
         id: "OB-6",
         layer: "official",
         title: "Los dones se consagran por la invocación del Espíritu Santo, no solo por las palabras de Cristo",
@@ -986,95 +1075,6 @@ export const eucharistCatholic = {
         passages: {
           answer: [],
           objector: [],
-        },
-      },
-      {
-        id: "OB-5",
-        layer: "official",
-        title: "Misas privadas y misas por los difuntos: la Cena convertida en una obra que vale por sí sola",
-        synthesis:
-          "Cristo instituyó la Cena para que la comunidad comulgue y los creyentes reciban con fe el perdón. Misas sin comulgantes, multiplicadas y aplicadas a cambio de dinero por vivos y difuntos, hacen de ella una obra que valdría por el solo hecho de celebrarse, sin la fe de quien la recibe. Y la Cena se instituyó para los vivos: aplicarla por los difuntos no tiene testimonio ni mandato en la Escritura.",
-        raisedBy: {
-          traditions: ["lutheran", "reformed"],
-          line: "Suelen plantearla luteranos y reformados.",
-        },
-        objectorTexts: {
-          shown: ["AC24b"],
-          more: ["AP24b", "SA2212", "WCF2924", "STWCF"],
-        },
-        answer: [
-          {
-            type: "p",
-            text: 'Para la Iglesia católica, que un sacramento obre _ex opere operato_ no significa que obre sin fe. El Catecismo define: «los sacramentos obran ex opere operato (según las palabras mismas del Concilio: "por el hecho mismo de que la acción es realizada"), es decir, en virtud de la obra salvífica de Cristo, realizada de una vez por todas», y añade: «Sin embargo, los frutos de los sacramentos dependen también de las disposiciones del que los recibe» {c:CEC1128|Catecismo 1128}. Trento dice de la Misa que sus frutos se alcanzan «si nos acercamos al Señor contritos y penitentes, si con sincero corazon, y recta fe, si con temor y reverencia» {c:T22c2|ses. XXII, cap. 2}.',
-          },
-          {
-            type: "p",
-            text: "Para la Iglesia católica, lo deseable es que los fieles comulguen en cada Misa. Trento: «Quisiera por cierto el sacrosanto Concilio que todos los fieles que asistiesen á las Misas comulgasen en ellas, no solo espiritualmente, sino recibiendo tambien sacramentalmente la Eucaristía» {c:T22c6|ses. XXII, cap. 6}. Pero no condena las misas en que solo comulga el sacerdote, porque «se deben tambien tener con toda verdad por comunes de todos; parte porque el pueblo comulga espiritualmente en ellas, y parte porque se celebran por un ministro público de la Iglesia, no solo por sí, sino por todos los fieles que son miembros del cuerpo de Cristo» {c:T22c6|cap. 6}. Pablo VI: «toda misa, aunque sea celebrada privadamente por un sacerdote, no es acción privada, sino acción de Cristo y de la Iglesia, la cual, en el sacrifico que ofrece, aprende a ofrecerse a sí misma como sacrificio universal, y aplica a la salvación del mundo entero la única e infinita virtud redentora del sacrificio de la Cruz» {c:MF32|Mysterium fidei 32}.",
-          },
-          {
-            type: "p",
-            text: 'Para la Iglesia católica, la Misa se ofrece también por los difuntos. Trento enseña que se ofrece, «segun la tradicion de los Apóstoles, por los que han muerto en Cristo sin estar plenamente purgados» {c:T22c2|ses. XXII, cap. 2}. El Catecismo: «El Sacrificio Eucarístico es también ofrecido por los fieles difuntos "que han muerto en Cristo y todavía no están plenamente purificados" […], para que puedan entrar en la luz y la paz de Cristo» {c:CEC1371|Catecismo 1371}, y cita las _Catequesis mistagógicas_ atribuidas a san Cirilo de Jerusalén (c. 350–390): «Presentando a Dios nuestras súplicas por los que han muerto, aunque fuesen pecadores […], presentamos a Cristo inmolado por nuestros pecados, haciendo propicio para ellos y para nosotros al Dios amigo de los hombres» {c:CEC1371|Catecismo 1371}. Y resume: «En cuanto sacrificio, la Eucaristía es ofrecida también en reparación de los pecados de los vivos y los difuntos» {c:CEC1414|Catecismo 1414}.',
-          },
-          {
-            type: "p",
-            text: "Para la Iglesia católica, el dinero no compra la Misa. El mismo Concilio de Trento mandó a los obispos prohibir «las condiciones de pagas de qualquiera especie, los contratos» por la celebración de misas y las cobranzas que «no distan mucho del pecado de Simonía», y desterrar «el abuso de decir cierto número de Misas con determinado número de luces, inventado mas bien por espíritu de supersticion que de verdadera religion» {c:T22decr|Trento, ses. XXII, decreto sobre lo que se ha de observar en la celebración de la Misa}. Hoy el Código manda: «En materia de ofrendas de Misas, evítese hasta la más pequeña apariencia de negociación o comercio» {c:CIC947|can. 947}, y recomienda a los sacerdotes celebrar «por las intenciones de los fieles, sobre todo de los necesitados, aunque no reciban ninguna ofrenda» {c:CIC945|can. 945 §2}.",
-          },
-          {
-            type: "quote",
-            text: [
-              "Si alguno dixere, que las Misas en que solo el sacerdote comulga sacramentalmente, son ilícitas, y que por esta causa se deben abrogar; sea excomulgado.",
-              "Si alguno dixere, que el sacrificio de la Misa […] solo aprovecha al que lo recibe; y que no se debe ofrecer por los vivos, ni por los difuntos, por los pecados, penas, satisfacciones, ni otras necesidades; sea excomulgado.",
-            ],
-            attribution: "{c:T22can8,T22can|Trento, sesión XXII, cánones 8 y 3}",
-          },
-        ],
-        sourcesCited: [
-          {
-            citations: ["CEC1128", "CEC1371", "CEC1414"],
-            name: "Catecismo de la Iglesia Católica 1128, 1371 (con las Catequesis mistagógicas atribuidas a san Cirilo de Jerusalén, c. 350–390), 1414",
-            dates: [
-              {
-                year: 1992,
-                alsoYears: [1997],
-              },
-            ],
-          },
-          {
-            citations: ["T22c2", "T22c6", "T22can8", "T22can", "T22decr"],
-            name: "Concilio de Trento, sesión XXII, caps. 2 y 6, cann. 3 y 8, y decreto sobre la celebración de la Misa",
-            dates: [
-              {
-                year: 1562,
-                month: 9,
-                day: 17,
-              },
-            ],
-          },
-          {
-            citations: ["MF32"],
-            name: "Pablo VI, Mysterium fidei 32",
-            dates: [
-              {
-                year: 1965,
-                month: 9,
-                day: 3,
-              },
-            ],
-          },
-          {
-            citations: ["CIC945", "CIC947"],
-            name: "Código de Derecho Canónico, cann. 945 §2 y 947",
-            dates: [
-              {
-                year: 1983,
-              },
-            ],
-          },
-        ],
-        passages: {
-          answer: [],
-          objector: ["1Cor.11.27", "1Cor.11.33", "Matt.15.9"],
-          objectorNote: "Confesión de Augsburgo XXIV.12, 39; Artículos de Esmalcalda II.2.2.",
         },
       },
       {
