@@ -10,6 +10,12 @@ export const en: UiText = {
     language: "Language",
     themeToLight: "Switch to light mode",
     themeToDark: "Switch to dark mode",
+    menuOpen: "Open the index",
+    navLabel: "Site index",
+    groupDoctrines: "Doctrines",
+    collapseAll: "Collapse all but where I am",
+    expand: "Expand {label}",
+    collapse: "Collapse {label}",
   },
   notFound: {
     title: "This page doesn't exist",

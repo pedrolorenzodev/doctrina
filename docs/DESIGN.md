@@ -230,7 +230,7 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 - Hover: the row's point scales 1.25. Phone: name | date, then the mini timeline full width.
 - Groups (04): ui 500 13 ink-3 headings.
 
-### Sidebar tree — DEC 2026-10-07 · Navigation: P1's tree sidebar; DEC 2026-10-20 · «Objeciones» is its own page
+### Sidebar tree (built in B4: Doctrinas group only, published pages only) — DEC 2026-10-07 · Navigation: P1's tree sidebar; DEC 2026-10-20 · «Objeciones» is its own page
 - Desktop ≥ 1100: sticky under the top bar, full height, own scroll (thin scrollbar `rule-2`, overscroll contained), border-right `rule`, padding 22 14 40 18. ≤ 1099: drawer `min(320px, 86vw)` from the left with scrim, opened by the menu button (40×40), closed by scrim, Esc or navigation.
 - Groups «Doctrinas», «Biblia», «Historia», «Consulta»: label style, 22 px apart.
 - Row: min-height 32, radius 6, hover fill; twisty 22×28 with 10 px chevron (leaf: empty spacer); link ui 14/1.35 ink-2, count at the right in 12 ink-3 tabular; children indented 13 + 8 px with a 1px `rule` guide.

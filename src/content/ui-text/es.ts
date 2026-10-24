@@ -8,6 +8,12 @@ export const es = {
     language: "Idioma",
     themeToLight: "Cambiar a modo claro",
     themeToDark: "Cambiar a modo oscuro",
+    menuOpen: "Abrir el índice",
+    navLabel: "Índice del sitio",
+    groupDoctrines: "Doctrinas",
+    collapseAll: "Contraer todo menos dónde estoy",
+    expand: "Expandir {label}",
+    collapse: "Contraer {label}",
   },
   notFound: {
     title: "Esta página no existe",

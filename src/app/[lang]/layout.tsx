@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Document } from "@/components/document";
-import { TopBar } from "@/features/shell/top-bar";
+import { getSiteTree } from "@/content/get-site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
+import { DrawerProvider } from "@/features/shell/drawer";
+import { Sidebar } from "@/features/shell/sidebar";
+import { TopBar } from "@/features/shell/top-bar";
 import { currentLocale } from "@/lib/current-locale";
 import { locales } from "@/lib/locale";
 import "@/app/globals.css";
@@ -18,10 +21,29 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
+  const locale = await currentLocale();
+  const { shell } = getUiText(locale);
+  const groups = getSiteTree(locale);
+  const hasTree = groups.length > 0;
+  const text = {
+    navLabel: shell.navLabel,
+    collapseAll: shell.collapseAll,
+    expand: shell.expand,
+    collapse: shell.collapse,
+  };
   return (
-    <Document lang={await currentLocale()}>
-      <TopBar />
-      {children}
+    <Document lang={locale}>
+      <DrawerProvider>
+        <TopBar withMenu={hasTree} />
+        {hasTree ? (
+          <div className="lg:grid lg:grid-shell">
+            <Sidebar groups={groups} text={text} />
+            {children}
+          </div>
+        ) : (
+          children
+        )}
+      </DrawerProvider>
     </Document>
   );
 }

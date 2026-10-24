@@ -22,6 +22,7 @@
   --color-tip-ink: #f4f1ea;
   --color-hover: rgb(28 23 19 / 0.05);
   --color-mark: rgb(240 200 60 / 0.45);
+  --color-scrim: rgb(0 0 0 / 0.35);
 
   --text-display: 60px;
   --text-display--line-height: 1.03;
@@ -35,7 +36,11 @@
   --text-lede-mobile--line-height: 1.38;
   --text-ui-base: 15px;
   --text-ui-sm: 14px;
+  --text-ui-2xs: 12px;
   --text-ui-xs: 13px;
+  --text-label: 12.5px;
+  --text-sidebar: 14px;
+  --text-sidebar--line-height: 1.35;
   --text-logo: 23px;
   --text-logo--letter-spacing: -0.005em;
 
@@ -45,10 +50,15 @@
   --radius-7: 7px;
 
   --spacing-top: 56px;
+  --spacing-sidebar: 272px;
   --spacing-scroll-offset: 24px;
   --container-col: 720px;
+  --container-drawer: min(320px, 86vw);
 
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-move: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --shadow-current: inset 2px 0 0 var(--color-accent);
 }
 
 @theme inline {
@@ -125,6 +135,49 @@
   }
 }
 
+@utility grid-shell {
+  grid-template-columns: var(--spacing-sidebar) minmax(0, 1fr);
+}
+
+@utility h-below-top {
+  height: calc(100vh - var(--spacing-top));
+  height: calc(100dvh - var(--spacing-top));
+}
+
+@utility scrollbar-rule {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-rule-2) transparent;
+  overscroll-behavior: contain;
+}
+
+@utility drawer-motion {
+  transition:
+    transform 240ms var(--ease-move),
+    visibility 0s linear 240ms;
+
+  &[data-open="true"] {
+    transition-delay: 0s, 0s;
+  }
+}
+
+@utility row-current {
+  background-color: var(--color-accent-weak);
+  box-shadow: var(--shadow-current);
+
+  &:hover {
+    background-color: var(--color-accent-weak);
+  }
+
+  &[data-travelling] {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &[data-settling] {
+    transition: none;
+  }
+}
+
 @utility opsz-24 {
   font-variation-settings: "opsz" 24;
 }
@@ -139,6 +192,7 @@
 
 @layer base {
   html {
+    background-color: var(--color-bg);
     line-height: normal;
     scroll-padding-top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
   }

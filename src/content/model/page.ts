@@ -83,6 +83,7 @@ export type TraditionPage<C extends string = string> = {
   doctrine: DoctrineId;
   tradition: TraditionId;
   status: "draft" | "verified";
+  title: string;
   lede: string;
   teach: {
     subtitle: string;

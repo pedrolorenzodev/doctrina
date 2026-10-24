@@ -5,6 +5,7 @@ export const eucharistCatholic = {
   doctrine: "eucharist",
   tradition: "catholic",
   status: "draft",
+  title: "La posición católica",
   lede: "Cómo la Iglesia católica entiende la Eucaristía, con sus propias fuentes.",
   teach: {
     subtitle:

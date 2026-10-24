@@ -413,7 +413,7 @@ function buildPage(d) {
     if (GRADE_ID[k]) grades[GRADE_ID[k]] = def; else other[k] = def;
   }
   const page = {
-    doctrine: d, tradition: "catholic", status: "draft", lede: x.META.lede,
+    doctrine: d, tradition: "catholic", status: "draft", title: "La posición católica", lede: x.META.lede,
     teach: {
       subtitle: x.META.ensenaSub,
       definition: { text: prose(d, x.DEFINITION.text), grades: x.DEFINITION.grades.map((g) => grade(d, g)), sources: x.DEFINITION.sources.map((p) => srcRef(d, p)) },

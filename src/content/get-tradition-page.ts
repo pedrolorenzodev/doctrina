@@ -11,6 +11,10 @@ if (problems.length > 0) throw new Error(`Invalid content:\n${problems.slice(0, 
 
 const pagesByLocale: Record<Locale, Record<string, TraditionPage>> = { es: spanishPages, en: {} };
 
+export function getPublishedPages(locale: Locale): { doctrine: DoctrineId; tradition: TraditionId }[] {
+  return Object.values(pagesByLocale[locale]).map(({ doctrine, tradition }) => ({ doctrine, tradition }));
+}
+
 export async function getTraditionPage(
   doctrine: DoctrineId,
   tradition: TraditionId,
