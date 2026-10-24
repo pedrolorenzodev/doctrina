@@ -81,6 +81,7 @@ export type GradeDefinition<C extends string = string> = {
 export type TraditionPage<C extends string = string> = {
   doctrine: DoctrineId;
   tradition: TraditionId;
+  status: "draft" | "verified";
   lede: string;
   teach: {
     subtitle: string;

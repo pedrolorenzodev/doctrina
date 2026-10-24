@@ -12,7 +12,8 @@ export type DateInfo = {
   day?: number;
   alsoYears?: number[];
   circa?: boolean;
-  unconfirmed?: string;
+  attribution?: string;
+  unconfirmed?: boolean;
 };
 
 export type LocatorPart = {
@@ -33,7 +34,7 @@ export type Work = {
   short: string;
   kind: WorkKind;
   speaker: Speaker;
-  originalLang: DocLang;
+  originalLang?: DocLang;
   scheme: readonly LocatorKind[];
   date?: DateInfo;
 };
@@ -42,7 +43,7 @@ export type Licence = "public-domain" | "short-quote" | "unconfirmed" | "site-au
 
 export type Edition = {
   id: string;
-  work: string;
+  works: string[];
   lang: DocLang;
   bibliography: string;
   licence: Licence;
