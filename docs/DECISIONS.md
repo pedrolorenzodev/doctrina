@@ -2,6 +2,12 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-24 · Screens 10 and 11: Pedro's picks (Pedro chose)
+**Chosen:** proposal https://claude.ai/artifact/HzKBVgxRNNBSg9SKrab6Lt (archived in `docs/research/proposals/screens-10-11/`). Screen 10: option C, «Párrafo, frase en tinta plena»: the whole paragraph (the work's own division) with the context in `ink-3` and the sentence on the doctrine in `ink`, no fill; date in a left column, author line linking to his 09, link to the reader at that paragraph. Pedro: «por ahora sin modificar mucho más el diseño de 10». Screen 11: date style 2 (a 1 px × 12 px `rule-2` hairline between path and date, date at the right) and fragment style 3 (a Father's fragment in the quote voice, Newsreader italic 15.5, with the `mark` fill; explanatory lines stay in body type).
+**Why:** Pedro's pick after seeing the live demos; revisit only on feedback.
+**Agent's note, not decided:** C's context at `ink-3` is 5.27:1 on flat light `bg` (≥ 4.7 on texture, DESIGN §1); the proposal's own warning stands (the context is what this screen wants read). Spanish text around the highlighted sentences in the demo was a draft translation by the agent, not an edition.
+**Discarded:** A (sentence only), B (paragraph with tinted fill), D (foldable paragraph); date styles 1 and 3; fragment styles 1 and 2.
+
 ## 2026-10-21 · Structure proposal v2 approved, with the corrections agreed (Pedro chose)
 **Chosen:** v2 of the structure proposal (https://claude.ai/artifact/EDPtLnLWu2fHscbBgmu7rM, republished) is approved «to move on, with all corrections agreed now and before applied» (Pedro, final note). Next: `docs/DESIGN.md`. Where marked "revisit on feedback", Pedro reopens it only if he gets feedback.
 - Light-mode contrast: «Prosa más oscura». «Trazo más firme» rejected for now (too big a change); revisit only on positive feedback.

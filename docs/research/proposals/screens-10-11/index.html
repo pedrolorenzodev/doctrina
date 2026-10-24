@@ -1,0 +1,522 @@
+<title>Doctrina pantallas 10 y 11</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: proposal page in the site's own tokens; each screen is a live stage (container-queried) so desktop and phone widths are both real. */
+:root{
+  --bg:#e8e5de; --ink:#1c1713; --ink-2:#2a2620; --ink-3:#615c54; --ink-prose:#4f4b44; --rule:#c9c5bc; --rule-2:#aeaba4;
+  --accent:#2c4a9e; --accent-weak:rgb(44 74 158 / .1); --cite:#5f3d0c;
+  --card:rgb(255 255 255 / .35); --panel:#efece6; --hover:rgb(28 23 19 / .05); --mark:rgb(240 200 60 / .45);
+  --focus:rgb(28 23 19 / .09); --scrim:rgb(28 23 19 / .22); --tex-op:.4;
+  --head:Newsreader, Georgia, serif; --body:'Source Serif 4', Georgia, serif; --ui:'Work Sans', system-ui, sans-serif;
+  --ease:cubic-bezier(.25,.1,.25,1); --fast:150ms; --mid:200ms;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1d1d1c; --ink:#f2f2f0; --ink-2:#d0d0cc; --ink-3:#9a9a96; --ink-prose:#9a9a96; --rule:#3a3a38; --rule-2:#4d4d4a;
+    --accent:#9eb3ee; --accent-weak:rgb(158 179 238 / .12); --cite:#d6a865;
+    --card:rgb(255 255 255 / .03); --panel:#262625; --hover:rgb(255 255 255 / .05); --mark:rgb(214 168 101 / .28);
+    --focus:rgb(255 255 255 / .10); --scrim:rgb(0 0 0 / .45); --tex-op:1; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c; --ink:#f2f2f0; --ink-2:#d0d0cc; --ink-3:#9a9a96; --ink-prose:#9a9a96; --rule:#3a3a38; --rule-2:#4d4d4a;
+  --accent:#9eb3ee; --accent-weak:rgb(158 179 238 / .12); --cite:#d6a865;
+  --card:rgb(255 255 255 / .03); --panel:#262625; --hover:rgb(255 255 255 / .05); --mark:rgb(214 168 101 / .28);
+  --focus:rgb(255 255 255 / .10); --scrim:rgb(0 0 0 / .45); --tex-op:1; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0;transition:background-color var(--mid) ease,color var(--mid) ease}
+body::after{content:"";position:fixed;inset:0;background-image:var(--tex);background-size:420px 420px;opacity:var(--tex-op);mix-blend-mode:multiply;pointer-events:none;z-index:0}
+button{font:inherit;color:inherit}
+:is(a,button,[tabindex],input,summary):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding-block:28px 120px}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.bar .nm{font-family:var(--head);font-size:23px;font-weight:400;font-variation-settings:"opsz" 24;margin-right:auto}
+.tg{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.tg button{min-height:34px;padding:0 12px;border:0;background:transparent;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-3);cursor:pointer;transition:background-color var(--fast) ease,color var(--fast) ease}
+.tg button:hover{color:var(--ink);background:var(--hover)}
+.tg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.tbtn{min-height:40px;padding:0 14px;border:1px solid var(--rule-2);border-radius:7px;background:var(--card);font-size:13.5px;font-weight:500;cursor:pointer;transition:border-color var(--fast) ease,background-color var(--fast) ease}
+.tbtn:hover{border-color:var(--ink);background:var(--hover)}
+h1,h2,h3{margin:0;text-wrap:balance}
+.intro{max-width:720px;padding-block:40px 8px}
+.intro h1{font-family:var(--head);font-weight:300;font-size:44px;line-height:1.08;font-variation-settings:"opsz" 72;letter-spacing:-.01em}
+.intro p{margin:16px 0 0;font-family:var(--body);font-weight:300;font-size:19px;line-height:1.62;color:var(--ink-2)}
+.sec{padding-top:96px}
+.sec > h2{font-family:var(--head);font-weight:300;font-size:36px;line-height:1.15;font-variation-settings:"opsz" 60}
+.sec .sub{max-width:660px;margin:12px 0 0;font-size:14.5px;line-height:1.6;color:var(--ink-3)}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px 40px;margin:30px 0 0;padding:0;list-style:none}
+.how li{border-top:1px solid var(--rule);padding-top:12px;font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55;color:var(--ink-2)}
+.how b{display:block;margin-bottom:3px;font-family:var(--ui);font-weight:500;font-size:12.5px;color:var(--ink-3)}
+.picker{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin:40px 0 18px}
+.picker .lb{font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.opt{max-width:760px;min-height:132px;margin:0 0 22px;padding-top:2px}
+.opt h3{font-family:var(--head);font-weight:400;font-size:25px;line-height:1.2;font-variation-settings:"opsz" 24}
+.opt dl{display:grid;grid-template-columns:96px minmax(0,1fr);gap:6px 18px;margin:12px 0 0;font-size:14.5px;line-height:1.55}
+.opt dt{color:var(--ink-3);font-size:13px;padding-top:1px}
+.opt dd{margin:0;color:var(--ink-2)}
+.viewbar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:0 0 12px}
+.viewbar .note{font-size:13px;color:var(--ink-3)}
+
+/* stage: a miniature of the real page */
+.stage{container-type:inline-size;container-name:stg;position:relative;background:var(--bg);border:1px solid var(--rule-2);border-radius:10px;overflow:hidden;transition:width var(--mid) ease}
+.stage.phone{width:390px;max-width:100%;margin-inline:auto}
+.st-top{display:flex;align-items:center;gap:14px;height:52px;padding:0 18px;border-bottom:1px solid var(--rule)}
+.st-top .logo{font-family:var(--head);font-size:23px;font-variation-settings:"opsz" 24;letter-spacing:-.005em}
+.st-top .fake{flex:1;max-width:340px;height:34px;border:1px solid var(--rule);border-radius:6px;background:var(--card)}
+.st-frame{display:grid;grid-template-columns:minmax(0,1fr)}
+.st-sb{display:none;padding:22px 14px 30px 18px;border-right:1px solid var(--rule)}
+@container stg (min-width:900px){
+  .st-frame{grid-template-columns:240px minmax(0,1fr)}
+  .st-sb{display:block}
+}
+.sb-h{margin:0 0 6px 8px;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.sb ul{list-style:none;margin:0;padding:0}
+.sb li{display:block}
+.sb a{display:block;padding:6px 8px;border-radius:6px;font-size:14px;line-height:1.35;color:var(--ink-2);text-decoration:none}
+.sb a:hover{background:var(--hover);color:var(--ink)}
+.sb .l1{font-weight:500;color:var(--ink)}
+.sb ul ul{margin:2px 0 0 13px;padding-left:8px;border-left:1px solid var(--rule)}
+.sb .cur{background:var(--accent-weak);box-shadow:inset 2px 0 0 var(--accent);color:var(--ink);font-weight:500}
+.st-main{min-width:0;padding:30px 48px 60px 44px}
+@container stg (max-width:720px){.st-main{padding:24px 20px 50px}}
+.crumbs{margin:0 0 18px;font-size:13px;color:var(--ink-3)}
+.crumbs a{color:var(--ink-3);text-decoration:none}
+.crumbs a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.st-main h1{font-family:var(--head);font-weight:300;font-size:46px;line-height:1.05;letter-spacing:-.01em;font-variation-settings:"opsz" 72;max-width:760px}
+@container stg (max-width:720px){.st-main h1{font-size:36px;line-height:1.1}}
+.lede{max-width:640px;margin:16px 0 0;font-family:var(--head);font-style:italic;font-weight:300;font-size:22px;line-height:1.38;font-variation-settings:"opsz" 36;color:var(--ink-2)}
+@container stg (max-width:720px){.lede{font-size:20px}}
+.crit{max-width:640px;margin:16px 0 0}
+.crit summary{display:inline-flex;align-items:center;min-height:40px;padding:0 10px;margin-left:-10px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);cursor:pointer;list-style:none;transition:background-color var(--fast) ease}
+.crit summary::-webkit-details-marker{display:none}
+.crit summary:hover{background:var(--hover);color:var(--ink)}
+.crit p{margin:6px 0 0;font-size:14.5px;line-height:1.6;color:var(--ink-3)}
+
+/* screen 10 entries */
+.ens{list-style:none;margin:44px 0 0;padding:0}
+.en{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 40px;padding:34px 0 38px;border-top:1px solid var(--rule)}
+.en:last-child{border-bottom:1px solid var(--rule)}
+@container stg (max-width:720px){.en{grid-template-columns:minmax(0,1fr);padding:26px 0 30px}}
+.en-d{font-size:15px;font-weight:500;font-variant-numeric:tabular-nums;color:var(--ink);padding-top:3px}
+.en-d small{display:block;margin-top:3px;font-size:12.5px;font-weight:400;line-height:1.45;color:var(--ink-3)}
+.en-h{font-family:var(--ui);font-size:15px;font-weight:400;line-height:1.45;color:var(--ink-3)}
+.en-h a{font-weight:500}
+.ln-go{color:var(--ink);font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--rule-2);transition:text-decoration-color var(--fast) ease}
+.ln-go:hover{text-decoration-color:currentColor;text-decoration-thickness:2px}
+.en-w{margin:2px 0 0;font-size:14px;line-height:1.5;color:var(--ink-3)}
+.en-t{margin:18px 0 0;max-width:680px}
+.en-t p{margin:0;font-family:var(--body);font-weight:300;font-size:19px;line-height:1.66;color:var(--ink-2)}
+@container stg (max-width:720px){.en-t p{font-size:18px}}
+.en-go{margin:16px 0 0;font-size:14.5px}
+.en-go a{display:inline-flex;align-items:center;min-height:40px}
+
+.v-A .en-t p{font-family:var(--head);font-style:italic;font-weight:300;font-size:21px;line-height:1.45;font-variation-settings:"opsz" 24;color:var(--ink)}
+.v-A .en-t p::before{content:"«"}
+.v-A .en-t p::after{content:"»"}
+.v-A .gap{color:var(--ink-3)}
+.v-B .hl{background:var(--focus);color:var(--ink);box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:.08em .2em;margin:0 -.1em;border-radius:3px}
+.v-C .en-t p{color:var(--ink-3)}
+.v-C .hl{color:var(--ink)}
+.v-D .q p{font-family:var(--head);font-style:italic;font-weight:300;font-size:21px;line-height:1.45;font-variation-settings:"opsz" 24;color:var(--ink)}
+.v-D .q p::before{content:"«"}
+.v-D .q p::after{content:"»"}
+.v-D .gap{color:var(--ink-3)}
+.v-D .fold{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--mid) var(--ease)}
+.v-D .fold > div{overflow:hidden;min-height:0}
+.v-D .fold.open{grid-template-rows:1fr}
+.v-D .fold p{margin-top:14px;padding-left:18px;border-left:1px solid var(--rule-2)}
+.v-D .hl{background:var(--focus);color:var(--ink);padding:.08em .2em;margin:0 -.1em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.btn-more{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 12px 8px 10px;margin:8px 0 0 -10px;border:0;border-radius:6px;background:transparent;font-size:13.5px;font-weight:500;color:var(--ink-2);cursor:pointer;transition:background-color var(--fast) ease,color var(--fast) ease}
+.btn-more:hover{background:var(--hover);color:var(--ink)}
+.btn-more svg{transition:transform var(--mid) ease}
+.btn-more[aria-expanded="true"] svg{transform:rotate(45deg)}
+.v-A .only-D,.v-B .only-D,.v-C .only-D{display:none}
+.v-A .par,.v-D .par{display:none}
+.v-B .q,.v-C .q{display:none}
+
+/* discard list */
+.dis{margin:44px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 48px}
+.dis li{padding:12px 0 13px;border-top:1px solid var(--rule);font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.dis b{font-weight:500;color:var(--ink)}
+.h3s{margin:56px 0 0;font-family:var(--head);font-weight:400;font-size:25px;line-height:1.2;font-variation-settings:"opsz" 24}
+
+/* screen 11 */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;margin-top:26px}
+.sx-fr{padding:16px 12px 18px;border:1px solid var(--rule);border-radius:10px;background:var(--scrim);min-width:0}
+.sx-cap{margin:0 0 10px 4px;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.sx-cap b{color:var(--ink);font-weight:500}
+.sx-box{width:min(620px,100%);margin-inline:auto;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--rule-2);border-radius:10px;box-shadow:0 18px 40px -18px rgb(0 0 0 / .5);overflow:hidden;container-type:inline-size}
+.sx-in{display:flex;align-items:center;gap:10px;padding:0 14px;border-bottom:1px solid var(--rule);color:var(--ink-3)}
+.sx-in input{flex:1;min-width:0;height:52px;border:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;outline:none}
+.sx-in .kbd{font-size:11.5px;border:1px solid var(--rule);border-radius:4px;padding:1px 6px;color:var(--ink-3)}
+.sx-list{list-style:none;margin:0;padding:6px}
+.sx-hd{padding:8px 12px 4px;font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.sx-r{display:block;width:100%;text-align:left;border:0;background:none;padding:10px 12px;border-radius:7px;cursor:pointer;transition:background-color 120ms ease}
+.sx-r:hover,.sx-r.sel{background:var(--hover)}
+.sx-t{display:block;font-family:var(--head);font-size:18px;color:var(--ink)}
+.sx-p{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-top:2px;font-size:12.5px;color:var(--ink-3)}
+.sx-p .path{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sx-p .dt{flex:none;display:inline-flex;align-items:center;gap:9px;font-variant-numeric:tabular-nums}
+.sx-w{display:block;margin-top:3px;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.sx-none{padding:14px 12px;font-size:14px;color:var(--ink-3)}
+.sx-box mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
+.d2 .dt .bar1{width:1px;height:12px;background:var(--rule-2);display:block}
+.d3 .dt svg{display:block}
+.f2 mark{background:none;color:var(--ink);font-weight:600}
+.f3 .sx-w.fr{font-family:var(--head);font-style:italic;font-size:15.5px;line-height:1.4}
+.f3 .sx-w.fr mark{background:var(--mark)}
+.sx-foot{display:flex;gap:16px;flex-wrap:wrap;padding:9px 14px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-3)}
+.sx-ctl{display:flex;flex-wrap:wrap;gap:14px 28px;margin:26px 0 0}
+.sx-ctl .g{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.sx-ctl .lb{font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.live{margin-top:14px}
+
+.decide{margin:100px 0 0;padding-top:14px;border-top:1px solid var(--ink)}
+.decide h2{font-family:var(--head);font-weight:300;font-size:36px;line-height:1.15;font-variation-settings:"opsz" 60}
+.decide ol{margin:22px 0 0;padding:0;list-style:none;max-width:760px;display:grid;gap:0}
+.decide li{padding:16px 0 17px;border-top:1px solid var(--rule);font-family:var(--body);font-weight:300;font-size:18px;line-height:1.55;color:var(--ink-2)}
+.decide li b{font-weight:500;color:var(--ink)}
+.decide li span{display:block;margin-top:4px;font-family:var(--ui);font-size:14px;color:var(--ink-3)}
+@media (max-width:640px){
+  .intro h1{font-size:36px}
+  .sec{padding-top:72px}
+  .sec > h2,.decide h2{font-size:29px}
+  .opt dl{grid-template-columns:minmax(0,1fr);gap:0}
+  .opt dd{margin-bottom:8px}
+  .grid3{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <div class="bar">
+    <span class="nm">Doctrina</span>
+    <span class="tg" role="group" aria-label="Tema"><button type="button" id="th-l" aria-pressed="false">Claro</button><button type="button" id="th-d" aria-pressed="false">Oscuro</button></span>
+  </div>
+
+  <header class="intro">
+    <h1>Pantallas 10 y 11</h1>
+    <p>La 10 reúne lo que escribieron los primeros cristianos sobre una doctrina, para leerlo. La 11 es la búsqueda ⌘K, con la base ya elegida; solo queda decidir dos detalles. Todo con el contenido real de la Eucaristía, en las fuentes y los colores del sitio. Cada demo funciona con el ancho del celular.</p>
+  </header>
+
+  <!-- ===== 10 ===== -->
+  <section class="sec" id="s10">
+    <h2>10 · Lo que escribieron los primeros cristianos</h2>
+    <p class="sub">Una página por doctrina, en el árbol de la izquierda, arriba de las tradiciones. Cada texto cristiano hasta c. 800 que trata de esa doctrina, en orden cronológico. Sin comentario del sitio ni de ninguna tradición. Lo único que cambia entre las cuatro opciones es cómo se presenta el texto.</p>
+
+    <div class="picker">
+      <span class="lb">Opción</span>
+      <span class="tg" role="group" aria-label="Opción de la pantalla 10" id="pick10">
+        <button type="button" data-v="A" aria-pressed="false">A · Solo la frase</button>
+        <button type="button" data-v="B" aria-pressed="true">B · Párrafo, frase en fondo tenue</button>
+        <button type="button" data-v="C" aria-pressed="false">C · Párrafo, frase en tinta plena</button>
+        <button type="button" data-v="D" aria-pressed="false">D · Frase y párrafo plegable</button>
+      </span>
+    </div>
+
+    <div class="opt" id="opt10" aria-live="polite"></div>
+
+    <div class="viewbar">
+      <button type="button" class="tbtn" id="ph10" aria-pressed="false">Ver con ancho de celular</button>
+      <span class="note">La barra lateral aparece cuando el ancho lo permite.</span>
+    </div>
+
+    <div class="stage v-B" id="stage10">
+      <div class="st-top"><span class="logo">Doctrina</span><span class="fake" aria-hidden="true"></span></div>
+      <div class="st-frame">
+        <nav class="st-sb sb" aria-label="Árbol de la doctrina">
+          <p class="sb-h">Doctrinas</p>
+          <ul>
+            <li><a href="#s10" class="l1">La Eucaristía</a>
+              <ul>
+                <li><a href="#s10" class="cur" aria-current="page">Lo que escribieron los primeros cristianos</a></li>
+                <li><a href="#s10">Católica</a></li>
+                <li><a href="#s10">Ortodoxa</a></li>
+                <li><a href="#s10">Luterana</a></li>
+                <li><a href="#s10">Reformada</a></li>
+                <li><a href="#s10">Bautista y evangélica</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="st-main">
+          <p class="crumbs"><a href="#s10">Doctrinas</a> / <a href="#s10">La Eucaristía</a> / Lo que escribieron los primeros cristianos</p>
+          <h1>Lo que escribieron los primeros cristianos sobre la Eucaristía</h1>
+          <p class="lede">Los textos cristianos hasta c. 800 que tratan de la Eucaristía, en orden cronológico. Cada uno lleva a la obra completa.</p>
+          <details class="crit">
+            <summary>Cómo se eligen estos textos</summary>
+            <p>Entra cada pasaje que cita alguna de las tradiciones y cada uno que cita la bibliografía académica habitual sobre el tema. La lista no dice qué prueba cada texto: eso lo dice cada tradición en su propia página.</p>
+          </details>
+          <ol class="ens" id="ens"></ol>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h3s">Lo que se descartó</h3>
+    <ul class="dis">
+      <li><b>Amarillo para la frase.</b> Es el color de la búsqueda y del subrayado propio del lector; las marcas del sitio no se confunden entre sí (DESIGN §1).</li>
+      <li><b>Subrayado o negrita en la frase.</b> El subrayado significa enlace; la negrita en un cuerpo de peso 300 rompe el ritmo de lectura.</li>
+      <li><b>Título o nota interpretativa por texto.</b> Es interpretación, y ya salió de las vistas previas (DECISIONS 2026-10-07).</li>
+      <li><b>Un color o etiqueta por tradición en cada texto.</b> Asignaría a los Padres a una tradición moderna.</li>
+      <li><b>Narrar la evolución de la doctrina.</b> Se ve en la secuencia, nunca se cuenta.</li>
+      <li><b>Tarjetas por texto, comillas gigantes decorativas, «→» pegada al enlace.</b> Están en la lista de lo que parece generado por IA (DECISIONS 2026-10-05).</li>
+    </ul>
+  </section>
+
+  <!-- ===== 11 ===== -->
+  <section class="sec" id="s11">
+    <h2>11 · Búsqueda ⌘K</h2>
+    <p class="sub">La base está elegida: el componente de P1, con resultados que se explican solos (DECISIONS 2026-10-06). Línea 1: ruta y fecha. Línea 2: por qué coincidió, con la consulta marcada. No se muestran resultados que coinciden por palabras clave invisibles. Queda abierto cómo se separa la fecha de la ruta (sin «·») y cómo se marca el fragmento.</p>
+
+    <h3 class="h3s">La fecha en la línea 1</h3>
+    <div class="grid3" id="dates"></div>
+    <ul class="how">
+      <li><b>1 · Fecha a la derecha, sin símbolo (hoy en la maqueta)</b>La que recomiendo. Cuesta nada y no suma ruido; la columna de fechas, alineada a la derecha, se lee de un vistazo.</li>
+      <li><b>2 · Raya vertical fina</b>Separa con una hairline de 12 px del color de las líneas. Cuesta un elemento más por resultado; se parece a la raya que ya divide categoría y fuentes en 03.</li>
+      <li><b>3 · Regla minúscula</b>Una línea de 44 px de 0 a 800 con un punto donde cae el texto: dice «qué tan temprano» sin leer la fecha. Es lo más rico y lo más cargado; en celular compite con la ruta por el ancho.</li>
+    </ul>
+
+    <h3 class="h3s">El fragmento marcado en la línea 2</h3>
+    <div class="sx-ctl">
+      <div class="g"><span class="lb">Fecha</span>
+        <span class="tg" role="group" aria-label="Estilo de fecha" id="pickD"><button type="button" data-d="d1" aria-pressed="true">1</button><button type="button" data-d="d2" aria-pressed="false">2</button><button type="button" data-d="d3" aria-pressed="false">3</button></span></div>
+      <div class="g"><span class="lb">Fragmento</span>
+        <span class="tg" role="group" aria-label="Estilo del fragmento" id="pickF"><button type="button" data-f="f1" aria-pressed="true">1 · Fondo</button><button type="button" data-f="f2" aria-pressed="false">2 · Tinta firme</button><button type="button" data-f="f3" aria-pressed="false">3 · Fondo y cursiva</button></span></div>
+      <button type="button" class="tbtn" id="ph11" aria-pressed="false">Ver con ancho de celular</button>
+    </div>
+    <ul class="how" style="margin-top:22px">
+      <li><b>1 · Fondo amarillo (la base elegida)</b>La marca funcional de coincidencia, con variante oscura. El fragmento va entre «» y con «…» cuando está cortado.</li>
+      <li><b>2 · Tinta firme</b>Sin fondo: la coincidencia sube a tinta plena y peso 600. Más sobria, pero en un renglón corto se nota menos.</li>
+      <li><b>3 · Fondo y cursiva</b>El fragmento de un texto de los Padres va en la voz de cita del sitio (Newsreader cursiva); las frases explicativas siguen en el cuerpo normal. Distingue cita de explicación, a costa de una cuarta voz tipográfica en el buscador.</li>
+    </ul>
+
+    <div class="live" id="live11">
+      <div class="stage" id="stage11" style="padding:18px 12px 22px;background:var(--scrim)">
+        <div class="sx-box d1 f1" id="sxbox" role="dialog" aria-label="Buscar">
+          <div class="sx-in">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="sxq" type="text" value="carne" autocomplete="off" spellcheck="false" aria-label="Buscar doctrinas, versículos, Padres, palabras" placeholder="Buscar doctrinas, versículos, Padres, palabras">
+            <span class="kbd">Esc</span>
+          </div>
+          <ul class="sx-list" id="sxl" role="listbox"></ul>
+          <div class="sx-foot"><span>↑ ↓ para moverse</span><span>Enter abre</span><span>Esc cierra</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h3s">Lo que se descartó</h3>
+    <ul class="dis">
+      <li><b>«·» entre ruta y fecha.</b> Está en la lista de lo que parece generado por IA (DECISIONS 2026-10-05).</li>
+      <li><b>Subrayar el fragmento.</b> El subrayado significa enlace.</li>
+      <li><b>Un segundo acento para marcar.</b> La marca amarilla es funcional, no decorativa; el sitio mantiene un solo acento.</li>
+      <li><b>Resultados por palabras clave invisibles.</b> Si coincide por otra vía, la línea 2 lo dice («sarx, “carne” en griego»).</li>
+    </ul>
+  </section>
+
+  <section class="decide">
+    <h2>Para decidir</h2>
+    <ol>
+      <li><b>Pantalla 10: ¿A, B, C o D?</b><span>Mi voto es B. Es la que mejor sirve a «que el usuario lea», y lo que cuesta es largo de página. Si el fondo tenue no convence, C es la alternativa sin fondo, con menos contraste en el contexto.</span></li>
+      <li><b>Pantalla 11, fecha: ¿1, 2 o 3?</b><span>Mi voto es 1.</span></li>
+      <li><b>Pantalla 11, fragmento: ¿1, 2 o 3?</b><span>Mi voto es 1, que ya estaba elegida; 3 solo si querés distinguir cita de explicación.</span></li>
+    </ol>
+  </section>
+</div>
+
+<script>
+const TEXTS = [
+  { id:'didache', date:'c. 50–120', dnote:'fecha discutida', author:'Didaché', authorLine:'Obra anónima: no se conoce a su autor.', work:'capítulo 14.1–3', reader:'Didaché 14',
+    p:'[[Cada día del Señor reuníos, partid el pan y dad gracias, después de haber confesado vuestras transgresiones, para que vuestro sacrificio sea puro.]] Pero que nadie que tenga una disputa con su compañero se junte con vosotros hasta que se hayan reconciliado, para que vuestro sacrificio no sea profanado. [[Porque esto es lo que dijo el Señor: En todo lugar y tiempo ofrecedme un sacrificio puro]]; porque yo soy un gran Rey, dice el Señor, y mi nombre es admirable entre las naciones.' },
+  { id:'ignatius', date:'c. 107–110', dnote:'algunos estudiosos fechan las cartas c. 140', author:'Ignacio de Antioquía', authorLine:'Obispo de Antioquía; según la tradición lo llevaron preso a Roma y murió mártir hacia el 108.', work:'Carta a los Esmirniotas 7.1', reader:'Esmirniotas 7',
+    p:'[[Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.]] Por eso, quienes hablan contra este don de Dios incurren en la muerte en medio de sus disputas. Mejor les sería tratarlo con respeto, para que también ellos resucitaran. Conviene, pues, que os mantengáis apartados de tales personas y que no se hable de ellos ni en privado ni en público, sino que prestéis atención a los profetas, y sobre todo al Evangelio, en el cual se nos ha revelado la pasión de Cristo y se ha probado plenamente la resurrección. Evitad todas las divisiones, como principio de males.' },
+  { id:'justin', date:'c. 150–155', dnote:'', author:'Justino Mártir', authorLine:'Filósofo laico y apologista, nacido en Samaria; enseñó en Roma, donde murió mártir.', work:'Primera Apología 66', reader:'Apología 66',
+    p:'Y este alimento se llama entre nosotros Eucaristía, de la cual a nadie le es lícito participar sino al que cree que son verdaderas las cosas que enseñamos, y ha sido lavado con el baño para el perdón de los pecados y para la regeneración, y vive como Cristo ordenó. [[Porque no tomamos estas cosas como pan común ni bebida común; sino que, así como Jesucristo nuestro Salvador, hecho carne por la Palabra de Dios, tuvo carne y sangre para nuestra salvación, así también se nos ha enseñado que el alimento sobre el que se ha dado gracias por la oración de su palabra, y del cual nuestra sangre y nuestra carne se nutren por transformación, es la carne y la sangre de aquel Jesús que se hizo carne.]] Pues los apóstoles, en las memorias que compusieron, que se llaman Evangelios, nos transmitieron que así se les mandó: que Jesús tomó pan y, después de dar gracias, dijo: Haced esto en memoria de mí, esto es mi cuerpo; y que de la misma manera, tomando la copa y dando gracias, dijo: Esta es mi sangre; y se la dio a ellos solos.' },
+  { id:'irenaeus', date:'c. 180', dnote:'', author:'Ireneo de Lyon', authorLine:'Obispo de Lyon; de joven había escuchado a Policarpo.', work:'Contra las herejías IV.18.5', reader:'Contra las herejías IV.18',
+    p:'Entonces, ¿cómo pueden decir que la carne, que se nutre con el cuerpo del Señor y con su sangre, va a la corrupción y no participa de la vida? Que cambien, pues, de opinión, o dejen de ofrecer las cosas mencionadas. Pero nuestra opinión concuerda con la Eucaristía, y la Eucaristía, a su vez, confirma nuestra opinión. Porque le ofrecemos lo que es suyo, proclamando de manera coherente la comunión y la unión de la carne y el Espíritu. [[Porque así como el pan, que proviene de la tierra, al recibir la invocación de Dios ya no es pan común, sino Eucaristía, compuesta de dos realidades, terrena y celestial, así también nuestros cuerpos, al recibir la Eucaristía, ya no son corruptibles, pues tienen la esperanza de la resurrección para siempre.]]' }
+];
+
+const OPTS = {
+  A:{t:'A · Solo la frase', d:[['Qué es','La oración que menciona la doctrina, en voz de cita, como las muestra hoy la sección de 02. Debajo, quién fue el autor y el enlace al lector.'],['De dónde sale','Es la forma ya decidida para las vistas previas (changelog con la fecha en columna, como Linear en analogs.md).'],['Cuesta','Es la que menos hace leer: para entender una frase de Ignacio hay que salir al lector. Cada entrada es corta, la página se recorre rápido.']]},
+  B:{t:'B · Párrafo con la frase en fondo tenue', d:[['Qué es','El párrafo completo, en la división de la propia obra, con la frase de la doctrina sobre un fondo gris suave. Se lee de corrido y el ojo encuentra la frase.'],['De dónde sale','La marca de llegada del lector, pero gris y no amarilla (el amarillo es de la búsqueda y del subrayado del lector).'],['Cuesta','Entradas largas: cada una gana varias líneas. Un párrafo muy largo (Agustín) se corta en una oración completa con «Mostrar más».']]},
+  C:{t:'C · Párrafo con la frase en tinta plena', d:[['Qué es','Sin fondo: el contexto en gris, la frase en tinta plena. Es el mismo texto que B con una marca más discreta.'],['De dónde sale','Los tokens ya existentes (ink y ink-3), nada nuevo. No copia un producto.'],['Cuesta','El contexto queda en ink-3 (5,3:1 en claro, pasa AA) y se lee peor, justo lo que esta pantalla quiere que se lea. En celular el contraste entre ambos se pierde al sol.']]},
+  D:{t:'D · Frase y párrafo plegable', d:[['Qué es','La frase primero, como en A. «Leer el párrafo completo» lo despliega ahí mismo, con la frase marcada como en B.'],['De dónde sale','«Ver las objeciones que recibe» de 02: el mismo botón, la misma animación.'],['Cuesta','Un clic es lo que no se lee, y esta pantalla existe para que se lea. A favor: con 40 entradas la página es corta de recorrer.']]}
+};
+
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const PLUS = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg>';
+
+/* theme + texture */
+const tex = (freq, scale, elev) => {
+  const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420"><filter id="n" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="' + freq + '" numOctaves="4" seed="7" stitchTiles="stitch" result="t"/><feDiffuseLighting in="t" lighting-color="#ffffff" surfaceScale="' + scale + '" diffuseConstant="1"><feDistantLight azimuth="235" elevation="' + elev + '"/></feDiffuseLighting></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>';
+  return 'url("data:image/svg+xml;utf8,' + encodeURIComponent(svg) + '")';
+};
+const TEX = {light: tex(0.85, 1.6, 62), dark: tex(0.7, 2.6, 52)};
+const mq = matchMedia('(prefers-color-scheme: dark)');
+let explicit = null;
+function theme(){
+  const dark = explicit ? explicit === 'dark' : mq.matches;
+  if (explicit) document.documentElement.dataset.theme = explicit;
+  document.documentElement.style.setProperty('--tex', TEX[dark ? 'dark' : 'light']);
+  $('#th-l').setAttribute('aria-pressed', String(!dark));
+  $('#th-d').setAttribute('aria-pressed', String(dark));
+}
+$('#th-l').onclick = () => { explicit = 'light'; theme(); };
+$('#th-d').onclick = () => { explicit = 'dark'; theme(); };
+mq.addEventListener('change', theme);
+theme();
+
+/* screen 10 */
+function paragraph(t){
+  return esc(t.p).replace(/\[\[(.+?)\]\]/gs, '<span class="hl">$1</span>');
+}
+function spans(t){
+  const m = [...t.p.matchAll(/\[\[(.+?)\]\]/gs)].map(x => esc(x[1]));
+  return m.join(' <span class="gap">[…]</span> ');
+}
+function renderEntries(){
+  $('#ens').innerHTML = TEXTS.map((t, i) => `
+    <li class="en">
+      <div class="en-d">${t.date}${t.dnote ? `<small>${t.dnote}</small>` : ''}</div>
+      <div class="en-b">
+        <h3 class="en-h"><a class="ln-go" href="#s10">${t.author}</a>, ${t.work}</h3>
+        <p class="en-w">${t.authorLine}</p>
+        <div class="en-t">
+          <div class="q"><p>${spans(t)}</p></div>
+          <div class="par"><p>${paragraph(t)}</p></div>
+          <div class="only-D">
+            <div class="fold" id="fold${i}"><div><p>${paragraph(t)}</p></div></div>
+            <button type="button" class="btn-more" aria-expanded="false" aria-controls="fold${i}" data-i="${i}">${PLUS}<span>Leer el párrafo completo</span></button>
+          </div>
+        </div>
+        <p class="en-go"><a class="ln-go" href="#s10">Leer ${t.reader} en la obra completa</a></p>
+      </div>
+    </li>`).join('');
+  $$('.btn-more', $('#ens')).forEach(b => b.onclick = () => {
+    const open = b.getAttribute('aria-expanded') !== 'true';
+    b.setAttribute('aria-expanded', String(open));
+    $('#fold' + b.dataset.i).classList.toggle('open', open);
+    $('span', b).textContent = open ? 'Ocultar el párrafo' : 'Leer el párrafo completo';
+  });
+}
+function applyVariant(v){
+  const st = $('#stage10');
+  st.className = st.className.replace(/\bv-[A-D]\b/g, '').trim() + ' v-' + v;
+  $$('#pick10 button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+  const o = OPTS[v];
+  $('#opt10').innerHTML = `<h3>${o.t}</h3><dl>${o.d.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl>`;
+}
+renderEntries();
+$$('#pick10 button').forEach(b => b.onclick = () => applyVariant(b.dataset.v));
+applyVariant('B');
+function phone(btn, stage){
+  btn.onclick = () => {
+    const on = btn.getAttribute('aria-pressed') !== 'true';
+    btn.setAttribute('aria-pressed', String(on));
+    btn.textContent = on ? 'Ver con ancho de escritorio' : 'Ver con ancho de celular';
+    stage.classList.toggle('phone', on);
+  };
+}
+phone($('#ph10'), $('#stage10'));
+phone($('#ph11'), $('#stage11'));
+
+/* screen 11 */
+const IDX = [
+  {k:'page', title:'Lo que escribieron los primeros cristianos', path:'Doctrinas / La Eucaristía', date:null, ds:null, de:null, why:'Los textos cristianos hasta c. 800 que tratan de la Eucaristía, en orden cronológico.', kind:'ex', hay:'eucaristia primeros cristianos padres textos'},
+  {k:'ign', title:'Carta a los Esmirniotas 7.1', path:'Padres / Ignacio de Antioquía', date:'c. 107–110', ds:107, de:110, quote:TEXTS[1].p.match(/\[\[(.+?)\]\]/s)[1], kind:'q'},
+  {k:'jus', title:'Primera Apología 66', path:'Padres / Justino Mártir', date:'c. 150–155', ds:150, de:155, quote:TEXTS[2].p.match(/\[\[(.+?)\]\]/s)[1], kind:'q'},
+  {k:'ire', title:'Contra las herejías IV.18.5', path:'Padres / Ireneo de Lyon', date:'c. 180', ds:180, de:180, quote:TEXTS[3].p.match(/\[\[(.+?)\]\]/s)[1], kind:'q'},
+  {k:'did', title:'Didaché 14.1–3', path:'Padres / Didaché', date:'c. 50–120', ds:50, de:120, quote:TEXTS[0].p.match(/\[\[(.+?)\]\]/s)[1], kind:'q'},
+  {k:'j654', title:'Juan 6:54', path:'Biblia / Juan 6', date:null, quote:'El que come mi carne y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el día postrero.', kind:'q'},
+  {k:'j653', title:'Juan 6:53', path:'Biblia / Juan 6', date:null, quote:'Y Jesús les dijo: De cierto, de cierto os digo: Si no comiereis la carne del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros.', kind:'q'},
+  {k:'doc', title:'Docetismo', path:'Historia / Herejías', date:'c. 90–250', ds:90, de:250, why:'Enseñaba que Cristo solo «parecía» tener un cuerpo humano y sufrir.', kind:'ex', hay:'docetismo cristo cuerpo carne parecia'},
+  {k:'sarx', title:'σάρξ (sarx)', path:'Palabras / Nuevo Testamento griego', date:null, why:'sarx, «carne» en griego', kind:'ex', hay:'sarx carne griego', alias:['carne']}
+];
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+function hiRe(q){ return new RegExp('(' + norm(q).split(/\s+/).filter(Boolean).map(w => w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|') + ')', 'gi'); }
+function mark(text, q){
+  /* accent-insensitive marking: map normalized offsets back to the original */
+  const n = norm(text), words = norm(q).split(/\s+/).filter(Boolean);
+  if (!words.length) return esc(text);
+  const flags = new Array(text.length).fill(false);
+  /* normalization keeps length for Spanish (NFD strip is per-char) */
+  words.forEach(w => { let i = n.indexOf(w); while (i !== -1) { for (let j = i; j < i + w.length; j++) flags[j] = true; i = n.indexOf(w, i + w.length); } });
+  let out = '', on = false;
+  for (let i = 0; i < text.length; i++){
+    if (flags[i] !== on){ out += on ? '</mark>' : '<mark>'; on = flags[i]; }
+    out += esc(text[i]);
+  }
+  return out + (on ? '</mark>' : '');
+}
+function fragment(text, q){
+  const n = norm(text), w = norm(q).split(/\s+/).filter(Boolean)[0];
+  let i = w ? n.indexOf(w) : -1; if (i < 0) i = 0;
+  const from = Math.max(0, i - 42), to = Math.min(text.length, i + 78);
+  let a = from, b = to;
+  if (a > 0){ const s = text.indexOf(' ', a); if (s !== -1 && s < i) a = s + 1; }
+  if (b < text.length){ const s = text.lastIndexOf(' ', b); if (s > i) b = s; }
+  return (a > 0 ? '…' : '') + text.slice(a, b) + (b < text.length ? '…' : '');
+}
+function rulerSvg(it){
+  if (it.ds == null) return '';
+  const W = 44, x1 = Math.round(it.ds / 800 * W * 10) / 10, x2 = Math.round(Math.min(it.de, 800) / 800 * W * 10) / 10;
+  const w = Math.max(x2 - x1, 0);
+  return `<svg width="${W}" height="10" viewBox="0 0 ${W} 10" aria-hidden="true"><line x1="0" y1="5" x2="${W}" y2="5" stroke="var(--rule-2)" stroke-width="1"/>${w > 2 ? `<rect x="${x1}" y="3" width="${w}" height="4" rx="1" fill="var(--ink-3)"/>` : `<circle cx="${x1}" cy="5" r="2.6" fill="var(--ink-3)"/>`}</svg>`;
+}
+function dateHtml(it, d){
+  if (!it.date) return '<span class="dt"></span>';
+  const pre = d === 'd2' ? '<i class="bar1"></i>' : d === 'd3' ? rulerSvg(it) : '';
+  return `<span class="dt">${pre}<span>${it.date}</span></span>`;
+}
+function match(it, q){
+  const n = norm(q).trim(); if (!n) return false;
+  const hay = norm([it.title, it.path, it.quote || '', it.why || '', it.hay || ''].join(' '));
+  return n.split(/\s+/).every(w => hay.includes(w));
+}
+function resultHtml(it, q, d, sel){
+  let w;
+  if (it.quote){ const fr = fragment(it.quote, q); w = `<span class="sx-w fr">«${mark(fr, q)}»</span>`; }
+  else w = `<span class="sx-w">${mark(it.why, q)}</span>`;
+  return `<li><button type="button" class="sx-r${sel ? ' sel' : ''}" role="option"><span class="sx-t">${esc(it.title)}</span><span class="sx-p"><span class="path">${esc(it.path)}</span>${dateHtml(it, d)}</span>${w}</button></li>`;
+}
+function renderBox(listEl, q, d, forced){
+  const items = forced || IDX.filter(it => match(it, q));
+  const order = ['page','ign','jus','ire','did','j654','j653','doc','sarx'];
+  items.sort((a, b) => order.indexOf(a.k) - order.indexOf(b.k));
+  if (!forced && !q.trim()){
+    const rec = ['page','ign','j654'].map(k => IDX.find(i => i.k === k));
+    listEl.innerHTML = '<li class="sx-hd">Recientes</li>' + rec.map(it => resultHtml(it, '', d, false)).join('');
+    return;
+  }
+  if (!items.length){ listEl.innerHTML = `<li class="sx-none">Nada coincide con «${esc(q)}». Probá con una palabra más corta.</li>`; return; }
+  listEl.innerHTML = items.map((it, i) => resultHtml(it, q, d, i === 0)).join('');
+}
+/* static trio for the date styles */
+const trio = [['d1','1 · Fecha a la derecha, sin símbolo'],['d2','2 · Raya vertical fina'],['d3','3 · Regla minúscula']];
+$('#dates').innerHTML = trio.map(([d, label]) => `<div class="sx-fr"><p class="sx-cap"><b>${label}</b></p><div class="sx-box ${d} f1"><div class="sx-in"><span style="font-size:16px;padding:15px 0;color:var(--ink)">carne</span></div><ul class="sx-list" data-d="${d}"></ul></div></div>`).join('');
+$$('#dates .sx-list').forEach(ul => {
+  renderBox(ul, 'carne', ul.dataset.d, ['ign','j654','doc'].map(k => IDX.find(i => i.k === k)));
+});
+/* live box */
+const box = $('#sxbox'), input = $('#sxq'), list = $('#sxl');
+let D = 'd1', F = 'f1';
+function paint(){ box.className = 'sx-box ' + D + ' ' + F; renderBox(list, input.value, D); }
+input.addEventListener('input', paint);
+input.addEventListener('keydown', e => {
+  const rs = $$('.sx-r', list); if (!rs.length) return;
+  let i = rs.findIndex(r => r.classList.contains('sel'));
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp'){
+    e.preventDefault(); rs[i]?.classList.remove('sel');
+    i = e.key === 'ArrowDown' ? Math.min(rs.length - 1, i + 1) : Math.max(0, i - 1);
+    rs[i].classList.add('sel'); rs[i].scrollIntoView({block:'nearest'});
+  }
+  if (e.key === 'Escape'){ input.value = ''; paint(); }
+});
+$$('#pickD button').forEach(b => b.onclick = () => { D = b.dataset.d; $$('#pickD button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); paint(); });
+$$('#pickF button').forEach(b => b.onclick = () => { F = b.dataset.f; $$('#pickF button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); paint(); });
+paint();
+</script>
