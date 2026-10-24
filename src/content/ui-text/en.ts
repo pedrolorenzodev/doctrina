@@ -32,6 +32,8 @@ export const en: UiText = {
   },
   doctrine: {
     teach: "What it teaches",
+    why: "Why",
+    citedIn: "Cited in {source}",
     showMoreStatements: "Show {n} more statements",
     showLess: "Show less",
     gradeAnd: "and",

@@ -1,31 +1,94 @@
+import { Fragment, type ReactNode } from "react";
 import { CitationLink } from "@/components/citation-window/citation-link";
-import { parseInline } from "@/lib/inline-refs";
+import { parseInline, type InlineNode } from "@/lib/inline-refs";
+import { closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
 
 type RichTextProps = {
   text: string;
   verse: (segments: string[]) => { id: string; label: string };
 };
 
+type ReferenceNode = Extract<InlineNode, { kind: "citation" | "verse" }>;
+
+const leadingPunctuation = /^([\s\S]*?)([.,;:]?)\s*$/;
+const separatorBetweenReferences = /^[.,;:]?\s+$/;
+
+function isReference(node: InlineNode | undefined): node is ReferenceNode {
+  return node?.kind === "citation" || node?.kind === "verse";
+}
+
 export function RichText({ text, verse }: RichTextProps) {
-  return parseInline(text).map((node, index) => {
-    if (node.kind === "text") return node.text;
+  const nodes = parseInline(text);
+  const out: ReactNode[] = [];
+
+  const reference = (node: ReferenceNode, key: string) => {
     if (node.kind === "citation") {
       // TODO: a token with several ids opens only its first citation until the window shows groups
       return (
-        <CitationLink key={index} id={node.ids[0] ?? ""}>
+        <CitationLink key={key} id={node.ids[0] ?? ""}>
           {node.label}
         </CitationLink>
       );
     }
-    if (node.kind === "verse") {
-      const { id, label } = verse(node.osis);
-      return (
-        <CitationLink key={index} id={id}>
-          {label}
-        </CitationLink>
-      );
+    const { id, label } = verse(node.osis);
+    return (
+      <CitationLink key={key} id={id}>
+        {label}
+      </CitationLink>
+    );
+  };
+
+  let index = 0;
+  while (index < nodes.length) {
+    const node = nodes[index];
+    if (!node) break;
+    if (node.kind === "text") {
+      const following = nodes[index + 1];
+      if (isReference(following)) {
+        const match = leadingPunctuation.exec(node.text);
+        const body = match?.[1] ?? node.text;
+        const moved = match?.[2] ?? "";
+        out.push(<Fragment key={index}>{body}</Fragment>);
+        const members: ReferenceNode[] = [following];
+        let cursor = index + 2;
+        let trailing = moved;
+        for (;;) {
+          const gap = nodes[cursor];
+          const next = nodes[cursor + 1];
+          if (gap?.kind !== "text" || !separatorBetweenReferences.test(gap.text) || !isReference(next)) break;
+          trailing = trailing || gap.text.trim();
+          members.push(next);
+          cursor += 2;
+        }
+        out.push(
+          <Fragment key={`group-${index}`}>
+            {" "}
+            {members.map((member, position) => {
+              const last = position === members.length - 1;
+              return (
+                <Fragment key={position}>
+                  {position > 0 ? " " : null}
+                  <span className="whitespace-nowrap">
+                    {position === 0 ? openParenthesis : null}
+                    {reference(member, String(position))}
+                    {last ? `${closeParenthesis}${trailing}` : referenceSeparator}
+                  </span>
+                </Fragment>
+              );
+            })}
+          </Fragment>,
+        );
+        index = cursor;
+        continue;
+      }
+      out.push(<Fragment key={index}>{node.text}</Fragment>);
+    } else if (isReference(node)) {
+      out.push(reference(node, String(index)));
+    } else {
+      // TODO: section and glossary tokens need their links (in-page jump, glossary window)
+      out.push(<Fragment key={index}>{node.label ?? ""}</Fragment>);
     }
-    // TODO: section and glossary tokens need their links (in-page jump, glossary window)
-    return node.label ?? "";
-  });
+    index += 1;
+  }
+  return out;
 }

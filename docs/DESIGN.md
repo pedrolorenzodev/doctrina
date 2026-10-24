@@ -281,7 +281,8 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 - Order: intro paragraph (`prose`, 44 px below) → figures → closing line (`punch`) → note to the neutral 02 section (14.5/1.6 ink-3 with page link).
 - Each figure: lead line (14 ink-3, full width); quote in column 1, indented 30 px; caption in column 2, top-aligned with the quote: 6 px padding over a `rule` hairline, ui 14/1.5 — author 500 ink, work ink-3, date 500 ink tabular (6 px above), citation link 13.5 («Citado en el Catecismo 1375», 8 px above).
 - Grid `minmax(0,670px) fit-content(340px)`, gap 30 78; all figures share the columns (subgrid), so every caption has the same x and the width of the widest caption, each line on one line. ≤ 1099: `minmax(0,1fr) fit-content(300px)`, column gap 62. ≤ 720: one column, caption under its quote, both indented 30.
-- 64 px between the last figure and the closing line. Citations in the text are named («Trento, ses. XIII, cap. 1»), not numbered.
+- Built (B9): the two-column grid starts at 1280 px (`xl`); below it the caption sits under its quote, indented 30, in one column (the sidebar leaves too little width between 1024 and 1279).
+- 64 px between the last figure and the closing line. Citations in the text are named («Trento, ses. XIII, cap. 1»), not numbered, and a run of them is one parenthesis separated by «;», with the sentence's punctuation after it: «(Lucas 22:19; Mateo 26:28; Catecismo 1336).»
 
 ### 02 components
 - Legend under the header: 1px `rule`, radius 8, padding 14 14 14 18, text 14/1.65 ink-2 explaining both link kinds with one live example each; «Entendido» (min-height 36, 1px `rule-2`, radius 6) closes it.

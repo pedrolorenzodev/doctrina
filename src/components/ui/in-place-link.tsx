@@ -11,9 +11,9 @@ type InPlaceLinkProps = {
 };
 
 const kindClassName: Record<InPlaceLinkKind, string> = {
-  citation: "link-cite hit-44",
-  term: "link-term hit-44",
-  source: "link-source hit-44",
+  citation: "link-cite hit-44 whitespace-normal",
+  term: "link-term hit-44 whitespace-normal",
+  source: "link-source hit-44 whitespace-normal",
 };
 
 export function InPlaceLink({ kind, open = false, onClick, children }: InPlaceLinkProps) {

@@ -30,6 +30,8 @@ export const es = {
   },
   doctrine: {
     teach: "Qué enseña",
+    why: "Por qué",
+    citedIn: "Citado en {source}",
     showMoreStatements: "Mostrar {n} afirmaciones más",
     showLess: "Mostrar menos",
     gradeAnd: "y",

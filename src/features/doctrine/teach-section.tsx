@@ -1,16 +1,14 @@
+import { Fragment } from "react";
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 import { shownStatements } from "@/content/doctrine-rules";
-import { formatVerseRef } from "@/content/format-verse";
 import type { GradeLine, SourceRef, TraditionPage } from "@/content/model/page";
-import { gradeViewId, verseViewId } from "@/content/teach-views";
+import { gradeViewId, verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { StatementList } from "@/features/doctrine/statement-list";
 import type { Locale } from "@/lib/locale";
-
-const openParenthesis = "(";
-const closeParenthesis = ")";
+import { closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
 
 type TeachSectionProps = {
   page: TraditionPage;
@@ -19,15 +17,23 @@ type TeachSectionProps = {
 
 export function TeachSection({ page, locale }: TeachSectionProps) {
   const text = getUiText(locale);
-  const verse = (segments: string[]) => ({ id: verseViewId(segments), label: formatVerseRef(segments, locale) });
+  const verse = (segments: string[]) => verseLink(segments, locale);
 
-  const sourceLinks = (sources: SourceRef[], separator: string) =>
-    sources.map((source, index) => (
-      <span key={source.label}>
-        {index > 0 ? separator : null}
-        <CitationLink id={source.citations[0] ?? ""}>{source.label}</CitationLink>
-      </span>
-    ));
+  const sourceLinks = (sources: SourceRef[], separator: string, parenthesized = false) =>
+    sources.map((source, index) => {
+      const last = index === sources.length - 1;
+      return (
+        <Fragment key={source.label}>
+          {index > 0 && parenthesized ? " " : null}
+          <span className={parenthesized ? "whitespace-nowrap" : undefined}>
+            {index > 0 && !parenthesized ? separator : null}
+            {parenthesized && index === 0 ? openParenthesis : null}
+            <CitationLink id={source.citations[0] ?? ""}>{source.label}</CitationLink>
+            {parenthesized ? (last ? closeParenthesis : separator) : null}
+          </span>
+        </Fragment>
+      );
+    });
 
   const gradeLinks = (statementId: string, grades: GradeLine[]) =>
     grades.map((line, index) => {
@@ -70,11 +76,7 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
     <Section id="teach" title={text.doctrine.teach} subtitle={page.teach.subtitle}>
       <p className="mb-7.5 font-head text-defn-mobile font-light text-ink opsz-24 sm:text-defn">
         <RichText text={definition.text} verse={verse} />{" "}
-        <span className="font-ui text-sub">
-          {openParenthesis}
-          {sourceLinks(definition.sources, "; ")}
-          {closeParenthesis}
-        </span>
+        <span className="font-ui text-sub">{sourceLinks(definition.sources, referenceSeparator, true)}</span>
       </p>
       <StatementList
         items={items}

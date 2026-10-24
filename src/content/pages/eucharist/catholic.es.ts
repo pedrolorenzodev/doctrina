@@ -37,7 +37,7 @@ export const eucharistCatholic = {
     statements: [
       {
         id: "QE-1",
-        text: 'En la Eucaristía, después de la consagración, está contenido verdadera, real y sustancialmente Cristo entero: su cuerpo y su sangre, con su alma y su divinidad. No está solo como en un signo o una figura. La Iglesia la llama presencia "real" por excelencia, no porque las otras presencias de Cristo (en su Palabra, en la oración de la Iglesia, en los sacramentos) no sean reales.',
+        text: "En la Eucaristía, después de la consagración, está contenido verdadera, real y sustancialmente Cristo entero: su cuerpo y su sangre, con su alma y su divinidad. No está solo como en un signo o una figura. La Iglesia la llama presencia «real» por excelencia, no porque las otras presencias de Cristo (en su Palabra, en la oración de la Iglesia, en los sacramentos) no sean reales.",
         grades: [
           {
             kind: "church",
@@ -66,7 +66,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-2",
-        text: 'Por la consagración, toda la sustancia del pan se convierte en la sustancia del cuerpo de Cristo y toda la sustancia del vino en la de su sangre; del pan y del vino quedan solo las especies (lo que se ve, se toca y se gusta). La Iglesia llama a este cambio "transubstanciación".',
+        text: "Por la consagración, toda la sustancia del pan se convierte en la sustancia del cuerpo de Cristo y toda la sustancia del vino en la de su sangre; del pan y del vino quedan solo las especies (lo que se ve, se toca y se gusta). La Iglesia llama a este cambio «transubstanciación».",
         grades: [
           {
             kind: "church",
@@ -191,7 +191,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-6",
-        text: 'Para la Iglesia católica, con las palabras "haced esto en memoria de mí" {v:Luke.22.19}, Cristo hizo sacerdotes a los apóstoles y les mandó ofrecer su cuerpo y su sangre. Por eso solo un sacerdote válidamente ordenado, obispo o presbítero, puede consagrar la Eucaristía.',
+        text: "Para la Iglesia católica, con las palabras «haced esto en memoria de mí» {v:Luke.22.19}, Cristo hizo sacerdotes a los apóstoles y les mandó ofrecer su cuerpo y su sangre. Por eso solo un sacerdote válidamente ordenado, obispo o presbítero, puede consagrar la Eucaristía.",
         grades: [
           {
             kind: "church",
@@ -291,7 +291,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-9",
-        text: 'Para la Iglesia católica, la Eucaristía es "fuente y cumbre de toda la vida cristiana" y "hace la Iglesia": quienes la reciben se unen más a Cristo y, por eso, Cristo los une entre sí en un solo cuerpo (Catecismo 1396). Por la misma razón enseña que celebrarla "no puede ser el punto de partida de la comunión, que la presupone previamente" (Ecclesia de Eucharistia 35). Reconoce en las Iglesias ortodoxas verdaderos sacramentos, y sobre todo el sacerdocio y la Eucaristía; con las comunidades nacidas de la Reforma no admite la intercomunión. Distingue de la intercomunión el caso de una necesidad espiritual grave, en el que puede darse la comunión a otros cristianos que comparten la fe católica sobre este sacramento (Catecismo 1401; Ecclesia de Eucharistia 45).',
+        text: "Para la Iglesia católica, la Eucaristía es «fuente y cumbre de toda la vida cristiana» y «hace la Iglesia»: quienes la reciben se unen más a Cristo y, por eso, Cristo los une entre sí en un solo cuerpo (Catecismo 1396). Por la misma razón enseña que celebrarla «no puede ser el punto de partida de la comunión, que la presupone previamente» (Ecclesia de Eucharistia 35). Reconoce en las Iglesias ortodoxas verdaderos sacramentos, y sobre todo el sacerdocio y la Eucaristía; con las comunidades nacidas de la Reforma no admite la intercomunión. Distingue de la intercomunión el caso de una necesidad espiritual grave, en el que puede darse la comunión a otros cristianos que comparten la fe católica sobre este sacramento (Catecismo 1401; Ecclesia de Eucharistia 45).",
         grades: [
           {
             kind: "church",
@@ -333,8 +333,8 @@ export const eucharistCatholic = {
   },
   why: {
     intro: [
-      'La Iglesia católica funda esta enseñanza, ante todo, en las palabras de Cristo en la última Cena, tomadas en su sentido propio: "Esto es mi cuerpo". {c:T13c1,T13c4|Trento, ses. XIII, caps. 1 y 4}',
-      'Las lee junto con el discurso del pan de vida (Juan 6) y con las palabras "que por vosotros es dado" y "derramada por muchos", que muestran un sacrificio {v:Luke.22.19} {v:Matt.26.28}. {c:EdE16|Ecclesia de Eucharistia 16} {c:CEC1336|Catecismo 1336} {c:CEC1365|Catecismo 1365} {c:EdE12|Ecclesia de Eucharistia 12} {c:T22c1|Trento, ses. XXII, cap. 1}',
+      "La Iglesia católica funda esta enseñanza, ante todo, en las palabras de Cristo en la última Cena, tomadas en su sentido propio: «Esto es mi cuerpo». {c:T13c1,T13c4|Trento, ses. XIII, caps. 1 y 4}",
+      "Las lee junto con el discurso del pan de vida (Juan 6) y con las palabras «que por vosotros es dado» y «derramada por muchos», que muestran un sacrificio {v:Luke.22.19} {v:Matt.26.28}. {c:EdE16|Ecclesia de Eucharistia 16} {c:CEC1336|Catecismo 1336} {c:CEC1365|Catecismo 1365} {c:EdE12|Ecclesia de Eucharistia 12} {c:T22c1|Trento, ses. XXII, cap. 1}",
       "Y sostiene que la Iglesia siempre lo creyó así. {c:T13c4|Trento, ses. XIII, cap. 4}",
     ],
     fathers: [
@@ -375,12 +375,12 @@ export const eucharistCatholic = {
     ],
     note: "Los mismos textos los leen de otro modo otras tradiciones: lo verás en {s:early-witnesses|Lo que escribieron los primeros cristianos}, que es una sección neutral.",
     closing:
-      'Para la Iglesia católica, Juan 6 no admite una lectura metafórica: ante el asombro de los oyentes, Jesús se ve obligado, dice Juan Pablo II, "a recalcar la verdad objetiva de sus palabras": "Mi carne es verdadera comida y mi sangre verdadera bebida" {v:John.6.55}. Y concluye: "No se trata de un alimento metafórico" {c:EdE16|Ecclesia de Eucharistia 16}.',
+      "Para la Iglesia católica, Juan 6 no admite una lectura metafórica: ante el asombro de los oyentes, Jesús se ve obligado, dice Juan Pablo II, «a recalcar la verdad objetiva de sus palabras»: «Mi carne es verdadera comida y mi sangre verdadera bebida» {v:John.6.55}. Y concluye: «No se trata de un alimento metafórico» {c:EdE16|Ecclesia de Eucharistia 16}.",
   },
   scripture: [
     {
       refs: ["Matt.26.26-Matt.26.28", "Mark.14.22-Mark.14.24", "Luke.22.19-Luke.22.20", "1Cor.11.23-1Cor.11.26"],
-      text: 'Para la Iglesia católica, "esto es mi cuerpo… esto es mi sangre" {v:Matt.26.26,Matt.26.28} se lee en su sentido propio: Cristo dio a los apóstoles su propio cuerpo y su propia sangre {c:T13c1|Trento, ses. XIII, cap. 1}. "Que por vosotros es dado" {v:Luke.22.19} y "derramada por muchos para remisión de los pecados" {v:Matt.26.28} muestran que es un sacrificio {c:CEC1365|Catecismo 1365}.',
+      text: "Para la Iglesia católica, «esto es mi cuerpo… esto es mi sangre» {v:Matt.26.26,Matt.26.28} se lee en su sentido propio: Cristo dio a los apóstoles su propio cuerpo y su propia sangre {c:T13c1|Trento, ses. XIII, cap. 1}. «Que por vosotros es dado» {v:Luke.22.19} y «derramada por muchos para remisión de los pecados» {v:Matt.26.28} muestran que es un sacrificio {c:CEC1365|Catecismo 1365}.",
     },
     {
       refs: ["Luke.22.19"],
@@ -388,15 +388,15 @@ export const eucharistCatholic = {
     },
     {
       refs: ["John.6.51-John.6.58", "John.6.60-John.6.69"],
-      text: 'Para la Iglesia católica, el discurso del pan de vida prepara la institución de la Eucaristía {c:CEC1338|Catecismo 1338}. Ante el asombro de los oyentes, Jesús "recalca la verdad objetiva de sus palabras": "mi carne es verdadera comida" {v:John.6.55}; por eso, según {c:EdE16|Ecclesia de Eucharistia 16}, no es "un alimento metafórico". Trento, por su parte, usa Juan 6 "segun las varias interpretaciones de los santos Padres y doctores" {c:T21c1|ses. XXI, cap. 1}.',
+      text: "Para la Iglesia católica, el discurso del pan de vida prepara la institución de la Eucaristía {c:CEC1338|Catecismo 1338}. Ante el asombro de los oyentes, Jesús «recalca la verdad objetiva de sus palabras»: «mi carne es verdadera comida» {v:John.6.55}; por eso, según {c:EdE16|Ecclesia de Eucharistia 16}, no es «un alimento metafórico». Trento, por su parte, usa Juan 6 «segun las varias interpretaciones de los santos Padres y doctores» {c:T21c1|ses. XXI, cap. 1}.",
     },
     {
       refs: ["1Cor.10.16-1Cor.10.17"],
-      text: '"La copa de bendición que bendecimos, ¿no es la comunión de la sangre de Cristo?" {v:1Cor.10.16}. Para la Iglesia católica, la Eucaristía une a Cristo y, por eso, une entre sí a los que comulgan en un solo cuerpo, la Iglesia {c:CEC1396|Catecismo 1396}.',
+      text: "«La copa de bendición que bendecimos, ¿no es la comunión de la sangre de Cristo?» {v:1Cor.10.16}. Para la Iglesia católica, la Eucaristía une a Cristo y, por eso, une entre sí a los que comulgan en un solo cuerpo, la Iglesia {c:CEC1396|Catecismo 1396}.",
     },
     {
       refs: ["1Cor.10.21"],
-      text: 'Pablo contrapone la "mesa del Señor" a la "mesa de los demonios", donde se comían sacrificios; Trento entiende en ambos casos "mesa" como altar.',
+      text: "Pablo contrapone la «mesa del Señor» a la «mesa de los demonios», donde se comían sacrificios; Trento entiende en ambos casos «mesa» como altar.",
     },
     {
       refs: ["1Cor.11.26"],
@@ -404,15 +404,15 @@ export const eucharistCatholic = {
     },
     {
       refs: ["1Cor.11.27-1Cor.11.29"],
-      text: 'Quien come este pan o bebe esta copa del Señor indignamente "será culpado del cuerpo y de la sangre del Señor" {v:1Cor.11.27}. Para la Iglesia católica, por eso hay que examinarse, y quien tiene conciencia de pecado grave debe confesarse antes de comulgar {c:CEC1385|Catecismo 1385}.',
+      text: "Quien come este pan o bebe esta copa del Señor indignamente «será culpado del cuerpo y de la sangre del Señor» {v:1Cor.11.27}. Para la Iglesia católica, por eso hay que examinarse, y quien tiene conciencia de pecado grave debe confesarse antes de comulgar {c:CEC1385|Catecismo 1385}.",
     },
     {
       refs: ["Mal.1.11"],
-      text: 'El "presente limpio" que "en todo lugar se ofrece" al nombre de Dios "entre las gentes" {v:Mal.1.11} es, para Trento, la Misa {c:T22c1|ses. XXII, cap. 1}.',
+      text: "El «presente limpio» que «en todo lugar se ofrece» al nombre de Dios «entre las gentes» {v:Mal.1.11} es, para Trento, la Misa {c:T22c1|ses. XXII, cap. 1}.",
     },
     {
       refs: ["Gen.14.18", "Ps.110.4"],
-      text: '"Tú eres sacerdote para siempre según el orden de Melchîsedech" {v:Ps.110.4}, que ofreció pan y vino {v:Gen.14.18}; la Iglesia católica ve en ese gesto una figura de su propia ofrenda {c:CEC1333|Catecismo 1333}.',
+      text: "«Tú eres sacerdote para siempre según el orden de Melchîsedech» {v:Ps.110.4}, que ofreció pan y vino {v:Gen.14.18}; la Iglesia católica ve en ese gesto una figura de su propia ofrenda {c:CEC1333|Catecismo 1333}.",
     },
     {
       refs: ["Heb.7.11-Heb.7.27", "Heb.9.12-Heb.9.14", "Heb.9.27"],
@@ -428,11 +428,11 @@ export const eucharistCatholic = {
     },
     {
       refs: ["1Cor.4.1", "1Cor.11.34"],
-      text: 'Pablo pide que se tenga a los apóstoles por "dispensadores de los misterios de Dios" {v:1Cor.4.1}; para Trento, por eso la Iglesia puede regular cómo se dan los sacramentos, sin tocar su sustancia {c:T21c2|ses. XXI, cap. 2}.',
+      text: "Pablo pide que se tenga a los apóstoles por «dispensadores de los misterios de Dios» {v:1Cor.4.1}; para Trento, por eso la Iglesia puede regular cómo se dan los sacramentos, sin tocar su sustancia {c:T21c2|ses. XXI, cap. 2}.",
     },
     {
       refs: ["Acts.2.42", "Acts.2.46", "Acts.20.7"],
-      text: 'Desde el principio los cristianos perseveraban "en el partimiento del pan" {v:Acts.2.42} y se reunían "á partir el pan" "el día primero de la semana" {v:Acts.20.7} {c:CEC1342|Catecismo 1342–1343}.',
+      text: "Desde el principio los cristianos perseveraban «en el partimiento del pan» {v:Acts.2.42} y se reunían «á partir el pan» «el día primero de la semana» {v:Acts.20.7} {c:CEC1342|Catecismo 1342–1343}.",
     },
   ],
   objections: {
@@ -443,9 +443,9 @@ export const eucharistCatholic = {
       {
         id: "OB-1",
         layer: "official",
-        title: 'Si Cristo se ofreció "una vez para siempre", la Misa no puede ser un sacrificio',
+        title: "Si Cristo se ofreció «una vez para siempre», la Misa no puede ser un sacrificio",
         synthesis:
-          'Hebreos dice que Cristo no se ofreció "muchas veces" sino una vez, que "con una sola ofrenda hizo perfectos para siempre á los santificados" y que "donde hay remisión de éstos, no hay más ofrenda por pecado" {v:Heb.9.25-Heb.9.26} {v:Heb.10.14,Heb.10.18}. La muerte de Cristo es el único sacrificio propiciatorio; la Cena puede ser un sacrificio de alabanza y acción de gracias de los ya reconciliados, pero no uno que reconcilie con Dios. Si la Misa es un sacrificio propiciatorio que se ofrece cada día por vivos y difuntos, o repite la cruz o le añade algo que la cruz no hizo.',
+          "Hebreos dice que Cristo no se ofreció «muchas veces» sino una vez, que «con una sola ofrenda hizo perfectos para siempre á los santificados» y que «donde hay remisión de éstos, no hay más ofrenda por pecado» {v:Heb.9.25-Heb.9.26} {v:Heb.10.14,Heb.10.18}. La muerte de Cristo es el único sacrificio propiciatorio; la Cena puede ser un sacrificio de alabanza y acción de gracias de los ya reconciliados, pero no uno que reconcilie con Dios. Si la Misa es un sacrificio propiciatorio que se ofrece cada día por vivos y difuntos, o repite la cruz o le añade algo que la cruz no hizo.",
         raisedBy: {
           traditions: ["lutheran", "reformed"],
           line: "Suelen plantearla reformados y luteranos.",
@@ -461,7 +461,7 @@ export const eucharistCatholic = {
           },
           {
             type: "p",
-            text: 'Para la Iglesia católica, la Misa no es un segundo sacrificio. Trento enseña: «la hostia es una misma, uno el mismo que ahora ofrece por el ministerio de los sacerdotes, que el que entonces se ofreció á sí mismo en la cruz, con sola la diferencia del modo de ofrecerse» {c:T22c2|ses. XXII, cap. 2}. El Catecismo lo resume: «El sacrificio de Cristo y el sacrificio de la Eucaristía son, pues, un único sacrificio» {c:CEC1367|Catecismo 1367}. Juan Pablo II escribe: «La Misa hace presente el sacrificio de la Cruz, no se le añade y no lo multiplica. Lo que se repite es su celebración memorial, la "manifestación memorial" (memorialis demonstratio), por la cual el único y definitivo sacrificio redentor de Cristo se actualiza siempre en el tiempo» {c:EdE12|Ecclesia de Eucharistia 12}.',
+            text: "Para la Iglesia católica, la Misa no es un segundo sacrificio. Trento enseña: «la hostia es una misma, uno el mismo que ahora ofrece por el ministerio de los sacerdotes, que el que entonces se ofreció á sí mismo en la cruz, con sola la diferencia del modo de ofrecerse» {c:T22c2|ses. XXII, cap. 2}. El Catecismo lo resume: «El sacrificio de Cristo y el sacrificio de la Eucaristía son, pues, un único sacrificio» {c:CEC1367|Catecismo 1367}. Juan Pablo II escribe: «La Misa hace presente el sacrificio de la Cruz, no se le añade y no lo multiplica. Lo que se repite es su celebración memorial, la «manifestación memorial» (memorialis demonstratio), por la cual el único y definitivo sacrificio redentor de Cristo se actualiza siempre en el tiempo» {c:EdE12|Ecclesia de Eucharistia 12}.",
           },
           {
             type: "p",
@@ -540,9 +540,9 @@ export const eucharistCatholic = {
       {
         id: "OB-2",
         layer: "official",
-        title: 'Pablo lo sigue llamando "pan": lo consagrado sigue siendo pan',
+        title: "Pablo lo sigue llamando «pan»: lo consagrado sigue siendo pan",
         synthesis:
-          'Después de la consagración Pablo lo sigue llamando "pan" {v:1Cor.10.16} {v:1Cor.11.26-1Cor.11.28}: el pan sigue siendo pan en su sustancia, y enseñar que su sustancia desaparece no concuerda con la Escritura. Los reformados añaden que el cuerpo de Cristo está en el cielo {v:Acts.3.21} y que la transubstanciación va "aun contra el sentido y razon comunes" y "destruye la naturaleza del sacramento" {c:WCF296|Confesión de Westminster 29.6}.',
+          "Después de la consagración Pablo lo sigue llamando «pan» {v:1Cor.10.16} {v:1Cor.11.26-1Cor.11.28}: el pan sigue siendo pan en su sustancia, y enseñar que su sustancia desaparece no concuerda con la Escritura. Los reformados añaden que el cuerpo de Cristo está en el cielo {v:Acts.3.21} y que la transubstanciación va «aun contra el sentido y razon comunes» y «destruye la naturaleza del sacramento» {c:WCF296|Confesión de Westminster 29.6}.",
         raisedBy: {
           traditions: ["lutheran", "reformed"],
           line: "Suelen plantearla reformados y luteranos.",
@@ -633,9 +633,9 @@ export const eucharistCatholic = {
       {
         id: "OB-3",
         layer: "official",
-        title: 'Cristo dijo "Tomad, comed": guardar, exponer y adorar la hostia va más allá de lo que mandó',
+        title: "Cristo dijo «Tomad, comed»: guardar, exponer y adorar la hostia va más allá de lo que mandó",
         synthesis:
-          'Cristo dio el pan para que se tome y se coma ("Tomad, comed", {v:Matt.26.26}). Guardarlo, exponerlo y llevarlo en procesión para adorarlo es usar el sacramento para algo que Cristo no mandó, y dirigir la adoración a lo que, a la vista, son pan y vino. Para los reformados, adorar los elementos es idolatría {c:WCF294,WCF296|Westminster 29.4, 29.6}.',
+          "Cristo dio el pan para que se tome y se coma («Tomad, comed», {v:Matt.26.26}). Guardarlo, exponerlo y llevarlo en procesión para adorarlo es usar el sacramento para algo que Cristo no mandó, y dirigir la adoración a lo que, a la vista, son pan y vino. Para los reformados, adorar los elementos es idolatría {c:WCF294,WCF296|Westminster 29.4, 29.6}.",
         raisedBy: {
           traditions: ["lutheran", "reformed"],
           line: "Suelen plantearla reformados y luteranos.",
@@ -737,9 +737,9 @@ export const eucharistCatholic = {
       {
         id: "OB-4",
         layer: "official",
-        title: 'Cristo dijo "Bebed de ella todos": negar el cáliz a los laicos cambia lo que él instituyó',
+        title: "Cristo dijo «Bebed de ella todos»: negar el cáliz a los laicos cambia lo que él instituyó",
         synthesis:
-          'De la copa Jesús dijo "Bebed de él todos" {v:Matt.26.27}, y la Iglesia antigua dio las dos especies a todos durante siglos. Dar a los laicos solo el pan cambia la institución de Cristo y los priva de algo que él mandó.',
+          "De la copa Jesús dijo «Bebed de él todos» {v:Matt.26.27}, y la Iglesia antigua dio las dos especies a todos durante siglos. Dar a los laicos solo el pan cambia la institución de Cristo y los priva de algo que él mandó.",
         raisedBy: {
           traditions: ["orthodox", "lutheran", "reformed"],
           line: "Suelen plantearla luteranos, reformados y ortodoxos.",
@@ -834,7 +834,7 @@ export const eucharistCatholic = {
         answer: [
           {
             type: "p",
-            text: 'Para la Iglesia católica, que un sacramento obre _ex opere operato_ no significa que obre sin fe. El Catecismo define: «los sacramentos obran ex opere operato (según las palabras mismas del Concilio: "por el hecho mismo de que la acción es realizada"), es decir, en virtud de la obra salvífica de Cristo, realizada de una vez por todas», y añade: «Sin embargo, los frutos de los sacramentos dependen también de las disposiciones del que los recibe» {c:CEC1128|Catecismo 1128}. Trento dice de la Misa que sus frutos se alcanzan «si nos acercamos al Señor contritos y penitentes, si con sincero corazon, y recta fe, si con temor y reverencia» {c:T22c2|ses. XXII, cap. 2}.',
+            text: "Para la Iglesia católica, que un sacramento obre _ex opere operato_ no significa que obre sin fe. El Catecismo define: «los sacramentos obran ex opere operato (según las palabras mismas del Concilio: «por el hecho mismo de que la acción es realizada»), es decir, en virtud de la obra salvífica de Cristo, realizada de una vez por todas», y añade: «Sin embargo, los frutos de los sacramentos dependen también de las disposiciones del que los recibe» {c:CEC1128|Catecismo 1128}. Trento dice de la Misa que sus frutos se alcanzan «si nos acercamos al Señor contritos y penitentes, si con sincero corazon, y recta fe, si con temor y reverencia» {c:T22c2|ses. XXII, cap. 2}.",
           },
           {
             type: "p",
@@ -842,7 +842,7 @@ export const eucharistCatholic = {
           },
           {
             type: "p",
-            text: 'Para la Iglesia católica, la Misa se ofrece también por los difuntos. Trento enseña que se ofrece, «segun la tradicion de los Apóstoles, por los que han muerto en Cristo sin estar plenamente purgados» {c:T22c2|ses. XXII, cap. 2}. El Catecismo: «El Sacrificio Eucarístico es también ofrecido por los fieles difuntos "que han muerto en Cristo y todavía no están plenamente purificados" […], para que puedan entrar en la luz y la paz de Cristo» {c:CEC1371|Catecismo 1371}, y cita las _Catequesis mistagógicas_ atribuidas a san Cirilo de Jerusalén (c. 350–390): «Presentando a Dios nuestras súplicas por los que han muerto, aunque fuesen pecadores […], presentamos a Cristo inmolado por nuestros pecados, haciendo propicio para ellos y para nosotros al Dios amigo de los hombres» {c:CEC1371|Catecismo 1371}. Y resume: «En cuanto sacrificio, la Eucaristía es ofrecida también en reparación de los pecados de los vivos y los difuntos» {c:CEC1414|Catecismo 1414}.',
+            text: "Para la Iglesia católica, la Misa se ofrece también por los difuntos. Trento enseña que se ofrece, «segun la tradicion de los Apóstoles, por los que han muerto en Cristo sin estar plenamente purgados» {c:T22c2|ses. XXII, cap. 2}. El Catecismo: «El Sacrificio Eucarístico es también ofrecido por los fieles difuntos «que han muerto en Cristo y todavía no están plenamente purificados» […], para que puedan entrar en la luz y la paz de Cristo» {c:CEC1371|Catecismo 1371}, y cita las _Catequesis mistagógicas_ atribuidas a san Cirilo de Jerusalén (c. 350–390): «Presentando a Dios nuestras súplicas por los que han muerto, aunque fuesen pecadores […], presentamos a Cristo inmolado por nuestros pecados, haciendo propicio para ellos y para nosotros al Dios amigo de los hombres» {c:CEC1371|Catecismo 1371}. Y resume: «En cuanto sacrificio, la Eucaristía es ofrecida también en reparación de los pecados de los vivos y los difuntos» {c:CEC1414|Catecismo 1414}.",
           },
           {
             type: "p",
@@ -911,7 +911,7 @@ export const eucharistCatholic = {
         layer: "official",
         title: "Los dones se consagran por la invocación del Espíritu Santo, no solo por las palabras de Cristo",
         synthesis:
-          'En las liturgias antiguas, de Oriente y también de Roma y las Galias, los dones se consagran con la oración que invoca al Espíritu Santo, la epíclesis. Atribuir la consagración solo a las palabras "Esto es mi cuerpo" fue una innovación posterior de la Iglesia latina.',
+          "En las liturgias antiguas, de Oriente y también de Roma y las Galias, los dones se consagran con la oración que invoca al Espíritu Santo, la epíclesis. Atribuir la consagración solo a las palabras «Esto es mi cuerpo» fue una innovación posterior de la Iglesia latina.",
         raisedBy: {
           traditions: ["orthodox"],
           line: "Suelen plantearla ortodoxos.",
@@ -1083,10 +1083,10 @@ export const eucharistCatholic = {
         layer: "debate",
         title: "«La carne nada aprovecha»: Jesús habla en sentido espiritual",
         synthesis:
-          'Jesús mismo dijo: "El espíritu es el que da vida; la carne nada aprovecha: las palabras que yo os he hablado, son espíritu, y son vida" {v:John.6.63}. Comer su carne y beber su sangre no puede ser comer carne de verdad: es creer en él, o recibirlo espiritualmente.',
+          "Jesús mismo dijo: «El espíritu es el que da vida; la carne nada aprovecha: las palabras que yo os he hablado, son espíritu, y son vida» {v:John.6.63}. Comer su carne y beber su sangre no puede ser comer carne de verdad: es creer en él, o recibirlo espiritualmente.",
         raisedBy: {
           traditions: ["reformed"],
-          line: 'Desde la tradición reformada se objeta que, si "la carne nada aprovecha" (Juan 6:63), Jesús no habla de comer su carne de verdad. Para la Confesión de Westminster, los fieles reciben a Cristo "no carnal y corporalmente, sino espiritualmente" (29.7).',
+          line: "Desde la tradición reformada se objeta que, si «la carne nada aprovecha» (Juan 6:63), Jesús no habla de comer su carne de verdad. Para la Confesión de Westminster, los fieles reciben a Cristo «no carnal y corporalmente, sino espiritualmente» (29.7).",
         },
         objectorTexts: {
           shown: ["WCF297"],
@@ -1095,11 +1095,11 @@ export const eucharistCatholic = {
         answer: [
           {
             type: "p",
-            text: 'El Catecismo recuerda cómo se recibió el primer anuncio de la Eucaristía: «El primer anuncio de la Eucaristía dividió a los discípulos, igual que el anuncio de la pasión los escandalizó: "Es duro este lenguaje, ¿quién puede escucharlo?" (Jn 6,60). La Eucaristía y la cruz son piedras de escándalo. Es el mismo misterio» {c:CEC1336|Catecismo 1336}.',
+            text: "El Catecismo recuerda cómo se recibió el primer anuncio de la Eucaristía: «El primer anuncio de la Eucaristía dividió a los discípulos, igual que el anuncio de la pasión los escandalizó: «Es duro este lenguaje, ¿quién puede escucharlo?» (Jn 6,60). La Eucaristía y la cruz son piedras de escándalo. Es el mismo misterio» {c:CEC1336|Catecismo 1336}.",
           },
           {
             type: "p",
-            text: 'Juan Pablo II, en la audiencia general del 13 de septiembre de 1989, cita el versículo: «"El espíritu es el que da vida: la carne no sirve para nada. Las palabras que os he dicho son espíritu y son vida" (Jn 6, 63)», y dice: «Los oyentes de Jesús entendieron de modo "material" aquel primer anuncio eucarístico. El Maestro quiso en seguida precisar que su contenido sólo podía aclararse y entenderse por obra del "Espíritu que da vida". En la Eucaristía Cristo nos da su cuerpo y su sangre como alimento y bebida, bajo las especies del pan y del vino […]. Solamente en virtud del Espíritu, que da vida, el alimento y la bebida eucarísticos pueden obrar en nosotros la "comunión", es decir, la unión salvífica con el Cristo crucificado y glorificado» {c:JP89|n. 4}.',
+            text: "Juan Pablo II, en la audiencia general del 13 de septiembre de 1989, cita el versículo: ««El espíritu es el que da vida: la carne no sirve para nada. Las palabras que os he dicho son espíritu y son vida» (Jn 6, 63)», y dice: «Los oyentes de Jesús entendieron de modo «material» aquel primer anuncio eucarístico. El Maestro quiso en seguida precisar que su contenido sólo podía aclararse y entenderse por obra del «Espíritu que da vida». En la Eucaristía Cristo nos da su cuerpo y su sangre como alimento y bebida, bajo las especies del pan y del vino […]. Solamente en virtud del Espíritu, que da vida, el alimento y la bebida eucarísticos pueden obrar en nosotros la «comunión», es decir, la unión salvífica con el Cristo crucificado y glorificado» {c:JP89|n. 4}.",
           },
           {
             type: "p",
@@ -1107,7 +1107,7 @@ export const eucharistCatholic = {
           },
           {
             type: "p",
-            text: 'Para la Iglesia católica, ese alimento es Cristo mismo, presente de verdad. El Catecismo: en el Santísimo Sacramento están «"contenidos verdadera, real y substancialmente el Cuerpo y la Sangre junto con el alma y la divinidad de nuestro señor Jesucristo, y, por consiguiente, Cristo entero"» {c:CEC1374|Catecismo 1374, citando a Trento}.',
+            text: "Para la Iglesia católica, ese alimento es Cristo mismo, presente de verdad. El Catecismo: en el Santísimo Sacramento están ««contenidos verdadera, real y substancialmente el Cuerpo y la Sangre junto con el alma y la divinidad de nuestro señor Jesucristo, y, por consiguiente, Cristo entero»» {c:CEC1374|Catecismo 1374, citando a Trento}.",
           },
           {
             type: "quote",
@@ -1161,10 +1161,10 @@ export const eucharistCatholic = {
         layer: "debate",
         title: "«Dios prohibió beber sangre»",
         synthesis:
-          'Dios prohibió a Israel comer sangre, "porque la vida de toda carne es su sangre" {v:Lev.17.14}, y los apóstoles lo repitieron para los gentiles: "Que os abstengáis de cosas sacrificadas á ídolos, y de sangre, y de ahogado, y de fornicación" {v:Acts.15.29}. Beber la sangre de Cristo contradice lo que Dios prohibió.',
+          "Dios prohibió a Israel comer sangre, «porque la vida de toda carne es su sangre» {v:Lev.17.14}, y los apóstoles lo repitieron para los gentiles: «Que os abstengáis de cosas sacrificadas á ídolos, y de sangre, y de ahogado, y de fornicación» {v:Acts.15.29}. Beber la sangre de Cristo contradice lo que Dios prohibió.",
         raisedBy: {
           traditions: [],
-          line: 'Se objeta que la Escritura prohíbe beber sangre: a Israel, "No comeréis la sangre de ninguna carne" (Levítico 17:14), y a los gentiles convertidos, que se aparten "de ahogado, y de sangre" (Hechos 15:20).',
+          line: "Se objeta que la Escritura prohíbe beber sangre: a Israel, «No comeréis la sangre de ninguna carne» (Levítico 17:14), y a los gentiles convertidos, que se aparten «de ahogado, y de sangre» (Hechos 15:20).",
         },
         objectorTexts: {
           shown: [],
@@ -1173,11 +1173,11 @@ export const eucharistCatholic = {
         answer: [
           {
             type: "p",
-            text: 'El Catecismo enseña que Jesús dio plenitud a la ley sobre los alimentos: «Yendo más lejos, Jesús da plenitud a la Ley sobre la pureza de los alimentos, tan importante en la vida cotidiana judía, manifestando su sentido "pedagógico" (cf. Ga 3, 24) por medio de una interpretación divina: "Todo lo que de fuera entra en el hombre no puede hacerle impuro […] —así declaraba puros todos los alimentos—"» {c:CEC582|Catecismo 582, citando Mc 7,18-21}.',
+            text: "El Catecismo enseña que Jesús dio plenitud a la ley sobre los alimentos: «Yendo más lejos, Jesús da plenitud a la Ley sobre la pureza de los alimentos, tan importante en la vida cotidiana judía, manifestando su sentido «pedagógico» (cf. Ga 3, 24) por medio de una interpretación divina: «Todo lo que de fuera entra en el hombre no puede hacerle impuro […] —así declaraba puros todos los alimentos—»» {c:CEC582|Catecismo 582, citando Mc 7,18-21}.",
           },
           {
             type: "p",
-            text: 'El Catecismo recoge las palabras del Señor sobre este mismo sacramento: «"En verdad, en verdad os digo: si no coméis la carne del Hijo del hombre, y no bebéis su sangre, no tendréis vida en vosotros" (Jn 6,53)», como «invitación urgente a recibirle en el sacramento de la Eucaristía» {c:CEC1384|Catecismo 1384}.',
+            text: "El Catecismo recoge las palabras del Señor sobre este mismo sacramento: ««En verdad, en verdad os digo: si no coméis la carne del Hijo del hombre, y no bebéis su sangre, no tendréis vida en vosotros» (Jn 6,53)», como «invitación urgente a recibirle en el sacramento de la Eucaristía» {c:CEC1384|Catecismo 1384}.",
           },
           {
             type: "quote",

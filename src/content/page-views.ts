@@ -12,6 +12,10 @@ export function verseViewId(segments: string[]): string {
   return `verse:${segments.join(",")}`;
 }
 
+export function verseLink(segments: string[], locale: Locale): { id: string; label: string } {
+  return { id: verseViewId(segments), label: formatVerseRef(segments, locale) };
+}
+
 export function gradeViewId(statementId: string, index: number): string {
   return `grade:${statementId}:${index}`;
 }
@@ -72,7 +76,7 @@ function buildGradeView(
   };
 }
 
-export function collectTeachViews(
+export function collectPageViews(
   page: TraditionPage,
   registry: Registry,
   locale: Locale,
@@ -99,6 +103,9 @@ export function collectTeachViews(
       if (view) views[id] = view;
     });
   }
+  const { intro, fathers, closing } = page.why;
+  [...intro, closing].forEach(scan);
+  fathers.forEach((father) => father.citedIn.citations.forEach((id) => citations.add(id)));
   for (const id of citations) views[id] = buildCitationView(id, registry, locale, text);
   for (const [id, segments] of verses) views[id] = buildVerseView(segments, registry, locale, text);
   return views;
