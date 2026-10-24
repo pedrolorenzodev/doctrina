@@ -43,5 +43,6 @@ export function buildCitationView(id: string, registry: Registry, locale: Locale
     date: dateInfo && dateLabel ? { label: dateLabel, start: dateInfo.year, end: dateInfo.yearEnd ?? null } : null,
     externalLink: citation.link ? { href: citation.link.href, label: citation.link.label } : null,
     copyText: quote ? `«${quote.text}» ${reference}` : reference,
+    fullSource: true,
   };
 }

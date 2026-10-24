@@ -6,6 +6,8 @@ import { getPageViews } from "@/content/get-page-views";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { getUiText } from "@/content/ui-text/get-ui-text";
+import { ObjectionsSection } from "@/features/doctrine/objections-section";
+import { ScriptureSection } from "@/features/doctrine/scripture-section";
 import { TeachSection } from "@/features/doctrine/teach-section";
 import { WhySection } from "@/features/doctrine/why-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
@@ -36,12 +38,16 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
         <PageHeader id="top" title={page.title} lede={page.lede} />
         <TeachSection page={page} locale={locale} />
         <WhySection page={page} locale={locale} />
+        <ScriptureSection page={page} locale={locale} />
+        <ObjectionsSection page={page} locale={locale} />
         <EdgeRuler
           label={text.shell.sections}
           sections={[
             { id: "top", label: page.title },
             { id: "teach", label: text.doctrine.teach },
             { id: "why", label: text.doctrine.why },
+            { id: "scripture", label: text.doctrine.scripture },
+            { id: "objections", label: text.doctrine.objections },
           ]}
         />
       </PageMain>

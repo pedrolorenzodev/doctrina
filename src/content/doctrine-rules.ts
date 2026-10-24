@@ -1,5 +1,9 @@
 import type { DoctrineId } from "@/content/model/ids";
 
+export const shownPassages = 4;
+
+export const shownObjections = 3;
+
 export const shownStatements: Record<DoctrineId, number> = {
   eucharist: 5,
   justification: 5,

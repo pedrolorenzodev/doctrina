@@ -199,3 +199,18 @@ test.describe("phone", () => {
     }
   });
 });
+
+test("«Abrir la fuente completa» is in citation windows only and does nothing yet", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(traditionPath);
+  const url = page.url();
+  await page.locator("#why p button[aria-haspopup]", { hasText: "Catecismo 1336" }).click();
+  const open = page.getByRole("dialog").getByRole("button", { name: "Abrir la fuente completa" });
+  await expect(open).toBeVisible();
+  await open.click();
+  expect(page.url()).toBe(url);
+  await expect(page.getByRole("dialog")).toHaveAttribute("data-open", "true");
+  await page.keyboard.press("Escape");
+  await page.locator("#why p button[aria-haspopup]", { hasText: "Lucas 22:19" }).click();
+  await expect(page.getByRole("dialog").getByRole("button", { name: "Abrir la fuente completa" })).toHaveCount(0);
+});

@@ -3,4 +3,5 @@ export type CitationWindowText = {
   copy: string;
   copied: string;
   dateLabel: string;
+  openSource: string;
 };

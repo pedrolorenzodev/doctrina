@@ -71,6 +71,12 @@
   --text-punch--line-height: 1.5;
   --text-punch-mobile: 20px;
   --text-punch-mobile--line-height: 1.5;
+  --text-passage: 19px;
+  --text-passage--line-height: 1.4;
+  --text-passage-body: 16.5px;
+  --text-passage-body--line-height: 1.6;
+  --text-synthesis: 16.5px;
+  --text-synthesis--line-height: 1.55;
   --text-note: 14.5px;
   --text-note--line-height: 1.6;
   --text-label: 12.5px;
@@ -94,6 +100,7 @@
   --spacing-scroll-offset: 24px;
   --container-col: 720px;
   --container-wide: 1040px;
+  --container-synthesis: 680px;
   --container-drawer: min(320px, 86vw);
 
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -443,6 +450,12 @@
   grid-template-columns: subgrid;
   align-items: start;
   row-gap: 10px;
+}
+
+@utility quiet-links {
+  & .link-page {
+    color: var(--color-ink-2);
+  }
 }
 
 @utility opsz-24 {

@@ -92,8 +92,9 @@ export type TraditionPage<C extends string = string> = {
     statements: Statement<C>[];
   };
   why: { intro: Rich[]; fathers: Father<C>[]; note: Rich; closing: Rich };
+  scriptureSubtitle: string;
   scripture: ScripturePassage[];
-  objections: { order: string[]; silentTraditions?: Rich; items: Objection<C>[] };
+  objections: { subtitle: string; order: string[]; silentTraditions?: Rich; items: Objection<C>[] };
   life: { intro: Rich[]; items: LifeItem<C>[] };
   authority: { grades: Record<ChurchGrade, GradeDefinition<C>>; other: Record<string, GradeDefinition<C>> };
 };

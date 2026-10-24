@@ -30,9 +30,11 @@ test("show more and show less leave no ghost and no running animation", async ({
   await page.waitForTimeout(900);
   expect(await list(page)).toMatchObject({ hidden: 0, ghosts: 0 });
   await expect(page.locator(more)).toHaveText("Mostrar menos");
-  await page.locator(more).click();
-  await page.waitForTimeout(60);
-  expect((await list(page)).ghosts).toBe(4);
+  const ghostsRightAfterClick = await page.evaluate((selector) => {
+    (document.querySelector(selector) as HTMLElement).click();
+    return document.querySelector("#teach [aria-hidden=true].absolute")?.children.length ?? -1;
+  }, more);
+  expect(ghostsRightAfterClick).toBe(4);
   await page.waitForTimeout(900);
   expect(await list(page)).toMatchObject({ hidden: 4, ghosts: 0, animations: 0 });
 });

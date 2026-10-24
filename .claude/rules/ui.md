@@ -15,6 +15,7 @@ paths:
   - same markup with very different layout → passes in increasing order, mobile first.
 - Search before create: `npm run components <word>` lists existing components; reuse or extend one before writing a new one.
 - Primitives with shadcn when a suitable one exists; install it with its CLI when needed.
+- Links, buttons and controls of the approved design are built even when their destination or action doesn't exist: same look, focus and hover, pressing does nothing, a `TODO` at the call site says what it must do (Pedro, 2026-10-24; replaces D9). Never hide them or render them as plain text.
 - Don't extend preventively: tokens, components and abstractions only when a concrete piece needs them.
 - Motion: every non-trivial animation or interaction goes through the main rule (proposal first). Respect `prefers-reduced-motion`. A motion library is chosen only in a proposal. How much motion Doctrina has is part of the design direction, not a given.
 

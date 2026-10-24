@@ -69,7 +69,7 @@ export function WhySection({ page, locale }: WhySectionProps) {
         <p className="mb-4.5 font-head text-punch-mobile font-normal text-ink opsz-24 sm:text-punch">
           <RichText text={closing} verse={verse} />
         </p>
-        <p className="text-note text-ink-3">
+        <p className="text-note text-ink-3 quiet-links">
           <RichText text={note} verse={verse} />
         </p>
       </div>

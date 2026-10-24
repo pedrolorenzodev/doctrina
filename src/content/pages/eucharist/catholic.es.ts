@@ -377,6 +377,7 @@ export const eucharistCatholic = {
     closing:
       "Para la Iglesia católica, Juan 6 no admite una lectura metafórica: ante el asombro de los oyentes, Jesús se ve obligado, dice Juan Pablo II, «a recalcar la verdad objetiva de sus palabras»: «Mi carne es verdadera comida y mi sangre verdadera bebida» {v:John.6.55}. Y concluye: «No se trata de un alimento metafórico» {c:EdE16|Ecclesia de Eucharistia 16}.",
   },
+  scriptureSubtitle: "Los pasajes que los documentos católicos citan sobre la Eucaristía, y cómo los leen.",
   scripture: [
     {
       refs: ["Matt.26.26-Matt.26.28", "Mark.14.22-Mark.14.24", "Luke.22.19-Luke.22.20", "1Cor.11.23-1Cor.11.26"],
@@ -436,6 +437,7 @@ export const eucharistCatholic = {
     },
   ],
   objections: {
+    subtitle: "Objeciones a la postura católica. Abre cada una para leer en profundidad la respuesta católica.",
     order: ["OB-1", "OB-2", "OB-3", "OB-4", "OB-5", "OB-6", "OB-7", "DO-1", "DO-2"],
     silentTraditions:
       "Los textos que hablan por los bautistas en Doctrina (Fe y Mensaje Bautistas 2000, art. VII; Confesión de New Hampshire 1853, art. XIV) presentan la Cena como símbolo y memorial y no formulan objeciones a la doctrina católica; lo mismo la Declaración de Verdades Fundamentales de las Asambleas de Dios, art. 6.",

@@ -1,5 +1,6 @@
 import { Fragment, type ReactNode } from "react";
 import { CitationLink } from "@/components/citation-window/citation-link";
+import { PageLink } from "@/components/ui/page-link";
 import { parseInline, type InlineNode } from "@/lib/inline-refs";
 import { closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
 
@@ -46,12 +47,9 @@ export function RichText({ text, verse }: RichTextProps) {
       const following = nodes[index + 1];
       if (isReference(following)) {
         const match = leadingPunctuation.exec(node.text);
-        const body = match?.[1] ?? node.text;
-        const moved = match?.[2] ?? "";
-        out.push(<Fragment key={index}>{body}</Fragment>);
         const members: ReferenceNode[] = [following];
         let cursor = index + 2;
-        let trailing = moved;
+        let trailing = match?.[2] ?? "";
         for (;;) {
           const gap = nodes[cursor];
           const next = nodes[cursor + 1];
@@ -60,6 +58,24 @@ export function RichText({ text, verse }: RichTextProps) {
           members.push(next);
           cursor += 2;
         }
+        const after = nodes[cursor];
+        const insideParentheses = after?.kind === "text" && after.text.startsWith(")") && /\([^)]*$/.test(node.text);
+        if (insideParentheses) {
+          out.push(<Fragment key={index}>{node.text}</Fragment>);
+          out.push(
+            <Fragment key={`group-${index}`}>
+              {members.map((member, position) => (
+                <Fragment key={position}>
+                  {position > 0 ? `${referenceSeparator} ` : null}
+                  {reference(member, String(position))}
+                </Fragment>
+              ))}
+            </Fragment>,
+          );
+          index = cursor;
+          continue;
+        }
+        out.push(<Fragment key={index}>{match?.[1] ?? node.text}</Fragment>);
         out.push(
           <Fragment key={`group-${index}`}>
             {" "}
@@ -84,8 +100,11 @@ export function RichText({ text, verse }: RichTextProps) {
       out.push(<Fragment key={index}>{node.text}</Fragment>);
     } else if (isReference(node)) {
       out.push(reference(node, String(index)));
+    } else if (node.kind === "section") {
+      // TODO: section tokens must link to their page and section (#node.id) once those pages exist
+      out.push(<PageLink key={index}>{node.label}</PageLink>);
     } else {
-      // TODO: section and glossary tokens need their links (in-page jump, glossary window)
+      // TODO: glossary tokens need the glossary window
       out.push(<Fragment key={index}>{node.label ?? ""}</Fragment>);
     }
     index += 1;

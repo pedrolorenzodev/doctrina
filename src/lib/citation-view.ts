@@ -10,4 +10,5 @@ export type CitationView = {
   date: { label: string; start: number; end: number | null } | null;
   externalLink: { href: string; label: string } | null;
   copyText: string | null;
+  fullSource: boolean;
 };

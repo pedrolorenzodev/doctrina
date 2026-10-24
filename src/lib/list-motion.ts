@@ -24,7 +24,7 @@ export function revealList(list: HTMLElement): () => void {
         const item = entry.target as HTMLElement;
         if (!item.dataset.rvSeen) {
           item.dataset.rvSeen = "1";
-          if (entry.isIntersecting) observer.unobserve(item);
+          if (entry.isIntersecting || entry.boundingClientRect.bottom < 0) observer.unobserve(item);
           else item.dataset.rv = "armed";
           continue;
         }

@@ -49,6 +49,7 @@ export function buildVerseView(segments: string[], registry: Registry, locale: L
     date: null,
     externalLink: null,
     copyText: `«${quote}» ${reference} (${text.citation.scriptureEdition})`,
+    fullSource: false,
   };
 }
 
@@ -73,6 +74,7 @@ function buildGradeView(
     date: null,
     externalLink: null,
     copyText: null,
+    fullSource: false,
   };
 }
 
@@ -103,6 +105,8 @@ export function collectPageViews(
       if (view) views[id] = view;
     });
   }
+  page.scripture.forEach((passage) => scan(passage.text));
+  page.objections.items.forEach((objection) => scan(objection.synthesis));
   const { intro, fathers, closing } = page.why;
   [...intro, closing].forEach(scan);
   fathers.forEach((father) => father.citedIn.citations.forEach((id) => citations.add(id)));

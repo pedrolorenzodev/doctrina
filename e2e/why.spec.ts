@@ -127,8 +127,18 @@ test("under reduced motion the figures are never armed", async ({ browser }) => 
   await context.close();
 });
 
-test("the ruler lists three sections", async ({ page }) => {
+test("the ruler lists the why section", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await expect(page.locator("nav[aria-label] a, nav[aria-label] button").filter({ hasText: /Por qué/ })).toHaveCount(1);
+});
+
+test("the note's section link is pressable and does nothing yet", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(traditionPath);
+  const url = page.url();
+  const link = page.locator("#why p.text-note button", { hasText: "Lo que escribieron los primeros cristianos" });
+  await expect(link).toHaveCSS("text-decoration-line", "underline");
+  await link.click();
+  expect(page.url()).toBe(url);
 });
