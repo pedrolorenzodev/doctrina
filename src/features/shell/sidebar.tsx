@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import type { TreeGroup, TreeNode } from "@/content/site-tree";
 import { useDrawer } from "@/features/shell/drawer";
+import { escapePriority, registerEscape } from "@/lib/escape-stack";
+import { trapTab } from "@/lib/focus";
 import { prefersReducedMotion, setBranch, travelMark, visibleRow } from "@/features/shell/tree-motion";
 
 type SidebarText = {
@@ -206,29 +208,18 @@ export function Sidebar({ groups, text }: SidebarProps) {
     const aside = asideRef.current;
     if (nav) scrollCurrentIntoPlace(nav);
     aside?.querySelector<HTMLElement>("a[href], button")?.focus();
+    const release = registerEscape(escapePriority.drawer, () => {
+      setOpen(false);
+      menuRef.current?.focus();
+    });
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        menuRef.current?.focus();
-        return;
-      }
-      if (event.key !== "Tab" || !aside) return;
-      const focusable = [...aside.querySelectorAll<HTMLElement>("a[href], button")].filter(
-        (el) => el.offsetParent !== null,
-      );
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (!first || !last) return;
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
+      if (aside) trapTab(event, aside);
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      release();
+      window.removeEventListener("keydown", onKey);
+    };
   }, [open, setOpen, menuRef]);
 
   function onClick(event: MouseEvent<HTMLElement>) {

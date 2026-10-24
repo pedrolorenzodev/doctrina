@@ -18,6 +18,14 @@ export const en: UiText = {
     collapse: "Collapse {label}",
     sections: "Page sections",
   },
+  citation: {
+    kind: "Quotation",
+    close: "Close",
+    copy: "Copy citation",
+    copied: "Citation copied",
+    dateLabel: "Date",
+    dateUnconfirmed: "unconfirmed",
+  },
   notFound: {
     title: "This page doesn't exist",
     body: "The link may be mistyped, or the page may no longer be here.",

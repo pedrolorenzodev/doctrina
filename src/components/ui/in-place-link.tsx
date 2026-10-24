@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import { nbspBeforeDigits } from "@/lib/locator";
 
 type InPlaceLinkKind = "citation" | "term" | "source";
@@ -6,7 +6,7 @@ type InPlaceLinkKind = "citation" | "term" | "source";
 type InPlaceLinkProps = {
   kind: InPlaceLinkKind;
   open?: boolean;
-  onClick: () => void;
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
   children: ReactNode;
 };
 

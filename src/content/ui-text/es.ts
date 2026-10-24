@@ -16,6 +16,14 @@ export const es = {
     collapse: "Contraer {label}",
     sections: "Secciones de la página",
   },
+  citation: {
+    kind: "Cita",
+    close: "Cerrar",
+    copy: "Copiar cita",
+    copied: "Cita copiada",
+    dateLabel: "Fecha",
+    dateUnconfirmed: "sin confirmar",
+  },
   notFound: {
     title: "Esta página no existe",
     body: "El enlace puede estar mal escrito o la página ya no está.",

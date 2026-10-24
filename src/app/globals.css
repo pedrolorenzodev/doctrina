@@ -39,6 +39,12 @@
   --text-ui-2xs: 12px;
   --text-ui-xs: 13px;
   --text-btn: 13.5px;
+  --text-meta: 14px;
+  --text-meta--line-height: 1.5;
+  --text-micro: 10.5px;
+  --text-micro-lg: 11.5px;
+  --text-quote-window: 20px;
+  --text-quote-window--line-height: 1.45;
   --text-label: 12.5px;
   --text-ruler: 15px;
   --text-sidebar: 14px;
@@ -51,6 +57,8 @@
   --radius-5: 5px;
   --radius-6: 6px;
   --radius-7: 7px;
+  --radius-10: 10px;
+  --radius-14: 14px;
 
   --spacing-top: 56px;
   --spacing-sidebar: 272px;
@@ -62,6 +70,7 @@
   --ease-move: cubic-bezier(0.4, 0, 0.2, 1);
 
   --shadow-current: inset 2px 0 0 var(--color-accent);
+  --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45);
 }
 
 @theme inline {
@@ -126,6 +135,7 @@
     content: "";
     position: absolute;
     inset: 0;
+    border-radius: inherit;
     background-image: var(--texture-image);
     background-size: 420px 420px;
     opacity: var(--texture-opacity);
@@ -251,6 +261,45 @@
   }
 }
 
+@utility guillemets {
+  &::before {
+    content: "«";
+  }
+
+  &::after {
+    content: "»";
+  }
+}
+
+@utility window-max-height {
+  max-height: min(560px, calc(100vh - 96px));
+}
+
+@utility sheet-max-height {
+  max-height: 78vh;
+}
+
+@utility window-motion {
+  transition:
+    opacity 200ms var(--ease-standard),
+    translate 200ms var(--ease-standard),
+    visibility 0s linear 200ms;
+
+  &[data-open] {
+    transition-delay: 0s;
+  }
+
+  @media (width < 40rem) {
+    transition:
+      translate 260ms var(--ease-move),
+      visibility 0s linear 260ms;
+
+    &[data-open] {
+      transition-delay: 0s;
+    }
+  }
+}
+
 @utility edge-right {
   right: max(18px, env(safe-area-inset-right, 0px));
 }
@@ -293,7 +342,7 @@
 
 @utility drawer-motion {
   transition:
-    transform 240ms var(--ease-move),
+    translate 240ms var(--ease-move),
     visibility 0s linear 240ms;
 
   &[data-open="true"] {
