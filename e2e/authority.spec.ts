@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { horizontalOverflow, traditionPath } from "./helpers";
+import { horizontalOverflow, landingTop, traditionPath } from "./helpers";
 
 const rows = "#authority tr";
 const normalize = (text: string | null | undefined) => (text ?? "").replace(/[ ⁠]/g, " ").replace(/\s+/g, " ").trim();
@@ -39,7 +39,9 @@ test("an example link to a hidden statement expands the list and lands under the
   await page.locator("#authority a", { hasText: "la Eucaristía hace la Iglesia" }).first().click();
   await page.waitForTimeout(1500);
   expect(await page.evaluate(() => document.getElementById("QE-9")!.hidden)).toBe(false);
-  expect(await page.evaluate(() => Math.round(document.getElementById("QE-9")!.getBoundingClientRect().top))).toBe(80);
+  expect(await page.evaluate(() => Math.round(document.getElementById("QE-9")!.getBoundingClientRect().top))).toBe(
+    await landingTop(page),
+  );
 });
 
 test("an example link to a visible statement scrolls to it", async ({ page }) => {
@@ -47,7 +49,9 @@ test("an example link to a visible statement scrolls to it", async ({ page }) =>
   await page.goto(traditionPath);
   await page.locator("#authority a", { hasText: "la transubstanciación" }).first().click();
   await page.waitForTimeout(1500);
-  expect(await page.evaluate(() => Math.round(document.getElementById("QE-2")!.getBoundingClientRect().top))).toBe(80);
+  expect(await page.evaluate(() => Math.round(document.getElementById("QE-2")!.getBoundingClientRect().top))).toBe(
+    await landingTop(page),
+  );
 });
 
 test("arriving with the hash of a hidden statement expands the list and shows it", async ({ page }) => {
@@ -55,7 +59,9 @@ test("arriving with the hash of a hidden statement expands the list and shows it
   await page.goto(`${traditionPath}#QE-9`);
   await page.waitForTimeout(1500);
   expect(await page.evaluate(() => document.getElementById("QE-9")!.hidden)).toBe(false);
-  expect(await page.evaluate(() => Math.round(document.getElementById("QE-9")!.getBoundingClientRect().top))).toBe(80);
+  expect(await page.evaluate(() => Math.round(document.getElementById("QE-9")!.getBoundingClientRect().top))).toBe(
+    await landingTop(page),
+  );
   await expect(page.locator("#teach button[aria-expanded]:not([aria-haspopup])")).toHaveText("Mostrar menos");
 });
 

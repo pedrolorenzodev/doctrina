@@ -35,3 +35,13 @@ export function trackElement(page: Page, selector: string, ms: number): Promise<
 export function horizontalOverflow(page: Page): Promise<number> {
   return page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
 }
+
+export function landingTop(page: Page): Promise<number> {
+  return page.evaluate(() => {
+    const style = getComputedStyle(document.documentElement);
+    return Math.round(
+      parseFloat(style.getPropertyValue("--spacing-top")) +
+        parseFloat(style.getPropertyValue("--spacing-scroll-offset")),
+    );
+  });
+}

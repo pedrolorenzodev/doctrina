@@ -9,7 +9,7 @@ test("the sidebar is sticky, marks the current page and opens its ancestors", as
   await page.goto(traditionPath);
   const aside = page.locator("aside");
   await expect(aside).toHaveCSS("position", "sticky");
-  await expect(page.locator("[aria-current=page]")).toHaveText("Católica");
+  await expect(aside.locator("[aria-current=page]")).toHaveText("Católica");
   await expect(page.locator(twisty)).toHaveAttribute("aria-expanded", "true");
   await expect(page.locator(list)).toBeVisible();
   await expect(page.locator("aside nav")).toHaveAttribute("data-lenis-prevent", "true");
@@ -125,4 +125,43 @@ test.describe("drawer", () => {
     await page.setViewportSize({ width: 390, height: 780 });
     await expect(page.locator("aside")).not.toHaveAttribute("data-open", "true");
   });
+});
+
+test("four groups with the counts of history and only the published page as a link", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(traditionPath);
+  await expect(page.locator("aside nav p")).toHaveText(["Doctrinas", "Biblia", "Historia", "Consulta"]);
+  const counts = await page
+    .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
+    .allTextContents();
+  expect(counts).toEqual(["56", "41", "18", "10", "20"]);
+  await expect(page.locator("aside nav a")).toHaveCount(1);
+  await expect(page.locator("aside nav a")).toHaveAttribute("aria-current", "page");
+});
+
+test("the branches hold the real entries: 56 Fathers, 27 New Testament books, 7 objections under Católica", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(traditionPath);
+  const children = (id: string) => page.locator(`aside nav li[data-id="${id}"] > ul > li`);
+  await expect(children("history/fathers")).toHaveCount(56);
+  await expect(children("bible/nt")).toHaveCount(27);
+  await expect(children("bible/ot")).toHaveCount(39);
+  await expect(children("eucharist/catholic/objections")).toHaveCount(7);
+  await expect(children("eucharist/orthodox")).toHaveCount(2);
+});
+
+test("entries without a page are pressable and do nothing; branches still open", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(traditionPath);
+  const url = page.url();
+  await page.locator('aside nav li[data-id="history/councils"] button').click();
+  await page.locator('aside nav li[data-id="reference/glossary"] button').click();
+  expect(page.url()).toBe(url);
+  const nt = page.locator('aside nav li[data-id="bible/nt"]');
+  await nt.locator("> [data-row] button").first().click();
+  await expect(nt.locator("> ul")).toBeVisible();
+  await page.locator('aside nav li[data-id="book/Matt"] button').click();
+  expect(page.url()).toBe(url);
 });

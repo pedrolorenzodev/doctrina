@@ -11,8 +11,18 @@ if (problems.length > 0) throw new Error(`Invalid content:\n${problems.slice(0, 
 
 const pagesByLocale: Record<Locale, Record<string, TraditionPage>> = { es: spanishPages, en: {} };
 
-export function getPublishedPages(locale: Locale): { doctrine: DoctrineId; tradition: TraditionId }[] {
-  return Object.values(pagesByLocale[locale]).map(({ doctrine, tradition }) => ({ doctrine, tradition }));
+export function getPublishedPages(locale: Locale): {
+  doctrine: DoctrineId;
+  tradition: TraditionId;
+  objectionShorts: string[];
+}[] {
+  return Object.values(pagesByLocale[locale]).map(({ doctrine, tradition, objections }) => ({
+    doctrine,
+    tradition,
+    objectionShorts: objections.items.flatMap((objection) =>
+      objection.layer === "official" && objection.short ? [objection.short] : [],
+    ),
+  }));
 }
 
 export async function getTraditionPage(

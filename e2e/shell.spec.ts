@@ -21,10 +21,13 @@ test("the Spanish and the canonical URLs of a tradition both work; English has n
   expect((await page.goto("/en/doctrines/eucharist/catholic"))?.status()).toBe(404);
 });
 
-test("English has no sidebar or menu button", async ({ page }) => {
+test("English has the sidebar and the menu button, with English labels", async ({ page }) => {
   await page.goto("/en");
-  await expect(page.locator("aside")).toHaveCount(0);
-  await expect(page.locator("header button[aria-controls]")).toHaveCount(0);
+  await expect(page.locator("aside")).toHaveCount(1);
+  await expect(page.locator("header button[aria-controls]")).toHaveCount(1);
+  await expect(page.locator("aside nav p")).toHaveText(["Doctrines", "Bible", "History", "Reference"]);
+  await expect(page.locator("aside nav")).toContainText("The Eucharist");
+  await expect(page.locator("aside nav")).not.toContainText("La Eucaristía");
 });
 
 test("the language switch keeps the page it is on", async ({ page }) => {

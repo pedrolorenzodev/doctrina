@@ -453,6 +453,7 @@ export const eucharistCatholic = {
     items: [
       {
         id: "OB-1",
+        short: "Un solo sacrificio, una sola vez",
         layer: "official",
         title: "Si Cristo se ofreció «una vez para siempre», la Misa no puede ser un sacrificio",
         synthesis:
@@ -550,6 +551,7 @@ export const eucharistCatholic = {
       },
       {
         id: "OB-2",
+        short: "Lo consagrado sigue siendo pan",
         layer: "official",
         title: "Pablo lo sigue llamando «pan»: lo consagrado sigue siendo pan",
         synthesis:
@@ -643,6 +645,7 @@ export const eucharistCatholic = {
       },
       {
         id: "OB-3",
+        short: "Guardar y adorar la hostia",
         layer: "official",
         title: "Cristo dijo «Tomad, comed»: guardar, exponer y adorar la hostia va más allá de lo que mandó",
         synthesis:
@@ -747,6 +750,7 @@ export const eucharistCatholic = {
       },
       {
         id: "OB-4",
+        short: "El cáliz y los laicos",
         layer: "official",
         title: "Cristo dijo «Bebed de ella todos»: negar el cáliz a los laicos cambia lo que él instituyó",
         synthesis:
@@ -830,6 +834,7 @@ export const eucharistCatholic = {
       },
       {
         id: "OB-5",
+        short: "Misas privadas y por los difuntos",
         layer: "official",
         title: "Misas privadas y misas por los difuntos: la Cena convertida en una obra que vale por sí sola",
         synthesis:
@@ -919,6 +924,7 @@ export const eucharistCatholic = {
       },
       {
         id: "OB-6",
+        short: "La invocación del Espíritu Santo",
         layer: "official",
         title: "Los dones se consagran por la invocación del Espíritu Santo, no solo por las palabras de Cristo",
         synthesis:
@@ -1014,6 +1020,7 @@ export const eucharistCatholic = {
       },
       {
         id: "OB-7",
+        short: "El pan ázimo",
         layer: "official",
         title: "Durante mil años se consagró con pan fermentado: el ázimo es una innovación latina",
         synthesis:
@@ -1227,6 +1234,91 @@ export const eucharistCatholic = {
           objector: ["Lev.17.10-Lev.17.14", "Acts.15.20", "Acts.15.29"],
         },
         apologeticAnswer: "pending",
+      },
+    ],
+  },
+  videos: {
+    subtitle: "Creadores católicos explican y defienden esta postura. Los videos se abren en YouTube.",
+    items: [
+      {
+        id: "mJXAFHw_ARQ",
+        title: "What Does John 6 Say About the Eucharist? | Dr. Brant Pitre",
+        channel: "Catholic Productions",
+        lang: "en",
+      },
+      { id: "I7yY0zSUm20", title: "Does This Verse Disprove the Eucharist?", channel: "Shameless Popery", lang: "en" },
+      {
+        id: "PQRXRs4FNhE",
+        title: "Does the Mass Put Jesus Back on the Cross?",
+        channel: "Shameless Popery",
+        lang: "en",
+      },
+      {
+        id: "Vn9Z2QUYESw",
+        title: "Do Catholics Re-Crucify Jesus During Mass?",
+        channel: "Catholic Answers Live",
+        lang: "en",
+      },
+      {
+        id: "xS29MKkkxpU",
+        title: "Is Receiving the Eucharist Cannibalism? | Karlo Broussard | Catholic Answers Live",
+        channel: "Catholic Answers Live",
+        lang: "en",
+      },
+      {
+        id: "rDnLoBKRcCk",
+        title: "How is the Eucharist Not Cannibalism?",
+        channel: "Catholic Answers Live",
+        lang: "en",
+      },
+      {
+        id: "UzCPu_lEhe8",
+        title: "The Real Presence of Jesus in the Eucharist // Bishop Barron at 2020 Religious Education Congress",
+        channel: "Bishop Robert Barron",
+        lang: "en",
+      },
+      {
+        id: "AzqLMZ1x0zM",
+        title: "Biblical PROOF The Eucharist is Truly Jesus | Father Mike Schmitz SEEK Rewind",
+        channel: "FOCUS Catholic",
+        lang: "en",
+      },
+      {
+        id: "NFmgYbC3OYw",
+        title: "Jesus and the Jewish Roots of the Eucharist | Dr. Brant Pitre",
+        channel: "Catholic Productions",
+        lang: "en",
+      },
+      {
+        id: "epr44J8X8ys",
+        title: "¿Realmente dijo Jesús que su carne no servía para nada en Juan 6:63?",
+        channel: "Dios Te Salve",
+        lang: "es",
+      },
+      {
+        id: "LSCZGU1HnIM",
+        title: "“Los protestantes dicen que Dios prohíbe comer sangre… pero rechazan la Eucaristía”",
+        channel: "Dogma vs Reforma",
+        lang: "es",
+      },
+      {
+        id: "f7e7gBV4dn8",
+        title: "AT. Estaba prohibido comer sangre. ¿Ya podemos comer sangre? Padre Luis Toro.",
+        channel: "Raymundo Saucedo Raygoza - Padre Luis Toro.",
+        lang: "es",
+      },
+      {
+        id: "TeEflrqTBvU",
+        title: "La Santa Misa: El Único Sacrificio de Cristo (Sacramento de la Eucaristía)",
+        channel: "La Fe de la Iglesia",
+        lang: "es",
+      },
+      { id: "7mc74gnF5M4", title: "La presencia real de Cristo en la Eucaristía", channel: "En ti confío", lang: "es" },
+      {
+        id: "PucLuJsfekA",
+        title: "Answering a Protestant Objection to the Eucharist (John 6:63) w/ @JimmyAkin",
+        channel: "Catholic Answers Live",
+        lang: "en",
       },
     ],
   },

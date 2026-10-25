@@ -16,7 +16,7 @@ export function StatementLink({ id, children }: StatementLinkProps) {
         event.preventDefault();
         showItem(id);
       }}
-      className="link-example"
+      className="link-example hit-44"
     >
       {children}
     </a>

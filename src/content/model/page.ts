@@ -53,6 +53,7 @@ export type ObjectionLayer = "official" | "debate";
 
 export type Objection<C extends string = string> = {
   id: string;
+  short?: string;
   layer: ObjectionLayer;
   title: Rich;
   titleStatus?: C;
@@ -64,6 +65,13 @@ export type Objection<C extends string = string> = {
   apologeticAnswer?: "pending";
   sourcesCited: CitationGroup<C>[];
   passages: { answer: string[]; objector: string[]; objectorNote?: Rich };
+};
+
+export type Video = {
+  id: string;
+  title: string;
+  channel: string;
+  lang: "es" | "en";
 };
 
 export type LifeItem<C extends string = string> = {
@@ -96,6 +104,7 @@ export type TraditionPage<C extends string = string> = {
   scriptureSubtitle: string;
   scripture: ScripturePassage[];
   objections: { subtitle: string; order: string[]; silentTraditions?: Rich; items: Objection<C>[] };
+  videos: { subtitle: string; items: Video[] };
   life: { intro: Rich[]; items: LifeItem<C>[] };
   authority: {
     subtitle: string;

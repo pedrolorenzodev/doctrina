@@ -4,6 +4,7 @@ import { getSiteTree } from "@/content/get-site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { DrawerProvider } from "@/features/shell/drawer";
 import { Sidebar } from "@/features/shell/sidebar";
+import { TitleEntrance } from "@/features/shell/title-entrance";
 import { SmoothScroll } from "@/features/shell/smooth-scroll";
 import { TopBar } from "@/features/shell/top-bar";
 import { currentLocale } from "@/lib/current-locale";
@@ -35,6 +36,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   return (
     <Document lang={locale}>
       <SmoothScroll />
+      <TitleEntrance />
       <DrawerProvider>
         <TopBar withMenu={hasTree} />
         {hasTree ? (

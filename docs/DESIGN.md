@@ -152,8 +152,8 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 | Pattern | Trigger | Motion | Interruption | Reduced motion |
 |---|---|---|---|---|
 | Hover / press | pointer, focus | colour, fill, underline 150 ms standard | CSS | instant |
-| Title entrance «Título» | page load, after fonts (wait ≤ 800 ms) | header block (crumbs, kicker, h1, lede, fingerprint, caption, facts) fades 0→1, 700 ms `ease-title`, 80 ms apart, no movement; content stays visible without JS (2 s CSS failsafe) | none | visible at once |
-| Page change «Fundido» | moving to another screen | main content fades in 220 ms ease-out; top bar and sidebar stay solid; to review later | — | none |
+| Title entrance «Título» (built 2026-10-24: crumbs, h1, lede) | page load, after fonts (wait ≤ 800 ms) | header block (crumbs, kicker, h1, lede, fingerprint, caption, facts) fades 0→1, 700 ms `ease-title`, 80 ms apart, no movement; content stays visible without JS (2 s CSS failsafe) | none | visible at once |
+| Page change «Fundido» (built 2026-10-24) | moving to another screen | main content fades in 220 ms ease-out; top bar and sidebar stay solid; not on the first load; to review later | — | none |
 | Scroll reveal | an item of a list of equals first enters the viewport (IntersectionObserver, rootMargin `0px 0px -15% 0px`), once | from opacity 0 and +8 px, 420 ms `ease-reveal`; items arriving together go 60 ms apart; items already in view at load are not animated | — | none |
 | List change (FLIP) | filter, show more/less, reorder | staying items slide to new place 380 ms; leaving items fade + scale .96 in 180 ms as ghost copies; new items rise 8 px in 420 ms after 120 ms, 40 ms apart, ≤ 8 steps; list height animates 380 ms (after the 180 ms exit when shrinking); new items landing below 85 % of the viewport wait for the scroll reveal | a new change cancels running moves and re-measures (see GOTCHAS for the drag case) | instant |
 | Expand group (02 «Ver las objeciones que recibe») | button | open: height 380 ms `ease-reveal` + rows enter as FLIP new items; close: rows fade + .96 in 180 ms, then height → 0 in 380 ms; label «Ver las objeciones que recibe» / «Ocultar las objeciones»; plus icon turns 45° (200 ms) | cancels and restarts from current height | instant |
@@ -230,7 +230,7 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 - Hover: the row's point scales 1.25. Phone: name | date, then the mini timeline full width.
 - Groups (04): ui 500 13 ink-3 headings.
 
-### Sidebar tree (built in B4: Doctrinas group only, published pages only) — DEC 2026-10-07 · Navigation: P1's tree sidebar; DEC 2026-10-20 · «Objeciones» is its own page
+### Sidebar tree (built in B4; the full tree, with inert rows, since 2026-10-24) — DEC 2026-10-07 · Navigation: P1's tree sidebar; DEC 2026-10-20 · «Objeciones» is its own page
 - Desktop ≥ 1100: sticky under the top bar, full height, own scroll (thin scrollbar `rule-2`, overscroll contained), border-right `rule`, padding 22 14 40 18. ≤ 1099: drawer `min(320px, 86vw)` from the left with scrim, opened by the menu button (40×40), closed by scrim, Esc or navigation.
 - Groups «Doctrinas», «Biblia», «Historia», «Consulta»: label style, 22 px apart.
 - Row: min-height 32, radius 6, hover fill; twisty 22×28 with 10 px chevron (leaf: empty spacer); link ui 14/1.35 ink-2, count at the right in 12 ink-3 tabular; children indented 13 + 8 px with a 1px `rule` guide.
@@ -238,7 +238,7 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 - On load and on drawer open the current row is scrolled to 35 % of the sidebar height.
 - Current mark animation: §8.
 
-### Tradition switcher — DEC 2026-10-08 · Tradition switcher that keeps your section; DEC 2026-10-14 (none on 04)
+### Tradition switcher (built inert 2026-10-24: current tab carries the style; the sliding indicator waits for a second page) — DEC 2026-10-08 · Tradition switcher that keeps your section; DEC 2026-10-14 (none on 04)
 - Sticky under the top bar at the top of the content column, full bleed to the main padding, `bg` + texture; bottom hairline appears once stuck. Label «Tradición» (hidden ≤ 720); hint at the right «Al cambiar, sigues en la misma sección.» / «…en las objeciones.» (hidden ≤ 899).
 - Tabs: ui 14 (13.5 phone), padding 8 11 (8 9), min-height 36, radius 6, ink-2; hover fill + ink; current ink 500. Tab width reserves the bold weight so marking never shifts tabs. Overflowing strip scrolls sideways (no scrollbar) with a 44 px fade at the right edge while more is hidden.
 - Indicator: one element, always present: `accent-weak` fill + inset 2 px accent underline; moves per §4.

@@ -130,10 +130,12 @@ function TreeItem({ node, currentId, trail, initiallyOpen, text }: TreeItemProps
         {node.href ? (
           <Link href={node.href} aria-current={isCurrent ? "page" : undefined} className={entryClassName} {...flags}>
             <span>{node.label}</span>
+            {node.count ? <span className="ml-auto text-ui-2xs text-ink-3 tabular-nums">{node.count}</span> : null}
           </Link>
         ) : (
           <button type="button" data-label-toggle className={`${entryClassName} cursor-pointer`} {...flags}>
             <span>{node.label}</span>
+            {node.count ? <span className="ml-auto text-ui-2xs text-ink-3 tabular-nums">{node.count}</span> : null}
           </button>
         )}
       </div>

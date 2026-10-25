@@ -1,13 +1,13 @@
 import { expect, test } from "@playwright/test";
-import { traditionPath } from "./helpers";
+import { landingTop, traditionPath } from "./helpers";
 
 const ticks = "[data-tick]";
 
-test("seven ticks with the specified geometry, the first active", async ({ page }) => {
+test("eight ticks with the specified geometry, the first active", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await page.waitForTimeout(1500);
-  await expect(page.locator(ticks)).toHaveCount(7);
+  await expect(page.locator(ticks)).toHaveCount(8);
   const first = await page.locator(ticks).first().boundingBox();
   expect(first?.width).toBe(64);
   expect(first?.height).toBe(13);
@@ -38,13 +38,14 @@ test("hovering stretches the ticks as the cosine falloff says and shows the labe
   expect(scales[4]).toBeCloseTo(2.5 + 2 * Math.cos((4 * Math.PI) / 16), 2);
   expect(scales[5]).toBeCloseTo(2.5 + 2 * Math.cos((5 * Math.PI) / 16), 2);
   expect(scales[6]).toBeCloseTo(2.5 + 2 * Math.cos((6 * Math.PI) / 16), 2);
+  expect(scales[7]).toBeCloseTo(2.5 + 2 * Math.cos((7 * Math.PI) / 16), 2);
   await expect(page.locator(`${ticks} span:first-child`).first()).toHaveCSS("opacity", "1");
   await page.mouse.move(700, 450);
   await page.waitForTimeout(350);
   const rest = await page
     .locator(`${ticks} span:last-child`)
     .evaluateAll((bars) => bars.map((bar) => new DOMMatrix(getComputedStyle(bar).transform).a));
-  expect(rest).toEqual([1, 1, 1, 1, 1, 1, 1]);
+  expect(rest).toEqual([1, 1, 1, 1, 1, 1, 1, 1]);
 });
 
 test("the active tick follows the scroll and a click jumps so the section lands under the bar", async ({ page }) => {
@@ -54,7 +55,7 @@ test("the active tick follows the scroll and a click jumps so the section lands 
   await page.locator(ticks).nth(1).click();
   await page.waitForTimeout(1200);
   const top = await page.evaluate(() => Math.round(document.getElementById("teach")!.getBoundingClientRect().top));
-  expect(top).toBe(80);
+  expect(top).toBe(await landingTop(page));
   await expect(page.locator(ticks).nth(1)).toHaveAttribute("data-active", "true");
   await page.evaluate(() => scrollTo(0, 0));
   await page.waitForTimeout(1200);

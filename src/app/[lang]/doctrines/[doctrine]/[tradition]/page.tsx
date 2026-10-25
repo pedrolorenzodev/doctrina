@@ -1,17 +1,22 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CitationProvider } from "@/components/citation-window/citation-context";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { getPageViews } from "@/content/get-page-views";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
+import { doctrineName, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
+import { VideosSection } from "@/features/doctrine/videos-section";
 import { AuthoritySection } from "@/features/doctrine/authority-section";
 import { LifeSection } from "@/features/doctrine/life-section";
 import { ObjectionsSection } from "@/features/doctrine/objections-section";
 import { ScriptureSection } from "@/features/doctrine/scripture-section";
 import { TeachSection } from "@/features/doctrine/teach-section";
 import { WhySection } from "@/features/doctrine/why-section";
+import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 
@@ -27,6 +32,17 @@ export async function generateStaticParams() {
   return getPublishedPages("es").map(({ doctrine, tradition }) => ({ lang: "es", doctrine, tradition }));
 }
 
+export async function generateMetadata({
+  params,
+}: PageProps<"/[lang]/doctrines/[doctrine]/[tradition]">): Promise<Metadata> {
+  const { doctrine, tradition } = await params;
+  const locale = await currentLocale();
+  const { site } = getUiText(locale);
+  if (!isDoctrine(doctrine) || !isTradition(tradition)) return { title: site.title };
+  const page = await getTraditionPage(doctrine, tradition, locale);
+  return { title: page ? `${page.title} · ${site.title}` : site.title };
+}
+
 export default async function TraditionRoute({ params }: PageProps<"/[lang]/doctrines/[doctrine]/[tradition]">) {
   const { doctrine, tradition } = await params;
   if (!isDoctrine(doctrine) || !isTradition(tradition)) notFound();
@@ -37,13 +53,25 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
   return (
     <CitationProvider views={getPageViews(page, locale)} text={text.citation}>
       <PageMain>
-        <PageHeader id="top" title={page.title} lede={page.lede} />
+        <Breadcrumbs
+          label={text.shell.breadcrumb}
+          trail={[{ label: text.shell.groupDoctrines }, { label: doctrineName(locale, doctrine) }]}
+          current={traditionName(locale, tradition)}
+        />
+        <TraditionSwitcher
+          label={text.shell.traditionLabel}
+          hint={text.shell.traditionHint}
+          items={traditionIds.map((id) => ({ id, label: traditionName(locale, id) }))}
+          current={tradition}
+        />
+        <PageHeader id="top" className="mt-5.5 sm:mt-7.5" title={page.title} lede={page.lede} />
         <TeachSection page={page} locale={locale} />
         <WhySection page={page} locale={locale} />
         <ScriptureSection page={page} locale={locale} />
         <ObjectionsSection page={page} locale={locale} />
         <LifeSection page={page} locale={locale} />
         <AuthoritySection page={page} locale={locale} />
+        <VideosSection page={page} locale={locale} />
         <EdgeRuler
           label={text.shell.sections}
           sections={[
@@ -54,6 +82,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
             { id: "objections", label: text.doctrine.objections },
             { id: "life", label: text.doctrine.life },
             { id: "authority", label: text.doctrine.authority },
+            { id: "videos", label: text.doctrine.videos },
           ]}
         />
       </PageMain>

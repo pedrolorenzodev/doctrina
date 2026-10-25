@@ -6,6 +6,8 @@ export const shownObjections = 3;
 
 export const shownLifeItems = 8;
 
+export const videosPerStep = 5;
+
 export const shownStatements: Record<DoctrineId, number> = {
   eucharist: 5,
   justification: 5,

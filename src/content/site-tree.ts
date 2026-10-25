@@ -1,6 +1,8 @@
 import type { DoctrineId, TraditionId } from "@/content/model/ids";
 import { doctrineIds, traditionIds } from "@/content/model/ids";
+import { historyIndex } from "@/content/history-index";
 import { traditionHref, traditionRoute } from "@/content/routes";
+import { bookNames } from "@/content/verse-names";
 import type { Locale } from "@/lib/locale";
 
 export type TreeNode = {
@@ -9,6 +11,7 @@ export type TreeNode = {
   href: string | null;
   route: string | null;
   children: TreeNode[];
+  count?: number | undefined;
 };
 
 export type TreeGroup = {
@@ -16,8 +19,6 @@ export type TreeGroup = {
   label: string;
   nodes: TreeNode[];
 };
-
-type PublishedPage = { doctrine: DoctrineId; tradition: TraditionId };
 
 const doctrineNames: Record<Locale, Record<DoctrineId, string>> = {
   es: {
@@ -55,23 +56,134 @@ const traditionNames: Record<Locale, Record<TraditionId, string>> = {
   },
 };
 
-export function buildSiteTree(locale: Locale, published: PublishedPage[], doctrinesLabel: string): TreeGroup[] {
-  const doctrineNodes: TreeNode[] = [];
-  for (const doctrine of doctrineIds) {
-    const children: TreeNode[] = [];
-    for (const tradition of traditionIds) {
-      if (!published.some((page) => page.doctrine === doctrine && page.tradition === tradition)) continue;
-      children.push({
-        id: `${doctrine}/${tradition}`,
-        label: traditionNames[locale][tradition],
-        href: traditionHref(locale, doctrine, tradition),
-        route: traditionRoute(locale, doctrine, tradition),
-        children: [],
-      });
-    }
-    if (children.length > 0) {
-      doctrineNodes.push({ id: doctrine, label: doctrineNames[locale][doctrine], href: null, route: null, children });
-    }
-  }
-  return doctrineNodes.length > 0 ? [{ id: "doctrines", label: doctrinesLabel, nodes: doctrineNodes }] : [];
+export type PublishedPage = { doctrine: DoctrineId; tradition: TraditionId; objectionShorts: string[] };
+
+export type TreeText = {
+  groupDoctrines: string;
+  tree: Record<
+    | "bible"
+    | "history"
+    | "reference"
+    | "passages"
+    | "objections"
+    | "timeline"
+    | "fathers"
+    | "councils"
+    | "heresies"
+    | "divisions"
+    | "reformation"
+    | "glossary"
+    | "sources"
+    | "ot"
+    | "deutero"
+    | "nt",
+    string
+  >;
+};
+
+const leaf = (id: string, label: string, count?: number): TreeNode => ({
+  id,
+  label,
+  href: null,
+  route: null,
+  children: [],
+  count,
+});
+
+const branch = (id: string, label: string, children: TreeNode[], count?: number): TreeNode => ({
+  id,
+  label,
+  href: null,
+  route: null,
+  children,
+  count,
+});
+
+const bookKeys = Object.keys(bookNames);
+const firstNewTestamentBook = bookKeys.indexOf("Matt");
+
+export function buildSiteTree(
+  locale: Locale,
+  published: PublishedPage[],
+  text: TreeText,
+  sourceTitles: string[],
+): TreeGroup[] {
+  const doctrineNodes = doctrineIds.map((doctrine) =>
+    branch(
+      doctrine,
+      doctrineNames[locale][doctrine],
+      traditionIds.map((tradition) => {
+        const page = published.find(
+          (candidate) => candidate.doctrine === doctrine && candidate.tradition === tradition,
+        );
+        const id = `${doctrine}/${tradition}`;
+        const children = [
+          leaf(`${id}/passages`, text.tree.passages),
+          branch(
+            `${id}/objections`,
+            text.tree.objections,
+            (page?.objectionShorts ?? []).map((short, index) => leaf(`${id}/objections/${index}`, short)),
+          ),
+        ];
+        return {
+          id,
+          label: traditionNames[locale][tradition],
+          href: page ? traditionHref(locale, doctrine, tradition) : null,
+          route: page ? traditionRoute(locale, doctrine, tradition) : null,
+          children,
+        };
+      }),
+    ),
+  );
+  const book = (key: string) => leaf(`book/${key}`, bookNames[key]?.[locale] ?? key);
+  const { counts, fathers } = historyIndex;
+  return [
+    { id: "doctrines", label: text.groupDoctrines, nodes: doctrineNodes },
+    {
+      id: "bible",
+      label: text.tree.bible,
+      nodes: [
+        branch("bible/ot", text.tree.ot, bookKeys.slice(0, firstNewTestamentBook).map(book)),
+        leaf("bible/deutero", text.tree.deutero),
+        branch("bible/nt", text.tree.nt, bookKeys.slice(firstNewTestamentBook).map(book)),
+      ],
+    },
+    {
+      id: "history",
+      label: text.tree.history,
+      nodes: [
+        leaf("history/timeline", text.tree.timeline),
+        branch(
+          "history/fathers",
+          text.tree.fathers,
+          fathers.map((father) => leaf(`history/fathers/${father.id}`, father[locale])),
+          counts.fathers,
+        ),
+        leaf("history/councils", text.tree.councils, counts.councils),
+        leaf("history/heresies", text.tree.heresies, counts.heresies),
+        leaf("history/divisions", text.tree.divisions, counts.divisions),
+        leaf("history/reformation", text.tree.reformation, counts.reformation),
+      ],
+    },
+    {
+      id: "reference",
+      label: text.tree.reference,
+      nodes: [
+        leaf("reference/glossary", text.tree.glossary),
+        branch(
+          "reference/sources",
+          text.tree.sources,
+          sourceTitles.map((title, index) => leaf(`reference/sources/${index}`, title)),
+        ),
+      ],
+    },
+  ];
+}
+
+export function doctrineName(locale: Locale, doctrine: DoctrineId): string {
+  return doctrineNames[locale][doctrine];
+}
+
+export function traditionName(locale: Locale, tradition: TraditionId): string {
+  return traditionNames[locale][tradition];
 }

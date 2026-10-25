@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { traditionPath, trackElement } from "./helpers";
+import { landingTop, traditionPath, trackElement } from "./helpers";
 
 const dialog = "[role=dialog]";
 const links = "#QE-1 button[aria-haspopup]";
@@ -49,7 +49,7 @@ test.describe("desktop", () => {
     expect(transitions).toContain("translate");
     await page.waitForTimeout(350);
     const panel = await state(page);
-    expect(panel).toMatchObject({ open: "true", x: 928, y: 120, width: 400 });
+    expect(panel).toMatchObject({ open: "true", x: 928, y: (await landingTop(page)) + 40, width: 400 });
     await expect(page.locator(dialog)).toBeFocused();
     await expect(page.locator(dialog)).toHaveAttribute("aria-modal", "false");
     await expect(page.locator("#citation-window-kind")).toHaveText("Cita");

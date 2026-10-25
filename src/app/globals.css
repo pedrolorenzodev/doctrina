@@ -85,6 +85,11 @@
   --text-grade-mobile--line-height: 1.35;
   --text-example: 13.5px;
   --text-example--line-height: 1.7;
+  --text-video-mobile: 16.5px;
+  --text-video-mobile--line-height: 1.45;
+  --text-video: 17.5px;
+  --text-video--line-height: 1.45;
+  --leading-label: 1.2;
   --text-note: 14.5px;
   --text-note--line-height: 1.6;
   --text-label: 12.5px;
@@ -99,6 +104,7 @@
   --radius-5: 5px;
   --radius-6: 6px;
   --radius-7: 7px;
+  --radius-8: 8px;
   --radius-10: 10px;
   --radius-14: 14px;
 
@@ -114,8 +120,10 @@
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
   --ease-move: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-title: cubic-bezier(0.33, 1, 0.68, 1);
 
   --shadow-current: inset 2px 0 0 var(--color-accent);
+  --shadow-current-underline: inset 0 -2px 0 var(--color-accent);
   --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45);
 }
 
@@ -496,6 +504,43 @@
   }
 }
 
+@utility link-crumb {
+  color: var(--color-ink-3);
+  cursor: pointer;
+  border-radius: var(--radius-3);
+  transition: color 150ms var(--ease-standard);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+@utility reserve-bold {
+  &::after {
+    content: attr(data-label);
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    font-weight: 500;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility fade-right {
+  mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent);
+}
+
 @utility opsz-24 {
   font-variation-settings: "opsz" 24;
 }
@@ -542,6 +587,59 @@ html.theme-switching ::after {
   [data-rv="shown"] {
     animation: row-reveal 420ms var(--ease-reveal) backwards;
     animation-delay: calc(var(--reveal-index, 0) * 60ms);
+  }
+}
+
+@utility page-fade {
+  animation: page-fade 220ms ease-out;
+}
+
+@utility title-part {
+  animation:
+    title-in 700ms var(--ease-title) both paused,
+    title-failsafe 0s 2s forwards;
+  animation-delay: calc(var(--part, 0) * 80ms), 2s;
+
+  :root[data-title-ready] & {
+    animation-play-state: running, running;
+  }
+}
+
+@utility title-part-0 {
+  --part: 0;
+}
+
+@utility title-part-1 {
+  --part: 1;
+}
+
+@utility title-part-2 {
+  --part: 2;
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes title-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes title-failsafe {
+  to {
+    opacity: 1;
   }
 }
 
