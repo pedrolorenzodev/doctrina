@@ -8,7 +8,7 @@ import type { Locale } from "@/lib/locale";
 
 const fallbackOrder: DocLang[] = ["la", "en", "es", "de", "el"];
 
-function pickQuote(excerpts: Excerpt[], locale: Locale): CitationView["quote"] {
+export function pickQuote(excerpts: Excerpt[], locale: Locale): CitationView["quote"] {
   const order: DocLang[] = [locale, ...fallbackOrder.filter((lang) => lang !== locale)];
   for (const excerpt of excerpts) {
     for (const lang of order) {

@@ -15,6 +15,8 @@ type ExpandableItem = {
 type ExpandableListProps = {
   as?: "ol" | "ul";
   itemClassName: string;
+  listClassName?: string;
+  moreClassName?: string;
   items: ExpandableItem[];
   shown: number;
   moreLabel: string;
@@ -24,6 +26,8 @@ type ExpandableListProps = {
 export function ExpandableList({
   as: Tag = "ol",
   itemClassName,
+  listClassName = "list-none border-b border-rule",
+  moreClassName = "mt-3.5",
   items,
   shown,
   moreLabel,
@@ -85,7 +89,7 @@ export function ExpandableList({
   return (
     <>
       <div className="relative">
-        <Tag ref={list} className="list-none border-b border-rule">
+        <Tag ref={list} className={listClassName}>
           {items.map((item, index) => (
             <li
               key={item.id}
@@ -101,7 +105,7 @@ export function ExpandableList({
         <div ref={ghosts} aria-hidden="true" className="pointer-events-none absolute inset-0 flip-ghosts" />
       </div>
       {items.length > shown ? (
-        <div className="mt-3.5">
+        <div className={moreClassName}>
           <MoreButton expanded={expanded} onClick={toggle}>
             {expanded ? lessLabel : moreLabel}
           </MoreButton>

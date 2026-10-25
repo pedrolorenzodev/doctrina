@@ -79,7 +79,12 @@ export default async function ObjectionsRoute({
         />
         <section aria-label={text.doctrine.objections} className="mt-8 sm:mt-11">
           <div className="max-w-col">
-            <ObjectionList objections={officialObjections(page)} locale={locale} />
+            <ObjectionList
+              objections={officialObjections(page)}
+              doctrine={doctrine}
+              tradition={tradition}
+              locale={locale}
+            />
           </div>
         </section>
       </PageMain>

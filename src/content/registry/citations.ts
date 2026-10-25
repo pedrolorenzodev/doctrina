@@ -9417,11 +9417,7 @@ export const citations = {
       parts: [
         {
           kind: "ref",
-          value: "29.6 y 29",
-        },
-        {
-          kind: "locus",
-          value: ".5",
+          value: "29.6 y 29.5",
         },
       ],
     },
@@ -9467,11 +9463,7 @@ export const citations = {
       parts: [
         {
           kind: "ref",
-          value: "29.2 y 29",
-        },
-        {
-          kind: "locus",
-          value: ".4",
+          value: "29.2 y 29.4",
         },
       ],
     },

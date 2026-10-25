@@ -57,6 +57,18 @@ export function objectionsRoute(locale: Locale, doctrine: DoctrineId, tradition:
   return `${traditionRoute(locale, doctrine, tradition)}/objections`;
 }
 
+export function objectionHref(locale: Locale, doctrine: DoctrineId, tradition: TraditionId, id: string): string {
+  return `${objectionsHref(locale, doctrine, tradition)}/${objectionSlug(id)}`;
+}
+
+export function objectionRoute(locale: Locale, doctrine: DoctrineId, tradition: TraditionId, id: string): string {
+  return `${objectionsRoute(locale, doctrine, tradition)}/${objectionSlug(id)}`;
+}
+
+export function objectionSlug(id: string): string {
+  return id.toLowerCase();
+}
+
 export function spanishRewrites() {
   return doctrineIds.flatMap((doctrine) =>
     traditionIds.flatMap((tradition) => [
@@ -67,6 +79,10 @@ export function spanishRewrites() {
       {
         source: objectionsHref("es", doctrine, tradition),
         destination: objectionsRoute("es", doctrine, tradition),
+      },
+      {
+        source: `${objectionsHref("es", doctrine, tradition)}/:objection`,
+        destination: `${objectionsRoute("es", doctrine, tradition)}/:objection`,
       },
     ]),
   );

@@ -20,14 +20,15 @@ test("a reference inside the author's own parentheses is not wrapped twice", asy
   expect((text ?? "").replace(/[ ]/g, " ")).toContain("(«Tomad, comed», Mateo 26:26). Guardarlo");
 });
 
-test("the button counts the official objections and opens the Objeciones page; titles do nothing yet", async ({
+test("the button counts the official objections and opens the Objeciones page; titles open each objection", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
-  await page.locator(`${items} > p:first-child button`).first().click();
-  expect(page.url()).toContain(traditionPath);
-  expect(page.url()).not.toContain("objeciones");
+  await expect(page.locator(`${items} > p:first-child a`).first()).toHaveAttribute(
+    "href",
+    `${traditionPath}/objeciones/ob-1`,
+  );
   const link = page.locator("#objections a", { hasText: "Ver las 7 objeciones" });
   await expect(link).toBeVisible();
   await link.click();

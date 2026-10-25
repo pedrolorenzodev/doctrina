@@ -30,6 +30,14 @@
   --text-display-mobile: 42px;
   --text-display-mobile--line-height: 1.03;
   --text-display-mobile--letter-spacing: -0.01em;
+  --text-objection: 52px;
+  --text-objection--line-height: 1.06;
+  --text-objection--letter-spacing: -0.01em;
+  --text-objection-mobile: 36px;
+  --text-objection-mobile--line-height: 1.1;
+  --text-objection-mobile--letter-spacing: -0.01em;
+  --text-box-quote: 19px;
+  --text-box-quote--line-height: 1.5;
   --text-lede: 24px;
   --text-lede--line-height: 1.38;
   --text-lede-mobile: 20px;

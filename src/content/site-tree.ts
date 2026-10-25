@@ -1,7 +1,14 @@
 import type { DoctrineId, TraditionId } from "@/content/model/ids";
 import { doctrineIds, traditionIds } from "@/content/model/ids";
 import { historyIndex } from "@/content/history-index";
-import { objectionsHref, objectionsRoute, traditionHref, traditionRoute } from "@/content/routes";
+import {
+  objectionHref,
+  objectionRoute,
+  objectionsHref,
+  objectionsRoute,
+  traditionHref,
+  traditionRoute,
+} from "@/content/routes";
 import { bookNames } from "@/content/verse-names";
 import type { Locale } from "@/lib/locale";
 
@@ -73,7 +80,11 @@ const traditionNames: Record<Locale, Record<TraditionId, string>> = {
   },
 };
 
-export type PublishedPage = { doctrine: DoctrineId; tradition: TraditionId; objectionShorts: string[] };
+export type PublishedPage = {
+  doctrine: DoctrineId;
+  tradition: TraditionId;
+  objections: { id: string; short: string }[];
+};
 
 export type TreeText = {
   groupDoctrines: string;
@@ -140,7 +151,11 @@ export function buildSiteTree(
             ...branch(
               `${id}/objections`,
               text.tree.objections,
-              (page?.objectionShorts ?? []).map((short, index) => leaf(`${id}/objections/${index}`, short)),
+              (page?.objections ?? []).map((objection) => ({
+                ...leaf(`${id}/objections/${objection.id}`, objection.short),
+                href: objectionHref(locale, doctrine, tradition, objection.id),
+                route: objectionRoute(locale, doctrine, tradition, objection.id),
+              })),
             ),
             href: page ? objectionsHref(locale, doctrine, tradition) : null,
             route: page ? objectionsRoute(locale, doctrine, tradition) : null,

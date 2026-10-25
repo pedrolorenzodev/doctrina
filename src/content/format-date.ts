@@ -6,6 +6,10 @@ const months: Record<Locale, string[]> = {
   en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 };
 
+export function formatYear(date: DateInfo): string {
+  return date.circa ? `c. ${date.year}` : String(date.year);
+}
+
 export function formatDate(date: DateInfo, locale: Locale): string {
   const month = date.month ? months[locale][date.month - 1] : undefined;
   let text: string;

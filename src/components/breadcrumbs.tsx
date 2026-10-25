@@ -9,7 +9,7 @@ type Crumb = {
 type BreadcrumbsProps = {
   label: string;
   trail: Crumb[];
-  current: string;
+  current?: string;
 };
 
 const separator = "/";
@@ -21,7 +21,7 @@ export function Breadcrumbs({ label, trail, current }: BreadcrumbsProps) {
       aria-label={label}
       className="title-part title-part-0 flex max-w-col flex-wrap items-center gap-y-1 text-ui-xs text-ink-3"
     >
-      {trail.map((crumb) => (
+      {trail.map((crumb, index) => (
         <Fragment key={crumb.label}>
           {crumb.href ? (
             <Link href={crumb.href} className="link-crumb hit-44">
@@ -32,14 +32,18 @@ export function Breadcrumbs({ label, trail, current }: BreadcrumbsProps) {
               {crumb.label}
             </button>
           )}
-          <span aria-hidden="true" className="mx-2 text-rule-2">
-            {separator}
-          </span>
+          {current !== undefined || index < trail.length - 1 ? (
+            <span aria-hidden="true" className="mx-2 text-rule-2">
+              {separator}
+            </span>
+          ) : null}
         </Fragment>
       ))}
-      <span aria-current="page" className="text-ink-2">
-        {current}
-      </span>
+      {current !== undefined ? (
+        <span aria-current="page" className="text-ink-2">
+          {current}
+        </span>
+      ) : null}
     </nav>
   );
 }

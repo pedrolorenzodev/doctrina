@@ -14,13 +14,13 @@ const pagesByLocale: Record<Locale, Record<string, TraditionPage>> = { es: spani
 export function getPublishedPages(locale: Locale): {
   doctrine: DoctrineId;
   tradition: TraditionId;
-  objectionShorts: string[];
+  objections: { id: string; short: string }[];
 }[] {
   return Object.values(pagesByLocale[locale]).map(({ doctrine, tradition, objections }) => ({
     doctrine,
     tradition,
-    objectionShorts: objections.items.flatMap((objection) =>
-      objection.layer === "official" && objection.short ? [objection.short] : [],
+    objections: objections.items.flatMap((objection) =>
+      objection.layer === "official" && objection.short ? [{ id: objection.id, short: objection.short }] : [],
     ),
   }));
 }

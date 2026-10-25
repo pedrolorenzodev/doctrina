@@ -18,7 +18,12 @@ export function ObjectionsSection({ page, locale }: ObjectionsSectionProps) {
   const official = officialObjections(page);
   return (
     <Section id="objections" title={text.doctrine.objections} subtitle={page.objections.subtitle}>
-      <ObjectionList objections={official.slice(0, shownObjections)} locale={locale} />
+      <ObjectionList
+        objections={official.slice(0, shownObjections)}
+        doctrine={page.doctrine}
+        tradition={page.tradition}
+        locale={locale}
+      />
       <div className="mt-5.5">
         <ActionLink href={objectionsHref(locale, page.doctrine, page.tradition)}>
           {text.doctrine.allObjections.replace("{n}", String(official.length))}

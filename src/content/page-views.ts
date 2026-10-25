@@ -1,7 +1,7 @@
 import { buildCitationView } from "@/content/citation-view";
 import { expandSegment, sortedVerseKeys } from "@/content/expand-verses";
 import { formatVerseRef } from "@/content/format-verse";
-import type { GradeLine, TraditionPage } from "@/content/model/page";
+import type { GradeLine, Objection, TraditionPage } from "@/content/model/page";
 import type { Registry } from "@/content/model/registry";
 import type { UiText } from "@/content/ui-text/types";
 import { parseInline, referencesIn } from "@/lib/inline-refs";
@@ -80,6 +80,51 @@ function buildGradeView(
   };
 }
 
+type ViewCollector = {
+  citations: Set<string>;
+  verses: Map<string, string[]>;
+  scan: (rich: string) => void;
+};
+
+function createCollector(): ViewCollector {
+  const citations = new Set<string>();
+  const verses = new Map<string, string[]>();
+  const scan = (rich: string) => {
+    const nodes = parseInline(rich);
+    referencesIn(nodes).citations.forEach((id) => citations.add(id));
+    for (const node of nodes) if (node.kind === "verse") verses.set(verseViewId(node.osis), node.osis);
+  };
+  return { citations, verses, scan };
+}
+
+function resolveViews(
+  views: Record<string, CitationView>,
+  { citations, verses }: ViewCollector,
+  registry: Registry,
+  locale: Locale,
+  text: UiText,
+): Record<string, CitationView> {
+  for (const id of citations) views[id] = buildCitationView(id, registry, locale, text);
+  for (const [id, segments] of verses) views[id] = buildVerseView(segments, registry, locale, text);
+  return views;
+}
+
+export function collectObjectionViews(
+  objection: Objection,
+  quoteIds: string[],
+  registry: Registry,
+  locale: Locale,
+  text: UiText,
+): Record<string, CitationView> {
+  const collector = createCollector();
+  collector.scan(objection.synthesis);
+  for (const block of objection.answer) {
+    collector.scan(block.type === "p" ? block.text : block.attribution);
+  }
+  quoteIds.forEach((id) => collector.citations.add(id));
+  return resolveViews({}, collector, registry, locale, text);
+}
+
 export function collectPageViews(
   page: TraditionPage,
   registry: Registry,
@@ -87,13 +132,8 @@ export function collectPageViews(
   text: UiText,
 ): Record<string, CitationView> {
   const views: Record<string, CitationView> = {};
-  const citations = new Set<string>();
-  const verses = new Map<string, string[]>();
-  const scan = (rich: string) => {
-    const refs = referencesIn(parseInline(rich));
-    refs.citations.forEach((id) => citations.add(id));
-    for (const node of parseInline(rich)) if (node.kind === "verse") verses.set(verseViewId(node.osis), node.osis);
-  };
+  const collector = createCollector();
+  const { citations, scan } = collector;
   const { definition, statements } = page.teach;
   scan(definition.text);
   definition.sources.forEach((source) => source.citations.forEach((id) => citations.add(id)));
@@ -118,7 +158,5 @@ export function collectPageViews(
   const { intro, fathers, closing } = page.why;
   [...intro, closing].forEach(scan);
   fathers.forEach((father) => father.citedIn.citations.forEach((id) => citations.add(id)));
-  for (const id of citations) views[id] = buildCitationView(id, registry, locale, text);
-  for (const [id, segments] of verses) views[id] = buildVerseView(segments, registry, locale, text);
-  return views;
+  return resolveViews(views, collector, registry, locale, text);
 }

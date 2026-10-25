@@ -44,11 +44,12 @@ test("the seven official objections, none of the debate layer, no counts, no att
   await expect(page.locator("main")).not.toContainText("pending");
 });
 
-test("titles are pressable and do nothing yet", async ({ page }) => {
+test("each title opens its objection page", async ({ page }) => {
   await page.goto(path);
-  const url = page.url();
-  await page.locator(`${items} > p:first-child button`).first().click();
-  expect(page.url()).toBe(url);
+  const hrefs = await page
+    .locator(`${items} > p:first-child a`)
+    .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+  expect(hrefs).toEqual([1, 2, 3, 4, 5, 6, 7].map((n) => `${path}/ob-${n}`));
 });
 
 test("the sidebar marks Objeciones under Católica as the current page", async ({ page }) => {
