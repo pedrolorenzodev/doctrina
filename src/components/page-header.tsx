@@ -2,7 +2,7 @@ type PageHeaderProps = {
   id?: string;
   className?: string;
   title: string;
-  lede: string;
+  lede?: string;
   emphasis?: string;
   long?: boolean;
 };
@@ -15,7 +15,7 @@ function ledeParts(lede: string, emphasis: string | undefined) {
 }
 
 export function PageHeader({ id, className = "", title, lede, emphasis, long = false }: PageHeaderProps) {
-  const { before, term, after } = ledeParts(lede, emphasis);
+  const { before, term, after } = ledeParts(lede ?? "", emphasis);
   return (
     <header id={id} className={`max-w-col ${className}`}>
       <h1
@@ -23,11 +23,13 @@ export function PageHeader({ id, className = "", title, lede, emphasis, long = f
       >
         {title}
       </h1>
-      <p className="title-part title-part-2 font-head text-lede-mobile sm:text-lede opsz-36 mt-3.5 font-light text-ink-2 italic">
-        {before}
-        {term ? <span className="font-normal text-cite">{term}</span> : null}
-        {after}
-      </p>
+      {lede ? (
+        <p className="title-part title-part-2 font-head text-lede-mobile sm:text-lede opsz-36 mt-3.5 font-light text-ink-2 italic">
+          {before}
+          {term ? <span className="font-normal text-cite">{term}</span> : null}
+          {after}
+        </p>
+      ) : null}
     </header>
   );
 }

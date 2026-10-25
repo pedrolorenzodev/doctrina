@@ -1,7 +1,9 @@
+import { fathers } from "@/content/history/fathers";
 import { spanishDoctrinePages, spanishPages } from "@/content/pages/index";
 import { registry } from "@/content/registry/index";
 import { validateContent } from "@/content/validate";
 import { validateDoctrinePages } from "@/content/validate-doctrine";
+import { validateFathers } from "@/content/validate-history";
 
 const errors = [
   ...validateContent(registry, spanishPages),
@@ -85,6 +87,11 @@ const doctrineMutations = [
     (r, p) => (p.witnesses.items[1].paragraph = "Otro texto."),
     "the quote is not inside its paragraph",
   ],
+  [
+    "a witness tied to an unknown history entity",
+    (r, p) => (p.witnesses.items[0].entity = "nobody"),
+    "unknown history entity nobody",
+  ],
   ["a practice cell missing", (r, p) => delete p.practice.aspects[0].cells.baptist, "no cell for baptist"],
   [
     "a practice cell for a tradition without answer",
@@ -112,10 +119,31 @@ for (const [label, mutate, expected] of doctrineMutations) {
     );
   }
 }
+const fatherMutations = [
+  ["a duplicate father id", (list) => (list[1].id = list[0].id), "duplicate id"],
+  ["an id that is not a slug", (list) => (list[0].id = "Not A Slug"), "the id is the URL slug"],
+  ["an empty summary", (list) => (list[0].summary.es = " "), "an empty text"],
+  ["born after died", (list) => (list[3].born = list[3].died + 1), "born must precede died"],
+  ["a father with no writings", (list) => (list[0].works = []), "no writings"],
+  ["a writing date with no year", (list) => (list[0].works[0].date = "sin fecha"), "has no year"],
+];
+for (const [label, mutate, expected] of fatherMutations) {
+  const list = structuredClone(fathers);
+  mutate(list);
+  const found = validateFathers(list);
+  if (!found.some((message) => message.includes(expected))) {
+    failures += 1;
+    console.error(`FAIL father validator missed: ${label} (expected «${expected}», got ${found[0] ?? "nothing"})`);
+  }
+}
+if (validateFathers(fathers).length > 0) {
+  failures += 1;
+  console.error(`FAIL the real fathers are invalid: ${validateFathers(fathers)[0]}`);
+}
 if (failures > 0) process.exit(1);
 
 const citations = Object.keys(registry.citations).length;
 const verses = Object.keys(registry.verses).length;
 console.log(
-  `Content: ${Object.keys(spanishPages).length} pages, ${Object.keys(spanishDoctrinePages).length} doctrine page, ${citations} citations, ${verses} verses valid; ${mutations.length + doctrineMutations.length} validator fixtures passed.`,
+  `Content: ${Object.keys(spanishPages).length} pages, ${Object.keys(spanishDoctrinePages).length} doctrine page, ${fathers.length} fathers, ${citations} citations, ${verses} verses valid; ${mutations.length + doctrineMutations.length + fatherMutations.length} validator fixtures passed.`,
 );

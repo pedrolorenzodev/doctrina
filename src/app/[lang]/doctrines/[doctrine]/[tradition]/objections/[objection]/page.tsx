@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CitationProvider } from "@/components/citation-window/citation-context";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { NeighborLinks } from "@/components/neighbor-links";
 import { PageMain } from "@/components/page-main";
 import { Section } from "@/components/section";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
@@ -21,7 +22,6 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { AnswerSection } from "@/features/doctrine/answer-section";
 import { ObjectionBox } from "@/features/doctrine/objection-box";
 import { ObjectionHeader } from "@/features/doctrine/objection-header";
-import { ObjectionNeighbors } from "@/features/doctrine/objection-neighbors";
 import { ObjectionVideosSection } from "@/features/doctrine/objection-videos-section";
 import { OtherObjectionsSection } from "@/features/doctrine/other-objections-section";
 import { PassagesSection } from "@/features/doctrine/passages-section";
@@ -134,7 +134,7 @@ export default async function ObjectionRoute({
         <PassagesSection id="passages" passages={passages} locale={locale} />
         <ObjectionVideosSection id="videos" page={page} objection={objection} locale={locale} />
         <OtherObjectionsSection id="others" page={page} current={objection} locale={locale} />
-        <ObjectionNeighbors
+        <NeighborLinks
           label={text.doctrine.objection.neighbors}
           previous={
             before

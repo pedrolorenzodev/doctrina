@@ -41,6 +41,10 @@ const doctrinesSegment: Record<Locale, string> = { es: "doctrinas", en: "doctrin
 
 const earlyChristiansSlugs: Record<Locale, string> = { es: "primeros-cristianos", en: "early-christians" };
 
+const historySegments: Record<Locale, string> = { es: "historia", en: "history" };
+
+const fathersSegments: Record<Locale, string> = { es: "padres", en: "fathers" };
+
 const objectionsSlugs: Record<Locale, string> = { es: "objeciones", en: "objections" };
 
 export function doctrineHref(locale: Locale, doctrine: DoctrineId): string {
@@ -57,6 +61,14 @@ export function earlyChristiansHref(locale: Locale, doctrine: DoctrineId): strin
 
 export function earlyChristiansRoute(locale: Locale, doctrine: DoctrineId): string {
   return `${doctrineRoute(locale, doctrine)}/early-christians`;
+}
+
+export function fatherHref(locale: Locale, id: string): string {
+  return `/${locale}/${historySegments[locale]}/${fathersSegments[locale]}/${id}`;
+}
+
+export function fatherRoute(locale: Locale, id: string): string {
+  return `/${locale}/history/fathers/${id}`;
 }
 
 export function traditionHref(locale: Locale, doctrine: DoctrineId, tradition: TraditionId): string {
@@ -88,6 +100,16 @@ export function objectionSlug(id: string): string {
 }
 
 export function spanishRewrites() {
+  return [
+    {
+      source: fatherHref("es", ":father"),
+      destination: fatherRoute("es", ":father"),
+    },
+    ...doctrineRewrites(),
+  ];
+}
+
+function doctrineRewrites() {
   return doctrineIds.flatMap((doctrine) => [
     { source: doctrineHref("es", doctrine), destination: doctrineRoute("es", doctrine) },
     { source: earlyChristiansHref("es", doctrine), destination: earlyChristiansRoute("es", doctrine) },

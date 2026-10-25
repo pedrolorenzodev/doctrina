@@ -70,7 +70,7 @@ test("the twelve witnesses in date order with their dates and headings", async (
 test("the Didaché entry, word for word", async ({ page }) => {
   await page.goto(path);
   const first = page.locator(entries).first();
-  await expect(first.locator("h2 button")).toHaveText("Didaché");
+  await expect(first.locator("h2 a")).toHaveText("Didaché");
   await expect(first.locator("h2 + p")).toHaveText(
     "Breve manual anónimo de enseñanza moral, bautismo, ayuno, oración y Eucaristía, probablemente compilado en Siria o Palestina.",
   );
@@ -90,7 +90,7 @@ test("the Didaché entry, word for word", async ({ page }) => {
 test("the Ignatius entry: the paragraph around his sentence", async ({ page }) => {
   await page.goto(path);
   const entry = page.locator(entries).nth(1);
-  await expect(entry.locator("h2 button")).toHaveText("Ignacio de Antioquía");
+  await expect(entry.locator("h2 a")).toHaveText("Ignacio de Antioquía");
   await expect(entry.locator("mark")).toHaveText(
     "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.",
   );
@@ -150,15 +150,14 @@ test("only the Didaché, Cirilo, Agustín and Crisóstomo carry a note under the
   expect(notes[8]).toBe("Libros I a III.");
 });
 
-test("every author name and every «Leer …» link is built and inert", async ({ page }) => {
+test("every author name is a link to his page and every «Leer …» link is built and inert", async ({ page }) => {
   await page.goto(path);
-  await expect(page.locator(`${entries} h2 button`)).toHaveCount(12);
+  await expect(page.locator(`${entries} h2 a`)).toHaveCount(12);
   const labels = await page.locator(`${entries} > div:last-child > p:last-child button`).allInnerTexts();
   expect(labels).toHaveLength(12);
   expect(labels[1]!.replace(/ /g, " ")).toBe("Leer Carta a los Esmirniotas 7.1 en la obra completa");
   expect(labels[0]!.replace(/ /g, " ")).toBe("Leer Didaché 14.1–3 en la obra completa");
   const url = page.url();
-  await page.locator(`${entries} h2 button`).nth(1).click();
   await page.locator(`${entries} > div:last-child > p:last-child button`).first().click();
   expect(page.url()).toBe(url);
 });
@@ -331,9 +330,9 @@ test("Tab reaches the toggle, then each author name and each reading link, with 
   await page.goto(path);
   await page.locator(toggle).focus();
   await page.keyboard.press("Tab");
-  await expect(page.locator(`${entries} h2 button`).first()).toBeFocused();
+  await expect(page.locator(`${entries} h2 a`).first()).toBeFocused();
   const outline = await page
-    .locator(`${entries} h2 button`)
+    .locator(`${entries} h2 a`)
     .first()
     .evaluate((node) => getComputedStyle(node).outlineStyle);
   expect(outline).toBe("solid");

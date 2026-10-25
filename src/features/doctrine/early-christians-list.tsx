@@ -4,6 +4,7 @@ import { PageLink } from "@/components/ui/page-link";
 import { formatDate } from "@/content/format-date";
 import type { Witness } from "@/content/model/doctrine-page";
 import { highlightParagraph } from "@/content/witness-paragraph";
+import { fatherHref } from "@/content/routes";
 import { witnessReference } from "@/content/witness-view";
 import type { Locale } from "@/lib/locale";
 import { nbspBeforeDigits } from "@/lib/locator";
@@ -38,9 +39,10 @@ export function EarlyChristiansList({ witnesses, locale, readLabel }: EarlyChris
               ) : null}
             </div>
             <div>
-              {/* TODO: the author's name leads to his 09 page once it exists; an anonymous work's name leads to its own */}
               <h2 className="m-0 font-ui text-source-name font-normal text-ink-3">
-                <PageLink>{heading.link}</PageLink>
+                <PageLink {...(witness.entity ? { href: fatherHref(locale, witness.entity) } : {})}>
+                  {heading.link}
+                </PageLink>
                 {nbspBeforeDigits(heading.tail)}
               </h2>
               {witness.authorLine ? <p className="mt-0.5 text-meta text-ink-3">{witness.authorLine}</p> : null}

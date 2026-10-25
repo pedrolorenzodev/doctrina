@@ -1,12 +1,21 @@
 import "server-only";
+import { buildFatherView } from "@/content/father-view";
 import { formatDate } from "@/content/format-date";
+import { getPublishedFathers } from "@/content/get-fathers";
 import { getDoctrinePage, getPublishedDoctrines } from "@/content/get-doctrine-page";
 import { getTraditionPage } from "@/content/get-tradition-page";
 import { traditionIds } from "@/content/model/ids";
 import { officialObjections } from "@/content/official-objections";
 import { objectionsPageText } from "@/content/objections-page-text";
 import { plainRich } from "@/content/page-views";
-import { earlyChristiansHref, objectionHref, objectionsHref, doctrineHref, traditionHref } from "@/content/routes";
+import {
+  earlyChristiansHref,
+  fatherHref,
+  objectionHref,
+  objectionsHref,
+  doctrineHref,
+  traditionHref,
+} from "@/content/routes";
 import { doctrineName, doctrineSubject, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessReference } from "@/content/witness-view";
@@ -94,5 +103,17 @@ export async function getSearchIndex(locale: Locale): Promise<SearchEntry[]> {
       });
     }
   }
-  return [...entries, ...witnessEntries];
+  const fatherEntries = getPublishedFathers(locale).map((father): SearchEntry => {
+    const view = buildFatherView(father, locale, text);
+    return {
+      id: `father:${father.id}`,
+      title: view.name,
+      path: [text.shell.tree.history, text.shell.tree.fathers].join(pathSeparator),
+      date: view.searchDate,
+      texts: [view.summary],
+      quote: false,
+      href: fatherHref(locale, father.id),
+    };
+  });
+  return [...entries, ...witnessEntries, ...fatherEntries];
 }

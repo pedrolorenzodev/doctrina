@@ -135,6 +135,12 @@
   --text-video--line-height: 1.45;
   --leading-label: 1.2;
   --text-defn-source: 14.5px;
+  --text-entity: 18px;
+  --text-entity--line-height: 1.4;
+  --text-fact-row: 16.5px;
+  --text-fact-row--line-height: 1.45;
+  --text-appear-note: 16px;
+  --text-appear-note--line-height: 1.5;
   --text-date-note: 12.5px;
   --text-date-note--line-height: 1.45;
   --text-search-title: 18px;
@@ -674,6 +680,74 @@
 @utility scroll-locked-root {
   overflow: hidden;
   padding-right: var(--scrollbar-width, 0px);
+}
+
+@utility profile-box {
+  container-type: inline-size;
+}
+
+@utility profile-grid {
+  @container (min-width: 900px) {
+    display: grid;
+    grid-template-columns: minmax(0, 640px) 260px;
+    gap: 0 56px;
+    align-items: start;
+  }
+}
+
+@utility profile-facts {
+  margin: 28px 0 0;
+  padding: 0;
+
+  @container (min-width: 900px) {
+    margin-top: 6px;
+  }
+}
+
+@utility profile-fact {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+
+  @container (min-width: 900px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}
+
+@utility appear-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 24px;
+  border-top: 1px solid var(--color-rule);
+
+  &:last-of-type {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  @media (min-width: 40rem) {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+}
+
+@utility writings-axis {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px 20px;
+  max-width: 320px;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: auto minmax(180px, 300px);
+    justify-content: start;
+    max-width: none;
+  }
+}
+
+@utility writing-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 104px;
+  gap: 6px 24px;
+  align-items: start;
 }
 
 @utility practice-wide {

@@ -4,6 +4,8 @@ import { historyIndex } from "@/content/history-index";
 import {
   doctrineHref,
   doctrineRoute,
+  fatherHref,
+  fatherRoute,
   objectionHref,
   objectionRoute,
   objectionsHref,
@@ -141,6 +143,7 @@ export function buildSiteTree(
   publishedDoctrines: DoctrineId[],
   text: TreeText,
   sourceTitles: string[],
+  publishedFathers: string[],
 ): TreeGroup[] {
   const doctrineNodes = doctrineIds.map((doctrine) => ({
     ...branch(doctrine, doctrineNames[locale][doctrine], [
@@ -203,7 +206,12 @@ export function buildSiteTree(
         branch(
           "history/fathers",
           text.tree.fathers,
-          fathers.map((father) => leaf(`history/fathers/${father.id}`, father[locale])),
+          fathers.map((father) => ({
+            ...leaf(`history/fathers/${father.id}`, father[locale]),
+            ...(publishedFathers.includes(father.id)
+              ? { href: fatherHref(locale, father.id), route: fatherRoute(locale, father.id) }
+              : {}),
+          })),
           counts.fathers,
         ),
         leaf("history/councils", text.tree.councils, counts.councils),

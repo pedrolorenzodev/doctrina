@@ -31,6 +31,7 @@ export type Witness = {
   quote: string;
   edition: string;
   note?: string;
+  entity?: string;
   anonymous?: true;
   authorLine?: string;
   paragraph?: string;

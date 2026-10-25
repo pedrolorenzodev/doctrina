@@ -6,7 +6,7 @@ import type { ObjectionPassages, PassageItem } from "@/content/get-objection-pas
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
-import { GroupHeading } from "@/features/doctrine/group-heading";
+import { GroupHeading } from "@/components/group-heading";
 import type { Locale } from "@/lib/locale";
 
 const shownObjectorPassages = 4;

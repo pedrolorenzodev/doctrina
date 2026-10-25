@@ -161,6 +161,7 @@ export const eucharistDoctrine = {
     items: [
       {
         id: "ew-sacrifice",
+        entity: "didache",
         author: "Anónimo",
         work: "Didaché",
         locator: "14.1–3",
@@ -178,6 +179,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-flesh",
+        entity: "ignatius-of-antioch",
         author: "Ignacio de Antioquía",
         work: "Carta a los Esmirniotas",
         locator: "7.1",
@@ -192,6 +194,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-not-common-bread",
+        entity: "justin-martyr",
         author: "Justino Mártir",
         work: "Primera Apología",
         locator: "66",
@@ -207,6 +210,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-malachi-offering",
+        entity: "justin-martyr",
         author: "Justino Mártir",
         work: "Diálogo con Trifón",
         locator: "41",
@@ -220,6 +224,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-two-realities",
+        entity: "irenaeus-of-lyon",
         author: "Ireneo de Lyon",
         work: "Contra las herejías",
         locator: "IV.18.5",
@@ -235,6 +240,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-figure",
+        entity: "tertullian",
         author: "Tertuliano",
         work: "Contra Marción",
         locator: "IV.40",
@@ -247,6 +253,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-epiclesis-change",
+        entity: "cyril-of-jerusalem",
         author: "Cirilo de Jerusalén (atribuido)",
         work: "Catequesis mistagógicas",
         locator: "5.7",
@@ -260,6 +267,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-word-changes-nature",
+        entity: "ambrose-of-milan",
         author: "Ambrosio de Milán",
         work: "Sobre los misterios",
         locator: "9.52",
@@ -272,6 +280,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-augustine-figure",
+        entity: "augustine-of-hippo",
         author: "Agustín de Hipona",
         work: "Sobre la doctrina cristiana",
         locator: "III.16.24",
@@ -285,6 +294,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-one-sacrifice-remembrance",
+        entity: "john-chrysostom",
         author: "Juan Crisóstomo",
         work: "Homilías sobre Hebreos",
         locator: "homilía 17.6",
@@ -298,6 +308,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-symbols-remain",
+        entity: "theodoret-of-cyrrhus",
         author: "Teodoreto de Ciro",
         work: "Eranistes (Diálogos)",
         locator: "diálogo II",
@@ -310,6 +321,7 @@ export const eucharistDoctrine = {
       },
       {
         id: "ew-not-a-figure",
+        entity: "john-of-damascus",
         author: "Juan Damasceno",
         work: "Exposición exacta de la fe ortodoxa",
         locator: "IV.13",

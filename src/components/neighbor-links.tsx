@@ -6,10 +6,11 @@ type Neighbor = {
   href: string;
 };
 
-type ObjectionNeighborsProps = {
+type NeighborLinksProps = {
   label: string;
-  previous: Neighbor;
+  previous: Neighbor | null;
   next: Neighbor | null;
+  className?: string;
 };
 
 const boxClassName =
@@ -24,12 +25,12 @@ function NeighborBox({ neighbor, className }: { neighbor: Neighbor; className: s
   );
 }
 
-export function ObjectionNeighbors({ label, previous, next }: ObjectionNeighborsProps) {
+export function NeighborLinks({ label, previous, next, className = "mt-18" }: NeighborLinksProps) {
   return (
-    <nav aria-label={label} className="mt-18 max-w-col">
+    <nav aria-label={label} className={`max-w-col ${className}`}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <NeighborBox neighbor={previous} className="" />
-        {next ? <NeighborBox neighbor={next} className="sm:text-right" /> : null}
+        {previous ? <NeighborBox neighbor={previous} className="" /> : null}
+        {next ? <NeighborBox neighbor={next} className={`sm:col-start-2 sm:text-right`} /> : null}
       </div>
     </nav>
   );

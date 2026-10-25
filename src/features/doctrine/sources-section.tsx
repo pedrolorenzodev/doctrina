@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { DatedSourceList } from "@/components/dated-source-list";
 import { Section } from "@/components/section";
-import { GroupHeading } from "@/features/doctrine/group-heading";
+import { GroupHeading } from "@/components/group-heading";
 import type { ObjectionSources } from "@/content/get-objection-sources";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@/lib/locale";

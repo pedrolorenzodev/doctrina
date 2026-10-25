@@ -109,13 +109,18 @@ test("Esc closes and returns focus to the trigger; the scrim closes, the box doe
   await expect(page.locator(trigger)).toBeFocused();
 });
 
-test("«carne»: the three witnesses that say it, marked, accents ignored", async ({ page }) => {
+test("«carne»: the three witnesses and the Father whose summary says it, marked, accents ignored", async ({ page }) => {
   await page.goto(traditionPath);
   await openSearch(page);
   await search(page, "carne");
   await expect
     .poll(() => titles(page))
-    .toEqual(["Carta a los Esmirniotas 7.1", "Primera Apología 66", "Sobre la doctrina cristiana III.16.24"]);
+    .toEqual([
+      "Carta a los Esmirniotas 7.1",
+      "Primera Apología 66",
+      "Sobre la doctrina cristiana III.16.24",
+      "Ignacio de Antioquía",
+    ]);
   await expect(page.locator(`${options} mark`).first()).toHaveText("carne");
   await search(page, "EUCARISTIA ignacio");
   await expect.poll(() => titles(page)).toEqual(["Carta a los Esmirniotas 7.1"]);
@@ -150,7 +155,7 @@ test("only what is shown can match: the date, the path and the text, nothing hid
   await search(page, "107");
   await expect.poll(() => titles(page)).toEqual(["Carta a los Esmirniotas 7.1"]);
   await search(page, "Padres Justino");
-  await expect.poll(() => titles(page)).toEqual(["Primera Apología 66", "Diálogo con Trifón 41"]);
+  await expect.poll(() => titles(page)).toEqual(["Justino Mártir", "Primera Apología 66", "Diálogo con Trifón 41"]);
   await search(page, "keywords");
   await expect(page.locator(options)).toHaveCount(0);
 });
@@ -212,14 +217,13 @@ test("↑ ↓ move the selection and stop at both ends; Enter opens the selected
   await search(page, "carne");
   const selected = () =>
     page.locator(options).evaluateAll((items) => items.map((item) => item.getAttribute("aria-selected")));
-  await expect.poll(selected).toEqual(["true", "false", "false"]);
+  await expect.poll(selected).toEqual(["true", "false", "false", "false"]);
   await page.keyboard.press("ArrowUp");
-  expect(await selected()).toEqual(["true", "false", "false"]);
-  await page.keyboard.press("ArrowDown");
-  await page.keyboard.press("ArrowDown");
-  await page.keyboard.press("ArrowDown");
-  expect(await selected()).toEqual(["false", "false", "true"]);
-  await expect(page.locator(input)).toHaveAttribute("aria-activedescendant", "search-result-2");
+  expect(await selected()).toEqual(["true", "false", "false", "false"]);
+  for (let step = 0; step < 5; step += 1) await page.keyboard.press("ArrowDown");
+  expect(await selected()).toEqual(["false", "false", "false", "true"]);
+  await expect(page.locator(input)).toHaveAttribute("aria-activedescendant", "search-result-3");
+  await page.keyboard.press("ArrowUp");
   await page.keyboard.press("ArrowUp");
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(`${earlyPath}#early-ew-not-common-bread`);
@@ -241,7 +245,7 @@ test("a witness result lands on its entry on the early Christians page, in view 
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await openSearch(page);
-  await search(page, "Tertuliano");
+  await search(page, "Marción");
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(`${earlyPath}#early-ew-figure`);
   const entry = page.locator("#early-ew-figure");
@@ -259,7 +263,7 @@ test("arriving from a page whose switcher changes the scroll offset still lands 
   for (const from of [traditionPath, "/es/doctrinas/eucaristia"]) {
     await page.goto(from);
     await openSearch(page);
-    await search(page, "Tertuliano");
+    await search(page, "Marción");
     await page.keyboard.press("Enter");
     await expect(page).toHaveURL(`${earlyPath}#early-ew-figure`);
     const top = await landingTop(page);
@@ -271,7 +275,7 @@ test("arriving from a page whose switcher changes the scroll offset still lands 
 
 test("recents: the last four results opened, newest first, saved in this browser", async ({ page }) => {
   await page.goto(earlyPath);
-  for (const query of ["Esmirniotas", "Apología", "Agustín", "Ireneo", "Tertuliano"]) {
+  for (const query of ["Esmirniotas", "Apología", "doctrina cristiana", "herejías", "Marción"]) {
     await openSearch(page);
     await search(page, query);
     await expect(page.locator(options)).not.toHaveCount(0);
@@ -469,7 +473,7 @@ test("typing a narrower query fades the leaving row as a ghost and leaves nothin
   await page.goto(traditionPath);
   await openSearch(page);
   await search(page, "carne");
-  await expect(page.locator(options)).toHaveCount(3);
+  await expect(page.locator(options)).toHaveCount(4);
   await page.waitForTimeout(700);
   const seen = page.evaluate(
     () =>
@@ -486,7 +490,7 @@ test("typing a narrower query fades the leaving row as a ghost and leaves nothin
       }),
   );
   await search(page, "carne salvador");
-  expect(await seen).toBe(1);
+  expect(await seen).toBe(2);
   await expect(page.locator(options)).toHaveCount(2);
   await page.waitForTimeout(900);
   const left = await page.evaluate(() => {
@@ -514,7 +518,10 @@ test("rows that come back rise in, after the first 120 ms", async ({ page }) => 
       return computed ? [Number(computed.delay), Number(computed.duration)] : null;
     });
   });
-  expect(timing.filter(Boolean)).toEqual([[120, 420]]);
+  expect(timing.filter(Boolean)).toEqual([
+    [120, 420],
+    [160, 420],
+  ]);
 });
 
 test("under reduced motion it opens at once and no row animates", async ({ browser }) => {
@@ -524,7 +531,7 @@ test("under reduced motion it opens at once and no row animates", async ({ brows
   await page.locator(trigger).click();
   await expect(page.locator(wrapper)).toHaveCSS("opacity", "1");
   await search(page, "carne");
-  await expect(page.locator(options)).toHaveCount(3);
+  await expect(page.locator(options)).toHaveCount(4);
   const animations = await page.evaluate(() => document.getAnimations().length);
   expect(animations).toBe(0);
   await page.keyboard.press("Escape");
@@ -569,7 +576,7 @@ for (const width of [360, 390, 768, 1024, 1440]) {
     await page.goto(traditionPath);
     await page.locator(trigger).click();
     await search(page, "carne");
-    await expect(page.locator(options)).toHaveCount(3);
+    await expect(page.locator(options)).toHaveCount(4);
     const box = await page.locator(dialog).boundingBox();
     expect(box!.x).toBeGreaterThanOrEqual(15.5);
     expect(box!.x + box!.width).toBeLessThanOrEqual(width - 15.5);
