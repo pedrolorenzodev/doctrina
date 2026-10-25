@@ -64,6 +64,19 @@ test("the recensions and the story of the text are listed under the dates", asyn
   await expect(page.locator("#dating li.recension-row").first()).toContainText("Recensión media");
 });
 
+test("each group title keeps its 40 px of space above, after the list that precedes it", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(ignatius);
+  const gap = await page
+    .locator("#dating h3")
+    .last()
+    .evaluate((title) => {
+      const previous = title.previousElementSibling!.getBoundingClientRect();
+      return Math.round(title.getBoundingClientRect().top - previous.bottom);
+    });
+  expect(gap).toBeGreaterThanOrEqual(40);
+});
+
 test("a Father with no researched dating has no such section", async ({ page }) => {
   await page.goto("/es/historia/padres/polycarp-of-smyrna");
   await expect(page.locator("#dating")).toHaveCount(0);

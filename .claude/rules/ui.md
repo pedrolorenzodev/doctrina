@@ -37,6 +37,7 @@ Check each item on the block's screenshots and in the browser; the independent c
 3. Decided patterns applied everywhere they belong: each agreed animation or hover (list cascade, link hover, the "Ola" ruler…) on every component of that kind, not only where it was first tried. Patterns: `docs/DESIGN.md`.
 4. Hover and focus on everything clickable, in its pattern's style: links, rows, buttons, sources.
 5. Smooth scroll on every in-page navigation (index links, the right-edge ruler, links to sections); none under `prefers-reduced-motion`.
+6. Heading spacing: a group heading that carries `first:` or `first-of-type:` margin must be a sibling of the others, never the first child of its own wrapper (Pedro, 2026-10-25: «Cómo se recuperó el texto» stuck to the list above, the second time after «En la objeción»); the spec measures the gap above each heading.
 
 ## Pixel-perfect verification (Pedro, 2026-10-22)
 

@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { RevealList } from "@/components/reveal-list";
 import { Section } from "@/components/section";
 import type { FatherDating } from "@/content/model/history";
@@ -10,7 +11,7 @@ type FatherDatingSectionProps = {
   text: UiText["dating"];
 };
 
-const stepTitle = "mt-10 mb-2.5 font-head text-title-sm font-normal opsz-30 first:mt-1.5";
+const stepTitle = "mt-10 mb-2.5 font-head text-title-sm font-normal opsz-30 first-of-type:mt-1.5";
 const prose = "m-0 font-body text-prose-mobile font-light text-ink-2 opsz-18 sm:text-prose";
 
 export function FatherDatingSection({ id, dating, text }: FatherDatingSectionProps) {
@@ -31,7 +32,7 @@ export function FatherDatingSection({ id, dating, text }: FatherDatingSectionPro
       />
       <div className="mt-5.5 max-w-col">
         {dating.groups.map((group) => (
-          <div key={group.title}>
+          <Fragment key={group.title}>
             <h3 className={stepTitle}>{group.title}</h3>
             {group.intro ? <p className={prose}>{group.intro}</p> : null}
             <RevealList as="ul" className="m-0 mt-2 list-none p-0">
@@ -51,7 +52,7 @@ export function FatherDatingSection({ id, dating, text }: FatherDatingSectionPro
                 </li>
               ))}
             </RevealList>
-          </div>
+          </Fragment>
         ))}
       </div>
     </Section>
