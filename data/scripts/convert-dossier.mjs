@@ -3,7 +3,7 @@ import vm from "node:vm";
 import { WORK_DEFS } from "./dossier-works.mjs";
 
 const ROOT = new URL("../../docs/research/doctrines", import.meta.url).pathname;
-const CONTENT = new URL("../../src/content", import.meta.url).pathname;
+const CONTENT = process.env.CONTENT_OUT ?? new URL("../../src/content", import.meta.url).pathname;
 const BIBLE = new URL("../../data/corpus/bibles/rv1909.json", import.meta.url).pathname;
 const DOCTRINES = process.argv.length > 2 ? process.argv.slice(2) : ["eucharist"];
 const SHORT = { eucharist: "e", justification: "j", baptism: "b", papacy: "p", "sola-scriptura": "s" };

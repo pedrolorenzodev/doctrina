@@ -24,6 +24,7 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 | Eucharist pilot: Fable expert + Sonnet verifier 20 min (0 → 14 %), then Fable critic alone 10 min (14 → 32 %, ~1.8 %/min) | ~32 points of session, ~6 weekly | 2026-10-17 |
 | Overnight Catholic wave: 3 Opus + 1 Fable at once; one doctrine through the full cycle | ~4 session points/min and ~0.7 weekly/min; ~55–70 session points per doctrine | 2026-10-18 |
 | Structure proposal: 4 Opus builders (3 at once) + 1 Fable critic + 2 Opus fixers, ~70 min; the Fable critic alone ~9 session and ~2 weekly per 5 min | ~36 points of session, ~6 weekly | 2026-10-20 |
+| Independent critique (Sonnet, 12 min) + pixel verifier (Sonnet, 34 min) of one page, in parallel: reports in `docs/features/` | ~1 weekly point for both (53 → 54 %, with the main session working) | 2026-10-24 |
 | Neutral universe: Opus writer for 325-and-earlier, 44 min | one of four area agents (B–D ran after a weekly reset) | 2026-10-17 |
 
 - At once: 2–3 Opus + at most 1 Fable; Sonnet as needed.
@@ -126,3 +127,18 @@ Pedro runs research in his Codex app (`/goal`), not in Claude subagents: web res
 - 2026-10-23 · A Codex session resumed for two days grew to a 127 MB history and sent ~450k input tokens per step; two night windows burned 87 % and 92 % in ~25 min each → a fresh session per work order (`codex-resume-run-2.sh` accepts `new` as session id plus `PROMPT_FILE`, and `SESSION_CAP`/`NIGHT_CAP`/`KILL_AT`) and context-economy rules in the prompt. First fresh window still went 0 → 79 % in 30 min (~200k tokens per step after 15 min), so context alone is not the cause; next test: reasoning effort "medium" (global `~/.codex/config.toml`).
 - 2026-10-23 · A Claude session left open overnight costs one cache rebuild (~120k tokens) on return, but the larger cost is length: per-request context grew from ~78k to ~197k over the session → hand off to a fresh session before a new block of work.
 - 2026-10-23 · Codex wrote downloads to `tmp/` in the repo root → prompts say scratch goes outside the repo.
+
+## Rules learned on 2026-10-24
+
+- **Do not build, verify or restart `next start` while a subagent is testing against the running site**: a build replaces `.next` and breaks its server. Edit `src` and run typecheck and lint only, or wait for its notification.
+- A verifier that runs long can be asked to wrap up with `SendMessage`; it writes its report with what it measured and lists what it did not reach.
+- Subagents need Pedro's go each time (he approved the critique and verifier of page 03 only); read-only on `src`, one report file each, scratch under the session scratchpad (which is lost when the session ends: anything reusable goes into `tools/` or `data/scripts/`).
+- Pedro's usage line, 2026-10-24: Claude weekly around 55 % unless he says otherwise (the account is shared); Codex may use up to 98 % of its 5-hour window only while he says so.
+
+## Codex runner (night6): restart with a different cap
+
+The runner is `~/.doctrina-youtube/codex-resume-run-3.sh`; its caps come from the environment of the process, so changing them means restarting it between two Codex runs (never while `codex exec` is running: `pgrep -f "codex exec"`). Stop the old one with `pkill -f "codex-resume-run-3.sh night6"`, then from `~/.doctrina-youtube`:
+
+`SESSION_CAP=99 NIGHT_CAP=99 KILL_AT=99 MSG_OVERRIDE="<owner override text>" nohup ./codex-resume-run-3.sh night6 01a16ba8-3d06-7bc2-a756-8396275757cb <the five done files> > /dev/null 2>&1 &`
+
+The done files (absolute paths under `docs/research/`) are `neutral/fathers-verification.md`, `sources/fathers-full-texts.md` and `doctrines/eucharist/{baptist,pentecostal,orthodox}.md`. The runner finishes when all five say `- Status: done`. Two processes in `ps` are normal (the script and its watchdog subshell). Defaults without the variables: session cap 80, night 85, kill at 92, weekly 98. The log is `~/codex-night6-run.log` and it prints `primary=` and `weekly=` each cycle. On 2026-10-24 it was started with 99 / 99 / 99 and the override «up to 98 %, no new step at 95 %, stop and write at 98 %»; the 5-hour window reset at 00:16 and the weekly one on Fri 2026-10-30 18:34.

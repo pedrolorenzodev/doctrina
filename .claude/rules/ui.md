@@ -45,4 +45,5 @@ Check each item on the block's screenshots and in the browser; the independent c
 - Static: screenshot the block's region in both, diff with pixelmatch; report the share of differing pixels and an overlay image. Anything above anti-aliasing noise is a defect to fix, not to explain away.
 - Motion: drive time explicitly (Playwright clock, or pause CSS/Web Animations and set `currentTime`) and compare frames at fixed points (0, 25, 50, 75, 100 % of each animation, plus interruption mid-way); durations and curves must match DESIGN.md.
 - Behaviour: every interaction of the block in the browser (keyboard, touch emulation, reduced motion, edge states from the checklist above); no console errors, no horizontal overflow.
+- Quick check by hand: `npm run compare -- <route> <reference page> "<name>|<reference selector>|<our selector>" ...` prints the computed-style differences at 1440 light and dark and at 390 (serve the clean site with `python3 -m http.server 8099` inside `docs/research/proposals/site-clean`, the build on 3100).
 - The verifier writes its result next to the block's feature doc; the block is done only when it passes, then Pedro approves.
