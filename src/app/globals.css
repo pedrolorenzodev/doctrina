@@ -41,6 +41,11 @@
   --text-source-name--line-height: 1.45;
   --text-reference: 15.5px;
   --text-reference--line-height: 1.5;
+  --text-axis: 11px;
+  --text-legend: 14px;
+  --text-legend--line-height: 1.65;
+  --text-question: 19px;
+  --text-question--line-height: 1.35;
   --text-box-quote: 19px;
   --text-box-quote--line-height: 1.5;
   --text-lede: 24px;
@@ -120,8 +125,10 @@
   --text-logo: 23px;
   --text-logo--letter-spacing: -0.005em;
 
+  --radius-1: 1px;
   --radius-2: 2px;
   --radius-3: 3px;
+  --radius-4: 4px;
   --radius-5: 5px;
   --radius-6: 6px;
   --radius-7: 7px;
@@ -408,6 +415,69 @@
   }
 }
 
+@utility fp-mark {
+  transform: scaleY(var(--k, 0.2222));
+  transform-origin: 50% 100%;
+  transition: transform 200ms var(--ease-standard);
+}
+
+@utility fp-draw {
+  animation: fp-draw 300ms var(--ease-standard) backwards;
+  animation-delay: var(--dl, 0ms);
+}
+
+@keyframes fp-draw {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(var(--k, 0.2222));
+  }
+}
+
+@utility fp-tip-in {
+  animation: fp-tip 200ms var(--ease-standard) both;
+}
+
+@keyframes fp-tip {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@utility max-w-tip {
+  max-width: min(320px, 90%);
+}
+
+@utility common-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+
+  & > ul {
+    max-width: 560px;
+    margin-top: 0;
+  }
+
+  @media (min-width: 68.75rem) {
+    grid-template-columns: minmax(0, 720px) minmax(0, 240px);
+    gap: 56px;
+
+    & > ul {
+      max-width: none;
+      margin-top: 6px;
+    }
+  }
+}
+
 @utility grid-shell {
   grid-template-columns: var(--spacing-sidebar) minmax(0, 1fr);
 }
@@ -654,6 +724,18 @@ html.theme-switching ::after {
 
 @utility title-part-2 {
   --part: 2;
+}
+
+@utility title-part-3 {
+  --part: 3;
+}
+
+@utility title-part-4 {
+  --part: 4;
+}
+
+@utility title-part-5 {
+  --part: 5;
 }
 
 @keyframes page-fade {

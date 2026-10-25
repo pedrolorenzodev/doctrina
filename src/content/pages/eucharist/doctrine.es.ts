@@ -5,6 +5,7 @@ export const eucharistDoctrine = {
   doctrine: "eucharist",
   status: "draft",
   lede: "¿Qué pasa con el pan y el vino en la Cena del Señor?",
+  legend: { witnessId: "ew-flesh", citationLabel: "Esmirniotas 7.1" },
   fingerprint: {
     marks: [
       { year: 50, yearEnd: 120, label: "La Didaché" },

@@ -111,6 +111,25 @@ export const es = {
       "no-own-grade": "Sin grado propio",
     },
   },
+  doctrinePage: {
+    common: "Lo que todas comparten",
+    discussed: "Lo que se discute",
+    fingerprint: {
+      label: "Textos y hechos que esta página cita, por fecha",
+      summary: "{label}: {count}, del año {from} al {to}",
+      caption: "Los textos y hechos que esta página cita, por fecha.",
+      circa: "c. {from}",
+      axis: ["1", "500", "1000", "1500", "2026"],
+    },
+    legend: {
+      label: "Cómo leer los enlaces",
+      intro: "Hay dos tipos de enlace. Los de trazo punteado, como",
+      middle: ", se abren aquí mismo, sin salir de la página. Los de trazo continuo, como",
+      outro: ", te llevan a otra página.",
+      page: "la postura {tradition}",
+      close: "Entendido",
+    },
+  },
   notFound: {
     title: "Esta página no existe",
     body: "El enlace puede estar mal escrito o la página ya no está.",

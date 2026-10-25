@@ -4,10 +4,11 @@ import { CitationProvider } from "@/components/citation-window/citation-context"
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
+import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPageViews } from "@/content/get-page-views";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
-import { doctrineName, doctrineTitle, traditionName } from "@/content/site-tree";
+import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { VideosSection } from "@/features/doctrine/videos-section";
 import { AuthoritySection } from "@/features/doctrine/authority-section";
@@ -55,7 +56,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
       <PageMain>
         <Breadcrumbs
           label={text.shell.breadcrumb}
-          trail={[{ label: text.shell.groupDoctrines }, { label: doctrineName(locale, doctrine) }]}
+          trail={[{ label: text.shell.groupDoctrines }, doctrineCrumb(locale, doctrine)]}
           current={traditionName(locale, tradition)}
         />
         <TraditionSwitcher

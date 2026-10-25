@@ -58,6 +58,7 @@ for (const [label, mutate, expected] of mutations) {
   }
 }
 const doctrineMutations = [
+  ["a legend witness that does not exist", (r, p) => (p.legend.witnessId = "nope"), "unknown witness nope"],
   ["marks out of date order", (r, p) => (p.fingerprint.marks[1].year = 1), "out of date order"],
   ["a mark ending before it starts", (r, p) => (p.fingerprint.marks[0].yearEnd = 10), "yearEnd must follow year"],
   ["duplicate tradition", (r, p) => (p.answers.items[1].tradition = "catholic"), "duplicate tradition"],

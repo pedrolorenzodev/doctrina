@@ -46,8 +46,10 @@ test("21 quick toggles leave the branch open and every state in agreement", asyn
 
 test("a parent without a page of its own toggles from its label", async ({ page }) => {
   await page.goto(traditionPath);
-  await page.locator(`${branch} > [data-row] [data-label-toggle]`).click();
-  await expect(page.locator(list)).toBeHidden();
+  const orthodox = 'li[data-id="eucharist/orthodox"]';
+  await expect(page.locator(`${orthodox} > ul`)).toBeHidden();
+  await page.locator(`${orthodox} > [data-row] [data-label-toggle]`).click();
+  await expect(page.locator(`${orthodox} > ul`)).toBeVisible();
 });
 
 test("«Contraer todo menos dónde estoy» keeps the ancestors of the current page", async ({ page }) => {
@@ -137,7 +139,7 @@ test("four groups with the counts of history and only the published pages, their
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
   expect(counts).toEqual(["56", "41", "18", "10", "20"]);
-  await expect(page.locator("aside nav a")).toHaveCount(18);
+  await expect(page.locator("aside nav a")).toHaveCount(19);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
 });
 

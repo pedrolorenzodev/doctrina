@@ -53,6 +53,7 @@ export type DoctrinePage<C extends string = string> = {
   doctrine: DoctrineId;
   status: "draft" | "verified";
   lede: string;
+  legend: { witnessId: string; citationLabel: string };
   fingerprint: { marks: FingerprintMark[] };
   common: { text: Rich; questions: string[] };
   answers: { subtitle: string; items: DoctrineAnswer<C>[] };

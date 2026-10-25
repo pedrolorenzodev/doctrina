@@ -28,8 +28,8 @@ test("crumbs: four steps, the last two lead to the Objeciones and tradition page
   page,
 }) => {
   await page.goto(first);
-  await expect(page.locator(`${crumbs} button`)).toHaveText(["Doctrinas", "La Eucaristía"]);
-  await expect(page.locator(`${crumbs} a`)).toHaveText(["Católica", "Objeciones"]);
+  await expect(page.locator(`${crumbs} button`)).toHaveText(["Doctrinas"]);
+  await expect(page.locator(`${crumbs} a`)).toHaveText(["La Eucaristía", "Católica", "Objeciones"]);
   await expect(page.locator(`${crumbs} [aria-current]`)).toHaveCount(0);
   await page.locator(`${crumbs} a`, { hasText: "Objeciones" }).click();
   await expect(page).toHaveURL(base);

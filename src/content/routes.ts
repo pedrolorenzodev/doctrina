@@ -41,6 +41,14 @@ const doctrinesSegment: Record<Locale, string> = { es: "doctrinas", en: "doctrin
 
 const objectionsSlugs: Record<Locale, string> = { es: "objeciones", en: "objections" };
 
+export function doctrineHref(locale: Locale, doctrine: DoctrineId): string {
+  return `/${locale}/${doctrinesSegment[locale]}/${doctrineSlugs[locale][doctrine]}`;
+}
+
+export function doctrineRoute(locale: Locale, doctrine: DoctrineId): string {
+  return `/${locale}/doctrines/${doctrine}`;
+}
+
 export function traditionHref(locale: Locale, doctrine: DoctrineId, tradition: TraditionId): string {
   return `/${locale}/${doctrinesSegment[locale]}/${doctrineSlugs[locale][doctrine]}/${traditionSlugs[locale][tradition]}`;
 }
@@ -70,8 +78,9 @@ export function objectionSlug(id: string): string {
 }
 
 export function spanishRewrites() {
-  return doctrineIds.flatMap((doctrine) =>
-    traditionIds.flatMap((tradition) => [
+  return doctrineIds.flatMap((doctrine) => [
+    { source: doctrineHref("es", doctrine), destination: doctrineRoute("es", doctrine) },
+    ...traditionIds.flatMap((tradition) => [
       {
         source: traditionHref("es", doctrine, tradition),
         destination: traditionRoute("es", doctrine, tradition),
@@ -85,5 +94,5 @@ export function spanishRewrites() {
         destination: `${objectionsRoute("es", doctrine, tradition)}/:objection`,
       },
     ]),
-  );
+  ]);
 }

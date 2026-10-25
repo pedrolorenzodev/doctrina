@@ -4,9 +4,9 @@ import { horizontalOverflow, landingTop, traditionPath } from "./helpers";
 const crumbs = 'main nav[aria-label="Ruta"]';
 const switcher = 'main nav[aria-label="Tradición"]';
 
-test("crumbs: Doctrinas / La Eucaristía / Católica, the last one current and not pressable", async ({ page }) => {
+test("crumbs: Doctrinas (inert) / La Eucaristía (a link) / Católica, the last one current", async ({ page }) => {
   await page.goto(traditionPath);
-  await expect(page.locator(`${crumbs} button`)).toHaveText(["Doctrinas", "La Eucaristía"]);
+  await expect(page.locator(`${crumbs} button`)).toHaveText(["Doctrinas"]);
   await expect(page.locator(`${crumbs} [aria-current=page]`)).toHaveText("Católica");
   const url = page.url();
   await page.locator(`${crumbs} button`).first().click();

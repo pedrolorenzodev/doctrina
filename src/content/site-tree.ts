@@ -2,6 +2,8 @@ import type { DoctrineId, TraditionId } from "@/content/model/ids";
 import { doctrineIds, traditionIds } from "@/content/model/ids";
 import { historyIndex } from "@/content/history-index";
 import {
+  doctrineHref,
+  doctrineRoute,
   objectionHref,
   objectionRoute,
   objectionsHref,
@@ -133,11 +135,12 @@ const firstNewTestamentBook = bookKeys.indexOf("Matt");
 export function buildSiteTree(
   locale: Locale,
   published: PublishedPage[],
+  publishedDoctrines: DoctrineId[],
   text: TreeText,
   sourceTitles: string[],
 ): TreeGroup[] {
-  const doctrineNodes = doctrineIds.map((doctrine) =>
-    branch(
+  const doctrineNodes = doctrineIds.map((doctrine) => ({
+    ...branch(
       doctrine,
       doctrineNames[locale][doctrine],
       traditionIds.map((tradition) => {
@@ -170,7 +173,9 @@ export function buildSiteTree(
         };
       }),
     ),
-  );
+    href: publishedDoctrines.includes(doctrine) ? doctrineHref(locale, doctrine) : null,
+    route: publishedDoctrines.includes(doctrine) ? doctrineRoute(locale, doctrine) : null,
+  }));
   const book = (key: string) => leaf(`book/${key}`, bookNames[key]?.[locale] ?? key);
   const { counts, fathers } = historyIndex;
   return [

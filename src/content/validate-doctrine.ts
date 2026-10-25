@@ -18,6 +18,9 @@ export function validateDoctrinePages(
       if (!(id in registry.citations)) fail(where, `unknown citation ${id}`);
     };
 
+    if (!page.witnesses.items.some((witness) => witness.id === page.legend.witnessId))
+      fail(`${name}.legend`, `unknown witness ${page.legend.witnessId}`);
+
     const { marks } = page.fingerprint;
     if (marks.length === 0) fail(`${name}.fingerprint`, "no marks");
     marks.forEach((mark, index) => {

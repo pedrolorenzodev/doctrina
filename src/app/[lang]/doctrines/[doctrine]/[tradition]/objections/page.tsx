@@ -4,13 +4,14 @@ import { CitationProvider } from "@/components/citation-window/citation-context"
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
+import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPageViews } from "@/content/get-page-views";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { officialObjections } from "@/content/official-objections";
 import { objectionsPageText } from "@/content/objections-page-text";
 import { traditionHref } from "@/content/routes";
-import { doctrineName, doctrineTitle, traditionName } from "@/content/site-tree";
+import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ObjectionList } from "@/features/doctrine/objection-list";
 import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
@@ -60,7 +61,7 @@ export default async function ObjectionsRoute({
           label={text.shell.breadcrumb}
           trail={[
             { label: text.shell.groupDoctrines },
-            { label: doctrineName(locale, doctrine) },
+            doctrineCrumb(locale, doctrine),
             { label: traditionName(locale, tradition), href: traditionHref(locale, doctrine, tradition) },
           ]}
           current={text.doctrine.objections}

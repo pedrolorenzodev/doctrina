@@ -113,6 +113,25 @@ export const en: UiText = {
       "no-own-grade": "No degree of its own",
     },
   },
+  doctrinePage: {
+    common: "What all of them share",
+    discussed: "What is disputed",
+    fingerprint: {
+      label: "Texts and facts this page cites, by date",
+      summary: "{label}: {count}, from the year {from} to {to}",
+      caption: "The texts and facts this page cites, by date.",
+      circa: "c. {from}",
+      axis: ["1", "500", "1000", "1500", "2026"],
+    },
+    legend: {
+      label: "How to read the links",
+      intro: "There are two kinds of link. Dotted ones, like",
+      middle: ", open right here, without leaving the page. Solid ones, like",
+      outro: ", take you to another page.",
+      page: "the {tradition} position",
+      close: "Got it",
+    },
+  },
   notFound: {
     title: "This page doesn't exist",
     body: "The link may be mistyped, or the page may no longer be here.",
