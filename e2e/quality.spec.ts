@@ -99,7 +99,7 @@ for (const scheme of ["light", "dark"] as const) {
   });
 }
 
-test("structure: one h1, seven h2 in the agreed order, the title names the page", async ({ page }) => {
+test("structure: one h1, seven h2 in the agreed order, the tab title is «doctrine · tradition»", async ({ page }) => {
   await page.goto(traditionPath);
   await expect(page.locator("h1")).toHaveCount(1);
   await expect(page.locator("main h2")).toHaveText([
@@ -111,7 +111,7 @@ test("structure: one h1, seven h2 in the agreed order, the title names the page"
     "Grado de autoridad",
     "Videos",
   ]);
-  await expect(page).toHaveTitle("La posición católica · Doctrina");
+  await expect(page).toHaveTitle("Eucaristía · Católica");
   expect(await page.evaluate(() => document.documentElement.lang)).toBe("es");
   expect(await page.evaluate(() => document.querySelectorAll("img:not([alt])").length)).toBe(0);
 });

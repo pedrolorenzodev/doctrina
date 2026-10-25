@@ -7,7 +7,7 @@ import { PageMain } from "@/components/page-main";
 import { getPageViews } from "@/content/get-page-views";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
-import { doctrineName, traditionName } from "@/content/site-tree";
+import { doctrineName, doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { VideosSection } from "@/features/doctrine/videos-section";
 import { AuthoritySection } from "@/features/doctrine/authority-section";
@@ -40,7 +40,7 @@ export async function generateMetadata({
   const { site } = getUiText(locale);
   if (!isDoctrine(doctrine) || !isTradition(tradition)) return { title: site.title };
   const page = await getTraditionPage(doctrine, tradition, locale);
-  return { title: page ? `${page.title} · ${site.title}` : site.title };
+  return { title: page ? `${doctrineTitle(locale, doctrine)} · ${traditionName(locale, tradition)}` : site.title };
 }
 
 export default async function TraditionRoute({ params }: PageProps<"/[lang]/doctrines/[doctrine]/[tradition]">) {

@@ -37,6 +37,23 @@ const doctrineNames: Record<Locale, Record<DoctrineId, string>> = {
   },
 };
 
+const doctrineTitles: Record<Locale, Record<DoctrineId, string>> = {
+  es: {
+    eucharist: "Eucaristía",
+    justification: "Justificación",
+    baptism: "Bautismo",
+    papacy: "Papado",
+    "sola-scriptura": "Sola Scriptura",
+  },
+  en: {
+    eucharist: "Eucharist",
+    justification: "Justification",
+    baptism: "Baptism",
+    papacy: "Papacy",
+    "sola-scriptura": "Sola Scriptura",
+  },
+};
+
 const traditionNames: Record<Locale, Record<TraditionId, string>> = {
   es: {
     catholic: "Católica",
@@ -186,4 +203,8 @@ export function doctrineName(locale: Locale, doctrine: DoctrineId): string {
 
 export function traditionName(locale: Locale, tradition: TraditionId): string {
   return traditionNames[locale][tradition];
+}
+
+export function doctrineTitle(locale: Locale, doctrine: DoctrineId): string {
+  return doctrineTitles[locale][doctrine];
 }
