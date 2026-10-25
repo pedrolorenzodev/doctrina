@@ -338,3 +338,13 @@ test("no console errors on a Father's page, in a client navigation and back", as
   await expect(page).toHaveURL(ignatius);
   expect(errors).toEqual([]);
 });
+
+test("a malformed hash does not break the page", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto(`${ignatius}#%E0%A4%A`);
+  await expect(page.locator("main h1")).toHaveText("Ignacio de Antioquía");
+  await page.goto(`${ignatius}#no-such-section`);
+  await expect(page.locator("main h1")).toHaveText("Ignacio de Antioquía");
+  expect(errors).toEqual([]);
+});

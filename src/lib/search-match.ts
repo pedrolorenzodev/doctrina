@@ -56,7 +56,7 @@ export function markSegments(text: string, words: string[]): Segment[] {
     }
   }
   const segments: Segment[] = [];
-  [...text].forEach((char, index) => {
+  text.split("").forEach((char, index) => {
     const marked = flags[index] ?? false;
     const last = segments[segments.length - 1];
     if (last && last.marked === marked) last.text += char;

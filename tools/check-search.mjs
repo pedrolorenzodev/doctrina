@@ -110,6 +110,11 @@ check(
   8,
 );
 
+check(
+  "marking stays aligned after a character outside the basic plane",
+  markedText(markSegments("𝔄 carne 𝔅", ["carne"])),
+  ["carne"],
+);
 const esmirniotas = searchEntries(entries, "esmirniotas 107")[0];
 check(
   "title, path and date are marked where they match",
@@ -119,4 +124,4 @@ check(
 check("a result with no date has no date segments", searchEntries(entries, "pan")[0].date, null);
 
 if (failures > 0) process.exit(1);
-console.log("Search: 21 cases passed.");
+console.log("Search: 22 cases passed.");

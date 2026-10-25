@@ -2,6 +2,10 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-25 · Two robustness fixes found in a self-review (agent's calls)
+**Fixed:** (1) `HashArrival` decoded the URL hash with `decodeURIComponent`, which throws on a malformed one (`#%E0%A4%A`) and would have broken the page in an effect; it ignores it now (spec: a malformed and an unknown hash leave the page whole). (2) The search's mark segments walked the text by code points while the match offsets are UTF-16 units, so a character outside the basic plane before a match moved the mark; they walk by units now (`check-search.mjs`: 22 cases).
+**Why:** both would only show with unusual input (a hand-typed hash, an astral character), so no spec of the blocks caught them; found by re-reading the day's code.
+
 ## 2026-10-25 · «Por qué» note: the section link leads to 02's early Christians section (agent's call, to confirm)
 **Built:** the closing note of 03's «Por qué» («Los mismos textos los leen de otro modo otras tradiciones: lo verás en Lo que escribieron los primeros cristianos, que es una sección neutral») is a link now where the doctrine has a 02 page: it leads to `/es/doctrinas/eucaristia#witnesses`, as ROADMAP's screen-03 note says («linking to that 02 section, so Fathers aren't assigned to the tradition»). On Baptism (no 02 page) it stays built and inert. `RichText` takes an optional `section` resolver; `{s:early-witnesses|…}` is the only section id.
 **Judgment call:** it goes to the section in 02, not to page 10, though both bear that title: the note says «sección», and 02 is the neutral summary. If Pedro prefers the full list, the target is one line in `why-section.tsx`.
