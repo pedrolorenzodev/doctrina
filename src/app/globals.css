@@ -77,6 +77,8 @@
   --text-passage-body--line-height: 1.6;
   --text-synthesis: 16.5px;
   --text-synthesis--line-height: 1.55;
+  --text-life-label: 14px;
+  --text-life-label--line-height: 1.45;
   --text-note: 14.5px;
   --text-note--line-height: 1.6;
   --text-label: 12.5px;
@@ -455,6 +457,22 @@
 @utility quiet-links {
   & .link-page {
     color: var(--color-ink-2);
+  }
+}
+
+@utility label-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px 24px;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: 168px minmax(0, 1fr);
+  }
+}
+
+@utility paragraph-gap {
+  & + & {
+    margin-top: 0.55em;
   }
 }
 

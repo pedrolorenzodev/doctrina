@@ -37,6 +37,8 @@ export const en: UiText = {
     allPassages: "See all {n} passages",
     objections: "Objections",
     allObjections: "See all {n} objections",
+    life: "How it is lived",
+    showMore: "Show {n} more",
     scripture: "The Scripture it uses",
     citedIn: "Cited in {source}",
     showMoreStatements: "Show {n} more statements",

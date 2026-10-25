@@ -2,7 +2,7 @@ import { Fragment, type ReactNode } from "react";
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { PageLink } from "@/components/ui/page-link";
 import { parseInline, type InlineNode } from "@/lib/inline-refs";
-import { closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
+import { bracketGlue, closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
 
 type RichTextProps = {
   text: string;
@@ -84,7 +84,7 @@ export function RichText({ text, verse }: RichTextProps) {
               return (
                 <Fragment key={position}>
                   {position > 0 ? " " : null}
-                  <span className="whitespace-nowrap">
+                  <span className={bracketGlue(member.kind === "citation" ? member.label : verse(member.osis).label)}>
                     {position === 0 ? openParenthesis : null}
                     {reference(member, String(position))}
                     {last ? `${closeParenthesis}${trailing}` : referenceSeparator}

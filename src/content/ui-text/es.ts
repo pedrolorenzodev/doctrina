@@ -35,6 +35,8 @@ export const es = {
     allPassages: "Ver los {n} pasajes",
     objections: "Objeciones",
     allObjections: "Ver las {n} objeciones",
+    life: "Cómo se vive",
+    showMore: "Mostrar {n} más",
     scripture: "La Escritura que usa",
     citedIn: "Citado en {source}",
     showMoreStatements: "Mostrar {n} afirmaciones más",

@@ -6,22 +6,30 @@ import { MoreButton } from "@/components/ui/more-button";
 import { flipList, revealList } from "@/lib/list-motion";
 import { scrollOffset, scrollToElement } from "@/lib/scroll";
 
-type StatementItem = {
+type ExpandableItem = {
   id: string;
-  body: ReactNode;
-  line: ReactNode;
+  content: ReactNode;
 };
 
-type StatementListProps = {
-  items: StatementItem[];
+type ExpandableListProps = {
+  as?: "ol" | "ul";
+  itemClassName: string;
+  items: ExpandableItem[];
   shown: number;
   moreLabel: string;
   lessLabel: string;
 };
 
-export function StatementList({ items, shown, moreLabel, lessLabel }: StatementListProps) {
+export function ExpandableList({
+  as: Tag = "ol",
+  itemClassName,
+  items,
+  shown,
+  moreLabel,
+  lessLabel,
+}: ExpandableListProps) {
   const [expanded, setExpanded] = useState(false);
-  const list = useRef<HTMLOListElement>(null);
+  const list = useRef<HTMLOListElement & HTMLUListElement>(null);
   const ghosts = useRef<HTMLDivElement>(null);
 
   useEffect(() => (list.current ? revealList(list.current) : undefined), []);
@@ -39,20 +47,19 @@ export function StatementList({ items, shown, moreLabel, lessLabel }: StatementL
   return (
     <>
       <div className="relative">
-        <ol ref={list} className="list-none border-b border-rule">
+        <Tag ref={list} className="list-none border-b border-rule">
           {items.map((item, index) => (
             <li
               key={item.id}
               id={item.id}
               data-id={item.id}
               hidden={index >= shown && !expanded}
-              className="border-t border-rule pt-5.5 pb-6"
+              className={itemClassName}
             >
-              <p className="font-body text-prose-mobile font-light text-ink-2 opsz-18 sm:text-prose">{item.body}</p>
-              <p className="mt-3 text-line text-ink-3">{item.line}</p>
+              {item.content}
             </li>
           ))}
-        </ol>
+        </Tag>
         <div ref={ghosts} aria-hidden="true" className="pointer-events-none absolute inset-0 flip-ghosts" />
       </div>
       {items.length > shown ? (

@@ -107,6 +107,11 @@ export function collectPageViews(
   }
   page.scripture.forEach((passage) => scan(passage.text));
   page.objections.items.forEach((objection) => scan(objection.synthesis));
+  page.life.intro.forEach(scan);
+  for (const item of page.life.items) {
+    scan(item.text);
+    item.sources.forEach((source) => source.citations.forEach((id) => citations.add(id)));
+  }
   const { intro, fathers, closing } = page.why;
   [...intro, closing].forEach(scan);
   fathers.forEach((father) => father.citedIn.citations.forEach((id) => citations.add(id)));

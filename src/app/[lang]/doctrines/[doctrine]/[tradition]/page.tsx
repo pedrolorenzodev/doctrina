@@ -6,6 +6,7 @@ import { getPageViews } from "@/content/get-page-views";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { getUiText } from "@/content/ui-text/get-ui-text";
+import { LifeSection } from "@/features/doctrine/life-section";
 import { ObjectionsSection } from "@/features/doctrine/objections-section";
 import { ScriptureSection } from "@/features/doctrine/scripture-section";
 import { TeachSection } from "@/features/doctrine/teach-section";
@@ -40,6 +41,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
         <WhySection page={page} locale={locale} />
         <ScriptureSection page={page} locale={locale} />
         <ObjectionsSection page={page} locale={locale} />
+        <LifeSection page={page} locale={locale} />
         <EdgeRuler
           label={text.shell.sections}
           sections={[
@@ -48,6 +50,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
             { id: "why", label: text.doctrine.why },
             { id: "scripture", label: text.doctrine.scripture },
             { id: "objections", label: text.doctrine.objections },
+            { id: "life", label: text.doctrine.life },
           ]}
         />
       </PageMain>
