@@ -29,7 +29,7 @@ export function EarlyChristiansList({ witnesses, locale, readLabel }: EarlyChris
           <li
             key={witness.id}
             id={`early-${witness.id}`}
-            className="entry-row scroll-mt-offset border-t border-rule pt-6.5 pb-7.5 sm:pt-8.5 sm:pb-9.5"
+            className="entry-row border-t border-rule pt-6.5 pb-7.5 sm:pt-8.5 sm:pb-9.5"
           >
             <div className="pt-0.75 text-ui-base leading-normal font-medium text-ink tabular-nums">
               {formatDate(witness.date, locale)}

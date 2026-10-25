@@ -137,6 +137,12 @@
   --text-defn-source: 14.5px;
   --text-date-note: 12.5px;
   --text-date-note--line-height: 1.45;
+  --text-search-title: 18px;
+  --text-search-title--line-height: 1.5;
+  --text-search-quote: 15.5px;
+  --text-search-quote--line-height: 1.4;
+  --text-search-line: 13.5px;
+  --text-search-line--line-height: 1.45;
   --text-note: 14.5px;
   --text-note--line-height: 1.6;
   --text-label: 12.5px;
@@ -175,6 +181,7 @@
   --shadow-current: inset 2px 0 0 var(--color-accent);
   --shadow-current-underline: inset 0 -2px 0 var(--color-accent);
   --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45);
+  --shadow-search: 0 18px 40px -18px rgb(0 0 0 / 0.5);
 }
 
 @theme inline {
@@ -412,6 +419,29 @@
   }
 }
 
+@utility overlay-motion {
+  transition:
+    opacity 200ms var(--ease-standard),
+    visibility 0s linear 200ms;
+
+  &[data-open] {
+    transition-delay: 0s;
+  }
+}
+
+@utility search-layout {
+  padding: 12vh 16px 16px;
+}
+
+@utility search-max-height {
+  max-height: 70vh;
+  max-height: 70dvh;
+}
+
+@utility search-width {
+  width: min(380px, 40vw);
+}
+
 @utility edge-right {
   right: max(18px, env(safe-area-inset-right, 0px));
 }
@@ -639,6 +669,11 @@
   @media (min-width: 40rem) {
     grid-template-columns: 150px minmax(0, 1fr);
   }
+}
+
+@utility scroll-locked-root {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px);
 }
 
 @utility practice-wide {
@@ -875,7 +910,7 @@
   outline-color: var(--color-accent);
 }
 
-:is(a, button, [tabindex], input, summary):not(#content):focus-visible {
+:is(a, button, [tabindex], input, summary):not(#content, [data-bare-focus]):focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: var(--radius-3);

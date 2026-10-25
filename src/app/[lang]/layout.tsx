@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Document } from "@/components/document";
+import { getSearchIndex } from "@/content/get-search-index";
 import { getSiteTree } from "@/content/get-site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { DrawerProvider } from "@/features/shell/drawer";
+import { HashArrival } from "@/features/shell/hash-arrival";
+import { SearchDialog } from "@/features/shell/search-dialog";
+import { SearchProvider } from "@/features/shell/search-provider";
 import { Sidebar } from "@/features/shell/sidebar";
 import { TitleEntrance } from "@/features/shell/title-entrance";
 import { SmoothScroll } from "@/features/shell/smooth-scroll";
@@ -24,7 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const locale = await currentLocale();
-  const { shell } = getUiText(locale);
+  const { shell, search } = getUiText(locale);
+  const searchIndex = await getSearchIndex(locale);
   const groups = getSiteTree(locale);
   const hasTree = groups.length > 0;
   const text = {
@@ -36,23 +41,27 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   return (
     <Document lang={locale}>
       <SmoothScroll />
+      <HashArrival />
       <TitleEntrance />
       <DrawerProvider>
-        <a
-          href="#content"
-          className="fixed top-2 left-2 z-100 -translate-y-20 rounded-6 border border-rule-2 bg-bg flex min-h-11 items-center px-3.5 text-ui-sm font-medium text-ink no-underline transition-transform duration-150 ease-standard focus:translate-y-0"
-        >
-          {shell.skipToContent}
-        </a>
-        <TopBar withMenu={hasTree} />
-        {hasTree ? (
-          <div className="lg:grid lg:grid-shell">
-            <Sidebar groups={groups} text={text} />
-            {children}
-          </div>
-        ) : (
-          children
-        )}
+        <SearchProvider>
+          <a
+            href="#content"
+            className="fixed top-2 left-2 z-100 -translate-y-20 rounded-6 border border-rule-2 bg-bg flex min-h-11 items-center px-3.5 text-ui-sm font-medium text-ink no-underline transition-transform duration-150 ease-standard focus:translate-y-0"
+          >
+            {shell.skipToContent}
+          </a>
+          <TopBar withMenu={hasTree} />
+          {hasTree ? (
+            <div className="lg:grid lg:grid-shell">
+              <Sidebar groups={groups} text={text} />
+              {children}
+            </div>
+          ) : (
+            children
+          )}
+          <SearchDialog entries={searchIndex} text={search} />
+        </SearchProvider>
       </DrawerProvider>
     </Document>
   );

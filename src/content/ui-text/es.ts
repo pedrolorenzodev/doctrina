@@ -153,6 +153,18 @@ export const es = {
       close: "Entendido",
     },
   },
+  search: {
+    label: "Buscar",
+    placeholder: "Buscar doctrinas, versículos, Padres, palabras",
+    recents: "Recientes",
+    empty: "Escribe para buscar doctrinas, objeciones y textos de los Padres.",
+    none: "Nada coincide con «{query}». Prueba con una palabra más corta.",
+    countOne: "1 resultado",
+    countMany: "{n} resultados",
+    escape: "Esc",
+    objection: "Objeción",
+    hints: { move: "↑ ↓ para moverse", open: "Enter abre", close: "Esc cierra" },
+  },
   earlyChristians: {
     title: "Lo que escribieron los primeros cristianos sobre {subject}",
     lede: "Los textos cristianos hasta c. 800 que tratan de {subject}, en orden cronológico. Cada uno lleva a la obra completa.",

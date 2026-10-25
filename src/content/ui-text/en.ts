@@ -155,6 +155,18 @@ export const en: UiText = {
       close: "Got it",
     },
   },
+  search: {
+    label: "Search",
+    placeholder: "Search doctrines, verses, Fathers, words",
+    recents: "Recent",
+    empty: "Type to search doctrines, objections and the Fathers' texts.",
+    none: "Nothing matches «{query}». Try a shorter word.",
+    countOne: "1 result",
+    countMany: "{n} results",
+    escape: "Esc",
+    objection: "Objection",
+    hints: { move: "↑ ↓ to move", open: "Enter opens", close: "Esc closes" },
+  },
   earlyChristians: {
     title: "What the first Christians wrote about {subject}",
     lede: "The Christian texts up to c. 800 that deal with {subject}, in chronological order. Each one leads to the complete work.",

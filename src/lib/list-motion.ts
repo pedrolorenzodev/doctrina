@@ -108,6 +108,14 @@ function riseIn(item: HTMLElement, delay: number) {
   );
 }
 
+export function enterList(list: HTMLElement, delayMs = flip.delayMs) {
+  for (const item of itemsOf(list)) delete item.dataset.rv;
+  if (prefersReducedMotion()) return;
+  itemsOf(list)
+    .filter(isShown)
+    .forEach((item, index) => riseIn(item, delayMs + Math.min(index, flip.maxSteps) * flip.staggerMs));
+}
+
 export function flipList(list: HTMLElement, ghosts: HTMLElement, mutate: () => void) {
   if (prefersReducedMotion()) {
     mutate();
