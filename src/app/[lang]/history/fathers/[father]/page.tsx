@@ -5,6 +5,7 @@ import { NeighborLinks } from "@/components/neighbor-links";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { PageLink } from "@/components/ui/page-link";
+import { buildFatherTimeline } from "@/content/father-timeline";
 import { buildFatherView } from "@/content/father-view";
 import { getFatherAppearances } from "@/content/get-father-appearances";
 import { getFather, getFatherNeighbors, getPublishedFathers } from "@/content/get-fathers";
@@ -13,6 +14,7 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { FatherAppearsSection } from "@/features/history/father-appears-section";
 import { FatherFacts } from "@/features/history/father-facts";
+import { FatherTimelineSection } from "@/features/history/father-timeline-section";
 import { FatherProfileSection } from "@/features/history/father-profile-section";
 import { FatherWritingsSection } from "@/features/history/father-writings-section";
 import { currentLocale } from "@/lib/current-locale";
@@ -37,6 +39,7 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
   const text = getUiText(locale);
   const labels = text.father;
   const view = buildFatherView(father, locale, text);
+  const timeline = buildFatherTimeline(father, getPublishedFathers(locale), locale, text);
   const appearances = await getFatherAppearances(father.id, locale);
   const { previous, next } = getFatherNeighbors(father.id, locale);
   const neighbor = (label: string, other: typeof previous) =>
@@ -58,6 +61,7 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
       <p className="title-part title-part-3 mt-6 mb-0 text-ui-sm">
         <PageLink>{labels.timelineLink}</PageLink>
       </p>
+      <FatherTimelineSection id="time" view={timeline} text={text.timeline} />
       <FatherProfileSection id="who" title={whoLabel} summary={view.summary} facts={view.profileFacts} />
       <FatherWritingsSection
         id="works"
@@ -83,6 +87,7 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
         label={text.shell.sections}
         sections={[
           { id: "top", label: view.name },
+          { id: "time", label: text.timeline.title },
           { id: "who", label: whoLabel },
           ...(view.writings.length > 0 ? [{ id: "works", label: labels.works }] : []),
           ...(appearances.length > 0 ? [{ id: "appears", label: labels.appears }] : []),

@@ -15,3 +15,43 @@ export type Father = {
   works: FatherWork[];
   summary: Localized;
 };
+
+export type HistoryEventKind =
+  | "persecution"
+  | "canon"
+  | "dogma"
+  | "theology"
+  | "ecumenism"
+  | "institution"
+  | "political"
+  | "biblical"
+  | "discovery"
+  | "mission"
+  | "monastic"
+  | "bible-text";
+
+export type HistoryEvent = {
+  id: string;
+  kind: HistoryEventKind;
+  year: number;
+  endYear: number | null;
+  approx: boolean;
+  label: Localized;
+};
+
+export type Council = {
+  id: string;
+  name: Localized;
+  year: number;
+  endYear: number | null;
+  approx: boolean;
+};
+
+export type Heresy = {
+  id: string;
+  name: Localized;
+  startYear: number;
+  endYear: number;
+  teaching: Localized;
+  fathers: string[];
+};
