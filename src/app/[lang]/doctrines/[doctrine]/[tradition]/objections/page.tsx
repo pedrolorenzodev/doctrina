@@ -8,8 +8,9 @@ import { getPageViews } from "@/content/get-page-views";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { officialObjections } from "@/content/official-objections";
+import { objectionsPageText } from "@/content/objections-page-text";
 import { traditionHref } from "@/content/routes";
-import { doctrineName, doctrineSubject, doctrineTitle, traditionName } from "@/content/site-tree";
+import { doctrineName, doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ObjectionList } from "@/features/doctrine/objection-list";
 import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
@@ -51,9 +52,7 @@ export default async function ObjectionsRoute({
   const page = await getTraditionPage(doctrine, tradition, locale);
   if (!page) notFound();
   const text = getUiText(locale);
-  const adjective = traditionName(locale, tradition).toLowerCase();
-  const fill = (template: string) =>
-    template.replaceAll("{tradition}", adjective).replace("{doctrine}", doctrineSubject(locale, doctrine));
+  const header = objectionsPageText(locale, doctrine, tradition);
   return (
     <CitationProvider views={getPageViews(page, locale)} text={text.citation}>
       <PageMain>
@@ -72,11 +71,7 @@ export default async function ObjectionsRoute({
           items={traditionIds.map((id) => ({ id, label: traditionName(locale, id) }))}
           current={tradition}
         />
-        <PageHeader
-          className="mt-5.5 sm:mt-7.5"
-          title={fill(text.doctrine.objectionsPage.title)}
-          lede={fill(text.doctrine.objectionsPage.lede)}
-        />
+        <PageHeader className="mt-5.5 sm:mt-7.5" title={header.title} lede={header.lede} />
         <section aria-label={text.doctrine.objections} className="mt-8 sm:mt-11">
           <div className="max-w-col">
             <ObjectionList

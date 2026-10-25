@@ -60,6 +60,7 @@ export type Objection<C extends string = string> = {
   synthesis: Rich;
   raisedBy: { traditions: TraditionId[]; line: string };
   objectorTexts: { shown: C[]; more: C[] };
+  videoIds?: string[];
   answer: AnswerBlock[];
   // TODO: drop with the debate layer's pending answers; the site never shows a pending marker
   apologeticAnswer?: "pending";
@@ -103,7 +104,13 @@ export type TraditionPage<C extends string = string> = {
   why: { intro: Rich[]; fathers: Father<C>[]; note: Rich; closing: Rich };
   scriptureSubtitle: string;
   scripture: ScripturePassage[];
-  objections: { subtitle: string; order: string[]; silentTraditions?: Rich; items: Objection<C>[] };
+  objections: {
+    subtitle: string;
+    videosSubtitle: string;
+    order: string[];
+    silentTraditions?: Rich;
+    items: Objection<C>[];
+  };
   videos: { subtitle: string; items: Video[] };
   life: { intro: Rich[]; items: LifeItem<C>[] };
   authority: {

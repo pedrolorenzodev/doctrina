@@ -8,8 +8,9 @@ import type { Locale } from "@/lib/locale";
 
 export function getObjectionViews(
   objection: Objection,
+  others: Objection[],
   quoteIds: string[],
   locale: Locale,
 ): Record<string, CitationView> {
-  return collectObjectionViews(objection, quoteIds, registry, locale, getUiText(locale));
+  return collectObjectionViews(objection, others, quoteIds, registry, locale, getUiText(locale));
 }

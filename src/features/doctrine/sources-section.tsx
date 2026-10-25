@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { DatedSourceList } from "@/components/dated-source-list";
 import { Section } from "@/components/section";
 import { GroupHeading } from "@/features/doctrine/group-heading";
@@ -21,10 +22,10 @@ export function SourcesSection({ id, sources, locale }: SourcesSectionProps) {
   return (
     <Section id={id} title={text.sources} wide>
       {groups.map((group) => (
-        <div key={group.key}>
+        <Fragment key={group.key}>
           <GroupHeading>{group.title}</GroupHeading>
           <DatedSourceList rows={group.rows} span={sources.span} />
-        </div>
+        </Fragment>
       ))}
     </Section>
   );

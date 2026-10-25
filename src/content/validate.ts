@@ -80,6 +80,8 @@ export function validateContent(registry: Registry, pages: Record<string, Tradit
       objection.objectorTexts.more.forEach((id) => note(id, where));
       objection.sourcesCited.forEach((group) => group.citations.forEach((id) => note(id, where)));
       if (objection.titleStatus) note(objection.titleStatus, where);
+      for (const id of objection.videoIds ?? [])
+        if (!page.videos.items.some((video) => video.id === id)) fail(where, `unknown video ${id}`);
       for (const segment of [...objection.passages.answer, ...objection.passages.objector])
         for (const key of missingVerses(segment, registry.verses)) fail(where, `verse ${key} not in registry`);
     }

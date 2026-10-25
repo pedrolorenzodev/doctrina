@@ -88,6 +88,13 @@
   --text-passage--line-height: 1.4;
   --text-passage-body: 16.5px;
   --text-passage-body--line-height: 1.6;
+  --text-passage-compact: 17px;
+  --text-passage-compact--line-height: 1.4;
+  --text-synthesis-compact: 15px;
+  --text-synthesis-compact--line-height: 1.55;
+  --text-neighbor-label: 12.5px;
+  --text-neighbor-title: 16.5px;
+  --text-neighbor-title--line-height: 1.4;
   --text-synthesis: 16.5px;
   --text-synthesis--line-height: 1.55;
   --text-life-label: 14px;

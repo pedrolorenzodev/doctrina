@@ -19,6 +19,8 @@ test("header: kicker, h1 and tab title", async ({ page }) => {
     "La respuesta católica",
     "Fuentes citadas",
     "Pasajes",
+    "Videos",
+    "Otras objeciones",
   ]);
 });
 
@@ -124,7 +126,7 @@ test("the ruler has a tick for the title and each section", async ({ page }) => 
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(first);
   await page.waitForTimeout(1500);
-  await expect(page.locator("[data-tick]")).toHaveCount(5);
+  await expect(page.locator("[data-tick]")).toHaveCount(7);
 });
 
 test("the sidebar marks the objection as the current page", async ({ page }) => {

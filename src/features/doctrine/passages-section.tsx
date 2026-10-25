@@ -42,7 +42,7 @@ export function PassagesSection({ id, passages, locale }: PassagesSectionProps) 
   return (
     <Section id={id} title={text.passages}>
       {passages.answer.length > 0 ? (
-        <div>
+        <>
           <GroupHeading>{text.groupAnswer}</GroupHeading>
           <RevealList as="ul" className="list-none border-b border-rule">
             {passages.answer.map((passage) => (
@@ -51,10 +51,10 @@ export function PassagesSection({ id, passages, locale }: PassagesSectionProps) 
               </li>
             ))}
           </RevealList>
-        </div>
+        </>
       ) : null}
       {passages.objector.length > 0 ? (
-        <div>
+        <>
           <GroupHeading>{text.groupObjection}</GroupHeading>
           <ExpandableList
             as="ul"
@@ -72,7 +72,7 @@ export function PassagesSection({ id, passages, locale }: PassagesSectionProps) 
               <RichText text={passages.note} verse={verse} />
             </p>
           ) : null}
-        </div>
+        </>
       ) : null}
     </Section>
   );

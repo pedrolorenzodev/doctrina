@@ -131,10 +131,10 @@ test("a section without data is not rendered and the ruler follows", async ({ pa
   await expect(page.locator("#passages")).toHaveCount(0);
   await expect(page.locator("#sources")).toHaveCount(1);
   await page.waitForTimeout(1500);
-  await expect(page.locator("[data-tick]")).toHaveCount(4);
+  await expect(page.locator("[data-tick]")).toHaveCount(5);
   await page.goto(first);
   await page.waitForTimeout(1500);
-  await expect(page.locator("[data-tick]")).toHaveCount(5);
+  await expect(page.locator("[data-tick]")).toHaveCount(7);
 });
 
 for (const width of [360, 390, 768, 1024, 1440]) {

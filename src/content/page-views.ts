@@ -111,6 +111,7 @@ function resolveViews(
 
 export function collectObjectionViews(
   objection: Objection,
+  others: Objection[],
   quoteIds: string[],
   registry: Registry,
   locale: Locale,
@@ -121,6 +122,7 @@ export function collectObjectionViews(
   for (const block of objection.answer) {
     collector.scan(block.type === "p" ? block.text : block.attribution);
   }
+  others.forEach((other) => collector.scan(other.synthesis));
   quoteIds.forEach((id) => collector.citations.add(id));
   return resolveViews({}, collector, registry, locale, text);
 }
