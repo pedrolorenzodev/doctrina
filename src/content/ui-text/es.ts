@@ -17,6 +17,7 @@ export const es = {
     breadcrumb: "Ruta",
     traditionLabel: "Tradición",
     traditionHint: "Al cambiar, sigues en la misma sección.",
+    objectionsHint: "Al cambiar, sigues en las objeciones.",
     tree: {
       bible: "Biblia",
       history: "Historia",
@@ -64,6 +65,10 @@ export const es = {
     allPassages: "Ver los {n} pasajes",
     objections: "Objeciones",
     allObjections: "Ver las {n} objeciones",
+    objectionsPage: {
+      title: "Objeciones a la posición {tradition}",
+      lede: "Lo que otras tradiciones objetan a la postura {tradition} sobre {doctrine}. Cada objeción abre su página, con la respuesta {tradition}.",
+    },
     life: "Cómo se vive",
     showMore: "Mostrar {n} más",
     authority: "Grado de autoridad",

@@ -1,7 +1,7 @@
 import type { DoctrineId, TraditionId } from "@/content/model/ids";
 import { doctrineIds, traditionIds } from "@/content/model/ids";
 import { historyIndex } from "@/content/history-index";
-import { traditionHref, traditionRoute } from "@/content/routes";
+import { objectionsHref, objectionsRoute, traditionHref, traditionRoute } from "@/content/routes";
 import { bookNames } from "@/content/verse-names";
 import type { Locale } from "@/lib/locale";
 
@@ -136,11 +136,15 @@ export function buildSiteTree(
         const id = `${doctrine}/${tradition}`;
         const children = [
           leaf(`${id}/passages`, text.tree.passages),
-          branch(
-            `${id}/objections`,
-            text.tree.objections,
-            (page?.objectionShorts ?? []).map((short, index) => leaf(`${id}/objections/${index}`, short)),
-          ),
+          {
+            ...branch(
+              `${id}/objections`,
+              text.tree.objections,
+              (page?.objectionShorts ?? []).map((short, index) => leaf(`${id}/objections/${index}`, short)),
+            ),
+            href: page ? objectionsHref(locale, doctrine, tradition) : null,
+            route: page ? objectionsRoute(locale, doctrine, tradition) : null,
+          },
         ];
         return {
           id,
@@ -195,6 +199,27 @@ export function buildSiteTree(
       ],
     },
   ];
+}
+
+const doctrineSubjects: Record<Locale, Record<DoctrineId, string>> = {
+  es: {
+    eucharist: "la Eucaristía",
+    justification: "la justificación",
+    baptism: "el bautismo",
+    papacy: "el papado",
+    "sola-scriptura": "Sola Scriptura",
+  },
+  en: {
+    eucharist: "the Eucharist",
+    justification: "justification",
+    baptism: "baptism",
+    papacy: "the papacy",
+    "sola-scriptura": "Sola Scriptura",
+  },
+};
+
+export function doctrineSubject(locale: Locale, doctrine: DoctrineId): string {
+  return doctrineSubjects[locale][doctrine];
 }
 
 export function doctrineName(locale: Locale, doctrine: DoctrineId): string {

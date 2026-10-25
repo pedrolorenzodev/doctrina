@@ -127,7 +127,9 @@ test.describe("drawer", () => {
   });
 });
 
-test("four groups with the counts of history and only the two published pages as links", async ({ page }) => {
+test("four groups with the counts of history and only the published pages and their Objeciones as links", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await expect(page.locator("aside nav p")).toHaveText(["Doctrinas", "Biblia", "Historia", "Consulta"]);
@@ -135,7 +137,7 @@ test("four groups with the counts of history and only the two published pages as
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
   expect(counts).toEqual(["56", "41", "18", "10", "20"]);
-  await expect(page.locator("aside nav a")).toHaveCount(2);
+  await expect(page.locator("aside nav a")).toHaveCount(4);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
 });
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Fragment } from "react";
 
 type Crumb = {
@@ -22,9 +23,15 @@ export function Breadcrumbs({ label, trail, current }: BreadcrumbsProps) {
     >
       {trail.map((crumb) => (
         <Fragment key={crumb.label}>
-          <button type="button" className="link-crumb hit-44">
-            {crumb.label}
-          </button>
+          {crumb.href ? (
+            <Link href={crumb.href} className="link-crumb hit-44">
+              {crumb.label}
+            </Link>
+          ) : (
+            <button type="button" className="link-crumb hit-44">
+              {crumb.label}
+            </button>
+          )}
           <span aria-hidden="true" className="mx-2 text-rule-2">
             {separator}
           </span>

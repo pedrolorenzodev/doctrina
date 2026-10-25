@@ -19,6 +19,7 @@ export const en: UiText = {
     breadcrumb: "Breadcrumb",
     traditionLabel: "Tradition",
     traditionHint: "When you switch, you stay in the same section.",
+    objectionsHint: "When you switch, you stay in the objections.",
     tree: {
       bible: "Bible",
       history: "History",
@@ -66,6 +67,10 @@ export const en: UiText = {
     allPassages: "See all {n} passages",
     objections: "Objections",
     allObjections: "See all {n} objections",
+    objectionsPage: {
+      title: "Objections to the {tradition} position",
+      lede: "What other traditions object to the {tradition} view of {doctrine}. Each objection opens its own page, with the {tradition} answer.",
+    },
     life: "How it is lived",
     showMore: "Show {n} more",
     authority: "Degree of authority",
