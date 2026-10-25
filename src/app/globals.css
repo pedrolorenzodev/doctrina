@@ -192,6 +192,7 @@
   --shadow-current-underline: inset 0 -2px 0 var(--color-accent);
   --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45);
   --shadow-search: 0 18px 40px -18px rgb(0 0 0 / 0.5);
+  --shadow-strip: 0 -10px 18px -12px rgb(0 0 0 / 0.3);
 }
 
 @theme inline {
@@ -752,6 +753,40 @@
   grid-template-columns: minmax(0, 1fr) 104px;
   gap: 6px 24px;
   align-items: start;
+}
+
+@utility dating-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  align-items: center;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 4px 24px;
+  }
+}
+
+@utility dating-axis {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  border-top: 1px solid var(--color-rule-2);
+
+  @media (min-width: 40rem) {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 24px;
+  }
+}
+
+@utility recension-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px 24px;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: 170px minmax(0, 1fr);
+  }
 }
 
 @utility practice-wide {

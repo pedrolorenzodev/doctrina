@@ -514,7 +514,7 @@ function FixedStrip({ entry, detail }: { entry: TimelineEntry | null; detail: Re
           ref={strip}
           data-strip
           data-off="false"
-          className="texture-layer absolute inset-x-0 bottom-0 min-h-16 border-t border-rule-2 bg-bg opacity-(--strip-opacity) data-[off=true]:pointer-events-none data-[off=true]:invisible max-sm:-mx-4 max-sm:px-4"
+          className="texture-layer absolute inset-x-0 bottom-0 min-h-16 border-t border-rule-2 bg-bg shadow-strip opacity-(--strip-opacity) data-[off=true]:pointer-events-none data-[off=true]:invisible max-sm:-mx-4 max-sm:px-4"
         >
           <div ref={content} className="flex min-h-16 flex-wrap items-center gap-x-5 gap-y-0.5 py-2 font-ui">
             <p className="m-0 flex min-w-0 flex-1 basis-full flex-col sm:basis-0">

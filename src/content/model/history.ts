@@ -55,3 +55,28 @@ export type Heresy = {
   teaching: Localized;
   fathers: string[];
 };
+
+export type DatingRow = {
+  id: string;
+  date: string;
+  lead: string;
+  scholar: string | null;
+  year: number | null;
+  start: number;
+  end: number | null;
+  maybeEnd: number | null;
+  reign: string | null;
+  main: boolean;
+  highlighted: boolean;
+};
+
+export type DatingStep = { name: string; note?: string; text: string; accepted?: boolean };
+
+export type FatherDating = {
+  title: string;
+  intro: string;
+  axis: { from: number; to: number; marks: number[] };
+  rows: DatingRow[];
+  scholars: Record<string, string>;
+  groups: { title: string; intro?: string; steps: DatingStep[] }[];
+};

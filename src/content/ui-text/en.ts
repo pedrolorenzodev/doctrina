@@ -205,6 +205,12 @@ export const en: UiText = {
     seeOnTimeline: "See it on the timeline",
     empty: "Choose a person or an event on the timeline to see its dates and who it was.",
   },
+  dating: {
+    title: "Dates and authenticity",
+    listLabel: "Proposed dates",
+    more: "Show the {n} more from the history of the debate",
+    less: "Hide the history of the debate",
+  },
   earlyChristians: {
     title: "What the first Christians wrote about {subject}",
     lede: "The Christian texts up to c. 800 that deal with {subject}, in chronological order. Each one leads to the complete work.",

@@ -7,12 +7,14 @@ import { PageMain } from "@/components/page-main";
 import { PageLink } from "@/components/ui/page-link";
 import { buildFatherTimeline } from "@/content/father-timeline";
 import { buildFatherView } from "@/content/father-view";
+import { getFatherDating } from "@/content/get-father-dating";
 import { getFatherAppearances } from "@/content/get-father-appearances";
 import { getFather, getFatherNeighbors, getPublishedFathers } from "@/content/get-fathers";
 import { fatherHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { FatherAppearsSection } from "@/features/history/father-appears-section";
+import { FatherDatingSection } from "@/features/history/father-dating-section";
 import { FatherFacts } from "@/features/history/father-facts";
 import { FatherTimelineSection } from "@/features/history/father-timeline-section";
 import { FatherProfileSection } from "@/features/history/father-profile-section";
@@ -40,6 +42,7 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
   const labels = text.father;
   const view = buildFatherView(father, locale, text);
   const timeline = buildFatherTimeline(father, getPublishedFathers(locale), locale, text);
+  const dating = getFatherDating(father.id, locale);
   const appearances = await getFatherAppearances(father.id, locale);
   const { previous, next } = getFatherNeighbors(father.id, locale);
   const neighbor = (label: string, other: typeof previous) =>
@@ -70,6 +73,7 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
         span={view.writingsSpan}
         writings={view.writings}
       />
+      {dating ? <FatherDatingSection id="dating" dating={dating} text={text.dating} /> : null}
       <FatherAppearsSection
         id="appears"
         title={labels.appears}
@@ -90,6 +94,7 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
           { id: "time", label: text.timeline.title },
           { id: "who", label: whoLabel },
           ...(view.writings.length > 0 ? [{ id: "works", label: labels.works }] : []),
+          ...(dating ? [{ id: "dating", label: text.dating.title }] : []),
           ...(appearances.length > 0 ? [{ id: "appears", label: labels.appears }] : []),
         ]}
       />

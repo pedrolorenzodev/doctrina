@@ -276,7 +276,7 @@ test("the search finds a Father by name and by what his summary says, and opens 
 test("the ruler has a tick per section that exists", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(ignatius);
-  await expect(page.locator("[data-tick]")).toHaveCount(5);
+  await expect(page.locator("[data-tick]")).toHaveCount(6);
   await page.goto(father("clement-of-rome"));
   await expect(page.locator("[data-tick]")).toHaveCount(4);
 });

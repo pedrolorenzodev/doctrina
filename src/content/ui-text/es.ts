@@ -215,6 +215,12 @@ export const es = {
     seeOnTimeline: "Verlo en la línea de tiempo",
     empty: "Elige una persona o un hecho de la línea para ver sus fechas y quién fue.",
   },
+  dating: {
+    title: "Fechas y autenticidad",
+    listLabel: "Fechas propuestas",
+    more: "Mostrar las {n} de la historia del debate",
+    less: "Ocultar la historia del debate",
+  },
   earlyChristians: {
     title: "Lo que escribieron los primeros cristianos sobre {subject}",
     lede: "Los textos cristianos hasta c. 800 que tratan de {subject}, en orden cronológico. Cada uno lleva a la obra completa.",
