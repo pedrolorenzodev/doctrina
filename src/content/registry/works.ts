@@ -127,6 +127,7 @@ export const works = {
     short: "CA",
     kind: "confession",
     speaker: "lutheran",
+    date: { year: 1530, month: 6, day: 25 },
     scheme: ["ref"],
   },
   apology: {
@@ -135,6 +136,7 @@ export const works = {
     short: "Apología",
     kind: "confession",
     speaker: "lutheran",
+    date: { year: 1531 },
     scheme: ["ref", "paragraph", "number"],
   },
   "large-catechism": {
@@ -143,6 +145,7 @@ export const works = {
     short: "Catecismo Mayor",
     kind: "catechism",
     speaker: "lutheran",
+    date: { year: 1529 },
     scheme: ["ref", "number", "locus"],
   },
   "enc-1895": {
@@ -159,6 +162,7 @@ export const works = {
     short: "Mogila",
     kind: "confession",
     speaker: "orthodox",
+    date: { year: 1643 },
     scheme: ["question"],
   },
   philaret: {
@@ -280,6 +284,7 @@ export const works = {
     short: "Esmalcalda",
     kind: "confession",
     speaker: "lutheran",
+    date: { year: 1537 },
     scheme: ["ref", "locus", "number", "paragraph"],
   },
   "fc-epitome": {
@@ -288,6 +293,7 @@ export const works = {
     short: "FC Epítome",
     kind: "confession",
     speaker: "lutheran",
+    date: { year: 1577 },
     scheme: ["ref", "paragraph", "locus"],
   },
   "fc-sd": {
@@ -296,6 +302,7 @@ export const works = {
     short: "FC DS",
     kind: "confession",
     speaker: "lutheran",
+    date: { year: 1577 },
     scheme: ["ref", "paragraph"],
   },
   "jp-audience-1989": {

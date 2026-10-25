@@ -14,7 +14,12 @@ test("header: kicker, h1 and tab title", async ({ page }) => {
     "Si Cristo se ofreció «una vez para siempre», la Misa no puede ser un sacrificio",
   );
   await expect(page).toHaveTitle("Un solo sacrificio, una sola vez · Eucaristía · Católica");
-  await expect(page.locator("main section h2")).toHaveText(["La objeción", "La respuesta católica"]);
+  await expect(page.locator("main section h2")).toHaveText([
+    "La objeción",
+    "La respuesta católica",
+    "Fuentes citadas",
+    "Pasajes",
+  ]);
 });
 
 test("crumbs: four steps, the last two lead to the Objeciones and tradition pages, none is current", async ({
@@ -115,11 +120,11 @@ test("the window of an own-words source holds the quote of the confession", asyn
   await expect(page.locator("[role=dialog]")).toContainText("Cristo no está ofrecido á su Padre");
 });
 
-test("the ruler has the three sections and the edge states of the page hold", async ({ page }) => {
+test("the ruler has a tick for the title and each section", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(first);
   await page.waitForTimeout(1500);
-  await expect(page.locator("[data-tick]")).toHaveCount(3);
+  await expect(page.locator("[data-tick]")).toHaveCount(5);
 });
 
 test("the sidebar marks the objection as the current page", async ({ page }) => {

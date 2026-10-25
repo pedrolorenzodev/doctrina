@@ -1,7 +1,7 @@
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { RichText } from "@/components/rich-text";
 import type { Objection } from "@/content/model/page";
-import type { ObjectorQuote } from "@/content/get-objector-quotes";
+import type { ObjectorText } from "@/content/get-objector-texts";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
@@ -11,7 +11,7 @@ const shownObjectorTexts = 2;
 
 type ObjectionBoxProps = {
   objection: Objection;
-  quotes: ObjectorQuote[];
+  quotes: ObjectorText[];
   locale: Locale;
 };
 

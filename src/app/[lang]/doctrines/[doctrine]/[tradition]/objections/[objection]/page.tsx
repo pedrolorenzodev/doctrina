@@ -5,7 +5,9 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageMain } from "@/components/page-main";
 import { Section } from "@/components/section";
 import { getObjectionViews } from "@/content/get-objection-views";
-import { getObjectorQuotes } from "@/content/get-objector-quotes";
+import { getObjectionPassages } from "@/content/get-objection-passages";
+import { getObjectionSources } from "@/content/get-objection-sources";
+import { getObjectorTexts } from "@/content/get-objector-texts";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import type { Objection } from "@/content/model/page";
@@ -17,6 +19,8 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { AnswerSection } from "@/features/doctrine/answer-section";
 import { ObjectionBox } from "@/features/doctrine/objection-box";
 import { ObjectionHeader } from "@/features/doctrine/objection-header";
+import { PassagesSection } from "@/features/doctrine/passages-section";
+import { SourcesSection } from "@/features/doctrine/sources-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 import type { Locale } from "@/lib/locale";
@@ -79,7 +83,9 @@ export default async function ObjectionRoute({
   const { objection } = found;
   const text = getUiText(locale);
   const adjective = traditionName(locale, found.tradition).toLowerCase();
-  const quotes = getObjectorQuotes(objection, locale);
+  const quotes = getObjectorTexts(objection, locale);
+  const sources = getObjectionSources(objection, quotes, locale);
+  const passages = getObjectionPassages(objection, locale);
   const answerTitle = text.doctrine.objection.answer.replace("{tradition}", adjective);
   return (
     <CitationProvider
@@ -112,12 +118,20 @@ export default async function ObjectionRoute({
           <ObjectionBox objection={objection} quotes={quotes} locale={locale} />
         </Section>
         <AnswerSection id="answer" title={answerTitle} objection={objection} locale={locale} />
+        <SourcesSection id="sources" sources={sources} locale={locale} />
+        <PassagesSection id="passages" passages={passages} locale={locale} />
         <EdgeRuler
           label={text.shell.sections}
           sections={[
             { id: "top", label: plainRich(objection.title, locale) },
             { id: "objection", label: text.doctrine.objection.box },
             { id: "answer", label: answerTitle },
+            ...(sources.answer.length + sources.objector.length > 0
+              ? [{ id: "sources", label: text.doctrine.objection.sources }]
+              : []),
+            ...(passages.answer.length + passages.objector.length > 0
+              ? [{ id: "passages", label: text.doctrine.objection.passages }]
+              : []),
           ]}
         />
       </PageMain>

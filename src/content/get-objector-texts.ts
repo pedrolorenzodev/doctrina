@@ -1,26 +1,28 @@
 import "server-only";
+import { formatDate, formatYear } from "@/content/format-date";
 import { formatLocator } from "@/content/format-locator";
-import { formatYear } from "@/content/format-date";
 import { pickQuote } from "@/content/citation-view";
 import type { DocLang } from "@/content/model/ids";
 import type { Objection } from "@/content/model/page";
 import type { Registry } from "@/content/model/registry";
 import { registry } from "@/content/registry/index";
+import type { SourceRow } from "@/lib/source-row";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@/lib/locale";
 
 const data: Registry = registry;
 
-export type ObjectorQuote = {
+export type ObjectorText = {
   id: string;
   text: string;
   lang: string;
   languageNote: string | null;
   label: string;
   year: string | null;
+  source: SourceRow;
 };
 
-export function getObjectorQuotes(objection: Objection, locale: Locale): ObjectorQuote[] {
+export function getObjectorTexts(objection: Objection, locale: Locale): ObjectorText[] {
   const text = getUiText(locale);
   const { shown, more } = objection.objectorTexts;
   return [...shown, ...more].flatMap((id) => {
@@ -40,6 +42,13 @@ export function getObjectorQuotes(objection: Objection, locale: Locale): Objecto
         languageNote: quote.lang === locale ? null : (text.citation.quoteIn[quote.lang as DocLang] ?? null),
         label: locator ? `${work.title}${onlyReference ? " " : ", "}${locator}` : work.title,
         year: date ? formatYear(date) : null,
+        source: {
+          id,
+          citationId: id,
+          name: work.title,
+          work: locator,
+          date: date ? { label: formatDate(date, locale), start: date.year, end: date.yearEnd ?? null } : null,
+        },
       },
     ];
   });

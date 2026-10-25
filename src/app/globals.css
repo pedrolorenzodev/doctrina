@@ -36,6 +36,11 @@
   --text-objection-mobile: 36px;
   --text-objection-mobile--line-height: 1.1;
   --text-objection-mobile--letter-spacing: -0.01em;
+  --leading-group: 1.3;
+  --text-source-name: 15px;
+  --text-source-name--line-height: 1.45;
+  --text-reference: 15.5px;
+  --text-reference--line-height: 1.5;
   --text-box-quote: 19px;
   --text-box-quote--line-height: 1.5;
   --text-lede: 24px;
@@ -493,6 +498,17 @@
 
   @media (min-width: 40rem) {
     grid-template-columns: 168px minmax(0, 1fr);
+  }
+}
+
+@utility source-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 24px;
+  align-items: start;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: minmax(0, 1fr) 104px minmax(180px, 300px);
   }
 }
 
