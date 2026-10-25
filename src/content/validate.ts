@@ -4,17 +4,17 @@ import { InlineSyntaxError, parseInline, referencesIn } from "@/lib/inline-refs"
 
 export const sectionIds: readonly string[] = ["early-witnesses"];
 
-const reviewVocabulary =
+export const reviewVocabulary =
   /\bdosier(es)?\b|\bwave-1\b|open-tags|\.md\b|sin confirmar|verificaci[oó]n|\bpendiente\b|mapa (luterano|reformado)/i;
 
-function* walkStrings(value: unknown, path: string): Generator<[string, string]> {
+export function* walkStrings(value: unknown, path: string): Generator<[string, string]> {
   if (typeof value === "string") yield [path, value];
   else if (Array.isArray(value)) for (const [i, item] of value.entries()) yield* walkStrings(item, `${path}[${i}]`);
   else if (value && typeof value === "object")
     for (const [key, item] of Object.entries(value)) yield* walkStrings(item, `${path}.${key}`);
 }
 
-function missingVerses(segment: string, verses: Registry["verses"]): string[] {
+export function missingVerses(segment: string, verses: Registry["verses"]): string[] {
   const [from = "", to = from] = segment.split("-");
   const [book, chapter, first] = from.split(".");
   const [lastBook, lastChapter, last] = to.split(".");

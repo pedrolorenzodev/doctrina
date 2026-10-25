@@ -1,8 +1,12 @@
-import { spanishPages } from "@/content/pages/index";
+import { spanishDoctrinePages, spanishPages } from "@/content/pages/index";
 import { registry } from "@/content/registry/index";
 import { validateContent } from "@/content/validate";
+import { validateDoctrinePages } from "@/content/validate-doctrine";
 
-const errors = validateContent(registry, spanishPages);
+const errors = [
+  ...validateContent(registry, spanishPages),
+  ...validateDoctrinePages(registry, spanishDoctrinePages, spanishPages),
+];
 
 if (errors.length > 0) {
   for (const error of errors.slice(0, 40)) console.error(`FAIL ${error}`);
@@ -53,10 +57,59 @@ for (const [label, mutate, expected] of mutations) {
     );
   }
 }
+const doctrineMutations = [
+  ["marks out of date order", (r, p) => (p.fingerprint.marks[1].year = 1), "out of date order"],
+  ["a mark ending before it starts", (r, p) => (p.fingerprint.marks[0].yearEnd = 10), "yearEnd must follow year"],
+  ["duplicate tradition", (r, p) => (p.answers.items[1].tradition = "catholic"), "duplicate tradition"],
+  [
+    "unknown objection id",
+    (r, p) => (p.answers.items[0].objections[0] = { id: "OB-99" }),
+    "unknown official objection OB-99",
+  ],
+  [
+    "a published tradition with an inline title",
+    (r, p) => (p.answers.items[0].objections[0] = { title: "x" }),
+    "links its objections by id",
+  ],
+  ["a published objection left out", (r, p) => p.answers.items[0].objections.pop(), "objection OB-7 is missing"],
+  [
+    "a grade the page lacks",
+    (r, p) => (p.answers.items[0].grade = { grade: "nope", basis: "x" }),
+    "the page has no grade nope",
+  ],
+  ["witnesses out of date order", (r, p) => (p.witnesses.items[2].date = { year: 1 }), "out of date order"],
+  ["duplicate witness id", (r, p) => (p.witnesses.items[1].id = p.witnesses.items[0].id), "duplicate id"],
+  ["a practice cell missing", (r, p) => delete p.practice.aspects[0].cells.baptist, "no cell for baptist"],
+  [
+    "a practice cell for a tradition without answer",
+    (r, p) => (p.practice.aspects[0].cells.pentecostal = p.practice.aspects[0].cells.baptist),
+    "which has no answer",
+  ],
+  [
+    "unknown citation in a practice source",
+    (r, p) => (p.practice.aspects[0].cells.catholic.sources[0].citations[0] = "NOPE"),
+    "unknown citation NOPE",
+  ],
+  ["a doctrine connected to itself", (r, p) => (p.connected.items[0].doctrine = "eucharist"), "connected to itself"],
+  ["glossary token", (r, p) => (p.common.text += " {g:term}"), "no glossary entry term"],
+  ["review language", (r, p) => (p.common.text += " Ver el dosier."), "review language"],
+];
+
+for (const [label, mutate, expected] of doctrineMutations) {
+  const p = structuredClone(spanishDoctrinePages);
+  mutate(registry, p.eucharist);
+  const found = validateDoctrinePages(registry, p, spanishPages);
+  if (!found.some((message) => message.includes(expected))) {
+    failures += 1;
+    console.error(
+      `FAIL doctrine validator missed: ${label} (expected «${expected}», got ${found.length ? found[0] : "nothing"})`,
+    );
+  }
+}
 if (failures > 0) process.exit(1);
 
 const citations = Object.keys(registry.citations).length;
 const verses = Object.keys(registry.verses).length;
 console.log(
-  `Content: ${Object.keys(spanishPages).length} page, ${citations} citations, ${verses} verses valid; ${mutations.length} validator fixtures passed.`,
+  `Content: ${Object.keys(spanishPages).length} pages, ${Object.keys(spanishDoctrinePages).length} doctrine page, ${citations} citations, ${verses} verses valid; ${mutations.length + doctrineMutations.length} validator fixtures passed.`,
 );
