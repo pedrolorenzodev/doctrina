@@ -116,6 +116,11 @@ export const en: UiText = {
   doctrinePage: {
     common: "What all of them share",
     discussed: "What is disputed",
+    answers: "The five answers",
+    objectionsReceived: "Objections it receives",
+    showObjections: "See the objections it receives",
+    hideObjections: "Hide the objections",
+    study: "Study the {tradition} position",
     fingerprint: {
       label: "Texts and facts this page cites, by date",
       summary: "{label}: {count}, from the year {from} to {to}",

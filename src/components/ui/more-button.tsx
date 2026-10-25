@@ -2,15 +2,17 @@ import type { ReactNode } from "react";
 
 type MoreButtonProps = {
   expanded: boolean;
+  controls?: string;
   onClick: () => void;
   children: ReactNode;
 };
 
-export function MoreButton({ expanded, onClick, children }: MoreButtonProps) {
+export function MoreButton({ expanded, controls, onClick, children }: MoreButtonProps) {
   return (
     <button
       type="button"
       aria-expanded={expanded}
+      aria-controls={controls}
       onClick={onClick}
       className="group/more -ml-2.5 inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-6 py-2 pr-3 pl-2.5 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
     >

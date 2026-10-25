@@ -1,7 +1,7 @@
 import { buildCitationView } from "@/content/citation-view";
 import { expandSegment, sortedVerseKeys } from "@/content/expand-verses";
 import { formatVerseRef } from "@/content/format-verse";
-import type { GradeLine, Objection, TraditionPage } from "@/content/model/page";
+import type { GradeDefinition, GradeLine, Objection, TraditionPage } from "@/content/model/page";
 import type { Registry } from "@/content/model/registry";
 import type { UiText } from "@/content/ui-text/types";
 import { parseInline, referencesIn } from "@/lib/inline-refs";
@@ -54,15 +54,12 @@ export function buildVerseView(segments: string[], registry: Registry, locale: L
   };
 }
 
-function buildGradeView(
+export function buildGradeDefinitionView(
   id: string,
-  line: GradeLine,
-  page: TraditionPage,
-  locale: Locale,
+  grade: GradeDefinition,
+  note: { label: string; text: string } | null,
   text: UiText,
-): CitationView | null {
-  if (line.kind !== "church") return null;
-  const grade = page.authority.grades[line.grade];
+): CitationView {
   return {
     id,
     kind: text.citation.gradeKind,
@@ -72,12 +69,28 @@ function buildGradeView(
     definition: grade.definition ?? null,
     who: grade.sub ?? null,
     locator: grade.source.label,
-    note: line.basis ? { label: text.citation.gradeBasis, text: plainRich(line.basis, locale) } : null,
+    note,
     date: null,
     externalLink: null,
     copyText: null,
     fullSource: false,
   };
+}
+
+function buildGradeView(
+  id: string,
+  line: GradeLine,
+  page: TraditionPage,
+  locale: Locale,
+  text: UiText,
+): CitationView | null {
+  if (line.kind !== "church") return null;
+  return buildGradeDefinitionView(
+    id,
+    page.authority.grades[line.grade],
+    line.basis ? { label: text.citation.gradeBasis, text: plainRich(line.basis, locale) } : null,
+    text,
+  );
 }
 
 type ViewCollector = {

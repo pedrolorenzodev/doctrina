@@ -15,6 +15,7 @@ import { traditionHref } from "@/content/routes";
 import { doctrineName, doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessViewId } from "@/content/witness-view";
+import { AnswersSection } from "@/features/doctrine/answers-section";
 import { CommonSection } from "@/features/doctrine/common-section";
 import { DoctrineFingerprint } from "@/features/doctrine/doctrine-fingerprint";
 import { LinkLegend } from "@/features/doctrine/link-legend";
@@ -62,7 +63,7 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
     exampleTradition ? traditionName(locale, exampleTradition).toLowerCase() : "",
   );
   return (
-    <CitationProvider views={getDoctrineViews(page, locale)} text={text.citation}>
+    <CitationProvider views={await getDoctrineViews(page, locale)} text={text.citation}>
       <PageMain>
         <Breadcrumbs
           label={text.shell.breadcrumb}
@@ -103,11 +104,13 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
           />
         </div>
         <CommonSection id="common" page={page} locale={locale} />
+        <AnswersSection id="answers" page={page} locale={locale} />
         <EdgeRuler
           label={text.shell.sections}
           sections={[
             { id: "top", label: doctrineName(locale, doctrine) },
             { id: "common", label: labels.common },
+            { id: "answers", label: labels.answers },
           ]}
         />
       </PageMain>

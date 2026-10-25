@@ -114,6 +114,11 @@ export const es = {
   doctrinePage: {
     common: "Lo que todas comparten",
     discussed: "Lo que se discute",
+    answers: "Las cinco respuestas",
+    objectionsReceived: "Objeciones que recibe",
+    showObjections: "Ver las objeciones que recibe",
+    hideObjections: "Ocultar las objeciones",
+    study: "Estudiar la postura {tradition}",
     fingerprint: {
       label: "Textos y hechos que esta página cita, por fecha",
       summary: "{label}: {count}, del año {from} al {to}",

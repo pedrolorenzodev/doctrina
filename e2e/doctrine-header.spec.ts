@@ -377,11 +377,11 @@ test("the questions sit beside the text from 1100 px and below it under that", a
   }
 });
 
-test("the ruler has the title and the section, and its second tick scrolls the page", async ({ page }) => {
+test("the ruler has a tick for the title and each section, and the second one scrolls the page", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await page.waitForTimeout(1500);
-  await expect(page.locator("[data-tick]")).toHaveCount(2);
+  await expect(page.locator("[data-tick]")).toHaveCount(3);
   await page.locator("[data-tick]").nth(1).click();
   await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(0);
 });
