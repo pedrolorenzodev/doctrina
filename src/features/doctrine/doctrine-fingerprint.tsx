@@ -22,6 +22,9 @@ const centuries = Array.from({ length: 20 }, (_, index) => (index + 1) * 100);
 const touchHoldMs = 1400;
 const clickSlopPx = 6;
 const tipMargin = { min: 14, max: 86 };
+const drawDelayMs = 300;
+const drawStaggerMs = 30;
+const drawDurationMs = 300;
 
 const percent = (year: number) => ((year - firstYear) / (lastYear - firstYear)) * 100;
 
@@ -31,8 +34,18 @@ export function DoctrineFingerprint({ items, summary, axis, onPick }: DoctrineFi
   const releaseTimer = useRef<number | undefined>(undefined);
   const [hovered, setHovered] = useState<number | null>(null);
   const [width, setWidth] = useState(0);
+  const [drawing, setDrawing] = useState(true);
 
-  useEffect(() => () => clearTimeout(releaseTimer.current), []);
+  useEffect(() => {
+    const done = window.setTimeout(
+      () => setDrawing(false),
+      drawDelayMs + items.length * drawStaggerMs + drawDurationMs,
+    );
+    return () => {
+      clearTimeout(done);
+      clearTimeout(releaseTimer.current);
+    };
+  }, [items.length]);
 
   function nearest(clientX: number): number {
     const rect = strip.current?.getBoundingClientRect();
@@ -117,15 +130,16 @@ export function DoctrineFingerprint({ items, summary, axis, onPick }: DoctrineFi
           <div
             key={`tick-${index}`}
             data-fp-tick
+            onAnimationEnd={index === items.length - 1 ? () => setDrawing(false) : undefined}
             data-on={index === hovered ? "" : undefined}
             style={
               {
                 "--x": `${percent(item.year)}%`,
                 "--k": scaleOf(index),
-                "--dl": `${300 + index * 30}ms`,
+                "--dl": `${drawDelayMs + index * drawStaggerMs}ms`,
               } as CSSProperties
             }
-            className="absolute bottom-px left-(--x) -ml-px h-full w-0.5 rounded-1 bg-ink opacity-45 fp-mark fp-draw data-on:bg-accent data-on:opacity-100"
+            className={`absolute bottom-px left-(--x) -ml-px h-full w-0.5 rounded-1 bg-ink opacity-45 fp-mark data-on:bg-accent data-on:opacity-100 ${drawing ? "fp-draw" : ""}`}
           />
         ))}
         {shown ? (

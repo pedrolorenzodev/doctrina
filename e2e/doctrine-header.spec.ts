@@ -69,32 +69,35 @@ test("the fingerprint has one tick per mark, its ranges, the axis and an accessi
 
 test("on load the ticks draw in, 300 ms each, 30 ms apart from 300 ms, and then rest", async ({ page }) => {
   await page.addInitScript(() => {
-    const seen: string[] = [];
-    (window as unknown as { drawEvents: string[] }).drawEvents = seen;
-    for (const type of ["animationstart", "animationend"]) {
-      document.addEventListener(
-        type,
-        (event) => {
-          if ((event as AnimationEvent).animationName === "fp-draw") seen.push(type);
-        },
-        true,
-      );
-    }
+    const seen: string[][] = [];
+    const ends: string[] = [];
+    Object.assign(window, { drawStarts: seen, drawEnds: ends });
+    document.addEventListener(
+      "animationstart",
+      (event) => {
+        if ((event as AnimationEvent).animationName !== "fp-draw") return;
+        const style = getComputedStyle(event.target as Element);
+        seen.push([style.animationDelay, style.animationDuration, style.animationFillMode]);
+      },
+      true,
+    );
+    document.addEventListener(
+      "animationend",
+      (event) => {
+        if ((event as AnimationEvent).animationName === "fp-draw") ends.push("end");
+      },
+      true,
+    );
   });
   await page.goto(path);
-  const timing = await page.locator(ticks).evaluateAll((nodes) =>
-    nodes.map((node) => {
-      const style = getComputedStyle(node);
-      return [style.animationName, style.animationDelay, style.animationDuration, style.animationFillMode];
-    }),
-  );
-  timing.forEach((entry, index) =>
-    expect(entry).toEqual(["fp-draw", `${(300 + index * 30) / 1000}s`, "0.3s", "backwards"]),
-  );
   await settled(page);
-  const events = await page.evaluate(() => (window as unknown as { drawEvents: string[] }).drawEvents);
-  expect(events.filter((type) => type === "animationstart")).toHaveLength(marks.length);
-  expect(events.filter((type) => type === "animationend")).toHaveLength(marks.length);
+  const { starts, ends } = await page.evaluate(() => ({
+    starts: (window as unknown as { drawStarts: string[][] }).drawStarts,
+    ends: (window as unknown as { drawEnds: string[] }).drawEnds,
+  }));
+  expect(starts).toHaveLength(marks.length);
+  starts.forEach((entry, index) => expect(entry).toEqual([`${(300 + index * 30) / 1000}s`, "0.3s", "backwards"]));
+  expect(ends).toHaveLength(marks.length);
   expect(await page.locator(ticks).evaluateAll((nodes) => nodes.flatMap((node) => node.getAnimations()).length)).toBe(
     0,
   );
@@ -193,6 +196,39 @@ test("a fast sweep across the strip, leaving mid-way, ends at rest with no error
   expect(errors).toEqual([]);
 });
 
+test("after the draw-in no animation is left on the ticks, so a fast sweep lifts them at once @webkit", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(path);
+  await settled(page);
+  expect(
+    await page.locator(ticks).evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).animationName)),
+  ).toEqual(marks.map(() => "none"));
+  const box = await stripBox(page);
+  await page.evaluate(() => {
+    const nodes = [...document.querySelectorAll("[data-fp-tick]")];
+    const samples: [number, number][] = [];
+    const start = performance.now();
+    (window as unknown as { sweep: [number, number][] }).sweep = samples;
+    const frame = () => {
+      const scale = Math.max(...nodes.map((node) => new DOMMatrix(getComputedStyle(node).transform).d));
+      samples.push([performance.now() - start, scale]);
+      if (performance.now() - start < 600) requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  });
+  const y = box.y + box.height / 2;
+  for (let step = 0; step <= 12; step += 1) {
+    await page.mouse.move(box.x + box.width * (0.1 + (0.6 * step) / 12), y);
+    await page.waitForTimeout(10);
+  }
+  await page.waitForTimeout(300);
+  const samples = await page.evaluate(() => (window as unknown as { sweep: [number, number][] }).sweep);
+  const early = samples.filter(([time]) => time <= 220).map(([, scale]) => scale);
+  expect(Math.max(...early)).toBeGreaterThan(0.35);
+});
+
 test("hovering while the ticks are still drawing in works and settles correctly", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
@@ -224,11 +260,13 @@ test("on touch the tip stays about 1.4 s after lifting and then goes", async ({ 
   await page.goto(path);
   await settled(page);
   const box = await stripBox(page);
+  const tapped = Date.now();
   await page.touchscreen.tap(box.x + (box.width * percent(1647)) / 100, box.y + box.height / 2);
   await expect(page.locator("[data-fp-tip]")).toHaveCount(1);
-  await page.waitForTimeout(900);
-  await expect(page.locator("[data-fp-tip]")).toHaveCount(1);
-  await expect(page.locator("[data-fp-tip]")).toHaveCount(0, { timeout: 1500 });
+  await expect(page.locator("[data-fp-tip]")).toHaveCount(0, { timeout: 4000 });
+  const held = Date.now() - tapped;
+  expect(held).toBeGreaterThan(1300);
+  expect(held).toBeLessThan(3500);
   await context.close();
 });
 
