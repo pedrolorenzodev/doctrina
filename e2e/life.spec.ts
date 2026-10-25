@@ -69,7 +69,7 @@ for (const [width, columns] of [
 test("a source opens the window and gives the focus back", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
-  const link = page.locator(`${items} button[aria-haspopup]`).first();
+  const link = page.locator(`${items} [aria-haspopup]`).first();
   await link.click();
   await expect(page.locator("[role=dialog]")).toHaveAttribute("data-open", "true");
   await page.keyboard.press("Escape");

@@ -35,6 +35,7 @@ export const es = {
       deutero: "Libros deuterocanónicos",
       nt: "Nuevo Testamento",
     },
+    skipToContent: "Saltar al contenido",
     sections: "Secciones de la página",
   },
   citation: {
@@ -48,6 +49,13 @@ export const es = {
     gradeKind: "Grado de autoridad",
     gradeBasis: "En esta afirmación",
     openSource: "Abrir la fuente completa",
+    quoteIn: {
+      la: "Texto en latín",
+      es: "Texto en español",
+      en: "Texto en inglés",
+      de: "Texto en alemán",
+      el: "Texto en griego",
+    },
     scriptureEdition: "RV1909",
   },
   doctrine: {

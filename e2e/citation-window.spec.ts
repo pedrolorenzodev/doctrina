@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 import { landingTop, traditionPath, trackElement } from "./helpers";
 
 const dialog = "[role=dialog]";
-const links = "#QE-1 button[aria-haspopup]";
+const links = "#QE-1 [aria-haspopup]";
 
 async function open(page: Page, width = 1440, height = 900) {
   await page.setViewportSize({ width, height });
@@ -132,7 +132,7 @@ test.describe("desktop", () => {
     await page.keyboard.press("Escape");
     await page.locator("#teach button[aria-expanded]:not([aria-haspopup])").click();
     await page.waitForTimeout(900);
-    await page.locator("#teach li button[aria-haspopup]", { hasText: "Lucas" }).first().click();
+    await page.locator("#teach li [aria-haspopup]", { hasText: "Lucas" }).first().click();
     await expect(page.locator("#citation-window-kind")).toHaveText("Escritura");
     await expect(page.locator(dialog)).toContainText("Lucas 22:19");
   });
@@ -204,13 +204,13 @@ test("«Abrir la fuente completa» is in citation windows only and does nothing 
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   const url = page.url();
-  await page.locator("#why p button[aria-haspopup]", { hasText: "Catecismo 1336" }).click();
+  await page.locator("#why p [aria-haspopup]", { hasText: "Catecismo 1336" }).click();
   const open = page.getByRole("dialog").getByRole("button", { name: "Abrir la fuente completa" });
   await expect(open).toBeVisible();
   await open.click();
   expect(page.url()).toBe(url);
   await expect(page.getByRole("dialog")).toHaveAttribute("data-open", "true");
   await page.keyboard.press("Escape");
-  await page.locator("#why p button[aria-haspopup]", { hasText: "Lucas 22:19" }).click();
+  await page.locator("#why p [aria-haspopup]", { hasText: "Lucas 22:19" }).click();
   await expect(page.getByRole("dialog").getByRole("button", { name: "Abrir la fuente completa" })).toHaveCount(0);
 });

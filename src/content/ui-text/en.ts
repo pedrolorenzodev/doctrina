@@ -37,6 +37,7 @@ export const en: UiText = {
       deutero: "Deuterocanonical books",
       nt: "New Testament",
     },
+    skipToContent: "Skip to content",
     sections: "Page sections",
   },
   citation: {
@@ -50,6 +51,13 @@ export const en: UiText = {
     gradeKind: "Degree of authority",
     gradeBasis: "For this statement",
     openSource: "Open the full source",
+    quoteIn: {
+      la: "Text in Latin",
+      es: "Text in Spanish",
+      en: "Text in English",
+      de: "Text in German",
+      el: "Text in Greek",
+    },
     scriptureEdition: "RV1909",
   },
   doctrine: {

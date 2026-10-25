@@ -38,6 +38,12 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
       <SmoothScroll />
       <TitleEntrance />
       <DrawerProvider>
+        <a
+          href="#content"
+          className="fixed top-2 left-2 z-100 -translate-y-20 rounded-6 border border-rule-2 bg-bg flex min-h-11 items-center px-3.5 text-ui-sm font-medium text-ink no-underline transition-transform duration-150 ease-standard focus:translate-y-0"
+        >
+          {shell.skipToContent}
+        </a>
         <TopBar withMenu={hasTree} />
         {hasTree ? (
           <div className="lg:grid lg:grid-shell">

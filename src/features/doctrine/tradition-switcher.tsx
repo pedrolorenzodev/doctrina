@@ -19,8 +19,12 @@ const stuckThreshold = 4;
 export function TraditionSwitcher({ label, hint, items, current }: TraditionSwitcherProps) {
   const bar = useRef<HTMLElement>(null);
   const strip = useRef<HTMLUListElement>(null);
+  const caption = useRef<HTMLSpanElement>(null);
+  const hintBox = useRef<HTMLSpanElement>(null);
+  const hintWidth = useRef(0);
   const [stuck, setStuck] = useState(false);
   const [fade, setFade] = useState(false);
+  const [crowded, setCrowded] = useState(false);
 
   useEffect(() => {
     const element = bar.current;
@@ -32,6 +36,13 @@ export function TraditionSwitcher({ label, hint, items, current }: TraditionSwit
       root.style.setProperty("--spacing-scroll-offset", `${element.offsetHeight + 20}px`);
       setStuck(element.getBoundingClientRect().top <= top() + 0.5 && scrollY > stuckThreshold);
       setFade(list.scrollWidth - list.clientWidth - list.scrollLeft > 2);
+      const hint = hintBox.current;
+      if (hint && hint.offsetWidth > 0) hintWidth.current = hint.offsetWidth;
+      const style = getComputedStyle(element);
+      const inner = element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      const gap = parseFloat(style.columnGap) || 0;
+      const labelWidth = caption.current && caption.current.offsetWidth > 0 ? caption.current.offsetWidth + gap : 0;
+      setCrowded(labelWidth + list.scrollWidth + gap + hintWidth.current > inner);
     };
     measure();
     addEventListener("scroll", measure, { passive: true });
@@ -51,9 +62,12 @@ export function TraditionSwitcher({ label, hint, items, current }: TraditionSwit
       ref={bar}
       aria-label={label}
       data-stuck={stuck ? "" : undefined}
-      className="texture-layer sticky top-top z-30 mt-3 -mr-4 -ml-4 flex items-center gap-x-4.5 gap-y-1.5 border-b border-transparent bg-bg px-4 py-1.5 transition-colors duration-150 ease-standard data-stuck:border-rule sm:mt-3.5 sm:-mr-8 sm:-ml-8 sm:px-8 sm:py-2.5 md:-mr-26 md:-ml-12 md:pr-26 md:pl-12 lg:-mr-28 lg:-ml-16 lg:pr-28 lg:pl-16"
+      data-crowded={crowded ? "" : undefined}
+      className="group/switcher texture-layer sticky top-top z-30 mt-3 -mr-4 -ml-4 flex items-center gap-x-4.5 gap-y-1.5 border-b border-transparent bg-bg px-4 py-1.5 transition-colors duration-150 ease-standard data-stuck:border-rule sm:mt-3.5 sm:-mr-8 sm:-ml-8 sm:px-8 sm:py-2.5 md:-mr-26 md:-ml-12 md:pr-26 md:pl-12 lg:-mr-28 lg:-ml-16 lg:pr-28 lg:pl-16"
     >
-      <span className="flex-none text-label font-medium text-ink-3 max-sm:hidden">{label}</span>
+      <span ref={caption} className="flex-none text-label font-medium text-ink-3 max-sm:hidden">
+        {label}
+      </span>
       <ul
         ref={strip}
         data-lenis-prevent
@@ -74,7 +88,12 @@ export function TraditionSwitcher({ label, hint, items, current }: TraditionSwit
           </li>
         ))}
       </ul>
-      <span className="ml-auto text-label whitespace-nowrap text-ink-3 max-md:hidden">{hint}</span>
+      <span
+        ref={hintBox}
+        className="ml-auto text-label whitespace-nowrap text-ink-3 max-md:hidden group-data-crowded/switcher:hidden"
+      >
+        {hint}
+      </span>
     </nav>
   );
 }

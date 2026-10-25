@@ -60,8 +60,8 @@ test("switcher: sticky under the bar, hairline only once stuck, scroll offset fo
   await expect(bar).toHaveCSS("border-bottom-color", "rgba(0, 0, 0, 0)");
 });
 
-test("switcher: label hides under 640 px and the hint under 768 px", async ({ page }) => {
-  await page.setViewportSize({ width: 800, height: 900 });
+test("switcher: the label hides under 640 px and the hint under 768 px", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await expect(page.locator(`${switcher} > span`).first()).toBeVisible();
   await expect(page.locator(`${switcher} > span`).last()).toBeVisible();
@@ -105,4 +105,47 @@ test("switcher: tabs are centred on both axes", async ({ page }) => {
   });
   expect(Math.abs(offsets.x)).toBeLessThan(2);
   expect(Math.abs(offsets.y)).toBeLessThan(2);
+});
+
+test("switcher: the hint gives way when the six tabs would not fit", async ({ page }) => {
+  for (const [width, hintVisible] of [
+    [1440, true],
+    [1024, false],
+    [800, false],
+  ] as const) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto(traditionPath);
+    await page.waitForTimeout(300);
+    const hint = page.locator(`${switcher} > span`).last();
+    if (hintVisible) await expect(hint).toBeVisible();
+    else await expect(hint).toBeHidden();
+    if (width === 1440) {
+      const reach = await page.evaluate(() => {
+        const strip = document.querySelector('main nav[aria-label="Tradición"] ul')!;
+        return strip.scrollWidth - strip.clientWidth;
+      });
+      expect(reach).toBeLessThanOrEqual(2);
+    }
+  }
+});
+
+test("the doctrine's name in the lede takes the source colour at weight 400, in both themes", async ({ browser }) => {
+  for (const [scheme, colour] of [
+    ["light", "rgb(95, 61, 12)"],
+    ["dark", "rgb(214, 168, 101)"],
+  ] as const) {
+    const context = await browser.newContext({ colorScheme: scheme, viewport: { width: 1440, height: 900 } });
+    const page = await context.newPage();
+    await page.goto(traditionPath);
+    const term = page.locator("main header p span");
+    await expect(term).toHaveText("Eucaristía");
+    await expect(term).toHaveCSS("color", colour);
+    await expect(term).toHaveCSS("font-weight", "400");
+    await expect(page.locator("main header p")).toHaveCSS("font-weight", "300");
+    await context.close();
+  }
+  const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+  await page.goto("/es/doctrinas/bautismo/catolica");
+  await expect(page.locator("main header p span")).toHaveText("bautismo");
+  await page.close();
 });

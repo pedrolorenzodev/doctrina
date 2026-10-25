@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
-let firstRender = true;
+let hydrated = false;
 
 export function PageFade({ children }: { children: ReactNode }) {
-  const [fade] = useState(() => {
-    const afterNavigation = !firstRender;
-    firstRender = false;
-    return afterNavigation;
-  });
+  const [fade] = useState(() => typeof window !== "undefined" && hydrated);
+  useEffect(() => {
+    hydrated = true;
+  }, []);
   return <div className={fade ? "min-w-0 page-fade" : "min-w-0"}>{children}</div>;
 }

@@ -36,6 +36,7 @@ export function buildCitationView(id: string, registry: Registry, locale: Locale
     kind: text.citation.kind,
     title: null,
     quote,
+    quoteLanguage: quote && quote.lang !== locale ? (text.citation.quoteIn[quote.lang as DocLang] ?? null) : null,
     definition: null,
     who: work.title,
     locator,

@@ -39,9 +39,12 @@ test("an example link to a hidden statement expands the list and lands under the
   await page.locator("#authority a", { hasText: "la Eucaristía hace la Iglesia" }).first().click();
   await page.waitForTimeout(1500);
   expect(await page.evaluate(() => document.getElementById("QE-9")!.hidden)).toBe(false);
-  expect(await page.evaluate(() => Math.round(document.getElementById("QE-9")!.getBoundingClientRect().top))).toBe(
-    await landingTop(page),
-  );
+  const landing = await landingTop(page);
+  await expect
+    .poll(() => page.evaluate(() => Math.round(document.getElementById("QE-9")!.getBoundingClientRect().top)), {
+      timeout: 5000,
+    })
+    .toBe(landing);
 });
 
 test("an example link to a visible statement scrolls to it", async ({ page }) => {
@@ -49,9 +52,12 @@ test("an example link to a visible statement scrolls to it", async ({ page }) =>
   await page.goto(traditionPath);
   await page.locator("#authority a", { hasText: "la transubstanciación" }).first().click();
   await page.waitForTimeout(1500);
-  expect(await page.evaluate(() => Math.round(document.getElementById("QE-2")!.getBoundingClientRect().top))).toBe(
-    await landingTop(page),
-  );
+  const landing = await landingTop(page);
+  await expect
+    .poll(() => page.evaluate(() => Math.round(document.getElementById("QE-2")!.getBoundingClientRect().top)), {
+      timeout: 5000,
+    })
+    .toBe(landing);
 });
 
 test("arriving with the hash of a hidden statement expands the list and shows it", async ({ page }) => {
@@ -59,9 +65,12 @@ test("arriving with the hash of a hidden statement expands the list and shows it
   await page.goto(`${traditionPath}#QE-9`);
   await page.waitForTimeout(1500);
   expect(await page.evaluate(() => document.getElementById("QE-9")!.hidden)).toBe(false);
-  expect(await page.evaluate(() => Math.round(document.getElementById("QE-9")!.getBoundingClientRect().top))).toBe(
-    await landingTop(page),
-  );
+  const landing = await landingTop(page);
+  await expect
+    .poll(() => page.evaluate(() => Math.round(document.getElementById("QE-9")!.getBoundingClientRect().top)), {
+      timeout: 5000,
+    })
+    .toBe(landing);
   await expect(page.locator("#teach button[aria-expanded]:not([aria-haspopup])")).toHaveText("Mostrar menos");
 });
 
@@ -89,7 +98,7 @@ for (const [width, beside] of [
 test("the source link opens the window and gives the focus back", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
-  const link = page.locator(`${rows} button[aria-haspopup]`).first();
+  const link = page.locator(`${rows} [aria-haspopup]`).first();
   await link.click();
   await expect(page.locator("[role=dialog]")).toHaveAttribute("data-open", "true");
   await page.keyboard.press("Escape");

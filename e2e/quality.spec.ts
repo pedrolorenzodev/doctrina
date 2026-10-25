@@ -7,7 +7,7 @@ test("every interactive element is at least 44 px on a touch phone", async ({ br
   await page.goto(traditionPath);
   const small = await page.evaluate(() => {
     const found: string[] = [];
-    for (const element of document.querySelectorAll("a[href], button, summary, input, select")) {
+    for (const element of document.querySelectorAll("a[href], button, summary, input, select, [role=button]")) {
       const rect = element.getBoundingClientRect();
       if (!rect.width || !rect.height || getComputedStyle(element).visibility === "hidden") continue;
       const before = getComputedStyle(element, "::before");
@@ -124,4 +124,65 @@ test("English: the shell is fully English and no Spanish label survives on the h
   }
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.getByRole("button", { name: /mode/i }).first()).toBeVisible();
+});
+
+test("a long citation wraps inside the paragraph on a phone instead of breaking it", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto(traditionPath);
+  const state = await page.evaluate(() => {
+    const link = [...document.querySelectorAll("#life [aria-haspopup]")].find((element) =>
+      (element.textContent ?? "").replace(/\u00a0/g, " ").includes("cann. 1247 y 920"),
+    )!;
+    return { display: getComputedStyle(link).display, lines: link.getClientRects().length };
+  });
+  expect(state.display).toBe("inline");
+  expect(state.lines).toBeGreaterThan(1);
+});
+
+test("keyboard: the first tab stop is a skip link that lands on the content", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(traditionPath);
+  await page.keyboard.press("Tab");
+  const skip = page.getByRole("link", { name: "Saltar al contenido" });
+  await expect(skip).toBeFocused();
+  await page.waitForTimeout(300);
+  const box = await skip.boundingBox();
+  expect(box!.y).toBeGreaterThanOrEqual(0);
+  await page.keyboard.press("Enter");
+  await expect(page.locator("main#content")).toBeFocused();
+  await page.keyboard.press("Tab");
+  expect(await page.evaluate(() => document.activeElement?.closest("main") !== null)).toBe(true);
+});
+
+test("«1 Corintios» is never split from its number", async ({ page }) => {
+  await page.goto(traditionPath);
+  const titles = await page.locator("#scripture li > p:first-child").allTextContents();
+  for (const title of titles) expect(title).not.toMatch(/\d [A-ZÁÉÍÓÚ]/);
+  expect(titles[0]).toContain("1 Corintios");
+});
+
+test("citations with a quote in another language say which one", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(traditionPath);
+  await page.locator("#life [aria-haspopup]", { hasText: "Trento, ses. XIII, cap. 7" }).first().click();
+  await expect(page.locator("[role=dialog]")).toContainText("Texto en inglés");
+  await expect(page.locator("[role=dialog] [lang=en]")).toHaveCount(1);
+});
+
+test("every citation in the statements is a link: no plain «(Catecismo …)» is left", async ({ page }) => {
+  await page.goto(traditionPath);
+  await page.locator("#teach button[aria-expanded]:not([aria-haspopup])").click();
+  await page.waitForTimeout(900);
+  const plain = await page.evaluate(
+    () =>
+      [...document.querySelectorAll("#teach li > p:first-child")].filter((paragraph) => {
+        const text = (paragraph.textContent ?? "").replace(/ /g, " ");
+        const links = [...paragraph.querySelectorAll("[aria-haspopup]")].map((link) =>
+          (link.textContent ?? "").replace(/ /g, " "),
+        );
+        const mentioned = text.match(/\((Catecismo|Ecclesia de Eucharistia)[^)]*\)/g) ?? [];
+        return mentioned.some((mention) => !links.some((label) => mention.includes(label)));
+      }).length,
+  );
+  expect(plain).toBe(0);
 });

@@ -90,6 +90,7 @@
   --text-video: 17.5px;
   --text-video--line-height: 1.45;
   --leading-label: 1.2;
+  --text-defn-source: 14.5px;
   --text-note: 14.5px;
   --text-note--line-height: 1.6;
   --text-label: 12.5px;
@@ -223,6 +224,7 @@
 }
 
 @utility link-cite {
+  box-decoration-break: clone;
   color: var(--color-cite);
   cursor: pointer;
   text-decoration: underline dotted;
@@ -242,6 +244,7 @@
 }
 
 @utility link-term {
+  box-decoration-break: clone;
   cursor: pointer;
   text-decoration: underline dotted;
   text-decoration-color: var(--color-ink-3);
@@ -261,6 +264,7 @@
 }
 
 @utility link-source {
+  box-decoration-break: clone;
   color: var(--color-ink-3);
   text-align: left;
   cursor: pointer;
@@ -559,12 +563,16 @@
     line-height: normal;
     scroll-padding-top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
   }
+}
 
-  :is(a, button, [tabindex], input, summary):focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-    border-radius: var(--radius-3);
-  }
+:is(a, button, [tabindex], input, summary) {
+  outline-color: var(--color-accent);
+}
+
+:is(a, button, [tabindex], input, summary):not(#content):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-3);
 }
 
 html.theme-switching *,

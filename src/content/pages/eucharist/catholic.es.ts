@@ -226,7 +226,7 @@ export const eucharistCatholic = {
       {
         id: "QE-7",
         short: "la comunión bajo una especie",
-        text: "Ningún mandato divino obliga a los fieles a comulgar con las dos especies, porque bajo cualquiera de ellas se recibe a Cristo entero. Comulgar solo con el pan es una ley de la Iglesia, que ella puede cambiar; hoy, en el rito latino, se permite también la comunión bajo las dos especies; en los ritos orientales católicos es la forma habitual (Catecismo 1390).",
+        text: "Ningún mandato divino obliga a los fieles a comulgar con las dos especies, porque bajo cualquiera de ellas se recibe a Cristo entero. Comulgar solo con el pan es una ley de la Iglesia, que ella puede cambiar; hoy, en el rito latino, se permite también la comunión bajo las dos especies; en los ritos orientales católicos es la forma habitual ({c:CEC1390|Catecismo 1390}).",
         grades: [
           {
             kind: "church",
@@ -300,7 +300,7 @@ export const eucharistCatholic = {
       {
         id: "QE-9",
         short: "la Eucaristía hace la Iglesia",
-        text: "Para la Iglesia católica, la Eucaristía es «fuente y cumbre de toda la vida cristiana» y «hace la Iglesia»: quienes la reciben se unen más a Cristo y, por eso, Cristo los une entre sí en un solo cuerpo (Catecismo 1396). Por la misma razón enseña que celebrarla «no puede ser el punto de partida de la comunión, que la presupone previamente» (Ecclesia de Eucharistia 35). Reconoce en las Iglesias ortodoxas verdaderos sacramentos, y sobre todo el sacerdocio y la Eucaristía; con las comunidades nacidas de la Reforma no admite la intercomunión. Distingue de la intercomunión el caso de una necesidad espiritual grave, en el que puede darse la comunión a otros cristianos que comparten la fe católica sobre este sacramento (Catecismo 1401; Ecclesia de Eucharistia 45).",
+        text: "Para la Iglesia católica, la Eucaristía es «fuente y cumbre de toda la vida cristiana» y «hace la Iglesia»: quienes la reciben se unen más a Cristo y, por eso, Cristo los une entre sí en un solo cuerpo ({c:CEC1396|Catecismo 1396}). Por la misma razón enseña que celebrarla «no puede ser el punto de partida de la comunión, que la presupone previamente» ({c:EdE35|Ecclesia de Eucharistia 35}). Reconoce en las Iglesias ortodoxas verdaderos sacramentos, y sobre todo el sacerdocio y la Eucaristía; con las comunidades nacidas de la Reforma no admite la intercomunión. Distingue de la intercomunión el caso de una necesidad espiritual grave, en el que puede darse la comunión a otros cristianos que comparten la fe católica sobre este sacramento ({c:CEC1401|Catecismo 1401}; {c:EdE45|Ecclesia de Eucharistia 45}).",
         grades: [
           {
             kind: "church",

@@ -33,7 +33,7 @@ test("titles and the button are pressable and do nothing yet", async ({ page }) 
 test("a reference in a reading opens the window and gives the focus back", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
-  const link = page.locator(`${items} button[aria-haspopup]`, { hasText: "Catecismo 1365" });
+  const link = page.locator(`${items} [aria-haspopup]`, { hasText: "Catecismo 1365" });
   await link.click();
   await expect(page.getByRole("dialog")).toContainText("1365");
   await page.keyboard.press("Escape");

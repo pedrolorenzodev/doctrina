@@ -3,6 +3,7 @@ export type CitationView = {
   kind: string;
   title: string | null;
   quote: { text: string; lang: string } | null;
+  quoteLanguage: string | null;
   definition: string | null;
   who: string | null;
   locator: string;

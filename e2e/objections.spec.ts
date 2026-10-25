@@ -43,7 +43,7 @@ for (const width of [360, 390, 768, 1024, 1440]) {
 test("a reference in a synthesis opens the window", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
-  const link = page.locator(`${items} button[aria-haspopup]`).first();
+  const link = page.locator(`${items} [aria-haspopup]`).first();
   await link.click();
   await expect(page.locator("[role=dialog]")).toHaveAttribute("data-open", "true");
   await page.keyboard.press("Escape");

@@ -16,7 +16,7 @@ export function formatVerseRef(segments: string[], locale: Locale): string {
     const [fromText = "", toText] = segment.split("-");
     const from = parsePoint(fromText);
     const to = toText ? parsePoint(toText) : null;
-    const name = bookNames[from.book]?.[locale] ?? from.book;
+    const name = (bookNames[from.book]?.[locale] ?? from.book).replace(/^(\d) /, "$1\u00a0");
     let part: string;
     if (from.verse === null) part = String(from.chapter);
     else if (to && to.chapter !== from.chapter) part = `${from.chapter}:${from.verse}–${to.chapter}:${to.verse}`;

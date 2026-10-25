@@ -30,7 +30,7 @@ test("the toggle stores the choice, which survives a reload and a language switc
   await expect.poll(() => page.evaluate(() => localStorage.getItem("doctrina-theme"))).toBe("dark");
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
-  await page.getByRole("link", { name: "EN" }).click();
+  await page.getByRole("link", { name: "EN", exact: true }).click();
   await page.waitForURL("**/en");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expect(page.locator("html")).toHaveAttribute("lang", "en");

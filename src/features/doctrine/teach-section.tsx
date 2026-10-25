@@ -63,7 +63,7 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
     <Section id="teach" title={text.doctrine.teach} subtitle={page.teach.subtitle}>
       <p className="mb-7.5 font-head text-defn-mobile font-light text-ink opsz-24 sm:text-defn">
         <RichText text={definition.text} verse={verse} />{" "}
-        <span className="font-ui text-sub">
+        <span className="font-ui text-defn-source">
           <SourceLinks sources={definition.sources} parenthesized />
         </span>
       </p>

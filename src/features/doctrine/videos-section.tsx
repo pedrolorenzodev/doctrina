@@ -13,6 +13,7 @@ type VideosSectionProps = {
 export function VideosSection({ page, locale }: VideosSectionProps) {
   const text = getUiText(locale);
   const { videoFilter, videoLanguage } = text.doctrine;
+  if (page.videos.items.length === 0) return null;
   return (
     <Section id="videos" title={text.doctrine.videos} subtitle={page.videos.subtitle}>
       <VideoList

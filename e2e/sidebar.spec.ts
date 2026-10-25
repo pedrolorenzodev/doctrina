@@ -127,7 +127,7 @@ test.describe("drawer", () => {
   });
 });
 
-test("four groups with the counts of history and only the published page as a link", async ({ page }) => {
+test("four groups with the counts of history and only the two published pages as links", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await expect(page.locator("aside nav p")).toHaveText(["Doctrinas", "Biblia", "Historia", "Consulta"]);
@@ -135,8 +135,8 @@ test("four groups with the counts of history and only the published page as a li
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
   expect(counts).toEqual(["56", "41", "18", "10", "20"]);
-  await expect(page.locator("aside nav a")).toHaveCount(1);
-  await expect(page.locator("aside nav a")).toHaveAttribute("aria-current", "page");
+  await expect(page.locator("aside nav a")).toHaveCount(2);
+  await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
 });
 
 test("the branches hold the real entries: 56 Fathers, 27 New Testament books, 7 objections under Católica", async ({

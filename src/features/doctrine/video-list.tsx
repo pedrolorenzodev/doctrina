@@ -70,7 +70,7 @@ export function VideoList({ videos, step, filterLabel, filters, moreLabel, seenL
         <ul ref={list} className="list-none border-b border-rule">
           {shown.map((video) => (
             <li key={video.id} data-id={video.id} className="border-t border-rule py-3.75">
-              <p className="font-body text-video-mobile font-medium opsz-18 sm:text-video">
+              <p className="font-body text-video-mobile font-medium sm:text-video">
                 <PageLink href={`https://www.youtube.com/watch?v=${video.id}`} external lang={video.lang}>
                   {video.title}
                 </PageLink>

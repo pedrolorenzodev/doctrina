@@ -21,7 +21,7 @@ test("two figures with author, work, date and the source link", async ({ page })
   await expect(figures.first().locator("figcaption")).toContainText("388 (según Baur)");
   await expect(figures.nth(1).locator("figcaption")).toContainText("c. 387–391");
   await expect(figures.nth(1).locator("blockquote")).toHaveCount(2);
-  await expect(figures.nth(1).locator("figcaption button")).toHaveText(/Citado en Catecismo\s1375/);
+  await expect(figures.nth(1).locator("figcaption [aria-haspopup]")).toHaveText(/Citado en Catecismo\s1375/);
 });
 
 for (const [width, beside] of [
@@ -57,26 +57,23 @@ for (const [width, beside] of [
   });
 }
 
-test("an opening parenthesis never ends a line @webkit", async ({ page }) => {
+test("an opening parenthesis stays with the first words of its reference @webkit", async ({ page }) => {
   for (const width of [360, 390, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(traditionPath);
     const orphans = await page.evaluate(() => {
       const found: string[] = [];
-      for (const paragraph of document.querySelectorAll("#why p")) {
-        for (const button of paragraph.querySelectorAll("button")) {
-          const before = button.previousSibling;
-          const mark = button.parentElement?.firstChild;
-          if (mark?.nodeType !== Node.TEXT_NODE || !mark.textContent?.endsWith("(") || before) continue;
-          const range = document.createRange();
-          range.setStart(mark, mark.textContent.length - 1);
-          range.setEnd(mark, mark.textContent.length);
-          const parenthesis = range.getBoundingClientRect();
-          const link = button.getBoundingClientRect();
-          if (Math.abs(parenthesis.top - link.top) > 8 && Math.abs(parenthesis.bottom - link.bottom) > 8) {
-            found.push(`${innerWidth}: ${button.textContent}`);
-          }
-        }
+      for (const link of document.querySelectorAll(
+        "#why p [aria-haspopup], #life p [aria-haspopup], #teach p [aria-haspopup]",
+      )) {
+        const before = link.previousSibling;
+        if (before?.nodeType !== Node.TEXT_NODE || !before.textContent?.endsWith("(")) continue;
+        const range = document.createRange();
+        range.setStart(before, before.textContent.length - 1);
+        range.setEnd(before, before.textContent.length);
+        const parenthesis = range.getBoundingClientRect();
+        const first = link.getClientRects()[0];
+        if (first && Math.abs(parenthesis.top - first.top) > 8) found.push(`${innerWidth}: ${link.textContent}`);
       }
       return found;
     });
@@ -87,14 +84,14 @@ test("an opening parenthesis never ends a line @webkit", async ({ page }) => {
 test("grouped references open the window and give the focus back", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
-  const link = page.locator("#why p button", { hasText: "Catecismo 1336" });
+  const link = page.locator("#why p [aria-haspopup]", { hasText: "Catecismo 1336" });
   await link.click();
   await expect(link).toHaveAttribute("aria-expanded", "true");
   await expect(page.getByRole("dialog")).toContainText("Catecismo");
   await page.keyboard.press("Escape");
   await expect(link).toBeFocused();
   await expect(link).toHaveAttribute("aria-expanded", "false");
-  await page.locator("#why figcaption button").first().click();
+  await page.locator("#why figcaption [aria-haspopup]").first().click();
   await expect(page.getByRole("dialog")).toContainText("n. 1375");
 });
 

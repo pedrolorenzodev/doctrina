@@ -2,7 +2,7 @@ import { Fragment, type ReactNode } from "react";
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { PageLink } from "@/components/ui/page-link";
 import { parseInline, type InlineNode } from "@/lib/inline-refs";
-import { bracketGlue, closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
+import { closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
 
 type RichTextProps = {
   text: string;
@@ -79,19 +79,15 @@ export function RichText({ text, verse }: RichTextProps) {
         out.push(
           <Fragment key={`group-${index}`}>
             {" "}
-            {members.map((member, position) => {
-              const last = position === members.length - 1;
-              return (
-                <Fragment key={position}>
-                  {position > 0 ? " " : null}
-                  <span className={bracketGlue(member.kind === "citation" ? member.label : verse(member.osis).label)}>
-                    {position === 0 ? openParenthesis : null}
-                    {reference(member, String(position))}
-                    {last ? `${closeParenthesis}${trailing}` : referenceSeparator}
-                  </span>
-                </Fragment>
-              );
-            })}
+            {openParenthesis}
+            {members.map((member, position) => (
+              <Fragment key={position}>
+                {position > 0 ? `${referenceSeparator} ` : null}
+                {reference(member, String(position))}
+              </Fragment>
+            ))}
+            {closeParenthesis}
+            {trailing}
           </Fragment>,
         );
         index = cursor;

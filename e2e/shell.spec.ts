@@ -32,7 +32,7 @@ test("English has the sidebar and the menu button, with English labels", async (
 
 test("the language switch keeps the page it is on", async ({ page }) => {
   await page.goto("/es");
-  await expect(page.getByRole("link", { name: "EN" })).toHaveAttribute("href", "/en");
+  await expect(page.getByRole("link", { name: "EN", exact: true })).toHaveAttribute("href", "/en");
 });
 
 for (const width of [360, 390, 768, 1024, 1440]) {

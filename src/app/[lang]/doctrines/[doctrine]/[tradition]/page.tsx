@@ -64,7 +64,13 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
           items={traditionIds.map((id) => ({ id, label: traditionName(locale, id) }))}
           current={tradition}
         />
-        <PageHeader id="top" className="mt-5.5 sm:mt-7.5" title={page.title} lede={page.lede} />
+        <PageHeader
+          id="top"
+          className="mt-5.5 sm:mt-7.5"
+          title={page.title}
+          lede={page.lede}
+          emphasis={doctrineTitle(locale, doctrine)}
+        />
         <TeachSection page={page} locale={locale} />
         <WhySection page={page} locale={locale} />
         <ScriptureSection page={page} locale={locale} />
@@ -82,7 +88,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
             { id: "objections", label: text.doctrine.objections },
             { id: "life", label: text.doctrine.life },
             { id: "authority", label: text.doctrine.authority },
-            { id: "videos", label: text.doctrine.videos },
+            ...(page.videos.items.length > 0 ? [{ id: "videos", label: text.doctrine.videos }] : []),
           ]}
         />
       </PageMain>
