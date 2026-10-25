@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { horizontalOverflow, traditionPath } from "./helpers";
+import { horizontalOverflow, landingTop, traditionPath } from "./helpers";
 
 const normalize = (text: string | null) => (text ?? "").replace(/[ ⁠]/g, " ").replace(/\s+/g, " ").trim();
 
@@ -130,9 +130,21 @@ test("the ruler lists the why section", async ({ page }) => {
   await expect(page.locator("nav[aria-label] a, nav[aria-label] button").filter({ hasText: /Por qué/ })).toHaveCount(1);
 });
 
-test("the note's section link is pressable and does nothing yet", async ({ page }) => {
+test("the note's section link leads to 02's early Christians section and lands under the top bar", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
+  const link = page.locator("#why p.text-note a", { hasText: "Lo que escribieron los primeros cristianos" });
+  await expect(link).toHaveCSS("text-decoration-line", "underline");
+  await link.click();
+  await expect(page).toHaveURL("/es/doctrinas/eucaristia#witnesses");
+  const top = await landingTop(page);
+  await expect
+    .poll(async () => Math.abs((await page.locator("#witnesses").boundingBox())!.y - top), { timeout: 5000 })
+    .toBeLessThanOrEqual(1);
+});
+
+test("on a doctrine with no 02 page the note's link is built and inert", async ({ page }) => {
+  await page.goto("/es/doctrinas/bautismo/catolica");
   const url = page.url();
   const link = page.locator("#why p.text-note button", { hasText: "Lo que escribieron los primeros cristianos" });
   await expect(link).toHaveCSS("text-decoration-line", "underline");

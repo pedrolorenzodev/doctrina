@@ -173,6 +173,7 @@ export const en: UiText = {
     writingsMany: "{n} writings",
     workDate: "Date",
     language: "Language",
+    workKind: "Type",
     whatIs: "What it is",
     bishopOf: "{title} of",
     languages: { greek: "Greek", latin: "Latin", syriac: "Syriac" },

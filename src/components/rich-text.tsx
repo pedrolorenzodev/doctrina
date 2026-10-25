@@ -7,6 +7,7 @@ import { closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/pun
 type RichTextProps = {
   text: string;
   verse: (segments: string[]) => { id: string; label: string };
+  section?: (id: string) => string | undefined;
 };
 
 type ReferenceNode = Extract<InlineNode, { kind: "citation" | "verse" }>;
@@ -18,7 +19,7 @@ function isReference(node: InlineNode | undefined): node is ReferenceNode {
   return node?.kind === "citation" || node?.kind === "verse";
 }
 
-export function RichText({ text, verse }: RichTextProps) {
+export function RichText({ text, verse, section }: RichTextProps) {
   const nodes = parseInline(text);
   const out: ReactNode[] = [];
 
@@ -97,8 +98,12 @@ export function RichText({ text, verse }: RichTextProps) {
     } else if (isReference(node)) {
       out.push(reference(node, String(index)));
     } else if (node.kind === "section") {
-      // TODO: section tokens must link to their page and section (#node.id) once those pages exist
-      out.push(<PageLink key={index}>{node.label}</PageLink>);
+      const href = section?.(node.id);
+      out.push(
+        <PageLink key={index} {...(href ? { href } : {})}>
+          {node.label}
+        </PageLink>,
+      );
     } else {
       // TODO: glossary tokens need the glossary window
       out.push(<Fragment key={index}>{node.label ?? ""}</Fragment>);

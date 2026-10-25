@@ -3,8 +3,10 @@ import { RevealList } from "@/components/reveal-list";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 import { formatDate } from "@/content/format-date";
+import { getPublishedDoctrines } from "@/content/get-doctrine-page";
 import type { Father, TraditionPage } from "@/content/model/page";
 import { verseLink } from "@/content/page-views";
+import { doctrineHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@/lib/locale";
 import { closeParenthesis, openParenthesis } from "@/lib/punctuation";
@@ -18,6 +20,10 @@ export function WhySection({ page, locale }: WhySectionProps) {
   const text = getUiText(locale);
   const verse = (segments: string[]) => verseLink(segments, locale);
   const { intro, fathers, note, closing } = page.why;
+  const earlyWitnesses = getPublishedDoctrines(locale).includes(page.doctrine)
+    ? `${doctrineHref(locale, page.doctrine)}#witnesses`
+    : undefined;
+  const section = (id: string) => (id === "early-witnesses" ? earlyWitnesses : undefined);
 
   const figure = (father: Father, index: number) => (
     <figure key={index} className="figure-row m-0">
@@ -70,7 +76,7 @@ export function WhySection({ page, locale }: WhySectionProps) {
           <RichText text={closing} verse={verse} />
         </p>
         <p className="text-note text-ink-3 quiet-links">
-          <RichText text={note} verse={verse} />
+          <RichText text={note} verse={verse} section={section} />
         </p>
       </div>
     </Section>

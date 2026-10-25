@@ -178,6 +178,7 @@ export const es = {
     writingsMany: "{n} escritos",
     workDate: "Fecha",
     language: "Lengua",
+    workKind: "Tipo",
     whatIs: "Qué es",
     bishopOf: "{title} de",
     languages: { greek: "griego", latin: "latín", syriac: "siríaco" },

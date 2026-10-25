@@ -53,6 +53,17 @@ test("an anonymous work has a date, what it is and its language, and no birth or
     ["Lengua", "griego"],
   ]);
   await expect(page.locator("#who h2")).toHaveText("Qué es");
+  const table = await page
+    .locator("#who dl > div")
+    .evaluateAll((items) =>
+      items.map((item) => [item.querySelector("dt")!.textContent, item.querySelector("dd")!.textContent]),
+    );
+  expect(table).toEqual([
+    ["Región", "Siria"],
+    ["Lengua", "Griego"],
+    ["Tipo", "Manual eclesial anónimo"],
+    ["Fecha", "c. 50–120"],
+  ]);
   await expect(page.locator("main")).not.toContainText("Nació");
 });
 

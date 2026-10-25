@@ -67,7 +67,7 @@ export function buildFatherView(father: Father, locale: Locale, text: UiText): F
     profileFacts: [
       { label: labels.facts.region, value: father.region[locale] },
       { label: labels.language, value: language },
-      { label: father.kind === "work" ? labels.whatIs : labels.facts.role, value: capitalize(role) },
+      { label: father.kind === "work" ? labels.workKind : labels.facts.role, value: capitalize(role) },
       father.kind === "work" ? { label: labels.workDate, value: dated } : { label: labels.facts.died, value: died },
     ],
     writings: writings.map(({ id, title, dateLabel }) => ({ id, title, dateLabel })),
