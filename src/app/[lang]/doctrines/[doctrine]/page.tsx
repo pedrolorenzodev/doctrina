@@ -8,6 +8,7 @@ import { PageMain } from "@/components/page-main";
 import { PageLink } from "@/components/ui/page-link";
 import { formatYear } from "@/content/format-date";
 import { getDoctrinePage, getPublishedDoctrines } from "@/content/get-doctrine-page";
+import { getConnected } from "@/content/get-connected";
 import { getDoctrineViews } from "@/content/get-doctrine-views";
 import { getPublishedPages } from "@/content/get-tradition-page";
 import { doctrineIds, type DoctrineId } from "@/content/model/ids";
@@ -17,8 +18,11 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessViewId } from "@/content/witness-view";
 import { AnswersSection } from "@/features/doctrine/answers-section";
 import { CommonSection } from "@/features/doctrine/common-section";
+import { ConnectedSection } from "@/features/doctrine/connected-section";
 import { DoctrineFingerprint } from "@/features/doctrine/doctrine-fingerprint";
 import { LinkLegend } from "@/features/doctrine/link-legend";
+import { PracticeSection } from "@/features/doctrine/practice-section";
+import { WitnessesSection } from "@/features/doctrine/witnesses-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 
@@ -56,6 +60,11 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
       mark.yearEnd ? labels.fingerprint.circa.replace("{from}", `${mark.year}–${mark.yearEnd}`) : formatYear(mark)
     }`,
   }));
+  const connectedShown = getConnected(page, locale).items.length > 0;
+  const targets = marks.map((mark) => {
+    const witness = page.witnesses.items.find((item) => item.date.year === mark.year);
+    return witness ? `w-${witness.id}` : null;
+  });
   const example = getPublishedPages(locale).find((published) => published.doctrine === doctrine);
   const exampleTradition = example?.tradition ?? page.answers.items[0]?.tradition;
   const exampleLabel = labels.legend.page.replace(
@@ -72,7 +81,7 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
         />
         <PageHeader id="top" className="mt-5" title={doctrineName(locale, doctrine)} lede={page.lede} />
         <div className="title-part title-part-3 max-w-col">
-          {/* TODO: a click on a mark scrolls to the witness of that date, or opens the doctrine's history */}
+          {/* TODO: a mark with no witness opens the doctrine's history once that page exists */}
           <DoctrineFingerprint
             items={items}
             summary={labels.fingerprint.summary
@@ -81,6 +90,7 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
               .replace("{from}", String(first?.year ?? ""))
               .replace("{to}", String(last?.year ?? ""))}
             axis={labels.fingerprint.axis}
+            targets={targets}
           />
         </div>
         <p className="title-part title-part-4 mt-2 max-w-col text-label text-ink-3">{labels.fingerprint.caption}</p>
@@ -105,12 +115,18 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
         </div>
         <CommonSection id="common" page={page} locale={locale} />
         <AnswersSection id="answers" page={page} locale={locale} />
+        <WitnessesSection id="witnesses" page={page} locale={locale} />
+        <PracticeSection id="practice" page={page} locale={locale} />
+        <ConnectedSection id="connected" page={page} locale={locale} />
         <EdgeRuler
           label={text.shell.sections}
           sections={[
             { id: "top", label: doctrineName(locale, doctrine) },
             { id: "common", label: labels.common },
             { id: "answers", label: labels.answers },
+            { id: "witnesses", label: labels.witnesses.short },
+            { id: "practice", label: labels.practice.title },
+            ...(connectedShown ? [{ id: "connected", label: labels.connected.title }] : []),
           ]}
         />
       </PageMain>

@@ -381,7 +381,7 @@ test("the ruler has a tick for the title and each section, and the second one sc
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await page.waitForTimeout(1500);
-  await expect(page.locator("[data-tick]")).toHaveCount(3);
+  await expect(page.locator("[data-tick]")).toHaveCount(6);
   await page.locator("[data-tick]").nth(1).click();
   await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(0);
 });

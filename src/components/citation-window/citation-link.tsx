@@ -6,7 +6,7 @@ import { InPlaceLink } from "@/components/ui/in-place-link";
 
 type CitationLinkProps = {
   id: string;
-  kind?: "citation" | "term";
+  kind?: "citation" | "term" | "source";
   children: ReactNode;
 };
 

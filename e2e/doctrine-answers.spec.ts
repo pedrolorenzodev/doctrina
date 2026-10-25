@@ -342,7 +342,7 @@ test("the ruler has a tick for the title and each of the two sections", async ({
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await page.waitForTimeout(1500);
-  await expect(page.locator("[data-tick]")).toHaveCount(3);
+  await expect(page.locator("[data-tick]")).toHaveCount(6);
 });
 
 for (const width of [360, 390, 768, 1024, 1440]) {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
+import { showItem } from "@/lib/show-item";
 
 type FingerprintItem = {
   year: number;
@@ -12,7 +13,7 @@ type DoctrineFingerprintProps = {
   items: FingerprintItem[];
   summary: string;
   axis: string[];
-  onPick?: (index: number) => void;
+  targets?: (string | null)[];
 };
 
 const firstYear = 1;
@@ -28,7 +29,7 @@ const drawDurationMs = 300;
 
 const percent = (year: number) => ((year - firstYear) / (lastYear - firstYear)) * 100;
 
-export function DoctrineFingerprint({ items, summary, axis, onPick }: DoctrineFingerprintProps) {
+export function DoctrineFingerprint({ items, summary, axis, targets }: DoctrineFingerprintProps) {
   const strip = useRef<HTMLDivElement>(null);
   const downX = useRef<number | null>(null);
   const releaseTimer = useRef<number | undefined>(undefined);
@@ -79,8 +80,9 @@ export function DoctrineFingerprint({ items, summary, axis, onPick }: DoctrineFi
       releaseTimer.current = window.setTimeout(() => setHovered(null), touchHoldMs);
       return;
     }
-    if (downX.current !== null && Math.abs(event.clientX - downX.current) < clickSlopPx && onPick) {
-      onPick(nearest(event.clientX));
+    if (downX.current !== null && Math.abs(event.clientX - downX.current) < clickSlopPx) {
+      const target = targets?.[nearest(event.clientX)];
+      if (target) showItem(target);
     }
     downX.current = null;
   }

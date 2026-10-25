@@ -119,6 +119,23 @@ export const es = {
     showObjections: "Ver las objeciones que recibe",
     hideObjections: "Ocultar las objeciones",
     study: "Estudiar la postura {tradition}",
+    witnesses: {
+      title: "Lo que escribieron los primeros cristianos",
+      short: "Primeros cristianos",
+      ruler: "Regla del tiempo de los testigos",
+      statusAll: "{n} testigos. Arrastra sobre la regla para elegir años.",
+      statusFiltered: "{shown} de {n} testigos, años {from} a {to}",
+      reset: "Mostrar todos",
+      empty: "Ningún testigo de estos años en esta doctrina.",
+      handleStart: "Inicio del rango, año {year}",
+      handleEnd: "Fin del rango, año {year}",
+    },
+    practice: {
+      title: "La práctica",
+      aspect: "Aspecto",
+      caption: "La práctica en las cinco tradiciones",
+    },
+    connected: { title: "Doctrinas conectadas" },
     fingerprint: {
       label: "Textos y hechos que esta página cita, por fecha",
       summary: "{label}: {count}, del año {from} al {to}",

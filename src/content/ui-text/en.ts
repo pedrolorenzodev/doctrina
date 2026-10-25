@@ -121,6 +121,23 @@ export const en: UiText = {
     showObjections: "See the objections it receives",
     hideObjections: "Hide the objections",
     study: "Study the {tradition} position",
+    witnesses: {
+      title: "What the first Christians wrote",
+      short: "First Christians",
+      ruler: "Time ruler of the witnesses",
+      statusAll: "{n} witnesses. Drag across the ruler to choose years.",
+      statusFiltered: "{shown} of {n} witnesses, years {from} to {to}",
+      reset: "Show all",
+      empty: "No witness from these years on this doctrine.",
+      handleStart: "Start of the range, year {year}",
+      handleEnd: "End of the range, year {year}",
+    },
+    practice: {
+      title: "Practice",
+      aspect: "Aspect",
+      caption: "Practice in the five traditions",
+    },
+    connected: { title: "Connected doctrines" },
     fingerprint: {
       label: "Texts and facts this page cites, by date",
       summary: "{label}: {count}, from the year {from} to {to}",

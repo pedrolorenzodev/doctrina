@@ -68,7 +68,7 @@ export function scrollToY(target: number, onDone?: () => void) {
   frame = requestAnimationFrame(step);
 }
 
-export function scrollToLayoutPosition(element: HTMLElement, instant = false) {
+export function layoutTop(element: HTMLElement): number {
   let top = 0;
   for (
     let node: HTMLElement | null = element;
@@ -77,7 +77,11 @@ export function scrollToLayoutPosition(element: HTMLElement, instant = false) {
   ) {
     top += node.offsetTop;
   }
-  const target = top - scrollOffset();
+  return top;
+}
+
+export function scrollToLayoutPosition(element: HTMLElement, instant = false) {
+  const target = layoutTop(element) - scrollOffset();
   if (!instant) {
     scrollToY(target);
     return;
