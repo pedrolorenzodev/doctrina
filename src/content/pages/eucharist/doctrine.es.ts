@@ -170,6 +170,11 @@ export const eucharistDoctrine = {
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 7 (Roberts y Donaldson), 1885.",
         note: "La fecha se discute: las propuestas van de mediados del siglo I a comienzos del II.",
+        anonymous: true,
+        authorLine:
+          "Breve manual anónimo de enseñanza moral, bautismo, ayuno, oración y Eucaristía, probablemente compilado en Siria o Palestina.",
+        paragraph:
+          "Cada día del Señor reuníos, partid el pan y dad gracias, después de haber confesado vuestras transgresiones, para que vuestro sacrificio sea puro. Pero que nadie que tenga una disputa con su compañero se junte con vosotros hasta que se hayan reconciliado, para que vuestro sacrificio no sea profanado. Porque esto es lo que dijo el Señor: En todo lugar y tiempo ofrecedme un sacrificio puro; porque yo soy un gran Rey, dice el Señor, y mi nombre es admirable entre las naciones.",
       },
       {
         id: "ew-flesh",
@@ -181,6 +186,9 @@ export const eucharistDoctrine = {
           "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.",
         edition:
           "Traducción al español de Doctrina, hecha desde el texto griego de la edición de Lake (First1KGreek) y cotejada con la traducción inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885.",
+        authorLine: "Obispo de Antioquía que, según la tradición, fue llevado preso a Roma y martirizado bajo Trajano.",
+        paragraph:
+          "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó. Por eso, quienes hablan contra este don de Dios incurren en la muerte en medio de sus disputas. Mejor les sería tratarlo con respeto, para que también ellos resucitaran. Conviene, pues, que os mantengáis apartados de tales personas y que no se hable de ellos ni en privado ni en público, sino que prestéis atención a los profetas, y sobre todo al Evangelio, en el cual se nos ha revelado la pasión de Cristo y se ha probado plenamente la resurrección. Evitad todas las divisiones, como principio de males.",
       },
       {
         id: "ew-not-common-bread",
@@ -192,6 +200,10 @@ export const eucharistDoctrine = {
           "Porque no tomamos estas cosas como pan común ni bebida común; sino que, así como Jesucristo nuestro Salvador, hecho carne por la Palabra de Dios, tuvo carne y sangre para nuestra salvación, así también se nos ha enseñado que el alimento sobre el que se ha dado gracias por la oración de su palabra, y del cual nuestra sangre y nuestra carne se nutren por transformación, es la carne y la sangre de aquel Jesús que se hizo carne.",
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885.",
+        authorLine:
+          "Filósofo nacido en Flavia Neápolis (Samaria) que, tras su conversión, enseñó en Roma y defendió la fe ante emperadores y ante interlocutores judíos.",
+        paragraph:
+          "Y este alimento se llama entre nosotros Eucaristía, de la cual a nadie le es lícito participar sino al que cree que son verdaderas las cosas que enseñamos, y ha sido lavado con el baño para el perdón de los pecados y para la regeneración, y vive como Cristo ordenó. Porque no tomamos estas cosas como pan común ni bebida común; sino que, así como Jesucristo nuestro Salvador, hecho carne por la Palabra de Dios, tuvo carne y sangre para nuestra salvación, así también se nos ha enseñado que el alimento sobre el que se ha dado gracias por la oración de su palabra, y del cual nuestra sangre y nuestra carne se nutren por transformación, es la carne y la sangre de aquel Jesús que se hizo carne. Pues los apóstoles, en las memorias que compusieron, que se llaman Evangelios, nos transmitieron que así se les mandó: que Jesús tomó pan y, después de dar gracias, dijo: Haced esto en memoria de mí, esto es mi cuerpo; y que de la misma manera, tomando la copa y dando gracias, dijo: Esta es mi sangre; y se la dio a ellos solos.",
       },
       {
         id: "ew-malachi-offering",
@@ -203,6 +215,8 @@ export const eucharistDoctrine = {
           "Habla, pues, de aquellos gentiles, es decir, de nosotros, que en todo lugar le ofrecemos sacrificios, esto es, el pan de la Eucaristía y también la copa de la Eucaristía, afirmando que nosotros glorificamos su nombre y que vosotros lo profanáis.",
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885.",
+        authorLine:
+          "Filósofo nacido en Flavia Neápolis (Samaria) que, tras su conversión, enseñó en Roma y defendió la fe ante emperadores y ante interlocutores judíos.",
       },
       {
         id: "ew-two-realities",
@@ -214,6 +228,10 @@ export const eucharistDoctrine = {
           "Porque así como el pan, que proviene de la tierra, al recibir la invocación de Dios ya no es pan común, sino Eucaristía, compuesta de dos realidades, terrena y celestial, así también nuestros cuerpos, al recibir la Eucaristía, ya no son corruptibles, pues tienen la esperanza de la resurrección para siempre.",
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 1 (Roberts y Rambaut), 1885.",
+        authorLine:
+          "Originario de Asia Menor, donde de joven escuchó a Policarpo, fue presbítero y luego obispo de Lyon tras la persecución de 177.",
+        paragraph:
+          "Entonces, ¿cómo pueden decir que la carne, que se nutre con el cuerpo del Señor y con su sangre, va a la corrupción y no participa de la vida? Que cambien, pues, de opinión, o dejen de ofrecer las cosas mencionadas. Pero nuestra opinión concuerda con la Eucaristía, y la Eucaristía, a su vez, confirma nuestra opinión. Porque le ofrecemos lo que es suyo, proclamando de manera coherente la comunión y la unión de la carne y el Espíritu. Porque así como el pan, que proviene de la tierra, al recibir la invocación de Dios ya no es pan común, sino Eucaristía, compuesta de dos realidades, terrena y celestial, así también nuestros cuerpos, al recibir la Eucaristía, ya no son corruptibles, pues tienen la esperanza de la resurrección para siempre.",
       },
       {
         id: "ew-figure",
@@ -225,6 +243,7 @@ export const eucharistDoctrine = {
           "Luego, tomando el pan y dándolo a sus discípulos, lo hizo su propio cuerpo diciendo: “Esto es mi cuerpo”, es decir, la figura de mi cuerpo. Pero no habría podido haber figura si antes no hubiera habido un cuerpo verdadero.",
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 3 (Holmes), 1885.",
+        authorLine: "Teólogo y apologista de Cartago, primer gran autor cristiano en latín.",
       },
       {
         id: "ew-epiclesis-change",
@@ -237,6 +256,7 @@ export const eucharistDoctrine = {
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF2 vol. 7 (Gifford), 1890.",
         note: "La autoría se discute: Cirilo de Jerusalén o su sucesor, Juan II.",
+        authorLine: "Obispo de Jerusalén desde c. 350, desterrado varias veces en las disputas arrianas.",
       },
       {
         id: "ew-word-changes-nature",
@@ -248,6 +268,7 @@ export const eucharistDoctrine = {
           "Si la palabra de Elías tuvo poder para hacer bajar fuego del cielo, ¿no tendrá la palabra de Cristo poder para cambiar la naturaleza de los elementos? [...] La palabra de Cristo, que pudo hacer de la nada lo que no existía, ¿no podrá cambiar las cosas que ya existen en lo que no eran?",
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF2 vol. 10 (de Romestin), 1890.",
+        authorLine: "Gobernador romano elegido obispo de Milán por aclamación en 374, cuando aún era catecúmeno.",
       },
       {
         id: "ew-augustine-figure",
@@ -260,6 +281,7 @@ export const eucharistDoctrine = {
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF1 vol. 2 (Shaw), 1890.",
         note: "Libros I a III.",
+        authorLine: "Retórico nacido en Tagaste, convertido en Milán en 386 y obispo de Hipona desde 395 o 396.",
       },
       {
         id: "ew-one-sacrifice-remembrance",
@@ -272,6 +294,7 @@ export const eucharistDoctrine = {
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF1 vol. 14 (Gardiner), 1890.",
         note: "Publicadas después de su muerte.",
+        authorLine: "Predicador de Antioquía, apodado «Boca de Oro», elegido arzobispo de Constantinopla en 398.",
       },
       {
         id: "ew-symbols-remain",
@@ -283,6 +306,7 @@ export const eucharistDoctrine = {
           "Porque aun después de la consagración los símbolos místicos no quedan privados de su propia naturaleza; permanecen en su sustancia, figura y forma anteriores; son visibles y tangibles como antes. Pero se los considera como lo que han llegado a ser, se cree que lo son y se los adora como lo que se cree que son.",
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF2 vol. 3 (Jackson), 1890.",
+        authorLine: "Obispo de Ciro, exégeta e historiador de la tradición antioquena.",
       },
       {
         id: "ew-not-a-figure",
@@ -294,6 +318,8 @@ export const eucharistDoctrine = {
           "El pan y el vino no son meras figuras del cuerpo y la sangre de Cristo (¡Dios no lo permita!), sino el cuerpo mismo deificado del Señor; porque el Señor dijo: “Esto es mi cuerpo”, no “esto es figura de mi cuerpo”; y “mi sangre”, no “figura de mi sangre”.",
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF2 vol. 9 (Salmond), 1890.",
+        authorLine:
+          "Funcionario cristiano del califato omeya que se hizo monje en el monasterio de Mar Saba, cerca de Jerusalén.",
       },
     ],
   },

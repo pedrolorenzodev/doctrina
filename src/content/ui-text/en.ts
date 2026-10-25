@@ -26,6 +26,7 @@ export const en: UiText = {
       reference: "Reference",
       passages: "Passages",
       objections: "Objections",
+      earlyChristians: "What the first Christians wrote",
       timeline: "Timeline",
       fathers: "Fathers",
       councils: "Councils",
@@ -153,6 +154,15 @@ export const en: UiText = {
       page: "the {tradition} position",
       close: "Got it",
     },
+  },
+  earlyChristians: {
+    title: "What the first Christians wrote about {subject}",
+    lede: "The Christian texts up to c. 800 that deal with {subject}, in chronological order. Each one leads to the complete work.",
+    criterion: {
+      label: "How these texts are chosen",
+      body: "Every passage that any of the traditions cites is included, and every one that the usual academic literature on the subject cites. The list does not say what each text proves: each tradition says that on its own page.",
+    },
+    read: "Read {reference} in the complete work",
   },
   notFound: {
     title: "This page doesn't exist",

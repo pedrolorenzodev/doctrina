@@ -8,6 +8,8 @@ import {
   objectionRoute,
   objectionsHref,
   objectionsRoute,
+  earlyChristiansHref,
+  earlyChristiansRoute,
   traditionHref,
   traditionRoute,
 } from "@/content/routes";
@@ -96,6 +98,7 @@ export type TreeText = {
     | "reference"
     | "passages"
     | "objections"
+    | "earlyChristians"
     | "timeline"
     | "fathers"
     | "councils"
@@ -140,10 +143,13 @@ export function buildSiteTree(
   sourceTitles: string[],
 ): TreeGroup[] {
   const doctrineNodes = doctrineIds.map((doctrine) => ({
-    ...branch(
-      doctrine,
-      doctrineNames[locale][doctrine],
-      traditionIds.map((tradition) => {
+    ...branch(doctrine, doctrineNames[locale][doctrine], [
+      {
+        ...leaf(`${doctrine}/early-christians`, text.tree.earlyChristians),
+        href: publishedDoctrines.includes(doctrine) ? earlyChristiansHref(locale, doctrine) : null,
+        route: publishedDoctrines.includes(doctrine) ? earlyChristiansRoute(locale, doctrine) : null,
+      },
+      ...traditionIds.map((tradition) => {
         const page = published.find(
           (candidate) => candidate.doctrine === doctrine && candidate.tradition === tradition,
         );
@@ -172,7 +178,7 @@ export function buildSiteTree(
           children,
         };
       }),
-    ),
+    ]),
     href: publishedDoctrines.includes(doctrine) ? doctrineHref(locale, doctrine) : null,
     route: publishedDoctrines.includes(doctrine) ? doctrineRoute(locale, doctrine) : null,
   }));

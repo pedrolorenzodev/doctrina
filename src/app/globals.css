@@ -135,6 +135,8 @@
   --text-video--line-height: 1.45;
   --leading-label: 1.2;
   --text-defn-source: 14.5px;
+  --text-date-note: 12.5px;
+  --text-date-note--line-height: 1.45;
   --text-note: 14.5px;
   --text-note--line-height: 1.6;
   --text-label: 12.5px;
@@ -162,6 +164,7 @@
   --container-col: 720px;
   --container-wide: 1040px;
   --container-synthesis: 680px;
+  --container-entries: 870px;
   --container-drawer: min(320px, 86vw);
 
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -625,6 +628,16 @@
 
   @media (min-width: 40rem) {
     grid-template-columns: 110px minmax(0, 1fr);
+  }
+}
+
+@utility entry-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px 40px;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: 150px minmax(0, 1fr);
   }
 }
 

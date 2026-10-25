@@ -108,6 +108,7 @@ test("opening animates the height and the margin from the closed state and the r
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await page.locator("#answers").scrollIntoViewIfNeeded();
+  await page.locator(toggle("catholic")).hover();
   const frames = sample(page, box("catholic"), 900);
   await page.locator(toggle("catholic")).click();
   const recorded = await frames;

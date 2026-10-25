@@ -80,6 +80,11 @@ const doctrineMutations = [
   ],
   ["witnesses out of date order", (r, p) => (p.witnesses.items[2].date = { year: 1 }), "out of date order"],
   ["duplicate witness id", (r, p) => (p.witnesses.items[1].id = p.witnesses.items[0].id), "duplicate id"],
+  [
+    "a quote that is not in its paragraph",
+    (r, p) => (p.witnesses.items[1].paragraph = "Otro texto."),
+    "the quote is not inside its paragraph",
+  ],
   ["a practice cell missing", (r, p) => delete p.practice.aspects[0].cells.baptist, "no cell for baptist"],
   [
     "a practice cell for a tradition without answer",

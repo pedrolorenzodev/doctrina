@@ -31,6 +31,9 @@ export type Witness = {
   quote: string;
   edition: string;
   note?: string;
+  anonymous?: true;
+  authorLine?: string;
+  paragraph?: string;
 };
 
 export type PracticeCell<C extends string = string> = {

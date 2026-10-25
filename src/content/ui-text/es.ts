@@ -24,6 +24,7 @@ export const es = {
       reference: "Consulta",
       passages: "Pasajes",
       objections: "Objeciones",
+      earlyChristians: "Lo que escribieron los primeros cristianos",
       timeline: "Línea de tiempo",
       fathers: "Padres",
       councils: "Concilios",
@@ -151,6 +152,15 @@ export const es = {
       page: "la postura {tradition}",
       close: "Entendido",
     },
+  },
+  earlyChristians: {
+    title: "Lo que escribieron los primeros cristianos sobre {subject}",
+    lede: "Los textos cristianos hasta c. 800 que tratan de {subject}, en orden cronológico. Cada uno lleva a la obra completa.",
+    criterion: {
+      label: "Cómo se eligen estos textos",
+      body: "Entra cada pasaje que cita alguna de las tradiciones y cada uno que cita la bibliografía académica habitual sobre el tema. La lista no dice qué prueba cada texto: eso lo dice cada tradición en su propia página.",
+    },
+    read: "Leer {reference} en la obra completa",
   },
   notFound: {
     title: "Esta página no existe",

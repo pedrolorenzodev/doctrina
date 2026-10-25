@@ -2,6 +2,7 @@ import type { DoctrinePage } from "@/content/model/doctrine-page";
 import type { TraditionPage } from "@/content/model/page";
 import type { Registry } from "@/content/model/registry";
 import { missingVerses, reviewVocabulary, sectionIds, walkStrings } from "@/content/validate";
+import { highlightParagraph } from "@/content/witness-paragraph";
 import { InlineSyntaxError, parseInline, referencesIn } from "@/lib/inline-refs";
 
 export function validateDoctrinePages(
@@ -68,6 +69,8 @@ export function validateDoctrinePages(
       const previous = page.witnesses.items[index - 1];
       if (previous && witness.date.year < previous.date.year) fail(where, "out of date order");
       if (witness.quote.trim() === "") fail(where, "empty quote");
+      if (witness.paragraph !== undefined && !highlightParagraph(witness.paragraph, witness.quote))
+        fail(where, "the quote is not inside its paragraph");
     });
 
     const aspectIds = new Set<string>();
