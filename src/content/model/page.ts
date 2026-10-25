@@ -14,6 +14,7 @@ export type SourceRef<C extends string = string> = {
 
 export type Statement<C extends string = string> = {
   id: string;
+  short: string;
   text: Rich;
   aside?: Rich;
   grades: GradeLine[];
@@ -96,5 +97,9 @@ export type TraditionPage<C extends string = string> = {
   scripture: ScripturePassage[];
   objections: { subtitle: string; order: string[]; silentTraditions?: Rich; items: Objection<C>[] };
   life: { intro: Rich[]; items: LifeItem<C>[] };
-  authority: { grades: Record<ChurchGrade, GradeDefinition<C>>; other: Record<string, GradeDefinition<C>> };
+  authority: {
+    subtitle: string;
+    grades: Record<ChurchGrade, GradeDefinition<C>>;
+    other: Record<string, GradeDefinition<C>>;
+  };
 };

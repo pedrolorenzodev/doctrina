@@ -79,6 +79,12 @@
   --text-synthesis--line-height: 1.55;
   --text-life-label: 14px;
   --text-life-label--line-height: 1.45;
+  --text-grade: 20px;
+  --text-grade--line-height: 1.35;
+  --text-grade-mobile: 19px;
+  --text-grade-mobile--line-height: 1.35;
+  --text-example: 13.5px;
+  --text-example--line-height: 1.7;
   --text-note: 14.5px;
   --text-note--line-height: 1.6;
   --text-label: 12.5px;
@@ -473,6 +479,20 @@
 @utility paragraph-gap {
   & + & {
     margin-top: 0.55em;
+  }
+}
+
+@utility link-example {
+  color: var(--color-ink-2);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-rule-2);
+  transition: text-decoration-color 150ms var(--ease-standard);
+
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: currentColor;
   }
 }
 

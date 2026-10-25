@@ -7,14 +7,12 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { SourceLinks } from "@/features/doctrine/source-links";
 import type { Locale } from "@/lib/locale";
-import { finalStop } from "@/lib/punctuation";
+import { finalStop, withoutFinalStop } from "@/lib/punctuation";
 
 type LifeSectionProps = {
   page: TraditionPage;
   locale: Locale;
 };
-
-const withoutFinalStop = (text: string) => text.replace(/\.(»?)\s*$/, "$1");
 
 export function LifeSection({ page, locale }: LifeSectionProps) {
   const text = getUiText(locale);

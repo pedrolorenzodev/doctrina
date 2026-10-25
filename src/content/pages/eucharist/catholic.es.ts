@@ -37,6 +37,7 @@ export const eucharistCatholic = {
     statements: [
       {
         id: "QE-1",
+        short: "la presencia real",
         text: "En la Eucaristía, después de la consagración, está contenido verdadera, real y sustancialmente Cristo entero: su cuerpo y su sangre, con su alma y su divinidad. No está solo como en un signo o una figura. La Iglesia la llama presencia «real» por excelencia, no porque las otras presencias de Cristo (en su Palabra, en la oración de la Iglesia, en los sacramentos) no sean reales.",
         grades: [
           {
@@ -66,6 +67,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-2",
+        short: "la transubstanciación",
         text: "Por la consagración, toda la sustancia del pan se convierte en la sustancia del cuerpo de Cristo y toda la sustancia del vino en la de su sangre; del pan y del vino quedan solo las especies (lo que se ve, se toca y se gusta). La Iglesia llama a este cambio «transubstanciación».",
         grades: [
           {
@@ -99,6 +101,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-3",
+        short: "el sacrificio de la Misa",
         text: "La Misa es un sacrificio verdadero y propio: sacrificio de acción de gracias y de alabanza al Padre, y memorial de la Pascua de Cristo. No es otro sacrificio distinto del de la cruz: la víctima y el que ofrece son los mismos, Cristo, y solo cambia el modo de ofrecerse, que ahora es incruento. Por eso la Iglesia enseña que es también propiciatorio y que puede ofrecerse por vivos y difuntos.",
         grades: [
           {
@@ -136,6 +139,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-4",
+        short: "Cristo entero en cada especie",
         text: "Bajo la especie del pan y bajo la del vino está Cristo entero, y también en cada parte de cada una: partir la hostia no divide a Cristo. Por eso quien comulga solo con el pan recibe a Cristo entero.",
         grades: [
           {
@@ -162,6 +166,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-5",
+        short: "la adoración",
         text: "Como Cristo mismo está presente, a la Eucaristía se le da el culto de adoración que se debe solo a Dios. Por eso se la guarda en el sagrario, se la lleva a los enfermos, se la expone para la adoración y se la lleva en procesión.",
         grades: [
           {
@@ -191,6 +196,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-6",
+        short: "el sacerdocio",
         text: "Para la Iglesia católica, con las palabras «haced esto en memoria de mí» {v:Luke.22.19}, Cristo hizo sacerdotes a los apóstoles y les mandó ofrecer su cuerpo y su sangre. Por eso solo un sacerdote válidamente ordenado, obispo o presbítero, puede consagrar la Eucaristía.",
         grades: [
           {
@@ -219,6 +225,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-7",
+        short: "la comunión bajo una especie",
         text: "Ningún mandato divino obliga a los fieles a comulgar con las dos especies, porque bajo cualquiera de ellas se recibe a Cristo entero. Comulgar solo con el pan es una ley de la Iglesia, que ella puede cambiar; hoy, en el rito latino, se permite también la comunión bajo las dos especies; en los ritos orientales católicos es la forma habitual (Catecismo 1390).",
         grades: [
           {
@@ -255,6 +262,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-8",
+        short: "los frutos de la comunión",
         text: "Comulgar une más a Cristo, perdona los pecados veniales y preserva de los graves. No está ordenada a perdonar los pecados mortales: para eso está la confesión. Quien tiene conciencia de pecado grave debe confesarse antes de comulgar, salvo que haya un motivo grave y no pueda confesarse; en ese caso debe hacer un acto de contrición perfecta, con el propósito de confesarse cuanto antes.",
         grades: [
           {
@@ -291,6 +299,7 @@ export const eucharistCatholic = {
       },
       {
         id: "QE-9",
+        short: "la Eucaristía hace la Iglesia",
         text: "Para la Iglesia católica, la Eucaristía es «fuente y cumbre de toda la vida cristiana» y «hace la Iglesia»: quienes la reciben se unen más a Cristo y, por eso, Cristo los une entre sí en un solo cuerpo (Catecismo 1396). Por la misma razón enseña que celebrarla «no puede ser el punto de partida de la comunión, que la presupone previamente» (Ecclesia de Eucharistia 35). Reconoce en las Iglesias ortodoxas verdaderos sacramentos, y sobre todo el sacerdocio y la Eucaristía; con las comunidades nacidas de la Reforma no admite la intercomunión. Distingue de la intercomunión el caso de una necesidad espiritual grave, en el que puede darse la comunión a otros cristianos que comparten la fe católica sobre este sacramento (Catecismo 1401; Ecclesia de Eucharistia 45).",
         grades: [
           {
@@ -1448,6 +1457,8 @@ export const eucharistCatholic = {
     ],
   },
   authority: {
+    subtitle:
+      "Qué significa, para la Iglesia católica, que una enseñanza sea dogma, doctrina definitiva, magisterio auténtico o disciplina.",
     grades: {
       dogma: {
         label: "Dogma",

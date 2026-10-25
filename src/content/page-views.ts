@@ -107,6 +107,7 @@ export function collectPageViews(
   }
   page.scripture.forEach((passage) => scan(passage.text));
   page.objections.items.forEach((objection) => scan(objection.synthesis));
+  Object.values(page.authority.grades).forEach((grade) => grade.source.citations.forEach((id) => citations.add(id)));
   page.life.intro.forEach(scan);
   for (const item of page.life.items) {
     scan(item.text);

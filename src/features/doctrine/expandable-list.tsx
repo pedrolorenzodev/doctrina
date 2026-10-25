@@ -4,7 +4,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { flushSync } from "react-dom";
 import { MoreButton } from "@/components/ui/more-button";
 import { flipList, revealList } from "@/lib/list-motion";
-import { scrollOffset, scrollToElement } from "@/lib/scroll";
+import { scrollOffset, scrollToElement, scrollToLayoutPosition } from "@/lib/scroll";
+import { showItemEvent } from "@/lib/show-item";
 
 type ExpandableItem = {
   id: string;
@@ -32,7 +33,44 @@ export function ExpandableList({
   const list = useRef<HTMLOListElement & HTMLUListElement>(null);
   const ghosts = useRef<HTMLDivElement>(null);
 
+  const expandedNow = useRef(false);
+
+  useEffect(() => {
+    expandedNow.current = expanded;
+  }, [expanded]);
+
   useEffect(() => (list.current ? revealList(list.current) : undefined), []);
+
+  const arrivalId = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!expanded || !arrivalId.current) return;
+    const element = document.getElementById(arrivalId.current);
+    arrivalId.current = null;
+    if (element) scrollToLayoutPosition(element, true);
+  }, [expanded]);
+
+  useEffect(() => {
+    function reveal(id: string) {
+      const index = items.findIndex((item) => item.id === id);
+      const element = document.getElementById(id);
+      if (index < 0 || !element) return;
+      if (index >= shown && !expandedNow.current) {
+        if (list.current && ghosts.current) {
+          flipList(list.current, ghosts.current, () => flushSync(() => setExpanded(true)));
+        } else setExpanded(true);
+        scrollToLayoutPosition(element);
+      } else scrollToElement(element);
+    }
+    const onShow = (event: Event) => reveal((event as CustomEvent<string>).detail);
+    window.addEventListener(showItemEvent, onShow);
+    const arrival = decodeURIComponent(location.hash.slice(1));
+    if (items.some((item, index) => item.id === arrival && index >= shown)) {
+      arrivalId.current = arrival;
+      setExpanded(true);
+    }
+    return () => window.removeEventListener(showItemEvent, onShow);
+  }, [items, shown]);
 
   function toggle() {
     const next = !expanded;

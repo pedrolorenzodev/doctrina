@@ -68,6 +68,25 @@ export function scrollToY(target: number, onDone?: () => void) {
   frame = requestAnimationFrame(step);
 }
 
+export function scrollToLayoutPosition(element: HTMLElement, instant = false) {
+  let top = 0;
+  for (
+    let node: HTMLElement | null = element;
+    node;
+    node = node.offsetParent instanceof HTMLElement ? node.offsetParent : null
+  ) {
+    top += node.offsetTop;
+  }
+  const target = top - scrollOffset();
+  if (!instant) {
+    scrollToY(target);
+    return;
+  }
+  const y = Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight, target));
+  scrollTo(0, y);
+  smooth?.scrollTo(y, { immediate: true, force: true });
+}
+
 export function scrollToElement(element: HTMLElement) {
   scrollToY(element.getBoundingClientRect().top + scrollY - scrollOffset());
 }
