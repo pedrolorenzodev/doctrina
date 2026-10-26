@@ -1,5 +1,6 @@
 import "server-only";
 import { buildFatherView } from "@/content/father-view";
+import { buildGeneralTimeline } from "@/content/get-general-timeline";
 import { formatDate } from "@/content/format-date";
 import { getPublishedFathers } from "@/content/get-fathers";
 import { getDoctrinePage, getPublishedDoctrines } from "@/content/get-doctrine-page";
@@ -125,5 +126,17 @@ export async function getSearchIndex(locale: Locale): Promise<SearchEntry[]> {
     quote: false,
     href: timelineHref(locale),
   };
-  return [...entries, ...witnessEntries, timelineEntry, ...fatherEntries];
+  const fathers = getPublishedFathers(locale);
+  const timelineItems = buildGeneralTimeline(fathers, locale, text)
+    .entries.filter((entry) => entry.section === "councils" || entry.section === "currents")
+    .map((entry): SearchEntry => ({
+      id: `timeline:${entry.id}`,
+      title: entry.name,
+      path: [text.shell.tree.history, text.generalTimeline.sections[entry.section]].join(pathSeparator),
+      date: entry.rowDate,
+      texts: [entry.text],
+      quote: false,
+      href: `${timelineHref(locale)}#${entry.id}`,
+    }));
+  return [...entries, ...witnessEntries, timelineEntry, ...timelineItems, ...fatherEntries];
 }
