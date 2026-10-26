@@ -178,4 +178,7 @@ The done files (absolute paths under `docs/research/`) are `neutral/fathers-veri
 - **Weekly cost, measured:** 72 → 74 % for seven blocks and their specs, no subagent; one full suite per block, run in the background and awaited with a Monitor.
 - **Specs for a motion that uses `clip-path`:** parse the computed value (three values, `calc()` with exponents) and measure the visible part, not the box.
 - **When Pedro says stop:** kill the suite and the server, freeze with `snapshot.py` and `split_block.py`, overwrite «Current state», write the handoff, and say exactly what was never run.
+- **A gap in the kit numbers breaks `apply.sh $(seq A B)` (2026-10-26):** block 117 was never made; the glob for it matched nothing, `set -e` stopped the script after 116, and the older snapshots of 107–116 stayed copied over the newer files (the build and CI failed). Hand Pedro the explicit list of existing folders (`ls ~/doctrina-commit-kit | grep -E '^[0-9]'`), never a range; if a partial apply happens, replay the later blocks' files in order into the working tree (a copy, no git) and typecheck before anything else.
+- **A ceiling is a landing, not a cliff (Pedro, 2026-10-26):** when the weekly reaches the number, finish the block in hand and write the state to the repo (ROADMAP, the feature doc's handoff, DECISIONS, lessons), then stop.
+- **macOS `sed -i` needs an empty suffix (`sed -i ''`), and `#` delimiters collide with regexes: edit files with a small python script instead.**
 
