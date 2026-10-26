@@ -12,6 +12,7 @@ import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { FatherStrip } from "@/features/reader/father-strip";
 import { FatherText } from "@/features/reader/father-text";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
+import { VerseArrival } from "@/features/reader/verse-arrival";
 import { currentLocale } from "@/lib/current-locale";
 
 export async function generateStaticParams() {
@@ -71,6 +72,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         edition={work.edition.bibliography}
         licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
       />
+      <VerseArrival />
       <NeighborLinks
         label={labels.neighborsLabel}
         className="mt-16"

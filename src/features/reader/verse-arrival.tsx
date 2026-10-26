@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const holdMs = 2000;
 
-const verseHash = /^#v-\d+$/;
+const arrivalHash = /^#(?:v-\d+|d-[A-Za-z0-9.-]+)$/;
 
 export function VerseArrival() {
   const pathname = usePathname();
@@ -16,7 +16,7 @@ export function VerseArrival() {
       clearTimeout(fade);
       marked?.removeAttribute("data-marked");
       const hash = decodeURIComponent(location.hash);
-      marked = verseHash.test(hash) ? document.getElementById(hash.slice(1)) : null;
+      marked = arrivalHash.test(hash) ? document.getElementById(hash.slice(1)) : null;
       if (!marked) return;
       const verse = marked;
       verse.dataset.arrived = "";

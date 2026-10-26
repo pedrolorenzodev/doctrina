@@ -12,7 +12,11 @@ export function FatherText({ divisions, lang, prologue }: FatherTextProps) {
   return (
     <div lang={lang} data-father-text="" className="relative mt-8.5 max-w-col">
       {divisions.map((division) => (
-        <div key={division.ordinal} id={anchorOf(division.locator)} className="relative -mx-3 mb-1.5 px-3 py-2">
+        <div
+          key={division.ordinal}
+          id={anchorOf(division.locator)}
+          className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 transition-colors duration-1200 data-arrived:shadow-current data-marked:bg-mark data-marked:duration-200"
+        >
           <span className="mb-1 block font-ui text-division text-ink-3 tabular-nums md:absolute md:top-3 md:-left-16.5 md:w-14 md:text-right">
             {division.locator === "prologue" ? prologue : division.locator}
           </span>
