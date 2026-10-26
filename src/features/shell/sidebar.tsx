@@ -4,7 +4,9 @@ import { bookRouteOf } from "@/content/bible-routes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
+import { flushSync } from "react-dom";
 import type { TreeGroup, TreeNode } from "@/content/site-tree";
+import { ChapterGrid } from "@/features/shell/chapter-grid";
 import { useDrawer } from "@/features/shell/drawer";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { trapTab } from "@/lib/focus";
@@ -16,6 +18,8 @@ type SidebarText = {
   collapseAll: string;
   expand: string;
   collapse: string;
+  chapterGrid: string;
+  chapterOf: string;
 };
 
 type SidebarProps = {
@@ -71,13 +75,15 @@ function clearTravelAttributes(nav: HTMLElement) {
   }
 }
 
+const currentRowSelector = "[data-row].row-current, [data-chapter][data-current]";
+
 function scrollCurrentIntoPlace(nav: HTMLElement) {
-  const row = nav.querySelector<HTMLElement>("[data-row].row-current");
+  const row = nav.querySelector<HTMLElement>(currentRowSelector);
   if (row) nav.scrollTop = Math.max(0, row.offsetTop - nav.clientHeight * 0.35);
 }
 
 function keepCurrentInView(nav: HTMLElement) {
-  const row = nav.querySelector<HTMLElement>("[data-row].row-current");
+  const row = nav.querySelector<HTMLElement>(currentRowSelector);
   if (!row) return;
   const rowRect = row.getBoundingClientRect();
   const navRect = nav.getBoundingClientRect();
@@ -95,14 +101,30 @@ type TreeItemProps = {
   currentIsPage: boolean;
   trail: Set<string>;
   initiallyOpen: Set<string>;
+  openedBooks: Set<string>;
+  currentChapter: number | null;
   text: SidebarText;
 };
 
-function TreeItem({ node, currentId, currentIsPage, trail, initiallyOpen, text }: TreeItemProps) {
-  const hasChildren = node.children.length > 0;
-  const isCurrent = node.id === currentId;
+function TreeItem({
+  node,
+  currentId,
+  currentIsPage,
+  trail,
+  initiallyOpen,
+  openedBooks,
+  currentChapter,
+  text,
+}: TreeItemProps) {
+  const chapters = node.chapters;
+  const hasChildren = node.children.length > 0 || chapters !== undefined;
+  const isCurrentBook = chapters !== undefined && node.id === currentId;
+  const isCurrent = node.id === currentId && !chapters;
   const open = initiallyOpen.has(node.id);
-  const flags = { "data-current": isCurrent || undefined, "data-trail": trail.has(node.id) || undefined };
+  const flags = {
+    "data-current": isCurrent || undefined,
+    "data-trail": trail.has(node.id) || isCurrentBook || undefined,
+  };
   return (
     <li data-id={node.id} data-label={node.label}>
       <div data-row className={isCurrent ? `${rowClassName} row-current` : rowClassName}>
@@ -147,7 +169,26 @@ function TreeItem({ node, currentId, currentIsPage, trail, initiallyOpen, text }
           </button>
         )}
       </div>
-      {hasChildren ? (
+      {chapters ? (
+        <ul
+          data-branch
+          data-open={String(open)}
+          hidden={!open}
+          aria-label={text.chapterGrid.replace("{book}", node.label)}
+          className="-mr-1.5 -ml-2 grid grid-cols-7 gap-y-0.5 px-1.5 pt-1 pb-3 max-lg:grid-cols-5 max-lg:gap-y-1"
+        >
+          {isCurrentBook || openedBooks.has(node.id) ? (
+            <ChapterGrid
+              bookId={node.id.replace("book/", "")}
+              bookName={chapters.name}
+              base={chapters.base}
+              count={chapters.count}
+              currentChapter={isCurrentBook ? currentChapter : null}
+              labelTemplate={text.chapterOf}
+            />
+          ) : null}
+        </ul>
+      ) : hasChildren ? (
         <ul data-branch data-open={String(open)} hidden={!open} className="ml-3.25 border-l border-rule pl-2">
           {node.children.map((child) => (
             <TreeItem
@@ -157,6 +198,8 @@ function TreeItem({ node, currentId, currentIsPage, trail, initiallyOpen, text }
               currentIsPage={currentIsPage}
               trail={trail}
               initiallyOpen={initiallyOpen}
+              openedBooks={openedBooks}
+              currentChapter={currentChapter}
               text={text}
             />
           ))}
@@ -174,7 +217,10 @@ export function Sidebar({ groups, text }: SidebarProps) {
   const currentId = index.hrefToId.get(pathname) ?? (bookRoute ? (index.hrefToId.get(bookRoute) ?? null) : null);
   const currentIsPage = index.hrefToId.has(pathname);
   const trail = useMemo(() => new Set(ancestorsOf(index, currentId)), [index, currentId]);
-  const [initiallyOpen] = useState(() => new Set(trail));
+  const currentBookId = bookRoute ? currentId : null;
+  const currentChapter = bookRoute ? Number(pathname.split("/").pop()) || null : null;
+  const [initiallyOpen] = useState(() => new Set(currentBookId ? [...trail, currentBookId] : trail));
+  const [openedBooks, setOpenedBooks] = useState<Set<string>>(() => new Set());
   const navRef = useRef<HTMLElement>(null);
   const asideRef = useRef<HTMLElement>(null);
   const previousId = useRef(currentId);
@@ -193,7 +239,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
     cancelTravel.current?.();
     cancelTravel.current = null;
     clearTravelAttributes(nav);
-    for (const id of ancestorsOf(index, currentId)) {
+    for (const id of [...ancestorsOf(index, currentId), ...(currentBookId ? [currentBookId] : [])]) {
       const item = nav.querySelector<HTMLElement>(`li[data-id="${CSS.escape(id)}"]`);
       if (item) setItemOpen(item, true, false, text);
     }
@@ -213,7 +259,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
         }),
       );
     });
-  }, [currentId, index, text]);
+  }, [currentId, currentBookId, index, text]);
 
   useEffect(() => {
     if (!open) return;
@@ -243,11 +289,18 @@ export function Sidebar({ groups, text }: SidebarProps) {
     if (toggle) {
       const item = toggle.closest<HTMLElement>("li");
       const list = item?.querySelector<HTMLElement>(":scope > ul[data-branch]");
-      if (item && list) setItemOpen(item, list.dataset.open !== "true", true, text);
+      if (item && list) {
+        const id = item.dataset.id ?? "";
+        const opening = list.dataset.open !== "true";
+        if (opening && id.startsWith("book/") && !openedBooks.has(id)) {
+          flushSync(() => setOpenedBooks((previous) => new Set(previous).add(id)));
+        }
+        setItemOpen(item, opening, true, text);
+      }
       return;
     }
     if (target.closest("[data-collapse-all]")) {
-      const keep = new Set(ancestorsOf(index, currentId));
+      const keep = new Set([...ancestorsOf(index, currentId), ...(currentBookId ? [currentBookId] : [])]);
       for (const item of nav.querySelectorAll<HTMLElement>("li[data-id]")) {
         setItemOpen(item, keep.has(item.dataset.id ?? ""), true, text);
       }
@@ -301,6 +354,8 @@ export function Sidebar({ groups, text }: SidebarProps) {
                     currentIsPage={currentIsPage}
                     trail={trail}
                     initiallyOpen={initiallyOpen}
+                    openedBooks={openedBooks}
+                    currentChapter={currentChapter}
                     text={text}
                   />
                 ))}

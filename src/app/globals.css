@@ -243,6 +243,7 @@
 
   --shadow-current: inset 2px 0 0 var(--color-accent);
   --shadow-current-underline: inset 0 -2px 0 var(--color-accent);
+  --shadow-current-ring: inset 0 0 0 1.5px var(--color-accent);
   --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45);
   --shadow-search: 0 18px 40px -18px rgb(0 0 0 / 0.5);
   --shadow-swatch: inset 0 0 0 1px rgb(0 0 0 / 0.12);
@@ -966,6 +967,29 @@
 @keyframes note-mark-in {
   from {
     opacity: 0;
+  }
+}
+
+@keyframes read-dot-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+@utility after-empty {
+  &::after {
+    content: "";
+  }
+}
+
+@utility read-dot-in {
+  &::after {
+    animation: read-dot-in 200ms var(--ease-standard);
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
   }
 }
 
