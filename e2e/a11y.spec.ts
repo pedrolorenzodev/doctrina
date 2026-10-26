@@ -88,6 +88,21 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
     },
   ],
   [
+    "a Bible chapter",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.waitForTimeout(400);
+    },
+  ],
+  [
+    "a Bible chapter with the translation list open",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.locator('[data-reader-strip] button[aria-haspopup="listbox"]').click();
+      await expect(page.locator('[data-reader-strip] [role="listbox"]')).toBeVisible();
+    },
+  ],
+  [
     "the search with a query",
     "/es/doctrinas/eucaristia/catolica",
     async (page) => {
