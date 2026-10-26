@@ -1,12 +1,14 @@
-import { resolve } from "node:path";
+import { bibleBooks, getBibleBook } from "@/content/bible-books";
 import type { BibleSource } from "@/content/bible/bible-source";
 import { chapterNeighbors } from "@/content/bible/chapter-neighbors";
 import { createLocalBibleSource } from "@/content/bible/local-source";
+import { defaultTranslationId } from "@/content/bible/default-translation";
 import { createSupabaseBibleSource } from "@/content/bible/supabase-source";
-import type { BibleChapter, BibleTranslation, BibleVerse, ChapterSummary } from "@/content/model/bible";
+import type { BibleChapter, BibleTranslation, BibleVerse, ChapterRef, ChapterSummary } from "@/content/model/bible";
+import type { Locale } from "@/lib/locale";
 
 function chooseSource(): BibleSource {
-  if (process.env.CORPUS_SOURCE !== "supabase") return createLocalBibleSource(resolve(process.cwd()));
+  if (process.env.CORPUS_SOURCE !== "supabase") return createLocalBibleSource();
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key)
@@ -59,4 +61,16 @@ export function getBibleVerse(
 
 export function getBibleChapterIndex(translationId: string): Promise<ChapterSummary[]> {
   return chapterIndex(translationId);
+}
+
+export async function getReadableChapters(locale: Locale): Promise<ChapterRef[]> {
+  const translationIds = new Set(bibleBooks.map((book) => defaultTranslationId(locale, book)));
+  const chapters: ChapterRef[] = [];
+  for (const id of translationIds) {
+    for (const { book, chapter } of await chapterIndex(id)) {
+      const entry = getBibleBook(book);
+      if (entry && defaultTranslationId(locale, entry) === id) chapters.push({ book, chapter });
+    }
+  }
+  return chapters;
 }
