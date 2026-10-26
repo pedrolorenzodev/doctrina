@@ -1,0 +1,220 @@
+<title>Portada de Doctrina</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: one reading column of text, then three live frames; each frame is a whole portada at the real tokens */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--hover:rgb(28 23 19 / .05);
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:0 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:80px 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+h3{font-family:var(--head);font-weight:400;font-size:23px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+.say{max-width:660px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.say b{font-weight:500;color:var(--ink)}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 22px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.tabs{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;margin-bottom:14px}
+.tabs button{font:500 13px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.tabs button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{container-type:inline-size;border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);overflow:hidden;max-width:100%}
+.stage.phone{max-width:390px}
+.bar{display:flex;align-items:center;gap:14px;min-height:50px;padding:0 20px;border-bottom:1px solid var(--rule)}
+.logo{font-family:var(--head);font-size:21px;font-weight:400}
+.field{display:flex;align-items:center;gap:10px;flex:1;min-width:0;max-width:380px;height:36px;padding:0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--panel);color:var(--ink-3);font-size:14px}
+.field span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.field kbd{font:500 11.5px var(--ui);border:1px solid var(--rule);border-radius:4px;padding:0 5px}
+.lang{margin-left:auto;font-size:13px;color:var(--ink-3)}
+.lang b{color:var(--ink);font-weight:500}
+@container (max-width:560px){.field kbd{display:none}.field{max-width:none}.lang{display:none}.field{flex:1}}
+.page{padding:44px 40px 56px;max-width:900px}
+@container (max-width:560px){.page{padding:28px 18px 40px}}
+.ph1{font-family:var(--head);font-weight:300;font-size:clamp(34px,6cqi,56px);line-height:1.05;margin:0 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance;max-width:16ch}
+.dek{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.62;color:var(--ink-2);max-width:60ch}
+@container (max-width:560px){.dek{font-size:17.5px}}
+.sec{margin-top:44px}
+.sec-t{font-family:var(--head);font-weight:300;font-size:26px;line-height:1.2;margin:0 0 12px;font-variation-settings:"opsz" 36}
+.prin{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
+.prin li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 36px;padding:15px 0;border-top:1px solid var(--rule)}
+.prin b{font-weight:500;font-size:15px}
+.prin span{font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.55;color:var(--ink-2)}
+@container (max-width:560px){.prin li{grid-template-columns:1fr}}
+.door{display:block;text-decoration:none;color:inherit;padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.door:hover{background:var(--hover)}
+.door .dn{font-family:var(--head);font-size:24px;line-height:1.2;font-weight:400}
+.door .dq{display:block;font-family:var(--body);font-weight:300;font-size:16.5px;color:var(--ink-2);margin-top:2px}
+.door .dm{display:block;font-size:13px;color:var(--ink-3);margin-top:6px}
+.ans{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
+.ans li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 32px;padding:20px 0 22px;border-top:1px solid var(--rule)}
+.ans .tn{font-family:var(--head);font-size:21px;line-height:1.25;font-weight:400}
+.ans .ts{font-family:var(--body);font-weight:300;font-size:17.5px;line-height:1.6;color:var(--ink-2);max-width:62ch}
+.ans .tl{display:inline-block;margin-top:8px;font:500 14px var(--ui);color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:3px}
+@container (max-width:560px){.ans li{grid-template-columns:1fr}}
+.kick{font-size:13px;color:var(--ink-3);margin-bottom:8px}
+.mail{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);display:grid;gap:8px;max-width:520px}
+.mail b{font-family:var(--head);font-weight:400;font-size:20px}
+.mail form{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.mail input{flex:1;min-width:190px;height:40px;padding:0 12px;border:1px solid var(--rule-2);border-radius:6px;background:var(--panel);color:var(--ink);font:400 15px var(--ui)}
+.mail button{height:40px;padding:0 16px;border:0;border-radius:6px;background:var(--ink);color:var(--bg);font:500 14px var(--ui);cursor:pointer}
+.mail .ok{font-size:14px;color:var(--ink-2)}
+.ruler{position:relative;height:150px;margin:30px 0 8px}
+.rl-ax{position:absolute;left:0;right:0;top:78px;height:1px;background:var(--rule-2)}
+.rl-tk{position:absolute;top:74px;width:1px;height:9px;background:var(--rule-2)}
+.rl-tn{position:absolute;top:90px;transform:translateX(-50%);font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.rl-tn.e0{transform:none}.rl-tn.e1{transform:translateX(-100%)}
+.rl-m{position:absolute;top:30px;width:2px;height:48px;margin-left:-1px;background:var(--ink-3);border:0;padding:0;cursor:pointer;transform-origin:bottom;transition:background-color 150ms ease,height 200ms cubic-bezier(.22,1,.36,1)}
+.rl-m::before{content:"";position:absolute;left:-9px;right:-9px;top:-6px;bottom:0}
+.rl-m:hover,.rl-m:focus-visible,.rl-m.on{background:var(--accent);height:62px;top:16px}
+.rl-m.r{background:linear-gradient(var(--ink-3),var(--ink-3));width:2px}
+.rl-tip{position:absolute;top:-4px;left:0;font-size:13.5px;white-space:nowrap;color:var(--ink);background:var(--bg);padding:2px 6px;border:1px solid var(--rule);border-radius:5px;pointer-events:none}
+.rl-note{font-size:13.5px;color:var(--ink-3);margin-top:2px}
+.out{margin-top:40px;padding-top:22px;border-top:1px solid var(--rule)}
+.out ul,.dec ol{margin:10px 0 0;padding-left:20px;max-width:700px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.out li,.dec li{margin-bottom:8px}
+.dec li b,.out li b{font-weight:500;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.rl-m{transition:none}}
+</style>
+
+<div class="wrap">
+<p class="small" style="margin-bottom:22px">Propuesta de pantalla para la portada, con contenido real de Doctrina</p>
+<h1>Portada de Doctrina</h1>
+<p class="lede">Hoy la portada es un marcador de posición: un título y una frase de ejemplo. Nunca se diseñó; las cuatro versiones que se probaron en la primera ronda no convencieron.</p>
+<p class="lede">Lo que se espera de quien llega: la mayoría aterrizará directo en una objeción o un versículo, por la búsqueda, un video o un enlace compartido. Quien entra por la portada está cerca de decidir si el sitio vale la pena, y necesita ver rápido qué es y que no toma partido. La portada también es el lugar natural de la lista de avisos por correo, que sirve para saber si hay interés real.</p>
+<p class="lede">Las tres versiones usan el texto real de la doctrina de la Eucaristía, la única publicada con sus cinco posturas. Probá cada una en ancho de escritorio y de celular.</p>
+
+<section class="opt" id="a">
+<h3>A. Una frase y las puertas</h3>
+<p class="say">Un título corto (ocho palabras, como sugería la crítica de la primera versión), una explicación de tres líneas, tres reglas del sitio en filas con línea fina y la lista de doctrinas como puertas. Es la portada más breve: cabe en una pantalla de celular y manda al lector a una doctrina enseguida.</p>
+<ul class="opt-meta"><li><b>Dónde va:</b> la ruta <code style="font:inherit">/es</code>, dentro del marco normal con la barra lateral</li><li><b>Cuesta:</b> poco; reutiliza las filas de línea fina del resto del sitio</li></ul>
+<div class="tabs" data-for="stage-a"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="stage-a">
+<div class="bar"><span class="logo">Doctrina</span><div class="field"><span>Buscar doctrinas, versículos, Padres, palabras</span><kbd>⌘K</kbd></div><span class="lang"><b>ES</b> &nbsp; EN</span></div>
+<div class="page">
+<h2 class="ph1" style="margin:0 0 14px">Qué cree cada tradición cristiana, y por qué</h2>
+<p class="dek">Doctrina muestra, doctrina por doctrina, lo que cada tradición enseña con sus propias palabras y las fuentes en que se apoya, cada una con su edición. No concluye: quien lee decide.</p>
+<div class="sec"><h3 class="sec-t">Cómo se estudia aquí</h3>
+<ul class="prin">
+<li><b>Con sus propias palabras</b><span>Cada tradición habla por sí misma, con sus documentos. Los Padres de la Iglesia no se asignan a ninguna.</span></li>
+<li><b>Cada cita, con su edición</b><span>Toda cita dice de qué edición viene. Lo que no está verificado se muestra como borrador.</span></li>
+<li><b>Las objeciones, a fondo</b><span>Cada postura recibe sus objeciones más fuertes y cada una tiene su respuesta completa.</span></li>
+</ul></div>
+<div class="sec"><h3 class="sec-t">Empezar por una doctrina</h3>
+<a class="door" href="#" onclick="return false"><span class="dn">La Eucaristía</span><span class="dq">¿Qué pasa con el pan y el vino en la Cena del Señor?</span><span class="dm">Cinco tradiciones, sus objeciones y los textos de los primeros cristianos</span></a></div>
+<div class="mail"><b>Avisame cuando haya más doctrinas</b><p class="small">Un correo cuando se publique una doctrina nueva. Nada más.</p><form data-mail><input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico"><button type="submit">Avisame</button></form></div>
+</div></div>
+</section>
+
+<section class="opt" id="b">
+<h3>B. Empezar por una pregunta</h3>
+<p class="say">La portada muestra una doctrina de verdad en lugar de describir el sitio: la pregunta, lo que todas las tradiciones comparten y las cinco respuestas completas, en filas, sin recortar ninguna frase. Quien entra entiende qué es Doctrina leyéndolo. Una línea arriba dice qué es el sitio.</p>
+<ul class="opt-meta"><li><b>Dónde va:</b> la ruta <code style="font:inherit">/es</code></li><li><b>Cuesta:</b> mediano; reutiliza la fila de «Las cinco respuestas»; hay que decidir cuál doctrina da la cara cuando haya varias</li><li><b>Riesgo:</b> la portada elige una doctrina y eso puede parecer una elección de tema</li></ul>
+<div class="tabs" data-for="stage-b"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="stage-b">
+<div class="bar"><span class="logo">Doctrina</span><div class="field"><span>Buscar doctrinas, versículos, Padres, palabras</span><kbd>⌘K</kbd></div><span class="lang"><b>ES</b> &nbsp; EN</span></div>
+<div class="page">
+<p class="kick">Doctrina muestra qué cree cada tradición cristiana, y por qué. Empezá por una pregunta.</p>
+<h2 class="ph1" style="margin:0 0 14px;max-width:20ch">¿Qué pasa con el pan y el vino en la Cena del Señor?</h2>
+<p class="dek">Todas las tradiciones celebran la Cena que Jesús instituyó, la consideran un mandato suyo y afirman que en ella el creyente recibe a Cristo y sus beneficios. Discrepan en el modo de esa presencia y en qué le ocurre al pan y al vino.</p>
+<div class="sec"><h3 class="sec-t">Cada tradición, en sus propias palabras</h3>
+<ul class="ans">
+<li><span class="tn">Católica</span><div><p class="ts">El pan y el vino se convierten realmente en el cuerpo y la sangre de Cristo. Permanecen las apariencias; cambia la sustancia. La Iglesia llama a este cambio transubstanciación.</p><a class="tl" href="#" onclick="return false">Estudiar la postura católica</a></div></li>
+<li><span class="tn">Ortodoxa</span><div><p class="ts">El pan y el vino se transforman verdaderamente en el cuerpo y la sangre de Cristo. La Iglesia confiesa el hecho como misterio y no lo define con una teoría filosófica.</p></div></li>
+<li><span class="tn">Luterana</span><div><p class="ts">El verdadero cuerpo y la verdadera sangre de Cristo están realmente presentes «en, con y bajo» el pan y el vino, y se reciben con la boca. El pan sigue siendo pan.</p></div></li>
+<li><span class="tn">Reformada</span><div><p class="ts">Cristo está real pero espiritualmente presente para la fe de los creyentes. El pan y el vino no cambian; quien recibe con fe se alimenta de Cristo crucificado.</p></div></li>
+<li><span class="tn">Bautista</span><div><p class="ts">La Cena es un acto simbólico de obediencia: la iglesia recuerda la muerte del Redentor y anticipa su regreso. El pan y el vino son símbolos.</p></div></li>
+</ul></div>
+<div class="sec"><a class="door" href="#" onclick="return false"><span class="dn">Abrir la doctrina completa</span><span class="dq">Las objeciones de cada postura, los textos de los primeros cristianos y cómo se vive.</span></a></div>
+<div class="mail"><b>Avisame cuando haya más doctrinas</b><p class="small">Un correo cuando se publique una doctrina nueva. Nada más.</p><form data-mail><input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico"><button type="submit">Avisame</button></form></div>
+</div></div>
+</section>
+
+<section class="opt" id="c">
+<div><h3>C. Entrar por lo más antiguo</h3>
+<p class="say">La portada abre con la regla de los veinte siglos, el elemento propio del sitio: cada marca es un texto que alguien escribió sobre la Eucaristía, de la Didaché a 2000. Tocá o pasá el mouse por una marca y dice quién es. Debajo, la misma entrada a la doctrina y las tres reglas. Es la que más se parece a lo que hace único a Doctrina; pide que el lector tenga curiosidad por la fecha.</p></div>
+<ul class="opt-meta"><li><b>Dónde va:</b> la ruta <code style="font:inherit">/es</code></li><li><b>Cuesta:</b> alto; reutiliza la regla viva de la página de una doctrina, con sus datos</li><li><b>Riesgo:</b> la regla muestra una sola doctrina; con varias hay que decidir cuál o mostrar todas</li></ul>
+<div class="tabs" data-for="stage-c"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="stage-c">
+<div class="bar"><span class="logo">Doctrina</span><div class="field"><span>Buscar doctrinas, versículos, Padres, palabras</span><kbd>⌘K</kbd></div><span class="lang"><b>ES</b> &nbsp; EN</span></div>
+<div class="page">
+<h2 class="ph1" style="margin:0 0 14px;max-width:18ch">Qué cree cada tradición, y desde cuándo</h2>
+<p class="dek">Cada marca es un texto sobre la Eucaristía, en orden de fecha. Desde los primeros cristianos hasta las confesiones de hoy, cada tradición lo lee a su manera.</p>
+<div class="ruler" id="ruler" role="group" aria-label="Textos sobre la Eucaristía, del año 50 al 2000"></div>
+<p class="rl-note" id="rl-note">Elegí una marca para ver el texto.</p>
+<div class="sec"><a class="door" href="#" onclick="return false"><span class="dn">La Eucaristía</span><span class="dq">¿Qué pasa con el pan y el vino en la Cena del Señor?</span><span class="dm">Cinco tradiciones, sus objeciones y los textos de los primeros cristianos</span></a></div>
+<div class="sec"><ul class="prin">
+<li><b>Con sus propias palabras</b><span>Cada tradición habla por sí misma, con sus documentos. Los Padres de la Iglesia no se asignan a ninguna.</span></li>
+<li><b>Cada cita, con su edición</b><span>Toda cita dice de qué edición viene. Lo que no está verificado se muestra como borrador.</span></li>
+</ul></div>
+<div class="mail"><b>Avisame cuando haya más doctrinas</b><p class="small">Un correo cuando se publique una doctrina nueva. Nada más.</p><form data-mail><input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico"><button type="submit">Avisame</button></form></div>
+</div></div>
+</section>
+
+<div class="out">
+<h3>Lo que descarto</h3>
+<ul>
+<li><b>Un titular largo con la regla suelta al lado.</b> Era el defecto de la primera versión: cinco o seis líneas de título y una regla sin relación con él.</li>
+<li><b>Una tira de cinco columnas con frases cortadas.</b> Cortar la confesión de una tradición a mitad de frase es un problema de neutralidad; en B las respuestas van enteras.</li>
+<li><b>Declarar que una tradición es la mejor, o reseñas y sellos de revisión.</b> El sitio no concluye y desconfía de las insignias de «revisado por alguien de la tradición X».</li>
+<li><b>Lo que figura en la lista de «AI slop»</b> del proyecto: etiquetas en mayúsculas espaciadas, tarjetas con sombra idénticas, degradados, texturas de pergamino, cruces o catedrales de stock, un color por tradición, emoji.</li>
+<li><b>Un botón de precio o una oferta en la portada.</b> La validación del pago va en las páginas de doctrina, no en la entrada.</li>
+</ul></div>
+
+<div class="dec out">
+<h3>Qué hay que decidir</h3>
+<ol>
+<li><b>La forma:</b> A (frase y puertas), B (una doctrina de verdad) o C (la regla de los veinte siglos). Recomiendo A para el lanzamiento con pocas doctrinas y B como evolución cuando haya varias; C si se quiere que la portada ya sea la firma del sitio.</li>
+<li><b>El título:</b> «Qué cree cada tradición cristiana, y por qué» (A), la pregunta de la doctrina (B) o «…y desde cuándo» (C).</li>
+<li><b>La lista de correo:</b> si va en la portada y con qué texto. Hoy dice «Avisame cuando haya más doctrinas»; no promete nada más que un aviso.</li>
+<li><b>Si la portada lleva la barra lateral</b> (como las demás páginas) o va sola, sin marco.</li>
+</ol>
+</div>
+</div>
+
+<script>
+(()=>{
+document.querySelectorAll(".tabs[data-for]").forEach(t=>t.addEventListener("click",ev=>{
+  const b=ev.target.closest("button");if(!b)return;
+  t.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  document.getElementById(t.dataset.for).classList.toggle("phone",b.dataset.w==="phone");
+}));
+document.querySelectorAll("form[data-mail]").forEach(f=>f.addEventListener("submit",ev=>{
+  ev.preventDefault();
+  const done=document.createElement("p");done.className="ok";done.textContent="Listo. Te escribimos cuando se publique la próxima doctrina.";
+  f.replaceWith(done);
+}));
+const M=[[50,120,"La Didaché"],[107,110,"Ignacio de Antioquía"],[150,0,"Justino Mártir, Primera Apología"],[180,0,"Ireneo de Lyon"],[207,0,"Tertuliano, Contra Marción"],[350,390,"Catequesis mistagógicas (Jerusalén)"],[387,0,"Ambrosio de Milán, Sobre los misterios"],[396,397,"Agustín de Hipona, Sobre la doctrina cristiana"],[403,0,"Juan Crisóstomo, Homilías sobre Hebreos"],[447,0,"Teodoreto de Ciro, Eranistes"],[743,0,"Juan Damasceno, Exposición exacta de la fe ortodoxa"],[787,0,"II Concilio de Nicea"],[831,0,"Pascasio Radberto, Sobre el cuerpo y la sangre del Señor"],[1059,0,"Berengario de Tours"],[1215,0,"IV Concilio de Letrán"],[1272,1273,"Tomás de Aquino"],[1379,0,"John Wycliffe"],[1672,0,"Sínodo de Jerusalén (Confesión de Dositeo)"],[1677,0,"Segunda Confesión Bautista de Londres"],[1982,0,"Bautismo, Eucaristía y Ministerio (Lima)"],[2000,0,"Fe y Mensaje Bautistas 2000"]];
+const A=0,Z=2026,X=y=>(y-A)/(Z-A)*100;
+const el=document.getElementById("ruler"),note=document.getElementById("rl-note");
+let h='<span class="rl-ax"></span>';
+[0,500,1000,1500,2026].forEach((t,i,a)=>{h+=`<span class="rl-tk" style="left:${X(t)}%"></span><span class="rl-tn${i===0?" e0":i===a.length-1?" e1":""}" style="left:${X(t)}%">${t===0?"año 1":t}</span>`});
+M.forEach((m,i)=>{h+=`<button class="rl-m" type="button" data-i="${i}" style="left:${X(m[0])}%" aria-label="${m[2]}, ${m[1]?m[0]+"–"+m[1]:m[0]}"></button>`});
+el.innerHTML=h;
+function show(i){
+  el.querySelectorAll(".rl-m").forEach(b=>b.classList.toggle("on",+b.dataset.i===i));
+  const m=M[i];note.textContent=`${m[2]}, ${m[1]?m[0]+"–"+m[1]:m[0]}`;
+}
+el.addEventListener("mouseover",ev=>{const b=ev.target.closest(".rl-m");if(b)show(+b.dataset.i)});
+el.addEventListener("focusin",ev=>{const b=ev.target.closest(".rl-m");if(b)show(+b.dataset.i)});
+el.addEventListener("click",ev=>{const b=ev.target.closest(".rl-m");if(b)show(+b.dataset.i)});
+})();
+</script>
