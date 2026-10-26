@@ -30,13 +30,15 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const locale = await currentLocale();
   const { shell, search } = getUiText(locale);
   const searchIndex = await getSearchIndex(locale);
-  const groups = getSiteTree(locale);
+  const groups = await getSiteTree(locale);
   const hasTree = groups.length > 0;
   const text = {
     navLabel: shell.navLabel,
     collapseAll: shell.collapseAll,
     expand: shell.expand,
     collapse: shell.collapse,
+    chapterGrid: shell.chapterGrid,
+    chapterOf: shell.chapterOf,
   };
   return (
     <Document lang={locale}>

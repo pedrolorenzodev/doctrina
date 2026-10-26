@@ -21,6 +21,7 @@ function checkRoutes() {
   const corinthians = bibleBooks.find((book) => book.id === "1Cor");
   check("a numbered book keeps its number in the slug", bookSlug("es", corinthians) === "1-corintios");
   check("the book route of a chapter path", bookRouteOf("/es/bible/juan/6") === "/es/bible/juan");
+  check("the public path gives the same book route", bookRouteOf("/es/biblia/juan/6") === "/es/bible/juan");
   check("no book route for the book itself", bookRouteOf("/es/bible/juan") === null);
 }
 const check = (name, ok, detail = "") => {

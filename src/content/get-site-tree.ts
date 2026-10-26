@@ -1,4 +1,5 @@
 import "server-only";
+import { getBibleChapterCounts } from "@/content/get-bible";
 import { getPublishedDoctrines } from "@/content/get-doctrine-page";
 import { getPublishedFathers } from "@/content/get-fathers";
 import { getPublishedPages } from "@/content/get-tradition-page";
@@ -7,7 +8,7 @@ import { buildSiteTree, type TreeGroup } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@/lib/locale";
 
-export function getSiteTree(locale: Locale): TreeGroup[] {
+export async function getSiteTree(locale: Locale): Promise<TreeGroup[]> {
   const { shell } = getUiText(locale);
   const sourceTitles = locale === "es" ? Object.values(registry.works).map((work) => work.title) : [];
   const publishedFathers = getPublishedFathers(locale).map((father) => father.id);
@@ -18,5 +19,6 @@ export function getSiteTree(locale: Locale): TreeGroup[] {
     shell,
     sourceTitles,
     publishedFathers,
+    await getBibleChapterCounts(locale),
   );
 }

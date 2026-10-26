@@ -74,3 +74,11 @@ export async function getReadableChapters(locale: Locale): Promise<ChapterRef[]>
   }
   return chapters;
 }
+
+export async function getBibleChapterCounts(locale: Locale): Promise<Map<string, number>> {
+  const counts = new Map<string, number>();
+  for (const { book, chapter } of await getReadableChapters(locale)) {
+    counts.set(book, Math.max(counts.get(book) ?? 0, chapter));
+  }
+  return counts;
+}

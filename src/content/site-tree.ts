@@ -17,7 +17,7 @@ import {
   traditionHref,
   traditionRoute,
 } from "@/content/routes";
-import { bibleBookRoute, bibleChapterHref } from "@/content/bible-routes";
+import { bibleBookRoute, bibleChapterBase, bibleChapterHref } from "@/content/bible-routes";
 import { bibleBooks, getBibleBook } from "@/content/bible-books";
 import { bookNames } from "@/content/verse-names";
 import type { Locale } from "@/lib/locale";
@@ -29,6 +29,7 @@ export type TreeNode = {
   route: string | null;
   children: TreeNode[];
   count?: number | undefined;
+  chapters?: { base: string; count: number; name: string } | undefined;
 };
 
 export type TreeGroup = {
@@ -138,6 +139,10 @@ const branch = (id: string, label: string, children: TreeNode[], count?: number)
   count,
 });
 
+const bookListNames: Record<string, Record<Locale, string>> = {
+  Ps: { es: "Salmos", en: "Psalms" },
+};
+
 const bookKeys = Object.keys(bookNames);
 const firstNewTestamentBook = bookKeys.indexOf("Matt");
 
@@ -148,6 +153,7 @@ export function buildSiteTree(
   text: TreeText,
   sourceTitles: string[],
   publishedFathers: string[],
+  bookChapters: Map<string, number>,
 ): TreeGroup[] {
   const doctrineNodes = doctrineIds.map((doctrine) => ({
     ...branch(doctrine, doctrineNames[locale][doctrine], [
@@ -191,12 +197,24 @@ export function buildSiteTree(
   }));
   const book = (key: string) => {
     const entry = getBibleBook(key);
-    const node = leaf(`book/${key}`, entry?.names[locale] ?? key);
-    // TODO: the book leads to its own page once the Bible index and book pages exist; until then it opens chapter 1
-    return entry && locale === "es"
-      ? { ...node, href: bibleChapterHref(locale, entry, 1), route: bibleBookRoute(locale, entry) }
-      : node;
+    const label = bookListNames[key]?.[locale] ?? entry?.names[locale] ?? key;
+    const node = leaf(`book/${key}`, label);
+    if (!entry || locale !== "es") return node;
+    const count = bookChapters.get(key);
+    if (!count) {
+      // TODO: the book has no chapters in the local corpus; it opens chapter 1 until the corpus is loaded
+      return { ...node, href: bibleChapterHref(locale, entry, 1), route: bibleBookRoute(locale, entry) };
+    }
+    return {
+      ...node,
+      route: bibleBookRoute(locale, entry),
+      count,
+      chapters: { base: bibleChapterBase(locale, entry), count, name: entry.names[locale] },
+    };
   };
+  const otBooks = bookKeys.slice(0, firstNewTestamentBook);
+  const deuteroBooks = bibleBooks.filter((entry) => entry.section === "deuterocanon").map((entry) => entry.id);
+  const ntBooks = bookKeys.slice(firstNewTestamentBook);
   const { counts, fathers } = historyIndex;
   return [
     { id: "doctrines", label: text.groupDoctrines, nodes: doctrineNodes },
@@ -204,13 +222,9 @@ export function buildSiteTree(
       id: "bible",
       label: text.tree.bible,
       nodes: [
-        branch("bible/ot", text.tree.ot, bookKeys.slice(0, firstNewTestamentBook).map(book)),
-        branch(
-          "bible/deutero",
-          text.tree.deutero,
-          bibleBooks.filter((entry) => entry.section === "deuterocanon").map((entry) => book(entry.id)),
-        ),
-        branch("bible/nt", text.tree.nt, bookKeys.slice(firstNewTestamentBook).map(book)),
+        branch("bible/ot", text.tree.ot, otBooks.map(book), otBooks.length),
+        branch("bible/deutero", text.tree.deutero, deuteroBooks.map(book), deuteroBooks.length),
+        branch("bible/nt", text.tree.nt, ntBooks.map(book), ntBooks.length),
       ],
     },
     {

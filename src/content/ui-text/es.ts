@@ -14,6 +14,8 @@ export const es = {
     collapseAll: "Contraer todo menos dónde estoy",
     expand: "Expandir {label}",
     collapse: "Contraer {label}",
+    chapterGrid: "Capítulos de {book}",
+    chapterOf: "{book} {chapter}",
     breadcrumb: "Ruta",
     traditionLabel: "Tradición",
     traditionHint: "Al cambiar, sigues en la misma sección.",

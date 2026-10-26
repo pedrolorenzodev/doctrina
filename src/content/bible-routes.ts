@@ -19,8 +19,12 @@ export function bookFromSlug(locale: Locale, slug: string): BibleBook | null {
   return bibleBooks.find((book) => bookSlug(locale, book) === slug) ?? null;
 }
 
+export function bibleChapterBase(locale: Locale, book: BibleBook): string {
+  return `/${locale}/${bibleSegments[locale]}/${bookSlug(locale, book)}`;
+}
+
 export function bibleChapterHref(locale: Locale, book: BibleBook, chapter: number): string {
-  return `/${locale}/${bibleSegments[locale]}/${bookSlug(locale, book)}/${chapter}`;
+  return `${bibleChapterBase(locale, book)}/${chapter}`;
 }
 
 export function bibleBookRoute(locale: Locale, book: BibleBook): string {
@@ -28,5 +32,6 @@ export function bibleBookRoute(locale: Locale, book: BibleBook): string {
 }
 
 export function bookRouteOf(pathname: string): string | null {
-  return /^\/[a-z]{2}\/bible\/[^/]+(?=\/\d+$)/.exec(pathname)?.[0] ?? null;
+  const match = /^\/([a-z]{2})\/(?:bible|biblia)\/([^/]+)\/\d+$/.exec(pathname);
+  return match ? `/${match[1]}/bible/${match[2]}` : null;
 }
