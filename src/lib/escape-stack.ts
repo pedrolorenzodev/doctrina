@@ -26,4 +26,4 @@ export function registerEscape(priority: number, handler: () => void): () => voi
   };
 }
 
-export const escapePriority = { drawer: 1, panel: 1, window: 2, reader: 3, search: 4 } as const;
+export const escapePriority = { drawer: 1, panel: 1, window: 2, reader: 3, search: 4, alert: 5 } as const;

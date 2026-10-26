@@ -23,6 +23,10 @@
   --color-hover: rgb(28 23 19 / 0.05);
   --color-mark: rgb(240 200 60 / 0.45);
   --color-scrim: rgb(0 0 0 / 0.35);
+  --color-scrim-strong: rgb(28 23 19 / 0.4);
+  --color-danger: #9c2f28;
+  --color-danger-weak: rgb(156 47 40 / 0.14);
+  --color-danger-fill: rgb(156 47 40 / 0.28);
   --color-hl-yellow: rgb(240 200 60 / 0.28);
   --color-hl-green: rgb(110 175 90 / 0.26);
   --color-hl-sky: rgb(70 170 205 / 0.22);
@@ -93,6 +97,12 @@
   --text-micro: 10.5px;
   --text-micro-lg: 11.5px;
   --spacing-panel: 380px;
+  --spacing-note-card: 240px;
+  --breakpoint-notes: 84rem;
+  --text-note-card: 15px;
+  --text-dialog-title: 23px;
+  --text-dialog-title--line-height: 1.25;
+  --text-note-card--line-height: 1.5;
   --spacing-sheet: 52dvh;
   --text-dating: 14.5px;
   --text-dating--line-height: 1.45;
@@ -282,6 +292,10 @@
   --color-hls-orange: #d6935c;
   --color-hover: rgb(255 255 255 / 0.05);
   --color-mark: rgb(214 168 101 / 0.28);
+  --color-scrim-strong: rgb(0 0 0 / 0.55);
+  --color-danger: #e8918a;
+  --color-danger-weak: rgb(232 145 138 / 0.2);
+  --color-danger-fill: rgb(232 145 138 / 0.34);
   --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
   --texture-opacity: 1;
   color-scheme: dark;
@@ -946,6 +960,53 @@
     & #content {
       padding-bottom: calc(var(--spacing-sheet) + 4dvh);
     }
+  }
+}
+
+@keyframes note-mark-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@utility note-mark-in {
+  animation: note-mark-in 200ms ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+::highlight(note-words) {
+  background-color: var(--color-accent-weak);
+}
+
+@keyframes dialog-backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes dialog-box-in {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+
+@utility dialog-backdrop-in {
+  animation: dialog-backdrop-in 150ms var(--ease-standard);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility dialog-box-in {
+  animation: dialog-box-in 200ms var(--ease-reveal);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 }
 

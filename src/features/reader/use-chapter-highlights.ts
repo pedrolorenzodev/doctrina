@@ -39,6 +39,9 @@ export function useChapterHighlights({ translationId, book, chapter, done, remov
   };
 
   return {
+    list: highlights
+      .filter((entry) => entry.translationId === translationId && entry.book === book && entry.chapter === chapter)
+      .sort((a, b) => a.verse - b.verse || a.from - b.from),
     segmentsFor: (verse: number, length: number) => segmentsOf(highlights, keyOf(verse), length),
     colorOf: (verse: number): HighlightColor | null => currentColor(highlights, keyOf(verse)),
     lastColor: lastHighlightColor,
