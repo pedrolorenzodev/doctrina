@@ -126,6 +126,62 @@ test("under reduced motion the panel has no transition", async ({ page }) => {
   await expect(detail(page)).toHaveCSS("transition-duration", "0s");
 });
 
+test("the overview ruler: one thin bar per item, a window that follows the scroll and writes its years", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  const ruler = page.locator("[data-ruler]");
+  await expect(ruler).toBeVisible();
+  await expect(ruler.locator("[data-ruler-item]")).toHaveCount(96);
+  const box = page.locator("[data-scroller]");
+  const sizes = await box.evaluate((element) => ({ scroll: element.scrollWidth, client: element.clientWidth }));
+  const win = ruler.locator("[data-ruler-window]");
+  const rulerBox = (await ruler.boundingBox())!;
+  const first = (await win.boundingBox())!;
+  expect(Math.abs(first.width / rulerBox.width - sizes.client / sizes.scroll)).toBeLessThan(0.01);
+  const lastYear = Math.round(30 + (sizes.client / sizes.scroll) * 770);
+  await expect(ruler.locator("[data-ruler-years]")).toHaveText(`30–${lastYear}`);
+  await box.evaluate((element) => element.scrollTo({ left: 2000, behavior: "instant" }));
+  await expect
+    .poll(async () => Math.round((((await win.boundingBox())!.x - rulerBox.x) / rulerBox.width) * 1000))
+    .toBe(Math.round((2000 / sizes.scroll) * 1000));
+  await expect(ruler.locator("[data-ruler-years]")).toHaveText(
+    `${Math.round(30 + (2000 / sizes.scroll) * 770)}–${Math.round(30 + ((2000 + sizes.client) / sizes.scroll) * 770)}`,
+  );
+});
+
+test("dragging the ruler's window scrolls the line; pressing the ruler elsewhere takes the window there", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto(timeline);
+  const ruler = page.locator("[data-ruler]");
+  const box = page.locator("[data-scroller]");
+  const sizes = await box.evaluate((element) => ({ scroll: element.scrollWidth, client: element.clientWidth }));
+  const rulerBox = (await ruler.boundingBox())!;
+  const win = (await ruler.locator("[data-ruler-window]").boundingBox())!;
+  await page.mouse.move(win.x + win.width / 2, win.y + win.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(win.x + win.width / 2 + 200, win.y + win.height / 2, { steps: 6 });
+  await page.mouse.up();
+  const dragged = await box.evaluate((element) => element.scrollLeft);
+  expect(Math.abs(dragged - (200 / rulerBox.width) * sizes.scroll)).toBeLessThan(40);
+  await page.mouse.click(rulerBox.x + rulerBox.width * 0.8, rulerBox.y + 22);
+  const target = Math.min(sizes.scroll - sizes.client, 0.8 * sizes.scroll - sizes.client / 2);
+  await expect.poll(() => box.evaluate((element) => element.scrollLeft)).toBeGreaterThan(target - 60);
+  await expect(page.locator("[data-scroller] button[aria-pressed=true]")).toHaveCount(0);
+});
+
+test("the chosen item is the accent bar of the ruler", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  await item(page, "polycarp-of-smyrna").click();
+  await expect(page.locator('[data-ruler-item="polycarp-of-smyrna"]')).toHaveClass(/bg-accent/);
+  await expect(page.locator('[data-ruler-item="justin-martyr"]')).not.toHaveClass(/bg-accent/);
+});
+
 test("arrows move the focus along the items, Enter sends it to the heading", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(timeline);

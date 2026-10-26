@@ -9,6 +9,7 @@ import { at, px, vars } from "@/lib/css-vars";
 import { listSeparator } from "@/lib/punctuation";
 import { packRows, pixelsOf, placeItem, type PlacedItem, type Scale } from "@/lib/timeline-layout";
 import { useFontsReady, useLabelMeasure } from "@/lib/use-timeline-box";
+import { TimelineRuler } from "@/features/history/timeline-ruler";
 
 export type GeneralTimelineText = {
   sections: Record<GeneralSection, string>;
@@ -234,6 +235,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
   return (
     <div className={ready ? "" : "invisible"}>
       <p className="mb-2.5 text-ui-xs text-ink-3">{text.hint}</p>
+      <TimelineRuler scroller={scroller} from={from} to={to} entries={entries} selectedId={selectedId} />
       <div
         ref={scroller}
         onKeyDown={onKeyDown}
