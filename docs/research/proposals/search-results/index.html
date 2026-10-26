@@ -1,0 +1,346 @@
+<title>Resultados de búsqueda</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: a reading column with one live frame per option; the frame is the product, the text around it is short */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--hover:rgb(28 23 19 / .05);--scrim:rgb(0 0 0 / .35);
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:0 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:80px 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+h3{font-family:var(--head);font-weight:400;font-size:23px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+.say{max-width:640px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.say b{font-weight:500;color:var(--ink)}
+hr{border:0;border-top:1px solid var(--rule);margin:0}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-head{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 22px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.tabs{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;margin-bottom:14px}
+.tabs button{font:500 13px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.tabs button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{container-type:inline-size;border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);overflow:hidden;max-width:100%}
+.stage.phone{max-width:390px}
+.bar{display:flex;align-items:center;gap:14px;min-height:50px;padding:0 16px;border-bottom:1px solid var(--rule)}
+.logo{font-family:var(--head);font-size:21px;font-weight:400}
+.field{display:flex;align-items:center;gap:10px;flex:1;min-width:0;max-width:420px;height:36px;padding:0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--panel)}
+.field svg{flex:none;color:var(--ink-3)}
+.field input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:400 15px var(--ui);outline:none}
+.field kbd{font:500 11.5px var(--ui);color:var(--ink-3);border:1px solid var(--rule);border-radius:4px;padding:0 5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;border-bottom:1px solid var(--rule);align-items:center}
+.chips .small{margin-right:6px}
+.chip{font:500 12.5px var(--ui);color:var(--ink-2);background:none;border:1px solid var(--rule);border-radius:999px;min-height:30px;padding:0 11px;cursor:pointer}
+.chip:hover{background:var(--hover)}
+.chip.on{background:var(--accent-weak);border-color:var(--accent);color:var(--ink)}
+mark{background:var(--accent-weak);color:inherit;border-radius:2px;padding:0 1px;box-shadow:0 1px 0 var(--accent)}
+.row{display:block;width:100%;text-align:left;background:none;border:0;border-radius:7px;color:var(--ink);padding:10px 12px;cursor:pointer;font:inherit}
+.row:hover,.row.sel{background:var(--hover)}
+.r-t{display:block;font-family:var(--head);font-size:18px;line-height:1.5;font-weight:400}
+.r-p{display:flex;align-items:baseline;gap:10px;font-size:12.5px;color:var(--ink-3)}
+.r-p span:first-child{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r-p .d{flex:none;padding-left:10px;border-left:1px solid var(--rule-2);font-variant-numeric:tabular-nums;color:var(--ink-2);font-weight:500}
+.r-l{display:block;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.r-l.q{font-family:var(--head);font-style:italic;font-weight:300;font-size:15.5px;line-height:1.4}
+.empty{padding:34px 16px;color:var(--ink-3);font-size:14px}
+.ov{background:var(--panel);border:1px solid var(--rule-2);border-radius:10px;margin:18px auto;width:min(100% - 24px,620px)}
+.ov-in{display:flex;align-items:center;gap:10px;height:52px;padding:0 14px;border-bottom:1px solid var(--rule)}
+.ov-in input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:400 16px var(--ui);outline:none}
+.ov-in kbd{font:500 11.5px var(--ui);color:var(--ink-3);border:1px solid var(--rule);border-radius:4px;padding:0 5px}
+.ov-res{padding:6px;max-height:430px;overflow:auto}
+.ov-foot{display:flex;gap:16px;flex-wrap:wrap;padding:9px 14px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-3)}
+.grp{font-size:12.5px;font-weight:500;color:var(--ink-3);padding:12px 12px 4px}
+.grp:first-child{padding-top:6px}
+.more{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 12px;margin:2px 0 4px 0;border:0;background:none;border-radius:6px;color:var(--ink-2);font:500 13px var(--ui);cursor:pointer}
+.more:hover{background:var(--hover);color:var(--ink)}
+.all{display:flex;justify-content:space-between;gap:12px;align-items:center;width:100%;min-height:44px;margin-top:4px;padding:0 12px;border:0;border-top:1px solid var(--rule);border-radius:0 0 7px 7px;background:none;color:var(--ink);font:500 14px var(--ui);cursor:pointer;text-align:left}
+.all:hover{background:var(--hover)}
+.all small{font-weight:400;color:var(--ink-3);font-size:12.5px}
+.page-h{padding:26px 16px 14px;display:grid;gap:4px}
+.page-h h3{font-size:30px;font-weight:300}
+.sorts{margin-left:auto;display:inline-flex;gap:2px;padding:2px;border:1px solid var(--rule);border-radius:7px}
+.sorts button{font:500 12.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:5px;min-height:28px;padding:0 10px;cursor:pointer}
+.sorts button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.list{padding:6px 10px 14px}
+.split{display:grid;grid-template-columns:minmax(0,1fr)}
+@container (min-width:760px){.split{grid-template-columns:minmax(0,1fr) 340px}}
+.prev{display:none;border-left:1px solid var(--rule);padding:20px 22px;background:var(--bg)}
+@container (min-width:760px){.prev{display:block}}
+.prev .k{font-size:12.5px;color:var(--ink-3);margin-bottom:6px}
+.prev h4{font-family:var(--head);font-weight:400;font-size:24px;line-height:1.2;margin:0 0 4px;font-variation-settings:"opsz" 30}
+.prev .dd{font-size:13.5px;font-weight:500;font-variant-numeric:tabular-nums;margin-bottom:12px}
+.prev .tx{font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.55;color:var(--ink-2)}
+.prev .tx.q{font-family:var(--head);font-style:italic;font-size:19px;line-height:1.45;color:var(--ink)}
+.prev .go{display:inline-block;margin-top:14px;font:500 14px var(--ui);color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:3px}
+.inl{display:none;margin:6px 0 4px;padding:10px 12px 12px;border-top:1px solid var(--rule)}
+@container (max-width:759px){.row.sel + .inl{display:block}}
+.inl .tx{font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55;color:var(--ink-2)}
+.inl .go{display:inline-block;margin-top:10px;font:500 14px var(--ui);color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:3px}
+.side{width:236px;padding:16px 14px;border-right:1px solid var(--rule);display:flex;flex-direction:column;min-height:300px}
+.side p{font-size:12.5px;color:var(--ink-3);margin-bottom:6px}
+.side a{display:block;padding:6px 10px;border-radius:6px;font-size:14.5px;color:var(--ink-2);text-decoration:none}
+.side a.cur{background:var(--accent-weak);color:var(--ink);font-weight:500}
+.side .foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule)}
+.cont{display:block;padding:8px 10px;border-radius:6px;text-decoration:none;color:var(--ink)}
+.cont:hover{background:var(--hover)}
+.cont b{display:block;font:500 13.5px var(--ui)}
+.cont span{display:block;font-size:12.5px;color:var(--ink-3)}
+.sbwrap{display:flex}
+.sbwrap > div:last-child{flex:1;padding:22px;min-width:0}
+@container (max-width:620px){.side{display:none}}
+.card-cont{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:10px 12px;border:0;background:none;border-radius:7px;cursor:pointer;color:var(--ink);font:inherit}
+.card-cont:hover{background:var(--hover)}
+.card-cont .t{flex:1;min-width:0}
+.card-cont b{display:block;font-family:var(--head);font-weight:400;font-size:18px;line-height:1.4}
+.card-cont .s{display:block;font-size:12.5px;color:var(--ink-3)}
+.bar-p{display:block;height:3px;border-radius:2px;background:var(--rule);margin-top:7px;overflow:hidden}
+.bar-p i{display:block;height:100%;background:var(--accent)}
+.card-cont .when{flex:none;font-size:12.5px;color:var(--ink-3)}
+table.cmp{width:100%;border-collapse:collapse;font-size:14px;margin-top:18px}
+table.cmp th,table.cmp td{text-align:left;vertical-align:top;padding:10px 14px 10px 0;border-top:1px solid var(--rule)}
+table.cmp th{font-weight:500;color:var(--ink);width:150px}
+table.cmp td{color:var(--ink-2);font-family:var(--body);font-weight:300;font-size:15.5px;line-height:1.5}
+.out{margin-top:40px;padding-top:22px;border-top:1px solid var(--rule)}
+.out ul,.dec ol{margin:10px 0 0;padding-left:20px;max-width:700px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.out li,.dec li{margin-bottom:8px}
+.dec li b{font-weight:500;color:var(--ink)}
+@media (prefers-reduced-motion:no-preference){.row,.chip,.more,.all,.card-cont,.cont{transition:background-color 150ms ease}}
+</style>
+
+<div class="wrap">
+<p class="small" style="margin-bottom:22px">Propuesta de pantalla para la búsqueda, con contenido real de Doctrina</p>
+<h1>Resultados de búsqueda</h1>
+<p class="lede">Hoy buscás con ⌘K y los resultados aparecen en un cuadro sobre la página. Funciona y ya lista todo lo que coincide. Esta propuesta responde dos preguntas que quedaron abiertas: si la búsqueda necesita una página propia, y dónde vive «Seguir donde dejaste».</p>
+<p class="lede">Todo lo que ves abajo funciona: escribí en cualquier cuadro, cambiá filtros y orden, y probá cada demo en ancho de escritorio y de celular. Los resultados son los del índice real de hoy: las doctrinas, las objeciones, las citas de los Padres, las 56 páginas de los Padres y la línea de tiempo.</p>
+
+<h2>Lo que hay hoy</h2>
+<p class="say">Un cuadro con la lista completa, ordenada por cercanía a lo que escribiste. Cada resultado dice dónde vive y, a la derecha, cuándo (la fecha de la obra o la muerte del autor). Con cuatro coincidencias alcanza; con veinte, hay que bajar por una lista larga sin saber qué tipo de cosa es cada una.</p>
+<div style="margin-top:22px"><div class="tabs" data-for="today"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="today"><div class="ov"><div class="ov-in"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12.5 12.5 4 4"/></svg><input id="q-today" value="Agustín" aria-label="Buscar (demo de hoy)"><kbd>Esc</kbd></div><div class="ov-res" id="res-today"></div><div class="ov-foot"><span>↑↓ para moverte</span><span>Enter para abrir</span></div></div></div></div>
+
+<h2>Cuatro formas de resolverlo</h2>
+<p class="say">Las tres primeras difieren en <b>cuánto cambia</b>. La cuarta es una decisión aparte: cómo se ordena una lista, sea cual sea su forma.</p>
+
+<section class="opt" id="a">
+<div class="opt-head"><h3>A. El mismo cuadro, ordenado por tipo</h3><p class="say">No hay página nueva. El cuadro agrupa los resultados por lo que son (doctrinas y objeciones, citas de los Padres, páginas de los Padres), muestra tres de cada grupo y deja abrir el resto sin salir del cuadro. Es lo más chico que mejora la lista larga.</p></div>
+<ul class="opt-meta"><li><b>Dónde va:</b> en el cuadro actual de ⌘K</li><li><b>De dónde viene:</b> el cuadro de hoy; los grupos son los tipos que ya distingue el índice</li><li><b>Cuesta:</b> poco, es el mismo componente; no hay URL que compartir</li></ul>
+<div class="tabs" data-for="stage-a"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="stage-a"><div class="ov"><div class="ov-in"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12.5 12.5 4 4"/></svg><input id="q-a" value="Agustín" aria-label="Buscar (opción A)"><kbd>Esc</kbd></div><div class="ov-res" id="res-a"></div><div class="ov-foot"><span>↑↓ para moverte</span><span>Enter para abrir</span></div></div></div>
+</section>
+
+<section class="opt" id="b">
+<div class="opt-head"><h3>B. Una página de resultados</h3><p class="say">El cuadro sigue igual y suma una fila final, «Ver los 12 resultados», que abre <code style="font:inherit">/es/buscar?q=…</code>. La página es una columna con el campo arriba, el recuento, filtros por tipo y un orden a elección. Tiene URL: se comparte, se guarda y vuelve con el botón atrás.</p></div>
+<ul class="opt-meta"><li><b>Dónde va:</b> una ruta nueva; la entrada es la última fila del cuadro, o Mayús + Enter</li><li><b>De dónde viene:</b> los filtros copian el selector de «Videos» de la página de una postura</li><li><b>Cuesta:</b> una página, un filtro, el estado en la URL</li></ul>
+<div class="tabs" data-for="stage-b"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="stage-b">
+<div class="bar"><span class="logo">Doctrina</span><div class="field"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12.5 12.5 4 4"/></svg><input id="q-b" value="Agustín" aria-label="Buscar (opción B)"></div></div>
+<div class="page-h"><h3 id="b-title"></h3><p class="small" id="b-count"></p></div>
+<div class="chips" id="b-chips"></div>
+<div class="list" id="res-b"></div>
+</div>
+</section>
+
+<section class="opt" id="c">
+<div class="opt-head"><h3>C. Lista y vista previa</h3><p class="say">La misma página, con una segunda columna: al elegir un resultado se ve a la derecha lo que importa para decidir (el texto completo de la cita, el resumen de la página, la fecha) y un único enlace para abrirlo. En el celular no hay segunda columna: el resultado elegido se despliega debajo de sí mismo.</p></div>
+<ul class="opt-meta"><li><b>Dónde va:</b> la misma ruta que B, con otra disposición</li><li><b>De dónde viene:</b> el panel de detalle de la línea de tiempo</li><li><b>Cuesta:</b> lo de B más un panel; es lo que mejor sirve a quien compara varias citas</li></ul>
+<div class="tabs" data-for="stage-c"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="stage-c">
+<div class="bar"><span class="logo">Doctrina</span><div class="field"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12.5 12.5 4 4"/></svg><input id="q-c" value="carne" aria-label="Buscar (opción C)"></div></div>
+<div class="chips" id="c-chips"></div>
+<div class="split"><div class="list" id="res-c"></div><aside class="prev" id="prev-c" aria-live="polite"></aside></div>
+</div>
+</section>
+
+<section class="opt" id="d">
+<div class="opt-head"><h3>D. Relevancia o fecha</h3><p class="say">Vale para A, B y C. Doctrina ordena sus fuentes por fecha, no por relevancia: el lector de los Padres quiere ver quién lo dijo primero. Pero quien busca «sacrificio» quiere primero lo que más se parece. Se puede elegir un orden por defecto y ofrecer el otro, como en B.</p></div>
+<table class="cmp"><tr><th>Relevancia</th><td>Primero lo que más se parece a lo escrito: el título antes que una frase suelta. Es lo que se espera de un buscador.</td></tr><tr><th>Cronológico</th><td>De la fecha más antigua a la más nueva, sin importar cuánto se parece. Mantiene la lógica de todo el sitio: los testigos de la página 10, la línea de tiempo y las fuentes van así.</td></tr></table>
+</section>
+
+<h2>Seguir donde dejaste</h2>
+<p class="say">Es una sola cosa: volver al lugar donde estabas leyendo. Hoy el sitio puede recordar la página y la sección; cuando exista el lector (pantallas 05 y 06) recordará también la división del texto. Se guarda en el navegador y no necesita cuenta. Dos lugares posibles; no se excluyen.</p>
+
+<section class="opt" id="s1">
+<div class="opt-head"><h3>1. En el cuadro, antes de «Recientes»</h3><p class="say">Al abrir ⌘K sin escribir, la primera fila dice dónde estabas y cuánto leíste. Quien vuelve al sitio y abre la búsqueda lo ve sin buscarlo. Quien nunca abre la búsqueda no lo ve.</p></div>
+<div class="tabs" data-for="stage-s1"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="stage-s1"><div class="ov"><div class="ov-in"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12.5 12.5 4 4"/></svg><input placeholder="Escribe para buscar…" aria-label="Buscar (seguir donde dejaste, opción 1)"><kbd>Esc</kbd></div>
+<div class="ov-res"><div class="grp">Seguir donde dejaste</div>
+<button class="card-cont" type="button"><span class="t"><b>La Eucaristía, postura católica</b><span class="s">Sección «Por qué», dos tercios de la página</span><span class="bar-p"><i style="width:64%"></i></span></span><span class="when">ayer</span></button>
+<div class="grp">Recientes</div>
+<button class="row" type="button"><span class="r-t">Carta a los Esmirniotas 7.1</span><span class="r-p"><span>Padres / Ignacio de Antioquía</span><span class="d">c. 107–110</span></span></button>
+<button class="row" type="button"><span class="r-t">Ignacio de Antioquía</span><span class="r-p"><span>Historia / Padres</span><span class="d">† c. 108</span></span></button>
+</div><div class="ov-foot"><span>↑↓ para moverte</span><span>Enter para abrir</span></div></div></div>
+</section>
+
+<section class="opt" id="s2">
+<div class="opt-head"><h3>2. Al pie de la barra lateral</h3><p class="say">Una fila discreta al final del árbol, siempre a la vista en escritorio: el nombre de la página y de la sección. En el celular vive en el cajón del menú. Lo ve quien navega con el árbol; ocupa un lugar fijo.</p></div>
+<div class="tabs" data-for="stage-s2"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
+<div class="stage" id="stage-s2"><div class="sbwrap"><div class="side"><p>Doctrinas</p><a href="#" onclick="return false">La Eucaristía</a><a href="#" onclick="return false" class="cur">Católica</a><p style="margin-top:14px">Historia</p><a href="#" onclick="return false">Línea de tiempo</a><a href="#" onclick="return false">Padres</a>
+<div class="foot"><p>Seguir donde dejaste</p><a class="cont" href="#" onclick="return false"><b>La Eucaristía, postura católica</b><span>Sección «Por qué»</span></a></div></div>
+<div><h3>La posición católica</h3><p class="small">El resto de la página va aquí.</p></div></div></div>
+</section>
+
+<div class="out">
+<h3>Lo que descarto</h3>
+<ul>
+<li><b>Filtrar por tradición.</b> Ordenar o filtrar resultados por tradición pondría una tradición por encima de otra; el sitio no concluye ni elige. El filtro es por tipo de cosa, nunca por postura.</li>
+<li><b>Una puntuación o «mejor resultado».</b> Un porcentaje de coincidencia sugiere autoridad que el sitio no tiene.</li>
+<li><b>Resultados que resumen con IA.</b> Una respuesta generada no tiene cita ni edición (invariante de confianza).</li>
+<li><b>Lo que figura en la lista de «AI slop»</b> del proyecto: etiquetas en mayúsculas espaciadas, cadenas con «·», flechas pegadas, tarjetas con sombra, iconos en cuadros de color, un color por tradición.</li>
+</ul>
+<h3 style="margin-top:34px">Un hallazgo para decidir aparte</h3>
+<p class="say">Hoy el índice no incluye las fuentes citadas: escribir «Trento» no encuentra nada, aunque la página católica cita a Trento en sus afirmaciones, objeciones y fuentes. Una página de resultados lo haría más visible. Ampliar el índice a las fuentes y a los versículos es trabajo de datos, no de esta pantalla.</p>
+</div>
+
+<div class="dec out">
+<h3>Qué hay que decidir</h3>
+<ol>
+<li><b>¿Página o solo el cuadro?</b> A (el cuadro ordenado), B (página en una columna) o C (página con vista previa). Recomiendo B: A no cubre los enlaces compartibles y C pide más pantalla y más trabajo del que hoy justifica el índice.</li>
+<li><b>Orden por defecto:</b> relevancia o cronológico. Recomiendo relevancia, con el cronológico a un toque.</li>
+<li><b>Filtros:</b> por tipo (Doctrinas, Citas de los Padres, Padres), sin filtros por tradición.</li>
+<li><b>«Seguir donde dejaste»:</b> en el cuadro (1), en la barra lateral (2) o en los dos. Recomiendo el cuadro; la barra lateral después, cuando exista el lector y haya una posición más fina que recordar.</li>
+<li><b>Qué recuerda hoy:</b> la página y la sección, sin progreso numérico; el porcentaje de lectura espera al lector.</li>
+</ol>
+</div>
+</div>
+
+<script>
+(()=>{
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const D=[
+["doc","La Eucaristía","Doctrinas","","¿Qué pasa con el pan y el vino en la Cena del Señor?",0,0],
+["doc","Lo que escribieron los primeros cristianos","Doctrinas / La Eucaristía","","Los textos cristianos hasta c. 800 que tratan de la Eucaristía, en orden cronológico. Cada uno lleva a la obra completa.",0,0],
+["doc","Católica","Doctrinas / La Eucaristía","","Cómo la Iglesia católica entiende la Eucaristía, con sus propias fuentes.",0,0],
+["doc","Objeciones","Doctrinas / La Eucaristía / Católica","","Quienes objetan a la postura católica sobre la Eucaristía. Cada objeción abre su página, con la respuesta católica.",0,0],
+["obj","Un solo sacrificio, una sola vez","La Eucaristía / Católica / Objeción","","Si Cristo se ofreció «una vez para siempre», la Misa no puede ser un sacrificio.",0,0],
+["obj","Lo consagrado sigue siendo pan","La Eucaristía / Católica / Objeción","","Pablo lo sigue llamando «pan»: lo consagrado sigue siendo pan.",0,0],
+["obj","Guardar y adorar la hostia","La Eucaristía / Católica / Objeción","","Cristo dijo «Tomad, comed»: guardar, exponer y adorar la hostia va más allá de lo que dijo.",0,0],
+["obj","El cáliz y los laicos","La Eucaristía / Católica / Objeción","","Cristo dijo «Bebed de ella todos»: negar el cáliz a los laicos cambia lo que Cristo instituyó.",0,0],
+["obj","El pan ázimo","La Eucaristía / Católica / Objeción","","Durante mil años se consagró con pan fermentado: el ázimo es una innovación latina.",0,0],
+["obj","Misas privadas y por los difuntos","La Eucaristía / Católica / Objeción","","Cristo instituyó la Cena para que la comunidad comulgue y los creyentes se alimenten.",0,0],
+["quote","Didaché 14.1–3","Padres / Didajé","c. 50–120","«Cada día del Señor reuníos, partid el pan y dad gracias, después de haber confesado vuestras transgresiones, para que vuestro sacrificio sea puro.»",85,1],
+["quote","Carta a los Esmirniotas 7.1","Padres / Ignacio de Antioquía","c. 107–110","«Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.»",108,1],
+["quote","Primera Apología 66","Padres / Justino Mártir","c. 150–155","«Porque no tomamos estas cosas como pan común ni bebida común; sino que, así como Jesucristo nuestro Salvador, hecho carne por la Palabra de Dios, tuvo carne y sangre para nuestra salvación, así…»",152,1],
+["quote","Diálogo con Trifón 41","Padres / Justino Mártir","c. 155–160","«…le ofrecemos sacrificios, esto es, el pan de la Eucaristía y también la copa de la Eucaristía, afirmando que…»",157,1],
+["quote","Catequesis mistagógicas 5.7","Padres / Cirilo de Jerusalén (atribuido)","c. 350–390","«…pan el cuerpo de Cristo y del vino la sangre de Cristo; porque todo lo que el Espíritu Santo toca queda santificado y transformado.»",370,1],
+["quote","Sobre la doctrina cristiana III.16.24","Padres / Agustín de Hipona","c. 396–397","«“Si no comiereis la carne del Hijo del hombre y bebiereis su sangre, no tendréis vida en vosotros”, dice Cristo. Esto parece mandar un…»",396,1],
+["quote","Homilías sobre Hebreos 17.6","Padres / Juan Crisóstomo","c. 403–404","«…sino siempre lo mismo, de modo que el sacrificio es uno. […] No es otro sacrificio, como el del sumo sacerdote, sino…»",403,1],
+["quote","Exposición exacta de la fe ortodoxa IV.13","Padres / Juan Damasceno","c. 743","«…no son meras figuras del cuerpo y la sangre de Cristo (¡Dios no lo permita!), sino el cuerpo mismo deificado del…»",743,1],
+["page","Ignacio de Antioquía","Historia / Padres","† c. 108","Obispo de Antioquía que, según la tradición, fue llevado preso a Roma y martirizado bajo Trajano. Las siete cartas que escribió durante el viaje polemizan contra quienes negaban la realidad de la carne de Cristo.",108,2],
+["page","Justino Mártir","Historia / Padres","† c. 165","Filósofo nacido en Flavia Neápolis (Samaria) que, tras su conversión, enseñó en Roma; habla de una celebración dominical del bautismo y la Eucaristía; murió mártir en Roma.",165,2],
+["page","Policarpo de Esmirna","Historia / Padres","† c. 155","Obispo de Esmirna que, según Ireneo, había conocido al apóstol Juan, y que recibió una carta de Ignacio de Antioquía.",155,2],
+["page","Ireneo de Lyon","Historia / Padres","† c. 202","Originario de Asia Menor, donde de joven escuchó a Policarpo, fue presbítero y luego obispo de Lyon tras la persecución de 177. Su obra Contra las herejías refuta los sistemas gnósticos.",202,2],
+["page","Ambrosio de Milán","Historia / Padres","† c. 397","Gobernador romano elegido obispo de Milán por aclamación; contribuyó a la conversión de Agustín, a quien bautizó en 387.",397,2],
+["page","Agustín de Hipona","Historia / Padres","† 430","Retórico nacido en Tagaste, convertido en Milán en 386 y obispo de Hipona desde 395 o 396.",430,2],
+["page","Cirilo de Alejandría","Historia / Padres","† c. 444","Patriarca de Alejandría y principal opositor de Nestorio, autoridad común para calcedonianos y ortodoxos orientales.",444,2],
+["page","Próspero de Aquitania","Historia / Padres","† c. 455","Laico de Aquitania, defensor de la doctrina agustiniana de la gracia frente a los monjes de Marsella y Lérins.",455,2],
+["page","Cesáreo de Arlés","Historia / Padres","† c. 542","Obispo de Arlés que defendió una versión moderada de la doctrina agustiniana de la gracia; sus sermones circularon ampliamente.",542,2],
+["page","Gregorio Magno","Historia / Padres","† c. 604","Prefecto de Roma convertido en monje y elegido obispo de Roma en 590; envió la misión de Agustín de Canterbury a Inglaterra.",604,2],
+["page","Línea de tiempo","Historia","","Padres y escritores, escritos anónimos, concilios y corrientes condenadas, del año 30 al 800.",0,2]
+].map((r,i)=>({i,k:r[0],t:r[1],p:r[2],d:r[3],l:r[4],y:r[5],g:r[6]}));
+const GROUPS=["Doctrinas y objeciones","Citas de los Padres","Páginas de los Padres"];
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function hl(text,q){
+  if(!q)return esc(text);
+  const n=norm(text),nq=norm(q);const out=[];let at=0;let j;
+  while((j=n.indexOf(nq,at))>=0){out.push(esc(text.slice(at,j)),"<mark>"+esc(text.slice(j,j+nq.length))+"</mark>");at=j+nq.length}
+  out.push(esc(text.slice(at)));return out.join("");
+}
+function find(q){
+  const nq=norm(q.trim());if(!nq)return[];
+  return D.map(e=>{
+    const nt=norm(e.t),nl=norm(e.l),np=norm(e.p);
+    let s=0;if(nt.includes(nq))s=3;else if(nl.includes(nq))s=2;else if(np.includes(nq))s=1;
+    return s?{e,s}:null;
+  }).filter(Boolean).sort((a,b)=>b.s-a.s||a.e.g-b.e.g||a.e.i-b.e.i).map(x=>x.e);
+}
+function rowHtml(e,q,sel){
+  const line=e.k==="quote"?`<span class="r-l q">${hl(e.l,q)}</span>`:`<span class="r-l">${hl(e.l,q)}</span>`;
+  const date=e.d?`<span class="d">${esc(e.d)}</span>`:"";
+  return `<button class="row${sel?" sel":""}" type="button" data-i="${e.i}"><span class="r-t">${hl(e.t,q)}</span><span class="r-p"><span>${esc(e.p)}</span>${date}</span>${line}</button>`;
+}
+const $=id=>document.getElementById(id);
+// today
+function today(){const q=$("q-today").value;const r=find(q);$("res-today").innerHTML=r.length?r.map(e=>rowHtml(e,q.trim())).join(""):`<p class="empty">${q.trim()?`Nada coincide con «${esc(q.trim())}». Prueba con una palabra más corta.`:"Escribe para buscar…"}</p>`}
+$("q-today").addEventListener("input",today);today();
+// A
+const openGroups=new Set();
+function optA(){
+  const q=$("q-a").value.trim();const r=find(q);
+  if(!r.length){$("res-a").innerHTML=`<p class="empty">${q?`Nada coincide con «${esc(q)}». Prueba con una palabra más corta.`:"Escribe para buscar…"}</p>`;return}
+  let h="";
+  GROUPS.forEach((name,g)=>{
+    const rows=r.filter(e=>e.g===g);if(!rows.length)return;
+    const open=openGroups.has(g);const shown=open?rows:rows.slice(0,3);
+    h+=`<div class="grp">${name}</div>`+shown.map(e=>rowHtml(e,q)).join("");
+    if(rows.length>3)h+=`<button class="more" type="button" data-g="${g}" aria-expanded="${open}">${open?"Ver menos":`Ver los ${rows.length-3} restantes`}</button>`;
+  });
+  $("res-a").innerHTML=h;
+}
+$("q-a").addEventListener("input",()=>{openGroups.clear();optA()});
+$("res-a").addEventListener("click",ev=>{const b=ev.target.closest(".more");if(!b)return;const g=+b.dataset.g;openGroups.has(g)?openGroups.delete(g):openGroups.add(g);optA()});
+optA();
+// B
+let bf="all",bs="rel";
+const KIND={all:"Todo",0:"Doctrinas y objeciones",1:"Citas de los Padres",2:"Páginas de los Padres"};
+function optB(){
+  const q=$("q-b").value.trim();const all=find(q);
+  const counts=[0,1,2].map(g=>all.filter(e=>e.g===g).length);
+  $("b-title").textContent=q?`Resultados para «${q}»`:"Escribe para buscar";
+  $("b-count").textContent=q?`${all.length} ${all.length===1?"resultado":"resultados"}`:"";
+  $("b-chips").innerHTML=q?`<span class="small">Mostrar</span>`+[["all",all.length],[0,counts[0]],[1,counts[1]],[2,counts[2]]].filter(([k,n])=>k==="all"||n>0).map(([k,n])=>`<button class="chip${String(bf)===String(k)?" on":""}" type="button" data-k="${k}" aria-pressed="${String(bf)===String(k)}">${KIND[k]} ${n}</button>`).join("")+`<span class="sorts" role="group" aria-label="Orden"><button type="button" data-s="rel" aria-pressed="${bs==="rel"}">Relevancia</button><button type="button" data-s="date" aria-pressed="${bs==="date"}">Cronológico</button></span>`:"";
+  let r=all.filter(e=>bf==="all"||String(e.g)===String(bf));
+  if(bs==="date")r=[...r].sort((a,b)=>(a.y||99999)-(b.y||99999)||a.i-b.i);
+  $("res-b").innerHTML=r.length?r.map(e=>rowHtml(e,q)).join(""):`<p class="empty">${q?`Nada coincide con «${esc(q)}». Prueba con una palabra más corta.`:"Escribe para buscar."}</p>`;
+}
+$("q-b").addEventListener("input",()=>{bf="all";optB()});
+$("b-chips").addEventListener("click",ev=>{const c=ev.target.closest("[data-k]"),s=ev.target.closest("[data-s]");if(c){bf=c.dataset.k;optB()}if(s){bs=s.dataset.s;optB()}});
+optB();
+// C
+let cf="all",cs=null;
+function optC(){
+  const q=$("q-c").value.trim();const all=find(q);
+  const counts=[0,1,2].map(g=>all.filter(e=>e.g===g).length);
+  $("c-chips").innerHTML=q?`<span class="small">${all.length} ${all.length===1?"resultado":"resultados"}</span>`+[["all",all.length],[0,counts[0]],[1,counts[1]],[2,counts[2]]].filter(([k,n])=>k==="all"||n>0).map(([k,n])=>`<button class="chip${String(cf)===String(k)?" on":""}" type="button" data-k="${k}" aria-pressed="${String(cf)===String(k)}">${KIND[k]} ${n}</button>`).join(""):"";
+  const r=all.filter(e=>cf==="all"||String(e.g)===String(cf));
+  if(!r.some(e=>e.i===cs))cs=r.length?r[0].i:null;
+  $("res-c").innerHTML=r.length?r.map(e=>rowHtml(e,q,e.i===cs)+`<div class="inl">${prevBody(e,q,true)}</div>`).join(""):`<p class="empty">${q?`Nada coincide con «${esc(q)}». Prueba con una palabra más corta.`:"Escribe para buscar."}</p>`;
+  const cur=D.find(e=>e.i===cs);
+  $("prev-c").innerHTML=cur?prevBody(cur,q,false):"";
+}
+function prevBody(e,q,inline){
+  const kind=e.k==="quote"?"Cita de los Padres":e.k==="page"?"Página de los Padres":e.k==="obj"?"Objeción":"Doctrina";
+  const body=`<p class="tx${e.k==="quote"?" q":""}">${hl(e.l,q)}</p><a class="go" href="#" onclick="return false">${e.k==="quote"?"Leer en la obra completa":"Abrir la página"}</a>`;
+  if(inline)return body;
+  return `<p class="k">${kind}</p><h4>${esc(e.t)}</h4><p class="dd">${esc(e.d||" ")}</p>${body}<p class="small" style="margin-top:14px">${esc(e.p)}</p>`;
+}
+$("q-c").addEventListener("input",()=>{cf="all";optC()});
+$("c-chips").addEventListener("click",ev=>{const c=ev.target.closest("[data-k]");if(c){cf=c.dataset.k;optC()}});
+$("res-c").addEventListener("click",ev=>{const r=ev.target.closest(".row");if(r){cs=+r.dataset.i;optC()}});
+optC();
+// width switches
+document.querySelectorAll(".tabs[data-for]").forEach(t=>t.addEventListener("click",ev=>{
+  const b=ev.target.closest("button");if(!b)return;
+  t.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  document.getElementById(t.dataset.for).classList.toggle("phone",b.dataset.w==="phone");
+}));
+})();
+</script>
