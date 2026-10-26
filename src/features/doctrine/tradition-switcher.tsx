@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useStuck } from "@/lib/use-stuck";
 
 type SwitcherItem = {
   id: string;
@@ -14,15 +15,13 @@ type TraditionSwitcherProps = {
   current: string;
 };
 
-const stuckThreshold = 4;
-
 export function TraditionSwitcher({ label, hint, items, current }: TraditionSwitcherProps) {
   const bar = useRef<HTMLElement>(null);
   const strip = useRef<HTMLUListElement>(null);
   const caption = useRef<HTMLSpanElement>(null);
   const hintBox = useRef<HTMLSpanElement>(null);
   const hintWidth = useRef(0);
-  const [stuck, setStuck] = useState(false);
+  const stuck = useStuck(bar);
   const [fade, setFade] = useState(false);
   const [crowded, setCrowded] = useState(false);
 
@@ -31,10 +30,8 @@ export function TraditionSwitcher({ label, hint, items, current }: TraditionSwit
     const list = strip.current;
     if (!element || !list) return;
     const root = document.documentElement;
-    const top = () => parseFloat(getComputedStyle(root).getPropertyValue("--spacing-top")) || 0;
     const measure = () => {
       root.style.setProperty("--spacing-scroll-offset", `${element.offsetHeight + 20}px`);
-      setStuck(element.getBoundingClientRect().top <= top() + 0.5 && scrollY > stuckThreshold);
       setFade(list.scrollWidth - list.clientWidth - list.scrollLeft > 2);
       const hint = hintBox.current;
       if (hint && hint.offsetWidth > 0) hintWidth.current = hint.offsetWidth;

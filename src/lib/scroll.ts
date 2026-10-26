@@ -86,6 +86,10 @@ export function scrollToLayoutPosition(element: HTMLElement, instant = false) {
     scrollToY(target);
     return;
   }
+  jumpToY(target);
+}
+
+export function jumpToY(target: number) {
   const y = Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight, target));
   scrollTo(0, y);
   smooth?.resize();
