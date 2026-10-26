@@ -91,12 +91,22 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
       <ReaderSizeScript />
       <ReaderFormatScript />
       <ReaderStrip
+        parallelText={{
+          label: labels.parallel.label,
+          mode: labels.parallel.mode,
+          none: labels.parallel.none,
+          below: labels.parallel.below,
+          side: labels.parallel.side,
+          sideNote: labels.parallel.sideNote,
+          list: labels.parallel.list,
+        }}
         textText={{
           mark: labels.textOptions.mark,
           label: labels.textOptions.label,
           size: labels.size,
           formatGroup: labels.textOptions.formatGroup,
           formats: { lines: labels.textOptions.lines, flow: labels.textOptions.flow },
+          locked: labels.parallel.locked,
         }}
         pickerText={labels.picker}
         options={views.map(({ id, abbreviation, displayName, language }) => ({

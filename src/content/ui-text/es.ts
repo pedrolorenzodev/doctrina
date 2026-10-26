@@ -241,6 +241,16 @@ export const es = {
       lines: "Un versículo por línea",
       flow: "En párrafo",
     },
+    parallel: {
+      label: "Segunda traducción",
+      mode: "Cómo leerla",
+      none: "No",
+      below: "Debajo",
+      side: "Al lado",
+      sideNote: "«Al lado» necesita una pantalla más ancha.",
+      list: "Traducción",
+      locked: "Con dos traducciones va un versículo por línea, para poder alinearlas.",
+    },
     bookPicker: { label: "Libro y capítulo", books: "Libros", chapters: "{count} capítulos", oneChapter: "1 capítulo" },
     numberingNote:
       "{abbreviation} numera este capítulo de otro modo que {reference}: puede traer otros versículos o corresponder a otro capítulo.",

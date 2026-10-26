@@ -12,6 +12,7 @@
   --color-rule: #c9c5bc;
   --color-rule-2: #aeaba4;
   --color-accent: #2c4a9e;
+  --color-jesus: #a3271c;
   --color-accent-weak: rgb(44 74 158 / 0.1);
   --color-accent-mid: rgb(44 74 158 / 0.45);
   --color-cite: #5f3d0c;
@@ -273,6 +274,7 @@
   --color-rule: #3a3a38;
   --color-rule-2: #4d4d4a;
   --color-accent: #9eb3ee;
+  --color-jesus: #e58a7b;
   --color-accent-weak: rgb(158 179 238 / 0.12);
   --color-accent-mid: rgb(158 179 238 / 0.45);
   --color-cite: #d6a865;
@@ -985,6 +987,11 @@
   grid-template-columns: minmax(0, 1fr) auto;
 }
 
+@utility text-reader-second {
+  font-size: calc(var(--text-reader) - 2px);
+  line-height: 1.6;
+}
+
 @utility after-empty {
   &::after {
     content: "";
@@ -1379,19 +1386,19 @@ html.theme-switching ::after {
   }
 }
 
-:root[data-reader-format="flow"] [data-chapter-text] > p {
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p {
   display: inline;
   margin: 0;
   padding: 0;
   box-shadow: none;
 }
 
-:root[data-reader-format="flow"] [data-chapter-text] > p > span:first-child {
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child {
   display: inline;
   margin: 0;
 }
 
-:root[data-reader-format="flow"] [data-chapter-text] > p > span:first-child > span {
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child > span {
   position: static;
   display: inline;
   width: auto;
@@ -1401,7 +1408,7 @@ html.theme-switching ::after {
   text-align: left;
 }
 
-:root[data-reader-format="flow"] [data-chapter-text] > p > span:first-child > button {
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child > button {
   position: static;
   display: inline;
   width: auto;
@@ -1410,7 +1417,7 @@ html.theme-switching ::after {
   line-height: 0;
 }
 
-:root[data-reader-format="flow"] [data-chapter-text] > p:first-child > span:first-child > span {
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p:first-child > span:first-child > span {
   margin-left: 0;
 }
 

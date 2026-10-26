@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { UndoBar } from "@/components/undo-bar";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
-import { ChapterText } from "@/features/reader/chapter-text";
+import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
 import { ReadMarker } from "@/features/reader/read-marker";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
@@ -24,6 +24,7 @@ import { SelectionToolbar } from "@/features/reader/selection-toolbar";
 import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
+import { useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
 import { useUndo } from "@/features/reader/use-undo";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { nbspBeforeDigits } from "@/lib/locator";
@@ -88,6 +89,23 @@ export function ReaderBody({
   );
   const selected = views.find((view) => view.id === chosen) ?? views[0]!;
   const defaultView = views.find((view) => view.id === defaultId) ?? selected;
+  const secondChoice = useSecondTranslation(
+    views.map((view) => view.id),
+    selected.id,
+  );
+  const sideRoom = useSideRoom();
+  const secondView = views.find((view) => view.id === secondChoice.id) ?? null;
+  const second: SecondReading | null =
+    secondView && secondChoice.mode !== "off"
+      ? {
+          mode: secondChoice.mode === "side" && sideRoom ? "side" : "below",
+          abbreviation: secondView.abbreviation,
+          name: secondView.name,
+          firstName: selected.name,
+          lang: secondView.language,
+          verses: new Map(secondView.verses.map((entry) => [entry.verse, { text: entry.text, red: entry.red }])),
+        }
+      : null;
   const [picked, setPicked] = useState<number | null>(null);
   const [byKeyboard, setByKeyboard] = useState(false);
   const [deleting, setDeleting] = useState<string | null>(null);
@@ -283,22 +301,25 @@ export function ReaderBody({
         className="mt-2 -ml-2.5 border border-rule-2 sm:hidden"
       />
       <ChapterText
+        second={second}
         verses={selected.verses}
         lang={selected.language}
         selected={verse}
         rootRef={textRoot}
         segmentsOf={(entry) => highlights.segmentsFor(entry.verse, entry.text.length)}
         noteMarkOf={noteMarkOf}
-        cardsShown={verse === null}
+        cardsShown={verse === null && second?.mode !== "side"}
         cards={
-          <NoteCards
-            label={panel.notes.cardsLabel}
-            cards={cards}
-            hidden={verse !== null}
-            rootRef={textRoot}
-            onOpen={openCard}
-            onPreview={previewNote}
-          />
+          second?.mode === "side" ? null : (
+            <NoteCards
+              label={panel.notes.cardsLabel}
+              cards={cards}
+              hidden={verse !== null}
+              rootRef={textRoot}
+              onOpen={openCard}
+              onPreview={previewNote}
+            />
+          )
         }
         onMark={(number, element) => open(number, false, element)}
         onSelect={select}

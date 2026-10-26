@@ -243,6 +243,16 @@ export const en: UiText = {
       lines: "One verse per line",
       flow: "As a paragraph",
     },
+    parallel: {
+      label: "Second translation",
+      mode: "How to read it",
+      none: "No",
+      below: "Below",
+      side: "Side by side",
+      sideNote: "«Side by side» needs a wider screen.",
+      list: "Translation",
+      locked: "With two translations the text is one verse per line, so they can line up.",
+    },
     bookPicker: { label: "Book and chapter", books: "Books", chapters: "{count} chapters", oneChapter: "1 chapter" },
     numberingNote:
       "{abbreviation} numbers this chapter differently from {reference}: it may have other verses or correspond to another chapter.",
