@@ -106,6 +106,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
         footTitle={labels.foot.title}
         panel={{
           text: labels.panel,
+          highlight: labels.highlight,
           bookName: book.names[locale],
           chapter,
           verseReference: labels.verseReference,

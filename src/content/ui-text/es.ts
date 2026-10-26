@@ -167,6 +167,16 @@ export const es = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    highlight: {
+      label: "Subrayar",
+      remove: "Quitar subrayado",
+      group: "Subrayar con color",
+      withColor: "Subrayar en {color}",
+      done: "Subrayado.",
+      removed: "Subrayado quitado.",
+      undo: "Deshacer",
+      colors: { yellow: "amarillo", green: "verde", sky: "celeste", pink: "rosa", orange: "naranja" },
+    },
     verseReference: "{book} {chapter}:{verse}",
     shortCitation: "{reference} ({edition})",
     panel: {

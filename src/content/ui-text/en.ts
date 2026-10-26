@@ -169,6 +169,16 @@ export const en: UiText = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    highlight: {
+      label: "Highlight",
+      remove: "Remove highlight",
+      group: "Highlight with a colour",
+      withColor: "Highlight in {color}",
+      done: "Highlighted.",
+      removed: "Highlight removed.",
+      undo: "Undo",
+      colors: { yellow: "yellow", green: "green", sky: "sky blue", pink: "pink", orange: "orange" },
+    },
     verseReference: "{book} {chapter}:{verse}",
     shortCitation: "{reference} ({edition})",
     panel: {

@@ -1,11 +1,29 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, useSyncExternalStore } from "react";
+import { UndoBar } from "@/components/undo-bar";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { ChapterText } from "@/features/reader/chapter-text";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
+import {
+  getHighlights,
+  lastHighlightColor,
+  noHighlights,
+  rememberHighlightColor,
+  setHighlights,
+  subscribeHighlights,
+} from "@/lib/highlight-store";
+import {
+  addHighlight,
+  currentColor,
+  removeVerse,
+  segmentsOf,
+  type Highlight,
+  type HighlightColor,
+  type VerseKey,
+} from "@/lib/highlights";
 import { nbspBeforeDigits } from "@/lib/locator";
 import { numberingDiffers } from "@/content/bible/numbering-note";
 import type { ReaderTranslationView } from "@/content/get-reader-chapter";
@@ -20,6 +38,7 @@ type ReaderBodyProps = {
   footTitle: string;
   panel: {
     text: Parameters<typeof VersePanel>[0]["text"];
+    highlight: Parameters<typeof VersePanel>[0]["highlight"]["text"] & { done: string; removed: string; undo: string };
     bookName: string;
     chapter: number;
     verseReference: string;
@@ -65,6 +84,32 @@ export function ReaderBody({
   const citation = panel.shortCitation
     .replace("{reference}", plainReference)
     .replace("{edition}", selected.abbreviation);
+  const highlights = useSyncExternalStore(subscribeHighlights, getHighlights, () => noHighlights);
+  const [undo, setUndo] = useState<{ message: string; before: Highlight[]; token: number; open: boolean } | null>(null);
+  const keyOf = (number: number): VerseKey => ({
+    translationId: selected.id,
+    book: bookId,
+    chapter: panel.chapter,
+    verse: number,
+  });
+  const change = (next: Highlight[], message: string) => {
+    const before = getHighlights();
+    setHighlights(next);
+    setUndo((previous) => ({ message, before, token: (previous?.token ?? 0) + 1, open: true }));
+  };
+  const pick = (color: HighlightColor) => {
+    const entry = selected.verses.find((candidate) => candidate.verse === verse);
+    if (verse === null || !entry) return;
+    rememberHighlightColor(color);
+    change(
+      addHighlight(getHighlights(), { ...keyOf(verse), from: 0, to: entry.text.length, color, at: Date.now() }),
+      panel.highlight.done,
+    );
+  };
+  const unmark = () => {
+    if (verse !== null) change(removeVerse(getHighlights(), keyOf(verse)), panel.highlight.removed);
+  };
+  const expireUndo = useCallback(() => setUndo((previous) => (previous ? { ...previous, open: false } : previous)), []);
   const close = useCallback(() => {
     setPicked(null);
     opener.current?.focus({ preventScroll: true });
@@ -92,7 +137,13 @@ export function ReaderBody({
             .replace("{reference}", defaultView.abbreviation)}
         </p>
       ) : null}
-      <ChapterText verses={selected.verses} lang={selected.language} selected={verse} onSelect={select} />
+      <ChapterText
+        verses={selected.verses}
+        lang={selected.language}
+        selected={verse}
+        segmentsOf={(entry) => segmentsOf(highlights, keyOf(entry.verse), entry.text.length)}
+        onSelect={select}
+      />
       <ChapterFoot title={footTitle} edition={selected.name} licence={licences[selected.id] ?? null} />
       <VersePanel
         open={verse !== null}
@@ -101,7 +152,26 @@ export function ReaderBody({
         verse={verse}
         text={panel.text}
         focusOnOpen={byKeyboard}
+        highlight={{
+          text: panel.highlight,
+          current: verse === null ? null : (currentColor(highlights, keyOf(verse)) ?? lastHighlightColor()),
+          marked: verse !== null && currentColor(highlights, keyOf(verse)) !== null,
+          onPick: pick,
+          onRemove: unmark,
+        }}
         onClose={close}
+      />
+      <UndoBar
+        open={undo?.open ?? false}
+        message={undo?.message ?? ""}
+        token={undo?.token ?? 0}
+        actionLabel={panel.highlight.undo}
+        onAction={() => {
+          if (!undo) return;
+          setHighlights(undo.before);
+          setUndo({ ...undo, open: false });
+        }}
+        onExpire={expireUndo}
       />
     </>
   );
