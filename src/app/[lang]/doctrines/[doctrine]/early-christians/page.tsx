@@ -50,7 +50,7 @@ export default async function EarlyChristiansRoute({
       />
       <PageHeader
         className="mt-5"
-        long
+        size="objection"
         title={labels.title.replace("{subject}", subject)}
         lede={labels.lede.replaceAll("{subject}", subject)}
       />

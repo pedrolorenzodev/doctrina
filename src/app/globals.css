@@ -163,6 +163,21 @@
   --text-ruler: 15px;
   --text-sidebar: 14px;
   --text-sidebar--line-height: 1.35;
+  --text-reader-title: 44px;
+  --text-reader-title--line-height: 1.08;
+  --text-reader-title--letter-spacing: -0.01em;
+  --text-reader-title-mobile: 34px;
+  --text-reader-title-mobile--line-height: 1.08;
+  --text-reader-title-mobile--letter-spacing: -0.01em;
+  --text-reader-note: 14px;
+  --text-reader-note--line-height: 1.55;
+  --text-reader-foot: 14px;
+  --text-reader-foot--line-height: 1.6;
+  --text-reader: 19px;
+  --text-reader--line-height: 1.66;
+  --text-division: 12px;
+  --text-reader-foot-title: 22px;
+  --text-reader-foot-title--line-height: 1.15;
   --text-logo: 23px;
   --text-logo--letter-spacing: -0.005em;
 
