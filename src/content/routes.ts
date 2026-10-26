@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/locale";
+import { bibleSegments } from "./bible-segments";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "./model/ids";
 
 const doctrineSlugs: Record<Locale, Record<DoctrineId, string>> = {
@@ -112,6 +113,7 @@ export function objectionSlug(id: string): string {
 export function spanishRewrites() {
   return [
     { source: timelineHref("es"), destination: timelineRoute("es") },
+    { source: `/es/${bibleSegments.es}/:book/:chapter`, destination: "/es/bible/:book/:chapter" },
     {
       source: fatherHref("es", ":father"),
       destination: fatherRoute("es", ":father"),

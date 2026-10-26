@@ -165,6 +165,22 @@ export const es = {
     objection: "Objeción",
     hints: { move: "↑ ↓ para moverse", open: "Enter abre", close: "Esc cierra" },
   },
+  reader: {
+    chapterTitle: "{book} {chapter}",
+    previous: "Capítulo anterior",
+    next: "Capítulo siguiente",
+    neighborsLabel: "Capítulo anterior y siguiente",
+    deuteroNotice:
+      "Los católicos y los ortodoxos reciben estos libros como Escritura; los protestantes no los incluyen y los llaman apócrifos. Por ahora no hay una traducción al español: se leen en inglés.",
+    foot: { title: "Edición y licencia", licence: "Licencia: {licence}" },
+    licences: {
+      rv1909: "Dominio público",
+      kjv: "Dominio público fuera del Reino Unido",
+      bsb: "Dominio público",
+      "web-c": "Dominio público",
+      dra: "Dominio público",
+    },
+  },
   father: {
     facts: {
       born: "Nació",

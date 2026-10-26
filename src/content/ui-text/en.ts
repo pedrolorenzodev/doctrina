@@ -167,6 +167,22 @@ export const en: UiText = {
     objection: "Objection",
     hints: { move: "↑ ↓ to move", open: "Enter opens", close: "Esc closes" },
   },
+  reader: {
+    chapterTitle: "{book} {chapter}",
+    previous: "Previous chapter",
+    next: "Next chapter",
+    neighborsLabel: "Previous and next chapter",
+    deuteroNotice:
+      "Catholics and Orthodox receive these books as Scripture; Protestants do not include them and call them apocrypha.",
+    foot: { title: "Edition and licence", licence: "Licence: {licence}" },
+    licences: {
+      rv1909: "Public domain",
+      kjv: "Public domain outside the United Kingdom",
+      bsb: "Public domain",
+      "web-c": "Public domain",
+      dra: "Public domain",
+    },
+  },
   father: {
     facts: {
       born: "Born",
