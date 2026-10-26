@@ -22,6 +22,8 @@ type SelectionToolbarProps = {
   text: SelectionToolbarText;
   isMarked: (ranges: VerseRange[]) => boolean;
   lastColor: () => HighlightColor;
+  chosenIn: (ranges: VerseRange[]) => HighlightColor | null;
+  hasHighlightIn: (ranges: VerseRange[]) => boolean;
   citation: (selection: ReaderSelection) => string;
   onHighlight: (ranges: VerseRange[], color: HighlightColor) => void;
   onRemove: (ranges: VerseRange[]) => void;
@@ -43,6 +45,8 @@ export function SelectionToolbar({
   text,
   isMarked,
   lastColor,
+  chosenIn,
+  hasHighlightIn,
   citation,
   onHighlight,
   onRemove,
@@ -170,8 +174,6 @@ export function SelectionToolbar({
     };
   });
 
-  const marked = current ? isMarked(current.ranges) : false;
-
   return (
     <div
       ref={bar}
@@ -180,12 +182,12 @@ export function SelectionToolbar({
       data-open={open}
       data-docked={docked || undefined}
       onMouseDown={(event) => event.preventDefault()}
-      className="group/toolbar toolbar-motion invisible pointer-events-none fixed top-(--y) left-(--x) z-86 flex translate-y-1 items-center gap-0.5 rounded-8 border border-rule-2 bg-panel p-0.75 opacity-0 shadow-floating data-[open=true]:pointer-events-auto data-[open=true]:visible data-[open=true]:translate-y-0 data-[open=true]:opacity-100 data-docked:inset-x-0 data-docked:top-auto data-docked:bottom-0 data-docked:left-0 data-docked:translate-y-full data-docked:flex-wrap data-docked:justify-center data-docked:rounded-none data-docked:border-x-0 data-docked:border-b-0 data-docked:bg-bg data-docked:texture-layer data-docked:safe-bottom data-docked:data-[open=true]:translate-y-0"
+      className="group/toolbar toolbar-motion invisible pointer-events-none fixed top-(--y) left-(--x) z-86 flex translate-y-1 items-center gap-0.5 rounded-8 border border-rule-2 bg-panel px-1.5 py-0.75 opacity-0 shadow-floating data-[open=true]:pointer-events-auto data-[open=true]:visible data-[open=true]:translate-y-0 data-[open=true]:opacity-100 data-docked:inset-x-0 data-docked:top-auto data-docked:bottom-0 data-docked:left-0 data-docked:translate-y-full data-docked:flex-wrap data-docked:justify-center data-docked:rounded-none data-docked:border-x-0 data-docked:border-b-0 data-docked:bg-bg data-docked:texture-layer data-docked:safe-bottom data-docked:data-[open=true]:translate-y-0"
     >
       <HighlightColors
         text={text.highlight}
-        current={marked ? null : lastColor()}
-        marked={marked}
+        current={current ? chosenIn(current.ranges) : null}
+        canRemove={current ? hasHighlightIn(current.ranges) : false}
         onPick={highlight}
         onRemove={unmark}
       />

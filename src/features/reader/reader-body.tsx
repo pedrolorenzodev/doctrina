@@ -312,8 +312,8 @@ export function ReaderBody({
         focusOnOpen={byKeyboard}
         highlight={{
           text: panel.highlight,
-          current: verse === null ? null : (highlights.colorOf(verse) ?? highlights.lastColor()),
-          marked: verse !== null && highlights.colorOf(verse) !== null,
+          current: verse === null ? null : highlights.chosenOfVerse(verse),
+          canRemove: verse !== null && highlights.hasHighlightOnVerse(verse),
           onPick: (color) => {
             const entry = selected.verses.find((candidate) => candidate.verse === verse);
             if (verse !== null && entry) highlights.apply([{ verse, from: 0, to: entry.text.length }], color);
@@ -382,6 +382,8 @@ export function ReaderBody({
         text={{ ...panel.toolbar, highlight: panel.highlight }}
         isMarked={highlights.isMarked}
         lastColor={highlights.lastColor}
+        chosenIn={highlights.chosenIn}
+        hasHighlightIn={highlights.hasHighlightIn}
         citation={selectionCitation}
         onHighlight={highlights.apply}
         onRemove={highlights.remove}

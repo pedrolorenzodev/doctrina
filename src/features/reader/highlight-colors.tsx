@@ -11,7 +11,8 @@ type HighlightColorsText = {
 type HighlightColorsProps = {
   text: HighlightColorsText;
   current: HighlightColor | null;
-  marked: boolean;
+  canRemove: boolean;
+  showLabel?: boolean;
   onPick: (color: HighlightColor) => void;
   onRemove: () => void;
 };
@@ -24,20 +25,20 @@ const swatchClassName: Record<HighlightColor, string> = {
   orange: "bg-hls-orange",
 };
 
-export function HighlightColors({ text, current, marked, onPick, onRemove }: HighlightColorsProps) {
+const dotClassName =
+  "group/dot inline-flex size-8 cursor-pointer items-center justify-center rounded-6 transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:size-11";
+
+export function HighlightColors({
+  text,
+  current,
+  canRemove,
+  showLabel = false,
+  onPick,
+  onRemove,
+}: HighlightColorsProps) {
   return (
     <span className="inline-flex items-center">
-      {marked ? (
-        <button
-          type="button"
-          onClick={onRemove}
-          className="inline-flex min-h-10 cursor-pointer items-center justify-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
-        >
-          {text.remove}
-        </button>
-      ) : (
-        <span className="pr-1.5 pl-2.5 text-btn font-medium text-ink-3">{text.label}</span>
-      )}
+      {showLabel ? <span className="pr-1.5 pl-2.5 text-btn font-medium text-ink-3">{text.label}</span> : null}
       <span role="group" aria-label={text.group} className="inline-flex items-center">
         {highlightColors.map((color) => (
           <button
@@ -46,13 +47,35 @@ export function HighlightColors({ text, current, marked, onPick, onRemove }: Hig
             aria-label={text.withColor.replace("{color}", text.colors[color])}
             aria-pressed={current === color}
             onClick={() => onPick(color)}
-            className="group/dot inline-flex size-8 cursor-pointer items-center justify-center rounded-6 transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:size-11"
+            className={dotClassName}
           >
             <span
               className={`size-3 rounded-full shadow-swatch group-aria-pressed/dot:shadow-swatch-current ${swatchClassName[color]}`}
             />
           </button>
         ))}
+        <button
+          type="button"
+          aria-label={text.remove}
+          title={text.remove}
+          disabled={!canRemove}
+          onClick={onRemove}
+          className={`${dotClassName} text-ink-3 hover:text-ink disabled:cursor-default disabled:opacity-35 disabled:hover:bg-transparent disabled:hover:text-ink-3`}
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            aria-hidden="true"
+          >
+            <circle cx="7" cy="7" r="5.25" />
+            <path d="M3.3 10.7 10.7 3.3" />
+          </svg>
+        </button>
       </span>
     </span>
   );

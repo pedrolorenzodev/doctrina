@@ -29,7 +29,7 @@ type VersePanelProps = {
   highlight: {
     text: Parameters<typeof HighlightColors>[0]["text"];
     current: HighlightColor | null;
-    marked: boolean;
+    canRemove: boolean;
     onPick: (color: HighlightColor) => void;
     onRemove: () => void;
   };
@@ -70,7 +70,8 @@ export function VersePanel({
         <HighlightColors
           text={highlight.text}
           current={highlight.current}
-          marked={highlight.marked}
+          canRemove={highlight.canRemove}
+          showLabel
           onPick={highlight.onPick}
           onRemove={highlight.onRemove}
         />
