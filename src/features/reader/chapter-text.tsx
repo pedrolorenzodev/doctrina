@@ -1,4 +1,4 @@
-import type { RefObject } from "react";
+import type { ReactNode, RefObject } from "react";
 import type { BibleVerse } from "@/content/model/bible";
 import type { HighlightColor, Segment } from "@/lib/highlights";
 
@@ -9,6 +9,8 @@ type ChapterTextProps = {
   segmentsOf: (verse: BibleVerse) => Segment[];
   rootRef: RefObject<HTMLDivElement | null>;
   noteMarkOf: (verse: number) => string | null;
+  cards: ReactNode;
+  cardsShown: boolean;
   onMark: (verse: number, opener: HTMLElement) => void;
   onSelect: (verse: number, byKeyboard: boolean, opener: HTMLElement) => void;
 };
@@ -28,11 +30,13 @@ export function ChapterText({
   segmentsOf,
   rootRef,
   noteMarkOf,
+  cards,
+  cardsShown,
   onMark,
   onSelect,
 }: ChapterTextProps) {
   return (
-    <div ref={rootRef} lang={lang} className="mt-8.5 max-w-col">
+    <div ref={rootRef} lang={lang} className="relative mt-8.5 max-w-col">
       {verses.map((verse) => (
         <p
           key={verse.verse}
@@ -45,7 +49,7 @@ export function ChapterText({
               <button
                 type="button"
                 onClick={(event) => onMark(verse.verse, event.currentTarget)}
-                className="hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:top-8 md:-left-16.5 md:w-14 md:text-right"
+                className={`note-mark-in hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:top-8 md:-left-16.5 md:w-14 md:text-right ${cardsShown ? "notes:hidden" : ""}`}
               >
                 {noteMarkOf(verse.verse)}
               </button>
@@ -80,6 +84,7 @@ export function ChapterText({
           </span>
         </p>
       ))}
+      {cards}
     </div>
   );
 }

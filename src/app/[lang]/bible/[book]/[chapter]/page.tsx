@@ -88,6 +88,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           language,
         }))}
         defaultId={defaultId}
+        yourNotes={{ label: labels.yourNotes.button, book: book.id, chapter }}
       />
       {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
       <Breadcrumbs
@@ -115,6 +116,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           shortCitation: labels.shortCitation,
           verseRange: labels.verseRange,
           toolbar: labels.toolbar,
+          yourNotes: labels.yourNotes,
         }}
       />
       <VerseArrival />

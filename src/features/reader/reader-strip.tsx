@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { YourNotesButton } from "@/features/reader/your-notes-button";
 import { TextSizeControl } from "@/features/reader/text-size-control";
 import { TranslationPicker, type PickerOption } from "@/features/reader/translation-picker";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
@@ -12,9 +13,10 @@ type ReaderStripProps = {
   pickerText: Parameters<typeof TranslationPicker>[0]["text"];
   options: PickerOption[];
   defaultId: string;
+  yourNotes: { label: string; book: string; chapter: number };
 };
 
-export function ReaderStrip({ sizeText, pickerText, options, defaultId }: ReaderStripProps) {
+export function ReaderStrip({ sizeText, pickerText, options, defaultId, yourNotes }: ReaderStripProps) {
   const bar = useRef<HTMLDivElement>(null);
   const stuck = useStuck(bar);
   const value = useChosenTranslation(
@@ -45,6 +47,12 @@ export function ReaderStrip({ sizeText, pickerText, options, defaultId }: Reader
       data-stuck={stuck ? "" : undefined}
       className="texture-layer sticky top-top z-31 mb-5.5 -mr-4 -ml-4 flex items-center justify-end border-b border-transparent bg-bg px-4 py-1 transition-colors duration-150 ease-standard data-stuck:border-rule sm:mb-7.5 sm:-mr-8 sm:-ml-8 sm:px-8 sm:py-1.5 md:-mr-26 md:-ml-12 md:pr-26 md:pl-12 lg:-mr-28 lg:-ml-16 lg:pr-28 lg:pl-16"
     >
+      <YourNotesButton
+        label={yourNotes.label}
+        book={yourNotes.book}
+        chapter={yourNotes.chapter}
+        className="mr-1.5 max-sm:hidden"
+      />
       <div className="max-sm:hidden">
         <TextSizeControl text={sizeText} />
       </div>

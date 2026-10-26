@@ -97,7 +97,6 @@ export function NoteEditor({
       />
       <div className="mt-2 flex items-center gap-3 text-note-meta text-ink-3">
         <span role="status">{!dirty && savedAt !== null ? savedLine(text.saved, dateLabel(savedAt)) : null}</span>
-        {/* TODO: «Borrar nota» asks for a deliberate hold in a dialog (block R7c) */}
         <button
           type="button"
           onClick={onDelete}

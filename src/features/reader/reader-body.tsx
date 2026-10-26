@@ -1,11 +1,22 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { UndoBar } from "@/components/undo-bar";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { ChapterText } from "@/features/reader/chapter-text";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
+import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
+import { NoteCards, type NoteCard } from "@/features/reader/note-cards";
+import { YourNotesButton } from "@/features/reader/your-notes-button";
+import { YourNotesPanel, type YourNotesText } from "@/features/reader/your-notes-panel";
+import {
+  isYourNotesOpen,
+  setYourNotesOpen,
+  subscribeYourNotes,
+  useYourNotesOpen,
+} from "@/features/reader/your-notes-store";
 import { NoteEditor } from "@/features/reader/note-editor";
+import { clearNoteWords, markNoteWords } from "@/features/reader/note-words";
 import { PanelNotes } from "@/features/reader/panel-notes";
 import type { ReaderSelection } from "@/features/reader/read-selection";
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
@@ -40,6 +51,9 @@ type ReaderBodyProps = {
       one: string;
       many: string;
       inEdition: string;
+      cardsLabel: string;
+      cardForeign: string;
+      delete: DeleteNoteText;
       removed: string;
     };
     bookName: string;
@@ -48,8 +62,12 @@ type ReaderBodyProps = {
     shortCitation: string;
     verseRange: string;
     toolbar: Omit<Parameters<typeof SelectionToolbar>[0]["text"], "highlight">;
+    yourNotes: YourNotesText;
   };
 };
+
+const excerptLimit = 90;
+const excerptOf = (text: string) => (text.length > excerptLimit ? `${text.slice(0, excerptLimit).trimEnd()}…` : text);
 
 const noteClassName = "mt-5.5 mb-0 max-w-140 text-reader-note text-ink-3";
 
@@ -71,8 +89,10 @@ export function ReaderBody({
   const defaultView = views.find((view) => view.id === defaultId) ?? selected;
   const [picked, setPicked] = useState<number | null>(null);
   const [byKeyboard, setByKeyboard] = useState(false);
+  const [deleting, setDeleting] = useState<string | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const textRoot = useRef<HTMLDivElement>(null);
+  const yourOpen = useYourNotesOpen();
   const verse = picked !== null && selected.verses.some((entry) => entry.verse === picked) ? picked : null;
   const undoState = useUndo();
   const highlights = useChapterHighlights({
@@ -120,6 +140,7 @@ export function ReaderBody({
     opener.current?.focus({ preventScroll: true });
   }, [notes]);
   const open = (next: number, keyboard: boolean, element: HTMLElement | null) => {
+    setYourNotesOpen(false);
     opener.current = element;
     setByKeyboard(keyboard);
     setPicked(next);
@@ -169,6 +190,79 @@ export function ReaderBody({
     bookId,
   );
   const editor = notes.editing && notes.editing.draft.verse === verse ? notes.editing : null;
+  const chapterNotes = selected.verses.flatMap((entry) => notes.at(entry.verse));
+  const cards: NoteCard[] = chapterNotes.map((note) => {
+    const first = note.verse ?? 0;
+    const place = nbspBeforeDigits(referenceOf(first, note.verseTo ?? first));
+    const foreign = note.scope === "words" && note.translationId !== selected.id;
+    const edition = views.find((candidate) => candidate.id === note.translationId)?.abbreviation;
+    return {
+      id: note.id,
+      verse: first,
+      place:
+        foreign && edition
+          ? panel.notes.cardForeign.replace("{reference}", place).replace("{edition}", edition)
+          : place,
+      text: note.text,
+      date: dateLabel(note.updatedAt),
+    };
+  });
+  const deletingCard = deleting === null ? null : (cards.find((card) => card.id === deleting) ?? null);
+  const latest = useRef({ chapterNotes, translationId: selected.id });
+  useEffect(() => {
+    latest.current = { chapterNotes, translationId: selected.id };
+  });
+  const previewNote = useCallback((id: string | null) => {
+    const note = id === null ? undefined : latest.current.chapterNotes.find((candidate) => candidate.id === id);
+    if (note && textRoot.current) markNoteWords(textRoot.current, note, latest.current.translationId);
+    else clearNoteWords();
+  }, []);
+  const citationOf = (first: number, last: number, abbreviation: string) =>
+    panel.shortCitation.replace("{reference}", referenceOf(first, last)).replace("{edition}", abbreviation);
+  const listedNotes = chapterNotes.map((note) => {
+    const card = cards.find((entry) => entry.id === note.id)!;
+    const abbreviation =
+      views.find((candidate) => candidate.id === note.translationId)?.abbreviation ?? selected.abbreviation;
+    return {
+      id: note.id,
+      verse: card.verse,
+      place: card.place,
+      text: note.text,
+      date: card.date,
+      citation: `${note.text} ${citationOf(card.verse, note.verseTo ?? card.verse, abbreviation)}`,
+    };
+  });
+  const listedHighlights = highlights.list.flatMap((entry) => {
+    const source = selected.verses.find((candidate) => candidate.verse === entry.verse);
+    if (!source) return [];
+    const quote = source.text.slice(entry.from, entry.to);
+    return [
+      {
+        id: entry.id,
+        verse: entry.verse,
+        place: nbspBeforeDigits(referenceOf(entry.verse, entry.verse)),
+        text: quote,
+        date: "",
+        color: entry.color,
+        citation: `«${quote}» ${citationOf(entry.verse, entry.verse, selected.abbreviation)}`,
+      },
+    ];
+  });
+  useEffect(() => {
+    const release = subscribeYourNotes(() => {
+      if (isYourNotesOpen()) setPicked(null);
+    });
+    return () => {
+      release();
+      setYourNotesOpen(false);
+    };
+  }, []);
+  const openCard = (id: string, element: HTMLElement) => {
+    const note = chapterNotes.find((candidate) => candidate.id === id);
+    if (!note || note.verse === null) return;
+    open(note.verse, false, element);
+    notes.openExisting(note);
+  };
 
   return (
     <>
@@ -181,6 +275,12 @@ export function ReaderBody({
             .replace("{reference}", defaultView.abbreviation)}
         </p>
       ) : null}
+      <YourNotesButton
+        label={panel.yourNotes.button}
+        book={bookId}
+        chapter={panel.chapter}
+        className="mt-2 -ml-2.5 border border-rule-2 sm:hidden"
+      />
       <ChapterText
         verses={selected.verses}
         lang={selected.language}
@@ -188,6 +288,17 @@ export function ReaderBody({
         rootRef={textRoot}
         segmentsOf={(entry) => highlights.segmentsFor(entry.verse, entry.text.length)}
         noteMarkOf={noteMarkOf}
+        cardsShown={verse === null}
+        cards={
+          <NoteCards
+            label={panel.notes.cardsLabel}
+            cards={cards}
+            hidden={verse !== null}
+            rootRef={textRoot}
+            onOpen={openCard}
+            onPreview={previewNote}
+          />
+        }
         onMark={(number, element) => open(number, false, element)}
         onSelect={select}
       />
@@ -229,7 +340,7 @@ export function ReaderBody({
             text={panel.notes}
             onSave={notes.save}
             onClose={notes.close}
-            onDelete={() => (editor.noteId ? notes.remove(editor.noteId) : notes.close())}
+            onDelete={() => (editor.noteId ? setDeleting(editor.noteId) : notes.close())}
           />
         ) : null}
         <PanelNotes
@@ -238,6 +349,34 @@ export function ReaderBody({
           onOpen={notes.openExisting}
         />
       </VersePanel>
+      <YourNotesPanel
+        open={yourOpen}
+        text={panel.yourNotes}
+        closeLabel={panel.text.close}
+        notes={listedNotes}
+        highlights={listedHighlights}
+        onOpenNote={(id) => {
+          const note = chapterNotes.find((candidate) => candidate.id === id);
+          if (!note || note.verse === null) return;
+          open(note.verse, false, null);
+          notes.openExisting(note);
+        }}
+        onOpenHighlight={(number) => open(number, false, null)}
+        onClose={() => setYourNotesOpen(false)}
+      />
+      {deletingCard ? (
+        <DeleteNoteDialog
+          place={deletingCard.place}
+          excerpt={excerptOf(deletingCard.text)}
+          text={panel.notes.delete}
+          onCancel={() => setDeleting(null)}
+          onConfirm={() => {
+            notes.remove(deletingCard.id);
+            setDeleting(null);
+            requestAnimationFrame(() => opener.current?.focus({ preventScroll: true }));
+          }}
+        />
+      ) : null}
       <SelectionToolbar
         rootRef={textRoot}
         text={{ ...panel.toolbar, highlight: panel.highlight }}
