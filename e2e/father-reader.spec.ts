@@ -75,3 +75,13 @@ test("a work links to the previous and next work of the same Father; a lone work
   await page.goto(didache);
   await expect(page.locator("main nav[aria-label] a", { hasText: /Obra (anterior|siguiente)/ })).toHaveCount(0);
 });
+
+test("arriving on a division by its anchor marks it for about two seconds", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(`${didache}#d-3`);
+  const division = page.locator("#d-3");
+  await expect(division).toHaveAttribute("data-marked", "");
+  await expect(division).not.toHaveAttribute("data-marked", "", { timeout: 4000 });
+  const top = (await division.boundingBox())!.y;
+  expect(top).toBeGreaterThan(50);
+});
