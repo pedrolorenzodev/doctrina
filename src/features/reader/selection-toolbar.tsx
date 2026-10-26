@@ -91,12 +91,30 @@ export function SelectionToolbar({
     const onScroll = () => {
       if (!matchMedia(dockedQuery).matches) setOpen(false);
     };
+    const onContextMenu = (event: MouseEvent) => {
+      const root = rootRef.current;
+      const unit = event.target instanceof Element ? event.target.closest<HTMLElement>("[data-verse-text]") : null;
+      if (!root || !unit || !root.contains(unit) || matchMedia("(pointer: coarse)").matches) return;
+      event.preventDefault();
+      const selection = getSelection();
+      if (!selection) return;
+      const inside = !selection.isCollapsed && selection.containsNode(unit, true);
+      if (!inside) {
+        const range = document.createRange();
+        range.selectNodeContents(unit);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+      schedule(mouseDelayMs);
+    };
+    document.addEventListener("contextmenu", onContextMenu);
     document.addEventListener("pointerup", onPointerUp);
     document.addEventListener("selectionchange", onSelectionChange);
     document.addEventListener("keyup", onKeyUp);
     addEventListener("scroll", onScroll, { passive: true });
     return () => {
       clearTimeout(timer);
+      document.removeEventListener("contextmenu", onContextMenu);
       document.removeEventListener("pointerup", onPointerUp);
       document.removeEventListener("selectionchange", onSelectionChange);
       document.removeEventListener("keyup", onKeyUp);
