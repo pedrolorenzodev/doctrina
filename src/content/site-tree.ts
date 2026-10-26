@@ -8,6 +8,8 @@ import {
   timelineHref,
   timelineRoute,
   fatherRoute,
+  fatherWorkHref,
+  fatherWorkRoute,
   objectionHref,
   objectionRoute,
   objectionsHref,
@@ -150,6 +152,7 @@ export function buildSiteTree(
   sourceTitles: string[],
   publishedFathers: string[],
   bookChapters: Map<string, number>,
+  fatherWorks: Record<string, { id: string; label: string }[]>,
 ): TreeGroup[] {
   const doctrineNodes = doctrineIds.map((doctrine) => ({
     ...branch(doctrine, doctrineNames[locale][doctrine], [
@@ -235,7 +238,15 @@ export function buildSiteTree(
           "history/fathers",
           text.tree.fathers,
           fathers.map((father) => ({
-            ...leaf(`history/fathers/${father.id}`, father[locale]),
+            ...branch(
+              `history/fathers/${father.id}`,
+              father[locale],
+              (fatherWorks[father.id] ?? []).map((work) => ({
+                ...leaf(`history/works/${work.id}`, work.label),
+                href: fatherWorkHref(locale, work.id),
+                route: fatherWorkRoute(locale, work.id),
+              })),
+            ),
             ...(publishedFathers.includes(father.id)
               ? { href: fatherHref(locale, father.id), route: fatherRoute(locale, father.id) }
               : {}),

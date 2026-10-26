@@ -1,6 +1,8 @@
 import "server-only";
 import { getBibleChapterCounts } from "@/content/get-bible";
 import { getPublishedDoctrines } from "@/content/get-doctrine-page";
+import { worksByFather } from "@/content/father-work-links";
+import { getFatherWorks } from "@/content/get-father-works";
 import { getPublishedFathers } from "@/content/get-fathers";
 import { getPublishedPages } from "@/content/get-tradition-page";
 import { registry } from "@/content/registry/index";
@@ -20,5 +22,9 @@ export async function getSiteTree(locale: Locale): Promise<TreeGroup[]> {
     sourceTitles,
     publishedFathers,
     await getBibleChapterCounts(locale),
+    worksByFather(
+      (await getFatherWorks()).map((work) => work.id),
+      locale,
+    ),
   );
 }
