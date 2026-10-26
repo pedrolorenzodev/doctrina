@@ -1,0 +1,328 @@
+<title>Objeciones por tema</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: one reading column; each option is a live frame of the Objeciones page (or of 04) with the real objections, the text around it stays short */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--hover:rgb(28 23 19 / .05);
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:0 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:0 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+h3{font-family:var(--head);font-weight:400;font-size:23px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+h1{margin-top:10px}
+.say{max-width:640px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.say b{font-weight:500;color:var(--ink)}
+.say + .say{margin-top:12px}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 22px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.ctl{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:26px 0 0;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--rule)}
+.ctl label{font-size:13px;color:var(--ink-3);margin-right:8px}
+.seg{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.seg button{font:500 13.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.seg button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);overflow:hidden;max-width:100%;margin-top:6px}
+.stage.phone{max-width:390px}
+.stage-in{padding:26px 28px 34px}
+.phone .stage-in{padding:20px 16px 28px}
+.crumbs{font-size:13px;color:var(--ink-3)}
+.crumbs span + span::before{content:"/";margin:0 8px;color:var(--rule-2)}
+.kicker{font-size:13px;color:var(--ink-3);margin-top:22px}
+.st-h1{font-family:var(--head);font-weight:300;font-size:44px;line-height:1.05;margin:8px 0 12px;font-variation-settings:"opsz" 72;text-wrap:balance}
+.phone .st-h1{font-size:34px}
+.st-h1.small-h{font-size:34px;line-height:1.1}
+.st-lede{font-family:var(--body);font-style:italic;font-weight:300;font-size:19px;line-height:1.55;color:var(--ink-2);max-width:620px;margin-bottom:30px}
+.phone .st-lede{font-size:17px}
+.gh{font-family:var(--ui);font-size:13px;font-weight:500;color:var(--ink-3);margin:30px 0 4px;font-variation-settings:"opsz" 24;line-height:1.4}
+.gh:first-of-type{margin-top:0}
+ul.list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
+ul.list li{border-top:1px solid var(--rule);padding:20px 0 22px}
+ul.list.compact li{padding:14px 0 16px}
+.ot{font-family:var(--body);font-weight:500;font-size:19px;line-height:1.4;font-variation-settings:"opsz" 18;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--rule-2);cursor:pointer;background:none;border:0;padding:0;text-align:left}
+.ot:hover{text-decoration-color:var(--ink)}
+.compact .ot{font-size:17px}
+.os{margin-top:8px;max-width:680px;font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.55;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.compact .os{font-size:15px}
+.filter{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;margin-bottom:22px;max-width:100%}
+.filter button{font:500 13.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
+.filter button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.filter button:hover{background:var(--hover)}
+.phone .filter{display:flex;flex-direction:column;width:100%}
+.phone .filter button{text-align:center;width:100%}
+.theme{border-top:1px solid var(--rule)}
+.theme:last-of-type{border-bottom:1px solid var(--rule)}
+.theme-btn{display:block;width:100%;text-align:left;background:none;border:0;color:var(--ink);cursor:pointer;padding:22px 0 20px;font:inherit}
+.theme-btn:hover .tn{text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:4px}
+.tn{display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--head);font-weight:400;font-size:26px;line-height:1.2;font-variation-settings:"opsz" 36}
+.tn svg{flex:none;color:var(--ink-3);transition:transform 380ms cubic-bezier(.2,.7,.2,1)}
+.theme-btn[aria-expanded="true"] .tn svg{transform:rotate(180deg)}
+.tq{display:block;margin-top:6px;max-width:600px;font-family:var(--body);font-weight:300;font-size:16px;line-height:1.5;color:var(--ink-2)}
+.tq b{font-weight:400;color:var(--ink-3)}
+.tl{display:block;margin-top:8px;font-size:13.5px;line-height:1.5;color:var(--ink-3);max-width:620px}
+.fold{display:grid;grid-template-rows:0fr;transition:grid-template-rows 380ms cubic-bezier(.2,.7,.2,1)}
+.fold>div{overflow:hidden;min-height:0}
+.fold.open{grid-template-rows:1fr}
+.fold ul.list{margin-bottom:22px;border-bottom:0}
+.fold ul.list li:first-child{border-top:1px solid var(--rule)}
+.box{border:1px solid var(--rule-2);border-radius:6px;padding:14px 16px;display:block;flex:1;min-width:0;background:none;text-align:left;cursor:pointer;color:var(--ink);font:inherit}
+.box:hover{background:var(--hover)}
+.box small{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:4px}
+.box span{display:block;font-family:var(--body);font-weight:500;font-size:16px;line-height:1.35}
+.nav{display:flex;gap:12px;margin-top:30px}
+.phone .nav{flex-direction:column}
+.side{width:268px;max-width:100%;background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:18px 14px;font-size:14.5px}
+.side .lv{display:block;padding:7px 10px;color:var(--ink-2);border-radius:6px;line-height:1.35}
+.side .lv.on{background:var(--hover);color:var(--ink);font-weight:500}
+.side .l2{padding-left:24px}.side .l3{padding-left:38px}
+.side .gl{display:block;padding:12px 10px 3px 38px;font-size:12.5px;color:var(--ink-3)}
+.side .sec{display:block;font-size:13px;color:var(--ink-3);padding:4px 10px 8px}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-top:6px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:20px}
+.cols h3{font-size:19px}
+.cols ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55}
+.cols li + li{margin-top:6px}
+.tbl{border-collapse:collapse;width:100%;font-size:14.5px;margin-top:16px}
+.tbl th,.tbl td{text-align:left;padding:10px 12px 10px 0;border-top:1px solid var(--rule);vertical-align:top}
+.tbl th{font-weight:500;color:var(--ink);width:34%}
+.tbl td{color:var(--ink-2)}
+.tbl-wrap{overflow-x:auto}
+.decide{margin-top:12px;padding:0;list-style:none;max-width:680px}
+.decide li{padding:14px 0;border-top:1px solid var(--rule);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.decide li b{font-weight:500;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.fold,.tn svg{transition:none}}
+</style>
+
+<div class="wrap">
+<p class="small">Propuesta para Pedro, a partir de tu nota del 22/10 sobre agrupar las objeciones</p>
+<h1>Objeciones por tema</h1>
+<p class="lede">Hoy las objeciones de una doctrina son una sola lista. Con diez o más cansa leerlas una por una. Acá van cuatro formas de agruparlas, con las objeciones reales de Bautismo y Eucaristía (las siete oficiales de cada una).</p>
+<p class="lede">Cómo lo entendí: el lector tiene que poder ir directo al tema que le interesa, en cualquier lugar donde navegue entre objeciones (la sección de la página 03, la página Objeciones, la lista «Otras objeciones» y el pie de la 04, la barra lateral). Los temas no concluyen nada: son preguntas que las tradiciones discuten.</p>
+
+<div class="ctl">
+  <div><label>Doctrina</label><span class="seg" id="seg-doc"><button type="button" data-v="baptism" aria-pressed="true">Bautismo</button><button type="button" data-v="eucharist" aria-pressed="false">Eucaristía</button></span></div>
+  <div><label>Pantalla</label><span class="seg" id="seg-dev"><button type="button" data-v="desk" aria-pressed="true">Escritorio</button><button type="button" data-v="phone" aria-pressed="false">Teléfono</button></span></div>
+</div>
+
+<section class="opt" id="hoy">
+  <h2>Hoy</h2>
+  <p class="say">Una lista plana, en el orden en que se cargaron. Con siete se lee bien. La sección de la página 03 muestra solo las tres primeras.</p>
+  <div class="stage" data-stage><div class="stage-in" id="demo-hoy"></div></div>
+</section>
+
+<section class="opt" id="a">
+  <h2>A. Secciones con título de tema</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> página Objeciones</li><li><b>Referencia:</b> «Grupos» de la barra lateral y de «Qué enseña»</li><li><b>Costo:</b> poco; una lista por tema</li></ul>
+  <p class="say">La misma lista, cortada en bloques. Cada bloque lleva un título chico en gris, igual que los títulos de grupo que ya existen. Se lee de arriba abajo sin hacer nada y se ve de un vistazo qué temas hay. Con muchas objeciones por tema, la página se hace larga.</p>
+  <div class="stage" data-stage><div class="stage-in" id="demo-a"></div></div>
+</section>
+
+<section class="opt" id="b">
+  <h2>B. Filtro por tema</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> página Objeciones</li><li><b>Referencia:</b> el filtro de Videos de la página 03</li><li><b>Costo:</b> medio; usa el mismo cambio de lista animado</li></ul>
+  <p class="say">Arriba un filtro con «Todas» y un botón por tema. Al elegir uno, las demás objeciones salen y las del tema se acomodan. El lector que sabe qué busca llega en un toque. «Todas» muestra la lista agrupada por tema, sin títulos. Esconde lo que no eligió, así que el lector que explora ve menos de una vez.</p>
+  <div class="stage" data-stage><div class="stage-in" id="demo-b"></div></div>
+</section>
+
+<section class="opt" id="c">
+  <h2>C. Índice de temas</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> página Objeciones</li><li><b>Referencia:</b> los índices de Sefaria y de la documentación de Stripe</li><li><b>Costo:</b> medio; es una página con otra estructura</li></ul>
+  <p class="say">La página abre con los temas, cada uno con lo que se discute y los nombres cortos de sus objeciones. Se abre un tema para leer sus objeciones. Sirve cuando hay muchas, porque lo primero que se ve es el mapa. Con pocas objeciones es un paso de más.</p>
+  <div class="stage" data-stage><div class="stage-in" id="demo-c"></div></div>
+</section>
+
+<section class="opt" id="d">
+  <h2>D. Dentro de una objeción y en la barra lateral</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> página 04 («Otras objeciones» y pie), barra lateral</li><li><b>Se combina con:</b> A, B o C</li><li><b>Costo:</b> poco</li></ul>
+  <p class="say">Aplica el tema donde el lector ya está leyendo una objeción. «Otras objeciones» muestra primero las del mismo tema y después las de otros temas. «Anterior» y «Siguiente» siguen el orden de los temas y avisan cuando cambian de tema. En la barra lateral, las objeciones se agrupan con el mismo título gris. Tocá una objeción de la lista para cambiar de objeción.</p>
+  <div class="seg" id="seg-d" style="margin-bottom:14px"><button type="button" data-v="old" aria-pressed="false">Hoy</button><button type="button" data-v="new" aria-pressed="true">Con temas</button></div>
+  <div class="row2">
+    <div class="stage" data-stage style="margin-top:0"><div class="stage-in" id="demo-d"></div></div>
+    <div id="demo-side"></div>
+  </div>
+</section>
+
+<section class="opt" id="temas">
+  <h2>Los temas propuestos</h2>
+  <p class="say">Los nombres son míos y hay que revisarlos: tienen que decir de qué se discute, sin dar la razón a nadie. Salen de las propias objeciones, no de una tradición.</p>
+  <div class="tbl-wrap"><table class="tbl" id="tbl-temas"></table></div>
+  <p class="say" style="margin-top:18px">Tu ejemplo del 22/10 tenía un tema «los niños». Entre las siete objeciones oficiales de Bautismo no hay ninguna sobre ellos, así que no lo dibujé. Si aparece en la capa de debate, sería un cuarto tema.</p>
+</section>
+
+<section class="opt" id="descarte">
+  <h2>Qué descarté</h2>
+  <div class="cols">
+    <div><h3>Etiquetas por fila</h3><ul><li>Una pastilla de tema en cada objeción repite el título del grupo y mete ruido en una lista limpia.</li></ul></div>
+    <div><h3>Color por tema</h3><ul><li>Sumaría acentos a un sitio con uno solo; el tema se distingue por su título, no por un color.</li></ul></div>
+    <div><h3>Contadores</h3><ul><li>«3 objeciones» junto al tema es ruido; ya se descartó en las listas.</li></ul></div>
+    <div><h3>Tarjetas por tema</h3><ul><li>Las tarjetas son una excepción solo para «Doctrinas conectadas»; acá serían una grilla de cajas con poco texto.</li></ul></div>
+  </div>
+</section>
+
+<section class="opt" id="decidir">
+  <h2>Qué hay que decidir</h2>
+  <ol class="decide">
+    <li><b>La forma en la página Objeciones:</b> A, B o C. Mi recomendación es A hasta que alguna doctrina pase de diez objeciones, y entonces B sobre A.</li>
+    <li><b>Si D va:</b> el tema también en la objeción (4) y en la barra lateral.</li>
+    <li><b>Los temas y dónde cae cada objeción:</b> la tabla de arriba, con tus cambios.</li>
+    <li><b>Qué muestra la sección de la página 03:</b> hoy son las tres primeras objeciones; con temas podrían ser una por tema.</li>
+  </ol>
+</section>
+</div>
+
+<script>
+const DATA = {"baptism": [{"id": "OB-1", "short": "La gracia y la salvación sin el bautismo", "title": "«La gracia y la salvación no están tan unidas al bautismo que nadie pueda salvarse sin él, ni todos los bautizados quedan regenerados»", "syn": "El bautismo es «signo y sello» del pacto de gracia, de la incorporación a Cristo, de la regeneración y del perdón de los pecados (Confesión de Westminster XXVIII.1). Despreciarlo o descuidarlo es un grave pecado, pero la gracia y la salvación no están tan unidas a él que nadie pueda ser regenerado o salvado sin bautismo, ni todos los bautizados quedan por eso regenerados: Simón el mago fue bautizado y seguía «en hiel de amargura». La eficacia del bautismo no está atada al momento en que se administra; el Espíritu da la gracia prometida a quienes pertenece, según el consejo de Dios y en el tiempo que él dispone."}, {"id": "OB-2", "short": "El sacramento y la fe", "title": "«Los sacramentos no dan la gracia por el solo rito realizado: sin la fe no aprovechan»", "syn": "Los sacramentos son signos y testimonios de la voluntad de Dios hacia nosotros, dados para despertar y confirmar la fe de quienes los usan: aprovechan cuando la fe cree la promesa que en ellos se ofrece. Enseñar que confieren la gracia «ex opere operato», por el solo hecho de realizarse, a quien no pone obstáculo, aunque no haya en él un buen movimiento del corazón, es creer que el hombre se justifica por una ceremonia, sin fe; Abraham no fue justificado por la circuncisión, que le fue dada como señal. Los reformados añaden que la gracia no la confiere ningún poder que esté en los sacramentos, sino solo la obra del Espíritu."}, {"id": "OB-3", "short": "Quién puede bautizar", "title": "«Solo un ministro de la Palabra legítimamente ordenado puede bautizar»", "syn": "Ni el bautismo ni la Cena del Señor pueden ser administrados sino por un ministro de la Palabra legítimamente ordenado, porque Cristo dio el mandato de bautizar a quienes envió a enseñar y nadie toma para sí este honor si no es llamado por Dios. Y la eficacia del sacramento no depende de la piedad ni de la intención de quien lo administra, sino de la obra del Espíritu y de la palabra de la institución."}, {"id": "OB-4", "short": "La penitencia como segundo bautismo", "title": "«Volver a la penitencia es volver al bautismo: la «segunda tabla» no significa que el barco se haya roto»", "syn": "El bautismo no es algo pasado que se pierde al pecar: su poder y su significado abarcan toda la vida, y el arrepentimiento no es otra cosa que volver al bautismo y practicar de nuevo lo que en él se empezó. Por eso no es correcto llamar a la penitencia «segunda tabla» para nadar después del naufragio, como si el bautismo ya no sirviera: el barco no se rompe, porque es obra de Dios; somos nosotros los que caemos de él, y quien cae debe volver a él."}, {"id": "OB-5", "short": "El pecado que queda tras el bautismo", "title": "«Lo que queda en el bautizado es verdadero pecado»", "syn": "El bautismo quita la culpa del pecado original, pero la concupiscencia que queda en el bautizado es verdadero pecado, aunque Dios lo perdone y no lo impute: Pablo la llama «pecado». Por eso la corrupción de la naturaleza permanece aun en los regenerados, y ella y todos sus movimientos son, dicen los reformados, «verdadera y propiamente pecado»."}, {"id": "OB-6a", "short": "Rociar o sumergir", "title": "«Rociar o derramar agua no es el bautismo apostólico: el bautismo es por tres inmersiones»", "syn": "La Iglesia de los siete concilios ecuménicos bautizaba con tres inmersiones en el agua, y así se practicó también en Occidente durante siglos, como muestran las antiguas pilas bautismales; la aspersión o la infusión, introducidas «a escondidas», son una innovación de la Iglesia papal. Lo esencial del bautismo es la triple inmersión con la invocación del Padre, del Hijo y del Espíritu Santo, figura de la sepultura y la resurrección de tres días."}, {"id": "OB-6b", "short": "El bautismo de los herejes", "title": "«Solo es bautismo el de la Iglesia ortodoxa: el de los herejes no santifica ni perdona los pecados»", "syn": "Hay una sola Iglesia, santa, católica y apostólica, y solo sus misterios, y por tanto su bautismo, se aceptan. Los ritos no administrados como el Espíritu Santo mandó a los Apóstoles son ajenos a la tradición apostólica: los bautismos de los herejes son «aguas inútiles», que no santifican ni lavan los pecados. Por eso a quienes vienen de ellos se los recibe como no bautizados y se los bautiza."}], "eucharist": [{"id": "OB-1", "short": "Un solo sacrificio, una sola vez", "title": "Si Cristo se ofreció «una vez para siempre», la Misa no puede ser un sacrificio", "syn": "Hebreos dice que Cristo no se ofreció «muchas veces» sino una vez, que «con una sola ofrenda hizo perfectos para siempre á los santificados» y que «donde hay remisión de éstos, no hay más ofrenda por pecado». La muerte de Cristo es el único sacrificio propiciatorio; la Cena puede ser un sacrificio de alabanza y acción de gracias de los ya reconciliados, pero no uno que reconcilie con Dios. Si la Misa es un sacrificio propiciatorio que se ofrece cada día por vivos y difuntos, o repite la cruz o le añade algo que la cruz no hizo."}, {"id": "OB-2", "short": "Lo consagrado sigue siendo pan", "title": "Pablo lo sigue llamando «pan»: lo consagrado sigue siendo pan", "syn": "Después de la consagración Pablo lo sigue llamando «pan»: el pan sigue siendo pan en su sustancia, y enseñar que su sustancia desaparece no concuerda con la Escritura. Los reformados añaden que el cuerpo de Cristo está en el cielo y que la transubstanciación va «aun contra el sentido y razon comunes» y «destruye la naturaleza del sacramento» (Confesión de Westminster 29.6)."}, {"id": "OB-3", "short": "Guardar y adorar la hostia", "title": "Cristo dijo «Tomad, comed»: guardar, exponer y adorar la hostia va más allá de lo que mandó", "syn": "Cristo dio el pan para que se tome y se coma («Tomad, comed»). Guardarlo, exponerlo y llevarlo en procesión para adorarlo es usar el sacramento para algo que Cristo no mandó, y dirigir la adoración a lo que, a la vista, son pan y vino. Para los reformados, adorar los elementos es idolatría (Westminster 29.4, 29.6)."}, {"id": "OB-4", "short": "El cáliz y los laicos", "title": "Cristo dijo «Bebed de ella todos»: negar el cáliz a los laicos cambia lo que él instituyó", "syn": "De la copa Jesús dijo «Bebed de él todos», y la Iglesia antigua dio las dos especies a todos durante siglos. Dar a los laicos solo el pan cambia la institución de Cristo y los priva de algo que él mandó."}, {"id": "OB-5", "short": "Misas privadas y por los difuntos", "title": "Misas privadas y misas por los difuntos: la Cena convertida en una obra que vale por sí sola", "syn": "Cristo instituyó la Cena para que la comunidad comulgue y los creyentes reciban con fe el perdón. Misas sin comulgantes, multiplicadas y aplicadas a cambio de dinero por vivos y difuntos, hacen de ella una obra que valdría por el solo hecho de celebrarse, sin la fe de quien la recibe. Y la Cena se instituyó para los vivos: aplicarla por los difuntos no tiene testimonio ni mandato en la Escritura."}, {"id": "OB-6", "short": "La invocación del Espíritu Santo", "title": "Los dones se consagran por la invocación del Espíritu Santo, no solo por las palabras de Cristo", "syn": "En las liturgias antiguas, de Oriente y también de Roma y las Galias, los dones se consagran con la oración que invoca al Espíritu Santo, la epíclesis. Atribuir la consagración solo a las palabras «Esto es mi cuerpo» fue una innovación posterior de la Iglesia latina."}, {"id": "OB-7", "short": "El pan ázimo", "title": "Durante mil años se consagró con pan fermentado: el ázimo es una innovación latina", "syn": "Durante más de mil años, en Oriente y en Occidente, la Iglesia celebró la Eucaristía con pan fermentado, a ejemplo del Salvador. El pan ázimo de la Iglesia latina es una innovación del siglo XI."}]};
+const THEMES = {
+  baptism: [
+    {id:"t1", name:"Qué da el bautismo", ask:"si salva, si regenera siempre y qué papel tiene la fe de quien lo recibe", ids:["OB-1","OB-2"]},
+    {id:"t2", name:"Después del bautismo", ask:"si volver a la penitencia es volver al bautismo y si lo que queda en el bautizado es pecado", ids:["OB-4","OB-5"]},
+    {id:"t3", name:"Quién bautiza y cómo", ask:"quién puede administrarlo, con qué rito y fuera de qué iglesia deja de valer", ids:["OB-3","OB-6a","OB-6b"]}
+  ],
+  eucharist: [
+    {id:"t1", name:"El sacrificio", ask:"si la Misa es un sacrificio y si valen las misas sin comulgantes o por los difuntos", ids:["OB-1","OB-5"]},
+    {id:"t2", name:"La presencia", ask:"si lo consagrado sigue siendo pan y si puede guardarse y adorarse", ids:["OB-2","OB-3"]},
+    {id:"t3", name:"Cómo se celebra", ask:"el cáliz para los laicos, la invocación del Espíritu y el tipo de pan", ids:["OB-4","OB-6","OB-7"]}
+  ]
+};
+const DOCNAME = {baptism:"El bautismo", eucharist:"La Eucaristía"};
+const state = {doc:"baptism", phone:false, filter:"all", open:{t1:true}, current:null, dMode:"new"};
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = (s,r=document)=>r.querySelector(s);
+const esc = (t)=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const items = ()=>DATA[state.doc];
+const byId = (id)=>items().find(x=>x.id===id);
+const themeOf = (id)=>THEMES[state.doc].find(t=>t.ids.includes(id));
+const orderThemed = ()=>THEMES[state.doc].flatMap(t=>t.ids.map(byId));
+const firstSentence = (t)=>{const m=t.match(/^(.{40,}?\.)(?=\s+[A-ZÁÉÍÓÚ])/);return m?m[1]:t};
+const chev = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 7l4.5 4.5L13.5 7"/></svg>';
+
+function head(h1small){
+  return '<div class="crumbs"><span>Doctrinas</span><span>'+DOCNAME[state.doc]+'</span><span>Católica</span><span>Objeciones</span></div>'+
+    '<h1 class="st-h1">Objeciones a la posición católica</h1>'+
+    '<p class="st-lede">Lo que otras tradiciones objetan a la postura católica sobre '+(state.doc==="baptism"?"el bautismo":"la Eucaristía")+'. Cada objeción abre su página, con la respuesta católica.</p>';
+}
+function li(o,compact){
+  return '<li data-id="'+o.id+'"><button type="button" class="ot" data-pick="'+o.id+'">'+esc(o.title)+'</button><p class="os">'+esc(firstSentence(o.syn))+'</p></li>';
+}
+function list(arr,compact){return '<ul class="list'+(compact?" compact":"")+'">'+arr.map(o=>li(o,compact)).join("")+'</ul>'}
+
+function renderHoy(){ $("#demo-hoy").innerHTML = head()+list(items()); }
+function renderA(){
+  $("#demo-a").innerHTML = head()+THEMES[state.doc].map(t=>'<h2 class="gh">'+t.name+'</h2>'+list(t.ids.map(byId))).join("");
+}
+function renderB(){
+  const T = THEMES[state.doc];
+  const f = '<div class="filter" role="group" aria-label="Tema"><button type="button" data-f="all" aria-pressed="'+(state.filter==="all")+'">Todas</button>'+
+    T.map(t=>'<button type="button" data-f="'+t.id+'" aria-pressed="'+(state.filter===t.id)+'">'+t.name+'</button>').join("")+'</div>';
+  $("#demo-b").innerHTML = head()+f+list(orderThemed());
+  applyFilter(false);
+}
+function applyFilter(animate){
+  const ul = $("#demo-b ul.list"); if(!ul) return;
+  const T = THEMES[state.doc];
+  const show = state.filter==="all" ? null : T.find(t=>t.id===state.filter).ids;
+  const lis=[...ul.children];
+  const before = new Map(lis.map(l=>[l,l.getBoundingClientRect().top]));
+  const h0 = ul.getBoundingClientRect().height;
+  lis.forEach(l=>{l.hidden = !!show && !show.includes(l.dataset.id)});
+  if(!animate||reduce) return;
+  const h1 = ul.getBoundingClientRect().height;
+  lis.filter(l=>!l.hidden).forEach(l=>{
+    const dy = before.get(l)-l.getBoundingClientRect().top;
+    if(dy) l.animate([{transform:"translateY("+dy+"px)"},{transform:"none"}],{duration:380,easing:"cubic-bezier(.2,.7,.2,1)"});
+    else l.animate([{opacity:.0,transform:"translateY(8px)"},{opacity:1,transform:"none"}],{duration:420,delay:100,easing:"cubic-bezier(.2,.7,.2,1)",fill:"backwards"});
+  });
+  ul.animate([{height:h0+"px"},{height:h1+"px"}],{duration:380,easing:"cubic-bezier(.2,.7,.2,1)"});
+}
+function renderC(){
+  $("#demo-c").innerHTML = head()+'<div>'+THEMES[state.doc].map(t=>{
+    const open=!!state.open[t.id];
+    return '<div class="theme"><button type="button" class="theme-btn" data-t="'+t.id+'" aria-expanded="'+open+'" aria-controls="f-'+t.id+'">'+
+      '<span class="tn">'+t.name+chev+'</span>'+
+      '<span class="tq"><b>Lo que se discute:</b> '+t.ask+'.</span>'+
+      '<span class="tl">'+t.ids.map(id=>byId(id).short).join("; ")+'</span></button>'+
+      '<div class="fold'+(open?" open":"")+'" id="f-'+t.id+'"><div>'+list(t.ids.map(byId))+'</div></div></div>';
+  }).join("")+'</div>';
+}
+function renderD(){
+  const T = THEMES[state.doc];
+  if(!state.current||!byId(state.current)) state.current = T[0].ids[0];
+  const cur = byId(state.current), ct = themeOf(cur.id);
+  const flat = state.dMode==="old" ? items() : orderThemed();
+  const idx = flat.findIndex(o=>o.id===cur.id);
+  const prev = flat[idx-1], next = flat[idx+1];
+  const same = ct.ids.filter(i=>i!==cur.id).map(byId);
+  let others;
+  if(state.dMode==="old"){
+    others = '<h2 class="gh" style="margin-top:34px;color:var(--ink);font-size:20px;font-family:var(--head);font-weight:400">Otras objeciones</h2>'+list(items().filter(o=>o.id!==cur.id),true);
+  } else {
+    others = '<h2 class="gh" style="margin-top:34px;color:var(--ink);font-size:20px;font-family:var(--head);font-weight:400">Otras objeciones</h2>'+
+      (same.length?'<h3 class="gh" style="margin-top:14px">Del mismo tema: '+ct.name.toLowerCase()+'</h3>'+list(same,true):"")+
+      T.filter(t=>t!==ct).map(t=>'<h3 class="gh">'+t.name+'</h3>'+list(t.ids.map(byId),true)).join("");
+  }
+  const sub = (o,from)=>{
+    if(state.dMode==="old"||!o) return "";
+    const t=themeOf(o.id); return t!==from? ' (otro tema: '+t.name.toLowerCase()+')':"";
+  };
+  const nav = '<div class="nav">'+
+    (prev?'<button type="button" class="box" data-pick="'+prev.id+'"><small>Anterior'+sub(prev,ct)+'</small><span>'+esc(prev.short)+'</span></button>':'<span class="box" style="visibility:hidden"></span>')+
+    (next?'<button type="button" class="box" data-pick="'+next.id+'"><small>Siguiente'+sub(next,ct)+'</small><span>'+esc(next.short)+'</span></button>':'<span class="box" style="visibility:hidden"></span>')+'</div>';
+  $("#demo-d").innerHTML = '<div class="crumbs"><span>'+DOCNAME[state.doc]+'</span><span>Católica</span><span>Objeciones</span></div>'+
+    '<p class="kicker">Objeción a la postura católica</p><h1 class="st-h1 small-h">'+esc(cur.title)+'</h1>'+
+    '<p class="small" style="margin-bottom:6px">(aquí irían La objeción, La respuesta católica, Fuentes citadas, Pasajes y Videos)</p>'+others+nav;
+  const side = '<div class="side"><span class="sec">'+DOCNAME[state.doc]+'</span><span class="lv l2">Católica</span><span class="lv l2">Pasajes</span><span class="lv l2 on">Objeciones</span>'+
+    (state.dMode==="old"? items().map(o=>'<span class="lv l3'+(o.id===cur.id?" on":"")+'">'+esc(o.short)+'</span>').join("")
+    : T.map(t=>'<span class="gl">'+t.name+'</span>'+t.ids.map(id=>'<span class="lv l3'+(id===cur.id?" on":"")+'">'+esc(byId(id).short)+'</span>').join("")).join(""))+
+    '<span class="lv l2">Ortodoxa</span><span class="lv l2">Luterana</span></div>';
+  $("#demo-side").innerHTML = side;
+}
+function renderTable(){
+  $("#tbl-temas").innerHTML = ["baptism","eucharist"].map(d=>{
+    const prev=state.doc; state.doc=d;
+    const rows = '<tr><th colspan="2" style="color:var(--ink-3);font-weight:500;padding-top:22px">'+DOCNAME[d]+'</th></tr>'+THEMES[d].map(t=>'<tr><th>'+t.name+'</th><td>'+t.ids.map(id=>esc(byId(id).short)).join("; ")+'</td></tr>').join("");
+    state.doc=prev; return rows;
+  }).join("");
+}
+function renderAll(){
+  document.querySelectorAll("[data-stage]").forEach(s=>s.classList.toggle("phone",state.phone));
+  state.filter="all"; state.open={t1:true}; state.current=null;
+  renderHoy();renderA();renderB();renderC();renderD();
+}
+function seg(id,fn){
+  $(id).addEventListener("click",e=>{
+    const b=e.target.closest("button"); if(!b) return;
+    $(id).querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+    fn(b.dataset.v);
+  });
+}
+seg("#seg-doc",v=>{state.doc=v;renderAll()});
+seg("#seg-dev",v=>{state.phone=v==="phone";renderAll()});
+seg("#seg-d",v=>{state.dMode=v;renderD()});
+document.addEventListener("click",e=>{
+  const f=e.target.closest("[data-f]"); if(f){state.filter=f.dataset.f;
+    $("#demo-b").querySelectorAll("[data-f]").forEach(x=>x.setAttribute("aria-pressed",x===f));applyFilter(true);return}
+  const t=e.target.closest("[data-t]"); if(t){const id=t.dataset.t;state.open[id]=!state.open[id];
+    t.setAttribute("aria-expanded",!!state.open[id]);$("#f-"+id).classList.toggle("open",!!state.open[id]);return}
+  const p=e.target.closest("#demo-d [data-pick]"); if(p){state.current=p.dataset.pick;renderD()}
+});
+renderTable();renderAll();
+</script>
