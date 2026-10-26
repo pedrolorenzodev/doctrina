@@ -27,7 +27,9 @@ function currentSource(): BibleSource {
 function chapterIndex(translationId: string): Promise<ChapterSummary[]> {
   let pending = chapterIndexes.get(translationId);
   if (!pending) {
-    pending = currentSource().chapterIndex(translationId);
+    pending = getBibleTranslations().then((available) =>
+      available.some((entry) => entry.id === translationId) ? currentSource().chapterIndex(translationId) : [],
+    );
     chapterIndexes.set(translationId, pending);
   }
   return pending;

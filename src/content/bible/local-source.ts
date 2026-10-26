@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { bibleVersification, normalizeBibleFile, type BibleRow } from "@/content/bible/normalize-bible";
 import type { BibleSource } from "@/content/bible/bible-source";
@@ -10,9 +10,19 @@ import type { Locale } from "@/lib/locale";
 type SourceEntry = { id: string; lang: Locale; name: string; licence: string; canon: number };
 
 export function createLocalBibleSource(): BibleSource {
-  const manifest = readFile(join(process.cwd(), "data", "sources", "bibles.json"), "utf8").then(
-    (text) => JSON.parse(text) as SourceEntry[],
-  );
+  const manifest = readFile(join(process.cwd(), "data", "sources", "bibles.json"), "utf8")
+    .then((text) => JSON.parse(text) as SourceEntry[])
+    .then(async (entries) => {
+      const present = await Promise.all(
+        entries.map((entry) =>
+          access(join(process.cwd(), "data", "corpus", "bibles", `${entry.id}.json`)).then(
+            () => true,
+            () => false,
+          ),
+        ),
+      );
+      return entries.filter((_, index) => present[index]);
+    });
   const loaded = new Map<string, Promise<BibleRow[]>>();
   const reds = new Map<string, Promise<Record<string, string[]>>>();
 

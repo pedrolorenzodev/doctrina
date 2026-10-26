@@ -12,8 +12,16 @@ check("a valid choice is read", same(parseSecondChoice('{"mode":"below","id":"bs
 check("side is read", same(parseSecondChoice('{"mode":"side","id":"kjv"}'), "side", "kjv"));
 check("a stored off is off", parseSecondChoice('{"mode":"off","id":"bsb"}') === noSecond);
 check("a mode that does not exist is off", parseSecondChoice('{"mode":"above","id":"bsb"}') === noSecond);
-check("no id is off", parseSecondChoice('{"mode":"below"}') === noSecond && parseSecondChoice('{"mode":"below","id":""}') === noSecond);
-check("junk is off", parseSecondChoice("nope") === noSecond && parseSecondChoice("[1]") === noSecond && parseSecondChoice("3") === noSecond);
+check(
+  "no id is off",
+  parseSecondChoice('{"mode":"below"}') === noSecond && parseSecondChoice('{"mode":"below","id":""}') === noSecond,
+);
+check(
+  "junk is off",
+  parseSecondChoice("nope") === noSecond &&
+    parseSecondChoice("[1]") === noSecond &&
+    parseSecondChoice("3") === noSecond,
+);
 
 if (failures.length > 0) {
   console.error(failures.map((failure) => `FAIL ${failure}`).join("\n"));
