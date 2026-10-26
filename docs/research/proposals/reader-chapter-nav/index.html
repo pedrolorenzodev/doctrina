@@ -1,0 +1,193 @@
+<title>Capítulo anterior y siguiente</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: one reading column; each option is a live reader you can scroll, so the control is judged while reading */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--hover:rgb(28 23 19 / .05);--shadow:0 6px 22px rgb(28 23 19 / .16);
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);--shadow:0 6px 22px rgb(0 0 0 / .5);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);--shadow:0 6px 22px rgb(0 0 0 / .5);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:10px 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:0 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+h3{font-family:var(--head);font-weight:400;font-size:19px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+.say{max-width:640px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 18px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.ctl{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:26px 0 0;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--rule)}
+.ctl label{font-size:13px;color:var(--ink-3);margin-right:8px}
+.seg{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.seg button{font:500 13.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.seg button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hint{font-size:13px;color:var(--ink-3);margin:0 0 8px}
+.dev{border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);overflow:hidden;max-width:100%;position:relative}
+.dev.phone{max-width:390px}
+.rbar{position:absolute;top:0;left:0;right:0;z-index:3;height:52px;display:flex;align-items:center;gap:12px;padding:0 20px;background:var(--bg);border-bottom:1px solid var(--rule)}
+.rbar .ref{font-family:var(--head);font-size:19px;font-weight:400;font-variation-settings:"opsz" 24;margin-right:auto;white-space:nowrap}
+.ib{font:500 13px var(--ui);color:var(--ink-2);background:none;border:1px solid var(--rule);border-radius:6px;min-height:34px;padding:0 10px;cursor:default;white-space:nowrap}
+.scroller{height:var(--h,560px);overflow-y:auto;padding:52px 0 0;scrollbar-width:thin}
+.phone .scroller{--h:600px}
+.col{max-width:640px;margin:0 auto;padding:30px 24px 40px}
+.phone .col{padding:24px 18px 36px}
+.col h4{font-family:var(--head);font-weight:300;font-size:40px;line-height:1.05;margin:0 0 22px;font-variation-settings:"opsz" 72}
+.phone .col h4{font-size:32px}
+.vs{font-family:var(--body);font-weight:400;font-size:19px;line-height:1.7;color:var(--ink);font-variation-settings:"opsz" 18}
+.vs sup{font:500 11.5px var(--ui);color:var(--ink-3);margin-right:4px;vertical-align:top;position:relative;top:.35em}
+.vs i{font-style:italic}
+.foot{display:flex;gap:12px;margin-top:34px;padding-top:24px;border-top:1px solid var(--rule)}
+.phone .foot{flex-direction:column}
+.box{border:1px solid var(--rule-2);border-radius:6px;padding:14px 16px;display:block;flex:1;min-width:0;background:none;text-align:left;cursor:pointer;color:var(--ink);font:inherit}
+.box:hover{background:var(--hover)}
+.box small{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:4px}
+.box span{display:block;font-family:var(--body);font-weight:500;font-size:16px}
+.box.next{text-align:right}
+/* A: edges */
+.edge{position:absolute;top:52px;bottom:0;width:56px;z-index:2;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--ink-3);cursor:pointer;opacity:.38;transition:opacity 200ms ease,background-color 200ms ease}
+.edge.l{left:0}.edge.r{right:0}
+.edge:hover,.edge:focus-visible{opacity:1;background:var(--hover);color:var(--ink)}
+.edge .tip{position:absolute;top:calc(50% + 24px);font:500 12.5px var(--ui);color:var(--ink);white-space:nowrap;opacity:0;transition:opacity 200ms ease;background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:2px 7px}
+.edge:hover .tip,.edge:focus-visible .tip{opacity:1}
+.phone .edge{display:none}
+/* B: pill */
+.pill{position:absolute;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:4;transform:translate(-50%,16px);opacity:0;pointer-events:none;display:flex;align-items:center;background:var(--panel);border:1px solid var(--rule-2);border-radius:999px;box-shadow:var(--shadow);transition:transform 260ms cubic-bezier(.2,.7,.2,1),opacity 200ms ease}
+.pill.on{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.pill button{font:500 14px var(--ui);color:var(--ink);background:none;border:0;border-radius:999px;min-height:44px;padding:0 16px;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.pill button:hover{background:var(--hover)}
+.pill i{width:1px;height:20px;background:var(--rule-2)}
+/* C: bar */
+.cnav{display:flex;align-items:center;gap:2px;margin-right:auto}
+.cnav button{width:44px;height:44px;border:0;background:none;border-radius:6px;color:var(--ink-2);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.cnav button:hover{background:var(--hover);color:var(--ink)}
+.cnav .ref{margin:0 4px;min-width:64px;text-align:center}
+.rbar.c .ref{margin-right:0}
+.phone .rbar{padding:0 8px 0 10px;gap:6px}
+.phone .ib.hide-phone{display:none}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:20px}
+.cols ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55}
+.decide{margin-top:12px;padding:0;list-style:none;max-width:680px}
+.decide li{padding:14px 0;border-top:1px solid var(--rule);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.decide li b{font-weight:500;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.pill,.edge,.edge .tip{transition:none}}
+</style>
+
+<div class="wrap">
+<p class="small">Propuesta para Pedro, a partir de tu nota del 23/10 sobre el lector</p>
+<h1>Capítulo anterior y siguiente</h1>
+<p class="lede">En el lector, pasar al capítulo anterior o al siguiente tiene que estar a mano en cualquier punto del capítulo, no solo al final. Tiene que ser simple y seguir las reglas de siempre. En el teléfono, un control fijo no puede tapar el texto.</p>
+<p class="lede">Abajo hay tres formas, cada una en un lector que podés desplazar (Juan 6, Reina-Valera 1909). Elegí Escritorio o Teléfono arriba. En la opción B el botón aparece al subir; en las otras dos, desplazá y fijate si el control está.</p>
+
+<div class="ctl">
+  <div><label>Pantalla</label><span class="seg" id="seg-dev"><button type="button" data-v="desk" aria-pressed="true">Escritorio</button><button type="button" data-v="phone" aria-pressed="false">Teléfono</button></span></div>
+</div>
+
+<section class="opt" id="hoy">
+  <h2>Hoy</h2>
+  <p class="say">Solo al final del capítulo. Quien lee a la mitad tiene que desplazarse hasta abajo para cambiar.</p>
+  <div class="dev" data-dev id="d-hoy"></div>
+</section>
+
+<section class="opt" id="a">
+  <h2>A. Bordes del lector</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> a los lados de la columna de lectura</li><li><b>Costo:</b> poco; en el teléfono no entra</li></ul>
+  <p class="say">Una franja angosta en cada borde, siempre visible pero apagada. Al pasar el puntero o enfocar con el teclado sube a plena opacidad y dice el capítulo («Juan 5»). Nunca tapa el texto, porque queda fuera de la columna. En el teléfono no hay lugar al costado: ahí se usaría la B o la C.</p>
+  <div class="dev" data-dev id="d-a"></div>
+</section>
+
+<section class="opt" id="b">
+  <h2>B. Aparece al subir</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> abajo, centrado sobre el texto</li><li><b>Patrón:</b> barras que vuelven al subir, comunes en navegadores móviles</li><li><b>Costo:</b> medio; escucha el desplazamiento</li></ul>
+  <p class="say">Una cápsula con «Juan 5» y «Juan 7». Se oculta mientras se lee hacia abajo y aparece al subir un poco, que es cuando el lector busca algo fuera del texto. Se va sola a los dos segundos y medio. Al llegar al final del capítulo queda a la vista. Sirve en escritorio y en teléfono; el botón mide 44 px.</p>
+  <div class="dev" data-dev id="d-b"></div>
+</section>
+
+<section class="opt" id="c">
+  <h2>C. En la barra del lector</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> la barra de arriba, junto al capítulo</li><li><b>Costo:</b> poco; no agrega ningún elemento flotante</li></ul>
+  <p class="say">Las flechas van a los lados del nombre del capítulo en la barra que ya está fija arriba. Siempre están, sin escuchar el desplazamiento y sin tapar texto. La barra se hace más densa: en el teléfono el tamaño del texto y la traducción pasan a un menú, para que quepan las flechas.</p>
+  <div class="dev" data-dev id="d-c"></div>
+</section>
+
+<section class="opt" id="mas">
+  <h2>Un agregado para cualquiera de las tres</h2>
+  <p class="say">Atajos de teclado en escritorio: «[» capítulo anterior y «]» siguiente. Los dos son seguros porque no escriben nada.</p>
+</section>
+
+<section class="opt" id="descarte">
+  <h2>Qué descarté</h2>
+  <div class="cols">
+    <div><h3>Deslizar de lado para cambiar</h3><ul><li>Choca con arrastrar sobre las palabras, que ya elige palabras, y con seleccionar texto.</li></ul></div>
+    <div><h3>Botón flotante fijo en una esquina</h3><ul><li>En el teléfono tapa renglones todo el tiempo.</li></ul></div>
+    <div><h3>Barra inferior fija</h3><ul><li>Le saca altura a la lectura y compite con la barra del navegador.</li></ul></div>
+    <div><h3>Cargar el capítulo siguiente sin fin</h3><ul><li>El sitio cita y enlaza capítulos con dirección propia; una página que crece sin fin rompe eso.</li></ul></div>
+  </div>
+</section>
+
+<section class="opt" id="decidir">
+  <h2>Qué hay que decidir</h2>
+  <ol class="decide">
+    <li><b>Cuál de las tres</b>, o una para escritorio y otra para teléfono. Mi recomendación: C en las dos pantallas, y B solo si te parece poco visible.</li>
+    <li><b>Si va el atajo de teclado.</b></li>
+    <li><b>Qué hace el control en el primer y el último capítulo de un libro:</b> pasar al libro vecino («Mateo 28» a «Marcos 1») o no mostrar esa flecha.</li>
+  </ol>
+</section>
+</div>
+
+<script>
+const VERSES = [[1, "PASADAS estas cosas, fuése Jesús de la otra parte de la mar de Galilea, [que es] de Tiberias."], [2, "Y seguíale grande multitud, porque veían sus señales que hacía en los enfermos."], [3, "Y subió Jesús á un monte, y se sentó allí con sus discípulos."], [4, "Y estaba cerca la Pascua, la fiesta de los Judíos."], [5, "Y como alzó Jesús los ojos, y vió que había venido á él grande multitud, dice á Felipe: ¿De dónde compraremos pan para que coman éstos?"], [6, "Mas esto decía para probarle; porque él sabía lo que había de hacer."], [7, "Respondióle Felipe: Doscientos denarios de pan no les bastarán, para que cada uno de ellos tome un poco."], [8, "Dícele uno de sus discípulos, Andrés, hermano de Simón Pedro:"], [9, "Un muchacho está aquí que tiene cinco panes de cebada y dos pececillos; ¿mas qué es esto entre tantos?"], [10, "Entonces Jesús dijo: Haced recostar la gente. Y había mucha hierba en aquel lugar: y recostáronse como número de cinco mil varones."], [11, "Y tomó Jesús aquellos panes, y habiendo dado gracias, repartió á los discípulos, y los discípulos á los que estaban recostados: asimismo de los peces, cuanto querían."], [12, "Y como fueron saciados, dijo á sus discípulos: Recoged los pedazos que han quedado, porque no se pierda nada."], [13, "Cogieron pues, é hinchieron doce cestas de pedazos de los cinco panes de cebada, que sobraron á los que habían comido."], [14, "Aquellos hombres entonces, como vieron la señal que Jesús había hecho, decían: Este verdaderamente es el profeta que había de venir al mundo."], [15, "Y entendiendo Jesús que habían de venir para arrebatarle, y hacerle rey, volvió á retirarse al monte, él solo."], [16, "Y como se hizo tarde, descendieron sus discípulos á la mar;"], [17, "Y entrando en un barco, venían de la otra parte de la mar hacia Capernaum. Y era ya oscuro, y Jesús no había venido á ellos."], [18, "Y levantábase la mar con un gran viento que soplaba."], [19, "Y como hubieron navegado como veinticinco ó treinta estadios, ven á Jesús que andaba sobre la mar, y se acercaba al barco: y tuvieron miedo."], [20, "Mas él les dijo: Yo soy; no tengáis miedo."], [21, "Ellos entonces gustaron recibirle en el barco: y luego el barco llegó á la tierra donde iban."], [22, "El día siguiente, la gente que estaba de la otra parte de la mar, como vió que no había allí otra navecilla sino una, y que Jesús no había entrado con sus discípulos en ella, sino que sus discípulos se habían ido solos;"], [23, "Y que otras navecillas habían arribado de Tiberias junto al lugar donde habían comido el pan después de haber el Señor dado gracias;"], [24, "Como vió pues la gente que Jesús no estaba allí, ni sus discípulos, entraron ellos en las navecillas, y vinieron á Capernaum buscando á Jesús."], [25, "Y hallándole de la otra parte de la mar, dijéronle: Rabbí, ¿cuándo llegaste acá?"], [26, "Respondióles Jesús, y dijo: De cierto, de cierto os digo, que me buscáis, no porque habéis visto las señales, sino porque comisteis el pan y os hartasteis."], [27, "Trabajad no por la comida que perece, mas por la comida que á vida eterna permanece, la cual el Hijo del hombre os dará: porque á éste señaló el Padre, [que es] Dios."], [28, "Y dijéronle: ¿Qué haremos para que obremos las obras de Dios?"], [29, "Respondió Jesús, y díjoles: Esta es la obra de Dios, que creáis en el que él ha enviado."], [30, "Dijéronle entonces: ¿Qué señal pues haces tú, para que veamos, y te creamos? ¿Qué obras?"], [31, "Nuestros padres comieron el maná en el desierto, como está escrito: Pan del cielo les dió á comer."], [32, "Y Jesús les dijo: De cierto, de cierto os digo: No os dió Moisés pan del cielo; mas mi Padre os da el verdadero pan del cielo."], [33, "Porque el pan de Dios es aquel que descendió del cielo y da vida al mundo."], [34, "Y dijéronle: Señor, danos siempre este pan."], [35, "Y Jesús les dijo: Yo soy el pan de vida: el que á mí viene, nunca tendrá hambre; y el que en mí cree, no tendrá sed jamás."], [36, "Mas os he dicho, que aunque me habéis visto, no creéis."], [37, "Todo lo que el Padre me da, vendrá á mí; y al que á mí viene, no [le] hecho fuera."], [38, "Porque he descendido del cielo, no para hacer mi voluntad, mas la voluntad del que me envió."], [39, "Y esta es la voluntad del que me envió, del Padre: Que todo lo que me diere, no pierda de ello, sino que lo resucite en el día postrero."], [40, "Y esta es la voluntad del que me ha enviado: Que todo aquel que ve al Hijo, y cree en él, tenga vida eterna: y yo le resucitaré en el día postrero."], [41, "Murmuraban entonces de él los Judíos, porque había dicho: Yo soy el pan que descendí del cielo."], [42, "Y decían: ¿No es éste Jesús, el hijo de José, cuyo padre y madre nosotros conocemos? ¿cómo, pues, dice éste: Del cielo he descendido?"], [43, "Y Jesús respondió, y díjoles: No murmuréis entre vosotros."], [44, "Ninguno puede venir á mí, si el Padre que me envió no le trajere; y yo le resucitaré en el día postrero."], [45, "Escrito está en los profetas: Y serán todos enseñados de Dios. Así que, todo aquel que oyó del Padre, y aprendió, viene á mí."], [46, "No que alguno haya visto al Padre, sino aquel que vino de Dios, éste ha visto al Padre."], [47, "De cierto, de cierto os digo: El que cree en mí, tiene vida eterna."], [48, "Yo soy el pan de vida."], [49, "Vuestros padres comieron el maná en el desierto, y son muertos."], [50, "Este es el pan que desciende del cielo, para que el que de él comiere, no muera."], [51, "Yo soy el pan vivo que he descendido del cielo: si alguno comiere de este pan, vivirá para siempre; y el pan que yo daré es mi carne, la cual yo daré por la vida del mundo."], [52, "Entonces los Judíos contendían entre sí, diciendo: ¿Cómo puede éste darnos su carne á comer?"], [53, "Y Jesús les dijo: De cierto, de cierto os digo: Si no comiereis la carne del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros."], [54, "El que come mi carne y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el día postrero."], [55, "Porque mi carne es verdadera comida, y mi sangre es verdadera bebida."], [56, "El que come mi carne y bebe mi sangre, en mí permanece, y yo en él."], [57, "Como me envió el Padre viviente, y yo vivo por el Padre, asimismo el que me come, él también vivirá por mí."], [58, "Este es el pan que descendió del cielo: no como vuestros padres comieron el maná, y son muertos: el que come de este pan, vivirá eternamente."], [59, "Estas cosas dijo en la sinagoga, enseñando en Capernaum."], [60, "Y muchos de sus discípulos oyéndo[lo], dijeron: Dura es esta palabra: ¿quién la puede oir?"], [61, "Y sabiendo Jesús en sí mismo que sus discípulos murmuraban de esto, díjoles: ¿Esto os escandaliza?"], [62, "¿Pues [qué], si viereis al Hijo del hombre que sube donde estaba primero?"], [63, "El espíritu es el que da vida; la carne nada aprovecha: las palabras que yo os he hablado, son espíritu, y son vida."], [64, "Mas hay algunos de vosotros que no creen. Porque Jesús desde el principio sabía quiénes eran los que no creían, y quién le había de entregar."], [65, "Y dijo: Por eso os he dicho que ninguno puede venir á mí, si no le fuere dado del Padre."], [66, "Desde esto, muchos de sus discípulos volvieron atrás, y ya no andaban con él."], [67, "Dijo entonces Jesús á los doce: ¿Queréis vosotros iros también?"], [68, "Y respondióle Simón Pedro: Señor, ¿á quién iremos? tú tienes palabras de vida eterna."], [69, "Y nosotros creemos y conocemos que tú eres el Cristo, el Hijo de Dios viviente."], [70, "Jesús le respondió: ¿No he escogido yo á vosotros doce, y uno de vosotros es diablo?"], [71, "Y hablaba de Judas Iscariote, [hijo] de Simón, porque éste era el que le había de entregar, el cual era uno de los doce."]];
+const state = {phone:false};
+const $ = (s,r=document)=>r.querySelector(s);
+const chevL='<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5L7 10l5.5 5.5"/></svg>';
+const chevR='<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg>';
+const esc = (t)=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const verseHtml = ()=>VERSES.map(([n,t])=>'<sup>'+n+'</sup>'+esc(t).replace(/\[([^\]]*)\]/g,"<i>$1</i>")).join(" ");
+const footHtml = ()=>'<div class="foot"><button type="button" class="box"><small>Capítulo anterior</small><span>Juan 5</span></button><button type="button" class="box next"><small>Capítulo siguiente</small><span>Juan 7</span></button></div>';
+
+function build(id,mode){
+  const el=$(id);
+  const bar = mode==="c"
+    ? '<div class="rbar c"><div class="cnav"><button type="button" aria-label="Capítulo anterior: Juan 5">'+chevL+'</button><span class="ref">Juan 6</span><button type="button" aria-label="Capítulo siguiente: Juan 7">'+chevR+'</button></div><span class="ib hide-phone">Tamaño</span><span class="ib hide-phone">RV1909</span>'+(state.phone?'<span class="ib">Ajustes</span>':'')+'</div>'
+    : '<div class="rbar"><span class="ref">Juan 6</span><span class="ib">Tamaño</span><span class="ib">RV1909</span></div>';
+  const edges = mode==="a" ? '<button type="button" class="edge l" aria-label="Capítulo anterior: Juan 5">'+chevL+'<span class="tip">Juan 5</span></button><button type="button" class="edge r" aria-label="Capítulo siguiente: Juan 7">'+chevR+'<span class="tip">Juan 7</span></button>' : '';
+  const pill = mode==="b" ? '<div class="pill" role="group" aria-label="Capítulos"><button type="button">'+chevL+'Juan 5</button><i></i><button type="button">Juan 7'+chevR+'</button></div>' : '';
+  el.classList.toggle("phone",state.phone);
+  el.innerHTML = bar+edges+'<div class="scroller" tabindex="0" aria-label="Juan 6"><div class="col"><h4>Juan 6</h4><p class="vs">'+verseHtml()+'</p>'+footHtml()+'</div></div>'+pill;
+  if(mode==="b"){
+    const sc=$(".scroller",el), pl=$(".pill",el); let last=0, timer=0;
+    const hide=()=>pl.classList.remove("on");
+    sc.addEventListener("scroll",()=>{
+      const y=sc.scrollTop, d=y-last; last=y;
+      const end = y+sc.clientHeight >= sc.scrollHeight-160;
+      clearTimeout(timer);
+      if(end){pl.classList.add("on");return}
+      if(d<-6 && y>40){pl.classList.add("on");timer=setTimeout(hide,2500)}
+      else if(d>6) hide();
+    },{passive:true});
+  }
+}
+function renderAll(){build("#d-hoy","hoy");build("#d-a","a");build("#d-b","b");build("#d-c","c")}
+$("#seg-dev").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  $("#seg-dev").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  state.phone=b.dataset.v==="phone"; renderAll();
+});
+renderAll();
+</script>
