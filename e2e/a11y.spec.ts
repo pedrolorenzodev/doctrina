@@ -18,6 +18,8 @@ async function violations(page: Page): Promise<string[]> {
   return found;
 }
 
+const titleEntranceMs = 1200;
+
 const pages: [string, string, (page: Page) => Promise<void>][] = [
   [
     "the 08 timeline with its panel open",
@@ -104,6 +106,7 @@ for (const theme of ["light", "dark"] as const) {
       await page.setViewportSize({ width: 1440, height: 900 });
       await page.goto(path);
       await act(page);
+      await page.waitForTimeout(titleEntranceMs);
       expect(await violations(page)).toEqual([]);
     });
   }
