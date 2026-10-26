@@ -6,6 +6,8 @@ import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { ChapterText } from "@/features/reader/chapter-text";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
+import { SelectionToolbar } from "@/features/reader/selection-toolbar";
+import type { ReaderSelection, VerseRange } from "@/features/reader/read-selection";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
 import {
   getHighlights,
@@ -18,6 +20,8 @@ import {
 import {
   addHighlight,
   currentColor,
+  isCovered,
+  removeRange,
   removeVerse,
   segmentsOf,
   type Highlight,
@@ -43,6 +47,8 @@ type ReaderBodyProps = {
     chapter: number;
     verseReference: string;
     shortCitation: string;
+    verseRange: string;
+    toolbar: Omit<Parameters<typeof SelectionToolbar>[0]["text"], "highlight">;
   };
 };
 
@@ -72,6 +78,7 @@ export function ReaderBody({
   const [picked, setPicked] = useState<number | null>(null);
   const [byKeyboard, setByKeyboard] = useState(false);
   const opener = useRef<HTMLElement | null>(null);
+  const textRoot = useRef<HTMLDivElement>(null);
   const verse = picked !== null && selected.verses.some((entry) => entry.verse === picked) ? picked : null;
   const plainReference =
     verse === null
@@ -97,14 +104,36 @@ export function ReaderBody({
     setHighlights(next);
     setUndo((previous) => ({ message, before, token: (previous?.token ?? 0) + 1, open: true }));
   };
+  const applyRanges = (ranges: VerseRange[], color: HighlightColor) => {
+    let next = getHighlights();
+    for (const range of ranges) {
+      next = addHighlight(next, { ...keyOf(range.verse), from: range.from, to: range.to, color, at: Date.now() });
+    }
+    rememberHighlightColor(color);
+    change(next, panel.highlight.done);
+  };
+  const removeRanges = (ranges: VerseRange[]) => {
+    let next = getHighlights();
+    for (const range of ranges) next = removeRange(next, keyOf(range.verse), range.from, range.to);
+    change(next, panel.highlight.removed);
+  };
   const pick = (color: HighlightColor) => {
     const entry = selected.verses.find((candidate) => candidate.verse === verse);
-    if (verse === null || !entry) return;
-    rememberHighlightColor(color);
-    change(
-      addHighlight(getHighlights(), { ...keyOf(verse), from: 0, to: entry.text.length, color, at: Date.now() }),
-      panel.highlight.done,
-    );
+    if (verse !== null && entry) applyRanges([{ verse, from: 0, to: entry.text.length }], color);
+  };
+  const selectionCitation = (selection: ReaderSelection) => {
+    const first = selection.ranges[0]?.verse ?? 0;
+    const last = selection.ranges[selection.ranges.length - 1]?.verse ?? first;
+    const pattern = first === last ? panel.verseReference : panel.verseRange;
+    const reference = nbspBeforeDigits(pattern)
+      .replace("{book}", panel.bookName)
+      .replace("{chapter}", String(panel.chapter))
+      .replace("{verse}", String(first))
+      .replace("{from}", String(first))
+      .replace("{to}", String(last))
+      .replaceAll("\u00a0", " ");
+    const short = panel.shortCitation.replace("{reference}", reference).replace("{edition}", selected.abbreviation);
+    return `«${selection.text}» ${short}. ${location.origin}${location.pathname}#v-${first}`;
   };
   const unmark = () => {
     if (verse !== null) change(removeVerse(getHighlights(), keyOf(verse)), panel.highlight.removed);
@@ -141,6 +170,7 @@ export function ReaderBody({
         verses={selected.verses}
         lang={selected.language}
         selected={verse}
+        rootRef={textRoot}
         segmentsOf={(entry) => segmentsOf(highlights, keyOf(entry.verse), entry.text.length)}
         onSelect={select}
       />
@@ -160,6 +190,17 @@ export function ReaderBody({
           onRemove: unmark,
         }}
         onClose={close}
+      />
+      <SelectionToolbar
+        rootRef={textRoot}
+        text={{ ...panel.toolbar, highlight: panel.highlight }}
+        isMarked={(ranges) =>
+          ranges.length > 0 && ranges.every((range) => isCovered(highlights, keyOf(range.verse), range.from, range.to))
+        }
+        lastColor={lastHighlightColor}
+        citation={selectionCitation}
+        onHighlight={applyRanges}
+        onRemove={removeRanges}
       />
       <UndoBar
         open={undo?.open ?? false}

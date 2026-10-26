@@ -169,6 +169,8 @@ export const en: UiText = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    verseRange: "{book} {chapter}:{from}-{to}",
+    toolbar: { label: "What you chose", cite: "Copy citation", citeCopied: "Citation copied", find: "Search" },
     highlight: {
       label: "Highlight",
       remove: "Remove highlight",

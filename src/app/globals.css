@@ -957,6 +957,24 @@
   }
 }
 
+@utility toolbar-motion {
+  transition:
+    opacity 100ms ease,
+    translate 100ms ease,
+    visibility 0s linear 100ms;
+
+  &[data-open="true"] {
+    transition:
+      opacity 150ms var(--ease-reveal),
+      translate 150ms var(--ease-reveal),
+      visibility 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
 @utility undo-position {
   bottom: calc(24px + env(safe-area-inset-bottom, 0px));
 

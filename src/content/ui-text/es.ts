@@ -167,6 +167,8 @@ export const es = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    verseRange: "{book} {chapter}:{from}-{to}",
+    toolbar: { label: "Lo que elegiste", cite: "Copiar cita", citeCopied: "Cita copiada", find: "Buscar" },
     highlight: {
       label: "Subrayar",
       remove: "Quitar subrayado",

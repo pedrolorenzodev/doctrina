@@ -1,3 +1,4 @@
+import type { RefObject } from "react";
 import type { BibleVerse } from "@/content/model/bible";
 import type { HighlightColor, Segment } from "@/lib/highlights";
 
@@ -6,6 +7,7 @@ type ChapterTextProps = {
   lang: string;
   selected: number | null;
   segmentsOf: (verse: BibleVerse) => Segment[];
+  rootRef: RefObject<HTMLDivElement | null>;
   onSelect: (verse: number, byKeyboard: boolean, opener: HTMLElement) => void;
 };
 
@@ -17,9 +19,9 @@ const toneClassName: Record<HighlightColor, string> = {
   orange: "bg-hl-orange",
 };
 
-export function ChapterText({ verses, lang, selected, segmentsOf, onSelect }: ChapterTextProps) {
+export function ChapterText({ verses, lang, selected, segmentsOf, rootRef, onSelect }: ChapterTextProps) {
   return (
-    <div lang={lang} className="mt-8.5 max-w-col">
+    <div ref={rootRef} lang={lang} className="mt-8.5 max-w-col">
       {verses.map((verse) => (
         <p
           key={verse.verse}
@@ -31,6 +33,7 @@ export function ChapterText({ verses, lang, selected, segmentsOf, onSelect }: Ch
           </span>
           <span
             role="button"
+            data-verse-text={verse.verse}
             tabIndex={0}
             aria-pressed={selected === verse.verse}
             onClick={(event) => onSelect(verse.verse, event.detail === 0, event.currentTarget)}

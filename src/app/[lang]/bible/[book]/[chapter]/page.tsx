@@ -111,6 +111,8 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           chapter,
           verseReference: labels.verseReference,
           shortCitation: labels.shortCitation,
+          verseRange: labels.verseRange,
+          toolbar: labels.toolbar,
         }}
       />
       <VerseArrival />
