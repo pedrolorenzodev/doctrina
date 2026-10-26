@@ -113,6 +113,24 @@ test("keyboard: arrows open and move, Home and End jump, Enter chooses, Esc and 
   await expect(page.locator(list)).toBeHidden();
 });
 
+test("Enter or Space on the button opens the list and the arrows then reach its options", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  await page.locator(button).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator(list)).toBeVisible();
+  await expect(page.locator(option("RV1909"))).toBeFocused();
+  await page.keyboard.press("Escape");
+  await page.keyboard.press("Space");
+  await expect(page.locator(option("RV1909"))).toBeFocused();
+  await page.keyboard.press("Escape");
+  await page.locator(button).click();
+  await expect(page.locator(list)).toBeVisible();
+  await page.locator(button).focus();
+  await page.keyboard.press("ArrowDown");
+  await expect(page.locator(option("RV1909"))).toBeFocused();
+});
+
 test("a click outside closes the list", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
@@ -172,6 +190,8 @@ test("opening unfolds the height in about 220 ms and closing folds it in about 1
   for (let at = 1; at < shrinking.length; at += 1)
     expect(shrinking[at]!.height).toBeLessThanOrEqual(shrinking[at - 1]!.height + 0.5);
   await expect(page.locator(list)).toBeHidden();
+  const tail = shrinking.filter((frame) => frame.height < 20);
+  for (let at = 1; at < tail.length; at += 1) expect(tail[at - 1]!.height - tail[at]!.height).toBeGreaterThan(0.5);
 });
 
 test("under reduced motion the list appears and goes at once", async ({ page }) => {

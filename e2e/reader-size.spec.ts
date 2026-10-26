@@ -145,6 +145,27 @@ test("under reduced motion the fill appears at once and goes at once, the bar st
   expect(frames.filter((frame) => frame.t >= start.t).every((frame) => frame.bar)).toBe(true);
 });
 
+test("a verse link lands the verse 140 px from the top at once, with no second jump", async ({ page }) => {
+  await page.addInitScript(() => {
+    const tops: number[] = [];
+    (window as unknown as { __tops: number[] }).__tops = tops;
+    const start = performance.now();
+    const tick = () => {
+      const el = document.getElementById("v-53");
+      if (el) tops.push(Math.round(el.getBoundingClientRect().top));
+      if (performance.now() - start < 1500) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(`${john}#v-53`);
+  await page.waitForTimeout(1700);
+  const tops = await page.evaluate(() => (window as unknown as { __tops: number[] }).__tops);
+  const settled = tops.slice(-10);
+  expect(settled.every((top) => Math.abs(top - 140) <= 3)).toBe(true);
+  expect(tops.filter((top) => top < 120)).toHaveLength(0);
+});
+
 test("a hash that is not a verse marks nothing, and a hash change marks the new verse", async ({ page }) => {
   await page.goto(`${john}#top`);
   await expect(page.locator("[data-arrived]")).toHaveCount(0);

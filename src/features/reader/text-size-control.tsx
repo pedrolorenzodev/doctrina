@@ -34,7 +34,7 @@ function changeKeepingPlace(change: () => void) {
 }
 
 const buttonClassName =
-  "inline-flex min-h-7.5 cursor-pointer items-center justify-center rounded-6 px-2.5 py-1 text-ui-xs leading-label text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent pointer-coarse:min-h-11";
+  "inline-flex min-h-7.5 cursor-pointer items-center justify-center rounded-6 px-2.5 py-1 text-ui-xs leading-label text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent pointer-coarse:min-h-11 pointer-coarse:min-w-11";
 
 export function TextSizeControl({ text }: { text: TextSizeControlText }) {
   const size = useSyncExternalStore(subscribeReaderSize, currentReaderSize, () => defaultReaderSize);

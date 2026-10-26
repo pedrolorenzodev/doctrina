@@ -14,8 +14,6 @@ type ReaderStripProps = {
   defaultId: string;
 };
 
-const arrivalClearance = 20;
-
 export function ReaderStrip({ sizeText, pickerText, options, defaultId }: ReaderStripProps) {
   const bar = useRef<HTMLDivElement>(null);
   const stuck = useStuck(bar);
@@ -28,8 +26,10 @@ export function ReaderStrip({ sizeText, pickerText, options, defaultId }: Reader
     const element = bar.current;
     if (!element) return;
     const root = document.documentElement;
-    const measure = () =>
-      root.style.setProperty("--spacing-scroll-offset", `${element.offsetHeight + arrivalClearance}px`);
+    const measure = () => {
+      const clearance = parseFloat(getComputedStyle(root).getPropertyValue("--spacing-reader-arrival")) || 0;
+      root.style.setProperty("--spacing-scroll-offset", `${element.offsetHeight + clearance}px`);
+    };
     measure();
     addEventListener("resize", measure);
     return () => {

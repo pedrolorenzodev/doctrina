@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { setBranch } from "@/lib/branch-motion";
 
@@ -25,11 +25,7 @@ type TranslationPickerProps = {
 };
 
 const maxListHeight = 420;
-const optionHeight = 44;
-const headHeight = 32;
-const listPadding = 12;
 const bottomClearance = 14;
-const topClearance = 14;
 const minListHeight = 160;
 
 const optionClassName =
@@ -45,7 +41,6 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
   const settled = useRef(false);
   const focusOnOpen = useRef(false);
   const [open, setOpen] = useState(false);
-  const [up, setUp] = useState(false);
   const [room, setRoom] = useState(maxListHeight);
 
   const groups = [
@@ -56,6 +51,13 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
 
   const optionElements = () => Array.from(list.current?.querySelectorAll<HTMLElement>('[role="option"]') ?? []);
 
+  const focusCurrent = useCallback(() => {
+    const options = Array.from(list.current?.querySelectorAll<HTMLElement>('[role="option"]') ?? []);
+    (options.find((option) => option.getAttribute("aria-selected") === "true") ?? options[0])?.focus({
+      preventScroll: true,
+    });
+  }, []);
+
   useEffect(() => {
     const element = list.current;
     if (!element) return;
@@ -64,14 +66,9 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
       return;
     }
     setBranch(element, open, true);
-    if (open && focusOnOpen.current) {
-      const options = optionElements();
-      (options.find((option) => option.getAttribute("aria-selected") === "true") ?? options[0])?.focus({
-        preventScroll: true,
-      });
-    }
+    if (open && focusOnOpen.current) focusCurrent();
     focusOnOpen.current = false;
-  }, [open]);
+  }, [open, focusCurrent]);
 
   useEffect(() => {
     if (!open) return;
@@ -94,15 +91,13 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
 
   const openList = (focusSelected: boolean) => {
     const trigger = button.current;
-    if (!trigger || open) return;
-    const rect = trigger.getBoundingClientRect();
-    const topLimit = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--spacing-top")) || 0;
-    const below = innerHeight - rect.bottom - bottomClearance;
-    const above = rect.top - topLimit - topClearance;
-    const wanted = Math.min(maxListHeight, options.length * optionHeight + groups.length * headHeight + listPadding);
-    const flip = below < wanted && above > below;
-    setUp(flip);
-    setRoom(Math.max(minListHeight, Math.min(maxListHeight, flip ? above : below)));
+    if (!trigger) return;
+    if (open) {
+      if (focusSelected) focusCurrent();
+      return;
+    }
+    const below = innerHeight - trigger.getBoundingClientRect().bottom - bottomClearance;
+    setRoom(Math.max(minListHeight, Math.min(maxListHeight, below)));
     focusOnOpen.current = focusSelected;
     setOpen(true);
   };
@@ -149,7 +144,7 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={`${id}-list`}
-        onClick={() => (open ? closeList(false) : openList(false))}
+        onClick={(event) => (open ? closeList(false) : openList(event.detail === 0))}
         onKeyDown={onButtonKeyDown}
         className="group/picker inline-flex min-h-8.5 cursor-pointer items-center justify-center gap-2 rounded-6 border border-rule-2 bg-card px-2 py-1 text-ui-xs leading-label font-medium text-ink transition-colors duration-150 ease-standard hover:border-ink hover:bg-hover sm:px-2.5 pointer-coarse:min-h-11"
       >
@@ -175,11 +170,10 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
         aria-label={text.label}
         hidden
         data-open="false"
-        data-side={up ? "up" : "down"}
         data-lenis-prevent
         onKeyDown={onListKeyDown}
         style={{ "--picker-max": `${room}px` } as CSSProperties}
-        className={`absolute right-0 z-45 max-h-(--picker-max) w-72 overflow-y-auto overscroll-contain rounded-8 border border-rule-2 bg-panel p-1.5 shadow-floating sm:w-85 ${up ? "bottom-full mb-1.5" : "top-full mt-1.5"}`}
+        className={`absolute right-0 z-45 max-h-(--picker-max) w-72 overflow-y-auto overscroll-contain rounded-8 border border-rule-2 bg-panel p-1.5 shadow-floating sm:w-85 top-full mt-1.5`}
       >
         {groups.flatMap((group, index) => [
           <div
