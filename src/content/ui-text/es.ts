@@ -285,6 +285,12 @@ export const es = {
       bsb: "Dominio público",
       "web-c": "Dominio público",
       dra: "Dominio público",
+      "public-domain": "Dominio público",
+    },
+    fatherWork: {
+      editionEn: "Texto en inglés. Traducción de {translator}, {year}.",
+      editionEs: "Texto en español. Traducción de {translator}, {year}.",
+      prologue: "Prólogo",
     },
   },
   father: {

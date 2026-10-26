@@ -47,6 +47,7 @@ const historySegments: Record<Locale, string> = { es: "historia", en: "history" 
 const timelineSlugs: Record<Locale, string> = { es: "linea-de-tiempo", en: "timeline" };
 
 const fathersSegments: Record<Locale, string> = { es: "padres", en: "fathers" };
+const worksSegments: Record<Locale, string> = { es: "obras", en: "works" };
 
 const objectionsSlugs: Record<Locale, string> = { es: "objeciones", en: "objections" };
 
@@ -80,6 +81,14 @@ export function fatherHref(locale: Locale, id: string): string {
 
 export function fatherRoute(locale: Locale, id: string): string {
   return `/${locale}/history/fathers/${id}`;
+}
+
+export function fatherWorkHref(locale: Locale, id: string): string {
+  return `/${locale}/${historySegments[locale]}/${worksSegments[locale]}/${id}`;
+}
+
+export function fatherWorkRoute(locale: Locale, id: string): string {
+  return `/${locale}/history/works/${id}`;
 }
 
 export function traditionHref(locale: Locale, doctrine: DoctrineId, tradition: TraditionId): string {
@@ -118,6 +127,7 @@ export function spanishRewrites() {
       source: fatherHref("es", ":father"),
       destination: fatherRoute("es", ":father"),
     },
+    { source: fatherWorkHref("es", ":work"), destination: fatherWorkRoute("es", ":work") },
     ...doctrineRewrites(),
   ];
 }

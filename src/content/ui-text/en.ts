@@ -287,6 +287,12 @@ export const en: UiText = {
       bsb: "Public domain",
       "web-c": "Public domain",
       dra: "Public domain",
+      "public-domain": "Public domain",
+    },
+    fatherWork: {
+      editionEn: "Text in English. Translated by {translator}, {year}.",
+      editionEs: "Text in Spanish. Translated by {translator}, {year}.",
+      prologue: "Prologue",
     },
   },
   father: {
