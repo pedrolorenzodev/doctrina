@@ -389,7 +389,7 @@ Why each order and content: ROADMAP «Now» item 1 (screen notes) and the DECISI
 
 Error shell (not from the proposal; built in B1b from the tokens): 404 and 500 pages use the `display` h1 and the `lede` for the message and `btn-go`-style actions (min-height 44, `--radius-7`, `text-ui-sm`); the global 404 and 500 show Spanish and English one after the other, because they render outside the locale layout. Spanish system copy is neutral («vuelva», «Intentar de nuevo»), no voseo.
 
-Not designed yet: 01 home, the search results page (the full page of results, not the ⌘K box) (the ⌘K component above is designed). 07 word study and 08 timeline have an open proposal, not approved.
+Not designed yet: 01 home, the search results page (the full page of results, not the ⌘K box) (the ⌘K component above is designed). 07 word study is approved (DECISIONS 2026-10-23) and not built (it needs the word data); 08 timeline is built (section 8).
 
 ## 7. Don'ts
 

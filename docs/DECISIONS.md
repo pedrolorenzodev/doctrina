@@ -2,6 +2,13 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-25 · Uncertain dates of the Fathers: H1 in the header, L1 on the line (Pedro chose)
+**Chosen:** proposal https://claude.ai/artifact/4Pp7wkQEVKU9yei1cqjD2Z (archived in `docs/research/proposals/uncertain-dates/`). Header **H1**: the uncertainty is written inside the value itself («entre c. 310 y 320», «367 o 368», «se desconoce; vivía en 394», «Activo 337–345»; a work says «Compuesta …» and shows no «Murió»); no state line, no single «Vida» fact. Line **L1**: solid stroke where the date is attested, dash where estimated or disputed, dots where it is unknown (also at the end: «se sabe que vivía; no cuándo murió»); a person known only by activity is a soft band without ends, a work with a composition range is a hollow band.
+**Why:** it follows the dash and dots grammar the line already has and adds no element to the header; more noticeable must not look more certain (DECISIONS 2026-10-06).
+**Also (the same day):** Lutheran dossier, Pedro's two calls: objections stay in numeric order, as the objections to the Catholic Church (2026-10-24); WLC 173 was left to the agent and dropped from OB-9 because it supports only the second sentence of WCF 29.8.
+**Discarded:** H2 (state line under the value), H3 (one «Vida» fact), L2 (fade) and L3 (error bar).
+**Agent's call (to confirm):** the wording of «Activo», «Compuesta» and «vivía en 394» is the agent's; applying the verified dates to the data (ROADMAP 2c) follows this entry.
+
 ## 2026-10-25 · 08 Timeline, fifth block: the Father's main writings in the panel (the agent's design of 2026-10-22, kept unless Pedro objects)
 **Built:** for a Father or early writer the panel lists his main writings with their dates (`works` of `history.json`: one to four each), under a small heading «Escritos principales»; councils, movements and anonymous writings have none. It is the line the 2026-10-22 decision recorded («the detail says whether he has writings and which»).
 **Agent's calls:** the heading says «principales» because the data holds the key works, not the complete list (the complete list is on the Father's own page under «Sus escritos»); the rows are not links yet (the reader of 05 does not exist: TODO on the Father's page).
