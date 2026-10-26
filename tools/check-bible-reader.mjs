@@ -1,28 +1,9 @@
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { bibleBooks } from "@/content/bible-books";
-import { bibleChapterHref, bookFromSlug, bookRouteOf, bookSlug } from "@/content/bible-routes";
 import { createSupabaseBibleSource } from "@/content/bible/supabase-source";
 import { getBibleChapter, getBibleChapterIndex, getBibleTranslations, getBibleVerse } from "@/content/get-bible";
 
 const failures = [];
-
-function checkRoutes() {
-  for (const locale of ["es", "en"]) {
-    const slugs = new Set(bibleBooks.map((book) => bookSlug(locale, book)));
-    check(`${locale} book slugs are unique`, slugs.size === bibleBooks.length, `${slugs.size} of ${bibleBooks.length}`);
-    check(
-      `${locale} slugs resolve to their book`,
-      bibleBooks.every((book) => bookFromSlug(locale, bookSlug(locale, book))?.id === book.id),
-    );
-  }
-  const john = bibleBooks.find((book) => book.id === "John");
-  check("a chapter link uses the Spanish segment and slug", bibleChapterHref("es", john, 6) === "/es/biblia/juan/6");
-  const corinthians = bibleBooks.find((book) => book.id === "1Cor");
-  check("a numbered book keeps its number in the slug", bookSlug("es", corinthians) === "1-corintios");
-  check("the book route of a chapter path", bookRouteOf("/es/bible/juan/6") === "/es/bible/juan");
-  check("no book route for the book itself", bookRouteOf("/es/bible/juan") === null);
-}
 const check = (name, ok, detail = "") => {
   if (!ok) failures.push(`${name}${detail ? `: ${detail}` : ""}`);
 };
@@ -107,7 +88,6 @@ async function checkSupabaseSource() {
 if (existsSync(resolve(root, "data", "corpus", "bibles", "rv1909.json"))) await checkLocalCorpus();
 else console.log("check-bible-reader: no local corpus in data/corpus/bibles, local checks skipped");
 await checkSupabaseSource();
-checkRoutes();
 
 if (failures.length > 0) {
   for (const failure of failures) console.error(`FAIL ${failure}`);

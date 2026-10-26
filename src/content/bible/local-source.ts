@@ -1,5 +1,5 @@
 import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { resolve } from "node:path";
 import { bibleVersification, normalizeBibleFile, type BibleRow } from "@/content/bible/normalize-bible";
 import type { BibleSource } from "@/content/bible/bible-source";
 import { sortChapters } from "@/content/bible/chapter-neighbors";
@@ -8,8 +8,8 @@ import type { Locale } from "@/lib/locale";
 
 type SourceEntry = { id: string; lang: Locale; name: string; licence: string; canon: number };
 
-export function createLocalBibleSource(): BibleSource {
-  const manifest = readFile(join(process.cwd(), "data", "sources", "bibles.json"), "utf8").then(
+export function createLocalBibleSource(root: string): BibleSource {
+  const manifest = readFile(resolve(root, "data", "sources", "bibles.json"), "utf8").then(
     (text) => JSON.parse(text) as SourceEntry[],
   );
   const loaded = new Map<string, Promise<BibleRow[]>>();
@@ -17,16 +17,11 @@ export function createLocalBibleSource(): BibleSource {
   function rows(translationId: string): Promise<BibleRow[]> {
     let pending = loaded.get(translationId);
     if (!pending) {
-      pending = readFile(join(process.cwd(), "data", "corpus", "bibles", `${translationId}.json`), "utf8").then(
-        (text) => {
-          const { rows: parsed, errors } = normalizeBibleFile(
-            translationId,
-            JSON.parse(text) as Record<string, string>,
-          );
-          if (errors.length > 0) throw new Error(errors.slice(0, 5).join("\n"));
-          return parsed;
-        },
-      );
+      pending = readFile(resolve(root, "data", "corpus", "bibles", `${translationId}.json`), "utf8").then((text) => {
+        const { rows: parsed, errors } = normalizeBibleFile(translationId, JSON.parse(text) as Record<string, string>);
+        if (errors.length > 0) throw new Error(errors.slice(0, 5).join("\n"));
+        return parsed;
+      });
       loaded.set(translationId, pending);
     }
     return pending;
