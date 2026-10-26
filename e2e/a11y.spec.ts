@@ -103,6 +103,14 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
     },
   ],
   [
+    "a Bible chapter with a verse's panel open",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.locator("#v-53 [role=button]").click();
+      await expect(page.locator("aside[data-side-panel]")).toHaveAttribute("data-open", "true");
+    },
+  ],
+  [
     "the search with a query",
     "/es/doctrinas/eucaristia/catolica",
     async (page) => {

@@ -169,9 +169,20 @@ export const en: UiText = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    verseReference: "{book} {chapter}:{verse}",
+    shortCitation: "{reference} ({edition})",
+    panel: {
+      label: "Verse detail",
+      close: "Close",
+      cite: "Cite",
+      citeCopied: "Citation copied",
+      copyLink: "Copy link",
+      linkCopied: "Link copied",
+      openDetail: "See the full detail",
+    },
     picker: { label: "Translation", spanish: "Spanish", english: "English" },
     numberingNote:
-      "{abbreviation} numbers this chapter differently from {reference}: it may have other verses or correspond to another chapter (as with several Psalms).",
+      "{abbreviation} numbers this chapter differently from {reference}: it may have other verses or correspond to another chapter.",
     size: {
       group: "Text size",
       smaller: "Make the text smaller",

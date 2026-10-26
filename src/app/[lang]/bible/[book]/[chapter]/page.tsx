@@ -104,6 +104,13 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
         deuteroNotice={book.section === "deuterocanon" ? labels.deuteroNotice : null}
         numberingNote={labels.numberingNote}
         footTitle={labels.foot.title}
+        panel={{
+          text: labels.panel,
+          bookName: book.names[locale],
+          chapter,
+          verseReference: labels.verseReference,
+          shortCitation: labels.shortCitation,
+        }}
       />
       <VerseArrival />
       <NeighborLinks

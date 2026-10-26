@@ -167,9 +167,20 @@ export const es = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    verseReference: "{book} {chapter}:{verse}",
+    shortCitation: "{reference} ({edition})",
+    panel: {
+      label: "Detalle del versículo",
+      close: "Cerrar",
+      cite: "Citar",
+      citeCopied: "Cita copiada",
+      copyLink: "Copiar enlace",
+      linkCopied: "Enlace copiado",
+      openDetail: "Ver el detalle completo",
+    },
     picker: { label: "Traducción", spanish: "Español", english: "Inglés" },
     numberingNote:
-      "{abbreviation} numera este capítulo de otro modo que {reference}: puede traer otros versículos o corresponder a otro capítulo (pasa con varios Salmos).",
+      "{abbreviation} numera este capítulo de otro modo que {reference}: puede traer otros versículos o corresponder a otro capítulo.",
     size: {
       group: "Tamaño del texto",
       smaller: "Achicar el texto",
