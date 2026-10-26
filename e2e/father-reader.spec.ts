@@ -62,3 +62,16 @@ test("in the tree a Father with texts opens to them and the open work is marked"
   await expect(page).toHaveURL(/\/es\/historia\/obras\/ignatius-ephesians$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Ephesians");
 });
+
+test("a work links to the previous and next work of the same Father; a lone work has none", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/obras/ignatius-polycarp");
+  const links = page.locator("main nav[aria-label] a", { hasText: /Obra (anterior|siguiente)/ });
+  await expect(links).toHaveCount(2);
+  await expect(links.first()).toContainText("A los Filadelfios");
+  await expect(links.last()).toContainText("A los Romanos");
+  await links.last().click();
+  await expect(page).toHaveURL(/\/es\/historia\/obras\/ignatius-romans$/);
+  await page.goto(didache);
+  await expect(page.locator("main nav[aria-label] a", { hasText: /Obra (anterior|siguiente)/ })).toHaveCount(0);
+});
