@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 import { horizontalOverflow } from "./helpers";
 
 const john = "/es/biblia/juan/6";
-const strip = 'main div:has(> [role="group"][aria-label="Tamaño del texto"])';
+const strip = "main [data-reader-strip]";
 const group = '[role="group"][aria-label="Tamaño del texto"]';
 const larger = `${group} button[aria-label="Agrandar el texto"]`;
 const smaller = `${group} button[aria-label="Achicar el texto"]`;
@@ -14,8 +14,10 @@ test("the strip holds A− and A+ on the right from 640 px and is gone on a phon
   await page.goto(john);
   await expect(page.locator(group)).toBeVisible();
   await expect(page.locator(group).locator("button")).toHaveText(["A−", "A+"]);
-  const box = await page.locator(group).boundingBox();
-  expect(box!.x + box!.width).toBeGreaterThan(1440 - 130);
+  const box = (await page.locator(group).boundingBox())!;
+  const picker = (await page.locator('main [data-reader-strip] button[aria-haspopup="listbox"]').boundingBox())!;
+  expect(picker.x + picker.width).toBeGreaterThan(1440 - 130);
+  expect(box.x + box.width).toBeLessThan(picker.x);
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(page.locator(group)).toBeHidden();
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);

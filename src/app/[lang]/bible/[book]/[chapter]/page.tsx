@@ -6,12 +6,11 @@ import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { getBibleBook } from "@/content/bible-books";
 import { bibleChapterHref, bookFromSlug, bookSlug } from "@/content/bible-routes";
-import { defaultTranslationId } from "@/content/bible/default-translation";
-import { getBibleChapter, getReadableChapters } from "@/content/get-bible";
+import { getReadableChapters } from "@/content/get-bible";
+import { getReaderChapter } from "@/content/get-reader-chapter";
 import type { ChapterRef } from "@/content/model/bible";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import { ChapterFoot } from "@/features/reader/chapter-foot";
-import { ChapterText } from "@/features/reader/chapter-text";
+import { ReaderBody } from "@/features/reader/reader-body";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderStrip } from "@/features/reader/reader-strip";
 import { VerseArrival } from "@/features/reader/verse-arrival";
@@ -30,9 +29,8 @@ export async function generateStaticParams() {
 async function loadChapter(locale: Locale, bookParam: string, chapterParam: string) {
   const book = bookFromSlug(locale, bookParam);
   const number = Number(chapterParam);
-  if (!book || !Number.isInteger(number) || locale !== "es") return null;
-  const chapter = await getBibleChapter(defaultTranslationId(locale, book), book.id, number);
-  return chapter ? { book, chapter } : null;
+  if (!book || !Number.isInteger(number)) return null;
+  return getReaderChapter(locale, book.id, number);
 }
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/bible/[book]/[chapter]">): Promise<Metadata> {
@@ -44,7 +42,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/bible/[boo
     title: loaded
       ? text.reader.chapterTitle
           .replace("{book}", loaded.book.names[locale])
-          .replace("{chapter}", String(loaded.chapter.chapter))
+          .replace("{chapter}", String(loaded.chapter))
       : text.site.title,
   };
 }
@@ -54,14 +52,19 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
   const locale = await currentLocale();
   const loaded = await loadChapter(locale, bookParam, chapterParam);
   if (!loaded) notFound();
-  const { book, chapter } = loaded;
+  const { book, chapter, views, defaultId } = loaded;
   const text = getUiText(locale);
   const labels = text.reader;
   const sectionLabel = text.shell.tree[book.section === "old" ? "ot" : book.section === "new" ? "nt" : "deutero"];
   const titleOf = (name: string, number: number) =>
     labels.chapterTitle.replace("{book}", name).replace("{chapter}", String(number));
-  const licences: Record<string, string> = labels.licences;
-  const licence = licences[chapter.translation.id];
+  const licenceTexts: Record<string, string> = labels.licences;
+  const licences = Object.fromEntries(
+    views.map((view) => {
+      const licence = licenceTexts[view.id];
+      return [view.id, licence ? labels.foot.licence.replace("{licence}", licence) : null];
+    }),
+  );
   const neighbor = (label: string, other: ChapterRef | null) => {
     const otherBook = other ? getBibleBook(other.book) : null;
     return other && otherBook
@@ -75,32 +78,39 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
   return (
     <PageMain>
       <ReaderSizeScript />
-      <ReaderStrip text={labels.size} />
+      <ReaderStrip
+        sizeText={labels.size}
+        pickerText={labels.picker}
+        options={views.map(({ id, abbreviation, displayName, language }) => ({
+          id,
+          abbreviation,
+          displayName,
+          language,
+        }))}
+        defaultId={defaultId}
+      />
       {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
       <Breadcrumbs
         label={text.shell.breadcrumb}
         trail={[{ label: text.shell.tree.bible }, { label: sectionLabel }]}
         current={book.names[locale]}
       />
-      <PageHeader id="top" className="mt-9" size="reader" title={titleOf(book.names[locale], chapter.chapter)} />
-      <p className="title-part title-part-2 mt-2.5 mb-0 text-reader-note text-ink-3">{chapter.translation.name}</p>
-      {book.section === "deuterocanon" && locale === "es" ? (
-        <p className="title-part title-part-3 mt-5.5 mb-0 max-w-140 text-reader-note text-ink-3">
-          {labels.deuteroNotice}
-        </p>
-      ) : null}
-      <ChapterText verses={chapter.verses} lang={chapter.translation.language} />
-      <ChapterFoot
-        title={labels.foot.title}
-        edition={chapter.translation.name}
-        licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
+      <PageHeader id="top" className="mt-9" size="reader" title={titleOf(book.names[locale], chapter)} />
+      <ReaderBody
+        views={views}
+        licences={licences}
+        defaultId={defaultId}
+        bookId={book.id}
+        deuteroNotice={book.section === "deuterocanon" ? labels.deuteroNotice : null}
+        numberingNote={labels.numberingNote}
+        footTitle={labels.foot.title}
       />
       <VerseArrival />
       <NeighborLinks
         label={labels.neighborsLabel}
         className="mt-16"
-        previous={neighbor(labels.previous, chapter.previous)}
-        next={neighbor(labels.next, chapter.next)}
+        previous={neighbor(labels.previous, loaded.previous)}
+        next={neighbor(labels.next, loaded.next)}
       />
     </PageMain>
   );
