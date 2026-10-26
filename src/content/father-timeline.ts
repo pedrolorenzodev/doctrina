@@ -210,7 +210,7 @@ export function buildFatherTimeline(father: Father, all: Father[], locale: Local
     ...councils
       .filter((council) => overlaps({ start: council.year, end: council.endYear ?? council.year }, window))
       .map((council) => ({
-        rank: 1,
+        rank: council.ecumenical ? 0 : 1,
         distance: Math.abs(council.year - midpoint),
         item: withEcumenical(
           council.ecumenical,

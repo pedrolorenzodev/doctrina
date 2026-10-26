@@ -111,7 +111,7 @@ test("an ecumenical council inside a page's window gets the dot and its legend l
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(father("augustine-of-hippo"));
-  expect(await page.locator("#time [data-ecumenical]").count()).toBeGreaterThanOrEqual(1);
+  expect(await page.locator("#time [data-ecumenical]").count()).toBe(3);
   await expect(page.locator("#time li", { hasText: "Lo reciben como ecuménico" })).toHaveCount(1);
   await page.goto(ignatius);
   await expect(page.locator("#time [data-ecumenical]")).toHaveCount(0);
