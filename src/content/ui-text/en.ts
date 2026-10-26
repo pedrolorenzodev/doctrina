@@ -235,6 +235,15 @@ export const en: UiText = {
       openDetail: "See the full detail",
     },
     picker: { label: "Translation", spanish: "Spanish", english: "English" },
+    stepAria: "{label}: {title}",
+    textOptions: {
+      mark: "Aa",
+      label: "Text",
+      formatGroup: "Format",
+      lines: "One verse per line",
+      flow: "As a paragraph",
+    },
+    bookPicker: { label: "Book and chapter", books: "Books", chapters: "{count} chapters", oneChapter: "1 chapter" },
     numberingNote:
       "{abbreviation} numbers this chapter differently from {reference}: it may have other verses or correspond to another chapter.",
     size: {

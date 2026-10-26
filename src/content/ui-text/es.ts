@@ -233,6 +233,15 @@ export const es = {
       openDetail: "Ver el detalle completo",
     },
     picker: { label: "Traducción", spanish: "Español", english: "Inglés" },
+    stepAria: "{label}: {title}",
+    textOptions: {
+      mark: "Aa",
+      label: "Texto",
+      formatGroup: "Formato",
+      lines: "Un versículo por línea",
+      flow: "En párrafo",
+    },
+    bookPicker: { label: "Libro y capítulo", books: "Libros", chapters: "{count} capítulos", oneChapter: "1 capítulo" },
     numberingNote:
       "{abbreviation} numera este capítulo de otro modo que {reference}: puede traer otros versículos o corresponder a otro capítulo.",
     size: {
