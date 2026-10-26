@@ -8,7 +8,8 @@ import type { TreeGroup, TreeNode } from "@/content/site-tree";
 import { useDrawer } from "@/features/shell/drawer";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { trapTab } from "@/lib/focus";
-import { prefersReducedMotion, setBranch, travelMark, visibleRow } from "@/features/shell/tree-motion";
+import { travelMark, visibleRow } from "@/features/shell/tree-motion";
+import { prefersReducedMotion, setBranch } from "@/lib/branch-motion";
 
 type SidebarText = {
   navLabel: string;
