@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow } from "./helpers";
+import { horizontalOverflow, trackElement } from "./helpers";
 
 const john = "/es/biblia/juan/6";
 const panel = "aside[data-side-panel]";
@@ -227,4 +227,36 @@ test("«Descargar en Markdown» saves the notes of the chapter as a .md file", a
   expect(readFileSync(path, "utf8")).toBe(
     "# Tus notas, Juan 6\n\n## Juan 6:53\n\nEl discurso del pan de vida.\n\n14 nov 2023\n\n## Juan 6:57\n\nSobre el Padre viviente.\n\n14 nov 2023\n",
   );
+});
+
+test("the tab indicator slides to the chosen tab in about 340 ms, and jumps under reduced motion", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await expect(page.locator(yourPanel)).toHaveAttribute("data-open", "true");
+  const indicator = `${yourPanel} [data-slide-indicator]`;
+  const tab = page.locator(yourPanel).getByRole("button", { name: /Subrayados/ });
+  const before = (await page.locator(indicator).boundingBox())!;
+  const frames = trackElement(page, indicator, 700);
+  await tab.click();
+  const sampled = await frames;
+  const moving = sampled.filter(
+    (frame) => frame.left > before.x + 1 && frame.left < sampled[sampled.length - 1]!.left - 1,
+  );
+  expect(moving.length).toBeGreaterThanOrEqual(3);
+  const began = sampled.find((frame) => frame.left > before.x + 0.5)!.t;
+  const done = sampled.find((frame) => frame.left >= sampled[sampled.length - 1]!.left - 0.5)!.t;
+  expect(done - began).toBeGreaterThan(200);
+  expect(done - began).toBeLessThan(520);
+  const tabBox = (await tab.boundingBox())!;
+  const after = (await page.locator(indicator).boundingBox())!;
+  expect(Math.abs(after.x - tabBox.x)).toBeLessThan(1.5);
+  expect(Math.abs(after.width - tabBox.width)).toBeLessThan(1.5);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  const instant = trackElement(page, indicator, 500);
+  await page
+    .locator(yourPanel)
+    .getByRole("button", { name: /^Notas/ })
+    .click();
+  const jumped = await instant;
+  expect(jumped.filter((frame) => frame.left > before.x + 1 && frame.left < after.x - 1)).toHaveLength(0);
 });
