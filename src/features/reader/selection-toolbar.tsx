@@ -13,6 +13,7 @@ type SelectionToolbarText = {
   cite: string;
   citeCopied: string;
   find: string;
+  note: string;
   highlight: Parameters<typeof HighlightColors>[0]["text"];
 };
 
@@ -24,6 +25,7 @@ type SelectionToolbarProps = {
   citation: (selection: ReaderSelection) => string;
   onHighlight: (ranges: VerseRange[], color: HighlightColor) => void;
   onRemove: (ranges: VerseRange[]) => void;
+  onNote: (selection: ReaderSelection) => void;
 };
 
 const dockedQuery = "(max-width: 40rem), (pointer: coarse)";
@@ -44,6 +46,7 @@ export function SelectionToolbar({
   citation,
   onHighlight,
   onRemove,
+  onNote,
 }: SelectionToolbarProps) {
   const bar = useRef<HTMLDivElement>(null);
   const { show: showSearch } = useSearch();
@@ -128,6 +131,12 @@ export function SelectionToolbar({
     finish();
   };
 
+  const note = () => {
+    if (!current) return;
+    onNote(current);
+    finish();
+  };
+
   const find = () => {
     if (!current) return;
     const query = current.text.slice(0, searchLength);
@@ -146,6 +155,9 @@ export function SelectionToolbar({
         event.preventDefault();
         if (marked) unmark();
         else highlight(lastColor());
+      } else if (event.key === "n" || event.key === "N") {
+        event.preventDefault();
+        note();
       } else if ((event.key === "c" || event.key === "C") && !event.shiftKey) {
         event.preventDefault();
         bar.current?.querySelector<HTMLButtonElement>("[data-cite-button] button")?.click();
@@ -177,6 +189,9 @@ export function SelectionToolbar({
         onPick={highlight}
         onRemove={unmark}
       />
+      <button type="button" onClick={note} aria-keyshortcuts="N" className={plainButtonClassName}>
+        {text.note}
+      </button>
       <span aria-hidden="true" className="mx-1 h-5 w-px bg-rule group-data-docked/toolbar:hidden" />
       <span data-cite-button="" className="contents">
         <CopyButton compact label={text.cite} done={text.citeCopied} text={() => (current ? citation(current) : "")} />

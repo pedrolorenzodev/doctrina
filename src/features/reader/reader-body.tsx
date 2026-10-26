@@ -1,34 +1,21 @@
 "use client";
 
-import { useCallback, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useRef, useState } from "react";
 import { UndoBar } from "@/components/undo-bar";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { ChapterText } from "@/features/reader/chapter-text";
-import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
-import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
-import { SelectionToolbar } from "@/features/reader/selection-toolbar";
-import type { ReaderSelection, VerseRange } from "@/features/reader/read-selection";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
-import {
-  getHighlights,
-  lastHighlightColor,
-  noHighlights,
-  rememberHighlightColor,
-  setHighlights,
-  subscribeHighlights,
-} from "@/lib/highlight-store";
-import {
-  addHighlight,
-  currentColor,
-  isCovered,
-  removeRange,
-  removeVerse,
-  segmentsOf,
-  type Highlight,
-  type HighlightColor,
-  type VerseKey,
-} from "@/lib/highlights";
+import { NoteEditor } from "@/features/reader/note-editor";
+import { PanelNotes } from "@/features/reader/panel-notes";
+import type { ReaderSelection } from "@/features/reader/read-selection";
+import { SelectionToolbar } from "@/features/reader/selection-toolbar";
+import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
+import { useChapterNotes } from "@/features/reader/use-chapter-notes";
+import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
+import { useUndo } from "@/features/reader/use-undo";
+import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { nbspBeforeDigits } from "@/lib/locator";
+import { clippedQuote, type NoteDraft } from "@/lib/notes";
 import { numberingDiffers } from "@/content/bible/numbering-note";
 import type { ReaderTranslationView } from "@/content/get-reader-chapter";
 
@@ -41,8 +28,20 @@ type ReaderBodyProps = {
   numberingNote: string;
   footTitle: string;
   panel: {
+    locale: string;
     text: Parameters<typeof VersePanel>[0]["text"];
     highlight: Parameters<typeof VersePanel>[0]["highlight"]["text"] & { done: string; removed: string; undo: string };
+    notes: {
+      add: string;
+      label: string;
+      about: string;
+      saved: string;
+      deleteNote: string;
+      one: string;
+      many: string;
+      inEdition: string;
+      removed: string;
+    };
     bookName: string;
     chapter: number;
     verseReference: string;
@@ -70,91 +69,107 @@ export function ReaderBody({
   );
   const selected = views.find((view) => view.id === chosen) ?? views[0]!;
   const defaultView = views.find((view) => view.id === defaultId) ?? selected;
-  const asNumbered = (view: ReaderTranslationView) => ({
-    id: view.id,
-    versification: view.versification,
-    verseCount: view.verses.length,
-  });
   const [picked, setPicked] = useState<number | null>(null);
   const [byKeyboard, setByKeyboard] = useState(false);
   const opener = useRef<HTMLElement | null>(null);
   const textRoot = useRef<HTMLDivElement>(null);
   const verse = picked !== null && selected.verses.some((entry) => entry.verse === picked) ? picked : null;
-  const plainReference =
-    verse === null
-      ? ""
-      : panel.verseReference
-          .replace("{book}", panel.bookName)
-          .replace("{chapter}", String(panel.chapter))
-          .replace("{verse}", String(verse));
-  const reference = nbspBeforeDigits(plainReference);
-  const citation = panel.shortCitation
-    .replace("{reference}", plainReference)
-    .replace("{edition}", selected.abbreviation);
-  const highlights = useSyncExternalStore(subscribeHighlights, getHighlights, () => noHighlights);
-  const [undo, setUndo] = useState<{ message: string; before: Highlight[]; token: number; open: boolean } | null>(null);
-  const keyOf = (number: number): VerseKey => ({
+  const undoState = useUndo();
+  const highlights = useChapterHighlights({
     translationId: selected.id,
     book: bookId,
     chapter: panel.chapter,
-    verse: number,
+    done: panel.highlight.done,
+    removed: panel.highlight.removed,
+    showUndo: undoState.show,
   });
-  const change = (next: Highlight[], message: string) => {
-    const before = getHighlights();
-    setHighlights(next);
-    setUndo((previous) => ({ message, before, token: (previous?.token ?? 0) + 1, open: true }));
-  };
-  const applyRanges = (ranges: VerseRange[], color: HighlightColor) => {
-    let next = getHighlights();
-    for (const range of ranges) {
-      next = addHighlight(next, { ...keyOf(range.verse), from: range.from, to: range.to, color, at: Date.now() });
-    }
-    rememberHighlightColor(color);
-    change(next, panel.highlight.done);
-  };
-  const removeRanges = (ranges: VerseRange[]) => {
-    let next = getHighlights();
-    for (const range of ranges) next = removeRange(next, keyOf(range.verse), range.from, range.to);
-    change(next, panel.highlight.removed);
-  };
-  const pick = (color: HighlightColor) => {
-    const entry = selected.verses.find((candidate) => candidate.verse === verse);
-    if (verse !== null && entry) applyRanges([{ verse, from: 0, to: entry.text.length }], color);
-  };
-  const selectionCitation = (selection: ReaderSelection) => {
-    const first = selection.ranges[0]?.verse ?? 0;
-    const last = selection.ranges[selection.ranges.length - 1]?.verse ?? first;
-    const pattern = first === last ? panel.verseReference : panel.verseRange;
-    const reference = nbspBeforeDigits(pattern)
+  const notes = useChapterNotes({
+    translationId: selected.id,
+    book: bookId,
+    chapter: panel.chapter,
+    removedMessage: panel.notes.removed,
+    showUndo: undoState.show,
+  });
+
+  const referenceOf = (first: number, last: number) =>
+    (first === last ? panel.verseReference : panel.verseRange)
       .replace("{book}", panel.bookName)
       .replace("{chapter}", String(panel.chapter))
       .replace("{verse}", String(first))
       .replace("{from}", String(first))
-      .replace("{to}", String(last))
-      .replaceAll("\u00a0", " ");
-    const short = panel.shortCitation.replace("{reference}", reference).replace("{edition}", selected.abbreviation);
+      .replace("{to}", String(last));
+  const plainReference = verse === null ? "" : referenceOf(verse, verse);
+  const reference = nbspBeforeDigits(plainReference);
+  const citation = panel.shortCitation
+    .replace("{reference}", plainReference)
+    .replace("{edition}", selected.abbreviation);
+  const selectionCitation = (selection: ReaderSelection) => {
+    const first = selection.ranges[0]?.verse ?? 0;
+    const last = selection.ranges[selection.ranges.length - 1]?.verse ?? first;
+    const short = panel.shortCitation
+      .replace("{reference}", referenceOf(first, last))
+      .replace("{edition}", selected.abbreviation);
     return `«${selection.text}» ${short}. ${location.origin}${location.pathname}#v-${first}`;
   };
-  const unmark = () => {
-    if (verse !== null) change(removeVerse(getHighlights(), keyOf(verse)), panel.highlight.removed);
-  };
-  const expireUndo = useCallback(() => setUndo((previous) => (previous ? { ...previous, open: false } : previous)), []);
+  const dateLabel = (time: number) =>
+    new Intl.DateTimeFormat(panel.locale, { day: "numeric", month: "short", year: "numeric" }).format(time);
+
   const close = useCallback(() => {
     setPicked(null);
+    notes.close();
     opener.current?.focus({ preventScroll: true });
-  }, []);
+  }, [notes]);
+  const open = (next: number, keyboard: boolean, element: HTMLElement | null) => {
+    opener.current = element;
+    setByKeyboard(keyboard);
+    setPicked(next);
+    if (element) keepAboveSheet(element, readerPanelFrom);
+  };
   const select = (next: number, keyboard: boolean, element: HTMLElement) => {
     if (getSelection()?.toString()) return;
     if (picked === next) {
       close();
       return;
     }
-    opener.current = element;
-    setByKeyboard(keyboard);
-    setPicked(next);
-    keepAboveSheet(element, readerPanelFrom);
+    if (notes.editing && notes.editing.draft.verse !== next) notes.close();
+    open(next, keyboard, element);
   };
-  const differs = numberingDiffers(asNumbered(selected), asNumbered(defaultView), bookId);
+  const noteMarkOf = (number: number) => {
+    const list = notes.at(number);
+    if (list.length === 0) return null;
+    const base = list.length === 1 ? panel.notes.one : panel.notes.many.replace("{n}", String(list.length));
+    const foreign = list.every((note) => note.scope === "words" && note.translationId !== selected.id) ? list[0] : null;
+    const view = foreign ? views.find((candidate) => candidate.id === foreign.translationId) : null;
+    return view ? panel.notes.inEdition.replace("{mark}", base).replace("{edition}", view.abbreviation) : base;
+  };
+  const draftReference = (draft: NoteDraft) => {
+    const place = nbspBeforeDigits(referenceOf(draft.verse, draft.verseTo));
+    return panel.notes.about.replace(
+      "{reference}",
+      draft.scope === "words" && draft.quote ? `${place}: «${clippedQuote(draft.quote)}»` : place,
+    );
+  };
+  const noteOnWords = (selection: ReaderSelection) => {
+    const first = selection.ranges[0];
+    const last = selection.ranges[selection.ranges.length - 1];
+    if (!first || !last) return;
+    open(first.verse, false, null);
+    notes.openNew({
+      scope: "words",
+      verse: first.verse,
+      verseTo: last.verse,
+      from: first.from,
+      to: last.to,
+      quote: selection.text,
+    });
+  };
+  const differs = numberingDiffers(
+    { id: selected.id, versification: selected.versification, verseCount: selected.verses.length },
+    { id: defaultView.id, versification: defaultView.versification, verseCount: defaultView.verses.length },
+    bookId,
+  );
+  const editor = notes.editing && notes.editing.draft.verse === verse ? notes.editing : null;
+
   return (
     <>
       <p className="title-part title-part-2 mt-2.5 mb-0 text-reader-note text-ink-3">{selected.name}</p>
@@ -171,7 +186,9 @@ export function ReaderBody({
         lang={selected.language}
         selected={verse}
         rootRef={textRoot}
-        segmentsOf={(entry) => segmentsOf(highlights, keyOf(entry.verse), entry.text.length)}
+        segmentsOf={(entry) => highlights.segmentsFor(entry.verse, entry.text.length)}
+        noteMarkOf={noteMarkOf}
+        onMark={(number, element) => open(number, false, element)}
         onSelect={select}
       />
       <ChapterFoot title={footTitle} edition={selected.name} licence={licences[selected.id] ?? null} />
@@ -184,35 +201,63 @@ export function ReaderBody({
         focusOnOpen={byKeyboard}
         highlight={{
           text: panel.highlight,
-          current: verse === null ? null : (currentColor(highlights, keyOf(verse)) ?? lastHighlightColor()),
-          marked: verse !== null && currentColor(highlights, keyOf(verse)) !== null,
-          onPick: pick,
-          onRemove: unmark,
+          current: verse === null ? null : (highlights.colorOf(verse) ?? highlights.lastColor()),
+          marked: verse !== null && highlights.colorOf(verse) !== null,
+          onPick: (color) => {
+            const entry = selected.verses.find((candidate) => candidate.verse === verse);
+            if (verse !== null && entry) highlights.apply([{ verse, from: 0, to: entry.text.length }], color);
+          },
+          onRemove: () => {
+            if (verse !== null) highlights.removeVerse(verse);
+          },
+        }}
+        noteLabel={panel.notes.add}
+        onNote={() => {
+          if (verse !== null) {
+            notes.openNew({ scope: "unit", verse, verseTo: verse, from: null, to: null, quote: null });
+          }
         }}
         onClose={close}
-      />
+      >
+        {editor ? (
+          <NoteEditor
+            key={editor.session}
+            reference={draftReference(editor.draft)}
+            initial={notes.current?.text ?? ""}
+            savedAt={notes.current?.updatedAt ?? null}
+            dateLabel={dateLabel}
+            text={panel.notes}
+            onSave={notes.save}
+            onClose={notes.close}
+            onDelete={() => (editor.noteId ? notes.remove(editor.noteId) : notes.close())}
+          />
+        ) : null}
+        <PanelNotes
+          notes={verse === null ? [] : notes.at(verse).filter((note) => note.id !== editor?.noteId)}
+          dateLabel={dateLabel}
+          onOpen={notes.openExisting}
+        />
+      </VersePanel>
       <SelectionToolbar
         rootRef={textRoot}
         text={{ ...panel.toolbar, highlight: panel.highlight }}
-        isMarked={(ranges) =>
-          ranges.length > 0 && ranges.every((range) => isCovered(highlights, keyOf(range.verse), range.from, range.to))
-        }
-        lastColor={lastHighlightColor}
+        isMarked={highlights.isMarked}
+        lastColor={highlights.lastColor}
         citation={selectionCitation}
-        onHighlight={applyRanges}
-        onRemove={removeRanges}
+        onHighlight={highlights.apply}
+        onRemove={highlights.remove}
+        onNote={noteOnWords}
       />
       <UndoBar
-        open={undo?.open ?? false}
-        message={undo?.message ?? ""}
-        token={undo?.token ?? 0}
+        open={undoState.undo?.open ?? false}
+        message={undoState.undo?.message ?? ""}
+        token={undoState.undo?.token ?? 0}
         actionLabel={panel.highlight.undo}
         onAction={() => {
-          if (!undo) return;
-          setHighlights(undo.before);
-          setUndo({ ...undo, open: false });
+          undoState.undo?.restore();
+          undoState.expire();
         }}
-        onExpire={expireUndo}
+        onExpire={undoState.expire}
       />
     </>
   );
