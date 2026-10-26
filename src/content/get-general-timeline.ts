@@ -1,4 +1,5 @@
 import { formatYear } from "@/content/format-date";
+import { lifeText } from "@/content/father-life";
 import { personItem } from "@/content/father-timeline";
 import { councils, heresies } from "@/content/history/timeline-sources";
 import type { Father } from "@/content/model/history";
@@ -41,8 +42,10 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
   for (const father of fathers) {
     const own = personItem(father, false, locale, text);
     const died = formatYear({ year: father.died, circa: father.approx });
+    const life = lifeText(father, locale, text);
     const facts =
-      father.kind === "work"
+      life?.header ??
+      (father.kind === "work"
         ? [{ label: labels.facts.written, value: died }]
         : [
             {
@@ -51,7 +54,7 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
                 father.born === null ? labels.facts.unknown : formatYear({ year: father.born, circa: father.approx }),
             },
             { label: labels.facts.died, value: died },
-          ];
+          ]);
     entries.push({
       ...own,
       own: false,
@@ -60,7 +63,7 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       kind: father.kind === "work" ? labels.kinds.work : capitalize(father.role[locale]),
       section: father.kind === "work" ? "works" : "people",
       group: father.kind === "work" ? "events" : "people",
-      ...(father.kind === "work"
+      ...(father.kind === "work" && !life
         ? { start: father.died, end: father.died, isRange: false, rowDate: died, ends: [died], dates: died }
         : {}),
       facts,
@@ -88,6 +91,9 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       start: council.year,
       end: council.endYear ?? council.year,
       leadStart: null,
+      tailEnd: null,
+      tailKind: null,
+      band: null,
       birthUnknown: false,
       isRange: false,
       openEnd: false,
@@ -121,6 +127,9 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       start: heresy.startYear,
       end: heresy.endYear,
       leadStart: null,
+      tailEnd: null,
+      tailKind: null,
+      band: null,
       birthUnknown: false,
       isRange: true,
       openEnd: heresy.endYear > to,

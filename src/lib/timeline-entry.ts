@@ -12,6 +12,9 @@ export type TimelineEntry = {
   start: number;
   end: number;
   leadStart: number | null;
+  tailEnd: number | null;
+  tailKind: "dash" | "dots" | null;
+  band: "soft" | "hollow" | null;
   birthUnknown: boolean;
   isRange: boolean;
   ecumenical?: boolean;

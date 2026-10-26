@@ -7,12 +7,22 @@ import { PageLink } from "@/components/ui/page-link";
 import { at, px, vars } from "@/lib/css-vars";
 import { listSeparator } from "@/lib/punctuation";
 import { packRows, percentOf, placeItem, type PlacedItem, type Scale } from "@/lib/timeline-layout";
+import { LifeKeyItems } from "@/components/life-key-items";
 import { useBoxWidth, useLabelMeasure } from "@/lib/use-timeline-box";
 
 export type TimelineText = {
   groups: Record<TimelineEntry["group"], string>;
   keyLabel: string;
-  key: { life: string; estimatedBirth: string; unknownBirth: string; event: string; ecumenical: string };
+  key: {
+    life: string;
+    estimatedBirth: string;
+    unknownBirth: string;
+    knownAlive: string;
+    active: string;
+    composed: string;
+    event: string;
+    ecumenical: string;
+  };
   hint: string;
   empty: string;
   diedMark: string;
@@ -81,7 +91,7 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
   };
 
   const band = own ? percentOf(scale, own.leadStart ?? own.start) : 0;
-  const bandWidth = own ? percentOf(scale, own.end) - band : 0;
+  const bandWidth = own ? percentOf(scale, own.tailEnd ?? own.end) - band : 0;
   const tabbableId = focusId ?? own?.id ?? entries[0]?.id;
 
   const axisLabelClamp = (center: number, labelWidth: number) =>
@@ -225,6 +235,7 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
           </span>
           {text.key.unknownBirth}
         </li>
+        <LifeKeyItems entries={entries} text={text.key} />
         <li className="flex items-center gap-2">
           <span aria-hidden="true" className="size-3 rounded-full circle-border border-ink-3 bg-bg" />
           {text.key.event}

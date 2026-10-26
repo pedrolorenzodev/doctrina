@@ -63,7 +63,7 @@ test("a council, a movement and an anonymous writing each have their own labelle
   await item(page, "arianism").click();
   await expect(detail(page).locator("dl dt")).toHaveText(["Desde", "Hasta"]);
   await item(page, "didache").click();
-  await expect(detail(page).locator("dl dt")).toHaveText(["Escrito"]);
+  await expect(detail(page).locator("dl dt")).toHaveText(["Compuesta"]);
 });
 
 test("the panel: opens on the right with its title, closes with its button or Escape and keeps the selection", async ({

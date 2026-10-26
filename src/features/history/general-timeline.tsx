@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { LifeKeyItems } from "@/components/life-key-items";
 import { SidePanel } from "@/components/side-panel";
 import { TimelineMarks } from "@/components/timeline-marks";
 import { PageLink } from "@/components/ui/page-link";
@@ -14,7 +15,17 @@ import { TimelineRuler } from "@/features/history/timeline-ruler";
 
 export type GeneralTimelineText = {
   sections: Record<GeneralSection, string>;
-  key: { life: string; estimated: string; unknownBirth: string; council: string; ecumenical: string; lasts: string };
+  key: {
+    life: string;
+    estimated: string;
+    unknownBirth: string;
+    knownAlive: string;
+    active: string;
+    composed: string;
+    council: string;
+    ecumenical: string;
+    lasts: string;
+  };
   keyLabel: string;
   hint: string;
   diedMark: string;
@@ -182,7 +193,10 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
   }, []);
 
   const span = selected
-    ? { first: selected.leadStart !== null ? selected.start : selected.start, last: Math.min(selected.end, to) }
+    ? {
+        first: selected.leadStart !== null ? selected.start : selected.start,
+        last: Math.min(selected.tailEnd ?? selected.end, to),
+      }
     : null;
   const bandLeft = span ? pixelsOf(scale, span.first) : 0;
   const bandWidth = span ? Math.max(2, pixelsOf(scale, span.last) - bandLeft) : 0;
@@ -369,6 +383,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
           </span>
           {text.key.unknownBirth}
         </li>
+        <LifeKeyItems entries={entries} text={text.key} />
         <li className="flex items-center gap-2">
           <span aria-hidden="true" className="size-3 rounded-full circle-border border-ink-3 bg-bg" />
           {text.key.council}

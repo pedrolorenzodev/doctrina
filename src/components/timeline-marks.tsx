@@ -6,6 +6,21 @@ export function TimelineMarks({ entry, scale, left }: { entry: TimelineEntry; sc
   const x = (year: number) => pixelsOf(scale, year) - left;
   const bar = `absolute top-1.5 h-1.5 rounded-3 transition-colors duration-150 ${entry.own ? "bg-accent" : "bg-rule-2 group-hover:bg-ink-3"}`;
   const pressed = entry.own ? "" : "group-aria-pressed:bg-ink";
+  if (entry.band) {
+    const first = x(entry.start);
+    const last = x(Math.min(entry.end, scale.to));
+    const place = "left-(--x) w-(--w)";
+    return (
+      <span
+        style={vars({ "--x": px(first), "--w": px(Math.max(6, last - first)) })}
+        className={
+          entry.band === "soft"
+            ? `${bar} ${pressed} ${place} opacity-45 group-aria-pressed:opacity-70`
+            : `absolute top-1 h-2.5 rounded-3 border transition-colors duration-150 ${place} ${entry.own ? "border-accent" : "border-ink-3 group-hover:border-ink group-aria-pressed:border-ink"}`
+        }
+      />
+    );
+  }
   if (entry.group === "people" && entry.birthUnknown) {
     const death = x(entry.end);
     return (
@@ -36,6 +51,29 @@ export function TimelineMarks({ entry, scale, left }: { entry: TimelineEntry; sc
           style={vars({ "--x": px(first), "--w": px(last - first) })}
           className={`${bar} ${pressed} left-(--x) w-(--w)`}
         />
+        {entry.tailKind === "dots" ? (
+          <>
+            {[0.7, 0.45, 0.25].map((opacity, index) => (
+              <span
+                key={opacity}
+                style={vars({ "--x": px(last + 6 + index * 7), "--o": String(opacity) })}
+                className={`absolute top-2 left-(--x) size-0.75 rounded-full opacity-(--o) ${entry.own ? "bg-accent" : "bg-ink-3"}`}
+              />
+            ))}
+          </>
+        ) : null}
+        {entry.tailKind === "dash" && entry.tailEnd !== null ? (
+          <>
+            <span
+              style={vars({ "--x": px(last), "--w": px(x(entry.tailEnd) - last) })}
+              className={`absolute top-2 left-(--x) h-0 w-(--w) border-t-2 border-dashed transition-colors duration-150 ${entry.own ? "border-accent" : "border-rule-2 group-hover:border-ink-3 group-aria-pressed:border-ink"}`}
+            />
+            <span
+              style={at("--x", px(x(entry.tailEnd)))}
+              className={`absolute top-1.25 left-(--x) -ml-1 size-2 rounded-full circle-border bg-bg transition-colors duration-150 ${entry.own ? "border-accent" : "border-ink-3 group-hover:border-ink group-aria-pressed:border-ink"}`}
+            />
+          </>
+        ) : null}
       </>
     );
   }

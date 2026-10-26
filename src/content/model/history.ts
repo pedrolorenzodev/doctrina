@@ -2,6 +2,14 @@ export type Localized = { es: string; en: string };
 
 export type FatherWork = { title: Localized; date: string; year: number };
 
+export type LifeClaimKind = "attested" | "estimated" | "between" | "either" | "after";
+
+export type LifeClaim = { kind: LifeClaimKind; year: number; yearEnd?: number; text: Localized; short: Localized };
+
+export type LifeSpan = { start: number; end: number; text: Localized; short: Localized };
+
+export type FatherLife = { birth?: LifeClaim; death?: LifeClaim; active?: LifeSpan; composed?: LifeSpan };
+
 export type Father = {
   id: string;
   kind: "person" | "work";
@@ -14,6 +22,7 @@ export type Father = {
   role: Localized;
   works: FatherWork[];
   summary: Localized;
+  life?: FatherLife;
 };
 
 export type HistoryEventKind =

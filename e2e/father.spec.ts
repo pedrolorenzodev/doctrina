@@ -48,7 +48,7 @@ test("a born and a dead year, circa or not, and a role that is not a bishop's", 
 test("an anonymous work has a date, what it is and its language, and no birth or death", async ({ page }) => {
   await page.goto(father("didache"));
   expect(await headerFactsOf(page)).toEqual([
-    ["Fecha", "c. 50–120"],
+    ["Compuesta", "segunda mitad del siglo I a primera mitad del siglo II"],
     ["Qué es", "Manual eclesial anónimo"],
     ["Lengua", "griego"],
   ]);
@@ -62,7 +62,7 @@ test("an anonymous work has a date, what it is and its language, and no birth or
     ["Región", "Siria"],
     ["Lengua", "Griego"],
     ["Tipo", "Manual eclesial anónimo"],
-    ["Fecha", "c. 50–120"],
+    ["Compuesta", "segunda mitad del siglo I a primera mitad del siglo II"],
   ]);
   await expect(page.locator("main")).not.toContainText("Nació");
 });

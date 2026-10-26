@@ -1,9 +1,10 @@
+import { lifeText, type FatherFact } from "@/content/father-life";
 import { formatYear } from "@/content/format-date";
 import type { Father } from "@/content/model/history";
 import type { UiText } from "@/content/ui-text/types";
 import type { Locale } from "@/lib/locale";
 
-export type FatherFact = { label: string; value: string };
+export type { FatherFact };
 
 export type FatherWritingView = { id: string; title: string; dateLabel: string };
 
@@ -46,17 +47,20 @@ export function buildFatherView(father: Father, locale: Locale, text: UiText): F
   const first = Math.min(...starts);
   const last = Math.max(...ends);
   const someCirca = writings.some((writing) => writing.dateLabel.startsWith("c."));
+  const life = lifeText(father, locale, text);
   const died = formatYear({ year: father.died, circa: father.approx });
   const born = father.born === null ? labels.facts.unknown : formatYear({ year: father.born, circa: father.approx });
   const dated = father.works[0]?.date ?? died;
   const personFacts: FatherFact[] = [
-    { label: labels.facts.born, value: born },
-    { label: labels.facts.died, value: died },
+    ...(life?.header ?? [
+      { label: labels.facts.born, value: born },
+      { label: labels.facts.died, value: died },
+    ]),
     roleFact,
     { label: labels.facts.wroteIn, value: language.toLowerCase() },
   ];
   const workFacts: FatherFact[] = [
-    { label: labels.workDate, value: dated },
+    life ? life.profileDate : { label: labels.workDate, value: dated },
     roleFact,
     { label: labels.language, value: language.toLowerCase() },
   ];
@@ -68,7 +72,11 @@ export function buildFatherView(father: Father, locale: Locale, text: UiText): F
       { label: labels.facts.region, value: father.region[locale] },
       { label: labels.language, value: language },
       { label: father.kind === "work" ? labels.workKind : labels.facts.role, value: capitalize(role) },
-      father.kind === "work" ? { label: labels.workDate, value: dated } : { label: labels.facts.died, value: died },
+      life
+        ? life.profileDate
+        : father.kind === "work"
+          ? { label: labels.workDate, value: dated }
+          : { label: labels.facts.died, value: died },
     ],
     writings: writings.map(({ id, title, dateLabel }) => ({ id, title, dateLabel })),
     writingsSpan:
@@ -80,6 +88,6 @@ export function buildFatherView(father: Father, locale: Locale, text: UiText): F
               last > first ? `${someCirca ? "c. " : ""}${first}–${last}` : (writings[0]?.dateLabel ?? String(first)),
           }
         : null,
-    searchDate: `† ${died}`,
+    searchDate: life?.searchDate ?? `† ${died}`,
   };
 }

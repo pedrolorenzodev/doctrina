@@ -1,4 +1,5 @@
 import { formatYear } from "@/content/format-date";
+import { lifeBounds, lifeMarks, lifeText } from "@/content/father-life";
 import { councils, heresies, historyEvents } from "@/content/history/timeline-sources";
 import type { Father, HistoryEventKind, Localized } from "@/content/model/history";
 import { fatherHref } from "@/content/routes";
@@ -22,6 +23,9 @@ export type TimelineItem = {
   start: number;
   end: number;
   leadStart: number | null;
+  tailEnd: number | null;
+  tailKind: "dash" | "dots" | null;
+  band: "soft" | "hollow" | null;
   birthUnknown: boolean;
   isRange: boolean;
   ecumenical?: boolean;
@@ -40,11 +44,9 @@ export type TimelineView = {
   ownYears: { start: number; end: number };
 };
 
-const lifeSpanFallback = 60;
 const marginBefore = 20;
 const marginAfter = 60;
 const tickStep = 20;
-const estimatedBirthLead = 8;
 const maxEvents = 8;
 const clauseEnd = /\s*[(:;]|,\s/;
 
@@ -66,10 +68,6 @@ const kindPriority: Record<HistoryEventKind, number> = {
 const shortLabel = (text: string) => text.split(clauseEnd)[0] ?? text;
 const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
-function lifeOf(father: Father): { start: number; end: number } {
-  return { start: father.born ?? father.died - lifeSpanFallback, end: father.died };
-}
-
 function rangeLabel(start: number, end: number | null, circa: boolean): string {
   const first = formatYear({ year: start, circa });
   return end === null || end === start ? first : `${first}–${end}`;
@@ -82,13 +80,17 @@ function overlaps(a: { start: number; end: number }, b: { start: number; end: nu
 export function personItem(father: Father, own: boolean, locale: Locale, text: UiText): TimelineItem {
   const labels = text.timeline;
   const name = father.name[locale];
-  const birthUnknown = father.born === null;
   const died = formatYear({ year: father.died, circa: father.approx });
   const bornLabel = formatYear({ year: father.born ?? 0, circa: father.approx });
-  const rowDate = birthUnknown ? `${labels.diedMark}${died}` : `${bornLabel}–${father.died}`;
-  const dates = birthUnknown
-    ? labels.diedUnknownBirth.replace("{died}", died)
-    : labels.livedBetween.replace("{born}", bornLabel).replace("{died}", died);
+  const marks = lifeMarks(father);
+  const birthUnknown = father.born === null && marks.band === null;
+  const life = lifeText(father, locale, text);
+  const rowDate = life?.rowDate ?? (birthUnknown ? `${labels.diedMark}${died}` : `${bornLabel}–${father.died}`);
+  const dates =
+    life?.dates ??
+    (birthUnknown
+      ? labels.diedUnknownBirth.replace("{died}", died)
+      : labels.livedBetween.replace("{born}", bornLabel).replace("{died}", died));
   return {
     id: father.id,
     group: "people",
@@ -96,15 +98,18 @@ export function personItem(father: Father, own: boolean, locale: Locale, text: U
     name,
     label: name,
     rowDate,
-    diedSpoken: birthUnknown ? `${labels.died} ${died}` : null,
-    ends: birthUnknown ? [`${labels.died} ${died}`] : [bornLabel, died],
+    diedSpoken: life ? life.diedSpoken : birthUnknown ? `${labels.died} ${died}` : null,
+    ends: life?.ends ?? (birthUnknown ? [`${labels.died} ${died}`] : [bornLabel, died]),
     dates,
     text: firstSentence(father.summary[locale]),
-    start: father.born ?? father.died,
-    end: father.died,
-    leadStart: father.born !== null && father.approx ? father.born - estimatedBirthLead : null,
+    start: marks.start,
+    end: marks.end,
+    leadStart: marks.leadStart,
+    tailEnd: marks.tailEnd,
+    tailKind: marks.tailKind,
+    band: marks.band,
     birthUnknown,
-    isRange: father.born !== null,
+    isRange: father.born !== null || marks.band !== null,
     openEnd: false,
     own,
     href: own ? null : fatherHref(locale, father.id),
@@ -140,6 +145,9 @@ function dated(
     start,
     end: end ?? start,
     leadStart: null,
+    tailEnd: null,
+    tailKind: null,
+    band: null,
     birthUnknown: false,
     isRange: end !== null && end > start,
     openEnd: false,
@@ -154,13 +162,13 @@ const withEcumenical = (ecumenical: boolean, item: TimelineItem): TimelineItem =
 
 export function buildFatherTimeline(father: Father, all: Father[], locale: Locale, text: UiText): TimelineView {
   const labels = text.timeline;
-  const life = lifeOf(father);
+  const life = lifeBounds(father);
   const from = Math.floor((life.start - marginBefore) / 10) * 10;
   const to = Math.ceil((life.end + marginAfter) / 10) * 10;
   const window = { start: from, end: to };
 
   const people = all
-    .filter((other) => other.kind === "person" && other.id !== father.id && overlaps(lifeOf(other), life))
+    .filter((other) => other.kind === "person" && other.id !== father.id && overlaps(lifeBounds(other), life))
     .map((other) => personItem(other, false, locale, text));
   const own = personItem(father, true, locale, text);
   const peopleItems = [own, ...people].sort((a, b) => a.end - b.end);
