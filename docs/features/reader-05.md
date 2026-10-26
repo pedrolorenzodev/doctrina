@@ -110,4 +110,5 @@ The commit kit had been applied as `apply.sh $(seq 107 129)`: block 117 does not
 Full suite after blocks 130–133 (chromium, 4 workers, load ~25): **714 passed in 5.5 min**, including the right-click specs of `reader-selection` (18 of 18) that had never run. The earlier loaded-machine failures did not reappear.
 Blocks 137–140: R8a, the Fathers' reader first slice (DECISIONS «R8a»): `StripShell`, `get-father-works.ts`, `/historia/obras/<obra>`, `father-text.tsx`, `father-strip.tsx`, `e2e/father-reader.spec.ts` (4 cases; the strip specs pass after the refactor).
 Blocks 141–143: R8b, the Fathers' works as children of their rows in the tree (DECISIONS «R8a», paragraph «R8b»). Full suite after R8b: 716 passed, 3 failed: two spec counts that did not expect the new rows (fixed: they now ignore `/obras/` links) and the known `search` opening-motion case under load (passes alone, 74 of 74 with its file).
+Blocks 144–152 (previous/next work, arrival mark, passage panel): full suite 724 passed, 1 failed (`search` rows-enter timing, passes alone; the machine load was 92). Not verified: nothing known; not run: the independent Sonnet verifier.
 
