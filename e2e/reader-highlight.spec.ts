@@ -1,7 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
 const john = "/es/biblia/juan/6";
-const panel = "aside[data-side-panel]";
+const panel = 'aside[data-side-panel][aria-label="Detalle del versículo"]';
 const verseButton = (n: number) => `#v-${n} [role=button]`;
 const mark = (n: number) => `#v-${n} mark`;
 const dot = (name: string) => `${panel} button[aria-label="Subrayar en ${name}"]`;

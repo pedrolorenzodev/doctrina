@@ -107,7 +107,51 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
     "/es/biblia/juan/6",
     async (page) => {
       await page.locator("#v-53 [role=button]").click();
-      await expect(page.locator("aside[data-side-panel]")).toHaveAttribute("data-open", "true");
+      await expect(page.locator('aside[data-side-panel][aria-label="Detalle del versículo"]')).toHaveAttribute(
+        "data-open",
+        "true",
+      );
+    },
+  ],
+  [
+    "a Bible chapter with «Tus notas» open",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.locator("[data-reader-strip] [data-your-notes]").click();
+      await expect(page.locator('aside[data-side-panel][aria-label="Tus notas"]')).toHaveAttribute("data-open", "true");
+    },
+  ],
+  [
+    "the delete note dialog",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.evaluate(() =>
+        localStorage.setItem(
+          "doctrina-notes",
+          JSON.stringify([
+            {
+              id: "n1",
+              scope: "unit",
+              translationId: "rv1909",
+              book: "John",
+              chapter: 6,
+              verse: 53,
+              verseTo: 53,
+              from: null,
+              to: null,
+              quote: null,
+              text: "Una nota.",
+              createdAt: 1,
+              updatedAt: 1,
+            },
+          ]),
+        ),
+      );
+      await page.reload();
+      await page.locator("#v-53 [role=button]").click();
+      await page.getByRole("button", { name: /Una nota/ }).click();
+      await page.getByRole("button", { name: "Borrar nota" }).click();
+      await expect(page.locator('[role="alertdialog"]')).toBeVisible();
     },
   ],
   [
