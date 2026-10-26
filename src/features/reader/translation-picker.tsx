@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 import { HangingMenu } from "@/components/hanging-menu";
+import { TranslationRows } from "@/features/reader/translation-rows";
 
 export type PickerOption = {
   id: string;
@@ -23,11 +24,6 @@ type TranslationPickerProps = {
   onChange: (id: string) => void;
 };
 
-const optionClassName =
-  "group/option flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:bg-accent-weak aria-selected:font-medium aria-selected:text-ink aria-selected:shadow-current";
-
-const bracketed = (abbreviation: string) => `(${abbreviation})`;
-
 export function TranslationPicker({ text, options, value, onChange }: TranslationPickerProps) {
   const id = useId();
   const button = useRef<HTMLButtonElement>(null);
@@ -35,10 +31,6 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
   const focusOnOpen = useRef(false);
   const [open, setOpen] = useState(false);
 
-  const groups = [
-    { language: "es" as const, label: text.spanish },
-    { language: "en" as const, label: text.english },
-  ].filter((group) => options.some((option) => option.language === group.language));
   const current = options.find((option) => option.id === value);
 
   const optionElements = () => Array.from(list.current?.querySelectorAll<HTMLElement>('[role="option"]') ?? []);
@@ -138,37 +130,13 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
         onKeyDown={onListKeyDown}
         className="w-72 p-1.5 sm:w-85"
       >
-        {groups.flatMap((group, index) => [
-          <div
-            key={`${group.language}-head`}
-            role="presentation"
-            data-menu-item=""
-            className={`px-2.5 pt-2 pb-1 text-label font-medium text-ink-3 ${index > 0 ? "mt-1 border-t border-rule pt-3" : ""}`}
-          >
-            {group.label}
-          </div>,
-          ...options
-            .filter((option) => option.language === group.language)
-            .map((option) => (
-              <div
-                key={option.id}
-                role="option"
-                tabIndex={-1}
-                aria-selected={option.id === value}
-                data-id={option.id}
-                data-menu-item=""
-                onClick={() => choose(option.id)}
-                className={optionClassName}
-              >
-                <span className="min-w-0">
-                  {option.displayName}{" "}
-                  <span className="text-ink-3 group-aria-selected/option:text-ink-2">
-                    {bracketed(option.abbreviation)}
-                  </span>
-                </span>
-              </div>
-            )),
-        ])}
+        <TranslationRows
+          spanish={text.spanish}
+          english={text.english}
+          options={options}
+          value={value}
+          onChoose={choose}
+        />
       </HangingMenu>
     </div>
   );
