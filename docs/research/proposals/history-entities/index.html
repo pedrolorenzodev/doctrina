@@ -1,0 +1,221 @@
+<title>Páginas de concilios y corrientes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: a page picker drives three frames; each frame is the same entity page with a different lead section */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--hover:rgb(28 23 19 / .05);--bar:#a3a09a;--cite:#5f3d0c;
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);--bar:#6f6f6b;--cite:#d9b36a;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);--bar:#6f6f6b;--cite:#d9b36a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:10px 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:0 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+h3{font-family:var(--head);font-weight:400;font-size:19px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+.say{max-width:640px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.say + .say{margin-top:10px}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 18px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.ctl{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:26px 0 0;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--rule)}
+.ctl label{font-size:13px;color:var(--ink-3);margin-right:8px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;max-width:100%}
+.seg button{font:500 13.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.seg button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.frame{border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);padding:26px 30px 34px;margin-top:6px;max-width:100%}
+.frame.phone{max-width:390px;padding:20px 16px 26px}
+.crumbs{font-size:13px;color:var(--ink-3)}
+.crumbs span + span::before{content:"/";margin:0 8px;color:var(--rule-2)}
+.kicker{font-size:13px;color:var(--ink-3);margin-top:22px}
+.h1{font-family:var(--head);font-weight:300;font-size:46px;line-height:1.05;margin:6px 0 16px;font-variation-settings:"opsz" 72;text-wrap:balance}
+.phone .h1{font-size:34px}
+.facts{display:flex;flex-wrap:wrap;gap:14px 32px;margin-bottom:14px}
+.fact{min-width:0}
+.fact .k{display:block;font-size:12.5px;color:var(--ink-3)}
+.fact .v{display:block;font-family:var(--body);font-weight:500;font-size:17px;line-height:1.4;max-width:260px}
+.lnk{display:inline-block;font-size:14px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:3px;font-weight:500}
+.sec{margin-top:46px}
+.sec>h2{font-size:30px;margin-bottom:6px}
+.phone .sec>h2{font-size:26px}
+.sub{font-family:var(--body);font-weight:300;font-size:16px;color:var(--ink-3);margin-bottom:14px;max-width:600px}
+.prose{font-family:var(--body);font-weight:300;font-size:17.5px;line-height:1.65;color:var(--ink-2);max-width:640px}
+.prose + .prose{margin-top:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{font:500 13.5px var(--ui);color:var(--ink);border:1px solid var(--rule-2);border-radius:6px;padding:6px 12px}
+.note{font-family:var(--body);font-weight:300;font-size:15px;color:var(--ink-3);max-width:600px;margin-top:8px}
+ul.list{list-style:none;margin:6px 0 0;padding:0;border-bottom:1px solid var(--rule)}
+ul.list li{border-top:1px solid var(--rule);padding:14px 0 15px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;align-items:baseline}
+.phone ul.list li{grid-template-columns:1fr}
+ul.list .t{font-family:var(--body);font-weight:500;font-size:17.5px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--rule-2)}
+ul.list .m{font-size:13.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+ul.list .d{grid-column:1/-1;font-family:var(--body);font-weight:300;font-size:15.5px;color:var(--ink-2)}
+.nav{display:flex;gap:12px;margin-top:46px}
+.phone .nav{flex-direction:column}
+.box{border:1px solid var(--rule-2);border-radius:6px;padding:14px 16px;flex:1;min-width:0}
+.box small{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:4px}
+.box span{display:block;font-family:var(--body);font-weight:500;font-size:16px}
+.box.next{text-align:right}
+.tl{position:relative;margin-top:10px}
+.tl .row{position:relative;height:46px}
+.tl .lab{position:absolute;top:0;font-size:13px;white-space:nowrap}
+.tl .mk{position:absolute;top:22px;height:5px;border-radius:2px;background:var(--bar)}
+.tl .sel .mk{background:var(--accent)}
+.tl .sel .lab{color:var(--accent);font-weight:500}
+.tl .ring{position:absolute;top:19px;width:10px;height:10px;border:1.5px solid var(--bar);border-radius:50%;background:var(--bg);transform:translateX(-50%)}
+.tl .sel .ring{border-color:var(--accent);background:var(--accent)}
+.axis{position:relative;height:28px;border-top:1px solid var(--rule-2);margin-top:6px}
+.axis span{position:absolute;top:6px;transform:translateX(-50%);font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.axis i{position:absolute;top:-5px;width:1px;height:5px;background:var(--rule-2)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:20px}
+.cols ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55}
+.decide{margin-top:12px;padding:0;list-style:none;max-width:680px}
+.decide li{padding:14px 0;border-top:1px solid var(--rule);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.decide li b{font-weight:500;color:var(--ink)}
+</style>
+
+<div class="wrap">
+<p class="small">Propuesta para Pedro: las pantallas que faltan del árbol de Historia</p>
+<h1>Páginas de concilios y corrientes</h1>
+<p class="lede">La barra lateral ya lista 41 concilios y 18 corrientes condenadas, y la línea de tiempo los enlaza, pero ninguno tiene página: un Padre tiene la 09 y ellos no. Tampoco hay diseño para las 10 divisiones de la Iglesia ni los 20 movimientos de la Reforma, que comparten el problema.</p>
+<p class="lede">La propuesta parte de la 09 (encabezado con datos, «Tiempo contemporáneo», secciones con título, pie anterior y siguiente) y decide qué va primero. Abajo, tres órdenes probados con cuatro páginas reales: Nicea I, Trento, el arrianismo y el donatismo. Los textos son los que el sitio ya tiene.</p>
+
+<div class="ctl">
+  <div><label>Página</label><span class="seg" id="seg-page"></span></div>
+  <div><label>Pantalla</label><span class="seg" id="seg-dev"><button type="button" data-v="desk" aria-pressed="true">Escritorio</button><button type="button" data-v="phone" aria-pressed="false">Teléfono</button></span></div>
+</div>
+
+<section class="opt" id="a">
+  <h2>A. Texto primero, como un Padre</h2>
+  <ul class="opt-meta"><li><b>Orden:</b> encabezado, qué decidió o sostenía, quién lo reconoce o cómo se respondió, Padres, pie</li><li><b>Costo:</b> poco; reutiliza la 09</li></ul>
+  <p class="say">La misma estructura que la 09. Lo primero que se lee es qué pasó, y la recepción por tradición va después. Es la más simple y la que más se parece al resto del sitio. Pone a la recepción en segundo plano, y en Trento o en Constantinopla del 869 es justo lo que el lector quiere saber.</p>
+  <div class="frame" data-frame id="f-a"></div>
+</section>
+
+<section class="opt" id="b">
+  <h2>B. Quién lo reconoce primero</h2>
+  <ul class="opt-meta"><li><b>Orden:</b> encabezado, quién lo reconoce (concilio) o cómo se respondió (corriente), qué decidió, Padres, pie</li><li><b>Costo:</b> medio; pide un dato estructurado nuevo</li></ul>
+  <p class="say">La recepción abre la página, con las tradiciones como rótulos y la frase del dato debajo. Responde a la pregunta que más se hace sobre un concilio («¿lo acepta mi iglesia?») antes del detalle. Para eso hay que pasar el dato a una lista de tradiciones (hoy es una frase); sin cambiar ese dato, la B no se puede construir bien.</p>
+  <div class="frame" data-frame id="f-b"></div>
+</section>
+
+<section class="opt" id="c">
+  <h2>C. Contexto primero</h2>
+  <ul class="opt-meta"><li><b>Orden:</b> encabezado, «Alrededor de esos años» con la línea, qué decidió o sostenía, quién lo reconoce, Padres, pie</li><li><b>Costo:</b> medio; el componente de la línea ya existe en 09</li></ul>
+  <p class="say">Después del encabezado va la línea de tiempo con el concilio o la corriente marcados y a su alrededor los Padres que vivieron entonces. Muestra que un concilio es un punto en una conversación larga. Alarga la página antes del primer texto y repite lo que ya hace «Ver en la línea de tiempo».</p>
+  <div class="frame" data-frame id="f-c"></div>
+</section>
+
+<section class="opt" id="rec">
+  <h2>Lo que recomiendo</h2>
+  <p class="say">A para empezar y B cuando el dato de reconocimiento sea una lista. La A deja las 59 páginas con la misma estructura que un Padre; el cambio a B es solo mover una sección, así que no hay que decidirlo ahora.</p>
+  <p class="say">Hay algo que el sitio tiene que decidir sí o sí: los concilios que solo una tradición cuenta como ecuménicos (Trento, los cuatro Letranenses, Vaticano I y II y otros) no se presentan como «el concilio» a secas. La página dice quién lo reconoce con las palabras del dato y nunca concluye cuál es ecuménico.</p>
+</section>
+
+<section class="opt" id="descarte">
+  <h2>Qué descarté</h2>
+  <div class="cols">
+    <div><h3>Un veredicto en el encabezado</h3><ul><li>«Concilio ecuménico» o «herejía» como etiqueta del sitio concluye. Se usa el nombre que le da cada tradición («condenada por…»).</li></ul></div>
+    <div><h3>Una página por canon</h3><ul><li>Nicea tiene 20 cánones; páginas sueltas diluyen. Los cánones van en el texto del concilio.</li></ul></div>
+    <div><h3>Mezclar concilios y corrientes en una sola plantilla</h3><ul><li>Se parecen, pero uno responde «qué se decidió» y el otro «qué se sostenía». Comparten estructura y cambian los rótulos.</li></ul></div>
+    <div><h3>Tarjetas por tradición</h3><ul><li>Rótulos simples bastan y no suman un objeto más.</li></ul></div>
+  </div>
+</section>
+
+<section class="opt" id="decidir">
+  <h2>Qué hay que decidir</h2>
+  <ol class="decide">
+    <li><b>El orden:</b> A, B o C.</li>
+    <li><b>Los rótulos de la corriente</b> («Qué sostenía», «Cómo se respondió», «Quiénes respondieron») y el kicker («Corriente condenada» frente a una palabra menos fuerte).</li>
+    <li><b>Si divisiones y movimientos de la Reforma usan la misma estructura</b>, o se diseñan aparte.</li>
+  </ol>
+</section>
+</div>
+
+<script>
+const DATA = {"pages": [{"id": "nicaea-1", "type": "council", "name": "Primer Concilio de Nicea", "year": 325, "endYear": null, "approx": null, "place": "Nicea, Bitinia (actual İznik, Turquía)", "convokedBy": "El emperador Constantino I", "decisions": "Condenó la enseñanza de Arrio de que el Hijo es una criatura que tuvo comienzo (“hubo un tiempo en que no era”) y promulgó el Credo niceno, que confiesa al Hijo “consustancial” (homoousios) al Padre. Fijó criterios para una fecha común de la Pascua, trató el cisma meleciano de Egipto y emitió 20 cánones (por ejemplo, el canon 6 sobre las prerrogativas de Alejandría, Roma y Antioquía). Asistieron unos 250–300 obispos; la tradición habla de 318.", "recognized": "Iglesia católica, Iglesia ortodoxa, Iglesias ortodoxas orientales e Iglesia del Oriente; muchas iglesias protestantes aceptan su credo como fiel a la Escritura.", "status": "seven", "ordinal": 1, "note": "", "chips": ["Iglesia católica", "Iglesia ortodoxa", "Iglesias ortodoxas orientales", "Iglesia del Oriente"], "fathers": [], "councils": []}, {"id": "trent", "type": "council", "name": "Concilio de Trento", "year": 1545, "endYear": 1563, "approx": null, "place": "Trento, norte de Italia (con un breve traslado a Bolonia, 1547–1549)", "convokedBy": "El papa Pablo III; reanudado por Julio III y Pío IV", "decisions": "En tres periodos (1545–1547, 1551–1552, 1562–1563) respondió a la Reforma protestante. Afirmó la Escritura y las tradiciones apostólicas como fuentes de la revelación y definió el canon bíblico con los deuterocanónicos (1546), declarando auténtica la Vulgata. Enseñó sobre el pecado original y la justificación (1547), los siete sacramentos, la transustanciación (1551), la Misa como sacrificio (1562) y el purgatorio. Con el decreto Tametsi (1563) exigió una forma pública para el matrimonio y ordenó crear seminarios.", "recognized": "Solo la Iglesia católica (decimonoveno concilio ecuménico).", "status": "catholic-general", "ordinal": 19, "note": "Its work was followed by the Roman Catechism (1566), the revised Missal (1570) and the Sixto-Clementine Vulgate (1592).", "chips": ["Iglesia católica"], "fathers": [], "councils": []}, {"id": "arianism", "type": "heresy", "name": "Arrianismo", "period": "s. IV (en reinos germánicos hasta el s. VII)", "startYear": 318, "endYear": 381, "founder": "Arrio, presbítero de Alejandría (c. 256–336)", "teaching": "Sostenía que el Hijo es la primera y más excelsa criatura de Dios, no eterno ni de la misma sustancia que el Padre: «hubo un tiempo en que no era».", "response": "El concilio de Nicea (325) confesó al Hijo «consustancial» (homoousios) al Padre; Atanasio fue su principal defensor; el concilio de Constantinopla (381) cerró la controversia en el Imperio.", "pageText": "Hacia el 318–320, Arrio, presbítero de la iglesia de Baucalis en Alejandría, entró en conflicto con su obispo Alejandro. Arrio quería afirmar con fuerza que Dios es uno, sin principio e indivisible; por eso el Hijo, aunque anterior al tiempo y agente de la creación, debía haber sido engendrado o creado por voluntad del Padre a partir de la nada. Sus partidarios resumían esta idea con la frase «hubo un tiempo en que no era». Arrio se apoyaba en textos como Proverbios 8:22 («el Señor me creó al principio de sus caminos», según la versión griega) y Juan 14:28 («el Padre es mayor que yo»).\n\nEl conflicto se extendió por Oriente y el emperador Constantino convocó el primer concilio ecuménico en Nicea (325). El Credo de Nicea declaró al Hijo «engendrado, no creado, consustancial (homoousios) con el Padre» y anatematizó las fórmulas arrianas. Sin embargo, la palabra homoousios no figuraba en la Escritura y a muchos les parecía sospechosa de modalismo, de modo que durante medio siglo se sucedieron fórmulas alternativas: «semejante en sustancia» (homoiousios), «semejante» (homoios) y la postura radical «desemejante» (anomoios) de Aecio y Eunomio. Bajo emperadores favorables a los homeos, Atanasio de Alejandría fue desterrado cinco veces.\n\nAtanasio, Hilario de Poitiers y luego los Padres capadocios (Basilio de Cesarea, Gregorio Nacianceno, Gregorio de Nisa) argumentaron que si el Hijo no es plenamente Dios no puede revelar al Padre ni salvar al ser humano: solo Dios puede unir a la humanidad con Dios. La distinción entre una sola ousía y tres hypóstasis permitió aceptar el homoousios sin caer en el modalismo. Con el emperador Teodosio, el edicto de Tesalónica (380) y el concilio de Constantinopla (381), la fe nicena se impuso en el Imperio.\n\nEl arrianismo sobrevivió fuera del Imperio: el misionero Ulfilas había evangelizado a los godos en una forma homea, y visigodos, ostrogodos, vándalos y lombardos fueron arrianos durante generaciones. Los visigodos de España abrazaron la fe nicena en el III Concilio de Toledo (589) y los lombardos en el siglo VII. Los historiadores actuales señalan que «arrianismo» fue en gran parte una etiqueta polémica de Atanasio para agrupar posturas diversas, muchas de las cuales no dependían directamente de Arrio. En tiempos modernos, algunos grupos no trinitarios han sido comparados con el arrianismo.", "councils": ["nicaea-1", "constantinople-1"], "fathers": ["athanasius-of-alexandria", "hilary-of-poitiers", "basil-of-caesarea", "gregory-of-nazianzus", "gregory-of-nyssa", "ambrose-of-milan"]}, {"id": "donatism", "type": "heresy", "name": "Donatismo", "period": "ss. IV–V (residual hasta el s. VII)", "startYear": 311, "endYear": 411, "founder": "Partido de Mayorino y luego Donato el Grande, obispo rival de Cartago", "teaching": "Sostenía que los sacramentos administrados por clérigos que habían entregado las Escrituras en la persecución (traditores) eran inválidos, y que la verdadera Iglesia es la de los puros.", "response": "Sínodos de Roma (313) y Arlés (314) fallaron contra los donatistas; Optato de Milevi y sobre todo Agustín respondieron que la validez del sacramento depende de Cristo, no de la santidad del ministro; la conferencia de Cartago (411) se pronunció contra ellos.", "pageText": "Durante la persecución de Diocleciano (303–305), las autoridades exigieron a los cristianos entregar los libros sagrados. A quienes lo hicieron se les llamó traditores («entregadores»). Hacia 311–312, Ceciliano fue consagrado obispo de Cartago; sus opositores afirmaron que uno de sus consagrantes, Félix de Aptunga, había sido traditor, y que por tanto la consagración era nula. Eligieron un obispo rival, Mayorino, al que pronto sucedió Donato, de quien el movimiento tomó su nombre.\n\nLos donatistas se veían como la Iglesia de los mártires, fiel a la tradición africana de Cipriano de Cartago (s. III), quien había sostenido que el bautismo administrado fuera de la Iglesia no era válido. Por eso rebautizaban a quienes venían de la otra comunión. En gran parte del norte de África llegaron a ser mayoría, y su protesta tenía también tintes sociales y regionales frente a Roma y al poder imperial; un ala radical, los «circunceliones», recurrió a veces a la violencia.\n\nConstantino remitió el caso a obispos: un sínodo en Roma (313) y el concilio de Arlés (314) fallaron a favor de Ceciliano, y Arlés aceptó el bautismo dado en nombre de la Trinidad por herejes. Optato de Milevi (c. 365) y luego Agustín de Hipona desarrollaron la respuesta: Cristo es quien bautiza, y el sacramento es válido aunque el ministro sea indigno (lo que más tarde se llamaría ex opere operato); la Iglesia en la tierra es un cuerpo mixto de trigo y cizaña hasta el juicio final. En 411 una gran conferencia en Cartago, presidida por el comisario imperial Marcelino, falló contra los donatistas, y siguieron leyes represivas.\n\nLa controversia dejó un legado ambivalente. Por un lado fijó la doctrina, compartida por católicos, ortodoxos (con matices) y la mayoría de los protestantes, de que la eficacia del sacramento no depende de la santidad personal del ministro. Por otro, Agustín llegó a justificar la coacción estatal contra los cismáticos («oblígalos a entrar», Lc 14:23), un argumento usado después en la historia de la intolerancia religiosa. El donatismo sobrevivió en forma residual hasta la conquista árabe del norte de África.", "councils": ["arles-314"], "fathers": ["optatus-of-milevis", "augustine-of-hippo", "cyprian-of-carthage"]}], "fathers": [{"id": "clement-of-rome", "name": "Clemente de Roma", "born": null, "died": 99}, {"id": "didache", "name": "Didajé (Enseñanza de los Doce Apóstoles)", "born": null, "died": 100}, {"id": "ignatius-of-antioch", "name": "Ignacio de Antioquía", "born": null, "died": 108}, {"id": "papias-of-hierapolis", "name": "Papías de Hierápolis", "born": 70, "died": 130}, {"id": "epistle-of-barnabas", "name": "Epístola de Bernabé", "born": null, "died": 130}, {"id": "shepherd-of-hermas", "name": "El Pastor de Hermas", "born": null, "died": 140}, {"id": "epistle-to-diognetus", "name": "Carta a Diogneto", "born": null, "died": 150}, {"id": "polycarp-of-smyrna", "name": "Policarpo de Esmirna", "born": 69, "died": 155}, {"id": "justin-martyr", "name": "Justino Mártir", "born": 100, "died": 165}, {"id": "melito-of-sardis", "name": "Melitón de Sardes", "born": null, "died": 180}, {"id": "theophilus-of-antioch", "name": "Teófilo de Antioquía", "born": null, "died": 184}, {"id": "irenaeus-of-lyon", "name": "Ireneo de Lyon", "born": 130, "died": 202}, {"id": "clement-of-alexandria", "name": "Clemente de Alejandría", "born": 150, "died": 215}, {"id": "tertullian", "name": "Tertuliano", "born": 155, "died": 220}, {"id": "hippolytus-of-rome", "name": "Hipólito de Roma", "born": 170, "died": 235}, {"id": "origen", "name": "Orígenes", "born": 185, "died": 253}, {"id": "cyprian-of-carthage", "name": "Cipriano de Cartago", "born": 210, "died": 258}, {"id": "novatian", "name": "Novaciano", "born": 200, "died": 258}, {"id": "dionysius-of-alexandria", "name": "Dionisio de Alejandría", "born": 190, "died": 264}, {"id": "methodius-of-olympus", "name": "Metodio de Olimpo", "born": null, "died": 311}, {"id": "lactantius", "name": "Lactancio", "born": 250, "died": 325}, {"id": "eusebius-of-caesarea", "name": "Eusebio de Cesarea", "born": 263, "died": 339}, {"id": "aphrahat", "name": "Afraates, el Sabio Persa", "born": 270, "died": 345}, {"id": "hilary-of-poitiers", "name": "Hilario de Poitiers", "born": 310, "died": 367}, {"id": "athanasius-of-alexandria", "name": "Atanasio de Alejandría", "born": 296, "died": 373}, {"id": "ephrem-the-syrian", "name": "Efrén de Siria", "born": 306, "died": 373}, {"id": "basil-of-caesarea", "name": "Basilio de Cesarea (Basilio Magno)", "born": 330, "died": 379}, {"id": "cyril-of-jerusalem", "name": "Cirilo de Jerusalén", "born": 313, "died": 386}, {"id": "gregory-of-nazianzus", "name": "Gregorio Nacianceno", "born": 329, "died": 390}, {"id": "gregory-of-nyssa", "name": "Gregorio de Nisa", "born": 335, "died": 395}, {"id": "ambrose-of-milan", "name": "Ambrosio de Milán", "born": 339, "died": 397}, {"id": "optatus-of-milevis", "name": "Optato de Milevi", "born": null, "died": 397}, {"id": "didymus-the-blind", "name": "Dídimo el Ciego", "born": 313, "died": 398}, {"id": "epiphanius-of-salamis", "name": "Epifanio de Salamina", "born": 315, "died": 403}, {"id": "john-chrysostom", "name": "Juan Crisóstomo", "born": 347, "died": 407}, {"id": "rufinus-of-aquileia", "name": "Rufino de Aquilea", "born": 345, "died": 411}, {"id": "jerome", "name": "Jerónimo de Estridón", "born": 347, "died": 420}, {"id": "augustine-of-hippo", "name": "Agustín de Hipona", "born": 354, "died": 430}, {"id": "john-cassian", "name": "Juan Casiano", "born": 360, "died": 435}, {"id": "cyril-of-alexandria", "name": "Cirilo de Alejandría", "born": 376, "died": 444}, {"id": "vincent-of-lerins", "name": "Vicente de Lérins", "born": null, "died": 445}, {"id": "peter-chrysologus", "name": "Pedro Crisólogo", "born": 380, "died": 450}, {"id": "prosper-of-aquitaine", "name": "Próspero de Aquitania", "born": 390, "died": 455}, {"id": "theodoret-of-cyrrhus", "name": "Teodoreto de Ciro", "born": 393, "died": 458}, {"id": "leo-the-great", "name": "León Magno", "born": 400, "died": 461}, {"id": "pseudo-dionysius", "name": "Pseudo-Dionisio Areopagita (Corpus Areopagiticum)", "born": null, "died": 500}, {"id": "caesarius-of-arles", "name": "Cesáreo de Arlés", "born": 470, "died": 542}, {"id": "gregory-the-great", "name": "Gregorio Magno", "born": 540, "died": 604}, {"id": "isidore-of-seville", "name": "Isidoro de Sevilla", "born": 560, "died": 636}, {"id": "sophronius-of-jerusalem", "name": "Sofronio de Jerusalén", "born": 560, "died": 638}, {"id": "maximus-the-confessor", "name": "Máximo el Confesor", "born": 580, "died": 662}, {"id": "isaac-of-nineveh", "name": "Isaac de Nínive (Isaac el Sirio)", "born": 613, "died": 700}, {"id": "bede", "name": "Beda el Venerable", "born": 673, "died": 735}, {"id": "andrew-of-crete", "name": "Andrés de Creta", "born": 660, "died": 740}, {"id": "germanus-of-constantinople", "name": "Germán I de Constantinopla", "born": 634, "died": 740}, {"id": "john-of-damascus", "name": "Juan Damasceno", "born": 675, "died": 749}], "councils": [{"id": "jerusalem-49", "name": "Concilio de Jerusalén", "year": 49, "endYear": null}, {"id": "antioch-268", "name": "Sínodo de Antioquía contra Pablo de Samosata", "year": 268, "endYear": null}, {"id": "elvira", "name": "Sínodo de Elvira", "year": 306, "endYear": null}, {"id": "arles-314", "name": "Concilio de Arlés", "year": 314, "endYear": null}, {"id": "nicaea-1", "name": "Primer Concilio de Nicea", "year": 325, "endYear": null}, {"id": "constantinople-1", "name": "Primer Concilio de Constantinopla", "year": 381, "endYear": null}, {"id": "rome-382", "name": "Sínodo de Roma bajo Dámaso", "year": 382, "endYear": null}, {"id": "hippo-393", "name": "Sínodo de Hipona", "year": 393, "endYear": null}, {"id": "carthage-397", "name": "Tercer Concilio de Cartago", "year": 397, "endYear": null}, {"id": "carthage-418", "name": "Concilio de Cartago contra el pelagianismo", "year": 418, "endYear": null}, {"id": "carthage-419", "name": "Concilio de Cartago de 419", "year": 419, "endYear": null}, {"id": "ephesus-431", "name": "Concilio de Éfeso", "year": 431, "endYear": null}, {"id": "ephesus-449", "name": "Segundo Concilio de Éfeso (“Latrocinio de Éfeso”)", "year": 449, "endYear": null}, {"id": "chalcedon-451", "name": "Concilio de Calcedonia", "year": 451, "endYear": null}, {"id": "orange-529", "name": "Segundo Concilio de Orange", "year": 529, "endYear": null}, {"id": "constantinople-2", "name": "Segundo Concilio de Constantinopla", "year": 553, "endYear": null}, {"id": "toledo-3", "name": "Tercer Concilio de Toledo", "year": 589, "endYear": null}, {"id": "lateran-649", "name": "Sínodo de Letrán de 649", "year": 649, "endYear": null}, {"id": "constantinople-3", "name": "Tercer Concilio de Constantinopla", "year": 680, "endYear": 681}, {"id": "trullo-692", "name": "Concilio Quinisexto o de Trullo", "year": 692, "endYear": null}, {"id": "nicaea-2", "name": "Segundo Concilio de Nicea", "year": 787, "endYear": null}, {"id": "frankfurt-794", "name": "Concilio de Fráncfort", "year": 794, "endYear": null}, {"id": "constantinople-869", "name": "Cuarto Concilio de Constantinopla (869–870)", "year": 869, "endYear": 870}, {"id": "constantinople-879", "name": "Concilio de Constantinopla (879–880)", "year": 879, "endYear": 880}, {"id": "lateran-1", "name": "Primer Concilio de Letrán", "year": 1123, "endYear": null}, {"id": "lateran-2", "name": "Segundo Concilio de Letrán", "year": 1139, "endYear": null}, {"id": "lateran-3", "name": "Tercer Concilio de Letrán", "year": 1179, "endYear": null}, {"id": "lateran-4", "name": "Cuarto Concilio de Letrán", "year": 1215, "endYear": null}, {"id": "lyon-1", "name": "Primer Concilio de Lyon", "year": 1245, "endYear": null}, {"id": "lyon-2", "name": "Segundo Concilio de Lyon", "year": 1274, "endYear": null}, {"id": "vienne", "name": "Concilio de Vienne", "year": 1311, "endYear": 1312}, {"id": "pisa-1409", "name": "Concilio de Pisa", "year": 1409, "endYear": null}, {"id": "constance", "name": "Concilio de Constanza", "year": 1414, "endYear": 1418}, {"id": "basel", "name": "Concilio de Basilea", "year": 1431, "endYear": 1449}, {"id": "florence", "name": "Concilio de Basilea-Ferrara-Florencia", "year": 1438, "endYear": 1445}, {"id": "lateran-5", "name": "Quinto Concilio de Letrán", "year": 1512, "endYear": 1517}, {"id": "trent", "name": "Concilio de Trento", "year": 1545, "endYear": 1563}, {"id": "dort", "name": "Sínodo de Dordrecht (Dort)", "year": 1618, "endYear": 1619}, {"id": "jerusalem-1672", "name": "Sínodo de Jerusalén (1672)", "year": 1672, "endYear": null}, {"id": "vatican-1", "name": "Concilio Vaticano I", "year": 1869, "endYear": 1870}, {"id": "vatican-2", "name": "Concilio Vaticano II", "year": 1962, "endYear": 1965}], "heresies": [{"id": "judaizers", "name": "Judaizantes", "year": 45, "startYear": 45}, {"id": "gnosticism", "name": "Gnosticismo", "year": 100, "startYear": 100}, {"id": "marcionism", "name": "Marcionismo", "year": 144, "startYear": 144}, {"id": "montanism", "name": "Montanismo («Nueva Profecía»)", "year": 156, "startYear": 156}, {"id": "ebionites", "name": "Ebionitas", "year": 100, "startYear": 100}, {"id": "docetism", "name": "Docetismo", "year": 90, "startYear": 90}, {"id": "adoptionism", "name": "Adopcionismo", "year": 190, "startYear": 190}, {"id": "modalism", "name": "Modalismo (sabelianismo)", "year": 190, "startYear": 190}, {"id": "arianism", "name": "Arrianismo", "year": 318, "startYear": 318}, {"id": "apollinarianism", "name": "Apolinarismo", "year": 360, "startYear": 360}, {"id": "macedonianism", "name": "Macedonianismo (pneumatómacos)", "year": 360, "startYear": 360}, {"id": "nestorianism", "name": "Nestorianismo", "year": 428, "startYear": 428}, {"id": "monophysitism", "name": "Monofisismo (eutiquianismo) y la cuestión miafisita", "year": 448, "startYear": 448}, {"id": "pelagianism", "name": "Pelagianismo", "year": 405, "startYear": 405}, {"id": "semipelagianism", "name": "Semipelagianismo", "year": 426, "startYear": 426}, {"id": "monothelitism", "name": "Monotelismo (y monoenergismo)", "year": 633, "startYear": 633}, {"id": "iconoclasm", "name": "Iconoclasia", "year": 726, "startYear": 726}, {"id": "donatism", "name": "Donatismo", "year": 311, "startYear": 311}]};
+const state = {page:"nicaea-1", phone:false};
+const $ = (s,r=document)=>r.querySelector(s);
+const esc = (t)=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const PAGES = DATA.pages;
+const cur = ()=>PAGES.find(p=>p.id===state.page);
+const FATHER = Object.fromEntries(DATA.fathers.map(f=>[f.id,f]));
+const COUNCIL = Object.fromEntries(DATA.councils.map(c=>[c.id,c]));
+const yr = (y)=>y<0?(-y)+" a. C.":String(y);
+
+function facts(p){
+  const rows = p.type==="council"
+    ? [["Año",p.endYear?p.year+"–"+p.endYear:(p.approx?"c. ":"")+p.year],["Lugar",p.place],["Convocado por",p.convokedBy]]
+    : [["Período",p.period],["Años",p.startYear+"–"+p.endYear],["Promotor",p.founder]];
+  return '<div class="facts">'+rows.map(r=>'<div class="fact"><span class="k">'+r[0]+'</span><span class="v">'+esc(r[1])+'</span></div>').join("")+'</div><a class="lnk" href="#a">Ver en la línea de tiempo</a>';
+}
+function header(p){
+  const kicker = p.type==="council" ? "Concilio" : "Corriente condenada";
+  return '<div class="crumbs"><span>Historia</span><span>'+(p.type==="council"?"Concilios":"Herejías")+'</span><span>'+esc(p.name)+'</span></div><p class="kicker">'+esc(kicker)+'</p><div class="h1">'+esc(p.name)+'</div>'+facts(p);
+}
+function sec(title,sub,body){return '<div class="sec"><h2>'+title+'</h2>'+(sub?'<p class="sub">'+sub+'</p>':"")+body+'</div>'}
+function paras(t,n){return t.split("\n\n").slice(0,n).map(x=>'<p class="prose">'+esc(x)+'</p>').join("")}
+function recognition(p){
+  if(p.type==="council"){
+    const chips = p.chips&&p.chips.length ? '<div class="chips">'+p.chips.map(c=>'<span class="chip">'+esc(c)+'</span>').join("")+'</div>' : "";
+    return sec("Quién lo reconoce","Como ecuménico, en las palabras del dato:",chips+'<p class="note">'+esc(p.recognized)+'</p>');
+  }
+  return sec("Cómo se respondió","",'<p class="prose">'+esc(p.response)+'</p>'+(p.councils.length?'<ul class="list">'+p.councils.map(id=>{const c=COUNCIL[id];return '<li><span class="t">'+esc(c.name)+'</span><span class="m">'+(c.endYear?c.year+"–"+c.endYear:c.year)+'</span></li>'}).join("")+'</ul>':""));
+}
+function decided(p){
+  if(p.type==="council") return sec("Qué decidió","",paras(p.decisions,2)+(p.note?'<p class="note">'+esc(p.note)+'</p>':""));
+  return sec("Qué sostenía","",'<p class="prose">'+esc(p.teaching)+'</p>')+sec("Su historia","",paras(p.pageText,2));
+}
+function fathersSec(p){
+  const ids = p.fathers||[]; if(!ids.length) return "";
+  const title = p.type==="council"?"Padres que lo conocieron":"Quiénes respondieron";
+  return sec(title,"",'<ul class="list">'+ids.map(id=>{const f=FATHER[id];if(!f)return"";return '<li><span class="t">'+esc(f.name)+'</span><span class="m">'+(f.born?"c. "+f.born:"?")+"–"+f.died+'</span></li>'}).join("")+'</ul>');
+}
+function neighbors(p){
+  const same = PAGES.filter(x=>x.type===p.type);
+  const all = (p.type==="council"?DATA.councils:DATA.heresies).slice().sort((a,b)=>(a.year||a.startYear)-(b.year||b.startYear));
+  const i = all.findIndex(x=>x.id===p.id);
+  const a=all[i-1], b=all[i+1];
+  const box=(o,l,cls)=>o?'<div class="box '+cls+'"><small>'+l+'</small><span>'+esc(o.name)+'</span></div>':'<div class="box" style="visibility:hidden"></div>';
+  return '<div class="nav">'+box(a,"Anterior","")+box(b,"Siguiente","next")+'</div>';
+}
+function context(p){
+  const a = p.type==="council"?p.year:p.startYear, b = p.type==="council"?(p.endYear||p.year):p.endYear;
+  const t0 = Math.floor((a-60)/20)*20, t1 = Math.ceil((b+60)/20)*20;
+  const pos=(y)=>((y-t0)/(t1-t0)*100);
+  const near = DATA.fathers.filter(f=>f.died>=t0&&((f.born||f.died-30)<=t1)).sort((x,y)=>Math.abs(x.died-(a+b)/2)-Math.abs(y.died-(a+b)/2)).slice(0,4).sort((x,y)=>(x.born||x.died)-(y.born||y.died));
+  let rows='<div class="row sel"><span class="lab" style="left:'+Math.max(0,Math.min(55,pos(a)))+'%">'+esc(p.name)+', '+(p.type==="council"?yr(p.year)+(p.endYear?"–"+p.endYear:""):a+"–"+b)+'</span>'+(p.type==="council"&&!p.endYear?'<span class="ring" style="left:'+pos(a)+'%"></span>':'<span class="mk" style="left:'+pos(a)+'%;width:'+Math.max(1,pos(b)-pos(a))+'%"></span>')+'</div>';
+  near.forEach(f=>{const s=f.born||f.died-25; rows+='<div class="row"><span class="lab" style="left:'+Math.max(0,Math.min(55,pos(Math.max(s,t0))))+'%">'+esc(f.name)+', '+(f.born?"c. "+f.born:"?")+"–"+f.died+'</span><span class="mk" style="left:'+pos(Math.max(s,t0))+'%;width:'+Math.max(1,pos(Math.min(f.died,t1))-pos(Math.max(s,t0)))+'%"></span></div>'});
+  let ax='<div class="axis">'; for(let y=t0;y<=t1;y+=20) ax+='<i style="left:'+pos(y)+'%"></i><span style="left:'+pos(y)+'%">'+y+'</span>'; ax+='</div>';
+  return sec("Alrededor de esos años","Quiénes vivieron mientras ocurría.",'<div class="tl">'+rows+ax+'</div>');
+}
+function render(){
+  const p=cur();
+  document.querySelectorAll("[data-frame]").forEach(f=>f.classList.toggle("phone",state.phone));
+  const H=header(p);
+  $("#f-a").innerHTML = H+decided(p)+recognition(p)+fathersSec(p)+neighbors(p);
+  $("#f-b").innerHTML = H+recognition(p)+decided(p)+fathersSec(p)+neighbors(p);
+  $("#f-c").innerHTML = H+context(p)+decided(p)+recognition(p)+fathersSec(p)+neighbors(p);
+}
+const sp=$("#seg-page");
+sp.innerHTML=PAGES.map(p=>'<button type="button" data-v="'+p.id+'" aria-pressed="'+(p.id===state.page)+'">'+esc(p.name)+'</button>').join("");
+sp.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;sp.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state.page=b.dataset.v;render()});
+$("#seg-dev").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;$("#seg-dev").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state.phone=b.dataset.v==="phone";render()});
+render();
+</script>
