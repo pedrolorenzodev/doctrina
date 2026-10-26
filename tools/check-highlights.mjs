@@ -1,0 +1,101 @@
+import {
+  addHighlight,
+  currentColor,
+  isHighlight,
+  removeRange,
+  removeVerse,
+  segmentsOf,
+} from "../src/lib/highlights.ts";
+
+const failures = [];
+const check = (name, ok, detail = "") => {
+  if (!ok) failures.push(`${name}${detail ? `: ${detail}` : ""}`);
+};
+
+const key = { translationId: "rv1909", book: "John", chapter: 6, verse: 53 };
+const other = { ...key, verse: 54 };
+const mark = (from, to, color, at = 1) => ({ ...key, from, to, color, at });
+const shape = (list, k = key) => segmentsOf(list, k, 100).map((s) => `${s.from}-${s.to}:${s.color ?? "none"}`);
+
+let list = addHighlight([], mark(0, 100, "yellow"));
+check("a whole verse is one segment", shape(list).join() === "0-100:yellow");
+list = addHighlight(list, mark(20, 40, "green"));
+check(
+  "a new colour over an old one wins and splits it",
+  shape(list).join() === "0-20:yellow,20-40:green,40-100:yellow",
+  shape(list).join(),
+);
+check("the split keeps three distinct ids", new Set(list.map((h) => h.id)).size === 3);
+list = addHighlight(list, mark(40, 60, "green"));
+check(
+  "two of the same colour that touch merge",
+  shape(list).join() === "0-20:yellow,20-60:green,60-100:yellow",
+  shape(list).join(),
+);
+list = addHighlight(list, mark(10, 70, "green"));
+check(
+  "a bigger range of the same colour absorbs the smaller",
+  shape(list).join() === "0-10:yellow,10-70:green,70-100:yellow",
+  shape(list).join(),
+);
+list = removeRange(list, key, 30, 50);
+check(
+  "removing a range cuts it",
+  shape(list).join() === "0-10:yellow,10-30:green,30-50:none,50-70:green,70-100:yellow",
+  shape(list).join(),
+);
+check("current colour is the first segment's", currentColor(list, key) === "yellow");
+
+const mixed = addHighlight(addHighlight([], mark(0, 100, "pink")), { ...other, from: 0, to: 50, color: "sky", at: 2 });
+check(
+  "verses do not touch each other",
+  shape(mixed).join() === "0-100:pink" && shape(mixed, other).join() === "0-50:sky,50-100:none",
+  shape(mixed, other).join(),
+);
+check(
+  "removing a verse leaves the others",
+  removeVerse(mixed, key).length === 1 && removeVerse(mixed, key)[0].verse === 54,
+);
+
+const otherTranslation = addHighlight(addHighlight([], mark(0, 100, "pink")), {
+  ...key,
+  translationId: "bsb",
+  from: 0,
+  to: 100,
+  color: "green",
+  at: 3,
+});
+check(
+  "a highlight stays in its translation",
+  currentColor(otherTranslation, key) === "pink" &&
+    currentColor(otherTranslation, { ...key, translationId: "bsb" }) === "green",
+);
+
+check(
+  "a shorter text clips a range",
+  segmentsOf(addHighlight([], mark(0, 100, "yellow")), key, 40)
+    .map((s) => `${s.from}-${s.to}`)
+    .join() === "0-40",
+);
+check(
+  "no highlight is one empty segment",
+  segmentsOf([], key, 30)
+    .map((s) => `${s.from}-${s.to}:${s.color}`)
+    .join() === "0-30:null",
+);
+check("a valid record passes", isHighlight({ ...mark(0, 5, "orange"), id: "x" }));
+for (const [name, bad] of [
+  ["a colour that does not exist", { ...mark(0, 5, "purple"), id: "x" }],
+  ["an empty range", { ...mark(5, 5, "pink"), id: "x" }],
+  ["a negative start", { ...mark(-1, 5, "pink"), id: "x" }],
+  ["no id", mark(0, 5, "pink")],
+  ["a string chapter", { ...mark(0, 5, "pink"), id: "x", chapter: "6" }],
+  ["null", null],
+])
+  check(`the validator rejects ${name}`, !isHighlight(bad));
+
+if (failures.length > 0) {
+  for (const failure of failures) console.error(`FAIL ${failure}`);
+  process.exit(1);
+}
+console.log("check-highlights: ok");
