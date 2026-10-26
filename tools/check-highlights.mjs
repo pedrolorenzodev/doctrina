@@ -1,7 +1,9 @@
 import { snapToWords } from "../src/lib/word-snap.ts";
 import {
   addHighlight,
-  currentColor,
+  chosenColor,
+  colorsIn,
+  hasHighlightIn,
   isCovered,
   isHighlight,
   removeRange,
@@ -46,7 +48,16 @@ check(
   shape(list).join() === "0-10:yellow,10-30:green,30-50:none,50-70:green,70-100:yellow",
   shape(list).join(),
 );
-check("current colour is the first segment's", currentColor(list, key) === "yellow");
+check("a verse with two colours has no chosen colour", chosenColor(list, key, 0, 100) === null);
+check("the chosen colour is the one inside the range", chosenColor(list, key, 12, 28) === "green");
+check(
+  "a range with no highlight has none",
+  chosenColor(list, key, 31, 49) === null && !hasHighlightIn(list, key, 31, 49),
+);
+check(
+  "a range touching one highlight reports it",
+  colorsIn(list, key, 25, 35).join() === "green" && hasHighlightIn(list, key, 25, 35),
+);
 
 const mixed = addHighlight(addHighlight([], mark(0, 100, "pink")), { ...other, from: 0, to: 50, color: "sky", at: 2 });
 check(
@@ -69,8 +80,8 @@ const otherTranslation = addHighlight(addHighlight([], mark(0, 100, "pink")), {
 });
 check(
   "a highlight stays in its translation",
-  currentColor(otherTranslation, key) === "pink" &&
-    currentColor(otherTranslation, { ...key, translationId: "bsb" }) === "green",
+  chosenColor(otherTranslation, key, 0, 100) === "pink" &&
+    chosenColor(otherTranslation, { ...key, translationId: "bsb" }, 0, 100) === "green",
 );
 
 check(

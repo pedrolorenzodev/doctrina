@@ -10,7 +10,8 @@ import {
 } from "@/lib/highlight-store";
 import {
   addHighlight,
-  currentColor,
+  chosenColor,
+  hasHighlightIn,
   isCovered,
   removeRange,
   removeVerse,
@@ -43,7 +44,25 @@ export function useChapterHighlights({ translationId, book, chapter, done, remov
       .filter((entry) => entry.translationId === translationId && entry.book === book && entry.chapter === chapter)
       .sort((a, b) => a.verse - b.verse || a.from - b.from),
     segmentsFor: (verse: number, length: number) => segmentsOf(highlights, keyOf(verse), length),
-    colorOf: (verse: number): HighlightColor | null => currentColor(highlights, keyOf(verse)),
+    chosenOfVerse: (verse: number): HighlightColor | null =>
+      chosenColor(highlights, keyOf(verse), 0, Number.POSITIVE_INFINITY),
+    hasHighlightOnVerse: (verse: number) => hasHighlightIn(highlights, keyOf(verse), 0, Number.POSITIVE_INFINITY),
+    chosenIn: (ranges: VerseRange[]): HighlightColor | null => {
+      const colors = new Set(
+        ranges.flatMap((range) => {
+          const color = chosenColor(highlights, keyOf(range.verse), range.from, range.to);
+          return color === null ? [] : [color];
+        }),
+      );
+      const hasMixed = ranges.some(
+        (range) =>
+          hasHighlightIn(highlights, keyOf(range.verse), range.from, range.to) &&
+          chosenColor(highlights, keyOf(range.verse), range.from, range.to) === null,
+      );
+      return colors.size === 1 && !hasMixed ? ([...colors][0] ?? null) : null;
+    },
+    hasHighlightIn: (ranges: VerseRange[]) =>
+      ranges.some((range) => hasHighlightIn(highlights, keyOf(range.verse), range.from, range.to)),
     lastColor: lastHighlightColor,
     isMarked: (ranges: VerseRange[]) =>
       ranges.length > 0 && ranges.every((range) => isCovered(highlights, keyOf(range.verse), range.from, range.to)),

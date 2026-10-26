@@ -81,8 +81,20 @@ export function isCovered(list: Highlight[], key: VerseKey, from: number, to: nu
   return at >= to;
 }
 
-export function currentColor(list: Highlight[], key: VerseKey): HighlightColor | null {
-  return highlightsOf(list, key)[0]?.color ?? null;
+export function colorsIn(list: Highlight[], key: VerseKey, from: number, to: number): HighlightColor[] {
+  const colors = highlightsOf(list, key)
+    .filter((highlight) => highlight.to > from && highlight.from < to)
+    .map((highlight) => highlight.color);
+  return [...new Set(colors)];
+}
+
+export function chosenColor(list: Highlight[], key: VerseKey, from: number, to: number): HighlightColor | null {
+  const colors = colorsIn(list, key, from, to);
+  return colors.length === 1 ? (colors[0] ?? null) : null;
+}
+
+export function hasHighlightIn(list: Highlight[], key: VerseKey, from: number, to: number): boolean {
+  return colorsIn(list, key, from, to).length > 0;
 }
 
 export function isHighlight(value: unknown): value is Highlight {
