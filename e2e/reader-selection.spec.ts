@@ -169,6 +169,48 @@ test.describe("toolbar", () => {
     expect(left).toBeGreaterThanOrEqual(6);
   });
 
+  test("a right click on a verse opens the same toolbar for the whole verse", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(john);
+    await page.evaluate(() => document.getElementById("v-53")!.scrollIntoView({ block: "center" }));
+    await page.locator("#v-53 [data-verse-text]").click({ button: "right" });
+    await expect(page.locator(toolbar)).toBeVisible();
+    const selected = await page.evaluate(() => getSelection()!.toString());
+    const verse = await page.locator("#v-53 [data-verse-text]").evaluate((element) => element.textContent);
+    expect(selected).toBe(verse);
+    await page.locator(dot("verde")).click();
+    await expect(page.locator(marks(53))).toHaveCount(1);
+    expect(await page.locator(marks(53)).evaluate((element) => element.textContent)).toBe(verse);
+    await expect(page.locator(toolbar)).toBeHidden();
+  });
+
+  test("a right click keeps a selection that is already on the verse, and Esc closes the toolbar", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(john);
+    await select(page, [53, 5], [53, 14]);
+    await expect(page.locator(toolbar)).toBeVisible();
+    const before = await page.evaluate(() => getSelection()!.toString());
+    await page.locator("#v-53 [data-verse-text]").dispatchEvent("contextmenu");
+    await page.waitForTimeout(200);
+    expect(await page.evaluate(() => getSelection()!.toString())).toBe(before);
+    await expect(page.locator(toolbar)).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(page.locator(toolbar)).toBeHidden();
+  });
+
+  test("the browser's own menu is replaced only over verse text, and never by a touch screen", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(john);
+    const prevented = (selector: string) =>
+      page.locator(selector).evaluate((element) => {
+        const event = new MouseEvent("contextmenu", { bubbles: true, cancelable: true });
+        element.dispatchEvent(event);
+        return event.defaultPrevented;
+      });
+    expect(await prevented("#v-53 [data-verse-text]")).toBe(true);
+    expect(await prevented("main h1")).toBe(false);
+  });
+
   test("keys: S highlights in the last colour, S again removes, C copies, Esc closes", async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(john);
@@ -294,5 +336,18 @@ test("on a phone the toolbar is docked to the bottom edge with 44 px buttons", a
       ),
     );
   expect(inside).toBe(true);
+  await context.close();
+});
+
+test("on a touch screen a long press keeps the browser's own behaviour", async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  const page = await context.newPage();
+  await page.goto(john);
+  const prevented = await page.locator("#v-53 [data-verse-text]").evaluate((element) => {
+    const event = new MouseEvent("contextmenu", { bubbles: true, cancelable: true });
+    element.dispatchEvent(event);
+    return event.defaultPrevented;
+  });
+  expect(prevented).toBe(false);
   await context.close();
 });

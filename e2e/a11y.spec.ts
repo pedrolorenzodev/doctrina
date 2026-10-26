@@ -141,6 +141,19 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
     },
   ],
   [
+    "the second translation menu with two translations on screen",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.evaluate(() =>
+        localStorage.setItem("doctrina-second-translation", JSON.stringify({ mode: "below", id: "bsb" })),
+      );
+      await page.reload();
+      await page.locator("[data-reader-strip] button[data-parallel]").click();
+      await expect(page.locator('[data-reader-strip] [role="dialog"][aria-label="Segunda traducción"]')).toBeVisible();
+      await page.waitForTimeout(400);
+    },
+  ],
+  [
     "the translation list",
     "/es/biblia/juan/6",
     async (page) => {
