@@ -1,6 +1,6 @@
 # Screen 05, the reader: blocks, acceptance and cost log
 
-Status: **R2 built 2026-10-26 (strip, text size, arrival mark). R1 built and verified 2026-10-26 (night; Sonnet verifier PASS WITH FIXES, fixes applied, report `reader-05-verification-r1.md`); R2 onwards open.** Inputs: DESIGN.md «Full-text reader (05)», «Reader side panel», «Highlighting», «Notes», «06 verse»; DECISIONS 2026-10-21/22 (reader structure, highlighting, notes), 2026-10-06 «Read the whole Bible in the site»; prototype `docs/research/proposals/reader-05-06/`; plan of the data behind it `docs/features/corpus-bibles-and-fathers.md`. Pedro's order (2026-10-25/26): build it block by block on the local files (Bibles now, Fathers when Phase 2 delivers), verify each block, freeze each block in the commit kit, Pedro approves visually before any commit; the independent Sonnet verifier runs after R1 and after R4 only (Pedro, 2026-10-26).
+Status: **R3 built 2026-10-26 (translation picker). R2 built (strip, text size, arrival mark). R1 built and verified 2026-10-26 (night; Sonnet verifier PASS WITH FIXES, fixes applied, report `reader-05-verification-r1.md`); R2 onwards open.** Inputs: DESIGN.md «Full-text reader (05)», «Reader side panel», «Highlighting», «Notes», «06 verse»; DECISIONS 2026-10-21/22 (reader structure, highlighting, notes), 2026-10-06 «Read the whole Bible in the site»; prototype `docs/research/proposals/reader-05-06/`; plan of the data behind it `docs/features/corpus-bibles-and-fathers.md`. Pedro's order (2026-10-25/26): build it block by block on the local files (Bibles now, Fathers when Phase 2 delivers), verify each block, freeze each block in the commit kit, Pedro approves visually before any commit; the independent Sonnet verifier runs after R1 and after R4 only (Pedro, 2026-10-26).
 
 ## Blocks
 
@@ -32,3 +32,4 @@ Out of scope here: the book index and book pages (their proposal waits for Pedro
 | R1 build, specs, one full suite | 63 → 63 % | the endpoint reports whole percent: the whole of R1 cost less than one point |
 | R1 Sonnet verifier (150k subagent tokens, 6 min) and its fixes | 63 → 63 % | still under one whole point |
 | R2 build, specs (frames), a debugging detour, one full suite, a11y flake fix | 63 → 64 % | one point crossed during R2 |
+| R3 build (picker, motion move, 16 specs, axe cases) | 64 → 64 % | |
