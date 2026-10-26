@@ -11,6 +11,7 @@ import { plainRich } from "@/content/page-views";
 import {
   earlyChristiansHref,
   fatherHref,
+  timelineHref,
   objectionHref,
   objectionsHref,
   doctrineHref,
@@ -115,5 +116,14 @@ export async function getSearchIndex(locale: Locale): Promise<SearchEntry[]> {
       href: fatherHref(locale, father.id),
     };
   });
-  return [...entries, ...witnessEntries, ...fatherEntries];
+  const timelineEntry: SearchEntry = {
+    id: "timeline",
+    title: text.generalTimeline.title,
+    path: text.shell.tree.history,
+    date: null,
+    texts: [text.generalTimeline.lede.replace("{from}", "30").replace("{to}", "800")],
+    quote: false,
+    href: timelineHref(locale),
+  };
+  return [...entries, ...witnessEntries, timelineEntry, ...fatherEntries];
 }

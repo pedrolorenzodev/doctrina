@@ -12,7 +12,7 @@ import { buildDatingViews } from "@/content/father-dating-views";
 import { getFatherDating } from "@/content/get-father-dating";
 import { getFatherAppearances } from "@/content/get-father-appearances";
 import { getFather, getFatherNeighbors, getPublishedFathers } from "@/content/get-fathers";
-import { fatherHref } from "@/content/routes";
+import { fatherHref, timelineHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { FatherAppearsSection } from "@/features/history/father-appears-section";
@@ -62,9 +62,8 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
       />
       <PageHeader id="top" className="mt-10" title={view.name} />
       <FatherFacts facts={view.headerFacts} />
-      {/* TODO: leads to the entity's life on screen 08 once the timeline exists */}
       <p className="title-part title-part-3 mt-6 mb-0 text-ui-sm">
-        <PageLink>{labels.timelineLink}</PageLink>
+        <PageLink href={`${timelineHref(locale)}#${father.id}`}>{labels.timelineLink}</PageLink>
       </p>
       <FatherTimelineSection id="time" view={timeline} text={text.timeline} />
       <FatherProfileSection id="who" title={whoLabel} summary={view.summary} facts={view.profileFacts} />

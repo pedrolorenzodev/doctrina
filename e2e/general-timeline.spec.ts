@@ -219,6 +219,35 @@ test("dragging with the mouse pans the line and does not choose what was under t
   await expect(page.locator('[data-scroller] button[aria-pressed="true"]')).toHaveCount(0);
 });
 
+test("a hash arrives with that item chosen, its panel open, the line and the page scrolled to it", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 800 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto(`${timeline}#justin-martyr`);
+  const button = item(page, "justin-martyr");
+  await expect(button).toHaveAttribute("aria-pressed", "true");
+  await expect(detail(page)).toBeVisible();
+  await expect(detail(page).locator("h3")).toHaveText("Justino Mártir");
+  await expect.poll(async () => (await button.boundingBox())!.y).toBeGreaterThan(55);
+  const rect = (await button.boundingBox())!;
+  expect(rect.y + rect.height).toBeLessThan(800);
+});
+
+test("a council arrives far to the right: the line scrolls sideways to show it", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 800 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto(`${timeline}#nicaea-2`);
+  await expect(item(page, "nicaea-2")).toHaveAttribute("aria-pressed", "true");
+  await expect.poll(() => page.locator("[data-scroller]").evaluate((box) => box.scrollLeft)).toBeGreaterThan(3000);
+});
+
+test("an unknown or malformed hash leaves the page as it is", async ({ page }) => {
+  await page.goto(`${timeline}#nobody`);
+  await expect(page.locator('[data-scroller] button[aria-pressed="true"]')).toHaveCount(0);
+  await page.goto(`${timeline}#%E0%A4%A`);
+  await expect(page.locator('[data-scroller] button[aria-pressed="true"]')).toHaveCount(0);
+  await expect(page.locator("main h1")).toHaveText("Línea de tiempo");
+});
+
 for (const width of [360, 390, 768, 1024, 1440]) {
   test(`${width}px: the page never overflows and the line scrolls inside its box @webkit`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });

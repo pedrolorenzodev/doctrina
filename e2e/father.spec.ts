@@ -67,13 +67,18 @@ test("an anonymous work has a date, what it is and its language, and no birth or
   await expect(page.locator("main")).not.toContainText("Nació");
 });
 
-test("the timeline link is built and inert", async ({ page }) => {
+test("the timeline link leads to the line with this entity chosen", async ({ page }) => {
   await page.goto(ignatius);
-  const link = page.locator("main p.title-part-3 button");
+  const link = page.locator("main p.title-part-3 a");
   await expect(link).toHaveText("Ver en la línea de tiempo");
-  const url = page.url();
+  await expect(link).toHaveAttribute("href", "/es/historia/linea-de-tiempo#ignatius-of-antioch");
   await link.click();
-  expect(page.url()).toBe(url);
+  await expect(page).toHaveURL(/linea-de-tiempo#ignatius-of-antioch$/);
+  await expect(page.locator('[data-scroller] button[data-entry="ignatius-of-antioch"]')).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page.locator("aside[data-side-panel] h3")).toHaveText("Ignacio de Antioquía");
 });
 
 test("«Quién fue»: the summary and a facts table that sits beside it from 900 px of section", async ({ page }) => {

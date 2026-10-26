@@ -7,6 +7,7 @@ import { PageLink } from "@/components/ui/page-link";
 import type { GeneralEntry, GeneralSection } from "@/content/get-general-timeline";
 import { at, px, vars } from "@/lib/css-vars";
 import { listSeparator } from "@/lib/punctuation";
+import { scrollToElement } from "@/lib/scroll";
 import { packRows, pixelsOf, placeItem, type PlacedItem, type Scale } from "@/lib/timeline-layout";
 import { useFontsReady, useLabelMeasure } from "@/lib/use-timeline-box";
 import { TimelineRuler } from "@/features/history/timeline-ruler";
@@ -121,6 +122,31 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
       open?.focus({ preventScroll: true });
     });
   }, []);
+
+  const arrived = useRef(false);
+  useEffect(() => {
+    if (!ready || arrived.current) return;
+    arrived.current = true;
+    let id = "";
+    try {
+      id = decodeURIComponent(location.hash.slice(1));
+    } catch {
+      return;
+    }
+    const entry = entries.find((candidate) => candidate.id === id);
+    if (!entry) return;
+    requestAnimationFrame(() => {
+      setSelectedId(entry.id);
+      setPanelEntry(entry);
+      setPanelOpen(true);
+      setFocusId(entry.id);
+      requestAnimationFrame(() => {
+        showSelected(entry.id);
+        const button = scroller.current?.querySelector<HTMLElement>(`button[data-entry="${entry.id}"]`);
+        if (button) scrollToElement(button);
+      });
+    });
+  }, [ready, entries]);
 
   useEffect(() => {
     const box = scroller.current;

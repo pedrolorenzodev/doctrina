@@ -604,3 +604,13 @@ test("no console errors while searching, picking and going back", async ({ page 
   await expect(page).toHaveURL(traditionPath);
   expect(errors).toEqual([]);
 });
+
+test("the timeline page is found by its name and by its lede", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(traditionPath);
+  await openSearch(page);
+  await search(page, "línea de tiempo");
+  await expect(page.locator(options).first()).toContainText("Línea de tiempo");
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/linea-de-tiempo$/);
+});

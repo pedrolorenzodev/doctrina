@@ -2,6 +2,11 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-25 · 09 ↔ 08: «Ver en la línea de tiempo» lands on the line with the entity chosen; the timeline in search (agent's calls, to confirm; built while Pedro was away)
+**Built:** 09's header link is a real link to `/es/historia/linea-de-tiempo#<father-id>`; 08 reads the hash once its labels are measured and opens that item (panel, band, sideways and page scroll). The timeline page is in the ⌘K index («Línea de tiempo», found by its name or its lede).
+**Agent's calls:** (1) the hash is the entity's id, not a query: it reuses the browser's own way to carry a target and needs no new route; (2) 09's «Verlo en la línea de tiempo» for councils and movements inside its own timeline stays as it is (their pages do not exist), and its events are not on 08 (the proposal's 08 has no events group); (3) the state is set on the next frame after the measure, because the lint rule forbids setting state synchronously in an effect.
+**Tested:** `e2e/general-timeline.spec.ts` (hash arrival for a person and for a council far to the right, unknown and malformed hashes), `e2e/father.spec.ts` (the link and its landing), `e2e/search.spec.ts` (the page in the index).
+
 ## 2026-10-25 · 08 Timeline, third block: the overview ruler «La regla arriba» (agent's calls, to confirm; built while Pedro was away)
 **Built:** `TimelineRuler` above the line, ported from the approved prototype: the 770 years with a bar per item, a draggable window that follows the scroll and writes its years, and press-to-go. 
 **Agent's calls:** (1) it is `aria-hidden` and pointer-only, like the prototype: keyboard and screen readers move through the line's items; (2) the window and the line stay in sync through the scroll event (no state shared with the line); (3) a bar's colour: 30 % ink-3, the chosen item accent (the proposal's `on`); (4) `scrollTo` with `behavior: "instant"` is used while dragging (the lint rule forbids assigning `scrollLeft` on a ref's element).
