@@ -169,6 +169,13 @@ export const en: UiText = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    size: {
+      group: "Text size",
+      smaller: "Make the text smaller",
+      larger: "Make the text larger",
+      smallerMark: "A−",
+      largerMark: "A+",
+    },
     previous: "Previous chapter",
     next: "Next chapter",
     neighborsLabel: "Previous and next chapter",

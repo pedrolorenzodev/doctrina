@@ -167,6 +167,13 @@ export const es = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    size: {
+      group: "Tamaño del texto",
+      smaller: "Achicar el texto",
+      larger: "Agrandar el texto",
+      smallerMark: "A−",
+      largerMark: "A+",
+    },
     previous: "Capítulo anterior",
     next: "Capítulo siguiente",
     neighborsLabel: "Capítulo anterior y siguiente",

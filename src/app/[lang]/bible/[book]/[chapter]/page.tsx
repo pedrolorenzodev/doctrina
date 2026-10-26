@@ -12,6 +12,9 @@ import type { ChapterRef } from "@/content/model/bible";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { ChapterText } from "@/features/reader/chapter-text";
+import { ReaderSizeScript } from "@/features/reader/reader-size-script";
+import { ReaderStrip } from "@/features/reader/reader-strip";
+import { VerseArrival } from "@/features/reader/verse-arrival";
 import { currentLocale } from "@/lib/current-locale";
 import type { Locale } from "@/lib/locale";
 
@@ -71,6 +74,8 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
   };
   return (
     <PageMain>
+      <ReaderSizeScript />
+      <ReaderStrip text={labels.size} />
       {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
       <Breadcrumbs
         label={text.shell.breadcrumb}
@@ -90,6 +95,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
         edition={chapter.translation.name}
         licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
       />
+      <VerseArrival />
       <NeighborLinks
         label={labels.neighborsLabel}
         className="mt-16"
