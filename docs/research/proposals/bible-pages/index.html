@@ -1,0 +1,183 @@
+<title>Biblia: índice, libro y capítulo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: the index in three forms, then the book page in two; every frame uses the real books and chapter counts of the corpus */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--hover:rgb(28 23 19 / .05);--bar:#a3a09a;
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);--bar:#6f6f6b;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);--bar:#6f6f6b;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:10px 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:0 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+h3{font-family:var(--head);font-weight:400;font-size:19px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+.say{max-width:640px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.say + .say{margin-top:10px}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 18px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.ctl{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:26px 0 0;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--rule)}
+.ctl label{font-size:13px;color:var(--ink-3);margin-right:8px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;max-width:100%}
+.seg button{font:500 13.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.seg button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.frame{border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);padding:26px 30px 34px;margin-top:6px;max-width:100%}
+.frame.phone{max-width:390px;padding:20px 16px 26px}
+.crumbs{font-size:13px;color:var(--ink-3)}
+.crumbs span + span::before{content:"/";margin:0 8px;color:var(--rule-2)}
+.h1{font-family:var(--head);font-weight:300;font-size:46px;line-height:1.05;margin:18px 0 12px;font-variation-settings:"opsz" 72}
+.phone .h1{font-size:36px}
+.flede{font-family:var(--body);font-style:italic;font-weight:300;font-size:19px;line-height:1.55;color:var(--ink-2);max-width:620px;margin-bottom:24px}
+.phone .flede{font-size:17px}
+.gh{font-size:13px;font-weight:500;color:var(--ink-3);margin:26px 0 4px}
+.tt{font-family:var(--head);font-weight:300;font-size:28px;margin:34px 0 4px;font-variation-settings:"opsz" 48}
+ul.list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0 12px;display:grid;grid-template-columns:minmax(0,1fr) 90px;gap:2px 16px;align-items:baseline}
+ul.list .t{font-family:var(--body);font-weight:500;font-size:18px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--rule-2)}
+ul.list .m{font-size:13.5px;color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:8px;margin-top:10px}
+.phone .tiles{grid-template-columns:repeat(2,1fr)}
+.tile{border:1px solid var(--rule-2);border-radius:6px;padding:10px 12px;font-family:var(--body);font-weight:500;font-size:16px;min-height:44px;display:flex;align-items:center}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.phone .cols2{grid-template-columns:1fr}
+.brow{display:grid;grid-template-columns:minmax(0,140px) minmax(0,1fr) 36px;gap:12px;align-items:center;padding:6px 0;border-top:1px solid var(--rule)}
+.brow .t{font-family:var(--body);font-weight:500;font-size:16.5px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--rule-2)}
+.brow .bar{height:5px;border-radius:2px;background:var(--bar)}
+.brow .n{font-size:12.5px;color:var(--ink-3);text-align:right;font-variant-numeric:tabular-nums}
+.chap{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px;margin-top:12px}
+.phone .chap{grid-template-columns:repeat(5,1fr)}
+.chap span{min-height:44px;display:flex;align-items:center;justify-content:center;border:1px solid var(--rule-2);border-radius:6px;font-variant-numeric:tabular-nums;font-size:15px;position:relative;overflow:hidden}
+.chap.bars span{align-items:flex-start;padding-top:6px}
+.chap.bars span i{position:absolute;left:0;bottom:0;height:4px;background:var(--bar)}
+.sec{margin-top:36px}
+.sec>h2{font-size:28px;margin-bottom:6px}
+.sub{font-family:var(--body);font-weight:300;font-size:16px;color:var(--ink-3);max-width:600px;margin-bottom:6px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:20px}
+.cols ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55}
+.decide{margin-top:12px;padding:0;list-style:none;max-width:680px}
+.decide li{padding:14px 0;border-top:1px solid var(--rule);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.decide li b{font-weight:500;color:var(--ink)}
+</style>
+
+<div class="wrap">
+<p class="small">Propuesta para Pedro: el árbol de Biblia de la barra lateral</p>
+<h1>Biblia: índice, libro y capítulo</h1>
+<p class="lede">La barra lateral tiene «Antiguo Testamento», «Libros deuterocanónicos» y «Nuevo Testamento» con sus 66 libros, y el lector de capítulos (05 y 06) ya está decidido. Faltan las dos páginas de en medio: el índice de libros y la página de un libro, desde donde se entra al capítulo.</p>
+<p class="lede">Abajo, tres formas del índice y dos de la página del libro, con los libros y capítulos reales del corpus. Las cifras de capítulos y versículos salen de la Reina-Valera 1909; las de los libros deuterocanónicos, de la Douay-Rheims, que es el texto inglés que el proyecto tiene para ellos.</p>
+
+<div class="ctl">
+  <div><label>Libro (páginas D y E)</label><span class="seg" id="seg-book"></span></div>
+  <div><label>Pantalla</label><span class="seg" id="seg-dev"><button type="button" data-v="desk" aria-pressed="true">Escritorio</button><button type="button" data-v="phone" aria-pressed="false">Teléfono</button></span></div>
+</div>
+
+<section class="opt" id="a">
+  <h2>A. Lista por testamento</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> filas con hairlines, capítulos a la derecha</li><li><b>Costo:</b> poco</li></ul>
+  <p class="say">Tres bloques, uno por entrada de la barra lateral, con la lista de iguales del sitio. Es lo más legible y lo más fiel al orden de los libros que el lector conoce. Es larga: 66 filas más 7.</p>
+  <div class="frame" data-frame id="f-a"></div>
+</section>
+
+<section class="opt" id="b">
+  <h2>B. Cuadrícula de nombres</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> un recuadro por libro, en el orden canónico</li><li><b>Costo:</b> poco</li></ul>
+  <p class="say">Todo el testamento a la vista en una pantalla, como los selectores de las aplicaciones de Biblia. Sirve para quien ya sabe qué libro busca; no dice nada de cada uno y se parece a los botones del sitio (recuadros), no a sus listas.</p>
+  <div class="frame" data-frame id="f-b"></div>
+</section>
+
+<section class="opt" id="c">
+  <h2>C. Filas con barra de extensión</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> dos columnas, una barra por libro según sus capítulos</li><li><b>Costo:</b> medio; es la fila con barra de «Dónde aparece» de la 07</li></ul>
+  <p class="say">Cada libro lleva una barra proporcional a su número de capítulos. Se ve de un vistazo que los Salmos son largos y que Judas es una sola carta, y sigue el lenguaje de barras que ya usa el sitio. La barra no es un dato que el lector pida; es información que la lista de A no da.</p>
+  <div class="frame" data-frame id="f-c"></div>
+</section>
+
+<section class="opt" id="d">
+  <h2>D. Página de un libro: capítulos numerados</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> título, extensión, rejilla de números</li><li><b>Costo:</b> poco</li></ul>
+  <p class="say">El título con el libro, una línea con cuántos capítulos y versículos tiene y en qué edición, y una rejilla de números de 44 px (capítulo). Es lo mínimo. Un número lleva al capítulo, que es la pantalla 05.</p>
+  <div class="frame" data-frame id="f-d"></div>
+</section>
+
+<section class="opt" id="e">
+  <h2>E. Página de un libro: capítulos con su largo</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> la misma rejilla con una raya bajo cada número según sus versículos</li><li><b>Costo:</b> poco más que D</li></ul>
+  <p class="say">La misma rejilla de D, con una raya en la base de cada recuadro cuyo largo es la cantidad de versículos del capítulo. Muestra los capítulos largos (Salmo 119, Génesis 24) y los cortos (Salmo 117) antes de entrar. En los Salmos casi todas las rayas son cortas porque el Salmo 119 tiene 176 versículos: eso es lo que muestra, pero hace poco legible la diferencia entre capítulos chicos. Con Génesis se lee mejor.</p>
+  <div class="frame" data-frame id="f-e"></div>
+</section>
+
+<section class="opt" id="rec">
+  <h2>Lo que recomiendo</h2>
+  <p class="say">A para el índice y E para el libro. A es la lista que ya conoce el lector del sitio; E agrega solo una raya y no una sección. La C es lo más llamativo, pero sus barras miden la extensión del libro y no ayudan a elegirlo; la B es una pared de botones.</p>
+  <p class="say">Un detalle que decide el sitio: la rejilla de un libro sale de la numeración de la Reina-Valera 1909, que usa los capítulos hebreos. Otras ediciones numeran distinto en algunos salmos; la página dice qué edición cuenta (hoy: en el libro, junto a la extensión).</p>
+</section>
+
+<section class="opt" id="descarte">
+  <h2>Qué descarté</h2>
+  <div class="cols">
+    <div><h3>Agrupar los libros en «Ley», «Profetas», «Cartas»</h3><ul><li>Es una clasificación editorial que cambia entre la Biblia hebrea y las cristianas; con la barra lateral y el orden canónico alcanza.</li></ul></div>
+    <div><h3>Un resumen de cada libro</h3><ul><li>Sería texto del sitio sin cita, y el sitio no concluye. Si hace falta, será una frase con fuente.</li></ul></div>
+    <div><h3>Una lista de libros por tradición</h3><ul><li>Los deuterocanónicos ya tienen su bloque propio. No se asigna un canon a una tradición en una página de índice.</li></ul></div>
+  </div>
+</section>
+
+<section class="opt" id="decidir">
+  <h2>Qué hay que decidir</h2>
+  <ol class="decide">
+    <li><b>El índice:</b> A, B o C.</li>
+    <li><b>La página del libro:</b> D o E.</li>
+    <li><b>La edición que se nombra</b> en cada libro, sobre todo para los deuterocanónicos, que hoy están solo en inglés.</li>
+  </ol>
+</section>
+</div>
+
+<script>
+const BOOKS = [{"k": "Gen", "name": "Génesis", "t": "ot", "ch": 50, "v": 1533, "vs": [31, 25, 24, 26, 32, 22, 24, 22, 29, 32, 32, 20, 18, 24, 21, 16, 27, 33, 38, 18, 34, 24, 20, 67, 34, 35, 46, 22, 35, 43, 55, 32, 20, 31, 29, 43, 36, 30, 23, 23, 57, 38, 34, 34, 28, 34, 31, 22, 33, 26], "maxv": 67}, {"k": "Exod", "name": "Éxodo", "t": "ot", "ch": 40, "v": 1213, "vs": [22, 25, 22, 31, 23, 30, 25, 32, 35, 29, 10, 51, 22, 31, 27, 36, 16, 27, 25, 26, 36, 31, 33, 18, 40, 37, 21, 43, 46, 38, 18, 35, 23, 35, 35, 38, 29, 31, 43, 38], "maxv": 51}, {"k": "Lev", "name": "Levítico", "t": "ot", "ch": 27, "v": 859, "vs": [17, 16, 17, 35, 19, 30, 38, 36, 24, 20, 47, 8, 59, 57, 33, 34, 16, 30, 37, 27, 24, 33, 44, 23, 55, 46, 34], "maxv": 59}, {"k": "Num", "name": "Números", "t": "ot", "ch": 36, "v": 1286, "vs": [54, 34, 51, 49, 31, 27, 89, 26, 23, 36, 35, 15, 33, 45, 41, 50, 13, 32, 22, 29, 35, 41, 30, 25, 18, 65, 23, 31, 39, 16, 54, 42, 56, 29, 34, 13], "maxv": 89}, {"k": "Deut", "name": "Deuteronomio", "t": "ot", "ch": 34, "v": 959, "vs": [46, 37, 29, 49, 33, 25, 26, 20, 29, 22, 32, 32, 18, 29, 23, 22, 20, 22, 21, 20, 23, 30, 25, 22, 19, 19, 26, 68, 29, 20, 30, 52, 29, 12], "maxv": 68}, {"k": "Josh", "name": "Josué", "t": "ot", "ch": 24, "v": 658, "vs": [18, 24, 17, 24, 15, 27, 26, 35, 27, 43, 23, 24, 33, 15, 63, 10, 18, 28, 51, 9, 45, 34, 16, 33], "maxv": 63}, {"k": "Judg", "name": "Jueces", "t": "ot", "ch": 21, "v": 618, "vs": [36, 23, 31, 24, 31, 40, 25, 35, 57, 18, 40, 15, 25, 20, 20, 31, 13, 31, 30, 48, 25], "maxv": 57}, {"k": "Ruth", "name": "Rut", "t": "ot", "ch": 4, "v": 85, "vs": [22, 23, 18, 22], "maxv": 23}, {"k": "1Sam", "name": "1 Samuel", "t": "ot", "ch": 31, "v": 809, "vs": [28, 36, 21, 22, 12, 21, 17, 22, 27, 27, 15, 25, 23, 52, 35, 23, 58, 30, 24, 42, 15, 23, 28, 22, 44, 25, 12, 25, 11, 31, 13], "maxv": 58}, {"k": "2Sam", "name": "2 Samuel", "t": "ot", "ch": 24, "v": 694, "vs": [27, 32, 39, 12, 25, 23, 29, 18, 13, 19, 27, 31, 39, 33, 37, 23, 29, 33, 43, 25, 22, 51, 39, 25], "maxv": 51}, {"k": "1Kgs", "name": "1 Reyes", "t": "ot", "ch": 22, "v": 816, "vs": [53, 46, 28, 34, 18, 38, 51, 66, 28, 29, 43, 33, 34, 31, 34, 34, 24, 46, 21, 43, 29, 53], "maxv": 66}, {"k": "2Kgs", "name": "2 Reyes", "t": "ot", "ch": 25, "v": 719, "vs": [18, 25, 27, 44, 27, 33, 20, 29, 37, 36, 21, 21, 25, 29, 38, 20, 41, 37, 37, 21, 26, 20, 37, 20, 30], "maxv": 44}, {"k": "1Chr", "name": "1 Crónicas", "t": "ot", "ch": 29, "v": 942, "vs": [54, 55, 24, 43, 26, 81, 40, 40, 44, 14, 47, 40, 14, 17, 29, 43, 27, 17, 19, 8, 30, 19, 32, 31, 31, 32, 34, 21, 30], "maxv": 81}, {"k": "2Chr", "name": "2 Crónicas", "t": "ot", "ch": 36, "v": 821, "vs": [17, 18, 17, 22, 14, 42, 22, 18, 31, 19, 23, 16, 22, 15, 19, 14, 19, 34, 11, 37, 20, 12, 21, 27, 28, 23, 9, 27, 36, 27, 21, 33, 24, 33, 27, 23], "maxv": 42}, {"k": "Ezra", "name": "Esdras", "t": "ot", "ch": 10, "v": 280, "vs": [11, 70, 13, 24, 17, 22, 28, 36, 15, 44], "maxv": 70}, {"k": "Neh", "name": "Nehemías", "t": "ot", "ch": 13, "v": 406, "vs": [11, 20, 32, 23, 19, 19, 73, 18, 38, 39, 36, 47, 31], "maxv": 73}, {"k": "Esth", "name": "Ester", "t": "ot", "ch": 10, "v": 167, "vs": [22, 23, 15, 17, 14, 14, 10, 17, 32, 3], "maxv": 32}, {"k": "Job", "name": "Job", "t": "ot", "ch": 42, "v": 1061, "vs": [22, 13, 26, 21, 27, 30, 21, 22, 35, 22, 20, 25, 28, 22, 35, 22, 16, 21, 29, 29, 34, 30, 17, 25, 6, 14, 23, 28, 25, 31, 40, 22, 33, 37, 15, 33, 24, 38, 30, 19, 34, 17], "maxv": 40}, {"k": "Ps", "name": "Salmos", "t": "ot", "ch": 150, "v": 2461, "vs": [6, 12, 8, 8, 12, 10, 17, 9, 20, 18, 7, 8, 6, 7, 5, 11, 15, 50, 14, 9, 13, 31, 6, 10, 22, 12, 14, 9, 11, 12, 24, 11, 22, 22, 28, 12, 40, 22, 13, 17, 13, 11, 5, 26, 17, 11, 9, 14, 20, 23, 19, 9, 6, 7, 23, 13, 11, 11, 17, 12, 8, 12, 11, 10, 13, 20, 7, 35, 36, 5, 24, 20, 28, 23, 10, 12, 20, 72, 13, 19, 16, 8, 18, 12, 13, 17, 7, 18, 52, 17, 16, 15, 5, 23, 11, 13, 12, 9, 9, 5, 8, 28, 22, 35, 45, 48, 43, 13, 31, 7, 10, 10, 9, 8, 18, 19, 2, 29, 176, 7, 8, 9, 4, 8, 5, 6, 5, 6, 8, 8, 3, 18, 3, 3, 21, 26, 9, 8, 24, 13, 10, 7, 12, 15, 21, 10, 20, 14, 9, 6], "maxv": 176}, {"k": "Prov", "name": "Proverbios", "t": "ot", "ch": 31, "v": 915, "vs": [33, 22, 35, 27, 23, 35, 27, 36, 18, 32, 31, 28, 25, 35, 33, 33, 28, 24, 29, 30, 31, 29, 35, 34, 28, 28, 27, 28, 27, 33, 31], "maxv": 36}, {"k": "Eccl", "name": "Eclesiastés", "t": "ot", "ch": 12, "v": 222, "vs": [18, 26, 22, 16, 20, 12, 29, 17, 18, 20, 10, 14], "maxv": 29}, {"k": "Song", "name": "Cantares", "t": "ot", "ch": 8, "v": 117, "vs": [17, 17, 11, 16, 16, 13, 13, 14], "maxv": 17}, {"k": "Isa", "name": "Isaías", "t": "ot", "ch": 66, "v": 1292, "vs": [31, 22, 26, 6, 30, 13, 25, 22, 21, 34, 16, 6, 22, 32, 9, 14, 14, 7, 25, 6, 17, 25, 18, 23, 12, 21, 13, 29, 24, 33, 9, 20, 24, 17, 10, 22, 38, 22, 8, 31, 29, 25, 28, 28, 25, 13, 15, 22, 26, 11, 23, 15, 12, 17, 13, 12, 21, 14, 21, 22, 11, 12, 19, 12, 25, 24], "maxv": 38}, {"k": "Jer", "name": "Jeremías", "t": "ot", "ch": 52, "v": 1364, "vs": [19, 37, 25, 31, 31, 30, 34, 22, 26, 25, 23, 17, 27, 22, 21, 21, 27, 23, 15, 18, 14, 30, 40, 10, 38, 24, 22, 17, 32, 24, 40, 44, 26, 22, 19, 32, 21, 28, 18, 16, 18, 22, 13, 30, 5, 28, 7, 47, 39, 46, 64, 34], "maxv": 64}, {"k": "Lam", "name": "Lamentaciones", "t": "ot", "ch": 5, "v": 154, "vs": [22, 22, 66, 22, 22], "maxv": 66}, {"k": "Ezek", "name": "Ezequiel", "t": "ot", "ch": 48, "v": 1273, "vs": [28, 10, 27, 17, 17, 14, 27, 18, 11, 22, 25, 28, 23, 23, 8, 63, 24, 32, 14, 49, 32, 31, 49, 27, 17, 21, 36, 26, 21, 26, 18, 32, 33, 31, 15, 38, 28, 23, 29, 49, 26, 20, 27, 31, 25, 24, 23, 35], "maxv": 63}, {"k": "Dan", "name": "Daniel", "t": "ot", "ch": 12, "v": 357, "vs": [21, 49, 30, 37, 31, 28, 28, 27, 27, 21, 45, 13], "maxv": 49}, {"k": "Hos", "name": "Oseas", "t": "ot", "ch": 14, "v": 196, "vs": [11, 23, 5, 19, 15, 11, 16, 14, 17, 15, 11, 14, 16, 9], "maxv": 23}, {"k": "Joel", "name": "Joel", "t": "ot", "ch": 3, "v": 73, "vs": [20, 32, 21], "maxv": 32}, {"k": "Amos", "name": "Amós", "t": "ot", "ch": 9, "v": 146, "vs": [15, 16, 15, 13, 27, 14, 17, 14, 15], "maxv": 27}, {"k": "Obad", "name": "Abdías", "t": "ot", "ch": 1, "v": 21, "vs": [21], "maxv": 21}, {"k": "Jonah", "name": "Jonás", "t": "ot", "ch": 4, "v": 47, "vs": [16, 10, 10, 11], "maxv": 16}, {"k": "Mic", "name": "Miqueas", "t": "ot", "ch": 7, "v": 105, "vs": [16, 13, 12, 13, 15, 16, 20], "maxv": 20}, {"k": "Nah", "name": "Nahúm", "t": "ot", "ch": 3, "v": 47, "vs": [15, 13, 19], "maxv": 19}, {"k": "Hab", "name": "Habacuc", "t": "ot", "ch": 3, "v": 56, "vs": [17, 20, 19], "maxv": 20}, {"k": "Zeph", "name": "Sofonías", "t": "ot", "ch": 3, "v": 53, "vs": [18, 15, 20], "maxv": 20}, {"k": "Hag", "name": "Hageo", "t": "ot", "ch": 2, "v": 38, "vs": [15, 23], "maxv": 23}, {"k": "Zech", "name": "Zacarías", "t": "ot", "ch": 14, "v": 211, "vs": [21, 13, 10, 14, 11, 15, 14, 23, 17, 12, 17, 14, 9, 21], "maxv": 23}, {"k": "Mal", "name": "Malaquías", "t": "ot", "ch": 4, "v": 55, "vs": [14, 17, 18, 6], "maxv": 18}, {"k": "Matt", "name": "Mateo", "t": "nt", "ch": 28, "v": 1071, "vs": [25, 23, 17, 25, 48, 34, 29, 34, 38, 42, 30, 50, 58, 36, 39, 28, 27, 35, 30, 34, 46, 46, 39, 51, 46, 75, 66, 20], "maxv": 75}, {"k": "Mark", "name": "Marcos", "t": "nt", "ch": 16, "v": 678, "vs": [45, 28, 35, 41, 43, 56, 37, 38, 50, 52, 33, 44, 37, 72, 47, 20], "maxv": 72}, {"k": "Luke", "name": "Lucas", "t": "nt", "ch": 24, "v": 1151, "vs": [80, 52, 38, 44, 39, 49, 50, 56, 62, 42, 54, 59, 35, 35, 32, 31, 37, 43, 48, 47, 38, 71, 56, 53], "maxv": 80}, {"k": "John", "name": "Juan", "t": "nt", "ch": 21, "v": 879, "vs": [51, 25, 36, 54, 47, 71, 53, 59, 41, 42, 57, 50, 38, 31, 27, 33, 26, 40, 42, 31, 25], "maxv": 71}, {"k": "Acts", "name": "Hechos", "t": "nt", "ch": 28, "v": 1006, "vs": [26, 47, 26, 37, 42, 15, 60, 40, 43, 48, 30, 25, 52, 28, 41, 40, 34, 28, 40, 38, 40, 30, 35, 27, 27, 32, 44, 31], "maxv": 60}, {"k": "Rom", "name": "Romanos", "t": "nt", "ch": 16, "v": 433, "vs": [32, 29, 31, 25, 21, 23, 25, 39, 33, 21, 36, 21, 14, 23, 33, 27], "maxv": 39}, {"k": "1Cor", "name": "1 Corintios", "t": "nt", "ch": 16, "v": 437, "vs": [31, 16, 23, 21, 13, 20, 40, 13, 27, 33, 34, 31, 13, 40, 58, 24], "maxv": 58}, {"k": "2Cor", "name": "2 Corintios", "t": "nt", "ch": 13, "v": 256, "vs": [24, 17, 18, 18, 21, 18, 16, 24, 15, 18, 33, 21, 13], "maxv": 33}, {"k": "Gal", "name": "Gálatas", "t": "nt", "ch": 6, "v": 149, "vs": [24, 21, 29, 31, 26, 18], "maxv": 31}, {"k": "Eph", "name": "Efesios", "t": "nt", "ch": 6, "v": 155, "vs": [23, 22, 21, 32, 33, 24], "maxv": 33}, {"k": "Phil", "name": "Filipenses", "t": "nt", "ch": 4, "v": 104, "vs": [30, 30, 21, 23], "maxv": 30}, {"k": "Col", "name": "Colosenses", "t": "nt", "ch": 4, "v": 95, "vs": [29, 23, 25, 18], "maxv": 29}, {"k": "1Thess", "name": "1 Tesalonicenses", "t": "nt", "ch": 5, "v": 89, "vs": [10, 20, 13, 18, 28], "maxv": 28}, {"k": "2Thess", "name": "2 Tesalonicenses", "t": "nt", "ch": 3, "v": 47, "vs": [12, 17, 18], "maxv": 18}, {"k": "1Tim", "name": "1 Timoteo", "t": "nt", "ch": 6, "v": 113, "vs": [20, 15, 16, 16, 25, 21], "maxv": 25}, {"k": "2Tim", "name": "2 Timoteo", "t": "nt", "ch": 4, "v": 83, "vs": [18, 26, 17, 22], "maxv": 26}, {"k": "Titus", "name": "Tito", "t": "nt", "ch": 3, "v": 46, "vs": [16, 15, 15], "maxv": 16}, {"k": "Phlm", "name": "Filemón", "t": "nt", "ch": 1, "v": 25, "vs": [25], "maxv": 25}, {"k": "Heb", "name": "Hebreos", "t": "nt", "ch": 13, "v": 303, "vs": [14, 18, 19, 16, 14, 20, 28, 13, 28, 39, 40, 29, 25], "maxv": 40}, {"k": "Jas", "name": "Santiago", "t": "nt", "ch": 5, "v": 108, "vs": [27, 26, 18, 17, 20], "maxv": 27}, {"k": "1Pet", "name": "1 Pedro", "t": "nt", "ch": 5, "v": 105, "vs": [25, 25, 22, 19, 14], "maxv": 25}, {"k": "2Pet", "name": "2 Pedro", "t": "nt", "ch": 3, "v": 61, "vs": [21, 22, 18], "maxv": 22}, {"k": "1John", "name": "1 Juan", "t": "nt", "ch": 5, "v": 105, "vs": [10, 29, 24, 21, 21], "maxv": 29}, {"k": "2John", "name": "2 Juan", "t": "nt", "ch": 1, "v": 13, "vs": [13], "maxv": 13}, {"k": "3John", "name": "3 Juan", "t": "nt", "ch": 1, "v": 14, "vs": [14], "maxv": 14}, {"k": "Jude", "name": "Judas", "t": "nt", "ch": 1, "v": 25, "vs": [25], "maxv": 25}, {"k": "Rev", "name": "Apocalipsis", "t": "nt", "ch": 22, "v": 404, "vs": [20, 29, 22, 11, 14, 17, 17, 13, 21, 11, 19, 17, 18, 20, 8, 21, 18, 24, 21, 15, 27, 21], "maxv": 29}, {"k": "Tob", "name": "Tobías", "t": "de", "ch": 14, "v": 298, "vs": [25, 23, 25, 23, 28, 22, 20, 24, 12, 13, 21, 22, 23, 17], "maxv": 28}, {"k": "Jdt", "name": "Judit", "t": "de", "ch": 16, "v": 345, "vs": [12, 18, 15, 16, 29, 21, 25, 34, 19, 20, 21, 20, 31, 18, 15, 31], "maxv": 34}, {"k": "Wis", "name": "Sabiduría", "t": "de", "ch": 19, "v": 439, "vs": [16, 25, 19, 20, 24, 27, 30, 21, 19, 21, 27, 27, 19, 31, 19, 29, 20, 25, 20], "maxv": 31}, {"k": "Sir", "name": "Eclesiástico (Sirácida)", "t": "de", "ch": 51, "v": 1591, "vs": [40, 23, 34, 36, 18, 37, 40, 22, 25, 34, 36, 19, 32, 27, 22, 31, 31, 33, 28, 33, 31, 33, 38, 47, 36, 28, 33, 30, 34, 27, 42, 28, 33, 31, 26, 28, 34, 39, 41, 32, 28, 26, 37, 27, 31, 23, 31, 28, 19, 31, 38], "maxv": 47}, {"k": "Bar", "name": "Baruc", "t": "de", "ch": 6, "v": 213, "vs": [22, 35, 38, 37, 9, 72], "maxv": 72}, {"k": "1Macc", "name": "1 Macabeos", "t": "de", "ch": 16, "v": 929, "vs": [67, 70, 60, 61, 68, 63, 50, 32, 73, 89, 74, 54, 54, 49, 41, 24], "maxv": 89}, {"k": "2Macc", "name": "2 Macabeos", "t": "de", "ch": 15, "v": 558, "vs": [36, 33, 40, 50, 27, 31, 42, 36, 29, 38, 38, 46, 26, 46, 40], "maxv": 50}];
+const state = {book:"John", phone:false};
+const $ = (s,r=document)=>r.querySelector(s);
+const esc = (t)=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const bks = (t)=>BOOKS.filter(b=>b.t===t);
+const NT = {ot:"Antiguo Testamento",de:"Libros deuterocanónicos",nt:"Nuevo Testamento"};
+const phoneCls = ()=>state.phone;
+function head(){return '<div class="crumbs"><span>Biblia</span></div><div class="h1">Biblia</div><p class="flede">Los 66 libros de la Reina-Valera 1909 y los siete libros deuterocanónicos.</p>'}
+function A(){return head()+["ot","de","nt"].map(t=>'<h2 class="tt">'+NT[t]+'</h2><ul class="list">'+bks(t).map(b=>'<li><span class="t">'+esc(b.name)+'</span><span class="m">'+b.ch+(b.ch===1?" capítulo":" capítulos")+'</span></li>').join("")+'</ul>').join("")}
+function B(){return head()+["ot","de","nt"].map(t=>'<h2 class="tt">'+NT[t]+'</h2><div class="tiles">'+bks(t).map(b=>'<span class="tile">'+esc(b.name)+'</span>').join("")+'</div>').join("")}
+function C(){
+  const max=150;
+  const col=(t)=>'<div><h2 class="tt" style="margin-top:20px">'+NT[t]+'</h2>'+bks(t).map(b=>'<div class="brow"><span class="t">'+esc(b.name)+'</span><span class="bar" style="width:'+Math.max(3,b.ch/max*100)+'%"></span><span class="n">'+b.ch+'</span></div>').join("")+'</div>';
+  return head()+'<div class="cols2">'+col("ot")+'<div>'+col("nt")+col("de")+'</div></div>';
+}
+function book(withBars){
+  const b=BOOKS.find(x=>x.k===state.book);
+  const ed = b.t==="de" ? "Douay-Rheims (inglés)" : "Reina-Valera 1909";
+  let cells=""; for(let i=1;i<=b.ch;i++){const v=b.vs[i-1]; cells+='<span>'+i+(withBars?'<i style="width:'+Math.max(6,Math.round(v/b.maxv*100))+'%"></i>':"")+'</span>'}
+  const tt = b.t==="de"?"Libros deuterocanónicos":(b.t==="ot"?"Antiguo Testamento":"Nuevo Testamento");
+  return '<div class="crumbs"><span>Biblia</span><span>'+tt+'</span><span>'+esc(b.name)+'</span></div><div class="h1">'+esc(b.name)+'</div><p class="flede">'+b.ch+(b.ch===1?" capítulo":" capítulos")+', '+b.v+' versículos. '+ed+'.</p><div class="sec"><h2>Capítulos</h2><div class="chap'+(withBars?" bars":"")+'">'+cells+'</div></div>'+(withBars?'<p class="small" style="margin-top:12px">La raya bajo cada número es la cantidad de versículos del capítulo, a la misma escala.</p>':"");
+}
+function render(){
+  document.querySelectorAll("[data-frame]").forEach(f=>f.classList.toggle("phone",state.phone));
+  $("#f-a").innerHTML=A();$("#f-b").innerHTML=B();$("#f-c").innerHTML=C();$("#f-d").innerHTML=book(false);$("#f-e").innerHTML=book(true);
+}
+const sb=$("#seg-book"); const pick=["Gen","Ps","John","Jude","Sir"];
+sb.innerHTML=pick.map(k=>{const b=BOOKS.find(x=>x.k===k);return '<button type="button" data-v="'+k+'" aria-pressed="'+(k===state.book)+'">'+esc(b.name)+'</button>'}).join("");
+sb.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;sb.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state.book=b.dataset.v;render()});
+$("#seg-dev").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;$("#seg-dev").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state.phone=b.dataset.v==="phone";render()});
+render();
+</script>
