@@ -37,7 +37,8 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
   const heading = useRef<HTMLHeadingElement>(null);
   const detail = useRef<HTMLDivElement>(null);
   const measure = useLabelMeasure(box);
-  const measured = useBoxWidth(box);
+  const inner = useRef<HTMLDivElement>(null);
+  const measured = useBoxWidth(inner);
   const ready = measured > 0;
   const width = ready ? measured : defaultWidth;
   const scale: Scale = useMemo(() => ({ from, to, width }), [from, to, width]);
@@ -91,13 +92,13 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
 
   return (
     <div className={ready ? "" : "invisible"}>
-      <p className="mb-2.5 hidden text-ui-xs text-ink-3 max-sm:block">{text.hint}</p>
+      <p className="mb-2.5 hidden text-label text-ink-3 max-sm:block">{text.hint}</p>
       <div
         ref={box}
         onKeyDown={onKeyDown}
         className="relative max-sm:-mx-4 max-sm:overflow-x-auto max-sm:px-4 max-sm:overscroll-x-contain"
       >
-        <div className="relative max-sm:w-195">
+        <div ref={inner} className="relative max-sm:w-195">
           {own ? (
             <span
               aria-hidden="true"
@@ -110,7 +111,7 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
             if (rows.length === 0) return null;
             return (
               <div key={group} className="border-t border-rule first:border-t-0">
-                <p className="sticky left-0 m-0 w-max pt-3.5 pb-1 text-ui-xs text-ink-3 first:pt-0.5">
+                <p className="sticky left-0 m-0 w-max pt-3.5 pb-1 text-label text-ink-3 first:pt-0.5">
                   {text.groups[group]}
                 </p>
                 {rows.map((row) => (
@@ -186,7 +187,7 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
                 />
                 <span
                   style={at("--x", px(axisLabelClamp(ownCenter, ownLabelWidth)))}
-                  className="absolute top-2.5 left-(--x) -translate-x-1/2 text-ui-xs font-semibold whitespace-nowrap text-accent tabular-nums"
+                  className="absolute top-2.5 left-(--x) -translate-x-1/2 text-label font-semibold whitespace-nowrap text-accent tabular-nums"
                 >
                   {ownLabel}
                 </span>
@@ -200,7 +201,7 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
       </div>
       <ul
         aria-label={text.keyLabel}
-        className="m-0 mt-1 flex list-none flex-wrap gap-x-5.5 gap-y-1.5 p-0 text-ui-xs text-ink-3"
+        className="m-0 mt-1 flex list-none flex-wrap gap-x-5.5 gap-y-1.5 p-0 text-label text-ink-3"
       >
         <li className="flex items-center gap-2">
           <span aria-hidden="true" className="h-1.5 w-7 rounded-3 bg-rule-2" />
@@ -246,7 +247,7 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
       >
         {selected ? (
           <div className="font-ui">
-            <p className="m-0 mb-1 text-ui-xs text-ink-3">{selected.kind}</p>
+            <p className="m-0 mb-1 text-label text-ink-3">{selected.kind}</p>
             <h3
               ref={heading}
               tabIndex={-1}
@@ -409,7 +410,7 @@ function FixedStrip({ entry, detail }: { entry: TimelineEntry | null; detail: Re
                 <b className="font-head text-strip-name font-normal text-ink max-sm:text-strip-name-mobile">
                   {entry.name}
                 </b>
-                <span className="text-ui-xs text-ink-3 tabular-nums">{entry.dates}</span>
+                <span className="text-label text-ink-3 tabular-nums">{entry.dates}</span>
               </span>
               <span className="truncate text-ui-sm text-ink-2">{entry.text}</span>
             </p>

@@ -84,6 +84,8 @@
   --text-micro-lg: 11.5px;
   --spacing-panel: 380px;
   --spacing-sheet: 52dvh;
+  --text-dating: 14.5px;
+  --text-dating--line-height: 1.45;
   --text-strip-name: 18px;
   --text-strip-name-mobile: 16.5px;
   --text-title-sm: 24px;
@@ -864,13 +866,13 @@
 }
 
 @utility side-panel-room {
-  @media (min-width: 1100px) {
+  @media (min-width: 64rem) {
     & #content {
       padding-right: calc(var(--spacing-panel) + 24px);
     }
   }
 
-  @media (max-width: 1099.98px) {
+  @media (max-width: 63.99rem) {
     & #content {
       padding-bottom: calc(var(--spacing-sheet) + 4dvh);
     }

@@ -136,7 +136,7 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       writings: [],
     });
   }
-  const marks: number[] = [];
+  const marks: number[] = [from];
   for (let mark = markStep; mark <= to; mark += markStep) marks.push(mark);
   return { from, to, marks, entries };
 }

@@ -118,6 +118,14 @@ test("an ecumenical council inside a page's window gets the dot and its legend l
   await expect(page.locator("#time li", { hasText: "Lo reciben como ecuménico" })).toHaveCount(0);
 });
 
+test("on a phone the marks and the axis share one scale: the page's own dot sits over its band", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.goto(ignatius);
+  const dot = (await item(page, "Ignacio de Antioquía").locator("span.bg-accent").last().boundingBox())!;
+  const band = (await page.locator("#time [aria-hidden=true].border-t > span.bg-accent").first().boundingBox())!;
+  expect(Math.abs(dot.x - band.x)).toBeLessThan(3);
+});
+
 for (const width of [360, 390, 768, 1024, 1440]) {
   for (const id of ["augustine-of-hippo", "didache", "polycarp-of-smyrna"]) {
     test(`${width}px, ${id}: the timeline never makes the page overflow @webkit`, async ({ page }) => {

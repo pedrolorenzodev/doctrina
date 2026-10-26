@@ -216,7 +216,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
     <div aria-hidden="true" className={`relative border-ink-3 ${top ? "h-8.5 border-b" : "h-10 border-t"}`}>
       {marks.map((mark) => {
         const x = pixelsOf(scale, mark);
-        const major = mark % 100 === 0;
+        const major = mark % 100 === 0 || mark === from;
         const labelled =
           (major || mark === 50) &&
           !selectionLabels.some((item) => Math.abs(item.x - x) < measure(item.label, 12.5, 600) / 2 + 22);
@@ -229,7 +229,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
             {labelled ? (
               <span
                 style={at("--x", px(x))}
-                className={`absolute left-(--x) text-ui-2xs whitespace-nowrap text-ink-3 tabular-nums ${top ? "bottom-2.5" : "top-2.5"} ${mark === to ? "-translate-x-full" : "-translate-x-1/2"}`}
+                className={`absolute left-(--x) text-ui-2xs whitespace-nowrap text-ink-3 tabular-nums ${top ? "bottom-2.5" : "top-2.5"} ${mark === to ? "-translate-x-full" : mark === from ? "" : "-translate-x-1/2"}`}
               >
                 {mark}
               </span>
@@ -249,7 +249,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
           <span
             key={item.label}
             style={at("--x", px(clamp(item.x, labelWidth)))}
-            className={`absolute left-(--x) z-1 -translate-x-1/2 bg-bg px-1 text-ui-xs font-semibold whitespace-nowrap text-ink tabular-nums ${top ? "bottom-2.25" : "top-2.5"}`}
+            className={`absolute left-(--x) z-1 -translate-x-1/2 bg-bg px-1 text-label font-semibold whitespace-nowrap text-ink tabular-nums ${top ? "bottom-2.25" : "top-2.5"}`}
           >
             {item.label}
           </span>
@@ -260,7 +260,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
 
   return (
     <div className={ready ? "" : "invisible"}>
-      <p className="mb-2.5 text-ui-xs text-ink-3">{text.hint}</p>
+      <p className="mb-2.5 text-label text-ink-3">{text.hint}</p>
       <TimelineRuler scroller={scroller} from={from} to={to} entries={entries} selectedId={selectedId} />
       <div
         ref={scroller}
@@ -272,14 +272,16 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
         <div style={at("--w", px(width))} className="relative w-(--w)">
           {axis(true)}
           <div className="relative">
-            {marks.map((mark) => (
-              <span
-                key={mark}
-                aria-hidden="true"
-                style={at("--x", px(pixelsOf(scale, mark)))}
-                className="pointer-events-none absolute top-0 bottom-0 left-(--x) w-px bg-rule opacity-50"
-              />
-            ))}
+            {marks
+              .filter((mark) => mark !== from)
+              .map((mark) => (
+                <span
+                  key={mark}
+                  aria-hidden="true"
+                  style={at("--x", px(pixelsOf(scale, mark)))}
+                  className="pointer-events-none absolute top-0 bottom-0 left-(--x) w-px bg-rule opacity-50"
+                />
+              ))}
             {selected && span ? (
               <span
                 aria-hidden="true"
@@ -292,7 +294,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
               if (rows.length === 0) return null;
               return (
                 <div key={section} className="relative border-t border-rule first:border-t-0">
-                  <p className="sticky left-0 z-2 m-0 w-max pt-3 pr-2.5 pb-1 text-ui-xs text-ink-3">
+                  <p className="sticky left-0 z-2 m-0 w-max pt-3 pr-2.5 pb-1 text-label text-ink-3">
                     {text.sections[section]}
                   </p>
                   {rows.map((row) => (
@@ -343,7 +345,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
       </div>
       <ul
         aria-label={text.keyLabel}
-        className="m-0 mt-3 flex list-none flex-wrap gap-x-5.5 gap-y-1.5 p-0 text-ui-xs text-ink-3"
+        className="m-0 mt-3 flex list-none flex-wrap gap-x-5.5 gap-y-1.5 p-0 text-label text-ink-3"
       >
         <li className="flex items-center gap-2">
           <span aria-hidden="true" className="h-1.5 w-7 rounded-3 bg-rule-2" />
@@ -393,7 +395,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
         <div aria-live="polite">
           {panelEntry ? (
             <div className="font-ui">
-              <p className="m-0 mb-1 text-ui-xs text-ink-3">{panelEntry.kind}</p>
+              <p className="m-0 mb-1 text-label text-ink-3">{panelEntry.kind}</p>
               <h3
                 ref={heading}
                 tabIndex={-1}
@@ -404,7 +406,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
               <dl className="m-0 mt-3 flex flex-wrap gap-x-10 gap-y-2.5 p-0">
                 {panelEntry.facts.map((fact) => (
                   <div key={fact.label} className="min-w-0">
-                    <dt className="mb-0.75 text-ui-xs text-ink-3">{fact.label}</dt>
+                    <dt className="mb-0.75 text-label text-ink-3">{fact.label}</dt>
                     <dd className="m-0 font-body text-entity text-ink tabular-nums">{fact.value}</dd>
                   </div>
                 ))}
@@ -412,12 +414,12 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
               <p className="m-0 mt-3 font-body text-passage-body font-light text-ink-2">{panelEntry.text}</p>
               {panelEntry.writings.length > 0 ? (
                 <div className="mt-3.5">
-                  <p className="m-0 mb-1 text-ui-xs text-ink-3">{text.panel.writings}</p>
+                  <p className="m-0 mb-1 text-label text-ink-3">{text.panel.writings}</p>
                   <ul className="m-0 list-none p-0">
                     {panelEntry.writings.map((writing) => (
                       <li key={writing.title} className="border-t border-rule py-2 last:border-b">
                         <p className="m-0 text-source-name font-medium text-ink">{writing.title}</p>
-                        <p className="m-0 text-ui-xs text-ink-3 tabular-nums">{writing.date}</p>
+                        <p className="m-0 text-label text-ink-3 tabular-nums">{writing.date}</p>
                       </li>
                     ))}
                   </ul>
@@ -425,8 +427,8 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
               ) : null}
               {panelEntry.note ? (
                 <div className="mt-3.5">
-                  <p className="m-0 mb-0.75 text-ui-xs text-ink-3">{panelEntry.note.heading}</p>
-                  <p className="m-0 text-meta leading-1.55 text-ink-2">{panelEntry.note.text}</p>
+                  <p className="m-0 mb-0.75 text-label text-ink-3">{panelEntry.note.heading}</p>
+                  <p className="m-0 text-meta text-ink-2">{panelEntry.note.text}</p>
                 </div>
               ) : null}
               <p className="m-0 mt-3 text-ui-sm">

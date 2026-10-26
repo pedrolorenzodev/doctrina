@@ -213,6 +213,36 @@ test("a Father's panel lists his main writings with their dates; a council's has
   await expect(detail(page).getByText("Escritos principales")).toHaveCount(0);
 });
 
+test("the panel switches to the sheet at 1024 px (lg), not later: side panel with room at 1050, sheet at 1000", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1050, height: 800 });
+  await page.goto(timeline);
+  await item(page, "justin-martyr").click();
+  const panel = detail(page);
+  await expect.poll(async () => Math.round((await panel.boundingBox())!.x)).toBe(1050 - 380);
+  const scroller = (await page.locator("[data-scroller]").boundingBox())!;
+  expect(scroller.x + scroller.width).toBeLessThan(1050 - 380);
+  await page.setViewportSize({ width: 1000, height: 800 });
+  await expect.poll(async () => Math.round((await panel.boundingBox())!.width)).toBe(1000);
+});
+
+test("both axes start at the first year, 30, and carry its tick", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  await expect(page.locator("[data-scroller] [aria-hidden=true].border-b span", { hasText: /^30$/ })).toHaveCount(1);
+  await expect(page.locator("[data-scroller] [aria-hidden=true].border-t span", { hasText: /^30$/ })).toHaveCount(1);
+});
+
+test("the dashed lead of a chosen person goes ink with his bar", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  const lead = item(page, "polycarp-of-smyrna").locator("span.border-dashed");
+  await expect(lead).toHaveCSS("border-top-color", "rgb(174, 171, 164)");
+  await item(page, "polycarp-of-smyrna").click();
+  await expect(lead).toHaveCSS("border-top-color", "rgb(28, 23, 19)");
+});
+
 test("arrows move the focus along the items, Enter sends it to the heading", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(timeline);

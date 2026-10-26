@@ -22,8 +22,8 @@ export default async function TimelineRoute() {
     <PageMain>
       {/* TODO: «Historia» leads to its index page once it exists */}
       <Breadcrumbs label={text.shell.breadcrumb} trail={[{ label: text.shell.tree.history }]} current={labels.title} />
-      <PageHeader id="top" className="mt-10" title={labels.title} />
-      <p className="title-part title-part-2 mt-3 mb-0 max-w-160 text-sub text-ink-3">
+      <PageHeader id="top" className="mt-9" title={labels.title} />
+      <p className="title-part title-part-2 mt-2.5 mb-0 max-w-160 text-sub text-ink-3">
         {labels.lede.replace("{from}", String(timeline.from)).replace("{to}", String(timeline.to))}
       </p>
       <section aria-label={labels.title} className="mt-8.5">

@@ -140,7 +140,7 @@ function WindowBody({ view, text, copied, onCopy }: WindowBodyProps) {
   return (
     <div data-lenis-prevent className="overflow-y-auto overscroll-contain p-4.5">
       {view.title ? <h3 className="mb-2.5 font-head text-h3 font-normal text-ink">{view.title}</h3> : null}
-      {view.subtitle ? <p className="mb-3 text-meta text-ink-3">{view.subtitle}</p> : null}
+      {view.subtitle ? <p className="mb-6.75 text-meta text-ink-3">{view.subtitle}</p> : null}
       {view.quoteLanguage ? <p className="mb-1.5 text-ui-xs text-ink-3">{view.quoteLanguage}</p> : null}
       {view.quote ? (
         <p lang={view.quote.lang} className="font-head text-quote-window font-light text-ink italic opsz-24 guillemets">

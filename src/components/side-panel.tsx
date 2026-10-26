@@ -32,7 +32,7 @@ export function SidePanel({ open, label, title, closeLabel, onClose, children }:
       className="texture-layer panel-motion invisible fixed top-top right-0 bottom-0 z-35 flex w-panel translate-x-6 flex-col border-l border-rule bg-bg opacity-0 data-[open=true]:visible data-[open=true]:translate-x-0 data-[open=true]:opacity-100 max-lg:top-auto max-lg:left-0 max-lg:h-sheet max-lg:w-auto max-lg:translate-x-0 max-lg:translate-y-full max-lg:rounded-t-14 max-lg:border-t max-lg:border-l-0 max-lg:border-rule-2 max-lg:opacity-100 max-lg:data-[open=true]:translate-y-0 safe-bottom"
     >
       <span aria-hidden="true" className="mx-auto mt-2 hidden h-1 w-7 rounded-2 bg-rule-2 max-lg:block" />
-      <div className="flex min-h-12 items-center justify-between gap-2 border-b border-rule py-1.5 pr-2.5 pl-5.5 text-ui-xs text-ink-3">
+      <div className="flex min-h-12 items-center justify-between gap-2 border-b border-rule py-1.5 pr-2.5 pl-5.5 text-label text-ink-3">
         <span>{title}</span>
         <IconButton aria-label={closeLabel} onClick={onClose}>
           <svg

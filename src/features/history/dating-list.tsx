@@ -97,12 +97,12 @@ export function DatingList({ id, label, rows, scholars, axis, moreLabel, lessLab
               hidden={!row.main && !expanded}
               className={`dating-row border-t py-2.75 ${expanded && row.id === firstHidden ? "border-dashed border-rule-2" : "border-rule"}`}
             >
-              <p className="m-0 text-sub text-ink-3">
+              <p className="m-0 text-dating text-ink-3">
                 <b className={`block font-medium ${row.highlighted ? "text-accent" : "text-ink"}`}>{row.date}</b>
                 {row.lead}
                 {row.scholar ? (
                   <>
-                    <CitationLink id={scholarViewId(row.scholar)} kind="source">
+                    <CitationLink id={scholarViewId(row.scholar)} kind="citation">
                       {scholars[row.scholar] ?? row.scholar}
                     </CitationLink>
                     {` ${openParenthesis}${row.year}${closeParenthesis}`}
@@ -123,7 +123,7 @@ export function DatingList({ id, label, rows, scholars, axis, moreLabel, lessLab
             <span
               key={mark}
               style={vars({ "--x": `${((mark - axis.from) / (axis.to - axis.from)) * 100}%` })}
-              className={`absolute top-1.25 left-(--x) text-axis text-ink-3 tabular-nums ${index === axis.marks.length - 1 ? "-translate-x-full" : "-translate-x-1/2"}`}
+              className={`absolute top-1.25 left-(--x) text-micro-lg text-ink-3 tabular-nums ${index === axis.marks.length - 1 ? "-translate-x-full" : "-translate-x-1/2"}`}
             >
               {mark}
             </span>

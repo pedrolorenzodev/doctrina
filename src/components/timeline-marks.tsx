@@ -29,7 +29,7 @@ export function TimelineMarks({ entry, scale, left }: { entry: TimelineEntry; sc
         {entry.leadStart !== null ? (
           <span
             style={vars({ "--x": px(x(entry.leadStart)), "--w": px(first - x(entry.leadStart)) })}
-            className="absolute top-2 left-(--x) h-0 w-(--w) border-t-2 border-dashed border-rule-2"
+            className={`absolute top-2 left-(--x) h-0 w-(--w) border-t-2 border-dashed transition-colors duration-150 ${entry.own ? "border-accent" : "border-rule-2 group-hover:border-ink-3 group-aria-pressed:border-ink"}`}
           />
         ) : null}
         <span

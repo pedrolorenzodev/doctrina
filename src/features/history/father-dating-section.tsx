@@ -19,7 +19,7 @@ export function FatherDatingSection({ id, dating, text }: FatherDatingSectionPro
     <Section id={id} title={text.title} wide>
       <div className="max-w-col">
         <h3 className={stepTitle}>{dating.title}</h3>
-        <p className={prose}>{dating.intro}</p>
+        <p className={`${prose} mb-3.5`}>{dating.intro}</p>
       </div>
       <DatingList
         id={`${id}-list`}

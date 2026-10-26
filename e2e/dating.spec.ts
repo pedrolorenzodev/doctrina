@@ -45,6 +45,19 @@ test("a row reads «what, according to Name (year).»", async ({ page }) => {
   await expect(rows(page).first().locator("b")).toHaveCSS("color", /^rgb\(44, 74, 158\)$/);
 });
 
+test("a scholar's name looks like a citation, the rows are 14.5 over 1.45 and the intro keeps its space", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(ignatius);
+  await expect(rows(page).nth(1).getByRole("button", { name: "Decrept" })).toHaveCSS("color", "rgb(95, 61, 12)");
+  const line = await rows(page)
+    .first()
+    .locator("p")
+    .evaluate((p) => parseFloat(getComputedStyle(p).lineHeight));
+  expect(Math.abs(line - 21.025)).toBeLessThan(0.1);
+});
+
 test("a scholar's name opens «Quién es»: field, position, the work in italics and, when known, a life timeline", async ({
   page,
 }) => {
