@@ -34,3 +34,11 @@ export const bibleBooks: BibleBook[] = ordered.map((book, index) => ({ ...book, 
 export function getBibleBook(id: string): BibleBook | undefined {
   return bibleBooks.find((book) => book.id === id);
 }
+
+const listNames: Record<string, Record<Locale, string>> = {
+  Ps: { es: "Salmos", en: "Psalms" },
+};
+
+export function bookListName(book: BibleBook, locale: Locale): string {
+  return listNames[book.id]?.[locale] ?? book.names[locale];
+}

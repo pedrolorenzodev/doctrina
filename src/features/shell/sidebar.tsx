@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { flushSync } from "react-dom";
 import type { TreeGroup, TreeNode } from "@/content/site-tree";
-import { ChapterGrid } from "@/features/shell/chapter-grid";
+import { ChapterGrid } from "@/components/chapter-grid";
 import { useDrawer } from "@/features/shell/drawer";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { trapTab } from "@/lib/focus";

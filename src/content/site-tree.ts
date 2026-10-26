@@ -18,7 +18,7 @@ import {
   traditionRoute,
 } from "@/content/routes";
 import { bibleBookRoute, bibleChapterBase, bibleChapterHref } from "@/content/bible-routes";
-import { bibleBooks, getBibleBook } from "@/content/bible-books";
+import { bibleBooks, bookListName, getBibleBook } from "@/content/bible-books";
 import { bookNames } from "@/content/verse-names";
 import type { Locale } from "@/lib/locale";
 
@@ -139,10 +139,6 @@ const branch = (id: string, label: string, children: TreeNode[], count?: number)
   count,
 });
 
-const bookListNames: Record<string, Record<Locale, string>> = {
-  Ps: { es: "Salmos", en: "Psalms" },
-};
-
 const bookKeys = Object.keys(bookNames);
 const firstNewTestamentBook = bookKeys.indexOf("Matt");
 
@@ -197,7 +193,7 @@ export function buildSiteTree(
   }));
   const book = (key: string) => {
     const entry = getBibleBook(key);
-    const label = bookListNames[key]?.[locale] ?? entry?.names[locale] ?? key;
+    const label = entry ? bookListName(entry, locale) : key;
     const node = leaf(`book/${key}`, label);
     if (!entry || locale !== "es") return node;
     const count = bookChapters.get(key);
