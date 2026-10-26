@@ -167,8 +167,25 @@ export const es = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    notes: {
+      add: "Nota",
+      label: "Tu nota",
+      about: "Nota sobre {reference}",
+      saved: "Guardada",
+      deleteNote: "Borrar nota",
+      one: "1 nota",
+      many: "{n} notas",
+      inEdition: "{mark} en {edition}",
+      removed: "Nota borrada.",
+    },
     verseRange: "{book} {chapter}:{from}-{to}",
-    toolbar: { label: "Lo que elegiste", cite: "Copiar cita", citeCopied: "Cita copiada", find: "Buscar" },
+    toolbar: {
+      label: "Lo que elegiste",
+      cite: "Copiar cita",
+      citeCopied: "Cita copiada",
+      find: "Buscar",
+      note: "Nota",
+    },
     highlight: {
       label: "Subrayar",
       remove: "Quitar subrayado",

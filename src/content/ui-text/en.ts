@@ -169,8 +169,25 @@ export const en: UiText = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    notes: {
+      add: "Note",
+      label: "Your note",
+      about: "Note on {reference}",
+      saved: "Saved",
+      deleteNote: "Delete note",
+      one: "1 note",
+      many: "{n} notes",
+      inEdition: "{mark} in {edition}",
+      removed: "Note deleted.",
+    },
     verseRange: "{book} {chapter}:{from}-{to}",
-    toolbar: { label: "What you chose", cite: "Copy citation", citeCopied: "Citation copied", find: "Search" },
+    toolbar: {
+      label: "What you chose",
+      cite: "Copy citation",
+      citeCopied: "Citation copied",
+      find: "Search",
+      note: "Note",
+    },
     highlight: {
       label: "Highlight",
       remove: "Remove highlight",

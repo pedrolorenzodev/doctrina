@@ -181,6 +181,13 @@
   --text-reader-title-mobile--letter-spacing: -0.01em;
   --text-reader-note: 14px;
   --text-reader-note--line-height: 1.55;
+  --text-note-line: 13.5px;
+  --text-note-line--line-height: 1.45;
+  --text-note-text: 16.5px;
+  --text-note-text--line-height: 1.55;
+  --text-note-meta: 12.5px;
+  --text-note-row: 16px;
+  --text-note-row--line-height: 1.5;
   --text-picker-option: 14.5px;
   --text-picker-option--line-height: 1.35;
   --text-panel-reference: 19px;

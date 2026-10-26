@@ -4,6 +4,7 @@ import { SidePanel } from "@/components/side-panel";
 import { ActionButton } from "@/components/ui/action";
 import { CopyButton } from "@/components/ui/copy-button";
 import { HighlightColors } from "@/features/reader/highlight-colors";
+import type { ReactNode } from "react";
 import type { HighlightColor } from "@/lib/highlights";
 
 export const readerPanelFrom = "xl";
@@ -32,7 +33,10 @@ type VersePanelProps = {
     onPick: (color: HighlightColor) => void;
     onRemove: () => void;
   };
+  noteLabel: string;
+  onNote: () => void;
   onClose: () => void;
+  children: ReactNode;
 };
 
 export function VersePanel({
@@ -43,7 +47,10 @@ export function VersePanel({
   text,
   focusOnOpen,
   highlight,
+  noteLabel,
+  onNote,
   onClose,
+  children,
 }: VersePanelProps) {
   const link = () => `${location.origin}${location.pathname}#v-${verse}`;
   return (
@@ -67,7 +74,15 @@ export function VersePanel({
           onPick={highlight.onPick}
           onRemove={highlight.onRemove}
         />
+        <button
+          type="button"
+          onClick={onNote}
+          className="inline-flex min-h-10 cursor-pointer items-center justify-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
+        >
+          {noteLabel}
+        </button>
       </div>
+      {children}
       {/* TODO: opens the verse's own page (06) once it exists */}
       <ActionButton>{text.openDetail}</ActionButton>
     </SidePanel>
