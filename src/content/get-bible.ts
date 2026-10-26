@@ -1,0 +1,62 @@
+import { resolve } from "node:path";
+import type { BibleSource } from "@/content/bible/bible-source";
+import { chapterNeighbors } from "@/content/bible/chapter-neighbors";
+import { createLocalBibleSource } from "@/content/bible/local-source";
+import { createSupabaseBibleSource } from "@/content/bible/supabase-source";
+import type { BibleChapter, BibleTranslation, BibleVerse, ChapterSummary } from "@/content/model/bible";
+
+function chooseSource(): BibleSource {
+  if (process.env.CORPUS_SOURCE !== "supabase") return createLocalBibleSource(resolve(process.cwd()));
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+  if (!url || !key)
+    throw new Error("CORPUS_SOURCE=supabase needs NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY");
+  return createSupabaseBibleSource(url, key);
+}
+
+let source: BibleSource | null = null;
+const chapterIndexes = new Map<string, Promise<ChapterSummary[]>>();
+
+function currentSource(): BibleSource {
+  source ??= chooseSource();
+  return source;
+}
+
+function chapterIndex(translationId: string): Promise<ChapterSummary[]> {
+  let pending = chapterIndexes.get(translationId);
+  if (!pending) {
+    pending = currentSource().chapterIndex(translationId);
+    chapterIndexes.set(translationId, pending);
+  }
+  return pending;
+}
+
+export function getBibleTranslations(): Promise<BibleTranslation[]> {
+  return currentSource().translations();
+}
+
+export async function getBibleChapter(
+  translationId: string,
+  book: string,
+  chapter: number,
+): Promise<BibleChapter | null> {
+  const translation = (await getBibleTranslations()).find((entry) => entry.id === translationId);
+  if (!translation) return null;
+  const neighbors = chapterNeighbors(await chapterIndex(translationId), { book, chapter });
+  if (!neighbors) return null;
+  const verses = await currentSource().chapterVerses(translationId, book, chapter);
+  return { translation, book, chapter, verses, ...neighbors };
+}
+
+export function getBibleVerse(
+  translationId: string,
+  book: string,
+  chapter: number,
+  verse: number,
+): Promise<BibleVerse | null> {
+  return currentSource().verse(translationId, book, chapter, verse);
+}
+
+export function getBibleChapterIndex(translationId: string): Promise<ChapterSummary[]> {
+  return chapterIndex(translationId);
+}
