@@ -50,3 +50,15 @@ test("an unknown work is a 404", async ({ page }) => {
   const response = await page.goto("/es/historia/obras/no-existe");
   expect(response?.status()).toBe(404);
 });
+
+test("in the tree a Father with texts opens to them and the open work is marked", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/obras/ignatius-romans");
+  const father = page.locator('aside nav li[data-id="history/fathers/ignatius-of-antioch"]');
+  await expect(father.locator("> ul")).toHaveAttribute("data-open", "true");
+  await expect(father.locator("> ul a")).toHaveCount(7);
+  await expect(page.locator("aside nav a[aria-current=page]")).toHaveText("A los Romanos");
+  await father.locator("> ul a", { hasText: "A los Efesios" }).click();
+  await expect(page).toHaveURL(/\/es\/historia\/obras\/ignatius-ephesians$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Ephesians");
+});

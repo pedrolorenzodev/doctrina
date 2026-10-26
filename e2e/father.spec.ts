@@ -255,7 +255,7 @@ test("the sidebar lists all 56 Fathers as links and marks the current one", asyn
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(ignatius);
   const branch = page.locator('aside nav li[data-id="history/fathers"]');
-  await expect(branch.locator("> ul > li a")).toHaveCount(56);
+  await expect(branch.locator('> ul > li a:not([href*="/obras/"])')).toHaveCount(56);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveText("Ignacio de Antioquía");
   await expect(branch.locator("> ul")).toHaveAttribute("data-open", "true");
   await branch.locator('li[data-id="history/fathers/tertullian"] a').click();
