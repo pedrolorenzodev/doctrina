@@ -78,7 +78,7 @@ test("the timeline link leads to the line with this entity chosen", async ({ pag
     "aria-pressed",
     "true",
   );
-  await expect(page.locator("aside[data-side-panel] h3")).toHaveText("Ignacio de Antioquía");
+  await expect(page.locator("aside[data-side-panel] h2")).toHaveText("Ignacio de Antioquía");
 });
 
 test("«Quién fue»: the summary and a facts table that sits beside it from 900 px of section", async ({ page }) => {

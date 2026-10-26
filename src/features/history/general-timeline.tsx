@@ -396,13 +396,13 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
           {panelEntry ? (
             <div className="font-ui">
               <p className="m-0 mb-1 text-label text-ink-3">{panelEntry.kind}</p>
-              <h3
+              <h2
                 ref={heading}
                 tabIndex={-1}
                 className="m-0 w-fit font-head text-title-sm font-normal text-ink opsz-30 focus-visible:rounded-3 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent"
               >
                 {panelEntry.name}
-              </h3>
+              </h2>
               <dl className="m-0 mt-3 flex flex-wrap gap-x-10 gap-y-2.5 p-0">
                 {panelEntry.facts.map((fact) => (
                   <div key={fact.label} className="min-w-0">

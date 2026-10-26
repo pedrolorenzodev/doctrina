@@ -43,7 +43,7 @@ test("choosing a person: dates as labelled facts, the band of his time, his year
   await expect(detail(page).locator("dl dt")).toHaveText(["Nació", "Murió"]);
   await expect(detail(page).locator("dl dd")).toHaveText(["c. 69", "c. 155"]);
   await expect(detail(page)).toBeVisible();
-  await expect(detail(page).locator("h3")).toHaveText("Policarpo de Esmirna");
+  await expect(detail(page).locator("h2")).toHaveText("Policarpo de Esmirna");
   await expect(detail(page).locator("a")).toHaveAttribute("href", /polycarp-of-smyrna$/);
   await expect(page.locator("[data-scroller] .bg-accent-weak")).toHaveCount(1);
   await expect(page.locator("[data-scroller] [aria-hidden=true] .bg-ink").first()).toBeVisible();
@@ -95,7 +95,7 @@ test("the panel: opens on the right with its title, closes with its button or Es
   await page.keyboard.press("Escape");
   await expect(panel).toBeHidden();
   await item(page, "irenaeus-of-lyon").click();
-  await expect(panel.locator("h3")).toHaveText("Ireneo de Lyon");
+  await expect(panel.locator("h2")).toHaveText("Ireneo de Lyon");
 });
 
 test("below 1100 px the panel is a half sheet at the bottom and the page makes room under it", async ({ page }) => {
@@ -253,7 +253,7 @@ test("arrows move the focus along the items, Enter sends it to the heading", asy
     "clement-of-rome",
   );
   await page.keyboard.press("Enter");
-  await expect(detail(page).locator("h3")).toBeFocused();
+  await expect(detail(page).locator("h2")).toBeFocused();
 });
 
 test("an item outside the visible years scrolls into view when chosen", async ({ page }) => {
@@ -287,7 +287,7 @@ test("a hash arrives with that item chosen, its panel open, the line and the pag
   const button = item(page, "justin-martyr");
   await expect(button).toHaveAttribute("aria-pressed", "true");
   await expect(detail(page)).toBeVisible();
-  await expect(detail(page).locator("h3")).toHaveText("Justino Mártir");
+  await expect(detail(page).locator("h2")).toHaveText("Justino Mártir");
   await expect.poll(async () => (await button.boundingBox())!.y).toBeGreaterThan(55);
   const rect = (await button.boundingBox())!;
   expect(rect.y + rect.height).toBeLessThan(800);
