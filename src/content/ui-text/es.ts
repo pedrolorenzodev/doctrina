@@ -251,7 +251,7 @@ export const es = {
       unknown: "desconocido",
     },
     pageOf: "Ir a la página de {name}",
-    empty: "Elegí una persona, un concilio o una corriente para ver sus fechas.",
+    panel: { label: "Detalle de lo elegido", title: "Lo elegido en la línea", close: "Cerrar el panel" },
     keyLabel: "Cómo leer la línea",
     ariaOverview: "Los años de la línea",
   },

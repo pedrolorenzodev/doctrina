@@ -241,7 +241,7 @@ export const en: UiText = {
       unknown: "unknown",
     },
     pageOf: "Go to the page of {name}",
-    empty: "Choose a person, a council or a movement to see its dates.",
+    panel: { label: "Detail of the selection", title: "Chosen on the timeline", close: "Close the panel" },
     keyLabel: "How to read the timeline",
     ariaOverview: "The years of the timeline",
   },

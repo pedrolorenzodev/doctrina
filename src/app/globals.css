@@ -82,6 +82,8 @@
   --text-meta--line-height: 1.5;
   --text-micro: 10.5px;
   --text-micro-lg: 11.5px;
+  --spacing-panel: 380px;
+  --spacing-sheet: 52dvh;
   --text-strip-name: 18px;
   --text-strip-name-mobile: 16.5px;
   --text-title-sm: 24px;
@@ -844,6 +846,39 @@
   scrollbar-width: thin;
   scrollbar-color: var(--color-rule-2) transparent;
   overscroll-behavior: contain;
+}
+
+@utility panel-motion {
+  transition:
+    opacity 200ms ease,
+    translate 200ms var(--ease-move),
+    visibility 0s linear 200ms;
+
+  &[data-open="true"] {
+    transition-delay: 0s, 0s, 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+@utility side-panel-room {
+  @media (min-width: 1100px) {
+    & #content {
+      padding-right: calc(var(--spacing-panel) + 24px);
+    }
+  }
+
+  @media (max-width: 1099.98px) {
+    & #content {
+      padding-bottom: calc(var(--spacing-sheet) + 4dvh);
+    }
+  }
+}
+
+@utility safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 @utility drawer-motion {

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { SidePanel } from "@/components/side-panel";
 import { TimelineMarks } from "@/components/timeline-marks";
 import { PageLink } from "@/components/ui/page-link";
 import type { GeneralEntry, GeneralSection } from "@/content/get-general-timeline";
@@ -14,8 +15,8 @@ export type GeneralTimelineText = {
   key: { life: string; estimated: string; unknownBirth: string; council: string; lasts: string };
   keyLabel: string;
   hint: string;
-  empty: string;
   diedMark: string;
+  panel: { label: string; title: string; close: string };
 };
 
 type GeneralTimelineProps = {
@@ -35,6 +36,8 @@ const sectionOrder: GeneralSection[] = ["people", "councils", "works", "currents
 export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimelineProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [focusId, setFocusId] = useState<string | null>(null);
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [panelEntry, setPanelEntry] = useState<GeneralEntry | null>(null);
   const scroller = useRef<HTMLDivElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const justPanned = useRef(false);
@@ -97,13 +100,26 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
 
   const choose = (id: string, byKeyboard: boolean) => {
     if (justPanned.current) return;
-    const next = id === selectedId ? null : id;
-    setSelectedId(next);
     setFocusId(id);
-    if (next === null) return;
-    requestAnimationFrame(() => showSelected(next));
+    if (id === selectedId && panelOpen) {
+      setSelectedId(null);
+      setPanelOpen(false);
+      return;
+    }
+    setSelectedId(id);
+    setPanelEntry(entries.find((entry) => entry.id === id) ?? null);
+    setPanelOpen(true);
+    requestAnimationFrame(() => showSelected(id));
     if (byKeyboard) requestAnimationFrame(() => heading.current?.focus({ preventScroll: true }));
   };
+
+  const closePanel = useCallback(() => {
+    setPanelOpen(false);
+    requestAnimationFrame(() => {
+      const open = scroller.current?.querySelector<HTMLElement>('button[aria-pressed="true"]');
+      open?.focus({ preventScroll: true });
+    });
+  }, []);
 
   useEffect(() => {
     const box = scroller.current;
@@ -330,44 +346,45 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
           {text.key.lasts}
         </li>
       </ul>
-      <div
-        aria-live="polite"
-        className="mt-4.5 min-h-37.5 max-w-215 border-t border-rule pt-4.5 pb-1 has-data-empty:min-h-0"
+      <SidePanel
+        open={panelOpen}
+        label={text.panel.label}
+        title={text.panel.title}
+        closeLabel={text.panel.close}
+        onClose={closePanel}
       >
-        {selected ? (
-          <div className="font-ui">
-            <p className="m-0 mb-1 text-ui-xs text-ink-3">{selected.kind}</p>
-            <h3
-              ref={heading}
-              tabIndex={-1}
-              className="m-0 w-fit font-head text-title-sm font-normal text-ink opsz-30 focus-visible:rounded-3 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent"
-            >
-              {selected.name}
-            </h3>
-            <dl className="m-0 mt-3 flex flex-wrap gap-x-10 gap-y-2.5 p-0">
-              {selected.facts.map((fact) => (
-                <div key={fact.label} className="min-w-0">
-                  <dt className="mb-0.75 text-ui-xs text-ink-3">{fact.label}</dt>
-                  <dd className="m-0 font-body text-entity text-ink tabular-nums">{fact.value}</dd>
-                </div>
-              ))}
-            </dl>
-            <p className="m-0 mt-2.5 max-w-155 font-body text-passage-body font-light text-ink-2">{selected.text}</p>
-            <p className="m-0 mt-2.5 text-ui-sm">
-              {/* TODO: only the Fathers' pages exist; councils and movements link to their pages once they exist */}
-              {selected.href ? (
-                <PageLink href={selected.href}>{selected.linkLabel}</PageLink>
-              ) : (
-                <PageLink>{selected.linkLabel}</PageLink>
-              )}
-            </p>
-          </div>
-        ) : (
-          <p data-empty className="m-0 text-ui-sm text-ink-3">
-            {text.empty}
-          </p>
-        )}
-      </div>
+        <div aria-live="polite">
+          {panelEntry ? (
+            <div className="font-ui">
+              <p className="m-0 mb-1 text-ui-xs text-ink-3">{panelEntry.kind}</p>
+              <h3
+                ref={heading}
+                tabIndex={-1}
+                className="m-0 w-fit font-head text-title-sm font-normal text-ink opsz-30 focus-visible:rounded-3 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent"
+              >
+                {panelEntry.name}
+              </h3>
+              <dl className="m-0 mt-3 flex flex-wrap gap-x-10 gap-y-2.5 p-0">
+                {panelEntry.facts.map((fact) => (
+                  <div key={fact.label} className="min-w-0">
+                    <dt className="mb-0.75 text-ui-xs text-ink-3">{fact.label}</dt>
+                    <dd className="m-0 font-body text-entity text-ink tabular-nums">{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="m-0 mt-3 font-body text-passage-body font-light text-ink-2">{panelEntry.text}</p>
+              <p className="m-0 mt-3 text-ui-sm">
+                {/* TODO: only the Fathers' pages exist; councils and movements link to their pages once they exist */}
+                {panelEntry.href ? (
+                  <PageLink href={panelEntry.href}>{panelEntry.linkLabel}</PageLink>
+                ) : (
+                  <PageLink>{panelEntry.linkLabel}</PageLink>
+                )}
+              </p>
+            </div>
+          ) : null}
+        </div>
+      </SidePanel>
     </div>
   );
 }

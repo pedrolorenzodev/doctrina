@@ -3,7 +3,7 @@ import { horizontalOverflow } from "./helpers";
 
 const timeline = "/es/historia/linea-de-tiempo";
 const item = (page: Page, id: string) => page.locator(`[data-scroller] button[data-entry="${id}"]`);
-const detail = (page: Page) => page.locator("[aria-live=polite]").last();
+const detail = (page: Page) => page.locator("aside[data-side-panel]");
 
 test("the page: title, crumbs, the sidebar's current leaf and the four groups in order", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -36,11 +36,13 @@ test("choosing a person: dates as labelled facts, the band of his time, his year
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(timeline);
-  await expect(detail(page)).toHaveText("Elegí una persona, un concilio o una corriente para ver sus fechas.");
+  await expect(detail(page)).toHaveAttribute("data-open", "false");
+  await expect(detail(page)).toBeHidden();
   await item(page, "polycarp-of-smyrna").click();
   await expect(item(page, "polycarp-of-smyrna")).toHaveAttribute("aria-pressed", "true");
   await expect(detail(page).locator("dl dt")).toHaveText(["Nació", "Murió"]);
   await expect(detail(page).locator("dl dd")).toHaveText(["c. 69", "c. 155"]);
+  await expect(detail(page)).toBeVisible();
   await expect(detail(page).locator("h3")).toHaveText("Policarpo de Esmirna");
   await expect(detail(page).locator("a")).toHaveAttribute("href", /polycarp-of-smyrna$/);
   await expect(page.locator("[data-scroller] .bg-accent-weak")).toHaveCount(1);
@@ -48,20 +50,80 @@ test("choosing a person: dates as labelled facts, the band of his time, his year
   await item(page, "polycarp-of-smyrna").click();
   await expect(item(page, "polycarp-of-smyrna")).toHaveAttribute("aria-pressed", "false");
   await expect(page.locator("[data-scroller] .bg-accent-weak")).toHaveCount(0);
-  await expect(detail(page)).toContainText("Elegí una persona");
+  await expect(detail(page)).toBeHidden();
 });
 
 test("a council, a movement and an anonymous writing each have their own labelled dates", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(timeline);
   await item(page, "nicaea-1").click();
-  await expect(detail(page).locator("p").first()).toHaveText("Concilio");
+  await expect(detail(page).locator("div.font-ui > p").first()).toHaveText("Concilio");
   await expect(detail(page).locator("dl dt")).toHaveText(["Fecha"]);
-  await expect(detail(page).locator("button")).toHaveText(/Ir a la página de/);
+  await expect(detail(page).getByRole("button", { name: /Ir a la página de/ })).toBeVisible();
   await item(page, "arianism").click();
   await expect(detail(page).locator("dl dt")).toHaveText(["Desde", "Hasta"]);
   await item(page, "didache").click();
   await expect(detail(page).locator("dl dt")).toHaveText(["Escrito"]);
+});
+
+test("the panel: opens on the right with its title, closes with its button or Escape and keeps the selection", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  await item(page, "justin-martyr").click();
+  const panel = detail(page);
+  await expect(panel).toBeVisible();
+  await expect(panel.getByText("Lo elegido en la línea")).toBeVisible();
+  await expect.poll(async () => Math.round((await panel.boundingBox())!.x)).toBe(1060);
+  const box = (await panel.boundingBox())!;
+  expect(Math.round(box.width)).toBe(380);
+  expect(Math.round(box.x + box.width)).toBe(1440);
+  expect(
+    await page.locator("#content").evaluate((main) => parseFloat(getComputedStyle(main).paddingRight)),
+  ).toBeGreaterThanOrEqual(404);
+  await panel.getByRole("button", { name: "Cerrar el panel" }).click();
+  await expect(panel).toBeHidden();
+  await expect(item(page, "justin-martyr")).toHaveAttribute("aria-pressed", "true");
+  await expect(item(page, "justin-martyr")).toBeFocused();
+  expect(
+    await page.locator("#content").evaluate((main) => parseFloat(getComputedStyle(main).paddingRight)),
+  ).toBeLessThan(404);
+  await item(page, "justin-martyr").click();
+  await expect(panel).toBeVisible();
+  await expect(item(page, "justin-martyr")).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("Escape");
+  await expect(panel).toBeHidden();
+  await item(page, "irenaeus-of-lyon").click();
+  await expect(panel.locator("h3")).toHaveText("Ireneo de Lyon");
+});
+
+test("below 1100 px the panel is a half sheet at the bottom and the page makes room under it", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.goto(timeline);
+  await item(page, "justin-martyr").click();
+  const panel = detail(page);
+  await expect(panel).toBeVisible();
+  await expect
+    .poll(async () => {
+      const rect = (await panel.boundingBox())!;
+      return Math.round(rect.y + rect.height);
+    })
+    .toBe(800);
+  const box = (await panel.boundingBox())!;
+  expect(Math.abs(box.height - 0.52 * 800)).toBeLessThan(3);
+  expect(Math.round(box.width)).toBe(390);
+  expect(
+    await page.locator("#content").evaluate((main) => parseFloat(getComputedStyle(main).paddingBottom)),
+  ).toBeGreaterThan(400);
+  expect(await horizontalOverflow(page)).toBe(0);
+});
+
+test("under reduced motion the panel has no transition", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  await expect(detail(page)).toHaveCSS("transition-duration", "0s");
 });
 
 test("arrows move the focus along the items, Enter sends it to the heading", async ({ page }) => {
