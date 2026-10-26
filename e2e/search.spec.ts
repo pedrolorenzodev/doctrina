@@ -94,7 +94,7 @@ test("the trigger, ⌘K and Ctrl+K open it with the input focused and nothing sh
   await expect(page.locator(input)).toBeFocused();
 });
 
-test("Esc closes and returns focus to the trigger; the scrim closes, the box does not", async ({ page }) => {
+test("Esc closes and returns focus to the trigger; the scrim closes, the box does not @webkit", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await openSearch(page);
@@ -191,7 +191,7 @@ test("Line 1: the path, a 1 × 12 px hairline and the date at the right; the Fat
       hairline: [Math.round(hairline.width), Math.round(hairline.height)],
       dateAtRight: Math.abs(meta.getBoundingClientRect().right - date.right) < 1,
       pathBeforeDate: path.right <= hairline.left,
-      line: [line.fontStyle, line.fontSize, line.lineHeight],
+      line: [line.fontStyle, line.fontSize, `${Math.round(parseFloat(line.lineHeight) * 10) / 10}px`],
       title: [title.fontSize, title.fontFamily.includes("Newsreader")],
     };
   });

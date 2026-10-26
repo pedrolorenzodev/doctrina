@@ -6,7 +6,7 @@ import { escapePriority, registerEscape } from "@/lib/escape-stack";
 type SearchState = {
   open: boolean;
   session: number;
-  show: () => void;
+  show: (trigger?: HTMLElement) => void;
   hide: (restoreFocus?: boolean) => void;
 };
 
@@ -19,8 +19,8 @@ export function SearchProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState(0);
   const opener = useRef<HTMLElement | null>(null);
 
-  const show = useCallback(() => {
-    opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  const show = useCallback((trigger?: HTMLElement) => {
+    opener.current = trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
     setSession((current) => current + 1);
     setOpen(true);
   }, []);

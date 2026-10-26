@@ -24,7 +24,7 @@ export function SearchTrigger({ label, placeholder }: SearchTriggerProps) {
       aria-haspopup="dialog"
       aria-expanded={open}
       aria-keyshortcuts="Control+K Meta+K"
-      onClick={show}
+      onClick={(event) => show(event.currentTarget)}
       className="search-width ml-6 flex h-9 cursor-pointer items-center gap-2.5 rounded-6 border border-rule bg-card pr-2.5 pl-3 text-btn text-ink-3 transition-colors duration-150 ease-standard hover:border-rule-2 hover:bg-hover max-sm:ml-auto max-sm:w-10 max-sm:justify-center max-sm:border-transparent max-sm:bg-transparent max-sm:p-0 pointer-coarse:min-h-11 max-sm:pointer-coarse:min-w-11"
     >
       <svg
