@@ -243,6 +243,15 @@ test("the dashed lead of a chosen person goes ink with his bar", async ({ page }
   await expect(lead).toHaveCSS("border-top-color", "rgb(28, 23, 19)");
 });
 
+test("the English route does not exist until the English content does, and its sidebar leaf is inert", async ({
+  page,
+  request,
+}) => {
+  expect((await request.get("/en/history/timeline")).status()).toBe(404);
+  await page.goto("/en");
+  await expect(page.locator('aside a[href*="timeline"]')).toHaveCount(0);
+});
+
 test("arrows move the focus along the items, Enter sends it to the heading", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(timeline);

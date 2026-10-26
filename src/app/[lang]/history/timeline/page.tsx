@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
@@ -15,9 +16,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function TimelineRoute() {
   const locale = await currentLocale();
+  const fathers = getPublishedFathers(locale);
+  if (fathers.length === 0) notFound();
   const text = getUiText(locale);
   const labels = text.generalTimeline;
-  const timeline = buildGeneralTimeline(getPublishedFathers(locale), locale, text);
+  const timeline = buildGeneralTimeline(fathers, locale, text);
   return (
     <PageMain>
       {/* TODO: «Historia» leads to its index page once it exists */}

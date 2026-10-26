@@ -204,7 +204,10 @@ export function buildSiteTree(
       id: "history",
       label: text.tree.history,
       nodes: [
-        { ...leaf("history/timeline", text.tree.timeline), href: timelineHref(locale), route: timelineRoute(locale) },
+        {
+          ...leaf("history/timeline", text.tree.timeline),
+          ...(publishedFathers.length > 0 ? { href: timelineHref(locale), route: timelineRoute(locale) } : {}),
+        },
         branch(
           "history/fathers",
           text.tree.fathers,
