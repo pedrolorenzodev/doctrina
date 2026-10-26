@@ -1,17 +1,20 @@
 import { createHash } from "node:crypto";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { bibleBooks } from "@/content/bible-books";
 import { bibleVersification, normalizeBibleFile } from "@/content/bible/normalize-bible";
+import { validateFatherFile } from "@/content/father-text/validate-father-file";
 
 const ROOT = resolve(import.meta.dirname, "..", "..");
 const BIBLES = resolve(ROOT, "data", "corpus", "bibles");
+const FATHERS = resolve(ROOT, "data", "corpus", "fathers");
 const EXPORT = resolve(ROOT, "data", "corpus", "export");
 const SOURCES = resolve(ROOT, "data", "sources", "bibles.json");
 const BATCH = 1000;
 
 const args = process.argv.slice(2);
 const load = args.includes("--load");
+const fathers = args.includes("--fathers");
 const only = args.filter((arg) => !arg.startsWith("--"));
 
 function sha256(buffer) {
@@ -151,26 +154,126 @@ async function loadTranslation(client, source, parsed) {
   console.log(`${source.id}: loaded ${after} verses`);
 }
 
-const sources = JSON.parse(readFileSync(SOURCES, "utf8")).filter((source) => only.length === 0 || only.includes(source.id));
-if (sources.length === 0) throw new Error(`no translation matches ${only.join(", ")}`);
+async function runBibles() {
+  const sources = JSON.parse(readFileSync(SOURCES, "utf8")).filter((source) => only.length === 0 || only.includes(source.id));
+  if (sources.length === 0) throw new Error(`no translation matches ${only.join(", ")}`);
 
-const parsed = sources.map((source) => ({ source, ...readTranslation(source) }));
-const errors = parsed.flatMap((entry) => entry.errors);
-for (const entry of parsed) console.log(`${entry.source.id}: ${entry.verses.length} verses, ${entry.books} books, sha256 ${entry.sha256.slice(0, 12)}`);
-if (errors.length > 0) {
-  for (const error of errors.slice(0, 30)) console.error(`FAIL ${error}`);
-  process.exit(1);
+  const parsed = sources.map((source) => ({ source, ...readTranslation(source) }));
+  const errors = parsed.flatMap((entry) => entry.errors);
+  for (const entry of parsed) console.log(`${entry.source.id}: ${entry.verses.length} verses, ${entry.books} books, sha256 ${entry.sha256.slice(0, 12)}`);
+  if (errors.length > 0) {
+    for (const error of errors.slice(0, 30)) console.error(`FAIL ${error}`);
+    process.exit(1);
+  }
+
+  if (!load) {
+    exportCsv(
+      sources.map(translationRow),
+      parsed.flatMap((entry) => entry.chapters),
+      parsed.flatMap((entry) => entry.verses),
+    );
+    console.log(`dry run: CSV written to ${EXPORT}; nothing sent`);
+  } else {
+    const client = credentials();
+    await upsert(client, "books", "id", bookRows);
+    for (const entry of parsed) await loadTranslation(client, entry.source, entry);
+  }
 }
 
-if (!load) {
-  exportCsv(
-    sources.map(translationRow),
-    parsed.flatMap((entry) => entry.chapters),
-    parsed.flatMap((entry) => entry.verses),
-  );
-  console.log(`dry run: CSV written to ${EXPORT}; nothing sent`);
-} else {
+function readFatherFiles() {
+  const files = [];
+  const errors = [];
+  if (!existsSync(FATHERS)) return { files, errors: [`${FATHERS} does not exist`] };
+  for (const work of readdirSync(FATHERS).filter((name) => statSync(resolve(FATHERS, name)).isDirectory())) {
+    if (only.length > 0 && !only.includes(work)) continue;
+    for (const name of readdirSync(resolve(FATHERS, work)).filter((entry) => entry.endsWith(".json"))) {
+      const buffer = readFileSync(resolve(FATHERS, work, name));
+      const file = JSON.parse(buffer.toString("utf8"));
+      errors.push(...validateFatherFile(file, `${work}/${name}`));
+      files.push({ file, label: `${work}/${name}`, sha256: sha256(buffer) });
+    }
+  }
+  return { files, errors };
+}
+
+const workRow = ({ work }) => ({ id: work.id, title: work.title, author: work.author });
+
+const editionRow = ({ work, edition }) => ({
+  work_id: work.id,
+  id: edition.id,
+  language: edition.lang,
+  translator: edition.translator ?? "",
+  year: edition.year ?? "",
+  bibliography: edition.bibliography,
+  source_url: edition.source,
+  scan_url: edition.scan ?? "",
+  licence: edition.licence,
+  retrieved_on: edition.retrievedAt,
+  source_sha256: edition.sha256,
+  locator_notes: edition.locatorNotes ?? "",
+});
+
+const divisionRows = ({ work, edition, divisions }) =>
+  divisions.map((division) => ({
+    work_id: work.id,
+    edition_id: edition.id,
+    locator: division.locator,
+    ordinal: division.ordinal,
+    heading: division.heading ?? "",
+    text: division.text,
+  }));
+
+const nullable = (row) => Object.fromEntries(Object.entries(row).map(([key, value]) => [key, value === "" ? null : value]));
+
+async function loadFatherEdition(client, entry) {
+  const { file, label } = entry;
+  const manifestId = `father:${file.work.id}/${file.edition.id}`;
+  const [previous] = await (await rest(client, `corpus_manifest?id=eq.${encodeURIComponent(manifestId)}&select=sha256`)).json();
+  const where = `work_id=eq.${encodeURIComponent(file.work.id)}&edition_id=eq.${encodeURIComponent(file.edition.id)}`;
+  const loaded = await count(client, `divisions?${where}`);
+  if (previous?.sha256 === entry.sha256 && loaded === file.divisions.length) {
+    console.log(`${label}: unchanged, ${loaded} divisions already loaded`);
+    return;
+  }
+  if (previous && previous.sha256 !== entry.sha256) await rest(client, `divisions?${where}`, { method: "DELETE" });
+  await upsert(client, "works", "id", [workRow(file)]);
+  await upsert(client, "editions", "work_id,id", [nullable(editionRow(file))]);
+  await upsert(client, "divisions", "work_id,edition_id,locator", divisionRows(file).map(nullable));
+  const after = await count(client, `divisions?${where}`);
+  if (after !== file.divisions.length) throw new Error(`${label}: ${after} divisions in the database, expected ${file.divisions.length}`);
+  await upsert(client, "corpus_manifest", "id", [{ id: manifestId, kind: "father", sha256: entry.sha256, row_count: after }]);
+  console.log(`${label}: loaded ${after} divisions`);
+}
+
+async function runFathers() {
+  const { files, errors } = readFatherFiles();
+  for (const entry of files) console.log(`${entry.label}: ${entry.file.divisions.length} divisions, sha256 ${entry.sha256.slice(0, 12)}`);
+  if (files.length === 0) errors.push("no normalized Father files found");
+  if (errors.length > 0) {
+    for (const error of errors.slice(0, 30)) console.error(`FAIL ${error}`);
+    process.exit(1);
+  }
+  if (!load) {
+    mkdirSync(EXPORT, { recursive: true });
+    const works = [...new Map(files.map(({ file }) => [file.work.id, workRow(file)])).values()];
+    writeFileSync(resolve(EXPORT, "works.csv"), toCsv(["id", "title", "author"], works));
+    writeFileSync(
+      resolve(EXPORT, "editions.csv"),
+      toCsv(
+        ["work_id", "id", "language", "translator", "year", "bibliography", "source_url", "scan_url", "licence", "retrieved_on", "source_sha256", "locator_notes"],
+        files.map(({ file }) => editionRow(file)),
+      ),
+    );
+    writeFileSync(
+      resolve(EXPORT, "divisions.csv"),
+      toCsv(["work_id", "edition_id", "locator", "ordinal", "heading", "text"], files.flatMap(({ file }) => divisionRows(file))),
+    );
+    console.log(`dry run: CSV written to ${EXPORT}; nothing sent`);
+    return;
+  }
   const client = credentials();
-  await upsert(client, "books", "id", bookRows);
-  for (const entry of parsed) await loadTranslation(client, entry.source, entry);
+  for (const entry of files) await loadFatherEdition(client, entry);
 }
+
+if (fathers) await runFathers();
+else await runBibles();
