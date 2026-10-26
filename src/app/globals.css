@@ -173,6 +173,8 @@
   --text-reader-note--line-height: 1.55;
   --text-picker-option: 14.5px;
   --text-picker-option--line-height: 1.35;
+  --text-panel-reference: 19px;
+  --text-panel-reference--line-height: 1.25;
   --text-reader-foot: 14px;
   --text-reader-foot--line-height: 1.6;
   --text-reader: 19px;
@@ -198,6 +200,8 @@
   --spacing-sidebar: 272px;
   --spacing-section: 140px;
   --spacing-scroll-offset: 24px;
+  --spacing-reader-strip: 51px;
+  --spacing-reader-arrival: 33px;
   --container-col: 720px;
   --container-wide: 1040px;
   --container-synthesis: 680px;
@@ -257,7 +261,12 @@
   :root {
     --spacing-top: 52px;
     --spacing-section: 96px;
+    --spacing-reader-strip: 43px;
   }
+}
+
+:root:has([data-reader-strip]) {
+  --spacing-scroll-offset: calc(var(--spacing-reader-strip) + var(--spacing-reader-arrival));
 }
 
 @utility texture-page {
@@ -890,6 +899,20 @@
   }
 
   @media (max-width: 63.99rem) {
+    & #content {
+      padding-bottom: calc(var(--spacing-sheet) + 4dvh);
+    }
+  }
+}
+
+@utility side-panel-room-wide {
+  @media (min-width: 80rem) {
+    & #content {
+      padding-right: calc(var(--spacing-panel) + 24px);
+    }
+  }
+
+  @media (max-width: 79.99rem) {
     & #content {
       padding-bottom: calc(var(--spacing-sheet) + 4dvh);
     }
