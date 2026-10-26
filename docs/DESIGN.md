@@ -118,6 +118,8 @@ Scale (desktop → ≤720 px). `font-variation-settings: "opsz" n` as listed; da
 | `--spacing-dt-side` | 250px | 06 side column («Citar», «Dónde se usa»), gap 56, left border `rule`, padding-left 22; ≥ 1100 px |
 | `--spacing-word-card` | 300px | 06 word-by-word card column, gap 40, sticky at top bar + 24 |
 | `--text-reader` (`--rd-fs`) | 17 · 19 · 21 · 23 · 25 · 27 · 29px (default 19) | reader paragraphs; also Latin (size − 2) |
+| `--text-reader-title` · `--text-reader-title-mobile` | 44px / 1.08 · 34px | reader title (`PageHeader size="reader"`) |
+| `--text-division` · `--text-reader-foot-title` | 12px · 22px | division number in the margin · «Edición y licencia» heading |
 | main padding | ≥1100: 34 112 140 64 · ≤1099: 30 104 120 48 · ≤899: 26 32 110 · ≤720: 22 16 96 | right padding leaves room for the edge ruler |
 
 Breakpoints in the proposal (max-width): **1099** sidebar becomes a drawer; **899** right-edge ruler hidden, 02 practice table switches to its phone pattern, switcher hint hidden; **720** phone layout. Build with Tailwind's defaults (`ui.md`), mapped 1099 → `lg` 1024, 899 → `md` 768, 720 → `sm` 640 (agent, 2026-10-21); check each layout switch on screenshots at the new widths.
