@@ -248,6 +248,7 @@ export function ReaderBody({
       place: card.place,
       text: note.text,
       date: card.date,
+      at: note.updatedAt,
       citation: `${note.text} ${citationOf(card.verse, note.verseTo ?? card.verse, abbreviation)}`,
     };
   });
@@ -262,6 +263,7 @@ export function ReaderBody({
         place: nbspBeforeDigits(referenceOf(entry.verse, entry.verse)),
         text: quote,
         date: "",
+        at: entry.at,
         color: entry.color,
         citation: `«${quote}» ${citationOf(entry.verse, entry.verse, selected.abbreviation)}`,
       },
@@ -378,6 +380,8 @@ export function ReaderBody({
         closeLabel={panel.text.close}
         notes={listedNotes}
         highlights={listedHighlights}
+        colorNames={panel.highlight.colors}
+        heading={`${panel.bookName} ${panel.chapter}`}
         onOpenNote={(id) => {
           const note = chapterNotes.find((candidate) => candidate.id === id);
           if (!note || note.verse === null) return;
