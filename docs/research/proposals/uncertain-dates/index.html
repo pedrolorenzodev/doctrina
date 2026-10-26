@@ -1,0 +1,311 @@
+<title>Fechas inciertas de los Padres</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: a case picker drives every frame, so each way of writing an uncertain date is judged on the same Father */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--accent-soft:rgb(44 74 158 / .32);--hover:rgb(28 23 19 / .05);--bar:#a3a09a;
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--accent-soft:rgb(158 179 238 / .35);--hover:rgb(255 255 255 / .05);--bar:#6f6f6b;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--accent-soft:rgb(158 179 238 / .35);--hover:rgb(255 255 255 / .05);--bar:#6f6f6b;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:10px 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:0 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+h3{font-family:var(--head);font-weight:400;font-size:19px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+.say{max-width:640px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.say + .say{margin-top:10px}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 18px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.ctl{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:26px 0 0;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--rule)}
+.ctl label{font-size:13px;color:var(--ink-3);margin-right:8px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;max-width:100%}
+.seg button{font:500 13.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.seg button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.frame{border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);padding:24px 28px 26px;margin-top:6px;max-width:100%}
+.frame.phone{max-width:390px;padding:20px 16px 22px}
+.frame + .frame{margin-top:14px}
+.tag{display:block;font-size:12.5px;color:var(--ink-3);margin-bottom:14px}
+.nm{font-family:var(--head);font-weight:300;font-size:38px;line-height:1.1;font-variation-settings:"opsz" 60;margin-bottom:18px}
+.phone .nm{font-size:30px}
+.facts{display:flex;flex-wrap:wrap;gap:14px 34px}
+.fact{min-width:0}
+.fact .k{display:block;font-size:12.5px;color:var(--ink-3)}
+.fact .v{display:block;font-family:var(--body);font-weight:500;font-size:17px;line-height:1.4}
+.fact .s{display:block;font-size:12.5px;line-height:1.4;color:var(--ink-3);margin-top:1px;max-width:190px}
+.fact.long .v{max-width:260px}
+.lnk{display:inline-block;margin-top:14px;font-size:14px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:3px}
+.chart{position:relative;margin-top:6px}
+.axis{position:relative;height:30px;border-top:1px solid var(--rule-2);margin-top:20px}
+.axis span{position:absolute;top:6px;transform:translateX(-50%);font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.axis i{position:absolute;top:-5px;width:1px;height:5px;background:var(--rule-2)}
+.row{position:relative;height:54px}
+.row .lab{position:absolute;top:0;font-size:13.5px;line-height:1.3;white-space:nowrap}
+.row .lab.right{transform:translateX(-100%)}
+.row .lab b{font-weight:500}
+.mk{position:absolute;top:24px;height:5px;border-radius:2px}
+.solid{background:var(--accent)}
+.ref .solid{background:var(--bar)}
+.dash{height:0;border-top:3px dashed var(--accent);border-radius:0}
+.ref .dash{border-color:var(--bar)}
+.dots{height:0;border-top:3px dotted var(--accent);border-radius:0}
+.band{background:var(--accent-soft)}
+.hollow{background:none;border:1.5px solid var(--accent);height:9px;top:22px;border-radius:2px}
+.fade-r{background:linear-gradient(90deg,var(--accent),transparent)}
+.fade-l{background:linear-gradient(270deg,var(--accent),transparent)}
+.whisk{position:absolute;top:17px;height:0;border-top:1.5px solid var(--ink-3)}
+.whisk::before,.whisk::after{content:"";position:absolute;top:-5px;width:1.5px;height:9px;background:var(--ink-3)}
+.whisk::before{left:0}.whisk::after{right:0}
+.ring{position:absolute;top:21px;width:9px;height:9px;border:1.5px solid var(--accent);border-radius:50%;background:var(--bg);transform:translateX(-50%)}
+.leg{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:10px;font-size:12.5px;color:var(--ink-3)}
+.leg span{display:inline-flex;align-items:center;gap:8px}
+.leg i{display:inline-block;width:26px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:20px}
+.cols ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55}
+.decide{margin-top:12px;padding:0;list-style:none;max-width:680px}
+.decide li{padding:14px 0;border-top:1px solid var(--rule);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.decide li b{font-weight:500;color:var(--ink)}
+.tbl{border-collapse:collapse;width:100%;font-size:14.5px;margin-top:16px}
+.tbl th,.tbl td{text-align:left;padding:9px 12px 9px 0;border-top:1px solid var(--rule);vertical-align:top}
+.tbl th{font-weight:500}
+.tbl td{color:var(--ink-2)}
+.tbl-wrap{overflow-x:auto}
+</style>
+
+<div class="wrap">
+<p class="small">Propuesta para Pedro, a partir de la verificación de las fechas de los Padres</p>
+<h1>Fechas inciertas de los Padres</h1>
+<p class="lede">La verificación de las fechas de los 56 Padres encontró que el sitio muestra como exactas fechas que no lo son: un nacimiento sin fuente, una muerte que en realidad es «vivía todavía en 394», una obra con una sola cifra cuando los estudiosos dan un tramo. Un spot-check independiente confirmó la dirección de esos cambios.</p>
+<p class="lede">Antes de corregir los datos hay que decidir cómo se escribe cada tipo de incertidumbre, en el encabezado y en la línea. Abajo, seis casos reales del informe; elegí uno arriba y todo cambia con él. Más noticeable no debe leerse como más seguro.</p>
+
+<div class="ctl">
+  <div><label>Caso</label><span class="seg" id="seg-case"></span></div>
+  <div><label>Pantalla</label><span class="seg" id="seg-dev"><button type="button" data-v="desk" aria-pressed="true">Escritorio</button><button type="button" data-v="phone" aria-pressed="false">Teléfono</button></span></div>
+</div>
+
+<section class="opt" id="hoy">
+  <h2>Hoy</h2>
+  <p class="say" id="hoy-say"></p>
+  <div class="frame" data-frame id="f-hoy"></div>
+</section>
+
+<section class="opt" id="h">
+  <h2>Encabezado</h2>
+  <p class="say">Cómo se escriben «Nació» y «Murió» (o «Activo», o «Compuesta» en una obra). Las tres versiones usan las mismas etiquetas y tipografía de hoy.</p>
+  <div class="opt" style="margin-top:34px;padding-top:20px"><h3>H1. Palabras en el valor</h3>
+    <p class="say">La incertidumbre se escribe dentro del propio valor: «entre c. 310 y 320», «367 o 368», «se desconoce; vivía en 394». No agrega elementos. Los valores largos se envuelven en dos o tres líneas.</p>
+    <div class="frame" data-frame id="f-h1"></div></div>
+  <div class="opt" style="margin-top:34px;padding-top:20px"><h3>H2. Valor corto y una línea de estado debajo</h3>
+    <p class="say">El valor queda corto y debajo va una palabra de estado en gris: «atestiguada», «estimada», «discutida», «año exacto desconocido». El lector ve primero el número y después cuánto confiar en él.</p>
+    <div class="frame" data-frame id="f-h2"></div></div>
+  <div class="opt" style="margin-top:34px;padding-top:20px"><h3>H3. Una sola ficha «Vida», con su razón</h3>
+    <p class="say">Nacimiento y muerte se juntan en una ficha («c. 335, después de 394») y un enlace lleva a «Fechas y autenticidad», donde está la discusión. Ahorra espacio. Pierde las etiquetas separadas que Pedro pidió el 15/10 («Nació c. …», «Murió …»).</p>
+    <div class="frame" data-frame id="f-h3"></div></div>
+</section>
+
+<section class="opt" id="l">
+  <h2>Línea</h2>
+  <p class="say">Cómo se dibuja la misma persona en la línea de tiempo (08 y 09). Abajo, en gris, una persona con fechas exactas (Agustín) para ver el contraste. Hoy el sitio usa raya para «nacimiento estimado» y puntos para «nacimiento desconocido».</p>
+  <div class="opt" style="margin-top:34px;padding-top:20px"><h3>L1. Raya y puntos, también al final</h3>
+    <p class="say">Sigue la gramática que ya existe: trazo lleno donde la fecha es atestiguada, raya donde es estimada, puntos donde se desconoce. Se aplica a los dos extremos. Una actividad sin extremos (Afraates) es una banda suave, y una obra con composición en un tramo es una banda hueca.</p>
+    <div class="frame" data-frame id="f-l1"></div></div>
+  <div class="opt" style="margin-top:34px;padding-top:20px"><h3>L2. Degradado en el extremo dudoso</h3>
+    <p class="say">El extremo incierto se desvanece. Lee a primera vista como «no se sabe dónde termina», sin leyenda. Pierde la lectura exacta de dónde empieza lo dudoso, no se ve bien en impresión ni en modo de alto contraste y el degradado de color no es accesible por sí solo.</p>
+    <div class="frame" data-frame id="f-l2"></div></div>
+  <div class="opt" style="margin-top:34px;padding-top:20px"><h3>L3. Barra con rango, como barra de error</h3>
+    <p class="say">La barra va hasta la mejor estimación y una línea fina con topes muestra el rango en que cae el extremo. Es lo más preciso. También es lo más técnico, y con dos extremos inciertos la línea se llena de topes.</p>
+    <div class="frame" data-frame id="f-l3"></div></div>
+</section>
+
+<section class="opt" id="rec">
+  <h2>Lo que recomiendo</h2>
+  <p class="say">H2 y L1. H2 deja ver el número y su estado sin cambiar la estructura que Pedro aprobó; L1 sigue el trazo que ya existe en la línea y no inventa uno nuevo. H1 es la alternativa más simple si H2 se siente pesado.</p>
+  <p class="say">Para las obras, el encabezado dice «Compuesta» con el tramo («segunda mitad del siglo I a primera mitad del siglo II», como lo dice la Cambridge Edition of Early Christian Writings) y no muestra «Murió».</p>
+  <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Estado</th><th>Cómo se escribe</th><th>Línea</th></tr></thead><tbody>
+    <tr><td>Atestiguada</td><td>«13 nov 354» o «354», sin «c.»</td><td>trazo lleno</td></tr>
+    <tr><td>Estimada</td><td>«c. 335»</td><td>raya</td></tr>
+    <tr><td>Discutida entre pocas fechas</td><td>«367 o 368»</td><td>trazo lleno hasta la primera, raya hasta la segunda</td></tr>
+    <tr><td>Discutida en un tramo</td><td>«344–354»</td><td>raya sobre el tramo</td></tr>
+    <tr><td>Se sabe que vivía en un año</td><td>«después de 394»</td><td>trazo lleno hasta 394, después puntos</td></tr>
+    <tr><td>Solo se sabe cuándo actuó</td><td>«Activo 337–345»</td><td>banda suave sin extremos</td></tr>
+    <tr><td>Obra: tramo de composición</td><td>«Compuesta …»</td><td>banda hueca</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="opt" id="descarte">
+  <h2>Qué descarté</h2>
+  <div class="cols">
+    <div><h3>Un signo de pregunta («395?»)</h3><ul><li>Se lee como una fecha que el sitio sostiene con duda, no como una fecha que la fuente no da.</li></ul></div>
+    <div><h3>«c.» en todo</h3><ul><li>Hoy mezcla estimaciones con fechas atestiguadas (Policarpo 155 con «c.» y Agustín sin él). Con tres estados, «c.» queda solo para estimadas.</li></ul></div>
+    <div><h3>Ocultar la fecha dudosa</h3><ul><li>Esconde lo que el lector más busca; Pedro pidió el 06/10 mostrar lo desconocido como desconocido.</li></ul></div>
+    <div><h3>Un color por estado</h3><ul><li>Suma acentos; el estado se distingue por trazo y por palabra.</li></ul></div>
+  </div>
+</section>
+
+<section class="opt" id="decidir">
+  <h2>Qué hay que decidir</h2>
+  <ol class="decide">
+    <li><b>Encabezado:</b> H1, H2 o H3.</li>
+    <li><b>Línea:</b> L1, L2 o L3.</li>
+    <li><b>Las palabras de estado:</b> «atestiguada», «estimada», «discutida». Son mías; deben decir de dónde viene la fecha sin concluir nada.</li>
+    <li><b>Cuándo hay un enlace a «Fechas y autenticidad»:</b> en toda fecha estimada o discutida, o solo en las que ya tienen esa sección.</li>
+  </ol>
+</section>
+</div>
+
+<script>
+/* real cases from docs/research/neutral/fathers-verification.md (Codex) and data/raw/history.json (site today) */
+const CASES = [
+  {id:"nyssa", name:"Gregorio de Nisa", t0:320, t1:420, step:20,
+   today:{born:"c. 335", died:"c. 395", note:"Hoy la muerte figura como 395."},
+   h1:[["Nació","c. 335"],["Murió","se desconoce; vivía en 394",1],["Obispo de","Nisa"],["Escribió en","griego"]],
+   h2:[["Nació","c. 335","estimada"],["Murió","después de 394","año exacto desconocido"],["Obispo de","Nisa"],["Escribió en","griego"]],
+   h3:["Vida","c. 335, después de 394","Se desconoce el año de su muerte"],
+   line:{kind:"person", start:{y:335,s:"est"}, end:{y:394,s:"after"}, label:"Gregorio de Nisa, c. 335, vivía en 394"}},
+  {id:"hilary", name:"Hilario de Poitiers", t0:300, t1:380, step:10,
+   today:{born:"c. 310", died:"c. 367", note:"Hoy: nacimiento c. 310 y muerte c. 367."},
+   h1:[["Nació","entre c. 310 y 320",1],["Murió","367 o 368"],["Obispo de","Poitiers"],["Escribió en","latín"]],
+   h2:[["Nació","c. 310–320","estimada"],["Murió","367 o 368","discutida"],["Obispo de","Poitiers"],["Escribió en","latín"]],
+   h3:["Vida","c. 310–320, 367 o 368","Ambos extremos son estimaciones"],
+   line:{kind:"person", start:{y:310,y2:320,s:"est"}, end:{y:367,y2:368,s:"disp"}, label:"Hilario de Poitiers, c. 310–367 o 368"}},
+  {id:"aphrahat", name:"Afraates", t0:320, t1:360, step:10,
+   today:{born:"c. 270", died:"c. 345", note:"Hoy se muestran nacimiento c. 270 y muerte c. 345, que ninguna fuente da."},
+   h1:[["Activo","337–345"],["Escribió en","siríaco"]],
+   h2:[["Activo","337–345","atestiguada por sus obras fechadas"],["Escribió en","siríaco"]],
+   h3:["Vida","Se desconocen nacimiento y muerte","Activo entre 337 y 345"],
+   line:{kind:"floruit", start:{y:337}, end:{y:345}, label:"Afraates, activo 337–345"}},
+  {id:"chrysostom", name:"Juan Crisóstomo", t0:340, t1:415, step:10,
+   today:{born:"347", died:"407", note:"Hoy el nacimiento figura como 347, sin matiz."},
+   h1:[["Nació","entre 344 y 354 (se discute)",1],["Murió","14 sep 407"],["Obispo de","Constantinopla"],["Escribió en","griego"]],
+   h2:[["Nació","344–354","discutida"],["Murió","14 sep 407","atestiguada"],["Obispo de","Constantinopla"],["Escribió en","griego"]],
+   h3:["Vida","344–354, 407","Su año de nacimiento se discute"],
+   line:{kind:"person", start:{y:344,y2:354,s:"disp"}, end:{y:407,s:"att"}, label:"Juan Crisóstomo, 344–354 a 407"}},
+  {id:"didache", name:"Didajé", t0:30, t1:180, step:30,
+   today:{born:"", died:"c. 100", note:"Hoy una obra figura con una muerte, c. 100."},
+   h1:[["Compuesta","segunda mitad del siglo I a primera mitad del siglo II",1],["Escrita en","griego"]],
+   h2:[["Compuesta","c. 50–150","discutida"],["Escrita en","griego"]],
+   h3:["Obra","Compuesta entre c. 50 y 150","Su fecha y su composición por capas se discuten"],
+   line:{kind:"work", start:{y:50}, end:{y:150}, label:"Didajé, compuesta c. 50–150"}},
+  {id:"augustine", name:"Agustín de Hipona", t0:340, t1:440, step:20,
+   today:{born:"354", died:"430", note:"Hoy ya figura exacta; es el caso que no debe cambiar."},
+   h1:[["Nació","13 nov 354"],["Murió","28 ago 430"],["Obispo de","Hipona"],["Escribió en","latín"]],
+   h2:[["Nació","13 nov 354","atestiguada"],["Murió","28 ago 430","atestiguada"],["Obispo de","Hipona"],["Escribió en","latín"]],
+   h3:["Vida","13 nov 354 – 28 ago 430","Fechas atestiguadas"],
+   line:{kind:"person", start:{y:354,s:"att"}, end:{y:430,s:"att"}, label:"Agustín de Hipona, 354–430"}}
+];
+const REF = {y0:354,y1:430,label:"Agustín de Hipona, 354–430"};
+const state = {id:"nyssa", phone:false};
+const $ = (s,r=document)=>r.querySelector(s);
+const cur = ()=>CASES.find(c=>c.id===state.id);
+const esc = (t)=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+function facts(rows, withSub){
+  return '<div class="facts">'+rows.map(r=>'<div class="fact'+(r[2]===1?" long":"")+'"><span class="k">'+esc(r[0])+'</span><span class="v">'+esc(r[1])+'</span>'+(withSub&&r[2]&&r[2]!==1?'<span class="s">'+esc(r[2])+'</span>':"")+'</div>').join("")+'</div>';
+}
+function head(c){return '<div class="nm">'+esc(c.name)+'</div>'}
+function pos(c,y,w){return ((y-c.t0)/(c.t1-c.t0)*100)}
+function axis(c){
+  let h='<div class="axis">';
+  for(let y=Math.ceil(c.t0/c.step)*c.step;y<=c.t1;y+=c.step) h+='<i style="left:'+pos(c,y)+'%"></i><span style="left:'+pos(c,y)+'%">'+y+'</span>';
+  return h+'</div>';
+}
+function seg(c,a,b,cls,extra){
+  return '<span class="mk '+cls+'" style="left:'+pos(c,a)+'%;width:'+(pos(c,b)-pos(c,a))+'%'+(extra||"")+'"></span>';
+}
+function drawRow(c,style,ref){
+  const L=c.line; let h='<div class="row'+(ref?" ref":"")+'">';
+  const mid=(pos(c,L.start.y)+pos(c,L.end.y))/2;
+  const lab=ref?REF.label:L.label;
+  if(ref){
+    h+='<span class="lab" style="left:'+pos(c,REF.y0)+'%"><b>'+lab+'</b></span>'+seg(c,REF.y0,REF.y1,"solid");
+    return h+'</div>';
+  }
+  h+='<span class="lab" style="left:'+Math.max(0,Math.min(60,pos(c,L.start.y)))+'%"><b style="color:var(--accent)">'+lab+'</b></span>';
+  if(L.kind==="floruit"){
+    h+= style==="l3" ? seg(c,L.start.y,L.end.y,"band") : seg(c,L.start.y,L.end.y,"band");
+  } else if(L.kind==="work"){
+    h+= seg(c,L.start.y,L.end.y,"hollow");
+  } else {
+    const s=L.start,e=L.end;
+    const sA=s.y, sB=s.y2||s.y, eA=e.y, eB=e.y2||e.y;
+    if(style==="l1"){
+      if(s.s==="est"||s.s==="disp"){ if(s.y2) h+=seg(c,sA,sB,"dash"); else h+=seg(c,sA-8,sA,"dash"); }
+      const a=s.y2?sB:sA, b=e.y;
+      h+=seg(c,a,b,"solid");
+      if(e.s==="after") h+=seg(c,e.y,e.y+10,"dots");
+      if(e.y2) h+=seg(c,e.y,e.y2,"dash");
+      if(e.y2){h+='<span class="ring" style="left:'+pos(c,e.y2)+'%"></span>'}
+    }
+    if(style==="l2"){
+      const a=s.y2?sB:sA;
+      h+=seg(c,a,e.y,"solid");
+      if(s.s==="est"||s.s==="disp") h+=seg(c,(s.y2?sA:sA-8),(s.y2?sB:sA),"mk fade-l");
+      if(e.s==="after") h+=seg(c,e.y,e.y+14,"mk fade-r");
+      if(e.y2) h+=seg(c,e.y,e.y2,"mk fade-r");
+    }
+    if(style==="l3"){
+      const a=s.y2?(sA+sB)/2:sA, b=e.y2?(eA+eB)/2:e.y;
+      h+=seg(c,a,b,"solid");
+      if(s.y2) h+=seg(c,sA,sB,"whisk");
+      else if(s.s==="est"||s.s==="disp") h+=seg(c,sA-8,sA+8,"whisk");
+      if(e.y2) h+=seg(c,eA,eB,"whisk");
+      else if(e.s==="after") h+=seg(c,e.y,e.y+14,"whisk");
+    }
+  }
+  return h+'</div>';
+}
+function legend(style,c){
+  const k=c.line.kind;
+  const sw=(cls,t)=>'<span><i class="mk '+cls+'" style="position:static;display:inline-block;height:'+(cls==="dash"||cls==="dots"?0:5)+'px"></i>'+t+'</span>';
+  if(k==="floruit") return '<div class="leg">'+sw("band","Activo entre dos años (no se conoce la vida)")+'</div>';
+  if(k==="work") return '<div class="leg">'+sw("hollow","Tramo en que se compuso")+'</div>';
+  if(style==="l1") return '<div class="leg">'+sw("solid","Fecha atestiguada")+sw("dash","Estimada o discutida")+sw("dots","Se sabe que vivía; no cuándo murió")+'</div>';
+  if(style==="l2") return '<div class="leg">'+sw("solid","Fecha atestiguada")+sw("fade-r","Extremo incierto")+'</div>';
+  return '<div class="leg">'+sw("solid","Mejor estimación")+sw("whisk","Rango en que cae el extremo")+'</div>';
+}
+function lineFrame(style){
+  const c=cur();
+  const showRef = c.id!=="augustine" && c.line.kind==="person";
+  const refc = {t0:c.t0,t1:c.t1,step:c.step};
+  let ref="";
+  if(showRef && REF.y0>=c.t0-60 && REF.y1<=c.t1+60){
+    ref = (REF.y1<=c.t1 && REF.y0>=c.t0) ? drawRow(c,"l1",true) : "";
+  }
+  return '<span class="tag">'+esc(c.name)+'</span><div class="chart">'+drawRow(c,style)+ref+axis(c)+'</div>'+legend(style,c);
+}
+function render(){
+  const c=cur();
+  document.querySelectorAll("[data-frame]").forEach(f=>f.classList.toggle("phone",state.phone));
+  $("#hoy-say").textContent = c.today.note+" "+(c.id==="augustine"?"":"La verificación dice otra cosa; el detalle está en cada propuesta.");
+  const hoyRows=[["Nació",c.today.born||"—"],["Murió",c.today.died]];
+  $("#f-hoy").innerHTML='<span class="tag">Hoy</span>'+head(c)+(c.id==="didache"?facts([["Murió",c.today.died]]):facts(hoyRows));
+  $("#f-h1").innerHTML='<span class="tag">H1</span>'+head(c)+facts(c.h1,false);
+  $("#f-h2").innerHTML='<span class="tag">H2</span>'+head(c)+facts(c.h2,true);
+  $("#f-h3").innerHTML='<span class="tag">H3</span>'+head(c)+'<div class="facts"><div class="fact long"><span class="k">'+esc(c.h3[0])+'</span><span class="v">'+esc(c.h3[1])+'</span><span class="s">'+esc(c.h3[2])+'</span></div>'+(c.h1.slice(2).map(r=>'<div class="fact"><span class="k">'+esc(r[0])+'</span><span class="v">'+esc(r[1])+'</span></div>').join(""))+'</div><a class="lnk" href="#h">Ver cómo se sabe esto, en Fechas y autenticidad</a>';
+  $("#f-l1").innerHTML=lineFrame("l1");
+  $("#f-l2").innerHTML=lineFrame("l2");
+  $("#f-l3").innerHTML=lineFrame("l3");
+}
+const sc=$("#seg-case");
+sc.innerHTML=CASES.map(c=>'<button type="button" data-v="'+c.id+'" aria-pressed="'+(c.id===state.id)+'">'+c.name+'</button>').join("");
+sc.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;sc.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state.id=b.dataset.v;render()});
+$("#seg-dev").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;$("#seg-dev").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state.phone=b.dataset.v==="phone";render()});
+render();
+</script>
