@@ -124,12 +124,15 @@ test.describe("toolbar", () => {
     await select(page, [53, 0], [53, 40]);
     await page.locator(dot("celeste")).click();
     await select(page, [54, 0], [54, 20]);
+    await expect(page.locator(toolbar)).toBeVisible();
     await page.keyboard.press("s");
     await expect(page.locator(marks(54))).toHaveAttribute("data-highlight", "sky");
     await select(page, [54, 0], [54, 20]);
+    await expect(page.locator(toolbar)).toBeVisible();
     await page.keyboard.press("s");
     await expect(page.locator(marks(54))).toHaveCount(0);
     await select(page, [55, 0], [55, 20]);
+    await expect(page.locator(toolbar)).toBeVisible();
     await page.keyboard.press("c");
     await expect(page.locator(toolbar).getByRole("button", { name: "Cita copiada" })).toBeVisible();
     expect(await page.evaluate(() => navigator.clipboard.readText())).toContain("Juan 6:55");

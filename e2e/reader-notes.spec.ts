@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 import { horizontalOverflow } from "./helpers";
 
 const john = "/es/biblia/juan/6";
-const panel = "aside[data-side-panel]";
+const panel = 'aside[data-side-panel][aria-label="Detalle del versículo"]';
 const verseButton = (n: number) => `#v-${n} [role=button]`;
 const field = `${panel} textarea[aria-label="Tu nota"]`;
 const mark = (n: number) => `#v-${n} button:has-text("nota")`;
@@ -81,6 +81,7 @@ test("the note is still there after a reload; the mark opens the panel with it, 
   await page.goto(john);
   await writeNote(page, 53, "Primera versión.");
   await page.reload();
+  await page.setViewportSize({ width: 1300, height: 900 });
   await expect(page.locator(mark(53))).toHaveText("1 nota");
   await page.locator(mark(53)).click();
   await expect(page.locator(panel)).toHaveAttribute("data-open", "true");
@@ -96,8 +97,7 @@ test("the note is still there after a reload; the mark opens the panel with it, 
   );
 });
 
-// TODO: fails in R7a: one of the two «the editor closes» steps (Esc on a reopened note, or Ctrl+Enter) leaves the textarea in the DOM; run it with a trace to see which
-test.fixme("emptying a note removes it with an undo; Esc closes the editor before the panel; ⌘/Ctrl+Enter saves and closes", async ({
+test("emptying a note removes it with an undo; Esc closes the editor before the panel; ⌘/Ctrl+Enter saves and closes", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });

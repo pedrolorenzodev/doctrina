@@ -26,13 +26,13 @@ export function useChapterNotes({ translationId, book, chapter, removedMessage, 
       if (text.trim() === "") return;
       const id = crypto.randomUUID();
       setNotes([...list, createNote(editing.draft, { ...key, translationId }, text, now, id)]);
-      setEditing({ ...editing, noteId: id });
+      setEditing((current) => (current?.session === editing.session ? { ...current, noteId: id } : current));
       return;
     }
     if (text.trim() === "") {
       setNotes(removeNote(list, editing.noteId));
       showUndo(removedMessage, () => setNotes(list));
-      setEditing({ ...editing, noteId: null });
+      setEditing((current) => (current?.session === editing.session ? { ...current, noteId: null } : current));
       return;
     }
     setNotes(saveNoteText(list, editing.noteId, text, now));
