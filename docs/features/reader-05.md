@@ -104,3 +104,6 @@ No desktop sidebar toggle; the book menu hangs on a phone too; the strip remount
 ### Lessons of this session (also in `docs/playbooks/agent-ops.md`)
 The weekly went 72 → 74 % over seven blocks (Sonnet 5.5 high, no subagent): about a third of a point per block. A Playwright suite is 7–8 minutes and the machine slows it (load 20–30 from GitKraken and Codex); run it once per block, in the background, and wait with a Monitor. Never chain `sleep`; `timeout` does not exist on this Mac.
 
+
+## Fourth session, afternoon 2026-10-26 (Claude weekly 75 %, Pedro's ceiling 76 %; blocks 130 and up)
+The commit kit had been applied as `apply.sh $(seq 107 129)`: block 117 does not exist, so the script stopped after 116 and the older snapshots of 107–116 overwrote newer files (strings, `reader-body`), which is why `npm run build` and CI failed. The working tree was restored by copying the files of blocks 118–129 in order (no git command); applying `bash ~/doctrina-commit-kit/apply.sh 118 119 120 121 122 123 124 125 126 127 128 129` makes the same files and commits them. Done: the «1 nota» gutter, «Tus notas» filters and Markdown download (DECISIONS «“Tus notas” filters and download…»); 14 specs of `reader-your-notes` pass. Still open: the sliding tab indicator, the whole-source note and «Sin ubicar», R8, the right-click specs and one full suite.
