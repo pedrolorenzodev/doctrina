@@ -135,3 +135,96 @@ test("on a phone the button leaves the strip and sits under the title; the list 
   await expect(page.locator(yourPanel)).toHaveAttribute("data-open", "true");
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 });
+
+const search = (page: Page) => page.locator(`${yourPanel} input[aria-label="Buscar en tus notas"]`);
+
+test("the search field filters notes ignoring case and accents, marks the match and counts them", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await search(page).fill("PADRÉ");
+  const rows = page.locator(`${yourPanel} li button`);
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first()).toContainText("Juan 6:57");
+  await expect(rows.first().locator("mark")).toHaveText("Padre");
+  await expect(page.locator(`${yourPanel} p[role=status]`)).toHaveText("1 de 2 notas");
+});
+
+test("«/» focuses the field, Esc clears it first and only then closes the panel", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await expect(page.locator(yourPanel)).toHaveAttribute("data-open", "true");
+  await page.locator(yourPanel).getByRole("button", { name: "Cerrar" }).focus();
+  await page.keyboard.press("/");
+  await expect(search(page)).toBeFocused();
+  await page.keyboard.type("pan");
+  await page.keyboard.press("Escape");
+  await expect(search(page)).toHaveValue("");
+  await expect(page.locator(yourPanel)).toHaveAttribute("data-open", "true");
+  await page.keyboard.press("Escape");
+  await expect(page.locator(yourPanel)).toHaveAttribute("data-open", "false");
+});
+
+test("a search with no match says so and «Quitar filtros» brings the list back", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await search(page).fill("zzz");
+  await expect(page.locator(yourPanel)).toContainText("Ninguna nota dice «zzz».");
+  await expect(page.locator(`${yourPanel} li`)).toHaveCount(0);
+  await page.locator(yourPanel).getByRole("button", { name: "Quitar filtros" }).click();
+  await expect(search(page)).toHaveValue("");
+  await expect(page.locator(`${yourPanel} li button`)).toHaveCount(2);
+});
+
+test("«Ordenar» puts the most recent note first", async ({ page }) => {
+  await page.addInitScript(
+    (saved) => {
+      localStorage.setItem("doctrina-notes", JSON.stringify(saved));
+    },
+    [
+      { ...notes[1], updatedAt: 1700000000000 },
+      { ...notes[0], updatedAt: 1800000000000 },
+    ],
+  );
+  await openChapter(page, 1440, false);
+  await yourButton(page).click();
+  const rows = page.locator(`${yourPanel} li button`);
+  await expect(rows.nth(0)).toContainText("Juan 6:53");
+  await page.locator(yourPanel).getByLabel("Ordenar").selectOption("recent");
+  await expect(rows.nth(0)).toContainText("Juan 6:57");
+});
+
+test("in «Subrayados», «Mostrar» keeps one colour and the status counts them", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await page
+    .locator(yourPanel)
+    .getByRole("button", { name: /Subrayados/ })
+    .click();
+  await page.locator(yourPanel).getByLabel("Mostrar").selectOption("sky");
+  const rows = page.locator(`${yourPanel} li button`);
+  await expect(rows).toHaveCount(1);
+  await expect(rows.first()).toContainText("Juan 6:54");
+  await expect(page.locator(`${yourPanel} p[role=status]`)).toHaveText("1 de 2 subrayados");
+});
+
+test("the filters fit a phone and the field is 44 px high on touch", async ({ page }) => {
+  await openChapter(page, 390);
+  await page.locator("main [data-your-notes]:visible").first().click();
+  await expect(page.locator(yourPanel)).toHaveAttribute("data-open", "true");
+  await expect(search(page)).toBeVisible();
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+});
+
+test("«Descargar en Markdown» saves the notes of the chapter as a .md file", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  const download = page.waitForEvent("download");
+  await page.locator(yourPanel).getByRole("button", { name: "Descargar en Markdown (.md)" }).click();
+  const file = await download;
+  expect(file.suggestedFilename()).toBe("juan-6-notas.md");
+  const path = await file.path();
+  const { readFileSync } = await import("node:fs");
+  expect(readFileSync(path, "utf8")).toBe(
+    "# Tus notas, Juan 6\n\n## Juan 6:53\n\nEl discurso del pan de vida.\n\n14 nov 2023\n\n## Juan 6:57\n\nSobre el Padre viviente.\n\n14 nov 2023\n",
+  );
+});
