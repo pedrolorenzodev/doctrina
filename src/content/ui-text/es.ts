@@ -288,6 +288,8 @@ export const es = {
       "public-domain": "Dominio público",
     },
     fatherWork: {
+      previous: "Obra anterior",
+      next: "Obra siguiente",
       editionEn: "Texto en inglés. Traducción de {translator}, {year}.",
       editionEs: "Texto en español. Traducción de {translator}, {year}.",
       prologue: "Prólogo",

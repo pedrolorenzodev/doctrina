@@ -45,3 +45,15 @@ export function worksByFather(workIds: string[], locale: Locale): Record<string,
   }
   return grouped;
 }
+
+export function neighborsOfWork(
+  id: string,
+  workIds: string[],
+  locale: Locale,
+): { previous: FatherWorkRow | null; next: FatherWorkRow | null } {
+  const link = workLinks[id];
+  if (!link) return { previous: null, next: null };
+  const siblings = worksByFather(workIds, locale)[link.fatherId] ?? [];
+  const index = siblings.findIndex((work) => work.id === id);
+  return { previous: siblings[index - 1] ?? null, next: siblings[index + 1] ?? null };
+}

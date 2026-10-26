@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHeader } from "@/components/page-header";
+import { NeighborLinks } from "@/components/neighbor-links";
 import { PageMain } from "@/components/page-main";
+import { neighborsOfWork } from "@/content/father-work-links";
 import { getFatherWork, getFatherWorks } from "@/content/get-father-works";
+import { fatherWorkHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { FatherStrip } from "@/features/reader/father-strip";
@@ -34,6 +37,13 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
   const editionLine = (work.edition.lang === "en" ? labels.fatherWork.editionEn : labels.fatherWork.editionEs)
     .replace("{translator}", work.edition.translator)
     .replace("{year}", String(work.edition.year));
+  const { previous, next } = neighborsOfWork(
+    work.id,
+    (await getFatherWorks()).map((entry) => entry.id),
+    locale,
+  );
+  const neighbor = (label: string, other: typeof previous) =>
+    other ? { label, title: other.label, href: fatherWorkHref(locale, other.id) } : null;
   return (
     <PageMain wideGutter>
       <ReaderSizeScript />
@@ -60,6 +70,12 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         title={labels.foot.title}
         edition={work.edition.bibliography}
         licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
+      />
+      <NeighborLinks
+        label={labels.neighborsLabel}
+        className="mt-16"
+        previous={neighbor(labels.fatherWork.previous, previous)}
+        next={neighbor(labels.fatherWork.next, next)}
       />
     </PageMain>
   );
