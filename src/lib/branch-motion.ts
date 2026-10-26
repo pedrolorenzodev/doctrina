@@ -22,9 +22,28 @@ function settleDescendants(list: HTMLElement) {
   }
 }
 
+function boxOf(list: HTMLElement) {
+  const style = getComputedStyle(list);
+  return {
+    height: `${list.offsetHeight}px`,
+    paddingTop: style.paddingTop,
+    paddingBottom: style.paddingBottom,
+    borderTopWidth: style.borderTopWidth,
+    borderBottomWidth: style.borderBottomWidth,
+  };
+}
+
+const flat = {
+  height: "0px",
+  paddingTop: "0px",
+  paddingBottom: "0px",
+  borderTopWidth: "0px",
+  borderBottomWidth: "0px",
+};
+
 export function setBranch(list: HTMLElement, open: boolean, animate: boolean) {
   const wasHidden = list.hidden;
-  const fromHeight = wasHidden ? 0 : list.getBoundingClientRect().height;
+  const from = wasHidden ? flat : boxOf(list);
   cancelTreeAnimations(list);
   settleDescendants(list);
   list.dataset.open = String(open);
@@ -48,7 +67,7 @@ export function setBranch(list: HTMLElement, open: boolean, animate: boolean) {
       });
     }
     list
-      .animate([{ height: `${fromHeight}px` }, { height: `${list.scrollHeight}px` }], {
+      .animate([from, boxOf(list)], {
         duration: enter.heightMs,
         easing: easeReveal,
         id: animationId,
@@ -72,7 +91,7 @@ export function setBranch(list: HTMLElement, open: boolean, animate: boolean) {
     });
   }
   list
-    .animate([{ height: `${fromHeight}px` }, { height: "0px" }], {
+    .animate([from, flat], {
       duration: exit.heightMs,
       easing: easeMove,
       fill: "forwards",
