@@ -145,6 +145,7 @@ export function flipList(list: HTMLElement, ghosts: HTMLElement, mutate: () => v
       width: `${box.width}px`,
       height: `${box.height}px`,
       margin: "0",
+      listStyle: "none",
     });
     ghosts.append(ghost);
     ghost

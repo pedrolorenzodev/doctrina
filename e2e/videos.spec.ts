@@ -144,3 +144,22 @@ test("under reduced motion nothing is armed", async ({ browser }) => {
   expect(await page.evaluate(() => document.querySelectorAll("#videos [data-rv]").length)).toBe(0);
   await context.close();
 });
+
+test("a row that leaves as a ghost carries no list marker", async ({ page }) => {
+  await page.goto(traditionPath);
+  await page.evaluate(() => {
+    const found: string[] = [];
+    Object.assign(window, { ghostMarkers: found });
+    new MutationObserver((records) => {
+      for (const record of records)
+        record.addedNodes.forEach((node) => {
+          if (node instanceof HTMLElement) found.push(getComputedStyle(node).listStyleType);
+        });
+    }).observe(document.querySelector("#videos .flip-ghosts")!, { childList: true });
+  });
+  await filter(page, "Español").click();
+  await page.waitForTimeout(400);
+  const found = await page.evaluate(() => (window as unknown as { ghostMarkers: string[] }).ghostMarkers);
+  expect(found.length).toBeGreaterThan(0);
+  expect(found.every((marker) => marker === "none")).toBe(true);
+});

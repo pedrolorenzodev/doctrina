@@ -15,12 +15,13 @@ type TimelineRulerProps = {
 
 const ticks = [30, 100, 200, 300, 400, 500, 600, 700, 800];
 const labelMargin = 6;
+const pressSlackPx = 4;
 
 export function TimelineRuler({ scroller, from, to, entries, selectedId }: TimelineRulerProps) {
   const [view, setView] = useState({ first: 0, last: 1 });
   const ruler = useRef<HTMLDivElement>(null);
   const windowBox = useRef<HTMLDivElement>(null);
-  const drag = useRef<{ grab: number } | null>(null);
+  const drag = useRef<{ grab: number; pressedAt: number | null } | null>(null);
   const place = (year: number) => ((Math.min(Math.max(year, from), to) - from) / (to - from)) * 100;
 
   useEffect(() => {
@@ -61,17 +62,21 @@ export function TimelineRuler({ scroller, from, to, entries, selectedId }: Timel
     if (!box || !rect || !win) return;
     ruler.current?.setPointerCapture(event.pointerId);
     if (win.contains(event.target as Node)) {
-      drag.current = { grab: (event.clientX - win.getBoundingClientRect().left) / rect.width };
+      drag.current = { grab: (event.clientX - win.getBoundingClientRect().left) / rect.width, pressedAt: null };
       return;
     }
     const target = ((event.clientX - rect.left) / rect.width) * box.scrollWidth - box.clientWidth / 2;
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
     box.scrollTo({ left: target, behavior: reduced ? "instant" : "smooth" });
-    drag.current = { grab: box.clientWidth / 2 / box.scrollWidth };
+    drag.current = { grab: box.clientWidth / 2 / box.scrollWidth, pressedAt: event.clientX };
   };
 
   const onPointerMove = (event: PointerEvent<HTMLDivElement>) => {
     if (!drag.current || event.buttons === 0) return;
+    if (drag.current.pressedAt !== null) {
+      if (Math.abs(event.clientX - drag.current.pressedAt) < pressSlackPx) return;
+      drag.current.pressedAt = null;
+    }
     moveTo(event.clientX, drag.current.grab);
   };
 

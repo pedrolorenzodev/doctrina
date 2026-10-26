@@ -38,9 +38,8 @@ export type FatherWorkRow = { id: string; label: string };
 
 export function worksByFather(workIds: string[], locale: Locale): Record<string, FatherWorkRow[]> {
   const grouped: Record<string, FatherWorkRow[]> = {};
-  for (const id of workIds) {
-    const link = workLinks[id];
-    if (!link) continue;
+  for (const [id, link] of Object.entries(workLinks)) {
+    if (!workIds.includes(id)) continue;
     (grouped[link.fatherId] ??= []).push({ id, label: link.names[locale] });
   }
   return grouped;

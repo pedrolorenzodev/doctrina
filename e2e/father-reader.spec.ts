@@ -57,6 +57,15 @@ test("in the tree a Father with texts opens to them and the open work is marked"
   const father = page.locator('aside nav li[data-id="history/fathers/ignatius-of-antioch"]');
   await expect(father.locator("> ul")).toHaveAttribute("data-open", "true");
   await expect(father.locator("> ul a")).toHaveCount(7);
+  await expect(father.locator("> ul a")).toHaveText([
+    "A los Efesios",
+    "A los Magnesios",
+    "A los Tralianos",
+    "A los Romanos",
+    "A los Filadelfios",
+    "A los Esmirniotas",
+    "A Policarpo",
+  ]);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveText("A los Romanos");
   await father.locator("> ul a", { hasText: "A los Efesios" }).click();
   await expect(page).toHaveURL(/\/es\/historia\/obras\/ignatius-ephesians$/);
@@ -65,13 +74,13 @@ test("in the tree a Father with texts opens to them and the open work is marked"
 
 test("a work links to the previous and next work of the same Father; a lone work has none", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto("/es/historia/obras/ignatius-polycarp");
+  await page.goto("/es/historia/obras/ignatius-romans");
   const links = page.locator("main nav[aria-label] a", { hasText: /Obra (anterior|siguiente)/ });
   await expect(links).toHaveCount(2);
-  await expect(links.first()).toContainText("A los Filadelfios");
-  await expect(links.last()).toContainText("A los Romanos");
+  await expect(links.first()).toContainText("A los Tralianos");
+  await expect(links.last()).toContainText("A los Filadelfios");
   await links.last().click();
-  await expect(page).toHaveURL(/\/es\/historia\/obras\/ignatius-romans$/);
+  await expect(page).toHaveURL(/\/es\/historia\/obras\/ignatius-philadelphians$/);
   await page.goto(didache);
   await expect(page.locator("main nav[aria-label] a", { hasText: /Obra (anterior|siguiente)/ })).toHaveCount(0);
 });
