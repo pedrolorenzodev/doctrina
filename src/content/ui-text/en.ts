@@ -249,7 +249,12 @@ export const en: UiText = {
     },
     ecumenical: { yes: "Received as an ecumenical council", no: "Ecumenical council" },
     pageOf: "Go to the page of {name}",
-    panel: { label: "Detail of the selection", title: "Chosen on the timeline", close: "Close the panel" },
+    panel: {
+      label: "Detail of the selection",
+      title: "Chosen on the timeline",
+      close: "Close the panel",
+      writings: "Main writings",
+    },
     keyLabel: "How to read the timeline",
     ariaOverview: "The years of the timeline",
   },

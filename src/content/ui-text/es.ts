@@ -254,7 +254,12 @@ export const es = {
     },
     ecumenical: { yes: "Lo reciben como concilio ecuménico", no: "Concilio ecuménico" },
     pageOf: "Ir a la página de {name}",
-    panel: { label: "Detalle de lo elegido", title: "Lo elegido en la línea", close: "Cerrar el panel" },
+    panel: {
+      label: "Detalle de lo elegido",
+      title: "Lo elegido en la línea",
+      close: "Cerrar el panel",
+      writings: "Escritos principales",
+    },
     keyLabel: "Cómo leer la línea",
     ariaOverview: "Los años de la línea",
   },

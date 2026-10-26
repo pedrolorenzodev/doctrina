@@ -15,6 +15,7 @@ export type GeneralEntry = TimelineEntry & {
   facts: { label: string; value: string }[];
   ecumenical: boolean;
   note: { heading: string; text: string } | null;
+  writings: { title: string; date: string }[];
 };
 
 export type GeneralTimeline = {
@@ -65,6 +66,8 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       facts,
       ecumenical: false,
       note: null,
+      writings:
+        father.kind === "work" ? [] : father.works.map((work) => ({ title: work.title[locale], date: work.date })),
     });
   }
   for (const council of councils.filter((item) => item.year >= from && item.year <= to)) {
@@ -97,6 +100,7 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
         heading: council.ecumenical ? labels.ecumenical.yes : labels.ecumenical.no,
         text: council.recognizedBy[locale],
       },
+      writings: [],
     });
   }
   for (const heresy of heresies.filter((item) => item.startYear <= to)) {
@@ -129,6 +133,7 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       ],
       ecumenical: false,
       note: null,
+      writings: [],
     });
   }
   const marks: number[] = [];

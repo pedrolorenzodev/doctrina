@@ -199,6 +199,20 @@ test("the seven ecumenical councils carry a dot in their ring, explained by one 
   await expect(detail(page).getByText("Concilio ecuménico")).toHaveCount(0);
 });
 
+test("a Father's panel lists his main writings with their dates; a council's has none", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  await item(page, "ignatius-of-antioch").click();
+  await expect(detail(page).getByText("Escritos principales")).toBeVisible();
+  await expect(detail(page).locator("li")).toHaveCount(1);
+  await expect(detail(page).locator("li")).toContainText("Siete cartas");
+  await expect(detail(page).locator("li")).toContainText("c. 107–110");
+  await item(page, "justin-martyr").click();
+  await expect(detail(page).locator("li")).toHaveCount(3);
+  await item(page, "nicaea-1").click();
+  await expect(detail(page).getByText("Escritos principales")).toHaveCount(0);
+});
+
 test("arrows move the focus along the items, Enter sends it to the heading", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(timeline);

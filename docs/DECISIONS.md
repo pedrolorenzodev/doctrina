@@ -2,6 +2,11 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-10-25 · 08 Timeline, fifth block: the Father's main writings in the panel (the agent's design of 2026-10-22, kept unless Pedro objects)
+**Built:** for a Father or early writer the panel lists his main writings with their dates (`works` of `history.json`: one to four each), under a small heading «Escritos principales»; councils, movements and anonymous writings have none. It is the line the 2026-10-22 decision recorded («the detail says whether he has writings and which»).
+**Agent's calls:** the heading says «principales» because the data holds the key works, not the complete list (the complete list is on the Father's own page under «Sus escritos»); the rows are not links yet (the reader of 05 does not exist: TODO on the Father's page).
+**Tested:** `e2e/general-timeline.spec.ts` (Ignatius one row with its date, Justin three, a council none).
+
 ## 2026-10-25 · 08 Timeline, fourth block: the ecumenical councils' mark, legend and reception note (agent's calls, to confirm; built while Pedro was away)
 **Built:** the approved «Marca en la línea y leyenda» (Pedro, 2026-10-23): a dot inside the ring of the seven ecumenical councils, one legend line, and in the panel the reception text of the dossier (`recognizedAsEcumenicalBy`) under a heading; also on 09's own timeline, where the legend line appears only when the window holds an ecumenical council (the pattern «applied everywhere it belongs»).
 **Agent's calls:** (1) the proposal's two headings are kept: «Lo reciben como concilio ecuménico» for the seven and «Concilio ecuménico» for the rest, over each council's own text (the proposal wrote the second only for Jerusalén); every one of the 22 councils up to 800 shows its note; (2) every council is a ring on 08, so the third of Constantinople (680–681) is a ring at 680 with its two years on the axis when chosen; (3) 09's page for Augustine shows one ecumenical dot because its eight events are chosen by rank and closeness, not by being ecumenical (open: rank ecumenical councils first).

@@ -18,7 +18,7 @@ export type GeneralTimelineText = {
   keyLabel: string;
   hint: string;
   diedMark: string;
-  panel: { label: string; title: string; close: string };
+  panel: { label: string; title: string; close: string; writings: string };
 };
 
 type GeneralTimelineProps = {
@@ -410,6 +410,19 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
                 ))}
               </dl>
               <p className="m-0 mt-3 font-body text-passage-body font-light text-ink-2">{panelEntry.text}</p>
+              {panelEntry.writings.length > 0 ? (
+                <div className="mt-3.5">
+                  <p className="m-0 mb-1 text-ui-xs text-ink-3">{text.panel.writings}</p>
+                  <ul className="m-0 list-none p-0">
+                    {panelEntry.writings.map((writing) => (
+                      <li key={writing.title} className="border-t border-rule py-2 last:border-b">
+                        <p className="m-0 text-source-name font-medium text-ink">{writing.title}</p>
+                        <p className="m-0 text-ui-xs text-ink-3 tabular-nums">{writing.date}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
               {panelEntry.note ? (
                 <div className="mt-3.5">
                   <p className="m-0 mb-0.75 text-ui-xs text-ink-3">{panelEntry.note.heading}</p>
