@@ -139,7 +139,7 @@ test("four groups with the counts of history and only the published pages, their
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
   expect(counts).toEqual(["56", "41", "18", "10", "20"]);
-  await expect(page.locator("aside nav a")).toHaveCount(150);
+  await expect(page.locator("aside nav a")).toHaveCount(77);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
 });
 
@@ -169,5 +169,9 @@ test("entries without a page are pressable and do nothing; branches still open",
   await expect(nt.locator("> ul")).toBeVisible();
   await page.locator('aside nav li[data-id="history/heresies"] button').click();
   expect(page.url()).toBe(url);
-  await expect(page.locator('aside nav li[data-id="book/Matt"] a')).toHaveAttribute("href", "/es/biblia/mateo/1");
+  await page.locator('aside nav li[data-id="book/Matt"] > [data-row] button').first().click();
+  await expect(page.locator('aside nav li[data-id="book/Matt"] a[data-chapter="1"]')).toHaveAttribute(
+    "href",
+    "/es/biblia/mateo/1",
+  );
 });

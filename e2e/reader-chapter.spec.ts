@@ -20,15 +20,19 @@ test("John 6: title, tab, crumbs, edition line and all 71 verses in order", asyn
   await expect(page.locator("main [lang=es]")).toHaveCount(1);
 });
 
-test("the sidebar marks the book of the chapter being read as a location, not as a page", async ({ page }) => {
-  const current = page.locator("aside nav a[aria-current]");
+test("the sidebar marks the chapter being read with a ring and its book as a location", async ({ page }) => {
+  const cell = page.locator("aside nav a[data-chapter][aria-current=page]");
+  const book = (id: string) => page.locator(`aside nav li[data-id="book/${id}"]`);
   await page.goto(chapter("juan", 6));
-  await expect(current).toHaveText("Juan");
-  await expect(current).toHaveAttribute("aria-current", "true");
+  await expect(cell).toHaveText("6");
+  await expect(cell).toHaveAttribute("aria-label", "Juan 6");
+  await expect(book("John")).toBeVisible();
+  await expect(book("John").locator("> [data-row] [data-label-toggle]")).toHaveAttribute("data-trail", "true");
   await page.goto(chapter("1-corintios", 13));
-  await expect(current).toHaveText("1 Corintios");
+  await expect(cell).toHaveText("13");
+  await expect(cell).toHaveAttribute("aria-label", "1 Corintios 13");
   await page.goto(chapter("eclesiastico", 51));
-  await expect(current).toHaveText("Eclesiástico");
+  await expect(cell).toHaveText("51");
   await expect(page.locator('aside nav li[data-id="bible/deutero"] > ul')).toBeVisible();
 });
 
