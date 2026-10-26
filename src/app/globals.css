@@ -364,11 +364,11 @@
   &::before {
     content: "";
     position: absolute;
-    left: -2px;
-    right: -2px;
+    left: 50%;
     top: 50%;
+    width: max(calc(100% + 4px), 44px);
     height: 44px;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
   }
 }
 

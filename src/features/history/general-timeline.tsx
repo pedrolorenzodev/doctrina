@@ -298,7 +298,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
                     {text.sections[section]}
                   </p>
                   {rows.map((row) => (
-                    <div key={row.map((item) => item.id).join()} className="relative h-10">
+                    <div key={row.map((item) => item.id).join()} className="relative h-10 pointer-coarse:h-11">
                       {row.map((item) => {
                         const entry = entries.find((candidate) => candidate.id === item.id);
                         if (!entry) return null;
@@ -316,20 +316,22 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
                               "--w": px(item.right - item.left),
                               "--lx": px(item.labelLeft),
                             })}
-                            className="group absolute top-1 left-(--l) h-8.5 w-(--w) cursor-pointer rounded-4 border-0 bg-transparent p-0 text-left font-ui text-btn leading-none whitespace-nowrap text-ink-2 pointer-coarse:top-0 pointer-coarse:h-10"
+                            className="group absolute top-1 left-(--l) h-8.5 pointer-coarse:top-0 pointer-coarse:h-11 w-(--w) cursor-pointer rounded-4 border-0 bg-transparent p-0 text-left font-ui text-btn leading-none whitespace-nowrap text-ink-2"
                           >
-                            <TimelineMarks entry={entry} scale={scale} left={item.left} />
-                            <span className="absolute top-4.75 left-(--lx) px-px transition-colors duration-150 group-hover:text-ink group-hover:underline group-hover:decoration-rule-2 group-hover:underline-offset-3 group-aria-pressed:font-semibold group-aria-pressed:text-ink">
-                              {entry.label}
-                              {listSeparator}
-                              {entry.diedSpoken ? (
-                                <>
-                                  <span aria-hidden="true">{entry.rowDate}</span>
-                                  <span className="sr-only">{entry.diedSpoken}</span>
-                                </>
-                              ) : (
-                                entry.rowDate
-                              )}
+                            <span className="absolute inset-0 pointer-coarse:top-1">
+                              <TimelineMarks entry={entry} scale={scale} left={item.left} />
+                              <span className="absolute top-4.75 left-(--lx) px-px transition-colors duration-150 group-hover:text-ink group-hover:underline group-hover:decoration-rule-2 group-hover:underline-offset-3 group-aria-pressed:font-semibold group-aria-pressed:text-ink">
+                                {entry.label}
+                                {listSeparator}
+                                {entry.diedSpoken ? (
+                                  <>
+                                    <span aria-hidden="true">{entry.rowDate}</span>
+                                    <span className="sr-only">{entry.diedSpoken}</span>
+                                  </>
+                                ) : (
+                                  entry.rowDate
+                                )}
+                              </span>
                             </span>
                           </button>
                         );
