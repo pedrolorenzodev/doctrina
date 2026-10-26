@@ -136,3 +136,8 @@ ROADMAP "Background queue" item 2. Source: `lutheran.md` §8 (Pedro's answers 20
 - Orthodox dossier: agree ST-DOS (answer 3).
 
 Pedro's answers applied 2026-10-25.
+
+## Independent check of the 2026-10-25 pass (same day)
+
+A Sonnet verifier (read-only) checked the added material: ST-T's CCC paragraphs read on vatican.va es/en (all confirmed), WLC 173 and WCF 29.7 against the 1894 print (confirmed; the note that WLC 173 supports only the second sentence of WCF 29.8 is right), the merged QE-3+4 (no source lost), and the «no trata» lines (no passage in the English Book of Concord on communion of the sick or leftovers; the German text was not searched).
+Fixed after it: ST-T under OB-7 moved from cann. 1 and 2 to cann. 2 and 3 (CCC 1390 does not say outright that both kinds are not a divine command); the edition «(1992)» is part of every ST-T line; the ST-T entry is marked site text, draft; OB-2's line names «canon 7 de Trento» and «canon 4 de Trento». Left as noted by the verifier: OB-11's CCC 611 and 1411 match the canon's sense but not its words; the 29.7 Spanish of the 1880 volume was not re-read.
