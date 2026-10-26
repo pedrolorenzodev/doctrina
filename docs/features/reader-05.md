@@ -1,6 +1,6 @@
 # Screen 05, the reader: blocks, acceptance and cost log
 
-Status: **Second night session 2026-10-26 (03:00–): R7a fixed, R7b «Notas al costado», R7c delete dialog and the first slice of R7d «Tus notas» built and verified; the Bible navigation proposal is published and waits for Pedro. R8 (the Fathers' reader) and the sidebar entries for the Fathers are NOT started. See «Handoff, second session» at the end.** Earlier: R1–R7a built and frozen as kit blocks 63–97; R1 and R4 had independent Sonnet verifiers. Inputs: DESIGN «Full-text reader (05)», «Reader side panel», «Highlighting», «Notes», «06 verse»; DECISIONS 2026-10-21/22 (reader structure, highlighting, notes), 2026-10-06 «Read the whole Bible in the site»; prototype `docs/research/proposals/reader-05-06/`; plan of the data behind it `docs/features/corpus-bibles-and-fathers.md`. Pedro's order (2026-10-25/26): build it block by block on the local files (Bibles now, Fathers when Phase 2 delivers), verify each block, freeze each block in the commit kit, Pedro approves visually before any commit.
+Status: **Day session 2026-10-26 (to 14:05, stopped by Pedro to save usage): the Bible navigation Pedro chose is built (tree A2, header B3, second translation, red letters, highlight controls); see «Handoff, third session» at the end.** Earlier: **Second night session 2026-10-26 (03:00–): R7a fixed, R7b «Notas al costado», R7c delete dialog and the first slice of R7d «Tus notas» built and verified; the Bible navigation proposal is published and waits for Pedro. R8 (the Fathers' reader) and the sidebar entries for the Fathers are NOT started. See «Handoff, second session» at the end.** Earlier: R1–R7a built and frozen as kit blocks 63–97; R1 and R4 had independent Sonnet verifiers. Inputs: DESIGN «Full-text reader (05)», «Reader side panel», «Highlighting», «Notes», «06 verse»; DECISIONS 2026-10-21/22 (reader structure, highlighting, notes), 2026-10-06 «Read the whole Bible in the site»; prototype `docs/research/proposals/reader-05-06/`; plan of the data behind it `docs/features/corpus-bibles-and-fathers.md`. Pedro's order (2026-10-25/26): build it block by block on the local files (Bibles now, Fathers when Phase 2 delivers), verify each block, freeze each block in the commit kit, Pedro approves visually before any commit.
 
 ## Blocks
 
@@ -81,4 +81,26 @@ Closing the verse panel after opening it from a card returns focus to a card tha
 
 ### Commands
 `source ~/.nvm/nvm.sh && nvm use` · `python3 -I ~/.claude/skills/usage-guard/scripts/usage_check.py` · after `npm run verify`: `pkill -f "next start -p 3100"; (nohup npx next start -p 3100 > /tmp/next.log 2>&1 &)` · freeze: `python3 ~/doctrina-commit-kit/snapshot.py block NN-all "message" /dev/null`, then `python3 ~/doctrina-commit-kit/split_block.py NN-all spec.json` (the spec of this session: `~/doctrina-scratch/reader-nav/spec99.json`) · never `apply.sh`.
+
+## Handoff, third session (written 2026-10-26 14:05, Pedro asked to stop until tonight; Claude weekly 74 %, no ceiling set for today)
+
+### What was done (all in the working tree; kit blocks 107–123 were verified and frozen, 124 onward is frozen too but only partly verified)
+Pedro's choices from the navigation proposal (DECISIONS «Bible navigation: Pedro chose…», Artifact https://claude.ai/artifact/1jdy21eMSJrjbh2aHzEmAQ, three versions in `docs/research/proposals/bible-navigation/`): **107–111** highlight controls (the chosen swatch only for highlighted text, the remove icon R2, bar spacing) and the proposals; **112–116** the sidebar tree (counts, book rows that expand into chapter grids, A2 states, G5 below 1024, `ReadMarker` and `doctrina-read-chapters`); **117–123** the header (`reader-strip.tsx`: arrows with `Tooltip`, `BookPicker`, `TranslationPicker`, `TextOptions`, `HangingMenu` portalled into the strip, `revealMenu`, `useHideOnScroll`, the paragraph format through `data-reader-format`); **124+** the second translation (`parallel-menu.tsx`, `second-translation.ts`, «Debajo» and «Al lado» in `chapter-text.tsx`), red letters (`red-letters.ts`, `text-pieces.ts`, `data/scripts/extract-words-of-jesus.mjs`, the local file `data/corpus/bibles/web-c.red.json`) and the right click on a verse (`selection-toolbar.tsx`). Every decision and agent's call is in DECISIONS (newest first) and DESIGN («Reader header», «Sidebar tree», «Highlighting»); traps in GOTCHAS (last 12 entries).
+
+### Not verified, do first
+1. `npm run build`, restart `next start -p 3100`, then the **right-click specs** (`npx playwright test e2e/reader-selection.spec.ts`): written, never run.
+2. One full suite (about 7 min, `uptime` first): the last one was cut at about 565 of 800. Seen failing under load and not rerun: `e2e/reader-note-delete.spec.ts:178` (reduced-motion hold), earlier `search` motion cases and `doctrine-header` ticks; they passed alone before.
+3. `npm run lint` is red only because of Codex's `data/corpus/fathers/papias-fragments/lightfoot-harmer-1891.json` (division V empty or untrimmed); never edit that corpus by hand, report it (Codex's «applying corrections»).
+
+### Still open from Pedro (2026-10-26)
+- **«1 nota» under the verse number looks cramped while the side panel is open** (screenshot at 1440, 1280 and 1100 with a note and the verse panel open, then fix; the mark is `chapter-text.tsx`, classes `md:absolute md:top-8 md:-left-16.5 md:w-14`; the page padding changes with the panel in `globals.css` `side-panel-room*`).
+- **Tell Pedro, in one short terminal message, when the whole reader screen is ready** (his instruction), then continue with R7d's second slice, R8 (the Fathers' reader: 10 works are normalized but all failed the Sonnet reading) and the Fathers as children of the sidebar tree.
+- Apply the kit with explicit prefixes only (`bash ~/doctrina-commit-kit/apply.sh 107 108 …`); a bare run replays everything (it broke the repo once, fixed in `75d5331`).
+- Ask whether to run the independent Sonnet verifier on the tree and the header (Pedro said «ask again» for the navigation; unanswered).
+
+### Agent's calls to confirm (details in DECISIONS)
+No desktop sidebar toggle; the book menu hangs on a phone too; the strip remounts visible on each chapter; «Al lado» needs a 1100 px viewport and hides the note cards; red only for the WEB; G5 below 1024 (not 640); a missing second verse leaves an empty line.
+
+### Lessons of this session (also in `docs/playbooks/agent-ops.md`)
+The weekly went 72 → 74 % over seven blocks (Sonnet 5.5 high, no subagent): about a third of a point per block. A Playwright suite is 7–8 minutes and the machine slows it (load 20–30 from GitKraken and Codex); run it once per block, in the background, and wait with a Monitor. Never chain `sleep`; `timeout` does not exist on this Mac.
 

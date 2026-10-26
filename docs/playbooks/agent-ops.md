@@ -169,3 +169,13 @@ The done files (absolute paths under `docs/research/`) are `neutral/fathers-veri
 - **Frame specs:** sample from before the click, time from the first moving frame, assert monotonic and bounded duration, add a reduced-motion twin (a «no frame between the end values» check). They caught the picker's 14 px stop and the arrival's 47 px jump.
 - **A Codex runner at its cap does not move for hours.** `night6` sat at 80 % from 01:29 with a 15-minute poll; the Fathers' files arrive in the window after its reset (`~/codex-night6-run.log`, `docs/research/sources/fathers-corpus-en.md`).
 - **Stopping cleanly:** when Pedro asks to stop, finish only what is cheap, write the handoff in `docs/features/reader-05.md`, update ROADMAP and DECISIONS, leave unfrozen work marked as such, and say which spec is `fixme` and why.
+
+## Rules learned on 2026-10-26 (the day: blocks of the navigation, one session)
+
+- **Apply the kit with explicit prefixes, never bare.** `apply.sh` with no arguments replays every block folder in the kit root; applied ones must be moved into `applied/` (the agent does it after Pedro applies). A bare run after a partial history copies old snapshots over newer files and pushes regressions; the fix is `git checkout <last good commit> -- <files>` and a commit, not a force push.
+- **Check the kit against the tree before trusting it:** compare each file with the last block that contains it (by number, not by name order) to see what a replay would change.
+- **A moved file needs the old path in `deleted.txt`** of the commit that moves it (the snapshot does not see an untracked file as deleted).
+- **Weekly cost, measured:** 72 → 74 % for seven blocks and their specs, no subagent; one full suite per block, run in the background and awaited with a Monitor.
+- **Specs for a motion that uses `clip-path`:** parse the computed value (three values, `calc()` with exponents) and measure the visible part, not the box.
+- **When Pedro says stop:** kill the suite and the server, freeze with `snapshot.py` and `split_block.py`, overwrite «Current state», write the handoff, and say exactly what was never run.
+
