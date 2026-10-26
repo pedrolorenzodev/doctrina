@@ -1,9 +1,14 @@
+import { existsSync } from "node:fs";
 import { defineConfig } from "@playwright/test";
 
 const port = 3100;
 
+const hasCorpus = existsSync("data/corpus/bibles/rv1909.json");
+const needsCorpus = ["**/reader-*.spec.ts", "**/father-reader.spec.ts"];
+
 export default defineConfig({
   testDir: "e2e",
+  testIgnore: hasCorpus ? [] : needsCorpus,
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,

@@ -1,5 +1,6 @@
 import { join } from "node:path";
 import { expect, test, type Page } from "@playwright/test";
+import { hasCorpus } from "./helpers";
 
 const axePath = join(process.cwd(), "node_modules/axe-core/axe.min.js");
 
@@ -217,6 +218,7 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
 for (const theme of ["light", "dark"] as const) {
   for (const [name, path, act] of pages) {
     test(`${name} has no accessibility violations in ${theme}`, async ({ page }) => {
+      test.skip(!hasCorpus && /\/(biblia|historia\/obras)\//.test(path), "needs the local corpus");
       await page.emulateMedia({ colorScheme: theme });
       await page.addInitScript((value) => localStorage.setItem("doctrina-theme", value), theme);
       await page.setViewportSize({ width: 1440, height: 900 });

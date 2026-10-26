@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { traditionPath, trackElement } from "./helpers";
+import { hasCorpus, traditionPath, trackElement } from "./helpers";
 
 const branch = 'li[data-id="eucharist"]';
 const twisty = `${branch} > [data-row] [data-twisty]`;
@@ -132,6 +132,7 @@ test.describe("drawer", () => {
 test("four groups with the counts of history and only the published pages, their Objeciones and objections as links", async ({
   page,
 }) => {
+  test.skip(!hasCorpus, "needs the local corpus");
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await expect(page.locator("aside nav p")).toHaveText(["Doctrinas", "Biblia", "Historia", "Consulta"]);
@@ -158,6 +159,7 @@ test("the branches hold the real entries: 56 Fathers, 27 New Testament books, 7 
 });
 
 test("entries without a page are pressable and do nothing; branches still open", async ({ page }) => {
+  test.skip(!hasCorpus, "needs the local corpus");
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   const url = page.url();

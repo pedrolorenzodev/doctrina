@@ -1,4 +1,7 @@
+import { existsSync } from "node:fs";
 import type { Page } from "@playwright/test";
+
+export const hasCorpus = existsSync("data/corpus/bibles/rv1909.json");
 
 export const traditionPath = "/es/doctrinas/eucaristia/catolica";
 
