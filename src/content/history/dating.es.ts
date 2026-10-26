@@ -7,18 +7,122 @@ export const datingByFather: Record<string, FatherDating> = {
       "Ninguna fuente antigua da la fecha de su nacimiento. Según la fecha tradicional, murió c. 107–110, bajo el emperador Trajano (98–117). Otros autores proponen fechas más tardías, para su muerte o para las cartas. Cada nombre abre quién es.",
     axis: { from: 95, to: 200, marks: [100, 120, 140, 160, 180, 200] },
     scholars: {
-      decrept: "Decrept",
-      pervo: "Pervo",
-      barnes: "Barnes",
-      vinzent: "Vinzent",
-      lightfoot: "Lightfoot",
-      zahn: "Zahn",
-      harnack: "Harnack",
-      lake: "Lake",
-      schoedel: "Schoedel",
-      joly: "Joly",
-      hubner: "Hübner",
-      lechner: "Lechner",
+      decrept: {
+        name: "Étienne Decrept",
+        shortName: "Decrept",
+        field: "Historiador del cristianismo antiguo y de la Antigüedad tardía",
+        paragraphs: [
+          "Reconstruye una persecución en Antioquía en julio de 116, después del terremoto del 13 de diciembre de 115, como el marco de la condena y el viaje de Ignacio. Fecha ese marco, no cada carta por separado.",
+          "«Circonstances et interprétations du voyage d’Ignace d’Antioche», _Revue des Sciences Religieuses_ 82/3 (2008), 389–399.",
+        ],
+        life: null,
+      },
+      barnes: {
+        name: "Timothy D. Barnes",
+        shortName: "Barnes",
+        field: "Historiador británico de la Antigüedad y del cristianismo antiguo; enseñó en la Universidad de Toronto",
+        paragraphs: [
+          "Sostiene que las cartas probablemente se escribieron en los años 140: la fecha de Eusebio, bajo Trajano (98–117), no puede tomarse como segura, y ve en ellas conocimiento de los escritos del gnóstico Ptolomeo.",
+          "«The Date of Ignatius», _The Expository Times_ 120 (2008), 119–130.",
+        ],
+        life: {
+          label: "Nació en 1942",
+          start: 1942,
+          end: null,
+          marker: "nació en 1942",
+        },
+      },
+      lightfoot: {
+        name: "Joseph Barber Lightfoot",
+        shortName: "Lightfoot",
+        field: "Estudioso inglés del Nuevo Testamento y de los Padres apostólicos; obispo anglicano",
+        paragraphs: [
+          "Defendió las siete cartas de la recensión media y ubicó el martirio a pocos años de c. 110, antes o después, sin dar por segura la fecha tradicional de 107.",
+          "_The Apostolic Fathers. Part II: S. Ignatius, S. Polycarp_, 2.ª ed. (Londres: Macmillan, 1889), vol. 1, 30.",
+        ],
+        life: {
+          label: "1828–1889",
+          start: 1828,
+          end: 1889,
+          marker: "1828–1889",
+        },
+      },
+      zahn: {
+        name: "Theodor Zahn",
+        shortName: "Zahn",
+        field: "Teólogo protestante alemán, estudioso del Nuevo Testamento",
+        paragraphs: [
+          "Defendió la recensión media y admitió cualquier año entre 105 y 117 para el viaje, las cartas y la muerte, sin fijar uno solo.",
+          "_Ignatius von Antiochien_ (Gotha: Perthes, 1873), 61.",
+        ],
+        life: {
+          label: "1838–1933",
+          start: 1838,
+          end: 1933,
+          marker: "1838–1933",
+        },
+      },
+      harnack: {
+        name: "Adolf von Harnack",
+        shortName: "Harnack",
+        field: "Teólogo protestante alemán e historiador de la Iglesia",
+        paragraphs: [
+          "Cambió de posición. En 1878 tomó como establecido lo que, según él, sostenía la mayoría de los historiadores: que las cartas no podían ser anteriores a los últimos años del reinado de Adriano. En su cronología de 1897 las consideró auténticas y escritas en los últimos años de Trajano (110–117), o quizá algunos años después (117–125).",
+          "_Die Zeit des Ignatius_ (Leipzig: Hinrichs, 1878), 1–9; _Die Chronologie_, vol. 1 (Leipzig: Hinrichs, 1897), 400–406.",
+        ],
+        life: {
+          label: "1851–1930",
+          start: 1851,
+          end: 1930,
+          marker: "1851–1930",
+        },
+      },
+      lake: {
+        name: "Kirsopp Lake",
+        shortName: "Lake",
+        field: "Estudioso inglés del Nuevo Testamento e historiador de la Iglesia; enseñó en Harvard",
+        paragraphs: [
+          "Recoge el año 108 de Eusebio y resume que, aunque los críticos modernos no coinciden, hay una tendencia general a pensar que Ignacio fue mártir en Roma en tiempos de Trajano (98–117). Es su resumen de la crítica, no una datación propia.",
+          "_The Apostolic Fathers_, vol. 1 (Londres: Heinemann, 1912), 165–166.",
+        ],
+        life: {
+          label: "1872–1946",
+          start: 1872,
+          end: 1946,
+          marker: "1872–1946",
+        },
+      },
+      hubner: {
+        name: "Reinhard M. Hübner",
+        shortName: "Hübner",
+        field:
+          "Teólogo católico alemán, profesor emérito de historia de la Iglesia antigua y patrística en la Universidad de Múnich",
+        paragraphs: [
+          "Reabrió la datación tardía: considera las siete cartas seudoepígrafas y las ubica, en general, en la segunda mitad del siglo II.",
+          "«Thesen zur Echtheit und Datierung der sieben Briefe des Ignatius von Antiochien», _Zeitschrift für Antikes Christentum_ 1 (1997), 44–72.",
+        ],
+        life: {
+          label: "Nació en 1937",
+          start: 1937,
+          end: null,
+          marker: "nació en 1937",
+        },
+      },
+      lechner: {
+        name: "Thomas Lechner",
+        shortName: "Lechner",
+        field: "Teólogo alemán; doctor por la Universidad de Múnich",
+        paragraphs: [
+          "Defiende una datación tardía de las cartas, leyendo partes de la carta a los Efesios como polémica contra los valentinianos. No da un rango propio que se muestre acá: el de 160–180 es la agrupación de un estudio reciente (S. Schreiber), que reúne su propuesta con las de Hübner y M. Theobald.",
+          "_Ignatius adversus Valentinianos?_ (Leiden: Brill, 1999), 75–115.",
+        ],
+        life: {
+          label: "Nació en 1962",
+          start: 1962,
+          end: null,
+          marker: "nació en 1962",
+        },
+      },
     },
     rows: [
       {

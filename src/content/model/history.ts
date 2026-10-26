@@ -72,11 +72,19 @@ export type DatingRow = {
 
 export type DatingStep = { name: string; note?: string; text: string; accepted?: boolean };
 
+export type DatingScholar = {
+  name: string;
+  shortName: string;
+  field: string;
+  paragraphs: string[];
+  life: { label: string; start: number; end: number | null; marker: string } | null;
+};
+
 export type FatherDating = {
   title: string;
   intro: string;
   axis: { from: number; to: number; marks: number[] };
   rows: DatingRow[];
-  scholars: Record<string, string>;
+  scholars: Record<string, DatingScholar>;
   groups: { title: string; intro?: string; steps: DatingStep[] }[];
 };

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CitationProvider } from "@/components/citation-window/citation-context";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { NeighborLinks } from "@/components/neighbor-links";
 import { PageHeader } from "@/components/page-header";
@@ -7,6 +8,7 @@ import { PageMain } from "@/components/page-main";
 import { PageLink } from "@/components/ui/page-link";
 import { buildFatherTimeline } from "@/content/father-timeline";
 import { buildFatherView } from "@/content/father-view";
+import { buildDatingViews } from "@/content/father-dating-views";
 import { getFatherDating } from "@/content/get-father-dating";
 import { getFatherAppearances } from "@/content/get-father-appearances";
 import { getFather, getFatherNeighbors, getPublishedFathers } from "@/content/get-fathers";
@@ -50,7 +52,7 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
   const whoLabel = father.kind === "work" ? labels.whatIs : labels.who;
   const count =
     view.writings.length === 1 ? labels.writingsOne : labels.writingsMany.replace("{n}", String(view.writings.length));
-  return (
+  const page = (
     <PageMain>
       {/* TODO: «Historia» and «Padres» lead to their index pages once those exist */}
       <Breadcrumbs
@@ -99,5 +101,12 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
         ]}
       />
     </PageMain>
+  );
+  return dating ? (
+    <CitationProvider views={buildDatingViews(dating, text.dating)} text={text.citation}>
+      {page}
+    </CitationProvider>
+  ) : (
+    page
   );
 }

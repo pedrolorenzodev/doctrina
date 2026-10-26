@@ -206,6 +206,8 @@ export const en: UiText = {
     empty: "Choose a person or an event on the timeline to see its dates and who it was.",
   },
   dating: {
+    whoIs: "Who this is",
+    lifeLabel: "Life",
     title: "Dates and authenticity",
     listLabel: "Proposed dates",
     more: "Show the {n} more from the history of the debate",

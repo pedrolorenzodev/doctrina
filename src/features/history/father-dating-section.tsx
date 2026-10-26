@@ -25,7 +25,7 @@ export function FatherDatingSection({ id, dating, text }: FatherDatingSectionPro
         id={`${id}-list`}
         label={text.listLabel}
         rows={dating.rows}
-        scholars={dating.scholars}
+        scholars={Object.fromEntries(Object.entries(dating.scholars).map(([key, scholar]) => [key, scholar.shortName]))}
         axis={dating.axis}
         moreLabel={text.more}
         lessLabel={text.less}

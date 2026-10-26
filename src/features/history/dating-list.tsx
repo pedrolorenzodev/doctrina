@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { flushSync } from "react-dom";
-import { InPlaceLink } from "@/components/ui/in-place-link";
+import { CitationLink } from "@/components/citation-window/citation-link";
 import { MoreButton } from "@/components/ui/more-button";
+import { scholarViewId } from "@/content/father-dating-views";
 import type { DatingRow } from "@/content/model/history";
 import { flipList, revealList } from "@/lib/list-motion";
 import { scrollOffset, scrollToElement } from "@/lib/scroll";
@@ -101,10 +102,9 @@ export function DatingList({ id, label, rows, scholars, axis, moreLabel, lessLab
                 {row.lead}
                 {row.scholar ? (
                   <>
-                    {/* TODO: the name opens the «Quién es» window of that scholar once the window exists */}
-                    <InPlaceLink kind="source" onClick={() => undefined}>
+                    <CitationLink id={scholarViewId(row.scholar)} kind="source">
                       {scholars[row.scholar] ?? row.scholar}
-                    </InPlaceLink>
+                    </CitationLink>
                     {` ${openParenthesis}${row.year}${closeParenthesis}`}
                   </>
                 ) : null}

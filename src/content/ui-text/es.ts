@@ -216,6 +216,8 @@ export const es = {
     empty: "Elige una persona o un hecho de la línea para ver sus fechas y quién fue.",
   },
   dating: {
+    whoIs: "Quién es",
+    lifeLabel: "Vida",
     title: "Fechas y autenticidad",
     listLabel: "Fechas propuestas",
     more: "Mostrar las {n} de la historia del debate",

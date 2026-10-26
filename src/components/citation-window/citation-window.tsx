@@ -11,6 +11,7 @@ import { IconButton } from "@/components/ui/icon-button";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { trapTab } from "@/lib/focus";
 import { useMediaQuery, useViewport } from "@/lib/use-viewport";
+import { emphasized } from "@/lib/emphasis";
 import { clampWindow, type Point } from "@/lib/window-position";
 
 const copiedMs = 1600;
@@ -139,13 +140,20 @@ function WindowBody({ view, text, copied, onCopy }: WindowBodyProps) {
   return (
     <div data-lenis-prevent className="overflow-y-auto overscroll-contain p-4.5">
       {view.title ? <h3 className="mb-2.5 font-head text-h3 font-normal text-ink">{view.title}</h3> : null}
+      {view.subtitle ? <p className="mb-3 text-meta text-ink-3">{view.subtitle}</p> : null}
       {view.quoteLanguage ? <p className="mb-1.5 text-ui-xs text-ink-3">{view.quoteLanguage}</p> : null}
       {view.quote ? (
         <p lang={view.quote.lang} className="font-head text-quote-window font-light text-ink italic opsz-24 guillemets">
           {view.quote.text}
         </p>
       ) : null}
-      {view.definition ? <p className="font-body text-definition font-light text-ink-2">{view.definition}</p> : null}
+      {view.definition
+        ? view.definition.split("\n\n").map((paragraph) => (
+            <p key={paragraph} className="font-body text-definition font-light text-ink-2 not-first:mt-3">
+              {emphasized(paragraph)}
+            </p>
+          ))
+        : null}
       {view.who || view.locator ? (
         <p className="mt-3.5 text-meta">
           {view.who ? <span className="font-medium">{view.who}</span> : null}
@@ -161,10 +169,15 @@ function WindowBody({ view, text, copied, onCopy }: WindowBodyProps) {
       {view.date ? (
         <>
           <p className="mt-3.5 flex items-baseline gap-2.5 text-ui-xs text-ink-3">
-            {text.dateLabel}
+            {view.date.heading ?? text.dateLabel}
             <b className="text-ui-base font-medium text-ink tabular-nums">{view.date.label}</b>
           </p>
-          <MiniTimeline start={view.date.start} end={view.date.end} label={view.date.label} />
+          <MiniTimeline
+            start={view.date.start}
+            end={view.date.end}
+            label={view.date.markerLabel ?? view.date.label}
+            {...(view.date.span ? { span: view.date.span } : {})}
+          />
         </>
       ) : null}
       {view.externalLink || view.copyText || view.fullSource ? (
