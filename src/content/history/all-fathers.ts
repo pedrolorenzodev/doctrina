@@ -6,7 +6,7 @@ function withLife(father: Father, life: FatherLife): Father {
   const spanned = life.active ?? life.composed;
   return {
     ...father,
-    born: spanned ? null : life.birth ? life.birth.year : father.born,
+    born: spanned || !life.birth ? null : life.birth.year,
     died: life.death?.year ?? spanned?.end ?? father.died,
     life,
   };

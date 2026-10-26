@@ -156,7 +156,7 @@ test("only what is shown can match: the date, the path and the text, nothing hid
   await page.goto(traditionPath);
   await openSearch(page);
   await search(page, "107");
-  await expect.poll(() => titles(page)).toEqual(["Carta a los Esmirniotas 7.1"]);
+  await expect.poll(() => titles(page)).toEqual(["Carta a los Esmirniotas 7.1", "Ignacio de Antioquía"]);
   await search(page, "Padres Justino");
   await expect.poll(() => titles(page)).toEqual(["Justino Mártir", "Primera Apología 66", "Diálogo con Trifón 41"]);
   await search(page, "keywords");

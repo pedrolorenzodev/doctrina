@@ -50,7 +50,8 @@ test("the key lists a state only when the line draws it", async ({ page }) => {
   await page.goto(father("gregory-of-nyssa"));
   await expect(page.locator(key)).toContainText("Se sabe que vivía; no cuándo murió");
   await page.goto(father("ignatius-of-antioch"));
-  for (const label of ["Se sabe que vivía; no cuándo murió", "Activo entre dos años", "Tramo de composición"])
+  await expect(page.locator(key)).toContainText("Activo entre dos años");
+  for (const label of ["Se sabe que vivía; no cuándo murió", "Tramo de composición"])
     await expect(page.locator(key)).not.toContainText(label);
 });
 

@@ -52,7 +52,7 @@ export function lifeMarks(father: Father): LifeMarks {
   const tail =
     death?.kind === "after"
       ? { end: death.year + knownAliveTrail, kind: "dots" as const }
-      : death?.kind === "either" && death.yearEnd !== undefined
+      : (death?.kind === "either" || death?.kind === "between") && death.yearEnd !== undefined
         ? { end: death.yearEnd, kind: "dash" as const }
         : null;
   return { start, end: father.died, leadStart, tailEnd: tail?.end ?? null, tailKind: tail?.kind ?? null, band: null };

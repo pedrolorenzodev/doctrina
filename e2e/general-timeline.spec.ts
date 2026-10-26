@@ -41,7 +41,7 @@ test("choosing a person: dates as labelled facts, the band of his time, his year
   await item(page, "polycarp-of-smyrna").click();
   await expect(item(page, "polycarp-of-smyrna")).toHaveAttribute("aria-pressed", "true");
   await expect(detail(page).locator("dl dt")).toHaveText(["Nació", "Murió"]);
-  await expect(detail(page).locator("dl dd")).toHaveText(["c. 69", "c. 155"]);
+  await expect(detail(page).locator("dl dd")).toHaveText(["no después de c. 69/70 (deducido)", "155 o 156"]);
   await expect(detail(page)).toBeVisible();
   await expect(detail(page).locator("h2")).toHaveText("Policarpo de Esmirna");
   await expect(detail(page).locator("a")).toHaveAttribute("href", /polycarp-of-smyrna$/);
@@ -237,7 +237,7 @@ test("both axes start at the first year, 30, and carry its tick", async ({ page 
 test("the dashed lead of a chosen person goes ink with his bar", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(timeline);
-  const lead = item(page, "polycarp-of-smyrna").locator("span.border-dashed");
+  const lead = item(page, "polycarp-of-smyrna").locator("span.border-dashed").first();
   await expect(lead).toHaveCSS("border-top-color", "rgb(174, 171, 164)");
   await item(page, "polycarp-of-smyrna").click();
   await expect(lead).toHaveCSS("border-top-color", "rgb(28, 23, 19)");

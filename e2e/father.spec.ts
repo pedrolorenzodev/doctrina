@@ -21,7 +21,7 @@ test("Ignatius: title, tab, crumbs and the four facts of the header", async ({ p
   await expect(page.locator(`${crumbs} [aria-current=page]`)).toHaveText("Ignacio de Antioquía");
   expect(await headerFactsOf(page)).toEqual([
     ["Nació", "desconocido"],
-    ["Murió", "c. 108"],
+    ["Murió", "107 o 108 (se discute)"],
     ["Obispo de", "Antioquía"],
     ["Escribió en", "griego"],
   ]);
@@ -37,8 +37,8 @@ test("a born and a dead year, circa or not, and a role that is not a bishop's", 
   ]);
   await page.goto(father("augustine-of-hippo"));
   expect((await headerFactsOf(page)).slice(0, 3)).toEqual([
-    ["Nació", "354"],
-    ["Murió", "430"],
+    ["Nació", "13 nov 354"],
+    ["Murió", "28 ago 430"],
     ["Obispo de", "Hipona"],
   ]);
   await page.goto(father("john-chrysostom"));
@@ -97,7 +97,7 @@ test("«Quién fue»: the summary and a facts table that sits beside it from 900
     ["Región", "Siria"],
     ["Lengua", "Griego"],
     ["Función", "Obispo de Antioquía"],
-    ["Murió", "c. 108"],
+    ["Murió", "107 o 108 (se discute)"],
   ]);
   const wide = await page.evaluate(() => {
     const text = document.querySelector("#who p")!.getBoundingClientRect();
@@ -270,7 +270,7 @@ test("the search finds a Father by name and by what his summary says, and opens 
   const options = page.locator("[data-search-dialog] [role=option]");
   const row = options.filter({ hasText: "Historia / Padres" }).first();
   await expect(options.first().locator("> span").first()).toHaveText("Ignacio de Antioquía");
-  await expect(row).toContainText("† c. 108");
+  await expect(row).toContainText("† 107 o 108");
   await expect(options.nth(1).locator("> span").first()).toHaveText("Carta a los Esmirniotas 7.1");
   await input.fill("Trajano");
   await expect(options.first().locator("> span").first()).toHaveText("Ignacio de Antioquía");
