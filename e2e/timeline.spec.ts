@@ -106,6 +106,18 @@ test("on a phone the timeline scrolls sideways inside its box and the page does 
   expect(scrolls).toBe(true);
 });
 
+test("an ecumenical council inside a page's window gets the dot and its legend line; a page without one has neither", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(father("augustine-of-hippo"));
+  expect(await page.locator("#time [data-ecumenical]").count()).toBeGreaterThanOrEqual(1);
+  await expect(page.locator("#time li", { hasText: "Lo reciben como ecuménico" })).toHaveCount(1);
+  await page.goto(ignatius);
+  await expect(page.locator("#time [data-ecumenical]")).toHaveCount(0);
+  await expect(page.locator("#time li", { hasText: "Lo reciben como ecuménico" })).toHaveCount(0);
+});
+
 for (const width of [360, 390, 768, 1024, 1440]) {
   for (const id of ["augustine-of-hippo", "didache", "polycarp-of-smyrna"]) {
     test(`${width}px, ${id}: the timeline never makes the page overflow @webkit`, async ({ page }) => {

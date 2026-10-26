@@ -46,6 +46,7 @@ export type Council = {
   endYear: number | null;
   approx: boolean;
   ecumenical: boolean;
+  recognizedBy: Localized;
   place: Localized;
   dateNote: Localized | null;
   decisions: Localized;

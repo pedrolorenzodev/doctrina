@@ -14,6 +14,7 @@ export type TimelineEntry = {
   leadStart: number | null;
   birthUnknown: boolean;
   isRange: boolean;
+  ecumenical?: boolean;
   openEnd: boolean;
   own: boolean;
   href: string | null;

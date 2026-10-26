@@ -24,6 +24,7 @@ export type TimelineItem = {
   leadStart: number | null;
   birthUnknown: boolean;
   isRange: boolean;
+  ecumenical?: boolean;
   openEnd: boolean;
   own: boolean;
   href: string | null;
@@ -148,6 +149,9 @@ function dated(
   };
 }
 
+const withEcumenical = (ecumenical: boolean, item: TimelineItem): TimelineItem =>
+  ecumenical ? { ...item, ecumenical } : item;
+
 export function buildFatherTimeline(father: Father, all: Father[], locale: Locale, text: UiText): TimelineView {
   const labels = text.timeline;
   const life = lifeOf(father);
@@ -208,18 +212,21 @@ export function buildFatherTimeline(father: Father, all: Father[], locale: Local
       .map((council) => ({
         rank: 1,
         distance: Math.abs(council.year - midpoint),
-        item: dated(
-          council.id,
-          "events",
-          labels.kinds.council,
-          council.name,
-          council.name[locale],
-          council.year,
-          council.endYear,
-          council.approx,
-          council.name[locale],
-          locale,
-          labels.seeOnTimeline,
+        item: withEcumenical(
+          council.ecumenical,
+          dated(
+            council.id,
+            "events",
+            labels.kinds.council,
+            council.name,
+            council.name[locale],
+            council.year,
+            council.endYear,
+            council.approx,
+            council.name[locale],
+            locale,
+            labels.seeOnTimeline,
+          ),
         ),
       })),
   ];

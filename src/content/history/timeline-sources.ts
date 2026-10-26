@@ -1323,6 +1323,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: true,
     ecumenical: false,
+    recognizedBy: {
+      es: "No se cuenta entre los concilios ecuménicos; todas las tradiciones lo consideran una asamblea apostólica y un modelo para los concilios posteriores.",
+      en: "Not counted among the ecumenical councils; all traditions regard it as an apostolic assembly and a model for later councils.",
+    },
     place: {
       es: "Jerusalén",
       en: "Jerusalem",
@@ -1346,6 +1350,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: true,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (sínodo local)",
+      en: "None (local synod)",
+    },
     place: {
       es: "Antioquía de Siria",
       en: "Antioch in Syria",
@@ -1369,6 +1377,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: true,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (sínodo local hispano)",
+      en: "None (local Hispanic synod)",
+    },
     place: {
       es: "Iliberris (Elvira), cerca de la actual Granada, Hispania",
       en: "Iliberris (Elvira), near modern Granada, Hispania",
@@ -1392,6 +1404,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (concilio occidental)",
+      en: "None (Western council)",
+    },
     place: {
       es: "Arlés, Galia",
       en: "Arles, Gaul",
@@ -1412,6 +1428,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Iglesia católica, Iglesia ortodoxa, Iglesias ortodoxas orientales e Iglesia del Oriente; muchas iglesias protestantes aceptan su credo como fiel a la Escritura.",
+      en: "Catholic Church, Eastern Orthodox Church, Oriental Orthodox Churches and the Church of the East; many Protestant churches accept its creed as faithful to Scripture.",
+    },
     place: {
       es: "Nicea, Bitinia (actual İznik, Turquía)",
       en: "Nicaea, Bithynia (modern İznik, Turkey)",
@@ -1432,6 +1452,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Iglesia católica, Iglesia ortodoxa, Iglesias ortodoxas orientales e Iglesia del Oriente; muchas iglesias protestantes aceptan su credo. Fue un concilio solo de obispos orientales y su carácter ecuménico se reconoció después, sobre todo en Calcedonia (451).",
+      en: "Catholic Church, Eastern Orthodox Church, Oriental Orthodox Churches and the Church of the East; many Protestant churches accept its creed. Only Eastern bishops attended; its ecumenical standing was recognized later, especially at Chalcedon (451).",
+    },
     place: {
       es: "Constantinopla",
       en: "Constantinople",
@@ -1452,6 +1476,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (sínodo local)",
+      en: "None (local synod)",
+    },
     place: {
       es: "Roma",
       en: "Rome",
@@ -1472,6 +1500,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (sínodo regional africano)",
+      en: "None (regional African synod)",
+    },
     place: {
       es: "Hipona (Hippo Regius), norte de África (actual Annaba, Argelia)",
       en: "Hippo Regius, North Africa (modern Annaba, Algeria)",
@@ -1492,6 +1524,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (concilio regional africano)",
+      en: "None (regional African council)",
+    },
     place: {
       es: "Cartago, norte de África",
       en: "Carthage, North Africa",
@@ -1512,6 +1548,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (concilio regional africano), aunque sus cánones fueron respaldados por el papa Zósimo en su Epistola tractoria y recibidos ampliamente en Occidente.",
+      en: "None (regional African council), though its canons were backed by Pope Zosimus in his Epistola tractoria and widely received in the West.",
+    },
     place: {
       es: "Cartago, norte de África",
       en: "Carthage, North Africa",
@@ -1532,6 +1572,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna como concilio ecuménico; su código canónico fue recibido en el derecho canónico bizantino y confirmado por el Concilio de Trullo (692).",
+      en: "None as an ecumenical council; its canon code was received into Byzantine canon law and confirmed by the Council in Trullo (692).",
+    },
     place: {
       es: "Cartago, norte de África",
       en: "Carthage, North Africa",
@@ -1552,6 +1596,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Iglesia católica, Iglesia ortodoxa e Iglesias ortodoxas orientales; no lo acepta la Iglesia del Oriente. Muchas iglesias protestantes aceptan su enseñanza cristológica.",
+      en: "Catholic Church, Eastern Orthodox Church and Oriental Orthodox Churches; not accepted by the Church of the East. Many Protestant churches accept its Christological teaching.",
+    },
     place: {
       es: "Éfeso, Asia Menor",
       en: "Ephesus, Asia Minor",
@@ -1572,6 +1620,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Convocado como concilio general, fue anulado por Calcedonia (451) y no se cuenta como ecuménico en ninguna tradición. Las Iglesias ortodoxas orientales veneran a Dióscoro como santo y valoran ese concilio de forma distinta que las Iglesias calcedonianas.",
+      en: "Called as a general council, it was annulled by Chalcedon (451) and is not counted as ecumenical in any tradition. The Oriental Orthodox Churches venerate Dioscorus as a saint and assess the council differently from the Chalcedonian churches.",
+    },
     place: {
       es: "Éfeso, Asia Menor",
       en: "Ephesus, Asia Minor",
@@ -1592,6 +1644,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Iglesia católica e Iglesia ortodoxa; muchas iglesias protestantes aceptan su definición cristológica. Las Iglesias ortodoxas orientales lo rechazan (aceptan solo los tres primeros concilios).",
+      en: "Catholic Church and Eastern Orthodox Church; many Protestant churches accept its Christological definition. The Oriental Orthodox Churches reject it (they accept only the first three councils).",
+    },
     place: {
       es: "Calcedonia, frente a Constantinopla (actual Kadıköy, Estambul)",
       en: "Chalcedon, across from Constantinople (modern Kadıköy, Istanbul)",
@@ -1612,6 +1668,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (sínodo local galo); aprobado por el papa Bonifacio II (531), lo que le dio gran autoridad en la Iglesia católica. Muchos protestantes lo citan con aprecio.",
+      en: "None (local Gallic synod); approved by Pope Boniface II (531), which gave it great authority in the Catholic Church. Many Protestants cite it approvingly.",
+    },
     place: {
       es: "Orange (Arausio), Galia",
       en: "Orange (Arausio), Gaul",
@@ -1632,6 +1692,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Iglesia católica e Iglesia ortodoxa. Las Iglesias ortodoxas orientales no lo aceptan; muchas iglesias protestantes dan menos peso a los concilios quinto a séptimo.",
+      en: "Catholic Church and Eastern Orthodox Church. The Oriental Orthodox Churches do not accept it; many Protestant churches give less weight to the fifth to seventh councils.",
+    },
     place: {
       es: "Constantinopla",
       en: "Constantinople",
@@ -1652,6 +1716,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (concilio del reino visigodo)",
+      en: "None (council of the Visigothic kingdom)",
+    },
     place: {
       es: "Toledo, Hispania visigoda",
       en: "Toledo, Visigothic Spain",
@@ -1672,6 +1740,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna como concilio ecuménico; su doctrina fue confirmada por el Tercer Concilio de Constantinopla (680–681).",
+      en: "None as an ecumenical council; its teaching was confirmed by the Third Council of Constantinople (680–681).",
+    },
     place: {
       es: "Basílica de Letrán, Roma",
       en: "Lateran Basilica, Rome",
@@ -1692,6 +1764,10 @@ export const councils: Council[] = [
     endYear: 681,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Iglesia católica e Iglesia ortodoxa. Las Iglesias ortodoxas orientales no lo aceptan.",
+      en: "Catholic Church and Eastern Orthodox Church. The Oriental Orthodox Churches do not accept it.",
+    },
     place: {
       es: "Constantinopla (sala abovedada o “Trullo” del palacio imperial)",
       en: "Constantinople (domed hall or “Trullo” of the imperial palace)",
@@ -1712,6 +1788,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "La Iglesia ortodoxa considera sus cánones parte del sexto concilio ecuménico y de autoridad ecuménica. La Iglesia católica no lo cuenta como ecuménico; Roma nunca lo aceptó en bloque.",
+      en: "The Eastern Orthodox Church regards its canons as part of the sixth ecumenical council and of ecumenical authority. The Catholic Church does not count it as ecumenical; Rome never accepted it as a whole.",
+    },
     place: {
       es: "Constantinopla (sala abovedada o “Trullo” del palacio imperial)",
       en: "Constantinople (domed hall or “Trullo” of the imperial palace)",
@@ -1732,6 +1812,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Iglesia católica e Iglesia ortodoxa. Las Iglesias ortodoxas orientales no lo cuentan entre sus concilios. La mayoría de las iglesias protestantes no aceptan su enseñanza sobre la veneración de imágenes.",
+      en: "Catholic Church and Eastern Orthodox Church. The Oriental Orthodox Churches do not count it among their councils. Most Protestant churches do not accept its teaching on the veneration of images.",
+    },
     place: {
       es: "Nicea, Bitinia",
       en: "Nicaea, Bithynia",
@@ -1752,6 +1836,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna (sínodo franco)",
+      en: "None (Frankish synod)",
+    },
     place: {
       es: "Fráncfort del Meno, reino franco",
       en: "Frankfurt am Main, Frankish kingdom",
@@ -1772,6 +1860,10 @@ export const councils: Council[] = [
     endYear: 870,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Iglesia católica (lo cuenta como el octavo concilio ecuménico). La Iglesia ortodoxa lo rechaza.",
+      en: "Catholic Church (counted as the eighth ecumenical council). Rejected by the Eastern Orthodox Church.",
+    },
     place: {
       es: "Constantinopla (Santa Sofía)",
       en: "Constantinople (Hagia Sophia)",
@@ -1792,6 +1884,10 @@ export const councils: Council[] = [
     endYear: 880,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Algunos teólogos y documentos ortodoxos lo consideran el octavo concilio ecuménico; la Iglesia ortodoxa no lo ha definido formalmente así. La Iglesia católica no lo cuenta como ecuménico.",
+      en: "Some Orthodox theologians and documents regard it as the eighth ecumenical council; the Orthodox Church has not formally defined it as such. The Catholic Church does not count it as ecumenical.",
+    },
     place: {
       es: "Constantinopla (Santa Sofía)",
       en: "Constantinople (Hagia Sophia)",
@@ -1812,6 +1908,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (noveno concilio ecuménico en su cómputo).",
+      en: "Catholic Church only (ninth ecumenical council in its numbering).",
+    },
     place: {
       es: "Palacio de Letrán, Roma",
       en: "Lateran Palace, Rome",
@@ -1832,6 +1932,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (décimo concilio ecuménico en su cómputo).",
+      en: "Catholic Church only (tenth ecumenical council in its numbering).",
+    },
     place: {
       es: "Palacio de Letrán, Roma",
       en: "Lateran Palace, Rome",
@@ -1852,6 +1956,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (undécimo concilio ecuménico en su cómputo).",
+      en: "Catholic Church only (eleventh ecumenical council in its numbering).",
+    },
     place: {
       es: "Palacio de Letrán, Roma",
       en: "Lateran Palace, Rome",
@@ -1872,6 +1980,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (duodécimo concilio ecuménico en su cómputo).",
+      en: "Catholic Church only (twelfth ecumenical council in its numbering).",
+    },
     place: {
       es: "Palacio de Letrán, Roma",
       en: "Lateran Palace, Rome",
@@ -1892,6 +2004,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (decimotercer concilio ecuménico en su cómputo).",
+      en: "Catholic Church only (thirteenth ecumenical council in its numbering).",
+    },
     place: {
       es: "Lyon, Francia",
       en: "Lyon, France",
@@ -1912,6 +2028,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (decimocuarto concilio ecuménico en su cómputo). La Iglesia ortodoxa rechaza la unión allí proclamada.",
+      en: "Catholic Church only (fourteenth ecumenical council in its numbering). The Orthodox Church rejects the union proclaimed there.",
+    },
     place: {
       es: "Lyon, Francia",
       en: "Lyon, France",
@@ -1932,6 +2052,10 @@ export const councils: Council[] = [
     endYear: 1312,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (decimoquinto concilio ecuménico en su cómputo).",
+      en: "Catholic Church only (fifteenth ecumenical council in its numbering).",
+    },
     place: {
       es: "Vienne, Francia",
       en: "Vienne, France",
@@ -1952,6 +2076,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "Ninguna Iglesia lo reconoce hoy como ecuménico; la Iglesia católica no lo cuenta entre sus concilios generales.",
+      en: "No church recognizes it as ecumenical today; the Catholic Church does not count it among its general councils.",
+    },
     place: {
       es: "Pisa, Italia",
       en: "Pisa, Italy",
@@ -1972,6 +2100,10 @@ export const councils: Council[] = [
     endYear: 1418,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (decimosexto concilio ecuménico), aunque no todos sus decretos se consideran igualmente vinculantes.",
+      en: "Catholic Church only (sixteenth ecumenical council), though not all its decrees are regarded as equally binding.",
+    },
     place: {
       es: "Constanza, Sacro Imperio (actual Alemania)",
       en: "Constance, Holy Roman Empire (modern Germany)",
@@ -1992,6 +2124,10 @@ export const councils: Council[] = [
     endYear: 1449,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "La Iglesia católica cuenta como ecuménicas, a lo sumo, sus primeras sesiones (hasta 1437), como parte del decimoséptimo concilio (Basilea-Ferrara-Florencia); rechaza las posteriores.",
+      en: "The Catholic Church counts at most its early sessions (to 1437) as ecumenical, as part of the seventeenth council (Basel–Ferrara–Florence); it rejects the later ones.",
+    },
     place: {
       es: "Basilea, Suiza",
       en: "Basel, Switzerland",
@@ -2012,6 +2148,10 @@ export const councils: Council[] = [
     endYear: 1445,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (decimoséptimo concilio ecuménico). La Iglesia ortodoxa rechazó la unión.",
+      en: "Catholic Church only (seventeenth ecumenical council). The Orthodox Church rejected the union.",
+    },
     place: {
       es: "Ferrara (1438), Florencia (1439–1443) y Roma (1443–1445); antes, Basilea (desde 1431)",
       en: "Ferrara (1438), Florence (1439–1443) and Rome (1443–1445); previously Basel (from 1431)",
@@ -2032,6 +2172,10 @@ export const councils: Council[] = [
     endYear: 1517,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (decimoctavo concilio ecuménico en su cómputo).",
+      en: "Catholic Church only (eighteenth ecumenical council in its numbering).",
+    },
     place: {
       es: "Palacio de Letrán, Roma",
       en: "Lateran Palace, Rome",
@@ -2052,6 +2196,10 @@ export const councils: Council[] = [
     endYear: 1563,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (decimonoveno concilio ecuménico).",
+      en: "Catholic Church only (nineteenth ecumenical council).",
+    },
     place: {
       es: "Trento, norte de Italia (con un breve traslado a Bolonia, 1547–1549)",
       en: "Trent, northern Italy (briefly transferred to Bologna, 1547–1549)",
@@ -2072,6 +2220,10 @@ export const councils: Council[] = [
     endYear: 1619,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "No es un concilio ecuménico. Sínodo nacional de la Iglesia reformada neerlandesa con delegados de otras iglesias reformadas; sus Cánones son una de las “Tres Formas de Unidad” de las iglesias reformadas continentales.",
+      en: "Not an ecumenical council. A national synod of the Dutch Reformed Church with delegates from other Reformed churches; its Canons are one of the “Three Forms of Unity” of the continental Reformed churches.",
+    },
     place: {
       es: "Dordrecht, Provincias Unidas (Países Bajos)",
       en: "Dordrecht, Dutch Republic (Netherlands)",
@@ -2092,6 +2244,10 @@ export const councils: Council[] = [
     endYear: null,
     approx: false,
     ecumenical: false,
+    recognizedBy: {
+      es: "No es un concilio ecuménico; sínodo local ortodoxo cuya Confesión de Dositeo ha sido ampliamente recibida como expresión autorizada de la fe ortodoxa frente a la Reforma.",
+      en: "Not an ecumenical council; a local Orthodox synod whose Confession of Dositheus has been widely received as an authoritative statement of Orthodox faith in response to the Reformation.",
+    },
     place: {
       es: "Jerusalén y Belén (Iglesia de la Natividad)",
       en: "Jerusalem and Bethlehem (Church of the Nativity)",
@@ -2112,6 +2268,10 @@ export const councils: Council[] = [
     endYear: 1870,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (vigésimo concilio ecuménico).",
+      en: "Catholic Church only (twentieth ecumenical council).",
+    },
     place: {
       es: "Basílica de San Pedro, Roma",
       en: "St Peter's Basilica, Rome",
@@ -2132,6 +2292,10 @@ export const councils: Council[] = [
     endYear: 1965,
     approx: false,
     ecumenical: true,
+    recognizedBy: {
+      es: "Solo la Iglesia católica (vigésimo primer concilio ecuménico).",
+      en: "Catholic Church only (twenty-first ecumenical council).",
+    },
     place: {
       es: "Basílica de San Pedro, Roma",
       en: "St Peter's Basilica, Rome",

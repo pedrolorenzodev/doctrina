@@ -182,6 +182,23 @@ test("the chosen item is the accent bar of the ruler", async ({ page }) => {
   await expect(page.locator('[data-ruler-item="justin-martyr"]')).not.toHaveClass(/bg-accent/);
 });
 
+test("the seven ecumenical councils carry a dot in their ring, explained by one legend line, and their panel says who receives them", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  await expect(page.locator("[data-scroller] [data-ecumenical]")).toHaveCount(7);
+  await expect(page.getByText("Lo reciben como ecuménico las Iglesias católica y ortodoxa")).toBeVisible();
+  await item(page, "nicaea-1").click();
+  await expect(detail(page).getByText("Lo reciben como concilio ecuménico")).toBeVisible();
+  await expect(detail(page)).toContainText("Iglesia católica");
+  await item(page, "jerusalem-49").click();
+  await expect(detail(page).getByText("Concilio ecuménico", { exact: true })).toBeVisible();
+  await expect(detail(page)).toContainText("No se cuenta entre los concilios ecuménicos");
+  await item(page, "polycarp-of-smyrna").click();
+  await expect(detail(page).getByText("Concilio ecuménico")).toHaveCount(0);
+});
+
 test("arrows move the focus along the items, Enter sends it to the heading", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(timeline);

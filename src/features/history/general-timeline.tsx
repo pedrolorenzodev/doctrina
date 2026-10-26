@@ -14,7 +14,7 @@ import { TimelineRuler } from "@/features/history/timeline-ruler";
 
 export type GeneralTimelineText = {
   sections: Record<GeneralSection, string>;
-  key: { life: string; estimated: string; unknownBirth: string; council: string; lasts: string };
+  key: { life: string; estimated: string; unknownBirth: string; council: string; ecumenical: string; lasts: string };
   keyLabel: string;
   hint: string;
   diedMark: string;
@@ -370,6 +370,15 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
           {text.key.council}
         </li>
         <li className="flex items-center gap-2">
+          <span
+            aria-hidden="true"
+            className="relative grid size-3 place-items-center rounded-full circle-border border-ink-3 bg-bg"
+          >
+            <span className="size-1 rounded-full bg-ink-3" />
+          </span>
+          {text.key.ecumenical}
+        </li>
+        <li className="flex items-center gap-2">
           <span aria-hidden="true" className="h-1 w-7 rounded-2 bg-rule-2" />
           {text.key.lasts}
         </li>
@@ -401,6 +410,12 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
                 ))}
               </dl>
               <p className="m-0 mt-3 font-body text-passage-body font-light text-ink-2">{panelEntry.text}</p>
+              {panelEntry.note ? (
+                <div className="mt-3.5">
+                  <p className="m-0 mb-0.75 text-ui-xs text-ink-3">{panelEntry.note.heading}</p>
+                  <p className="m-0 text-meta leading-1.55 text-ink-2">{panelEntry.note.text}</p>
+                </div>
+              ) : null}
               <p className="m-0 mt-3 text-ui-sm">
                 {/* TODO: only the Fathers' pages exist; councils and movements link to their pages once they exist */}
                 {panelEntry.href ? (

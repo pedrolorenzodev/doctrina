@@ -12,7 +12,7 @@ import { useBoxWidth, useLabelMeasure } from "@/lib/use-timeline-box";
 export type TimelineText = {
   groups: Record<TimelineEntry["group"], string>;
   keyLabel: string;
-  key: { life: string; estimatedBirth: string; unknownBirth: string; event: string };
+  key: { life: string; estimatedBirth: string; unknownBirth: string; event: string; ecumenical: string };
   hint: string;
   empty: string;
   diedMark: string;
@@ -226,6 +226,17 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
           <span aria-hidden="true" className="size-3 rounded-full circle-border border-ink-3 bg-bg" />
           {text.key.event}
         </li>
+        {entries.some((entry) => entry.ecumenical) ? (
+          <li className="flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="grid size-3 place-items-center rounded-full circle-border border-ink-3 bg-bg"
+            >
+              <span className="size-1 rounded-full bg-ink-3" />
+            </span>
+            {text.key.ecumenical}
+          </li>
+        ) : null}
       </ul>
       <FixedStrip entry={selected} detail={detail} />
       <div

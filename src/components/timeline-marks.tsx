@@ -63,6 +63,13 @@ export function TimelineMarks({ entry, scale, left }: { entry: TimelineEntry; sc
     <span
       style={at("--x", px(x(entry.start)))}
       className="absolute top-1 left-(--x) -ml-1.25 size-2.5 rounded-full circle-border border-ink-3 bg-bg transition-colors duration-150 group-hover:border-ink group-aria-pressed:border-ink group-aria-pressed:bg-ink"
-    />
+    >
+      {entry.ecumenical ? (
+        <span
+          data-ecumenical
+          className="absolute top-1/2 left-1/2 size-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink-3 transition-colors duration-150 group-hover:bg-ink group-aria-pressed:bg-bg"
+        />
+      ) : null}
+    </span>
   );
 }

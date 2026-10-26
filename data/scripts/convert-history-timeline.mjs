@@ -16,6 +16,7 @@ const councils = history.councils.map((council) => ({
   endYear: council.endYear ?? null,
   approx: Boolean(council.approx),
   ecumenical: council.ecumenical,
+  recognizedBy: council.recognizedAsEcumenicalBy,
   place: council.place,
   dateNote: council.dateNote ?? null,
   decisions: council.decisions,
