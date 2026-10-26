@@ -1,5 +1,6 @@
 "use client";
 
+import { bookRouteOf } from "@/content/bible-routes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
@@ -90,12 +91,13 @@ const entryClassName =
 type TreeItemProps = {
   node: TreeNode;
   currentId: string | null;
+  currentIsPage: boolean;
   trail: Set<string>;
   initiallyOpen: Set<string>;
   text: SidebarText;
 };
 
-function TreeItem({ node, currentId, trail, initiallyOpen, text }: TreeItemProps) {
+function TreeItem({ node, currentId, currentIsPage, trail, initiallyOpen, text }: TreeItemProps) {
   const hasChildren = node.children.length > 0;
   const isCurrent = node.id === currentId;
   const open = initiallyOpen.has(node.id);
@@ -128,7 +130,12 @@ function TreeItem({ node, currentId, trail, initiallyOpen, text }: TreeItemProps
           <span className="w-5.5 flex-none" aria-hidden="true" />
         )}
         {node.href ? (
-          <Link href={node.href} aria-current={isCurrent ? "page" : undefined} className={entryClassName} {...flags}>
+          <Link
+            href={node.href}
+            aria-current={isCurrent ? (currentIsPage ? "page" : "true") : undefined}
+            className={entryClassName}
+            {...flags}
+          >
             <span>{node.label}</span>
             {node.count ? <span className="ml-auto text-ui-2xs text-ink-3 tabular-nums">{node.count}</span> : null}
           </Link>
@@ -146,6 +153,7 @@ function TreeItem({ node, currentId, trail, initiallyOpen, text }: TreeItemProps
               key={child.id}
               node={child}
               currentId={currentId}
+              currentIsPage={currentIsPage}
               trail={trail}
               initiallyOpen={initiallyOpen}
               text={text}
@@ -161,7 +169,9 @@ export function Sidebar({ groups, text }: SidebarProps) {
   const pathname = usePathname();
   const { open, setOpen, menuRef } = useDrawer();
   const index = useMemo(() => indexTree(groups), [groups]);
-  const currentId = index.hrefToId.get(pathname) ?? null;
+  const bookRoute = bookRouteOf(pathname);
+  const currentId = index.hrefToId.get(pathname) ?? (bookRoute ? (index.hrefToId.get(bookRoute) ?? null) : null);
+  const currentIsPage = index.hrefToId.has(pathname);
   const trail = useMemo(() => new Set(ancestorsOf(index, currentId)), [index, currentId]);
   const [initiallyOpen] = useState(() => new Set(trail));
   const navRef = useRef<HTMLElement>(null);
@@ -287,6 +297,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
                     key={node.id}
                     node={node}
                     currentId={currentId}
+                    currentIsPage={currentIsPage}
                     trail={trail}
                     initiallyOpen={initiallyOpen}
                     text={text}

@@ -17,6 +17,8 @@ import {
   traditionHref,
   traditionRoute,
 } from "@/content/routes";
+import { bibleBookRoute, bibleChapterHref } from "@/content/bible-routes";
+import { bibleBooks, getBibleBook } from "@/content/bible-books";
 import { bookNames } from "@/content/verse-names";
 import type { Locale } from "@/lib/locale";
 
@@ -187,7 +189,14 @@ export function buildSiteTree(
     href: publishedDoctrines.includes(doctrine) ? doctrineHref(locale, doctrine) : null,
     route: publishedDoctrines.includes(doctrine) ? doctrineRoute(locale, doctrine) : null,
   }));
-  const book = (key: string) => leaf(`book/${key}`, bookNames[key]?.[locale] ?? key);
+  const book = (key: string) => {
+    const entry = getBibleBook(key);
+    const node = leaf(`book/${key}`, entry?.names[locale] ?? key);
+    // TODO: the book leads to its own page once the Bible index and book pages exist; until then it opens chapter 1
+    return entry && locale === "es"
+      ? { ...node, href: bibleChapterHref(locale, entry, 1), route: bibleBookRoute(locale, entry) }
+      : node;
+  };
   const { counts, fathers } = historyIndex;
   return [
     { id: "doctrines", label: text.groupDoctrines, nodes: doctrineNodes },
@@ -196,7 +205,11 @@ export function buildSiteTree(
       label: text.tree.bible,
       nodes: [
         branch("bible/ot", text.tree.ot, bookKeys.slice(0, firstNewTestamentBook).map(book)),
-        leaf("bible/deutero", text.tree.deutero),
+        branch(
+          "bible/deutero",
+          text.tree.deutero,
+          bibleBooks.filter((entry) => entry.section === "deuterocanon").map((entry) => book(entry.id)),
+        ),
         branch("bible/nt", text.tree.nt, bookKeys.slice(firstNewTestamentBook).map(book)),
       ],
     },
