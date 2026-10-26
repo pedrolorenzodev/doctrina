@@ -1,8 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
-import { escapePriority, registerEscape } from "@/lib/escape-stack";
-import { setBranch } from "@/lib/branch-motion";
+import { useCallback, useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
+import { HangingMenu } from "@/components/hanging-menu";
 
 export type PickerOption = {
   id: string;
@@ -24,24 +23,17 @@ type TranslationPickerProps = {
   onChange: (id: string) => void;
 };
 
-const maxListHeight = 420;
-const bottomClearance = 14;
-const minListHeight = 160;
-
 const optionClassName =
-  "flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:bg-accent-weak aria-selected:font-medium aria-selected:text-ink aria-selected:shadow-current";
+  "group/option flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:bg-accent-weak aria-selected:font-medium aria-selected:text-ink aria-selected:shadow-current";
 
 const bracketed = (abbreviation: string) => `(${abbreviation})`;
 
 export function TranslationPicker({ text, options, value, onChange }: TranslationPickerProps) {
   const id = useId();
-  const box = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
   const list = useRef<HTMLDivElement>(null);
-  const settled = useRef(false);
   const focusOnOpen = useRef(false);
   const [open, setOpen] = useState(false);
-  const [room, setRoom] = useState(maxListHeight);
 
   const groups = [
     { language: "es" as const, label: text.spanish },
@@ -59,45 +51,16 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
   }, []);
 
   useEffect(() => {
-    const element = list.current;
-    if (!element) return;
-    if (!settled.current) {
-      settled.current = true;
-      return;
-    }
-    setBranch(element, open, true);
-    if (open && focusOnOpen.current) focusCurrent();
+    if (!open || !focusOnOpen.current) return;
     focusOnOpen.current = false;
+    focusCurrent();
   }, [open, focusCurrent]);
 
-  useEffect(() => {
-    if (!open) return;
-    const close = () => setOpen(false);
-    const onPointerDown = (event: PointerEvent) => {
-      if (event.target instanceof Node && !box.current?.contains(event.target)) close();
-    };
-    const unregister = registerEscape(escapePriority.window, () => {
-      setOpen(false);
-      button.current?.focus({ preventScroll: true });
-    });
-    document.addEventListener("pointerdown", onPointerDown);
-    addEventListener("resize", close);
-    return () => {
-      unregister();
-      document.removeEventListener("pointerdown", onPointerDown);
-      removeEventListener("resize", close);
-    };
-  }, [open]);
-
   const openList = (focusSelected: boolean) => {
-    const trigger = button.current;
-    if (!trigger) return;
     if (open) {
       if (focusSelected) focusCurrent();
       return;
     }
-    const below = innerHeight - trigger.getBoundingClientRect().bottom - bottomClearance;
-    setRoom(Math.max(minListHeight, Math.min(maxListHeight, below)));
     focusOnOpen.current = focusSelected;
     setOpen(true);
   };
@@ -137,7 +100,7 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
   };
 
   return (
-    <div ref={box} className="relative inline-block">
+    <div className="inline-block">
       <button
         ref={button}
         type="button"
@@ -146,7 +109,7 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
         aria-controls={`${id}-list`}
         onClick={(event) => (open ? closeList(false) : openList(event.detail === 0))}
         onKeyDown={onButtonKeyDown}
-        className="group/picker inline-flex min-h-8.5 cursor-pointer items-center justify-center gap-2 rounded-6 border border-rule-2 bg-card px-2 py-1 text-ui-xs leading-label font-medium text-ink transition-colors duration-150 ease-standard hover:border-ink hover:bg-hover sm:px-2.5 pointer-coarse:min-h-11"
+        className="group/picker inline-flex min-h-8 cursor-pointer items-center justify-center gap-2 rounded-6 px-2.5 py-1 text-ui-xs leading-label font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11"
       >
         <span className="sr-only">{text.label}</span>
         <span>{current?.abbreviation}</span>
@@ -163,22 +126,23 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
           <path d="M3.5 1.5 7 5l-3.5 3.5" />
         </svg>
       </button>
-      <div
+      <HangingMenu
         ref={list}
         id={`${id}-list`}
         role="listbox"
         aria-label={text.label}
-        hidden
-        data-open="false"
-        data-lenis-prevent
+        open={open}
+        onClose={() => setOpen(false)}
+        anchor={button}
+        align="end"
         onKeyDown={onListKeyDown}
-        style={{ "--picker-max": `${room}px` } as CSSProperties}
-        className={`absolute right-0 z-45 max-h-(--picker-max) w-72 overflow-y-auto overscroll-contain rounded-8 border border-rule-2 bg-panel p-1.5 shadow-floating sm:w-85 top-full mt-1.5`}
+        className="w-72 p-1.5 sm:w-85"
       >
         {groups.flatMap((group, index) => [
           <div
             key={`${group.language}-head`}
             role="presentation"
+            data-menu-item=""
             className={`px-2.5 pt-2 pb-1 text-label font-medium text-ink-3 ${index > 0 ? "mt-1 border-t border-rule pt-3" : ""}`}
           >
             {group.label}
@@ -192,14 +156,20 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
                 tabIndex={-1}
                 aria-selected={option.id === value}
                 data-id={option.id}
+                data-menu-item=""
                 onClick={() => choose(option.id)}
                 className={optionClassName}
               >
-                {option.displayName} <span className="ml-0.5 text-ink-3">{bracketed(option.abbreviation)}</span>
+                <span className="min-w-0">
+                  {option.displayName}{" "}
+                  <span className="text-ink-3 group-aria-selected/option:text-ink-2">
+                    {bracketed(option.abbreviation)}
+                  </span>
+                </span>
               </div>
             )),
         ])}
-      </div>
+      </HangingMenu>
     </div>
   );
 }

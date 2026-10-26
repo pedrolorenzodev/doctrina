@@ -7,10 +7,12 @@ import { PageMain } from "@/components/page-main";
 import { getBibleBook } from "@/content/bible-books";
 import { bibleChapterHref, bookFromSlug, bookSlug } from "@/content/bible-routes";
 import { getReadableChapters } from "@/content/get-bible";
+import { getBookIndex } from "@/content/get-book-index";
 import { getReaderChapter } from "@/content/get-reader-chapter";
 import type { ChapterRef } from "@/content/model/bible";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ReaderBody } from "@/features/reader/reader-body";
+import { ReaderFormatScript } from "@/features/reader/reader-format-script";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderStrip } from "@/features/reader/reader-strip";
 import { VerseArrival } from "@/features/reader/verse-arrival";
@@ -65,6 +67,15 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
       return [view.id, licence ? labels.foot.licence.replace("{licence}", licence) : null];
     }),
   );
+  const books = await getBookIndex(locale);
+  const stepOf = (target: { label: string; title: string; href: string } | null) =>
+    target
+      ? {
+          label: target.label,
+          href: target.href,
+          ariaLabel: labels.stepAria.replace("{label}", target.label).replace("{title}", target.title),
+        }
+      : null;
   const neighbor = (label: string, other: ChapterRef | null) => {
     const otherBook = other ? getBibleBook(other.book) : null;
     return other && otherBook
@@ -78,8 +89,15 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
   return (
     <PageMain>
       <ReaderSizeScript />
+      <ReaderFormatScript />
       <ReaderStrip
-        sizeText={labels.size}
+        textText={{
+          mark: labels.textOptions.mark,
+          label: labels.textOptions.label,
+          size: labels.size,
+          formatGroup: labels.textOptions.formatGroup,
+          formats: { lines: labels.textOptions.lines, flow: labels.textOptions.flow },
+        }}
         pickerText={labels.picker}
         options={views.map(({ id, abbreviation, displayName, language }) => ({
           id,
@@ -89,6 +107,25 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
         }))}
         defaultId={defaultId}
         yourNotes={{ label: labels.yourNotes.button, book: book.id, chapter }}
+        bookPicker={{
+          text: {
+            ...labels.bookPicker,
+            chapterOf: text.shell.chapterOf,
+            sections: {
+              old: text.shell.tree.ot,
+              deuterocanon: text.shell.tree.deutero,
+              new: text.shell.tree.nt,
+            },
+          },
+          books,
+          title: titleOf(book.names[locale], chapter),
+        }}
+        neighbors={{
+          previous: stepOf(neighbor(labels.previous, loaded.previous)),
+          next: stepOf(neighbor(labels.next, loaded.next)),
+          previousLabel: labels.previous,
+          nextLabel: labels.next,
+        }}
       />
       {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
       <Breadcrumbs

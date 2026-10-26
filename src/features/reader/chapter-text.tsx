@@ -36,7 +36,7 @@ export function ChapterText({
   onSelect,
 }: ChapterTextProps) {
   return (
-    <div ref={rootRef} lang={lang} className="relative mt-8.5 max-w-col">
+    <div ref={rootRef} lang={lang} data-chapter-text="" className="relative mt-8.5 max-w-col">
       {verses.map((verse) => (
         <p
           key={verse.verse}
