@@ -41,7 +41,7 @@ Out of scope for now: Spanish translations of the Fathers (nothing public domain
 
 **Phase 3, screen 05.** Built per DECISIONS 2026-10-21/22 (reader structure «Pestañas», highlighting by sentence and by dragged words, notes «Notas al costado», filters «Campo y menú»; `docs/research/reader-side-panel.md`, `reader-highlighting-and-features.md`, `reader-notes.md`, prototype `docs/research/proposals/reader-05-06/`). `SidePanel` already exists (`src/components/side-panel.tsx`) and `escape-stack` handles Esc. Block by block, each verified; the pixel-perfect Sonnet verifier of `.claude/rules/ui.md` applies; the previous/next chapter control is the proposal https://claude.ai/artifact/Hbuesa2nCXka9rWk8iFU4J (pick pending).
 
-**Phase 4, load into Supabase**, only after Pedro approves Phase 3. **Phase 5, the index and book pages** (proposals in ROADMAP «Next»).
+**Phase 4, load into Supabase**, only after Pedro approves Phase 3. **Phase 5, the index and book pages: replaced on 2026-10-26** by expansion in the sidebar (groups → books → a grid of chapters) and a fixed header with selectors (DECISIONS «Bible navigation…»; proposal first).
 
 ## Open for Pedro (decide in the session, in this order)
 1. Re-authorize the Supabase connector or create the scoped token (Phase 0).

@@ -23,6 +23,16 @@
   --color-hover: rgb(28 23 19 / 0.05);
   --color-mark: rgb(240 200 60 / 0.45);
   --color-scrim: rgb(0 0 0 / 0.35);
+  --color-hl-yellow: rgb(240 200 60 / 0.28);
+  --color-hl-green: rgb(110 175 90 / 0.26);
+  --color-hl-sky: rgb(70 170 205 / 0.22);
+  --color-hl-pink: rgb(225 115 150 / 0.22);
+  --color-hl-orange: rgb(235 140 55 / 0.26);
+  --color-hls-yellow: #e3bb3c;
+  --color-hls-green: #76aa5e;
+  --color-hls-sky: #4fa6c9;
+  --color-hls-pink: #d6789a;
+  --color-hls-orange: #e08a3c;
 
   --text-display: 60px;
   --text-display--line-height: 1.03;
@@ -171,6 +181,17 @@
   --text-reader-title-mobile--letter-spacing: -0.01em;
   --text-reader-note: 14px;
   --text-reader-note--line-height: 1.55;
+  --text-note-line: 13.5px;
+  --text-note-line--line-height: 1.45;
+  --text-note-text: 16.5px;
+  --text-note-text--line-height: 1.55;
+  --text-note-meta: 12.5px;
+  --text-note-row: 16px;
+  --text-note-row--line-height: 1.5;
+  --text-picker-option: 14.5px;
+  --text-picker-option--line-height: 1.35;
+  --text-panel-reference: 19px;
+  --text-panel-reference--line-height: 1.25;
   --text-reader-foot: 14px;
   --text-reader-foot--line-height: 1.6;
   --text-reader: 19px;
@@ -196,11 +217,14 @@
   --spacing-sidebar: 272px;
   --spacing-section: 140px;
   --spacing-scroll-offset: 24px;
+  --spacing-reader-strip: 51px;
+  --spacing-reader-arrival: 33px;
   --container-col: 720px;
   --container-wide: 1040px;
   --container-synthesis: 680px;
   --container-entries: 870px;
   --container-drawer: min(320px, 86vw);
+  --container-undo: calc(100vw - 2rem);
 
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
   --ease-move: cubic-bezier(0.4, 0, 0.2, 1);
@@ -211,6 +235,8 @@
   --shadow-current-underline: inset 0 -2px 0 var(--color-accent);
   --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45);
   --shadow-search: 0 18px 40px -18px rgb(0 0 0 / 0.5);
+  --shadow-swatch: inset 0 0 0 1px rgb(0 0 0 / 0.12);
+  --shadow-swatch-current: 0 0 0 2px var(--color-panel), 0 0 0 3.5px var(--color-ink);
   --shadow-strip: 0 -10px 18px -12px rgb(0 0 0 / 0.3);
 }
 
@@ -244,6 +270,16 @@
   --color-panel: #262625;
   --color-tip-bg: #f2f2f0;
   --color-tip-ink: #1d1d1c;
+  --color-hl-yellow: rgb(214 168 101 / 0.2);
+  --color-hl-green: rgb(125 190 110 / 0.18);
+  --color-hl-sky: rgb(95 180 215 / 0.18);
+  --color-hl-pink: rgb(225 125 165 / 0.18);
+  --color-hl-orange: rgb(230 140 70 / 0.2);
+  --color-hls-yellow: #cfa463;
+  --color-hls-green: #86b878;
+  --color-hls-sky: #6fb3d2;
+  --color-hls-pink: #d48aa6;
+  --color-hls-orange: #d6935c;
   --color-hover: rgb(255 255 255 / 0.05);
   --color-mark: rgb(214 168 101 / 0.28);
   --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
@@ -255,7 +291,12 @@
   :root {
     --spacing-top: 52px;
     --spacing-section: 96px;
+    --spacing-reader-strip: 43px;
   }
+}
+
+:root:has([data-reader-strip]) {
+  --spacing-scroll-offset: calc(var(--spacing-reader-strip) + var(--spacing-reader-arrival));
 }
 
 @utility texture-page {
@@ -891,6 +932,62 @@
     & #content {
       padding-bottom: calc(var(--spacing-sheet) + 4dvh);
     }
+  }
+}
+
+@utility side-panel-room-wide {
+  @media (min-width: 80rem) {
+    & #content {
+      padding-right: calc(var(--spacing-panel) + 24px);
+    }
+  }
+
+  @media (max-width: 79.99rem) {
+    & #content {
+      padding-bottom: calc(var(--spacing-sheet) + 4dvh);
+    }
+  }
+}
+
+@utility undo-motion {
+  transition:
+    opacity 150ms ease,
+    translate 150ms ease,
+    visibility 0s linear 150ms;
+
+  &[data-open="true"] {
+    transition-delay: 0s, 0s, 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+@utility toolbar-motion {
+  transition:
+    opacity 100ms ease,
+    translate 100ms ease,
+    visibility 0s linear 100ms;
+
+  &[data-open="true"] {
+    transition:
+      opacity 150ms var(--ease-reveal),
+      translate 150ms var(--ease-reveal),
+      visibility 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+@utility undo-position {
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+
+  @media (width < 40rem) {
+    top: calc(var(--spacing-top) + 10px);
+    bottom: auto;
   }
 }
 
