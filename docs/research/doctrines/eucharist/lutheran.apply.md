@@ -7,6 +7,7 @@ Step 7 of `docs/playbooks/content-dossier.md`, method `docs/playbooks/apply-corr
 - Status: DONE (21:53–22:40 -03). Reviews applied 2026-10-21.
 - Done: V in full, E in full (one part of E24 not applied), the Spanish redo from the originals, C (after the coordinator reported it DONE: must-fix 1, 4, 5, 6, 9; for Pedro 3, 7, 10, 11, 12; rejected 2, 8, 13–17).
 - Only fetch: *Unitatis redintegratio* es/en from vatican.va (E22). Everything else from texts on disk (e-text, scan OCR, boc copies, Ayala, catholic.md).
+- 2026-10-25: Pedro's answers to the 16 questions applied (section at the end); WLC 173 and the marker, listed below as not applied, are done there.
 - Next (coordinator): second verification of the passages this pass added or redone (list in the dossier's Weak spots); outside-file list below.
 
 ## Applied
@@ -83,3 +84,55 @@ Step 7 of `docs/playbooks/content-dossier.md`, method `docs/playbooks/apply-corr
 - `review-page` for the Lutheran Eucharist: not built (step 8).
 
 Reviews applied 2026-10-21.
+
+## Pedro's answers applied (2026-10-25)
+
+ROADMAP "Background queue" item 2. Source: `lutheran.md` §8 (Pedro's answers 2026-10-22/23) and DECISIONS 2026-10-23, «Lutheran Eucharist questions». Edited only `lutheran.md`, `catholic.md` and this file. Fetched to `~/doctrina-scratch/lutheran-apply/` (outside the repo): CCC pages from vatican.va (es/en), the 1894 Westminster volume's OCR (archive.org `confessionoffaith00chur`).
+
+### Applied, by answer
+
+1. QE order: §1 order line rewritten (default QE-1, QE-2, QE-3+4, QE-5, QE-6; QE-7–10 «ver más»); QE-3 and QE-4 merged as **QE-3+4** led by Ep VII.2, every quote kept in two source groups; merged draft = the two drafts joined + an Ep VII.2 opening that leaves out «Los sacramentarios dicen que no» (rule 1 of DECISIONS 2026-10-23); QE-4's first clause dropped (already QE-1/QE-2); Coverage row updated (9 statements on the site).
+2. **ST-T** defined in §4's status lines and placed under every Trent canon: OB-1 (1374–1377), OB-2 (1377, 1379), OB-3 (1378, 1418), OB-4 (1391, 1395), OB-5 (1385, 1415), OB-6 (1366–1367, 1371, 1414), OB-7 (1390), OB-11 (611, 1411). Every paragraph read 2026-10-25 on vatican.va in Spanish (`catechism_sp/p2s2c1a3_sp.html`, `p122a4p2_sp.html`) and English (`ENG0015/__P41.HTM`, `__P42.HTM`, `__P44.HTM`, `__P1O.HTM`). Critic's numbers: 1374–1377 and 1390 confirmed; «1367» alone corrected to 1366–1367, 1371, 1414 (living and dead). Found while reading: the vatican.va English of 1367 lacks the Spanish's «este sacrificio [es] verdaderamente propiciatorio».
+3. ST-DOS: decision recorded (kept; agree with the Orthodox dossier before it goes on the page).
+4. ST-FC: decision recorded (both halves, no *Formula of Agreement*).
+5. OB-3: decision recorded (kept as drafted).
+6. OB-8: «Nota del sitio» drafted («La Fórmula de Concordia (1577) responde a los sacramentarios de su tiempo, el siglo XVI; la Confesión de Westminster es de 1647.»), quiet, dates only.
+7. QE-2 draft: «en el pan, con el pan, bajo el pan» (the shorthand's order) → SD VII.35's «bajo el pan, con el pan, en el pan»; OB-8 title note. OB-8's synthesis keeps «en, con ni bajo» because it is Westminster's own wording.
+8. PQ-5: dates from `../../neutral/fathers-verification.md` for Justin, Chrysostom, Cyril of Alexandria, Augustine, Irenaeus; Conventions line updated. Work identifications the BoC does not name are tagged (`[memory]`: *1 Apol.* 66, *Tract. in Ioh.* 80.3, *Adv. haer.* IV.18.5; `[inference]`: Cyril's *Commentary on John*, Chrysostom's «Serm. de Pass.» = *De proditione Iudae* 1); work dates go on the site only once identified.
+9. Variata: §1 "left out" line now says not on this page; item for the tradition page below.
+10. Asymmetry accepted; Baptist/AG line, debate candidates and Coverage note the paused debate layer and the "every page or none" rule.
+11. OB-11: kept; its note and the asymmetry line updated.
+12. §3 Acts 3:21 row: accusation clause dropped (stays in OB-8).
+13. OB-9: WCF 29.7 (pointer to OB-8's texts) and **WLC 173** as «ver más»; WLC 173 read in the 1894 volume, pp. 206–207, OCR l.27113–27118, 27250–27252, proof texts i, k; Spanish AI from the English, labelled. ST-WCF now names WLC 173.
+14. OB-2: «Respuesta apologética pendiente» → quiet site line «El Libro de Concordia no trata dos puntos de esta objeción: llevar la Eucaristía a los enfermos (canon 7) y lo que sobra del pan y del vino consagrados después de la comunión (canon 4).»; basis kept as a note. `catholic.md`: OB-6, DO-1, DO-2 markers replaced by fact lines with the same content; Conventions and debate-layer intro lines and DO-2's source notes updated; Progress line added.
+15. Closed communion: Cómo se vive unchanged; tradition-page item below; Coverage and the CV "left out" line note it.
+16. Nothing to apply; recorded.
+- Also: §8 Questions block rewritten as decided (each «Decided 2026-10-23: …»); the answers paragraph now says «applied 2026-10-25»; Progress line; §6 row and §7 rows (CCC, WLC 173, Fathers' dates); Weak spots bullet for this pass.
+
+### Not applied, or applied with a caveat
+
+- **Objection order** (answer 1): option A covers QE only; the §4 proposed order (OB-8, OB-1, …) is unchanged. DECISIONS 2026-10-24 (B2b, open point 1, «resolved by Pedro») has the site show objections in numeric order; whether that replaces this page's proposed order is not stated. For Pedro.
+- **WLC 173** (answer 13): added as Pedro decided, but read today it treats who may be kept from the Supper, not what the unworthy receive; it supports only the second sentence of WCF 29.8. Fit note in OB-9; Pedro may want to drop it on review.
+- **OB-2 «no trata»** (answer 14): for the communion of the sick it rests on SD VII.83–87 only; a search of the whole Book of Concord was not run (Weak spots).
+- **ST-T for OB-7**: 1390 does not say in words that both kinds are not a divine command (can. 1); that it maintains can. 1 is `[inference]`, noted in ST-T.
+- Nothing here was independently verified: ST-T matching, WLC 173 and its Spanish, the merged QE-3+4 draft, the Fathers' identifications (Weak spots).
+
+### For Codex
+
+- Theophylact ("Vulgarius", Ap X.55): life dates and the work the Apology cites; not in `neutral/` `[unverified]`.
+- Confirm the work identifications in PQ-5 (Justin *1 Apol.* 66; Augustine *Tract. in Ioh.* 80.3; Irenaeus *Adv. haer.* IV.18.5; whether the FC's «Serm. de Pass.» is Chrysostom's *De proditione Iudae* 1) so their work dates can go on the site.
+- DS 1752 = Trent XXII can. 2 (cited by CCC 611) `[memory]`.
+
+### For the Lutheran tradition page
+
+- **Variata (1540)** (answer 9): one line, as a disputed text (map §9.3, Tier 3); wording not drafted here.
+- **Closed / close communion** (answer 15, option c), the line as drafted in Question 15, with body sources still to be found: «Quién puede comulgar lo decide cada iglesia luterana: unas solo admiten a quienes comparten su confesión, otras invitan a todos los bautizados.»
+
+### Outside my files (for the coordinator)
+
+- `src/content/pages/eucharist/catholic.es.ts` still has `apologeticAnswer: "pending"` on DO-1 and DO-2 (l.1177, 1238; read-only check); the DO pages are not shown while the debate layer is paused, but the field should become the fact line when they are. OB-6's fact line is not in `src/content` (the marker never reached it); if Pedro wants it on the page, it must be added there.
+- `catholic.md` still uses «[pendiente]» for the PCPCU *Guidelines* in OB-6's «Fuentes citadas» line (Question 16, map entry pending): not the marker of point 14, left as is; check it never reaches the page.
+- DECISIONS 2026-10-23 (2) makes the Trent status line a method for every dossier: where other dossiers (e.g. Reformed) quote Trent's canons, the same ST-T lines apply.
+- Orthodox dossier: agree ST-DOS (answer 3).
+
+Pedro's answers applied 2026-10-25.
