@@ -9,7 +9,7 @@ export type BibleTranslation = {
   bookCount: number;
 };
 
-export type BibleVerse = { verse: number; text: string };
+export type BibleVerse = { verse: number; text: string; red?: [number, number][] };
 
 export type ChapterRef = { book: string; chapter: number };
 

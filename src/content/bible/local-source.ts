@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { bibleVersification, normalizeBibleFile, type BibleRow } from "@/content/bible/normalize-bible";
 import type { BibleSource } from "@/content/bible/bible-source";
 import { sortChapters } from "@/content/bible/chapter-neighbors";
+import { redSpansOf } from "@/content/bible/red-letters";
 import type { BibleTranslation, ChapterSummary } from "@/content/model/bible";
 import type { Locale } from "@/lib/locale";
 
@@ -13,6 +14,19 @@ export function createLocalBibleSource(): BibleSource {
     (text) => JSON.parse(text) as SourceEntry[],
   );
   const loaded = new Map<string, Promise<BibleRow[]>>();
+  const reds = new Map<string, Promise<Record<string, string[]>>>();
+
+  function redPhrases(translationId: string): Promise<Record<string, string[]>> {
+    let pending = reds.get(translationId);
+    if (!pending) {
+      pending = readFile(join(process.cwd(), "data", "corpus", "bibles", `${translationId}.red.json`), "utf8").then(
+        (text) => JSON.parse(text) as Record<string, string[]>,
+        () => ({}),
+      );
+      reds.set(translationId, pending);
+    }
+    return pending;
+  }
 
   function rows(translationId: string): Promise<BibleRow[]> {
     let pending = loaded.get(translationId);
@@ -54,9 +68,15 @@ export function createLocalBibleSource(): BibleSource {
       return sortChapters([...counts.values()]);
     },
     async chapterVerses(translationId, book, chapter) {
+      const phrases = await redPhrases(translationId);
       return (await rows(translationId))
         .filter((row) => row.book === book && row.chapter === chapter)
-        .map((row) => ({ verse: row.verse, text: row.text }))
+        .map((row) => {
+          const spans = redSpansOf(row.text, phrases[`${book}.${chapter}.${row.verse}`] ?? []);
+          return spans.length > 0
+            ? { verse: row.verse, text: row.text, red: spans }
+            : { verse: row.verse, text: row.text };
+        })
         .sort((a, b) => a.verse - b.verse);
     },
     async verse(translationId, book, chapter, verse) {
