@@ -57,3 +57,7 @@ export function neighborsOfWork(
   const index = siblings.findIndex((work) => work.id === id);
   return { previous: siblings[index - 1] ?? null, next: siblings[index + 1] ?? null };
 }
+
+export function workName(id: string, locale: Locale, fallback: string): string {
+  return workLinks[id]?.names[locale] ?? fallback;
+}

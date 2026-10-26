@@ -288,6 +288,7 @@ export const es = {
       "public-domain": "Dominio público",
     },
     fatherWork: {
+      panelLabel: "Detalle del pasaje",
       previous: "Obra anterior",
       next: "Obra siguiente",
       editionEn: "Texto en inglés. Traducción de {translator}, {year}.",

@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { PageHeader } from "@/components/page-header";
 import { NeighborLinks } from "@/components/neighbor-links";
 import { PageMain } from "@/components/page-main";
-import { neighborsOfWork } from "@/content/father-work-links";
+import { neighborsOfWork, workName } from "@/content/father-work-links";
 import { getFatherWork, getFatherWorks } from "@/content/get-father-works";
 import { fatherWorkHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
+import { FatherPanel } from "@/features/reader/father-panel";
 import { FatherStrip } from "@/features/reader/father-strip";
 import { FatherText } from "@/features/reader/father-text";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
@@ -71,6 +72,12 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         title={labels.foot.title}
         edition={work.edition.bibliography}
         licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
+      />
+      <FatherPanel
+        text={{ ...labels.panel, label: labels.fatherWork.panelLabel }}
+        reference={workName(work.id, locale, work.title)}
+        citation={`${work.title} {place} (${work.edition.translator}, ${work.edition.year})`}
+        prologue={labels.fatherWork.prologue}
       />
       <VerseArrival />
       <NeighborLinks

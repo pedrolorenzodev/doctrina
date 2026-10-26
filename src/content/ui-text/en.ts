@@ -290,6 +290,7 @@ export const en: UiText = {
       "public-domain": "Public domain",
     },
     fatherWork: {
+      panelLabel: "Passage detail",
       previous: "Previous work",
       next: "Next work",
       editionEn: "Text in English. Translated by {translator}, {year}.",
