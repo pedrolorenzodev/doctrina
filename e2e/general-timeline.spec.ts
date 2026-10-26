@@ -328,3 +328,29 @@ for (const width of [360, 390, 768, 1024, 1440]) {
     expect(await horizontalOverflow(page)).toBe(0);
   });
 }
+
+test("a second click on the ruler mid-slide re-aims the slide from where it is, with no jump", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(timeline);
+  const ruler = page.locator("[data-ruler]");
+  const box = page.locator("[data-scroller]");
+  const rulerBox = (await ruler.boundingBox())!;
+  const sizes = await box.evaluate((element) => ({ scroll: element.scrollWidth, client: element.clientWidth }));
+  const targetOf = (fraction: number) =>
+    Math.min(sizes.scroll - sizes.client, fraction * sizes.scroll - sizes.client / 2);
+  const y = rulerBox.y + 22;
+  await page.mouse.click(rulerBox.x + rulerBox.width * 0.9, y);
+  await page.waitForTimeout(120);
+  const mid = await box.evaluate((element) => element.scrollLeft);
+  expect(mid).toBeGreaterThan(0);
+  const secondTarget = targetOf(0.3);
+  await page.mouse.move(rulerBox.x + rulerBox.width * 0.3, y);
+  await page.mouse.down();
+  await page.mouse.move(rulerBox.x + rulerBox.width * 0.3 + 2, y);
+  const justAfter = await box.evaluate((element) => element.scrollLeft);
+  await page.mouse.up();
+  expect(Math.abs(justAfter - secondTarget)).toBeGreaterThan(Math.abs(mid - secondTarget) * 0.5);
+  await expect
+    .poll(() => box.evaluate((element) => element.scrollLeft), { timeout: 3000 })
+    .toBeLessThan(secondTarget + 60);
+});
