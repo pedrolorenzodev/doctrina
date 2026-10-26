@@ -923,6 +923,20 @@
   overscroll-behavior: contain;
 }
 
+@utility slide-indicator {
+  transition:
+    translate 340ms var(--ease-reveal),
+    width 340ms var(--ease-reveal);
+
+  &[data-instant] {
+    transition: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
 @utility panel-motion {
   transition:
     opacity 200ms ease,
