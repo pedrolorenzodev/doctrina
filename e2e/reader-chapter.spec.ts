@@ -37,7 +37,7 @@ test("the verse number sits in the left margin from 768 and above the text below
   await page.goto(chapter("juan", 6));
   const box = async () => {
     const verse = page.locator("#v-1");
-    const number = verse.locator("> span > span").first();
+    const number = verse.locator("span").first();
     return { verse: await verse.boundingBox(), number: await number.boundingBox() };
   };
   const wide = await box();
