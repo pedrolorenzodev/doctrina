@@ -16,7 +16,7 @@ test("the panel offers five colours; one tap highlights the whole verse in it", 
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
   await open(page);
-  await expect(page.locator(`${panel} [role=group][aria-label="Subrayar con color"] button`)).toHaveCount(5);
+  await expect(page.locator(`${panel} button[aria-label^="Subrayar en "]`)).toHaveCount(5);
   await expect(page.locator(panel).getByText("Subrayar", { exact: true })).toBeVisible();
   await expect(page.locator(mark(53))).toHaveCount(0);
   await page.locator(dot("verde")).click();
@@ -28,6 +28,44 @@ test("the panel offers five colours; one tap highlights the whole verse in it", 
   await expect(page.locator(panel).getByRole("button", { name: "Quitar subrayado" })).toBeVisible();
   await expect(page.locator(dot("verde"))).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(mark(54))).toHaveCount(0);
+});
+
+test("only highlighted text shows a chosen colour, and the remove icon is dimmed when there is nothing to remove", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  const pressed = `${panel} [role=group][aria-label="Subrayar con color"] button[aria-pressed="true"]`;
+  const remove = `${panel} button[aria-label="Quitar subrayado"]`;
+  await open(page);
+  await expect(page.locator(pressed)).toHaveCount(0);
+  await expect(page.locator(remove)).toBeDisabled();
+  await page.locator(dot("verde")).click();
+  await expect(page.locator(dot("verde"))).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(remove)).toBeEnabled();
+  await page.locator(verseButton(54)).click();
+  await expect(page.locator(panel)).toContainText("Juan 6:54");
+  await expect(page.locator(pressed)).toHaveCount(0);
+  await expect(page.locator(remove)).toBeDisabled();
+  await page.locator(verseButton(53)).click();
+  await expect(page.locator(pressed)).toHaveCount(1);
+  await expect(page.locator(dot("verde"))).toHaveAttribute("aria-pressed", "true");
+});
+
+test("the remove icon is a round control after the colours, the label stays «Subrayar»", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  await open(page);
+  await page.locator(dot("rosa")).click();
+  await expect(page.locator(panel).getByText("Subrayar", { exact: true })).toBeVisible();
+  await expect(page.locator(panel).getByText("Quitar subrayado", { exact: true })).toHaveCount(0);
+  const group = page.locator(`${panel} [role=group][aria-label="Subrayar con color"] button`);
+  await expect(group).toHaveCount(6);
+  await expect(group.last()).toHaveAttribute("aria-label", "Quitar subrayado");
+  await expect(group.last().locator("svg")).toBeVisible();
+  const note = (await page.locator(panel).getByRole("button", { name: "Nota" }).boundingBox())!;
+  const lastBox = (await group.last().boundingBox())!;
+  expect(Math.abs(note.y - lastBox.y)).toBeLessThan(lastBox.height);
 });
 
 test("the fill is the decided tone in light and dark, and never an underline", async ({ page }) => {

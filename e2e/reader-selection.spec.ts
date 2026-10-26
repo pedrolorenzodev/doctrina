@@ -47,8 +47,8 @@ test.describe("toolbar", () => {
     await expect(page.locator(toolbar)).toBeHidden();
     await select(page, [53, 5], [53, 14]);
     await expect(page.locator(toolbar)).toBeVisible();
-    await expect(page.locator(`${toolbar} [role=group] button`)).toHaveCount(5);
-    await expect(page.locator(toolbar).getByText("Subrayar", { exact: true })).toBeVisible();
+    await expect(page.locator(`${toolbar} button[aria-label^="Subrayar en "]`)).toHaveCount(5);
+    await expect(page.locator(toolbar).getByText("Subrayar", { exact: true })).toHaveCount(0);
     await expect(page.locator(toolbar).getByRole("button", { name: "Copiar cita" })).toBeVisible();
     await expect(page.locator(toolbar).getByRole("button", { name: "Buscar" })).toBeVisible();
     await page.waitForTimeout(300);
@@ -116,6 +116,57 @@ test.describe("toolbar", () => {
     await page.locator(toolbar).getByRole("button", { name: "Quitar subrayado" }).click();
     await expect(page.locator(marks(53))).toHaveCount(2);
     await expect(page.locator(undoBar)).toContainText("Subrayado quitado.");
+  });
+
+  test("the chosen colour shows only on highlighted words, in their own colour, and the remove icon is dimmed otherwise", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(john);
+    const pressed = `${toolbar} button[aria-pressed="true"]`;
+    const remove = `${toolbar} button[aria-label="Quitar subrayado"]`;
+    await select(page, [53, 0], [53, 40]);
+    await expect(page.locator(toolbar)).toBeVisible();
+    await expect(page.locator(pressed)).toHaveCount(0);
+    await expect(page.locator(remove)).toBeDisabled();
+    await page.locator(dot("verde")).click();
+    await select(page, [54, 0], [54, 20]);
+    await expect(page.locator(toolbar)).toBeVisible();
+    await expect(page.locator(pressed)).toHaveCount(0);
+    await expect(page.locator(remove)).toBeDisabled();
+    await select(page, [53, 5], [53, 14]);
+    await expect(page.locator(toolbar)).toBeVisible();
+    await expect(page.locator(dot("verde"))).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator(pressed)).toHaveCount(1);
+    await expect(page.locator(remove)).toBeEnabled();
+  });
+
+  test("highlighting words again with the same colour merges into one run", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(john);
+    await select(page, [53, 0], [53, 20]);
+    await page.locator(dot("verde")).click();
+    await select(page, [53, 0], [53, 60]);
+    await page.locator(dot("verde")).click();
+    await expect(page.locator(marks(53))).toHaveCount(1);
+    const length = await page.locator(marks(53)).evaluate((el) => el.textContent!.length);
+    expect(length).toBeGreaterThanOrEqual(60);
+    expect(length).toBeLessThan(75);
+  });
+
+  test("the first colour and the last button sit the same distance from the bar's edges", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(john);
+    await select(page, [53, 5], [53, 14]);
+    await expect(page.locator(toolbar)).toBeVisible();
+    await page.waitForTimeout(300);
+    const bar = (await page.locator(toolbar).boundingBox())!;
+    const first = (await page.locator(toolbar).getByRole("button", { name: "Subrayar en amarillo" }).boundingBox())!;
+    const last = (await page.locator(toolbar).getByRole("button", { name: "Buscar" }).boundingBox())!;
+    const left = first.x - bar.x;
+    const right = bar.x + bar.width - (last.x + last.width);
+    expect(Math.abs(left - right)).toBeLessThanOrEqual(1);
+    expect(left).toBeGreaterThanOrEqual(6);
   });
 
   test("keys: S highlights in the last colour, S again removes, C copies, Esc closes", async ({ page }) => {
