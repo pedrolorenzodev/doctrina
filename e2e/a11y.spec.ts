@@ -122,6 +122,34 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
     },
   ],
   [
+    "the book and chapter menu",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.locator("[data-reader-strip] button[data-book-picker]").click();
+      await page.locator('[data-reader-strip] [role="dialog"] button:has-text("Génesis")').click();
+      await expect(page.locator('[data-reader-strip] [role="dialog"] a[data-chapter="3"]')).toBeVisible();
+      await page.waitForTimeout(400);
+    },
+  ],
+  [
+    "the text menu and the translation list",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.locator("[data-reader-strip]").getByRole("button", { name: "Texto", exact: true }).click();
+      await expect(page.locator('[data-reader-strip] [role="dialog"][aria-label="Texto"]')).toBeVisible();
+      await page.waitForTimeout(400);
+    },
+  ],
+  [
+    "the translation list",
+    "/es/biblia/juan/6",
+    async (page) => {
+      await page.locator('[data-reader-strip] button[aria-haspopup="listbox"]').click();
+      await expect(page.locator('[data-reader-strip] [role="listbox"]')).toBeVisible();
+      await page.waitForTimeout(400);
+    },
+  ],
+  [
     "the delete note dialog",
     "/es/biblia/juan/6",
     async (page) => {

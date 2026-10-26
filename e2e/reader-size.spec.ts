@@ -7,25 +7,35 @@ const group = '[role="group"][aria-label="Tamaño del texto"]';
 const larger = `${group} button[aria-label="Agrandar el texto"]`;
 const smaller = `${group} button[aria-label="Achicar el texto"]`;
 
+const openText = async (page: Page) => {
+  await page.locator(strip).getByRole("button", { name: "Texto", exact: true }).click();
+  await expect(page.locator(group)).toBeVisible();
+};
+
 const fontSize = (page: Page) => page.locator("#v-1").evaluate((el) => getComputedStyle(el).fontSize);
 
-test("the strip holds A− and A+ on the right from 640 px and is gone on a phone", async ({ page }) => {
+test("«Aa» sits at the right of the strip and opens A− and A+; on a phone it is still there", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
-  await expect(page.locator(group)).toBeVisible();
-  await expect(page.locator(group).locator("button")).toHaveText(["A−", "A+"]);
-  const box = (await page.locator(group).boundingBox())!;
-  const picker = (await page.locator('main [data-reader-strip] button[aria-haspopup="listbox"]').boundingBox())!;
-  expect(picker.x + picker.width).toBeGreaterThan(1440 - 130);
-  expect(box.x + box.width).toBeLessThan(picker.x);
-  await page.setViewportSize({ width: 390, height: 844 });
   await expect(page.locator(group)).toBeHidden();
+  const aa = page.locator(strip).getByRole("button", { name: "Texto", exact: true });
+  const box = (await aa.boundingBox())!;
+  expect(box.x + box.width).toBeGreaterThan(1440 - 130);
+  await openText(page);
+  await expect(page.locator(group).locator("button")).toHaveText(["A−", "A+"]);
+  await page.keyboard.press("Escape");
+  await expect(page.locator(group)).toBeHidden();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(aa).toBeVisible();
+  const phone = (await aa.boundingBox())!;
+  expect(phone.width).toBeGreaterThanOrEqual(36);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 });
 
 test("seven steps from 17 to 29: the ends disable their button", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
+  await openText(page);
   expect(await fontSize(page)).toBe("19px");
   for (const expected of ["21px", "23px", "25px", "27px", "29px"]) {
     await page.locator(larger).click();
@@ -41,6 +51,7 @@ test("seven steps from 17 to 29: the ends disable their button", async ({ page }
 test("the size is remembered and applied before the first paint on the next visit", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
+  await openText(page);
   await page.locator(larger).click();
   await page.locator(larger).click();
   expect(await page.evaluate(() => localStorage.getItem("doctrina-reader-size"))).toBe("23");
@@ -59,6 +70,7 @@ test("a size outside the seven steps is ignored", async ({ page }) => {
 test("changing the size keeps the verse being read in place", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
+  await openText(page);
   await page.evaluate(() => {
     const verse = document.getElementById("v-30")!;
     scrollTo(0, verse.getBoundingClientRect().top + scrollY - 220);
@@ -80,9 +92,15 @@ test("changing the size keeps the verse being read in place", async ({ page }) =
 test("the strip sticks under the top bar and draws its hairline only once stuck", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
-  const border = () => page.locator(strip).evaluate((el) => getComputedStyle(el).borderBottomColor);
+  const border = () =>
+    page.locator(`${strip} > div:first-child`).evaluate((el) => getComputedStyle(el).borderBottomColor);
   await expect.poll(border).toBe("rgba(0, 0, 0, 0)");
   await page.evaluate(() => scrollTo(0, 900));
+  for (let at = 0; at < 6; at += 1) {
+    await page.evaluate(() => scrollBy(0, -8));
+    await page.waitForTimeout(16);
+  }
+  await page.waitForTimeout(300);
   await expect.poll(() => page.locator(strip).evaluate((el) => Math.round(el.getBoundingClientRect().top))).toBe(56);
   await expect.poll(border).not.toBe("rgba(0, 0, 0, 0)");
   await expect(page.locator(strip)).toHaveAttribute("data-stuck", "");

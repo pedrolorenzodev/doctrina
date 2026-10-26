@@ -51,12 +51,12 @@ async function openChapter(page: Page, width = 1440, seeded = true) {
 
 const yourButton = (page: Page) => page.locator(`${strip} [data-your-notes]`);
 
-test("the strip has «Tus notas» with the count of this chapter's notes, left of A− and A+", async ({ page }) => {
+test("the strip has «Tus notas» with the count of this chapter's notes, left of «Aa»", async ({ page }) => {
   await openChapter(page);
   await expect(yourButton(page)).toContainText("Tus notas");
   await expect(yourButton(page)).toContainText("2");
   const button = (await yourButton(page).boundingBox())!;
-  const size = (await page.locator(`${strip} [role=group][aria-label="Tamaño del texto"]`).boundingBox())!;
+  const size = (await page.locator(strip).getByRole("button", { name: "Texto", exact: true }).boundingBox())!;
   expect(button.x + button.width).toBeLessThan(size.x);
 });
 

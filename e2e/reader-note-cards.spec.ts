@@ -165,6 +165,7 @@ test("the cards follow their verses when the text grows", async ({ page }) => {
   const drift = async () =>
     Math.abs((await page.locator(cardAt(57)).boundingBox())!.y - (await page.locator("#v-57").boundingBox())!.y);
   expect(await drift()).toBeLessThan(2);
+  await page.locator("[data-reader-strip]").getByRole("button", { name: "Texto", exact: true }).click();
   const larger = (await page.locator('button[aria-label="Agrandar el texto"]').boundingBox())!;
   await page.mouse.click(larger.x + larger.width / 2, larger.y + larger.height / 2);
   await expect(page.locator("#v-1")).toHaveCSS("font-size", "21px");

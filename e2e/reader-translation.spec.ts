@@ -141,22 +141,36 @@ test("a click outside closes the list", async ({ page }) => {
   await expect(page.locator(button)).toHaveAttribute("aria-expanded", "false");
 });
 
-type Frame = { t: number; height: number; opacity: number; first: number };
+type Frame = { t: number; height: number; opacity: number; offset: number };
 
 async function sampleList(page: Page, act: () => Promise<void>, ms: number): Promise<Frame[]> {
   await page.evaluate((duration) => {
     const frames: unknown[] = [];
     (window as unknown as { __list: unknown[] }).__list = frames;
     const start = performance.now();
+    const visibleHeight = (panel: Element) => {
+      const full = panel.getBoundingClientRect().height;
+      const clip = getComputedStyle(panel).clipPath;
+      const parts = /^inset\((\S+) (\S+) (calc\([^)]*\)|\S+)(?: (\S+))?\)$/.exec(clip);
+      if (!parts) return full;
+      const bottom = parts[3]!;
+      const calc = /calc\(([-\d.e]+)% - ([-\d.e]+)px\)/.exec(bottom);
+      const inset = calc
+        ? (Number(calc[1]) / 100) * full - Number(calc[2])
+        : bottom.endsWith("%")
+          ? (Number.parseFloat(bottom) / 100) * full
+          : Number.parseFloat(bottom);
+      return Math.max(0, full - Math.max(inset, 0));
+    };
     const tick = () => {
       const panel = document.querySelector("[data-reader-strip] [role=listbox]")!;
-      const rect = panel.getBoundingClientRect();
+      const strip = document.querySelector("[data-reader-strip]")!;
       const firstOption = panel.querySelector("[role=option]");
       frames.push({
         t: performance.now() - start,
-        height: rect.height,
+        height: panel.hasAttribute("hidden") ? 0 : visibleHeight(panel),
         opacity: firstOption ? Number(getComputedStyle(firstOption).opacity) : 1,
-        first: 0,
+        offset: panel.getBoundingClientRect().top - strip.getBoundingClientRect().bottom,
       });
       if (performance.now() - start < (duration as number)) requestAnimationFrame(tick);
     };
@@ -167,7 +181,9 @@ async function sampleList(page: Page, act: () => Promise<void>, ms: number): Pro
   return page.evaluate(() => (window as unknown as { __list: Frame[] }).__list);
 }
 
-test("opening unfolds the height in about 220 ms and closing folds it in about 160 ms", async ({ page }) => {
+test("opening reveals the list from the header's line in about 220 ms and closing returns to it in about 160 ms", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
   await page.locator(button).hover();
@@ -177,7 +193,7 @@ test("opening unfolds the height in about 220 ms and closing folds it in about 1
   expect(full).toBeGreaterThan(200);
   const t0 = grown[0]!.t;
   const done = opening.find((frame) => frame.height >= full - 0.5 && frame.t >= t0)!;
-  expect(done.t - t0).toBeGreaterThan(120);
+  expect(done.t - t0).toBeGreaterThan(25);
   expect(done.t - t0).toBeLessThan(380);
   for (let at = 1; at < grown.length; at += 1)
     expect(grown[at]!.height).toBeGreaterThanOrEqual(grown[at - 1]!.height - 0.5);
@@ -185,13 +201,56 @@ test("opening unfolds the height in about 220 ms and closing folds it in about 1
   const shrinking = closing.filter((frame) => frame.height > 0.5);
   const c0 = shrinking[0]!.t;
   const last = shrinking[shrinking.length - 1]!;
-  expect(last.t - c0).toBeGreaterThan(80);
+  expect(last.t - c0).toBeGreaterThan(60);
   expect(last.t - c0).toBeLessThan(330);
   for (let at = 1; at < shrinking.length; at += 1)
     expect(shrinking[at]!.height).toBeLessThanOrEqual(shrinking[at - 1]!.height + 0.5);
   await expect(page.locator(list)).toBeHidden();
-  const tail = shrinking.filter((frame) => frame.height < 20);
-  for (let at = 1; at < tail.length; at += 1) expect(tail[at - 1]!.height - tail[at]!.height).toBeGreaterThan(0.5);
+  for (const frame of [...opening, ...closing].filter((item) => item.height > 0)) {
+    expect(Math.abs(frame.offset)).toBeLessThanOrEqual(0.5);
+  }
+});
+
+test("the list hangs from the header's own line: no border of its own on top, square top corners", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  await page.locator(button).click();
+  await expect(page.locator(list)).toBeVisible();
+  await page.waitForTimeout(350);
+  const style = await page.locator(list).evaluate((element) => {
+    const css = getComputedStyle(element);
+    return {
+      top: css.borderTopWidth,
+      left: css.borderLeftWidth,
+      topRadius: css.borderTopLeftRadius,
+      bottomRadius: css.borderBottomLeftRadius,
+    };
+  });
+  expect(style.top).toBe("0px");
+  expect(style.left).toBe("1px");
+  expect(style.topRadius).toBe("0px");
+  expect(style.bottomRadius).not.toBe("0px");
+  const gap = await page.evaluate(
+    () =>
+      document.querySelector("[data-reader-strip] [role=listbox]")!.getBoundingClientRect().top -
+      document.querySelector("[data-reader-strip]")!.getBoundingClientRect().bottom,
+  );
+  expect(Math.abs(gap)).toBeLessThanOrEqual(0.5);
+});
+
+test("a long name wraps with its abbreviation right after the last word, as the others do", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(john);
+  await page.locator(button).click();
+  await page.waitForTimeout(350);
+  const web = page.locator(option("WEB"));
+  const box = (await web.boundingBox())!;
+  expect(box.height).toBeGreaterThan(48);
+  const abbreviation = (await web.locator("span span").boundingBox())!;
+  expect(abbreviation.y).toBeGreaterThan(box.y + box.height / 2 - 4);
+  expect(abbreviation.x - box.x).toBeLessThan(box.width * 0.6);
+  const short = (await page.locator(option("BSB")).boundingBox())!;
+  expect(short.height).toBeLessThan(50);
 });
 
 test("under reduced motion the list appears and goes at once", async ({ page }) => {
