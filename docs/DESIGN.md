@@ -431,5 +431,12 @@ Rejected by Pedro:
 - Scholar window «Quién es»: name, field, position, work, life in words («Nació en 1942»; no «vive», no abbreviations), mini timeline running to today for the living.
 - Title format of the rows: kept for now, Pedro decides later.
 
+### 08 Timeline (DEC 2026-10-22 · Screens 07 and 08; first block built 2026-10-25: line, band, axes, detail below)
+- Page `/es/historia/linea-de-tiempo`: crumbs → h1 → one line in `text-sub` ink-3 → hint → the line. Four groups in this order: «Padres y escritores», «Concilios», «Escritos anónimos», «Corrientes condenadas»; sticky group labels over hairlines; rows 40 px packed greedily with 18 px between labels; every row shares the 30–800 scale at 5.85 px a year (4505 px) inside a box that scrolls sideways (all widths), 50-year grid lines at half opacity, years on both axes (top and bottom) every 100 plus 50.
+- Marks are 09's (`TimelineMarks`): a person is a bar (dashed lead when the birth is estimated, dots when unknown), a council or an anonymous writing a ring (a range a thin bar), a movement a bar that opens on the right when it outlasts the line.
+- Selection («Banda de su época»): the bar goes ink, a blue band crosses every row from birth to death, the years are written on both axes (ends apart when they fit, else joined); clicking the selected item again deselects it; a selection outside the visible years scrolls into view; a mouse drag pans the box and never chooses what was under the pointer. Arrows move the focus (roving tabindex), Enter moves it to the detail heading.
+- Detail («Con rótulo») below the line, 860 px max: kind, name (`title-sm`), the dates as labelled facts (`dl`, term `ui-xs` ink-3, value `entity` body 18), the first sentence, the page link (a Father's only; councils and movements inert, TODO). The side panel («Panel fijo»), the overview ruler («La regla arriba») and the ecumenical marks are the next blocks.
+- Tokens: none new. Shared: `TimelineMarks`, `timeline-layout`, `css-vars`, `use-timeline-box`.
+
 ### 09 «Sus escritos» (v2 notes 16, 18)
 - Each letter: title (no Greek name), date, a short neutral description ending in a short quote whose locator opens the citation window. Shared axis above the list (label 13.5 ink-3 | mini timeline 180–300 px).

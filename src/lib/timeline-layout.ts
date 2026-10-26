@@ -44,10 +44,10 @@ export function placeItem(scale: Scale, item: LayoutItem, labelWidth: number): P
   return { id: item.id, left, right, labelLeft: labelStart - left };
 }
 
-export function packRows(placed: PlacedItem[]): PlacedItem[][] {
+export function packRows(placed: PlacedItem[], gap = rowGap): PlacedItem[][] {
   const rows: { end: number; items: PlacedItem[] }[] = [];
   for (const item of [...placed].sort((a, b) => a.left - b.left)) {
-    const row = rows.find((candidate) => candidate.end + rowGap <= item.left);
+    const row = rows.find((candidate) => candidate.end + gap <= item.left);
     if (row) {
       row.items.push(item);
       row.end = item.right;

@@ -1322,6 +1322,19 @@ export const councils: Council[] = [
     year: 49,
     endYear: null,
     approx: true,
+    ecumenical: false,
+    place: {
+      es: "Jerusalén",
+      en: "Jerusalem",
+    },
+    dateNote: {
+      es: "c. 48–50",
+      en: "c. 48–50",
+    },
+    decisions: {
+      es: "Resolvió que los gentiles que creían en Cristo no debían circuncidarse ni asumir toda la ley mosaica para ser salvos. Mediante una carta (el “decreto apostólico”) les pidió abstenerse de lo sacrificado a los ídolos, de la sangre, de lo estrangulado y de la inmoralidad sexual (Hch 15:28–29).",
+      en: "Decided that Gentile believers did not need to be circumcised or take on the whole Mosaic law in order to be saved. In a letter (the “apostolic decree”) it asked them to abstain from food sacrificed to idols, from blood, from what is strangled and from sexual immorality (Acts 15:28–29).",
+    },
   },
   {
     id: "antioch-268",
@@ -1332,6 +1345,19 @@ export const councils: Council[] = [
     year: 268,
     endYear: null,
     approx: true,
+    ecumenical: false,
+    place: {
+      es: "Antioquía de Siria",
+      en: "Antioch in Syria",
+    },
+    dateNote: {
+      es: "Serie de sínodos c. 264–268/269",
+      en: "A series of synods c. 264–268/269",
+    },
+    decisions: {
+      es: "Condenó y depuso a Pablo de Samosata, obispo de Antioquía, cuya cristología se suele clasificar como monarquianismo dinámico (Jesús como hombre en quien habitaba el Logos o la sabiduría de Dios). Según fuentes posteriores, el sínodo rechazó el término homoousios en el sentido en que lo usaba Pablo. Pablo se negó a dejar la sede hasta que el emperador Aureliano intervino (c. 272).",
+      en: "Condemned and deposed Paul of Samosata, bishop of Antioch, whose Christology is usually classed as dynamic monarchianism (Jesus as a man indwelt by God's Word or Wisdom). According to later sources, the synod rejected the term homoousios in the sense Paul used it. Paul refused to leave the see until Emperor Aurelian intervened (c. 272).",
+    },
   },
   {
     id: "elvira",
@@ -1342,6 +1368,19 @@ export const councils: Council[] = [
     year: 306,
     endYear: null,
     approx: true,
+    ecumenical: false,
+    place: {
+      es: "Iliberris (Elvira), cerca de la actual Granada, Hispania",
+      en: "Iliberris (Elvira), near modern Granada, Hispania",
+    },
+    dateNote: {
+      es: "c. 300–314 (fecha discutida; a menudo c. 305–306)",
+      en: "c. 300–314 (date disputed; often c. 305–306)",
+    },
+    decisions: {
+      es: "Se le atribuyen 81 cánones de disciplina muy severa: penitencias largas o exclusión de la comunión para la idolatría, el adulterio y otros pecados graves. El canon 33 exige a obispos, presbíteros y diáconos abstenerse de sus esposas (el canon más antiguo conocido sobre continencia clerical) y el canon 36 prohíbe pinturas en las iglesias “para que lo que se venera y adora no se pinte en las paredes”.",
+      en: "81 canons of very strict discipline are attributed to it: long penances or exclusion from communion for idolatry, adultery and other grave sins. Canon 33 requires bishops, presbyters and deacons to abstain from their wives (the earliest known canon on clerical continence), and canon 36 forbids pictures in churches “so that what is venerated and adored is not painted on the walls.”",
+    },
   },
   {
     id: "arles-314",
@@ -1352,6 +1391,16 @@ export const councils: Council[] = [
     year: 314,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Arlés, Galia",
+      en: "Arles, Gaul",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Convocado por Constantino tras la apelación de los donatistas, ratificó la decisión romana de 313 contra ellos y a favor de Ceciliano, obispo de Cartago. Estableció que quienes habían sido bautizados por herejes en el nombre de la Trinidad no debían ser rebautizados, y que la Pascua se celebrara el mismo día en todo el mundo. Asistieron obispos de Britania (entre ellos los de York y Londres). Se conservan unos 22 cánones.",
+      en: "Called by Constantine after the Donatists appealed, it upheld the Roman decision of 313 against them and in favor of Caecilian, bishop of Carthage. It ruled that those baptized by heretics in the name of the Trinity should not be rebaptized, and that Easter be kept on the same day throughout the world. Bishops from Britain attended (among them those of York and London). About 22 canons survive.",
+    },
   },
   {
     id: "nicaea-1",
@@ -1362,6 +1411,16 @@ export const councils: Council[] = [
     year: 325,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Nicea, Bitinia (actual İznik, Turquía)",
+      en: "Nicaea, Bithynia (modern İznik, Turkey)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Condenó la enseñanza de Arrio de que el Hijo es una criatura que tuvo comienzo (“hubo un tiempo en que no era”) y promulgó el Credo niceno, que confiesa al Hijo “consustancial” (homoousios) al Padre. Fijó criterios para una fecha común de la Pascua, trató el cisma meleciano de Egipto y emitió 20 cánones (por ejemplo, el canon 6 sobre las prerrogativas de Alejandría, Roma y Antioquía). Asistieron unos 250–300 obispos; la tradición habla de 318.",
+      en: "Condemned Arius' teaching that the Son is a creature who had a beginning (“there was when he was not”) and issued the Nicene Creed, which confesses the Son “of one substance” (homoousios) with the Father. It set principles for a common date of Easter, dealt with the Meletian schism in Egypt and issued 20 canons (e.g. canon 6 on the prerogatives of Alexandria, Rome and Antioch). Some 250–300 bishops attended; tradition gives 318.",
+    },
   },
   {
     id: "constantinople-1",
@@ -1372,6 +1431,16 @@ export const councils: Council[] = [
     year: 381,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Constantinopla",
+      en: "Constantinople",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Reafirmó la fe de Nicea y se le atribuye el Credo niceno-constantinopolitano, que amplía el artículo sobre el Espíritu Santo: “Señor y dador de vida, que procede del Padre, que con el Padre y el Hijo recibe una misma adoración y gloria”. Condenó a los pneumatómacos (macedonianos), a los apolinaristas, a los eunomianos y otros grupos. El canon 3 dio al obispo de Constantinopla el primer lugar de honor después del de Roma, “por ser la nueva Roma”. Unos 150 obispos.",
+      en: "Reaffirmed the faith of Nicaea and is credited with the Niceno-Constantinopolitan Creed, which expands the article on the Holy Spirit: “the Lord, the giver of life, who proceeds from the Father, who with the Father and the Son is worshipped and glorified.” It condemned the Pneumatomachi (Macedonians), Apollinarians, Eunomians and other groups. Canon 3 gave the bishop of Constantinople the first place of honor after the bishop of Rome, “because it is New Rome.” About 150 bishops.",
+    },
   },
   {
     id: "rome-382",
@@ -1382,6 +1451,16 @@ export const councils: Council[] = [
     year: 382,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Roma",
+      en: "Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Sínodo occidental reunido tras el concilio de Constantinopla de 381, con Jerónimo presente como secretario de Dámaso. Tradicionalmente se le atribuye una lista de los libros canónicos del Antiguo y del Nuevo Testamento (incluidos los deuterocanónicos) conservada en el llamado Decreto gelasiano, pero esa atribución está muy discutida.",
+      en: "A Western synod held after the Council of Constantinople of 381, with Jerome present as Damasus' secretary. Tradition attributes to it a list of the canonical books of the Old and New Testaments (including the deuterocanonical books) preserved in the so-called Gelasian Decree, but that attribution is heavily disputed.",
+    },
   },
   {
     id: "hippo-393",
@@ -1392,6 +1471,16 @@ export const councils: Council[] = [
     year: 393,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Hipona (Hippo Regius), norte de África (actual Annaba, Argelia)",
+      en: "Hippo Regius, North Africa (modern Annaba, Algeria)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Primer concilio conocido que aprobó una lista de libros canónicos coincidente con el canon católico posterior, incluidos los deuterocanónicos (Tobías, Judit, Sabiduría, Sirácida, Macabeos) y los 27 libros del Nuevo Testamento. También dictó normas de disciplina clerical. Agustín, entonces presbítero, pronunció ante los obispos su discurso Sobre la fe y el símbolo.",
+      en: "The first known council to approve a list of canonical books matching the later Catholic canon, including the deuterocanonical books (Tobit, Judith, Wisdom, Sirach, Maccabees) and the 27 books of the New Testament. It also enacted rules of clerical discipline. Augustine, then a presbyter, delivered his address On Faith and the Creed to the bishops.",
+    },
   },
   {
     id: "carthage-397",
@@ -1402,6 +1491,16 @@ export const councils: Council[] = [
     year: 397,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Cartago, norte de África",
+      en: "Carthage, North Africa",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Reunido el 28 de agosto de 397, con la presencia de Agustín, adoptó el resumen de los cánones de Hipona (393), incluida la lista de libros canónicos del Antiguo y Nuevo Testamento con los deuterocanónicos.",
+      en: "Meeting on 28 August 397, with Augustine present, it adopted the summary of the canons of Hippo (393), including the list of canonical books of the Old and New Testaments with the deuterocanonical books.",
+    },
   },
   {
     id: "carthage-418",
@@ -1412,6 +1511,16 @@ export const councils: Council[] = [
     year: 418,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Cartago, norte de África",
+      en: "Carthage, North Africa",
+    },
+    dateNote: null,
+    decisions: {
+      es: "El 1 de mayo de 418 más de 200 obispos aprobaron cánones contra las tesis de Pelagio y Celestio: Adán no habría muerto si no hubiera pecado; los niños se bautizan para la remisión del pecado original; la gracia no solo perdona pecados pasados sino que ayuda a no pecar; y nadie en esta vida está sin pecado. Los cánones se incorporaron después al Código de la Iglesia africana (419).",
+      en: "On 1 May 418 over 200 bishops approved canons against the views of Pelagius and Caelestius: Adam would not have died had he not sinned; infants are baptized for the remission of original sin; grace does not only forgive past sins but helps us not to sin; and no one in this life is without sin. The canons were later included in the Code of the African Church (419).",
+    },
   },
   {
     id: "carthage-419",
@@ -1422,6 +1531,16 @@ export const councils: Council[] = [
     year: 419,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Cartago, norte de África",
+      en: "Carthage, North Africa",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Reunido el 25 y el 30 de mayo de 419 con 217 obispos, compiló el Código de cánones de la Iglesia africana (138 cánones en la versión latina, 135 en la griega) a partir de concilios anteriores, repitiendo la lista de libros canónicos. Trató también el caso del presbítero Apiario, apelado ante Roma, y defendió la potestad de los obispos africanos para resolver sus propias causas sin apelaciones “al otro lado del mar”.",
+      en: "Meeting on 25 and 30 May 419 with 217 bishops, it compiled the Code of Canons of the African Church (138 canons in Latin, 135 in Greek) from earlier councils, repeating the list of canonical books. It also handled the case of the presbyter Apiarius, who had appealed to Rome, and defended the African bishops' right to settle their own cases without appeals “across the sea.”",
+    },
   },
   {
     id: "ephesus-431",
@@ -1432,6 +1551,16 @@ export const councils: Council[] = [
     year: 431,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Éfeso, Asia Menor",
+      en: "Ephesus, Asia Minor",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Presidido por Cirilo de Alejandría, depuso a Nestorio, obispo de Constantinopla, y aprobó la segunda carta de Cirilo a Nestorio como conforme a Nicea. Confesó que el Verbo se unió a la carne en una sola persona, de modo que María es Theotokos (“Madre de Dios”). El canon 7 prohibió componer otro credo distinto del de Nicea y otros cánones condenaron a Celestio y a los pelagianos. Los obispos antioquenos, con Juan de Antioquía, celebraron una asamblea rival; la reconciliación llegó con la Fórmula de unión de 433.",
+      en: "Presided over by Cyril of Alexandria, it deposed Nestorius, bishop of Constantinople, and approved Cyril's second letter to Nestorius as agreeing with Nicaea. It confessed that the Word united flesh to himself in one person, so that Mary is Theotokos (“God-bearer, Mother of God”). Canon 7 forbade composing a creed other than that of Nicaea, and other canons condemned Caelestius and the Pelagians. The Antiochene bishops under John of Antioch held a rival assembly; reconciliation came with the Formula of Reunion of 433.",
+    },
   },
   {
     id: "ephesus-449",
@@ -1442,6 +1571,16 @@ export const councils: Council[] = [
     year: 449,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Éfeso, Asia Menor",
+      en: "Ephesus, Asia Minor",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Presidido por Dióscoro de Alejandría, rehabilitó al monje Eutiques y depuso a Flaviano de Constantinopla, a Domno de Antioquía, a Teodoreto de Ciro e Ibas de Edesa. No se permitió leer el Tomo del papa León. Flaviano murió poco después a causa del maltrato sufrido, y León llamó a la asamblea latrocinium (“latrocinio”).",
+      en: "Presided over by Dioscorus of Alexandria, it rehabilitated the monk Eutyches and deposed Flavian of Constantinople, Domnus of Antioch, Theodoret of Cyrrhus and Ibas of Edessa. Pope Leo's Tome was not allowed to be read. Flavian died soon after from mistreatment, and Leo called the assembly a latrocinium (“robbery”).",
+    },
   },
   {
     id: "chalcedon-451",
@@ -1452,6 +1591,16 @@ export const councils: Council[] = [
     year: 451,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Calcedonia, frente a Constantinopla (actual Kadıköy, Estambul)",
+      en: "Chalcedon, across from Constantinople (modern Kadıköy, Istanbul)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Anuló el concilio de 449, depuso a Dióscoro y condenó a Eutiques. Recibió el Tomo de León y las cartas de Cirilo, y promulgó la Definición de Calcedonia: un solo y mismo Cristo, Hijo, Señor, “reconocido en dos naturalezas, sin confusión, sin cambio, sin división, sin separación”, que concurren en una sola persona (prósopon) e hipóstasis. Emitió 27 cánones disciplinarios más el canon 28, que otorgó a Constantinopla privilegios iguales a los de Roma como “nueva Roma”; el papa León rechazó ese canon. Asistieron unos 350–370 obispos (la tradición dice 630).",
+      en: "Annulled the council of 449, deposed Dioscorus and condemned Eutyches. It received Leo's Tome and Cyril's letters and issued the Chalcedonian Definition: one and the same Christ, Son, Lord, “acknowledged in two natures, without confusion, without change, without division, without separation,” concurring in one person (prosopon) and hypostasis. It issued 27 disciplinary canons plus canon 28, which granted Constantinople privileges equal to Rome's as “New Rome”; Pope Leo rejected that canon. Some 350–370 bishops attended (tradition says 630).",
+    },
   },
   {
     id: "orange-529",
@@ -1462,6 +1611,16 @@ export const councils: Council[] = [
     year: 529,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Orange (Arausio), Galia",
+      en: "Orange (Arausio), Gaul",
+    },
+    dateNote: null,
+    decisions: {
+      es: "El 3 de julio de 529, catorce obispos aprobaron 25 cánones sobre la gracia: incluso el comienzo de la fe (initium fidei) es don de la gracia y no fruto del libre albedrío caído; la gracia precede a toda obra buena. A la vez rechazó con anatema que Dios predestine a alguien al mal. Sus cánones se perdieron hacia el siglo X y se recuperaron y publicaron en 1543.",
+      en: "On 3 July 529 fourteen bishops approved 25 canons on grace: even the beginning of faith (initium fidei) is a gift of grace and not the fruit of fallen free will; grace precedes every good work. At the same time it anathematized the idea that God predestines anyone to evil. Its canons were lost around the 10th century and recovered and published in 1543.",
+    },
   },
   {
     id: "constantinople-2",
@@ -1472,6 +1631,16 @@ export const councils: Council[] = [
     year: 553,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Constantinopla",
+      en: "Constantinople",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Condenó los “Tres Capítulos”: la persona y los escritos de Teodoro de Mopsuestia, ciertos escritos de Teodoreto contra Cirilo y la carta de Ibas de Edesa a Mari. Sus 14 anatemas interpretan Calcedonia en sentido cirílico (por ejemplo, “uno de la Trinidad padeció en la carne”), en un intento de reconciliar a los adversarios de Calcedonia. El papa Vigilio, presente en Constantinopla, se negó a asistir pero luego aprobó las decisiones (553–554), lo que provocó en Occidente el cisma de los Tres Capítulos.",
+      en: "Condemned the “Three Chapters”: the person and writings of Theodore of Mopsuestia, certain writings of Theodoret against Cyril, and the letter of Ibas of Edessa to Mari. Its 14 anathemas interpret Chalcedon in a Cyrilline sense (e.g. “one of the Trinity suffered in the flesh”), in an attempt to reconcile Chalcedon's opponents. Pope Vigilius, who was in Constantinople, refused to attend but later approved the decisions (553–554), which triggered the Three Chapters schism in the West.",
+    },
   },
   {
     id: "toledo-3",
@@ -1482,6 +1651,16 @@ export const councils: Council[] = [
     year: 589,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Toledo, Hispania visigoda",
+      en: "Toledo, Visigothic Spain",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Selló la conversión del rey Recaredo y del pueblo visigodo del arrianismo a la fe nicena. Presidido por Leandro de Sevilla, con unos 72 obispos, emitió 23 cánones. El credo que profesó incluía que el Espíritu Santo procede “del Padre y del Hijo” (Filioque), uno de los primeros usos conciliares de esa fórmula, que más tarde fue una de las causas de la separación entre Oriente y Occidente.",
+      en: "Sealed the conversion of King Reccared and the Visigothic people from Arianism to the Nicene faith. Presided over by Leander of Seville, with about 72 bishops, it issued 23 canons. The creed it professed said the Holy Spirit proceeds “from the Father and the Son” (Filioque), one of the earliest conciliar uses of the formula, which later became one of the causes of the East–West separation.",
+    },
   },
   {
     id: "lateran-649",
@@ -1492,6 +1671,16 @@ export const councils: Council[] = [
     year: 649,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Basílica de Letrán, Roma",
+      en: "Lateran Basilica, Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "En cinco sesiones (octubre de 649) condenó el monotelismo y rechazó dos documentos imperiales: la Ecthesis de Heraclio y el Typos de Constante II, que prohibía discutir sobre una o dos voluntades. Sus 20 cánones afirman en Cristo dos voluntades y dos operaciones naturales. Máximo el Confesor fue su principal inspirador teológico. Constante II hizo arrestar a Martín y a Máximo; Martín murió desterrado en Crimea en 655.",
+      en: "In five sessions (October 649) it condemned Monothelitism and rejected two imperial documents: Heraclius' Ekthesis and Constans II's Typos, which forbade discussing one or two wills. Its 20 canons affirm two natural wills and two natural operations in Christ. Maximus the Confessor was its main theological architect. Constans II had Martin and Maximus arrested; Martin died in exile in Crimea in 655.",
+    },
   },
   {
     id: "constantinople-3",
@@ -1502,6 +1691,16 @@ export const councils: Council[] = [
     year: 680,
     endYear: 681,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Constantinopla (sala abovedada o “Trullo” del palacio imperial)",
+      en: "Constantinople (domed hall or “Trullo” of the imperial palace)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Del 7 de noviembre de 680 al 16 de septiembre de 681. Recibió la carta del papa Agatón y definió que en Cristo hay dos voluntades naturales y dos operaciones naturales, divina y humana, sin oposición: la voluntad humana sigue y se somete a la divina. Condenó como monotelitas a Sergio, Pirro, Pablo y Pedro de Constantinopla, a Ciro de Alejandría, a Macario de Antioquía y al papa Honorio I.",
+      en: "From 7 November 680 to 16 September 681. It received Pope Agatho's letter and defined that Christ has two natural wills and two natural operations, divine and human, not opposed: the human will follows and is subject to the divine. It condemned as Monothelites Sergius, Pyrrhus, Paul and Peter of Constantinople, Cyrus of Alexandria, Macarius of Antioch and Pope Honorius I.",
+    },
   },
   {
     id: "trullo-692",
@@ -1512,6 +1711,16 @@ export const councils: Council[] = [
     year: 692,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Constantinopla (sala abovedada o “Trullo” del palacio imperial)",
+      en: "Constantinople (domed hall or “Trullo” of the imperial palace)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Llamado “quinisexto” porque completó con legislación disciplinaria los concilios quinto y sexto, que no habían emitido cánones. Promulgó 102 cánones y confirmó colecciones anteriores (incluidos los 85 Cánones apostólicos y los concilios de Cartago). Permitió que los presbíteros y diáconos casados antes de su ordenación siguieran viviendo con sus esposas (canon 13), exigió el celibato a los obispos (canon 12), renovó el rango de Constantinopla (canon 36) y criticó algunas costumbres romanas, como el ayuno del sábado (canon 55).",
+      en: "Called “Quinisext” (fifth-sixth) because it supplied disciplinary legislation for the fifth and sixth councils, which had issued no canons. It enacted 102 canons and confirmed earlier collections (including the 85 Apostolic Canons and the councils of Carthage). It allowed presbyters and deacons married before ordination to continue living with their wives (canon 13), required bishops to be celibate (canon 12), renewed Constantinople's rank (canon 36) and criticized some Roman customs, such as fasting on Saturdays (canon 55).",
+    },
   },
   {
     id: "nicaea-2",
@@ -1522,6 +1731,16 @@ export const councils: Council[] = [
     year: 787,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Nicea, Bitinia",
+      en: "Nicaea, Bithynia",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Del 24 de septiembre al 23 de octubre de 787, con legados del papa Adriano I. Restableció la veneración de los íconos: la veneración de honor (proskýnesis) que se tributa a la imagen pasa a su prototipo, mientras que la adoración (latreía) se debe solo a Dios. Anuló el concilio iconoclasta de Hieria (754) y emitió 22 cánones. Un primer intento en Constantinopla (786) había sido disuelto por soldados iconoclastas.",
+      en: "From 24 September to 23 October 787, with legates of Pope Hadrian I. It restored the veneration of icons: the honorific veneration (proskynesis) given to an image passes to its prototype, while worship (latreia) is due to God alone. It annulled the iconoclast Council of Hieria (754) and issued 22 canons. A first attempt in Constantinople (786) had been broken up by iconoclast soldiers.",
+    },
   },
   {
     id: "frankfurt-794",
@@ -1532,6 +1751,16 @@ export const councils: Council[] = [
     year: 794,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Fráncfort del Meno, reino franco",
+      en: "Frankfurt am Main, Frankish kingdom",
+    },
+    dateNote: null,
+    decisions: {
+      es: "En junio de 794, con legados del papa Adriano I, condenó el adopcionismo hispano de Elipando de Toledo y Félix de Urgel (Cristo, en cuanto hombre, sería Hijo adoptivo). También rechazó lo que entendía como decisión de Nicea II: admitió que las imágenes son útiles para instruir, pero negó que deban recibir veneración. Sus resoluciones se recogen en un capitular de 56 capítulos.",
+      en: "In June 794, with legates of Pope Hadrian I, it condemned the Spanish Adoptionism of Elipandus of Toledo and Felix of Urgell (that Christ, as man, is the adoptive Son). It also rejected what it understood Nicaea II to have decided: it allowed that images are useful for instruction but denied they should be venerated. Its rulings are gathered in a capitulary of 56 chapters.",
+    },
   },
   {
     id: "constantinople-869",
@@ -1542,6 +1771,16 @@ export const councils: Council[] = [
     year: 869,
     endYear: 870,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Constantinopla (Santa Sofía)",
+      en: "Constantinople (Hagia Sophia)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Del 5 de octubre de 869 al 28 de febrero de 870. Depuso al patriarca Focio y confirmó la restitución de Ignacio. Emitió 27 cánones en la versión latina (menos en la griega), entre ellos el canon 21 sobre el orden de las sedes patriarcales. La asistencia fue escasa al principio (unos 20–25 obispos) y llegó a 102 en la sesión final.",
+      en: "From 5 October 869 to 28 February 870. It deposed Patriarch Photius and confirmed the restoration of Ignatius. It issued 27 canons in the Latin version (fewer in the Greek), including canon 21 on the order of the patriarchal sees. Attendance was small at first (about 20–25 bishops), reaching 102 at the final session.",
+    },
   },
   {
     id: "constantinople-879",
@@ -1552,6 +1791,16 @@ export const councils: Council[] = [
     year: 879,
     endYear: 880,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Constantinopla (Santa Sofía)",
+      en: "Constantinople (Hagia Sophia)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Con unos 383 obispos y legados papales, reconoció a Focio (restituido tras la muerte de Ignacio en 877) como patriarca legítimo y anuló el concilio de 869–870. Reafirmó el Credo niceno-constantinopolitano prohibiendo añadirle o quitarle nada, lo que la tradición ortodoxa entiende como un rechazo implícito del Filioque.",
+      en: "With about 383 bishops and papal legates, it recognized Photius (restored after Ignatius' death in 877) as legitimate patriarch and annulled the council of 869–870. It reaffirmed the Niceno-Constantinopolitan Creed and forbade adding to or subtracting from it, which Orthodox tradition reads as an implicit rejection of the Filioque.",
+    },
   },
   {
     id: "lateran-1",
@@ -1562,6 +1811,16 @@ export const councils: Council[] = [
     year: 1123,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Palacio de Letrán, Roma",
+      en: "Lateran Palace, Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Primer concilio general celebrado en Occidente. Ratificó el Concordato de Worms (1122), que cerró la querella de las investiduras entre el papado y el emperador, y promulgó cánones contra la simonía, el matrimonio y el concubinato del clero y la investidura laica de cargos eclesiásticos.",
+      en: "The first general council held in the West. It ratified the Concordat of Worms (1122), which ended the Investiture Controversy between the papacy and the emperor, and issued canons against simony, clerical marriage and concubinage, and lay investiture of church offices.",
+    },
   },
   {
     id: "lateran-2",
@@ -1572,6 +1831,16 @@ export const councils: Council[] = [
     year: 1139,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Palacio de Letrán, Roma",
+      en: "Lateran Palace, Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Cerró el cisma provocado por la elección del antipapa Anacleto II y anuló sus ordenaciones. Emitió 30 cánones; entre ellos declaró que las uniones contraídas por clérigos de órdenes mayores y por religiosos profesos no son matrimonio válido.",
+      en: "It closed the schism caused by the election of the antipope Anacletus II and annulled his ordinations. It issued 30 canons; among them it declared that unions contracted by clergy in major orders and by professed religious are not valid marriages.",
+    },
   },
   {
     id: "lateran-3",
@@ -1582,6 +1851,16 @@ export const councils: Council[] = [
     year: 1179,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Palacio de Letrán, Roma",
+      en: "Lateran Palace, Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Tras el cisma con los antipapas apoyados por Federico Barbarroja, estableció que el papa debe elegirse por dos tercios de los cardenales (canon 1). Emitió 27 cánones: pidió escuelas gratuitas para clérigos junto a cada catedral y condenó a los cátaros (canon 27).",
+      en: "After the schism with antipopes backed by Frederick Barbarossa, it established that the pope must be elected by two-thirds of the cardinals (canon 1). It issued 27 canons: it called for free schools for clerics at every cathedral and condemned the Cathars (canon 27).",
+    },
   },
   {
     id: "lateran-4",
@@ -1592,6 +1871,16 @@ export const councils: Council[] = [
     year: 1215,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Palacio de Letrán, Roma",
+      en: "Lateran Palace, Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Del 11 al 30 de noviembre de 1215, con más de 400 obispos y unos 800 abades y priores. Emitió 71 cánones. El canon 1 profesa la fe contra los cátaros y afirma que el pan y el vino son “transustanciados” en el cuerpo y la sangre de Cristo; el canon 21 obliga a todo fiel con uso de razón a confesarse al menos una vez al año y comulgar en Pascua. Condenó la doctrina trinitaria de Joaquín de Fiore, convocó una cruzada e impuso a judíos y musulmanes un vestido distintivo (canon 68).",
+      en: "From 11 to 30 November 1215, with over 400 bishops and some 800 abbots and priors. It issued 71 canons. Canon 1 professes the faith against the Cathars and states that the bread and wine are “transubstantiated” into the body and blood of Christ; canon 21 obliges every believer who has reached the age of discretion to confess at least once a year and receive communion at Easter. It condemned Joachim of Fiore's Trinitarian teaching, called a crusade and required Jews and Muslims to wear distinctive dress (canon 68).",
+    },
   },
   {
     id: "lyon-1",
@@ -1602,6 +1891,16 @@ export const councils: Council[] = [
     year: 1245,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Lyon, Francia",
+      en: "Lyon, France",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Declaró depuesto al emperador Federico II, en conflicto con el papado, y trató la ayuda a Tierra Santa y al Imperio latino de Constantinopla. Sus decretos se ocupan sobre todo de procedimiento judicial y disciplina eclesiástica.",
+      en: "It declared Emperor Frederick II, then in conflict with the papacy, deposed, and dealt with aid for the Holy Land and the Latin Empire of Constantinople. Its decrees deal mostly with judicial procedure and church discipline.",
+    },
   },
   {
     id: "lyon-2",
@@ -1612,6 +1911,16 @@ export const councils: Council[] = [
     year: 1274,
     endYear: null,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Lyon, Francia",
+      en: "Lyon, France",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Del 7 de mayo al 17 de julio de 1274. Proclamó la unión con la Iglesia griega, promovida por el emperador Miguel VIII Paleólogo: los delegados griegos aceptaron la primacía romana y el Filioque, definido como procesión del Espíritu “del Padre y del Hijo como de un solo principio”. Promulgó 31 constituciones, entre ellas Ubi periculum, que reguló el cónclave. Tomás de Aquino murió camino al concilio y Buenaventura murió durante él.",
+      en: "From 7 May to 17 July 1274. It proclaimed union with the Greek Church, promoted by Emperor Michael VIII Palaiologos: the Greek delegates accepted Roman primacy and the Filioque, defined as the Spirit's procession “from the Father and the Son as from one principle.” It issued 31 constitutions, among them Ubi periculum, which regulated the papal conclave. Thomas Aquinas died on his way to the council and Bonaventure died during it.",
+    },
   },
   {
     id: "vienne",
@@ -1622,6 +1931,16 @@ export const councils: Council[] = [
     year: 1311,
     endYear: 1312,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Vienne, Francia",
+      en: "Vienne, France",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Bajo presión del rey Felipe IV de Francia, el papa suprimió la Orden del Temple (bula Vox in excelso, 1312). El concilio definió que el alma racional es por sí misma forma del cuerpo, condenó errores atribuidos a begardos y beguinas, y pidió cátedras de hebreo, árabe y siríaco en las universidades.",
+      en: "Under pressure from King Philip IV of France, the pope suppressed the Order of the Temple (bull Vox in excelso, 1312). The council defined that the rational soul is of itself the form of the body, condemned errors attributed to Beghards and Beguines, and called for chairs of Hebrew, Arabic and Syriac at the universities.",
+    },
   },
   {
     id: "pisa-1409",
@@ -1632,6 +1951,16 @@ export const councils: Council[] = [
     year: 1409,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Pisa, Italia",
+      en: "Pisa, Italy",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Intentó acabar con el Cisma de Occidente deponiendo a Gregorio XII (Roma) y a Benedicto XIII (Aviñón) y eligiendo a Alejandro V. Como ninguno de los dos aceptó, el resultado fue que hubo tres pretendientes al papado hasta el Concilio de Constanza.",
+      en: "It tried to end the Western Schism by deposing Gregory XII (Rome) and Benedict XIII (Avignon) and electing Alexander V. Since neither accepted, the result was three claimants to the papacy until the Council of Constance.",
+    },
   },
   {
     id: "constance",
@@ -1642,6 +1971,16 @@ export const councils: Council[] = [
     year: 1414,
     endYear: 1418,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Constanza, Sacro Imperio (actual Alemania)",
+      en: "Constance, Holy Roman Empire (modern Germany)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Del 5 de noviembre de 1414 al 22 de abril de 1418. Puso fin al Cisma de Occidente: depuso a Juan XXIII y a Benedicto XIII, aceptó la renuncia de Gregorio XII y eligió a Martín V (1417). El decreto Haec sancta (1415) afirmó la autoridad del concilio sobre todos, incluido el papa, y Frequens (1417) previó concilios periódicos. Condenó doctrinas de John Wyclif y de Jan Hus; Hus fue quemado en 1415 pese al salvoconducto imperial.",
+      en: "From 5 November 1414 to 22 April 1418. It ended the Western Schism: it deposed John XXIII and Benedict XIII, accepted Gregory XII's resignation and elected Martin V (1417). The decree Haec sancta (1415) asserted the council's authority over all, including the pope, and Frequens (1417) provided for regular councils. It condemned teachings of John Wycliffe and Jan Hus; Hus was burned in 1415 despite an imperial safe-conduct.",
+    },
   },
   {
     id: "basel",
@@ -1652,6 +1991,16 @@ export const councils: Council[] = [
     year: 1431,
     endYear: 1449,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Basilea, Suiza",
+      en: "Basel, Switzerland",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Reafirmó la superioridad del concilio sobre el papa (conciliarismo) y negoció con los husitas los Compactata, que concedían a Bohemia la comunión bajo las dos especies. Cuando Eugenio IV lo trasladó a Ferrara (1437) para negociar con los griegos, la mayoría que permaneció en Basilea depuso al papa y eligió al antipapa Félix V (1439); el concilio se disolvió en 1449.",
+      en: "It reasserted the council’s superiority over the pope (conciliarism) and negotiated with the Hussites the Compacts that granted Bohemia communion in both kinds. When Eugene IV transferred it to Ferrara (1437) to negotiate with the Greeks, the majority that stayed in Basel deposed the pope and elected the antipope Felix V (1439); the council dissolved in 1449.",
+    },
   },
   {
     id: "florence",
@@ -1662,6 +2011,16 @@ export const councils: Council[] = [
     year: 1438,
     endYear: 1445,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Ferrara (1438), Florencia (1439–1443) y Roma (1443–1445); antes, Basilea (desde 1431)",
+      en: "Ferrara (1438), Florence (1439–1443) and Rome (1443–1445); previously Basel (from 1431)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Con la participación del emperador Juan VIII Paleólogo y del patriarca José II, el decreto Laetentur caeli (6 de julio de 1439) proclamó la unión con los griegos: acuerdo sobre el Filioque (explicado también como “por el Hijo”), el purgatorio, la primacía del papa y la validez del pan con y sin levadura. Marcos de Éfeso se negó a firmar. Siguieron decretos de unión con los armenios (1439) y los coptos (Cantate Domino, 1442), entre otros.",
+      en: "With Emperor John VIII Palaiologos and Patriarch Joseph II taking part, the decree Laetentur caeli (6 July 1439) proclaimed union with the Greeks: agreement on the Filioque (also explained as “through the Son”), purgatory, papal primacy and the validity of both leavened and unleavened bread. Mark of Ephesus refused to sign. Decrees of union with the Armenians (1439) and the Copts (Cantate Domino, 1442), among others, followed.",
+    },
   },
   {
     id: "lateran-5",
@@ -1672,6 +2031,16 @@ export const councils: Council[] = [
     year: 1512,
     endYear: 1517,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Palacio de Letrán, Roma",
+      en: "Lateran Palace, Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Convocado en respuesta al conciliábulo de Pisa (1511) apoyado por Luis XII de Francia. Afirmó la inmortalidad del alma individual (Apostolici regiminis, 1513), aprobó los montes de piedad, reguló la censura previa de libros impresos (1515) y aceptó el Concordato de Bolonia con Francia. Se clausuró en marzo de 1517, siete meses antes de las tesis de Lutero, sin haber emprendido la reforma profunda que muchos reclamaban.",
+      en: "Called in response to the schismatic Council of Pisa (1511) backed by Louis XII of France. It affirmed the immortality of the individual soul (Apostolici regiminis, 1513), approved the montes pietatis (charitable pawnshops), regulated prior censorship of printed books (1515) and accepted the Concordat of Bologna with France. It closed in March 1517, seven months before Luther’s theses, without undertaking the deep reform many were calling for.",
+    },
   },
   {
     id: "trent",
@@ -1682,6 +2051,16 @@ export const councils: Council[] = [
     year: 1545,
     endYear: 1563,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Trento, norte de Italia (con un breve traslado a Bolonia, 1547–1549)",
+      en: "Trent, northern Italy (briefly transferred to Bologna, 1547–1549)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "En tres periodos (1545–1547, 1551–1552, 1562–1563) respondió a la Reforma protestante. Afirmó la Escritura y las tradiciones apostólicas como fuentes de la revelación y definió el canon bíblico con los deuterocanónicos (1546), declarando auténtica la Vulgata. Enseñó sobre el pecado original y la justificación (1547), los siete sacramentos, la transustanciación (1551), la Misa como sacrificio (1562) y el purgatorio. Con el decreto Tametsi (1563) exigió una forma pública para el matrimonio y ordenó crear seminarios.",
+      en: "In three periods (1545–1547, 1551–1552, 1562–1563) it responded to the Protestant Reformation. It affirmed Scripture and apostolic traditions as sources of revelation and defined the biblical canon including the deuterocanonical books (1546), declaring the Vulgate authentic. It taught on original sin and justification (1547), the seven sacraments, transubstantiation (1551), the Mass as sacrifice (1562) and purgatory. With the decree Tametsi (1563) it required a public form of marriage, and it ordered the creation of seminaries.",
+    },
   },
   {
     id: "dort",
@@ -1692,6 +2071,16 @@ export const councils: Council[] = [
     year: 1618,
     endYear: 1619,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Dordrecht, Provincias Unidas (Países Bajos)",
+      en: "Dordrecht, Dutch Republic (Netherlands)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Del 13 de noviembre de 1618 al 29 de mayo de 1619, con delegados de Inglaterra, Escocia, el Palatinado, Suiza y otros territorios. Respondió a los cinco artículos de los Remonstrantes (arminianos, 1610) con los Cánones de Dort, en cinco capítulos sobre la elección incondicional, el alcance de la expiación, la corrupción humana, la gracia eficaz y la perseverancia de los santos (base del posterior acrónimo inglés TULIP). Destituyó a los ministros remonstrantes, confirmó la Confesión Belga y el Catecismo de Heidelberg y encargó una nueva traducción neerlandesa de la Biblia (Statenvertaling).",
+      en: "From 13 November 1618 to 29 May 1619, with delegates from England, Scotland, the Palatinate, Switzerland and other territories. It answered the five articles of the Remonstrants (Arminians, 1610) with the Canons of Dort, in five heads of doctrine on unconditional election, the extent of the atonement, human corruption, effectual grace and the perseverance of the saints (the basis of the later English acronym TULIP). It removed Remonstrant ministers, confirmed the Belgic Confession and the Heidelberg Catechism, and commissioned a new Dutch Bible translation (Statenvertaling).",
+    },
   },
   {
     id: "jerusalem-1672",
@@ -1702,6 +2091,16 @@ export const councils: Council[] = [
     year: 1672,
     endYear: null,
     approx: false,
+    ecumenical: false,
+    place: {
+      es: "Jerusalén y Belén (Iglesia de la Natividad)",
+      en: "Jerusalem and Bethlehem (Church of the Nativity)",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Rechazó las doctrinas calvinistas de la Confesión atribuida al patriarca Cirilo Lucaris (publicada en 1629). La Confesión de Dositeo, con 18 decretos y 4 preguntas, afirma la autoridad de la tradición junto a la Escritura, la necesidad de la fe obrando por el amor en la justificación, los siete misterios (sacramentos), la presencia real de Cristo en la Eucaristía con el término metousíosis, la canonicidad de varios libros deuterocanónicos y la procesión del Espíritu solo del Padre.",
+      en: "Rejected the Calvinist doctrines of the Confession attributed to Patriarch Cyril Lucaris (published 1629). The Confession of Dositheus, with 18 decrees and 4 questions, affirms the authority of tradition alongside Scripture, the necessity of faith working through love in justification, the seven mysteries (sacraments), the real presence of Christ in the Eucharist using the term metousiosis, the canonicity of several deuterocanonical books, and the procession of the Spirit from the Father alone.",
+    },
   },
   {
     id: "vatican-1",
@@ -1712,6 +2111,16 @@ export const councils: Council[] = [
     year: 1869,
     endYear: 1870,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Basílica de San Pedro, Roma",
+      en: "St Peter's Basilica, Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Abierto el 8 de diciembre de 1869. La constitución Dei Filius (24 de abril de 1870) trató la fe y la razón, la revelación y la posibilidad de conocer a Dios por la razón natural. La constitución Pastor aeternus (18 de julio de 1870) definió la primacía de jurisdicción del papa y su infalibilidad cuando define ex cathedra una doctrina de fe o costumbres. Se suspendió el 20 de octubre de 1870 tras la ocupación de Roma por las tropas italianas.",
+      en: "Opened on 8 December 1869. The constitution Dei Filius (24 April 1870) dealt with faith and reason, revelation and the possibility of knowing God by natural reason. The constitution Pastor aeternus (18 July 1870) defined the pope's primacy of jurisdiction and his infallibility when he defines ex cathedra a doctrine of faith or morals. It was suspended on 20 October 1870 after Italian troops occupied Rome.",
+    },
   },
   {
     id: "vatican-2",
@@ -1722,6 +2131,16 @@ export const councils: Council[] = [
     year: 1962,
     endYear: 1965,
     approx: false,
+    ecumenical: true,
+    place: {
+      es: "Basílica de San Pedro, Roma",
+      en: "St Peter's Basilica, Rome",
+    },
+    dateNote: null,
+    decisions: {
+      es: "Del 11 de octubre de 1962 al 8 de diciembre de 1965, en cuatro sesiones. Aprobó 16 documentos: cuatro constituciones (Sacrosanctum Concilium sobre la liturgia, Lumen gentium sobre la Iglesia, Dei Verbum sobre la revelación y Gaudium et spes sobre la Iglesia en el mundo actual), nueve decretos (entre ellos Unitatis redintegratio sobre el ecumenismo) y tres declaraciones (entre ellas Dignitatis humanae sobre la libertad religiosa y Nostra aetate sobre las religiones no cristianas). Permitió un uso amplio de las lenguas vernáculas en la liturgia y abrió el diálogo ecuménico; observadores ortodoxos y protestantes asistieron.",
+      en: "From 11 October 1962 to 8 December 1965, in four sessions. It approved 16 documents: four constitutions (Sacrosanctum Concilium on the liturgy, Lumen gentium on the Church, Dei Verbum on revelation and Gaudium et spes on the Church in the modern world), nine decrees (among them Unitatis redintegratio on ecumenism) and three declarations (among them Dignitatis humanae on religious freedom and Nostra aetate on non-Christian religions). It allowed wide use of vernacular languages in the liturgy and opened ecumenical dialogue; Orthodox and Protestant observers attended.",
+    },
   },
 ];
 

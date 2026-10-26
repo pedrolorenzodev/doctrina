@@ -5,6 +5,8 @@ import {
   doctrineHref,
   doctrineRoute,
   fatherHref,
+  timelineHref,
+  timelineRoute,
   fatherRoute,
   objectionHref,
   objectionRoute,
@@ -202,7 +204,7 @@ export function buildSiteTree(
       id: "history",
       label: text.tree.history,
       nodes: [
-        leaf("history/timeline", text.tree.timeline),
+        { ...leaf("history/timeline", text.tree.timeline), href: timelineHref(locale), route: timelineRoute(locale) },
         branch(
           "history/fathers",
           text.tree.fathers,

@@ -45,6 +45,10 @@ export type Council = {
   year: number;
   endYear: number | null;
   approx: boolean;
+  ecumenical: boolean;
+  place: Localized;
+  dateNote: Localized | null;
+  decisions: Localized;
 };
 
 export type Heresy = {

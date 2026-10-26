@@ -1,31 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { TimelineMarks } from "@/components/timeline-marks";
+import type { TimelineEntry } from "@/lib/timeline-entry";
 import { PageLink } from "@/components/ui/page-link";
+import { at, px, vars } from "@/lib/css-vars";
 import { listSeparator } from "@/lib/punctuation";
-import { packRows, percentOf, pixelsOf, placeItem, type PlacedItem, type Scale } from "@/lib/timeline-layout";
-
-export type TimelineEntry = {
-  id: string;
-  group: "people" | "currents" | "events";
-  kind: string;
-  name: string;
-  label: string;
-  rowDate: string;
-  diedSpoken: string | null;
-  ends: string[];
-  dates: string;
-  text: string;
-  start: number;
-  end: number;
-  leadStart: number | null;
-  birthUnknown: boolean;
-  isRange: boolean;
-  openEnd: boolean;
-  own: boolean;
-  href: string | null;
-  linkLabel: string;
-};
+import { packRows, percentOf, placeItem, type PlacedItem, type Scale } from "@/lib/timeline-layout";
+import { useBoxWidth, useLabelMeasure } from "@/lib/use-timeline-box";
 
 export type TimelineText = {
   groups: Record<TimelineEntry["group"], string>;
@@ -46,113 +28,7 @@ type FatherTimelineProps = {
 
 const defaultWidth = 960;
 const labelPadding = 6;
-const estimatedGlyph = 7.3;
 const groupOrder: TimelineEntry["group"][] = ["people", "currents", "events"];
-
-const at = (name: string, value: string): CSSProperties => ({ [name]: value }) as CSSProperties;
-const vars = (values: Record<string, string>): CSSProperties => values as CSSProperties;
-const px = (value: number) => `${value.toFixed(1)}px`;
-
-function useLabelMeasure(host: React.RefObject<HTMLElement | null>) {
-  const [measure, setMeasure] = useState<(label: string, size: number, weight: number) => number>(
-    () => (label: string) => label.length * estimatedGlyph,
-  );
-  useEffect(() => {
-    const element = host.current;
-    if (!element) return;
-    const canvas = document.createElement("canvas").getContext("2d");
-    if (!canvas) return;
-    const install = () => {
-      const family = getComputedStyle(element).fontFamily;
-      setMeasure(() => (label: string, size: number, weight: number) => {
-        canvas.font = `${weight} ${size}px ${family}`;
-        return canvas.measureText(label).width;
-      });
-    };
-    install();
-    void document.fonts.ready.then(install);
-  }, [host]);
-  return measure;
-}
-
-function useBoxWidth(host: React.RefObject<HTMLElement | null>) {
-  const [width, setWidth] = useState(0);
-  useLayoutEffect(() => {
-    const element = host.current;
-    if (!element) return;
-    const read = () => setWidth(element.clientWidth);
-    read();
-    const observer = new ResizeObserver(read);
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, [host]);
-  return width;
-}
-
-function Marks({ entry, scale, left }: { entry: TimelineEntry; scale: Scale; left: number }) {
-  const x = (year: number) => pixelsOf(scale, year) - left;
-  const bar = `absolute top-1.5 h-1.5 rounded-3 transition-colors duration-150 ${entry.own ? "bg-accent" : "bg-rule-2 group-hover:bg-ink-3"}`;
-  const pressed = entry.own ? "" : "group-aria-pressed:bg-ink";
-  if (entry.group === "people" && entry.birthUnknown) {
-    const death = x(entry.end);
-    return (
-      <>
-        {[0.25, 0.45, 0.7, 1].map((opacity, index) => (
-          <span
-            key={opacity}
-            style={vars({ "--x": px(death - 28 + index * 7), "--o": String(opacity) })}
-            className={`absolute top-2 left-(--x) size-0.75 rounded-full opacity-(--o) ${entry.own ? "bg-accent" : "bg-ink-3"}`}
-          />
-        ))}
-        <span style={vars({ "--x": px(death), "--w": px(6) })} className={`${bar} ${pressed} left-(--x) w-(--w)`} />
-      </>
-    );
-  }
-  if (entry.group === "people") {
-    const first = x(entry.start);
-    const last = x(entry.end);
-    return (
-      <>
-        {entry.leadStart !== null ? (
-          <span
-            style={vars({ "--x": px(x(entry.leadStart)), "--w": px(first - x(entry.leadStart)) })}
-            className="absolute top-2 left-(--x) h-0 w-(--w) border-t-2 border-dashed border-rule-2"
-          />
-        ) : null}
-        <span
-          style={vars({ "--x": px(first), "--w": px(last - first) })}
-          className={`${bar} ${pressed} left-(--x) w-(--w)`}
-        />
-      </>
-    );
-  }
-  if (entry.group === "currents") {
-    const first = x(entry.start);
-    const last = x(Math.min(entry.end, scale.to));
-    return (
-      <span
-        style={vars({ "--x": px(first), "--w": px(last - first) })}
-        className={`absolute top-1.75 h-1 bg-rule-2 ${entry.openEnd ? "rounded-l-2" : "rounded-2"} left-(--x) w-(--w) group-hover:bg-ink-3 group-aria-pressed:bg-ink`}
-      />
-    );
-  }
-  if (entry.isRange) {
-    const first = x(entry.start);
-    const last = x(Math.min(entry.end, scale.to));
-    return (
-      <span
-        style={vars({ "--x": px(first), "--w": px(Math.max(6, last - first)) })}
-        className="absolute top-1.75 left-(--x) h-1 w-(--w) rounded-2 bg-ink-3 opacity-55 group-aria-pressed:bg-ink group-aria-pressed:opacity-100"
-      />
-    );
-  }
-  return (
-    <span
-      style={at("--x", px(x(entry.start)))}
-      className="absolute top-1 left-(--x) -ml-1.25 size-2.5 rounded-full circle-border border-ink-3 bg-bg transition-colors duration-150 group-hover:border-ink group-aria-pressed:border-ink group-aria-pressed:bg-ink"
-    />
-  );
-}
 
 export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelineProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -258,7 +134,7 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
                           })}
                           className="group absolute top-1 left-(--l) h-8.5 w-(--w) cursor-pointer rounded-4 border-0 bg-transparent p-0 text-left font-ui text-btn leading-none whitespace-nowrap text-ink-2"
                         >
-                          <Marks entry={entry} scale={scale} left={item.left} />
+                          <TimelineMarks entry={entry} scale={scale} left={item.left} />
                           <span
                             className={`absolute top-4.75 left-(--lx) px-px transition-colors duration-150 group-hover:text-ink group-hover:underline group-hover:decoration-rule-2 group-hover:underline-offset-3 group-aria-pressed:font-semibold group-aria-pressed:text-ink ${entry.own ? "font-medium text-accent group-hover:text-accent group-aria-pressed:text-accent" : ""}`}
                           >

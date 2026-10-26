@@ -1,0 +1,373 @@
+"use client";
+
+import { useEffect, useMemo, useRef, useState } from "react";
+import { TimelineMarks } from "@/components/timeline-marks";
+import { PageLink } from "@/components/ui/page-link";
+import type { GeneralEntry, GeneralSection } from "@/content/get-general-timeline";
+import { at, px, vars } from "@/lib/css-vars";
+import { listSeparator } from "@/lib/punctuation";
+import { packRows, pixelsOf, placeItem, type PlacedItem, type Scale } from "@/lib/timeline-layout";
+import { useFontsReady, useLabelMeasure } from "@/lib/use-timeline-box";
+
+export type GeneralTimelineText = {
+  sections: Record<GeneralSection, string>;
+  key: { life: string; estimated: string; unknownBirth: string; council: string; lasts: string };
+  keyLabel: string;
+  hint: string;
+  empty: string;
+  diedMark: string;
+};
+
+type GeneralTimelineProps = {
+  from: number;
+  to: number;
+  marks: number[];
+  entries: GeneralEntry[];
+  text: GeneralTimelineText;
+};
+
+const pixelsPerYear = 5.85;
+const rowGap = 18;
+const labelPadding = 6;
+const panDistance = 5;
+const sectionOrder: GeneralSection[] = ["people", "councils", "works", "currents"];
+
+export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimelineProps) {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [focusId, setFocusId] = useState<string | null>(null);
+  const scroller = useRef<HTMLDivElement>(null);
+  const heading = useRef<HTMLHeadingElement>(null);
+  const justPanned = useRef(false);
+  const measure = useLabelMeasure(scroller);
+  const ready = useFontsReady();
+  const width = Math.round((to - from) * pixelsPerYear);
+  const scale: Scale = useMemo(() => ({ from, to, width }), [from, to, width]);
+  const selected = entries.find((entry) => entry.id === selectedId) ?? null;
+
+  const placed = useMemo(() => {
+    const byId = new Map<string, PlacedItem>();
+    for (const entry of entries) {
+      byId.set(
+        entry.id,
+        placeItem(scale, entry, measure(`${entry.label}${listSeparator}${entry.rowDate}`, 13.5, 600) + labelPadding),
+      );
+    }
+    return byId;
+  }, [entries, scale, measure]);
+
+  const rowsOf = (section: GeneralSection) =>
+    packRows(
+      entries
+        .filter((entry) => entry.section === section)
+        .map((entry) => placed.get(entry.id))
+        .filter((item): item is PlacedItem => item !== undefined),
+      rowGap,
+    );
+
+  const buttons = () => Array.from(scroller.current?.querySelectorAll<HTMLButtonElement>("button[data-entry]") ?? []);
+  const onKeyDown = (event: React.KeyboardEvent) => {
+    const step =
+      event.key === "ArrowRight" || event.key === "ArrowDown"
+        ? 1
+        : event.key === "ArrowLeft" || event.key === "ArrowUp"
+          ? -1
+          : 0;
+    if (step === 0) return;
+    const list = buttons();
+    const index = list.findIndex((button) => button === document.activeElement);
+    if (index < 0) return;
+    event.preventDefault();
+    const target = list[(index + step + list.length) % list.length];
+    target?.focus();
+    setFocusId(target?.dataset.entry ?? null);
+  };
+
+  const showSelected = (id: string) => {
+    const box = scroller.current;
+    const button = box?.querySelector<HTMLElement>(`button[data-entry="${id}"]`);
+    if (!box || !button) return;
+    const rect = button.getBoundingClientRect();
+    const view = box.getBoundingClientRect();
+    if (rect.left > view.right - 60 || rect.right < view.left + 60) {
+      const left = box.scrollLeft + rect.left - view.left - 40;
+      const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      box.scrollTo({ left, behavior: reduced ? "instant" : "smooth" });
+    }
+  };
+
+  const choose = (id: string, byKeyboard: boolean) => {
+    if (justPanned.current) return;
+    const next = id === selectedId ? null : id;
+    setSelectedId(next);
+    setFocusId(id);
+    if (next === null) return;
+    requestAnimationFrame(() => showSelected(next));
+    if (byKeyboard) requestAnimationFrame(() => heading.current?.focus({ preventScroll: true }));
+  };
+
+  useEffect(() => {
+    const box = scroller.current;
+    if (!box) return;
+    let start: { x: number; left: number; moved: boolean } | null = null;
+    const down = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse" || event.button !== 0) return;
+      start = { x: event.clientX, left: box.scrollLeft, moved: false };
+    };
+    const move = (event: PointerEvent) => {
+      if (!start) return;
+      const delta = event.clientX - start.x;
+      if (Math.abs(delta) > panDistance) start.moved = true;
+      if (start.moved) box.scrollLeft = start.left - delta;
+    };
+    const up = () => {
+      if (start?.moved) {
+        justPanned.current = true;
+        setTimeout(() => {
+          justPanned.current = false;
+        }, 0);
+      }
+      start = null;
+    };
+    box.addEventListener("pointerdown", down);
+    addEventListener("pointermove", move);
+    addEventListener("pointerup", up);
+    return () => {
+      box.removeEventListener("pointerdown", down);
+      removeEventListener("pointermove", move);
+      removeEventListener("pointerup", up);
+    };
+  }, []);
+
+  const span = selected
+    ? { first: selected.leadStart !== null ? selected.start : selected.start, last: Math.min(selected.end, to) }
+    : null;
+  const bandLeft = span ? pixelsOf(scale, span.first) : 0;
+  const bandWidth = span ? Math.max(2, pixelsOf(scale, span.last) - bandLeft) : 0;
+  const tabbableId = focusId ?? entries[0]?.id;
+
+  const selectionLabels: { x: number; label: string }[] = [];
+  if (selected && span) {
+    const [startLabel, endLabel] = selected.ends;
+    const spanWidth = pixelsOf(scale, span.last) - pixelsOf(scale, span.first);
+    if (
+      selected.ends.length === 2 &&
+      startLabel !== undefined &&
+      endLabel !== undefined &&
+      spanWidth > measure(startLabel, 12.5, 600) / 2 + measure(endLabel, 12.5, 600) / 2 + 14
+    ) {
+      selectionLabels.push(
+        { x: pixelsOf(scale, span.first), label: startLabel },
+        { x: pixelsOf(scale, span.last), label: endLabel },
+      );
+    } else {
+      selectionLabels.push({
+        x: (pixelsOf(scale, span.first) + pixelsOf(scale, span.last)) / 2,
+        label: selected.ends.length === 2 ? selected.rowDate : (selected.ends[0] ?? ""),
+      });
+    }
+  }
+  const clamp = (center: number, labelWidth: number) =>
+    Math.min(Math.max(center, labelWidth / 2), width - labelWidth / 2);
+
+  const axis = (top: boolean) => (
+    <div aria-hidden="true" className={`relative border-ink-3 ${top ? "h-8.5 border-b" : "h-10 border-t"}`}>
+      {marks.map((mark) => {
+        const x = pixelsOf(scale, mark);
+        const major = mark % 100 === 0;
+        const labelled =
+          (major || mark === 50) &&
+          !selectionLabels.some((item) => Math.abs(item.x - x) < measure(item.label, 12.5, 600) / 2 + 22);
+        return (
+          <div key={mark}>
+            <span
+              style={at("--x", px(x))}
+              className={`absolute left-(--x) w-px bg-ink-3 ${top ? "bottom-0" : "top-0"} ${major ? "h-1.5" : "h-1"}`}
+            />
+            {labelled ? (
+              <span
+                style={at("--x", px(x))}
+                className={`absolute left-(--x) text-ui-2xs whitespace-nowrap text-ink-3 tabular-nums ${top ? "bottom-2.5" : "top-2.5"} ${mark === to ? "-translate-x-full" : "-translate-x-1/2"}`}
+              >
+                {mark}
+              </span>
+            ) : null}
+          </div>
+        );
+      })}
+      {selected && span ? (
+        <span
+          style={vars({ "--x": px(bandLeft), "--w": px(bandWidth) })}
+          className={`absolute left-(--x) h-1.25 w-(--w) min-w-0.75 rounded-2 bg-ink ${top ? "-bottom-0.75" : "-top-0.75"}`}
+        />
+      ) : null}
+      {selectionLabels.map((item) => {
+        const labelWidth = measure(item.label, 12.5, 600) + 8;
+        return (
+          <span
+            key={item.label}
+            style={at("--x", px(clamp(item.x, labelWidth)))}
+            className={`absolute left-(--x) z-1 -translate-x-1/2 bg-bg px-1 text-ui-xs font-semibold whitespace-nowrap text-ink tabular-nums ${top ? "bottom-2.25" : "top-2.5"}`}
+          >
+            {item.label}
+          </span>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <div className={ready ? "" : "invisible"}>
+      <p className="mb-2.5 text-ui-xs text-ink-3">{text.hint}</p>
+      <div
+        ref={scroller}
+        onKeyDown={onKeyDown}
+        data-lenis-prevent
+        data-scroller
+        className="scrollbar-rule relative overflow-x-auto overscroll-x-contain border-y border-rule max-sm:-mx-4 max-sm:px-4"
+      >
+        <div style={at("--w", px(width))} className="relative w-(--w)">
+          {axis(true)}
+          <div className="relative">
+            {marks.map((mark) => (
+              <span
+                key={mark}
+                aria-hidden="true"
+                style={at("--x", px(pixelsOf(scale, mark)))}
+                className="pointer-events-none absolute top-0 bottom-0 left-(--x) w-px bg-rule opacity-50"
+              />
+            ))}
+            {selected && span ? (
+              <span
+                aria-hidden="true"
+                style={vars({ "--x": px(bandLeft), "--w": px(bandWidth) })}
+                className="pointer-events-none absolute top-0 bottom-0 left-(--x) w-(--w) bg-accent-weak"
+              />
+            ) : null}
+            {sectionOrder.map((section) => {
+              const rows = rowsOf(section);
+              if (rows.length === 0) return null;
+              return (
+                <div key={section} className="relative border-t border-rule first:border-t-0">
+                  <p className="sticky left-0 z-2 m-0 w-max pt-3 pr-2.5 pb-1 text-ui-xs text-ink-3">
+                    {text.sections[section]}
+                  </p>
+                  {rows.map((row) => (
+                    <div key={row.map((item) => item.id).join()} className="relative h-10">
+                      {row.map((item) => {
+                        const entry = entries.find((candidate) => candidate.id === item.id);
+                        if (!entry) return null;
+                        return (
+                          <button
+                            key={entry.id}
+                            type="button"
+                            data-entry={entry.id}
+                            aria-pressed={entry.id === selectedId}
+                            tabIndex={entry.id === tabbableId ? 0 : -1}
+                            onClick={(event) => choose(entry.id, event.detail === 0)}
+                            onFocus={() => setFocusId(entry.id)}
+                            style={vars({
+                              "--l": px(item.left),
+                              "--w": px(item.right - item.left),
+                              "--lx": px(item.labelLeft),
+                            })}
+                            className="group absolute top-1 left-(--l) h-8.5 w-(--w) cursor-pointer rounded-4 border-0 bg-transparent p-0 text-left font-ui text-btn leading-none whitespace-nowrap text-ink-2 pointer-coarse:top-0 pointer-coarse:h-10"
+                          >
+                            <TimelineMarks entry={entry} scale={scale} left={item.left} />
+                            <span className="absolute top-4.75 left-(--lx) px-px transition-colors duration-150 group-hover:text-ink group-hover:underline group-hover:decoration-rule-2 group-hover:underline-offset-3 group-aria-pressed:font-semibold group-aria-pressed:text-ink">
+                              {entry.label}
+                              {listSeparator}
+                              {entry.diedSpoken ? (
+                                <>
+                                  <span aria-hidden="true">{entry.rowDate}</span>
+                                  <span className="sr-only">{entry.diedSpoken}</span>
+                                </>
+                              ) : (
+                                entry.rowDate
+                              )}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+          {axis(false)}
+        </div>
+      </div>
+      <ul
+        aria-label={text.keyLabel}
+        className="m-0 mt-3 flex list-none flex-wrap gap-x-5.5 gap-y-1.5 p-0 text-ui-xs text-ink-3"
+      >
+        <li className="flex items-center gap-2">
+          <span aria-hidden="true" className="h-1.5 w-7 rounded-3 bg-rule-2" />
+          {text.key.life}
+        </li>
+        <li className="flex items-center gap-2">
+          <span aria-hidden="true" className="flex w-7 items-center">
+            <span className="h-0 w-3 border-t-2 border-dashed border-rule-2" />
+            <span className="ml-px h-1.5 w-3.5 rounded-3 bg-rule-2" />
+          </span>
+          {text.key.estimated}
+        </li>
+        <li className="flex items-center gap-2">
+          <span aria-hidden="true" className="flex w-7 items-center gap-1">
+            <span className="size-0.75 rounded-full bg-ink-3 opacity-35" />
+            <span className="size-0.75 rounded-full bg-ink-3 opacity-60" />
+            <span className="size-0.75 rounded-full bg-ink-3" />
+            <span className="h-1.5 w-2.5 rounded-3 bg-rule-2" />
+          </span>
+          {text.key.unknownBirth}
+        </li>
+        <li className="flex items-center gap-2">
+          <span aria-hidden="true" className="size-3 rounded-full circle-border border-ink-3 bg-bg" />
+          {text.key.council}
+        </li>
+        <li className="flex items-center gap-2">
+          <span aria-hidden="true" className="h-1 w-7 rounded-2 bg-rule-2" />
+          {text.key.lasts}
+        </li>
+      </ul>
+      <div
+        aria-live="polite"
+        className="mt-4.5 min-h-37.5 max-w-215 border-t border-rule pt-4.5 pb-1 has-data-empty:min-h-0"
+      >
+        {selected ? (
+          <div className="font-ui">
+            <p className="m-0 mb-1 text-ui-xs text-ink-3">{selected.kind}</p>
+            <h3
+              ref={heading}
+              tabIndex={-1}
+              className="m-0 w-fit font-head text-title-sm font-normal text-ink opsz-30 focus-visible:rounded-3 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent"
+            >
+              {selected.name}
+            </h3>
+            <dl className="m-0 mt-3 flex flex-wrap gap-x-10 gap-y-2.5 p-0">
+              {selected.facts.map((fact) => (
+                <div key={fact.label} className="min-w-0">
+                  <dt className="mb-0.75 text-ui-xs text-ink-3">{fact.label}</dt>
+                  <dd className="m-0 font-body text-entity text-ink tabular-nums">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="m-0 mt-2.5 max-w-155 font-body text-passage-body font-light text-ink-2">{selected.text}</p>
+            <p className="m-0 mt-2.5 text-ui-sm">
+              {/* TODO: only the Fathers' pages exist; councils and movements link to their pages once they exist */}
+              {selected.href ? (
+                <PageLink href={selected.href}>{selected.linkLabel}</PageLink>
+              ) : (
+                <PageLink>{selected.linkLabel}</PageLink>
+              )}
+            </p>
+          </div>
+        ) : (
+          <p data-empty className="m-0 text-ui-sm text-ink-3">
+            {text.empty}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}

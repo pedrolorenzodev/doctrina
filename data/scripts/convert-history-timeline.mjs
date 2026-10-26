@@ -15,6 +15,10 @@ const councils = history.councils.map((council) => ({
   year: council.year,
   endYear: council.endYear ?? null,
   approx: Boolean(council.approx),
+  ecumenical: council.ecumenical,
+  place: council.place,
+  dateNote: council.dateNote ?? null,
+  decisions: council.decisions,
 }));
 const heresies = history.heresies.map((heresy) => ({
   id: heresy.id,

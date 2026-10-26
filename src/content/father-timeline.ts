@@ -3,6 +3,7 @@ import { councils, heresies, historyEvents } from "@/content/history/timeline-so
 import type { Father, HistoryEventKind, Localized } from "@/content/model/history";
 import { fatherHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
+import { firstSentence } from "@/lib/first-sentence";
 import type { Locale } from "@/lib/locale";
 
 export type TimelineGroupId = "people" | "currents" | "events";
@@ -44,7 +45,6 @@ const marginAfter = 60;
 const tickStep = 20;
 const estimatedBirthLead = 8;
 const maxEvents = 8;
-const sentenceEnd = /^(.+?[.!?])(?:\s+[A-ZÁÉÍÓÚÑ¿¡«]|$)/;
 const clauseEnd = /\s*[(:;]|,\s/;
 
 const kindPriority: Record<HistoryEventKind, number> = {
@@ -62,7 +62,6 @@ const kindPriority: Record<HistoryEventKind, number> = {
   "bible-text": 9,
 };
 
-const firstSentence = (text: string) => sentenceEnd.exec(text)?.[1] ?? text;
 const shortLabel = (text: string) => text.split(clauseEnd)[0] ?? text;
 const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
@@ -79,7 +78,7 @@ function overlaps(a: { start: number; end: number }, b: { start: number; end: nu
   return a.start <= b.end && b.start <= a.end;
 }
 
-function personItem(father: Father, own: boolean, locale: Locale, text: UiText): TimelineItem {
+export function personItem(father: Father, own: boolean, locale: Locale, text: UiText): TimelineItem {
   const labels = text.timeline;
   const name = father.name[locale];
   const birthUnknown = father.born === null;

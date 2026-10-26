@@ -1,0 +1,21 @@
+export type TimelineEntry = {
+  id: string;
+  group: "people" | "currents" | "events";
+  kind: string;
+  name: string;
+  label: string;
+  rowDate: string;
+  diedSpoken: string | null;
+  ends: string[];
+  dates: string;
+  text: string;
+  start: number;
+  end: number;
+  leadStart: number | null;
+  birthUnknown: boolean;
+  isRange: boolean;
+  openEnd: boolean;
+  own: boolean;
+  href: string | null;
+  linkLabel: string;
+};
