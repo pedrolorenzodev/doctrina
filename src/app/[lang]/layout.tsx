@@ -6,7 +6,7 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { DrawerProvider } from "@/features/shell/drawer";
 import { HashArrival } from "@/features/shell/hash-arrival";
 import { SearchDialog } from "@/features/shell/search-dialog";
-import { SearchProvider } from "@/features/shell/search-provider";
+import { SearchProvider } from "@/components/search-provider";
 import { Sidebar } from "@/features/shell/sidebar";
 import { TitleEntrance } from "@/features/shell/title-entrance";
 import { SmoothScroll } from "@/features/shell/smooth-scroll";

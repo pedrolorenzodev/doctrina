@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { useSearch } from "@/features/shell/search-provider";
+import { useSearch } from "@/components/search-provider";
 
 type SearchTriggerProps = {
   label: string;

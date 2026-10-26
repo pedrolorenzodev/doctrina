@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { Fragment, useEffect, useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from "react";
 import { flushSync } from "react-dom";
 import { rememberResult, useRecentIds } from "@/features/shell/search-recents";
-import { useSearch } from "@/features/shell/search-provider";
+import { useSearch } from "@/components/search-provider";
 import { trapTab } from "@/lib/focus";
 import { enterList, flipList } from "@/lib/list-motion";
 import {
@@ -102,10 +102,10 @@ function ResultRow({ id, result, selected, onPointer, onPick }: RowProps) {
 }
 
 function SearchPanel({ entries, text }: SearchDialogProps) {
-  const { hide } = useSearch();
+  const { hide, query: initialQuery } = useSearch();
   const router = useRouter();
   const recentIds = useRecentIds();
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
   const [selected, setSelected] = useState(0);
   const list = useRef<HTMLUListElement>(null);
   const ghosts = useRef<HTMLDivElement>(null);

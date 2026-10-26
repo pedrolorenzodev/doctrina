@@ -6,7 +6,8 @@ import { escapePriority, registerEscape } from "@/lib/escape-stack";
 type SearchState = {
   open: boolean;
   session: number;
-  show: (trigger?: HTMLElement) => void;
+  query: string;
+  show: (trigger?: HTMLElement, query?: string) => void;
   hide: (restoreFocus?: boolean) => void;
 };
 
@@ -17,10 +18,12 @@ const lockClass = "scroll-locked-root";
 export function SearchProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [session, setSession] = useState(0);
+  const [query, setQuery] = useState("");
   const opener = useRef<HTMLElement | null>(null);
 
-  const show = useCallback((trigger?: HTMLElement) => {
+  const show = useCallback((trigger?: HTMLElement, initialQuery = "") => {
     opener.current = trigger ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
+    setQuery(initialQuery);
     setSession((current) => current + 1);
     setOpen(true);
   }, []);
@@ -54,7 +57,7 @@ export function SearchProvider({ children }: { children: ReactNode }) {
     };
   }, [open, hide]);
 
-  const value = useMemo(() => ({ open, session, show, hide }), [open, session, show, hide]);
+  const value = useMemo(() => ({ open, session, query, show, hide }), [open, session, query, show, hide]);
   return <SearchContext.Provider value={value}>{children}</SearchContext.Provider>;
 }
 
