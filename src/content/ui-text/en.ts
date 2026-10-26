@@ -169,6 +169,9 @@ export const en: UiText = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    picker: { label: "Translation", spanish: "Spanish", english: "English" },
+    numberingNote:
+      "{abbreviation} numbers this chapter differently from {reference}: it may have other verses or correspond to another chapter (as with several Psalms).",
     size: {
       group: "Text size",
       smaller: "Make the text smaller",

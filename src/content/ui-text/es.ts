@@ -167,6 +167,9 @@ export const es = {
   },
   reader: {
     chapterTitle: "{book} {chapter}",
+    picker: { label: "Traducción", spanish: "Español", english: "Inglés" },
+    numberingNote:
+      "{abbreviation} numera este capítulo de otro modo que {reference}: puede traer otros versículos o corresponder a otro capítulo (pasa con varios Salmos).",
     size: {
       group: "Tamaño del texto",
       smaller: "Achicar el texto",
