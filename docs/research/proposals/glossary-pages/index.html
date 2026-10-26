@@ -1,0 +1,210 @@
+<title>Glosario: índice y término</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: the index first, then one term page in three arrangements; definitions are the real ones of docs/research/glossary-terms.md */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--hover:rgb(28 23 19 / .05);--cite:#5f3d0c;
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);--cite:#d9b36a;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);--cite:#d9b36a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:10px 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:0 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+h3{font-family:var(--head);font-weight:400;font-size:19px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+.say{max-width:640px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.say + .say{margin-top:10px}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 18px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.ctl{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:26px 0 0;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--rule)}
+.ctl label{font-size:13px;color:var(--ink-3);margin-right:8px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;max-width:100%}
+.seg button{font:500 13.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.seg button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.frame{border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);padding:26px 30px 34px;margin-top:6px;max-width:100%}
+.frame.phone{max-width:390px;padding:20px 16px 26px}
+.crumbs{font-size:13px;color:var(--ink-3)}
+.crumbs span + span::before{content:"/";margin:0 8px;color:var(--rule-2)}
+.h1{font-family:var(--head);font-weight:300;font-size:46px;line-height:1.05;margin:18px 0 12px;font-variation-settings:"opsz" 72;text-wrap:balance}
+.phone .h1{font-size:36px}
+.flede{font-family:var(--body);font-style:italic;font-weight:300;font-size:19px;line-height:1.55;color:var(--ink-2);max-width:620px;margin-bottom:22px}
+.phone .flede{font-size:17px}
+.field{display:flex;align-items:center;gap:10px;height:40px;padding:0 12px;border:1px solid var(--rule);border-radius:6px;max-width:340px;margin-bottom:14px;background:var(--panel)}
+.field input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:400 15px var(--ui);outline:none}
+.letters{display:flex;flex-wrap:wrap;gap:2px;margin-bottom:18px}
+.letters span{min-width:32px;min-height:32px;display:flex;align-items:center;justify-content:center;font-size:13.5px;border-radius:6px;color:var(--ink-3)}
+.letters span.on{color:var(--ink);font-weight:500;border:1px solid var(--rule-2)}
+.gh{font-family:var(--head);font-weight:400;font-size:28px;margin:26px 0 2px;font-variation-settings:"opsz" 40}
+ul.list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
+ul.list li{border-top:1px solid var(--rule);padding:11px 0 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 16px;align-items:baseline}
+ul.list .t{font-family:var(--body);font-weight:500;font-size:18px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--rule-2)}
+ul.list .m{font-size:13px;color:var(--ink-3)}
+.idx2{columns:2;column-gap:34px}
+.phone .idx2{columns:1}
+.idx2 .grp{break-inside:avoid}
+.term-uses{font-size:13.5px;color:var(--ink-3);margin-bottom:22px}
+.def{padding:20px 0 22px;border-top:1px solid var(--rule)}
+.def:last-of-type{border-bottom:1px solid var(--rule)}
+.def .who{font-size:13px;color:var(--ink-3);margin-bottom:8px}
+.def .who b{font-weight:500;color:var(--ink)}
+.q{font-family:var(--head);font-weight:300;font-size:21px;line-height:1.5;color:var(--ink);max-width:640px;font-variation-settings:"opsz" 28}
+.phone .q{font-size:19px}
+.src{display:block;margin-top:8px;font-size:14px;color:var(--ink-3)}
+.src a{color:var(--cite);text-decoration:underline dotted 1.5px;text-underline-offset:3px}
+.ai{display:block;margin-top:4px;font-size:12.5px;color:var(--ink-3)}
+.none{font-family:var(--body);font-weight:300;font-size:15.5px;color:var(--ink-3);padding:14px 0 0;max-width:620px}
+.tsw{display:inline-flex;flex-wrap:wrap;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;margin:2px 0 16px;max-width:100%}
+.tsw button{font:500 14px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:36px;padding:0 14px;cursor:pointer}
+.tsw button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.cmp{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:0 26px;border-top:1px solid var(--rule)}
+.phone .cmp{grid-template-columns:1fr}
+.cmp>div{padding:16px 0 20px;border-bottom:1px solid var(--rule)}
+.cmp .q{font-size:18px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:20px}
+.cols ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55}
+.decide{margin-top:12px;padding:0;list-style:none;max-width:680px}
+.decide li{padding:14px 0;border-top:1px solid var(--rule);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.decide li b{font-weight:500;color:var(--ink)}
+</style>
+
+<div class="wrap">
+<p class="small">Propuesta para Pedro: «Glosario» de la barra lateral</p>
+<h1>Glosario: índice y término</h1>
+<p class="lede">El glosario tiene 100 términos investigados, con la definición de cada tradición en sus propias palabras y su fuente. Hoy esas definiciones se leen en la ventana de términos que se abre sobre un texto. La entrada «Glosario» de la barra lateral necesita sus dos páginas: el índice y la de un término.</p>
+<p class="lede">Abajo, el índice con los 100 nombres reales y tres arreglos de la página de un término, probados con tres términos reales: «Tradición» (dos tradiciones la definen y las demás no), «Concilio ecuménico» (dos) y «Cisma» (una). Las definiciones son las del informe de investigación, citadas tal como están; las traducciones asistidas por IA siguen marcadas.</p>
+
+<div class="ctl">
+  <div><label>Término (B, C y D)</label><span class="seg" id="seg-term"></span></div>
+  <div><label>Pantalla</label><span class="seg" id="seg-dev"><button type="button" data-v="desk" aria-pressed="true">Escritorio</button><button type="button" data-v="phone" aria-pressed="false">Teléfono</button></span></div>
+</div>
+
+<section class="opt" id="a">
+  <h2>A. Índice alfabético</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> letras, un título por letra, lista de iguales, campo de filtro</li><li><b>Costo:</b> poco</li></ul>
+  <p class="say">Los 100 términos en orden alfabético, con la letra como título y una tira de letras arriba que lleva a cada bloque. Un campo filtra por nombre. En escritorio va en dos columnas. Es la única estructura que el lector espera de un glosario; no necesita explicación.</p>
+  <div class="frame" data-frame id="f-a"></div>
+</section>
+
+<section class="opt" id="b">
+  <h2>B. Término: una definición bajo otra</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> una columna, cada tradición con su cita</li><li><b>Costo:</b> poco; es la lista de citas de «Por qué»</li></ul>
+  <p class="say">Cada tradición con su nombre en gris, su definición en el cuerpo de las citas de 03 y su fuente como enlace. Si una tradición no define el término, una línea lo dice. Se lee de corrido y con el teléfono no cambia nada. La comparación depende de la memoria del lector.</p>
+  <div class="frame" data-frame id="f-b"></div>
+</section>
+
+<section class="opt" id="c">
+  <h2>C. Término: una tradición por vez</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> selector con las tradiciones que definen el término</li><li><b>Costo:</b> medio; es el selector de tradición que ya existe</li></ul>
+  <p class="say">Un selector arriba muestra solo las tradiciones que tienen definición y la página enseña una por vez. Es limpio y no repite. Esconde la comparación, que es justo para lo que se consulta un término con uso divergente.</p>
+  <div class="frame" data-frame id="f-c"></div>
+</section>
+
+<section class="opt" id="d">
+  <h2>D. Término: lado a lado</h2>
+  <ul class="opt-meta"><li><b>Forma:</b> una columna por tradición</li><li><b>Costo:</b> medio; en teléfono pasa a la forma B</li></ul>
+  <p class="say">Las definiciones una al lado de otra, con el mismo tamaño. Es lo mejor para ver en qué difieren, que es el motivo de existir de un glosario que separa a las tradiciones. Con tres columnas las citas largas quedan angostas.</p>
+  <div class="frame" data-frame id="f-d"></div>
+</section>
+
+<section class="opt" id="rec">
+  <h2>Lo que recomiendo</h2>
+  <p class="say">A para el índice y D en escritorio, con B en teléfono. Para un término con una sola definición D y B son iguales. La C esconde justo lo que el término tiene de útil.</p>
+  <p class="say">Hay un punto de neutralidad: las columnas salen en el orden en que cada tradición aparece en el sitio, y las tradiciones sin definición propia se dicen con una frase («Las tradiciones luterana, reformada, bautista y pentecostal no tienen una definición…»); no se deja una celda vacía.</p>
+</section>
+
+<section class="opt" id="descarte">
+  <h2>Qué descarté</h2>
+  <div class="cols">
+    <div><h3>Una definición del sitio</h3><ul><li>El sitio no define: las definiciones son de cada tradición en sus textos, con cita.</li></ul></div>
+    <div><h3>Agrupar términos por doctrina</h3><ul><li>Un término sirve a varias doctrinas; el índice de A se ordena por nombre y el término dice dónde se usa.</li></ul></div>
+    <div><h3>Un término del día o destacado</h3><ul><li>No ayuda a nadie a aprender y suena a marketing.</li></ul></div>
+  </div>
+</section>
+
+<section class="opt" id="decidir">
+  <h2>Qué hay que decidir</h2>
+  <ol class="decide">
+    <li><b>El índice:</b> A, o con otra estructura.</li>
+    <li><b>El término:</b> B, C o D (y si D en escritorio y B en teléfono).</li>
+    <li><b>Si el término dice «dónde se usa» en el sitio</b> (las páginas que lo mencionan) o solo las definiciones.</li>
+  </ol>
+</section>
+</div>
+
+<script>
+const GT = [{"id": "A1", "name": "Magisterio"}, {"id": "A2", "name": "magisterio ordinario y universal"}, {"id": "A3", "name": "ex cathedra"}, {"id": "A4", "name": "irreformable"}, {"id": "A5", "name": "asentimiento religioso"}, {"id": "A6", "name": "hecho dogmático"}, {"id": "A7", "name": "sentido de la fe"}, {"id": "A8", "name": "depósito (de la fe)"}, {"id": "A9", "name": "Tradición / tradiciones"}, {"id": "A10", "name": "analogía de la fe"}, {"id": "A11", "name": "regla de fe"}, {"id": "A12", "name": "concilio ecuménico"}, {"id": "A13", "name": "colegio episcopal"}, {"id": "A14", "name": "jurisdicción"}, {"id": "A15", "name": "potestad ordinaria e inmediata"}, {"id": "A16", "name": "verdaderamente episcopal"}, {"id": "A17", "name": "derecho divino / derecho humano"}, {"id": "A18", "name": "Vicario de Cristo"}, {"id": "A19", "name": "sede vacante"}, {"id": "A20", "name": "primado de honor"}, {"id": "A21", "name": "primero entre iguales"}, {"id": "A22", "name": "patriarcado"}, {"id": "A23", "name": "Iglesia militante"}, {"id": "A24", "name": "cisma"}, {"id": "A25", "name": "anatema / sea excomulgado"}, {"id": "A26", "name": "hermanos separados"}, {"id": "A27", "name": "profesión de fe"}, {"id": "A28", "name": "acuerdo ecuménico"}, {"id": "B1", "name": "apócrifos / deuterocanónicos"}, {"id": "B2", "name": "hagiógrafos"}, {"id": "B3", "name": "géneros literarios"}, {"id": "B4", "name": "Vulgata"}, {"id": "B5", "name": "auténtica (jurídica)"}, {"id": "B6", "name": "Setenta"}, {"id": "B7", "name": "lectio divina"}, {"id": "B8", "name": "varones apostólicos"}, {"id": "B9", "name": "regla y norma"}, {"id": "B10", "name": "piedra de toque"}, {"id": "B11", "name": "testigos (de la verdad)"}, {"id": "B12", "name": "buena y necesaria consecuencia"}, {"id": "B13", "name": "medios ordinarios"}, {"id": "B14", "name": "ministerialmente"}, {"id": "B15", "name": "competencia del alma"}, {"id": "B16", "name": "sacerdocio de los creyentes"}, {"id": "C1", "name": "justificación"}, {"id": "C2", "name": "gracia santificante / gracia habitual"}, {"id": "C3", "name": "gracias actuales"}, {"id": "C4", "name": "causa formal"}, {"id": "C5", "name": "causa meritoria"}, {"id": "C6", "name": "causa instrumental"}, {"id": "C7", "name": "formalmente justos"}, {"id": "C8", "name": "imputar"}, {"id": "C9", "name": "infundir"}, {"id": "C10", "name": "reato"}, {"id": "C11", "name": "concupiscencia"}, {"id": "C12", "name": "fomes"}, {"id": "C13", "name": "pecado mortal"}, {"id": "C14", "name": "pecado venial"}, {"id": "C15", "name": "mérito"}, {"id": "C16", "name": "de condigno"}, {"id": "C17", "name": "fe formada"}, {"id": "C18", "name": "contrición perfecta"}, {"id": "C19", "name": "satisfacer / expiar"}, {"id": "C20", "name": "penas temporales / penas debidas por el pecado"}, {"id": "C21", "name": "perseverancia final"}, {"id": "C22", "name": "sacramento de la Penitencia"}, {"id": "C23", "name": "simul iustus et peccator"}, {"id": "C24", "name": "obras de supererogación"}, {"id": "D1", "name": "carácter"}, {"id": "D2", "name": "ex opere operato"}, {"id": "D3", "name": "catecumenado"}, {"id": "D4", "name": "catecúmeno"}, {"id": "D5", "name": "crisma / santo crisma"}, {"id": "D6", "name": "crismación"}, {"id": "D7", "name": "bajo condición"}, {"id": "D8", "name": "materia y forma"}, {"id": "D9", "name": "sacerdocio común"}, {"id": "D10", "name": "iniciación cristiana"}, {"id": "D11", "name": "infusión"}, {"id": "D12", "name": "lícitamente / válidamente"}, {"id": "D13", "name": "exorcismo"}, {"id": "D14", "name": "bautismo de sangre"}, {"id": "D15", "name": "bautismo de deseo"}, {"id": "D16", "name": "ministros ordinarios"}, {"id": "D17", "name": "Vigilia Pascual"}, {"id": "D18", "name": "rito romano / rito latino"}, {"id": "D19", "name": "epíclesis"}, {"id": "D20", "name": "anáfora"}, {"id": "D21", "name": "especies"}, {"id": "D22", "name": "latría"}, {"id": "D23", "name": "in persona Christi capitis"}, {"id": "D24", "name": "por vivos y difuntos"}, {"id": "D25", "name": "fiestas de precepto"}, {"id": "D26", "name": "tiempo pascual"}, {"id": "D27", "name": "Oros"}, {"id": "D28", "name": "credobautista"}, {"id": "E1", "name": "decretales pseudoisidorianas"}, {"id": "E2", "name": "monotelita"}, {"id": "E3", "name": "arriana"}, {"id": "E4", "name": "las dos espadas"}];
+const TERMS = {
+  tradicion:{name:"Tradición", uses:"Se usa en Sola Scriptura. Los textos que lo definen lo hacen distinto.", defs:[
+    {t:"Católica", es:"«Esta transmisión viva, llevada a cabo en el Espíritu Santo, es llamada la Tradición en cuanto distinta de la sagrada Escritura, aunque estrechamente ligada a ella.»", src:"Catecismo de la Iglesia Católica, 78", ai:false},
+    {t:"Ortodoxa", es:"«Con el nombre de santa tradición se entiende la doctrina de la fe, la ley de Dios, los sacramentos y el rito, tal como los transmiten los verdaderos creyentes y adoradores de Dios, de palabra y con el ejemplo, de uno a otro y de generación en generación.»", src:"Catecismo Mayor de Filareto, 1839, pregunta 17", ai:true}
+  ], none:"Las tradiciones luterana, reformada, bautista y pentecostal no tienen una definición de «tradición» en sus textos."},
+  concilio:{name:"Concilio ecuménico", uses:"Se usa en Sola Scriptura. Dos tradiciones lo definen distinto.", defs:[
+    {t:"Católica", es:"«La potestad del colegio de los Obispos sobre toda la Iglesia se ejerce de modo solemne en el Concilio Ecuménico” (CIC can 337, 1). “No existe Concilio Ecuménico si el sucesor de Pedro no lo ha aprobado o al menos aceptado como tal” (LG 22).»", src:"Catecismo de la Iglesia Católica, 884", ai:false},
+    {t:"Ortodoxa", es:"«…en las cuestiones importantes que necesitaban la sanción de la Iglesia universal se apelaba a un Concilio Ecuménico, que solo fue y es el tribunal supremo en la Iglesia universal.»", src:"Encíclica de 1895, XVI", ai:true}
+  ], none:""},
+  cisma:{name:"Cisma", uses:"Se usa en Papado.", defs:[
+    {t:"Católica", es:"«cisma, el rechazo de la sujeción al Sumo Pontífice o de la comunión con los miembros de la Iglesia a él sometidos»", src:"Código de Derecho Canónico, 751 (citado en el Catecismo, 2089)", ai:false}
+  ], none:"No se encontró una definición de otra tradición en sus textos."}
+};
+const state = {term:"tradicion", phone:false, q:"", pick:0};
+const $ = (s,r=document)=>r.querySelector(s);
+const esc = (t)=>String(t==null?"":t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const norm = (s)=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const cur = ()=>TERMS[state.term];
+function head(){return '<div class="crumbs"><span>Glosario</span></div><div class="h1">Glosario</div><p class="flede">Cien términos que los textos de cada tradición usan, con su definición en sus propias palabras.</p>'}
+function A(){
+  const q=norm(state.q);
+  const items=GT.filter(t=>!q||norm(t.name).includes(q)).sort((a,b)=>norm(a.name).localeCompare(norm(b.name),"es"));
+  const groups={}; items.forEach(t=>{const L=norm(t.name)[0].toUpperCase();(groups[L]=groups[L]||[]).push(t)});
+  const all="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("");
+  const letters='<div class="letters">'+all.map(L=>'<span class="'+(groups[L]?"on":"")+'">'+L+'</span>').join("")+'</div>';
+  const field='<div class="field"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg><input type="search" id="q" placeholder="Filtrar por nombre" value="'+esc(state.q)+'" aria-label="Filtrar términos"></div>';
+  const body=Object.keys(groups).sort().map(L=>'<div class="grp"><h2 class="gh">'+L+'</h2><ul class="list">'+groups[L].map(t=>'<li><span class="t">'+esc(t.name)+'</span></li>').join("")+'</ul></div>').join("");
+  return head()+field+letters+'<div class="idx2">'+body+'</div>';
+}
+function termHead(){const c=cur();return '<div class="crumbs"><span>Glosario</span><span>'+esc(c.name)+'</span></div><div class="h1">'+esc(c.name)+'</div><p class="term-uses">'+esc(c.uses)+'</p>'}
+function defBlock(d){
+  return '<div class="def"><p class="who"><b>'+d.t+'</b></p><p class="q">'+esc(d.es)+'</p><span class="src"><a href="#">'+esc(d.src)+'</a></span>'+(d.ai?'<span class="ai">Traducción de Doctrina asistida por IA</span>':"")+'</div>';
+}
+function B(){const c=cur();return termHead()+c.defs.map(defBlock).join("")+(c.none?'<p class="none">'+esc(c.none)+'</p>':"")}
+function C(){
+  const c=cur(); if(state.pick>=c.defs.length) state.pick=0;
+  const sw='<div class="tsw" role="group" aria-label="Tradición">'+c.defs.map((d,i)=>'<button type="button" data-p="'+i+'" aria-pressed="'+(i===state.pick)+'">'+d.t+'</button>').join("")+'</div>';
+  return termHead()+sw+defBlock(c.defs[state.pick]).replace('<p class="who"><b>'+c.defs[state.pick].t+'</b></p>',"")+(c.none?'<p class="none">'+esc(c.none)+'</p>':"");
+}
+function D(){
+  const c=cur();
+  if(state.phone) return B();
+  return termHead()+'<div class="cmp" style="--n:'+c.defs.length+'">'+c.defs.map(d=>'<div><p class="who small" style="margin-bottom:8px"><b style="color:var(--ink);font-weight:500">'+d.t+'</b></p><p class="q">'+esc(d.es)+'</p><span class="src"><a href="#">'+esc(d.src)+'</a></span>'+(d.ai?'<span class="ai">Traducción de Doctrina asistida por IA</span>':"")+'</div>').join("")+'</div>'+(c.none?'<p class="none">'+esc(c.none)+'</p>':"");
+}
+function bindQ(){const q=$("#q");if(q)q.addEventListener("input",()=>{state.q=q.value;const pos=q.selectionStart;$("#f-a").innerHTML=A();const n=$("#q");n.focus();n.setSelectionRange(pos,pos);bindQ()})}
+function render(){
+  document.querySelectorAll("[data-frame]").forEach(f=>f.classList.toggle("phone",state.phone));
+  $("#f-a").innerHTML=A();$("#f-b").innerHTML=B();$("#f-c").innerHTML=C();$("#f-d").innerHTML=D();bindQ();
+  $("#f-c").querySelectorAll("[data-p]").forEach(b=>b.addEventListener("click",()=>{state.pick=+b.dataset.p;$("#f-c").innerHTML=C();render2()}));
+}
+function render2(){$("#f-c").querySelectorAll("[data-p]").forEach(b=>b.addEventListener("click",()=>{state.pick=+b.dataset.p;$("#f-c").innerHTML=C();render2()}))}
+const st=$("#seg-term");
+st.innerHTML=Object.keys(TERMS).map(k=>'<button type="button" data-v="'+k+'" aria-pressed="'+(k===state.term)+'">'+TERMS[k].name+'</button>').join("");
+st.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;st.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state.term=b.dataset.v;state.pick=0;render()});
+$("#seg-dev").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;$("#seg-dev").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));state.phone=b.dataset.v==="phone";render()});
+render();
+</script>
