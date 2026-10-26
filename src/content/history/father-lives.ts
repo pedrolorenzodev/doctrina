@@ -22,12 +22,10 @@ export const fatherLives: Record<string, FatherLife> = {
   },
   "ignatius-of-antioch": {
     death: {
-      kind: "estimated",
-      year: 108,
-      text: {
-        es: "107 o 108 (se discute)",
-        en: "107 or 108 (disputed)",
-      },
+      kind: "either",
+      year: 107,
+      yearEnd: 108,
+      text: { es: "107 o 108 según Eusebio (se discute)", en: "107 or 108 per Eusebius (disputed)" },
       short: { es: "107 o 108", en: "107 or 108" },
     },
   },
@@ -35,7 +33,7 @@ export const fatherLives: Record<string, FatherLife> = {
     active: {
       start: 100,
       end: 150,
-      text: { es: "c. 100–150", en: "c. 100–150" },
+      text: { es: "c. 100–150 (la fecha de su obra)", en: "c. 100–150 (the date of his work)" },
       short: { es: "c. 100–150", en: "c. 100–150" },
     },
   },
@@ -105,7 +103,7 @@ export const fatherLives: Record<string, FatherLife> = {
     death: {
       kind: "estimated",
       year: 180,
-      text: { es: "c. 180; ya había muerto hacia c. 190", en: "c. 180; dead by c. 190" },
+      text: { es: "c. 180; murió antes de c. 190", en: "c. 180; dead by c. 190" },
       short: { es: "c. 180", en: "c. 180" },
     },
   },
@@ -144,7 +142,7 @@ export const fatherLives: Record<string, FatherLife> = {
       kind: "estimated",
       year: 215,
       text: { es: "antes de c. 215/216; vivía después de 202", en: "by c. 215/216; alive after 202" },
-      short: { es: "c. 215", en: "c. 215" },
+      short: { es: "antes de c. 215/216", en: "by c. 215/216" },
     },
   },
   tertullian: {
@@ -299,7 +297,12 @@ export const fatherLives: Record<string, FatherLife> = {
       text: { es: "c. 315", en: "c. 315" },
       short: { es: "c. 315", en: "c. 315" },
     },
-    death: { kind: "attested", year: 386, text: { es: "386", en: "386" }, short: { es: "386", en: "386" } },
+    death: {
+      kind: "estimated",
+      year: 386,
+      text: { es: "c. 386", en: "c. 386" },
+      short: { es: "c. 386", en: "c. 386" },
+    },
   },
   "gregory-of-nyssa": {
     birth: {
@@ -354,10 +357,10 @@ export const fatherLives: Record<string, FatherLife> = {
   "john-chrysostom": {
     birth: {
       kind: "between",
-      year: 347,
+      year: 344,
       yearEnd: 354,
-      text: { es: "entre 347 y 354 (se discute)", en: "between 347 and 354 (disputed)" },
-      short: { es: "347–354", en: "347–354" },
+      text: { es: "entre 344 y 354 (se discute)", en: "between 344 and 354 (disputed)" },
+      short: { es: "344–354", en: "344–354" },
     },
     death: {
       kind: "attested",
@@ -422,10 +425,7 @@ export const fatherLives: Record<string, FatherLife> = {
     death: {
       kind: "estimated",
       year: 435,
-      text: {
-        es: "c. 435",
-        en: "c. 435",
-      },
+      text: { es: "c. 435 (convencional; entre 432 y 450)", en: "c. 435 (conventional; between 432 and 450)" },
       short: { es: "c. 435", en: "c. 435" },
     },
   },
@@ -602,8 +602,8 @@ export const fatherLives: Record<string, FatherLife> = {
       kind: "estimated",
       year: 740,
       text: {
-        es: "740, según las reconstrucciones modernas",
-        en: "740, by modern reconstructions",
+        es: "c. 740 (reconstrucción preferida; otras tradiciones, 712 o 726)",
+        en: "c. 740 (preferred reconstruction; other traditions, 712 or 726)",
       },
       short: { es: "c. 740", en: "c. 740" },
     },
@@ -628,13 +628,13 @@ export const fatherLives: Record<string, FatherLife> = {
     birth: {
       kind: "estimated",
       year: 655,
-      text: { es: "c. 655", en: "c. 655" },
+      text: { es: "c. 655 (estimación moderna)", en: "c. 655 (modern estimate)" },
       short: { es: "c. 655", en: "c. 655" },
     },
     death: {
       kind: "estimated",
       year: 745,
-      text: { es: "c. 745", en: "c. 745" },
+      text: { es: "c. 745 (estimación moderna)", en: "c. 745 (modern estimate)" },
       short: { es: "c. 745", en: "c. 745" },
     },
   },

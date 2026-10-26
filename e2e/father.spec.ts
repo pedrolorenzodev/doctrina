@@ -21,7 +21,7 @@ test("Ignatius: title, tab, crumbs and the four facts of the header", async ({ p
   await expect(page.locator(`${crumbs} [aria-current=page]`)).toHaveText("Ignacio de Antioquía");
   expect(await headerFactsOf(page)).toEqual([
     ["Nació", "desconocido"],
-    ["Murió", "107 o 108 (se discute)"],
+    ["Murió", "107 o 108 según Eusebio (se discute)"],
     ["Obispo de", "Antioquía"],
     ["Escribió en", "griego"],
   ]);
@@ -97,7 +97,7 @@ test("«Quién fue»: the summary and a facts table that sits beside it from 900
     ["Región", "Siria"],
     ["Lengua", "Griego"],
     ["Función", "Obispo de Antioquía"],
-    ["Murió", "107 o 108 (se discute)"],
+    ["Murió", "107 o 108 según Eusebio (se discute)"],
   ]);
   const wide = await page.evaluate(() => {
     const text = document.querySelector("#who p")!.getBoundingClientRect();

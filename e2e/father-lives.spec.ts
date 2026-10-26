@@ -26,7 +26,7 @@ test("a birth and a death given as ranges are written as ranges, never as one ye
   ]);
   await page.goto(father("john-chrysostom"));
   expect((await headerFactsOf(page)).slice(0, 2)).toEqual([
-    ["Nació", "entre 347 y 354 (se discute)"],
+    ["Nació", "entre 344 y 354 (se discute)"],
     ["Murió", "14 sep 407"],
   ]);
 });
