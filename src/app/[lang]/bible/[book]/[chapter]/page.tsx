@@ -87,7 +87,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
       : null;
   };
   return (
-    <PageMain>
+    <PageMain wideGutter>
       <ReaderSizeScript />
       <ReaderFormatScript />
       <ReaderStrip
