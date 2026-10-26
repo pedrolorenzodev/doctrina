@@ -95,6 +95,14 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
     },
   ],
   [
+    "a Father's work with its passage panel open",
+    "/es/historia/obras/ignatius-romans",
+    async (page) => {
+      await page.locator('[data-division-open="d-1.1"]').click();
+      await page.waitForTimeout(500);
+    },
+  ],
+  [
     "a Bible chapter with the translation list open",
     "/es/biblia/juan/6",
     async (page) => {

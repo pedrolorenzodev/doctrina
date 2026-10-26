@@ -22,11 +22,11 @@ test("the division locator sits in the left margin from 768 px and above the tex
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(didache);
   const first = page.locator("[data-father-text] > div").first();
-  const locator = (await first.locator("span").first().boundingBox())!;
+  const locator = (await first.locator("button").first().boundingBox())!;
   const text = (await first.locator("p").last().boundingBox())!;
   expect(locator.x + locator.width).toBeLessThan(text.x);
   await page.setViewportSize({ width: 390, height: 844 });
-  const stacked = (await first.locator("span").first().boundingBox())!;
+  const stacked = (await first.locator("button").first().boundingBox())!;
   const below = (await first.locator("p").last().boundingBox())!;
   expect(stacked.y + stacked.height).toBeLessThanOrEqual(below.y + 1);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
@@ -84,4 +84,31 @@ test("arriving on a division by its anchor marks it for about two seconds", asyn
   await expect(division).not.toHaveAttribute("data-marked", "", { timeout: 4000 });
   const top = (await division.boundingBox())!.y;
   expect(top).toBeGreaterThan(50);
+});
+
+test("a division's locator opens the panel with the citation and the link; Esc closes it", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/obras/ignatius-romans");
+  const panel = page.locator('aside[data-side-panel][aria-label="Detalle del pasaje"]');
+  await expect(panel).toHaveAttribute("data-open", "false");
+  await page.locator('[data-division-open="d-1.1"]').click();
+  await expect(panel).toHaveAttribute("data-open", "true");
+  await expect(panel).toContainText("A los Romanos 1.1");
+  await expect(page.locator("#d-1\\.1")).toHaveAttribute("data-selected", "");
+  await panel.getByRole("button", { name: "Citar" }).click();
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
+    "The Epistle of Ignatius to the Romans 1.1 (Joseph Barber Lightfoot, 1889)",
+  );
+  await panel.getByRole("button", { name: "Copiar enlace" }).click();
+  await expect(panel.getByRole("status").filter({ hasText: "Enlace copiado" })).toHaveCount(1);
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toMatch(
+    /\/es\/historia\/obras\/ignatius-romans#d-1\.1$/,
+  );
+  await page.keyboard.press("Escape");
+  await expect(panel).toHaveAttribute("data-open", "false");
+  await expect(page.locator("#d-1\\.1")).not.toHaveAttribute("data-selected", "");
 });
