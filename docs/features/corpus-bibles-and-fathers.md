@@ -1,0 +1,53 @@
+# Corpus: complete Bibles and apostolic Fathers in English, then the reader
+
+Status: **plan agreed with Pedro on 2026-10-25 (night); nothing built yet.** First thing in the next session: read this file, `ROADMAP.md` «Current state», DECISIONS «2026-10-25 · The corpus night», then load the `supabase` and `supabase-postgres-best-practices` skills (installed globally on 2026-10-25) before touching anything that lives in Supabase or Postgres.
+
+## Why
+
+Pedro's priority since 2026-10-22/23 (DECISIONS «Research order: content first»): complete Bibles, then complete patristic texts, readable on the site. The designed screens that still wait are 05 (source reader), 06 (verse) and 07 (word study), and all of them need this data. Everything else unbuilt is a screen without an approved design (eight proposals wait for Pedro's pick, ROADMAP «Current state»); those come after.
+
+## Pedro's order (2026-10-25)
+
+1. **Set up everything that is not UI**: the database, the loaders, and the data of the Bibles and the apostolic Fathers in English, ready to use.
+2. **Then screen 05** (the reader) with all its UI and animations, fed by the local normalized files first (not placeholders: long chapters such as Psalm 119 and Sirach 51 and long Father sections show the real problems), without touching the database. Pedro approves it.
+3. **Then load the data into Supabase** and check the reader on it.
+4. **Then the index of books and the page of a book** (proposal https://claude.ai/artifact/YLZzuDc8UXKuaCKzwBE8eD, waiting for Pedro's pick) and the other index pages.
+
+Out of scope for now: Spanish translations of the Fathers (nothing public domain exists for almost all of them; the Spanish will be Doctrina AI-assisted translation and needs review: DECISIONS 2026-10-09, three levels); the Catholic Spanish Bibles (Pedro must decide whether a public-domain work that carries a statutory levy in Argentina, Uruguay or Bolivia counts as free: `docs/research/sources/catholic-spanish-bibles.md`); word-by-word data (STEPBible); accounts, notes, AI.
+
+## The Supabase project
+
+- Project **doctrina**, created by Pedro on 2026-10-25. URL `https://odmmwppyaimarxkzpyuw.supabase.co`, ref `odmmwppyaimarxkzpyuw`, linked to the repo. Region: Pedro was told to pick São Paulo (closest to Argentina); confirm in the dashboard.
+- `.env.example` already names the variables: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY`. Real values go in `.env.local` (gitignored by `.env*`). The secret key is for the import script only, never in a client bundle or in the repo. Never ask Pedro to paste the database password or keys into the chat.
+- **Access blocker found on 2026-10-25:** the claude.ai Supabase connector is authorized only for the organization «Gardenly Org» (project `gardenly`, not ours); `get_project_url` on the doctrina ref returns «You do not have permission». To fix, Pedro either re-authorizes the connector for the organization that owns doctrina (claude.ai, Settings, Connectors, Supabase) or creates a **scoped** personal access token limited to this project (the skill warns against classic tokens) and installs the CLI. Phase 0 starts here. Until then no SQL can run.
+- Skills installed globally with `npx skills add supabase/agent-skills -g -a claude-code -s '*' -y --copy`: `supabase` and `supabase-postgres-best-practices` (markdown only, no scripts; v0.1.2). Their rules to apply from the first line: verify against `https://supabase.com/changelog.md` and the current docs before implementing; enable RLS on every table of an exposed schema; check the project's Data API settings (new tables may not be exposed until granted); never expose the secret key; pin package versions and commit the lockfile; run `get_advisors` (security and performance) after every DDL change; verify every fix with a test query; do not loop on a failing approach.
+
+## Phases and acceptance
+
+**Phase 0, access and hygiene.** The agent can read the project (`list_tables`, `get_advisors`); extensions known (`pg_trgm`, `unaccent` for search later); Data API settings checked; the free plan's limits and the pause-after-inactivity rule verified in the current docs and written in DECISIONS (a paused project is not acceptable for launch; the price of the paid plan is Pedro's call).
+
+**Phase 1, Bibles (no UI).**
+- Sources (licences in `docs/research/sources/bibles-es-en.md`, all verified there): Reina-Valera 1909 (Spanish, 66 books), Berean Standard Bible, King James Version, World English Bible (the name «WEB» has a trademark rule: needs the attribution page), Douay-Rheims (English, carries the seven deuterocanonical books; 73-book Catholic canon). Local processed files: `data/corpus/bibles/{rv1909,bsb,kjv,web-c,dra}.json` (gitignored; key `Book.chapter.verse` OSIS-like; built by `data/scripts/build_bibles.py` from `data/raw/src/`: the scripts still target v2 paths, adapt them before running).
+- Numbering: RV1909 uses the Hebrew chapters (KJV-style verses); the Douay-Rheims uses Vulgate numbering for several psalms. The loader stores a `versification` per translation and does not remap silently (`docs/research/versification-check.md`, `docs/features/implementation-start.md` D7).
+- Schema sketch (migrations in `supabase/migrations/`, declarative and reviewed with the Postgres skill): `translations` (id, language, name, year, licence, versification, source, retrieved_at, sha256), `books` (osis id, order, testament, name es/en), `verses` (translation_id, book, chapter, verse, text; primary key on those four columns). RLS on; a single `select` policy for `anon` and `authenticated` on the corpus tables; no write policy (the import uses the secret key). A `corpus_manifest` row per loaded source.
+- Acceptance: a loader that is idempotent (upsert by key, checks the manifest hash) and has a dry-run that writes JSON/CSV only; counts match the local files (measured 2026-10-25: RV1909 31,084 verses, BSB 31,086, KJV 31,102, WEB 35,379 and Douay-Rheims 35,811 with the deuterocanonical books; each against its manifest); advisors clean; one test query per translation through the Data API with the publishable key; a typed reader in `src/content/` (`getChapter`, `getVerse`, neighbours) that works from the local files in dev and from Supabase in production, one interface.
+
+**Phase 2, apostolic Fathers in English (no UI).**
+- «n» (Pedro, 2026-10-25): tier A = Clement of Rome (*1 Clement*), the Didache, Ignatius (seven letters, middle recension), Polycarp (*Philippians*) and the *Martyrdom of Polycarp*, Papias (fragments and testimonia), the *Epistle of Barnabas*, the *Shepherd of Hermas*, the *Epistle to Diognetus*, *2 Clement*, Aristides (*Apology*), Justin (First and Second *Apology*, *Dialogue with Trypho*). Tier B if time allows: Irenaeus, Tertullian, Hippolytus (the three that page 10 of the Eucharist cites).
+- The map of editions, translators, scans and licences per work is `docs/research/sources/fathers-full-texts.md` (Codex, 25 of 77 entries done, to Cyprian). Use it; never invent an edition. English public-domain candidates it names (ANF, Lightfoot and others) must be confirmed per work in that file.
+- **Division of labour:** Codex downloads and normalizes (the prompt is `~/.doctrina-youtube/prompt-codex-corpus-fathers-en.md`, written 2026-10-25; the `night6` runner was restarted the same night with it as the first order (`~/.doctrina-youtube/msg-night6-resume-2026-10-26.txt`) and starts when Codex's window renews, ~23:50 ART; log `~/codex-night6-run.log`, report `docs/research/sources/fathers-corpus-en.md`), the session reviews and ingests. If Codex has not produced files by the time Phase 2 is reached, check the log first. Output format, so that both sides agree: `data/corpus/fathers/<work-id>/<edition-id>.json` (gitignored), `{ work, edition: { id, lang, translator, year, source, scan, licence, retrievedAt, sha256 }, divisions: [ { locator, ordinal, heading?, text } ] }`, where `locator` follows the registry's scheme for that work (`src/content/registry/works.ts`, `scheme`; e.g. Ignatius, *Smyrnaeans* `7.1`) so that the citations already on the site (Smyrnaeans 7.1, Dialogue 41, *1 Apology* 66…) resolve to a division. A scan or OCR route is recorded only when the text is not in a reliable e-text.
+- Schema sketch: `works` (id, name es/en, author id, kind), `editions` (id, work_id, language, translator, year, licence, source, scan, sha256), `divisions` (edition_id, locator, ordinal, heading, text; unique on edition and locator), the dated original archives later in Storage. Same RLS rule as Phase 1.
+- Acceptance: for every tier A work, every division of the printed edition is present and numbered as printed; a check script compares the division count with the manifest; the registry's existing locators resolve; nothing for a work whose edition or licence is not verified.
+
+**Phase 3, screen 05.** Built per DECISIONS 2026-10-21/22 (reader structure «Pestañas», highlighting by sentence and by dragged words, notes «Notas al costado», filters «Campo y menú»; `docs/research/reader-side-panel.md`, `reader-highlighting-and-features.md`, `reader-notes.md`, prototype `docs/research/proposals/reader-05-06/`). `SidePanel` already exists (`src/components/side-panel.tsx`) and `escape-stack` handles Esc. Block by block, each verified; the pixel-perfect Sonnet verifier of `.claude/rules/ui.md` applies; the previous/next chapter control is the proposal https://claude.ai/artifact/Hbuesa2nCXka9rWk8iFU4J (pick pending).
+
+**Phase 4, load into Supabase**, only after Pedro approves Phase 3. **Phase 5, the index and book pages** (proposals in ROADMAP «Next»).
+
+## Open for Pedro (decide in the session, in this order)
+1. Re-authorize the Supabase connector or create the scoped token (Phase 0).
+2. Which plan to run on: the free plan pauses after inactivity.
+3. Static generation at build from the database (Vercel needs the keys in its environment) versus runtime reads with caching: recommend build-time generation with revalidation, but measure it with a real Bible.
+4. Whether the Bibles' search index (⌘K) includes verses (size and relevance).
+
+## How it is verified
+`npm run verify`; the loader's dry-run and counts; advisors; the Data API test queries; Playwright specs per block (`e2e/`), short protocol of `docs/playbooks/agent-ops.md`; independent Sonnet comparison of any data an agent transcribes (see «Rules learned on 2026-10-25»).
