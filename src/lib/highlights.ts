@@ -70,6 +70,17 @@ export function segmentsOf(list: Highlight[], key: VerseKey, length: number): Se
   return segments;
 }
 
+export function isCovered(list: Highlight[], key: VerseKey, from: number, to: number): boolean {
+  let at = from;
+  for (const highlight of highlightsOf(list, key)) {
+    if (highlight.to <= at) continue;
+    if (highlight.from > at) return false;
+    at = highlight.to;
+    if (at >= to) return true;
+  }
+  return at >= to;
+}
+
 export function currentColor(list: Highlight[], key: VerseKey): HighlightColor | null {
   return highlightsOf(list, key)[0]?.color ?? null;
 }

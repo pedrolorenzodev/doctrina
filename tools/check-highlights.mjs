@@ -1,6 +1,8 @@
+import { snapToWords } from "../src/lib/word-snap.ts";
 import {
   addHighlight,
   currentColor,
+  isCovered,
   isHighlight,
   removeRange,
   removeVerse,
@@ -93,6 +95,34 @@ for (const [name, bad] of [
   ["null", null],
 ])
   check(`the validator rejects ${name}`, !isHighlight(bad));
+
+const covered = addHighlight(addHighlight([], mark(10, 40, "pink")), mark(40, 60, "green"));
+check("a range inside two touching highlights is covered", isCovered(covered, key, 20, 50));
+check("a range that reaches past a highlight is not", !isCovered(covered, key, 20, 70));
+check("a range that starts before a highlight is not", !isCovered(covered, key, 5, 30));
+check("a gap breaks the cover", !isCovered(addHighlight(covered, { ...mark(0, 5, "sky") }), key, 0, 50));
+check("an empty list covers nothing", !isCovered([], key, 0, 10));
+
+const sample = "Porque mi carne es verdadera comida, y mi sangre es verdadera bebida.";
+const snap = (from, to) => JSON.stringify(snapToWords(sample, from, to));
+check("a selection inside words grows to whole words", snap(3, 9) === "[0,9]", snap(3, 9));
+check("a selection that is already whole words stays", snap(10, 15) === "[10,15]", snap(10, 15));
+check("leading and trailing spaces are trimmed", snap(6, 16) === "[7,15]", snap(6, 16));
+const comida = sample.indexOf("comida");
+check(
+  "a selection ending inside a word stops before the comma",
+  snap(7, comida + 3) === `[7,${comida + 6}]`,
+  snap(7, comida + 3),
+);
+check("only spaces select nothing", snap(6, 7) === "null", snap(6, 7));
+const bebida = sample.indexOf("bebida");
+check(
+  "the end of the text is respected",
+  snap(bebida + 2, 999) === `[${bebida},${sample.length}]`,
+  snap(bebida + 2, 999),
+);
+check("an apostrophe keeps a word together", JSON.stringify(snapToWords("they\u2019re here", 2, 3)) === "[0,7]");
+check("accents count as letters", JSON.stringify(snapToWords("Jesús dijo", 3, 4)) === "[0,5]");
 
 if (failures.length > 0) {
   for (const failure of failures) console.error(`FAIL ${failure}`);
