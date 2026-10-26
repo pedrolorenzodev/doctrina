@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { UndoBar } from "@/components/undo-bar";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { ChapterText } from "@/features/reader/chapter-text";
+import { ReadMarker } from "@/features/reader/read-marker";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
 import { NoteCards, type NoteCard } from "@/features/reader/note-cards";
@@ -302,6 +303,7 @@ export function ReaderBody({
         onMark={(number, element) => open(number, false, element)}
         onSelect={select}
       />
+      <ReadMarker book={bookId} chapter={panel.chapter} />
       <ChapterFoot title={footTitle} edition={selected.name} licence={licences[selected.id] ?? null} />
       <VersePanel
         open={verse !== null}
