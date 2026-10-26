@@ -121,6 +121,7 @@ Scale (desktop → ≤720 px). `font-variation-settings: "opsz" n` as listed; da
 | `--text-reader-title` · `--text-reader-title-mobile` | 44px / 1.08 · 34px | reader title (`PageHeader size="reader"`) |
 | `--text-division` · `--text-reader-foot-title` | 12px · 22px | division number in the margin · «Edición y licencia» heading |
 | `--spacing-reader-strip` · `--spacing-reader-arrival` | 51px (43px below 640) · 33px | height of the reader strip · air under it where an arriving verse lands (strip + 33 = 140px from the top at ≥ 640) |
+| `--shadow-swatch` · `--shadow-swatch-current` · `--container-undo` | inset 1px ring · the 2px panel gap and 1.5px ink ring · 100vw − 2rem | colour dot (12 px) and its current ring · the undo bar's maximum width (utilities `undo-position`, `undo-motion`: 24 px from the bottom or 10 px under the top bar below 640, opacity and 6 px in 150 ms) |
 | `--text-panel-reference` · `--text-picker-option` · `--text-reader-note` · `--text-reader-foot` | 19px/1.25 · 14.5px/1.35 · 14px/1.55 · 14px/1.6 | reader panel title · picker rows · notes under the title · foot lines |
 | main padding | ≥1100: 34 112 140 64 · ≤1099: 30 104 120 48 · ≤899: 26 32 110 · ≤720: 22 16 96 | right padding leaves room for the edge ruler |
 
