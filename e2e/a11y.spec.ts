@@ -50,6 +50,50 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
       await expect(page.locator("[role=dialog]")).toBeVisible();
     },
   ],
+  [
+    "the 02 doctrine page",
+    "/es/doctrinas/eucaristia",
+    async (page) => {
+      await page.waitForTimeout(1200);
+    },
+  ],
+  [
+    "the 03 tradition page",
+    "/es/doctrinas/eucaristia/catolica",
+    async (page) => {
+      await page.waitForTimeout(1200);
+    },
+  ],
+  [
+    "the Objeciones page",
+    "/es/doctrinas/eucaristia/catolica/objeciones",
+    async (page) => {
+      await page.waitForTimeout(1200);
+    },
+  ],
+  [
+    "an objection page",
+    "/es/doctrinas/eucaristia/catolica/objeciones/ob-1",
+    async (page) => {
+      await page.waitForTimeout(1200);
+    },
+  ],
+  [
+    "the early Christians page",
+    "/es/doctrinas/eucaristia/primeros-cristianos",
+    async (page) => {
+      await page.waitForTimeout(1200);
+    },
+  ],
+  [
+    "the search with a query",
+    "/es/doctrinas/eucaristia/catolica",
+    async (page) => {
+      await page.locator("header button[aria-haspopup=dialog]").click();
+      await page.locator("[data-search-dialog] [role=combobox]").fill("carne");
+      await page.waitForTimeout(700);
+    },
+  ],
 ];
 
 for (const theme of ["light", "dark"] as const) {
