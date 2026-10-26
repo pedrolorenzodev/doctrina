@@ -1,5 +1,5 @@
 export const easeReveal = "cubic-bezier(0.22, 1, 0.36, 1)";
-const easeMove = "cubic-bezier(0.4, 0, 0.2, 1)";
+export const easeMove = "cubic-bezier(0.4, 0, 0.2, 1)";
 const animationId = "tree";
 
 const enter = { fadeMs: 200, stepMs: 20, heightMs: 220, maxSteps: 8 };
