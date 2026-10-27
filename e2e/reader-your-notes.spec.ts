@@ -335,3 +335,59 @@ test("a note on the whole source is written in the panel, saved as the chapter's
     page.locator(yourPanel).getByRole("button", { name: "Escribir una nota sobre toda la fuente" }),
   ).toHaveCount(0);
 });
+
+const smooth = (frames: { t: number; top: number }[], from: number, to: number) => {
+  const distance = Math.abs(to - from);
+  const steps = frames.slice(1).map((frame, index) => Math.abs(frame.top - frames[index]!.top));
+  expect(Math.abs(frames[0]!.top - from)).toBeLessThan(1);
+  expect(Math.abs(frames[frames.length - 1]!.top - to)).toBeLessThan(1);
+  expect(Math.max(...steps)).toBeLessThan(distance * 0.5);
+  const moving = frames.filter((frame) => Math.abs(frame.top - from) > 0.5 && Math.abs(frame.top - to) > 0.5);
+  expect(moving.length).toBeGreaterThan(5);
+};
+
+test("a query with no match and clearing it move the blocks below smoothly, never in one jump", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await expect(page.locator(yourPanel)).toHaveAttribute("data-open", "true");
+  await page.waitForTimeout(600);
+  const footer = `${yourPanel} [data-flip-block="footer"]`;
+  const status = `${yourPanel} [data-flip-block="status"]`;
+  const topOf = (selector: string) => page.locator(selector).evaluate((el) => el.getBoundingClientRect().top);
+  const settled = async () => {
+    await page.waitForTimeout(900);
+  };
+  const footerBefore = await topOf(footer);
+  const [emptied] = await Promise.all([trackElement(page, footer, 900), search(page).fill("zzz")]);
+  await settled();
+  const footerEmpty = await topOf(footer);
+  expect(footerEmpty).toBeLessThan(footerBefore - 40);
+  smooth(emptied, footerBefore, footerEmpty);
+  const [restored] = await Promise.all([
+    trackElement(page, footer, 900),
+    page.locator(yourPanel).getByRole("button", { name: "Quitar filtros" }).click(),
+  ]);
+  await settled();
+  expect(Math.abs((await topOf(footer)) - footerBefore)).toBeLessThan(1);
+  smooth(restored, footerEmpty, footerBefore);
+  expect(await page.locator(status).count()).toBe(1);
+});
+
+test("typing a query that matches nothing keeps the field and filters still", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await page.waitForTimeout(600);
+  const filters = `${yourPanel} [data-flip-block="filters"]`;
+  const field = `${yourPanel} [data-flip-block="field"]`;
+  const before = [
+    await page.locator(field).evaluate((el) => el.getBoundingClientRect().top),
+    await page.locator(filters).evaluate((el) => el.getBoundingClientRect().top),
+  ];
+  const [fieldFrames, filterFrames] = await Promise.all([
+    trackElement(page, field, 900),
+    trackElement(page, filters, 900),
+    search(page).pressSequentially("zzz", { delay: 120 }),
+  ]);
+  expect(fieldFrames.every((frame) => Math.abs(frame.top - before[0]!) < 0.5)).toBe(true);
+  expect(filterFrames.every((frame) => Math.abs(frame.top - before[1]!) < 0.5)).toBe(true);
+});
