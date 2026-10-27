@@ -78,17 +78,28 @@ function clearTravelAttributes(nav: HTMLElement) {
 
 const currentRowSelector = "[data-row].row-current, [data-chapter][data-current]";
 
-function scrollCurrentIntoPlace(nav: HTMLElement) {
+function scrollCurrentIntoPlace(nav: HTMLElement, settlingShift = 0) {
   const row = nav.querySelector<HTMLElement>(currentRowSelector);
-  if (row) nav.scrollTop = Math.max(0, row.offsetTop - nav.clientHeight * 0.35);
+  if (row) nav.scrollTop = Math.max(0, row.offsetTop - settlingShift - nav.clientHeight * 0.35);
 }
 
-function keepCurrentInView(nav: HTMLElement) {
+function keepCurrentInView(nav: HTMLElement, settlingShift = 0) {
   const row = nav.querySelector<HTMLElement>(currentRowSelector);
   if (!row) return;
   const rowRect = row.getBoundingClientRect();
   const navRect = nav.getBoundingClientRect();
-  if (rowRect.top < navRect.top || rowRect.bottom > navRect.bottom) scrollCurrentIntoPlace(nav);
+  if (rowRect.top - settlingShift < navRect.top || rowRect.bottom - settlingShift > navRect.bottom) {
+    scrollCurrentIntoPlace(nav, settlingShift);
+  }
+}
+
+function closingHeightAbove(nav: HTMLElement, leavingId: string | null, currentRow: HTMLElement | null): number {
+  if (!leavingId || !leavingId.startsWith("book/") || !currentRow) return 0;
+  const item = nav.querySelector<HTMLElement>(`li[data-id="${CSS.escape(leavingId)}"]`);
+  const list = item?.querySelector<HTMLElement>(":scope > ul[data-branch]");
+  if (!item || !list || list.hidden || list.dataset.open !== "true") return 0;
+  const precedes = item.compareDocumentPosition(currentRow) & Node.DOCUMENT_POSITION_FOLLOWING;
+  return precedes ? list.offsetHeight : 0;
 }
 
 const rowClassName =
@@ -224,6 +235,11 @@ export function Sidebar({ groups, text }: SidebarProps) {
   const currentChapter = bookRoute ? Number(pathname.split("/").pop()) || null : null;
   const [initiallyOpen] = useState(() => new Set(currentBookId ? [...trail, currentBookId] : trail));
   const [openedBooks, setOpenedBooks] = useState<Set<string>>(() => new Set());
+  const [trackedId, setTrackedId] = useState(currentId);
+  if (trackedId !== currentId) {
+    setTrackedId(currentId);
+    if (trackedId?.startsWith("book/")) setOpenedBooks((previous) => new Set(previous).add(trackedId));
+  }
   const navRef = useRef<HTMLElement>(null);
   const asideRef = useRef<HTMLElement>(null);
   const previousId = useRef(currentId);
@@ -242,26 +258,43 @@ export function Sidebar({ groups, text }: SidebarProps) {
     cancelTravel.current?.();
     cancelTravel.current = null;
     clearTravelAttributes(nav);
-    for (const id of [...ancestorsOf(index, currentId), ...(currentBookId ? [currentBookId] : [])]) {
+    for (const id of ancestorsOf(index, currentId)) {
       const item = nav.querySelector<HTMLElement>(`li[data-id="${CSS.escape(id)}"]`);
       if (item) setItemOpen(item, true, false, text);
     }
-    keepCurrentInView(nav);
+    const leavingBook = from?.startsWith("book/") ? from : null;
+    const currentRow = nav.querySelector<HTMLElement>("[data-row].row-current");
+    const currentBookRow = currentBookId ? visibleRow(nav, currentBookId) : null;
+    const settlingShift = closingHeightAbove(nav, leavingBook, currentRow ?? currentBookRow);
+    if (leavingBook) {
+      const item = nav.querySelector<HTMLElement>(`li[data-id="${CSS.escape(leavingBook)}"]`);
+      if (item) setItemOpen(item, false, true, text);
+    }
+    if (currentBookId) {
+      const item = nav.querySelector<HTMLElement>(`li[data-id="${CSS.escape(currentBookId)}"]`);
+      if (item) setItemOpen(item, true, leavingBook !== null, text);
+    }
+    keepCurrentInView(nav, settlingShift);
     if (!from || !currentId || prefersReducedMotion()) return;
     const fromRow = visibleRow(nav, from);
     const toRow = visibleRow(nav, currentId);
-    const currentRow = nav.querySelector<HTMLElement>("[data-row].row-current");
     if (!fromRow || !toRow || !currentRow || fromRow === toRow) return;
     currentRow.dataset.travelling = "";
-    cancelTravel.current = travelMark(nav, fromRow, toRow, () => {
-      currentRow.dataset.settling = "";
-      delete currentRow.dataset.travelling;
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => {
-          delete currentRow.dataset.settling;
-        }),
-      );
-    });
+    cancelTravel.current = travelMark(
+      nav,
+      fromRow,
+      toRow,
+      () => {
+        currentRow.dataset.settling = "";
+        delete currentRow.dataset.travelling;
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => {
+            delete currentRow.dataset.settling;
+          }),
+        );
+      },
+      settlingShift,
+    );
   }, [currentId, currentBookId, index, text]);
 
   useEffect(() => {

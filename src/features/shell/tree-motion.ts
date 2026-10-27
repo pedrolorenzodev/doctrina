@@ -25,11 +25,18 @@ function boxWithin(nav: HTMLElement, element: HTMLElement): Box {
   };
 }
 
-export function travelMark(nav: HTMLElement, fromRow: HTMLElement, toRow: HTMLElement, onEnd: () => void): () => void {
+export function travelMark(
+  nav: HTMLElement,
+  fromRow: HTMLElement,
+  toRow: HTMLElement,
+  onEnd: () => void,
+  settlingShift = 0,
+): () => void {
   const previous = nav.querySelector<HTMLElement>("[data-mark]");
   const from = previous ? boxWithin(nav, previous) : boxWithin(nav, fromRow);
   previous?.remove();
-  const to = boxWithin(nav, toRow);
+  const landing = boxWithin(nav, toRow);
+  const to = { ...landing, y: landing.y - settlingShift };
   const mark = document.createElement("span");
   mark.dataset.mark = "";
   mark.setAttribute("aria-hidden", "true");
