@@ -267,14 +267,17 @@ test("under reduced motion the list appears and goes at once", async ({ page }) 
 });
 
 test("a short window keeps the list inside it and scrolls within", async ({ page }) => {
-  await page.setViewportSize({ width: 1440, height: 420 });
+  await page.setViewportSize({ width: 1440, height: 340 });
   await page.goto(john);
   await page.locator(button).click();
   await expect(page.locator(list)).toBeVisible();
   await page.waitForTimeout(400);
   const box = (await page.locator(list).boundingBox())!;
-  expect(box.y + box.height).toBeLessThanOrEqual(420);
-  const scrolls = await page.locator(list).evaluate((el) => el.scrollHeight > el.clientHeight);
+  expect(box.y + box.height).toBeLessThanOrEqual(340);
+  const scrolls = await page.locator(list).evaluate((el) => {
+    const scroller = el.querySelector("[data-menu-scroll]")!;
+    return scroller.scrollHeight > scroller.clientHeight;
+  });
   expect(scrolls).toBe(true);
 });
 

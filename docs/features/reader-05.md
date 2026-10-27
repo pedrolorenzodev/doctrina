@@ -112,3 +112,84 @@ Blocks 137–140: R8a, the Fathers' reader first slice (DECISIONS «R8a»): `Str
 Blocks 141–143: R8b, the Fathers' works as children of their rows in the tree (DECISIONS «R8a», paragraph «R8b»). Full suite after R8b: 716 passed, 3 failed: two spec counts that did not expect the new rows (fixed: they now ignore `/obras/` links) and the known `search` opening-motion case under load (passes alone, 74 of 74 with its file).
 Blocks 144–152 (previous/next work, arrival mark, passage panel): full suite 724 passed, 1 failed (`search` rows-enter timing, passes alone; the machine load was 92). Not verified: nothing known; not run: the independent Sonnet verifier.
 
+
+## Handoff, fifth session (written 2026-10-26 ~19:00; weekly Claude 76 %; Pedro's ceiling for the next session: **78 %, inclusive**; at the ceiling finish the block in hand and write the state here and in ROADMAP)
+
+### Read first
+`AGENTS.md` · ROADMAP «Current state» · DECISIONS «2026-10-26 (night) · Pedro's review of the reader…» (his corrections, my understanding, objections) and «2026-10-26 (evening)» · DESIGN «Reader header», «Reader side panel», «Notes», «Highlighting», «Sidebar tree» · GOTCHAS (last entries, esp. «The build must pass with none of the git-ignored local data» and «A cloned li…») · agent-ops «Approved artifact = checklist». Reference code: `docs/research/proposals/bible-navigation/` (index.html, v2.html, v3.html: the header B3 and its menus) and `docs/research/proposals/site-clean/s05.html`, `s06.html` + `docs/research/proposals/reader-05-06/` (`fuente.css`, `fuente.js`: the side panel, «Tus notas», notes, highlights). Artifacts (private; read them with the Artifact tool): https://claude.ai/artifact/1jdy21eMSJrjbh2aHzEmAQ (section «Encabezado fijo que se esconde» and the final version) and https://claude.ai/artifact/2vNESx39NbVWC79eyVDPg2.
+
+### State
+Everything built until the evening is committed and pushed (kit 118–154 and Pedro's fix commits); the last commit (ruler, list «*», Ignatius order, docs) may still be pending: check `git status`. Pedro tests in Chromium «Dia» only (memory `chromium-dia-testing`). `npm run verify` and the CI-like check (move `data/corpus`, `data/raw/src`, `.env.local` aside, run `npm run verify`, restore them) both pass; specs that need the corpus skip themselves without it.
+
+### What to build, in this order (blocks; review after every 2–3: one full suite in the background + screenshots; no Sonnet verifier unless Pedro asks)
+Method for every block with an approved design: first write the **checklist of the artifact** into this file (agent-ops «Approved artifact = checklist»), build all of it, compare screenshots side by side, tick it.
+1. **Back gesture (small, first).** `/es/biblia/juan/6`: repeated vertical scrolling fires the browser's history swipe. Reproduce with real wheel input including a small `deltaX` (Playwright `page.mouse.wheel(dx, dy)`), find whether anything scrolls horizontally, then try `overscroll-behavior-x: none` on `html` (unverified: read MDN first). A spec that wheels with `deltaX` and asserts the computed `overscroll-behavior-x` and no horizontal scroll.
+2. **Header strip, skin and geometry** (`strip-shell.tsx`, `reader-strip.tsx`, `father-strip.tsx`): the same height and position at the top and when scrolled; the bottom border sharp (not under the `texture-layer`); «Aa» at the artifact's distance from the right edge; the group's measures as in the artifact; **the desktop toggle of the left tree** at the left of the header (hides and shows the tree; remembered). The Fathers' reader gets the same shell.
+3. **Header behaviour and dropdowns:** replicate the artifact's dropdown UI and motion for book and chapter, translation, «Aa» and second translation (`hanging-menu.tsx`, `reveal-motion.ts`, `book-picker.tsx`, `translation-picker.tsx`, `text-options.tsx`, `parallel-menu.tsx`); fix the focus rule (only an open menu or `:focus-visible` pins the header; choosing an item with the mouse must not).
+4. **Text centred by default; notes preview by tree state:** the reading column centred as in the artifact; with the tree open a verse with notes shows «1 nota»; with the tree collapsed (block 2's toggle) the previews appear; the right panel open keeps swapping previews for «1 nota». Measure the widths (the cards need 40 + 240 px at the right of the centred column).
+5. **«Tus notas» panel = the approved artifact** (`your-notes-panel.tsx`, `filter-select.tsx`, `segmented-filter.tsx`): labels «Mostrar», «Ordenar», «NOTAS»; the transition between «NOTAS» and «SUBRAYADOS»; **«Escribir una nota sobre toda la fuente»** (a note with `scope: "source"`, `verse: null`, scope = the chapter) and the notes grouped under **«En el texto»**; the «/» element inside the search input; each «SUBRAYADOS» item as designed; «Mostrar» as a labelled picker with a dropdown (Pedro said ours shows only the list of colours); keep the title «Tus notas» of the current build. «Sin ubicar» goes with it.
+6. **Fathers' reader: notes and highlights**, and the selection toolbar, on divisions (key: `book` = work id, `chapter` = 1, `verse` = division ordinal; the locator shown), plus «Tus notas» for a work; `reader-body.tsx` is Bible-shaped: generalise only what the second source needs (`ChapterText` into a list of divisions) and keep the Bible specs green.
+7. **Phone: drag the bottom sheet down to close** (Pedro: if complex, do not build, only note it; it is noted in ROADMAP «Later»). Try it last, with pointer capture on the sheet's grip.
+
+### Open for Pedro (none blocks the blocks above)
+Whether to run the independent Sonnet verifier on the header after block 3 (he asked to reduce reviews); the proposals waiting in ROADMAP «Next».
+
+### Commands
+`source ~/.nvm/nvm.sh && nvm use` · `python3 -I ~/.claude/skills/usage-guard/scripts/usage_check.py` · `npm run build`, then restart `next start -p 3100` (kill the old one first) · specs `npx playwright test <file> --project=chromium --reporter=line` · full suite in the background, awaited with a Monitor (`rm -f /tmp/suite.log` first, so the Monitor does not read an old DONE) · screenshots with the scripts of `~/doctrina-scratch/reader/` (not in the repo) or `npm run shot -- <route> <out.png> [w] [h] [full] [theme]` · freeze each block **once** with `python3 ~/doctrina-commit-kit/snapshot.py block NN-all "wip" /dev/null` and split it with `split_block.py` (never snapshot twice with one name); block numbers continue from 155; Pedro applies with explicit numbers, or you hand him a stage-and-commit command for small fixes.
+
+
+## Sixth session (2026-10-26 night; weekly Claude 76 % at the start, ceiling 78 % inclusive)
+
+### Block 155 · back swipe
+`overscroll-behavior-x: none` on `html` (CSS Overscroll Behavior spec: `contain`/`none` stop «navigation» actions at the viewport's defining element; the spec's own example uses `overscroll-behavior-y: contain` to disable only pull-to-refresh and keep swipe navigation). Not reproducible in automation (the history swipe is browser UI, not a DOM event): the spec checks the computed value and that a wheel with `deltaX` never scrolls the page sideways. Pedro to confirm in Dia.
+
+### Block 156 · header, skin and geometry (checklist of the artifact `bible-navigation/v3.html`, section «Encabezado fijo», ticked against screenshots at 1440 and 390)
+- [x] Strip 51 px high (`--spacing-reader-strip`), grid `1fr auto 1fr`, gap 8 px, padding 0 14 px (phone 0 6 px), always a 1 px `rule` bottom border (no «stuck» state).
+- [x] Same place and height at the top of the page and when it comes back (the strip is flush under the top bar at scroll 0: negative top margin equal to the main's padding-top; `reader-strip.spec`).
+- [x] Border sharp: the texture `::after` anchored to the padding box of a `relative` bar, not to the sticky holder (GOTCHAS).
+- [x] «Aa» 14 px of padding from the right edge of the main area (the strip spans the whole main: margins equal to the main's padding, wide gutter).
+- [x] Left group: tree toggle (icon `rect 2 3 12 10 r2` + `M6 3v10`, 34 px, `aria-pressed` = tree shown, accent-weak when pressed) + the arrows pair; centre: book/chapter + translation pill; right: second translation, «Tus notas», «Aa».
+- [x] Toggle: hides/shows the tree on desktop (`html[data-tree="closed"]`, remembered in `doctrina-tree`, set before paint by `TreeScript`); below 1024 px it opens the drawer; absent on a phone (as in the artifact).
+- [x] Same shell for the Fathers' reader (`FatherStrip` gets the toggle).
+- Exceptions: on touch the strip grows to fit 44 px targets (`min-h`), the artifact has none.
+
+### Block 157 · header dropdowns and the focus rule (checklist; measured against `bible-navigation/v3.html` at 1440 with the same state, crops side by side)
+- [x] The four menus hang from the strip's line (already so); height capped at 480 px (the build used the whole window: 881 px at 1000 tall).
+- [x] The wall texture on every menu: the shell clips and carries the texture, an inner `data-menu-scroll` scrolls (`HangingMenu` has `bodyClassName` for the padding).
+- [x] Book and chapter: 560 × 480, body padding 14/16/16, scrolls to put the current book 80 px from the top, «Libros» header 46 px high, back button 34 px, title 19 px, 7 columns of 38 px rows with 32 px circles, same height as the artifact (210 px for Juan).
+- [x] Translation list: 340 × 296, all names in grey (ink-3), the selected one in weight 500 with the accent bar, as the artifact.
+- [x] «Aa»: 360 × 177 (labels 12.5 px with 2/6 and 14/6 margins, A−/A+ 28 px tall in weight 500, the format control 42 px with weight 500).
+- [x] Second translation: its heading reads «Segunda traducción» (it said «Cómo leerla»), the list is not inset, 340 wide.
+- [x] Strip controls: pill 34 px high (buttons 32 px, 12 px side padding, 13.5 px, radius 7, no divider margin), arrows pair 34 px high with 34 × 32 buttons, radius 7.
+- [x] Focus rule: only an open menu or `:focus-visible` pins the strip (`useHideOnScroll`); a mouse-chosen item no longer does (`reader-strip.spec`).
+- Not done (call for Pedro): on a phone the artifact shows book, «Aa» and second-translation menus as a **bottom sheet with a grip**; the build keeps its hanging menus there (DECISIONS «Reader header B3», agent's call 2). Motion (220/200/20/160/120 ms, `ease-reveal`) was already identical in code.
+
+### Block 158 · text centred; note previews by tree state
+- [x] The whole reading column (crumbs, title, text, foot, neighbours) is centred in the room beside the tree: `mx-auto max-w-col` (wider, `max-w-wide`, while «Al lado» is on), with the reader pages' gutters now symmetric (`wideGutter`: 72/88 px both sides; the strip's side margins follow). Measured: offset 0 px with the tree open and closed at 1440 and at 1920.
+- [x] «1 nota» (the margin mark) when the cards do not fit; cards appear when they fit: the `notes:` variant is now a custom variant: tree open ≥ 97rem (1552 px: 272 + 720 + 2 × 280), tree closed ≥ 80rem (1280 px). The right panel open still hides the cards (unchanged).
+- Measured (window of 1440): tree open → «1 nota»; closing the tree with the toggle → cards 40 px right of the column; opening it → marks again.
+
+### Block 159 · «Tus notas» panel = the approved artifact (checklist; source `reader-05-06/fuente.js` «Tus notas in the bar» and `fuente.css`, mode «Campo y menú»)
+- Panel title «Tus notas»: kept as ours (Pedro's exception).
+- [x] Tabs «Notas n» / «Subrayados n» with the sliding indicator (already built; checked).
+- [x] Search field `ft-f`: icon, 14.5 px input («Buscar en tus notas» / «Buscar en lo subrayado»), the `/` key hint inside the field at the right, min 40 px, `card` background, focus ring 2 px accent; `/` focuses, Esc clears first.
+- [x] Filter row under the field: «Notas»: picker **«Mostrar»** (Todas / Sobre la fuente / En el texto) + picker **«Ordenar»** (Texto / Recientes); «Subrayados»: the five colour dots (toggle, several at once, ring on the chosen) + «Ordenar».
+- [x] Picker button: label (grey, regular) + value (ink, 500) + chevron that turns; 34 px, 13 px, border `rule-2`, `card` background, hover border ink; popover below (+6 px), rows 44 px, selected row accent-weak with the bar; opens with the menus' reveal (`revealMenu`).
+- [x] Status line «n de N notas / subrayados» while a filter is on.
+- [x] «Notas» unfiltered in text order: heading **«Sobre toda la fuente»** + the whole-source note, or the button **«Escribir una nota sobre toda la fuente»** (plus icon); heading **«En el texto»** with the other notes; heading **«Sin ubicar»** for notes whose verse is not in this edition (label struck through, «Este texto ya no está en esta edición.»). Filtered or «Recientes»: one flat list. No notes at all: only the button.
+- [x] Note item: label line 13.5 px grey («Juan 6:53:» in the cite brown, then «anchor» for words), text 16 px body light (3 lines, 4 while filtering), date 12.5 px; rows separated by hairlines.
+- [x] Highlight item: colour chip inline before the quoted text (16.5 px body light, 3 lines), then a line with the reference (cite brown) at the left and the date at the right.
+- [x] Whole-source note: the button opens an editor in the panel (back button «Tus notas», the note editor with autosave and «Borrar»), saved as `scope: "source"`, `verse: null`, scope = the chapter.
+- [x] «Copiar todas con sus citas», the download (ours: «Descargar en Markdown (.md)», kept; the artifact says «Copiar en Markdown»), «Se guardan en este navegador.»
+- Calls: «Subrayados» uses the artifact's colour dots, not a «Mostrar» picker (the artifact has none there; Pedro's note spoke of «Mostrar» in «Subrayados»: to confirm); the filter row is hidden while a tab is empty.
+
+### Block 161 · notes and highlights in the Fathers' reader (block 160 is the lint fix of 159) (checklist: the Bible's reading functions that apply to a work)
+- [x] Dragging over words in a division: selection bar with the five colours, «Nota», «Copiar cita», «Buscar»; S key; right click on a division (the bar's own code, `[data-verse-text]` per division).
+- [x] Highlights drawn with the same marks, remembered in the same store (`book` = `translationId` = work id, `chapter` = 1, `verse` = ordinal).
+- [x] The locator button opens the panel «Detalle del pasaje» (the verse panel, without «Ver el detalle completo»): «Citar», «Copiar enlace» (`#d-…`), colours with the remove icon, «Nota», the note editor and the division's notes.
+- [x] «1 nota» / «N notas» under the locator; «Tus notas» in the strip with the work's count, and the panel (notes with the whole-work note, highlights).
+- [x] Not applicable (left out): translations, second translation, red letters, «Al lado».
+- [ ] Not done: the right-hand note cards (they place themselves by `#v-N`); the previews appear as marks only.
+
+## State at the end of the sixth session (weekly Claude 77 %, ceiling 78 %)
+Blocks 155–161 are frozen in the kit (`~/doctrina-commit-kit/155-…` to `161-…`, no gaps; 158 and 159, and 160 and 161, came from one snapshot each split by `split_block.py`; the deleted `filter-select.tsx` is in 159's `deleted.txt`, the deleted `father-text.tsx` and `father-panel.tsx` in 161's). Not built: block 7 (the phone sheet's drag to close; ROADMAP «Later»). Open for Pedro, in Dia: the back swipe (155), the header and toggle, the menus, the centred text with the tree open and closed, the panel, the Fathers' notes. Calls to confirm: DECISIONS «sixth session».

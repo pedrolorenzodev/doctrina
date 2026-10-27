@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { BookPicker, type PickerBook } from "@/features/reader/book-picker";
 import { ChapterStep, type StepNeighbor } from "@/features/reader/chapter-step";
 import { YourNotesButton } from "@/features/reader/your-notes-button";
@@ -24,6 +25,7 @@ type ReaderStripProps = {
     books: PickerBook[];
     title: string;
   };
+  treeToggle: ReactNode;
   neighbors: { previous: StepNeighbor; next: StepNeighbor; previousLabel: string; nextLabel: string };
 };
 
@@ -35,6 +37,7 @@ export function ReaderStrip({
   defaultId,
   yourNotes,
   bookPicker,
+  treeToggle,
   neighbors,
 }: ReaderStripProps) {
   const value = useChosenTranslation(
@@ -61,16 +64,19 @@ export function ReaderStrip({
   return (
     <StripShell
       left={
-        <div className="inline-flex items-center rounded-8 border border-rule p-0.75">
-          {step("previous")}
-          <span aria-hidden="true" className="mx-0.5 h-4 w-px bg-rule" />
-          {step("next")}
-        </div>
+        <>
+          {treeToggle}
+          <div className="inline-flex h-8.5 items-center rounded-8 border border-rule">
+            {step("previous")}
+            <span aria-hidden="true" className="h-4 w-px bg-rule" />
+            {step("next")}
+          </div>
+        </>
       }
       center={
         <>
           <span className="sm:hidden">{step("previous")}</span>
-          <div className="inline-flex items-center rounded-8 border border-rule-2 bg-card p-0.75">
+          <div className="inline-flex h-8.5 items-center rounded-8 border border-rule-2 bg-card">
             <BookPicker
               text={bookPicker.text}
               books={bookPicker.books}
@@ -78,7 +84,7 @@ export function ReaderStrip({
               currentChapter={yourNotes.chapter}
               title={bookPicker.title}
             />
-            <span aria-hidden="true" className="mx-0.5 h-4 w-px bg-rule-2" />
+            <span aria-hidden="true" className="h-4 w-px bg-rule-2" />
             <TranslationPicker text={pickerText} options={options} value={value} onChange={changeFirst} />
           </div>
           <span className="sm:hidden">{step("next")}</span>

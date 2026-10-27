@@ -16,6 +16,7 @@ import { ReaderFormatScript } from "@/features/reader/reader-format-script";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderStrip } from "@/features/reader/reader-strip";
 import { VerseArrival } from "@/features/reader/verse-arrival";
+import { TreeToggle } from "@/features/shell/tree-toggle";
 import { currentLocale } from "@/lib/current-locale";
 import type { Locale } from "@/lib/locale";
 
@@ -91,6 +92,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
       <ReaderSizeScript />
       <ReaderFormatScript />
       <ReaderStrip
+        treeToggle={<TreeToggle label={labels.treeToggle} />}
         parallelText={{
           label: labels.parallel.label,
           mode: labels.parallel.mode,
@@ -137,42 +139,44 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           nextLabel: labels.next,
         }}
       />
-      {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
-      <Breadcrumbs
-        label={text.shell.breadcrumb}
-        trail={[{ label: text.shell.tree.bible }, { label: sectionLabel }]}
-        current={book.names[locale]}
-      />
-      <PageHeader id="top" className="mt-9" size="reader" title={titleOf(book.names[locale], chapter)} />
-      <ReaderBody
-        views={views}
-        licences={licences}
-        defaultId={defaultId}
-        bookId={book.id}
-        deuteroNotice={book.section === "deuterocanon" ? labels.deuteroNotice : null}
-        numberingNote={labels.numberingNote}
-        footTitle={labels.foot.title}
-        panel={{
-          locale,
-          notes: labels.notes,
-          text: labels.panel,
-          highlight: labels.highlight,
-          bookName: book.names[locale],
-          chapter,
-          verseReference: labels.verseReference,
-          shortCitation: labels.shortCitation,
-          verseRange: labels.verseRange,
-          toolbar: labels.toolbar,
-          yourNotes: labels.yourNotes,
-        }}
-      />
-      <VerseArrival />
-      <NeighborLinks
-        label={labels.neighborsLabel}
-        className="mt-16"
-        previous={neighbor(labels.previous, loaded.previous)}
-        next={neighbor(labels.next, loaded.next)}
-      />
+      <div className="mx-auto max-w-col has-data-[second=side]:max-w-wide">
+        {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
+        <Breadcrumbs
+          label={text.shell.breadcrumb}
+          trail={[{ label: text.shell.tree.bible }, { label: sectionLabel }]}
+          current={book.names[locale]}
+        />
+        <PageHeader id="top" className="mt-9" size="reader" title={titleOf(book.names[locale], chapter)} />
+        <ReaderBody
+          views={views}
+          licences={licences}
+          defaultId={defaultId}
+          bookId={book.id}
+          deuteroNotice={book.section === "deuterocanon" ? labels.deuteroNotice : null}
+          numberingNote={labels.numberingNote}
+          footTitle={labels.foot.title}
+          panel={{
+            locale,
+            notes: labels.notes,
+            text: labels.panel,
+            highlight: labels.highlight,
+            bookName: book.names[locale],
+            chapter,
+            verseReference: labels.verseReference,
+            shortCitation: labels.shortCitation,
+            verseRange: labels.verseRange,
+            toolbar: labels.toolbar,
+            yourNotes: labels.yourNotes,
+          }}
+        />
+        <VerseArrival />
+        <NeighborLinks
+          label={labels.neighborsLabel}
+          className="mt-16"
+          previous={neighbor(labels.previous, loaded.previous)}
+          next={neighbor(labels.next, loaded.next)}
+        />
+      </div>
     </PageMain>
   );
 }

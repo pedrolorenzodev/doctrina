@@ -36,6 +36,8 @@ type VersePanelProps = {
   noteLabel: string;
   onNote: () => void;
   onClose: () => void;
+  link?: () => string;
+  withDetail?: boolean;
   children: ReactNode;
 };
 
@@ -50,9 +52,10 @@ export function VersePanel({
   noteLabel,
   onNote,
   onClose,
+  link = () => `${location.origin}${location.pathname}#v-${verse}`,
+  withDetail = true,
   children,
 }: VersePanelProps) {
-  const link = () => `${location.origin}${location.pathname}#v-${verse}`;
   return (
     <SidePanel
       open={open}
@@ -85,7 +88,7 @@ export function VersePanel({
       </div>
       {children}
       {/* TODO: opens the verse's own page (06) once it exists */}
-      <ActionButton>{text.openDetail}</ActionButton>
+      {withDetail ? <ActionButton>{text.openDetail}</ActionButton> : null}
     </SidePanel>
   );
 }

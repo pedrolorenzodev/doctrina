@@ -26,7 +26,7 @@ type ChapterTextProps = {
   onSelect: (verse: number, byKeyboard: boolean, opener: HTMLElement) => void;
 };
 
-const toneClassName: Record<HighlightColor, string> = {
+export const toneClassName: Record<HighlightColor, string> = {
   yellow: "bg-hl-yellow",
   green: "bg-hl-green",
   sky: "bg-hl-sky",

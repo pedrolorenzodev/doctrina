@@ -12,6 +12,7 @@ type ChapterGridProps = {
   count: number;
   currentChapter: number | null;
   labelTemplate: string;
+  roomy?: boolean;
 };
 
 const cellClassName =
@@ -19,7 +20,18 @@ const cellClassName =
 const circleClassName =
   "grid size-7 place-items-center rounded-full transition-all duration-150 ease-standard group-hover/cell:bg-hover group-hover/cell:text-ink group-active/cell:bg-accent-weak group-focus-visible/cell:outline-2 group-focus-visible/cell:outline-offset-1 group-focus-visible/cell:outline-accent group-data-current/cell:font-semibold group-data-current/cell:text-accent group-data-current/cell:shadow-current-ring max-lg:size-12";
 
-export function ChapterGrid({ bookId, bookName, base, count, currentChapter, labelTemplate }: ChapterGridProps) {
+const roomyCellClassName = "lg:h-9.5 lg:text-ui-sm";
+const roomyCircleClassName = "lg:size-8";
+
+export function ChapterGrid({
+  bookId,
+  bookName,
+  base,
+  count,
+  currentChapter,
+  labelTemplate,
+  roomy = false,
+}: ChapterGridProps) {
   const read = useSyncExternalStore(subscribeReadChapters, getReadChapters, () => noReadChapters);
   return Array.from({ length: count }, (_, index) => {
     const chapter = index + 1;
@@ -34,9 +46,9 @@ export function ChapterGrid({ bookId, bookName, base, count, currentChapter, lab
           data-chapter={chapter}
           data-current={isCurrent || undefined}
           data-read={read.has(readChapterKey(bookId, chapter)) || undefined}
-          className={cellClassName}
+          className={roomy ? `${cellClassName} ${roomyCellClassName}` : cellClassName}
         >
-          <span className={circleClassName}>{chapter}</span>
+          <span className={roomy ? `${circleClassName} ${roomyCircleClassName}` : circleClassName}>{chapter}</span>
         </Link>
       </li>
     );

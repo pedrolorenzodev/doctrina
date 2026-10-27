@@ -30,7 +30,7 @@ type BookPickerProps = {
   title: string;
 };
 
-const currentPlace = 0.35;
+const currentTopGap = 80;
 const sectionOrder = ["old", "deuterocanon", "new"] as const;
 
 const bookClassName =
@@ -52,7 +52,7 @@ export function BookPicker({ text, books, currentBook, currentChapter, title }: 
     const current = body.current?.querySelector<HTMLElement>('[aria-current="true"]');
     if (!scroller || !current) return;
     const above = current.getBoundingClientRect().top - scroller.getBoundingClientRect().top;
-    scroller.scrollTop += above - scroller.clientHeight * currentPlace;
+    scroller.scrollTop += above - currentTopGap;
   }, [open, openBook]);
 
   const toggle = () => {
@@ -74,7 +74,7 @@ export function BookPicker({ text, books, currentBook, currentChapter, title }: 
         aria-expanded={open}
         aria-controls={`${id}-menu`}
         onClick={toggle}
-        className="group/book inline-flex min-h-8 cursor-pointer items-center justify-center gap-2 rounded-6 px-2.5 py-1 text-ui-xs leading-label font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11"
+        className="group/book inline-flex min-h-8 cursor-pointer items-center justify-center gap-1.5 rounded-7 px-3 py-1 text-btn leading-label font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11"
       >
         <span className="sr-only">{text.label}</span>
         <span>{title}</span>
@@ -104,11 +104,14 @@ export function BookPicker({ text, books, currentBook, currentChapter, title }: 
         <div ref={body}>
           {picked ? (
             <>
-              <div data-menu-item="" className="flex items-center gap-2 border-b border-rule py-1.5 pr-4 pl-2">
+              <div
+                data-menu-item=""
+                className="flex min-h-11.5 items-center gap-2 border-b border-rule py-2 pr-2.5 pl-2"
+              >
                 <button
                   type="button"
                   onClick={() => setOpenBook(null)}
-                  className="inline-flex min-h-8 cursor-pointer items-center gap-1 rounded-6 pr-2.5 pl-1.5 text-ui-xs font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
+                  className="inline-flex min-h-8.5 cursor-pointer items-center gap-1 rounded-6 pr-2.5 pl-1.5 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
                 >
                   <svg
                     width="12"
@@ -123,12 +126,12 @@ export function BookPicker({ text, books, currentBook, currentChapter, title }: 
                   </svg>
                   {text.books}
                 </button>
-                <span className="font-head text-xl text-ink">{picked.name}</span>
+                <span className="font-head text-panel-reference text-ink">{picked.name}</span>
                 <span className="ml-auto text-ui-2xs text-ink-3 tabular-nums">
                   {picked.chapters === 1 ? text.oneChapter : text.chapters.replace("{count}", String(picked.chapters))}
                 </span>
               </div>
-              <ul className="grid grid-cols-7 gap-y-0.5 px-2 pt-2 pb-3 max-lg:grid-cols-5 max-lg:gap-y-1">
+              <ul className="grid grid-cols-7 gap-y-0.5 px-4.5 pt-5 pb-5 max-lg:grid-cols-5 max-lg:gap-y-1">
                 <ChapterGrid
                   bookId={picked.id}
                   bookName={picked.title}
@@ -136,11 +139,12 @@ export function BookPicker({ text, books, currentBook, currentChapter, title }: 
                   count={picked.chapters}
                   currentChapter={picked.id === currentBook ? currentChapter : null}
                   labelTemplate={text.chapterOf}
+                  roomy
                 />
               </ul>
             </>
           ) : (
-            <div className="px-3 pt-3 pb-1.5">
+            <div className="px-4 pt-3.5 pb-2">
               {sectionOrder.map((section) => (
                 <div key={section} className="mb-3.5">
                   <p data-menu-item="" className="mb-1 ml-1 text-label font-medium text-ink-3">

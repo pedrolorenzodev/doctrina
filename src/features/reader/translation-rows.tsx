@@ -12,7 +12,7 @@ type TranslationRowsProps = {
 const bracketed = (abbreviation: string) => `(${abbreviation})`;
 
 export const translationOptionClassName =
-  "group/option flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:bg-accent-weak aria-selected:font-medium aria-selected:text-ink aria-selected:shadow-current";
+  "group/option flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:bg-accent-weak aria-selected:font-medium aria-selected:text-ink aria-selected:shadow-current";
 
 export function TranslationRows({
   spanish,
@@ -48,9 +48,8 @@ export function TranslationRows({
           onClick={() => onChoose(option.id)}
           className={translationOptionClassName}
         >
-          <span className="min-w-0">
-            {option.displayName}{" "}
-            <span className="text-ink-3 group-aria-selected/option:text-ink-2">{bracketed(option.abbreviation)}</span>
+          <span className="min-w-0 text-ink-3">
+            {option.displayName} <span>{bracketed(option.abbreviation)}</span>
           </span>
         </div>
       )),

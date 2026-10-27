@@ -89,21 +89,22 @@ test("changing the size keeps the verse being read in place", async ({ page }) =
   expect(Math.abs((await top()) - before)).toBeLessThan(60);
 });
 
-test("the strip sticks under the top bar and draws its hairline only once stuck", async ({ page }) => {
+test("the strip sits under the top bar from the start and always draws its hairline", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
   const border = () =>
     page.locator(`${strip} > div:first-child`).evaluate((el) => getComputedStyle(el).borderBottomColor);
-  await expect.poll(border).toBe("rgba(0, 0, 0, 0)");
+  const top = () => page.locator(strip).evaluate((el) => Math.round(el.getBoundingClientRect().top));
+  await expect.poll(top).toBe(56);
+  await expect.poll(border).not.toBe("rgba(0, 0, 0, 0)");
   await page.evaluate(() => scrollTo(0, 900));
   for (let at = 0; at < 6; at += 1) {
     await page.evaluate(() => scrollBy(0, -8));
     await page.waitForTimeout(16);
   }
   await page.waitForTimeout(300);
-  await expect.poll(() => page.locator(strip).evaluate((el) => Math.round(el.getBoundingClientRect().top))).toBe(56);
+  await expect.poll(top).toBe(56);
   await expect.poll(border).not.toBe("rgba(0, 0, 0, 0)");
-  await expect(page.locator(strip)).toHaveAttribute("data-stuck", "");
 });
 
 type Sample = { t: number; alpha: number; bar: boolean };

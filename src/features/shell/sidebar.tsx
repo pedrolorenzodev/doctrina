@@ -324,7 +324,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
         ref={asideRef}
         id="site-sidebar"
         data-open={open || undefined}
-        className="fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg drawer-motion max-lg:invisible max-lg:texture-layer data-open:visible data-open:translate-x-0 lg:sticky lg:top-top lg:bottom-auto lg:left-auto lg:z-auto lg:h-below-top lg:w-auto lg:translate-x-0 lg:bg-transparent lg:transition-none"
+        className="fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg drawer-motion max-lg:invisible max-lg:texture-layer data-open:visible data-open:translate-x-0 lg:sticky lg:top-top lg:bottom-auto lg:left-auto lg:z-auto lg:h-below-top lg:w-auto lg:translate-x-0 lg:bg-transparent lg:transition-none lg:in-data-[tree=closed]:invisible lg:in-data-[tree=closed]:overflow-hidden"
       >
         <nav
           ref={navRef}

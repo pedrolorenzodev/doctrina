@@ -99,7 +99,6 @@
   --text-micro-lg: 11.5px;
   --spacing-panel: 380px;
   --spacing-note-card: 240px;
-  --breakpoint-notes: 84rem;
   --text-note-card: 15px;
   --text-dialog-title: 23px;
   --text-dialog-title--line-height: 1.25;
@@ -910,6 +909,12 @@
 
 @utility grid-shell {
   grid-template-columns: var(--spacing-sidebar) minmax(0, 1fr);
+
+  @media (min-width: 64rem) {
+    :root[data-tree="closed"] & {
+      grid-template-columns: 0 minmax(0, 1fr);
+    }
+  }
 }
 
 @utility h-below-top {
@@ -1286,6 +1291,7 @@
   html {
     background-color: var(--color-bg);
     line-height: normal;
+    overscroll-behavior-x: none;
     scroll-padding-top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
   }
 }
@@ -1442,5 +1448,19 @@ html.theme-switching ::after {
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@custom-variant notes {
+  @media (min-width: 97rem) {
+    :root:not([data-tree="closed"]) & {
+      @slot;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    :root[data-tree="closed"] & {
+      @slot;
+    }
   }
 }

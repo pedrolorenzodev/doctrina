@@ -1,6 +1,15 @@
 import { useState, useSyncExternalStore } from "react";
 import { getNotes, noNotes, setNotes, subscribeNotes } from "@/lib/note-store";
-import { createNote, draftOf, notesAtVerse, removeNote, saveNoteText, type Note, type NoteDraft } from "@/lib/notes";
+import {
+  createNote,
+  draftOf,
+  notesAtVerse,
+  removeNote,
+  sameChapter,
+  saveNoteText,
+  type Note,
+  type NoteDraft,
+} from "@/lib/notes";
 
 type Options = {
   translationId: string;
@@ -9,6 +18,8 @@ type Options = {
   removedMessage: string;
   showUndo: (message: string, restore: () => void) => void;
 };
+
+const currentTime = () => Date.now();
 
 export type Editing = { draft: NoteDraft; noteId: string | null; session: number };
 
@@ -21,7 +32,7 @@ export function useChapterNotes({ translationId, book, chapter, removedMessage, 
   const save = (text: string) => {
     if (!editing) return;
     const list = getNotes();
-    const now = Date.now();
+    const now = currentTime();
     if (editing.noteId === null) {
       if (text.trim() === "") return;
       const id = crypto.randomUUID();
@@ -38,7 +49,54 @@ export function useChapterNotes({ translationId, book, chapter, removedMessage, 
     setNotes(saveNoteText(list, editing.noteId, text, now));
   };
 
+  const ofChapter = notes
+    .filter((note) => sameChapter(note, key))
+    .sort((a, b) => (a.verse ?? -1) - (b.verse ?? -1) || a.createdAt - b.createdAt);
+  const source = ofChapter.find((note) => note.scope === "source") ?? null;
+
+  const saveSource = (text: string) => {
+    const list = getNotes();
+    const now = currentTime();
+    const existing = list.find((note) => sameChapter(note, key) && note.scope === "source");
+    if (!existing) {
+      if (text.trim() === "") return;
+      const created: Note = {
+        id: crypto.randomUUID(),
+        scope: "source",
+        translationId,
+        book,
+        chapter,
+        verse: null,
+        verseTo: null,
+        from: null,
+        to: null,
+        quote: null,
+        text,
+        createdAt: now,
+        updatedAt: now,
+      };
+      setNotes([...list, created]);
+      return;
+    }
+    if (text.trim() === "") {
+      setNotes(removeNote(list, existing.id));
+      showUndo(removedMessage, () => setNotes(list));
+      return;
+    }
+    setNotes(saveNoteText(list, existing.id, text, now));
+  };
+
   return {
+    ofChapter,
+    source,
+    saveSource,
+    removeSource: () => {
+      const list = getNotes();
+      const existing = list.find((note) => sameChapter(note, key) && note.scope === "source");
+      if (!existing) return;
+      setNotes(removeNote(list, existing.id));
+      showUndo(removedMessage, () => setNotes(list));
+    },
     editing,
     at: (verse: number): Note[] => notesAtVerse(notes, key, verse),
     openNew: (draft: NoteDraft) => {

@@ -57,10 +57,14 @@ const seeded = [
   },
 ];
 
-async function openWithNotes(page: Page, width = 1440) {
-  await page.addInitScript((notes) => {
-    if (!localStorage.getItem("doctrina-notes")) localStorage.setItem("doctrina-notes", JSON.stringify(notes));
-  }, seeded);
+async function openWithNotes(page: Page, width = 1440, tree: "open" | "closed" = "closed") {
+  await page.addInitScript(
+    ([notes, treeState]) => {
+      if (!localStorage.getItem("doctrina-notes")) localStorage.setItem("doctrina-notes", JSON.stringify(notes));
+      if (treeState === "closed") localStorage.setItem("doctrina-tree", "closed");
+    },
+    [seeded, tree] as const,
+  );
   await page.setViewportSize({ width, height: 900 });
   await page.goto(john);
 }
@@ -68,7 +72,7 @@ async function openWithNotes(page: Page, width = 1440) {
 const highlightSize = (page: Page) =>
   page.evaluate(() => (CSS.highlights.get("note-words") as Highlight | undefined)?.size ?? 0);
 
-test("from 1344 px a note is a card 40 px right of the column, level with its verse, and the margin mark is gone", async ({
+test("with the tree closed, from 1280 px, a note is a card 40 px right of the column, level with its verse, and the margin mark is gone", async ({
   page,
 }) => {
   await openWithNotes(page);
@@ -133,8 +137,8 @@ test("under reduced motion the marks are fully opaque from their first frame", a
   expect(shown.every((frame) => frame.opacity === 1)).toBe(true);
 });
 
-test("below 1344 px there are no cards and the marks stay", async ({ page }) => {
-  await openWithNotes(page, 1300);
+test("with the tree closed, below 1280 px, there are no cards and the marks stay", async ({ page }) => {
+  await openWithNotes(page, 1240);
   await expect(page.locator(mark(53))).toBeVisible();
   await expect(page.locator(card).first()).toBeHidden();
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
@@ -178,4 +182,38 @@ test("a note on words made in this edition says only its reference", async ({ pa
   await page.locator('[data-reader-strip] [role=option]:has-text("(BSB)")').click();
   await expect(page.locator(cardAt(57))).toContainText("Juan 6:57");
   await expect(page.locator(cardAt(57))).not.toContainText("en BSB");
+});
+
+test("with the tree open the marks say «1 nota» at 1440 px and the cards come back from 1552 px", async ({ page }) => {
+  await openWithNotes(page, 1440, "open");
+  await expect(page.locator("aside#site-sidebar")).toBeVisible();
+  await expect(page.locator(mark(53))).toBeVisible();
+  await expect(page.locator(card).first()).toBeHidden();
+  await page.setViewportSize({ width: 1552, height: 900 });
+  await expect(page.locator(cardAt(53)).first()).toBeVisible();
+  await expect(page.locator(mark(53))).toBeHidden();
+});
+
+test("closing the tree with the toggle swaps the marks for the cards, and opening it swaps them back", async ({
+  page,
+}) => {
+  await openWithNotes(page, 1440, "open");
+  await expect(page.locator(mark(53))).toBeVisible();
+  await page.locator("[data-reader-strip] [data-tree-toggle]").click();
+  await expect(page.locator(cardAt(53)).first()).toBeVisible();
+  await expect(page.locator(mark(53))).toBeHidden();
+  await page.locator("[data-reader-strip] [data-tree-toggle]").click();
+  await expect(page.locator(mark(53))).toBeVisible();
+});
+
+test("the reading column is centred in the room beside the tree, open or closed", async ({ page }) => {
+  for (const tree of ["open", "closed"] as const) {
+    await openWithNotes(page, 1440, tree);
+    const places = await page.evaluate(() => {
+      const column = document.querySelector("[data-chapter-text]")!.getBoundingClientRect();
+      const main = document.querySelector("main")!.getBoundingClientRect();
+      return { column: (column.left + column.right) / 2, main: (main.left + main.right) / 2 };
+    });
+    expect(Math.abs(places.column - places.main)).toBeLessThan(1);
+  }
 });

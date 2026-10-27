@@ -9,6 +9,7 @@ import { SearchDialog } from "@/features/shell/search-dialog";
 import { SearchProvider } from "@/components/search-provider";
 import { Sidebar } from "@/features/shell/sidebar";
 import { TitleEntrance } from "@/features/shell/title-entrance";
+import { TreeScript } from "@/features/shell/tree-script";
 import { SmoothScroll } from "@/features/shell/smooth-scroll";
 import { TopBar } from "@/features/shell/top-bar";
 import { currentLocale } from "@/lib/current-locale";
@@ -56,6 +57,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
           <TopBar withMenu={hasTree} />
           {hasTree ? (
             <div className="lg:grid lg:grid-shell">
+              <TreeScript />
               <Sidebar groups={groups} text={text} />
               {children}
             </div>

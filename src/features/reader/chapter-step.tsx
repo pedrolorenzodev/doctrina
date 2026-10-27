@@ -10,7 +10,7 @@ type ChapterStepProps = {
 };
 
 const stepClassName =
-  "inline-grid size-8 place-items-center rounded-6 text-ink-2 transition-colors duration-150 ease-standard focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent pointer-coarse:size-11";
+  "inline-grid h-8 w-8.5 place-items-center rounded-7 text-ink-2 transition-colors duration-150 ease-standard focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent pointer-coarse:size-11";
 
 export function ChapterStep({ direction, neighbor, fallbackLabel }: ChapterStepProps) {
   const path = direction === "previous" ? "M10 3.5 5.5 8 10 12.5" : "M6 3.5 10.5 8 6 12.5";

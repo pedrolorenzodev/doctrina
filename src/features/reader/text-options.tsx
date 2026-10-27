@@ -51,24 +51,25 @@ export function TextOptions({ text, locked, sizeOnly = false }: TextOptionsProps
         onClose={close}
         anchor={button}
         align="end"
-        className="w-90 p-3.5 max-sm:right-2 max-sm:left-2 max-sm:w-auto"
+        className="w-90 max-sm:right-2 max-sm:left-2 max-sm:w-auto"
+        bodyClassName="px-4 pt-3.5 pb-4"
       >
-        <p data-menu-item="" className="mb-1.5 ml-1 text-label font-medium text-ink-3">
+        <p data-menu-item="" className="mt-0.5 mb-1.5 ml-1 text-label font-medium text-ink-3">
           {text.size.group}
         </p>
-        <div data-menu-item="">
+        <div data-menu-item="" className="flex pb-1 pl-1">
           <TextSizeControl text={text.size} />
         </div>
         {sizeOnly ? null : (
           <>
-            <p data-menu-item="" className="mt-4 mb-1.5 ml-1 text-label font-medium text-ink-3">
+            <p data-menu-item="" className="mt-3.5 mb-1.5 ml-1 text-label font-medium text-ink-3">
               {text.formatGroup}
             </p>
             <div
               data-menu-item=""
               role="group"
               aria-label={text.formatGroup}
-              className="flex gap-0.5 rounded-8 border border-rule p-0.75"
+              className="mt-0.5 mb-1.5 flex gap-0.5 rounded-8 border border-rule p-0.75"
             >
               {readerFormats.map((option) => (
                 <button
@@ -77,7 +78,7 @@ export function TextOptions({ text, locked, sizeOnly = false }: TextOptionsProps
                   aria-pressed={option === (locked ? "lines" : format)}
                   disabled={locked && option === "flow"}
                   onClick={() => chooseReaderFormat(option)}
-                  className="inline-flex min-h-8.5 flex-1 cursor-pointer items-center justify-center rounded-6 px-2 py-1.5 text-btn leading-label text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-accent-weak aria-pressed:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent pointer-coarse:min-h-11"
+                  className="inline-flex min-h-8.5 flex-1 cursor-pointer items-center justify-center rounded-6 px-1 text-btn leading-label font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-accent-weak aria-pressed:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent pointer-coarse:min-h-11"
                 >
                   {text.formats[option]}
                 </button>

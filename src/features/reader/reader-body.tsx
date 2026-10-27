@@ -238,18 +238,41 @@ export function ReaderBody({
   }, []);
   const citationOf = (first: number, last: number, abbreviation: string) =>
     panel.shortCitation.replace("{reference}", referenceOf(first, last)).replace("{edition}", abbreviation);
-  const listedNotes = chapterNotes.map((note) => {
-    const card = cards.find((entry) => entry.id === note.id)!;
+  const placedIds = new Set(chapterNotes.map((note) => note.id));
+  const sourceCitation = panel.shortCitation
+    .replace("{reference}", `${panel.bookName} ${panel.chapter}`)
+    .replace("{edition}", selected.abbreviation);
+  const listedNotes = notes.ofChapter.map((note) => {
+    const card = cards.find((entry) => entry.id === note.id);
     const abbreviation =
       views.find((candidate) => candidate.id === note.translationId)?.abbreviation ?? selected.abbreviation;
+    if (note.scope === "source") {
+      return {
+        id: note.id,
+        verse: null,
+        place: `${panel.bookName} ${panel.chapter}`,
+        text: note.text,
+        date: dateLabel(note.updatedAt),
+        at: note.updatedAt,
+        citation: `${note.text} ${sourceCitation}`,
+        scope: note.scope,
+        anchor: null,
+        lost: false,
+      };
+    }
+    const first = note.verse ?? 0;
+    const place = card?.place ?? nbspBeforeDigits(referenceOf(first, note.verseTo ?? first));
     return {
       id: note.id,
-      verse: card.verse,
-      place: card.place,
+      verse: first,
+      place,
       text: note.text,
-      date: card.date,
+      date: card?.date ?? dateLabel(note.updatedAt),
       at: note.updatedAt,
-      citation: `${note.text} ${citationOf(card.verse, note.verseTo ?? card.verse, abbreviation)}`,
+      citation: `${note.text} ${citationOf(first, note.verseTo ?? first, abbreviation)}`,
+      scope: note.scope,
+      anchor: note.quote ? clippedQuote(note.quote) : null,
+      lost: !placedIds.has(note.id),
     };
   });
   const listedHighlights = highlights.list.flatMap((entry) => {
@@ -377,13 +400,18 @@ export function ReaderBody({
       <YourNotesPanel
         open={yourOpen}
         text={panel.yourNotes}
+        editorText={panel.notes}
         closeLabel={panel.text.close}
+        sourceNote={notes.source ? { text: notes.source.text, updatedAt: notes.source.updatedAt } : null}
+        dateLabel={dateLabel}
+        onSaveSource={notes.saveSource}
+        onDeleteSource={notes.removeSource}
         notes={listedNotes}
         highlights={listedHighlights}
         colorNames={panel.highlight.colors}
         heading={`${panel.bookName} ${panel.chapter}`}
         onOpenNote={(id) => {
-          const note = chapterNotes.find((candidate) => candidate.id === id);
+          const note = notes.ofChapter.find((candidate) => candidate.id === id);
           if (!note || note.verse === null) return;
           open(note.verse, false, null);
           notes.openExisting(note);

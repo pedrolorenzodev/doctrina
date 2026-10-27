@@ -101,7 +101,7 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
         aria-controls={`${id}-list`}
         onClick={(event) => (open ? closeList(false) : openList(event.detail === 0))}
         onKeyDown={onButtonKeyDown}
-        className="group/picker inline-flex min-h-8 cursor-pointer items-center justify-center gap-2 rounded-6 px-2.5 py-1 text-ui-xs leading-label font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11"
+        className="group/picker inline-flex min-h-8 cursor-pointer items-center justify-center gap-1.5 rounded-7 px-3 py-1 text-btn leading-label font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11"
       >
         <span className="sr-only">{text.label}</span>
         <span>{current?.abbreviation}</span>
@@ -128,7 +128,8 @@ export function TranslationPicker({ text, options, value, onChange }: Translatio
         anchor={button}
         align="end"
         onKeyDown={onListKeyDown}
-        className="w-72 p-1.5 sm:w-85"
+        className="w-72 sm:w-85"
+        bodyClassName="p-1.5"
       >
         <TranslationRows
           spanish={text.spanish}

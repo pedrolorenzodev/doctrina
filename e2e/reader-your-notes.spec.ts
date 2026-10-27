@@ -118,7 +118,9 @@ test("with nothing saved the list says so", async ({ page }) => {
   await openChapter(page, 1440, false);
   await expect(yourButton(page)).not.toContainText(/\d/);
   await yourButton(page).click();
-  await expect(page.locator(yourPanel)).toContainText("Aún no hay notas en este capítulo.");
+  await expect(
+    page.locator(yourPanel).getByRole("button", { name: "Escribir una nota sobre toda la fuente" }),
+  ).toBeVisible();
   await page
     .locator(yourPanel)
     .getByRole("button", { name: /Subrayados/ })
@@ -189,18 +191,22 @@ test("«Ordenar» puts the most recent note first", async ({ page }) => {
   await yourButton(page).click();
   const rows = page.locator(`${yourPanel} li button`);
   await expect(rows.nth(0)).toContainText("Juan 6:53");
-  await page.locator(yourPanel).getByLabel("Ordenar").selectOption("recent");
+  await page
+    .locator(yourPanel)
+    .getByRole("button", { name: /Ordenar/ })
+    .click();
+  await page.locator(yourPanel).getByRole("option", { name: "Recientes" }).click();
   await expect(rows.nth(0)).toContainText("Juan 6:57");
 });
 
-test("in «Subrayados», «Mostrar» keeps one colour and the status counts them", async ({ page }) => {
+test("in «Subrayados», a colour dot keeps one colour and the status counts them", async ({ page }) => {
   await openChapter(page);
   await yourButton(page).click();
   await page
     .locator(yourPanel)
     .getByRole("button", { name: /Subrayados/ })
     .click();
-  await page.locator(yourPanel).getByLabel("Mostrar").selectOption("sky");
+  await page.locator(yourPanel).getByRole("button", { name: "Solo celeste" }).click();
   const rows = page.locator(`${yourPanel} li button`);
   await expect(rows).toHaveCount(1);
   await expect(rows.first()).toContainText("Juan 6:54");
@@ -259,4 +265,73 @@ test("the tab indicator slides to the chosen tab in about 340 ms, and jumps unde
     .click();
   const jumped = await instant;
   expect(jumped.filter((frame) => frame.left > before.x + 1 && frame.left < after.x - 1)).toHaveLength(0);
+});
+
+test("the field carries the «/» key hint, and each tab has its own placeholder", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await expect(page.locator(`${yourPanel} label kbd`)).toHaveText("/");
+  await expect(page.locator(yourPanel).getByPlaceholder("Buscar en tus notas")).toBeVisible();
+  await page
+    .locator(yourPanel)
+    .getByRole("button", { name: /Subrayados/ })
+    .click();
+  await expect(page.locator(yourPanel).getByPlaceholder("Buscar en lo subrayado")).toBeVisible();
+});
+
+test("«Mostrar» and «Ordenar» are labelled pickers with a list, and «Mostrar» filters by kind", async ({ page }) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  const show = page.locator(yourPanel).getByRole("button", { name: /Mostrar/ });
+  await expect(show).toContainText("Todas");
+  await show.click();
+  await expect(page.locator(yourPanel).getByRole("option")).toHaveText(["Todas", "Sobre la fuente", "En el texto"]);
+  await page.locator(yourPanel).getByRole("option", { name: "En el texto" }).click();
+  await expect(page.locator(`${yourPanel} li button`)).toHaveCount(2);
+  await expect(page.locator(`${yourPanel} p[role=status]`)).toHaveText("2 de 2 notas");
+  await show.click();
+  await page.locator(yourPanel).getByRole("option", { name: "Sobre la fuente" }).click();
+  await expect(page.locator(yourPanel)).toContainText("Nada coincide con los filtros.");
+});
+
+test("notes unfiltered sit under «En el texto», with the button to write a note on the whole source above", async ({
+  page,
+}) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  const headings = page.locator(`${yourPanel} p`).filter({ hasText: /^(Sobre toda la fuente|En el texto)$/ });
+  await expect(headings).toHaveText(["En el texto"]);
+  await expect(
+    page.locator(yourPanel).getByRole("button", { name: "Escribir una nota sobre toda la fuente" }),
+  ).toBeVisible();
+});
+
+test("a note on the whole source is written in the panel, saved as the chapter's and listed under its own heading", async ({
+  page,
+}) => {
+  await openChapter(page);
+  await yourButton(page).click();
+  await page.locator(yourPanel).getByRole("button", { name: "Escribir una nota sobre toda la fuente" }).click();
+  const editor = page.locator(`${yourPanel} textarea[aria-label="Tu nota"]`);
+  await expect(editor).toBeFocused();
+  await editor.fill("Todo el capítulo habla del pan.");
+  await page.waitForTimeout(700);
+  const stored = await page.evaluate(() =>
+    (
+      JSON.parse(localStorage.getItem("doctrina-notes")!) as {
+        scope: string;
+        verse: number | null;
+        book: string;
+        chapter: number;
+      }[]
+    ).find((note) => note.scope === "source"),
+  );
+  expect(stored).toMatchObject({ scope: "source", verse: null, book: "John", chapter: 6 });
+  await page.locator(yourPanel).getByRole("button", { name: "Tus notas", exact: true }).first().click();
+  const headings = page.locator(`${yourPanel} p`).filter({ hasText: /^(Sobre toda la fuente|En el texto)$/ });
+  await expect(headings).toHaveText(["Sobre toda la fuente", "En el texto"]);
+  await expect(page.locator(`${yourPanel} li button`).first()).toContainText("Todo el capítulo habla del pan.");
+  await expect(
+    page.locator(yourPanel).getByRole("button", { name: "Escribir una nota sobre toda la fuente" }),
+  ).toHaveCount(0);
 });

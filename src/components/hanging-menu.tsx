@@ -24,11 +24,13 @@ type HangingMenuProps = Omit<HTMLAttributes<HTMLDivElement>, "children"> & {
   anchor: RefObject<HTMLElement | null>;
   align: "center" | "end";
   className?: string;
+  bodyClassName?: string;
   children: ReactNode;
 };
 
 const edgeMargin = 8;
 const bottomClearance = 12;
+const tallestMenu = 480;
 
 export function HangingMenu({
   ref,
@@ -37,6 +39,7 @@ export function HangingMenu({
   anchor,
   align,
   className = "",
+  bodyClassName = "",
   children,
   ...rest
 }: HangingMenuProps) {
@@ -56,7 +59,10 @@ export function HangingMenu({
     const wanted = align === "end" ? box.right - width : box.left + box.width / 2 - width / 2;
     const left = Math.min(Math.max(wanted, barBox.left + edgeMargin), barBox.right - width - edgeMargin);
     element.style.setProperty("--menu-x", `${Math.round(left - barBox.left)}px`);
-    element.style.setProperty("--menu-max", `${Math.max(160, innerHeight - barBox.bottom - bottomClearance)}px`);
+    element.style.setProperty(
+      "--menu-max",
+      `${Math.max(160, Math.min(tallestMenu, innerHeight - barBox.bottom - bottomClearance))}px`,
+    );
     element.hidden = true;
   }, [open, anchor, align, host]);
 
@@ -97,11 +103,16 @@ export function HangingMenu({
         else if (ref) ref.current = element;
       }}
       hidden
-      data-lenis-prevent
-      className={`absolute top-full left-(--menu-x) z-45 max-h-(--menu-max) overflow-y-auto overscroll-contain rounded-b-8 border border-t-0 border-rule-2 bg-panel shadow-floating ${className}`}
+      className={`absolute top-full left-(--menu-x) z-45 flex max-h-(--menu-max) flex-col overflow-hidden rounded-b-8 border border-t-0 border-rule-2 bg-panel shadow-floating texture-layer ${className}`}
       {...rest}
     >
-      {children}
+      <div
+        data-lenis-prevent
+        data-menu-scroll=""
+        className={`min-h-0 flex-1 overflow-y-auto overscroll-contain scrollbar-rule ${bodyClassName}`}
+      >
+        {children}
+      </div>
     </div>,
     host,
   );

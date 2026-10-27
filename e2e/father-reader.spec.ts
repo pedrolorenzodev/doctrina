@@ -121,3 +121,88 @@ test("a division's locator opens the panel with the citation and the link; Esc c
   await expect(panel).toHaveAttribute("data-open", "false");
   await expect(page.locator("#d-1\\.1")).not.toHaveAttribute("data-selected", "");
 });
+
+const sentence = "[data-father-text] [data-verse-text]";
+
+async function select(page: import("@playwright/test").Page, ordinal: number, from: number, to: number) {
+  await page.evaluate(
+    ([target, start, end]) => {
+      const element = document.querySelector(`[data-verse-text="${target}"]`)!;
+      const node = element.firstChild!;
+      const range = document.createRange();
+      range.setStart(node, start as number);
+      range.setEnd(node, end as number);
+      const selection = getSelection()!;
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.dispatchEvent(new PointerEvent("pointerup", { pointerType: "mouse", bubbles: true }));
+    },
+    [ordinal, from, to] as const,
+  );
+}
+
+test("selecting words in a division opens the selection bar; a colour highlights them and it survives a reload", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(didache);
+  await page.locator(sentence).first().scrollIntoViewIfNeeded();
+  await page.waitForTimeout(300);
+  await select(page, 1, 0, 28);
+  await expect(page.locator('[role="toolbar"][aria-label="Lo que elegiste"]')).toBeVisible();
+  await page.keyboard.press("s");
+  await expect(page.locator('[data-father-text] mark[data-highlight="yellow"]')).toHaveCount(1);
+  await page.reload();
+  await expect(page.locator('[data-father-text] mark[data-highlight="yellow"]')).toHaveCount(1);
+});
+
+test("the locator panel highlights and writes a note on a division, with its mark and count", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(didache);
+  await page.locator("[data-division-open]").first().click();
+  const panel = page.locator('aside[data-side-panel][aria-label="Detalle del pasaje"]');
+  await expect(panel).toHaveAttribute("data-open", "true");
+  await panel.getByRole("button", { name: "Nota", exact: true }).click();
+  await panel.locator('textarea[aria-label="Tu nota"]').fill("Las dos vías.");
+  await page.waitForTimeout(700);
+  await page.keyboard.press("Escape");
+  await expect(page.locator("[data-father-text] button:has-text('1 nota')")).toBeVisible();
+  await expect(page.locator("main [data-reader-strip] [data-your-notes]")).toContainText("1");
+});
+
+test("«Tus notas» of a work lists its notes and a note on the whole work", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.addInitScript(() => {
+    localStorage.setItem(
+      "doctrina-notes",
+      JSON.stringify([
+        {
+          id: "n1",
+          scope: "unit",
+          translationId: "didache",
+          book: "didache",
+          chapter: 1,
+          verse: 1,
+          verseTo: 1,
+          from: null,
+          to: null,
+          quote: null,
+          text: "Las dos vías.",
+          createdAt: 1,
+          updatedAt: 1700000000000,
+        },
+      ]),
+    );
+  });
+  await page.goto(didache);
+  await page.locator("main [data-reader-strip] [data-your-notes]").click();
+  const list = page.locator('aside[data-side-panel][aria-label="Tus notas"]');
+  await expect(list).toHaveAttribute("data-open", "true");
+  await expect(list.locator("li button")).toHaveCount(1);
+  await expect(list).toContainText("Las dos vías.");
+  await list.locator("li button").click();
+  await expect(page.locator('aside[data-side-panel][aria-label="Detalle del pasaje"]')).toHaveAttribute(
+    "data-open",
+    "true",
+  );
+});

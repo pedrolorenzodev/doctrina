@@ -3,11 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { SidePanel } from "@/components/side-panel";
 import { CopyButton } from "@/components/ui/copy-button";
-import { FilterSelect } from "@/components/ui/filter-select";
 import { SegmentedFilter } from "@/components/ui/segmented-filter";
+import { NoteEditor } from "@/features/reader/note-editor";
+import { PanelPicker } from "@/features/reader/panel-picker";
 import { readerPanelFrom } from "@/features/reader/verse-panel";
 import { highlightColors, type HighlightColor } from "@/lib/highlights";
 import { downloadText, highlightsMarkdown, notesMarkdown } from "@/lib/notes-markdown";
+import type { NoteScope } from "@/lib/notes";
 import { fold, fragmentAround, searchWords } from "@/lib/search-match";
 
 export type YourNotesText = {
@@ -34,27 +36,52 @@ export type YourNotesText = {
   noMatchFilters: string;
   clear: string;
   downloadMarkdown: string;
+  searchHighlights: string;
+  write: string;
+  sourceHeading: string;
+  inText: string;
+  unplaced: string;
+  unplacedNote: string;
+  kindAll: string;
+  kindSource: string;
+  kindText: string;
+  onlyColor: string;
+  colors: string;
+  back: string;
 };
+
+type EditorText = Parameters<typeof NoteEditor>[0]["text"];
 
 export type YourNotesItem = {
   id: string;
-  verse: number;
+  verse: number | null;
   place: string;
   text: string;
   date: string;
   citation: string;
   at: number;
+  scope: NoteScope;
+  anchor: string | null;
+  lost: boolean;
 };
-export type YourHighlightItem = YourNotesItem & { color: HighlightColor };
+export type YourHighlightItem = Omit<YourNotesItem, "scope" | "anchor" | "lost" | "verse"> & {
+  verse: number;
+  color: HighlightColor;
+};
 
 type YourNotesPanelProps = {
   open: boolean;
   text: YourNotesText;
+  editorText: EditorText;
   closeLabel: string;
   notes: YourNotesItem[];
   highlights: YourHighlightItem[];
   colorNames: Record<HighlightColor, string>;
   heading: string;
+  sourceNote: { text: string; updatedAt: number } | null;
+  dateLabel: (time: number) => string;
+  onSaveSource: (text: string) => void;
+  onDeleteSource: () => void;
   onOpenNote: (id: string) => void;
   onOpenHighlight: (verse: number) => void;
   onClose: () => void;
@@ -69,9 +96,19 @@ const swatchClassName: Record<HighlightColor, string> = {
 };
 
 const rowClassName =
-  "block min-h-11 w-full cursor-pointer rounded-4 px-1.5 py-3 text-left transition-colors duration-150 ease-standard hover:bg-hover";
+  "flex min-h-11 w-full cursor-pointer flex-col gap-0.75 rounded-4 px-1.5 py-3 text-left transition-colors duration-150 ease-standard hover:bg-hover";
+
+const listClassName = "m-0 mb-4 list-none border-b border-rule p-0";
+
+const groupHeadingClassName = "mt-4.5 mb-1.5 text-label font-medium text-ink-3 first:mt-1";
+
+const moreButtonClassName =
+  "-ml-2.5 inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-6 py-2 pr-3 pl-2.5 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11";
+
+const slashKey = "/";
 
 type Order = "text" | "recent";
+type Kind = "all" | "source" | "text";
 
 function Excerpt({ text, words }: { text: string; words: string[] }) {
   const fragment = fragmentAround(text, words);
@@ -100,22 +137,31 @@ const fileSlug = (heading: string) =>
 const matches = (words: string[], ...fields: string[]) =>
   words.every((word) => fields.some((field) => fold(field).includes(word)));
 
+const spreadFirst = (items: YourNotesItem[]) => [...items].sort((a, b) => (a.verse ?? -1) - (b.verse ?? -1));
+
 export function YourNotesPanel({
   open,
   text,
+  editorText,
   closeLabel,
   notes,
   highlights,
   colorNames,
   heading,
+  sourceNote,
+  dateLabel,
+  onSaveSource,
+  onDeleteSource,
   onOpenNote,
   onOpenHighlight,
   onClose,
 }: YourNotesPanelProps) {
   const [tab, setTab] = useState<"notes" | "highlights">("notes");
   const [query, setQuery] = useState("");
-  const [color, setColor] = useState("all");
+  const [colors, setColors] = useState<HighlightColor[]>([]);
+  const [kind, setKind] = useState<Kind>("all");
   const [order, setOrder] = useState<Order>("text");
+  const [writing, setWriting] = useState(false);
   const field = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -131,20 +177,117 @@ export function YourNotesPanel({
     return () => removeEventListener("keydown", onKeyDown);
   }, [open]);
 
+  const [wasOpen, setWasOpen] = useState(open);
+  if (open !== wasOpen) {
+    setWasOpen(open);
+    if (!open) setWriting(false);
+  }
+
   const words = searchWords(query);
-  const sorted = <Item extends YourNotesItem>(items: Item[]) =>
-    order === "recent" ? [...items].sort((a, b) => b.at - a.at) : items;
-  const shownNotes = sorted(notes.filter((note) => matches(words, note.text, note.place)));
-  const shownHighlights = sorted(
-    highlights.filter((item) => (color === "all" || item.color === color) && matches(words, item.text, item.place)),
+  const byOrder = <Item extends { at: number; verse: number | null }>(items: Item[]) =>
+    order === "recent"
+      ? [...items].sort((a, b) => b.at - a.at)
+      : [...items].sort((a, b) => (a.verse ?? -1) - (b.verse ?? -1));
+  const kindOk = (note: YourNotesItem) =>
+    kind === "all" || (kind === "source" ? note.scope === "source" : note.scope !== "source");
+  const shownNotes = byOrder(
+    notes.filter((note) => kindOk(note) && matches(words, note.text, note.place, note.anchor ?? "")),
+  );
+  const shownHighlights = byOrder(
+    highlights.filter(
+      (item) => (colors.length === 0 || colors.includes(item.color)) && matches(words, item.text, item.place),
+    ),
   );
   const list = tab === "notes" ? shownNotes : shownHighlights;
   const total = tab === "notes" ? notes.length : highlights.length;
-  const filtering = words.length > 0 || (tab === "highlights" && color !== "all");
+  const filtering =
+    words.length > 0 || (tab === "highlights" && colors.length > 0) || (tab === "notes" && kind !== "all");
+  const flat = filtering || order === "recent";
   const clear = () => {
     setQuery("");
-    setColor("all");
+    setColors([]);
+    setKind("all");
   };
+
+  const noteRow = (note: YourNotesItem) => (
+    <li key={note.id} className="border-t border-rule">
+      <button
+        type="button"
+        onClick={() => (note.scope === "source" ? setWriting(true) : onOpenNote(note.id))}
+        className={rowClassName}
+      >
+        <span className={`line-clamp-2 block text-note-line text-ink-3 ${note.lost ? "line-through" : ""}`}>
+          <span className={note.lost ? "" : "text-cite"}>
+            {note.place}
+            {note.scope === "source" || !note.anchor ? "" : ":"}
+          </span>
+          {note.scope !== "source" && note.anchor ? ` «${note.anchor}»` : ""}
+        </span>
+        <span
+          className={`block whitespace-pre-line font-body text-note-row font-light text-ink-2 ${filtering ? "line-clamp-4" : "line-clamp-3"}`}
+        >
+          <Excerpt text={note.text} words={words} />
+        </span>
+        <span className="block text-note-meta text-ink-3 tabular-nums">
+          {note.lost ? `${text.unplacedNote} ` : ""}
+          {note.date}
+        </span>
+      </button>
+    </li>
+  );
+
+  const writeButton = (
+    <button type="button" onClick={() => setWriting(true)} data-write-source="" className={moreButtonClassName}>
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        aria-hidden="true"
+      >
+        <path d="M7 2v10M2 7h10" strokeLinecap="round" />
+      </svg>
+      {text.write}
+    </button>
+  );
+
+  const notesBody = () => {
+    if (total === 0) return writeButton;
+    if (list.length === 0) return null;
+    if (flat) return <ul className={listClassName}>{shownNotes.map(noteRow)}</ul>;
+    const inline = spreadFirst(notes);
+    const source = inline.find((note) => note.scope === "source");
+    const placed = inline.filter((note) => note.scope !== "source" && !note.lost);
+    const lost = inline.filter((note) => note.lost);
+    return (
+      <>
+        {source ? (
+          <>
+            <p className={groupHeadingClassName}>{text.sourceHeading}</p>
+            <ul className={listClassName}>{noteRow(source)}</ul>
+          </>
+        ) : (
+          writeButton
+        )}
+        {placed.length > 0 ? (
+          <>
+            <p className={groupHeadingClassName}>{text.inText}</p>
+            <ul className={listClassName}>{placed.map(noteRow)}</ul>
+          </>
+        ) : null}
+        {lost.length > 0 ? (
+          <>
+            <p className={groupHeadingClassName}>{text.unplaced}</p>
+            <ul className={listClassName}>{lost.map(noteRow)}</ul>
+          </>
+        ) : null}
+      </>
+    );
+  };
+
+  const placeholder = tab === "notes" ? text.search : text.searchHighlights;
 
   return (
     <SidePanel
@@ -156,135 +299,210 @@ export function YourNotesPanel({
       from={readerPanelFrom}
       focusOnOpen
     >
-      <SegmentedFilter
-        label={text.tabs}
-        value={tab}
-        onChange={(id) => setTab(id === "highlights" ? "highlights" : "notes")}
-        options={[
-          { id: "notes", label: text.notes, count: notes.length },
-          { id: "highlights", label: text.highlights, count: highlights.length },
-        ]}
-      />
-      {total > 0 ? (
-        <div className="mb-3">
-          <input
-            ref={field}
-            type="text"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key !== "Escape" || query === "") return;
-              event.stopPropagation();
-              setQuery("");
-            }}
-            aria-label={text.search}
-            placeholder={text.search}
-            autoComplete="off"
-            spellCheck={false}
-            className="block min-h-10 w-full rounded-6 border border-rule bg-transparent px-3 text-ui-sm text-ink outline-none placeholder:text-ink-3 focus-visible:border-accent pointer-coarse:min-h-11"
-          />
-          <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-2">
-            {tab === "highlights" ? (
-              <FilterSelect
-                label={text.show}
-                value={color}
-                onChange={setColor}
-                options={[
-                  { id: "all", label: text.showAll },
-                  ...highlightColors.map((id) => ({ id, label: colorNames[id] })),
-                ]}
-              />
-            ) : null}
-            <FilterSelect
-              label={text.order}
-              value={order}
-              onChange={(id) => setOrder(id === "recent" ? "recent" : "text")}
-              options={[
-                { id: "text", label: text.orderText },
-                { id: "recent", label: text.orderRecent },
-              ]}
-            />
-          </div>
-          <p role="status" className="mt-2 mb-0 min-h-4 text-note-meta text-ink-3 tabular-nums">
-            {filtering
-              ? (tab === "notes" ? text.statusNotes : text.statusHighlights)
-                  .replace("{n}", String(list.length))
-                  .replace("{total}", String(total))
-              : ""}
-          </p>
-        </div>
-      ) : null}
-      {total === 0 ? (
-        <p className="m-0 text-ui-sm text-ink-3">{tab === "notes" ? text.emptyNotes : text.emptyHighlights}</p>
-      ) : list.length === 0 ? (
-        <div>
-          <p className="m-0 mb-2 text-ui-sm text-ink-3">
-            {words.length > 0 ? text.noMatch.replace("{query}", query.trim()) : text.noMatchFilters}
-          </p>
+      {writing ? (
+        <>
           <button
             type="button"
-            onClick={clear}
-            className="-ml-2.5 inline-flex min-h-8.5 cursor-pointer items-center rounded-6 px-2.5 text-btn leading-label font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11"
+            onClick={() => setWriting(false)}
+            className="-ml-2.5 mb-3 inline-flex min-h-8.5 cursor-pointer items-center gap-1 rounded-6 pr-2.5 pl-1.5 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
           >
-            {text.clear}
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-hidden="true"
+            >
+              <path d="M10 3.5 5.5 8 10 12.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            {text.back}
           </button>
-        </div>
+          <NoteEditor
+            key={sourceNote ? "saved" : "new"}
+            reference={`${heading}, ${text.sourceHeading.toLowerCase()}`}
+            initial={sourceNote?.text ?? ""}
+            savedAt={sourceNote?.updatedAt ?? null}
+            dateLabel={dateLabel}
+            text={editorText}
+            onSave={onSaveSource}
+            onClose={() => setWriting(false)}
+            onDelete={() => {
+              onDeleteSource();
+              setWriting(false);
+            }}
+          />
+        </>
       ) : (
         <>
-          <ul className="m-0 mb-4 list-none border-b border-rule p-0">
-            {tab === "notes"
-              ? shownNotes.map((note) => (
-                  <li key={note.id} className="border-t border-rule">
-                    <button type="button" onClick={() => onOpenNote(note.id)} className={rowClassName}>
-                      <span className="block text-note-line text-cite">{note.place}</span>
-                      <span className="mt-0.5 line-clamp-3 block font-body text-note-row font-light text-ink-2">
-                        <Excerpt text={note.text} words={words} />
-                      </span>
-                      <span className="mt-1 block text-note-meta text-ink-3 tabular-nums">{note.date}</span>
-                    </button>
-                  </li>
-                ))
-              : shownHighlights.map((item) => (
-                  <li key={item.id} className="border-t border-rule">
-                    <button type="button" onClick={() => onOpenHighlight(item.verse)} className={rowClassName}>
-                      <span className="flex items-center gap-2 text-note-line text-cite">
+          <SegmentedFilter
+            label={text.tabs}
+            value={tab}
+            onChange={(id) => setTab(id === "highlights" ? "highlights" : "notes")}
+            options={[
+              { id: "notes", label: text.notes, count: notes.length },
+              { id: "highlights", label: text.highlights, count: highlights.length },
+            ]}
+          />
+          {total > 0 ? (
+            <div className="mb-1.5">
+              <label className="flex min-h-10 items-center gap-2 rounded-6 border border-rule bg-card px-2.5 text-ink-3 focus-within:border-transparent focus-within:outline-2 focus-within:outline-offset-1 focus-within:outline-accent">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  aria-hidden="true"
+                  className="flex-none"
+                >
+                  <circle cx="7" cy="7" r="4.5" />
+                  <path d="m10.5 10.5 3 3" strokeLinecap="round" />
+                </svg>
+                <input
+                  ref={field}
+                  type="text"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key !== "Escape" || query === "") return;
+                    event.stopPropagation();
+                    setQuery("");
+                  }}
+                  aria-label={placeholder}
+                  aria-keyshortcuts="/"
+                  placeholder={placeholder}
+                  autoComplete="off"
+                  spellCheck={false}
+                  className="h-9.5 min-w-0 flex-1 border-0 bg-transparent text-picker-option text-ink outline-none placeholder:text-ink-3"
+                />
+                <kbd className="flex-none rounded-4 border border-rule px-1.5 py-px font-ui text-ui-2xs text-ink-3">
+                  {slashKey}
+                </kbd>
+              </label>
+              <div className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
+                {tab === "highlights" ? (
+                  <span role="group" aria-label={text.colors} className="-ml-1.5 flex flex-wrap">
+                    {highlightColors.map((id) => (
+                      <button
+                        key={id}
+                        type="button"
+                        aria-pressed={colors.includes(id)}
+                        aria-label={text.onlyColor.replace("{color}", colorNames[id].toLowerCase())}
+                        onClick={() =>
+                          setColors((current) =>
+                            current.includes(id) ? current.filter((one) => one !== id) : [...current, id],
+                          )
+                        }
+                        className="group/dot inline-grid size-8 cursor-pointer place-items-center rounded-6 transition-colors duration-150 ease-standard hover:bg-hover"
+                      >
                         <span
-                          aria-hidden="true"
-                          className={`size-3 flex-none rounded-full ${swatchClassName[item.color]}`}
+                          className={`size-3 rounded-full shadow-swatch group-aria-pressed/dot:shadow-swatch-current ${swatchClassName[id]}`}
                         />
-                        {item.place}
-                      </span>
-                      <span className="mt-0.5 line-clamp-3 block font-body text-note-text font-light text-ink-2">
-                        <Excerpt text={item.text} words={words} />
-                      </span>
-                    </button>
-                  </li>
-                ))}
-          </ul>
-          <div className="-ml-2.5">
-            <CopyButton
-              label={tab === "notes" ? text.copyNotes : text.copyHighlights}
-              done={text.copied}
-              text={() => (tab === "notes" ? notes : highlights).map((item) => item.citation).join("\n\n")}
-            />
-            <button
-              type="button"
-              onClick={() =>
-                tab === "notes"
-                  ? downloadText(`${fileSlug(heading)}-notas.md`, notesMarkdown(`${text.label}, ${heading}`, notes))
-                  : downloadText(
-                      `${fileSlug(heading)}-subrayados.md`,
-                      highlightsMarkdown(`${text.highlights}, ${heading}`, highlights),
-                    )
-              }
-              className="inline-grid min-h-10 cursor-pointer place-items-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
-            >
-              {text.downloadMarkdown}
-            </button>
-          </div>
+                      </button>
+                    ))}
+                  </span>
+                ) : (
+                  <PanelPicker
+                    label={text.show}
+                    value={kind}
+                    onChange={(id) => setKind(id === "source" ? "source" : id === "text" ? "text" : "all")}
+                    options={[
+                      { id: "all", label: text.kindAll },
+                      { id: "source", label: text.kindSource },
+                      { id: "text", label: text.kindText },
+                    ]}
+                  />
+                )}
+                <PanelPicker
+                  label={text.order}
+                  value={order}
+                  onChange={(id) => setOrder(id === "recent" ? "recent" : "text")}
+                  options={[
+                    { id: "text", label: text.orderText },
+                    { id: "recent", label: text.orderRecent },
+                  ]}
+                />
+              </div>
+              <p role="status" className="mt-1.5 mb-0 min-h-4.5 text-label text-ink-3 tabular-nums empty:hidden">
+                {filtering
+                  ? (tab === "notes" ? text.statusNotes : text.statusHighlights)
+                      .replace("{n}", String(list.length))
+                      .replace("{total}", String(total))
+                  : ""}
+              </p>
+            </div>
+          ) : null}
+          {tab === "notes" && total === 0 ? (
+            notesBody()
+          ) : total === 0 ? (
+            <p className="m-0 text-ui-sm text-ink-3">{text.emptyHighlights}</p>
+          ) : list.length === 0 ? (
+            <div className="border-y border-rule py-3.5">
+              <p className="m-0 mb-1 text-ui-sm text-ink-2">
+                {words.length > 0 ? text.noMatch.replace("{query}", query.trim()) : text.noMatchFilters}
+              </p>
+              <button type="button" onClick={clear} className={moreButtonClassName}>
+                {text.clear}
+              </button>
+            </div>
+          ) : (
+            <>
+              {tab === "notes" ? (
+                notesBody()
+              ) : (
+                <ul className={listClassName}>
+                  {shownHighlights.map((item) => (
+                    <li key={item.id} className="border-t border-rule">
+                      <button
+                        type="button"
+                        onClick={() => onOpenHighlight(item.verse)}
+                        className={`${rowClassName} gap-0`}
+                      >
+                        <span className="line-clamp-3 block font-body text-note-text font-light text-ink-2">
+                          <span
+                            aria-label={colorNames[item.color]}
+                            className={`mr-2 mb-px inline-block size-3 rounded-full align-baseline shadow-swatch ${swatchClassName[item.color]}`}
+                          />
+                          <Excerpt text={item.text} words={words} />
+                        </span>
+                        <span className="mt-1 flex w-full justify-between gap-3 text-note-line text-cite">
+                          {item.place}
+                          <span className="text-ink-3 tabular-nums">{item.date}</span>
+                        </span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <div className="-ml-2.5">
+                <CopyButton
+                  label={tab === "notes" ? text.copyNotes : text.copyHighlights}
+                  done={text.copied}
+                  text={() => (tab === "notes" ? notes : highlights).map((item) => item.citation).join("\n\n")}
+                />
+                <button
+                  type="button"
+                  onClick={() =>
+                    tab === "notes"
+                      ? downloadText(`${fileSlug(heading)}-notas.md`, notesMarkdown(`${text.label}, ${heading}`, notes))
+                      : downloadText(
+                          `${fileSlug(heading)}-subrayados.md`,
+                          highlightsMarkdown(`${text.highlights}, ${heading}`, highlights),
+                        )
+                  }
+                  className="inline-grid min-h-10 cursor-pointer place-items-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
+                >
+                  {text.downloadMarkdown}
+                </button>
+              </div>
+            </>
+          )}
+          <p className="mt-4 mb-0 text-note-meta text-ink-3">{text.footer}</p>
         </>
       )}
-      <p className="mt-4 mb-0 text-note-meta text-ink-3">{text.footer}</p>
     </SidePanel>
   );
 }

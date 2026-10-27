@@ -98,16 +98,17 @@ export function ParallelMenu({ text, options, firstId, second }: ParallelMenuPro
         onClose={close}
         anchor={button}
         align="end"
-        className="w-85 p-3.5 max-sm:right-2 max-sm:left-2 max-sm:w-auto"
+        className="w-85 max-sm:right-2 max-sm:left-2 max-sm:w-auto"
+        bodyClassName="px-4 pt-3.5 pb-4"
       >
-        <p data-menu-item="" className="mb-1.5 ml-1 text-label font-medium text-ink-3">
+        <p data-menu-item="" className="mt-0.5 mb-1.5 ml-1 text-label font-medium text-ink-3">
           {text.mode}
         </p>
         <div
           data-menu-item=""
           role="group"
           aria-label={text.mode}
-          className="flex gap-0.5 rounded-8 border border-rule p-0.75"
+          className="mt-0.5 mb-1.5 flex gap-0.5 rounded-8 border border-rule p-0.75"
         >
           {modes.map((mode) => (
             <button
@@ -116,7 +117,7 @@ export function ParallelMenu({ text, options, firstId, second }: ParallelMenuPro
               disabled={mode === "side" && !room}
               aria-pressed={mode === second.mode}
               onClick={() => setMode(mode)}
-              className="inline-flex min-h-8.5 flex-1 cursor-pointer items-center justify-center rounded-6 px-2 py-1.5 text-btn leading-label text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent aria-pressed:bg-accent-weak aria-pressed:text-ink pointer-coarse:min-h-11"
+              className="inline-flex min-h-8.5 flex-1 cursor-pointer items-center justify-center rounded-6 px-1 text-btn leading-label font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent aria-pressed:bg-accent-weak aria-pressed:text-ink pointer-coarse:min-h-11"
             >
               {label[mode]}
             </button>
@@ -129,10 +130,10 @@ export function ParallelMenu({ text, options, firstId, second }: ParallelMenuPro
         )}
         {second.mode === "off" ? null : (
           <>
-            <p data-menu-item="" className="mt-4 mb-1 ml-1 text-label font-medium text-ink-3">
+            <p data-menu-item="" className="mt-3.5 mb-1.5 ml-1 text-label font-medium text-ink-3">
               {text.list}
             </p>
-            <div role="listbox" aria-label={text.label} onKeyDown={onListKeyDown} className="-mx-1.5">
+            <div role="listbox" aria-label={text.label} onKeyDown={onListKeyDown}>
               <TranslationRows
                 spanish={text.spanish}
                 english={text.english}

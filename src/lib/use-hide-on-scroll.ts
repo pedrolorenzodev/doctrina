@@ -13,7 +13,8 @@ export function useHideOnScroll(ref: RefObject<HTMLElement | null>): boolean {
     let last = scrollY;
     let direction = 0;
     let travelled = 0;
-    const pinned = () => element.matches(":focus-within") || element.querySelector('[aria-expanded="true"]') !== null;
+    const pinned = () =>
+      element.querySelector(":focus-visible") !== null || element.querySelector('[aria-expanded="true"]') !== null;
     const onScroll = () => {
       const y = Math.max(0, scrollY);
       const delta = y - last;
@@ -34,7 +35,9 @@ export function useHideOnScroll(ref: RefObject<HTMLElement | null>): boolean {
       if (sign > 0 && travelled >= hideAfter && y > element.offsetHeight) setHidden(true);
       else if (sign < 0 && travelled >= showAfter) setHidden(false);
     };
-    const onFocusIn = () => setHidden(false);
+    const onFocusIn = (event: FocusEvent) => {
+      if ((event.target as Element).matches(":focus-visible")) setHidden(false);
+    };
     addEventListener("scroll", onScroll, { passive: true });
     element.addEventListener("focusin", onFocusIn);
     return () => {

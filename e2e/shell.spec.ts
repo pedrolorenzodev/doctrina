@@ -44,3 +44,18 @@ for (const width of [360, 390, 768, 1024, 1440]) {
     expect(await horizontalOverflow(page)).toBe(0);
   });
 }
+
+test("the page refuses the browser's history swipe, and a wheel with a sideways part never scrolls it sideways", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es");
+  expect(await page.evaluate(() => getComputedStyle(document.documentElement).overscrollBehaviorX)).toBe("none");
+  await page.mouse.move(700, 500);
+  for (let i = 0; i < 8; i++) {
+    await page.mouse.wheel(i % 2 ? 14 : -14, 120);
+    await page.waitForTimeout(40);
+  }
+  expect(await page.evaluate(() => scrollX)).toBe(0);
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+});

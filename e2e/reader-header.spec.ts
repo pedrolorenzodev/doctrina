@@ -153,6 +153,7 @@ test.describe("hiding", () => {
     await expect(page.locator(strip)).not.toHaveAttribute("data-hidden", "");
     await page.keyboard.press("Escape");
     await page.locator("main h1").click();
+    await page.keyboard.press("Shift");
     await page.locator(step("next")).focus();
     await scrollSlowly(page, 1, 30, 3);
     await expect(page.locator(strip)).not.toHaveAttribute("data-hidden", "");
@@ -160,6 +161,7 @@ test.describe("hiding", () => {
     await page.evaluate(() => (document.activeElement as HTMLElement | null)?.blur());
     await scrollSlowly(page, 1, 30, 3);
     await expect(page.locator(strip)).toHaveAttribute("data-hidden", "");
+    await page.keyboard.press("Shift");
     await page.locator(step("next")).focus();
     await expect(page.locator(strip)).not.toHaveAttribute("data-hidden", "");
   });
