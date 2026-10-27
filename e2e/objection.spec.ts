@@ -140,7 +140,7 @@ test("the sidebar marks the objection as the current page", async ({ page }) => 
 test("from the Objeciones page and the sidebar the titles open the objection", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(base);
-  await page.locator("main section li a").nth(1).click();
+  await page.locator("main section li a").nth(2).click();
   await expect(page).toHaveURL(`${base}/ob-2`);
   await expect(page.locator("main h1")).toContainText("Pablo lo sigue llamando");
   await page.goBack();

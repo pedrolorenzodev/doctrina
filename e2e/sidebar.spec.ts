@@ -135,7 +135,7 @@ test("four groups with the counts of history and only the published pages, their
   test.skip(!hasCorpus, "needs the local corpus");
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
-  await expect(page.locator("aside nav p")).toHaveText(["Doctrinas", "Biblia", "Historia", "Consulta"]);
+  await expect(page.locator("aside nav p:not(li p)")).toHaveText(["Doctrinas", "Biblia", "Historia", "Consulta"]);
   const counts = await page
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
@@ -154,7 +154,8 @@ test("the branches hold the real entries: 56 Fathers, 27 New Testament books, 7 
   await expect(children("bible/nt")).toHaveCount(27);
   await expect(children("bible/ot")).toHaveCount(39);
   await expect(children("bible/deutero")).toHaveCount(7);
-  await expect(children("eucharist/catholic/objections")).toHaveCount(7);
+  await expect(children("eucharist/catholic/objections")).toHaveCount(10);
+  await expect(page.locator('aside nav li[data-id="eucharist/catholic/objections"] > ul a')).toHaveCount(7);
   await expect(children("eucharist/orthodox")).toHaveCount(2);
 });
 

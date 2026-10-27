@@ -49,7 +49,7 @@ test("each title opens its objection page", async ({ page }) => {
   const hrefs = await page
     .locator(`${items} > p:first-child a`)
     .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
-  expect(hrefs).toEqual([1, 2, 3, 4, 5, 6, 7].map((n) => `${path}/ob-${n}`));
+  expect(hrefs).toEqual([1, 5, 2, 3, 4, 6, 7].map((n) => `${path}/ob-${n}`));
 });
 
 test("the sidebar marks Objeciones under Católica as the current page", async ({ page }) => {

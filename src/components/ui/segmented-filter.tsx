@@ -15,11 +15,19 @@ type SegmentedFilterProps = {
   value: string;
   onChange: (id: string) => void;
   stretch?: boolean;
+  stackOnPhone?: boolean;
 };
 
 type Box = { x: number; w: number };
 
-export function SegmentedFilter({ label, options, value, onChange, stretch = false }: SegmentedFilterProps) {
+export function SegmentedFilter({
+  label,
+  options,
+  value,
+  onChange,
+  stretch = false,
+  stackOnPhone = false,
+}: SegmentedFilterProps) {
   const group = useRef<HTMLDivElement>(null);
   const [box, setBox] = useState<Box | null>(null);
   const [settled, setSettled] = useState(false);
@@ -49,7 +57,7 @@ export function SegmentedFilter({ label, options, value, onChange, stretch = fal
       role="group"
       aria-label={label}
       data-ready={box ? "" : undefined}
-      className={`group/seg relative gap-0.5 rounded-8 border border-rule p-0.75 ${stretch ? "mb-4 flex w-full" : "mb-4.5 inline-flex max-sm:flex max-sm:w-full"}`}
+      className={`group/seg relative gap-0.5 rounded-8 border border-rule p-0.75 ${stretch ? "mb-4 flex w-full" : "mb-4.5 inline-flex max-sm:flex max-sm:w-full"} ${stackOnPhone ? "max-sm:flex-col" : ""}`}
     >
       {box ? (
         <span
@@ -57,7 +65,7 @@ export function SegmentedFilter({ label, options, value, onChange, stretch = fal
           data-instant={settled ? undefined : ""}
           data-slide-indicator=""
           style={{ "--slide-x": `${box.x}px`, "--slide-w": `${box.w}px` } as React.CSSProperties}
-          className={`slide-indicator pointer-events-none absolute top-0.75 bottom-0.75 left-0 w-(--slide-w) translate-x-(--slide-x) rounded-6 bg-accent-weak ${stretch ? "shadow-current-underline" : ""}`}
+          className={`slide-indicator pointer-events-none absolute top-0.75 bottom-0.75 left-0 w-(--slide-w) translate-x-(--slide-x) rounded-6 bg-accent-weak ${stretch ? "shadow-current-underline" : ""} ${stackOnPhone ? "max-sm:hidden" : ""}`}
         />
       ) : null}
       {options.map((option) => (
@@ -68,7 +76,7 @@ export function SegmentedFilter({ label, options, value, onChange, stretch = fal
           onClick={() => {
             if (!option.inert) onChange(option.id);
           }}
-          className={`relative inline-flex min-h-8.5 cursor-pointer items-center justify-center gap-1.75 rounded-6 py-1.5 text-btn leading-label text-ink-2 ${stretch ? "flex-1 px-2" : "px-3 max-sm:flex-1 max-sm:px-2"} transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-accent-weak aria-pressed:font-medium aria-pressed:text-ink group-data-ready/seg:aria-pressed:bg-transparent pointer-coarse:min-h-11`}
+          className={`relative inline-flex min-h-8.5 cursor-pointer items-center justify-center gap-1.75 rounded-6 py-1.5 text-btn leading-label text-ink-2 ${stretch ? "flex-1 px-2" : "px-3 max-sm:flex-1 max-sm:px-2"} transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-accent-weak aria-pressed:font-medium aria-pressed:text-ink group-data-ready/seg:aria-pressed:bg-transparent ${stackOnPhone ? "max-sm:group-data-ready/seg:aria-pressed:bg-accent-weak" : ""} pointer-coarse:min-h-11`}
         >
           {stretch ? (
             <span data-label={option.label} className="reserve-bold inline-grid">

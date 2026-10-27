@@ -104,6 +104,24 @@ export function validateContent(registry: Registry, pages: Record<string, Tradit
     for (const { id } of objections.items) if (!orderIds.has(id)) fail(`${name}.objections.order`, `${id} missing`);
     for (const id of orderIds)
       if (!objections.items.some((item) => item.id === id)) fail(`${name}.objections.order`, `unknown ${id}`);
+    if (objections.themes) {
+      const official = new Set(objections.items.filter((item) => item.layer === "official").map((item) => item.id));
+      const placed = new Map<string, number>();
+      const themeIds = new Set<string>();
+      for (const theme of objections.themes) {
+        if (themeIds.has(theme.id)) fail(`${name}.objections.themes`, `duplicate theme ${theme.id}`);
+        themeIds.add(theme.id);
+        if (theme.ids.length === 0) fail(`${name}.objections.themes.${theme.id}`, "empty theme");
+        for (const id of theme.ids) {
+          if (!official.has(id)) fail(`${name}.objections.themes.${theme.id}`, `${id} is not an official objection`);
+          placed.set(id, (placed.get(id) ?? 0) + 1);
+        }
+      }
+      for (const id of official) {
+        const times = placed.get(id) ?? 0;
+        if (times !== 1) fail(`${name}.objections.themes`, `${id} sits in ${times} themes, expected 1`);
+      }
+    }
 
     for (const [where, text] of walkStrings(page, name)) {
       if (reviewVocabulary.test(text)) fail(where, `review language «${text.slice(0, 60)}»`);

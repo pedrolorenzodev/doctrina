@@ -5,7 +5,7 @@ import type { TraditionPage } from "@/content/model/page";
 import { officialObjections } from "@/content/official-objections";
 import { objectionsHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import { ObjectionList } from "@/features/doctrine/objection-list";
+import { ThemedObjectionList } from "@/features/doctrine/themed-objection-list";
 import type { Locale } from "@/lib/locale";
 
 type ObjectionsSectionProps = {
@@ -18,17 +18,17 @@ export function ObjectionsSection({ page, locale }: ObjectionsSectionProps) {
   const official = officialObjections(page);
   return (
     <Section id="objections" title={text.doctrine.objections} subtitle={page.objections.subtitle}>
-      <ObjectionList
-        objections={official.slice(0, shownObjections)}
-        doctrine={page.doctrine}
-        tradition={page.tradition}
+      <ThemedObjectionList
+        page={page}
         locale={locale}
+        objections={official}
+        step={shownObjections}
+        trailing={
+          <ActionLink href={objectionsHref(locale, page.doctrine, page.tradition)}>
+            {text.doctrine.allObjections.replace("{n}", String(official.length))}
+          </ActionLink>
+        }
       />
-      <div className="mt-5.5">
-        <ActionLink href={objectionsHref(locale, page.doctrine, page.tradition)}>
-          {text.doctrine.allObjections.replace("{n}", String(official.length))}
-        </ActionLink>
-      </div>
     </Section>
   );
 }

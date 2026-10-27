@@ -15,6 +15,7 @@ export function getPublishedPages(locale: Locale): {
   doctrine: DoctrineId;
   tradition: TraditionId;
   objections: { id: string; short: string }[];
+  themes: { id: string; name: string; ids: string[] }[];
 }[] {
   return Object.values(pagesByLocale[locale]).map(({ doctrine, tradition, objections }) => ({
     doctrine,
@@ -22,6 +23,7 @@ export function getPublishedPages(locale: Locale): {
     objections: objections.items.flatMap((objection) =>
       objection.layer === "official" && objection.short ? [{ id: objection.id, short: objection.short }] : [],
     ),
+    themes: objections.themes ?? [],
   }));
 }
 

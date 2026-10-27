@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { horizontalOverflow, traditionPath } from "./helpers";
 
-const items = "#objections li";
+const items = "#objections li:not([hidden])";
 
 test("three official objections, each with a title and a synthesis", async ({ page }) => {
   await page.goto(traditionPath);
@@ -15,8 +15,8 @@ test("three official objections, each with a title and a synthesis", async ({ pa
 });
 
 test("a reference inside the author's own parentheses is not wrapped twice", async ({ page }) => {
-  await page.goto(traditionPath);
-  const text = await page.locator(`${items}`).nth(2).locator("p").last().textContent();
+  await page.goto(`${traditionPath}/objeciones`);
+  const text = await page.locator('li[data-id="OB-3"]').locator("p").last().textContent();
   expect((text ?? "").replace(/[ ]/g, " ")).toContain("(«Tomad, comed», Mateo 26:26). Guardarlo");
 });
 
@@ -59,7 +59,9 @@ test("the list reveals on scroll and none stays hidden after a fast jump", async
   await page.evaluate(() => scrollTo(0, document.body.scrollHeight));
   await page.waitForTimeout(1500);
   const opacity = await page.evaluate(() =>
-    [...document.querySelectorAll("#objections li")].map((item) => Number(getComputedStyle(item).opacity)),
+    [...document.querySelectorAll("#objections li:not([hidden])")].map((item) =>
+      Number(getComputedStyle(item).opacity),
+    ),
   );
   expect(opacity).toEqual([1, 1, 1]);
 });

@@ -40,7 +40,7 @@ test("«Otras objeciones»: the six others, compact, each opening its page", asy
   const hrefs = await page
     .locator("#others li a")
     .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
-  expect(hrefs).toEqual([2, 3, 4, 5, 6, 7].map((n) => `${base}/ob-${n}`));
+  expect(hrefs).toEqual([5, 2, 3, 4, 6, 7].map((n) => `${base}/ob-${n}`));
   const metrics = await page
     .locator("#others li")
     .first()
@@ -52,7 +52,7 @@ test("«Otras objeciones»: the six others, compact, each opening its page", asy
     });
   expect(metrics).toEqual(["17px", "15px", "14px", "16px"]);
   await page.locator("#others li a").first().click();
-  await expect(page).toHaveURL(`${base}/ob-2`);
+  await expect(page).toHaveURL(`${base}/ob-5`);
   await expect(page.locator("#others li")).toHaveCount(6);
 });
 

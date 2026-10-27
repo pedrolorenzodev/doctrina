@@ -449,6 +449,11 @@ export const eucharistCatholic = {
     subtitle: "Objeciones a la postura católica. Abre cada una para leer en profundidad la respuesta católica.",
     videosSubtitle: "Creadores católicos que responden a esta objeción. Los videos se abren en YouTube.",
     order: ["OB-1", "OB-2", "OB-3", "OB-4", "OB-5", "OB-6", "OB-7", "DO-1", "DO-2"],
+    themes: [
+      { id: "sacrifice", name: "El sacrificio", ids: ["OB-1", "OB-5"] },
+      { id: "presence", name: "La presencia", ids: ["OB-2", "OB-3"] },
+      { id: "celebration", name: "Cómo se celebra", ids: ["OB-4", "OB-6", "OB-7"] },
+    ],
     silentTraditions:
       "Los textos que hablan por los bautistas en Doctrina (Fe y Mensaje Bautistas 2000, art. VII; Confesión de New Hampshire 1853, art. XIV) presentan la Cena como símbolo y memorial y no formulan objeciones a la doctrina católica; lo mismo la Declaración de Verdades Fundamentales de las Asambleas de Dios, art. 6.",
     items: [

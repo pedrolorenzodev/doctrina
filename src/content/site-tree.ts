@@ -30,6 +30,7 @@ export type TreeNode = {
   href: string | null;
   route: string | null;
   children: TreeNode[];
+  kind?: "heading" | undefined;
   count?: number | undefined;
   chapters?: { base: string; count: number; name: string } | undefined;
 };
@@ -97,6 +98,7 @@ export type PublishedPage = {
   doctrine: DoctrineId;
   tradition: TraditionId;
   objections: { id: string; short: string }[];
+  themes: { id: string; name: string; ids: string[] }[];
 };
 
 export type TreeText = {
@@ -141,6 +143,32 @@ const branch = (id: string, label: string, children: TreeNode[], count?: number)
   count,
 });
 
+function objectionNodes(
+  locale: Locale,
+  doctrine: DoctrineId,
+  tradition: TraditionId,
+  page: PublishedPage | undefined,
+): TreeNode[] {
+  if (!page) return [];
+  const id = `${doctrine}/${tradition}`;
+  const leafOf = (objection: { id: string; short: string }): TreeNode => ({
+    ...leaf(`${id}/objections/${objection.id}`, objection.short),
+    href: objectionHref(locale, doctrine, tradition, objection.id),
+    route: objectionRoute(locale, doctrine, tradition, objection.id),
+  });
+  if (page.themes.length === 0) return page.objections.map(leafOf);
+  return page.themes.flatMap((theme) => {
+    const inTheme = theme.ids.flatMap((objectionId) =>
+      page.objections.filter((objection) => objection.id === objectionId),
+    );
+    if (inTheme.length === 0) return [];
+    return [
+      { ...leaf(`${id}/objections/theme/${theme.id}`, theme.name), kind: "heading" as const },
+      ...inTheme.map(leafOf),
+    ];
+  });
+}
+
 const bookKeys = Object.keys(bookNames);
 const firstNewTestamentBook = bookKeys.indexOf("Matt");
 
@@ -169,15 +197,7 @@ export function buildSiteTree(
         const children = [
           leaf(`${id}/passages`, text.tree.passages),
           {
-            ...branch(
-              `${id}/objections`,
-              text.tree.objections,
-              (page?.objections ?? []).map((objection) => ({
-                ...leaf(`${id}/objections/${objection.id}`, objection.short),
-                href: objectionHref(locale, doctrine, tradition, objection.id),
-                route: objectionRoute(locale, doctrine, tradition, objection.id),
-              })),
-            ),
+            ...branch(`${id}/objections`, text.tree.objections, objectionNodes(locale, doctrine, tradition, page)),
             href: page ? objectionsHref(locale, doctrine, tradition) : null,
             route: page ? objectionsRoute(locale, doctrine, tradition) : null,
           },

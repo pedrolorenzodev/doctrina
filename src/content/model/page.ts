@@ -89,6 +89,8 @@ export type GradeDefinition<C extends string = string> = {
   source: SourceRef<C>;
 };
 
+export type ObjectionTheme = { id: string; name: string; ids: string[] };
+
 export type TraditionPage<C extends string = string> = {
   doctrine: DoctrineId;
   tradition: TraditionId;
@@ -105,6 +107,7 @@ export type TraditionPage<C extends string = string> = {
   scriptureSubtitle: string;
   scripture: ScripturePassage[];
   objections: {
+    themes?: ObjectionTheme[];
     subtitle: string;
     videosSubtitle: string;
     order: string[];

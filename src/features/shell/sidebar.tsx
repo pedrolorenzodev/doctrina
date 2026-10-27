@@ -128,6 +128,13 @@ function TreeItem({
   currentChapter,
   text,
 }: TreeItemProps) {
+  if (node.kind === "heading") {
+    return (
+      <li data-id={node.id} data-heading="">
+        <p className="px-0.5 pt-3 pb-1 text-label font-medium text-ink-3">{node.label}</p>
+      </li>
+    );
+  }
   const chapters = node.chapters;
   const hasChildren = node.children.length > 0 || chapters !== undefined;
   const isCurrentBook = chapters !== undefined && node.id === currentId;

@@ -4,6 +4,8 @@ export const shownPassages = 4;
 
 export const shownObjections = 3;
 
+export const objectionThemeFilterFrom = 6;
+
 export const shownLifeItems = 8;
 
 export const videosPerStep = 5;

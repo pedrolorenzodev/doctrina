@@ -688,6 +688,11 @@ export const baptismCatholic = {
     subtitle: "Objeciones a la postura católica. Abre cada una para leer en profundidad la respuesta católica.",
     videosSubtitle: "Creadores católicos que responden a esta objeción. Los videos se abren en YouTube.",
     order: ["OB-1", "OB-2", "OB-3", "OB-4", "OB-5", "OB-6a", "OB-6b"],
+    themes: [
+      { id: "gives", name: "Qué da el bautismo", ids: ["OB-1", "OB-2"] },
+      { id: "after", name: "Después del bautismo", ids: ["OB-4", "OB-5"] },
+      { id: "who-how", name: "Quién bautiza y cómo", ids: ["OB-3", "OB-6a", "OB-6b"] },
+    ],
     silentTraditions:
       "Los textos que hablan por los bautistas en Doctrina definen el bautismo cristiano como «la inmersión de un creyente en agua» (Fe y Mensaje Bautistas, art. VII), y las Asambleas de Dios establecen «la ordenanza del bautismo en agua por inmersión» (Declaración de Verdades Fundamentales, 6). Las objeciones que de ahí se plantean en el debate están en esta misma lista, marcadas «Frecuente en el debate».",
     items: [

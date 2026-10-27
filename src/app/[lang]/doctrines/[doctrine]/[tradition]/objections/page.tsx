@@ -13,7 +13,7 @@ import { objectionsPageText } from "@/content/objections-page-text";
 import { traditionHref } from "@/content/routes";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import { ObjectionList } from "@/features/doctrine/objection-list";
+import { ThemedObjectionList } from "@/features/doctrine/themed-objection-list";
 import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
 import { currentLocale } from "@/lib/current-locale";
 
@@ -75,12 +75,7 @@ export default async function ObjectionsRoute({
         <PageHeader className="mt-5.5 sm:mt-7.5" title={header.title} lede={header.lede} />
         <section aria-label={text.doctrine.objections} className="mt-8 sm:mt-11">
           <div className="max-w-col">
-            <ObjectionList
-              objections={officialObjections(page)}
-              doctrine={doctrine}
-              tradition={tradition}
-              locale={locale}
-            />
+            <ThemedObjectionList page={page} locale={locale} objections={officialObjections(page)} headingAs="h2" />
           </div>
         </section>
       </PageMain>

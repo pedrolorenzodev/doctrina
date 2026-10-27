@@ -35,6 +35,18 @@ const mutations = [
   ["review language", (r, p) => (p.teach.statements[0].text += " Ver el dosier."), "review language"],
   ["duplicate statement id", (r, p) => (p.teach.statements[1].id = p.teach.statements[0].id), "duplicate id"],
   ["objection missing from the order", (r, p) => p.objections.order.pop(), "missing"],
+  [
+    "a theme with an unknown objection",
+    (r, p) => p.objections.themes[0].ids.push("OB-99"),
+    "OB-99 is not an official objection",
+  ],
+  [
+    "an objection in two themes",
+    (r, p) => p.objections.themes[1].ids.push(p.objections.themes[0].ids[0]),
+    "sits in 2 themes",
+  ],
+  ["an objection in no theme", (r, p) => p.objections.themes[0].ids.shift(), "sits in 0 themes"],
+  ["duplicate theme id", (r, p) => (p.objections.themes[1].id = p.objections.themes[0].id), "duplicate theme"],
   ["edition of another work", (r) => (Object.values(r.editions)[0].works = ["trent-nope"]), "unknown work"],
   [
     "passage in the wrong edition",
