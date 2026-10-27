@@ -12,6 +12,7 @@ import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { FatherStrip } from "@/features/reader/father-strip";
 import { FatherBody } from "@/features/reader/father-body";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
+import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { VerseArrival } from "@/features/reader/verse-arrival";
 import { TreeToggle } from "@/features/shell/tree-toggle";
 import { currentLocale } from "@/lib/current-locale";
@@ -49,6 +50,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
   return (
     <PageMain wideGutter>
       <ReaderSizeScript />
+      <ReaderTextScript />
       <FatherStrip
         treeToggle={<TreeToggle label={labels.treeToggle} />}
         yourNotes={{ label: labels.yourNotes.button, book: work.id, chapter: 1 }}
@@ -56,12 +58,13 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           mark: labels.textOptions.mark,
           label: labels.textOptions.label,
           size: labels.size,
+          settings: labels.textOptions.settings,
           formatGroup: labels.textOptions.formatGroup,
           formats: { lines: labels.textOptions.lines, flow: labels.textOptions.flow },
           locked: labels.parallel.locked,
         }}
       />
-      <div className="mx-auto max-w-col">
+      <div className="mx-auto max-w-reader">
         {/* TODO: «Historia» and «Padres» lead to their index pages once those exist */}
         <Breadcrumbs
           label={text.shell.breadcrumb}

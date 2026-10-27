@@ -59,7 +59,7 @@ export function ChapterText({
       lang={lang}
       data-chapter-text=""
       data-second={second ? second.mode : undefined}
-      className={`relative mt-8.5 ${second?.mode === "side" ? "grid max-w-wide grid-cols-2 gap-x-10" : "max-w-col"}`}
+      className={`relative mt-8.5 ${second?.mode === "side" ? "grid max-w-wide grid-cols-2 gap-x-10" : "max-w-reader"}`}
     >
       {second?.mode === "side" ? (
         <>
@@ -72,7 +72,7 @@ export function ChapterText({
           {headingAt.has(verse.verse) ? (
             <h3
               data-section-heading=""
-              className={`mt-8 mb-2.5 font-head text-section-heading font-medium text-ink first:mt-0 ${second?.mode === "side" ? "col-span-2" : ""}`}
+              className={`mt-8 mb-2.5 font-head text-section-heading font-reader-heading text-ink first:mt-0 ${second?.mode === "side" ? "col-span-2" : ""}`}
             >
               {headingAt.get(verse.verse)}
             </h3>
@@ -80,7 +80,7 @@ export function ChapterText({
           <p
             id={`${idPrefix}v-${verse.verse}`}
             data-paragraph-start={paragraphStarts.has(verse.verse) || undefined}
-            className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 font-body text-reader font-light text-ink-2 arrival-mark data-marked:bg-mark"
+            className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 font-body text-reader font-reader text-ink-2 arrival-mark data-marked:bg-mark"
           >
             <span className="mb-1 flex items-baseline gap-2 font-ui text-division text-ink-3 tabular-nums md:contents">
               <span className="md:absolute md:top-3 md:-left-16.5 md:w-14 md:text-right">{verse.verse}</span>
@@ -89,6 +89,7 @@ export function ChapterText({
                   type="button"
                   onClick={(event) => onMark(verse.verse, event.currentTarget)}
                   className={`note-mark-in hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:top-8 md:-left-16.5 md:w-14 md:text-right ${cardsShown ? "notes:hidden" : ""}`}
+                  data-cards-shown={cardsShown || undefined}
                 >
                   {noteMarkOf(verse.verse)}
                 </button>
@@ -128,7 +129,7 @@ export function ChapterText({
               data-second-verse={verse.verse}
               className={
                 second.mode === "side"
-                  ? "-mx-3 mb-1.5 px-3 py-2 font-body text-reader font-light text-ink-2"
+                  ? "-mx-3 mb-1.5 px-3 py-2 font-body text-reader font-reader text-ink-2"
                   : "-mt-1 mb-1.5 ml-4.5 border-l border-rule-2 pl-3.5 font-body text-reader-second font-light text-ink-prose"
               }
             >

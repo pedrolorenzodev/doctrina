@@ -235,7 +235,7 @@ export function FatherBody({
 
   return (
     <>
-      <div ref={textRoot} lang={lang} data-father-text="" className="relative mt-8.5 max-w-col">
+      <div ref={textRoot} lang={lang} data-father-text="" className="relative mt-8.5 max-w-reader">
         {divisions.map((division) => {
           const mark = noteMarkOf(division.ordinal);
           return (
@@ -267,7 +267,7 @@ export function FatherBody({
               {division.heading ? (
                 <p className="m-0 mb-1 font-ui text-ui-xs font-medium text-ink-3">{division.heading}</p>
               ) : null}
-              <p className="m-0 font-body text-reader font-light text-ink-2">
+              <p className="m-0 font-body text-reader font-reader text-ink-2">
                 <span data-verse-text={division.ordinal}>
                   {highlights.segmentsFor(division.ordinal, division.text.length).map((segment) =>
                     segment.color ? (

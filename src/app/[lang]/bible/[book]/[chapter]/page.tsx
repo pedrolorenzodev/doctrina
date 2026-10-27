@@ -13,6 +13,7 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ReaderStream } from "@/features/reader/reader-stream";
 import { ReaderFormatScript } from "@/features/reader/reader-format-script";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
+import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { ReaderStrip } from "@/features/reader/reader-strip";
 import { VerseArrival } from "@/features/reader/verse-arrival";
 import { TreeToggle } from "@/features/shell/tree-toggle";
@@ -87,6 +88,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
   return (
     <PageMain wideGutter>
       <ReaderSizeScript />
+      <ReaderTextScript />
       <ReaderFormatScript />
       <ReaderStrip
         treeToggle={<TreeToggle label={labels.treeToggle} />}
@@ -103,6 +105,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           mark: labels.textOptions.mark,
           label: labels.textOptions.label,
           size: labels.size,
+          settings: labels.textOptions.settings,
           formatGroup: labels.textOptions.formatGroup,
           formats: { lines: labels.textOptions.lines, flow: labels.textOptions.flow },
           locked: labels.parallel.locked,
@@ -138,7 +141,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           stepAria: labels.stepAria,
         }}
       />
-      <div className="reader-column mx-auto max-w-col has-data-[second=side]:max-w-wide">
+      <div className="reader-column mx-auto max-w-reader has-data-[second=side]:max-w-wide">
         <ReaderStream
           key={`${book.id}/${chapter}`}
           initial={loaded}

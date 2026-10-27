@@ -2,6 +2,7 @@
 
 import { useCallback, useId, useRef, useState, useSyncExternalStore } from "react";
 import { HangingMenu } from "@/components/hanging-menu";
+import { TextSettings, type TextSettingsText } from "@/features/reader/text-settings";
 import { TextSizeControl } from "@/features/reader/text-size-control";
 import {
   chooseReaderFormat,
@@ -15,6 +16,7 @@ type TextOptionsText = {
   mark: string;
   label: string;
   size: Parameters<typeof TextSizeControl>[0]["text"];
+  settings: TextSettingsText;
   formatGroup: string;
   formats: { lines: string; flow: string };
   locked: string;
@@ -60,6 +62,7 @@ export function TextOptions({ text, locked, sizeOnly = false }: TextOptionsProps
         <div data-menu-item="" className="flex pb-1 pl-1">
           <TextSizeControl text={text.size} />
         </div>
+        <TextSettings text={text.settings} />
         {sizeOnly ? null : (
           <>
             <p data-menu-item="" className="mt-3.5 mb-1.5 ml-1 text-label font-medium text-ink-3">

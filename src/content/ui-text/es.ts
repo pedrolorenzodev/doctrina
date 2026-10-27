@@ -68,6 +68,7 @@ export const es = {
     allPassages: "Ver los {n} pasajes",
     objections: "Objeciones",
     allObjections: "Ver las {n} objeciones",
+    objectionTheme: { label: "Tema", all: "Todas" },
     objectionsPage: {
       title: "Objeciones a la posición {tradition}",
       lede: "Lo que otras tradiciones objetan a la postura {tradition} sobre {doctrine}. Cada objeción abre su página, con la respuesta {tradition}.",
@@ -275,6 +276,14 @@ export const es = {
       formatGroup: "Formato",
       lines: "Un versículo por línea",
       flow: "En párrafo",
+      settings: {
+        weight: { group: "Grosor del texto", less: "Letra más fina", more: "Letra más gruesa" },
+        leading: { group: "Interlineado", less: "Menos espacio entre líneas", more: "Más espacio entre líneas" },
+        measure: { group: "Ancho del texto", less: "Líneas más cortas", more: "Líneas más largas" },
+        align: { group: "Alineación", left: "Izquierda", justified: "Justificada" },
+        lessMark: "−",
+        moreMark: "+",
+      },
     },
     parallel: {
       label: "Segunda traducción",

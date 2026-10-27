@@ -300,3 +300,30 @@ test("while «Tus notas» is open the cards give way to the marks and the column
   });
   expect(Math.abs(room)).toBeLessThan(1);
 });
+
+test("in «En párrafo» on the BSB a card is level with its verse's first line, and the margin mark is gone while the card shows", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("doctrina-translation", "bsb");
+    localStorage.setItem("doctrina-reader-format", "flow");
+  });
+  await openWithNotes(page);
+  await expect(page.locator("[data-section-heading]").first()).toBeVisible();
+  await expect(page.locator(card)).toHaveCount(4);
+  for (const verse of [35, 53]) {
+    const line = await page.evaluate(
+      (n) => document.querySelector(`[data-verse-text="${n}"]`)!.getClientRects()[0]!.top,
+      verse,
+    );
+    const placed = (await page.locator(cardAt(verse)).first().boundingBox())!;
+    expect(Math.abs(placed.y - line)).toBeLessThan(2);
+  }
+  for (const verse of [35, 53, 57]) {
+    const display = await page.evaluate(
+      (n) => getComputedStyle(document.querySelector(`#v-${n} button[class*=note-mark-in]`)!).display,
+      verse,
+    );
+    expect(display).toBe("none");
+  }
+});

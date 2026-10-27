@@ -15,6 +15,14 @@ type NoteCardsProps = {
 };
 
 const gapPx = 8;
+
+function verseTop(root: HTMLElement, verse: string, idPrefix: string): number {
+  const unit = document.getElementById(`${idPrefix}v-${verse}`);
+  if (!unit) return 0;
+  const line = unit.querySelector<HTMLElement>("[data-verse-text]")?.getClientRects()[0];
+  if (getComputedStyle(unit).display !== "inline" || !line) return unit.offsetTop;
+  return line.top - root.getBoundingClientRect().top;
+}
 const resizeDelayMs = 150;
 
 export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onPreview }: NoteCardsProps) {
@@ -29,7 +37,7 @@ export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onP
       if (container.offsetParent === null) return;
       let floor = 0;
       for (const card of container.querySelectorAll<HTMLElement>("[data-note-card]")) {
-        const top = Math.max(document.getElementById(`${idPrefix}v-${card.dataset.verse}`)?.offsetTop ?? 0, floor);
+        const top = Math.max(verseTop(root, card.dataset.verse ?? "", idPrefix), floor);
         card.style.setProperty("--note-top", `${top}px`);
         floor = top + card.offsetHeight + gapPx;
       }

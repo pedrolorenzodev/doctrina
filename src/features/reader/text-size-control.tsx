@@ -19,7 +19,7 @@ type TextSizeControlText = {
   largerMark: string;
 };
 
-const buttonClassName =
+export const stepButtonClassName =
   "inline-flex min-h-7 min-w-7.5 cursor-pointer items-center justify-center rounded-5 px-2.5 py-1 text-ui-xs leading-label font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent pointer-coarse:min-h-11 pointer-coarse:min-w-11";
 
 export function TextSizeControl({ text }: { text: TextSizeControlText }) {
@@ -39,7 +39,7 @@ export function TextSizeControl({ text }: { text: TextSizeControlText }) {
         aria-label={text.smaller}
         disabled={size === readerSizes[0]}
         onClick={() => step(-1)}
-        className={buttonClassName}
+        className={stepButtonClassName}
       >
         {text.smallerMark}
       </button>
@@ -48,7 +48,7 @@ export function TextSizeControl({ text }: { text: TextSizeControlText }) {
         aria-label={text.larger}
         disabled={size === readerSizes[readerSizes.length - 1]}
         onClick={() => step(1)}
-        className={buttonClassName}
+        className={stepButtonClassName}
       >
         {text.largerMark}
       </button>

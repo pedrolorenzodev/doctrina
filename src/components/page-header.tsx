@@ -13,6 +13,8 @@ const titleSizes = {
   reader: "opsz-60 text-balance text-reader-title-mobile sm:text-reader-title",
 };
 
+const titleWeights = { display: "font-light", objection: "font-light", reader: "font-reader-title" };
+
 function ledeParts(lede: string, emphasis: string | undefined) {
   const start = emphasis ? lede.toLowerCase().indexOf(emphasis.toLowerCase()) : -1;
   if (!emphasis || start < 0) return { before: lede, term: "", after: "" };
@@ -24,7 +26,9 @@ export function PageHeader({ id, className = "", title, lede, emphasis, size = "
   const { before, term, after } = ledeParts(lede ?? "", emphasis);
   return (
     <header id={id} className={`max-w-col ${className}`}>
-      <h1 className={`title-part title-part-1 font-head font-light text-ink ${titleSizes[size]}`}>{title}</h1>
+      <h1 className={`title-part title-part-1 font-head ${titleWeights[size]} text-ink ${titleSizes[size]}`}>
+        {title}
+      </h1>
       {lede ? (
         <p className="title-part title-part-2 font-head text-lede-mobile sm:text-lede opsz-36 mt-3.5 font-light text-ink-2 italic">
           {before}

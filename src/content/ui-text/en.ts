@@ -70,6 +70,7 @@ export const en: UiText = {
     allPassages: "See all {n} passages",
     objections: "Objections",
     allObjections: "See all {n} objections",
+    objectionTheme: { label: "Theme", all: "All" },
     objectionsPage: {
       title: "Objections to the {tradition} position",
       lede: "What other traditions object to the {tradition} view of {doctrine}. Each objection opens its own page, with the {tradition} answer.",
@@ -277,6 +278,14 @@ export const en: UiText = {
       formatGroup: "Format",
       lines: "One verse per line",
       flow: "As a paragraph",
+      settings: {
+        weight: { group: "Text weight", less: "Lighter letters", more: "Heavier letters" },
+        leading: { group: "Line spacing", less: "Less space between lines", more: "More space between lines" },
+        measure: { group: "Line length", less: "Shorter lines", more: "Longer lines" },
+        align: { group: "Alignment", left: "Left", justified: "Justified" },
+        lessMark: "−",
+        moreMark: "+",
+      },
     },
     parallel: {
       label: "Second translation",
