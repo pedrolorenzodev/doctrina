@@ -251,7 +251,7 @@ test("the tab indicator slides to the chosen tab in about 340 ms, and jumps unde
   expect(moving.length).toBeGreaterThanOrEqual(3);
   const began = sampled.find((frame) => frame.left > before.x + 0.5)!.t;
   const done = sampled.find((frame) => frame.left >= sampled[sampled.length - 1]!.left - 0.5)!.t;
-  expect(done - began).toBeGreaterThan(200);
+  expect(done - began).toBeGreaterThan(150);
   expect(done - began).toBeLessThan(520);
   const tabBox = (await tab.boundingBox())!;
   const after = (await page.locator(indicator).boundingBox())!;

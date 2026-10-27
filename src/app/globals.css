@@ -101,6 +101,7 @@
   --text-micro-lg: 11.5px;
   --spacing-panel: 380px;
   --spacing-note-card: 240px;
+  --spacing-note-room: 280px;
   --text-note-card: 15px;
   --text-dialog-title: 23px;
   --text-dialog-title--line-height: 1.25;
@@ -1476,15 +1477,36 @@ html.theme-switching ::after {
 }
 
 @custom-variant notes {
-  @media (min-width: 97rem) {
+  @media (min-width: 83.625rem) {
     :root:not([data-tree="closed"]) & {
       @slot;
     }
   }
 
-  @media (min-width: 80rem) {
+  @media (min-width: 66.625rem) {
     :root[data-tree="closed"] & {
       @slot;
+    }
+  }
+}
+
+@utility reader-column {
+  position: relative;
+  transition: left 360ms var(--ease-smooth);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  @media (min-width: 66.625rem) {
+    :root[data-tree="closed"] &:has([data-note-cards]) {
+      left: calc(-1 * max(0px, var(--spacing-note-room) - (100vw - var(--container-col)) / 2));
+    }
+  }
+
+  @media (min-width: 83.625rem) {
+    :root:not([data-tree="closed"]) &:has([data-note-cards]) {
+      left: calc(-1 * max(0px, var(--spacing-note-room) - (100vw - var(--spacing-sidebar) - var(--container-col)) / 2));
     }
   }
 }

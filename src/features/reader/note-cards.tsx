@@ -55,6 +55,7 @@ export function NoteCards({ label, cards, hidden, rootRef, onOpen, onPreview }: 
       ref={box}
       role="group"
       aria-label={label}
+      data-note-cards={hidden || cards.length === 0 ? undefined : ""}
       className={`absolute top-0 left-full ml-10 w-note-card ${hidden ? "hidden" : "hidden notes:block"}`}
     >
       {cards.map((card) => (

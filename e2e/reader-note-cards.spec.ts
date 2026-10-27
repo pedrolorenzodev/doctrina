@@ -72,7 +72,7 @@ async function openWithNotes(page: Page, width = 1440, tree: "open" | "closed" =
 const highlightSize = (page: Page) =>
   page.evaluate(() => (CSS.highlights.get("note-words") as Highlight | undefined)?.size ?? 0);
 
-test("with the tree closed, from 1280 px, a note is a card 40 px right of the column, level with its verse, and the margin mark is gone", async ({
+test("with the tree closed, from 1066 px, a note is a card 40 px right of the column, level with its verse, and the margin mark is gone", async ({
   page,
 }) => {
   await openWithNotes(page);
@@ -137,8 +137,8 @@ test("under reduced motion the marks are fully opaque from their first frame", a
   expect(shown.every((frame) => frame.opacity === 1)).toBe(true);
 });
 
-test("with the tree closed, below 1280 px, there are no cards and the marks stay", async ({ page }) => {
-  await openWithNotes(page, 1240);
+test("with the tree closed, below 1066 px, there are no cards and the marks stay", async ({ page }) => {
+  await openWithNotes(page, 1040);
   await expect(page.locator(mark(53))).toBeVisible();
   await expect(page.locator(card).first()).toBeHidden();
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
@@ -185,12 +185,12 @@ test("a note on words made in this edition says only its reference", async ({ pa
   await expect(page.locator(cardAt(57))).not.toContainText("en BSB");
 });
 
-test("with the tree open the marks say «1 nota» at 1440 px and the cards come back from 1552 px", async ({ page }) => {
-  await openWithNotes(page, 1440, "open");
+test("with the tree open the marks say «1 nota» below 1338 px and the cards come from there", async ({ page }) => {
+  await openWithNotes(page, 1300, "open");
   await expect(page.locator("aside#site-sidebar")).toBeVisible();
   await expect(page.locator(mark(53))).toBeVisible();
   await expect(page.locator(card).first()).toBeHidden();
-  await page.setViewportSize({ width: 1552, height: 900 });
+  await page.setViewportSize({ width: 1338, height: 900 });
   await expect(page.locator(cardAt(53)).first()).toBeVisible();
   await expect(page.locator(mark(53))).toBeHidden();
 });
@@ -198,7 +198,7 @@ test("with the tree open the marks say «1 nota» at 1440 px and the cards come 
 test("closing the tree with the toggle swaps the marks for the cards, and opening it swaps them back", async ({
   page,
 }) => {
-  await openWithNotes(page, 1440, "open");
+  await openWithNotes(page, 1300, "open");
   await expect(page.locator(mark(53))).toBeVisible();
   await page.locator("[data-reader-strip] [data-tree-toggle]").click();
   await expect(page.locator(cardAt(53)).first()).toBeVisible();
@@ -207,14 +207,96 @@ test("closing the tree with the toggle swaps the marks for the cards, and openin
   await expect(page.locator(mark(53))).toBeVisible();
 });
 
-test("the reading column is centred in the room beside the tree, open or closed", async ({ page }) => {
-  for (const tree of ["open", "closed"] as const) {
-    await openWithNotes(page, 1440, tree);
-    const places = await page.evaluate(() => {
-      const column = document.querySelector("[data-chapter-text]")!.getBoundingClientRect();
-      const main = document.querySelector("main")!.getBoundingClientRect();
-      return { column: (column.left + column.right) / 2, main: (main.left + main.right) / 2 };
-    });
-    expect(Math.abs(places.column - places.main)).toBeLessThan(1);
-  }
+const columnPlaces = (page: Page) =>
+  page.evaluate(() => {
+    const column = document.querySelector("[data-chapter-text]")!.getBoundingClientRect();
+    const main = document.querySelector("main")!.getBoundingClientRect();
+    return {
+      centre: (column.left + column.right) / 2 - (main.left + main.right) / 2,
+      left: column.left - main.left,
+      right: main.right - column.right,
+    };
+  });
+
+test("the column stays centred while the cards fit, and with no notes it is always centred", async ({ page }) => {
+  await openWithNotes(page, 1440, "closed");
+  expect(Math.abs((await columnPlaces(page)).centre)).toBeLessThan(1);
+  await openWithNotes(page, 1552, "open");
+  expect(Math.abs((await columnPlaces(page)).centre)).toBeLessThan(1);
+  await page.addInitScript(() => localStorage.setItem("doctrina-notes", "[]"));
+  await page.goto(john);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.waitForTimeout(500);
+  expect(Math.abs((await columnPlaces(page)).centre)).toBeLessThan(1);
+});
+
+test("when the cards do not fit centred the column shifts left just enough, keeping 66 px for the numbers", async ({
+  page,
+}) => {
+  await openWithNotes(page, 1440, "open");
+  await page.waitForTimeout(500);
+  const open = await columnPlaces(page);
+  expect(open.right).toBeCloseTo(280, 0);
+  expect(open.left).toBeCloseTo(168, 0);
+  const first = (await page.locator(cardAt(53)).first().boundingBox())!;
+  expect(first.x + first.width).toBeLessThanOrEqual(1440);
+  await openWithNotes(page, 1100, "closed");
+  await page.waitForTimeout(500);
+  expect((await columnPlaces(page)).left).toBeCloseTo(100, 0);
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+  await page.setViewportSize({ width: 1066, height: 900 });
+  await page.waitForTimeout(500);
+  expect((await columnPlaces(page)).left).toBeCloseTo(66, 0);
+  await expect(page.locator(cardAt(53)).first()).toBeVisible();
+});
+
+test("the shift is continuous: 0 px at 1280, growing as the window narrows, and it slides with the tree", async ({
+  page,
+}) => {
+  await openWithNotes(page, 1280, "closed");
+  await page.waitForTimeout(500);
+  expect(Math.abs((await columnPlaces(page)).centre)).toBeLessThan(1);
+  await page.setViewportSize({ width: 1200, height: 900 });
+  await page.waitForTimeout(500);
+  const shift = -(await columnPlaces(page)).centre;
+  expect(shift).toBeCloseTo(40, 0);
+});
+
+test("opening the verse panel hides the cards and the column recentres in the room left", async ({ page }) => {
+  await openWithNotes(page, 1440, "open");
+  await page.waitForTimeout(500);
+  await page.locator("#v-10 [role=button]").click();
+  await expect(page.locator(panel)).toHaveAttribute("data-open", "true");
+  await page.waitForTimeout(700);
+  const room = await page.evaluate(() => {
+    const main = document.querySelector("main")!;
+    const rect = main.getBoundingClientRect();
+    const style = getComputedStyle(main);
+    const column = document.querySelector("[data-chapter-text]")!.getBoundingClientRect();
+    const left = rect.left + parseFloat(style.paddingLeft);
+    const right = rect.right - parseFloat(style.paddingRight);
+    return (column.left + column.right) / 2 - (left + right) / 2;
+  });
+  expect(Math.abs(room)).toBeLessThan(1);
+});
+
+test("while «Tus notas» is open the cards give way to the marks and the column is not shifted", async ({ page }) => {
+  await openWithNotes(page, 1440, "open");
+  await page.waitForTimeout(500);
+  await expect(page.locator(cardAt(53)).first()).toBeVisible();
+  await page.locator("main [data-reader-strip] [data-your-notes]").click();
+  await expect(page.locator('aside[data-side-panel][aria-label="Tus notas"]')).toHaveAttribute("data-open", "true");
+  await expect(page.locator(card).first()).toBeHidden();
+  await expect(page.locator(mark(53))).toBeVisible();
+  await page.waitForTimeout(700);
+  const room = await page.evaluate(() => {
+    const main = document.querySelector("main")!;
+    const rect = main.getBoundingClientRect();
+    const style = getComputedStyle(main);
+    const column = document.querySelector("[data-chapter-text]")!.getBoundingClientRect();
+    const left = rect.left + parseFloat(style.paddingLeft);
+    const right = rect.right - parseFloat(style.paddingRight);
+    return (column.left + column.right) / 2 - (left + right) / 2;
+  });
+  expect(Math.abs(room)).toBeLessThan(1);
 });

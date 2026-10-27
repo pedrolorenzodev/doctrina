@@ -139,7 +139,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           nextLabel: labels.next,
         }}
       />
-      <div className="mx-auto max-w-col has-data-[second=side]:max-w-wide">
+      <div className="reader-column mx-auto max-w-col has-data-[second=side]:max-w-wide">
         {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
         <Breadcrumbs
           label={text.shell.breadcrumb}

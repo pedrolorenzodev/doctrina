@@ -401,13 +401,13 @@ export function ReaderBody({
         rootRef={textRoot}
         segmentsOf={(entry) => highlights.segmentsFor(entry.verse, entry.text.length)}
         noteMarkOf={noteMarkOf}
-        cardsShown={verse === null && second?.mode !== "side"}
+        cardsShown={verse === null && !yourOpen && second?.mode !== "side"}
         cards={
           second?.mode === "side" ? null : (
             <NoteCards
               label={panel.notes.cardsLabel}
               cards={cards}
-              hidden={verse !== null}
+              hidden={verse !== null || yourOpen}
               rootRef={textRoot}
               onOpen={openCard}
               onPreview={previewNote}
