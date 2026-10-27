@@ -48,10 +48,7 @@ test.describe("panel", () => {
     await page.locator(verseButton(53)).click();
     const cite = page.locator(panel).getByRole("button", { name: "Citar", exact: true });
     await page.waitForTimeout(450);
-    const linkBefore = (await page.locator(panel).getByRole("button", { name: "Copiar enlace" }).boundingBox())!;
     await cite.click();
-    const linkAfter = (await page.locator(panel).getByRole("button", { name: "Copiar enlace" }).boundingBox())!;
-    expect(Math.abs(linkAfter.x - linkBefore.x)).toBeLessThan(1);
     expect((await readClipboard(page)).replace(/ /g, " ")).toBe("Juan 6:53 (RV1909)");
     await expect(page.locator(panel).getByRole("button", { name: "Cita copiada" })).toBeVisible();
     await expect(cite).toBeVisible({ timeout: 3000 });

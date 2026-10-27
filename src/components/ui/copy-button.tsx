@@ -9,9 +9,10 @@ type CopyButtonProps = {
   done: string;
   text: () => string;
   compact?: boolean;
+  reserveWidth?: boolean;
 };
 
-export function CopyButton({ label, done, text, compact = false }: CopyButtonProps) {
+export function CopyButton({ label, done, text, compact = false, reserveWidth = true }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
   const timer = useRef(0);
 
@@ -35,8 +36,16 @@ export function CopyButton({ label, done, text, compact = false }: CopyButtonPro
         onClick={copy}
         className={`inline-grid ${compact ? "min-h-9" : "min-h-10"} cursor-pointer place-items-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11`}
       >
-        <span className={`col-start-1 row-start-1 ${copied ? "invisible" : ""}`}>{label}</span>
-        <span className={`col-start-1 row-start-1 ${copied ? "" : "invisible"}`}>{done}</span>
+        {reserveWidth ? (
+          <>
+            <span className={`col-start-1 row-start-1 ${copied ? "invisible" : ""}`}>{label}</span>
+            <span className={`col-start-1 row-start-1 ${copied ? "" : "invisible"}`}>{done}</span>
+          </>
+        ) : copied ? (
+          done
+        ) : (
+          label
+        )}
       </button>
       <span role="status" className="sr-only">
         {copied ? done : null}

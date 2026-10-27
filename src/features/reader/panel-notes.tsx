@@ -9,7 +9,7 @@ type PanelNotesProps = {
 export function PanelNotes({ notes, dateLabel, onOpen }: PanelNotesProps) {
   if (notes.length === 0) return null;
   return (
-    <ul className="m-0 mb-5 list-none border-b border-rule p-0">
+    <ul className="m-0 list-none border-b border-rule p-0">
       {notes.map((note) => (
         <li key={note.id} className="border-t border-rule">
           <button

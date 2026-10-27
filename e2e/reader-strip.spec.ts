@@ -134,3 +134,20 @@ test("keyboard focus inside the strip still keeps it in view", async ({ page }) 
   }
   await expect(page.locator(strip)).not.toHaveAttribute("data-hidden", "");
 });
+
+test("the tree's content is visible during the whole slide, when it opens and when it closes", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.addInitScript(() => localStorage.setItem("doctrina-tree", "closed"));
+  await page.goto(john);
+  const visibility = () => page.locator("aside#site-sidebar").evaluate((el) => getComputedStyle(el).visibility);
+  expect(await visibility()).toBe("hidden");
+  await page.locator(toggle).click();
+  await page.waitForTimeout(120);
+  expect(await visibility()).toBe("visible");
+  await page.waitForTimeout(500);
+  await page.locator(toggle).click();
+  await page.waitForTimeout(200);
+  expect(await visibility()).toBe("visible");
+  await page.waitForTimeout(500);
+  expect(await visibility()).toBe("hidden");
+});

@@ -4,7 +4,9 @@ import { SidePanel } from "@/components/side-panel";
 import { ActionButton } from "@/components/ui/action";
 import { CopyButton } from "@/components/ui/copy-button";
 import { HighlightColors } from "@/features/reader/highlight-colors";
-import type { ReactNode } from "react";
+import { PanelSections, type PanelSection } from "@/features/reader/panel-sections";
+import { flipBlocks } from "@/lib/block-motion";
+import { useRef, type ReactNode } from "react";
 import type { HighlightColor } from "@/lib/highlights";
 
 export const readerPanelFrom = "xl";
@@ -17,6 +19,15 @@ type VersePanelText = {
   copyLink: string;
   linkCopied: string;
   openDetail: string;
+  sections: {
+    group: string;
+    notes: string;
+    words: string;
+    uses: string;
+    translations: string;
+    spanish: string;
+    english: string;
+  };
 };
 
 type VersePanelProps = {
@@ -38,7 +49,9 @@ type VersePanelProps = {
   onClose: () => void;
   link?: () => string;
   withDetail?: boolean;
-  children: ReactNode;
+  sections?: PanelSection[];
+  forceSection?: string | null;
+  children?: ReactNode;
 };
 
 export function VersePanel({
@@ -54,8 +67,16 @@ export function VersePanel({
   onClose,
   link = () => `${location.origin}${location.pathname}#v-${verse}`,
   withDetail = true,
+  sections,
+  forceSection = null,
   children,
 }: VersePanelProps) {
+  const body = useRef<HTMLDivElement>(null);
+  const ghosts = useRef<HTMLDivElement>(null);
+  const flip = (mutate: () => void) => {
+    if (body.current && ghosts.current) flipBlocks(body.current, ghosts.current, mutate);
+    else mutate();
+  };
   return (
     <SidePanel
       open={open}
@@ -67,28 +88,41 @@ export function VersePanel({
       from={readerPanelFrom}
       focusOnOpen={focusOnOpen}
     >
-      <div className="-mt-2 mb-3 -ml-2.5 flex flex-wrap items-center gap-x-1">
-        <CopyButton label={text.cite} done={text.citeCopied} text={() => citation} />
-        <CopyButton label={text.copyLink} done={text.linkCopied} text={link} />
-        <HighlightColors
-          text={highlight.text}
-          current={highlight.current}
-          canRemove={highlight.canRemove}
-          showLabel
-          onPick={highlight.onPick}
-          onRemove={highlight.onRemove}
-        />
-        <button
-          type="button"
-          onClick={onNote}
-          className="inline-flex min-h-10 cursor-pointer items-center justify-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
+      <div ref={body} className="relative">
+        <div
+          data-flip-block="actions"
+          className={`-mt-2 -ml-2.5 flex flex-wrap items-center gap-x-1 ${sections ? "mb-4" : "mb-3"}`}
         >
-          {noteLabel}
-        </button>
+          <CopyButton label={text.cite} done={text.citeCopied} text={() => citation} reserveWidth={false} />
+          <CopyButton label={text.copyLink} done={text.linkCopied} text={link} reserveWidth={false} />
+          <HighlightColors
+            text={highlight.text}
+            current={highlight.current}
+            canRemove={highlight.canRemove}
+            showLabel
+            onPick={highlight.onPick}
+            onRemove={highlight.onRemove}
+          />
+          <button
+            type="button"
+            onClick={onNote}
+            className="inline-flex min-h-10 cursor-pointer items-center justify-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
+          >
+            {noteLabel}
+          </button>
+        </div>
+        {sections ? (
+          <PanelSections label={text.sections.group} sections={sections} forceId={forceSection} flip={flip} />
+        ) : null}
+        {children}
+        {/* TODO: opens the verse's own page (06) once it exists */}
+        {withDetail ? (
+          <div data-flip-block="detail" className="mt-5 flow-root">
+            <ActionButton>{text.openDetail}</ActionButton>
+          </div>
+        ) : null}
+        <div ref={ghosts} aria-hidden="true" className="pointer-events-none absolute inset-0 flip-ghosts" />
       </div>
-      {children}
-      {/* TODO: opens the verse's own page (06) once it exists */}
-      {withDetail ? <ActionButton>{text.openDetail}</ActionButton> : null}
     </SidePanel>
   );
 }

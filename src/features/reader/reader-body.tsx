@@ -20,6 +20,8 @@ import {
 import { NoteEditor } from "@/features/reader/note-editor";
 import { clearNoteWords, markNoteWords } from "@/features/reader/note-words";
 import { PanelNotes } from "@/features/reader/panel-notes";
+import type { PanelSection } from "@/features/reader/panel-sections";
+import { PanelTranslations } from "@/features/reader/panel-translations";
 import type { ReaderSelection } from "@/features/reader/read-selection";
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
 import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
@@ -211,6 +213,70 @@ export function ReaderBody({
     bookId,
   );
   const editor = notes.editing && notes.editing.draft.verse === verse ? notes.editing : null;
+  const verseNotes = verse === null ? [] : notes.at(verse).filter((note) => note.id !== editor?.noteId);
+  const sectionText = panel.text.sections;
+  const otherEditions =
+    verse === null
+      ? []
+      : views
+          .filter((view) => view.id !== selected.id)
+          .filter(
+            (view) =>
+              !numberingDiffers(
+                { id: selected.id, versification: selected.versification, verseCount: selected.verses.length },
+                { id: view.id, versification: view.versification, verseCount: view.verses.length },
+                bookId,
+              ),
+          )
+          .flatMap((view) => {
+            const entry = view.verses.find((candidate) => candidate.verse === verse);
+            if (!entry) return [];
+            const language = view.language === "es" ? sectionText.spanish : sectionText.english;
+            return [{ id: view.id, name: view.displayName, language, lang: view.language, text: entry.text }];
+          });
+  const sections: PanelSection[] = [
+    ...(editor || verseNotes.length > 0
+      ? [
+          {
+            id: "notes",
+            label: sectionText.notes,
+            ...(verseNotes.length > 0 ? { count: verseNotes.length } : {}),
+            content: (
+              <>
+                {editor ? (
+                  <NoteEditor
+                    key={editor.session}
+                    reference={draftReference(editor.draft)}
+                    initial={notes.current?.text ?? ""}
+                    savedAt={notes.current?.updatedAt ?? null}
+                    dateLabel={dateLabel}
+                    text={panel.notes}
+                    onSave={notes.save}
+                    onClose={notes.close}
+                    onDelete={() => (editor.noteId ? setDeleting(editor.noteId) : notes.close())}
+                  />
+                ) : null}
+                <PanelNotes notes={verseNotes} dateLabel={dateLabel} onOpen={notes.openExisting} />
+              </>
+            ),
+          },
+        ]
+      : []),
+    // TODO: «Palabras» shows the verse's words once the STEPBible word layer is loaded
+    { id: "words", label: sectionText.words, content: null },
+    // TODO: «Usos» lists where Doctrina cites this verse once the citation registry is queryable
+    { id: "uses", label: sectionText.uses, content: null },
+    ...(otherEditions.length > 0
+      ? [
+          {
+            id: "translations",
+            label: sectionText.translations,
+            count: otherEditions.length,
+            content: <PanelTranslations items={otherEditions} />,
+          },
+        ]
+      : []),
+  ];
   const chapterNotes = selected.verses.flatMap((entry) => notes.at(entry.verse));
   const cards: NoteCard[] = chapterNotes.map((note) => {
     const first = note.verse ?? 0;
@@ -379,26 +445,9 @@ export function ReaderBody({
           }
         }}
         onClose={close}
-      >
-        {editor ? (
-          <NoteEditor
-            key={editor.session}
-            reference={draftReference(editor.draft)}
-            initial={notes.current?.text ?? ""}
-            savedAt={notes.current?.updatedAt ?? null}
-            dateLabel={dateLabel}
-            text={panel.notes}
-            onSave={notes.save}
-            onClose={notes.close}
-            onDelete={() => (editor.noteId ? setDeleting(editor.noteId) : notes.close())}
-          />
-        ) : null}
-        <PanelNotes
-          notes={verse === null ? [] : notes.at(verse).filter((note) => note.id !== editor?.noteId)}
-          dateLabel={dateLabel}
-          onOpen={notes.openExisting}
-        />
-      </VersePanel>
+        sections={sections}
+        forceSection={editor ? "notes" : null}
+      />
       <YourNotesPanel
         open={yourOpen}
         text={panel.yourNotes}

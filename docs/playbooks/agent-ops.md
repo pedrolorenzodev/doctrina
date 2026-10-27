@@ -193,3 +193,16 @@ The done files (absolute paths under `docs/research/`) are `neutral/fathers-veri
 - **Finishing the rewrite of a shared component means deleting the old one in the same block** (`filter-select.tsx`, `father-text.tsx`, `father-panel.tsx`), and adding the deleted paths to the kit part's `deleted.txt`: `snapshot.py` does not carry deletions.
 - **Do not reach for `git rm --cached` to «remove» a file: the hook blocks every staging command; `rm` the file and let Pedro's `git add` record it.**
 - **When the kit's `snapshot.py` ran for several blocks at once, split by feature with `split_block.py`, docs in the last part.**
+
+## Rules learned on 2026-10-27 (round-2 review of the reader)
+- **A state that «appears at once at the end» is a delayed property, not the animation: sample the real computed property per frame in both directions.** The tree's text and border showed only after the slide because the aside's `visibility` kept `drawer-motion`'s 260 ms delay; a rAF sample of `visibility` and the box width found it in one run. When a new utility sets `transition`, check which older utility sets it on the same element (an id selector beats both).
+- **Motion on a panel is judged on the whole panel, not on the rows.** FLIP on the list's rows left the blocks around the list jumping when the list emptied; every block that can change height or appear needs the same treatment, and the spec samples the neighbours' tops.
+- **A mark that is added for a moment is removed in the same place, both halves together** (`data-marked` and `data-arrived` left at different times; the border stayed forever). The spec asserts the end state of every part of the mark.
+- **When a transition lengthens, specs that click or measure right after the trigger must wait for it** (the strip's 380 ms margin and the menus' 340 ms reveal made four specs flaky): add the wait in the spec, never shorten the animation for the test.
+
+## Rules learned on 2026-10-27 (eighth session: D1, D2, P1)
+- **A spec that reads the clock after an event is a load test, not a motion test.** With the machine at load 100–180 (GitKraken, Codex) a «+500 ms after» sample landed at the end of the fade and four timing specs failed in the full suite and passed alone (20 of 20 repeats). Sample in the page (a `requestAnimationFrame` collector installed with `addInitScript`) and assert on the frames (a frame where both parts are partial), never on a `waitForTimeout`. Re-run failures alone with `--repeat-each` before calling them defects.
+- **Copy an approved component's text sizes by dumping both boxes, then look at the widths first.** The «Citar» button was 102 px against the artifact's 52 because `CopyButton` reserved the width of its «copiado» label; one dump of both rows found it.
+- **Check what a new list shows against the data, not only the layout.** The translations list printed the Douay-Rheims text of the neighbouring verse because its numbering differs; the existing `numberingDiffers` already knew.
+- **One block's height animation drives the blocks below it; do not translate them as well.** In `flipBlocks` the second measure is taken after the persistent blocks' height animations start (their first frame is the old height), so followers need no translate.
+- **A background suite and a build are exclusive:** the suite owns `.next`; do docs only until `SUITE_DONE`.
