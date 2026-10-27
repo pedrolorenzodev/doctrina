@@ -1,5 +1,5 @@
 import { Fragment, type ReactNode, type RefObject } from "react";
-import type { BibleVerse } from "@/content/model/bible";
+import type { BibleVerse, ChapterStructure } from "@/content/model/bible";
 import type { HighlightColor, Segment } from "@/lib/highlights";
 import { splitByRed } from "@/lib/text-pieces";
 
@@ -15,6 +15,7 @@ export type SecondReading = {
 type ChapterTextProps = {
   second: SecondReading | null;
   verses: BibleVerse[];
+  structure: ChapterStructure | null;
   lang: string;
   selected: number | null;
   segmentsOf: (verse: BibleVerse) => Segment[];
@@ -38,6 +39,7 @@ export const toneClassName: Record<HighlightColor, string> = {
 export function ChapterText({
   second,
   verses,
+  structure,
   lang,
   selected,
   segmentsOf,
@@ -49,6 +51,8 @@ export function ChapterText({
   onMark,
   onSelect,
 }: ChapterTextProps) {
+  const paragraphStarts = new Set(structure?.paragraphs);
+  const headingAt = new Map(structure?.sections.map((section) => [section.from, section.title]));
   return (
     <div
       ref={rootRef}
@@ -65,8 +69,17 @@ export function ChapterText({
       ) : null}
       {verses.map((verse) => (
         <Fragment key={verse.verse}>
+          {headingAt.has(verse.verse) ? (
+            <h3
+              data-section-heading=""
+              className={`mt-8 mb-2.5 font-head text-section-heading font-medium text-ink first:mt-0 ${second?.mode === "side" ? "col-span-2" : ""}`}
+            >
+              {headingAt.get(verse.verse)}
+            </h3>
+          ) : null}
           <p
             id={`${idPrefix}v-${verse.verse}`}
+            data-paragraph-start={paragraphStarts.has(verse.verse) || undefined}
             className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 font-body text-reader font-light text-ink-2 arrival-mark data-marked:bg-mark"
           >
             <span className="mb-1 flex items-baseline gap-2 font-ui text-division text-ink-3 tabular-nums md:contents">

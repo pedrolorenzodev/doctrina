@@ -395,6 +395,7 @@ export function ReaderBody({
       <ChapterText
         second={second}
         verses={selected.verses}
+        structure={selected.structure}
         lang={selected.language}
         selected={verse}
         rootRef={textRoot}

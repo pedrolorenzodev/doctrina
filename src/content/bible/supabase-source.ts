@@ -57,6 +57,10 @@ export function createSupabaseBibleSource(url: string, publishableKey: string): 
         `verses?translation_id=eq.${key(translationId)}&book=eq.${key(book)}&chapter=eq.${chapter}&select=verse,text&order=verse`,
       );
     },
+    async chapterStructure() {
+      // TODO: store sections and paragraphs in the Supabase schema; until then only the local corpus has them
+      return null;
+    },
     async verse(translationId, book, chapter, verse) {
       const [row] = await select<BibleVerse>(
         `verses?translation_id=eq.${key(translationId)}&book=eq.${key(book)}&chapter=eq.${chapter}&verse=eq.${verse}&select=verse,text`,

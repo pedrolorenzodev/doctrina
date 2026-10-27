@@ -58,6 +58,34 @@ async function checkLocalCorpus() {
     check(`${entry.id} Ps 119 verses ordered`, ordered === true);
   }
 
+  for (const id of ["bsb", "web-c"]) {
+    if (!existsSync(resolve(root, "data", "corpus", "bibles", `${id}.structure.json`))) continue;
+    let bad = 0;
+    let withStructure = 0;
+    for (const { book, chapter } of await getBibleChapterIndex(id)) {
+      const structure = (await getBibleChapter(id, book, chapter))?.structure;
+      if (!structure) continue;
+      withStructure += 1;
+      const verses = new Set((await getBibleChapter(id, book, chapter)).verses.map((verse) => verse.verse));
+      const starts = structure.paragraphs;
+      const sorted = starts.every((number, at) => at === 0 || number > starts[at - 1]);
+      const known = [...starts, ...structure.sections.map((section) => section.from)].every((number) =>
+        verses.has(number),
+      );
+      if (!sorted || !known) bad += 1;
+    }
+    check(`${id} structure points at real verses, in order`, bad === 0, `${bad} chapters`);
+    check(`${id} structure covers most chapters`, withStructure > 1000, `${withStructure} chapters`);
+  }
+  const johnSix = await getBibleChapter("bsb", "John", 6);
+  if (johnSix?.structure) {
+    check(
+      "bsb John 6 headings",
+      johnSix.structure.sections.map((section) => section.from).join() === "1,16,22,59,67",
+      johnSix.structure.sections.map((section) => section.from).join(),
+    );
+  }
+
   const dra = await getBibleChapter("dra", "Mal", 4);
   check("dra Malachi 4 leads to Tobit", dra?.next?.book === "Tob" && dra.next.chapter === 1);
   const kjv = await getBibleChapter("kjv", "Mal", 4);

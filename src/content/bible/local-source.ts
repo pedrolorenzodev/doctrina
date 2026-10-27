@@ -4,8 +4,10 @@ import { bibleVersification, normalizeBibleFile, type BibleRow } from "@/content
 import type { BibleSource } from "@/content/bible/bible-source";
 import { sortChapters } from "@/content/bible/chapter-neighbors";
 import { redSpansOf } from "@/content/bible/red-letters";
-import type { BibleTranslation, ChapterSummary } from "@/content/model/bible";
+import type { BibleTranslation, ChapterStructure, ChapterSummary } from "@/content/model/bible";
 import type { Locale } from "@/lib/locale";
+
+type StructureEntry = { s: [number, string][]; p: number[] };
 
 type SourceEntry = { id: string; lang: Locale; name: string; licence: string; canon: number };
 
@@ -25,6 +27,22 @@ export function createLocalBibleSource(): BibleSource {
     });
   const loaded = new Map<string, Promise<BibleRow[]>>();
   const reds = new Map<string, Promise<Record<string, string[]>>>();
+  const structures = new Map<string, Promise<Record<string, StructureEntry>>>();
+
+  function structureOf(translationId: string): Promise<Record<string, StructureEntry>> {
+    let pending = structures.get(translationId);
+    if (!pending) {
+      pending = readFile(
+        join(process.cwd(), "data", "corpus", "bibles", `${translationId}.structure.json`),
+        "utf8",
+      ).then(
+        (text) => JSON.parse(text) as Record<string, StructureEntry>,
+        () => ({}),
+      );
+      structures.set(translationId, pending);
+    }
+    return pending;
+  }
 
   function redPhrases(translationId: string): Promise<Record<string, string[]>> {
     let pending = reds.get(translationId);
@@ -88,6 +106,11 @@ export function createLocalBibleSource(): BibleSource {
             : { verse: row.verse, text: row.text };
         })
         .sort((a, b) => a.verse - b.verse);
+    },
+    async chapterStructure(translationId, book, chapter): Promise<ChapterStructure | null> {
+      const entry = (await structureOf(translationId))[`${book}.${chapter}`];
+      if (!entry) return null;
+      return { sections: entry.s.map(([from, title]) => ({ from, title })), paragraphs: entry.p };
     },
     async verse(translationId, book, chapter, verse) {
       const row = (await rows(translationId)).find(

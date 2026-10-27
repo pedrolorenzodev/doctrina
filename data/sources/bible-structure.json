@@ -1,0 +1,18 @@
+[
+  {
+    "id": "bsb",
+    "file": "engbsb_usfm.zip",
+    "sha256": "ce8bb27e62ab433e9eae460b65bf10710fabfd74017a9535aa8904343866e257",
+    "downloaded": "2026-10-27",
+    "chapters": 1189,
+    "headings": 3016
+  },
+  {
+    "id": "web-c",
+    "file": "eng-web-c_usfm.zip",
+    "sha256": "6fedbef919e0850ecbe7a9480012c2549f327db7aa7bccf79d1bf6261e9992c1",
+    "downloaded": "2026-10-23",
+    "chapters": 1328,
+    "headings": 5
+  }
+]

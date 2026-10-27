@@ -2,7 +2,7 @@ import { getBibleBook, type BibleBook } from "@/content/bible-books";
 import { defaultTranslationId } from "@/content/bible/default-translation";
 import { translationMeta, translationOrder } from "@/content/bible/translation-meta";
 import { getBibleChapter, getBibleTranslations } from "@/content/get-bible";
-import type { BibleVerse, ChapterRef } from "@/content/model/bible";
+import type { BibleVerse, ChapterRef, ChapterStructure } from "@/content/model/bible";
 import type { Locale } from "@/lib/locale";
 
 export type ReaderTranslationView = {
@@ -13,6 +13,7 @@ export type ReaderTranslationView = {
   language: Locale;
   versification: string;
   verses: BibleVerse[];
+  structure: ChapterStructure | null;
 };
 
 export type ReaderChapter = {
@@ -44,6 +45,7 @@ export async function getReaderChapter(locale: Locale, bookId: string, chapter: 
         language: entry.translation.language,
         versification: entry.translation.versification,
         verses: entry.verses,
+        structure: entry.structure,
       };
     })
     .sort((a, b) => translationOrder.findIndex((id) => id === a.id) - translationOrder.findIndex((id) => id === b.id));

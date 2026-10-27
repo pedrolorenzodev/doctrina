@@ -48,8 +48,11 @@ export async function getBibleChapter(
   if (!translation) return null;
   const neighbors = chapterNeighbors(await chapterIndex(translationId), { book, chapter });
   if (!neighbors) return null;
-  const verses = await currentSource().chapterVerses(translationId, book, chapter);
-  return { translation, book, chapter, verses, ...neighbors };
+  const [verses, structure] = await Promise.all([
+    currentSource().chapterVerses(translationId, book, chapter),
+    currentSource().chapterStructure(translationId, book, chapter),
+  ]);
+  return { translation, book, chapter, verses, structure, ...neighbors };
 }
 
 export function getBibleVerse(

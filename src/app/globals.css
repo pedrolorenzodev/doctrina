@@ -208,6 +208,8 @@
   --text-panel-reference--line-height: 1.25;
   --text-reader-foot: 14px;
   --text-reader-foot--line-height: 1.6;
+  --text-section-heading: 21px;
+  --text-section-heading--line-height: 1.3;
   --text-reader: 19px;
   --text-reader--line-height: 1.66;
   --text-division: 12px;
@@ -1443,6 +1445,17 @@ html.theme-switching ::after {
   box-shadow: none;
 }
 
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p[data-paragraph-start]::before {
+  content: "";
+  display: block;
+  height: 0.9em;
+}
+
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p[data-paragraph-start]:first-child::before,
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > h3 + p[data-paragraph-start]::before {
+  display: none;
+}
+
 :root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child {
   display: inline;
   margin: 0;
@@ -1467,7 +1480,12 @@ html.theme-switching ::after {
   line-height: 0;
 }
 
-:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p:first-child > span:first-child > span {
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p:first-child > span:first-child > span,
+:root[data-reader-format="flow"]
+  [data-chapter-text]:not([data-second])
+  > p[data-paragraph-start]
+  > span:first-child
+  > span {
   margin-left: 0;
 }
 
