@@ -26,6 +26,7 @@ test("the division locator sits in the left margin from 768 px and above the tex
   const text = (await first.locator("p").last().boundingBox())!;
   expect(locator.x + locator.width).toBeLessThan(text.x);
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.waitForTimeout(450);
   const stacked = (await first.locator("button").first().boundingBox())!;
   const below = (await first.locator("p").last().boundingBox())!;
   expect(stacked.y + stacked.height).toBeLessThanOrEqual(below.y + 1);

@@ -175,6 +175,7 @@ export const en: UiText = {
     notes: {
       add: "Note",
       label: "Your note",
+      placeholder: "Write your note",
       about: "Note on {reference}",
       saved: "Saved",
       deleteNote: "Delete note",

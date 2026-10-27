@@ -102,7 +102,7 @@ export function ReaderStrip({
             label={yourNotes.label}
             book={yourNotes.book}
             chapter={yourNotes.chapter}
-            className="mr-1.5 max-sm:hidden"
+            className="max-sm:hidden"
           />
           <TextOptions text={textText} locked={second.mode !== "off"} />
         </>

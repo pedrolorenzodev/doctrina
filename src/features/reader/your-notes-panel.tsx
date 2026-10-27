@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { SidePanel } from "@/components/side-panel";
 import { CopyButton } from "@/components/ui/copy-button";
 import { SegmentedFilter } from "@/components/ui/segmented-filter";
@@ -8,7 +9,9 @@ import { NoteEditor } from "@/features/reader/note-editor";
 import { PanelPicker } from "@/features/reader/panel-picker";
 import { readerPanelFrom } from "@/features/reader/verse-panel";
 import { highlightColors, type HighlightColor } from "@/lib/highlights";
-import { downloadText, highlightsMarkdown, notesMarkdown } from "@/lib/notes-markdown";
+import { easeReveal, prefersReducedMotion } from "@/lib/branch-motion";
+import { flipList } from "@/lib/list-motion";
+import { downloadText, notesMarkdown } from "@/lib/notes-markdown";
 import type { NoteScope } from "@/lib/notes";
 import { fold, fragmentAround, searchWords } from "@/lib/search-match";
 
@@ -106,6 +109,8 @@ const moreButtonClassName =
   "-ml-2.5 inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-6 py-2 pr-3 pl-2.5 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11";
 
 const slashKey = "/";
+const openQuote = "«";
+const closeQuote = "»";
 
 type Order = "text" | "recent";
 type Kind = "all" | "source" | "text";
@@ -163,6 +168,32 @@ export function YourNotesPanel({
   const [order, setOrder] = useState<Order>("text");
   const [writing, setWriting] = useState(false);
   const field = useRef<HTMLInputElement>(null);
+  const results = useRef<HTMLDivElement>(null);
+  const flatList = useRef<HTMLUListElement>(null);
+  const ghosts = useRef<HTMLDivElement>(null);
+  const firstTab = useRef(true);
+
+  const change = (mutate: () => void) => {
+    if (flatList.current && ghosts.current) flipList(flatList.current, ghosts.current, () => flushSync(mutate));
+    else mutate();
+  };
+
+  useEffect(() => {
+    if (firstTab.current) {
+      firstTab.current = false;
+      return;
+    }
+    if (prefersReducedMotion()) return;
+    results.current?.querySelectorAll("li").forEach((item, index) => {
+      item.animate(
+        [
+          { opacity: 0, transform: "translateY(8px)" },
+          { opacity: 1, transform: "none" },
+        ],
+        { duration: 420, delay: Math.min(index, 8) * 60, easing: easeReveal, fill: "backwards" },
+      );
+    });
+  }, [tab]);
 
   useEffect(() => {
     if (!open) return;
@@ -203,14 +234,15 @@ export function YourNotesPanel({
   const filtering =
     words.length > 0 || (tab === "highlights" && colors.length > 0) || (tab === "notes" && kind !== "all");
   const flat = filtering || order === "recent";
-  const clear = () => {
-    setQuery("");
-    setColors([]);
-    setKind("all");
-  };
+  const clear = () =>
+    change(() => {
+      setQuery("");
+      setColors([]);
+      setKind("all");
+    });
 
   const noteRow = (note: YourNotesItem) => (
-    <li key={note.id} className="border-t border-rule">
+    <li key={note.id} data-id={note.id} className="border-t border-rule">
       <button
         type="button"
         onClick={() => (note.scope === "source" ? setWriting(true) : onOpenNote(note.id))}
@@ -256,7 +288,15 @@ export function YourNotesPanel({
   const notesBody = () => {
     if (total === 0) return writeButton;
     if (list.length === 0) return null;
-    if (flat) return <ul className={listClassName}>{shownNotes.map(noteRow)}</ul>;
+    if (flat)
+      return (
+        <div className="relative">
+          <ul ref={flatList} className={listClassName}>
+            {shownNotes.map(noteRow)}
+          </ul>
+          <div ref={ghosts} aria-hidden="true" className="pointer-events-none absolute inset-0 flip-ghosts" />
+        </div>
+      );
     const inline = spreadFirst(notes);
     const source = inline.find((note) => note.scope === "source");
     const placed = inline.filter((note) => note.scope !== "source" && !note.lost);
@@ -347,7 +387,7 @@ export function YourNotesPanel({
           />
           {total > 0 ? (
             <div className="mb-1.5">
-              <label className="flex min-h-10 items-center gap-2 rounded-6 border border-rule bg-card px-2.5 text-ink-3 focus-within:border-transparent focus-within:outline-2 focus-within:outline-offset-1 focus-within:outline-accent">
+              <label className="group/field flex min-h-10 items-center gap-2 rounded-6 border border-rule bg-card px-2.5 text-ink-3">
                 <svg
                   width="14"
                   height="14"
@@ -356,7 +396,7 @@ export function YourNotesPanel({
                   stroke="currentColor"
                   strokeWidth="1.5"
                   aria-hidden="true"
-                  className="flex-none"
+                  className="flex-none origin-center transition-icon-focus group-focus-within/field:scale-125 group-focus-within/field:text-ink"
                 >
                   <circle cx="7" cy="7" r="4.5" />
                   <path d="m10.5 10.5 3 3" strokeLinecap="round" />
@@ -365,17 +405,18 @@ export function YourNotesPanel({
                   ref={field}
                   type="text"
                   value={query}
-                  onChange={(event) => setQuery(event.target.value)}
+                  onChange={(event) => change(() => setQuery(event.target.value))}
                   onKeyDown={(event) => {
                     if (event.key !== "Escape" || query === "") return;
                     event.stopPropagation();
-                    setQuery("");
+                    change(() => setQuery(""));
                   }}
                   aria-label={placeholder}
                   aria-keyshortcuts="/"
                   placeholder={placeholder}
                   autoComplete="off"
                   spellCheck={false}
+                  data-bare-focus=""
                   className="h-9.5 min-w-0 flex-1 border-0 bg-transparent text-picker-option text-ink outline-none placeholder:text-ink-3"
                 />
                 <kbd className="flex-none rounded-4 border border-rule px-1.5 py-px font-ui text-ui-2xs text-ink-3">
@@ -392,8 +433,10 @@ export function YourNotesPanel({
                         aria-pressed={colors.includes(id)}
                         aria-label={text.onlyColor.replace("{color}", colorNames[id].toLowerCase())}
                         onClick={() =>
-                          setColors((current) =>
-                            current.includes(id) ? current.filter((one) => one !== id) : [...current, id],
+                          change(() =>
+                            setColors((current) =>
+                              current.includes(id) ? current.filter((one) => one !== id) : [...current, id],
+                            ),
                           )
                         }
                         className="group/dot inline-grid size-8 cursor-pointer place-items-center rounded-6 transition-colors duration-150 ease-standard hover:bg-hover"
@@ -408,7 +451,9 @@ export function YourNotesPanel({
                   <PanelPicker
                     label={text.show}
                     value={kind}
-                    onChange={(id) => setKind(id === "source" ? "source" : id === "text" ? "text" : "all")}
+                    onChange={(id) =>
+                      change(() => setKind(id === "source" ? "source" : id === "text" ? "text" : "all"))
+                    }
                     options={[
                       { id: "all", label: text.kindAll },
                       { id: "source", label: text.kindSource },
@@ -419,7 +464,7 @@ export function YourNotesPanel({
                 <PanelPicker
                   label={text.order}
                   value={order}
-                  onChange={(id) => setOrder(id === "recent" ? "recent" : "text")}
+                  onChange={(id) => change(() => setOrder(id === "recent" ? "recent" : "text"))}
                   options={[
                     { id: "text", label: text.orderText },
                     { id: "recent", label: text.orderRecent },
@@ -435,71 +480,75 @@ export function YourNotesPanel({
               </p>
             </div>
           ) : null}
-          {tab === "notes" && total === 0 ? (
-            notesBody()
-          ) : total === 0 ? (
-            <p className="m-0 text-ui-sm text-ink-3">{text.emptyHighlights}</p>
-          ) : list.length === 0 ? (
-            <div className="border-y border-rule py-3.5">
-              <p className="m-0 mb-1 text-ui-sm text-ink-2">
-                {words.length > 0 ? text.noMatch.replace("{query}", query.trim()) : text.noMatchFilters}
-              </p>
-              <button type="button" onClick={clear} className={moreButtonClassName}>
-                {text.clear}
-              </button>
-            </div>
-          ) : (
-            <>
-              {tab === "notes" ? (
-                notesBody()
-              ) : (
-                <ul className={listClassName}>
-                  {shownHighlights.map((item) => (
-                    <li key={item.id} className="border-t border-rule">
-                      <button
-                        type="button"
-                        onClick={() => onOpenHighlight(item.verse)}
-                        className={`${rowClassName} gap-0`}
-                      >
-                        <span className="line-clamp-3 block font-body text-note-text font-light text-ink-2">
-                          <span
-                            aria-label={colorNames[item.color]}
-                            className={`mr-2 mb-px inline-block size-3 rounded-full align-baseline shadow-swatch ${swatchClassName[item.color]}`}
-                          />
-                          <Excerpt text={item.text} words={words} />
-                        </span>
-                        <span className="mt-1 flex w-full justify-between gap-3 text-note-line text-cite">
-                          {item.place}
-                          <span className="text-ink-3 tabular-nums">{item.date}</span>
-                        </span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              <div className="-ml-2.5">
-                <CopyButton
-                  label={tab === "notes" ? text.copyNotes : text.copyHighlights}
-                  done={text.copied}
-                  text={() => (tab === "notes" ? notes : highlights).map((item) => item.citation).join("\n\n")}
-                />
-                <button
-                  type="button"
-                  onClick={() =>
-                    tab === "notes"
-                      ? downloadText(`${fileSlug(heading)}-notas.md`, notesMarkdown(`${text.label}, ${heading}`, notes))
-                      : downloadText(
-                          `${fileSlug(heading)}-subrayados.md`,
-                          highlightsMarkdown(`${text.highlights}, ${heading}`, highlights),
-                        )
-                  }
-                  className="inline-grid min-h-10 cursor-pointer place-items-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
-                >
-                  {text.downloadMarkdown}
+          <div ref={results}>
+            {tab === "notes" && total === 0 ? (
+              notesBody()
+            ) : total === 0 ? (
+              <p className="m-0 text-ui-sm text-ink-3">{text.emptyHighlights}</p>
+            ) : list.length === 0 ? (
+              <div className="border-y border-rule py-3.5">
+                <p className="m-0 mb-1 text-ui-sm text-ink-2">
+                  {words.length > 0 ? text.noMatch.replace("{query}", query.trim()) : text.noMatchFilters}
+                </p>
+                <button type="button" onClick={clear} className={moreButtonClassName}>
+                  {text.clear}
                 </button>
               </div>
-            </>
-          )}
+            ) : (
+              <>
+                {tab === "notes" ? (
+                  notesBody()
+                ) : (
+                  <div className="relative">
+                    <ul ref={flatList} className={listClassName}>
+                      {shownHighlights.map((item) => (
+                        <li key={item.id} data-id={item.id} className="border-t border-rule">
+                          <button
+                            type="button"
+                            onClick={() => onOpenHighlight(item.verse)}
+                            className={`${rowClassName} gap-0`}
+                          >
+                            <span className="line-clamp-3 block font-body text-note-text font-light text-ink-2">
+                              <span
+                                aria-label={colorNames[item.color]}
+                                className={`mr-2 mb-px inline-block size-3 rounded-full align-baseline shadow-swatch ${swatchClassName[item.color]}`}
+                              />
+                              {openQuote}
+                              <Excerpt text={item.text} words={words} />
+                              {closeQuote}
+                            </span>
+                            <span className="mt-1 flex w-full justify-between gap-3 text-note-line text-cite">
+                              {item.place}
+                              <span className="text-ink-3 tabular-nums">{item.date}</span>
+                            </span>
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                    <div ref={ghosts} aria-hidden="true" className="pointer-events-none absolute inset-0 flip-ghosts" />
+                  </div>
+                )}
+                <div className="-ml-2.5">
+                  <CopyButton
+                    label={tab === "notes" ? text.copyNotes : text.copyHighlights}
+                    done={text.copied}
+                    text={() => (tab === "notes" ? notes : highlights).map((item) => item.citation).join("\n\n")}
+                  />
+                  {tab === "notes" ? (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        downloadText(`${fileSlug(heading)}-notas.md`, notesMarkdown(`${text.label}, ${heading}`, notes))
+                      }
+                      className="inline-grid min-h-10 cursor-pointer place-items-center rounded-6 px-2.5 py-2 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
+                    >
+                      {text.downloadMarkdown}
+                    </button>
+                  ) : null}
+                </div>
+              </>
+            )}
+          </div>
           <p className="mt-4 mb-0 text-note-meta text-ink-3">{text.footer}</p>
         </>
       )}

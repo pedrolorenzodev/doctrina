@@ -324,14 +324,14 @@ export function Sidebar({ groups, text }: SidebarProps) {
         ref={asideRef}
         id="site-sidebar"
         data-open={open || undefined}
-        className="fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg drawer-motion max-lg:invisible max-lg:texture-layer data-open:visible data-open:translate-x-0 lg:sticky lg:top-top lg:bottom-auto lg:left-auto lg:z-auto lg:h-below-top lg:w-auto lg:translate-x-0 lg:bg-transparent lg:transition-none lg:in-data-[tree=closed]:invisible lg:in-data-[tree=closed]:overflow-hidden"
+        className="fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg drawer-motion max-lg:invisible max-lg:texture-layer data-open:visible data-open:translate-x-0 lg:sticky lg:top-top lg:bottom-auto lg:left-auto lg:z-auto lg:h-below-top lg:w-auto lg:translate-x-0 lg:bg-transparent tree-hide"
       >
         <nav
           ref={navRef}
           aria-label={text.navLabel}
           data-lenis-prevent
           onClick={onClick}
-          className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule lg:pt-5.5"
+          className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule lg:w-sidebar lg:pt-5.5"
         >
           <div className="-mt-1.5 mb-2 flex justify-end">
             <button

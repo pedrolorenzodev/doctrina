@@ -238,6 +238,7 @@
 
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
   --ease-move: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-title: cubic-bezier(0.33, 1, 0.68, 1);
 
@@ -909,6 +910,11 @@
 
 @utility grid-shell {
   grid-template-columns: var(--spacing-sidebar) minmax(0, 1fr);
+  transition: grid-template-columns 360ms var(--ease-smooth);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 
   @media (min-width: 64rem) {
     :root[data-tree="closed"] & {
@@ -944,9 +950,9 @@
 
 @utility panel-motion {
   transition:
-    opacity 200ms ease,
-    translate 200ms var(--ease-move),
-    visibility 0s linear 200ms;
+    opacity 260ms var(--ease-smooth),
+    translate 380ms var(--ease-smooth),
+    visibility 0s linear 380ms;
 
   &[data-open="true"] {
     transition-delay: 0s, 0s, 0s;
@@ -973,6 +979,10 @@
 
 @utility side-panel-room-wide {
   @media (min-width: 80rem) {
+    & [data-reader-strip] {
+      margin-right: -24px;
+    }
+
     & #content {
       padding-right: calc(var(--spacing-panel) + 24px);
     }
@@ -1461,6 +1471,42 @@ html.theme-switching ::after {
   @media (min-width: 80rem) {
     :root[data-tree="closed"] & {
       @slot;
+    }
+  }
+}
+
+@utility transition-icon-focus {
+  transition:
+    scale 300ms var(--ease-smooth),
+    color 300ms var(--ease-smooth);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+@utility strip-motion {
+  transition:
+    translate 220ms var(--ease-move),
+    transform 220ms var(--ease-move),
+    margin-right 380ms var(--ease-smooth);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+@utility tree-hide {
+  @media (min-width: 64rem) {
+    overflow: hidden;
+
+    &:is(#site-sidebar) {
+      transition: visibility 0s linear 0s;
+    }
+
+    :root[data-tree="closed"] &:is(#site-sidebar) {
+      visibility: hidden;
+      transition-delay: 360ms;
     }
   }
 }

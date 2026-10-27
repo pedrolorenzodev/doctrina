@@ -26,6 +26,7 @@ test("«Aa» sits at the right of the strip and opens A− and A+; on a phone it
   await page.keyboard.press("Escape");
   await expect(page.locator(group)).toBeHidden();
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.waitForTimeout(450);
   await expect(aa).toBeVisible();
   const phone = (await aa.boundingBox())!;
   expect(phone.width).toBeGreaterThanOrEqual(36);

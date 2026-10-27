@@ -39,13 +39,13 @@ export function StripShell({ left, center, right }: StripShellProps) {
       }}
       data-reader-strip=""
       data-hidden={hidden ? "" : undefined}
-      className="sticky top-top z-31 -mt-5.5 mb-11 -mr-4 -ml-4 transition-transform duration-220 ease-move data-hidden:-translate-y-full motion-reduce:transition-none sm:-mt-6.5 sm:mb-14 sm:-mr-8 sm:-ml-8 md:-mt-7.5 md:mb-15 md:-mr-18 md:-ml-18 lg:-mt-8.5 lg:mb-16 lg:-mr-22 lg:-ml-22"
+      className="sticky top-top z-31 -mt-5.5 mb-11 -mr-4 -ml-4 strip-motion data-hidden:-translate-y-full sm:-mt-6.5 sm:mb-14 sm:-mr-8 sm:-ml-8 md:-mt-7.5 md:mb-15 md:-mr-18 md:-ml-18 lg:-mt-8.5 lg:mb-16 lg:-mr-22 lg:-ml-22"
     >
       <MenuHostContext value={host}>
-        <div className="texture-layer relative grid min-h-reader-strip grid-cols-header items-center gap-2 border-b border-rule bg-bg px-3.5 max-sm:grid-cols-phone max-sm:px-1.5 pointer-coarse:py-1">
+        <div className="texture-layer relative grid min-h-reader-strip items-center gap-2 sm:flex sm:justify-between border-b border-rule bg-bg px-3.5 max-sm:grid-cols-phone max-sm:px-1.5 pointer-coarse:py-1">
           <div className="flex items-center gap-1 justify-self-start max-sm:hidden">{left}</div>
           <div className="flex items-center justify-self-center">{center}</div>
-          <div className="flex items-center justify-self-end">{right}</div>
+          <div className="flex items-center justify-self-end gap-1.5">{right}</div>
         </div>
       </MenuHostContext>
     </div>

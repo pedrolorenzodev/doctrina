@@ -1,10 +1,12 @@
-import { easeMove, easeReveal, prefersReducedMotion } from "@/lib/branch-motion";
+import { prefersReducedMotion } from "@/lib/branch-motion";
 
 const animationId = "menu";
 const closedClip = "inset(0px -60px 100% -60px)";
 const openClip = "inset(0px -60px -60px -60px)";
-const enter = { clipMs: 220, fadeMs: 200, stepMs: 20, maxSteps: 8 };
-const exit = { clipMs: 160, fadeMs: 120 };
+const easeSmooth = "cubic-bezier(0.32, 0.72, 0, 1)";
+const almostOpenClip = "inset(0px -60px 0px -60px)";
+const enter = { clipMs: 340, fadeMs: 260, stepMs: 24, maxSteps: 8 };
+const exit = { clipMs: 220, fadeMs: 160 };
 
 function cancelMenuAnimations(menu: HTMLElement) {
   for (const animation of menu.getAnimations({ subtree: true })) {
@@ -24,9 +26,9 @@ export function revealMenu(menu: HTMLElement, open: boolean, done?: () => void) 
   const items = [...menu.querySelectorAll<HTMLElement>("[data-menu-item]")].slice(0, enter.maxSteps);
   if (open) {
     menu.hidden = false;
-    menu.animate([{ clipPath: from }, { clipPath: openClip }], {
+    menu.animate([{ clipPath: from }, { clipPath: almostOpenClip, offset: 0.9 }, { clipPath: openClip }], {
       duration: enter.clipMs,
-      easing: easeReveal,
+      easing: easeSmooth,
       id: animationId,
     });
     items.forEach((item, index) => {
@@ -51,7 +53,7 @@ export function revealMenu(menu: HTMLElement, open: boolean, done?: () => void) 
   menu
     .animate([{ clipPath: from }, { clipPath: closedClip }], {
       duration: exit.clipMs,
-      easing: easeMove,
+      easing: easeSmooth,
       fill: "forwards",
       id: animationId,
     })

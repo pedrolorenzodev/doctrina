@@ -5,6 +5,7 @@ import { UndoBar } from "@/components/undo-bar";
 import type { FatherDivision } from "@/content/get-father-works";
 import { toneClassName } from "@/features/reader/chapter-text";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
+import { goToUnit } from "@/features/reader/go-to-unit";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
 import { NoteEditor } from "@/features/reader/note-editor";
 import { PanelNotes } from "@/features/reader/panel-notes";
@@ -39,6 +40,7 @@ type FatherBodyProps = {
     notes: {
       add: string;
       label: string;
+      placeholder: string;
       about: string;
       saved: string;
       deleteNote: string;
@@ -220,7 +222,7 @@ export function FatherBody({
         verse: entry.verse,
         place: nbspBeforeDigits(referenceOf(entry.verse, entry.verse)),
         text: quote,
-        date: "",
+        date: dateLabel(entry.at),
         at: entry.at,
         color: entry.color,
         citation: `«${quote}» ${citationOf(entry.verse, entry.verse)}`,
@@ -351,7 +353,7 @@ export function FatherBody({
           open(note.verse, false, null);
           notes.openExisting(note);
         }}
-        onOpenHighlight={(ordinal) => open(ordinal, false, null)}
+        onOpenHighlight={(ordinal) => goToUnit(anchorOfOrdinal(ordinal))}
         onClose={() => setYourNotesOpen(false)}
       />
       {deletingNote ? (

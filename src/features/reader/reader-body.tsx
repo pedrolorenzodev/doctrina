@@ -5,6 +5,7 @@ import { UndoBar } from "@/components/undo-bar";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
 import { ReadMarker } from "@/features/reader/read-marker";
+import { goToUnit } from "@/features/reader/go-to-unit";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
 import { NoteCards, type NoteCard } from "@/features/reader/note-cards";
@@ -47,6 +48,7 @@ type ReaderBodyProps = {
     notes: {
       add: string;
       label: string;
+      placeholder: string;
       about: string;
       saved: string;
       deleteNote: string;
@@ -285,7 +287,7 @@ export function ReaderBody({
         verse: entry.verse,
         place: nbspBeforeDigits(referenceOf(entry.verse, entry.verse)),
         text: quote,
-        date: "",
+        date: dateLabel(entry.at),
         at: entry.at,
         color: entry.color,
         citation: `«${quote}» ${citationOf(entry.verse, entry.verse, selected.abbreviation)}`,
@@ -416,7 +418,7 @@ export function ReaderBody({
           open(note.verse, false, null);
           notes.openExisting(note);
         }}
-        onOpenHighlight={(number) => open(number, false, null)}
+        onOpenHighlight={(number) => goToUnit(`v-${number}`)}
         onClose={() => setYourNotesOpen(false)}
       />
       {deletingCard ? (

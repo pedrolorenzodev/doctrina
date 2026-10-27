@@ -48,6 +48,7 @@ test("the verse number sits in the left margin from 768 and above the text below
   expect(wide.number!.x + wide.number!.width).toBeLessThan(wide.verse!.x + 1);
   expect(Math.abs(wide.number!.y - wide.verse!.y)).toBeLessThan(20);
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.waitForTimeout(450);
   const narrow = await box();
   expect(narrow.number!.y + narrow.number!.height).toBeLessThanOrEqual(narrow.verse!.y + narrow.verse!.height);
   expect(narrow.number!.x).toBeGreaterThanOrEqual(narrow.verse!.x);

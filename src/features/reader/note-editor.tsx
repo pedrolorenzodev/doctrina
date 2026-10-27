@@ -5,6 +5,7 @@ import { escapePriority, registerEscape } from "@/lib/escape-stack";
 
 type NoteEditorText = {
   label: string;
+  placeholder: string;
   saved: string;
   deleteNote: string;
 };
@@ -91,6 +92,7 @@ export function NoteEditor({
         ref={field}
         value={value}
         aria-label={text.label}
+        placeholder={text.placeholder}
         onChange={(event) => change(event.target.value)}
         onKeyDown={onKeyDown}
         className="block min-h-22 w-full resize-none rounded-6 border border-rule-2 bg-transparent px-3 py-2.5 font-body text-note-text font-light text-ink-2 outline-none focus-visible:border-accent"

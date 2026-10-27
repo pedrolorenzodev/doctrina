@@ -173,6 +173,7 @@ export const es = {
     notes: {
       add: "Nota",
       label: "Tu nota",
+      placeholder: "Escribe tu nota",
       about: "Nota sobre {reference}",
       saved: "Guardada",
       deleteNote: "Borrar nota",

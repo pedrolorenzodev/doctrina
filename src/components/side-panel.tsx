@@ -75,7 +75,7 @@ export function SidePanel({
       className={`texture-layer panel-motion invisible fixed top-top right-0 bottom-0 z-35 flex w-panel translate-x-6 flex-col border-l border-rule bg-bg opacity-0 outline-none data-[open=true]:visible data-[open=true]:translate-x-0 data-[open=true]:opacity-100 ${layouts[from].panel} safe-bottom`}
     >
       <span aria-hidden="true" className={`mx-auto mt-2 hidden h-1 w-7 rounded-2 bg-rule-2 ${layouts[from].grip}`} />
-      <div className="flex min-h-12 items-center justify-between gap-2 border-b border-rule py-1.5 pr-2.5 pl-5.5 text-ink-3">
+      <div className="flex min-h-reader-strip items-center justify-between gap-2 border-b border-rule py-1.5 pr-2.5 pl-5.5 text-ink-3">
         <span className={titleClassName[variant]}>{title}</span>
         <IconButton aria-label={closeLabel} onClick={onClose}>
           <svg
