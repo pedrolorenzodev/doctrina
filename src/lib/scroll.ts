@@ -9,6 +9,10 @@ export function registerSmoothScroll(instance: Lenis | null) {
   smooth = instance;
 }
 
+export function isSmoothScrolling(): boolean {
+  return stopJump !== null;
+}
+
 export function scrollOffset(): number {
   const style = getComputedStyle(document.documentElement);
   return (
@@ -53,15 +57,14 @@ export function scrollToY(target: number, onDone?: () => void) {
   stopJump = stop;
   addEventListener("wheel", stop, { passive: true, once: true });
   addEventListener("touchstart", stop, { passive: true, once: true });
-  if (smooth) {
-    smooth.scrollTo(y, { duration: duration / 1000, easing: easeInOutCubic, force: true, onComplete: done });
-    return;
-  }
+  smooth?.resize();
   const start = performance.now();
   const from = scrollY;
   const step = (now: number) => {
     const progress = Math.min(1, (now - start) / duration);
-    scrollTo(0, from + distance * easeInOutCubic(progress));
+    const position = from + distance * easeInOutCubic(progress);
+    if (smooth) smooth.scrollTo(position, { immediate: true, force: true });
+    else scrollTo(0, position);
     if (progress < 1) frame = requestAnimationFrame(step);
     else done();
   };

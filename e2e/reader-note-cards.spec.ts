@@ -72,7 +72,7 @@ async function openWithNotes(page: Page, width = 1440, tree: "open" | "closed" =
 const highlightSize = (page: Page) =>
   page.evaluate(() => (CSS.highlights.get("note-words") as Highlight | undefined)?.size ?? 0);
 
-test("with the tree closed, from 1066 px, a note is a card 40 px right of the column, level with its verse, and the margin mark is gone", async ({
+test("with the tree closed, from 1083 px, a note is a card 40 px right of the column, level with its verse, and the margin mark is gone", async ({
   page,
 }) => {
   await openWithNotes(page);
@@ -137,8 +137,8 @@ test("under reduced motion the marks are fully opaque from their first frame", a
   expect(shown.every((frame) => frame.opacity === 1)).toBe(true);
 });
 
-test("with the tree closed, below 1066 px, there are no cards and the marks stay", async ({ page }) => {
-  await openWithNotes(page, 1040);
+test("with the tree closed, below 1083 px, there are no cards and the marks stay", async ({ page }) => {
+  await openWithNotes(page, 1070);
   await expect(page.locator(mark(53))).toBeVisible();
   await expect(page.locator(card).first()).toBeHidden();
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
@@ -185,12 +185,12 @@ test("a note on words made in this edition says only its reference", async ({ pa
   await expect(page.locator(cardAt(57))).not.toContainText("en BSB");
 });
 
-test("with the tree open the marks say «1 nota» below 1338 px and the cards come from there", async ({ page }) => {
+test("with the tree open the marks say «1 nota» below 1355 px and the cards come from there", async ({ page }) => {
   await openWithNotes(page, 1300, "open");
   await expect(page.locator("aside#site-sidebar")).toBeVisible();
   await expect(page.locator(mark(53))).toBeVisible();
   await expect(page.locator(card).first()).toBeHidden();
-  await page.setViewportSize({ width: 1338, height: 900 });
+  await page.setViewportSize({ width: 1355, height: 900 });
   await expect(page.locator(cardAt(53)).first()).toBeVisible();
   await expect(page.locator(mark(53))).toBeHidden();
 });
@@ -221,7 +221,7 @@ const columnPlaces = (page: Page) =>
 test("the column stays centred while the cards fit, and with no notes it is always centred", async ({ page }) => {
   await openWithNotes(page, 1440, "closed");
   expect(Math.abs((await columnPlaces(page)).centre)).toBeLessThan(1);
-  await openWithNotes(page, 1552, "open");
+  await openWithNotes(page, 1600, "open");
   expect(Math.abs((await columnPlaces(page)).centre)).toBeLessThan(1);
   await page.addInitScript(() => localStorage.setItem("doctrina-notes", "[]"));
   await page.goto(john);
@@ -236,30 +236,30 @@ test("when the cards do not fit centred the column shifts left just enough, keep
   await openWithNotes(page, 1440, "open");
   await page.waitForTimeout(500);
   const open = await columnPlaces(page);
-  expect(open.right).toBeCloseTo(280, 0);
-  expect(open.left).toBeCloseTo(168, 0);
+  expect(open.right).toBeCloseTo(297, 0);
+  expect(open.left).toBeCloseTo(151, 0);
   const first = (await page.locator(cardAt(53)).first().boundingBox())!;
-  expect(first.x + first.width).toBeLessThanOrEqual(1440);
+  expect(first.x + first.width).toBeCloseTo(1440 - 17, 0);
   await openWithNotes(page, 1100, "closed");
   await page.waitForTimeout(500);
-  expect((await columnPlaces(page)).left).toBeCloseTo(100, 0);
+  expect((await columnPlaces(page)).left).toBeCloseTo(83, 0);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
-  await page.setViewportSize({ width: 1066, height: 900 });
+  await page.setViewportSize({ width: 1083, height: 900 });
   await page.waitForTimeout(500);
   expect((await columnPlaces(page)).left).toBeCloseTo(66, 0);
   await expect(page.locator(cardAt(53)).first()).toBeVisible();
 });
 
-test("the shift is continuous: 0 px at 1280, growing as the window narrows, and it slides with the tree", async ({
+test("the shift is continuous: 0 px at 1314, growing as the window narrows, and it slides with the tree", async ({
   page,
 }) => {
-  await openWithNotes(page, 1280, "closed");
+  await openWithNotes(page, 1314, "closed");
   await page.waitForTimeout(500);
   expect(Math.abs((await columnPlaces(page)).centre)).toBeLessThan(1);
   await page.setViewportSize({ width: 1200, height: 900 });
   await page.waitForTimeout(500);
   const shift = -(await columnPlaces(page)).centre;
-  expect(shift).toBeCloseTo(40, 0);
+  expect(shift).toBeCloseTo(57, 0);
 });
 
 test("opening the verse panel hides the cards and the column recentres in the room left", async ({ page }) => {

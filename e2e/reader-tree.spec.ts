@@ -52,7 +52,7 @@ test("a book's chapters are not in the page until the book is opened; then they 
   expect(columns).toBe(7);
   await page.locator(`${cells("Gen")}[data-chapter="3"]`).click();
   await expect(page).toHaveURL(/\/es\/biblia\/genesis\/3$/);
-  await expect(page.locator("main h1")).toHaveText("Génesis 3");
+  await expect(page.locator("main h1").first()).toHaveText("Génesis 3");
   await expect(page.locator(`${cells("Gen")}[data-chapter="3"]`)).toHaveAttribute("aria-current", "page");
   expect(await page.evaluate(() => (window as unknown as { stayed?: boolean }).stayed)).toBe(true);
 });

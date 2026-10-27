@@ -9,6 +9,7 @@ type NoteCardsProps = {
   cards: NoteCard[];
   hidden: boolean;
   rootRef: RefObject<HTMLDivElement | null>;
+  idPrefix: string;
   onOpen: (id: string, opener: HTMLElement) => void;
   onPreview: (id: string | null) => void;
 };
@@ -16,7 +17,7 @@ type NoteCardsProps = {
 const gapPx = 8;
 const resizeDelayMs = 150;
 
-export function NoteCards({ label, cards, hidden, rootRef, onOpen, onPreview }: NoteCardsProps) {
+export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onPreview }: NoteCardsProps) {
   const box = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -28,7 +29,7 @@ export function NoteCards({ label, cards, hidden, rootRef, onOpen, onPreview }: 
       if (container.offsetParent === null) return;
       let floor = 0;
       for (const card of container.querySelectorAll<HTMLElement>("[data-note-card]")) {
-        const top = Math.max(document.getElementById(`v-${card.dataset.verse}`)?.offsetTop ?? 0, floor);
+        const top = Math.max(document.getElementById(`${idPrefix}v-${card.dataset.verse}`)?.offsetTop ?? 0, floor);
         card.style.setProperty("--note-top", `${top}px`);
         floor = top + card.offsetHeight + gapPx;
       }
@@ -46,7 +47,7 @@ export function NoteCards({ label, cards, hidden, rootRef, onOpen, onPreview }: 
       observer.disconnect();
       window.removeEventListener("resize", later);
     };
-  }, [cards, hidden, rootRef]);
+  }, [cards, hidden, rootRef, idPrefix]);
 
   useEffect(() => () => onPreview(null), [onPreview]);
 

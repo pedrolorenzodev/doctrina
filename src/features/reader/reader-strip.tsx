@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { BookPicker, type PickerBook } from "@/features/reader/book-picker";
+import { useActiveChapter, scrollToChapter, type ChapterTarget } from "@/lib/active-chapter";
 import { ChapterStep, type StepNeighbor } from "@/features/reader/chapter-step";
 import { YourNotesButton } from "@/features/reader/your-notes-button";
 import { ParallelMenu } from "@/features/reader/parallel-menu";
@@ -24,9 +25,16 @@ type ReaderStripProps = {
     text: Parameters<typeof BookPicker>[0]["text"];
     books: PickerBook[];
     title: string;
+    chapterTitle: string;
   };
   treeToggle: ReactNode;
-  neighbors: { previous: StepNeighbor; next: StepNeighbor; previousLabel: string; nextLabel: string };
+  neighbors: {
+    previous: StepNeighbor;
+    next: StepNeighbor;
+    previousLabel: string;
+    nextLabel: string;
+    stepAria: string;
+  };
 };
 
 export function ReaderStrip({
@@ -53,11 +61,36 @@ export function ReaderStrip({
     chooseTranslation(id);
   };
 
+  const active = useActiveChapter();
+  const here = active ?? { book: yourNotes.book, chapter: yourNotes.chapter, previous: null, next: null };
+  const titleOf = (target: ChapterTarget) => {
+    const entry = bookPicker.books.find((book) => book.id === target.book);
+    return entry
+      ? bookPicker.chapterTitle.replace("{book}", entry.title).replace("{chapter}", String(target.chapter))
+      : "";
+  };
+  const neighborOf = (direction: "previous" | "next"): StepNeighbor => {
+    if (!active) return neighbors[direction];
+    const target = active[direction];
+    const entry = target ? bookPicker.books.find((book) => book.id === target.book) : null;
+    if (!target || !entry) return null;
+    const label = direction === "previous" ? neighbors.previousLabel : neighbors.nextLabel;
+    return {
+      label,
+      href: `${entry.base}/${target.chapter}`,
+      ariaLabel: neighbors.stepAria.replace("{label}", label).replace("{title}", titleOf(target)),
+    };
+  };
+
   const step = (direction: "previous" | "next") => (
     <ChapterStep
       direction={direction}
-      neighbor={neighbors[direction]}
+      neighbor={neighborOf(direction)}
       fallbackLabel={direction === "previous" ? neighbors.previousLabel : neighbors.nextLabel}
+      onStep={() => {
+        const target = active?.[direction];
+        return target ? scrollToChapter(target) : false;
+      }}
     />
   );
 
@@ -80,9 +113,9 @@ export function ReaderStrip({
             <BookPicker
               text={bookPicker.text}
               books={bookPicker.books}
-              currentBook={yourNotes.book}
-              currentChapter={yourNotes.chapter}
-              title={bookPicker.title}
+              currentBook={here.book}
+              currentChapter={here.chapter}
+              title={active ? titleOf(active) : bookPicker.title}
             />
             <span aria-hidden="true" className="h-4 w-px bg-rule-2" />
             <TranslationPicker text={pickerText} options={options} value={value} onChange={changeFirst} />
@@ -98,12 +131,7 @@ export function ReaderStrip({
             firstId={value}
             second={second}
           />
-          <YourNotesButton
-            label={yourNotes.label}
-            book={yourNotes.book}
-            chapter={yourNotes.chapter}
-            className="max-sm:hidden"
-          />
+          <YourNotesButton label={yourNotes.label} book={here.book} chapter={here.chapter} className="max-sm:hidden" />
           <TextOptions text={textText} locked={second.mode !== "off"} />
         </>
       }

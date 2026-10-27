@@ -7,7 +7,7 @@ const strip = "main [data-reader-strip]";
 const button = `${strip} button[data-parallel]`;
 const menu = `${strip} [role="dialog"][aria-label="Segunda traducción"]`;
 const mode = (name: string) => `${menu} [role=group] button:has-text("${name}")`;
-const root = "main [data-chapter-text]";
+const root = "main [data-stream-chapter]:first-of-type [data-chapter-text]";
 const secondOf = (n: number) => `${root} [data-second-verse="${n}"]`;
 const storageKey = "doctrina-second-translation";
 

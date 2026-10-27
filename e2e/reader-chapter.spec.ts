@@ -67,29 +67,21 @@ test("Psalm 119 renders its 176 verses and Sirach 51 its English text with the n
   await expect(page.locator(`${crumbs} button`)).toHaveText(["Biblia", "Libros deuterocanónicos"]);
 });
 
-test("a chapter outside the Spanish default shows no notice, and the edition and licence sit at the foot", async ({
-  page,
-}) => {
+test("a chapter outside the Spanish default shows no notice, and there is no chapter footer", async ({ page }) => {
   await page.goto(chapter("juan", 6));
   await expect(page.locator("main")).not.toContainText("Por ahora no hay una traducción al español");
-  const foot = page.locator("main section", { has: page.locator("h2", { hasText: "Edición y licencia" }) });
-  await expect(foot).toContainText("Reina-Valera 1909");
-  await expect(foot).toContainText("Licencia: Dominio público");
+  await expect(page.locator("main")).not.toContainText("Edición y licencia");
+  await expect(page.locator(`${neighbors} a`)).toHaveCount(0);
 });
 
-test("previous and next chapter: the first and last chapters have one side; Malachi 4 leads to Matthew", async ({
-  page,
-}) => {
+test("the head names the neighbouring chapters for search engines; Malachi 4 leads to Matthew", async ({ page }) => {
   await page.goto(chapter("genesis", 1));
-  await expect(page.locator(`${neighbors} a`)).toHaveText([/Capítulo siguiente\s*Génesis 2/]);
+  await expect(page.locator('link[rel="next"]')).toHaveAttribute("href", /\/es\/biblia\/genesis\/2$/);
+  await expect(page.locator('link[rel="prev"]')).toHaveCount(0);
   await page.goto(chapter("apocalipsis", 22));
-  await expect(page.locator(`${neighbors} a`)).toHaveText([/Capítulo anterior\s*Apocalipsis 21/]);
+  await expect(page.locator('link[rel="prev"]')).toHaveAttribute("href", /\/es\/biblia\/apocalipsis\/21$/);
   await page.goto(chapter("malaquias", 4));
-  const next = page.locator(`${neighbors} a`).last();
-  await expect(next).toHaveText(/Capítulo siguiente\s*Mateo 1/);
-  await next.click();
-  await expect(page).toHaveURL(/\/es\/biblia\/mateo\/1$/);
-  await expect(page.locator("main h1")).toHaveText("Mateo 1");
+  await expect(page.locator('link[rel="next"]')).toHaveAttribute("href", /\/es\/biblia\/mateo\/1$/);
 });
 
 test("unknown book, chapter or locale is a 404", async ({ request }) => {

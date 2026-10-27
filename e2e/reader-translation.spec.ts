@@ -70,16 +70,20 @@ test("a deuterocanonical chapter offers only the translations that have it and i
 
 test("a translation that numbers the chapter differently says so; one that agrees does not", async ({ page }) => {
   await page.goto("/es/biblia/salmo/23");
-  await expect(page.locator("main [role=note]")).toHaveCount(0);
+  await expect(page.locator("main [data-stream-chapter]").first().locator("[role=note]")).toHaveCount(0);
   await page.locator(button).click();
   await page.locator(option("DRA")).click();
-  await expect(page.locator("main [role=note]")).toContainText("DRA numera este capítulo de otro modo que RV1909");
+  await expect(page.locator("main [data-stream-chapter]").first().locator("[role=note]")).toContainText(
+    "DRA numera este capítulo de otro modo que RV1909",
+  );
   await page.goto("/es/biblia/juan/6");
-  await expect(page.locator("main [role=note]")).toContainText("DRA numera este capítulo de otro modo que RV1909");
+  await expect(page.locator("main [data-stream-chapter]").first().locator("[role=note]")).toContainText(
+    "DRA numera este capítulo de otro modo que RV1909",
+  );
   await page.goto("/es/biblia/juan/3");
   await page.locator(button).click();
   await page.locator(option("BSB")).click();
-  await expect(page.locator("main [role=note]")).toHaveCount(0);
+  await expect(page.locator("main [data-stream-chapter]").first().locator("[role=note]")).toHaveCount(0);
 });
 
 test("keyboard: arrows open and move, Home and End jump, Enter chooses, Esc and Tab close", async ({ page }) => {

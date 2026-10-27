@@ -6,7 +6,7 @@ const topZonePx = 2;
 
 type Anchor = { id: string; top: number };
 
-export function useKeepTopVerse(root: RefObject<HTMLElement | null>) {
+export function useKeepTopVerse(root: RefObject<HTMLElement | null>, unitsSelector = ":scope > [id]") {
   useEffect(() => {
     const element = root.current;
     if (!element) return;
@@ -16,7 +16,7 @@ export function useKeepTopVerse(root: RefObject<HTMLElement | null>) {
         anchor = null;
         return;
       }
-      const units = [...element.querySelectorAll<HTMLElement>(":scope > [id]")];
+      const units = [...element.querySelectorAll<HTMLElement>(unitsSelector)];
       const line = scrollOffset();
       let low = 0;
       let high = units.length - 1;
@@ -49,5 +49,5 @@ export function useKeepTopVerse(root: RefObject<HTMLElement | null>) {
       observer.disconnect();
       removeEventListener("scroll", record);
     };
-  }, [root]);
+  }, [root, unitsSelector]);
 }

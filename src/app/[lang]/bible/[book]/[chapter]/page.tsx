@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { NeighborLinks } from "@/components/neighbor-links";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { getBibleBook } from "@/content/bible-books";
@@ -11,7 +10,7 @@ import { getBookIndex } from "@/content/get-book-index";
 import { getReaderChapter } from "@/content/get-reader-chapter";
 import type { ChapterRef } from "@/content/model/bible";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import { ReaderBody } from "@/features/reader/reader-body";
+import { ReaderStream } from "@/features/reader/reader-stream";
 import { ReaderFormatScript } from "@/features/reader/reader-format-script";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderStrip } from "@/features/reader/reader-strip";
@@ -41,12 +40,17 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/bible/[boo
   const locale = await currentLocale();
   const loaded = await loadChapter(locale, book, chapter);
   const text = getUiText(locale);
+  const hrefOf = (other: ChapterRef | null) => {
+    const otherBook = other ? getBibleBook(other.book) : null;
+    return other && otherBook ? bibleChapterHref(locale, otherBook, other.chapter) : undefined;
+  };
   return {
     title: loaded
       ? text.reader.chapterTitle
           .replace("{book}", loaded.book.names[locale])
           .replace("{chapter}", String(loaded.chapter))
       : text.site.title,
+    ...(loaded ? { pagination: { previous: hrefOf(loaded.previous) ?? null, next: hrefOf(loaded.next) ?? null } } : {}),
   };
 }
 
@@ -61,13 +65,6 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
   const sectionLabel = text.shell.tree[book.section === "old" ? "ot" : book.section === "new" ? "nt" : "deutero"];
   const titleOf = (name: string, number: number) =>
     labels.chapterTitle.replace("{book}", name).replace("{chapter}", String(number));
-  const licenceTexts: Record<string, string> = labels.licences;
-  const licences = Object.fromEntries(
-    views.map((view) => {
-      const licence = licenceTexts[view.id];
-      return [view.id, licence ? labels.foot.licence.replace("{licence}", licence) : null];
-    }),
-  );
   const books = await getBookIndex(locale);
   const stepOf = (target: { label: string; title: string; href: string } | null) =>
     target
@@ -131,30 +128,34 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           },
           books,
           title: titleOf(book.names[locale], chapter),
+          chapterTitle: labels.chapterTitle,
         }}
         neighbors={{
           previous: stepOf(neighbor(labels.previous, loaded.previous)),
           next: stepOf(neighbor(labels.next, loaded.next)),
           previousLabel: labels.previous,
           nextLabel: labels.next,
+          stepAria: labels.stepAria,
         }}
       />
       <div className="reader-column mx-auto max-w-col has-data-[second=side]:max-w-wide">
-        {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
-        <Breadcrumbs
-          label={text.shell.breadcrumb}
-          trail={[{ label: text.shell.tree.bible }, { label: sectionLabel }]}
-          current={book.names[locale]}
-        />
-        <PageHeader id="top" className="mt-9" size="reader" title={titleOf(book.names[locale], chapter)} />
-        <ReaderBody
-          views={views}
-          licences={licences}
-          defaultId={defaultId}
-          bookId={book.id}
-          deuteroNotice={book.section === "deuterocanon" ? labels.deuteroNotice : null}
+        <ReaderStream
+          key={`${book.id}/${chapter}`}
+          initial={loaded}
+          chapterTitle={labels.chapterTitle}
+          deuteroNotice={labels.deuteroNotice}
           numberingNote={labels.numberingNote}
-          footTitle={labels.foot.title}
+          firstHeader={
+            <>
+              {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
+              <Breadcrumbs
+                label={text.shell.breadcrumb}
+                trail={[{ label: text.shell.tree.bible }, { label: sectionLabel }]}
+                current={book.names[locale]}
+              />
+              <PageHeader id="top" className="mt-9" size="reader" title={titleOf(book.names[locale], chapter)} />
+            </>
+          }
           panel={{
             locale,
             notes: labels.notes,
@@ -170,12 +171,6 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           }}
         />
         <VerseArrival />
-        <NeighborLinks
-          label={labels.neighborsLabel}
-          className="mt-16"
-          previous={neighbor(labels.previous, loaded.previous)}
-          next={neighbor(labels.next, loaded.next)}
-        />
       </div>
     </PageMain>
   );

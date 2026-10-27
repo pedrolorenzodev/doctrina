@@ -8,6 +8,7 @@ import { flushSync } from "react-dom";
 import type { TreeGroup, TreeNode } from "@/content/site-tree";
 import { ChapterGrid } from "@/components/chapter-grid";
 import { useDrawer } from "@/features/shell/drawer";
+import { useActiveChapter } from "@/lib/active-chapter";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { trapTab } from "@/lib/focus";
 import { travelMark, visibleRow } from "@/features/shell/tree-motion";
@@ -210,7 +211,9 @@ function TreeItem({
 }
 
 export function Sidebar({ groups, text }: SidebarProps) {
-  const pathname = usePathname();
+  const routerPath = usePathname();
+  const reading = useActiveChapter();
+  const pathname = reading?.href ?? routerPath;
   const { open, setOpen, menuRef } = useDrawer();
   const index = useMemo(() => indexTree(groups), [groups]);
   const bookRoute = bookRouteOf(pathname);

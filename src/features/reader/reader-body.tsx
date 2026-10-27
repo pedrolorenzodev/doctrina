@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { UndoBar } from "@/components/undo-bar";
-import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
 import { ReadMarker } from "@/features/reader/read-marker";
 import { goToUnit } from "@/features/reader/go-to-unit";
@@ -28,7 +27,6 @@ import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
 import { useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
-import { useKeepTopVerse } from "@/features/reader/use-keep-top-verse";
 import { useUndo } from "@/features/reader/use-undo";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { nbspBeforeDigits } from "@/lib/locator";
@@ -38,12 +36,13 @@ import type { ReaderTranslationView } from "@/content/get-reader-chapter";
 
 type ReaderBodyProps = {
   views: ReaderTranslationView[];
-  licences: Record<string, string | null>;
   defaultId: string;
   bookId: string;
   deuteroNotice: string | null;
   numberingNote: string;
-  footTitle: string;
+  idPrefix: string;
+  href: string;
+  active: boolean;
   panel: {
     locale: string;
     text: Parameters<typeof VersePanel>[0]["text"];
@@ -80,12 +79,13 @@ const noteClassName = "mt-5.5 mb-0 max-w-140 text-reader-note text-ink-3";
 
 export function ReaderBody({
   views,
-  licences,
   defaultId,
   bookId,
   deuteroNotice,
   numberingNote,
-  footTitle,
+  idPrefix,
+  href,
+  active,
   panel,
 }: ReaderBodyProps) {
   const chosen = useChosenTranslation(
@@ -116,7 +116,6 @@ export function ReaderBody({
   const [deleting, setDeleting] = useState<string | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const textRoot = useRef<HTMLDivElement>(null);
-  useKeepTopVerse(textRoot);
   const yourOpen = useYourNotesOpen();
   const verse = picked !== null && selected.verses.some((entry) => entry.verse === picked) ? picked : null;
   const undoState = useUndo();
@@ -154,7 +153,7 @@ export function ReaderBody({
     const short = panel.shortCitation
       .replace("{reference}", referenceOf(first, last))
       .replace("{edition}", selected.abbreviation);
-    return `«${selection.text}» ${short}. ${location.origin}${location.pathname}#v-${first}`;
+    return `«${selection.text}» ${short}. ${location.origin}${href}#v-${first}`;
   };
   const dateLabel = (time: number) =>
     new Intl.DateTimeFormat(panel.locale, { day: "numeric", month: "short", year: "numeric" }).format(time);
@@ -296,6 +295,7 @@ export function ReaderBody({
       date: dateLabel(note.updatedAt),
     };
   });
+  const live = active || verse !== null || deleting !== null || (undoState.undo?.open ?? false);
   const deletingCard = deleting === null ? null : (cards.find((card) => card.id === deleting) ?? null);
   const latest = useRef({ chapterNotes, translationId: selected.id });
   useEffect(() => {
@@ -366,10 +366,7 @@ export function ReaderBody({
     const release = subscribeYourNotes(() => {
       if (isYourNotesOpen()) setPicked(null);
     });
-    return () => {
-      release();
-      setYourNotesOpen(false);
-    };
+    return release;
   }, []);
   const openCard = (id: string, element: HTMLElement) => {
     const note = chapterNotes.find((candidate) => candidate.id === id);
@@ -401,6 +398,7 @@ export function ReaderBody({
         lang={selected.language}
         selected={verse}
         rootRef={textRoot}
+        idPrefix={idPrefix}
         segmentsOf={(entry) => highlights.segmentsFor(entry.verse, entry.text.length)}
         noteMarkOf={noteMarkOf}
         cardsShown={verse === null && !yourOpen && second?.mode !== "side"}
@@ -411,6 +409,7 @@ export function ReaderBody({
               cards={cards}
               hidden={verse !== null || yourOpen}
               rootRef={textRoot}
+              idPrefix={idPrefix}
               onOpen={openCard}
               onPreview={previewNote}
             />
@@ -420,94 +419,98 @@ export function ReaderBody({
         onSelect={select}
       />
       <ReadMarker book={bookId} chapter={panel.chapter} />
-      <ChapterFoot title={footTitle} edition={selected.name} licence={licences[selected.id] ?? null} />
-      <VersePanel
-        open={verse !== null}
-        reference={reference}
-        citation={citation}
-        verse={verse}
-        text={panel.text}
-        focusOnOpen={byKeyboard}
-        highlight={{
-          text: panel.highlight,
-          current: verse === null ? null : highlights.chosenOfVerse(verse),
-          canRemove: verse !== null && highlights.hasHighlightOnVerse(verse),
-          onPick: (color) => {
-            const entry = selected.verses.find((candidate) => candidate.verse === verse);
-            if (verse !== null && entry) highlights.apply([{ verse, from: 0, to: entry.text.length }], color);
-          },
-          onRemove: () => {
-            if (verse !== null) highlights.removeVerse(verse);
-          },
-        }}
-        noteLabel={panel.notes.add}
-        onNote={() => {
-          if (verse !== null) {
-            notes.openNew({ scope: "unit", verse, verseTo: verse, from: null, to: null, quote: null });
-          }
-        }}
-        onClose={close}
-        sections={sections}
-        forceSection={editor ? "notes" : null}
-      />
-      <YourNotesPanel
-        open={yourOpen}
-        text={panel.yourNotes}
-        editorText={panel.notes}
-        closeLabel={panel.text.close}
-        sourceNote={notes.source ? { text: notes.source.text, updatedAt: notes.source.updatedAt } : null}
-        dateLabel={dateLabel}
-        onSaveSource={notes.saveSource}
-        onDeleteSource={notes.removeSource}
-        notes={listedNotes}
-        highlights={listedHighlights}
-        colorNames={panel.highlight.colors}
-        heading={`${panel.bookName} ${panel.chapter}`}
-        onOpenNote={(id) => {
-          const note = notes.ofChapter.find((candidate) => candidate.id === id);
-          if (!note || note.verse === null) return;
-          open(note.verse, false, null);
-          notes.openExisting(note);
-        }}
-        onOpenHighlight={(number) => goToUnit(`v-${number}`)}
-        onClose={() => setYourNotesOpen(false)}
-      />
-      {deletingCard ? (
-        <DeleteNoteDialog
-          place={deletingCard.place}
-          excerpt={excerptOf(deletingCard.text)}
-          text={panel.notes.delete}
-          onCancel={() => setDeleting(null)}
-          onConfirm={() => {
-            notes.remove(deletingCard.id);
-            setDeleting(null);
-            requestAnimationFrame(() => opener.current?.focus({ preventScroll: true }));
-          }}
-        />
+      {live ? (
+        <>
+          <VersePanel
+            open={verse !== null}
+            reference={reference}
+            citation={citation}
+            verse={verse}
+            text={panel.text}
+            focusOnOpen={byKeyboard}
+            highlight={{
+              text: panel.highlight,
+              current: verse === null ? null : highlights.chosenOfVerse(verse),
+              canRemove: verse !== null && highlights.hasHighlightOnVerse(verse),
+              onPick: (color) => {
+                const entry = selected.verses.find((candidate) => candidate.verse === verse);
+                if (verse !== null && entry) highlights.apply([{ verse, from: 0, to: entry.text.length }], color);
+              },
+              onRemove: () => {
+                if (verse !== null) highlights.removeVerse(verse);
+              },
+            }}
+            noteLabel={panel.notes.add}
+            onNote={() => {
+              if (verse !== null) {
+                notes.openNew({ scope: "unit", verse, verseTo: verse, from: null, to: null, quote: null });
+              }
+            }}
+            onClose={close}
+            link={() => `${location.origin}${href}#v-${verse}`}
+            sections={sections}
+            forceSection={editor ? "notes" : null}
+          />
+          <YourNotesPanel
+            open={yourOpen && active}
+            text={panel.yourNotes}
+            editorText={panel.notes}
+            closeLabel={panel.text.close}
+            sourceNote={notes.source ? { text: notes.source.text, updatedAt: notes.source.updatedAt } : null}
+            dateLabel={dateLabel}
+            onSaveSource={notes.saveSource}
+            onDeleteSource={notes.removeSource}
+            notes={listedNotes}
+            highlights={listedHighlights}
+            colorNames={panel.highlight.colors}
+            heading={`${panel.bookName} ${panel.chapter}`}
+            onOpenNote={(id) => {
+              const note = notes.ofChapter.find((candidate) => candidate.id === id);
+              if (!note || note.verse === null) return;
+              open(note.verse, false, null);
+              notes.openExisting(note);
+            }}
+            onOpenHighlight={(number) => goToUnit(`${idPrefix}v-${number}`)}
+            onClose={() => setYourNotesOpen(false)}
+          />
+          {deletingCard ? (
+            <DeleteNoteDialog
+              place={deletingCard.place}
+              excerpt={excerptOf(deletingCard.text)}
+              text={panel.notes.delete}
+              onCancel={() => setDeleting(null)}
+              onConfirm={() => {
+                notes.remove(deletingCard.id);
+                setDeleting(null);
+                requestAnimationFrame(() => opener.current?.focus({ preventScroll: true }));
+              }}
+            />
+          ) : null}
+          <SelectionToolbar
+            rootRef={textRoot}
+            text={{ ...panel.toolbar, highlight: panel.highlight }}
+            isMarked={highlights.isMarked}
+            lastColor={highlights.lastColor}
+            chosenIn={highlights.chosenIn}
+            hasHighlightIn={highlights.hasHighlightIn}
+            citation={selectionCitation}
+            onHighlight={highlights.apply}
+            onRemove={highlights.remove}
+            onNote={noteOnWords}
+          />
+          <UndoBar
+            open={undoState.undo?.open ?? false}
+            message={undoState.undo?.message ?? ""}
+            token={undoState.undo?.token ?? 0}
+            actionLabel={panel.highlight.undo}
+            onAction={() => {
+              undoState.undo?.restore();
+              undoState.expire();
+            }}
+            onExpire={undoState.expire}
+          />
+        </>
       ) : null}
-      <SelectionToolbar
-        rootRef={textRoot}
-        text={{ ...panel.toolbar, highlight: panel.highlight }}
-        isMarked={highlights.isMarked}
-        lastColor={highlights.lastColor}
-        chosenIn={highlights.chosenIn}
-        hasHighlightIn={highlights.hasHighlightIn}
-        citation={selectionCitation}
-        onHighlight={highlights.apply}
-        onRemove={highlights.remove}
-        onNote={noteOnWords}
-      />
-      <UndoBar
-        open={undoState.undo?.open ?? false}
-        message={undoState.undo?.message ?? ""}
-        token={undoState.undo?.token ?? 0}
-        actionLabel={panel.highlight.undo}
-        onAction={() => {
-          undoState.undo?.restore();
-          undoState.expire();
-        }}
-        onExpire={undoState.expire}
-      />
     </>
   );
 }

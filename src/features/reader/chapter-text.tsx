@@ -19,6 +19,7 @@ type ChapterTextProps = {
   selected: number | null;
   segmentsOf: (verse: BibleVerse) => Segment[];
   rootRef: RefObject<HTMLDivElement | null>;
+  idPrefix: string;
   noteMarkOf: (verse: number) => string | null;
   cards: ReactNode;
   cardsShown: boolean;
@@ -41,6 +42,7 @@ export function ChapterText({
   selected,
   segmentsOf,
   rootRef,
+  idPrefix,
   noteMarkOf,
   cards,
   cardsShown,
@@ -64,7 +66,7 @@ export function ChapterText({
       {verses.map((verse) => (
         <Fragment key={verse.verse}>
           <p
-            id={`v-${verse.verse}`}
+            id={`${idPrefix}v-${verse.verse}`}
             className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 font-body text-reader font-light text-ink-2 arrival-mark data-marked:bg-mark"
           >
             <span className="mb-1 flex items-baseline gap-2 font-ui text-division text-ink-3 tabular-nums md:contents">

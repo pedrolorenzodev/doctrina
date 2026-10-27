@@ -7,12 +7,13 @@ type ChapterStepProps = {
   direction: "previous" | "next";
   neighbor: StepNeighbor;
   fallbackLabel: string;
+  onStep?: () => boolean;
 };
 
 const stepClassName =
   "inline-grid h-8 w-8.5 place-items-center rounded-7 text-ink-2 transition-colors duration-150 ease-standard focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent pointer-coarse:size-11";
 
-export function ChapterStep({ direction, neighbor, fallbackLabel }: ChapterStepProps) {
+export function ChapterStep({ direction, neighbor, fallbackLabel, onStep }: ChapterStepProps) {
   const path = direction === "previous" ? "M10 3.5 5.5 8 10 12.5" : "M6 3.5 10.5 8 6 12.5";
   const icon = (
     <svg
@@ -29,7 +30,7 @@ export function ChapterStep({ direction, neighbor, fallbackLabel }: ChapterStepP
   );
   if (!neighbor) {
     return (
-      <span role="link" aria-disabled="true" aria-label={fallbackLabel} className={`${stepClassName} opacity-40`}>
+      <span role="link" aria-disabled="true" aria-label={fallbackLabel} className={`${stepClassName} invisible`}>
         {icon}
       </span>
     );
@@ -40,6 +41,9 @@ export function ChapterStep({ direction, neighbor, fallbackLabel }: ChapterStepP
         href={neighbor.href}
         aria-label={neighbor.ariaLabel}
         data-step={direction}
+        onClick={(event) => {
+          if (onStep?.()) event.preventDefault();
+        }}
         className={`${stepClassName} hover:bg-hover hover:text-ink`}
       >
         {icon}
