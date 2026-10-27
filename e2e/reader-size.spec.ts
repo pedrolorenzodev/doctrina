@@ -68,7 +68,7 @@ test("a size outside the seven steps is ignored", async ({ page }) => {
   expect(await fontSize(page)).toBe("19px");
 });
 
-test("changing the size keeps the verse being read in place", async ({ page }) => {
+test("changing the size keeps the verse at the top in place", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
   await openText(page);
@@ -76,18 +76,27 @@ test("changing the size keeps the verse being read in place", async ({ page }) =
     const verse = document.getElementById("v-30")!;
     scrollTo(0, verse.getBoundingClientRect().top + scrollY - 220);
   });
+  await page.evaluate(() => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))));
   await page.waitForTimeout(200);
   const press = async (selector: string) => {
     const box = (await page.locator(selector).boundingBox())!;
     await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
   };
-  const top = () => page.locator("#v-30").evaluate((el) => el.getBoundingClientRect().top);
+  const reading = await page.evaluate(() => {
+    const unit = [...document.querySelectorAll<HTMLElement>('[id^="v-"]')].find(
+      (verse) => verse.getBoundingClientRect().bottom > 140,
+    )!;
+    return unit.id;
+  });
+  const top = () => page.locator(`#${reading}`).evaluate((el) => el.getBoundingClientRect().top);
   const before = await top();
   await press(larger);
-  expect(Math.abs((await top()) - before)).toBeLessThan(40);
+  await page.waitForTimeout(100);
+  expect(Math.abs((await top()) - before)).toBeLessThan(2);
   await press(smaller);
   await press(smaller);
-  expect(Math.abs((await top()) - before)).toBeLessThan(60);
+  await page.waitForTimeout(100);
+  expect(Math.abs((await top()) - before)).toBeLessThan(2);
 });
 
 test("the strip sits under the top bar from the start and always draws its hairline", async ({ page }) => {

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useSyncExternalStore } from "react";
-import { jumpToY, scrollOffset } from "@/lib/scroll";
 import {
   applyReaderSize,
   chooseReaderSize,
@@ -20,19 +19,6 @@ type TextSizeControlText = {
   largerMark: string;
 };
 
-const anchorClearance = 40;
-
-function changeKeepingPlace(change: () => void) {
-  const line = scrollOffset() + anchorClearance;
-  const verses = Array.from(document.querySelectorAll<HTMLElement>('[id^="v-"]'));
-  const anchor = verses.find((verse) => verse.getBoundingClientRect().bottom > line);
-  const before = anchor?.getBoundingClientRect().top ?? 0;
-  change();
-  if (!anchor) return;
-  const shift = anchor.getBoundingClientRect().top - before;
-  if (Math.abs(shift) > 1) jumpToY(scrollY + shift);
-}
-
 const buttonClassName =
   "inline-flex min-h-7 min-w-7.5 cursor-pointer items-center justify-center rounded-5 px-2.5 py-1 text-ui-xs leading-label font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent pointer-coarse:min-h-11 pointer-coarse:min-w-11";
 
@@ -43,7 +29,7 @@ export function TextSizeControl({ text }: { text: TextSizeControlText }) {
 
   const step = (direction: -1 | 1) => {
     const next = steppedReaderSize(size, direction);
-    if (next !== size) changeKeepingPlace(() => chooseReaderSize(next));
+    if (next !== size) chooseReaderSize(next);
   };
 
   return (

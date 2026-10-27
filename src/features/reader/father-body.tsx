@@ -13,6 +13,7 @@ import type { ReaderSelection } from "@/features/reader/read-selection";
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
 import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
+import { useKeepTopVerse } from "@/features/reader/use-keep-top-verse";
 import { useUndo } from "@/features/reader/use-undo";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { YourNotesPanel, type YourNotesText } from "@/features/reader/your-notes-panel";
@@ -76,6 +77,7 @@ export function FatherBody({
   const [deleting, setDeleting] = useState<string | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const textRoot = useRef<HTMLDivElement>(null);
+  useKeepTopVerse(textRoot);
   const yourOpen = useYourNotesOpen();
   const undoState = useUndo();
   const highlights = useChapterHighlights({

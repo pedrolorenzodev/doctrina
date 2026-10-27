@@ -1,4 +1,5 @@
 import { useEffect, useState, type RefObject } from "react";
+import { scrollIsQuiet } from "@/lib/scroll";
 
 const hideAfter = 48;
 const showAfter = 24;
@@ -17,6 +18,10 @@ export function useHideOnScroll(ref: RefObject<HTMLElement | null>): boolean {
       element.querySelector(":focus-visible") !== null || element.querySelector('[aria-expanded="true"]') !== null;
     const onScroll = () => {
       const y = Math.max(0, scrollY);
+      if (scrollIsQuiet()) {
+        last = y;
+        return;
+      }
       const delta = y - last;
       last = y;
       if (y <= topZone || pinned()) {

@@ -101,7 +101,8 @@
   --text-micro-lg: 11.5px;
   --spacing-panel: 380px;
   --spacing-note-card: 240px;
-  --spacing-note-room: 280px;
+  --spacing-note-edge: 17px;
+  --spacing-note-room: calc(var(--spacing-note-card) + 40px + var(--spacing-note-edge));
   --text-note-card: 15px;
   --text-dialog-title: 23px;
   --text-dialog-title--line-height: 1.25;
@@ -1319,6 +1320,10 @@
     overscroll-behavior-x: none;
     scroll-padding-top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
   }
+
+  html:has([data-chapter-text], [data-father-text]) {
+    overflow-anchor: none;
+  }
 }
 
 :is(a, button, [tabindex], input, summary) {
@@ -1477,13 +1482,13 @@ html.theme-switching ::after {
 }
 
 @custom-variant notes {
-  @media (min-width: 83.625rem) {
+  @media (min-width: 84.6875rem) {
     :root:not([data-tree="closed"]) & {
       @slot;
     }
   }
 
-  @media (min-width: 66.625rem) {
+  @media (min-width: 67.6875rem) {
     :root[data-tree="closed"] & {
       @slot;
     }
@@ -1498,13 +1503,13 @@ html.theme-switching ::after {
     transition: none;
   }
 
-  @media (min-width: 66.625rem) {
+  @media (min-width: 67.6875rem) {
     :root[data-tree="closed"] &:has([data-note-cards]) {
       left: calc(-1 * max(0px, var(--spacing-note-room) - (100vw - var(--container-col)) / 2));
     }
   }
 
-  @media (min-width: 83.625rem) {
+  @media (min-width: 84.6875rem) {
     :root:not([data-tree="closed"]) &:has([data-note-cards]) {
       left: calc(-1 * max(0px, var(--spacing-note-room) - (100vw - var(--spacing-sidebar) - var(--container-col)) / 2));
     }

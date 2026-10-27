@@ -28,6 +28,7 @@ import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
 import { useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
+import { useKeepTopVerse } from "@/features/reader/use-keep-top-verse";
 import { useUndo } from "@/features/reader/use-undo";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { nbspBeforeDigits } from "@/lib/locator";
@@ -115,6 +116,7 @@ export function ReaderBody({
   const [deleting, setDeleting] = useState<string | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const textRoot = useRef<HTMLDivElement>(null);
+  useKeepTopVerse(textRoot);
   const yourOpen = useYourNotesOpen();
   const verse = picked !== null && selected.verses.some((entry) => entry.verse === picked) ? picked : null;
   const undoState = useUndo();

@@ -96,6 +96,18 @@ export function jumpToY(target: number) {
   smooth?.scrollTo(y, { immediate: true, force: true });
 }
 
+const quietMs = 120;
+let quietUntil = 0;
+
+export function scrollIsQuiet(): boolean {
+  return performance.now() < quietUntil;
+}
+
+export function jumpQuietly(target: number) {
+  quietUntil = performance.now() + quietMs;
+  jumpToY(target);
+}
+
 export function scrollToElement(element: HTMLElement) {
   scrollToY(element.getBoundingClientRect().top + scrollY - scrollOffset());
 }
