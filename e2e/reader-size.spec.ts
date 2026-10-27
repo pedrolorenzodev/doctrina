@@ -188,7 +188,7 @@ test("a verse link lands the verse 140 px from the top at once, with no second j
 
 test("a hash that is not a verse marks nothing, and a hash change marks the new verse", async ({ page }) => {
   await page.goto(`${john}#top`);
-  await expect(page.locator("[data-arrived]")).toHaveCount(0);
+  await expect(page.locator("[data-marked]")).toHaveCount(0);
   await page.evaluate(() => {
     location.hash = "#v-2";
   });
@@ -198,4 +198,9 @@ test("a hash that is not a verse marks nothing, and a hash change marks the new 
   });
   await expect(page.locator("#v-3")).toHaveAttribute("data-marked", "");
   await expect(page.locator("#v-2")).not.toHaveAttribute("data-marked", "");
+  await expect(page.locator("#v-3")).not.toHaveAttribute("data-marked", "", { timeout: 4000 });
+  await expect
+    .poll(() => page.locator("#v-3").evaluate((el) => getComputedStyle(el).boxShadow), { timeout: 3000 })
+    .toMatch(/^rgba\(0, 0, 0, 0\)/);
+  expect(await page.locator("#v-3").evaluate((el) => getComputedStyle(el).backgroundColor)).toBe("rgba(0, 0, 0, 0)");
 });

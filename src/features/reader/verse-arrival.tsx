@@ -19,7 +19,6 @@ export function VerseArrival() {
       marked = arrivalHash.test(hash) ? document.getElementById(hash.slice(1)) : null;
       if (!marked) return;
       const verse = marked;
-      verse.dataset.arrived = "";
       verse.dataset.marked = "";
       fade = window.setTimeout(() => verse.removeAttribute("data-marked"), holdMs);
     };

@@ -75,6 +75,8 @@
   --text-card--line-height: 1.55;
   --text-row: 16px;
   --text-row--line-height: 1.45;
+  --text-panel-translation: 16px;
+  --text-panel-translation--line-height: 1.6;
   --text-axis: 11px;
   --text-legend: 14px;
   --text-legend--line-height: 1.65;
@@ -1131,6 +1133,18 @@
 
   &[data-open="true"] {
     transition-delay: 0s, 0s;
+  }
+}
+
+@utility arrival-mark {
+  box-shadow: inset 2px 0 0 transparent;
+  transition-property: background-color, box-shadow;
+  transition-duration: 1200ms;
+  transition-timing-function: var(--ease-standard);
+
+  &[data-marked] {
+    box-shadow: inset 2px 0 0 var(--color-accent);
+    transition-duration: 200ms;
   }
 }
 

@@ -88,10 +88,51 @@ test("a work links to the previous and next work of the same Father; a lone work
 
 test("arriving on a division by its anchor marks it for about two seconds", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
+  await page.addInitScript(() => {
+    const alpha = (value: string) => {
+      const match = value.match(/\/\s*([\d.]+)\s*\)|rgba\([^)]*,\s*([\d.]+)\)/);
+      return match ? Number(match[1] ?? match[2]) : value.startsWith("rgba(0, 0, 0, 0)") ? 0 : 1;
+    };
+    const frames: { marked: boolean; fill: number; border: number }[] = [];
+    (window as unknown as { __frames: typeof frames }).__frames = frames;
+    const tick = () => {
+      const el = document.getElementById("d-3");
+      if (el) {
+        const style = getComputedStyle(el);
+        frames.push({
+          marked: el.hasAttribute("data-marked"),
+          fill: alpha(style.backgroundColor),
+          border: style.boxShadow === "none" ? 0 : alpha(style.boxShadow),
+        });
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
   await page.goto(`${didache}#d-3`);
   const division = page.locator("#d-3");
   await expect(division).toHaveAttribute("data-marked", "");
-  await expect(division).not.toHaveAttribute("data-marked", "", { timeout: 4000 });
+  await expect(division).not.toHaveAttribute("data-marked", "", { timeout: 6000 });
+  await expect
+    .poll(
+      () =>
+        page.evaluate(() => {
+          const frames = (window as unknown as { __frames: { fill: number; border: number }[] }).__frames;
+          const last = frames[frames.length - 1]!;
+          return last.fill === 0 && last.border === 0;
+        }),
+      { timeout: 6000 },
+    )
+    .toBe(true);
+  const frames = await page.evaluate(
+    () => (window as unknown as { __frames: { marked: boolean; fill: number; border: number }[] }).__frames,
+  );
+  expect(Math.max(...frames.map((frame) => frame.fill))).toBeGreaterThan(0.3);
+  expect(Math.max(...frames.map((frame) => frame.border))).toBeGreaterThan(0.9);
+  const fading = frames.filter(
+    (frame) => !frame.marked && frame.fill > 0.02 && frame.fill < 0.4 && frame.border > 0.05 && frame.border < 0.95,
+  );
+  expect(fading.length).toBeGreaterThan(2);
   const top = (await division.boundingBox())!.y;
   expect(top).toBeGreaterThan(50);
 });

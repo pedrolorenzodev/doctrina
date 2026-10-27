@@ -240,7 +240,7 @@ export function FatherBody({
             <div
               key={division.ordinal}
               id={anchorOf(division.locator)}
-              className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 transition-colors duration-1200 data-arrived:shadow-current data-marked:bg-mark data-marked:duration-200 data-selected:bg-accent-weak"
+              className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 arrival-mark data-marked:bg-mark data-selected:bg-accent-weak"
             >
               <span className="mb-1 flex items-baseline gap-2 font-ui text-division text-ink-3 tabular-nums md:contents">
                 <button
