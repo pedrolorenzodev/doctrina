@@ -336,6 +336,31 @@ export const es = {
       prologue: "Prólogo",
     },
   },
+  historyIndex: {
+    filter: "Filtrar por nombre",
+    none: "Nada coincide con «{query}».",
+    century: "Siglo {n}",
+    fathers: {
+      intro:
+        "Los escritores cristianos de los primeros siglos, de los discípulos de los apóstoles en adelante, ordenados por el siglo de su muerte. Cada página reúne su vida, sus escritos y los lugares de Doctrina que los citan.",
+    },
+    councils: {
+      intro:
+        "Un concilio reúne a obispos de varias iglesias para resolver cuestiones de fe o de disciplina. Estos son los {n} que registra el sitio, del año {from} al {to}; cada tradición cuenta a su modo cuáles son ecuménicos.",
+    },
+    currents: {
+      intro:
+        "Enseñanzas que alguna Iglesia o concilio rechazó en los primeros siglos. Cada página dice qué sostenían y cómo se les respondió, con los Padres y los concilios que intervinieron.",
+    },
+    divisions: {
+      intro:
+        "Las separaciones entre iglesias cristianas, ordenadas por siglo. Cada tradición las cuenta con sus propias palabras; aquí figuran las {n} que registra el sitio.",
+    },
+    reformation: {
+      intro:
+        "Los movimientos que precedieron, protagonizaron o siguieron a la Reforma del siglo XVI, ordenados por siglo. El sitio registra {n}.",
+    },
+  },
   council: {
     facts: { date: "Fecha", place: "Lugar", convokedBy: "Convocado por", canons: "Cánones" },
     decided: "Qué decidió",

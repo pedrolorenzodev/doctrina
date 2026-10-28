@@ -14,6 +14,12 @@ import {
   objectionRoute,
   objectionsHref,
   objectionsRoute,
+  councilsIndexHref,
+  currentsIndexHref,
+  divisionsIndexHref,
+  fathersIndexHref,
+  historyIndexRoute,
+  reformationIndexHref,
   earlyChristiansHref,
   earlyChristiansRoute,
   traditionHref,
@@ -254,29 +260,49 @@ export function buildSiteTree(
           ...leaf("history/timeline", text.tree.timeline),
           ...(publishedFathers.length > 0 ? { href: timelineHref(locale), route: timelineRoute(locale) } : {}),
         },
-        branch(
-          "history/fathers",
-          text.tree.fathers,
-          fathers.map((father) => ({
-            ...branch(
-              `history/fathers/${father.id}`,
-              father[locale],
-              (fatherWorks[father.id] ?? []).map((work) => ({
-                ...leaf(`history/works/${work.id}`, work.label),
-                href: fatherWorkHref(locale, work.id),
-                route: fatherWorkRoute(locale, work.id),
-              })),
-            ),
-            ...(publishedFathers.includes(father.id)
-              ? { href: fatherHref(locale, father.id), route: fatherRoute(locale, father.id) }
-              : {}),
-          })),
-          counts.fathers,
-        ),
-        leaf("history/councils", text.tree.councils, counts.councils),
-        leaf("history/heresies", text.tree.heresies, counts.heresies),
-        leaf("history/divisions", text.tree.divisions, counts.divisions),
-        leaf("history/reformation", text.tree.reformation, counts.reformation),
+        {
+          ...branch(
+            "history/fathers",
+            text.tree.fathers,
+            fathers.map((father) => ({
+              ...branch(
+                `history/fathers/${father.id}`,
+                father[locale],
+                (fatherWorks[father.id] ?? []).map((work) => ({
+                  ...leaf(`history/works/${work.id}`, work.label),
+                  href: fatherWorkHref(locale, work.id),
+                  route: fatherWorkRoute(locale, work.id),
+                })),
+              ),
+              ...(publishedFathers.includes(father.id)
+                ? { href: fatherHref(locale, father.id), route: fatherRoute(locale, father.id) }
+                : {}),
+            })),
+            counts.fathers,
+          ),
+          href: fathersIndexHref(locale),
+          route: historyIndexRoute(locale, "fathers"),
+        },
+        {
+          ...leaf("history/councils", text.tree.councils, counts.councils),
+          href: councilsIndexHref(locale),
+          route: historyIndexRoute(locale, "councils"),
+        },
+        {
+          ...leaf("history/heresies", text.tree.heresies, counts.heresies),
+          href: currentsIndexHref(locale),
+          route: historyIndexRoute(locale, "currents"),
+        },
+        {
+          ...leaf("history/divisions", text.tree.divisions, counts.divisions),
+          href: divisionsIndexHref(locale),
+          route: historyIndexRoute(locale, "divisions"),
+        },
+        {
+          ...leaf("history/reformation", text.tree.reformation, counts.reformation),
+          href: reformationIndexHref(locale),
+          route: historyIndexRoute(locale, "reformation"),
+        },
       ],
     },
     {

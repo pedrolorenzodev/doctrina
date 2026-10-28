@@ -140,7 +140,7 @@ test("four groups with the counts of history and only the published pages, their
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
   expect(counts).toEqual(["56", "41", "18", "10", "20"]);
-  await expect(page.locator('aside nav a:not([href*="/obras/"])')).toHaveCount(77);
+  await expect(page.locator('aside nav a:not([href*="/obras/"])')).toHaveCount(82);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
 });
 
@@ -164,14 +164,11 @@ test("entries without a page are pressable and do nothing; branches still open",
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   const url = page.url();
-  await page.locator('aside nav li[data-id="history/councils"] button').click();
   await page.locator('aside nav li[data-id="reference/glossary"] button').click();
   expect(page.url()).toBe(url);
   const nt = page.locator('aside nav li[data-id="bible/nt"]');
   await nt.locator("> [data-row] button").first().click();
   await expect(nt.locator("> ul")).toBeVisible();
-  await page.locator('aside nav li[data-id="history/heresies"] button').click();
-  expect(page.url()).toBe(url);
   await page.locator('aside nav li[data-id="book/Matt"] > [data-row] button').first().click();
   await expect(page.locator('aside nav li[data-id="book/Matt"] a[data-chapter="1"]')).toHaveAttribute(
     "href",

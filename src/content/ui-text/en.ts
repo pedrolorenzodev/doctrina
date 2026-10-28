@@ -338,6 +338,31 @@ export const en: UiText = {
       prologue: "Prologue",
     },
   },
+  historyIndex: {
+    filter: "Filter by name",
+    none: "Nothing matches «{query}».",
+    century: "{n} century",
+    fathers: {
+      intro:
+        "The Christian writers of the first centuries, from the apostles' disciples onwards, ordered by the century of their death. Each page gathers their life, their writings and the places in Doctrina that quote them.",
+    },
+    councils: {
+      intro:
+        "A council gathers bishops from several churches to settle questions of faith or discipline. These are the {n} the site records, from the year {from} to {to}; each tradition counts differently which of them are ecumenical.",
+    },
+    currents: {
+      intro:
+        "Teachings that a Church or a council rejected in the first centuries. Each page says what they held and how they were answered, with the Fathers and councils involved.",
+    },
+    divisions: {
+      intro:
+        "The separations between Christian churches, ordered by century. Each tradition tells them in its own words; these are the {n} the site records.",
+    },
+    reformation: {
+      intro:
+        "The movements that preceded, carried out or followed the sixteenth-century Reformation, ordered by century. The site records {n}.",
+    },
+  },
   council: {
     facts: { date: "Date", place: "Place", convokedBy: "Convoked by", canons: "Canons" },
     decided: "What it decided",

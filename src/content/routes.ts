@@ -86,6 +86,39 @@ export function fatherRoute(locale: Locale, id: string): string {
 const councilsSegments: Record<Locale, string> = { es: "concilios", en: "councils" };
 const currentsSegments: Record<Locale, string> = { es: "corrientes", en: "currents" };
 
+const fatherIndexSegments: Record<Locale, string> = { es: "padres", en: "fathers" };
+const currentsIndexSegments: Record<Locale, string> = { es: "herejias", en: "heresies" };
+
+export function fathersIndexHref(locale: Locale): string {
+  return `/${locale}/${historySegments[locale]}/${fatherIndexSegments[locale]}`;
+}
+
+const divisionsSegments: Record<Locale, string> = { es: "divisiones", en: "divisions" };
+const reformationSegments: Record<Locale, string> = { es: "reforma", en: "reformation" };
+
+export function divisionsIndexHref(locale: Locale): string {
+  return `/${locale}/${historySegments[locale]}/${divisionsSegments[locale]}`;
+}
+
+export function reformationIndexHref(locale: Locale): string {
+  return `/${locale}/${historySegments[locale]}/${reformationSegments[locale]}`;
+}
+
+export function historyIndexRoute(
+  locale: Locale,
+  segment: "fathers" | "councils" | "currents" | "divisions" | "reformation",
+): string {
+  return `/${locale}/history/${segment}`;
+}
+
+export function councilsIndexHref(locale: Locale): string {
+  return `/${locale}/${historySegments[locale]}/${councilsSegments[locale]}`;
+}
+
+export function currentsIndexHref(locale: Locale): string {
+  return `/${locale}/${historySegments[locale]}/${currentsIndexSegments[locale]}`;
+}
+
 export function councilHref(locale: Locale, id: string): string {
   return `/${locale}/${historySegments[locale]}/${councilsSegments[locale]}/${id}`;
 }
@@ -147,6 +180,11 @@ export function spanishRewrites() {
       destination: fatherRoute("es", ":father"),
     },
     { source: fatherWorkHref("es", ":work"), destination: fatherWorkRoute("es", ":work") },
+    { source: fathersIndexHref("es"), destination: "/es/history/fathers" },
+    { source: councilsIndexHref("es"), destination: "/es/history/councils" },
+    { source: divisionsIndexHref("es"), destination: "/es/history/divisions" },
+    { source: reformationIndexHref("es"), destination: "/es/history/reformation" },
+    { source: currentsIndexHref("es"), destination: "/es/history/currents" },
     { source: councilHref("es", ":council"), destination: councilRoute("es", ":council") },
     { source: currentHref("es", ":current"), destination: currentRoute("es", ":current") },
     ...doctrineRewrites(),
