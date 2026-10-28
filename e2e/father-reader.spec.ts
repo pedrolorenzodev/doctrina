@@ -28,8 +28,8 @@ test("the division locator sits in the left margin from 768 px and above the tex
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(450);
   const stacked = (await first.locator("button").first().boundingBox())!;
-  const below = (await first.locator("p").last().boundingBox())!;
-  expect(stacked.y + stacked.height).toBeLessThanOrEqual(below.y + 1);
+  const belowTop = await first.locator("[data-verse-text]").evaluate((node) => node.getClientRects()[0]!.top);
+  expect(stacked.y + stacked.height).toBeLessThanOrEqual(belowTop + 1);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 });
 
@@ -247,4 +247,57 @@ test("«Tus notas» of a work lists its notes and a note on the whole work", asy
     "data-open",
     "true",
   );
+});
+
+test("a division with a note shows the pen between its locator and its text, 8 / 5 / 8 px, level with the first line", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.addInitScript(() => {
+    localStorage.setItem(
+      "doctrina-notes",
+      JSON.stringify([
+        {
+          id: "n1",
+          scope: "unit",
+          translationId: "didache",
+          book: "didache",
+          chapter: 1,
+          verse: 1,
+          verseTo: 1,
+          from: null,
+          to: null,
+          quote: null,
+          text: "Las dos vías.",
+          createdAt: 1,
+          updatedAt: 1700000000000,
+        },
+      ]),
+    );
+  });
+  await page.goto(didache);
+  const unit = page.locator("#d-1");
+  await expect(unit.locator("[data-note-pen]")).toBeVisible();
+  await expect(page.locator("[data-note-pen]")).toHaveCount(1);
+  const place = await page.evaluate(() => {
+    const row = document.querySelector("#d-1")!;
+    const number = row.querySelector<HTMLElement>("[data-division-open]")!.getBoundingClientRect();
+    const icon = row.querySelector("[data-note-pen]")!.getBoundingClientRect();
+    const label = [...row.querySelectorAll("button")].find((b) => /nota/.test(b.textContent ?? ""))!;
+    const labelBox = label.getBoundingClientRect();
+    const text = row.querySelector("[data-verse-text]")!.getClientRects()[0]!;
+    return {
+      numberToIcon: icon.left - number.right,
+      iconToLabel: labelBox.left - icon.right,
+      labelToText: text.left - labelBox.right,
+      iconMid: icon.top + icon.height / 2,
+      numberMid: number.top + number.height / 2,
+      textMid: text.top + text.height / 2,
+    };
+  });
+  expect(Math.abs(place.numberToIcon - 8)).toBeLessThan(1.5);
+  expect(Math.abs(place.iconToLabel - 5)).toBeLessThan(1.5);
+  expect(Math.abs(place.labelToText - 8)).toBeLessThan(1.5);
+  expect(Math.abs(place.iconMid - place.textMid)).toBeLessThan(2);
+  expect(Math.abs(place.numberMid - place.textMid)).toBeLessThan(2);
 });

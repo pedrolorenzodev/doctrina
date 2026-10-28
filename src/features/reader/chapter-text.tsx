@@ -1,6 +1,7 @@
-import { Fragment, type MouseEvent, type ReactNode, type RefObject } from "react";
+import { Fragment, type ReactNode, type RefObject } from "react";
 import type { BibleVerse, ChapterStructure } from "@/content/model/bible";
 import type { HighlightColor, Segment } from "@/lib/highlights";
+import { NoteMarkers } from "@/features/reader/note-markers";
 import { splitByRed } from "@/lib/text-pieces";
 
 export type SecondReading = {
@@ -91,25 +92,13 @@ export function ChapterText({
                 {verse.verse}
               </span>
               {noteMarkOf(verse.verse) ? (
-                <>
-                  <NotePen
-                    previewed={previewed === verse.verse}
-                    onClick={(event) => onMark(verse.verse, event.currentTarget)}
-                    onPreview={(on) => onPreview(on ? verse.verse : null)}
-                  />
-                  <button
-                    type="button"
-                    onClick={(event) => onMark(verse.verse, event.currentTarget)}
-                    className={`note-mark-in pointer-coarse:hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline -ml-0.75 md:mr-2 md:-translate-y-0.5 md:align-middle md:whitespace-nowrap ${cardsShown ? "notes:hidden" : ""}`}
-                    data-cards-shown={cardsShown || undefined}
-                    onPointerEnter={() => onPreview(verse.verse)}
-                    onPointerLeave={() => onPreview(null)}
-                    onFocus={() => onPreview(verse.verse)}
-                    onBlur={() => onPreview(null)}
-                  >
-                    {noteMarkOf(verse.verse)}
-                  </button>
-                </>
+                <NoteMarkers
+                  mark={noteMarkOf(verse.verse) ?? ""}
+                  previewed={previewed === verse.verse}
+                  hideLabel={cardsShown}
+                  onOpen={(event) => onMark(verse.verse, event.currentTarget)}
+                  onPreview={(on) => onPreview(on ? verse.verse : null)}
+                />
               ) : null}
             </span>
             <span
@@ -169,42 +158,6 @@ export function ChapterText({
       ))}
       {cards}
     </div>
-  );
-}
-
-type NotePenProps = {
-  previewed: boolean;
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
-  onPreview: (on: boolean) => void;
-};
-
-function NotePen({ previewed, onClick, onPreview }: NotePenProps) {
-  return (
-    <button
-      type="button"
-      tabIndex={-1}
-      aria-hidden="true"
-      data-note-pen=""
-      data-preview={previewed || undefined}
-      onClick={onClick}
-      onPointerEnter={() => onPreview(true)}
-      onPointerLeave={() => onPreview(false)}
-      className="note-mark-in pointer-coarse:hit-44 inline-grid size-3.75 shrink-0 cursor-pointer place-items-center rounded-4 text-ink-3 transition-colors duration-150 ease-standard hover:text-accent data-preview:text-accent md:absolute md:note-pen-top md:left-3 md:-translate-y-1/2"
-    >
-      <svg
-        width="15"
-        height="15"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-        <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
-      </svg>
-    </button>
   );
 }
 

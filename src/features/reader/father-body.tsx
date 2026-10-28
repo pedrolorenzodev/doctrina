@@ -8,6 +8,7 @@ import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-
 import { goToUnit } from "@/features/reader/go-to-unit";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
 import { NoteEditor } from "@/features/reader/note-editor";
+import { NoteMarkers } from "@/features/reader/note-markers";
 import { PanelNotes } from "@/features/reader/panel-notes";
 import type { ReaderSelection } from "@/features/reader/read-selection";
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
@@ -75,6 +76,7 @@ export function FatherBody({
   const [picked, setPicked] = useState<number | null>(null);
   const [byKeyboard, setByKeyboard] = useState(false);
   const [deleting, setDeleting] = useState<string | null>(null);
+  const [previewed, setPreviewed] = useState<number | null>(null);
   const opener = useRef<HTMLElement | null>(null);
   const textRoot = useRef<HTMLDivElement>(null);
   useKeepTopVerse(textRoot);
@@ -242,32 +244,32 @@ export function FatherBody({
             <div
               key={division.ordinal}
               id={anchorOf(division.locator)}
-              className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 arrival-mark data-marked:bg-mark data-selected:bg-accent-weak"
+              className="relative verse-mid -mx-3 mb-1.5 rounded-6 px-3 py-2 arrival-mark data-marked:bg-mark data-selected:bg-accent-weak"
             >
-              <span className="mb-1 flex items-baseline gap-2 font-ui text-division text-ink-3 tabular-nums md:contents">
-                <button
-                  type="button"
-                  data-division-open={anchorOf(division.locator)}
-                  data-locator={division.locator}
-                  onClick={(event) => openFrom(division.ordinal, event.currentTarget, event.detail === 0)}
-                  className="cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:top-3 md:-left-16.5 md:w-14 md:text-right"
-                >
-                  {division.locator === "prologue" ? prologue : division.locator}
-                </button>
-                {mark ? (
-                  <button
-                    type="button"
-                    onClick={(event) => open(division.ordinal, false, event.currentTarget)}
-                    className="note-mark-in hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:top-8 md:-left-16.5 md:w-14 md:text-right"
-                  >
-                    {mark}
-                  </button>
-                ) : null}
-              </span>
               {division.heading ? (
                 <p className="m-0 mb-1 font-ui text-ui-xs font-medium text-ink-3">{division.heading}</p>
               ) : null}
-              <p className="m-0 font-body text-reader font-reader text-ink-2">
+              <p className={`m-0 font-body text-reader font-reader text-ink-2 ${mark ? "md:indent-5.75" : ""}`}>
+                <span className="mb-0.5 flex min-h-6 items-center gap-2 font-ui text-division font-normal text-ink-3 tabular-nums md:contents">
+                  <button
+                    type="button"
+                    data-division-open={anchorOf(division.locator)}
+                    data-locator={division.locator}
+                    onClick={(event) => openFrom(division.ordinal, event.currentTarget, event.detail === 0)}
+                    className="cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:verse-number-top md:-left-13 md:w-14 md:indent-0 md:text-right"
+                  >
+                    {division.locator === "prologue" ? prologue : division.locator}
+                  </button>
+                  {mark ? (
+                    <NoteMarkers
+                      mark={mark}
+                      previewed={previewed === division.ordinal}
+                      hideLabel={false}
+                      onOpen={(event) => open(division.ordinal, false, event.currentTarget)}
+                      onPreview={(on) => setPreviewed(on ? division.ordinal : null)}
+                    />
+                  ) : null}
+                </span>
                 <span data-verse-text={division.ordinal}>
                   {highlights.segmentsFor(division.ordinal, division.text.length).map((segment) =>
                     segment.color ? (
