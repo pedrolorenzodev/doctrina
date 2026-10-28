@@ -27,7 +27,7 @@ export type ReaderChapter = {
 
 export async function getReaderChapter(locale: Locale, bookId: string, chapter: number): Promise<ReaderChapter | null> {
   const book = getBibleBook(bookId);
-  if (!book || locale !== "es") return null;
+  if (!book) return null;
   const defaultId = defaultTranslationId(locale, book);
   const translations = await getBibleTranslations();
   const chapters = await Promise.all(

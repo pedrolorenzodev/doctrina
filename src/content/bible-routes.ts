@@ -35,3 +35,9 @@ export function bookRouteOf(pathname: string): string | null {
   const match = /^\/([a-z]{2})\/(?:bible|biblia)\/([^/]+)\/\d+$/.exec(pathname);
   return match ? `/${match[1]}/bible/${match[2]}` : null;
 }
+
+export function swapBibleLocale(pathname: string, from: Locale, to: Locale): string | null {
+  const match = /^\/[a-z]{2}\/(?:bible|biblia)\/([^/]+)\/(\d+)$/.exec(pathname);
+  const book = match?.[1] ? bookFromSlug(from, match[1]) : null;
+  return book && match?.[2] ? bibleChapterHref(to, book, Number(match[2])) : null;
+}

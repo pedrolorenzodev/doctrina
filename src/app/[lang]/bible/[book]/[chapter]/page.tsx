@@ -18,15 +18,19 @@ import { ReaderStrip } from "@/features/reader/reader-strip";
 import { VerseArrival } from "@/features/reader/verse-arrival";
 import { TreeToggle } from "@/features/shell/tree-toggle";
 import { currentLocale } from "@/lib/current-locale";
-import type { Locale } from "@/lib/locale";
+import { locales, type Locale } from "@/lib/locale";
 
 export async function generateStaticParams() {
-  const chapters = await getReadableChapters("es");
-  return chapters.map(({ book, chapter }) => ({
-    lang: "es",
-    book: bookSlug("es", getBibleBook(book)!),
-    chapter: String(chapter),
-  }));
+  const perLocale = await Promise.all(
+    locales.map(async (lang) => ({ lang, chapters: await getReadableChapters(lang) })),
+  );
+  return perLocale.flatMap(({ lang, chapters }) =>
+    chapters.map(({ book, chapter }) => ({
+      lang,
+      book: bookSlug(lang, getBibleBook(book)!),
+      chapter: String(chapter),
+    })),
+  );
 }
 
 async function loadChapter(locale: Locale, bookParam: string, chapterParam: string) {

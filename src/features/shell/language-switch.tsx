@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { swapBibleLocale } from "@/content/bible-routes";
 import { locales, swapLocale, type Locale } from "@/lib/locale";
 
 type LanguageSwitchProps = {
@@ -24,7 +25,7 @@ export function LanguageSwitch({ current, label }: LanguageSwitchProps) {
           // guard: a plain link on purpose, a soft navigation between locales drops the data-theme attribute (GOTCHAS)
           <a
             key={locale}
-            href={swapLocale(pathname, locale)}
+            href={swapBibleLocale(pathname, current, locale) ?? swapLocale(pathname, locale)}
             hrefLang={locale}
             lang={locale}
             className={`${itemClassName} text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink`}

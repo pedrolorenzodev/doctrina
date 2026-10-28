@@ -88,7 +88,8 @@ test("unknown book, chapter or locale is a 404", async ({ request }) => {
   expect((await request.get(chapter("noexiste", 1))).status()).toBe(404);
   expect((await request.get(chapter("juan", 99))).status()).toBe(404);
   expect((await request.get(chapter("juan", 0))).status()).toBe(404);
-  expect((await request.get("/en/bible/john/6")).status()).toBe(404);
+  expect((await request.get("/fr/bible/john/6")).status()).toBe(404);
+  expect((await request.get("/en/bible/juan/6")).status()).toBe(404);
 });
 
 test("a verse link lands on its verse", async ({ page }) => {
