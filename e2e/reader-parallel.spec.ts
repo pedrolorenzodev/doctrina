@@ -255,3 +255,34 @@ test.describe("phone", () => {
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
   });
 });
+
+test("a chapter that lacks the second translation keeps the side layout: centred, no note previews, the choice stays", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.addInitScript(
+    ([key, value]) => localStorage.setItem(key!, value!),
+    [storageKey, JSON.stringify({ mode: "side", id: "bsb" })],
+  );
+  await page.goto("/es/biblia/tobias/1");
+  await page.mouse.wheel(0, -400);
+  await expect(page.locator('main [data-stream-chapter="Mal/4"]')).toHaveCount(1);
+  await expect(page.locator('main [data-stream-chapter="Mal/4"] [data-second-verse]').first()).toBeAttached();
+  const text = page.locator('main [data-stream-chapter="Tob/1"] [data-chapter-text]');
+  await expect(text).toHaveCount(1);
+  await expect(text.locator("[data-second-verse]")).toHaveCount(0);
+  await expect(page.locator("main [data-note-cards]")).toHaveCount(0);
+  const centres = await page.evaluate(() => {
+    const centre = (element: Element) => {
+      const box = element.getBoundingClientRect();
+      return box.left + box.width / 2;
+    };
+    const section = document.querySelector('main [data-stream-chapter="Tob/1"]')!;
+    return {
+      text: centre(section.querySelector("[data-chapter-text]")!),
+      page: centre(document.querySelector("main")!),
+    };
+  });
+  expect(Math.abs(centres.text - centres.page)).toBeLessThan(2);
+  expect(await page.evaluate((key) => localStorage.getItem(key), storageKey)).toContain('"side"');
+});

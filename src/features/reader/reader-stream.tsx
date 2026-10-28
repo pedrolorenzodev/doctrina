@@ -269,7 +269,7 @@ export function ReaderStream({
             key={key}
             data-stream-chapter={key}
             onPointerDownCapture={() => setActiveKey(key)}
-            className={first ? "" : "mt-24 border-t border-rule pt-16"}
+            className={`not-has-data-[second=side]:mx-auto not-has-data-[second=side]:max-w-reader ${first ? "" : "mt-24 border-t border-rule pt-16"}`}
           >
             {first ? (
               <>

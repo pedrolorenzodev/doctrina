@@ -1,9 +1,23 @@
 import { useSyncExternalStore } from "react";
-import { getSecondChoice, noSecond, subscribeSecondTranslation, type SecondChoice } from "@/lib/second-translation";
+import {
+  getSecondChoice,
+  noSecond,
+  subscribeSecondTranslation,
+  type SecondChoice,
+  type SecondMode,
+} from "@/lib/second-translation";
 
 export function useSecondTranslation(ids: string[], firstId: string): SecondChoice {
   const stored = useSyncExternalStore(subscribeSecondTranslation, getSecondChoice, () => noSecond);
   return stored.id !== null && stored.id !== firstId && ids.includes(stored.id) ? stored : noSecond;
+}
+
+export function useSecondMode(): SecondMode {
+  return useSyncExternalStore(
+    subscribeSecondTranslation,
+    () => getSecondChoice().mode,
+    () => noSecond.mode,
+  );
 }
 
 const sideQuery = "(min-width: 68.75rem)";

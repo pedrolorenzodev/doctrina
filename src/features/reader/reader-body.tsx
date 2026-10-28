@@ -32,7 +32,7 @@ import { SelectionToolbar } from "@/features/reader/selection-toolbar";
 import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
-import { useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
+import { useSecondMode, useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
 import { chooseSecondTranslation } from "@/lib/second-translation";
 import { chooseTranslation } from "@/lib/translation-choice";
 import { useUndo } from "@/features/reader/use-undo";
@@ -110,6 +110,7 @@ export function ReaderBody({
     selected.id,
   );
   const sideRoom = useSideRoom();
+  const sideLayout = useSecondMode() === "side" && sideRoom;
   const pickerOptions = views.map(({ id, abbreviation, displayName, language }) => ({
     id,
     abbreviation,
@@ -476,9 +477,9 @@ export function ReaderBody({
         noteMarkOf={noteMarkOf}
         previewed={previewed}
         onPreview={previewVerse}
-        cardsShown={verse === null && !yourOpen && second?.mode !== "side"}
+        cardsShown={verse === null && !yourOpen && !sideLayout}
         cards={
-          second?.mode === "side" ? null : (
+          sideLayout ? null : (
             <NoteCards
               label={panel.notes.cardsLabel}
               cards={cards}
