@@ -70,9 +70,7 @@ export function ChapterText({
       className={`relative mt-8.5 ${second?.mode === "side" ? "grid max-w-wide grid-cols-2 gap-x-10" : "max-w-reader"}`}
     >
       {second?.mode === "side" ? (
-        <div className="col-span-2 mb-1.5 grid grid-cols-2 gap-x-10 border-b border-rule bg-bg pt-2 pb-3 heads-sticky z-30 texture-layer">
-          {heads}
-        </div>
+        <div className="col-span-2 mb-1.5 grid grid-cols-2 gap-x-10 border-b border-rule pb-3">{heads}</div>
       ) : null}
       {verses.map((verse) => (
         <Fragment key={verse.verse}>
