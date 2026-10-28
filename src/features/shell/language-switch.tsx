@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { swapBibleLocale } from "@/content/bible-routes";
 import { swapHistoryLocale } from "@/content/routes";
 import { locales, swapLocale, type Locale } from "@/lib/locale";
+import { saveTreeCarry } from "@/lib/tree-carry";
 
 type LanguageSwitchProps = {
   current: Locale;
@@ -31,6 +32,7 @@ export function LanguageSwitch({ current, label }: LanguageSwitchProps) {
               swapHistoryLocale(pathname, current, locale) ??
               swapLocale(pathname, locale)
             }
+            onClick={(event) => saveTreeCarry(event.currentTarget.pathname)}
             hrefLang={locale}
             lang={locale}
             className={`${itemClassName} text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink`}

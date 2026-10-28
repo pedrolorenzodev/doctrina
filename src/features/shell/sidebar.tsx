@@ -3,7 +3,7 @@
 import { bookRouteOf } from "@/content/bible-routes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type MouseEvent } from "react";
 import { flushSync } from "react-dom";
 import type { TreeGroup, TreeNode } from "@/content/site-tree";
 import { ChapterGrid } from "@/components/chapter-grid";
@@ -13,6 +13,7 @@ import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { trapTab } from "@/lib/focus";
 import { travelMark, visibleRow } from "@/features/shell/tree-motion";
 import { prefersReducedMotion, setBranch } from "@/lib/branch-motion";
+import { pageTreeCarry, subscribeNever } from "@/lib/tree-carry";
 
 type SidebarText = {
   navLabel: string;
@@ -252,8 +253,22 @@ export function Sidebar({ groups, text }: SidebarProps) {
   const previousId = useRef(currentId);
   const cancelTravel = useRef<(() => void) | null>(null);
 
+  const carry = useSyncExternalStore(subscribeNever, pageTreeCarry, () => null);
+  const carriedBooks = useMemo(() => carry?.open.filter((id) => id.startsWith("book/")) ?? [], [carry]);
+  const shownBooks = useMemo(() => new Set([...openedBooks, ...carriedBooks]), [openedBooks, carriedBooks]);
+
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    if (!carry || !nav) return;
+    for (const item of nav.querySelectorAll<HTMLElement>("li[data-id]")) {
+      setItemOpen(item, carry.open.includes(item.dataset.id ?? ""), false, text);
+    }
+    nav.scrollTop = carry.scroll;
+    delete document.documentElement.dataset.treeCarry;
+  }, [carry, text]);
+
   useEffect(() => {
-    if (navRef.current) scrollCurrentIntoPlace(navRef.current);
+    if (navRef.current && !pageTreeCarry()) scrollCurrentIntoPlace(navRef.current);
   }, []);
 
   useEffect(() => {
@@ -335,7 +350,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
       if (item && list) {
         const id = item.dataset.id ?? "";
         const opening = list.dataset.open !== "true";
-        if (opening && id.startsWith("book/") && !openedBooks.has(id)) {
+        if (opening && id.startsWith("book/") && !shownBooks.has(id)) {
           flushSync(() => setOpenedBooks((previous) => new Set(previous).add(id)));
         }
         setItemOpen(item, opening, true, text);
@@ -374,7 +389,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
           aria-label={text.navLabel}
           data-lenis-prevent
           onClick={onClick}
-          className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule lg:w-sidebar lg:pt-5.5"
+          className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule tree-carry-hide lg:w-sidebar lg:pt-5.5"
         >
           <div className="-mt-1.5 mb-2 flex justify-end">
             <button
@@ -397,7 +412,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
                     currentIsPage={currentIsPage}
                     trail={trail}
                     initiallyOpen={initiallyOpen}
-                    openedBooks={openedBooks}
+                    openedBooks={shownBooks}
                     currentChapter={currentChapter}
                     text={text}
                   />

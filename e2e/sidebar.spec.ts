@@ -175,3 +175,36 @@ test("entries without a page are pressable and do nothing; branches still open",
     "/es/biblia/mateo/1",
   );
 });
+
+test("switching language keeps the tree as it was: the branches opened or closed by hand and the scroll", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/padres/origen");
+  const nav = page.locator("#site-sidebar nav");
+  const twisty = (label: string) => nav.locator(`li[data-label="${label}"] > [data-row] [data-twisty]`);
+  const branchOf = (id: string) => nav.locator(`li[data-id="${id}"] > ul[data-branch]`);
+  const idOf = (label: string) => nav.locator(`li[data-label="${label}"]`).first().getAttribute("data-id");
+  const testament = (await idOf("Antiguo Testamento"))!;
+  const fathers = (await idOf("Padres"))!;
+  await twisty("Nuevo Testamento").click();
+  await twisty("Juan").click();
+  const john = (await idOf("Juan"))!;
+  await expect(branchOf(john).locator("a, button").first()).toBeVisible();
+  await twisty("Antiguo Testamento").click();
+  await twisty("Padres").click();
+  await expect(branchOf(testament)).toHaveAttribute("data-open", "true");
+  await expect(branchOf(fathers)).toHaveAttribute("data-open", "false");
+  await nav.evaluate((element) => {
+    element.scrollTop = 140;
+  });
+  const before = await nav.evaluate((element) => element.scrollTop);
+  await page.getByRole("link", { name: "EN", exact: true }).click();
+  await expect(page).toHaveURL("/en/history/fathers/origen");
+  await expect(branchOf(testament)).toHaveAttribute("data-open", "true");
+  await expect(branchOf(fathers)).toHaveAttribute("data-open", "false");
+  await expect(branchOf(john)).toHaveAttribute("data-open", "true");
+  await expect(branchOf(john).locator("a, button").first()).toBeVisible();
+  expect(Math.abs((await nav.evaluate((element) => element.scrollTop)) - before)).toBeLessThanOrEqual(1);
+  await expect(page.locator("html")).not.toHaveAttribute("data-tree-carry", /.*/);
+});
