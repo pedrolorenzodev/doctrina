@@ -77,3 +77,13 @@ test("every division and movement page responds and fits a phone", async ({ page
     expect((await page.goto(`/es/historia/reforma/${movement.id}`))?.status(), movement.id).toBe(200);
   }
 });
+
+test("the English indexes and the current pages have their routes; a late council has no timeline link", async ({
+  page,
+}) => {
+  expect((await page.goto("/en/history/currents"))?.status()).toBe(200);
+  await page.goto("/es/historia/concilios/trent");
+  await expect(page.getByRole("link", { name: "Ver en la línea de tiempo" })).toHaveCount(0);
+  await page.goto("/es/historia/corrientes/marcionism");
+  expect(await page.locator("#story p").count()).toBeGreaterThan(1);
+});

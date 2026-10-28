@@ -5,6 +5,7 @@ export const readingRule = {
   idleMs: 5000,
   tickMs: 500,
   visibleRatio: 0.9,
+  headerClearance: 110,
 };
 
 type Reading = {

@@ -222,6 +222,7 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
     const apply = () => {
       setQuery(value);
       setSelected(0);
+      setExpanded([]);
     };
     if (list.current && ghosts.current) flipList(list.current, ghosts.current, () => flushSync(apply));
     else apply();
@@ -256,7 +257,7 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
     }
   }
 
-  const total = rows.filter((row) => row.kind === "result").length;
+  const total = typed ? searchEntries(entries, query, matchLimit).length : 0;
   const count = total === 1 ? text.countOne : text.countMany.replace("{n}", String(total));
   return (
     <div ref={panel} onKeyDown={onKeyDown} className="flex min-h-0 flex-1 flex-col">

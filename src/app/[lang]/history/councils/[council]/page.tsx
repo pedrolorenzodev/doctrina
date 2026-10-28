@@ -14,6 +14,8 @@ import { FatherProfileSection } from "@/features/history/father-profile-section"
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 
+const timelineLastYear = 800;
+
 export async function generateStaticParams() {
   return getCouncilIds().map((council) => ({ lang: "es", council }));
 }
@@ -60,9 +62,11 @@ export default async function CouncilRoute({ params }: PageProps<"/[lang]/histor
       />
       <PageHeader id="top" className="mt-10" title={item.name[locale]} />
       <FatherFacts facts={facts} />
-      <p className="title-part title-part-3 mt-6 mb-0 text-ui-sm">
-        <PageLink href={`${timelineHref(locale)}#${item.id}`}>{labels.timelineLink}</PageLink>
-      </p>
+      {item.year <= timelineLastYear ? (
+        <p className="title-part title-part-3 mt-6 mb-0 text-ui-sm">
+          <PageLink href={`${timelineHref(locale)}#${item.id}`}>{labels.timelineLink}</PageLink>
+        </p>
+      ) : null}
       <FatherProfileSection id="decided" title={labels.decided} summary={item.decisions[locale]} facts={supporting} />
       <FatherProfileSection
         id="recognized"

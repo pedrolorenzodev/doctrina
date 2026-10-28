@@ -87,7 +87,7 @@ const councilsSegments: Record<Locale, string> = { es: "concilios", en: "council
 const currentsSegments: Record<Locale, string> = { es: "corrientes", en: "currents" };
 
 const fatherIndexSegments: Record<Locale, string> = { es: "padres", en: "fathers" };
-const currentsIndexSegments: Record<Locale, string> = { es: "herejias", en: "heresies" };
+const currentsIndexSegments: Record<Locale, string> = { es: "herejias", en: "currents" };
 
 export function fathersIndexHref(locale: Locale): string {
   return `/${locale}/${historySegments[locale]}/${fatherIndexSegments[locale]}`;

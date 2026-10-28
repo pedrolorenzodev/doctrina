@@ -14,3 +14,5 @@ alter table public.chapter_structure enable row level security;
 create policy chapter_structure_read on public.chapter_structure for select to anon, authenticated using (true);
 
 grant select on public.chapter_structure to anon, authenticated;
+
+notify pgrst, 'reload schema';

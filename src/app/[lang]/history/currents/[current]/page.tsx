@@ -75,7 +75,13 @@ export default async function CurrentRoute({ params }: PageProps<"/[lang]/histor
         <p className={proseClassName}>{item.response[locale]}</p>
       </Section>
       <Section id="story" title={labels.story}>
-        <p className={proseClassName}>{item.page[locale]}</p>
+        <div className="flex flex-col gap-4">
+          {item.page[locale].split("\n\n").map((paragraph) => (
+            <p key={paragraph} className={proseClassName}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </Section>
       {councils.length > 0 ? (
         <Section id="councils" title={labels.councils}>

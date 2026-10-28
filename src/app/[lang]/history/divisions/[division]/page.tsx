@@ -70,7 +70,13 @@ export default async function DivisionRoute({ params }: PageProps<"/[lang]/histo
       </Section>
       {story ? (
         <Section id="story" title={labels.story}>
-          <p className={proseClassName}>{story}</p>
+          <div className="flex flex-col gap-4">
+            {story.split("\n\n").map((paragraph) => (
+              <p key={paragraph} className={proseClassName}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </Section>
       ) : null}
       <Section id="sides" title={labels.sides}>

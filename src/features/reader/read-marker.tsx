@@ -17,6 +17,7 @@ type ReadMarkerProps = {
 export function ReadMarker({ book, chapter, verseWords, idPrefix, text, alreadyRead, showUndo }: ReadMarkerProps) {
   const [offer, setOffer] = useState(false);
   const done = useRef(alreadyRead);
+  const dismissed = useRef(false);
   const mark = useRef<() => void>(() => undefined);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ export function ReadMarker({ book, chapter, verseWords, idPrefix, text, alreadyR
       setOffer(false);
       showUndo(text.marked, () => {
         done.current = false;
+        dismissed.current = true;
         unmarkChapterRead(book, chapter);
       });
     };
@@ -50,7 +52,9 @@ export function ReadMarker({ book, chapter, verseWords, idPrefix, text, alreadyR
       (entries) => {
         for (const entry of entries) {
           const number = Number((entry.target as HTMLElement).dataset.readVerse);
-          if (entry.isIntersecting && entry.intersectionRatio >= readingRule.visibleRatio) visible.add(number);
+          const fills = entry.intersectionRect.height >= window.innerHeight - readingRule.headerClearance;
+          if (entry.isIntersecting && (entry.intersectionRatio >= readingRule.visibleRatio || fills))
+            visible.add(number);
           else visible.delete(number);
         }
         if (visible.has(last)) reached = true;
@@ -85,7 +89,7 @@ export function ReadMarker({ book, chapter, verseWords, idPrefix, text, alreadyR
         activeSeconds: activeMs / 1000,
         reachedEnd: reached,
       });
-      if (verdict === "read") mark.current();
+      if (verdict === "read" && !dismissed.current) mark.current();
       else if (verdict === "doubt") setOffer(true);
     }, readingRule.tickMs);
 
@@ -101,7 +105,7 @@ export function ReadMarker({ book, chapter, verseWords, idPrefix, text, alreadyR
       <div
         data-read-offer={offer && !alreadyRead ? "" : undefined}
         className="read-offer absolute top-7 left-0 max-w-col"
-        aria-hidden={!(offer && !alreadyRead)}
+        role="status"
       >
         <p className="m-0 mb-2 text-ui-xs text-ink-3">{text.doubt}</p>
         <button
