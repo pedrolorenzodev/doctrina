@@ -57,7 +57,7 @@ export function buildFatherView(father: Father, locale: Locale, text: UiText): F
       { label: labels.facts.died, value: died },
     ]),
     roleFact,
-    { label: labels.facts.wroteIn, value: language.toLowerCase() },
+    { label: labels.facts.wroteIn, value: locale === "es" ? language.toLowerCase() : language },
   ];
   const workFacts: FatherFact[] = [
     life ? life.profileDate : { label: labels.workDate, value: dated },
