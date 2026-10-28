@@ -95,3 +95,13 @@ test("a dragged selection across red words still highlights exactly those words"
   expect(web["John.6.35"]!.includes(marked)).toBe(true);
   expect(marked.length).toBeGreaterThan(10);
 });
+
+test("in the KJV the words of Jesus are red from the edition's own marks", async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("doctrina-translation", "kjv"));
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  const red = page.locator("#v-35 [data-jesus]");
+  await expect(red).toHaveCount(1);
+  await expect(red).toContainText("I am the bread of life");
+  await expect(page.locator("#v-1 [data-jesus]")).toHaveCount(0);
+});

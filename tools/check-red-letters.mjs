@@ -22,6 +22,15 @@ check(
 const apart = "He said, “Go.” Then they went, and he said, “Stay.”";
 check("two phrases apart stay two spans", shape(apart, redSpansOf(apart, ["“ Go.”", "“ Stay.”"])).length === 2);
 
+const supplied = "Blessed [are] the poor in spirit: for theirs is the kingdom of heaven.";
+check(
+  "supplied words in brackets do not break the match",
+  shape(
+    supplied,
+    redSpansOf(supplied, ["Blessed are the poor in spirit: for theirs is the kingdom of heaven."]),
+  ).join() === supplied,
+);
+
 check("a phrase that is not there is skipped", redSpansOf(verse, ["Something else entirely"]).length === 0);
 check("an empty list gives no span", redSpansOf(verse, []).length === 0);
 check(

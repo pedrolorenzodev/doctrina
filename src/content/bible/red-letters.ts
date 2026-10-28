@@ -5,7 +5,7 @@ function compact(text: string): { letters: string; at: number[] } {
   const at: number[] = [];
   for (let index = 0; index < text.length; index += 1) {
     const character = text[index]!;
-    if (/\s/.test(character)) continue;
+    if (/[\s[\]]/.test(character)) continue;
     letters.push(character);
     at.push(index);
   }
