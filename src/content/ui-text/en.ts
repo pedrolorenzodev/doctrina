@@ -168,6 +168,14 @@ export const en: UiText = {
     countMany: "{n} results",
     escape: "Esc",
     objection: "Objection",
+    resume: "Pick up where you left off",
+    more: "Show {n} more",
+    groups: {
+      doctrines: "Doctrines and objections",
+      quotes: "Quotes from the Fathers",
+      fathers: "The Fathers",
+      history: "History",
+    },
     hints: { move: "↑ ↓ to move", open: "Enter opens", close: "Esc closes" },
   },
   reader: {

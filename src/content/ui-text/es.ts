@@ -166,6 +166,14 @@ export const es = {
     countMany: "{n} resultados",
     escape: "Esc",
     objection: "Objeción",
+    resume: "Seguir donde dejaste",
+    more: "Ver {n} más",
+    groups: {
+      doctrines: "Doctrinas y objeciones",
+      quotes: "Citas de los Padres",
+      fathers: "Padres",
+      history: "Historia",
+    },
     hints: { move: "↑ ↓ para moverse", open: "Enter abre", close: "Esc cierra" },
   },
   reader: {

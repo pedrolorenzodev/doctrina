@@ -5,6 +5,7 @@ import { getSiteTree } from "@/content/get-site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { DrawerProvider } from "@/features/shell/drawer";
 import { HashArrival } from "@/features/shell/hash-arrival";
+import { LastPlaceRecorder } from "@/features/shell/last-place-recorder";
 import { SearchDialog } from "@/features/shell/search-dialog";
 import { SearchProvider } from "@/components/search-provider";
 import { Sidebar } from "@/features/shell/sidebar";
@@ -46,6 +47,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
       <SmoothScroll />
       <HashArrival />
       <TitleEntrance />
+      <LastPlaceRecorder />
       <DrawerProvider>
         <SearchProvider>
           <a

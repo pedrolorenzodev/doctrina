@@ -370,7 +370,7 @@ test("a long list of results scrolls inside the box and the wheel does not move 
   await openSearch(page);
   await search(page, "la");
   const list = page.locator(`${dialog} [role=listbox]`);
-  await expect.poll(() => page.locator(options).count()).toBe(8);
+  await expect.poll(() => page.locator(options).count()).toBeGreaterThan(8);
   const scrolls = await list.evaluate((node) => node.scrollHeight > node.clientHeight);
   expect(scrolls).toBe(true);
   await page.mouse.move(700, 250);
@@ -494,7 +494,7 @@ test("typing a narrower query fades the leaving row as a ghost and leaves nothin
       }),
   );
   await search(page, "carne salvador");
-  expect(await seen).toBe(3);
+  expect(await seen).toBe(5);
   await expect(page.locator(options)).toHaveCount(2);
   await page.waitForTimeout(900);
   const left = await page.evaluate(() => {
@@ -524,8 +524,8 @@ test("rows that come back rise in, after the first 120 ms", async ({ page }) => 
   });
   expect(timing.filter(Boolean)).toEqual([
     [120, 420],
-    [160, 420],
     [200, 420],
+    [280, 420],
   ]);
 });
 
@@ -634,4 +634,58 @@ test("councils and movements of the timeline are found and land on the line with
   await page.locator(options).filter({ hasText: "Arrianismo" }).first().click();
   await expect(page).toHaveURL(/linea-de-tiempo#arianism$/);
   await expect(page.locator('[data-scroller] button[data-entry="arianism"]')).toHaveAttribute("aria-pressed", "true");
+});
+
+test("results are grouped by kind with a label each, three shown and the rest one click away", async ({ page }) => {
+  await page.goto(traditionPath);
+  await openSearch(page);
+  await search(page, "la");
+  const headings = page.locator(`${dialog} [role=listbox] li[role=presentation]`);
+  await expect(headings.first()).toHaveText("Doctrinas y objeciones");
+  const more = page.locator(`${dialog} [role=option][data-id^="more-"]`).first();
+  await expect(more).toHaveText(/^Ver \d+ más$/);
+  const before = await page.locator(options).count();
+  await more.click();
+  await expect.poll(() => page.locator(options).count()).toBeGreaterThan(before - 1);
+  await expect(page.locator(`${dialog} [role=option][data-id="more-doctrines"]`)).toHaveCount(0);
+});
+
+test("a witness group is labelled «Citas de los Padres»", async ({ page }) => {
+  await page.goto(traditionPath);
+  await openSearch(page);
+  await search(page, "carne");
+  await expect(
+    page.locator(`${dialog} [role=listbox] li[role=presentation]`).filter({ hasText: "Citas de los Padres" }),
+  ).toHaveCount(1);
+});
+
+test("«Seguir donde dejaste» shows the page and when, only on another page, and opens it", async ({ page }) => {
+  await page.addInitScript(() =>
+    localStorage.setItem(
+      "doctrina-last-place",
+      JSON.stringify([{ href: "/es/doctrinas/eucaristia#early", title: "Eucaristía", at: Date.now() - 86_400_000 }]),
+    ),
+  );
+  await page.goto(traditionPath);
+  await openSearch(page);
+  const place = page.locator(`${dialog} [role=option][data-id="place"]`);
+  await expect(page.locator(`${dialog} [role=listbox] li[role=presentation]`).first()).toHaveText(
+    "Seguir donde dejaste",
+  );
+  await expect(place).toContainText("Eucaristía");
+  await expect(place).toContainText("ayer");
+  await expect(place).not.toContainText("%");
+  await place.click();
+  await expect(page).toHaveURL(/\/es\/doctrinas\/eucaristia#early$/);
+});
+
+test("«Seguir donde dejaste» is not offered for the page you are on", async ({ page }) => {
+  await page.addInitScript(
+    (href) => localStorage.setItem("doctrina-last-place", JSON.stringify([{ href, title: "Esta", at: Date.now() }])),
+    traditionPath,
+  );
+  await page.goto(traditionPath);
+  await page.waitForTimeout(900);
+  await openSearch(page);
+  await expect(page.locator(`${dialog} [role=option][data-id="place"]`)).toHaveCount(0);
 });

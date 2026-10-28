@@ -87,7 +87,18 @@ function lineFor(entry: SearchEntry, words: string[]): Fragment {
   return fragmentAround(text ?? "", words);
 }
 
-export function searchEntries(entries: SearchEntry[], query: string): SearchResult[] {
+export const searchGroups = ["doctrines", "quotes", "fathers", "history"] as const;
+
+export type SearchGroup = (typeof searchGroups)[number];
+
+export function groupOf(entry: SearchEntry): SearchGroup {
+  if (entry.id.startsWith("witness:")) return "quotes";
+  if (entry.id.startsWith("father:")) return "fathers";
+  if (entry.id.startsWith("timeline")) return "history";
+  return "doctrines";
+}
+
+export function searchEntries(entries: SearchEntry[], query: string, limit = maxResults): SearchResult[] {
   const words = searchWords(query);
   if (words.length === 0) return [];
   return entries
@@ -95,7 +106,7 @@ export function searchEntries(entries: SearchEntry[], query: string): SearchResu
     .filter(({ fields }) => words.every((word) => fields.includes(word)))
     .map((hit) => ({ ...hit, points: score(hit.entry, words) }))
     .sort((a, b) => b.points - a.points || a.order - b.order)
-    .slice(0, maxResults)
+    .slice(0, limit)
     .map(({ entry }) => resultFor(entry, words));
 }
 

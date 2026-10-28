@@ -1,15 +1,18 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useEffect, useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from "react";
 import { flushSync } from "react-dom";
+import { usePlaceBefore, type LastPlace } from "@/features/shell/last-place";
 import { rememberResult, useRecentIds } from "@/features/shell/search-recents";
 import { useSearch } from "@/components/search-provider";
 import { trapTab } from "@/lib/focus";
 import { enterList, flipList } from "@/lib/list-motion";
 import {
+  groupOf,
   plainResult,
   searchEntries,
+  type SearchGroup,
   type Fragment as TextFragment,
   type SearchEntry,
   type SearchResult,
@@ -20,6 +23,9 @@ export type SearchText = {
   label: string;
   placeholder: string;
   recents: string;
+  resume: string;
+  more: string;
+  groups: Record<SearchGroup, string>;
   empty: string;
   none: string;
   countOne: string;
@@ -34,6 +40,22 @@ type SearchDialogProps = {
 };
 
 const cut = "…";
+const shownPerGroup = 3;
+const matchLimit = 60;
+
+type Row =
+  | { kind: "heading"; key: string; label: string }
+  | { kind: "result"; result: SearchResult }
+  | { kind: "more"; group: SearchGroup; hidden: number }
+  | { kind: "place"; place: LastPlace };
+
+function whenText(at: number): string {
+  const lang = document.documentElement.lang || "es";
+  const startOfDay = (time: number) => new Date(time).setHours(0, 0, 0, 0);
+  const days = Math.round((startOfDay(at) - startOfDay(Date.now())) / 86_400_000);
+  if (days === 0 || days === -1) return new Intl.RelativeTimeFormat(lang, { numeric: "auto" }).format(days, "day");
+  return new Intl.DateTimeFormat(lang, { day: "numeric", month: "short", year: "numeric" }).format(at);
+}
 
 function Marked({ segments }: { segments: Segment[] }) {
   return segments.map((segment, index) =>
@@ -101,6 +123,36 @@ function ResultRow({ id, result, selected, onPointer, onPick }: RowProps) {
   );
 }
 
+function PlaceRow({
+  id,
+  place,
+  selected,
+  onPointer,
+  onPick,
+}: {
+  id: string;
+  place: LastPlace;
+  selected: boolean;
+  onPointer: () => void;
+  onPick: () => void;
+}) {
+  return (
+    <li
+      id={id}
+      role="option"
+      aria-selected={selected}
+      data-id="place"
+      data-selected={selected ? "" : undefined}
+      onPointerMove={onPointer}
+      onClick={onPick}
+      className="cursor-pointer rounded-7 px-3 py-2.5 transition-colors duration-120 ease-standard data-selected:bg-hover"
+    >
+      <span className="block font-head text-search-title text-ink">{place.title}</span>
+      <span className="mt-0.5 block text-label leading-normal text-ink-3">{whenText(place.at)}</span>
+    </li>
+  );
+}
+
 function SearchPanel({ entries, text }: SearchDialogProps) {
   const { hide, query: initialQuery } = useSearch();
   const router = useRouter();
@@ -113,14 +165,48 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
   const input = useRef<HTMLInputElement>(null);
 
   const typed = query.trim() !== "";
-  const results = useMemo<SearchResult[]>(() => {
-    if (typed) return searchEntries(entries, query);
-    return recentIds.flatMap((id) => {
+  const here = usePathname();
+  const place = usePlaceBefore(here);
+  const [expanded, setExpanded] = useState<SearchGroup[]>([]);
+  const rows = useMemo<Row[]>(() => {
+    if (typed) {
+      const found = searchEntries(entries, query, matchLimit);
+      const order: SearchGroup[] = [];
+      for (const result of found) {
+        const group = groupOf(result.entry);
+        if (!order.includes(group)) order.push(group);
+      }
+      return order.flatMap((group): Row[] => {
+        const own = found.filter((result) => groupOf(result.entry) === group);
+        const open = expanded.includes(group);
+        const visible = open ? own : own.slice(0, shownPerGroup);
+        return [
+          { kind: "heading", key: group, label: text.groups[group] },
+          ...visible.map((result): Row => ({ kind: "result", result })),
+          ...(own.length > visible.length
+            ? [{ kind: "more" as const, group, hidden: own.length - visible.length }]
+            : []),
+        ];
+      });
+    }
+    const recent = recentIds.flatMap((id) => {
       const entry = entries.find((candidate) => candidate.id === id);
       return entry ? [plainResult(entry)] : [];
     });
-  }, [typed, entries, query, recentIds]);
-  const active = Math.min(selected, Math.max(results.length - 1, 0));
+    const resume: Row[] = place
+      ? [
+          { kind: "heading", key: "resume", label: text.resume },
+          { kind: "place", place },
+        ]
+      : [];
+    return [
+      ...resume,
+      ...(recent.length > 0 ? [{ kind: "heading" as const, key: "recents", label: text.recents }] : []),
+      ...recent.map((result): Row => ({ kind: "result", result })),
+    ];
+  }, [typed, entries, query, recentIds, place, expanded, text]);
+  const options = rows.filter((row) => row.kind !== "heading");
+  const active = Math.min(selected, Math.max(options.length - 1, 0));
 
   useEffect(() => {
     input.current?.focus({ preventScroll: true });
@@ -141,25 +227,37 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
     else apply();
   }
 
-  function pick(result: SearchResult | undefined) {
-    if (!result) return;
-    rememberResult(result.entry.id);
+  function pick(row: Row | undefined) {
+    if (!row || row.kind === "heading") return;
+    if (row.kind === "more") {
+      const apply = () => setExpanded((previous) => [...previous, row.group]);
+      if (list.current && ghosts.current) flipList(list.current, ghosts.current, () => flushSync(apply));
+      else apply();
+      return;
+    }
+    if (row.kind === "place") {
+      hide(false);
+      router.push(row.place.href);
+      return;
+    }
+    rememberResult(row.result.entry.id);
     hide(false);
-    router.push(result.entry.href);
+    router.push(row.result.entry.href);
   }
 
   function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
     if (panel.current) trapTab(event.nativeEvent, panel.current);
     if (event.key === "ArrowDown" || event.key === "ArrowUp") {
       event.preventDefault();
-      setSelected(Math.max(0, Math.min(results.length - 1, active + (event.key === "ArrowDown" ? 1 : -1))));
+      setSelected(Math.max(0, Math.min(options.length - 1, active + (event.key === "ArrowDown" ? 1 : -1))));
     } else if (event.key === "Enter") {
       event.preventDefault();
-      pick(results[active]);
+      pick(options[active]);
     }
   }
 
-  const count = results.length === 1 ? text.countOne : text.countMany.replace("{n}", String(results.length));
+  const total = rows.filter((row) => row.kind === "result").length;
+  const count = total === 1 ? text.countOne : text.countMany.replace("{n}", String(total));
   return (
     <div ref={panel} onKeyDown={onKeyDown} className="flex min-h-0 flex-1 flex-col">
       <label className="flex items-center gap-2.5 border-b border-rule px-3.5 text-ink-3">
@@ -183,7 +281,7 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
           role="combobox"
           aria-expanded="true"
           aria-controls="search-results"
-          aria-activedescendant={results.length > 0 ? `search-result-${active}` : undefined}
+          aria-activedescendant={options.length > 0 ? `search-result-${active}` : undefined}
           aria-autocomplete="list"
           autoComplete="off"
           spellCheck={false}
@@ -206,27 +304,68 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
           data-lenis-prevent
           className="m-0 min-h-0 flex-1 list-none overflow-y-auto overscroll-contain p-1.5 scrollbar-rule"
         >
-          {!typed && results.length > 0 ? (
-            <li data-id="heading" role="presentation" className="px-3 pt-2 pb-1 text-label font-medium text-ink-3">
-              {text.recents}
-            </li>
-          ) : null}
-          {results.map((result, index) => (
-            <ResultRow
-              key={result.entry.id}
-              id={`search-result-${index}`}
-              result={result}
-              selected={index === active}
-              onPointer={() => setSelected(index)}
-              onPick={() => pick(result)}
-            />
-          ))}
-          {typed && results.length === 0 ? (
+          {rows.map((row) => {
+            if (row.kind === "heading") {
+              return (
+                <li
+                  key={`heading-${row.key}`}
+                  data-id={`heading-${row.key}`}
+                  role="presentation"
+                  className="px-3 pt-2 pb-1 text-label font-medium text-ink-3 not-first:mt-1"
+                >
+                  {row.label}
+                </li>
+              );
+            }
+            const index = options.indexOf(row);
+            const id = `search-result-${index}`;
+            const isActive = index === active;
+            if (row.kind === "result") {
+              return (
+                <ResultRow
+                  key={row.result.entry.id}
+                  id={id}
+                  result={row.result}
+                  selected={isActive}
+                  onPointer={() => setSelected(index)}
+                  onPick={() => pick(row)}
+                />
+              );
+            }
+            if (row.kind === "place") {
+              return (
+                <PlaceRow
+                  key="place"
+                  id={id}
+                  place={row.place}
+                  selected={isActive}
+                  onPointer={() => setSelected(index)}
+                  onPick={() => pick(row)}
+                />
+              );
+            }
+            return (
+              <li
+                key={`more-${row.group}`}
+                id={id}
+                role="option"
+                aria-selected={isActive}
+                data-id={`more-${row.group}`}
+                data-selected={isActive ? "" : undefined}
+                onPointerMove={() => setSelected(index)}
+                onClick={() => pick(row)}
+                className="cursor-pointer rounded-7 px-3 py-2 text-label font-medium text-ink-3 transition-colors duration-120 ease-standard data-selected:bg-hover data-selected:text-ink"
+              >
+                {text.more.replace("{n}", String(row.hidden))}
+              </li>
+            );
+          })}
+          {typed && rows.length === 0 ? (
             <li data-id="none" role="presentation" className="px-3 py-3.5 text-ui-sm text-ink-3">
               {text.none.replace("{query}", query.trim())}
             </li>
           ) : null}
-          {!typed && results.length === 0 ? (
+          {!typed && rows.length === 0 ? (
             <li data-id="empty" role="presentation" className="px-3 py-3.5 text-ui-sm text-ink-3">
               {text.empty}
             </li>
