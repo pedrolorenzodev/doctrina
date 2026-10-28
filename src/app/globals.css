@@ -1684,6 +1684,12 @@ html.theme-switching ::after {
   }
 }
 
+@utility red-notice {
+  :root[data-red-notice="closed"] & {
+    display: none;
+  }
+}
+
 @utility read-offer {
   opacity: 0;
   visibility: hidden;

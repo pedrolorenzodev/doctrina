@@ -14,6 +14,7 @@ export type SecondReading = {
 
 type ChapterTextProps = {
   second: SecondReading | null;
+  redCue: string | null;
   heads: ReactNode;
   verses: BibleVerse[];
   structure: ChapterStructure | null;
@@ -41,6 +42,7 @@ export const toneClassName: Record<HighlightColor, string> = {
 
 export function ChapterText({
   second,
+  redCue,
   heads,
   verses,
   structure,
@@ -121,10 +123,17 @@ export function ChapterText({
                     data-highlight={segment.color}
                     className={`rounded-2 text-inherit box-decoration-clone transition-colors duration-200 ease-standard ${toneClassName[segment.color]}`}
                   >
-                    <Red text={verse.text} from={segment.from} to={segment.to} red={verse.red} />
+                    <Red text={verse.text} from={segment.from} to={segment.to} red={verse.red} cue={redCue} />
                   </mark>
                 ) : (
-                  <Red key={segment.from} text={verse.text} from={segment.from} to={segment.to} red={verse.red} />
+                  <Red
+                    key={segment.from}
+                    text={verse.text}
+                    from={segment.from}
+                    to={segment.to}
+                    red={verse.red}
+                    cue={redCue}
+                  />
                 ),
               )}
             </span>
@@ -149,6 +158,7 @@ export function ChapterText({
                     from={0}
                     to={second.verses.get(verse.verse)!.text.length}
                     red={second.verses.get(verse.verse)!.red}
+                    cue={null}
                   />
                 </>
               ) : null}
@@ -161,12 +171,12 @@ export function ChapterText({
   );
 }
 
-type RedProps = { text: string; from: number; to: number; red: [number, number][] | undefined };
+type RedProps = { text: string; from: number; to: number; red: [number, number][] | undefined; cue: string | null };
 
-function Red({ text, from, to, red }: RedProps) {
+function Red({ text, from, to, red, cue }: RedProps) {
   return splitByRed(from, to, red).map((piece) =>
     piece.red ? (
-      <span key={piece.from} data-jesus="" className="text-jesus">
+      <span key={piece.from} data-jesus="" title={cue ?? undefined} className="text-jesus">
         {text.slice(piece.from, piece.to)}
       </span>
     ) : (

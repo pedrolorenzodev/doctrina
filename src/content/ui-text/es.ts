@@ -276,6 +276,13 @@ export const es = {
         english: "inglés",
       },
     },
+    redNotice: {
+      message:
+        "Las palabras de Jesús en rojo de esta edición las marcamos nosotros, comparando otras ediciones. Si ves un error, escribí a",
+      email: "doctrina@doctrina.example",
+      close: "Cerrar el aviso",
+      cue: "Rojo marcado por Doctrina",
+    },
     read: {
       doubt: "Pasaste por este capítulo más rápido de lo que se lee. ¿Lo leíste igual?",
       mark: "Marcar como leído",

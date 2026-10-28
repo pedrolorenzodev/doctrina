@@ -3,10 +3,11 @@
 Usage:
   python3 data/scripts/red-letters-align.py own <usfm.zip> <edition-id>            phrases the edition itself marks with \\wj
   python3 data/scripts/red-letters-align.py align <web.zip> <usfm.zip> <edition-id>  phrases computed by alignment with the WEB
+  python3 data/scripts/red-letters-align.py consensus <web.zip> <kjv.zip> <usfm.zip> <edition-id>  what the WEB's and the KJV's marks both give
   python3 data/scripts/red-letters-align.py check <web.zip> <kjv.zip>              precision and recall of the alignment against the KJV's own marks
 
-Writes data/corpus/bibles/<edition-id>.red.json for `own` (read by the site) and <edition-id>.red.computed.json for `align`
-(not read by the site until a hand-checked sample approves it); the shape is web-c.red.json's: verse key -> phrases.
+Writes data/corpus/bibles/<edition-id>.red.json for `own` and `consensus` (read by the site) and <edition-id>.red.computed.json for `align` (the
+single-source experiment, not read by the site); the shape is web-c.red.json's: verse key -> phrases.
 """
 import difflib
 import json
@@ -28,6 +29,9 @@ BOOKS = {
     "1JN": "1John", "2JN": "2John", "3JN": "3John", "JUD": "Jude", "REV": "Rev",
 }
 SEPARATE_AFTER = 3
+AGREEMENT = 0.85
+MIN_COVERAGE = 0.5
+MIN_PIECE = 3
 
 
 def strong(raw):
@@ -115,6 +119,29 @@ def common_tags(books):
     return {tag for tag, count in counts.items() if count / total > 0.004}
 
 
+END = re.compile(r"[.?!:;”»]+$")
+START = re.compile(r"^[“«¿¡‘]")
+REACH = 15
+
+
+def snap(target, low, high):
+    words = [word for word, _, _ in target]
+    start = low
+    while start > 0 and low - start < REACH and not START.match(words[start]) and not END.search(words[start - 1]):
+        start -= 1
+    if START.match(words[start]) or start == 0 or END.search(words[start - 1]):
+        low = start
+    end = high
+    while end < len(words) - 1 and end - high < REACH and not END.search(words[end]):
+        end += 1
+    if END.search(words[end]):
+        high = end
+    last = max((i for i in range(low, high + 1) if END.search(words[i])), default=None)
+    if last is not None and high - last <= 2:
+        high = last
+    return low, high
+
+
 def predict(source, target):
     source_tags = [(i, tag) for i, (_, tag, _) in enumerate(source) if tag]
     target_tags = [(i, tag) for i, (_, tag, _) in enumerate(target) if tag]
@@ -124,6 +151,9 @@ def predict(source, target):
         for k in range(size):
             mapping[source_tags[a + k][0]] = target_tags[b + k][0]
     segments = source_segments(source)
+    red_tags = [i for segment in segments for i in segment if source[i][1] not in COMMON] or [i for segment in segments for i in segment]
+    if red_tags and sum(1 for i in red_tags if i in mapping) / len(red_tags) < MIN_COVERAGE:
+        return []
     predicted = []
     for segment in segments:
         anchors = [mapping[i] for i in segment if i in mapping and source[i][1] not in COMMON]
@@ -137,6 +167,7 @@ def predict(source, target):
             low = 0
         if not after:
             high = len(target) - 1
+        low, high = snap(target, low, high)
         predicted.append(list(range(low, high + 1)))
     return predicted
 
@@ -177,6 +208,44 @@ def align(web_archive, archive):
     return result
 
 
+def consensus(sources, archive):
+    """Keeps only what every source edition agrees on; a verse they disagree on gets no red."""
+    target = load(archive)
+    loaded = []
+    for source_archive in sources:
+        tokens = load(source_archive)
+        COMMON.update(common_tags(tokens))
+        loaded.append(tokens)
+    result = {}
+    reasons = {}
+    for key, tokens_target in target.items():
+        guesses = []
+        for source in loaded:
+            if key in source and any(red for _, _, red in source[key]):
+                guess = {i for group in predict(source[key], tokens_target) for i in group}
+                guesses.append(guess)
+        if len(guesses) < len(loaded):
+            continue
+        guesses = [guess for guess in guesses if guess]
+        if not guesses:
+            reasons["no source can place the verse"] = reasons.get("no source can place the verse", 0) + 1
+            continue
+        union = set.union(*guesses)
+        shared = set.intersection(*guesses)
+        if not shared or len(shared) / len(union) < AGREEMENT:
+            reasons["the sources disagree"] = reasons.get("the sources disagree", 0) + 1
+            continue
+        groups = runs(shared)
+        if len(groups) > 1:
+            groups = [group for group in groups if len(group) >= MIN_PIECE]
+        phrases = [phrases_of(tokens_target, group) for group in groups]
+        phrases = [phrase for phrase in phrases if phrase]
+        if phrases:
+            result[key] = phrases
+    print(f"{len(result)} verses with red; left without red: {reasons}")
+    return result
+
+
 def check(web_archive, kjv_archive):
     web = load(web_archive)
     COMMON.update(common_tags(web))
@@ -202,8 +271,13 @@ if __name__ == "__main__":
         check(sys.argv[2], sys.argv[3])
     else:
         edition = sys.argv[-1]
-        phrases = own(sys.argv[2]) if mode == "own" else align(sys.argv[2], sys.argv[3])
-        suffix = "red.json" if mode == "own" else "red.computed.json"
+        if mode == "own":
+            phrases = own(sys.argv[2])
+        elif mode == "consensus":
+            phrases = consensus(sys.argv[2:-2], sys.argv[-2])
+        else:
+            phrases = align(sys.argv[2], sys.argv[3])
+        suffix = "red.computed.json" if mode == "align" else "red.json"
         target = Path("data/corpus/bibles") / f"{edition}.{suffix}"
         target.write_text(json.dumps(phrases, ensure_ascii=False) + "\n", encoding="utf-8")
         print(f"{len(phrases)} verses -> {target}")

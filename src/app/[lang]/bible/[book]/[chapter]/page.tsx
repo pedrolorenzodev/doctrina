@@ -11,6 +11,7 @@ import { getReaderChapter } from "@/content/get-reader-chapter";
 import type { ChapterRef } from "@/content/model/bible";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ReaderStream } from "@/features/reader/reader-stream";
+import { RedNoticeScript } from "@/features/reader/red-notice-script";
 import { ReaderFormatScript } from "@/features/reader/reader-format-script";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderTextScript } from "@/features/reader/reader-text-script";
@@ -94,6 +95,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
       <ReaderSizeScript />
       <ReaderTextScript />
       <ReaderFormatScript />
+      <RedNoticeScript />
       <ReaderStrip
         treeToggle={<TreeToggle label={labels.treeToggle} />}
         parallelText={{
@@ -176,6 +178,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
             toolbar: labels.toolbar,
             yourNotes: labels.yourNotes,
             read: labels.read,
+            redNotice: labels.redNotice,
             columnHeads: {
               first: labels.picker.label,
               second: labels.parallel.label,

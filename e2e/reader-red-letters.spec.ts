@@ -34,10 +34,38 @@ test("the red does not change the text: every verse reads exactly as in the corp
   }
 });
 
-test("the editions that carry no marking show no red", async ({ page }) => {
+test("RV1909 shows the red too, with the notice that the marking is ours and a quiet cue on the words", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
-  await expect(page.locator("main [data-jesus]")).toHaveCount(0);
+  const red = page.locator("#v-35 [data-jesus]");
+  await expect(red).toHaveCount(1);
+  await expect(red).toContainText("Yo soy el pan de vida");
+  await expect(red).toHaveAttribute("title", "Rojo marcado por Doctrina");
+  await expect(page.locator("#v-1 [data-jesus]")).toHaveCount(0);
+  const notice = page.locator("[data-red-notice-box]").first();
+  await expect(notice).toBeVisible();
+  await expect(notice).toContainText("las marcamos nosotros");
+  await expect(notice.getByRole("link")).toHaveAttribute("href", /^mailto:doctrina@/);
+});
+
+test("the notice closes, stays closed after a reload and is not shown for editions that carry their own red", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  await page.locator("[data-red-notice-box]").first().getByRole("button", { name: "Cerrar el aviso" }).click();
+  await expect(page.locator("[data-red-notice-box]:visible")).toHaveCount(0);
+  expect(await page.evaluate(() => localStorage.getItem("doctrina-red-notice"))).toBe("closed");
+  await page.reload();
+  await expect(page.locator("[data-red-notice-box]:visible")).toHaveCount(0);
+  await expect(page.locator("#v-35 [data-jesus]")).toHaveCount(1);
+  await page.evaluate(() => localStorage.removeItem("doctrina-red-notice"));
+  await page.addInitScript(() => localStorage.setItem("doctrina-translation", "kjv"));
+  await page.reload();
+  await expect(page.locator("#v-35 [data-jesus]")).toHaveCount(1);
+  await expect(page.locator("[data-red-notice-box]")).toHaveCount(0);
 });
 
 test("the dark tone is lighter and readable", async ({ page }) => {

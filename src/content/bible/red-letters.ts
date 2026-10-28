@@ -1,5 +1,7 @@
 export type RedSpan = [number, number];
 
+export const computedRedEditions: readonly string[] = ["bsb", "rv1909", "dra"];
+
 function compact(text: string): { letters: string; at: number[] } {
   const letters: string[] = [];
   const at: number[] = [];

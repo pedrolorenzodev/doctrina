@@ -5,6 +5,8 @@ import { UndoBar } from "@/components/undo-bar";
 import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
 import { ReadMarker } from "@/features/reader/read-marker";
+import { RedNotice } from "@/features/reader/red-notice";
+import { computedRedEditions } from "@/content/bible/red-letters";
 import { wordsOf } from "@/lib/reading-pace";
 import { getReadChapters, subscribeReadChapters } from "@/lib/read-chapter-store";
 import { readChapterKey } from "@/lib/read-chapters";
@@ -76,6 +78,7 @@ type ReaderBodyProps = {
     toolbar: Omit<Parameters<typeof SelectionToolbar>[0]["text"], "highlight">;
     yourNotes: YourNotesText;
     read: { doubt: string; mark: string; marked: string };
+    redNotice: { message: string; email: string; close: string; cue: string };
     columnHeads: ColumnHeadText;
   };
 };
@@ -144,6 +147,7 @@ export function ReaderBody({
     () => selected.verses.map((entry): [number, number] => [entry.verse, wordsOf(entry.text)]),
     [selected.verses],
   );
+  const redIsOurs = computedRedEditions.includes(selected.id) && selected.verses.some((entry) => entry.red);
   const chapterRead = useSyncExternalStore(
     subscribeReadChapters,
     () => getReadChapters().has(readChapterKey(bookId, panel.chapter)),
@@ -422,6 +426,7 @@ export function ReaderBody({
     <>
       <p className="title-part title-part-2 mt-2.5 mb-0 text-reader-note text-ink-3">{selected.name}</p>
       {deuteroNotice ? <p className={`title-part title-part-3 ${noteClassName}`}>{deuteroNotice}</p> : null}
+      {redIsOurs ? <RedNotice text={panel.redNotice} /> : null}
       {differs ? (
         <p role="note" className={noteClassName}>
           {numberingNote
@@ -437,6 +442,7 @@ export function ReaderBody({
       />
       <ChapterText
         second={second}
+        redCue={redIsOurs ? panel.redNotice.cue : null}
         heads={
           second ? (
             <>
