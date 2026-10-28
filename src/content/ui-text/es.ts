@@ -311,6 +311,7 @@ export const es = {
       below: "Debajo",
       side: "Al lado",
       sideNote: "«Al lado» necesita una pantalla más ancha.",
+      missing: "La traducción elegida no está en este capítulo; se muestra de nuevo en los que la tienen.",
       list: "Traducción",
       locked: "Con dos traducciones va un versículo por línea, para poder alinearlas.",
     },

@@ -5,7 +5,13 @@ import { HangingMenu } from "@/components/hanging-menu";
 import type { PickerOption } from "@/features/reader/translation-picker";
 import { TranslationRows } from "@/features/reader/translation-rows";
 import { useSideRoom } from "@/features/reader/use-second-translation";
-import { chooseSecondTranslation, noSecond, type SecondChoice, type SecondMode } from "@/lib/second-translation";
+import {
+  chooseSecondTranslation,
+  getSecondChoice,
+  noSecond,
+  type SecondChoice,
+  type SecondMode,
+} from "@/lib/second-translation";
 
 type ParallelMenuText = {
   label: string;
@@ -14,6 +20,7 @@ type ParallelMenuText = {
   below: string;
   side: string;
   sideNote: string;
+  missing: string;
   list: string;
   spanish: string;
   english: string;
@@ -24,11 +31,12 @@ type ParallelMenuProps = {
   options: PickerOption[];
   firstId: string;
   second: SecondChoice;
+  unavailable: boolean;
 };
 
 const modes: SecondMode[] = ["off", "below", "side"];
 
-export function ParallelMenu({ text, options, firstId, second }: ParallelMenuProps) {
+export function ParallelMenu({ text, options, firstId, second, unavailable }: ParallelMenuProps) {
   const id = useId();
   const button = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
@@ -39,7 +47,7 @@ export function ParallelMenu({ text, options, firstId, second }: ParallelMenuPro
 
   const setMode = (mode: SecondMode) => {
     if (mode === "off") chooseSecondTranslation(noSecond);
-    else chooseSecondTranslation({ mode, id: second.id ?? others[0]?.id ?? null });
+    else chooseSecondTranslation({ mode, id: second.id ?? getSecondChoice().id ?? others[0]?.id ?? null });
   };
   const setTranslation = (translation: string) =>
     chooseSecondTranslation({ mode: second.mode === "off" ? "below" : second.mode, id: translation });
@@ -133,6 +141,11 @@ export function ParallelMenu({ text, options, firstId, second }: ParallelMenuPro
             <p data-menu-item="" className="mt-3.5 mb-1.5 ml-1 text-label font-medium text-ink-3">
               {text.list}
             </p>
+            {unavailable ? (
+              <p data-menu-item="" className="mt-0 mb-2 ml-1 text-reader-note text-ink-3">
+                {text.missing}
+              </p>
+            ) : null}
             <div role="listbox" aria-label={text.label} onKeyDown={onListKeyDown}>
               <TranslationRows
                 spanish={text.spanish}

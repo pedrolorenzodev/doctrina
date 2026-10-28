@@ -176,7 +176,7 @@ test("the choice is remembered across chapters and reloads; «No» clears it", a
   expect(await page.evaluate((key) => JSON.parse(localStorage.getItem(key)!).mode, storageKey)).toBe("off");
 });
 
-test("choosing the second translation as the first swaps them; a stored one that is not offered is ignored", async ({
+test("choosing the second translation as the first swaps them; a stored one that is not offered shows nothing but keeps the mode", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -191,7 +191,7 @@ test("choosing the second translation as the first swaps them; a stored one that
   await expect(page.locator(secondOf(1))).toContainText("RV1909");
   await page.goto("/es/biblia/eclesiastico/51");
   await expect(page.locator(root)).not.toHaveAttribute("data-second", /.*/);
-  await expect(page.locator(button)).toHaveAttribute("aria-pressed", "false");
+  await expect(page.locator(button)).toHaveAttribute("aria-pressed", "true");
 });
 
 test("a verse the second translation does not have leaves an empty line", async ({ page }) => {
@@ -353,4 +353,21 @@ test.describe("the second column", () => {
     await expect(page.locator('[data-second-text="35"]')).toHaveAttribute("aria-pressed", "false");
     await expect(page.locator("#v-35 [data-verse-text]")).toHaveAttribute("aria-pressed", "true");
   });
+});
+
+test("in a chapter without the chosen translation the menu keeps the mode and says so; the choice is not lost", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.addInitScript(
+    ([key, value]) => localStorage.setItem(key!, value!),
+    [storageKey, JSON.stringify({ mode: "side", id: "bsb" })],
+  );
+  await page.goto("/es/biblia/tobias/1");
+  await openMenu(page);
+  await expect(page.locator(mode("Al lado"))).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(button)).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(menu)).toContainText("La traducción elegida no está en este capítulo");
+  await page.locator(mode("Debajo")).click();
+  expect(await page.evaluate((key) => localStorage.getItem(key), storageKey)).toContain('"bsb"');
 });

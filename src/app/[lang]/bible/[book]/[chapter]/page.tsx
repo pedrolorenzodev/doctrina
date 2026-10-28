@@ -105,6 +105,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           below: labels.parallel.below,
           side: labels.parallel.side,
           sideNote: labels.parallel.sideNote,
+          missing: labels.parallel.missing,
           list: labels.parallel.list,
         }}
         textText={{

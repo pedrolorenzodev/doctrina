@@ -8,7 +8,7 @@ import { YourNotesButton } from "@/features/reader/your-notes-button";
 import { ParallelMenu } from "@/features/reader/parallel-menu";
 import { StripShell } from "@/features/reader/strip-shell";
 import { TextOptions } from "@/features/reader/text-options";
-import { useSecondTranslation } from "@/features/reader/use-second-translation";
+import { useSecondMode, useSecondTranslation } from "@/features/reader/use-second-translation";
 import { chooseSecondTranslation } from "@/lib/second-translation";
 import { TranslationPicker, type PickerOption } from "@/features/reader/translation-picker";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
@@ -56,6 +56,8 @@ export function ReaderStrip({
     options.map((option) => option.id),
     value,
   );
+  const storedMode = useSecondMode();
+  const shown = second.id === null ? { mode: storedMode, id: null } : second;
   const changeFirst = (id: string) => {
     if (second.id === id) chooseSecondTranslation({ mode: second.mode, id: value });
     chooseTranslation(id);
@@ -129,10 +131,11 @@ export function ReaderStrip({
             text={{ ...parallelText, spanish: pickerText.spanish, english: pickerText.english }}
             options={options}
             firstId={value}
-            second={second}
+            second={shown}
+            unavailable={second.id === null && storedMode !== "off"}
           />
           <YourNotesButton label={yourNotes.label} book={here.book} chapter={here.chapter} className="max-sm:hidden" />
-          <TextOptions text={textText} locked={second.mode !== "off"} />
+          <TextOptions text={textText} locked={shown.mode !== "off"} />
         </>
       }
     />

@@ -313,6 +313,7 @@ export const en: UiText = {
       below: "Below",
       side: "Side by side",
       sideNote: "«Side by side» needs a wider screen.",
+      missing: "The chosen translation is not in this chapter; it shows again in the chapters that have it.",
       list: "Translation",
       locked: "With two translations the text is one verse per line, so they can line up.",
     },
