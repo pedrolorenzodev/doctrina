@@ -345,24 +345,42 @@ const workLinks: Record<string, WorkLink> = {
 
 export type FatherWorkRow = { id: string; label: string };
 
-export function worksByFather(workIds: string[], locale: Locale): Record<string, FatherWorkRow[]> {
+export type WorkRef = { id: string; author: string; title: string };
+
+const fatherOfAuthor: Record<string, string> = { hippolytus: "hippolytus-of-rome" };
+
+function linkOf(work: WorkRef, locale: Locale): { fatherId: string; label: string } | null {
+  const link = workLinks[work.id];
+  if (link) return { fatherId: link.fatherId, label: link.names[locale] };
+  if (work.author === "anonymous") return null;
+  return { fatherId: fatherOfAuthor[work.author] ?? work.author, label: work.title };
+}
+
+export function worksByFather(works: WorkRef[], locale: Locale): Record<string, FatherWorkRow[]> {
   const grouped: Record<string, FatherWorkRow[]> = {};
-  for (const [id, link] of Object.entries(workLinks)) {
-    if (!workIds.includes(id)) continue;
-    (grouped[link.fatherId] ??= []).push({ id, label: link.names[locale] });
+  const order = Object.keys(workLinks);
+  const sorted = [...works].sort((a, b) => {
+    const left = order.indexOf(a.id);
+    const right = order.indexOf(b.id);
+    return (left === -1 ? order.length : left) - (right === -1 ? order.length : right);
+  });
+  for (const work of sorted) {
+    const link = linkOf(work, locale);
+    if (link) (grouped[link.fatherId] ??= []).push({ id: work.id, label: link.label });
   }
   return grouped;
 }
 
 export function neighborsOfWork(
   id: string,
-  workIds: string[],
+  works: WorkRef[],
   locale: Locale,
 ): { previous: FatherWorkRow | null; next: FatherWorkRow | null } {
-  const link = workLinks[id];
+  const work = works.find((entry) => entry.id === id);
+  const link = work ? linkOf(work, locale) : null;
   if (!link) return { previous: null, next: null };
-  const siblings = worksByFather(workIds, locale)[link.fatherId] ?? [];
-  const index = siblings.findIndex((work) => work.id === id);
+  const siblings = worksByFather(works, locale)[link.fatherId] ?? [];
+  const index = siblings.findIndex((entry) => entry.id === id);
   return { previous: siblings[index - 1] ?? null, next: siblings[index + 1] ?? null };
 }
 

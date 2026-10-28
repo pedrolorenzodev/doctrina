@@ -40,11 +40,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
   const editionLine = (work.edition.lang === "en" ? labels.fatherWork.editionEn : labels.fatherWork.editionEs)
     .replace("{translator}", work.edition.translator)
     .replace("{year}", String(work.edition.year));
-  const { previous, next } = neighborsOfWork(
-    work.id,
-    (await getFatherWorks()).map((entry) => entry.id),
-    locale,
-  );
+  const { previous, next } = neighborsOfWork(work.id, await getFatherWorks(), locale);
   const neighbor = (label: string, other: typeof previous) =>
     other ? { label, title: other.label, href: fatherWorkHref(locale, other.id) } : null;
   return (

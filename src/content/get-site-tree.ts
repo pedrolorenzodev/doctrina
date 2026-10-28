@@ -22,9 +22,6 @@ export async function getSiteTree(locale: Locale): Promise<TreeGroup[]> {
     sourceTitles,
     publishedFathers,
     await getBibleChapterCounts(locale),
-    worksByFather(
-      (await getFatherWorks()).map((work) => work.id),
-      locale,
-    ),
+    worksByFather(await getFatherWorks(), locale),
   );
 }
