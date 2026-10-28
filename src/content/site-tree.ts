@@ -22,6 +22,7 @@ import {
   reformationIndexHref,
   earlyChristiansHref,
   earlyChristiansRoute,
+  glossaryHref,
   traditionHref,
   traditionRoute,
 } from "@/content/routes";
@@ -309,7 +310,9 @@ export function buildSiteTree(
       id: "reference",
       label: text.tree.reference,
       nodes: [
-        leaf("reference/glossary", text.tree.glossary),
+        locale === "es"
+          ? { ...leaf("reference/glossary", text.tree.glossary), href: glossaryHref(locale), route: "/es/glossary" }
+          : leaf("reference/glossary", text.tree.glossary),
         branch(
           "reference/sources",
           text.tree.sources,
