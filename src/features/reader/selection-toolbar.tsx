@@ -200,7 +200,7 @@ export function SelectionToolbar({
       data-open={open}
       data-docked={docked || undefined}
       onMouseDown={(event) => event.preventDefault()}
-      className="group/toolbar toolbar-motion invisible pointer-events-none fixed top-(--y) left-(--x) z-86 flex translate-y-1 items-center gap-0.5 rounded-8 border border-rule-2 bg-panel px-1.5 py-0.75 opacity-0 shadow-floating data-[open=true]:pointer-events-auto data-[open=true]:visible data-[open=true]:translate-y-0 data-[open=true]:opacity-100 data-docked:inset-x-0 data-docked:top-auto data-docked:bottom-0 data-docked:left-0 data-docked:translate-y-full data-docked:flex-wrap data-docked:justify-center data-docked:rounded-none data-docked:border-x-0 data-docked:border-b-0 data-docked:bg-bg data-docked:texture-layer data-docked:safe-bottom data-docked:data-[open=true]:translate-y-0"
+      className="group/toolbar toolbar-motion invisible pointer-events-none fixed top-(--y) left-(--x) z-86 flex translate-y-1 items-center gap-0.5 rounded-8 border border-rule-2 bg-bg texture-layer px-1.5 py-0.75 opacity-0 shadow-floating data-[open=true]:pointer-events-auto data-[open=true]:visible data-[open=true]:translate-y-0 data-[open=true]:opacity-100 data-docked:inset-x-0 data-docked:top-auto data-docked:bottom-0 data-docked:left-0 data-docked:translate-y-full data-docked:flex-wrap data-docked:justify-center data-docked:rounded-none data-docked:border-x-0 data-docked:border-b-0 data-docked:safe-bottom data-docked:data-[open=true]:translate-y-0"
     >
       <HighlightColors
         text={text.highlight}
@@ -213,7 +213,7 @@ export function SelectionToolbar({
         {text.note}
       </button>
       <span aria-hidden="true" className="mx-1 h-5 w-px bg-rule group-data-docked/toolbar:hidden" />
-      <span data-cite-button="" className="contents">
+      <span data-cite-button="" className="inline-flex">
         <CopyButton compact label={text.cite} done={text.citeCopied} text={() => (current ? citation(current) : "")} />
       </span>
       <button type="button" onClick={find} className={plainButtonClassName}>
