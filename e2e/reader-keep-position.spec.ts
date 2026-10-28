@@ -15,16 +15,17 @@ const followFrames = (page: Page, id: string, ms: number) =>
   page.evaluate(
     ([target, duration]) =>
       new Promise<number[]>((resolve) => {
-        const tops: number[] = [];
-        const start = performance.now();
-        const tick = () => {
-          setTimeout(() => {
-            tops.push(document.getElementById(target as string)!.getBoundingClientRect().top);
-            if (performance.now() - start < (duration as number)) requestAnimationFrame(tick);
-            else resolve(tops);
-          }, 0);
-        };
-        requestAnimationFrame(tick);
+        const tops: number[] = [document.getElementById(target as string)!.getBoundingClientRect().top];
+        const sample = () => tops.push(document.getElementById(target as string)!.getBoundingClientRect().top);
+        const root = document.querySelector("[data-chapter-text]")?.closest("[data-stream-chapter]")?.parentElement;
+        const observer = new ResizeObserver(sample);
+        observer.observe(document.body);
+        if (root) observer.observe(root);
+        setTimeout(() => {
+          observer.disconnect();
+          sample();
+          resolve(tops);
+        }, duration as number);
       }),
     [id, ms] as const,
   );
@@ -36,6 +37,17 @@ async function atVerse(page: Page, verse: number, width = 1440) {
   await page.evaluate((n) => document.getElementById(`v-${n}`)!.scrollIntoView({ block: "start" }), verse);
   await page.mouse.wheel(0, -200);
   await page.waitForTimeout(900);
+  await expect
+    .poll(
+      async () => {
+        const top = await page.locator(strip).evaluate((el) => el.getBoundingClientRect().top);
+        if (top < 55) await page.mouse.wheel(0, -60);
+        return top;
+      },
+      { timeout: 6000, intervals: [300] },
+    )
+    .toBeGreaterThanOrEqual(55);
+  await page.waitForTimeout(400);
   await page.evaluate(() => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))));
 }
 
@@ -130,4 +142,17 @@ test("after the reader scrolls on, the next width change keeps the new verse, no
   await page.mouse.wheel(0, -80);
   await page.waitForTimeout(700);
   await holds(page, () => press(page, `${strip} [data-tree-toggle]`));
+});
+
+test.fixme("switching to «En párrafo» in the middle of a chapter keeps the reading verse (the position jumps to the next chapter)", async ({
+  page,
+}) => {
+  await atVerse(page, 39);
+  await page.waitForTimeout(1500);
+  const before = await topVerse(page);
+  await page.locator(text).click();
+  await page.locator('[role=group] button:has-text("En párrafo")').click();
+  await page.waitForTimeout(1800);
+  const after = await page.evaluate((id) => document.getElementById(id)!.getBoundingClientRect().top, before.id);
+  expect(Math.abs(after - before.top)).toBeLessThan(2);
 });

@@ -1,4 +1,5 @@
 import type Lenis from "lenis";
+import { noteJump } from "@/lib/scroll-debug";
 
 const jumpKeys = ["PageUp", "PageDown", "ArrowUp", "ArrowDown", "Home", "End", " "];
 
@@ -94,6 +95,7 @@ export function scrollToLayoutPosition(element: HTMLElement, instant = false) {
 
 export function jumpToY(target: number) {
   const y = Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight, target));
+  noteJump(y);
   scrollTo(0, y);
   smooth?.resize();
   smooth?.scrollTo(y, { immediate: true, force: true });

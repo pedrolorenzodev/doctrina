@@ -4,8 +4,10 @@ import "lenis/dist/lenis.css";
 import type Lenis from "lenis";
 import { useEffect } from "react";
 import { registerSmoothScroll } from "@/lib/scroll";
+import { watchScroll } from "@/lib/scroll-debug";
 
 export function SmoothScroll() {
+  useEffect(() => watchScroll(), []);
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
     let instance: Lenis | null = null;
