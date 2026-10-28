@@ -10,7 +10,7 @@ import { foldBox } from "@/lib/fold-box";
 import { setYourNotesOpen } from "@/features/reader/your-notes-store";
 import { useKeepTopVerse } from "@/features/reader/use-keep-top-verse";
 import { loadChapter, seedChapter } from "@/features/reader/chapter-data";
-import { isSmoothScrolling, jumpQuietly, scrollOffset, scrollToY } from "@/lib/scroll";
+import { isSmoothScrolling, scrollOffset, scrollToY, shiftScroll } from "@/lib/scroll";
 
 type Panel = ComponentProps<typeof ReaderBody>["panel"];
 
@@ -53,7 +53,7 @@ export function ReaderStream({
   const boundaryBox = useRef<HTMLDivElement>(null);
   const busy = useRef(false);
   const latest = useRef(chapters);
-  const holding = useRef<{ key: string; top: number } | null>(null);
+  const holding = useRef<{ key: string; docTop: number } | null>(null);
   const mounted = useRef(new Set<string>());
   useEffect(() => {
     latest.current = chapters;
@@ -91,8 +91,8 @@ export function ReaderStream({
     holding.current = null;
     const section = stream.current?.querySelector<HTMLElement>(`[data-stream-chapter="${held.key}"]`);
     if (!section) return;
-    const shift = section.getBoundingClientRect().top - held.top;
-    if (Math.abs(shift) >= 0.5) jumpQuietly(scrollY + shift);
+    const shift = section.getBoundingClientRect().top + scrollY - held.docTop;
+    if (Math.abs(shift) >= 0.5) shiftScroll(shift);
   }, [chapters]);
   useKeepTopVerse(stream, unitsSelector);
 
@@ -129,7 +129,10 @@ export function ReaderStream({
         const sections = [...(stream.current?.querySelectorAll<HTMLElement>("[data-stream-chapter]") ?? [])];
         const section = sections.find((candidate) => candidate.getBoundingClientRect().bottom > line) ?? sections[0];
         if (section?.dataset.streamChapter) {
-          holding.current = { key: section.dataset.streamChapter, top: section.getBoundingClientRect().top };
+          holding.current = {
+            key: section.dataset.streamChapter,
+            docTop: section.getBoundingClientRect().top + scrollY,
+          };
         }
       }
       setChapters((current) => {

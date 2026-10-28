@@ -113,6 +113,18 @@ export function jumpQuietly(target: number) {
   jumpToY(target);
 }
 
+export function shiftScroll(shift: number) {
+  quietUntil = performance.now() + quietMs;
+  const pending = smooth ? smooth.targetScroll - smooth.animatedScroll : 0;
+  const y = Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight, scrollY + shift));
+  noteJump(y);
+  scrollTo(0, y);
+  if (!smooth) return;
+  smooth.resize();
+  smooth.scrollTo(y, { immediate: true, force: true });
+  if (Math.abs(pending) >= 1) smooth.scrollTo(y + pending, { force: true });
+}
+
 export function scrollToElement(element: HTMLElement) {
   scrollToY(element.getBoundingClientRect().top + scrollY - scrollOffset());
 }
