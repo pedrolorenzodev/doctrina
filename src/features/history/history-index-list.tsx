@@ -6,14 +6,17 @@ import { GroupHeading } from "@/components/group-heading";
 import { PageLink } from "@/components/ui/page-link";
 import type { HistoryIndexGroup } from "@/content/get-history-indexes";
 import { flipList, revealList } from "@/lib/list-motion";
+import { scrollToElement } from "@/lib/scroll";
 import { fold } from "@/lib/search-match";
 
 type HistoryIndexListProps = {
   groups: HistoryIndexGroup[];
   filter: { label: string; none: string } | null;
+  letters?: { label: string; all: string[] };
+  columns?: boolean;
 };
 
-export function HistoryIndexList({ groups, filter }: HistoryIndexListProps) {
+export function HistoryIndexList({ groups, filter, letters, columns = false }: HistoryIndexListProps) {
   const [query, setQuery] = useState("");
   const list = useRef<HTMLUListElement>(null);
   const ghosts = useRef<HTMLDivElement>(null);
@@ -48,18 +51,44 @@ export function HistoryIndexList({ groups, filter }: HistoryIndexListProps) {
           />
         </label>
       ) : null}
+      {letters ? (
+        <nav aria-label={letters.label} className="-ml-2 mb-7.5 flex max-w-wide flex-wrap gap-0.5">
+          {letters.all.map((letter) => {
+            const present = shown.some((group) => group.title === letter);
+            return (
+              <button
+                key={letter}
+                type="button"
+                disabled={!present}
+                onClick={() => {
+                  const target = document.getElementById(`letter-${letter}`);
+                  if (target) scrollToElement(target);
+                }}
+                className="inline-grid size-8 cursor-pointer place-items-center rounded-6 text-ui-sm font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover disabled:cursor-default disabled:font-normal disabled:text-ink-3 disabled:opacity-60 disabled:hover:bg-transparent pointer-coarse:size-11"
+              >
+                {letter}
+              </button>
+            );
+          })}
+        </nav>
+      ) : null}
       <div className="max-w-wide">
         <div className="relative">
-          <ul ref={list} className="m-0 list-none p-0">
+          <ul ref={list} className={`m-0 list-none p-0 ${columns ? "lg:columns-2 lg:gap-x-10" : ""}`}>
             {shown.flatMap((group) => [
-              <li key={`group-${group.title}`} data-id={`group-${group.title}`} className="mt-7.5 first:mt-0">
+              <li
+                key={`group-${group.title}`}
+                id={letters ? `letter-${group.title}` : undefined}
+                data-id={`group-${group.title}`}
+                className="mt-7.5 break-inside-avoid-column break-after-avoid-column first:mt-0"
+              >
                 <GroupHeading>{group.title}</GroupHeading>
               </li>,
               ...group.rows.map((row, index) => (
                 <li
                   key={row.id}
                   data-id={row.id}
-                  className={`border-t border-rule py-3.5 ${index === group.rows.length - 1 ? "border-b" : ""}`}
+                  className={`break-inside-avoid-column border-t border-rule py-3.5 ${index === group.rows.length - 1 ? "border-b" : ""}`}
                 >
                   <div className="flex items-baseline justify-between gap-6">
                     <p className="m-0 text-source-name font-medium">

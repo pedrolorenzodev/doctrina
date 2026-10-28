@@ -42,3 +42,18 @@ test("a term shows each tradition's definition in its own words, the source, the
 test("the English site has no glossary yet", async ({ request }) => {
   expect((await request.get("/en/glossary")).status()).toBe(404);
 });
+
+test("the letter strip jumps to its letter, letters with no term are off, and desktop shows two columns", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/glosario");
+  const strip = page.getByRole("navigation", { name: "Saltar a la letra" });
+  await expect(strip.getByRole("button", { name: "W", exact: true })).toBeDisabled();
+  await strip.getByRole("button", { name: "S", exact: true }).click();
+  await expect.poll(async () => (await page.locator("#letter-S").boundingBox())!.y).toBeLessThan(260);
+  const lefts = await page
+    .locator(rows)
+    .evaluateAll((items) => new Set(items.map((item) => Math.round(item.getBoundingClientRect().left))).size);
+  expect(lefts).toBe(2);
+});

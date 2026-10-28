@@ -352,6 +352,7 @@ export const en: UiText = {
     },
   },
   glossary: {
+    letters: "Jump to letter",
     title: "Glossary",
     lede: "Terms each tradition's texts use, defined in their own words, with the source.",
     filter: "Filter by name",

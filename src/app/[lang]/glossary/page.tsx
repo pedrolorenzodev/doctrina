@@ -30,6 +30,8 @@ export default async function GlossaryRoute() {
       <HistoryIndexList
         groups={glossaryIndexGroups(locale, (id) => labels.doctrines[id])}
         filter={{ label: labels.filter, none: labels.none }}
+        letters={{ label: labels.letters, all: [..."ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"] }}
+        columns
       />
     </PageMain>
   );

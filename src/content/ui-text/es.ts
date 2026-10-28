@@ -350,6 +350,7 @@ export const es = {
     },
   },
   glossary: {
+    letters: "Saltar a la letra",
     title: "Glosario",
     lede: "Términos que los textos de cada tradición usan, con su definición en sus propias palabras y su fuente.",
     filter: "Filtrar por nombre",
