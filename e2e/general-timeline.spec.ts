@@ -59,7 +59,10 @@ test("a council, a movement and an anonymous writing each have their own labelle
   await item(page, "nicaea-1").click();
   await expect(detail(page).locator("div.font-ui > p").first()).toHaveText("Concilio");
   await expect(detail(page).locator("dl dt")).toHaveText(["Fecha"]);
-  await expect(detail(page).getByRole("button", { name: /Ir a la página de/ })).toBeVisible();
+  await expect(detail(page).getByRole("link", { name: /Ir a la página de/ })).toHaveAttribute(
+    "href",
+    "/es/historia/concilios/nicaea-1",
+  );
   await item(page, "arianism").click();
   await expect(detail(page).locator("dl dt")).toHaveText(["Desde", "Hasta"]);
   await item(page, "didache").click();

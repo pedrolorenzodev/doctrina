@@ -338,6 +338,27 @@ export const en: UiText = {
       prologue: "Prologue",
     },
   },
+  council: {
+    facts: { date: "Date", place: "Place", convokedBy: "Convoked by", canons: "Canons" },
+    decided: "What it decided",
+    recognized: "Who recognises it",
+    timelineLink: "See it on the timeline",
+    neighborsLabel: "Previous and next councils",
+    previous: "Previous",
+    next: "Next",
+  },
+  current: {
+    facts: { period: "Period", founder: "Founder" },
+    held: "What it held",
+    answered: "How it was answered",
+    story: "Its story",
+    councils: "Councils that dealt with it",
+    fathers: "Who answered it",
+    timelineLink: "See it on the timeline",
+    neighborsLabel: "Previous and next currents",
+    previous: "Previous",
+    next: "Next",
+  },
   father: {
     facts: {
       born: "Born",

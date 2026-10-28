@@ -3,7 +3,7 @@ import { lifeText } from "@/content/father-life";
 import { personItem } from "@/content/father-timeline";
 import { councils, heresies } from "@/content/history/timeline-sources";
 import type { Father } from "@/content/model/history";
-import { fatherHref } from "@/content/routes";
+import { councilHref, currentHref, fatherHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
 import type { TimelineEntry } from "@/lib/timeline-entry";
 import { firstSentence } from "@/lib/first-sentence";
@@ -98,7 +98,7 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       isRange: false,
       openEnd: false,
       own: false,
-      href: null,
+      href: councilHref(locale, council.id),
       linkLabel: labels.pageOf.replace("{name}", name),
       facts: [{ label: labels.facts.date, value: council.dateNote?.[locale] ?? label }],
       ecumenical: council.ecumenical,
@@ -134,7 +134,7 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       isRange: true,
       openEnd: heresy.endYear > to,
       own: false,
-      href: null,
+      href: currentHref(locale, heresy.id),
       linkLabel: labels.pageOf.replace("{name}", name),
       facts: [
         { label: labels.facts.since, value: formatYear({ year: heresy.startYear, circa: true }) },

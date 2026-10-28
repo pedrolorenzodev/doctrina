@@ -336,6 +336,27 @@ export const es = {
       prologue: "Prólogo",
     },
   },
+  council: {
+    facts: { date: "Fecha", place: "Lugar", convokedBy: "Convocado por", canons: "Cánones" },
+    decided: "Qué decidió",
+    recognized: "Quién lo reconoce",
+    timelineLink: "Ver en la línea de tiempo",
+    neighborsLabel: "Concilios anterior y siguiente",
+    previous: "Anterior",
+    next: "Siguiente",
+  },
+  current: {
+    facts: { period: "Período", founder: "Fundador" },
+    held: "Qué sostenía",
+    answered: "Cómo se respondió",
+    story: "Su historia",
+    councils: "Concilios que lo trataron",
+    fathers: "Quiénes respondieron",
+    timelineLink: "Ver en la línea de tiempo",
+    neighborsLabel: "Corrientes anterior y siguiente",
+    previous: "Anterior",
+    next: "Siguiente",
+  },
   father: {
     facts: {
       born: "Nació",

@@ -83,6 +83,25 @@ export function fatherRoute(locale: Locale, id: string): string {
   return `/${locale}/history/fathers/${id}`;
 }
 
+const councilsSegments: Record<Locale, string> = { es: "concilios", en: "councils" };
+const currentsSegments: Record<Locale, string> = { es: "corrientes", en: "currents" };
+
+export function councilHref(locale: Locale, id: string): string {
+  return `/${locale}/${historySegments[locale]}/${councilsSegments[locale]}/${id}`;
+}
+
+export function councilRoute(locale: Locale, id: string): string {
+  return `/${locale}/history/councils/${id}`;
+}
+
+export function currentHref(locale: Locale, id: string): string {
+  return `/${locale}/${historySegments[locale]}/${currentsSegments[locale]}/${id}`;
+}
+
+export function currentRoute(locale: Locale, id: string): string {
+  return `/${locale}/history/currents/${id}`;
+}
+
 export function fatherWorkHref(locale: Locale, id: string): string {
   return `/${locale}/${historySegments[locale]}/${worksSegments[locale]}/${id}`;
 }
@@ -128,6 +147,8 @@ export function spanishRewrites() {
       destination: fatherRoute("es", ":father"),
     },
     { source: fatherWorkHref("es", ":work"), destination: fatherWorkRoute("es", ":work") },
+    { source: councilHref("es", ":council"), destination: councilRoute("es", ":council") },
+    { source: currentHref("es", ":current"), destination: currentRoute("es", ":current") },
     ...doctrineRewrites(),
   ];
 }
