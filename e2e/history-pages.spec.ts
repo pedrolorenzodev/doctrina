@@ -86,3 +86,23 @@ test("the English indexes and the current pages have their routes; a late counci
   await page.goto("/es/historia/corrientes/marcionism");
   expect(await page.locator("#story p").count()).toBeGreaterThan(1);
 });
+
+test("the language switch keeps the page on the history routes", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const cases: [string, string][] = [
+    ["/es/historia/concilios/trent", "/en/history/councils/trent"],
+    ["/es/historia/herejias", "/en/history/currents"],
+    ["/es/historia/corrientes/arianism", "/en/history/currents/arianism"],
+    ["/es/historia/padres/origen", "/en/history/fathers/origen"],
+    ["/es/historia/obras/didache", "/en/history/works/didache"],
+    ["/es/historia/reforma/anabaptist", "/en/history/reformation/anabaptist"],
+    ["/es/historia/linea-de-tiempo", "/en/history/timeline"],
+  ];
+  for (const [spanish, english] of cases) {
+    await page.goto(spanish);
+    await page.getByRole("link", { name: "EN", exact: true }).click();
+    await expect(page).toHaveURL(english);
+    await page.getByRole("link", { name: "ES", exact: true }).click();
+    await expect(page).toHaveURL(spanish);
+  }
+});

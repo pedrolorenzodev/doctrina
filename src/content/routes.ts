@@ -229,3 +229,21 @@ function doctrineRewrites() {
     ]),
   ]);
 }
+
+export function swapHistoryLocale(pathname: string, from: Locale, to: Locale): string | null {
+  const [, , history, kind, ...rest] = pathname.split("/");
+  if (!kind || history !== historySegments[from]) return null;
+  const detail = rest.length > 0;
+  const kinds = [
+    fathersSegments,
+    worksSegments,
+    councilsSegments,
+    divisionsSegments,
+    reformationSegments,
+    timelineSlugs,
+    detail ? currentsSegments : currentsIndexSegments,
+  ];
+  const match = kinds.find((table) => table[from] === kind);
+  if (!match) return null;
+  return `/${to}/${historySegments[to]}/${match[to]}${detail ? `/${rest.join("/")}` : ""}`;
+}
