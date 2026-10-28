@@ -14,6 +14,7 @@ export type FatherWork = {
     year: number;
     bibliography: string;
     licence: string;
+    status?: string;
   };
   divisions: FatherDivision[];
 };

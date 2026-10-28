@@ -6,7 +6,7 @@ import { NeighborLinks } from "@/components/neighbor-links";
 import { PageMain } from "@/components/page-main";
 import { neighborsOfWork, workName } from "@/content/father-work-links";
 import { getFatherWork, getFatherWorks } from "@/content/get-father-works";
-import { fatherWorkHref } from "@/content/routes";
+import { fatherWorkHref, fathersIndexHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { FatherStrip } from "@/features/reader/father-strip";
@@ -65,14 +65,20 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         }}
       />
       <div className="mx-auto max-w-reader">
-        {/* TODO: «Historia» and «Padres» lead to their index pages once those exist */}
+        {/* TODO: «Historia» leads to its index page once it exists */}
         <Breadcrumbs
           label={text.shell.breadcrumb}
-          trail={[{ label: text.shell.tree.history }, { label: text.shell.tree.fathers }]}
+          trail={[
+            { label: text.shell.tree.history },
+            { label: text.shell.tree.fathers, href: fathersIndexHref(locale) },
+          ]}
           current={work.title}
         />
         <PageHeader id="top" className="mt-9" size="reader" title={work.title} />
         <p className="title-part title-part-2 mt-2.5 mb-0 text-reader-note text-ink-3">{editionLine}</p>
+        {work.edition.status === "draft" ? (
+          <p className="title-part title-part-2 mt-1 mb-0 text-reader-note text-ink-3">{labels.fatherWork.draft}</p>
+        ) : null}
         <FatherBody
           workId={work.id}
           workName={workName(work.id, locale, work.title)}

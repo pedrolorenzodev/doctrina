@@ -347,6 +347,7 @@ export const en: UiText = {
       next: "Next work",
       editionEn: "Text in English. Translated by {translator}, {year}.",
       editionEs: "Text in Spanish. Translated by {translator}, {year}.",
+      draft: "Draft: this transcription has not yet had an independent reading.",
       prologue: "Prologue",
     },
   },

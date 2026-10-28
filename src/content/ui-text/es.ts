@@ -345,6 +345,7 @@ export const es = {
       next: "Obra siguiente",
       editionEn: "Texto en inglés. Traducción de {translator}, {year}.",
       editionEs: "Texto en español. Traducción de {translator}, {year}.",
+      draft: "Borrador: la transcripción de esta obra todavía no tuvo una lectura independiente.",
       prologue: "Prólogo",
     },
   },
