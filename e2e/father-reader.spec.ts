@@ -23,8 +23,8 @@ test("the division locator sits in the left margin from 768 px and above the tex
   await page.goto(didache);
   const first = page.locator("[data-father-text] > div").first();
   const locator = (await first.locator("button").first().boundingBox())!;
-  const text = (await first.locator("p").last().boundingBox())!;
-  expect(locator.x + locator.width).toBeLessThan(text.x);
+  const textLeft = await first.locator("[data-verse-text]").evaluate((node) => node.getClientRects()[0]!.left);
+  expect(locator.x + locator.width).toBeLessThan(textLeft);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(450);
   const stacked = (await first.locator("button").first().boundingBox())!;
@@ -300,4 +300,29 @@ test("a division with a note shows the pen between its locator and its text, 8 /
   expect(Math.abs(place.labelToText - 8)).toBeLessThan(1.5);
   expect(Math.abs(place.iconMid - place.textMid)).toBeLessThan(2);
   expect(Math.abs(place.numberMid - place.textMid)).toBeLessThan(2);
+});
+
+test("a division with a heading keeps its locator and pen level with the first line of the text, not the heading", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/obras/1-clement");
+  const placed = await page.evaluate(() => {
+    const row = [...document.querySelectorAll<HTMLElement>("[data-father-text] > div")].find((item) =>
+      item.querySelector("p.font-ui"),
+    );
+    if (!row) return null;
+    const number = row.querySelector<HTMLElement>("[data-division-open]")!.getBoundingClientRect();
+    const text = row.querySelector("[data-verse-text]")!.getClientRects()[0]!;
+    const heading = row.querySelector("p.font-ui")!.getBoundingClientRect();
+    return {
+      numberMid: number.top + number.height / 2,
+      textMid: text.top + text.height / 2,
+      headingBottom: heading.bottom,
+    };
+  });
+  if (placed) {
+    expect(Math.abs(placed.numberMid - placed.textMid)).toBeLessThan(2);
+    expect(placed.numberMid).toBeGreaterThan(placed.headingBottom);
+  }
 });

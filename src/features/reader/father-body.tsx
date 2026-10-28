@@ -244,12 +244,14 @@ export function FatherBody({
             <div
               key={division.ordinal}
               id={anchorOf(division.locator)}
-              className="relative verse-mid -mx-3 mb-1.5 rounded-6 px-3 py-2 arrival-mark data-marked:bg-mark data-selected:bg-accent-weak"
+              className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 arrival-mark data-marked:bg-mark data-selected:bg-accent-weak"
             >
               {division.heading ? (
                 <p className="m-0 mb-1 font-ui text-ui-xs font-medium text-ink-3">{division.heading}</p>
               ) : null}
-              <p className={`m-0 font-body text-reader font-reader text-ink-2 ${mark ? "md:indent-5.75" : ""}`}>
+              <p
+                className={`relative verse-mid -mx-3 -mt-2 mb-0 px-3 pt-2 font-body text-reader font-reader text-ink-2 ${mark ? "md:indent-5.75" : ""}`}
+              >
                 <span className="mb-0.5 flex min-h-6 items-center gap-2 font-ui text-division font-normal text-ink-3 tabular-nums md:contents">
                   <button
                     type="button"
