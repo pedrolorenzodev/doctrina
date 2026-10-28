@@ -225,3 +225,9 @@ The done files (absolute paths under `docs/research/`) are `neutral/fathers-veri
 - **Check alignment on every format and state the user can be in, with the ink, not the boxes (Pedro, 2026-10-27, pen icon, fifth message).** I measured «Un versículo por línea» only; the user was probably in «En párrafo», where the icon was 5 px low. Compare dark pixels per element in 4× screenshots of the artifact and the build, for each format (lines, paragraph), width (wide, phone) and state (card, label).
 - **When Pedro gives exact distances, implement them as CSS boxes first and test them as numbers (Pedro, 2026-10-27, «8px, 5px, 8px»).** I had been matching an artifact by eye and layering my own choices (an indent on every verse, a 20 px gap); his two plain rules replaced all of it. State the rule in one line in the spec title, assert it in pixels in every layout (lines, phone, «En párrafo»), and list what else it changes.
 
+## Rules learned on 2026-10-28 (tenth session close: T4 and the far-jump hunt)
+- **A/B a flaky spec on production builds, interleaved, 3 repeats each, same minute.** `next dev` after many file swaps (HMR) gave misleading A/B results; the machine load (15–110) moves pass rates by 20 points; one pair of runs proves nothing. Build each variant, run A, B, A, B.
+- **Bisect by removing one thing at a time and keep copies in the scratchpad (`git show HEAD:path` for the clean side).** The dev-server variant that finally explained the regression was found by reading a scroll log, not by more A/B.
+- **When a hunt finds nothing after ~100 randomised runs, stop, record the recipe and the logger, and say so.** Pedro parked T4b rather than pay for more.
+- **Pedro, when he is away: no interaction, freeze each block for the morning (commit kit), cautious UI (smooth motion measured per frame, design system, approved artifact to the letter).** Do not wait for commits.
+
