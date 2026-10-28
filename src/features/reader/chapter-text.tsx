@@ -1,4 +1,4 @@
-import { Fragment, type ReactNode, type RefObject } from "react";
+import { Fragment, type MouseEvent, type ReactNode, type RefObject } from "react";
 import type { BibleVerse, ChapterStructure } from "@/content/model/bible";
 import type { HighlightColor, Segment } from "@/lib/highlights";
 import { splitByRed } from "@/lib/text-pieces";
@@ -22,6 +22,8 @@ type ChapterTextProps = {
   rootRef: RefObject<HTMLDivElement | null>;
   idPrefix: string;
   noteMarkOf: (verse: number) => string | null;
+  previewed: number | null;
+  onPreview: (verse: number | null) => void;
   cards: ReactNode;
   cardsShown: boolean;
   onMark: (verse: number, opener: HTMLElement) => void;
@@ -46,6 +48,8 @@ export function ChapterText({
   rootRef,
   idPrefix,
   noteMarkOf,
+  previewed,
+  onPreview,
   cards,
   cardsShown,
   onMark,
@@ -80,19 +84,32 @@ export function ChapterText({
           <p
             id={`${idPrefix}v-${verse.verse}`}
             data-paragraph-start={paragraphStarts.has(verse.verse) || undefined}
-            className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 font-body text-reader font-reader text-ink-2 arrival-mark data-marked:bg-mark"
+            className="relative verse-mid -mx-3 mb-1.5 rounded-6 px-3 py-2 md:indent-6 font-body text-reader font-reader text-ink-2 arrival-mark data-marked:bg-mark"
           >
-            <span className="mb-1 flex items-baseline gap-2 font-ui text-division text-ink-3 tabular-nums md:contents">
-              <span className="md:absolute md:top-3 md:-left-16.5 md:w-14 md:text-right">{verse.verse}</span>
+            <span className="mb-0.5 flex min-h-6 items-center gap-2 font-ui text-division font-normal text-ink-3 tabular-nums md:contents">
+              <span className="md:absolute md:verse-number-top md:-left-16.5 md:w-14 md:indent-0 md:text-right">
+                {verse.verse}
+              </span>
               {noteMarkOf(verse.verse) ? (
-                <button
-                  type="button"
-                  onClick={(event) => onMark(verse.verse, event.currentTarget)}
-                  className={`note-mark-in hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:top-8 md:-left-16.5 md:w-14 md:text-right ${cardsShown ? "notes:hidden" : ""}`}
-                  data-cards-shown={cardsShown || undefined}
-                >
-                  {noteMarkOf(verse.verse)}
-                </button>
+                <>
+                  <NotePen
+                    previewed={previewed === verse.verse}
+                    onClick={(event) => onMark(verse.verse, event.currentTarget)}
+                    onPreview={(on) => onPreview(on ? verse.verse : null)}
+                  />
+                  <button
+                    type="button"
+                    onClick={(event) => onMark(verse.verse, event.currentTarget)}
+                    className={`note-mark-in pointer-coarse:hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:verse-label-top md:-left-16.5 md:w-14 md:indent-0 md:text-right ${cardsShown ? "notes:hidden" : ""}`}
+                    data-cards-shown={cardsShown || undefined}
+                    onPointerEnter={() => onPreview(verse.verse)}
+                    onPointerLeave={() => onPreview(null)}
+                    onFocus={() => onPreview(verse.verse)}
+                    onBlur={() => onPreview(null)}
+                  >
+                    {noteMarkOf(verse.verse)}
+                  </button>
+                </>
               ) : null}
             </span>
             <span
@@ -152,6 +169,42 @@ export function ChapterText({
       ))}
       {cards}
     </div>
+  );
+}
+
+type NotePenProps = {
+  previewed: boolean;
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  onPreview: (on: boolean) => void;
+};
+
+function NotePen({ previewed, onClick, onPreview }: NotePenProps) {
+  return (
+    <button
+      type="button"
+      tabIndex={-1}
+      aria-hidden="true"
+      data-note-pen=""
+      data-preview={previewed || undefined}
+      onClick={onClick}
+      onPointerEnter={() => onPreview(true)}
+      onPointerLeave={() => onPreview(false)}
+      className="note-mark-in pointer-coarse:hit-44 inline-grid size-3.75 shrink-0 -translate-y-px cursor-pointer place-items-center rounded-4 text-ink-3 transition-colors duration-150 ease-standard hover:text-accent data-preview:text-accent md:absolute md:note-pen-top md:left-1.5 md:-translate-y-1/2"
+    >
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+        <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
+      </svg>
+    </button>
   );
 }
 

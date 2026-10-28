@@ -1,0 +1,259 @@
+<title>Ícono de nota en el texto</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..700;1,8..60,200..700&family=Work+Sans:wght@300..600&display=swap" rel="stylesheet">
+<style>
+/* layout concept: the same real verses (John 6, BSB) in a wide and a narrow reader for every rule, so the icon is judged where it lives */
+:root{
+  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--accent-mid:rgb(44 74 158 / .45);--hover:rgb(28 23 19 / .05);
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--accent-mid:rgb(158 179 238 / .5);--hover:rgb(255 255 255 / .05);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--accent-mid:rgb(158 179 238 / .5);--hover:rgb(255 255 255 / .05);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:10px 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
+h2{font-family:var(--head);font-weight:300;font-size:clamp(26px,4vw,34px);line-height:1.15;margin:0 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
+p{margin:0}
+.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
+.lede + .lede{margin-top:14px}
+.small{font-size:13.5px;color:var(--ink-3)}
+.say{max-width:660px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
+.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
+.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 14px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
+.opt-meta b{font-weight:500;color:var(--ink)}
+.ctl{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;margin:26px 0 0;padding:10px 0;background:var(--bg);border-bottom:1px solid var(--rule)}
+.ctl label{font-size:13px;color:var(--ink-3);margin-right:8px}
+.seg{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px}
+.seg button{font:500 13.5px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 13px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
+.seg button:hover{background:var(--hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cap{font-size:13px;color:var(--ink-3);margin:22px 0 8px}
+.dev{border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);max-width:100%;overflow-x:auto}
+.dev.narrow{max-width:390px}
+.stage{position:relative;min-width:900px;padding:34px 0 30px}
+.dev.narrow .stage{min-width:0;padding:26px 18px 24px}
+.col{position:relative;width:560px;margin-left:86px}
+.dev.narrow .col{width:auto;margin-left:0}
+.vs{font-family:var(--body);font-weight:300;font-size:17.5px;line-height:1.68;color:var(--ink-2);font-variation-settings:"opsz" 18}
+.v{position:relative;display:block;margin:0 0 8px;padding:4px 0;border-radius:4px;transition:background-color 150ms ease}
+.v .t{border-radius:3px;cursor:pointer;transition:background-color 150ms ease}
+.v .t:hover{background:var(--hover)}
+.v.pv .t{background:var(--accent-weak)}
+.v.sel .t{background:var(--accent-weak)}
+.num{font:400 12px var(--ui);color:var(--ink-3);font-variant-numeric:tabular-nums}
+.dev.wide .lines .num{position:absolute;right:calc(100% + 12px);top:9px}
+.dev.wide.slot .lines .num{right:calc(100% + 36px)}
+.dev.narrow .lines .nrow{display:flex;align-items:center;gap:8px;margin-bottom:2px;min-height:24px}
+.dev.narrow .lines .num{position:static}
+.lab{font:400 12px var(--ui);color:var(--ink-3);background:none;border:0;padding:0;cursor:pointer;border-radius:3px}
+.lab:hover{color:var(--ink);text-decoration:underline}
+.pen{display:inline-flex;align-items:center;gap:4px;border:0;background:none;padding:0;color:var(--ink-3);cursor:pointer;border-radius:4px;transition:color 150ms ease,opacity 150ms ease;font:500 11px var(--ui)}
+.pen svg{width:15px;height:15px;display:block}
+.pen:hover,.v.pv .pen{color:var(--accent)}
+.pen b{font-weight:500;font-variant-numeric:tabular-nums}
+.dev.wide .lines .pen{position:absolute;right:calc(100% + 10px);top:10px}
+.pen.ghost{opacity:0}
+.v:hover .pen.ghost,.v.sel .pen.ghost,.pen.ghost:focus-visible{opacity:.75}
+.flow .para{margin:0 0 16px}
+.flow .v{display:inline;margin:0;padding:0}
+.flow .nrow{display:inline}
+.flow .num{font-size:.62em;vertical-align:super;line-height:0;margin:0 .2em 0 .45em}
+.flow .para > .v:first-child .num{margin-left:0}
+.flow .pen{vertical-align:-1px;margin-right:.3em}
+.flow .pen svg{width:12px;height:12px;display:inline-block}
+.flow .lab{font-size:.62em;vertical-align:super;line-height:0;margin-right:.3em}
+.cards{position:absolute;left:100%;margin-left:30px;top:0;width:210px}
+.dev.narrow .cards{display:none}
+.card{position:absolute;left:0;width:100%;display:block;text-align:left;cursor:pointer;background:none;border:0;border-left:1px solid var(--rule-2);padding:6px 8px 8px 14px;color:inherit;font:inherit;transition:border-color 150ms ease}
+.card:hover,.card.pv{border-left-color:var(--accent)}
+.card .pl{display:block;font:400 12px var(--ui);color:var(--ink-3)}
+.card .tx{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-family:var(--body);font-weight:300;font-size:15px;line-height:1.5;color:var(--ink-2)}
+.card .dt{display:block;margin-top:4px;font:400 12px var(--ui);color:var(--ink-3)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:20px}
+.cols h3{font-family:var(--head);font-weight:400;font-size:19px;margin:0 0 6px;font-variation-settings:"opsz" 30}
+.cols ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.55}
+.decide{margin-top:12px;padding:0;list-style:none;max-width:700px}
+.decide li{padding:14px 0;border-top:1px solid var(--rule);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.decide li b{font-weight:500;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.v,.v .t,.pen,.card{transition:none}}
+</style>
+
+<div class="wrap">
+<p class="small">Propuesta para Pedro, a partir de tu nota sobre la vista previa de la nota en el lector</p>
+<h1>Ícono de nota en el texto</h1>
+<p class="lede">Cuando la nota se ve como tarjeta al costado, el rótulo «1 nota en RV1909» no va: es una cosa o la otra. Vos querés que, en ese caso, aparezca el ícono de escribir (<em>square-pen</em>, de Lucide) entre el número del versículo y el comienzo del texto. No sabés si reemplaza al rótulo, ni cuándo se muestra.</p>
+<p class="lede">Abajo hay cuatro reglas posibles. Cada una se ve en una ventana ancha (con lugar para la tarjeta) y en una pantalla angosta (sin lugar), con los mismos versículos de Juan 6 en la BSB. Cambiá el formato y el tema arriba. Pasá el puntero por el ícono, la tarjeta o el rótulo: el versículo se marca como lo hace hoy la vista previa. En D, pasá el puntero o tocá un versículo sin nota.</p>
+
+<div class="ctl">
+  <div><label>Formato</label><span class="seg" id="seg-fmt"><button type="button" data-v="lines" aria-pressed="true">Un versículo por línea</button><button type="button" data-v="flow" aria-pressed="false">En párrafo</button></span></div>
+  <div><label>Tema</label><span class="seg" id="seg-theme"><button type="button" data-v="light" aria-pressed="true">Claro</button><button type="button" data-v="dark" aria-pressed="false">Oscuro</button></span></div>
+</div>
+
+<section class="opt" id="hoy">
+  <h2>Hoy</h2>
+  <p class="say">Con la tarjeta al costado no hay marca en el texto. En una pantalla angosta queda el rótulo bajo el número («1 nota en RV1909»). En «En párrafo» el rótulo se mete en el renglón, pequeño y subido.</p>
+  <p class="cap">Ventana ancha</p><div class="dev wide" data-demo="hoy:wide"></div>
+  <p class="cap">Pantalla angosta</p><div class="dev narrow" data-demo="hoy:narrow"></div>
+</section>
+
+<section class="opt" id="a">
+  <h2>A. El ícono solo cuando hay tarjeta</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> entre el número y el texto, en la ventana ancha</li><li><b>Referencia:</b> tu nota literal: el ícono toma el lugar del rótulo que ya no va</li><li><b>Costo:</b> bajo, la regla es la variante <em>notes</em> que ya existe</li></ul>
+  <p class="say">Es lo que pediste, sin más. Con tarjeta, ícono; sin tarjeta, el rótulo de siempre. Los números se corren 24 px a la izquierda en todos los versículos para que quede el lugar del ícono y no se desalineen.</p>
+  <p class="cap">Ventana ancha</p><div class="dev wide slot" data-demo="a:wide"></div>
+  <p class="cap">Pantalla angosta</p><div class="dev narrow" data-demo="a:narrow"></div>
+</section>
+
+<section class="opt" id="b">
+  <h2>B. El ícono reemplaza al rótulo en todos los anchos</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> entre el número y el texto, siempre</li><li><b>Referencia:</b> los iconos con contador de las barras de acciones</li><li><b>Costo:</b> medio, la edición de la nota pasa al panel y al <em>title</em></li></ul>
+  <p class="say">Una sola forma en cualquier pantalla. Si el versículo tiene más de una nota, el ícono lleva el número («2»). El texto «1 nota en RV1909» desaparece de la vista; queda como nombre accesible y al pasar el puntero. Se pierde saber de un vistazo en qué edición se escribió la nota.</p>
+  <p class="cap">Ventana ancha</p><div class="dev wide slot" data-demo="b:wide"></div>
+  <p class="cap">Pantalla angosta</p><div class="dev narrow" data-demo="b:narrow"></div>
+</section>
+
+<section class="opt" id="c">
+  <h2>C. Ícono siempre, rótulo solo donde no hay tarjeta</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> entre el número y el texto; en angosto, junto al rótulo</li><li><b>Referencia:</b> la regla «una cosa o la otra» aplicada solo al rótulo</li><li><b>Costo:</b> bajo a medio</li></ul>
+  <p class="say">El ícono está siempre. El rótulo se queda únicamente cuando no hay tarjeta, al lado del ícono, así en pantallas angostas se sigue leyendo la edición. La fila del número se carga un poco más, pero conserva toda la información de hoy.</p>
+  <p class="cap">Ventana ancha</p><div class="dev wide slot" data-demo="c:wide"></div>
+  <p class="cap">Pantalla angosta</p><div class="dev narrow" data-demo="c:narrow"></div>
+</section>
+
+<section class="opt" id="d">
+  <h2>D. El ícono también invita a escribir</h2>
+  <ul class="opt-meta"><li><b>Dónde:</b> entre el número y el texto, en los versículos con nota</li><li><b>Referencia:</b> las acciones del versículo que ya salen en la barra de selección</li><li><b>Costo:</b> medio a alto, hay que abrir el editor desde un versículo sin nota</li></ul>
+  <p class="say">En los versículos con nota el ícono es fijo. En los demás aparece, más tenue, al pasar el puntero o al tocar el versículo, y significa «escribir una nota aquí». El mismo ícono dice las dos cosas: hay una nota, o la podés escribir. No hay rótulo en ningún ancho.</p>
+  <p class="cap">Ventana ancha</p><div class="dev wide slot" data-demo="d:wide"></div>
+  <p class="cap">Pantalla angosta</p><div class="dev narrow" data-demo="d:narrow"></div>
+</section>
+
+<section class="opt" id="descarte">
+  <h2>Lo que descarté</h2>
+  <div class="cols">
+    <div><h3>Al final del versículo</h3><ul><li>Choca con el subrayado y con el borde derecho, donde va la tarjeta.</li></ul></div>
+    <div><h3>En lugar del número</h3><ul><li>El número es el ancla del versículo (<em>#v-N</em>) y la forma en que se cita.</li></ul></div>
+    <div><h3>Un ícono en cada versículo, siempre</h3><ul><li>Treinta íconos por capítulo es ruido; D lo resuelve mostrándolo al pasar el puntero.</li></ul></div>
+    <div><h3>Punto de color o insignia sola</h3><ul><li>Sin leerlo no dice nada, y es el patrón de notificación genérico.</li></ul></div>
+    <div><h3>Ícono relleno o en un círculo de color</h3><ul><li>Se lee como botón de aplicación y suma un segundo acento. El sitio usa un acento y trazos finos.</li></ul></div>
+    <div><h3>Patrones genéricos que evita esta página</h3><ul><li>Iconos en cuadrados de color, emoji, degradados, tarjetas con sombra idéntica, mayúsculas con tracking, cadenas de metadatos con puntos medios y flechas pegadas a los links (lista de <em>docs/DECISIONS.md</em>, «Design principles»).</li></ul></div>
+  </div>
+</section>
+
+<section class="opt" id="decidir">
+  <h2>Qué hay que decidir</h2>
+  <ul class="decide">
+    <li><b>La regla:</b> A, B, C o D. Si dudás, cada una se puede cambiar después sin tocar el resto.</li>
+    <li><b>Los números del margen:</b> en A, B, C y D se corren 24 px en todos los versículos para dejar el lugar del ícono. Si preferís que solo se corran los versículos con ícono, los números quedan en zigzag; no lo recomiendo.</li>
+    <li><b>El contador:</b> si el ícono lleva el número de notas cuando hay más de una (se ve en B y en el versículo 56).</li>
+    <li><b>Qué hace el clic:</b> abrir el panel del versículo en «Notas» (lo mismo que hoy hace el rótulo y la tarjeta).</li>
+  </ul>
+</section>
+</div>
+
+<script>
+var PEN='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg>';
+var VERSES={
+  50:'This is the bread that comes down from heaven, so that anyone may eat of it and not die.',
+  51:'I am the living bread that came down from heaven. If anyone eats of this bread, he will live forever. And this bread, which I will give for the life of the world, is My flesh.”',
+  52:'At this, the Jews began to argue among themselves, “How can this man give us His flesh to eat?”',
+  53:'So Jesus said to them, “Truly, truly, I tell you, unless you eat the flesh and drink the blood of the Son of Man, you have no life in you.',
+  54:'Whoever eats My flesh and drinks My blood has eternal life, and I will raise him up at the last day.',
+  55:'For My flesh is real food, and My blood is real drink.',
+  56:'Whoever eats My flesh and drinks My blood remains in Me, and I in him.',
+  57:'Just as the living Father sent Me and I live because of the Father, so also the one who feeds on Me will live because of Me.'
+};
+var PARAS=[[50,51],[52],[53,54,55],[56,57]];
+var NOTES={
+  53:[{place:'Juan 6:53, en RV1909',text:'El discurso del pan de vida, leído con Juan 6:35.',date:'24 oct 2026',ed:'RV1909'}],
+  56:[{place:'Juan 6:56',text:'Permanecer: la unión de Cristo con quien come y bebe.',date:'25 oct 2026',ed:null},{place:'Juan 6:56, en RV1909',text:'Comparar con Juan 15:4.',date:'25 oct 2026',ed:'RV1909'}]
+};
+var RULES={
+  hoy:{pen:function(){return false},label:function(d){return d==='narrow'}},
+  a:{pen:function(d){return d==='wide'},label:function(d){return d==='narrow'}},
+  b:{pen:function(){return true},label:function(){return false},count:true},
+  c:{pen:function(){return true},label:function(d){return d==='narrow'}},
+  d:{pen:function(){return true},label:function(){return false},ghost:true}
+};
+var state={fmt:'lines'};
+function labelText(n){var e=NOTES[n].filter(function(x){return x.ed}).map(function(x){return x.ed})[0];var c=NOTES[n].length;return (c===1?'1 nota':c+' notas')+(e?' en '+e:'')}
+function build(box){
+  var parts=box.dataset.demo.split(':'),key=parts[0],dev=parts[1],rule=RULES[key];
+  box.innerHTML='';
+  var stage=document.createElement('div');stage.className='stage';
+  var col=document.createElement('div');col.className='col '+(state.fmt==='flow'?'flow':'lines');
+  var vs=document.createElement('div');vs.className='vs';col.appendChild(vs);
+  var cards=document.createElement('div');cards.className='cards';col.appendChild(cards);
+  var showCards=dev==='wide';
+  function verse(n){
+    var has=!!NOTES[n];
+    var el=document.createElement('span');el.className='v';el.id=key+dev+'-v'+n;el.dataset.n=n;
+    var row=document.createElement('span');row.className='nrow';
+    var num=document.createElement('span');num.className='num';num.textContent=n;row.appendChild(num);
+    var hasPen=rule.pen(dev,has)&&has, ghost=rule.ghost&&!has;
+    if(hasPen||ghost){
+      var b=document.createElement('button');b.type='button';b.className='pen'+(ghost?' ghost':'');
+      var name=has?labelText(n):'Escribir una nota en el versículo '+n;
+      b.title=name;b.setAttribute('aria-label',name);
+      b.innerHTML=PEN+((rule.count&&has&&NOTES[n].length>1)?'<b>'+NOTES[n].length+'</b>':'');
+      row.appendChild(b);
+    }
+    if(has&&rule.label(dev)){
+      var l=document.createElement('button');l.type='button';l.className='lab';l.textContent=labelText(n);row.appendChild(l);
+    }
+    var t=document.createElement('span');t.className='t';t.textContent=VERSES[n];
+    t.addEventListener('click',function(){el.classList.toggle('sel')});
+    el.appendChild(row);el.appendChild(t);
+    if(has){var on=function(){el.classList.add('pv');col.querySelectorAll('[data-for="'+n+'"]').forEach(function(c){c.classList.add('pv')})};var off=function(){el.classList.remove('pv');col.querySelectorAll('[data-for="'+n+'"]').forEach(function(c){c.classList.remove('pv')})};
+      row.querySelectorAll('.pen,.lab').forEach(function(x){x.addEventListener('pointerenter',on);x.addEventListener('pointerleave',off);x.addEventListener('focus',on);x.addEventListener('blur',off)});
+      el._on=on;el._off=off}
+    return el;
+  }
+  PARAS.forEach(function(p){
+    var wrap=document.createElement('p');wrap.className='para';wrap.style.margin=state.fmt==='flow'?'':'0';
+    p.forEach(function(n,i){wrap.appendChild(verse(n));if(state.fmt==='flow'&&i<p.length-1)wrap.appendChild(document.createTextNode(' '))});
+    vs.appendChild(state.fmt==='flow'?wrap:(function(){var f=document.createDocumentFragment();while(wrap.firstChild)f.appendChild(wrap.firstChild);return f})());
+  });
+  stage.appendChild(col);box.appendChild(stage);
+  if(showCards){
+    Object.keys(NOTES).forEach(function(n){
+      NOTES[n].forEach(function(note,i){
+        var c=document.createElement('button');c.type='button';c.className='card';c.dataset.for=n;c.dataset.i=i;
+        c.innerHTML='<span class="pl"></span><span class="tx"></span><span class="dt"></span>';
+        c.querySelector('.pl').textContent=note.place;c.querySelector('.tx').textContent=note.text;c.querySelector('.dt').textContent=note.date;
+        var v=col.querySelector('#'+key+dev+'-v'+n);
+        c.addEventListener('pointerenter',function(){v._on()});c.addEventListener('pointerleave',function(){v._off()});c.addEventListener('focus',function(){v._on()});c.addEventListener('blur',function(){v._off()});
+        cards.appendChild(c);
+      });
+    });
+    place(col,cards);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){place(col,cards)});
+  }
+}
+function place(col,cards){
+  var floor=0,base=col.getBoundingClientRect().top;
+  cards.querySelectorAll('.card').forEach(function(c){
+    var v=col.querySelector('#'+c.closest('.dev').dataset.demo.replace(':','')+'-v'+c.dataset.for);
+    var t=v.querySelector('.t');var r=t.getClientRects()[0];
+    var top=Math.max(r.top-base-4,floor);c.style.top=top+'px';floor=top+c.offsetHeight+8;
+  });
+  col.closest('.stage').style.paddingBottom=Math.max(30,floor-col.offsetHeight+22)+'px';
+}
+function renderAll(){document.querySelectorAll('[data-demo]').forEach(build)}
+function seg(id,fn){var s=document.getElementById(id);s.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;s.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});fn(b.dataset.v)})}
+seg('seg-fmt',function(v){state.fmt=v;renderAll()});
+seg('seg-theme',function(v){document.documentElement.dataset.theme=v;renderAll()});
+if(matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.dataset.theme='dark';document.querySelectorAll('#seg-theme button').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.v==='dark'))})}
+renderAll();
+window.addEventListener('resize',function(){document.querySelectorAll('[data-demo$=":wide"]').forEach(function(box){var col=box.querySelector('.col'),cards=box.querySelector('.cards');if(col&&cards)place(col,cards)})});
+</script>

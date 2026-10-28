@@ -7,7 +7,7 @@ const field = `${panel} textarea[aria-label="Tu nota"]`;
 const card = "[data-note-card]";
 const cardAt = (verse: number) => `[data-note-card][data-verse="${verse}"]`;
 const mark = (n: number) => `#v-${n} button:has-text("nota")`;
-const markFrames = "#v-53 button[class*=note-mark-in]";
+const markFrames = "#v-53 button[class*=note-mark-in]:not([data-note-pen])";
 
 const base = { book: "John", chapter: 6, quote: null, from: null, to: null, createdAt: 1, updatedAt: 1 };
 const seeded = [
@@ -321,9 +321,260 @@ test("in «En párrafo» on the BSB a card is level with its verse's first line,
   }
   for (const verse of [35, 53, 57]) {
     const display = await page.evaluate(
-      (n) => getComputedStyle(document.querySelector(`#v-${n} button[class*=note-mark-in]`)!).display,
+      (n) => getComputedStyle(document.querySelector(`#v-${n} button[data-cards-shown]`)!).display,
       verse,
     );
     expect(display).toBe("none");
   }
+});
+
+const pen = (n: number) => `#v-${n} [data-note-pen]`;
+
+test("a verse with notes has the pen icon between its number and its text, and the others have none", async ({
+  page,
+}) => {
+  await openWithNotes(page);
+  for (const verse of [35, 53, 57]) await expect(page.locator(pen(verse))).toBeVisible();
+  for (const verse of [1, 54, 55]) await expect(page.locator(pen(verse))).toHaveCount(0);
+  const place = await page.evaluate(() => {
+    const unit = document.querySelector("#v-53")!;
+    const number = unit.querySelector<HTMLElement>("span > span")!.getBoundingClientRect();
+    const icon = unit.querySelector("[data-note-pen]")!.getBoundingClientRect();
+    const text = unit.querySelector("[data-verse-text]")!.getClientRects()[0]!;
+    return { numberRight: number.right, iconLeft: icon.left, iconRight: icon.right, textLeft: text.left };
+  });
+  expect(place.iconLeft).toBeGreaterThan(place.numberRight);
+  expect(place.iconRight).toBeLessThanOrEqual(place.textLeft + 1);
+  expect(await page.locator(pen(53)).innerText()).toBe("");
+});
+
+test("the numbers do not move and every verse's text starts 24 px in, wrapping at the same right edge", async ({
+  page,
+}) => {
+  await openWithNotes(page);
+  const measure = (verse: number) =>
+    page.evaluate((n) => {
+      const unit = document.querySelector(`#v-${n}`)!;
+      const box = unit.getBoundingClientRect();
+      const number = unit.querySelector<HTMLElement>("span > span")!.getBoundingClientRect();
+      const first = unit.querySelector("[data-verse-text]")!.getClientRects()[0]!;
+      return { number: number.right, start: first.left - box.left, end: box.right };
+    }, verse);
+  const [withNote, without] = [await measure(53), await measure(54)];
+  expect(withNote.number).toBe(without.number);
+  expect(withNote.start).toBe(without.start);
+  expect(withNote.start).toBeGreaterThanOrEqual(12 + 24 - 1);
+  expect(withNote.end).toBe(without.end);
+});
+
+test("the pen opens the verse panel, the same as the margin mark and the card", async ({ page }) => {
+  await openWithNotes(page);
+  await page.locator(pen(53)).click();
+  await expect(page.locator(panel)).toHaveAttribute("data-open", "true");
+  await expect(page.locator(panel)).toContainText("El discurso del pan de vida.");
+});
+
+test("with the panel open the pen stays and the label shows beside the number", async ({ page }) => {
+  await openWithNotes(page);
+  await page.locator("#v-10 [role=button]").click();
+  await expect(page.locator(panel)).toHaveAttribute("data-open", "true");
+  await expect(page.locator(pen(53))).toBeVisible();
+  await expect(page.locator(mark(53))).toBeVisible();
+});
+
+test("on a phone the pen sits in the number's row, next to the label, and the text is not indented", async ({
+  page,
+}) => {
+  await openWithNotes(page, 390);
+  await expect(page.locator(pen(53))).toBeVisible();
+  const row = await page.evaluate(() => {
+    const unit = document.querySelector("#v-53")!;
+    const icon = unit.querySelector("[data-note-pen]")!.getBoundingClientRect();
+    const label = unit.querySelector("button[data-cards-shown]")!.getBoundingClientRect();
+    const box = unit.getBoundingClientRect();
+    const first = unit.querySelector("[data-verse-text]")!.getClientRects()[0]!;
+    return {
+      iconTop: icon.top,
+      labelTop: label.top,
+      iconRight: icon.right,
+      labelLeft: label.left,
+      start: first.left - box.left,
+      textTop: first.top,
+      iconBottom: icon.bottom,
+    };
+  });
+  expect(Math.abs(row.iconTop - row.labelTop)).toBeLessThan(8);
+  expect(row.iconRight).toBeLessThanOrEqual(row.labelLeft);
+  expect(row.start).toBe(12);
+  expect(row.iconBottom).toBeLessThanOrEqual(row.textTop);
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+});
+
+test("in «En párrafo» the pen is inline after the small number and nothing overflows", async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("doctrina-reader-format", "flow"));
+  await openWithNotes(page);
+  await expect(page.locator(pen(53))).toBeVisible();
+  const box = (await page.locator(pen(53)).boundingBox())!;
+  expect(box.width).toBeGreaterThan(8);
+  expect(box.width).toBeLessThan(20);
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+});
+
+test("the pen is 15 px, midway between the number and the text, and level with the number and the first line", async ({
+  page,
+}) => {
+  await openWithNotes(page);
+  await expect(page.locator(pen(53))).toBeVisible();
+  const place = await page.evaluate(() => {
+    const unit = document.querySelector("#v-53")!;
+    const icon = unit.querySelector("[data-note-pen]")!.getBoundingClientRect();
+    const number = unit.querySelector("span > span")!.getBoundingClientRect();
+    const line = unit.querySelector("[data-verse-text]")!.getClientRects()[0]!;
+    const middle = (box: { top: number; height: number }) => box.top + box.height / 2;
+    return {
+      size: icon.width,
+      height: icon.height,
+      before: icon.left - number.right,
+      after: line.left - icon.right,
+      toNumber: middle(icon) - middle(number),
+      toLine: middle(icon) - middle(line),
+    };
+  });
+  expect(place.size).toBe(15);
+  expect(place.height).toBe(15);
+  expect(Math.abs(place.before - place.after)).toBeLessThan(1.5);
+  expect(place.after).toBeGreaterThan(12);
+  expect(Math.abs(place.toNumber)).toBeLessThan(1.5);
+  expect(Math.abs(place.toLine)).toBeLessThan(1.5);
+});
+
+test("the number, the pen and the first line stay level with a big size and wide spacing in «Aa»", async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("doctrina-reader-size", "25");
+    localStorage.setItem(
+      "doctrina-reader-text",
+      JSON.stringify({ weight: 300, leading: 1.95, measure: 720, justify: false }),
+    );
+  });
+  await openWithNotes(page);
+  await expect(page.locator(pen(53))).toBeVisible();
+  const level = await page.evaluate(() => {
+    const unit = document.querySelector("#v-53")!;
+    const middle = (box: { top: number; height: number }) => box.top + box.height / 2;
+    const icon = middle(unit.querySelector("[data-note-pen]")!.getBoundingClientRect());
+    const number = middle(unit.querySelector("span > span")!.getBoundingClientRect());
+    const line = middle(unit.querySelector("[data-verse-text]")!.getClientRects()[0]!);
+    return [icon - number, icon - line];
+  });
+  expect(Math.max(...level.map(Math.abs))).toBeLessThan(1.5);
+});
+
+test("the pen's hover lives on the icon only: the line of text beside it and the lines around it do nothing", async ({
+  page,
+}) => {
+  await openWithNotes(page);
+  const box = (await page.locator(pen(53)).boundingBox())!;
+  const verse = (await page.locator("#v-53 [data-verse-text]").boundingBox())!;
+  const idle = await page.locator(pen(53)).evaluate((element) => getComputedStyle(element).color);
+  const before = await page.locator(pen(53)).evaluate((element) => getComputedStyle(element, "::before").content);
+  expect(before).toBe("none");
+  for (const [x, y] of [
+    [box.x + box.width + 3, box.y + box.height / 2],
+    [box.x + box.width + 12, box.y + box.height / 2],
+    [verse.x + 8, box.y + box.height / 2],
+    [box.x + box.width / 2, box.y - 10],
+    [box.x + box.width / 2, box.y + box.height + 12],
+  ] as const) {
+    await page.mouse.move(x, y);
+    await page.waitForTimeout(250);
+    expect(await highlightSize(page)).toBe(0);
+    expect(await page.locator(pen(53)).evaluate((element) => getComputedStyle(element).color)).toBe(idle);
+  }
+});
+
+test("the number and the label are regular weight, as in the approved artifact", async ({ page }) => {
+  await openWithNotes(page, 390);
+  await expect(page.locator(mark(53))).toBeVisible();
+  const weights = await page.evaluate(() => {
+    const unit = document.querySelector("#v-53")!;
+    const number = unit.querySelector("span > span")!;
+    const label = unit.querySelector("button[data-cards-shown]")!;
+    return [getComputedStyle(number).fontWeight, getComputedStyle(label).fontWeight];
+  });
+  expect(weights).toEqual(["400", "400"]);
+});
+
+test("hovering the pen marks the verse's words, turns the pen and every card of that verse to the accent; leaving clears it", async ({
+  page,
+}) => {
+  await openWithNotes(page);
+  const accent = (selector: string, property: "color" | "borderLeftColor") =>
+    page
+      .locator(selector)
+      .first()
+      .evaluate((element, key) => getComputedStyle(element)[key], property);
+  const idle = await accent(pen(53), "color");
+  await page.locator(pen(53)).hover();
+  await expect.poll(() => highlightSize(page)).toBe(2);
+  await expect.poll(() => accent(pen(53), "color")).not.toBe(idle);
+  await expect
+    .poll(async () => (await accent(cardAt(53), "borderLeftColor")) === (await accent(pen(53), "color")))
+    .toBe(true);
+  await expect.poll(() => accent(pen(57), "color")).toBe(idle);
+  await page.mouse.move(5, 5);
+  await expect.poll(() => highlightSize(page)).toBe(0);
+  await expect.poll(() => accent(pen(53), "color")).toBe(idle);
+});
+
+test("hovering a card turns its pen to the accent, and the label does the same as the pen", async ({ page }) => {
+  await openWithNotes(page);
+  const idle = await page.locator(pen(53)).evaluate((element) => getComputedStyle(element).color);
+  await page.locator(cardAt(53)).first().hover();
+  await expect.poll(() => page.locator(pen(53)).evaluate((element) => getComputedStyle(element).color)).not.toBe(idle);
+  await page.mouse.move(5, 5);
+  await page.locator("#v-10 [role=button]").click();
+  await expect(page.locator(mark(53))).toBeVisible();
+  await page.locator(mark(53)).hover();
+  await expect.poll(() => highlightSize(page)).toBe(2);
+  await expect.poll(() => page.locator(pen(53)).evaluate((element) => getComputedStyle(element).color)).not.toBe(idle);
+});
+
+test("on a phone the number, the pen and the label share one centred row of 24 px, 8 px apart", async ({ page }) => {
+  await openWithNotes(page, 390);
+  await expect(page.locator(mark(53))).toBeVisible();
+  const row = await page.evaluate(() => {
+    const unit = document.querySelector("#v-53")!;
+    const parts = [...unit.querySelectorAll("span > span, [data-note-pen], button[data-cards-shown]")].slice(0, 3);
+    const [number, icon, label] = parts.map((part) => part.getBoundingClientRect());
+    const middle = (box: DOMRect) => box.top + box.height / 2;
+    return {
+      size: icon!.width,
+      numberToPen: icon!.left - number!.right,
+      penToLabel: label!.left - icon!.right,
+      off: [Math.abs(middle(number!) - middle(icon!)), Math.abs(middle(label!) - middle(icon!))],
+    };
+  });
+  expect(row.size).toBe(15);
+  expect(Math.abs(row.numberToPen - 8)).toBeLessThan(0.5);
+  expect(Math.abs(row.penToLabel - 8)).toBeLessThan(0.5);
+  expect(Math.max(...row.off)).toBeLessThan(1.5);
+});
+
+test("in «En párrafo» the pen is level with the middle of the text, not on the baseline", async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("doctrina-reader-format", "flow"));
+  await openWithNotes(page);
+  await expect(page.locator(pen(53))).toBeVisible();
+  const off = await page.evaluate(() => {
+    const unit = document.querySelector("#v-53")!;
+    const text = unit.querySelector("[data-verse-text]")!;
+    const node = text.firstChild!.nodeType === 3 ? text.firstChild! : text.firstChild!.firstChild!;
+    const letter = document.createRange();
+    letter.setStart(node, 0);
+    letter.setEnd(node, 1);
+    const middle = (box: { top: number; height: number }) => box.top + box.height / 2;
+    return (
+      middle(unit.querySelector("[data-note-pen]")!.getBoundingClientRect()) - middle(letter.getBoundingClientRect())
+    );
+  });
+  expect(Math.abs(off)).toBeLessThan(1.5);
 });

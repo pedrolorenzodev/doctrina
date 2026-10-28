@@ -12,6 +12,7 @@ type NoteCardsProps = {
   idPrefix: string;
   onOpen: (id: string, opener: HTMLElement) => void;
   onPreview: (id: string | null) => void;
+  previewed: number | null;
 };
 
 const gapPx = 8;
@@ -25,7 +26,7 @@ function verseTop(root: HTMLElement, verse: string, idPrefix: string): number {
 }
 const resizeDelayMs = 150;
 
-export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onPreview }: NoteCardsProps) {
+export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onPreview, previewed }: NoteCardsProps) {
   const box = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -73,12 +74,13 @@ export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onP
           type="button"
           data-note-card
           data-verse={card.verse}
+          data-preview={previewed === card.verse || undefined}
           onClick={(event) => onOpen(card.id, event.currentTarget)}
           onPointerEnter={() => onPreview(card.id)}
           onPointerLeave={() => onPreview(null)}
           onFocus={() => onPreview(card.id)}
           onBlur={() => onPreview(null)}
-          className="absolute top-(--note-top) left-0 block w-full cursor-pointer border-l border-rule-2 pt-1.5 pr-2 pb-2 pl-3.5 text-left transition-colors duration-150 ease-standard hover:border-accent focus-visible:border-accent"
+          className="absolute top-(--note-top) left-0 block w-full cursor-pointer border-l border-rule-2 pt-1.5 pr-2 pb-2 pl-3.5 text-left transition-colors duration-150 ease-standard hover:border-accent focus-visible:border-accent data-preview:border-accent"
         >
           <span className="block text-ui-2xs text-ink-3">{card.place}</span>
           <span className="line-clamp-2 block font-body text-note-card font-light text-ink-2">{card.text}</span>

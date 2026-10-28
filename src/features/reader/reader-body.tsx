@@ -30,7 +30,7 @@ import { useSecondTranslation, useSideRoom } from "@/features/reader/use-second-
 import { useUndo } from "@/features/reader/use-undo";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { nbspBeforeDigits } from "@/lib/locator";
-import { clippedQuote, type NoteDraft } from "@/lib/notes";
+import { clippedQuote, type Note, type NoteDraft } from "@/lib/notes";
 import { numberingDiffers } from "@/content/bible/numbering-note";
 import type { ReaderTranslationView } from "@/content/get-reader-chapter";
 
@@ -297,15 +297,28 @@ export function ReaderBody({
   });
   const live = active || verse !== null || deleting !== null || (undoState.undo?.open ?? false);
   const deletingCard = deleting === null ? null : (cards.find((card) => card.id === deleting) ?? null);
-  const latest = useRef({ chapterNotes, translationId: selected.id });
+  const latest = useRef({ chapterNotes, translationId: selected.id, notesAt: notes.at });
   useEffect(() => {
-    latest.current = { chapterNotes, translationId: selected.id };
+    latest.current = { chapterNotes, translationId: selected.id, notesAt: notes.at };
   });
-  const previewNote = useCallback((id: string | null) => {
-    const note = id === null ? undefined : latest.current.chapterNotes.find((candidate) => candidate.id === id);
-    if (note && textRoot.current) markNoteWords(textRoot.current, note, latest.current.translationId);
+  const [previewed, setPreviewed] = useState<number | null>(null);
+  const previewNotes = useCallback((found: Note[], verseNumber: number | null) => {
+    if (found.length > 0 && textRoot.current) markNoteWords(textRoot.current, found, latest.current.translationId);
     else clearNoteWords();
+    setPreviewed(verseNumber);
   }, []);
+  const previewNote = useCallback(
+    (id: string | null) => {
+      const note = id === null ? undefined : latest.current.chapterNotes.find((candidate) => candidate.id === id);
+      previewNotes(note ? [note] : [], note?.verse ?? null);
+    },
+    [previewNotes],
+  );
+  const previewVerse = useCallback(
+    (verseNumber: number | null) =>
+      previewNotes(verseNumber === null ? [] : latest.current.notesAt(verseNumber), verseNumber),
+    [previewNotes],
+  );
   const citationOf = (first: number, last: number, abbreviation: string) =>
     panel.shortCitation.replace("{reference}", referenceOf(first, last)).replace("{edition}", abbreviation);
   const placedIds = new Set(chapterNotes.map((note) => note.id));
@@ -402,6 +415,8 @@ export function ReaderBody({
         idPrefix={idPrefix}
         segmentsOf={(entry) => highlights.segmentsFor(entry.verse, entry.text.length)}
         noteMarkOf={noteMarkOf}
+        previewed={previewed}
+        onPreview={previewVerse}
         cardsShown={verse === null && !yourOpen && second?.mode !== "side"}
         cards={
           second?.mode === "side" ? null : (
@@ -413,6 +428,7 @@ export function ReaderBody({
               idPrefix={idPrefix}
               onOpen={openCard}
               onPreview={previewNote}
+              previewed={previewed}
             />
           )
         }

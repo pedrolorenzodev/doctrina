@@ -27,16 +27,19 @@ function rangeInVerse(root: HTMLElement, verse: number, from: number, to: number
   return range;
 }
 
-export function markNoteWords(root: HTMLElement, note: Note, translationId: string) {
-  if (typeof CSS === "undefined" || !("highlights" in CSS) || note.verse === null) return;
-  const last = note.verseTo ?? note.verse;
-  const exact = note.scope === "words" && note.translationId === translationId;
+export function markNoteWords(root: HTMLElement, notes: Note[], translationId: string) {
+  if (typeof CSS === "undefined" || !("highlights" in CSS)) return;
   const ranges: Range[] = [];
-  for (let verse = note.verse; verse <= last; verse += 1) {
-    const from = exact && verse === note.verse ? (note.from ?? 0) : 0;
-    const to = exact && verse === last ? note.to : null;
-    const range = rangeInVerse(root, verse, from, to);
-    if (range) ranges.push(range);
+  for (const note of notes) {
+    if (note.verse === null) continue;
+    const last = note.verseTo ?? note.verse;
+    const exact = note.scope === "words" && note.translationId === translationId;
+    for (let verse = note.verse; verse <= last; verse += 1) {
+      const from = exact && verse === note.verse ? (note.from ?? 0) : 0;
+      const to = exact && verse === last ? note.to : null;
+      const range = rangeInVerse(root, verse, from, to);
+      if (range) ranges.push(range);
+    }
   }
   CSS.highlights.set(highlightName, new Highlight(...ranges));
 }

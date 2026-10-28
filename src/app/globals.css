@@ -1045,6 +1045,23 @@
   }
 }
 
+@utility verse-mid {
+  --verse-mid: calc(0.5rem + var(--text-reader) * var(--text-reader--line-height) / 2);
+}
+
+@utility verse-number-top {
+  top: var(--verse-mid);
+  translate: 0 -50%;
+}
+
+@utility verse-label-top {
+  top: calc(var(--verse-mid) + 9px);
+}
+
+@utility note-pen-top {
+  top: calc(var(--verse-mid) - 1px);
+}
+
 @utility note-mark-in {
   animation: note-mark-in 200ms ease-out;
 
@@ -1490,6 +1507,29 @@ html.theme-switching ::after {
   @variant notes {
     display: none;
   }
+}
+
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child > button[data-note-pen] {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  translate: none;
+  margin: 0 0.3em 0 0;
+  vertical-align: 0.05em;
+  line-height: normal;
+}
+
+:root[data-reader-format="flow"]
+  [data-chapter-text]:not([data-second])
+  > p
+  > span:first-child
+  > button[data-note-pen]
+  > svg {
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 :root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p:first-child > span:first-child > span,
