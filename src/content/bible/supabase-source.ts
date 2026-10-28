@@ -1,9 +1,14 @@
 import type { BibleSource } from "@/content/bible/bible-source";
 import { sortChapters } from "@/content/bible/chapter-neighbors";
-import type { BibleTranslation, BibleVerse, ChapterSummary } from "@/content/model/bible";
+import { redSpansOf } from "@/content/bible/red-letters";
+import type { BibleTranslation, BibleVerse, ChapterStructure, ChapterSummary } from "@/content/model/bible";
 import type { Locale } from "@/lib/locale";
 
 const PAGE = 1000;
+
+type VerseRow = { verse: number; text: string; red: string[] | null };
+
+type StructureRow = { sections: [number, string][]; paragraphs: number[] };
 
 type TranslationRow = {
   id: string;
@@ -53,13 +58,23 @@ export function createSupabaseBibleSource(url: string, publishableKey: string): 
       );
     },
     async chapterVerses(translationId, book, chapter) {
-      return select<BibleVerse>(
-        `verses?translation_id=eq.${key(translationId)}&book=eq.${key(book)}&chapter=eq.${chapter}&select=verse,text&order=verse`,
+      const rows = await select<VerseRow>(
+        `verses?translation_id=eq.${key(translationId)}&book=eq.${key(book)}&chapter=eq.${chapter}&select=verse,text,red&order=verse`,
       );
+      return rows.map((row): BibleVerse => {
+        const spans = redSpansOf(row.text, row.red ?? []);
+        return spans.length > 0
+          ? { verse: row.verse, text: row.text, red: spans }
+          : { verse: row.verse, text: row.text };
+      });
     },
-    async chapterStructure() {
-      // TODO: store sections and paragraphs in the Supabase schema; until then only the local corpus has them
-      return null;
+    async chapterStructure(translationId, book, chapter): Promise<ChapterStructure | null> {
+      const [row] = await select<StructureRow>(
+        `chapter_structure?translation_id=eq.${key(translationId)}&book=eq.${key(book)}&chapter=eq.${chapter}&select=sections,paragraphs`,
+      );
+      return row
+        ? { sections: row.sections.map(([from, title]) => ({ from, title })), paragraphs: row.paragraphs }
+        : null;
     },
     async verse(translationId, book, chapter, verse) {
       const [row] = await select<BibleVerse>(

@@ -128,6 +128,42 @@ async function checkSupabaseSource() {
       calls.every((call) => call.init.headers.apikey === "sb_publishable_test"),
     );
     check("supabase encodes the translation", calls[0].url.includes("translation_id=eq.kjv"));
+    globalThis.fetch = async (url) => {
+      const text = String(url);
+      const body = text.includes("chapter_structure")
+        ? [
+            {
+              sections: [
+                [1, "The Feeding of the Five Thousand"],
+                [16, "Jesus Walks on Water"],
+              ],
+              paragraphs: [1, 4, 16],
+            },
+          ]
+        : [
+            {
+              verse: 35,
+              text: "Jesus said to them, “I am the bread of life.” He went on.",
+              red: ["“I am the bread of life.”"],
+            },
+            { verse: 36, text: "But I said to you that you have seen me.", red: null },
+          ];
+      return new Response(JSON.stringify(body), {
+        status: 200,
+        headers: { "content-range": `0-${body.length - 1}/${body.length}` },
+      });
+    };
+    const verses = await source.chapterVerses("web-c", "John", 6);
+    check(
+      "supabase turns red phrases into spans",
+      verses[0].red?.length === 1 && verses[0].text.slice(...verses[0].red[0]).startsWith("“I am"),
+    );
+    check("supabase leaves a verse with no red plain", verses[1].red === undefined);
+    const structure = await source.chapterStructure("web-c", "John", 6);
+    check(
+      "supabase returns sections and paragraphs",
+      structure?.sections[1]?.title === "Jesus Walks on Water" && structure.paragraphs.join() === "1,4,16",
+    );
   } finally {
     globalThis.fetch = realFetch;
   }
