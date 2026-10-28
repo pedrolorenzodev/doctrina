@@ -44,7 +44,7 @@ export function HistoryIndexList({ groups, filter }: HistoryIndexListProps) {
             placeholder={filter.label}
             autoComplete="off"
             spellCheck={false}
-            className="h-10 w-full rounded-6 border border-rule-2 bg-transparent px-3 text-ui-sm text-ink transition-colors duration-150 ease-standard placeholder:text-ink-3 hover:bg-hover focus-visible:bg-hover pointer-coarse:h-11"
+            className="h-10 w-full rounded-6 border border-rule-2 bg-transparent px-3 text-ui-sm text-ink transition-colors duration-150 ease-standard placeholder:text-ink-3 hover:bg-hover pointer-coarse:h-11"
           />
         </label>
       ) : null}

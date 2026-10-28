@@ -95,7 +95,7 @@ export function NoteEditor({
         placeholder={text.placeholder}
         onChange={(event) => change(event.target.value)}
         onKeyDown={onKeyDown}
-        className="block min-h-22 w-full resize-none rounded-6 border border-rule-2 bg-transparent px-3 py-2.5 font-body text-note-text font-light text-ink-2 outline-none focus-visible:border-accent"
+        className="block min-h-22 w-full resize-none rounded-6 border border-rule-2 bg-transparent px-3 py-2.5 font-body text-note-text font-light text-ink-2 outline-none transition-colors duration-150 ease-standard"
       />
       <div className="mt-2 flex items-center gap-3 text-note-meta text-ink-3">
         <span role="status">{!dirty && savedAt !== null ? savedLine(text.saved, dateLabel(savedAt)) : null}</span>

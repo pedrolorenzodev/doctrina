@@ -61,3 +61,19 @@ test("the rows lead to their pages and the sidebar entries lead to the indexes",
   await page.getByRole("link", { name: /^Herejías/ }).click();
   await expect(page).toHaveURL("/es/historia/herejias");
 });
+
+test("a focused field gets a darker grey border and the soft fill, never the blue outline", async ({ page }) => {
+  await page.goto("/es/historia/concilios");
+  const filter = page.getByRole("searchbox", { name: "Filtrar por nombre" });
+  const idle = await filter.evaluate((element) => getComputedStyle(element).borderTopColor);
+  await filter.click();
+  await expect(filter).toBeFocused();
+  const focused = await filter.evaluate((element) => {
+    const style = getComputedStyle(element);
+    return { outline: style.outlineStyle, border: style.borderTopColor, fill: style.backgroundColor };
+  });
+  expect(focused.outline).toBe("none");
+  expect(focused.border).toBe("rgb(97, 92, 84)");
+  expect(focused.border).not.toBe(idle);
+  expect(focused.fill).not.toBe("rgba(0, 0, 0, 0)");
+});
