@@ -7,13 +7,13 @@ export type SecondReading = {
   mode: "below" | "side";
   abbreviation: string;
   name: string;
-  firstName: string;
   lang: string;
   verses: Map<number, { text: string; red: [number, number][] | undefined }>;
 };
 
 type ChapterTextProps = {
   second: SecondReading | null;
+  heads: ReactNode;
   verses: BibleVerse[];
   structure: ChapterStructure | null;
   lang: string;
@@ -40,6 +40,7 @@ export const toneClassName: Record<HighlightColor, string> = {
 
 export function ChapterText({
   second,
+  heads,
   verses,
   structure,
   lang,
@@ -66,10 +67,7 @@ export function ChapterText({
       className={`relative mt-8.5 ${second?.mode === "side" ? "grid max-w-wide grid-cols-2 gap-x-10" : "max-w-reader"}`}
     >
       {second?.mode === "side" ? (
-        <>
-          <p className="mb-1 text-ui-xs text-ink-3">{second.firstName}</p>
-          <p className="mb-1 text-ui-xs text-ink-3">{second.name}</p>
-        </>
+        <div className="col-span-2 mb-1.5 grid grid-cols-2 gap-x-10 border-b border-rule pb-3">{heads}</div>
       ) : null}
       {verses.map((verse) => (
         <Fragment key={verse.verse}>

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { UndoBar } from "@/components/undo-bar";
+import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
 import { ReadMarker } from "@/features/reader/read-marker";
 import { goToUnit } from "@/features/reader/go-to-unit";
@@ -27,6 +28,8 @@ import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
 import { useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
+import { chooseSecondTranslation } from "@/lib/second-translation";
+import { chooseTranslation } from "@/lib/translation-choice";
 import { useUndo } from "@/features/reader/use-undo";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { nbspBeforeDigits } from "@/lib/locator";
@@ -69,6 +72,7 @@ type ReaderBodyProps = {
     verseRange: string;
     toolbar: Omit<Parameters<typeof SelectionToolbar>[0]["text"], "highlight">;
     yourNotes: YourNotesText;
+    columnHeads: ColumnHeadText;
   };
 };
 
@@ -99,6 +103,20 @@ export function ReaderBody({
     selected.id,
   );
   const sideRoom = useSideRoom();
+  const pickerOptions = views.map(({ id, abbreviation, displayName, language }) => ({
+    id,
+    abbreviation,
+    displayName,
+    language,
+  }));
+  const changeFirst = (id: string) => {
+    if (secondChoice.id === id) chooseSecondTranslation({ mode: secondChoice.mode, id: selected.id });
+    chooseTranslation(id);
+  };
+  const changeSecond = (id: string) => {
+    if (id === selected.id && secondChoice.id) chooseTranslation(secondChoice.id);
+    chooseSecondTranslation({ mode: secondChoice.mode, id });
+  };
   const secondView = views.find((view) => view.id === secondChoice.id) ?? null;
   const second: SecondReading | null =
     secondView && secondChoice.mode !== "off"
@@ -106,7 +124,6 @@ export function ReaderBody({
           mode: secondChoice.mode === "side" && sideRoom ? "side" : "below",
           abbreviation: secondView.abbreviation,
           name: secondView.name,
-          firstName: selected.name,
           lang: secondView.language,
           verses: new Map(secondView.verses.map((entry) => [entry.verse, { text: entry.text, red: entry.red }])),
         }
@@ -407,6 +424,30 @@ export function ReaderBody({
       />
       <ChapterText
         second={second}
+        heads={
+          second ? (
+            <>
+              <ColumnHead
+                label={panel.columnHeads.first}
+                abbreviation={selected.abbreviation}
+                name={selected.name}
+                options={pickerOptions}
+                value={selected.id}
+                onChoose={changeFirst}
+                text={panel.columnHeads}
+              />
+              <ColumnHead
+                label={panel.columnHeads.second}
+                abbreviation={second.abbreviation}
+                name={second.name}
+                options={pickerOptions}
+                value={secondView?.id ?? ""}
+                onChoose={changeSecond}
+                text={panel.columnHeads}
+              />
+            </>
+          ) : null
+        }
         verses={selected.verses}
         structure={selected.structure}
         lang={selected.language}

@@ -114,6 +114,32 @@ test("«Al lado» aligns the two translations verse by verse in two columns", as
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 });
 
+test("«Al lado» column heads each open a list; picking the other column's translation swaps them", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  await openMenu(page);
+  await page.locator(mode("Al lado")).click();
+  const heads = page.locator(`${root} [data-column-head]`);
+  await expect(heads).toHaveCount(2);
+  await expect(heads.nth(0)).toContainText("RV1909");
+  await expect(heads.nth(1)).toContainText("BSB");
+  await heads.nth(1).click();
+  const list = page.locator(`${root} [role=listbox]`).nth(1);
+  await expect(list).toBeVisible();
+  await list.locator('[role=option]:has-text("(KJV)")').click();
+  await expect(heads.nth(1)).toContainText("KJV");
+  await expect(list).toBeHidden();
+  await heads.nth(0).click();
+  await page.locator(`${root} [role=listbox]`).nth(0).locator('[role=option]:has-text("(KJV)")').click();
+  await expect(heads.nth(0)).toContainText("KJV");
+  await expect(heads.nth(1)).toContainText("RV1909");
+  await heads.nth(0).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator(`${root} [role=listbox]`).nth(0)).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.locator(`${root} [role=listbox]`).nth(0)).toBeHidden();
+});
+
 test("below 1100 px «Al lado» is unavailable and a stored side choice reads as «Debajo»", async ({ page }) => {
   await page.addInitScript((key) => localStorage.setItem(key, JSON.stringify({ mode: "side", id: "bsb" })), storageKey);
   await page.setViewportSize({ width: 1000, height: 900 });
