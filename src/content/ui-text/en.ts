@@ -283,7 +283,6 @@ export const en: UiText = {
         "We mark the words of Jesus in red in this edition ourselves, by comparing other editions. If you see a mistake, write to",
       email: "doctrina@doctrina.example",
       close: "Close the notice",
-      cue: "Red marked by Doctrina",
     },
     read: {
       doubt: "You went through this chapter faster than it can be read. Did you read it anyway?",

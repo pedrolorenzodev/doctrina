@@ -34,7 +34,7 @@ test("the red does not change the text: every verse reads exactly as in the corp
   }
 });
 
-test("RV1909 shows the red too, with the notice that the marking is ours and a quiet cue on the words", async ({
+test("RV1909 shows the red too, with the notice that the marking is ours and no tooltip on the words", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -42,7 +42,7 @@ test("RV1909 shows the red too, with the notice that the marking is ours and a q
   const red = page.locator("#v-35 [data-jesus]");
   await expect(red).toHaveCount(1);
   await expect(red).toContainText("Yo soy el pan de vida");
-  await expect(red).toHaveAttribute("title", "Rojo marcado por Doctrina");
+  await expect(red).not.toHaveAttribute("title");
   await expect(page.locator("#v-1 [data-jesus]")).toHaveCount(0);
   const notice = page.locator("[data-red-notice-box]").first();
   await expect(notice).toBeVisible();

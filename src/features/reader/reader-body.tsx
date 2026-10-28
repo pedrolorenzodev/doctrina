@@ -78,7 +78,7 @@ type ReaderBodyProps = {
     toolbar: Omit<Parameters<typeof SelectionToolbar>[0]["text"], "highlight">;
     yourNotes: YourNotesText;
     read: { doubt: string; mark: string; marked: string };
-    redNotice: { message: string; email: string; close: string; cue: string };
+    redNotice: { message: string; email: string; close: string };
     columnHeads: ColumnHeadText;
   };
 };
@@ -442,7 +442,6 @@ export function ReaderBody({
       />
       <ChapterText
         second={second}
-        redCue={redIsOurs ? panel.redNotice.cue : null}
         heads={
           second ? (
             <>
