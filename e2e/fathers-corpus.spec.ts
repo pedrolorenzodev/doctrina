@@ -35,4 +35,11 @@ test.describe("the Fathers' corpus in the reader", () => {
     await expect(origen.locator('a[href="/es/historia/obras/origen-against-celsus"]')).toHaveCount(1);
     await expect(page.getByRole("navigation", { name: /anterior y siguiente/i }).getByRole("link")).not.toHaveCount(0);
   });
+
+  test("a Father's page lists the works that can be read and they open", async ({ page }) => {
+    await page.goto("/es/historia/padres/origen");
+    await expect(page.locator("#read h2")).toHaveText("Leer sus obras");
+    await page.locator('#read a[href="/es/historia/obras/origen-against-celsus"]').click();
+    await expect(page).toHaveURL(/\/obras\/origen-against-celsus$/);
+  });
 });

@@ -258,7 +258,7 @@ test("the sidebar lists all 56 Fathers as links and marks the current one", asyn
   await expect(branch.locator('> ul > li a:not([href*="/obras/"])')).toHaveCount(56);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveText("Ignacio de Antioquía");
   await expect(branch.locator("> ul")).toHaveAttribute("data-open", "true");
-  await branch.locator('li[data-id="history/fathers/tertullian"] a').click();
+  await branch.locator('li[data-id="history/fathers/tertullian"] > [data-row] a').click();
   await expect(page).toHaveURL(father("tertullian"));
 });
 
@@ -271,7 +271,7 @@ test("the search finds a Father by name and by what his summary says, and opens 
   const row = options.filter({ hasText: "Historia / Padres" }).first();
   await expect(options.first().locator("> span").first()).toHaveText("Ignacio de Antioquía");
   await expect(row).toContainText("† 107 o 108");
-  await expect(options.nth(1).locator("> span").first()).toHaveText("Carta a los Esmirniotas 7.1");
+  await expect(options.filter({ hasText: "Carta a los Esmirniotas 7.1" })).toHaveCount(1);
   await input.fill("Trajano");
   await expect(options.first().locator("> span").first()).toHaveText("Ignacio de Antioquía");
   await page.keyboard.press("Enter");
@@ -281,9 +281,9 @@ test("the search finds a Father by name and by what his summary says, and opens 
 test("the ruler has a tick per section that exists", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(ignatius);
-  await expect(page.locator("[data-tick]")).toHaveCount(6);
+  await expect(page.locator("[data-tick]")).toHaveCount(7);
   await page.goto(father("clement-of-rome"));
-  await expect(page.locator("[data-tick]")).toHaveCount(4);
+  await expect(page.locator("[data-tick]")).toHaveCount(5);
 });
 
 test("every one of the 56 pages exists and has its name as the title", async ({ request }) => {

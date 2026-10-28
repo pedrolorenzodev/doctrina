@@ -441,6 +441,7 @@ export const es = {
     languages: { greek: "griego", latin: "latín", syriac: "siríaco" },
     timelineLink: "Ver en la línea de tiempo",
     who: "Quién fue",
+    read: "Leer sus obras",
     works: "Sus escritos",
     appears: "Dónde aparece en Doctrina",
     appearsSubtitle: "Las páginas de Doctrina que citan sus textos, agrupadas por lugar.",

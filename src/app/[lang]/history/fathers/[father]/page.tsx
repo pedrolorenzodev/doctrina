@@ -11,8 +11,10 @@ import { buildFatherView } from "@/content/father-view";
 import { buildDatingViews } from "@/content/father-dating-views";
 import { getFatherDating } from "@/content/get-father-dating";
 import { getFatherAppearances } from "@/content/get-father-appearances";
+import { worksByFather } from "@/content/father-work-links";
+import { getFatherWorks } from "@/content/get-father-works";
 import { getFather, getFatherNeighbors, getPublishedFathers } from "@/content/get-fathers";
-import { fatherHref, timelineHref } from "@/content/routes";
+import { fatherHref, fatherWorkHref, timelineHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { FatherAppearsSection } from "@/features/history/father-appears-section";
@@ -20,6 +22,8 @@ import { FatherDatingSection } from "@/features/history/father-dating-section";
 import { FatherFacts } from "@/features/history/father-facts";
 import { FatherTimelineSection } from "@/features/history/father-timeline-section";
 import { FatherProfileSection } from "@/features/history/father-profile-section";
+import { Section } from "@/components/section";
+import { HistoryLinkList } from "@/features/history/history-link-list";
 import { FatherWritingsSection } from "@/features/history/father-writings-section";
 import { currentLocale } from "@/lib/current-locale";
 
@@ -46,6 +50,11 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
   const timeline = buildFatherTimeline(father, getPublishedFathers(locale), locale, text);
   const dating = getFatherDating(father.id, locale);
   const appearances = await getFatherAppearances(father.id, locale);
+  const readable = (worksByFather(await getFatherWorks(), locale)[father.id] ?? []).map((work) => ({
+    id: work.id,
+    label: work.label,
+    href: fatherWorkHref(locale, work.id),
+  }));
   const { previous, next } = getFatherNeighbors(father.id, locale);
   const neighbor = (label: string, other: typeof previous) =>
     other ? { label, title: other.name[locale], href: fatherHref(locale, other.id) } : null;
@@ -74,6 +83,11 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
         span={view.writingsSpan}
         writings={view.writings}
       />
+      {readable.length > 0 ? (
+        <Section id="read" title={labels.read}>
+          <HistoryLinkList items={readable} />
+        </Section>
+      ) : null}
       {dating ? <FatherDatingSection id="dating" dating={dating} text={text.dating} /> : null}
       <FatherAppearsSection
         id="appears"
@@ -95,6 +109,7 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
           { id: "time", label: text.timeline.title },
           { id: "who", label: whoLabel },
           ...(view.writings.length > 0 ? [{ id: "works", label: labels.works }] : []),
+          ...(readable.length > 0 ? [{ id: "read", label: labels.read }] : []),
           ...(dating ? [{ id: "dating", label: text.dating.title }] : []),
           ...(appearances.length > 0 ? [{ id: "appears", label: labels.appears }] : []),
         ]}
