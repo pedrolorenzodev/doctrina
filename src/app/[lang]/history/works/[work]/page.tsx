@@ -16,9 +16,11 @@ import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { VerseArrival } from "@/features/reader/verse-arrival";
 import { TreeToggle } from "@/features/shell/tree-toggle";
 import { currentLocale } from "@/lib/current-locale";
+import { locales } from "@/lib/locale";
 
 export async function generateStaticParams() {
-  return (await getFatherWorks()).map((work) => ({ lang: "es", work: work.id }));
+  const works = await getFatherWorks();
+  return locales.flatMap((lang) => works.map((work) => ({ lang, work: work.id })));
 }
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/history/works/[work]">): Promise<Metadata> {

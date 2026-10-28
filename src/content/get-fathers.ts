@@ -6,7 +6,7 @@ import type { Locale } from "@/lib/locale";
 const problems = validateFathers(allFathers);
 if (problems.length > 0) throw new Error(`Invalid history content:\n${problems.slice(0, 20).join("\n")}`);
 
-const fathersByLocale: Record<Locale, Father[]> = { es: allFathers, en: [] };
+const fathersByLocale: Record<Locale, Father[]> = { es: allFathers, en: allFathers };
 
 export function getPublishedFathers(locale: Locale): Father[] {
   return fathersByLocale[locale];

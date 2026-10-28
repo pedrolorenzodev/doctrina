@@ -13,11 +13,12 @@ import { FatherFacts } from "@/features/history/father-facts";
 import { FatherProfileSection } from "@/features/history/father-profile-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
+import { locales } from "@/lib/locale";
 
 const timelineLastYear = 800;
 
 export async function generateStaticParams() {
-  return getCouncilIds().map((council) => ({ lang: "es", council }));
+  return locales.flatMap((lang) => getCouncilIds().map((council) => ({ lang, council })));
 }
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/history/councils/[council]">): Promise<Metadata> {

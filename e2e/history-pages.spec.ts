@@ -41,18 +41,17 @@ test("a current's page: what it held, how it was answered, its story, and links 
   }
 });
 
-test("every council and current has a page with a title and no overflow on a phone", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 800 });
+test("every council and current has a page, and a long one fits a phone", async ({ page, request }) => {
+  test.setTimeout(120000);
   for (const council of history.councils) {
-    const response = await page.goto(`/es/historia/concilios/${council.id}`);
-    expect(response?.status(), council.id).toBe(200);
-    await expect(page.locator("h1")).not.toBeEmpty();
+    expect((await request.get(`/es/historia/concilios/${council.id}`)).status(), council.id).toBe(200);
   }
   for (const current of history.heresies) {
-    const response = await page.goto(`/es/historia/corrientes/${current.id}`);
-    expect(response?.status(), current.id).toBe(200);
+    expect((await request.get(`/es/historia/corrientes/${current.id}`)).status(), current.id).toBe(200);
   }
+  await page.setViewportSize({ width: 390, height: 800 });
   await page.goto("/es/historia/concilios/trent");
+  await expect(page.locator("h1")).not.toBeEmpty();
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 });
 

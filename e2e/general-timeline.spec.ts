@@ -246,13 +246,10 @@ test("the dashed lead of a chosen person goes ink with his bar", async ({ page }
   await expect(lead).toHaveCSS("border-top-color", "rgb(28, 23, 19)");
 });
 
-test("the English route does not exist until the English content does, and its sidebar leaf is inert", async ({
-  page,
-  request,
-}) => {
-  expect((await request.get("/en/history/timeline")).status()).toBe(404);
+test("the English timeline exists and its sidebar entry leads to it", async ({ page, request }) => {
+  expect((await request.get("/en/history/timeline")).status()).toBe(200);
   await page.goto("/en");
-  await expect(page.locator('aside a[href*="timeline"]')).toHaveCount(0);
+  await expect(page.locator('aside a[href="/en/history/timeline"]')).toHaveCount(1);
 });
 
 test("arrows move the focus along the items, Enter sends it to the heading", async ({ page }) => {

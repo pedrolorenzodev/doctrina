@@ -26,9 +26,10 @@ import { Section } from "@/components/section";
 import { HistoryLinkList } from "@/features/history/history-link-list";
 import { FatherWritingsSection } from "@/features/history/father-writings-section";
 import { currentLocale } from "@/lib/current-locale";
+import { locales } from "@/lib/locale";
 
 export async function generateStaticParams() {
-  return getPublishedFathers("es").map((father) => ({ lang: "es", father: father.id }));
+  return locales.flatMap((lang) => getPublishedFathers(lang).map((father) => ({ lang, father: father.id })));
 }
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/history/fathers/[father]">): Promise<Metadata> {

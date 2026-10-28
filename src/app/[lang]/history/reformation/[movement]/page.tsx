@@ -13,11 +13,12 @@ import { FatherFacts } from "@/features/history/father-facts";
 import { HistoryLinkList } from "@/features/history/history-link-list";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
+import { locales } from "@/lib/locale";
 
 const proseClassName = "m-0 font-body text-prose-mobile font-light text-ink-2 opsz-18 sm:text-prose";
 
 export async function generateStaticParams() {
-  return getMovementIds().map((movement) => ({ lang: "es", movement }));
+  return locales.flatMap((lang) => getMovementIds().map((movement) => ({ lang, movement })));
 }
 
 export async function generateMetadata({
