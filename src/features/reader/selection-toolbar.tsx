@@ -93,7 +93,10 @@ export function SelectionToolbar({
     };
     const onContextMenu = (event: MouseEvent) => {
       const root = rootRef.current;
-      const unit = event.target instanceof Element ? event.target.closest<HTMLElement>("[data-verse-text]") : null;
+      const unit =
+        event.target instanceof Element
+          ? event.target.closest<HTMLElement>("[data-verse-text], [data-second-text]")
+          : null;
       if (!root || !unit || !root.contains(unit) || matchMedia("(pointer: coarse)").matches) return;
       event.preventDefault();
       const selection = getSelection();

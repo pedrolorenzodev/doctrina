@@ -5,6 +5,7 @@ import { NoteMarkers } from "@/features/reader/note-markers";
 import { splitByRed } from "@/lib/text-pieces";
 
 export type SecondReading = {
+  id: string;
   mode: "below" | "side";
   abbreviation: string;
   name: string;
@@ -19,7 +20,9 @@ type ChapterTextProps = {
   structure: ChapterStructure | null;
   lang: string;
   selected: number | null;
+  selectedSecond: number | null;
   segmentsOf: (verse: BibleVerse) => Segment[];
+  secondSegmentsOf: (verse: number, length: number) => Segment[];
   rootRef: RefObject<HTMLDivElement | null>;
   idPrefix: string;
   noteMarkOf: (verse: number) => string | null;
@@ -29,6 +32,7 @@ type ChapterTextProps = {
   cardsShown: boolean;
   onMark: (verse: number, opener: HTMLElement) => void;
   onSelect: (verse: number, byKeyboard: boolean, opener: HTMLElement) => void;
+  onSelectSecond: (verse: number, byKeyboard: boolean, opener: HTMLElement) => void;
 };
 
 export const toneClassName: Record<HighlightColor, string> = {
@@ -46,7 +50,9 @@ export function ChapterText({
   structure,
   lang,
   selected,
+  selectedSecond,
   segmentsOf,
+  secondSegmentsOf,
   rootRef,
   idPrefix,
   noteMarkOf,
@@ -56,6 +62,7 @@ export function ChapterText({
   cardsShown,
   onMark,
   onSelect,
+  onSelectSecond,
 }: ChapterTextProps) {
   const paragraphStarts = new Set(structure?.paragraphs);
   const headingAt = new Map(structure?.sections.map((section) => [section.from, section.title]));
@@ -110,21 +117,9 @@ export function ChapterText({
                 event.preventDefault();
                 onSelect(verse.verse, true, event.currentTarget);
               }}
-              className="cursor-pointer rounded-3 box-decoration-clone transition-colors duration-150 ease-standard hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent aria-pressed:bg-accent-weak"
+              className={verseButtonClassName}
             >
-              {segmentsOf(verse).map((segment) =>
-                segment.color ? (
-                  <mark
-                    key={segment.from}
-                    data-highlight={segment.color}
-                    className={`rounded-2 text-inherit box-decoration-clone transition-colors duration-200 ease-standard ${toneClassName[segment.color]}`}
-                  >
-                    <Red text={verse.text} from={segment.from} to={segment.to} red={verse.red} />
-                  </mark>
-                ) : (
-                  <Red key={segment.from} text={verse.text} from={segment.from} to={segment.to} red={verse.red} />
-                ),
-              )}
+              <Marked text={verse.text} red={verse.red} segments={segmentsOf(verse)} />
             </span>
           </p>
           {second ? (
@@ -142,12 +137,26 @@ export function ChapterText({
                   {second.mode === "below" ? (
                     <span className="mr-2 font-ui text-label font-medium text-ink-3">{second.abbreviation}</span>
                   ) : null}
-                  <Red
-                    text={second.verses.get(verse.verse)!.text}
-                    from={0}
-                    to={second.verses.get(verse.verse)!.text.length}
-                    red={second.verses.get(verse.verse)!.red}
-                  />
+                  <span
+                    role="button"
+                    data-second-text={verse.verse}
+                    data-translation={second.id}
+                    tabIndex={0}
+                    aria-pressed={selectedSecond === verse.verse}
+                    onClick={(event) => onSelectSecond(verse.verse, event.detail === 0, event.currentTarget)}
+                    onKeyDown={(event) => {
+                      if (event.key !== "Enter" && event.key !== " ") return;
+                      event.preventDefault();
+                      onSelectSecond(verse.verse, true, event.currentTarget);
+                    }}
+                    className={verseButtonClassName}
+                  >
+                    <Marked
+                      text={second.verses.get(verse.verse)!.text}
+                      red={second.verses.get(verse.verse)!.red}
+                      segments={secondSegmentsOf(verse.verse, second.verses.get(verse.verse)!.text.length)}
+                    />
+                  </span>
                 </>
               ) : null}
             </div>
@@ -156,6 +165,27 @@ export function ChapterText({
       ))}
       {cards}
     </div>
+  );
+}
+
+const verseButtonClassName =
+  "cursor-pointer rounded-3 box-decoration-clone transition-colors duration-150 ease-standard hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent aria-pressed:bg-accent-weak";
+
+type MarkedProps = { text: string; red: [number, number][] | undefined; segments: Segment[] };
+
+function Marked({ text, red, segments }: MarkedProps) {
+  return segments.map((segment) =>
+    segment.color ? (
+      <mark
+        key={segment.from}
+        data-highlight={segment.color}
+        className={`rounded-2 text-inherit box-decoration-clone transition-colors duration-200 ease-standard ${toneClassName[segment.color]}`}
+      >
+        <Red text={text} from={segment.from} to={segment.to} red={red} />
+      </mark>
+    ) : (
+      <Red key={segment.from} text={text} from={segment.from} to={segment.to} red={red} />
+    ),
   );
 }
 

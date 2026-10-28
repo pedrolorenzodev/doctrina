@@ -23,6 +23,7 @@ export type NoteDraft = {
   from: number | null;
   to: number | null;
   quote: string | null;
+  translationId?: string;
 };
 
 export type ChapterKey = { book: string; chapter: number };
@@ -48,7 +49,7 @@ export function createNote(
   return {
     id,
     scope: draft.scope,
-    translationId: key.translationId,
+    translationId: draft.translationId ?? key.translationId,
     book: key.book,
     chapter: key.chapter,
     verse: draft.verse,

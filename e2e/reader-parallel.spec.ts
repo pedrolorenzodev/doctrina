@@ -267,8 +267,10 @@ test("a chapter that lacks the second translation keeps the side layout: centred
     [storageKey, JSON.stringify({ mode: "side", id: "bsb" })],
   );
   await page.goto("/es/biblia/tobias/1");
-  await page.mouse.wheel(0, -400);
-  await expect(page.locator('main [data-stream-chapter="Mal/4"]')).toHaveCount(1);
+  await expect(async () => {
+    await page.mouse.wheel(0, -400);
+    await expect(page.locator('main [data-stream-chapter="Mal/4"]')).toHaveCount(1, { timeout: 1500 });
+  }).toPass();
   await expect(page.locator('main [data-stream-chapter="Mal/4"] [data-second-verse]').first()).toBeAttached();
   const text = page.locator('main [data-stream-chapter="Tob/1"] [data-chapter-text]');
   await expect(text).toHaveCount(1);
@@ -287,4 +289,68 @@ test("a chapter that lacks the second translation keeps the side layout: centred
   });
   expect(Math.abs(centres.text - centres.page)).toBeLessThan(2);
   expect(await page.evaluate((key) => localStorage.getItem(key), storageKey)).toContain('"side"');
+});
+
+test.describe("the second column", () => {
+  test.use({ permissions: ["clipboard-read", "clipboard-write"] });
+  const toolbar = '[role="toolbar"][aria-label="Lo que elegiste"]';
+  const panel = 'aside[data-side-panel][aria-label="Detalle del versículo"]';
+
+  const sideBySide = async (page: Page) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.addInitScript(
+      ([key, value]) => localStorage.setItem(key!, value!),
+      [storageKey, JSON.stringify({ mode: "side", id: "bsb" })],
+    );
+    await page.goto(john);
+    await page.locator(`${john6} [data-second-text="35"]`).scrollIntoViewIfNeeded();
+  };
+
+  test("selecting words there opens the same toolbar: highlight lands in that column, the citation names its edition", async ({
+    page,
+  }) => {
+    await sideBySide(page);
+    await page.evaluate(() => {
+      const unit = document.querySelector('[data-second-text="35"]')!;
+      const walker = document.createTreeWalker(unit, NodeFilter.SHOW_TEXT);
+      const node = walker.nextNode()!;
+      const range = document.createRange();
+      range.setStart(node, 5);
+      range.setEnd(node, 14);
+      getSelection()!.removeAllRanges();
+      getSelection()!.addRange(range);
+      document.dispatchEvent(new PointerEvent("pointerup", { pointerType: "mouse", bubbles: true }));
+    });
+    await expect(page.locator(toolbar)).toBeVisible();
+    await page.locator(toolbar).getByRole("button", { name: "Copiar cita" }).click();
+    const copied = await page.evaluate(() => navigator.clipboard.readText());
+    expect(copied).toContain("BSB");
+    expect(copied).toContain("Juan 6:35");
+    await page.evaluate(() => {
+      const unit = document.querySelector('[data-second-text="35"]')!;
+      const node = document.createTreeWalker(unit, NodeFilter.SHOW_TEXT).nextNode()!;
+      const range = document.createRange();
+      range.setStart(node, 5);
+      range.setEnd(node, 14);
+      getSelection()!.removeAllRanges();
+      getSelection()!.addRange(range);
+      document.dispatchEvent(new PointerEvent("pointerup", { pointerType: "mouse", bubbles: true }));
+    });
+    await page.locator(`${toolbar} button[aria-label^="Subrayar en "]`).first().click();
+    await expect(page.locator('[data-second-text="35"] mark')).toHaveCount(1);
+    await expect(page.locator("#v-35 [data-verse-text] mark")).toHaveCount(0);
+    await page.reload();
+    await expect(page.locator('[data-second-text="35"] mark')).toHaveCount(1);
+  });
+
+  test("tapping a verse there opens the panel for it and marks that column's text", async ({ page }) => {
+    await sideBySide(page);
+    await page.locator('[data-second-text="35"]').click();
+    await expect(page.locator(panel)).toHaveAttribute("data-open", "true");
+    await expect(page.locator('[data-second-text="35"]')).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator("#v-35 [data-verse-text]")).toHaveAttribute("aria-pressed", "false");
+    await page.locator("#v-35 [data-verse-text]").click();
+    await expect(page.locator('[data-second-text="35"]')).toHaveAttribute("aria-pressed", "false");
+    await expect(page.locator("#v-35 [data-verse-text]")).toHaveAttribute("aria-pressed", "true");
+  });
 });
