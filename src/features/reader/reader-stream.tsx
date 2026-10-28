@@ -6,6 +6,7 @@ import type { ReaderChapter } from "@/content/get-reader-chapter";
 import { PageHeader } from "@/components/page-header";
 import { registerChapterScroller, setActiveChapter } from "@/lib/active-chapter";
 import { ReaderBody } from "@/features/reader/reader-body";
+import { foldBox } from "@/lib/fold-box";
 import { setYourNotesOpen } from "@/features/reader/your-notes-store";
 import { useKeepTopVerse } from "@/features/reader/use-keep-top-verse";
 import { loadChapter, seedChapter } from "@/features/reader/chapter-data";
@@ -15,6 +16,7 @@ type Panel = ComponentProps<typeof ReaderBody>["panel"];
 
 type ReaderStreamProps = {
   initial: ReaderChapter;
+  firstCrumbs: ReactNode;
   firstHeader: ReactNode;
   chapterTitle: string;
   deuteroNotice: string;
@@ -34,6 +36,7 @@ const idPrefixOf = (book: string, chapter: number, first: boolean) => (first ? "
 
 export function ReaderStream({
   initial,
+  firstCrumbs,
   firstHeader,
   chapterTitle,
   deuteroNotice,
@@ -46,12 +49,42 @@ export function ReaderStream({
   const stream = useRef<HTMLDivElement>(null);
   const head = useRef<HTMLDivElement>(null);
   const tail = useRef<HTMLDivElement>(null);
+  const crumbsBox = useRef<HTMLDivElement>(null);
+  const boundaryBox = useRef<HTMLDivElement>(null);
   const busy = useRef(false);
   const latest = useRef(chapters);
   const holding = useRef<{ key: string; top: number } | null>(null);
+  const mounted = useRef(new Set<string>());
   useEffect(() => {
     latest.current = chapters;
   });
+  const previousMounted = chapters[0] !== undefined && keyOf(chapters[0].book.id, chapters[0].chapter) !== firstKey;
+  const [foldStarted, setFoldStarted] = useState(false);
+  const folding = previousMounted && foldStarted;
+  const foldRan = useRef(false);
+  useEffect(() => {
+    const box = crumbsBox.current;
+    if (!previousMounted || foldStarted || !box) return;
+    const watcher = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) setFoldStarted(true);
+    });
+    watcher.observe(box);
+    return () => watcher.disconnect();
+  }, [previousMounted, foldStarted]);
+  useLayoutEffect(() => {
+    if (!folding || foldRan.current) return;
+    foldRan.current = true;
+    if (boundaryBox.current) void foldBox(boundaryBox.current, true);
+    if (crumbsBox.current) void foldBox(crumbsBox.current, false);
+  }, [folding]);
+  useLayoutEffect(() => {
+    const box = crumbsBox.current;
+    if (box && box.getAnimations().length === 0) box.hidden = folding;
+  });
+
+  useLayoutEffect(() => {
+    mounted.current = new Set(chapters.map((entry) => keyOf(entry.book.id, entry.chapter)));
+  }, [chapters]);
   useLayoutEffect(() => {
     const held = holding.current;
     if (!held) return;
@@ -87,6 +120,9 @@ export function ReaderStream({
     const data = await loadChapter(target.book, target.chapter);
     busy.current = false;
     if (!data) return;
+    const loadedKey = keyOf(data.book.id, data.chapter);
+    if (mounted.current.has(loadedKey)) return;
+    mounted.current.add(loadedKey);
     if (direction === "previous") {
       const line = scrollOffset();
       const sections = [...(stream.current?.querySelectorAll<HTMLElement>("[data-stream-chapter]") ?? [])];
@@ -235,7 +271,21 @@ export function ReaderStream({
             onPointerDownCapture={() => setActiveKey(key)}
             className={first ? "" : "mt-24 border-t border-rule pt-16"}
           >
-            {first ? firstHeader : <PageHeader size="reader" title={titleOf(data)} />}
+            {first ? (
+              <>
+                {folding ? (
+                  <div ref={boundaryBox} data-stream-fold="boundary" className="pt-24">
+                    <div className="border-t border-rule pt-16" />
+                  </div>
+                ) : null}
+                <div ref={crumbsBox} data-stream-fold="crumbs" className="pb-9">
+                  {firstCrumbs}
+                </div>
+                {firstHeader}
+              </>
+            ) : (
+              <PageHeader size="reader" title={titleOf(data)} />
+            )}
             <ReaderBody
               views={data.views}
               defaultId={data.defaultId}

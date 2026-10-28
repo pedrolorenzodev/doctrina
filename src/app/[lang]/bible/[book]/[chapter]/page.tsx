@@ -148,7 +148,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
           chapterTitle={labels.chapterTitle}
           deuteroNotice={labels.deuteroNotice}
           numberingNote={labels.numberingNote}
-          firstHeader={
+          firstCrumbs={
             <>
               {/* TODO: «Biblia» and the testament lead to their index pages once those exist */}
               <Breadcrumbs
@@ -156,9 +156,9 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
                 trail={[{ label: text.shell.tree.bible }, { label: sectionLabel }]}
                 current={book.names[locale]}
               />
-              <PageHeader id="top" className="mt-9" size="reader" title={titleOf(book.names[locale], chapter)} />
             </>
           }
+          firstHeader={<PageHeader id="top" size="reader" title={titleOf(book.names[locale], chapter)} />}
           panel={{
             locale,
             notes: labels.notes,
