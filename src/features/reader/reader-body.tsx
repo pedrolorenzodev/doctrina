@@ -33,6 +33,7 @@ import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
 import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
 import { useSecondMode, useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
+import type { Locale } from "@/lib/locale";
 import { chooseSecondTranslation } from "@/lib/second-translation";
 import { chooseTranslation } from "@/lib/translation-choice";
 import { useUndo } from "@/features/reader/use-undo";
@@ -52,7 +53,7 @@ type ReaderBodyProps = {
   href: string;
   active: boolean;
   panel: {
-    locale: string;
+    locale: Locale;
     text: Parameters<typeof VersePanel>[0]["text"];
     highlight: Parameters<typeof VersePanel>[0]["highlight"]["text"] & { done: string; removed: string; undo: string };
     notes: {

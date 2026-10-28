@@ -224,7 +224,7 @@ export function buildSiteTree(
     const entry = getBibleBook(key);
     const label = entry ? bookListName(entry, locale) : key;
     const node = leaf(`book/${key}`, label);
-    if (!entry || locale !== "es") return node;
+    if (!entry) return node;
     const count = bookChapters.get(key);
     if (!count) {
       // TODO: the book has no chapters in the local corpus; it opens chapter 1 until the corpus is loaded

@@ -24,3 +24,20 @@ test("the language switch keeps the chapter", async ({ page }) => {
   await page.getByRole("link", { name: "ES", exact: true }).click();
   await expect(page).toHaveURL(/\/es\/biblia\/juan\/6$/);
 });
+
+test("the English reader keeps the English address and marks the book in the tree while scrolling on", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/en/bible/john/6");
+  const book = page.locator('#site-sidebar nav li[data-id="book/John"]');
+  await expect(book.locator("[data-current], [data-trail]").first()).toBeVisible();
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await page.waitForTimeout(1500);
+  expect(new URL(page.url()).pathname).toMatch(/^\/en\/bible\/john\/\d+$/);
+  await expect(page.locator('main [data-stream-chapter="John/7"] [data-chapter-text]')).not.toContainText("Yo soy");
+  await expect(
+    page.locator('main [data-stream-chapter="John/7"] h2, main [data-stream-chapter="John/7"] h1'),
+  ).toHaveText("John 7");
+  await expect(book.locator("[data-current], [data-trail]").first()).toBeVisible();
+});

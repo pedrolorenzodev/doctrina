@@ -98,50 +98,53 @@ export function ReaderStream({
 
   const titleOf = useCallback(
     (data: ReaderChapter) =>
-      chapterTitle.replace("{book}", data.book.names.es).replace("{chapter}", String(data.chapter)),
-    [chapterTitle],
+      chapterTitle.replace("{book}", data.book.names[panel.locale]).replace("{chapter}", String(data.chapter)),
+    [chapterTitle, panel.locale],
   );
 
   useEffect(() => {
-    seedChapter(initial);
+    seedChapter(panel.locale, initial);
     return () => {
       setYourNotesOpen(false);
       setActiveChapter(null);
     };
-  }, [initial]);
+  }, [initial, panel.locale]);
 
-  const extend = useCallback(async (direction: "next" | "previous") => {
-    if (busy.current) return;
-    const list = latest.current;
-    const edge = direction === "next" ? list[list.length - 1] : list[0];
-    const target = edge?.[direction];
-    if (!edge || !target) return;
-    busy.current = true;
-    const data = await loadChapter(target.book, target.chapter);
-    busy.current = false;
-    if (!data) return;
-    const loadedKey = keyOf(data.book.id, data.chapter);
-    if (mounted.current.has(loadedKey)) return;
-    mounted.current.add(loadedKey);
-    if (direction === "previous") {
-      const line = scrollOffset();
-      const sections = [...(stream.current?.querySelectorAll<HTMLElement>("[data-stream-chapter]") ?? [])];
-      const section = sections.find((candidate) => candidate.getBoundingClientRect().bottom > line) ?? sections[0];
-      if (section?.dataset.streamChapter) {
-        holding.current = { key: section.dataset.streamChapter, top: section.getBoundingClientRect().top };
+  const extend = useCallback(
+    async (direction: "next" | "previous") => {
+      if (busy.current) return;
+      const list = latest.current;
+      const edge = direction === "next" ? list[list.length - 1] : list[0];
+      const target = edge?.[direction];
+      if (!edge || !target) return;
+      busy.current = true;
+      const data = await loadChapter(panel.locale, target.book, target.chapter);
+      busy.current = false;
+      if (!data) return;
+      const loadedKey = keyOf(data.book.id, data.chapter);
+      if (mounted.current.has(loadedKey)) return;
+      mounted.current.add(loadedKey);
+      if (direction === "previous") {
+        const line = scrollOffset();
+        const sections = [...(stream.current?.querySelectorAll<HTMLElement>("[data-stream-chapter]") ?? [])];
+        const section = sections.find((candidate) => candidate.getBoundingClientRect().bottom > line) ?? sections[0];
+        if (section?.dataset.streamChapter) {
+          holding.current = { key: section.dataset.streamChapter, top: section.getBoundingClientRect().top };
+        }
       }
-    }
-    setChapters((current) => {
-      const present = current.some((entry) => entry.book.id === data.book.id && entry.chapter === data.chapter);
-      if (present) return current;
-      return direction === "next" ? [...current, data] : [data, ...current];
-    });
-    let ahead: ReaderChapter | null = data;
-    for (let step = 0; step < prefetchAhead && ahead?.[direction]; step += 1) {
-      const nextRef: { book: string; chapter: number } = ahead[direction]!;
-      ahead = await loadChapter(nextRef.book, nextRef.chapter);
-    }
-  }, []);
+      setChapters((current) => {
+        const present = current.some((entry) => entry.book.id === data.book.id && entry.chapter === data.chapter);
+        if (present) return current;
+        return direction === "next" ? [...current, data] : [data, ...current];
+      });
+      let ahead: ReaderChapter | null = data;
+      for (let step = 0; step < prefetchAhead && ahead?.[direction]; step += 1) {
+        const nextRef: { book: string; chapter: number } = ahead[direction]!;
+        ahead = await loadChapter(panel.locale, nextRef.book, nextRef.chapter);
+      }
+    },
+    [panel.locale],
+  );
 
   useEffect(() => {
     const toSection = (target: { book: string; chapter: number }) => {
@@ -170,9 +173,9 @@ export function ReaderStream({
   useEffect(() => {
     for (const side of ["previous", "next"] as const) {
       const target = initial[side];
-      if (target) void loadChapter(target.book, target.chapter);
+      if (target) void loadChapter(panel.locale, target.book, target.chapter);
     }
-  }, [initial]);
+  }, [initial, panel.locale]);
 
   useEffect(() => {
     const reachUp = () => {
@@ -251,12 +254,12 @@ export function ReaderStream({
   useEffect(() => {
     const data = chapters.find((entry) => keyOf(entry.book.id, entry.chapter) === activeKey);
     if (!data) return;
-    const href = bibleChapterHref("es", data.book, data.chapter);
+    const href = bibleChapterHref(panel.locale, data.book, data.chapter);
     setActiveChapter({ book: data.book.id, chapter: data.chapter, href, previous: data.previous, next: data.next });
     if (location.pathname !== href) history.replaceState(history.state, "", href);
     const base = document.title.split(" · ").slice(1);
     document.title = [titleOf(data), ...base].join(" · ");
-  }, [activeKey, chapters, titleOf]);
+  }, [activeKey, chapters, titleOf, panel.locale]);
 
   return (
     <div ref={stream}>
@@ -293,9 +296,9 @@ export function ReaderStream({
               deuteroNotice={data.book.section === "deuterocanon" ? deuteroNotice : null}
               numberingNote={numberingNote}
               idPrefix={idPrefixOf(data.book.id, data.chapter, first)}
-              href={bibleChapterHref("es", data.book, data.chapter)}
+              href={bibleChapterHref(panel.locale, data.book, data.chapter)}
               active={key === activeKey}
-              panel={{ ...panel, bookName: data.book.names.es, chapter: data.chapter }}
+              panel={{ ...panel, bookName: data.book.names[panel.locale], chapter: data.chapter }}
             />
           </section>
         );

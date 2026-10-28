@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test("a chapter's data is served as static JSON with every edition and its neighbours", async ({ request }) => {
-  const response = await request.get("/api/bible/John/6");
+  const response = await request.get("/api/bible/es/John/6");
   expect(response.status()).toBe(200);
   const data = await response.json();
   expect(data.book.id).toBe("John");
@@ -12,14 +12,20 @@ test("a chapter's data is served as static JSON with every edition and its neigh
   expect(data.next).toEqual({ book: "John", chapter: 7 });
 });
 
+test("the English chapter data defaults to the BSB and an unknown locale is a 404", async ({ request }) => {
+  const english = await (await request.get("/api/bible/en/John/6")).json();
+  expect(english.defaultId).toBe("bsb");
+  expect((await request.get("/api/bible/fr/John/6")).status()).toBe(404);
+});
+
 test("the neighbours cross books at the ends of a book", async ({ request }) => {
-  const last = await (await request.get("/api/bible/Matt/28")).json();
+  const last = await (await request.get("/api/bible/es/Matt/28")).json();
   expect(last.next).toEqual({ book: "Mark", chapter: 1 });
-  const first = await (await request.get("/api/bible/Mark/1")).json();
+  const first = await (await request.get("/api/bible/es/Mark/1")).json();
   expect(first.previous).toEqual({ book: "Matt", chapter: 28 });
 });
 
 test("an unknown chapter is a 404", async ({ request }) => {
-  expect((await request.get("/api/bible/John/99")).status()).toBe(404);
-  expect((await request.get("/api/bible/Nope/1")).status()).toBe(404);
+  expect((await request.get("/api/bible/es/John/99")).status()).toBe(404);
+  expect((await request.get("/api/bible/es/Nope/1")).status()).toBe(404);
 });

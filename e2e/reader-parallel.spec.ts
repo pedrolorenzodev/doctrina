@@ -8,7 +8,9 @@ const button = `${strip} button[data-parallel]`;
 const menu = `${strip} [role="dialog"][aria-label="Segunda traducción"]`;
 const mode = (name: string) => `${menu} [role=group] button:has-text("${name}")`;
 const root = "main [data-stream-chapter]:first-of-type [data-chapter-text]";
+const john6 = 'main [data-stream-chapter="John/6"] [data-chapter-text]';
 const secondOf = (n: number) => `${root} [data-second-verse="${n}"]`;
+const secondOfJohn6 = (n: number) => `${john6} [data-second-verse="${n}"]`;
 const storageKey = "doctrina-second-translation";
 
 const bsb = JSON.parse(readFileSync("data/corpus/bibles/bsb.json", "utf8")) as Record<string, string>;
@@ -71,11 +73,11 @@ test("«Debajo» puts each verse of the second translation under the first, with
   await page.goto(john);
   await openMenu(page);
   await page.locator(mode("Debajo")).click();
-  await expect(page.locator(root)).toHaveAttribute("data-second", "below");
-  await expect(page.locator(`${root} [data-second-verse]`)).toHaveCount(71);
-  await expect(page.locator(secondOf(35))).toContainText(bsb["John.6.35"]!.slice(0, 40));
-  await expect(page.locator(secondOf(35))).toContainText("BSB");
-  const look = await page.locator(secondOf(35)).evaluate((element) => {
+  await expect(page.locator(john6)).toHaveAttribute("data-second", "below");
+  await expect(page.locator(`${john6} [data-second-verse]`)).toHaveCount(71);
+  await expect(page.locator(secondOfJohn6(35))).toContainText(bsb["John.6.35"]!.slice(0, 40));
+  await expect(page.locator(secondOfJohn6(35))).toContainText("BSB");
+  const look = await page.locator(secondOfJohn6(35)).evaluate((element) => {
     const css = getComputedStyle(element);
     return {
       line: css.borderLeftWidth,
@@ -89,7 +91,7 @@ test("«Debajo» puts each verse of the second translation under the first, with
   expect(look.size).toBe("17px");
   expect(look.lang).toBe("en");
   const first = (await page.locator("#v-35").boundingBox())!;
-  const second = (await page.locator(secondOf(35)).boundingBox())!;
+  const second = (await page.locator(secondOfJohn6(35)).boundingBox())!;
   expect(second.y).toBeGreaterThan(first.y + first.height - 12);
 });
 
@@ -98,19 +100,19 @@ test("«Al lado» aligns the two translations verse by verse in two columns", as
   await page.goto(john);
   await openMenu(page);
   await page.locator(mode("Al lado")).click();
-  await expect(page.locator(root)).toHaveAttribute("data-second", "side");
+  await expect(page.locator(john6)).toHaveAttribute("data-second", "side");
   const columns = await page
     .locator(root)
     .evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(2);
   for (const n of [1, 35, 71]) {
     const left = (await page.locator(`#v-${n}`).boundingBox())!;
-    const right = (await page.locator(secondOf(n)).boundingBox())!;
+    const right = (await page.locator(secondOfJohn6(n)).boundingBox())!;
     expect(Math.abs(left.y - right.y)).toBeLessThan(14);
     expect(right.x).toBeGreaterThan(left.x + left.width / 2);
   }
-  await expect(page.locator(`${root} p`).filter({ hasText: "Reina-Valera 1909" }).first()).toBeVisible();
-  await expect(page.locator(`${root} p`).filter({ hasText: "Berean Standard Bible" }).first()).toBeVisible();
+  await expect(page.locator(`${john6} p`).filter({ hasText: "Reina-Valera 1909" }).first()).toBeVisible();
+  await expect(page.locator(`${john6} p`).filter({ hasText: "Berean Standard Bible" }).first()).toBeVisible();
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 });
 
