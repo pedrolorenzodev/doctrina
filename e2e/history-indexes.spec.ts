@@ -68,12 +68,14 @@ test("a focused field gets a darker grey border and the soft fill, never the blu
   const idle = await filter.evaluate((element) => getComputedStyle(element).borderTopColor);
   await filter.click();
   await expect(filter).toBeFocused();
+  await expect
+    .poll(() => filter.evaluate((element) => getComputedStyle(element).borderTopColor))
+    .toBe("rgb(97, 92, 84)");
   const focused = await filter.evaluate((element) => {
     const style = getComputedStyle(element);
     return { outline: style.outlineStyle, border: style.borderTopColor, fill: style.backgroundColor };
   });
   expect(focused.outline).toBe("none");
-  expect(focused.border).toBe("rgb(97, 92, 84)");
   expect(focused.border).not.toBe(idle);
   expect(focused.fill).not.toBe("rgba(0, 0, 0, 0)");
 });

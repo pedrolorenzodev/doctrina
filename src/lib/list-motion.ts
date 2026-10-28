@@ -2,7 +2,7 @@ const easeReveal = "cubic-bezier(0.22, 1, 0.36, 1)";
 const reveal = { ms: 420, stepMs: 60, shiftPx: 8 };
 const flip = { moveMs: 380, exitMs: 180, delayMs: 120, staggerMs: 40, maxSteps: 8 };
 const flipAnimationId = "flip";
-const armLine = 0.85;
+const armLine = 1;
 
 const armers = new WeakMap<HTMLElement, (item: HTMLElement) => void>();
 
@@ -48,7 +48,7 @@ export function revealList(list: HTMLElement): () => void {
           );
         });
     },
-    { rootMargin: "0px 0px -15% 0px" },
+    { rootMargin: "0px" },
   );
   items.forEach((item) => observer.observe(item));
   let frame = 0;
