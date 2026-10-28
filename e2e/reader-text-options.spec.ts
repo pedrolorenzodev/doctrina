@@ -66,7 +66,7 @@ test("«En párrafo» runs the verses together with small numbers and comes back
       return { position: css.position, align: css.verticalAlign, size: Number.parseFloat(css.fontSize) };
     });
   expect(number.position).toBe("static");
-  expect(number.align).toBe("super");
+  expect(number.align).toBe("middle");
   expect(number.size).toBeLessThan(14);
   expect(await page.evaluate(() => localStorage.getItem("doctrina-reader-format"))).toBe("flow");
   await page.reload({ waitUntil: "domcontentloaded" });

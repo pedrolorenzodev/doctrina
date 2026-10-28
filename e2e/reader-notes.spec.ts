@@ -45,7 +45,7 @@ async function selectWords(page: Page, from: [number, number], to: [number, numb
   );
 }
 
-test("«Nota» in the panel opens an editor that saves by itself and leaves a quiet mark in the margin", async ({
+test("«Nota» in the panel opens an editor that saves by itself and leaves a quiet label beside the number", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -70,8 +70,8 @@ test("«Nota» in the panel opens an editor that saves by itself and leaves a qu
   await expect(page.locator(mark(53))).toHaveText("1 nota");
   const number = (await page.locator("#v-53 > span > span").first().boundingBox())!;
   const badge = (await page.locator(mark(53)).boundingBox())!;
-  expect(badge.y).toBeGreaterThan(number.y);
-  expect(badge.x + badge.width).toBeLessThanOrEqual((await page.locator("#v-53").boundingBox())!.x + 2);
+  expect(badge.x).toBeGreaterThan(number.x + number.width);
+  expect(Math.abs(badge.y + badge.height / 2 - (number.y + number.height / 2))).toBeLessThan(6);
 });
 
 test("the note is still there after a reload; the mark opens the panel with it, and the row reopens the editor", async ({

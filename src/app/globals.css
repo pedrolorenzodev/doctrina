@@ -1054,12 +1054,8 @@
   translate: 0 -50%;
 }
 
-@utility verse-label-top {
-  top: calc(var(--verse-mid) + 9px);
-}
-
 @utility note-pen-top {
-  top: calc(var(--verse-mid) - 1px);
+  top: var(--verse-mid);
 }
 
 @utility note-mark-in {
@@ -1478,25 +1474,32 @@ html.theme-switching ::after {
 :root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child {
   display: inline;
   margin: 0;
+  white-space: nowrap;
+}
+
+:root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child::after {
+  content: "\2060";
 }
 
 :root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child > span {
   position: static;
-  display: inline;
+  display: inline-block;
   width: auto;
-  margin: 0 0.15em 0 0.45em;
-  line-height: 0;
-  vertical-align: super;
+  translate: 0 calc(var(--text-reader) * -0.21);
+  margin: 0 0.5rem 0 0.45em;
+  line-height: normal;
+  vertical-align: middle;
   text-align: left;
 }
 
 :root[data-reader-format="flow"] [data-chapter-text]:not([data-second]) > p > span:first-child > button {
   position: static;
-  display: inline;
+  display: inline-block;
   width: auto;
-  margin-right: 0.3em;
-  vertical-align: super;
-  line-height: 0;
+  translate: 0 calc(var(--text-reader) * -0.21);
+  margin: 0 0.5rem 0 -0.1875rem;
+  vertical-align: middle;
+  line-height: normal;
 }
 
 :root[data-reader-format="flow"]
@@ -1515,9 +1518,9 @@ html.theme-switching ::after {
   align-items: center;
   width: auto;
   height: auto;
-  translate: none;
-  margin: 0 0.3em 0 0;
-  vertical-align: 0.05em;
+  translate: 0 calc(var(--text-reader) * -0.21);
+  margin: 0 0.5rem 0 0;
+  vertical-align: middle;
   line-height: normal;
 }
 

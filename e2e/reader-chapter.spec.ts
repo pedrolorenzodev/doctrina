@@ -45,7 +45,7 @@ test("the verse number sits in the left margin from 768 and above the text below
     return { verse: await verse.boundingBox(), number: await number.boundingBox() };
   };
   const wide = await box();
-  expect(wide.number!.x + wide.number!.width).toBeLessThan(wide.verse!.x + 1);
+  expect(Math.abs(wide.number!.x + wide.number!.width - (wide.verse!.x + 12 - 8))).toBeLessThan(1);
   expect(Math.abs(wide.number!.y - wide.verse!.y)).toBeLessThan(20);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(450);

@@ -84,10 +84,10 @@ export function ChapterText({
           <p
             id={`${idPrefix}v-${verse.verse}`}
             data-paragraph-start={paragraphStarts.has(verse.verse) || undefined}
-            className="relative verse-mid -mx-3 mb-1.5 rounded-6 px-3 py-2 md:indent-6 font-body text-reader font-reader text-ink-2 arrival-mark data-marked:bg-mark"
+            className={`relative verse-mid -mx-3 mb-1.5 rounded-6 px-3 py-2 font-body text-reader font-reader text-ink-2 arrival-mark data-marked:bg-mark ${noteMarkOf(verse.verse) ? "md:indent-5.75" : ""}`}
           >
             <span className="mb-0.5 flex min-h-6 items-center gap-2 font-ui text-division font-normal text-ink-3 tabular-nums md:contents">
-              <span className="md:absolute md:verse-number-top md:-left-16.5 md:w-14 md:indent-0 md:text-right">
+              <span className="md:absolute md:verse-number-top md:-left-13 md:w-14 md:indent-0 md:text-right">
                 {verse.verse}
               </span>
               {noteMarkOf(verse.verse) ? (
@@ -100,7 +100,7 @@ export function ChapterText({
                   <button
                     type="button"
                     onClick={(event) => onMark(verse.verse, event.currentTarget)}
-                    className={`note-mark-in pointer-coarse:hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:verse-label-top md:-left-16.5 md:w-14 md:indent-0 md:text-right ${cardsShown ? "notes:hidden" : ""}`}
+                    className={`note-mark-in pointer-coarse:hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline -ml-0.75 md:mr-2 md:-translate-y-0.5 md:align-middle md:whitespace-nowrap ${cardsShown ? "notes:hidden" : ""}`}
                     data-cards-shown={cardsShown || undefined}
                     onPointerEnter={() => onPreview(verse.verse)}
                     onPointerLeave={() => onPreview(null)}
@@ -189,7 +189,7 @@ function NotePen({ previewed, onClick, onPreview }: NotePenProps) {
       onClick={onClick}
       onPointerEnter={() => onPreview(true)}
       onPointerLeave={() => onPreview(false)}
-      className="note-mark-in pointer-coarse:hit-44 inline-grid size-3.75 shrink-0 -translate-y-px cursor-pointer place-items-center rounded-4 text-ink-3 transition-colors duration-150 ease-standard hover:text-accent data-preview:text-accent md:absolute md:note-pen-top md:left-1.5 md:-translate-y-1/2"
+      className="note-mark-in pointer-coarse:hit-44 inline-grid size-3.75 shrink-0 cursor-pointer place-items-center rounded-4 text-ink-3 transition-colors duration-150 ease-standard hover:text-accent data-preview:text-accent md:absolute md:note-pen-top md:left-3 md:-translate-y-1/2"
     >
       <svg
         width="15"

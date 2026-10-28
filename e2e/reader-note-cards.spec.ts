@@ -348,25 +348,6 @@ test("a verse with notes has the pen icon between its number and its text, and t
   expect(await page.locator(pen(53)).innerText()).toBe("");
 });
 
-test("the numbers do not move and every verse's text starts 24 px in, wrapping at the same right edge", async ({
-  page,
-}) => {
-  await openWithNotes(page);
-  const measure = (verse: number) =>
-    page.evaluate((n) => {
-      const unit = document.querySelector(`#v-${n}`)!;
-      const box = unit.getBoundingClientRect();
-      const number = unit.querySelector<HTMLElement>("span > span")!.getBoundingClientRect();
-      const first = unit.querySelector("[data-verse-text]")!.getClientRects()[0]!;
-      return { number: number.right, start: first.left - box.left, end: box.right };
-    }, verse);
-  const [withNote, without] = [await measure(53), await measure(54)];
-  expect(withNote.number).toBe(without.number);
-  expect(withNote.start).toBe(without.start);
-  expect(withNote.start).toBeGreaterThanOrEqual(12 + 24 - 1);
-  expect(withNote.end).toBe(without.end);
-});
-
 test("the pen opens the verse panel, the same as the margin mark and the card", async ({ page }) => {
   await openWithNotes(page);
   await page.locator(pen(53)).click();
@@ -418,34 +399,6 @@ test("in «En párrafo» the pen is inline after the small number and nothing ov
   expect(box.width).toBeGreaterThan(8);
   expect(box.width).toBeLessThan(20);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
-});
-
-test("the pen is 15 px, midway between the number and the text, and level with the number and the first line", async ({
-  page,
-}) => {
-  await openWithNotes(page);
-  await expect(page.locator(pen(53))).toBeVisible();
-  const place = await page.evaluate(() => {
-    const unit = document.querySelector("#v-53")!;
-    const icon = unit.querySelector("[data-note-pen]")!.getBoundingClientRect();
-    const number = unit.querySelector("span > span")!.getBoundingClientRect();
-    const line = unit.querySelector("[data-verse-text]")!.getClientRects()[0]!;
-    const middle = (box: { top: number; height: number }) => box.top + box.height / 2;
-    return {
-      size: icon.width,
-      height: icon.height,
-      before: icon.left - number.right,
-      after: line.left - icon.right,
-      toNumber: middle(icon) - middle(number),
-      toLine: middle(icon) - middle(line),
-    };
-  });
-  expect(place.size).toBe(15);
-  expect(place.height).toBe(15);
-  expect(Math.abs(place.before - place.after)).toBeLessThan(1.5);
-  expect(place.after).toBeGreaterThan(12);
-  expect(Math.abs(place.toNumber)).toBeLessThan(1.5);
-  expect(Math.abs(place.toLine)).toBeLessThan(1.5);
 });
 
 test("the number, the pen and the first line stay level with a big size and wide spacing in «Aa»", async ({ page }) => {
@@ -539,42 +492,122 @@ test("hovering a card turns its pen to the accent, and the label does the same a
   await expect.poll(() => page.locator(pen(53)).evaluate((element) => getComputedStyle(element).color)).not.toBe(idle);
 });
 
-test("on a phone the number, the pen and the label share one centred row of 24 px, 8 px apart", async ({ page }) => {
-  await openWithNotes(page, 390);
-  await expect(page.locator(mark(53))).toBeVisible();
-  const row = await page.evaluate(() => {
-    const unit = document.querySelector("#v-53")!;
-    const parts = [...unit.querySelectorAll("span > span, [data-note-pen], button[data-cards-shown]")].slice(0, 3);
-    const [number, icon, label] = parts.map((part) => part.getBoundingClientRect());
-    const middle = (box: DOMRect) => box.top + box.height / 2;
-    return {
-      size: icon!.width,
-      numberToPen: icon!.left - number!.right,
-      penToLabel: label!.left - icon!.right,
-      off: [Math.abs(middle(number!) - middle(icon!)), Math.abs(middle(label!) - middle(icon!))],
-    };
-  });
-  expect(row.size).toBe(15);
-  expect(Math.abs(row.numberToPen - 8)).toBeLessThan(0.5);
-  expect(Math.abs(row.penToLabel - 8)).toBeLessThan(0.5);
-  expect(Math.max(...row.off)).toBeLessThan(1.5);
-});
+type Row = {
+  number: { left: number; right: number; mid: number };
+  icon: { left: number; right: number; mid: number; width: number } | null;
+  label: { left: number; right: number; mid: number } | null;
+  letter: { left: number; mid: number };
+  unit: { left: number };
+  otherLines: number[];
+};
 
-test("in «En párrafo» the pen is level with the middle of the text, not on the baseline", async ({ page }) => {
-  await page.addInitScript(() => localStorage.setItem("doctrina-reader-format", "flow"));
+function measureRow(verse: number): Row {
+  const unit = document.querySelector(`#v-${verse}`)!;
+  const text = unit.querySelector("[data-verse-text]")!;
+  const node = text.firstChild!.nodeType === 3 ? text.firstChild! : text.firstChild!.firstChild!;
+  const letter = document.createRange();
+  letter.setStart(node, 0);
+  letter.setEnd(node, 1);
+  const take = (box: DOMRect) => ({
+    left: box.left,
+    right: box.right,
+    mid: box.top + box.height / 2,
+    width: box.width,
+  });
+  const tag = unit.querySelector("button:not([data-note-pen])");
+  const label = tag && tag.getBoundingClientRect().width > 0 ? take(tag.getBoundingClientRect()) : null;
+  const icon = unit.querySelector("[data-note-pen]");
+  return {
+    number: take(unit.querySelector("span > span")!.getBoundingClientRect()),
+    icon: icon ? take(icon.getBoundingClientRect()) : null,
+    label,
+    letter: take(letter.getBoundingClientRect()),
+    unit: take(unit.getBoundingClientRect()),
+    otherLines: [...text.getClientRects()].slice(1).map((rect) => rect.left),
+  };
+}
+
+const glued = { number: 8, icon: 8, label: 5, text: 8 };
+
+test("lines: a verse with no note starts 8 px after its number; one with a note starts 23 px in on its first line only", async ({
+  page,
+}) => {
   await openWithNotes(page);
   await expect(page.locator(pen(53))).toBeVisible();
-  const off = await page.evaluate(() => {
-    const unit = document.querySelector("#v-53")!;
-    const text = unit.querySelector("[data-verse-text]")!;
-    const node = text.firstChild!.nodeType === 3 ? text.firstChild! : text.firstChild!.firstChild!;
-    const letter = document.createRange();
-    letter.setStart(node, 0);
-    letter.setEnd(node, 1);
-    const middle = (box: { top: number; height: number }) => box.top + box.height / 2;
-    return (
-      middle(unit.querySelector("[data-note-pen]")!.getBoundingClientRect()) - middle(letter.getBoundingClientRect())
-    );
-  });
-  expect(Math.abs(off)).toBeLessThan(1.5);
+  const [plain, noted] = [await page.evaluate(measureRow, 54), await page.evaluate(measureRow, 53)];
+  expect(noted.number.right).toBe(plain.number.right);
+  expect(Math.abs(plain.letter.left - plain.number.right - glued.text)).toBeLessThan(0.5);
+  expect(Math.abs(noted.letter.left - plain.letter.left - 23)).toBeLessThan(0.5);
+  for (const left of [...plain.otherLines, ...noted.otherLines])
+    expect(Math.abs(left - plain.letter.left)).toBeLessThan(1);
+});
+
+test("lines: number 8 px, icon 8 px, text; all three level with the first line", async ({ page }) => {
+  await openWithNotes(page);
+  await expect(page.locator(pen(53))).toBeVisible();
+  for (const verse of [53, 57]) {
+    const row = await page.evaluate(measureRow, verse);
+    expect(row.icon!.width).toBe(15);
+    expect(Math.abs(row.icon!.left - row.number.right - glued.number)).toBeLessThan(0.5);
+    expect(Math.abs(row.letter.left - row.icon!.right - glued.icon)).toBeLessThan(0.5);
+    expect(Math.abs(row.number.mid - row.letter.mid)).toBeLessThan(1.5);
+    expect(Math.abs(row.icon!.mid - row.letter.mid)).toBeLessThan(1.5);
+  }
+});
+
+test("lines with the label: number 8 px, icon 5 px, label 8 px, text; all four level", async ({ page }) => {
+  await openWithNotes(page);
+  await page.locator("#v-10 [role=button]").click();
+  await expect(page.locator(panel)).toHaveAttribute("data-open", "true");
+  await expect(page.locator(mark(53))).toBeVisible();
+  for (const verse of [53, 57]) {
+    const row = await page.evaluate(measureRow, verse);
+    expect(Math.abs(row.icon!.left - row.number.right - glued.number)).toBeLessThan(0.5);
+    expect(Math.abs(row.label!.left - row.icon!.right - glued.label)).toBeLessThan(0.5);
+    expect(Math.abs(row.letter.left - row.label!.right - glued.text)).toBeLessThan(0.5);
+    for (const mid of [row.number.mid, row.icon!.mid, row.label!.mid])
+      expect(Math.abs(mid - row.letter.mid)).toBeLessThan(1.5);
+    for (const left of row.otherLines) expect(Math.abs(left - (row.unit.left + 12))).toBeLessThan(1);
+  }
+});
+
+test("«En párrafo»: the number, the icon and the label are level with the first line and 8, 5 and 8 px apart; a plain number is 8 px from its text", async ({
+  page,
+}) => {
+  await page.addInitScript(() => localStorage.setItem("doctrina-reader-format", "flow"));
+  await openWithNotes(page);
+  await page.locator("#v-10 [role=button]").click();
+  await expect(page.locator(panel)).toHaveAttribute("data-open", "true");
+  await expect(page.locator(mark(53))).toBeVisible();
+  const plain = await page.evaluate(measureRow, 54);
+  expect(Math.abs(plain.letter.left - plain.number.right - glued.text)).toBeLessThan(0.5);
+  expect(Math.abs(plain.number.mid - plain.letter.mid)).toBeLessThan(1.5);
+  for (const verse of [53, 57]) {
+    const row = await page.evaluate(measureRow, verse);
+    expect(Math.abs(row.icon!.left - row.number.right - glued.number)).toBeLessThan(0.5);
+    expect(Math.abs(row.label!.left - row.icon!.right - glued.label)).toBeLessThan(0.5);
+    expect(Math.abs(row.letter.left - row.label!.right - glued.text)).toBeLessThan(0.5);
+    for (const mid of [row.number.mid, row.icon!.mid, row.label!.mid])
+      expect(Math.abs(mid - row.letter.mid)).toBeLessThan(1.5);
+  }
+});
+
+test("«En párrafo» on a phone: number, icon and label stay together on one line", async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("doctrina-reader-format", "flow"));
+  await openWithNotes(page, 390);
+  await expect(page.locator(mark(57))).toBeVisible();
+  const row = await page.evaluate(measureRow, 57);
+  expect(Math.abs(row.icon!.mid - row.number.mid)).toBeLessThan(1.5);
+  expect(Math.abs(row.label!.mid - row.number.mid)).toBeLessThan(1.5);
+  expect(Math.abs(row.letter.mid - row.number.mid)).toBeLessThan(1.5);
+});
+
+test("on a phone the number, the icon and the label share one centred row, 8 and 5 px apart", async ({ page }) => {
+  await openWithNotes(page, 390);
+  await expect(page.locator(mark(53))).toBeVisible();
+  const row = await page.evaluate(measureRow, 53);
+  expect(Math.abs(row.icon!.left - row.number.right - glued.number)).toBeLessThan(0.5);
+  expect(Math.abs(row.label!.left - row.icon!.right - glued.label)).toBeLessThan(0.5);
+  expect(Math.abs(row.icon!.mid - row.number.mid)).toBeLessThan(1);
+  expect(Math.abs(row.label!.mid - row.number.mid)).toBeLessThan(1);
 });
