@@ -74,50 +74,83 @@ test("the current chapter wears a ring of accent, and the others show the soft f
 });
 
 const offer = "[data-read-offer]:visible";
+const markButton = "[data-read-offer] button";
+
+async function dwell(page: import("@playwright/test").Page, seconds: number) {
+  for (let second = 0; second < seconds; second += 1) {
+    await page.mouse.move(600 + second * 5, 400);
+    await page.clock.runFor(1000);
+  }
+}
 
 async function passThrough(page: import("@playwright/test").Page) {
   await page.locator("[data-read-marker]").first().scrollIntoViewIfNeeded();
-  await page.mouse.move(600, 400);
-  await page.mouse.move(640, 430);
+  await dwell(page, 9);
 }
 
-test("scrolling straight to the end does not mark the chapter; it offers to mark it by hand, with undo", async ({
+test("nothing is marked by itself: 8 s on the last paragraphs offer the button, pressing it marks, with undo", async ({
   page,
 }) => {
+  await page.clock.install();
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(chapter("juan", 6));
   const mark = `${cells("John")}[data-chapter="6"]`;
-  await expect(page.locator(mark)).not.toHaveAttribute("data-read", "true");
-  await passThrough(page);
+  await page.locator("[data-read-marker]").first().scrollIntoViewIfNeeded();
+  await dwell(page, 5);
+  await expect(page.locator(offer)).toHaveCount(0);
+  await dwell(page, 5);
   await expect(page.locator(offer)).toBeVisible();
-  await expect(page.locator(offer)).toContainText("Pasaste por este capítulo más rápido de lo que se lee.");
   await expect(page.locator(mark)).not.toHaveAttribute("data-read", "true");
-  await page.locator(offer).getByRole("button", { name: "Marcar como leído" }).click();
+  await expect(page.locator(markButton)).toHaveAccessibleName("Marcar como leído");
+  await page.locator(markButton).click();
   await expect(page.locator(mark)).toHaveAttribute("data-read", "true");
   expect(await page.evaluate((key) => JSON.parse(localStorage.getItem(key)!), readKey)).toEqual(["John.6"]);
   await expect(page.getByRole("status").filter({ hasText: "Capítulo marcado como leído." })).toBeVisible();
   await page.getByRole("button", { name: "Deshacer" }).click();
   await expect(page.locator(mark)).not.toHaveAttribute("data-read", "true");
-  await passThrough(page);
-  await page.locator(offer).getByRole("button", { name: "Marcar como leído" }).click();
+  await dwell(page, 3);
+  await expect(page.locator(offer)).toHaveCount(0);
+  await dwell(page, 6);
+  await page.locator(markButton).click();
   await page.reload();
   await expect(page.locator(mark)).toHaveAttribute("data-read", "true");
   await expect(page.locator(`${cells("John")}[data-chapter="7"]`)).not.toHaveAttribute("data-read", "true");
 });
 
-test("reading a chapter at a real pace marks it on its own, and no offer is made", async ({ page }) => {
+test("the button fades when the reader leaves the last paragraphs and returns only after a new wait", async ({
+  page,
+}) => {
   await page.clock.install();
-  await page.setViewportSize({ width: 1440, height: 1600 });
-  await page.goto(chapter("2-juan", 1));
-  const mark = `${cells("2John")}[data-chapter="1"]`;
-  await expect(page.locator(mark)).not.toHaveAttribute("data-read", "true");
-  for (let second = 0; second < 40; second += 1) {
-    await page.mouse.move(500 + second, 400);
-    await page.clock.runFor(1000);
-    if ((await page.locator(mark).getAttribute("data-read")) === "true") break;
-  }
-  await expect(page.locator(mark)).toHaveAttribute("data-read", "true");
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(chapter("juan", 6));
+  await passThrough(page);
+  await expect(page.locator(offer)).toBeVisible();
+  await page.evaluate(() => window.scrollBy(0, -2500));
+  await dwell(page, 1);
+  await expect(page.locator(markButton)).toBeHidden();
+  await page.locator("[data-read-marker]").first().scrollIntoViewIfNeeded();
+  await dwell(page, 4);
   await expect(page.locator(offer)).toHaveCount(0);
+  await dwell(page, 6);
+  await expect(page.locator(offer)).toBeVisible();
+});
+
+test("the circle grows into LEÍDO on hover and floats centred at the bottom of the reading column", async ({
+  page,
+}) => {
+  await page.clock.install();
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(chapter("juan", 6));
+  await passThrough(page);
+  const button = page.locator(markButton);
+  const idle = (await button.boundingBox())!;
+  expect(idle.width).toBeCloseTo(36, 0);
+  expect(idle.y + idle.height).toBeCloseTo(900 - 24, 0);
+  const column = (await page.locator("[data-read-marker]").first().boundingBox())!;
+  expect(Math.abs(idle.x + idle.width / 2 - (column.x + column.width / 2))).toBeLessThan(2);
+  await button.hover();
+  await expect.poll(async () => (await button.boundingBox())!.width).toBeGreaterThan(70);
+  await expect(button.locator("span")).toHaveText("Leído");
 });
 
 test("a chapter short enough to fit the screen is not marked just by opening", async ({ page }) => {
@@ -128,6 +161,7 @@ test("a chapter short enough to fit the screen is not marked just by opening", a
 });
 
 test("a damaged or blocked store leaves the tree working", async ({ page }) => {
+  await page.clock.install();
   await page.addInitScript((key) => localStorage.setItem(key, '["John.0",{"x":1},"junk"]'), readKey);
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(chapter("juan", 6));
@@ -138,7 +172,7 @@ test("a damaged or blocked store leaves the tree working", async ({ page }) => {
     };
   });
   await passThrough(page);
-  await page.locator(offer).getByRole("button", { name: "Marcar como leído" }).click();
+  await page.locator(markButton).click();
   await expect(page.locator(`${cells("John")}[data-chapter="6"]`)).toHaveAttribute("data-read", "true");
 });
 

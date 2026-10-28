@@ -1696,7 +1696,7 @@ html.theme-switching ::after {
   }
 }
 
-@utility read-offer {
+@utility read-button {
   opacity: 0;
   visibility: hidden;
   transition:
@@ -1707,10 +1707,18 @@ html.theme-switching ::after {
     opacity: 1;
     visibility: visible;
     transition-delay: 0s;
+    animation: read-rise 200ms var(--ease-standard);
   }
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
+    animation: none;
+  }
+}
+
+@keyframes read-rise {
+  from {
+    transform: translateY(6px);
   }
 }
 

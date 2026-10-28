@@ -283,8 +283,8 @@ export const es = {
       close: "Cerrar el aviso",
     },
     read: {
-      doubt: "Pasaste por este capítulo más rápido de lo que se lee. ¿Lo leíste igual?",
       mark: "Marcar como leído",
+      short: "Leído",
       marked: "Capítulo marcado como leído.",
     },
     picker: { label: "Traducción", spanish: "Español", english: "Inglés" },

@@ -285,8 +285,8 @@ export const en: UiText = {
       close: "Close the notice",
     },
     read: {
-      doubt: "You went through this chapter faster than it can be read. Did you read it anyway?",
       mark: "Mark as read",
+      short: "Read",
       marked: "Chapter marked as read.",
     },
     picker: { label: "Translation", spanish: "Spanish", english: "English" },

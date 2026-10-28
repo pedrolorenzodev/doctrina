@@ -1,13 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { UndoBar } from "@/components/undo-bar";
 import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
 import { ReadMarker } from "@/features/reader/read-marker";
 import { RedNotice } from "@/features/reader/red-notice";
 import { computedRedEditions } from "@/content/bible/red-letters";
-import { wordsOf } from "@/lib/reading-pace";
 import { getReadChapters, subscribeReadChapters } from "@/lib/read-chapter-store";
 import { readChapterKey } from "@/lib/read-chapters";
 import { goToUnit } from "@/features/reader/go-to-unit";
@@ -78,7 +77,7 @@ type ReaderBodyProps = {
     verseRange: string;
     toolbar: Omit<Parameters<typeof SelectionToolbar>[0]["text"], "highlight">;
     yourNotes: YourNotesText;
-    read: { doubt: string; mark: string; marked: string };
+    read: { mark: string; short: string; marked: string };
     redNotice: { message: string; email: string; close: string };
     columnHeads: ColumnHeadText;
   };
@@ -147,10 +146,6 @@ export function ReaderBody({
   const yourOpen = useYourNotesOpen();
   const verse = picked !== null && selected.verses.some((entry) => entry.verse === picked) ? picked : null;
   const undoState = useUndo();
-  const verseWords = useMemo(
-    () => selected.verses.map((entry): [number, number] => [entry.verse, wordsOf(entry.text)]),
-    [selected.verses],
-  );
   const redIsOurs = computedRedEditions.includes(selected.id) && selected.verses.some((entry) => entry.red);
   const chapterRead = useSyncExternalStore(
     subscribeReadChapters,
@@ -533,8 +528,7 @@ export function ReaderBody({
       <ReadMarker
         book={bookId}
         chapter={panel.chapter}
-        verseWords={verseWords}
-        idPrefix={idPrefix}
+        lastId={`${idPrefix}v-${selected.verses[selected.verses.length - 1]?.verse ?? 1}`}
         text={panel.read}
         alreadyRead={chapterRead}
         showUndo={undoState.show}

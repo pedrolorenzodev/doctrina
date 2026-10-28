@@ -2,71 +2,58 @@
 
 import { useEffect, useRef, useState } from "react";
 import { markChapterRead, unmarkChapterRead } from "@/lib/read-chapter-store";
-import { assessReading, readingRule } from "@/lib/reading-pace";
+import { readingRule } from "@/lib/reading-pace";
 
 type ReadMarkerProps = {
   book: string;
   chapter: number;
-  verseWords: [number, number][];
-  idPrefix: string;
-  text: { doubt: string; mark: string; marked: string };
+  lastId: string;
+  text: { mark: string; short: string; marked: string };
   alreadyRead: boolean;
   showUndo: (message: string, restore: () => void) => void;
 };
 
-export function ReadMarker({ book, chapter, verseWords, idPrefix, text, alreadyRead, showUndo }: ReadMarkerProps) {
-  const [offer, setOffer] = useState(false);
+export function ReadMarker({ book, chapter, lastId, text, alreadyRead, showUndo }: ReadMarkerProps) {
+  const [offered, setOffered] = useState(false);
   const done = useRef(alreadyRead);
-  const dismissed = useRef(false);
-  const mark = useRef<() => void>(() => undefined);
+  const dwellMs = useRef(0);
 
   useEffect(() => {
     done.current = alreadyRead;
   }, [alreadyRead]);
 
-  useEffect(() => {
-    mark.current = () => {
-      if (done.current) return;
-      done.current = true;
-      markChapterRead(book, chapter);
-      setOffer(false);
-      showUndo(text.marked, () => {
-        done.current = false;
-        dismissed.current = true;
-        unmarkChapterRead(book, chapter);
-      });
-    };
-  }, [book, chapter, showUndo, text.marked]);
+  const mark = () => {
+    if (done.current) return;
+    done.current = true;
+    dwellMs.current = 0;
+    markChapterRead(book, chapter);
+    setOffered(false);
+    showUndo(text.marked, () => {
+      done.current = false;
+      dwellMs.current = 0;
+      unmarkChapterRead(book, chapter);
+    });
+  };
 
   useEffect(() => {
-    if (typeof IntersectionObserver === "undefined" || verseWords.length === 0) return;
-    const last = verseWords[verseWords.length - 1]![0];
-    const credited = new Map<number, number>();
-    const visible = new Set<number>();
-    let activeMs = 0;
-    let reached = false;
+    const last = document.getElementById(lastId);
+    if (!last || typeof IntersectionObserver === "undefined") return;
+    let inView = false;
     let lastActivity = 0;
     let lastTick = performance.now();
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          const number = Number((entry.target as HTMLElement).dataset.readVerse);
-          const fills = entry.intersectionRect.height >= window.innerHeight - readingRule.headerClearance;
-          if (entry.isIntersecting && (entry.intersectionRatio >= readingRule.visibleRatio || fills))
-            visible.add(number);
-          else visible.delete(number);
-        }
-        if (visible.has(last)) reached = true;
+      ([entry]) => {
+        if (!entry) return;
+        const fills = entry.intersectionRect.height >= window.innerHeight - readingRule.headerClearance;
+        inView = entry.isIntersecting && (entry.intersectionRatio >= readingRule.visibleRatio || fills);
+        if (inView) return;
+        dwellMs.current = 0;
+        setOffered(false);
       },
-      { rootMargin: "-110px 0px 0px 0px", threshold: [0, readingRule.visibleRatio, 1] },
+      { rootMargin: `-${readingRule.headerClearance}px 0px 0px 0px`, threshold: [0, readingRule.visibleRatio, 1] },
     );
-    for (const [number] of verseWords) {
-      const element = document.getElementById(`${idPrefix}v-${number}`);
-      if (!element) continue;
-      element.dataset.readVerse = String(number);
-      observer.observe(element);
-    }
+    observer.observe(last);
 
     const touch = () => {
       lastActivity = performance.now();
@@ -78,19 +65,10 @@ export function ReadMarker({ book, chapter, verseWords, idPrefix, text, alreadyR
       const now = performance.now();
       const elapsed = now - lastTick;
       lastTick = now;
-      if (done.current || document.visibilityState !== "visible" || !document.hasFocus()) return;
-      if (now - lastActivity > readingRule.idleMs || visible.size === 0) return;
-      activeMs += elapsed;
-      const wordsOf = new Map(verseWords);
-      for (const number of visible) credited.set(number, wordsOf.get(number) ?? 0);
-      const verdict = assessReading({
-        creditedWords: [...credited.values()].reduce((sum, words) => sum + words, 0),
-        totalWords: verseWords.reduce((sum, [, words]) => sum + words, 0),
-        activeSeconds: activeMs / 1000,
-        reachedEnd: reached,
-      });
-      if (verdict === "read" && !dismissed.current) mark.current();
-      else if (verdict === "doubt") setOffer(true);
+      if (done.current || !inView || document.visibilityState !== "visible" || !document.hasFocus()) return;
+      if (now - lastActivity > readingRule.idleMs) return;
+      dwellMs.current += elapsed;
+      if (dwellMs.current >= readingRule.dwellSeconds * 1000) setOffered(true);
     }, readingRule.tickMs);
 
     return () => {
@@ -98,23 +76,35 @@ export function ReadMarker({ book, chapter, verseWords, idPrefix, text, alreadyR
       window.clearInterval(timer);
       for (const name of events) removeEventListener(name, touch);
     };
-  }, [verseWords, idPrefix]);
+  }, [lastId]);
 
+  const shown = offered && !alreadyRead;
   return (
-    <div data-read-marker className="relative h-px">
-      <div
-        data-read-offer={offer && !alreadyRead ? "" : undefined}
-        className="read-offer absolute top-7 left-0 max-w-col"
-        role="status"
-      >
-        <p className="m-0 mb-2 text-ui-xs text-ink-3">{text.doubt}</p>
+    <div data-read-marker className="relative flex h-px justify-center">
+      <div data-read-offer={shown ? "" : undefined} className="read-button fixed bottom-6 z-30">
         <button
           type="button"
-          tabIndex={offer && !alreadyRead ? 0 : -1}
-          onClick={() => mark.current()}
-          className="inline-flex min-h-9 cursor-pointer items-center justify-center rounded-6 border border-rule-2 px-3.5 text-btn font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11"
+          aria-label={text.mark}
+          tabIndex={shown ? 0 : -1}
+          onClick={mark}
+          className="group inline-flex h-9 cursor-pointer items-center justify-center rounded-full border border-rule-2 bg-panel px-2.25 text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:size-11"
         >
-          {text.mark}
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3.5 8.5l3 3 6-7" />
+          </svg>
+          <span className="ml-0 max-w-0 overflow-hidden text-label font-medium tracking-wide whitespace-nowrap uppercase opacity-0 transition-all duration-260 ease-smooth group-hover:ml-1.75 group-hover:max-w-15 group-hover:opacity-100 group-focus-visible:ml-1.75 group-focus-visible:max-w-15 group-focus-visible:opacity-100">
+            {text.short}
+          </span>
         </button>
       </div>
     </div>
