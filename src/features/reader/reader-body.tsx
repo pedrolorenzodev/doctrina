@@ -153,7 +153,7 @@ export function ReaderBody({
     const short = panel.shortCitation
       .replace("{reference}", referenceOf(first, last))
       .replace("{edition}", selected.abbreviation);
-    return `«${selection.text}» ${short}. ${location.origin}${href}#v-${first}`;
+    return `«${selection.text}» ${short}.`;
   };
   const dateLabel = (time: number) =>
     new Intl.DateTimeFormat(panel.locale, { day: "numeric", month: "short", year: "numeric" }).format(time);

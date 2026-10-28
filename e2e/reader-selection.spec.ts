@@ -92,18 +92,18 @@ test.describe("toolbar", () => {
     expect(await page.locator(marks(54)).evaluate((el) => el.textContent!.length)).toBe(lengths[1]);
   });
 
-  test("«Copiar cita» copies the words, the reference of the range and the link", async ({ page }) => {
+  test("«Copiar cita» copies the words and the reference of the range, with no web address", async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(john);
     await select(page, [53, 5], [55, 10]);
     await page.locator(toolbar).getByRole("button", { name: "Copiar cita" }).click();
     await expect(page.locator(toolbar).getByRole("button", { name: "Cita copiada" })).toBeVisible();
     const copied = await page.evaluate(() => navigator.clipboard.readText());
-    expect(copied).toMatch(/^«Jesús les dijo.*Porque mi» Juan 6:53-55 \(RV1909\)\. http.*\/es\/biblia\/juan\/6#v-53$/);
+    expect(copied).toMatch(/^«Jesús les dijo.*Porque mi» Juan 6:53-55 \(RV1909\)\.$/);
     expect(copied).not.toContain(" ");
     await select(page, [60, 3], [60, 12]);
     await page.locator(toolbar).getByRole("button", { name: "Copiar cita" }).click();
-    expect(await page.evaluate(() => navigator.clipboard.readText())).toMatch(/ Juan 6:60 \(RV1909\)\. /);
+    expect(await page.evaluate(() => navigator.clipboard.readText())).toMatch(/ Juan 6:60 \(RV1909\)\.$/);
   });
 
   test("a marked selection offers «Quitar subrayado» and removes only those words", async ({ page }) => {

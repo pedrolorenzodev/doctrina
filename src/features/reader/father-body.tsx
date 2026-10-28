@@ -181,7 +181,7 @@ export function FatherBody({
   const selectionCitation = (selection: ReaderSelection) => {
     const first = selection.ranges[0]?.verse ?? 0;
     const last = selection.ranges[selection.ranges.length - 1]?.verse ?? first;
-    return `«${selection.text}» ${citationOf(first, last)}. ${location.origin}${location.pathname}#${anchorOfOrdinal(first)}`;
+    return `«${selection.text}» ${citationOf(first, last)}.`;
   };
 
   const editor = notes.editing && notes.editing.draft.verse === verse ? notes.editing : null;
