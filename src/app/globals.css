@@ -1684,6 +1684,20 @@ html.theme-switching ::after {
   }
 }
 
+@utility heads-sticky {
+  position: sticky;
+  top: calc(var(--spacing-top) + var(--spacing-reader-strip));
+  transition: top 220ms var(--ease-move);
+
+  :root:has([data-reader-strip][data-hidden]) & {
+    top: var(--spacing-top);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
 @utility tree-hide {
   @media (min-width: 64rem) {
     overflow: hidden;

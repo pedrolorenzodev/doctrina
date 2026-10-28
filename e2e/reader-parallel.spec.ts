@@ -140,6 +140,25 @@ test("«Al lado» column heads each open a list; picking the other column's tran
   await expect(page.locator(`${root} [role=listbox]`).nth(0)).toBeHidden();
 });
 
+test("«Al lado» column heads stay on screen mid-chapter, under the strip and then under the site header", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  await openMenu(page);
+  await page.locator(mode("Al lado")).click();
+  await page.keyboard.press("Escape");
+  await page.evaluate(() => document.getElementById("v-35")!.scrollIntoView({ block: "center" }));
+  await page.waitForTimeout(900);
+  const heads = page.locator(`${root} [data-column-head]`);
+  await expect(heads.first()).toBeInViewport();
+  const top = (await heads.first().boundingBox())!.y;
+  expect(top).toBeGreaterThan(40);
+  expect(top).toBeLessThan(130);
+  await heads.nth(1).click();
+  await expect(page.locator(`${root} [role=listbox]`).nth(1)).toBeVisible();
+});
+
 test("below 1100 px «Al lado» is unavailable and a stored side choice reads as «Debajo»", async ({ page }) => {
   await page.addInitScript((key) => localStorage.setItem(key, JSON.stringify({ mode: "side", id: "bsb" })), storageKey);
   await page.setViewportSize({ width: 1000, height: 900 });
