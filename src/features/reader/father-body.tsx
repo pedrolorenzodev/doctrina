@@ -84,6 +84,8 @@ export function FatherBody({
   const undoState = useUndo();
   const highlights = useChapterHighlights({
     translationId: workId,
+    column: "first",
+    root: textRoot,
     book: workId,
     chapter: chapterOfWork,
     done: panel.highlight.done,

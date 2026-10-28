@@ -183,3 +183,18 @@ test("the undo bar goes under the top bar on a phone, and the dots are 44 px tar
   expect(bar.x + bar.width).toBeLessThanOrEqual(390);
   await context.close();
 });
+
+test("a highlight and the verse hover colour change in 280 ms; removing a highlight fades it before it goes", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  await open(page);
+  expect(await page.locator(verseButton(53)).evaluate((el) => getComputedStyle(el).transitionDuration)).toBe("0.28s");
+  await page.locator(dot("verde")).click();
+  await expect(page.locator(mark(53))).toHaveCount(1);
+  expect(await page.locator(mark(53)).evaluate((el) => getComputedStyle(el).transitionDuration)).toBe("0.28s");
+  await page.locator(`${panel} button[aria-label="Quitar subrayado"]`).click();
+  await expect(page.locator(`${mark(53)}[data-leaving]`)).toHaveCount(1);
+  await expect(page.locator(mark(53))).toHaveCount(0);
+});

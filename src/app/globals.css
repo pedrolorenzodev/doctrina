@@ -1066,10 +1066,6 @@
   }
 }
 
-::highlight(note-words) {
-  background-color: var(--color-accent-weak);
-}
-
 @keyframes dialog-backdrop-in {
   from {
     opacity: 0;
@@ -1693,6 +1689,35 @@ html.theme-switching ::after {
 @utility red-notice {
   :root[data-red-notice="closed"] & {
     display: none;
+  }
+}
+
+@utility highlight-mark {
+  transition: background-color 280ms var(--ease-standard);
+
+  @starting-style {
+    background-color: transparent;
+  }
+
+  &[data-leaving] {
+    background-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+@utility note-overlay {
+  opacity: 0;
+  transition: opacity 280ms var(--ease-standard);
+
+  &[data-shown] {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }
 

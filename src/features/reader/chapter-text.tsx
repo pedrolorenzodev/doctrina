@@ -169,7 +169,7 @@ export function ChapterText({
 }
 
 const verseButtonClassName =
-  "cursor-pointer rounded-3 box-decoration-clone transition-colors duration-150 ease-standard hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent aria-pressed:bg-accent-weak";
+  "cursor-pointer rounded-3 box-decoration-clone transition-colors duration-280 ease-standard hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent aria-pressed:bg-accent-weak";
 
 type MarkedProps = { text: string; red: [number, number][] | undefined; segments: Segment[] };
 
@@ -179,7 +179,7 @@ function Marked({ text, red, segments }: MarkedProps) {
       <mark
         key={segment.from}
         data-highlight={segment.color}
-        className={`rounded-2 text-inherit box-decoration-clone transition-colors duration-200 ease-standard ${toneClassName[segment.color]}`}
+        className={`highlight-mark rounded-2 text-inherit box-decoration-clone ${toneClassName[segment.color]}`}
       >
         <Red text={text} from={segment.from} to={segment.to} red={red} />
       </mark>

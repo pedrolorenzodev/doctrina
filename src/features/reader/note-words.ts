@@ -1,6 +1,7 @@
 import type { Note } from "@/lib/notes";
 
-const highlightName = "note-words";
+const fadeMs = 280;
+let clearTimer = 0;
 
 function rangeInVerse(
   root: HTMLElement,
@@ -33,8 +34,18 @@ function rangeInVerse(
   return range;
 }
 
+function overlayOf(root: HTMLElement): HTMLElement {
+  const existing = root.querySelector<HTMLElement>("[data-note-overlay]");
+  if (existing) return existing;
+  const layer = document.createElement("div");
+  layer.setAttribute("data-note-overlay", "");
+  layer.setAttribute("aria-hidden", "true");
+  layer.className = "note-overlay pointer-events-none absolute inset-0";
+  root.append(layer);
+  return layer;
+}
+
 export function markNoteWords(root: HTMLElement, notes: Note[], translationId: string, secondId: string | null) {
-  if (typeof CSS === "undefined" || !("highlights" in CSS)) return;
   const ranges: Range[] = [];
   for (const note of notes) {
     if (note.verse === null) continue;
@@ -49,10 +60,35 @@ export function markNoteWords(root: HTMLElement, notes: Note[], translationId: s
       if (range) ranges.push(range);
     }
   }
-  CSS.highlights.set(highlightName, new Highlight(...ranges));
+  window.clearTimeout(clearTimer);
+  const layer = overlayOf(root);
+  const origin = root.getBoundingClientRect();
+  layer.replaceChildren(
+    ...ranges.map((range) => {
+      const group = document.createElement("div");
+      group.setAttribute("data-note-range", "");
+      for (const rect of range.getClientRects()) {
+        const box = document.createElement("div");
+        box.className = "absolute rounded-2 bg-accent-weak";
+        Object.assign(box.style, {
+          left: `${rect.left - origin.left}px`,
+          top: `${rect.top - origin.top}px`,
+          width: `${rect.width}px`,
+          height: `${rect.height}px`,
+        });
+        group.append(box);
+      }
+      return group;
+    }),
+  );
+  requestAnimationFrame(() => layer.setAttribute("data-shown", ""));
 }
 
 export function clearNoteWords() {
-  if (typeof CSS === "undefined" || !("highlights" in CSS)) return;
-  CSS.highlights.delete(highlightName);
+  const layers = document.querySelectorAll<HTMLElement>("[data-note-overlay]");
+  for (const layer of layers) layer.removeAttribute("data-shown");
+  window.clearTimeout(clearTimer);
+  clearTimer = window.setTimeout(() => {
+    for (const layer of layers) if (!layer.hasAttribute("data-shown")) layer.replaceChildren();
+  }, fadeMs);
 }

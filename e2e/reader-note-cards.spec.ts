@@ -70,7 +70,7 @@ async function openWithNotes(page: Page, width = 1440, tree: "open" | "closed" =
 }
 
 const highlightSize = (page: Page) =>
-  page.evaluate(() => (CSS.highlights.get("note-words") as Highlight | undefined)?.size ?? 0);
+  page.evaluate(() => document.querySelectorAll("[data-note-overlay][data-shown] [data-note-range]").length);
 
 test("with the tree closed, from 1083 px, a note is a card 40 px right of the column, level with its verse, and the margin mark is gone", async ({
   page,
@@ -523,7 +523,9 @@ function measureRow(verse: number): Row {
     label,
     letter: take(letter.getBoundingClientRect()),
     unit: take(unit.getBoundingClientRect()),
-    otherLines: [...text.getClientRects()].slice(1).map((rect) => rect.left),
+    otherLines: [...text.getClientRects()]
+      .filter((rect) => rect.top > text.getClientRects()[0]!.top + 2)
+      .map((rect) => rect.left),
   };
 }
 

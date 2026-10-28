@@ -154,6 +154,8 @@ export function ReaderBody({
   );
   const highlights = useChapterHighlights({
     translationId: selected.id,
+    column: "first",
+    root: textRoot,
     book: bookId,
     chapter: panel.chapter,
     done: panel.highlight.done,
@@ -162,6 +164,8 @@ export function ReaderBody({
   });
   const highlightsSecond = useChapterHighlights({
     translationId: secondView?.id ?? "",
+    column: "second",
+    root: textRoot,
     book: bookId,
     chapter: panel.chapter,
     done: panel.highlight.done,
