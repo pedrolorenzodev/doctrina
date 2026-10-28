@@ -442,7 +442,6 @@ export const en: UiText = {
     languages: { greek: "Greek", latin: "Latin", syriac: "Syriac" },
     timelineLink: "See on the timeline",
     who: "Who he was",
-    read: "Read his works",
     works: "His writings",
     appears: "Where he appears in Doctrina",
     appearsSubtitle: "The Doctrina pages that cite his texts, grouped by place.",

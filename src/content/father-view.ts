@@ -1,12 +1,15 @@
 import { lifeText, type FatherFact } from "@/content/father-life";
 import { formatYear } from "@/content/format-date";
+import type { FatherWorkRow } from "@/content/father-work-links";
+import { writingWorkIds } from "@/content/father-writing-links";
 import type { Father } from "@/content/model/history";
+import { fatherWorkHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
 import type { Locale } from "@/lib/locale";
 
 export type { FatherFact };
 
-export type FatherWritingView = { id: string; title: string; dateLabel: string };
+export type FatherWritingView = { id: string; title: string; dateLabel: string; href?: string };
 
 export type FatherView = {
   name: string;
@@ -28,7 +31,42 @@ function writingYears(date: string, year: number): { start: number; end: number 
   return range ? { start: Number(range[1]), end: Number(range[2]) } : { start: year, end: null };
 }
 
-export function buildFatherView(father: Father, locale: Locale, text: UiText): FatherView {
+type DatedWriting = { id: string; title: string; dateLabel: string };
+
+function writingViews(
+  father: Father,
+  locale: Locale,
+  writings: DatedWriting[],
+  corpusWorks: FatherWorkRow[],
+): FatherWritingView[] {
+  const claimed = new Set<string>();
+  const views = writings.flatMap((writing, index): FatherWritingView[] => {
+    const rows = (writingWorkIds[father.id]?.[index] ?? []).flatMap(
+      (id) => corpusWorks.find((row) => row.id === id) ?? [],
+    );
+    rows.forEach((row) => claimed.add(row.id));
+    if (rows.length === 0) return [writing];
+    const [only] = rows;
+    if (rows.length === 1 && only) return [{ ...writing, href: fatherWorkHref(locale, only.id) }];
+    return rows.map((row) => ({
+      id: row.id,
+      title: row.label,
+      dateLabel: writing.dateLabel,
+      href: fatherWorkHref(locale, row.id),
+    }));
+  });
+  const unclaimed = corpusWorks
+    .filter((row) => !claimed.has(row.id))
+    .map((row) => ({ id: row.id, title: row.label, dateLabel: "", href: fatherWorkHref(locale, row.id) }));
+  return [...views, ...unclaimed];
+}
+
+export function buildFatherView(
+  father: Father,
+  locale: Locale,
+  text: UiText,
+  corpusWorks: FatherWorkRow[] = [],
+): FatherView {
   const labels = text.father;
   const role = father.role[locale];
   const bishop = bishopRole.exec(role);
@@ -78,7 +116,7 @@ export function buildFatherView(father: Father, locale: Locale, text: UiText): F
           ? { label: labels.workDate, value: dated }
           : { label: labels.facts.died, value: died },
     ],
-    writings: writings.map(({ id, title, dateLabel }) => ({ id, title, dateLabel })),
+    writings: writingViews(father, locale, writings, corpusWorks),
     writingsSpan:
       writings.length > 0 && Number.isFinite(first)
         ? {

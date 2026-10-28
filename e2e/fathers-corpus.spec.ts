@@ -36,19 +36,25 @@ test.describe("the Fathers' corpus in the reader", () => {
     await expect(page.getByRole("navigation", { name: /anterior y siguiente/i }).getByRole("link")).not.toHaveCount(0);
   });
 
-  test("a Father's page lists the works that can be read and they open", async ({ page }) => {
+  test("a Father's writings are one link each and they open", async ({ page }) => {
     await page.goto("/es/historia/padres/origen");
-    await expect(page.locator("#read h2")).toHaveText("Leer sus obras");
-    await page.locator('#read a[href="/es/historia/obras/origen-against-celsus"]').click();
+    await expect(page.locator("#read")).toHaveCount(0);
+    await page.locator('#works a[href="/es/historia/obras/origen-against-celsus"]').click();
     await expect(page).toHaveURL(/\/obras\/origen-against-celsus$/);
+  });
+
+  test("Ignatius has one writing per letter, each opening its own work", async ({ page }) => {
+    await page.goto("/es/historia/padres/ignatius-of-antioch");
+    await expect(page.locator("#works li")).toHaveCount(7);
+    await expect(page.locator("#works li a")).toHaveCount(7);
+    await expect(page.locator('#works a[href="/es/historia/obras/ignatius-romans"]')).toHaveText("A los Romanos");
   });
 
   test("the English site lists the Fathers and opens their works", async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto("/en/history/fathers/origen");
     await expect(page.locator("h1")).toHaveText("Origen");
-    await expect(page.locator("#read h2")).toHaveText("Read his works");
-    await page.locator('#read a[href="/en/history/works/origen-against-celsus"]').click();
+    await page.locator('#works a[href="/en/history/works/origen-against-celsus"]').click();
     await expect(page.locator("h1")).toContainText("Against Celsus");
     await expect(page.locator("main")).toContainText(
       "Draft: this transcription has not yet had an independent reading.",

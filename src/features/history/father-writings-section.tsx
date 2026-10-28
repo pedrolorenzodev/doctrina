@@ -25,11 +25,13 @@ export function FatherWritingsSection({ id, title, axisLabel, span, writings }: 
       <RevealList as="ul" className="list-none border-b border-rule">
         {writings.map((writing) => (
           <li key={writing.id} className="writing-row border-t border-rule py-4">
-            {/* TODO: the name opens the work's full text in the reader once screen 05 exists */}
+            {/* TODO: writings without a corpus work open their full text once the work is loaded */}
             <p className="m-0 text-source-name font-medium">
-              <PageLink>{writing.title}</PageLink>
+              <PageLink {...(writing.href ? { href: writing.href } : {})}>{writing.title}</PageLink>
             </p>
-            <p className="m-0 pt-px text-ui-base font-medium text-ink tabular-nums">{writing.dateLabel}</p>
+            {writing.dateLabel ? (
+              <p className="m-0 pt-px text-ui-base font-medium text-ink tabular-nums">{writing.dateLabel}</p>
+            ) : null}
           </li>
         ))}
       </RevealList>

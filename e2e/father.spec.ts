@@ -143,10 +143,10 @@ test("«Sus escritos»: each writing with its date, one shared axis and the coun
     ["Diálogo con Trifón", "c. 160"],
     ["Segunda Apología", "c. 161"],
   ]);
-  await expect(page.locator("#works li button")).toHaveCount(3);
+  await expect(page.locator("#works li a")).toHaveCount(3);
   await expect(page.locator("#works [aria-hidden=true]")).toHaveCount(1);
   await page.goto(ignatius);
-  await expect(page.locator("#works > div > div > p").first()).toHaveText("1 escrito, c. 107–110");
+  await expect(page.locator("#works > div > div > p").first()).toHaveText("7 escritos, c. 107–110");
 });
 
 test("the writings grid: name | 104 px date, in one column of dates", async ({ page }) => {
@@ -281,9 +281,9 @@ test("the search finds a Father by name and by what his summary says, and opens 
 test("the ruler has a tick per section that exists", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(ignatius);
-  await expect(page.locator("[data-tick]")).toHaveCount(7);
+  await expect(page.locator("[data-tick]")).toHaveCount(6);
   await page.goto(father("clement-of-rome"));
-  await expect(page.locator("[data-tick]")).toHaveCount(5);
+  await expect(page.locator("[data-tick]")).toHaveCount(4);
 });
 
 test("every one of the 56 pages exists and has its name as the title", async ({ request }) => {
