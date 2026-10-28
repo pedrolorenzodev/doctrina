@@ -1,19 +1,5 @@
-"use client";
-
-import { useEffect } from "react";
-
-const longestFontWaitMs = 800;
+const titleReadyScript = `(function(){var r=document.documentElement;var go=function(){r.setAttribute("data-title-ready","")};var t=setTimeout(go,800);requestAnimationFrame(function(){requestAnimationFrame(function(){document.fonts.ready.then(function(){clearTimeout(t);go()})})})})();`;
 
 export function TitleEntrance() {
-  useEffect(() => {
-    const root = document.documentElement;
-    const start = () => root.setAttribute("data-title-ready", "");
-    const timer = window.setTimeout(start, longestFontWaitMs);
-    document.fonts.ready.then(() => {
-      window.clearTimeout(timer);
-      start();
-    });
-    return () => window.clearTimeout(timer);
-  }, []);
-  return null;
+  return <script dangerouslySetInnerHTML={{ __html: titleReadyScript }} />;
 }

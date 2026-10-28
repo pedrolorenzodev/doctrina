@@ -1747,12 +1747,6 @@ html.theme-switching ::after {
   }
 }
 
-@utility tree-carry-hide {
-  :root[data-tree-carry] & {
-    visibility: hidden;
-  }
-}
-
 @utility tree-hide {
   @media (min-width: 64rem) {
     overflow: hidden;

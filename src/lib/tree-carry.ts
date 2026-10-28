@@ -1,11 +1,10 @@
 export const treeCarryKey = "doctrina-tree-carry";
 
 const maxAgeMs = 10000;
-const hideFallbackMs = 1500;
 
 export type TreeCarry = { to: string; open: string[]; scroll: number; at: number };
 
-export const treeCarryInitScript = `(function(){try{var c=JSON.parse(sessionStorage.getItem("${treeCarryKey}")||"null");if(c&&c.to===location.pathname&&Date.now()-c.at<${maxAgeMs}){var r=document.documentElement;r.dataset.treeCarry="1";setTimeout(function(){delete r.dataset.treeCarry},${hideFallbackMs})}}catch(e){}})();`;
+export const treeCarryApplyScript = `(function(){try{var c=JSON.parse(sessionStorage.getItem("${treeCarryKey}")||"null");if(!c||c.to!==location.pathname||Date.now()-c.at>=${maxAgeMs})return;var nav=document.querySelector("#site-sidebar nav");if(!nav)return;nav.querySelectorAll("li[data-id]").forEach(function(li){var ul=li.querySelector(":scope > ul[data-branch]");if(!ul)return;var open=c.open.indexOf(li.getAttribute("data-id"))>-1;if(open&&!ul.firstElementChild)return;ul.hidden=!open;ul.setAttribute("data-open",String(open));var tw=li.querySelector(":scope > [data-row] [data-twisty]");if(tw)tw.setAttribute("aria-expanded",String(open))});nav.scrollTop=c.scroll}catch(e){}})();`;
 
 export function saveTreeCarry(to: string): void {
   const nav = document.querySelector<HTMLElement>("#site-sidebar nav");

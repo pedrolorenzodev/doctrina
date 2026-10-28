@@ -261,10 +261,11 @@ export function Sidebar({ groups, text }: SidebarProps) {
     const nav = navRef.current;
     if (!carry || !nav) return;
     for (const item of nav.querySelectorAll<HTMLElement>("li[data-id]")) {
-      setItemOpen(item, carry.open.includes(item.dataset.id ?? ""), false, text);
+      const open = carry.open.includes(item.dataset.id ?? "");
+      setItemOpen(item, open, false, text);
+      syncTwisty(item, open, text);
     }
     nav.scrollTop = carry.scroll;
-    delete document.documentElement.dataset.treeCarry;
   }, [carry, text]);
 
   useEffect(() => {
@@ -389,7 +390,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
           aria-label={text.navLabel}
           data-lenis-prevent
           onClick={onClick}
-          className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule tree-carry-hide lg:w-sidebar lg:pt-5.5"
+          className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule lg:w-sidebar lg:pt-5.5"
         >
           <div className="-mt-1.5 mb-2 flex justify-end">
             <button
