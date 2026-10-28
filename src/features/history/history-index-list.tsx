@@ -1,9 +1,11 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { GroupHeading } from "@/components/group-heading";
 import { PageLink } from "@/components/ui/page-link";
 import type { HistoryIndexGroup } from "@/content/get-history-indexes";
+import { flipList, revealList } from "@/lib/list-motion";
 import { fold } from "@/lib/search-match";
 
 type HistoryIndexListProps = {
@@ -13,6 +15,9 @@ type HistoryIndexListProps = {
 
 export function HistoryIndexList({ groups, filter }: HistoryIndexListProps) {
   const [query, setQuery] = useState("");
+  const list = useRef<HTMLUListElement>(null);
+  const ghosts = useRef<HTMLDivElement>(null);
+  useEffect(() => (list.current ? revealList(list.current) : undefined), []);
   const words = fold(query)
     .split(/\s+/)
     .filter((word) => word !== "");
@@ -22,6 +27,11 @@ export function HistoryIndexList({ groups, filter }: HistoryIndexListProps) {
       rows: group.rows.filter((row) => words.every((word) => fold(`${row.name} ${row.detail}`).includes(word))),
     }))
     .filter((group) => group.rows.length > 0);
+  function search(next: string) {
+    if (list.current && ghosts.current) flipList(list.current, ghosts.current, () => flushSync(() => setQuery(next)));
+    else setQuery(next);
+  }
+
   return (
     <div className="mt-14">
       {filter ? (
@@ -30,7 +40,7 @@ export function HistoryIndexList({ groups, filter }: HistoryIndexListProps) {
           <input
             type="search"
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => search(event.target.value)}
             placeholder={filter.label}
             autoComplete="off"
             spellCheck={false}
@@ -39,12 +49,18 @@ export function HistoryIndexList({ groups, filter }: HistoryIndexListProps) {
         </label>
       ) : null}
       <div className="max-w-wide">
-        {shown.map((group) => (
-          <Fragment key={group.title}>
-            <GroupHeading>{group.title}</GroupHeading>
-            <ul className="m-0 list-none border-b border-rule p-0">
-              {group.rows.map((row) => (
-                <li key={row.id} className="border-t border-rule py-3.5">
+        <div className="relative">
+          <ul ref={list} className="m-0 list-none p-0">
+            {shown.flatMap((group) => [
+              <li key={`group-${group.title}`} data-id={`group-${group.title}`} className="mt-7.5 first:mt-0">
+                <GroupHeading>{group.title}</GroupHeading>
+              </li>,
+              ...group.rows.map((row, index) => (
+                <li
+                  key={row.id}
+                  data-id={row.id}
+                  className={`border-t border-rule py-3.5 ${index === group.rows.length - 1 ? "border-b" : ""}`}
+                >
                   <div className="flex items-baseline justify-between gap-6">
                     <p className="m-0 text-source-name font-medium">
                       <PageLink {...(row.href ? { href: row.href } : {})}>{row.name}</PageLink>
@@ -53,10 +69,11 @@ export function HistoryIndexList({ groups, filter }: HistoryIndexListProps) {
                   </div>
                   <p className="m-0 mt-0.5 text-ui-sm text-ink-3">{row.detail}</p>
                 </li>
-              ))}
-            </ul>
-          </Fragment>
-        ))}
+              )),
+            ])}
+          </ul>
+          <div ref={ghosts} aria-hidden="true" className="pointer-events-none absolute inset-0 flip-ghosts" />
+        </div>
         {filter && shown.length === 0 ? (
           <p className="m-0 text-ui-sm text-ink-3">{filter.none.replace("{query}", query.trim())}</p>
         ) : null}
