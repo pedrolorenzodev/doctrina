@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { buildFatherView } from "@/content/father-view";
 import { formatYear } from "@/content/format-date";
 import { getPublishedFathers } from "@/content/get-fathers";
-import { councilHref, currentHref, fatherHref } from "@/content/routes";
+import { councilHref, currentHref, divisionHref, fatherHref, movementHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { firstSentence } from "@/lib/first-sentence";
 import type { Locale } from "@/lib/locale";
@@ -152,7 +152,7 @@ export function getHistoryIndex(
       row: {
         id: division.id,
         name: division.name[locale],
-        href: null,
+        href: divisionHref(locale, division.id),
         date: span(division.year, division.endYear, false),
         detail: firstSentence(division.summary[locale]),
       },
@@ -168,7 +168,7 @@ export function getHistoryIndex(
     row: {
       id: movement.id,
       name: movement.name[locale],
-      href: null,
+      href: movementHref(locale, movement.id),
       date: formatYear({ year: movement.year, circa: movement.approx }),
       detail: firstSentence(movement.summary[locale]),
     },

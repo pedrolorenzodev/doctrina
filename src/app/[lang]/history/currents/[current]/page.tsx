@@ -8,9 +8,10 @@ import { Section } from "@/components/section";
 import { PageLink } from "@/components/ui/page-link";
 import { getFather } from "@/content/get-fathers";
 import { councilName, getCurrentIds, getCurrentPage, localized } from "@/content/get-history-pages";
-import { councilHref, currentHref, fatherHref, timelineHref } from "@/content/routes";
+import { councilHref, currentHref, currentsIndexHref, fatherHref, timelineHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { FatherFacts } from "@/features/history/father-facts";
+import { HistoryLinkList } from "@/features/history/history-link-list";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 
@@ -53,10 +54,13 @@ export default async function CurrentRoute({ params }: PageProps<"/[lang]/histor
     other ? { label, title: other.name[locale], href: currentHref(locale, other.id) } : null;
   return (
     <PageMain>
-      {/* TODO: «Historia» and «Herejías» lead to their index pages once those exist */}
+      {/* TODO: «Historia» leads to its index page once it exists */}
       <Breadcrumbs
         label={text.shell.breadcrumb}
-        trail={[{ label: text.shell.tree.history }, { label: text.shell.tree.heresies }]}
+        trail={[
+          { label: text.shell.tree.history },
+          { label: text.shell.tree.heresies, href: currentsIndexHref(locale) },
+        ]}
         current={item.name[locale]}
       />
       <PageHeader id="top" className="mt-10" title={item.name[locale]} />
@@ -75,24 +79,24 @@ export default async function CurrentRoute({ params }: PageProps<"/[lang]/histor
       </Section>
       {councils.length > 0 ? (
         <Section id="councils" title={labels.councils}>
-          <ul className="m-0 flex list-none flex-col gap-2 p-0 text-ui-sm">
-            {councils.map((council) => (
-              <li key={council.id}>
-                <PageLink href={councilHref(locale, council.id)}>{council.name}</PageLink>
-              </li>
-            ))}
-          </ul>
+          <HistoryLinkList
+            items={councils.map((council) => ({
+              id: council.id,
+              label: council.name,
+              href: councilHref(locale, council.id),
+            }))}
+          />
         </Section>
       ) : null}
       {fathers.length > 0 ? (
         <Section id="fathers" title={labels.fathers}>
-          <ul className="m-0 flex list-none flex-col gap-2 p-0 text-ui-sm">
-            {fathers.map((father) => (
-              <li key={father.id}>
-                <PageLink href={fatherHref(locale, father.id)}>{father.name}</PageLink>
-              </li>
-            ))}
-          </ul>
+          <HistoryLinkList
+            items={fathers.map((father) => ({
+              id: father.id,
+              label: father.name,
+              href: fatherHref(locale, father.id),
+            }))}
+          />
         </Section>
       ) : null}
       <NeighborLinks

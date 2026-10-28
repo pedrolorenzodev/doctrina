@@ -111,6 +111,22 @@ export function historyIndexRoute(
   return `/${locale}/history/${segment}`;
 }
 
+export function divisionHref(locale: Locale, id: string): string {
+  return `${divisionsIndexHref(locale)}/${id}`;
+}
+
+export function divisionRoute(locale: Locale, id: string): string {
+  return `/${locale}/history/divisions/${id}`;
+}
+
+export function movementHref(locale: Locale, id: string): string {
+  return `${reformationIndexHref(locale)}/${id}`;
+}
+
+export function movementRoute(locale: Locale, id: string): string {
+  return `/${locale}/history/reformation/${id}`;
+}
+
 export function councilsIndexHref(locale: Locale): string {
   return `/${locale}/${historySegments[locale]}/${councilsSegments[locale]}`;
 }
@@ -185,6 +201,8 @@ export function spanishRewrites() {
     { source: divisionsIndexHref("es"), destination: "/es/history/divisions" },
     { source: reformationIndexHref("es"), destination: "/es/history/reformation" },
     { source: currentsIndexHref("es"), destination: "/es/history/currents" },
+    { source: divisionHref("es", ":division"), destination: divisionRoute("es", ":division") },
+    { source: movementHref("es", ":movement"), destination: movementRoute("es", ":movement") },
     { source: councilHref("es", ":council"), destination: councilRoute("es", ":council") },
     { source: currentHref("es", ":current"), destination: currentRoute("es", ":current") },
     ...doctrineRewrites(),

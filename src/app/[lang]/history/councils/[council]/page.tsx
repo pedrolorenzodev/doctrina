@@ -7,7 +7,7 @@ import { PageMain } from "@/components/page-main";
 import { PageLink } from "@/components/ui/page-link";
 import { formatYear } from "@/content/format-date";
 import { getCouncilIds, getCouncilPage, localized } from "@/content/get-history-pages";
-import { councilHref, timelineHref } from "@/content/routes";
+import { councilHref, councilsIndexHref, timelineHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { FatherFacts } from "@/features/history/father-facts";
 import { FatherProfileSection } from "@/features/history/father-profile-section";
@@ -49,10 +49,13 @@ export default async function CouncilRoute({ params }: PageProps<"/[lang]/histor
     other ? { label, title: other.name[locale], href: councilHref(locale, other.id) } : null;
   return (
     <PageMain>
-      {/* TODO: «Historia» and «Concilios» lead to their index pages once those exist */}
+      {/* TODO: «Historia» leads to its index page once it exists */}
       <Breadcrumbs
         label={text.shell.breadcrumb}
-        trail={[{ label: text.shell.tree.history }, { label: text.shell.tree.councils }]}
+        trail={[
+          { label: text.shell.tree.history },
+          { label: text.shell.tree.councils, href: councilsIndexHref(locale) },
+        ]}
         current={item.name[locale]}
       />
       <PageHeader id="top" className="mt-10" title={item.name[locale]} />

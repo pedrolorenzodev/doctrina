@@ -33,14 +33,44 @@ type CurrentRecord = {
   page: Localized;
 };
 
+type DivisionRecord = {
+  id: string;
+  name: Localized;
+  year: number;
+  endYear?: number;
+  summary: Localized;
+  page: Partial<Localized>;
+  sides: Localized[];
+  relatedCouncils: string[];
+  keyDates: { year: number; label: Localized }[];
+};
+
+type MovementRecord = {
+  id: string;
+  kind: "tradition" | "movement" | "precursor";
+  name: Localized;
+  from: string | null;
+  influences: string[];
+  year: number;
+  approx: boolean;
+  keyFigures: { name: Localized; dates: string }[];
+  keyDocuments: { title: Localized; year: number }[];
+  summary: Localized;
+  littleKnown: Localized;
+};
+
 export type HistoryPage<T> = { item: T; previous: T | null; next: T | null };
 
 const history = JSON.parse(readFileSync(join(process.cwd(), "data/site/history.json"), "utf8")) as {
   councils: CouncilRecord[];
   heresies: CurrentRecord[];
+  divisions: DivisionRecord[];
+  reformation: MovementRecord[];
 };
 
 const councilList = [...history.councils].sort((a, b) => a.year - b.year);
+const divisionList = [...history.divisions].sort((a, b) => a.year - b.year);
+const movementList = [...history.reformation].sort((a, b) => a.year - b.year);
 const currentList = [...history.heresies].sort((a, b) => a.startYear - b.startYear);
 
 function around<T extends { id: string }>(list: T[], id: string): HistoryPage<T> | null {
@@ -69,6 +99,26 @@ export function councilName(id: string, locale: Locale): string | null {
   return councilList.find((council) => council.id === id)?.name[locale] ?? null;
 }
 
-export function localized(value: Localized | undefined, locale: Locale): string | null {
-  return value ? value[locale] : null;
+export function localized(value: Partial<Localized> | undefined, locale: Locale): string | null {
+  return value?.[locale] ?? null;
+}
+
+export function getDivisionIds(): string[] {
+  return divisionList.map((division) => division.id);
+}
+
+export function getDivisionPage(id: string): HistoryPage<DivisionRecord> | null {
+  return around(divisionList, id);
+}
+
+export function getMovementIds(): string[] {
+  return movementList.map((movement) => movement.id);
+}
+
+export function getMovementPage(id: string): HistoryPage<MovementRecord> | null {
+  return around(movementList, id);
+}
+
+export function movementName(id: string, locale: Locale): string | null {
+  return movementList.find((movement) => movement.id === id)?.name[locale] ?? null;
 }

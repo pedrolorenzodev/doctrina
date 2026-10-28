@@ -5,6 +5,8 @@ import { horizontalOverflow } from "./helpers";
 const history = JSON.parse(readFileSync("data/site/history.json", "utf8")) as {
   councils: { id: string }[];
   heresies: { id: string }[];
+  divisions: { id: string }[];
+  reformation: { id: string }[];
 };
 
 test("a council page: header with its facts, what it decided, who recognises it and the neighbours", async ({
@@ -52,4 +54,26 @@ test("every council and current has a page with a title and no overflow on a pho
   }
   await page.goto("/es/historia/concilios/trent");
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+});
+
+test("a division and a Reformation movement have their pages, reached from their indexes", async ({ page }) => {
+  await page.goto("/es/historia/divisiones");
+  await page.locator("main ul li a").first().click();
+  await expect(page).toHaveURL(/\/es\/historia\/divisiones\/.+/);
+  await expect(page.locator("h1")).not.toBeEmpty();
+  await expect(page.locator("h2").first()).toHaveText("Qué pasó");
+  await page.goto("/es/historia/reforma");
+  await page.locator("main ul li a").first().click();
+  await expect(page).toHaveURL(/\/es\/historia\/reforma\/.+/);
+  await expect(page.locator("h2").first()).toHaveText("Qué fue");
+});
+
+test("every division and movement page responds and fits a phone", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 800 });
+  for (const division of history.divisions) {
+    expect((await page.goto(`/es/historia/divisiones/${division.id}`))?.status(), division.id).toBe(200);
+  }
+  for (const movement of history.reformation) {
+    expect((await page.goto(`/es/historia/reforma/${movement.id}`))?.status(), movement.id).toBe(200);
+  }
 });
