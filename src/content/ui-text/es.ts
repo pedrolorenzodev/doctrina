@@ -276,6 +276,11 @@ export const es = {
         english: "inglés",
       },
     },
+    read: {
+      doubt: "Pasaste por este capítulo más rápido de lo que se lee. ¿Lo leíste igual?",
+      mark: "Marcar como leído",
+      marked: "Capítulo marcado como leído.",
+    },
     picker: { label: "Traducción", spanish: "Español", english: "Inglés" },
     stepAria: "{label}: {title}",
     textOptions: {

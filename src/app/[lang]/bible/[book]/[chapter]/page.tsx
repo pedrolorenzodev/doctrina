@@ -175,6 +175,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
             verseRange: labels.verseRange,
             toolbar: labels.toolbar,
             yourNotes: labels.yourNotes,
+            read: labels.read,
             columnHeads: {
               first: labels.picker.label,
               second: labels.parallel.label,

@@ -50,3 +50,17 @@ export function markChapterRead(book: string, chapter: number): void {
   }
   emit();
 }
+
+export function unmarkChapterRead(book: string, chapter: number): void {
+  const key = readChapterKey(book, chapter);
+  const current = getReadChapters();
+  if (!current.has(key)) return;
+  cache = new Set([...current].filter((known) => known !== key));
+  try {
+    localStorage.setItem(readChaptersStorageKey, JSON.stringify([...cache]));
+  } catch {
+    return;
+  } finally {
+    emit();
+  }
+}

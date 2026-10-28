@@ -278,6 +278,11 @@ export const en: UiText = {
         english: "English",
       },
     },
+    read: {
+      doubt: "You went through this chapter faster than it can be read. Did you read it anyway?",
+      mark: "Mark as read",
+      marked: "Chapter marked as read.",
+    },
     picker: { label: "Translation", spanish: "Spanish", english: "English" },
     stepAria: "{label}: {title}",
     textOptions: {

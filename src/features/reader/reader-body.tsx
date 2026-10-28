@@ -1,10 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { UndoBar } from "@/components/undo-bar";
 import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
 import { ReadMarker } from "@/features/reader/read-marker";
+import { wordsOf } from "@/lib/reading-pace";
+import { getReadChapters, subscribeReadChapters } from "@/lib/read-chapter-store";
+import { readChapterKey } from "@/lib/read-chapters";
 import { goToUnit } from "@/features/reader/go-to-unit";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
@@ -72,6 +75,7 @@ type ReaderBodyProps = {
     verseRange: string;
     toolbar: Omit<Parameters<typeof SelectionToolbar>[0]["text"], "highlight">;
     yourNotes: YourNotesText;
+    read: { doubt: string; mark: string; marked: string };
     columnHeads: ColumnHeadText;
   };
 };
@@ -136,6 +140,15 @@ export function ReaderBody({
   const yourOpen = useYourNotesOpen();
   const verse = picked !== null && selected.verses.some((entry) => entry.verse === picked) ? picked : null;
   const undoState = useUndo();
+  const verseWords = useMemo(
+    () => selected.verses.map((entry): [number, number] => [entry.verse, wordsOf(entry.text)]),
+    [selected.verses],
+  );
+  const chapterRead = useSyncExternalStore(
+    subscribeReadChapters,
+    () => getReadChapters().has(readChapterKey(bookId, panel.chapter)),
+    () => false,
+  );
   const highlights = useChapterHighlights({
     translationId: selected.id,
     book: bookId,
@@ -476,7 +489,15 @@ export function ReaderBody({
         onMark={(number, element) => open(number, false, element)}
         onSelect={select}
       />
-      <ReadMarker book={bookId} chapter={panel.chapter} />
+      <ReadMarker
+        book={bookId}
+        chapter={panel.chapter}
+        verseWords={verseWords}
+        idPrefix={idPrefix}
+        text={panel.read}
+        alreadyRead={chapterRead}
+        showUndo={undoState.show}
+      />
       {live ? (
         <>
           <VersePanel
