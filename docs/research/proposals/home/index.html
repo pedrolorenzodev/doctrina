@@ -2,219 +2,1851 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..600;1,8..60,200..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300&family=Work+Sans:wght@400;500;600&display=swap">
 <style>
-/* layout concept: one reading column of text, then three live frames; each frame is a whole portada at the real tokens */
-:root{
-  --bg:#e8e5de;--panel:#efece6;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
-  --accent:#2c4a9e;--accent-weak:rgb(44 74 158 / .1);--hover:rgb(28 23 19 / .05);
-  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+/* Layout: the proposal page (controls, one live frame of the site, the comparison), then the four homes rendered inside the frame with the real tokens of src/app/globals.css. */
+:root {
+  --bg: #e8e5de; --ink: #1c1713; --ink-2: #2a2620; --ink-3: #615c54; --prose: #4f4b44;
+  --rule: #c9c5bc; --rule-2: #aeaba4; --accent: #2c4a9e; --accent-weak: rgb(44 74 158 / 0.1); --accent-mid: rgb(44 74 158 / 0.45);
+  --cite: #5f3d0c; --cite-weak: rgb(95 61 12 / 0.09); --card: rgb(255 255 255 / 0.35); --panel: #efece6;
+  --tip-bg: #1c1713; --tip-ink: #f4f1ea; --hover: rgb(28 23 19 / 0.05); --mark: rgb(240 200 60 / 0.45);
+  --jesus: #a3271c; --scrim: rgb(0 0 0 / 0.35);
+  --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45); --shadow-search: 0 18px 40px -18px rgb(0 0 0 / 0.5);
+  --tex: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><filter id='n' filterUnits='userSpaceOnUse' x='0' y='0' width='420' height='420'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' seed='7' stitchTiles='stitch' result='t'/><feDiffuseLighting in='t' lighting-color='%23ffffff' surfaceScale='1.6' diffuseConstant='1'><feDistantLight azimuth='235' elevation='62'/></feDiffuseLighting></filter><rect width='420' height='420' filter='url(%23n)' opacity='0.4'/></svg>");
+  --head: "Newsreader", Georgia, serif; --body: "Source Serif 4", Georgia, serif; --ui: "Work Sans", system-ui, sans-serif;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1); --ease-move: cubic-bezier(0.4, 0, 0.2, 1); --ease-smooth: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1); --ease-title: cubic-bezier(0.33, 1, 0.68, 1); --ease-exit: cubic-bezier(0.4, 0, 1, 1); --ease-sweep: cubic-bezier(0.65, 0, 0.35, 1);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
-  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#1d1d1c;--panel:#262625;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
-  --accent:#9eb3ee;--accent-weak:rgb(158 179 238 / .12);--hover:rgb(255 255 255 / .05);color-scheme:dark}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 120px}
-.wrap{max-width:1000px;margin:0 auto}
-h1{font-family:var(--head);font-weight:300;font-size:clamp(38px,6vw,56px);line-height:1.05;margin:0 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance}
-h2{font-family:var(--head);font-weight:300;font-size:clamp(28px,4vw,36px);line-height:1.15;margin:80px 0 10px;font-variation-settings:"opsz" 60;text-wrap:balance}
-h3{font-family:var(--head);font-weight:400;font-size:23px;line-height:1.25;margin:0 0 6px;font-variation-settings:"opsz" 30}
-p{margin:0}
-.lede{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:680px}
-.lede + .lede{margin-top:14px}
-.small{font-size:13.5px;color:var(--ink-3)}
-.say{max-width:660px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
-.say b{font-weight:500;color:var(--ink)}
-.opt{margin-top:64px;border-top:1px solid var(--rule);padding-top:26px}
-.opt-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:12px 0 22px;padding:0;list-style:none;font-size:13.5px;color:var(--ink-3)}
-.opt-meta b{font-weight:500;color:var(--ink)}
-.tabs{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:8px;margin-bottom:14px}
-.tabs button{font:500 13px var(--ui);color:var(--ink-2);background:none;border:0;border-radius:6px;min-height:34px;padding:0 12px;cursor:pointer}
-.tabs button[aria-pressed="true"]{background:var(--accent-weak);color:var(--ink)}
-.tabs button:hover{background:var(--hover)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.stage{container-type:inline-size;border:1px solid var(--rule-2);border-radius:8px;background:var(--bg);overflow:hidden;max-width:100%}
-.stage.phone{max-width:390px}
-.bar{display:flex;align-items:center;gap:14px;min-height:50px;padding:0 20px;border-bottom:1px solid var(--rule)}
-.logo{font-family:var(--head);font-size:21px;font-weight:400}
-.field{display:flex;align-items:center;gap:10px;flex:1;min-width:0;max-width:380px;height:36px;padding:0 10px;border:1px solid var(--rule);border-radius:6px;background:var(--panel);color:var(--ink-3);font-size:14px}
-.field span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.field kbd{font:500 11.5px var(--ui);border:1px solid var(--rule);border-radius:4px;padding:0 5px}
-.lang{margin-left:auto;font-size:13px;color:var(--ink-3)}
-.lang b{color:var(--ink);font-weight:500}
-@container (max-width:560px){.field kbd{display:none}.field{max-width:none}.lang{display:none}.field{flex:1}}
-.page{padding:44px 40px 56px;max-width:900px}
-@container (max-width:560px){.page{padding:28px 18px 40px}}
-.ph1{font-family:var(--head);font-weight:300;font-size:clamp(34px,6cqi,56px);line-height:1.05;margin:0 0 14px;font-variation-settings:"opsz" 72;text-wrap:balance;max-width:16ch}
-.dek{font-family:var(--body);font-weight:300;font-size:19px;line-height:1.62;color:var(--ink-2);max-width:60ch}
-@container (max-width:560px){.dek{font-size:17.5px}}
-.sec{margin-top:44px}
-.sec-t{font-family:var(--head);font-weight:300;font-size:26px;line-height:1.2;margin:0 0 12px;font-variation-settings:"opsz" 36}
-.prin{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
-.prin li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 36px;padding:15px 0;border-top:1px solid var(--rule)}
-.prin b{font-weight:500;font-size:15px}
-.prin span{font-family:var(--body);font-weight:300;font-size:16.5px;line-height:1.55;color:var(--ink-2)}
-@container (max-width:560px){.prin li{grid-template-columns:1fr}}
-.door{display:block;text-decoration:none;color:inherit;padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.door:hover{background:var(--hover)}
-.door .dn{font-family:var(--head);font-size:24px;line-height:1.2;font-weight:400}
-.door .dq{display:block;font-family:var(--body);font-weight:300;font-size:16.5px;color:var(--ink-2);margin-top:2px}
-.door .dm{display:block;font-size:13px;color:var(--ink-3);margin-top:6px}
-.ans{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--rule)}
-.ans li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 32px;padding:20px 0 22px;border-top:1px solid var(--rule)}
-.ans .tn{font-family:var(--head);font-size:21px;line-height:1.25;font-weight:400}
-.ans .ts{font-family:var(--body);font-weight:300;font-size:17.5px;line-height:1.6;color:var(--ink-2);max-width:62ch}
-.ans .tl{display:inline-block;margin-top:8px;font:500 14px var(--ui);color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-2);text-underline-offset:3px}
-@container (max-width:560px){.ans li{grid-template-columns:1fr}}
-.kick{font-size:13px;color:var(--ink-3);margin-bottom:8px}
-.mail{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);display:grid;gap:8px;max-width:520px}
-.mail b{font-family:var(--head);font-weight:400;font-size:20px}
-.mail form{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
-.mail input{flex:1;min-width:190px;height:40px;padding:0 12px;border:1px solid var(--rule-2);border-radius:6px;background:var(--panel);color:var(--ink);font:400 15px var(--ui)}
-.mail button{height:40px;padding:0 16px;border:0;border-radius:6px;background:var(--ink);color:var(--bg);font:500 14px var(--ui);cursor:pointer}
-.mail .ok{font-size:14px;color:var(--ink-2)}
-.ruler{position:relative;height:150px;margin:30px 0 8px}
-.rl-ax{position:absolute;left:0;right:0;top:78px;height:1px;background:var(--rule-2)}
-.rl-tk{position:absolute;top:74px;width:1px;height:9px;background:var(--rule-2)}
-.rl-tn{position:absolute;top:90px;transform:translateX(-50%);font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
-.rl-tn.e0{transform:none}.rl-tn.e1{transform:translateX(-100%)}
-.rl-m{position:absolute;top:30px;width:2px;height:48px;margin-left:-1px;background:var(--ink-3);border:0;padding:0;cursor:pointer;transform-origin:bottom;transition:background-color 150ms ease,height 200ms cubic-bezier(.22,1,.36,1)}
-.rl-m::before{content:"";position:absolute;left:-9px;right:-9px;top:-6px;bottom:0}
-.rl-m:hover,.rl-m:focus-visible,.rl-m.on{background:var(--accent);height:62px;top:16px}
-.rl-m.r{background:linear-gradient(var(--ink-3),var(--ink-3));width:2px}
-.rl-tip{position:absolute;top:-4px;left:0;font-size:13.5px;white-space:nowrap;color:var(--ink);background:var(--bg);padding:2px 6px;border:1px solid var(--rule);border-radius:5px;pointer-events:none}
-.rl-note{font-size:13.5px;color:var(--ink-3);margin-top:2px}
-.out{margin-top:40px;padding-top:22px;border-top:1px solid var(--rule)}
-.out ul,.dec ol{margin:10px 0 0;padding-left:20px;max-width:700px;font-family:var(--body);font-weight:300;font-size:17px;line-height:1.6;color:var(--ink-2)}
-.out li,.dec li{margin-bottom:8px}
-.dec li b,.out li b{font-weight:500;color:var(--ink)}
-@media (prefers-reduced-motion:reduce){.rl-m{transition:none}}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+    --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+    --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05); --mark: rgb(214 168 101 / 0.28); --jesus: #e58a7b;
+    --tex: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><filter id='n' filterUnits='userSpaceOnUse' x='0' y='0' width='420' height='420'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' seed='7' stitchTiles='stitch' result='t'/><feDiffuseLighting in='t' lighting-color='%23ffffff' surfaceScale='2.6' diffuseConstant='1'><feDistantLight azimuth='235' elevation='52'/></feDiffuseLighting></filter><rect width='420' height='420' filter='url(%23n)'/></svg>");
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+  --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+  --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05); --mark: rgb(214 168 101 / 0.28); --jesus: #e58a7b;
+  --tex: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><filter id='n' filterUnits='userSpaceOnUse' x='0' y='0' width='420' height='420'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' seed='7' stitchTiles='stitch' result='t'/><feDiffuseLighting in='t' lighting-color='%23ffffff' surfaceScale='2.6' diffuseConstant='1'><feDistantLight azimuth='235' elevation='52'/></feDiffuseLighting></filter><rect width='420' height='420' filter='url(%23n)'/></svg>");
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+.tex { background-color: var(--bg); background-image: var(--tex); background-size: 420px 420px; background-blend-mode: multiply; background-attachment: fixed; }
+body { margin: 0; background-color: var(--bg); background-image: var(--tex); background-size: 420px 420px; background-blend-mode: multiply; background-attachment: fixed; color: var(--ink); font: 400 15px/1.5 var(--ui); -webkit-font-smoothing: antialiased; }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+a, button, [tabindex], input, summary { outline-offset: 2px; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+button { font: inherit; color: inherit; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- The proposal page ---------- */
+.doc { max-width: 1320px; margin: 0 auto; padding-block: 40px 120px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.doc-head { max-width: 760px; }
+.doc-head h1 { font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.doc-head .lede { font: italic 300 22px/1.4 var(--head); font-variation-settings: "opsz" 36; color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; }
+.doc-head p, .cmp p { font: 300 17px/1.6 var(--body); color: var(--prose); margin: 14px 0 0; max-width: 68ch; }
+.doc-head b, .cmp b { font-weight: 500; color: var(--ink); }
+.cmp h2 { font: 300 36px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 0; text-wrap: balance; }
+.cmp h3 { font: 400 22px/1.3 var(--head); margin: 0; }
+.ctl .label { font: 500 12.5px/1.2 var(--ui); color: var(--ink-3); }
+@media (max-width: 640px) { .doc-head h1 { font-size: 36px; line-height: 1.1; } .doc-head .lede { font-size: 19px; } .cmp h2 { font-size: 29px; } }
+
+.ctl { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; margin-top: 28px; padding-block: 10px; border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; }
+@media (max-width: 760px) { .ctl { position: static; } }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+.ctl-group { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.ctl-btn { min-height: 34px; padding: 0 12px; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--card); font: 500 13.5px var(--ui); color: var(--ink); cursor: pointer; transition: background-color 150ms var(--ease-standard), border-color 150ms var(--ease-standard); }
+.ctl-btn:hover { background: var(--hover); border-color: var(--ink); }
+.seg { position: relative; display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg button { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; min-height: 34px; padding: 0 11px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; white-space: nowrap; transition: color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.seg button:hover { background: var(--hover); color: var(--ink); }
+.seg button[aria-pressed="true"] { color: var(--ink); font-weight: 500; background: none; }
+.seg button span.k { display: inline-block; }
+.seg .ind { position: absolute; z-index: 0; top: 3px; left: 0; height: calc(100% - 6px); border-radius: 6px; background: var(--accent-weak); transition: transform 340ms var(--ease-reveal), width 340ms var(--ease-reveal); pointer-events: none; }
+@media (pointer: coarse) { .seg button { min-height: 44px; } .ctl-btn { min-height: 44px; } }
+
+.optnote { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 32px; align-items: baseline; padding: 18px 0 16px; }
+.optnote .on-name { font: 400 22px/1.3 var(--head); }
+.optnote .on-line { font: 300 16.5px/1.55 var(--body); color: var(--prose); max-width: 760px; }
+.optnote .on-meta { font: 400 13px/1.5 var(--ui); color: var(--ink-3); text-align: right; }
+@media (max-width: 760px) { .optnote { grid-template-columns: 1fr; } .optnote .on-meta { text-align: left; } }
+
+.stage { display: flex; justify-content: center; }
+.frame { position: relative; width: 100%; max-width: 1320px; height: clamp(640px, 84vh, 900px); border: 1px solid var(--rule-2); border-radius: 10px; overflow: hidden; container: site / size; transition: opacity 160ms var(--ease-standard); }
+.frame.phone { max-width: 390px; height: min(800px, 86vh); border-radius: 14px; }
+.frame.fading { opacity: 0; transition-duration: 140ms; }
+.linkline { min-height: 22px; margin-top: 10px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); text-align: center; transition: opacity 200ms var(--ease-standard); }
+.linkline code { font: 500 13px var(--ui); color: var(--ink-2); }
+
+.cmp { margin-top: 96px; }
+.cmp .cmp-sub { font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); margin-top: 10px; max-width: 620px; }
+.cmp-list { list-style: none; margin: 28px 0 0; padding: 0; }
+.cmp-list > li { border-top: 1px solid var(--rule); padding: 28px 0 30px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 10px 48px; }
+.cmp-list > li:last-child { border-bottom: 1px solid var(--rule); }
+.cmp-list .c-name { font: 400 25px/1.2 var(--head); }
+.cmp-list .c-name small { display: block; margin-top: 6px; font: 400 13px/1.45 var(--ui); color: var(--ink-3); }
+.cmp-list dl { margin: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px 24px; }
+.cmp-list dt { font: 500 13px/1.6 var(--ui); color: var(--ink-3); }
+.cmp-list dd { margin: 0; font: 300 16.5px/1.55 var(--body); color: var(--ink-2); max-width: 680px; }
+.cmp-list .see { margin-top: 14px; }
+@media (max-width: 860px) { .cmp-list > li { grid-template-columns: 1fr; } .cmp-list dl { grid-template-columns: 1fr; gap: 2px; } .cmp-list dd { margin-bottom: 10px; } }
+.cols2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 56px; margin-top: 24px; }
+@media (max-width: 860px) { .cols2 { grid-template-columns: 1fr; } }
+.doc ul.plain { margin: 12px 0 0; padding: 0; list-style: none; }
+.doc ul.plain li { border-top: 1px solid var(--rule); padding: 12px 0; font: 300 16.5px/1.55 var(--body); color: var(--ink-2); }
+.doc ul.plain li:last-child { border-bottom: 1px solid var(--rule); }
+.doc ol.decide { margin: 18px 0 0; padding: 0; list-style: none; counter-reset: d; }
+.doc ol.decide li { counter-increment: d; display: grid; grid-template-columns: 36px minmax(0, 1fr); border-top: 1px solid var(--rule); padding: 16px 0; font: 300 17px/1.6 var(--body); color: var(--ink-2); }
+.doc ol.decide li::before { content: counter(d); font: 500 15px/1.75 var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.doc ol.decide li:last-child { border-bottom: 1px solid var(--rule); }
+
+/* ---------- The site inside the frame ---------- */
+.site { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; color: var(--ink); }
+.site a { color: inherit; }
+.tb { position: sticky; top: 0; z-index: 40; height: 56px; display: flex; align-items: center; gap: 14px; padding: 0 20px; border-bottom: 1px solid var(--rule); }
+.tb .logo { font: 400 23px/1 var(--head); font-variation-settings: "opsz" 24; letter-spacing: -0.005em; color: var(--ink); text-decoration: none; }
+.ibtn { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 6px; background: none; color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); flex: none; }
+.ibtn:hover { background: var(--hover); color: var(--ink); }
+.tb .menu { width: 40px; height: 40px; margin-left: -8px; }
+.strig { margin-left: 24px; width: min(380px, 40cqw); height: 36px; display: flex; align-items: center; gap: 10px; padding: 0 10px 0 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); font: 400 13.5px var(--ui); color: var(--ink-3); cursor: pointer; transition: border-color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.strig:hover { border-color: var(--rule-2); background: var(--hover); }
+.strig .ph { flex: 1; min-width: 0; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+kbd { font: 400 11.5px var(--ui); color: var(--ink-3); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 6px; }
+.tb .sp { flex: 1; }
+.lang { display: flex; gap: 2px; font: 400 13px var(--ui); }
+.lang button { border: 0; background: none; padding: 6px 6px; border-radius: 5px; color: var(--ink-3); cursor: pointer; transition: color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.lang button:hover { color: var(--ink); background: var(--hover); }
+.lang button[aria-current="true"] { color: var(--ink); font-weight: 500; }
+@container site (max-width: 639px) {
+  .tb { height: 52px; padding: 0 12px 0 16px; }
+  .strig { margin-left: auto; width: 40px; height: 40px; padding: 0; justify-content: center; border-color: transparent; background: none; }
+  .strig .ph, .strig kbd { display: none; }
+  .lang, .tb .sp { display: none; }
+}
+
+.shell { display: grid; grid-template-columns: minmax(0, 1fr); }
+.side { display: none; }
+@container site (min-width: 1024px) {
+  .shell.withtree { grid-template-columns: 272px minmax(0, 1fr); }
+  .shell.withtree .side { display: block; position: sticky; top: 56px; height: calc(100cqh - 56px); overflow-y: auto; overscroll-behavior: contain; border-right: 1px solid var(--rule); padding: 22px 14px 40px 18px; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; }
+  .site.hastree .tb .menu { display: none; }
+}
+
+.tg + .tg { margin-top: 22px; }
+.tg-l { font: 500 12.5px/1.2 var(--ui); color: var(--ink-3); padding: 0 8px 8px; }
+.tr { display: flex; align-items: center; min-height: 32px; border-radius: 6px; transition: background-color 150ms var(--ease-standard); }
+.tr:hover { background: var(--hover); }
+.tw { display: grid; place-items: center; width: 22px; height: 28px; border: 0; background: none; padding: 0; color: var(--ink-3); cursor: pointer; flex: none; }
+.tw svg { transition: transform 150ms var(--ease-standard); }
+.tw[aria-expanded="true"] svg { transform: rotate(90deg); }
+.tw.leaf { cursor: default; }
+.tl { flex: 1; min-width: 0; padding: 6px 8px 6px 0; font: 400 14px/1.35 var(--ui); color: var(--ink-2); text-decoration: none; cursor: pointer; border: 0; background: none; text-align: left; }
+.tl:hover { color: var(--ink); }
+.tc { padding-right: 8px; font: 400 12px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.tk { margin-left: 13px; padding-left: 8px; border-left: 1px solid var(--rule); overflow: hidden; }
+.tk[hidden] { display: none; }
+.tk .th { font: 500 12px/1.3 var(--ui); color: var(--ink-3); padding: 8px 8px 4px 22px; }
+.cg { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; padding: 4px 4px 8px 22px; }
+.cg button { display: grid; place-items: center; min-height: 34px; border: 0; background: none; padding: 0; cursor: pointer; }
+.cg button span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; font: 400 14px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.cg button:hover span { background: var(--hover); color: var(--ink); }
+.cg button.read span { position: relative; }
+.cg button.read span::after { content: ""; position: absolute; bottom: 3px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--accent-mid); }
+.drawer .cg { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.drawer .cg button { min-height: 56px; }
+.drawer .cg button span { width: 48px; height: 48px; font-size: 16px; }
+
+.scrim { position: absolute; inset: 0; background: var(--scrim); opacity: 0; transition: opacity 240ms var(--ease-move); z-index: 59; }
+.scrim.on { opacity: 1; }
+.drawer { position: absolute; top: 0; bottom: 0; left: 0; z-index: 60; width: min(320px, 86%); padding: 16px 14px 40px 18px; overflow-y: auto; overscroll-behavior: contain; border-right: 1px solid var(--rule); transform: translateX(-102%); transition: transform 240ms var(--ease-move); }
+.drawer.on { transform: none; }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; margin: 0 -4px 14px 0; }
+
+.main { min-width: 0; padding: 22px 16px 96px; position: relative; }
+@container site (min-width: 640px) { .main { padding: 26px 32px 110px; } }
+@container site (min-width: 768px) { .main { padding: 30px 104px 120px 48px; } }
+@container site (min-width: 1100px) { .main { padding: 34px 112px 140px 64px; } }
+.col { max-width: 720px; }
+.wide { max-width: 1040px; }
+
+.tp { animation: tin 700ms var(--ease-title) both paused, tfs 0s 2s forwards; animation-delay: calc(var(--p, 0) * 80ms), 2s; }
+.site[data-ready] .tp { animation-play-state: running, running; }
+@keyframes tin { from { opacity: 0; } to { opacity: 1; } }
+@keyframes tfs { to { opacity: 1; } }
+
+.h1d { font: 300 60px/1.03 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; color: var(--ink); margin: 0; text-wrap: balance; }
+.h1o { font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; color: var(--ink); margin: 0; text-wrap: balance; }
+.h1s { font: 300 36px/1.15 var(--head); font-variation-settings: "opsz" 60; color: var(--ink); margin: 0; text-wrap: balance; }
+.lede { font: italic 300 24px/1.38 var(--head); font-variation-settings: "opsz" 36; color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; max-width: 720px; }
+.kick { font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); margin: 0 0 14px; max-width: 620px; }
+.h2 { font: 300 36px/1.15 var(--head); font-variation-settings: "opsz" 60; color: var(--ink); margin: 0; text-wrap: balance; }
+.sub { font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); margin: 10px 0 0; max-width: 620px; }
+.prose { font: 300 19px/1.66 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); margin: 0; }
+.sec { scroll-margin-top: 80px; }
+.sec + .sec { margin-top: 140px; }
+.hdr + .sec, .hdr + .resume + .sec { margin-top: 96px; }
+@container site (max-width: 639px) {
+  .h1d { font-size: 42px; } .h1o { font-size: 36px; line-height: 1.1; } .h1s { font-size: 29px; }
+  .lede { font-size: 20px; } .h2 { font-size: 29px; } .prose { font-size: 18px; }
+  .sec + .sec { margin-top: 96px; } .hdr + .sec, .hdr + .resume + .sec { margin-top: 72px; }
+}
+
+.lgo { color: var(--ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--rule-2); text-decoration-thickness: 1px; text-underline-offset: 4px; transition: text-decoration-color 150ms var(--ease-standard), text-decoration-thickness 150ms var(--ease-standard); cursor: pointer; }
+.lgo:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+.lgo.f { font: 500 14.5px/1.5 var(--ui); }
+.lside { position: relative; color: var(--cite); text-decoration: underline dotted; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px; padding: 0 1px; -webkit-box-decoration-break: clone; box-decoration-break: clone; cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.lside:hover, .lside[aria-expanded="true"] { background: var(--cite-weak); text-decoration-style: solid; }
+.btn-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 16px; border: 1px solid var(--rule-2); border-radius: 7px; background: var(--card); font: 500 14px var(--ui); color: var(--ink); cursor: pointer; text-decoration: none; transition: border-color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.btn-go:hover { border-color: var(--ink); background: var(--hover); }
+.btn-more { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; margin-left: -12px; border: 0; border-radius: 6px; background: none; font: 500 13.5px var(--ui); color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.btn-more:hover { background: var(--hover); }
+@media (pointer: coarse) { .btn-go { min-height: 44px; } .btn-more { min-height: 44px; } }
+
+.hl { list-style: none; margin: 0; padding: 0; }
+.hl > li { border-top: 1px solid var(--rule); }
+.hl > li:last-child { border-bottom: 1px solid var(--rule); }
+.qrow { display: grid; grid-template-columns: minmax(0, 1fr) auto 14px; gap: 4px 20px; align-items: center; padding: 16px 8px; text-decoration: none; color: var(--ink-2); border-radius: 0; cursor: pointer; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.qrow:hover { background: var(--hover); color: var(--ink); }
+.qrow .chev { color: var(--ink-3); transition: transform 150ms var(--ease-standard); }
+.qrow:hover .chev { transform: translateX(2px); }
+.qrow .t { font: 400 16px/1.45 var(--body); min-width: 0; }
+.qrow .n { font: 400 13px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; text-align: right; }
+.qrow .d { display: block; margin-top: 3px; font: 300 15px/1.5 var(--body); color: var(--prose); }
+
+.drow { display: grid; grid-template-columns: minmax(150px, 220px) minmax(0, 1fr) 14px; gap: 6px 32px; align-items: baseline; padding: 22px 8px 24px; text-decoration: none; cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.drow:hover { background: var(--hover); }
+.drow .nm { font: 400 25px/1.2 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); }
+.drow .q { font: 400 19px/1.35 var(--head); color: var(--ink-2); }
+.drow .chev { color: var(--ink-3); align-self: center; transition: transform 150ms var(--ease-standard); }
+.drow:hover .chev { transform: translateX(2px); }
+@container site (max-width: 639px) { .drow { grid-template-columns: minmax(0, 1fr) 14px; padding: 18px 4px 20px; } .drow .nm { font-size: 23px; } .drow .q { grid-column: 1; font-size: 17.5px; } .drow .chev { grid-row: 1; grid-column: 2; } }
+
+.rv-pre { opacity: 0; transform: translateY(8px); }
+.rv-in { transition: opacity 420ms var(--ease-reveal), transform 420ms var(--ease-reveal); }
+
+.resume { margin-top: 30px; max-width: 720px; }
+.resume .label { display: block; font: 500 12.5px/1.2 var(--ui); color: var(--ink-3); margin-bottom: 8px; }
+.resume a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px; align-items: baseline; padding: 14px 8px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); text-decoration: none; cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.resume a:hover { background: var(--hover); }
+.resume .r-t { font: 400 18px/1.4 var(--head); color: var(--ink); }
+.resume .r-p { grid-column: 1; font: 400 13px/1.45 var(--ui); color: var(--ink-3); }
+.resume .r-d { grid-row: 1; grid-column: 2; display: flex; align-items: center; gap: 12px; font: 400 13px var(--ui); color: var(--ink-3); }
+.resume .r-d::before { content: ""; width: 1px; height: 12px; background: var(--rule-2); }
+
+.fp { position: relative; height: 48px; border-bottom: 1px solid var(--rule-2); margin-top: 26px; cursor: default; touch-action: pan-y; }
+.fp i { position: absolute; bottom: 0; width: 2px; margin-left: -1px; height: 100%; background: var(--ink); opacity: 0.45; transform-origin: 50% 100%; transform: scaleY(var(--k, 0.2222)); transition: transform 200ms var(--ease-standard), background-color 200ms var(--ease-standard), opacity 200ms var(--ease-standard); }
+.fp i.band { width: auto; margin-left: 0; height: 100%; background: var(--ink); opacity: 0.12; }
+.fp i.on { background: var(--accent); opacity: 1; }
+.fp i.band.on { background: var(--accent); opacity: 0.3; }
+.fp.draw i { animation: fpd 300ms var(--ease-standard) backwards; animation-delay: var(--dl, 0ms); }
+@keyframes fpd { from { transform: scaleY(0); } }
+.fp .cent { position: absolute; bottom: 0; width: 1px; height: 4px; background: var(--rule-2); }
+.fp-ax { position: relative; height: 18px; margin-top: 4px; font: 400 11px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.fp-ax span { position: absolute; top: 0; transform: translateX(-50%); }
+.fp-ax span:first-child { transform: none; } .fp-ax span:last-child { transform: translateX(-100%); }
+.fp-cap { font: 400 13px/1.5 var(--ui); color: var(--ink-3); margin-top: 4px; }
+.tip { position: absolute; z-index: 5; padding: 4px 8px; border-radius: 4px; background: var(--tip-bg); color: var(--tip-ink); font: 400 12px/1.4 var(--ui); white-space: nowrap; pointer-events: none; }
+.tip b { font-weight: 600; }
+.fp .tip { bottom: calc(100% + 6px); transform: translateX(-50%); animation: tipin 200ms var(--ease-standard) both; }
+@keyframes tipin { from { opacity: 0; transform: translate(-50%, 5px); } }
+
+.edge { position: absolute; z-index: 30; right: 18px; top: 50%; transform: translateY(-50%); display: none; flex-direction: column; align-items: flex-end; }
+@container site (min-width: 768px) { .edge.has { display: flex; } }
+.edge button { position: relative; width: 64px; height: 13px; border: 0; background: none; padding: 0; cursor: pointer; display: flex; justify-content: flex-end; align-items: center; }
+.edge button i { display: block; width: 16px; height: 3px; border-radius: 2px; background: var(--ink); opacity: 0.3; transform-origin: 100% 50%; transform: scaleX(var(--sx, 1)); transition: transform 200ms var(--ease-standard), opacity 260ms var(--ease-standard), background-color 260ms var(--ease-standard); }
+.edge.draw button i { animation: edin 300ms var(--ease-standard) backwards; animation-delay: var(--dl, 900ms); }
+@keyframes edin { from { transform: scaleX(0); } }
+.edge button.on i { background: var(--accent); opacity: 1; }
+.edge button:hover i { opacity: 1; }
+.edge button span { position: absolute; right: 90px; top: 50%; transform: translate(5px, -50%); opacity: 0; font: 400 15px/1 var(--head); color: var(--ink); white-space: nowrap; pointer-events: none; transition: none; }
+.edge button:hover span, .edge button:focus-visible span { opacity: 1; transform: translate(0, -50%); transition: opacity 200ms var(--ease-standard), transform 200ms var(--ease-standard); }
+
+.cw { position: absolute; z-index: 70; width: 400px; max-height: min(560px, calc(100cqh - 96px)); display: flex; flex-direction: column; border: 1px solid var(--rule-2); border-radius: 10px; background-color: var(--panel); box-shadow: var(--shadow-floating); opacity: 0; transform: translateY(6px); transition: opacity 200ms var(--ease-standard), transform 200ms var(--ease-standard); visibility: hidden; }
+.cw.on { opacity: 1; transform: none; visibility: visible; }
+.cw-h { display: flex; align-items: center; justify-content: space-between; height: 44px; padding: 0 6px 0 16px; border-bottom: 1px solid var(--rule); cursor: grab; flex: none; font: 500 12.5px var(--ui); color: var(--ink-3); user-select: none; }
+.cw-b { padding: 18px 20px 20px; overflow-y: auto; overscroll-behavior: contain; }
+.cw-q { font: italic 300 20px/1.45 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); margin: 0; }
+.cw-q::before { content: "«"; } .cw-q::after { content: "»"; }
+.cw-who { margin-top: 14px; font: 400 14px/1.5 var(--ui); color: var(--ink-3); }
+.cw-who b { font-weight: 500; color: var(--ink); }
+.cw-date { margin-top: 16px; display: flex; gap: 10px; align-items: baseline; font: 400 12.5px var(--ui); color: var(--ink-3); }
+.cw-date b { font: 500 15px var(--ui); color: var(--ink); font-variant-numeric: tabular-nums; }
+.cw-act { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.cw-copy { border: 0; background: none; font: 500 13.5px var(--ui); color: var(--ink-2); padding: 8px 4px; cursor: pointer; text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; }
+.cw-copy:hover { color: var(--ink); text-decoration-color: currentColor; }
+.cw-scrim { position: absolute; inset: 0; z-index: 69; background: var(--scrim); opacity: 0; visibility: hidden; transition: opacity 200ms var(--ease-standard), visibility 0s 200ms; }
+@container site (max-width: 720px) {
+  .cw { left: 0 !important; right: 0; top: auto !important; bottom: 0; width: auto; max-height: 78cqh; border-radius: 14px 14px 0 0; transform: translateY(100%); opacity: 1; transition: transform 260ms var(--ease-move), visibility 0s 260ms; }
+  .cw.on { transform: none; transition: transform 260ms var(--ease-move); }
+  .cw-h { cursor: default; position: relative; }
+  .cw-h::before { content: ""; position: absolute; top: 6px; left: 50%; width: 28px; height: 4px; margin-left: -14px; border-radius: 2px; background: var(--rule-2); }
+  .cw-scrim.on { opacity: 1; visibility: visible; transition: opacity 200ms var(--ease-standard); }
+}
+.mt { position: relative; height: 34px; margin-top: 4px; }
+.mt .ax { position: absolute; left: 0; right: 0; top: 18px; height: 1px; background: var(--rule-2); }
+.mt .mk { position: absolute; top: 15px; width: 1px; height: 7px; background: var(--rule-2); border: 0; margin: 0; padding: 0; overflow: visible; }
+.mt .mk span { position: absolute; top: 9px; left: 0; transform: translateX(-50%); font: 400 10.5px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.mt .mk.first span { transform: none; } .mt .mk.last span { transform: translateX(-100%); }
+.mt .band { position: absolute; top: 15px; height: 7px; border-radius: 4px; background: var(--accent-mid); }
+.mt .pt { position: absolute; top: 14px; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%; background: var(--accent); }
+.mt .yr { position: absolute; top: -2px; transform: translateX(-50%); font: 600 11.5px var(--ui); color: var(--accent); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.sd-scrim { position: absolute; inset: 0; z-index: 89; background: var(--scrim); opacity: 0; visibility: hidden; transition: opacity 200ms var(--ease-standard), visibility 0s 200ms; }
+.sd-scrim.on { opacity: 1; visibility: visible; transition: opacity 200ms var(--ease-standard); }
+.sd { position: absolute; z-index: 90; left: 50%; top: 12cqh; width: min(620px, calc(100cqw - 32px)); max-height: 70cqh; display: flex; flex-direction: column; border: 1px solid var(--rule-2); border-radius: 10px; background-color: var(--panel); box-shadow: var(--shadow-search); opacity: 0; transform: translate(-50%, 6px); visibility: hidden; transition: opacity 200ms var(--ease-standard), transform 200ms var(--ease-standard), visibility 0s 200ms; }
+.sd.on { opacity: 1; transform: translate(-50%, 0); visibility: visible; transition: opacity 200ms var(--ease-standard), transform 200ms var(--ease-standard); }
+.sd-in { display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 14px 0 16px; border-bottom: 1px solid var(--rule); flex: none; color: var(--ink-3); }
+.sd-in input { flex: 1; min-width: 0; border: 0; background: none; outline: none; font: 400 16px var(--ui); color: var(--ink); }
+.sd-in input::placeholder { color: var(--ink-3); }
+.sd-in input:focus-visible { outline: none; }
+.sd-r { list-style: none; margin: 0; padding: 6px; overflow-y: auto; overscroll-behavior: contain; flex: 1; }
+.sd-f { display: flex; gap: 18px; padding: 10px 16px; border-top: 1px solid var(--rule); font: 400 12px var(--ui); color: var(--ink-3); flex: none; }
+@media (pointer: coarse) { .sd-f { display: none; } }
+@container site (max-width: 639px) { .sd { top: 12px; } .sd-in kbd { display: none; } }
+.sg { font: 500 12.5px/1.2 var(--ui); color: var(--ink-3); padding: 12px 12px 6px; }
+.sr { display: block; padding: 10px 12px; border-radius: 7px; cursor: pointer; }
+.sr[aria-selected="true"] { background: var(--hover); }
+.sr .s-t { font: 400 18px/1.5 var(--head); color: var(--ink); }
+.sr .s-p { display: flex; gap: 10px; align-items: center; font: 400 12.5px/1.45 var(--ui); color: var(--ink-3); }
+.sr .s-p .pth { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sr .s-p .dt { display: flex; align-items: center; gap: 10px; font-variant-numeric: tabular-nums; }
+.sr .s-p .dt::before { content: ""; width: 1px; height: 12px; background: var(--rule-2); }
+.sr .s-q { margin-top: 3px; font: italic 300 15.5px/1.4 var(--head); color: var(--ink-2); }
+.sr .s-l { margin-top: 3px; font: 400 13.5px/1.45 var(--ui); color: var(--ink-2); }
+.sr mark, .inl mark { background: var(--mark); color: inherit; border-radius: 2px; }
+.s-empty { padding: 18px 12px; font: 400 14px/1.5 var(--ui); color: var(--ink-3); }
+.s-more { margin: 2px 6px 6px; }
+
+.sw { margin-top: 30px; }
+.sw-bar { display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+.sw-bar .label { font: 500 12.5px var(--ui); color: var(--ink-3); }
+.tabs { position: relative; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs button { position: relative; z-index: 1; display: inline-grid; place-items: center; min-height: 36px; padding: 8px 11px; border: 0; border-radius: 6px; background: none; font: 400 14px var(--ui); color: var(--ink-2); cursor: pointer; white-space: nowrap; transition: color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.tabs button::after { content: attr(data-t); font-weight: 500; height: 0; visibility: hidden; overflow: hidden; }
+.tabs button > span { grid-area: 1 / 1; }
+.tabs button:hover { background: var(--hover); color: var(--ink); }
+.tabs button[aria-selected="true"] { color: var(--ink); font-weight: 500; }
+.tabs button[aria-selected="true"]:hover { background: none; }
+.tabs .ind { position: absolute; z-index: 0; top: 0; left: 0; height: 100%; border-radius: 6px; background: var(--accent-weak); box-shadow: inset 0 -2px 0 var(--accent); transition: transform 340ms var(--ease-reveal), width 340ms var(--ease-reveal); pointer-events: none; }
+@container site (max-width: 720px) { .sw-bar .label { display: none; } .tabs button { padding: 8px 9px; font-size: 13.5px; } }
+@media (pointer: coarse) { .tabs button { min-height: 44px; } }
+.ans { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px 56px; padding: 30px 0 8px; }
+@container site (min-width: 640px) { .ans { grid-template-columns: 170px minmax(0, 1fr); gap: 14px 36px; } }
+@container site (min-width: 1100px) { .ans { grid-template-columns: 200px minmax(0, 680px); gap: 14px 56px; } }
+.ans .an { font: 400 25px/1.2 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); margin: 0; }
+.ans .ag { margin-top: 10px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+.ans .ag b { display: block; font: 500 14.5px/1.4 var(--ui); color: var(--ink); margin-top: 3px; }
+.ans .at { font: 300 18.5px/1.62 var(--body); color: var(--ink-2); margin: 0; }
+.ans .aw { margin-top: 16px; }
+.ans .p-a, .ans .p-b { transition: none; }
+.ans.out .p-a, .ans.out .p-b { opacity: 0; transform: translateX(calc(-16px * var(--dir, 1))); transition: opacity 140ms var(--ease-exit), transform 140ms var(--ease-exit); }
+.ans.pre .p-a, .ans.pre .p-b { opacity: 0; transform: translateX(calc(16px * var(--dir, 1))); transition: none; }
+.ans.in .p-a, .ans.in .p-b { opacity: 1; transform: none; transition: opacity 260ms var(--ease-reveal), transform 260ms var(--ease-reveal); }
+.ans.in .p-b { transition-delay: 30ms; }
+@container site (max-width: 639px) { .ans .an { font-size: 23px; } .ans .at { font-size: 17.5px; } }
+
+.lr { position: relative; height: 58px; margin-top: 64px; touch-action: pan-y; cursor: default; }
+.lr.snap { cursor: pointer; }
+.lr .ax { position: absolute; left: 0; right: 0; top: 30px; height: 1px; background: var(--rule-2); }
+.lr .t { position: absolute; top: 30px; width: 1px; background: var(--rule-2); }
+.lr .lb { position: absolute; top: 42px; transform: translateX(-50%); font: 400 11px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.lr .seg3 { position: absolute; top: 29px; height: 3px; border-radius: 2px; background: var(--ink-3); opacity: 0.45; transition: background-color 200ms var(--ease-standard), opacity 200ms var(--ease-standard); }
+.lr .w { position: absolute; top: 30px; width: 0; height: 0; transition: transform 200ms var(--ease-standard); }
+.lr .stem { position: absolute; left: -0.5px; top: 0; width: 1px; height: var(--lift, 0px); background: var(--accent); opacity: 0.6; transition: height 200ms var(--ease-standard); }
+.lr .dot { position: absolute; left: -4.5px; top: -4.5px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--ink-2); transition: transform 200ms var(--ease-standard), background-color 200ms var(--ease-standard), border-color 200ms var(--ease-standard); }
+.lr .w.on .dot { background: var(--accent); border-color: var(--accent); transform: scale(1.2); }
+.lr .w.hov .dot { background: var(--accent); border-color: var(--accent); transform: scale(1.3); }
+.lr .lr-tip { position: absolute; transition: left 200ms var(--ease-standard), top 200ms var(--ease-standard), opacity 200ms var(--ease-standard); }
+@container site (max-width: 720px) { .lr .lb.odd { display: none; } }
+.lr-status { margin-top: 8px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+.wq { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 6px 20px; padding: 22px 8px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: 18px; transition: opacity 160ms var(--ease-standard); }
+.wq.fade { opacity: 0; }
+.wq .wd { font: 400 13.5px/1.6 var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.wq blockquote { margin: 0; font: italic 300 21px/1.45 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); }
+.wq blockquote::before { content: "«"; } .wq blockquote::after { content: "»"; }
+.wq .wb { margin-top: 10px; font: 400 13.5px/1.6 var(--ui); color: var(--ink-3); }
+.wq .wb b { font-weight: 500; color: var(--ink); }
+@container site (max-width: 639px) { .wq { grid-template-columns: 1fr; } .wq blockquote { font-size: 19px; } }
+
+.method { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 30px; }
+.method > div { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px 40px; padding: 22px 0 24px; border-top: 1px solid var(--rule); }
+.method > div:last-child { border-bottom: 1px solid var(--rule); }
+@container site (min-width: 768px) { .method > div { grid-template-columns: 230px minmax(0, 1fr); } }
+.method h3 { margin: 0; font: 400 22px/1.3 var(--head); color: var(--ink); }
+.method p { margin: 0; font: 300 16.5px/1.6 var(--body); color: var(--ink-2); max-width: 600px; }
+
+.mail { margin-top: 140px; padding-top: 28px; border-top: 1px solid var(--rule); max-width: 720px; }
+.mail h2 { margin: 0; font: 400 22px/1.3 var(--head); color: var(--ink); }
+.mail p { margin: 8px 0 0; font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); }
+.mail form { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+.mail input { flex: 1 1 240px; min-width: 0; min-height: 42px; padding: 0 12px; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--card); font: 400 15px var(--ui); color: var(--ink); }
+.mail input::placeholder { color: var(--ink-3); }
+.mail .ok { margin-top: 12px; font: 400 14px/1.5 var(--ui); color: var(--ink-2); min-height: 21px; }
+@container site (max-width: 639px) { .mail { margin-top: 96px; } }
+.foot { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 6px 22px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+.foot a { color: var(--ink-3); text-decoration: none; cursor: pointer; transition: color 150ms var(--ease-standard); }
+.foot a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.counts { display: flex; flex-wrap: wrap; gap: 18px 44px; margin: 26px 0 0; padding: 0; }
+.counts div { min-width: 0; }
+.counts dt { font: 500 12.5px/1.2 var(--ui); color: var(--ink-3); }
+.counts dd { margin: 4px 0 0; font: 400 18px/1.4 var(--body); color: var(--ink); font-variant-numeric: tabular-nums; }
+@container site (max-width: 639px) { .counts { gap: 14px 28px; } .counts div { flex: 0 0 calc(50% - 14px); } }
+
+.eds { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 18px; }
+.ed { position: relative; display: inline-flex; align-items: center; min-height: 32px; padding: 0 10px; border: 1px solid var(--rule); border-radius: 6px; font: 500 13px var(--ui); color: var(--ink-2); cursor: default; }
+.ed .tip { left: 50%; top: calc(100% + 6px); transform: translateX(-50%); opacity: 0; transition: opacity 150ms var(--ease-standard); }
+.ed:hover .tip { opacity: 1; transition-delay: 300ms; }
+
+.tl2 { margin-top: 30px; position: relative; user-select: none; }
+.tl2-wrap { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 0 12px; }
+@container site (max-width: 639px) { .tl2-wrap { grid-template-columns: minmax(0, 1fr); } .tl2-lab { display: none; } }
+.tl2-lab { font: 400 12.5px/1 var(--ui); color: var(--ink-3); position: relative; }
+.tl2-lab span { position: absolute; left: 0; }
+.tl2-track { position: relative; height: 150px; touch-action: none; cursor: crosshair; }
+.tl2-track .bar { position: absolute; height: 3px; border-radius: 2px; background: var(--ink-3); opacity: 0.4; transition: opacity 200ms var(--ease-standard), background-color 200ms var(--ease-standard); }
+.tl2-track .bar.inw { opacity: 0.9; background: var(--ink-2); }
+.tl2-track .ring { position: absolute; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; border: 1.25px solid var(--ink-3); background: var(--bg); transition: border-color 200ms var(--ease-standard); }
+.tl2-track .ring.inw { border-color: var(--ink); }
+.tl2-track .ring.ec::after { content: ""; position: absolute; left: 50%; top: 50%; width: 3px; height: 3px; margin: -1.5px 0 0 -1.5px; border-radius: 50%; background: currentColor; color: var(--ink-3); }
+.tl2-track .ring.ec.inw::after { color: var(--ink); }
+.tl2-track .div { position: absolute; width: 1.5px; height: 14px; margin-left: -0.75px; background: var(--ink-3); opacity: 0.6; transition: opacity 200ms var(--ease-standard), background-color 200ms var(--ease-standard); }
+.tl2-track .div.inw { opacity: 1; background: var(--ink); }
+.tl2-track .ax { position: absolute; left: 0; right: 0; height: 1px; background: var(--ink-3); }
+.tl2-track .ct { position: absolute; width: 1px; background: var(--ink-3); }
+.tl2-track .al { position: absolute; transform: translateX(-50%); font: 400 11px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.tl2-track .al.first { transform: none; } .tl2-track .al.last { transform: translateX(-100%); }
+.tl2-win { position: absolute; top: 18px; height: 104px; border: 1px solid var(--accent); border-radius: 4px; background: var(--accent-weak); cursor: grab; }
+.tl2-win:active { cursor: grabbing; }
+.tl2-win .hd { position: absolute; top: 50%; width: 14px; height: 30px; margin-top: -15px; cursor: ew-resize; display: grid; place-items: center; }
+.tl2-win .hd::after { content: ""; width: 3px; height: 14px; border-radius: 2px; background: var(--accent); }
+.tl2-win .hd.l { left: -8px; } .tl2-win .hd.r { right: -8px; }
+.tl2-yrs { position: absolute; top: 0; transform: translateX(-50%); font: 600 12px var(--ui); color: var(--accent); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tl2-status { margin-top: 10px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+.tl2-lists { display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px 56px; margin-top: 30px; }
+@container site (min-width: 900px) { .tl2-lists { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } }
+.grp-h { font: 500 13px/1.3 var(--ui); color: var(--ink-3); margin: 0 0 10px; }
+.erow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 18px; padding: 12px 4px; text-decoration: none; cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.erow:hover { background: var(--hover); }
+.erow .e-n { font: 500 16px/1.4 var(--body); color: var(--ink); }
+.erow .e-r { grid-column: 1; font: 400 13.5px/1.45 var(--ui); color: var(--ink-3); }
+.erow .e-d { grid-row: 1; grid-column: 2; font: 500 14px/1.6 var(--ui); color: var(--ink); font-variant-numeric: tabular-nums; }
+.flipbox { position: relative; }
+
+.search-inline { margin-top: 26px; position: relative; }
+.si-box { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 14px 0 18px; border: 1px solid var(--rule-2); border-radius: 10px; background: var(--panel); color: var(--ink-3); transition: border-color 150ms var(--ease-standard); }
+.si-box:focus-within { border-color: var(--ink-3); }
+.si-box input { flex: 1; min-width: 0; border: 0; background: none; outline: none; font: 400 17px var(--ui); color: var(--ink); }
+.si-box input::placeholder { color: var(--ink-3); }
+.si-res { list-style: none; margin: 10px 0 0; padding: 0; }
+.si-res .sr { border-radius: 7px; }
+.reader { margin-top: 24px; }
+.reader .v { position: relative; margin: 0 0 10px; padding-left: 0; font: 300 19px/1.66 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); }
+.reader .v sup { font: 400 12px var(--ui); color: var(--ink-3); vertical-align: 0; margin-right: 8px; font-variant-numeric: tabular-nums; }
+.reader .j { color: var(--jesus); }
+.reader .rtext { transition: opacity 160ms var(--ease-standard); }
+.reader .rtext.fade { opacity: 0; }
+.reader .rnote { margin: 4px 0 14px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); min-height: 20px; }
+.desk-resume { margin-top: 26px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 22px 8px 24px; }
+.desk-resume .r-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.desk-resume .r-t { font: 400 25px/1.2 var(--head); color: var(--ink); }
+.desk-resume .r-p { margin-top: 4px; font: 400 13.5px/1.45 var(--ui); color: var(--ink-3); }
+.desk-resume .r-d { display: flex; align-items: center; gap: 12px; font: 400 13px var(--ui); color: var(--ink-3); white-space: nowrap; }
+.desk-resume .r-d::before { content: ""; width: 1px; height: 12px; background: var(--rule-2); }
+.desk-resume .reader { margin-top: 14px; }
+.works .erow .e-n { font-style: normal; }
+
+html.vt *, html.vt *::before, html.vt *::after { transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0ms !important; animation-delay: 0ms !important; transition-duration: 0ms !important; transition-delay: 0ms !important; }
+  .rv-pre { opacity: 1; transform: none; }
+}
 </style>
 
-<div class="wrap">
-<p class="small" style="margin-bottom:22px">Propuesta de pantalla para la portada, con contenido real de Doctrina</p>
-<h1>Portada de Doctrina</h1>
-<p class="lede">Hoy la portada es un marcador de posición: un título y una frase de ejemplo. Nunca se diseñó; las cuatro versiones que se probaron en la primera ronda no convencieron.</p>
-<p class="lede">Lo que se espera de quien llega: la mayoría aterrizará directo en una objeción o un versículo, por la búsqueda, un video o un enlace compartido. Quien entra por la portada está cerca de decidir si el sitio vale la pena, y necesita ver rápido qué es y que no toma partido. La portada también es el lugar natural de la lista de avisos por correo, que sirve para saber si hay interés real.</p>
-<p class="lede">Las tres versiones usan el texto real de la doctrina de la Eucaristía, la única publicada con sus cinco posturas. Probá cada una en ancho de escritorio y de celular.</p>
+<main class="doc">
+  <header class="doc-head">
+    <h1>Portada</h1>
+    <p class="lede">Cuatro portadas distintas, cada una entera y funcionando, hechas con el sistema de diseño de hoy.</p>
+    <p>Elegí una opción y recorré la portada dentro del marco: el árbol, la búsqueda (⌘K o el botón de la barra), el cambio de tema, las citas, las reglas y los selectores funcionan. «Vuelve» simula a alguien que ayer leyó Juan 6. Los enlaces a otras páginas no navegan: debajo del marco dice adónde llevarían.</p>
+  </header>
 
-<section class="opt" id="a">
-<h3>A. Una frase y las puertas</h3>
-<p class="say">Un título corto (ocho palabras, como sugería la crítica de la primera versión), una explicación de tres líneas, tres reglas del sitio en filas con línea fina y la lista de doctrinas como puertas. Es la portada más breve: cabe en una pantalla de celular y manda al lector a una doctrina enseguida.</p>
-<ul class="opt-meta"><li><b>Dónde va:</b> la ruta <code style="font:inherit">/es</code>, dentro del marco normal con la barra lateral</li><li><b>Cuesta:</b> poco; reutiliza las filas de línea fina del resto del sitio</li></ul>
-<div class="tabs" data-for="stage-a"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
-<div class="stage" id="stage-a">
-<div class="bar"><span class="logo">Doctrina</span><div class="field"><span>Buscar doctrinas, versículos, Padres, palabras</span><kbd>⌘K</kbd></div><span class="lang"><b>ES</b> &nbsp; EN</span></div>
-<div class="page">
-<h2 class="ph1" style="margin:0 0 14px">Qué cree cada tradición cristiana, y por qué</h2>
-<p class="dek">Doctrina muestra, doctrina por doctrina, lo que cada tradición enseña con sus propias palabras y las fuentes en que se apoya, cada una con su edición. No concluye: quien lee decide.</p>
-<div class="sec"><h3 class="sec-t">Cómo se estudia aquí</h3>
-<ul class="prin">
-<li><b>Con sus propias palabras</b><span>Cada tradición habla por sí misma, con sus documentos. Los Padres de la Iglesia no se asignan a ninguna.</span></li>
-<li><b>Cada cita, con su edición</b><span>Toda cita dice de qué edición viene. Lo que no está verificado se muestra como borrador.</span></li>
-<li><b>Las objeciones, a fondo</b><span>Cada postura recibe sus objeciones más fuertes y cada una tiene su respuesta completa.</span></li>
-</ul></div>
-<div class="sec"><h3 class="sec-t">Empezar por una doctrina</h3>
-<a class="door" href="#" onclick="return false"><span class="dn">La Eucaristía</span><span class="dq">¿Qué pasa con el pan y el vino en la Cena del Señor?</span><span class="dm">Cinco tradiciones, sus objeciones y los textos de los primeros cristianos</span></a></div>
-<div class="mail"><b>Avisame cuando haya más doctrinas</b><p class="small">Un correo cuando se publique una doctrina nueva. Nada más.</p><form data-mail><input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico"><button type="submit">Avisame</button></form></div>
-</div></div>
-</section>
+  <div class="ctl tex" role="toolbar" aria-label="Controles de la propuesta">
+    <div class="ctl-group"><span class="label" id="l-opt">Opción</span>
+      <div class="seg" id="c-opt" aria-labelledby="l-opt">
+        <button type="button" data-v="a" aria-pressed="true">A. El índice</button>
+        <button type="button" data-v="b" aria-pressed="false">B. Una pregunta</button>
+        <button type="button" data-v="c" aria-pressed="false">C. Dos mil años</button>
+        <button type="button" data-v="d" aria-pressed="false">D. La mesa de estudio</button>
+      </div>
+    </div>
+    <div class="ctl-group"><span class="label" id="l-dev">Pantalla</span>
+      <div class="seg" id="c-dev" aria-labelledby="l-dev">
+        <button type="button" data-v="desk" aria-pressed="true">Escritorio</button>
+        <button type="button" data-v="phone" aria-pressed="false">Teléfono</button>
+      </div>
+    </div>
+    <div class="ctl-group"><span class="label" id="l-who">Lector</span>
+      <div class="seg" id="c-who" aria-labelledby="l-who">
+        <button type="button" data-v="new" aria-pressed="true">Primera vez</button>
+        <button type="button" data-v="back" aria-pressed="false">Vuelve</button>
+      </div>
+    </div>
+    <button type="button" class="ctl-btn" id="c-replay">Repetir la entrada</button>
+  </div>
 
-<section class="opt" id="b">
-<h3>B. Empezar por una pregunta</h3>
-<p class="say">La portada muestra una doctrina de verdad en lugar de describir el sitio: la pregunta, lo que todas las tradiciones comparten y las cinco respuestas completas, en filas, sin recortar ninguna frase. Quien entra entiende qué es Doctrina leyéndolo. Una línea arriba dice qué es el sitio.</p>
-<ul class="opt-meta"><li><b>Dónde va:</b> la ruta <code style="font:inherit">/es</code></li><li><b>Cuesta:</b> mediano; reutiliza la fila de «Las cinco respuestas»; hay que decidir cuál doctrina da la cara cuando haya varias</li><li><b>Riesgo:</b> la portada elige una doctrina y eso puede parecer una elección de tema</li></ul>
-<div class="tabs" data-for="stage-b"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
-<div class="stage" id="stage-b">
-<div class="bar"><span class="logo">Doctrina</span><div class="field"><span>Buscar doctrinas, versículos, Padres, palabras</span><kbd>⌘K</kbd></div><span class="lang"><b>ES</b> &nbsp; EN</span></div>
-<div class="page">
-<p class="kick">Doctrina muestra qué cree cada tradición cristiana, y por qué. Empezá por una pregunta.</p>
-<h2 class="ph1" style="margin:0 0 14px;max-width:20ch">¿Qué pasa con el pan y el vino en la Cena del Señor?</h2>
-<p class="dek">Todas las tradiciones celebran la Cena que Jesús instituyó, la consideran un mandato suyo y afirman que en ella el creyente recibe a Cristo y sus beneficios. Discrepan en el modo de esa presencia y en qué le ocurre al pan y al vino.</p>
-<div class="sec"><h3 class="sec-t">Cada tradición, en sus propias palabras</h3>
-<ul class="ans">
-<li><span class="tn">Católica</span><div><p class="ts">El pan y el vino se convierten realmente en el cuerpo y la sangre de Cristo. Permanecen las apariencias; cambia la sustancia. La Iglesia llama a este cambio transubstanciación.</p><a class="tl" href="#" onclick="return false">Estudiar la postura católica</a></div></li>
-<li><span class="tn">Ortodoxa</span><div><p class="ts">El pan y el vino se transforman verdaderamente en el cuerpo y la sangre de Cristo. La Iglesia confiesa el hecho como misterio y no lo define con una teoría filosófica.</p></div></li>
-<li><span class="tn">Luterana</span><div><p class="ts">El verdadero cuerpo y la verdadera sangre de Cristo están realmente presentes «en, con y bajo» el pan y el vino, y se reciben con la boca. El pan sigue siendo pan.</p></div></li>
-<li><span class="tn">Reformada</span><div><p class="ts">Cristo está real pero espiritualmente presente para la fe de los creyentes. El pan y el vino no cambian; quien recibe con fe se alimenta de Cristo crucificado.</p></div></li>
-<li><span class="tn">Bautista</span><div><p class="ts">La Cena es un acto simbólico de obediencia: la iglesia recuerda la muerte del Redentor y anticipa su regreso. El pan y el vino son símbolos.</p></div></li>
-</ul></div>
-<div class="sec"><a class="door" href="#" onclick="return false"><span class="dn">Abrir la doctrina completa</span><span class="dq">Las objeciones de cada postura, los textos de los primeros cristianos y cómo se vive.</span></a></div>
-<div class="mail"><b>Avisame cuando haya más doctrinas</b><p class="small">Un correo cuando se publique una doctrina nueva. Nada más.</p><form data-mail><input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico"><button type="submit">Avisame</button></form></div>
-</div></div>
-</section>
+  <div class="optnote" aria-live="polite">
+    <div>
+      <div class="on-name" id="on-name"></div>
+      <div class="on-line" id="on-line"></div>
+    </div>
+    <div class="on-meta" id="on-meta"></div>
+  </div>
 
-<section class="opt" id="c">
-<div><h3>C. Entrar por lo más antiguo</h3>
-<p class="say">La portada abre con la regla de los veinte siglos, el elemento propio del sitio: cada marca es un texto que alguien escribió sobre la Eucaristía, de la Didaché a 2000. Tocá o pasá el mouse por una marca y dice quién es. Debajo, la misma entrada a la doctrina y las tres reglas. Es la que más se parece a lo que hace único a Doctrina; pide que el lector tenga curiosidad por la fecha.</p></div>
-<ul class="opt-meta"><li><b>Dónde va:</b> la ruta <code style="font:inherit">/es</code></li><li><b>Cuesta:</b> alto; reutiliza la regla viva de la página de una doctrina, con sus datos</li><li><b>Riesgo:</b> la regla muestra una sola doctrina; con varias hay que decidir cuál o mostrar todas</li></ul>
-<div class="tabs" data-for="stage-c"><button aria-pressed="true" data-w="desk">Escritorio</button><button aria-pressed="false" data-w="phone">Celular</button></div>
-<div class="stage" id="stage-c">
-<div class="bar"><span class="logo">Doctrina</span><div class="field"><span>Buscar doctrinas, versículos, Padres, palabras</span><kbd>⌘K</kbd></div><span class="lang"><b>ES</b> &nbsp; EN</span></div>
-<div class="page">
-<h2 class="ph1" style="margin:0 0 14px;max-width:18ch">Qué cree cada tradición, y desde cuándo</h2>
-<p class="dek">Cada marca es un texto sobre la Eucaristía, en orden de fecha. Desde los primeros cristianos hasta las confesiones de hoy, cada tradición lo lee a su manera.</p>
-<div class="ruler" id="ruler" role="group" aria-label="Textos sobre la Eucaristía, del año 50 al 2000"></div>
-<p class="rl-note" id="rl-note">Elegí una marca para ver el texto.</p>
-<div class="sec"><a class="door" href="#" onclick="return false"><span class="dn">La Eucaristía</span><span class="dq">¿Qué pasa con el pan y el vino en la Cena del Señor?</span><span class="dm">Cinco tradiciones, sus objeciones y los textos de los primeros cristianos</span></a></div>
-<div class="sec"><ul class="prin">
-<li><b>Con sus propias palabras</b><span>Cada tradición habla por sí misma, con sus documentos. Los Padres de la Iglesia no se asignan a ninguna.</span></li>
-<li><b>Cada cita, con su edición</b><span>Toda cita dice de qué edición viene. Lo que no está verificado se muestra como borrador.</span></li>
-</ul></div>
-<div class="mail"><b>Avisame cuando haya más doctrinas</b><p class="small">Un correo cuando se publique una doctrina nueva. Nada más.</p><form data-mail><input type="email" placeholder="tu@correo.com" aria-label="Correo electrónico"><button type="submit">Avisame</button></form></div>
-</div></div>
-</section>
+  <div class="stage">
+    <div class="frame tex" id="frame">
+      <div class="site" id="site" tabindex="-1" aria-label="Portada de ejemplo"></div>
+    </div>
+  </div>
+  <div class="linkline" id="linkline" aria-live="polite">&nbsp;</div>
 
-<div class="out">
-<h3>Lo que descarto</h3>
-<ul>
-<li><b>Un titular largo con la regla suelta al lado.</b> Era el defecto de la primera versión: cinco o seis líneas de título y una regla sin relación con él.</li>
-<li><b>Una tira de cinco columnas con frases cortadas.</b> Cortar la confesión de una tradición a mitad de frase es un problema de neutralidad; en B las respuestas van enteras.</li>
-<li><b>Declarar que una tradición es la mejor, o reseñas y sellos de revisión.</b> El sitio no concluye y desconfía de las insignias de «revisado por alguien de la tradición X».</li>
-<li><b>Lo que figura en la lista de «AI slop»</b> del proyecto: etiquetas en mayúsculas espaciadas, tarjetas con sombra idénticas, degradados, texturas de pergamino, cruces o catedrales de stock, un color por tradición, emoji.</li>
-<li><b>Un botón de precio o una oferta en la portada.</b> La validación del pago va en las páginas de doctrina, no en la entrada.</li>
-</ul></div>
+  <section class="cmp" aria-labelledby="h-cmp">
+    <h2 id="h-cmp">Las cuatro, una al lado de la otra</h2>
+    <p class="cmp-sub">De dónde viene cada una, cuánto cuesta construirla y qué le da a quien llega por primera vez y a quien vuelve.</p>
+    <ul class="cmp-list">
+      <li>
+        <div class="c-name">A. El índice<small>Árbol lateral: no. La portada ya es el índice.</small></div>
+        <dl>
+          <dt>De dónde viene</dt><dd>La estructura de «hub» de Our World in Data, que ya es el modelo de las páginas de doctrina: secciones con listas y números, profundidad sin peso (<i>analogs.md</i>). Y la costumbre de Sefaria de nombrar la edición bajo cada texto (<i>visual-references.md</i>, «Metadata that signals care»).</dd>
+          <dt>Qué cuesta</dt><dd>Poco. Todo existe: el encabezado con su entrada, las filas de lista, la regla del borde, la ventana de cita. Nuevo: la fila de doctrina y el bloque «Seguir donde dejaste» (lee lo que ya guarda el ⌘K). Dos bloques.</dd>
+          <dt>Primera vez</dt><dd>Entiende en una línea qué es y ve todo lo que hay, con números reales. No ve el producto funcionando hasta que entra a algo.</dd>
+          <dt>Vuelve</dt><dd>Una fila «Seguir donde dejaste» bajo el título. El resto ya lo conoce.</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="c-name">B. Una pregunta<small>Árbol lateral: sí, como en cualquier página.</small></div>
+        <dl>
+          <dt>De dónde viene</dt><dd>Los ensayos de Bartosz Ciechanowski: la figura viva está en la columna de lectura y el texto invita a moverla (<i>visual-references.md</i>, ref. 3). El cambio de tradición «Deslizar», la huella y la regla «Ola» son los de la página 02 aprobada.</dd>
+          <dt>Qué cuesta</dt><dd>Medio. Reusa tres piezas de 02, pero hay que separarlas de la página de doctrina para que acepten datos de otra fuente. Tres bloques.</dd>
+          <dt>Primera vez</dt><dd>Ve el producto antes que la explicación: una pregunta, cinco respuestas con su grado de autoridad, los primeros testigos con su fecha. Riesgo: puede creer que el sitio trata solo de la Eucaristía.</dd>
+          <dt>Vuelve</dt><dd>La misma pregunta cada vez. La fila para retomar va arriba de todo.</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="c-name">C. Dos mil años<small>Árbol lateral: no. La regla necesita el ancho.</small></div>
+        <dl>
+          <dt>De dónde viene</dt><dd>La regla de Stripe Press, que usa una regla como índice (<i>stripe-press-ruler.md</i>), y la opción C de las referencias v2, que ya proponía una regla manipulable como portada (<i>visual-references.md</i>). Los datos y la marca de los siete concilios ecuménicos salen de la línea de tiempo 08.</dd>
+          <dt>Qué cuesta</dt><dd>Alto. La regla de 2026 años con una ventana que se arrastra es nueva (la de 02 va del 1 al 800 y la de 08 se desplaza de costado). Las listas reusan FLIP. Cuatro o cinco bloques, con pruebas de arrastre en mouse y en táctil.</dd>
+          <dt>Primera vez</dt><dd>La impresión más fuerte y la más distinta de cualquier otro sitio cristiano. Explica la historia mejor que las doctrinas, que quedan más abajo.</dd>
+          <dt>Vuelve</dt><dd>Sirve para explorar. Para retomar, la misma fila de arriba.</dd>
+        </dl>
+      </li>
+      <li>
+        <div class="c-name">D. La mesa de estudio<small>Árbol lateral: sí.</small></div>
+        <dl>
+          <dt>De dónde viene</dt><dd>El lector tranquilo de YouVersion, una sola columna serif de unos 600 px (<i>niche.md</i>), y el «Seguir donde dejaste» y «Recientes» del ⌘K ya construido. La portada como escritorio: lo que estabas leyendo, abierto.</dd>
+          <dt>Qué cuesta</dt><dd>Medio. La búsqueda en la página usa el índice del ⌘K; el lector corto usa el texto y las letras rojas que ya existen. Nuevo: el selector de traducción de la portada y el bloque para retomar. Tres bloques.</dd>
+          <dt>Primera vez</dt><dd>La más útil y la menos memorable: un buscador, un pasaje y listas. Qué es Doctrina queda en una línea.</dd>
+          <dt>Vuelve</dt><dd>La mejor: el capítulo que leía, abierto en su versículo, con el texto a la vista.</dd>
+        </dl>
+      </li>
+    </ul>
+  </section>
 
-<div class="dec out">
-<h3>Qué hay que decidir</h3>
-<ol>
-<li><b>La forma:</b> A (frase y puertas), B (una doctrina de verdad) o C (la regla de los veinte siglos). Recomiendo A para el lanzamiento con pocas doctrinas y B como evolución cuando haya varias; C si se quiere que la portada ya sea la firma del sitio.</li>
-<li><b>El título:</b> «Qué cree cada tradición cristiana, y por qué» (A), la pregunta de la doctrina (B) o «…y desde cuándo» (C).</li>
-<li><b>La lista de correo:</b> si va en la portada y con qué texto. Hoy dice «Avisame cuando haya más doctrinas»; no promete nada más que un aviso.</li>
-<li><b>Si la portada lleva la barra lateral</b> (como las demás páginas) o va sola, sin marco.</li>
-</ol>
-</div>
-</div>
+  <section class="cmp" aria-labelledby="h-data">
+    <h2 id="h-data">Datos reales que usa</h2>
+    <ul class="plain">
+      <li>La pregunta, las cinco respuestas, sus grados de autoridad y los doce testigos de la Eucaristía, con sus obras, lugares y fechas: <i>src/content/pages/eucharist/doctrine.es.ts</i>. Las 33 marcas de la huella, del mismo archivo.</li>
+      <li>Trento, sesión XIII, capítulo 4, en la edición de López de Ayala (Madrid, 1785), p. 163: <i>src/content/registry/citations.ts</i> (T13c4) y <i>editions.ts</i>.</li>
+      <li>56 Padres, 41 concilios (siete marcados como ecuménicos), 18 herejías, 10 divisiones, 20 movimientos de la Reforma: <i>data/site/history.json</i> y <i>src/content/history-index.ts</i>.</li>
+      <li>133 obras de los Padres para leer completas, todas en ediciones inglesas de dominio público: carpetas de <i>data/corpus/fathers/</i>.</li>
+      <li>Cinco traducciones (RV1909, BSB, KJV, WEB, DRA) y Juan 6:53–56 de cada una, con las palabras de Jesús en rojo donde la edición las marca: <i>data/corpus/bibles/</i>. La Douay-Rheims numera como la Vulgata y no marca las palabras de Jesús en este pasaje.</li>
+      <li>Los textos de los índices de Historia y de la búsqueda («Seguir donde dejaste», «Recientes», los grupos): <i>src/content/ui-text/es.ts</i>.</li>
+      <li><b>No verificado:</b> las preguntas de la justificación, el bautismo, el papado y Sola Scriptura las escribí para esta propuesta, con la forma de la de la Eucaristía. Hay que fijarlas con la página de cada doctrina.</li>
+    </ul>
+  </section>
+
+  <section class="cmp" aria-labelledby="h-no">
+    <h2 id="h-no">Qué descarté</h2>
+    <div class="cols2">
+      <div>
+        <h3>De la portada vieja y de otras portadas</h3>
+        <ul class="plain">
+          <li>Un titular de 60 px que ocupaba cinco o seis líneas (crítica, punto 10). Acá el título es una palabra, o la pregunta real.</li>
+          <li>Las cinco confesiones en columnas recortadas a mitad de frase (crítica, punto 11): cortar las palabras de una tradición es un problema de neutralidad. En B cada respuesta se lee entera.</li>
+          <li>Una pregunta que rota sola cada pocos segundos: mueve el texto mientras alguien lee.</li>
+          <li>Contadores que suben de 0 a 56 al entrar: ruido, y el número no es la noticia.</li>
+          <li>Doctrinas grises o «en preparación»: la portada muestra solo lo que existe.</li>
+          <li>Un bloque «Sobre nosotros» o «Nuestra misión»: el sitio no habla de sí en primera persona ni concluye.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>La lista de AI slop (DECISIONS, «Design principles»)</h3>
+        <ul class="plain">
+          <li>Ningún héroe con degradé ni frase grande centrada de marketing.</li>
+          <li>Ningún mosaico de tarjetas con íconos en cuadrados de color; ninguna tarjeta fuera de «Doctrinas conectadas».</li>
+          <li>Nada de crema con terracota, dorado sobre azul, pergamino, catedrales, Biblias o manos de stock, cruces de adorno.</li>
+          <li>Ningún rótulo en mayúsculas espaciadas, ningún «Explorar» genérico, ningún emoji, ningún «→» pegado a un enlace, ningún dato unido con «·».</li>
+          <li>Ningún color por tradición, ninguna comilla gigante de adorno, ninguna columna paralela apretada en el teléfono.</li>
+          <li>Ninguna affordance muerta: el buscador busca, el formulario responde, el árbol se abre.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp" aria-labelledby="h-dec">
+    <h2 id="h-dec">Qué hay que decidir</h2>
+    <ol class="decide">
+      <li><span><b>Cuál de las cuatro</b>, o qué mezcla. Una posible: la cabecera y las listas de A, con la regla de C como segunda sección.</span></li>
+      <li><span><b>Si el árbol lateral se ve en la portada.</b> A y C dicen que no, B y D que sí.</span></li>
+      <li><span><b>Si la pregunta de B</b> es siempre la de la Eucaristía o la de la doctrina publicada más reciente.</span></li>
+      <li><span><b>Si el aviso por correo</b> (la pieza de validación de PROJECT) va en la portada. En las cuatro está igual, al pie.</span></li>
+      <li><span><b>Si «Cómo se hace Doctrina»</b> vive en la portada, como acá, o en una página propia con un enlace desde la portada.</span></li>
+      <li><span><b>Las preguntas de las otras cuatro doctrinas</b>, que hoy son borradores míos.</span></li>
+    </ol>
+  </section>
+</main>
 
 <script>
-(()=>{
-document.querySelectorAll(".tabs[data-for]").forEach(t=>t.addEventListener("click",ev=>{
-  const b=ev.target.closest("button");if(!b)return;
-  t.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
-  document.getElementById(t.dataset.for).classList.toggle("phone",b.dataset.w==="phone");
-}));
-document.querySelectorAll("form[data-mail]").forEach(f=>f.addEventListener("submit",ev=>{
-  ev.preventDefault();
-  const done=document.createElement("p");done.className="ok";done.textContent="Listo. Te escribimos cuando se publique la próxima doctrina.";
-  f.replaceWith(done);
-}));
-const M=[[50,120,"La Didaché"],[107,110,"Ignacio de Antioquía"],[150,0,"Justino Mártir, Primera Apología"],[180,0,"Ireneo de Lyon"],[207,0,"Tertuliano, Contra Marción"],[350,390,"Catequesis mistagógicas (Jerusalén)"],[387,0,"Ambrosio de Milán, Sobre los misterios"],[396,397,"Agustín de Hipona, Sobre la doctrina cristiana"],[403,0,"Juan Crisóstomo, Homilías sobre Hebreos"],[447,0,"Teodoreto de Ciro, Eranistes"],[743,0,"Juan Damasceno, Exposición exacta de la fe ortodoxa"],[787,0,"II Concilio de Nicea"],[831,0,"Pascasio Radberto, Sobre el cuerpo y la sangre del Señor"],[1059,0,"Berengario de Tours"],[1215,0,"IV Concilio de Letrán"],[1272,1273,"Tomás de Aquino"],[1379,0,"John Wycliffe"],[1672,0,"Sínodo de Jerusalén (Confesión de Dositeo)"],[1677,0,"Segunda Confesión Bautista de Londres"],[1982,0,"Bautismo, Eucaristía y Ministerio (Lima)"],[2000,0,"Fe y Mensaje Bautistas 2000"]];
-const A=0,Z=2026,X=y=>(y-A)/(Z-A)*100;
-const el=document.getElementById("ruler"),note=document.getElementById("rl-note");
-let h='<span class="rl-ax"></span>';
-[0,500,1000,1500,2026].forEach((t,i,a)=>{h+=`<span class="rl-tk" style="left:${X(t)}%"></span><span class="rl-tn${i===0?" e0":i===a.length-1?" e1":""}" style="left:${X(t)}%">${t===0?"año 1":t}</span>`});
-M.forEach((m,i)=>{h+=`<button class="rl-m" type="button" data-i="${i}" style="left:${X(m[0])}%" aria-label="${m[2]}, ${m[1]?m[0]+"–"+m[1]:m[0]}"></button>`});
-el.innerHTML=h;
-function show(i){
-  el.querySelectorAll(".rl-m").forEach(b=>b.classList.toggle("on",+b.dataset.i===i));
-  const m=M[i];note.textContent=`${m[2]}, ${m[1]?m[0]+"–"+m[1]:m[0]}`;
+(function () {
+'use strict';
+const FATHERS=[["clement-of-rome", "Clemente de Roma", null, 99, true, "obispo de Roma", "person"], ["didache", "Didajé (Enseñanza de los Doce Apóstoles)", null, 100, true, "manual eclesial anónimo", "work"], ["ignatius-of-antioch", "Ignacio de Antioquía", null, 108, true, "obispo de Antioquía", "person"], ["papias-of-hierapolis", "Papías de Hierápolis", 70, 130, true, "obispo de Hierápolis (Frigia)", "person"], ["epistle-of-barnabas", "Epístola de Bernabé", null, 130, true, "tratado anónimo atribuido a Bernabé", "work"], ["shepherd-of-hermas", "El Pastor de Hermas", null, 140, true, "obra apocalíptica y moral escrita en Roma", "work"], ["epistle-to-diognetus", "Carta a Diogneto", null, 150, true, "apología anónima", "work"], ["polycarp-of-smyrna", "Policarpo de Esmirna", 69, 155, true, "obispo de Esmirna", "person"], ["justin-martyr", "Justino Mártir", 100, 165, true, "filósofo laico y apologista", "person"], ["melito-of-sardis", "Melitón de Sardes", null, 180, true, "obispo de Sardes", "person"], ["theophilus-of-antioch", "Teófilo de Antioquía", null, 184, true, "obispo de Antioquía", "person"], ["irenaeus-of-lyon", "Ireneo de Lyon", 130, 202, true, "obispo de Lyon", "person"], ["clement-of-alexandria", "Clemente de Alejandría", 150, 215, true, "maestro cristiano en Alejandría", "person"], ["tertullian", "Tertuliano", 155, 220, true, "teólogo y apologista de Cartago", "person"], ["hippolytus-of-rome", "Hipólito de Roma", 170, 235, true, "presbítero de Roma", "person"], ["origen", "Orígenes", 185, 253, true, "maestro, exégeta y presbítero", "person"], ["cyprian-of-carthage", "Cipriano de Cartago", 210, 258, true, "obispo de Cartago", "person"], ["novatian", "Novaciano", 200, 258, true, "presbítero de Roma y obispo rival", "person"], ["dionysius-of-alexandria", "Dionisio de Alejandría", 190, 264, true, "obispo de Alejandría", "person"], ["methodius-of-olympus", "Metodio de Olimpo", null, 311, true, "obispo y escritor (Licia)", "person"], ["lactantius", "Lactancio", 250, 325, true, "retórico y apologista", "person"], ["eusebius-of-caesarea", "Eusebio de Cesarea", 263, 339, true, "obispo de Cesarea e historiador", "person"], ["aphrahat", "Afraates, el Sabio Persa", 270, 345, true, "asceta y escritor siríaco en el Imperio persa", "person"], ["hilary-of-poitiers", "Hilario de Poitiers", 310, 367, true, "obispo de Poitiers", "person"], ["athanasius-of-alexandria", "Atanasio de Alejandría", 296, 373, true, "obispo (patriarca) de Alejandría", "person"], ["ephrem-the-syrian", "Efrén de Siria", 306, 373, true, "diácono, poeta y teólogo", "person"], ["basil-of-caesarea", "Basilio de Cesarea (Basilio Magno)", 330, 379, true, "obispo de Cesarea de Capadocia", "person"], ["cyril-of-jerusalem", "Cirilo de Jerusalén", 313, 386, true, "obispo de Jerusalén", "person"], ["gregory-of-nazianzus", "Gregorio Nacianceno", 329, 390, true, "arzobispo de Constantinopla (379–381)", "person"], ["gregory-of-nyssa", "Gregorio de Nisa", 335, 395, true, "obispo de Nisa", "person"], ["ambrose-of-milan", "Ambrosio de Milán", 339, 397, true, "obispo de Milán", "person"], ["optatus-of-milevis", "Optato de Milevi", null, 397, true, "obispo de Milevi", "person"], ["didymus-the-blind", "Dídimo el Ciego", 313, 398, true, "maestro y exégeta en Alejandría", "person"], ["epiphanius-of-salamis", "Epifanio de Salamina", 315, 403, true, "obispo de Salamina (Chipre)", "person"], ["john-chrysostom", "Juan Crisóstomo", 347, 407, true, "arzobispo de Constantinopla (398–404)", "person"], ["rufinus-of-aquileia", "Rufino de Aquilea", 345, 411, true, "monje, presbítero y traductor", "person"], ["jerome", "Jerónimo de Estridón", 347, 420, true, "presbítero, traductor y exégeta", "person"], ["augustine-of-hippo", "Agustín de Hipona", 354, 430, false, "obispo de Hipona", "person"], ["john-cassian", "Juan Casiano", 360, 435, true, "monje y fundador monástico en Marsella", "person"], ["cyril-of-alexandria", "Cirilo de Alejandría", 376, 444, true, "patriarca de Alejandría (412–444)", "person"], ["vincent-of-lerins", "Vicente de Lérins", null, 445, true, "monje de Lérins", "person"], ["peter-chrysologus", "Pedro Crisólogo", 380, 450, true, "obispo de Ravena", "person"], ["prosper-of-aquitaine", "Próspero de Aquitania", 390, 455, true, "teólogo laico y cronista", "person"], ["theodoret-of-cyrrhus", "Teodoreto de Ciro", 393, 458, true, "obispo de Ciro (Siria)", "person"], ["leo-the-great", "León Magno", 400, 461, true, "obispo de Roma (440–461)", "person"], ["pseudo-dionysius", "Pseudo-Dionisio Areopagita (Corpus Areopagiticum)", null, 500, true, "corpus anónimo atribuido a Dionisio Areopagita", "work"], ["caesarius-of-arles", "Cesáreo de Arlés", 470, 542, true, "obispo de Arlés", "person"], ["gregory-the-great", "Gregorio Magno", 540, 604, true, "obispo de Roma (590–604)", "person"], ["isidore-of-seville", "Isidoro de Sevilla", 560, 636, true, "obispo de Sevilla", "person"], ["sophronius-of-jerusalem", "Sofronio de Jerusalén", 560, 638, true, "patriarca de Jerusalén (634–638)", "person"], ["maximus-the-confessor", "Máximo el Confesor", 580, 662, true, "monje y teólogo", "person"], ["isaac-of-nineveh", "Isaac de Nínive (Isaac el Sirio)", 613, 700, true, "obispo de Nínive y monje de la Iglesia del Oriente", "person"], ["bede", "Beda el Venerable", 673, 735, true, "monje y presbítero de Jarrow", "person"], ["andrew-of-crete", "Andrés de Creta", 660, 740, true, "arzobispo de Gortina (Creta) e himnógrafo", "person"], ["germanus-of-constantinople", "Germán I de Constantinopla", 634, 740, true, "patriarca de Constantinopla (715–730)", "person"], ["john-of-damascus", "Juan Damasceno", 675, 749, true, "monje y presbítero de Mar Saba", "person"]];
+const COUNCILS=[["jerusalem-49", "Concilio de Jerusalén", 49, null, "local", "Jerusalén"], ["antioch-268", "Sínodo de Antioquía contra Pablo de Samosata", 268, null, "local", "Antioquía de Siria"], ["elvira", "Sínodo de Elvira", 306, null, "local", "Iliberris (Elvira), cerca de la actual Granada, Hispania"], ["arles-314", "Concilio de Arlés", 314, null, "local", "Arlés, Galia"], ["nicaea-1", "Primer Concilio de Nicea", 325, null, "seven", "Nicea, Bitinia (actual İznik, Turquía)"], ["constantinople-1", "Primer Concilio de Constantinopla", 381, null, "seven", "Constantinopla"], ["rome-382", "Sínodo de Roma bajo Dámaso", 382, null, "local", "Roma"], ["hippo-393", "Sínodo de Hipona", 393, null, "local", "Hipona (Hippo Regius), norte de África (actual Annaba, Argelia)"], ["carthage-397", "Tercer Concilio de Cartago", 397, null, "local", "Cartago, norte de África"], ["carthage-418", "Concilio de Cartago contra el pelagianismo", 418, null, "local", "Cartago, norte de África"], ["carthage-419", "Concilio de Cartago de 419", 419, null, "local", "Cartago, norte de África"], ["ephesus-431", "Concilio de Éfeso", 431, null, "seven", "Éfeso, Asia Menor"], ["ephesus-449", "Segundo Concilio de Éfeso (“Latrocinio de Éfeso”)", 449, null, "disputed", "Éfeso, Asia Menor"], ["chalcedon-451", "Concilio de Calcedonia", 451, null, "seven", "Calcedonia, frente a Constantinopla (actual Kadıköy, Estambul)"], ["orange-529", "Segundo Concilio de Orange", 529, null, "local", "Orange (Arausio), Galia"], ["constantinople-2", "Segundo Concilio de Constantinopla", 553, null, "seven", "Constantinopla"], ["toledo-3", "Tercer Concilio de Toledo", 589, null, "local", "Toledo, Hispania visigoda"], ["lateran-649", "Sínodo de Letrán de 649", 649, null, "local", "Basílica de Letrán, Roma"], ["constantinople-3", "Tercer Concilio de Constantinopla", 680, 681, "seven", "Constantinopla (sala abovedada o “Trullo” del palacio imperial)"], ["trullo-692", "Concilio Quinisexto o de Trullo", 692, null, "disputed", "Constantinopla (sala abovedada o “Trullo” del palacio imperial)"], ["nicaea-2", "Segundo Concilio de Nicea", 787, null, "seven", "Nicea, Bitinia"], ["frankfurt-794", "Concilio de Fráncfort", 794, null, "local", "Fráncfort del Meno, reino franco"], ["constantinople-869", "Cuarto Concilio de Constantinopla (869–870)", 869, 870, "disputed", "Constantinopla (Santa Sofía)"], ["constantinople-879", "Concilio de Constantinopla (879–880)", 879, 880, "disputed", "Constantinopla (Santa Sofía)"], ["lateran-1", "Primer Concilio de Letrán", 1123, null, "catholic-general", "Palacio de Letrán, Roma"], ["lateran-2", "Segundo Concilio de Letrán", 1139, null, "catholic-general", "Palacio de Letrán, Roma"], ["lateran-3", "Tercer Concilio de Letrán", 1179, null, "catholic-general", "Palacio de Letrán, Roma"], ["lateran-4", "Cuarto Concilio de Letrán", 1215, null, "catholic-general", "Palacio de Letrán, Roma"], ["lyon-1", "Primer Concilio de Lyon", 1245, null, "catholic-general", "Lyon, Francia"], ["lyon-2", "Segundo Concilio de Lyon", 1274, null, "catholic-general", "Lyon, Francia"], ["vienne", "Concilio de Vienne", 1311, 1312, "catholic-general", "Vienne, Francia"], ["pisa-1409", "Concilio de Pisa", 1409, null, "disputed", "Pisa, Italia"], ["constance", "Concilio de Constanza", 1414, 1418, "catholic-general", "Constanza, Sacro Imperio (actual Alemania)"], ["basel", "Concilio de Basilea", 1431, 1449, "disputed", "Basilea, Suiza"], ["florence", "Concilio de Basilea-Ferrara-Florencia", 1438, 1445, "catholic-general", "Ferrara (1438), Florencia (1439–1443) y Roma (1443–1445); antes, Basilea (desde 1431)"], ["lateran-5", "Quinto Concilio de Letrán", 1512, 1517, "catholic-general", "Palacio de Letrán, Roma"], ["trent", "Concilio de Trento", 1545, 1563, "catholic-general", "Trento, norte de Italia (con un breve traslado a Bolonia, 1547–1549)"], ["dort", "Sínodo de Dordrecht (Dort)", 1618, 1619, "local", "Dordrecht, Provincias Unidas (Países Bajos)"], ["jerusalem-1672", "Sínodo de Jerusalén (1672)", 1672, null, "local", "Jerusalén y Belén (Iglesia de la Natividad)"], ["vatican-1", "Concilio Vaticano I", 1869, 1870, "catholic-general", "Basílica de San Pedro, Roma"], ["vatican-2", "Concilio Vaticano II", 1962, 1965, "catholic-general", "Basílica de San Pedro, Roma"]];
+const DIVISIONS=[["church-of-the-east", "Separación de la Iglesia del Oriente", 431, 486], ["chalcedon-451", "Cisma calcedoniano (Ortodoxia oriental)", 451, null], ["photian-schism", "Cisma de Focio", 863, 867], ["east-west-1054", "Cisma de Oriente y Occidente", 1054, null], ["western-schism", "Cisma de Occidente", 1378, 1417], ["hussites", "Movimiento husita y Unidad de los Hermanos", 1415, 1457], ["reformation-1517", "Reforma protestante", 1517, 1555], ["radical-reformation-1525", "Reforma radical (anabaptistas)", 1525, null], ["english-reformation-1534", "Reforma inglesa", 1534, 1563], ["old-catholics-1870", "Iglesias veterocatólicas", 1870, 1889]];
+const FP=[[50, 120, "La Didaché"], [107, 110, "Ignacio de Antioquía"], [150, null, "Justino Mártir, Primera Apología"], [155, null, "Justino Mártir"], [180, null, "Ireneo de Lyon"], [207, null, "Tertuliano, Contra Marción"], [350, 390, "Catequesis mistagógicas (Jerusalén)"], [387, null, "Ambrosio de Milán, Sobre los misterios"], [390, null, "Ambrosio de Milán"], [396, 397, "Agustín de Hipona, Sobre la doctrina cristiana"], [403, null, "Juan Crisóstomo, Homilías sobre Hebreos"], [447, null, "Teodoreto de Ciro, Eranistes"], [743, null, "Juan Damasceno, Exposición exacta de la fe ortodoxa"], [787, null, "II Concilio de Nicea"], [831, null, "Pascasio Radberto, Sobre el cuerpo y la sangre del Señor"], [844, null, "Ratramno de Corbie le responde"], [1059, null, "Berengario de Tours"], [1215, null, "IV Concilio de Letrán"], [1272, 1273, "Tomás de Aquino"], [1379, null, "John Wycliffe"], [1439, null, "Concilio de Florencia"], [1524, 1525, "La visión memorial de Zwinglio"], [1529, null, "Coloquio de Marburgo"], [1530, null, "Confesión de Augsburgo"], [1536, null, "Calvino, Institución de la religión cristiana"], [1549, null, "Consenso de Zúrich"], [1551, null, "Concilio de Trento"], [1577, null, "Fórmula de Concordia"], [1647, null, "Confesión de Westminster"], [1672, null, "Sínodo de Jerusalén (Confesión de Dositeo)"], [1677, null, "Segunda Confesión Bautista de Londres"], [1982, null, "Bautismo, Eucaristía y Ministerio (Lima)"], [2000, null, "Fe y Mensaje Bautistas 2000"]];
+const WITNESSES=[["ew-sacrifice", "didache", "Anónimo", "Didaché", "14.1–3", 50, 120, "Cada día del Señor reuníos, partid el pan y dad gracias, después de haber confesado vuestras transgresiones, para que vuestro sacrificio sea puro. [...] Porque esto es lo que dijo el Señor: En todo lugar y tiempo ofrecedme un sacrificio puro.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 7 (Roberts y Donaldson), 1885."], ["ew-flesh", "ignatius-of-antioch", "Ignacio de Antioquía", "Carta a los Esmirniotas", "7.1", 107, 110, "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.", "Traducción al español de Doctrina, hecha desde el texto griego de la edición de Lake (First1KGreek) y cotejada con la traducción inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885."], ["ew-not-common-bread", "justin-martyr", "Justino Mártir", "Primera Apología", "66", 150, 155, "Porque no tomamos estas cosas como pan común ni bebida común; sino que, así como Jesucristo nuestro Salvador, hecho carne por la Palabra de Dios, tuvo carne y sangre para nuestra salvación, así también se nos ha enseñado que el alimento sobre el que se ha dado gracias por la oración de su palabra, y del cual nuestra sangre y nuestra carne se nutren por transformación, es la carne y la sangre de aquel Jesús que se hizo carne.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885."], ["ew-malachi-offering", "justin-martyr", "Justino Mártir", "Diálogo con Trifón", "41", 155, 160, "Habla, pues, de aquellos gentiles, es decir, de nosotros, que en todo lugar le ofrecemos sacrificios, esto es, el pan de la Eucaristía y también la copa de la Eucaristía, afirmando que nosotros glorificamos su nombre y que vosotros lo profanáis.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 1 (Roberts y Donaldson), 1885."], ["ew-two-realities", "irenaeus-of-lyon", "Ireneo de Lyon", "Contra las herejías", "IV.18.5", 180, null, "Porque así como el pan, que proviene de la tierra, al recibir la invocación de Dios ya no es pan común, sino Eucaristía, compuesta de dos realidades, terrena y celestial, así también nuestros cuerpos, al recibir la Eucaristía, ya no son corruptibles, pues tienen la esperanza de la resurrección para siempre.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 1 (Roberts y Rambaut), 1885."], ["ew-figure", "tertullian", "Tertuliano", "Contra Marción", "IV.40", 207, 208, "Luego, tomando el pan y dándolo a sus discípulos, lo hizo su propio cuerpo diciendo: “Esto es mi cuerpo”, es decir, la figura de mi cuerpo. Pero no habría podido haber figura si antes no hubiera habido un cuerpo verdadero.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 3 (Holmes), 1885."], ["ew-epiclesis-change", "cyril-of-jerusalem", "Cirilo de Jerusalén (atribuido)", "Catequesis mistagógicas", "5.7", 350, 390, "Después, habiéndonos santificado con estos himnos espirituales, suplicamos al Dios misericordioso que envíe su Espíritu Santo sobre los dones presentes, para que haga del pan el cuerpo de Cristo y del vino la sangre de Cristo; porque todo lo que el Espíritu Santo toca queda santificado y cambiado.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF2 vol. 7 (Gifford), 1890."], ["ew-word-changes-nature", "ambrose-of-milan", "Ambrosio de Milán", "Sobre los misterios", "9.52", 387, 391, "Si la palabra de Elías tuvo poder para hacer bajar fuego del cielo, ¿no tendrá la palabra de Cristo poder para cambiar la naturaleza de los elementos? [...] La palabra de Cristo, que pudo hacer de la nada lo que no existía, ¿no podrá cambiar las cosas que ya existen en lo que no eran?", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF2 vol. 10 (de Romestin), 1890."], ["ew-augustine-figure", "augustine-of-hippo", "Agustín de Hipona", "Sobre la doctrina cristiana", "III.16.24", 396, 397, "“Si no comiereis la carne del Hijo del hombre y bebiereis su sangre, no tendréis vida en vosotros”, dice Cristo. Esto parece mandar un crimen o una maldad; es, por tanto, una figura, que manda que participemos de los padecimientos del Señor y que guardemos un recuerdo dulce y provechoso de que su carne fue herida y crucificada por nosotros.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF1 vol. 2 (Shaw), 1890."], ["ew-one-sacrifice-remembrance", "john-chrysostom", "Juan Crisóstomo", "Homilías sobre Hebreos", "homilía 17.6", 403, 404, "¿Qué, pues? ¿No ofrecemos cada día? Ofrecemos, sí, pero haciendo memoria de su muerte, y esta [memoria] es una y no muchas. [...] Porque ofrecemos siempre lo mismo, no hoy una oveja y mañana otra, sino siempre lo mismo, de modo que el sacrificio es uno. [...] No es otro sacrificio, como el del sumo sacerdote, sino que ofrecemos siempre el mismo, o más bien hacemos memoria de un sacrificio.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF1 vol. 14 (Gardiner), 1890."], ["ew-symbols-remain", "theodoret-of-cyrrhus", "Teodoreto de Ciro", "Eranistes (Diálogos)", "diálogo II", 447, null, "Porque aun después de la consagración los símbolos místicos no quedan privados de su propia naturaleza; permanecen en su sustancia, figura y forma anteriores; son visibles y tangibles como antes. Pero se los considera como lo que han llegado a ser, se cree que lo son y se los adora como lo que se cree que son.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF2 vol. 3 (Jackson), 1890."], ["ew-not-a-figure", "john-of-damascus", "Juan Damasceno", "Exposición exacta de la fe ortodoxa", "IV.13", 743, null, "El pan y el vino no son meras figuras del cuerpo y la sangre de Cristo (¡Dios no lo permita!), sino el cuerpo mismo deificado del Señor; porque el Señor dijo: “Esto es mi cuerpo”, no “esto es figura de mi cuerpo”; y “mi sangre”, no “figura de mi sangre”.", "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: NPNF2 vol. 9 (Salmond), 1890."]];
+
+const DOCTRINES = [
+  { id: "eucharist", name: "La Eucaristía", q: "¿Qué pasa con el pan y el vino en la Cena del Señor?", href: "/es/doctrinas/eucaristia" },
+  { id: "justification", name: "La justificación", q: "¿Cómo es declarado justo el pecador ante Dios?", href: "/es/doctrinas/justificacion" },
+  { id: "baptism", name: "El bautismo", q: "¿Qué hace el bautismo, y a quién se le da?", href: "/es/doctrinas/bautismo" },
+  { id: "papacy", name: "El papado", q: "¿Tiene el obispo de Roma autoridad sobre toda la Iglesia?", href: "/es/doctrinas/papado" },
+  { id: "sola-scriptura", name: "Sola Scriptura", q: "¿Es la Escritura la única regla infalible de fe?", href: "/es/doctrinas/sola-scriptura" },
+];
+const TRADS = [
+  { slug: "catolica", tab: "Católica", adj: "católica" },
+  { slug: "ortodoxa", tab: "Ortodoxa", adj: "ortodoxa" },
+  { slug: "luterana", tab: "Luterana", adj: "luterana" },
+  { slug: "reformada", tab: "Reformada", adj: "reformada" },
+  { slug: "bautista", tab: "Bautista", adj: "bautista" },
+  { slug: "pentecostal", tab: "Pentecostal", adj: "pentecostal" },
+];
+const ANSWERS = [
+  { t: 0, name: "Católica", grade: "Dogma", basis: "definido en Trento (1551)", text: "El pan y el vino se convierten realmente en el cuerpo y la sangre de Cristo. Permanecen las apariencias; cambia la sustancia. La Iglesia llama a este cambio transubstanciación." },
+  { t: 1, name: "Ortodoxa", grade: "Fe unánime de la Iglesia", basis: "en la liturgia, los Padres y los sínodos", text: "El pan y el vino se transforman verdaderamente en el cuerpo y la sangre de Cristo. La Iglesia confiesa el hecho como misterio y no lo define con una teoría filosófica." },
+  { t: 2, name: "Luterana", grade: "Dogma confesional", basis: "Confesión de Augsburgo, art. X (1530)", text: "El verdadero cuerpo y la verdadera sangre de Cristo están realmente presentes «en, con y bajo» el pan y el vino, y se reciben con la boca. El pan sigue siendo pan." },
+  { t: 3, name: "Reformada", grade: "Confesional", basis: "Confesión de Westminster 29.7 (1647)", text: "Cristo está real pero espiritualmente presente para la fe de los creyentes. El pan y el vino no cambian; quien recibe con fe se alimenta de Cristo crucificado." },
+  { t: 4, name: "Bautista", grade: "Confesional", basis: "Fe y Mensaje Bautistas, art. VII (2000)", text: "La Cena es un acto simbólico de obediencia: la iglesia recuerda la muerte del Redentor y anticipa su regreso. El pan y el vino son símbolos." },
+];
+const COMMON = "Todas las tradiciones celebran la Cena que Jesús instituyó, la consideran un mandato suyo y afirman que en ella el creyente recibe a Cristo y sus beneficios. Discrepan en el modo de esa presencia y en qué le ocurre al pan y al vino.";
+const OBJECTIONS = [
+  ["Si Cristo se ofreció «una vez para siempre», la Misa no puede ser un sacrificio", "eucaristia", "Un solo sacrificio, una sola vez"],
+  ["Pablo lo sigue llamando «pan»: lo consagrado sigue siendo pan", "eucaristia", "Lo consagrado sigue siendo pan"],
+  ["Cristo dijo «Tomad, comed»: guardar, exponer y adorar la hostia va más allá de lo que mandó", "eucaristia", "Guardar y adorar la hostia"],
+  ["Cristo dijo «Bebed de ella todos»: negar el cáliz a los laicos cambia lo que él instituyó", "eucaristia", "El cáliz y los laicos"],
+  ["Misas privadas y misas por los difuntos: la Cena convertida en una obra que vale por sí sola", "eucaristia", "Misas privadas y por los difuntos"],
+  ["Los dones se consagran por la invocación del Espíritu Santo, no solo por las palabras de Cristo", "eucaristia", "La invocación del Espíritu Santo"],
+  ["Durante mil años se consagró con pan fermentado: el ázimo es una innovación latina", "eucaristia", "El pan ázimo"],
+  ["«Los sacramentos no dan la gracia por el solo rito realizado: sin la fe no aprovechan»", "bautismo", "El sacramento y la fe"],
+  ["«Solo un ministro de la Palabra legítimamente ordenado puede bautizar»", "bautismo", "Quién puede bautizar"],
+  ["«Lo que queda en el bautizado es verdadero pecado»", "bautismo", "El pecado que queda tras el bautismo"],
+  ["«Rociar o derramar agua no es el bautismo apostólico: el bautismo es por tres inmersiones»", "bautismo", "Rociar o sumergir"],
+  ["«Solo es bautismo el de la Iglesia ortodoxa: el de los herejes no santifica ni perdona los pecados»", "bautismo", "El bautismo de los herejes"],
+];
+const CITES = {
+  ign: { who: "Ignacio de Antioquía", work: "Carta a los Esmirniotas", loc: "7.1", y: 107, y2: 110, circa: true, span: [1, 800], href: "/es/historia/obras/ignatius-smyrnaeans#7.1",
+    q: "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó." },
+  trento: { who: "Concilio de Trento", work: "sesión XIII, capítulo 4", loc: "", y: 1551, span: [1, 2026], href: "lector:Trento, sesión XIII, capítulo 4",
+    q: "Mas, por quanto dixo Jesu-Cristo nuestro Redentor, que era verdaderamente su cuerpo lo que ofrecia bajo la especie de pan; ha creido por lo mismo perpetuamente la Iglesia de Dios, y lo mismo declara ahora de nuevo este mismo santo Concilio, que por la consagracion del pan y del vino, se convierte toda la substancia del pan en la substancia del cuerpo de nuestro señor Jesu-Cristo, y toda la substancia del vino en la substancia de su sangre, cuya conversion ha llamado oportuna, y propiamente Transubstanciacion la santa Iglesia Católica." },
+};
+WITNESSES.forEach((w, i) => {
+  CITES["w" + i] = { who: w[2], work: w[3], loc: w[4], y: w[5], y2: w[6], circa: true, span: [1, 800], q: w[7], href: "/es/doctrinas/eucaristia/primeros-cristianos#" + w[0] };
+});
+const OT = ["Génesis", "Éxodo", "Levítico", "Números", "Deuteronomio", "Josué", "Jueces", "Rut", "1 Samuel", "2 Samuel", "1 Reyes", "2 Reyes", "1 Crónicas", "2 Crónicas", "Esdras", "Nehemías", "Ester", "Job", "Salmos", "Proverbios", "Eclesiastés", "Cantares", "Isaías", "Jeremías", "Lamentaciones", "Ezequiel", "Daniel", "Oseas", "Joel", "Amós", "Abdías", "Jonás", "Miqueas", "Nahúm", "Habacuc", "Sofonías", "Hageo", "Zacarías", "Malaquías"];
+const NT = ["Mateo", "Marcos", "Lucas", "Juan", "Hechos", "Romanos", "1 Corintios", "2 Corintios", "Gálatas", "Efesios", "Filipenses", "Colosenses", "1 Tesalonicenses", "2 Tesalonicenses", "1 Timoteo", "2 Timoteo", "Tito", "Filemón", "Hebreos", "Santiago", "1 Pedro", "2 Pedro", "1 Juan", "2 Juan", "3 Juan", "Judas", "Apocalipsis"];
+const CHAPTERS = [50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29, 36, 10, 13, 10, 42, 150, 31, 12, 8, 66, 52, 5, 48, 12, 14, 3, 9, 1, 4, 7, 3, 3, 3, 2, 14, 4, 28, 16, 24, 21, 28, 16, 16, 13, 6, 6, 4, 4, 5, 3, 6, 4, 3, 1, 13, 5, 5, 3, 5, 1, 1, 1, 22];
+const DEUT = ["Tobías", "Judit", "Sabiduría", "Eclesiástico", "Baruc", "1 Macabeos", "2 Macabeos"];
+const EDITIONS = [
+  { id: "rv1909", ab: "RV1909", name: "Reina-Valera 1909", note: "Reina-Valera 1909. Dominio público." },
+  { id: "bsb", ab: "BSB", name: "Berean Standard Bible", note: "Berean Standard Bible. Dominio público desde 2023." },
+  { id: "kjv", ab: "KJV", name: "King James Version", note: "King James Version, texto estándar de 1769." },
+  { id: "web", ab: "WEB", name: "World English Bible, Catholic edition", note: "World English Bible, Catholic edition. Dominio público." },
+  { id: "dra", ab: "DRA", name: "Douay-Rheims", note: "Douay-Rheims. Numera como la Vulgata: estos versículos son Juan 6:54–57. Esta edición no marca las palabras de Jesús." },
+];
+const JOHN6 = {
+  rv1909: [[53, "Y Jesús les dijo: ", "De cierto, de cierto os digo: Si no comiereis la carne del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros."], [54, "", "El que come mi carne y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el día postrero."], [55, "", "Porque mi carne es verdadera comida, y mi sangre es verdadera bebida."], [56, "", "El que come mi carne y bebe mi sangre, en mí permanece, y yo en él."]],
+  bsb: [[53, "So Jesus said to them, “", "Truly, truly, I tell you, unless you eat the flesh and drink the blood of the Son of Man, you have no life in you."], [54, "", "Whoever eats My flesh and drinks My blood has eternal life, and I will raise him up at the last day."], [55, "", "For My flesh is real food, and My blood is real drink."], [56, "", "Whoever eats My flesh and drinks My blood remains in Me, and I in him."]],
+  kjv: [[53, "Then Jesus said unto them, ", "Verily, verily, I say unto you, Except ye eat the flesh of the Son of man, and drink his blood, ye have no life in you."], [54, "", "Whoso eateth my flesh, and drinketh my blood, hath eternal life; and I will raise him up at the last day."], [55, "", "For my flesh is meat indeed, and my blood is drink indeed."], [56, "", "He that eateth my flesh, and drinketh my blood, dwelleth in me, and I in him."]],
+  web: [[53, "Jesus therefore said to them, “", "Most certainly I tell you, unless you eat the flesh of the Son of Man and drink his blood, you don’t have life in yourselves."], [54, "", "He who eats my flesh and drinks my blood has eternal life, and I will raise him up at the last day."], [55, "", "For my flesh is food indeed, and my blood is drink indeed."], [56, "", "He who eats my flesh and drinks my blood lives in me, and I in him."]],
+  dra: [[54, "Then Jesus said to them: Amen, amen I say unto you: Except you eat the flesh of the Son of man, and drink his blood, you shall not have life in you.", ""], [55, "He that eateth my flesh, and drinketh my blood, hath everlasting life: and I will raise him up in the last day.", ""], [56, "For my flesh is meat indeed: and my blood is drink indeed.", ""], [57, "He that eateth my flesh, and drinketh my blood, abideth in me, and I in him.", ""]],
+};
+const WORKS = [
+  ["Didajé", "Anónimo", "c. 50–120", "/es/historia/obras/didache"],
+  ["A los Esmirniotas", "Ignacio de Antioquía", "c. 107–110", "/es/historia/obras/ignatius-smyrnaeans"],
+  ["Primera Apología", "Justino Mártir", "c. 155", "/es/historia/obras/justin-first-apology"],
+  ["Contra las herejías", "Ireneo de Lyon", "c. 180", "/es/historia/obras/irenaeus-against-heresies"],
+  ["Sobre la Encarnación del Verbo", "Atanasio de Alejandría", "c. 318 o c. 335–337", "/es/historia/obras/athanasius-de-incarnatione"],
+  ["Confesiones", "Agustín de Hipona", "c. 397–400", "/es/historia/obras/augustine-confessions"],
+];
+const HISTORY_ROWS = [
+  ["Línea de tiempo", "Padres y escritores, escritos anónimos, concilios y corrientes condenadas, del año 30 al 800.", "", "/es/historia/linea-de-tiempo"],
+  ["Padres", "Los escritores cristianos de los primeros siglos, ordenados por el siglo de su muerte. 133 de sus obras se leen completas, en ediciones inglesas de dominio público.", "56", "/es/historia/padres"],
+  ["Concilios", "Un concilio reúne a obispos de varias iglesias para resolver cuestiones de fe o de disciplina. Cada tradición cuenta a su modo cuáles son ecuménicos.", "41", "/es/historia/concilios"],
+  ["Herejías", "Enseñanzas que alguna Iglesia o concilio rechazó en los primeros siglos, y cómo se les respondió.", "18", "/es/historia/herejias"],
+  ["Divisiones", "Las separaciones entre iglesias cristianas, ordenadas por siglo. Cada tradición las cuenta con sus propias palabras.", "10", "/es/historia/divisiones"],
+  ["Reforma y ramas", "Los movimientos que precedieron, protagonizaron o siguieron a la Reforma del siglo XVI.", "20", "/es/historia/reforma"],
+];
+const RESUME = { title: "Juan 6", path: "Reina-Valera 1909, desde el versículo 53", when: "ayer", href: "/es/biblia/juan/6#v53" };
+const RECENTS = [
+  { title: "La posición católica", path: "Doctrinas / La Eucaristía", href: "/es/doctrinas/eucaristia/catolica" },
+  { title: "Ignacio de Antioquía", path: "Historia / Padres", date: "murió c. 108", href: "/es/historia/padres/ignatius-of-antioch" },
+  { title: "Primer Concilio de Nicea", path: "Historia / Concilios", date: "325", href: "/es/historia/linea-de-tiempo#nicaea-1" },
+  { title: "Agustín de Hipona, Sobre la doctrina cristiana III.16.24", path: "Doctrinas / La Eucaristía / Lo que escribieron los primeros cristianos", date: "c. 396–397", href: "/es/doctrinas/eucaristia/primeros-cristianos" },
+];
+
+const EASE_REVEAL = "cubic-bezier(0.22, 1, 0.36, 1)";
+const EASE_MOVE = "cubic-bezier(0.4, 0, 0.2, 1)";
+const EASE_STD = "cubic-bezier(0.25, 0.1, 0.25, 1)";
+const RM = matchMedia("(prefers-reduced-motion: reduce)");
+const reduced = () => RM.matches;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const fold = (s) => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const coarse = () => matchMedia("(pointer: coarse)").matches;
+
+const I = {
+  chev: '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 2l3 3-3 3"/></svg>',
+  row: '<svg class="chev" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l4 4-4 4"/></svg>',
+  menu: '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12"/></svg>',
+  search: '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg>',
+  search18: '<svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg>',
+  sun: '<svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="3.4"/><path d="M9 1.8v1.6M9 14.6v1.6M1.8 9h1.6M14.6 9h1.6M3.9 3.9l1.1 1.1M13 13l1.1 1.1M3.9 14.1 5 13M13 5l1.1-1.1"/></svg>',
+  moon: '<svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M15 10.6A6.3 6.3 0 1 1 7.4 3a5 5 0 0 0 7.6 7.6Z"/></svg>',
+  close: '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8"/></svg>',
+  plus: '<svg class="pl" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8"/></svg>',
+};
+
+const state = { opt: "a", phone: false, back: false };
+const frame = $("#frame");
+const site = $("#site");
+const linkline = $("#linkline");
+let cleanups = [];
+const onCleanup = (fn) => cleanups.push(fn);
+
+/* ---------- small utilities ---------- */
+function dateText(y, y2, circa) {
+  const c = circa ? "c. " : "";
+  return y2 && y2 !== y ? c + y + "–" + y2 : c + y;
 }
-el.addEventListener("mouseover",ev=>{const b=ev.target.closest(".rl-m");if(b)show(+b.dataset.i)});
-el.addEventListener("focusin",ev=>{const b=ev.target.closest(".rl-m");if(b)show(+b.dataset.i)});
-el.addEventListener("click",ev=>{const b=ev.target.closest(".rl-m");if(b)show(+b.dataset.i)});
+function fatherDates(f) {
+  const born = f[2], died = f[3], approx = f[4], kind = f[6];
+  const c = approx ? "c. " : "";
+  if (kind === "work") return c + died;
+  if (born) return c + born + "–" + died;
+  return "murió " + c + died;
+}
+function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+function showLink(href, label) {
+  if (!href) return;
+  let msg;
+  if (href.startsWith("lector:")) msg = "En el sitio, esto abre el lector en " + esc(href.slice(7)) + ".";
+  else msg = "En el sitio, esto lleva a <code>" + esc(href) + "</code>" + (label ? ", «" + esc(label) + "»." : ".");
+  linkline.style.opacity = "0";
+  requestAnimationFrame(() => { linkline.innerHTML = msg; linkline.style.opacity = "1"; });
+}
+function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+let scrollAnim = 0;
+function smoothScrollSite(to) {
+  cancelAnimationFrame(scrollAnim);
+  const from = site.scrollTop;
+  to = clamp(to, 0, site.scrollHeight - site.clientHeight);
+  if (reduced()) { site.scrollTop = to; return; }
+  const d = Math.min(720, 380 + Math.abs(to - from) * 0.08);
+  const t0 = performance.now();
+  const stop = () => { cancelAnimationFrame(scrollAnim); site.removeEventListener("wheel", stop); site.removeEventListener("touchstart", stop); };
+  site.addEventListener("wheel", stop, { passive: true, once: true });
+  site.addEventListener("touchstart", stop, { passive: true, once: true });
+  const step = (now) => {
+    const p = Math.min(1, (now - t0) / d);
+    site.scrollTop = from + (to - from) * easeInOutCubic(p);
+    if (p < 1) scrollAnim = requestAnimationFrame(step); else stop();
+  };
+  scrollAnim = requestAnimationFrame(step);
+}
+
+/* ---------- segmented control with travelling indicator ---------- */
+function initSeg(box, onChange) {
+  let ind = $(".ind", box);
+  if (!ind) { ind = document.createElement("span"); ind.className = "ind"; ind.setAttribute("aria-hidden", "true"); box.prepend(ind); }
+  const place = (instant) => {
+    const b = $('button[aria-pressed="true"]', box);
+    if (!b) return;
+    if (instant) ind.style.transition = "none";
+    ind.style.width = b.offsetWidth + "px";
+    ind.style.transform = "translateX(" + b.offsetLeft + "px)";
+    if (instant) { ind.offsetWidth; ind.style.transition = ""; }
+  };
+  box.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b || !box.contains(b) || b.getAttribute("aria-pressed") === "true") return;
+    $$("button", box).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    place(false);
+    onChange(b.dataset.v, b);
+  });
+  place(true);
+  return place;
+}
+
+/* ---------- top bar ---------- */
+function isDark() {
+  const t = document.documentElement.dataset.theme;
+  if (t) return t === "dark";
+  return matchMedia("(prefers-color-scheme: dark)").matches;
+}
+function themeButtonHtml() {
+  const d = isDark();
+  return '<button type="button" class="ibtn theme" aria-label="' + (d ? "Cambiar a modo claro" : "Cambiar a modo oscuro") + '">' + (d ? I.sun : I.moon) + "</button>";
+}
+function syncThemeButtons() {
+  $$(".theme").forEach((b) => { b.outerHTML = themeButtonHtml(); });
+}
+function toggleTheme(btn) {
+  const next = isDark() ? "light" : "dark";
+  const apply = () => { document.documentElement.dataset.theme = next; syncThemeButtons(); };
+  if (!document.startViewTransition || reduced()) { apply(); return; }
+  const r = btn.getBoundingClientRect();
+  const x = r.left + r.width / 2, y = r.top + r.height / 2;
+  const R = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+  document.documentElement.classList.add("vt");
+  const vt = document.startViewTransition(apply);
+  vt.ready.then(() => {
+    document.documentElement.animate({ clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + R + "px at " + x + "px " + y + "px)"] }, { duration: 650, easing: "cubic-bezier(0.65, 0, 0.35, 1)", pseudoElement: "::view-transition-new(root)" });
+  }).catch(() => {});
+  vt.finished.finally(() => document.documentElement.classList.remove("vt"));
+}
+function topBar() {
+  return '<header class="tb tex">' +
+    '<button type="button" class="ibtn menu" aria-label="Abrir el índice" aria-haspopup="dialog">' + I.menu + "</button>" +
+    '<a class="logo" href="/es">Doctrina</a>' +
+    '<button type="button" class="strig" aria-label="Buscar" aria-haspopup="dialog" aria-keyshortcuts="Control+K Meta+K">' + I.search + '<span class="ph">Buscar doctrinas, versículos, Padres, palabras</span><kbd>' + (/Mac|iPhone|iPad/.test(navigator.platform) ? "⌘K" : "Ctrl K") + "</kbd></button>" +
+    '<span class="sp"></span>' +
+    '<div class="lang" aria-label="Idioma"><button type="button" aria-current="true">ES</button><button type="button" data-href="/en">EN</button></div>' +
+    themeButtonHtml() +
+    "</header>";
+}
+
+/* ---------- sidebar tree ---------- */
+function treeGroups() {
+  const tradKids = (d) => TRADS.map((t) => ({ label: t.tab, href: d.href + "/" + t.slug, kids: () => [{ label: "Pasajes", href: d.href + "/" + t.slug + "/pasajes" }, { label: "Objeciones", href: d.href + "/" + t.slug + "/objeciones" }] }));
+  const books = (names, offset) => names.map((n, i) => ({ label: n, count: CHAPTERS[offset + i], chapters: CHAPTERS[offset + i], slug: fold(n).replace(/\s+/g, "-") }));
+  return [
+    { label: "Doctrinas", nodes: DOCTRINES.map((d) => ({ label: d.name, href: d.href, kids: () => [{ label: "Lo que escribieron los primeros cristianos", href: d.href + "/primeros-cristianos" }].concat(tradKids(d)) })) },
+    { label: "Biblia", nodes: [
+      { label: "Antiguo Testamento", count: 39, kids: () => books(OT, 0) },
+      { label: "Libros deuterocanónicos", count: 7, kids: () => DEUT.map((n) => ({ label: n, href: "/es/biblia/" + fold(n).replace(/\s+/g, "-") + "/1" })) },
+      { label: "Nuevo Testamento", count: 27, kids: () => books(NT, 39) },
+    ] },
+    { label: "Historia", nodes: [
+      { label: "Línea de tiempo", href: "/es/historia/linea-de-tiempo" },
+      { label: "Padres", count: 56, href: "/es/historia/padres", kids: () => FATHERS.map((f) => ({ label: f[1], href: "/es/historia/padres/" + f[0] })) },
+      { label: "Concilios", count: 41, href: "/es/historia/concilios" },
+      { label: "Herejías", count: 18, href: "/es/historia/herejias" },
+      { label: "Divisiones", count: 10, href: "/es/historia/divisiones" },
+      { label: "Reforma y ramas", count: 20, href: "/es/historia/reforma" },
+    ] },
+    { label: "Consulta", nodes: [
+      { label: "Glosario", href: "/es/glosario" },
+      { label: "Fuentes", kids: () => [{ label: "Concilio de Trento" }, { label: "Catecismo de la Iglesia católica" }, { label: "Confesión de Augsburgo" }, { label: "Confesión de Westminster" }, { label: "Fe y Mensaje Bautistas (2000)" }] },
+    ] },
+  ];
+}
+const nodeStore = new Map();
+let nodeSeq = 0;
+function nodeHtml(n) {
+  const id = "n" + nodeSeq++;
+  nodeStore.set(id, n);
+  const hasKids = !!(n.kids || n.chapters);
+  const tw = hasKids
+    ? '<button type="button" class="tw" aria-expanded="false" aria-label="Abrir ' + esc(n.label) + '" data-node="' + id + '">' + I.chev + "</button>"
+    : '<span class="tw leaf" aria-hidden="true"></span>';
+  const label = n.href
+    ? '<a class="tl" href="' + esc(n.href) + '">' + esc(n.label) + "</a>"
+    : hasKids ? '<button type="button" class="tl" data-toggle="' + id + '">' + esc(n.label) + "</button>" : '<a class="tl" href="#">' + esc(n.label) + "</a>";
+  const count = n.count != null ? '<span class="tc">' + n.count + "</span>" : "";
+  return '<div class="tn"><div class="tr">' + tw + label + count + "</div>" + (hasKids ? '<div class="tk" hidden data-for="' + id + '"></div>' : "") + "</div>";
+}
+function treeHtml() {
+  return treeGroups().map((g) => '<div class="tg"><div class="tg-l">' + esc(g.label) + "</div>" + g.nodes.map(nodeHtml).join("") + "</div>").join("");
+}
+function fillKids(tk, n) {
+  if (tk.dataset.filled) return;
+  tk.dataset.filled = "1";
+  if (n.chapters) {
+    let h = '<div class="cg">';
+    for (let i = 1; i <= n.chapters; i++) {
+      const read = n.label === "Juan" && state.back && i <= 6;
+      h += '<button type="button" data-href="/es/biblia/' + n.slug + "/" + i + '" class="' + (read ? "read" : "") + '" aria-label="Capítulo ' + i + (read ? ", leído" : "") + '"><span>' + i + "</span></button>";
+    }
+    tk.innerHTML = h + "</div>";
+  } else {
+    tk.innerHTML = n.kids().map(nodeHtml).join("");
+  }
+}
+function toggleBranch(btn) {
+  const id = btn.dataset.node;
+  const n = nodeStore.get(id);
+  const tk = btn.closest(".tn").querySelector(':scope > .tk');
+  if (!n || !tk) return;
+  const open = btn.getAttribute("aria-expanded") !== "true";
+  btn.setAttribute("aria-expanded", String(open));
+  btn.setAttribute("aria-label", (open ? "Cerrar " : "Abrir ") + n.label);
+  tk.getAnimations().forEach((a) => a.cancel());
+  const kids = () => (n.chapters ? $$(".cg > button", tk) : $$(":scope > .tn", tk)).slice(0, 8);
+  if (open) {
+    fillKids(tk, n);
+    tk.hidden = false;
+    if (reduced()) return;
+    const h = tk.scrollHeight;
+    tk.animate([{ height: "0px" }, { height: h + "px" }], { duration: 220, easing: EASE_REVEAL });
+    kids().forEach((k, i) => k.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200, delay: i * 20, easing: "ease-out", fill: "backwards" }));
+  } else {
+    if (reduced()) { tk.hidden = true; return; }
+    const h = tk.offsetHeight;
+    kids().forEach((k) => k.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, easing: "ease-in", fill: "forwards" }));
+    const a = tk.animate([{ height: h + "px" }, { height: "0px" }], { duration: 160, delay: 120, easing: EASE_MOVE, fill: "forwards" });
+    a.onfinish = () => {
+      if (btn.getAttribute("aria-expanded") === "true") return;
+      tk.hidden = true;
+      tk.getAnimations({ subtree: true }).forEach((x) => x.cancel());
+    };
+  }
+}
+
+/* ---------- overlays that live in the frame ---------- */
+frame.insertAdjacentHTML("beforeend",
+  '<div class="scrim" id="dr-scrim" hidden></div>' +
+  '<nav class="drawer tex" id="drawer" aria-label="Índice del sitio" hidden><div class="drawer-head"><span class="tg-l" style="padding:0">Índice</span><button type="button" class="ibtn" id="dr-close" aria-label="Cerrar el índice">' + I.close + '</button></div><div id="dr-tree"></div></nav>' +
+  '<nav class="edge" id="edge" aria-label="Secciones de la página"></nav>' +
+  '<div class="cw-scrim" id="cw-scrim"></div>' +
+  '<div class="cw" id="cw" role="dialog" aria-modal="false" aria-labelledby="cw-kind" tabindex="-1"><div class="cw-h" id="cw-h"><span id="cw-kind">Cita</span><button type="button" class="ibtn" id="cw-close" aria-label="Cerrar">' + I.close + '</button></div><div class="cw-b" id="cw-b"></div></div>' +
+  '<div class="sd-scrim" id="sd-scrim"></div>' +
+  '<div class="sd tex" id="sd" role="dialog" aria-modal="true" aria-label="Buscar"><div class="sd-in">' + I.search18 + '<input id="sd-input" type="text" autocomplete="off" spellcheck="false" placeholder="Buscar doctrinas, versículos, Padres, palabras" aria-label="Buscar" role="combobox" aria-expanded="true" aria-controls="sd-r"><kbd>Esc</kbd></div><ul class="sd-r flipbox" id="sd-r" role="listbox" aria-label="Resultados"></ul><div class="sd-f"><span>↑ ↓ para moverse</span><span>Enter abre</span><span>Esc cierra</span></div></div>');
+
+const drawer = $("#drawer"), drScrim = $("#dr-scrim");
+let drawerOpener = null;
+function openDrawer(opener) {
+  drawerOpener = opener;
+  if (!$("#dr-tree").innerHTML) $("#dr-tree").innerHTML = treeHtml();
+  drawer.hidden = false; drScrim.hidden = false;
+  drawer.offsetWidth;
+  drawer.classList.add("on"); drScrim.classList.add("on");
+  setTimeout(() => $("#dr-close").focus({ preventScroll: true }), 30);
+}
+function closeDrawer() {
+  if (drawer.hidden) return;
+  drawer.classList.remove("on"); drScrim.classList.remove("on");
+  setTimeout(() => { if (!drawer.classList.contains("on")) { drawer.hidden = true; drScrim.hidden = true; } }, reduced() ? 0 : 250);
+  if (drawerOpener) drawerOpener.focus({ preventScroll: true });
+}
+drScrim.addEventListener("click", closeDrawer);
+$("#dr-close").addEventListener("click", closeDrawer);
+
+/* ---------- citation window ---------- */
+const cw = $("#cw"), cwScrim = $("#cw-scrim");
+let cwTrigger = null, cwPos = null, copyTimer = 0;
+function miniTimeline(c) {
+  const [a, b] = c.span;
+  const pct = (y) => ((y - a) / (b - a)) * 100;
+  const marks = b > 1000 ? [a, 500, 1000, 1500, b] : [a, 200, 400, 600, b];
+  let h = '<div class="mt" aria-hidden="true"><div class="ax"></div>';
+  marks.forEach((m, i) => { h += '<i class="mk' + (i === 0 ? " first" : i === marks.length - 1 ? " last" : "") + '" style="left:' + pct(m) + '%"><span>' + m + "</span></i>"; });
+  const mid = c.y2 ? (c.y + c.y2) / 2 : c.y;
+  if (c.y2) h += '<div class="band" style="left:' + pct(c.y) + "%;width:max(7px," + (pct(c.y2) - pct(c.y)) + '%)"></div>';
+  h += '<div class="pt" style="left:' + pct(mid) + '%"></div><div class="yr" style="left:' + clamp(pct(mid), 8, 92) + '%">' + dateText(c.y, c.y2, c.circa) + "</div></div>";
+  return h;
+}
+function openCite(trigger, key) {
+  const c = CITES[key];
+  if (!c) return;
+  if (cwTrigger && cwTrigger !== trigger) cwTrigger.setAttribute("aria-expanded", "false");
+  cwTrigger = trigger;
+  trigger.setAttribute("aria-expanded", "true");
+  $("#cw-b").innerHTML =
+    '<p class="cw-q">' + esc(c.q) + "</p>" +
+    '<div class="cw-who"><b>' + esc(c.who) + "</b>, " + esc(c.work) + (c.loc ? "&nbsp;" + esc(c.loc) : "") + "</div>" +
+    '<div class="cw-date"><span>Fecha</span><b>' + dateText(c.y, c.y2, c.circa) + "</b></div>" + miniTimeline(c) +
+    '<div class="cw-act"><a class="btn-go" href="' + esc(c.href) + '">Abrir la fuente completa</a><button type="button" class="cw-copy" id="cw-copy">Copiar cita</button></div>';
+  const phone = frame.clientWidth <= 720;
+  if (!phone) {
+    const fw = frame.clientWidth, fh = frame.clientHeight;
+    if (!cwPos) cwPos = { x: fw - 400 - (fw >= 900 ? 112 : 24), y: 56 + 24 + 40 };
+    cwPos.x = clamp(cwPos.x, 8, fw - 400 - 8); cwPos.y = clamp(cwPos.y, 8, fh - 120);
+    cw.style.left = cwPos.x + "px"; cw.style.top = cwPos.y + "px";
+  }
+  cw.classList.add("on");
+  cwScrim.classList.add("on");
+  setTimeout(() => cw.focus({ preventScroll: true }), 20);
+  $("#cw-copy").addEventListener("click", (e) => {
+    const text = "«" + c.q + "» (" + c.who + ", " + c.work + (c.loc ? " " + c.loc : "") + ")";
+    const done = () => { e.target.textContent = "Cita copiada"; clearTimeout(copyTimer); copyTimer = setTimeout(() => { e.target.textContent = "Copiar cita"; }, 1600); };
+    try { navigator.clipboard.writeText(text).then(done, done); } catch (_) { done(); }
+  });
+}
+function closeCite() {
+  if (!cw.classList.contains("on")) return false;
+  cw.classList.remove("on"); cwScrim.classList.remove("on");
+  if (cwTrigger) { cwTrigger.setAttribute("aria-expanded", "false"); cwTrigger.focus({ preventScroll: true }); }
+  cwTrigger = null;
+  return true;
+}
+$("#cw-close").addEventListener("click", closeCite);
+cwScrim.addEventListener("click", closeCite);
+(function dragCite() {
+  const h = $("#cw-h");
+  let start = null;
+  h.addEventListener("pointerdown", (e) => {
+    if (e.target.closest("button") || frame.clientWidth <= 720) return;
+    start = { x: e.clientX, y: e.clientY, ox: cwPos ? cwPos.x : cw.offsetLeft, oy: cwPos ? cwPos.y : cw.offsetTop };
+    h.setPointerCapture(e.pointerId); h.style.cursor = "grabbing";
+  });
+  h.addEventListener("pointermove", (e) => {
+    if (!start) return;
+    const fw = frame.clientWidth, fh = frame.clientHeight;
+    cwPos = { x: clamp(start.ox + e.clientX - start.x, 8, fw - 400 - 8), y: clamp(start.oy + e.clientY - start.y, 8, fh - 120) };
+    cw.style.left = cwPos.x + "px"; cw.style.top = cwPos.y + "px";
+  });
+  const end = () => { start = null; h.style.cursor = ""; };
+  h.addEventListener("pointerup", end); h.addEventListener("pointercancel", end);
+})();
+
+/* ---------- search ---------- */
+function buildIndex() {
+  const rows = [];
+  DOCTRINES.forEach((d) => rows.push({ g: "doctrines", t: d.name, p: "Doctrinas", l: d.q, href: d.href }));
+  rows.push({ g: "doctrines", t: "La posición católica", p: "Doctrinas / La Eucaristía", l: "Cómo la Iglesia católica entiende la Eucaristía, con sus propias fuentes.", href: "/es/doctrinas/eucaristia/catolica" });
+  rows.push({ g: "doctrines", t: "La posición católica", p: "Doctrinas / El bautismo", l: "Cómo la Iglesia católica entiende el bautismo, con sus propias fuentes.", href: "/es/doctrinas/bautismo/catolica" });
+  rows.push({ g: "doctrines", t: "Lo que escribieron los primeros cristianos sobre la Eucaristía", p: "Doctrinas / La Eucaristía", l: "Los textos cristianos hasta c. 800 que tratan de la Eucaristía, en orden cronológico.", href: "/es/doctrinas/eucaristia/primeros-cristianos" });
+  OBJECTIONS.forEach((o) => rows.push({ g: "doctrines", t: o[0], p: "Doctrinas / " + (o[1] === "eucaristia" ? "La Eucaristía" : "El bautismo") + " / Católica / Objeciones", l: "Objeción", href: "/es/doctrinas/" + o[1] + "/catolica/objeciones" }));
+  WITNESSES.forEach((w) => rows.push({ g: "quotes", t: w[2] + ", " + w[3] + " " + w[4], p: "Doctrinas / La Eucaristía / Lo que escribieron los primeros cristianos", d: dateText(w[5], w[6], true), q: w[7], href: "/es/doctrinas/eucaristia/primeros-cristianos#" + w[0] }));
+  FATHERS.forEach((f) => rows.push({ g: "fathers", t: f[1], p: "Historia / Padres", d: fatherDates(f), l: cap(f[5]), href: "/es/historia/padres/" + f[0] }));
+  COUNCILS.forEach((c) => rows.push({ g: "history", t: c[1], p: "Historia / Concilios", d: String(c[2]), l: c[5] ? c[5] : "", href: "/es/historia/linea-de-tiempo#" + c[0] }));
+  DIVISIONS.forEach((d) => rows.push({ g: "history", t: d[1], p: "Historia / Divisiones", d: d[3] ? d[2] + "–" + d[3] : String(d[2]), href: "/es/historia/divisiones/" + d[0] }));
+  rows.push({ g: "history", t: "Línea de tiempo", p: "Historia", l: "Padres y escritores, escritos anónimos, concilios y corrientes condenadas, del año 30 al 800.", href: "/es/historia/linea-de-tiempo" });
+  rows.forEach((r, i) => { r.i = i; r.ft = fold(r.t); r.fp = fold(r.p); r.fx = fold((r.l || "") + " " + (r.q || "") + " " + (r.d || "")); });
+  return rows;
+}
+const INDEX = buildIndex();
+const GROUPS = [["doctrines", "Doctrinas y objeciones"], ["quotes", "Citas de los Padres"], ["fathers", "Padres"], ["history", "Historia"]];
+function markText(text, q) {
+  if (!q) return esc(text);
+  const f = fold(text), fq = fold(q);
+  const at = f.indexOf(fq);
+  if (at < 0) return esc(text);
+  return esc(text.slice(0, at)) + "<mark>" + esc(text.slice(at, at + fq.length)) + "</mark>" + esc(text.slice(at + fq.length));
+}
+function cutQuote(text, q) {
+  const f = fold(text), at = q ? f.indexOf(fold(q)) : -1;
+  if (at < 0 || text.length < 150) return text.length > 150 ? text.slice(0, 148).replace(/\s+\S*$/, "") + "…" : text;
+  const s = Math.max(0, at - 50);
+  const piece = text.slice(s, s + 150);
+  return (s > 0 ? "…" : "") + piece.replace(/\s+\S*$/, "") + "…";
+}
+function searchRows(q) {
+  const fq = fold(q.trim());
+  if (!fq) return null;
+  const hits = [];
+  INDEX.forEach((r) => {
+    const s = r.ft.includes(fq) ? 0 : r.fp.includes(fq) ? 1 : r.fx.includes(fq) ? 2 : -1;
+    if (s >= 0) hits.push({ r, s });
+  });
+  hits.sort((a, b) => a.s - b.s || a.r.i - b.r.i);
+  return hits.map((h) => h.r);
+}
+function rowHtml(r, q, key) {
+  const date = r.d ? '<span class="dt">' + markText(r.d, q) + "</span>" : "";
+  const line = r.q ? '<div class="s-q">«' + markText(cutQuote(r.q, q), q) + "»</div>" : r.l ? '<div class="s-l">' + markText(r.l, q) + "</div>" : "";
+  return '<li class="sr" role="option" aria-selected="false" data-k="' + key + '" data-href="' + esc(r.href) + '"><div class="s-t">' + markText(r.t, q) + '</div><div class="s-p"><span class="pth">' + markText(r.p, q) + "</span>" + date + "</div>" + line + "</li>";
+}
+function resultsHtml(q, expanded) {
+  const hits = searchRows(q);
+  if (!hits) {
+    if (!state.back) return '<li class="s-empty" data-k="empty">Escribe para buscar doctrinas, objeciones y textos de los Padres.</li>';
+    let h = '<li class="sg" data-k="g-resume">Seguir donde dejaste</li>' + rowHtml({ t: RESUME.title, p: "Biblia / Nuevo Testamento / Juan", d: RESUME.when, l: RESUME.path, href: RESUME.href }, "", "resume");
+    h += '<li class="sg" data-k="g-recent">Recientes</li>' + RECENTS.map((r, i) => rowHtml({ t: r.title, p: r.path, d: r.date, href: r.href }, "", "rec" + i)).join("");
+    return h;
+  }
+  if (!hits.length) return '<li class="s-empty" data-k="none">Nada coincide con «' + esc(q.trim()) + '». Prueba con una palabra más corta.</li>';
+  let h = "";
+  GROUPS.forEach(([g, label]) => {
+    const list = hits.filter((r) => r.g === g);
+    if (!list.length) return;
+    const open = expanded.has(g);
+    const shown = open ? list : list.slice(0, 3);
+    h += '<li class="sg" data-k="g-' + g + '">' + label + "</li>" + shown.map((r) => rowHtml(r, q, "r" + r.i)).join("");
+    if (list.length > 3 && !open) h += '<li class="s-more" data-k="m-' + g + '"><button type="button" class="btn-more" data-more="' + g + '">Ver ' + (list.length - 3) + " más</button></li>";
+  });
+  return h;
+}
+
+/* FLIP: kept items slide, leaving ones fade as ghosts, new ones rise */
+function flipRender(box, render, opts) {
+  opts = opts || {};
+  if (reduced() || opts.instant) { render(); return; }
+  box.getAnimations({ subtree: true }).forEach((a) => a.cancel());
+  $$("[data-ghost]", box).forEach((g) => g.remove());
+  const br0 = box.getBoundingClientRect();
+  const h0 = box.offsetHeight;
+  const old = new Map();
+  $$("[data-k]", box).forEach((el) => old.set(el.dataset.k, { el, r: el.getBoundingClientRect() }));
+  render();
+  const h1 = box.offsetHeight;
+  const br1 = box.getBoundingClientRect();
+  const keep = new Set();
+  const moves = new Map();
+  let n = 0;
+  const els = $$("[data-k]", box);
+  els.forEach((el) => {
+    const k = el.dataset.k;
+    keep.add(k);
+    const o = old.get(k);
+    if (o) moves.set(el, (o.r.top - br0.top) - (el.getBoundingClientRect().top - br1.top));
+  });
+  els.forEach((el) => {
+    if (moves.has(el)) {
+      const p = el.parentElement && el.parentElement.closest("[data-k]");
+      const d = moves.get(el) - (p && box.contains(p) && moves.has(p) ? moves.get(p) : 0);
+      if (Math.abs(d) > 0.5) el.animate([{ transform: "translateY(" + d + "px)" }, { transform: "none" }], { duration: 380, easing: EASE_REVEAL });
+    } else {
+      el.animate([{ opacity: 0, transform: "translateY(8px)" }, { opacity: 1, transform: "none" }], { duration: 420, delay: (opts.firstDelay ?? 120) + Math.min(n++, 8) * 40, easing: EASE_REVEAL, fill: "backwards" });
+    }
+  });
+  old.forEach((o, k) => {
+    if (keep.has(k)) return;
+    const pa = o.el.parentElement && o.el.parentElement.closest("[data-k]");
+    if (pa && !keep.has(pa.dataset.k) && old.has(pa.dataset.k)) return;
+    const g = o.el.cloneNode(true);
+    g.setAttribute("data-ghost", "");
+    g.removeAttribute("data-k");
+    $$("[data-k]", g).forEach((x) => x.removeAttribute("data-k"));
+    Object.assign(g.style, { position: "absolute", left: (o.r.left - br0.left) + "px", top: (o.r.top - br0.top) + "px", width: o.r.width + "px", margin: "0", pointerEvents: "none", listStyle: "none" });
+    box.appendChild(g);
+    g.animate([{ opacity: 1, transform: "none" }, { opacity: 0, transform: "scale(0.96)" }], { duration: 180, easing: "ease-out", fill: "forwards" }).onfinish = () => g.remove();
+  });
+  if (Math.abs(h0 - h1) > 1 && !opts.noHeight) {
+    box.animate([{ height: h0 + "px", overflow: "hidden" }, { height: h1 + "px", overflow: "hidden" }], { duration: 380, delay: h1 < h0 ? 180 : 0, easing: EASE_REVEAL, fill: "backwards" });
+  }
+}
+
+const sd = $("#sd"), sdScrim = $("#sd-scrim"), sdInput = $("#sd-input"), sdR = $("#sd-r");
+let sdOpener = null, sdSel = -1, sdExpanded = new Set();
+function sdRows() { return $$(".sr", sdR); }
+function sdSelect(i, scroll) {
+  const rows = sdRows();
+  if (!rows.length) { sdSel = -1; return; }
+  sdSel = clamp(i, 0, rows.length - 1);
+  rows.forEach((r, j) => r.setAttribute("aria-selected", String(j === sdSel)));
+  if (scroll) rows[sdSel].scrollIntoView({ block: "nearest" });
+}
+function sdRender(first) {
+  const html = resultsHtml(sdInput.value, sdExpanded);
+  flipRender(sdR, () => { sdR.innerHTML = html; }, first ? { firstDelay: 0, noHeight: true } : {});
+  sdSelect(0, false);
+}
+function openSearch(opener) {
+  closeDrawer();
+  sdOpener = opener || document.activeElement;
+  sdInput.value = "";
+  sdExpanded = new Set();
+  sd.classList.add("on"); sdScrim.classList.add("on");
+  sdRender(true);
+  setTimeout(() => sdInput.focus({ preventScroll: true }), 10);
+}
+function closeSearch() {
+  if (!sd.classList.contains("on")) return false;
+  sd.classList.remove("on"); sdScrim.classList.remove("on");
+  if (sdOpener && sdOpener.focus) sdOpener.focus({ preventScroll: true });
+  return true;
+}
+sdScrim.addEventListener("click", closeSearch);
+sdInput.addEventListener("input", () => { sdExpanded = new Set(); sdRender(false); });
+sdInput.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowDown") { e.preventDefault(); sdSelect(sdSel + 1, true); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); sdSelect(sdSel - 1, true); }
+  else if (e.key === "Enter") { const r = sdRows()[sdSel]; if (r) { e.preventDefault(); openResult(r); } }
+});
+sdR.addEventListener("pointermove", (e) => { const r = e.target.closest(".sr"); if (r) { const i = sdRows().indexOf(r); if (i !== sdSel) sdSelect(i, false); } });
+sdR.addEventListener("click", (e) => {
+  const more = e.target.closest("[data-more]");
+  if (more) { sdExpanded.add(more.dataset.more); sdRender(false); sdInput.focus({ preventScroll: true }); return; }
+  const r = e.target.closest(".sr");
+  if (r) openResult(r);
+});
+function openResult(r) {
+  closeSearch();
+  showLink(r.dataset.href, $(".s-t", r).textContent);
+}
+
+/* ---------- edge ruler ---------- */
+const edge = $("#edge");
+let edgeSecs = [], edgeLock = -1, edgeLockTimer = 0;
+function buildEdge() {
+  edgeSecs = $$(".sec[data-rl]", site);
+  if (edgeSecs.length < 2) { edge.innerHTML = ""; edge.classList.remove("has"); return; }
+  edge.innerHTML = edgeSecs.map((s, i) => '<button type="button" style="--dl:' + (900 + 100 * i) + 'ms" aria-label="' + esc(s.dataset.rl) + '"><i></i><span>' + esc(s.dataset.rl) + "</span></button>").join("");
+  edge.classList.add("has");
+  edge.classList.remove("draw"); edge.offsetWidth; edge.classList.add("draw");
+  $$("button", edge).forEach((b, i) => {
+    b.addEventListener("click", () => {
+      edgeLock = i; clearTimeout(edgeLockTimer); edgeLockTimer = setTimeout(() => { edgeLock = -1; edgeActive(); }, 800);
+      const top = edgeSecs[i].getBoundingClientRect().top - site.getBoundingClientRect().top + site.scrollTop - 56 - 24;
+      smoothScrollSite(top);
+      edgeActive();
+    });
+  });
+  edgeActive();
+}
+function edgeActive() {
+  if (!edgeSecs.length) return;
+  let a = 0;
+  const line = site.getBoundingClientRect().top + site.clientHeight * 0.35;
+  edgeSecs.forEach((s, i) => { if (s.getBoundingClientRect().top <= line) a = i; });
+  if (site.scrollTop + site.clientHeight >= site.scrollHeight - 2) a = edgeSecs.length - 1;
+  if (edgeLock >= 0) a = edgeLock;
+  $$("button", edge).forEach((b, i) => b.classList.toggle("on", i === a));
+}
+edge.addEventListener("pointermove", (e) => {
+  const bs = $$("button", edge);
+  if (!bs.length) return;
+  let h = 0, best = 1e9;
+  bs.forEach((b, i) => { const r = b.getBoundingClientRect(); const d = Math.abs(e.clientY - (r.top + r.height / 2)); if (d < best) { best = d; h = i; } });
+  const N = Math.max(bs.length, 16);
+  bs.forEach((b, i) => b.querySelector("i").style.setProperty("--sx", Math.max(1, 2.5 + 2 * Math.cos(Math.PI * Math.abs(i - h) / N)).toFixed(3)));
+});
+edge.addEventListener("pointerleave", () => $$("i", edge).forEach((i) => i.style.setProperty("--sx", "1")));
+site.addEventListener("scroll", () => edgeActive(), { passive: true });
+
+/* ---------- scroll reveal ---------- */
+let revealIO = null;
+function setupReveal() {
+  if (revealIO) revealIO.disconnect();
+  if (reduced()) return;
+  const sr = site.getBoundingClientRect();
+  const items = $$("[data-rv]", site).filter((el) => el.getBoundingClientRect().top > sr.bottom - 8);
+  items.forEach((el) => el.classList.add("rv-pre"));
+  revealIO = new IntersectionObserver((entries) => {
+    const ins = entries.filter((x) => x.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    ins.forEach((x, i) => {
+      revealIO.unobserve(x.target);
+      setTimeout(() => { x.target.classList.add("rv-in"); x.target.classList.remove("rv-pre"); }, Math.min(i, 8) * 60);
+    });
+  }, { root: site, rootMargin: "0px 0px -15% 0px" });
+  items.forEach((el) => revealIO.observe(el));
+}
+
+/* ---------- title entrance ---------- */
+function runEntrance() {
+  site.removeAttribute("data-ready");
+  $$(".tp", site).forEach((el) => { el.style.animation = "none"; el.offsetWidth; el.style.animation = ""; });
+  const go = () => site.setAttribute("data-ready", "");
+  const t = setTimeout(go, 800);
+  document.fonts.ready.then(() => { clearTimeout(t); requestAnimationFrame(go); });
+}
+
+let placers = [];
+
+/* ---------- shared pieces of the home ---------- */
+function resumeHtml(p) {
+  if (!state.back) return "";
+  return '<div class="resume tp" style="--p:' + p + '"><span class="label">Seguir donde dejaste</span><a href="' + RESUME.href + '"><span class="r-t">' + RESUME.title + '</span><span class="r-d">' + RESUME.when + '</span><span class="r-p">' + RESUME.path + "</span></a></div>";
+}
+function cite(key, text) {
+  return '<span class="lside" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-cite="' + key + '">' + text + "</span>";
+}
+function methodHtml(rl) {
+  return '<section class="sec col" data-rl="' + (rl || "Cómo se hace") + '" aria-labelledby="h-method">' +
+    '<h2 class="h2" id="h-method">Cómo se hace Doctrina</h2>' +
+    '<p class="sub">Lo mismo vale para cada doctrina, cada tradición y cada texto.</p>' +
+    '<div class="method">' +
+    '<div data-rv><h3>Cada tradición, con sus palabras</h3><p>Lo que enseña cada tradición se cita de sus propios documentos: concilios, confesiones, catecismos. La definición católica de la Eucaristía, por ejemplo, está en ' + cite("trento", "Trento, sesión&nbsp;XIII, capítulo&nbsp;4") + ".</p></div>" +
+    '<div data-rv><h3>Cada cita, con su fuente</h3><p>Una cita se abre en el lugar, con la obra, el pasaje y la fecha. La fuente completa, con su edición y su licencia, queda a un toque.</p></div>' +
+    '<div data-rv><h3>Los primeros cristianos no son de nadie</h3><p>Lo que escribieron los Padres se muestra en orden de fecha, sin asignarlo a ninguna tradición de hoy: cada tradición lo lee a su manera. Por ejemplo, ' + cite("ign", "Ignacio de Antioquía, A los Esmirniotas&nbsp;7.1") + ".</p></div>" +
+    '<div data-rv><h3>El sitio no concluye</h3><p>Cada postura aparece con las objeciones que recibe y con su respuesta, en las palabras de quien responde. La conclusión queda del lado del lector.</p></div>' +
+    "</div></section>";
+}
+function mailHtml() {
+  return '<section class="mail" aria-labelledby="h-mail"><h2 id="h-mail">Doctrinas nuevas, por correo</h2><p>Un correo cada vez que se publica una doctrina. Nada más.</p>' +
+    '<form id="mail-form" novalidate><label class="visually" for="mail-input" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Tu correo</label><input id="mail-input" type="email" required autocomplete="email" placeholder="nombre@ejemplo.com"><button type="submit" class="btn-go">Avisarme</button></form>' +
+    '<div class="ok" id="mail-ok" role="status"></div></section>' +
+    '<div class="foot"><span>Doctrina</span><a href="/es/glosario">Glosario</a><a href="/es/fuentes">Fuentes</a><a href="/en">English</a></div>';
+}
+function doctrineRows(list) {
+  return '<ul class="hl">' + list.map((d) => '<li data-rv><a class="drow" href="' + d.href + '"><span class="nm">' + d.name + '</span><span class="q">' + d.q + "</span>" + I.row + "</a></li>").join("") + "</ul>";
+}
+function qrows(rows) {
+  return '<ul class="hl">' + rows.map((r) => '<li data-rv><a class="qrow" href="' + r[3] + '"><span class="t">' + r[0] + (r[1] ? '<span class="d">' + r[1] + "</span>" : "") + '</span><span class="n">' + (r[2] || "") + "</span>" + I.row + "</a></li>").join("") + "</ul>";
+}
+function editionsHtml() {
+  return '<div class="eds">' + EDITIONS.map((e) => '<span class="ed" tabindex="0">' + e.ab + '<span class="tip" aria-hidden="true">' + e.name + "</span></span>").join("") + "</div>";
+}
+
+/* ---------- doctrine fingerprint (02) ---------- */
+const fpPct = (y) => ((y - 1) / 2025) * 100;
+function fpHtml(p, caption) {
+  const ax = [1, 500, 1000, 1500, 2026].map((y) => '<span style="left:' + fpPct(y) + '%">' + y + "</span>").join("");
+  return '<div class="tp" style="--p:' + p + '"><div class="fp draw" data-fp role="img" aria-label="' + FP.length + ' textos y hechos citados en la página de la Eucaristía, del año 50 al 2000"></div><div class="fp-ax" aria-hidden="true">' + ax + '</div><div class="fp-cap">' + caption + "</div></div>";
+}
+function initFP(el) {
+  let h = "";
+  for (let c = 100; c <= 2000; c += 100) h += '<span class="cent" style="left:' + fpPct(c) + '%"></span>';
+  FP.forEach((m, i) => {
+    if (m[1] && m[1] - m[0] >= 4) h += '<i class="band" data-b="' + i + '" style="left:' + fpPct(m[0]) + "%;width:" + (fpPct(m[1]) - fpPct(m[0])) + "%;--dl:" + (300 + 30 * i) + 'ms"></i>';
+    h += '<i data-t="' + i + '" style="left:' + fpPct(m[0]) + "%;--dl:" + (300 + 30 * i) + 'ms"></i>';
+  });
+  el.innerHTML = h;
+  const ticks = $$("i[data-t]", el);
+  let tip = null, hideT = 0;
+  const reset = () => {
+    ticks.forEach((t) => t.style.setProperty("--k", (1 / 4.5).toFixed(4)));
+    $$(".on", el).forEach((x) => x.classList.remove("on"));
+    if (tip) { tip.remove(); tip = null; }
+  };
+  const move = (e) => {
+    clearTimeout(hideT);
+    const r = el.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const R = Math.min(286, 0.35 * r.width);
+    let best = -1, bd = 1e9;
+    ticks.forEach((t, i) => {
+      const tx = (fpPct(FP[i][0]) / 100) * r.width;
+      const d = Math.abs(tx - x);
+      if (d < bd) { bd = d; best = i; }
+      const k = Math.max(1, 2.5 + 2 * Math.cos(Math.PI * Math.min(d / R, 1))) / 4.5;
+      t.style.setProperty("--k", k.toFixed(4));
+    });
+    $$(".on", el).forEach((x2) => x2.classList.remove("on"));
+    ticks[best].classList.add("on");
+    const band = $('[data-b="' + best + '"]', el);
+    if (band) band.classList.add("on");
+    const m = FP[best];
+    const label = esc(m[2]) + ", " + (m[1] ? "c. " + m[0] + "–" + m[1] : m[0]);
+    if (!tip || tip.dataset.i !== String(best)) {
+      if (tip) tip.remove();
+      tip = document.createElement("span");
+      tip.className = "tip";
+      tip.dataset.i = String(best);
+      tip.innerHTML = label;
+      el.appendChild(tip);
+    }
+    tip.style.left = clamp(fpPct(m[0]), 14, 86) + "%";
+  };
+  el.addEventListener("pointermove", move);
+  el.addEventListener("pointerdown", move);
+  el.addEventListener("pointerleave", (e) => { if (e.pointerType === "touch") hideT = setTimeout(reset, 1400); else reset(); });
+  reset();
+}
+
+/* ---------- tradition switcher «Deslizar» ---------- */
+function answerParts(i) {
+  const a = ANSWERS[i];
+  const t = TRADS[a.t];
+  return {
+    a: '<h3 class="an">' + a.name + '</h3><div class="ag">Grado de autoridad<b>' + a.grade + "</b>" + a.basis + "</div>",
+    b: '<p class="at">' + a.text + '</p><div class="aw"><a class="lgo f" href="/es/doctrinas/eucaristia/' + t.slug + '">Estudiar la postura ' + t.adj + "</a></div>",
+  };
+}
+function switcherHtml() {
+  const p = answerParts(0);
+  return '<div class="sw" data-sw><div class="sw-bar"><span class="label" id="sw-l">Tradición</span><div class="tabs" role="tablist" aria-labelledby="sw-l">' +
+    ANSWERS.map((a, i) => '<button type="button" role="tab" id="tab-' + i + '" aria-controls="ans" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" data-t="' + a.name + '"><span>' + a.name + "</span></button>").join("") +
+    '</div></div><div class="ans in" id="ans" role="tabpanel" aria-labelledby="tab-0"><div class="p-a">' + p.a + '</div><div class="p-b">' + p.b + "</div></div></div>";
+}
+function initSwitcher(root) {
+  const tabsBox = $(".tabs", root), tabs = $$("[role=tab]", root), ans = $(".ans", root);
+  const ind = document.createElement("span");
+  ind.className = "ind"; ind.setAttribute("aria-hidden", "true");
+  tabsBox.prepend(ind);
+  let target = 0, busy = false;
+  const place = (instant) => {
+    const b = tabs[target];
+    if (instant) ind.style.transition = "none";
+    ind.style.width = b.offsetWidth + "px";
+    ind.style.transform = "translateX(" + b.offsetLeft + "px)";
+    if (instant) { ind.offsetWidth; ind.style.transition = ""; }
+  };
+  placers.push(() => place(true));
+  const fill = (i) => { const p = answerParts(i); $(".p-a", ans).innerHTML = p.a; $(".p-b", ans).innerHTML = p.b; ans.setAttribute("aria-labelledby", "tab-" + i); };
+  const go = (i, focus) => {
+    if (i === target) return;
+    const dir = i > target ? 1 : -1;
+    target = i;
+    tabs.forEach((t, j) => { t.setAttribute("aria-selected", String(j === i)); t.tabIndex = j === i ? 0 : -1; });
+    if (focus) tabs[i].focus({ preventScroll: true });
+    place(false);
+    const b = tabs[i];
+    const left = b.offsetLeft - 16, right = b.offsetLeft + b.offsetWidth + 16 - tabsBox.clientWidth;
+    if (tabsBox.scrollLeft > left) tabsBox.scrollTo({ left, behavior: reduced() ? "auto" : "smooth" });
+    else if (tabsBox.scrollLeft < right) tabsBox.scrollTo({ left: right, behavior: reduced() ? "auto" : "smooth" });
+    if (reduced()) { fill(i); return; }
+    ans.style.setProperty("--dir", String(dir));
+    if (busy) return;
+    busy = true;
+    ans.classList.remove("in", "pre"); ans.classList.add("out");
+    setTimeout(() => {
+      fill(target);
+      ans.classList.remove("out"); ans.classList.add("pre"); ans.offsetWidth;
+      ans.classList.remove("pre"); ans.classList.add("in");
+      busy = false;
+    }, 140);
+  };
+  tabs.forEach((t, i) => t.addEventListener("click", () => go(i, false)));
+  tabsBox.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); go((target + 1) % tabs.length, true); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); go((target - 1 + tabs.length) % tabs.length, true); }
+  });
+  requestAnimationFrame(() => place(true));
+  document.fonts.ready.then(() => place(true));
+}
+
+/* ---------- living time ruler «Ola» (02) ---------- */
+const lrPct = (y) => ((y - 1) / 799) * 100;
+function witnessHtml(i) {
+  const w = WITNESSES[i];
+  return '<div class="wd">' + dateText(w[5], w[6], true) + '</div><div><blockquote>' + esc(w[7]) + '</blockquote><div class="wb"><b>' + esc(w[2]) + "</b>, " + cite("w" + i, esc(w[3]) + "&nbsp;" + esc(w[4])) + "</div></div>";
+}
+function lrHtml() {
+  return '<div class="lr" tabindex="0" role="group" aria-label="Regla de los testigos, del año 1 al 800. Flechas para cambiar de testigo." data-lr></div>' +
+    '<div class="lr-status" aria-live="polite">12 testigos, del año 50 al 743. Toca un punto de la regla para leer su texto.</div>' +
+    '<div class="wq" data-wq>' + witnessHtml(1) + "</div>";
+}
+function initLR(lr) {
+  const wq = $("[data-wq]", lr.parentNode);
+  let h = '<div class="ax"></div>';
+  for (let y = 50; y <= 800; y += 50) {
+    h += '<span class="t" style="left:' + lrPct(y) + "%;height:" + (y % 100 ? 5 : 9) + 'px"></span>';
+    if (y % 100 === 0) h += '<span class="lb' + ((y / 100) % 2 ? " odd" : "") + '" style="left:' + lrPct(y) + '%">' + y + "</span>";
+  }
+  WITNESSES.forEach((w, i) => {
+    const a = w[5], b = w[6] || w[5];
+    h += '<span class="seg3" data-s="' + i + '" style="left:' + lrPct(a) + "%;width:max(3px," + (lrPct(b) - lrPct(a)) + '%)"></span>';
+  });
+  WITNESSES.forEach((w, i) => {
+    const mid = w[6] ? (w[5] + w[6]) / 2 : w[5];
+    h += '<span class="w" data-w="' + i + '" style="left:' + lrPct(mid) + '%"><span class="stem"></span><span class="dot"></span></span>';
+  });
+  h += '<span class="tip lr-tip" aria-hidden="true"></span>';
+  lr.innerHTML = h;
+  const ws = $$(".w", lr), segs = $$(".seg3", lr), tip = $(".lr-tip", lr);
+  const mids = WITNESSES.map((w) => (w[6] ? (w[5] + w[6]) / 2 : w[5]));
+  let sel = 1, hov = -1;
+  const apply = () => {
+    const W = lr.clientWidth;
+    const xs = mids.map((m) => (lrPct(m) / 100) * W);
+    const f = hov >= 0 ? hov : sel;
+    ws.forEach((el, i) => {
+      let lift = 0;
+      if (hov >= 0) {
+        const d = Math.abs(xs[i] - xs[hov]);
+        lift = i === hov ? 22 : d < 140 ? 14 * (0.5 + 0.5 * Math.cos((Math.PI * d) / 140)) : 0;
+      } else if (i === sel) lift = 14;
+      el.style.transform = "translateY(" + (-lift).toFixed(2) + "px)";
+      el.style.setProperty("--lift", lift.toFixed(2) + "px");
+      el.classList.toggle("hov", i === hov);
+      el.classList.toggle("on", i === sel && hov < 0);
+      segs[i].style.background = i === f ? "var(--accent)" : "";
+      segs[i].style.opacity = i === f ? "1" : "";
+    });
+    const w = WITNESSES[f];
+    const lift = f === hov ? 22 : 14;
+    const p = lrPct(mids[f]) / 100;
+    tip.innerHTML = "<b>" + esc(w[2]) + "</b>, " + dateText(w[5], w[6], true);
+    tip.style.left = (p * 100) + "%";
+    tip.style.top = (30 - lift - 32) + "px";
+    tip.style.transform = p < 0.15 ? "translateX(-12px)" : p > 0.75 ? "translateX(calc(-100% + 12px))" : "translateX(-50%)";
+  };
+  const showQuote = (i) => {
+    if (reduced()) { wq.innerHTML = witnessHtml(i); return; }
+    wq.classList.add("fade");
+    setTimeout(() => { wq.innerHTML = witnessHtml(i); wq.classList.remove("fade"); }, 160);
+  };
+  const pick = (i) => { if (i === sel) return; sel = i; apply(); showQuote(i); };
+  lr.addEventListener("pointermove", (e) => {
+    const r = lr.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const xs = mids.map((m) => (lrPct(m) / 100) * r.width);
+    let best = -1, bd = 1e9;
+    xs.forEach((v, i) => { const d = Math.abs(v - x); if (d < bd) { bd = d; best = i; } });
+    const reach = e.pointerType === "touch" ? 44 : 40;
+    let next = bd <= reach ? best : -1;
+    if (hov >= 0 && next !== hov) {
+      const dh = Math.abs(xs[hov] - x);
+      if (next >= 0 && dh - bd < 4) next = hov;
+      else if (next < 0 && dh < 52) next = hov;
+    }
+    if (next !== hov) { hov = next; lr.classList.toggle("snap", hov >= 0); apply(); }
+  });
+  lr.addEventListener("pointerleave", () => { hov = -1; lr.classList.remove("snap"); apply(); });
+  lr.addEventListener("click", () => { if (hov >= 0) pick(hov); });
+  lr.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); pick(Math.min(WITNESSES.length - 1, sel + 1)); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); pick(Math.max(0, sel - 1)); }
+  });
+  apply();
+}
+
+/* ---------- 2,000-year ruler (C) ---------- */
+const Y0 = 1, Y1 = 2026;
+const tlPct = (y) => ((y - Y0) / (Y1 - Y0)) * 100;
+const fStart = (f) => f[2] || f[3] - 25;
+function tlHtml() {
+  return '<div class="tl2" data-tl><div class="tl2-wrap"><div class="tl2-lab" aria-hidden="true"></div><div class="tl2-track"></div></div>' +
+    '<div class="tl2-status" aria-live="polite"></div><div class="tl2-lists flipbox"></div></div>';
+}
+function initTL(root) {
+  const track = $(".tl2-track", root), lab = $(".tl2-lab", root), status = $(".tl2-status", root), lists = $(".tl2-lists", root);
+  const order = FATHERS.map((f, i) => i).sort((a, b) => fStart(FATHERS[a]) - fStart(FATHERS[b]));
+  const rowEnd = [], rowOf = [];
+  order.forEach((i) => {
+    const f = FATHERS[i];
+    let r = rowEnd.findIndex((end) => end + 14 < fStart(f));
+    if (r < 0) { r = rowEnd.length; rowEnd.push(0); }
+    rowEnd[r] = f[3]; rowOf[i] = r;
+  });
+  const R = rowEnd.length, gap = R > 9 ? 5 : 6, top0 = 30;
+  const cY = top0 + R * gap + 10, dY = cY + 16, aY = dY + 24, winTop = 20, winH = aY - winTop - 4;
+  track.style.height = (aY + 26) + "px";
+  lab.style.height = (aY + 26) + "px";
+  lab.innerHTML = '<span style="top:' + (top0 - 4) + 'px">Padres</span><span style="top:' + (cY - 2) + 'px">Concilios</span><span style="top:' + (dY + 2) + 'px">Divisiones</span>';
+  let h = "";
+  FATHERS.forEach((f, i) => { h += '<span class="bar" data-f="' + i + '" style="left:' + tlPct(fStart(f)) + "%;width:max(3px," + (tlPct(f[3]) - tlPct(fStart(f))) + "%);top:" + (top0 + rowOf[i] * gap) + 'px"></span>'; });
+  COUNCILS.forEach((c, i) => { h += '<span class="ring' + (c[4] === "seven" ? " ec" : "") + '" data-c="' + i + '" style="left:' + tlPct(c[2]) + "%;top:" + (cY - 4) + 'px"></span>'; });
+  DIVISIONS.forEach((d, i) => { h += '<span class="div" data-d="' + i + '" style="left:' + tlPct(d[2]) + "%;top:" + (dY) + 'px"></span>'; });
+  h += '<span class="ax" style="top:' + aY + 'px"></span>';
+  for (let y = 100; y <= 2000; y += 100) h += '<span class="ct" style="left:' + tlPct(y) + "%;top:" + aY + "px;height:" + (y % 500 ? 4 : 7) + 'px"></span>';
+  [1, 500, 1000, 1500, 2026].forEach((y, i, a) => { h += '<span class="al' + (i === 0 ? " first" : i === a.length - 1 ? " last" : "") + '" style="left:' + tlPct(y) + "%;top:" + (aY + 10) + 'px">' + y + "</span>"; });
+  h += '<div class="tl2-win" tabindex="0" role="slider" aria-label="Ventana de años" aria-valuemin="1" aria-valuemax="2026" style="top:' + winTop + "px;height:" + winH + 'px"><span class="hd l" data-h="l"></span><span class="hd r" data-h="r"></span></div><span class="tl2-yrs"></span>';
+  track.innerHTML = h;
+  const win = $(".tl2-win", track), yrs = $(".tl2-yrs", track);
+  const bars = $$(".bar", track), rings = $$(".ring", track), divs = $$(".div", track);
+  let a = 300, b = 460, expanded = new Set(), listT = 0;
+  const minW = () => (frame.clientWidth < 640 ? 60 : 40);
+  const draw = () => {
+    win.style.left = tlPct(a) + "%";
+    win.style.width = (tlPct(b) - tlPct(a)) + "%";
+    yrs.textContent = a + "–" + b;
+    yrs.style.left = clamp(tlPct((a + b) / 2), 6, 94) + "%";
+    win.setAttribute("aria-valuetext", "Del año " + a + " al " + b);
+    bars.forEach((el, i) => { const f = FATHERS[i]; el.classList.toggle("inw", fStart(f) <= b && f[3] >= a); });
+    rings.forEach((el, i) => el.classList.toggle("inw", COUNCILS[i][2] >= a && COUNCILS[i][2] <= b));
+    divs.forEach((el, i) => { const d = DIVISIONS[i]; el.classList.toggle("inw", d[2] <= b && (d[3] || d[2]) >= a); });
+  };
+  const groupHtml = (key, title, rows) => {
+    if (!rows.length) return "";
+    const open = expanded.has(key);
+    const shown = open ? rows : rows.slice(0, 8);
+    let s = '<div data-k="g-' + key + '"><h3 class="grp-h">' + title + '</h3><ul class="hl">' + shown.map((r) => '<li data-k="' + r.k + '"><a class="erow" href="' + r.href + '"><span class="e-n">' + esc(r.n) + '</span><span class="e-d">' + esc(r.d) + '</span><span class="e-r">' + esc(r.r) + "</span></a></li>").join("") + "</ul>";
+    if (rows.length > 8) s += '<button type="button" class="btn-more" data-more="' + key + '" style="margin-top:8px">' + I.plus + (open ? "Mostrar menos" : "Mostrar " + (rows.length - 8) + " más") + "</button>";
+    return s + "</div>";
+  };
+  const renderLists = (instant) => {
+    const fs = FATHERS.map((f, i) => ({ f, i })).filter(({ f }) => fStart(f) <= b && f[3] >= a).sort((x, y) => x.f[3] - y.f[3])
+      .map(({ f, i }) => ({ k: "f" + i, n: f[1], d: fatherDates(f), r: cap(f[5]), href: "/es/historia/padres/" + f[0] }));
+    const cs = COUNCILS.map((c, i) => ({ c, i })).filter(({ c }) => c[2] >= a && c[2] <= b)
+      .map(({ c, i }) => ({ k: "c" + i, n: c[1], d: String(c[2]), r: (c[5] || "") + (c[4] === "seven" ? (c[5] ? ". " : "") + "Lo reciben como concilio ecuménico" : ""), href: "/es/historia/linea-de-tiempo#" + c[0] }));
+    const ds = DIVISIONS.map((d, i) => ({ d, i })).filter(({ d }) => d[2] <= b && (d[3] || d[2]) >= a)
+      .map(({ d, i }) => ({ k: "d" + i, n: d[1], d: d[3] ? d[2] + "–" + d[3] : String(d[2]), r: "", href: "/es/historia/divisiones/" + d[0] }));
+    const parts = [];
+    if (fs.length) parts.push(fs.length + (fs.length === 1 ? " Padre o escritor" : " Padres y escritores"));
+    if (cs.length) parts.push(cs.length + (cs.length === 1 ? " concilio" : " concilios"));
+    if (ds.length) parts.push(ds.length + (ds.length === 1 ? " división" : " divisiones"));
+    const joined = parts.length > 1 ? parts.slice(0, -1).join(", ") + " y " + parts[parts.length - 1] : parts[0];
+    status.textContent = parts.length ? "Del año " + a + " al " + b + ": " + joined + ". Arrastra la ventana para elegir otros años." : "Nada registrado entre los años " + a + " y " + b + ". Arrastra la ventana para elegir otros años.";
+    const html = '<div data-k="col-a">' + (groupHtml("f", "Padres y escritores", fs) || '<p class="sub" data-k="none-f" style="margin:0">Ningún Padre de estos años.</p>') + '</div><div data-k="col-b">' + groupHtml("c", "Concilios", cs) + (cs.length && ds.length ? '<div style="height:28px"></div>' : "") + groupHtml("d", "Divisiones", ds) + "</div>";
+    flipRender(lists, () => { lists.innerHTML = html; }, { instant });
+  };
+  const schedule = () => { clearTimeout(listT); listT = setTimeout(() => renderLists(false), 140); };
+  lists.addEventListener("click", (e) => {
+    const m = e.target.closest("[data-more]");
+    if (!m) return;
+    const k = m.dataset.more;
+    if (expanded.has(k)) expanded.delete(k); else expanded.add(k);
+    renderLists(false);
+  });
+  const yearAt = (clientX) => { const r = track.getBoundingClientRect(); return Y0 + ((clientX - r.left) / r.width) * (Y1 - Y0); };
+  const snap = (y) => Math.round(y / 10) * 10;
+  let drag = null;
+  track.addEventListener("pointerdown", (e) => {
+    const hd = e.target.closest(".hd");
+    const mode = hd ? hd.dataset.h : e.target.closest(".tl2-win") ? "move" : "new";
+    drag = { mode, x0: e.clientX, y0: yearAt(e.clientX), a0: a, b0: b, moved: false };
+    track.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  track.addEventListener("pointermove", (e) => {
+    if (!drag) return;
+    if (!drag.moved && Math.abs(e.clientX - drag.x0) < 5) return;
+    drag.moved = true;
+    const y = yearAt(e.clientX), mw = minW();
+    if (drag.mode === "move") {
+      const w = drag.b0 - drag.a0;
+      a = clamp(snap(drag.a0 + y - drag.y0), Y0 === 1 ? 0 : Y0, 2026 - w); if (a < 1) a = 1; b = a + w;
+    } else if (drag.mode === "l") a = clamp(snap(y), 1, b - mw);
+    else if (drag.mode === "r") b = clamp(snap(y), a + mw, 2026);
+    else { const s = snap(drag.y0), t = snap(y); a = clamp(Math.min(s, t), 1, 2026 - mw); b = clamp(Math.max(s, t), a + mw, 2026); }
+    draw(); schedule();
+  });
+  const end = (e) => {
+    if (!drag) return;
+    if (!drag.moved && drag.mode === "new") {
+      const w = b - a, c = snap(drag.y0);
+      a = clamp(c - Math.round(w / 20) * 10, 1, 2026 - w); b = a + w;
+      draw();
+    }
+    drag = null; clearTimeout(listT); renderLists(false);
+  };
+  track.addEventListener("pointerup", end);
+  track.addEventListener("pointercancel", end);
+  win.addEventListener("keydown", (e) => {
+    const step = e.shiftKey ? 50 : 10, w = b - a;
+    if (e.key === "ArrowRight") { e.preventDefault(); a = Math.min(2026 - w, a + step); b = a + w; }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); a = Math.max(1, a - step); b = a + w; }
+    else return;
+    draw(); schedule();
+  });
+  draw(); renderLists(true);
+}
+
+/* ---------- the short reader (D) ---------- */
+function verseHtml(ed) {
+  return JOHN6[ed].map((v) => '<p class="v"><sup>' + v[0] + "</sup>" + esc(v[1]) + (v[2] ? '<span class="j">' + esc(v[2]) + "</span>" : "") + "</p>").join("");
+}
+function readerHtml() {
+  return '<div class="reader" data-reader><div class="seg" data-edseg aria-label="Traducción">' +
+    EDITIONS.map((e, i) => '<button type="button" data-v="' + e.id + '" aria-pressed="' + (i === 0) + '" title="' + e.name + '">' + e.ab + "</button>").join("") +
+    '</div><div class="rtext" style="margin-top:22px">' + verseHtml("rv1909") + '</div><p class="rnote">' + EDITIONS[0].note + '</p><a class="lgo f" href="/es/biblia/juan/6">Leer Juan 6 completo</a></div>';
+}
+function initReader(root) {
+  const text = $(".rtext", root), note = $(".rnote", root);
+  const place = initSeg($("[data-edseg]", root), (v) => {
+    const e = EDITIONS.find((x) => x.id === v);
+    if (reduced()) { text.innerHTML = verseHtml(v); note.textContent = e.note; return; }
+    text.classList.add("fade"); note.style.opacity = "0";
+    setTimeout(() => { text.innerHTML = verseHtml(v); note.textContent = e.note; text.classList.remove("fade"); note.style.opacity = ""; }, 160);
+  });
+  note.style.transition = "opacity 160ms var(--ease-standard)";
+  placers.push(() => place(true));
+  document.fonts.ready.then(() => place(true));
+}
+
+/* ---------- inline search (D) ---------- */
+function initInlineSearch(root) {
+  const input = $("input", root), list = $(".si-res", root);
+  let sel = -1, expanded = new Set();
+  const rows = () => $$(".sr", list);
+  const select = (i) => { const r = rows(); if (!r.length) { sel = -1; return; } sel = clamp(i, 0, r.length - 1); r.forEach((x, j) => x.setAttribute("aria-selected", String(j === sel))); };
+  const render = () => {
+    const q = input.value;
+    const html = q.trim() ? resultsHtml(q, expanded) : "";
+    flipRender(list, () => { list.innerHTML = html; });
+    select(0);
+  };
+  input.addEventListener("input", () => { expanded = new Set(); render(); });
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") { e.preventDefault(); select(sel + 1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); select(sel - 1); }
+    else if (e.key === "Enter") { const r = rows()[sel]; if (r) { e.preventDefault(); showLink(r.dataset.href, $(".s-t", r).textContent); } }
+    else if (e.key === "Escape" && input.value) { e.stopPropagation(); input.value = ""; render(); }
+  });
+  list.addEventListener("pointermove", (e) => { const r = e.target.closest(".sr"); if (r) select(rows().indexOf(r)); });
+  list.addEventListener("click", (e) => {
+    const m = e.target.closest("[data-more]");
+    if (m) { e.stopPropagation(); expanded.add(m.dataset.more); render(); input.focus({ preventScroll: true }); }
+  });
+}
+
+/* ---------- the four homes ---------- */
+const LEDE = "Qué cree cada tradición cristiana, por qué, y cada fuente primaria.";
+const BIBLE_ROWS = [
+  ["Antiguo Testamento", "", "39 libros", "/es/biblia/genesis/1"],
+  ["Libros deuterocanónicos", "", "7 libros", "/es/biblia/tobias/1"],
+  ["Nuevo Testamento", "", "27 libros", "/es/biblia/mateo/1"],
+];
+const OPTIONS = {
+  a: {
+    name: "A. El índice",
+    line: "La portada es la tabla de contenidos del sitio: el nombre, una línea de qué es y tres listas, Doctrinas, Biblia e Historia, con sus números reales. Al final, cómo se hace, con citas que se abren de verdad.",
+    meta: "Árbol lateral: no<br>Costo: bajo",
+    tree: false,
+    html: () =>
+      '<div class="hdr col"><h1 class="h1d tp" style="--p:1">Doctrina</h1><p class="lede tp" style="--p:2">' + LEDE + "</p></div>" + resumeHtml(3) +
+      '<section class="sec col" data-rl="Doctrinas" aria-labelledby="h-d"><h2 class="h2" id="h-d">Doctrinas</h2><p class="sub">Católica, ortodoxa, luterana, reformada y bautista, cada una en sus propias palabras, con las objeciones que recibe y su respuesta.</p><div style="margin-top:28px">' + doctrineRows(DOCTRINES) + "</div></section>" +
+      '<section class="sec col" data-rl="Biblia" aria-labelledby="h-b"><h2 class="h2" id="h-b">Biblia</h2><p class="sub">Cinco traducciones, en español y en inglés, una debajo o al lado de la otra. Las palabras de Jesús van en rojo donde la edición las marca.</p>' + editionsHtml() + '<div style="margin-top:22px">' + qrows(BIBLE_ROWS) + "</div></section>" +
+      '<section class="sec col" data-rl="Historia" aria-labelledby="h-h"><h2 class="h2" id="h-h">Historia</h2><p class="sub">Los escritores de los primeros siglos, los concilios, las divisiones y la Reforma, con sus fechas.</p><div style="margin-top:28px">' + qrows(HISTORY_ROWS) + "</div></section>" +
+      methodHtml(),
+    init: () => {},
+  },
+  b: {
+    name: "B. Una pregunta",
+    line: "Abre con una pregunta real, la de la Eucaristía, y sus cinco respuestas con el cambio de tradición que ya existe. Debajo, los primeros cristianos en la regla «Ola». La portada muestra el producto funcionando en vez de describirlo.",
+    meta: "Árbol lateral: sí<br>Costo: medio",
+    tree: true,
+    html: () =>
+      '<div class="hdr col"><p class="kick tp" style="--p:0">Doctrina reúne lo que enseña cada tradición cristiana, en sus propias palabras y con sus fuentes. Una de sus preguntas:</p><h1 class="h1o tp" style="--p:1">' + DOCTRINES[0].q + "</h1>" +
+      fpHtml(2, "Los textos y hechos que cita la página de la Eucaristía, por fecha.") + "</div>" + resumeHtml(3) +
+      '<section class="sec col" data-rl="Las cinco respuestas" aria-labelledby="h-r"><h2 class="h2" id="h-r">Las cinco respuestas</h2><p class="prose" style="margin-top:18px">' + COMMON + "</p>" + switcherHtml() +
+      '<div style="margin-top:28px"><a class="btn-go" href="/es/doctrinas/eucaristia">Abrir la página de la Eucaristía</a></div></section>' +
+      '<section class="sec col" data-rl="Primeros cristianos" aria-labelledby="h-w"><h2 class="h2" id="h-w">Lo que escribieron los primeros cristianos</h2><p class="sub">Testigos de los primeros siglos, en orden de fecha. Esta sección es neutral: cada tradición lee estos textos a su manera.</p>' + lrHtml() +
+      '<div style="margin-top:20px"><a class="lgo f" href="/es/doctrinas/eucaristia/primeros-cristianos">Los doce textos, completos</a></div></section>' +
+      '<section class="sec col" data-rl="Otras preguntas" aria-labelledby="h-o"><h2 class="h2" id="h-o">Otras preguntas</h2><div style="margin-top:28px">' + doctrineRows(DOCTRINES.slice(1)) + "</div></section>" +
+      '<section class="sec col" data-rl="Las fuentes" aria-labelledby="h-f"><h2 class="h2" id="h-f">Las fuentes, completas</h2><p class="sub">Lo que se cita se puede leer entero.</p><div style="margin-top:28px">' +
+      qrows([
+        ["La Biblia", "Cinco traducciones, en español y en inglés, con las palabras de Jesús en rojo donde la edición las marca.", "73 libros", "/es/biblia/juan/6"],
+        ["Los Padres", "Los escritores cristianos de los primeros siglos. 133 de sus obras se leen completas, en ediciones inglesas de dominio público.", "56", "/es/historia/padres"],
+        ["Línea de tiempo", "Padres y escritores, escritos anónimos, concilios y corrientes condenadas, del año 30 al 800.", "", "/es/historia/linea-de-tiempo"],
+      ]) + "</div></section>" + methodHtml(),
+    init: () => {
+      initFP($("[data-fp]", site));
+      initSwitcher($("[data-sw]", site));
+      initLR($("[data-lr]", site));
+    },
+  },
+  c: {
+    name: "C. Dos mil años",
+    line: "La entrada es el tiempo: del año 1 al 2026, los 56 Padres, los 41 concilios y las 10 divisiones en una sola regla. Se arrastra la ventana y la lista de abajo muestra quién escribía y qué concilios se reunían en esos años.",
+    meta: "Árbol lateral: no<br>Costo: alto",
+    tree: false,
+    html: () =>
+      '<div class="hdr col"><h1 class="h1d tp" style="--p:1">Doctrina</h1><p class="lede tp" style="--p:2">' + LEDE + "</p></div>" + resumeHtml(3) +
+      '<section class="sec wide tp" style="--p:3;margin-top:56px" data-rl="Dos mil años" aria-labelledby="h-t"><h2 class="h2" id="h-t" style="font-size:24px;line-height:1.3;font-weight:400">Del año 1 a hoy</h2><p class="sub">Los Padres, los concilios y las divisiones que registra el sitio. Los siete concilios con un punto son los que la Iglesia católica y las Iglesias ortodoxas reciben como ecuménicos.</p>' + tlHtml() + "</section>" +
+      '<section class="sec col" data-rl="Doctrinas" aria-labelledby="h-d"><h2 class="h2" id="h-d">Doctrinas</h2><p class="sub">Católica, ortodoxa, luterana, reformada y bautista, cada una en sus propias palabras.</p><div style="margin-top:28px">' + doctrineRows(DOCTRINES) + "</div></section>" +
+      '<section class="sec col" data-rl="Biblia" aria-labelledby="h-b"><h2 class="h2" id="h-b">Biblia</h2><p class="sub">Cinco traducciones, en español y en inglés. Las palabras de Jesús van en rojo donde la edición las marca.</p>' + editionsHtml() + '<div style="margin-top:22px">' + qrows(BIBLE_ROWS) + "</div></section>" +
+      methodHtml(),
+    init: () => { initTL($("[data-tl]", site)); },
+  },
+  d: {
+    name: "D. La mesa de estudio",
+    line: "Pensada para quien vuelve: lo primero es la búsqueda, abierta en la página, y lo que estabas leyendo. Debajo, la Biblia abierta en Juan 6 con sus cinco traducciones, las doctrinas y las obras de los Padres.",
+    meta: "Árbol lateral: sí<br>Costo: medio",
+    tree: true,
+    html: () => {
+      const resume = state.back
+        ? '<div class="desk-resume tp" style="--p:3"><div class="r-top"><div><div class="label" style="font:500 12.5px var(--ui);color:var(--ink-3);margin-bottom:8px">Seguir donde dejaste</div><div class="r-t">' + RESUME.title + '</div><div class="r-p">' + RESUME.path + '</div></div><span class="r-d">' + RESUME.when + "</span></div>" +
+          '<div class="reader">' + JOHN6.rv1909.slice(0, 2).map((v) => '<p class="v"><sup>' + v[0] + "</sup>" + esc(v[1]) + '<span class="j">' + esc(v[2]) + "</span></p>").join("") + "</div>" +
+          '<a class="btn-go" href="' + RESUME.href + '">Seguir leyendo</a></div>' +
+          '<div class="tp" style="--p:4;margin-top:30px"><div class="grp-h">Recientes</div>' + qrows(RECENTS.slice(0, 3).map((r) => [r.title, r.path, r.date || "", r.href])) + "</div>"
+        : '<div class="tp" style="--p:3;margin-top:30px"><div class="grp-h">Para empezar</div>' +
+          qrows([
+            [DOCTRINES[0].name, DOCTRINES[0].q, "", DOCTRINES[0].href],
+            ["Juan 6, en cinco traducciones", "El discurso del pan de vida, con las palabras de Jesús en rojo.", "", "/es/biblia/juan/6"],
+            ["Ignacio de Antioquía, A los Esmirniotas", "Una de las siete cartas, c. 107–110, completa.", "", "/es/historia/obras/ignatius-smyrnaeans"],
+          ]) + "</div>";
+      return '<div class="hdr col"><h1 class="h1s tp" style="--p:1">' + LEDE + "</h1>" +
+        '<div class="search-inline tp" style="--p:2" data-si><label class="si-box" for="si-input">' + I.search18 + '<input id="si-input" type="text" autocomplete="off" spellcheck="false" placeholder="Buscar doctrinas, versículos, Padres, palabras"></label><ul class="si-res flipbox" role="listbox" aria-label="Resultados"></ul></div>' +
+        resume + "</div>" +
+        '<section class="sec col" data-rl="Biblia" aria-labelledby="h-b" style="margin-top:96px"><h2 class="h2" id="h-b">La Biblia</h2><p class="sub">Juan 6:53–56 en las cinco traducciones. Las palabras de Jesús van en rojo donde la edición las marca.</p>' + readerHtml() + "</section>" +
+        '<section class="sec col" data-rl="Doctrinas" aria-labelledby="h-d"><h2 class="h2" id="h-d">Doctrinas</h2><div style="margin-top:28px">' + doctrineRows(DOCTRINES) + "</div></section>" +
+        '<section class="sec col works" data-rl="Padres" aria-labelledby="h-p"><h2 class="h2" id="h-p">Los Padres, completos</h2><p class="sub">133 obras para leer enteras, en ediciones inglesas de dominio público. Algunas:</p><ul class="hl" style="margin-top:22px">' +
+        WORKS.map((w) => '<li data-rv><a class="erow" href="' + w[3] + '"><span class="e-n">' + w[0] + '</span><span class="e-d">' + w[2] + '</span><span class="e-r">' + w[1] + "</span></a></li>").join("") +
+        '</ul><div style="margin-top:20px"><a class="lgo f" href="/es/historia/padres">Los 56 Padres</a></div></section>' +
+        methodHtml();
+    },
+    init: () => {
+      initReader($("[data-reader]", site));
+      initInlineSearch($("[data-si]", site));
+    },
+  },
+};
+
+/* ---------- render ---------- */
+function render() {
+  placers = [];
+  closeSearch(); closeCite();
+  if (!drawer.hidden) { drawer.classList.remove("on"); drScrim.classList.remove("on"); drawer.hidden = true; drScrim.hidden = true; }
+  nodeStore.clear();
+  $("#dr-tree").innerHTML = "";
+  const o = OPTIONS[state.opt];
+  site.classList.toggle("hastree", o.tree);
+  site.innerHTML = topBar() + '<div class="shell' + (o.tree ? " withtree" : "") + '">' + (o.tree ? '<nav class="side tex" aria-label="Índice del sitio">' + treeHtml() + "</nav>" : "") + '<main class="main" id="content">' + o.html() + mailHtml() + "</main></div>";
+  site.scrollTop = 0;
+  o.init();
+  buildEdge();
+  setupReveal();
+  runEntrance();
+}
+function updateNote() {
+  const o = OPTIONS[state.opt];
+  $("#on-name").textContent = o.name;
+  $("#on-line").textContent = o.line;
+  $("#on-meta").innerHTML = o.meta;
+}
+function swap(fn) {
+  if (reduced()) { fn(); return; }
+  frame.classList.add("fading");
+  setTimeout(() => { fn(); requestAnimationFrame(() => frame.classList.remove("fading")); }, 150);
+}
+
+/* ---------- events ---------- */
+frame.addEventListener("click", (e) => {
+  const t = e.target;
+  const menu = t.closest(".tb .menu");
+  if (menu) { openDrawer(menu); return; }
+  const strig = t.closest(".strig");
+  if (strig) { openSearch(strig); return; }
+  const th = t.closest(".theme");
+  if (th) { toggleTheme(th); return; }
+  const tw = t.closest(".tw[data-node]");
+  if (tw) { toggleBranch(tw); return; }
+  const tg = t.closest("[data-toggle]");
+  if (tg) { const b = tg.parentNode.querySelector(".tw[data-node]"); if (b) toggleBranch(b); return; }
+  const c = t.closest("[data-cite]");
+  if (c) { e.preventDefault(); if (cwTrigger === c && cw.classList.contains("on")) closeCite(); else openCite(c, c.dataset.cite); return; }
+  const a = t.closest("a[href], [data-href]");
+  if (a && frame.contains(a)) {
+    e.preventDefault();
+    const href = a.getAttribute("data-href") || a.getAttribute("href");
+    if (href && href !== "#") {
+      showLink(href, (a.querySelector(".nm, .t, .tl, .s-t, .e-n, .r-t") || a).textContent.trim().split("\n")[0]);
+      if (drawer.contains(a)) closeDrawer();
+      if (cw.contains(a)) closeCite();
+    }
+  }
+});
+frame.addEventListener("keydown", (e) => {
+  const c = e.target.closest && e.target.closest("[data-cite]");
+  if (c && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); c.click(); }
+});
+frame.addEventListener("submit", (e) => {
+  if (e.target.id !== "mail-form") return;
+  e.preventDefault();
+  const input = $("#mail-input"), ok = $("#mail-ok");
+  if (!input.value.trim() || !input.checkValidity()) { ok.textContent = "Falta un correo válido, como nombre@ejemplo.com."; input.focus(); return; }
+  ok.textContent = "Listo. Te llegará un correo con la próxima doctrina que se publique.";
+  input.value = "";
+});
+document.addEventListener("keydown", (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); if (sd.classList.contains("on")) closeSearch(); else openSearch($(".strig", site)); return; }
+  if (e.key === "Escape") { if (closeSearch()) return; if (closeCite()) return; closeDrawer(); }
+});
+
+initSeg($("#c-opt"), (v) => { state.opt = v; updateNote(); swap(render); });
+initSeg($("#c-dev"), (v) => { swap(() => { state.phone = v === "phone"; frame.classList.toggle("phone", state.phone); cwPos = null; render(); }); });
+initSeg($("#c-who"), (v) => { state.back = v === "back"; swap(render); });
+$("#c-replay").addEventListener("click", () => swap(render));
+new ResizeObserver(() => {
+  placers.forEach((p) => p());
+  if (cw.classList.contains("on") && cwPos && frame.clientWidth > 720) {
+    cwPos.x = clamp(cwPos.x, 8, frame.clientWidth - 408); cw.style.left = cwPos.x + "px";
+  }
+}).observe(frame);
+document.fonts.ready.then(() => $$(".ctl .seg").forEach((s) => { const b = $('button[aria-pressed="true"]', s); const ind = $(".ind", s); if (b && ind) { ind.style.width = b.offsetWidth + "px"; ind.style.transform = "translateX(" + b.offsetLeft + "px)"; } }));
+updateNote();
+render();
+
 })();
 </script>
