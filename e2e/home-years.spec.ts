@@ -107,17 +107,23 @@ test("the status follows the window while the drag is still going on", async ({ 
 
 test("marks change state with a 200 ms transition", async ({ page }) => {
   await open(page);
+  await page.evaluate(() => {
+    const seen: string[] = [];
+    (window as unknown as { seen: string[] }).seen = seen;
+    document.addEventListener("transitionrun", (event) => {
+      const target = event.target as HTMLElement;
+      if (target.dataset.father === "methodius-of-olympus") seen.push(event.propertyName);
+    });
+  });
   await page.locator(win).focus();
   await page.keyboard.press("Shift+ArrowRight");
-  const bar = page.locator("[data-father='methodius-of-olympus']");
-  const durations = await bar.evaluate((element) =>
-    element.getAnimations().map((animation) => animation.effect!.getTiming().duration),
-  );
-  expect(durations.length).toBeGreaterThan(0);
-  expect(durations.every((duration) => duration === 200)).toBe(true);
-  expect(await bar.evaluate((element) => getComputedStyle(element).transitionTimingFunction)).toBe(
-    "cubic-bezier(0.25, 0.1, 0.25, 1), cubic-bezier(0.25, 0.1, 0.25, 1)",
-  );
+  await expect
+    .poll(() => page.evaluate(() => (window as unknown as { seen: string[] }).seen.sort().join(",")))
+    .toBe("background-color,opacity");
+  const style = await page
+    .locator("[data-father='methodius-of-olympus']")
+    .evaluate((bar) => [getComputedStyle(bar).transitionDuration, getComputedStyle(bar).transitionTimingFunction]);
+  expect(style).toEqual(["0.2s, 0.2s", "cubic-bezier(0.25, 0.1, 0.25, 1), cubic-bezier(0.25, 0.1, 0.25, 1)"]);
 });
 
 test("under reduced motion the marks change at once", async ({ browser }) => {
@@ -159,5 +165,104 @@ test("on the phone the row labels hide, the window can be dragged by touch and n
   );
   expect(hit).toBe("l");
   expect(await horizontalOverflow(page)).toBe(0);
+  await context.close();
+});
+
+const rows = (page: Page, group: string) => page.locator(`[data-k='g-${group}'] li`);
+
+test("the lists show 8 rows per group with the proposal's texts and «Mostrar N más»", async ({ page }) => {
+  await open(page);
+  await expect(page.locator("#years .years-lists h3")).toHaveText(["Padres y escritores", "Concilios", "Divisiones"]);
+  await expect(rows(page, "fathers")).toHaveCount(8);
+  await expect(rows(page, "fathers").first()).toHaveText(
+    /Metodio de Olimpo\s*murió c\. 311\s*Obispo y escritor \(Licia\)/,
+  );
+  await expect(rows(page, "fathers").first().locator("a")).toHaveAttribute(
+    "href",
+    "/es/historia/padres/methodius-of-olympus",
+  );
+  await expect(page.locator("[data-k='g-fathers'] button")).toHaveText("Mostrar 18 más");
+  await expect(rows(page, "councils")).toHaveCount(8);
+  await expect(page.locator("[data-k='g-councils'] button")).toHaveText("Mostrar 4 más");
+  await expect(rows(page, "councils").nth(2)).toContainText("Lo reciben como concilio ecuménico");
+  await expect(rows(page, "divisions")).toHaveText([
+    /Separación de la Iglesia del Oriente\s*431–486/,
+    /Cisma calcedoniano/,
+  ]);
+  await expect(page.locator("[data-k='g-divisions'] button")).toHaveCount(0);
+});
+
+test("«Mostrar más» opens the group with the FLIP entrance and «Mostrar menos» leaves ghosts", async ({ page }) => {
+  await open(page);
+  const more = page.locator("[data-k='g-fathers'] button");
+  const entering = await page.evaluate(() => {
+    document.querySelector<HTMLButtonElement>("[data-k='g-fathers'] button")!.click();
+    const ninth = document.querySelectorAll("[data-k='g-fathers'] li")[8]!;
+    return ninth.getAnimations().map((a) => [a.effect!.getTiming().duration, a.effect!.getTiming().delay]);
+  });
+  expect(entering).toEqual([[420, 120]]);
+  await expect(rows(page, "fathers")).toHaveCount(26);
+  await expect(more).toHaveText("Mostrar menos");
+  await expect(more).toHaveAttribute("aria-expanded", "true");
+  const ghostsNow = await page.evaluate(() => {
+    document.querySelector<HTMLButtonElement>("[data-k='g-fathers'] button")!.click();
+    return document.querySelectorAll("#years .years-lists + div > *").length;
+  });
+  expect(ghostsNow).toBe(18);
+  await expect(rows(page, "fathers")).toHaveCount(8);
+  await expect(page.locator("#years .years-lists + div > *")).toHaveCount(0);
+});
+
+test("moving the window slides kept rows, fades the others and keeps «Mostrar más» open", async ({ page }) => {
+  await open(page);
+  await page.locator("[data-k='g-councils'] button").click();
+  await expect(rows(page, "councils")).toHaveCount(12);
+  await page.locator(win).focus();
+  const frames = await page.evaluate(
+    () =>
+      new Promise<number[]>((resolve) => {
+        const ring = document.querySelector("[data-window]") as HTMLElement;
+        ring.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", shiftKey: true, bubbles: true }));
+        const tops: number[] = [];
+        const start = performance.now();
+        const tick = () => {
+          const row = document.querySelector("[data-k='c-ephesus-431']");
+          if (row) tops.push(row.getBoundingClientRect().top);
+          if (performance.now() - start < 800) requestAnimationFrame(tick);
+          else resolve(tops);
+        };
+        requestAnimationFrame(tick);
+      }),
+  );
+  await expect(page.locator(win)).toHaveAttribute("aria-valuetext", "Del año 350 al 510");
+  await expect(rows(page, "councils")).toHaveCount(9);
+  const total = Math.abs(frames.at(-1)! - frames[0]!);
+  expect(total).toBeGreaterThan(40);
+  const steps = frames.slice(1).map((top, i) => Math.abs(top - frames[i]!));
+  expect(Math.max(...steps)).toBeLessThan(total * 0.35);
+  const direction = Math.sign(frames.at(-1)! - frames[0]!);
+  expect(frames.slice(1).every((top, i) => (top - frames[i]!) * direction >= -0.5)).toBe(true);
+});
+
+test("a window without Fathers says so and keeps the columns", async ({ page }) => {
+  await open(page);
+  const y = await trackY(page, 60);
+  await dragYears(page, await xOf(page, 1500), await xOf(page, 1560), y);
+  await expect(page.locator("[data-k='none-f']")).toHaveText("Ningún Padre de estos años.");
+  await expect(page.locator("#years .years-lists h3")).toHaveText(["Concilios", "Divisiones"]);
+});
+
+test("under reduced motion the lists change with no animation and no ghosts", async ({ browser }) => {
+  const context = await browser.newContext({ reducedMotion: "reduce", viewport: { width: 1440, height: 900 } });
+  const page = await context.newPage();
+  await page.goto("/es");
+  const state = await page.evaluate(() => {
+    document.querySelector<HTMLButtonElement>("[data-k='g-fathers'] button")!.click();
+    return {
+      ghosts: document.querySelectorAll("#years .years-lists + div > *").length,
+      animations: document.querySelector("#years .years-lists")!.getAnimations({ subtree: true }).length,
+    };
+  });
+  expect(state).toEqual({ ghosts: 0, animations: 0 });
   await context.close();
 });

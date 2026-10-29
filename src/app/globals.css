@@ -171,6 +171,10 @@
   --text-entity--line-height: 1.4;
   --text-resume-path: 13px;
   --text-resume-path--line-height: 1.45;
+  --text-years-name: 16px;
+  --text-years-name--line-height: 1.4;
+  --text-years-date: 14px;
+  --text-years-date--line-height: 1.6;
   --text-fact-row: 16.5px;
   --text-fact-row--line-height: 1.45;
   --text-appear-note: 16px;
@@ -1364,6 +1368,22 @@
       left: 4px;
     }
   }
+}
+
+@utility years-lists {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 36px 56px;
+
+  @media (min-width: 56.25rem) {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+}
+
+@utility entry-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 18px;
 }
 
 @utility resume-row {
