@@ -83,3 +83,46 @@ test("smooth scroll runs without reduced motion and is not loaded with it", asyn
   expect(await quiet.evaluate(() => document.documentElement.className.includes("lenis"))).toBe(false);
   await still.close();
 });
+
+const sizes: [number, number][] = [
+  [768, 1024],
+  [1024, 768],
+  [1400, 900],
+  [1700, 1100],
+];
+
+for (const [width, height] of sizes) {
+  for (const hasTouch of [false, true]) {
+    test(`the ticks keep the 13 px pitch and the hover stretch at ${width} px${hasTouch ? " with a coarse pointer" : ""}`, async ({
+      browser,
+    }) => {
+      const context = await browser.newContext({ viewport: { width, height }, hasTouch });
+      const page = await context.newPage();
+      await page.goto(traditionPath);
+      await page.waitForTimeout(1500);
+      const first = await page.locator(ticks).nth(0).boundingBox();
+      const second = await page.locator(ticks).nth(1).boundingBox();
+      expect(first?.height).toBe(13);
+      expect((second?.y ?? 0) - (first?.y ?? 0)).toBe(13);
+      await page.mouse.move((first?.x ?? 0) + 40, (first?.y ?? 0) + 6);
+      await page.waitForTimeout(350);
+      const widths = await page
+        .locator(`${ticks} span:last-child`)
+        .evaluateAll((bars) => bars.map((bar) => Math.round(bar.getBoundingClientRect().width)));
+      expect(widths[0] ?? 0).toBeGreaterThan(60);
+      expect(widths[1] ?? 0).toBeGreaterThan(60);
+      await context.close();
+    });
+  }
+}
+
+test("on a coarse pointer a tap beside the ticks jumps to the nearest section", async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 1024, height: 768 }, hasTouch: true });
+  const page = await context.newPage();
+  await page.goto(traditionPath);
+  await page.waitForTimeout(1500);
+  const fourth = await page.locator(ticks).nth(3).boundingBox();
+  await page.touchscreen.tap((fourth?.x ?? 0) - 6, (fourth?.y ?? 0) + 6);
+  await expect(page.locator(ticks).nth(3)).toHaveAttribute("data-active", "true");
+  await context.close();
+});

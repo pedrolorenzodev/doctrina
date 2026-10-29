@@ -38,6 +38,7 @@ export function EdgeRuler({ label, sections }: EdgeRulerProps) {
   const lock = useRef<number | null>(null);
   const lockTimer = useRef<number | undefined>(undefined);
   const root = useRef<HTMLElement>(null);
+  const reach = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const update = () => {
@@ -87,12 +88,14 @@ export function EdgeRuler({ label, sections }: EdgeRulerProps) {
     <nav
       ref={root}
       aria-label={label}
-      onPointerMove={(event) => {
-        if (event.pointerType === "mouse") setHovered(nearestTick(event.clientY));
-      }}
+      onPointerMove={(event) => setHovered(nearestTick(event.clientY))}
       onPointerLeave={() => setHovered(null)}
+      onClick={(event) => {
+        if (event.target === event.currentTarget || event.target === reach.current) jump(nearestTick(event.clientY));
+      }}
       className="fixed top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end edge-right md:flex"
     >
+      <span ref={reach} aria-hidden="true" className="absolute -inset-3 hidden pointer-coarse:block" />
       {sections.map((section, index) => (
         <button
           key={section.id}
@@ -105,7 +108,7 @@ export function EdgeRuler({ label, sections }: EdgeRulerProps) {
           onClick={() => jump(index)}
           onFocus={() => setHovered(index)}
           onBlur={() => setHovered(null)}
-          className="group/tick relative flex h-3.25 w-16 cursor-pointer items-center justify-end p-0 pointer-coarse:h-11"
+          className="group/tick relative flex h-3.25 w-16 cursor-pointer items-center justify-end p-0"
         >
           <span
             aria-hidden="true"
