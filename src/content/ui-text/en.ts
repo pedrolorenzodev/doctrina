@@ -580,7 +580,55 @@ export const en: UiText = {
     lede: "What each Christian tradition believes, why, and every primary source.",
     resume: "Pick up where you left off",
     resumeDetail: "{edition}, from verse {verse}",
+    doctrines: {
+      title: "Doctrines",
+      intro: "Catholic, Orthodox, Lutheran, Reformed and Baptist, each in its own words.",
+    },
+    bible: {
+      title: "Bible",
+      intro:
+        "Five translations, in Spanish and in English. The words of Jesus are in red where the edition marks them.",
+      books: "{n} books",
+    },
+    method: {
+      ruler: "How it is made",
+      title: "How Doctrina is made",
+      intro: "The same holds for every doctrine, every tradition and every text.",
+      words: {
+        title: "Each tradition, in its own words",
+        before:
+          "What each tradition teaches is quoted from its own documents: councils, confessions, catechisms. The Catholic definition of the Eucharist, for example, is in ",
+        link: "Trent, session XIII, chapter 4",
+        after: ".",
+      },
+      sources: {
+        title: "Each quotation, with its source",
+        text: "A quotation opens in place, with the work, the passage and the date. The full source, with its edition and its licence, is one tap away.",
+      },
+      fathers: {
+        title: "The early Christians belong to no one",
+        before:
+          "What the Fathers wrote is shown in order of date, without assigning it to any tradition of today: each tradition reads it in its own way. For example, ",
+        link: "Ignatius of Antioch, To the Smyrnaeans 7.1",
+        after: ".",
+      },
+      open: {
+        title: "The site does not conclude",
+        text: "Each position appears with the objections it receives and with its answer, in the words of whoever answers. The conclusion is left to the reader.",
+      },
+    },
+    mail: {
+      title: "New doctrines, by email",
+      text: "One email each time a doctrine is published. Nothing else.",
+      label: "Your email",
+      placeholder: "name@example.com",
+      submit: "Notify me",
+      invalid: "A valid email is missing, such as name@example.com.",
+      done: "Done. You will get an email with the next doctrine published.",
+    },
+    footer: { glossary: "Glossary", sources: "Sources", other: "Español" },
     years: {
+      ruler: "Two thousand years",
       title: "From year 1 to today",
       intro:
         "The Fathers, councils and divisions the site records. The seven councils with a dot are the ones the Catholic Church and the Orthodox Churches receive as ecumenical.",

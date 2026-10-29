@@ -578,7 +578,55 @@ export const es = {
     lede: "Qué cree cada tradición cristiana, por qué, y cada fuente primaria.",
     resume: "Seguir donde dejaste",
     resumeDetail: "{edition}, desde el versículo {verse}",
+    doctrines: {
+      title: "Doctrinas",
+      intro: "Católica, ortodoxa, luterana, reformada y bautista, cada una en sus propias palabras.",
+    },
+    bible: {
+      title: "Biblia",
+      intro:
+        "Cinco traducciones, en español y en inglés. Las palabras de Jesús van en rojo donde la edición las marca.",
+      books: "{n} libros",
+    },
+    method: {
+      ruler: "Cómo se hace",
+      title: "Cómo se hace Doctrina",
+      intro: "Lo mismo vale para cada doctrina, cada tradición y cada texto.",
+      words: {
+        title: "Cada tradición, con sus palabras",
+        before:
+          "Lo que enseña cada tradición se cita de sus propios documentos: concilios, confesiones, catecismos. La definición católica de la Eucaristía, por ejemplo, está en ",
+        link: "Trento, sesión XIII, capítulo 4",
+        after: ".",
+      },
+      sources: {
+        title: "Cada cita, con su fuente",
+        text: "Una cita se abre en el lugar, con la obra, el pasaje y la fecha. La fuente completa, con su edición y su licencia, queda a un toque.",
+      },
+      fathers: {
+        title: "Los primeros cristianos no son de nadie",
+        before:
+          "Lo que escribieron los Padres se muestra en orden de fecha, sin asignarlo a ninguna tradición de hoy: cada tradición lo lee a su manera. Por ejemplo, ",
+        link: "Ignacio de Antioquía, A los Esmirniotas 7.1",
+        after: ".",
+      },
+      open: {
+        title: "El sitio no concluye",
+        text: "Cada postura aparece con las objeciones que recibe y con su respuesta, en las palabras de quien responde. La conclusión queda del lado del lector.",
+      },
+    },
+    mail: {
+      title: "Doctrinas nuevas, por correo",
+      text: "Un correo cada vez que se publica una doctrina. Nada más.",
+      label: "Tu correo",
+      placeholder: "nombre@ejemplo.com",
+      submit: "Avisarme",
+      invalid: "Falta un correo válido, como nombre@ejemplo.com.",
+      done: "Listo. Te llegará un correo con la próxima doctrina que se publique.",
+    },
+    footer: { glossary: "Glosario", sources: "Fuentes", other: "English" },
     years: {
+      ruler: "Dos mil años",
       title: "Del año 1 a hoy",
       intro:
         "Los Padres, los concilios y las divisiones que registra el sitio. Los siete concilios con un punto son los que la Iglesia católica y las Iglesias ortodoxas reciben como ecuménicos.",
