@@ -30,7 +30,7 @@ export function FatherWritingsSection({ id, title, axisLabel, span, writings }: 
               <PageLink {...(writing.href ? { href: writing.href } : {})}>{writing.title}</PageLink>
             </p>
             {writing.dateLabel ? (
-              <p className="m-0 pt-px text-ui-base font-medium text-ink tabular-nums">{writing.dateLabel}</p>
+              <p className="date-mark m-0 pt-px text-ui-base font-medium text-ink tabular-nums">{writing.dateLabel}</p>
             ) : null}
           </li>
         ))}

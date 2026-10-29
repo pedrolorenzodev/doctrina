@@ -104,8 +104,7 @@ function ResultRow({ id, result, selected, onPointer, onPick }: RowProps) {
           <Marked segments={result.path} />
         </span>
         {result.date ? (
-          <span className="inline-flex flex-none items-center gap-2.25 tabular-nums">
-            <i aria-hidden="true" className="block h-3 w-px bg-rule-2" />
+          <span className="date-mark flex-none tabular-nums">
             <Marked segments={result.date} />
           </span>
         ) : null}

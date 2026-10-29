@@ -28,6 +28,8 @@ import { localeHref, locales } from "@/lib/locale";
 const councilCitation = "T13c4";
 const fathersExample = { doctrine: "eucharist", witness: "ew-flesh", locale: "es" } as const;
 
+const sentenceSpace = " ";
+
 const bibleSections: { section: BibleSection; label: "ot" | "deutero" | "nt" }[] = [
   { section: "old", label: "ot" },
   { section: "deuterocanon", label: "deutero" },
@@ -78,15 +80,16 @@ export default async function Home() {
       <PageMain>
         <PageHeader title={site.title} lede={home.lede} />
         <HomeResume here={localeHref(locale)} text={{ label: home.resume, detail: home.resumeDetail }} />
-        <section
-          id="years"
-          aria-labelledby="years-title"
-          className="title-part title-part-3 mt-14 max-w-wide scroll-mt-offset"
-        >
+        <section id="years" aria-labelledby="years-title" className="title-part title-part-3 mt-14 scroll-mt-offset">
           <h2 id="years-title" className="m-0 font-head text-title-sm leading-group font-normal text-ink opsz-60">
             {years.title}
           </h2>
-          <p className="mt-2.5 mb-0 max-w-155 text-sub text-ink-3">{years.intro}</p>
+          <p className="mt-2.5 mb-0 max-w-155 text-sub text-ink-3">
+            {years.intro}
+            {sentenceSpace}
+            <br />
+            {years.introMore}
+          </p>
           <YearsExplorer data={getHomeTimeline(locale)} text={years} />
         </section>
         <Section id="doctrines" title={home.doctrines.title}>

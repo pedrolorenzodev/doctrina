@@ -61,7 +61,7 @@ function Group({
               className="years-row px-1 py-3 no-underline transition-colors duration-150 ease-standard hover:bg-hover data-hot:bg-hover"
             >
               <span className="min-w-0 font-body text-years-name font-medium text-ink">{row.name}</span>
-              <span className="col-start-2 row-start-1 text-years-date font-medium text-ink tabular-nums">
+              <span className="date-mark col-start-2 row-start-1 justify-self-end text-years-date font-normal text-ink-2 tabular-nums">
                 {row.date}
               </span>
               <span className="col-start-1 text-search-line text-ink-3">{row.detail}</span>
@@ -83,7 +83,7 @@ function Group({
 export function YearsLists({ groups, expanded, text, box, ghosts, hot, onToggle, onHot }: YearsListsProps) {
   const { fathers, councils, divisions } = groups;
   return (
-    <div className="relative mt-7.5">
+    <div className="relative mt-7.5 max-w-wide">
       <div ref={box} className="years-lists">
         <div data-k="col-a">
           {fathers.length ? (

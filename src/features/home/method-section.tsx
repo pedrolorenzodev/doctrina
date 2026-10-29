@@ -10,8 +10,8 @@ type MethodText = {
   title: string;
   intro: string;
   words: Cited;
-  sources: Plain;
-  fathers: Cited;
+  sources: Cited;
+  fathers: Plain;
   open: Plain;
 };
 
@@ -36,12 +36,12 @@ export function MethodSection({ text, councilView, witnessView }: MethodSectionP
           <CitationLink id={councilView}>{text.words.link}</CitationLink>
           {text.words.after}
         </Row>
-        <Row title={text.sources.title}>{text.sources.text}</Row>
-        <Row title={text.fathers.title}>
-          {text.fathers.before}
-          <CitationLink id={witnessView}>{text.fathers.link}</CitationLink>
-          {text.fathers.after}
+        <Row title={text.sources.title}>
+          {text.sources.before}
+          <CitationLink id={witnessView}>{text.sources.link}</CitationLink>
+          {text.sources.after}
         </Row>
+        <Row title={text.fathers.title}>{text.fathers.text}</Row>
         <Row title={text.open.title}>{text.open.text}</Row>
       </RevealList>
     </Section>

@@ -553,7 +553,7 @@ export function YourNotesPanel({
                               </span>
                               <span className="mt-1 flex w-full justify-between gap-3 text-note-line text-cite">
                                 {item.place}
-                                <span className="text-ink-3 tabular-nums">{item.date}</span>
+                                <span className="date-mark flex-none text-ink-3 tabular-nums">{item.date}</span>
                               </span>
                             </button>
                           </li>

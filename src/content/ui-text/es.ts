@@ -584,8 +584,7 @@ export const es = {
     },
     bible: {
       title: "Biblia",
-      intro:
-        "Cinco traducciones, en español y en inglés. Las palabras de Jesús van en rojo donde la edición las marca.",
+      intro: "Cinco traducciones, en español y en inglés.",
       books: "{n} libros",
     },
     method: {
@@ -601,14 +600,14 @@ export const es = {
       },
       sources: {
         title: "Cada cita, con su fuente",
-        text: "Una cita se abre en el lugar, con la obra, el pasaje y la fecha. La fuente completa, con su edición y su licencia, queda a un toque.",
+        before:
+          "Una cita se abre en el lugar, con la obra, el pasaje y la fecha. La fuente completa, con su edición y su licencia, queda a un toque. Por ejemplo, ",
+        link: "Ignacio de Antioquía, A los Esmirniotas 7.1",
+        after: ".",
       },
       fathers: {
         title: "Los primeros cristianos no son de nadie",
-        before:
-          "Lo que escribieron los Padres se muestra en orden de fecha, sin asignarlo a ninguna tradición de hoy: cada tradición lo lee a su manera. Por ejemplo, ",
-        link: "Ignacio de Antioquía, A los Esmirniotas 7.1",
-        after: ".",
+        text: "Lo que escribieron los Padres se muestra en orden de fecha, sin asignarlo a ninguna tradición de hoy.",
       },
       open: {
         title: "El sitio no concluye",
@@ -628,8 +627,9 @@ export const es = {
     years: {
       ruler: "Dos mil años",
       title: "Del año 1 a hoy",
-      intro:
-        "Los Padres, los concilios y las divisiones que registra el sitio. Los siete concilios con un punto son los que la Iglesia católica y las Iglesias ortodoxas reciben como ecuménicos.",
+      intro: "Los Padres, los concilios y las divisiones que registra el sitio.",
+      introMore:
+        "Los siete concilios con un punto son los que la Iglesia católica y las Iglesias ortodoxas reciben como ecuménicos.",
       rows: { fathers: "Padres", councils: "Concilios", divisions: "Divisiones" },
       window: "Ventana de años",
       windowValue: "Del año {a} al {b}",

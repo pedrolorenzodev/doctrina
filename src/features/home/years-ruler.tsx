@@ -24,22 +24,14 @@ type YearsRulerProps = {
   data: YearsData;
   range: YearWindow;
   hot: string | null;
+  tip: boolean;
   text: YearsRulerText;
   onMove: (range: YearWindow) => void;
   onSettle: (range: YearWindow) => void;
   onHot: (key: string | null) => void;
 };
 
-type Mark = {
-  key: string;
-  name: string;
-  date: string;
-  from: number;
-  to: number;
-  top: number;
-  height: number;
-  half: number;
-};
+type Mark = { key: string; name: string; date: string; from: number; to: number; fatherTop: number | null };
 
 type Drag = { mode: "l" | "r" | "move" | "new"; x0: number; y0: number; a0: number; b0: number; moved: boolean };
 
@@ -48,7 +40,10 @@ const dragSlopPx = 5;
 const snapYears = 10;
 const rowClearance = 14;
 const firstRowTop = 30;
-const windowTop = 20;
+const barHeight = 3;
+const fathersToCouncils = 20;
+const councilStep = 11;
+const narrowestTrack = { phone: 328, wide: 490 };
 const keyStep = 10;
 const keyStepLarge = 50;
 const axisYears = [1, 500, 1000, 1500, 2026];
@@ -88,30 +83,44 @@ function packRows(fathers: YearsData["fathers"]) {
   return { rows: rowEnds.length, rowOf };
 }
 
+function packCouncils(councils: YearsData["councils"], clearance: number) {
+  const rowEnds: number[] = [];
+  const rowOf = new Map<string, number>();
+  for (const council of [...councils].sort((x, y) => x.year - y.year)) {
+    let row = rowEnds.findIndex((end) => end + clearance <= council.year);
+    if (row < 0) {
+      row = rowEnds.length;
+      rowEnds.push(0);
+    }
+    rowEnds[row] = council.year;
+    rowOf.set(council.id, row);
+  }
+  return { rows: rowEnds.length, rowOf };
+}
+
+const clearanceYears = (trackWidth: number) => (councilStep / trackWidth) * (span.to - span.from);
+
 function Tip({ mark, trackWidth }: { mark: Mark; trackWidth: number }) {
   const tip = useRef<HTMLSpanElement>(null);
-  const center = (percent(mark.from) + percent(mark.to)) / 2;
 
   useLayoutEffect(() => {
     const element = tip.current;
-    if (!element || trackWidth === 0) return;
+    const target = element?.parentElement?.querySelector<HTMLElement>(`[data-mark="${mark.key}"]`);
+    if (!element || !target || trackWidth === 0) return;
     const width = element.getBoundingClientRect().width;
-    const trackLeft = element.parentElement?.getBoundingClientRect().left ?? 0;
+    const trackLeft = element.parentElement!.getBoundingClientRect().left;
+    const box = target.getBoundingClientRect();
+    const center = box.left + box.width / 2 - trackLeft;
     const lowest = width > trackWidth ? Math.min(0, tipMarginPx - trackLeft) : 0;
     const highest = Math.max(trackWidth, innerWidth - tipMarginPx - trackLeft) - width;
-    const left = Math.max(lowest, Math.min((center / 100) * trackWidth - width / 2, trackWidth - width, highest));
+    const left = Math.max(lowest, Math.min(center - width / 2, trackWidth - width, highest));
     element.style.setProperty("--x", `${left}px`);
+    element.style.setProperty("--y", `${target.offsetTop - tipGapPx}px`);
     element.dataset.placed = "";
-  }, [center, trackWidth]);
+  }, [mark.key, trackWidth]);
 
   return (
-    <span
-      ref={tip}
-      aria-hidden="true"
-      data-years-tip=""
-      className="yr-tip"
-      style={at({ "--x": `${center}%`, "--y": `${mark.top - tipGapPx}px` })}
-    >
+    <span ref={tip} aria-hidden="true" data-years-tip="" className="yr-tip">
       <b className="font-semibold">{mark.name}</b>
       {nameDateSeparator}
       {mark.date}
@@ -119,7 +128,7 @@ function Tip({ mark, trackWidth }: { mark: Mark; trackWidth: number }) {
   );
 }
 
-export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: YearsRulerProps) {
+export function YearsRuler({ data, range, hot, tip, text, onMove, onSettle, onHot }: YearsRulerProps) {
   const track = useRef<HTMLDivElement>(null);
   const drag = useRef<Drag | null>(null);
   const [trackWidth, setTrackWidth] = useState(0);
@@ -134,9 +143,10 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
   const layout = useMemo(() => {
     const { rows, rowOf } = packRows(data.fathers);
     const gap = rows > 9 ? 5 : 6;
-    const councils = firstRowTop + rows * gap + 10;
-    const divisions = councils + 16;
-    const axis = divisions + 24;
+    const councilsTop = firstRowTop + (rows - 1) * gap + barHeight + fathersToCouncils;
+    const phone = packCouncils(data.councils, clearanceYears(narrowestTrack.phone));
+    const wide = packCouncils(data.councils, clearanceYears(narrowestTrack.wide));
+    const fatherTop = (id: string) => firstRowTop + (rowOf.get(id) ?? 0) * gap;
     const marks: Mark[] = [
       ...data.fathers.map((father) => ({
         key: `f-${father.id}`,
@@ -144,9 +154,7 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
         date: father.date,
         from: father.start,
         to: father.end,
-        top: firstRowTop + (rowOf.get(father.id) ?? 0) * gap,
-        height: 3,
-        half: 0,
+        fatherTop: fatherTop(father.id),
       })),
       ...data.councils.map((council) => ({
         key: `c-${council.id}`,
@@ -154,9 +162,7 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
         date: council.date,
         from: council.year,
         to: council.year,
-        top: councils - 4,
-        height: 8,
-        half: 4,
+        fatherTop: null,
       })),
       ...data.divisions.map((division) => ({
         key: `d-${division.id}`,
@@ -164,16 +170,15 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
         date: division.date,
         from: division.year,
         to: division.year,
-        top: divisions,
-        height: 14,
-        half: 0.75,
+        fatherTop: null,
       })),
     ];
-    return { rowOf, gap, councils, divisions, axis, marks, height: axis + 26, windowHeight: axis - windowTop - 4 };
+    const rowsStyle = at({ "--c0": `${councilsTop}px`, "--crows-phone": phone.rows, "--crows-wide": wide.rows });
+    return { fatherTop, phone, wide, marks, rowsStyle };
   }, [data]);
   const { a, b } = range;
 
-  const hotMark = layout.marks.find((mark) => mark.key === hot) ?? null;
+  const hotMark = tip ? (layout.marks.find((mark) => mark.key === hot) ?? null) : null;
 
   function nearestMark(clientX: number, clientY: number): string | null {
     const rect = track.current!.getBoundingClientRect();
@@ -181,16 +186,18 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
     const y = clientY - rect.top;
     let best: string | null = null;
     let bestDistance = hoverReachPx;
-    for (const mark of layout.marks) {
-      const start = (percent(mark.from) / 100) * rect.width;
-      const left = start - mark.half;
-      const right = Math.max(start + (mark.to > mark.from ? 3 : 0), (percent(mark.to) / 100) * rect.width) + mark.half;
+    for (const element of track.current!.querySelectorAll<HTMLElement>("[data-mark]")) {
+      const box = element.getBoundingClientRect();
+      const left = box.left - rect.left;
+      const right = box.right - rect.left;
+      const top = box.top - rect.top;
+      const bottom = box.bottom - rect.top;
       const dx = x < left ? left - x : x > right ? x - right : 0;
-      const dy = y < mark.top ? mark.top - y : y > mark.top + mark.height ? y - mark.top - mark.height : 0;
+      const dy = y < top ? top - y : y > bottom ? y - bottom : 0;
       const distance = Math.hypot(dx, dy);
       if (distance < bestDistance) {
         bestDistance = distance;
-        best = mark.key;
+        best = element.dataset.mark!;
       }
     }
     return best;
@@ -268,29 +275,24 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
   const labelAt = clamp(percent((a + b) / 2), 6, 94);
   const labelCovered =
     hotMark !== null &&
-    hotMark.top - tipGapPx < labelClearancePx &&
+    hotMark.fatherTop !== null &&
+    hotMark.fatherTop - tipGapPx < labelClearancePx &&
     (Math.abs((percent(hotMark.from) + percent(hotMark.to)) / 2 - labelAt) / 100) * trackWidth < labelReachPx;
   const value = text.windowValue.replace("{a}", String(a)).replace("{b}", String(b));
 
   return (
-    <div className="years-grid mt-7.5 select-none">
-      <div aria-hidden="true" className="relative hidden h-(--h) sm:block" style={at({ "--h": `${layout.height}px` })}>
+    <div className="years-grid years-rows mt-7.5 select-none" style={layout.rowsStyle}>
+      <div aria-hidden="true" className="relative hidden years-tall sm:block">
         <span
           className="absolute top-(--y) left-0 text-label leading-none text-ink-3"
           style={at({ "--y": `${firstRowTop - 4}px` })}
         >
           {text.rows.fathers}
         </span>
-        <span
-          className="absolute top-(--y) left-0 text-label leading-none text-ink-3"
-          style={at({ "--y": `${layout.councils - 2}px` })}
-        >
+        <span className="absolute top-(--c0) left-0 mt-0.5 text-label leading-none text-ink-3">
           {text.rows.councils}
         </span>
-        <span
-          className="absolute top-(--y) left-0 text-label leading-none text-ink-3"
-          style={at({ "--y": `${layout.divisions + 2}px` })}
-        >
+        <span className="absolute top-(--div-top) left-0 mt-0.5 text-label leading-none text-ink-3">
           {text.rows.divisions}
         </span>
       </div>
@@ -304,20 +306,20 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
         onPointerLeave={() => {
           if (!drag.current && hot) onHot(null);
         }}
-        className="relative h-(--h) cursor-crosshair touch-none"
-        style={at({ "--h": `${layout.height}px` })}
+        className="relative years-tall cursor-crosshair touch-none"
       >
         {data.fathers.map((father) => (
           <span
             key={father.id}
             data-father={father.id}
+            data-mark={`f-${father.id}`}
             data-in={fatherInWindow(father, range) || undefined}
             data-hot={hot === `f-${father.id}` || undefined}
             className="yr-bar"
             style={at({
               "--x": `${percent(father.start)}%`,
               "--w": `${percent(father.end) - percent(father.start)}%`,
-              "--y": `${firstRowTop + (layout.rowOf.get(father.id) ?? 0) * layout.gap}px`,
+              "--y": `${layout.fatherTop(father.id)}px`,
             })}
           />
         ))}
@@ -325,38 +327,44 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
           <span
             key={council.id}
             data-council={council.id}
+            data-mark={`c-${council.id}`}
             data-seven={council.seven || undefined}
             data-in={councilInWindow(council, range) || undefined}
             data-hot={hot === `c-${council.id}` || undefined}
             className="yr-ring"
-            style={at({ "--x": `${percent(council.year)}%`, "--y": `${layout.councils - 4}px` })}
+            style={at({
+              "--x": `${percent(council.year)}%`,
+              "--rp": layout.phone.rowOf.get(council.id) ?? 0,
+              "--rw": layout.wide.rowOf.get(council.id) ?? 0,
+            })}
           />
         ))}
         {data.divisions.map((division) => (
           <span
             key={division.id}
             data-division={division.id}
+            data-mark={`d-${division.id}`}
             data-in={divisionInWindow(division, range) || undefined}
             data-hot={hot === `d-${division.id}` || undefined}
             className="yr-div"
-            style={at({ "--x": `${percent(division.year)}%`, "--y": `${layout.divisions}px` })}
+            style={at({ "--x": `${percent(division.year)}%` })}
           />
         ))}
-        <span className="absolute inset-x-0 top-(--y) h-px bg-ink-3" style={at({ "--y": `${layout.axis}px` })} />
+        <span className="absolute inset-x-0 top-(--axis-top) h-px bg-ink-3" />
         {centuries.map((year) => (
           <span
             key={year}
-            className={`absolute top-(--y) left-(--x) w-px bg-ink-3 ${year % 500 ? "h-1" : "h-1.75"}`}
-            style={at({ "--x": `${percent(year)}%`, "--y": `${layout.axis}px` })}
+            className={`absolute top-(--axis-top) left-(--x) w-px bg-ink-3 ${year % 500 ? "h-1" : "h-1.75"}`}
+            style={at({ "--x": `${percent(year)}%` })}
           />
         ))}
         {axisYears.map((year, index) => (
           <span
             key={year}
-            className={`absolute top-(--y) left-(--x) text-axis text-ink-3 tabular-nums ${
+            className={`absolute top-(--axis-top) left-(--x) mt-2.5 text-axis text-ink-3 tabular-nums ${
               index === 0 ? "" : index === axisYears.length - 1 ? "-translate-x-full" : "-translate-x-1/2"
             }`}
-            style={at({ "--x": `${percent(year)}%`, "--y": `${layout.axis + 10}px` })}
+            style={at({ "--x": `${percent(year)}%` })}
           >
             {year}
           </span>
@@ -371,12 +379,8 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
           aria-valuenow={a}
           aria-valuetext={value}
           onKeyDown={onKeyDown}
-          className="absolute top-5 left-(--l) h-(--h) w-(--w) cursor-grab rounded-4 border border-accent bg-accent-weak active:cursor-grabbing"
-          style={at({
-            "--l": `${percent(a)}%`,
-            "--w": `${percent(b) - percent(a)}%`,
-            "--h": `${layout.windowHeight}px`,
-          })}
+          className="absolute top-5 left-(--l) years-window w-(--w) cursor-grab rounded-4 border border-accent bg-accent-weak active:cursor-grabbing"
+          style={at({ "--l": `${percent(a)}%`, "--w": `${percent(b) - percent(a)}%` })}
         >
           <span data-h="l" className="yr-handle -left-2" />
           <span data-h="r" className="yr-handle -right-2" />

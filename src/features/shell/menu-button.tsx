@@ -1,20 +1,44 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { IconButton } from "@/components/ui/icon-button";
 import { useDrawer } from "@/features/shell/drawer";
+import { chooseTreeClosed, isTreeClosed, subscribeTree } from "@/lib/tree-visibility";
+
+const desktopQuery = "(min-width: 64rem)";
+
+const subscribeDesktop = (listener: () => void) => {
+  const query = matchMedia(desktopQuery);
+  query.addEventListener("change", listener);
+  return () => query.removeEventListener("change", listener);
+};
 
 export function MenuButton({ label }: { label: string }) {
-  const { open, setOpen, menuRef, drawerOnly } = useDrawer();
+  const { open, setOpen, menuRef, home, homeTreeOpen, setHomeTreeOpen } = useDrawer();
+  const closed = useSyncExternalStore(subscribeTree, isTreeClosed, () => false);
+  const desktop = useSyncExternalStore(
+    subscribeDesktop,
+    () => matchMedia(desktopQuery).matches,
+    () => true,
+  );
+  const shown = desktop ? (home ? homeTreeOpen : !closed) : open;
+
+  function toggle() {
+    if (!matchMedia(desktopQuery).matches) setOpen(!open);
+    else if (home) setHomeTreeOpen(!homeTreeOpen);
+    else chooseTreeClosed(!closed);
+  }
+
   return (
-    <span className={drawerOnly ? "-ml-2" : "-ml-2 lg:hidden"}>
+    <span className="-ml-2">
       <IconButton
         ref={menuRef}
         size="md"
         tone="primary"
         aria-label={label}
-        aria-expanded={open}
+        aria-expanded={shown}
         aria-controls="site-sidebar"
-        onClick={() => setOpen(!open)}
+        onClick={toggle}
       >
         <svg
           width="20"

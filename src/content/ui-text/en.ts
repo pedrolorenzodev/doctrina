@@ -586,8 +586,7 @@ export const en: UiText = {
     },
     bible: {
       title: "Bible",
-      intro:
-        "Five translations, in Spanish and in English. The words of Jesus are in red where the edition marks them.",
+      intro: "Five translations, in Spanish and in English.",
       books: "{n} books",
     },
     method: {
@@ -603,14 +602,14 @@ export const en: UiText = {
       },
       sources: {
         title: "Each quotation, with its source",
-        text: "A quotation opens in place, with the work, the passage and the date. The full source, with its edition and its licence, is one tap away.",
+        before:
+          "A quotation opens in place, with the work, the passage and the date. The full source, with its edition and its licence, is one tap away. For example, ",
+        link: "Ignatius of Antioch, To the Smyrnaeans 7.1",
+        after: ".",
       },
       fathers: {
         title: "The early Christians belong to no one",
-        before:
-          "What the Fathers wrote is shown in order of date, without assigning it to any tradition of today: each tradition reads it in its own way. For example, ",
-        link: "Ignatius of Antioch, To the Smyrnaeans 7.1",
-        after: ".",
+        text: "What the Fathers wrote is shown in order of date, without assigning it to any tradition of today.",
       },
       open: {
         title: "The site does not conclude",
@@ -630,8 +629,9 @@ export const en: UiText = {
     years: {
       ruler: "Two thousand years",
       title: "From year 1 to today",
-      intro:
-        "The Fathers, councils and divisions the site records. The seven councils with a dot are the ones the Catholic Church and the Orthodox Churches receive as ecumenical.",
+      intro: "The Fathers, councils and divisions the site records.",
+      introMore:
+        "The seven councils with a dot are the ones the Catholic Church and the Orthodox Churches receive as ecumenical.",
       rows: { fathers: "Fathers", councils: "Councils", divisions: "Divisions" },
       window: "Window of years",
       windowValue: "From {a} to {b}",

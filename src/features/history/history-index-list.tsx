@@ -94,7 +94,9 @@ export function HistoryIndexList({ groups, filter, letters, columns = false }: H
                     <p className="m-0 text-source-name font-medium">
                       <PageLink {...(row.href ? { href: row.href } : {})}>{row.name}</PageLink>
                     </p>
-                    <p className="m-0 flex-none pt-px text-ui-base font-medium text-ink tabular-nums">{row.date}</p>
+                    <p className="date-mark m-0 flex-none pt-px text-ui-base font-medium text-ink tabular-nums">
+                      {row.date}
+                    </p>
                   </div>
                   <p className="m-0 mt-0.5 text-ui-sm text-ink-3">{row.detail}</p>
                 </li>

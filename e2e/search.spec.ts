@@ -185,9 +185,11 @@ test("Line 1: the path, a 1 × 12 px hairline and the date at the right; the Fat
   const row = page.locator(options).first();
   const measured = await row.evaluate((item) => {
     const meta = item.children[1] as HTMLElement;
-    const hairline = meta.querySelector("i")!.getBoundingClientRect();
-    const date = meta.lastElementChild!.getBoundingClientRect();
+    const dateBox = meta.lastElementChild as HTMLElement;
+    const mark = getComputedStyle(dateBox, "::before");
+    const date = dateBox.getBoundingClientRect();
     const path = meta.firstElementChild!.getBoundingClientRect();
+    const hairline = { width: parseFloat(mark.width), height: parseFloat(mark.height), left: date.left };
     const line = getComputedStyle(item.children[2]!);
     const title = getComputedStyle(item.children[0]!);
     return {

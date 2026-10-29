@@ -72,7 +72,7 @@ function groupsIn(data: YearsData, range: YearWindow): Record<YearsGroupKey, Yea
 export function YearsExplorer({ data, text }: { data: YearsData; text: YearsText }) {
   const [range, setRange] = useState(firstWindow);
   const [listed, setListed] = useState(firstWindow);
-  const [hot, setHot] = useState<string | null>(null);
+  const [hot, setHot] = useState<{ key: string; fromRuler: boolean } | null>(null);
   const [expanded, setExpanded] = useState<Set<YearsGroupKey>>(() => new Set());
   const timer = useRef<number | undefined>(undefined);
   const box = useRef<HTMLDivElement>(null);
@@ -109,7 +109,16 @@ export function YearsExplorer({ data, text }: { data: YearsData; text: YearsText
 
   return (
     <div>
-      <YearsRuler data={data} range={range} hot={hot} text={text} onMove={move} onSettle={settle} onHot={setHot} />
+      <YearsRuler
+        data={data}
+        range={range}
+        hot={hot?.key ?? null}
+        tip={hot?.fromRuler ?? false}
+        text={text}
+        onMove={move}
+        onSettle={settle}
+        onHot={(key) => setHot(key ? { key, fromRuler: true } : null)}
+      />
       <p aria-live="polite" className="mt-2.5 text-ui-xs leading-normal text-ink-3">
         {statusText(data, listed, text)}
       </p>
@@ -119,9 +128,9 @@ export function YearsExplorer({ data, text }: { data: YearsData; text: YearsText
         text={text}
         box={box}
         ghosts={ghosts}
-        hot={hot}
+        hot={hot?.key ?? null}
         onToggle={toggle}
-        onHot={setHot}
+        onHot={(key) => setHot(key ? { key, fromRuler: false } : null)}
       />
     </div>
   );

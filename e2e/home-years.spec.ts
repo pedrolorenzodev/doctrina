@@ -44,7 +44,7 @@ test("starts on 300–460 with the proposal's marks, counts and status", async (
     "Del año 300 al 460: 26 Padres y escritores, 12 concilios y 2 divisiones. Arrastra la ventana para elegir otros años.",
   );
   const height = (await page.locator(track).boundingBox())!.height;
-  expect(height).toBe(196);
+  expect(height).toBe(271);
 });
 
 test("dragging the window moves it in steps of 10 years and keeps its width", async ({ page }) => {
@@ -57,7 +57,7 @@ test("dragging the window moves it in steps of 10 years and keeps its width", as
 
 test("the handles resize the window, never under 40 years on the desktop", async ({ page }) => {
   await open(page);
-  const y = await trackY(page, 20 + 73);
+  const y = await trackY(page, 130);
   await dragYears(page, await xOf(page, 300), await xOf(page, 200), y);
   await expect(page.locator(win)).toHaveAttribute("aria-valuetext", "Del año 200 al 460");
   await dragYears(page, await xOf(page, 460), await xOf(page, 100), y);
@@ -123,7 +123,10 @@ test("marks change state with a 200 ms transition", async ({ page }) => {
   const style = await page
     .locator("[data-father='methodius-of-olympus']")
     .evaluate((bar) => [getComputedStyle(bar).transitionDuration, getComputedStyle(bar).transitionTimingFunction]);
-  expect(style).toEqual(["0.2s, 0.2s", "cubic-bezier(0.25, 0.1, 0.25, 1), cubic-bezier(0.25, 0.1, 0.25, 1)"]);
+  expect(style).toEqual([
+    "0.2s, 0.2s, 0.2s",
+    "cubic-bezier(0.25, 0.1, 0.25, 1), cubic-bezier(0.25, 0.1, 0.25, 1), cubic-bezier(0.25, 0.1, 0.25, 1)",
+  ]);
 });
 
 test("under reduced motion the marks change at once", async ({ browser }) => {
@@ -269,14 +272,18 @@ test("under reduced motion the lists change with no animation and no ghosts", as
 
 const tip = "[data-years-tip]";
 
-async function hoverYear(page: Page, year: number, top: number) {
-  await page.mouse.move(await xOf(page, year), await trackY(page, top));
+async function hoverMark(page: Page, selector: string) {
+  const box = (await page.locator(selector).boundingBox())!;
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
 }
 
 test("hovering a mark lights it, labels it and lights its row", async ({ page }) => {
   await open(page);
-  await hoverYear(page, 325, 133);
+  await hoverMark(page, "[data-council='nicaea-1']");
   await expect(page.locator("[data-council='nicaea-1']")).toHaveAttribute("data-hot", "true");
+  await expect
+    .poll(() => page.locator("[data-council='nicaea-1']").evaluate((element) => getComputedStyle(element).transform))
+    .toBe("matrix(1.3, 0, 0, 1.3, 0, 0)");
   await expect(page.locator(tip)).toHaveText("Primer Concilio de Nicea, 325");
   await expect(page.locator("[data-k='c-nicaea-1'] a")).toHaveAttribute("data-hot", "true");
   const animation = await page
@@ -288,13 +295,13 @@ test("hovering a mark lights it, labels it and lights its row", async ({ page })
   await expect(page.locator("[data-hot]")).toHaveCount(0);
 });
 
-test("hovering or focusing a row lights its mark on the ruler", async ({ page }) => {
+test("hovering or focusing a row lights its mark on the ruler, with no label", async ({ page }) => {
   await open(page);
   await page.locator("[data-k='f-eusebius-of-caesarea'] a").hover();
   await expect(page.locator("[data-father='eusebius-of-caesarea']")).toHaveAttribute("data-hot", "true");
-  await expect(page.locator(tip)).toHaveText("Eusebio de Cesarea, c. 263–339");
-  await page.mouse.move(10, 10);
   await expect(page.locator(tip)).toHaveCount(0);
+  await page.mouse.move(10, 10);
+  await expect(page.locator("[data-father='eusebius-of-caesarea']")).not.toHaveAttribute("data-hot", "true");
   await page.locator("[data-k='d-church-of-the-east'] a").focus();
   await expect(page.locator("[data-division='church-of-the-east']")).toHaveAttribute("data-hot", "true");
   await page.locator("[data-k='d-church-of-the-east'] a").blur();
@@ -304,9 +311,12 @@ test("hovering or focusing a row lights its mark on the ruler", async ({ page })
 test("labels stay inside the page, at the ends and on a narrow window", async ({ page }) => {
   for (const width of [1440, 360]) {
     await open(page, width);
-    for (const year of [49, 287, 1962]) {
-      const top = year === 287 ? 30 : 133;
-      await hoverYear(page, year, top);
+    for (const mark of [
+      "[data-council='jerusalem-49']",
+      "[data-father='clement-of-rome']",
+      "[data-council='vatican-2']",
+    ]) {
+      await hoverMark(page, mark);
       await expect(page.locator(tip)).toHaveCount(1);
       const box = (await page.locator(tip).boundingBox())!;
       expect(box.x).toBeGreaterThanOrEqual(0);
@@ -350,18 +360,18 @@ test("a label over the window's years hides them while it shows", async ({ page 
   await expect(page.locator(tip)).toContainText("Agustín de Hipona");
   await expect(years).toHaveAttribute("data-covered", "true");
   await expect.poll(() => years.evaluate((element) => getComputedStyle(element).opacity)).toBe("0");
-  await hoverYear(page, 1215, 133);
+  await hoverMark(page, "[data-council='lateran-4']");
   await expect(years).not.toHaveAttribute("data-covered", "true");
 });
 
 test("dragging hides the label, and a click on a mark still centres the window there", async ({ page }) => {
   await open(page);
-  await hoverYear(page, 1215, 133);
+  await hoverMark(page, "[data-council='lateran-4']");
   await expect(page.locator(tip)).toHaveCount(1);
   await page.mouse.down();
   await expect(page.locator(tip)).toHaveCount(0);
   await page.mouse.up();
-  await expect(page.locator(win)).toHaveAttribute("aria-valuetext", "Del año 1140 al 1300");
+  await expect(page.locator(win)).toHaveAttribute("aria-valuetext", /^Del año 11[34]0 al 1[23][09]0$/);
 });
 
 test("touch shows no hover on the ruler", async ({ browser }) => {

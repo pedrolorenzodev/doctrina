@@ -15,7 +15,7 @@ export function FatherTimelineSection({ id, view, text }: FatherTimelineSectionP
       id={id}
       title={text.title}
       subtitle={text.subtitle.replace("{from}", String(view.from)).replace("{to}", String(view.to))}
-      wide
+      full
     >
       <FatherTimeline from={view.from} to={view.to} marks={view.marks} entries={view.items} text={text} />
     </Section>

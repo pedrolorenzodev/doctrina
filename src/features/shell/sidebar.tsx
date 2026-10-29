@@ -7,6 +7,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalS
 import { flushSync } from "react-dom";
 import type { TreeGroup, TreeNode } from "@/content/site-tree";
 import { ChapterGrid } from "@/components/chapter-grid";
+import { Tooltip } from "@/components/ui/tooltip";
 import { useDrawer } from "@/features/shell/drawer";
 import { useActiveChapter } from "@/lib/active-chapter";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
@@ -195,7 +196,7 @@ function TreeItem({
           data-open={String(open)}
           hidden={!open}
           aria-label={text.chapterGrid.replace("{book}", node.label)}
-          className="-mr-1.5 -ml-2 grid grid-cols-7 gap-y-0.5 px-1.5 pt-1 pb-3 tree-compact:grid-cols-5 tree-compact:gap-y-1"
+          className="-mr-1.5 -ml-2 grid grid-cols-7 gap-y-0.5 px-1.5 pt-1 pb-3 max-lg:grid-cols-5 max-lg:gap-y-1"
         >
           {isCurrentBook || openedBooks.has(node.id) ? (
             <ChapterGrid
@@ -233,7 +234,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
   const routerPath = usePathname();
   const reading = useActiveChapter();
   const pathname = reading?.href ?? routerPath;
-  const { open, setOpen, menuRef, drawerOnly } = useDrawer();
+  const { open, setOpen, menuRef } = useDrawer();
   const index = useMemo(() => indexTree(groups), [groups]);
   const bookRoute = bookRouteOf(pathname);
   const currentId = index.hrefToId.get(pathname) ?? (bookRoute ? (index.hrefToId.get(bookRoute) ?? null) : null);
@@ -377,38 +378,50 @@ export function Sidebar({ groups, text }: SidebarProps) {
         aria-hidden="true"
         data-open={open || undefined}
         onClick={closeDrawer}
-        className={`pointer-events-none fixed inset-0 z-59 bg-scrim opacity-0 transition-opacity duration-240 ease-standard data-open:pointer-events-auto data-open:opacity-100 ${drawerOnly ? "" : "lg:hidden"}`}
+        className="pointer-events-none fixed inset-0 z-59 bg-scrim opacity-0 transition-opacity duration-240 ease-standard data-open:pointer-events-auto data-open:opacity-100 lg:hidden"
       />
       <aside
         ref={asideRef}
         id="site-sidebar"
         data-open={open || undefined}
-        data-drawer-only={drawerOnly || undefined}
-        className={
-          drawerOnly
-            ? "invisible fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg texture-layer drawer-motion data-open:visible data-open:translate-x-0"
-            : "fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg drawer-motion max-lg:invisible max-lg:texture-layer data-open:visible data-open:translate-x-0 lg:sticky lg:top-top lg:bottom-auto lg:left-auto lg:z-auto lg:h-below-top lg:w-auto lg:translate-x-0 lg:bg-transparent tree-hide"
-        }
+        className="fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg drawer-motion max-lg:invisible max-lg:texture-layer data-open:visible data-open:translate-x-0 lg:sticky lg:top-top lg:bottom-auto lg:left-auto lg:z-auto lg:h-below-top lg:w-auto lg:translate-x-0 lg:bg-transparent tree-hide"
       >
         <nav
           ref={navRef}
           aria-label={text.navLabel}
           data-lenis-prevent
           onClick={onClick}
-          className={`relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule ${drawerOnly ? "" : "lg:w-sidebar lg:pt-5.5"}`}
+          className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule lg:w-sidebar lg:pt-8.5"
         >
-          <div className="-mt-1.5 mb-2 flex justify-end">
-            <button
-              type="button"
-              data-collapse-all
-              className="cursor-pointer rounded-5 px-1.5 py-1 text-ui-2xs text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
-            >
-              {text.collapseAll}
-            </button>
-          </div>
-          {groups.map((group) => (
+          {groups.map((group, index) => (
             <div key={group.id} className="mb-5.5">
-              <p className="mb-1.5 ml-2 text-label font-medium text-ink-3">{group.label}</p>
+              <div className="mb-1.5 flex items-start justify-between">
+                <p className="m-0 ml-2 text-label font-medium text-ink-3">{group.label}</p>
+                {index === 0 ? (
+                  <Tooltip label={text.collapseAll} wait="long" align="end">
+                    <button
+                      type="button"
+                      data-collapse-all
+                      aria-label={text.collapseAll}
+                      className="-my-1.5 grid size-7 cursor-pointer place-items-center rounded-5 text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:size-11"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M4 1.75 7 4.75l3-3M4 12.25l3-3 3 3" />
+                      </svg>
+                    </button>
+                  </Tooltip>
+                ) : null}
+              </div>
               <ul>
                 {group.nodes.map((node) => (
                   <TreeItem

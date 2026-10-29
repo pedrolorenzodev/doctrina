@@ -873,6 +873,21 @@
   }
 }
 
+@utility date-mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 9px;
+
+  &::before {
+    content: "";
+    flex: none;
+    align-self: center;
+    width: 1px;
+    height: 12px;
+    background: var(--color-rule-2);
+  }
+}
+
 @utility writing-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 104px;
@@ -965,8 +980,15 @@
   }
 
   @media (min-width: 64rem) {
-    :root[data-tree="closed"] & {
+    :root[data-tree="closed"] &:not([data-home]),
+    &[data-home]:not([data-home-tree]) {
       grid-template-columns: 0 minmax(0, 1fr);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &[data-tree-arriving] {
+      transition-duration: 200ms;
     }
   }
 }
@@ -1286,6 +1308,24 @@
   }
 }
 
+@utility years-rows {
+  --crows: var(--crows-phone);
+  --div-top: calc(var(--c0) + (var(--crows) - 1) * 11px + 8px + 18px);
+  --axis-top: calc(var(--div-top) + 26px);
+
+  @media (min-width: 40rem) {
+    --crows: var(--crows-wide);
+  }
+}
+
+@utility years-tall {
+  height: calc(var(--axis-top) + 26px);
+}
+
+@utility years-window {
+  height: calc(var(--axis-top) - 24px);
+}
+
 @utility yr-bar {
   position: absolute;
   top: var(--y);
@@ -1297,7 +1337,8 @@
   opacity: 0.4;
   transition:
     opacity 200ms var(--ease-standard),
-    background-color 200ms var(--ease-standard);
+    background-color 200ms var(--ease-standard),
+    transform 200ms var(--ease-standard);
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -1309,6 +1350,7 @@
   }
 
   &[data-hot] {
+    transform: scale(1.3);
     background: var(--color-accent);
     opacity: 1;
   }
@@ -1316,7 +1358,9 @@
 
 @utility yr-ring {
   position: absolute;
-  top: var(--y);
+  --r: var(--rp);
+
+  top: calc(var(--c0) + var(--r) * 11px);
   left: var(--x);
   width: 8px;
   height: 8px;
@@ -1327,7 +1371,12 @@
   color: var(--color-ink-3);
   transition:
     border-color 200ms var(--ease-standard),
-    color 200ms var(--ease-standard);
+    color 200ms var(--ease-standard),
+    transform 200ms var(--ease-standard);
+
+  @media (min-width: 40rem) {
+    --r: var(--rw);
+  }
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -1339,6 +1388,7 @@
   }
 
   &[data-hot] {
+    transform: scale(1.3);
     border-color: var(--color-accent);
     color: var(--color-accent);
   }
@@ -1358,7 +1408,7 @@
 
 @utility yr-div {
   position: absolute;
-  top: var(--y);
+  top: var(--div-top);
   left: var(--x);
   width: 1.5px;
   height: 14px;
@@ -1367,7 +1417,8 @@
   opacity: 0.6;
   transition:
     opacity 200ms var(--ease-standard),
-    background-color 200ms var(--ease-standard);
+    background-color 200ms var(--ease-standard),
+    transform 200ms var(--ease-standard);
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -1379,6 +1430,7 @@
   }
 
   &[data-hot] {
+    transform: scale(1.3);
     background: var(--color-accent);
     opacity: 1;
   }
@@ -1798,16 +1850,6 @@ html.theme-switching ::after {
   }
 }
 
-@custom-variant tree-compact {
-  @media (width < 64rem) {
-    @slot;
-  }
-
-  [data-drawer-only] & {
-    @slot;
-  }
-}
-
 @custom-variant notes {
   @media (min-width: 84.6875rem) {
     :root:not([data-tree="closed"]):not([data-reader-wider]) & {
@@ -2007,9 +2049,15 @@ html.theme-switching ::after {
       transition: visibility 0s linear 0s;
     }
 
-    :root[data-tree="closed"] &:is(#site-sidebar) {
+    :root[data-tree="closed"] [data-shell]:not([data-home]) &:is(#site-sidebar),
+    [data-home]:not([data-home-tree]) &:is(#site-sidebar) {
       visibility: hidden;
       transition-delay: 360ms;
+    }
+
+    :root[data-tree="closed"] [data-shell][data-tree-arriving]:not([data-home]) &:is(#site-sidebar),
+    [data-home][data-tree-arriving]:not([data-home-tree]) &:is(#site-sidebar) {
+      transition-delay: 200ms;
     }
   }
 }
