@@ -58,6 +58,8 @@ How this was done: Playwright at 1440×900 and 390×844, with interactions trigg
 
 **Etymonline** (`etymonline-word-*`). Three ad units around one paragraph show why we never run ads.
 
+**Sophia Scriptura** (https://sophiascriptura.com, read 2026-10-27; `docs/research/five-links-analysis.md`). The closest analog by subject: a free, dark, serif library of 678 early Christian works in Greek and Latin, produced by Claude, with CC0 own content (translations, notes, data), a Scripture → Fathers index, a glossary and a map of writers placed «where he did his main or longest work» with a year-range filter. Steal: the work page's facts table, one stable URL per passage, openly listed gaps, the map's year range with «Play through time». Reject: colouring writers by the tradition that «claims» them (our neutrality invariant), AI translations shown as the text, and the absence of per-tradition voices, which is where Doctrina differs.
+
 ---
 
 ## 2. Patterns for our problems
