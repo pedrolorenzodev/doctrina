@@ -74,8 +74,9 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 We are racing the clock (`AGENTS.md`): the queue in `ROADMAP.md`, "Background queue", should always have something running while Pedro talks or decides.
 
 - A task qualifies when it depends on no pending decision of Pedro's: research, verification, applying corrections, preparing data. Never content or UI that a pending "Decide:" could invalidate.
-- Codex first (its quota is separate from the shared Claude account). Claude agents only for work that needs this session's context, such as building proposal Artifacts.
-- Queue items are already approved: launch the next one without asking, and tell Pedro in one line what started and where it writes. A Claude run with more than one agent, or any Fable agent, still needs `/plan-run` and his ok.
+- **Pedro's rule, 2026-10-29: nothing here starts on its own.** No agent delegates to Codex, launches its runner or starts a queue item unless Pedro explicitly says so, and then it asks him first (task, output file, usage cap) and waits for the yes. The lines below describe how to run it after that yes.
+- Codex first (its quota is shared with another person's account use, not free). Claude agents only for work that needs this session's context, such as building proposal Artifacts.
+- Queue items are candidates, not approvals: once Pedro has said to start, confirm which one with him, then tell him in one line what started and where it writes. A Claude run with more than one agent, or any Fable agent, still needs `/plan-run` and his ok.
 - Check usage before launching (Claude: `usage-guard`; Codex: below). When a task ends, mark it in the queue, review its output, and launch the next.
 - Keep the queue at three or more ready items. When a conversation produces new work that qualifies, add it.
 
@@ -104,6 +105,11 @@ Pedro runs research in his Codex app (`/goal`), not in Claude subagents: web res
 - Research outputs go to `docs/research/`; nothing reaches `data/` or the site without Pedro's review.
 
 ## Lessons
+
+- 2026-10-29 · The resume-loop runner kept working across window resets, which Pedro did not ask for («límite de la sesión actual») → for a one-off run use `~/.doctrina-youtube/codex-oneshot.sh <name> <prompt-file> <kill-at>`: one `codex exec`, a watchdog that kills at the given percent, no resume. Changing the cap of a running Codex means stopping it and relaunching with a new prompt: the finished files stay on disk, and the prompt says to skip the files whose Progress has `- Status: done`.
+- 2026-10-29 · Told «mandalo a Codex» without a task, the agent chose one (the corpus) and Pedro had meant the dossiers → when the task is not named, ask which one (one short question with the options) before launching.
+- 2026-10-29 · A drafting pass without verification is fast: the four Baptist dossiers took ~33 min (24 % of one window) and the six Reformed and Lutheran ones ~34 min (usage not separable: the window reset at 14:37); each file ends with a Coverage table and «Questions for the owner». The verifier of the Lutheran pilot found 13 wrong quotes in ~235: nothing from a draft enters `data/` or a page before the verification pass.
+- 2026-10-29 · zsh aborts the whole command line when a glob matches nothing (`docs/research/doctrines/*/orthodox.md` before the files exist): list with `find` or quote the pattern.
 
 - 2026-10-17 · The usage endpoint returned 429 when polled every 60 s and a 5-minute poll missed a 72 → 80 % jump → poll every 150–240 s, every 2 min above 65 %.
 - 2026-10-18 · Other sessions on the account burned ~26 session points overnight with none of the run's agents running → session % is shared; check it before a long run and don't read it as only this run's.
@@ -182,8 +188,9 @@ The done files (absolute paths under `docs/research/`) are `neutral/fathers-veri
 - **A ceiling is a landing, not a cliff (Pedro, 2026-10-26):** when the weekly reaches the number, finish the block in hand and write the state to the repo (ROADMAP, the feature doc's handoff, DECISIONS, lessons), then stop.
 - **macOS `sed -i` needs an empty suffix (`sed -i ''`), and `#` delimiters collide with regexes: edit files with a small python script instead.**
 - **Never run `snapshot.py block` twice with the same name:** the second run replaces the folder with only the files changed since the first (2026-10-26: block 147-all lost five of six files; recovered by copying them from the working tree). If a doc needs a fix after a freeze, edit it and freeze a new block, or copy the file into the right split part by hand.
+- **A file reverted to its committed version is invisible to `snapshot.py`** (it only lists files that differ from HEAD), so the kit would replay an earlier block's version of it (2026-10-28: `chapter-grid.tsx` changed in 209, restored in 217). After freezing, replay check: for every file in the session's blocks, the last block's copy must equal the working tree; copy a missing reverted file into the last block by hand.
 
-- **Approved artifact = checklist (Pedro, 2026-10-26: «no copiaste toda esa UI, está a medias»).** When a screen or component was approved in an artifact, before building: open the artifact's local code (`docs/research/proposals/...`), list every element, label, state, motion and measurement of the part in question in the feature doc (one line each), build all of it, then screenshot ours and the artifact at the same size, theme and state, side by side (`npm run compare`, `npm run shot`), and tick each line. A block that builds «the function» of an approved component without its labels, dropdowns, transitions and item designs is not done. The current build's own improvements (Pedro's exceptions, e.g. the panel title «Tus notas») are listed in the feature doc as exceptions.
+- **Approved artifact = checklist (Pedro, 2026-10-26: «no copiaste toda esa UI, está a medias»).** The whole method, validated on the home (2026-10-28): `docs/playbooks/build-approved-design.md`. When a screen or component was approved in an artifact, before building: open the artifact's local code (`docs/research/proposals/...`), list every element, label, state, motion and measurement of the part in question in the feature doc (one line each), build all of it, then screenshot ours and the artifact at the same size, theme and state, side by side (`npm run compare`, `npm run shot`), and tick each line. A block that builds «the function» of an approved component without its labels, dropdowns, transitions and item designs is not done. The current build's own improvements (Pedro's exceptions, e.g. the panel title «Tus notas») are listed in the feature doc as exceptions.
 - **A browser-gesture bug is part of the page (2026-10-26):** a page that moves under the trackpad (sticky strip with negative margins, nested scrollers) can trigger the browser's history swipe; test vertical scrolling repeatedly with a trackpad-like input and check `overscroll-behavior` and any horizontal overflow before calling a reader page done.
 - **The hook that blocks git writes reads the whole Bash command text:** a heredoc or a `python3 -` script that contains the words of a git write command is blocked even when it only writes a doc. Write such text with the Write tool to a scratch file and append it with `cat`.
 
@@ -231,3 +238,12 @@ The done files (absolute paths under `docs/research/`) are `neutral/fathers-veri
 - **When a hunt finds nothing after ~100 randomised runs, stop, record the recipe and the logger, and say so.** Pedro parked T4b rather than pay for more.
 - **Pedro, when he is away: no interaction, freeze each block for the morning (commit kit), cautious UI (smooth motion measured per frame, design system, approved artifact to the letter).** Do not wait for commits.
 
+## Rules learned on 2026-10-28 (eleventh session: an overnight run alone)
+
+- **Do not stop for a small cost estimate.** The weekly usage moved about 1 point over fourteen blocks; Pedro told the agent to run until the ceiling and then save, not to forecast. Check `usage-guard` between blocks and keep going.
+- **Freeze with the kit and strip the docs out of each block** (`rm -rf <block>/files/docs`): `snapshot.py` takes every changed file, including docs that belong to the last «docs» commit. A file edited after its freeze goes into the next block, not back into the old one (or copy it in and update `manifest.json`).
+- **Run the dev checks against a fresh production server.** A stale `next start` on 3100 served pages from the previous build and hid a fix for twenty minutes: `lsof -i :3100` and kill before `npm run build`.
+- **Measure data quality by reading, not only by metric.** The red-letter alignment scored 98.9 % precision against the KJV and still showed edge glitches in half of a 12-verse hand-check of the other editions; the sample decided not to ship them.
+- **Proposals built as artifacts from a script** (a Python template with `/*DATA*/` replaced by real corpus text, a `node --check` of the page script, then publish) took one pass each; keep the real text in the demos.
+- **One independent review at the end of a long run is worth it.** The Sonnet reader found two real bugs (an undo reversed by the next tick, an English route that 404s) that the specs did not cover; give it the file list and ask for failing scenarios.
+- **Codex stops at the quota and the runner keeps probing every four minutes**; nothing to restart. Its drafts in `data/corpus/fathers/` stay unwired until an independent reader approves them.

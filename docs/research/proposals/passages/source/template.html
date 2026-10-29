@@ -1,0 +1,685 @@
+<title>Pasajes de Doctrina</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: the proposal page (selectors, one live frame of the site showing the «Pasajes» page of the Catholic Baptism page, three options, what was studied, what is discarded, what to decide). Every value is the site's own (src/app/globals.css, docs/DESIGN.md §4 motion). */
+:root {
+  --bg: #e8e5de; --ink: #1c1713; --ink-2: #2a2620; --ink-3: #615c54; --prose: #4f4b44;
+  --rule: #c9c5bc; --rule-2: #aeaba4; --accent: #2c4a9e; --accent-weak: rgb(44 74 158 / 0.1); --accent-mid: rgb(44 74 158 / 0.45);
+  --cite: #5f3d0c; --cite-weak: rgb(95 61 12 / 0.09); --card: rgb(255 255 255 / 0.35); --panel: #efece6;
+  --tip-bg: #1c1713; --tip-ink: #f4f1ea; --hover: rgb(28 23 19 / 0.05); --mark: rgb(240 200 60 / 0.45); --chg: rgb(44 74 158 / 0.2);
+  --texture-image: /*TEX_LIGHT*/; --texture-opacity: 0.4; --external-mark: /*EXT*/;
+  --head: "Newsreader", Georgia, serif; --body: "Source Serif 4", Georgia, serif; --ui: "Work Sans", system-ui, sans-serif;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1); --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1); --ease-move: cubic-bezier(0.4, 0, 0.2, 1); --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+    --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+    --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05); --mark: rgb(214 168 101 / 0.28); --chg: rgb(158 179 238 / 0.24);
+    --texture-image: /*TEX_DARK*/; --texture-opacity: 1;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+  --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+  --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05); --mark: rgb(214 168 101 / 0.28); --chg: rgb(158 179 238 / 0.24);
+  --texture-image: /*TEX_DARK*/; --texture-opacity: 1;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.5 var(--ui); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::after { content: ""; position: fixed; inset: 0; z-index: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; }
+.doc { position: relative; z-index: 1; }
+.ctl::after { content: ""; position: absolute; inset: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+.ctl > * { position: relative; z-index: 1; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+.doc { max-width: 1240px; margin: 0 auto; padding-block: 40px 120px; }
+.doc-head { max-width: 760px; }
+.doc-head h1 { font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.doc-head .lede { font: italic 300 22px/1.4 var(--head); color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; }
+.doc p.t, .doc-head p { font: 300 17px/1.6 var(--body); color: var(--prose); margin: 14px 0 0; max-width: 68ch; }
+.doc b { font-weight: 500; color: var(--ink); }
+h2.sec { font: 300 34px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 0; text-wrap: balance; }
+@media (max-width: 640px) { .doc-head h1 { font-size: 36px; } .doc-head .lede { font-size: 19px; } h2.sec { font-size: 28px; } }
+
+.ctl { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; margin-top: 28px; padding-block: 10px; background: var(--bg); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+@media (max-width: 760px) { .ctl { position: static; } }
+.ctl > span { display: flex; align-items: center; max-width: 100%; min-width: 0; }
+.ctl .label { font: 500 12.5px var(--ui); color: var(--ink-3); margin-right: 8px; }
+
+/* segmented control with one persistent sliding indicator («Deslizar», 340 ms ease-reveal) */
+.seg { position: relative; display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; max-width: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg .ind { position: absolute; z-index: 0; top: 3px; left: 0; height: calc(100% - 6px); border-radius: 6px; background: var(--accent-weak); box-shadow: inset 0 -2px 0 var(--accent); transition: transform 340ms var(--ease-reveal), width 340ms var(--ease-reveal); pointer-events: none; }
+.seg.still .ind { transition: none; }
+.seg button { position: relative; z-index: 1; min-height: 34px; padding: 0 12px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.seg button:hover { background: var(--hover); color: var(--ink); }
+.seg button[aria-pressed="true"] { font-weight: 500; color: var(--ink); }
+.seg button[aria-disabled="true"] { opacity: 0.45; cursor: default; }
+.seg button[aria-disabled="true"]:hover { background: none; color: var(--ink-2); }
+@media (pointer: coarse) { .seg button { min-height: 44px; } }
+
+.optnote { padding: 18px 0 16px; display: grid; gap: 6px 32px; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; }
+.optnote .on-name { font: 400 22px/1.3 var(--head); }
+.optnote .on-line { grid-column: 1; font: 300 16.5px/1.55 var(--body); color: var(--prose); max-width: 780px; }
+.optnote .on-meta { grid-column: 2; grid-row: 1; font: 400 13px/1.5 var(--ui); color: var(--ink-3); text-align: right; }
+@media (max-width: 760px) { .optnote { grid-template-columns: 1fr; } .optnote .on-meta { grid-column: 1; grid-row: auto; text-align: left; } }
+
+.stage { display: flex; justify-content: center; }
+.frame { position: relative; width: 100%; max-width: 1240px; height: clamp(680px, 88vh, 940px); border: 1px solid var(--rule-2); border-radius: 10px; overflow: hidden; background: var(--bg); transition: max-width 300ms var(--ease-reveal); }
+.frame.phone { max-width: 390px; height: min(840px, 90vh); border-radius: 14px; }
+.site { position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--bg); }
+.site::after { content: ""; position: absolute; inset: 0; z-index: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; }
+.site > * { position: relative; z-index: 1; }
+.tb { flex: none; height: 56px; display: flex; align-items: center; gap: 14px; padding: 0 20px; border-bottom: 1px solid var(--rule); }
+.tb .logo { font: 400 23px/1 var(--head); font-variation-settings: "opsz" 24; letter-spacing: -0.005em; }
+.ibtn { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 6px; background: none; color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.ibtn:hover { background: var(--hover); color: var(--ink); }
+.tb .menu { width: 40px; height: 40px; margin-left: -8px; }
+.strig { margin-left: 24px; width: 300px; height: 36px; display: flex; align-items: center; gap: 10px; padding: 0 10px 0 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); font: 400 13.5px var(--ui); color: var(--ink-3); }
+.body { flex: 1; min-height: 0; display: flex; }
+.tree { flex: none; width: 272px; border-right: 1px solid var(--rule); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; padding: 22px 14px 40px 18px; font: 400 14px/1.35 var(--ui); }
+.frame.phone .tree { display: none; }
+.tree .g { font: 500 12.5px var(--ui); color: var(--ink-3); margin: 0 0 4px 4px; }
+.tree .r { display: flex; align-items: center; min-height: 32px; padding: 0 8px 0 4px; border-radius: 6px; color: var(--ink-2); gap: 6px; }
+.tree .r svg { flex: none; color: var(--ink-3); }
+.tree .r.soon { color: var(--ink-3); opacity: 0.6; }
+.tree .ind2 { margin-left: 13px; padding-left: 8px; border-left: 1px solid var(--rule); }
+.tree .r.cur { background: var(--accent-weak); box-shadow: inset 2px 0 0 var(--accent); color: var(--ink); font-weight: 500; }
+.tree .r.anc { color: var(--ink); }
+.main { flex: 1; min-width: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; overscroll-behavior: contain; position: relative; }
+.page { max-width: 1000px; padding: 34px 40px 110px; margin: 0 auto; }
+.frame.phone .page { padding: 24px 18px 90px; }
+
+.crumbs { font: 400 13px/1.4 var(--ui); color: var(--ink-3); }
+.crumbs .inert { color: var(--ink-3); }
+.crumbs a { text-decoration: none; color: var(--ink-3); }
+.crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs i { font-style: normal; color: var(--rule-2); margin: 0 8px; }
+.crumbs .cur { color: var(--ink-2); }
+.swb { margin-top: 14px; display: flex; align-items: center; gap: 18px; padding: 6px 0; overflow-x: auto; scrollbar-width: none; }
+.swb::-webkit-scrollbar { display: none; }
+.swb .cap { flex: none; font: 500 12.5px var(--ui); color: var(--ink-3); }
+.swb .tab { flex: none; padding: 8px 11px; border-radius: 6px; font: 400 14px var(--ui); color: var(--ink-3); opacity: 0.6; white-space: nowrap; }
+.swb .tab.on { opacity: 1; color: var(--ink); font-weight: 500; background: var(--accent-weak); box-shadow: inset 0 -2px 0 var(--accent); }
+.page h1 { font: 300 46px/1.08 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 26px 0 0; text-wrap: balance; }
+.page .lede { font: italic 300 22px/1.38 var(--head); color: var(--ink-2); margin: 12px 0 0; max-width: 62ch; text-wrap: pretty; }
+.frame.phone .page h1 { font-size: 34px; }
+.frame.phone .page .lede { font-size: 19px; }
+
+.lab { font: 500 12.5px/1.3 var(--ui); color: var(--ink-3); }
+.cite { color: var(--cite); text-decoration: underline dotted; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px; cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.cite:hover { background: var(--cite-weak); text-decoration-style: solid; }
+.qt { border-radius: 2px; cursor: default; transition: background-color 200ms var(--ease-standard); }
+.qt.can:hover, .qt.on { background: var(--mark); }
+.btn-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 36px; padding: 0 13px; border: 1px solid var(--rule-2); border-radius: 7px; background: var(--card); font: 500 13.5px var(--ui); color: var(--ink); text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color 150ms var(--ease-standard), border-color 150ms var(--ease-standard); }
+.btn-go:hover { border-color: var(--ink); background: var(--hover); }
+.btn-more { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 10px 0 4px; border: 0; background: none; border-radius: 6px; font: 500 13.5px var(--ui); color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.btn-more:hover { background: var(--hover); color: var(--ink); }
+.btn-more svg { transition: transform 200ms var(--ease-standard); }
+.btn-more[aria-expanded="true"] svg { transform: rotate(45deg); }
+@media (pointer: coarse) { .btn-go, .btn-more { min-height: 44px; } }
+.coll { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 380ms var(--ease-reveal); }
+.coll.open { grid-template-rows: 1fr; }
+.coll > div { overflow: hidden; min-height: 0; }
+
+/* words: highlight of the tradition's quoted words, difference flash, shared words */
+.w { border-radius: 2px; }
+.w.hl { background: var(--mark); transition: background-color 200ms var(--ease-standard); }
+.w.hl:not(.last) { padding-right: 0.28em; margin-right: -0.28em; }
+.w.chg { animation: chg 2400ms var(--ease-standard) both; }
+@keyframes chg { 0% { background-color: var(--chg); } 55% { background-color: var(--chg); } 100% { background-color: transparent; } }
+.w.same { background: var(--accent-weak); }
+.w.df { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+@keyframes inF { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+@keyframes inB { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
+@keyframes inX { from { opacity: 0; } to { opacity: 1; } }
+.in-f { animation: inF 260ms var(--ease-reveal) both; }
+.in-b { animation: inB 260ms var(--ease-reveal) both; }
+.in-x { animation: inX 260ms var(--ease-standard) both; }
+.vt { margin: 0; font: 300 19px/1.66 var(--body); color: var(--ink-2); }
+.vt + .vt { margin-top: 2px; }
+.vn { font: 400 12px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; margin-right: 7px; vertical-align: 0.15em; }
+.blk + .blk { margin-top: 26px; }
+.blk-ref { font: 500 12.5px/1.3 var(--ui); color: var(--ink-3); margin: 0 0 6px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.blk-ref a { font-weight: 500; color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; }
+.blk-ref a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.rd-t { margin: 8px 0 0; font: 300 16px/1.62 var(--body); color: var(--prose); }
+.par-i { margin-top: 22px; }
+.par .vt { font-size: 17px; }
+
+/* V1 «Foco» */
+.f1 { display: grid; grid-template-columns: 58px minmax(0, 1fr) 270px; gap: 0 34px; margin-top: 38px; align-items: start; }
+.rail { position: sticky; top: 18px; height: 346px; }
+.rail .tk { position: absolute; left: 0; width: 100%; height: 18px; border: 0; background: none; padding: 0; cursor: pointer; display: block; }
+.rail .tk::before { content: ""; position: absolute; left: 0; top: 50%; width: 16px; height: 3px; margin-top: -1.5px; border-radius: 2px; background: var(--ink); opacity: 0.3; transform-origin: left center; transform: scaleX(var(--s, 1)); transition: transform 200ms var(--ease-standard), background-color 260ms var(--ease-standard), opacity 260ms var(--ease-standard); }
+.rail .tk[aria-current="true"]::before { background: var(--accent); opacity: 1; }
+.rail .tk .rl { position: absolute; left: 84px; top: 50%; transform: translateY(-50%); white-space: nowrap; opacity: 0; transition: opacity 150ms var(--ease-standard); pointer-events: none; font: 400 13px var(--ui); padding: 4px 9px; border-radius: 6px; background: var(--tip-bg); color: var(--tip-ink); z-index: 6; }
+.rail .tk.hov .rl { opacity: 1; }
+.f1-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.f1-t { font: 400 34px/1.15 var(--head); font-variation-settings: "opsz" 48; margin: 18px 0 0; }
+.f1 .vt { font-size: 21px; line-height: 1.62; }
+.f1-vs { margin-top: 20px; }
+.f1-nav { margin-top: 36px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.f1-nav .hint { font: 400 12.5px var(--ui); color: var(--ink-3); margin-left: auto; }
+.f1-m { position: sticky; top: 18px; padding-top: 4px; }
+.f1-m .lab { margin-bottom: 2px; }
+.f1-m .rd-t { font-size: 15.5px; }
+.frame.phone .f1 { display: block; margin-top: 22px; }
+.hstrip { display: flex; gap: 0; justify-content: space-between; align-items: flex-end; height: 34px; padding: 0 2px; }
+.hstrip button { flex: 1; height: 100%; border: 0; background: none; padding: 0; cursor: pointer; display: grid; place-items: end center; }
+.hstrip button::before { content: ""; width: 3px; height: 14px; border-radius: 2px; background: var(--ink); opacity: 0.3; transition: height 200ms var(--ease-standard), background-color 260ms var(--ease-standard), opacity 260ms var(--ease-standard); }
+.hstrip button[aria-current="true"]::before { height: 26px; background: var(--accent); opacity: 1; }
+.frame.phone .f1-t { font-size: 28px; margin-top: 14px; }
+.frame.phone .f1 .vt { font-size: 19px; }
+.frame.phone .f1-m { position: static; margin-top: 28px; }
+
+/* layers over «Foco» */
+.lay + .lay { margin-top: 30px; }
+.qnote { margin: 4px 0 0; font: 400 12.5px/1.45 var(--ui); color: var(--ink-3); }
+.lay .btn-more { margin: 10px 0 0 -4px; }
+.arg { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--rule); }
+.arg-h { font: 400 26px/1.2 var(--head); font-variation-settings: "opsz" 36; margin: 0; }
+.arg-i { margin-top: 28px; }
+.arg-i h4 { font: 500 15px/1.4 var(--ui); margin: 0; color: var(--ink); }
+.qq { margin: 16px 0 0; }
+.qb { margin: 0; font: 300 17.5px/1.62 var(--body); color: var(--ink-2); }
+.qb .tr { font: 400 12px var(--ui); color: var(--ink-3); white-space: nowrap; }
+.qa { margin-top: 6px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+.qa b { color: var(--ink); font-weight: 500; }
+.qa a { color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; margin-left: 8px; white-space: nowrap; }
+.qa a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.qa a::after { content: " ↗"; }
+.btn-more.sm { min-height: 34px; font-weight: 400; margin-left: -4px; }
+.oq { margin: 4px 0 6px; font: italic 300 16px/1.6 var(--body); color: var(--ink-3); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-top: 34px; }
+.two.one { grid-template-columns: minmax(0, 62ch); }
+.frame.phone .two { display: block; }
+.frame.phone .two > div + div { margin-top: 28px; }
+.vC .f1, .vD .f1, .vE .f1 { grid-template-columns: 58px minmax(0, 1fr); }
+.argbar { margin-top: 34px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 4px 0; }
+.argbar .btn-more { margin: 0 0 0 -4px; }
+.argbar .qnote { margin: 0; }
+.argfull .arg, .vD .arg { margin-top: 30px; padding-top: 0; border-top: 0; }
+.wlay { margin-top: 32px; }
+.wlay .seg { margin-bottom: 4px; }
+.wlay .off { max-width: 66ch; }
+.wlay .off .rd-t { font-size: 17px; }
+.mlay { margin-top: 0; }
+.mlay .seg { margin-bottom: 14px; }
+.tabdot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-left: 8px; vertical-align: 2px; }
+/* F «Edición» and G «Pliego»: the site's own patterns (reader column 720, quote + source block, tradition-switcher tabs, footer previous / next) */
+.xv .f1 { grid-template-columns: 58px minmax(0, 1fr); gap: 0 34px; margin-top: 56px; }
+.vF .f1-main { max-width: 720px; }
+.x-head { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; }
+.x-count { font: 400 13px/1.4 var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.x-tr { display: flex; align-items: center; gap: 14px; }
+.seg.tabsx { border: 0; padding: 0; overflow: visible; gap: 2px; }
+.tabsx button { min-height: 36px; padding: 0 11px; font: 400 14px var(--ui); color: var(--ink-2); }
+.tabsx button[aria-pressed="true"] { font-weight: 500; }
+.x-t { font: 300 36px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 30px 0 0; text-wrap: balance; color: var(--ink-3); }
+.frame.phone .x-t { font-size: 29px; }
+.x-go { margin-top: 20px; }
+.x-vs { margin-top: 36px; }
+.xv .blk + .blk { margin-top: 28px; }
+.xv .blk-ref { margin-bottom: 10px; font: 500 12.5px/1.3 var(--ui); }
+.vF .vt { position: relative; font: 300 25px/1.5 var(--head); font-variation-settings: "opsz" 30; color: var(--ink); }
+.vG .vt { position: relative; font: 300 21px/1.7 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); }
+.xv .vt + .vt { margin-top: 6px; }
+.xv .vn { position: absolute; left: -32px; width: 22px; text-align: right; top: 0.62em; margin: 0; font: 400 12px/1 var(--ui); vertical-align: baseline; }
+.frame.phone .xv .vn { position: static; margin-right: 8px; vertical-align: 0.15em; }
+.xv .par { margin-top: 40px; }
+.xv .par .vt { font-size: 19px; }
+.vG .par .vt { font-size: 18px; }
+.x-layers { margin-top: 64px; }
+.seg.ltabs { display: flex; width: 100%; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; padding: 0; gap: 36px; overflow: visible; }
+.ltabs .ind { top: auto; bottom: -1px; height: 2px; border-radius: 0; background: var(--accent); box-shadow: none; }
+.ltabs button { min-height: 0; padding: 0 0 12px; border-radius: 0; font: 400 21px/1.3 var(--head); font-variation-settings: "opsz" 24; color: var(--ink-3); }
+.ltabs button:hover { background: none; color: var(--ink); }
+.ltabs button[aria-pressed="true"] { color: var(--ink); font-weight: 400; }
+.ltabs button[aria-disabled="true"] { opacity: 0.6; }
+.ltabs button[aria-disabled="true"]:hover { color: var(--ink-3); }
+.frame.phone .ltabs { gap: 24px; }
+.frame.phone .ltabs button { font-size: 18px; }
+.x-desc { font: italic 300 22px/1.4 var(--head); font-variation-settings: "opsz" 30; color: var(--ink-2); margin: 36px 0 0; max-width: 56ch; text-wrap: pretty; }
+.x-note { font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); margin: 8px 0 0; max-width: 62ch; }
+.x-prose { font: 300 19px/1.66 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); margin: 28px 0 0; max-width: 62ch; }
+.x-prose.sm { font-size: 16.5px; line-height: 1.6; color: var(--prose); }
+.x-arg-h { font: 300 28px/1.2 var(--head); font-variation-settings: "opsz" 36; margin: 72px 0 0; }
+.x-grp { margin-top: 52px; }
+.x-grp h4 { font: 400 22px/1.3 var(--head); font-variation-settings: "opsz" 24; margin: 0; color: var(--ink); max-width: 40ch; text-wrap: balance; }
+.x-fig { margin: 28px 0 0; display: grid; gap: 16px 64px; align-items: start; }
+.vF .x-fig { grid-template-columns: minmax(0, 1fr); padding-left: 30px; }
+.vG .x-fig { grid-template-columns: minmax(0, 1fr) 270px; }
+.frame.phone .vG .x-fig { grid-template-columns: minmax(0, 1fr); padding-left: 30px; }
+.x-q { margin: 0; font: italic 300 21px/1.45 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); }
+.x-q::before { content: "«"; }
+.x-q::after { content: "»"; }
+.x-ai { margin: 8px 0 0; font: 400 13.5px/1.5 var(--ui); color: var(--ink-3); }
+.x-fig .btn-more { margin: 8px 0 0 -4px; }
+.x-cap { border-top: 1px solid var(--rule); padding-top: 8px; font: 400 14px/1.5 var(--ui); color: var(--ink-3); }
+.vF .x-cap { max-width: 340px; }
+.x-cap b { display: block; font-weight: 500; color: var(--ink); }
+.x-cap span { display: block; }
+.x-cap .dm { display: flex; width: fit-content; align-items: baseline; gap: 9px; margin-top: 8px; font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+.x-cap .dm::before { content: ""; width: 1px; height: 12px; background: var(--rule-2); align-self: center; }
+.x-cap a { display: inline-block; margin-top: 8px; font: 400 13.5px/1.5 var(--ui); color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; transition: color 150ms var(--ease-standard); }
+.x-cap a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.x-cap a::after { content: ""; display: inline-block; width: 0.72em; height: 0.72em; margin-left: 0.3em; vertical-align: -0.02em; background-color: currentColor; mask: var(--external-mark) center / contain no-repeat; -webkit-mask: var(--external-mark) center / contain no-repeat; }
+.x-nav { margin-top: 96px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.frame.phone .x-nav { grid-template-columns: 1fr; }
+.nbox { text-align: left; border: 1px solid var(--rule); border-radius: 6px; padding: 14px 18px 15px; background: none; cursor: pointer; transition: border-color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.nbox:hover { border-color: var(--rule-2); background: var(--hover); }
+.nbox.next { text-align: right; }
+.nbox .l { display: block; font: 500 12.5px/1.3 var(--ui); color: var(--ink-3); }
+.nbox .t { display: block; margin-top: 3px; font: 400 16.5px/1.4 var(--body); color: var(--ink); }
+/* proposal sections */
+.cmpx { margin-top: 96px; }
+.cmpx .sub { font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); margin-top: 10px; max-width: 660px; }
+.cmp-list { list-style: none; margin: 28px 0 0; padding: 0; }
+.cmp-list > li { border-top: 1px solid var(--rule); padding: 28px 0 30px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 10px 48px; }
+.cmp-list > li:last-child { border-bottom: 1px solid var(--rule); }
+.cmp-list .c-name { font: 400 25px/1.2 var(--head); }
+.cmp-list .c-name small { display: block; margin-top: 6px; font: 400 13px/1.45 var(--ui); color: var(--ink-3); }
+.cmp-list dl { margin: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px 24px; }
+.cmp-list dt { font: 500 13px/1.6 var(--ui); color: var(--ink-3); }
+.cmp-list dd { margin: 0; font: 300 16.5px/1.55 var(--body); color: var(--ink-2); max-width: 700px; }
+@media (max-width: 860px) { .cmp-list > li { grid-template-columns: 1fr; } .cmp-list dl { grid-template-columns: 1fr; gap: 2px; } .cmp-list dd { margin-bottom: 10px; } }
+ul.plain { margin: 12px 0 0; padding: 0; list-style: none; }
+ul.plain li { border-top: 1px solid var(--rule); padding: 12px 0; font: 300 16.5px/1.55 var(--body); color: var(--ink-2); max-width: 780px; }
+ul.plain li:last-child { border-bottom: 1px solid var(--rule); }
+ul.plain a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; }
+ul.plain a:hover { text-decoration-color: currentColor; }
+ol.decide { margin: 18px 0 0; padding: 0; list-style: none; counter-reset: d; max-width: 780px; }
+ol.decide li { counter-increment: d; display: grid; grid-template-columns: 36px minmax(0, 1fr); border-top: 1px solid var(--rule); padding: 16px 0; font: 300 17px/1.6 var(--body); color: var(--ink-2); }
+ol.decide li::before { content: counter(d); font: 500 15px/1.75 var(--ui); color: var(--ink-3); }
+ol.decide li:last-child { border-bottom: 1px solid var(--rule); }
+@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; animation: none !important; } .rv { opacity: 1; transform: none; } }
+</style>
+
+<div class="doc">
+  <header class="doc-head">
+    <h1>La página de Pasajes</h1>
+    <p class="lede">Un pasaje por vez, con lo que enseñan los documentos oficiales, cómo lo defienden los apologistas y el argumento completo en sus propias palabras.</p>
+    <p>Quinta vuelta, sobre la variante E que elegiste. La E tenía la estructura que te gustó y un acabado que no estaba a la altura del sitio. F y G la rehacen con las medidas, las fuentes y la textura de pared reales del sitio, y sin lo que la lista de «AI-slop» del repo prohíbe. La E queda al lado, tal como estaba, para comparar.</p>
+  </header>
+
+  <div class="ctl" role="group" aria-label="Controles de la propuesta">
+    <span><span class="label">Variante</span><span class="seg" id="seg-opt"></span></span>
+    <span><span class="label">Tamaño</span><span class="seg" id="seg-dev"></span></span>
+    <span><span class="label">Tema</span><span class="seg" id="seg-theme"></span></span>
+  </div>
+  <div class="optnote" id="optnote"></div>
+  <div class="stage"><div class="frame" id="frame"><div class="site" id="site"></div></div></div>
+
+  <section class="cmpx">
+    <h2 class="sec">Qué estaba mal en la E</h2>
+    <p class="sub">Cada punto es una regla del propio sitio (DESIGN.md, «Don'ts» y las escalas) que la E rompía.</p>
+    <ul class="plain">
+      <li><b>Sin la textura de pared.</b> El sitio pone sobre todo el fondo la textura de ruido fino a 420 px; el marco de la E era plano. Ahora el marco y esta página llevan la textura real, en claro y en oscuro.</li>
+      <li><b>Metadatos unidos con «·» y flechas pegadas a los enlaces.</b> Las dos están en la lista de lo prohibido. Las citas pasan al bloque «cita + fuente» del sitio: la cita en una columna y el pie en otra, con autor, obra, medio, fecha con su barrita y la fuente con la marca de enlace externo, cada dato en su línea.</li>
+      <li><b>Controles en caja por todos lados.</b> El selector de traducción era una píldora con borde y fondo, y las capas otra. Ahora las traducciones usan las pestañas planas del selector de tradición y las capas son pestañas de título con una raya que se desliza, como encabezados que se eligen.</li>
+      <li><b>Tipografía fuera de la escala.</b> El versículo era Source Serif en 21 px liviano y angosto, las citas iban en redonda y los títulos de capa eran etiquetas grises de 12,5 px. Ahora el versículo, las citas y los títulos usan los roles del sitio (<i>defn</i>, <i>quote</i>, <i>punch</i>, <i>prose</i>) con su tamaño, su interlineado y su «opsz».</li>
+      <li><b>Espacios sueltos.</b> Había valores sin relación. Ahora todo sale de la escala del sitio: 36 px entre título y versículo, 64 entre versículo y capas, 72 antes del argumento y 52 entre ideas, y el versículo y la lectura usan la columna de 720 px del lector.</li>
+      <li><b>Números de versículo en línea y botones con borde repetidos.</b> Los números pasan al margen izquierdo, colgados como en el lector, y la navegación entre pasajes usa las dos cajas «Anterior / Siguiente» del sitio.</li>
+    </ul>
+  </section>
+
+  <section class="cmpx">
+    <h2 class="sec">Las dos variantes nuevas</h2>
+    <ul class="cmp-list">
+      <li><div class="c-name">F · Edición<small>Una columna, como una edición impresa</small></div>
+        <dl>
+          <dt>Cómo funciona</dt><dd>Todo en la columna de 720 px del lector. El versículo en Newsreader grande, con los números colgados a la izquierda; las pestañas «Documentos oficiales | Apologistas» como títulos, y cada cita con su pie debajo, sangrado 30 px, como en «Por qué» de la página de tradición.</dd>
+          <dt>De dónde viene</dt><dd>La columna del lector, el bloque «cita + fuente» en su versión angosta, el selector de tradición y las cajas «Anterior / Siguiente».</dd>
+          <dt>Qué cuesta</dt><dd>Es la más calma y la más larga: cada cita ocupa su propio renglón y el argumento completo se recorre hacia abajo.</dd>
+        </dl></li>
+      <li><div class="c-name">G · Pliego<small>Cita y fuente en dos columnas</small></div>
+        <dl>
+          <dt>Cómo funciona</dt><dd>La misma base, pero sin límite de columna: el versículo en Source Serif, como en el lector, y cada cita con su pie a un costado, alineados arriba, como en la versión ancha de «Por qué». Las ideas del argumento quedan separadas por espacio, y el pie queda a una distancia fija del texto.</dd>
+          <dt>De dónde viene</dt><dd>El bloque «cita + fuente» en su versión ancha (cita 1fr, pie 270 px) y la letra del lector para el versículo.</dd>
+          <dt>Qué cuesta</dt><dd>Aprovecha el ancho y acorta la página, pero el pie compite con la cita en pantallas medianas. En teléfono se apila como F.</dd>
+        </dl></li>
+    </ul>
+  </section>
+
+  <section class="cmpx">
+    <h2 class="sec">Lo que usé</h2>
+    <p class="sub">Del repo: DESIGN.md (escala tipográfica, «cita + fuente», lista de lo prohibido, selector de tradición, «Anterior / Siguiente»), la textura y los tokens de <b>globals.css</b>, y la investigación de apologistas ya hecha. De afuera:</p>
+    <ul class="plain">
+      <li><a href="https://practicaltypography.com/summary-of-key-rules.html" target="_blank" rel="noopener noreferrer">Butterick, Practical Typography, resumen de reglas</a>: línea de 45 a 90 caracteres e interlineado de 120 a 145 % del tamaño. De ahí salen la medida del versículo y de la prosa (unos 62 caracteres) y el interlineado de 1,5 a 1,7.</li>
+      <li>Las referencias de comparación de la ronda anterior (Logos, STEPBible, SwordSearcher) siguen valiendo para la función. Aquí cambia el acabado, no la estructura.</li>
+    </ul>
+  </section>
+
+  <section class="cmpx">
+    <h2 class="sec">Lo que descarté</h2>
+    <ul class="plain">
+      <li><b>Las variantes A, B, C y D</b> de la ronda anterior, porque elegiste la E.</li>
+      <li><b>Letra capital, subtítulo en cursiva con filigrana y filetes cortos centrados</b>: son recursos que ya rechazaste en la página de Craig Mod.</li>
+      <li><b>Tarjetas con sombra para cada cita</b>, y un fondo con gradientes o pergamino.</li>
+      <li><b>Un aviso donde falta la capa de apologistas</b>: la pestaña queda apagada y la capa no aparece.</li>
+    </ul>
+  </section>
+
+  <section class="cmpx">
+    <h2 class="sec">Lo que hay que decidir</h2>
+    <ol class="decide">
+      <li>¿F o G, o una mezcla? Por ejemplo, el versículo de F con el pie a un costado de G.</li>
+      <li>El versículo: ¿en Newsreader grande (F) o en la letra del lector (G)?</li>
+      <li>Las citas en español traducidas por IA con el original a un clic, ¿o preferís el original a la vista?</li>
+      <li>La barra «Pasaje 12 de 19» y la regla de la izquierda: ¿bastan para ubicarse, o conviene un índice?</li>
+    </ol>
+    <p class="t" style="margin-top:28px"><b>Decidido por el agente, para que lo veas:</b> que las pestañas de capa sean títulos y no botones; que los pies de las citas muestren el medio y la fecha en líneas separadas; y que el texto de la capa de documentos use el tamaño de la prosa del sitio, no el de una nota.</p>
+  </section>
+</div>
+
+<script>
+const DATA = /*DATA*/{};
+const eds = DATA.eds, entries = DATA.entries, N = entries.length;
+const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const OPTS = [["E", "E · La anterior"], ["F", "F · Edición"], ["G", "G · Pliego"]];
+const NOTES = {
+  E: ["E · La anterior", "La variante de la ronda pasada, tal como estaba: selector bajo el versículo y una capa a ancho completo. Sirve para comparar.", "La base"],
+  F: ["F · Edición", "Una columna de 720 px como el lector: versículo grande en Newsreader con números colgados, pestañas de título para las capas y cada cita con su pie debajo.", "Más calma"],
+  G: ["G · Pliego", "Sin límite de columna: versículo en la letra del lector, y cada cita con su pie a un costado, como el bloque «cita + fuente» ancho del sitio.", "Más ancho"]
+};
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9ñ\s]/g, "").replace(/\s+/g, " ").trim();
+const edOf = (id) => eds.find((e) => e.id === id);
+const langOf = (id) => edOf(id).lang;
+let state = { opt: "F", dev: "desktop", tr: "rv1909", sel: 0, layer: "off", arg: false };
+try { const s = JSON.parse(localStorage.getItem("pasajes-prop4") || "{}"); if (["E","F","G"].includes(s.opt)) state.opt = s.opt; if (["desktop","phone"].includes(s.dev)) state.dev = s.dev; } catch (e) {}
+const save = () => { try { localStorage.setItem("pasajes-prop4", JSON.stringify({ opt: state.opt, dev: state.dev })); } catch (e) {} };
+const phone = () => state.dev === "phone";
+const $ = (id) => document.getElementById(id);
+
+/* ---------- words ---------- */
+function tokens(text) { const out = []; const re = /\S+/g; let m; while ((m = re.exec(text))) out.push({ w: m[0], s: m.index, e: m.index + m[0].length, n: norm(m[0]) }); return out; }
+function lcsKeep(a, b) {
+  const n = a.length, m = b.length; const t = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) t[i][j] = a[i] === b[j] ? t[i + 1][j + 1] + 1 : Math.max(t[i + 1][j], t[i][j + 1]);
+  const keepB = new Set(); let i = 0, j = 0;
+  while (i < n && j < m) { if (a[i] === b[j]) { keepB.add(j); i++; j++; } else if (t[i + 1][j] >= t[i][j + 1]) i++; else j++; }
+  return keepB;
+}
+function wordsHtml(text, flags) {
+  return tokens(text).map((t, i) => `<span class="w${flags && flags[i] ? " " + flags[i] : ""}" data-n="${t.n}" data-s="${t.s}" data-e="${t.e}">${esc(t.w)}</span>`).join(" ");
+}
+function verseP(v, ed, o) {
+  o = o || {};
+  return `<p class="vt" data-raw="${esc(v.t[ed] || "")}">${o.num ? `<span class="vn">${v.n}</span>` : ""}${wordsHtml(v.t[ed] || "", o.flags)}</p>`;
+}
+function blockHtml(b, ed, o) {
+  o = o || {};
+  const multi = b.verses.length > 1;
+  return `<div class="blk" data-ref="${esc(b.ref)}">${o.label ? `<p class="blk-ref"><span>${esc(b.ref)}</span><a href="#r" onclick="return false">Leer en el lector</a></p>` : ""}${b.verses.map((v) => verseP(v, ed, { num: multi, flags: o.flags && o.flags[b.ref + v.n] })).join("")}</div>`;
+}
+function diffFlags(entry, from, to) {
+  if (langOf(from) !== langOf(to)) return null;
+  const flags = {};
+  for (const b of entry.main.concat(entry.parallels)) for (const v of b.verses) {
+    const a = tokens(v.t[from] || "").map((t) => t.n), c = tokens(v.t[to] || "");
+    const keep = lcsKeep(a, c.map((t) => t.n)); const f = {};
+    c.forEach((t, i) => { if (!keep.has(i)) f[i] = "chg"; });
+    flags[b.ref + v.n] = f;
+  }
+  return flags;
+}
+/* the tradition's quoted words → ranges in the verse text */
+function readingHtml(entry) {
+  return entry.reading.replace(/«([^»]{12,})»/g, (m, q) => `<span class="qt" data-q="${esc(q.replace(/<[^>]+>/g, ""))}">«${q}»</span>`);
+}
+function locate(raw, phrase) {
+  const map = []; let ns = "";
+  for (let i = 0; i < raw.length; i++) { const d = raw[i].normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); if (/[a-z0-9ñ]/.test(d)) { ns += d; map.push(i); } else if (/\s/.test(raw[i]) && ns && ns[ns.length - 1] !== " ") { ns += " "; map.push(i); } }
+  const ranges = [];
+  for (const piece of phrase.split(/…|\.\.\./)) { const p = norm(piece.replace(/\[[^\]]*\]/g, "")); if (p.length < 6) continue; const k = ns.indexOf(p); if (k >= 0) ranges.push([map[k], map[k + p.length - 1] + 1]); }
+  return ranges;
+}
+function markPhrase(scope, phrase, on) {
+  scope.querySelectorAll(".w.hl").forEach((w) => w.classList.remove("hl", "last"));
+  if (!on) return;
+  scope.querySelectorAll(".vt").forEach((p) => {
+    const ranges = locate(p.dataset.raw, phrase); if (!ranges.length) return;
+    const ws = [...p.querySelectorAll(".w")];
+    ws.forEach((w, i) => { const s = +w.dataset.s, e = +w.dataset.e; const inR = ranges.some(([a, b]) => s >= a && e <= b + 1); if (inR) { w.classList.add("hl"); const nx = ws[i + 1]; if (!nx || !ranges.some(([a, b]) => +nx.dataset.s >= a && +nx.dataset.e <= b + 1)) w.classList.add("last"); } });
+  });
+}
+function bindQuotes(root, scope) {
+  root.querySelectorAll(".qt").forEach((q) => {
+    const has = [...scope.querySelectorAll(".vt")].some((p) => locate(p.dataset.raw, q.dataset.q).length);
+    q.classList.toggle("can", has);
+    if (q.dataset.bound) return; q.dataset.bound = "1";
+    q.addEventListener("mouseenter", () => { if (!q.classList.contains("can")) return; q.classList.add("on"); markPhrase(scope, q.dataset.q, true); });
+    q.addEventListener("mouseleave", () => { q.classList.remove("on"); markPhrase(scope, "", false); });
+  });
+}
+
+/* ---------- shared pieces ---------- */
+const chevR = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l4 4-4 4"/></svg>';
+const chevL = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L5 7l4 4"/></svg>';
+const plus = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg>';
+const goBtn = `<a class="btn-go" href="#r" onclick="return false">Leer en el lector${chevR}</a>`;
+function moveInd(seg, animate) {
+  const ind = seg.querySelector(".ind"), on = seg.querySelector('button[aria-pressed="true"]'); if (!ind || !on) return;
+  if (!animate || RM) seg.classList.add("still"); else seg.classList.remove("still");
+  ind.style.width = on.offsetWidth + "px"; ind.style.transform = `translateX(${on.offsetLeft}px)`;
+  if (!animate) requestAnimationFrame(() => seg.classList.remove("still"));
+}
+function segHtml(id, items, cur, attr, cls = "") {
+  return `<div class="seg ${cls}" id="${id}" role="group"><span class="ind"></span>${items.map(([v, l, d, t]) => `<button type="button" data-${attr}="${v}" aria-pressed="${cur === v}" ${d ? 'aria-disabled="true"' : ""} ${t ? `title="${esc(t)}"` : ""}>${l}</button>`).join("")}</div>`;
+}
+function setPressed(seg, attr, val) { seg.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset[attr] === val))); moveInd(seg, true); }
+const trItems = () => eds.map((e) => [e.id, e.ab, false, e.name]);
+function readingBlock(entry) { return `<p class="lab">Cómo la lee la Iglesia católica</p><p class="rd-t">${readingHtml(entry)}</p>`; }
+function parHtml(entry, ed) {
+  if (!entry.parallels.length) return "";
+  return `<div class="par"><button type="button" class="btn-more" data-par aria-expanded="false">${plus}<span>Pasajes paralelos (${entry.parallels.length})</span></button><div class="coll"><div>${entry.parallels.map((p) => `<div class="par-i">${blockHtml(p, ed, { label: true })}</div>`).join("")}</div></div></div>`;
+}
+function bindPar(root) {
+  root.querySelectorAll("[data-par]").forEach((b) => b.addEventListener("click", () => { const open = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(open)); b.querySelector("span").textContent = (open ? "Ocultar los paralelos" : `Pasajes paralelos (${b.closest(".par").querySelectorAll(".par-i").length})`); b.nextElementSibling.classList.toggle("open", open); }));
+}
+const titleOf = (e) => e.main.length === 1 ? e.main[0].ref : e.short;
+const mainTitle = (e) => e.main.map((b) => b.ref).join(" · ");
+
+/* ---------- Foco + layers ---------- */
+const L_OFF = "Lo que enseñan los documentos de la Iglesia católica", L_APOL = "Cómo lo defienden los apologistas católicos";
+const quoteCount = (e) => e.apol.args.reduce((n, a) => n + a.quotes.length, 0);
+const whoCount = (e) => new Set(e.apol.args.flatMap((a) => a.quotes.map((q) => q.who))).size;
+function officialBlock(e) { return `<div class="lay"><p class="lab">${L_OFF}</p><p class="rd-t">${readingHtml(e)}</p></div>`; }
+function apolBlock(e, btn = true) {
+  if (!e.apol) return "";
+  return `<div class="lay"><p class="lab">${L_APOL}</p><p class="qnote">Autores y apologistas populares. No son documentos oficiales.</p><p class="rd-t" style="margin-top:10px">${esc(e.apol.intro)}</p>${btn ? `<button type="button" class="btn-more" data-arg aria-expanded="${state.arg}">${plus}<span>${state.arg ? "Ocultar el argumento" : "Leer el argumento completo"}</span></button>` : ""}</div>`;
+}
+function layerFull(e) {
+  if (!e.apol && state.layer === "apol") state.layer = "off";
+  const items = [["off", "Documentos oficiales"], ["apol", e.apol ? 'Apologistas<span class="tabdot"></span>' : "Apologistas", !e.apol, "Todavía no hay comentarios de apologistas para este pasaje"]];
+  return `<div class="wlay">${segHtml("a-lay", items, state.layer, "layer")}<div id="a-lay-body">${layerFullBody(e)}</div></div>`;
+}
+function layerFullBody(e) { return state.layer === "apol" && e.apol ? `<div class="argfull">${apolBlock(e, false)}${argHtml(e)}</div>` : `<div class="off">${officialBlock(e)}</div>`; }
+function argBar(e) { return e.apol ? `<div class="argbar"><button type="button" class="btn-more" data-arg aria-expanded="${state.arg}">${plus}<span>${state.arg ? "Ocultar el argumento" : "Leer el argumento completo"}</span></button><span class="qnote">${quoteCount(e)} citas de ${whoCount(e)} ${whoCount(e) === 1 ? "apologista" : "apologistas"} católicos</span></div>` : ""; }
+function quoteHtml(q) {
+  return `<figure class="qq"><blockquote class="qb">«${esc(q.es)}»${q.tr ? ' <span class="tr">[traducción propia asistida por IA]</span>' : ""}</blockquote><figcaption class="qa"><b>${esc(q.who)}</b> · ${esc(q.work)} · ${esc(q.date)} · ${esc(q.loc)}<a href="${q.url}" target="_blank" rel="noopener noreferrer">Ver la fuente</a></figcaption>${q.en ? `<div><button type="button" class="btn-more sm" data-orig aria-expanded="false">${plus}<span>Leer el original en inglés</span></button><div class="coll"><div><p class="oq">«${esc(q.en)}»</p></div></div></div>` : ""}</figure>`;
+}
+function argHtml(e) {
+  if (!e.apol) return "";
+  return `<section class="arg"><h3 class="arg-h">El argumento, en sus palabras</h3><p class="qnote">${quoteCount(e)} citas de ${whoCount(e)} ${whoCount(e) === 1 ? "apologista" : "apologistas"}. Cada una enlaza a su fuente.</p>${e.apol.args.map((a) => `<div class="arg-i"><h4>${esc(a.title)}</h4>${a.quotes.map(quoteHtml).join("")}</div>`).join("")}</section>`;
+}
+function bindLayers(root) {
+  root.querySelectorAll("[data-arg]").forEach((b) => b.addEventListener("click", () => setArg(!state.arg)));
+  root.querySelectorAll("[data-orig]").forEach((b) => b.addEventListener("click", () => { const open = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(open)); b.querySelector("span").textContent = open ? "Ocultar el original" : "Leer el original en inglés"; b.nextElementSibling.classList.toggle("open", open); }));
+}
+function setArg(open) {
+  state.arg = open;
+  const w = $("a-arg"); if (w) w.classList.toggle("open", open);
+  document.querySelectorAll("[data-arg]").forEach((b) => { b.setAttribute("aria-expanded", String(open)); b.querySelector("span").textContent = open ? "Ocultar el argumento" : "Leer el argumento completo"; });
+}
+let a = { hover: -1 };
+function mountA(host) {
+  const ruler = phone()
+    ? `<div class="hstrip" id="ra" aria-label="Pasajes">${entries.map((e, i) => `<button type="button" data-i="${i}" aria-label="${esc(titleOf(e))}"></button>`).join("")}</div>`
+    : `<div class="rail" id="ra" aria-label="Pasajes">${entries.map((e, i) => `<button type="button" class="tk" data-i="${i}" style="top:${i * 18}px" aria-label="${esc(titleOf(e))}"><span class="rl">${esc(titleOf(e))}</span></button>`).join("")}</div>`;
+  const o = state.opt, nm = ["C", "D", "E", "F", "G"].includes(o), X = o === "F" || o === "G";
+  const below = o === "D" ? '<div id="a-bar"></div><div class="coll" id="a-arg"><div id="a-arg-in"></div></div><div id="a-wrap"></div>' : o === "C" ? '<div id="a-wrap"></div><div class="coll" id="a-arg"><div id="a-arg-in"></div></div>' : o === "E" ? '<div id="a-wrap"></div><div class="coll" id="a-arg" hidden><div id="a-arg-in"></div></div>' : '<div class="coll" id="a-arg"><div id="a-arg-in"></div></div>';
+  if (X) host.innerHTML = `<div class="v${o} xv"><div class="f1">${phone() ? "" : `<div>${ruler}</div>`}<div class="f1-main">${phone() ? ruler : ""}<div class="x-head"><span class="x-count" id="a-count"></span><div class="x-tr"><span class="lab">Traducción</span>${segHtml("a-seg", trItems(), state.tr, "tr", "tabsx")}</div></div><div id="a-stage"></div><div id="a-wrap"></div><div class="x-nav" id="a-nav"></div></div></div></div>`;
+  else host.innerHTML = `<div class="v${o}"><div class="f1">${phone() ? "" : `<div>${ruler}</div>`}<div class="f1-main">${phone() ? ruler : ""}<div class="f1-top"><span class="lab" id="a-count"></span>${segHtml("a-seg", trItems(), state.tr, "tr")}</div><div id="a-stage"></div>${below}<div class="f1-nav" id="a-nav"></div></div>${nm ? "" : '<aside class="f1-m" id="a-read"></aside>'}</div></div>`;
+  const rail = $("ra");
+  rail.querySelectorAll("[data-i]").forEach((b) => b.addEventListener("click", () => selectA(+b.dataset.i)));
+  if (!phone()) {
+    rail.addEventListener("mousemove", (ev) => { const r = rail.getBoundingClientRect(); hoverA(Math.max(0, Math.min(N - 1, Math.round((ev.clientY - r.top - 11) / 18)))); });
+    rail.addEventListener("mouseleave", () => hoverA(-1));
+    rail.querySelectorAll(".tk").forEach((t, i) => { t.addEventListener("focus", () => hoverA(i)); t.addEventListener("blur", () => hoverA(-1)); });
+  }
+  $("a-seg").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { const from = state.tr; state.tr = b.dataset.tr; setPressed($("a-seg"), "tr", state.tr); paintA(0, from); }));
+  moveInd($("a-seg"), false);
+  state.arg = false; paintA(0, null);
+}
+const bulge = (i, k) => { const d = Math.abs(k - i); return d === 0 ? 4.2 : d <= 3 ? 1 + (3 - d) * 0.5 : 1; };
+function hoverA(i) {
+  a.hover = i;
+  document.querySelectorAll("#ra .tk").forEach((t, k) => { t.style.setProperty("--s", i < 0 ? 1 : bulge(i, k)); t.classList.toggle("hov", k === i); });
+}
+function selectA(i, dir) {
+  if (i < 0 || i >= N || i === state.sel) return;
+  dir = dir || (i > state.sel ? 1 : -1); state.sel = i; paintA(dir, null);
+}
+function replay(el, cls) { if (RM) return; el.classList.remove("in-f", "in-b", "in-x"); void el.offsetWidth; el.classList.add(cls); }
+function marginHtml(e) {
+  if (state.opt === "A") return officialBlock(e) + apolBlock(e);
+  if (!e.apol && state.layer === "apol") state.layer = "off";
+  const items = [["off", "Documentos oficiales"], ["apol", e.apol ? 'Apologistas<span class="tabdot"></span>' : "Apologistas", !e.apol, "Todavía no hay comentarios de apologistas para este pasaje"]];
+  return `<div class="mlay">${segHtml("a-lay", items, state.layer, "layer")}<div id="a-lay-body">${state.layer === "apol" ? apolBlock(e) : officialBlock(e)}</div></div>`;
+}
+function bindMargin(e, stage) {
+  const rd = ["C", "D", "E", "F", "G"].includes(state.opt) ? $("a-wrap") : $("a-read");
+  bindLayers(rd); bindQuotes(rd, stage);
+  const sg = $("a-lay");
+  if (sg && sg.classList.contains("seg")) {
+    sg.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+      if (b.getAttribute("aria-disabled") === "true") return;
+      const entry = entries[state.sel]; state.layer = b.dataset.layer; setPressed(sg, "layer", state.layer);
+      const body = $("a-lay-body"); body.innerHTML = (state.opt === "F" || state.opt === "G") ? layerBodyX(entry) : state.opt === "E" ? layerFullBody(entry) : state.layer === "apol" ? apolBlock(entry) : officialBlock(entry); replay(body, "in-x"); bindLayers(body); bindQuotes(body, $("a-stage"));
+    }));
+    moveInd(sg, false);
+  }
+}
+function paintA(dir, from) {
+  if (state.opt === "F" || state.opt === "G") return paintX(dir, from);
+  const e = entries[state.sel];
+  $("a-count").textContent = `Pasaje ${state.sel + 1} de ${N}`;
+  document.querySelectorAll("#ra [data-i]").forEach((b) => b.setAttribute("aria-current", String(+b.dataset.i === state.sel)));
+  const flags = from ? diffFlags(e, from, state.tr) : null;
+  const stage = $("a-stage");
+  const verses = `<div class="f1-vs">${e.main.map((b) => blockHtml(b, state.tr, { label: e.main.length > 1, flags })).join("")}</div>`;
+  if (dir !== 0 || !stage.firstChild) {
+    if (dir !== 0) state.arg = false;
+    stage.innerHTML = `<h2 class="f1-t">${esc(mainTitle(e))}</h2>${e.main.length === 1 ? `<div style="margin-top:14px">${goBtn}</div>` : ""}${verses}${parHtml(e, state.tr)}`;
+    if (dir !== 0) replay(stage, dir > 0 ? "in-f" : "in-b");
+    bindPar(stage);
+    const arg = $("a-arg"); arg.classList.toggle("open", state.arg); $("a-arg-in").innerHTML = argHtml(e); bindLayers($("a-arg-in"));
+    if (state.opt === "C" || state.opt === "D") {
+      const lay = $("a-wrap"); lay.innerHTML = `<div class="two${e.apol ? "" : " one"}"><div>${officialBlock(e)}</div>${e.apol ? `<div>${apolBlock(e, state.opt === "C")}</div>` : ""}</div>`; if (dir !== 0) replay(lay, dir > 0 ? "in-f" : "in-b");
+      if (state.opt === "D") { const bar = $("a-bar"); bar.innerHTML = argBar(e); bindLayers(bar); }
+    } else if (state.opt === "E") {
+      const lay = $("a-wrap"); lay.innerHTML = layerFull(e); if (dir !== 0) replay(lay, dir > 0 ? "in-f" : "in-b");
+    } else {
+      const rd = $("a-read"); rd.innerHTML = marginHtml(e); if (dir !== 0) replay(rd, dir > 0 ? "in-f" : "in-b");
+    }
+    bindMargin(e, stage);
+  } else {
+    stage.querySelector(".f1-vs").outerHTML = verses;
+    stage.querySelectorAll(".par-i").forEach((pi, k) => { pi.innerHTML = blockHtml(e.parallels[k], state.tr, { label: true, flags }); });
+    if (!flags) replay(stage.querySelector(".f1-vs"), "in-x");
+    bindQuotes(["C", "D", "E", "F", "G"].includes(state.opt) ? $("a-wrap") : $("a-read"), stage);
+  }
+  $("a-nav").innerHTML = `<button type="button" class="btn-go" id="a-prev" ${state.sel === 0 ? 'aria-disabled="true" style="opacity:.45;cursor:default"' : ""}>${chevL}Anterior</button><button type="button" class="btn-go" id="a-next" ${state.sel === N - 1 ? 'aria-disabled="true" style="opacity:.45;cursor:default"' : ""}>Siguiente${chevR}</button><span class="hint">${phone() ? "" : "Teclas ← y →"}</span>`;
+  $("a-prev").onclick = () => selectA(state.sel - 1, -1); $("a-next").onclick = () => selectA(state.sel + 1, 1);
+}
+
+/* ---------- F and G ---------- */
+function figX(q) {
+  return `<figure class="x-fig"><div><blockquote class="x-q">${esc(q.es)}</blockquote>${q.tr ? '<p class="x-ai">Traducción propia asistida por IA</p>' : ""}${q.en ? `<button type="button" class="btn-more sm" data-orig aria-expanded="false">${plus}<span>Leer el original en inglés</span></button><div class="coll"><div><p class="oq">«${esc(q.en)}»</p></div></div>` : ""}</div><figcaption class="x-cap"><b>${esc(q.who)}</b>${q.work ? `<span>${esc(q.work)}</span>` : ""}<span>${esc(q.outlet)}</span><span class="dm">${esc(q.date)}</span><span>${esc(q.loc)}</span><a href="${q.url}" target="_blank" rel="noopener noreferrer">Ver la fuente</a></figcaption></figure>`;
+}
+function argX(e) {
+  const n = quoteCount(e), m = whoCount(e);
+  return `<h3 class="x-arg-h">El argumento, en sus palabras</h3><p class="x-note">${n} ${n === 1 ? "cita" : "citas"} de ${m} ${m === 1 ? "apologista" : "apologistas"}. Cada una enlaza a su fuente.</p>${e.apol.args.map((a) => `<div class="x-grp"><h4>${esc(a.title)}</h4>${a.quotes.map(figX).join("")}</div>`).join("")}`;
+}
+function layerBodyX(e) {
+  if (state.layer === "apol" && e.apol) return `<div><p class="x-desc">${L_APOL}.</p><p class="x-note">Autores y apologistas populares. No son documentos oficiales.</p><p class="x-prose sm">${esc(e.apol.intro)}</p>${argX(e)}</div>`;
+  return `<div><p class="x-desc">${L_OFF}.</p><p class="x-prose">${readingHtml(e)}</p></div>`;
+}
+function layersX(e) {
+  if (!e.apol && state.layer === "apol") state.layer = "off";
+  const items = [["off", "Documentos oficiales"], ["apol", "Apologistas", !e.apol, "Todavía no hay comentarios de apologistas para este pasaje"]];
+  return `<div class="x-layers">${segHtml("a-lay", items, state.layer, "layer", "ltabs")}<div id="a-lay-body">${layerBodyX(e)}</div></div>`;
+}
+function paintX(dir, from) {
+  const e = entries[state.sel];
+  $("a-count").textContent = `Pasaje ${state.sel + 1} de ${N}`;
+  document.querySelectorAll("#ra [data-i]").forEach((b) => b.setAttribute("aria-current", String(+b.dataset.i === state.sel)));
+  const flags = from ? diffFlags(e, from, state.tr) : null;
+  const stage = $("a-stage");
+  const verses = `<div class="x-vs">${e.main.map((b) => blockHtml(b, state.tr, { label: e.main.length > 1, flags })).join("")}</div>`;
+  if (dir !== 0 || !stage.firstChild) {
+    stage.innerHTML = `<h2 class="x-t">${esc(mainTitle(e))}</h2>${e.main.length === 1 ? `<div class="x-go">${goBtn}</div>` : ""}${verses}${parHtml(e, state.tr)}`;
+    if (dir !== 0) replay(stage, dir > 0 ? "in-f" : "in-b");
+    bindPar(stage);
+    const wrap = $("a-wrap"); wrap.innerHTML = layersX(e); if (dir !== 0) replay(wrap, dir > 0 ? "in-f" : "in-b");
+    bindMargin(e, stage);
+  } else {
+    stage.querySelector(".x-vs").outerHTML = verses;
+    stage.querySelectorAll(".par-i").forEach((pi, k) => { pi.innerHTML = blockHtml(e.parallels[k], state.tr, { label: true, flags }); });
+    if (!flags) replay(stage.querySelector(".x-vs"), "in-x");
+    bindQuotes($("a-wrap"), stage);
+  }
+  const pv = entries[state.sel - 1], nx = entries[state.sel + 1];
+  $("a-nav").innerHTML = `${pv ? `<button type="button" class="nbox" id="a-prev"><span class="l">Pasaje anterior</span><span class="t">${esc(titleOf(pv))}</span></button>` : "<div></div>"}${nx ? `<button type="button" class="nbox next" id="a-next"><span class="l">Pasaje siguiente</span><span class="t">${esc(titleOf(nx))}</span></button>` : "<div></div>"}`;
+  if (pv) $("a-prev").onclick = () => selectA(state.sel - 1, -1);
+  if (nx) $("a-next").onclick = () => selectA(state.sel + 1, 1);
+}
+
+/* ---------- frame ---------- */
+function tree() {
+  const row = (t, cls = "", icon = "") => `<div class="r ${cls}">${icon}<span>${t}</span></div>`;
+  const chev = '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3.5 1.5 7 5l-3.5 3.5"/></svg>';
+  const chevD = '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" style="transform:rotate(90deg)" aria-hidden="true"><path d="M3.5 1.5 7 5l-3.5 3.5"/></svg>';
+  const sp = '<span style="width:10px;flex:none"></span>';
+  return `<aside class="tree" aria-label="Índice del sitio"><p class="g">Doctrinas</p>${row("La Eucaristía", "", chev)}${row("La justificación", "soon", sp)}${row("El bautismo", "anc", chevD)}<div class="ind2">${row("Lo que escribieron los primeros cristianos", "soon", sp)}${row("Católica", "anc", chevD)}<div class="ind2">${row("Pasajes", "cur", sp)}${row("Objeciones", "", chev)}</div>${["Ortodoxa", "Luterana", "Reformada", "Bautista", "Pentecostal"].map((t) => row(t, "soon", sp)).join("")}</div>${row("El papado", "soon", sp)}${row("Sola Scriptura", "soon", sp)}</aside>`;
+}
+function render() {
+  const frame = $("frame"); frame.classList.toggle("phone", phone());
+  const ce = $("c-edge"); if (ce) ce.remove();
+  const top = `<div class="tb"><button class="ibtn menu" type="button" aria-label="Menú"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button><span class="logo">Doctrina</span><span style="flex:1"></span>${phone() ? `<button class="ibtn" type="button" aria-label="Buscar"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg></button>` : `<span class="strig"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg><span>Buscar doctrinas, versículos, Padres…</span></span>`}</div>`;
+  const head = `<p class="crumbs"><span class="inert">Doctrinas</span><i>/</i><span class="inert">El bautismo</span><i>/</i><a href="#c" onclick="return false">Católica</a><i>/</i><span class="cur">Pasajes</span></p><div class="swb" aria-label="Tradición"><span class="cap">Tradición</span><span class="tab on">Católica</span>${["Ortodoxa", "Luterana", "Reformada", "Bautista", "Pentecostal"].map((t) => `<span class="tab">${t}</span>`).join("")}</div><h1>Los pasajes de la posición católica</h1><p class="lede">Los versículos que la Iglesia católica cita sobre el bautismo, completos y con su propia lectura.</p>`;
+  $("site").innerHTML = `${top}<div class="body">${phone() ? "" : tree()}<div class="main" id="main"><div class="page"><div id="view"></div></div></div></div>`;
+  $("site").querySelector(".page").insertAdjacentHTML("afterbegin", head);
+  const host = $("view"), mainEl = $("main");
+  mountA(host);
+}
+document.addEventListener("keydown", (ev) => { if (ev.target.closest("input,textarea")) return; if (ev.key === "ArrowRight") selectA(state.sel + 1, 1); if (ev.key === "ArrowLeft") selectA(state.sel - 1, -1); });
+function seg(id, items, key, onPick) {
+  const el = $(id);
+  el.innerHTML = items.map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${state[key] === v}" style="min-height:34px;padding:0 12px;border:0;border-radius:6px;background:${state[key] === v ? "var(--accent-weak)" : "none"};font:${state[key] === v ? 500 : 400} 13.5px var(--ui);color:var(--ink);cursor:pointer;box-shadow:${state[key] === v ? "inset 0 -2px 0 var(--accent)" : "none"}">${l}</button>`).join("");
+  el.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => onPick(b.dataset.v)));
+}
+function note() { const [n, line, meta] = NOTES[state.opt]; $("optnote").innerHTML = `<div class="on-name">${n}</div><div class="on-meta">${meta}</div><div class="on-line">${line}</div>`; }
+function ctl() {
+  seg("seg-opt", OPTS, "opt", (v) => { state.opt = v; save(); ctl(); note(); render(); });
+  seg("seg-dev", [["desktop", "Escritorio"], ["phone", "Teléfono"]], "dev", (v) => { state.dev = v; save(); ctl(); render(); });
+  const theme = document.documentElement.dataset.theme || "system";
+  const items = [["system", "Sistema"], ["light", "Claro"], ["dark", "Oscuro"]];
+  $("seg-theme").innerHTML = items.map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${theme === v}" style="min-height:34px;padding:0 12px;border:0;border-radius:6px;background:${theme === v ? "var(--accent-weak)" : "none"};font:${theme === v ? 500 : 400} 13.5px var(--ui);color:var(--ink);cursor:pointer;box-shadow:${theme === v ? "inset 0 -2px 0 var(--accent)" : "none"}">${l}</button>`).join("");
+  $("seg-theme").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { if (b.dataset.v === "system") delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = b.dataset.v; ctl(); }));
+}
+ctl(); note(); render();
+document.fonts.ready.then(() => document.querySelectorAll(".seg").forEach((sg) => moveInd(sg, false)));
+</script>

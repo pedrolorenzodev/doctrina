@@ -36,6 +36,11 @@ Any UI without a precise definition goes through a proposal Artifact first. The 
 
 ## Lessons
 
+- 2026-10-29 · A proposal frame built from hand-copied tokens looked like AI-slop to Pedro («no tiene el background tipo pared, las fonts no me convencen, los espaciados tampoco») → build the frame with the site's real pieces: `--texture-image` and `--texture-opacity` from `globals.css` (the `texture-page` overlay at 420 px), the exact type roles of `DESIGN.md` §2 with their `opsz`, the spacing numbers of the existing patterns, and the patterns themselves (the «cita + fuente» block, `date-mark`, `--external-mark`, the tradition-switcher tabs with the sliding indicator, the footer «Anterior / Siguiente», the quote role `head 300 italic` with `«»` by CSS). Read `DESIGN.md` §7 «Don'ts» as a checklist before publishing: «·»-joined metadata, arrows glued to links, boxed or pill controls, tiny grey labels, identical rounded cards, ad hoc spacing.
+- 2026-10-29 · Pedro picks a base and refines in rounds (A → C → E → G): after a pick, delete the discarded variants only when he says so, keep the chosen one beside the new ones, and when he inspects in the browser he sends exact CSS values (`color: var(--ink-3)`): apply them as given.
+- 2026-10-29 · Use all the real content the repo has (the 19 passages with their five editions and the apologists' verified quotes) and hide a layer that has no data instead of showing a placeholder; keep the generator (`docs/research/proposals/<name>/source/`) so the next agent can rebuild the page.
+- 2026-10-29 · Research for a design proposal: read the repo's own research first, then a standard WebSearch per question; cite only what the results confirm and say what could not be confirmed.
+
 - 2026-10-20 · A coordinator-owned base plus one file per builder gave four screens in ~15 min each with no conflicts → "Multi-screen proposal".
 - 2026-10-20 · The Fable critic caught real trust problems the builders had marked "decided by agent" ([memory] text shown as final, uncited practice cells) → forbid [memory]-tagged text in the builder brief.
 - v2 (before 2026-10-05) · A full build was the costly way to learn the structure was wrong → proposal canvases with real content.

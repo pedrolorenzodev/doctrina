@@ -51,7 +51,7 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 7. Before writing Next code, read the relevant guide in `node_modules/next/dist/docs/` (Next 16: `params`/`searchParams` are Promises, global `LayoutProps` type, Turbopack by default, `middleware` is now `proxy`).
 - If a rule, the structure or the doc system is ambiguous, ask Pedro before inventing.
 - **Questions about project state are answered from the repo, never from memory** (Pedro corrected it twice on 2026-10-20). What's pending, planned or decided: read `ROADMAP.md` (current state, "Now", "Background queue", "Next"), every open `docs/features/*.md` (plans, handoffs, queues), the day's `DECISIONS.md` entries and `git status` / `git diff` first, then answer citing where each item lives.
-- **We are racing the clock** (Pedro, 2026-10-20; no deadline set). Whenever Claude and Codex usage allows, important work runs in the background while we talk or Pedro decides. At the start of every session and after each background task ends, launch the next item of "Background queue" in `ROADMAP.md`. Which tasks qualify and how: `docs/playbooks/agent-ops.md`, "Background work".
+- **Codex only on Pedro's explicit say-so** (Pedro, 2026-10-29, replaces «launch the next queue item at the start of every session»). No agent delegates a task to Codex, launches or relaunches its runner, or starts a background-queue item unless Pedro explicitly says to; even then, ask him first (what, where it writes, usage cap) and wait for the yes. Never start it «because the queue says so» or because usage looks free. The queue in `ROADMAP.md` is a list of candidates, not an order. How it runs once he agrees: `docs/playbooks/agent-ops.md`, "Background work".
 
 ## Code
 

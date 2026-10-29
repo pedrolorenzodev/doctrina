@@ -1,0 +1,685 @@
+<title>Pasajes de Doctrina</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: the proposal page (selectors, one live frame of the site showing the «Pasajes» page of the Catholic Baptism page, three options, what was studied, what is discarded, what to decide). Every value is the site's own (src/app/globals.css, docs/DESIGN.md §4 motion). */
+:root {
+  --bg: #e8e5de; --ink: #1c1713; --ink-2: #2a2620; --ink-3: #615c54; --prose: #4f4b44;
+  --rule: #c9c5bc; --rule-2: #aeaba4; --accent: #2c4a9e; --accent-weak: rgb(44 74 158 / 0.1); --accent-mid: rgb(44 74 158 / 0.45);
+  --cite: #5f3d0c; --cite-weak: rgb(95 61 12 / 0.09); --card: rgb(255 255 255 / 0.35); --panel: #efece6;
+  --tip-bg: #1c1713; --tip-ink: #f4f1ea; --hover: rgb(28 23 19 / 0.05); --mark: rgb(240 200 60 / 0.45); --chg: rgb(44 74 158 / 0.2);
+  --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.85%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%221.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2262%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E"); --texture-opacity: 0.4; --external-mark: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.4'%3E%3Cpath d='M5 2H2v8h8V7'/%3E%3Cpath d='M7 1.5h3.5V5M10.5 1.5 5.5 6.5'/%3E%3C/svg%3E");
+  --head: "Newsreader", Georgia, serif; --body: "Source Serif 4", Georgia, serif; --ui: "Work Sans", system-ui, sans-serif;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1); --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1); --ease-move: cubic-bezier(0.4, 0, 0.2, 1); --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+    --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+    --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05); --mark: rgb(214 168 101 / 0.28); --chg: rgb(158 179 238 / 0.24);
+    --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E"); --texture-opacity: 1;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+  --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+  --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05); --mark: rgb(214 168 101 / 0.28); --chg: rgb(158 179 238 / 0.24);
+  --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E"); --texture-opacity: 1;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.5 var(--ui); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::after { content: ""; position: fixed; inset: 0; z-index: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; }
+.doc { position: relative; z-index: 1; }
+.ctl::after { content: ""; position: absolute; inset: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+.ctl > * { position: relative; z-index: 1; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+.doc { max-width: 1240px; margin: 0 auto; padding-block: 40px 120px; }
+.doc-head { max-width: 760px; }
+.doc-head h1 { font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.doc-head .lede { font: italic 300 22px/1.4 var(--head); color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; }
+.doc p.t, .doc-head p { font: 300 17px/1.6 var(--body); color: var(--prose); margin: 14px 0 0; max-width: 68ch; }
+.doc b { font-weight: 500; color: var(--ink); }
+h2.sec { font: 300 34px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 0; text-wrap: balance; }
+@media (max-width: 640px) { .doc-head h1 { font-size: 36px; } .doc-head .lede { font-size: 19px; } h2.sec { font-size: 28px; } }
+
+.ctl { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; margin-top: 28px; padding-block: 10px; background: var(--bg); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+@media (max-width: 760px) { .ctl { position: static; } }
+.ctl > span { display: flex; align-items: center; max-width: 100%; min-width: 0; }
+.ctl .label { font: 500 12.5px var(--ui); color: var(--ink-3); margin-right: 8px; }
+
+/* segmented control with one persistent sliding indicator («Deslizar», 340 ms ease-reveal) */
+.seg { position: relative; display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; max-width: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg .ind { position: absolute; z-index: 0; top: 3px; left: 0; height: calc(100% - 6px); border-radius: 6px; background: var(--accent-weak); box-shadow: inset 0 -2px 0 var(--accent); transition: transform 340ms var(--ease-reveal), width 340ms var(--ease-reveal); pointer-events: none; }
+.seg.still .ind { transition: none; }
+.seg button { position: relative; z-index: 1; min-height: 34px; padding: 0 12px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.seg button:hover { background: var(--hover); color: var(--ink); }
+.seg button[aria-pressed="true"] { font-weight: 500; color: var(--ink); }
+.seg button[aria-disabled="true"] { opacity: 0.45; cursor: default; }
+.seg button[aria-disabled="true"]:hover { background: none; color: var(--ink-2); }
+@media (pointer: coarse) { .seg button { min-height: 44px; } }
+
+.optnote { padding: 18px 0 16px; display: grid; gap: 6px 32px; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; }
+.optnote .on-name { font: 400 22px/1.3 var(--head); }
+.optnote .on-line { grid-column: 1; font: 300 16.5px/1.55 var(--body); color: var(--prose); max-width: 780px; }
+.optnote .on-meta { grid-column: 2; grid-row: 1; font: 400 13px/1.5 var(--ui); color: var(--ink-3); text-align: right; }
+@media (max-width: 760px) { .optnote { grid-template-columns: 1fr; } .optnote .on-meta { grid-column: 1; grid-row: auto; text-align: left; } }
+
+.stage { display: flex; justify-content: center; }
+.frame { position: relative; width: 100%; max-width: 1240px; height: clamp(680px, 88vh, 940px); border: 1px solid var(--rule-2); border-radius: 10px; overflow: hidden; background: var(--bg); transition: max-width 300ms var(--ease-reveal); }
+.frame.phone { max-width: 390px; height: min(840px, 90vh); border-radius: 14px; }
+.site { position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--bg); }
+.site::after { content: ""; position: absolute; inset: 0; z-index: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; }
+.site > * { position: relative; z-index: 1; }
+.tb { flex: none; height: 56px; display: flex; align-items: center; gap: 14px; padding: 0 20px; border-bottom: 1px solid var(--rule); }
+.tb .logo { font: 400 23px/1 var(--head); font-variation-settings: "opsz" 24; letter-spacing: -0.005em; }
+.ibtn { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 6px; background: none; color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.ibtn:hover { background: var(--hover); color: var(--ink); }
+.tb .menu { width: 40px; height: 40px; margin-left: -8px; }
+.strig { margin-left: 24px; width: 300px; height: 36px; display: flex; align-items: center; gap: 10px; padding: 0 10px 0 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); font: 400 13.5px var(--ui); color: var(--ink-3); }
+.body { flex: 1; min-height: 0; display: flex; }
+.tree { flex: none; width: 272px; border-right: 1px solid var(--rule); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; padding: 22px 14px 40px 18px; font: 400 14px/1.35 var(--ui); }
+.frame.phone .tree { display: none; }
+.tree .g { font: 500 12.5px var(--ui); color: var(--ink-3); margin: 0 0 4px 4px; }
+.tree .r { display: flex; align-items: center; min-height: 32px; padding: 0 8px 0 4px; border-radius: 6px; color: var(--ink-2); gap: 6px; }
+.tree .r svg { flex: none; color: var(--ink-3); }
+.tree .r.soon { color: var(--ink-3); opacity: 0.6; }
+.tree .ind2 { margin-left: 13px; padding-left: 8px; border-left: 1px solid var(--rule); }
+.tree .r.cur { background: var(--accent-weak); box-shadow: inset 2px 0 0 var(--accent); color: var(--ink); font-weight: 500; }
+.tree .r.anc { color: var(--ink); }
+.main { flex: 1; min-width: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; overscroll-behavior: contain; position: relative; }
+.page { max-width: 1000px; padding: 34px 40px 110px; margin: 0 auto; }
+.frame.phone .page { padding: 24px 18px 90px; }
+
+.crumbs { font: 400 13px/1.4 var(--ui); color: var(--ink-3); }
+.crumbs .inert { color: var(--ink-3); }
+.crumbs a { text-decoration: none; color: var(--ink-3); }
+.crumbs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs i { font-style: normal; color: var(--rule-2); margin: 0 8px; }
+.crumbs .cur { color: var(--ink-2); }
+.swb { margin-top: 14px; display: flex; align-items: center; gap: 18px; padding: 6px 0; overflow-x: auto; scrollbar-width: none; }
+.swb::-webkit-scrollbar { display: none; }
+.swb .cap { flex: none; font: 500 12.5px var(--ui); color: var(--ink-3); }
+.swb .tab { flex: none; padding: 8px 11px; border-radius: 6px; font: 400 14px var(--ui); color: var(--ink-3); opacity: 0.6; white-space: nowrap; }
+.swb .tab.on { opacity: 1; color: var(--ink); font-weight: 500; background: var(--accent-weak); box-shadow: inset 0 -2px 0 var(--accent); }
+.page h1 { font: 300 46px/1.08 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 26px 0 0; text-wrap: balance; }
+.page .lede { font: italic 300 22px/1.38 var(--head); color: var(--ink-2); margin: 12px 0 0; max-width: 62ch; text-wrap: pretty; }
+.frame.phone .page h1 { font-size: 34px; }
+.frame.phone .page .lede { font-size: 19px; }
+
+.lab { font: 500 12.5px/1.3 var(--ui); color: var(--ink-3); }
+.cite { color: var(--cite); text-decoration: underline dotted; text-decoration-thickness: 1.5px; text-underline-offset: 4px; border-radius: 2px; cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.cite:hover { background: var(--cite-weak); text-decoration-style: solid; }
+.qt { border-radius: 2px; cursor: default; transition: background-color 200ms var(--ease-standard); }
+.qt.can:hover, .qt.on { background: var(--mark); }
+.btn-go { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 36px; padding: 0 13px; border: 1px solid var(--rule-2); border-radius: 7px; background: var(--card); font: 500 13.5px var(--ui); color: var(--ink); text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color 150ms var(--ease-standard), border-color 150ms var(--ease-standard); }
+.btn-go:hover { border-color: var(--ink); background: var(--hover); }
+.btn-more { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 10px 0 4px; border: 0; background: none; border-radius: 6px; font: 500 13.5px var(--ui); color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.btn-more:hover { background: var(--hover); color: var(--ink); }
+.btn-more svg { transition: transform 200ms var(--ease-standard); }
+.btn-more[aria-expanded="true"] svg { transform: rotate(45deg); }
+@media (pointer: coarse) { .btn-go, .btn-more { min-height: 44px; } }
+.coll { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 380ms var(--ease-reveal); }
+.coll.open { grid-template-rows: 1fr; }
+.coll > div { overflow: hidden; min-height: 0; }
+
+/* words: highlight of the tradition's quoted words, difference flash, shared words */
+.w { border-radius: 2px; }
+.w.hl { background: var(--mark); transition: background-color 200ms var(--ease-standard); }
+.w.hl:not(.last) { padding-right: 0.28em; margin-right: -0.28em; }
+.w.chg { animation: chg 2400ms var(--ease-standard) both; }
+@keyframes chg { 0% { background-color: var(--chg); } 55% { background-color: var(--chg); } 100% { background-color: transparent; } }
+.w.same { background: var(--accent-weak); }
+.w.df { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+@keyframes inF { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+@keyframes inB { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
+@keyframes inX { from { opacity: 0; } to { opacity: 1; } }
+.in-f { animation: inF 260ms var(--ease-reveal) both; }
+.in-b { animation: inB 260ms var(--ease-reveal) both; }
+.in-x { animation: inX 260ms var(--ease-standard) both; }
+.vt { margin: 0; font: 300 19px/1.66 var(--body); color: var(--ink-2); }
+.vt + .vt { margin-top: 2px; }
+.vn { font: 400 12px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; margin-right: 7px; vertical-align: 0.15em; }
+.blk + .blk { margin-top: 26px; }
+.blk-ref { font: 500 12.5px/1.3 var(--ui); color: var(--ink-3); margin: 0 0 6px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.blk-ref a { font-weight: 500; color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; }
+.blk-ref a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.rd-t { margin: 8px 0 0; font: 300 16px/1.62 var(--body); color: var(--prose); }
+.par-i { margin-top: 22px; }
+.par .vt { font-size: 17px; }
+
+/* V1 «Foco» */
+.f1 { display: grid; grid-template-columns: 58px minmax(0, 1fr) 270px; gap: 0 34px; margin-top: 38px; align-items: start; }
+.rail { position: sticky; top: 18px; height: 346px; }
+.rail .tk { position: absolute; left: 0; width: 100%; height: 18px; border: 0; background: none; padding: 0; cursor: pointer; display: block; }
+.rail .tk::before { content: ""; position: absolute; left: 0; top: 50%; width: 16px; height: 3px; margin-top: -1.5px; border-radius: 2px; background: var(--ink); opacity: 0.3; transform-origin: left center; transform: scaleX(var(--s, 1)); transition: transform 200ms var(--ease-standard), background-color 260ms var(--ease-standard), opacity 260ms var(--ease-standard); }
+.rail .tk[aria-current="true"]::before { background: var(--accent); opacity: 1; }
+.rail .tk .rl { position: absolute; left: 84px; top: 50%; transform: translateY(-50%); white-space: nowrap; opacity: 0; transition: opacity 150ms var(--ease-standard); pointer-events: none; font: 400 13px var(--ui); padding: 4px 9px; border-radius: 6px; background: var(--tip-bg); color: var(--tip-ink); z-index: 6; }
+.rail .tk.hov .rl { opacity: 1; }
+.f1-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.f1-t { font: 400 34px/1.15 var(--head); font-variation-settings: "opsz" 48; margin: 18px 0 0; }
+.f1 .vt { font-size: 21px; line-height: 1.62; }
+.f1-vs { margin-top: 20px; }
+.f1-nav { margin-top: 36px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.f1-nav .hint { font: 400 12.5px var(--ui); color: var(--ink-3); margin-left: auto; }
+.f1-m { position: sticky; top: 18px; padding-top: 4px; }
+.f1-m .lab { margin-bottom: 2px; }
+.f1-m .rd-t { font-size: 15.5px; }
+.frame.phone .f1 { display: block; margin-top: 22px; }
+.hstrip { display: flex; gap: 0; justify-content: space-between; align-items: flex-end; height: 34px; padding: 0 2px; }
+.hstrip button { flex: 1; height: 100%; border: 0; background: none; padding: 0; cursor: pointer; display: grid; place-items: end center; }
+.hstrip button::before { content: ""; width: 3px; height: 14px; border-radius: 2px; background: var(--ink); opacity: 0.3; transition: height 200ms var(--ease-standard), background-color 260ms var(--ease-standard), opacity 260ms var(--ease-standard); }
+.hstrip button[aria-current="true"]::before { height: 26px; background: var(--accent); opacity: 1; }
+.frame.phone .f1-t { font-size: 28px; margin-top: 14px; }
+.frame.phone .f1 .vt { font-size: 19px; }
+.frame.phone .f1-m { position: static; margin-top: 28px; }
+
+/* layers over «Foco» */
+.lay + .lay { margin-top: 30px; }
+.qnote { margin: 4px 0 0; font: 400 12.5px/1.45 var(--ui); color: var(--ink-3); }
+.lay .btn-more { margin: 10px 0 0 -4px; }
+.arg { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--rule); }
+.arg-h { font: 400 26px/1.2 var(--head); font-variation-settings: "opsz" 36; margin: 0; }
+.arg-i { margin-top: 28px; }
+.arg-i h4 { font: 500 15px/1.4 var(--ui); margin: 0; color: var(--ink); }
+.qq { margin: 16px 0 0; }
+.qb { margin: 0; font: 300 17.5px/1.62 var(--body); color: var(--ink-2); }
+.qb .tr { font: 400 12px var(--ui); color: var(--ink-3); white-space: nowrap; }
+.qa { margin-top: 6px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+.qa b { color: var(--ink); font-weight: 500; }
+.qa a { color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; margin-left: 8px; white-space: nowrap; }
+.qa a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.qa a::after { content: " ↗"; }
+.btn-more.sm { min-height: 34px; font-weight: 400; margin-left: -4px; }
+.oq { margin: 4px 0 6px; font: italic 300 16px/1.6 var(--body); color: var(--ink-3); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-top: 34px; }
+.two.one { grid-template-columns: minmax(0, 62ch); }
+.frame.phone .two { display: block; }
+.frame.phone .two > div + div { margin-top: 28px; }
+.vC .f1, .vD .f1, .vE .f1 { grid-template-columns: 58px minmax(0, 1fr); }
+.argbar { margin-top: 34px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 4px 0; }
+.argbar .btn-more { margin: 0 0 0 -4px; }
+.argbar .qnote { margin: 0; }
+.argfull .arg, .vD .arg { margin-top: 30px; padding-top: 0; border-top: 0; }
+.wlay { margin-top: 32px; }
+.wlay .seg { margin-bottom: 4px; }
+.wlay .off { max-width: 66ch; }
+.wlay .off .rd-t { font-size: 17px; }
+.mlay { margin-top: 0; }
+.mlay .seg { margin-bottom: 14px; }
+.tabdot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-left: 8px; vertical-align: 2px; }
+/* F «Edición» and G «Pliego»: the site's own patterns (reader column 720, quote + source block, tradition-switcher tabs, footer previous / next) */
+.xv .f1 { grid-template-columns: 58px minmax(0, 1fr); gap: 0 34px; margin-top: 56px; }
+.vF .f1-main { max-width: 720px; }
+.x-head { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; }
+.x-count { font: 400 13px/1.4 var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.x-tr { display: flex; align-items: center; gap: 14px; }
+.seg.tabsx { border: 0; padding: 0; overflow: visible; gap: 2px; }
+.tabsx button { min-height: 36px; padding: 0 11px; font: 400 14px var(--ui); color: var(--ink-2); }
+.tabsx button[aria-pressed="true"] { font-weight: 500; }
+.x-t { font: 300 36px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 30px 0 0; text-wrap: balance; color: var(--ink-3); }
+.frame.phone .x-t { font-size: 29px; }
+.x-go { margin-top: 20px; }
+.x-vs { margin-top: 36px; }
+.xv .blk + .blk { margin-top: 28px; }
+.xv .blk-ref { margin-bottom: 10px; font: 500 12.5px/1.3 var(--ui); }
+.vF .vt { position: relative; font: 300 25px/1.5 var(--head); font-variation-settings: "opsz" 30; color: var(--ink); }
+.vG .vt { position: relative; font: 300 21px/1.7 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); }
+.xv .vt + .vt { margin-top: 6px; }
+.xv .vn { position: absolute; left: -32px; width: 22px; text-align: right; top: 0.62em; margin: 0; font: 400 12px/1 var(--ui); vertical-align: baseline; }
+.frame.phone .xv .vn { position: static; margin-right: 8px; vertical-align: 0.15em; }
+.xv .par { margin-top: 40px; }
+.xv .par .vt { font-size: 19px; }
+.vG .par .vt { font-size: 18px; }
+.x-layers { margin-top: 64px; }
+.seg.ltabs { display: flex; width: 100%; border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; padding: 0; gap: 36px; overflow: visible; }
+.ltabs .ind { top: auto; bottom: -1px; height: 2px; border-radius: 0; background: var(--accent); box-shadow: none; }
+.ltabs button { min-height: 0; padding: 0 0 12px; border-radius: 0; font: 400 21px/1.3 var(--head); font-variation-settings: "opsz" 24; color: var(--ink-3); }
+.ltabs button:hover { background: none; color: var(--ink); }
+.ltabs button[aria-pressed="true"] { color: var(--ink); font-weight: 400; }
+.ltabs button[aria-disabled="true"] { opacity: 0.6; }
+.ltabs button[aria-disabled="true"]:hover { color: var(--ink-3); }
+.frame.phone .ltabs { gap: 24px; }
+.frame.phone .ltabs button { font-size: 18px; }
+.x-desc { font: italic 300 22px/1.4 var(--head); font-variation-settings: "opsz" 30; color: var(--ink-2); margin: 36px 0 0; max-width: 56ch; text-wrap: pretty; }
+.x-note { font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); margin: 8px 0 0; max-width: 62ch; }
+.x-prose { font: 300 19px/1.66 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); margin: 28px 0 0; max-width: 62ch; }
+.x-prose.sm { font-size: 16.5px; line-height: 1.6; color: var(--prose); }
+.x-arg-h { font: 300 28px/1.2 var(--head); font-variation-settings: "opsz" 36; margin: 72px 0 0; }
+.x-grp { margin-top: 52px; }
+.x-grp h4 { font: 400 22px/1.3 var(--head); font-variation-settings: "opsz" 24; margin: 0; color: var(--ink); max-width: 40ch; text-wrap: balance; }
+.x-fig { margin: 28px 0 0; display: grid; gap: 16px 64px; align-items: start; }
+.vF .x-fig { grid-template-columns: minmax(0, 1fr); padding-left: 30px; }
+.vG .x-fig { grid-template-columns: minmax(0, 1fr) 270px; }
+.frame.phone .vG .x-fig { grid-template-columns: minmax(0, 1fr); padding-left: 30px; }
+.x-q { margin: 0; font: italic 300 21px/1.45 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); }
+.x-q::before { content: "«"; }
+.x-q::after { content: "»"; }
+.x-ai { margin: 8px 0 0; font: 400 13.5px/1.5 var(--ui); color: var(--ink-3); }
+.x-fig .btn-more { margin: 8px 0 0 -4px; }
+.x-cap { border-top: 1px solid var(--rule); padding-top: 8px; font: 400 14px/1.5 var(--ui); color: var(--ink-3); }
+.vF .x-cap { max-width: 340px; }
+.x-cap b { display: block; font-weight: 500; color: var(--ink); }
+.x-cap span { display: block; }
+.x-cap .dm { display: flex; width: fit-content; align-items: baseline; gap: 9px; margin-top: 8px; font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+.x-cap .dm::before { content: ""; width: 1px; height: 12px; background: var(--rule-2); align-self: center; }
+.x-cap a { display: inline-block; margin-top: 8px; font: 400 13.5px/1.5 var(--ui); color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; transition: color 150ms var(--ease-standard); }
+.x-cap a:hover { color: var(--ink); text-decoration-color: currentColor; }
+.x-cap a::after { content: ""; display: inline-block; width: 0.72em; height: 0.72em; margin-left: 0.3em; vertical-align: -0.02em; background-color: currentColor; mask: var(--external-mark) center / contain no-repeat; -webkit-mask: var(--external-mark) center / contain no-repeat; }
+.x-nav { margin-top: 96px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.frame.phone .x-nav { grid-template-columns: 1fr; }
+.nbox { text-align: left; border: 1px solid var(--rule); border-radius: 6px; padding: 14px 18px 15px; background: none; cursor: pointer; transition: border-color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.nbox:hover { border-color: var(--rule-2); background: var(--hover); }
+.nbox.next { text-align: right; }
+.nbox .l { display: block; font: 500 12.5px/1.3 var(--ui); color: var(--ink-3); }
+.nbox .t { display: block; margin-top: 3px; font: 400 16.5px/1.4 var(--body); color: var(--ink); }
+/* proposal sections */
+.cmpx { margin-top: 96px; }
+.cmpx .sub { font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); margin-top: 10px; max-width: 660px; }
+.cmp-list { list-style: none; margin: 28px 0 0; padding: 0; }
+.cmp-list > li { border-top: 1px solid var(--rule); padding: 28px 0 30px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 10px 48px; }
+.cmp-list > li:last-child { border-bottom: 1px solid var(--rule); }
+.cmp-list .c-name { font: 400 25px/1.2 var(--head); }
+.cmp-list .c-name small { display: block; margin-top: 6px; font: 400 13px/1.45 var(--ui); color: var(--ink-3); }
+.cmp-list dl { margin: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px 24px; }
+.cmp-list dt { font: 500 13px/1.6 var(--ui); color: var(--ink-3); }
+.cmp-list dd { margin: 0; font: 300 16.5px/1.55 var(--body); color: var(--ink-2); max-width: 700px; }
+@media (max-width: 860px) { .cmp-list > li { grid-template-columns: 1fr; } .cmp-list dl { grid-template-columns: 1fr; gap: 2px; } .cmp-list dd { margin-bottom: 10px; } }
+ul.plain { margin: 12px 0 0; padding: 0; list-style: none; }
+ul.plain li { border-top: 1px solid var(--rule); padding: 12px 0; font: 300 16.5px/1.55 var(--body); color: var(--ink-2); max-width: 780px; }
+ul.plain li:last-child { border-bottom: 1px solid var(--rule); }
+ul.plain a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; }
+ul.plain a:hover { text-decoration-color: currentColor; }
+ol.decide { margin: 18px 0 0; padding: 0; list-style: none; counter-reset: d; max-width: 780px; }
+ol.decide li { counter-increment: d; display: grid; grid-template-columns: 36px minmax(0, 1fr); border-top: 1px solid var(--rule); padding: 16px 0; font: 300 17px/1.6 var(--body); color: var(--ink-2); }
+ol.decide li::before { content: counter(d); font: 500 15px/1.75 var(--ui); color: var(--ink-3); }
+ol.decide li:last-child { border-bottom: 1px solid var(--rule); }
+@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; animation: none !important; } .rv { opacity: 1; transform: none; } }
+</style>
+
+<div class="doc">
+  <header class="doc-head">
+    <h1>La página de Pasajes</h1>
+    <p class="lede">Un pasaje por vez, con lo que enseñan los documentos oficiales, cómo lo defienden los apologistas y el argumento completo en sus propias palabras.</p>
+    <p>Quinta vuelta, sobre la variante E que elegiste. La E tenía la estructura que te gustó y un acabado que no estaba a la altura del sitio. F y G la rehacen con las medidas, las fuentes y la textura de pared reales del sitio, y sin lo que la lista de «AI-slop» del repo prohíbe. La E queda al lado, tal como estaba, para comparar.</p>
+  </header>
+
+  <div class="ctl" role="group" aria-label="Controles de la propuesta">
+    <span><span class="label">Variante</span><span class="seg" id="seg-opt"></span></span>
+    <span><span class="label">Tamaño</span><span class="seg" id="seg-dev"></span></span>
+    <span><span class="label">Tema</span><span class="seg" id="seg-theme"></span></span>
+  </div>
+  <div class="optnote" id="optnote"></div>
+  <div class="stage"><div class="frame" id="frame"><div class="site" id="site"></div></div></div>
+
+  <section class="cmpx">
+    <h2 class="sec">Qué estaba mal en la E</h2>
+    <p class="sub">Cada punto es una regla del propio sitio (DESIGN.md, «Don'ts» y las escalas) que la E rompía.</p>
+    <ul class="plain">
+      <li><b>Sin la textura de pared.</b> El sitio pone sobre todo el fondo la textura de ruido fino a 420 px; el marco de la E era plano. Ahora el marco y esta página llevan la textura real, en claro y en oscuro.</li>
+      <li><b>Metadatos unidos con «·» y flechas pegadas a los enlaces.</b> Las dos están en la lista de lo prohibido. Las citas pasan al bloque «cita + fuente» del sitio: la cita en una columna y el pie en otra, con autor, obra, medio, fecha con su barrita y la fuente con la marca de enlace externo, cada dato en su línea.</li>
+      <li><b>Controles en caja por todos lados.</b> El selector de traducción era una píldora con borde y fondo, y las capas otra. Ahora las traducciones usan las pestañas planas del selector de tradición y las capas son pestañas de título con una raya que se desliza, como encabezados que se eligen.</li>
+      <li><b>Tipografía fuera de la escala.</b> El versículo era Source Serif en 21 px liviano y angosto, las citas iban en redonda y los títulos de capa eran etiquetas grises de 12,5 px. Ahora el versículo, las citas y los títulos usan los roles del sitio (<i>defn</i>, <i>quote</i>, <i>punch</i>, <i>prose</i>) con su tamaño, su interlineado y su «opsz».</li>
+      <li><b>Espacios sueltos.</b> Había valores sin relación. Ahora todo sale de la escala del sitio: 36 px entre título y versículo, 64 entre versículo y capas, 72 antes del argumento y 52 entre ideas, y el versículo y la lectura usan la columna de 720 px del lector.</li>
+      <li><b>Números de versículo en línea y botones con borde repetidos.</b> Los números pasan al margen izquierdo, colgados como en el lector, y la navegación entre pasajes usa las dos cajas «Anterior / Siguiente» del sitio.</li>
+    </ul>
+  </section>
+
+  <section class="cmpx">
+    <h2 class="sec">Las dos variantes nuevas</h2>
+    <ul class="cmp-list">
+      <li><div class="c-name">F · Edición<small>Una columna, como una edición impresa</small></div>
+        <dl>
+          <dt>Cómo funciona</dt><dd>Todo en la columna de 720 px del lector. El versículo en Newsreader grande, con los números colgados a la izquierda; las pestañas «Documentos oficiales | Apologistas» como títulos, y cada cita con su pie debajo, sangrado 30 px, como en «Por qué» de la página de tradición.</dd>
+          <dt>De dónde viene</dt><dd>La columna del lector, el bloque «cita + fuente» en su versión angosta, el selector de tradición y las cajas «Anterior / Siguiente».</dd>
+          <dt>Qué cuesta</dt><dd>Es la más calma y la más larga: cada cita ocupa su propio renglón y el argumento completo se recorre hacia abajo.</dd>
+        </dl></li>
+      <li><div class="c-name">G · Pliego<small>Cita y fuente en dos columnas</small></div>
+        <dl>
+          <dt>Cómo funciona</dt><dd>La misma base, pero sin límite de columna: el versículo en Source Serif, como en el lector, y cada cita con su pie a un costado, alineados arriba, como en la versión ancha de «Por qué». Las ideas del argumento quedan separadas por espacio, y el pie queda a una distancia fija del texto.</dd>
+          <dt>De dónde viene</dt><dd>El bloque «cita + fuente» en su versión ancha (cita 1fr, pie 270 px) y la letra del lector para el versículo.</dd>
+          <dt>Qué cuesta</dt><dd>Aprovecha el ancho y acorta la página, pero el pie compite con la cita en pantallas medianas. En teléfono se apila como F.</dd>
+        </dl></li>
+    </ul>
+  </section>
+
+  <section class="cmpx">
+    <h2 class="sec">Lo que usé</h2>
+    <p class="sub">Del repo: DESIGN.md (escala tipográfica, «cita + fuente», lista de lo prohibido, selector de tradición, «Anterior / Siguiente»), la textura y los tokens de <b>globals.css</b>, y la investigación de apologistas ya hecha. De afuera:</p>
+    <ul class="plain">
+      <li><a href="https://practicaltypography.com/summary-of-key-rules.html" target="_blank" rel="noopener noreferrer">Butterick, Practical Typography, resumen de reglas</a>: línea de 45 a 90 caracteres e interlineado de 120 a 145 % del tamaño. De ahí salen la medida del versículo y de la prosa (unos 62 caracteres) y el interlineado de 1,5 a 1,7.</li>
+      <li>Las referencias de comparación de la ronda anterior (Logos, STEPBible, SwordSearcher) siguen valiendo para la función. Aquí cambia el acabado, no la estructura.</li>
+    </ul>
+  </section>
+
+  <section class="cmpx">
+    <h2 class="sec">Lo que descarté</h2>
+    <ul class="plain">
+      <li><b>Las variantes A, B, C y D</b> de la ronda anterior, porque elegiste la E.</li>
+      <li><b>Letra capital, subtítulo en cursiva con filigrana y filetes cortos centrados</b>: son recursos que ya rechazaste en la página de Craig Mod.</li>
+      <li><b>Tarjetas con sombra para cada cita</b>, y un fondo con gradientes o pergamino.</li>
+      <li><b>Un aviso donde falta la capa de apologistas</b>: la pestaña queda apagada y la capa no aparece.</li>
+    </ul>
+  </section>
+
+  <section class="cmpx">
+    <h2 class="sec">Lo que hay que decidir</h2>
+    <ol class="decide">
+      <li>¿F o G, o una mezcla? Por ejemplo, el versículo de F con el pie a un costado de G.</li>
+      <li>El versículo: ¿en Newsreader grande (F) o en la letra del lector (G)?</li>
+      <li>Las citas en español traducidas por IA con el original a un clic, ¿o preferís el original a la vista?</li>
+      <li>La barra «Pasaje 12 de 19» y la regla de la izquierda: ¿bastan para ubicarse, o conviene un índice?</li>
+    </ol>
+    <p class="t" style="margin-top:28px"><b>Decidido por el agente, para que lo veas:</b> que las pestañas de capa sean títulos y no botones; que los pies de las citas muestren el medio y la fecha en líneas separadas; y que el texto de la capa de documentos use el tamaño de la prosa del sitio, no el de una nota.</p>
+  </section>
+</div>
+
+<script>
+const DATA = {"eds": [{"id": "rv1909", "ab": "RV1909", "name": "Reina-Valera 1909", "lang": "es"}, {"id": "bsb", "ab": "BSB", "name": "Berean Standard Bible", "lang": "en"}, {"id": "kjv", "ab": "KJV", "name": "King James Version", "lang": "en"}, {"id": "web-c", "ab": "WEB", "name": "World English Bible, edición católica", "lang": "en"}, {"id": "dra", "ab": "DRA", "name": "Douay-Rheims, Challoner", "lang": "en"}], "entries": [{"id": "p1", "short": "Juan 3:5", "main": [{"ref": "Juan 3:5", "book": "John", "verses": [{"n": 5, "t": {"rv1909": "Respondió Jesús: De cierto, de cierto te digo, que el que no naciere de agua y del Espíritu, no puede entrar en el reino de Dios.", "bsb": "Jesus answered, “Truly, truly, I tell you, no one can enter the kingdom of God unless he is born of water and the Spirit.", "kjv": "Jesus answered, Verily, verily, I say unto thee, Except a man be born of water and [of] the Spirit, he cannot enter into the kingdom of God.", "web-c": "Jesus answered, “Most certainly I tell you, unless one is born of water and Spirit, he can’t enter into God’s Kingdom.", "dra": "Jesus answered: Amen, amen I say to thee, unless a man be born again of water and the Holy Ghost, he cannot enter into the kingdom of God."}}]}], "parallels": [], "reading": "«El que no naciere de agua y del Espíritu, no puede entrar en el reino de Dios.» Para la Iglesia, Jesús habla del agua del bautismo, y no en sentido metafórico <a class='cite' href='#c'>Trento, ses. VII, Del bautismo, can. 2</a>; por eso el bautismo es necesario para la salvación <a class='cite' href='#c'>Catecismo 1257</a>."}, {"id": "p2", "short": "Mateo 28:19–20 · Marcos 16:15–16", "main": [{"ref": "Mateo 28:19–20", "book": "Matt", "verses": [{"n": 19, "t": {"rv1909": "Por tanto, id, y doctrinad á todos los Gentiles, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo:", "bsb": "Therefore go and make disciples of all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Spirit,", "kjv": "¶ Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost:", "web-c": "Go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit,", "dra": "Going therefore, teach ye all nations; baptizing them in the name of the Father, and of the Son, and of the Holy Ghost."}}, {"n": 20, "t": {"rv1909": "Enseñándoles que guarden todas las cosas que os he mandado: y he aquí, yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.", "bsb": "and teaching them to obey all that I have commanded you. And surely I am with you always, even to the end of the age.”", "kjv": "Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, [even] unto the end of the world. Amen.", "web-c": "teaching them to observe all things that I commanded you. Behold, I am with you always, even to the end of the age.” Amen.", "dra": "Teaching them to observe all things whatsoever I have commanded you: and behold I am with you all days, even to the consummation of the world."}}]}, {"ref": "Marcos 16:15–16", "book": "Mark", "verses": [{"n": 15, "t": {"rv1909": "Y les dijo: Id por todo el mundo; predicad el evangelio á toda criatura.", "bsb": "And He said to them, “Go into all the world and preach the gospel to every creature.", "kjv": "And he said unto them, Go ye into all the world, and preach the gospel to every creature.", "web-c": "He said to them, “Go into all the world and preach the Good News to the whole creation.", "dra": "And he said to them: Go ye into the whole world, and preach the gospel to every creature."}}, {"n": 16, "t": {"rv1909": "El que creyere y fuere bautizado, será salvo; mas el que no creyere, será condenado.", "bsb": "Whoever believes and is baptized will be saved, but whoever does not believe will be condemned.", "kjv": "He that believeth and is baptized shall be saved; but he that believeth not shall be damned.", "web-c": "He who believes and is baptized will be saved; but he who disbelieves will be condemned.", "dra": "He that believeth and is baptized, shall be saved: but he that believeth not shall be condemned."}}]}], "parallels": [], "reading": "«Por tanto, id, y doctrinad á todos los Gentiles, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo.» Para el Catecismo, es el mandato del Señor <a class='cite' href='#c'>Catecismo 1257</a>; y por Marcos 16:16, «El que creyere y fuere bautizado, será salvo», llama al bautismo «el sacramento de la fe» <a class='cite' href='#c'>Catecismo 1253</a>.", "apol": {"intro": "Sobre Marcos 16:16, los apologistas católicos responden que la primera mitad ya une las dos cosas, «El que creyere y fuere bautizado, será salvo», y que la segunda nombra solo la incredulidad porque quien no creía no pedía el bautismo; nombrar una no anula la otra.", "args": [{"title": "La primera mitad ya une la fe y el bautismo", "quotes": [{"who": "Joe Heschmeyer", "work": "6 Bible Verses PROVING Water Baptism Saves (REBUTTAL to @NeedGodnet)", "date": "27 de mayo de 2025", "loc": "Minutos 1:35 a 2:50", "url": "https://www.youtube.com/watch?v=T5uo7c3WV9c&t=95s", "es": "si quieres ser salvo, necesitas dos cosas. Necesitas creer y ser bautizado […] la segunda mitad del versículo, en la que él se concentra, no anula la primera mitad", "en": "if you want to be saved, you need two things. You need to believe and to be baptized […] the second half of the verse that he focuses on, that's not nullifying the first half", "tr": true, "outlet": "Shameless Popery, en YouTube"}, {"who": "Alejandro Otálora", "work": "", "date": "2020", "loc": "Minutos 11:00 a 12:10", "url": "https://www.youtube.com/watch?v=Z9Js8wECyAM&t=660s", "es": "otra vez la conjunción y la unión de las dos creer y bautizado […] se requieren las dos cosas la fe y el bautismo", "en": "", "tr": false, "outlet": "Video en YouTube"}]}, {"title": "La segunda mitad nombra solo la incredulidad", "quotes": [{"who": "Trent Horn", "work": "A Catholic Apologist Challenged Everything I Believe (EP 198)", "date": "8 de junio de 2026", "loc": "Minutos 1:18:58 a 1:19:40", "url": "https://www.youtube.com/watch?v=oNWseAsfcGM&t=4738s", "es": "no había nadie que fuera a buscar el bautismo a menos que creyera, porque buscar el bautismo en ese contexto significaba que te echarían de la sinagoga […] los que no se bautizan son personas que no creen", "en": "there wasn't anyone who was going to seek baptism unless they believed because in seeking baptism in that context you're going to be thrown out of the synagogue […] the people who don't get baptized, those are they're going to be people who who don't believe", "tr": true, "outlet": "Bryce Crawford Podcast, en YouTube"}]}]}}, {"id": "p3", "short": "Hechos 2:38", "main": [{"ref": "Hechos 2:38", "book": "Acts", "verses": [{"n": 38, "t": {"rv1909": "Y Pedro les dice: Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados; y recibiréis el don del Espíritu Santo.", "bsb": "Peter replied, “Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.", "kjv": "Then Peter said unto them, Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.", "web-c": "Peter said to them, “Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of sins, and you will receive the gift of the Holy Spirit.", "dra": "But Peter said to them: Do penance, and be baptized every one of you in the name of Jesus Christ, for the remission of your sins: and you shall receive the gift of the Holy Ghost."}}]}], "parallels": [], "reading": "«Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados; y recibiréis el don del Espíritu Santo.» Para el Catecismo, son los dos efectos del bautismo: el perdón de los pecados y el nuevo nacimiento en el Espíritu <a class='cite' href='#c'>Catecismo 1262</a>.", "apol": {"intro": "Los apologistas católicos responden que el texto no dice que la multitud ya estuviera perdonada: preguntan qué deben hacer, Pedro les manda arrepentirse y bautizarse, y solo después de bautizados «fueron añadidas [á ellos] aquel día como tres mil personas» (Hechos 2:41). Señalan el mismo orden en Hechos 22:16: «Levántate, y bautízate, y lava tus pecados».", "args": [{"title": "La multitud no había sido perdonada antes del bautismo", "quotes": [{"who": "Karlo Broussard", "work": "In Baptism Our Sins Are Forgiven", "date": "21 de mayo de 2020", "loc": "Artículo en línea", "url": "https://www.catholic.com/magazine/online-edition/in-baptism-our-sins-are-forgiven", "es": "en ningún lugar dice que los que escuchaban a Pedro fueran perdonados de sus pecados antes de recibir el bautismo", "en": "nowhere does it say those listening to Peter were forgiven their sins before they received baptism", "tr": true, "outlet": "Catholic Answers Magazine"}, {"who": "Joe Heschmeyer", "work": "6 Bible Verses PROVING Water Baptism Saves (REBUTTAL to @NeedGodnet)", "date": "27 de mayo de 2025", "loc": "Minutos 8:00 a 10:10", "url": "https://www.youtube.com/watch?v=T5uo7c3WV9c&t=480s", "es": "le dice a este grupo de gente supuestamente salvada que tiene que arrepentirse. Bueno, eso parece bastante raro […] es solo después de que son bautizados, por cierto, que la Biblia los cuenta entre el rebaño", "en": "he tells this group of a bunch of saved people that they need to repent. Well, that seems pretty weird […] it's only after they're baptized, by the way, that the Bible numbers them amongst the flock", "tr": true, "outlet": "Shameless Popery, en YouTube"}]}, {"title": "Hechos 22:16 muestra el mismo orden", "quotes": [{"who": "Karlo Broussard", "work": "In Baptism Our Sins Are Forgiven", "date": "21 de mayo de 2020", "loc": "Artículo en línea", "url": "https://www.catholic.com/magazine/online-edition/in-baptism-our-sins-are-forgiven", "es": "Claramente, el bautismo precede a la eliminación del pecado y está ordenado a producir ese efecto", "en": "Clearly, baptism precedes the removal of sin and is ordered to bringing about such an effect", "tr": true, "outlet": "Catholic Answers Magazine"}]}]}}, {"id": "p4", "short": "Romanos 6:3–4 · Colosenses 2:12", "main": [{"ref": "Romanos 6:3–4", "book": "Rom", "verses": [{"n": 3, "t": {"rv1909": "¿O no sabéis que todos los que somos bautizados en Cristo Jesús, somos bautizados en su muerte?", "bsb": "Or aren’t you aware that all of us who were baptized into Christ Jesus were baptized into His death?", "kjv": "Know ye not, that so many of us as were baptized into Jesus Christ were baptized into his death?", "web-c": "Or don’t you know that all of us who were baptized into Christ Jesus were baptized into his death?", "dra": "Know you not that all we, who are baptized in Christ Jesus, are baptized in his death?"}}, {"n": 4, "t": {"rv1909": "Porque somos sepultados juntamente con él á muerte por el bautismo; para que como Cristo resucitó de los muertos por la gloria del Padre, así también nosotros andemos en novedad de vida.", "bsb": "We were therefore buried with Him through baptism into death, in order that, just as Christ was raised from the dead through the glory of the Father, we too may walk in newness of life.", "kjv": "Therefore we are buried with him by baptism into death: that like as Christ was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.", "web-c": "We were buried therefore with him through baptism into death, that just as Christ was raised from the dead through the glory of the Father, so we also might walk in newness of life.", "dra": "For we are buried together with him by baptism into death; that as Christ is risen from the dead by the glory of the Father, so we also may walk in newness of life."}}]}, {"ref": "Colosenses 2:12", "book": "Col", "verses": [{"n": 12, "t": {"rv1909": "Sepultados juntamente con él en el bautismo, en el cual también resucitasteis con él, por la fe de la operación de Dios que le levantó de los muertos.", "bsb": "And having been buried with Him in baptism, you were raised with Him through your faith in the power of God, who raised Him from the dead.", "kjv": "Buried with him in baptism, wherein also ye are risen with [him] through the faith of the operation of God, who hath raised him from the dead.", "web-c": "having been buried with him in baptism, in which you were also raised with him through faith in the working of God, who raised him from the dead.", "dra": "Buried with him in baptism, in whom also you are risen again by the faith of the operation of God, who hath raised him up from the dead."}}]}], "parallels": [], "reading": "«Somos bautizados en su muerte… somos sepultados juntamente con él á muerte por el bautismo»: para el Catecismo, la inmersión simboliza esa sepultura y esa resurrección <a class='cite' href='#c'>Catecismo 1214</a>, y por el bautismo el creyente «es sepultado y resucita con Él» <a class='cite' href='#c'>Catecismo 1227</a>."}, {"id": "p5", "short": "Tito 3:5", "main": [{"ref": "Tito 3:5", "book": "Titus", "verses": [{"n": 5, "t": {"rv1909": "No por obras de justicia que nosotros habíamos hecho, mas por su misericordia nos salvó, por el lavacro de la regeneración, y de la renovación del Espíritu Santo;", "bsb": "He saved us, not by the righteous deeds we had done, but according to His mercy, through the washing of new birth and renewal by the Holy Spirit.", "kjv": "Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost;", "web-c": "not by works of righteousness which we did ourselves, but according to his mercy, he saved us through the washing of regeneration and renewing by the Holy Spirit,", "dra": "Not by the works of justice, which we have done, but according to his mercy, he saved us, by the laver of regeneration, and renovation of the Holy Ghost;"}}]}], "parallels": [], "reading": "«Por el lavacro de la regeneración, y de la renovación del Espíritu Santo»: para el Catecismo, el bautismo «significa y realiza» ese nuevo nacimiento <a class='cite' href='#c'>Catecismo 1215</a>."}, {"id": "p6", "short": "Gálatas 3:27", "main": [{"ref": "Gálatas 3:27", "book": "Gal", "verses": [{"n": 27, "t": {"rv1909": "Porque todos los que habéis sido bautizados en Cristo, de Cristo estáis vestidos.", "bsb": "For all of you who were baptized into Christ have clothed yourselves with Christ.", "kjv": "For as many of you as have been baptized into Christ have put on Christ.", "web-c": "For as many of you as were baptized into Christ have put on Christ.", "dra": "For as many of you as have been baptized in Christ, have put on Christ."}}]}], "parallels": [], "reading": "«Todos los que habéis sido bautizados en Cristo, de Cristo estáis vestidos»: el Catecismo lo cita para la vestidura blanca del rito <a class='cite' href='#c'>Catecismo 1243</a>, y Trento, para la «plena y entera remision de los pecados» que atribuye al bautismo <a class='cite' href='#c'>ses. XIV, cap. 2</a>."}, {"id": "p7", "short": "1 Corintios 6:11 · 1 Corintios 12:13", "main": [{"ref": "1 Corintios 6:11", "book": "1Cor", "verses": [{"n": 11, "t": {"rv1909": "Y esto erais algunos: mas [ya] sois lavados, mas [ya] sois santificados, mas [ya] sois justificados en el nombre del Señor Jesús, y por el Espíritu de nuestro Dios.", "bsb": "And that is what some of you were. But you were washed, you were sanctified, you were justified, in the name of the Lord Jesus Christ and by the Spirit of our God.", "kjv": "And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.", "web-c": "Some of you were such, but you were washed. You were sanctified. You were justified in the name of the Lord Jesus, and in the Spirit of our God.", "dra": "And such some of you were; but you are washed, but you are sanctified, but you are justified in the name of our Lord Jesus Christ, and the Spirit of our God."}}]}, {"ref": "1 Corintios 12:13", "book": "1Cor", "verses": [{"n": 13, "t": {"rv1909": "Porque por un Espíritu somos todos bautizados en un cuerpo, ora Judíos ó Griegos, ora siervos ó libres; y todos hemos bebido de un mismo Espíritu.", "bsb": "For in one Spirit we were all baptized into one body, whether Jews or Greeks, slave or free, and we were all given one Spirit to drink.", "kjv": "For by one Spirit are we all baptized into one body, whether [we be] Jews or Gentiles, whether [we be] bond or free; and have been all made to drink into one Spirit.", "web-c": "For in one Spirit we were all baptized into one body, whether Jews or Greeks, whether bond or free; and were all given to drink into one Spirit.", "dra": "For in one Spirit were we all baptized into one body, whether Jews or Gentiles, whether bond or free; and in one Spirit we have all been made to drink."}}]}], "parallels": [], "reading": "«mas [ya] sois lavados, mas [ya] sois santificados, mas [ya] sois justificados»; «por un Espíritu somos todos bautizados en un cuerpo»: para el Catecismo, el bautismo «es un baño que purifica, santifica y justifica» <a class='cite' href='#c'>Catecismo 1227</a> y nos hace «miembros del Cuerpo de Cristo» <a class='cite' href='#c'>Catecismo 1267</a>."}, {"id": "p8", "short": "Romanos 5:12", "main": [{"ref": "Romanos 5:12", "book": "Rom", "verses": [{"n": 12, "t": {"rv1909": "De consiguiente, [vino la reconciliación por uno], así como el pecado entró en el mundo por un hombre, y por el pecado la muerte, y la muerte así pasó á todos los hombres, pues que todos pecaron.", "bsb": "Therefore, just as sin entered the world through one man, and death through sin, so also death was passed on to all men, because all sinned.", "kjv": "Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned:", "web-c": "Therefore, as sin entered into the world through one man, and death through sin, so death passed to all men because all sinned.", "dra": "Wherefore as by one man sin entered into this world, and by sin death; and so death passed upon all men, in whom all have sinned."}}]}], "parallels": [], "reading": "«El pecado entró en el mundo por un hombre»: para Trento, este texto, leído como lo leyó siempre la Iglesia, es la razón por la que también los niños se bautizan «en remisión de los pecados» <a class='cite' href='#c'>ses. V, can. 4</a>."}, {"id": "p9", "short": "Hechos 16:15 · Hechos 16:33 y 2 más", "main": [{"ref": "Hechos 16:15", "book": "Acts", "verses": [{"n": 15, "t": {"rv1909": "Y cuando fué bautizada, y su familia, nos rogó, diciendo: Si habéis juzgado que yo sea fiel al Señor, entrad en mi casa, y posad: y constriñónos.", "bsb": "And when she and her household had been baptized, she urged us, “If you consider me a believer in the Lord, come and stay at my house.” And she persuaded us.", "kjv": "And when she was baptized, and her household, she besought [us], saying, If ye have judged me to be faithful to the Lord, come into my house, and abide [there]. And she constrained us.", "web-c": "When she and her household were baptized, she begged us, saying, “If you have judged me to be faithful to the Lord, come into my house and stay.” So she persuaded us.", "dra": "And when she was baptized, and her household, she besought us, saying: If you have judged me to be faithful to the Lord, come into my house, and abide there. And she constrained us."}}]}, {"ref": "Hechos 16:33", "book": "Acts", "verses": [{"n": 33, "t": {"rv1909": "Y tomándolos en aquella misma hora de la noche, les lavó los azotes; y se bautizó luego él, y todos los suyos.", "bsb": "At that hour of the night, the jailer took them and washed their wounds. And without delay, he and all his household were baptized.", "kjv": "And he took them the same hour of the night, and washed [their] stripes; and was baptized, he and all his, straightway.", "web-c": "He took them the same hour of the night and washed their stripes, and was immediately baptized, he and all his household.", "dra": "And he, taking them the same hour of the night, washed their stripes, and himself was baptized, and all his house immediately."}}]}, {"ref": "Hechos 18:8", "book": "Acts", "verses": [{"n": 8, "t": {"rv1909": "Y Crispo, el prepósito de la sinagoga, creyó al Señor con toda su casa: y muchos de los Corintios oyendo creían, y eran bautizados.", "bsb": "Crispus, the synagogue leader, and his whole household believed in the Lord. And many of the Corinthians who heard the message believed and were baptized.", "kjv": "And Crispus, the chief ruler of the synagogue, believed on the Lord with all his house; and many of the Corinthians hearing believed, and were baptized.", "web-c": "Crispus, the ruler of the synagogue, believed in the Lord with all his house. Many of the Corinthians, when they heard, believed and were baptized.", "dra": "And Crispus, the ruler of the synagogue, believed in the Lord, with all his house; and many of the Corinthians hearing, believed, and were baptized."}}]}, {"ref": "1 Corintios 1:16", "book": "1Cor", "verses": [{"n": 16, "t": {"rv1909": "Y también bauticé la familia de Estéfanas: mas no sé si he bautizado algún otro.", "bsb": "Yes, I also baptized the household of Stephanas; beyond that I do not remember if I baptized anyone else.", "kjv": "And I baptized also the household of Stephanas: besides, I know not whether I baptized any other.", "web-c": "(I also baptized the household of Stephanas; besides them, I don’t know whether I baptized any other.)", "dra": "And I baptized also the household of Stephanus; besides, I know not whether I baptized any other."}}]}], "parallels": [], "reading": "Casas enteras recibieron el bautismo: el Catecismo considera «muy posible» que desde la predicación apostólica se bautizara también a los niños <a class='cite' href='#c'>Catecismo 1252</a>."}, {"id": "p10", "short": "Marcos 10:14", "main": [{"ref": "Marcos 10:14", "book": "Mark", "verses": [{"n": 14, "t": {"rv1909": "Y viéndolo Jesús, se enojó, y les dijo: Dejad los niños venir, y no se lo estorbéis; porque de los tales es el reino de Dios.", "bsb": "But when Jesus saw this, He was indignant and told them, “Let the little children come to Me, and do not hinder them! For the kingdom of God belongs to such as these.", "kjv": "But when Jesus saw [it], he was much displeased, and said unto them, Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.", "web-c": "But when Jesus saw it, he was moved with indignation and said to them, “Allow the little children to come to me! Don’t forbid them, for God’s Kingdom belongs to such as these.", "dra": "Whom when Jesus saw, he was much displeased, and saith to them: Suffer the little children to come unto me, and forbid them not; for of such is the kingdom of God."}}]}], "parallels": [{"ref": "Mateo 19:14", "book": "Matt", "verses": [{"n": 14, "t": {"rv1909": "Y Jesús dijo: Dejad á los niños, y no les impidáis de venir á mí; porque de los tales es el reino de los cielos.", "bsb": "But Jesus said, “Let the little children come to Me, and do not hinder them! For the kingdom of heaven belongs to such as these.”", "kjv": "But Jesus said, Suffer little children, and forbid them not, to come unto me: for of such is the kingdom of heaven.", "web-c": "But Jesus said, “Allow the little children, and don’t forbid them to come to me; for the Kingdom of Heaven belongs to ones like these.”", "dra": "But Jesus said to them: Suffer the little children, and forbid them not to come to me: for the kingdom of heaven is for such."}}]}, {"ref": "Lucas 18:16", "book": "Luke", "verses": [{"n": 16, "t": {"rv1909": "Mas Jesús llamándolos, dijo: Dejad los niños venir á mí, y no los impidáis; porque de tales es el reino de Dios.", "bsb": "But Jesus called the children to Him and said, “Let the little children come to Me, and do not hinder them! For the kingdom of God belongs to such as these.", "kjv": "But Jesus called them [unto him], and said, Suffer little children to come unto me, and forbid them not: for of such is the kingdom of God.", "web-c": "Jesus summoned them, saying, “Allow the little children to come to me, and don’t hinder them, for God’s Kingdom belongs to such as these.", "dra": "But Jesus, calling them together, said: Suffer children to come to me, and forbid them not: for of such is the kingdom of God."}}]}], "reading": "«Dejad los niños venir, y no se lo estorbéis»: el Catecismo lo cita para la comunión de los niños en Oriente y para la esperanza sobre los niños que mueren sin bautismo <a class='cite' href='#c'>Catecismo 1244</a> <a class='cite' href='#c'>Catecismo 1261</a>."}, {"id": "p11", "short": "1 Pedro 3:20", "main": [{"ref": "1 Pedro 3:20", "book": "1Pet", "verses": [{"n": 20, "t": {"rv1909": "Los cuales en otro tiempo fueron desobedientes, cuando una vez esperaba la paciencia de Dios en los días de Noé, cuando se aparejaba el arca; en la cual pocas, es á saber, ocho personas fueron salvas por agua.", "bsb": "who disobeyed long ago when God waited patiently in the days of Noah while the ark was being built. In the ark a few people, only eight souls, were saved through water.", "kjv": "Which sometime were disobedient, when once the longsuffering of God waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls were saved by water.", "web-c": "who before were disobedient when God waited patiently in the days of Noah while the ship was being built. In it, few, that is, eight souls, were saved through water.", "dra": "Which had been some time incredulous, when they waited for the patience of God in the days of Noe, when the ark was a building: wherein a few, that is, eight souls, were saved by water."}}]}], "parallels": [], "reading": "El Catecismo lee el arca de Noé, en la que «unos pocos […] fueron salvados a través del agua», como prefiguración de la salvación por el bautismo <a class='cite' href='#c'>Catecismo 1219</a>."}, {"id": "p12", "short": "1 Pedro 3:21", "main": [{"ref": "1 Pedro 3:21", "book": "1Pet", "verses": [{"n": 21, "t": {"rv1909": "A la figura de la cual el bautismo que ahora corresponde nos salva (no quitando las inmundicias de la carne, sino [como] demanda de una buena conciencia delante de Dios,) por la resurrección de Jesucristo:", "bsb": "And this water symbolizes the baptism that now saves you also—not the removal of dirt from the body, but the pledge of a clear conscience toward God—through the resurrection of Jesus Christ,", "kjv": "The like figure whereunto [even] baptism doth also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience toward God,) by the resurrection of Jesus Christ:", "web-c": "This is a symbol of baptism, which now saves you—not the putting away of the filth of the flesh, but the answer of a good conscience toward God—through the resurrection of Jesus Christ,", "dra": "Whereunto baptism being of the like form, now saveth you also: not the putting away of the filth of the flesh, but the examination of a good conscience towards God by the resurrection of Jesus Christ."}}]}], "parallels": [], "reading": "El Catecismo cita este versículo para decir que «el diluvio y el arca de Noé prefiguraban la salvación por el Bautismo» <a class='cite' href='#c'>Catecismo 1094</a>, y ve la Iglesia «prefigurada por el Arca de Noé que es la única que salva del diluvio» <a class='cite' href='#c'>Catecismo 845</a>.", "apol": {"intro": "Los apologistas católicos responden que el paréntesis no niega que el bautismo salve, sino que explica cómo salva: no como un baño que quita la suciedad del cuerpo, sino por dentro, «por la resurrección de Jesucristo».", "args": [{"title": "Dice cómo salva el bautismo, no que no salve", "quotes": [{"who": "Joe Heschmeyer", "work": "6 Bible Verses PROVING Water Baptism Saves (REBUTTAL to @NeedGodnet)", "date": "27 de mayo de 2025", "loc": "Minutos 17:03 a 18:50", "url": "https://www.youtube.com/watch?v=T5uo7c3WV9c&t=1023s", "es": "¿por qué Pedro necesita aclarar eso? Porque claramente está hablando de una acción física, el bautismo con agua, y quiere asegurarse de que no pensemos que lo importante es lo que podemos ver, la eliminación de la suciedad, sino lo que ocurre de manera invisible a través de esta acción visible", "en": "why does Peter need to clarify that? because he's clearly talking about a physical action, water baptism, and he wants to make sure that we don't get the idea that the important part is what we can see, the removal of dirt, but rather the important part of what's going on is what's happening invisibly through this visible action", "tr": true, "outlet": "Shameless Popery, en YouTube"}, {"who": "Trent Horn", "work": "A Catholic Apologist Challenged Everything I Believe (EP 198)", "date": "8 de junio de 2026", "loc": "Minutos 1:16:13 a 1:17:30", "url": "https://www.youtube.com/watch?v=oNWseAsfcGM&t=4573s", "es": "lo que Pedro está diciendo aquí es: mira, el bautismo no nos salva de una manera mágica. No es que el agua tenga alguna propiedad mágica que nos limpia de la misma manera en que el agua quita la suciedad de nuestra piel", "en": "what Peter is saying here he's saying look baptism doesn't save us in a magical way. It's not like just that the water is some kind of magical property that makes us clean in the same way that water takes dirt off of our skin", "tr": true, "outlet": "Bryce Crawford Podcast, en YouTube"}]}]}}, {"id": "p13", "short": "Efesios 4:30 · Efesios 1:13–14 y 1 más", "main": [{"ref": "Efesios 4:30", "book": "Eph", "verses": [{"n": 30, "t": {"rv1909": "Y no contristéis al Espíritu Santo de Dios, con el cual estáis sellados para el día de la redención.", "bsb": "And do not grieve the Holy Spirit of God, in whom you were sealed for the day of redemption.", "kjv": "And grieve not the holy Spirit of God, whereby ye are sealed unto the day of redemption.", "web-c": "Don’t grieve the Holy Spirit of God, in whom you were sealed for the day of redemption.", "dra": "And grieve not the holy Spirit of God: whereby you are sealed unto the day of redemption."}}]}, {"ref": "Efesios 1:13–14", "book": "Eph", "verses": [{"n": 13, "t": {"rv1909": "En el cual [esperasteis] también vosotros en oyendo la palabra de verdad, el evangelio de vuestra salud: en el cual también desde que creísteis, fuisteis sellados con el Espíritu Santo de la promesa,", "bsb": "And in Him, having heard and believed the word of truth—the gospel of your salvation—you were sealed with the promised Holy Spirit,", "kjv": "In whom ye also [trusted], after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,", "web-c": "In him you also, having heard the word of the truth, the Good News of your salvation—in whom, having also believed, you were sealed with the promised Holy Spirit,", "dra": "In whom you also, after you had heard the word of truth, (the gospel of your salvation;) in whom also believing, you were signed with the holy Spirit of promise,"}}, {"n": 14, "t": {"rv1909": "Que es las arras de nuestra herencia, para la redención de la posesión adquirida para alabanza de su gloria.", "bsb": "who is the pledge of our inheritance until the redemption of those who are God’s possession, to the praise of His glory.", "kjv": "Which is the earnest of our inheritance until the redemption of the purchased possession, unto the praise of his glory.", "web-c": "who is a pledge of our inheritance, to the redemption of God’s own possession, to the praise of his glory.", "dra": "Who is the pledge of our inheritance, unto the redemption of acquisition, unto the praise of his glory."}}]}, {"ref": "2 Corintios 1:21–22", "book": "2Cor", "verses": [{"n": 21, "t": {"rv1909": "Y el que nos confirma con vosotros en Cristo, y el que nos ungió, es Dios;", "bsb": "Now it is God who establishes both us and you in Christ. He anointed us,", "kjv": "Now he which stablisheth us with you in Christ, and hath anointed us, [is] God;", "web-c": "Now he who establishes us with you in Christ and anointed us is God,", "dra": "Now he that confirmeth us with you in Christ, and that hath anointed us, is God:"}}, {"n": 22, "t": {"rv1909": "El cual también nos ha sellado, y dado la prenda del Espíritu en nuestros corazones.", "bsb": "placed His seal on us, and put His Spirit in our hearts as a pledge of what is to come.", "kjv": "Who hath also sealed us, and given the earnest of the Spirit in our hearts.", "web-c": "who also sealed us and gave us the down payment of the Spirit in our hearts.", "dra": "Who also hath sealed us, and given the pledge of the Spirit in our hearts."}}]}], "parallels": [], "reading": "Para el Catecismo, el sello «para el día de la redención» es el carácter bautismal, que no se borra y no se repite <a class='cite' href='#c'>Catecismo 1272–1274</a>."}, {"id": "p14", "short": "1 Timoteo 2:4", "main": [{"ref": "1 Timoteo 2:4", "book": "1Tim", "verses": [{"n": 4, "t": {"rv1909": "El cual quiere que todos los hombres sean salvos, y que vengan al conocimiento de la verdad.", "bsb": "who wants everyone to be saved and to come to the knowledge of the truth.", "kjv": "Who will have all men to be saved, and to come unto the knowledge of the truth.", "web-c": "who desires all people to be saved and come to full knowledge of the truth.", "dra": "Who will have all men to be saved, and to come to the knowledge of the truth."}}]}], "parallels": [], "reading": "Dios «quiere que todos los hombres sean salvos»: el Catecismo lo cita como razón de que, en caso de necesidad, cualquiera pueda bautizar, y de su confianza en «un camino de salvación para los niños que mueren sin Bautismo» <a class='cite' href='#c'>Catecismo 1256</a> <a class='cite' href='#c'>Catecismo 1261</a>."}, {"id": "p15", "short": "Juan 19:34 · Marcos 10:38", "main": [{"ref": "Juan 19:34", "book": "John", "verses": [{"n": 34, "t": {"rv1909": "Empero uno de los soldados le abrió el costado con una lanza, y luego salió sangre y agua.", "bsb": "Instead, one of the soldiers pierced His side with a spear, and immediately blood and water flowed out.", "kjv": "But one of the soldiers with a spear pierced his side, and forthwith came there out blood and water.", "web-c": "However, one of the soldiers pierced his side with a spear, and immediately blood and water came out.", "dra": "But one of the soldiers with a spear opened his side, and immediately there came out blood and water."}}]}, {"ref": "Marcos 10:38", "book": "Mark", "verses": [{"n": 38, "t": {"rv1909": "Entonces Jesús les dijo: No sabéis lo que pedís. ¿Podéis beber del vaso que yo bebo, ó ser bautizados del bautismo de que yo soy bautizado?", "bsb": "“You do not know what you are asking,” Jesus replied. “Can you drink the cup I will drink, or be baptized with the baptism I will undergo?”", "kjv": "But Jesus said unto them, Ye know not what ye ask: can ye drink of the cup that I drink of? and be baptized with the baptism that I am baptized with?", "web-c": "But Jesus said to them, “You don’t know what you are asking. Are you able to drink the cup that I drink, and to be baptized with the baptism that I am baptized with?”", "dra": "And Jesus said to them: You know not what you ask. Can you drink of the chalice that I drink of: or be baptized with the baptism wherewith I am baptized?"}}]}], "parallels": [], "reading": "Para el Catecismo, la sangre y el agua del costado de Cristo son figuras del bautismo y de la Eucaristía: el bautismo viene «de la cruz de Cristo, de la muerte de Cristo» <a class='cite' href='#c'>Catecismo 1225, citando a san Ambrosio</a>."}, {"id": "p16", "short": "Mateo 3:13–17", "main": [{"ref": "Mateo 3:13–17", "book": "Matt", "verses": [{"n": 13, "t": {"rv1909": "Entonces Jesús vino de Galilea á Juan al Jordán, para ser bautizado de él.", "bsb": "At that time Jesus came from Galilee to the Jordan to be baptized by John.", "kjv": "¶ Then cometh Jesus from Galilee to Jordan unto John, to be baptized of him.", "web-c": "Then Jesus came from Galilee to the Jordan to John, to be baptized by him.", "dra": "Then cometh Jesus from Galilee to the Jordan, unto John, to be baptized by him."}}, {"n": 14, "t": {"rv1909": "Mas Juan lo resistía mucho, diciendo: Yo he menester ser bautizado de ti, ¿y tú vienes á mí?", "bsb": "But John tried to prevent Him, saying, “I need to be baptized by You, and do You come to me?”", "kjv": "But John forbad him, saying, I have need to be baptized of thee, and comest thou to me?", "web-c": "But John would have hindered him, saying, “I need to be baptized by you, and you come to me?”", "dra": "But John stayed him, saying: I ought to be baptized by thee, and comest thou to me?"}}, {"n": 15, "t": {"rv1909": "Empero respondiendo Jesús le dijo: Deja ahora; porque así nos conviene cumplir toda justicia. Entonces le dejó.", "bsb": "“Let it be so now,” Jesus replied. “It is fitting for us to fulfill all righteousness in this way.” Then John permitted Him.", "kjv": "And Jesus answering said unto him, Suffer [ it to be so] now: for thus it becometh us to fulfil all righteousness. Then he suffered him.", "web-c": "But Jesus, answering, said to him, “Allow it now, for this is the fitting way for us to fulfill all righteousness.” Then he allowed him.", "dra": "And Jesus answering, said to him: Suffer it to be so now. For so it becometh us to fulfill all justice. Then he suffered him."}}, {"n": 16, "t": {"rv1909": "Y Jesús, después que fué bautizado, subió luego del agua; y he aquí los cielos le fueron abiertos, y vió al Espíritu de Dios que descendía como paloma, y venía sobre él.", "bsb": "As soon as Jesus was baptized, He went up out of the water. Suddenly the heavens were opened, and He saw the Spirit of God descending like a dove and resting on Him.", "kjv": "And Jesus, when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Spirit of God descending like a dove, and lighting upon him:", "web-c": "Jesus, when he was baptized, went up directly from the water: and behold, the heavens were opened to him. He saw the Spirit of God descending as a dove, and coming on him.", "dra": "And Jesus being baptized, forthwith came out of the water: and lo, the heavens were opened to him: and he saw the Spirit of God descending as a dove, and coming upon him."}}, {"n": 17, "t": {"rv1909": "Y he aquí una voz de los cielos que decía: Este es mi Hijo amado, en el cual tengo contentamiento.", "bsb": "And a voice from heaven said, “This is My beloved Son, in whom I am well pleased!”", "kjv": "And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased.", "web-c": "Behold, a voice out of the heavens said, “This is my beloved Son, with whom I am well pleased.”", "dra": "And behold a voice from heaven, saying: This is my beloved Son, in whom I am well pleased."}}]}], "parallels": [{"ref": "Marcos 1:9–11", "book": "Mark", "verses": [{"n": 9, "t": {"rv1909": "Y aconteció en aquellos días, que Jesús vino de Nazaret de Galilea, y fué bautizado por Juan en el Jordán.", "bsb": "In those days Jesus came from Nazareth in Galilee and was baptized by John in the Jordan.", "kjv": "And it came to pass in those days, that Jesus came from Nazareth of Galilee, and was baptized of John in Jordan.", "web-c": "In those days, Jesus came from Nazareth of Galilee, and was baptized by John in the Jordan.", "dra": "And it came to pass, in those days, Jesus came from Nazareth of Galilee, and was baptized by John in the Jordan."}}, {"n": 10, "t": {"rv1909": "Y luego, subiendo del agua, vió abrirse los cielos, y al Espíritu como paloma, que descendía sobre él.", "bsb": "As soon as Jesus came up out of the water, He saw the heavens breaking open and the Spirit descending on Him like a dove.", "kjv": "And straightway coming up out of the water, he saw the heavens opened, and the Spirit like a dove descending upon him:", "web-c": "Immediately coming up from the water, he saw the heavens parting and the Spirit descending on him like a dove.", "dra": "And forthwith coming up out of he water, he saw the heavens opened, and the Spirit as a dove descending, and remaining on him."}}, {"n": 11, "t": {"rv1909": "Y hubo [una] voz de los cielos [que decía]: Tú eres mi Hijo amado; en ti tomo contentamiento.", "bsb": "And a voice came from heaven: “You are My beloved Son; in You I am well pleased.”", "kjv": "And there came a voice from heaven, [saying], Thou art my beloved Son, in whom I am well pleased.", "web-c": "A voice came out of the sky, “You are my beloved Son, in whom I am well pleased.”", "dra": "And there came a voice from heaven: Thou art my beloved Son; in thee I am well pleased."}}]}, {"ref": "Lucas 3:21–22", "book": "Luke", "verses": [{"n": 21, "t": {"rv1909": "Y aconteció que, como todo el pueblo se bautizaba, también Jesús fué bautizado; y orando, el cielo se abrió,", "bsb": "When all the people were being baptized, Jesus was baptized too. And as He was praying, heaven was opened,", "kjv": "Now when all the people were baptized, it came to pass, that Jesus also being baptized, and praying, the heaven was opened,", "web-c": "Now when all the people were baptized, Jesus also had been baptized and was praying. The sky was opened,", "dra": "Now it came to pass, when all the people were baptized, that Jesus also being baptized and praying, heaven was opened;"}}, {"n": 22, "t": {"rv1909": "Y descendió el Espíritu Santo sobre él en forma corporal, como paloma, y fué hecha una voz del cielo que decía: Tú eres mi Hijo amado, en ti me he complacido.", "bsb": "and the Holy Spirit descended on Him in a bodily form like a dove. And a voice came from heaven: “You are My beloved Son; in You I am well pleased.”", "kjv": "And the Holy Ghost descended in a bodily shape like a dove upon him, and a voice came from heaven, which said, Thou art my beloved Son; in thee I am well pleased.", "web-c": "and the Holy Spirit descended in a bodily form like a dove on him; and a voice came out of the sky, saying “You are my beloved Son. In you I am well pleased.”", "dra": "And the Holy Ghost descended in a bodily shape, as a dove upon him; and a voice came from heaven: Thou art my beloved Son; in thee I am well pleased."}}]}], "reading": "Jesús se somete al bautismo de Juan y el Espíritu desciende sobre él: el Catecismo lo lee como «preludio de la nueva creación» <a class='cite' href='#c'>Catecismo 1224</a>."}, {"id": "p17", "short": "1 Pedro 2:5 · 1 Pedro 2:9", "main": [{"ref": "1 Pedro 2:5", "book": "1Pet", "verses": [{"n": 5, "t": {"rv1909": "Vosotros también, como piedras vivas, sed edificados una casa espiritual, y un sacerdocio santo, para ofrecer sacrificios espirituales, agradables á Dios por Jesucristo.", "bsb": "you also, like living stones, are being built into a spiritual house to be a holy priesthood, offering spiritual sacrifices acceptable to God through Jesus Christ.", "kjv": "Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ.", "web-c": "You also as living stones are built up as a spiritual house, to be a holy priesthood, to offer up spiritual sacrifices, acceptable to God through Jesus Christ.", "dra": "Be you also as living stones built up, a spiritual house, a holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ."}}]}, {"ref": "1 Pedro 2:9", "book": "1Pet", "verses": [{"n": 9, "t": {"rv1909": "Mas vosotros sois linaje escogido, real sacerdocio, gente santa, pueblo adquirido, para que anunciéis las virtudes de aquel que os ha llamado de las tinieblas á su luz admirable:", "bsb": "But you are a chosen people, a royal priesthood, a holy nation, a people for God’s own possession, to proclaim the virtues of Him who called you out of darkness into His marvelous light.", "kjv": "But ye [are] a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:", "web-c": "But you are a chosen race, a royal priesthood, a holy nation, a people for God’s own possession, that you may proclaim the excellence of him who called you out of darkness into his marvelous light.", "dra": "But you are a chosen generation, a kingly priesthood, a holy nation, a purchased people: that you may declare his virtues, who hath called you out of darkness into his marvellous light:"}}]}], "parallels": [], "reading": "«Como piedras vivas, sed edificados una casa espiritual, y un sacerdocio santo»; «linaje escogido, real sacerdocio»: el Catecismo lo cita para decir que por el bautismo los fieles «participan del sacerdocio de Cristo» <a class='cite' href='#c'>Catecismo 1268</a>."}, {"id": "p18", "short": "Efesios 4:25", "main": [{"ref": "Efesios 4:25", "book": "Eph", "verses": [{"n": 25, "t": {"rv1909": "Por lo cual, dejada la mentira, hablad verdad cada uno con su prójimo; porque somos miembros los unos de los otros.", "bsb": "Therefore each of you must put off falsehood and speak truthfully to his neighbor, for we are all members of one another.", "kjv": "Wherefore putting away lying, speak every man truth with his neighbour: for we are members one of another.", "web-c": "Therefore, putting away falsehood, speak truth each one with his neighbor, for we are members of one another.", "dra": "Wherefore putting away lying, speak; ye the truth every man with his neighbour; for we are members one of another."}}]}], "parallels": [], "reading": "«[…] somos miembros los unos de los otros»: el Catecismo lo cita para decir que el bautismo «hace de nosotros miembros del Cuerpo de Cristo» <a class='cite' href='#c'>Catecismo 1267</a>."}, {"id": "p19", "short": "Gálatas 5:3", "main": [{"ref": "Gálatas 5:3", "book": "Gal", "verses": [{"n": 3, "t": {"rv1909": "Y otra vez vuelvo á protestar á todo hombre que se circuncidare, que está obligado á hacer toda la ley.", "bsb": "Again I testify to every man who gets himself circumcised that he is obligated to obey the whole law.", "kjv": "For I testify again to every man that is circumcised, that he is a debtor to do the whole law.", "web-c": "Yes, I testify again to every man who receives circumcision that he is a debtor to do the whole law.", "dra": "And I testify again to every man circumcising himself, that he is a debtor to the whole law."}}]}], "parallels": [], "reading": "El bautizado queda obligado «a toda la ley de Cristo», no solo a la fe <a class='cite' href='#c'>Trento, ses. VII, Del bautismo, can. 7</a>."}]};
+const eds = DATA.eds, entries = DATA.entries, N = entries.length;
+const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const OPTS = [["E", "E · La anterior"], ["F", "F · Edición"], ["G", "G · Pliego"]];
+const NOTES = {
+  E: ["E · La anterior", "La variante de la ronda pasada, tal como estaba: selector bajo el versículo y una capa a ancho completo. Sirve para comparar.", "La base"],
+  F: ["F · Edición", "Una columna de 720 px como el lector: versículo grande en Newsreader con números colgados, pestañas de título para las capas y cada cita con su pie debajo.", "Más calma"],
+  G: ["G · Pliego", "Sin límite de columna: versículo en la letra del lector, y cada cita con su pie a un costado, como el bloque «cita + fuente» ancho del sitio.", "Más ancho"]
+};
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9ñ\s]/g, "").replace(/\s+/g, " ").trim();
+const edOf = (id) => eds.find((e) => e.id === id);
+const langOf = (id) => edOf(id).lang;
+let state = { opt: "F", dev: "desktop", tr: "rv1909", sel: 0, layer: "off", arg: false };
+try { const s = JSON.parse(localStorage.getItem("pasajes-prop4") || "{}"); if (["E","F","G"].includes(s.opt)) state.opt = s.opt; if (["desktop","phone"].includes(s.dev)) state.dev = s.dev; } catch (e) {}
+const save = () => { try { localStorage.setItem("pasajes-prop4", JSON.stringify({ opt: state.opt, dev: state.dev })); } catch (e) {} };
+const phone = () => state.dev === "phone";
+const $ = (id) => document.getElementById(id);
+
+/* ---------- words ---------- */
+function tokens(text) { const out = []; const re = /\S+/g; let m; while ((m = re.exec(text))) out.push({ w: m[0], s: m.index, e: m.index + m[0].length, n: norm(m[0]) }); return out; }
+function lcsKeep(a, b) {
+  const n = a.length, m = b.length; const t = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) t[i][j] = a[i] === b[j] ? t[i + 1][j + 1] + 1 : Math.max(t[i + 1][j], t[i][j + 1]);
+  const keepB = new Set(); let i = 0, j = 0;
+  while (i < n && j < m) { if (a[i] === b[j]) { keepB.add(j); i++; j++; } else if (t[i + 1][j] >= t[i][j + 1]) i++; else j++; }
+  return keepB;
+}
+function wordsHtml(text, flags) {
+  return tokens(text).map((t, i) => `<span class="w${flags && flags[i] ? " " + flags[i] : ""}" data-n="${t.n}" data-s="${t.s}" data-e="${t.e}">${esc(t.w)}</span>`).join(" ");
+}
+function verseP(v, ed, o) {
+  o = o || {};
+  return `<p class="vt" data-raw="${esc(v.t[ed] || "")}">${o.num ? `<span class="vn">${v.n}</span>` : ""}${wordsHtml(v.t[ed] || "", o.flags)}</p>`;
+}
+function blockHtml(b, ed, o) {
+  o = o || {};
+  const multi = b.verses.length > 1;
+  return `<div class="blk" data-ref="${esc(b.ref)}">${o.label ? `<p class="blk-ref"><span>${esc(b.ref)}</span><a href="#r" onclick="return false">Leer en el lector</a></p>` : ""}${b.verses.map((v) => verseP(v, ed, { num: multi, flags: o.flags && o.flags[b.ref + v.n] })).join("")}</div>`;
+}
+function diffFlags(entry, from, to) {
+  if (langOf(from) !== langOf(to)) return null;
+  const flags = {};
+  for (const b of entry.main.concat(entry.parallels)) for (const v of b.verses) {
+    const a = tokens(v.t[from] || "").map((t) => t.n), c = tokens(v.t[to] || "");
+    const keep = lcsKeep(a, c.map((t) => t.n)); const f = {};
+    c.forEach((t, i) => { if (!keep.has(i)) f[i] = "chg"; });
+    flags[b.ref + v.n] = f;
+  }
+  return flags;
+}
+/* the tradition's quoted words → ranges in the verse text */
+function readingHtml(entry) {
+  return entry.reading.replace(/«([^»]{12,})»/g, (m, q) => `<span class="qt" data-q="${esc(q.replace(/<[^>]+>/g, ""))}">«${q}»</span>`);
+}
+function locate(raw, phrase) {
+  const map = []; let ns = "";
+  for (let i = 0; i < raw.length; i++) { const d = raw[i].normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); if (/[a-z0-9ñ]/.test(d)) { ns += d; map.push(i); } else if (/\s/.test(raw[i]) && ns && ns[ns.length - 1] !== " ") { ns += " "; map.push(i); } }
+  const ranges = [];
+  for (const piece of phrase.split(/…|\.\.\./)) { const p = norm(piece.replace(/\[[^\]]*\]/g, "")); if (p.length < 6) continue; const k = ns.indexOf(p); if (k >= 0) ranges.push([map[k], map[k + p.length - 1] + 1]); }
+  return ranges;
+}
+function markPhrase(scope, phrase, on) {
+  scope.querySelectorAll(".w.hl").forEach((w) => w.classList.remove("hl", "last"));
+  if (!on) return;
+  scope.querySelectorAll(".vt").forEach((p) => {
+    const ranges = locate(p.dataset.raw, phrase); if (!ranges.length) return;
+    const ws = [...p.querySelectorAll(".w")];
+    ws.forEach((w, i) => { const s = +w.dataset.s, e = +w.dataset.e; const inR = ranges.some(([a, b]) => s >= a && e <= b + 1); if (inR) { w.classList.add("hl"); const nx = ws[i + 1]; if (!nx || !ranges.some(([a, b]) => +nx.dataset.s >= a && +nx.dataset.e <= b + 1)) w.classList.add("last"); } });
+  });
+}
+function bindQuotes(root, scope) {
+  root.querySelectorAll(".qt").forEach((q) => {
+    const has = [...scope.querySelectorAll(".vt")].some((p) => locate(p.dataset.raw, q.dataset.q).length);
+    q.classList.toggle("can", has);
+    if (q.dataset.bound) return; q.dataset.bound = "1";
+    q.addEventListener("mouseenter", () => { if (!q.classList.contains("can")) return; q.classList.add("on"); markPhrase(scope, q.dataset.q, true); });
+    q.addEventListener("mouseleave", () => { q.classList.remove("on"); markPhrase(scope, "", false); });
+  });
+}
+
+/* ---------- shared pieces ---------- */
+const chevR = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l4 4-4 4"/></svg>';
+const chevL = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3L5 7l4 4"/></svg>';
+const plus = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg>';
+const goBtn = `<a class="btn-go" href="#r" onclick="return false">Leer en el lector${chevR}</a>`;
+function moveInd(seg, animate) {
+  const ind = seg.querySelector(".ind"), on = seg.querySelector('button[aria-pressed="true"]'); if (!ind || !on) return;
+  if (!animate || RM) seg.classList.add("still"); else seg.classList.remove("still");
+  ind.style.width = on.offsetWidth + "px"; ind.style.transform = `translateX(${on.offsetLeft}px)`;
+  if (!animate) requestAnimationFrame(() => seg.classList.remove("still"));
+}
+function segHtml(id, items, cur, attr, cls = "") {
+  return `<div class="seg ${cls}" id="${id}" role="group"><span class="ind"></span>${items.map(([v, l, d, t]) => `<button type="button" data-${attr}="${v}" aria-pressed="${cur === v}" ${d ? 'aria-disabled="true"' : ""} ${t ? `title="${esc(t)}"` : ""}>${l}</button>`).join("")}</div>`;
+}
+function setPressed(seg, attr, val) { seg.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset[attr] === val))); moveInd(seg, true); }
+const trItems = () => eds.map((e) => [e.id, e.ab, false, e.name]);
+function readingBlock(entry) { return `<p class="lab">Cómo la lee la Iglesia católica</p><p class="rd-t">${readingHtml(entry)}</p>`; }
+function parHtml(entry, ed) {
+  if (!entry.parallels.length) return "";
+  return `<div class="par"><button type="button" class="btn-more" data-par aria-expanded="false">${plus}<span>Pasajes paralelos (${entry.parallels.length})</span></button><div class="coll"><div>${entry.parallels.map((p) => `<div class="par-i">${blockHtml(p, ed, { label: true })}</div>`).join("")}</div></div></div>`;
+}
+function bindPar(root) {
+  root.querySelectorAll("[data-par]").forEach((b) => b.addEventListener("click", () => { const open = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(open)); b.querySelector("span").textContent = (open ? "Ocultar los paralelos" : `Pasajes paralelos (${b.closest(".par").querySelectorAll(".par-i").length})`); b.nextElementSibling.classList.toggle("open", open); }));
+}
+const titleOf = (e) => e.main.length === 1 ? e.main[0].ref : e.short;
+const mainTitle = (e) => e.main.map((b) => b.ref).join(" · ");
+
+/* ---------- Foco + layers ---------- */
+const L_OFF = "Lo que enseñan los documentos de la Iglesia católica", L_APOL = "Cómo lo defienden los apologistas católicos";
+const quoteCount = (e) => e.apol.args.reduce((n, a) => n + a.quotes.length, 0);
+const whoCount = (e) => new Set(e.apol.args.flatMap((a) => a.quotes.map((q) => q.who))).size;
+function officialBlock(e) { return `<div class="lay"><p class="lab">${L_OFF}</p><p class="rd-t">${readingHtml(e)}</p></div>`; }
+function apolBlock(e, btn = true) {
+  if (!e.apol) return "";
+  return `<div class="lay"><p class="lab">${L_APOL}</p><p class="qnote">Autores y apologistas populares. No son documentos oficiales.</p><p class="rd-t" style="margin-top:10px">${esc(e.apol.intro)}</p>${btn ? `<button type="button" class="btn-more" data-arg aria-expanded="${state.arg}">${plus}<span>${state.arg ? "Ocultar el argumento" : "Leer el argumento completo"}</span></button>` : ""}</div>`;
+}
+function layerFull(e) {
+  if (!e.apol && state.layer === "apol") state.layer = "off";
+  const items = [["off", "Documentos oficiales"], ["apol", e.apol ? 'Apologistas<span class="tabdot"></span>' : "Apologistas", !e.apol, "Todavía no hay comentarios de apologistas para este pasaje"]];
+  return `<div class="wlay">${segHtml("a-lay", items, state.layer, "layer")}<div id="a-lay-body">${layerFullBody(e)}</div></div>`;
+}
+function layerFullBody(e) { return state.layer === "apol" && e.apol ? `<div class="argfull">${apolBlock(e, false)}${argHtml(e)}</div>` : `<div class="off">${officialBlock(e)}</div>`; }
+function argBar(e) { return e.apol ? `<div class="argbar"><button type="button" class="btn-more" data-arg aria-expanded="${state.arg}">${plus}<span>${state.arg ? "Ocultar el argumento" : "Leer el argumento completo"}</span></button><span class="qnote">${quoteCount(e)} citas de ${whoCount(e)} ${whoCount(e) === 1 ? "apologista" : "apologistas"} católicos</span></div>` : ""; }
+function quoteHtml(q) {
+  return `<figure class="qq"><blockquote class="qb">«${esc(q.es)}»${q.tr ? ' <span class="tr">[traducción propia asistida por IA]</span>' : ""}</blockquote><figcaption class="qa"><b>${esc(q.who)}</b> · ${esc(q.work)} · ${esc(q.date)} · ${esc(q.loc)}<a href="${q.url}" target="_blank" rel="noopener noreferrer">Ver la fuente</a></figcaption>${q.en ? `<div><button type="button" class="btn-more sm" data-orig aria-expanded="false">${plus}<span>Leer el original en inglés</span></button><div class="coll"><div><p class="oq">«${esc(q.en)}»</p></div></div></div>` : ""}</figure>`;
+}
+function argHtml(e) {
+  if (!e.apol) return "";
+  return `<section class="arg"><h3 class="arg-h">El argumento, en sus palabras</h3><p class="qnote">${quoteCount(e)} citas de ${whoCount(e)} ${whoCount(e) === 1 ? "apologista" : "apologistas"}. Cada una enlaza a su fuente.</p>${e.apol.args.map((a) => `<div class="arg-i"><h4>${esc(a.title)}</h4>${a.quotes.map(quoteHtml).join("")}</div>`).join("")}</section>`;
+}
+function bindLayers(root) {
+  root.querySelectorAll("[data-arg]").forEach((b) => b.addEventListener("click", () => setArg(!state.arg)));
+  root.querySelectorAll("[data-orig]").forEach((b) => b.addEventListener("click", () => { const open = b.getAttribute("aria-expanded") !== "true"; b.setAttribute("aria-expanded", String(open)); b.querySelector("span").textContent = open ? "Ocultar el original" : "Leer el original en inglés"; b.nextElementSibling.classList.toggle("open", open); }));
+}
+function setArg(open) {
+  state.arg = open;
+  const w = $("a-arg"); if (w) w.classList.toggle("open", open);
+  document.querySelectorAll("[data-arg]").forEach((b) => { b.setAttribute("aria-expanded", String(open)); b.querySelector("span").textContent = open ? "Ocultar el argumento" : "Leer el argumento completo"; });
+}
+let a = { hover: -1 };
+function mountA(host) {
+  const ruler = phone()
+    ? `<div class="hstrip" id="ra" aria-label="Pasajes">${entries.map((e, i) => `<button type="button" data-i="${i}" aria-label="${esc(titleOf(e))}"></button>`).join("")}</div>`
+    : `<div class="rail" id="ra" aria-label="Pasajes">${entries.map((e, i) => `<button type="button" class="tk" data-i="${i}" style="top:${i * 18}px" aria-label="${esc(titleOf(e))}"><span class="rl">${esc(titleOf(e))}</span></button>`).join("")}</div>`;
+  const o = state.opt, nm = ["C", "D", "E", "F", "G"].includes(o), X = o === "F" || o === "G";
+  const below = o === "D" ? '<div id="a-bar"></div><div class="coll" id="a-arg"><div id="a-arg-in"></div></div><div id="a-wrap"></div>' : o === "C" ? '<div id="a-wrap"></div><div class="coll" id="a-arg"><div id="a-arg-in"></div></div>' : o === "E" ? '<div id="a-wrap"></div><div class="coll" id="a-arg" hidden><div id="a-arg-in"></div></div>' : '<div class="coll" id="a-arg"><div id="a-arg-in"></div></div>';
+  if (X) host.innerHTML = `<div class="v${o} xv"><div class="f1">${phone() ? "" : `<div>${ruler}</div>`}<div class="f1-main">${phone() ? ruler : ""}<div class="x-head"><span class="x-count" id="a-count"></span><div class="x-tr"><span class="lab">Traducción</span>${segHtml("a-seg", trItems(), state.tr, "tr", "tabsx")}</div></div><div id="a-stage"></div><div id="a-wrap"></div><div class="x-nav" id="a-nav"></div></div></div></div>`;
+  else host.innerHTML = `<div class="v${o}"><div class="f1">${phone() ? "" : `<div>${ruler}</div>`}<div class="f1-main">${phone() ? ruler : ""}<div class="f1-top"><span class="lab" id="a-count"></span>${segHtml("a-seg", trItems(), state.tr, "tr")}</div><div id="a-stage"></div>${below}<div class="f1-nav" id="a-nav"></div></div>${nm ? "" : '<aside class="f1-m" id="a-read"></aside>'}</div></div>`;
+  const rail = $("ra");
+  rail.querySelectorAll("[data-i]").forEach((b) => b.addEventListener("click", () => selectA(+b.dataset.i)));
+  if (!phone()) {
+    rail.addEventListener("mousemove", (ev) => { const r = rail.getBoundingClientRect(); hoverA(Math.max(0, Math.min(N - 1, Math.round((ev.clientY - r.top - 11) / 18)))); });
+    rail.addEventListener("mouseleave", () => hoverA(-1));
+    rail.querySelectorAll(".tk").forEach((t, i) => { t.addEventListener("focus", () => hoverA(i)); t.addEventListener("blur", () => hoverA(-1)); });
+  }
+  $("a-seg").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { const from = state.tr; state.tr = b.dataset.tr; setPressed($("a-seg"), "tr", state.tr); paintA(0, from); }));
+  moveInd($("a-seg"), false);
+  state.arg = false; paintA(0, null);
+}
+const bulge = (i, k) => { const d = Math.abs(k - i); return d === 0 ? 4.2 : d <= 3 ? 1 + (3 - d) * 0.5 : 1; };
+function hoverA(i) {
+  a.hover = i;
+  document.querySelectorAll("#ra .tk").forEach((t, k) => { t.style.setProperty("--s", i < 0 ? 1 : bulge(i, k)); t.classList.toggle("hov", k === i); });
+}
+function selectA(i, dir) {
+  if (i < 0 || i >= N || i === state.sel) return;
+  dir = dir || (i > state.sel ? 1 : -1); state.sel = i; paintA(dir, null);
+}
+function replay(el, cls) { if (RM) return; el.classList.remove("in-f", "in-b", "in-x"); void el.offsetWidth; el.classList.add(cls); }
+function marginHtml(e) {
+  if (state.opt === "A") return officialBlock(e) + apolBlock(e);
+  if (!e.apol && state.layer === "apol") state.layer = "off";
+  const items = [["off", "Documentos oficiales"], ["apol", e.apol ? 'Apologistas<span class="tabdot"></span>' : "Apologistas", !e.apol, "Todavía no hay comentarios de apologistas para este pasaje"]];
+  return `<div class="mlay">${segHtml("a-lay", items, state.layer, "layer")}<div id="a-lay-body">${state.layer === "apol" ? apolBlock(e) : officialBlock(e)}</div></div>`;
+}
+function bindMargin(e, stage) {
+  const rd = ["C", "D", "E", "F", "G"].includes(state.opt) ? $("a-wrap") : $("a-read");
+  bindLayers(rd); bindQuotes(rd, stage);
+  const sg = $("a-lay");
+  if (sg && sg.classList.contains("seg")) {
+    sg.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+      if (b.getAttribute("aria-disabled") === "true") return;
+      const entry = entries[state.sel]; state.layer = b.dataset.layer; setPressed(sg, "layer", state.layer);
+      const body = $("a-lay-body"); body.innerHTML = (state.opt === "F" || state.opt === "G") ? layerBodyX(entry) : state.opt === "E" ? layerFullBody(entry) : state.layer === "apol" ? apolBlock(entry) : officialBlock(entry); replay(body, "in-x"); bindLayers(body); bindQuotes(body, $("a-stage"));
+    }));
+    moveInd(sg, false);
+  }
+}
+function paintA(dir, from) {
+  if (state.opt === "F" || state.opt === "G") return paintX(dir, from);
+  const e = entries[state.sel];
+  $("a-count").textContent = `Pasaje ${state.sel + 1} de ${N}`;
+  document.querySelectorAll("#ra [data-i]").forEach((b) => b.setAttribute("aria-current", String(+b.dataset.i === state.sel)));
+  const flags = from ? diffFlags(e, from, state.tr) : null;
+  const stage = $("a-stage");
+  const verses = `<div class="f1-vs">${e.main.map((b) => blockHtml(b, state.tr, { label: e.main.length > 1, flags })).join("")}</div>`;
+  if (dir !== 0 || !stage.firstChild) {
+    if (dir !== 0) state.arg = false;
+    stage.innerHTML = `<h2 class="f1-t">${esc(mainTitle(e))}</h2>${e.main.length === 1 ? `<div style="margin-top:14px">${goBtn}</div>` : ""}${verses}${parHtml(e, state.tr)}`;
+    if (dir !== 0) replay(stage, dir > 0 ? "in-f" : "in-b");
+    bindPar(stage);
+    const arg = $("a-arg"); arg.classList.toggle("open", state.arg); $("a-arg-in").innerHTML = argHtml(e); bindLayers($("a-arg-in"));
+    if (state.opt === "C" || state.opt === "D") {
+      const lay = $("a-wrap"); lay.innerHTML = `<div class="two${e.apol ? "" : " one"}"><div>${officialBlock(e)}</div>${e.apol ? `<div>${apolBlock(e, state.opt === "C")}</div>` : ""}</div>`; if (dir !== 0) replay(lay, dir > 0 ? "in-f" : "in-b");
+      if (state.opt === "D") { const bar = $("a-bar"); bar.innerHTML = argBar(e); bindLayers(bar); }
+    } else if (state.opt === "E") {
+      const lay = $("a-wrap"); lay.innerHTML = layerFull(e); if (dir !== 0) replay(lay, dir > 0 ? "in-f" : "in-b");
+    } else {
+      const rd = $("a-read"); rd.innerHTML = marginHtml(e); if (dir !== 0) replay(rd, dir > 0 ? "in-f" : "in-b");
+    }
+    bindMargin(e, stage);
+  } else {
+    stage.querySelector(".f1-vs").outerHTML = verses;
+    stage.querySelectorAll(".par-i").forEach((pi, k) => { pi.innerHTML = blockHtml(e.parallels[k], state.tr, { label: true, flags }); });
+    if (!flags) replay(stage.querySelector(".f1-vs"), "in-x");
+    bindQuotes(["C", "D", "E", "F", "G"].includes(state.opt) ? $("a-wrap") : $("a-read"), stage);
+  }
+  $("a-nav").innerHTML = `<button type="button" class="btn-go" id="a-prev" ${state.sel === 0 ? 'aria-disabled="true" style="opacity:.45;cursor:default"' : ""}>${chevL}Anterior</button><button type="button" class="btn-go" id="a-next" ${state.sel === N - 1 ? 'aria-disabled="true" style="opacity:.45;cursor:default"' : ""}>Siguiente${chevR}</button><span class="hint">${phone() ? "" : "Teclas ← y →"}</span>`;
+  $("a-prev").onclick = () => selectA(state.sel - 1, -1); $("a-next").onclick = () => selectA(state.sel + 1, 1);
+}
+
+/* ---------- F and G ---------- */
+function figX(q) {
+  return `<figure class="x-fig"><div><blockquote class="x-q">${esc(q.es)}</blockquote>${q.tr ? '<p class="x-ai">Traducción propia asistida por IA</p>' : ""}${q.en ? `<button type="button" class="btn-more sm" data-orig aria-expanded="false">${plus}<span>Leer el original en inglés</span></button><div class="coll"><div><p class="oq">«${esc(q.en)}»</p></div></div>` : ""}</div><figcaption class="x-cap"><b>${esc(q.who)}</b>${q.work ? `<span>${esc(q.work)}</span>` : ""}<span>${esc(q.outlet)}</span><span class="dm">${esc(q.date)}</span><span>${esc(q.loc)}</span><a href="${q.url}" target="_blank" rel="noopener noreferrer">Ver la fuente</a></figcaption></figure>`;
+}
+function argX(e) {
+  const n = quoteCount(e), m = whoCount(e);
+  return `<h3 class="x-arg-h">El argumento, en sus palabras</h3><p class="x-note">${n} ${n === 1 ? "cita" : "citas"} de ${m} ${m === 1 ? "apologista" : "apologistas"}. Cada una enlaza a su fuente.</p>${e.apol.args.map((a) => `<div class="x-grp"><h4>${esc(a.title)}</h4>${a.quotes.map(figX).join("")}</div>`).join("")}`;
+}
+function layerBodyX(e) {
+  if (state.layer === "apol" && e.apol) return `<div><p class="x-desc">${L_APOL}.</p><p class="x-note">Autores y apologistas populares. No son documentos oficiales.</p><p class="x-prose sm">${esc(e.apol.intro)}</p>${argX(e)}</div>`;
+  return `<div><p class="x-desc">${L_OFF}.</p><p class="x-prose">${readingHtml(e)}</p></div>`;
+}
+function layersX(e) {
+  if (!e.apol && state.layer === "apol") state.layer = "off";
+  const items = [["off", "Documentos oficiales"], ["apol", "Apologistas", !e.apol, "Todavía no hay comentarios de apologistas para este pasaje"]];
+  return `<div class="x-layers">${segHtml("a-lay", items, state.layer, "layer", "ltabs")}<div id="a-lay-body">${layerBodyX(e)}</div></div>`;
+}
+function paintX(dir, from) {
+  const e = entries[state.sel];
+  $("a-count").textContent = `Pasaje ${state.sel + 1} de ${N}`;
+  document.querySelectorAll("#ra [data-i]").forEach((b) => b.setAttribute("aria-current", String(+b.dataset.i === state.sel)));
+  const flags = from ? diffFlags(e, from, state.tr) : null;
+  const stage = $("a-stage");
+  const verses = `<div class="x-vs">${e.main.map((b) => blockHtml(b, state.tr, { label: e.main.length > 1, flags })).join("")}</div>`;
+  if (dir !== 0 || !stage.firstChild) {
+    stage.innerHTML = `<h2 class="x-t">${esc(mainTitle(e))}</h2>${e.main.length === 1 ? `<div class="x-go">${goBtn}</div>` : ""}${verses}${parHtml(e, state.tr)}`;
+    if (dir !== 0) replay(stage, dir > 0 ? "in-f" : "in-b");
+    bindPar(stage);
+    const wrap = $("a-wrap"); wrap.innerHTML = layersX(e); if (dir !== 0) replay(wrap, dir > 0 ? "in-f" : "in-b");
+    bindMargin(e, stage);
+  } else {
+    stage.querySelector(".x-vs").outerHTML = verses;
+    stage.querySelectorAll(".par-i").forEach((pi, k) => { pi.innerHTML = blockHtml(e.parallels[k], state.tr, { label: true, flags }); });
+    if (!flags) replay(stage.querySelector(".x-vs"), "in-x");
+    bindQuotes($("a-wrap"), stage);
+  }
+  const pv = entries[state.sel - 1], nx = entries[state.sel + 1];
+  $("a-nav").innerHTML = `${pv ? `<button type="button" class="nbox" id="a-prev"><span class="l">Pasaje anterior</span><span class="t">${esc(titleOf(pv))}</span></button>` : "<div></div>"}${nx ? `<button type="button" class="nbox next" id="a-next"><span class="l">Pasaje siguiente</span><span class="t">${esc(titleOf(nx))}</span></button>` : "<div></div>"}`;
+  if (pv) $("a-prev").onclick = () => selectA(state.sel - 1, -1);
+  if (nx) $("a-next").onclick = () => selectA(state.sel + 1, 1);
+}
+
+/* ---------- frame ---------- */
+function tree() {
+  const row = (t, cls = "", icon = "") => `<div class="r ${cls}">${icon}<span>${t}</span></div>`;
+  const chev = '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3.5 1.5 7 5l-3.5 3.5"/></svg>';
+  const chevD = '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" style="transform:rotate(90deg)" aria-hidden="true"><path d="M3.5 1.5 7 5l-3.5 3.5"/></svg>';
+  const sp = '<span style="width:10px;flex:none"></span>';
+  return `<aside class="tree" aria-label="Índice del sitio"><p class="g">Doctrinas</p>${row("La Eucaristía", "", chev)}${row("La justificación", "soon", sp)}${row("El bautismo", "anc", chevD)}<div class="ind2">${row("Lo que escribieron los primeros cristianos", "soon", sp)}${row("Católica", "anc", chevD)}<div class="ind2">${row("Pasajes", "cur", sp)}${row("Objeciones", "", chev)}</div>${["Ortodoxa", "Luterana", "Reformada", "Bautista", "Pentecostal"].map((t) => row(t, "soon", sp)).join("")}</div>${row("El papado", "soon", sp)}${row("Sola Scriptura", "soon", sp)}</aside>`;
+}
+function render() {
+  const frame = $("frame"); frame.classList.toggle("phone", phone());
+  const ce = $("c-edge"); if (ce) ce.remove();
+  const top = `<div class="tb"><button class="ibtn menu" type="button" aria-label="Menú"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button><span class="logo">Doctrina</span><span style="flex:1"></span>${phone() ? `<button class="ibtn" type="button" aria-label="Buscar"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg></button>` : `<span class="strig"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg><span>Buscar doctrinas, versículos, Padres…</span></span>`}</div>`;
+  const head = `<p class="crumbs"><span class="inert">Doctrinas</span><i>/</i><span class="inert">El bautismo</span><i>/</i><a href="#c" onclick="return false">Católica</a><i>/</i><span class="cur">Pasajes</span></p><div class="swb" aria-label="Tradición"><span class="cap">Tradición</span><span class="tab on">Católica</span>${["Ortodoxa", "Luterana", "Reformada", "Bautista", "Pentecostal"].map((t) => `<span class="tab">${t}</span>`).join("")}</div><h1>Los pasajes de la posición católica</h1><p class="lede">Los versículos que la Iglesia católica cita sobre el bautismo, completos y con su propia lectura.</p>`;
+  $("site").innerHTML = `${top}<div class="body">${phone() ? "" : tree()}<div class="main" id="main"><div class="page"><div id="view"></div></div></div></div>`;
+  $("site").querySelector(".page").insertAdjacentHTML("afterbegin", head);
+  const host = $("view"), mainEl = $("main");
+  mountA(host);
+}
+document.addEventListener("keydown", (ev) => { if (ev.target.closest("input,textarea")) return; if (ev.key === "ArrowRight") selectA(state.sel + 1, 1); if (ev.key === "ArrowLeft") selectA(state.sel - 1, -1); });
+function seg(id, items, key, onPick) {
+  const el = $(id);
+  el.innerHTML = items.map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${state[key] === v}" style="min-height:34px;padding:0 12px;border:0;border-radius:6px;background:${state[key] === v ? "var(--accent-weak)" : "none"};font:${state[key] === v ? 500 : 400} 13.5px var(--ui);color:var(--ink);cursor:pointer;box-shadow:${state[key] === v ? "inset 0 -2px 0 var(--accent)" : "none"}">${l}</button>`).join("");
+  el.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => onPick(b.dataset.v)));
+}
+function note() { const [n, line, meta] = NOTES[state.opt]; $("optnote").innerHTML = `<div class="on-name">${n}</div><div class="on-meta">${meta}</div><div class="on-line">${line}</div>`; }
+function ctl() {
+  seg("seg-opt", OPTS, "opt", (v) => { state.opt = v; save(); ctl(); note(); render(); });
+  seg("seg-dev", [["desktop", "Escritorio"], ["phone", "Teléfono"]], "dev", (v) => { state.dev = v; save(); ctl(); render(); });
+  const theme = document.documentElement.dataset.theme || "system";
+  const items = [["system", "Sistema"], ["light", "Claro"], ["dark", "Oscuro"]];
+  $("seg-theme").innerHTML = items.map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${theme === v}" style="min-height:34px;padding:0 12px;border:0;border-radius:6px;background:${theme === v ? "var(--accent-weak)" : "none"};font:${theme === v ? 500 : 400} 13.5px var(--ui);color:var(--ink);cursor:pointer;box-shadow:${theme === v ? "inset 0 -2px 0 var(--accent)" : "none"}">${l}</button>`).join("");
+  $("seg-theme").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { if (b.dataset.v === "system") delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = b.dataset.v; ctl(); }));
+}
+ctl(); note(); render();
+document.fonts.ready.then(() => document.querySelectorAll(".seg").forEach((sg) => moveInd(sg, false)));
+</script>

@@ -30,6 +30,10 @@ The content of one doctrine for the six traditions, written as Markdown dossiers
 - Every agent writes each section to its file as soon as it is done; Progress describes only what is on disk. The coordinator checks headings (`grep '^## '`) and mtimes, not the Progress line.
 - Full text only where `DECISIONS.md` 2026-10-15 (verbatim-match rule) and 2026-10-09 (three countries) allow; otherwise short quote and a link to the official page.
 
+## Drafting pass (2026-10-29)
+
+Pedro's fast mode: one Codex pass per tradition that writes the dossier files only, without Steps 4–9. Order file: the dossier template of `~/.doctrina-youtube/prompt-codex-dossiers-others-2026-10-29.md` (a copy of the Baptist one with the file list changed); per tradition across its doctrines, because the same documents answer all of them. Rules in the prompt: the sections of «Output», §Objeciones left `Deferred by the owner (2026-10-23).`, «Qué enseña» opens with what the tradition affirms, Spanish only from the original language, each file's Progress says `Status: draft, NOT verified`, tags `[verified: scan]` only if the printed edition was checked, `silent`/`sparse` with the bounded searches in the Coverage table, usage checks before every step. Done so far (all unverified): Baptist, Reformed and Lutheran for Baptism, Sola Scriptura and Papacy (Baptist also Eucharist; Reformed and Lutheran Eucharist predate it); Orthodox running. Pentecostal and Justification are out of scope for now (DECISIONS 2026-10-29). Next: the verification pass of every draft (Step 4), then the rest.
+
 ## Sparse sections
 
 Each section has a minimum: Qué enseña ≥ 1 normative text; Objeciones aim for 3; La Escritura = what its own documents cite. Below the minimum after searching every relevant document in the universe, the section is marked sparse with the search log. Then, by cause:
