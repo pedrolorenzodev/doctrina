@@ -8,6 +8,7 @@ import { formatVerseRef } from "@/content/format-verse";
 import type { TraditionPage } from "@/content/model/page";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
+import { passagesHref } from "@/content/routes";
 import type { Locale } from "@/lib/locale";
 
 type ScriptureSectionProps = {
@@ -17,7 +18,7 @@ type ScriptureSectionProps = {
 
 export function ScriptureSection({ page, locale }: ScriptureSectionProps) {
   const text = getUiText(locale);
-  // TODO: passage titles go to the passage detail and the button to the page of all passages
+  // TODO: passage titles go to the passage detail
   const verse = (segments: string[]) => verseLink(segments, locale);
 
   return (
@@ -35,7 +36,9 @@ export function ScriptureSection({ page, locale }: ScriptureSectionProps) {
         ))}
       </RevealList>
       <div className="mt-5.5">
-        <ActionLink>{text.doctrine.allPassages.replace("{n}", String(page.scripture.length))}</ActionLink>
+        <ActionLink {...(page.passages ? { href: passagesHref(locale, page.doctrine, page.tradition) } : {})}>
+          {text.doctrine.allPassages.replace("{n}", String(page.scripture.length))}
+        </ActionLink>
       </div>
     </Section>
   );

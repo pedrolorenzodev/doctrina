@@ -14,6 +14,8 @@ import {
   objectionRoute,
   objectionsHref,
   objectionsRoute,
+  passagesHref,
+  passagesRoute,
   councilsIndexHref,
   currentsIndexHref,
   divisionsIndexHref,
@@ -109,6 +111,7 @@ export type PublishedPage = {
   tradition: TraditionId;
   objections: { id: string; short: string }[];
   themes: { id: string; name: string; ids: string[] }[];
+  hasPassages: boolean;
 };
 
 export type TreeText = {
@@ -214,7 +217,13 @@ export function buildSiteTree(
           const id = `${doctrine}/${tradition}`;
           if (!built.pairs.includes(id)) return soon(leaf(id, traditionNames[locale][tradition]));
           const children = [
-            soon(leaf(`${id}/passages`, text.tree.passages)),
+            page?.hasPassages
+              ? {
+                  ...leaf(`${id}/passages`, text.tree.passages),
+                  href: passagesHref(locale, doctrine, tradition),
+                  route: passagesRoute(locale, doctrine, tradition),
+                }
+              : soon(leaf(`${id}/passages`, text.tree.passages)),
             {
               ...branch(`${id}/objections`, text.tree.objections, objectionNodes(locale, doctrine, tradition, page)),
               href: page ? objectionsHref(locale, doctrine, tradition) : null,

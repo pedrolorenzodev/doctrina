@@ -85,10 +85,17 @@ export function validateContent(registry: Registry, pages: Record<string, Tradit
       for (const segment of [...objection.passages.answer, ...objection.passages.objector])
         for (const key of missingVerses(segment, registry.verses)) fail(where, `verse ${key} not in registry`);
     }
-    for (const passage of page.scripture)
+    for (const passage of page.scripture) {
       for (const segment of passage.refs)
         for (const key of missingVerses(segment, registry.verses))
           fail(`${name}.scripture`, `verse ${key} not in registry`);
+      const quotes = passage.apologists?.arguments.flatMap((argument) => argument.quotes) ?? [];
+      if (passage.apologists && quotes.length === 0)
+        fail(`${name}.scripture.${passage.refs[0]}`, "apologists block without quotes");
+      for (const quote of quotes)
+        for (const field of ["speaker", "outlet", "date", "locator", "url", "text"] as const)
+          if (!quote[field]) fail(`${name}.scripture.${passage.refs[0]}`, `apologist quote without ${field}`);
+    }
 
     const ids = (items: { id: string }[], what: string) => {
       const seen = new Set<string>();

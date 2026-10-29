@@ -51,6 +51,8 @@ const worksSegments: Record<Locale, string> = { es: "obras", en: "works" };
 
 const objectionsSlugs: Record<Locale, string> = { es: "objeciones", en: "objections" };
 
+const passagesSlugs: Record<Locale, string> = { es: "pasajes", en: "passages" };
+
 const glossarySegments: Record<Locale, string> = { es: "glosario", en: "glossary" };
 
 export function glossaryHref(locale: Locale): string {
@@ -177,6 +179,14 @@ export function traditionRoute(locale: Locale, doctrine: DoctrineId, tradition: 
   return `/${locale}/doctrines/${doctrine}/${tradition}`;
 }
 
+export function passagesHref(locale: Locale, doctrine: DoctrineId, tradition: TraditionId): string {
+  return `${traditionHref(locale, doctrine, tradition)}/${passagesSlugs[locale]}`;
+}
+
+export function passagesRoute(locale: Locale, doctrine: DoctrineId, tradition: TraditionId): string {
+  return `${traditionRoute(locale, doctrine, tradition)}/passages`;
+}
+
 export function objectionsHref(locale: Locale, doctrine: DoctrineId, tradition: TraditionId): string {
   return `${traditionHref(locale, doctrine, tradition)}/${objectionsSlugs[locale]}`;
 }
@@ -229,6 +239,10 @@ function doctrineRewrites() {
       {
         source: traditionHref("es", doctrine, tradition),
         destination: traditionRoute("es", doctrine, tradition),
+      },
+      {
+        source: passagesHref("es", doctrine, tradition),
+        destination: passagesRoute("es", doctrine, tradition),
       },
       {
         source: objectionsHref("es", doctrine, tradition),

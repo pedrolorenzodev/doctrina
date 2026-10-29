@@ -32,7 +32,7 @@ import type { ReaderSelection, VerseRange } from "@/features/reader/read-selecti
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
 import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
-import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
+import { useChosenTranslation } from "@/lib/use-chosen-translation";
 import { useSecondMode, useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
 import type { Locale } from "@/lib/locale";
 import { chooseSecondTranslation } from "@/lib/second-translation";

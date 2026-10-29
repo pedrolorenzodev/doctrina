@@ -11,7 +11,7 @@ import { TextOptions } from "@/features/reader/text-options";
 import { useSecondMode, useSecondTranslation } from "@/features/reader/use-second-translation";
 import { chooseSecondTranslation } from "@/lib/second-translation";
 import { TranslationPicker, type PickerOption } from "@/features/reader/translation-picker";
-import { useChosenTranslation } from "@/features/reader/use-chosen-translation";
+import { useChosenTranslation } from "@/lib/use-chosen-translation";
 import { chooseTranslation } from "@/lib/translation-choice";
 
 type ReaderStripProps = {

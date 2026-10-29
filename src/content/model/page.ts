@@ -36,9 +36,27 @@ export type Father<C extends string = string> = {
   citedIn: SourceRef<C>;
 };
 
+export type ApologistQuote = {
+  speaker: string;
+  work?: string;
+  outlet: string;
+  date: string;
+  locator: string;
+  url: string;
+  text: string;
+  original?: string;
+  translation?: "ai-assisted";
+};
+
+export type ApologistArgument = { title: string; quotes: ApologistQuote[] };
+
+export type ApologistLayer = { intro: string; arguments: ApologistArgument[] };
+
 export type ScripturePassage = {
   refs: string[];
   text: Rich;
+  apologists?: ApologistLayer;
+  parallels?: string[][];
 };
 
 export type CitationGroup<C extends string = string> = {
@@ -91,6 +109,13 @@ export type GradeDefinition<C extends string = string> = {
 
 export type ObjectionTheme = { id: string; name: string; ids: string[] };
 
+export type PassagesPageText = {
+  title: string;
+  lede: string;
+  officialLabel: string;
+  apologistsLabel: string;
+};
+
 export type TraditionPage<C extends string = string> = {
   doctrine: DoctrineId;
   tradition: TraditionId;
@@ -106,6 +131,7 @@ export type TraditionPage<C extends string = string> = {
   why: { intro: Rich[]; fathers: Father<C>[]; note: Rich; closing: Rich };
   scriptureSubtitle: string;
   scripture: ScripturePassage[];
+  passages?: PassagesPageText;
   objections: {
     themes?: ObjectionTheme[];
     subtitle: string;

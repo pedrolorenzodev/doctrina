@@ -606,6 +606,12 @@ export const baptismCatholic = {
     subtitle: "Creadores católicos explican y defienden esta postura. Los videos se abren en YouTube.",
     items: [],
   },
+  passages: {
+    title: "Los pasajes de la posición católica",
+    lede: "Los versículos que la Iglesia católica cita sobre el bautismo, completos y con su propia lectura.",
+    officialLabel: "Lo que enseñan los documentos de la Iglesia católica.",
+    apologistsLabel: "Cómo lo defienden los apologistas católicos.",
+  },
   scripture: [
     {
       refs: ["John.3.5"],
@@ -614,10 +620,110 @@ export const baptismCatholic = {
     {
       refs: ["Matt.28.19-Matt.28.20", "Mark.16.15-Mark.16.16"],
       text: "«Por tanto, id, y doctrinad á todos los Gentiles, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo.» Para el Catecismo, es el mandato del Señor {c:CEC1257|Catecismo 1257}; y por Marcos 16:16, «El que creyere y fuere bautizado, será salvo», llama al bautismo «el sacramento de la fe» {c:CEC1253|Catecismo 1253}.",
+      apologists: {
+        intro:
+          "Sobre Marcos 16:16, los apologistas católicos responden que la primera mitad ya une las dos cosas, «El que creyere y fuere bautizado, será salvo», y que la segunda nombra solo la incredulidad porque quien no creía no pedía el bautismo; nombrar una no anula la otra.",
+        arguments: [
+          {
+            title: "La primera mitad ya une la fe y el bautismo",
+            quotes: [
+              {
+                speaker: "Joe Heschmeyer",
+                outlet: "Shameless Popery, en YouTube",
+                date: "27 de mayo de 2025",
+                locator: "Minutos 1:35 a 2:50",
+                url: "https://www.youtube.com/watch?v=T5uo7c3WV9c&t=95s",
+                text: "si quieres ser salvo, necesitas dos cosas. Necesitas creer y ser bautizado […] la segunda mitad del versículo, en la que él se concentra, no anula la primera mitad",
+                work: "6 Bible Verses PROVING Water Baptism Saves (REBUTTAL to @NeedGodnet)",
+                original:
+                  "if you want to be saved, you need two things. You need to believe and to be baptized […] the second half of the verse that he focuses on, that's not nullifying the first half",
+                translation: "ai-assisted",
+              },
+              {
+                speaker: "Alejandro Otálora",
+                outlet: "Video en YouTube",
+                date: "2020",
+                locator: "Minutos 11:00 a 12:10",
+                url: "https://www.youtube.com/watch?v=Z9Js8wECyAM&t=660s",
+                text: "otra vez la conjunción y la unión de las dos creer y bautizado […] se requieren las dos cosas la fe y el bautismo",
+              },
+            ],
+          },
+          {
+            title: "La segunda mitad nombra solo la incredulidad",
+            quotes: [
+              {
+                speaker: "Trent Horn",
+                outlet: "Bryce Crawford Podcast, en YouTube",
+                date: "8 de junio de 2026",
+                locator: "Minutos 1:18:58 a 1:19:40",
+                url: "https://www.youtube.com/watch?v=oNWseAsfcGM&t=4738s",
+                text: "no había nadie que fuera a buscar el bautismo a menos que creyera, porque buscar el bautismo en ese contexto significaba que te echarían de la sinagoga […] los que no se bautizan son personas que no creen",
+                work: "A Catholic Apologist Challenged Everything I Believe (EP 198)",
+                original:
+                  "there wasn't anyone who was going to seek baptism unless they believed because in seeking baptism in that context you're going to be thrown out of the synagogue […] the people who don't get baptized, those are they're going to be people who who don't believe",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Acts.2.38"],
       text: "«Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados; y recibiréis el don del Espíritu Santo.» Para el Catecismo, son los dos efectos del bautismo: el perdón de los pecados y el nuevo nacimiento en el Espíritu {c:CEC1262|Catecismo 1262}.",
+      apologists: {
+        intro:
+          "Los apologistas católicos responden que el texto no dice que la multitud ya estuviera perdonada: preguntan qué deben hacer, Pedro les manda arrepentirse y bautizarse, y solo después de bautizados «fueron añadidas [á ellos] aquel día como tres mil personas» (Hechos 2:41). Señalan el mismo orden en Hechos 22:16: «Levántate, y bautízate, y lava tus pecados».",
+        arguments: [
+          {
+            title: "La multitud no había sido perdonada antes del bautismo",
+            quotes: [
+              {
+                speaker: "Karlo Broussard",
+                outlet: "Catholic Answers Magazine",
+                date: "21 de mayo de 2020",
+                locator: "Artículo en línea",
+                url: "https://www.catholic.com/magazine/online-edition/in-baptism-our-sins-are-forgiven",
+                text: "en ningún lugar dice que los que escuchaban a Pedro fueran perdonados de sus pecados antes de recibir el bautismo",
+                work: "In Baptism Our Sins Are Forgiven",
+                original:
+                  "nowhere does it say those listening to Peter were forgiven their sins before they received baptism",
+                translation: "ai-assisted",
+              },
+              {
+                speaker: "Joe Heschmeyer",
+                outlet: "Shameless Popery, en YouTube",
+                date: "27 de mayo de 2025",
+                locator: "Minutos 8:00 a 10:10",
+                url: "https://www.youtube.com/watch?v=T5uo7c3WV9c&t=480s",
+                text: "le dice a este grupo de gente supuestamente salvada que tiene que arrepentirse. Bueno, eso parece bastante raro […] es solo después de que son bautizados, por cierto, que la Biblia los cuenta entre el rebaño",
+                work: "6 Bible Verses PROVING Water Baptism Saves (REBUTTAL to @NeedGodnet)",
+                original:
+                  "he tells this group of a bunch of saved people that they need to repent. Well, that seems pretty weird […] it's only after they're baptized, by the way, that the Bible numbers them amongst the flock",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "Hechos 22:16 muestra el mismo orden",
+            quotes: [
+              {
+                speaker: "Karlo Broussard",
+                outlet: "Catholic Answers Magazine",
+                date: "21 de mayo de 2020",
+                locator: "Artículo en línea",
+                url: "https://www.catholic.com/magazine/online-edition/in-baptism-our-sins-are-forgiven",
+                text: "Claramente, el bautismo precede a la eliminación del pecado y está ordenado a producir ese efecto",
+                work: "In Baptism Our Sins Are Forgiven",
+                original:
+                  "Clearly, baptism precedes the removal of sin and is ordered to bringing about such an effect",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Rom.6.3-Rom.6.4", "Col.2.12"],
@@ -654,6 +760,41 @@ export const baptismCatholic = {
     {
       refs: ["1Pet.3.21"],
       text: "El Catecismo cita este versículo para decir que «el diluvio y el arca de Noé prefiguraban la salvación por el Bautismo» {c:CEC1094|Catecismo 1094}, y ve la Iglesia «prefigurada por el Arca de Noé que es la única que salva del diluvio» {c:CEC845|Catecismo 845}.",
+      apologists: {
+        intro:
+          "Los apologistas católicos responden que el paréntesis no niega que el bautismo salve, sino que explica cómo salva: no como un baño que quita la suciedad del cuerpo, sino por dentro, «por la resurrección de Jesucristo».",
+        arguments: [
+          {
+            title: "Dice cómo salva el bautismo, no que no salve",
+            quotes: [
+              {
+                speaker: "Joe Heschmeyer",
+                outlet: "Shameless Popery, en YouTube",
+                date: "27 de mayo de 2025",
+                locator: "Minutos 17:03 a 18:50",
+                url: "https://www.youtube.com/watch?v=T5uo7c3WV9c&t=1023s",
+                text: "¿por qué Pedro necesita aclarar eso? Porque claramente está hablando de una acción física, el bautismo con agua, y quiere asegurarse de que no pensemos que lo importante es lo que podemos ver, la eliminación de la suciedad, sino lo que ocurre de manera invisible a través de esta acción visible",
+                work: "6 Bible Verses PROVING Water Baptism Saves (REBUTTAL to @NeedGodnet)",
+                original:
+                  "why does Peter need to clarify that? because he's clearly talking about a physical action, water baptism, and he wants to make sure that we don't get the idea that the important part is what we can see, the removal of dirt, but rather the important part of what's going on is what's happening invisibly through this visible action",
+                translation: "ai-assisted",
+              },
+              {
+                speaker: "Trent Horn",
+                outlet: "Bryce Crawford Podcast, en YouTube",
+                date: "8 de junio de 2026",
+                locator: "Minutos 1:16:13 a 1:17:30",
+                url: "https://www.youtube.com/watch?v=oNWseAsfcGM&t=4573s",
+                text: "lo que Pedro está diciendo aquí es: mira, el bautismo no nos salva de una manera mágica. No es que el agua tenga alguna propiedad mágica que nos limpia de la misma manera en que el agua quita la suciedad de nuestra piel",
+                work: "A Catholic Apologist Challenged Everything I Believe (EP 198)",
+                original:
+                  "what Peter is saying here he's saying look baptism doesn't save us in a magical way. It's not like just that the water is some kind of magical property that makes us clean in the same way that water takes dirt off of our skin",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Eph.4.30", "Eph.1.13-Eph.1.14", "2Cor.1.21-2Cor.1.22"],

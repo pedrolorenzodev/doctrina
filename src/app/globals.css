@@ -23,6 +23,7 @@
   --color-tip-ink: #f4f1ea;
   --color-hover: rgb(28 23 19 / 0.05);
   --color-mark: rgb(240 200 60 / 0.45);
+  --color-chg: rgb(44 74 158 / 0.2);
   --color-scrim: rgb(0 0 0 / 0.35);
   --color-scrim-strong: rgb(28 23 19 / 0.4);
   --color-danger: #9c2f28;
@@ -192,6 +193,18 @@
   --text-note: 14.5px;
   --text-note--line-height: 1.6;
   --text-label: 12.5px;
+  --text-verse: 21px;
+  --text-verse--line-height: 1.7;
+  --text-verse-parallel: 18px;
+  --text-verse-parallel--line-height: 1.7;
+  --text-descriptor: 22px;
+  --text-descriptor--line-height: 1.4;
+  --text-layer-tab: 21px;
+  --text-layer-tab--line-height: 1.3;
+  --text-layer-tab-mobile: 18px;
+  --text-layer-tab-mobile--line-height: 1.3;
+  --text-argument-heading: 28px;
+  --text-argument-heading--line-height: 1.2;
   --text-ruler: 15px;
   --text-sidebar: 14px;
   --text-sidebar--line-height: 1.35;
@@ -244,6 +257,9 @@
   --spacing-reader-strip: 51px;
   --spacing-reader-arrival: 33px;
   --container-col: 720px;
+  --container-measure: 62ch;
+  --container-descriptor: 56ch;
+  --container-argument-title: 40ch;
   --container-wide: 1040px;
   --container-synthesis: 680px;
   --container-entries: 870px;
@@ -311,6 +327,7 @@
   --color-hls-orange: #d6935c;
   --color-hover: rgb(255 255 255 / 0.05);
   --color-mark: rgb(214 168 101 / 0.28);
+  --color-chg: rgb(158 179 238 / 0.24);
   --color-scrim-strong: rgb(0 0 0 / 0.55);
   --color-danger: #e8918a;
   --color-danger-weak: rgb(232 145 138 / 0.2);
@@ -2066,4 +2083,167 @@ html.theme-switching ::after {
 :root[data-reader-justify] [data-father-text] {
   text-align: justify;
   hyphens: auto;
+}
+
+@keyframes word-changed {
+  0%,
+  55% {
+    background-color: var(--color-chg);
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes passage-in-next {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes passage-in-back {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes passage-in-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@utility word-changed {
+  animation: word-changed 2400ms var(--ease-standard) both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility passage-in-next {
+  animation: passage-in-next 260ms var(--ease-reveal) both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility passage-in-back {
+  animation: passage-in-back 260ms var(--ease-reveal) both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility passage-in-fade {
+  animation: passage-in-fade 260ms var(--ease-standard) both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility fold-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 380ms var(--ease-reveal);
+
+  &[data-open] {
+    grid-template-rows: 1fr;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+@utility sticky-below-switcher {
+  top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
+}
+
+@utility passages-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: 58px minmax(0, 1fr);
+    column-gap: 34px;
+  }
+}
+
+@utility quote-figure-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px 64px;
+  align-items: start;
+
+  @media (max-width: 47.99rem) {
+    padding-left: 30px;
+  }
+
+  @media (min-width: 48rem) {
+    grid-template-columns: minmax(0, 1fr) 270px;
+  }
+}
+
+@utility verse-numeral {
+  @media (min-width: 40rem) {
+    position: absolute;
+    top: 0.62em;
+    left: -32px;
+    width: 22px;
+    text-align: right;
+  }
+
+  @media (max-width: 39.99rem) {
+    margin-right: 8px;
+    vertical-align: 0.15em;
+  }
+}
+
+@utility word-bridge {
+  padding-right: 0.28em;
+  margin-right: -0.28em;
+}
+
+@utility passage-tick {
+  transition:
+    transform 200ms var(--ease-standard),
+    background-color 260ms var(--ease-standard),
+    opacity 260ms var(--ease-standard);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+@utility passage-strip-tick {
+  transition:
+    height 200ms var(--ease-standard),
+    background-color 260ms var(--ease-standard),
+    opacity 260ms var(--ease-standard);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 }

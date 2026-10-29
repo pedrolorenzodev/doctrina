@@ -16,14 +16,16 @@ export function getPublishedPages(locale: Locale): {
   tradition: TraditionId;
   objections: { id: string; short: string }[];
   themes: { id: string; name: string; ids: string[] }[];
+  hasPassages: boolean;
 }[] {
-  return Object.values(pagesByLocale[locale]).map(({ doctrine, tradition, objections }) => ({
+  return Object.values(pagesByLocale[locale]).map(({ doctrine, tradition, objections, passages }) => ({
     doctrine,
     tradition,
     objections: objections.items.flatMap((objection) =>
       objection.layer === "official" && objection.short ? [{ id: objection.id, short: objection.short }] : [],
     ),
     themes: objections.themes ?? [],
+    hasPassages: passages !== undefined,
   }));
 }
 
