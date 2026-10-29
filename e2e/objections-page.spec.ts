@@ -17,7 +17,7 @@ test("header: h1, lede and tab title", async ({ page }) => {
 
 test("crumbs: Católica leads back to the tradition page, Objeciones is current", async ({ page }) => {
   await page.goto(path);
-  await expect(page.locator(`${crumbs} button`)).toHaveText(["Doctrinas"]);
+  await expect(page.locator(`${crumbs} > span.text-ink-3`)).toHaveText(["Doctrinas"]);
   await expect(page.locator(`${crumbs} [aria-current=page]`)).toHaveText("Objeciones");
   await page.locator(`${crumbs} a`, { hasText: "Católica" }).click();
   await expect(page).toHaveURL(traditionPath);

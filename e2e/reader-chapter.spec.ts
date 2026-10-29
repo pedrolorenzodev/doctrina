@@ -9,7 +9,7 @@ test("John 6: title, tab, crumbs, edition line and all 71 verses in order", asyn
   await page.goto(chapter("juan", 6));
   await expect(page.locator("main h1")).toHaveText("Juan 6");
   await expect(page).toHaveTitle("Juan 6");
-  await expect(page.locator(`${crumbs} button`)).toHaveText(["Biblia", "Nuevo Testamento"]);
+  await expect(page.locator(`${crumbs} > span.text-ink-3`)).toHaveText(["Biblia", "Nuevo Testamento"]);
   await expect(page.locator(`${crumbs} [aria-current=page]`)).toHaveText("Juan");
   await expect(page.locator("main p", { hasText: /^Reina-Valera 1909$/ }).first()).toBeVisible();
   const verses = page.locator('main [id^="v-"]');
@@ -64,7 +64,7 @@ test("Psalm 119 renders its 176 verses and Sirach 51 its English text with the n
   await expect(page.locator("main [lang=en]")).toHaveCount(1);
   await expect(page.locator("main")).toContainText("Por ahora no hay una traducción al español: se leen en inglés.");
   await expect(page.locator("main")).toContainText("Douay-Rheims");
-  await expect(page.locator(`${crumbs} button`)).toHaveText(["Biblia", "Libros deuterocanónicos"]);
+  await expect(page.locator(`${crumbs} > span.text-ink-3`)).toHaveText(["Biblia", "Libros deuterocanónicos"]);
 });
 
 test("a chapter outside the Spanish default shows no notice, and there is no chapter footer", async ({ page }) => {

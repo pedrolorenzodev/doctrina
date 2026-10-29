@@ -48,7 +48,7 @@ test("header: h1, lede and tab title", async ({ page }) => {
 
 test("crumbs: Doctrinas inert, La Eucaristía leads to 02, the page is current", async ({ page }) => {
   await page.goto(path);
-  await expect(page.locator(`${crumbs} button`)).toHaveText(["Doctrinas"]);
+  await expect(page.locator(`${crumbs} > span.text-ink-3`)).toHaveText(["Doctrinas"]);
   await expect(page.locator(`${crumbs} [aria-current=page]`)).toHaveText("Lo que escribieron los primeros cristianos");
   await page.locator(`${crumbs} a`, { hasText: "La Eucaristía" }).click();
   await expect(page).toHaveURL(doctrinePath);

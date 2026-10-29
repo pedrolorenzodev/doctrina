@@ -15,7 +15,6 @@ type BreadcrumbsProps = {
 const separator = "/";
 
 export function Breadcrumbs({ label, trail, current }: BreadcrumbsProps) {
-  // TODO: crumbs lead to the doctrines index and to the doctrine page (02) once those pages exist
   return (
     <nav
       aria-label={label}
@@ -28,9 +27,7 @@ export function Breadcrumbs({ label, trail, current }: BreadcrumbsProps) {
               {crumb.label}
             </Link>
           ) : (
-            <button type="button" className="link-crumb hit-44">
-              {crumb.label}
-            </button>
+            <span className="text-ink-3">{crumb.label}</span>
           )}
           {current !== undefined || index < trail.length - 1 ? (
             <span aria-hidden="true" className="mx-2 text-rule-2">

@@ -40,7 +40,7 @@ async function settled(page: Page) {
 
 test("header: crumbs, h1, lede and the tab title", async ({ page }) => {
   await page.goto(path);
-  await expect(page.locator('main nav[aria-label="Ruta"] button')).toHaveText(["Doctrinas"]);
+  await expect(page.locator('main nav[aria-label="Ruta"] > span.text-ink-3')).toHaveText(["Doctrinas"]);
   await expect(page.locator('main nav[aria-label="Ruta"] [aria-current=page]')).toHaveText("La Eucaristía");
   await expect(page.locator("main h1")).toHaveText("La Eucaristía");
   await expect(page.locator("main header p")).toHaveText("¿Qué pasa con el pan y el vino en la Cena del Señor?");

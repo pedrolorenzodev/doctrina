@@ -6,10 +6,14 @@ const switcher = 'main nav[aria-label="Tradición"]';
 
 test("crumbs: Doctrinas (inert) / La Eucaristía (a link) / Católica, the last one current", async ({ page }) => {
   await page.goto(traditionPath);
-  await expect(page.locator(`${crumbs} button`)).toHaveText(["Doctrinas"]);
+  await expect(page.locator(`${crumbs} > span.text-ink-3`)).toHaveText(["Doctrinas"]);
   await expect(page.locator(`${crumbs} [aria-current=page]`)).toHaveText("Católica");
   const url = page.url();
-  await page.locator(`${crumbs} button`).first().click();
+  const inert = page.locator(`${crumbs} > span.text-ink-3`).first();
+  await inert.hover();
+  await expect(inert).toHaveCSS("text-decoration-line", "none");
+  await expect(inert).toHaveCSS("cursor", "auto");
+  await inert.click();
   expect(page.url()).toBe(url);
 });
 
