@@ -1,6 +1,15 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+  type KeyboardEvent,
+  type PointerEvent,
+} from "react";
 import type { YearsData } from "@/content/get-home-timeline";
 
 export type YearWindow = { a: number; b: number };
@@ -21,7 +30,16 @@ type YearsRulerProps = {
   onHot: (key: string | null) => void;
 };
 
-type Mark = { key: string; name: string; date: string; from: number; to: number; top: number; height: number };
+type Mark = {
+  key: string;
+  name: string;
+  date: string;
+  from: number;
+  to: number;
+  top: number;
+  height: number;
+  half: number;
+};
 
 type Drag = { mode: "l" | "r" | "move" | "new"; x0: number; y0: number; a0: number; b0: number; moved: boolean };
 
@@ -36,7 +54,7 @@ const keyStepLarge = 50;
 const axisYears = [1, 500, 1000, 1500, 2026];
 const hoverReachPx = 10;
 const tipGapPx = 6;
-const tipEdges = { left: 15, right: 85 };
+const tipMarginPx = 8;
 const nameDateSeparator = ", ";
 const labelClearancePx = 40;
 const labelReachPx = 150;
@@ -70,14 +88,27 @@ function packRows(fathers: YearsData["fathers"]) {
   return { rows: rowEnds.length, rowOf };
 }
 
-function Tip({ mark }: { mark: Mark }) {
+function Tip({ mark, trackWidth }: { mark: Mark; trackWidth: number }) {
+  const tip = useRef<HTMLSpanElement>(null);
   const center = (percent(mark.from) + percent(mark.to)) / 2;
-  const edge = center < tipEdges.left ? "left" : center > tipEdges.right ? "right" : undefined;
+
+  useLayoutEffect(() => {
+    const element = tip.current;
+    if (!element || trackWidth === 0) return;
+    const width = element.getBoundingClientRect().width;
+    const trackLeft = element.parentElement?.getBoundingClientRect().left ?? 0;
+    const lowest = width > trackWidth ? Math.min(0, tipMarginPx - trackLeft) : 0;
+    const highest = Math.max(trackWidth, innerWidth - tipMarginPx - trackLeft) - width;
+    const left = Math.max(lowest, Math.min((center / 100) * trackWidth - width / 2, trackWidth - width, highest));
+    element.style.setProperty("--x", `${left}px`);
+    element.dataset.placed = "";
+  }, [center, trackWidth]);
+
   return (
     <span
+      ref={tip}
       aria-hidden="true"
       data-years-tip=""
-      data-edge={edge}
       className="yr-tip"
       style={at({ "--x": `${center}%`, "--y": `${mark.top - tipGapPx}px` })}
     >
@@ -115,6 +146,7 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
         to: father.end,
         top: firstRowTop + (rowOf.get(father.id) ?? 0) * gap,
         height: 3,
+        half: 0,
       })),
       ...data.councils.map((council) => ({
         key: `c-${council.id}`,
@@ -124,6 +156,7 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
         to: council.year,
         top: councils - 4,
         height: 8,
+        half: 4,
       })),
       ...data.divisions.map((division) => ({
         key: `d-${division.id}`,
@@ -133,6 +166,7 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
         to: division.year,
         top: divisions,
         height: 14,
+        half: 0.75,
       })),
     ];
     return { rowOf, gap, councils, divisions, axis, marks, height: axis + 26, windowHeight: axis - windowTop - 4 };
@@ -148,8 +182,9 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
     let best: string | null = null;
     let bestDistance = hoverReachPx;
     for (const mark of layout.marks) {
-      const left = (percent(mark.from) / 100) * rect.width;
-      const right = Math.max(left + (mark.to > mark.from ? 3 : 0), (percent(mark.to) / 100) * rect.width);
+      const start = (percent(mark.from) / 100) * rect.width;
+      const left = start - mark.half;
+      const right = Math.max(start + (mark.to > mark.from ? 3 : 0), (percent(mark.to) / 100) * rect.width) + mark.half;
       const dx = x < left ? left - x : x > right ? x - right : 0;
       const dy = y < mark.top ? mark.top - y : y > mark.top + mark.height ? y - mark.top - mark.height : 0;
       const distance = Math.hypot(dx, dy);
@@ -353,7 +388,7 @@ export function YearsRuler({ data, range, hot, text, onMove, onSettle, onHot }: 
         >
           {yearsLabel}
         </span>
-        {hotMark ? <Tip key={hotMark.key} mark={hotMark} /> : null}
+        {hotMark ? <Tip key={hotMark.key} mark={hotMark} trackWidth={trackWidth} /> : null}
       </div>
     </div>
   );

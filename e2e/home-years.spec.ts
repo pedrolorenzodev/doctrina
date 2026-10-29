@@ -301,15 +301,45 @@ test("hovering or focusing a row lights its mark on the ruler", async ({ page })
   await expect(page.locator(tip)).toHaveCount(0);
 });
 
-test("labels near the ends anchor inward and stay inside the page", async ({ page }) => {
+test("labels stay inside the page, at the ends and on a narrow window", async ({ page }) => {
+  for (const width of [1440, 360]) {
+    await open(page, width);
+    for (const year of [49, 287, 1962]) {
+      const top = year === 287 ? 30 : 133;
+      await hoverYear(page, year, top);
+      await expect(page.locator(tip)).toHaveCount(1);
+      const box = (await page.locator(tip).boundingBox())!;
+      expect(box.x).toBeGreaterThanOrEqual(0);
+      expect(box.x + box.width).toBeLessThanOrEqual(width);
+    }
+  }
+});
+
+test("a second change in the middle of the list's motion continues from where the rows are", async ({ page }) => {
   await open(page);
-  await hoverYear(page, 49, 133);
-  await expect(page.locator(tip)).toHaveAttribute("data-edge", "left");
-  expect((await page.locator(tip).boundingBox())!.x).toBeGreaterThanOrEqual(0);
-  await hoverYear(page, 1962, 133);
-  await expect(page.locator(tip)).toHaveAttribute("data-edge", "right");
-  const right = await page.locator(tip).boundingBox();
-  expect(right!.x + right!.width).toBeLessThanOrEqual(1440);
+  const result = await page.evaluate(
+    () =>
+      new Promise<{ before: number; after: number; settled: number }>((resolve) => {
+        const slider = document.querySelector("[data-window]") as HTMLElement;
+        slider.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight", shiftKey: true, bubbles: true }));
+        const wait = () => {
+          const row = document.querySelector("[data-k='f-hilary-of-poitiers']") as HTMLElement;
+          const moving = row.getAnimations().find((animation) => animation.id === "keyed-flip");
+          const time = Number(moving?.currentTime ?? -1);
+          if (time < 60 || time > 250) {
+            requestAnimationFrame(wait);
+            return;
+          }
+          const before = row.getBoundingClientRect().top;
+          document.querySelector<HTMLButtonElement>("[data-k='g-fathers'] button")!.click();
+          const after = row.getBoundingClientRect().top;
+          setTimeout(() => resolve({ before, after, settled: row.getBoundingClientRect().top }), 700);
+        };
+        requestAnimationFrame(wait);
+      }),
+  );
+  expect(Math.abs(result.settled - result.before)).toBeGreaterThan(5);
+  expect(Math.abs(result.after - result.before)).toBeLessThan(1);
 });
 
 test("a label over the window's years hides them while it shows", async ({ page }) => {

@@ -82,6 +82,8 @@
   --text-legend--line-height: 1.65;
   --text-question: 19px;
   --text-question--line-height: 1.35;
+  --text-question-mobile: 17.5px;
+  --text-question-mobile--line-height: 1.35;
   --text-box-quote: 19px;
   --text-box-quote--line-height: 1.5;
   --text-lede: 24px;
@@ -763,6 +765,38 @@
   }
 }
 
+@utility doctrine-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 14px;
+  gap: 6px 32px;
+  align-items: baseline;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: minmax(150px, 220px) minmax(0, 1fr) 14px;
+  }
+}
+
+@utility quiet-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 14px;
+  gap: 4px 20px;
+  align-items: center;
+}
+
+@utility method-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px 40px;
+
+  @media (min-width: 48rem) {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+}
+
+@utility mail-field {
+  flex: 1 1 240px;
+}
+
 @utility entry-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1361,18 +1395,15 @@
   color: var(--color-tip-ink);
   font-size: 12px;
   line-height: 1.4;
-  white-space: nowrap;
+  width: max-content;
+  max-width: calc(100vw - 16px);
   font-variant-numeric: tabular-nums;
   pointer-events: none;
   transform: translate(var(--tx, -50%), -100%);
   animation: yr-tip 200ms var(--ease-standard) both;
 
-  &[data-edge="left"] {
-    --tx: -12px;
-  }
-
-  &[data-edge="right"] {
-    --tx: calc(-100% + 12px);
+  &[data-placed] {
+    --tx: 0px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1411,7 +1442,7 @@
       position: absolute;
       top: -7px;
       bottom: -7px;
-      width: 36px;
+      width: 40px;
     }
 
     &[data-h="l"]::before {
@@ -1434,7 +1465,7 @@
   }
 }
 
-@utility entry-row {
+@utility years-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 2px 18px;

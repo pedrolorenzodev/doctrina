@@ -14,14 +14,19 @@ export function flipKeyed(box: HTMLElement, ghosts: HTMLElement, mutate: () => v
     mutate();
     return;
   }
+  const boxBefore = box.getBoundingClientRect();
+  const heightBefore = boxBefore.height;
+  const before = new Map<string, { element: HTMLElement; rect: DOMRect; opacity: number }>();
+  for (const element of keyed(box)) {
+    before.set(element.dataset.k!, {
+      element,
+      rect: element.getBoundingClientRect(),
+      opacity: Number(getComputedStyle(element).opacity),
+    });
+  }
   for (const animation of box.getAnimations({ subtree: true })) {
     if (animation.id === animationId) animation.cancel();
   }
-  ghosts.replaceChildren();
-  const boxBefore = box.getBoundingClientRect();
-  const heightBefore = box.offsetHeight;
-  const before = new Map<string, { element: HTMLElement; rect: DOMRect }>();
-  for (const element of keyed(box)) before.set(element.dataset.k!, { element, rect: element.getBoundingClientRect() });
 
   mutate();
 
@@ -59,16 +64,21 @@ export function flipKeyed(box: HTMLElement, ghosts: HTMLElement, mutate: () => v
     }
     const parent = keyedParent(element, box);
     const relative = shift - (parent ? (shifts.get(parent) ?? 0) : 0);
-    if (Math.abs(relative) > 0.5) {
-      element.animate([{ transform: `translateY(${relative}px)` }, { transform: "none" }], {
-        duration: motion.moveMs,
-        easing: easeReveal,
-        id: animationId,
-      });
+    const opacity = before.get(element.dataset.k!)!.opacity;
+    const parentOpacity = parent ? (before.get(parent.dataset.k!)?.opacity ?? 1) : 1;
+    const fading = opacity < 1 && parentOpacity >= 1;
+    if (Math.abs(relative) > 0.5 || fading) {
+      element.animate(
+        [
+          { transform: `translateY(${relative}px)`, opacity: fading ? opacity : 1 },
+          { transform: "none", opacity: 1 },
+        ],
+        { duration: motion.moveMs, easing: easeReveal, id: animationId },
+      );
     }
   }
   const origin = ghosts.getBoundingClientRect();
-  for (const [key, { element, rect }] of before) {
+  for (const [key, { element, rect, opacity }] of before) {
     if (kept.has(key)) continue;
     const parent = element.parentElement?.closest<HTMLElement>("[data-k]");
     if (parent && !kept.has(parent.dataset.k!) && before.has(parent.dataset.k!)) continue;
@@ -88,7 +98,7 @@ export function flipKeyed(box: HTMLElement, ghosts: HTMLElement, mutate: () => v
     ghost
       .animate(
         [
-          { opacity: 1, transform: "none" },
+          { opacity, transform: "none" },
           { opacity: 0, transform: "scale(0.96)" },
         ],
         { duration: motion.exitMs, easing: "ease-out", fill: "forwards" },

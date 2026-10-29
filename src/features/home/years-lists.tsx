@@ -58,7 +58,7 @@ function Group({
               onPointerLeave={() => onHot(null)}
               onFocus={() => onHot(row.key)}
               onBlur={() => onHot(null)}
-              className="entry-row px-1 py-3 no-underline transition-colors duration-150 ease-standard hover:bg-hover data-hot:bg-hover"
+              className="years-row px-1 py-3 no-underline transition-colors duration-150 ease-standard hover:bg-hover data-hot:bg-hover"
             >
               <span className="min-w-0 font-body text-years-name font-medium text-ink">{row.name}</span>
               <span className="col-start-2 row-start-1 text-years-date font-medium text-ink tabular-nums">
