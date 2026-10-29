@@ -1238,6 +1238,134 @@
   }
 }
 
+@utility years-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+
+  @media (min-width: 40rem) {
+    grid-template-columns: 74px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+}
+
+@utility yr-bar {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: max(3px, var(--w));
+  height: 3px;
+  border-radius: var(--radius-2);
+  background: var(--color-ink-3);
+  opacity: 0.4;
+  transition:
+    opacity 200ms var(--ease-standard),
+    background-color 200ms var(--ease-standard);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  &[data-in] {
+    background: var(--color-ink-2);
+    opacity: 0.9;
+  }
+}
+
+@utility yr-ring {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border: 1.25px solid var(--color-ink-3);
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-ink-3);
+  transition: border-color 200ms var(--ease-standard);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  &[data-in] {
+    border-color: var(--color-ink);
+    color: var(--color-ink);
+  }
+
+  &[data-seven]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    margin: -1.5px 0 0 -1.5px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+}
+
+@utility yr-div {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 1.5px;
+  height: 14px;
+  margin-left: -0.75px;
+  background: var(--color-ink-3);
+  opacity: 0.6;
+  transition:
+    opacity 200ms var(--ease-standard),
+    background-color 200ms var(--ease-standard);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  &[data-in] {
+    background: var(--color-ink);
+    opacity: 1;
+  }
+}
+
+@utility yr-handle {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  width: 14px;
+  height: 30px;
+  margin-top: -15px;
+  place-items: center;
+  cursor: ew-resize;
+
+  &::after {
+    content: "";
+    width: 3px;
+    height: 14px;
+    border-radius: var(--radius-2);
+    background: var(--color-accent);
+  }
+
+  @media (pointer: coarse) {
+    &::before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      bottom: -7px;
+      width: 36px;
+    }
+
+    &[data-h="l"]::before {
+      right: 4px;
+    }
+
+    &[data-h="r"]::before {
+      left: 4px;
+    }
+  }
+}
+
 @utility resume-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
