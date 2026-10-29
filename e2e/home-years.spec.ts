@@ -266,3 +266,82 @@ test("under reduced motion the lists change with no animation and no ghosts", as
   expect(state).toEqual({ ghosts: 0, animations: 0 });
   await context.close();
 });
+
+const tip = "[data-years-tip]";
+
+async function hoverYear(page: Page, year: number, top: number) {
+  await page.mouse.move(await xOf(page, year), await trackY(page, top));
+}
+
+test("hovering a mark lights it, labels it and lights its row", async ({ page }) => {
+  await open(page);
+  await hoverYear(page, 325, 133);
+  await expect(page.locator("[data-council='nicaea-1']")).toHaveAttribute("data-hot", "true");
+  await expect(page.locator(tip)).toHaveText("Primer Concilio de Nicea, 325");
+  await expect(page.locator("[data-k='c-nicaea-1'] a")).toHaveAttribute("data-hot", "true");
+  const animation = await page
+    .locator(tip)
+    .evaluate((element) => element.getAnimations().map((a) => a.effect!.getTiming().duration));
+  expect(animation.every((duration) => duration === 200)).toBe(true);
+  await page.mouse.move(10, 10);
+  await expect(page.locator(tip)).toHaveCount(0);
+  await expect(page.locator("[data-hot]")).toHaveCount(0);
+});
+
+test("hovering or focusing a row lights its mark on the ruler", async ({ page }) => {
+  await open(page);
+  await page.locator("[data-k='f-eusebius-of-caesarea'] a").hover();
+  await expect(page.locator("[data-father='eusebius-of-caesarea']")).toHaveAttribute("data-hot", "true");
+  await expect(page.locator(tip)).toHaveText("Eusebio de Cesarea, c. 263–339");
+  await page.mouse.move(10, 10);
+  await expect(page.locator(tip)).toHaveCount(0);
+  await page.locator("[data-k='d-church-of-the-east'] a").focus();
+  await expect(page.locator("[data-division='church-of-the-east']")).toHaveAttribute("data-hot", "true");
+  await page.locator("[data-k='d-church-of-the-east'] a").blur();
+  await expect(page.locator(tip)).toHaveCount(0);
+});
+
+test("labels near the ends anchor inward and stay inside the page", async ({ page }) => {
+  await open(page);
+  await hoverYear(page, 49, 133);
+  await expect(page.locator(tip)).toHaveAttribute("data-edge", "left");
+  expect((await page.locator(tip).boundingBox())!.x).toBeGreaterThanOrEqual(0);
+  await hoverYear(page, 1962, 133);
+  await expect(page.locator(tip)).toHaveAttribute("data-edge", "right");
+  const right = await page.locator(tip).boundingBox();
+  expect(right!.x + right!.width).toBeLessThanOrEqual(1440);
+});
+
+test("a label over the window's years hides them while it shows", async ({ page }) => {
+  await open(page);
+  const years = page.locator(`${track} > span.text-accent`);
+  const bar = (await page.locator("[data-father='augustine-of-hippo']").boundingBox())!;
+  await page.mouse.move(bar.x + bar.width / 2, bar.y + 1);
+  await expect(page.locator(tip)).toContainText("Agustín de Hipona");
+  await expect(years).toHaveAttribute("data-covered", "true");
+  await expect.poll(() => years.evaluate((element) => getComputedStyle(element).opacity)).toBe("0");
+  await hoverYear(page, 1215, 133);
+  await expect(years).not.toHaveAttribute("data-covered", "true");
+});
+
+test("dragging hides the label, and a click on a mark still centres the window there", async ({ page }) => {
+  await open(page);
+  await hoverYear(page, 1215, 133);
+  await expect(page.locator(tip)).toHaveCount(1);
+  await page.mouse.down();
+  await expect(page.locator(tip)).toHaveCount(0);
+  await page.mouse.up();
+  await expect(page.locator(win)).toHaveAttribute("aria-valuetext", "Del año 1140 al 1300");
+});
+
+test("touch shows no hover on the ruler", async ({ browser }) => {
+  const context = await browser.newContext({ hasTouch: true, isMobile: true, viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto("/es");
+  await page.locator(track).scrollIntoViewIfNeeded();
+  const box = (await page.locator(track).boundingBox())!;
+  await page.touchscreen.tap(box.x + (box.width * percent(1215)) / 100, box.y + 133);
+  await expect(page.locator(win)).toHaveAttribute("aria-valuetext", "Del año 1140 al 1300");
+  await expect(page.locator(tip)).toHaveCount(0);
+  await context.close();
+});

@@ -72,6 +72,7 @@ function groupsIn(data: YearsData, range: YearWindow): Record<YearsGroupKey, Yea
 export function YearsExplorer({ data, text }: { data: YearsData; text: YearsText }) {
   const [range, setRange] = useState(firstWindow);
   const [listed, setListed] = useState(firstWindow);
+  const [hot, setHot] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<Set<YearsGroupKey>>(() => new Set());
   const timer = useRef<number | undefined>(undefined);
   const box = useRef<HTMLDivElement>(null);
@@ -108,7 +109,7 @@ export function YearsExplorer({ data, text }: { data: YearsData; text: YearsText
 
   return (
     <div>
-      <YearsRuler data={data} range={range} text={text} onMove={move} onSettle={settle} />
+      <YearsRuler data={data} range={range} hot={hot} text={text} onMove={move} onSettle={settle} onHot={setHot} />
       <p aria-live="polite" className="mt-2.5 text-ui-xs leading-normal text-ink-3">
         {statusText(data, listed, text)}
       </p>
@@ -118,7 +119,9 @@ export function YearsExplorer({ data, text }: { data: YearsData; text: YearsText
         text={text}
         box={box}
         ghosts={ghosts}
+        hot={hot}
         onToggle={toggle}
+        onHot={setHot}
       />
     </div>
   );

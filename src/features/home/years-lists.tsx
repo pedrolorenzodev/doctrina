@@ -18,7 +18,9 @@ type YearsListsProps = {
   text: YearsListsText;
   box: RefObject<HTMLDivElement | null>;
   ghosts: RefObject<HTMLDivElement | null>;
+  hot: string | null;
   onToggle: (group: YearsGroupKey) => void;
+  onHot: (key: string | null) => void;
 };
 
 const shownRows = 8;
@@ -27,14 +29,18 @@ function Group({
   id,
   rows,
   open,
+  hot,
   text,
   onToggle,
+  onHot,
 }: {
   id: YearsGroupKey;
   rows: YearsRow[];
   open: boolean;
+  hot: string | null;
   text: YearsListsText;
   onToggle: (group: YearsGroupKey) => void;
+  onHot: (key: string | null) => void;
 }) {
   const shown = open ? rows : rows.slice(0, shownRows);
   return (
@@ -45,7 +51,14 @@ function Group({
           <li key={row.key} data-k={row.key} className="border-t border-rule last:border-b">
             <Link
               href={row.href}
-              className="entry-row px-1 py-3 no-underline transition-colors duration-150 ease-standard hover:bg-hover"
+              data-hot={hot === row.key || undefined}
+              onPointerEnter={(event) => {
+                if (event.pointerType === "mouse") onHot(row.key);
+              }}
+              onPointerLeave={() => onHot(null)}
+              onFocus={() => onHot(row.key)}
+              onBlur={() => onHot(null)}
+              className="entry-row px-1 py-3 no-underline transition-colors duration-150 ease-standard hover:bg-hover data-hot:bg-hover"
             >
               <span className="min-w-0 font-body text-years-name font-medium text-ink">{row.name}</span>
               <span className="col-start-2 row-start-1 text-years-date font-medium text-ink tabular-nums">
@@ -67,14 +80,22 @@ function Group({
   );
 }
 
-export function YearsLists({ groups, expanded, text, box, ghosts, onToggle }: YearsListsProps) {
+export function YearsLists({ groups, expanded, text, box, ghosts, hot, onToggle, onHot }: YearsListsProps) {
   const { fathers, councils, divisions } = groups;
   return (
     <div className="relative mt-7.5">
       <div ref={box} className="years-lists">
         <div data-k="col-a">
           {fathers.length ? (
-            <Group id="fathers" rows={fathers} open={expanded.has("fathers")} text={text} onToggle={onToggle} />
+            <Group
+              id="fathers"
+              rows={fathers}
+              open={expanded.has("fathers")}
+              hot={hot}
+              text={text}
+              onToggle={onToggle}
+              onHot={onHot}
+            />
           ) : (
             <p data-k="none-f" className="m-0 text-sub text-ink-3">
               {text.noFathers}
@@ -83,11 +104,27 @@ export function YearsLists({ groups, expanded, text, box, ghosts, onToggle }: Ye
         </div>
         <div data-k="col-b">
           {councils.length ? (
-            <Group id="councils" rows={councils} open={expanded.has("councils")} text={text} onToggle={onToggle} />
+            <Group
+              id="councils"
+              rows={councils}
+              open={expanded.has("councils")}
+              hot={hot}
+              text={text}
+              onToggle={onToggle}
+              onHot={onHot}
+            />
           ) : null}
           {councils.length && divisions.length ? <div className="h-7" /> : null}
           {divisions.length ? (
-            <Group id="divisions" rows={divisions} open={expanded.has("divisions")} text={text} onToggle={onToggle} />
+            <Group
+              id="divisions"
+              rows={divisions}
+              open={expanded.has("divisions")}
+              hot={hot}
+              text={text}
+              onToggle={onToggle}
+              onHot={onHot}
+            />
           ) : null}
         </div>
       </div>

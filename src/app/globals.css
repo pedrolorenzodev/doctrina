@@ -1273,6 +1273,11 @@
     background: var(--color-ink-2);
     opacity: 0.9;
   }
+
+  &[data-hot] {
+    background: var(--color-accent);
+    opacity: 1;
+  }
 }
 
 @utility yr-ring {
@@ -1286,7 +1291,9 @@
   border-radius: 50%;
   background: var(--color-bg);
   color: var(--color-ink-3);
-  transition: border-color 200ms var(--ease-standard);
+  transition:
+    border-color 200ms var(--ease-standard),
+    color 200ms var(--ease-standard);
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -1295,6 +1302,11 @@
   &[data-in] {
     border-color: var(--color-ink);
     color: var(--color-ink);
+  }
+
+  &[data-hot] {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 
   &[data-seven]::after {
@@ -1330,6 +1342,48 @@
   &[data-in] {
     background: var(--color-ink);
     opacity: 1;
+  }
+
+  &[data-hot] {
+    background: var(--color-accent);
+    opacity: 1;
+  }
+}
+
+@utility yr-tip {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  z-index: 2;
+  padding: 4px 8px;
+  border-radius: var(--radius-4);
+  background: var(--color-tip-bg);
+  color: var(--color-tip-ink);
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  transform: translate(var(--tx, -50%), -100%);
+  animation: yr-tip 200ms var(--ease-standard) both;
+
+  &[data-edge="left"] {
+    --tx: -12px;
+  }
+
+  &[data-edge="right"] {
+    --tx: calc(-100% + 12px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes yr-tip {
+  from {
+    opacity: 0;
+    transform: translate(var(--tx, -50%), calc(-100% + 5px));
   }
 }
 
