@@ -1,5 +1,6 @@
 "use client";
 
+import { AskButton } from "@/components/ask-button";
 import { BookPicker, type PickerBook } from "@/features/reader/book-picker";
 import { useActiveChapter, scrollToChapter, type ChapterTarget } from "@/lib/active-chapter";
 import { ChapterStep, type StepNeighbor } from "@/features/reader/chapter-step";
@@ -26,6 +27,7 @@ type ReaderStripProps = {
     title: string;
     chapterTitle: string;
   };
+  ask?: { label: string; keyHint: string };
   neighbors: {
     previous: StepNeighbor;
     next: StepNeighbor;
@@ -43,6 +45,7 @@ export function ReaderStrip({
   defaultId,
   yourNotes,
   bookPicker,
+  ask,
   neighbors,
 }: ReaderStripProps) {
   const value = useChosenTranslation(
@@ -102,6 +105,7 @@ export function ReaderStrip({
             <span aria-hidden="true" className="h-4 w-px bg-rule" />
             {step("next")}
           </div>
+          {ask ? <AskButton label={ask.label} keyHint={ask.keyHint} /> : null}
         </>
       }
       center={

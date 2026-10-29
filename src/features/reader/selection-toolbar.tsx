@@ -14,6 +14,7 @@ type SelectionToolbarText = {
   citeCopied: string;
   find: string;
   note: string;
+  ask?: string;
   highlight: Parameters<typeof HighlightColors>[0]["text"];
 };
 
@@ -28,6 +29,7 @@ type SelectionToolbarProps = {
   onHighlight: (ranges: VerseRange[], color: HighlightColor) => void;
   onRemove: (ranges: VerseRange[]) => void;
   onNote: (selection: ReaderSelection) => void;
+  onAsk?: (selection: ReaderSelection) => void;
 };
 
 const dockedQuery = "(max-width: 40rem), (pointer: coarse)";
@@ -39,6 +41,8 @@ const searchLength = 80;
 
 const plainButtonClassName =
   "inline-flex min-h-9 cursor-pointer items-center justify-center rounded-6 px-2.5 text-btn font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11";
+const askButtonClassName =
+  "inline-flex min-h-9 cursor-pointer items-center justify-center rounded-6 px-2.5 text-btn font-medium text-ink transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11";
 
 export function SelectionToolbar({
   rootRef,
@@ -51,6 +55,7 @@ export function SelectionToolbar({
   onHighlight,
   onRemove,
   onNote,
+  onAsk,
 }: SelectionToolbarProps) {
   const bar = useRef<HTMLDivElement>(null);
   const { show: showSearch } = useSearch();
@@ -162,6 +167,12 @@ export function SelectionToolbar({
     finish();
   };
 
+  const ask = () => {
+    if (!current || !onAsk) return;
+    onAsk(current);
+    finish();
+  };
+
   const find = () => {
     if (!current) return;
     const query = current.text.slice(0, searchLength);
@@ -215,6 +226,11 @@ export function SelectionToolbar({
       <button type="button" onClick={note} aria-keyshortcuts="N" className={plainButtonClassName}>
         {text.note}
       </button>
+      {text.ask && onAsk ? (
+        <button type="button" onClick={ask} className={askButtonClassName}>
+          {text.ask}
+        </button>
+      ) : null}
       <span aria-hidden="true" className="mx-1 h-5 w-px bg-rule group-data-docked/toolbar:hidden" />
       <span data-cite-button="" className="inline-flex">
         <CopyButton compact label={text.cite} done={text.citeCopied} text={() => (current ? citation(current) : "")} />

@@ -17,6 +17,8 @@ import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { ReaderStrip } from "@/features/reader/reader-strip";
 import { VerseArrival } from "@/features/reader/verse-arrival";
+import { ReaderAsk } from "@/features/reader-ai/reader-ask";
+import { askText } from "@/features/reader-ai/text";
 import { currentLocale } from "@/lib/current-locale";
 import { locales, type Locale } from "@/lib/locale";
 
@@ -67,6 +69,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
   const { book, chapter, views, defaultId } = loaded;
   const text = getUiText(locale);
   const labels = text.reader;
+  const ask = askText[locale];
   const sectionLabel = text.shell.tree[book.section === "old" ? "ot" : book.section === "new" ? "nt" : "deutero"];
   const titleOf = (name: string, number: number) =>
     labels.chapterTitle.replace("{book}", name).replace("{chapter}", String(number));
@@ -96,6 +99,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
       <ReaderFormatScript />
       <RedNoticeScript />
       <ReaderStrip
+        ask={{ label: ask.ask, keyHint: ask.keyHint }}
         parallelText={{
           label: labels.parallel.label,
           mode: labels.parallel.mode,
@@ -174,7 +178,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
             verseReference: labels.verseReference,
             shortCitation: labels.shortCitation,
             verseRange: labels.verseRange,
-            toolbar: labels.toolbar,
+            toolbar: { ...labels.toolbar, ask: ask.ask },
             yourNotes: labels.yourNotes,
             read: labels.read,
             redNotice: labels.redNotice,
@@ -184,10 +188,21 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
               spanish: labels.picker.spanish,
               english: labels.picker.english,
             },
+            ask: { label: ask.ask, keyHint: ask.keyHint },
           }}
         />
         <VerseArrival />
       </div>
+      <ReaderAsk
+        locale={locale}
+        text={ask}
+        chapterTitle={labels.chapterTitle}
+        books={books.map(({ id, title }) => ({ id, title }))}
+        here={{ book: book.id, chapter }}
+        editions={views.map(({ id, displayName }) => ({ id, name: displayName }))}
+        defaultEdition={defaultId}
+        johnSix={{ book: "John", chapter: 6, href: bibleChapterHref(locale, getBibleBook("John")!, 6) }}
+      />
     </PageMain>
   );
 }

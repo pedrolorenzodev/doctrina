@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { AskButton } from "@/components/ask-button";
+import { closedAskDrawer, getAskDrawer, openAskDrawer, subscribeAskDrawer } from "@/lib/ask-drawer";
 import { UndoBar } from "@/components/undo-bar";
 import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
@@ -80,6 +82,7 @@ type ReaderBodyProps = {
     read: { mark: string; short: string; marked: string };
     redNotice: { message: string; email: string; close: string };
     columnHeads: ColumnHeadText;
+    ask?: { label: string; keyHint: string };
   };
 };
 
@@ -144,6 +147,11 @@ export function ReaderBody({
   const opener = useRef<HTMLElement | null>(null);
   const textRoot = useRef<HTMLDivElement>(null);
   const yourOpen = useYourNotesOpen();
+  const askOpen = useSyncExternalStore(
+    subscribeAskDrawer,
+    () => getAskDrawer().open,
+    () => closedAskDrawer.open,
+  );
   const verse = picked !== null && selected.verses.some((entry) => entry.verse === picked) ? picked : null;
   const undoState = useUndo();
   const redIsOurs = computedRedEditions.includes(selected.id) && selected.verses.some((entry) => entry.red);
@@ -472,6 +480,13 @@ export function ReaderBody({
         chapter={panel.chapter}
         className="mt-2 -ml-2.5 border border-rule-2 sm:hidden"
       />
+      {panel.ask ? (
+        <AskButton
+          label={panel.ask.label}
+          keyHint={panel.ask.keyHint}
+          className="mt-2 ml-2 border border-rule-2 sm:hidden"
+        />
+      ) : null}
       <ChapterText
         editionName={selected.name}
         second={second}
@@ -511,13 +526,13 @@ export function ReaderBody({
         noteMarkOf={noteMarkOf}
         previewed={previewed}
         onPreview={previewVerse}
-        cardsShown={verse === null && !yourOpen && !sideLayout}
+        cardsShown={verse === null && !yourOpen && !askOpen && !sideLayout}
         cards={
           sideLayout ? null : (
             <NoteCards
               label={panel.notes.cardsLabel}
               cards={cards}
-              hidden={verse !== null || yourOpen}
+              hidden={verse !== null || yourOpen || askOpen}
               rootRef={textRoot}
               idPrefix={idPrefix}
               onOpen={openCard}
@@ -625,6 +640,11 @@ export function ReaderBody({
             onHighlight={(ranges, color) => highlightsOf(ranges).apply(ranges, color)}
             onRemove={(ranges) => highlightsOf(ranges).remove(ranges)}
             onNote={noteOnWords}
+            onAsk={(selection) => {
+              const first = selection.ranges[0]?.verse ?? 0;
+              const last = selection.ranges[selection.ranges.length - 1]?.verse ?? first;
+              openAskDrawer({ pill: { reference: referenceOf(first, last), text: selection.text } });
+            }}
           />
           <UndoBar
             open={undoState.undo?.open ?? false}
