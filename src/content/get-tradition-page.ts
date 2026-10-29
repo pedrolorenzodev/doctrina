@@ -27,6 +27,10 @@ export function getPublishedPages(locale: Locale): {
   }));
 }
 
+export function builtTraditions(doctrine: DoctrineId): TraditionId[] {
+  return getPublishedPages("es").flatMap((page) => (page.doctrine === doctrine ? [page.tradition] : []));
+}
+
 export async function getTraditionPage(
   doctrine: DoctrineId,
   tradition: TraditionId,

@@ -16,6 +16,7 @@ export const es = {
     collapse: "Contraer {label}",
     chapterGrid: "Capítulos de {book}",
     chapterOf: "{book} {chapter}",
+    soon: "En construcción",
     breadcrumb: "Ruta",
     traditionLabel: "Tradición",
     traditionHint: "Al cambiar, sigues en la misma sección.",

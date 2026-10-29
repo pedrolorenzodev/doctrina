@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPageViews } from "@/content/get-page-views";
-import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
+import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { officialObjections } from "@/content/official-objections";
 import { objectionsPageText } from "@/content/objections-page-text";
@@ -69,7 +69,12 @@ export default async function ObjectionsRoute({
         <TraditionSwitcher
           label={text.shell.traditionLabel}
           hint={text.shell.objectionsHint}
-          items={traditionIds.map((id) => ({ id, label: traditionName(locale, id) }))}
+          soon={text.shell.soon}
+          items={traditionIds.map((id) => ({
+            id,
+            label: traditionName(locale, id),
+            available: builtTraditions(doctrine).includes(id),
+          }))}
           current={tradition}
         />
         <PageHeader className="mt-5.5 sm:mt-7.5" title={header.title} lede={header.lede} />

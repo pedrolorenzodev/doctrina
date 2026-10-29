@@ -40,6 +40,7 @@ export type TreeNode = {
   kind?: "heading" | undefined;
   count?: number | undefined;
   chapters?: { base: string; count: number; name: string } | undefined;
+  soon?: true | undefined;
 };
 
 export type TreeGroup = {
@@ -101,6 +102,8 @@ const traditionNames: Record<Locale, Record<TraditionId, string>> = {
   },
 };
 
+export type BuiltScreens = { doctrines: DoctrineId[]; pairs: string[] };
+
 export type PublishedPage = {
   doctrine: DoctrineId;
   tradition: TraditionId;
@@ -140,6 +143,8 @@ const leaf = (id: string, label: string, count?: number): TreeNode => ({
   children: [],
   count,
 });
+
+const soon = (node: TreeNode): TreeNode => ({ ...node, children: [], soon: true });
 
 const branch = (id: string, label: string, children: TreeNode[], count?: number): TreeNode => ({
   id,
@@ -188,39 +193,48 @@ export function buildSiteTree(
   publishedFathers: string[],
   bookChapters: Map<string, number>,
   fatherWorks: Record<string, { id: string; label: string }[]>,
+  built: BuiltScreens,
 ): TreeGroup[] {
-  const doctrineNodes = doctrineIds.map((doctrine) => ({
-    ...branch(doctrine, doctrineNames[locale][doctrine], [
-      {
-        ...leaf(`${doctrine}/early-christians`, text.tree.earlyChristians),
-        href: publishedDoctrines.includes(doctrine) ? earlyChristiansHref(locale, doctrine) : null,
-        route: publishedDoctrines.includes(doctrine) ? earlyChristiansRoute(locale, doctrine) : null,
-      },
-      ...traditionIds.map((tradition) => {
-        const page = published.find(
-          (candidate) => candidate.doctrine === doctrine && candidate.tradition === tradition,
-        );
-        const id = `${doctrine}/${tradition}`;
-        const children = [
-          leaf(`${id}/passages`, text.tree.passages),
-          {
-            ...branch(`${id}/objections`, text.tree.objections, objectionNodes(locale, doctrine, tradition, page)),
-            href: page ? objectionsHref(locale, doctrine, tradition) : null,
-            route: page ? objectionsRoute(locale, doctrine, tradition) : null,
-          },
-        ];
-        return {
-          id,
-          label: traditionNames[locale][tradition],
-          href: page ? traditionHref(locale, doctrine, tradition) : null,
-          route: page ? traditionRoute(locale, doctrine, tradition) : null,
-          children,
-        };
-      }),
-    ]),
-    href: publishedDoctrines.includes(doctrine) ? doctrineHref(locale, doctrine) : null,
-    route: publishedDoctrines.includes(doctrine) ? doctrineRoute(locale, doctrine) : null,
-  }));
+  const doctrineNodes = doctrineIds.map((doctrine) => {
+    const doctrineBuilt =
+      built.doctrines.includes(doctrine) || built.pairs.some((pair) => pair.startsWith(`${doctrine}/`));
+    const node = {
+      ...branch(doctrine, doctrineNames[locale][doctrine], [
+        {
+          ...(built.doctrines.includes(doctrine)
+            ? leaf(`${doctrine}/early-christians`, text.tree.earlyChristians)
+            : soon(leaf(`${doctrine}/early-christians`, text.tree.earlyChristians))),
+          href: publishedDoctrines.includes(doctrine) ? earlyChristiansHref(locale, doctrine) : null,
+          route: publishedDoctrines.includes(doctrine) ? earlyChristiansRoute(locale, doctrine) : null,
+        },
+        ...traditionIds.map((tradition) => {
+          const page = published.find(
+            (candidate) => candidate.doctrine === doctrine && candidate.tradition === tradition,
+          );
+          const id = `${doctrine}/${tradition}`;
+          if (!built.pairs.includes(id)) return soon(leaf(id, traditionNames[locale][tradition]));
+          const children = [
+            soon(leaf(`${id}/passages`, text.tree.passages)),
+            {
+              ...branch(`${id}/objections`, text.tree.objections, objectionNodes(locale, doctrine, tradition, page)),
+              href: page ? objectionsHref(locale, doctrine, tradition) : null,
+              route: page ? objectionsRoute(locale, doctrine, tradition) : null,
+            },
+          ];
+          return {
+            id,
+            label: traditionNames[locale][tradition],
+            href: page ? traditionHref(locale, doctrine, tradition) : null,
+            route: page ? traditionRoute(locale, doctrine, tradition) : null,
+            children,
+          };
+        }),
+      ]),
+      href: publishedDoctrines.includes(doctrine) ? doctrineHref(locale, doctrine) : null,
+      route: publishedDoctrines.includes(doctrine) ? doctrineRoute(locale, doctrine) : null,
+    };
+    return doctrineBuilt ? node : soon(node);
+  });
   const book = (key: string) => {
     const entry = getBibleBook(key);
     const label = entry ? bookListName(entry, locale) : key;
@@ -313,11 +327,7 @@ export function buildSiteTree(
         locale === "es"
           ? { ...leaf("reference/glossary", text.tree.glossary), href: glossaryHref(locale), route: "/es/glossary" }
           : leaf("reference/glossary", text.tree.glossary),
-        branch(
-          "reference/sources",
-          text.tree.sources,
-          sourceTitles.map((title, index) => leaf(`reference/sources/${index}`, title)),
-        ),
+        soon(branch("reference/sources", text.tree.sources, [], sourceTitles.length)),
       ],
     },
   ];

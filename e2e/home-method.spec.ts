@@ -43,11 +43,12 @@ test("the mail form checks the address and answers", async ({ page }) => {
 test("the footer: the site's name, the glossary, Fuentes (no page yet) and the other language", async ({ page }) => {
   await page.goto("/es");
   const footer = page.locator("#content footer");
-  await expect(footer).toHaveText(/Doctrina\s*Glosario\s*Fuentes\s*English/);
+  await expect(footer).toHaveText(/Doctrina\s*Glosario\s*Fuentes\s*En construcción\s*English/);
   await expect(footer.getByRole("link", { name: "Glosario" })).toHaveAttribute("href", "/es/glosario");
   await expect(footer.getByRole("link", { name: "English" })).toHaveAttribute("href", "/en");
   const before = page.url();
-  await footer.getByRole("button", { name: "Fuentes" }).click();
+  await expect(footer.getByRole("button", { name: "Fuentes" })).toHaveAttribute("aria-disabled", "true");
+  await footer.getByRole("button", { name: "Fuentes" }).click({ force: true });
   expect(page.url()).toBe(before);
 });
 

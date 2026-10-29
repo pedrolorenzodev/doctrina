@@ -23,5 +23,9 @@ export async function getSiteTree(locale: Locale): Promise<TreeGroup[]> {
     publishedFathers,
     await getBibleChapterCounts(locale),
     worksByFather(await getFatherWorks(), locale),
+    {
+      doctrines: getPublishedDoctrines("es"),
+      pairs: getPublishedPages("es").map((page) => `${page.doctrine}/${page.tradition}`),
+    },
   );
 }

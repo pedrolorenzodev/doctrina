@@ -26,7 +26,7 @@ test("switcher: six tabs in the fixed order, Católica current, the others inert
   ]);
   await expect(page.locator(`${switcher} [aria-current=page]`)).toHaveText("Católica");
   const url = page.url();
-  await page.locator(`${switcher} li button`, { hasText: "Luterana" }).click();
+  await page.locator(`${switcher} li button`, { hasText: "Luterana" }).click({ force: true });
   expect(page.url()).toBe(url);
   await expect(page.locator(`${switcher} [aria-current=page]`)).toHaveText("Católica");
 });

@@ -30,7 +30,7 @@ test("switcher: six tabs, Católica current, the hint says «en las objeciones»
   await expect(page.locator(`${switcher} [aria-current=page]`)).toHaveText("Católica");
   await expect(page.locator(switcher)).toContainText("Al cambiar, sigues en las objeciones.");
   const url = page.url();
-  await page.locator(`${switcher} li button`, { hasText: "Luterana" }).click();
+  await page.locator(`${switcher} li button`, { hasText: "Luterana" }).click({ force: true });
   expect(page.url()).toBe(url);
 });
 

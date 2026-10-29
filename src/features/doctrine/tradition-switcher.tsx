@@ -1,21 +1,26 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type FocusEvent } from "react";
+import { Tooltip } from "@/components/ui/tooltip";
 import { useStuck } from "@/lib/use-stuck";
 
 type SwitcherItem = {
   id: string;
   label: string;
+  available: boolean;
 };
 
 type TraditionSwitcherProps = {
   label: string;
   hint: string;
+  soon: string;
   items: SwitcherItem[];
   current: string;
 };
 
-export function TraditionSwitcher({ label, hint, items, current }: TraditionSwitcherProps) {
+const pressedMs = 2200;
+
+export function TraditionSwitcher({ label, hint, soon, items, current }: TraditionSwitcherProps) {
   const bar = useRef<HTMLElement>(null);
   const strip = useRef<HTMLUListElement>(null);
   const caption = useRef<HTMLSpanElement>(null);
@@ -24,6 +29,9 @@ export function TraditionSwitcher({ label, hint, items, current }: TraditionSwit
   const stuck = useStuck(bar);
   const [fade, setFade] = useState(false);
   const [crowded, setCrowded] = useState(false);
+  const [tip, setTip] = useState<number | null>(null);
+  const holdUntil = useRef(0);
+  const releaseTimer = useRef(0);
 
   useEffect(() => {
     const element = bar.current;
@@ -53,6 +61,25 @@ export function TraditionSwitcher({ label, hint, items, current }: TraditionSwit
     };
   }, []);
 
+  useEffect(() => () => window.clearTimeout(releaseTimer.current), []);
+
+  function showSoon(event: MouseEvent<HTMLElement> | FocusEvent<HTMLElement>) {
+    const tab = event.currentTarget.getBoundingClientRect();
+    const box = bar.current?.getBoundingClientRect();
+    if (box) setTip(tab.left + tab.width / 2 - box.left);
+  }
+
+  function hideSoon() {
+    if (Date.now() >= holdUntil.current) setTip(null);
+  }
+
+  function pressSoon(event: MouseEvent<HTMLElement>) {
+    showSoon(event);
+    holdUntil.current = Date.now() + pressedMs;
+    window.clearTimeout(releaseTimer.current);
+    releaseTimer.current = window.setTimeout(() => setTip(null), pressedMs);
+  }
+
   // TODO: tabs navigate to the same section of that tradition's page, with the sliding indicator and the content slide
   return (
     <nav
@@ -73,15 +100,31 @@ export function TraditionSwitcher({ label, hint, items, current }: TraditionSwit
       >
         {items.map((item) => (
           <li key={item.id}>
-            <button
-              type="button"
-              data-label={item.label}
-              aria-current={item.id === current ? "page" : undefined}
-              data-current={item.id === current ? "" : undefined}
-              className="reserve-bold block cursor-pointer rounded-6 px-2.25 py-2 text-btn pointer-coarse:min-h-11 whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink data-current:bg-accent-weak data-current:font-medium data-current:text-ink data-current:shadow-current-underline sm:px-2.75 sm:text-ui-sm"
-            >
-              {item.label}
-            </button>
+            {item.available ? (
+              <button
+                type="button"
+                data-label={item.label}
+                aria-current={item.id === current ? "page" : undefined}
+                data-current={item.id === current ? "" : undefined}
+                className="reserve-bold block cursor-pointer rounded-6 px-2.25 py-2 text-btn pointer-coarse:min-h-11 whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink data-current:bg-accent-weak data-current:font-medium data-current:text-ink data-current:shadow-current-underline sm:px-2.75 sm:text-ui-sm"
+              >
+                {item.label}
+              </button>
+            ) : (
+              <button
+                type="button"
+                data-label={item.label}
+                aria-disabled="true"
+                onMouseEnter={showSoon}
+                onMouseLeave={hideSoon}
+                onFocus={showSoon}
+                onBlur={hideSoon}
+                onClick={pressSoon}
+                className="reserve-bold block cursor-default rounded-6 px-2.25 py-2 text-btn pointer-coarse:min-h-11 whitespace-nowrap text-ink-3 opacity-60 sm:px-2.75 sm:text-ui-sm"
+              >
+                {item.label}
+              </button>
+            )}
           </li>
         ))}
       </ul>
@@ -91,6 +134,16 @@ export function TraditionSwitcher({ label, hint, items, current }: TraditionSwit
       >
         {hint}
       </span>
+      {tip !== null ? (
+        <span
+          style={{ "--soon-x": `${tip}px` } as CSSProperties}
+          className="pointer-events-none absolute bottom-0 left-(--soon-x)"
+        >
+          <Tooltip label={soon} open>
+            <span />
+          </Tooltip>
+        </span>
+      ) : null}
     </nav>
   );
 }

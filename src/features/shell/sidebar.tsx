@@ -7,6 +7,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalS
 import { flushSync } from "react-dom";
 import type { TreeGroup, TreeNode } from "@/content/site-tree";
 import { ChapterGrid } from "@/components/chapter-grid";
+import { PressTooltip } from "@/components/ui/press-tooltip";
 import { Tooltip } from "@/components/ui/tooltip";
 import { useDrawer } from "@/features/shell/drawer";
 import { useActiveChapter } from "@/lib/active-chapter";
@@ -23,6 +24,7 @@ type SidebarText = {
   collapse: string;
   chapterGrid: string;
   chapterOf: string;
+  soon: string;
 };
 
 type SidebarProps = {
@@ -134,6 +136,25 @@ function TreeItem({
     return (
       <li data-id={node.id} data-heading="">
         <p className="px-0.5 pt-3 pb-1 text-label font-medium text-ink-3">{node.label}</p>
+      </li>
+    );
+  }
+  if (node.soon) {
+    return (
+      <li data-id={node.id} data-label={node.label} data-soon="">
+        <div className="flex min-h-8 items-center gap-0.5 rounded-6 pointer-coarse:min-h-11">
+          <span className="w-5.5 flex-none" aria-hidden="true" />
+          <PressTooltip label={text.soon} className="min-w-0 flex-1">
+            <button
+              type="button"
+              aria-disabled="true"
+              className="flex min-w-0 flex-1 cursor-default items-baseline gap-2 rounded-5 py-1.5 pr-2 pl-0.5 text-left text-sidebar text-ink-3 opacity-60 pointer-coarse:py-3"
+            >
+              <span>{node.label}</span>
+              {node.count ? <span className="ml-auto text-ui-2xs tabular-nums">{node.count}</span> : null}
+            </button>
+          </PressTooltip>
+        </div>
       </li>
     );
   }

@@ -49,6 +49,7 @@ export default async function Home() {
         name: doctrineName(locale, id),
         question: page?.lede ?? homeDraftQuestions[locale][id].question,
         href: page ? doctrineHref(locale, id) : null,
+        soon: (await getDoctrinePage(id, "es")) === null ? shell.soon : null,
       };
     }),
   );
@@ -109,7 +110,7 @@ export default async function Home() {
         <HomeFooter
           site={site.title}
           glossary={{ label: home.footer.glossary, href: glossaryHref(locale) }}
-          sources={home.footer.sources}
+          sources={{ label: home.footer.sources, soon: shell.soon }}
           other={{ label: home.footer.other, href: localeHref(other), lang: other }}
         />
         <EdgeRuler

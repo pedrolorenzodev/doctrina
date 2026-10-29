@@ -18,6 +18,7 @@ export const en: UiText = {
     collapse: "Collapse {label}",
     chapterGrid: "Chapters of {book}",
     chapterOf: "{book} {chapter}",
+    soon: "Under construction",
     breadcrumb: "Breadcrumb",
     traditionLabel: "Tradition",
     traditionHint: "When you switch, you stay in the same section.",

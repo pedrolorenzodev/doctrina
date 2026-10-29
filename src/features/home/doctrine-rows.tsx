@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { RevealList } from "@/components/reveal-list";
+import { PressTooltip } from "@/components/ui/press-tooltip";
 import { RowChevron } from "@/features/home/row-chevron";
 
-export type HomeDoctrine = { id: string; name: string; question: string; href: string | null };
+export type HomeDoctrine = { id: string; name: string; question: string; href: string | null; soon: string | null };
 
-const rowClassName =
-  "group/row doctrine-row w-full px-1 pt-4.5 pb-5 text-left no-underline transition-colors duration-150 ease-standard hover:bg-hover sm:px-2 sm:pt-5.5 sm:pb-6";
+const rowLayoutClassName =
+  "doctrine-row w-full px-1 pt-4.5 pb-5 text-left no-underline transition-colors duration-150 ease-standard sm:px-2 sm:pt-5.5 sm:pb-6";
+const rowClassName = `group/row ${rowLayoutClassName} hover:bg-hover`;
 
 function RowBody({ doctrine }: { doctrine: HomeDoctrine }) {
   return (
@@ -26,7 +28,13 @@ export function DoctrineRows({ doctrines }: { doctrines: HomeDoctrine[] }) {
     <RevealList as="ul" className="m-0 mt-7 list-none p-0">
       {doctrines.map((doctrine) => (
         <li key={doctrine.id} className="border-t border-rule last:border-b">
-          {doctrine.href ? (
+          {doctrine.soon ? (
+            <PressTooltip label={doctrine.soon} align="end" className="flex w-full">
+              <button type="button" aria-disabled="true" className={`${rowLayoutClassName} cursor-default opacity-60`}>
+                <RowBody doctrine={doctrine} />
+              </button>
+            </PressTooltip>
+          ) : doctrine.href ? (
             <Link href={doctrine.href} className={rowClassName}>
               <RowBody doctrine={doctrine} />
             </Link>

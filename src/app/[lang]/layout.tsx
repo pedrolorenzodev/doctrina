@@ -42,6 +42,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
     collapse: shell.collapse,
     chapterGrid: shell.chapterGrid,
     chapterOf: shell.chapterOf,
+    soon: shell.soon,
   };
   return (
     <Document lang={locale}>

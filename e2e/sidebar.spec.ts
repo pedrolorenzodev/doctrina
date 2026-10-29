@@ -46,10 +46,10 @@ test("21 quick toggles leave the branch open and every state in agreement", asyn
 
 test("a parent without a page of its own toggles from its label", async ({ page }) => {
   await page.goto(traditionPath);
-  const orthodox = 'li[data-id="eucharist/orthodox"]';
-  await expect(page.locator(`${orthodox} > ul`)).toBeHidden();
-  await page.locator(`${orthodox} > [data-row] [data-label-toggle]`).click();
-  await expect(page.locator(`${orthodox} > ul`)).toBeVisible();
+  const testament = 'li[data-id="bible/ot"]';
+  await expect(page.locator(`${testament} > ul`)).toBeHidden();
+  await page.locator(`${testament} > [data-row] [data-label-toggle]`).click();
+  await expect(page.locator(`${testament} > ul`)).toBeVisible();
 });
 
 test("«Contraer todo menos dónde estoy» keeps the ancestors of the current page", async ({ page }) => {
@@ -156,7 +156,8 @@ test("the branches hold the real entries: 56 Fathers, 27 New Testament books, 7 
   await expect(children("bible/deutero")).toHaveCount(7);
   await expect(children("eucharist/catholic/objections")).toHaveCount(10);
   await expect(page.locator('aside nav li[data-id="eucharist/catholic/objections"] > ul a')).toHaveCount(7);
-  await expect(children("eucharist/orthodox")).toHaveCount(2);
+  await expect(page.locator('aside nav li[data-id="eucharist/orthodox"]')).toHaveAttribute("data-soon", "");
+  await expect(children("eucharist/orthodox")).toHaveCount(0);
 });
 
 test("entries without a page are pressable and do nothing; branches still open", async ({ page }) => {
@@ -164,8 +165,9 @@ test("entries without a page are pressable and do nothing; branches still open",
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   const url = page.url();
-  await page.locator('aside nav li[data-id="reference/sources"] > [data-row] [data-twisty]').click();
-  await page.locator('aside nav li[data-id="reference/sources/0"] button').click();
+  const sources = page.locator('aside nav li[data-id="reference/sources"] button');
+  await expect(sources).toHaveAttribute("aria-disabled", "true");
+  await sources.click({ force: true });
   expect(page.url()).toBe(url);
   const nt = page.locator('aside nav li[data-id="bible/nt"]');
   await nt.locator("> [data-row] button").first().click();

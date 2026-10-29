@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPageViews } from "@/content/get-page-views";
-import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
+import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
@@ -62,7 +62,12 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
         <TraditionSwitcher
           label={text.shell.traditionLabel}
           hint={text.shell.traditionHint}
-          items={traditionIds.map((id) => ({ id, label: traditionName(locale, id) }))}
+          soon={text.shell.soon}
+          items={traditionIds.map((id) => ({
+            id,
+            label: traditionName(locale, id),
+            available: builtTraditions(doctrine).includes(id),
+          }))}
           current={tradition}
         />
         <PageHeader

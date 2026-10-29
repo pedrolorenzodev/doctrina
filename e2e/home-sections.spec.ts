@@ -20,7 +20,8 @@ test("Doctrinas: the five doctrines with their questions, the published one as a
   await expect(rows.first().locator("a")).toHaveAttribute("href", "/es/doctrinas/eucaristia");
   await expect(rows.nth(1).locator("button")).toHaveCount(1);
   const before = await page.url();
-  await rows.nth(1).locator("button").click();
+  await expect(rows.nth(1).locator("button")).toHaveAttribute("aria-disabled", "true");
+  await rows.nth(1).locator("button").click({ force: true });
   expect(page.url()).toBe(before);
   const row = rows.first().locator("a");
   await row.hover();
