@@ -1,0 +1,450 @@
+<title>Fuentes de Doctrina</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: the proposal page (selectors, one live frame of the site with the Fuentes screen in three options, today's tree, what is discarded, what to decide). Tokens are the site's own (src/app/globals.css). */
+:root {
+  --bg: #e8e5de; --ink: #1c1713; --ink-2: #2a2620; --ink-3: #615c54; --prose: #4f4b44;
+  --rule: #c9c5bc; --rule-2: #aeaba4; --accent: #2c4a9e; --accent-weak: rgb(44 74 158 / 0.1); --accent-mid: rgb(44 74 158 / 0.45);
+  --cite: #5f3d0c; --card: rgb(255 255 255 / 0.35); --panel: #efece6;
+  --tip-bg: #1c1713; --tip-ink: #f4f1ea; --hover: rgb(28 23 19 / 0.05);
+  --head: "Newsreader", Georgia, serif; --body: "Source Serif 4", Georgia, serif; --ui: "Work Sans", system-ui, sans-serif;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1); --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+    --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865;
+    --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+  --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865;
+  --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.5 var(--ui); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+button, input { font: inherit; color: inherit; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.num { font-variant-numeric: tabular-nums; }
+
+.doc { max-width: 1240px; margin: 0 auto; padding-block: 40px 120px; }
+.doc-head { max-width: 760px; }
+.doc-head h1 { font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.doc-head .lede { font: italic 300 22px/1.4 var(--head); color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; }
+.doc p.t, .doc-head p { font: 300 17px/1.6 var(--body); color: var(--prose); margin: 14px 0 0; max-width: 68ch; }
+.doc b { font-weight: 500; color: var(--ink); }
+h2 { font: 300 34px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 0; text-wrap: balance; }
+@media (max-width: 640px) { .doc-head h1 { font-size: 36px; } .doc-head .lede { font-size: 19px; } h2 { font-size: 28px; } }
+
+.ctl { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; margin-top: 28px; padding-block: 10px; background: var(--bg); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+@media (max-width: 760px) { .ctl { position: static; } }
+.seg { position: relative; display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.seg button { position: relative; z-index: 1; min-height: 34px; padding: 0 12px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.seg button:hover { background: var(--hover); color: var(--ink); }
+.seg button[aria-pressed="true"] { font-weight: 500; color: var(--ink); background: var(--accent-weak); box-shadow: inset 0 -2px 0 var(--accent); }
+@media (pointer: coarse) { .seg button { min-height: 44px; } }
+.ctl > span { display: flex; align-items: center; max-width: 100%; min-width: 0; }
+.seg { min-width: 0; }
+.ctl .label { font: 500 12.5px var(--ui); color: var(--ink-3); margin-right: 8px; }
+
+.optnote { padding: 18px 0 16px; display: grid; gap: 6px 32px; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; }
+.optnote .on-name { font: 400 22px/1.3 var(--head); }
+.optnote .on-line { grid-column: 1; font: 300 16.5px/1.55 var(--body); color: var(--prose); max-width: 760px; }
+.optnote .on-meta { grid-column: 2; grid-row: 1; font: 400 13px/1.5 var(--ui); color: var(--ink-3); text-align: right; }
+@media (max-width: 760px) { .optnote { grid-template-columns: 1fr; } .optnote .on-meta { grid-column: 1; grid-row: auto; text-align: left; } }
+
+.stage { display: flex; justify-content: center; }
+.frame { position: relative; width: 100%; max-width: 1240px; height: clamp(640px, 84vh, 900px); border: 1px solid var(--rule-2); border-radius: 10px; overflow: hidden; container: site / size; background: var(--bg); transition: max-width 300ms var(--ease-reveal); }
+.frame.phone { max-width: 390px; height: min(800px, 86vh); border-radius: 14px; }
+.site { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; }
+.tb { position: sticky; top: 0; z-index: 40; height: 56px; display: flex; align-items: center; gap: 14px; padding: 0 20px; background: var(--bg); border-bottom: 1px solid var(--rule); }
+.tb .logo { font: 400 23px/1 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); text-decoration: none; }
+.ibtn { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 6px; background: none; color: var(--ink-2); cursor: pointer; }
+.ibtn:hover { background: var(--hover); color: var(--ink); }
+.tb .menu { width: 40px; height: 40px; margin-left: -8px; }
+.tb .sp { flex: 1; }
+.strig { width: min(300px, 40cqw); height: 36px; display: flex; align-items: center; gap: 10px; padding: 0 10px 0 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); font: 400 13.5px var(--ui); color: var(--ink-3); cursor: pointer; }
+.page { max-width: 900px; margin: 0 auto; padding: 34px 28px 90px; }
+.frame.phone .page { padding: 26px 18px 80px; }
+.crumbs { font: 400 13.5px/1.4 var(--ui); color: var(--ink-3); }
+.crumbs b { font-weight: 500; color: var(--ink-2); }
+.page h1 { font: 300 46px/1.08 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 38px 0 0; text-wrap: balance; }
+.page .lede { font: italic 300 21px/1.4 var(--head); color: var(--ink-2); margin: 12px 0 0; max-width: 62ch; text-wrap: pretty; }
+.page .note { font: 400 14px/1.55 var(--ui); color: var(--ink-3); margin: 10px 0 0; max-width: 66ch; }
+.frame.phone .page h1 { font-size: 34px; margin-top: 28px; }
+.frame.phone .page .lede { font-size: 18px; }
+
+.filter { display: block; margin: 34px 0 26px; max-width: 380px; }
+.filter input { width: 100%; height: 40px; padding: 0 12px; border: 1px solid var(--rule-2); border-radius: 6px; background: transparent; font: 400 14px var(--ui); color: var(--ink); transition: background-color 150ms var(--ease-standard); }
+.filter input:hover { background: var(--hover); }
+.filter input::placeholder { color: var(--ink-3); }
+.gh { font: 500 13px/1.3 var(--ui); color: var(--ink-3); margin: 30px 0 4px; display: flex; align-items: baseline; gap: 10px; }
+.gh .n { font-weight: 400; font-variant-numeric: tabular-nums; }
+.gh.sub { margin: 18px 0 0; color: var(--ink-2); font-weight: 500; }
+.gh.first { margin-top: 0; }
+.vh { font: 300 15.5px/1.5 var(--body); color: var(--prose); margin: 2px 0 6px; max-width: 62ch; }
+ul.rows { list-style: none; margin: 0; padding: 0; }
+.row { border-top: 1px solid var(--rule); padding: 14px 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 24px; align-items: baseline; }
+.row:last-child { border-bottom: 1px solid var(--rule); }
+.row .nm { font: 500 15px/1.45 var(--body); }
+.row .nm a { text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size 200ms var(--ease-standard); }
+.row .nm a:hover { background-size: 100% 1px; color: var(--accent); }
+.row .by { grid-column: 1; font: 400 14px/1.5 var(--ui); color: var(--ink-3); }
+.row .dt { grid-column: 2; grid-row: 1; font: 500 15px/1.45 var(--ui); color: var(--ink); text-align: right; display: inline-flex; align-items: baseline; gap: 9px; justify-self: end; }
+.row .dt::before { content: ""; width: 1px; height: 12px; background: var(--rule-2); flex: none; align-self: center; }
+.row .ed { grid-column: 1 / -1; font: 400 13px/1.5 var(--ui); color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: center; margin-top: 2px; }
+.chip { display: inline-flex; align-items: center; height: 20px; padding: 0 7px; border: 1px solid var(--rule); border-radius: 4px; font: 500 11.5px var(--ui); color: var(--ink-3); }
+.chip.ex { color: var(--cite); border-color: var(--cite); }
+.empty { font: 400 14px/1.5 var(--ui); color: var(--ink-3); margin: 18px 0 0; }
+
+/* B */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
+.chipbtn { min-height: 32px; padding: 0 11px; border: 1px solid var(--rule-2); border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: background-color 150ms var(--ease-standard); }
+.chipbtn:hover { background: var(--hover); color: var(--ink); }
+.chipbtn[aria-pressed="true"] { background: var(--accent-weak); border-color: var(--accent); color: var(--ink); font-weight: 500; }
+.chiplab { font: 500 12.5px var(--ui); color: var(--ink-3); margin: 14px 0 6px; }
+@media (pointer: coarse) { .chipbtn { min-height: 44px; } }
+.tablewrap { margin-top: 24px; overflow-x: auto; }
+table.ed { width: 100%; border-collapse: collapse; min-width: 760px; }
+table.ed th { text-align: left; font: 500 12.5px/1.3 var(--ui); color: var(--ink-3); padding: 0 14px 10px 0; border-bottom: 1px solid var(--rule-2); white-space: nowrap; }
+table.ed th button { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; }
+table.ed th button:hover { color: var(--ink); }
+table.ed th button[aria-pressed="true"] { color: var(--ink); }
+table.ed td { padding: 13px 14px 13px 0; border-bottom: 1px solid var(--rule); vertical-align: baseline; font: 400 14px/1.45 var(--ui); color: var(--ink-2); }
+table.ed td.w { font: 500 15px/1.45 var(--body); color: var(--ink); min-width: 220px; }
+table.ed td.w a { text-decoration: none; }
+table.ed td.w a:hover { color: var(--accent); }
+table.ed td.d { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.frame.phone table.ed { min-width: 0; }
+.cardrow { border-top: 1px solid var(--rule); padding: 14px 0; }
+.cardrow:last-child { border-bottom: 1px solid var(--rule); }
+.cardrow .nm { font: 500 15px/1.45 var(--body); }
+.cardrow dl { margin: 6px 0 0; display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 2px 12px; font: 400 13.5px/1.5 var(--ui); color: var(--ink-2); }
+.cardrow dt { color: var(--ink-3); }
+.cardrow dd { margin: 0; }
+
+/* C */
+.ruler { position: relative; margin: 34px 0 6px; height: 150px; }
+.ruler .axis { position: absolute; left: 0; right: 0; bottom: 22px; height: 1px; background: var(--rule-2); }
+.ruler .tick { position: absolute; bottom: 0; font: 400 12px var(--ui); color: var(--ink-3); transform: translateX(-50%); font-variant-numeric: tabular-nums; }
+.ruler .tick::before { content: ""; position: absolute; left: 50%; bottom: 17px; height: 5px; width: 1px; background: var(--rule-2); }
+.ruler .mk { position: absolute; width: 3px; border-radius: 1px; background: var(--ink-3); transform: translateX(-50%); bottom: 23px; transition: background-color 200ms var(--ease-standard), transform 200ms var(--ease-standard); cursor: pointer; border: 0; padding: 0; }
+.ruler .mk.t-n { background: var(--ink-3); }
+.ruler .mk.t-c { background: var(--cite); }
+.ruler .mk[data-hot], .ruler .mk:hover { background: var(--accent); transform: translateX(-50%) scale(1.3, 1); }
+.ruler .mk::after { content: ""; position: absolute; inset: -4px -8px; }
+.tip { position: absolute; z-index: 5; bottom: 100%; margin-bottom: 8px; transform: translateX(-50%); padding: 6px 10px; border-radius: 6px; background: var(--tip-bg); color: var(--tip-ink); font: 400 12.5px/1.4 var(--ui); white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 150ms var(--ease-standard); }
+.tip.on { opacity: 1; }
+.tip b { color: inherit; font-weight: 600; }
+.legend { margin-top: 22px !important; display: flex; flex-wrap: wrap; gap: 4px 18px; font: 400 13px var(--ui); color: var(--ink-3); margin: 0 0 10px; }
+.legend i { display: inline-block; width: 3px; height: 12px; margin-right: 7px; vertical-align: -2px; border-radius: 1px; }
+.crow { border-top: 1px solid var(--rule); padding: 16px 0; display: grid; grid-template-columns: minmax(0, 1fr) 104px minmax(160px, 260px); gap: 6px 24px; align-items: baseline; transition: background-color 200ms var(--ease-standard); }
+.crow:last-child { border-bottom: 1px solid var(--rule); }
+.crow[data-hot] { background: var(--hover); }
+.crow .nm { font: 500 15px/1.45 var(--body); }
+.crow .nm a { text-decoration: none; }
+.crow .nm a:hover { color: var(--accent); }
+.crow .wk { grid-column: 1; font: 400 14px/1.5 var(--ui); color: var(--ink-3); }
+.crow .d { grid-column: 2; grid-row: 1; font: 500 15px var(--ui); font-variant-numeric: tabular-nums; }
+.crow .vo { grid-column: 3; grid-row: 1; font: 400 13.5px var(--ui); color: var(--ink-3); }
+.crow .ed { grid-column: 1 / -1; font: 400 13px/1.5 var(--ui); color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 2px 10px; align-items: center; }
+@media (max-width: 640px), (max-width: 700px) { }
+.frame.phone .crow { grid-template-columns: minmax(0, 1fr) auto; }
+.frame.phone .crow .d { grid-column: 2; }
+.frame.phone .crow .vo { grid-column: 1 / -1; grid-row: auto; }
+
+/* proposal sections */
+.cmp { margin-top: 96px; }
+.cmp .sub { font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); margin-top: 10px; max-width: 620px; }
+.cmp-list { list-style: none; margin: 28px 0 0; padding: 0; }
+.cmp-list > li { border-top: 1px solid var(--rule); padding: 28px 0 30px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 10px 48px; }
+.cmp-list > li:last-child { border-bottom: 1px solid var(--rule); }
+.cmp-list .c-name { font: 400 25px/1.2 var(--head); }
+.cmp-list .c-name small { display: block; margin-top: 6px; font: 400 13px/1.45 var(--ui); color: var(--ink-3); }
+.cmp-list dl { margin: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px 24px; }
+.cmp-list dt { font: 500 13px/1.6 var(--ui); color: var(--ink-3); }
+.cmp-list dd { margin: 0; font: 300 16.5px/1.55 var(--body); color: var(--ink-2); max-width: 680px; }
+@media (max-width: 860px) { .cmp-list > li { grid-template-columns: 1fr; } .cmp-list dl { grid-template-columns: 1fr; gap: 2px; } .cmp-list dd { margin-bottom: 10px; } }
+.today { margin-top: 24px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px 48px; align-items: start; }
+@media (max-width: 860px) { .today { grid-template-columns: 1fr; } }
+.tree { border: 1px solid var(--rule); border-radius: 8px; background: var(--panel); padding: 14px 14px 10px 18px; max-height: 360px; overflow-y: auto; scrollbar-width: thin; }
+.tree .g { font: 500 12.5px var(--ui); color: var(--ink-3); margin: 0 0 4px; }
+.tree .b { font: 400 14px/1.35 var(--ui); color: var(--ink-2); padding: 5px 0 5px 6px; }
+.tree .l { font: 400 14px/1.35 var(--ui); color: var(--ink-2); padding: 5px 0 5px 22px; border-left: 1px solid var(--rule); margin-left: 12px; }
+.tree .l.hl { color: var(--ink); background: var(--accent-weak); border-radius: 0 4px 4px 0; }
+ul.plain { margin: 12px 0 0; padding: 0; list-style: none; }
+ul.plain li { border-top: 1px solid var(--rule); padding: 12px 0; font: 300 16.5px/1.55 var(--body); color: var(--ink-2); max-width: 760px; }
+ul.plain li:last-child { border-bottom: 1px solid var(--rule); }
+ol.decide { margin: 18px 0 0; padding: 0; list-style: none; counter-reset: d; max-width: 780px; }
+ol.decide li { counter-increment: d; display: grid; grid-template-columns: 36px minmax(0, 1fr); border-top: 1px solid var(--rule); padding: 16px 0; font: 300 17px/1.6 var(--body); color: var(--ink-2); }
+ol.decide li::before { content: counter(d); font: 500 15px/1.75 var(--ui); color: var(--ink-3); }
+ol.decide li:last-child { border-bottom: 1px solid var(--rule); }
+@media (prefers-reduced-motion: reduce) { * { transition-duration: 0.01ms !important; } }
+</style>
+
+<div class="doc">
+  <header class="doc-head">
+    <h1>La pantalla de Fuentes</h1>
+    <p class="lede">Hoy el árbol tiene un grupo «Fuentes» con 44 filas que no llevan a ningún lado. Tres formas de que esa pantalla exista.</p>
+    <p>Las tres usan las 44 fuentes reales del registro (<b>sources.extra.json</b>), con su autor, fecha, edición y licencia. Cada una está viva abajo, en escritorio y en teléfono. Las fechas y ediciones largas están abreviadas para que quepan; el dato completo sigue en el registro.</p>
+  </header>
+
+  <div class="ctl" role="group" aria-label="Controles de la propuesta">
+    <span><span class="label">Opción</span><span class="seg" id="seg-opt"></span></span>
+    <span><span class="label">Tamaño</span><span class="seg" id="seg-dev"></span></span>
+    <span><span class="label">Tema</span><span class="seg" id="seg-theme"></span></span>
+  </div>
+  <div class="optnote" id="optnote"></div>
+  <div class="stage"><div class="frame" id="frame"><div class="site" id="site"></div></div></div>
+
+  <section class="cmp">
+    <h2>Lo que hay hoy</h2>
+    <p class="sub">El grupo «Fuentes» del árbol y el enlace «Fuentes» del pie de la portada existen, y ninguno abre una página.</p>
+    <div class="today">
+      <div class="tree" aria-label="El árbol de hoy" id="todaytree"></div>
+      <div>
+        <p class="t" style="margin-top:0">Las 44 filas salen en el orden en que están cargadas en el registro. Las obras de Agustín (siete) aparecen separadas unas de otras y la Divina Liturgia de San Juan Crisóstomo queda lejos de las Homilías de Juan Crisóstomo. La lista no dice cuáles son documentos de una tradición y cuáles no.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cmp">
+    <h2>Las tres opciones</h2>
+    <ul class="cmp-list">
+      <li><div class="c-name">A · Por quién habla<small>La lista agrupada</small></div>
+        <dl>
+          <dt>Dónde va</dt><dd>La página «Fuentes» (una sola entrada en el árbol). Grupos: los primeros cristianos (neutral, por autor) y una sección por tradición con sus propios documentos.</dd>
+          <dt>De dónde viene</dt><dd>Los índices de historia ya construidos (Padres, Concilios) y el principio del sitio: cada tradición habla con sus palabras, los Padres no se asignan a ninguna.</dd>
+          <dt>Qué cuesta</dt><dd>Casi nada: es el componente de los índices con grupos por tradición. Obliga a decidir bajo qué grupo va lo que reconocen varias tradiciones (Calcedonia, las liturgias bizantinas, Marburgo).</dd>
+        </dl></li>
+      <li><div class="c-name">B · Por edición<small>La tabla de lo que se cita</small></div>
+        <dl>
+          <dt>Dónde va</dt><dd>La misma página. Una tabla con obra, autor, fecha, edición y licencia, con filtros por tipo y por licencia y orden por fecha, autor o edición.</dd>
+          <dt>De dónde viene</dt><dd>La regla del proyecto: ninguna cita sin edición. Esta opción pone la edición y la licencia en primer plano, como en la ventana de cita.</dd>
+          <dt>Qué cuesta</dt><dd>Un componente nuevo (tabla ordenable) y su versión en teléfono (filas apiladas). Pierde la agrupación por tradición, que queda como filtro.</dd>
+        </dl></li>
+      <li><div class="c-name">C · Por fecha<small>La línea de tiempo y la lista</small></div>
+        <dl>
+          <dt>Dónde va</dt><dd>La misma página. Una regla del año 50 a hoy con una marca por fuente (gris los Padres, ocre las fuentes de una tradición), y debajo la lista por siglo. Pasar por una marca ilumina su fila y al revés.</dd>
+          <dt>De dónde viene</dt><dd>La lista fechada de «Fuentes citadas» (04) y la regla de la portada: se reutilizan los dos patrones ya aprobados, la fila de tres columnas y la marca que se agranda al pasar.</dd>
+          <dt>Qué cuesta</dt><dd>Es la más cara: la regla es un componente más y en teléfono se aprieta (43 marcas en 358 px). Es la que muestra de un vistazo cuántas fuentes son de los primeros cristianos y cuántas de cada tradición.</dd>
+        </dl></li>
+    </ul>
+  </section>
+
+  <section class="cmp">
+    <h2>Lo que descarté</h2>
+    <ul class="plain">
+      <li><b>Una grilla de tarjetas</b> con una portada por obra: tarjetas idénticas que no dicen nada que la fila no diga, y ninguna de estas obras tiene una portada que valga la pena mostrar.</li>
+      <li><b>Un buscador solo</b>, con la página vacía hasta escribir: la gente que llega a Fuentes quiere ver qué hay antes de saber qué buscar.</li>
+      <li><b>El orden alfabético puro</b> de A a Z: separaría las siete obras de Agustín de las de otros Padres sin ninguna razón que el lector pueda usar.</li>
+      <li><b>Una fila por cada edición</b> de la Biblia y por cada obra de los 56 Padres: eso ya vive en el lector de la Biblia y en las páginas de cada Padre. Esta pantalla lista lo que las doctrinas citan.</li>
+      <li><b>Un «destacado»</b> o un orden por popularidad: el sitio nunca pondría una fuente por encima de otra.</li>
+    </ul>
+  </section>
+
+  <section class="cmp">
+    <h2>Lo que hay que decidir</h2>
+    <ol class="decide">
+      <li>¿A, B o C? Se pueden combinar: por ejemplo A con la edición visible en cada fila (como ya está), sin la regla.</li>
+      <li>El árbol: propongo que «Fuentes» sea una sola entrada que abre esta página y que las 44 filas inertes desaparezcan del árbol, porque 44 filas planas lo alargan y no ayudan a ubicarse. ¿Estás de acuerdo, o querés autores bajo «Fuentes» en el árbol?</li>
+      <li>Agrupar por autor cuando una obra tiene hermanas (Agustín tiene siete). En A está hecho solo para los Padres. ¿También dentro de una tradición (Lutero tiene tres obras)?</li>
+      <li>Adónde lleva cada fila: hoy la obra completa en el lector todavía no existe. ¿Fila inerte con su TODO hasta que esté el lector, como el resto del sitio?</li>
+    </ol>
+    <p class="t" style="margin-top:28px"><b>Decidido por el agente, para que lo veas:</b> los nombres de grupo («Los primeros cristianos» es el nombre de la sección neutral del sitio), el reparto de lo que reconocen varias tradiciones, las fechas y ediciones abreviadas, y que la Sagrada Escritura quede fuera de la regla de C porque el registro no le da fecha.</p>
+  </section>
+</div>
+
+<script>
+const SOURCES = [{"id": "didache", "k": "church-father", "t": "Didaché (Doctrina de los Doce Apóstoles)", "a": "Anónimo", "d": "c. 50–120", "rb": [], "lic": "public-domain", "ed": "ANF vol. 7", "ey": 1885, "y": 50, "ye": 120}, {"id": "justin-dialogue", "k": "church-father", "t": "Diálogo con Trifón", "a": "Justino Mártir", "d": "c. 155–160", "rb": [], "lic": "public-domain", "ed": "ANF vol. 1", "ey": 1885, "y": 155, "ye": 160}, {"id": "irenaeus-against-heresies", "k": "church-father", "t": "Contra las herejías", "a": "Ireneo de Lyon", "d": "c. 180", "rb": [], "lic": "public-domain", "ed": "ANF vol. 1", "ey": 1885, "y": 180, "ye": null}, {"id": "tertullian-against-marcion", "k": "church-father", "t": "Contra Marción", "a": "Tertuliano", "d": "c. 207–208", "rb": [], "lic": "public-domain", "ed": "ANF vol. 3", "ey": 1885, "y": 207, "ye": 208}, {"id": "cyril-jerusalem-mystagogical", "k": "church-father", "t": "Catequesis mistagógicas (Catequesis 19–23)", "a": "Cirilo de Jerusalén (atribuido)", "d": "c. 350–390", "rb": [], "lic": "public-domain", "ed": "NPNF2 vol. 7", "ey": 1890, "y": 350, "ye": 390}, {"id": "ambrose-on-the-mysteries", "k": "church-father", "t": "Sobre los misterios", "a": "Ambrosio de Milán", "d": "c. 387–391", "rb": [], "lic": "public-domain", "ed": "NPNF2 vol. 10", "ey": 1890, "y": 387, "ye": 391}, {"id": "chrysostom-hom-hebrews", "k": "church-father", "t": "Homilías sobre Hebreos", "a": "Juan Crisóstomo", "d": "c. 403–404", "rb": [], "lic": "public-domain", "ed": "NPNF1 vol. 14", "ey": 1890, "y": 403, "ye": 404}, {"id": "augustine-on-christian-doctrine", "k": "church-father", "t": "Sobre la doctrina cristiana", "a": "Agustín de Hipona", "d": "c. 396–397", "rb": [], "lic": "public-domain", "ed": "NPNF1 vol. 2", "ey": 1890, "y": 396, "ye": 397}, {"id": "theodoret-eranistes", "k": "church-father", "t": "Eranistes (Diálogos)", "a": "Teodoreto de Ciro", "d": "c. 447", "rb": [], "lic": "public-domain", "ed": "NPNF2 vol. 3", "ey": 1890, "y": 447, "ye": null}, {"id": "john-damascus-exact-exposition", "k": "church-father", "t": "Exposición exacta de la fe ortodoxa", "a": "Juan Damasceno", "d": "c. 743", "rb": [], "lic": "public-domain", "ed": "NPNF2 vol. 9", "ey": 1890, "y": 743, "ye": null}, {"id": "chrysostom-hom-john", "k": "church-father", "t": "Homilías sobre el Evangelio de Juan", "a": "Juan Crisóstomo", "d": "c. 391", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, First Series, Vol. 14", "ey": 1889, "y": 391, "ye": null}, {"id": "augustine-tractates-john", "k": "church-father", "t": "Tratados sobre el Evangelio de Juan", "a": "Agustín de Hipona", "d": "c. 406–420", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, First Series, Vol. 7", "ey": 1888, "y": 406, "ye": 420}, {"id": "augustine-contra-faustum", "k": "church-father", "t": "Réplica a Fausto el maniqueo", "a": "Agustín de Hipona", "d": "c. 400", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, First Series, Vol. 4", "ey": 1887, "y": 400, "ye": null}, {"id": "aquinas-summa", "k": "theologian", "t": "Suma teológica", "a": "Tomás de Aquino", "d": "1265–1274", "rb": ["catholic"], "lic": "public-domain", "ed": "Summa Theologica, 2nd rev. ed.", "ey": 1920, "y": 1265, "ye": 1274}, {"id": "ecclesia-de-eucharistia", "k": "papal", "t": "Ecclesia de Eucharistia (encíclica)", "a": "Juan Pablo II", "d": "2003", "rb": ["catholic"], "lic": "fair-use-excerpt", "ed": "Official vatican.va texts", "ey": 2003, "y": 2003, "ye": null}, {"id": "florence-cantate-domino", "k": "council", "t": "Concilio de Florencia, Bula de unión con los coptos (Cantate Domino)", "a": "Concilio de Florencia (Eugenio IV)", "d": "1442", "rb": ["catholic"], "lic": "fair-use-excerpt", "ed": "Decrees of the Ecumenical Councils", "ey": 1990, "y": 1442, "ye": null}, {"id": "liturgy-chrysostom", "k": "liturgy", "t": "Divina Liturgia de San Juan Crisóstomo", "a": "Tradición bizantina (atribuida a San Juan Crisóstomo)", "d": "siglos IV–V", "rb": ["orthodox", "catholic"], "lic": "public-domain", "ed": "The Liturgies of SS. Mark, James, Clement, Chrysostom, and Basil, and the Church", "ey": 1890, "y": 400, "ye": null}, {"id": "liturgy-basil", "k": "liturgy", "t": "Divina Liturgia de San Basilio el Grande", "a": "Atribuida a San Basilio el Grande", "d": "siglo IV", "rb": ["orthodox", "catholic"], "lic": "public-domain", "ed": "The Liturgies of SS. Mark, James, Clement, Chrysostom, and Basil, and the Church", "ey": 1890, "y": 350, "ye": null}, {"id": "hapgood-service-book", "k": "liturgy", "t": "Libro de servicio de la Santa Iglesia Ortodoxa Católica Apostólica", "a": "Isabel F. Hapgood (comp. y trad.)", "d": "1906", "rb": ["orthodox"], "lic": "public-domain", "ed": "Service Book of the Holy Orthodox-Catholic Apostolic Church, revised edition", "ey": 1922, "y": 1906, "ye": null}, {"id": "cabasilas-divine-liturgy", "k": "theologian", "t": "Comentario a la Divina Liturgia", "a": "Nicolás Cabasilas", "d": "c. 1350", "rb": ["orthodox"], "lic": "fair-use-excerpt", "ed": "A Commentary on the Divine Liturgy", "ey": 1960, "y": 1350, "ye": null}, {"id": "philaret-longer-catechism", "k": "catechism", "t": "Catecismo extenso de la Iglesia ortodoxa, católica y oriental", "a": "San Filareto (Drozdov) de Moscú", "d": "1830", "rb": ["orthodox"], "lic": "public-domain", "ed": "The Doctrine of the Russian Church", "ey": 1845, "y": 1830, "ye": null}, {"id": "mogila-orthodox-confession", "k": "confession", "t": "Confesión ortodoxa de la Iglesia católica y apostólica oriental", "a": "San Pedro Mogila de Kiev (revisada por Meletios Syrigos)", "d": "1640", "rb": ["orthodox"], "lic": "public-domain", "ed": "The Orthodox Confession of the Catholic and Apostolic Eastern Church", "ey": null, "y": 1640, "ye": null}, {"id": "cyprian-on-the-lapsed", "k": "church-father", "t": "Sobre los caídos", "a": "San Cipriano de Cartago", "d": "c. 251", "rb": [], "lic": "public-domain", "ed": "Ante-Nicene Fathers, vol. 5", "ey": 1886, "y": 251, "ye": null}, {"id": "apostolic-constitutions", "k": "church-father", "t": "Constituciones apostólicas", "a": "Compilación siria anónima", "d": "c. 380", "rb": [], "lic": "public-domain", "ed": "Ante-Nicene Fathers, vol. 7", "ey": 1886, "y": 380, "ye": null}, {"id": "augustine-merits-remission", "k": "church-father", "t": "Sobre los méritos y el perdón de los pecados, y el bautismo de los niños", "a": "Agustín de Hipona", "d": "412", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, First Series, vol. 5", "ey": 1887, "y": 412, "ye": null}, {"id": "apology-augsburg", "k": "confession", "t": "Apología de la Confesión de Augsburgo", "a": "Felipe Melanchthon", "d": "1531", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1531, "ye": null}, {"id": "smalcald-articles", "k": "confession", "t": "Artículos de Esmalcalda", "a": "Martín Lutero", "d": "1537", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1537, "ye": null}, {"id": "large-catechism", "k": "catechism", "t": "Catecismo Mayor", "a": "Martín Lutero", "d": "1529", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1529, "ye": null}, {"id": "formula-concord-epitome", "k": "confession", "t": "Fórmula de Concordia, Epítome", "a": "Jakob Andreae, Martín Chemnitz y otros", "d": "1577", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1577, "ye": null}, {"id": "formula-concord-sd", "k": "confession", "t": "Fórmula de Concordia, Declaración Sólida", "a": "Jakob Andreae, Martín Chemnitz y otros", "d": "1577", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1577, "ye": null}, {"id": "luther-confession-lords-supper-1528", "k": "theologian", "t": "Confesión acerca de la Cena de Cristo (Gran Confesión)", "a": "Martín Lutero", "d": "1528", "rb": ["lutheran"], "lic": "public-domain", "ed": "D. Martin Luthers Werke", "ey": "1909", "y": 1528, "ye": null}, {"id": "marburg-articles", "k": "confession", "t": "Artículos de Marburgo", "a": "Martín Lutero, Ulrico Zuinglio y otros", "d": "1529", "rb": ["lutheran", "reformed"], "lic": "fair-use-excerpt", "ed": "German History in Documents and Images", "ey": null, "y": 1529, "ye": null}, {"id": "belgic", "k": "confession", "t": "Confesión Belga", "a": "Guido de Brès", "d": "1561", "rb": ["reformed"], "lic": "public-domain", "ed": "Schaff, The Creeds of Christendom, vol. 3", "ey": 1877, "y": 1561, "ye": null}, {"id": "calvin-institutes", "k": "theologian", "t": "Institución de la religión cristiana", "a": "Juan Calvino", "d": "1559", "rb": ["reformed"], "lic": "public-domain", "ed": "Institutes of the Christian Religion", "ey": 1845, "y": 1559, "ye": null}, {"id": "westminster-larger-catechism", "k": "catechism", "t": "Catecismo Mayor de Westminster", "a": "Asamblea de Westminster", "d": "1647", "rb": ["reformed"], "lic": "public-domain", "ed": "Orthodox Presbyterian Church text", "ey": null, "y": 1647, "ye": null}, {"id": "augustine-letters", "k": "church-father", "t": "Cartas", "a": "Agustín de Hipona", "d": "c. 386–430", "rb": [], "lic": "public-domain", "ed": "NPNF, First Series, vol. 1", "ey": 1886, "y": 386, "ye": 430}, {"id": "athanasius-on-the-incarnation", "k": "church-father", "t": "Sobre la Encarnación del Verbo", "a": "Atanasio de Alejandría", "d": "c. 318–337", "rb": [], "lic": "public-domain", "ed": "NPNF, Second Series, vol. 4", "ey": 1892, "y": 318, "ye": 337}, {"id": "chalcedon-definition", "k": "council", "t": "Definición de fe del Concilio de Calcedonia", "a": "Concilio de Calcedonia", "d": "451", "rb": ["catholic", "orthodox", "lutheran", "reformed", "baptist"], "lic": "public-domain", "ed": "NPNF, Second Series, vol. 14", "ey": 1900, "y": 451, "ye": null}, {"id": "abstract-of-principles", "k": "confession", "t": "Principios Abstractos", "a": "Basil Manly Jr. (Seminario Teológico Bautista del Sur)", "d": "1858", "rb": ["baptist"], "lic": "public-domain", "ed": "Abstract of Principles", "ey": 1858, "y": 1858, "ye": null}, {"id": "new-hampshire-1833", "k": "confession", "t": "Confesión de Fe de New Hampshire", "a": "John Newton Brown y la Convención Bautista de New Hampshire", "d": "1853", "rb": ["baptist"], "lic": "public-domain", "ed": "New Hampshire Baptist Confession", "ey": 1853, "y": 1853, "ye": null}, {"id": "augustine-contra-adimantum", "k": "church-father", "t": "Contra Adimanto, discípulo de Manes", "a": "Agustín de Hipona", "d": "c. 394", "rb": [], "lic": "public-domain", "ed": "Patrologia Latina 42", "ey": 1845, "y": 394, "ye": null}, {"id": "augustine-expositions-psalms", "k": "church-father", "t": "Comentarios a los Salmos", "a": "Agustín de Hipona", "d": "c. 392–422", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, Series I, vol. 8", "ey": 1888, "y": 392, "ye": 422}, {"id": "gelasius-two-natures", "k": "church-father", "t": "Sobre las dos naturalezas en Cristo, contra Eutiques y Nestorio", "a": "Papa Gelasio I", "d": "c. 492–496", "rb": [], "lic": "public-domain", "ed": "Latin text in A. Thiel, Epistolae Romanorum Pontificum", "ey": 1868, "y": 492, "ye": 496}, {"id": "bible", "k": "scripture", "t": "Sagrada Escritura", "a": "Biblia", "d": "", "rb": ["catholic", "orthodox", "lutheran", "reformed", "baptist"], "lic": "public-domain", "ed": "Reina-Valera 1909", "ey": null, "y": 0, "ye": null}];
+const KIND = { "church-father": "Padres", confession: "Confesiones", catechism: "Catecismos", liturgy: "Liturgias", council: "Concilios", theologian: "Teólogos", papal: "Documentos papales", scripture: "Escritura" };
+const TRAD = { catholic: "Católica", orthodox: "Ortodoxa", lutheran: "Luterana", reformed: "Reformada", baptist: "Bautista" };
+const LIC = { "public-domain": "Dominio público", "fair-use-excerpt": "Extracto citado" };
+const OPTS = [
+  ["hoy", "Hoy"], ["A", "A · Por quién habla"], ["B", "B · Por edición"], ["C", "C · Por fecha"]
+];
+const NOTES = {
+  A: ["A · Por quién habla", "La lista, agrupada por quién habla: los primeros cristianos (por autor, sin asignarlos a ninguna tradición) y cada tradición con sus propios documentos.", "Reutiliza los índices de historia"],
+  B: ["B · Por edición", "Una tabla que pone en primer plano la edición y la licencia de cada fuente. Filtros por tipo y por licencia; orden por fecha, autor o edición.", "Un componente nuevo"],
+  C: ["C · Por fecha", "Una regla del año 50 a hoy con una marca por fuente, y debajo la lista por siglo. Pasar por una marca ilumina su fila, y pasar por una fila ilumina su marca.", "Reutiliza dos patrones aprobados"]
+};
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const fold = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+let state = { opt: "A", dev: "desktop", q: "", kind: "all", lic: "all", sort: "date", hot: null };
+try { const s = JSON.parse(localStorage.getItem("fuentes-prop") || "{}"); if (["A","B","C"].includes(s.opt)) state.opt = s.opt; if (["desktop","phone"].includes(s.dev)) state.dev = s.dev; } catch (e) {}
+const save = () => { try { localStorage.setItem("fuentes-prop", JSON.stringify({ opt: state.opt, dev: state.dev })); } catch (e) {} };
+
+function voice(s) {
+  const rb = s.rb;
+  if (s.k === "scripture" || rb.length === 5) return "Todas las tradiciones";
+  if (rb.length === 0) return "Los primeros cristianos";
+  if (rb.length === 1) return TRAD[rb[0]];
+  return "Varias tradiciones";
+}
+const voiceOrder = ["Los primeros cristianos", "Católica", "Ortodoxa", "Luterana", "Reformada", "Bautista", "Varias tradiciones", "Todas las tradiciones"];
+const voiceNote = {
+  "Los primeros cristianos": "Sección neutral: estos textos no se asignan a ninguna tradición de hoy.",
+  "Varias tradiciones": "Documentos que reconocen dos o más tradiciones, cada una por su cuenta.",
+  "Todas las tradiciones": "Lo que reconocen las cinco tradiciones que recoge el sitio."
+};
+const matches = (s, q) => { const w = fold(q).split(/\s+/).filter(Boolean); const hay = fold(`${s.t} ${s.a} ${s.ed} ${s.d}`); return w.every((x) => hay.includes(x)); };
+const editionLine = (s) => `<span>${esc(s.ed)}${s.ey ? ", " + s.ey : ""}</span><span class="chip${s.lic === "fair-use-excerpt" ? " ex" : ""}">${LIC[s.lic]}</span>`;
+const link = (s) => `<a href="#${s.id}" onclick="return false">${esc(s.t)}</a>`;
+
+function viewA() {
+  const rows = SOURCES.filter((s) => matches(s, state.q));
+  let h = `<label class="filter"><span style="position:absolute;left:-9999px">Filtrar por nombre</span><input id="q" type="search" value="${esc(state.q)}" placeholder="Filtrar por obra, autor o edición" autocomplete="off" spellcheck="false"></label>`;
+  let first = true;
+  for (const v of voiceOrder) {
+    const g = rows.filter((s) => voice(s) === v);
+    if (!g.length) continue;
+    h += `<h3 class="gh${first ? " first" : ""}">${esc(v)} <span class="n">${g.length}</span></h3>`;
+    first = false;
+    if (voiceNote[v]) h += `<p class="vh">${esc(voiceNote[v])}</p>`;
+    if (v === "Los primeros cristianos") {
+      const authors = [...new Set(g.map((s) => s.a))];
+      const firstYear = (a) => Math.min(...g.filter((s) => s.a === a).map((s) => s.y));
+      authors.sort((a, b) => firstYear(a) - firstYear(b));
+      for (const a of authors) {
+        const ws = g.filter((s) => s.a === a).sort((x, y) => x.y - y.y);
+        if (ws.length > 1) h += `<h4 class="gh sub">${esc(a)} <span class="n">${ws.length} obras</span></h4>`;
+        h += `<ul class="rows">${ws.map((s) => rowA(s, ws.length === 1)).join("")}</ul>`;
+      }
+    } else {
+      h += `<ul class="rows">${g.sort((x, y) => x.y - y.y).map((s) => rowA(s, true)).join("")}</ul>`;
+    }
+  }
+  if (!rows.length) h += `<p class="empty">Ninguna fuente coincide con «${esc(state.q.trim())}».</p>`;
+  return h;
+}
+function rowA(s, showAuthor) {
+  return `<li class="row"><span class="nm">${link(s)}</span>${s.d ? `<span class="dt num">${esc(s.d)}</span>` : ""}${showAuthor ? `<span class="by">${esc(s.a)}</span>` : ""}<span class="ed">${editionLine(s)}</span></li>`;
+}
+
+function viewB() {
+  const kinds = ["all", ...Object.keys(KIND).filter((k) => SOURCES.some((s) => s.k === k))];
+  let rows = SOURCES.filter((s) => matches(s, state.q) && (state.kind === "all" || s.k === state.kind) && (state.lic === "all" || s.lic === state.lic));
+  const cmp = { date: (a, b) => a.y - b.y, author: (a, b) => a.a.localeCompare(b.a, "es") || a.y - b.y, edition: (a, b) => a.ed.localeCompare(b.ed, "es") || a.y - b.y };
+  rows = rows.slice().sort(cmp[state.sort]);
+  const th = (key, label) => `<th scope="col"><button type="button" data-sort="${key}" aria-pressed="${state.sort === key}">${label}${state.sort === key ? " ↓" : ""}</button></th>`;
+  let h = `<label class="filter" style="margin-bottom:6px"><span style="position:absolute;left:-9999px">Filtrar</span><input id="q" type="search" value="${esc(state.q)}" placeholder="Filtrar por obra, autor o edición" autocomplete="off" spellcheck="false"></label>`;
+  h += `<div class="chiplab">Tipo</div><div class="chips">${kinds.map((k) => `<button type="button" class="chipbtn" data-kind="${k}" aria-pressed="${state.kind === k}">${k === "all" ? "Todos" : KIND[k]}</button>`).join("")}</div>`;
+  h += `<div class="chiplab">Licencia de la edición</div><div class="chips">${["all", "public-domain", "fair-use-excerpt"].map((k) => `<button type="button" class="chipbtn" data-lic="${k}" aria-pressed="${state.lic === k}">${k === "all" ? "Todas" : LIC[k]}</button>`).join("")}</div>`;
+  if (state.dev === "phone") {
+    h += `<div class="tablewrap" style="margin-top:18px">${rows.map((s) => `<div class="cardrow"><div class="nm">${link(s)}</div><dl><dt>Autor</dt><dd>${esc(s.a)}</dd><dt>Fecha</dt><dd class="num">${esc(s.d)}</dd><dt>Edición</dt><dd>${esc(s.ed)}${s.ey ? ", " + s.ey : ""}</dd><dt>Licencia</dt><dd>${LIC[s.lic]}</dd></dl></div>`).join("")}</div>`;
+  } else {
+    h += `<div class="tablewrap"><table class="ed"><thead><tr><th scope="col">Obra</th>${th("author", "Autor")}${th("date", "Fecha")}${th("edition", "Edición")}<th scope="col">Licencia</th></tr></thead><tbody>${rows.map((s) => `<tr><td class="w">${link(s)}</td><td>${esc(s.a)}</td><td class="d">${esc(s.d)}</td><td>${esc(s.ed)}${s.ey ? ", " + s.ey : ""}</td><td><span class="chip${s.lic === "fair-use-excerpt" ? " ex" : ""}">${LIC[s.lic]}</span></td></tr>`).join("")}</tbody></table></div>`;
+  }
+  if (!rows.length) h += `<p class="empty">Ninguna fuente coincide con esos filtros.</p>`;
+  return h;
+}
+
+const C0 = 0, C1 = 2030;
+const century = (y) => { const c = Math.floor((y - 1) / 100) + 1; return c; };
+const roman = ["", "I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"];
+function viewC() {
+  const dated = SOURCES.filter((s) => s.y > 0 && s.k !== "scripture");
+  const x = (y) => ((y - 0) / (C1 - 0)) * 100;
+  const ticks = [100, 500, 1000, 1500, 2000];
+  let h = `<div class="legend"><span><i style="background:var(--ink-3)"></i>Los primeros cristianos</span><span><i style="background:var(--cite)"></i>Documentos de una tradición</span></div>`;
+  h += `<div class="ruler" id="ruler"><div class="axis"></div>${ticks.map((t) => `<span class="tick" style="left:${x(t)}%">${t}</span>`).join("")}`;
+  const placed = [];
+  h += dated.map((s) => {
+    const left = x(s.y), isF = s.rb.length === 0;
+    let lane = 0; while (placed.some((p) => p.lane === lane && Math.abs(p.left - left) < (state.dev === "phone" ? 1.6 : 0.55))) lane++;
+    placed.push({ left, lane });
+    return `<button type="button" class="mk ${isF ? "t-n" : "t-c"}" data-id="${s.id}" aria-label="${esc(s.t)}, ${esc(s.d)}" style="left:${left}%;height:${14 + lane * 11}px"></button>`;
+  }).join("");
+  h += `<div class="tip" id="tip"></div></div>`;
+  const groups = {};
+  dated.slice().sort((a, b) => a.y - b.y).forEach((s) => { (groups[century(s.y)] ||= []).push(s); });
+  for (const c of Object.keys(groups)) {
+    h += `<h3 class="gh">Siglo ${roman[c]} <span class="n">${groups[c].length}</span></h3><div>${groups[c].map((s) => `<div class="crow" data-id="${s.id}"><span class="nm">${link(s)}</span><span class="d">${esc(s.d)}</span><span class="vo">${esc(voice(s))}</span><span class="wk">${esc(s.a)}</span><span class="ed">${editionLine(s)}</span></div>`).join("")}</div>`;
+  }
+  h += `<p class="note">La Sagrada Escritura no tiene fecha en el registro y queda fuera de la regla. Está en la lista de la opción A.</p>`;
+  return h;
+}
+
+function viewHoy() {
+  return `<div class="page"><p class="crumbs"><b>Consulta</b> / Fuentes</p><h1>Fuentes</h1><p class="lede">Esta página todavía no existe: el grupo del árbol y el enlace del pie no llevan a ningún lado.</p></div>`;
+}
+
+function render() {
+  const opt = state.opt;
+  const frame = document.getElementById("frame");
+  frame.classList.toggle("phone", state.dev === "phone");
+  const site = document.getElementById("site");
+  const body = opt === "A" ? viewA() : opt === "B" ? viewB() : viewC();
+  const top = `<div class="tb"><button class="ibtn menu" type="button" aria-label="Menú"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 6h14M3 10h14M3 14h14"/></svg></button><a class="logo" href="#" onclick="return false">Doctrina</a><span class="sp"></span>${state.dev === "phone" ? `<button class="ibtn" type="button" aria-label="Buscar"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg></button>` : `<button class="strig" type="button"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg><span style="flex:1;text-align:left">Buscar en Doctrina</span></button>`}</div>`;
+  const head = `<p class="crumbs"><b>Consulta</b> / Fuentes</p><h1>Fuentes</h1><p class="lede">Las obras que cita Doctrina, con su edición y su licencia.</p><p class="note">${SOURCES.length} fuentes. Cada una se abre en la obra completa, en la edición que se cita.</p>`;
+  const keep = site.scrollTop;
+  const active = document.activeElement && document.activeElement.id === "q";
+  const pos = active ? document.activeElement.selectionStart : 0;
+  site.innerHTML = `${top}<div class="page">${head}${body}</div>`;
+  site.scrollTop = keep;
+  if (active) { const q = document.getElementById("q"); q.focus(); q.setSelectionRange(pos, pos); }
+  wire();
+}
+function wire() {
+  const q = document.getElementById("q");
+  if (q) q.addEventListener("input", (e) => { state.q = e.target.value; render(); });
+  document.querySelectorAll("[data-kind]").forEach((b) => b.addEventListener("click", () => { state.kind = b.dataset.kind; render(); }));
+  document.querySelectorAll("[data-lic]").forEach((b) => b.addEventListener("click", () => { state.lic = b.dataset.lic; render(); }));
+  document.querySelectorAll("[data-sort]").forEach((b) => b.addEventListener("click", () => { state.sort = b.dataset.sort; render(); }));
+  const ruler = document.getElementById("ruler");
+  if (ruler) {
+    const tip = document.getElementById("tip");
+    const hot = (id) => {
+      document.querySelectorAll(".mk,.crow").forEach((el) => { if (el.dataset.id === id) el.setAttribute("data-hot", ""); else el.removeAttribute("data-hot"); });
+      if (!id) { tip.classList.remove("on"); return; }
+      const s = SOURCES.find((z) => z.id === id), mk = ruler.querySelector(`.mk[data-id="${id}"]`);
+      tip.innerHTML = `<b>${esc(s.t)}</b>, ${esc(s.d)}`;
+      const left = parseFloat(mk.style.left), w = ruler.clientWidth;
+      const px = (left / 100) * w, half = tip.offsetWidth / 2;
+      tip.style.left = Math.min(Math.max(px, half + 4), w - half - 4) + "px";
+      tip.style.bottom = (parseFloat(mk.style.height) + 23) + "px";
+      tip.classList.add("on");
+    };
+    ruler.querySelectorAll(".mk").forEach((m) => {
+      m.addEventListener("mouseenter", () => hot(m.dataset.id));
+      m.addEventListener("mouseleave", () => hot(null));
+      m.addEventListener("focus", () => hot(m.dataset.id));
+      m.addEventListener("blur", () => hot(null));
+      m.addEventListener("click", () => { const r = document.querySelector(`.crow[data-id="${m.dataset.id}"]`); if (r) { const site = document.getElementById("site"); site.scrollTo({ top: r.offsetTop - 120, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); } });
+    });
+    document.querySelectorAll(".crow").forEach((r) => {
+      r.addEventListener("mouseenter", () => { document.querySelectorAll(".mk").forEach((m) => { if (m.dataset.id === r.dataset.id) m.setAttribute("data-hot", ""); else m.removeAttribute("data-hot"); }); r.setAttribute("data-hot", ""); });
+      r.addEventListener("mouseleave", () => { r.removeAttribute("data-hot"); document.querySelectorAll(".mk").forEach((m) => m.removeAttribute("data-hot")); });
+    });
+  }
+}
+function seg(id, items, key, onPick) {
+  const el = document.getElementById(id);
+  el.innerHTML = items.map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${state[key] === v}">${l}</button>`).join("");
+  el.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { onPick(b.dataset.v); }));
+}
+function note() {
+  const [n, line, meta] = NOTES[state.opt];
+  document.getElementById("optnote").innerHTML = `<div class="on-name">${n}</div><div class="on-meta">${meta}</div><div class="on-line">${line}</div>`;
+}
+function ctl() {
+  seg("seg-opt", OPTS.filter(([v]) => v !== "hoy"), "opt", (v) => { state.opt = v; state.q = ""; save(); ctl(); note(); render(); });
+  seg("seg-dev", [["desktop", "Escritorio"], ["phone", "Teléfono"]], "dev", (v) => { state.dev = v; save(); ctl(); render(); });
+  const theme = document.documentElement.dataset.theme || "system";
+  document.getElementById("seg-theme").innerHTML = [["system", "Sistema"], ["light", "Claro"], ["dark", "Oscuro"]].map(([v, l]) => `<button type="button" data-v="${v}" aria-pressed="${theme === v}">${l}</button>`).join("");
+  document.querySelectorAll("#seg-theme button").forEach((b) => b.addEventListener("click", () => { if (b.dataset.v === "system") delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = b.dataset.v; ctl(); }));
+}
+function todayTree() {
+  const t = SOURCES.slice(0, 14).map((s) => `<div class="l">${esc(s.t.length > 34 ? s.t.slice(0, 33) + "…" : s.t)}</div>`).join("");
+  document.getElementById("todaytree").innerHTML = `<div class="g">Consulta</div><div class="b">Glosario</div><div class="b" style="color:var(--ink)">Fuentes</div>${t}<div class="l" style="color:var(--ink-3)">… y 30 más</div>`;
+}
+ctl(); note(); todayTree(); render();
+</script>
