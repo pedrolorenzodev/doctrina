@@ -574,4 +574,9 @@ export const es = {
     body: "El enlace puede estar mal escrito o la página ya no está.",
     home: "Ir al inicio",
   },
+  home: {
+    lede: "Qué cree cada tradición cristiana, por qué, y cada fuente primaria.",
+    resume: "Seguir donde dejaste",
+    resumeDetail: "{edition}, desde el versículo {verse}",
+  },
 };

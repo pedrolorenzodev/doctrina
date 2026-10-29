@@ -195,7 +195,7 @@ function TreeItem({
           data-open={String(open)}
           hidden={!open}
           aria-label={text.chapterGrid.replace("{book}", node.label)}
-          className="-mr-1.5 -ml-2 grid grid-cols-7 gap-y-0.5 px-1.5 pt-1 pb-3 max-lg:grid-cols-5 max-lg:gap-y-1"
+          className="-mr-1.5 -ml-2 grid grid-cols-7 gap-y-0.5 px-1.5 pt-1 pb-3 tree-compact:grid-cols-5 tree-compact:gap-y-1"
         >
           {isCurrentBook || openedBooks.has(node.id) ? (
             <ChapterGrid
@@ -233,7 +233,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
   const routerPath = usePathname();
   const reading = useActiveChapter();
   const pathname = reading?.href ?? routerPath;
-  const { open, setOpen, menuRef } = useDrawer();
+  const { open, setOpen, menuRef, drawerOnly } = useDrawer();
   const index = useMemo(() => indexTree(groups), [groups]);
   const bookRoute = bookRouteOf(pathname);
   const currentId = index.hrefToId.get(pathname) ?? (bookRoute ? (index.hrefToId.get(bookRoute) ?? null) : null);
@@ -377,20 +377,25 @@ export function Sidebar({ groups, text }: SidebarProps) {
         aria-hidden="true"
         data-open={open || undefined}
         onClick={closeDrawer}
-        className="pointer-events-none fixed inset-0 z-59 bg-scrim opacity-0 transition-opacity duration-240 ease-standard data-open:pointer-events-auto data-open:opacity-100 lg:hidden"
+        className={`pointer-events-none fixed inset-0 z-59 bg-scrim opacity-0 transition-opacity duration-240 ease-standard data-open:pointer-events-auto data-open:opacity-100 ${drawerOnly ? "" : "lg:hidden"}`}
       />
       <aside
         ref={asideRef}
         id="site-sidebar"
         data-open={open || undefined}
-        className="fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg drawer-motion max-lg:invisible max-lg:texture-layer data-open:visible data-open:translate-x-0 lg:sticky lg:top-top lg:bottom-auto lg:left-auto lg:z-auto lg:h-below-top lg:w-auto lg:translate-x-0 lg:bg-transparent tree-hide"
+        data-drawer-only={drawerOnly || undefined}
+        className={
+          drawerOnly
+            ? "invisible fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg texture-layer drawer-motion data-open:visible data-open:translate-x-0"
+            : "fixed inset-y-0 left-0 z-60 w-drawer -translate-x-full bg-bg drawer-motion max-lg:invisible max-lg:texture-layer data-open:visible data-open:translate-x-0 lg:sticky lg:top-top lg:bottom-auto lg:left-auto lg:z-auto lg:h-below-top lg:w-auto lg:translate-x-0 lg:bg-transparent tree-hide"
+        }
       >
         <nav
           ref={navRef}
           aria-label={text.navLabel}
           data-lenis-prevent
           onClick={onClick}
-          className="relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule lg:w-sidebar lg:pt-5.5"
+          className={`relative h-full overflow-y-auto border-r border-rule pt-5 pr-3.5 pb-10 pl-4.5 scrollbar-rule ${drawerOnly ? "" : "lg:w-sidebar lg:pt-5.5"}`}
         >
           <div className="-mt-1.5 mb-2 flex justify-end">
             <button

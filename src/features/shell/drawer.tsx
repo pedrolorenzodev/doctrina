@@ -2,11 +2,13 @@
 
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from "react";
 import { usePathname } from "next/navigation";
+import { isHomePath } from "@/lib/locale";
 
 type DrawerState = {
   open: boolean;
   setOpen: (open: boolean) => void;
   menuRef: RefObject<HTMLButtonElement | null>;
+  drawerOnly: boolean;
 };
 
 const DrawerContext = createContext<DrawerState | null>(null);
@@ -16,6 +18,7 @@ export function DrawerProvider({ children }: { children: ReactNode }) {
   const [openedAt, setOpenedAt] = useState<string | null>(null);
   const menuRef = useRef<HTMLButtonElement>(null);
   const open = openedAt === pathname;
+  const drawerOnly = isHomePath(pathname);
 
   useEffect(() => {
     const desktop = matchMedia("(min-width: 64rem)");
@@ -25,8 +28,8 @@ export function DrawerProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(
-    () => ({ open, setOpen: (next: boolean) => setOpenedAt(next ? pathname : null), menuRef }),
-    [open, pathname],
+    () => ({ open, setOpen: (next: boolean) => setOpenedAt(next ? pathname : null), menuRef, drawerOnly }),
+    [open, pathname, drawerOnly],
   );
   return <DrawerContext.Provider value={value}>{children}</DrawerContext.Provider>;
 }

@@ -473,6 +473,7 @@ export function ReaderBody({
         className="mt-2 -ml-2.5 border border-rule-2 sm:hidden"
       />
       <ChapterText
+        editionName={selected.name}
         second={second}
         heads={
           second ? (

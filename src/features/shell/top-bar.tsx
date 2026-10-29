@@ -12,11 +12,7 @@ export async function TopBar({ withMenu }: { withMenu: boolean }) {
   const { site, shell, search } = getUiText(locale);
   return (
     <header className="texture-layer sticky top-0 z-40 flex h-top items-center gap-3.5 border-b border-rule bg-bg px-5">
-      {withMenu ? (
-        <span className="-ml-2 lg:hidden">
-          <MenuButton label={shell.menuOpen} />
-        </span>
-      ) : null}
+      {withMenu ? <MenuButton label={shell.menuOpen} /> : null}
       <Link
         href={localeHref(locale)}
         className="font-head text-logo font-normal text-ink no-underline opsz-24 pointer-coarse:py-3"

@@ -169,6 +169,8 @@
   --text-defn-source: 14.5px;
   --text-entity: 18px;
   --text-entity--line-height: 1.4;
+  --text-resume-path: 13px;
+  --text-resume-path--line-height: 1.45;
   --text-fact-row: 16.5px;
   --text-fact-row--line-height: 1.45;
   --text-appear-note: 16px;
@@ -1236,6 +1238,13 @@
   }
 }
 
+@utility resume-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 16px;
+  align-items: baseline;
+}
+
 @utility label-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1553,6 +1562,16 @@ html.theme-switching ::after {
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@custom-variant tree-compact {
+  @media (width < 64rem) {
+    @slot;
+  }
+
+  [data-drawer-only] & {
+    @slot;
   }
 }
 

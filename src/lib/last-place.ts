@@ -4,7 +4,30 @@ const storageKey = "doctrina-last-place";
 const listeners = new Set<() => void>();
 let fallback = "";
 
-export type LastPlace = { href: string; title: string; at: number };
+export type PlaceDetail = { edition: string; verse: number };
+
+export type LastPlace = { href: string; title: string; at: number; detail?: PlaceDetail };
+
+let describe: (() => PlaceDetail | null) | null = null;
+
+export function describePlaceWith(read: () => PlaceDetail | null): () => void {
+  describe = read;
+  return () => {
+    if (describe === read) describe = null;
+  };
+}
+
+export function currentPlaceDetail(): PlaceDetail | null {
+  return describe?.() ?? null;
+}
+
+export function placeWhen(at: number): string {
+  const lang = document.documentElement.lang || "es";
+  const startOfDay = (time: number) => new Date(time).setHours(0, 0, 0, 0);
+  const days = Math.round((startOfDay(at) - startOfDay(Date.now())) / 86_400_000);
+  if (days === 0 || days === -1) return new Intl.RelativeTimeFormat(lang, { numeric: "auto" }).format(days, "day");
+  return new Intl.DateTimeFormat(lang, { day: "numeric", month: "short", year: "numeric" }).format(at);
+}
 
 function read(): string {
   try {
@@ -37,7 +60,12 @@ function parse(raw: string): LastPlace[] {
         item !== null &&
         typeof item.href === "string" &&
         typeof item.title === "string" &&
-        typeof item.at === "number",
+        typeof item.at === "number" &&
+        (item.detail === undefined ||
+          (typeof item.detail === "object" &&
+            item.detail !== null &&
+            typeof item.detail.edition === "string" &&
+            typeof item.detail.verse === "number")),
     );
   } catch {
     return [];

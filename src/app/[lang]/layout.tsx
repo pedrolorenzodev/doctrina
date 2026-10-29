@@ -8,6 +8,7 @@ import { HashArrival } from "@/features/shell/hash-arrival";
 import { LastPlaceRecorder } from "@/features/shell/last-place-recorder";
 import { SearchDialog } from "@/features/shell/search-dialog";
 import { SearchProvider } from "@/components/search-provider";
+import { ShellGrid } from "@/features/shell/shell-grid";
 import { Sidebar } from "@/features/shell/sidebar";
 import { TitleEntrance } from "@/features/shell/title-entrance";
 import { TreeCarryScript, TreeScript } from "@/features/shell/tree-script";
@@ -58,12 +59,12 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
           </a>
           <TopBar withMenu={hasTree} />
           {hasTree ? (
-            <div className="lg:grid lg:grid-shell">
+            <ShellGrid>
               <TreeScript />
               <Sidebar groups={groups} text={text} />
               <TreeCarryScript />
               {children}
-            </div>
+            </ShellGrid>
           ) : (
             children
           )}

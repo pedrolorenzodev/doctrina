@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useEffect, useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from "react";
 import { flushSync } from "react-dom";
-import { usePlaceBefore, type LastPlace } from "@/features/shell/last-place";
+import { placeWhen, usePlaceBefore, type LastPlace } from "@/lib/last-place";
 import { rememberResult, useRecentIds } from "@/features/shell/search-recents";
 import { useSearch } from "@/components/search-provider";
 import { trapTab } from "@/lib/focus";
@@ -48,14 +48,6 @@ type Row =
   | { kind: "result"; result: SearchResult }
   | { kind: "more"; group: SearchGroup; hidden: number }
   | { kind: "place"; place: LastPlace };
-
-function whenText(at: number): string {
-  const lang = document.documentElement.lang || "es";
-  const startOfDay = (time: number) => new Date(time).setHours(0, 0, 0, 0);
-  const days = Math.round((startOfDay(at) - startOfDay(Date.now())) / 86_400_000);
-  if (days === 0 || days === -1) return new Intl.RelativeTimeFormat(lang, { numeric: "auto" }).format(days, "day");
-  return new Intl.DateTimeFormat(lang, { day: "numeric", month: "short", year: "numeric" }).format(at);
-}
 
 function Marked({ segments }: { segments: Segment[] }) {
   return segments.map((segment, index) =>
@@ -148,7 +140,7 @@ function PlaceRow({
       className="cursor-pointer rounded-7 px-3 py-2.5 transition-colors duration-120 ease-standard data-selected:bg-hover"
     >
       <span className="block font-head text-search-title text-ink">{place.title}</span>
-      <span className="mt-0.5 block text-label leading-normal text-ink-3">{whenText(place.at)}</span>
+      <span className="mt-0.5 block text-label leading-normal text-ink-3">{placeWhen(place.at)}</span>
     </li>
   );
 }

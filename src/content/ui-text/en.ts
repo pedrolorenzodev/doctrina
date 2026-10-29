@@ -576,4 +576,9 @@ export const en: UiText = {
     body: "The link may be mistyped, or the page may no longer be here.",
     home: "Go to the home page",
   },
+  home: {
+    lede: "What each Christian tradition believes, why, and every primary source.",
+    resume: "Pick up where you left off",
+    resumeDetail: "{edition}, from verse {verse}",
+  },
 };

@@ -15,3 +15,7 @@ export function swapLocale(pathname: string, target: Locale): string {
 export function localeHref(locale: Locale, path: `/${string}` | "" = ""): string {
   return `/${locale}${path}`;
 }
+
+export function isHomePath(pathname: string): boolean {
+  return locales.some((locale) => pathname === localeHref(locale));
+}

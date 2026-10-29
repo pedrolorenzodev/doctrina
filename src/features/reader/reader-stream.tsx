@@ -5,6 +5,7 @@ import { bibleChapterHref } from "@/content/bible-routes";
 import type { ReaderChapter } from "@/content/get-reader-chapter";
 import { PageHeader } from "@/components/page-header";
 import { registerChapterScroller, setActiveChapter } from "@/lib/active-chapter";
+import { describePlaceWith } from "@/lib/last-place";
 import { ReaderBody } from "@/features/reader/reader-body";
 import { foldBox } from "@/lib/fold-box";
 import { setYourNotesOpen } from "@/features/reader/your-notes-store";
@@ -95,6 +96,19 @@ export function ReaderStream({
     if (Math.abs(shift) >= 0.5) shiftScroll(shift);
   }, [chapters]);
   useKeepTopVerse(stream, unitsSelector);
+
+  useEffect(
+    () =>
+      describePlaceWith(() => {
+        const line = scrollOffset();
+        const units = stream.current?.querySelectorAll<HTMLElement>(unitsSelector) ?? [];
+        const unit = [...units].find((candidate) => candidate.getBoundingClientRect().bottom > line);
+        const edition = unit?.closest<HTMLElement>("[data-edition-name]")?.dataset.editionName;
+        const verse = Number(unit?.id.match(/v-(\d+)$/)?.[1]);
+        return edition && verse ? { edition, verse } : null;
+      }),
+    [],
+  );
 
   const titleOf = useCallback(
     (data: ReaderChapter) =>

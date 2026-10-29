@@ -14,6 +14,7 @@ export type SecondReading = {
 };
 
 type ChapterTextProps = {
+  editionName: string;
   second: SecondReading | null;
   heads: ReactNode;
   verses: BibleVerse[];
@@ -44,6 +45,7 @@ export const toneClassName: Record<HighlightColor, string> = {
 };
 
 export function ChapterText({
+  editionName,
   second,
   heads,
   verses,
@@ -71,6 +73,7 @@ export function ChapterText({
       ref={rootRef}
       lang={lang}
       data-chapter-text=""
+      data-edition-name={editionName}
       data-second={second ? second.mode : undefined}
       className={`relative mt-8.5 ${second?.mode === "side" ? "grid max-w-wide grid-cols-2 gap-x-10" : "max-w-reader"}`}
     >
