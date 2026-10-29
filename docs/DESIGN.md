@@ -436,6 +436,10 @@ Error shell (not from the proposal; built in B1b from the tokens): 404 and 500 p
 
 Not designed yet: the search results page (the full page of results, not the ⌘K box) (the ⌘K component above is designed). 07 word study is approved (DECISIONS 2026-10-23) and not built (it needs the word data); 08 timeline is built (section 8).
 
+### «Pasajes» page of a tradition — DEC 2026-10-29 · variant G «Pliego»; built 2026-10-29
+
+Spec and measures: `docs/features/passages-page.md`; proposal https://claude.ai/artifact/LWsmP5mVDVgECnc1z1u4YF. Route `/es/doctrinas/<doctrina>/<tradicion>/pasajes#<passage>` (the hash is the first ref lowercased, `john-3-5`). Left ruler of 18 px ticks with the right-edge ruler's bulge (`passage-tick`), flat translation tabs and heading-style layer tabs on one component (`SlidingTabs`, the tradition switcher's look with the sliding indicator), «Despliegue» as `fold-grid`, passage motion `passage-in-*`, changed words `word-changed` with `--color-chg`. New type roles: `text-verse` 21/1.7, `text-verse-parallel` 18/1.7, `text-descriptor` 22/1.4, `text-layer-tab` 21 (18 on phone), `text-argument-heading` 28. The «cita + fuente» of the apologists is `quote-figure-grid` (the site's `figure-grid` is the one of the citation window: a different grid).
+
 ## 7. Don'ts
 
 From the AI-slop list (DEC 2026-10-05 · Design principles carried into the restart): cream + terracotta (#F4F1EA), gold on navy, parchment textures, stock cathedrals / Bibles / hands, crosses as decoration, identical rounded shadow cards, gradients, ALL-CAPS tracked eyebrows, «·»-joined meta strings, «→» glued to links, emoji, icons in coloured squares, giant decorative quotes, Inter + centred bold hero, monospace locators, one colour per tradition, squeezed parallel columns on mobile, dead affordances.
