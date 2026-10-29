@@ -274,7 +274,7 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 ### Right-edge section ruler (Stripe Press) — ROADMAP «Now» 1, screen 02 horizontal space; `docs/research/stripe-press-ruler.md`
 - One tick per section with `data-label` (≥ 2 sections, else none); fixed at the right edge (`max(18px, safe-area)`), vertically centred; hidden ≤ 899.
 - Tick 16×3, radius 2, ink at .3; hit area 64×13. Active (last section whose top is above 35 % of the viewport; the last one at page bottom): accent, opacity 1; colour change fades (260 ms), no gliding mark.
-- Hover (mouse): cosine bulge scaleX `max(1, 2.5 + 2·cos(π·|i − hover| / N))`, N = max(count, 16), 200 ms; the hovered section's name (head 400 15, ink) appears 90 px to the left, fading in while moving 5 px. Focus does the same.
+- Hover (any pointer; on touch a 12 px halo makes a tap pick the nearest tick, the ticks never grow to 44 px): cosine bulge scaleX `max(1, 2.5 + 2·cos(π·|i − hover| / N))`, N = max(count, 16), 200 ms; the hovered section's name (head 400 15, ink) appears 90 px to the left, fading in while moving 5 px. Focus does the same.
 - Click: smooth jump; the clicked tick stays active for 800 ms.
 
 ### Doctrine fingerprint — DEC 2026-10-19 · Doctrine fingerprint, with Stripe Press motion
