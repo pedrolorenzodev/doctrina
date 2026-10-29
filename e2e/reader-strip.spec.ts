@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 const john = "/es/biblia/juan/6";
 const didache = "/es/historia/obras/didache";
 const strip = "main [data-reader-strip]";
-const toggle = `${strip} [data-tree-toggle]`;
+const toggle = "header [aria-controls='site-sidebar']";
 
 const geometry = (page: import("@playwright/test").Page) =>
   page.evaluate(() => {
@@ -62,43 +62,44 @@ test("«Aa» sits close to the right edge, as far from it as the strip's own pad
   expect(bar.right).toBe(1440);
 });
 
-test("the toggle at the left of the strip hides and shows the tree, and the choice is remembered", async ({ page }) => {
+test("the menu hides and shows the tree on the reader, and the choice is remembered", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
   await expect(page.locator("aside#site-sidebar")).toBeVisible();
-  await expect(page.locator(toggle)).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(toggle)).toHaveAttribute("aria-expanded", "true");
   const before = (await page.locator("main").boundingBox())!;
   expect(before.x).toBe(272);
   await page.locator(toggle).click();
   await expect(page.locator("aside#site-sidebar")).toBeHidden();
-  await expect(page.locator(toggle)).toHaveAttribute("aria-pressed", "false");
+  await expect(page.locator(toggle)).toHaveAttribute("aria-expanded", "false");
   const after = (await page.locator("main").boundingBox())!;
   expect(after.x).toBe(0);
   expect((await geometry(page)).left).toBe(0);
   await page.reload();
   await expect(page.locator("aside#site-sidebar")).toBeHidden();
-  await expect(page.locator(toggle)).toHaveAttribute("aria-pressed", "false");
+  await expect(page.locator(toggle)).toHaveAttribute("aria-expanded", "false");
   await page.locator(toggle).click();
   await expect(page.locator("aside#site-sidebar")).toBeVisible();
   await page.reload();
   await expect(page.locator("aside#site-sidebar")).toBeVisible();
 });
 
-test("below 1024 px the toggle opens the drawer instead", async ({ page }) => {
+test("below 1024 px the menu opens the drawer instead", async ({ page }) => {
   await page.setViewportSize({ width: 800, height: 900 });
   await page.goto(john);
   await expect(page.locator("aside#site-sidebar")).toBeHidden();
   await page.locator(toggle).click();
   await expect(page.locator("aside#site-sidebar")).toBeVisible();
-  await expect(page.locator(toggle)).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(toggle)).toHaveAttribute("aria-expanded", "true");
 });
 
-test("the Fathers' reader has the same strip and the same toggle", async ({ page }) => {
+test("the Fathers' reader has the same strip, with no tree button of its own", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(didache);
   const bar = await geometry(page);
   expect(bar.top).toBe(56);
   expect(bar.height).toBe(51);
+  await expect(page.locator(`${strip} [data-tree-toggle]`)).toHaveCount(0);
   await page.locator(toggle).click();
   await expect(page.locator("aside#site-sidebar")).toBeHidden();
   await page.locator(toggle).click();

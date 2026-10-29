@@ -1,6 +1,5 @@
 "use client";
 
-import type { ReactNode } from "react";
 import { BookPicker, type PickerBook } from "@/features/reader/book-picker";
 import { useActiveChapter, scrollToChapter, type ChapterTarget } from "@/lib/active-chapter";
 import { ChapterStep, type StepNeighbor } from "@/features/reader/chapter-step";
@@ -27,7 +26,6 @@ type ReaderStripProps = {
     title: string;
     chapterTitle: string;
   };
-  treeToggle: ReactNode;
   neighbors: {
     previous: StepNeighbor;
     next: StepNeighbor;
@@ -45,7 +43,6 @@ export function ReaderStrip({
   defaultId,
   yourNotes,
   bookPicker,
-  treeToggle,
   neighbors,
 }: ReaderStripProps) {
   const value = useChosenTranslation(
@@ -100,7 +97,6 @@ export function ReaderStrip({
     <StripShell
       left={
         <>
-          {treeToggle}
           <div className="inline-flex h-8.5 items-center rounded-8 border border-rule">
             {step("previous")}
             <span aria-hidden="true" className="h-4 w-px bg-rule" />

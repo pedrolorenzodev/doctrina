@@ -17,7 +17,6 @@ import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { ReaderStrip } from "@/features/reader/reader-strip";
 import { VerseArrival } from "@/features/reader/verse-arrival";
-import { TreeToggle } from "@/features/shell/tree-toggle";
 import { currentLocale } from "@/lib/current-locale";
 import { locales, type Locale } from "@/lib/locale";
 
@@ -97,7 +96,6 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
       <ReaderFormatScript />
       <RedNoticeScript />
       <ReaderStrip
-        treeToggle={<TreeToggle label={labels.treeToggle} />}
         parallelText={{
           label: labels.parallel.label,
           mode: labels.parallel.mode,

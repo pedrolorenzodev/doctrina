@@ -195,15 +195,15 @@ test("with the tree open the marks say «1 nota» below 1355 px and the cards co
   await expect(page.locator(mark(53))).toBeHidden();
 });
 
-test("closing the tree with the toggle swaps the marks for the cards, and opening it swaps them back", async ({
+test("closing the tree with the menu swaps the marks for the cards, and opening it swaps them back", async ({
   page,
 }) => {
   await openWithNotes(page, 1300, "open");
   await expect(page.locator(mark(53))).toBeVisible();
-  await page.locator("[data-reader-strip] [data-tree-toggle]").click();
+  await page.locator("header [aria-controls='site-sidebar']").click();
   await expect(page.locator(cardAt(53)).first()).toBeVisible();
   await expect(page.locator(mark(53))).toBeHidden();
-  await page.locator("[data-reader-strip] [data-tree-toggle]").click();
+  await page.locator("header [aria-controls='site-sidebar']").click();
   await expect(page.locator(mark(53))).toBeVisible();
 });
 

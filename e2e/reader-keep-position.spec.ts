@@ -62,6 +62,7 @@ async function holds(page: Page, act: () => Promise<void>, ms = 1400) {
 
 const larger = 'button[aria-label="Agrandar el texto"]';
 
+const menu = "header [aria-controls='site-sidebar']";
 const press = (page: Page, selector: string) =>
   page.locator(selector).evaluate((element) => (element as HTMLElement).click());
 
@@ -98,9 +99,9 @@ test("«En párrafo» keeps the verse at the top where it was", async ({ page })
 
 test("closing and opening the tree keeps the verse still in every frame of the slide", async ({ page }) => {
   await atVerse(page, 39);
-  await holds(page, () => press(page, `${strip} [data-tree-toggle]`));
+  await holds(page, () => press(page, menu));
   await page.waitForTimeout(500);
-  await holds(page, () => press(page, `${strip} [data-tree-toggle]`));
+  await holds(page, () => press(page, menu));
 });
 
 test("opening the verse panel keeps the verse at the top where it was", async ({ page }) => {
@@ -129,19 +130,19 @@ test("at the very top the page stays at the top when the width changes", async (
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(john);
   await page.waitForTimeout(600);
-  await page.locator(`${strip} [data-tree-toggle]`).click();
+  await press(page, menu);
   await page.waitForTimeout(700);
   expect(await page.evaluate(() => scrollY)).toBeLessThan(2);
 });
 
 test("after the reader scrolls on, the next width change keeps the new verse, not the old one", async ({ page }) => {
   await atVerse(page, 10);
-  await holds(page, () => press(page, `${strip} [data-tree-toggle]`));
+  await holds(page, () => press(page, menu));
   await page.mouse.wheel(0, 900);
   await page.waitForTimeout(1000);
   await page.mouse.wheel(0, -80);
   await page.waitForTimeout(700);
-  await holds(page, () => press(page, `${strip} [data-tree-toggle]`));
+  await holds(page, () => press(page, menu));
 });
 
 test.fixme("switching to «En párrafo» in the middle of a chapter keeps the reading verse (the position jumps to the next chapter)", async ({

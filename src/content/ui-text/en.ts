@@ -179,7 +179,6 @@ export const en: UiText = {
     hints: { move: "↑ ↓ to move", open: "Enter opens", close: "Esc closes" },
   },
   reader: {
-    treeToggle: "Show or hide the index",
     chapterTitle: "{book} {chapter}",
     notes: {
       add: "Note",

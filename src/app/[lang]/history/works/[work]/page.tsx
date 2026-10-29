@@ -14,7 +14,6 @@ import { FatherBody } from "@/features/reader/father-body";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { VerseArrival } from "@/features/reader/verse-arrival";
-import { TreeToggle } from "@/features/shell/tree-toggle";
 import { currentLocale } from "@/lib/current-locale";
 import { locales } from "@/lib/locale";
 
@@ -50,7 +49,6 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
       <ReaderSizeScript />
       <ReaderTextScript />
       <FatherStrip
-        treeToggle={<TreeToggle label={labels.treeToggle} />}
         yourNotes={{ label: labels.yourNotes.button, book: work.id, chapter: 1 }}
         text={{
           mark: labels.textOptions.mark,

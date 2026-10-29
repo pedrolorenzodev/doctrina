@@ -177,7 +177,6 @@ export const es = {
     hints: { move: "↑ ↓ para moverse", open: "Enter abre", close: "Esc cierra" },
   },
   reader: {
-    treeToggle: "Mostrar u ocultar el índice",
     chapterTitle: "{book} {chapter}",
     notes: {
       add: "Nota",
