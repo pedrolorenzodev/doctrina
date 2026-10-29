@@ -57,3 +57,29 @@ test("the letter strip jumps to its letter, letters with no term are off, and de
     .evaluateAll((items) => new Set(items.map((item) => Math.round(item.getBoundingClientRect().left))).size);
   expect(lefts).toBe(2);
 });
+
+test("clearing the filter never pushes rows past the page's right edge while the list grows back", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/glosario");
+  const filter = page.getByRole("searchbox", { name: "Filtrar por nombre" });
+  await filter.fill("gra");
+  await expect(page.locator(rows)).not.toHaveCount(100);
+  const widest = await page.evaluate(
+    () =>
+      new Promise<number>((resolve) => {
+        let widest = 0;
+        const start = performance.now();
+        const step = () => {
+          widest = Math.max(widest, document.documentElement.scrollWidth);
+          if (performance.now() - start < 900) requestAnimationFrame(step);
+          else resolve(widest);
+        };
+        requestAnimationFrame(step);
+        const input = document.querySelector<HTMLInputElement>('input[type="search"]')!;
+        Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")!.set!.call(input, "");
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+      }),
+  );
+  expect(widest).toBeLessThanOrEqual(1440);
+  await expect(page.locator(rows)).toHaveCount(100);
+});

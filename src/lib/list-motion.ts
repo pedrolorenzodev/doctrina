@@ -121,7 +121,7 @@ export function flipList(list: HTMLElement, ghosts: HTMLElement, mutate: () => v
     mutate();
     return;
   }
-  for (const animation of list.getAnimations({ subtree: true })) {
+  for (const animation of [...list.getAnimations({ subtree: true }), ...(list.parentElement?.getAnimations() ?? [])]) {
     if (animation.id === flipAnimationId) animation.cancel();
   }
   for (const item of itemsOf(list)) if (item.dataset.rv === "shown") delete item.dataset.rv;
@@ -160,10 +160,13 @@ export function flipList(list: HTMLElement, ghosts: HTMLElement, mutate: () => v
       );
   }
   const arm = armers.get(list);
+  const belowTheFold = new Map<string, boolean>();
+  for (const [key, node] of after.nodes)
+    belowTheFold.set(key, node.getBoundingClientRect().top > innerHeight * armLine);
   let entering = 0;
   for (const [key, node] of after.nodes) {
     const from = before.boxes.get(key);
-    const below = node.getBoundingClientRect().top > innerHeight * armLine;
+    const below = belowTheFold.get(key) ?? false;
     if (!from) {
       if (arm && below) {
         arm(node);
@@ -190,7 +193,8 @@ export function flipList(list: HTMLElement, ghosts: HTMLElement, mutate: () => v
   }
   if (Math.abs(after.height - before.height) > 1) {
     const shrinking = after.height < before.height;
-    list.animate([{ height: `${before.height}px` }, { height: `${after.height}px` }], {
+    const heightHolder = getComputedStyle(list).columnCount === "auto" ? list : (list.parentElement ?? list);
+    heightHolder.animate([{ height: `${before.height}px` }, { height: `${after.height}px` }], {
       duration: flip.moveMs,
       easing: easeReveal,
       delay: shrinking ? flip.exitMs : 0,
