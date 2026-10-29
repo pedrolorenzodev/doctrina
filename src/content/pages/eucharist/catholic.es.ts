@@ -382,7 +382,7 @@ export const eucharistCatholic = {
         },
       },
     ],
-    note: "Los mismos textos los leen de otro modo otras tradiciones: lo verás en {s:early-witnesses|Lo que escribieron los primeros cristianos}, que es una sección neutral.",
+    note: "Estos textos no se asignan a ninguna tradición de hoy: están en {s:early-witnesses|Lo que escribieron los primeros cristianos}, que es una sección neutral.",
     closing:
       "Para la Iglesia católica, Juan 6 no admite una lectura metafórica: ante el asombro de los oyentes, Jesús se ve obligado, dice Juan Pablo II, «a recalcar la verdad objetiva de sus palabras»: «Mi carne es verdadera comida y mi sangre verdadera bebida» {v:John.6.55}. Y concluye: «No se trata de un alimento metafórico» {c:EdE16|Ecclesia de Eucharistia 16}.",
   },

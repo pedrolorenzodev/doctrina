@@ -597,7 +597,7 @@ export const baptismCatholic = {
         },
       },
     ],
-    note: "Los mismos textos los leen de otro modo otras tradiciones: lo verás en {s:early-witnesses|Lo que escribieron los primeros cristianos}, que es una sección neutral.",
+    note: "Estos textos no se asignan a ninguna tradición de hoy: están en {s:early-witnesses|Lo que escribieron los primeros cristianos}, que es una sección neutral.",
     closing:
       "Para la Iglesia católica, el bautismo hace lo que significa, y lo hace también en los niños: por él, enseña Trento, aun los párvulos «recibén con toda verdad el Bautismo en remision de sus pecados, para que purifique la regeneracion en ellos lo que contraxeron por la generacion» {c:T5can4|ses. V, can. 4}.",
   },

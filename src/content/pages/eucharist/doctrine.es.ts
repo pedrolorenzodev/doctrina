@@ -152,8 +152,7 @@ export const eucharistDoctrine = {
     ],
   },
   witnesses: {
-    subtitle:
-      "Testigos de los primeros siglos, en orden de fecha. Esta sección es neutral: cada tradición lee estos textos a su manera.",
+    subtitle: "Testigos de los primeros siglos, en orden de fecha. Esta sección es neutral.",
     historyLink: {
       label: "La historia completa de la Eucaristía",
       note: "Concilios, controversias y confesiones de fe, hasta hoy.",
