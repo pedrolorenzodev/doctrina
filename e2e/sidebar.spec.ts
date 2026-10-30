@@ -140,7 +140,7 @@ test("four groups with the counts of history and only the published pages, their
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
   expect(counts).toEqual(["56", "41", "18", "10", "20"]);
-  await expect(page.locator('aside nav a:not([href*="/obras/"])')).toHaveCount(83);
+  await expect(page.locator('aside nav a:not([href*="/obras/"])')).toHaveCount(119);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
 });
 
@@ -156,8 +156,8 @@ test("the branches hold the real entries: 56 Fathers, 27 New Testament books, 7 
   await expect(children("bible/deutero")).toHaveCount(7);
   await expect(children("eucharist/catholic/objections")).toHaveCount(10);
   await expect(page.locator('aside nav li[data-id="eucharist/catholic/objections"] > ul a')).toHaveCount(7);
-  await expect(page.locator('aside nav li[data-id="eucharist/orthodox"]')).toHaveAttribute("data-soon", "");
-  await expect(children("eucharist/orthodox")).toHaveCount(0);
+  await expect(page.locator('aside nav li[data-id="eucharist/pentecostal"]')).toHaveAttribute("data-soon", "");
+  await expect(children("eucharist/pentecostal")).toHaveCount(0);
 });
 
 test("entries without a page are pressable and do nothing; branches still open", async ({ page }) => {

@@ -130,6 +130,7 @@ export const es = {
     scripture: "La Escritura que usa",
     citedIn: "Citado en {source}",
     showMoreStatements: "Mostrar {n} afirmaciones más",
+    statusLabel: "Estado actual",
     showLess: "Mostrar menos",
     gradeAnd: "y",
     unclassified: {

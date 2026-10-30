@@ -68,8 +68,14 @@ export function validateContent(registry: Registry, pages: Record<string, Tradit
 
     const { teach, why, objections, life, authority } = page;
     refsOf(`${name}.teach.definition.sources`, { citations: teach.definition.sources.flatMap((s) => s.citations) });
-    for (const statement of teach.statements)
+    for (const statement of teach.statements) {
       statement.sources.forEach((s) => refsOf(`${name}.teach.${statement.id}`, s));
+      for (const id of statement.status ?? []) {
+        note(id, `${name}.teach.${statement.id}.status`);
+        if (registry.citations[id as keyof typeof registry.citations]?.kind !== "status")
+          fail(`${name}.teach.${statement.id}.status`, `${id} is not a status line`);
+      }
+    }
     for (const holder of [{ id: "definition", ...teach.definition }, ...teach.statements])
       for (const line of holder.grades)
         if (line.kind === "church" && !(line.grade in authority.grades))

@@ -155,8 +155,10 @@ export function collectPageViews(
   scan(definition.text);
   definition.sources.forEach((source) => source.citations.forEach((id) => citations.add(id)));
   for (const statement of statements) {
+    if (statement.question) scan(statement.question);
     scan(statement.text);
     statement.sources.forEach((source) => source.citations.forEach((id) => citations.add(id)));
+    statement.status?.forEach((id) => citations.add(id));
     statement.grades.forEach((line, index) => {
       if (line.basis) scan(line.basis);
       const id = gradeViewId(statement.id, index);

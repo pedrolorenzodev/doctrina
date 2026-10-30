@@ -190,7 +190,9 @@ export const eucharistLutheran = {
       {
         id: "QE-7",
         short: "la transubstanciación",
+        question: "¿Se convierte el pan en el cuerpo de Cristo?",
         text: "Los Artículos de Esmalcalda responden: «concuerda perfectamente con la Escritura que allí hay pan y sigue habiéndolo, como lo llama el mismo san Pablo». Para las confesiones luteranas, el pan no pierde su esencia: por eso dicen que el cuerpo de Cristo está «bajo el pan, con el pan, en el pan», para indicar la unión del pan sin transformar con el cuerpo de Cristo.",
+        status: ["STSA~el"],
         grades: [
           {
             kind: "church",
@@ -217,7 +219,9 @@ export const eucharistLutheran = {
       {
         id: "QE-8",
         short: "la Misa como sacrificio",
+        question: "¿Es la Misa un sacrificio?",
         text: "La Apología distingue: en un sacramento Dios «nos da lo que ofrece la promesa unida a la ceremonia»; en un sacrificio somos nosotros los que damos a Dios «para honrarlo» (XXIV.18). Por eso responde: «hubo en el mundo un único sacrificio propiciatorio, a saber, la muerte de Cristo». La Cena es un sacrificio en otro sentido: de alabanza y acción de gracias, que ofrecen los ya reconciliados, no uno que reconcilie con Dios. Y la Confesión de Augsburgo dice que entre los luteranos la Misa «se conserva y se celebra con la mayor reverencia».",
+        status: ["STSA~el"],
         grades: [
           {
             kind: "church",
@@ -265,6 +269,7 @@ export const eucharistLutheran = {
       {
         id: "QE-9",
         short: "la hostia reservada",
+        question: "¿Sigue presente Cristo en la hostia que se guarda o se lleva en procesión?",
         text: "La Fórmula de Concordia responde con una regla tomada de las palabras de la institución: «si no se guarda la institución de Cristo como él la ordenó, no hay sacramento». El «uso» no es solo la fe ni solo el comer, sino toda la acción que Cristo mandó: consagrar, distribuir, recibir, comer y beber. Fuera de ella, cuando el pan «se encierra, se ofrece en sacrificio o se lleva de un lado a otro», no es sacramento. La misma Fórmula aclara que lo que hace presente a Cristo no es el comer ni la fe del que comulga, sino sus palabras. Y cita la Concordia de Wittenberg (1536): el cuerpo de Cristo no está «encerrado localiter, es decir, espacialmente, en el pan», ni «unido de otro modo con él de manera permanente fuera de la recepción del sacramento»; «fuera de la recepción, cuando el pan se deja aparte y se guarda en el sagrario o se lleva en procesión y se muestra, como sucede en el papado», no sostienen «que el cuerpo de Cristo esté presente». A Cristo mismo, presente en la Cena, se le adora en espíritu y en verdad en el uso del sacramento; a los elementos, no.",
         grades: [
           {
@@ -296,6 +301,7 @@ export const eucharistLutheran = {
         id: "QE-10",
         short: "el pan y el cáliz",
         text: "A todos los que comulgan se les dan el pan y el cáliz, porque Cristo mandó acerca de la copa: «Bebed de él todos» (Mateo 26:27). Una sola especie «no es toda la ordenanza e institución» de Cristo, aunque bajo una hubiera tanto como bajo ambas; y si no es lícito anular el testamento de un hombre, dice la Apología, «mucho menos» el de Cristo.",
+        status: ["STSA~el"],
         grades: [
           {
             kind: "church",

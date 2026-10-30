@@ -104,11 +104,16 @@ for (const path of [
   "/es/doctrinas/eucaristia/ortodoxa",
   "/es/doctrinas/sola-scriptura/ortodoxa",
   "/es/doctrinas/papado/ortodoxa",
+  "/es/doctrinas/eucaristia/reformada",
+  "/es/doctrinas/bautismo/bautista",
+  "/es/doctrinas/sola-scriptura/bautista",
+  "/es/doctrinas/eucaristia/bautista",
+  "/es/doctrinas/papado/bautista",
 ]) {
   test(`the Reformed page ${path} shows its own sections and no leftovers`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(path);
-    await expect(page.locator("h1")).toHaveText(/^La posición (reformada|ortodoxa)$/);
+    await expect(page.locator("h1")).toHaveText(/^La posición (reformada|ortodoxa|bautista)$/);
     for (const id of ["teach", "why", "scripture", "life", "authority"])
       await expect(page.locator(`section#${id}`)).toHaveCount(1);
     await expect(page.locator("section#objections")).toHaveCount(0);

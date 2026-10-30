@@ -14,8 +14,10 @@ export type SourceRef<C extends string = string> = {
 export type Statement<C extends string = string> = {
   id: string;
   short: string;
+  question?: Rich;
   text: Rich;
   aside?: Rich;
+  status?: C[];
   grades: GradeLine[];
   sources: SourceRef<C>[];
 };

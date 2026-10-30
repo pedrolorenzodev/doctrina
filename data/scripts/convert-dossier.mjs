@@ -319,7 +319,7 @@ for (const d of DOCTRINES) {
 const mapCid = (d, id) => idMap[d][id] ?? id;
 
 const BOOKS = {
-  "Génesis": "Gen", "Éxodo": "Exod", "Levítico": "Lev", "Job": "Job", "Salmo": "Ps", "Salmos": "Ps", "Proverbios": "Prov", "Isaías": "Isa", "Jeremías": "Jer",
+  "Génesis": "Gen", "Éxodo": "Exod", "Levítico": "Lev", "Job": "Job", "Salmo": "Ps", "Salmos": "Ps", "Proverbios": "Prov", "Isaías": "Isa", "Jeremías": "Jer", "Deuteronomio": "Deut", "Josué": "Josh",
   "Ezequiel": "Ezek", "Lamentaciones": "Lam", "Oseas": "Hos", "Zacarías": "Zech", "Malaquías": "Mal", "Mateo": "Matt", "Marcos": "Mark",
   "Lucas": "Luke", "Juan": "John", "Hechos": "Acts", "Romanos": "Rom", "1 Corintios": "1Cor", "2 Corintios": "2Cor", "Gálatas": "Gal",
   "Efesios": "Eph", "Filipenses": "Phil", "Colosenses": "Col", "1 Tesalonicenses": "1Thess", "2 Tesalonicenses": "2Thess", "1 Timoteo": "1Tim",

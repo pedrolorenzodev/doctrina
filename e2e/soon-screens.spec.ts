@@ -6,6 +6,7 @@ const tabs = 'nav[aria-label="Tradición"]';
 const tabTip = `${tabs} [aria-hidden="true"].pointer-events-none`;
 
 const fingerTap = async (page: Page, selector: string) => {
+  await page.locator(selector).first().scrollIntoViewIfNeeded();
   const box = await page.locator(selector).first().boundingBox();
   await page.touchscreen.tap(box!.x + box!.width / 2, box!.y + box!.height / 2);
 };
@@ -16,32 +17,22 @@ test("the tree marks every doctrine and tradition without a screen as under cons
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(catholic);
   const soon = page.locator("aside li[data-soon]");
-  for (const label of [
-    "La justificación",
-    "El papado",
-    "Sola Scriptura",
-    "Ortodoxa",
-    "Luterana",
-    "Reformada",
-    "Bautista",
-    "Pentecostal",
-    "Fuentes",
-  ]) {
+  for (const label of ["La justificación", "Pentecostal", "Fuentes"]) {
     await expect(soon.filter({ hasText: label }).first()).toBeAttached();
   }
   await expect(page.locator('aside li[data-id="justification"] [data-twisty]')).toHaveCount(0);
   await expect(page.locator('aside li[data-id="eucharist/catholic"]')).not.toHaveAttribute("data-soon");
   await expect(page.locator('aside li[data-id="eucharist"]')).not.toHaveAttribute("data-soon");
-  const luteran = soon.filter({ hasText: "Luterana" }).first().locator("button");
-  await expect(luteran).toHaveAttribute("aria-disabled", "true");
-  await luteran.hover();
-  await expect(soon.filter({ hasText: "Luterana" }).first().getByText("En construcción")).toBeVisible();
+  const pentecostal = soon.filter({ hasText: "Pentecostal" }).first().locator("button");
+  await expect(pentecostal).toHaveAttribute("aria-disabled", "true");
+  await pentecostal.hover();
+  await expect(soon.filter({ hasText: "Pentecostal" }).first().getByText("En construcción")).toBeVisible();
 });
 
 test("the tradition tabs mute the traditions without a page and say why on hover and on touch", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(catholic);
-  await expect(page.locator(`${tabs} button[aria-disabled="true"]`)).toHaveCount(5);
+  await expect(page.locator(`${tabs} button[aria-disabled="true"]`)).toHaveCount(1);
   await expect(page.locator(`${tabs} button[aria-current="page"]`)).toHaveText("Católica");
   await page.locator(`${tabs} button[aria-disabled="true"]`).first().hover();
   await expect(page.locator(tabTip)).toHaveCSS("opacity", "1");

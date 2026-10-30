@@ -269,6 +269,76 @@ export const editions = {
       "Línea de estado actual del sitio, redactada a partir de la nota de estado del dossier (testimonio griego de Schaff; revisión de 1690 según el mapa; Krivoshein).",
     licence: "unconfirmed",
   },
+  "status-stwcf-er.la": {
+    id: "status-stwcf-er.la",
+    works: ["status-stwcf-er"],
+    lang: "la",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de las constituciones y actas de cada cuerpo reformado.",
+    licence: "unconfirmed",
+  },
+  "status-stwcf-er.es": {
+    id: "status-stwcf-er.es",
+    works: ["status-stwcf-er"],
+    lang: "es",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de las constituciones y actas de cada cuerpo reformado.",
+    licence: "unconfirmed",
+  },
+  "status-stwcf-er.en": {
+    id: "status-stwcf-er.en",
+    works: ["status-stwcf-er"],
+    lang: "en",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de las constituciones y actas de cada cuerpo reformado.",
+    licence: "unconfirmed",
+  },
+  "status-stwcf-er.de": {
+    id: "status-stwcf-er.de",
+    works: ["status-stwcf-er"],
+    lang: "de",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de las constituciones y actas de cada cuerpo reformado.",
+    licence: "unconfirmed",
+  },
+  "status-stwcf-er.el": {
+    id: "status-stwcf-er.el",
+    works: ["status-stwcf-er"],
+    lang: "el",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de las constituciones y actas de cada cuerpo reformado.",
+    licence: "unconfirmed",
+  },
+  "mcglothlin.en": {
+    id: "mcglothlin.en",
+    works: ["new-hampshire"],
+    lang: "en",
+    bibliography:
+      "Inglés: W. J. McGlothlin, Baptist Confessions of Faith, Filadelfia, American Baptist Publication Society, 1911, p. 306 (Confesión de New Hampshire de 1853, con sus adiciones entre corchetes). Dominio público.",
+    licence: "public-domain",
+  },
+  "site-translation.new-hampshire.es": {
+    id: "site-translation.new-hampshire.es",
+    works: ["new-hampshire"],
+    lang: "es",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
+  "bfm.en": {
+    id: "bfm.en",
+    works: ["bfm-2000"],
+    lang: "en",
+    bibliography:
+      "Inglés: The Baptist Faith and Message (2000), edición oficial imprimible, p. 8, bfm.sbc.net. © Convención Bautista del Sur: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "site-translation.bfm-2000.es": {
+    id: "site-translation.bfm-2000.es",
+    works: ["bfm-2000"],
+    lang: "es",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
   "pa.la": {
     id: "pa.la",
     works: ["pastor-aeternus"],

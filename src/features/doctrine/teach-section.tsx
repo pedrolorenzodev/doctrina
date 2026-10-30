@@ -4,10 +4,12 @@ import { Section } from "@/components/section";
 import { shownStatements } from "@/content/doctrine-rules";
 import type { GradeLine, TraditionPage } from "@/content/model/page";
 import { gradeViewId, verseLink } from "@/content/page-views";
+import { registry } from "@/content/registry";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { SourceLinks } from "@/features/doctrine/source-links";
 import type { Locale } from "@/lib/locale";
+import { guillemets, labelSeparator } from "@/lib/punctuation";
 
 type TeachSectionProps = {
   page: TraditionPage;
@@ -41,10 +43,22 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
       );
     });
 
+  const statusText = (id: string) => {
+    const excerpt = registry.citations[id as keyof typeof registry.citations]?.excerpts[0];
+    const body = excerpt && "es" in excerpt ? excerpt.es.text : "";
+    const prefix = `${text.doctrine.statusLabel}${labelSeparator}`;
+    return guillemets(body.startsWith(prefix) ? body.slice(prefix.length) : body);
+  };
+
   const items = page.teach.statements.map((statement) => ({
     id: statement.id,
     content: (
       <>
+        {statement.question ? (
+          <p className="mb-2 font-body text-prose-mobile font-normal text-ink opsz-18 sm:text-prose">
+            <RichText text={statement.question} verse={verse} />
+          </p>
+        ) : null}
         <p className="font-body text-prose-mobile font-light text-ink-2 opsz-18 sm:text-prose">
           <RichText text={statement.text} verse={verse} />
         </p>
@@ -53,6 +67,13 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
           <span className="divider-inline" aria-hidden="true" />
           <SourceLinks sources={statement.sources} />
         </p>
+        {statement.status?.map((id) => (
+          <p key={id} className="mt-2 text-line text-ink-3">
+            <CitationLink id={id}>{text.doctrine.statusLabel}</CitationLink>
+            {labelSeparator}
+            {statusText(id)}
+          </p>
+        ))}
       </>
     ),
   }));

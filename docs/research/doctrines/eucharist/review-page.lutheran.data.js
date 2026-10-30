@@ -92,8 +92,19 @@ const DEFINITION = {
   sources: [cite(`SC`, `VI.1–2`, dossier.languageQuotes(DEFINITION_BLOCK))]
 };
 
+const STATUS_BLOCKS = [`QE-7`, `QE-8`, `QE-10`];
+
+SRC.STSA = {
+  kind: `Estado actual`,
+  title: `Artículos de Esmalcalda y Fórmula de Concordia: estado actual`,
+  ed: `Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).`,
+  ex: [{es: dossier.lineQuote(dossier.block(`QE-7`), `Estado actual`)}]
+};
+
 const QE = QE_IDS.map((id) => ({
   id,
+  ...(QUESTION_FORM.includes(id) ? {question: dossier.siteText(dossier.block(id), `Pregunta`)} : {}),
+  ...(STATUS_BLOCKS.includes(id) ? {status: [`STSA`]} : {}),
   text: dossier.siteText(dossier.block(id), QUESTION_FORM.includes(id) ? `Respuesta` : `Texto para el sitio`),
   grades: QE_GRADES[id],
   sources: sourcesOf(id)

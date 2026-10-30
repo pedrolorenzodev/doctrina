@@ -132,6 +132,7 @@ export const en: UiText = {
     scripture: "The Scripture it uses",
     citedIn: "Cited in {source}",
     showMoreStatements: "Show {n} more statements",
+    statusLabel: "Current status",
     showLess: "Show less",
     gradeAnd: "and",
     unclassified: {

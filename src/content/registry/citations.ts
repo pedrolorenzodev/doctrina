@@ -5976,6 +5976,717 @@ export const citations = {
       },
     ],
   },
+  "STWCF~er": {
+    id: "STWCF~er",
+    work: "status-stwcf-er",
+    kind: "status",
+    locator: {
+      parts: [],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "la Orthodox Presbyterian Church mantiene ambas frases en su texto vigente; la Presbyterian Church in America publica como sus Confesión y Catecismos el texto preparado originalmente por la OPC. La Iglesia de Escocia declaró en 1986 que ya no afirma WCF 29.2 y no exige creerlo a sus ministros; el acta no menciona 29.6. La PC(USA) informa que modificó el capítulo 29 para quitar lenguaje «anacrónico y ofensivo». La edición de El Faro de 2001, revisada y aprobada para publicación por el Departamento de Teología de la Asamblea General de la Iglesia Nacional Presbiteriana de México, conserva el texto histórico; la fuente localizada acredita esa edición, no una cláusula constitucional que elija una edición textual.",
+          edition: "status-stwcf-er.es",
+        },
+      },
+    ],
+  },
+  RWCF29_1: {
+    id: "RWCF29_1",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "29.1",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF29_7: {
+    id: "RWCF29_7",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "29.7",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Los que dignamente reciben este sacramento [...] participan y se alimentan por la fé real y verdaderamente, pero no carnal ni corporal, sino espiritualmente, de Cristo crucificado, y de todos los benefícios de su muerte",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF29_5: {
+    id: "RWCF29_5",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "29.5",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF29_2: {
+    id: "RWCF29_2",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "29.2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "el sacrificio papal de la misa (como lo llaman) es abominable á los ojos de Dios y un ultraje al solo y único sacrifício de Cristo, la única propiciacion para todos los elegidos",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF29_8: {
+    id: "RWCF29_8",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "29.8",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF29_3: {
+    id: "RWCF29_3",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "29.3",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWSC97: {
+    id: "RWSC97",
+    work: "wsc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "97",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC171: {
+    id: "RWLC171",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "171",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF29_6: {
+    id: "RWCF29_6",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "29.6",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "ha sido y es, la causa de muchas supersticiones y groseras idolatrias",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF29_4: {
+    id: "RWCF29_4",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "29.4",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC171_172: {
+    id: "RWLC171_172",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "171–172",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC169: {
+    id: "RWLC169",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "169",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC174: {
+    id: "RWLC174",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "174",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC175: {
+    id: "RWLC175",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "175",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC173: {
+    id: "RWLC173",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "173",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC177: {
+    id: "RWLC177",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "177",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  BNHXIV: {
+    id: "BNHXIV",
+    work: "new-hampshire",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "article",
+          value: "XIV",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El bautismo cristiano es la inmersión en agua de un creyente, en el nombre del Padre [y] del Hijo y del Espíritu Santo",
+          edition: "site-translation.new-hampshire.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "Christian Baptism is the immersion in water of a believer, into the name of the Father [and] Son, and Holy Ghost",
+          edition: "mcglothlin.en",
+        },
+      },
+      {
+        es: {
+          text: "para manifestar, en un emblema solemne y hermoso, nuestra fe en el Salvador crucificado, sepultado y resucitado",
+          edition: "site-translation.new-hampshire.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "to show forth in a solemn and beautiful emblem, our faith in the crucified, buried, and risen Saviour",
+          edition: "mcglothlin.en",
+        },
+      },
+      {
+        es: {
+          text: "con su efecto en nuestra muerte al pecado y resurrección a una vida nueva",
+          edition: "site-translation.new-hampshire.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "with its effect in our death to sin and resurrection to a new life",
+          edition: "mcglothlin.en",
+        },
+      },
+      {
+        es: {
+          text: "mediante el uso [sagrado] del pan y del vino, han de conmemorar juntos el amor de Cristo en su muerte; precedido siempre de un solemne examen de sí mismos",
+          edition: "site-translation.new-hampshire.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "by the [sacred] use of bread and wine, are to commemorate together the dying love of Christ; preceded always by solemn self-examination",
+          edition: "mcglothlin.en",
+        },
+      },
+    ],
+    date: {
+      year: 1853,
+    },
+    link: {
+      href: "https://archive.org/details/baptistconfessio00mcgl",
+      label: "Ver el escaneo de McGlothlin en archive.org",
+    },
+  },
+  BBFMVII: {
+    id: "BBFMVII",
+    work: "bfm-2000",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "article",
+          value: "VII",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "acto de obediencia",
+          edition: "site-translation.bfm-2000.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "act of obedience",
+          edition: "bfm.en",
+        },
+      },
+      {
+        es: {
+          text: "acto simbólico de obediencia",
+          edition: "site-translation.bfm-2000.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "symbolic act of obedience",
+          edition: "bfm.en",
+        },
+      },
+    ],
+    date: {
+      year: 2000,
+    },
+    link: {
+      href: "https://bfm.sbc.net/bfm2000/",
+      label: "Leer el artículo oficial",
+    },
+  },
+  BNHI: {
+    id: "BNHI",
+    work: "new-hampshire",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "article",
+          value: "I",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "la norma suprema por la que deben examinarse toda conducta humana, los credos y las opiniones",
+          edition: "site-translation.new-hampshire.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "the supreme standard by which all human conduct, creeds, and opinions should be tried",
+          edition: "mcglothlin.en",
+        },
+      },
+      {
+        es: {
+          text: "la Santa Biblia fue escrita por personas divinamente inspiradas y es un tesoro perfecto de instrucción celestial",
+          edition: "site-translation.new-hampshire.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "the Holy Bible was written by men divinely inspired, and is a perfect treasure of heavenly instruction",
+          edition: "mcglothlin.en",
+        },
+      },
+    ],
+    date: {
+      year: 1853,
+    },
+    link: {
+      href: "https://archive.org/details/baptistconfessio00mcgl",
+      label: "Ver el escaneo de McGlothlin en archive.org",
+    },
+  },
+  BBFMI: {
+    id: "BBFMI",
+    work: "bfm-2000",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "article",
+          value: "I",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "norma suprema",
+          edition: "site-translation.bfm-2000.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "supreme standard",
+          edition: "bfm.en",
+        },
+      },
+    ],
+    date: {
+      year: 2000,
+    },
+    link: {
+      href: "https://bfm.sbc.net/bfm2000/",
+      label: "Leer el artículo oficial",
+    },
+  },
+  BBFMpre_mbulo: {
+    id: "BBFMpre_mbulo",
+    work: "bfm-2000",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "preámbulo",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Las confesiones son sólo guías para la interpretación",
+          edition: "site-translation.bfm-2000.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "Confessions are only guides in interpretation",
+          edition: "bfm.en",
+        },
+      },
+    ],
+    date: {
+      year: 2000,
+    },
+    link: {
+      href: "https://bfm.sbc.net/bfm2000/",
+      label: "Leer el artículo oficial",
+    },
+  },
+  BNHXIII: {
+    id: "BNHXIII",
+    work: "new-hampshire",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "article",
+          value: "XIII",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "una Iglesia visible de Cristo es una congregación de creyentes bautizados, asociados por pacto en la fe y la comunión del Evangelio",
+          edition: "site-translation.new-hampshire.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "a visible Church of Christ is a congregation of baptized believers, associated by covenant in the faith and fellowship of the Gospel",
+          edition: "mcglothlin.en",
+        },
+      },
+    ],
+    date: {
+      year: 1853,
+    },
+    link: {
+      href: "https://archive.org/details/baptistconfessio00mcgl",
+      label: "Ver el escaneo de McGlothlin en archive.org",
+    },
+  },
+  "BBFMpre_mbulo~pb": {
+    id: "BBFMpre_mbulo~pb",
+    work: "bfm-2000",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "art. preámbulo",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Confessions are only guides in interpretation",
+          edition: "bfm.en",
+        },
+      },
+      {
+        es: {
+          text: "Confessions are only guides in interpretation",
+          edition: "site-translation.bfm-2000.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "Confessions are only guides in interpretation",
+          edition: "bfm.en",
+        },
+      },
+    ],
+    date: {
+      year: 2000,
+    },
+    link: {
+      href: "https://bfm.sbc.net/bfm2000/",
+      label: "Leer el artículo oficial",
+    },
+  },
+  BBFMVI: {
+    id: "BBFMVI",
+    work: "bfm-2000",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "article",
+          value: "VI",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "señorío de Cristo",
+          edition: "site-translation.bfm-2000.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "Lordship of Christ",
+          edition: "bfm.en",
+        },
+      },
+    ],
+    date: {
+      year: 2000,
+    },
+    link: {
+      href: "https://bfm.sbc.net/bfm2000/",
+      label: "Leer el artículo oficial",
+    },
+  },
   PAproem: {
     id: "PAproem",
     work: "pastor-aeternus",
