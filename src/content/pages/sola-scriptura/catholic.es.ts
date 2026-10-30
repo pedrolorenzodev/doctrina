@@ -772,7 +772,7 @@ export const solaScripturaCatholic = {
         },
         objectorTexts: {
           shown: ["AC15"],
-          more: ["AC28_34", "SA315", "STLUT", "WCF202"],
+          more: ["AC28_34", "SA315", "STLUT~s", "WCF202"],
         },
         answer: [
           {

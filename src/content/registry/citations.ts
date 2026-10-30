@@ -827,6 +827,13 @@ export const citations = {
           translation: "official",
         },
       },
+      {
+        es: {
+          text: "no podrían salvarse aquellos hombres que, conociendo que la Iglesia católica fue instituida por Dios a través de Jesucristo como necesaria, sin embargo, se negasen a entrar o a perseverar en ella",
+          edition: "vat2.es",
+          translation: "official",
+        },
+      },
     ],
     date: {
       year: 1964,
@@ -1161,6 +1168,14 @@ export const citations = {
           text: "justified by faith in Baptism are members of Christ's body, and have a right to be called Christian, and so are correctly accepted as brothers by the children of the Catholic Church.",
           edition: "vat2.en",
         },
+      },
+      {
+        es: {
+          text: "no están desprovistas de sentido y de valor en el misterio de la salvación, porque el Espíritu de Cristo no ha rehusado servirse de ellas como medios de salvación",
+          edition: "vat2.es",
+          translation: "official",
+        },
+        note: "Las Iglesias y comunidades separadas",
       },
     ],
     date: {
@@ -2442,6 +2457,13 @@ export const citations = {
       {
         es: {
           text: "Se ha de prestar un asentimiento religioso del entendimiento y de la voluntad, sin que llegue a ser de fe, a la doctrina que el Sumo Pontífice o el Colegio de los Obispos, en el ejercicio de su magisterio auténtico, enseñan acerca de la fe y de las costumbres",
+          edition: "cic.es",
+          translation: "official",
+        },
+      },
+      {
+        es: {
+          text: "asentimiento religioso del entendimiento y de la voluntad, sin que llegue a ser de fe",
           edition: "cic.es",
           translation: "official",
         },
@@ -4950,9 +4972,9 @@ export const citations = {
       label: "Ver el escaneo de Metallinos en archive.org",
     },
   },
-  STWCF: {
-    id: "STWCF",
-    work: "status-stwcf",
+  "STWCF~p": {
+    id: "STWCF~p",
+    work: "status-stwcf-p",
     kind: "status",
     locator: {
       parts: [],
@@ -4960,20 +4982,21 @@ export const citations = {
     excerpts: [
       {
         es: {
-          text: 'Estado actual: la Iglesia Presbiteriana Ortodoxa (OPC) mantiene estas frases en su texto vigente de la Confesión, y la Iglesia Presbiteriana en América (PCA) usa ese mismo texto. La Iglesia de Escocia, en su Acta Declaratoria de 1986, "ya no afirma" el artículo 29.2 (el acta no menciona el 29.6) y no exige a sus ministros creerlo. La Iglesia Nacional Presbiteriana de México tiene la Confesión de Westminster entre sus símbolos doctrinales; la traducción avalada por su Asamblea General conserva el texto de 1647.',
-          edition: "status-stwcf.es",
+          text: 'Estado actual: la frase que llama al papa "aquel anticristo" es del texto de 1647. La quitaron la Iglesia Presbiteriana de los Estados Unidos (1903) y la Iglesia Presbiteriana Ortodoxa (OPC, 1936), cuyo texto usa la Iglesia Presbiteriana en América (PCA); la Iglesia Presbiteriana de Chile adopta el texto de 1903, sin esta frase. La Iglesia de Escocia, en su Acta Declaratoria de 1986, "ya no afirma" esta frase y no exige a sus oficiales ("office-bearers": ministros, ancianos y diáconos) creerla. La Iglesia Nacional Presbiteriana de México incluye la Confesión de Westminster entre sus símbolos doctrinales sin nombrar una edición; la traducción de Publicaciones El Faro avalada por su Asamblea General conserva en XXV.6 la frase "aquel anticristo" y no incluye los capítulos agregados en 1903.',
+          edition: "st.es",
           translation: "site-statement",
         },
+        note: "ST-WCF",
       },
     ],
     link: {
-      href: "https://opc.org/wcf.html",
-      label: "Leer el texto vigente de la OPC",
+      href: "https://www.pcaac.org/wp-content/uploads/2019/11/WCFPreface.pdf",
+      label: "Leer el prefacio de la OPC (PDF de la PCA)",
     },
   },
-  STLUT: {
-    id: "STLUT",
-    work: "status-stlut",
+  "STLUT~p": {
+    id: "STLUT~p",
+    work: "status-stlut-p",
     kind: "status",
     locator: {
       parts: [],
@@ -4993,9 +5016,9 @@ export const citations = {
       label: "Leer la Breve Declaración en Project Wittenberg",
     },
   },
-  STLUTAC: {
-    id: "STLUTAC",
-    work: "status-stlutac",
+  "STLUTAC~p": {
+    id: "STLUTAC~p",
+    work: "status-stlutac-p",
     kind: "status",
     locator: {
       parts: [],
@@ -5015,9 +5038,9 @@ export const citations = {
       label: "Leer la Breve Declaración en Project Wittenberg",
     },
   },
-  ST1848: {
-    id: "ST1848",
-    work: "status-st1848",
+  "ST1848~p": {
+    id: "ST1848~p",
+    work: "status-st1848-p",
     kind: "status",
     locator: {
       parts: [],
@@ -5033,9 +5056,9 @@ export const citations = {
       },
     ],
   },
-  ST1895: {
-    id: "ST1895",
-    work: "status-st1895",
+  "ST1895~p": {
+    id: "ST1895~p",
+    work: "status-st1895-p",
     kind: "status",
     locator: {
       parts: [],
@@ -5043,10 +5066,11 @@ export const citations = {
     excerpts: [
       {
         es: {
-          text: "Estado actual: no se encontró una retractación sinodal. El diálogo católico-ortodoxo de Alejandría (2023) la menciona: la presenta como rechazo de la invitación de León XIII y crítica del uniatismo. Fuentes oficiales ortodoxas todavía la citan, pero eso no demuestra que cada frase tenga hoy autoridad universal.",
-          edition: "status-st1895.es",
+          text: "Estado actual: no se encontró una retractación sinodal. El diálogo católico-ortodoxo de Alejandría (2023) la menciona: la presenta como rechazo de la invitación de León XIII y crítica del uniatismo. Un comentario de la comisión sinodal del Patriarcado de Moscú (2019) la cita en extenso; eso no demuestra que cada frase tenga hoy autoridad universal.",
+          edition: "st.es",
           translation: "site-statement",
         },
+        note: "ST-1895",
       },
     ],
   },
@@ -6311,6 +6335,13 @@ export const citations = {
         es: {
           text: "Está presente en el sacrificio de la Misa, sea en la persona del ministro, […] sea sobre todo bajo las especies eucarísticas. Está presente con su fuerza en los Sacramentos […] Está presente en su palabra […] Está presente, por último, cuando la Iglesia suplica y canta salmos",
           edition: "sc.es",
+          translation: "official",
+        },
+      },
+      {
+        es: {
+          text: "está presente en su palabra, pues cuando se lee en la Iglesia la Sagrada Escritura, es El quien habla",
+          edition: "vat2.es",
           translation: "official",
         },
       },
@@ -8036,6 +8067,23 @@ export const citations = {
       href: "https://archive.org/details/concordiatriglot00unse",
       label: "Ver el escaneo de la Triglotta (1921) en archive.org",
     },
+  },
+  "STLUT~s": {
+    id: "STLUT~s",
+    work: "status-stlut-s",
+    kind: "status",
+    locator: {
+      parts: [],
+    },
+    excerpts: [
+      {
+        es: {
+          text: 'Estado actual: la Iglesia Luterana–Sínodo de Misuri (LCMS) acepta "sin reservas" todos los libros simbólicos de la Iglesia luterana, entre ellos la Apología y los Artículos de Esmalcalda (Constitución, art. II). La Iglesia Evangélica Luterana en América (ELCA) acepta la Apología y los Artículos de Esmalcalda como "interpretaciones válidas" de la fe de la Iglesia, junto a la Confesión de Augsburgo, que acepta como "testimonio verdadero" del Evangelio (Constitución, 2.05–2.06).',
+          edition: "status-stlut-s.es",
+          translation: "site-statement",
+        },
+      },
+    ],
   },
   WCF11: {
     id: "WCF11",
@@ -18683,6 +18731,27 @@ export const citations = {
       label: "Leer el texto vigente de la OPC",
     },
   },
+  STWCF: {
+    id: "STWCF",
+    work: "status-stwcf",
+    kind: "status",
+    locator: {
+      parts: [],
+    },
+    excerpts: [
+      {
+        es: {
+          text: 'Estado actual: la Iglesia Presbiteriana Ortodoxa (OPC) mantiene estas frases en su texto vigente de la Confesión, y la Iglesia Presbiteriana en América (PCA) usa ese mismo texto. La Iglesia de Escocia, en su Acta Declaratoria de 1986, "ya no afirma" el artículo 29.2 (el acta no menciona el 29.6) y no exige a sus ministros creerlo. La Iglesia Nacional Presbiteriana de México tiene la Confesión de Westminster entre sus símbolos doctrinales; la traducción avalada por su Asamblea General conserva el texto de 1647.',
+          edition: "status-stwcf.es",
+          translation: "site-statement",
+        },
+      },
+    ],
+    link: {
+      href: "https://opc.org/wcf.html",
+      label: "Leer el texto vigente de la OPC",
+    },
+  },
   STSA: {
     id: "STSA",
     work: "status-stsa",
@@ -18695,6 +18764,23 @@ export const citations = {
         es: {
           text: 'Estado actual: la Iglesia Luterana–Sínodo de Misuri (LCMS) acepta "sin reservas" todos los libros simbólicos, entre ellos los Artículos de Esmalcalda (Constitución, art. II). La Iglesia Evangélica Luterana en América (ELCA) los acepta como "interpretaciones válidas" de la fe, junto a la Confesión de Augsburgo, que acepta como "testimonio verdadero" (Constitución, 2.05–2.06).',
           edition: "status-stsa.es",
+          translation: "site-statement",
+        },
+      },
+    ],
+  },
+  ST1895: {
+    id: "ST1895",
+    work: "status-st1895",
+    kind: "status",
+    locator: {
+      parts: [],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Estado actual: no se encontró una retractación sinodal. El diálogo católico-ortodoxo de Alejandría (2023) la menciona: la presenta como rechazo de la invitación de León XIII y crítica del uniatismo. Fuentes oficiales ortodoxas todavía la citan, pero eso no demuestra que cada frase tenga hoy autoridad universal.",
+          edition: "status-st1895.es",
           translation: "site-statement",
         },
       },

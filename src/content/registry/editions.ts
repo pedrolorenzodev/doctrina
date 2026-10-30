@@ -472,7 +472,7 @@ export const editions = {
   },
   "st.la": {
     id: "st.la",
-    works: ["status-stwcf", "status-stlut", "status-stlutac", "status-st1848", "status-st1895"],
+    works: ["status-stwcf-p", "status-stlut-p", "status-stlutac-p", "status-st1848-p", "status-st1895-p"],
     lang: "la",
     bibliography:
       "Línea de estado actual redactada para el sitio (2026-10-21) a partir de las fuentes que nombra. No es texto de la Iglesia nombrada.",
@@ -480,7 +480,7 @@ export const editions = {
   },
   "st.es": {
     id: "st.es",
-    works: ["status-stwcf", "status-stlut", "status-stlutac", "status-st1848", "status-st1895"],
+    works: ["status-stwcf-p", "status-stlut-p", "status-stlutac-p", "status-st1848-p", "status-st1895-p"],
     lang: "es",
     bibliography:
       "Línea de estado actual redactada para el sitio (2026-10-21) a partir de las fuentes que nombra. No es texto de la Iglesia nombrada.",
@@ -488,7 +488,7 @@ export const editions = {
   },
   "st.en": {
     id: "st.en",
-    works: ["status-stwcf", "status-stlut", "status-stlutac", "status-st1848", "status-st1895"],
+    works: ["status-stwcf-p", "status-stlut-p", "status-stlutac-p", "status-st1848-p", "status-st1895-p"],
     lang: "en",
     bibliography:
       "Línea de estado actual redactada para el sitio (2026-10-21) a partir de las fuentes que nombra. No es texto de la Iglesia nombrada.",
@@ -496,7 +496,7 @@ export const editions = {
   },
   "st.de": {
     id: "st.de",
-    works: ["status-stwcf", "status-stlut", "status-stlutac", "status-st1848", "status-st1895"],
+    works: ["status-stwcf-p", "status-stlut-p", "status-stlutac-p", "status-st1848-p", "status-st1895-p"],
     lang: "de",
     bibliography:
       "Línea de estado actual redactada para el sitio (2026-10-21) a partir de las fuentes que nombra. No es texto de la Iglesia nombrada.",
@@ -704,33 +704,33 @@ export const editions = {
     bibliography: "Benedicto XVI, Verbum Domini (30 sep 2010). © Libreria Editrice Vaticana: cita breve y enlace.",
     licence: "short-quote",
   },
-  "status-stlut.la": {
-    id: "status-stlut.la",
-    works: ["status-stlut"],
+  "status-stlut-s.la": {
+    id: "status-stlut-s.la",
+    works: ["status-stlut-s"],
     lang: "la",
     bibliography:
       "Constitución de la LCMS, art. II, «accepts without reservation … All the Symbolical Books»; Constituciones de la ELCA, ed. de octubre de 2024, 2.05–2.06, que nombra «the Apology of the Augsburg Confession, the Smalcald Articles and the Treatise». No se buscó ninguna declaración luterana que retire o matice estos pasajes; la línea no dice nada sobre retiro por eso.",
     licence: "unconfirmed",
   },
-  "status-stlut.es": {
-    id: "status-stlut.es",
-    works: ["status-stlut"],
+  "status-stlut-s.es": {
+    id: "status-stlut-s.es",
+    works: ["status-stlut-s"],
     lang: "es",
     bibliography:
       "Constitución de la LCMS, art. II, «accepts without reservation … All the Symbolical Books»; Constituciones de la ELCA, ed. de octubre de 2024, 2.05–2.06, que nombra «the Apology of the Augsburg Confession, the Smalcald Articles and the Treatise». No se buscó ninguna declaración luterana que retire o matice estos pasajes; la línea no dice nada sobre retiro por eso.",
     licence: "unconfirmed",
   },
-  "status-stlut.en": {
-    id: "status-stlut.en",
-    works: ["status-stlut"],
+  "status-stlut-s.en": {
+    id: "status-stlut-s.en",
+    works: ["status-stlut-s"],
     lang: "en",
     bibliography:
       "Constitución de la LCMS, art. II, «accepts without reservation … All the Symbolical Books»; Constituciones de la ELCA, ed. de octubre de 2024, 2.05–2.06, que nombra «the Apology of the Augsburg Confession, the Smalcald Articles and the Treatise». No se buscó ninguna declaración luterana que retire o matice estos pasajes; la línea no dice nada sobre retiro por eso.",
     licence: "unconfirmed",
   },
-  "status-stlut.de": {
-    id: "status-stlut.de",
-    works: ["status-stlut"],
+  "status-stlut-s.de": {
+    id: "status-stlut-s.de",
+    works: ["status-stlut-s"],
     lang: "de",
     bibliography:
       "Constitución de la LCMS, art. II, «accepts without reservation … All the Symbolical Books»; Constituciones de la ELCA, ed. de octubre de 2024, 2.05–2.06, que nombra «the Apology of the Augsburg Confession, the Smalcald Articles and the Treatise». No se buscó ninguna declaración luterana que retire o matice estos pasajes; la línea no dice nada sobre retiro por eso.",

@@ -29,7 +29,8 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
           </span>
         );
       }
-      const label = page.authority.grades[line.grade].label;
+      const label = page.authority.grades[line.grade]?.label;
+      if (!label) return null;
       return (
         <span key={index}>
           {connector}

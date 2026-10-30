@@ -70,6 +70,10 @@ export function validateContent(registry: Registry, pages: Record<string, Tradit
     refsOf(`${name}.teach.definition.sources`, { citations: teach.definition.sources.flatMap((s) => s.citations) });
     for (const statement of teach.statements)
       statement.sources.forEach((s) => refsOf(`${name}.teach.${statement.id}`, s));
+    for (const holder of [{ id: "definition", ...teach.definition }, ...teach.statements])
+      for (const line of holder.grades)
+        if (line.kind === "church" && !(line.grade in authority.grades))
+          fail(`${name}.teach.${holder.id}`, `unknown grade ${line.grade}`);
     why.fathers.forEach((father, i) => refsOf(`${name}.why.fathers[${i}]`, father.citedIn));
     life.items.forEach((item) => item.sources.forEach((s) => refsOf(`${name}.life.${item.id}`, s)));
     for (const grade of [...Object.values(authority.grades), ...Object.values(authority.other)])

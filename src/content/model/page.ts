@@ -1,11 +1,10 @@
-import type { ChurchGrade, DoctrineId, TraditionId, UnclassifiedReason } from "@/content/model/ids";
+import type { DoctrineId, TraditionId, UnclassifiedReason } from "@/content/model/ids";
 import type { DateInfo } from "@/content/model/registry";
 
 export type Rich = string;
 
 export type GradeLine =
-  | { kind: "church"; grade: ChurchGrade; basis?: Rich }
-  | { kind: "unclassified"; reason: UnclassifiedReason; basis?: Rich };
+  { kind: "church"; grade: string; basis?: Rich } | { kind: "unclassified"; reason: UnclassifiedReason; basis?: Rich };
 
 export type SourceRef<C extends string = string> = {
   citations: C[];
@@ -144,7 +143,7 @@ export type TraditionPage<C extends string = string> = {
   life: { intro: Rich[]; items: LifeItem<C>[] };
   authority: {
     subtitle: string;
-    grades: Record<ChurchGrade, GradeDefinition<C>>;
+    grades: Record<string, GradeDefinition<C>>;
     other: Record<string, GradeDefinition<C>>;
   };
 };

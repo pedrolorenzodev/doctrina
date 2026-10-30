@@ -16,7 +16,12 @@ type AuthoritySectionProps = {
 
 export function AuthoritySection({ page, locale }: AuthoritySectionProps) {
   const text = getUiText(locale);
-  const rows = churchGrades.flatMap((grade) => {
+  const grades = Object.keys(page.authority.grades);
+  const orderedGrades = [
+    ...churchGrades.filter((grade) => grades.includes(grade)),
+    ...grades.filter((grade) => !churchGrades.some((known) => known === grade)),
+  ];
+  const rows = orderedGrades.flatMap((grade) => {
     const definition = page.authority.grades[grade];
     if (!definition?.definition) return [];
     const statements = page.teach.statements.filter((statement) =>

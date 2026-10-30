@@ -7,6 +7,7 @@ const ROOT = new URL("../../docs/research/doctrines", import.meta.url).pathname;
 const CONTENT = process.env.CONTENT_OUT ?? new URL("../../src/content", import.meta.url).pathname;
 const BIBLE = new URL("../../data/corpus/bibles/rv1909.json", import.meta.url).pathname;
 const DOCTRINES = process.argv.length > 2 ? process.argv.slice(2) : ["eucharist"];
+const LEGACY_UNSUFFIXED_STATUS = new Set(["eucharist", "baptism"]);
 const SHORT = { eucharist: "e", justification: "j", baptism: "b", papacy: "p", "sola-scriptura": "s" };
 const rv1909 = JSON.parse(fs.readFileSync(BIBLE, "utf8"));
 const rvKeys = Object.keys(rv1909);
@@ -140,9 +141,9 @@ const registry = { works: {}, editions: {}, citations: {}, verses: {} };
 const idMap = Object.fromEntries(DOCTRINES.map((d) => [d, {}]));
 const edTexts = {};
 
-function workFor(rawId, s) {
+function workFor(rawId, s, d) {
   if (s.kind === "Estado actual") {
-    const id = "status-" + rawId.toLowerCase();
+    const id = "status-" + rawId.toLowerCase() + (LEGACY_UNSUFFIXED_STATUS.has(d) ? "" : `-${SHORT[d]}`);
     if (!registry.works[id]) registry.works[id] = { id, title: s.title.replace(/: estado actual$/, ""), short: "Estado actual", kind: "status-line", speaker: "site", scheme: [] };
     return { workId: id, rest: "" };
   }
@@ -221,7 +222,7 @@ function editionIdForLang(key, lang) {
 }
 
 function convertCitation(d, rawId, s) {
-  const wf = workFor(rawId, s);
+  const wf = workFor(rawId, s, d);
   if (!wf) return null;
   const isStatus = s.kind === "Estado actual";
   let loc = isStatus ? { parts: [] } : parseLocator(wf.rest);
@@ -280,7 +281,8 @@ for (const d of DOCTRINES) {
     const c = convertCitation(d, rawId, s);
     if (!c) continue;
     report.citations++;
-    let id = rawId;
+    let id = s.kind === "Estado actual" && !LEGACY_UNSUFFIXED_STATUS.has(d) ? `${rawId}~${SHORT[d]}` : rawId;
+    c.id = id;
     const prior = registry.citations[id];
     if (prior) {
       if (identity(prior) === identity(c)) { mergeInto(prior, c); idMap[d][rawId] = id; continue; }

@@ -514,8 +514,8 @@ export const papacyCatholic = {
           line: "Suelen plantearla reformados, luteranos y ortodoxos.",
         },
         objectorTexts: {
-          shown: ["WCF256", "STWCF"],
-          more: ["SA241", "SA249", "STLUT", "DOS10", "ENC95_14h", "ST1895"],
+          shown: ["WCF256", "STWCF~p"],
+          more: ["SA241", "SA249", "STLUT~p", "DOS10", "ENC95_14h", "ST1895~p"],
         },
         answer: [
           {
@@ -601,8 +601,8 @@ export const papacyCatholic = {
           line: "Suelen plantearla luteranos y ortodoxos.",
         },
         objectorTexts: {
-          shown: ["TR25", "TR23", "TR24", "TR30", "STLUT"],
-          more: ["ENC48_11r", "ST1848", "ENC95_14r", "ST1895"],
+          shown: ["TR25", "TR23", "TR24", "TR30", "STLUT~p"],
+          more: ["ENC48_11r", "ST1848~p", "ENC95_14r", "ST1895~p"],
         },
         answer: [
           {
@@ -711,8 +711,8 @@ export const papacyCatholic = {
           line: "Suelen plantearla luteranos y ortodoxos.",
         },
         objectorTexts: {
-          shown: ["ENC95_15", "ENC95_17", "ST1895"],
-          more: ["TR14", "TR8", "TR12", "STLUT", "SAMEL", "ENC48_13", "ST1848"],
+          shown: ["ENC95_15", "ENC95_17", "ST1895~p"],
+          more: ["TR14", "TR8", "TR12", "STLUT~p", "SAMEL", "ENC48_13", "ST1848~p"],
         },
         answer: [
           {
@@ -826,8 +826,8 @@ export const papacyCatholic = {
           line: "Suelen plantearla ortodoxos.",
         },
         objectorTexts: {
-          shown: ["ENC48_11a", "ST1848"],
-          more: ["ENC95_14p", "ST1895"],
+          shown: ["ENC48_11a", "ST1848~p"],
+          more: ["ENC95_14p", "ST1895~p"],
         },
         answer: [
           {
@@ -907,8 +907,8 @@ export const papacyCatholic = {
           line: "Suelen plantearla ortodoxos y luteranos.",
         },
         objectorTexts: {
-          shown: ["ENC95_16", "ST1895"],
-          more: ["ENC48_15", "ST1848", "TR4956", "STLUT"],
+          shown: ["ENC95_16", "ST1895~p"],
+          more: ["ENC48_15", "ST1848~p", "TR4956", "STLUT~p"],
         },
         answer: [
           {
@@ -1001,8 +1001,8 @@ export const papacyCatholic = {
           line: "Suelen plantearla ortodoxos, reformados y luteranos, desde lugares distintos: los ortodoxos tienen por infalibles las decisiones sinodales de la Iglesia universal y ponen la custodia de la fe en todo el cuerpo de la Iglesia; los reformados y los luteranos, solo la Escritura.",
         },
         objectorTexts: {
-          shown: ["ENC95_18", "ENC95_14i", "ENC95_19", "ST1895"],
-          more: ["ENC48_17", "ST1848", "WCF110", "FCEPRN"],
+          shown: ["ENC95_18", "ENC95_14i", "ENC95_19", "ST1895~p"],
+          more: ["ENC48_17", "ST1848~p", "WCF110", "FCEPRN"],
         },
         answer: [
           {
@@ -1126,8 +1126,8 @@ export const papacyCatholic = {
           line: "Suelen plantearla los luteranos, y la Confesión de Westminster en su texto de 1647.",
         },
         objectorTexts: {
-          shown: ["SA244", "SA2410", "STLUTAC"],
-          more: ["TR38", "TR3940", "TR57", "STLUTAC", "TR36", "STLUT", "WCF256", "STWCF"],
+          shown: ["SA244", "SA2410", "STLUTAC~p"],
+          more: ["TR38", "TR3940", "TR57", "STLUTAC~p", "TR36", "STLUT~p", "WCF256", "STWCF~p"],
         },
         answer: [
           {
@@ -1233,7 +1233,7 @@ export const papacyCatholic = {
           line: "Suelen plantearla luteranos.",
         },
         objectorTexts: {
-          shown: ["TR31", "TR33", "TR35", "TR36w", "STLUT"],
+          shown: ["TR31", "TR33", "TR35", "TR36w", "STLUT~p"],
           more: [],
         },
         answer: [

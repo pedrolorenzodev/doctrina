@@ -13,6 +13,22 @@ for (const [name, [type, ids]] of Object.entries(types)) {
   const existing = (await import(`${existingDir}/${name}.ts`))[name];
   const incoming = (await import(`${outDir}/registry/${name}.ts`))[name];
   const merged = { ...incoming, ...existing };
+  if (name === "citations") {
+    const excerptKey = (excerpt) => (excerpt.es?.text || excerpt.la?.text || excerpt.en?.text || excerpt.de?.text || "").slice(0, 60);
+    const identity = (citation) => `${citation.work}|${JSON.stringify(citation.locator.parts)}`;
+    for (const id of Object.keys(merged)) {
+      if (!(id in existing && id in incoming)) continue;
+      if (identity(existing[id]) !== identity(incoming[id])) throw new Error(`citation ${id} names a different passage in the registry and in the conversion`);
+      const have = new Set(existing[id].excerpts.map(excerptKey));
+      const added = incoming[id].excerpts.filter((excerpt) => !have.has(excerptKey(excerpt)));
+      merged[id] = { ...existing[id], excerpts: [...existing[id].excerpts, ...added] };
+    }
+  }
+  if (name === "works") {
+    for (const id of Object.keys(existing)) {
+      if (id in incoming && JSON.stringify(existing[id]) !== JSON.stringify(incoming[id])) console.log("work differs, existing kept:", id);
+    }
+  }
   if (name === "editions") {
     for (const id of Object.keys(merged)) {
       if (id in existing && id in incoming) {

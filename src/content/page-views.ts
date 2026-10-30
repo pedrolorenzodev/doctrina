@@ -85,9 +85,11 @@ function buildGradeView(
   text: UiText,
 ): CitationView | null {
   if (line.kind !== "church") return null;
+  const definition = page.authority.grades[line.grade];
+  if (!definition) return null;
   return buildGradeDefinitionView(
     id,
-    page.authority.grades[line.grade],
+    definition,
     line.basis ? { label: text.citation.gradeBasis, text: plainRich(line.basis, locale) } : null,
     text,
   );
