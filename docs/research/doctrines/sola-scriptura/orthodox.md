@@ -2,23 +2,20 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Started: 2026-10-29, third owner work order.
-- Status: done
-- Completed: one drafting pass through all sections; canon and reading-discipline differences and source limits recorded.
-- Next: none within this dossier drafting pass; original-language extraction gaps and independent verification remain outside this run.
-- Usage at creation: primary 22 %, weekly 58 %; primary reset epoch 1793313492.
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: O-01–05 dispositions; 2 WRONG / 2 and 4 must-fix / 4 applied. Original preserved in `orthodox.apply.md`.
+- Next: owner review/source acquisition and web shaping/import, outside this run; uncollated originals remain marked.
 
 ## Conventions and source boundary
 
-- **Tradition:** Eastern Orthodox, with the map's Greek and Slavic/Russian usages kept distinct. The precise common boundary is fixed in `eucharist/orthodox.md`: received councils and canons, later received councils with their reception caveats, approved seventeenth-century confessions with approval and Orthodox critique, and Philaret.
+- **Tradition:** Eastern Orthodox, with the map's Greek and Slavic/Russian usages kept distinct. The precise common boundary is fixed in `../eucharist/orthodox.md`: received councils and canons, later received councils with their reception caveats, approved seventeenth-century confessions with approval and Orthodox critique, and Philaret.
 - **Relevant documents:** Nicaea II's horos and canon 1; Trullo 2 and the canon lists it receives; Dositheus II,XII and Questions I–III; Mogila I.4; Philaret Q.16–35 and the Scripture-reading directions. Jeremiah's Answers remain part of the mapped confessional universe, not replaced by private Gennadius/Kritopoulos texts.
 - **Doctrinal title:** “Sola Scriptura” is the comparison route. The opening describes Scripture and Tradition in the Orthodox texts' own order rather than defining the tradition by opposition to a Protestant formula.
 - **Greek/Slavic difference:** Dositheus's canon formulation, the Russian catechism's treatment of books outside the Hebrew list, and Russian omissions of Dositheus's reading prohibition remain distinct. Neither witness silently edits the other.
 - **Scope controls:** Crete 2016 itself is not a doctrine-page voice, though its list/reception informs the map. The ROC 2020 project is mentioned only. Contemporary statutes and private theologians are not substitute confessions. The 1848 encyclical retains patriarchal-synodal rank.
-- **Print:** Dositheus Greek in Schaff II; Philaret in Blackmore's English translation in that volume. [Digitized witness](https://archive.org/details/creedschristendo02scha). The catalogue gives 1877 and the Archive copyright note mentions 1896; the copy's title-page year is not collated [unverified]. Pages below are printed running heads.
+- **Print:** Dositheus Greek in Schaff II; Philaret in Blackmore's English translation in that volume. [Digitized witness](https://archive.org/details/creedschristendo02scha). Title: New York, Harper & Brothers, 1896; copyright leaf: 1877 [verified: scan; O-04]. Corrected 2026-10-30; old wording retained in `orthodox.apply.md`. Pages below are printed running heads.
 - **Spanish:** mapped searches have not identified a reusable PD Spanish edition of the confessions. Translations labelled **[traducción propia asistida por IA]** are from the printed Greek, unreviewed by Pedro [unverified]. English Philaret is not translated into Spanish through English.
-- **Tags:** `[verified: scan]` means only the cited wording was read on a page image during drafting. `[unverified]` includes translations, web/metadata witnesses and uncollated authority or edition details. No verification, critic or apply pass is performed.
+- **Tags:** `[verified: scan]` means only the cited wording was read on a page image during drafting. `[unverified]` includes translations, web/metadata witnesses and uncollated authority or edition details. Independent S1-S3 evidence is in `verification-orthodox.md`; no uncollated original or owner translation approval is implied.
 - **Scripture:** only the documents' own citations are listed. A biblical allusion does not acquire a verse number from the drafter's memory. No new argument for the tradition is composed.
 - **Reuse:** historical editions follow the mapped PD boundary, without a fresh worldwide rights audit [unverified]. Modern criticism receives a link and short excerpts only.
 
@@ -106,7 +103,7 @@ The antecedents are the Scripture and the Church's testimony in the preceding se
 
 > The most ancient and original instrument for spreading divine revelation is holy tradition. [verified: scan]
 
-The same answer describes Christ's teaching by word and example and the apostles' earliest preaching. These are the catechism's own historical reasons; this drafting pass does not independently verify that history.
+The same answer describes Christ's teaching by word and example and the apostles' earliest preaching. These are the catechism's own historical reasons; this verification confirms the catechism's claim, not that underlying history.
 
 ### PQ-3 · The purpose of writing
 
@@ -162,13 +159,13 @@ Deferred by the owner (2026-10-23).
 
 **Dositheus Question I**, Greek, Schaff II p. 433, question and first answer:
 
-> Εἰ δεῖ τὴν θείαν γραφὴν κοινῶς παρὰ πάντων τῶν Χριστιανῶν ἀναγινώσκεσθαι; Οὔ. [verified: scan]
+> Εἰ δεῖ τὴν θείαν γραφὴν κοινῶς παρὰ πάντων τῶν Χριστιανῶν ἀναγινώσκεσθαι; Οὐ. [verified: scan; O-02]
 
 > «¿Debe la divina Escritura ser leída indistintamente por todos los cristianos? No». [traducción propia asistida por IA] [unverified]
 
 The following paragraph calls all Scripture inspired and useful, then restricts reading to those trained in its investigation, teaching and reading; p. 434 distinguishes everyone's hearing from untrained reading, especially of some Old Testament parts. The restriction is recorded, not silently softened into a modern recommendation.
 
-**Status:** this is the Greek Jerusalem 1672 witness. The map records omission of Question I's prohibition in Russian editions (`traditions/orthodox.md` §9.3; verification C6). The Russian edition itself has not been collated here [unverified]; neither continued universal enforcement nor a universal repeal is asserted.
+**Status:** this is the Greek Jerusalem 1672 witness. The map records omission of Question I's prohibition in Russian editions (`traditions/orthodox.md` §9.3; verification C6). Krivoshein attributes the omission specifically to Philaret's 1838 Russian translation [verified: e-text, O-05]. The Russian recension itself has not been collated here [unverified]; this theologian's report is not an institutional repeal, and current universal enforcement is not established.
 
 ### Depth and teaching
 
@@ -178,7 +175,7 @@ The following paragraph calls all Scripture inspired and useful, then restricts 
 
 > «¿Es clara la Escritura para todos los cristianos que la leen?». [traducción propia asistida por IA] [unverified]
 
-The answer names the command to search, Paul's gift of teaching and Peter's statement about difficult parts of Paul's letters. No verse numbers are inserted where the Greek does not print them. The source's clarity question is distinct from a claim that no Christian can understand anything in Scripture.
+The answer names the command to search, Paul's gift of teaching and Peter's statement about difficult parts of Paul's letters. No verse numbers are inserted where the Greek does not print them. In the latter paragraph of p. 434, Dositheus Q.II says the regenerate know the Trinity, the Son's incarnation, passion, resurrection and ascension, regeneration and judgment, while distinguishing the deeper matters disclosed to those trained in wisdom and holiness [verified: scan; O-02]. This is the confession's qualification, alongside its restriction in Q.I.
 
 ### Canon: Greek confession
 
@@ -234,9 +231,9 @@ The parenthesis that follows names the holy ecumenical synods as their rule. Thi
 
 ### Approval, critique and edition scope
 
-Dositheus is the confession of Jerusalem 1672; Mogila is the Greek revision confirmed by the patriarchal act of 11 March 1643; Philaret is the 1839 Russian synodal catechism. Approval and publication particulars are mapped in `verification-orthodox.md` F1–F3, not freshly collated here [unverified].
+Dositheus is the confession of Jerusalem 1672; Mogila is the Greek revision confirmed by the patriarchal act of 11 March 1643; Philaret is the 1839 Russian synodal catechism. Schaff p. 445 confirms the 1839 synodal title and Blackmore's 1845 English translation; Overbeck p. 10 confirms 11 March 1643 approval limited to Greek [verified: scan; O-05]. These are named historical witnesses, not a new audit of present universal adoption.
 
-Krivoshein's 1961 [Orthodox critique, §VI](https://azbyka.ru/otechnik/Vasilij_Krivoshein/simvolicheskie-teksty-v-pravoslavnoj-tserkvi/) distinguishes the confessions' historical authority from irreformable universal doctrinal tests. It was fetched once for the Orthodox drafting pass. The host's modern introductory criticism of Krivoshein is not his own text; no site annotation is quoted as his judgment [unverified: web witness].
+Krivoshein's [Orthodox critique, §VI](https://azbyka.ru/otechnik/Vasilij_Krivoshein/simvolicheskie-teksty-v-pravoslavnoj-tserkvi/) distinguishes the confessions' historical authority from irreformable universal doctrinal tests. Its Russian e-text was re-read for O-05; original publication date “1961” remains [unverified], as does print collation. The host's modern introductory criticism of Krivoshein is not his own text; no site annotation is quoted as his judgment [verified: e-text only; O-05].
 
 The reading prohibition's Russian omission and the canon-language differences are matters of documented witnesses, not a harmonization written by the drafter. Crete's reception does not confer one identical rank on every item of the map.
 
@@ -244,14 +241,14 @@ The reading prohibition's Russian omission and the canon-language differences ar
 
 | Witness | Edition / loci | Access and limits |
 |---|---|---|
-| Dositheus | Greek, Schaff II pp. 402–403,417,433–435; II,XII,Q.I–III | [Print](https://archive.org/details/creedschristendo02scha/page/402/mode/1up); quoted Greek pages read; title-page year uncollated [unverified] |
+| Dositheus | Greek, Schaff II pp. 402–403,417,433–435; II,XII,Q.I–III | [Print](https://archive.org/details/creedschristendo02scha/page/402/mode/1up); quoted Greek pages read; title 1896/copyright 1877 [verified: scan; O-04] |
 | Dositheus control | Robertson, *Acts and Decrees*, London: Thomas Baker, 1899 | [Print](https://archive.org/details/actsdecreesofsyn00orth); locator control, not the source of Spanish |
 | Philaret | 1839 Russian catechism, Blackmore English in Schaff II; Q.16–35,37,42; pp. 448–452 | [Print](https://archive.org/details/creedschristendo02scha/page/448/mode/1up); English print excerpts; original-language Spanish not supplied |
 | Mogila | Overbeck, London: Thomas Baker, 1898, I.4 | [Print](https://archive.org/details/cu31924029363094); mapped English locator; received Greek not extracted [unverified] |
 | Conciliar canon / Tradition | Nicaea II horos/c.1; Trullo 2 and received lists | Mapped editions §§4,5; not freshly extracted in this pass [unverified] |
-| Critique and recension controls | Krivoshein 1961; map §9.3; verification C6,F1,F3,E6 | Russian web critique fetched; Russian revised confession not collated; no synodal repeal inferred |
+| Critique and recension controls | Krivoshein (1961 date unconfirmed); map §9.3; verification C6,F1,F3,E6 | Russian web critique fetched; Russian revised confession not collated; no synodal repeal inferred |
 
-The historical print witnesses use the map's PD boundary; rights and title-page details are not independently certified. Scratch page images remain outside the repo in `~/doctrina-scratch/orthodox-drafting/`.
+The historical print witnesses use the map's PD boundary; rights assessment remains inherited; title/copyright details checked in O-04. Scratch page images remain outside the repo in `~/doctrina-scratch/orthodox-drafting/`.
 
 ## Coverage table
 
@@ -261,12 +258,12 @@ The historical print witnesses use the map's PD boundary; rights and title-page 
 | Qué enseña: full conciliar/confessional universe | sparse | Mogila I.4 located through English/map; Jeremiah and original conciliar corpus not extracted; no substitute voice added |
 | Por qué | full | Dositheus II same Spirit; Philaret Q.21–24,32; source reasons quoted, no new apologetic reasoning |
 | La Escritura que usa | sparse | Philaret Q.18,23,32,37 print; Dositheus Q.I–II allusions read; complete Mogila/Jeremiah/canon apparatus not extracted |
-| Objeciones | silent | Deferred by owner, not a doctrinal-silence finding |
+| Objeciones | sparse | Deferred by the owner (2026-10-23); not doctrinal silence |
 | Cómo se vive: hearing, reading and catechesis | full | Dositheus Q.I–II pp. 433–434; Philaret Q.22,24,35,42; historical Greek restriction and Russian omission kept distinct |
 | Canon differences | sparse | Dositheus Q.III p. 435; Philaret Q.31–35 pp. 451–452 read; each received canonical list not independently extracted |
-| Contemporary prevalence | map gap | No empirical reading/use corpus collected; no current universal reading restriction asserted |
-| Grado de autoridad | sparse | Dositheus XII p. 417 read; map §§2–4,9.3; verification C6,F1–F3,E6; approvals/recensions not freshly collated |
-| Fuentes | sparse | Greek Dositheus and English Philaret scans read; original Greek Mogila, Russian Philaret and full canon corpus extraction incomplete |
+| Contemporary prevalence | sparse | No empirical reading/use corpus collected; no current universal reading restriction asserted |
+| Grado de autoridad | sparse | Dositheus XII p. 417 read; map §§2–4,9.3; verification C6,F1–F3,E6; named historical approval witnesses checked (O-05); current adoption and Russian recension not collated |
+| Fuentes | sparse | Greek Dositheus and English Philaret scans read; title corrected to 1896/1877; Greek Mogila, Russian Philaret and full canon corpus extraction incomplete (O-05 attempts) |
 | Document silence | sparse | No entire-universe negative search; no missing teaching declared absent or filled from another source |
 
 ## Questions for the owner

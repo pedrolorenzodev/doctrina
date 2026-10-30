@@ -2,21 +2,20 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Status: done
-- Completed: all sections drafted from original-language loci; source limitation, authority distinctions, coverage and owner questions recorded.
-- Next: none within this order for this dossier. Verification and translation review are outside this pass.
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: L-01–06 image checks; 2 WRONG / 2 applied and 3 must-fix / 3 applied. Original retained in `lutheran.apply.md`.
+- Next: owner Spanish review and web shaping/import, outside this run.
 
 ## Conventions and source boundary
 
 - **Column:** the Book of Concord's own distinction between Scripture as rule and the confessions as witnesses, with the document-by-document boundary inherited from `../eucharist/lutheran.md`.
 - **Map categories:** Tier 1 comprises the preface, ecumenical creeds, unaltered AC, Ap, SA with Tr, SC, LC, FC Ep/SD. The Catalog is an appendix. Luther's other works are explanations, not an independent norm; body-level statements and ecumenical agreements apply only to their named bodies.
-- **Subscription strands:** LCMS's whole-collection subscription, ELCA's graded language, LWF's especially AC/SC basis, and CELC's “because” basis remain distinct. No subscription is silently imposed on all mapped churches. These mapped adoption descriptions are [unverified] in this drafting pass.
+- **Subscription strands:** LCMS's whole-collection subscription, ELCA's graded language, LWF's especially AC/SC basis, and CELC's “because” basis remain distinct. No subscription is silently imposed on all mapped churches. These mapped adoption descriptions are [unverified] in this verification pass.
 - **Original witness:** *Concordia Triglotta*, St. Louis: Concordia Publishing House, 1921, ed. F. Bente, English F. Bente/W. H. T. Dau; archive `ConcordiaTriglotta`.
 - **Original languages:** German for FC, SA and catechisms; Latin for Ap and Tr; both German and Latin official for AC. An English translation is never the intermediary for Spanish.
 - **Spanish:** every new quotation is [traducción propia asistida por IA], directly from the named original language; unreviewed by Pedro [unverified]. The map identifies no usable public-domain Spanish witness; modern copyrighted/unclear-licence versions are not copied.
-- **Locators:** FC Ep RN = Epitome, Rule and Norm; FC SD RN = Solid Declaration, Rule and Norm. The German original's section order is not silently replaced by a Latin translator's paragraph segmentation.
-- **Tags:** [verified: scan] records a page-image reading during drafting; it does not constitute the prohibited independent verification pass. Other claims and all Spanish translations remain [unverified]. Long s is transcribed as s; divided words joined.
+- **Locators:** FC Ep RN = Epitome, Rule and Norm; FC SD RN = Solid Declaration, Rule and Norm. Conventional locators follow Triglot Latin bracketed paragraphs while quotations retain German wording. Ep Latin 2 is the second unnumbered German paragraph within item 1; Latin 3/4/5 correspond to German items 2/3 and the following catechism paragraph. SD Latin 8/9/10 correspond to German item 6, its following paragraph and the continuation on p. 854. Corrected 2026-10-30, C-L3; old convention preserved in `lutheran.apply.md`.
+- **Tags:** [verified: scan] records the independent page-image checks in `verification-lutheran.md`. Inherited modern-body/rights claims and all AI Spanish remain [unverified]. Long s is transcribed as s; divided words joined.
 - **Scratch:** `~/doctrina-scratch/third-order/triglot.txt`, metadata, page XML and `triglot-original-<printed-page>.jpg`. Earlier offset locator image names are not reliable printed-page names.
 - **Scope:** Scripture's doctrinal role as stated by these documents. No modern inerrancy controversy, canon reconstruction, debate layer, critic or apply pass.
 
@@ -48,7 +47,7 @@ The later summary calls Scripture:
 
 ### QE-2 · Other writings remain subject to Scripture
 
-> “Andere Schriften aber der alten oder neuen Lehrer, wie sie Namen haben, sollen der Heiligen Schrift nicht gleichgehalten, sondern alle zumal miteinander derselben unterworfen”.
+> “Andre Schriften aber der alten oder neuen Lehrer, wie sie Namen haben, sollen der Heiligen Schrift nicht gleichgehalten, sondern alle zumal miteinander derselben unterworfen”.
 
 — FC Ep RN 2, German original, p. 776 [verified: scan]; excerpt ending before the paragraph's continuation.
 
@@ -134,14 +133,17 @@ FC SD RN 10 explains the role of the common doctrinal form with the clause:
 
 FC Ep RN 8 explains the symbols as testimony to how Scripture was understood in the church's disputed articles (QE-3). SA II.2.15 says articles cannot be made from the Fathers' words or works and concludes with the God's-Word sentence in QE-5 (Triglot p. 466) [verified: scan]. The Fathers appear as the document's quoted witnesses, never as members of a modern denomination.
 
+Corrected 2026-10-30, L-02/L-05: printed “Andre” restored; former 1 Timothy 3:15/p. 854 claim replaced by the edition's chapter/bracketed references and p. 856 continuation. Old wording retained in `lutheran.apply.md`.
+
 ## La Escritura que usa
 
 | Passage | Document locus | Use made in that document | Evidence |
 |---|---|---|---|
 | Psalm 119:105 | FC Ep RN 1 | Scripture as guiding rule | German names Psalm 119; Latin gives 119:105, p. 776 [verified: scan] |
 | Galatians 1:8 | FC Ep RN 1 | A different proclamation, even from an angel | German names Galatians 1; Latin gives 1:8, p. 776 [verified: scan] |
-| 1 Timothy 3 | FC SD RN 14 | Preserve pure teaching and refute contradiction | German margin names chapter; Latin supplies verse 15 on p. 854 [verified: scan]; no silently corrected reference |
-| Titus 1 | FC SD RN 14 | The same teaching office | German reference on p. 854 [verified: scan]; exact verse not supplied by this excerpt |
+| 1 Timothy 3 | FC SD RN 14 | Preserve pure teaching and refute contradiction | German p. 854 and Latin p. 856 print 1 Timothy 3; Latin adds bracketed 2 Timothy 3:16 [verified: scan; L-05] |
+| Titus 1:9 | FC SD RN 14 | The same teaching office | German p. 854 gives chapter; Latin p. 856 gives verse 9 [verified: scan; L-05] |
+| John 10:12; Jeremiah 15:19 | FC SD RN 14 | Shepherding and distinguishing precious from vile | German continuation/Latin references p. 856 [verified: scan; L-05] |
 | John 20:21–23 | AC XXVIII.5–6 | Gospel ministry and the keys | German and Latin, p. 84 [verified: scan] |
 | Mark 16:15 | AC XXVIII.7 | Proclamation of the gospel | Latin prints the reference on p. 84 [verified: scan] |
 | Romans 1:16 | AC XXVIII.9 | Gospel as God's saving power | German and Latin, p. 84 [verified: scan] |
@@ -170,7 +172,7 @@ AC XXVIII.8 describes ecclesial power:
 
 > «Esta potestad se ejerce solamente enseñando o predicando la Palabra y administrando los sacramentos, a muchos o a cada uno, según el llamamiento».
 
-— [traducción propia asistida por IA], directly from Latin; unreviewed by Pedro [unverified]. AC's German original on that page likewise speaks of teaching/preaching God's Word and administering sacraments, rather than a civil coercive power [verified: scan].
+— [traducción propia asistida por IA], directly from Latin; unreviewed by Pedro [unverified]. AC's German original on that page likewise speaks of teaching/preaching God's Word and administering sacraments, rather than a civil coercive power [verified: scan]. In the immediate continuation, AC XXVIII.8–9 names the gifts conferred as eternal righteousness, the Holy Spirit and eternal life, received through the ministry of Word and sacraments (p. 84) [verified: scan; L-04].
 
 ### Churches, schools and homes
 
@@ -184,7 +186,7 @@ FC SD RN 8, in its Latin column, reports the catechisms proposed in churches, sc
 
 — [traducción propia asistida por IA], directly from German; unreviewed by Pedro [unverified]. The historical report is attributed to the Formula; it is not rewritten as a claim about every current Lutheran parish.
 
-The SC's own household-teaching heading and baptism's Word-and-water explanation are located in p. 550 (read during this tradition's baptism draft). Their actual text is retained in `../baptism/lutheran.md`; no extra contemporary custom is inferred from them.
+The SC's own household-teaching heading and baptism's Word-and-water explanation are located in p. 550 (read during this tradition's baptism draft). Their actual text is retained in `../baptism/lutheran.md`; this cross-reference is not an additional quotation in this dossier.
 
 ### Limits of this account
 
@@ -210,7 +212,7 @@ The map's constitutions distinguish LCMS, ELCA, LWF and CELC wording. Those docu
 
 ## Fuentes
 
-1. **1921 original witness:** *Concordia Triglotta*, ed. F. Bente, English F. Bente and W. H. T. Dau, St. Louis: Concordia Publishing House, 1921. [Print scan](https://archive.org/details/ConcordiaTriglotta). German originals: FC Ep RN pp. 776–778; FC SD RN pp. 852–854; SA II.2.15 p. 466. AC original Latin/German p. 84. Public-domain classification inherited from map inventory, not independently re-audited [unverified].
+1. **1921 original witness:** *Concordia Triglotta*, ed. F. Bente, English F. Bente and W. H. T. Dau, St. Louis: Concordia Publishing House, 1921. [Print scan](https://archive.org/details/ConcordiaTriglotta). German originals: FC Ep RN pp. 776–778; FC SD RN pp. 852–854; SA II.2.15 p. 466. AC original Latin/German p. 84. The scan contains the 1921 historical text/title within an undated Northwestern Publishing House second reprint (n6/n7). Reuse assessment applies to historical text, not later reprint matter; inherited mapped classification is not a fresh legal audit [unverified].
 2. **FC Ep RN:** [printed p. 776](https://archive.org/details/ConcordiaTriglotta/page/n1056/mode/1up) and [printed p. 778](https://archive.org/details/ConcordiaTriglotta/page/n1058/mode/1up). German governs the Spanish quotations; Latin used only to report its printed references or explain numbering [verified: scan] for those readings.
 3. **FC SD RN:** [printed p. 852](https://archive.org/details/ConcordiaTriglotta/page/n1132/mode/1up), [printed p. 854](https://archive.org/details/ConcordiaTriglotta/page/n1134/mode/1up). The p. 850 image fetch timed out; no quotation is tagged scan-checked on p. 850 and no source is declared missing.
 4. **SA:** [printed p. 466](https://archive.org/details/ConcordiaTriglotta/page/n746/mode/1up), German. The local OCR located the sentence; the printed image controlled transcription.
@@ -219,13 +221,13 @@ The map's constitutions distinguish LCMS, ELCA, LWF and CELC wording. Those docu
 
 ## Coverage table
 
-“Full” means this drafting section has its source-based material; it is not verification. No silence about a topic outside the searched loci is asserted.
+“Full” means coverage within the named Book of Concord loci; S1 dispositions are in `verification-lutheran.md`, with inherited claims separately bounded. No silence about a topic outside the searched loci is asserted.
 
 | Section | Status | Where searched / cause |
 |---|---|---|
 | Qué enseña | full | FC Ep RN 1–8, German original pp. 776–778; FC SD RN 8–10, German pp. 852–854; SA II.2.15, German p. 466 |
 | Por qué | full | The same passages' own reasons and citations, keeping witnesses distinct from judges |
-| La Escritura que usa | full | Printed references in Ep RN 1, SD RN 14, AC XXVIII.5–17. The printed 1 Timothy reference is recorded without an editorial correction |
+| La Escritura que usa | full | Printed references in Ep RN 1, SD RN 14, AC XXVIII.5–17. The odd 1 Timothy chapter and bracketed 2 Timothy reference are distinguished on pp. 854–856 |
 | Objeciones | sparse | Deferred by the owner; no debate layer |
 | Cómo se vive | full | AC XXVIII.8 and FC SD RN 8–10; word/sacramental ministry, catechetical use and testing of teaching, not modern observed customs |
 | Grado de autoridad | full | Ep RN 1–8 and SD RN 9–10; map's body-level subscription distinctions inherited and marked unverified here |
@@ -235,5 +237,5 @@ The map's constitutions distinguish LCMS, ELCA, LWF and CELC wording. Those docu
 
 1. Keep the rule-and-witness distinction together on the screen so “Scripture alone” is not detached from the same document's reception of creeds and catechisms?
 2. Review “piedra de toque” for “Probierstein”; it is an explanatory metaphor in the Formula's own sentence.
-3. Should the odd printed 1 Timothy reference remain visible only in source context until a separate verification pass addresses it?
-4. Review every Spanish rendering before publication. No independent verification, critic or apply pass has been run.
+3. Display the edition's odd 1 Timothy chapter and bracketed 2 Timothy reference in source context; the independent verification establishes their printed wording, not a doctrinal correction.
+4. Review every Spanish rendering before publication; S1-S3 completion is not owner translation approval.

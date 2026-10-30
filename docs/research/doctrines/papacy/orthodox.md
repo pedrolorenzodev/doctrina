@@ -2,12 +2,9 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Started: 2026-10-29, third owner work order.
-- Status: done
-- Completed: one drafting pass through all sections; conciliar order, confession-recension caveat, coverage limits and owner questions recorded.
-- Next: none within this dossier drafting pass. Source extraction gaps, original-language translations and all independent verification remain outside this run.
-- Usage at creation: primary 27 %, weekly 59 %; primary reset epoch 1793313492.
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: O-01–08; 2 WRONG / 2 and 4 must-fix / 4 applied. Added mapped 1895 original Greek passages after applying existing corrections; original draft preserved verbatim in `orthodox.apply.md`.
+- Next: owner Spanish/source-gap review and web shaping/import, outside this run.
 
 ## Conventions and source boundary
 
@@ -17,9 +14,9 @@
 - **Dositheus recension:** the Greek text printed by Schaff X includes the mortal-head clause that the map associates with Dositheus's 1690 revision. The map's sources disagree about the revision's place/edition numbering (`traditions/orthodox.md` Tier 3; verification C6). Quotations below are of Schaff's actual Greek print, not an assertion that every clause is the unchanged wording signed in 1672 [unverified: recension genealogy not independently collated].
 - **Other confession controls:** Mogila's approved Greek revision, not a substitute Latin draft or an English paraphrase; Jeremiah's mapped Answers, not the private confessions of Gennadius/Kritopoulos; Lucaris is not an adopted Orthodox alternative.
 - **Owner boundary:** Crete 2016 informs the map and its reception, but its own teaching is not quoted on the doctrine page (DECISIONS 2026-10-15). ROC 2020 is mentioned only. Local statutes, commissions and private authors do not become confessions.
-- **Prints:** Schaff II, Dositheus pp. 410–417 and Philaret pp. 488–490, [scan](https://archive.org/details/creedschristendo02scha). Archive catalogue year 1877 and its copyright note's 1896 disagree; this copy's title-page year has not been collated [unverified]. Printed running heads govern citations.
+- **Prints:** Schaff II, Dositheus pp. 410–417 and Philaret pp. 488–490, [scan](https://archive.org/details/creedschristendo02scha). Title: New York, Harper & Brothers, 1896; copyright 1877 [verified: scan; O-06]. Corrected 2026-10-30; old wording retained in `orthodox.apply.md`. Printed running heads govern citations.
 - **Spanish:** no reusable PD Spanish confession edition is identified by the mapped searches. Spanish is translated directly from the Greek print and labelled **[traducción propia asistida por IA]**, unreviewed by Pedro [unverified]. English Philaret is retained without a Spanish translation through English.
-- **Tags:** `[verified: scan]` applies only to quoted wording read in the printed image during drafting. Recension history, translations, web-only controls and uncollated approval details remain `[unverified]`. This is no verification, critic or apply pass.
+- **Tags:** `[verified: scan]` identifies print-image checks recorded in `verification-orthodox.md`. Recension history, translations, web-only controls and uncollated approval details remain `[unverified]`. Independent S1-S3 evidence is in `verification-orthodox.md`; uncollated originals and current reception remain separately bounded.
 - **Fathers:** ancient authors are witnesses received inside a conciliar/confessional text; no Father is assigned to the modern Orthodox tradition. Historical assertions made by a confession are attributed to it, not certified by the site.
 - **Reuse:** historical witnesses follow the map's PD boundary; no fresh international rights audit [unverified]. Modern criticism receives only short excerpts and a link.
 
@@ -39,9 +36,9 @@ The named subject is Jesus Christ; the printed reference is Ephesians 5:23. The 
 
 > αὐτὸς ὁ κύριος ἡμῶν Ἰησοῦς Χριστός ἐστι κεφαλὴ καὶ αὐτὸς τοὺς οἴακας ἔχων ἐν τῇ τῆς ἐκκλησίας κυβερνήσει πηδαλιουχεῖ διὰ τῶν ἁγίων πατέρων. [verified: scan]
 
-> «El mismo Señor Jesucristo es cabeza y él mismo, teniendo el timón del gobierno de la Iglesia, la dirige por medio de los santos padres». [traducción propia asistida por IA] [unverified]
+> «El mismo Señor nuestro Jesucristo es cabeza y él mismo, teniendo el timón del gobierno de la Iglesia, la dirige por medio de los santos padres». [traducción propia asistida por IA] [unverified]
 
-The source's first-person possessive is omitted in this Spanish excerpt; the doctrinal predicate and named subject are retained. The following sentence names bishops as leaders and shepherds of the particular churches, referring their activity to Christ.
+Corrected 2026-10-30, O-03: source possessive restored as “nuestro”; prior translation and omission note preserved in `orthodox.apply.md`. The following sentence names bishops as leaders and shepherds of the particular churches, referring their activity to Christ.
 
 ### QE-2 · Apostolic ministry and succession
 
@@ -79,7 +76,7 @@ The latter is the catechism's dated synodal-era Russian formulation. It is not s
 
 > «Porque un hombre mortal no puede ser cabeza universal y perpetua». [traducción propia asistida por IA] [unverified]
 
-**Status and recension:** this is the clause read in Schaff's Greek witness, associated in the map with the 1690 revision. No new pan-Orthodox adoption finding is claimed; it is not quietly labelled the unaltered 1672 signing text. The source's Christ-head predicate is given above.
+**Status and recension:** this is the clause read in Schaff's Greek witness, associated in the map with the 1690 revision. Krivoshein explicitly attributes this addition to the third edition, Iași 1690 [verified: attributed e-text; O-07]. The original editions are not collated here [unverified: recension genealogy]; no new pan-Orthodox adoption or unchanged-1672 claim is made. The source's Christ-head predicate is given above.
 
 ### QE-6 · Canonical primacy is a separate positive layer
 
@@ -104,6 +101,18 @@ The subject is the Church. The answer cites promises and the Eastern patriarchs'
 > the see of Constantinople shall have equal privileges with the see of Old Rome, and shall be highly regarded in ecclesiastical matters as that is, and shall be second after it. After Constantinople shall be ranked the See of Alexandria, then that of Antioch, and afterwards the See of Jerusalem. [verified: scan]
 
 These are the canons' English print witnesses, not Spanish translated from English. “After”, equal privileges and the order of the sees remain visible together. The editor's notes and epitomes on the same pages are not quoted as the council's text.
+
+### QE-9 · The 1895 patriarchal-synodal reply on infallibility
+
+**1895 encyclical, §XVIII**, original Greek, Manchester 1896 witness p. 48 (PDF p. 52), excerpt before the continuation about Peter:
+
+> Ἡ ὀρθόδοξος ἀνατολικὴ καὶ καθολικὴ τοῦ Χριστοῦ Ἐκκλησία, ἐκτὸς τοῦ ἀφράστως ἐνανθρωπήσαντος Υἱοῦ καὶ Λόγου τοῦ Θεοῦ, οὐδένα ἄλλον γινώσκει ἀλάθητον ἐπὶ γῆς ὑπάρξαντα
+
+> «La Iglesia ortodoxa oriental y católica de Cristo, fuera del Hijo y Verbo de Dios que se hizo hombre de manera inefable, no conoce a ningún otro que haya sido infalible sobre la tierra».
+
+— Greek [verified: scan; O-08]. Spanish [traducción propia asistida por IA], directly from Greek, unreviewed by Pedro [unverified].
+
+**Status:** this is the dated patriarchal-synodal reply of Anthimos of Constantinople and the signers printed p. 66, August 1895. It is not an ecumenical council, a current individual Orthodox opinion survey or the site's verdict. Its surrounding historical argument names Peter and several Roman bishops; those are the reply's claims, not independently established history. The source's formulation is kept distinct from Philaret Q.271's preservation-of-the-Church claim.
 
 ## Por qué
 
@@ -151,6 +160,16 @@ Dositheus X, p. 413, names succession witnesses for Rome, Antioch, Alexandria, C
 
 Mogila I.85 is a foundation-of-the-Church locus. Verification F2 explicitly did not establish it as a quotation about the pope. The dossier does not turn “Christ is the foundation” into a papal denial that the source does not state [unverified: mapped locator, Greek not extracted].
 
+### PQ-6 · The 1895 reply's conciliar tribunal
+
+**1895 encyclical, §XVI**, Greek p. 42 (PDF p. 46):
+
+> Ἐν σπουδαίοις δὲ ζητήμασι δεομένοις τοῦ κύρους τῆς καθόλου Ἐκκλησίας ἐγίνετο ἔκκλητος εἰς Οἰκουμενικὴν Σύνοδον, ἥτις μόνη ἦν καὶ ἐστὶ τὸ ἀνώτατον ἐν τῇ καθόλου Ἐκκλησίᾳ κριτήριον.
+
+> «En cuestiones graves que requerían la autoridad de la Iglesia universal se apelaba a un Concilio Ecuménico, que era y es el único tribunal supremo en la Iglesia universal».
+
+— Greek [verified: scan; O-08]. Spanish [traducción propia asistida por IA], directly from Greek, unreviewed by Pedro [unverified]. Named patriarchal-synodal rank as in QE-9; the historical account is the encyclical's own. Its §XV pp. 40–42 interprets Chalcedon 28 as honour and equal episcopal standing; this is an attributed reception of that canon, not a new site conclusion about Roman primacy.
+
 ## La Escritura que usa
 
 | Passage | Document / locator | Documentary use | Status |
@@ -162,11 +181,12 @@ Mogila I.85 is a foundation-of-the-Church locus. Verification F2 explicitly did 
 | Titus 3:10; 1:10–11 | Philaret Q.275, p. 489 | Its discipline concerning false teaching | [verified: scan] |
 | Matthew 18:17 | Philaret Q.275, p. 489 | Hearing the Church | [verified: scan] |
 | Promises of the gates, continuing presence and divine glory | Philaret Q.271, p. 488 | Preservation of the Church; no additional verse numbering supplied by the drafter | [verified: scan, allusions as printed] |
+| Galatians 2:11 | 1895 encyclical §XVIII, Greek p. 48 | Its argument concerning Peter's correction; historical statements attributed to this reply | [verified: scan; O-08] |
 | Christ's presence until the end | Dositheus X, p. 412 | Its account of episcopal continuity; no verse number added to the Greek excerpt | [verified: scan, allusion as printed] |
 
 The canonical passages above give ecclesial and historical reasons without a printed biblical proof list at those loci. None is manufactured for them.
 
-Mogila and the encyclicals' complete scriptural apparatus has not been extracted. Familiar Petrine texts are not supplied from memory to make a symmetrical comparison table.
+Mogila and the encyclicals' complete scriptural apparatus has not been extracted; the newly checked 1895 §XVIII reference is distinguished from a complete inventory. Familiar Petrine texts are not supplied from memory to make a symmetrical comparison table.
 
 ## Objeciones
 
@@ -206,9 +226,9 @@ The quoted texts do not become an uncited decision by this dossier about every p
 
 ### Patriarchal encyclicals and remaining extraction limits
 
-The map locates the 1848 encyclical §§4,12–17 and 1895 §§XV–XVIII, with verification D3 correcting its primacy locators. Their scope is patriarchal-synodal, not a new ecumenical council. The 1848 Greek original and 1895 Greek/English print have not been read in this drafting pass [unverified].
+The map locates the 1848 encyclical §§4,12–17 and 1895 §§XV–XVIII, with verification D3 correcting its primacy locators. Their scope is patriarchal-synodal, not a new ecumenical council. The 1848 Greek original remains uncollated [unverified; O-07]. Selected 1895 Greek passages (§§XV–XVIII pp. 40–48), edition preface and signature were independently read here [verified: scan; O-08]; the entire encyclical is not certified by that selection.
 
-No contemporary reconciliation, adoption or intercommunion policy is invented from those historical replies. Their scriptural and historical arguments remain an explicit sparse layer rather than being reconstructed from memory.
+No contemporary reconciliation, adoption or intercommunion policy is invented from those historical replies. Remaining scriptural/historical extraction is sparse; the newly checked 1895 formulations appear in QE-9/PQ-6 with their rank and source boundaries.
 
 ## Grado de autoridad
 
@@ -220,13 +240,13 @@ The label “received” follows `traditions/orthodox.md` §§2–4 and the map'
 
 ### Confession, recension and critique
 
-Dositheus's confession belongs to Jerusalem 1672, with later textual history recorded in the map. The specific mortal-head clause is quoted from Schaff's Greek and carries its 1690-revision caveat. Mogila's received Greek revision has the patriarchal approval act of 11 March 1643, qualified to the text in that language (`verification-orthodox.md` F2) [unverified: act not re-read].
+Dositheus's confession belongs to Jerusalem 1672, with later textual history recorded in the map. The specific mortal-head clause is quoted from Schaff's Greek and carries its 1690-revision caveat. Mogila's received Greek revision has the patriarchal approval act of 11 March 1643, qualified to the text in that language (Overbeck p. 10; the English approval witness was re-read earlier in this run, Sola Scriptura O-05) [verified: scan of English approval witness; original act/Greek Mogila collation separate].
 
-Krivoshein's 1961 [Orthodox critique, §VI](https://azbyka.ru/otechnik/Vasilij_Krivoshein/simvolicheskie-teksty-v-pravoslavnoj-tserkvi/) is retained beside approval, as the map requires. It discusses the authority and Western influence of the symbolic texts, not a fresh synodal repeal. The host's editorial introduction and Krivoshein's own article are distinct [unverified: web witness fetched once for the four dossiers].
+Krivoshein's [Orthodox critique, §VI](https://azbyka.ru/otechnik/Vasilij_Krivoshein/simvolicheskie-teksty-v-pravoslavnoj-tserkvi/) is retained beside approval, as the map requires. It discusses the authority and Western influence of the symbolic texts, not a fresh synodal repeal. The author's Russian text was re-read; attribution is [verified: e-text; O-07]. Original print/publication date “1961” remains [unverified]; the host's editorial introduction is not his article.
 
 ### Russian catechesis and later acts
 
-Philaret's 1839 synodal catechism speaks within the Russian catechetical setting, with Schaff's editorial question numbers. Its historical “Most Holy Synod” is not a replacement name for all Orthodox patriarchates today (`verification-orthodox.md` F3) [unverified: approval/title not re-read].
+Philaret's 1839 synodal catechism speaks within the Russian catechetical setting, with Schaff's editorial question numbers. Its historical “Most Holy Synod” is not a replacement name for all Orthodox patriarchates today (Schaff p. 445 title/headnote, independently re-read earlier in this run, Sola Scriptura O-05) [verified: scan of named English title/headnote; Russian original separate].
 
 The 1848/1895 encyclicals retain their named signatories and patriarchal-synodal grade. The map's disagreement over numbering 879–880 as an additional ecumenical council is not adjudicated here; its reception is not collapsed into the closed list of seven.
 
@@ -235,13 +255,13 @@ The 1848/1895 encyclicals retain their named signatories and patriarchal-synodal
 | Witness | Edition / loci | Access and limits |
 |---|---|---|
 | Received canons | Henry R. Percival, *The Seven Ecumenical Councils*, NPNF second series XIV, 1900; Constantinople I 3 p. 178, Chalcedon 28 p. 287, Trullo 36 p. 382 | [Print](https://archive.org/details/sevenecumenicalc00perc/page/178/mode/1up); English pages read; no Spanish translated from English |
-| Dositheus | Greek X,XII in Schaff II pp. 410–417 | [Print](https://archive.org/details/creedschristendo02scha/page/410/mode/1up); Greek excerpts read; 1690 clause caveat; digitized copy-year unresolved [unverified] |
+| Dositheus | Greek X,XII in Schaff II pp. 410–417 | [Print](https://archive.org/details/creedschristendo02scha/page/410/mode/1up); Greek excerpts read; 1690 clause caveat; title 1896/copyright 1877 checked [verified: scan; O-06] |
 | Philaret | 1839 Russian catechism, Blackmore English in Schaff II; Q.270–282 pp. 488–490 | [Print](https://archive.org/details/creedschristendo02scha/page/488/mode/1up); English print read; original-language Spanish not supplied |
 | Mogila | Overbeck, London: Thomas Baker, 1898; I.82–85 | [Print](https://archive.org/details/cu31924029363094); foundation/Church locators; no verified pope quotation in I.85 [unverified] |
 | 1848 encyclical | Eastern patriarchs, §§4,12–17 | [Mapped English transcription](https://sourcebooks.web.fordham.edu/mod/1848orthodoxencyclical.asp); Greek original not extracted in this pass; no translation through English |
-| 1895 encyclical | Anthimus VII and synod, §§XV–XVIII; Greek/English Manchester 1896 witness mapped as `answerofgreatchu0000eust` | [Mapped print](https://archive.org/details/answerofgreatchu0000eust); no fresh page reading or full-text rights certification [unverified] |
+| 1895 encyclical | Anthimos VII and synod, §§XV–XVIII; *Answer of the Great Church of Constantinople*, ed. Eustathius Metallinos, Orthodox Greek Community Manchester; preface dated 1896 | [Print PDF](https://archive.org/download/answerofgreatchu0000eust/answerofgreatchu0000eust.pdf); Greek pp. 40–48, preface p. 10, signatures p. 66 read [verified: scan; O-08]. Historical Greek reuse follows mapped boundary, not fresh worldwide legal certification |
 | Other canonical loci | Constantinople III on Honorius; 879–880; 1484; canonical collections | Map §§4,8–9 and verification E,G; originals not extracted here [unverified] |
-| Authority critique | Krivoshein, 1961, §VI | Russian web linked above; attributed scholarly/episcopal critique, not a synodal act |
+| Authority critique | Krivoshein, §VI; 1961 publication date unconfirmed | Russian web linked above; attributed scholarly/episcopal critique, not a synodal act |
 
 Historical print reuse follows the map's PD boundary without a fresh rights audit. Scratch images, council metadata, OCR and page index are outside the repo in `~/doctrina-scratch/orthodox-drafting/`; the printed running head controls every page citation.
 
@@ -251,15 +271,15 @@ Historical print reuse follows the map's PD boundary without a fresh rights audi
 |---|---|---|
 | Qué enseña: Christ, Church, episcopacy and conciliar authority | full | Dositheus X pp. 410–415; Philaret Q.270–282 pp. 488–490 |
 | Qué enseña: canonical order of sees | full | Constantinople I 3, Chalcedon 28, Trullo 36; Percival pp. 178,287,382 print |
-| Qué enseña: all mapped papal loci | sparse | Honorius, 879–880,1484 and 1848/1895 originals not extracted; Mogila I.85 not promoted into a pope quotation |
-| Por qué | full | Dositheus X succession and ministry; Philaret Q.274,277; Chalcedon 28's own historical reason |
-| La Escritura que usa | sparse | Philaret Q.271–277 print; Dositheus X allusions read; full encyclical/Mogila apparatus not extracted |
-| Objeciones | silent | Deferred by owner, not a documentary silence claim |
+| Qué enseña: all mapped papal loci | sparse | Honorius, 879–880,1484 and 1848 originals not extracted; selected 1895 Greek §§XV–XVIII now checked; Mogila I.85 not promoted into a pope quotation |
+| Por qué | full | Dositheus X succession and ministry; Philaret Q.274,277; Chalcedon 28's own historical reason; 1895 §XVI conciliar tribunal |
+| La Escritura que usa | sparse | Philaret Q.271–277 print; Dositheus X allusions read; 1895 §XVIII Galatians 2:11 added; full encyclical/Mogila apparatus not extracted |
+| Objeciones | sparse | Deferred by the owner (2026-10-23); not documentary silence |
 | Cómo se vive: normative ministry and canonical directions | full | Dositheus X pp. 413–415; Philaret Q.279–282; Chalcedon 28 and Trullo 36 |
 | Cómo se vive: contemporary inter-patriarchal applications | sparse | Historical texts not converted into a new current-jurisdiction audit; no single Greek/Slavic settlement supplied |
-| Observed contemporary practice | map gap | No empirical/jurisdictional implementation corpus collected in this drafting pass |
-| Grado de autoridad | sparse | Received canon texts read; map tiers, recension distinctions and verification C6,F1–F3,D3; approvals/current adoption not freshly collated |
-| Fuentes | sparse | Original Greek Dositheus and historical English Philaret/canons read; Greek encyclicals, Mogila and other acts remain extraction limits |
+| Observed contemporary practice | sparse | No empirical/jurisdictional implementation corpus collected in this verification pass |
+| Grado de autoridad | sparse | Received canon texts read; map tiers, recension distinctions and verification C6,F1–F3,D3; named historical approval witnesses checked earlier in this run; current adoption/recension originals uncollated |
+| Fuentes | sparse | Original Greek Dositheus and historical English Philaret/canons read; 1895 selected Greek pages/preface/signatures checked; 1848 Greek, Mogila and other acts remain extraction limits |
 | Document silence | sparse | No entire-universe negative search completed; no missing teaching filled with another source or the drafter's own answer |
 
 ## Questions for the owner

@@ -2,11 +2,10 @@
 
 ## Progress
 
-- Status: draft, NOT verified — stopped at 47 % observed usage (2026-10-30; no-new-step threshold 45 %, save before 50 %).
-- Done: S1 scope audit; all active Spanish WCF 1/WSC 2 and English WLC 156–158 quotation images read; WCF 31.3–4 and title/approval images read; proof index and WLC 160 paraphrase checked. R-02 English publisher error applied in both occurrences, original preserved in `reformed.apply.md`.
-- Not done: remaining WSC 89–90 page-image check, final S1 dispositions/tag upgrades, S3 Critic, remaining S2 application and final recheck. No completed S1-S3 status claimed; Spanish remains unreviewed by Pedro.
-- Next: inspect downloaded `~/doctrina-scratch/wave2/wsc-246.jpg` and `wsc-247.jpg` for printed pp. 243–244, finish verification/tag upgrades, critic, apply and recheck before starting Lutheran Sola Scriptura.
-- Evidence/checkpoint: `verification-reformed.md`, `reformed.apply.md`; Sola Scriptura Lutheran/Orthodox untouched.
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: resumed completed R-01–06 checks; inspected WSC 89–90 images (R-07), completed critic and applied 1 WRONG / 1 and 3 must-fix / 3. Historical research retained in `reformed.apply.md`.
+- Next: owner Spanish review and web shaping/import, outside this run.
+- Limits: current body subscription and rights inventory remain mapped evidence; see verification's Unconfirmable list.
 
 ## Conventions and source boundary
 
@@ -15,12 +14,13 @@
 - **English print:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Johnstone, Hunter, & Co., 1894; historical text. American chapter 31 numbering differs: historical 31.4 = American 31.3, per the applied map verification.
 - Corrected 2026-10-30, R-02: old English imprint “Offices of the Church of Scotland”; title names Johnstone, Hunter, & Co. Original in `reformed.apply.md`.
 - **Spanish print:** H. C. Thomson, *Doctrinas y reglamentos de la Iglesia Presbiteriana*, Monterrey: Tipografía del Comercio, 1880, as its title page reads. The archive identifier abbreviates the title as `doctrinasyreglam00west`. WCF and WSC quotations use this witness.
+- **Edition boundary (C-R3, corrected 2026-10-30):** the Spanish 1880 introduction discloses American civil-government alterations; historical English controls. The Spanish witness is not asserted globally identical to 1647. No altered civil-government paragraph is quoted here. Source: `verification-reformed.md` R-06, Spanish introduction image n4.
 - **WLC Spanish:** [traducción propia asistida por IA], directly from original English, unreviewed by Pedro. No rendering from an intermediate translation.
 - **Quotation treatment:** divided words joined; printed spelling retained; editorial proof markers omitted where stated. Ellipses are explicit. A shortened excerpt is not a newly composed confessional sentence.
-- **Tags:** [verified: scan] means the quoted passage was read in its printed image during drafting, not that this dossier received verification. Everything else remains [unverified].
+- **Tags:** [verified: scan] identifies printed-image checks recorded in `verification-reformed.md` R-03–07. AI Spanish and unaudited inherited claims retain [unverified].
 - **Scripture:** proof references are the documents' own printed apparatus. The dossier supplies neither independent exegesis nor an apologetic argument for the tradition.
 - **Scratch:** `~/doctrina-scratch/third-order/`, `west1880-normal.txt`, `west1894-normal.txt`, and numbered page JPGs. OCR is for location; the page image controls quotations.
-- **Pass:** S1 in progress; R-02 imprint correction applied. Critic and remaining application not run; no debate layer or site changes.
+- **Pass:** S1-S3 complete; verification and application recorded in adjacent files. Objections deferred; research Markdown only.
 
 ## Qué enseña
 
@@ -165,7 +165,7 @@ References follow the Monterrey 1880 WCF 1 apparatus unless stated otherwise. Th
 | Colossians 3:16; Romans 15:4 | WCF 1.8 | Worship and hope | [verified: scan], p. 12 |
 | Acts 15:15; John 5:46 | WCF 1.9 | Scripture interpreting Scripture | [verified: scan], p. 12 |
 | Matthew 22:29,31; Ephesians 2:20 | WCF 1.10 | Supreme judge | [verified: scan], p. 12 |
-| Acts 28:25 | WCF 1.10 | Spirit speaking through Scripture | [unverified]: located in OCR continuation on p. 13 |
+| Acts 28:25 | WCF 1.10 | Spirit speaking through Scripture | [verified: scan], p. 13; R-05 |
 | Ephesians 2:20; Acts 17:11; 1 Corinthians 2:5; 2 Corinthians 1:24 | Historical WCF 31.4 | Councils as help | [verified: scan], Edinburgh p. 97 |
 | Acts 17:11 | WLC 157 | Diligent reading | [verified: scan], Edinburgh p. 197 |
 
@@ -217,7 +217,7 @@ Spanish [traducción propia asistida por IA], from those English excerpts; unrev
 
 ### Reception and application
 
-WLC 160 prescribes diligent, prepared, prayerful hearing, examination of what is heard by Scripture, reception with faith and love, meditation and fruit in life (Edinburgh 1894, p. 199; OCR located, not quoted as a checked print passage here) [unverified]. WSC 89–90 treats the efficacy of the Word and preparation, attention, meditation and practice; those answers were located in the same volume's catechism, not used to invent additional customs [unverified].
+WLC 160 prescribes diligent, prepared, prayerful hearing, examination of what is heard by Scripture, reception with faith and love, meditation and fruit in life (Edinburgh 1894, p. 199) [verified: scan; R-05]. WSC 89 assigns the efficacy of reading and especially preaching to the Spirit; WSC 90 prescribes diligent, prepared and prayerful attention, reception with faith and love, laying the Word up in the heart and practice in life (pp. 243–244) [verified: scan; R-07]. Corrected 2026-10-30: prior OCR-only descriptions and tags preserved in `reformed.apply.md`.
 
 These are the standards' prescriptions. No claim is made about how often a present congregation follows them.
 
@@ -231,7 +231,7 @@ WCF 1.10 states its own supreme judge in QE-5; WSC 2 calls Scripture the “úni
 
 Historical WCF 31.3 makes their function ministerial and requires reception of determinations consonant with the Word; 31.4 makes them fallible helps. Both paragraphs were read in Edinburgh 1894, p. 97 [verified: scan].
 
-This does not erase church authority: the same 31.3 requires reverence and submission. It does not give every private reader an authority the confession never names.
+In WCF 31.3, councils ministerially determine controversies and cases of conscience; determinations consonant with the Word are to be received with reverence and submission (Edinburgh 1894, p. 97) [verified: scan; R-06]. Corrected 2026-10-30, C-R2: earlier interpretive assertions retained in `reformed.apply.md`.
 
 ### The standards quoted here
 
@@ -254,15 +254,15 @@ Mapped category claims are inherited from `../../traditions/reformed.md` §§2�
 
 ## Coverage table
 
-“Full” describes the drafting coverage, not verification. Deferred objections are sparse by instruction, not silent by confession.
+“Full” describes coverage within the selected Westminster corpus, not verification of every mapped modern body or owner approval of Spanish. Deferred objections are sparse by instruction, not silent by confession.
 
 | Section | Status | Where searched / cause |
 |---|---|---|
 | Qué enseña | full | WCF 1.1–10 in Monterrey 1880, pp. 5–13; WLC 2–5 and WSC 2–3 located in the 1894/1880 witnesses |
 | Por qué | full | WCF 1.1,4–5; WSC 2; historical WCF 31.3–4. Only the texts' own reasons are quoted |
-| La Escritura que usa | full | WCF 1's own proof apparatus; historical 31.4; WLC 157. Acts 28:25 remains OCR-only; no independent verse argument supplied |
+| La Escritura que usa | full | WCF 1's own proof apparatus; historical 31.4; WLC 157. Acts 28:25 checked on printed p. 13 (R-05); no independent verse argument supplied |
 | Objeciones | sparse | Deferred by the owner (2026-10-23); no debate layer researched |
-| Cómo se vive | full | WCF 1.8; WLC 156–160; WSC 89–90. Original-language translation, personal/family reading and called preaching, without inferring current customs |
+| Cómo se vive | full | WCF 1.8; WLC 156–160 (including p. 199); WSC 89–90, pp. 243–244. Original-language translation, personal/family reading and called preaching, without inferring current customs |
 | Grado de autoridad | full | WCF 1.10 and historical 31.3–4, p. 97; map categories; WLC approval page in the 1894 print |
 | Fuentes | full | English 1894 and Spanish 1880 dated witnesses; printed pages distinguishable from OCR-only locators; translations labelled |
 

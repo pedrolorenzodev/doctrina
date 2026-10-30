@@ -2,23 +2,25 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Status: done
-- Completed: all required sections, bounded searches, present OPC distinction, coverage and owner questions drafted.
-- Next: none within this order for this dossier. Verification and a broader present-body reception audit are outside this pass.
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: R-01–05; 2 WRONG / 2 and 3 must-fix / 3 applied; original retained in `reformed.apply.md`.
+- Next: owner review of historical/current presentation and web shaping/import, outside this run.
 
 ## Conventions and source boundary
 
 - **Represented tradition:** map family A, Westminster (Presbyterian), exactly as bounded in `../eucharist/reformed.md`: historical 1647 WCF, WLC and WSC. This dossier is not the common voice of every Reformed church.
 - **Unmerged strands:** Three Forms of Unity (B), mainline books of confessions (C), Second Helvetic–Heidelberg (D). No statement about those strands' silence follows from a search of Westminster.
-- **Normative witness:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Offices of the Church of Scotland, 1894. WCF 25,30–31; related 1.10,23.4; WLC 43–45,62–65,191; WSC 23–26.
+- **Normative witness:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Johnstone, Hunter, & Co., 1894. WCF 25,30–31; related 1.10,23.4; WLC 43–45,62–65,191; WSC 23–26.
 - **Spanish witness:** *Doctrinas y reglamentos de la Iglesia Presbiteriana*, translated by H. C. Thomson, Monterrey: Tipografía del Comercio, 1880. Historical wording is not silently replaced by a modern Spanish version. Its title-page and dated imprint were read in the print image.
+- **Edition boundary (C-R2, corrected 2026-10-30):** Spanish introduction n4 explicitly discloses American civil-government alterations; historical English controls. The Spanish volume is a named witness, not globally asserted identical to 1647. Title n2 confirms Thomson, Monterrey, Tipografía del Comercio, 1880.
 - **Numbering:** historical WCF 31.3–4 corresponds to American 31.2–3. The 1880 Spanish chapter follows the American arrangement. Its paragraph is identified separately if quoted.
 - **Reception evidence:** the OPC's current online WCF is consulted only to distinguish its 25.6 from the historical text. It cannot silently alter the quotation this column represents.
 - **Spanish policy:** use the public-domain Spanish WCF/WSC witness. Any WLC rendering is [traducción propia asistida por IA], directly from English and unreviewed by Pedro.
-- **Tags:** [verified: scan] identifies a printed passage read while drafting; not a verification verdict for this dossier. Other quotations and claims remain [unverified].
+- **Tags:** [verified: scan] identifies the image checks in `verification-reformed.md`. Current OPC is checked as official e-text; inherited rights/adoption/absence claims remain [unverified].
 - **Source files:** `~/doctrina-scratch/third-order/west1894-normal.txt`, `west1880-normal.txt`, numbered JPGs and `opc-wcf.html`. OCR locates; the page image controls quotes.
-- **Boundary of the pass:** no objections, verification, critic, apply, contemporary practice survey or site implementation.
+- **Boundary of the pass:** S1-S3 research only; objections deferred, current empirical practice not researched.
+
+Corrected 2026-10-30, R-02/R-03: publisher and diplomatic punctuation corrected against title n4, WSC p. 174 and WCF p. 152. Old wording retained in `reformed.apply.md`.
 
 ## Qué enseña
 
@@ -56,7 +58,7 @@ WCF 30.1 is the positive government formulation: Christ, king and head, appoints
 
 — WCF 25.6, Monterrey 1880, p. 133 [verified: scan]; numbered proof references omitted.
 
-**Status:** this is the historical Westminster paragraph represented here. The [OPC's currently published WCF 25.6](https://opc.org/wcf.html) retains the denial that the pope can be the church's head but ends there; it does not print the historical Antichrist continuation. The page was fetched and read in this drafting pass; present-body adoption and historical change dates have not received a verification pass [unverified]. This note is restricted to the OPC, not all bodies in family A.
+**Status:** this is the historical Westminster paragraph represented here. The [OPC's currently published WCF 25.6](https://opc.org/wcf.html) retains the denial that the pope can be the church's head but ends there; it does not print the historical Antichrist continuation. The official page was freshly fetched in S1 (HTTP 200) [verified: official e-text; R-05]; amendment dates and other bodies' current adoption remain unverified. This note is restricted to the OPC, not all bodies in family A.
 
 ### QE-5 · The church remains and can err
 
@@ -78,11 +80,11 @@ Historical WCF 31.3 assigns them ministerial determination of controversies, cas
 
 ### PQ-1 · Christ's kingship
 
-> «Cristo ejecuta el oficio de Rey, sujetándonos á sí mismo, rigiendo y defendiéndonos, y restringiendo y venciendo á todos sus enemigos y los nuestros.»
+> «Cristo ejecuta el oficio de Rey sujetándonos á sí mismo, rigiendo y defendiéndonos, y restringiendo y venciendo á todos sus enemigos y los nuestros.»
 
 — WSC 26, Monterrey 1880, p. 174 [verified: scan].
 
-WLC 45 expands that office through officers, laws, censures, grace, preservation and victory; the original was located across Edinburgh 1894, pp. 118–119. It is a related locus, not a separate claim that WLC uses the word “pope” [unverified].
+WLC 45 expands that office through officers, laws, censures, grace, preservation and victory; the original was located across Edinburgh 1894, pp. 118–119. Its kingship paraphrase was confirmed against both images [verified: scan; R-05]; it is not a claim that WLC uses the word “pope”.
 
 ### PQ-2 · Ministry given for gathering and perfecting
 
@@ -90,7 +92,7 @@ The end given by WCF 25.3 is “para juntar y perfeccionar á los santos” (QE-
 
 ### PQ-3 · The keys entrusted to church officers
 
-> «A estos oficiales, son entregadas las llaves del reino de los cielos, en virtud de lo cual, tienen poder para retener y remitir pecados, para cerrar aquel reino contra los impenitentes, por la palabra y por las censuras; y para abrirlo á los pecadores arrepentidos, por el ministerio del evangelio, y por la remocion de las censuras, segun exigen las circunstancias.»
+> «A estos oficiales, son entregadas las llaves del reino de los cielos, en virtud de lo cual, tienen poder para retener y remitir pecados; para cerrar aquel reino contra los impenitentes, por la palabra y por las censuras; y para abrirlo á los pecadores arrepentidos, por el ministerio del evangelio, y por la remocion de las censuras, segun exigen las circunstancias.»
 
 — WCF 30.2, Monterrey 1880, p. 152 [verified: scan].
 
@@ -195,15 +197,15 @@ The mapped adoption grades are not independently audited in this pass [unverifie
 
 ## Fuentes
 
-1. **Historical WCF/WLC/WSC, English:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Offices of the Church of Scotland, 1894. [Print scan](https://archive.org/details/confessionoffaith00chur). WCF 25,30–31; historical 31.3–5 on p. 97. Public-domain witness in the map's inventory; rights classification inherited [unverified].
+1. **Historical WCF/WLC/WSC, English:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Johnstone, Hunter, & Co., 1894. [Print scan](https://archive.org/details/confessionoffaith00chur). WCF 25,30–31; historical 31.3–5 on p. 97. Public-domain witness in the map's inventory; rights classification inherited [unverified].
 2. **Spanish WCF/WSC:** H. C. Thomson, *Doctrinas y reglamentos de la Iglesia Presbiteriana*, Monterrey: Tipografía del Comercio, 1880. [Print scan](https://archive.org/details/doctrinasyreglam00west). WCF 25, pp. 129–133; 30, pp. 151–153; WSC 26, p. 174. Title-page and quoted images read; rights classification from the map [unverified].
-3. **Present OPC publication:** [Westminster Confession of Faith, chapter 25.6](https://opc.org/wcf.html), fetched in this pass and saved as `opc-wcf.html`. Modern body publication; no full-text redistribution. Compared only for the presence/absence of the historical continuation [unverified].
+3. **Present OPC publication:** [Westminster Confession of Faith, chapter 25.6](https://opc.org/wcf.html), fetched in this pass and saved as `opc-wcf.html`. Modern body publication; no full-text redistribution. Compared only for presence/absence of the historical continuation [verified: official e-text; R-05]; no change date or universal adoption claimed.
 4. **Research controls:** map `../../traditions/reformed.md` §§1–4A,8–9 and `verification-lutheran-reformed.md`; inherited scope from `../eucharist/reformed.md`. They supply the edition and strand boundary, not a substitute for a quoted doctrinal source.
 5. **Related but not quoted:** WCF 23.4 on papal civil jurisdiction; WLC 45,62–65,191; WSC 23–26. Located in the same originals; no unprinted explanation is attributed to them [unverified].
 
 ## Coverage table
 
-Draft coverage only. The exact search bounds below refer to the normalized local 1894 OCR; inspected thematic ranges narrow the possible hits. OCR absence alone is not promoted to a verified universal absence.
+Coverage within the selected Westminster corpus; S1-S3 evidence in `verification-reformed.md`. The exact search bounds below refer to the normalized local 1894 OCR; inspected thematic ranges narrow the possible hits. OCR absence alone is not promoted to a verified universal absence.
 
 | Section | Status | Where searched / cause |
 |---|---|---|
@@ -221,4 +223,4 @@ Draft coverage only. The exact search bounds below refer to the normalized local
 1. Keep the historical Antichrist clause visible with its scoped OPC status note, rather than attributing the clause to all present Westminster bodies?
 2. The sources place church endurance and keys under different Matthew 16 references. Should the screen expose those separate document uses before a reader opens the verse page?
 3. Does the practice section's focus on church officers, discipline and councils answer the reader's question sufficiently, with papal procedures explicitly silent within this corpus?
-4. Confirm that the three new Reformed screens continue to represent only the inherited Westminster family-A boundary. No new choice among A–D was made here.
+4. Westminster-only boundary follows DECISIONS 2026-10-15; Heidelberg/Belgic remain outside pending doctrine-specific resolution. No choice among A–D is reopened here.

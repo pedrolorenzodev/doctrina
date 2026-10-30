@@ -2,10 +2,10 @@
 
 ## Progress
 
-- Status: incomplete — stopped at 47 % observed usage (2026-10-30; threshold 45 % no new step, save before 50 %).
-- Done: R-01–06 recorded; active Spanish WCF 1/WSC 2 and English WLC 156–158 quotation groups read; Scripture index, WLC 160 paraphrase, authority and edition images checked. One WRONG (R-02 publisher), already applied.
-- Not done: remaining WSC 89–90 image check, final S1/tag dispositions, S3 Critic, remaining S2 application and final recheck. This is not a finished verification.
-- Next: inspect `wave2/wsc-246.jpg` and `wsc-247.jpg` (download requests started in final batch; not inspected), expecting pp. 243–244; then finish S1, critic, apply and recheck. Check usage before resuming.
+- Status: done (S1-S3 completed 2026-10-30).
+- Done: column audit, every active priority-1 quotation/locator disposition, edition/reuse boundaries and critic triage recorded below; original research preserved in `reformed.apply.md`.
+- Applied: 1 WRONG / 1; 3 must-fix / 3; changed quotations, paraphrases and source/status details rechecked against their named evidence. Unconfirmable items retain their limits.
+- Next: owner Spanish/source-gap review and web shaping/import, outside this run.
 
 ## Method and boundary
 
@@ -41,17 +41,27 @@ WLC 160 paraphrase independently confirmed against fresh image p. 199 (`wave2/wl
 
 WCF 31.4 full English quotation and 31.3 “with reverence and submission” match p. 97, read in this run; 1.10 English “the Holy Spirit speaking in the scripture” p. 21 also read. These support historical authority statements, not new current subscription audits. WLC title/approval act leaves (`-104.jpg`, `-105.jpg`) identify the catechism and Church of Scotland General Assembly approval; English title n4 confirms 1894 and corrected publisher (R-02). Spanish title n2 visually confirms H. C. Thomson, Monterrey, Tipografía del Comercio, 1880; introductory n4 discloses American civil-government alterations, so distinguish the historical English controlling text from this Spanish volume. No disputed civil-government paragraph enters this dossier. Mapped historical-edition PD assessment retained from `sources/spanish-pd.md` / `sources/protestant-magisterial.md`, no new legal extension. Own WLC Spanish is directly from English and remains AI-labelled/unreviewed.
 
+### R-07 — WSC 89–90 remaining practice: CONFIRMED
+
+Read both downloaded images in this continuation: Edinburgh 1894 pp. 243–244, [n246](https://archive.org/download/confessionoffaith00chur/page/n246.jpg), [n247](https://archive.org/download/confessionoffaith00chur/page/n247.jpg). WSC 89: “The Spirit of God maketh the reading, but especially the preaching of the word, an effectual means” continues through conviction, conversion, holiness, comfort and salvation through faith. WSC 90: “we must attend thereunto with diligence, preparation, and prayer; receive it with faith and love, lay it up in our hearts, and practise it in our lives.” Printed proof letters omitted in this transcription. These support the existing practice paraphrase; no new custom inferred. The earlier reference to meditation is a reasonable paraphrase of laying up in the heart but the applied text will use the closer wording. No new Spanish quotation needed: historical Spanish WSC already exists, and this remains an attributed English-language research paraphrase.
+
 ## Critic
 
-Not run. Next pass must assess neutrality, caricature/cherry-picking, Fathers, harsh words/status, framing and depth beside Catholic Sola Scriptura, and triage each finding before final application. No must-fix count exists yet.
+| ID | Finding | Triage | Resolution |
+|---|---|---|---|
+| C-R1 | Draft-only pass language and tag legend contradict completed verification and could overstate inherited source claims. | must-fix | Update provenance legend, Progress and Coverage; distinguish scan-checked text, mapped rights and unaudited modern subscription. |
+| C-R2 | “This does not erase church authority” and “It does not give every private reader” sound like the site's theological adjudication. | must-fix | Replace both with WCF 31.3's own positive ministerial authority and conformity condition; retain 31.4's fallibility alongside it. |
+| C-R3 | Spanish 1880 witness's American alterations are not disclosed beside a historical-1647 controlling-text claim. | must-fix | Disclose edition boundary confirmed in R-06: historical English controls; Spanish witness is not globally asserted identical. No altered civil-government locus quoted. |
+| C-R4 | Keep illumination, necessary consequence, clarity qualifications and church testimony together rather than reducing the doctrine to private judgment. | rejected as an existing defect | QE-2/3, PQ-3/5 and practice already retain all these qualifications. No Father assigned to a modern tradition; no standalone harsh anti-body quotation; objections deferred. |
+| C-R5 | Depth compared with Catholic Sola Scriptura: Catholic corpus has magisterial/canonical and ecumenical layers unavailable within Westminster-only scope. | for the owner | Preserve actual asymmetry; no padding from Heidelberg/Belgic. The doctrine-specific admissibility of those excluded families remains Pedro's decision. Spanish review and historical/current numbering display also remain his. |
 
 ## Wrong items
 
 1. R-02 — incorrect English publisher; applied 2026-10-30 to both active occurrences, original preserved in `reformed.apply.md`.
 
-## Unconfirmable / incomplete checks
+## Unconfirmable
 
-- WSC 89–90: OCR claims remain unverified until downloaded English images are inspected. First additional Spanish image request `wave2/wsc-203.jpg` showed p. 203 with Q.91–93, not the desired Q.89–90; it does not verify them.
-- Current body-by-body subscription is inherited and not freshly audited; no new scan tag.
-- WLC Spanish unreviewed by Pedro; mapped PD Spanish WLC edition not established, no global absence claim.
-- S3 and final S1/S2 recheck are incomplete. No source declared missing.
+- Current body-by-body subscription remains inherited from the map and is not freshly audited; no scan certification of current bodies.
+- Public-domain Spanish WLC edition not established in the mapped inventory; no global absence claim. Direct-English AI Spanish remains unreviewed by Pedro.
+- Rights assessment is inherited from the mapped edition inventory and three-country policy, not a new independent legal finding.
+- No source declared missing. Pending WSC images were readable; the earlier wrong Spanish image index did not establish absence.

@@ -2,13 +2,9 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Status: done
-- Completed: one drafting pass through all sections; original-language quotations, separate subscription, coverage and owner questions recorded.
-- Next: Orthodox Eucharist, then Orthodox baptism, sola Scriptura and papacy; none started in this run. Verification, critic and apply remain out of scope.
-- Paused: session limit (80 %)
-- Usage accounting: last observed old-window primary 58%; reserve rounded up to 60% because the window reset during the run. New-window primary reached 10% at the final usage read; conservative accounting is 60% reserved from the old window plus 10% in the new one = 70%. No new step is started. Weekly 56%. This run stops after saving this dossier and does not resume.
-- Reset: 1793313496 (2026-10-29 22:38:16 UTC; 19:38:16 America/Argentina/Buenos_Aires).
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: L-01–06; 1 WRONG / 1 and 3 must-fix / 3 applied; expanded SA grounds checked directly against German; original retained in `lutheran.apply.md`.
+- Next: owner Spanish/presentation review and web shaping/import, outside this run.
 
 ## Conventions and source boundary
 
@@ -19,7 +15,7 @@
 - **Print witness:** *Concordia Triglotta*, ed. F. Bente, English F. Bente/W. H. T. Dau, St. Louis: Concordia Publishing House, 1921, archive `ConcordiaTriglotta`.
 - **Original languages:** Latin for Tr; German for SA and FC; both official originals for AC. A Latin translation of SA is not silently used as its original. Melanchthon's individual subscription is distinguished from SA's common article and from Tr.
 - **Spanish:** [traducción propia asistida por IA], directly from each original language, unreviewed by Pedro [unverified]. The mapped inventory identifies no usable public-domain Spanish confession witness; modern Meléndez/CPH and unclear-licence volunteer texts are not copied.
-- **Tags:** [verified: scan] = original-language passage read in the printed image during drafting, not an independent verification pass. Other claims and all Spanish translations remain [unverified]. Long s becomes s; divided words joined.
+- **Tags:** [verified: scan] = printed-image check recorded in `verification-lutheran.md`. Other claims and all Spanish translations remain [unverified]. Long s becomes s; divided words joined.
 - **Scratch:** `~/doctrina-scratch/third-order/triglot.txt`, metadata, page XML and `triglot-original-<printed-page>.jpg`. OCR is a locator; it does not override the print image.
 - **No debate layer:** the historical documents' own reasons belong in Por qué; no objections/answers or videos are composed.
 
@@ -65,15 +61,15 @@ Tr 7 introduces its claim that the Roman bishop is not superior by divine right 
 
 ### QE-5 · Historical Antichrist designation
 
-> “daß der Papst der rechte Endechrist oder Widerchrist sei”.
+> “daß der Papst der rechte Endechrist oder Widerchrist sei, der sich über und wider Christum gesetzt und erhöht hat, weil er will die Christen nicht lassen selig werden ohne seine Gewalt, welche doch nichts ist, von Gott nicht geordnet noch geboten.”
 
-— SA II.4.10, German original, p. 474 [verified: scan]; excerpt. The following clause connects this designation to placing papal power as a condition of salvation.
+— SA II.4.10, German original, p. 474 [verified: scan]; designation and its complete qualifying grounds, beginning after the introductory assertion. Corrected 2026-10-30, C-L1; prior shortened excerpt preserved in `lutheran.apply.md`.
 
-> «que el papa es el verdadero Anticristo o adversario de Cristo».
+> «que el papa es el verdadero Anticristo o adversario de Cristo, que se ha puesto y elevado por encima y en contra de Cristo, porque pretende no dejar que los cristianos se salven sin su poder, que sin embargo nada es, ni está ordenado ni mandado por Dios».
 
 — [traducción propia asistida por IA], directly from German; unreviewed by Pedro [unverified].
 
-**Status:** this is a historical SA formulation inside the Book of Concord. The map cites LCMS *Handbook* 2023, Constitution II, for acceptance of the symbolical books without reservation; it cites ELCA's 2024 constitutional edition 2.05–2.06 for its different graded language. No new 2026 body-by-body adoption check has been made here [unverified]. The clause is never presented as every present Lutheran individual's description of another church.
+**Status:** this is a historical SA formulation inside the Book of Concord. LCMS *Handbook* 2023, Constitution II p. 11, names the Smalcald Articles within its acceptance of symbolical books without reservation [verified: scan; L-06; official district-hosted PDF linked in Fuentes]. This establishes that named institutional subscription, not a new paragraph-specific interpretation or every body's 2026 position. The map's ELCA 2024 2.05–2.06 graded-language comparison remains inherited and [unverified] here. The clause is never presented as every present Lutheran individual's description of another church.
 
 ### QE-6 · Human arrangements distinguished from divine necessity
 
@@ -93,7 +89,7 @@ SA II.4.7–9 considers a head chosen by human authority for peace and unity as 
 
 ### PQ-2 · The common ministry rather than domination
 
-Tr 8 reads Luke 22:25 within the apostles' dispute about government and interprets Christ as sending them as equals to the common ministry of the gospel (Latin original, p. 504) [verified: scan]. Tr 11 reads 1 Corinthians 3 and 6 as equalizing ministers and placing the church above its ministers (Latin original, p. 506) [verified: scan]. These are the Treatise's interpretations, not independent exegesis supplied by the dossier.
+Tr 8 reads Luke 22:25 within the apostles' dispute about government and interprets Christ as sending them as equals to the common ministry of the gospel (Latin original, p. 504) [verified: scan]. Tr 11 reads 1 Corinthians 3:6 as equalizing ministers and placing the church above its ministers (Latin original, p. 506) [verified: scan]. These are the Treatise's interpretations, not independent exegesis supplied by the dossier.
 
 ### PQ-3 · Peter speaking for the apostolic company
 
@@ -139,7 +135,7 @@ Melanchthon's individual subscription states:
 | Matthew 18:2 | Tr 8 continuation | The child in the dispute about greatness | Latin printed reference p. 504 [verified: scan] |
 | John 20:21 | Tr 9 | Apostles equally sent | Latin p. 504 [verified: scan] |
 | Galatians 2:7 ff. | Tr 10 | Paul's calling and relation to Peter | Latin p. 504 [verified: scan]; range kept open as printed |
-| 1 Corinthians 3; 6 | Tr 11 | Ministers and the church | Latin chapter references p. 506 [verified: scan] |
+| 1 Corinthians 3:6 | Tr 11 | Ministers and the church | Latin chapter/verse reference p. 506; corrected L-03 [verified: scan] |
 | Matthew 16:18–19 | Tr 22–25 | Peter, rock, keys and the confession | Latin p. 510 [verified: scan] |
 | John 21:15 | Tr 22 | “Feed my sheep” named among the disputed texts | Latin p. 510 [verified: scan]; no objection page composed |
 | Matthew 18:18 | Tr 23 | Plural commission beside singular address | Latin p. 510 [verified: scan] |
@@ -161,7 +157,7 @@ Deferred by the owner (2026-10-23).
 
 ### Teaching and sacramental ministry
 
-AC XXVIII.8 places the exercise of ecclesial power in teaching/preaching the Word and administering sacraments according to vocation (original Latin and German, Triglot p. 84) [verified: scan]. It contrasts this with civil administration rather than assigning church ministers the sword.
+AC XXVIII.8 places the exercise of ecclesial power in teaching/preaching the Word and administering sacraments according to vocation (original Latin and German, Triglot p. 84) [verified: scan]. In its immediate continuation AC XXVIII.8–9 names eternal righteousness, the Holy Spirit and eternal life as the gifts conferred through Word and sacraments (same p. 84) [verified: scan; L-05]. It distinguishes that ministry from civil administration.
 
 ### Discipline and restoration
 
@@ -201,16 +197,16 @@ The subscription differences remain those stated under Conventions and QE-5. Nei
 
 ## Fuentes
 
-1. **Original confessional witness:** *Concordia Triglotta*, ed. F. Bente, English F. Bente/W. H. T. Dau, St. Louis: Concordia Publishing House, 1921. [Print scan](https://archive.org/details/ConcordiaTriglotta). AC XXVIII p. 84; SA II.4 pp. 470–474; subscription p. 500; Tr pp. 502–520. Public-domain classification inherited from the map's inventory, not independently re-audited [unverified].
+1. **Original confessional witness:** *Concordia Triglotta*, ed. F. Bente, English F. Bente/W. H. T. Dau, St. Louis: Concordia Publishing House, 1921. [Print scan](https://archive.org/details/ConcordiaTriglotta). AC XXVIII p. 84; SA II.4 pp. 470–474; subscription p. 500; Tr pp. 502–520. The scan contains the 1921 historical title/text within an undated Northwestern second reprint (n6/n7). Reuse assessment is inherited and bounded to historical text, not later reprint matter or modern electronic/Spanish text [unverified: legal inventory].
 2. **AC:** [printed p. 84](https://archive.org/details/ConcordiaTriglotta/page/n364/mode/1up), both original languages read. AC's Latin is translated directly where used, not through English.
 3. **SA and subscription:** [printed p. 470](https://archive.org/details/ConcordiaTriglotta/page/n750/mode/1up), [474](https://archive.org/details/ConcordiaTriglotta/page/n754/mode/1up), [500](https://archive.org/details/ConcordiaTriglotta/page/n780/mode/1up). German controls the renderings.
 4. **Tr:** [printed p. 504](https://archive.org/details/ConcordiaTriglotta/page/n784/mode/1up), [510](https://archive.org/details/ConcordiaTriglotta/page/n790/mode/1up), [520](https://archive.org/details/ConcordiaTriglotta/page/n800/mode/1up). Latin original, not the German or English translation, controls Spanish.
-5. **Authority controls:** Lutheran map §§1–4,8; `verification-lutheran-reformed.md`; Eucharist conventions. The map's LCMS *Handbook* 2023 Constitution II and ELCA 2024 2.05–2.06 identify the limited edition basis of the reception note. No current constitutional audit was performed [unverified].
+5. **Authority controls:** Lutheran map §§1–4,8; `verification-lutheran-reformed.md`; Eucharist conventions. [LCMS *Handbook* 2023, Constitution II p. 11](https://idwlcms.org/gotodownloadfile.php?file=1557) freshly read [verified: scan; L-06]. ELCA 2024 2.05–2.06 remains map evidence [unverified]; no universal current adoption audit.
 6. **Translations:** all Spanish prepared here directly from originals, marked [traducción propia asistida por IA], unreviewed by Pedro. No modern copyrighted Spanish confession text copied.
 
 ## Coverage table
 
-“Full” concerns the drafting section, not verification or a full reception survey. Deferred objections are sparse by the owner's instruction, not because the sources are silent.
+“Full” concerns coverage of the named confessional loci, not a full current reception survey. S1-S3 evidence is in `verification-lutheran.md`. Deferred objections are sparse by the owner's instruction, not because the sources are silent.
 
 | Section | Status | Where searched / cause |
 |---|---|---|
@@ -220,11 +216,11 @@ The subscription differences remain those stated under Conventions and QE-5. Nei
 | Objeciones | sparse | Deferred by the owner (2026-10-23); no debate layer |
 | Cómo se vive | full | AC XXVIII.5–18; SA II.4.9; Tr 56,60–62. Prescribed ministry, discipline and government only; no current parish custom inferred |
 | Grado de autoridad | full | Map tiers and subscription distinctions; FC Ep RN 7–8; Tr's relation to SA; individual subscription distinguished from common confessional teaching |
-| Fuentes | full | 1921 original-language print images and direct translations; mapped reception editions labelled, with no false claim of a new status audit |
+| Fuentes | full | 1921 historical text in undated reprint; direct original-language translations; LCMS 2023 printed status checked, other body claims bounded |
 
 ## Questions for the owner
 
 1. Keep Melanchthon's qualified individual subscription visibly distinct from SA II.4 and Tr, without making it a replacement for either?
 2. The historical Antichrist wording needs the named-body/edition status note each time it appears. Approve that placement before eventual site use?
 3. Review “derecho de llamar” for Tr's “ius vocationis”; should a later glossary explain the call to ministry beside the quotation?
-4. Review every Spanish rendering. The Treatise's historical/patristic arguments have not received an independent verification pass.
+4. Review every Spanish rendering, including expanded SA grounds. Tr's historical/patristic statements are verified as its wording/claims, not independently established history.

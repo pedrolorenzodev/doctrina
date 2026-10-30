@@ -2,15 +2,30 @@
 
 ## Progress
 
-- Status: incomplete — stopped at 47 % observed usage (2026-10-30; save before 50 %).
-- Done: original preserved verbatim; Westminster scope passes; R-02 publisher corrected in both active occurrences (1 WRONG / 1 applied so far).
-- Not done: final S1 dispositions, tag upgrades, S3 critic/must-fix application and final recheck. No completed must-fix count or verified status claimed.
-- Next: read pending WSC 89–90 images, finish S1 and critic, apply remaining findings from already-read sources, recheck. Resume from `verification-reformed.md` Progress before starting the next dossier.
+- Status: done (2026-10-30).
+- Done: inherited R-02 correction retained; R-01–07 disposed; 1 WRONG / 1 applied; 3 must-fix / 3 applied. Original below is unchanged.
+- Next: owner Spanish review and web shaping/import, outside this run.
 
 ## Applied correction
 
 - R-02, corrected 2026-10-30: old “Edinburgh: Offices of the Church of Scotland, 1894”; new “Edinburgh: Johnstone, Hunter, & Co., 1894”. Already-read title image `wave2/west-title-4.jpg`, Archive n4, governs. Source boundary and Fuentes both corrected; original below unchanged.
-- All other findings/tag upgrades remain pending final disposition. Spanish WLC remains directly from English, AI-labelled/unreviewed. No critic was run before the usage stop.
+- Earlier checkpoint: all other findings/tag upgrades were pending at the usage stop; the continuation below closes those steps. Spanish WLC remains directly from English, AI-labelled/unreviewed.
+
+## Continuation — corrected 2026-10-30
+
+- R-01/R-03/R-04/R-06: retain confirmed text and locators; no scope displacement. Rights/current subscriptions retain their explicit inherited-evidence boundary.
+- R-05: old Acts 28:25 “[unverified]: located in OCR continuation on p. 13” → “[verified: scan], p. 13; R-05”. WLC 160's old OCR-only p. 199 note → image-confirmed paraphrase. Sources: verification R-05.
+- R-07: old “WSC 89–90 treats the efficacy of the Word and preparation, attention, meditation and practice; those answers were located in the same volume's catechism” → distinguish Spirit-given efficacy (89) and diligent prepared prayerful reception/heart/practice (90), pp. 243–244, image-confirmed. Sources and matched strings in R-07.
+- C-R1: old draft-only tag/pass/Progress/Coverage language → completed S1-S3 with explicit unconfirmed limits. No unreviewed AI Spanish upgraded. Final stale-marker sweep also replaced the previous partial-run “S1 in progress… Critic and remaining application not run” convention line.
+- C-R2: old “This does not erase church authority: the same 31.3 requires reverence and submission. It does not give every private reader an authority the confession never names.” → attributed WCF 31.3 ministerial authority/conformity formulation, verified p. 97. No site conclusion.
+- C-R3: old source boundary identified Spanish witness without the alteration warning → disclose introduction n4 and English historical control (R-06). Historical original below retains the old boundary.
+- C-R4 rejected with reason; C-R5 for the owner: corpus asymmetry, doctrine-specific Heidelberg/Belgic ambiguity, Spanish review and historical/American locator presentation. No open question decided.
+- Final recheck: all changed doctrinal paraphrases resolve to already-inspected R-05–07 images; section order and Coverage retained; deferred objections exact; no source/family added. One prior WRONG remains counted once, not a new publisher error in this continuation.
+
+## Repository checks — 2026-10-30
+
+- `npm run verify` under Node 24: passed (typecheck, lint/tool fixtures, format check and production build); three lint warnings, zero errors. Log: `~/doctrina-scratch/wave2/wave3-4-verify.log`.
+- `git diff --check`: passed. Active dossier section order, single final Status, Coverage and exact deferred-objections line checked. Research Markdown only; no source/data/UI edits.
 
 ## Original draft retained verbatim
 
