@@ -1,0 +1,429 @@
+<title>Selectores sin celeste</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a configurator. Left, eight «lenguajes de selección» and a mixer per family; right, the real site's selectors (tree, tradition tabs, filters, panel tabs, picker, chapter grid, chips, heading tabs) drawn with the site's own tokens, texture and measures. Choosing a language restyles every selector at once. */
+:root {
+  --bg: #e8e5de; --ink: #1c1713; --ink-2: #2a2620; --ink-3: #615c54; --prose: #4f4b44;
+  --rule: #c9c5bc; --rule-2: #aeaba4; --accent: #2c4a9e; --accent-weak: rgb(44 74 158 / 0.1); --accent-mid: rgb(44 74 158 / 0.45);
+  --cite: #5f3d0c; --cite-weak: rgb(95 61 12 / 0.09); --card: rgb(255 255 255 / 0.35); --panel: #efece6;
+  --hover: rgb(28 23 19 / 0.05); --sel-neutral: rgb(28 23 19 / 0.09); --shadow-float: 0 18px 40px -18px rgb(0 0 0 / 0.45);
+  --texture-image: /*TEX_LIGHT*/; --texture-opacity: 0.4; --external-mark: /*EXT*/;
+  --head: "Newsreader", Georgia, serif; --body: "Source Serif 4", Georgia, serif; --ui: "Work Sans", system-ui, sans-serif;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1); --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1); --ease-move: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+    --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+    --card: rgb(255 255 255 / 0.03); --panel: #262625; --hover: rgb(255 255 255 / 0.05); --sel-neutral: rgb(255 255 255 / 0.1);
+    --texture-image: /*TEX_DARK*/; --texture-opacity: 1; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+  --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+  --card: rgb(255 255 255 / 0.03); --panel: #262625; --hover: rgb(255 255 255 / 0.05); --sel-neutral: rgb(255 255 255 / 0.1);
+  --texture-image: /*TEX_DARK*/; --texture-opacity: 1; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.5 var(--ui); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::after { content: ""; position: fixed; inset: 0; z-index: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 90; background: var(--bg); }
+.tx { position: relative; }
+.tx::after { content: ""; position: absolute; inset: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+.tx > * { position: relative; z-index: 1; }
+button { font: inherit; color: inherit; }
+a:focus-visible, button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.doc { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; padding-block: 40px 120px; }
+.doc-head { max-width: 760px; }
+.doc-head h1 { font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.doc-head .lede { font: italic 300 22px/1.4 var(--head); font-variation-settings: "opsz" 36; color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; }
+.t { font: 300 17px/1.6 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); margin: 14px 0 0; max-width: 68ch; }
+.doc b { font-weight: 500; color: var(--ink); }
+h2.sec { font: 300 34px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 0; text-wrap: balance; }
+@media (max-width: 640px) { .doc-head h1 { font-size: 36px; } .doc-head .lede { font-size: 19px; } h2.sec { font-size: 28px; } }
+
+.seen { margin-top: 56px; display: grid; gap: 28px; }
+.refimg { margin: 0; }
+.refimg img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-2); border-radius: 6px; }
+.refimg figcaption { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 8px; font: 400 13px/1.45 var(--ui); color: var(--ink-3); }
+.refimg figcaption b { color: var(--ink); font-weight: 500; display: block; }
+@media (max-width: 900px) { .refimg figcaption { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.finds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; margin: 0; padding: 0; list-style: none; }
+.finds li { padding: 14px 0; border-top: 1px solid var(--rule); font: 300 16.5px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); }
+.finds li small { display: block; margin-top: 4px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+@media (max-width: 900px) { .finds { grid-template-columns: 1fr; } }
+.inv { width: 100%; border-collapse: collapse; font: 400 14px/1.45 var(--ui); }
+.inv th { text-align: left; font: 500 12.5px var(--ui); color: var(--ink-3); padding: 0 16px 8px 0; }
+.inv td { padding: 10px 16px 10px 0; border-top: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+.inv td:first-child { color: var(--ink); font-weight: 500; white-space: nowrap; }
+.invw { overflow-x: auto; }
+
+.ctl { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; margin-top: 56px; padding-block: 10px; background: var(--bg); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+@media (max-width: 1099px) { .ctl { position: static; } }
+.ctl .label { font: 500 12.5px var(--ui); color: var(--ink-3); margin-right: 8px; }
+.ctl > span { display: flex; align-items: center; }
+.pk { display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; }
+.pk button { min-height: 34px; padding: 0 12px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; }
+.pk button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 500; }
+.pk button:hover:not([aria-pressed="true"]) { background: var(--hover); }
+@media (pointer: coarse) { .pk button { min-height: 44px; } }
+
+.lab { display: grid; grid-template-columns: minmax(320px, 400px) minmax(0, 1fr); gap: 48px; margin-top: 32px; align-items: start; }
+.side { position: sticky; top: 72px; max-height: calc(100vh - 88px); overflow: auto; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; padding-right: 6px; }
+.side h3 { margin: 0; font: 400 22px/1.3 var(--head); font-variation-settings: "opsz" 24; }
+.side .why { margin: 6px 0 12px; font: 300 15.5px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); }
+.lg { display: block; width: 100%; padding: 10px 8px 10px 22px; border: 0; border-top: 1px solid var(--rule); background: none; text-align: left; cursor: pointer; position: relative; transition: background-color 150ms var(--ease-standard); }
+.lg:last-of-type { border-bottom: 1px solid var(--rule); }
+.lg::before { content: ""; position: absolute; left: 6px; top: 16px; width: 6px; height: 6px; background: var(--ink); opacity: 0; transition: opacity 150ms var(--ease-standard); }
+.lg[aria-checked="true"]::before { opacity: 1; }
+.lg:hover { background: var(--hover); }
+.lg .n { display: block; font: 500 14.5px/1.4 var(--ui); color: var(--ink); }
+.lg .l { display: block; margin-top: 2px; font: 400 13.5px/1.5 var(--ui); color: var(--ink-3); text-wrap: pretty; }
+.lg .s { display: block; margin-top: 2px; font: 400 12.5px/1.45 var(--ui); color: var(--ink-3); }
+.mix { margin-top: 28px; display: grid; gap: 8px; }
+.mix label { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 10px; font: 500 12.5px var(--ui); color: var(--ink-3); }
+.mix select { min-height: 36px; padding: 0 10px; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--card); font: 400 13.5px var(--ui); color: var(--ink); }
+@media (max-width: 1099px) { .lab { display: block; margin-top: 16px; } .side { position: static; max-height: none; padding: 0; margin-bottom: 32px; } }
+
+/* ---------- the stage: real selectors ---------- */
+.stage { position: relative; border: 1px solid var(--rule-2); border-radius: 10px; background: var(--bg); overflow: hidden; }
+.stage > .inner { display: grid; grid-template-columns: 272px minmax(0, 1fr); }
+.stage .sb { border-right: 1px solid var(--rule); padding: 22px 14px 32px 18px; min-width: 0; display: grid; gap: 28px; align-content: start; }
+.stage .mn { padding: 26px 28px 40px; display: grid; gap: 34px; min-width: 0; align-content: start; }
+@media (max-width: 760px) { .stage > .inner { grid-template-columns: 1fr; } .stage .sb { border-right: 0; border-bottom: 1px solid var(--rule); } .stage .mn { padding: 22px 16px 32px; } }
+.cap { font: 500 12.5px/1.3 var(--ui); color: var(--ink-3); margin: 0 0 10px; }
+.cap span { display: block; font-weight: 400; margin-top: 2px; }
+
+/* language variables per family */
+[data-row], [data-tab], [data-seg], [data-chip] { --ind-bg: transparent; --ind-bd: transparent; --ind-sh: none; --sel-c: var(--ink); --sel-w: 500; --tick: 0; --ind-r: 6px; --chip-bd: var(--rule); --cell-bd: transparent; }
+[data-row="now"], [data-tab="now"], [data-seg="now"], [data-chip="now"] { --ind-bg: var(--accent-weak); --chip-bd: var(--accent-mid); }
+[data-row="now"] { --ind-sh: inset 2px 0 0 var(--accent); }
+[data-tab="now"], [data-seg="now"] { --ind-sh: inset 0 -2px 0 var(--accent); }
+[data-row="weight"], [data-tab="weight"], [data-seg="weight"], [data-chip="weight"] { --sel-w: 600; }
+[data-row="accent"], [data-tab="accent"], [data-seg="accent"], [data-chip="accent"] { --sel-c: var(--accent); --chip-bd: var(--accent-mid); }
+[data-row="tick"], [data-tab="tick"], [data-seg="tick"], [data-chip="tick"] { --tick: 1; }
+[data-row="neutral"], [data-tab="neutral"], [data-seg="neutral"], [data-chip="neutral"] { --ind-bg: var(--sel-neutral); --chip-bd: transparent; }
+[data-row="invert"], [data-tab="invert"], [data-seg="invert"], [data-chip="invert"] { --ind-bg: var(--ink); --sel-c: var(--bg); --chip-bd: var(--ink); }
+[data-row="lift"], [data-tab="lift"], [data-seg="lift"], [data-chip="lift"] { --ind-bg: var(--panel); --ind-bd: var(--rule-2); --chip-bd: var(--rule-2); --cell-bd: var(--rule-2); }
+[data-row="outline"], [data-tab="outline"], [data-seg="outline"], [data-chip="outline"] { --ind-bd: var(--accent-mid); --chip-bd: var(--accent-mid); --cell-bd: var(--accent-mid); }
+[data-row="now"] { --cell-bd: transparent; }
+[data-row="now"], [data-row="weight"], [data-row="accent"], [data-row="tick"] { --ind-r: 0px; }
+
+.rel { position: relative; }
+.ind { position: absolute; left: 0; top: 0; width: 0; height: 0; z-index: 0; pointer-events: none; border: 1px solid var(--ind-bd); border-radius: var(--ind-r); background: var(--ind-bg); box-shadow: var(--ind-sh); transition: transform 360ms var(--ease-reveal), width 360ms var(--ease-reveal), height 360ms var(--ease-reveal); }
+.ind.still { transition: none; }
+.ind::after { content: ""; position: absolute; background: var(--ink); opacity: var(--tick); }
+.ind[data-kind="row"]::after { left: -1px; top: 50%; height: 14px; width: 2px; margin-top: -7px; }
+.ind[data-kind="tab"]::after, .ind[data-kind="seg"]::after { left: 50%; bottom: 3px; height: 2px; width: 14px; margin-left: -7px; }
+
+/* rows (tree, picker) */
+.r { position: relative; z-index: 1; display: flex; align-items: center; gap: 6px; width: 100%; min-height: 32px; padding: 0 8px 0 4px; border: 0; border-radius: 6px; background: none; text-align: left; font: 400 14px/1.35 var(--ui); color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.r:hover { background: var(--hover); color: var(--ink); }
+.r[aria-current="true"] { color: var(--sel-c); font-weight: var(--sel-w); }
+.r[aria-current="true"]:hover { background: none; }
+.r svg { flex: none; color: var(--ink-3); }
+.r.l1 { padding-left: 26px; } .r.l2 { padding-left: 48px; }
+.g { font: 500 12.5px var(--ui); color: var(--ink-3); margin: 14px 0 4px 4px; }
+.g:first-child { margin-top: 0; }
+.pr { min-height: 44px; padding: 0 12px; font-size: 14.5px; }
+.pr small { margin-left: auto; font: 400 12.5px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pr[aria-current="true"] small { color: inherit; opacity: 0.8; }
+
+/* tabs and segments */
+.tabs { position: relative; display: inline-flex; gap: 2px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs button, .seg button { position: relative; z-index: 1; min-height: 36px; padding: 0 11px; border: 0; border-radius: 6px; background: none; font: 400 14px var(--ui); color: var(--ink-2); cursor: pointer; white-space: nowrap; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.tabs button::after, .seg button::after { content: attr(data-t); display: block; height: 0; visibility: hidden; overflow: hidden; font-weight: 600; }
+.tabs button:hover, .seg button:hover { background: var(--hover); color: var(--ink); }
+.tabs button[aria-pressed="true"], .seg button[aria-pressed="true"] { color: var(--sel-c); font-weight: var(--sel-w); }
+.tabs button[aria-pressed="true"]:hover, .seg button[aria-pressed="true"]:hover { background: none; }
+[data-tab="weight"] .tabs button:not([aria-pressed="true"]), [data-tab="accent"] .tabs button:not([aria-pressed="true"]) { color: var(--ink-3); }
+.seg { position: relative; display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; max-width: 100%; }
+.seg.w { display: flex; width: 100%; } .seg.w button { flex: 1 1 auto; padding: 0 6px; }
+.seg button { min-height: 34px; font-size: 13.5px; }
+.reserve { display: inline-grid; } .reserve::after { content: attr(data-t); font-weight: 600; height: 0; visibility: hidden; overflow: hidden; }
+.sw3 { font: 400 12.5px var(--ui); color: var(--ink-3); margin-left: 6px; font-variant-numeric: tabular-nums; }
+
+/* heading tabs */
+.htabs { position: relative; display: flex; gap: 36px; border-bottom: 1px solid var(--rule); width: 100%; }
+.htabs button { position: relative; padding: 0 0 12px; border: 0; background: none; font: 400 22px/1.2 var(--head); font-variation-settings: "opsz" 24; color: var(--ink-3); cursor: pointer; transition: color 150ms var(--ease-standard); }
+.htabs button:hover { color: var(--ink); }
+.htabs button[aria-pressed="true"] { color: var(--ink); }
+.hind { position: absolute; bottom: -1px; left: 0; height: 2px; width: 0; background: var(--accent); transition: transform 340ms var(--ease-reveal), width 340ms var(--ease-reveal); }
+.hind.still { transition: none; }
+[data-tab="weight"] .hind, [data-tab="accent"] .hind, [data-tab="tick"] .hind { background: transparent; }
+[data-tab="neutral"] .hind, [data-tab="invert"] .hind, [data-tab="lift"] .hind { background: var(--ink); }
+[data-tab="outline"] .hind { background: var(--accent-mid); }
+[data-tab="weight"] .htabs button[aria-pressed="true"] { font-weight: 400; color: var(--ink); text-shadow: 0.4px 0 0 currentColor; }
+[data-tab="accent"] .htabs button[aria-pressed="true"] { color: var(--accent); }
+.hind::after { content: ""; position: absolute; left: 50%; top: 0; width: 14px; height: 2px; margin-left: -7px; background: var(--ink); opacity: 0; }
+[data-tab="tick"] .hind::after { opacity: 1; }
+
+/* chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { min-height: 34px; padding: 0 11px; border: 1px solid var(--rule); border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; position: relative; transition: background-color 150ms var(--ease-standard), border-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.chip:hover { background: var(--hover); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ind-bg); border-color: var(--chip-bd); color: var(--sel-c); font-weight: var(--sel-w); }
+.chip[aria-pressed="true"]::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 14px; height: 2px; margin-left: -7px; background: var(--ink); opacity: var(--tick); }
+[data-chip="lift"] .chip[aria-pressed="true"], [data-chip="outline"] .chip[aria-pressed="true"] { background: var(--ind-bg); }
+[data-chip="outline"] .chip[aria-pressed="true"] { border-color: var(--accent-mid); }
+[data-chip="now"] .chip[aria-pressed="true"] { border-color: var(--accent-mid); }
+@media (pointer: coarse) { .chip, .tabs button, .seg button { min-height: 44px; } }
+
+/* chapter grid */
+.cg { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0; margin: 0; padding: 0; list-style: none; }
+.cell { position: relative; display: grid; place-items: center; width: 100%; height: 34px; border: 0; background: none; font: 400 14px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; cursor: pointer; }
+.cell span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1px solid transparent; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard), border-color 150ms var(--ease-standard); position: relative; }
+.cell:hover span { background: var(--hover); color: var(--ink); }
+.cell.rd::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--accent-mid); }
+.cell[aria-current="true"] span { background: var(--ind-bg); border-color: var(--cell-bd); color: var(--sel-c); font-weight: var(--sel-w); }
+[data-row="tick"] .cell[aria-current="true"] span { background: none; }
+[data-row="tick"] .cell[aria-current="true"] span::before { content: ""; position: absolute; top: -3px; left: 50%; width: 14px; height: 2px; margin-left: -7px; background: var(--ink); }
+[data-row="outline"] .cell[aria-current="true"] span { border-color: var(--accent-mid); }
+[data-row="weight"] .cell[aria-current="true"] span, [data-row="accent"] .cell[aria-current="true"] span { background: none; }
+.cell:hover { background: none; }
+
+/* panel and verse */
+.pnl { border: 1px solid var(--rule-2); border-radius: 10px; background: var(--panel); max-width: 400px; box-shadow: var(--shadow-float); }
+.pnl .th { padding: 12px 14px 0; }
+.pnl .bd { padding: 14px 16px 18px; }
+.pnl .ref { font: 500 12.5px var(--ui); color: var(--cite); margin: 0 0 6px; }
+.pnl p.v { margin: 0; font: 300 17px/1.6 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); }
+.quote { margin: 0; font: italic 300 19px/1.5 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); max-width: 60ch; }
+.quote::before { content: "«"; } .quote::after { content: "»"; }
+.qby { margin: 8px 0 0; font: 400 13.5px var(--ui); color: var(--ink-3); }
+.dots { display: flex; gap: 12px; }
+.dot { width: 22px; height: 22px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12); }
+.dot[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--ink); }
+.two { display: flex; flex-wrap: wrap; gap: 34px 40px; align-items: flex-start; }
+.two > * { flex: 1 1 300px; min-width: 0; }
+
+.endgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; margin-top: 96px; }
+.endgrid ul, .endgrid ol { margin: 14px 0 0; padding: 0; list-style: none; }
+.endgrid li { padding: 12px 0; border-top: 1px solid var(--rule); font: 300 16px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); }
+.endgrid li:last-child { border-bottom: 1px solid var(--rule); }
+@media (max-width: 900px) { .endgrid { grid-template-columns: 1fr; gap: 40px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+</style>
+
+<div class="doc">
+  <header class="doc-head">
+    <h1>Selectores sin celeste</h1>
+    <p class="lede">Hoy casi todo lo que se elige en Doctrina se marca igual: fondo celeste y una barra al costado. Esta página prueba ocho maneras distintas de marcar «esto es lo elegido» sobre los selectores reales del sitio.</p>
+    <p class="t">Abajo están el árbol, las pestañas de tradición, el filtro, el panel del versículo, el selector de traducción, la cuadrícula de capítulos, las fichas y las pestañas de título, con el fondo, las fuentes y las medidas del sitio. Eliges un lenguaje y cambian todos a la vez; o los mezclas por familia. Haz clic en cualquier selector: la marca viaja con el mismo movimiento que ya aprobaste.</p>
+  </header>
+
+  <section class="seen" aria-labelledby="seen-h">
+    <h2 class="sec" id="seen-h">Lo que se vio</h2>
+    <figure class="refimg"><img alt="Menús laterales de seis sitios de documentación: Stripe, Vercel, MDN, Wikipedia, Linear y Claude" src="/*IMG_REFS*/"><figcaption>
+      <span><b>Stripe</b>texto azul, peso medio, sin fondo</span><span><b>Vercel</b>relleno gris neutro, esquinas suaves</span><span><b>MDN</b>fondo teñido y barra al costado: la receta de Doctrina</span><span><b>Wikipedia</b>sin marca en el índice</span><span><b>Linear</b>sin marca visible en el menú oscuro</span><span><b>Claude</b>relleno gris neutro, esquinas suaves</span></figcaption></figure>
+    <ul class="finds">
+      <li><b>La barra de color en un solo lado es el rasgo más repetido de «diseño hecho por IA».</b> Los catálogos de antipatrones la llaman «side‑stripe» y la ponen en primer lugar; sugieren un borde fino alrededor o nada. <small>Impeccable y Hallmark. Ninguno nombra el fondo teñido: esa mitad de la queja no está confirmada.</small></li>
+      <li><b>«Actual» y «elegido» no son lo mismo.</b> El actual es la página que estás viendo (no es un enlace); el elegido es lo que se abrirá al activarlo. Solo uno a la vez en todo el menú, con <code>aria-current</code>. <small>Atlassian AUI, guía de patrones.</small></li>
+      <li><b>Segmentos: de tres a cinco opciones, siempre una elegida, visible sin depender del color.</b> <small>Guías de sistemas de diseño de terceros. No llegué a la guía de Apple.</small></li>
+      <li><b>Dos familias de marca sin color:</b> peso y tinta (Stripe, Wikipedia) y relleno neutro (Vercel, Claude). Ambas aparecen abajo. <small>Capturas de hoy en un Chrome normal.</small></li>
+    </ul>
+    <div>
+      <h2 class="sec" style="font-size:26px">Lo que hay hoy en el código</h2>
+      <div class="invw"><table class="inv" style="margin-top:14px"><thead><tr><th>Selector</th><th>Cómo marca lo elegido</th><th>Archivos</th></tr></thead><tbody>
+        <tr><td>Árbol, filas de listas</td><td>fondo celeste y barra izquierda de 2 px</td><td>sidebar, translation-rows, panel-picker, book-picker</td></tr>
+        <tr><td>Pestañas planas</td><td>fondo celeste y subrayado de 2 px</td><td>sliding-tabs, tradition-switcher</td></tr>
+        <tr><td>Segmentos y filtros</td><td>pastilla celeste que se desliza</td><td>segmented-filter, scope-control, text-options, parallel-menu, text-settings</td></tr>
+        <tr><td>Fichas</td><td>borde y fondo celestes</td><td>fichas de «La práctica»</td></tr>
+        <tr><td>Cuadrícula de capítulos</td><td>círculo celeste y negrita</td><td>chapter-grid</td></tr>
+        <tr><td>Pestañas de título</td><td>subrayado de 2 px azul</td><td>sliding-tabs (heading)</td></tr>
+        <tr><td>Punto de color</td><td>anillo de tinta (no cambia aquí)</td><td>highlight-colors</td></tr>
+      </tbody></table></div>
+    </div>
+  </section>
+
+  <div class="ctl tx" role="group" aria-label="Controles de la prueba">
+    <span><span class="label">Tema</span><span class="pk" id="pk-theme"><button type="button" data-th="light" aria-pressed="false">Claro</button><button type="button" data-th="dark" aria-pressed="false">Oscuro</button></span></span>
+    <span><span class="label">Lenguaje elegido</span><b id="cur-lang" style="font:500 13.5px var(--ui)"></b></span>
+  </div>
+
+  <div class="lab">
+    <aside class="side" aria-label="Lenguajes de selección">
+      <h3>Lenguaje para todos</h3>
+      <p class="why">Cada uno define cómo se ve lo elegido en filas, pestañas, segmentos, fichas y círculos. El movimiento y los tamaños no cambian.</p>
+      <div id="langs" role="radiogroup" aria-label="Lenguaje de selección"></div>
+      <div class="mix" id="mix"><h3 style="font-size:19px">Mezclar por familia</h3></div>
+    </aside>
+
+    <div class="stage tx" id="stage" data-row="now" data-tab="now" data-seg="now" data-chip="now">
+      <div class="inner">
+        <div class="sb">
+          <div data-fam="row"><p class="cap">Árbol lateral<span>sidebar.tsx</span></p><div class="rel" id="tree"></div></div>
+          <div data-fam="row"><p class="cap">Cuadrícula de capítulos<span>chapter-grid.tsx, Juan</span></p><ul class="cg" id="cg"></ul></div>
+        </div>
+        <div class="mn">
+          <div data-fam="tab"><p class="cap">Heading de la capa del lector<span>sliding-tabs.tsx, variante título</span></p><div class="htabs" id="htabs"></div></div>
+          <div data-fam="tab"><p class="cap">Cambiador de tradición<span>tradition-switcher.tsx</span></p><div class="rel" style="display:inline-block;max-width:100%"><div class="tabs" id="trad"></div></div><blockquote class="quote" id="tq" style="margin-top:18px"></blockquote><p class="qby" id="tqb"></p></div>
+          <div class="two">
+            <div data-fam="seg" style="flex-basis:340px"><p class="cap">Filtro segmentado<span>segmented-filter.tsx</span></p><div class="seg w" id="seg1"></div></div>
+            <div data-fam="seg" style="flex-basis:340px"><p class="cap">Dónde busca<span>scope-control.tsx</span></p><div class="seg w" id="seg2"></div></div>
+          </div>
+          <div class="two">
+            <div data-fam="tab"><p class="cap">Panel del versículo<span>panel con pestañas, 400 px</span></p>
+              <div class="pnl"><div class="th"><div class="rel" style="display:inline-block"><div class="tabs" id="ptabs"></div></div></div><div class="bd"><p class="ref">Juan 6:53</p><p class="v" id="pv"></p></div></div></div>
+            <div><div data-fam="row"><p class="cap">Selector de traducción<span>translation-picker.tsx</span></p>
+              <div class="pnl" style="padding:6px"><div class="rel" id="picker"></div></div></div></div>
+          </div>
+          <div class="two">
+            <div data-fam="chip"><p class="cap">Fichas<span>fuentes de una respuesta, cajón</span></p><div class="chips" id="chips"></div></div>
+            <div><p class="cap">Color de subrayado<span>highlight-colors.tsx. No cambia: el anillo ya no usa celeste</span></p><div class="dots" id="dots"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="endgrid">
+    <section>
+      <h2 class="sec">Lo que se descartó</h2>
+      <ul>
+        <li><b>Seguir con una barra de color a un costado.</b> Es el rasgo más citado de interfaz hecha por IA.</li>
+        <li><b>Subrayado para lo elegido en el texto corrido y en las filas.</b> En Doctrina el subrayado significa enlace; solo se usa en las pestañas de título.</li>
+        <li><b>Marcas con flecha pegada al texto, íconos de visto o emoji.</b> Están en la lista de lo que parece generado.</li>
+        <li><b>Un lenguaje distinto para cada selector sin criterio.</b> Se pueden mezclar por familia, pero la propuesta es elegir pocos.</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="sec">Lo que hay que decidir</h2>
+      <ol>
+        <li><b>Un lenguaje para todo, o uno por familia.</b> Filas, pestañas, segmentos, fichas y círculos pueden tomar lenguajes distintos.</li>
+        <li><b>Si el acento sigue marcando lo elegido</b> o solo el foco, el rango y la posición, como dice la regla del sitio.</li>
+        <li><b>Qué se hace con las pestañas de título:</b> el subrayado de acento de hoy tiene precedente en Stripe.</li>
+        <li><b>Si el color de subrayado cambia de anillo</b> junto con el resto.</li>
+      </ol>
+      <p class="t" style="margin-top:20px">Cada variante necesitaría un token nuevo para el relleno neutro (<code>--color-selected</code>) y una utilidad compartida por familia, para reemplazar la receta que hoy se repite en más de diez archivos.</p>
+    </section>
+  </div>
+</div>
+
+<script>
+(function () {
+  var D = /*DATA*/{};
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var LANGS = [
+    ["now", "Actual", "Fondo celeste y barra de 2 px en el borde.", "El sitio hoy. MDN usa la misma receta."],
+    ["weight", "Peso", "Solo el texto: tinta y negrita; el resto, gris. Sin fondo ni barra.", "Wikipedia y Stripe sin color: el peso marca."],
+    ["accent", "Texto en acento", "El elegido va en azul con peso medio. Sin fondo.", "Stripe docs: texto azul, peso medio, sin relleno."],
+    ["tick", "Marca corta", "Una raya de tinta de 14 × 2 px junto al texto, no a todo el alto.", "Primo de la marca de fecha del sitio (1 × 12 px)."],
+    ["neutral", "Relleno neutro", "Gris translúcido de la tinta, esquinas de 6 px, sin color.", "Vercel docs y Claude docs."],
+    ["invert", "Tinta llena", "Fondo de tinta y texto del color del fondo. Máximo contraste.", "Pensado para pocos elementos: segmentos y fichas."],
+    ["lift", "Elevado", "Superficie del panel con borde fino, como un pulgar sobre el segmento.", "Patrón de control segmentado; sin verificar contra Apple."],
+    ["outline", "Contorno", "Borde fino de acento por todo el contorno, sin fondo.", "Los catálogos de antipatrones recomiendan un borde fino alrededor."]
+  ];
+  var FAMS = [["row", "Filas y círculos"], ["tab", "Pestañas"], ["seg", "Segmentos"], ["chip", "Fichas"]];
+  var state = { row: "now", tab: "now", seg: "now", chip: "now" };
+  var stage = $("#stage");
+
+  /* language list and mixer */
+  var langsEl = $("#langs");
+  langsEl.innerHTML = LANGS.map(function (l) { return '<button type="button" class="lg" role="radio" aria-checked="false" data-l="' + l[0] + '"><span class="n">' + l[1] + '</span><span class="l">' + l[2] + '</span><span class="s">' + l[3] + "</span></button>"; }).join("");
+  var mix = $("#mix");
+  mix.insertAdjacentHTML("beforeend", FAMS.map(function (f) { return '<label>' + f[1] + '<select data-f="' + f[0] + '" aria-label="' + f[1] + '">' + LANGS.map(function (l) { return '<option value="' + l[0] + '">' + l[1] + "</option>"; }).join("") + "</select></label>"; }).join(""));
+  function applyState() {
+    FAMS.forEach(function (f) { stage.setAttribute("data-" + f[0], state[f[0]]); $("select[data-f=" + f[0] + "]").value = state[f[0]]; });
+    var same = FAMS.every(function (f) { return state[f[0]] === state.row; });
+    $$(".lg").forEach(function (b) { b.setAttribute("aria-checked", String(same && b.dataset.l === state.row)); });
+    $("#cur-lang").textContent = same ? LANGS.filter(function (l) { return l[0] === state.row; })[0][1] : "Mezcla";
+    requestAnimationFrame(placeAll);
+  }
+  langsEl.addEventListener("click", function (ev) { var b = ev.target.closest(".lg"); if (!b) return; FAMS.forEach(function (f) { state[f[0]] = b.dataset.l; }); applyState(); });
+  mix.addEventListener("change", function (ev) { var s = ev.target.closest("select"); if (!s) return; state[s.dataset.f] = s.value; applyState(); });
+
+  /* indicators */
+  var trackers = [];
+  function famOf(c) { var w = c.closest("[data-fam]"); return w ? w.getAttribute("data-fam") : "row"; }
+  function indOf(c, cls) { var i = c.querySelector(":scope > ." + cls); if (!i) { i = document.createElement("i"); i.className = cls; i.setAttribute("data-kind", famOf(c)); c.prepend(i); } return i; }
+  function place(t, still) {
+    var c = t.c, sel = c.querySelector(t.sel); if (!sel) return; var ind = indOf(c, t.cls);
+    var a = c.getBoundingClientRect(), r = sel.getBoundingClientRect();
+    if (still) ind.classList.add("still");
+    var x = r.left - a.left - c.clientLeft, y = r.top - a.top - c.clientTop;
+    if (t.cls === "hind") { ind.style.width = r.width + "px"; ind.style.transform = "translateX(" + x + "px)"; }
+    else { ind.style.width = r.width + "px"; ind.style.height = r.height + "px"; ind.style.transform = "translate(" + x + "px," + y + "px)"; }
+    if (still) { void ind.offsetWidth; requestAnimationFrame(function () { ind.classList.remove("still"); }); }
+  }
+  function placeAll(still) { trackers.forEach(function (t) { place(t, still === true); }); }
+  function track(c, sel, cls, attr) {
+    var t = { c: c, sel: sel, cls: cls }; trackers.push(t);
+    c.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button[data-k]"); if (!b || !c.contains(b)) return;
+      $$("button[data-k]", c).forEach(function (x) { x.setAttribute(attr, "false"); }); b.setAttribute(attr, "true"); place(t, false);
+      if (c.dataset.onpick) window.pick[c.dataset.onpick](b.dataset.k);
+    });
+    return t;
+  }
+  window.pick = {};
+
+  /* tree */
+  var chev = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5L10.5 8 6 12.5"/></svg>';
+  var chevd = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6L8 10.5 12.5 6"/></svg>';
+  var TREE = [["g", "Doctrinas"], ["r", "La Eucaristía", 0, 1], ["r", "Católica", 1], ["r", "Ortodoxa", 1], ["r", "Luterana", 1], ["r", "Reformada", 1], ["r", "Bautista", 1], ["g", "Historia"], ["r", "Padres", 0], ["r", "Concilios", 0], ["r", "Herejías", 0], ["r", "Divisiones", 0], ["r", "Reforma y ramas", 0], ["g", "Biblia"], ["r", "Juan", 0]];
+  var tree = $("#tree"), n = 0;
+  tree.setAttribute("data-fam", "row");
+  tree.innerHTML = TREE.map(function (t) {
+    if (t[0] === "g") return '<p class="g">' + t[1] + "</p>";
+    n++; var cur = t[1] === "Católica";
+    return '<button type="button" class="r l' + t[2] + '" data-k="' + n + '" aria-current="' + cur + '">' + (t[3] ? chevd : (t[2] ? "" : chev)) + "<span>" + t[1] + "</span></button>";
+  }).join("");
+  trackers.length = 0; track(tree, '[aria-current="true"]', "ind", "aria-current");
+
+  /* chapter grid */
+  var cg = $("#cg"); var read = { 1: 1, 2: 1, 3: 1, 5: 1, 7: 1 };
+  cg.innerHTML = Array.apply(null, Array(21)).map(function (_, i) { var c = i + 1; return '<li><button type="button" class="cell' + (read[c] ? " rd" : "") + '" data-k="' + c + '" aria-current="' + (c === 6) + '"><span>' + c + "</span></button></li>"; }).join("");
+  cg.addEventListener("click", function (ev) { var b = ev.target.closest(".cell"); if (!b) return; $$(".cell", cg).forEach(function (x) { x.setAttribute("aria-current", "false"); }); b.setAttribute("aria-current", "true"); });
+
+  /* tabs and segments */
+  function tabs(id, items, cur, attr, wrapCls) {
+    var c = $(id); c.innerHTML = items.map(function (it) { return '<button type="button" data-t="' + it + '" data-k="' + it + '" aria-pressed="' + (it === cur) + '">' + it + "</button>"; }).join("");
+    track(c, '[aria-pressed="true"]', wrapCls || "ind", "aria-pressed"); return c;
+  }
+  var trad = tabs("#trad", ["Católica", "Ortodoxa", "Luterana", "Reformada", "Bautista"], "Católica");
+  var map = { "Católica": "ccc1336", "Ortodoxa": "phil340", "Luterana": "apol10", "Reformada": "belg35", "Bautista": "bfm7" };
+  function setQuote(k) { var q = D.Q[map[k]]; var t = q.text; if (t.length > 230) t = t.slice(0, t.lastIndexOf(" ", 220)) + " […]"; $("#tq").textContent = t.replace(/^“|”$/g, ""); $("#tqb").textContent = q.who + ", " + q.work; }
+  trad.dataset.onpick = "trad"; window.pick.trad = setQuote; setQuote("Católica");
+  var h = $("#htabs"); h.innerHTML = ["Texto", "Edición y licencia"].map(function (t, i) { return '<button type="button" data-k="' + t + '" aria-pressed="' + (i === 0) + '">' + t + "</button>"; }).join("");
+  track(h, '[aria-pressed="true"]', "hind", "aria-pressed");
+  tabs("#ptabs", ["Verso", "Palabras", "Usos", "Notas"], "Verso");
+  $("#pv").textContent = D.v53;
+  function seg(id, items, cur) { var c = $(id); c.innerHTML = items.map(function (it) { return '<button type="button" data-t="' + it + '" data-k="' + it + '" aria-pressed="' + (it === cur) + '">' + it + "</button>"; }).join(""); track(c, '[aria-pressed="true"]', "ind", "aria-pressed"); }
+  seg("#seg1", ["Todas", "Padres", "Concilios", "Confesiones"], "Todas");
+  seg("#seg2", ["Juan 6", "Biblia", "Padres", "Todo el corpus"], "Todo el corpus");
+
+  /* picker */
+  var P = [["Reina-Valera 1909", "RV1909"], ["Berean Standard Bible", "BSB"], ["King James Version", "KJV"], ["World English Bible, edición católica", "WEB"], ["Douay-Rheims, Challoner", "DRA"]];
+  var pk = $("#picker"); pk.setAttribute("data-fam", "row");
+  pk.innerHTML = P.map(function (p, i) { return '<button type="button" class="r pr" data-k="' + i + '" aria-current="' + (i === 0) + '"><span>' + p[0] + "</span><small>" + p[1] + "</small></button>"; }).join("");
+  track(pk, '[aria-current="true"]', "ind", "aria-current");
+
+  /* chips */
+  var CH = ["Cirilo, Cat. 22, 4", "Cirilo, Cat. 22, 6", "Agustín, Doctrina cristiana", "Agustín, Tratados"];
+  var chips = $("#chips"); chips.innerHTML = CH.map(function (c, i) { return '<button type="button" class="chip" data-k="' + i + '" aria-pressed="' + (i === 0) + '">' + c + "</button>"; }).join("");
+  chips.addEventListener("click", function (ev) { var b = ev.target.closest(".chip"); if (!b) return; $$(".chip", chips).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); });
+
+  /* dots */
+  var DC = ["#e3bb3c", "#76aa5e", "#4fa6c9", "#d6789a", "#e08a3c"], dots = $("#dots");
+  dots.innerHTML = DC.map(function (c, i) { return '<button type="button" class="dot" aria-label="Color ' + (i + 1) + '" style="background:' + c + '" aria-pressed="' + (i === 1) + '"></button>'; }).join("");
+  dots.addEventListener("click", function (ev) { var b = ev.target.closest(".dot"); if (!b) return; $$(".dot", dots).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); });
+
+  /* data-fam wrappers carry the family attribute for components */
+  $$("[data-fam]").forEach(function (w) { var f = w.getAttribute("data-fam"); w.setAttribute("data-" + f, "x"); });
+  function famSync() { $$("[data-fam]").forEach(function (w) { var f = w.getAttribute("data-fam"); w.setAttribute("data-" + f, state[f]); }); }
+  var _apply = applyState; applyState = function () { famSync(); _apply(); };
+  $("#pk-theme").addEventListener("click", function (ev) { var b = ev.target.closest("button"); if (!b) return; document.documentElement.setAttribute("data-theme", b.dataset.th); $$("#pk-theme button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); requestAnimationFrame(function () { placeAll(true); }); });
+  var dk = matchMedia("(prefers-color-scheme: dark)").matches; $$("#pk-theme button").forEach(function (x) { x.setAttribute("aria-pressed", String(x.dataset.th === (dk ? "dark" : "light"))); });
+  window.addEventListener("resize", function () { placeAll(true); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { placeAll(true); });
+  applyState(); setTimeout(function () { placeAll(true); }, 60);
+})();
+</script>

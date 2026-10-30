@@ -1,0 +1,834 @@
+<title>Cajón de preguntas por dentro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a configurator. Left, the options grouped by area of the drawer; right, one live drawer (380 px, the site's own) beside a narrow reader. Below 1100 px the live drawer sticks to the top and the options scroll under it. Every value is the site's own (src/app/globals.css, docs/DESIGN.md). */
+:root {
+  --bg: #e8e5de; --ink: #1c1713; --ink-2: #2a2620; --ink-3: #615c54; --prose: #4f4b44;
+  --rule: #c9c5bc; --rule-2: #aeaba4; --accent: #2c4a9e; --accent-weak: rgb(44 74 158 / 0.1); --accent-mid: rgb(44 74 158 / 0.45);
+  --cite: #5f3d0c; --cite-weak: rgb(95 61 12 / 0.09); --card: rgb(255 255 255 / 0.35); --panel: #efece6;
+  --tip-bg: #1c1713; --tip-ink: #f4f1ea; --hover: rgb(28 23 19 / 0.05); --mark: rgb(240 200 60 / 0.45); --hls-green: #76aa5e;
+  --shadow-float: 0 18px 40px -18px rgb(0 0 0 / 0.45);
+  --texture-image: /*TEX_LIGHT*/; --texture-opacity: 0.4; --external-mark: /*EXT*/;
+  --head: "Newsreader", Georgia, serif; --body: "Source Serif 4", Georgia, serif; --ui: "Work Sans", system-ui, sans-serif;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1); --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1); --ease-move: cubic-bezier(0.4, 0, 0.2, 1); --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+    --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+    --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05); --mark: rgb(214 168 101 / 0.28); --hls-green: #86b878;
+    --texture-image: /*TEX_DARK*/; --texture-opacity: 1; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+  --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+  --card: rgb(255 255 255 / 0.03); --panel: #262625; --tip-bg: #f2f2f0; --tip-ink: #1d1d1c; --hover: rgb(255 255 255 / 0.05); --mark: rgb(214 168 101 / 0.28); --hls-green: #86b878;
+  --texture-image: /*TEX_DARK*/; --texture-opacity: 1; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.5 var(--ui); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::after { content: ""; position: fixed; inset: 0; z-index: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 90; background: var(--bg); }
+.tx::after { content: ""; position: absolute; inset: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+.tx > * { position: relative; z-index: 1; }
+[hidden] { display: none !important; }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+textarea:focus-visible { outline: none; }
+.doc { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; padding-block: 40px 120px; }
+.doc-head { max-width: 760px; }
+.doc-head h1 { font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.doc-head .lede { font: italic 300 22px/1.4 var(--head); font-variation-settings: "opsz" 36; color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; }
+.t { font: 300 17px/1.6 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); margin: 14px 0 0; max-width: 68ch; }
+.doc b { font-weight: 500; color: var(--ink); }
+h2.sec { font: 300 34px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 0; text-wrap: balance; }
+@media (max-width: 640px) { .doc-head h1 { font-size: 36px; } .doc-head .lede { font-size: 19px; } h2.sec { font-size: 28px; } }
+
+.seen { margin-top: 56px; display: grid; gap: 28px; }
+.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.shot { margin: 0; min-width: 0; }
+.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-2); border-radius: 6px; }
+.shot figcaption { font: 400 13.5px/1.5 var(--ui); color: var(--ink-3); margin-top: 8px; }
+.shot figcaption b { color: var(--ink); font-weight: 500; }
+.finds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; margin: 0; padding: 0; list-style: none; }
+.finds li { padding: 14px 0; border-top: 1px solid var(--rule); font: 300 16.5px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); }
+.finds li b { font-weight: 500; color: var(--ink); }
+.finds li small { display: block; margin-top: 4px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+@media (max-width: 900px) { .shots, .finds { grid-template-columns: 1fr; } }
+
+.ctl { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; margin-top: 56px; padding-block: 10px; background: var(--bg); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+@media (max-width: 1099px) { .ctl { position: static; } }
+.ctl > span { display: flex; align-items: center; max-width: 100%; min-width: 0; }
+.ctl .label { font: 500 12.5px var(--ui); color: var(--ink-3); margin-right: 8px; }
+.seg { position: relative; display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; max-width: 100%; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg .ind { position: absolute; z-index: 0; top: 3px; left: 0; height: calc(100% - 6px); border-radius: 6px; background: var(--accent-weak); box-shadow: inset 0 -2px 0 var(--accent); transition: transform 340ms var(--ease-reveal), width 340ms var(--ease-reveal); pointer-events: none; }
+.seg.still .ind { transition: none; }
+.seg button { position: relative; z-index: 1; min-height: 34px; padding: 0 12px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.seg button:hover { background: var(--hover); color: var(--ink); }
+.seg button[aria-pressed="true"] { font-weight: 500; color: var(--ink); }
+.tbtn { min-height: 34px; padding: 0 12px; border: 1px solid var(--rule-2); border-radius: 7px; background: var(--card); font: 500 13.5px var(--ui); color: var(--ink); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: border-color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.tbtn:hover { border-color: var(--ink); background: var(--hover); }
+@media (pointer: coarse) { .seg button, .tbtn { min-height: 44px; } }
+
+.lab { display: grid; grid-template-columns: minmax(340px, 420px) minmax(0, 1fr); gap: 48px; margin-top: 32px; align-items: start; }
+.opts { grid-column: 1; grid-row: 1; }
+.stagecol { grid-column: 2; grid-row: 1; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 66px); background: var(--bg); }
+.frame { position: relative; width: 100%; height: clamp(620px, calc(100vh - 96px), 840px); border: 1px solid var(--rule-2); border-radius: 10px; overflow: hidden; background: var(--bg); display: flex; margin-inline: auto; }
+.frame.phone { max-width: 390px; border-radius: 14px; }
+.frame.phone .reader { display: none; }
+.frame.phone .drawer { width: 100%; border-right: 0; }
+.cap { font: 400 13.5px/1.5 var(--ui); color: var(--ink-3); margin: 10px 0 0; text-wrap: pretty; }
+@media (max-width: 1099px) {
+  .lab { display: block; margin-top: 16px; }
+  .stagecol { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: var(--bg); padding-block: 8px 10px; margin-inline: -16px; padding-inline: 16px; border-bottom: 1px solid var(--rule); }
+  .stagecol .frame { height: 56vh; min-height: 420px; max-width: 460px; }
+  .stagecol .frame .reader { display: none; }
+  .stagecol .frame .drawer { width: 100%; border-right: 0; }
+  .cap { display: none; }
+}
+
+.reader { position: relative; flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
+.rstrip { flex: none; height: 51px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 14px 0 22px; border-bottom: 1px solid var(--rule); }
+.rstrip .rt { font: 400 19px/1.25 var(--head); font-variation-settings: "opsz" 24; }
+.askbtn { min-height: 34px; padding: 0 10px; border: 0; border-radius: 6px; background: none; font: 500 13.5px var(--ui); color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.askbtn:hover { background: var(--hover); color: var(--ink); }
+.askbtn[aria-pressed="true"] { background: var(--accent-weak); color: var(--ink); }
+.rtext { flex: 1; overflow: auto; padding: 30px 28px 60px; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; }
+.rtext p { margin: 0; font: 300 19px/1.66 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); max-width: 520px; }
+.rtext p + p { margin-top: 0.55em; }
+.rtext .v { cursor: pointer; border-radius: 2px; transition: background-color 150ms var(--ease-standard); }
+.rtext .v:hover { background: var(--hover); }
+.rtext .v.on { background: var(--accent-weak); }
+.rtext sup { font: 500 12px var(--ui); color: var(--ink-3); margin-right: 4px; font-variant-numeric: tabular-nums; }
+.vtb { position: absolute; z-index: 20; display: none; padding: 4px; border: 1px solid var(--rule-2); border-radius: 8px; background: var(--panel); box-shadow: var(--shadow-float); }
+.vtb.on { display: block; }
+.vtb button { min-height: 34px; padding: 0 12px; border: 0; border-radius: 6px; background: none; font: 500 13.5px var(--ui); color: var(--ink); cursor: pointer; }
+.vtb button:hover { background: var(--hover); }
+
+/* ---------- the drawer ---------- */
+.drawer { order: -1; position: relative; flex: none; width: 380px; height: 100%; display: flex; flex-direction: column; border-right: 1px solid var(--rule); background: var(--bg); transition: opacity 200ms var(--ease-standard), translate 260ms var(--ease-move), width 260ms var(--ease-move); }
+.drawer.shut { width: 0; opacity: 0; translate: -24px 0; border-right-color: transparent; pointer-events: none; overflow: hidden; }
+.drawer::after { content: ""; position: absolute; inset: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+.drawer > * { position: relative; z-index: 1; }
+.dh { flex: none; height: 51px; display: flex; align-items: center; gap: 4px; padding: 0 8px 0 22px; border-bottom: 1px solid var(--rule); background: var(--bg); position: relative; z-index: 6; }
+.dh .tt { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+.dh h3 { margin: 0; font: 400 19px/1.25 var(--head); font-variation-settings: "opsz" 24; }
+.dh .sub { font: 400 12.5px/1.2 var(--ui); color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ib { flex: none; display: inline-grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 6px; background: none; color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.ib:hover, .ib[aria-pressed="true"] { background: var(--hover); color: var(--ink); }
+.tl { flex: none; min-height: 36px; padding: 0 8px; border: 0; border-radius: 6px; background: none; font: 500 13.5px var(--ui); color: var(--ink-2); cursor: pointer; }
+.tl:hover { background: var(--hover); color: var(--ink); }
+.dwrap { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.db { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; overflow-anchor: none; padding: 18px 22px 24px; display: flex; flex-direction: column; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; }
+.db > * { flex: none; }
+.lbl { font: 500 12.5px/1.2 var(--ui); color: var(--ink-3); margin: 0; }
+.sees { display: grid; gap: 6px; border-bottom: 1px solid var(--rule); padding-bottom: 14px; margin-bottom: 16px; }
+.sees .r { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 30px; font: 400 13.5px/1.4 var(--ui); color: var(--ink-2); }
+.sees small { font: 400 12.5px var(--ui); color: var(--ink-3); }
+.sw { position: relative; flex: none; width: 34px; height: 20px; border: 1px solid var(--rule-2); border-radius: 10px; background: var(--card); cursor: pointer; padding: 0; transition: background-color 200ms var(--ease-standard), border-color 200ms var(--ease-standard); }
+.sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--ink-3); transition: translate 220ms var(--ease-reveal), background-color 200ms var(--ease-standard); }
+.sw[aria-checked="true"] { border-color: var(--accent-mid); background: var(--accent-weak); }
+.sw[aria-checked="true"]::after { translate: 14px 0; background: var(--accent); }
+.nl { display: flex; align-items: center; gap: 6px; overflow: hidden; max-height: 0; opacity: 0; font: 400 12.5px var(--ui); color: var(--ink-3); transition: max-height 260ms var(--ease-reveal), opacity 200ms var(--ease-standard); }
+.nl[data-on] { max-height: 40px; opacity: 1; }
+.nl i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--hls-green); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12); }
+.seg.wide { display: flex; width: 100%; }
+.seg.wide button { flex: 1 1 auto; padding: 0 6px; font-size: 13px; }
+
+.sug .lbl { margin-bottom: 8px; }
+.sug ul, .slash ul { list-style: none; margin: 0; padding: 0; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 44px; padding: 9px 8px 9px 10px; border: 0; border-bottom: 1px solid var(--rule); background: none; text-align: left; font: 400 14.5px/1.4 var(--ui); color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.sug li:first-child .row { border-top: 1px solid var(--rule); }
+.row:hover, .row[aria-selected="true"] { background: var(--hover); color: var(--ink); }
+.row svg { flex: none; color: var(--ink-3); transition: translate 150ms var(--ease-standard); }
+.row:hover svg { translate: 2px 0; }
+.empty { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 12px; }
+.empty h4 { margin: 0; font: 300 26px/1.2 var(--head); font-variation-settings: "opsz" 36; text-wrap: balance; }
+.empty p { margin: 10px 0 18px; font: 400 14.5px/1.55 var(--ui); color: var(--ink-3); }
+.empty .sug ul { border: 0; }
+.hint { font: 400 13.5px/1.5 var(--ui); color: var(--ink-3); margin: 10px 0 0; }
+.hint kbd { font: 500 12.5px var(--ui); padding: 1px 6px; border: 1px solid var(--rule-2); border-radius: 4px; color: var(--ink-2); }
+
+.thread { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; }
+.en { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; align-content: start; min-width: 0; }
+.ea { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; }
+.ea > * { min-width: 0; }
+.stat-w:empty, .ablocks:empty { display: none; }
+.eq { margin: 0; font: 400 19px/1.3 var(--head); font-variation-settings: "opsz" 24; text-wrap: pretty; }
+.en.pop { animation: pop 420ms var(--ease-reveal) both; }
+@keyframes pop { from { opacity: 0; translate: 0 8px; } }
+.pin { display: inline-flex; max-width: 100%; align-items: baseline; gap: 6px; font: 400 12.5px/1.2 var(--ui); color: var(--ink-3); }
+.pin b { flex: none; font-weight: 500; color: var(--cite); }
+.pin span, .pill span { font: italic 300 14px/1.3 var(--body); font-variation-settings: "opsz" 14; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gl::before { content: "«"; } .gl::after { content: "»"; }
+.meta { margin: 0; font: 400 12.5px/1.5 var(--ui); color: var(--ink-3); }
+.stat { display: flex; align-items: center; gap: 8px; min-height: 30px; border: 0; background: none; padding: 0; font: 400 14px/1.4 var(--ui); color: var(--ink-3); text-align: left; cursor: default; }
+button.stat { cursor: pointer; }
+.stat .st-s { font-variant-numeric: tabular-nums; }
+.stat svg { transition: rotate 200ms var(--ease-standard); }
+.stat[aria-expanded="true"] svg { rotate: 90deg; }
+.stl { margin: 0 0 4px; padding: 0 0 0 12px; border-left: 1px solid var(--rule); list-style: none; display: grid; gap: 4px; font: 400 13px/1.45 var(--ui); color: var(--ink-3); }
+.ablocks { display: grid; grid-template-columns: minmax(0, 1fr); }
+.bl { padding: 14px 0; border-top: 1px solid var(--rule); animation: pop 420ms var(--ease-reveal) both; }
+.bl .qh { margin: 0 0 6px; font: 500 12.5px/1.2 var(--ui); color: var(--ink-3); }
+.bl .qt { margin: 0; font: italic 300 17px/1.5 var(--head); font-variation-settings: "opsz" 24; color: var(--ink); }
+.bl .qt::before { content: "«"; } .bl .qt::after { content: "»"; }
+.bl .qs { margin: 8px 0 0; font: 400 13.5px/1.45 var(--ui); color: var(--ink-3); }
+.loc { color: var(--cite); text-decoration: underline dotted 1.5px; text-underline-offset: 4px; cursor: pointer; }
+.loc:hover { background: var(--cite-weak); text-decoration-style: solid; }
+.prose { margin: 0; font: 300 16.5px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--ink-2); }
+.prose:empty { display: none; }
+.srow { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px; border-top: 1px solid var(--rule); align-items: center; }
+.srow .lbl { margin-right: 4px; }
+.chip { min-height: 32px; padding: 0 10px; border: 1px solid var(--rule); border-radius: 6px; background: none; font: 400 13px/1.2 var(--ui); color: var(--ink-2); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; transition: border-color 150ms var(--ease-standard), background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.chip:hover { background: var(--hover); color: var(--ink); }
+.chip[aria-pressed="true"] { border-color: var(--accent-mid); background: var(--accent-weak); color: var(--ink); font-weight: 500; }
+.srcq .bl { border-top: 0; padding-top: 10px; }
+.fu { display: flex; flex-wrap: wrap; gap: 8px; }
+.fu .chip { white-space: normal; text-align: left; justify-content: flex-start; min-height: 36px; padding-block: 6px; }
+.fl { display: grid; }
+.fl .row { min-height: 40px; font-size: 14px; }
+.acts { display: flex; flex-wrap: wrap; gap: 2px 14px; }
+.acts button { min-height: 32px; padding: 0 2px; border: 0; background: none; font: 400 13.5px var(--ui); color: var(--ink-3); cursor: pointer; border-bottom: 1px solid transparent; transition: color 150ms var(--ease-standard); }
+.acts button:hover { color: var(--ink); }
+.more { align-self: start; min-height: 36px; padding: 0 10px; border: 1px solid var(--rule-2); border-radius: 7px; background: var(--card); font: 500 13.5px var(--ui); color: var(--ink-2); cursor: pointer; }
+.more:hover { border-color: var(--ink); background: var(--hover); }
+.stop-note { margin: 0; font: 400 13.5px var(--ui); color: var(--ink-3); }
+
+.jump { position: absolute; left: 50%; bottom: 12px; translate: -50% 6px; opacity: 0; pointer-events: none; z-index: 5; width: 36px; height: 36px; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--panel); color: var(--ink-2); display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow-float); transition: opacity 150ms var(--ease-standard), translate 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.jump.on { opacity: 1; translate: -50% 0; pointer-events: auto; }
+.jump:hover { background: var(--card); color: var(--ink); }
+
+.foot { position: relative; z-index: 3; flex: none; padding: 4px 22px 14px; background: var(--bg); }
+.foot::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: 28px; background: linear-gradient(to top, var(--bg), transparent); pointer-events: none; z-index: -1; }
+.foot::after { content: ""; position: absolute; inset: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+.foot > * { position: relative; z-index: 1; }
+.cmp { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; position: relative; }
+.cmp > * { min-width: 0; }
+.cmp .rowc { display: flex; align-items: flex-end; gap: 8px; }
+.ta { display: block; width: 100%; min-height: 40px; max-height: 120px; resize: none; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--card); padding: 9px 12px; font: 400 15px/1.45 var(--ui); color: var(--ink); outline: none; transition: border-color 150ms var(--ease-standard); }
+.ta::placeholder { color: var(--ink-3); }
+.ta:focus { border-color: var(--ink-3); }
+.go { flex: none; min-height: 40px; padding: 0 14px; border: 1px solid var(--rule-2); border-radius: 7px; background: var(--card); font: 500 14px var(--ui); color: var(--ink); cursor: pointer; transition: border-color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.go:hover { border-color: var(--ink); background: var(--hover); }
+.bx { border: 1px solid var(--rule-2); border-radius: 8px; background: var(--card); transition: border-color 150ms var(--ease-standard); }
+.bx:focus-within { border-color: var(--ink-3); }
+.bx .ta { border: 0; background: none; border-radius: 8px 8px 0 0; padding: 11px 12px 6px; min-height: 44px; }
+.bx .bxr { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 8px 8px 8px; }
+.bx .bxr .l { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-width: 0; }
+.bx .go { min-height: 34px; }
+.tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.note { margin: 0; font: 400 12.5px/1.45 var(--ui); color: var(--ink-3); text-wrap: pretty; }
+.pill { display: flex; max-width: 100%; min-height: 32px; align-items: center; gap: 8px; padding: 2px 4px 2px 10px; border: 1px solid var(--rule); border-radius: 6px; background: var(--hover); }
+.pill b { flex: none; font: 500 12.5px var(--ui); color: var(--cite); }
+.pill span { flex: 1; min-width: 0; color: var(--ink-2); }
+.pcard { display: grid; gap: 4px; padding: 10px 6px 10px 12px; border: 1px solid var(--rule); border-left: 2px solid var(--accent-mid); border-radius: 6px; background: var(--hover); position: relative; }
+.pcard b { font: 500 12.5px var(--ui); color: var(--cite); }
+.pcard span { font: italic 300 15px/1.4 var(--body); font-variation-settings: "opsz" 14; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; padding-right: 26px; }
+.pcard .x { position: absolute; top: 4px; right: 4px; }
+.pill-in { display: flex; align-items: center; gap: 8px; padding: 8px 4px 0 12px; min-height: 36px; }
+.pill-in b { flex: none; font: 500 12.5px var(--ui); color: var(--cite); }
+.pill-in span { flex: 1; min-width: 0; font: italic 300 14px/1.3 var(--body); color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.x { width: 26px; height: 26px; border: 0; border-radius: 4px; background: none; color: var(--ink-3); cursor: pointer; display: grid; place-items: center; flex: none; }
+.x:hover { background: var(--hover); color: var(--ink); }
+.chips-s { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 -22px 8px; padding: 0 22px; mask-image: linear-gradient(to right, transparent 0, #000 22px, #000 calc(100% - 22px), transparent 100%); }
+.chips-s::-webkit-scrollbar { display: none; }
+.chips-s .chip { flex: none; min-height: 34px; }
+.menu { position: absolute; left: 0; bottom: calc(100% + 6px); z-index: 12; min-width: 168px; padding: 4px; border: 1px solid var(--rule-2); border-radius: 8px; background: var(--panel); box-shadow: var(--shadow-float); display: grid; }
+.menu button { min-height: 34px; padding: 0 10px; border: 0; border-radius: 6px; background: none; text-align: left; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; }
+.menu button:hover, .menu button[aria-checked="true"] { background: var(--hover); color: var(--ink); }
+.slash { position: absolute; left: 0; right: 0; bottom: calc(100% + 6px); z-index: 12; border: 1px solid var(--rule-2); border-radius: 8px; background: var(--panel); box-shadow: var(--shadow-float); padding: 4px; }
+.slash .row { border: 0; border-radius: 6px; min-height: 40px; }
+.ctxline { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 36px; padding: 0 8px 0 22px; border-bottom: 1px solid var(--rule); background: var(--bg); font: 400 12.5px var(--ui); color: var(--ink-3); position: relative; z-index: 5; transition: opacity 200ms var(--ease-standard), max-height 260ms var(--ease-reveal), min-height 260ms var(--ease-reveal); overflow: hidden; }
+.ctxline[data-off] { opacity: 0; max-height: 0; min-height: 0; border-bottom-color: transparent; pointer-events: none; }
+.ctxline { max-height: 44px; }
+.ctxline button { min-height: 30px; padding: 0 8px; border: 0; border-radius: 6px; background: none; font: 500 12.5px var(--ui); color: var(--ink-2); cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
+.ctxline button:hover, .ctxline button[aria-expanded="true"] { background: var(--hover); color: var(--ink); }
+.ctxline button svg { transition: rotate 200ms var(--ease-standard); }
+.ctxline button[aria-expanded="true"] svg { rotate: 180deg; }
+.ctxx { overflow: hidden; max-height: 0; background: var(--bg); border-bottom: 1px solid transparent; transition: max-height 300ms var(--ease-reveal); position: relative; z-index: 5; }
+.ctxx.open { max-height: 320px; border-bottom-color: var(--rule); }
+.ctxx .sees { margin: 0; border: 0; padding: 12px 22px 16px; }
+.cpop { position: absolute; z-index: 15; top: 51px; left: 12px; right: 12px; border: 1px solid var(--rule-2); border-radius: 10px; background: var(--panel); box-shadow: var(--shadow-float); padding: 4px 12px 0; opacity: 0; translate: 0 -6px; pointer-events: none; transition: opacity 200ms var(--ease-standard), translate 200ms var(--ease-reveal); }
+.cpop.open { opacity: 1; translate: 0 0; pointer-events: auto; }
+.cpop .sees { border: 0; margin: 0; padding: 12px 0 16px; }
+.hist { position: absolute; z-index: 14; inset: 51px 0 0 0; background: var(--bg); padding: 18px 22px; overflow: auto; opacity: 0; pointer-events: none; transition: opacity 200ms var(--ease-standard); }
+.hist.open { opacity: 1; pointer-events: auto; }
+.hist::after { content: ""; position: absolute; inset: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+.hist > * { position: relative; z-index: 1; }
+.hist .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: baseline; }
+.hist .d { font: 400 12.5px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.hist .d::before { content: ""; display: inline-block; width: 1px; height: 12px; background: var(--rule-2); margin-right: 9px; vertical-align: -1px; }
+.seltb { position: absolute; z-index: 20; display: none; padding: 4px; border: 1px solid var(--rule-2); border-radius: 8px; background: var(--panel); box-shadow: var(--shadow-float); }
+.seltb.on { display: block; }
+.seltb button { min-height: 34px; padding: 0 12px; border: 0; border-radius: 6px; background: none; font: 500 13.5px var(--ui); color: var(--ink); cursor: pointer; }
+.seltb button:hover { background: var(--hover); }
+
+/* ---------- the option column ---------- */
+.opts { display: grid; gap: 56px; min-width: 0; }
+.grp h3 { margin: 0; font: 400 22px/1.3 var(--head); font-variation-settings: "opsz" 24; }
+.grp .why { margin: 8px 0 0; font: 300 16px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); text-wrap: pretty; }
+.grp .src { margin: 6px 0 0; font: 400 13px/1.5 var(--ui); color: var(--ink-3); text-wrap: pretty; }
+.grp .list { margin-top: 14px; }
+.opt { display: block; width: 100%; padding: 11px 12px 11px 14px; border: 0; border-top: 1px solid var(--rule); background: none; text-align: left; cursor: pointer; position: relative; transition: background-color 150ms var(--ease-standard); }
+.opt:last-child { border-bottom: 1px solid var(--rule); }
+.opt:hover { background: var(--hover); }
+.opt[aria-checked="true"] { background: var(--accent-weak); box-shadow: inset 2px 0 0 var(--accent); }
+.opt .on { display: block; font: 500 14.5px/1.4 var(--ui); color: var(--ink); }
+.opt .ol { display: block; margin-top: 2px; font: 400 13.5px/1.5 var(--ui); color: var(--ink-3); text-wrap: pretty; }
+@media (pointer: coarse) { .opt { min-height: 44px; } }
+
+.endgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; margin-top: 96px; }
+.endgrid ul, .endgrid ol { margin: 14px 0 0; padding: 0; list-style: none; }
+.endgrid li { padding: 12px 0; border-top: 1px solid var(--rule); font: 300 16px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); }
+.endgrid li:last-child { border-bottom: 1px solid var(--rule); }
+.endgrid li b { font-weight: 500; color: var(--ink); }
+@media (max-width: 900px) { .endgrid { grid-template-columns: 1fr; gap: 40px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="doc">
+  <header class="doc-head">
+    <h1>El cajón de preguntas, por dentro</h1>
+    <p class="lede">El cajón se queda donde está. Esta página prueba cómo se reparte el espacio dentro de él para que preguntar sea lo primero que se ve y lo último que estorba.</p>
+    <p class="t">Abajo hay un cajón real, con el fondo, las fuentes y los valores del sitio, y las preguntas y citas de Juan 6 que ya tiene Doctrina. A la izquierda eliges, área por área, cómo se ve y cómo se comporta; el cajón cambia al instante. Escribe una pregunta, o toca el versículo 53 en el lector para abrirlo desde un versículo.</p>
+  </header>
+
+  <section class="seen" aria-labelledby="seen-h">
+    <h2 class="sec" id="seen-h">Lo que vimos en los chats de IA más usados</h2>
+    <div class="shots">
+      <figure class="shot"><img alt="ChatGPT, respuesta larga: el cuadro de pregunta sigue fijo abajo, con una línea de aviso encima" src="/*IMG_CHATGPT*/"><figcaption><b>ChatGPT.</b> El cuadro de pregunta no se va nunca. Una sola línea de aviso encima y un banner de oferta sobre el cuadro.</figcaption></figure>
+      <figure class="shot"><img alt="Claude, respuesta larga: cuadro fijo abajo, botón redondo para volver al final y aviso debajo" src="/*IMG_CLAUDE*/"><figcaption><b>Claude.</b> Cuadro fijo con los controles dentro, aviso de una línea debajo y un botón flotante para volver al final.</figcaption></figure>
+      <figure class="shot"><img alt="Perplexity: preguntas relacionadas, acciones bajo la respuesta y el cuadro de seguimiento fijo" src="/*IMG_PPLX*/"><figcaption><b>Perplexity.</b> Cinco preguntas relacionadas al final, fuentes con vista previa y el cuadro de seguimiento fijo.</figcaption></figure>
+    </div>
+    <ul class="finds">
+      <li><b>Nadie pone un bloque de ajustes arriba del chat.</b> Los controles (modelo, modo, adjuntos) viven dentro del cuadro de pregunta. <small>Capturas de hoy en ChatGPT, Claude, Perplexity y Gemini.</small></li>
+      <li><b>El desplazamiento durante la respuesta es la queja más repetida.</b> Unos piden que siga el texto y se suelte al tocar; otros, que no se mueva y quede visible la pregunta. <small>Foros de OpenAI, «Don't automatically scroll the user through the entire response».</small></li>
+      <li><b>Preguntar sobre un trozo de la respuesta, sin salir de ella.</b> Piden un mini‑chat sobre un fragmento porque el cuadro de abajo «rompe el flujo de lectura». <small>Solicitud de mayo de 2026 en el foro de OpenAI; sin respuesta de producto.</small></li>
+      <li><b>Las preguntas sugeridas dividen.</b> Unos las usan para seguir cavando; otros dicen que empujan la respuesta y quieren plegarlas. <small>Hilos de r/perplexity_ai y estudio de NN/g (425 conversaciones): útiles, y distintas según el tipo de conversación.</small></li>
+      <li><b>Mientras trabaja, Claude dice qué está haciendo</b> («Revisando a Crisóstomo y Agustín…») con un cronómetro. <small>Captura de hoy.</small></li>
+      <li><b>No hay estudio sobre la velocidad preferida del texto.</b> Un preprint propone ir a ritmo de lectura, no de modelo. <small>arXiv 2504.17999 (simulación, no prueba con usuarios).</small></li>
+    </ul>
+    <p class="t" style="margin-top:0">Informe completo con enlaces y lo que no se pudo ver: <b>docs/research/ai-chat-ux-round2.md</b>.</p>
+  </section>
+
+  <div class="ctl tx" role="group" aria-label="Controles de la prueba">
+    <span><span class="label">Combinación</span><span class="seg" id="seg-preset"><button type="button" data-preset="now" aria-pressed="true">Cajón actual</button><button type="button" data-preset="mine" aria-pressed="false">Mi combinación</button></span></span>
+    <span><span class="label">Tema</span><span class="seg" id="seg-theme"><button type="button" data-theme-set="light" aria-pressed="false">Claro</button><button type="button" data-theme-set="dark" aria-pressed="false">Oscuro</button></span></span>
+    <span><span class="label">Pantalla</span><span class="seg" id="seg-view"><button type="button" data-view="desk" aria-pressed="true">Escritorio</button><button type="button" data-view="phone" aria-pressed="false">Teléfono</button></span></span>
+    <span><button type="button" class="tbtn" id="reset">Vaciar el chat</button></span>
+  </div>
+
+  <div class="lab">
+    <div class="stagecol tx">
+      <div class="frame" id="frame">
+        <div class="reader">
+          <div class="rstrip"><span class="rt">Juan 6</span><button type="button" class="askbtn" id="askhead" aria-pressed="true">Preguntar</button></div>
+          <div class="rtext" id="rtext"></div>
+          <div class="vtb" id="vtb"><button type="button" id="vtb-ask">Preguntar</button></div>
+        </div>
+        <aside class="drawer" id="drawer" aria-label="Preguntar"></aside>
+      </div>
+      <p class="cap">Prueba: escribe una pregunta, pulsa una sugerida o toca el versículo 53 y «Preguntar». «Vaciar el chat» vuelve al estado de apertura.</p>
+    </div>
+    <div class="opts" id="opts"></div>
+  </div>
+
+  <div class="endgrid">
+    <section>
+      <h2 class="sec">Lo que se descartó</h2>
+      <ul>
+        <li><b>Burbujas, avatar, puntos de «escribiendo».</b> Los chats comunes los usan; aquí darían voz de persona a un asistente que solo cita.</li>
+        <li><b>Selector de modelo.</b> Un solo modelo: el selector es ruido y promete una elección que no existe.</li>
+        <li><b>Banners de oferta o de notificaciones sobre el cuadro.</b> Los tres productos los muestran y estorban justo donde se escribe.</li>
+        <li><b>Pulgares arriba y abajo.</b> «Informar un error» ya alimenta la cola de errores del sitio; los pulgares no.</li>
+        <li><b>Voz y dictado.</b> No hay evidencia de que lo pidan los lectores de un texto de estudio.</li>
+        <li><b>Chispas, degradados y brillo en el texto que llega.</b> Están en la lista de lo que parece generado.</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="sec">Lo que hay que decidir</h2>
+      <ol>
+        <li><b>Contexto.</b> ¿Cuál de las cinco formas, o la que se pliega sola al primer envío?</li>
+        <li><b>Cuadro de pregunta.</b> ¿Fijo abajo con el botón al costado, o una sola caja con los controles dentro?</li>
+        <li><b>Preguntas sugeridas.</b> ¿Estado vacío, fichas, menú «/»? ¿Reaparecen después de cada respuesta?</li>
+        <li><b>Desplazamiento.</b> ¿Seguir y soltar, o pregunta arriba?</li>
+        <li><b>Velocidad por defecto</b> del texto, y si el lector puede cambiarla.</li>
+        <li><b>Funciones nuevas</b> que entran: preguntar sobre un fragmento, preguntas anteriores, longitud.</li>
+      </ol>
+      <p class="t" style="margin-top:20px">No se decide aquí si habrá respuestas generadas: sigue vigente «sin respuestas de chat generadas» (5 de octubre) hasta que lo hablemos.</p>
+    </section>
+  </div>
+</div>
+
+<script>
+(function () {
+  var D = /*DATA*/{};
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var sleepRaw = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+
+  var CFG_NOW = { mode: "header", ctx: "full", cmp: "inflow", sg: "list", pl: "pill", speed: 55, scroll: "pin", status: "basic", ans: "blocks", len: "none", fu: "chips", fAsk: false, fHist: false };
+  var CFG_MINE = { mode: "header", ctx: "fold", cmp: "box", sg: "empty", pl: "inbox", speed: 100, scroll: "follow", status: "live", ans: "blocks", len: "none", fu: "list", fAsk: true, fHist: true };
+  var cfg = Object.assign({}, CFG_NOW);
+  var S = { open: true, notes: false, scope: "all", pill: null, entries: [], busy: false, ctxOpen: false, popOpen: false, histOpen: false, menu: false, slashIdx: 0, brief: true, draft: "", sel: 53 };
+  var scopeNames = { chapter: "Juan 6", bible: "Biblia", fathers: "Padres", all: "Todo el corpus" };
+  var pill53 = function () { return { ref: "Juan 6:53", text: D.verses["53"] }; };
+
+  var SETS = {
+    header: [["fathers", "¿Qué dijeron los Padres sobre este capítulo?"], ["traditions", "¿Cómo lo lee cada tradición?"], ["bible", "¿Qué otros pasajes de la Biblia tratan este tema?"], ["words", "¿Qué palabras se repiten en el capítulo?"]],
+    verse: [["fathers", "¿Qué creían los Padres sobre este versículo?"], ["bible", "¿En qué otro lugar de la Biblia se habla de este tema?"], ["traditions", "¿Qué dice cada tradición sobre este pasaje?"], ["words", "¿Qué palabras de este versículo vuelven en los que siguen?"]]
+  };
+  var ANS = {
+    fathers: { blocks: ["cyr224", "cyr226", "ddc", "aug275"], prose: "Cirilo cita el versículo y lo lee junto con la reacción de los oyentes, que «se volvieron atrás» ({66}); dos párrafos después pide no juzgar «por el gusto, sino por la fe». Agustín lo usa en Sobre la doctrina cristiana como ejemplo de una frase que se lee como figura, y en los Tratados lo pone junto a «la carne nada aprovecha» ({63}).", scope: { header: "Sobre Juan 6. Pasajes de los Padres que citan el capítulo, en las obras que tiene Doctrina.", verse: "Sobre Juan 6:53. Pasajes de los Padres que lo citan, en las obras que tiene Doctrina." }, follow: ["traditions", "bible"] },
+    traditions: { blocks: ["ccc1336", "trent8", "apol10", "belg35", "bfm7"], heads: ["Católica", "Católica", "Luterana", "Reformada", "Bautista"], prose: "De estos textos, solo el Catecismo católico cita este capítulo ({60}); los demás hablan de la Cena en general.", scope: { header: "Lo que cada tradición dice de la Eucaristía o Cena del Señor, en sus propios documentos.", verse: "Lo que cada tradición dice de la Eucaristía o Cena del Señor, en sus propios documentos." }, follow: ["fathers", "bible"] },
+    bible: { blocks: ["matt26", "cor11", "john663"], prose: "Los tres pasajes unen comer y beber con el cuerpo y la sangre de Jesús: la Última Cena, la carta de Pablo a los corintios y, en este mismo capítulo, el versículo que dice que «la carne nada aprovecha». Doctrina no los lee por ti: aquí están los textos.", scope: { header: "Sobre la Biblia, Reina-Valera 1909.", verse: "Sobre la Biblia, Reina-Valera 1909." }, follow: ["fathers", "traditions"] },
+    words: { blocks: [], prose: "Vuelven «comer», «carne» y «vida» ({51}, {53}). «Beber» y «sangre» aparecen por primera vez en el capítulo en {53}, y desde ahí se repiten en {54}, {55} y {56}.", scope: { header: "Sobre Juan 6:51-56, Reina-Valera 1909.", verse: "Sobre Juan 6:51-56, Reina-Valera 1909." }, follow: ["fathers", "bible"] },
+    none: { blocks: [], prose: "El corpus no tiene pasajes que respondan esto con citas, así que no hay respuesta. Prueba con una de estas:", scope: { header: "Sobre Juan 6.", verse: "Sobre Juan 6." }, follow: ["fathers", "traditions", "bible"] }
+  };
+  var Qs = { fathers: "¿Qué dijeron los Padres sobre este versículo?", traditions: "¿Qué dice cada tradición?", bible: "¿En qué otro lugar de la Biblia se habla de este tema?", words: "¿Qué palabras de 6:51 vuelven en 6:53?" };
+  var HIST = [["¿Qué dijo Crisóstomo sobre «la carne nada aprovecha»?", "28 oct"], ["¿Cómo se cita Juan 6 en el Catecismo?", "27 oct"], ["¿Qué es el pan de vida?", "24 oct"]];
+  var STAT = ["Buscando en los Padres", "Comprobando las citas en la edición", "Redactando"];
+
+  var route = function (t) {
+    t = t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    if (/padre|agustin|cirilo|patrist|ignacio|crisostomo/.test(t)) return "fathers";
+    if (/tradici|catolic|ortodox|luteran|reformad|bautist|iglesia|protestant/.test(t)) return "traditions";
+    if (/biblia|otro lugar|pasaje|cena|corintio|mateo/.test(t)) return "bible";
+    if (/palabra|repite|vuelve|comer|beber|sangre|carne/.test(t)) return "words";
+    return "none";
+  };
+  var ic = {
+    chev: '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5L10.5 8 6 12.5"/></svg>',
+    down: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M3.5 8.5L8 13l4.5-4.5"/></svg>',
+    cross: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>',
+    info: '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="6.5"/><path d="M9 8.2v4M9 5.8v.1"/></svg>',
+    clock: '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="9" r="6.5"/><path d="M9 5.5V9l2.3 1.5"/></svg>',
+    plus: '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M9 4v10M4 9h10"/></svg>',
+    cdown: '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5L6 7.5l3-3"/></svg>'
+  };
+
+  /* ---------- the options ---------- */
+  var GROUPS = [
+    { id: "mode", name: "Cómo se abrió", why: "Las preguntas sugeridas cambian según se abra desde el botón del encabezado o desde un versículo.", src: "Pedro, 29 oct: dos juegos de preguntas, ambos válidos para cualquier versículo.", opts: [["header", "Desde el encabezado", "Sin versículo elegido: preguntas sobre el capítulo."], ["verse", "Desde Juan 6:53", "El versículo viaja con la pregunta. Preguntas sobre ese pasaje."]] },
+    { id: "ctx", name: "Contexto: qué puede ver la IA", why: "El bloque de arriba ocupa lo primero que se ve. Se prueba como estado, no como formulario.", src: "Ningún chat probado lo pone sobre el hilo: ChatGPT, Claude y Perplexity llevan los controles dentro del cuadro.", opts: [["full", "Bloque arriba (actual)", "Se ve entero y se va con el texto al desplazar."], ["line", "Una línea, se abre a pedido", "Capítulo y edición a la izquierda, dónde busca a la derecha. Un clic despliega el bloque."], ["fold", "Entero al abrir, una línea después", "Se ve completo la primera vez y se pliega solo al primer envío."], ["composer", "Fichas dentro del cuadro", "Capítulo, «Tus notas» y dónde busca como fichas junto al cuadro de pregunta."], ["head", "En el encabezado", "Subtítulo bajo «Preguntar» y un botón que abre el bloque en una ventana."]] },
+    { id: "cmp", name: "Cuadro de pregunta", why: "Debe verse siempre, también con respuestas largas. Con el cuadro actual, la respuesta lo empuja fuera de pantalla.", src: "Capturas: ChatGPT, Claude, Perplexity y Gemini lo fijan abajo todo el tiempo.", opts: [["inflow", "En el flujo (actual)", "Va al final del hilo; una respuesta larga lo saca de la vista."], ["pinned", "Fijo abajo", "Mismo cuadro y botón, siempre visible. El texto se desvanece al pasar por debajo."], ["box", "Fijo, una sola caja", "Texto arriba; abajo, fichas de contexto y «Preguntar» dentro de la misma caja."], ["boxnote", "Fijo, caja y aviso", "Como la anterior más un aviso de una línea (como Claude y ChatGPT) con la regla de siempre."]] },
+    { id: "sg", name: "Preguntas sugeridas", why: "Ayudan al empezar y estorban después. Cambian por apertura (grupo de arriba) y se van con el primer envío.", src: "Perplexity: unos las usan, otros piden plegarlas. NN/g: útiles, y distintas según el tipo de conversación.", opts: [["list", "Lista (actual)", "Tres filas con chevron arriba del cuadro."], ["empty", "Estado vacío", "Título sobre el capítulo o el versículo y cuatro preguntas, centrado en el espacio libre."], ["chips", "Fichas sobre el cuadro", "Una fila que se desliza, al alcance del pulgar, sin título."], ["slash", "Menú con «/»", "Nada a la vista; al escribir «/» se abre la lista."]] },
+    { id: "pl", name: "Lo elegido en el lector", why: "El versículo o texto que traes al chat. Hoy es una línea con la cita y las primeras palabras.", src: "ChatGPT: «Ask ChatGPT» sobre texto elegido crea una ficha de referencia sobre el cuadro.", opts: [["pill", "Línea sobre el cuadro (actual)", "Cita y primeras palabras, con una cruz."], ["card", "Tarjeta con el texto", "La cita y hasta tres líneas del versículo, para ver qué estás preguntando."], ["inbox", "Dentro del cuadro", "Primera fila de la caja; solo con el cuadro de una caja."]] },
+    { id: "speed", name: "Velocidad del texto", why: "El simulacro actual escribe unas 18 palabras por segundo, muy por encima de la lectura.", src: "Sin estudio de preferencia. arXiv 2504.17999: a ritmo de lectura, no de modelo. Los valores son una propuesta.", opts: [[55, "Actual", "55 ms por palabra."], [100, "Normal", "100 ms por palabra, unas 10 por segundo."], [160, "Calmo", "160 ms por palabra, unas 6 por segundo."]] },
+    { id: "scroll", name: "Desplazamiento mientras responde", why: "Es la queja más repetida. Dos comportamientos, los dos con un botón para ir al final.", src: "Foros de OpenAI: unos piden seguir y soltar; otros, pregunta arriba (ChatGPT y Claude lo hacen).", opts: [["pin", "Pregunta arriba", "La pregunta queda al tope y la respuesta crece debajo sin mover la vista. El botón avisa que hay más."], ["follow", "Seguir y soltar", "La vista sigue el texto nuevo con suavidad. Si desplazas hacia arriba se apaga; con el botón o al llegar abajo vuelve."]] },
+    { id: "status", name: "Mientras busca", why: "Entre la pregunta y el primer texto hay una espera. Se puede usar para decir qué se consulta.", src: "Claude muestra qué hace («Revisando a Crisóstomo…») con segundos. Perplexity: «Finalizado 3 s».", opts: [["basic", "Una frase (actual)", "«Buscando en el corpus» y desaparece."], ["live", "Estado con cronómetro", "Cambia de frase, cuenta segundos y al terminar queda «Consultó N textos», que se abre."]] },
+    { id: "ans", name: "Forma de la respuesta", why: "Las citas son el contenido. Se prueba su orden frente al texto.", src: "Perplexity: fuentes como fichas bajo la respuesta, con vista previa. Logos y NotebookLM: cita con el texto a la vista.", opts: [["blocks", "Citas y texto (actual)", "Las citas completas, luego el párrafo que las une."], ["src", "Texto primero, fuentes como fichas", "El párrafo arriba; debajo, una ficha por fuente que abre su cita."]] },
+    { id: "len", name: "Longitud", why: "Las respuestas largas cansan y no hay control de longitud en los chats comunes.", src: "Comunidad de Intercom: respuesta corta con opción de ampliar. Sin control en ChatGPT, Claude ni Perplexity.", opts: [["none", "Sin control (actual)", "Siempre completa."], ["seg", "Breve o completa", "Ficha dentro del cuadro; breve muestra dos citas y una frase."], ["expand", "Breve y «Ampliar»", "Empieza breve; un botón añade el resto."]] },
+    { id: "fu", name: "Después de la respuesta", why: "Seguir preguntando: sugerencias o nada.", src: "Perplexity: cinco relacionadas, divididas. Se prueba plegarlas.", opts: [["chips", "Fichas (actual)", "Dos preguntas sugeridas."], ["none", "Nada", "Solo las acciones."], ["list", "Lista plegada", "«Seguir leyendo» que despliega tres preguntas."]] },
+    { id: "feat", multi: true, name: "Funciones que no estaban", why: "Salen de pedidos reales de usuarios. Se activan o no.", src: "Foros de OpenAI: mini-chat sobre un fragmento; fijar, buscar y retomar chats.", opts: [["fAsk", "Preguntar sobre un fragmento", "Selecciona texto de una respuesta y aparece «Preguntar sobre esto»; el fragmento viaja como ficha."], ["fHist", "Nueva conversación y anteriores", "Dos botones en el encabezado: empezar de cero y volver a una pregunta antigua."]] }
+  ];
+  var optsEl = $("#opts");
+  function buildOpts() {
+    optsEl.innerHTML = GROUPS.map(function (g) {
+      return '<section class="grp"><h3>' + g.name + '</h3><p class="why">' + g.why + '</p><p class="src">' + g.src + '</p><div class="list" role="' + (g.multi ? "group" : "radiogroup") + '" aria-label="' + esc(g.name) + '">' +
+        g.opts.map(function (o) { return '<button type="button" class="opt" role="' + (g.multi ? "checkbox" : "radio") + '" data-g="' + g.id + '" data-v="' + o[0] + '" aria-checked="false"><span class="on">' + o[1] + '</span><span class="ol">' + o[2] + '</span></button>'; }).join("") + '</div></section>';
+    }).join("");
+  }
+  function syncOpts() {
+    $$(".opt").forEach(function (b) {
+      var g = b.dataset.g, v = b.dataset.v;
+      var on = g === "feat" ? !!cfg[v] : String(cfg[g]) === v;
+      b.setAttribute("aria-checked", on ? "true" : "false");
+    });
+  }
+
+  /* ---------- segment indicators ---------- */
+  function placeInd(seg, still) {
+    var ind = seg.querySelector(".ind");
+    if (!ind) { ind = document.createElement("i"); ind.className = "ind"; seg.prepend(ind); }
+    var cur = seg.querySelector('button[aria-pressed="true"]');
+    if (!cur) { ind.style.width = "0"; return; }
+    if (still) seg.classList.add("still");
+    ind.style.width = cur.offsetWidth + "px"; ind.style.transform = "translateX(" + cur.offsetLeft + "px)";
+    if (still) { void ind.offsetWidth; requestAnimationFrame(function () { seg.classList.remove("still"); }); }
+  }
+  function pressed(seg, sel) { $$("button", seg).forEach(function (b) { b.setAttribute("aria-pressed", b.matches(sel) ? "true" : "false"); }); placeInd(seg); }
+
+  /* ---------- the reader ---------- */
+  function buildReader() {
+    var h = "";
+    for (var v = 51; v <= 59; v++) h += '<span class="v" data-v="' + v + '"><sup>' + v + "</sup>" + esc(D.verses[v]) + "</span> ";
+    $("#rtext").innerHTML = "<p>" + h + "</p>";
+  }
+  function markVerse() { $$("#rtext .v").forEach(function (e) { e.classList.toggle("on", S.open && cfg.mode === "verse" && +e.dataset.v === 53); }); }
+
+  /* ---------- the drawer ---------- */
+  var dr = $("#drawer");
+  var play = 0, following = true, rafId = 0, stopFlag = false, secTimer = 0;
+
+  function ctxFull() {
+    return '<div class="sees"><p class="lbl">Lo que puede ver</p>' +
+      '<div class="r"><span>Este capítulo</span><small>Juan 6, Reina-Valera 1909</small></div>' +
+      '<div class="r"><span id="nl">Tus notas y subrayados</span><button type="button" class="sw" role="switch" aria-labelledby="nl" aria-checked="' + S.notes + '" data-act="notes"></button></div>' +
+      '<div class="nl" ' + (S.notes ? "data-on" : "") + '><span>1 nota</span><span>1 subrayado</span><i></i><span>verde</span></div>' +
+      '<p class="lbl" style="margin-top:8px">Dónde busca</p>' +
+      '<div class="seg wide" id="scopeseg">' + Object.keys(scopeNames).map(function (k) { return '<button type="button" data-act="scope" data-k="' + k + '" aria-pressed="' + (S.scope === k) + '">' + scopeNames[k] + "</button>"; }).join("") + "</div></div>";
+  }
+  function ctxLine(off) {
+    return '<div class="ctxline" id="ctxline" ' + (off ? "data-off" : "") + '><span>Juan 6, Reina-Valera 1909</span><button type="button" data-act="ctxopen" aria-expanded="' + S.ctxOpen + '">' + scopeNames[S.scope] + ic.cdown + "</button></div>" +
+      '<div class="ctxx ' + (S.ctxOpen ? "open" : "") + '" id="ctxx">' + ctxFull() + "</div>";
+  }
+  function headHTML() {
+    var sub = cfg.ctx === "head" ? '<span class="sub">Juan 6, ' + scopeNames[S.scope] + (S.notes ? ", con tus notas" : "") + "</span>" : "";
+    return '<div class="dh"><div class="tt"><h3>Preguntar</h3>' + sub + "</div>" +
+      (cfg.fHist ? '<button type="button" class="ib" data-act="new" aria-label="Nueva conversación" title="Nueva conversación">' + ic.plus + '</button><button type="button" class="ib" data-act="hist" aria-pressed="' + S.histOpen + '" aria-label="Preguntas anteriores" title="Preguntas anteriores">' + ic.clock + "</button>" : "") +
+      (cfg.ctx === "head" ? '<button type="button" class="ib" data-act="pop" aria-pressed="' + S.popOpen + '" aria-label="Lo que puede ver" title="Lo que puede ver">' + ic.info + "</button>" : "") +
+      '<button type="button" class="ib" data-act="close" aria-label="Cerrar">' + ic.cross + "</button></div>";
+  }
+    function pillHTML() {
+    var p = S.pill; if (!p) return "";
+    var x = '<button type="button" class="x" data-act="pillx" aria-label="Quitar lo elegido">' + ic.cross + "</button>";
+    if (cfg.pl === "card") return '<div class="pcard"><b>' + esc(p.ref) + '</b><span class="gl">' + esc(p.text) + "</span>" + x + "</div>";
+    if (cfg.pl === "inbox" && boxMode()) return '<div class="pill-in"><b>' + esc(p.ref) + '</b><span class="gl">' + esc(p.text) + "</span>" + x + "</div>";
+    return '<div class="pill"><b>' + esc(p.ref) + '</b><span class="gl">' + esc(p.text) + "</span>" + x + "</div>";
+  }
+  var boxMode = function () { return cfg.cmp === "box" || cfg.cmp === "boxnote"; };
+  function chipsCtx() {
+    if (cfg.ctx !== "composer") return "";
+    return '<span class="chip" title="Lo que ve">Juan 6</span><button type="button" class="chip" data-act="notes" aria-pressed="' + S.notes + '">Tus notas</button><span style="position:relative"><button type="button" class="chip" data-act="menu" aria-expanded="' + S.menu + '">' + scopeNames[S.scope] + "&nbsp;" + ic.cdown + "</button>" +
+      (S.menu ? '<div class="menu" role="menu">' + Object.keys(scopeNames).map(function (k) { return '<button type="button" role="menuitemradio" aria-checked="' + (S.scope === k) + '" data-act="scope" data-k="' + k + '">' + scopeNames[k] + "</button>"; }).join("") + "</div>" : "") + "</span>";
+  }
+  function lenSeg() {
+    if (cfg.len !== "seg") return "";
+    return '<span class="seg" id="lenseg"><button type="button" data-act="len" data-k="brief" aria-pressed="' + S.brief + '">Breve</button><button type="button" data-act="len" data-k="full" aria-pressed="' + !S.brief + '">Completa</button></span>';
+  }
+  function composerHTML() {
+    var tools = chipsCtx() + lenSeg();
+    var ta = '<textarea class="ta" id="ta" rows="1" aria-label="Tu pregunta" placeholder="' + (S.pill ? "Pregunta sobre " + esc(S.pill.ref) : "Pregunta sobre Juan 6") + '">' + esc(S.draft) + "</textarea>";
+    var btn = '<button type="button" class="go" data-act="send">' + (S.busy ? "Detener" : "Preguntar") + "</button>";
+    var pillAbove = S.pill && !(cfg.pl === "inbox" && boxMode());
+    var pillIn = S.pill && cfg.pl === "inbox" && boxMode();
+    var html = '<div class="cmp" id="cmp">';
+    if (sgIsSlash()) html += slashMenu();
+    if (pillAbove) html += pillHTML();
+    if (boxMode()) html += '<div class="bx">' + (pillIn ? pillHTML() : "") + ta + '<div class="bxr"><div class="l">' + tools + "</div>" + btn + "</div></div>";
+    else html += (tools ? '<div class="tools">' + tools + "</div>" : "") + '<div class="rowc">' + ta + btn + "</div>";
+    if (cfg.cmp === "boxnote") html += '<p class="note">Respuesta generada por IA. Cada cita se comprueba en la edición; si no está, no se muestra.</p>';
+    return html + "</div>";
+  }
+  var sgIsSlash = function () { return cfg.sg === "slash" && S.draft.charAt(0) === "/" && !S.entries.length; };
+  function slashMenu() {
+    var q = S.draft.slice(1).toLowerCase(), set = SETS[cfg.mode].filter(function (s) { return s[1].toLowerCase().indexOf(q) >= 0; });
+    if (!set.length) return "";
+    if (S.slashIdx >= set.length) S.slashIdx = 0;
+    return '<div class="slash" role="listbox"><ul>' + set.map(function (s, i) { return '<li><button type="button" class="row" role="option" aria-selected="' + (i === S.slashIdx) + '" data-act="sug" data-id="' + s[0] + '" data-q="' + esc(s[1]) + '"><span>' + esc(s[1]) + "</span></button></li>"; }).join("") + "</ul></div>";
+  }
+  function sugRows() { return '<ul>' + SETS[cfg.mode].map(function (s) { return '<li><button type="button" class="row" data-act="sug" data-id="' + s[0] + '" data-q="' + esc(s[1]) + '"><span>' + esc(s[1]) + "</span>" + ic.chev + "</button></li>"; }).join("") + "</ul>"; }
+  function sugChips() { return '<div class="chips-s">' + SETS[cfg.mode].map(function (s) { return '<button type="button" class="chip" data-act="sug" data-id="' + s[0] + '" data-q="' + esc(s[1]) + '">' + esc(s[1]) + "</button>"; }).join("") + "</div>"; }
+  function emptyHTML() {
+    var where = cfg.mode === "verse" ? "Juan 6:53" : "Juan 6";
+    return '<div class="empty" id="empty"><h4>Pregunta sobre ' + where + '</h4><p>Con los textos que guarda Doctrina: la Biblia, los Padres y los documentos de cada tradición.</p><div class="sug">' + sugRows() + "</div></div>";
+  }
+  function bodyHTML() {
+    var h = "";
+    if (cfg.ctx === "full" || (cfg.ctx === "fold" && !S.entries.length)) h += '<div id="ctxfull">' + ctxFull() + "</div>";
+    if (!S.entries.length) {
+      if (cfg.sg === "list") h += '<div class="sug" id="sugbox"><p class="lbl">Preguntas sugeridas</p>' + sugRows() + "</div>";
+      else if (cfg.sg === "empty") h += emptyHTML();
+      else if (cfg.sg === "slash" || cfg.sg === "chips") h += '<div class="empty"><h4>Pregunta sobre ' + (cfg.mode === "verse" ? "Juan 6:53" : "Juan 6") + '</h4><p style="margin-bottom:0">Con los textos que guarda Doctrina: la Biblia, los Padres y los documentos de cada tradición.</p>' + (cfg.sg === "slash" ? '<p class="hint">Escribe <kbd>/</kbd> para elegir una pregunta.</p>' : "") + "</div>";
+    }
+    h += '<div class="thread" id="thread"></div>';
+    if (cfg.cmp === "inflow") h += '<div style="margin-top:18px" id="inflowc">' + (cfg.sg === "chips" && !S.entries.length ? sugChips() : "") + composerHTML() + "</div>";
+    return h;
+  }
+  function footHTML() {
+    if (cfg.cmp === "inflow") return "";
+    return '<div class="foot" id="foot">' + (cfg.sg === "chips" && !S.entries.length ? sugChips() : "") + composerHTML() + "</div>";
+  }
+  function renderAll(keepFocus) {
+    cancelPlay();
+    var hadFocus = document.activeElement && document.activeElement.id === "ta";
+    var sel = hadFocus ? [document.activeElement.selectionStart, document.activeElement.selectionEnd] : null;
+    var lineOn = cfg.ctx === "line" || cfg.ctx === "fold";
+    dr.classList.toggle("shut", !S.open);
+    dr.innerHTML = headHTML() +
+      (lineOn ? ctxLine(cfg.ctx === "fold" && !S.entries.length) : "") +
+      (cfg.ctx === "head" ? '<div class="cpop ' + (S.popOpen ? "open" : "") + '" id="pop">' + ctxFull() + "</div>" : "") +
+      (cfg.fHist ? '<div class="hist ' + (S.histOpen ? "open" : "") + '" id="hist"><p class="lbl" style="margin-bottom:8px">Preguntas anteriores</p><ul style="list-style:none;margin:0;padding:0">' + HIST.map(function (h, i) { return '<li><button type="button" class="row" data-act="old" data-i="' + i + '"><span>' + esc(h[0]) + '</span><span class="d">' + h[1] + "</span></button></li>"; }).join("") + "</ul></div>" : "") +
+      '<div class="dwrap"><div class="db" id="db">' + bodyHTML() + '</div><button type="button" class="jump" id="jump" data-act="jump" aria-label="Ir al final">' + ic.down + "</button></div>" + footHTML() +
+      '<div class="seltb" id="seltb"><button type="button" data-act="askfrag">Preguntar sobre esto</button></div>';
+    S.entries.forEach(function (e) { $("#thread").appendChild(buildEntry(e, false)); });
+    fitTa();
+    $$(".seg", dr).forEach(function (s) { placeInd(s, true); });
+    markVerse(); $("#askhead").setAttribute("aria-pressed", S.open);
+    if (hadFocus || keepFocus) { var ta = $("#ta"); if (ta) { ta.focus({ preventScroll: true }); if (sel) ta.setSelectionRange(sel[0], sel[1]); } }
+    updJump();
+  }
+  function fitTa() { var ta = $("#ta"); if (!ta) return; ta.style.height = "auto"; ta.style.height = Math.min(120, ta.scrollHeight + 2) + "px"; }
+
+  /* ---------- entries ---------- */
+  function quoteHTML(id, head) {
+    var q = D.Q[id];
+    var src = q.verse ? '<a class="loc" tabindex="0">' + esc(q.who + " " + q.work) + "</a>, Reina-Valera 1909" : '<a class="loc" tabindex="0">' + esc(q.who + ", " + q.work) + "</a>";
+    return '<div class="bl">' + (head ? '<p class="qh">' + esc(head) + "</p>" : "") + '<p class="qt">' + esc(q.text) + '</p><p class="qs">' + src + "</p></div>";
+  }
+  function blocksOf(e) {
+    var a = ANS[e.id], list = a.blocks.map(function (id, i) { return { id: id, head: a.heads ? a.heads[i] : null }; });
+    if (e.brief) list = list.slice(0, 2);
+    return list;
+  }
+  function wordsOf(e) {
+    var p = ANS[e.id].prose;
+    if (e.brief && e.id !== "none") p = p.split(/(?<=[.»)])\s+(?=[A-ZÁÉÍÓÚ])/)[0];
+    return p.split(" ").map(function (w) { return w.replace(/\{(\d+)\}/g, '<a class="loc" tabindex="0">6:$1</a>'); });
+  }
+  function followIds(e) { return e.id === "none" ? ["fathers", "traditions", "bible"] : ANS[e.id].follow; }
+  function footInner(e) {
+    var h = "";
+    if (cfg.ans === "src" && blocksOf(e).length) {
+      h += '<div class="srow"><span class="lbl">Fuentes</span>' + blocksOf(e).map(function (b, i) { var q = D.Q[b.id]; return '<button type="button" class="chip" data-act="srcq" aria-pressed="false" data-i="' + i + '" data-b="' + b.id + '">' + esc(q.verse ? q.who + " " + q.work : q.who.split(" de ")[0] + ", " + q.work.replace("Catequesis", "Cat.").replace("Sobre la doctrina cristiana", "Doctrina cristiana").replace("Tratados sobre el Evangelio de Juan", "Tratados")) + "</button>"; }).join("") + '</div><div class="srcq"></div>';
+    }
+    if (cfg.len === "expand" && e.brief && ANS[e.id].blocks.length > 2) h += '<button type="button" class="more" data-act="more">Ampliar la respuesta</button>';
+    var f = followIds(e);
+    if (cfg.fu === "chips") h += '<div class="fu">' + f.slice(0, 2).map(function (id) { return '<button type="button" class="chip" data-act="sug" data-id="' + id + '" data-q="' + esc(Qs[id]) + '">' + esc(Qs[id]) + "</button>"; }).join("") + "</div>";
+    if (cfg.fu === "list") h += '<div><button type="button" class="stat" data-act="fl" aria-expanded="false" style="min-height:32px"><span>Seguir leyendo</span>' + ic.chev + '</button><div class="fl" hidden>' + f.map(function (id) { return '<button type="button" class="row" data-act="sug" data-id="' + id + '" data-q="' + esc(Qs[id]) + '"><span>' + esc(Qs[id]) + "</span>" + ic.chev + "</button>"; }).join("") + "</div></div>";
+    h += '<div class="acts"><button type="button" data-act="act" data-t="Copiado">Copiar con citas</button><button type="button" data-act="act" data-t="Guardada en Tus notas">Guardar en Tus notas</button><button type="button" data-act="act" data-t="Gracias. Lo revisará una persona.">Informar un error</button></div>';
+    return h;
+  }
+  function metaText(e) { return cfg.status === "live" ? '<p class="meta">Generada por IA. Buscado en: ' + scopeNames[e.scope] + ".</p>" : '<p class="meta">Respuesta generada por IA<br>Buscado en: ' + scopeNames[e.scope] + ". " + esc(ANS[e.id].scope[e.mode]) + "</p>"; }
+  function buildEntry(e, anim) {
+    var el = document.createElement("div"); el.className = "en" + (anim ? " pop" : ""); el.dataset.id = e.key;
+    el.innerHTML = '<p class="eq">' + esc(e.q) + "</p>" + (e.pill ? '<span class="pin"><b>' + esc(e.pill.ref) + '</b><span class="gl">' + esc(e.pill.text) + "</span></span>" : "") +
+      '<div class="ea"><div class="stat-w"></div>' + (anim ? "" : metaText(e)) + '<div class="ablocks"></div><p class="prose"></p><div class="afoot" style="display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:2px"></div></div>';
+    if (!anim) {
+      var bl = $(".ablocks", el);
+      if (cfg.ans === "blocks") bl.innerHTML = blocksOf(e).map(function (b) { return quoteHTML(b.id, b.head); }).join("");
+      $(".prose", el).innerHTML = wordsOf(e).join(" ");
+      if (e.stopped) $(".afoot", el).innerHTML = '<p class="stop-note">Detenida.</p>';
+      else $(".afoot", el).innerHTML = footInner(e);
+      if (cfg.status === "live" && e.consulted) $(".stat-w", el).innerHTML = statDone(e);
+    }
+    return el;
+  }
+  function statDone(e) {
+    return '<button type="button" class="stat" data-act="stl" aria-expanded="false"><span>Consultó ' + e.consulted + ' textos</span><span class="st-s">' + e.secs + ' s</span>' + ic.chev + '</button><ul class="stl" hidden>' + blocksOf(e).map(function (b) { var q = D.Q[b.id]; return "<li>" + esc(q.who + ", " + q.work) + "</li>"; }).join("") + (blocksOf(e).length ? "" : "<li>Reina-Valera 1909, Juan 6</li>") + "</ul>";
+  }
+
+  /* ---------- playing an answer ---------- */
+  var db = function () { return $("#db"); };
+  var maxTop = function () { var b = db(); return b ? b.scrollHeight - b.clientHeight : 0; };
+  function updJump() {
+    var j = $("#jump"), b = db(); if (!j || !b) return;
+    var away = maxTop() - b.scrollTop > 80 && S.entries.length > 0 && !(cfg.scroll === "follow" && following && S.busy);
+    j.classList.toggle("on", away);
+  }
+  function loop() {
+    cancelAnimationFrame(rafId);
+    var step = function () {
+      var b = db(); if (!b) return;
+      if (cfg.scroll === "follow" && following && S.busy) {
+        var d = maxTop() - b.scrollTop;
+        if (d > 0.5) b.scrollTop = b.scrollTop + Math.max(1, d * 0.16);
+      }
+      updJump();
+      if (S.busy) rafId = requestAnimationFrame(step);
+    };
+    rafId = requestAnimationFrame(step);
+  }
+  function smoothTo(y, ms) {
+    var b = db(); if (!b) return; var s = b.scrollTop, t0 = performance.now();
+    if (reduce || ms === 0) { b.scrollTop = y; return; }
+    var ease = function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+    (function f(now) { var t = Math.min(1, (now - t0) / ms); b.scrollTop = s + (y - s) * ease(t); if (t < 1) requestAnimationFrame(f); })(t0);
+  }
+  function cancelPlay() { play++; S.busy = false; clearInterval(secTimer); cancelAnimationFrame(rafId); }
+  function ensureSpacer(el) {
+    if (cfg.scroll !== "pin" || cfg.cmp === "inflow") return;
+    el.style.minHeight = Math.max(0, db().clientHeight - 36) + "px";
+  }
+  function setBtn() { var g = $('[data-act="send"]'); if (g) g.textContent = S.busy ? "Detener" : "Preguntar"; }
+
+  async function ask(id, q) {
+    if (S.busy) return;
+    var e = { key: Date.now(), id: id, q: q, pill: S.pill, mode: cfg.mode, scope: S.scope, brief: (cfg.len === "seg" ? S.brief : cfg.len === "expand"), stopped: false };
+    S.entries.push(e); S.pill = null; S.draft = ""; S.slashIdx = 0; S.menu = false; S.histOpen = false;
+    var firstEntry = S.entries.length === 1;
+    var ta = $("#ta");
+    if (firstEntry) {
+      renderAll(true);
+      var dup = $("#thread").lastElementChild; if (dup) dup.remove();
+      if (cfg.ctx === "fold") { var ln = $("#ctxline"); if (ln) { ln.setAttribute("data-off", ""); void ln.offsetWidth; ln.removeAttribute("data-off"); } }
+    } else {
+      var fo = $("#thread").lastElementChild; if (fo) fo.style.minHeight = "";
+      var comp = $("#cmp"); if (comp) { var nc = document.createElement("div"); nc.innerHTML = composerHTML(); comp.replaceWith(nc.firstChild); fitTa(); }
+      var pv = $("#thread").lastElementChild; if (pv) pv.style.minHeight = "";
+    }
+    var el = buildEntry(e, true); $("#thread").appendChild(el);
+    ensureSpacer(el);
+    S.busy = true; setBtn(); following = true; stopFlag = false;
+    var my = ++play; var alive = function () { return my === play; };
+    var sleep = async function (ms) { await sleepRaw(reduce ? 0 : ms); if (!alive()) throw 0; };
+    if (cfg.scroll === "pin") smoothTo(el.offsetTop - 14, 380); else smoothTo(maxTop(), 260);
+    loop();
+    try {
+      var ea = $(".ea", el), sw = $(".stat-w", el), t0 = performance.now();
+      // status
+      if (cfg.status === "live") {
+        sw.innerHTML = '<button type="button" class="stat" data-act="stl0" aria-expanded="false"><span class="st-t">' + STAT[0] + '</span><span class="st-s">0 s</span></button>';
+        var ph = 0; secTimer = setInterval(function () { var s = Math.floor((performance.now() - t0) / 1000); var st = $(".st-s", sw); if (st) st.textContent = s + " s"; var np = Math.min(2, Math.floor((performance.now() - t0) / 1300)); if (np !== ph) { ph = np; var tt = $(".st-t", sw); if (tt) tt.textContent = STAT[np]; } }, 200);
+        await sleep(3800);
+        clearInterval(secTimer);
+      } else { sw.innerHTML = '<p class="stat">Buscando en el corpus</p>'; await sleep(750); }
+      sw.innerHTML = "";
+      sw.insertAdjacentHTML("afterend", metaText(e));
+      var secs = Math.max(1, Math.round((performance.now() - t0) / 1000));
+      var bl = blocksOf(e); e.consulted = Math.max(bl.length, 1); e.secs = secs;
+      if (cfg.status === "live") sw.innerHTML = statDone(e);
+      var holder = $(".ablocks", el);
+      if (cfg.ans === "blocks") for (var i = 0; i < bl.length; i++) { holder.insertAdjacentHTML("beforeend", quoteHTML(bl[i].id, bl[i].head)); await sleep(480); }
+      var pr = $(".prose", el), words = wordsOf(e);
+      for (var w = 0; w < words.length; w++) {
+        if (stopFlag) break;
+        pr.insertAdjacentHTML("beforeend", (w ? " " : "") + words[w]);
+        await sleep(cfg.speed);
+      }
+      if (stopFlag) { e.stopped = true; $(".afoot", el).innerHTML = '<p class="stop-note">Detenida.</p>'; }
+      else $(".afoot", el).innerHTML = footInner(e);
+    } catch (x) { if (x !== 0) throw x; return; }
+    S.busy = false; setBtn(); clearInterval(secTimer);
+    if (cfg.scroll === "follow" && following) smoothTo(maxTop(), 240);
+    updJump();
+  }
+
+  /* ---------- events ---------- */
+  function sendTyped() {
+    var ta = $("#ta"); if (!ta) return; var q = ta.value.trim(); if (!q) return;
+    S.draft = ""; ask(route(q), q);
+  }
+  dr.addEventListener("click", function (ev) {
+    var t = ev.target.closest("[data-act]"); if (!t) return;
+    var a = t.dataset.act;
+    if (a === "close") { if ($(".reader").offsetParent === null) { S.entries = []; S.draft = ""; } else S.open = false; renderAll(); }
+    else if (a === "send") { if (S.busy) { stopFlag = true; } else { S.draft = $("#ta").value; sendTyped(); } }
+    else if (a === "sug") { var q = t.dataset.q; ask(t.dataset.id, q); }
+    else if (a === "notes") { S.notes = !S.notes; syncCtx(); }
+    else if (a === "scope") { S.scope = t.dataset.k; S.menu = false; syncCtx(); }
+    else if (a === "ctxopen") { S.ctxOpen = !S.ctxOpen; t.setAttribute("aria-expanded", S.ctxOpen); $("#ctxx").classList.toggle("open", S.ctxOpen); }
+    else if (a === "pop") { S.popOpen = !S.popOpen; t.setAttribute("aria-pressed", S.popOpen); $("#pop").classList.toggle("open", S.popOpen); }
+    else if (a === "menu") { S.menu = !S.menu; S.draft = $("#ta").value; renderAll(true); }
+    else if (a === "len") { S.brief = t.dataset.k === "brief"; pressed($("#lenseg"), '[data-k="' + t.dataset.k + '"]'); }
+    else if (a === "pillx") { S.pill = null; S.draft = ($("#ta") || {}).value || ""; renderAll(true); }
+    else if (a === "jump") { following = true; smoothTo(maxTop(), 320); }
+    else if (a === "srcq") { var b = t.closest(".afoot"); var on = t.getAttribute("aria-pressed") === "true"; $$(".chip", b.querySelector(".srow")).forEach(function (c) { c.setAttribute("aria-pressed", "false"); }); var box = b.querySelector(".srcq"); if (on) box.innerHTML = ""; else { t.setAttribute("aria-pressed", "true"); box.innerHTML = quoteHTML(t.dataset.b); } }
+    else if (a === "more") { var en = t.closest(".en"); var key = en.dataset.id; var e = S.entries.filter(function (x) { return String(x.key) === key; })[0]; e.brief = false; var nb = buildEntry(e, false); en.replaceWith(nb); }
+    else if (a === "fl") { var open = t.getAttribute("aria-expanded") === "true"; t.setAttribute("aria-expanded", !open); t.nextElementSibling.hidden = open; }
+    else if (a === "stl") { var o2 = t.getAttribute("aria-expanded") === "true"; t.setAttribute("aria-expanded", !o2); t.nextElementSibling.hidden = o2; }
+    else if (a === "act") { t.textContent = t.dataset.t; }
+    else if (a === "hist") { S.histOpen = !S.histOpen; t.setAttribute("aria-pressed", S.histOpen); $("#hist").classList.toggle("open", S.histOpen); }
+    else if (a === "new") { S.entries = []; S.histOpen = false; S.pill = cfg.mode === "verse" ? pill53() : null; renderAll(); }
+    else if (a === "old") { var h = HIST[+t.dataset.i]; S.histOpen = false; S.entries = [{ key: Date.now(), id: route(h[0]), q: h[0], pill: null, mode: cfg.mode, scope: S.scope, brief: false, consulted: 2, secs: 4 }]; renderAll(); }
+    else if (a === "askfrag") { var tb = $("#seltb"); S.pill = { ref: "De la respuesta", text: tb.dataset.text }; tb.classList.remove("on"); S.draft = ""; renderAll(true); getSelection().removeAllRanges(); var ta2 = $("#ta"); if (ta2) ta2.focus(); }
+  });
+  function syncCtx() {
+    $$(".sw", dr).forEach(function (s) { s.setAttribute("aria-checked", S.notes); });
+    $$(".nl", dr).forEach(function (n) { n.toggleAttribute("data-on", S.notes); });
+    $$('[data-act="scope"]', dr).forEach(function (b) { if (b.closest(".seg")) b.setAttribute("aria-pressed", String(b.dataset.k === S.scope)); });
+    $$(".seg", dr).forEach(function (s) { placeInd(s); });
+    var ln = $("#ctxline button"); if (ln) ln.firstChild.textContent = scopeNames[S.scope];
+    var sub = $(".dh .sub"); if (sub) sub.textContent = "Juan 6, " + scopeNames[S.scope] + (S.notes ? ", con tus notas" : "");
+    if (cfg.ctx === "composer") { S.draft = ($("#ta") || {}).value || ""; renderAll(true); }
+  }
+  dr.addEventListener("input", function (ev) {
+    if (ev.target.id !== "ta") return;
+    S.draft = ev.target.value; fitTa();
+    if (cfg.sg === "slash") { var had = !!$(".slash", dr), want = sgIsSlash(); if (had || want) { var c = $("#cmp"); var pos = ev.target.selectionStart; var nc = document.createElement("div"); nc.innerHTML = composerHTML(); c.replaceWith(nc.firstChild); fitTa(); var ta = $("#ta"); ta.focus(); ta.setSelectionRange(pos, pos); } }
+  });
+  dr.addEventListener("keydown", function (ev) {
+    if (ev.target.id === "ta") {
+      if (sgIsSlash() && (ev.key === "ArrowDown" || ev.key === "ArrowUp")) { ev.preventDefault(); var n = $$(".slash .row", dr).length; S.slashIdx = (S.slashIdx + (ev.key === "ArrowDown" ? 1 : n - 1)) % n; $$(".slash .row", dr).forEach(function (r, i) { r.setAttribute("aria-selected", i === S.slashIdx); }); return; }
+      if (ev.key === "Enter" && !ev.shiftKey) {
+        ev.preventDefault();
+        if (sgIsSlash()) { var r = $$(".slash .row", dr)[S.slashIdx]; if (r) { ask(r.dataset.id, r.dataset.q); return; } }
+        if (!S.busy) { S.draft = ev.target.value; sendTyped(); }
+      }
+      if (ev.key === "Escape") { S.draft = ""; ev.target.value = ""; var c2 = $("#cmp"); if (c2 && $(".slash", dr)) { var nc2 = document.createElement("div"); nc2.innerHTML = composerHTML(); c2.replaceWith(nc2.firstChild); $("#ta").focus(); } }
+    }
+    if (ev.key === "Escape") { if (S.menu) { S.menu = false; renderAll(true); } else if (S.popOpen) { S.popOpen = false; $("#pop").classList.remove("open"); } else if (S.histOpen) { S.histOpen = false; $("#hist").classList.remove("open"); } }
+    if ((ev.key === "ArrowUp" || ev.key === "PageUp" || ev.key === "Home") && ev.target.closest(".db")) following = false;
+  });
+  var userUp = function () { following = false; };
+  dr.addEventListener("wheel", function (ev) { if (ev.target.closest(".db") && ev.deltaY < 0) userUp(); }, { passive: true });
+  dr.addEventListener("touchmove", function (ev) { if (ev.target.closest(".db") && S.busy) { userUp(); } }, { passive: true });
+  dr.addEventListener("scroll", function (ev) { if (ev.target.id !== "db") return; var b = ev.target; if (maxTop() - b.scrollTop < 8 && S.busy) following = true; updJump(); }, true);
+  dr.addEventListener("mouseup", function (ev) {
+    if (!cfg.fAsk) return;
+    setTimeout(function () {
+      var s = getSelection(), tb = $("#seltb"); if (!tb) return;
+      var txt = s && !s.isCollapsed ? s.toString().trim() : "";
+      var an = s && s.anchorNode && (s.anchorNode.nodeType === 1 ? s.anchorNode : s.anchorNode.parentElement);
+      if (!txt || !an || !an.closest(".ea")) { tb.classList.remove("on"); return; }
+      var r = s.getRangeAt(0).getBoundingClientRect(), d = dr.getBoundingClientRect();
+      tb.dataset.text = txt.length > 160 ? txt.slice(0, 157) + "…" : txt;
+      tb.style.left = Math.max(8, Math.min(d.width - 180, r.left - d.left + r.width / 2 - 80)) + "px"; tb.style.top = Math.max(56, r.top - d.top - 48) + "px"; tb.classList.add("on");
+    }, 10);
+  });
+  document.addEventListener("mousedown", function (ev) { var tb = $("#seltb"); if (tb && !ev.target.closest("#seltb")) tb.classList.remove("on"); });
+
+  /* reader */
+  $("#askhead").addEventListener("click", function () {
+    if (S.open && cfg.mode === "header") { S.open = false; renderAll(); return; }
+    openDrawer("header");
+  });
+  function openDrawer(mode) {
+    var changed = cfg.mode !== mode;
+    cfg.mode = mode; S.pill = mode === "verse" ? pill53() : null; if (changed || !S.open) { S.entries = changed ? [] : S.entries; }
+    S.open = true; renderAll(); syncOpts();
+    setTimeout(function () { var ta = $("#ta"); if (ta) ta.focus({ preventScroll: true }); }, reduce ? 0 : 260);
+  }
+  $("#rtext").addEventListener("click", function (ev) {
+    var v = ev.target.closest(".v"); if (!v) return;
+    var r = v.getBoundingClientRect(), f = $(".reader").getBoundingClientRect(), tb = $("#vtb");
+    tb.dataset.v = v.dataset.v; tb.style.left = Math.max(8, Math.min(f.width - 120, r.left - f.left + 8)) + "px"; tb.style.top = Math.max(60, r.top - f.top - 46) + "px"; tb.classList.add("on");
+    $$("#rtext .v").forEach(function (e) { e.classList.toggle("on", e === v); });
+  });
+  $("#vtb-ask").addEventListener("click", function () { $("#vtb").classList.remove("on"); openDrawer("verse"); });
+  document.addEventListener("mousedown", function (ev) { if (!ev.target.closest(".v") && !ev.target.closest("#vtb")) { $("#vtb").classList.remove("on"); markVerse(); } });
+
+  /* option column */
+  optsEl.addEventListener("click", function (ev) {
+    var b = ev.target.closest(".opt"); if (!b) return;
+    var g = b.dataset.g, v = b.dataset.v;
+    if (g === "feat") cfg[v] = !cfg[v];
+    else if (g === "speed") cfg.speed = +v;
+    else if (g === "mode") { cfg.mode = v; S.pill = v === "verse" ? pill53() : null; S.entries = []; S.open = true; }
+    else cfg[g] = v;
+    if (g === "cmp" && !(v === "box" || v === "boxnote") && cfg.pl === "inbox") cfg.pl = "pill";
+    if (g === "pl" && v === "inbox" && !boxMode()) cfg.cmp = "box";
+    if (g === "len" && v === "seg") S.brief = true;
+    S.popOpen = false; S.menu = false; S.histOpen = false;
+    syncOpts(); renderAll(); markPreset();
+  });
+  function markPreset() {
+    var same = function (a, b) { return Object.keys(a).every(function (k) { return k === "mode" || a[k] === b[k]; }); };
+    pressed($("#seg-preset"), same(cfg, CFG_NOW) ? '[data-preset="now"]' : same(cfg, CFG_MINE) ? '[data-preset="mine"]' : "x");
+  }
+  $("#seg-preset").addEventListener("click", function (ev) {
+    var b = ev.target.closest("button"); if (!b) return;
+    var p = b.dataset.preset === "mine" ? CFG_MINE : CFG_NOW; var mode = cfg.mode;
+    cfg = Object.assign({}, p, { mode: mode }); S.entries = []; S.open = true; S.pill = mode === "verse" ? pill53() : null; S.popOpen = S.menu = S.histOpen = S.ctxOpen = false;
+    syncOpts(); renderAll(); markPreset();
+  });
+  $("#seg-theme").addEventListener("click", function (ev) { var b = ev.target.closest("button"); if (!b) return; document.documentElement.setAttribute("data-theme", b.dataset.themeSet); pressed($("#seg-theme"), '[data-theme-set="' + b.dataset.themeSet + '"]'); });
+  $("#seg-view").addEventListener("click", function (ev) { var b = ev.target.closest("button"); if (!b) return; $("#frame").classList.toggle("phone", b.dataset.view === "phone"); pressed($("#seg-view"), '[data-view="' + b.dataset.view + '"]'); renderAll(); });
+  $("#reset").addEventListener("click", function () { S.entries = []; S.pill = cfg.mode === "verse" ? pill53() : null; S.draft = ""; S.open = true; S.ctxOpen = false; renderAll(); });
+  document.addEventListener("keydown", function (ev) { if (ev.key === "/" && !ev.target.closest("input, textarea") && !ev.metaKey && !ev.ctrlKey && cfg.sg !== "slash") { ev.preventDefault(); S.open = true; renderAll(); var ta = $("#ta"); if (ta) ta.focus(); } });
+
+  buildOpts(); buildReader(); syncOpts(); renderAll(); markPreset();
+  var dark = matchMedia("(prefers-color-scheme: dark)").matches; pressed($("#seg-theme"), '[data-theme-set="' + (dark ? "dark" : "light") + '"]');
+  $$(".seg").forEach(function (s) { placeInd(s, true); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { $$(".seg").forEach(function (s) { placeInd(s, true); }); });
+})();
+</script>

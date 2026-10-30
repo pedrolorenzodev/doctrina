@@ -1,0 +1,387 @@
+<title>Fuentes de Doctrina, seis caminos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+
+/* Layout: a configurator. Left, eight «lenguajes de selección» and a mixer per family; right, the real site's selectors (tree, tradition tabs, filters, panel tabs, picker, chapter grid, chips, heading tabs) drawn with the site's own tokens, texture and measures. Choosing a language restyles every selector at once. */
+:root {
+  --bg: #e8e5de; --ink: #1c1713; --ink-2: #2a2620; --ink-3: #615c54; --prose: #4f4b44;
+  --rule: #c9c5bc; --rule-2: #aeaba4; --accent: #2c4a9e; --accent-weak: rgb(44 74 158 / 0.1); --accent-mid: rgb(44 74 158 / 0.45);
+  --cite: #5f3d0c; --cite-weak: rgb(95 61 12 / 0.09); --card: rgb(255 255 255 / 0.35); --panel: #efece6;
+  --hover: rgb(28 23 19 / 0.05); --sel-neutral: rgb(28 23 19 / 0.09); --shadow-float: 0 18px 40px -18px rgb(0 0 0 / 0.45);
+  --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.85%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%221.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2262%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E"); --texture-opacity: 0.4; --external-mark: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.4'%3E%3Cpath d='M5 2H2v8h8V7'/%3E%3Cpath d='M7 1.5h3.5V5M10.5 1.5 5.5 6.5'/%3E%3C/svg%3E");
+  --head: "Newsreader", Georgia, serif; --body: "Source Serif 4", Georgia, serif; --ui: "Work Sans", system-ui, sans-serif;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1); --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1); --ease-move: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+    --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+    --card: rgb(255 255 255 / 0.03); --panel: #262625; --hover: rgb(255 255 255 / 0.05); --sel-neutral: rgb(255 255 255 / 0.1);
+    --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E"); --texture-opacity: 1; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --prose: #9a9a96; --rule: #3a3a38; --rule-2: #4d4d4a;
+  --accent: #9eb3ee; --accent-weak: rgb(158 179 238 / 0.12); --accent-mid: rgb(158 179 238 / 0.45); --cite: #d6a865; --cite-weak: rgb(214 168 101 / 0.12);
+  --card: rgb(255 255 255 / 0.03); --panel: #262625; --hover: rgb(255 255 255 / 0.05); --sel-neutral: rgb(255 255 255 / 0.1);
+  --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E"); --texture-opacity: 1; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.5 var(--ui); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::after { content: ""; position: fixed; inset: 0; z-index: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 90; background: var(--bg); }
+.tx { position: relative; }
+.tx::after { content: ""; position: absolute; inset: 0; background-image: var(--texture-image); background-size: 420px 420px; opacity: var(--texture-opacity); mix-blend-mode: multiply; pointer-events: none; z-index: 0; }
+.tx > * { position: relative; z-index: 1; }
+button { font: inherit; color: inherit; }
+a:focus-visible, button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.doc { position: relative; z-index: 1; max-width: 1320px; margin: 0 auto; padding-block: 40px 120px; }
+.doc-head { max-width: 760px; }
+.doc-head h1 { font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.doc-head .lede { font: italic 300 22px/1.4 var(--head); font-variation-settings: "opsz" 36; color: var(--ink-2); margin: 14px 0 0; text-wrap: pretty; }
+.t { font: 300 17px/1.6 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); margin: 14px 0 0; max-width: 68ch; }
+.doc b { font-weight: 500; color: var(--ink); }
+h2.sec { font: 300 34px/1.15 var(--head); font-variation-settings: "opsz" 60; margin: 0; text-wrap: balance; }
+@media (max-width: 640px) { .doc-head h1 { font-size: 36px; } .doc-head .lede { font-size: 19px; } h2.sec { font-size: 28px; } }
+
+.seen { margin-top: 56px; display: grid; gap: 28px; }
+.refimg { margin: 0; }
+.refimg img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-2); border-radius: 6px; }
+.refimg figcaption { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 8px; font: 400 13px/1.45 var(--ui); color: var(--ink-3); }
+.refimg figcaption b { color: var(--ink); font-weight: 500; display: block; }
+@media (max-width: 900px) { .refimg figcaption { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.finds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; margin: 0; padding: 0; list-style: none; }
+.finds li { padding: 14px 0; border-top: 1px solid var(--rule); font: 300 16.5px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); }
+.finds li small { display: block; margin-top: 4px; font: 400 13px/1.5 var(--ui); color: var(--ink-3); }
+@media (max-width: 900px) { .finds { grid-template-columns: 1fr; } }
+.inv { width: 100%; border-collapse: collapse; font: 400 14px/1.45 var(--ui); }
+.inv th { text-align: left; font: 500 12.5px var(--ui); color: var(--ink-3); padding: 0 16px 8px 0; }
+.inv td { padding: 10px 16px 10px 0; border-top: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+.inv td:first-child { color: var(--ink); font-weight: 500; white-space: nowrap; }
+.invw { overflow-x: auto; }
+
+.ctl { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; margin-top: 56px; padding-block: 10px; background: var(--bg); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
+@media (max-width: 1099px) { .ctl { position: static; } }
+.ctl .label { font: 500 12.5px var(--ui); color: var(--ink-3); margin-right: 8px; }
+.ctl > span { display: flex; align-items: center; }
+.pk { display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; }
+.pk button { min-height: 34px; padding: 0 12px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; }
+.pk button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 500; }
+.pk button:hover:not([aria-pressed="true"]) { background: var(--hover); }
+@media (pointer: coarse) { .pk button { min-height: 44px; } }
+
+.lab { display: grid; grid-template-columns: minmax(320px, 400px) minmax(0, 1fr); gap: 48px; margin-top: 32px; align-items: start; }
+.side { position: sticky; top: 72px; max-height: calc(100vh - 88px); overflow: auto; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; padding-right: 6px; }
+.side h3 { margin: 0; font: 400 22px/1.3 var(--head); font-variation-settings: "opsz" 24; }
+.side .why { margin: 6px 0 12px; font: 300 15.5px/1.55 var(--body); font-variation-settings: "opsz" 18; color: var(--prose); }
+.lg { display: block; width: 100%; padding: 10px 8px 10px 22px; border: 0; border-top: 1px solid var(--rule); background: none; text-align: left; cursor: pointer; position: relative; transition: background-color 150ms var(--ease-standard); }
+.lg:last-of-type { border-bottom: 1px solid var(--rule); }
+.lg::before { content: ""; position: absolute; left: 6px; top: 16px; width: 6px; height: 6px; background: var(--ink); opacity: 0; transition: opacity 150ms var(--ease-standard); }
+.lg[aria-checked="true"]::before { opacity: 1; }
+.lg:hover { background: var(--hover); }
+.lg .n { display: block; font: 500 14.5px/1.4 var(--ui); color: var(--ink); }
+.lg .l { display: block; margin-top: 2px; font: 400 13.5px/1.5 var(--ui); color: var(--ink-3); text-wrap: pretty; }
+.lg .s { display: block; margin-top: 2px; font: 400 12.5px/1.45 var(--ui); color: var(--ink-3); }
+.mix { margin-top: 28px; display: grid; gap: 8px; }
+.mix label { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 10px; font: 500 12.5px var(--ui); color: var(--ink-3); }
+.mix select { min-height: 36px; padding: 0 10px; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--card); font: 400 13.5px var(--ui); color: var(--ink); }
+@media (max-width: 1099px) { .lab { display: block; margin-top: 16px; } .side { position: static; max-height: none; padding: 0; margin-bottom: 32px; } }
+
+
+/* ---------- site frame ---------- */
+.dirs { display: flex; flex-wrap: wrap; gap: 0 4px; margin-top: 32px; border-bottom: 1px solid var(--rule); }
+.dirs button { position: relative; padding: 10px 14px 12px; border: 0; background: none; text-align: left; cursor: pointer; min-width: 0; }
+.dirs button b { display: block; font: 500 14.5px/1.3 var(--ui); color: var(--ink-3); transition: color 150ms var(--ease-standard); }
+.dirs button span { display: block; font: 400 13px/1.4 var(--ui); color: var(--ink-3); }
+.dirs button:hover b { color: var(--ink); }
+.dirs button[aria-selected="true"] b { color: var(--ink); }
+.dirs button[aria-selected="true"]::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: -1px; height: 2px; background: var(--ink); }
+.frame { position: relative; margin-top: 24px; height: clamp(640px, calc(100vh - 80px), 900px); border: 1px solid var(--rule-2); border-radius: 10px; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; }
+.tb { flex: none; height: 56px; display: flex; align-items: center; gap: 14px; padding: 0 20px; border-bottom: 1px solid var(--rule); }
+.tb .logo { font: 400 23px/1 var(--head); font-variation-settings: "opsz" 24; letter-spacing: -0.005em; }
+.ibtn { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 6px; background: none; color: var(--ink-2); }
+.strig { margin-left: 24px; width: 300px; max-width: 40%; height: 36px; display: flex; align-items: center; padding: 0 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); font: 400 13.5px var(--ui); color: var(--ink-3); }
+.body { flex: 1; min-height: 0; display: flex; }
+.tree { flex: none; width: 272px; border-right: 1px solid var(--rule); overflow: auto; padding: 22px 14px 40px 18px; font: 400 14px/1.35 var(--ui); }
+.tree .g { font: 500 12.5px var(--ui); color: var(--ink-3); margin: 14px 0 4px 4px; } .tree .g:first-child { margin-top: 0; }
+.tree .r { display: flex; align-items: center; min-height: 32px; padding: 0 8px 0 4px; border-radius: 6px; color: var(--ink-2); }
+.tree .r.cur { background: var(--sel-neutral); color: var(--ink); font-weight: 500; }
+.main { flex: 1; min-width: 0; overflow: auto; padding: 34px 56px 120px 48px; scrollbar-width: thin; scrollbar-color: var(--rule-2) transparent; }
+@media (max-width: 899px) { .tree { display: none; } .main { padding: 24px 16px 96px; } .strig { display: none; } }
+.crumb { font: 400 13px var(--ui); color: var(--ink-3); margin: 0 0 14px; }
+.page h1 { margin: 0; font: 300 52px/1.06 var(--head); font-variation-settings: "opsz" 72; letter-spacing: -0.01em; }
+.page .lede { margin: 12px 0 0; font: italic 300 21px/1.4 var(--head); font-variation-settings: "opsz" 36; color: var(--ink-2); max-width: 640px; text-wrap: pretty; }
+@media (max-width: 640px) { .page h1 { font-size: 36px; } .page .lede { font-size: 19px; } }
+.fbar { position: sticky; top: -34px; z-index: 5; margin: 26px -8px 0; padding: 10px 8px; background: var(--bg); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+@media (max-width: 899px) { .fbar { top: -24px; } }
+.seg { position: relative; display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 8px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg button { position: relative; z-index: 1; min-height: 34px; padding: 0 11px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; transition: background-color 150ms var(--ease-standard), color 150ms var(--ease-standard); }
+.seg button:hover { background: var(--hover); color: var(--ink); }
+.seg button[aria-pressed="true"] { color: var(--ink); font-weight: 500; background: var(--sel-neutral); }
+.seg button small { font: 400 12px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.sel { min-height: 36px; padding: 0 10px; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--card); font: 400 13.5px var(--ui); color: var(--ink); }
+.sin { min-height: 36px; width: 220px; max-width: 100%; padding: 0 12px; border: 1px solid var(--rule-2); border-radius: 6px; background: var(--card); font: 400 14px var(--ui); color: var(--ink); outline: none; }
+.sin:focus { border-color: var(--ink-3); }
+.cnt { font: 400 13px var(--ui); color: var(--ink-3); margin-left: auto; font-variant-numeric: tabular-nums; }
+@media (pointer: coarse) { .seg button, .sel, .sin { min-height: 44px; } }
+.gh { margin: 44px 0 4px; font: 300 29px/1.15 var(--head); font-variation-settings: "opsz" 60; }
+.gs { margin: 0 0 6px; font: 400 14px/1.5 var(--ui); color: var(--ink-3); }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) 112px minmax(160px, 280px); gap: 6px 24px; padding: 14px 0; border-top: 1px solid var(--rule); align-items: baseline; }
+.rows .row:last-child { border-bottom: 1px solid var(--rule); }
+.row .nm { min-width: 0; } .row .ttl { font: 500 18px/1.35 var(--body); font-variation-settings: "opsz" 18; color: var(--ink); background: none; border: 0; padding: 0; text-align: left; cursor: pointer; }
+.row .ttl:hover { text-decoration: underline; text-decoration-color: var(--rule-2); text-underline-offset: 4px; }
+.row .au { font: 400 14px/1.45 var(--ui); color: var(--ink-3); margin-top: 2px; }
+.dm { font: 500 15px var(--ui); color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.dm::before { content: ""; display: inline-block; width: 1px; height: 12px; background: var(--rule-2); margin-right: 9px; vertical-align: -1px; }
+.ax { position: relative; height: 22px; }
+.ax::before { content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 1px; background: var(--rule-2); }
+.ax i { position: absolute; top: 5px; height: 13px; width: 7px; margin-left: -3px; border-radius: 1px; background: var(--accent-mid); }
+.ax i.pt { width: 9px; height: 9px; top: 7px; margin-left: -4px; border-radius: 50%; background: var(--accent); }
+.axh { display: flex; justify-content: space-between; font: 400 11px var(--ui); color: var(--ink-3); margin: 0 0 2px; font-variant-numeric: tabular-nums; }
+.row .det { grid-column: 1 / -1; display: none; padding: 6px 0 4px; font: 300 16px/1.55 var(--body); color: var(--ink-2); }
+.row.open .det { display: grid; gap: 8px; }
+.det dl { margin: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 16px; font: 400 14px/1.5 var(--ui); }
+.det dt { color: var(--ink-3); } .det dd { margin: 0; color: var(--ink-2); }
+.go { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border: 1px solid var(--rule-2); border-radius: 7px; background: var(--card); font: 500 14px var(--ui); color: var(--ink); cursor: pointer; justify-self: start; transition: border-color 150ms var(--ease-standard), background-color 150ms var(--ease-standard); }
+.go:hover { border-color: var(--ink); background: var(--hover); }
+@media (max-width: 760px) { .row { grid-template-columns: minmax(0, 1fr) auto; } .row .ax { grid-column: 1 / -1; } .det dl { grid-template-columns: 1fr; } }
+.rise { animation: rise 420ms var(--ease-reveal) both; } @keyframes rise { from { opacity: 0; translate: 0 8px; } }
+/* B ruler */
+.rl { position: relative; height: 92px; margin-top: 26px; user-select: none; touch-action: none; cursor: crosshair; }
+.rl .base { position: absolute; left: 0; right: 0; bottom: 26px; height: 1px; background: var(--rule-2); }
+.rl .mk { position: absolute; bottom: 27px; width: 1px; height: 22px; background: var(--rule-2); transition: background-color 150ms var(--ease-standard), height 150ms var(--ease-standard); }
+.rl .mk.on { background: var(--ink); height: 34px; }
+.rl .tk { position: absolute; bottom: 0; transform: translateX(-50%); font: 400 11px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.rl .tk::before { content: ""; position: absolute; left: 50%; bottom: 19px; width: 1px; height: 7px; background: var(--rule-2); }
+.rl .win { position: absolute; top: 8px; bottom: 20px; border: 1px solid var(--accent); border-radius: 4px; background: var(--accent-weak); cursor: grab; }
+.rl .win:active { cursor: grabbing; }
+.rl .win::before, .rl .win::after { content: ""; position: absolute; top: 0; bottom: 0; width: 9px; cursor: ew-resize; }
+.rl .win::before { left: -5px; } .rl .win::after { right: -5px; }
+.wl { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-top: 6px; font: 400 14px var(--ui); color: var(--ink-3); }
+.wl b { color: var(--ink); font-weight: 500; font-variant-numeric: tabular-nums; }
+.wl button { min-height: 34px; padding: 0 10px; border: 0; border-radius: 6px; background: none; font: 400 13.5px var(--ui); color: var(--ink-2); cursor: pointer; } .wl button:hover { background: var(--hover); color: var(--ink); }
+/* C table */
+.tw { margin-top: 14px; overflow-x: auto; }
+.tbl { width: 100%; border-collapse: collapse; font: 400 14px/1.4 var(--ui); min-width: 760px; }
+.tbl th { position: sticky; top: 0; background: var(--bg); text-align: left; font: 500 12.5px var(--ui); color: var(--ink-3); padding: 0 14px 8px 0; border-bottom: 1px solid var(--rule-2); white-space: nowrap; }
+.tbl th button { border: 0; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; } .tbl th button:hover { color: var(--ink); }
+.tbl th[aria-sort] button { color: var(--ink); }
+.tbl th[aria-sort="ascending"] button::after { content: " ↑"; } .tbl th[aria-sort="descending"] button::after { content: " ↓"; }
+.tbl td { padding: 10px 14px 10px 0; border-bottom: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+.tbl td.t1 { font: 500 15.5px/1.35 var(--body); color: var(--ink); min-width: 250px; }
+.tbl tr:hover td { background: var(--hover); }
+.tbl td.dt { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink); }
+/* D tabs */
+.tbs { position: relative; display: flex; gap: 2px; margin-top: 26px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--rule); padding-bottom: 0; }
+.tbs::-webkit-scrollbar { display: none; }
+.tbs button { position: relative; z-index: 1; min-height: 40px; padding: 0 12px; border: 0; background: none; font: 400 15px var(--ui); color: var(--ink-3); cursor: pointer; white-space: nowrap; display: inline-flex; gap: 6px; align-items: center; transition: color 150ms var(--ease-standard); }
+.tbs button:hover { color: var(--ink); } .tbs button[aria-pressed="true"] { color: var(--ink); font-weight: 500; }
+.tbs button small { font: 400 12px var(--ui); color: var(--ink-3); }
+.tbs .ind { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--ink); transition: transform 340ms var(--ease-reveal), width 340ms var(--ease-reveal); }
+.vc { transition: opacity 140ms var(--ease-exit), translate 140ms var(--ease-exit); } .vc.out { opacity: 0; }
+.vc.in { animation: slidein 260ms var(--ease-reveal) both; } @keyframes slidein { from { opacity: 0; translate: calc(16px * var(--dir, 1)) 0; } }
+/* E master-detail */
+.md { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 0 48px; margin-top: 26px; align-items: start; }
+.al { position: sticky; top: 8px; max-height: calc(100vh - 220px); overflow: auto; scrollbar-width: thin; }
+.al .sin { width: 100%; margin-bottom: 10px; }
+.ar { position: relative; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; width: 100%; min-height: 38px; padding: 6px 8px 6px 14px; border: 0; border-top: 1px solid var(--rule); background: none; text-align: left; font: 400 14.5px/1.35 var(--ui); color: var(--ink-2); cursor: pointer; transition: background-color 150ms var(--ease-standard); }
+.ar:hover { background: var(--hover); color: var(--ink); }
+.ar small { font: 400 12.5px var(--ui); color: var(--ink-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ar[aria-current="true"] { color: var(--ink); font-weight: 500; background: var(--sel-neutral); }
+.dtl h2 { margin: 0; font: 300 34px/1.15 var(--head); font-variation-settings: "opsz" 60; }
+.dtl .sub { margin: 6px 0 0; font: 400 14.5px var(--ui); color: var(--ink-3); }
+@media (max-width: 899px) { .md { grid-template-columns: 1fr; gap: 28px; } .al { position: static; max-height: 280px; } }
+.note { margin-top: 18px; font: 300 16px/1.55 var(--body); color: var(--prose); max-width: 64ch; }
+.about { margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; }
+.about > div { padding: 14px 0; border-top: 1px solid var(--rule); font: 300 16.5px/1.55 var(--body); color: var(--prose); }
+.about b { display: block; font: 500 14.5px var(--ui); color: var(--ink); margin-bottom: 4px; }
+@media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
+.dnote { margin-top: 20px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; }
+.dnote > div { padding: 12px 0; border-top: 1px solid var(--rule); font: 300 16px/1.55 var(--body); color: var(--prose); }
+.dnote b { display: block; font: 500 13px var(--ui); color: var(--ink-3); margin-bottom: 3px; }
+@media (max-width: 900px) { .dnote { grid-template-columns: 1fr; } }
+.endgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; margin-top: 80px; }
+.endgrid ul, .endgrid ol { margin: 14px 0 0; padding: 0; list-style: none; }
+.endgrid li { padding: 12px 0; border-top: 1px solid var(--rule); font: 300 16px/1.55 var(--body); color: var(--prose); } .endgrid li:last-child { border-bottom: 1px solid var(--rule); }
+@media (max-width: 900px) { .endgrid { grid-template-columns: 1fr; gap: 40px; } }
+</style>
+
+<div class="doc">
+  <header class="doc-head">
+    <h1>Fuentes de Doctrina</h1>
+    <p class="lede">Hoy «Fuentes» es una lista de 44 filas en el orden en que se cargaron. Aquí hay cinco caminos distintos para el mismo contenido, cada uno sobre el sitio real, para elegir cuál ayuda más a quien llega.</p>
+    <p class="t">Los datos son los del registro: 43 obras (Padres, concilios, confesiones, catecismos, liturgias, teólogos) con su fecha, su edición, su licencia y las tradiciones que las reconocen. Todos los caminos tienen filtro por tipo de fuente.</p>
+  </header>
+  <section class="seen" style="margin-top:44px">
+    <h2 class="sec">Qué espera y qué necesita quien llega aquí</h2>
+    <div class="about">
+      <div><b>Encontrar una obra</b>Sabe qué busca (un autor, un título, un tipo de documento) y quiere llegar en pocos gestos.</div>
+      <div><b>Entender qué es antes de abrirla</b>Quién la escribió, cuándo, de qué edición sale, con qué licencia y qué tradiciones la reconocen.</div>
+      <div><b>Abrirla y leerla</b>Un solo botón a la obra completa. Sin resúmenes ni conclusiones: Doctrina no decide.</div>
+    </div>
+    <div class="about" style="margin-top:0">
+      <div><b>Lo aprobado que se reutiliza</b>La lista fechada con un eje compartido (04 y 09), el cambiador «Deslizar», la regla de años de la portada, el filtro de los índices de Historia y el pliego de Pasajes.</div>
+      <div><b>Lo que no se hace</b>Un color por tradición, rankings, «más leídas», resúmenes de lo que enseña cada obra, tarjetas iguales con sombra.</div>
+      <div><b>Reglas del sitio que se cumplen</b>Los Padres no se asignan a una tradición moderna; cada tradición habla con sus propios documentos; toda fuente nombra su edición.</div>
+    </div>
+  </section>
+
+  <div class="dirs" id="dirs" role="tablist" aria-label="Caminos"></div>
+  <div class="frame tx" id="frame"><div class="tb"><span class="ibtn" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 5h12M3 9h12M3 13h12"/></svg></span><span class="logo">Doctrina</span><span class="strig">Buscar en Doctrina</span></div>
+    <div class="body"><nav class="tree" aria-label="Árbol"><p class="g">Doctrinas</p><div class="r">La Eucaristía</div><p class="g">Historia</p><div class="r">Padres</div><div class="r">Concilios</div><div class="r">Herejías</div><div class="r">Divisiones</div><p class="g">Biblia</p><div class="r">Juan</div><p class="g">Fuentes</p><div class="r cur">Todas las fuentes</div></nav><main class="main" id="main"></main></div></div>
+  <div class="dnote" id="dnote"></div>
+
+  <div class="endgrid">
+    <section><h2 class="sec">Lo que se descartó</h2><ul>
+      <li><b>Ordenar por «más citadas» o «más leídas».</b> Sería un ranking, y el sitio no concluye.</li>
+      <li><b>Un color por tradición.</b> Está prohibido: solo el acento y el color de cita.</li>
+      <li><b>Tarjetas iguales con sombra.</b> Está en la lista de lo que parece generado.</li>
+      <li><b>Resumen de lo que enseña cada obra.</b> Es interpretación; cada obra habla con sus palabras.</li></ul></section>
+    <section><h2 class="sec">Lo que hay que decidir</h2><ol>
+      <li><b>Cuál de los cinco caminos</b> (o cuál mezcla: por ejemplo, A con el filtro de B).</li>
+      <li><b>Cómo se ve «reconocida por».</b> Texto («Católica, Ortodoxa»), «Todas» o nada para los Padres.</li>
+      <li><b>Si los Padres van aparte</b> de las demás obras o mezclados por fecha.</li>
+      <li><b>Si el detalle abre en la fila</b> o lleva a una página de la obra.</li></ol></section>
+  </div>
+</div>
+
+<script>
+(function () {
+  var S = [{"id": "didache", "k": "church-father", "t": "Didaché (Doctrina de los Doce Apóstoles)", "a": "Anónimo", "d": "c. 50–120", "rb": [], "lic": "public-domain", "ed": "ANF vol. 7", "ey": 1885, "y": 50, "ye": 120}, {"id": "justin-dialogue", "k": "church-father", "t": "Diálogo con Trifón", "a": "Justino Mártir", "d": "c. 155–160", "rb": [], "lic": "public-domain", "ed": "ANF vol. 1", "ey": 1885, "y": 155, "ye": 160}, {"id": "irenaeus-against-heresies", "k": "church-father", "t": "Contra las herejías", "a": "Ireneo de Lyon", "d": "c. 180", "rb": [], "lic": "public-domain", "ed": "ANF vol. 1", "ey": 1885, "y": 180, "ye": null}, {"id": "tertullian-against-marcion", "k": "church-father", "t": "Contra Marción", "a": "Tertuliano", "d": "c. 207–208", "rb": [], "lic": "public-domain", "ed": "ANF vol. 3", "ey": 1885, "y": 207, "ye": 208}, {"id": "cyril-jerusalem-mystagogical", "k": "church-father", "t": "Catequesis mistagógicas (Catequesis 19–23)", "a": "Cirilo de Jerusalén (atribuido)", "d": "c. 350–390", "rb": [], "lic": "public-domain", "ed": "NPNF2 vol. 7", "ey": 1890, "y": 350, "ye": 390}, {"id": "ambrose-on-the-mysteries", "k": "church-father", "t": "Sobre los misterios", "a": "Ambrosio de Milán", "d": "c. 387–391", "rb": [], "lic": "public-domain", "ed": "NPNF2 vol. 10", "ey": 1890, "y": 387, "ye": 391}, {"id": "chrysostom-hom-hebrews", "k": "church-father", "t": "Homilías sobre Hebreos", "a": "Juan Crisóstomo", "d": "c. 403–404", "rb": [], "lic": "public-domain", "ed": "NPNF1 vol. 14", "ey": 1890, "y": 403, "ye": 404}, {"id": "augustine-on-christian-doctrine", "k": "church-father", "t": "Sobre la doctrina cristiana", "a": "Agustín de Hipona", "d": "c. 396–397", "rb": [], "lic": "public-domain", "ed": "NPNF1 vol. 2", "ey": 1890, "y": 396, "ye": 397}, {"id": "theodoret-eranistes", "k": "church-father", "t": "Eranistes (Diálogos)", "a": "Teodoreto de Ciro", "d": "c. 447", "rb": [], "lic": "public-domain", "ed": "NPNF2 vol. 3", "ey": 1890, "y": 447, "ye": null}, {"id": "john-damascus-exact-exposition", "k": "church-father", "t": "Exposición exacta de la fe ortodoxa", "a": "Juan Damasceno", "d": "c. 743", "rb": [], "lic": "public-domain", "ed": "NPNF2 vol. 9", "ey": 1890, "y": 743, "ye": null}, {"id": "chrysostom-hom-john", "k": "church-father", "t": "Homilías sobre el Evangelio de Juan", "a": "Juan Crisóstomo", "d": "c. 391", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, First Series, Vol. 14", "ey": 1889, "y": 391, "ye": null}, {"id": "augustine-tractates-john", "k": "church-father", "t": "Tratados sobre el Evangelio de Juan", "a": "Agustín de Hipona", "d": "c. 406–420", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, First Series, Vol. 7", "ey": 1888, "y": 406, "ye": 420}, {"id": "augustine-contra-faustum", "k": "church-father", "t": "Réplica a Fausto el maniqueo", "a": "Agustín de Hipona", "d": "c. 400", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, First Series, Vol. 4", "ey": 1887, "y": 400, "ye": null}, {"id": "aquinas-summa", "k": "theologian", "t": "Suma teológica", "a": "Tomás de Aquino", "d": "1265–1274", "rb": ["catholic"], "lic": "public-domain", "ed": "Summa Theologica, 2nd rev. ed.", "ey": 1920, "y": 1265, "ye": 1274}, {"id": "ecclesia-de-eucharistia", "k": "papal", "t": "Ecclesia de Eucharistia (encíclica)", "a": "Juan Pablo II", "d": "2003", "rb": ["catholic"], "lic": "fair-use-excerpt", "ed": "Official vatican.va texts", "ey": 2003, "y": 2003, "ye": null}, {"id": "florence-cantate-domino", "k": "council", "t": "Concilio de Florencia, Bula de unión con los coptos (Cantate Domino)", "a": "Concilio de Florencia (Eugenio IV)", "d": "1442", "rb": ["catholic"], "lic": "fair-use-excerpt", "ed": "Decrees of the Ecumenical Councils", "ey": 1990, "y": 1442, "ye": null}, {"id": "liturgy-chrysostom", "k": "liturgy", "t": "Divina Liturgia de San Juan Crisóstomo", "a": "Tradición bizantina (atribuida a San Juan Crisóstomo)", "d": "siglos IV–V", "rb": ["orthodox", "catholic"], "lic": "public-domain", "ed": "The Liturgies of SS. Mark, James, Clement, Chrysostom, and Basil, and the Church", "ey": 1890, "y": 400, "ye": null}, {"id": "liturgy-basil", "k": "liturgy", "t": "Divina Liturgia de San Basilio el Grande", "a": "Atribuida a San Basilio el Grande", "d": "siglo IV", "rb": ["orthodox", "catholic"], "lic": "public-domain", "ed": "The Liturgies of SS. Mark, James, Clement, Chrysostom, and Basil, and the Church", "ey": 1890, "y": 350, "ye": null}, {"id": "hapgood-service-book", "k": "liturgy", "t": "Libro de servicio de la Santa Iglesia Ortodoxa Católica Apostólica", "a": "Isabel F. Hapgood (comp. y trad.)", "d": "1906", "rb": ["orthodox"], "lic": "public-domain", "ed": "Service Book of the Holy Orthodox-Catholic Apostolic Church, revised edition", "ey": 1922, "y": 1906, "ye": null}, {"id": "cabasilas-divine-liturgy", "k": "theologian", "t": "Comentario a la Divina Liturgia", "a": "Nicolás Cabasilas", "d": "c. 1350", "rb": ["orthodox"], "lic": "fair-use-excerpt", "ed": "A Commentary on the Divine Liturgy", "ey": 1960, "y": 1350, "ye": null}, {"id": "philaret-longer-catechism", "k": "catechism", "t": "Catecismo extenso de la Iglesia ortodoxa, católica y oriental", "a": "San Filareto (Drozdov) de Moscú", "d": "1830", "rb": ["orthodox"], "lic": "public-domain", "ed": "The Doctrine of the Russian Church", "ey": 1845, "y": 1830, "ye": null}, {"id": "mogila-orthodox-confession", "k": "confession", "t": "Confesión ortodoxa de la Iglesia católica y apostólica oriental", "a": "San Pedro Mogila de Kiev (revisada por Meletios Syrigos)", "d": "1640", "rb": ["orthodox"], "lic": "public-domain", "ed": "The Orthodox Confession of the Catholic and Apostolic Eastern Church", "ey": null, "y": 1640, "ye": null}, {"id": "cyprian-on-the-lapsed", "k": "church-father", "t": "Sobre los caídos", "a": "San Cipriano de Cartago", "d": "c. 251", "rb": [], "lic": "public-domain", "ed": "Ante-Nicene Fathers, vol. 5", "ey": 1886, "y": 251, "ye": null}, {"id": "apostolic-constitutions", "k": "church-father", "t": "Constituciones apostólicas", "a": "Compilación siria anónima", "d": "c. 380", "rb": [], "lic": "public-domain", "ed": "Ante-Nicene Fathers, vol. 7", "ey": 1886, "y": 380, "ye": null}, {"id": "augustine-merits-remission", "k": "church-father", "t": "Sobre los méritos y el perdón de los pecados, y el bautismo de los niños", "a": "Agustín de Hipona", "d": "412", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, First Series, vol. 5", "ey": 1887, "y": 412, "ye": null}, {"id": "apology-augsburg", "k": "confession", "t": "Apología de la Confesión de Augsburgo", "a": "Felipe Melanchthon", "d": "1531", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1531, "ye": null}, {"id": "smalcald-articles", "k": "confession", "t": "Artículos de Esmalcalda", "a": "Martín Lutero", "d": "1537", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1537, "ye": null}, {"id": "large-catechism", "k": "catechism", "t": "Catecismo Mayor", "a": "Martín Lutero", "d": "1529", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1529, "ye": null}, {"id": "formula-concord-epitome", "k": "confession", "t": "Fórmula de Concordia, Epítome", "a": "Jakob Andreae, Martín Chemnitz y otros", "d": "1577", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1577, "ye": null}, {"id": "formula-concord-sd", "k": "confession", "t": "Fórmula de Concordia, Declaración Sólida", "a": "Jakob Andreae, Martín Chemnitz y otros", "d": "1577", "rb": ["lutheran"], "lic": "public-domain", "ed": "Triglot Concordia: The Symbolical Books of the Evangelical Lutheran Church", "ey": "1921", "y": 1577, "ye": null}, {"id": "luther-confession-lords-supper-1528", "k": "theologian", "t": "Confesión acerca de la Cena de Cristo (Gran Confesión)", "a": "Martín Lutero", "d": "1528", "rb": ["lutheran"], "lic": "public-domain", "ed": "D. Martin Luthers Werke", "ey": "1909", "y": 1528, "ye": null}, {"id": "marburg-articles", "k": "confession", "t": "Artículos de Marburgo", "a": "Martín Lutero, Ulrico Zuinglio y otros", "d": "1529", "rb": ["lutheran", "reformed"], "lic": "fair-use-excerpt", "ed": "German History in Documents and Images", "ey": null, "y": 1529, "ye": null}, {"id": "belgic", "k": "confession", "t": "Confesión Belga", "a": "Guido de Brès", "d": "1561", "rb": ["reformed"], "lic": "public-domain", "ed": "Schaff, The Creeds of Christendom, vol. 3", "ey": 1877, "y": 1561, "ye": null}, {"id": "calvin-institutes", "k": "theologian", "t": "Institución de la religión cristiana", "a": "Juan Calvino", "d": "1559", "rb": ["reformed"], "lic": "public-domain", "ed": "Institutes of the Christian Religion", "ey": 1845, "y": 1559, "ye": null}, {"id": "westminster-larger-catechism", "k": "catechism", "t": "Catecismo Mayor de Westminster", "a": "Asamblea de Westminster", "d": "1647", "rb": ["reformed"], "lic": "public-domain", "ed": "Orthodox Presbyterian Church text", "ey": null, "y": 1647, "ye": null}, {"id": "augustine-letters", "k": "church-father", "t": "Cartas", "a": "Agustín de Hipona", "d": "c. 386–430", "rb": [], "lic": "public-domain", "ed": "NPNF, First Series, vol. 1", "ey": 1886, "y": 386, "ye": 430}, {"id": "athanasius-on-the-incarnation", "k": "church-father", "t": "Sobre la Encarnación del Verbo", "a": "Atanasio de Alejandría", "d": "c. 318–337", "rb": [], "lic": "public-domain", "ed": "NPNF, Second Series, vol. 4", "ey": 1892, "y": 318, "ye": 337}, {"id": "chalcedon-definition", "k": "council", "t": "Definición de fe del Concilio de Calcedonia", "a": "Concilio de Calcedonia", "d": "451", "rb": ["catholic", "orthodox", "lutheran", "reformed", "baptist"], "lic": "public-domain", "ed": "NPNF, Second Series, vol. 14", "ey": 1900, "y": 451, "ye": null}, {"id": "abstract-of-principles", "k": "confession", "t": "Principios Abstractos", "a": "Basil Manly Jr. (Seminario Teológico Bautista del Sur)", "d": "1858", "rb": ["baptist"], "lic": "public-domain", "ed": "Abstract of Principles", "ey": 1858, "y": 1858, "ye": null}, {"id": "new-hampshire-1833", "k": "confession", "t": "Confesión de Fe de New Hampshire", "a": "John Newton Brown y la Convención Bautista de New Hampshire", "d": "1853", "rb": ["baptist"], "lic": "public-domain", "ed": "New Hampshire Baptist Confession", "ey": 1853, "y": 1853, "ye": null}, {"id": "augustine-contra-adimantum", "k": "church-father", "t": "Contra Adimanto, discípulo de Manes", "a": "Agustín de Hipona", "d": "c. 394", "rb": [], "lic": "public-domain", "ed": "Patrologia Latina 42", "ey": 1845, "y": 394, "ye": null}, {"id": "augustine-expositions-psalms", "k": "church-father", "t": "Comentarios a los Salmos", "a": "Agustín de Hipona", "d": "c. 392–422", "rb": [], "lic": "public-domain", "ed": "Nicene and Post-Nicene Fathers, Series I, vol. 8", "ey": 1888, "y": 392, "ye": 422}, {"id": "gelasius-two-natures", "k": "church-father", "t": "Sobre las dos naturalezas en Cristo, contra Eutiques y Nestorio", "a": "Papa Gelasio I", "d": "c. 492–496", "rb": [], "lic": "public-domain", "ed": "Latin text in A. Thiel, Epistolae Romanorum Pontificum", "ey": 1868, "y": 492, "ye": 496}, {"id": "bible", "k": "scripture", "t": "Sagrada Escritura", "a": "Biblia", "d": "", "rb": ["catholic", "orthodox", "lutheran", "reformed", "baptist"], "lic": "public-domain", "ed": "Reina-Valera 1909", "ey": null, "y": 0, "ye": null}]; S = S.filter(function (s) { return s.k !== "scripture"; });
+  var $ = function (s, r) { return (r || document).querySelector(s); }, $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var KG = [["church-father", "Los primeros cristianos", "Padres de la Iglesia y textos de la Iglesia antigua. Doctrina no los asigna a ninguna tradición moderna."], ["council", "Concilios y papas", "Definiciones y documentos de un concilio o de un papa."], ["theologian", "Teólogos", "Obras de un autor que una tradición reconoce."], ["liturgy", "Liturgias", "Textos para el culto."], ["catechism", "Catecismos", "Exposiciones de la fe para enseñar."], ["confession", "Confesiones", "Textos con que una comunidad declara su fe."]];
+  var gOf = function (k) { return k === "papal" ? "council" : k; };
+  var TR = { catholic: "Católica", orthodox: "Ortodoxa", lutheran: "Luterana", reformed: "Reformada", baptist: "Bautista" };
+  var trs = function (s) { return s.rb.length === 0 ? "" : s.rb.length === 5 ? "Todas" : s.rb.map(function (x) { return TR[x]; }).join(", "); };
+  var LIC = { "public-domain": "Dominio público", "fair-use-excerpt": "Cita breve" };
+  var fmtEd = function (s) { return s.ed + (s.ey ? ", " + s.ey : ""); };
+  var byDate = function (a, b) { return a.y - b.y; };
+  var X = 2050, pct = function (y) { return (y / X * 100) + "%"; };
+  var count = function (f) { return S.filter(f).length; };
+
+  var DIRS = [
+    ["now", "Hoy", "44 filas en orden de carga", "Lo que existe: una lista plana sin agrupar, sin fecha ordenada ni filtro. Es el punto de partida.", "El registro tal cual.", "Nada: es lo que hay."],
+    ["a", "A · Pliego por tipo", "agrupado, con eje común", "Va en la página «Fuentes», una sola entrada en el árbol. Grupos por tipo en orden de fecha, cada fila con su fecha marcada y un eje compartido; el detalle abre en la fila.", "La lista fechada de «Fuentes citadas» (04) y «Sus escritos» (09), y el pliego de Pasajes.", "Es la más larga: hay que recorrerla. Un filtro por tipo y otro por tradición ayudan."],
+    ["b", "B · Dos mil años", "la regla de años manda", "Una regla de 50 a 2050 con una marca por obra; una ventana arrastrable elige los años y la lista de abajo se filtra. Además, el filtro por tipo.", "La portada «Dos mil años»: la regla que maneja la lista.", "Pide arrastrar; para quien busca una obra concreta es un paso más. Gana quien explora por época."],
+    ["c", "C · Tabla de consulta", "ordenable, densa", "Una tabla con columnas: obra, autor, fecha, tipo, reconocida por, edición. Se ordena con un clic en la cabecera y se busca por texto.", "El índice de Historia «C: tabla con filtro» que Pedro eligió, y los atributos de la ficha de fuente.", "Densa: no es la más bonita ni la más calma. Es la más rápida para comparar."],
+    ["d", "D · Voces", "cada tradición, sus textos", "Pestañas: primeros cristianos y una por tradición. Cada pestaña lista sus textos agrupados por tipo. Se mueve con «Deslizar».", "El cambiador de tradición «Deslizar» y la regla «cada tradición habla con sus palabras».", "Un texto reconocido por varias tradiciones aparece en varias pestañas. No sirve para buscar por título."],
+    ["e", "E · Autor y sus obras", "maestro y detalle", "A la izquierda, los 34 autores con cuántas obras tienen (Agustín, 7); a la derecha, sus obras con fecha, edición y botón de lectura.", "La nota de Pedro del 6 de octubre: un autor con varias obras aparece una vez; el árbol de Padres.", "Esconde las obras tras el autor: hay que saber el autor. En teléfono pasa a una columna."]
+  ];
+  var cur = "now", dirsEl = $("#dirs");
+  dirsEl.innerHTML = DIRS.map(function (d) { return '<button type="button" role="tab" data-d="' + d[0] + '" aria-selected="' + (d[0] === cur) + '"><b>' + d[1] + "</b><span>" + d[2] + "</span></button>"; }).join("");
+
+  function head() { return '<div class="page"><p class="crumb">Fuentes</p><h1>Fuentes</h1><p class="lede">Las obras que cita Doctrina, cada una con su fecha y la edición de la que sale cada cita.</p></div>'; }
+  function detail(s) { return '<div class="det"><dl><dt>Edición</dt><dd>' + esc(fmtEd(s)) + "</dd><dt>Licencia</dt><dd>" + LIC[s.lic] + "</dd>" + (trs(s) ? "<dt>Reconocida por</dt><dd>" + trs(s) + "</dd>" : "") + '</dl><button type="button" class="go">Leer la obra</button></div>'; }
+  function axis(s, lo, hi) { var a = lo || 0, b = hi || X; var p = function (y) { return Math.max(0, Math.min(100, (y - a) / (b - a) * 100)) + "%"; }; return '<div class="ax" aria-hidden="true">' + (s.ye ? '<i style="left:' + p((s.y + s.ye) / 2) + ";width:" + Math.max(7, (s.ye - s.y) / (b - a) * 100) + '%"></i>' : '<i class="pt" style="left:' + p(s.y) + '"></i>') + "</div>"; }
+  function rowA(s) { return '<div class="row" data-id="' + s.id + '"><div class="nm"><button type="button" class="ttl" data-act="open">' + esc(s.t) + '</button><div class="au">' + esc(s.a) + '</div></div><div class="dm">' + esc(s.d || "") + "</div>" + axis(s) + detail(s) + "</div>"; }
+  var main = $("#main");
+  var bound = [];
+
+  function segHtml(items, cur, id) { return '<div class="seg" id="' + id + '">' + items.map(function (i) { return '<button type="button" data-v="' + i[0] + '" aria-pressed="' + (i[0] === cur) + '">' + i[1] + (i[2] != null ? " <small>" + i[2] + "</small>" : "") + "</button>"; }).join("") + "</div>"; }
+  var typeItems = function () { return [["all", "Todas", S.length]].concat(KG.map(function (g) { return [g[0], g[1].replace("Los primeros cristianos", "Primeros cristianos"), count(function (s) { return gOf(s.k) === g[0]; })]; })); };
+
+  function viewNow() { main.innerHTML = head() + '<div class="rows" style="margin-top:28px">' + S.map(function (s) { return '<div class="row" style="grid-template-columns:minmax(0,1fr) 112px"><div class="nm"><span class="ttl" style="cursor:default">' + esc(s.t) + '</span><div class="au">' + esc(s.a) + '</div></div><div class="dm">' + esc(s.d || "") + "</div></div>"; }).join("") + "</div>"; }
+
+  function viewA() {
+    var st = { t: "all", tr: "all" };
+    main.innerHTML = head() + '<div class="fbar">' + segHtml(typeItems(), "all", "ts") + '<select class="sel" id="trs" aria-label="Reconocida por"><option value="all">Todas las tradiciones</option>' + Object.keys(TR).map(function (k) { return '<option value="' + k + '">' + TR[k] + "</option>"; }).join("") + '</select><span class="cnt" id="cnt"></span></div><div id="lst"></div>';
+    function render() {
+      var L = S.filter(function (s) { return (st.t === "all" || gOf(s.k) === st.t) && (st.tr === "all" || s.rb.indexOf(st.tr) >= 0 || (st.tr === "all")); });
+      var h = "";
+      KG.forEach(function (g) { var l = L.filter(function (s) { return gOf(s.k) === g[0]; }).sort(byDate); if (!l.length) return; h += '<h2 class="gh">' + g[1] + '</h2><p class="gs">' + g[2] + '</p><div class="axh" aria-hidden="true" style="padding-left:calc(100% - min(280px,30%))"><span>50</span><span>1000</span><span>2000</span></div><div class="rows">' + l.map(rowA).join("") + "</div>"; });
+      $("#lst").innerHTML = h || '<p class="note">Ninguna obra cumple los dos filtros.</p>'; $("#cnt").textContent = L.length + " de " + S.length + " obras";
+      $("#lst").classList.remove("rise"); void $("#lst").offsetWidth; $("#lst").classList.add("rise");
+    }
+    $("#ts").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; st.t = b.dataset.v; $$("#ts button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); render(); });
+    $("#trs").addEventListener("change", function (e) { st.tr = e.target.value; render(); });
+    $("#lst").addEventListener("click", function (e) { var b = e.target.closest('[data-act="open"]'); if (b) b.closest(".row").classList.toggle("open"); });
+    render();
+  }
+
+  function viewB() {
+    var win = { a: 50, b: 800 }, st = { t: "all" };
+    var ticks = [100, 500, 1000, 1500, 2000];
+    main.innerHTML = head() + '<div class="fbar" style="border-bottom:0">' + segHtml(typeItems(), "all", "ts") + '</div><div class="rl" id="rl"><div class="base"></div>' + S.map(function (s) { return '<i class="mk" data-id="' + s.id + '" style="left:' + pct(s.y) + '"></i>'; }).join("") + ticks.map(function (t) { return '<span class="tk" style="left:' + pct(t) + '">' + t + "</span>"; }).join("") + '<div class="win" id="win"></div></div><div class="wl"><span>Años <b id="wy"></b></span><button type="button" data-p="50,800">Primeros cristianos</button><button type="button" data-p="800,1500">Edad Media</button><button type="button" data-p="1500,1700">Reforma</button><button type="button" data-p="1700,2050">Hasta hoy</button><button type="button" data-p="0,2050">Todo</button><span class="cnt" id="cnt"></span></div><div id="lst"></div>';
+    var rl = $("#rl"), w = $("#win");
+    function inWin(s) { var e = s.ye || s.y; return e >= win.a && s.y <= win.b; }
+    function render() {
+      w.style.left = pct(win.a); w.style.width = ((win.b - win.a) / X * 100) + "%"; $("#wy").textContent = Math.round(win.a) + " a " + Math.round(win.b);
+      var L = S.filter(function (s) { return (st.t === "all" || gOf(s.k) === st.t); }), I = L.filter(inWin).sort(byDate);
+      $$(".mk", rl).forEach(function (m) { var s = S.filter(function (x) { return x.id === m.dataset.id; })[0]; m.classList.toggle("on", (st.t === "all" || gOf(s.k) === st.t) && inWin(s)); });
+      $("#cnt").textContent = I.length + " de " + L.length + " obras"; $("#lst").innerHTML = '<div class="rows" style="margin-top:14px">' + (I.length ? I.map(function (s) { return rowA(s).replace(axis(s), axis(s, win.a, win.b)); }).join("") : '<p class="note">Ninguna obra en esos años.</p>') + "</div>";
+    }
+    var mode = null, grab = 0;
+    rl.addEventListener("pointerdown", function (e) { var r = rl.getBoundingClientRect(), y = (e.clientX - r.left) / r.width * X, px = 10 / r.width * X; if (Math.abs(y - win.a) < px) mode = "l"; else if (Math.abs(y - win.b) < px) mode = "r"; else { if (y < win.a || y > win.b) { var wd = win.b - win.a; win.a = Math.max(0, Math.min(X - wd, y - wd / 2)); win.b = win.a + wd; } mode = "m"; grab = y - win.a; } rl.setPointerCapture(e.pointerId); render(); });
+    rl.addEventListener("pointermove", function (e) { if (!mode) return; var r = rl.getBoundingClientRect(), y = Math.max(0, Math.min(X, (e.clientX - r.left) / r.width * X)); if (mode === "l") win.a = Math.min(y, win.b - 60); else if (mode === "r") win.b = Math.max(y, win.a + 60); else { var wd = win.b - win.a; win.a = Math.max(0, Math.min(X - wd, y - grab)); win.b = win.a + wd; } render(); });
+    rl.addEventListener("pointerup", function () { mode = null; });
+    $(".wl").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; var p = b.dataset.p.split(","); win.a = +p[0]; win.b = +p[1]; render(); });
+    $("#ts").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; st.t = b.dataset.v; $$("#ts button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); render(); });
+    $("#lst").addEventListener("click", function (e) { var b = e.target.closest('[data-act="open"]'); if (b) b.closest(".row").classList.toggle("open"); });
+    render();
+  }
+
+  function viewC() {
+    var st = { t: "all", q: "", k: "y", d: 1 };
+    main.innerHTML = head() + '<div class="fbar">' + segHtml(typeItems(), "all", "ts") + '<input class="sin" id="q" type="search" placeholder="Buscar título o autor" aria-label="Buscar"><span class="cnt" id="cnt"></span></div><div class="tw"><table class="tbl"><thead><tr id="th"></tr></thead><tbody id="tb"></tbody></table></div>';
+    var COLS = [["t", "Obra"], ["a", "Autor"], ["y", "Fecha"], ["k", "Tipo"], ["rb", "Reconocida por"], ["ed", "Edición"]];
+    function render() {
+      $("#th").innerHTML = COLS.map(function (c) { return '<th scope="col"' + (st.k === c[0] ? ' aria-sort="' + (st.d > 0 ? "ascending" : "descending") + '"' : "") + '><button type="button" data-k="' + c[0] + '">' + c[1] + "</button></th>"; }).join("");
+      var q = st.q.toLowerCase(), L = S.filter(function (s) { return (st.t === "all" || gOf(s.k) === st.t) && (!q || (s.t + " " + s.a).toLowerCase().indexOf(q) >= 0); });
+      L.sort(function (a, b) { var A = st.k === "rb" ? trs(a) : a[st.k], B = st.k === "rb" ? trs(b) : b[st.k]; return (A > B ? 1 : A < B ? -1 : 0) * st.d; });
+      var kn = {}; KG.forEach(function (g) { kn[g[0]] = g[1].replace("Los primeros cristianos", "Primeros cristianos"); });
+      $("#tb").innerHTML = L.map(function (s) { return '<tr><td class="t1">' + esc(s.t) + "</td><td>" + esc(s.a) + '</td><td class="dt">' + esc(s.d) + "</td><td>" + kn[gOf(s.k)] + "</td><td>" + (trs(s) || "") + "</td><td>" + esc(fmtEd(s)) + "</td></tr>"; }).join("") || '<tr><td colspan="6">Ninguna obra coincide.</td></tr>';
+      $("#cnt").textContent = L.length + " de " + S.length + " obras";
+    }
+    $("#ts").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; st.t = b.dataset.v; $$("#ts button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); render(); });
+    $("#th").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; if (st.k === b.dataset.k) st.d = -st.d; else { st.k = b.dataset.k; st.d = 1; } render(); });
+    $("#q").addEventListener("input", function (e) { st.q = e.target.value; render(); });
+    render();
+  }
+
+  function viewD() {
+    var V = [["early", "Primeros cristianos"], ["catholic", "Católica"], ["orthodox", "Ortodoxa"], ["lutheran", "Luterana"], ["reformed", "Reformada"], ["baptist", "Bautista"]], cv = "early", idx = 0;
+    var inV = function (s, v) { return v === "early" ? s.k === "church-father" : s.rb.indexOf(v) >= 0; };
+    main.innerHTML = head() + '<div class="tbs" id="tbs">' + V.map(function (v) { return '<button type="button" data-v="' + v[0] + '" aria-pressed="' + (v[0] === cv) + '">' + v[1] + " <small>" + count(function (s) { return inV(s, v[0]); }) + "</small></button>"; }).join("") + '<i class="ind"></i></div><div class="vc" id="vc"></div>';
+    var tbs = $("#tbs"), ind = $(".ind", tbs);
+    function place(still) { var b = $('[aria-pressed="true"]', tbs); if (still) ind.style.transition = "none"; ind.style.width = b.offsetWidth + "px"; ind.style.transform = "translateX(" + b.offsetLeft + "px)"; if (still) { void ind.offsetWidth; ind.style.transition = ""; } }
+    function content(v) {
+      var L = S.filter(function (s) { return inV(s, v); }), h = '<p class="note" style="margin-top:20px">' + (v === "early" ? "Autores de la Iglesia antigua. Doctrina no los asigna a ninguna tradición moderna." : "Los documentos que esta tradición reconoce como suyos, con sus propias palabras.") + "</p>";
+      KG.forEach(function (g) { var l = L.filter(function (s) { return gOf(s.k) === g[0]; }).sort(byDate); if (!l.length) return; h += '<h2 class="gh" style="font-size:25px;margin-top:34px">' + g[1] + '</h2><div class="rows">' + l.map(rowA).join("") + "</div>"; });
+      return h;
+    }
+    var vc = $("#vc"); vc.innerHTML = content(cv);
+    tbs.addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b || b.dataset.v === cv) return; var n = V.map(function (x) { return x[0]; }).indexOf(b.dataset.v), dir = n > idx ? 1 : -1; idx = n; cv = b.dataset.v; $$("button", tbs).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); }); place(false);
+      vc.classList.add("out"); setTimeout(function () { vc.innerHTML = content(cv); vc.classList.remove("out"); vc.style.setProperty("--dir", dir); vc.classList.remove("in"); void vc.offsetWidth; vc.classList.add("in"); }, 140); });
+    vc.addEventListener("click", function (e) { var b = e.target.closest('[data-act="open"]'); if (b) b.closest(".row").classList.toggle("open"); });
+    requestAnimationFrame(function () { place(true); });
+  }
+
+  function viewE() {
+    var A = {}; S.forEach(function (s) { (A[s.a] = A[s.a] || []).push(s); });
+    var names = Object.keys(A).sort(function (a, b) { return Math.min.apply(null, A[a].map(function (s) { return s.y; })) - Math.min.apply(null, A[b].map(function (s) { return s.y; })); });
+    var sel = "Agustín de Hipona", q = "";
+    main.innerHTML = head() + '<div class="md"><div class="al"><input class="sin" id="q" type="search" placeholder="Buscar autor" aria-label="Buscar autor"><div id="al"></div></div><div class="dtl" id="dtl"></div></div>';
+    function list() { $("#al").innerHTML = names.filter(function (n) { return !q || n.toLowerCase().indexOf(q) >= 0; }).map(function (n) { return '<button type="button" class="ar" data-n="' + esc(n) + '" aria-current="' + (n === sel) + '"><span>' + esc(n) + "</span><small>" + A[n].length + "</small></button>"; }).join(""); }
+    function det() { var l = A[sel].slice().sort(byDate); $("#dtl").innerHTML = '<div class="rise"><h2>' + esc(sel) + '</h2><p class="sub">' + l.length + (l.length === 1 ? " obra" : " obras") + '</p><div class="rows" style="margin-top:18px">' + l.map(rowA).join("") + "</div></div>"; }
+    $("#al").addEventListener("click", function (e) { var b = e.target.closest(".ar"); if (!b) return; sel = b.dataset.n; $$(".ar").forEach(function (x) { x.setAttribute("aria-current", String(x === b)); }); det(); });
+    $("#q").addEventListener("input", function (e) { q = e.target.value.toLowerCase(); list(); });
+    $("#dtl").addEventListener("click", function (e) { var b = e.target.closest('[data-act="open"]'); if (b) b.closest(".row").classList.toggle("open"); });
+    list(); det();
+  }
+
+  var V = { now: viewNow, a: viewA, b: viewB, c: viewC, d: viewD, e: viewE };
+  function show(id) {
+    cur = id; $$("button", dirsEl).forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.d === id)); }); main.scrollTop = 0; V[id]();
+    var d = DIRS.filter(function (x) { return x[0] === id; })[0];
+    $("#dnote").innerHTML = '<div><b>Dónde va</b>' + d[3] + "</div><div><b>De dónde viene</b>" + d[4] + "</div><div><b>Qué cuesta</b>" + d[5] + "</div>";
+  }
+  dirsEl.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) show(b.dataset.d); });
+  show("a");
+  var dk = matchMedia("(prefers-color-scheme: dark)").matches;
+})();
+</script>
