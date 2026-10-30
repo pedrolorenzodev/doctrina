@@ -18,9 +18,9 @@ A (doctrine, tradition) pair is **live** when: its dossier is verified and corre
 | Eucharist · Baptist | **verified S1-S3 (2026-10-29)**: 1 WRONG (column scope), 4 must-fix applied; active dossier is now only the convention line (NH and BF&M), 123 lines; the four-family draft is preserved in `baptist.apply.md` | not imported |
 | Eucharist · Orthodox | **verified S1-S3 (2026-10-29)**: 2 WRONG, 4 must-fix applied; Philaret original Russian, 1838 Dositheus collation and full Greek Mogila I.107 still unconfirmed | not imported |
 | Baptism · Baptist, Reformed, Lutheran, Orthodox; Sola Scriptura · Baptist | **verified S1-S3 (2026-10-30)**: WRONG 2+2+1+1+1 applied, must-fix 4+3+3+4+4 applied; both Baptist dossiers cut to the convention line (NH and BF&M), originals preserved in `*.apply.md` | not imported |
-| Sola Scriptura · Reformed | **partial**: 1 WRONG applied, S1 not closed, no critic, S2 not finished; its Progress block says where to resume | not imported |
-| 6 drafts: Sola Scriptura ×2 (Lutheran, Orthodox), Papacy ×4 | `draft, NOT verified` | not imported |
-Count check: 2 live + 2 Catholic ready to import + 4 Eucharist verified + 5 verified (Baptism ×4, Sola Scriptura Baptist) + 1 partial + 6 drafts = 20.
+| Sola Scriptura · Reformed, Lutheran, Orthodox; Papacy · Baptist, Reformed, Lutheran, Orthodox | **verified S1-S3 (2026-10-30)**: WRONG 1+2+2+1+2+1+2 applied, must-fix 3+3+4+4+3+3+4 applied; Papacy Baptist cut to the convention line, original preserved in its `*.apply.md` | not imported |
+Count check: 2 live + 2 Catholic ready to import + 16 non-Catholic dossiers verified (Eucharist ×4, Baptism ×4, Sola Scriptura ×4, Papacy ×4) = 20. Every dossier of the 20 pairs is verified (S1-S3) as of 2026-10-30; the Spanish of all of them is unreviewed by Pedro. Next is S4/S5 (shape and import), which needs the converter generalization.
+Open from the verifications: the Westminster 1894 edition line (editor) in `eucharist/reformed.md` line ~143 is flagged as wrong by the Baptism Reformed run and is not corrected; the 1689, Heidelberg and Belgic scope for non-Eucharist doctrines is undecided.
 
 Lesson from wave 1 (2026-10-29): the Baptist draft used four families although DECISIONS 2026-10-15 fixes the Baptist column to the convention line (NH and BF&M). Every wave prompt must state each tradition's column from that entry; the Baptist drafts for Baptism, Sola Scriptura and Papacy probably carry the same scope error. Orthodox ×4 and the Baptist/Reformed/Lutheran drafts exist as `docs/research/doctrines/<doctrine>/<tradition>.md`.
 
