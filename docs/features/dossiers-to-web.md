@@ -11,15 +11,15 @@ A (doctrine, tradition) pair is **live** when: its dossier is verified and corre
 |---|---|---|
 | Eucharist · Catholic | done, verified, critic, applied | **live** |
 | Baptism · Catholic | done, verified, critic, applied | **live** |
-| Papacy · Catholic | done, verified, critic, applied (`review-page.data.js`) | not imported (converter exists) |
-| Sola Scriptura · Catholic | same | not imported |
+| Papacy · Catholic | done, verified, critic, applied (`review-page.data.js`) | **live** (imported 2026-10-30, `status: draft`) |
+| Sola Scriptura · Catholic | same | **live** (imported 2026-10-30, `status: draft`) |
 | Eucharist · Lutheran | done, 2 verifications, critic, answers applied | not imported (needs a converter) |
 | Eucharist · Reformed | **verified S1-S3 (2026-10-29)**: 0 new WRONG, 3 must-fix applied (`verification-reformed.md`, `reformed.apply.md`) | not imported (needs a converter) |
 | Eucharist · Baptist | **verified S1-S3 (2026-10-29)**: 1 WRONG (column scope), 4 must-fix applied; active dossier is now only the convention line (NH and BF&M), 123 lines; the four-family draft is preserved in `baptist.apply.md` | not imported |
 | Eucharist · Orthodox | **verified S1-S3 (2026-10-29)**: 2 WRONG, 4 must-fix applied; Philaret original Russian, 1838 Dositheus collation and full Greek Mogila I.107 still unconfirmed | not imported |
 | Baptism · Baptist, Reformed, Lutheran, Orthodox; Sola Scriptura · Baptist | **verified S1-S3 (2026-10-30)**: WRONG 2+2+1+1+1 applied, must-fix 4+3+3+4+4 applied; both Baptist dossiers cut to the convention line (NH and BF&M), originals preserved in `*.apply.md` | not imported |
 | Sola Scriptura · Reformed, Lutheran, Orthodox; Papacy · Baptist, Reformed, Lutheran, Orthodox | **verified S1-S3 (2026-10-30)**: WRONG 1+2+2+1+2+1+2 applied, must-fix 3+3+4+4+3+3+4 applied; Papacy Baptist cut to the convention line, original preserved in its `*.apply.md` | not imported |
-Count check: 2 live + 2 Catholic ready to import + 16 non-Catholic dossiers verified (Eucharist ×4, Baptism ×4, Sola Scriptura ×4, Papacy ×4) = 20. Every dossier of the 20 pairs is verified (S1-S3) as of 2026-10-30; the Spanish of all of them is unreviewed by Pedro. Next is S4/S5 (shape and import), which needs the converter generalization.
+Count check: 4 live (Catholic ×4) + 16 non-Catholic dossiers verified (Eucharist ×4, Baptism ×4, Sola Scriptura ×4, Papacy ×4) = 20. Waves 0 done 2026-10-30. Every dossier of the 20 pairs is verified (S1-S3) as of 2026-10-30; the Spanish of all of them is unreviewed by Pedro. Next is S4/S5 (shape and import), which needs the converter generalization.
 Open from the verifications: the Westminster 1894 edition line (editor) in `eucharist/reformed.md` line ~143 is flagged as wrong by the Baptism Reformed run and is not corrected; the 1689, Heidelberg and Belgic scope for non-Eucharist doctrines is undecided.
 
 Lesson from wave 1 (2026-10-29): the Baptist draft used four families although DECISIONS 2026-10-15 fixes the Baptist column to the convention line (NH and BF&M). Every wave prompt must state each tradition's column from that entry; the Baptist drafts for Baptism, Sola Scriptura and Papacy probably carry the same scope error. Orthodox ×4 and the Baptist/Reformed/Lutheran drafts exist as `docs/research/doctrines/<doctrine>/<tradition>.md`.
@@ -55,6 +55,7 @@ Inside a wave: Codex runs S1+S2+S3 for **all pairs of the wave in one session pe
 - After each Codex run: read the output files, give a critical take, mark the queue (`ROADMAP.md` «Background queue»), then the next.
 
 ## 6. Guardrails (do not repeat the known traps)
+- **NEVER correct a page by hand (Pedro, 2026-10-30, DECISIONS «Pages are never corrected by hand»).** Fix the dossier or the converter and convert again. Registry corrections are the one exception and are noted in DECISIONS.
 - Nothing from a draft enters `data/` or a page before S1–S2. Trust invariants: no claim without citation and edition; the site never concludes; each tradition in its own words; Church Fathers never assigned to a modern tradition (`AGENTS.md`).
 - `node data/scripts/convert-dossier.mjs` must run with `CONTENT_OUT=<scratch>/out` (a straight run rebuilds the registry and overwrites hand edits); merge with `merge-registry.mjs`. Node 24 (`nvm use`). Tailwind utilities names must be unique (GOTCHAS).
 - Never write git history; hand Pedro the stage-and-commit command per block; docs in their own command. Another session may be editing `docs/ROADMAP.md`/`DECISIONS.md`: add narrowly.
