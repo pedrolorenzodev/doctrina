@@ -1,14 +1,1454 @@
 import type { Verse } from "@/content/model/registry";
 
 export const verses = {
-  "John.3.5": {
-    osis: "John.3.5",
-    text: "Respondió Jesús: De cierto, de cierto te digo, que el que no naciere de agua y del Espíritu, no puede entrar en el reino de Dios.",
+  "Col.1.18": {
+    osis: "Col.1.18",
+    text: "Y él es la cabeza del cuerpo [que es] la iglesia; [él] que es el principio, el primogénito de los muertos, para que en todo tenga el primado.",
+    edition: "RV1909",
+  },
+  "Matt.23.9": {
+    osis: "Matt.23.9",
+    text: "Y vuestro padre no llaméis á nadie en la tierra; porque uno es vuestro Padre, el cual está en los cielos.",
+    edition: "RV1909",
+  },
+  "Matt.23.10": {
+    osis: "Matt.23.10",
+    text: "Ni seáis llamados maestros; porque uno es vuestro Maestro, el Cristo.",
+    edition: "RV1909",
+  },
+  "Eph.2.20": {
+    osis: "Eph.2.20",
+    text: "Edificados sobre el fundamento de los apóstoles y profetas, siendo la principal piedra del ángulo Jesucristo mismo;",
+    edition: "RV1909",
+  },
+  "Matt.18.18": {
+    osis: "Matt.18.18",
+    text: "De cierto os digo [que] todo lo que ligareis en la tierra, será ligado en el cielo; y todo lo que desatareis en la tierra, será desatado en el cielo.",
+    edition: "RV1909",
+  },
+  "John.20.23": {
+    osis: "John.20.23",
+    text: "A los que remitiereis los pecados, les son remitidos: á quienes los retuviereis, serán retenidos.",
+    edition: "RV1909",
+  },
+  "John.1.42": {
+    osis: "John.1.42",
+    text: "Y le trajo á Jesús. Y mirándole Jesús, dijo: Tú eres Simón, hijo de Jonás: tú serás llamado Cephas (que quiere decir, Piedra).",
+    edition: "RV1909",
+  },
+  "Matt.16.16": {
+    osis: "Matt.16.16",
+    text: "Y respondiendo Simón Pedro, dijo: Tú eres el Cristo, el Hijo del Dios viviente.",
+    edition: "RV1909",
+  },
+  "Matt.16.17": {
+    osis: "Matt.16.17",
+    text: "Entonces, respondiendo Jesús, le dijo: Bienaventurado eres, Simón, hijo de Jonás; porque no te lo reveló carne ni sangre, mas mi Padre que está en los cielos.",
+    edition: "RV1909",
+  },
+  "Matt.16.18": {
+    osis: "Matt.16.18",
+    text: "Mas yo también te digo, que tú eres Pedro, y sobre esta piedra edificaré mi iglesia; y las puertas del infierno no prevalecerán contra ella.",
+    edition: "RV1909",
+  },
+  "Matt.16.19": {
+    osis: "Matt.16.19",
+    text: "Y á ti daré las llaves del reino de los cielos; y todo lo que ligares en la tierra será ligado en los cielos; y todo lo que desatares en la tierra será desatado en los cielos.",
+    edition: "RV1909",
+  },
+  "John.21.16": {
+    osis: "John.21.16",
+    text: "Vuélvele á decir la segunda vez: Simón, [hijo] de Jonás, ¿me amas? Respóndele: Sí, Señor: tú sabes que te amo. Dícele: Apacienta mis ovejas.",
+    edition: "RV1909",
+  },
+  "John.21.17": {
+    osis: "John.21.17",
+    text: "Dícele la tercera vez: Simón, [hijo] de Jonás, ¿me amas? Entristecióse Pedro de que le dijese la tercera vez: ¿Me amas? y dícele: Señor, tú sabes todas las cosas; tú sabes que te amo. Dícele Jesús: Apacienta mis ovejas.",
+    edition: "RV1909",
+  },
+  "John.21.15": {
+    osis: "John.21.15",
+    text: "Y cuando hubieron comido, Jesús dijo á Simón Pedro: Simón, [hijo] de Jonás, ¿me amas más que éstos? Dícele: Sí, Señor: tú sabes que te amo. Dícele: Apacienta mis corderos.",
+    edition: "RV1909",
+  },
+  "Luke.22.25": {
+    osis: "Luke.22.25",
+    text: "Entonces él les dijo: Los reyes de las gentes se enseñorean de ellas; y los que sobre ellas tienen potestad, son llamados bienhechores:",
+    edition: "RV1909",
+  },
+  "Luke.22.26": {
+    osis: "Luke.22.26",
+    text: "Mas vosotros, no así: antes el que es mayor entre vosotros, sea como el más mozo; y el que es príncipe, como el que sirve.",
+    edition: "RV1909",
+  },
+  "John.20.21": {
+    osis: "John.20.21",
+    text: "Entonces les dijo Jesús otra vez: Paz á vosotros; como me envió el Padre, así también yo os envío.",
+    edition: "RV1909",
+  },
+  "Gal.2.1": {
+    osis: "Gal.2.1",
+    text: "DESPUÉS, pasados catorce años, fuí otra vez á Jerusalem juntamente con Bernabé, tomando también conmigo á Tito.",
+    edition: "RV1909",
+  },
+  "Gal.2.2": {
+    osis: "Gal.2.2",
+    text: "Empero fuí por revelación, y comuniquéles el evangelio que predico entre los Gentiles; mas particularmente á los que parecían ser algo, por no correr en vano, ó haber corrido.",
+    edition: "RV1909",
+  },
+  "Gal.2.3": {
+    osis: "Gal.2.3",
+    text: "Mas ni aun Tito, que estaba conmigo, siendo Griego, fué compelido á circuncidarse.",
+    edition: "RV1909",
+  },
+  "Gal.2.4": {
+    osis: "Gal.2.4",
+    text: "Y eso por causa de los falsos hermanos, que se entraban secretamente para espiar nuestra libertad que tenemos en Cristo Jesús, para ponernos en servidumbre;",
+    edition: "RV1909",
+  },
+  "Gal.2.5": {
+    osis: "Gal.2.5",
+    text: "A los cuales ni aun por una hora cedimos sujetándonos, para que la verdad del evangelio permaneciese con vosotros.",
+    edition: "RV1909",
+  },
+  "Gal.2.6": {
+    osis: "Gal.2.6",
+    text: "Empero de aquellos que parecían ser algo (cuáles hayan sido algún tiempo, no tengo que ver; Dios no acepta apariencia de hombre), á mí ciertamente los que parecían ser algo, nada me dieron.",
+    edition: "RV1909",
+  },
+  "Gal.2.7": {
+    osis: "Gal.2.7",
+    text: "Antes por el contrario, como vieron que el evangelio de la incircuncisión me era encargado, como á Pedro el de la circuncisión,",
+    edition: "RV1909",
+  },
+  "Gal.2.8": {
+    osis: "Gal.2.8",
+    text: "(Porque el que hizo por Pedro para el apostolado de la circuncisión, hizo también por mí para con los Gentiles;)",
+    edition: "RV1909",
+  },
+  "Gal.2.9": {
+    osis: "Gal.2.9",
+    text: "Y como vieron la gracia que me era dada, Jacobo y Cefas y Juan, que parecían ser las columnas, nos dieron las diestras de compañía á mí y á Bernabé, para que nosotros fuésemos á los Gentiles, y ellos á la circuncisión.",
+    edition: "RV1909",
+  },
+  "Gal.2.10": {
+    osis: "Gal.2.10",
+    text: "Solamente [nos pidieron] que nos acordásemos de los pobres; lo mismo que fuí también solícito en hacer.",
+    edition: "RV1909",
+  },
+  "Gal.2.11": {
+    osis: "Gal.2.11",
+    text: "Empero viniendo Pedro á Antioquía, le resistí en la cara, porque era de condenar.",
+    edition: "RV1909",
+  },
+  "Gal.2.12": {
+    osis: "Gal.2.12",
+    text: "Porque antes que viniesen unos [de parte] de Jacobo, comía con los Gentiles; mas después que vinieron, se retraía y apartaba, teniendo miedo de los que eran de la circuncisión.",
+    edition: "RV1909",
+  },
+  "Gal.2.13": {
+    osis: "Gal.2.13",
+    text: "Y á su disimulación consentían también los otros Judíos; de tal manera que aun Bernabé fué también llevado [de ellos] en su simulación.",
+    edition: "RV1909",
+  },
+  "Gal.2.14": {
+    osis: "Gal.2.14",
+    text: "Mas cuando vi que no andaban derechamente conforme á la verdad del evangelio, dije á Pedro delante de todos: Si tú, siendo Judío, vives como los Gentiles y no como Judío, ¿por qué constriñes á los Gentiles á judaizar?",
+    edition: "RV1909",
+  },
+  "Gal.2.15": {
+    osis: "Gal.2.15",
+    text: "Nosotros Judíos naturales, y no pecadores de los Gentiles,",
+    edition: "RV1909",
+  },
+  "Gal.2.16": {
+    osis: "Gal.2.16",
+    text: "Sabiendo que el hombre no es justificado por las obras de la ley, sino por la fe de Jesucristo, nosotros también hemos creído en Jesucristo, para que fuésemos justificados por la fe de Cristo, y no por las obras de la ley; por cuanto por las obras de la ley ninguna carne será justificada.",
+    edition: "RV1909",
+  },
+  "Gal.2.17": {
+    osis: "Gal.2.17",
+    text: "Y si buscando nosotros ser justificados en Cristo, también nosotros somos hallados pecadores, ¿es por eso Cristo ministro de pecado? En ninguna manera.",
+    edition: "RV1909",
+  },
+  "Gal.2.18": {
+    osis: "Gal.2.18",
+    text: "Porque si las cosas que destruí, las mismas vuelvo á edificar, transgresor me hago.",
+    edition: "RV1909",
+  },
+  "Gal.2.19": {
+    osis: "Gal.2.19",
+    text: "Porque yo por la ley soy muerto á la ley, para vivir á Dios.",
+    edition: "RV1909",
+  },
+  "Gal.2.20": {
+    osis: "Gal.2.20",
+    text: "Con Cristo estoy juntamente crucificado, y vivo, no ya yo, mas vive Cristo en mí: y lo que ahora vivo en la carne, [lo] vivo en la fe del Hijo de Dios, el cual me amó, y se entregó á sí mismo por mí.",
+    edition: "RV1909",
+  },
+  "Gal.2.21": {
+    osis: "Gal.2.21",
+    text: "No desecho la gracia de Dios: porque si por la ley fuese la justicia, entonces por demás murió Cristo.",
+    edition: "RV1909",
+  },
+  "Luke.22.27": {
+    osis: "Luke.22.27",
+    text: "Porque, ¿cuál es mayor, el que se sienta á la mesa, ó el que sirve? ¿No es el que se sienta á la mesa? Y yo soy entre vosotros como el que sirve.",
+    edition: "RV1909",
+  },
+  "Matt.20.25": {
+    osis: "Matt.20.25",
+    text: "Entonces Jesús llamándolos, dijo: Sabéis que los príncipes de los Gentiles se enseñorean sobre ellos, y los que son grandes ejercen sobre ellos potestad.",
+    edition: "RV1909",
+  },
+  "2Thess.2.3": {
+    osis: "2Thess.2.3",
+    text: "No os engañe nadie en ninguna manera; porque [no vendrá] sin que venga antes la apostasía, y se manifieste el hombre de pecado, el hijo de perdición,",
+    edition: "RV1909",
+  },
+  "2Thess.2.4": {
+    osis: "2Thess.2.4",
+    text: "Oponiéndose, y levantándose contra todo lo que se llama Dios, ó que se adora; tanto que se asiente en el templo de Dios como Dios, haciéndose parecer Dios.",
+    edition: "RV1909",
+  },
+  "John.18.36": {
+    osis: "John.18.36",
+    text: "Respondió Jesús: Mi reino no es de este mundo: si de este mundo fuera mi reino, mis servidores pelearían para que yo no fuera entregado á los Judíos: ahora, pues, mi reino no es de aquí.",
+    edition: "RV1909",
+  },
+  "Luke.22.31": {
+    osis: "Luke.22.31",
+    text: "Dijo también el Señor: Simón, Simón, he aquí Satanás os ha pedido para zarandaros como á trigo;",
+    edition: "RV1909",
+  },
+  "Luke.22.32": {
+    osis: "Luke.22.32",
+    text: "Mas yo he rogado por ti que tu fe no falte: y tú, una vez vuelto, confirma á tus hermanos.",
+    edition: "RV1909",
+  },
+  "Matt.28.16": {
+    osis: "Matt.28.16",
+    text: "Mas los once discípulos se fueron á Galilea, al monte donde Jesús les había ordenado.",
+    edition: "RV1909",
+  },
+  "Matt.28.17": {
+    osis: "Matt.28.17",
+    text: "Y como le vieron, le adoraron: mas algunos dudaban.",
+    edition: "RV1909",
+  },
+  "Matt.28.18": {
+    osis: "Matt.28.18",
+    text: "Y llegando Jesús, les habló, diciendo: Toda potestad me es dada en el cielo y en la tierra.",
     edition: "RV1909",
   },
   "Matt.28.19": {
     osis: "Matt.28.19",
     text: "Por tanto, id, y doctrinad á todos los Gentiles, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo:",
+    edition: "RV1909",
+  },
+  "Matt.28.20": {
+    osis: "Matt.28.20",
+    text: "Enseñándoles que guarden todas las cosas que os he mandado: y he aquí, yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.",
+    edition: "RV1909",
+  },
+  "Matt.10.2": {
+    osis: "Matt.10.2",
+    text: "Y los nombres de los doce apóstoles son estos: el primero, Simón, que es dicho Pedro, y Andrés su hermano; Jacobo, [hijo] de Zebedeo, y Juan su hermano;",
+    edition: "RV1909",
+  },
+  "Mark.3.16": {
+    osis: "Mark.3.16",
+    text: "A Simón, al cual puso por nombre Pedro;",
+    edition: "RV1909",
+  },
+  "Luke.6.14": {
+    osis: "Luke.6.14",
+    text: "A Simón, al cual también llamó Pedro, y á Andrés su hermano, Jacobo y Juan, Felipe y Bartolomé,",
+    edition: "RV1909",
+  },
+  "Acts.1.13": {
+    osis: "Acts.1.13",
+    text: "Y entrados, subieron al aposento alto, donde moraban Pedro y Jacobo, y Juan y Andrés, Felipe y Tomás, Bartolomé y Mateo, Jacobo [hijo] de Alfeo, y Simón Zelotes, y Judas [hermano] de Jacobo.",
+    edition: "RV1909",
+  },
+  "Acts.2.14": {
+    osis: "Acts.2.14",
+    text: "Entonces Pedro, poniéndose en pie con los once, alzó su voz, y hablóles diciendo: Varones Judíos, y todos los que habitáis en Jerusalem, esto os sea notorio, y oid mis palabras.",
+    edition: "RV1909",
+  },
+  "Acts.2.37": {
+    osis: "Acts.2.37",
+    text: "Entonces oído [esto], fueron compungidos de corazón, y dijeron á Pedro y á los otros apóstoles: Varones hermanos, ¿qué haremos?",
+    edition: "RV1909",
+  },
+  "Acts.5.29": {
+    osis: "Acts.5.29",
+    text: "Y respondiendo Pedro y los apóstoles, dijeron: Es menester obedecer á Dios antes que á los hombres.",
+    edition: "RV1909",
+  },
+  "1Cor.15.5": {
+    osis: "1Cor.15.5",
+    text: "Y que apareció á Cefas, y después á los doce.",
+    edition: "RV1909",
+  },
+  "Matt.16.23": {
+    osis: "Matt.16.23",
+    text: "Entonces él, volviéndose, dijo á Pedro: Quítate de delante de mí, Satanás; me eres escándalo; porque no entiendes lo que es de Dios sino lo que es de los hombres.",
+    edition: "RV1909",
+  },
+  "John.13.38": {
+    osis: "John.13.38",
+    text: "Respondióle Jesús: ¿Tu alma pondrás por mí? De cierto, de cierto te digo: No cantará el gallo, sin que me hayas negado tres veces.",
+    edition: "RV1909",
+  },
+  "Luke.5.8": {
+    osis: "Luke.5.8",
+    text: "Lo cual viendo Simón Pedro, se derribó de rodillas á Jesús, diciendo: Apártate de mí, Señor, porque soy hombre pecador.",
+    edition: "RV1909",
+  },
+  "Rev.21.14": {
+    osis: "Rev.21.14",
+    text: "Y el muro de la ciudad tenía doce fundamentos, y en ellos los doce nombres de los doce apóstoles del Cordero.",
+    edition: "RV1909",
+  },
+  "1Pet.2.4": {
+    osis: "1Pet.2.4",
+    text: "Al cual allegándoos, piedra viva, reprobada cierto de los hombres, empero elegida de Dios, preciosa,",
+    edition: "RV1909",
+  },
+  "John.17.21": {
+    osis: "John.17.21",
+    text: "Para que todos sean una cosa; como tú, oh Padre, en mí, y yo en ti, que también ellos sean en nosotros una cosa: para que el mundo crea que tú me enviaste.",
+    edition: "RV1909",
+  },
+  "2Cor.11.28": {
+    osis: "2Cor.11.28",
+    text: "Sin [otras] cosas además, lo que sobre mí se agolpa cada día, la solicitud de todas las iglesias.",
+    edition: "RV1909",
+  },
+  "Eph.1.22": {
+    osis: "Eph.1.22",
+    text: "Y sometió todas las cosas debajo de sus pies, y diólo por cabeza sobre todas las cosas á la iglesia,",
+    edition: "RV1909",
+  },
+  "Matt.23.8": {
+    osis: "Matt.23.8",
+    text: "Mas vosotros, no queráis ser llamados Rabbí; porque uno es vuestro Maestro, el Cristo; y todos vosotros sois hermanos.",
+    edition: "RV1909",
+  },
+  "John.20.22": {
+    osis: "John.20.22",
+    text: "Y como hubo dicho esto, sopló, y díjoles: Tomad el Espíritu Santo:",
+    edition: "RV1909",
+  },
+  "Matt.16.15": {
+    osis: "Matt.16.15",
+    text: "El les dice: Y vosotros, ¿quién decís que soy?",
+    edition: "RV1909",
+  },
+  "Matt.18.19": {
+    osis: "Matt.18.19",
+    text: "Otra vez os digo, que si dos de vosotros se convinieren en la tierra, de toda cosa que pidieren, les será hecho por mi Padre que está en los cielos.",
+    edition: "RV1909",
+  },
+  "1Cor.3.10": {
+    osis: "1Cor.3.10",
+    text: "Conforme á la gracia de Dios que me ha sido dada, yo como perito arquitecto puse el fundamento, y otro edifica encima: empero cada uno vea cómo sobreedifica.",
+    edition: "RV1909",
+  },
+  "1Cor.3.11": {
+    osis: "1Cor.3.11",
+    text: "Porque nadie puede poner otro fundamento que el que está puesto, el cual es Jesucristo.",
+    edition: "RV1909",
+  },
+  "Eph.2.19": {
+    osis: "Eph.2.19",
+    text: "Así que ya no sois extranjeros ni advenedizos, sino juntamente ciudadanos con los santos, y domésticos de Dios;",
+    edition: "RV1909",
+  },
+  "Luke.22.24": {
+    osis: "Luke.22.24",
+    text: "Y hubo entre ellos una contienda, quién de ellos parecía ser el mayor.",
+    edition: "RV1909",
+  },
+  "Matt.18.1": {
+    osis: "Matt.18.1",
+    text: "EN aquel tiempo se llegaron los discípulos á Jesús, diciendo: ¿Quién es el mayor en el reino de los cielos?",
+    edition: "RV1909",
+  },
+  "Matt.18.2": {
+    osis: "Matt.18.2",
+    text: "Y llamando Jesús á un niño, le puso en medio de ellos,",
+    edition: "RV1909",
+  },
+  "Matt.18.3": {
+    osis: "Matt.18.3",
+    text: "Y dijo: De cierto os digo, que si no os volviereis, y fuereis como niños, no entraréis en el reino de los cielos.",
+    edition: "RV1909",
+  },
+  "Matt.18.4": {
+    osis: "Matt.18.4",
+    text: "Así que, cualquiera que se humillare como este niño, éste es el mayor en el reino de los cielos.",
+    edition: "RV1909",
+  },
+  "1Cor.3.6": {
+    osis: "1Cor.3.6",
+    text: "Yo planté, Apolos regó: mas Dios ha dado el crecimiento.",
+    edition: "RV1909",
+  },
+  "1Cor.3.21": {
+    osis: "1Cor.3.21",
+    text: "Así que, ninguno se gloríe en los hombres; porque todo es vuestro;",
+    edition: "RV1909",
+  },
+  "1Cor.3.22": {
+    osis: "1Cor.3.22",
+    text: "Sea Pablo, sea Apolos, sea Cefas, sea el mundo, sea la vida, sea la muerte, sea lo presente, sea los por venir; todo es vuestro;",
+    edition: "RV1909",
+  },
+  "Acts.15.1": {
+    osis: "Acts.15.1",
+    text: "ENTONCES algunos que venían de Judea enseñaban á los hermanos: Que si no os circuncidáis conforme al rito de Moisés, no podéis ser salvos.",
+    edition: "RV1909",
+  },
+  "Acts.15.2": {
+    osis: "Acts.15.2",
+    text: "Así que, suscitada una disensión y contienda no pequeña á Pablo y á Bernabé contra ellos, determinaron que subiesen Pablo y Bernabé á Jerusalem, y algunos otros de ellos, á los apóstoles y á los ancianos, sobre esta cuestión.",
+    edition: "RV1909",
+  },
+  "Acts.15.3": {
+    osis: "Acts.15.3",
+    text: "Ellos, pues, habiendo sido acompañados de la iglesia, pasaron por la Fenicia y Samaria, contando la conversión de los Gentiles; y daban gran gozo á todos los hermanos.",
+    edition: "RV1909",
+  },
+  "Acts.15.4": {
+    osis: "Acts.15.4",
+    text: "Y llegados á Jerusalem, fueron recibidos de la iglesia y de los apóstoles y de los ancianos: y refirieron todas las cosas que Dios había hecho con ellos.",
+    edition: "RV1909",
+  },
+  "Acts.15.5": {
+    osis: "Acts.15.5",
+    text: "Mas algunos de la secta de los Fariseos, que habían creído, se levantaron, diciendo: Que es menester circuncidarlos, y mandarles que guarden la ley de Moisés.",
+    edition: "RV1909",
+  },
+  "Acts.15.6": {
+    osis: "Acts.15.6",
+    text: "Y se juntaron los apóstoles y los ancianos para conocer de este negocio.",
+    edition: "RV1909",
+  },
+  "Acts.15.7": {
+    osis: "Acts.15.7",
+    text: "Y habiendo habido grande contienda, levantándose Pedro, les dijo: Varones hermanos, vosotros sabéis cómo ya hace algún tiempo que Dios escogió que los Gentiles oyesen por mi boca la palabra del evangelio, y creyesen.",
+    edition: "RV1909",
+  },
+  "Acts.15.8": {
+    osis: "Acts.15.8",
+    text: "Y Dios, que conoce los corazones, les dió testimonio, dándoles el Espíritu Santo también como á nosotros;",
+    edition: "RV1909",
+  },
+  "Acts.15.9": {
+    osis: "Acts.15.9",
+    text: "Y ninguna diferencia hizo entre nosotros y ellos, purificando con la fe sus corazones.",
+    edition: "RV1909",
+  },
+  "Acts.15.10": {
+    osis: "Acts.15.10",
+    text: "Ahora pues, ¿por qué tentáis á Dios, poniendo sobre la cerviz de los discípulos yugo, que ni nuestros padres ni nosotros hemos podido llevar?",
+    edition: "RV1909",
+  },
+  "Acts.15.11": {
+    osis: "Acts.15.11",
+    text: "Antes por la gracia del Señor Jesús creemos que seremos salvos, como también ellos.",
+    edition: "RV1909",
+  },
+  "Acts.15.12": {
+    osis: "Acts.15.12",
+    text: "Entonces toda la multitud calló, y oyeron á Bernabé y á Pablo, que contaban cuán grandes maravillas y señales Dios había hecho por ellos entre los Gentiles.",
+    edition: "RV1909",
+  },
+  "Acts.15.13": {
+    osis: "Acts.15.13",
+    text: "Y después que hubieron callado, Jacobo respondió, diciendo: Varones hermanos, oidme:",
+    edition: "RV1909",
+  },
+  "Acts.15.14": {
+    osis: "Acts.15.14",
+    text: "Simón ha contado cómo Dios primero visitó á los Gentiles, para tomar de ellos pueblo para su nombre;",
+    edition: "RV1909",
+  },
+  "Acts.15.15": {
+    osis: "Acts.15.15",
+    text: "Y con esto concuerdan las palabras de los profetas, como está escrito:",
+    edition: "RV1909",
+  },
+  "Acts.15.16": {
+    osis: "Acts.15.16",
+    text: "Después de esto volveré y restauraré la habitación de David, que estaba caída; y repararé sus ruinas, y la volveré á levantar;",
+    edition: "RV1909",
+  },
+  "Acts.15.17": {
+    osis: "Acts.15.17",
+    text: "Para que el resto de los hombres busque al Señor, y todos los Gentiles, sobre los cuales es llamado mi nombre, dice el Señor, que hace todas estas cosas.",
+    edition: "RV1909",
+  },
+  "Acts.15.18": {
+    osis: "Acts.15.18",
+    text: "Conocidas son á Dios desde el siglo todas sus obras.",
+    edition: "RV1909",
+  },
+  "Acts.15.19": {
+    osis: "Acts.15.19",
+    text: "Por lo cual yo juzgo, que los que de los Gentiles se convierten á Dios, no han de ser inquietados;",
+    edition: "RV1909",
+  },
+  "Acts.15.20": {
+    osis: "Acts.15.20",
+    text: "Sino escribirles que se aparten de las contaminaciones de los ídolos, y de fornicación, y de ahogado, y de sangre.",
+    edition: "RV1909",
+  },
+  "Acts.15.21": {
+    osis: "Acts.15.21",
+    text: "Porque Moisés desde los tiempos antiguos tiene en cada ciudad quien le predique en las sinagogas, donde es leído cada sábado.",
+    edition: "RV1909",
+  },
+  "Acts.15.22": {
+    osis: "Acts.15.22",
+    text: "Entonces pareció bien á los apóstoles y á los ancianos, con toda la iglesia, elegir varones de ellos, y enviarlos á Antioquía con Pablo y Bernabé: á Judas que tenía por sobrenombre Barsabas, y á Silas, varones principales entre los hermanos;",
+    edition: "RV1909",
+  },
+  "Acts.15.23": {
+    osis: "Acts.15.23",
+    text: "Y escribir por mano de ellos: Los apóstoles y los ancianos y los hermanos, á los hermanos de los Gentiles que están en Antioquía, y en Siria, y en Cilicia, salud:",
+    edition: "RV1909",
+  },
+  "Acts.15.24": {
+    osis: "Acts.15.24",
+    text: "Por cuanto hemos oído que algunos que han salido de nosotros, os han inquietado con palabras, trastornando vuestras almas, mandando circuncidaros y guardar la ley, á los cuales no mandamos;",
+    edition: "RV1909",
+  },
+  "Acts.15.25": {
+    osis: "Acts.15.25",
+    text: "Nos ha parecido, congregados en uno, elegir varones, y enviarlos á vosotros con nuestros amados Bernabé y Pablo,",
+    edition: "RV1909",
+  },
+  "Acts.15.26": {
+    osis: "Acts.15.26",
+    text: "Hombres que han expuesto sus vidas por el nombre de nuestro Señor Jesucristo.",
+    edition: "RV1909",
+  },
+  "Acts.15.27": {
+    osis: "Acts.15.27",
+    text: "Así que, enviamos á Judas y á Silas, los cuales también por palabra os harán saber lo mismo.",
+    edition: "RV1909",
+  },
+  "Acts.15.28": {
+    osis: "Acts.15.28",
+    text: "Que ha parecido bien al Espíritu Santo, y á nosotros, no imponeros ninguna carga más que estas cosas necesarias:",
+    edition: "RV1909",
+  },
+  "Acts.15.29": {
+    osis: "Acts.15.29",
+    text: "Que os abstengáis de cosas sacrificadas á ídolos, y de sangre, y de ahogado, y de fornicación; de las cuales cosas si os guardareis, bien haréis. Pasadlo bien.",
+    edition: "RV1909",
+  },
+  "Acts.15.30": {
+    osis: "Acts.15.30",
+    text: "Ellos entonces enviados, descendieron á Antioquía; y juntando la multitud, dieron la carta.",
+    edition: "RV1909",
+  },
+  "Acts.15.31": {
+    osis: "Acts.15.31",
+    text: "La cual, como leyeron, fueron gozosos de la consolación.",
+    edition: "RV1909",
+  },
+  "Acts.15.32": {
+    osis: "Acts.15.32",
+    text: "Judas también y Silas, como ellos también eran profetas, consolaron y confirmaron á los hermanos con abundancia de palabra.",
+    edition: "RV1909",
+  },
+  "Acts.15.33": {
+    osis: "Acts.15.33",
+    text: "Y pasando [allí] algún tiempo, fueron enviados de los hermanos á los apóstoles en paz.",
+    edition: "RV1909",
+  },
+  "Acts.15.34": {
+    osis: "Acts.15.34",
+    text: "Mas á Silas pareció bien el quedarse allí.",
+    edition: "RV1909",
+  },
+  "Acts.15.35": {
+    osis: "Acts.15.35",
+    text: "Y Pablo y Bernabé se estaban en Antioquía, enseñando la palabra del Señor y anunciando el evangelio con otros muchos.",
+    edition: "RV1909",
+  },
+  "Acts.15.36": {
+    osis: "Acts.15.36",
+    text: "Y después de algunos días, Pablo dijo á Bernabé: Volvamos á visitar á los hermanos por todas las ciudades en las cuales hemos anunciado la palabra del Señor, cómo están.",
+    edition: "RV1909",
+  },
+  "Acts.15.37": {
+    osis: "Acts.15.37",
+    text: "Y Bernabé quería que tomasen consigo á Juan, el que tenía por sobrenombre Marcos;",
+    edition: "RV1909",
+  },
+  "Acts.15.38": {
+    osis: "Acts.15.38",
+    text: "Mas á Pablo no le parecía bien llevar consigo al que se había apartado de ellos desde Pamphylia, y no había ido con ellos á la obra.",
+    edition: "RV1909",
+  },
+  "Acts.15.39": {
+    osis: "Acts.15.39",
+    text: "Y hubo tal contención entre ellos, que se apartaron el uno del otro; y Bernabé tomando á Marcos, navegó á Cipro.",
+    edition: "RV1909",
+  },
+  "Acts.15.40": {
+    osis: "Acts.15.40",
+    text: "Y Pablo escogiendo á Silas, partió encomendado de los hermanos á la gracia del Señor.",
+    edition: "RV1909",
+  },
+  "Acts.15.41": {
+    osis: "Acts.15.41",
+    text: "Y anduvo la Siria y la Cilicia, confirmando á las iglesias.",
+    edition: "RV1909",
+  },
+  "1John.2.20": {
+    osis: "1John.2.20",
+    text: "Mas vosotros tenéis la unción del Santo, y conocéis todas las cosas.",
+    edition: "RV1909",
+  },
+  "1John.2.27": {
+    osis: "1John.2.27",
+    text: "Pero la unción que vosotros habéis recibido de él, mora en vosotros, y no tenéis necesidad que ninguno os enseñe; mas como la unción misma os enseña de todas cosas, y es verdadera, y no es mentira, así como os ha enseñado, perseveraréis en él.",
+    edition: "RV1909",
+  },
+  "Matt.22.29": {
+    osis: "Matt.22.29",
+    text: "Entonces respondiendo Jesús, les dijo: Erráis ignorando las Escrituras, y el poder de Dios.",
+    edition: "RV1909",
+  },
+  "Matt.22.31": {
+    osis: "Matt.22.31",
+    text: "Y de la resurrección de los muertos, ¿no habéis leído lo que os es dicho por Dios, que dice:",
+    edition: "RV1909",
+  },
+  "Acts.28.25": {
+    osis: "Acts.28.25",
+    text: "Y como fueron entre sí discordes, se fueron, diciendo Pablo esta palabra: Bien ha hablado el Espíritu Santo por el profeta Isaías á nuestros padres,",
+    edition: "RV1909",
+  },
+  "2Thess.2.8": {
+    osis: "2Thess.2.8",
+    text: "Y entonces será manifestado aquel inicuo, al cual el Señor matará con el espíritu de su boca, y destruirá con el resplandor de su venida;",
+    edition: "RV1909",
+  },
+  "2Thess.2.9": {
+    osis: "2Thess.2.9",
+    text: "[A aquel inicuo], cuyo advenimiento es según operación de Satanás, con grande potencia, y señales, y milagros mentirosos,",
+    edition: "RV1909",
+  },
+  "Rev.13.6": {
+    osis: "Rev.13.6",
+    text: "Y abrió su boca en blasfemias contra Dios, para blasfemar su nombre, y su tabernáculo, y á los que moran en el cielo.",
+    edition: "RV1909",
+  },
+  "Rev.12.1": {
+    osis: "Rev.12.1",
+    text: "Y UNA grande señal apareció en el cielo: una mujer vestida del sol, y la luna debajo de sus pies, y sobre su cabeza una corona de doce estrellas.",
+    edition: "RV1909",
+  },
+  "Rev.12.2": {
+    osis: "Rev.12.2",
+    text: "Y estando preñada, clamaba con dolores de parto, y sufría tormento por parir.",
+    edition: "RV1909",
+  },
+  "Rev.12.3": {
+    osis: "Rev.12.3",
+    text: "Y fué vista otra señal en el cielo: y he aquí un grande dragón bermejo, que tenía siete cabezas y diez cuernos, y en sus cabezas siete diademas.",
+    edition: "RV1909",
+  },
+  "Rev.12.4": {
+    osis: "Rev.12.4",
+    text: "Y su cola arrastraba la tercera parte de las estrellas del cielo, y las echó en tierra. Y el dragón se paró delante de la mujer que estaba para parir, á fin de devorar á su hijo cuando hubiese parido.",
+    edition: "RV1909",
+  },
+  "Rev.12.5": {
+    osis: "Rev.12.5",
+    text: "Y ella parió un hijo varón, el cual había de regir todas las gentes con vara de hierro: y su hijo fué arrebatado para Dios y á su trono.",
+    edition: "RV1909",
+  },
+  "Rev.12.6": {
+    osis: "Rev.12.6",
+    text: "Y la mujer huyó al desierto, donde tiene lugar aparejado de Dios, para que allí la mantengan mil doscientos y sesenta días.",
+    edition: "RV1909",
+  },
+  "Rev.12.7": {
+    osis: "Rev.12.7",
+    text: "Y fué hecha una grande batalla en el cielo: Miguel y sus ángeles lidiaban contra el dragón; y lidiaba el dragón y sus ángeles,",
+    edition: "RV1909",
+  },
+  "Rev.12.8": {
+    osis: "Rev.12.8",
+    text: "Y no prevalecieron, ni su lugar fué más hallado en el cielo.",
+    edition: "RV1909",
+  },
+  "Rev.12.9": {
+    osis: "Rev.12.9",
+    text: "Y fué lanzado fuera aquel gran dragón, la serpiente antigua, que se llama Diablo y Satanás, el cual engaña á todo el mundo; fué arrojado en tierra, y sus ángeles fueron arrojados con él.",
+    edition: "RV1909",
+  },
+  "Rev.12.10": {
+    osis: "Rev.12.10",
+    text: "Y oí una grande voz en el cielo que decía: Ahora ha venido la salvación, y la virtud, y el reino de nuestro Dios, y el poder de su Cristo; porque el acusador de nuestros hermanos ha sido arrojado, el cual los acusaba delante de nuestro Dios día y noche.",
+    edition: "RV1909",
+  },
+  "Rev.12.11": {
+    osis: "Rev.12.11",
+    text: "Y ellos le han vencido por la sangre del Cordero, y por la palabra de su testimonio; y no han amado sus vidas hasta la muerte.",
+    edition: "RV1909",
+  },
+  "Rev.12.12": {
+    osis: "Rev.12.12",
+    text: "Por lo cual alegraos, cielos, y los que moráis en ellos. ¡Ay de los moradores de la tierra y del mar! porque el diablo ha descendido á vosotros, teniendo grande ira, sabiendo que tiene poco tiempo.",
+    edition: "RV1909",
+  },
+  "Rev.12.13": {
+    osis: "Rev.12.13",
+    text: "Y cuando vió el dragón que él había sido arrojado á la tierra, persiguió á la mujer que había parido al hijo varón.",
+    edition: "RV1909",
+  },
+  "Rev.12.14": {
+    osis: "Rev.12.14",
+    text: "Y fueron dadas á la mujer dos alas de grande águila, para que de la presencia de la serpiente volase al desierto, á su lugar, donde es mantenida por un tiempo, y tiempos, y la mitad de un tiempo.",
+    edition: "RV1909",
+  },
+  "Rev.12.15": {
+    osis: "Rev.12.15",
+    text: "Y la serpiente echó de su boca tras la mujer agua como un río, á fin de hacer que fuese arrebatada del río.",
+    edition: "RV1909",
+  },
+  "Rev.12.16": {
+    osis: "Rev.12.16",
+    text: "Y la tierra ayudó á la mujer, y la tierra abrió su boca, y sorbió el río que había echado el dragón de su boca.",
+    edition: "RV1909",
+  },
+  "Rev.12.17": {
+    osis: "Rev.12.17",
+    text: "Entonces el dragón fué airado contra la mujer; y se fué á hacer guerra contra los otros de la simiente de ella, los cuales guardan los mandamientos de Dios, y tienen el testimonio de Jesucristo.",
+    edition: "RV1909",
+  },
+  "Gal.1.8": {
+    osis: "Gal.1.8",
+    text: "Mas aun si nosotros ó un ángel del cielo os anunciare otro evangelio del que os hemos anunciado, sea anatema.",
+    edition: "RV1909",
+  },
+  "Matt.7.15": {
+    osis: "Matt.7.15",
+    text: "Y guardaos de los falsos profetas, que vienen á vosotros con vestidos de ovejas, mas de dentro son lobos rapaces.",
+    edition: "RV1909",
+  },
+  "Titus.3.10": {
+    osis: "Titus.3.10",
+    text: "Rehusa hombre hereje, después de una y otra amonestación;",
+    edition: "RV1909",
+  },
+  "2Cor.6.14": {
+    osis: "2Cor.6.14",
+    text: "No os juntéis en yugo con los infieles: porque ¿qué compañía tiene la justicia con la injusticia? ¿y qué comunión la luz con las tinieblas?",
+    edition: "RV1909",
+  },
+  "2Cor.1.24": {
+    osis: "2Cor.1.24",
+    text: "No que nos enseñoreemos de vuestra fe, mas somos ayudadores de vuestro gozo: porque por la fe estáis firmes.",
+    edition: "RV1909",
+  },
+  "2Cor.10.4": {
+    osis: "2Cor.10.4",
+    text: "(Porque las armas de nuestra milicia no son carnales, sino poderosas en Dios para la destrucción de fortalezas;)",
+    edition: "RV1909",
+  },
+  "Mark.16.15": {
+    osis: "Mark.16.15",
+    text: "Y les dijo: Id por todo el mundo; predicad el evangelio á toda criatura.",
+    edition: "RV1909",
+  },
+  "2Tim.3.17": {
+    osis: "2Tim.3.17",
+    text: "Para que el hombre de Dios sea perfecto, enteramente instruído para toda buena obra.",
+    edition: "RV1909",
+  },
+  "2Tim.3.16": {
+    osis: "2Tim.3.16",
+    text: "Toda Escritura [es] inspirada divinamente y útil para enseñar, para redargüir, para corregir, para instituir en justicia,",
+    edition: "RV1909",
+  },
+  "Matt.15.9": {
+    osis: "Matt.15.9",
+    text: "Mas en vano me honran, enseñando doctrinas [y] mandamientos de hombres.",
+    edition: "RV1909",
+  },
+  "Acts.17.11": {
+    osis: "Acts.17.11",
+    text: "Y fueron éstos más nobles que los que [estaban] en Tesalónica, pues recibieron la palabra con toda solicitud, escudriñando cada día las Escrituras, si estas cosas eran así.",
+    edition: "RV1909",
+  },
+  "2Thess.2.15": {
+    osis: "2Thess.2.15",
+    text: "Así que, hermanos, estad firmes, y retened la doctrina que habéis aprendido, sea por palabra, ó por carta nuestra.",
+    edition: "RV1909",
+  },
+  "Jude.1.3": {
+    osis: "Jude.1.3",
+    text: "Amados, por la gran solicitud que tenía de escribiros de la común salud, me ha sido necesario escribiros amonestándoos que contendáis eficazmente por la fe que ha sido una vez dada á los santos.",
+    edition: "RV1909",
+  },
+  "1Tim.3.15": {
+    osis: "1Tim.3.15",
+    text: "Y si no fuere tan presto, para que sepas cómo te conviene conversar en la casa de Dios, que es la iglesia del Dios vivo, columna y apoyo de la verdad.",
+    edition: "RV1909",
+  },
+  "1Tim.6.20": {
+    osis: "1Tim.6.20",
+    text: "Oh Timoteo, guarda lo que se te ha encomendado, evitando las profanas pláticas de vanas cosas, y los argumentos de la falsamente llamada ciencia:",
+    edition: "RV1909",
+  },
+  "2Tim.1.12": {
+    osis: "2Tim.1.12",
+    text: "Por lo cual asimismo padezco esto: mas no me avergüenzo; porque yo sé á quien he creído, y estoy cierto que es poderoso para guardar mi depósito para aquel día.",
+    edition: "RV1909",
+  },
+  "2Tim.1.13": {
+    osis: "2Tim.1.13",
+    text: "Retén la forma de las sanas palabras que de mí oíste, en la fe y amor que es en Cristo Jesús.",
+    edition: "RV1909",
+  },
+  "2Tim.1.14": {
+    osis: "2Tim.1.14",
+    text: "Guarda el buen depósito por el Espíritu Santo que habita en nosotros.",
+    edition: "RV1909",
+  },
+  "Luke.10.16": {
+    osis: "Luke.10.16",
+    text: "El que á vosotros oye, á mí oye; y el que á vosotros desecha, á mí desecha; y el que á mí desecha, desecha al que me envió.",
+    edition: "RV1909",
+  },
+  "Acts.2.42": {
+    osis: "Acts.2.42",
+    text: "Y perseveraban en la doctrina de los apóstoles, y en la comunión, y en el partimiento del pan, y en las oraciones.",
+    edition: "RV1909",
+  },
+  "Luke.2.19": {
+    osis: "Luke.2.19",
+    text: "Mas María guardaba todas estas cosas, confiriéndolas en su corazón.",
+    edition: "RV1909",
+  },
+  "Luke.2.51": {
+    osis: "Luke.2.51",
+    text: "Y descendió con ellos, y vino á Nazaret, y estaba sujeto á ellos. Y su madre guardaba todas estas cosas en su corazón.",
+    edition: "RV1909",
+  },
+  "Col.3.16": {
+    osis: "Col.3.16",
+    text: "La palabra de Cristo habite en vosotros en abundancia en toda sabiduría, enseñándoos y exhortándoos los unos á los otros con salmos é himnos y canciones espirituales, con gracia cantando en vuestros corazones al Señor.",
+    edition: "RV1909",
+  },
+  "John.20.31": {
+    osis: "John.20.31",
+    text: "Estas empero son escritas, para que creáis que Jesús es el Cristo, el Hijo de Dios; y para que creyendo, tengáis vida en su nombre.",
+    edition: "RV1909",
+  },
+  "2Pet.1.19": {
+    osis: "2Pet.1.19",
+    text: "Tenemos también la palabra profética más permanente, á la cual hacéis bien de estar atentos como á una antorcha que alumbra en lugar oscuro hasta que el día esclarezca, y el lucero de la mañana salga en vuestros corazones:",
+    edition: "RV1909",
+  },
+  "2Pet.1.20": {
+    osis: "2Pet.1.20",
+    text: "Entendiendo primero esto, que ninguna profecía de la Escritura es de particular interpretación;",
+    edition: "RV1909",
+  },
+  "2Pet.1.21": {
+    osis: "2Pet.1.21",
+    text: "Porque la profecía no fué en los tiempos pasados traída por voluntad humana, sino los santos hombres de Dios hablaron siendo inspirados del Espíritu Santo.",
+    edition: "RV1909",
+  },
+  "2Pet.3.15": {
+    osis: "2Pet.3.15",
+    text: "Y tened por salud la paciencia de nuestro Señor; como también nuestro amado hermano Pablo, según la sabiduría que le ha sido dada, os ha escrito también;",
+    edition: "RV1909",
+  },
+  "2Pet.3.16": {
+    osis: "2Pet.3.16",
+    text: "Casi en todas [sus] epístolas, hablando en ellas de estas cosas; entre las cuales hay algunas difíciles de entender, las cuales los indoctos é inconstantes tuercen, como también las otras Escrituras, para perdición de sí mismos.",
+    edition: "RV1909",
+  },
+  "1Thess.2.13": {
+    osis: "1Thess.2.13",
+    text: "Por lo cual, también nosotros damos gracias á Dios sin cesar, de que habiendo recibido la palabra de Dios que oísteis de nosotros, recibisteis no palabra de hombres, sino según es en verdad, la palabra de Dios, el cual obra en vosotros los que creísteis.",
+    edition: "RV1909",
+  },
+  "Heb.4.12": {
+    osis: "Heb.4.12",
+    text: "Porque la palabra de Dios [es] viva y eficaz, y más penetrante que toda espada de dos filos: y que alcanza hasta partir el alma, y aun el espíritu, y las coyunturas y tuétanos, y discierne los pensamientos y las intenciones del corazón.",
+    edition: "RV1909",
+  },
+  "Acts.20.32": {
+    osis: "Acts.20.32",
+    text: "Y ahora, hermanos, os encomiendo á Dios, y á la palabra de su gracia: el cual es poderoso para sobreedificar, y daros heredad con todos los santificados.",
+    edition: "RV1909",
+  },
+  "Luke.24.45": {
+    osis: "Luke.24.45",
+    text: "Entonces les abrió el sentido, para que entendiesen las Escrituras;",
+    edition: "RV1909",
+  },
+  "Luke.24.25": {
+    osis: "Luke.24.25",
+    text: "Entonces él les dijo: ¡Oh insensatos, y tardos de corazón para creer todo lo que los profetas han dicho!",
+    edition: "RV1909",
+  },
+  "Luke.24.26": {
+    osis: "Luke.24.26",
+    text: "¿No era necesario que el Cristo padeciera estas cosas, y que entrara en su gloria?",
+    edition: "RV1909",
+  },
+  "Luke.24.27": {
+    osis: "Luke.24.27",
+    text: "Y comenzando desde Moisés, y de todos los profetas, declarábales en todas las Escrituras lo que de él decían.",
+    edition: "RV1909",
+  },
+  "Luke.24.44": {
+    osis: "Luke.24.44",
+    text: "Y él les dijo: Estas son las palabras que os hablé, estando aún con vosotros: que era necesario que se cumpliesen todas las cosas que están escritas de mí en la ley de Moisés, y en los profetas, y en los salmos.",
+    edition: "RV1909",
+  },
+  "Luke.24.46": {
+    osis: "Luke.24.46",
+    text: "Y díjoles: Así está escrito, y así fué necesario que el Cristo padeciese, y resucitase de los muertos al tercer día;",
+    edition: "RV1909",
+  },
+  "Rom.12.6": {
+    osis: "Rom.12.6",
+    text: "De manera que, teniendo diferentes dones según la gracia que nos es dada, si [el de] profecía, [úsese] conforme á la medida de la fe;",
+    edition: "RV1909",
+  },
+  "1John.2.21": {
+    osis: "1John.2.21",
+    text: "No os he escrito como si ignoraseis la verdad, sino como á los que la conocéis, y que ninguna mentira es de la verdad.",
+    edition: "RV1909",
+  },
+  "1John.2.22": {
+    osis: "1John.2.22",
+    text: "¿Quién es mentiroso, sino el que niega que Jesús es el Cristo? Este tal es anticristo, que niega al Padre y al Hijo.",
+    edition: "RV1909",
+  },
+  "1John.2.23": {
+    osis: "1John.2.23",
+    text: "Cualquiera que niega al Hijo, este tal tampoco tiene al Padre. Cualquiera que confiese al Hijo tiene también al Padre.",
+    edition: "RV1909",
+  },
+  "1John.2.24": {
+    osis: "1John.2.24",
+    text: "Pues lo que habéis oído desde el principio, sea permaneciente en vosotros. Si lo que habéis oído desde el principio fuere permaneciente en vosotros, también vosotros permaneceréis en el Hijo y en el Padre.",
+    edition: "RV1909",
+  },
+  "1John.2.25": {
+    osis: "1John.2.25",
+    text: "Y esta es la promesa, la cual él nos prometió, la vida eterna.",
+    edition: "RV1909",
+  },
+  "1John.2.26": {
+    osis: "1John.2.26",
+    text: "Os he escrito esto sobre los que os engañan.",
+    edition: "RV1909",
+  },
+  "John.16.13": {
+    osis: "John.16.13",
+    text: "Pero cuando viniere aquel Espíritu de verdad, él os guiará á toda verdad; porque no hablará de sí mismo, sino que hablará todo lo que oyere, y os hará saber las cosas que han de venir.",
+    edition: "RV1909",
+  },
+  "Heb.1.1": {
+    osis: "Heb.1.1",
+    text: "DIOS, habiendo hablado muchas veces y en muchas maneras en otro tiempo á los padres por los profetas,",
+    edition: "RV1909",
+  },
+  "Heb.1.2": {
+    osis: "Heb.1.2",
+    text: "En estos postreros días nos ha hablado por el Hijo, al cual constituyó heredero de todo, por el cual asimismo hizo el universo:",
+    edition: "RV1909",
+  },
+  "Phil.3.8": {
+    osis: "Phil.3.8",
+    text: "Y ciertamente, aun reputo todas las cosas pérdida por el eminente conocimiento de Cristo Jesús, mi Señor, por amor del cual lo he perdido todo, y téngolo por estiércol, para ganar á Cristo,",
+    edition: "RV1909",
+  },
+  "Matt.18.20": {
+    osis: "Matt.18.20",
+    text: "Porque donde están dos ó tres congregados en mi nombre, allí estoy en medio de ellos.",
+    edition: "RV1909",
+  },
+  "Ps.119.105": {
+    osis: "Ps.119.105",
+    text: "NUN. Lámpara es á mis pies tu palabra, y lumbrera á mi camino.",
+    edition: "RV1909",
+  },
+  "Rev.22.18": {
+    osis: "Rev.22.18",
+    text: "Porque yo protesto á cualquiera que oye las palabras de la profecía de este libro: Si alguno añadiere á estas cosas, Dios pondrá sobre él las plagas que están escritas en este libro.",
+    edition: "RV1909",
+  },
+  "Rev.22.19": {
+    osis: "Rev.22.19",
+    text: "Y si alguno quitare de las palabras del libro de esta profecía, Dios quitará su parte del libro de la vida, y de la santa ciudad, y de las cosas que están escritas en este libro.",
+    edition: "RV1909",
+  },
+  "Isa.8.20": {
+    osis: "Isa.8.20",
+    text: "¡A la ley y al testimonio! Si no dijeren conforme á esto, es porque no les ha amanecido.",
+    edition: "RV1909",
+  },
+  "Luke.16.29": {
+    osis: "Luke.16.29",
+    text: "Y Abraham le dice: A Moisés y á los profetas tienen: óiganlos.",
+    edition: "RV1909",
+  },
+  "Luke.16.31": {
+    osis: "Luke.16.31",
+    text: "Mas [Abraham] le dijo: Si no oyen á Moisés y á los profetas, tampoco se persuadirán, si alguno se levantare de los muertos.",
+    edition: "RV1909",
+  },
+  "Gal.1.9": {
+    osis: "Gal.1.9",
+    text: "Como antes hemos dicho, también ahora decimos otra vez: Si alguno os anunciare otro evangelio del que habéis recibido, sea anatema.",
+    edition: "RV1909",
+  },
+  "2Tim.3.15": {
+    osis: "2Tim.3.15",
+    text: "Y que desde la niñez has sabido las Sagradas Escrituras, las cuales te pueden hacer sabio para la salud por la fe que es en Cristo Jesús.",
+    edition: "RV1909",
+  },
+  "1John.1.3": {
+    osis: "1John.1.3",
+    text: "Lo que hemos visto y oído, eso os anunciamos, para que también vosotros tengáis comunión con nosotros: y nuestra comunión verdaderamente es con el Padre, y con su Hijo Jesucristo.",
+    edition: "RV1909",
+  },
+  "1John.1.4": {
+    osis: "1John.1.4",
+    text: "Y estas cosas os escribimos, para que vuestro gozo sea cumplido.",
+    edition: "RV1909",
+  },
+  "2Thess.2.2": {
+    osis: "2Thess.2.2",
+    text: "Que no os mováis fácilmente de vuestro sentimiento, ni os conturbéis ni por espíritu, ni por palabra, ni por carta como nuestra, como que el día del Señor esté cerca.",
+    edition: "RV1909",
+  },
+  "Prov.22.19": {
+    osis: "Prov.22.19",
+    text: "Para que tu confianza sea en Jehová, te [las] he hecho saber hoy á ti también.",
+    edition: "RV1909",
+  },
+  "Prov.22.20": {
+    osis: "Prov.22.20",
+    text: "¿No te he escrito tres veces en consejos y ciencia,",
+    edition: "RV1909",
+  },
+  "Prov.22.21": {
+    osis: "Prov.22.21",
+    text: "Para hacerte saber la certidumbre de las razones verdaderas, para que puedas responder razones de verdad á los que á ti enviaren?",
+    edition: "RV1909",
+  },
+  "Luke.1.3": {
+    osis: "Luke.1.3",
+    text: "Me ha parecido también [á mí], después de haber entendido todas las cosas desde el principio con diligencia, escribírtelas por orden, oh muy buen Teófilo,",
+    edition: "RV1909",
+  },
+  "Luke.1.4": {
+    osis: "Luke.1.4",
+    text: "Para que conozcas la verdad de las cosas en las cuales has sido enseñado.",
+    edition: "RV1909",
+  },
+  "Rom.15.4": {
+    osis: "Rom.15.4",
+    text: "Porque las cosas que antes fueron escritas, para nuestra enseñanza fueron escritas; para que por la paciencia, y por la consolación de las Escrituras, tengamos esperanza.",
+    edition: "RV1909",
+  },
+  "Matt.4.4": {
+    osis: "Matt.4.4",
+    text: "Mas él respondiendo, dijo: Escrito está: No con solo el pan vivirá el hombre, mas con toda palabra que sale de la boca de Dios.",
+    edition: "RV1909",
+  },
+  "Matt.4.7": {
+    osis: "Matt.4.7",
+    text: "Jesús le dijo: Escrito está además: No tentarás al Señor tu Dios.",
+    edition: "RV1909",
+  },
+  "Matt.4.10": {
+    osis: "Matt.4.10",
+    text: "Entonces Jesús le dice: Vete, Satanás, que escrito está: Al Señor tu Dios adorarás y á él solo servirás.",
+    edition: "RV1909",
+  },
+  "Isa.8.19": {
+    osis: "Isa.8.19",
+    text: "Y si os dijeren: Preguntad á los pythones y á los adivinos, que susurran hablando, [responded]: ¿No consultará el pueblo á su Dios? ¿[Apelará] por los vivos á los muertos?",
+    edition: "RV1909",
+  },
+  "John.6.45": {
+    osis: "John.6.45",
+    text: "Escrito está en los profetas: Y serán todos enseñados de Dios. Así que, todo aquel que oyó del Padre, y aprendió, viene á mí.",
+    edition: "RV1909",
+  },
+  "1Cor.2.9": {
+    osis: "1Cor.2.9",
+    text: "Antes, como está escrito: Cosas que ojo no vió, ni oreja oyó, ni han subido en corazón de hombre, [son] las que ha Dios preparado para aquellos que le aman.",
+    edition: "RV1909",
+  },
+  "1Cor.2.10": {
+    osis: "1Cor.2.10",
+    text: "Empero Dios nos [lo] reveló á nosotros por el Espíritu: porque el Espíritu todo lo escudriña, aun lo profundo de Dios.",
+    edition: "RV1909",
+  },
+  "1Cor.2.11": {
+    osis: "1Cor.2.11",
+    text: "Porque ¿quién de los hombres sabe las cosas del hombre, sino el espíritu del hombre que está en él? Así tampoco nadie conoció las cosas de Dios, sino el Espíritu de Dios.",
+    edition: "RV1909",
+  },
+  "1Cor.2.12": {
+    osis: "1Cor.2.12",
+    text: "Y nosotros hemos recibido, no el espíritu del mundo, sino el Espíritu que es de Dios, para que conozcamos lo que Dios nos ha dado;",
+    edition: "RV1909",
+  },
+  "1Cor.11.13": {
+    osis: "1Cor.11.13",
+    text: "Juzgad vosotros mismos: ¿es honesto orar la mujer á Dios no cubierta?",
+    edition: "RV1909",
+  },
+  "1Cor.11.14": {
+    osis: "1Cor.11.14",
+    text: "La misma naturaleza ¿no os enseña que al hombre sea deshonesto criar cabello?",
+    edition: "RV1909",
+  },
+  "1Cor.14.26": {
+    osis: "1Cor.14.26",
+    text: "¿Qué hay pues, hermanos? Cuando os juntáis, cada uno de vosotros tiene salmo, tiene doctrina, tiene lengua, tiene revelación, tiene interpretación: hágase todo para edificación.",
+    edition: "RV1909",
+  },
+  "1Cor.14.40": {
+    osis: "1Cor.14.40",
+    text: "Empero hágase todo decentemente y con orden.",
+    edition: "RV1909",
+  },
+  "Matt.15.13": {
+    osis: "Matt.15.13",
+    text: "Mas respondiendo él, dijo: Toda planta que no plantó mi Padre celestial, será desarraigada.",
+    edition: "RV1909",
+  },
+  "Matt.15.14": {
+    osis: "Matt.15.14",
+    text: "Dejadlos: son ciegos guías de ciegos; y si el ciego guiare al ciego, ambos caerán en el hoyo.",
+    edition: "RV1909",
+  },
+  "2Cor.13.10": {
+    osis: "2Cor.13.10",
+    text: "Por tanto [os] escribo esto ausente, por no tratar presente con dureza, conforme á la potestad que el Señor me ha dado para edificación, y no para destrucción.",
+    edition: "RV1909",
+  },
+  "Col.2.16": {
+    osis: "Col.2.16",
+    text: "Por tanto, nadie os juzgue en comida, ó en bebida, ó en parte de día de fiesta, ó de nueva luna, ó de sábados:",
+    edition: "RV1909",
+  },
+  "Col.2.17": {
+    osis: "Col.2.17",
+    text: "Lo cual es la sombra de lo por venir; mas el cuerpo es de Cristo.",
+    edition: "RV1909",
+  },
+  "Col.2.18": {
+    osis: "Col.2.18",
+    text: "Nadie os prive de vuestro premio, afectando humildad y culto á los ángeles, metiéndose en lo que no ha visto, vanamente hinchado en el sentido de su propia carne,",
+    edition: "RV1909",
+  },
+  "Col.2.19": {
+    osis: "Col.2.19",
+    text: "Y no teniendo la cabeza, de la cual todo el cuerpo, alimentado y conjunto por las ligaduras y conjunturas, crece en aumento de Dios.",
+    edition: "RV1909",
+  },
+  "Col.2.20": {
+    osis: "Col.2.20",
+    text: "Pues si sois muertos con Cristo cuanto á los rudimentos del mundo, ¿por qué como si vivieseis al mundo, os sometéis á ordenanzas,",
+    edition: "RV1909",
+  },
+  "Col.2.21": {
+    osis: "Col.2.21",
+    text: "[Tales como], No manejes, ni gustes, ni aun toques,",
+    edition: "RV1909",
+  },
+  "Col.2.22": {
+    osis: "Col.2.22",
+    text: "(Las cuales cosas son todas para destrucción en el uso [mismo]), en conformidad á mandamientos y doctrinas de hombres?",
+    edition: "RV1909",
+  },
+  "Col.2.23": {
+    osis: "Col.2.23",
+    text: "Tales cosas tienen á la verdad cierta reputación de sabiduría en culto voluntario, y humildad, y en duro trato del cuerpo; no en alguna honra para el saciar de la carne.",
+    edition: "RV1909",
+  },
+  "Titus.1.14": {
+    osis: "Titus.1.14",
+    text: "No atendiendo á fábulas judaicas, y á mandamientos de hombres que se apartan de la verdad.",
+    edition: "RV1909",
+  },
+  "1John.5.9": {
+    osis: "1John.5.9",
+    text: "Si recibimos el testimonio de los hombres, el testimonio de Dios es mayor; porque éste es el testimonio de Dios, que ha testificado de su Hijo.",
+    edition: "RV1909",
+  },
+  "John.16.14": {
+    osis: "John.16.14",
+    text: "El me glorificará: porque tomará de lo mío, y os [lo] hará saber.",
+    edition: "RV1909",
+  },
+  "Isa.59.21": {
+    osis: "Isa.59.21",
+    text: "Y este será mi pacto con ellos, dijo Jehová: El espíritu mío que está sobre ti, y mis palabras que puse en tu boca, no faltarán de tu boca, ni de la boca de tu simiente, ni de la boca de la simiente de tu simiente, dijo Jehová, desde ahora y para siempre.",
+    edition: "RV1909",
+  },
+  "Hos.8.12": {
+    osis: "Hos.8.12",
+    text: "Escribíle las grandezas de mi ley, [y] fueron tenidas por cosas ajenas.",
+    edition: "RV1909",
+  },
+  "1Cor.2.6": {
+    osis: "1Cor.2.6",
+    text: "Empero hablamos sabiduría entre perfectos; y sabiduría, no de este siglo, ni de los príncipes de este siglo, que se deshacen:",
+    edition: "RV1909",
+  },
+  "1Cor.2.7": {
+    osis: "1Cor.2.7",
+    text: "Mas hablamos sabiduría de Dios en misterio, la [sabiduría] oculta, la cual Dios predestinó antes de los siglos para nuestra gloria:",
+    edition: "RV1909",
+  },
+  "1Cor.2.13": {
+    osis: "1Cor.2.13",
+    text: "Lo cual también hablamos, no con doctas palabras de humana sabiduría, mas con doctrina del Espíritu, acomodando lo espiritual á lo espiritual.",
+    edition: "RV1909",
+  },
+  "Ps.119.18": {
+    osis: "Ps.119.18",
+    text: "Abre mis ojos, y miraré las maravillas de tu ley.",
+    edition: "RV1909",
+  },
+  "Ps.119.129": {
+    osis: "Ps.119.129",
+    text: "PE. Maravillosos son tus testimonios: por tanto los ha guardado mi alma.",
+    edition: "RV1909",
+  },
+  "Ps.12.6": {
+    osis: "Ps.12.6",
+    text: "Las palabras de Jehová, palabras limpias; plata refinada en horno de tierra, purificada siete veces.",
+    edition: "RV1909",
+  },
+  "Ps.119.140": {
+    osis: "Ps.119.140",
+    text: "Sumamente acendrada es tu palabra; y la ama tu siervo.",
+    edition: "RV1909",
+  },
+  "Acts.10.43": {
+    osis: "Acts.10.43",
+    text: "A éste dan testimonio todos los profetas, de que todos los que en él creyeren, recibirán perdón de pecados por su nombre.",
+    edition: "RV1909",
+  },
+  "Acts.26.22": {
+    osis: "Acts.26.22",
+    text: "Mas ayudado del auxilio de Dios, persevero hasta el día de hoy, dando testimonio á pequeños y á grandes, no diciendo nada fuera de las cosas que los profetas y Moisés dijeron que habían de venir:",
+    edition: "RV1909",
+  },
+  "Rom.3.19": {
+    osis: "Rom.3.19",
+    text: "Empero sabemos que todo lo que la ley dice, á los que están en la ley lo dice, para que toda boca se tape, y que todo el mundo se sujete á Dios:",
+    edition: "RV1909",
+  },
+  "Rom.3.27": {
+    osis: "Rom.3.27",
+    text: "¿Dónde pues está la jactancia? Es excluída. ¿Por cuál ley? ¿de las obras? No; mas por la ley de la fe.",
+    edition: "RV1909",
+  },
+  "Acts.18.28": {
+    osis: "Acts.18.28",
+    text: "Porque con gran vehemencia convencía públicamente á los Judíos, mostrando por las Escrituras que Jesús era el Cristo.",
+    edition: "RV1909",
+  },
+  "Jas.1.18": {
+    osis: "Jas.1.18",
+    text: "El, de su voluntad nos ha engendrado por la palabra de verdad, para que seamos primicias de sus criaturas.",
+    edition: "RV1909",
+  },
+  "Ps.19.7": {
+    osis: "Ps.19.7",
+    text: "La ley de Jehová es perfecta, que vuelve el alma: el testimonio de Jehová, fiel, que hace sabio al pequeño.",
+    edition: "RV1909",
+  },
+  "Ps.19.8": {
+    osis: "Ps.19.8",
+    text: "Los mandamientos de Jehová son rectos, que alegran el corazón: el precepto de Jehová, puro, que alumbra los ojos.",
+    edition: "RV1909",
+  },
+  "Ps.19.9": {
+    osis: "Ps.19.9",
+    text: "El temor de Jehová, limpio, que permanece para siempre; los juicios de Jehová son verdad, todos justos.",
+    edition: "RV1909",
+  },
+  "Acts.16.4": {
+    osis: "Acts.16.4",
+    text: "Y como pasaban por las ciudades, les daban que guardasen los decretos que habían sido determinados por los apóstoles y los ancianos que estaban en Jerusalem.",
+    edition: "RV1909",
+  },
+  "Matt.18.17": {
+    osis: "Matt.18.17",
+    text: "Y si no oyere á ellos, dilo á la iglesia: y si no oyere á la iglesia, tenle por étnico y publicano.",
+    edition: "RV1909",
+  },
+  "1Cor.2.5": {
+    osis: "1Cor.2.5",
+    text: "Para que vuestra fe no esté fundada en sabiduría de hombres, mas en poder de Dios.",
+    edition: "RV1909",
+  },
+  "2Cor.13.8": {
+    osis: "2Cor.13.8",
+    text: "Porque ninguna cosa podemos contra la verdad, sino por la verdad.",
+    edition: "RV1909",
+  },
+  "Rom.3.2": {
+    osis: "Rom.3.2",
+    text: "Mucho en todas maneras. Lo primero ciertamente, que la palabra de Dios les ha sido confiada.",
+    edition: "RV1909",
+  },
+  "Matt.5.18": {
+    osis: "Matt.5.18",
+    text: "Porque de cierto os digo, [que] hasta que perezca el cielo y la tierra, ni una jota ni un tilde perecerá de la ley, hasta que todas las cosas sean hechas.",
+    edition: "RV1909",
+  },
+  "John.5.39": {
+    osis: "John.5.39",
+    text: "Escudriñad las Escrituras, porque á vosotros os parece que en ellas tenéis la vida eterna; y ellas son las que dan testimonio de mí.",
+    edition: "RV1909",
+  },
+  "John.5.46": {
+    osis: "John.5.46",
+    text: "Porque si vosotros creyeseis á Moisés, creeríais á mí; porque de mí escribió él.",
+    edition: "RV1909",
+  },
+  "1Cor.14.6": {
+    osis: "1Cor.14.6",
+    text: "Ahora pues, hermanos, si yo fuere á vosotros hablando lenguas, ¿qué os aprovecharé, si no os hablare, ó con revelación, ó con ciencia, ó con profecía, ó con doctrina?",
+    edition: "RV1909",
+  },
+  "1Cor.14.7": {
+    osis: "1Cor.14.7",
+    text: "Ciertamente las cosas inanimadas que hacen sonidos, como la flauta ó la vihuela, si no dieren distinción de voces, ¿cómo se sabrá lo que se tañe con la flauta, ó con la vihuela?",
+    edition: "RV1909",
+  },
+  "1Cor.14.8": {
+    osis: "1Cor.14.8",
+    text: "Y si la trompeta diere sonido incierto, ¿quién se apercibirá á la batalla?",
+    edition: "RV1909",
+  },
+  "1Cor.14.9": {
+    osis: "1Cor.14.9",
+    text: "Así también vosotros, si por la lengua no diereis palabra bien significante, ¿cómo se entenderá lo que se dice? porque hablaréis al aire.",
+    edition: "RV1909",
+  },
+  "1Cor.14.10": {
+    osis: "1Cor.14.10",
+    text: "Tantos géneros de voces, por ejemplo, hay en el mundo, y nada hay mudo;",
+    edition: "RV1909",
+  },
+  "1Cor.14.11": {
+    osis: "1Cor.14.11",
+    text: "Mas si yo ignorare el valor de la voz, seré bárbaro al que habla, y el que habla será bárbaro para mí.",
+    edition: "RV1909",
+  },
+  "1Cor.14.12": {
+    osis: "1Cor.14.12",
+    text: "Así también vosotros; pues que anheláis espirituales [dones], procurad ser excelentes para la edificación de la iglesia.",
+    edition: "RV1909",
+  },
+  "1Cor.14.13": {
+    osis: "1Cor.14.13",
+    text: "Por lo cual, el que habla lengua [extraña], pida que [la] interprete.",
+    edition: "RV1909",
+  },
+  "1Cor.14.14": {
+    osis: "1Cor.14.14",
+    text: "Porque si yo orare en lengua [desconocida], mi espíritu ora; mas mi entendimiento es sin fruto.",
+    edition: "RV1909",
+  },
+  "1Cor.14.15": {
+    osis: "1Cor.14.15",
+    text: "¿Qué pues? Oraré con el espíritu, mas oraré también con entendimiento; cantaré con el espíritu, mas cantaré también con entendimiento.",
+    edition: "RV1909",
+  },
+  "1Cor.14.16": {
+    osis: "1Cor.14.16",
+    text: "Porque si bendijeres con el espíritu, el que ocupa lugar de un mero particular, ¿cómo dirá amén á tu acción de gracias? pues no sabe lo que has dicho.",
+    edition: "RV1909",
+  },
+  "1Cor.14.17": {
+    osis: "1Cor.14.17",
+    text: "Porque tú, á la verdad, bien haces gracias; mas el otro no es edificado.",
+    edition: "RV1909",
+  },
+  "1Cor.14.18": {
+    osis: "1Cor.14.18",
+    text: "Doy gracias á Dios que hablo lenguas más que todos vosotros:",
+    edition: "RV1909",
+  },
+  "1Cor.14.19": {
+    osis: "1Cor.14.19",
+    text: "Pero en la iglesia más quiero hablar cinco palabras con mi sentido, para que enseñe también á los otros, que diez mil palabras en lengua [desconocida].",
+    edition: "RV1909",
+  },
+  "1Cor.14.20": {
+    osis: "1Cor.14.20",
+    text: "Hermanos, no seáis niños en el sentido, sino sed niños en la malicia: empero perfectos en el sentido.",
+    edition: "RV1909",
+  },
+  "1Cor.14.21": {
+    osis: "1Cor.14.21",
+    text: "En la ley está escrito: En otras lenguas y en otros labios hablaré á este pueblo; y ni aun así me oirán, dice el Señor.",
+    edition: "RV1909",
+  },
+  "1Cor.14.22": {
+    osis: "1Cor.14.22",
+    text: "Así que, las lenguas por señal son, no á los fieles, sino á los infieles: mas la profecía, no á los infieles, sino á los fieles.",
+    edition: "RV1909",
+  },
+  "1Cor.14.23": {
+    osis: "1Cor.14.23",
+    text: "De manera que, si toda la iglesia se juntare en uno, y todos hablan lenguas, y entran indoctos ó infieles, ¿no dirán que estáis locos?",
+    edition: "RV1909",
+  },
+  "1Cor.14.24": {
+    osis: "1Cor.14.24",
+    text: "Mas si todos profetizan, y entra algún infiel ó indocto, de todos es convencido, de todos es juzgado;",
+    edition: "RV1909",
+  },
+  "1Cor.14.25": {
+    osis: "1Cor.14.25",
+    text: "Lo oculto de su corazón se hace manifiesto: y así, postrándose sobre el rostro, adorará á Dios, declarando que verdaderamente Dios está en vosotros.",
+    edition: "RV1909",
+  },
+  "1Cor.14.27": {
+    osis: "1Cor.14.27",
+    text: "Si hablare alguno en lengua [extraña], [sea esto] por dos, ó á lo más tres, y por turno; mas uno interprete.",
+    edition: "RV1909",
+  },
+  "1Cor.14.28": {
+    osis: "1Cor.14.28",
+    text: "Y si no hubiere intérprete, calle en la iglesia, y hable á sí mismo y á Dios.",
+    edition: "RV1909",
+  },
+  "John.3.5": {
+    osis: "John.3.5",
+    text: "Respondió Jesús: De cierto, de cierto te digo, que el que no naciere de agua y del Espíritu, no puede entrar en el reino de Dios.",
     edition: "RV1909",
   },
   "Acts.2.38": {
@@ -119,16 +1559,6 @@ export const verses = {
   "Acts.10.47": {
     osis: "Acts.10.47",
     text: "Entonces respondió Pedro: ¿Puede alguno impedir el agua, para que no sean bautizados éstos que han recibido el Espíritu Santo también como nosotros?",
-    edition: "RV1909",
-  },
-  "Matt.28.20": {
-    osis: "Matt.28.20",
-    text: "Enseñándoles que guarden todas las cosas que os he mandado: y he aquí, yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.",
-    edition: "RV1909",
-  },
-  "Mark.16.15": {
-    osis: "Mark.16.15",
-    text: "Y les dijo: Id por todo el mundo; predicad el evangelio á toda criatura.",
     edition: "RV1909",
   },
   "Rom.6.3": {
@@ -336,11 +1766,6 @@ export const verses = {
     text: "Así que, los que recibieron su palabra, fueron bautizados: y fueron añadidas [á ellos] aquel día como tres mil personas.",
     edition: "RV1909",
   },
-  "1Cor.3.6": {
-    osis: "1Cor.3.6",
-    text: "Yo planté, Apolos regó: mas Dios ha dado el crecimiento.",
-    edition: "RV1909",
-  },
   "1Cor.3.7": {
     osis: "1Cor.3.7",
     text: "Así que, ni el que planta es algo, ni el que riega; sino Dios, que da el crecimiento.",
@@ -434,11 +1859,6 @@ export const verses = {
   "Acts.16.32": {
     osis: "Acts.16.32",
     text: "Y le hablaron la palabra del Señor, y á todos los que estaban en su casa.",
-    edition: "RV1909",
-  },
-  "Acts.2.42": {
-    osis: "Acts.2.42",
-    text: "Y perseveraban en la doctrina de los apóstoles, y en la comunión, y en el partimiento del pan, y en las oraciones.",
     edition: "RV1909",
   },
   "Acts.8.35": {
@@ -679,11 +2099,6 @@ export const verses = {
   "Lev.17.14": {
     osis: "Lev.17.14",
     text: "Porque el alma de toda carne, su vida, está en su sangre: por tanto he dicho á los hijos de Israel: No comeréis la sangre de ninguna carne, porque la vida de toda carne es su sangre: cualquiera que la comiere será cortado.",
-    edition: "RV1909",
-  },
-  "Acts.15.29": {
-    osis: "Acts.15.29",
-    text: "Que os abstengáis de cosas sacrificadas á ídolos, y de sangre, y de ahogado, y de fornicación; de las cuales cosas si os guardareis, bien haréis. Pasadlo bien.",
     edition: "RV1909",
   },
   "Mark.14.22": {
@@ -1146,11 +2561,6 @@ export const verses = {
     text: "Avergüéncense todos los que sirven á las imágenes de talla, los que se alaban de los ídolos: los dioses todos á él se encorven.",
     edition: "RV1909",
   },
-  "Matt.28.17": {
-    osis: "Matt.28.17",
-    text: "Y como le vieron, le adoraron: mas algunos dudaban.",
-    edition: "RV1909",
-  },
   "Acts.2.46": {
     osis: "Acts.2.46",
     text: "Y perseverando unánimes cada día en el templo, y partiendo el pan en las casas, comían juntos con alegría y con sencillez de corazón,",
@@ -1201,11 +2611,6 @@ export const verses = {
     text: "Mirad mis manos y mis pies, que yo mismo soy: palpad, y ved; que el espíritu ni tiene carne ni huesos, como veis que yo tengo.",
     edition: "RV1909",
   },
-  "Matt.15.9": {
-    osis: "Matt.15.9",
-    text: "Mas en vano me honran, enseñando doctrinas [y] mandamientos de hombres.",
-    edition: "RV1909",
-  },
   "1Cor.11.33": {
     osis: "1Cor.11.33",
     text: "Así, que, hermanos míos, cuando os juntáis á comer, esperaos unos á otros.",
@@ -1254,11 +2659,6 @@ export const verses = {
   "Lev.17.13": {
     osis: "Lev.17.13",
     text: "Y cualquier varón de los hijos de Israel, ó de los extranjeros que peregrinan entre ellos, que cogiere caza de animal ó de ave que sea de comer, derramará su sangre y cubrirála con tierra:",
-    edition: "RV1909",
-  },
-  "Acts.15.20": {
-    osis: "Acts.15.20",
-    text: "Sino escribirles que se aparten de las contaminaciones de los ídolos, y de fornicación, y de ahogado, y de sangre.",
     edition: "RV1909",
   },
 } satisfies Record<string, Verse>;

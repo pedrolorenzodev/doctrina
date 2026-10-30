@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import vm from "node:vm";
 import { WORK_DEFS } from "./dossier-works.mjs";
+import { FIELDS } from "./dossier-fields.mjs";
 
 const ROOT = new URL("../../docs/research/doctrines", import.meta.url).pathname;
 const CONTENT = process.env.CONTENT_OUT ?? new URL("../../src/content", import.meta.url).pathname;
@@ -14,7 +15,7 @@ const report = {
   conflictingIds: [], mergedIds: 0, renamed: {}, unmatchedWork: [], unparsedLocator: [], unparsedDate: [],
   unparsedPg: [], esFromStatus: 0, verseKeyConflicts: [], editionVariants: {}, bareGroupIds: 0,
   gTokensRewritten: 0, pendingMarkers: 0, titleSuffixStripped: 0, noDate: 0, citations: 0, verseUnparsed: [],
-  dateAnomalies: [], whoUnparsed: [], droppedFields: {},
+  dateAnomalies: [], whoUnparsed: [], droppedFields: {}, unbalancedQuotes: [],
 };
 
 function load(d) {
@@ -303,6 +304,7 @@ const BOOKS = {
   "2 Timoteo": "2Tim", "Tito": "Titus", "Hebreos": "Heb", "Santiago": "Jas", "1 Pedro": "1Pet", "2 Pedro": "2Pet", "1 Juan": "1John",
   "Judas": "Jude", "Apocalipsis": "Rev",
 };
+const SINGLE_CHAPTER_BOOKS = new Set(["Jude"]);
 // TODO: a parenthetical such as «Hebreos 1:6 (Salmo 97:7)» becomes two separate references; keep the link between them
 function refToOsis(ref) {
   ref = ref.replace(/\s*\(([^)]*\d+:\d+[^)]*)\)/g, "; $1");
@@ -325,6 +327,7 @@ function refToOsis(ref) {
         else if (mm[5]) segs.push(`${book}.${mm[1]}.${mm[2]}-${book}.${mm[1]}.${mm[5]}`);
         else segs.push(`${book}.${mm[1]}.${mm[2]}`);
       } else if ((mm = it.match(/^(\d+)(?:[–-](\d+))?$/))) {
+        if (chap === null && SINGLE_CHAPTER_BOOKS.has(book)) chap = 1;
         if (chap === null) { segs.push(`${book}.${mm[1]}` + (mm[2] ? `-${book}.${mm[2]}` : "")); chap = null; }
         else segs.push(mm[2] ? `${book}.${chap}.${mm[1]}-${book}.${chap}.${mm[2]}` : `${book}.${chap}.${mm[1]}`);
       } else { report.verseUnparsed.push(ref); return null; }
@@ -361,25 +364,40 @@ function grade(d, g) {
 const srcRef = (d, pair) => { report.bareGroupIds += pair[0].includes(",") ? 1 : 0; return { citations: pair[0].split(",").map((i) => mapCid(d, i.trim())), label: pair[1] }; };
 
 function parseFatherAttr(attr) {
-  const m = attr.match(/^(.+?), (.+?) \((.+)\), en$/);
+  const m = attr.match(/^(.+?), (.+) \(([^()]+)\), en$/);
   if (!m) throw new Error("father attribution not understood: " + attr);
   const [, author, work, when] = m;
-  const [datePart, ...qualifiers] = when.split(/, (?=según)/);
+  const [datePart, ...qualifiers] = when.split(/, (?=según|fecha )/);
   const body = datePart.replace(/^predicada en /, "");
-  const circa = /^c\. /.test(body);
-  const years = body.replace(/^c\. /, "").match(/^(\d{3,4})(?:[–-](\d{3,4}))?$/);
+  const circa = /^(?:c\.|hacia) /.test(body);
+  const years = body.replace(/^(?:c\.|hacia) /, "").match(/^(\d{3,4})(?:[–-](\d{3,4}))?$/);
   if (!years) throw new Error("father date not understood: " + attr);
   const date = { year: +years[1], ...(years[2] ? { yearEnd: +years[2] } : {}), ...(circa ? { circa: true } : {}), ...(qualifiers.length ? { attribution: qualifiers.join(", ") } : {}) };
   return { author, work, date };
 }
 
+function guillemets(value) {
+  if (typeof value === "string") {
+    if ((value.match(/"/g) ?? []).length % 2) { report.unbalancedQuotes.push(value.slice(0, 80)); return value; }
+    return value.replace(/"([^"]*)"/g, "«$1»");
+  }
+  if (Array.isArray(value)) return value.map(guillemets);
+  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, guillemets(v)]));
+  return value;
+}
+
 function buildPage(d) {
   const x = RAW[d];
+  const fields = FIELDS[d];
+  if (!fields) throw new Error("no import fields for doctrine " + d);
+  const shortOf = (table, id) => {
+    if (!table[id]) throw new Error(`no short for ${d} ${id} in dossier-fields.mjs`);
+    return table[id];
+  };
   const osisList = (refs) => refs.flatMap((r) => (refToOsis(r) ?? "").split(",")).filter(Boolean);
-  const objectionIds = Object.keys(x.OBJ).sort((a, b) => a.slice(0, 2).localeCompare(b.slice(0, 2)) * -1 || parseInt(a.slice(3)) - parseInt(b.slice(3)));
+  const objectionIds = Object.keys(x.OBJ).filter((id) => !id.startsWith("DO-")).sort((a, b) => a.slice(0, 2).localeCompare(b.slice(0, 2)) * -1 || parseInt(a.slice(3)) - parseInt(b.slice(3)));
   const objItems = objectionIds.map((id) => {
     const o = x.OBJ[id];
-    const debate = id.startsWith("DO-");
     let title = o.title;
     if (/ — Frecuente en el debate$/.test(title)) { title = title.replace(/ — Frecuente en el debate$/, ""); report.titleSuffixStripped++; }
     const answer = [];
@@ -388,14 +406,14 @@ function buildPage(d) {
       if (typeof p === "string") {
         if (/Respuesta apologética pendiente/.test(p)) {
           pending = true; report.pendingMarkers++;
-          if (p.length < 400 && !/\{c:/.test(p)) continue;
+          if (p.length < 400 && (!/\{c:/.test(p) || /: _Respuesta apologética pendiente[^_]*_\.?$/.test(p))) continue;
           report.pendingMarkerInsideRealAnswer = (report.pendingMarkerInsideRealAnswer || 0) + 1;
         }
         answer.push({ type: "p", text: prose(d, p) });
       } else { if (Array.isArray(p.bq)) report.arrayQuotes = (report.arrayQuotes || 0) + 1; answer.push({ type: "quote", text: [].concat(p.bq), attribution: prose(d, p.attr) }); }
     }
     const out = {
-      id, layer: debate ? "debate" : "official", title: prose(d, title), synthesis: prose(d, o.syn),
+      id, layer: "official", short: shortOf(fields.objections, id), title: prose(d, title), synthesis: prose(d, o.syn),
       raisedBy: parseWho(o.who),
       objectorTexts: { shown: o.own.lead.map((i) => mapCid(d, i)), more: o.own.more.map((i) => mapCid(d, i)) },
       answer,
@@ -406,35 +424,47 @@ function buildPage(d) {
     if (pending) out.apologeticAnswer = "pending";
     return out;
   });
-  const other = {};
   const grades = {};
   for (const [k, g] of Object.entries(x.GRADES)) {
     const def = { label: g.label, ...(g.sub ? { sub: g.sub } : {}), ...(g.def ? { definition: g.def } : {}), source: { citations: g.src.split(",").map((i) => mapCid(d, i.trim())), label: g.srcLabel } };
-    if (GRADE_ID[k]) grades[GRADE_ID[k]] = def; else other[k] = def;
+    if (GRADE_ID[k]) grades[GRADE_ID[k]] = def;
   }
   const page = {
     doctrine: d, tradition: "catholic", status: "draft", title: "La posición católica", lede: x.META.lede,
     teach: {
       subtitle: x.META.ensenaSub,
       definition: { text: prose(d, x.DEFINITION.text), grades: x.DEFINITION.grades.map((g) => grade(d, g)), sources: x.DEFINITION.sources.map((p) => srcRef(d, p)) },
-      statements: x.QE.map((q) => ({ id: q.id, text: prose(d, q.text), grades: q.grades.map((g) => grade(d, g)), sources: q.sources.map((p) => srcRef(d, p)) })),
+      statements: x.QE.map((q) => ({ id: q.id, short: shortOf(fields.statements, q.id), text: prose(d, q.text), grades: q.grades.map((g) => grade(d, g)), sources: q.sources.map((p) => srcRef(d, p)) })),
     },
     why: {
       intro: x.PORQUE.intro.map((t) => prose(d, t)),
       fathers: x.PORQUE.fathers.map((f) => ({ lead: f.lead, quote: f.quote, ...parseFatherAttr(f.attr), citedIn: { citations: f.src.split(",").map((i) => mapCid(d, i.trim())), label: f.srcLabel } })),
       note: prose(d, x.PORQUE.note), closing: prose(d, x.PORQUE.closing),
     },
+    scriptureSubtitle: `Los pasajes que los documentos católicos citan sobre ${fields.topic}, y cómo los leen.`,
     scripture: x.ESCRITURA.map((e) => { const osis = refToOsis(e.ref); if (!osis) throw new Error("scripture ref not understood: " + e.ref); return { refs: osis.split(","), text: prose(d, e.d) }; }),
-    objections: { order: objectionIds, ...(x.OB_LIST_NOTE ? { silentTraditions: prose(d, x.OB_LIST_NOTE) } : {}), items: objItems },
+    videos: { subtitle: "Creadores católicos explican y defienden esta postura. Los videos se abren en YouTube.", items: [] },
+    objections: { subtitle: "Objeciones a la postura católica. Abre cada una para leer en profundidad la respuesta católica.", videosSubtitle: "Creadores católicos que responden a esta objeción. Los videos se abren en YouTube.", order: objectionIds, ...(x.OB_LIST_NOTE ? { silentTraditions: prose(d, x.OB_LIST_NOTE) } : {}), items: objItems },
     life: { intro: x.VIVE.intro.map((t) => prose(d, t)), items: x.VIVE.items.map((i) => ({ id: i.id, label: i.l, text: prose(d, i.d), sources: i.s.map((p) => srcRef(d, p)) })) },
-    authority: { grades, other },
+    authority: { subtitle: "Qué significa, para la Iglesia católica, que una enseñanza sea dogma, doctrina definitiva, magisterio auténtico o disciplina.", grades, other: {} },
   };
-  return page;
+  return guillemets(page);
 }
 
 const pages = Object.fromEntries(DOCTRINES.map((d) => [d, buildPage(d)]));
 
 const SCRUBS = [
+  [/ Licencia sin confirmar: solo investigación\./g, " Licencia no determinada."],
+  [/ Línea de estado actual redactada en el dosier \(([\d-]+)\) desde wave-1-open-checks\.md \(tarea 2\(a\) y seguimiento del [\d-]+\) y las fuentes que nombra; corregida en la verificación 2\./g, " Línea de estado actual redactada para el sitio ($1) a partir de las fuentes que nombra."],
+  [/^Línea de estado actual redactada en el dosier \(([\d-]+)\) desde wave-1-open-checks\.md \(tarea 2\(a\) y seguimiento del [\d-]+\) y las fuentes que nombra; corregida en la verificación 2\./g, "Línea de estado actual redactada para el sitio ($1) a partir de las fuentes que nombra."],
+  [/ En esta investigación no se localizó ningún español de dominio público \(afirmación negativa[^)]*\)\./g, ""],
+  [/ \(resumen del dosier\)/g, ""],
+  [/ \(fecha pendiente\)/g, ""],
+  [/: fecha pendiente$/g, ": sin fecha indicada"],
+  [/ como los lista la línea de Pasajes del dosier;/g, ";"],
+  [/, que la línea no repite\./g, "."],
+  [/ Los textos de prueba de las Asambleas de Dios \([^)]*\) salieron con sus textos el [\d-]+\./g, ""],
+  [/\. La línea de Pasajes del dosier escribe «[^»]*»; la ficha de 1\.8 imprime/g, ": la ficha de 1.8 imprime"],
   [/\s*\.?\s*Sin español en el dosier\.?/g, ""],
   [/Edición que cita el dosier:/g, "Edición citada:"],
   [/\(el libro no se comprobó\)/g, "(libro no consultado)"],

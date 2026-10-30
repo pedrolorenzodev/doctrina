@@ -1,33 +1,32 @@
 import type { Edition } from "@/content/model/registry";
 
 export const editions = {
-  "trent.la": {
-    id: "trent.la",
-    works: ["trent"],
+  "pa.la": {
+    id: "pa.la",
+    works: ["pastor-aeternus"],
     lang: "la",
     bibliography:
-      "Latín y castellano: López de Ayala, El sacrosanto y ecuménico concilio de Trento, 2.ª ed., Madrid, Imprenta Real, 1785.",
+      "Latín e inglés: Philip Schaff, The Creeds of Christendom, vol. II, Nueva York, Harper & Brothers, 1877 (ejemplar de 1896), pp. 256–271; latín cotejado con vatican.va (A.S.S. VI, 1870-1871). Dominio público. No se halló español de dominio público.",
     licence: "public-domain",
   },
-  "trent.es": {
-    id: "trent.es",
-    works: ["trent"],
-    lang: "es",
-    bibliography:
-      "Latín y castellano: López de Ayala, El sacrosanto y ecuménico concilio de Trento, 2.ª ed., Madrid, Imprenta Real, 1785.",
-    licence: "public-domain",
-  },
-  "trent.en": {
-    id: "trent.en",
-    works: ["trent"],
+  "pa.en": {
+    id: "pa.en",
+    works: ["pastor-aeternus"],
     lang: "en",
     bibliography:
-      "Inglés: J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent, Londres, Burns and Oates. Dominio público.",
+      "Latín e inglés: Philip Schaff, The Creeds of Christendom, vol. II, Nueva York, Harper & Brothers, 1877 (ejemplar de 1896), pp. 256–271; latín cotejado con vatican.va (A.S.S. VI, 1870-1871). Dominio público. No se halló español de dominio público.",
     licence: "public-domain",
+  },
+  "site-translation.pastor-aeternus.es": {
+    id: "site-translation.pastor-aeternus.es",
+    works: ["pastor-aeternus"],
+    lang: "es",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
   },
   "mansi.la": {
     id: "mansi.la",
-    works: ["florence-exsultate"],
+    works: ["florence-exsultate", "florence-laetentur"],
     lang: "la",
     bibliography:
       "Mansi, Sacrorum conciliorum nova et amplissima collectio, t. 31, Venecia, 1798, columna 1055 (leída en la imagen de la hoja 543). Dominio público. Sin español de dominio público: el español es traducción asistida por IA desde el latín.",
@@ -35,7 +34,7 @@ export const editions = {
   },
   "mansi.es": {
     id: "mansi.es",
-    works: ["florence-exsultate"],
+    works: ["florence-exsultate", "florence-laetentur"],
     lang: "es",
     bibliography:
       "Mansi, Sacrorum conciliorum nova et amplissima collectio, t. 31, Venecia, 1798, columna 1055 (leída en la imagen de la hoja 543). Dominio público. Sin español de dominio público: el español es traducción asistida por IA desde el latín.",
@@ -43,7 +42,7 @@ export const editions = {
   },
   "mansi.en": {
     id: "mansi.en",
-    works: ["florence-exsultate"],
+    works: ["florence-exsultate", "florence-laetentur"],
     lang: "en",
     bibliography:
       "Mansi, Sacrorum conciliorum nova et amplissima collectio, t. 31, Venecia, 1798, columna 1055 (leída en la imagen de la hoja 543). Dominio público. Sin español de dominio público: el español es traducción asistida por IA desde el latín.",
@@ -51,64 +50,39 @@ export const editions = {
   },
   "mansi.de": {
     id: "mansi.de",
-    works: ["florence-exsultate"],
+    works: ["florence-exsultate", "florence-laetentur"],
     lang: "de",
     bibliography:
       "Mansi, Sacrorum conciliorum nova et amplissima collectio, t. 31, Venecia, 1798, columna 1055 (leída en la imagen de la hoja 543). Dominio público. Sin español de dominio público: el español es traducción asistida por IA desde el latín.",
     licence: "public-domain",
   },
-  "lateran-4.es": {
-    id: "lateran-4.es",
-    works: ["lateran-4"],
-    lang: "es",
-    bibliography: "Español: Los sacrosantos concilios generales y particulares, t. V, Madrid, 1794. Dominio público.",
-    licence: "public-domain",
-  },
-  "site-translation.lateran-4.la": {
-    id: "site-translation.lateran-4.la",
-    works: ["lateran-4"],
+  "vat2.la": {
+    id: "vat2.la",
+    works: ["lg", "ur", "sc", "gs", "dei-verbum", "dh"],
     lang: "la",
-    bibliography: "Translation made for this site; no published edition in this language.",
-    licence: "site-authored",
+    bibliography: "Vaticano II. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
   },
-  "site-translation.lateran-4.en": {
-    id: "site-translation.lateran-4.en",
-    works: ["lateran-4"],
-    lang: "en",
-    bibliography: "Translation made for this site; no published edition in this language.",
-    licence: "site-authored",
-  },
-  "schroeder.la": {
-    id: "schroeder.la",
-    works: ["vienne"],
-    lang: "la",
-    bibliography:
-      "H. J. Schroeder, Disciplinary Decrees of the General Councils, St. Louis, B. Herder, 1937. Dominio público.",
-    licence: "public-domain",
-  },
-  "schroeder.es": {
-    id: "schroeder.es",
-    works: ["vienne"],
+  "vat2.es": {
+    id: "vat2.es",
+    works: ["lg", "ur", "sc", "gs", "dei-verbum", "dh"],
     lang: "es",
-    bibliography:
-      "H. J. Schroeder, Disciplinary Decrees of the General Councils, St. Louis, B. Herder, 1937. Dominio público.",
-    licence: "public-domain",
+    bibliography: "Vaticano II. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
   },
-  "schroeder.en": {
-    id: "schroeder.en",
-    works: ["vienne"],
+  "vat2.en": {
+    id: "vat2.en",
+    works: ["lg", "ur", "sc", "gs", "dei-verbum", "dh"],
     lang: "en",
-    bibliography:
-      "H. J. Schroeder, Disciplinary Decrees of the General Councils, St. Louis, B. Herder, 1937. Dominio público.",
-    licence: "public-domain",
+    bibliography: "Vaticano II. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
   },
-  "schroeder.de": {
-    id: "schroeder.de",
-    works: ["vienne"],
+  "vat2.de": {
+    id: "vat2.de",
+    works: ["lg", "ur", "sc", "gs", "dei-verbum", "dh"],
     lang: "de",
-    bibliography:
-      "H. J. Schroeder, Disciplinary Decrees of the General Councils, St. Louis, B. Herder, 1937. Dominio público.",
-    licence: "public-domain",
+    bibliography: "Vaticano II. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
   },
   "cec.la": {
     id: "cec.la",
@@ -166,33 +140,732 @@ export const editions = {
     bibliography: "Código de Derecho Canónico (1983). © Libreria Editrice Vaticana: cita breve y enlace.",
     licence: "short-quote",
   },
-  "vat2.la": {
-    id: "vat2.la",
-    works: ["lg", "ur", "sc"],
+  "uus.la": {
+    id: "uus.la",
+    works: ["uus"],
     lang: "la",
-    bibliography: "Vaticano II. © Libreria Editrice Vaticana: cita breve y enlace.",
+    bibliography:
+      "Encíclica (magisterio auténtico, pontificio, no conciliar). © Libreria Editrice Vaticana: cita breve y enlace.",
     licence: "short-quote",
   },
-  "vat2.es": {
-    id: "vat2.es",
-    works: ["lg", "ur", "sc"],
+  "uus.es": {
+    id: "uus.es",
+    works: ["uus"],
     lang: "es",
-    bibliography: "Vaticano II. © Libreria Editrice Vaticana: cita breve y enlace.",
+    bibliography:
+      "Encíclica (magisterio auténtico, pontificio, no conciliar). © Libreria Editrice Vaticana: cita breve y enlace.",
     licence: "short-quote",
   },
-  "vat2.en": {
-    id: "vat2.en",
-    works: ["lg", "ur", "sc"],
+  "uus.en": {
+    id: "uus.en",
+    works: ["uus"],
     lang: "en",
-    bibliography: "Vaticano II. © Libreria Editrice Vaticana: cita breve y enlace.",
+    bibliography:
+      "Encíclica (magisterio auténtico, pontificio, no conciliar). © Libreria Editrice Vaticana: cita breve y enlace.",
     licence: "short-quote",
   },
-  "vat2.de": {
-    id: "vat2.de",
-    works: ["lg", "ur", "sc"],
+  "uus.de": {
+    id: "uus.de",
+    works: ["uus"],
     lang: "de",
-    bibliography: "Vaticano II. © Libreria Editrice Vaticana: cita breve y enlace.",
+    bibliography:
+      "Encíclica (magisterio auténtico, pontificio, no conciliar). © Libreria Editrice Vaticana: cita breve y enlace.",
     licence: "short-quote",
+  },
+  "cdfp.la": {
+    id: "cdfp.la",
+    works: ["cdf-primado"],
+    lang: "la",
+    bibliography:
+      "Congregación para la Doctrina de la Fe, «Consideraciones» firmadas por el card. J. Ratzinger (prefecto) y Mons. T. Bertone (secretario); impresas primero como apéndice de Il Primato del Successore di Pietro (LEV, 1998), pp. 493–503. Sin fórmula de aprobación papal en el texto leído: sin grado propio. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "cdfp.es": {
+    id: "cdfp.es",
+    works: ["cdf-primado"],
+    lang: "es",
+    bibliography:
+      "Congregación para la Doctrina de la Fe, «Consideraciones» firmadas por el card. J. Ratzinger (prefecto) y Mons. T. Bertone (secretario); impresas primero como apéndice de Il Primato del Successore di Pietro (LEV, 1998), pp. 493–503. Sin fórmula de aprobación papal en el texto leído: sin grado propio. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "cdfp.en": {
+    id: "cdfp.en",
+    works: ["cdf-primado"],
+    lang: "en",
+    bibliography:
+      "Congregación para la Doctrina de la Fe, «Consideraciones» firmadas por el card. J. Ratzinger (prefecto) y Mons. T. Bertone (secretario); impresas primero como apéndice de Il Primato del Successore di Pietro (LEV, 1998), pp. 493–503. Sin fórmula de aprobación papal en el texto leído: sin grado propio. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "cdfp.de": {
+    id: "cdfp.de",
+    works: ["cdf-primado"],
+    lang: "de",
+    bibliography:
+      "Congregación para la Doctrina de la Fe, «Consideraciones» firmadas por el card. J. Ratzinger (prefecto) y Mons. T. Bertone (secretario); impresas primero como apéndice de Il Primato del Successore di Pietro (LEV, 1998), pp. 493–503. Sin fórmula de aprobación papal en el texto leído: sin grado propio. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "cdf98.la": {
+    id: "cdf98.la",
+    works: ["cdf-note-1998", "pf-1989"],
+    lang: "la",
+    bibliography:
+      "Nota doctrinal de la Congregación para la Doctrina de la Fe (1998), citada como clasificación de la propia Iglesia. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "cdf98.es": {
+    id: "cdf98.es",
+    works: ["cdf-note-1998", "pf-1989"],
+    lang: "es",
+    bibliography:
+      "Nota doctrinal de la Congregación para la Doctrina de la Fe (1998), citada como clasificación de la propia Iglesia. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "cdf98.en": {
+    id: "cdf98.en",
+    works: ["cdf-note-1998", "pf-1989"],
+    lang: "en",
+    bibliography:
+      "Nota doctrinal de la Congregación para la Doctrina de la Fe (1998), citada como clasificación de la propia Iglesia. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "cdf98.de": {
+    id: "cdf98.de",
+    works: ["cdf-note-1998", "pf-1989"],
+    lang: "de",
+    bibliography:
+      "Nota doctrinal de la Congregación para la Doctrina de la Fe (1998), citada como clasificación de la propia Iglesia. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "me.la": {
+    id: "me.la",
+    works: ["mysterium-ecclesiae"],
+    lang: "la",
+    bibliography:
+      "Declaración de la Congregación para la Doctrina de la Fe; Pablo VI «ha ratificado y confirmado esta Declaración […] y ha ordenado su publicación» (11 may 1973). Sin grado propio. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "me.es": {
+    id: "me.es",
+    works: ["mysterium-ecclesiae"],
+    lang: "es",
+    bibliography:
+      "Declaración de la Congregación para la Doctrina de la Fe; Pablo VI «ha ratificado y confirmado esta Declaración […] y ha ordenado su publicación» (11 may 1973). Sin grado propio. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "me.en": {
+    id: "me.en",
+    works: ["mysterium-ecclesiae"],
+    lang: "en",
+    bibliography:
+      "Declaración de la Congregación para la Doctrina de la Fe; Pablo VI «ha ratificado y confirmado esta Declaración […] y ha ordenado su publicación» (11 may 1973). Sin grado propio. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "me.de": {
+    id: "me.de",
+    works: ["mysterium-ecclesiae"],
+    lang: "de",
+    bibliography:
+      "Declaración de la Congregación para la Doctrina de la Fe; Pablo VI «ha ratificado y confirmado esta Declaración […] y ha ordenado su publicación» (11 may 1973). Sin grado propio. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "srx.la": {
+    id: "srx.la",
+    works: ["sempiternus-rex"],
+    lang: "la",
+    bibliography:
+      "Encíclica (magisterio auténtico); sus juicios históricos sobre Calcedonia son de Pío XII. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "srx.es": {
+    id: "srx.es",
+    works: ["sempiternus-rex"],
+    lang: "es",
+    bibliography:
+      "Encíclica (magisterio auténtico); sus juicios históricos sobre Calcedonia son de Pío XII. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "srx.en": {
+    id: "srx.en",
+    works: ["sempiternus-rex"],
+    lang: "en",
+    bibliography:
+      "Encíclica (magisterio auténtico); sus juicios históricos sobre Calcedonia son de Pío XII. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "srx.de": {
+    id: "srx.de",
+    works: ["sempiternus-rex"],
+    lang: "de",
+    bibliography:
+      "Encíclica (magisterio auténtico); sus juicios históricos sobre Calcedonia son de Pío XII. © LEV: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "donum-veritatis.la": {
+    id: "donum-veritatis.la",
+    works: ["donum-veritatis"],
+    lang: "la",
+    bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "donum-veritatis.es": {
+    id: "donum-veritatis.es",
+    works: ["donum-veritatis"],
+    lang: "es",
+    bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "donum-veritatis.en": {
+    id: "donum-veritatis.en",
+    works: ["donum-veritatis"],
+    lang: "en",
+    bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "donum-veritatis.de": {
+    id: "donum-veritatis.de",
+    works: ["donum-veritatis"],
+    lang: "de",
+    bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "wcf.en": {
+    id: "wcf.en",
+    works: ["wcf", "wlc"],
+    lang: "en",
+    bibliography: "Inglés: The Confession of Faith (texto de 1647), Edimburgo, Johnstone, Hunter & Co., 1894.",
+    licence: "public-domain",
+  },
+  "wcf.es": {
+    id: "wcf.es",
+    works: ["wcf", "wlc"],
+    lang: "es",
+    bibliography: "Español: Monterrey, Tipografía del Comercio, 1880. Dominio público.",
+    licence: "public-domain",
+  },
+  "triglot.la": {
+    id: "triglot.la",
+    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise"],
+    lang: "la",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
+  "triglot.es": {
+    id: "triglot.es",
+    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise"],
+    lang: "es",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
+  "triglot.en": {
+    id: "triglot.en",
+    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise"],
+    lang: "en",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
+  "triglot.de": {
+    id: "triglot.de",
+    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise"],
+    lang: "de",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
+  "dos.la": {
+    id: "dos.la",
+    works: ["dositheus"],
+    lang: "la",
+    bibliography:
+      "The Acts and Decrees of the Synod of Jerusalem (1672), trad. J. N. W. B. Robertson, Londres, Thomas Baker, 1899, decreto X (pp. 122–124). Dominio público. Solo se cita el inglés.",
+    licence: "public-domain",
+  },
+  "dos.es": {
+    id: "dos.es",
+    works: ["dositheus"],
+    lang: "es",
+    bibliography:
+      "The Acts and Decrees of the Synod of Jerusalem (1672), trad. J. N. W. B. Robertson, Londres, Thomas Baker, 1899, decreto X (pp. 122–124). Dominio público. Solo se cita el inglés.",
+    licence: "public-domain",
+  },
+  "dos.en": {
+    id: "dos.en",
+    works: ["dositheus"],
+    lang: "en",
+    bibliography:
+      "The Acts and Decrees of the Synod of Jerusalem (1672), trad. J. N. W. B. Robertson, Londres, Thomas Baker, 1899, decreto X (pp. 122–124). Dominio público. Solo se cita el inglés.",
+    licence: "public-domain",
+  },
+  "dos.de": {
+    id: "dos.de",
+    works: ["dositheus"],
+    lang: "de",
+    bibliography:
+      "The Acts and Decrees of the Synod of Jerusalem (1672), trad. J. N. W. B. Robertson, Londres, Thomas Baker, 1899, decreto X (pp. 122–124). Dominio público. Solo se cita el inglés.",
+    licence: "public-domain",
+  },
+  "enc1848.la": {
+    id: "enc1848.la",
+    works: ["enc-1848"],
+    lang: "la",
+    bibliography:
+      "Encíclica de los patriarcas orientales (mayo de 1848), leída en el Internet History Sourcebook de Fordham (copia de orthodoxinfo.com); traductor e impresión desconocidos, «© Paul Halsall», sin uso comercial. Licencia no determinada.",
+    licence: "unconfirmed",
+  },
+  "enc1848.es": {
+    id: "enc1848.es",
+    works: ["enc-1848"],
+    lang: "es",
+    bibliography:
+      "Encíclica de los patriarcas orientales (mayo de 1848), leída en el Internet History Sourcebook de Fordham (copia de orthodoxinfo.com); traductor e impresión desconocidos, «© Paul Halsall», sin uso comercial. Licencia no determinada.",
+    licence: "unconfirmed",
+  },
+  "enc1848.en": {
+    id: "enc1848.en",
+    works: ["enc-1848"],
+    lang: "en",
+    bibliography:
+      "Encíclica de los patriarcas orientales (mayo de 1848), leída en el Internet History Sourcebook de Fordham (copia de orthodoxinfo.com); traductor e impresión desconocidos, «© Paul Halsall», sin uso comercial. Licencia no determinada.",
+    licence: "unconfirmed",
+  },
+  "enc1848.de": {
+    id: "enc1848.de",
+    works: ["enc-1848"],
+    lang: "de",
+    bibliography:
+      "Encíclica de los patriarcas orientales (mayo de 1848), leída en el Internet History Sourcebook de Fordham (copia de orthodoxinfo.com); traductor e impresión desconocidos, «© Paul Halsall», sin uso comercial. Licencia no determinada.",
+    licence: "unconfirmed",
+  },
+  "enc1895.la": {
+    id: "enc1895.la",
+    works: ["enc-1895"],
+    lang: "la",
+    bibliography:
+      "Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896. Dominio público. Solo se cita el inglés.",
+    licence: "public-domain",
+  },
+  "enc1895.es": {
+    id: "enc1895.es",
+    works: ["enc-1895"],
+    lang: "es",
+    bibliography:
+      "Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896. Dominio público. Solo se cita el inglés.",
+    licence: "public-domain",
+  },
+  "enc1895.en": {
+    id: "enc1895.en",
+    works: ["enc-1895"],
+    lang: "en",
+    bibliography:
+      "Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896. Dominio público. Solo se cita el inglés.",
+    licence: "public-domain",
+  },
+  "enc1895.de": {
+    id: "enc1895.de",
+    works: ["enc-1895"],
+    lang: "de",
+    bibliography:
+      "Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896. Dominio público. Solo se cita el inglés.",
+    licence: "public-domain",
+  },
+  "st.la": {
+    id: "st.la",
+    works: ["status-stwcf", "status-stlut", "status-stlutac", "status-st1848", "status-st1895"],
+    lang: "la",
+    bibliography:
+      "Línea de estado actual redactada para el sitio (2026-10-21) a partir de las fuentes que nombra. No es texto de la Iglesia nombrada.",
+    licence: "site-authored",
+  },
+  "st.es": {
+    id: "st.es",
+    works: ["status-stwcf", "status-stlut", "status-stlutac", "status-st1848", "status-st1895"],
+    lang: "es",
+    bibliography:
+      "Línea de estado actual redactada para el sitio (2026-10-21) a partir de las fuentes que nombra. No es texto de la Iglesia nombrada.",
+    licence: "site-authored",
+  },
+  "st.en": {
+    id: "st.en",
+    works: ["status-stwcf", "status-stlut", "status-stlutac", "status-st1848", "status-st1895"],
+    lang: "en",
+    bibliography:
+      "Línea de estado actual redactada para el sitio (2026-10-21) a partir de las fuentes que nombra. No es texto de la Iglesia nombrada.",
+    licence: "site-authored",
+  },
+  "st.de": {
+    id: "st.de",
+    works: ["status-stwcf", "status-stlut", "status-stlutac", "status-st1848", "status-st1895"],
+    lang: "de",
+    bibliography:
+      "Línea de estado actual redactada para el sitio (2026-10-21) a partir de las fuentes que nombra. No es texto de la Iglesia nombrada.",
+    licence: "site-authored",
+  },
+  "ayala.la": {
+    id: "ayala.la",
+    works: ["trent"],
+    lang: "la",
+    bibliography:
+      "Latín y español: El sacrosanto y ecuménico concilio de Trento, traducido al idioma castellano por Don Ignacio López de Ayala, 2.ª ed., Madrid, Imprenta Real, 1785, ses. IV pp. 40–47, leído en el escaneo (archive.org elsacrosantoyec00madgoog).",
+    licence: "public-domain",
+  },
+  "ayala.es": {
+    id: "ayala.es",
+    works: ["trent"],
+    lang: "es",
+    bibliography:
+      "Latín y español: El sacrosanto y ecuménico concilio de Trento, traducido al idioma castellano por Don Ignacio López de Ayala, 2.ª ed., Madrid, Imprenta Real, 1785, ses. IV pp. 40–47, leído en el escaneo (archive.org elsacrosantoyec00madgoog).",
+    licence: "public-domain",
+  },
+  "ayala.en": {
+    id: "ayala.en",
+    works: ["trent"],
+    lang: "en",
+    bibliography:
+      "Inglés: J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent, Londres, Burns and Oates, 1848, ses. IV pp. 17–21 (OCR, archive.org cu31924029369760). Dominio público.",
+    licence: "public-domain",
+  },
+  "pft.la": {
+    id: "pft.la",
+    works: ["pft"],
+    lang: "la",
+    bibliography:
+      "Philip Schaff, The Creeds of Christendom, vol. II, Nueva York, Harper & Brothers, 1877 (ejemplar de 1896), p. 207, leído en el escaneo. Dominio público. Profesión histórica: el texto actual es el de 1989.",
+    licence: "public-domain",
+  },
+  "pft.es": {
+    id: "pft.es",
+    works: ["pft"],
+    lang: "es",
+    bibliography:
+      "Philip Schaff, The Creeds of Christendom, vol. II, Nueva York, Harper & Brothers, 1877 (ejemplar de 1896), p. 207, leído en el escaneo. Dominio público. Profesión histórica: el texto actual es el de 1989.",
+    licence: "public-domain",
+  },
+  "pft.en": {
+    id: "pft.en",
+    works: ["pft"],
+    lang: "en",
+    bibliography:
+      "Philip Schaff, The Creeds of Christendom, vol. II, Nueva York, Harper & Brothers, 1877 (ejemplar de 1896), p. 207, leído en el escaneo. Dominio público. Profesión histórica: el texto actual es el de 1989.",
+    licence: "public-domain",
+  },
+  "pft.de": {
+    id: "pft.de",
+    works: ["pft"],
+    lang: "de",
+    bibliography:
+      "Philip Schaff, The Creeds of Christendom, vol. II, Nueva York, Harper & Brothers, 1877 (ejemplar de 1896), p. 207, leído en el escaneo. Dominio público. Profesión histórica: el texto actual es el de 1989.",
+    licence: "public-domain",
+  },
+  "df.la": {
+    id: "df.la",
+    works: ["dei-filius"],
+    lang: "la",
+    bibliography: "Latín: vatican.va (ASS, vol. V, 1869-1870, pp. 481-493).",
+    licence: "public-domain",
+  },
+  "df.en": {
+    id: "df.en",
+    works: ["dei-filius"],
+    lang: "en",
+    bibliography:
+      "Inglés: Philip Schaff, The Creeds of Christendom, vol. II, Nueva York, Harper & Brothers, 1877 (ejemplar de 1896), OCR. Dominio público.",
+    licence: "public-domain",
+  },
+  "site-translation.dei-filius.es": {
+    id: "site-translation.dei-filius.es",
+    works: ["dei-filius"],
+    lang: "es",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
+  "dver.la": {
+    id: "dver.la",
+    works: ["donum-veritatis"],
+    lang: "la",
+    bibliography:
+      "Congregación para la Doctrina de la Fe, instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "dver.es": {
+    id: "dver.es",
+    works: ["donum-veritatis"],
+    lang: "es",
+    bibliography:
+      "Congregación para la Doctrina de la Fe, instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "dver.en": {
+    id: "dver.en",
+    works: ["donum-veritatis"],
+    lang: "en",
+    bibliography:
+      "Congregación para la Doctrina de la Fe, instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "dver.de": {
+    id: "dver.de",
+    works: ["donum-veritatis"],
+    lang: "de",
+    bibliography:
+      "Congregación para la Doctrina de la Fe, instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "pd.la": {
+    id: "pd.la",
+    works: ["providentissimus"],
+    lang: "la",
+    bibliography:
+      "León XIII, encíclica. Texto de dominio público; las traducciones de vatican.va son de la Santa Sede. El pasaje es el n. 20 en inglés y los nn. 45–46 en español.",
+    licence: "public-domain",
+  },
+  "pd.es": {
+    id: "pd.es",
+    works: ["providentissimus"],
+    lang: "es",
+    bibliography:
+      "León XIII, encíclica. Texto de dominio público; las traducciones de vatican.va son de la Santa Sede. El pasaje es el n. 20 en inglés y los nn. 45–46 en español.",
+    licence: "public-domain",
+  },
+  "pd.en": {
+    id: "pd.en",
+    works: ["providentissimus"],
+    lang: "en",
+    bibliography:
+      "León XIII, encíclica. Texto de dominio público; las traducciones de vatican.va son de la Santa Sede. El pasaje es el n. 20 en inglés y los nn. 45–46 en español.",
+    licence: "public-domain",
+  },
+  "pd.de": {
+    id: "pd.de",
+    works: ["providentissimus"],
+    lang: "de",
+    bibliography:
+      "León XIII, encíclica. Texto de dominio público; las traducciones de vatican.va son de la Santa Sede. El pasaje es el n. 20 en inglés y los nn. 45–46 en español.",
+    licence: "public-domain",
+  },
+  "das.la": {
+    id: "das.la",
+    works: ["divino-afflante"],
+    lang: "la",
+    bibliography:
+      "Pío XII, encíclica (tramo de Pío XII del mapa, ©): cita breve. El pasaje es el n. 14 en español y los nn. 21–22 en inglés.",
+    licence: "short-quote",
+  },
+  "das.es": {
+    id: "das.es",
+    works: ["divino-afflante"],
+    lang: "es",
+    bibliography:
+      "Pío XII, encíclica (tramo de Pío XII del mapa, ©): cita breve. El pasaje es el n. 14 en español y los nn. 21–22 en inglés.",
+    licence: "short-quote",
+  },
+  "das.en": {
+    id: "das.en",
+    works: ["divino-afflante"],
+    lang: "en",
+    bibliography:
+      "Pío XII, encíclica (tramo de Pío XII del mapa, ©): cita breve. El pasaje es el n. 14 en español y los nn. 21–22 en inglés.",
+    licence: "short-quote",
+  },
+  "das.de": {
+    id: "das.de",
+    works: ["divino-afflante"],
+    lang: "de",
+    bibliography:
+      "Pío XII, encíclica (tramo de Pío XII del mapa, ©): cita breve. El pasaje es el n. 14 en español y los nn. 21–22 en inglés.",
+    licence: "short-quote",
+  },
+  "vd.la": {
+    id: "vd.la",
+    works: ["verbum-domini"],
+    lang: "la",
+    bibliography: "Benedicto XVI, Verbum Domini (30 sep 2010). © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "vd.es": {
+    id: "vd.es",
+    works: ["verbum-domini"],
+    lang: "es",
+    bibliography: "Benedicto XVI, Verbum Domini (30 sep 2010). © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "vd.en": {
+    id: "vd.en",
+    works: ["verbum-domini"],
+    lang: "en",
+    bibliography: "Benedicto XVI, Verbum Domini (30 sep 2010). © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "vd.de": {
+    id: "vd.de",
+    works: ["verbum-domini"],
+    lang: "de",
+    bibliography: "Benedicto XVI, Verbum Domini (30 sep 2010). © Libreria Editrice Vaticana: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "status-stlut.la": {
+    id: "status-stlut.la",
+    works: ["status-stlut"],
+    lang: "la",
+    bibliography:
+      "Constitución de la LCMS, art. II, «accepts without reservation … All the Symbolical Books»; Constituciones de la ELCA, ed. de octubre de 2024, 2.05–2.06, que nombra «the Apology of the Augsburg Confession, the Smalcald Articles and the Treatise». No se buscó ninguna declaración luterana que retire o matice estos pasajes; la línea no dice nada sobre retiro por eso.",
+    licence: "unconfirmed",
+  },
+  "status-stlut.es": {
+    id: "status-stlut.es",
+    works: ["status-stlut"],
+    lang: "es",
+    bibliography:
+      "Constitución de la LCMS, art. II, «accepts without reservation … All the Symbolical Books»; Constituciones de la ELCA, ed. de octubre de 2024, 2.05–2.06, que nombra «the Apology of the Augsburg Confession, the Smalcald Articles and the Treatise». No se buscó ninguna declaración luterana que retire o matice estos pasajes; la línea no dice nada sobre retiro por eso.",
+    licence: "unconfirmed",
+  },
+  "status-stlut.en": {
+    id: "status-stlut.en",
+    works: ["status-stlut"],
+    lang: "en",
+    bibliography:
+      "Constitución de la LCMS, art. II, «accepts without reservation … All the Symbolical Books»; Constituciones de la ELCA, ed. de octubre de 2024, 2.05–2.06, que nombra «the Apology of the Augsburg Confession, the Smalcald Articles and the Treatise». No se buscó ninguna declaración luterana que retire o matice estos pasajes; la línea no dice nada sobre retiro por eso.",
+    licence: "unconfirmed",
+  },
+  "status-stlut.de": {
+    id: "status-stlut.de",
+    works: ["status-stlut"],
+    lang: "de",
+    bibliography:
+      "Constitución de la LCMS, art. II, «accepts without reservation … All the Symbolical Books»; Constituciones de la ELCA, ed. de octubre de 2024, 2.05–2.06, que nombra «the Apology of the Augsburg Confession, the Smalcald Articles and the Treatise». No se buscó ninguna declaración luterana que retire o matice estos pasajes; la línea no dice nada sobre retiro por eso.",
+    licence: "unconfirmed",
+  },
+  "wcat.en": {
+    id: "wcat.en",
+    works: ["wlc", "wsc"],
+    lang: "en",
+    bibliography:
+      "Inglés: The Confession of Faith; the Larger and Shorter Catechisms (texto de 1647), Edimburgo, Johnstone, Hunter & Co., 1894 (OCR). El volumen de Monterrey 1880 solo trae la Confesión: el español es traducción asistida por IA. Dominio público.",
+    licence: "public-domain",
+  },
+  "site-translation.wlc.es": {
+    id: "site-translation.wlc.es",
+    works: ["wlc"],
+    lang: "es",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
+  "site-translation.wsc.es": {
+    id: "site-translation.wsc.es",
+    works: ["wsc"],
+    lang: "es",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
+  "bfmpre.la": {
+    id: "bfmpre.la",
+    works: ["bfm-2000"],
+    lang: "la",
+    bibliography:
+      "The Baptist Faith and Message (2000), preámbulo, bfm.sbc.net/preamble/. La página en español de la SBC no trae el preámbulo: el español es traducción asistida por IA. © SBC: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "bfmpre.es": {
+    id: "bfmpre.es",
+    works: ["bfm-2000"],
+    lang: "es",
+    bibliography:
+      "The Baptist Faith and Message (2000), preámbulo, bfm.sbc.net/preamble/. La página en español de la SBC no trae el preámbulo: el español es traducción asistida por IA. © SBC: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "bfmpre.en": {
+    id: "bfmpre.en",
+    works: ["bfm-2000"],
+    lang: "en",
+    bibliography:
+      "The Baptist Faith and Message (2000), preámbulo, bfm.sbc.net/preamble/. La página en español de la SBC no trae el preámbulo: el español es traducción asistida por IA. © SBC: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "bfmpre.de": {
+    id: "bfmpre.de",
+    works: ["bfm-2000"],
+    lang: "de",
+    bibliography:
+      "The Baptist Faith and Message (2000), preámbulo, bfm.sbc.net/preamble/. La página en español de la SBC no trae el preámbulo: el español es traducción asistida por IA. © SBC: cita breve y enlace.",
+    licence: "short-quote",
+  },
+  "trent.la": {
+    id: "trent.la",
+    works: ["trent"],
+    lang: "la",
+    bibliography:
+      "Latín y castellano: López de Ayala, El sacrosanto y ecuménico concilio de Trento, 2.ª ed., Madrid, Imprenta Real, 1785.",
+    licence: "public-domain",
+  },
+  "trent.es": {
+    id: "trent.es",
+    works: ["trent"],
+    lang: "es",
+    bibliography:
+      "Latín y castellano: López de Ayala, El sacrosanto y ecuménico concilio de Trento, 2.ª ed., Madrid, Imprenta Real, 1785.",
+    licence: "public-domain",
+  },
+  "trent.en": {
+    id: "trent.en",
+    works: ["trent"],
+    lang: "en",
+    bibliography:
+      "Inglés: J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent, Londres, Burns and Oates. Dominio público.",
+    licence: "public-domain",
+  },
+  "lateran-4.es": {
+    id: "lateran-4.es",
+    works: ["lateran-4"],
+    lang: "es",
+    bibliography: "Español: Los sacrosantos concilios generales y particulares, t. V, Madrid, 1794. Dominio público.",
+    licence: "public-domain",
+  },
+  "site-translation.lateran-4.la": {
+    id: "site-translation.lateran-4.la",
+    works: ["lateran-4"],
+    lang: "la",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
+  "site-translation.lateran-4.en": {
+    id: "site-translation.lateran-4.en",
+    works: ["lateran-4"],
+    lang: "en",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
+  "schroeder.la": {
+    id: "schroeder.la",
+    works: ["vienne"],
+    lang: "la",
+    bibliography:
+      "H. J. Schroeder, Disciplinary Decrees of the General Councils, St. Louis, B. Herder, 1937. Dominio público.",
+    licence: "public-domain",
+  },
+  "schroeder.es": {
+    id: "schroeder.es",
+    works: ["vienne"],
+    lang: "es",
+    bibliography:
+      "H. J. Schroeder, Disciplinary Decrees of the General Councils, St. Louis, B. Herder, 1937. Dominio público.",
+    licence: "public-domain",
+  },
+  "schroeder.en": {
+    id: "schroeder.en",
+    works: ["vienne"],
+    lang: "en",
+    bibliography:
+      "H. J. Schroeder, Disciplinary Decrees of the General Councils, St. Louis, B. Herder, 1937. Dominio público.",
+    licence: "public-domain",
+  },
+  "schroeder.de": {
+    id: "schroeder.de",
+    works: ["vienne"],
+    lang: "de",
+    bibliography:
+      "H. J. Schroeder, Disciplinary Decrees of the General Councils, St. Louis, B. Herder, 1937. Dominio público.",
+    licence: "public-domain",
   },
   "gestis-verbisque.la": {
     id: "gestis-verbisque.la",
@@ -258,34 +931,6 @@ export const editions = {
       "Comentario doctrinal de la Congregación (1998), citado como clasificación de la propia Iglesia, sin grado propio. © Libreria Editrice Vaticana: cita breve y enlace.",
     licence: "short-quote",
   },
-  "donum-veritatis.la": {
-    id: "donum-veritatis.la",
-    works: ["donum-veritatis"],
-    lang: "la",
-    bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
-    licence: "short-quote",
-  },
-  "donum-veritatis.es": {
-    id: "donum-veritatis.es",
-    works: ["donum-veritatis"],
-    lang: "es",
-    bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
-    licence: "short-quote",
-  },
-  "donum-veritatis.en": {
-    id: "donum-veritatis.en",
-    works: ["donum-veritatis"],
-    lang: "en",
-    bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
-    licence: "short-quote",
-  },
-  "donum-veritatis.de": {
-    id: "donum-veritatis.de",
-    works: ["donum-veritatis"],
-    lang: "de",
-    bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
-    licence: "short-quote",
-  },
   "fidei-depositum.la": {
     id: "fidei-depositum.la",
     works: ["fidei-depositum"],
@@ -313,84 +958,6 @@ export const editions = {
     lang: "de",
     bibliography: "Constitución apostólica. Citada a través del mapa católico (4.F), solo en inglés.",
     licence: "unconfirmed",
-  },
-  "wcf.en": {
-    id: "wcf.en",
-    works: ["wcf", "wlc"],
-    lang: "en",
-    bibliography: "Inglés: The Confession of Faith (texto de 1647), Edimburgo, Johnstone, Hunter & Co., 1894.",
-    licence: "public-domain",
-  },
-  "wcf.es": {
-    id: "wcf.es",
-    works: ["wcf", "wlc"],
-    lang: "es",
-    bibliography: "Español: Monterrey, Tipografía del Comercio, 1880. Dominio público.",
-    licence: "public-domain",
-  },
-  "triglot.la": {
-    id: "triglot.la",
-    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism"],
-    lang: "la",
-    bibliography:
-      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
-    licence: "public-domain",
-  },
-  "triglot.es": {
-    id: "triglot.es",
-    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism"],
-    lang: "es",
-    bibliography:
-      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
-    licence: "public-domain",
-  },
-  "triglot.en": {
-    id: "triglot.en",
-    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism"],
-    lang: "en",
-    bibliography:
-      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
-    licence: "public-domain",
-  },
-  "triglot.de": {
-    id: "triglot.de",
-    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism"],
-    lang: "de",
-    bibliography:
-      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
-    licence: "public-domain",
-  },
-  "enc1895.la": {
-    id: "enc1895.la",
-    works: ["enc-1895"],
-    lang: "la",
-    bibliography:
-      "Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896. Dominio público. Solo se cita el inglés.",
-    licence: "public-domain",
-  },
-  "enc1895.es": {
-    id: "enc1895.es",
-    works: ["enc-1895"],
-    lang: "es",
-    bibliography:
-      "Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896. Dominio público. Solo se cita el inglés.",
-    licence: "public-domain",
-  },
-  "enc1895.en": {
-    id: "enc1895.en",
-    works: ["enc-1895"],
-    lang: "en",
-    bibliography:
-      "Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896. Dominio público. Solo se cita el inglés.",
-    licence: "public-domain",
-  },
-  "enc1895.de": {
-    id: "enc1895.de",
-    works: ["enc-1895"],
-    lang: "de",
-    bibliography:
-      "Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896. Dominio público. Solo se cita el inglés.",
-    licence: "public-domain",
   },
   "mogila.la": {
     id: "mogila.la",
