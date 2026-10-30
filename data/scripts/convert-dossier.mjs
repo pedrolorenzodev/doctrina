@@ -7,8 +7,11 @@ const ROOT = new URL("../../docs/research/doctrines", import.meta.url).pathname;
 const CONTENT = process.env.CONTENT_OUT ?? new URL("../../src/content", import.meta.url).pathname;
 const BIBLE = new URL("../../data/corpus/bibles/rv1909.json", import.meta.url).pathname;
 const DOCTRINES = process.argv.length > 2 ? process.argv.slice(2) : ["eucharist"];
+const doctrineOf = (key) => key.split(":")[0];
+const traditionOf = (key) => key.split(":")[1] ?? "catholic";
 const LEGACY_UNSUFFIXED_STATUS = new Set(["eucharist", "baptism"]);
-const SHORT = { eucharist: "e", justification: "j", baptism: "b", papacy: "p", "sola-scriptura": "s" };
+const DOCTRINE_SHORT = { eucharist: "e", justification: "j", baptism: "b", papacy: "p", "sola-scriptura": "s" };
+const suffixOf = (key) => DOCTRINE_SHORT[doctrineOf(key)] + (traditionOf(key) === "catholic" ? "" : traditionOf(key)[0]);
 const rv1909 = JSON.parse(fs.readFileSync(BIBLE, "utf8"));
 const rvKeys = Object.keys(rv1909);
 
@@ -20,7 +23,8 @@ const report = {
 };
 
 function load(d) {
-  const src = fs.readFileSync(`${ROOT}/${d}/review-page.data.js`, "utf8");
+  const file = traditionOf(d) === "catholic" ? "review-page.data.js" : `review-page.${traditionOf(d)}.data.js`;
+  const src = fs.readFileSync(`${ROOT}/${doctrineOf(d)}/${file}`, "utf8");
   const names = [...src.matchAll(/^(?:const|let|var) (\w+)/gm)].map((m) => m[1]);
   const ctx = { document: { createElement: () => ({}), head: { appendChild() {} } }, window: {}, console };
   vm.createContext(ctx);
@@ -143,7 +147,7 @@ const edTexts = {};
 
 function workFor(rawId, s, d) {
   if (s.kind === "Estado actual") {
-    const id = "status-" + rawId.toLowerCase() + (LEGACY_UNSUFFIXED_STATUS.has(d) ? "" : `-${SHORT[d]}`);
+    const id = "status-" + rawId.toLowerCase() + (LEGACY_UNSUFFIXED_STATUS.has(d) ? "" : `-${suffixOf(d)}`);
     if (!registry.works[id]) registry.works[id] = { id, title: s.title.replace(/: estado actual$/, ""), short: "Estado actual", kind: "status-line", speaker: "site", scheme: [] };
     return { workId: id, rest: "" };
   }
@@ -281,13 +285,13 @@ for (const d of DOCTRINES) {
     const c = convertCitation(d, rawId, s);
     if (!c) continue;
     report.citations++;
-    let id = s.kind === "Estado actual" && !LEGACY_UNSUFFIXED_STATUS.has(d) ? `${rawId}~${SHORT[d]}` : rawId;
+    let id = s.kind === "Estado actual" && !LEGACY_UNSUFFIXED_STATUS.has(d) ? `${rawId}~${suffixOf(d)}` : rawId;
     c.id = id;
     const prior = registry.citations[id];
     if (prior) {
       if (identity(prior) === identity(c)) { mergeInto(prior, c); idMap[d][rawId] = id; continue; }
       report.conflictingIds.push(`${rawId}: ${prior.work} ${JSON.stringify(prior.locator.parts)} vs ${d} ${c.work} ${JSON.stringify(c.locator.parts)}`);
-      id = `${rawId}~${SHORT[d]}`;
+      id = `${rawId}~${suffixOf(d)}`;
       c.id = id;
       report.renamed[d] = (report.renamed[d] || 0) + 1;
     }
@@ -357,8 +361,9 @@ function parseWho(who) {
 }
 
 const GRADE_ID = { dogma: "dogma", definitiva: "definitive", magisterio: "magisterium", disciplina: "discipline" };
+const gradeId = (d, category) => (traditionOf(d) === "catholic" ? GRADE_ID[category] : RAW[d].GRADES[category] ? category : undefined);
 function grade(d, g) {
-  if (GRADE_ID[g.cat]) return { kind: "church", grade: GRADE_ID[g.cat], ...(g.basis ? { basis: prose(d, g.basis) } : {}) };
+  if (gradeId(d, g.cat)) return { kind: "church", grade: gradeId(d, g.cat), ...(g.basis ? { basis: prose(d, g.basis) } : {}) };
   const reason = { trento: "taught-by-council", concilio: "taught-by-council", vat1: "taught-by-council", catecismo: "taught-by-catechism", acuerdo: "ecumenical-agreement", sinGrado: "undeclared", sinGradoPropio: "no-own-grade" }[g.cat];
   if (!reason) throw new Error("unknown grade category " + g.cat);
   return { kind: "unclassified", reason, ...(g.basis ? { basis: prose(d, g.basis) } : {}) };
@@ -429,10 +434,10 @@ function buildPage(d) {
   const grades = {};
   for (const [k, g] of Object.entries(x.GRADES)) {
     const def = { label: g.label, ...(g.sub ? { sub: g.sub } : {}), ...(g.def ? { definition: g.def } : {}), source: { citations: g.src.split(",").map((i) => mapCid(d, i.trim())), label: g.srcLabel } };
-    if (GRADE_ID[k]) grades[GRADE_ID[k]] = def;
+    if (gradeId(d, k)) grades[gradeId(d, k)] = def;
   }
   const page = {
-    doctrine: d, tradition: "catholic", status: "draft", title: "La posición católica", lede: x.META.lede,
+    doctrine: doctrineOf(d), tradition: traditionOf(d), status: "draft", title: fields.title ?? "La posición católica", lede: x.META.lede,
     teach: {
       subtitle: x.META.ensenaSub,
       definition: { text: prose(d, x.DEFINITION.text), grades: x.DEFINITION.grades.map((g) => grade(d, g)), sources: x.DEFINITION.sources.map((p) => srcRef(d, p)) },
@@ -530,10 +535,10 @@ registryFile("editions", "Edition", "EditionId");
 registryFile("citations", "Citation", "CitationId");
 registryFile("verses", "Verse", "VerseId");
 for (const d of DOCTRINES) {
-  fs.mkdirSync(`${CONTENT}/pages/${d}`, { recursive: true });
+  fs.mkdirSync(`${CONTENT}/pages/${doctrineOf(d)}`, { recursive: true });
   fs.writeFileSync(
-    `${CONTENT}/pages/${d}/catholic.es.ts`,
-    `import type { TraditionPage } from "@/content/model/page";\nimport type { CitationId } from "@/content/registry/citations";\n\nexport const ${camel(d)}Catholic = ${lit(pages[d])} satisfies TraditionPage<CitationId>;\n`,
+    `${CONTENT}/pages/${doctrineOf(d)}/${traditionOf(d)}.es.ts`,
+    `import type { TraditionPage } from "@/content/model/page";\nimport type { CitationId } from "@/content/registry/citations";\n\nexport const ${camel(doctrineOf(d))}${traditionOf(d)[0].toUpperCase()}${traditionOf(d).slice(1)} = ${lit(pages[d])} satisfies TraditionPage<CitationId>;\n`,
   );
 }
 
