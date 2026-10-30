@@ -167,3 +167,39 @@ Negative results below apply only to the named source universe; none is a claim 
 | Separate Westminster answer about urgent communion of the sick or dying | WCF 29.1–8, WLC 168–177 and WSC 96–97 in the checked prints | **NOT FOUND.** The texts reject reservation and describe normal administration but do not give a separate pastoral answer to this case. OB-4's limit is accurate and bounded. [not found] |
 | Express Baptist or AG rejection of Westminster's Eucharistic teaching | BF&M 2000 VII, New Hampshire XIV and AG Statement of Fundamental Truths 6, as transcribed and source-controlled in the project maps | **NOT FOUND.** They define the Supper as symbolic/memorial but do not reject the Westminster claims in words. This finding applies to these selected column texts only; it does not describe every Baptist confession. [not found] |
 | Constitutional status of Westminster proof texts | PCA/OPC edition preface checked directly | **NOT FOUND as constitutional text; affirmative contrary evidence found.** The preface says the proof texts are supplied for convenience and are not part of the constitutional text. [verified] |
+
+## Second pass — 2026-10-29
+
+### Progress
+
+- Status: S2 and S3 complete; the existing S1 was not repeated.
+- Done: compared all original correction instructions with the current dossier; diplomatic spellings, original-language translation direction, edition records and status qualifications were already applied. Upgraded the remaining OCR tags only where the existing report expressly records visual checks.
+- Next: Spanish owner review and web shaping/import, outside this run.
+
+### Legend and existing S1 disposition
+
+The historical report uses PASS/FAIL: PASS = CONFIRMED; FAIL = WRONG at the time of that check. Its Progress and resolved-correction paragraphs record those corrections as applied. This pass found **zero pending WRONG source-wording items** in the active dossier. It does not claim to have downloaded or rechecked those scans again.
+
+### Critic
+
+| ID | Finding | Triage | Resolution |
+|---|---|---|---|
+| C-R1 | The short definition and practice paragraphs state the confession's teaching without an in-sentence speaker; citations alone can disappear when shaped for the web. | must-fix | Added explicit Westminster/WLC attribution; no new doctrinal claim. |
+| C-R2 | The authority introduction generalizes the OPC/PCA proof-text constitutional status across the entire family. | must-fix | Limited that statement to the bodies identified by its actual prefatory evidence. |
+| C-R3 | The active dossier still contains a developed objection layer despite the owner's deferred wave-1 scope. | must-fix | Restored the required deferred line; preserved the entire pre-existing section verbatim in the apply log. |
+| C-R4 | Most arguments and practice entries are cited paraphrases, while the Catholic and Lutheran dossiers offer substantially more verbatim source text. | for the owner | Coverage is adequate for the selected Westminster loci but the depth difference remains; no padding with excluded Continental confessions or invented quotations. Web shaping must distinguish paraphrase from source words. |
+| C-R5 | A Father might be assigned to a modern tradition. | rejected | No Father is used as a Reformed voice in the active dossier. |
+| C-R6 | Severe WCF wording is cherry-picked or unqualified. | rejected | Positive spiritual reception opens the dossier; the polemic remains attributed to WCF and its adjacent status line distinguishes OPC/PCA, Scotland, PC(USA) and the qualified Mexican publication evidence. |
+| C-R7 | The WSC adoption-act row is independently verified. | rejected | It is explicitly a map snippet, retained as unconfirmed rather than upgraded. |
+
+## Wrong items
+
+- Existing S1: its required wording and translation corrections were already incorporated before this run; no pending source-wording correction found. See the original locus tables for the historical failures, rather than counting repeated uses as new errors.
+- Second pass: zero new WRONG quotation/locator/date items. Three must-fix editorial/scope findings applied (C-R1–3).
+
+## Unconfirmable
+
+- The WSC adoption-act row remains a map snippet, not independently certified by this pass. This run inherits the source-map boundary rather than reopening S1.
+- No public-domain Spanish WLC found in the bounded project inventory search; no global absence claim.
+- No broad reuse licence established for modern status documents; no full-text republication authorized.
+- Owner review of the Spanish is pending. The dossier's verified status denotes completion of the ordered research stages, not publication approval.
