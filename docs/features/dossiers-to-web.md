@@ -70,9 +70,12 @@ Inside a wave: Codex runs S1+S2+S3 for **all pairs of the wave in one session pe
 5. **Order of waves** (above) and whether Wave 0 waits for the Nov 4 reset.
 6. **Pedro's review of AI-translated Spanish quotes:** keep the «unreviewed» label on the live pages (existing rule) or batch his reading?
 
-## 8. Next actions for whoever continues (in order)
-1. Read this file, `ROADMAP.md` «Now» (the dossiers item) and `DECISIONS.md` 2026-10-29. Check `git status` for another session's edits.
-2. Ask Pedro the §7 questions in one batch; record his answers in `DECISIONS.md` at once.
-3. Write the S1–S3 prompt for the first tradition of Wave 1 (Reformed Eucharist, then Baptist/Orthodox Eucharist); give Pedro the paste command; wait for his yes with the cap.
-4. When Claude budget returns: Wave 0 imports, then the converter generalization (S4) and the Lutheran Eucharist import.
-5. After every run: update the table in §1, `ROADMAP.md` «Current state» (≤ 15 lines), and add a «Sizing» row to `agent-ops.md` with the real usage of the run.
+## 8. State at the close of the sixteenth session (2026-10-30) and next actions
+
+**Done:** all 20 pairs are live as `status: draft` (waves 0 to 3 of §4 and S4/S5 for every pair; Codex ran S1 to S3 only and was off for the import). How it was built and what to do next: `docs/playbooks/import-page.md` (pieces, recipe, steps), `docs/GOTCHAS.md` «Dossier import», `DECISIONS.md` entries of 2026-10-30 (the agent's calls to confirm are listed there). Measured: about 15 to 25 minutes and under 1 weekly point of Claude per pair once the dossier family's reader exists.
+
+**Next, in this order (Pedro decides the order):**
+1. **Pedro's review of the 16 non-Catholic pages** and of the agent's calls (shorts, leads, scripture sentences, status lines, omissions): every correction goes to the dossier, the data file, `dossier-fields.mjs` or the converter, then reconvert (never edit a page).
+2. **Wave 4**: the objections of the 16 pages (official layer; the section and the tree row hide themselves while empty), the Fathers and the reasons of «Por qué» (needs a model decision), the citations with no excerpt (dossier work), print pages, the doctrine pages 02 of Baptism, Papacy and Sola Scriptura (each needs a `shared.md` that does not exist), the apologists layers of the other traditions.
+3. **Open defects:** `e2e/reader-keep-position.spec.ts` «A+ keeps the verse at the top» (first full run, 389 px drift, not investigated); the shared edition bibliographies (GOTCHAS); the Westminster 1894 editor line in `eucharist/reformed.md`; 1689/Heidelberg/Belgic scope outside the Eucharist; the Neutral/English versions of all these pages (they exist only in Spanish).
+4. Codex only on Pedro's say-so, asking him first.

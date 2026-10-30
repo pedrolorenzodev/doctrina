@@ -28,6 +28,7 @@ How to run subagents on Pedro's account, and research on his Codex agent. Every 
 | Neutral universe: Opus writer for 325-and-earlier, 44 min | one of four area agents (B–D ran after a weekly reset) | 2026-10-17 |
 | Codex dossier wave 1: Eucharist Reformed (S2+S3), Baptist and Orthodox (S1-S3), ~32 min | 36 % of the 5-hour window, weekly 60 → 66 % (~2 weekly points per dossier); 3 WRONG found in 2 dossiers, 11 must-fix editorial findings applied | 2026-10-29 |
 | Codex dossier waves 2-3: Baptism ×4 and Sola Scriptura Baptist verified, Sola Scriptura Reformed partial, ~35 min, cap 60 % | 49 % of the 5-hour window, weekly 66 → 74 % (~1.6 weekly points and ~8 window points per dossier); 7 WRONG and 18 must-fix applied | 2026-10-30 |
+| Claude (Sonnet 5.5) turning verified dossiers into pages, 2026-10-30 12:00 to 17:40: the converter work, three readers, 16 non-Catholic pages (about 15 to 25 minutes and under 1 weekly point per pair once a dossier family's reader exists; the first of a family 30 to 60 minutes), verify and a first full e2e run | weekly 15 → 21 % | 2026-10-30 |
 | Codex dossier wave 4: Sola Scriptura Reformed (resume), Lutheran, Orthodox and Papacy ×4 verified, ~34 min, cap 70 % | 41 % of the 5-hour window, weekly 74 → 81 % (~1 weekly point and ~6 window points per dossier); 11 WRONG and 24 must-fix applied | 2026-10-30 |
 
 - At once: 2–3 Opus + at most 1 Fable; Sonnet as needed.

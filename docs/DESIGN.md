@@ -415,6 +415,12 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 - Built in B3: logo, language switch, theme button; menu button (B4) and search trigger are not built yet.
 - Sticky, 56 px, `bg` + texture, bottom hairline: menu button (≤ 1099), logo, search, ES / EN (13 px; current ink 500; hidden ≤ 720), theme button.
 
+### Statement lines on a tradition page (built 2026-10-30, agent's calls to confirm)
+
+- **Question line:** a statement may begin with the reader's question (decision 2026-10-20, option C): `font-body` at the statement size, weight 400, `ink`, 8 px above the statement text (`ink-2`, weight 300). Used by the Lutheran Eucharist QE-7 to QE-9 and the Reformed Eucharist negations.
+- **Status line:** under the grade and sources line of the statement, `text-line` in `ink-3`: the link «Estado actual» (opens the status citation's window like any citation), `: ` and the sentence of its first excerpt with straight quotes turned into «…». Harsh wording is quoted whole and carries this line beside it (DECISIONS 2026-10-20, «Harsh language»). Built without a proposal at Pedro's say-so.
+- **Empty sections:** a tradition page with no objections renders no Objeciones section and its tree row is the muted «En construcción» row; the same rule as an empty video list.
+
 ## 6. Screens (order of sections)
 
 Why each order and content: ROADMAP «Now» item 1 (screen notes) and the DECISIONS entries cited there.
