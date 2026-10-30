@@ -2,12 +2,10 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Started: 2026-10-29, third owner work order.
-- Status: done
-- Completed: one drafting pass through all sections; source limits, reception differences and owner questions recorded.
-- Next: none within this dossier drafting pass; extraction gaps and all independent verification remain outside this run.
-- Usage at creation: primary 20 %, weekly 58 %; primary reset epoch 1793313492.
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: active Greek Dositheus and English Philaret quotation groups, proof references, edition and historical authority witnesses collated; 1 WRONG and 4 must-fix findings applied. Evidence: `verification-orthodox.md`; original and changes: `orthodox.apply.md`.
+- Limits: original Russian Philaret, Greek Mogila baptism, complete canonical/reception/ritual corpus and critique original publication date remain unconfirmed; research-stage verified status does not certify those groups.
+- Next: owner Spanish review, source-gap decisions and web shaping/import, outside this run.
 
 ## Conventions and source boundary
 
@@ -15,10 +13,10 @@
 - **Baptism witnesses:** Constantinople I's creed and canon 7; Nicaea I canon 19; Trullo 95 and the received baptismal canons; Jerusalem 1672, Dositheus XV–XVI; Mogila I.102–103; Philaret Q.287–306. Reception witnesses in the map include Constantinople 1484, the Oros 1755 and Moscow 1667, with different local reception. The presence of an act in the map does not make it universally applied.
 - **Source grades:** councils and received canons retain their own grade; Dositheus is the confession of a named synod; Mogila is the approved Greek revision; Philaret is a Russian synodal catechism. Jeremiah's Answers are not replaced by private Gennadius/Kritopoulos confessions. Lucaris is not an adopted Orthodox alternative.
 - **Excluded substitutions:** Crete's own teaching is not a doctrine-page voice (DECISIONS 2026-10-15); its reception informs the map. ROC 2020 is mentioned only. A modern parish booklet, an OCA catechetical page or a theologian cannot fill a gap in the normative documents.
-- **Greek print:** Dositheus XV–XVI, Schaff II pp. 423–427, [scan](https://archive.org/details/creedschristendo02scha/page/423/mode/1up). Catalogue year 1877 conflicts with the Archive copyright note's 1896; the copy's title-page date is not collated [unverified]. Printed running heads govern page references.
+- **Greek print:** Dositheus XV–XVI, Schaff II pp. 423–427, [scan](https://archive.org/details/creedschristendo02scha/page/423/mode/1up). Title 1896, copyright 1877 (New York: Harper & Brothers); catalogue gives 1877. Corrected 2026-10-30, O-05 [verified: scan]; old reversed relation preserved in `orthodox.apply.md`. Printed running heads govern page references.
 - **English controls:** Robertson 1899 for Dositheus; Overbeck 1898 for Mogila; Blackmore's English Philaret in Schaff II pp. 491–493. English is retained as English, never used as the source of Spanish.
 - **Spanish:** no reusable public-domain Spanish edition is identified by the mapped searches. Greek excerpts are rendered directly from their printed original, labelled **[traducción propia asistida por IA]**, unreviewed by Pedro [unverified]. Philaret remains in English until an original-language witness is read.
-- **Tags:** `[verified: scan]` identifies only wording read on a page image during drafting. Translations, OCR-only locators, approval acts not re-read and bibliographic details remain `[unverified]`. This is not a verification, critic or apply pass.
+- **Tags:** `[verified: scan]` identifies the active page-image collation in `verification-orthodox.md` O-02–06. Own Spanish is checked directly against Greek but remains AI-labelled/unreviewed; uncollated original-language and current-reception pointers remain `[unverified]` with O-07/O-08.
 - **Copyright:** historical editions have the map's public-domain boundary; no new international rights audit [unverified]. Modern translations of the Oros are not reproduced at length.
 
 ## Qué enseña
@@ -83,7 +81,9 @@ The question asks why children are baptized. Dositheus XVI, pp. 423–424, also 
 
 > There is a way, which is penitence. [verified: scan]
 
-Dositheus XVI, p. 427, likewise distinguishes baptism once rightly administered and the recovery of adoption through repentance. That original page was read during the Eucharist extraction and is reused here without a new source search.
+Dositheus XVI, p. 427, likewise distinguishes baptism once rightly administered and the recovery of adoption through repentance. Pp. 426–427 were independently reread in this pass (O-02).
+
+Attributed source account: **Para la confesión de Dositeo, el bautismo imprime un carácter indeleble; quien fue bautizado correctamente una vez no vuelve a bautizarse, incluso si después cae en pecado o reniega de la fe. El retorno al Señor recupera la adopción mediante el misterio del arrepentimiento.** This is a paraphrase directly of Greek XVI pp. 426–427, not a quotation or a translation from Robertson. Added 2026-10-30, C-O1; O-02 [verified: scan] for the source.
 
 ### QE-6 · Reception of converts remains a distinct question
 
@@ -118,6 +118,8 @@ Philaret Q.288 prints John 3:5 with its own wording. These are quotations from t
 > Εἰ δὲ τὰ νήπια ἄνθρωποι, εἴπερ καὶ αὐτὰ δεῖται σωτηρίας· δεῖται σωτηρίας, δεῖται καὶ τοῦ βαπτίσματος. [verified: scan]
 
 > «Si los niños son seres humanos, también ellos necesitan salvación; si necesitan salvación, necesitan también el bautismo». [traducción propia asistida por IA] [unverified]
+
+Historical status: confession of the named Synod of Jerusalem, 1672; dated subscription read on Schaff p. 444 (O-06). [Complete infant paragraph, printed p. 424](https://archive.org/details/creedschristendo02scha/page/424/mode/1up). This extract is not the full paragraph's severe treatment of unbaptized infants; no current universal institutional reaffirmation or repeal is established here. The Orthodox critique and its limits are kept in Grado de autoridad (O-07), not substituted for an institutional act. Added 2026-10-30, C-O2.
 
 This is Dositheus's argument, not reasoning supplied by the site. Its wider paragraph also treats ancestral sin and the condition of unbaptized infants; this excerpt does not reproduce that entire historical paragraph or claim a fresh universal-current adoption finding.
 
@@ -207,25 +209,25 @@ No unstated emergency exception or list of valid baptizers is added to this sent
 
 Q.298–299 treats the sign of the cross; Q.301 the cross placed on the baptized. These are the historical catechism's explanations, not an inventory of every present service book.
 
-### The reception problem is not flattened
+### Reception of converts
 
 The map's Greek/Slavic distinction matters here: Constantinople 1484, the Oros 1755 and Moscow 1667 cannot all be collapsed into a single unlabelled direction. Verification I7 does not confirm the map's earlier claim about Greece in 1932; this dossier does not repeat it as fact.
 
-Acquisition/extraction of those originals and the Euchologion baptism rite remains incomplete in this draft. No claim of silence is made, no modern ritual is supplied from memory, and no observed prevalence is inferred.
+Acquisition/extraction of those originals and the Euchologion baptism rite remains incomplete (unconfirmed in `verification-orthodox.md` O-08). No claim of silence is made, no modern ritual is supplied from memory, and no observed prevalence is inferred.
 
 ## Grado de autoridad
 
 ### Councils and confession
 
-The creed and received canons belong to the map's conciliar tier; the confession belongs to Jerusalem 1672. Mogila's approved Greek revision has the patriarchal act of 11 March 1643. Approval of that Greek text is not automatically approval of every later translation (`verification-orthodox.md` F1–F2) [unverified: approval acts not re-read].
+The creed and received canons belong to the map's conciliar tier; the confession belongs to Jerusalem 1672. Mogila's approved Greek revision has the patriarchal act of 11 March 1643. The English print of its approval act was read in Overbeck p. 10: 11 March 1643, approval expressly confined to Greek, not every later translation (O-06 [verified: scan] for that English witness). Original Greek act not collated. Dositheus's Jerusalem subscription of 16 March 1672 was read in Greek on Schaff p. 444 (O-06). The map's tier scheme is editorial organization, not a new church-issued grade.
 
 ### The Orthodox critique remains alongside approval
 
-Archbishop Basil Krivoshein, “Символические тексты в Православной Церкви”, 1961, §VI, is a mapped Orthodox critique of seventeenth-century symbolic texts; it does not function as their repeal. His [Russian text](https://azbyka.ru/otechnik/Vasilij_Krivoshein/simvolicheskie-teksty-v-pravoslavnoj-tserkvi/) was fetched once for these four dossiers. The site's editorial annotation is distinct from his article. No modern hostile annotation is put in his mouth [unverified: web witness].
+Archbishop Basil Krivoshein, “Символические тексты в Православной Церкви”, 1961 [unverified: original publication date, O-07], §VI, is a mapped Orthodox critique of seventeenth-century symbolic texts; it does not function as their repeal. His [Russian text](https://azbyka.ru/otechnik/Vasilij_Krivoshein/simvolicheskie-teksty-v-pravoslavnoj-tserkvi/) was fetched once for these four dossiers. The site's editorial annotation is distinct from his article. No modern hostile annotation is put in his mouth. The author's evaluation compares the seventeenth-century confessions critically and distinguishes them from an exhaustive universally binding symbolic text; it is theological critique, not a synodal repeal. E-text read as author text, with the host's editorial preface excluded (O-07); original journal date/print unconfirmed. The host identifies a 2011 collected reprint, not newly verified original publication.
 
 ### Philaret and local acts
 
-Philaret's 1839 catechism is the Russian synodal catechetical witness, with Schaff's editorial Q-numbers. Its doctrinal description is not itself a survey of all autocephalous churches (`verification-orthodox.md` F3) [unverified: approval not re-read].
+Philaret's 1839 catechism is the Russian synodal catechetical witness, with Schaff's editorial Q-numbers. Its doctrinal description is not itself a survey of all autocephalous churches Schaff p. 445 prints the approval title and identifies Blackmore's 1845 English translation; O-06 [verified: scan] for the title/editorial witness, not collation of the original Russian. A candidate 1839 Russian scan catalogue was found at the Russian Historical Library, but page text/images were not collated after access attempts (O-08); Philaret remains English here.
 
 The reception acts remain patriarchal-synodal/local witnesses with disputed application. No new 2026 adoption audit was authorized or conducted.
 
@@ -233,12 +235,12 @@ The reception acts remain patriarchal-synodal/local witnesses with disputed appl
 
 | Source | Edition and scope | Access / reuse |
 |---|---|---|
-| Dositheus | Greek XV–XVI, Schaff II pp. 423–427 | [Print](https://archive.org/details/creedschristendo02scha/page/423/mode/1up); original excerpts read; copy-year discrepancy remains [unverified] |
+| Dositheus | Greek XV–XVI, Schaff II pp. 423–427 | [Print](https://archive.org/details/creedschristendo02scha/page/423/mode/1up); original excerpts read; 1896 title / 1877 copyright visually confirmed, O-05 [verified: scan] |
 | Dositheus control | Robertson, London: Thomas Baker, 1899 | [Print](https://archive.org/details/actsdecreesofsyn00orth); English OCR locator, not Spanish base |
-| Philaret | 1839 Russian catechism, Blackmore English in Schaff II; Q.287–306, pp. 491–493 | [Print](https://archive.org/details/creedschristendo02scha/page/491/mode/1up); English pages read; no Spanish translated from English |
-| Mogila | Overbeck, London: Thomas Baker, 1898; I.102–103 | [Print](https://archive.org/details/cu31924029363094); bounded English locator; Greek extraction not completed [unverified] |
-| Conciliar / reception witnesses | Nicaea I 19; Constantinople I 7; Trullo 95; 1484; 1755; 1667; Euchologion | Editions in map §§4,6,8; acquisition/extraction limits retained [unverified] |
-| Critique | Krivoshein, 1961, §VI | Linked Russian web witness; short quotation only if used; no synodal status inferred |
+| Philaret | 1839 Russian catechism, Blackmore English in Schaff II; Q.287–306, pp. 491–493 | [Print](https://archive.org/details/creedschristendo02scha/page/491/mode/1up); English pages collated (O-04); Russian 1839 catalogue candidate not page-collated (O-08); no Spanish translated from English |
+| Mogila | Overbeck, London: Thomas Baker, 1898; I.102–103 | [Print](https://archive.org/details/cu31924029363094); bounded English locator; Greek extraction not completed [unverified; O-08] |
+| Conciliar / reception witnesses | Nicaea I 19; Constantinople I 7; Trullo 95; 1484; 1755; 1667; Euchologion | Editions in map §§4,6,8; acquisition/extraction limits retained [unverified; O-08] |
+| Critique | Krivoshein, §VI; original publication date 1961 unconfirmed, O-07 | Russian author e-text, host identifies 2011 collected reprint; attributed paraphrase only, no synodal repeal inferred |
 
 Historical print reuse follows the mapped PD boundary, not a new rights audit. Scratch pages are in `~/doctrina-scratch/orthodox-drafting/`; citations follow printed running heads, not scratch filenames.
 
@@ -254,13 +256,13 @@ Historical print reuse follows the mapped PD boundary, not a new rights audit. S
 | Cómo se vive: catechetical directions | full | Dositheus XVI water/minister; Philaret Q.290–302 preparation, sponsors and signs |
 | Cómo se vive: reception of converts | sparse | Map §§4,9.6 and verification I7; originals of 1484/1755/1667 not extracted; conflicting applications not resolved by drafter |
 | Cómo se vive: contemporary prevalence | map gap | No local observational corpus collected; no inference from normative prescriptions |
-| Grado de autoridad | sparse | Map tiers and verification F1–F3/I7; Krivoshein web fetched; no fresh approval/recension or current adoption collation |
-| Fuentes | sparse | Greek Dositheus and English Philaret scans read; Greek Mogila, ritual and reception-act extraction limits remain |
+| Grado de autoridad | sparse | Historical title/subscription and English Mogila approval witness collated (O-06); critique author e-text read (O-07); original critique date, recension and current adoption not confirmed |
+| Fuentes | sparse | All active Greek Dositheus/English Philaret quotes and edition title collated (O-02–06); Russian, Greek Mogila, ritual and reception-act limits remain (O-08) |
 | Document silence | sparse | No entire-universe negative search completed; no substantive silence claim and no gap filled from a substitute source |
 
 ## Questions for the owner
 
-1. Keep the dated Greek and Slavic reception witnesses separately labelled on the eventual page, without selecting a single universal convert-reception rule?
-2. Dositheus XVI's complete infant paragraph contains a severe historical formulation; its full original and current reception need an explicit treatment before publication. This draft quotes its positive infant-baptism rationale without issuing a modern status judgment.
-3. Keep the normative directions distinct from a future account of present local customs? No prevalence research was part of this pass.
-4. Read the Spanish translations from Greek before publication. Philaret's original-language Spanish and the canonical/ritual extraction gaps remain outside this completed drafting pass.
+1. Dositheus XVI's complete unbaptized-infant paragraph and current institutional reception need an explicit treatment before an expanded publication; the positive excerpt now has adjacent historical status and a link to the whole page. No current universal judgment was invented.
+2. Greek/Slavic convert-reception evidence remains distinct and uncollated beyond the named map pointers. Decide how to finish the canonical/ritual sources; no private substitute was added, and practice is shorter than Catholic Baptism in those areas.
+3. Review the Greek-to-Spanish quotations and attributed character/nonrepetition paragraph. Philaret remains English: a Russian Historical Library 1839 catalogue candidate was found, but original pages were not collated after the logged attempts.
+4. Krivoshein's original publication date/print remains unconfirmed; his readable critique is theological, not a repeal. Current adoption and the 1838 Russian recension remain source gaps.

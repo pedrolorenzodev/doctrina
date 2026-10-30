@@ -2,23 +2,25 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Status: done
-- Completed: all required sections, historical Westminster boundary, coverage and owner questions drafted.
-- Next: none within this order for this dossier; independent verification and translation review remain outside this pass.
+- Status: draft, NOT verified — stopped at 47 % observed usage (2026-10-30; no-new-step threshold 45 %, save before 50 %).
+- Done: S1 scope audit; all active Spanish WCF 1/WSC 2 and English WLC 156–158 quotation images read; WCF 31.3–4 and title/approval images read; proof index and WLC 160 paraphrase checked. R-02 English publisher error applied in both occurrences, original preserved in `reformed.apply.md`.
+- Not done: remaining WSC 89–90 page-image check, final S1 dispositions/tag upgrades, S3 Critic, remaining S2 application and final recheck. No completed S1-S3 status claimed; Spanish remains unreviewed by Pedro.
+- Next: inspect downloaded `~/doctrina-scratch/wave2/wsc-246.jpg` and `wsc-247.jpg` for printed pp. 243–244, finish verification/tag upgrades, critic, apply and recheck before starting Lutheran Sola Scriptura.
+- Evidence/checkpoint: `verification-reformed.md`, `reformed.apply.md`; Sola Scriptura Lutheran/Orthodox untouched.
 
 ## Conventions and source boundary
 
 - **Column:** map family A, Westminster (Presbyterian), as fixed in `../eucharist/reformed.md`: historical 1647 WCF, WLC and WSC. Continental (B), mainline books of confessions (C), and Second Helvetic–Heidelberg (D) remain separate; none is silently substituted for A.
 - **Primary loci:** WCF 1, with 20.2 and historical 31.3–4; WLC 2–5,155–160; WSC 2–3,89–90. The source universe is those standards, not an anthology of all Reformed authors.
-- **English print:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Offices of the Church of Scotland, 1894; historical text. American chapter 31 numbering differs: historical 31.4 = American 31.3, per the applied map verification.
+- **English print:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Johnstone, Hunter, & Co., 1894; historical text. American chapter 31 numbering differs: historical 31.4 = American 31.3, per the applied map verification.
+- Corrected 2026-10-30, R-02: old English imprint “Offices of the Church of Scotland”; title names Johnstone, Hunter, & Co. Original in `reformed.apply.md`.
 - **Spanish print:** H. C. Thomson, *Doctrinas y reglamentos de la Iglesia Presbiteriana*, Monterrey: Tipografía del Comercio, 1880, as its title page reads. The archive identifier abbreviates the title as `doctrinasyreglam00west`. WCF and WSC quotations use this witness.
 - **WLC Spanish:** [traducción propia asistida por IA], directly from original English, unreviewed by Pedro. No rendering from an intermediate translation.
 - **Quotation treatment:** divided words joined; printed spelling retained; editorial proof markers omitted where stated. Ellipses are explicit. A shortened excerpt is not a newly composed confessional sentence.
 - **Tags:** [verified: scan] means the quoted passage was read in its printed image during drafting, not that this dossier received verification. Everything else remains [unverified].
 - **Scripture:** proof references are the documents' own printed apparatus. The dossier supplies neither independent exegesis nor an apologetic argument for the tradition.
 - **Scratch:** `~/doctrina-scratch/third-order/`, `west1880-normal.txt`, `west1894-normal.txt`, and numbered page JPGs. OCR is for location; the page image controls quotations.
-- **Pass:** draft only; no critic, verification, apply, debate layer or site changes.
+- **Pass:** S1 in progress; R-02 imprint correction applied. Critic and remaining application not run; no debate layer or site changes.
 
 ## Qué enseña
 
@@ -244,7 +246,7 @@ Mapped category claims are inherited from `../../traditions/reformed.md` §§2�
 
 ## Fuentes
 
-1. **WCF/WLC/WSC:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Offices of the Church of Scotland, 1894. [Print scan](https://archive.org/details/confessionoffaith00chur). WCF 31.3–4, p. 97; WLC 156–158, pp. 195–197. Public-domain witness according to the mapped inventory; rights classification not independently verified in this pass [unverified].
+1. **WCF/WLC/WSC:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Johnstone, Hunter, & Co., 1894. [Print scan](https://archive.org/details/confessionoffaith00chur). WCF 31.3–4, p. 97; WLC 156–158, pp. 195–197. Public-domain witness according to the mapped inventory; rights classification not independently verified in this pass [unverified].
 2. **Spanish WCF/WSC:** H. C. Thomson, *Doctrinas y reglamentos de la Iglesia Presbiteriana*, Monterrey: Tipografía del Comercio, 1880. [Print scan](https://archive.org/details/doctrinasyreglam00west). Title and year read on image n2 [verified: scan]. WCF 1, pp. 5–13; WSC 2 on image n164. Public-domain classification inherited from the map [unverified].
 3. **WLC Spanish:** translations made directly from the English print, marked individually [traducción propia asistida por IA]. No modern copyrighted Spanish text copied; review by Pedro remains outside this pass.
 4. **Local provenance:** the two OCR witnesses and downloaded numbered images under `~/doctrina-scratch/third-order/`; original reused OCR path stated in `../baptism/reformed.md`. Scans are locatable through the archive identifiers and image numbers above.

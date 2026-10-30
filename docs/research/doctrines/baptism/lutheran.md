@@ -2,10 +2,9 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Status: done
-- Completed: one drafting pass through all sections; selected original-language pages read; Spanish translations, coverage and owner questions recorded.
-- Next: none within this order for this dossier; independent verification and translation review remain outside this pass.
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: all active German/Latin quotations, proof references, authority and edition checked against page images; 1 WRONG and 3 must-fix findings applied. Evidence: `verification-lutheran.md`; original and corrections: `lutheran.apply.md`.
+- Next: owner Spanish review and web shaping/import, outside this run.
 
 ## Conventions and source boundary
 
@@ -13,12 +12,12 @@
 - **Map categories:** Tier 1 is the closed Book of Concord: preface, three ecumenical creeds, unaltered Augsburg Confession (AC), Apology (Ap), Smalcald Articles (SA), Treatise (Tr), Small Catechism (SC), Large Catechism (LC), Formula of Concord (FC: Ep/SD). The Catalog of Testimonies is an appendix, not the confession proper.
 - **Other tiers:** Luther outside the Book of Concord is explanatory, not the column's norm; body-level statements and ecumenical agreements bind their named participants, not all Lutheran churches. Liturgical witnesses are not silently made norms. No later “Office of the Keys” questions are added to SC as if Luther wrote them.
 - **Subscription strands:** LCMS accepts the whole confessional collection without reservation; ELCA distinguishes AC as a true witness from other writings as further valid interpretations; LWF's basis especially names AC and SC; CELC uses its own “because” subscription. These are mapped distinctions, not fresh adoption audits [unverified].
-- **Original witness:** *Concordia Triglotta*, ed. F. Bente, English F. Bente/W. H. T. Dau, St. Louis: Concordia Publishing House, 1921, archive item `ConcordiaTriglotta`. German originals for SA, SC, LC and FC; Latin original for Ap and Tr; AC's German and Latin are both official and are not collapsed into one text.
+- **Original witness:** *Concordia Triglotta*, ed. F. Bente, English F. Bente/W. H. T. Dau, St. Louis: Concordia Publishing House, 1921, archive item `ConcordiaTriglotta`. The scanned copy is a later Northwestern Publishing House second reprint preserving the 1921 title/text; its physical reprint date is not established (L-08). German originals for SA, SC, LC and FC; Latin original for Ap and Tr; AC's German and Latin are both official and are not collapsed into one text.
 - **Spanish:** the map's edition inventory identifies no usable public-domain Spanish witness. Each rendering below is [traducción propia asistida por IA], directly from the original German or Latin printed in the 1921 witness, unreviewed by Pedro [unverified]. Modern Meléndez/CPH and unclear-licence volunteer versions are not copied.
-- **Numbers:** Triglot paragraph numbers. Ap IX.51–53 are not silently cited as another edition's IX.1–3. SC questions may also be identified by their printed “Zum ersten/andern/dritten/vierten” blocks.
-- **Tags:** [verified: scan] means the quotation was read on its printed page during drafting; it is not a verification pass. Other quotations, translation choices and current-body claims remain [unverified]. Long s is transcribed as s and divided words joined.
+- **Numbers:** Triglot paragraph numbers; Ap IX.51–53 corresponds to Kolb–Wengert IX.1–3 (C-L3; map verification). Ap IX.51–53 are not silently cited as another edition's IX.1–3. SC questions may also be identified by their printed “Zum ersten/andern/dritten/vierten” blocks.
+- **Tags:** [verified: scan] identifies the page-image checks in `verification-lutheran.md` L-02–08. Own Spanish remains AI-labelled/unreviewed; body subscription claims are not freshly audited. Long s is transcribed as s and divided words joined.
 - **Scratch:** `~/doctrina-scratch/third-order/triglot.txt`, `triglot-pages.xml`, `triglot-metadata.json`, and `triglot-original-<printed-page>.jpg`. The earlier `triglot-p*` image names are offset locator attempts, not reliable printed-page names.
-- **Practice:** catechetical prescriptions, not observed current habits. No debate videos, independent arguments, verification, critic or apply pass.
+- **Practice:** catechetical prescriptions, not observed current habits. No debate videos or independent arguments; research S1–S3 complete, no import in this run.
 
 ## Qué enseña
 
@@ -69,6 +68,14 @@
 > «Ciertamente no lo hace el agua, sino la palabra de Dios que está con el agua y junto a ella, y la fe que confía en esa palabra de Dios en el agua».
 
 — [traducción propia asistida por IA], from German; unreviewed by Pedro [unverified].
+
+The same answer continues:
+
+> “Denn ohne Gottes Wort ist das Wasser schlecht Wasser und keine Taufe; aber mit dem Wort Gottes ist’s eine Taufe, das ist, ein gnadenreich Wasser des Lebens und ein Bad der neuen Geburt im Heiligen Geist”
+>
+> «Pues sin la palabra de Dios el agua es agua común y no es bautismo; pero con la palabra de Dios es bautismo, es decir, un agua de vida llena de gracia y un baño del nuevo nacimiento en el Espíritu Santo».
+
+— SC IV.10, original German p. 550 [verified: scan], L-02. Spanish **[traducción propia asistida por IA]**, directly from German, unreviewed by Pedro. Apostrophe normalized, long s and divided words joined. Added 2026-10-30 (C-L1) to retain the source's positive new-birth account beside the preceding excerpt.
 
 ### QE-4 · God's work, with faith receiving
 
@@ -158,11 +165,11 @@ LC IV.57 says children are brought in hope and prayer that God give them faith; 
 |---|---|---|---|
 | Matthew 28:19 | SC IV.3–4 | Institution and the triune name | Original German on Triglot p. 550 [verified: scan] |
 | Mark 16:16 | SC IV.7–8 | Promise of salvation and faith | Original German on p. 550 [verified: scan] |
-| Titus 3:5–8 | SC IV.10 | Washing of regeneration and renewal | German quote names Titus 3; Latin column supplies 3:5 sqq., p. 550 [verified: scan]; terminal range 5–8 is [unverified] |
+| Titus 3:5 sqq. (printed); quotation corresponds to 3:5–7 and 8a | SC IV.10 | Washing of regeneration and renewal | German names chapter 3; Latin prints 3:5 sqq., p. 550 [verified: scan], L-06; no assertion that all verse 8 is quoted |
 | Romans 6:4 | SC IV.13–14 | Daily new life signified | German continuation p. 552; Latin prints 6:4 [verified: scan] |
 | Matthew 28:19 | Ap IX.52 | Command applied to infants | Original Latin p. 244 [verified: scan] |
 | Ephesians 5:26 | SA III.5.1 | “lavacrum in verbo” | German names Ephesians 5; Latin column supplies 5:26, p. 490 [verified: scan] |
-| Ephesians 4:5–6 | AC VII | Unity of faith and baptism | Latin prints 4:5–6; German 4:4–6, p. 46 [verified: scan] |
+| Ephesians 4:5–6 (both printed references); German quotation begins with 4:4 wording | AC VII | Unity of faith and baptism | Both print Eph. 4,5.6, p. 46 [verified: scan]; corrected 2026-10-30, L-06; old locator preserved in `lutheran.apply.md` |
 | Matthew 23:2 | AC VIII.1–2 | Efficacy despite an unworthy minister | German and Latin on p. 46 [verified: scan] |
 | Mark 16:16 | LC IV.33–34 | Faith receiving the promised treasure | German continuation p. 740 [verified: scan]; verse number identified from SC's same citation |
 
@@ -225,36 +232,35 @@ No description of sponsors, parish scheduling or denominational baptism certific
 | SC IV | Catechetical teaching; FC calls the catechisms the laity's Bible | German original, not English translated into Spanish |
 | LC IV | Catechetical explanation in the same collection | Its quoted Fathers remain quoted witnesses, not modern Lutheran voices |
 
-The collection's own rule-and-norm distinction is FC Ep RN 7–8: Scripture judges; confessions testify and explain. This authority locus and body subscription distinctions are inherited from the map and Eucharist dossier, not freshly verified in this baptism pass [unverified].
+The collection's own rule-and-norm distinction is FC Ep RN 7–8: Scripture judges; confessions testify and explain. FC Ep RN 5,7–8 was freshly checked on pp. 776,778 (L-07 [verified: scan]); RN 5 identifies the catechisms as the laity's Bible. Body subscription summaries remain inherited from the map and its verification, not freshly audited against institutional print editions here [unverified in this pass].
 
 The full-Book-of-Concord position is not imposed silently on every body mapped. Each eventual statement must retain its document label; body-level agreements cannot be substituted for AC, SC, Ap or LC.
 
 ## Fuentes
 
-1. **Original printed witness:** *Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German–Latin–English*, ed. F. Bente, English F. Bente and W. H. T. Dau, St. Louis: Concordia Publishing House, 1921. [Archive scan](https://archive.org/details/ConcordiaTriglotta). Original-language pages used: 46 (AC), 244 (Ap), 490 (SA), 550,552 (SC), 734,740,746,750 (LC). Public-domain witness per map; the rights classification was not independently re-audited [unverified].
+1. **Original printed witness:** *Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German–Latin–English*, ed. F. Bente, English F. Bente and W. H. T. Dau, St. Louis: Concordia Publishing House, 1921. [Archive scan](https://archive.org/details/ConcordiaTriglotta). Original-language pages used: 46 (AC), 244 (Ap), 490 (SA), 550,552 (SC), 734,740,746,750 (LC). 1921 title/imprint visually confirmed inside a later Northwestern second reprint of unestablished date (L-08); PD use follows the mapped assessment for the 1921 text, not later reprint matter.
 2. **AC IX:** [printed p. 46](https://archive.org/details/ConcordiaTriglotta/page/n326/mode/1up); both originals read [verified: scan].
 3. **Ap IX:** [printed p. 244](https://archive.org/details/ConcordiaTriglotta/page/n524/mode/1up); Latin read, translation made directly from it [verified: scan] for original, [unverified] for Spanish.
 4. **SC IV:** [printed p. 550](https://archive.org/details/ConcordiaTriglotta/page/n830/mode/1up); no English intermediary used in the Spanish [unverified] translations.
 5. **Translation inventory:** `../../traditions/lutheran.md` §4, “Editions”, and `../../sources/protestant-magisterial.md`, as referenced there. Meléndez/CPH is copyrighted; volunteer licence unclear. No source is newly declared unavailable by an unsuccessful fetch.
-6. **Research controls:** Lutheran map §§1–4,6,8; `verification-lutheran-reformed.md`, Lutheran items L-log 1–5,7–9 and S-L5; inherited Eucharist conventions. No independent verification document was produced.
+6. **Research controls:** Lutheran map §§1–4,6,8; `verification-lutheran-reformed.md`, Lutheran items L-log 1–5,7–9 and S-L5; inherited Eucharist conventions. Independent image checks and critic: `verification-lutheran.md`; corrections and original: `lutheran.apply.md`.
 
 ## Coverage table
 
-Full describes drafting coverage, not verification. An explicitly deferred section is not evidence that a tradition lacks an answer.
+Full describes the selected confessional account, not exhaustive current reception research. Active image checks: L-02–08; wider drafting searches listed below are not certification of every unquoted paragraph. An explicitly deferred section is not evidence that a tradition lacks an answer.
 
 | Section | Status | Where searched / cause |
 |---|---|---|
 | Qué enseña | full | AC IX German/Latin; Ap IX.51–53 Latin; SA III.5 German; SC IV German; LC IV.10,33–38,56–60,73–83 German, located in the dated OCR and selected original-language images |
 | Por qué | full | SA III.5.1, Ap IX.52–53, LC IV.10,35,56–57; the sources' own institution/promise/faith arguments, not a synthesized defense |
-| La Escritura que usa | full | The same blocks' explicit citations, including differing German/Latin reference ranges; Titus's exact terminal range remains unverified |
+| La Escritura que usa | full | The same blocks' explicit citations, including differing German/Latin reference ranges; Titus's printed 3:5 sqq. distinguished from the quotation's 3:5–7/8a contents (L-06) |
 | Objeciones | sparse | Deferred by the owner (2026-10-23); no debate research |
 | Cómo se vive | full | SC IV heading and fourth block; LC IV.57,77–79; prescriptive practice, no current custom inferred |
-| Grado de autoridad | full | Map tiers and subscription strands; FC's rule-and-norm locus inherited, not reverified here |
-| Fuentes | full | 1921 original-language print images, archive identifiers, OCR scratch and direct translation provenance recorded |
+| Grado de autoridad | full | FC Ep RN 5,7–8 collated (L-07); body subscription strands inherited, not freshly audited |
+| Fuentes | full | All active original-language page images and 1921 title/reprint leaves read (L-02–08); physical reprint date unestablished; direct translation provenance recorded |
 
 ## Questions for the owner
 
-1. Keep AC IX's German “gefällig” and Latin “recipiantur in gratiam Dei” visible as two formulations rather than one composite Spanish sentence?
-2. Review “contrición y arrepentimiento” for SC's “Reue und Buße”; it is translated directly from German and has not been reviewed by you.
-3. Does household catechesis plus the catechism's daily return to baptism give the practice section the right emphasis, before any modern agenda is added?
-4. Keep each document label beside its statement so the collection's differing subscription across bodies remains visible?
+1. Review “contrición y arrepentimiento” for “Reue und Buße”, the new SC IV.10 continuation and the other direct-original Spanish renderings. The two AC originals remain separately labelled.
+2. Review the practice emphasis: household catechesis and daily return are sourced; contemporary liturgical details are sparse beside Catholic Baptism and were not invented.
+3. Modern-body subscription remains map-backed rather than newly audited. If later panels expand the polemical source context omitted here, body-specific status lines will be needed; no objections were added in this run.

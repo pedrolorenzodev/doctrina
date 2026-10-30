@@ -2,23 +2,23 @@
 
 ## Progress
 
-- Status: draft, NOT verified (no verification, critic or apply pass)
-- Status: done
-- Completed: one drafting pass through all sections; historical Westminster boundary and edition distinctions recorded.
-- Next: none within this order for this dossier. Independent verification and translation review remain outside this pass.
+- Status: verified (S1-S3 done 2026-10-30; Spanish quotes not reviewed by the owner)
+- Done: WCF 28, WSC 94–95 and WLC 166–167 quotations, proof index, source editions and authority checked against page images; 2 WRONG and 3 must-fix findings applied. Evidence: `verification-reformed.md`; original and corrections: `reformed.apply.md`.
+- Next: owner review of WLC Spanish and web shaping/import, outside this run.
 
 ## Conventions and source boundary
 
 - **Represented strand:** map family A, Westminster (Presbyterian), with exactly the boundary fixed in `../eucharist/reformed.md`: historical 1647 WCF, WLC and WSC. This is not an invented consensus of map families A–D.
 - **Other strands:** Continental Three Forms of Unity (B), mainline books of confessions (C), and Second Helvetic–Heidelberg (D) remain distinct and outside this column. Their silence has not been claimed.
 - **Documents:** WCF 27–28; WLC 161–167, with 177 for the baptism–Supper distinction; WSC 91–95. Related church and covenant passages are identified separately below.
-- **English witness:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Offices of the Church of Scotland, 1894. The historical text governs; later revisions do not silently replace it.
-- **Spanish witness:** *Doctrinas y reglamentos de la Iglesia Presbiteriana*, Monterrey: Tipografía del Comercio, 1880. WCF and WSC use this printed Spanish rather than a new translation. Its additional notes and Scripture apparatus are not confessional paragraphs.
+- **English witness:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Johnstone, Hunter, & Co., 1894. The historical text governs; later revisions do not silently replace it.
+- Corrected 2026-10-30 (R-06): old English imprint “Offices of the Church of Scotland”; the title page names Johnstone, Hunter, & Co. Original retained in `reformed.apply.md`.
+- **Spanish witness:** *Doctrinas y reglamentos de la Iglesia Presbiteriana*, Monterrey: Tipografía del Comercio, 1880. WCF and WSC use this printed Spanish rather than a new translation. Its additional notes and Scripture apparatus are not confessional paragraphs. Its introduction identifies American civil-government alterations; the English historical text controls, and the baptism clauses were compared directly (R-02/R-03).
 - **WLC Spanish:** [traducción propia asistida por IA], directly from the English original in the 1894 witness; unreviewed by Pedro. No public-domain Spanish WLC witness is identified in the map.
-- **Tags:** [verified: scan] records only a passage read on its page image during drafting. It does not mean that this dossier has received a verification pass. [unverified] identifies other draft quotations, locators and claims.
+- **Tags:** [verified: scan] identifies the active page-image checks in `verification-reformed.md` R-02–07; body-level reception not re-audited stays [unverified]. Spanish WLC translations remain unreviewed by Pedro.
 - **Proof texts:** references supplied by an edition are reported as that edition's apparatus. They are not new arguments supplied by the agent, nor automatically part of the constitutional wording.
 - **Scratch:** `~/doctrina-scratch/third-order/`; `west1880.txt`, `west1880-normal.txt`, `west1894-normal.txt`; numbered JPG page images. The reused 1894 OCR is `~/doctrina-scratch/lutheran-apply/wcf/wcf1894.txt`.
-- **Readiness:** one drafting pass only; no verification, critic or apply pass; no material enters the site.
+- **Readiness:** research S1–S3 complete; no material enters the site in this run.
 
 ## Qué enseña
 
@@ -66,7 +66,7 @@ WSC gives its own catechetical formulation:
 
 ### QE-5 · The Spirit gives the promised grace
 
-> «la gracia prometida no solamente se ofrece, sino realmente es en debido tiempo demostrada y dada por el Espíritu Santo, á aquellos (sean adultos ó párvulos) á quienes pertenece aquella gracia, segun el consejo de la propia voluntad de Dios».
+> «la gracia prometida no solamente se ofrece, sino realmente es en debido tiempo demostrada y dada, por el Espíritu Santo, á aquellos (sean adultos ó párvulos) á quienes pertenece aquella gracia, segun el consejo de la propia voluntad de Dios».
 
 — WCF 28.6, Monterrey 1880, p. 144 [verified: scan]; terminal proof-reference marker omitted.
 
@@ -76,7 +76,7 @@ The paragraph begins:
 
 — WCF 28.6, Monterrey 1880, p. 144 [verified: scan].
 
-### QE-6 · Baptism and salvation are not mechanically identical
+### QE-6 · Baptism, grace and salvation
 
 
 > «Aunque el menosprecio ó descuido de esta ordenanza sea un grave pecado [...] sin embargo, la gracia y la salvacion, no son tan inseparablemente unidas con ella, que seria imposible ser regenerado ó salvo sin ella [...] y por otra parte, no resulta que todos los que sean bautizados, necesariamente son regenerados».
@@ -153,19 +153,19 @@ This index reports the documents' own references. It does not supply independent
 
 | Passage | Where the document uses it | Function named by the document | Tag |
 |---|---|---|---|
-| Matthew 28:19–20 | WCF 28.1–2; WSC 94 | Institution, triune name and continuation | [verified: scan] for Monterrey pp. 139–140,204 |
+| Matthew 28:19–20 (WCF 28.1–2 apparatus); 28:19 (WSC 94) | WCF 28.1–2; WSC 94 | Institution, triune name and continuation | [verified: scan], Monterrey pp. 139–140,204; R-05 |
 | 1 Corinthians 12:13 | WCF 28.1; WLC 167 | Admission into the body; brotherly love | [verified: scan] for Monterrey p. 139 and Edinburgh p. 203 |
 | Romans 4:11 | WCF 28.1,4; WLC 166–167 | Sign and seal; covenant; benefits sealed | [verified: scan] |
 | Colossians 2:11–12 | WCF 28.1,4; WLC 166–167 | Circumcision and baptism in the covenant apparatus | [verified: scan] |
 | Galatians 3:27 | WCF 28.1,6; WSC 94 | Union with Christ | [verified: scan] |
-| Romans 6:3–5 | WCF 28.1; WLC 167 | Newness of life; Christ's death and resurrection | [verified: scan] |
+| Romans 6:3–4 and 6:5 separately (WCF); 6:3–5 (WLC) | WCF 28.1; WLC 167 | Newness of life; Christ's death and resurrection | [verified: scan], Edinburgh pp. 91,203; R-05 |
 | Titus 3:5 | WCF 28.1; Monterrey 28.7 | Regeneration; Spanish edition's proof for once-only administration | [verified: scan] |
 | Mark 1:4 | WCF 28.1 | Remission of sins | [verified: scan] for Monterrey p. 140 |
 | Acts 22:16 | Monterrey WCF 28.1 | Washing away sins | [verified: scan] |
 | Hebrews 9:10,19–22 | Edinburgh WCF 28.3 | Administration by pouring or sprinkling | [verified: scan]: Edinburgh p. 91 |
 | Acts 2:41; 16:33 | WCF 28.3 | Water administration | [verified: scan] for Monterrey p. 140 |
 | Mark 7:4 | WCF 28.3 | Washings | [verified: scan] for Monterrey pp. 140–141 |
-| Mark 16:15–16; Acts 8:37–38 | WCF 28.4 | Profession before baptism | [verified: scan] for Monterrey p. 142, with Acts 8:37 there |
+| Mark 16:15–16; Acts 8:37–38 | WCF 28.4 | Profession before baptism | [verified: scan]: Edinburgh p. 91 has Acts 8:37–38; Monterrey p. 142 has only 37; R-05 |
 | Genesis 17:7,9 | WCF 28.4; WLC 166 | Covenant and offspring | [verified: scan] |
 | Galatians 3:9,14 | WCF 28.4; WLC 166 | Abraham's blessing and the promise | [verified: scan] |
 | Acts 2:38–39 | WCF 28.4; WLC 166 | Promise to hearers and children | [verified: scan] |
@@ -175,6 +175,8 @@ This index reports the documents' own references. It does not supply independent
 | Ephesians 5:25–26; Acts 2:38,41 | WCF 28.6 | The promised grace conferred | [verified: scan] for Monterrey p. 145 |
 | 1 Peter 3:21 | WLC 167; WSC 95 apparatus | Benefits and good conscience | [verified: scan] |
 | Romans 6:22 | WLC 167 | Holiness and righteousness of life | [verified: scan] |
+
+Corrected 2026-10-30 (R-05): the old grouped Matthew/Romans ranges and less explicit Acts witness are preserved in `reformed.apply.md`; the table now distinguishes their actual loci.
 
 **Edition distinction:** Monterrey 1880, pp. 141–142, inserts extended explanatory notes about Pentecost and immersion. Those are not promoted into WCF 28.3, nor treated as the confession's own prose. Edinburgh p. 91 prints Hebrews 9:10,19–22; the Spanish printed series is 9:10,19–21.
 
@@ -215,25 +217,27 @@ No present-day frequency, parish custom or statistics are inferred from these pr
 
 | Text | Category and limit | Basis |
 |---|---|---|
-| Scripture | Supreme judge; distinct from human confessions | WCF 1.10; map §2 [unverified in this pass] |
-| WCF | Historical Westminster confession, a subordinate standard in map family A | Map §§2,4A; Eucharist boundary [unverified in this pass] |
-| WLC | Catechism within the Westminster standards | Map §4A; quoted here as WLC, not a free-standing universal Reformed decree [unverified in this pass] |
-| WSC | Catechism within the same standards | Map §4A [unverified in this pass] |
+| Scripture | Supreme judge; distinct from human confessions | WCF 1.10, Edinburgh p. 21 [verified: scan], R-07 |
+| WCF | Historical Westminster confession, a subordinate standard in map family A | Historical WCF 31.3–4, Edinburgh p. 97 [verified: scan], R-07; current body subscription inherited from map, not freshly audited |
+| WLC | Catechism within the Westminster standards | 1894 WLC title/approval act [verified: scan], R-07; no universal present-day decree asserted |
+| WSC | Catechism within the same standards | 1880 heading “El Catecismo menor” [verified: scan], R-07; current subscription not freshly audited |
 | Proofs and Spanish editorial notes | Edition apparatus; not automatically a confessional paragraph | Comparison of WCF 28.3 in the two witnesses; Spanish pp. 140–142 [verified: scan] for the Spanish pages |
 
-The confession's own authority qualification is WCF 31.4 in the historical numbering: councils may err and help faith rather than constitute its rule. American 1788 numbering is 31.3. The map's applied verification explicitly corrects this numbering (`verification-lutheran-reformed.md`, “R extra finding”); it is not reverified here [unverified].
+The confession's own authority qualification is WCF 31.4 in the historical numbering: councils may err and help faith rather than constitute its rule. American 1788 numbering is 31.3. The map's applied verification explicitly corrects this numbering (`verification-lutheran-reformed.md`, “R extra finding”); American correspondence is inherited from that applied map verification, not freshly audited here. Historical 31.4 is reverified on Edinburgh p. 97 (R-07).
+
+For WCF 31.3, synod determinations consonant with Scripture are to be received with reverence and submission; this positive ecclesial authority stands beside 31.4's fallibility qualification. Attributed paraphrase of Edinburgh p. 97 [verified: scan], R-07; no new Spanish quotation generated.
 
 ## Fuentes
 
-1. **WCF/WLC/WSC, English:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Offices of the Church of Scotland, 1894. [Dated print scan](https://archive.org/details/confessionoffaith00chur). Historical Westminster text; original English, public-domain witness according to the mapped edition inventory. Edition and rights not independently audited in this drafting pass [unverified].
-2. **WCF/WSC, Spanish:** *Doctrinas y reglamentos de la Iglesia Presbiteriana*, Monterrey: Tipografía del Comercio, 1880. [Dated print scan](https://archive.org/details/doctrinasyreglam00west). WCF 28, pp. 139–145; WSC 94–95, pp. 204–205. Public-domain witness in the map; title-page/licensing classification inherited, not newly audited [unverified].
+1. **WCF/WLC/WSC, English:** *The Confession of Faith; the Larger and Shorter Catechisms*, Edinburgh: Johnstone, Hunter, & Co., 1894. [Dated print scan](https://archive.org/details/confessionoffaith00chur). Historical Westminster text; original English, public-domain witness according to the mapped edition inventory. Title/imprint visually checked; historical edition reuse follows the mapped assessment; R-06 [verified: scan] for edition, not a new legal ruling.
+2. **WCF/WSC, Spanish:** *Doctrinas y reglamentos de la Iglesia Presbiteriana*, Monterrey: Tipografía del Comercio, 1880. [Dated print scan](https://archive.org/details/doctrinasyreglam00west). WCF 28, pp. 139–145; WSC 94–95, pp. 204–205. Public-domain witness per mapped assessment; title/imprint visually checked, R-06 [verified: scan] for edition.
 3. **WLC 166–167:** Edinburgh 1894, pp. 201–203. [Printed p. 202](https://archive.org/details/confessionoffaith00chur/page/n205/mode/1up); [printed p. 203](https://archive.org/details/confessionoffaith00chur/page/n206/mode/1up). Only page-image readings receive scan tags.
 4. **Spanish WLC translations:** prepared here directly from English, identified individually; no modern Spanish copyrighted translation used. Unreviewed by Pedro [unverified].
 5. **Boundary and edition variants:** `../../traditions/reformed.md` §§1–4,8, and its `verification-lutheran-reformed.md`; `../eucharist/reformed.md`, “Conventions and source boundary”. These are research controls, not additional normative voices.
 
 ## Coverage table
 
-“Full” means adequate material for this drafting section, not verification or exhaustive reception research. The deferred objections row uses sparse with its explicit cause rather than mislabelling the tradition silent.
+“Full” concerns the selected documentary account; current institutional reception is not exhaustively researched. Active source-image checks are R-02–07; larger corpus searches below identify drafting coverage, not certification of every unquoted paragraph. The deferred objections row uses sparse with its explicit cause rather than mislabelling the tradition silent.
 
 | Section | Status | Where searched / cause |
 |---|---|---|
@@ -242,12 +246,11 @@ The confession's own authority qualification is WCF 31.4 in the historical numbe
 | La Escritura que usa | full | Apparatus of WCF 28, WLC 165–167 and WSC 94–95; edition-specific expansions separated. The differing Hebrews range is recorded explicitly |
 | Objeciones | sparse | Deferred by the owner; no doctrinal silence asserted and no debate research undertaken |
 | Cómo se vive | full | WCF 28.2–4,7; WLC 167; WSC 94–95. Prescriptive practice only, not observed current customs |
-| Grado de autoridad | full | Map §§2–4A; historical WCF 1.10,31.4, with applied map verification controlling numbering; status/adoption claims remain unverified in this pass |
-| Fuentes | full | Both dated edition records and downloaded OCR; selected printed page images; WLC translations labelled |
+| Grado de autoridad | full | Map §§2–4A; historical WCF 1.10,31.4, with applied map verification controlling numbering; historical 1.10/31.3–4 and catechism headings collated (R-07); current subscription not re-audited |
+| Fuentes | full | Both title/imprints and all active quoted page images checked (R-02–07); WLC translations labelled and unreviewed |
 
 ## Questions for the owner
 
-1. The inherited Eucharist boundary selects family A. Keep that explicit label on all three new Reformed screens, without implying families B–D speak through Westminster?
-2. How should the screen explain “improving our baptism” in WLC 167? The draft rendering “aprovechar nuestro bautismo” needs your review.
-3. Approve the distinction between prescriptive practice here and observed contemporary practice, which these standards alone do not document.
-4. Read the Spanish WLC translations before publication. No verification, critic or apply pass has been run.
+1. Review “aprovechar nuestro bautismo” and the other own WLC Spanish translations; their originals are verified but Pedro has not reviewed them.
+2. The Westminster boundary is settled. Heidelberg/Belgic remain out; resolve any future use beyond the Eucharist pilot before adding them. Practice remains prescriptive, with less procedural detail than Catholic Baptism; no other-family padding.
+3. Other research files may inherit the wrong English publisher “Offices of the Church of Scotland”. This run corrects only this dossier; see R-06 and C-R5.
