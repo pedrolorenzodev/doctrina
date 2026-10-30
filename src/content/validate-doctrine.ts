@@ -49,7 +49,8 @@ export function validateDoctrinePages(
       const linked: string[] = [];
       for (const objection of answer.objections) {
         if (!("id" in objection)) {
-          if (published) fail(where, "a published tradition links its objections by id");
+          if (published && published.objections.items.length > 0)
+            fail(where, "a published tradition links its objections by id");
           continue;
         }
         linked.push(objection.id);

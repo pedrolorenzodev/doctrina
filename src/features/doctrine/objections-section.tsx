@@ -16,6 +16,7 @@ type ObjectionsSectionProps = {
 export function ObjectionsSection({ page, locale }: ObjectionsSectionProps) {
   const text = getUiText(locale);
   const official = officialObjections(page);
+  if (official.length === 0) return null;
   return (
     <Section id="objections" title={text.doctrine.objections} subtitle={page.objections.subtitle}>
       <ThemedObjectionList

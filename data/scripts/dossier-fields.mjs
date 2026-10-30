@@ -1,4 +1,24 @@
 export const FIELDS = {
+  "eucharist:lutheran": {
+    title: "La posición luterana",
+    topic: "la Santa Cena",
+    objectionsSubtitle: "Objeciones a la postura luterana. Abre cada una para leer en profundidad la respuesta de las confesiones luteranas.",
+    objectionVideosSubtitle: "Creadores luteranos que responden a esta objeción. Los videos se abren en YouTube.",
+    videosSubtitle: "Creadores luteranos explican y defienden esta postura. Los videos se abren en YouTube.",
+    authoritySubtitle: "Las categorías de autoridad que las propias confesiones luteranas usan para sus textos, con su definición en palabras de las confesiones.",
+    statements: {
+      "QE-1": "la presencia de Cristo",
+      "QE-2": "las palabras de la institución",
+      "QE-3+4": "cómo se recibe",
+      "QE-5": "lo que hace presente a Cristo",
+      "QE-6": "para qué se da",
+      "QE-7": "la transubstanciación",
+      "QE-8": "la Misa como sacrificio",
+      "QE-9": "la hostia reservada",
+      "QE-10": "el pan y el cáliz",
+    },
+    objections: {},
+  },
   papacy: {
     topic: "el primado y la infalibilidad del papa",
     statements: {

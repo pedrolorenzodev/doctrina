@@ -1,6 +1,1051 @@
 import type { Verse } from "@/content/model/registry";
 
 export const verses = {
+  "Matt.26.26": {
+    osis: "Matt.26.26",
+    text: "Y comiendo ellos, tomó Jesús el pan, y bendijo, y lo partió, y dió á sus discípulos, y dijo: Tomad, comed: esto es mi cuerpo.",
+    edition: "RV1909",
+  },
+  "Matt.26.27": {
+    osis: "Matt.26.27",
+    text: "Y tomando el vaso, y hechas gracias, les dió, diciendo: Bebed de él todos;",
+    edition: "RV1909",
+  },
+  "Matt.26.28": {
+    osis: "Matt.26.28",
+    text: "Porque esto es mi sangre del nuevo pacto, la cual es derramada por muchos para remisión de los pecados.",
+    edition: "RV1909",
+  },
+  "Mark.14.22": {
+    osis: "Mark.14.22",
+    text: "Y estando ellos comiendo, tomó Jesús pan, y bendiciendo, partió y les dió, y dijo: Tomad, esto es mi cuerpo.",
+    edition: "RV1909",
+  },
+  "Mark.14.23": {
+    osis: "Mark.14.23",
+    text: "Y tomando el vaso, habiendo hecho gracias, les dió: y bebieron de él todos.",
+    edition: "RV1909",
+  },
+  "Mark.14.24": {
+    osis: "Mark.14.24",
+    text: "Y les dice: Esto es mi sangre del nuevo pacto, que por muchos es derramada.",
+    edition: "RV1909",
+  },
+  "Luke.22.19": {
+    osis: "Luke.22.19",
+    text: "Y tomando el pan, habiendo dado gracias, partió, y les dió, diciendo: Esto es mi cuerpo, que por vosotros es dado: haced esto en memoria de mí.",
+    edition: "RV1909",
+  },
+  "Luke.22.20": {
+    osis: "Luke.22.20",
+    text: "Asimismo también el vaso, después que hubo cenado, diciendo: Este vaso es el nuevo pacto en mi sangre, que por vosotros se derrama.",
+    edition: "RV1909",
+  },
+  "1Cor.11.23": {
+    osis: "1Cor.11.23",
+    text: "Porque yo recibí del Señor lo que también os he enseñado: Que el Señor Jesús, la noche que fué entregado, tomó pan;",
+    edition: "RV1909",
+  },
+  "1Cor.11.24": {
+    osis: "1Cor.11.24",
+    text: "Y habiendo dado gracias, lo partió, y dijo: Tomad, comed: esto es mi cuerpo que por vosotros es partido: haced esto en memoria de mí.",
+    edition: "RV1909",
+  },
+  "1Cor.11.25": {
+    osis: "1Cor.11.25",
+    text: "Asimismo [tomó] también la copa, después de haber cenado, diciendo: Esta copa es el nuevo pacto en mi sangre: haced esto todas las veces que bebiereis, en memoria de mí.",
+    edition: "RV1909",
+  },
+  "1Cor.10.16": {
+    osis: "1Cor.10.16",
+    text: "La copa de bendición que bendecimos, ¿no es la comunión de la sangre de Cristo? El pan que partimos, ¿no es la comunión del cuerpo de Cristo?",
+    edition: "RV1909",
+  },
+  "1Cor.11.27": {
+    osis: "1Cor.11.27",
+    text: "De manera que, cualquiera que comiere este pan ó bebiere esta copa del Señor indignamente, será culpado del cuerpo y de la sangre del Señor.",
+    edition: "RV1909",
+  },
+  "1Cor.11.28": {
+    osis: "1Cor.11.28",
+    text: "Por tanto, pruébese cada uno á sí mismo, y coma así de aquel pan, y beba de aquella copa.",
+    edition: "RV1909",
+  },
+  "1Cor.11.29": {
+    osis: "1Cor.11.29",
+    text: "Porque el que come y bebe indignamente, juicio come y bebe para sí, no discerniendo el cuerpo del Señor.",
+    edition: "RV1909",
+  },
+  "1Cor.11.26": {
+    osis: "1Cor.11.26",
+    text: "Porque todas las veces que comiereis este pan, y bebiereis esta copa, la muerte del Señor anunciáis hasta que venga.",
+    edition: "RV1909",
+  },
+  "Heb.10.4": {
+    osis: "Heb.10.4",
+    text: "Porque la sangre de los toros y de los machos cabríos no puede quitar los pecados.",
+    edition: "RV1909",
+  },
+  "Heb.10.10": {
+    osis: "Heb.10.10",
+    text: "En la cual voluntad somos santificados por la ofrenda del cuerpo de Jesucristo [hecha] una sola vez.",
+    edition: "RV1909",
+  },
+  "Heb.10.14": {
+    osis: "Heb.10.14",
+    text: "Porque con una sola ofrenda hizo perfectos para siempre á los santificados.",
+    edition: "RV1909",
+  },
+  "Isa.53.10": {
+    osis: "Isa.53.10",
+    text: "Con todo eso Jehová quiso quebrantarlo, sujetándole á padecimiento. Cuando hubiere puesto su vida en expiación por el pecado, verá linaje, vivirá por largos días, y la voluntad de Jehová será en su mano prosperada.",
+    edition: "RV1909",
+  },
+  "Mal.1.11": {
+    osis: "Mal.1.11",
+    text: "Porque desde donde el sol nace hasta donde se pone, es grande mi nombre entre las gentes; y en todo lugar se ofrece á mi nombre perfume, y presente limpio: porque grande es mi nombre entre las gentes, dice Jehová de los ejércitos.",
+    edition: "RV1909",
+  },
+  "Lev.3.1": {
+    osis: "Lev.3.1",
+    text: "Y SI su ofrenda fuere sacrificio de paces, si hubiere de ofrecerlo de ganado vacuno, sea macho ó hembra, sin defecto lo ofrecerá delante de Jehová:",
+    edition: "RV1909",
+  },
+  "Lev.3.2": {
+    osis: "Lev.3.2",
+    text: "Y pondrá su mano sobre la cabeza de su ofrenda, y la degollará á la puerta del tabernáculo del testimonio; y los sacerdotes, hijos de Aarón, rociarán su sangre sobre el altar en derredor.",
+    edition: "RV1909",
+  },
+  "Lev.3.3": {
+    osis: "Lev.3.3",
+    text: "Luego ofrecerá del sacrificio de las paces, por ofrenda encendida á Jehová, el sebo que cubre los intestinos, y todo el sebo que está sobre las entrañas,",
+    edition: "RV1909",
+  },
+  "Lev.3.4": {
+    osis: "Lev.3.4",
+    text: "Y los dos riñones, y el sebo que está sobre ellos, y sobre los ijares, y con los riñones quitará el redaño que está sobre el hígado.",
+    edition: "RV1909",
+  },
+  "Lev.3.5": {
+    osis: "Lev.3.5",
+    text: "Y los hijos de Aarón harán arder esto en el altar, sobre el holocausto que estará sobre la leña que habrá encima del fuego; es ofrenda de olor suave á Jehová.",
+    edition: "RV1909",
+  },
+  "Lev.3.6": {
+    osis: "Lev.3.6",
+    text: "Mas si de ovejas fuere su ofrenda para sacrificio de paces á Jehová, sea macho ó hembra, ofrecerála sin tacha.",
+    edition: "RV1909",
+  },
+  "Lev.3.7": {
+    osis: "Lev.3.7",
+    text: "Si ofreciere cordero por su ofrenda, ha de ofrecerlo delante de Jehová:",
+    edition: "RV1909",
+  },
+  "Lev.3.8": {
+    osis: "Lev.3.8",
+    text: "Y pondrá su mano sobre la cabeza de su ofrenda, y después la degollará delante del tabernáculo del testimonio; y los hijos de Aarón rociarán su sangre sobre el altar en derredor.",
+    edition: "RV1909",
+  },
+  "Lev.3.9": {
+    osis: "Lev.3.9",
+    text: "Y del sacrificio de las paces ofrecerá por ofrenda encendida á Jehová, su sebo, y la cola entera, la cual quitará á raíz del espinazo, y el sebo que cubre los intestinos, y todo el sebo que está sobre las entrañas:",
+    edition: "RV1909",
+  },
+  "Lev.3.10": {
+    osis: "Lev.3.10",
+    text: "Asimismo los dos riñones, y el sebo que está sobre ellos, y el que está sobre los ijares, y con los riñones quitará el redaño de sobre el hígado.",
+    edition: "RV1909",
+  },
+  "Lev.3.11": {
+    osis: "Lev.3.11",
+    text: "Y el sacerdote hará arder esto sobre el altar; vianda de ofrenda encendida á Jehová.",
+    edition: "RV1909",
+  },
+  "Lev.3.12": {
+    osis: "Lev.3.12",
+    text: "Y si fuere cabra su ofrenda ofrecerála delante de Jehová:",
+    edition: "RV1909",
+  },
+  "Lev.3.13": {
+    osis: "Lev.3.13",
+    text: "Y pondrá su mano sobre la cabeza de ella, y la degollará delante del tabernáculo del testimonio; y los hijos de Aarón rociarán su sangre sobre el altar en derredor.",
+    edition: "RV1909",
+  },
+  "Lev.3.14": {
+    osis: "Lev.3.14",
+    text: "Después ofrecerá de ella su ofrenda encendida á Jehová; el sebo que cubre los intestinos, y todo el sebo que está sobre las entrañas,",
+    edition: "RV1909",
+  },
+  "Lev.3.15": {
+    osis: "Lev.3.15",
+    text: "Y los dos riñones, y el sebo que está sobre ellos, y el que está sobre los ijares, y con los riñones quitará el redaño de sobre el hígado.",
+    edition: "RV1909",
+  },
+  "Lev.3.16": {
+    osis: "Lev.3.16",
+    text: "Y el sacerdote hará arder esto sobre el altar; es vianda de ofrenda que se quema en olor de suavidad á Jehová: el sebo todo es de Jehová.",
+    edition: "RV1909",
+  },
+  "Lev.3.17": {
+    osis: "Lev.3.17",
+    text: "Estatuto perpetuo por vuestras edades; en todas vuestras moradas, ningún sebo ni ninguna sangre comeréis.",
+    edition: "RV1909",
+  },
+  "Lev.7.1": {
+    osis: "Lev.7.1",
+    text: "ASIMISMO esta es la ley de la expiación de la culpa: es cosa muy santa.",
+    edition: "RV1909",
+  },
+  "Lev.7.2": {
+    osis: "Lev.7.2",
+    text: "En el lugar donde degollaren el holocausto, degollarán la víctima por la culpa; y rociará su sangre en derredor sobre el altar:",
+    edition: "RV1909",
+  },
+  "Lev.7.3": {
+    osis: "Lev.7.3",
+    text: "Y de ella ofrecerá todo su sebo, la cola, y el sebo que cubre los intestinos.",
+    edition: "RV1909",
+  },
+  "Lev.7.4": {
+    osis: "Lev.7.4",
+    text: "Y los dos riñones, y el sebo que está sobre ellos, y el que está sobre los ijares; y con los riñones quitará el redaño de sobre el hígado.",
+    edition: "RV1909",
+  },
+  "Lev.7.5": {
+    osis: "Lev.7.5",
+    text: "Y el sacerdote lo hará arder sobre el altar; ofrenda encendida á Jehová: es expiación de la culpa.",
+    edition: "RV1909",
+  },
+  "Lev.7.6": {
+    osis: "Lev.7.6",
+    text: "Todo varón de entre los sacerdotes la comerá: será comida en el lugar santo: es cosa muy santa.",
+    edition: "RV1909",
+  },
+  "Lev.7.7": {
+    osis: "Lev.7.7",
+    text: "Como la expiación por el pecado, así es la expiación de la culpa: una misma ley tendrán: será del sacerdote que habrá hecho la reconciliación con ella.",
+    edition: "RV1909",
+  },
+  "Lev.7.8": {
+    osis: "Lev.7.8",
+    text: "Y el sacerdote que ofreciere holocausto de alguno, el cuero del holocausto que ofreciere, será para él.",
+    edition: "RV1909",
+  },
+  "Lev.7.9": {
+    osis: "Lev.7.9",
+    text: "Asimismo todo presente que se cociere en horno, y todo el que fuere aderezado en sartén, ó en cazuela, será del sacerdote que lo ofreciere.",
+    edition: "RV1909",
+  },
+  "Lev.7.10": {
+    osis: "Lev.7.10",
+    text: "Y todo presente amasado con aceite, y seco, será de todos los hijos de Aarón, tanto al uno como al otro.",
+    edition: "RV1909",
+  },
+  "Lev.7.11": {
+    osis: "Lev.7.11",
+    text: "Y esta es la ley del sacrificio de las paces, que se ofrecerá á Jehová:",
+    edition: "RV1909",
+  },
+  "Lev.7.12": {
+    osis: "Lev.7.12",
+    text: "Si se ofreciere en hacimiento de gracias, ofrecerá por sacrificio de hacimiento de gracias tortas sin levadura amasadas con aceite, y hojaldres sin levadura untadas con aceite, y flor de harina frita en tortas amasadas con aceite.",
+    edition: "RV1909",
+  },
+  "Lev.7.13": {
+    osis: "Lev.7.13",
+    text: "Con tortas de pan leudo ofrecerá su ofrenda en el sacrificio de hacimientos de gracias de sus paces.",
+    edition: "RV1909",
+  },
+  "Lev.7.14": {
+    osis: "Lev.7.14",
+    text: "Y de toda la ofrenda presentará una parte por ofrenda elevada á Jehová, y será del sacerdote que rociare la sangre de los pacíficos.",
+    edition: "RV1909",
+  },
+  "Lev.7.15": {
+    osis: "Lev.7.15",
+    text: "Y la carne del sacrificio de sus pacíficos en hacimiento de gracias, se comerá en el día que fuere ofrecida: no dejarán de ella nada para otro día.",
+    edition: "RV1909",
+  },
+  "Lev.7.16": {
+    osis: "Lev.7.16",
+    text: "Mas si el sacrificio de su ofrenda fuere voto, ó voluntario, el día que ofreciere su sacrificio será comido; y lo que de él quedare, comerse ha el día siguiente:",
+    edition: "RV1909",
+  },
+  "Lev.7.17": {
+    osis: "Lev.7.17",
+    text: "Y lo que quedare para el tercer día de la carne del sacrificio, será quemado en el fuego.",
+    edition: "RV1909",
+  },
+  "Lev.7.18": {
+    osis: "Lev.7.18",
+    text: "Y si se comiere de la carne del sacrificio de sus paces el tercer día, el que lo ofreciere no será acepto, ni le será imputado; abominación será, y la persona que de él comiere llevará su pecado.",
+    edition: "RV1909",
+  },
+  "Lev.7.19": {
+    osis: "Lev.7.19",
+    text: "Y la carne que tocare á alguna cosa inmunda, no se comerá; al fuego será quemada; mas cualquiera limpio comerá de aquesta carne.",
+    edition: "RV1909",
+  },
+  "Lev.7.20": {
+    osis: "Lev.7.20",
+    text: "Y la persona que comiere la carne del sacrificio de paces, el cual es de Jehová, estando inmunda, aquella persona será cortada de sus pueblos.",
+    edition: "RV1909",
+  },
+  "Lev.7.21": {
+    osis: "Lev.7.21",
+    text: "Además, la persona que tocare alguna cosa inmunda, en inmundicia de hombre, ó en animal inmundo, ó en cualquiera abominación inmunda, y comiere la carne del sacrificio de las paces, el cual es de Jehová, aquella persona será cortada de sus pueblos.",
+    edition: "RV1909",
+  },
+  "Lev.7.22": {
+    osis: "Lev.7.22",
+    text: "Habló aún Jehová á Moisés, diciendo:",
+    edition: "RV1909",
+  },
+  "Lev.7.23": {
+    osis: "Lev.7.23",
+    text: "Habla á los hijos de Israel, diciendo: Ningún sebo de buey, ni de cordero, ni de cabra, comeréis.",
+    edition: "RV1909",
+  },
+  "Lev.7.24": {
+    osis: "Lev.7.24",
+    text: "El sebo de animal mortecino, y el sebo del que fué arrebatado [de fieras], se aparejará para cualquiera otro uso, mas no lo comeréis.",
+    edition: "RV1909",
+  },
+  "Lev.7.25": {
+    osis: "Lev.7.25",
+    text: "Porque cualquiera que comiere sebo de animal, del cual se ofrece á Jehová ofrenda encendida, la persona que lo comiere, será cortada de sus pueblos.",
+    edition: "RV1909",
+  },
+  "Lev.7.26": {
+    osis: "Lev.7.26",
+    text: "Además, ninguna sangre comeréis en todas vuestras habitaciones, así de aves como de bestias.",
+    edition: "RV1909",
+  },
+  "Lev.7.27": {
+    osis: "Lev.7.27",
+    text: "Cualquiera persona que comiere alguna sangre, la tal persona será cortada de sus pueblos.",
+    edition: "RV1909",
+  },
+  "Lev.7.28": {
+    osis: "Lev.7.28",
+    text: "Habló más Jehová á Moisés, diciendo:",
+    edition: "RV1909",
+  },
+  "Lev.7.29": {
+    osis: "Lev.7.29",
+    text: "Habla á los hijos de Israel, diciendo: El que ofreciere sacrificio de sus paces á Jehová, traerá su ofrenda del sacrificio de sus paces á Jehová;",
+    edition: "RV1909",
+  },
+  "Lev.7.30": {
+    osis: "Lev.7.30",
+    text: "Sus manos traerán las ofrendas que se han de quemar á Jehová: traerá el sebo con el pecho: el pecho para que éste sea agitado, como sacrificio agitado delante de Jehová;",
+    edition: "RV1909",
+  },
+  "Lev.7.31": {
+    osis: "Lev.7.31",
+    text: "Y el sebo lo hará arder el sacerdote en el altar; mas el pecho será de Aarón y de sus hijos.",
+    edition: "RV1909",
+  },
+  "Lev.7.32": {
+    osis: "Lev.7.32",
+    text: "Y daréis al sacerdote para ser elevada en ofrenda, la espaldilla derecha de los sacrificios de vuestras paces.",
+    edition: "RV1909",
+  },
+  "Lev.7.33": {
+    osis: "Lev.7.33",
+    text: "El que de los hijos de Aarón ofreciere la sangre de las paces, y el sebo, de él será en porción la espaldilla derecha;",
+    edition: "RV1909",
+  },
+  "Lev.7.34": {
+    osis: "Lev.7.34",
+    text: "Porque he tomado de los hijos de Israel, de los sacrificios de sus paces, el pecho que se agita, y la espaldilla elevada en ofrenda, y lo he dado á Aarón el sacerdote y á sus hijos, por estatuto perpetuo de los hijos de Israel.",
+    edition: "RV1909",
+  },
+  "Lev.7.35": {
+    osis: "Lev.7.35",
+    text: "Esta es por la unción de Aarón y la unción de sus hijos, la parte de ellos en las ofrendas encendidas á Jehová, desde el día que él los allegó para ser sacerdotes de Jehová:",
+    edition: "RV1909",
+  },
+  "Lev.7.36": {
+    osis: "Lev.7.36",
+    text: "Lo cual mandó Jehová que les diesen, desde el día que él los ungió de entre los hijos de Israel, por estatuto perpetuo en sus generaciones.",
+    edition: "RV1909",
+  },
+  "Lev.7.37": {
+    osis: "Lev.7.37",
+    text: "Esta es la ley del holocausto, del presente, de la expiación por el pecado, y de la culpa, y de las consagraciones, y del sacrificio de las paces:",
+    edition: "RV1909",
+  },
+  "Lev.7.38": {
+    osis: "Lev.7.38",
+    text: "La cual intimó Jehová á Moisés, en el monte de Sinaí, el día que mandó á los hijos de Israel que ofreciesen sus ofrendas á Jehová en el desierto de Sinaí.",
+    edition: "RV1909",
+  },
+  "Ps.56.1": {
+    osis: "Ps.56.1",
+    text: "Al Músico principal: sobre La paloma silenciosa en paraje muy distante. Michtam de David, cuando los Filisteos le prendieron en Gath. TEN misericordia de mí, oh Dios, porque me devoraría el hombre: me oprime combatiéndome cada día.",
+    edition: "RV1909",
+  },
+  "Ps.56.2": {
+    osis: "Ps.56.2",
+    text: "Apúranme mis enemigos cada día; porque muchos son los que pelean contra mí, oh Altísimo.",
+    edition: "RV1909",
+  },
+  "Ps.56.3": {
+    osis: "Ps.56.3",
+    text: "En el día que temo, yo en ti confío.",
+    edition: "RV1909",
+  },
+  "Ps.56.4": {
+    osis: "Ps.56.4",
+    text: "En Dios alabaré su palabra: en Dios he confiado, no temeré lo que la carne me hiciere.",
+    edition: "RV1909",
+  },
+  "Ps.56.5": {
+    osis: "Ps.56.5",
+    text: "Todos los días me contristan mis negocios; contra mí son todos sus pensamientos para mal.",
+    edition: "RV1909",
+  },
+  "Ps.56.6": {
+    osis: "Ps.56.6",
+    text: "Reúnense, escóndense, miran ellos atentamente mis pasos, esperando mi vida.",
+    edition: "RV1909",
+  },
+  "Ps.56.7": {
+    osis: "Ps.56.7",
+    text: "¿Escaparán ellos por la iniquidad? Oh Dios, derriba en tu furor los pueblos.",
+    edition: "RV1909",
+  },
+  "Ps.56.8": {
+    osis: "Ps.56.8",
+    text: "Mis huídas has tú contado: pon mis lágrimas en tu redoma: ¿no están ellas en tu libro?",
+    edition: "RV1909",
+  },
+  "Ps.56.9": {
+    osis: "Ps.56.9",
+    text: "Serán luego vueltos atrás mis enemigos el día que yo clamare: en esto conozco que Dios es por mí.",
+    edition: "RV1909",
+  },
+  "Ps.56.10": {
+    osis: "Ps.56.10",
+    text: "En Dios alabaré [su] palabra; en Jehová alabaré [su] palabra.",
+    edition: "RV1909",
+  },
+  "Ps.56.11": {
+    osis: "Ps.56.11",
+    text: "En Dios he confiado: no temeré lo que me hará el hombre.",
+    edition: "RV1909",
+  },
+  "Ps.56.12": {
+    osis: "Ps.56.12",
+    text: "Sobre mí, oh Dios, están tus votos: te tributaré alabanzas.",
+    edition: "RV1909",
+  },
+  "Ps.56.13": {
+    osis: "Ps.56.13",
+    text: "Porque has librado mi vida de la muerte, y mis pies de caída, para que ande delante de Dios en la luz de los que viven.",
+    edition: "RV1909",
+  },
+  "John.4.23": {
+    osis: "John.4.23",
+    text: "Mas la hora viene, y ahora es, cuando los verdaderos adoradores adorarán al Padre en espíritu y en verdad; porque también el Padre tales adoradores busca que le adoren.",
+    edition: "RV1909",
+  },
+  "John.4.24": {
+    osis: "John.4.24",
+    text: "Dios es Espíritu; y los que le adoran, en espíritu y en verdad es necesario que adoren.",
+    edition: "RV1909",
+  },
+  "Acts.3.21": {
+    osis: "Acts.3.21",
+    text: "Al cual de cierto es menester que el cielo tenga hasta los tiempos de la restauración de todas las cosas, que habló Dios por boca de sus santos profetas que han sido desde el siglo.",
+    edition: "RV1909",
+  },
+  "Eph.1.22": {
+    osis: "Eph.1.22",
+    text: "Y sometió todas las cosas debajo de sus pies, y diólo por cabeza sobre todas las cosas á la iglesia,",
+    edition: "RV1909",
+  },
+  "John.1.14": {
+    osis: "John.1.14",
+    text: "Y aquel Verbo fué hecho carne, y habitó entre nosotros (y vimos su gloria, gloria como del unigénito del Padre), lleno de gracia y de verdad.",
+    edition: "RV1909",
+  },
+  "Col.2.9": {
+    osis: "Col.2.9",
+    text: "Porque en él habita toda la plenitud de la divinidad corporalmente:",
+    edition: "RV1909",
+  },
+  "Acts.10.38": {
+    osis: "Acts.10.38",
+    text: "[Cuanto] á Jesús de Nazaret; cómo le ungió Dios de Espíritu Santo y de potencia; el cual anduvo haciendo bienes, y sanando á todos los oprimidos del diablo; porque Dios era con él.",
+    edition: "RV1909",
+  },
+  "2Cor.5.19": {
+    osis: "2Cor.5.19",
+    text: "Porque ciertamente Dios estaba en Cristo reconciliando el mundo á sí, no imputándole sus pecados, y puso en nosotros la palabra de la reconciliación.",
+    edition: "RV1909",
+  },
+  "John.6.1": {
+    osis: "John.6.1",
+    text: "PASADAS estas cosas, fuése Jesús de la otra parte de la mar de Galilea, [que es] de Tiberias.",
+    edition: "RV1909",
+  },
+  "John.6.2": {
+    osis: "John.6.2",
+    text: "Y seguíale grande multitud, porque veían sus señales que hacía en los enfermos.",
+    edition: "RV1909",
+  },
+  "John.6.3": {
+    osis: "John.6.3",
+    text: "Y subió Jesús á un monte, y se sentó allí con sus discípulos.",
+    edition: "RV1909",
+  },
+  "John.6.4": {
+    osis: "John.6.4",
+    text: "Y estaba cerca la Pascua, la fiesta de los Judíos.",
+    edition: "RV1909",
+  },
+  "John.6.5": {
+    osis: "John.6.5",
+    text: "Y como alzó Jesús los ojos, y vió que había venido á él grande multitud, dice á Felipe: ¿De dónde compraremos pan para que coman éstos?",
+    edition: "RV1909",
+  },
+  "John.6.6": {
+    osis: "John.6.6",
+    text: "Mas esto decía para probarle; porque él sabía lo que había de hacer.",
+    edition: "RV1909",
+  },
+  "John.6.7": {
+    osis: "John.6.7",
+    text: "Respondióle Felipe: Doscientos denarios de pan no les bastarán, para que cada uno de ellos tome un poco.",
+    edition: "RV1909",
+  },
+  "John.6.8": {
+    osis: "John.6.8",
+    text: "Dícele uno de sus discípulos, Andrés, hermano de Simón Pedro:",
+    edition: "RV1909",
+  },
+  "John.6.9": {
+    osis: "John.6.9",
+    text: "Un muchacho está aquí que tiene cinco panes de cebada y dos pececillos; ¿mas qué es esto entre tantos?",
+    edition: "RV1909",
+  },
+  "John.6.10": {
+    osis: "John.6.10",
+    text: "Entonces Jesús dijo: Haced recostar la gente. Y había mucha hierba en aquel lugar: y recostáronse como número de cinco mil varones.",
+    edition: "RV1909",
+  },
+  "John.6.11": {
+    osis: "John.6.11",
+    text: "Y tomó Jesús aquellos panes, y habiendo dado gracias, repartió á los discípulos, y los discípulos á los que estaban recostados: asimismo de los peces, cuanto querían.",
+    edition: "RV1909",
+  },
+  "John.6.12": {
+    osis: "John.6.12",
+    text: "Y como fueron saciados, dijo á sus discípulos: Recoged los pedazos que han quedado, porque no se pierda nada.",
+    edition: "RV1909",
+  },
+  "John.6.13": {
+    osis: "John.6.13",
+    text: "Cogieron pues, é hinchieron doce cestas de pedazos de los cinco panes de cebada, que sobraron á los que habían comido.",
+    edition: "RV1909",
+  },
+  "John.6.14": {
+    osis: "John.6.14",
+    text: "Aquellos hombres entonces, como vieron la señal que Jesús había hecho, decían: Este verdaderamente es el profeta que había de venir al mundo.",
+    edition: "RV1909",
+  },
+  "John.6.15": {
+    osis: "John.6.15",
+    text: "Y entendiendo Jesús que habían de venir para arrebatarle, y hacerle rey, volvió á retirarse al monte, él solo.",
+    edition: "RV1909",
+  },
+  "John.6.16": {
+    osis: "John.6.16",
+    text: "Y como se hizo tarde, descendieron sus discípulos á la mar;",
+    edition: "RV1909",
+  },
+  "John.6.17": {
+    osis: "John.6.17",
+    text: "Y entrando en un barco, venían de la otra parte de la mar hacia Capernaum. Y era ya oscuro, y Jesús no había venido á ellos.",
+    edition: "RV1909",
+  },
+  "John.6.18": {
+    osis: "John.6.18",
+    text: "Y levantábase la mar con un gran viento que soplaba.",
+    edition: "RV1909",
+  },
+  "John.6.19": {
+    osis: "John.6.19",
+    text: "Y como hubieron navegado como veinticinco ó treinta estadios, ven á Jesús que andaba sobre la mar, y se acercaba al barco: y tuvieron miedo.",
+    edition: "RV1909",
+  },
+  "John.6.20": {
+    osis: "John.6.20",
+    text: "Mas él les dijo: Yo soy; no tengáis miedo.",
+    edition: "RV1909",
+  },
+  "John.6.21": {
+    osis: "John.6.21",
+    text: "Ellos entonces gustaron recibirle en el barco: y luego el barco llegó á la tierra donde iban.",
+    edition: "RV1909",
+  },
+  "John.6.22": {
+    osis: "John.6.22",
+    text: "El día siguiente, la gente que estaba de la otra parte de la mar, como vió que no había allí otra navecilla sino una, y que Jesús no había entrado con sus discípulos en ella, sino que sus discípulos se habían ido solos;",
+    edition: "RV1909",
+  },
+  "John.6.23": {
+    osis: "John.6.23",
+    text: "Y que otras navecillas habían arribado de Tiberias junto al lugar donde habían comido el pan después de haber el Señor dado gracias;",
+    edition: "RV1909",
+  },
+  "John.6.24": {
+    osis: "John.6.24",
+    text: "Como vió pues la gente que Jesús no estaba allí, ni sus discípulos, entraron ellos en las navecillas, y vinieron á Capernaum buscando á Jesús.",
+    edition: "RV1909",
+  },
+  "John.6.25": {
+    osis: "John.6.25",
+    text: "Y hallándole de la otra parte de la mar, dijéronle: Rabbí, ¿cuándo llegaste acá?",
+    edition: "RV1909",
+  },
+  "John.6.26": {
+    osis: "John.6.26",
+    text: "Respondióles Jesús, y dijo: De cierto, de cierto os digo, que me buscáis, no porque habéis visto las señales, sino porque comisteis el pan y os hartasteis.",
+    edition: "RV1909",
+  },
+  "John.6.27": {
+    osis: "John.6.27",
+    text: "Trabajad no por la comida que perece, mas por la comida que á vida eterna permanece, la cual el Hijo del hombre os dará: porque á éste señaló el Padre, [que es] Dios.",
+    edition: "RV1909",
+  },
+  "John.6.28": {
+    osis: "John.6.28",
+    text: "Y dijéronle: ¿Qué haremos para que obremos las obras de Dios?",
+    edition: "RV1909",
+  },
+  "John.6.29": {
+    osis: "John.6.29",
+    text: "Respondió Jesús, y díjoles: Esta es la obra de Dios, que creáis en el que él ha enviado.",
+    edition: "RV1909",
+  },
+  "John.6.30": {
+    osis: "John.6.30",
+    text: "Dijéronle entonces: ¿Qué señal pues haces tú, para que veamos, y te creamos? ¿Qué obras?",
+    edition: "RV1909",
+  },
+  "John.6.31": {
+    osis: "John.6.31",
+    text: "Nuestros padres comieron el maná en el desierto, como está escrito: Pan del cielo les dió á comer.",
+    edition: "RV1909",
+  },
+  "John.6.32": {
+    osis: "John.6.32",
+    text: "Y Jesús les dijo: De cierto, de cierto os digo: No os dió Moisés pan del cielo; mas mi Padre os da el verdadero pan del cielo.",
+    edition: "RV1909",
+  },
+  "John.6.33": {
+    osis: "John.6.33",
+    text: "Porque el pan de Dios es aquel que descendió del cielo y da vida al mundo.",
+    edition: "RV1909",
+  },
+  "John.6.34": {
+    osis: "John.6.34",
+    text: "Y dijéronle: Señor, danos siempre este pan.",
+    edition: "RV1909",
+  },
+  "John.6.35": {
+    osis: "John.6.35",
+    text: "Y Jesús les dijo: Yo soy el pan de vida: el que á mí viene, nunca tendrá hambre; y el que en mí cree, no tendrá sed jamás.",
+    edition: "RV1909",
+  },
+  "John.6.36": {
+    osis: "John.6.36",
+    text: "Mas os he dicho, que aunque me habéis visto, no creéis.",
+    edition: "RV1909",
+  },
+  "John.6.37": {
+    osis: "John.6.37",
+    text: "Todo lo que el Padre me da, vendrá á mí; y al que á mí viene, no [le] hecho fuera.",
+    edition: "RV1909",
+  },
+  "John.6.38": {
+    osis: "John.6.38",
+    text: "Porque he descendido del cielo, no para hacer mi voluntad, mas la voluntad del que me envió.",
+    edition: "RV1909",
+  },
+  "John.6.39": {
+    osis: "John.6.39",
+    text: "Y esta es la voluntad del que me envió, del Padre: Que todo lo que me diere, no pierda de ello, sino que lo resucite en el día postrero.",
+    edition: "RV1909",
+  },
+  "John.6.40": {
+    osis: "John.6.40",
+    text: "Y esta es la voluntad del que me ha enviado: Que todo aquel que ve al Hijo, y cree en él, tenga vida eterna: y yo le resucitaré en el día postrero.",
+    edition: "RV1909",
+  },
+  "John.6.41": {
+    osis: "John.6.41",
+    text: "Murmuraban entonces de él los Judíos, porque había dicho: Yo soy el pan que descendí del cielo.",
+    edition: "RV1909",
+  },
+  "John.6.42": {
+    osis: "John.6.42",
+    text: "Y decían: ¿No es éste Jesús, el hijo de José, cuyo padre y madre nosotros conocemos? ¿cómo, pues, dice éste: Del cielo he descendido?",
+    edition: "RV1909",
+  },
+  "John.6.43": {
+    osis: "John.6.43",
+    text: "Y Jesús respondió, y díjoles: No murmuréis entre vosotros.",
+    edition: "RV1909",
+  },
+  "John.6.44": {
+    osis: "John.6.44",
+    text: "Ninguno puede venir á mí, si el Padre que me envió no le trajere; y yo le resucitaré en el día postrero.",
+    edition: "RV1909",
+  },
+  "John.6.45": {
+    osis: "John.6.45",
+    text: "Escrito está en los profetas: Y serán todos enseñados de Dios. Así que, todo aquel que oyó del Padre, y aprendió, viene á mí.",
+    edition: "RV1909",
+  },
+  "John.6.46": {
+    osis: "John.6.46",
+    text: "No que alguno haya visto al Padre, sino aquel que vino de Dios, éste ha visto al Padre.",
+    edition: "RV1909",
+  },
+  "John.6.47": {
+    osis: "John.6.47",
+    text: "De cierto, de cierto os digo: El que cree en mí, tiene vida eterna.",
+    edition: "RV1909",
+  },
+  "John.6.48": {
+    osis: "John.6.48",
+    text: "Yo soy el pan de vida.",
+    edition: "RV1909",
+  },
+  "John.6.49": {
+    osis: "John.6.49",
+    text: "Vuestros padres comieron el maná en el desierto, y son muertos.",
+    edition: "RV1909",
+  },
+  "John.6.50": {
+    osis: "John.6.50",
+    text: "Este es el pan que desciende del cielo, para que el que de él comiere, no muera.",
+    edition: "RV1909",
+  },
+  "John.6.51": {
+    osis: "John.6.51",
+    text: "Yo soy el pan vivo que he descendido del cielo: si alguno comiere de este pan, vivirá para siempre; y el pan que yo daré es mi carne, la cual yo daré por la vida del mundo.",
+    edition: "RV1909",
+  },
+  "John.6.52": {
+    osis: "John.6.52",
+    text: "Entonces los Judíos contendían entre sí, diciendo: ¿Cómo puede éste darnos su carne á comer?",
+    edition: "RV1909",
+  },
+  "John.6.53": {
+    osis: "John.6.53",
+    text: "Y Jesús les dijo: De cierto, de cierto os digo: Si no comiereis la carne del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros.",
+    edition: "RV1909",
+  },
+  "John.6.54": {
+    osis: "John.6.54",
+    text: "El que come mi carne y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el día postrero.",
+    edition: "RV1909",
+  },
+  "John.6.55": {
+    osis: "John.6.55",
+    text: "Porque mi carne es verdadera comida, y mi sangre es verdadera bebida.",
+    edition: "RV1909",
+  },
+  "John.6.56": {
+    osis: "John.6.56",
+    text: "El que come mi carne y bebe mi sangre, en mí permanece, y yo en él.",
+    edition: "RV1909",
+  },
+  "John.6.57": {
+    osis: "John.6.57",
+    text: "Como me envió el Padre viviente, y yo vivo por el Padre, asimismo el que me come, él también vivirá por mí.",
+    edition: "RV1909",
+  },
+  "John.6.58": {
+    osis: "John.6.58",
+    text: "Este es el pan que descendió del cielo: no como vuestros padres comieron el maná, y son muertos: el que come de este pan, vivirá eternamente.",
+    edition: "RV1909",
+  },
+  "John.6.59": {
+    osis: "John.6.59",
+    text: "Estas cosas dijo en la sinagoga, enseñando en Capernaum.",
+    edition: "RV1909",
+  },
+  "John.6.60": {
+    osis: "John.6.60",
+    text: "Y muchos de sus discípulos oyéndo[lo], dijeron: Dura es esta palabra: ¿quién la puede oir?",
+    edition: "RV1909",
+  },
+  "John.6.61": {
+    osis: "John.6.61",
+    text: "Y sabiendo Jesús en sí mismo que sus discípulos murmuraban de esto, díjoles: ¿Esto os escandaliza?",
+    edition: "RV1909",
+  },
+  "John.6.62": {
+    osis: "John.6.62",
+    text: "¿Pues [qué], si viereis al Hijo del hombre que sube donde estaba primero?",
+    edition: "RV1909",
+  },
+  "John.6.63": {
+    osis: "John.6.63",
+    text: "El espíritu es el que da vida; la carne nada aprovecha: las palabras que yo os he hablado, son espíritu, y son vida.",
+    edition: "RV1909",
+  },
+  "John.6.64": {
+    osis: "John.6.64",
+    text: "Mas hay algunos de vosotros que no creen. Porque Jesús desde el principio sabía quiénes eran los que no creían, y quién le había de entregar.",
+    edition: "RV1909",
+  },
+  "John.6.65": {
+    osis: "John.6.65",
+    text: "Y dijo: Por eso os he dicho que ninguno puede venir á mí, si no le fuere dado del Padre.",
+    edition: "RV1909",
+  },
+  "John.6.66": {
+    osis: "John.6.66",
+    text: "Desde esto, muchos de sus discípulos volvieron atrás, y ya no andaban con él.",
+    edition: "RV1909",
+  },
+  "John.6.67": {
+    osis: "John.6.67",
+    text: "Dijo entonces Jesús á los doce: ¿Queréis vosotros iros también?",
+    edition: "RV1909",
+  },
+  "John.6.68": {
+    osis: "John.6.68",
+    text: "Y respondióle Simón Pedro: Señor, ¿á quién iremos? tú tienes palabras de vida eterna.",
+    edition: "RV1909",
+  },
+  "John.6.69": {
+    osis: "John.6.69",
+    text: "Y nosotros creemos y conocemos que tú eres el Cristo, el Hijo de Dios viviente.",
+    edition: "RV1909",
+  },
+  "John.6.70": {
+    osis: "John.6.70",
+    text: "Jesús le respondió: ¿No he escogido yo á vosotros doce, y uno de vosotros es diablo?",
+    edition: "RV1909",
+  },
+  "John.6.71": {
+    osis: "John.6.71",
+    text: "Y hablaba de Judas Iscariote, [hijo] de Simón, porque éste era el que le había de entregar, el cual era uno de los doce.",
+    edition: "RV1909",
+  },
+  "Matt.11.28": {
+    osis: "Matt.11.28",
+    text: "Venid á mí todos los que estáis trabajados y cargados, que yo os haré descansar.",
+    edition: "RV1909",
+  },
+  "Matt.9.12": {
+    osis: "Matt.9.12",
+    text: "Y oyéndolo [Jesús], les dijo: Los que están sanos no tienen necesidad de médico, sino los enfermos.",
+    edition: "RV1909",
+  },
+  "2Cor.12.9": {
+    osis: "2Cor.12.9",
+    text: "Y me ha dicho: Bástate mi gracia; porque mi potencia en la flaqueza se perfecciona. Por tanto, de buena gana me gloriaré más bien en mis flaquezas, porque habite en mí la potencia de Cristo.",
+    edition: "RV1909",
+  },
+  "Rom.14.1": {
+    osis: "Rom.14.1",
+    text: "RECIBID al flaco en la fe, [pero] no para contiendas de disputas.",
+    edition: "RV1909",
+  },
+  "Gen.22.1": {
+    osis: "Gen.22.1",
+    text: "Y ACONTECIÓ después de estas cosas, que tentó Dios á Abraham, y le dijo: Abraham. Y él respondió: Heme aquí.",
+    edition: "RV1909",
+  },
+  "Gen.22.2": {
+    osis: "Gen.22.2",
+    text: "Y dijo: Toma ahora tu hijo, tu único, Isaac, á quien amas, y vete á tierra de Moriah, y ofrécelo allí en holocausto sobre uno de los montes que yo te diré.",
+    edition: "RV1909",
+  },
+  "Gen.22.3": {
+    osis: "Gen.22.3",
+    text: "Y Abraham se levantó muy de mañana, y enalbardó su asno, y tomó consigo dos mozos suyos, y á Isaac su hijo: y cortó leña para el holocausto, y levantóse, y fué al lugar que Dios le dijo.",
+    edition: "RV1909",
+  },
+  "Gen.22.4": {
+    osis: "Gen.22.4",
+    text: "Al tercer día alzó Abraham sus ojos, y vió el lugar de lejos.",
+    edition: "RV1909",
+  },
+  "Gen.22.5": {
+    osis: "Gen.22.5",
+    text: "Entonces dijo Abraham á sus mozos: Esperaos aquí con el asno, y yo y el muchacho iremos hasta allí, y adoraremos, y volveremos á vosotros.",
+    edition: "RV1909",
+  },
+  "Gen.22.6": {
+    osis: "Gen.22.6",
+    text: "Y tomó Abraham la leña del holocausto, y púsola sobre Isaac su hijo: y él tomó en su mano el fuego y el cuchillo; y fueron ambos juntos.",
+    edition: "RV1909",
+  },
+  "Gen.22.7": {
+    osis: "Gen.22.7",
+    text: "Entonces habló Isaac á Abraham su padre, y dijo: Padre mío. Y él respondió: Heme aquí, mi hijo. Y él dijo: He aquí el fuego y la leña; mas ¿dónde está el cordero para el holocausto?",
+    edition: "RV1909",
+  },
+  "Gen.22.8": {
+    osis: "Gen.22.8",
+    text: "Y respondió Abraham: Dios se proveerá de cordero para el holocausto, hijo mío. E iban juntos.",
+    edition: "RV1909",
+  },
+  "Gen.22.9": {
+    osis: "Gen.22.9",
+    text: "Y como llegaron al lugar que Dios le había dicho, edificó allí Abraham un altar, y compuso la leña, y ató á Isaac su hijo, y púsole en el altar sobre la leña.",
+    edition: "RV1909",
+  },
+  "Gen.22.10": {
+    osis: "Gen.22.10",
+    text: "Y extendió Abraham su mano, y tomó el cuchillo, para degollar á su hijo.",
+    edition: "RV1909",
+  },
+  "Gen.22.11": {
+    osis: "Gen.22.11",
+    text: "Entonces el ángel de Jehová le dió voces del cielo, y dijo: Abraham, Abraham. Y él respondió: Heme aquí.",
+    edition: "RV1909",
+  },
+  "Gen.22.12": {
+    osis: "Gen.22.12",
+    text: "Y dijo: No extiendas tu mano sobre el muchacho, ni le hagas nada; que ya conozco que temes á Dios, pues que no me rehusaste tu hijo, tu único.",
+    edition: "RV1909",
+  },
+  "Gen.22.13": {
+    osis: "Gen.22.13",
+    text: "Entonces alzó Abraham sus ojos, y miró, y he aquí un carnero á sus espaldas trabado en un zarzal por sus cuernos: y fué Abraham, y tomó el carnero, y ofrecióle en holocausto en lugar de su hijo.",
+    edition: "RV1909",
+  },
+  "Gen.22.14": {
+    osis: "Gen.22.14",
+    text: "Y llamó Abraham el nombre de aquel lugar, Jehová proveerá. Por tanto se dice hoy: En el monte de Jehová será provisto.",
+    edition: "RV1909",
+  },
+  "Gen.22.15": {
+    osis: "Gen.22.15",
+    text: "Y llamó el ángel de Jehová á Abraham segunda vez desde el cielo,",
+    edition: "RV1909",
+  },
+  "Gen.22.16": {
+    osis: "Gen.22.16",
+    text: "Y dijo: Por mí mismo he jurado, dice Jehová, que por cuanto has hecho esto, y no [me] has rehusado tu hijo, tu único;",
+    edition: "RV1909",
+  },
+  "Gen.22.17": {
+    osis: "Gen.22.17",
+    text: "Bendiciendo te bendeciré, y multiplicando multiplicaré tu simiente como las estrellas del cielo, y como la arena que está á la orilla del mar; y tu simiente poseerá las puertas de sus enemigos:",
+    edition: "RV1909",
+  },
+  "Gen.22.18": {
+    osis: "Gen.22.18",
+    text: "En tu simiente serán benditas todas las gentes de la tierra, por cuanto obedeciste á mi voz.",
+    edition: "RV1909",
+  },
+  "Gen.22.19": {
+    osis: "Gen.22.19",
+    text: "Y tornóse Abraham á sus mozos, y levantáronse y se fueron juntos á Beer-seba; y habitó Abraham en Beer-seba.",
+    edition: "RV1909",
+  },
+  "Gen.22.20": {
+    osis: "Gen.22.20",
+    text: "Y aconteció después de estas cosas, que fué dada nueva á Abraham, diciendo: He aquí que también Milca ha parido hijos á Nachôr tu hermano:",
+    edition: "RV1909",
+  },
+  "Gen.22.21": {
+    osis: "Gen.22.21",
+    text: "A Huz su primogénito, y á Buz su hermano, y á Kemuel padre de Aram,",
+    edition: "RV1909",
+  },
+  "Gen.22.22": {
+    osis: "Gen.22.22",
+    text: "Y á Chêsed, y á Hazo, y á Pildas, y á Jidlaph, y á Bethuel.",
+    edition: "RV1909",
+  },
+  "Gen.22.23": {
+    osis: "Gen.22.23",
+    text: "Y Bethuel engendró á Rebeca. Estos ocho parió Milca á Nachôr, hermano de Abraham.",
+    edition: "RV1909",
+  },
+  "Gen.22.24": {
+    osis: "Gen.22.24",
+    text: "Y su concubina, que se llamaba Reúma, parió también á Teba, y á Gaham, y á Taas, y á Maachâ.",
+    edition: "RV1909",
+  },
+  "Luke.21.33": {
+    osis: "Luke.21.33",
+    text: "El cielo y la tierra pasarán; mas mis palabras no pasarán.",
+    edition: "RV1909",
+  },
+  "Matt.28.18": {
+    osis: "Matt.28.18",
+    text: "Y llegando Jesús, les habló, diciendo: Toda potestad me es dada en el cielo y en la tierra.",
+    edition: "RV1909",
+  },
+  "Matt.17.5": {
+    osis: "Matt.17.5",
+    text: "Y estando aún él hablando, he aquí una nube de luz [que] los cubrió; y he aquí una voz de la nube, que dijo: Este es mi Hijo amado, en el cual tomo contentamiento: á él oid.",
+    edition: "RV1909",
+  },
+  "Gen.1.28": {
+    osis: "Gen.1.28",
+    text: "Y los bendijo Dios; y díjoles Dios: Fructificad y multiplicad, y henchid la tierra, y sojuzgadla, y señoread en los peces de la mar, y en las aves de los cielos, y en todas las bestias que se mueven sobre la tierra.",
+    edition: "RV1909",
+  },
+  "1Cor.14.2": {
+    osis: "1Cor.14.2",
+    text: "Porque el que habla en lenguas, no habla á los hombres, sino á Dios; porque nadie le entiende, aunque en espíritu hable misterios.",
+    edition: "RV1909",
+  },
+  "1Cor.14.3": {
+    osis: "1Cor.14.3",
+    text: "Mas el que profetiza, habla á los hombres [para] edificación, y exhortación, y consolación.",
+    edition: "RV1909",
+  },
+  "1Cor.14.4": {
+    osis: "1Cor.14.4",
+    text: "El que habla lengua extraña, á sí mismo se edifica; mas el que profetiza, edifica á la iglesia.",
+    edition: "RV1909",
+  },
+  "1Cor.14.5": {
+    osis: "1Cor.14.5",
+    text: "Así que, quisiera que todos vosotros hablaseis lenguas, empero más que profetizaseis: porque mayor es el que profetiza que el que habla lenguas, si también no interpretare, para que la iglesia tome edificación.",
+    edition: "RV1909",
+  },
+  "1Cor.14.6": {
+    osis: "1Cor.14.6",
+    text: "Ahora pues, hermanos, si yo fuere á vosotros hablando lenguas, ¿qué os aprovecharé, si no os hablare, ó con revelación, ó con ciencia, ó con profecía, ó con doctrina?",
+    edition: "RV1909",
+  },
+  "1Cor.14.7": {
+    osis: "1Cor.14.7",
+    text: "Ciertamente las cosas inanimadas que hacen sonidos, como la flauta ó la vihuela, si no dieren distinción de voces, ¿cómo se sabrá lo que se tañe con la flauta, ó con la vihuela?",
+    edition: "RV1909",
+  },
+  "1Cor.14.8": {
+    osis: "1Cor.14.8",
+    text: "Y si la trompeta diere sonido incierto, ¿quién se apercibirá á la batalla?",
+    edition: "RV1909",
+  },
+  "1Cor.14.9": {
+    osis: "1Cor.14.9",
+    text: "Así también vosotros, si por la lengua no diereis palabra bien significante, ¿cómo se entenderá lo que se dice? porque hablaréis al aire.",
+    edition: "RV1909",
+  },
+  "Rom.6.9": {
+    osis: "Rom.6.9",
+    text: "Sabiendo que Cristo, habiendo resucitado de entre los muertos, ya no muere: la muerte no se enseñoreará más de él.",
+    edition: "RV1909",
+  },
   "Col.1.18": {
     osis: "Col.1.18",
     text: "Y él es la cabeza del cuerpo [que es] la iglesia; [él] que es el principio, el primogénito de los muertos, para que en todo tenga el primado.",
@@ -236,11 +1281,6 @@ export const verses = {
     text: "Y como le vieron, le adoraron: mas algunos dudaban.",
     edition: "RV1909",
   },
-  "Matt.28.18": {
-    osis: "Matt.28.18",
-    text: "Y llegando Jesús, les habló, diciendo: Toda potestad me es dada en el cielo y en la tierra.",
-    edition: "RV1909",
-  },
   "Matt.28.19": {
     osis: "Matt.28.19",
     text: "Por tanto, id, y doctrinad á todos los Gentiles, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo:",
@@ -324,11 +1364,6 @@ export const verses = {
   "2Cor.11.28": {
     osis: "2Cor.11.28",
     text: "Sin [otras] cosas además, lo que sobre mí se agolpa cada día, la solicitud de todas las iglesias.",
-    edition: "RV1909",
-  },
-  "Eph.1.22": {
-    osis: "Eph.1.22",
-    text: "Y sometió todas las cosas debajo de sus pies, y diólo por cabeza sobre todas las cosas á la iglesia,",
     edition: "RV1909",
   },
   "Matt.23.8": {
@@ -1091,11 +2126,6 @@ export const verses = {
     text: "Y si os dijeren: Preguntad á los pythones y á los adivinos, que susurran hablando, [responded]: ¿No consultará el pueblo á su Dios? ¿[Apelará] por los vivos á los muertos?",
     edition: "RV1909",
   },
-  "John.6.45": {
-    osis: "John.6.45",
-    text: "Escrito está en los profetas: Y serán todos enseñados de Dios. Así que, todo aquel que oyó del Padre, y aprendió, viene á mí.",
-    edition: "RV1909",
-  },
   "1Cor.2.9": {
     osis: "1Cor.2.9",
     text: "Antes, como está escrito: Cosas que ojo no vió, ni oreja oyó, ni han subido en corazón de hombre, [son] las que ha Dios preparado para aquellos que le aman.",
@@ -1334,26 +2364,6 @@ export const verses = {
   "John.5.46": {
     osis: "John.5.46",
     text: "Porque si vosotros creyeseis á Moisés, creeríais á mí; porque de mí escribió él.",
-    edition: "RV1909",
-  },
-  "1Cor.14.6": {
-    osis: "1Cor.14.6",
-    text: "Ahora pues, hermanos, si yo fuere á vosotros hablando lenguas, ¿qué os aprovecharé, si no os hablare, ó con revelación, ó con ciencia, ó con profecía, ó con doctrina?",
-    edition: "RV1909",
-  },
-  "1Cor.14.7": {
-    osis: "1Cor.14.7",
-    text: "Ciertamente las cosas inanimadas que hacen sonidos, como la flauta ó la vihuela, si no dieren distinción de voces, ¿cómo se sabrá lo que se tañe con la flauta, ó con la vihuela?",
-    edition: "RV1909",
-  },
-  "1Cor.14.8": {
-    osis: "1Cor.14.8",
-    text: "Y si la trompeta diere sonido incierto, ¿quién se apercibirá á la batalla?",
-    edition: "RV1909",
-  },
-  "1Cor.14.9": {
-    osis: "1Cor.14.9",
-    text: "Así también vosotros, si por la lengua no diereis palabra bien significante, ¿cómo se entenderá lo que se dice? porque hablaréis al aire.",
     edition: "RV1909",
   },
   "1Cor.14.10": {
@@ -1801,24 +2811,9 @@ export const verses = {
     text: "Yo á la verdad os bautizo en agua para arrepentimiento; mas el que viene tras mí, más poderoso es que yo; los zapatos del cual yo no soy digno de llevar; él os bautizará en Espíritu Santo y [en] fuego.",
     edition: "RV1909",
   },
-  "Matt.26.27": {
-    osis: "Matt.26.27",
-    text: "Y tomando el vaso, y hechas gracias, les dió, diciendo: Bebed de él todos;",
-    edition: "RV1909",
-  },
-  "Matt.26.28": {
-    osis: "Matt.26.28",
-    text: "Porque esto es mi sangre del nuevo pacto, la cual es derramada por muchos para remisión de los pecados.",
-    edition: "RV1909",
-  },
   "1Cor.11.20": {
     osis: "1Cor.11.20",
     text: "Cuando pues os juntáis en uno, [esto] no es comer la cena del Señor:",
-    edition: "RV1909",
-  },
-  "1Cor.11.23": {
-    osis: "1Cor.11.23",
-    text: "Porque yo recibí del Señor lo que también os he enseñado: Que el Señor Jesús, la noche que fué entregado, tomó pan;",
     edition: "RV1909",
   },
   "1Cor.4.1": {
@@ -1951,36 +2946,6 @@ export const verses = {
     text: "Y les mandó bautizar en el nombre del Señor Jesús. Entonces le rogaron que se quedase por algunos días.",
     edition: "RV1909",
   },
-  "Luke.22.19": {
-    osis: "Luke.22.19",
-    text: "Y tomando el pan, habiendo dado gracias, partió, y les dió, diciendo: Esto es mi cuerpo, que por vosotros es dado: haced esto en memoria de mí.",
-    edition: "RV1909",
-  },
-  "John.6.55": {
-    osis: "John.6.55",
-    text: "Porque mi carne es verdadera comida, y mi sangre es verdadera bebida.",
-    edition: "RV1909",
-  },
-  "Matt.26.26": {
-    osis: "Matt.26.26",
-    text: "Y comiendo ellos, tomó Jesús el pan, y bendijo, y lo partió, y dió á sus discípulos, y dijo: Tomad, comed: esto es mi cuerpo.",
-    edition: "RV1909",
-  },
-  "1Cor.10.16": {
-    osis: "1Cor.10.16",
-    text: "La copa de bendición que bendecimos, ¿no es la comunión de la sangre de Cristo? El pan que partimos, ¿no es la comunión del cuerpo de Cristo?",
-    edition: "RV1909",
-  },
-  "1Cor.11.27": {
-    osis: "1Cor.11.27",
-    text: "De manera que, cualquiera que comiere este pan ó bebiere esta copa del Señor indignamente, será culpado del cuerpo y de la sangre del Señor.",
-    edition: "RV1909",
-  },
-  "Mal.1.11": {
-    osis: "Mal.1.11",
-    text: "Porque desde donde el sol nace hasta donde se pone, es grande mi nombre entre las gentes; y en todo lugar se ofrece á mi nombre perfume, y presente limpio: porque grande es mi nombre entre las gentes, dice Jehová de los ejércitos.",
-    edition: "RV1909",
-  },
   "Ps.110.4": {
     osis: "Ps.110.4",
     text: "Juró Jehová, y no se arrepentirá: Tú eres sacerdote para siempre según el orden de Melchîsedech.",
@@ -2004,11 +2969,6 @@ export const verses = {
   "Heb.9.26": {
     osis: "Heb.9.26",
     text: "De otra manera fuera necesario que hubiera padecido muchas veces desde el principio del mundo: mas ahora una vez en la consumación de los siglos, para deshacimiento del pecado se presentó por el sacrificio de sí mismo.",
-    edition: "RV1909",
-  },
-  "Heb.10.14": {
-    osis: "Heb.10.14",
-    text: "Porque con una sola ofrenda hizo perfectos para siempre á los santificados.",
     edition: "RV1909",
   },
   "Heb.10.18": {
@@ -2036,21 +2996,6 @@ export const verses = {
     text: "Mas éste, por cuanto permanece para siempre, tiene un sacerdocio inmutable:",
     edition: "RV1909",
   },
-  "1Cor.11.26": {
-    osis: "1Cor.11.26",
-    text: "Porque todas las veces que comiereis este pan, y bebiereis esta copa, la muerte del Señor anunciáis hasta que venga.",
-    edition: "RV1909",
-  },
-  "1Cor.11.28": {
-    osis: "1Cor.11.28",
-    text: "Por tanto, pruébese cada uno á sí mismo, y coma así de aquel pan, y beba de aquella copa.",
-    edition: "RV1909",
-  },
-  "Acts.3.21": {
-    osis: "Acts.3.21",
-    text: "Al cual de cierto es menester que el cielo tenga hasta los tiempos de la restauración de todas las cosas, que habló Dios por boca de sus santos profetas que han sido desde el siglo.",
-    edition: "RV1909",
-  },
   "Gen.18.2": {
     osis: "Gen.18.2",
     text: "Y alzó sus ojos y miró, y he aquí tres varones que estaban junto á él: y cuando los vió, salió corriendo de la puerta de su tienda á recibirlos, é inclinóse hacia la tierra,",
@@ -2071,129 +3016,14 @@ export const verses = {
     text: "Y entrando en la casa, vieron al niño con su madre María, y postrándose, le adoraron; y abriendo sus tesoros, le ofrecieron dones, oro é incienso y mirra.",
     edition: "RV1909",
   },
-  "John.6.53": {
-    osis: "John.6.53",
-    text: "Y Jesús les dijo: De cierto, de cierto os digo: Si no comiereis la carne del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros.",
-    edition: "RV1909",
-  },
-  "John.6.51": {
-    osis: "John.6.51",
-    text: "Yo soy el pan vivo que he descendido del cielo: si alguno comiere de este pan, vivirá para siempre; y el pan que yo daré es mi carne, la cual yo daré por la vida del mundo.",
-    edition: "RV1909",
-  },
-  "John.6.58": {
-    osis: "John.6.58",
-    text: "Este es el pan que descendió del cielo: no como vuestros padres comieron el maná, y son muertos: el que come de este pan, vivirá eternamente.",
-    edition: "RV1909",
-  },
   "1Cor.11.34": {
     osis: "1Cor.11.34",
     text: "Si alguno tuviere hambre, coma en su casa, porque no os juntéis para juicio. Las demás cosas ordenaré cuando llegare.",
     edition: "RV1909",
   },
-  "John.6.63": {
-    osis: "John.6.63",
-    text: "El espíritu es el que da vida; la carne nada aprovecha: las palabras que yo os he hablado, son espíritu, y son vida.",
-    edition: "RV1909",
-  },
   "Lev.17.14": {
     osis: "Lev.17.14",
     text: "Porque el alma de toda carne, su vida, está en su sangre: por tanto he dicho á los hijos de Israel: No comeréis la sangre de ninguna carne, porque la vida de toda carne es su sangre: cualquiera que la comiere será cortado.",
-    edition: "RV1909",
-  },
-  "Mark.14.22": {
-    osis: "Mark.14.22",
-    text: "Y estando ellos comiendo, tomó Jesús pan, y bendiciendo, partió y les dió, y dijo: Tomad, esto es mi cuerpo.",
-    edition: "RV1909",
-  },
-  "Mark.14.23": {
-    osis: "Mark.14.23",
-    text: "Y tomando el vaso, habiendo hecho gracias, les dió: y bebieron de él todos.",
-    edition: "RV1909",
-  },
-  "Mark.14.24": {
-    osis: "Mark.14.24",
-    text: "Y les dice: Esto es mi sangre del nuevo pacto, que por muchos es derramada.",
-    edition: "RV1909",
-  },
-  "Luke.22.20": {
-    osis: "Luke.22.20",
-    text: "Asimismo también el vaso, después que hubo cenado, diciendo: Este vaso es el nuevo pacto en mi sangre, que por vosotros se derrama.",
-    edition: "RV1909",
-  },
-  "1Cor.11.24": {
-    osis: "1Cor.11.24",
-    text: "Y habiendo dado gracias, lo partió, y dijo: Tomad, comed: esto es mi cuerpo que por vosotros es partido: haced esto en memoria de mí.",
-    edition: "RV1909",
-  },
-  "1Cor.11.25": {
-    osis: "1Cor.11.25",
-    text: "Asimismo [tomó] también la copa, después de haber cenado, diciendo: Esta copa es el nuevo pacto en mi sangre: haced esto todas las veces que bebiereis, en memoria de mí.",
-    edition: "RV1909",
-  },
-  "John.6.52": {
-    osis: "John.6.52",
-    text: "Entonces los Judíos contendían entre sí, diciendo: ¿Cómo puede éste darnos su carne á comer?",
-    edition: "RV1909",
-  },
-  "John.6.54": {
-    osis: "John.6.54",
-    text: "El que come mi carne y bebe mi sangre, tiene vida eterna: y yo le resucitaré en el día postrero.",
-    edition: "RV1909",
-  },
-  "John.6.56": {
-    osis: "John.6.56",
-    text: "El que come mi carne y bebe mi sangre, en mí permanece, y yo en él.",
-    edition: "RV1909",
-  },
-  "John.6.57": {
-    osis: "John.6.57",
-    text: "Como me envió el Padre viviente, y yo vivo por el Padre, asimismo el que me come, él también vivirá por mí.",
-    edition: "RV1909",
-  },
-  "John.6.60": {
-    osis: "John.6.60",
-    text: "Y muchos de sus discípulos oyéndo[lo], dijeron: Dura es esta palabra: ¿quién la puede oir?",
-    edition: "RV1909",
-  },
-  "John.6.61": {
-    osis: "John.6.61",
-    text: "Y sabiendo Jesús en sí mismo que sus discípulos murmuraban de esto, díjoles: ¿Esto os escandaliza?",
-    edition: "RV1909",
-  },
-  "John.6.62": {
-    osis: "John.6.62",
-    text: "¿Pues [qué], si viereis al Hijo del hombre que sube donde estaba primero?",
-    edition: "RV1909",
-  },
-  "John.6.64": {
-    osis: "John.6.64",
-    text: "Mas hay algunos de vosotros que no creen. Porque Jesús desde el principio sabía quiénes eran los que no creían, y quién le había de entregar.",
-    edition: "RV1909",
-  },
-  "John.6.65": {
-    osis: "John.6.65",
-    text: "Y dijo: Por eso os he dicho que ninguno puede venir á mí, si no le fuere dado del Padre.",
-    edition: "RV1909",
-  },
-  "John.6.66": {
-    osis: "John.6.66",
-    text: "Desde esto, muchos de sus discípulos volvieron atrás, y ya no andaban con él.",
-    edition: "RV1909",
-  },
-  "John.6.67": {
-    osis: "John.6.67",
-    text: "Dijo entonces Jesús á los doce: ¿Queréis vosotros iros también?",
-    edition: "RV1909",
-  },
-  "John.6.68": {
-    osis: "John.6.68",
-    text: "Y respondióle Simón Pedro: Señor, ¿á quién iremos? tú tienes palabras de vida eterna.",
-    edition: "RV1909",
-  },
-  "John.6.69": {
-    osis: "John.6.69",
-    text: "Y nosotros creemos y conocemos que tú eres el Cristo, el Hijo de Dios viviente.",
     edition: "RV1909",
   },
   "1Cor.10.17": {
@@ -2204,11 +3034,6 @@ export const verses = {
   "1Cor.10.21": {
     osis: "1Cor.10.21",
     text: "No podéis beber la copa del Señor, y la copa de los demonios: no podéis ser partícipes de la mesa del Señor, y de la mesa de los demonios.",
-    edition: "RV1909",
-  },
-  "1Cor.11.29": {
-    osis: "1Cor.11.29",
-    text: "Porque el que come y bebe indignamente, juicio come y bebe para sí, no discerniendo el cuerpo del Señor.",
     edition: "RV1909",
   },
   "Heb.7.11": {
@@ -2576,16 +3401,6 @@ export const verses = {
     text: "Así también Cristo fué ofrecido una vez para agotar los pecados de muchos; y la segunda vez, sin pecado, será visto de los que le esperan para salud.",
     edition: "RV1909",
   },
-  "Heb.10.4": {
-    osis: "Heb.10.4",
-    text: "Porque la sangre de los toros y de los machos cabríos no puede quitar los pecados.",
-    edition: "RV1909",
-  },
-  "Heb.10.10": {
-    osis: "Heb.10.10",
-    text: "En la cual voluntad somos santificados por la ofrenda del cuerpo de Jesucristo [hecha] una sola vez.",
-    edition: "RV1909",
-  },
   "Heb.10.11": {
     osis: "Heb.10.11",
     text: "Así que, todo sacerdote se presenta cada día ministrando y ofreciendo muchas veces los mismos sacrificios, que nunca pueden quitar los pecados:",
@@ -2594,11 +3409,6 @@ export const verses = {
   "Heb.10.12": {
     osis: "Heb.10.12",
     text: "Pero éste, habiendo ofrecido por los pecados un [solo] sacrificio para siempre, está sentado á la diestra de Dios,",
-    edition: "RV1909",
-  },
-  "Isa.53.10": {
-    osis: "Isa.53.10",
-    text: "Con todo eso Jehová quiso quebrantarlo, sujetándole á padecimiento. Cuando hubiere puesto su vida en expiación por el pecado, verá linaje, vivirá por largos días, y la voluntad de Jehová será en su mano prosperada.",
     edition: "RV1909",
   },
   "Luke.24.6": {

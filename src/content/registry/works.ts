@@ -1,6 +1,82 @@
 import type { Work } from "@/content/model/registry";
 
 export const works = {
+  "small-catechism": {
+    id: "small-catechism",
+    title: "Catecismo Menor (Lutero)",
+    short: "Catecismo Menor",
+    kind: "catechism",
+    speaker: "lutheran",
+    scheme: ["ref", "locus"],
+  },
+  augsburg: {
+    id: "augsburg",
+    title: "Confesión de Augsburgo",
+    short: "CA",
+    kind: "confession",
+    speaker: "lutheran",
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    scheme: ["ref"],
+  },
+  apology: {
+    id: "apology",
+    title: "Apología de la Confesión de Augsburgo",
+    short: "Apología",
+    kind: "confession",
+    speaker: "lutheran",
+    date: {
+      year: 1531,
+    },
+    scheme: ["ref", "paragraph", "number"],
+  },
+  "fc-epitome": {
+    id: "fc-epitome",
+    title: "Fórmula de Concordia, Epítome",
+    short: "FC Epítome",
+    kind: "confession",
+    speaker: "lutheran",
+    date: {
+      year: 1577,
+    },
+    scheme: ["ref", "paragraph", "locus"],
+  },
+  "fc-sd": {
+    id: "fc-sd",
+    title: "Fórmula de Concordia, Declaración Sólida",
+    short: "FC DS",
+    kind: "confession",
+    speaker: "lutheran",
+    date: {
+      year: 1577,
+    },
+    scheme: ["ref", "paragraph"],
+  },
+  smalcald: {
+    id: "smalcald",
+    title: "Artículos de Esmalcalda",
+    short: "Esmalcalda",
+    kind: "confession",
+    speaker: "lutheran",
+    date: {
+      year: 1537,
+    },
+    scheme: ["ref", "locus", "number", "paragraph"],
+  },
+  "large-catechism": {
+    id: "large-catechism",
+    title: "Catecismo Mayor (Lutero)",
+    short: "Catecismo Mayor",
+    kind: "catechism",
+    speaker: "lutheran",
+    date: {
+      year: 1529,
+    },
+    scheme: ["ref", "number", "locus"],
+  },
   "pastor-aeternus": {
     id: "pastor-aeternus",
     title: "Concilio Vaticano I, Pastor aeternus",
@@ -113,17 +189,6 @@ export const works = {
     speaker: "reformed",
     scheme: ["ref", "locus"],
   },
-  smalcald: {
-    id: "smalcald",
-    title: "Artículos de Esmalcalda",
-    short: "Esmalcalda",
-    kind: "confession",
-    speaker: "lutheran",
-    date: {
-      year: 1537,
-    },
-    scheme: ["ref", "locus", "number", "paragraph"],
-  },
   treatise: {
     id: "treatise",
     title: "Tratado sobre el poder y la primacía del papa",
@@ -131,17 +196,6 @@ export const works = {
     kind: "confession",
     speaker: "lutheran",
     scheme: ["paragraph"],
-  },
-  "fc-epitome": {
-    id: "fc-epitome",
-    title: "Fórmula de Concordia, Epítome",
-    short: "FC Epítome",
-    kind: "confession",
-    speaker: "lutheran",
-    date: {
-      year: 1577,
-    },
-    scheme: ["ref", "paragraph", "locus"],
   },
   dositheus: {
     id: "dositheus",
@@ -287,19 +341,6 @@ export const works = {
     speaker: "catholic",
     scheme: ["number"],
   },
-  augsburg: {
-    id: "augsburg",
-    title: "Confesión de Augsburgo",
-    short: "CA",
-    kind: "confession",
-    speaker: "lutheran",
-    date: {
-      year: 1530,
-      month: 6,
-      day: 25,
-    },
-    scheme: ["ref"],
-  },
   "status-stlut-s": {
     id: "status-stlut-s",
     title: "Apología y Artículos de Esmalcalda",
@@ -371,28 +412,6 @@ export const works = {
     kind: "curial-document",
     speaker: "catholic",
     scheme: [],
-  },
-  apology: {
-    id: "apology",
-    title: "Apología de la Confesión de Augsburgo",
-    short: "Apología",
-    kind: "confession",
-    speaker: "lutheran",
-    date: {
-      year: 1531,
-    },
-    scheme: ["ref", "paragraph", "number"],
-  },
-  "large-catechism": {
-    id: "large-catechism",
-    title: "Catecismo Mayor (Lutero)",
-    short: "Catecismo Mayor",
-    kind: "catechism",
-    speaker: "lutheran",
-    date: {
-      year: 1529,
-    },
-    scheme: ["ref", "number", "locus"],
   },
   mogila: {
     id: "mogila",
@@ -493,17 +512,6 @@ export const works = {
     kind: "curial-document",
     speaker: "catholic",
     scheme: [],
-  },
-  "fc-sd": {
-    id: "fc-sd",
-    title: "Fórmula de Concordia, Declaración Sólida",
-    short: "FC DS",
-    kind: "confession",
-    speaker: "lutheran",
-    date: {
-      year: 1577,
-    },
-    scheme: ["ref", "paragraph"],
   },
   "jp-audience-1989": {
     id: "jp-audience-1989",

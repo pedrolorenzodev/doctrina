@@ -2,6 +2,7 @@ import fs from "node:fs";
 import vm from "node:vm";
 import { WORK_DEFS } from "./dossier-works.mjs";
 import { FIELDS } from "./dossier-fields.mjs";
+import { readDossier } from "./dossier-md.mjs";
 
 const ROOT = new URL("../../docs/research/doctrines", import.meta.url).pathname;
 const CONTENT = process.env.CONTENT_OUT ?? new URL("../../src/content", import.meta.url).pathname;
@@ -26,7 +27,8 @@ function load(d) {
   const file = traditionOf(d) === "catholic" ? "review-page.data.js" : `review-page.${traditionOf(d)}.data.js`;
   const src = fs.readFileSync(`${ROOT}/${doctrineOf(d)}/${file}`, "utf8");
   const names = [...src.matchAll(/^(?:const|let|var) (\w+)/gm)].map((m) => m[1]);
-  const ctx = { document: { createElement: () => ({}), head: { appendChild() {} } }, window: {}, console };
+  const dossierFile = `${ROOT}/${doctrineOf(d)}/${traditionOf(d)}.md`;
+  const ctx = { document: { createElement: () => ({}), head: { appendChild() {} } }, window: {}, console, dossier: fs.existsSync(dossierFile) ? readDossier(dossierFile) : null };
   vm.createContext(ctx);
   vm.runInContext(src + "\n;globalThis.__x={" + names.join(",") + "}", ctx);
   return JSON.parse(JSON.stringify(ctx.__x));
@@ -450,10 +452,10 @@ function buildPage(d) {
     },
     scriptureSubtitle: `Los pasajes que los documentos católicos citan sobre ${fields.topic}, y cómo los leen.`,
     scripture: x.ESCRITURA.map((e) => { const osis = refToOsis(e.ref); if (!osis) throw new Error("scripture ref not understood: " + e.ref); return { refs: osis.split(","), text: prose(d, e.d) }; }),
-    videos: { subtitle: "Creadores católicos explican y defienden esta postura. Los videos se abren en YouTube.", items: [] },
-    objections: { subtitle: "Objeciones a la postura católica. Abre cada una para leer en profundidad la respuesta católica.", videosSubtitle: "Creadores católicos que responden a esta objeción. Los videos se abren en YouTube.", order: objectionIds, ...(x.OB_LIST_NOTE ? { silentTraditions: prose(d, x.OB_LIST_NOTE) } : {}), items: objItems },
+    videos: { subtitle: fields.videosSubtitle ?? "Creadores católicos explican y defienden esta postura. Los videos se abren en YouTube.", items: [] },
+    objections: { subtitle: fields.objectionsSubtitle ?? "Objeciones a la postura católica. Abre cada una para leer en profundidad la respuesta católica.", videosSubtitle: fields.objectionVideosSubtitle ?? "Creadores católicos que responden a esta objeción. Los videos se abren en YouTube.", order: objectionIds, ...(x.OB_LIST_NOTE ? { silentTraditions: prose(d, x.OB_LIST_NOTE) } : {}), items: objItems },
     life: { intro: x.VIVE.intro.map((t) => prose(d, t)), items: x.VIVE.items.map((i) => ({ id: i.id, label: i.l, text: prose(d, i.d), sources: i.s.map((p) => srcRef(d, p)) })) },
-    authority: { subtitle: "Qué significa, para la Iglesia católica, que una enseñanza sea dogma, doctrina definitiva, magisterio auténtico o disciplina.", grades, other: {} },
+    authority: { subtitle: fields.authoritySubtitle ?? "Qué significa, para la Iglesia católica, que una enseñanza sea dogma, doctrina definitiva, magisterio auténtico o disciplina.", grades, other: {} },
   };
   return guillemets(page);
 }
@@ -461,6 +463,7 @@ function buildPage(d) {
 const pages = Object.fromEntries(DOCTRINES.map((d) => [d, buildPage(d)]));
 
 const SCRUBS = [
+  [/ \((?:ver )?QE-[\d+]+\)/g, ""],
   [/ Licencia sin confirmar: solo investigación\./g, " Licencia no determinada."],
   [/ Línea de estado actual redactada en el dosier \(([\d-]+)\) desde wave-1-open-checks\.md \(tarea 2\(a\) y seguimiento del [\d-]+\) y las fuentes que nombra; corregida en la verificación 2\./g, " Línea de estado actual redactada para el sitio ($1) a partir de las fuentes que nombra."],
   [/^Línea de estado actual redactada en el dosier \(([\d-]+)\) desde wave-1-open-checks\.md \(tarea 2\(a\) y seguimiento del [\d-]+\) y las fuentes que nombra; corregida en la verificación 2\./g, "Línea de estado actual redactada para el sitio ($1) a partir de las fuentes que nombra."],

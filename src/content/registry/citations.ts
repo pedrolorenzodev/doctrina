@@ -1,6 +1,1923 @@
 import type { Citation } from "@/content/model/registry";
 
 export const citations = {
+  LSCVI_1_2: {
+    id: "LSCVI_1_2",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VI.1–2",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "¿Qué es el Sacramento del Altar? Respuesta: Es el verdadero cuerpo y sangre de nuestro Señor Jesucristo, bajo el pan y el vino, para que nosotros, los cristianos, lo comamos y bebamos, instituido por Cristo mismo.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+        },
+        en: {
+          text: "What is the Sacrament of the Altar? –Answer: It is the true body and blood of our Lord Jesus Christ, under the bread and wine, for us Christians to eat and to drink, instituted by Christ Himself.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Was ist das Sakrament des Altars? Antwort. Es ist der wahre Leib und Blut unsers HErrn JEsu Christi, unter dem Brot und Wein uns Christen zu essen und zu trinken, von Christo selbst eingesetzt.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACX: {
+    id: "LACX",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "X",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Acerca de la Cena del Señor se enseña que el verdadero cuerpo y sangre de Cristo están verdaderamente presentes en la Cena bajo la forma del pan y del vino, y que allí se distribuyen y se reciben. Por eso se rechaza también la doctrina contraria.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Vom Abendmahl des HErrn wird also gelehrt, daß wahrer Leib und Blut Christi wahrhaftiglich unter der Gestalt des Brots und Weins im Abendmahl gegenwärtig sei und da ausgeteilt und genommen wird. Derhalben wird auch die Gegenlehre verworfen.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApX_54: {
+    id: "LApX_54",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "X.54",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Decimus articulus approbatus est, in quo confitemur nos sentire, quod in coena Domini vere et substantialiter adsint corpus et sanguis Christi et vere exhibeantur cum illis rebus, quae videntur, pane et vino, his, qui sacramentum accipiunt.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Ha sido aprobado el artículo décimo, en el que confesamos que sostenemos que en la Cena del Señor el cuerpo y la sangre de Cristo están verdadera y sustancialmente presentes, y se ofrecen verdaderamente, con las cosas que se ven, el pan y el vino, a los que reciben el sacramento.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+        en: {
+          text: "The Tenth Article has been approved, in which we confess that we believe, that in the Lord's Supper the body and blood of Christ are truly and substantially present, and are truly tendered, with those things which are seen, bread and wine, to those who receive the Sacrament.",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_6: {
+    id: "LFCEpVII_6",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.6",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "1. Creemos, enseñamos y confesamos que en la santa Cena el cuerpo y la sangre de Cristo están verdadera y esencialmente presentes, y que se distribuyen y se reciben verdaderamente con el pan y el vino.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "1. We believe, teach, and confess that in the Holy Supper the body and blood of Christ are truly and essentially present, and are truly distributed and received with the bread and wine.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "1. Wir glauben, lehren und bekennen, daß im heiligen Abendmahl der Leib und Blut Christi wahrhaftig und wesentlich gegenwärtig sei, mit Brot und Wein wahrhaftig ausgeteilt und empfangen werde.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_7: {
+    id: "LFCEpVII_7",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.7",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "2. Creemos, enseñamos y confesamos que las palabras del testamento de Cristo no deben entenderse de otro modo que como suenan según la letra; de manera que el pan no significa el cuerpo ausente, ni el vino la sangre ausente de Cristo, sino que, a causa de la unión sacramental, es verdaderamente el cuerpo y la sangre de Cristo.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "2. We believe, teach, and confess that the words of the testament of Christ are not to be understood otherwise than as they read, according to the letter, so that the bread does not signify the absent body and the wine the absent blood of Christ, but that, on account of the sacramental union, they [the bread and wine] are truly the body and blood of Christ.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "2. Wir glauben, lehren und bekennen, daß die Worte des Testaments Christi nicht anders zu verstehen seien, denn wie sie nach dem Buchstaben lauten, also daß nicht das Brot den abwesenden Leib und der Wein das abwesende Blut Christi bedeute, sondern daß es wahrhaftig um sakramentlicher Einigkeit willen der Leib und Blut Christi sei.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_35: {
+    id: "LFCSDVII_35",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.35",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: 'Porque la razón por la que, junto a las expresiones de Cristo y de san Pablo —el pan en la Cena es el cuerpo de Cristo, o la comunión del cuerpo de Cristo—, se usan también las fórmulas "bajo el pan", "con el pan", "en el pan", es que con ellas se rechaza la transubstanciación papista y se indica la unión sacramental de la esencia no transformada del pan y del cuerpo de Cristo.',
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "the forms: under the bread, with the bread, in the bread [the body of Christ is present and offered], are employed, is that by means of them the papistical transubstantiation may be rejected and the sacramental union of the unchanged essence of the bread and of the body of Christ indicated",
+          edition: "triglot.en",
+        },
+        de: {
+          text: 'Denn daß neben den Reden Christi und St. Pauli: Das Brot im Abendmahl ist der Leib Christi oder die Gemeinschaft des Leibes Christi, auch die Formen "unter dem Brot", "mit dem Brot", "im Brot" gebraucht [werden], ist die Ursache, daß hierdurch die papistische Transsubstantiation verworfen und des unverwandelten Wesens des Brotes und des Leibes Christi sakramentliche Vereinigung angezeigt würde',
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_38: {
+    id: "LFCSDVII_38",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.38",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Aunque esta unión del cuerpo y la sangre de Cristo con el pan y el vino no es una unión personal, como la de las dos naturalezas en Cristo, sino [una unión sacramental], como la llaman el Dr. Lutero y los nuestros en los muy citados artículos de concordia del año 1536 y en otros lugares: sacramentalem unionem, es decir, una unión sacramental…",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "Although this union of the body and blood of Christ with the bread and wine is not a personal union, as that of the two natures in Christ, but as Dr. Luther and our theologians … call it sacramentatem unionem, that is, a sacramental union",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Wiewohl solche Vereinigung des Leibes und Blutes Christi mit Brot und Wein nicht eine persönliche Vereinigung, wie beider Naturen in Christo, sondern [eine sakramentliche Vereinigung ist,] wie sie D. Luther und die unsern in den vielgedachten Artikeln der Vergleichung Anno 1536 und sonst sacramentalem unionem, das ist, eine sakramentliche Vereinigung, nennen …",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_2: {
+    id: "LFCEpVII_2",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "¿Están en la santa Cena el verdadero cuerpo y la verdadera sangre de nuestro Señor Jesucristo verdadera y esencialmente presentes, se distribuyen con el pan y el vino y se reciben con la boca por todos los que usan este sacramento, sean dignos o indignos, piadosos o impíos, creyentes o incrédulos, los creyentes para consuelo y vida, los incrédulos para juicio? Los sacramentarios dicen que no; nosotros decimos que sí.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "Whether in the Holy Supper the true body and blood of our Lord Jesus Christ are truly and essentially present, are distributed with the bread and wine, and received with the mouth by all those who use this Sacrament, whether they be worthy or unworthy, godly or ungodly, believing or unbelieving; by the believing for consolation and life, by the unbelieving for judgment? The Sacramentarians say, No; we say, Yes.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Ob in dem heiligen Abendmahl der wahrhaftige Leib und Blut unsers HErrn JEsu Christi wahrhaftig und wesentlich gegenwärtig sei, mit Brot und Wein ausgeteilt und mit dem Munde empfangen werde von allen denen, so sich dieses Sakraments gebrauchen, sie seien würdig oder unwürdig, fromm oder unfromm, gläubig oder ungläubig, den Gläubigen zum Trost und Leben, den Ungläubigen zum Gericht? Die Sakramentierer sagen nein, wir sagen ja.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_15: {
+    id: "LFCEpVII_15",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.15",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "6. Creemos, enseñamos y confesamos que el cuerpo y la sangre de Cristo se reciben con el pan y el vino no solo espiritualmente, por la fe, sino también con la boca; pero no de modo cafarnaítico, sino de un modo sobrenatural y celestial, a causa de la unión sacramental, como lo muestran claramente las palabras de Cristo cuando manda tomar, comer y beber…",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "6. We believe, teach, and confess that the body and blood of Christ are received with the bread and wine, not only spiritually by faith, but also orally; yet not in a Capernaitic, but in a supernatural, heavenly mode, because of the sacramental union; as the words of Christ clearly show, when Christ gives direction to take, eat, and drink…",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "6. Wir glauben, lehren und bekennen, daß der Leib und Blut Christi nicht allein geistlich durch den Glauben, sondern auch mündlich, doch nicht auf kapernaitische, sondern [auf] übernatürliche, himmlische Weise um der sakramentlichen Vereinigung willen mit dem Brot und Wein empfangen werde, wie solches die Worte Christi klärlich ausweisen, da Christus heißet [befiehlt zu] nehmen, essen und trinken …",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_42: {
+    id: "LFCEpVII_42",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.42",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "21. Por eso condenamos del todo el comer cafarnaítico del cuerpo de Cristo, como si se desgarrara su carne con los dientes y se digiriera como otro alimento […]; y en cambio sostenemos y creemos, en virtud de las sencillas palabras del testamento de Cristo, un comer verdadero, pero sobrenatural, del cuerpo de Cristo, y también un beber de su sangre, que los sentidos y la razón humanos no comprenden…",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "Hence we hereby utterly [reject and] condemn the Capernaitic eating of the body of Christ, as though [we taught that] His flesh were rent with the teeth, and digested like other food … and on the other hand, we maintain and believe, according to the simple words of the testament of Christ, the true, yet supernatural eating of the body of Christ, as also the drinking of His blood, which human senses and reason do not comprehend…",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "21. Wie wir denn hiermit das kapernaitische Essen des Leibes Christi, als wenn man sein Fleisch mit Zähnen zerrisse und wie andere Speise verdaute … gänzlich verdammen und dagegen halten und glauben, vermöge der einfältigen Worte des Testaments Christi, ein wahrhaftig, doch übernatürlich Essen des Leibes Christi wie auch Trinken seines Blutes, welches menschliche Sinne und Vernunft nicht begreifen …",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_105: {
+    id: "LFCSDVII_105",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.105",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "…que en la santa Cena el cuerpo y la sangre de Cristo se reciben, se comen y se beben espiritualmente, aunque esa recepción se hace con la boca; pero el modo es espiritual.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+        },
+        en: {
+          text: "…the body and blood of Christ are spiritually received, eaten, and drunk, although this participation occurs with the mouth, while the mode is spiritual.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "… daß der Leib und Blut Christi im heiligen Abendmahl geistlich empfangen, [ge]gessen und getrunken werde, obwohl solche Nießung mit dem Munde geschieht, die Weise aber geistlich ist.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSAIII_6_1: {
+    id: "LSAIII_6_1",
+    work: "smalcald",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "III.6.1",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Del Sacramento del Altar sostenemos que el pan y el vino en la Cena son el verdadero cuerpo y sangre de Cristo, y que se dan y se reciben no solo por los cristianos piadosos, sino también por los malos.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "Of the Sacrament of the Altar we hold that bread and wine in the Supper are the true body and blood of Christ, and are given and received not only by the godly, but also by wicked Christians.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Vom Sakrament des Altars halten wir, daß Brot und Wein im Abendmahl sei der wahrhaftige Leib und Blut Christi und werde nicht allein gereicht und empfangen von frommen, sondern auch von bösen Christen.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_16: {
+    id: "LFCEpVII_16",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.16",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "7. Creemos, enseñamos y confesamos que no solo los verdaderos creyentes y los dignos, sino también los indignos y los incrédulos reciben el verdadero cuerpo y sangre de Cristo; pero no para vida y consuelo, sino para juicio y condenación, si no se convierten y se arrepienten (1 Co 11).",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "7. We believe, teach, and confess that not only the true believers [in Christ] and the worthy, but also the unworthy and unbelievers, receive the true body and blood of Christ; however, not for life and consolation, but for judgment and condemnation, if they are not converted and do not repent, 1 Cor. 11:27-29.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "7. Wir glauben, lehren und bekennen, daß nicht allein die Rechtgläubigen [wahrhaft Gläubigen] und Würdigen, sondern auch die Unwürdigen und Ungläubigen empfangen den wahrhaftigen Leib und Blut Christi, doch nicht zum Leben und Trost, sondern zum Gericht und Verdammnis, wenn sie sich nicht bekehren und Buße tun, 1 Kor. 11.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_19: {
+    id: "LFCEpVII_19",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.19",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "no true believer, as long as he retains living faith, however weak he may be, receives the Holy Supper to his judgment, which was instituted especially for Christians weak in faith, yet penitent",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_8_9: {
+    id: "LFCEpVII_8_9",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.8–9",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: '3. En cuanto a la consagración, creemos, enseñamos y confesamos que esta presencia del cuerpo y la sangre de Cristo en la santa Cena no la produce ninguna obra humana ni el pronunciar del ministro, sino que debe atribuirse única y exclusivamente al poder omnipotente de nuestro Señor Jesucristo. 4. Pero a la vez creemos, enseñamos y sostenemos unánimemente que en el uso de la santa Cena las palabras de la institución de Cristo no deben omitirse de ningún modo, sino decirse públicamente, como está escrito: "La copa bendecida que bendecimos", etc. (1 Co 10:16); y ese bendecir se hace al pronunciar las palabras de Cristo.',
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "3. Now, as to the consecration, we believe, teach, and confess that no work of man or recitation of the minister [of the church] produces this presence of the body and blood of Christ in the Holy Supper, but that this is to be ascribed only and alone to the almighty power of our Lord Jesus Christ. 4. But at the same time we also believe, teach, and confess unanimously that in the use of the Holy Supper the words of the institution of Christ should in no way be omitted, but should be publicly recited…",
+          edition: "triglot.en",
+        },
+        de: {
+          text: '3. Was [so]dann die Konsekration belangt, glauben, lehren und bekennen wir, daß solche Gegenwärtigkeit des Leibes und Blutes Christi im heiligen Abendmahl nicht schaffe einiges Menschenwerk oder Sprechen des Dieners, sondern daß solche einig und allein der allmächtigen Kraft unsers HErrn JEsu Christi zugeschrieben werden soll. 4. Daneben aber glauben, lehren und halten [*bekennen] wir auch einhellig, daß im Gebrauch des heiligen Abendmahls die Worte der Einsetzung Christi keineswegs zu unterlassen, sondern öffentlich gesprochen werden sollen, wie geschrieben steht: "Der gesegnete Kelch, den wir segnen" usw., 1 Kor. 10, 16, welches Segnen durch das Sprechen der Worte Christi geschieht.',
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_74_75: {
+    id: "LFCSDVII_74_75",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.74–75",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "…que la verdadera presencia del cuerpo y la sangre de Cristo en la Cena no la produce ninguna palabra u obra humana, sea el mérito o el pronunciar del ministro, sea el comer y beber o la fe de los comulgantes, sino que todo ello debe atribuirse solo al poder de Dios todopoderoso y a la palabra, institución y ordenanza de nuestro Señor Jesucristo.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+        },
+        en: {
+          text: "not the word or work of any man produces the true presence of the body and blood of Christ in the Supper, whether it be the merit or recitation of the minister, or the eating and drinking or faith of the communicants; but all this should be ascribed alone to the power of Almighty God and the word, institution, and ordination of our Lord Jesus Christ.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "… daß die wahre Gegenwärtigkeit des Leibes und Blutes Christi im Abendmahl nicht schaffe einiges Menschen Wort oder Werk, es sei das Verdienst oder Sprechen des Dieners oder das Essen und Trinken oder Glaube der Kommunikanten, sondern solches alles solle allein des allmächtigen Gottes Kraft und unsers HErrn JEsu Christi Wort, Einsetzung und Ordnung zugeschrieben werden.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV_10: {
+    id: "LLCV_10",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V.10",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La Palabra (digo) es la que hace y distingue este sacramento, de modo que no es mero pan y vino, sino que es y se llama cuerpo y sangre de Cristo.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: 'It is the Word (I say) which makes and distinguishes this Sacrament, so that it is not mere bread and wine, but is, and is called, the body and blood of Christ." … "But if the words remain with them, as they shall and must, then, in virtue of the same, it is truly the body and blood of Christ. For as the lips of Christ say and speak, so it is, as He can never lie or deceive.',
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Das Wort (sage ich) ist das, das dies Sakrament macht und unterscheidet, daß es nicht lauter Brot und Wein, sondern Christus' Leib und Blut ist und heißt.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSCVI_5_10: {
+    id: "LSCVI_5_10",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VI.5–10",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: '¿De qué sirve, pues, ese comer y beber? Respuesta: Nos lo muestran estas palabras: "Dado y derramado por vosotros para el perdón de los pecados"; es decir, que en el sacramento se nos dan, por medio de estas palabras, el perdón de los pecados, la vida y la salvación; porque donde hay perdón de los pecados, hay también vida y salvación. ¿Cómo puede el comer y beber corporal hacer cosas tan grandes? Respuesta: Ciertamente no lo hacen el comer y el beber, sino las palabras que están aquí: "Dado y derramado por vosotros para el perdón de los pecados". Estas palabras son, junto con el comer y beber corporal, lo principal del sacramento; y quien cree estas palabras tiene lo que dicen y como suenan, a saber, el perdón de los pecados. ¿Quién recibe, pues, dignamente este sacramento? Respuesta: Ayunar y prepararse corporalmente es, por cierto, una buena disciplina externa; pero verdaderamente digno y bien preparado está quien tiene fe en estas palabras: "Dado y derramado por vosotros para el perdón de los pecados". Pero quien no cree estas palabras, o duda, es indigno y no está preparado; porque la palabra "por vosotros" exige corazones del todo creyentes.',
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "What is the benefit of such eating and drinking? –Answer: That is shown us in these words: Given, and shed for you, for the remission of sins; namely, that in the Sacrament forgiveness of sins, life, and salvation are given us through these words. For where there is forgiveness of sins, there is also life and salvation. How can bodily eating and drinking do such great things? –Answer: It is not the eating and drinking, indeed, that does them, but the words which stand here … Who, then, receives such Sacrament worthily? –Answer: Fasting and bodily preparation is, indeed, a fine outward training; but he is truly worthy and well prepared who has faith in these words: Given, and shed for you, for the remission of sins. But he that does not believe these words, or doubts, is unworthy and unfit; for the words For you require altogether believing hearts.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: 'Was nützt denn solch Essen und Trinken? Antwort. Das zeigen uns diese Worte: "Für euch gegeben und vergossen zur Vergebung der Sünden", nämlich daß uns im Sakrament Vergebung der Sünden, Leben und Seligkeit durch solche Worte gegeben wird; denn wo Vergebung der Sünden ist, da ist auch Leben und Seligkeit. Wie kann leiblich Essen und Trinken solche große Dinge tun? Antwort. Essen und Trinken tut\'s freilich nicht, sondern die Worte, so da stehen: "Für euch gegeben und vergossen zur Vergebung der Sünden." Welche Worte sind neben dem leiblichen Essen und Trinken als das Hauptstück im Sakrament, und wer denselben Worten glaubt, der hat, was sie sagen und wie sie lauten, nämlich Vergebung der Sünden. Wer empfängt denn solch Sakrament würdiglich? Antwort. Fasten und leiblich sich bereiten ist wohl eine feine äußerliche Zucht; aber der ist recht würdig und wohlgeschickt, wer den Glauben hat an diese Worte: "Für euch gegeben und vergossen zur Vergebung der Sünden." Wer aber diesen Worten nicht glaubt oder zweifelt, der ist unwürdig und ungeschickt; denn das Wort "Für euch" fordert eitel gläubige Herzen.',
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV_23_24: {
+    id: "LLCV_23_24",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V.23–24",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Por eso se lo llama con razón alimento del alma, que nutre y fortalece al hombre nuevo. […] Por eso se da como pasto y sustento diario, para que la fe se reponga y se fortalezca, para que no retroceda en esa lucha, sino que se haga cada vez más y más fuerte.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "On this account it is indeed called a food of souls, which nourishes and strengthens the new man. … Therefore it is given for a daily pasture and sustenance, that faith may refresh and strengthen itself so as not to fall back in such a battle, but become ever stronger and stronger.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Darum heißt es wohl eine Speise der Seele, die den neuen Menschen nährt und stärkt. […] Darum ist es gegeben zur täglichen Weide und Fütterung, daß sich der Glaube erhole und stärke, daß er in solchem Kampf nicht zurückfalle, sondern immerdar je stärker und stärker werde.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV_22: {
+    id: "LLCV_22",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V.22",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Por eso vamos al sacramento: para recibir allí un tesoro tal, por el cual y en el cual obtenemos el perdón de los pecados.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: 'For this reason we go to the Sacrament because there we receive such a treasure by and in which we obtain forgiveness of sins." … "For here in the Sacrament you are to receive from the lips of Christ forgiveness of sin, which contains and brings with it the grace of God and the Spirit with all His gifts, protection, shelter, and power against death and the devil and all misfortune.',
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Darum gehen wir zum Sakrament, daß wir da empfangen solchen Schatz, durch und in dem wir Vergebung der Sünden überkommen.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_20: {
+    id: "LFCEpVII_20",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.20",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "all the worthiness of the guests of this heavenly feast is and consists in the most holy obedience and perfect merit of Christ alone, which we appropriate to ourselves by true faith",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSAIII_6_5: {
+    id: "LSAIII_6_5",
+    work: "smalcald",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "III.6.5",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: 'De la transubstanciación no nos importa nada la sutileza sofística con que enseñan que el pan y el vino abandonan o pierden su ser natural, y que solo queda la forma y el color del pan, y no pan verdadero. Porque concuerda perfectamente con la Escritura que allí hay pan y sigue habiéndolo, como lo llama el mismo san Pablo: "El pan que partimos", y: "Coma así de aquel pan".',
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "As regards transubstantiation, we care nothing about the sophistical subtlety by which they teach that bread and wine leave or lose their own natural substance, and that there remain only the appearance and color of bread, and not true bread. For it is in perfect agreement with Holy Scriptures that there is, and remains, bread, as Paul himself calls it, 1 Cor. 10:16: The bread which we break. And 1 Cor. 11:28: Let him so eat of that bread.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: 'Von der Transsubstantiation achten wir der spitzigen Sophisterei gar nichts, da sie lehren, daß Brot und Wein verlassen oder verlieren ihr natürlich Wesen, und bleibe allein Gestalt und Farbe des Brots und nicht rechtes Brot. Denn es reimt sich mit der Schrift aufs beste, daß Brot da sei und bleibe, wie es St. Paulus selbst nennt: "Das Brot, das wir brechen", und: "Also esse er von dem Brot."',
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_22: {
+    id: "LFCEpVII_22",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.22",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "1. La transubstanciación papal, cuando en el papado se enseña que el pan y el vino pierden en la santa Cena su sustancia y su ser natural, y así quedan aniquilados, de modo que son transformados en el cuerpo de Cristo y solo permanece la forma exterior.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+        },
+        en: {
+          text: "1. The papistic transubstantiation, when it is taught in the Papacy that in the Holy Supper the bread and wine lose their substance and natural essence, and are thus annihilated; that they are changed into the body of Christ, and the outward form alone remains.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "1. Die päpstische Transsubstantiation, da im Papsttum gelehrt wird, daß Brot und Wein im heiligen Abendmahl ihre Substanz und natürlich Wesen verlieren und also zunichte werden, daß es in den Leib Christi verwandelt werde, und allein die äußerliche Gestalt bleibe.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApXXIV_17_18: {
+    id: "LApXXIV_17_18",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.17–18",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Theologi recte solent distinguere sacramentum et sacrificium. Sit igitur genus horum vel ceremonia vel opus sacrum. Sacramentum est ceremonia vel opus, in quo Deus nobis exhibet hoc, quod offert annexa ceremoniae promissio […]. Econtra sacrificium est ceremonia vel opus, quod nos Deo reddimus, ut eum honore afficiamus.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Los teólogos acostumbran con razón distinguir entre sacramento y sacrificio. Sea, pues, el género de ambos la ceremonia o la obra sagrada. Sacramento es una ceremonia u obra en la que Dios nos da lo que ofrece la promesa unida a la ceremonia […]. Al contrario, sacrificio es una ceremonia u obra que nosotros damos a Dios para honrarlo.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+        en: {
+          text: "Theologians are rightly accustomed to distinguish between a Sacrament and a sacrifice. … A Sacrament is a ceremony or work in which God presents to us that which the promise annexed to the ceremony offers … A sacrifice, on the contrary, is a ceremony or work which we render God in order to afford Him honor.",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApXXIV_22: {
+    id: "LApXXIV_22",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.22",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Sed revera unicum tantum in mundo fuit sacrificium propitiatorium, videlicet mors Christi, ut docet Epistola ad Ebraeos, quae ait 10, 4: Impossibile est sanguine taurorum et hircorum auferri peccata.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: 'Pero en verdad hubo en el mundo un único sacrificio propiciatorio, a saber, la muerte de Cristo, como enseña la Epístola a los Hebreos, que dice (10:4): "Es imposible que la sangre de los toros y de los machos cabríos quite los pecados".',
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+        en: {
+          text: "But in fact there has been only one propitiatory sacrifice in the world, namely, the death of Christ, as the Epistle to the Hebrews 10:4 teaches: It is not possible that the blood of bulls and of goats should take away sins.",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApXXIV_19: {
+    id: "LApXXIV_19",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.19",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "εὐχαριστικόν",
+          edition: "triglot.la",
+        },
+        en: {
+          text: "Quoddam est sacrificium propitiatorium, id est, opus satisfactorium pro culpa et poena … Altera species est sacrificium εὐχαριστικόν, quod non meretur remissionem peccatorum aut reconciliationem, sed fit a reconciliatis, ut pro accepta remissione peccatorum et pro aliis beneficiis acceptis gratias agamus, seu gratiam referamus.",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApXXIV_74: {
+    id: "LApXXIV_74",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.74",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Accedit et sacrificium. Sunt enim unius rei plures fines. Postquam conscientia fide erecta sensit, ex qualibus terroribus liberetur, tum vero serio agit gratias pro beneficio et passione Christi, et utitur ipsa ceremonia ad laudem Dei … Ita fit ceremonia sacrificium laudis.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Se añade también el sacrificio. Porque una misma cosa tiene varios fines. Después que la conciencia, levantada por la fe, ha sentido de qué terrores es librada, entonces da gracias de veras por el beneficio y la pasión de Cristo, y usa la ceremonia misma para alabanza de Dios […]. Así la ceremonia se vuelve sacrificio de alabanza.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+        en: {
+          text: "The sacrifice [thank-offering or thanksgiving] also is added. For there are several ends for one object. After conscience encouraged by faith has perceived from what terrors it is freed, then indeed it fervently gives thanks for the benefit and passion of Christ, and uses the ceremony itself to the praise of God … Thus the ceremony becomes a sacrifice of praise.",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXXIV_1_2: {
+    id: "LACXXIV_1_2",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.1–2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Falso accusantur ecclesiae nostrae, quod missam aboleant. Retinetur enim missa apud nos et summa reverentia celebratur.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Falsamente se acusa a nuestras iglesias de abolir la misa. Porque la misa se conserva entre nosotros y se celebra con la mayor reverencia.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+        en: {
+          text: "Falsely are our churches accused of abolishing the Mass; for the Mass is retained among us, and celebrated with the highest reverence.",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_23: {
+    id: "LFCEpVII_23",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.23",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        de: {
+          text: "2. Die päpstische Opfermesse für die Sünden der Lebendigen und Toten.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_85: {
+    id: "LFCSDVII_85",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.85",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: 'Para conservar esta verdadera doctrina cristiana de la santa Cena, y para evitar y desarraigar muchos abusos idolátricos y perversiones de este testamento, se ha tomado de las palabras de la institución esta regla y norma útil: Nihil habet rationem sacramenti extra usum a Christo institutum, o extra actionem divinitus institutam ("nada tiene carácter de sacramento fuera del uso instituido por Cristo", o "fuera de la acción instituida por Dios"; «carácter» replaces the draft\'s «razón» per E13; es decir: si no se guarda la institución de Cristo como él la ordenó, no hay sacramento)…',
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "To preserve this true Christian doctrine concerning the Holy Supper, and to avoid and abolish manifold idolatrous abuses and perversions of this testament, the following useful rule and standard has been derived from the words of institution: Nihil habet rationem sacramenti extra usum a Christo institutum ('Nothing has the nature of a sacrament apart from the use instituted by Christ') or extra actionem divinitus institutam ('apart from the action divinely instituted')…",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Diese wahrhaftige christliche Lehre vom heiligen Abendmahl zu erhalten und vielerlei abgöttische Mißbräuche und Verkehrung dieses Testaments zu meiden und auszutilgen, ist diese nützliche Regel und Richtschnur aus den Worten der Einsetzung genommen: Nihil habet rationem sacramenti extra usum a Christo institutum oder extra actionem divinitus institutam (das ist: wenn man die Stiftung Christi nicht hält, wie er's geordnet hat, ist es kein Sakrament) …",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_83_84: {
+    id: "LFCSDVII_83_84",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.83–84",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: 'Pero esta bendición, o el recitar las palabras de la institución de Cristo, por sí sola no hace sacramento si no se guarda toda la acción de la Cena tal como Cristo la ordenó (como cuando el pan bendecido no se distribuye, recibe y toma, sino que se encierra, se ofrece en sacrificio o se lleva de un lado a otro); sino que el mandato de Cristo "Haced esto" —que abarca toda la acción o administración de este sacramento: que en una asamblea cristiana se tome pan y vino, se bendiga, se distribuya, se reciba, se coma, se beba y a la vez se anuncie la muerte del Señor— debe guardarse entero e intacto…',
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "this blessing, or the recitation of the words of institution of Christ alone does not make a sacrament if the entire action of the Supper, as it was instituted by Christ, is not observed (as when the consecrated bread is not distributed, received, and partaken of, but is enclosed, sacrificed, or carried about), but the command of Christ, This do (which embraces the entire action or administration in this Sacrament, that in an assembly of Christians bread and wine are taken, consecrated, distributed, received, eaten, drunk, and the Lord's death is shown forth at the same time) must be observed unseparated and inviolate",
+          edition: "triglot.en",
+        },
+        de: {
+          text: 'Aber dieser Segen oder die Erzählung der Worte der Einsetzung Christi (wo nicht die ganze Aktion des Abendmahls, wie die [wie sie] von Christo geordnet, gehalten wird, als, wenn man das gesegnete Brot nicht austeilt, empfängt und geneußt [genießt], sondern einschleußt [einschließt], aufopfert oder umträgt) macht allein kein Sakrament, sondern es muß der Befehl Christi: "Das tut!" (welches die ganze Aktion oder Verrichtung dieses Sakraments, daß man in einer christlichen Zusammenkunft Brot und Wein nehme, segne, austeile, empfange, esse, trinke und des HErrn Tod dabei verkündige, zusammenfaßt) unzertrennt und unverrückt gehalten werden …',
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_126: {
+    id: "LFCSDVII_126",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.126",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "15. Asimismo, cuando se enseña que los elementos, las especies o formas visibles del pan y del vino bendecidos deben ser adorados. Pero que Cristo mismo, verdadero Dios y hombre, que está verdadera y esencialmente presente en la Cena, debe ser adorado en espíritu y en verdad en el verdadero uso de ella, como también en todos los demás lugares, especialmente donde está reunida su congregación, nadie puede ni querrá negarlo, a no ser un hereje arriano.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "15. Likewise, when it is taught that the elements or the visible species or forms of the consecrated bread and wine must be adored. However, no one, unless he be an Arian heretic, can and will deny that Christ Himself, true God and man, who is truly and essentially present in the Supper, should be adored in spirit and in truth in the true use of the same, as also in all other places, especially where His congregation is assembled.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "15. Item, da gelehrt wird, daß die Elemente, sichtiglichen [sichtbaren] species oder Gestalten des gesegneten Brotes und Weines, angebetet sollen werden. Daß aber Christus selber, wahrer Gott und Mensch, so im Abendmahl wahrhaftig und wesentlich gegenwärtig, in wahrem Gebrauch desselben solle im Geist und in der Wahrheit wie auch an allen andern Orten, sonderlich da seine Gemeinde versammelt [ist], angebetet werden, kann und wird niemand leugnen, er sei denn ein arianischer Ketzer.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_14_15: {
+    id: "LFCSDVII_14_15",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.14–15",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Y aunque no creen en la transubstanciación, es decir, en una transformación esencial del pan y del vino en el cuerpo y la sangre de Cristo, ni sostienen que el cuerpo y la sangre de Cristo estén encerrados localiter, es decir, espacialmente, en el pan, o unidos de otro modo con él de manera permanente fuera de la recepción del sacramento, admiten sin embargo que por la unión sacramental el pan es el cuerpo de Cristo, etc. Pues fuera de la recepción, cuando el pan se deja aparte y se guarda en el sagrario o se lleva en procesión y se muestra, como sucede en el papado, no sostienen que el cuerpo de Cristo esté presente.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "they believe in no transubstantiation … nor hold that the body and blood of Christ are included in the bread localiter, that is, locally, or are otherwise permanently united therewith apart from the use of the Sacrament, yet they concede that through the sacramental union the bread is the body of Christ",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Und wiewohl sie keine Transsubstantiation, das ist, eine wesentliche Verwandlung [des] Brotes und Weines in den Leib und Blut Christi, glauben, auch nicht halten, daß der Leib und Blut Christi localiter, das ist, räumlich, ins Brot eingeschlossen oder sonst beharrlich damit vereinigt werde außer der Nießung des Sakraments, doch so lassen sie zu [geben sie zu], daß durch sakramentliche Einigkeit das Brot sei der Leib Christi usw. Denn außer der Nießung, so man das Brot beiseitelegt und behält's im Sakramenthäuslein oder in der Prozession umträgt und zeigt, wie im Papsttum geschieht, halten sie nicht, daß Christus' Leib zugegen sei.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXXII_1_2: {
+    id: "LACXXII_1_2",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXII.1–2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Laicis datur utraque species sacramenti in coena Domini, quia hic mos habet mandatum Domini Matth. 26, 27: Bibite ex hoc omnes. Ubi manifeste praecepit Christus de poculo, ut omnes bibant.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: 'A los laicos se les dan ambas especies del sacramento en la Cena del Señor, porque esta costumbre tiene el mandato del Señor (Mt 26:27): "Bebed de él todos". Allí Cristo mandó claramente, acerca de la copa, que todos beban.',
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+        en: {
+          text: "To the laity are given Both Kinds in the Sacrament of the Lord's Supper, because this usage has the commandment of the Lord in Matt. 26:27: Drink ye all of it, where Christ has manifestly commanded concerning the cup that all should drink.",
+          edition: "triglot.en",
+        },
+      },
+    ],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSAIII_6_2_3: {
+    id: "LSAIII_6_2_3",
+    work: "smalcald",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "III.6.2–3",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Y que no se debe dar una sola forma. No necesitamos ese alto arte que nos enseña que bajo una forma hay tanto como bajo las dos, como nos enseñan los sofistas y el Concilio de Constanza. Porque aunque fuera verdad que bajo una hay tanto como bajo las dos, una sola forma no es toda la ordenanza e institución fundada y mandada por Cristo.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        en: {
+          text: "And that not only one form is to be given. [For] we do not need that high art [specious wisdom] which is to teach us that under the one form there is as much as under both, as the sophists and the Council of Constance teach. For even if it were true that there is as much under one as under both, yet the one form only is not the entire ordinance and institution [made] ordained and commanded by Christ.",
+          edition: "triglot.en",
+        },
+        de: {
+          text: "Und daß man nicht soll einerlei Gestalt allein geben. Und wir bedürfen der hohen Kunst nicht, die uns lehre, daß unter einer Gestalt so viel sei als unter beiden, wie uns die Sophisten und das Konzilium zu Konstanz lehren. Denn ob's gleich wahr wäre, daß unter einer so viel sei als unter beiden, so ist doch die einige Gestalt nicht die ganze Ordnung und Einsetzung, durch Christum gestiftet und befohlen.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApXXII_2: {
+    id: "LApXXII_2",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXII.2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Iam si Christus instituit pro tota ecclesia, cur altera species adimitur parti ecclesiae? Cur prohibetur usus alterius speciei? Cur mutatur ordinatio Christi, praesertim quum ipse vocet eam testamentum suum? Quodsi hominis testamentum rescindere non licet, multo minus Christi testamentum rescindere licebit.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Ahora bien, si Cristo lo instituyó para toda la Iglesia, ¿por qué se quita una de las especies a una parte de la Iglesia? ¿Por qué se prohíbe el uso de la otra especie? ¿Por qué se cambia la ordenanza de Cristo, sobre todo cuando él mismo la llama su testamento? Y si no es lícito anular el testamento de un hombre, mucho menos será lícito anular el testamento de Cristo.",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXXIV_1_3: {
+    id: "LACXXIV_1_3",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.1–3",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXXIV_13__34: {
+    id: "LACXXIV_13__34",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.13, 34",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApXXIV_1: {
+    id: "LApXXIV_1",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.1",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXIV: {
+    id: "LACXIV",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XIV",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXXV_1: {
+    id: "LACXXV_1",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXV.1",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXXIV_6_7: {
+    id: "LACXXIV_6_7",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.6–7",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApXXIV_49: {
+    id: "LApXXIV_49",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXIV.49",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSCVI_9_10: {
+    id: "LSCVI_9_10",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VI.9–10",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV_37: {
+    id: "LLCV_37",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V.37",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII_9: {
+    id: "LFCEpVII_9",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.9",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_79_82: {
+    id: "LFCSDVII_79_82",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.79–82",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_83_84__87: {
+    id: "LFCSDVII_83_84__87",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.83–84, 87",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXXII_1_2__12: {
+    id: "LACXXII_1_2__12",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXII.1–2, 12",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV_42: {
+    id: "LLCV_42",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V.42",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV_39_47: {
+    id: "LLCV_39_47",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V.39–47",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV_58__61__70_72: {
+    id: "LLCV_58__61__70_72",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V.58, 61, 70–72",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDVII_69_71: {
+    id: "LFCSDVII_69_71",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII.69–71",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV_86_87: {
+    id: "LLCV_86_87",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V.86–87",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCV: {
+    id: "LLCV",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "V",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpX_3_5: {
+    id: "LFCEpX_3_5",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "X.3–5",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpRN_1_y_7: {
+    id: "LFCEpRN_1_y_7",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 1 y 7",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpRN_8: {
+    id: "LFCEpRN_8",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 8",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpRN_4: {
+    id: "LFCEpRN_4",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 4",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpRN_5: {
+    id: "LFCEpRN_5",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 5",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpVII: {
+    id: "LFCEpVII",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "VII",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpRN_2: {
+    id: "LFCEpRN_2",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 2",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpX_3: {
+    id: "LFCEpX_3",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "X.3",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
   PAproem: {
     id: "PAproem",
     work: "pastor-aeternus",

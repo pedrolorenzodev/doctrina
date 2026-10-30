@@ -1,6 +1,38 @@
 import type { Edition } from "@/content/model/registry";
 
 export const editions = {
+  "triglot.la": {
+    id: "triglot.la",
+    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise", "small-catechism"],
+    lang: "la",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
+  "triglot.es": {
+    id: "triglot.es",
+    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise", "small-catechism"],
+    lang: "es",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
+  "triglot.en": {
+    id: "triglot.en",
+    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise", "small-catechism"],
+    lang: "en",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
+  "triglot.de": {
+    id: "triglot.de",
+    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise", "small-catechism"],
+    lang: "de",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
   "pa.la": {
     id: "pa.la",
     works: ["pastor-aeternus"],
@@ -340,38 +372,6 @@ export const editions = {
     works: ["wcf", "wlc"],
     lang: "es",
     bibliography: "Español: Monterrey, Tipografía del Comercio, 1880. Dominio público.",
-    licence: "public-domain",
-  },
-  "triglot.la": {
-    id: "triglot.la",
-    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise"],
-    lang: "la",
-    bibliography:
-      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
-    licence: "public-domain",
-  },
-  "triglot.es": {
-    id: "triglot.es",
-    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise"],
-    lang: "es",
-    bibliography:
-      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
-    licence: "public-domain",
-  },
-  "triglot.en": {
-    id: "triglot.en",
-    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise"],
-    lang: "en",
-    bibliography:
-      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
-    licence: "public-domain",
-  },
-  "triglot.de": {
-    id: "triglot.de",
-    works: ["augsburg", "apology", "smalcald", "fc-epitome", "fc-sd", "large-catechism", "treatise"],
-    lang: "de",
-    bibliography:
-      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
     licence: "public-domain",
   },
   "dos.la": {

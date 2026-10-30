@@ -224,11 +224,17 @@ export function buildSiteTree(
                   route: passagesRoute(locale, doctrine, tradition),
                 }
               : soon(leaf(`${id}/passages`, text.tree.passages)),
-            {
-              ...branch(`${id}/objections`, text.tree.objections, objectionNodes(locale, doctrine, tradition, page)),
-              href: page ? objectionsHref(locale, doctrine, tradition) : null,
-              route: page ? objectionsRoute(locale, doctrine, tradition) : null,
-            },
+            page && page.objections.length > 0
+              ? {
+                  ...branch(
+                    `${id}/objections`,
+                    text.tree.objections,
+                    objectionNodes(locale, doctrine, tradition, page),
+                  ),
+                  href: objectionsHref(locale, doctrine, tradition),
+                  route: objectionsRoute(locale, doctrine, tradition),
+                }
+              : soon(leaf(`${id}/objections`, text.tree.objections)),
           ];
           return {
             id,
