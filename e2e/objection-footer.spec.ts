@@ -13,7 +13,7 @@ test("«Videos»: the three videos of OB-1 with channel and language, opening Yo
     "Creadores católicos que responden a esta objeción. Los videos se abren en YouTube.",
   );
   await expect(page.locator("#videos li")).toHaveCount(3);
-  const link = page.locator("#videos li a").first();
+  const link = page.locator("#videos li a[lang]").first();
   await expect(link).toHaveAttribute("href", "https://www.youtube.com/watch?v=PQRXRs4FNhE");
   await expect(link).toHaveAttribute("target", "_blank");
   await expect(link).toHaveAttribute("lang", "en");

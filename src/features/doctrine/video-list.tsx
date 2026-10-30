@@ -36,7 +36,7 @@ export function VideoList({ videos, step, filterLabel, filters, moreLabel, seenL
 
   useEffect(() => {
     if (focusFrom.current === null) return;
-    const links = list.current?.querySelectorAll("a");
+    const links = list.current?.querySelectorAll<HTMLAnchorElement>("a[lang]");
     links?.[focusFrom.current]?.focus({ preventScroll: true });
     focusFrom.current = null;
   }, [count]);

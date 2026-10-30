@@ -26,7 +26,7 @@ test("five of fifteen at first, with the counts in the filter and in «Ves 5 de 
 
 test("each video is an external link to YouTube with its language and a meta line", async ({ page }) => {
   await page.goto(traditionPath);
-  const first = page.locator(`${items} a`).first();
+  const first = page.locator(`${items} a[lang]`).first();
   await expect(first).toHaveAttribute("href", "https://www.youtube.com/watch?v=mJXAFHw_ARQ");
   await expect(first).toHaveAttribute("target", "_blank");
   await expect(first).toHaveAttribute("rel", /noopener/);
@@ -43,7 +43,7 @@ test("«Mostrar 5 más» adds five, moves the focus to the first new one and end
   await page.waitForTimeout(900);
   await expect(page.locator(items)).toHaveCount(10);
   await expect(page.locator("#videos")).toContainText("Ves 10 de 15");
-  await expect(page.locator(`${items} a`).nth(5)).toBeFocused();
+  await expect(page.locator(`${items} a[lang]`).nth(5)).toBeFocused();
   await page.locator(more).click();
   await page.waitForTimeout(900);
   await expect(page.locator(items)).toHaveCount(15);
@@ -64,7 +64,7 @@ test("filtering by language resets to five and hides the button when nothing is 
   await expect(filter(page, "Todos")).toHaveAttribute("aria-pressed", "false");
   await expect(page.locator(more)).toHaveCount(0);
   const languages = await page
-    .locator(`${items} a`)
+    .locator(`${items} a[lang]`)
     .evaluateAll((links) => links.map((link) => link.getAttribute("lang")));
   expect(languages).toEqual(["es", "es", "es", "es", "es"]);
   await filter(page, "Inglés").click();
@@ -162,4 +162,18 @@ test("a row that leaves as a ghost carries no list marker", async ({ page }) => 
   const found = await page.evaluate(() => (window as unknown as { ghostMarkers: string[] }).ghostMarkers);
   expect(found.length).toBeGreaterThan(0);
   expect(found.every((marker) => marker === "none")).toBe(true);
+});
+
+test("each video shows its unmodified YouTube cover next to the title and opens the same video", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto(traditionPath);
+  const row = page.locator(items).first();
+  const cover = row.locator("img");
+  await expect(cover).toHaveAttribute("src", /i\.ytimg\.com\/vi\/mJXAFHw_ARQ\/mqdefault\.jpg/);
+  const box = await cover.boundingBox();
+  expect(box?.width).toBeGreaterThanOrEqual(120);
+  expect(Math.abs((box?.width ?? 0) / (box?.height ?? 1) - 16 / 9)).toBeLessThan(0.02);
+  await expect(row.locator("a").first()).toHaveAttribute("href", "https://www.youtube.com/watch?v=mJXAFHw_ARQ");
+  await expect(row.locator("a").first()).toHaveAttribute("tabindex", "-1");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
