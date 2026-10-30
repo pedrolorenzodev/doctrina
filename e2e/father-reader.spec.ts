@@ -326,3 +326,37 @@ test("a division with a heading keeps its locator and pen level with the first l
     expect(placed.numberMid).toBeGreaterThan(placed.headingBottom);
   }
 });
+
+test.describe("division numbers never touch the paragraph", () => {
+  test.use({ viewport: { width: 1024, height: 768 } });
+
+  const placeOf = (page: import("@playwright/test").Page, locator: string) =>
+    page.evaluate((wanted) => {
+      const label = document.querySelector<HTMLElement>(`[data-locator="${wanted}"]`)!.getBoundingClientRect();
+      const text = document
+        .querySelector<HTMLElement>(`[data-locator="${wanted}"]`)!
+        .closest("p")!
+        .getBoundingClientRect();
+      return {
+        labelLeft: label.left,
+        labelRight: label.right,
+        labelTop: label.top,
+        textLeft: text.left + 12,
+        textTop: text.top,
+      };
+    }, locator);
+
+  test("a long locator such as 1.preface.1 is set above its paragraph, inside the column", async ({ page }) => {
+    await page.goto("/es/historia/obras/irenaeus-against-heresies");
+    const box = await placeOf(page, "1.preface.1");
+    expect(box.labelLeft).toBeGreaterThanOrEqual(box.textLeft - 2);
+    expect(box.labelTop).toBeLessThan(box.textTop + 40);
+  });
+
+  test("a short locator hangs in the margin, at least 8 px before the text", async ({ page }) => {
+    await page.goto("/es/historia/obras/eusebius-church-history");
+    const box = await placeOf(page, "1.1.1");
+    expect(box.textLeft - box.labelRight).toBeGreaterThanOrEqual(8);
+    expect(box.labelLeft).toBeGreaterThanOrEqual(0);
+  });
+});

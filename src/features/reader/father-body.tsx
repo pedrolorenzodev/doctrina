@@ -57,6 +57,9 @@ type FatherBodyProps = {
   };
 };
 
+const maxHangingLocator = 8;
+const hangingLocator = "md:absolute md:verse-number-top md:-left-13 md:w-14 md:indent-0 md:text-right";
+
 const anchorOf = (locator: string) => `d-${locator.replace(/[^a-zA-Z0-9.-]+/g, "-")}`;
 const excerptLimit = 90;
 const excerptOf = (text: string) => (text.length > excerptLimit ? `${text.slice(0, excerptLimit).trimEnd()}…` : text);
@@ -242,6 +245,7 @@ export function FatherBody({
       <div ref={textRoot} lang={lang} data-father-text="" className="relative mt-8.5 max-w-reader">
         {divisions.map((division) => {
           const mark = noteMarkOf(division.ordinal);
+          const stacked = division.locator.length > maxHangingLocator;
           return (
             <div
               key={division.ordinal}
@@ -252,15 +256,17 @@ export function FatherBody({
                 <p className="m-0 mb-1 font-ui text-ui-xs font-medium text-ink-3">{division.heading}</p>
               ) : null}
               <p
-                className={`relative verse-mid -mx-3 -mt-2 mb-0 px-3 pt-2 font-body text-reader font-reader text-ink-2 ${mark ? "md:indent-5.75" : ""}`}
+                className={`relative verse-mid -mx-3 -mt-2 mb-0 px-3 pt-2 font-body text-reader font-reader text-ink-2 ${mark && !stacked ? "md:indent-5.75" : ""}`}
               >
-                <span className="mb-0.5 flex min-h-6 items-center gap-2 font-ui text-division font-normal text-ink-3 tabular-nums md:contents">
+                <span
+                  className={`mb-0.5 flex min-h-6 items-center gap-2 font-ui text-division font-normal text-ink-3 tabular-nums ${stacked ? "" : "md:contents"}`}
+                >
                   <button
                     type="button"
                     data-division-open={anchorOf(division.locator)}
                     data-locator={division.locator}
                     onClick={(event) => openFrom(division.ordinal, event.currentTarget, event.detail === 0)}
-                    className="cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline md:absolute md:verse-number-top md:-left-13 md:w-14 md:indent-0 md:text-right"
+                    className={`cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline ${stacked ? "" : hangingLocator}`}
                   >
                     {division.locator === "prologue" ? prologue : division.locator}
                   </button>
