@@ -29,6 +29,7 @@ export type PassageEntry = {
 
 export type PassagesData = { editions: PassageEdition[]; entries: PassageEntry[] };
 
+const versesBeforeThird = 2;
 const titleSeparator = " · ";
 const shownInShortTitle = 2;
 
@@ -61,7 +62,10 @@ async function block(segment: string, editions: PassageEdition[], locale: Locale
   }
   return {
     ref: formatVerseRef([segment], locale),
-    readerHref: `${bibleChapterHref(locale, entry, chapter)}#v-${from}`,
+    readerHref:
+      from > versesBeforeThird
+        ? `${bibleChapterHref(locale, entry, chapter)}?place=third#v-${from}`
+        : bibleChapterHref(locale, entry, chapter),
     verses,
   };
 }

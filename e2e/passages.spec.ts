@@ -9,7 +9,10 @@ test("the page shows the first passage with its title, the reader link and every
   await expect(page.getByText("Pasaje 1 de 19")).toBeVisible();
   for (const edition of ["RV1909", "BSB", "KJV", "WEB", "DRA"])
     await expect(page.getByRole("group", { name: "Traducción" }).getByRole("button", { name: edition })).toBeVisible();
-  await expect(page.getByRole("link", { name: /Leer en el lector/ })).toHaveAttribute("href", /\/biblia\/juan\/3#v-5$/);
+  await expect(page.getByRole("link", { name: /Leer en el lector/ })).toHaveAttribute(
+    "href",
+    /\/biblia\/juan\/3\?place=third#v-5$/,
+  );
 });
 
 test("changing the translation switches the text and persists in the reader's choice", async ({ page }) => {
@@ -53,4 +56,52 @@ test("no horizontal overflow at 360", async ({ page }) => {
   await page.goto(`${route}#acts-2-38`);
   await page.getByRole("button", { name: "Apologistas" }).click();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test("«Leer en el lector» lands with the verse as the third visible one", async ({ page }) => {
+  await page.goto(`${route}#acts-2-38`);
+  await page.getByRole("link", { name: /Leer en el lector/ }).click();
+  await expect(page).toHaveURL(/\/hechos\/2\?place=third#v-38$/);
+  await expect(page.locator("#v-38")).toBeVisible();
+  await expect
+    .poll(async () => page.evaluate(() => Math.round(document.getElementById("v-36")!.getBoundingClientRect().top)))
+    .toBeLessThan(160);
+  expect(await page.evaluate(() => document.getElementById("v-35")!.getBoundingClientRect().bottom)).toBeLessThan(160);
+});
+
+test("hovering a tick of the left ruler swells it and its neighbours like the right-edge ruler", async ({ page }) => {
+  await page.goto(route);
+  const ticks = page.getByRole("navigation", { name: "Pasajes" }).first().getByRole("button");
+  await ticks.nth(5).hover();
+  const scale = (index: number) =>
+    ticks.nth(index).evaluate((tick) => Number(getComputedStyle(tick.firstElementChild!).getPropertyValue("--k") || 1));
+  await expect.poll(() => scale(5)).toBeGreaterThan(4);
+  await expect.poll(() => scale(6)).toBeGreaterThan(4);
+  await expect(ticks.nth(5).locator("span").nth(1)).toHaveCSS("opacity", "1");
+});
+
+test("the left ruler's bars swell smoothly, frame by frame, not in one step", async ({ page }) => {
+  await page.goto(route);
+  const ticks = page.getByRole("navigation", { name: "Pasajes" }).first().getByRole("button");
+  await ticks.nth(2).hover();
+  await page.waitForTimeout(400);
+  const samples = await ticks.nth(8).evaluate(async (tick) => {
+    const bar = tick.firstElementChild!;
+    const read = () => new DOMMatrix(getComputedStyle(bar).transform).a;
+    const values: number[] = [];
+    const root = tick.parentElement!;
+    const box = root.getBoundingClientRect();
+    root.dispatchEvent(
+      new PointerEvent("pointermove", { pointerType: "mouse", clientY: box.top + 8 * 18 + 9, bubbles: true }),
+    );
+    const start = performance.now();
+    while (performance.now() - start < 320) {
+      values.push(read());
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+    }
+    return values;
+  });
+  const between = samples.filter((value) => value > samples[0]! + 0.1 && value < samples.at(-1)! - 0.1);
+  expect(between.length).toBeGreaterThan(3);
+  expect(samples.at(-1)).toBeGreaterThan(4);
 });

@@ -11,13 +11,11 @@ type PassageRulerProps = {
 
 const tickPitch = 18;
 const tickCenter = 11;
-const bulgeReach = 3;
+const bulgeFloor = 16;
 
-function bulge(index: number, hovered: number | null): number {
+function bulge(index: number, hovered: number | null, count: number): number {
   if (hovered === null) return 1;
-  const distance = Math.abs(index - hovered);
-  if (distance === 0) return 4.2;
-  return distance <= bulgeReach ? 1 + (bulgeReach - distance) * 0.5 : 1;
+  return Math.max(1, 2.5 + 2 * Math.cos((Math.PI * Math.abs(index - hovered)) / Math.max(count, bulgeFloor)));
 }
 
 export function PassageRuler({ label, titles, current, onSelect }: PassageRulerProps) {
@@ -47,16 +45,16 @@ export function PassageRuler({ label, titles, current, onSelect }: PassageRulerP
             onClick={() => onSelect(index)}
             onFocus={() => setHovered(index)}
             onBlur={() => setHovered(null)}
-            style={{ "--y": `${index * tickPitch}px`, "--k": bulge(index, hovered) } as CSSProperties}
+            style={{ "--y": `${index * tickPitch}px`, "--k": bulge(index, hovered, titles.length) } as CSSProperties}
             className="group/tick absolute top-(--y) left-0 block h-4.5 w-full cursor-pointer p-0"
           >
             <span
               aria-hidden="true"
-              className="absolute top-1/2 left-0 -mt-0.375 h-0.75 w-4 origin-left scale-x-(--k) rounded-2 bg-ink opacity-30 passage-tick group-data-current/tick:bg-accent group-data-current/tick:opacity-100"
+              className="absolute top-1/2 left-0 -mt-0.375 h-0.75 w-4 rounded-2 bg-ink opacity-30 passage-tick group-data-current/tick:bg-accent group-data-current/tick:opacity-100 group-data-hover/tick:opacity-100"
             />
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute top-1/2 left-21 z-10 -translate-y-1/2 rounded-6 bg-tip-bg px-2.25 py-1 text-ui-xs whitespace-nowrap text-tip-ink opacity-0 transition-opacity duration-150 ease-standard group-data-hover/tick:opacity-100"
+              className="pointer-events-none absolute top-1/2 left-21 -translate-x-1.25 -translate-y-1/2 font-head text-ruler font-normal whitespace-nowrap text-ink opacity-0 group-data-hover/tick:translate-x-0 group-data-hover/tick:opacity-100 group-data-hover/tick:transition group-data-hover/tick:duration-200 group-data-hover/tick:ease-standard"
             >
               {title}
             </span>
