@@ -28,7 +28,7 @@ function load(d) {
   const src = fs.readFileSync(`${ROOT}/${doctrineOf(d)}/${file}`, "utf8");
   const names = [...src.matchAll(/^(?:const|let|var) (\w+)/gm)].map((m) => m[1]);
   const dossierFile = `${ROOT}/${doctrineOf(d)}/${traditionOf(d)}.md`;
-  const ctx = { document: { createElement: () => ({}), head: { appendChild() {} } }, window: {}, console, dossier: fs.existsSync(dossierFile) ? readDossier(dossierFile) : null };
+  const ctx = { document: { createElement: () => ({}), head: { appendChild() {} } }, window: {}, console, dossier: fs.existsSync(dossierFile) ? readDossier(dossierFile) : null, readOtherDossier: (doctrine, tradition) => readDossier(`${ROOT}/${doctrine}/${tradition}.md`) };
   vm.createContext(ctx);
   vm.runInContext(src + "\n;globalThis.__x={" + names.join(",") + "}", ctx);
   const data = JSON.parse(JSON.stringify(ctx.__x));
@@ -313,7 +313,7 @@ for (const d of DOCTRINES) {
 const mapCid = (d, id) => idMap[d][id] ?? id;
 
 const BOOKS = {
-  "Génesis": "Gen", "Éxodo": "Exod", "Levítico": "Lev", "Job": "Job", "Salmo": "Ps", "Salmos": "Ps", "Proverbios": "Prov", "Isaías": "Isa",
+  "Génesis": "Gen", "Éxodo": "Exod", "Levítico": "Lev", "Job": "Job", "Salmo": "Ps", "Salmos": "Ps", "Proverbios": "Prov", "Isaías": "Isa", "Jeremías": "Jer",
   "Ezequiel": "Ezek", "Lamentaciones": "Lam", "Oseas": "Hos", "Zacarías": "Zech", "Malaquías": "Mal", "Mateo": "Matt", "Marcos": "Mark",
   "Lucas": "Luke", "Juan": "John", "Hechos": "Acts", "Romanos": "Rom", "1 Corintios": "1Cor", "2 Corintios": "2Cor", "Gálatas": "Gal",
   "Efesios": "Eph", "Filipenses": "Phil", "Colosenses": "Col", "1 Tesalonicenses": "1Thess", "2 Tesalonicenses": "2Thess", "1 Timoteo": "1Tim",
@@ -458,7 +458,7 @@ function buildPage(d) {
       fathers: x.PORQUE.fathers.map((f) => ({ lead: f.lead, quote: f.quote, ...parseFatherAttr(f.attr), citedIn: { citations: f.src.split(",").map((i) => mapCid(d, i.trim())), label: f.srcLabel } })),
       note: prose(d, x.PORQUE.note), closing: prose(d, x.PORQUE.closing),
     },
-    scriptureSubtitle: `Los pasajes que los documentos católicos citan sobre ${fields.topic}, y cómo los leen.`,
+    scriptureSubtitle: fields.scriptureSubtitle ?? `Los pasajes que los documentos católicos citan sobre ${fields.topic}, y cómo los leen.`,
     scripture: x.ESCRITURA.map((e) => { const osis = refToOsis(e.ref); if (!osis) throw new Error("scripture ref not understood: " + e.ref); return { refs: osis.split(","), text: prose(d, e.d) }; }),
     videos: { subtitle: fields.videosSubtitle ?? "Creadores católicos explican y defienden esta postura. Los videos se abren en YouTube.", items: [] },
     objections: { subtitle: fields.objectionsSubtitle ?? "Objeciones a la postura católica. Abre cada una para leer en profundidad la respuesta católica.", videosSubtitle: fields.objectionVideosSubtitle ?? "Creadores católicos que responden a esta objeción. Los videos se abren en YouTube.", order: objectionIds, ...(x.OB_LIST_NOTE ? { silentTraditions: prose(d, x.OB_LIST_NOTE) } : {}), items: objItems },

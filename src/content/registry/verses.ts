@@ -1046,6 +1046,206 @@ export const verses = {
     text: "Sabiendo que Cristo, habiendo resucitado de entre los muertos, ya no muere: la muerte no se enseñoreará más de él.",
     edition: "RV1909",
   },
+  "Matt.28.19": {
+    osis: "Matt.28.19",
+    text: "Por tanto, id, y doctrinad á todos los Gentiles, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo:",
+    edition: "RV1909",
+  },
+  "Mark.16.16": {
+    osis: "Mark.16.16",
+    text: "El que creyere y fuere bautizado, será salvo; mas el que no creyere, será condenado.",
+    edition: "RV1909",
+  },
+  "Titus.3.5": {
+    osis: "Titus.3.5",
+    text: "No por obras de justicia que nosotros habíamos hecho, mas por su misericordia nos salvó, por el lavacro de la regeneración, y de la renovación del Espíritu Santo;",
+    edition: "RV1909",
+  },
+  "Titus.3.6": {
+    osis: "Titus.3.6",
+    text: "El cual derramó en nosotros abundantemente por Jesucristo nuestro Salvador,",
+    edition: "RV1909",
+  },
+  "Titus.3.7": {
+    osis: "Titus.3.7",
+    text: "Para que, justificados por su gracia, seamos hechos herederos según la esperanza de la vida eterna.",
+    edition: "RV1909",
+  },
+  "Rom.6.4": {
+    osis: "Rom.6.4",
+    text: "Porque somos sepultados juntamente con él á muerte por el bautismo; para que como Cristo resucitó de los muertos por la gloria del Padre, así también nosotros andemos en novedad de vida.",
+    edition: "RV1909",
+  },
+  "Eph.5.26": {
+    osis: "Eph.5.26",
+    text: "Para santificarla limpiándola en el lavacro del agua por la palabra,",
+    edition: "RV1909",
+  },
+  "Eph.4.5": {
+    osis: "Eph.4.5",
+    text: "Un Señor, una fe, un bautismo,",
+    edition: "RV1909",
+  },
+  "Eph.4.6": {
+    osis: "Eph.4.6",
+    text: "Un Dios y Padre de todos, el cual es sobre todas las cosas, y por todas las cosas, y en todos vosotros.",
+    edition: "RV1909",
+  },
+  "Matt.23.2": {
+    osis: "Matt.23.2",
+    text: "Diciendo: Sobre la cátedra de Moisés se sentaron los escribas y los Fariseos:",
+    edition: "RV1909",
+  },
+  "Ps.119.105": {
+    osis: "Ps.119.105",
+    text: "NUN. Lámpara es á mis pies tu palabra, y lumbrera á mi camino.",
+    edition: "RV1909",
+  },
+  "Gal.1.8": {
+    osis: "Gal.1.8",
+    text: "Mas aun si nosotros ó un ángel del cielo os anunciare otro evangelio del que os hemos anunciado, sea anatema.",
+    edition: "RV1909",
+  },
+  "1Tim.3.1": {
+    osis: "1Tim.3.1",
+    text: "PALABRA fiel: Si alguno apetece obispado, buena obra desea.",
+    edition: "RV1909",
+  },
+  "1Tim.3.2": {
+    osis: "1Tim.3.2",
+    text: "Conviene, pues, que el obispo sea irreprensible, marido de una mujer, solícito, templado, compuesto, hospedador, apto para enseñar;",
+    edition: "RV1909",
+  },
+  "1Tim.3.3": {
+    osis: "1Tim.3.3",
+    text: "No amador del vino, no heridor, no codicioso de torpes ganancias, sino moderado, no litigioso, ajeno de avaricia;",
+    edition: "RV1909",
+  },
+  "1Tim.3.4": {
+    osis: "1Tim.3.4",
+    text: "Que gobierne bien su casa, que tenga sus hijos en sujeción con toda honestidad;",
+    edition: "RV1909",
+  },
+  "1Tim.3.5": {
+    osis: "1Tim.3.5",
+    text: "(Porque el que no sabe gobernar su casa, ¿cómo cuidará de la iglesia de Dios?)",
+    edition: "RV1909",
+  },
+  "1Tim.3.6": {
+    osis: "1Tim.3.6",
+    text: "No un neófito, porque inflándose no caiga en juicio del diablo.",
+    edition: "RV1909",
+  },
+  "1Tim.3.7": {
+    osis: "1Tim.3.7",
+    text: "También conviene que tenga buen testimonio de los extraños, porque no caiga en afrenta y en lazo del diablo.",
+    edition: "RV1909",
+  },
+  "1Tim.3.8": {
+    osis: "1Tim.3.8",
+    text: "Los diáconos asimismo, [deben ser] honestos, no bilingües, no dados á mucho vino, no amadores de torpes ganancias;",
+    edition: "RV1909",
+  },
+  "1Tim.3.9": {
+    osis: "1Tim.3.9",
+    text: "Que tengan el misterio de la fe con limpia conciencia.",
+    edition: "RV1909",
+  },
+  "1Tim.3.10": {
+    osis: "1Tim.3.10",
+    text: "Y éstos también sean antes probados; y así ministren, si fueren sin crimen.",
+    edition: "RV1909",
+  },
+  "1Tim.3.11": {
+    osis: "1Tim.3.11",
+    text: "Las mujeres asimismo, honestas, no detractoras, templadas, fieles en todo.",
+    edition: "RV1909",
+  },
+  "1Tim.3.12": {
+    osis: "1Tim.3.12",
+    text: "Los diáconos sean maridos de una mujer, que gobiernen bien sus hijos y sus casas.",
+    edition: "RV1909",
+  },
+  "1Tim.3.13": {
+    osis: "1Tim.3.13",
+    text: "Porque los que bien ministraren, ganan para sí buen grado, y mucha confianza en la fe que es en Cristo Jesús.",
+    edition: "RV1909",
+  },
+  "1Tim.3.14": {
+    osis: "1Tim.3.14",
+    text: "Esto te escribo con esperanza que iré presto á ti:",
+    edition: "RV1909",
+  },
+  "1Tim.3.15": {
+    osis: "1Tim.3.15",
+    text: "Y si no fuere tan presto, para que sepas cómo te conviene conversar en la casa de Dios, que es la iglesia del Dios vivo, columna y apoyo de la verdad.",
+    edition: "RV1909",
+  },
+  "1Tim.3.16": {
+    osis: "1Tim.3.16",
+    text: "Y sin contradicción, grande es el misterio de la piedad: Dios ha sido manifestado en carne; ha sido justificado con el Espíritu; ha sido visto de los ángeles; ha sido predicado á los Gentiles; ha sido creído en el mundo; ha sido recibido en gloria.",
+    edition: "RV1909",
+  },
+  "Titus.1.9": {
+    osis: "Titus.1.9",
+    text: "Retenedor de la fiel palabra que es conforme á la doctrina: para que también pueda exhortar con sana doctrina, y convencer á los que contradijeren.",
+    edition: "RV1909",
+  },
+  "John.10.12": {
+    osis: "John.10.12",
+    text: "Mas el asalariado, y que no es el pastor, de quien no son propias las ovejas, ve al lobo que viene, y deja las ovejas, y huye, y el lobo las arrebata, y esparce las ovejas.",
+    edition: "RV1909",
+  },
+  "Jer.15.19": {
+    osis: "Jer.15.19",
+    text: "Por tanto así dijo Jehová: Si te convirtieres, yo te repondré, y delante de mí estarás; y si sacares lo precioso de lo vil, serás como mi boca. Conviértanse ellos á ti, y tú no te conviertas á ellos.",
+    edition: "RV1909",
+  },
+  "John.20.21": {
+    osis: "John.20.21",
+    text: "Entonces les dijo Jesús otra vez: Paz á vosotros; como me envió el Padre, así también yo os envío.",
+    edition: "RV1909",
+  },
+  "John.20.22": {
+    osis: "John.20.22",
+    text: "Y como hubo dicho esto, sopló, y díjoles: Tomad el Espíritu Santo:",
+    edition: "RV1909",
+  },
+  "John.20.23": {
+    osis: "John.20.23",
+    text: "A los que remitiereis los pecados, les son remitidos: á quienes los retuviereis, serán retenidos.",
+    edition: "RV1909",
+  },
+  "Mark.16.15": {
+    osis: "Mark.16.15",
+    text: "Y les dijo: Id por todo el mundo; predicad el evangelio á toda criatura.",
+    edition: "RV1909",
+  },
+  "Rom.1.16": {
+    osis: "Rom.1.16",
+    text: "Porque no me avergüenzo del evangelio: porque es potencia de Dios para salud á todo aquel que cree; al Judío primeramente y también al Griego.",
+    edition: "RV1909",
+  },
+  "John.18.36": {
+    osis: "John.18.36",
+    text: "Respondió Jesús: Mi reino no es de este mundo: si de este mundo fuera mi reino, mis servidores pelearían para que yo no fuera entregado á los Judíos: ahora, pues, mi reino no es de aquí.",
+    edition: "RV1909",
+  },
+  "Luke.12.14": {
+    osis: "Luke.12.14",
+    text: "Mas él le dijo: Hombre, ¿quién me puso por juez ó partidor sobre vosotros?",
+    edition: "RV1909",
+  },
+  "Phil.3.20": {
+    osis: "Phil.3.20",
+    text: "Mas nuestra vivienda es en los cielos; de donde también esperamos al Salvador, al Señor Jesucristo;",
+    edition: "RV1909",
+  },
+  "2Cor.10.4": {
+    osis: "2Cor.10.4",
+    text: "(Porque las armas de nuestra milicia no son carnales, sino poderosas en Dios para la destrucción de fortalezas;)",
+    edition: "RV1909",
+  },
   "Col.1.18": {
     osis: "Col.1.18",
     text: "Y él es la cabeza del cuerpo [que es] la iglesia; [él] que es el principio, el primogénito de los muertos, para que en todo tenga el primado.",
@@ -1069,11 +1269,6 @@ export const verses = {
   "Matt.18.18": {
     osis: "Matt.18.18",
     text: "De cierto os digo [que] todo lo que ligareis en la tierra, será ligado en el cielo; y todo lo que desatareis en la tierra, será desatado en el cielo.",
-    edition: "RV1909",
-  },
-  "John.20.23": {
-    osis: "John.20.23",
-    text: "A los que remitiereis los pecados, les son remitidos: á quienes los retuviereis, serán retenidos.",
     edition: "RV1909",
   },
   "John.1.42": {
@@ -1124,11 +1319,6 @@ export const verses = {
   "Luke.22.26": {
     osis: "Luke.22.26",
     text: "Mas vosotros, no así: antes el que es mayor entre vosotros, sea como el más mozo; y el que es príncipe, como el que sirve.",
-    edition: "RV1909",
-  },
-  "John.20.21": {
-    osis: "John.20.21",
-    text: "Entonces les dijo Jesús otra vez: Paz á vosotros; como me envió el Padre, así también yo os envío.",
     edition: "RV1909",
   },
   "Gal.2.1": {
@@ -1256,11 +1446,6 @@ export const verses = {
     text: "Oponiéndose, y levantándose contra todo lo que se llama Dios, ó que se adora; tanto que se asiente en el templo de Dios como Dios, haciéndose parecer Dios.",
     edition: "RV1909",
   },
-  "John.18.36": {
-    osis: "John.18.36",
-    text: "Respondió Jesús: Mi reino no es de este mundo: si de este mundo fuera mi reino, mis servidores pelearían para que yo no fuera entregado á los Judíos: ahora, pues, mi reino no es de aquí.",
-    edition: "RV1909",
-  },
   "Luke.22.31": {
     osis: "Luke.22.31",
     text: "Dijo también el Señor: Simón, Simón, he aquí Satanás os ha pedido para zarandaros como á trigo;",
@@ -1279,11 +1464,6 @@ export const verses = {
   "Matt.28.17": {
     osis: "Matt.28.17",
     text: "Y como le vieron, le adoraron: mas algunos dudaban.",
-    edition: "RV1909",
-  },
-  "Matt.28.19": {
-    osis: "Matt.28.19",
-    text: "Por tanto, id, y doctrinad á todos los Gentiles, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo:",
     edition: "RV1909",
   },
   "Matt.28.20": {
@@ -1369,11 +1549,6 @@ export const verses = {
   "Matt.23.8": {
     osis: "Matt.23.8",
     text: "Mas vosotros, no queráis ser llamados Rabbí; porque uno es vuestro Maestro, el Cristo; y todos vosotros sois hermanos.",
-    edition: "RV1909",
-  },
-  "John.20.22": {
-    osis: "John.20.22",
-    text: "Y como hubo dicho esto, sopló, y díjoles: Tomad el Espíritu Santo:",
     edition: "RV1909",
   },
   "Matt.16.15": {
@@ -1771,11 +1946,6 @@ export const verses = {
     text: "Entonces el dragón fué airado contra la mujer; y se fué á hacer guerra contra los otros de la simiente de ella, los cuales guardan los mandamientos de Dios, y tienen el testimonio de Jesucristo.",
     edition: "RV1909",
   },
-  "Gal.1.8": {
-    osis: "Gal.1.8",
-    text: "Mas aun si nosotros ó un ángel del cielo os anunciare otro evangelio del que os hemos anunciado, sea anatema.",
-    edition: "RV1909",
-  },
   "Matt.7.15": {
     osis: "Matt.7.15",
     text: "Y guardaos de los falsos profetas, que vienen á vosotros con vestidos de ovejas, mas de dentro son lobos rapaces.",
@@ -1794,16 +1964,6 @@ export const verses = {
   "2Cor.1.24": {
     osis: "2Cor.1.24",
     text: "No que nos enseñoreemos de vuestra fe, mas somos ayudadores de vuestro gozo: porque por la fe estáis firmes.",
-    edition: "RV1909",
-  },
-  "2Cor.10.4": {
-    osis: "2Cor.10.4",
-    text: "(Porque las armas de nuestra milicia no son carnales, sino poderosas en Dios para la destrucción de fortalezas;)",
-    edition: "RV1909",
-  },
-  "Mark.16.15": {
-    osis: "Mark.16.15",
-    text: "Y les dijo: Id por todo el mundo; predicad el evangelio á toda criatura.",
     edition: "RV1909",
   },
   "2Tim.3.17": {
@@ -1834,11 +1994,6 @@ export const verses = {
   "Jude.1.3": {
     osis: "Jude.1.3",
     text: "Amados, por la gran solicitud que tenía de escribiros de la común salud, me ha sido necesario escribiros amonestándoos que contendáis eficazmente por la fe que ha sido una vez dada á los santos.",
-    edition: "RV1909",
-  },
-  "1Tim.3.15": {
-    osis: "1Tim.3.15",
-    text: "Y si no fuere tan presto, para que sepas cómo te conviene conversar en la casa de Dios, que es la iglesia del Dios vivo, columna y apoyo de la verdad.",
     edition: "RV1909",
   },
   "1Tim.6.20": {
@@ -2019,11 +2174,6 @@ export const verses = {
   "Matt.18.20": {
     osis: "Matt.18.20",
     text: "Porque donde están dos ó tres congregados en mi nombre, allí estoy en medio de ellos.",
-    edition: "RV1909",
-  },
-  "Ps.119.105": {
-    osis: "Ps.119.105",
-    text: "NUN. Lámpara es á mis pies tu palabra, y lumbrera á mi camino.",
     edition: "RV1909",
   },
   "Rev.22.18": {
@@ -2526,11 +2676,6 @@ export const verses = {
     text: "AHORA pues, ninguna condenación hay para los que están en Cristo Jesús, los que no andan conforme á la carne, mas conforme al espíritu.",
     edition: "RV1909",
   },
-  "Mark.16.16": {
-    osis: "Mark.16.16",
-    text: "El que creyere y fuere bautizado, será salvo; mas el que no creyere, será condenado.",
-    edition: "RV1909",
-  },
   "Rom.5.12": {
     osis: "Rom.5.12",
     text: "De consiguiente, [vino la reconciliación por uno], así como el pecado entró en el mundo por un hombre, y por el pecado la muerte, y la muerte así pasó á todos los hombres, pues que todos pecaron.",
@@ -2544,11 +2689,6 @@ export const verses = {
   "1Cor.1.17": {
     osis: "1Cor.1.17",
     text: "Porque no me envió Cristo á bautizar, sino á predicar el evangelio: no en sabiduría de palabras, porque no sea hecha vana la cruz de Cristo.",
-    edition: "RV1909",
-  },
-  "Titus.3.5": {
-    osis: "Titus.3.5",
-    text: "No por obras de justicia que nosotros habíamos hecho, mas por su misericordia nos salvó, por el lavacro de la regeneración, y de la renovación del Espíritu Santo;",
     edition: "RV1909",
   },
   "Matt.3.16": {
@@ -2574,11 +2714,6 @@ export const verses = {
   "Rom.6.3": {
     osis: "Rom.6.3",
     text: "¿O no sabéis que todos los que somos bautizados en Cristo Jesús, somos bautizados en su muerte?",
-    edition: "RV1909",
-  },
-  "Rom.6.4": {
-    osis: "Rom.6.4",
-    text: "Porque somos sepultados juntamente con él á muerte por el bautismo; para que como Cristo resucitó de los muertos por la gloria del Padre, así también nosotros andemos en novedad de vida.",
     edition: "RV1909",
   },
   "Col.2.12": {
@@ -2764,11 +2899,6 @@ export const verses = {
   "Eph.5.25": {
     osis: "Eph.5.25",
     text: "Maridos, amad á vuestras mujeres, así como Cristo amó á la iglesia, y se entregó á sí mismo por ella,",
-    edition: "RV1909",
-  },
-  "Eph.5.26": {
-    osis: "Eph.5.26",
-    text: "Para santificarla limpiándola en el lavacro del agua por la palabra,",
     edition: "RV1909",
   },
   "Acts.2.41": {

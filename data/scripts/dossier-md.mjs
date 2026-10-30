@@ -132,7 +132,50 @@ export function readDossier(file) {
     return found.text;
   }
 
+  const TRIGLOT_WORK = /^(AC|Ap|SA|Tr|SC|LC|FC Ep|FC SD|SD)\s+(RN \d+(?:[–-]\d+)?|[IVX]+(?:\.\d+(?:[–-]\d+)?)*)/;
+
+  function quoteEntries(blockText) {
+    const lines = blockText.split("\n");
+    const groups = [];
+    for (let i = 0; i < lines.length; i++) {
+      if (!lines[i].startsWith(">")) continue;
+      const paragraphs = [[]];
+      while (i < lines.length && lines[i].startsWith(">")) {
+        const body = lines[i].replace(/^>\s?/, "");
+        if (body.trim() === "") paragraphs.push([]);
+        else paragraphs[paragraphs.length - 1].push(body);
+        i++;
+      }
+      let j = i;
+      while (j < lines.length && lines[j].trim() === "") j++;
+      const attribution = lines[j]?.startsWith("— ") ? lines[j] : "";
+      groups.push({ paragraphs: paragraphs.filter((p) => p.length).map((p) => p.join(" ").trim()), attribution });
+    }
+    const entries = [];
+    for (const group of groups) {
+      const parsedAttribution = group.attribution.replace(/\*\*/g, "");
+      const triglot = parsedAttribution.match(/\((?:Triglot )?([IVX]+\.\d+(?:[–-]\d+)?)\)/)?.[1];
+      const head = parsedAttribution.slice(2).match(TRIGLOT_WORK);
+      const lang = parsedAttribution.match(/\b(German|Latin|English)\b/)?.[1] ?? (head && ["SC", "LC", "SA", "FC Ep", "FC SD", "SD"].includes(head[1]) ? "German" : null);
+      const page = parsedAttribution.match(/\bp\. (\d+)/)?.[1];
+      for (const text of group.paragraphs) {
+        const open = text[0];
+        const inner = text.slice(1, Math.max(text.lastIndexOf("»"), text.lastIndexOf("”"), text.lastIndexOf('"')));
+        if (open === "“" || open === '"') {
+          entries.push({ work: head ? (head[1] === "SD" ? "FC SD" : head[1]) : null, loc: triglot ?? head?.[2] ?? null, lang: lang ? LANG[lang] : null, page: page ?? null, original: inner, spanish: null, from: null });
+        } else if (open === "«" && entries.length) {
+          const last = entries[entries.length - 1];
+          if (last.spanish === null) {
+            last.spanish = inner;
+            last.from = parsedAttribution.match(/from (German|Latin)/)?.[0] ?? null;
+          }
+        }
+      }
+    }
+    return entries;
+  }
+
   const quotedParagraphs = (sectionText) => [...sectionText.matchAll(/^> (.*)$/gm)].map((m) => m[1]);
 
-  return { text: md, section, block, quote, siteText, table, quotedParagraphs, citationsOf, languageQuotes, lineQuote };
+  return { text: md, section, block, quote, siteText, table, quotedParagraphs, citationsOf, languageQuotes, lineQuote, quoteEntries };
 }

@@ -339,7 +339,7 @@ export const eucharistLutheran = {
     closing:
       "Para las confesiones luteranas, todo descansa en que Cristo no puede mentir. Lo dice el Catecismo Mayor: «Como habla y dice la boca de Cristo, así es, pues él no puede mentir ni engañar».",
   },
-  scriptureSubtitle: "Los pasajes que los documentos católicos citan sobre la Santa Cena, y cómo los leen.",
+  scriptureSubtitle: "Los pasajes que las confesiones luteranas citan sobre la Santa Cena, y cómo los leen.",
   scripture: [
     {
       refs: ["Matt.26.26-Matt.26.28", "Mark.14.22-Mark.14.24", "Luke.22.19-Luke.22.20", "1Cor.11.23-1Cor.11.25"],

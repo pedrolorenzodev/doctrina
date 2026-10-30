@@ -1,16 +1,20 @@
 import { baptismCatholic } from "@/content/pages/baptism/catholic.es";
+import { baptismLutheran } from "@/content/pages/baptism/lutheran.es";
 import { eucharistCatholic } from "@/content/pages/eucharist/catholic.es";
 import { eucharistDoctrine } from "@/content/pages/eucharist/doctrine.es";
 import { eucharistLutheran } from "@/content/pages/eucharist/lutheran.es";
 import { papacyCatholic } from "@/content/pages/papacy/catholic.es";
 import { solaScripturaCatholic } from "@/content/pages/sola-scriptura/catholic.es";
+import { solaScripturaLutheran } from "@/content/pages/sola-scriptura/lutheran.es";
 
 export const spanishPages = {
   "eucharist/catholic": eucharistCatholic,
   "eucharist/lutheran": eucharistLutheran,
   "baptism/catholic": baptismCatholic,
+  "baptism/lutheran": baptismLutheran,
   "papacy/catholic": papacyCatholic,
   "sola-scriptura/catholic": solaScripturaCatholic,
+  "sola-scriptura/lutheran": solaScripturaLutheran,
 };
 
 export const spanishDoctrinePages = { eucharist: eucharistDoctrine };

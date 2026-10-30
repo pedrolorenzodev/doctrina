@@ -1804,7 +1804,20 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Los demás símbolos y escritos citados no son jueces como la Sagrada Escritura, sino solamente testimonio y explicación de la fe",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Die andern Symbola aber und angezogenen Schriften sind nicht Richter wie die Heilige Schrift, sondern allein Zeugnis und Erklärung des Glaubens",
+          edition: "triglot.de",
+        },
+      },
+    ],
     date: {
       year: 1577,
     },
@@ -1888,7 +1901,20 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Los demás escritos de maestros antiguos o nuevos, cualquiera sea su nombre, no deben equipararse con la Sagrada Escritura, sino quedar todos juntos sujetos a ella",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Andre Schriften aber der alten oder neuen Lehrer, wie sie Namen haben, sollen der Heiligen Schrift nicht gleichgehalten, sondern alle zumal miteinander derselben unterworfen",
+          edition: "triglot.de",
+        },
+      },
+    ],
     date: {
       year: 1577,
     },
@@ -1906,6 +1932,755 @@ export const citations = {
         {
           kind: "ref",
           value: "X.3",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSCIV_2: {
+    id: "LSCIV_2",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.2",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El bautismo no es solamente agua común, sino el agua comprendida en el mandato de Dios y unida a la palabra de Dios",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Die Taufe ist nicht allein schlecht Wasser, sondern sie ist das Wasser in Gottes Gebot gefaßt und mit Gottes Wort verbunden.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACIX_1_2: {
+    id: "LACIX_1_2",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IX.1–2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "De baptismo docent, quod sit necessarius ad salutem, quodque per baptismum offeratur gratia Dei, et quod pueri sint baptizandi, qui per baptismum oblati Deo recipiantur in gratiam Dei.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Sobre el bautismo enseñan que es necesario para la salvación, que por el bautismo se ofrece la gracia de Dios y que los niños deben ser bautizados, quienes, ofrecidos a Dios por el bautismo, son recibidos en la gracia de Dios",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACIX: {
+    id: "LACIX",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IX",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Sobre el bautismo se enseña que es necesario y que por él se ofrece gracia; que también se debe bautizar a los niños, quienes mediante ese bautismo son entregados a Dios y le son agradables",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Von der Taufe wird gelehrt, daß sie nötig sei, und daß dadurch Gnade angeboten werde, daß man auch die Kinder taufen soll, welche durch solche Taufe Gott überantwortet und gefällig werden.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSCIV_10: {
+    id: "LSCIV_10",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.10",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Ciertamente no lo hace el agua, sino la palabra de Dios que está con el agua y junto a ella, y la fe que confía en esa palabra de Dios en el agua",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Wasser tut's freilich nicht, sondern das Wort Gottes, so mit und bei dem Wasser ist, und der Glaube, so solchem Worte Gottes im Wasser traut.",
+          edition: "triglot.de",
+        },
+      },
+      {
+        es: {
+          text: "Pues sin la palabra de Dios el agua es agua común y no es bautismo; pero con la palabra de Dios es bautismo, es decir, un agua de vida llena de gracia y un baño del nuevo nacimiento en el Espíritu Santo",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Denn ohne Gottes Wort ist das Wasser schlecht Wasser und keine Taufe; aber mit dem Wort Gottes ist’s eine Taufe, das ist, ein gnadenreich Wasser des Lebens und ein Bad der neuen Geburt im Heiligen Geist",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCIV_35: {
+    id: "LLCIV_35",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.35",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "pero el bautismo no es obra nuestra, sino de Dios",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "die Taufe aber ist nicht unser, sondern Gottes Werk",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LApIX_52: {
+    id: "LApIX_52",
+    work: "apology",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IX.52",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Certissimum est enim, quod promissio salutis pertinet etiam ad parvulos.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Pues es completamente cierto que la promesa de salvación pertenece también a los niños pequeños",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1531,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSCIV_12: {
+    id: "LSCIV_12",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.12",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Significa que el viejo Adán en nosotros debe ser ahogado y morir, mediante contrición y arrepentimiento diarios, con todos los pecados y malos deseos; y que, a su vez, salga y resucite cada día un hombre nuevo que viva eternamente ante Dios en justicia y pureza",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Es bedeutet, daß der alte Adam in uns durch tägliche Reue und Buße soll ersäuft werden und sterben mit allen Sünden und bösen Lüsten, und wiederum täglich herauskommen und auferstehen ein neuer Mensch, der in Gerechtigkeit und Reinigkeit vor Gott ewiglich lebe.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSCIV_6: {
+    id: "LSCIV_6",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.6",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Obra el perdón de los pecados, libra de la muerte y del diablo y da la salvación eterna a todos los que lo creen, como dicen las palabras y promesas de Dios",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Sie wirkt Vergebung der Sünden, erlöst vom Tod und Teufel und gibt die ewige Seligkeit allen, die es glauben, wie die Worte und Verheißungen Gottes lauten.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSAIII_5_1: {
+    id: "LSAIII_5_1",
+    work: "smalcald",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "III.5.1",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El bautismo no es otra cosa que la palabra de Dios en el agua, mandada por su institución",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Die Taufe ist nichts anderes denn Gottes Wort im Wasser, durch seine Einsetzung befohlen",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCIV_10: {
+    id: "LLCIV_10",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.10",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Pues ser bautizado en el nombre de Dios es ser bautizado por Dios mismo, no por seres humanos",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Denn ‘in Gottes Namen getauft werden’ ist nicht von Menschen, sondern von Gott selbst getauft werden.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSCIV: {
+    id: "LSCIV",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "como el padre de familia debe enseñarlo con sencillez a los de su casa",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "wie dasselbe ein Hausvater seinem Gesinde soll einfältiglich vorhalten.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCIV_77: {
+    id: "LLCIV_77",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.77",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Por eso el bautismo permanece para siempre",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Darum bleibt die Taufe immerdar stehen",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSCIV_4: {
+    id: "LSCIV_4",
+    work: "small-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.4",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCIV_57: {
+    id: "LLCIV_57",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.57",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LLCIV_77_79: {
+    id: "LLCIV_77_79",
+    work: "large-catechism",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "IV.77–79",
+        },
+      ],
+      qualifier: "Lutero",
+    },
+    excerpts: [],
+    date: {
+      year: 1529,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpRN_1: {
+    id: "LFCEpRN_1",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 1",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Creemos, enseñamos y confesamos que la única regla y norma según la cual deben juzgarse y evaluarse todas las doctrinas y todos los maestros son solamente los escritos proféticos y apostólicos del Antiguo y del Nuevo Testamento",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Wir glauben, lehren und bekennen, daß die einige Regel und Richtschnur, nach welcher zugleich alle Lehren und Lehrer gerichtet und geurteilt werden sollen, sind allein die prophetischen und apostolischen Schriften Alten und Neuen Testaments",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpRN_7: {
+    id: "LFCEpRN_7",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 7",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "el único juez, regla y norma",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "der einige Richter, Regel und Richtschnur",
+          edition: "triglot.de",
+        },
+      },
+      {
+        es: {
+          text: "la única piedra de toque",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "dem einigen Probierstein",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSAII_2_15: {
+    id: "LSAII_2_15",
+    work: "smalcald",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "II.2.15",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La palabra de Dios debe establecer los artículos de fe, y nadie más, ni siquiera un ángel",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "Gottes Wort soll Artikel des Glaubens stellen und sonst niemand, auch kein Engel.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDRN_10: {
+    id: "LFCSDRN_10",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 10",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "otros libros buenos, útiles y puros, exposiciones de la Sagrada Escritura, refutaciones de errores y explicaciones de los artículos doctrinales",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "andere gute, nützliche, reine Bücher, Auslegungen der Heiligen Schrift, Widerlegungen der Irrtümer, Erklärungen der Lehrartikel",
+          edition: "triglot.de",
+        },
+      },
+      {
+        es: {
+          text: "porque ha sido tomada de la palabra de Dios",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "weil sie aus Gottes Wort genommen",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LACXXVIII_8: {
+    id: "LACXXVIII_8",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXVIII.8",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Haec potestas tantum exercetur docendo seu praedicando Verbum et porrigendo sacramenta vel multis vel singulis iuxta vocationem",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Esta potestad se ejerce solamente enseñando o predicando la Palabra y administrando los sacramentos, a muchos o a cada uno, según el llamamiento",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCSDRN_8: {
+    id: "LFCSDRN_8",
+    work: "fc-sd",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 8",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "usados públicamente en iglesias, escuelas y casas",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "öffentlich in Kirchen, Schulen und Häusern gebraucht worden",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1577,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LFCEpRN_3: {
+    id: "LFCEpRN_3",
+    work: "fc-epitome",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "RN 3",
         },
       ],
     },

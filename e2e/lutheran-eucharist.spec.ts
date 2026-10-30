@@ -28,3 +28,34 @@ test("the Lutheran page has no raw tokens, straight quotes or horizontal overflo
   expect(text).not.toContain('"');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+
+test("the Lutheran Baptism page shows its own sections, no empty Objeciones and no editorial leftovers", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/es/doctrinas/bautismo/luterana");
+  await expect(page.locator("h1")).toHaveText("La posición luterana");
+  for (const id of ["teach", "why", "scripture", "life", "authority"])
+    await expect(page.locator(`section#${id}`)).toHaveCount(1);
+  await expect(page.locator("section#objections")).toHaveCount(0);
+  const text = await page.locator("main").innerText();
+  expect(text).not.toMatch(/\{[cvg]:/);
+  expect(text).not.toContain('"');
+  expect(text).not.toMatch(/unreviewed|Corrected \d{4}|traducción propia asistida/);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test("the Lutheran Sola Scriptura page shows its own sections and its own scripture subtitle", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/es/doctrinas/sola-scriptura/luterana");
+  await expect(page.locator("h1")).toHaveText("La posición luterana");
+  for (const id of ["teach", "why", "scripture", "life", "authority"])
+    await expect(page.locator(`section#${id}`)).toHaveCount(1);
+  await expect(page.locator("section#objections")).toHaveCount(0);
+  await expect(page.locator("section#scripture")).toContainText("confesiones luteranas citan");
+  const text = await page.locator("main").innerText();
+  expect(text).not.toMatch(/\{[cvg]:/);
+  expect(text).not.toContain('"');
+  expect(text).not.toContain("»»");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
