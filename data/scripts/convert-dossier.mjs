@@ -31,7 +31,15 @@ function load(d) {
   const ctx = { document: { createElement: () => ({}), head: { appendChild() {} } }, window: {}, console, dossier: fs.existsSync(dossierFile) ? readDossier(dossierFile) : null };
   vm.createContext(ctx);
   vm.runInContext(src + "\n;globalThis.__x={" + names.join(",") + "}", ctx);
-  return JSON.parse(JSON.stringify(ctx.__x));
+  const data = JSON.parse(JSON.stringify(ctx.__x));
+  if (ctx.dossier && traditionOf(d) !== "catholic") {
+    const notVerbatim = [];
+    for (const [id, citation] of Object.entries(data.SRC))
+      for (const excerpt of citation.ex ?? [])
+        for (const lang of ["la", "de", "en", "es"]) if (excerpt[lang] && !ctx.dossier.text.includes(excerpt[lang])) notVerbatim.push(`${id}.${lang}`);
+    if (notVerbatim.length) throw new Error(`quotes that are not verbatim in ${dossierFile}: ${notVerbatim.join(", ")}`);
+  }
+  return data;
 }
 const RAW = Object.fromEntries(DOCTRINES.map((d) => [d, load(d)]));
 

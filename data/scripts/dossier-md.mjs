@@ -134,5 +134,5 @@ export function readDossier(file) {
 
   const quotedParagraphs = (sectionText) => [...sectionText.matchAll(/^> (.*)$/gm)].map((m) => m[1]);
 
-  return { section, block, quote, siteText, table, quotedParagraphs, citationsOf, languageQuotes, lineQuote };
+  return { text: md, section, block, quote, siteText, table, quotedParagraphs, citationsOf, languageQuotes, lineQuote };
 }

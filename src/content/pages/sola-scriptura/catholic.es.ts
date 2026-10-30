@@ -70,7 +70,7 @@ export const solaScripturaCatholic = {
             kind: "church",
             grade: "magisterium",
             basis:
-              "concilio ecuménico, para {c:DV7|Dei Verbum 7} tal como está redactado. El contenido repite Trento (ses. IV: «fuente de toda verdad conducente á nuestra salvacion, y regla de costumbres») y el Vaticano I ({c:DF2rev|Dei Filius, cap. 2}); la frase de Trento lleva el grado de su decreto (QE-2)",
+              "concilio ecuménico, para {c:DV7|Dei Verbum 7} tal como está redactado. El contenido repite Trento (ses. IV: «fuente de toda verdad conducente á nuestra salvacion, y regla de costumbres») y el Vaticano I ({c:DF2rev|Dei Filius, cap. 2}); la frase de Trento lleva el grado de su decreto",
           },
         ],
         sources: [
