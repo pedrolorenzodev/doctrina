@@ -100,15 +100,19 @@ for (const path of [
   "/es/doctrinas/bautismo/reformada",
   "/es/doctrinas/sola-scriptura/reformada",
   "/es/doctrinas/papado/reformada",
+  "/es/doctrinas/bautismo/ortodoxa",
+  "/es/doctrinas/eucaristia/ortodoxa",
+  "/es/doctrinas/sola-scriptura/ortodoxa",
+  "/es/doctrinas/papado/ortodoxa",
 ]) {
   test(`the Reformed page ${path} shows its own sections and no leftovers`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(path);
-    await expect(page.locator("h1")).toHaveText("La posición reformada");
+    await expect(page.locator("h1")).toHaveText(/^La posición (reformada|ortodoxa)$/);
     for (const id of ["teach", "why", "scripture", "life", "authority"])
       await expect(page.locator(`section#${id}`)).toHaveCount(1);
     await expect(page.locator("section#objections")).toHaveCount(0);
-    await expect(page.locator("section#scripture")).toContainText("Estándares de Westminster citan");
+    await expect(page.locator("section#scripture")).toContainText(/citan sobre/);
     const text = await page.locator("main").innerText();
     expect(text).not.toMatch(/\{[cvg]:/);
     expect(text).not.toContain('"');

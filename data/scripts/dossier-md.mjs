@@ -187,7 +187,40 @@ export function readDossier(file) {
     return entries;
   }
 
+  function boldEntries(blockText) {
+    const entries = [];
+    let header = null;
+    for (const line of blockText.split("\n")) {
+      const h = line.match(/^\*\*(Dositheus|Philaret|Mogila)\s+([^*]+)\*\*(.*)$/);
+      const other = line.match(/^\*\*(Constantinople I|Chalcedon|Trullo|1895 encyclical),\s*([^*]+)\*\*(.*)$/);
+      if (other) {
+        const lang = other[3].match(/\b(Greek|English|Latin)\b/)?.[1] ?? "English";
+        header = { work: other[1], loc: other[2].trim().replace(/^canon /, "").replace(/^§/, ""), lang, page: other[3].match(/\bp\. (\d+)/)?.[1] ?? null };
+        continue;
+      }
+      if (h) {
+        const lang = h[3].match(/\b(Greek|English|Latin|Russian)\b/)?.[1] ?? (h[1] === "Dositheus" ? "Greek" : "English");
+        header = { work: h[1], loc: h[2].trim().replace(/^Q\./, ""), lang, page: h[3].match(/\bp\. (\d+)/)?.[1] ?? null };
+        continue;
+      }
+      if (!header || !line.startsWith(">")) continue;
+      const body = line.replace(/^>\s?/, "").trim();
+      if (body.startsWith("«")) {
+        const pending = entries.find((entry) => entry.original !== null && entry.spanish === null);
+        const text = body.slice(1, body.lastIndexOf("»"));
+        if (pending) {
+          pending.spanish = text;
+          pending.from = `from ${pending.lang}`;
+        } else entries.push({ ...header, original: null, spanish: text, from: null });
+      } else {
+        const original = body.replace(/(?:\s*\[(?:verified|unverified)[^\]]*\])+\s*$/, "").trim();
+        entries.push({ ...header, original, spanish: null, from: null });
+      }
+    }
+    return entries;
+  }
+
   const quotedParagraphs = (sectionText) => [...sectionText.matchAll(/^> (.*)$/gm)].map((m) => m[1]);
 
-  return { text: md, section, block, quote, siteText, table, quotedParagraphs, citationsOf, languageQuotes, lineQuote, quoteEntries };
+  return { text: md, section, block, quote, siteText, table, quotedParagraphs, citationsOf, languageQuotes, lineQuote, quoteEntries, boldEntries };
 }

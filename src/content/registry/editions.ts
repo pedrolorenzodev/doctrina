@@ -33,6 +33,14 @@ export const editions = {
       "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
     licence: "public-domain",
   },
+  "triglot.el": {
+    id: "triglot.el",
+    works: ["small-catechism", "augsburg", "apology", "fc-epitome", "fc-sd", "smalcald", "large-catechism", "treatise"],
+    lang: "el",
+    bibliography:
+      "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
+    licence: "public-domain",
+  },
   "status-stsa-el.la": {
     id: "status-stsa-el.la",
     works: ["status-stsa-el"],
@@ -61,6 +69,14 @@ export const editions = {
     id: "status-stsa-el.de",
     works: ["status-stsa-el"],
     lang: "de",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "status-stsa-el.el": {
+    id: "status-stsa-el.el",
+    works: ["status-stsa-el"],
+    lang: "el",
     bibliography:
       "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
     licence: "unconfirmed",
@@ -97,6 +113,14 @@ export const editions = {
       "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
     licence: "unconfirmed",
   },
+  "status-stsa-pl.el": {
+    id: "status-stsa-pl.el",
+    works: ["status-stsa-pl"],
+    lang: "el",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
   "wcf.en": {
     id: "wcf.en",
     works: ["wcf", "wlc", "wsc"],
@@ -110,6 +134,140 @@ export const editions = {
     lang: "es",
     bibliography: "Español: Monterrey, Tipografía del Comercio, 1880. Dominio público.",
     licence: "public-domain",
+  },
+  "schaff.el": {
+    id: "schaff.el",
+    works: ["philaret", "dositheus"],
+    lang: "el",
+    bibliography:
+      "Griego: Philip Schaff, The Creeds of Christendom, vol. II, Nueva York, Harper & Brothers, 1877 (ejemplar de 1896), pp. 423–427 (Dositeo). Dominio público.",
+    licence: "public-domain",
+  },
+  "schaff.en": {
+    id: "schaff.en",
+    works: ["philaret", "dositheus"],
+    lang: "en",
+    bibliography:
+      "Filareto, Catecismo extenso, en Schaff, Creeds of Christendom II, Harper, pp. 491–492. Dominio público.",
+    licence: "public-domain",
+  },
+  "site-translation.dositheus.es": {
+    id: "site-translation.dositheus.es",
+    works: ["dositheus"],
+    lang: "es",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
+  "status-stort-eo.la": {
+    id: "status-stort-eo.la",
+    works: ["status-stort-eo"],
+    lang: "la",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la suscripción histórica del Sínodo de Jerusalén (Schaff, p. 444).",
+    licence: "unconfirmed",
+  },
+  "status-stort-eo.es": {
+    id: "status-stort-eo.es",
+    works: ["status-stort-eo"],
+    lang: "es",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la suscripción histórica del Sínodo de Jerusalén (Schaff, p. 444).",
+    licence: "unconfirmed",
+  },
+  "status-stort-eo.en": {
+    id: "status-stort-eo.en",
+    works: ["status-stort-eo"],
+    lang: "en",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la suscripción histórica del Sínodo de Jerusalén (Schaff, p. 444).",
+    licence: "unconfirmed",
+  },
+  "status-stort-eo.de": {
+    id: "status-stort-eo.de",
+    works: ["status-stort-eo"],
+    lang: "de",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la suscripción histórica del Sínodo de Jerusalén (Schaff, p. 444).",
+    licence: "unconfirmed",
+  },
+  "status-stort-eo.el": {
+    id: "status-stort-eo.el",
+    works: ["status-stort-eo"],
+    lang: "el",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la suscripción histórica del Sínodo de Jerusalén (Schaff, p. 444).",
+    licence: "unconfirmed",
+  },
+  "overbeck.en": {
+    id: "overbeck.en",
+    works: ["mogila"],
+    lang: "en",
+    bibliography:
+      "Inglés: Pedro Mogila, Confesión ortodoxa, ed. Overbeck, 1898 (inglés de 1762), pp. 75–80. Dominio público.",
+    licence: "public-domain",
+  },
+  "percival.en": {
+    id: "percival.en",
+    works: ["constantinople-1", "trullo", "chalcedon"],
+    lang: "en",
+    bibliography:
+      "Inglés: Henry R. Percival (ed.), The Seven Ecumenical Councils of the Undivided Church, Nicene and Post-Nicene Fathers, segunda serie, vol. XIV, 1900, pp. 178, 287 y 382. Dominio público.",
+    licence: "public-domain",
+  },
+  "enc1895.el": {
+    id: "enc1895.el",
+    works: ["enc-1895"],
+    lang: "el",
+    bibliography:
+      "Griego: Encíclica patriarcal y sinodal de Antimo VII (1895), ed. E. Metallinos, Answer of the Great Church of Constantinople to the Papal Encyclical on Union, Manchester, 1896, pp. 42 y 48. Dominio público.",
+    licence: "public-domain",
+  },
+  "site-translation.enc-1895.es": {
+    id: "site-translation.enc-1895.es",
+    works: ["enc-1895"],
+    lang: "es",
+    bibliography: "Translation made for this site; no published edition in this language.",
+    licence: "site-authored",
+  },
+  "status-stdos-po.la": {
+    id: "status-stdos-po.la",
+    works: ["status-stdos-po"],
+    lang: "la",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la nota de estado del dossier (testimonio griego de Schaff; revisión de 1690 según el mapa; Krivoshein).",
+    licence: "unconfirmed",
+  },
+  "status-stdos-po.es": {
+    id: "status-stdos-po.es",
+    works: ["status-stdos-po"],
+    lang: "es",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la nota de estado del dossier (testimonio griego de Schaff; revisión de 1690 según el mapa; Krivoshein).",
+    licence: "unconfirmed",
+  },
+  "status-stdos-po.en": {
+    id: "status-stdos-po.en",
+    works: ["status-stdos-po"],
+    lang: "en",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la nota de estado del dossier (testimonio griego de Schaff; revisión de 1690 según el mapa; Krivoshein).",
+    licence: "unconfirmed",
+  },
+  "status-stdos-po.de": {
+    id: "status-stdos-po.de",
+    works: ["status-stdos-po"],
+    lang: "de",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la nota de estado del dossier (testimonio griego de Schaff; revisión de 1690 según el mapa; Krivoshein).",
+    licence: "unconfirmed",
+  },
+  "status-stdos-po.el": {
+    id: "status-stdos-po.el",
+    works: ["status-stdos-po"],
+    lang: "el",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la nota de estado del dossier (testimonio griego de Schaff; revisión de 1690 según el mapa; Krivoshein).",
+    licence: "unconfirmed",
   },
   "pa.la": {
     id: "pa.la",
@@ -1063,14 +1221,6 @@ export const editions = {
     id: "schaff.es",
     works: ["philaret"],
     lang: "es",
-    bibliography:
-      "Filareto, Catecismo extenso, en Schaff, Creeds of Christendom II, Harper, pp. 491–492. Dominio público.",
-    licence: "public-domain",
-  },
-  "schaff.en": {
-    id: "schaff.en",
-    works: ["philaret"],
-    lang: "en",
     bibliography:
       "Filareto, Catecismo extenso, en Schaff, Creeds of Christendom II, Harper, pp. 491–492. Dominio público.",
     licence: "public-domain",

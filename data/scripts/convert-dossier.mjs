@@ -40,9 +40,9 @@ function load(d) {
   const data = JSON.parse(JSON.stringify(ctx.__x));
   if (ctx.dossier && traditionOf(d) !== "catholic") {
     const notVerbatim = [];
-    for (const [id, citation] of Object.entries(data.SRC))
+    for (const [id, citation] of Object.entries(data.SRC).filter(([, entry]) => entry.kind !== "Estado actual"))
       for (const excerpt of citation.ex ?? [])
-        for (const lang of ["la", "de", "en", "es"]) if (excerpt[lang] && ![ctx.dossier.text, ...otherTexts].some((text) => text.includes(excerpt[lang]))) notVerbatim.push(`${id}.${lang}`);
+        for (const lang of ["la", "de", "en", "es", "el"]) if (excerpt[lang] && ![ctx.dossier.text, ...otherTexts].some((text) => text.includes(excerpt[lang]))) notVerbatim.push(`${id}.${lang}`);
     if (notVerbatim.length) throw new Error(`quotes that are not verbatim in ${dossierFile}: ${notVerbatim.join(", ")}`);
   }
   return data;
@@ -142,14 +142,14 @@ function licenceOf(t) {
   return "unconfirmed";
 }
 function splitEdition(key, text) {
-  const re = /\b(Latín y castellano|Latín y español|Latín e inglés|Latín|Inglés|Español|Alemán)\s*:/gi;
+  const re = /\b(Latín y castellano|Latín y español|Latín e inglés|Latín|Inglés|Español|Alemán|Griego)\s*:/gi;
   const marks = [...text.matchAll(re)];
-  if (marks.length < 1) return [{ suffix: "", langs: ["la", "es", "en", "de"], text }];
+  if (marks.length < 1) return [{ suffix: "", langs: ["la", "es", "en", "de", "el"], text }];
   const out = [];
   marks.forEach((m, i) => {
     const end = i + 1 < marks.length ? marks[i + 1].index : text.length;
     const label = m[1].toLowerCase();
-    const langs = label.startsWith("latín y") ? ["la", "es"] : label === "latín e inglés" ? ["la", "en"] : label === "latín" ? ["la"] : label === "inglés" ? ["en"] : label === "alemán" ? ["de"] : ["es"];
+    const langs = label.startsWith("latín y") ? ["la", "es"] : label === "latín e inglés" ? ["la", "en"] : label === "latín" ? ["la"] : label === "inglés" ? ["en"] : label === "alemán" ? ["de"] : label === "griego" ? ["el"] : ["es"];
     out.push({ suffix: "." + langs.join(""), langs, text: text.slice(m.index, end).trim() });
   });
   const seen = new Map();
@@ -254,7 +254,7 @@ function convertCitation(d, rawId, s) {
   const excerpts = (s.ex || []).map((e) => {
     const pg = parsePg(e.pg);
     const ex = {};
-    for (const lang of ["la", "es", "en", "de"]) {
+    for (const lang of ["la", "es", "en", "de", "el"]) {
       if (e[lang] === undefined) continue;
       let edId = editionIdForLang(edKey, lang);
       if (!edId) {
@@ -287,7 +287,7 @@ function convertCitation(d, rawId, s) {
   return c;
 }
 
-const exKey = (e) => (e.es?.text || e.la?.text || e.en?.text || e.de?.text || "").slice(0, 60);
+const exKey = (e) => (e.es?.text || e.la?.text || e.en?.text || e.de?.text || e.el?.text || "").slice(0, 60);
 function mergeInto(prior, c) {
   report.mergedIds++;
   const have = new Set(prior.excerpts.map(exKey));

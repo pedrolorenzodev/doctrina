@@ -14,7 +14,7 @@ for (const [name, [type, ids]] of Object.entries(types)) {
   const incoming = (await import(`${outDir}/registry/${name}.ts`))[name];
   const merged = { ...incoming, ...existing };
   if (name === "citations") {
-    const excerptKey = (excerpt) => (excerpt.es?.text || excerpt.la?.text || excerpt.en?.text || excerpt.de?.text || "").slice(0, 60);
+    const excerptKey = (excerpt) => (excerpt.es?.text || excerpt.la?.text || excerpt.en?.text || excerpt.de?.text || excerpt.el?.text || "").slice(0, 60);
     const identity = (citation) => `${citation.work}|${JSON.stringify(citation.locator.parts)}`;
     for (const id of Object.keys(merged)) {
       if (!(id in existing && id in incoming)) continue;

@@ -286,14 +286,14 @@ test("a grade opens its window with the definition; Esc returns focus", async ({
   }
 });
 
-test("the study link of the Catholic answer opens its page; the others are inert", async ({ page }) => {
+test("the study link of the Catholic answer opens its page; an unpublished tradition is inert", async ({ page }) => {
   await page.goto(path);
   await expect(page.locator(`${items}[data-id=catholic] a`).filter({ hasText: "Estudiar" })).toHaveAttribute(
     "href",
     traditionPath,
   );
   const url = page.url();
-  await page.locator(`${items}[data-id=orthodox] button`).filter({ hasText: "Estudiar" }).click();
+  await page.locator(`${items}[data-id=baptist] button`).filter({ hasText: "Estudiar" }).click();
   expect(page.url()).toBe(url);
 });
 

@@ -4280,6 +4280,1702 @@ export const citations = {
       label: "Ver el escaneo de 1880 en archive.org",
     },
   },
+  OPhilaret288: {
+    id: "OPhilaret288",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "288",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Baptism is a Sacrament, in which a man who believes, having his body thrice plunged in water in the name of God the Father, the Son, and the Holy Ghost, dies to the carnal life of sin, and is born again of the Holy Ghost to a life spiritual and holy.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  ODositheusXVI: {
+    id: "ODositheusXVI",
+    work: "dositheus",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "decree",
+          value: "XVI",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El santo bautismo, instituido por el Señor y realizado en el nombre de la santa Trinidad",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "τὸ ἅγιον βάπτισμα, τὸ διαταχθὲν μὲν παρὰ τοῦ κυρίου, γινόμενον δὲ ἐν ὀνόματι τῆς ἁγίας τριάδος",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "El bautismo se realiza con agua pura como materia y con ningún otro líquido",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Γίνεται δὲ τὸ βάπτισμα δι' ὕλης μὲν ὕδατος καθαροῦ καὶ οὐδενὸς ἑτέρου ὑγροῦ.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Los efectos del bautismo, en resumen, son, primero, la remisión de la falta ancestral y de cuantos otros pecados hubiera cometido el bautizado",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ἀποτελέσματα δὲ τοῦ βαπτίσματος, συνελόντι φάναι, πρῶτον, ἡ ἄφεσις τοῦ προπατορικοῦ πλημμελήματος καὶ ὅσων ἄλλων ἁμαρτιῶν πεπραχὼς ἦν ὁ βαπτισθείς.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Quien no nazca de agua y Espíritu no entrará en el reino de los cielos",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "ὅστις οὐ μὴ γεννηθῇ ἐξ ὕδατος καὶ πνεύματος, οὐ μὴ εἰσέλθῃ εἰς τὴν βασιλείαν τῶν οὐρανῶν.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Si los niños son seres humanos, también ellos necesitan salvación; si necesitan salvación, necesitan también el bautismo",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Εἰ δὲ τὰ νήπια ἄνθρωποι, εἴπερ καὶ αὐτὰ δεῖται σωτηρίας· δεῖται σωτηρίας, δεῖται καὶ τοῦ βαπτίσματος.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Lo realiza solamente el sacerdote; ante una necesidad ineludible puede realizarlo también otra persona, siempre que sea ortodoxa y tenga la intención apropiada al divino bautismo",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ἀποτελεῖται δὲ διὰ μόνου τοῦ ἱερέως, καὶ κατ' ἀνάγκην ἀπρόφασιστον ἔχει γίνεσθαι καὶ δι' ἑτέρου ἀνθρώπου, πλὴν ὀρθοδόξου καὶ σκοπὸν ἔχοντος τὸν ἁρμόδιον τῷ θείῳ βαπτίσματι.",
+          edition: "schaff.el",
+        },
+      },
+    ],
+    date: {
+      year: 1672,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret290: {
+    id: "OPhilaret290",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "290",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Trine immersion in water, in the name of the Father, and of the Son, and of the Holy Ghost.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret292: {
+    id: "OPhilaret292",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "292",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "For the faith of their parents and sponsors, who are also bound to teach them the faith so soon as they are of sufficient age to learn.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret303: {
+    id: "OPhilaret303",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "303",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "In this sense: that Baptism can not be repeated.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret306: {
+    id: "OPhilaret306",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "306",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "There is a way, which is penitence.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret289: {
+    id: "OPhilaret289",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "289",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Lastly, after his resurrection, he gave the Apostles this solemn commandment: Go ye and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret293: {
+    id: "OPhilaret293",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "293",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "In the time of the Old Testament, infants were circumcised when eight days old; but Baptism in the New Testament takes the place of circumcision; consequently infants should also be baptized.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret304: {
+    id: "OPhilaret304",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "304",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Baptism is spiritual birth: a man is born but once; therefore he is also baptized but once.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret297: {
+    id: "OPhilaret297",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "297",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "In the name of Jesus Christ, invoked with prayer and faith.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret300: {
+    id: "OPhilaret300",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "300",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "The purity of the soul, and of the Christian life.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret302: {
+    id: "OPhilaret302",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "302",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Spiritual joy, joined with spiritual illumination.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret291: {
+    id: "OPhilaret291",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "291",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Repentance and faith; for which cause, also, before Baptism they recite the Creed.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret295: {
+    id: "OPhilaret295",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "295",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "In order that they may stand sureties before the Church for the faith of the baptized, and after Baptism may take him in charge, to confirm him in the faith.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  ODositheusXV: {
+    id: "ODositheusXV",
+    work: "dositheus",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "decree",
+          value: "XV",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1672,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  ODositheusXVII: {
+    id: "ODositheusXVII",
+    work: "dositheus",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "decree",
+          value: "XVII",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El santísimo misterio de la sagrada Eucaristía, que antes colocamos cuarto en el orden, es aquel que el Señor entregó la noche en que se entregaba a sí mismo por la vida del mundo",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Πιστεύομεν τὸ πανάγιον μυστήριον τῆς ἱερᾶς εὐχαριστίας, ὅπερ ἀνωτέρω κατὰ τάξιν τέταρτον ἐξεθέμεθα, ἐκεῖνο εἶναι, ὅπερ ὁ κύριος παρέδωκε τῇ νυκτί, ᾗ παρέδιδου ἑαυτὸν ὑπὲρ τῆς τοῦ κόσμου ζωῆς.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Sino verdadera y realmente, de modo que después de la consagración del pan y del vino el pan se cambia, se transustancia, se transforma, se convierte en el mismo cuerpo verdadero del Señor […]",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "ἀλλ' ἀληθῶς καὶ πραγματικῶς, ὥστε μετὰ τὸν ἁγιασμὸν τοῦ ἄρτου καὶ τοῦ οἴνου μεταβάλλεσθαι, μετουσιοῦσθαι, μεταποιεῖσθαι, μεταρρυθμίζεσθαι τὸν μὲν ἄρτον εἰς αὐτὸ τὸ ἀληθὲς τοῦ κυρίου σῶμα […]",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Después de la consagración del pan y del vino ya no permanece la sustancia del pan y del vino, sino el cuerpo mismo y la sangre misma del Señor bajo la apariencia y figura del pan y del vino; es decir, bajo los accidentes del pan",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ἔτι μετὰ τὸν ἁγιασμὸν τοῦ ἄρτου καὶ τοῦ οἴνου οὐκ ἔτι μένειν τὴν οὐσίαν τοῦ ἄρτου καὶ τοῦ οἴνου, ἀλλ' αὐτὸ τὸ σῶμα καὶ τὸ αἷμα τοῦ κυρίου ἐν τῷ τοῦ ἄρτου καὶ τοῦ οἴνου εἴδει καὶ τύπῳ, ταὐτὸν εἰπεῖν, ὑπὸ τοῖς τοῦ ἄρτου συμβεβηκόσιν.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Sino al Señor Cristo entero, totalmente, según la sustancia, con alma y divinidad, es decir, perfecto Dios y perfecto hombre",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "ἀλλ' ὅλον ὁλικῶς τὸν δεσπότην Χριστὸν κατ' οὐσίαν μετὰ ψυχῆς δηλονότι καὶ θεότητος, ἤτοι τέλειον Θεὸν καὶ τέλειον ἄνθρωπον.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "A los piadosos y dignos les procura remisión de los pecados y vida eterna; a los impíos e indignos, condenación y castigo eterno",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Πλὴν τοῖς μὲν εὐσεβέσι καὶ ἀξίοις ἄφεσιν ἁμαρτιῶν καὶ ζωὴν αἰώνιον προξενεῖν· τοῖς δὲ ἀσεβέσι καὶ ἀναξίοις κατάκρισιν καὶ κόλασιν αἰώνιον παραχωρεῖν.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Es un sacrificio verdadero y propiciatorio, ofrecido por todos los piadosos vivos y difuntos y para beneficio de todos […]",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ἔτι εἶναι θυσίαν ἀληθῆ καὶ ἱλαστικὴν προσφερομένην ὑπὲρ πάντων τῶν εὐσεβῶν ζώντων καὶ τεθνεώτων καὶ ὑπὲρ ὠφελείας πάντων […]",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Con la palabra transustanciación no se significa el modo por el que el pan y el vino se transforman en el cuerpo y la sangre del Señor […]",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ἔτι τῇ μετουσίωσις λέξει οὐ τὸν τρόπον πιστεύομεν δηλοῦσθαι, καθ' ὃν ὁ ἄρτος καὶ ὁ οἶνος μεταποιοῦνται εἰς τὸ σῶμα καὶ τὸ αἷμα τοῦ κυρίου […]",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Pues tomó pan, lo bendijo y lo dio a sus santos discípulos y apóstoles diciendo: tomen, coman; esto es mi cuerpo",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Λαβὼν γὰρ ἄρτον καὶ εὐλογήσας ἔδωκε τοῖς ἁγίοις αὐτοῦ μαθηταῖς καὶ ἀποστόλοις εἰπών· λάβετε, φάγετε· τοῦτό ἐστι τὸ σῶμά μου.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Pues una es la adoración de la santa Trinidad y del cuerpo y la sangre del Señor",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Μία γὰρ ἡ προσκύνησις τῆς ἁγίας τριάδος καὶ τοῦ σώματος καὶ αἵματος τοῦ κυρίου.",
+          edition: "schaff.el",
+        },
+      },
+    ],
+    date: {
+      year: 1672,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret339_340: {
+    id: "OPhilaret339_340",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "339–340",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Because at the moment of this act the bread and wine are changed, or transubstantiated, into the very Body of Christ, and into the very Blood of Christ.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret338: {
+    id: "OPhilaret338",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "338",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "And after this the invocation of the Holy Ghost, and the blessing the gifts, that is, the bread and wine which have been offered.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret323: {
+    id: "OPhilaret323",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "323",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "This: that first the elements are prepared for the Sacrament; secondly, the faithful are prepared for the Sacrament; lastly, the Sacrament itself is consecrated.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret328: {
+    id: "OPhilaret328",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "328",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "that is, leavened, pure, wheaten bread.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret341: {
+    id: "OPhilaret341",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "341",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "To examine his conscience before God, and to cleanse it from sin by penitence; for doing which he has helps in fasting and prayer.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret343: {
+    id: "OPhilaret343",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "343",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Our Mother the Church calls on all, who would live religiously, to confess before their ghostly Father, and communicate in the Body and Blood of Christ, four times yearly, or even every month, but requires all, without exception, to receive it at the least once in the year.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret344: {
+    id: "OPhilaret344",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "344",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "They may and should take part in the Liturgy by prayer and faith, and especially by a continual remembrance of our Lord Jesus Christ […]",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  "STORT~eo": {
+    id: "STORT~eo",
+    work: "status-stort-eo",
+    kind: "status",
+    locator: {
+      parts: [],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "se atribuye al decreto del sínodo de Jerusalén de 1672, no a la voz de Doctrina. La suscripción histórica está en Schaff p. 444; este dossier no establece una reafirmación o derogación actual por cada jurisdicción. La crítica teológica señalada en Grado de autoridad se presenta por separado, sin convertirla en un acto sinodal. [verified: scan for historical subscription; current jurisdictional status not established; O-24]",
+          edition: "status-stort-eo.es",
+        },
+      },
+    ],
+  },
+  OMogila106: {
+    id: "OMogila106",
+    work: "mogila",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "106",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1643,
+    },
+    link: {
+      href: "https://archive.org/details/cu31924029363094",
+      label: "Ver el escaneo de Overbeck en archive.org",
+    },
+  },
+  OMogila107: {
+    id: "OMogila107",
+    work: "mogila",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "107",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1643,
+    },
+    link: {
+      href: "https://archive.org/details/cu31924029363094",
+      label: "Ver el escaneo de Overbeck en archive.org",
+    },
+  },
+  ODositheusII: {
+    id: "ODositheusII",
+    work: "dositheus",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "decree",
+          value: "II",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La divina y sagrada Escritura es enseñada por Dios",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "τὴν θείαν καὶ ἱερὰν γραφὴν εἶναι θεοδίδακτον",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Sin embargo, no de otro modo que como la Iglesia católica la interpretó y la transmitió",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "οὐκ ἄλλως μέντοι ἀλλ' ἢ ὡς ἡ καθολικὴ ἐκκλησία ταύτην ἡρμήνευσε καὶ παρέδωκεν.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Pues, siendo uno y el mismo Espíritu Santo el autor de ambas, es ciertamente igual ser enseñado por la Escritura y por la Iglesia católica",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ἑνὸς γὰρ καὶ τοῦ αὐτοῦ ἁγίου πνεύματος ὄντος ἀμφοτέρων δημιουργοῦ, ἴσον ἐστὶ πάντως ὑπὸ τῆς γραφῆς καὶ ὑπὸ τῆς καθολικῆς ἐκκλησίας διδάσκεσθαι.",
+          edition: "schaff.el",
+        },
+      },
+    ],
+    date: {
+      year: 1672,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret19: {
+    id: "OPhilaret19",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "19",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Certain books written by the Spirit of God through men sanctified by God, called Prophets and Apostles. These books are commonly termed the Bible.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret16: {
+    id: "OPhilaret16",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "16",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "By two channels—holy tradition and holy Scripture.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret17: {
+    id: "OPhilaret17",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "17",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "By the name holy tradition is meant the doctrine of the faith, the law of God, the sacraments, and the ritual as handed down by the true believers and worshipers of God by word and example from one to another, and from generation to generation.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret22: {
+    id: "OPhilaret22",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "22",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "To this end, that divine revelation might be preserved more exactly and unchangeably.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret23: {
+    id: "OPhilaret23",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "23",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "that tradition which agrees with the divine revelation and with holy Scripture, as is taught us by holy Scripture itself.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret21: {
+    id: "OPhilaret21",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "21",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "The most ancient and original instrument for spreading divine revelation is holy tradition.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  ODositheusQuestion_III: {
+    id: "ODositheusQuestion_III",
+    work: "dositheus",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "locus",
+          value: "pregunta III",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Los consideramos libros canónicos y confesamos que son Sagrada Escritura",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "κανονικὰ βιβλία κρίνομεν, καὶ ταῦτα τὴν ἱερὰν γραφὴν εἶναι ὁμολογοῦμεν.",
+          edition: "schaff.el",
+        },
+      },
+    ],
+    date: {
+      year: 1672,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret31: {
+    id: "OPhilaret31",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "31",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "reckon them at twenty-two, agreeing therein with the Jews, who so reckon them in the original Hebrew tongue.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret34: {
+    id: "OPhilaret34",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "34",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Because they do not exist in the Hebrew.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret35: {
+    id: "OPhilaret35",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "35",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "appointed of the Fathers to be read by proselytes who are preparing for admission into the Church.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret42: {
+    id: "OPhilaret42",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "42",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "It is a perfect manual of prayer and praise, and on this account is in continual use in the divine service of the Church.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret20: {
+    id: "OPhilaret20",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "20",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret18: {
+    id: "OPhilaret18",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "18",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret272: {
+    id: "OPhilaret272",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "272",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "is the Head of the Church, and he is the Saviour of the Body",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  ODositheusX: {
+    id: "ODositheusX",
+    work: "dositheus",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "decree",
+          value: "X",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El mismo Señor nuestro Jesucristo es cabeza y él mismo, teniendo el timón del gobierno de la Iglesia, la dirige por medio de los santos padres",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "αὐτὸς ὁ κύριος ἡμῶν Ἰησοῦς Χριστός ἐστι κεφαλὴ καὶ αὐτὸς τοὺς οἴακας ἔχων ἐν τῇ τῆς ἐκκλησίας κυβερνήσει πηδαλιουχεῖ διὰ τῶν ἁγίων πατέρων.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Porque un hombre mortal no puede ser cabeza universal y perpetua",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "ἐπειδὴ θνητὸς ἄνθρωπος καθόλου καὶ ἀΐδιος κεφαλὴ εἶναι οὐ δύναται",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "Es manifiesto que el gran misterio y dignidad del episcopado se transmite por sucesión hasta nosotros",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ὅτι δὲ ἀλληλοδιαδόχως τὸ τῆς ἐπισκοπῆς μέγα μυστήριον καὶ ἀξίωμα δίδοται μέχρις ἡμῶν, φανερόν.",
+          edition: "schaff.el",
+        },
+      },
+      {
+        es: {
+          text: "El sacerdote conserva en sí la potestad y gracia del sacerdocio que ha recibido; el obispo también la comunica a otros",
+          edition: "site-translation.dositheus.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Καὶ ὁ μὲν ἱερεὺς εἰς ἑαυτὸν σώζει τὴν, ἣν εἴληφε, ἐξουσίαν καὶ χάριν τῆς ἱερωσύνης, ὁ ἐπίσκοπος δὲ καὶ ἑτέροις μεταδίδωσι.",
+          edition: "schaff.el",
+        },
+      },
+    ],
+    date: {
+      year: 1672,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret274: {
+    id: "OPhilaret274",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "274",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Because she has from the Apostles, without break or change, both her doctrine and the succession of the gifts of the Holy Ghost, through the laying on of consecrated hands.",
+          edition: "schaff.en",
+        },
+      },
+      {
+        en: {
+          text: "and are built on the foundation of the Apostles and Prophets, Jesus Christ himself being the chief corner-stone.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret277: {
+    id: "OPhilaret277",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "277",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "From Jesus Christ himself, and from the descent of the Holy Ghost on the Apostles; from which time it is continued, in unbroken succession, through the laying on of hands, in the Sacrament of Orders.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret278: {
+    id: "OPhilaret278",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "278",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "An œcumenical Council.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret279: {
+    id: "OPhilaret279",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "279",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "Under the Orthodox Patriarchs and the Most Holy Synod.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OPhilaret271: {
+    id: "OPhilaret271",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "271",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "she shall never apostatize from the faith, nor sin against the truth of the faith, or fall into error.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  OConstantinopleI3: {
+    id: "OConstantinopleI3",
+    work: "constantinople-1",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "canon",
+          value: "3",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "The Bishop of Constantinople, however, shall have the prerogative of honour after the Bishop of Rome; because Constantinople is New Rome.",
+          edition: "percival.en",
+        },
+      },
+    ],
+  },
+  OTrullo36: {
+    id: "OTrullo36",
+    work: "trullo",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "canon",
+          value: "36",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "the see of Constantinople shall have equal privileges with the see of Old Rome, and shall be highly regarded in ecclesiastical matters as that is, and shall be second after it. After Constantinople shall be ranked the See of Alexandria, then that of Antioch, and afterwards the See of Jerusalem.",
+          edition: "percival.en",
+        },
+      },
+    ],
+  },
+  O1895encyclicalXVIII: {
+    id: "O1895encyclicalXVIII",
+    work: "enc-1895",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "section",
+          value: "XVIII",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La Iglesia ortodoxa oriental y católica de Cristo, fuera del Hijo y Verbo de Dios que se hizo hombre de manera inefable, no conoce a ningún otro que haya sido infalible sobre la tierra",
+          edition: "site-translation.enc-1895.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ἡ ὀρθόδοξος ἀνατολικὴ καὶ καθολικὴ τοῦ Χριστοῦ Ἐκκλησία, ἐκτὸς τοῦ ἀφράστως ἐνανθρωπήσαντος Υἱοῦ καὶ Λόγου τοῦ Θεοῦ, οὐδένα ἄλλον γινώσκει ἀλάθητον ἐπὶ γῆς ὑπάρξαντα",
+          edition: "enc1895.el",
+        },
+      },
+    ],
+    date: {
+      year: 1895,
+    },
+    link: {
+      href: "https://archive.org/details/answerofgreatchu0000eust",
+      label: "Ver el escaneo de Metallinos en archive.org",
+    },
+  },
+  OChalcedon28: {
+    id: "OChalcedon28",
+    work: "chalcedon",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "canon",
+          value: "28",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "For the Fathers rightly granted privileges to the throne of old Rome, because it was the royal city.",
+          edition: "percival.en",
+        },
+      },
+    ],
+  },
+  O1895encyclicalXVI: {
+    id: "O1895encyclicalXVI",
+    work: "enc-1895",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "section",
+          value: "XVI",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "En cuestiones graves que requerían la autoridad de la Iglesia universal se apelaba a un Concilio Ecuménico, que era y es el único tribunal supremo en la Iglesia universal",
+          edition: "site-translation.enc-1895.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el griego",
+        },
+        el: {
+          text: "Ἐν σπουδαίοις δὲ ζητήμασι δεομένοις τοῦ κύρους τῆς καθόλου Ἐκκλησίας ἐγίνετο ἔκκλητος εἰς Οἰκουμενικὴν Σύνοδον, ἥτις μόνη ἦν καὶ ἐστὶ τὸ ἀνώτατον ἐν τῇ καθόλου Ἐκκλησίᾳ κριτήριον.",
+          edition: "enc1895.el",
+        },
+      },
+    ],
+    date: {
+      year: 1895,
+    },
+    link: {
+      href: "https://archive.org/details/answerofgreatchu0000eust",
+      label: "Ver el escaneo de Metallinos en archive.org",
+    },
+  },
+  OPhilaret282: {
+    id: "OPhilaret282",
+    work: "philaret",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "question",
+          value: "282",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        en: {
+          text: "This may be learned from holy Scripture, from the canons of the holy Apostles, the holy œcumenical and provincial Councils, and the holy Fathers, and from the books of Ecclesiastical Rules and Rubrics.",
+          edition: "schaff.en",
+        },
+      },
+    ],
+    date: {
+      year: 1839,
+    },
+    link: {
+      href: "https://archive.org/details/creedschristendo02scha",
+      label: "Ver el escaneo de Schaff en archive.org",
+    },
+  },
+  "STDOS~po": {
+    id: "STDOS~po",
+    work: "status-stdos-po",
+    kind: "status",
+    locator: {
+      parts: [],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Estado actual: esta cláusula se lee en el testimonio griego de Schaff y el mapa la asocia con la revisión de 1690; Krivoshein atribuye explícitamente esa adición a la tercera edición, Iași 1690. No se cotejaron las ediciones originales.",
+          edition: "status-stdos-po.es",
+        },
+      },
+    ],
+  },
   PAproem: {
     id: "PAproem",
     work: "pastor-aeternus",

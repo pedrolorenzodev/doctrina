@@ -2096,6 +2096,81 @@ export const verses = {
     text: "Porque donde están dos ó tres congregados en mi nombre, allí estoy en medio de ellos.",
     edition: "RV1909",
   },
+  "Acts.19.4": {
+    osis: "Acts.19.4",
+    text: "Y dijo Pablo: Juan bautizó con bautismo de arrepentimiento, diciendo al pueblo que creyesen en el que había de venir después de él, es á saber, en Jesús el Cristo.",
+    edition: "RV1909",
+  },
+  "Eph.2.2": {
+    osis: "Eph.2.2",
+    text: "En que en otro tiempo anduvisteis conforme á la condición de este mundo, conforme al príncipe de la potestad del aire, el espíritu que ahora obra en los hijos de desobediencia:",
+    edition: "RV1909",
+  },
+  "Mark.16.17": {
+    osis: "Mark.16.17",
+    text: "Y estas señales seguirán á los que creyeren: En mi nombre echarán fuera demonios; hablarán nuevas lenguas;",
+    edition: "RV1909",
+  },
+  "Matt.16.24": {
+    osis: "Matt.16.24",
+    text: "Entonces Jesús dijo á sus discípulos: Si alguno quiere venir en pos de mí, niéguese á sí mismo, y tome su cruz, y sígame.",
+    edition: "RV1909",
+  },
+  "2Pet.2.20": {
+    osis: "2Pet.2.20",
+    text: "Ciertamente, si habiéndose ellos apartado de las contaminaciones del mundo, por el conocimiento del Señor y Salvador Jesucristo, y otra vez envolviéndose en ellas, son vencidos, sus postrimerías les son hechas peores que los principios.",
+    edition: "RV1909",
+  },
+  "1Cor.10.17": {
+    osis: "1Cor.10.17",
+    text: "Porque un pan, [es que] muchos somos un cuerpo; pues todos participamos de aquel un pan.",
+    edition: "RV1909",
+  },
+  "John.19.34": {
+    osis: "John.19.34",
+    text: "Empero uno de los soldados le abrió el costado con una lanza, y luego salió sangre y agua.",
+    edition: "RV1909",
+  },
+  "John.20.29": {
+    osis: "John.20.29",
+    text: "Dícele Jesús: Porque me has visto, Tomás, creiste: bienaventurados los que no vieron y creyeron.",
+    edition: "RV1909",
+  },
+  "2Thess.2.15": {
+    osis: "2Thess.2.15",
+    text: "Así que, hermanos, estad firmes, y retened la doctrina que habéis aprendido, sea por palabra, ó por carta nuestra.",
+    edition: "RV1909",
+  },
+  "Rom.3.2": {
+    osis: "Rom.3.2",
+    text: "Mucho en todas maneras. Lo primero ciertamente, que la palabra de Dios les ha sido confiada.",
+    edition: "RV1909",
+  },
+  "Eph.2.19": {
+    osis: "Eph.2.19",
+    text: "Así que ya no sois extranjeros ni advenedizos, sino juntamente ciudadanos con los santos, y domésticos de Dios;",
+    edition: "RV1909",
+  },
+  "Titus.3.10": {
+    osis: "Titus.3.10",
+    text: "Rehusa hombre hereje, después de una y otra amonestación;",
+    edition: "RV1909",
+  },
+  "Titus.1.10": {
+    osis: "Titus.1.10",
+    text: "Porque hay aún muchos contumaces, habladores de vanidades, y engañadores de las almas, mayormente los que son de la circuncisión,",
+    edition: "RV1909",
+  },
+  "Titus.1.11": {
+    osis: "Titus.1.11",
+    text: "A los cuales es preciso tapar la boca; que trastornan casas enteras; enseñando lo que no conviene, por torpe ganancia.",
+    edition: "RV1909",
+  },
+  "Gal.2.11": {
+    osis: "Gal.2.11",
+    text: "Empero viniendo Pedro á Antioquía, le resistí en la cara, porque era de condenar.",
+    edition: "RV1909",
+  },
   "John.1.42": {
     osis: "John.1.42",
     text: "Y le trajo á Jesús. Y mirándole Jesús, dijo: Tú eres Simón, hijo de Jonás: tú serás llamado Cephas (que quiere decir, Piedra).",
@@ -2169,11 +2244,6 @@ export const verses = {
   "Gal.2.10": {
     osis: "Gal.2.10",
     text: "Solamente [nos pidieron] que nos acordásemos de los pobres; lo mismo que fuí también solícito en hacer.",
-    edition: "RV1909",
-  },
-  "Gal.2.11": {
-    osis: "Gal.2.11",
-    text: "Empero viniendo Pedro á Antioquía, le resistí en la cara, porque era de condenar.",
     edition: "RV1909",
   },
   "Gal.2.12": {
@@ -2344,11 +2414,6 @@ export const verses = {
   "1Cor.3.11": {
     osis: "1Cor.3.11",
     text: "Porque nadie puede poner otro fundamento que el que está puesto, el cual es Jesucristo.",
-    edition: "RV1909",
-  },
-  "Eph.2.19": {
-    osis: "Eph.2.19",
-    text: "Así que ya no sois extranjeros ni advenedizos, sino juntamente ciudadanos con los santos, y domésticos de Dios;",
     edition: "RV1909",
   },
   "Luke.22.24": {
@@ -2651,11 +2716,6 @@ export const verses = {
     text: "Y guardaos de los falsos profetas, que vienen á vosotros con vestidos de ovejas, mas de dentro son lobos rapaces.",
     edition: "RV1909",
   },
-  "Titus.3.10": {
-    osis: "Titus.3.10",
-    text: "Rehusa hombre hereje, después de una y otra amonestación;",
-    edition: "RV1909",
-  },
   "2Cor.6.14": {
     osis: "2Cor.6.14",
     text: "No os juntéis en yugo con los infieles: porque ¿qué compañía tiene la justicia con la injusticia? ¿y qué comunión la luz con las tinieblas?",
@@ -2664,11 +2724,6 @@ export const verses = {
   "Matt.15.9": {
     osis: "Matt.15.9",
     text: "Mas en vano me honran, enseñando doctrinas [y] mandamientos de hombres.",
-    edition: "RV1909",
-  },
-  "2Thess.2.15": {
-    osis: "2Thess.2.15",
-    text: "Así que, hermanos, estad firmes, y retened la doctrina que habéis aprendido, sea por palabra, ó por carta nuestra.",
     edition: "RV1909",
   },
   "Jude.1.3": {
@@ -2991,11 +3046,6 @@ export const verses = {
     text: "Porque ninguna cosa podemos contra la verdad, sino por la verdad.",
     edition: "RV1909",
   },
-  "Rom.3.2": {
-    osis: "Rom.3.2",
-    text: "Mucho en todas maneras. Lo primero ciertamente, que la palabra de Dios les ha sido confiada.",
-    edition: "RV1909",
-  },
   "1Cor.14.10": {
     osis: "1Cor.14.10",
     text: "Tantos géneros de voces, por ejemplo, hay en el mundo, y nada hay mudo;",
@@ -3199,11 +3249,6 @@ export const verses = {
   "1Tim.2.4": {
     osis: "1Tim.2.4",
     text: "El cual quiere que todos los hombres sean salvos, y que vengan al conocimiento de la verdad.",
-    edition: "RV1909",
-  },
-  "John.19.34": {
-    osis: "John.19.34",
-    text: "Empero uno de los soldados le abrió el costado con una lanza, y luego salió sangre y agua.",
     edition: "RV1909",
   },
   "Mark.10.38": {
@@ -3519,11 +3564,6 @@ export const verses = {
   "Lev.17.14": {
     osis: "Lev.17.14",
     text: "Porque el alma de toda carne, su vida, está en su sangre: por tanto he dicho á los hijos de Israel: No comeréis la sangre de ninguna carne, porque la vida de toda carne es su sangre: cualquiera que la comiere será cortado.",
-    edition: "RV1909",
-  },
-  "1Cor.10.17": {
-    osis: "1Cor.10.17",
-    text: "Porque un pan, [es que] muchos somos un cuerpo; pues todos participamos de aquel un pan.",
     edition: "RV1909",
   },
   "1Cor.10.21": {
