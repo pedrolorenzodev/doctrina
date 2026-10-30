@@ -43,6 +43,7 @@ type GeneralTimelineProps = {
 const pixelsPerYear = 5.85;
 const rowGap = 18;
 const labelPadding = 6;
+const gestureIdleMs = 160;
 const panDistance = 5;
 const sectionOrder: GeneralSection[] = ["people", "councils", "works", "currents"];
 
@@ -104,6 +105,13 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
     if (!box || !button) return;
     const rect = button.getBoundingClientRect();
     const view = box.getBoundingClientRect();
+    if (rect.top < view.top || rect.bottom > view.bottom) {
+      const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      box.scrollTo({
+        top: box.scrollTop + rect.top - view.top - view.height / 2,
+        behavior: reduced ? "instant" : "smooth",
+      });
+    }
     if (rect.left > view.right - 60 || rect.right < view.left + 60) {
       const left = box.scrollLeft + rect.left - view.left - 40;
       const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -158,6 +166,36 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
       });
     });
   }, [ready, entries]);
+
+  useEffect(() => {
+    const box = scroller.current;
+    if (!box) return;
+    let mode: "x" | "y" | "page" | null = null;
+    let idle = 0;
+    const wheel = (event: WheelEvent) => {
+      if (event.ctrlKey) return;
+      window.clearTimeout(idle);
+      idle = window.setTimeout(() => {
+        mode = null;
+      }, gestureIdleMs);
+      if (mode === null) {
+        if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) mode = "x";
+        else {
+          const room = event.deltaY < 0 ? box.scrollTop > 0 : box.scrollTop < box.scrollHeight - box.clientHeight - 1;
+          mode = room ? "y" : "page";
+        }
+      }
+      event.preventDefault();
+      if (mode === "x") box.scrollLeft += event.deltaX;
+      else if (mode === "y") box.scrollTop += event.deltaY;
+      else window.scrollBy(0, event.deltaY);
+    };
+    box.addEventListener("wheel", wheel, { passive: false });
+    return () => {
+      window.clearTimeout(idle);
+      box.removeEventListener("wheel", wheel);
+    };
+  }, []);
 
   useEffect(() => {
     const box = scroller.current;
@@ -281,7 +319,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
         onKeyDown={onKeyDown}
         data-lenis-prevent
         data-scroller
-        className="scrollbar-rule relative overflow-x-auto overscroll-x-contain border-y border-rule max-sm:-mx-4 max-sm:px-4"
+        className="scrollbar-rule relative max-h-timeline overflow-auto overscroll-x-contain border-y border-rule max-sm:-mx-4 max-sm:px-4"
       >
         <div style={at("--w", px(width))} className="relative w-(--w)">
           {axis(true)}

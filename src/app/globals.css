@@ -1015,6 +1015,11 @@
   height: calc(100dvh - var(--spacing-top));
 }
 
+@utility max-h-timeline {
+  max-height: calc(100vh - var(--spacing-top) - 120px);
+  max-height: calc(100dvh - var(--spacing-top) - 120px);
+}
+
 @utility scrollbar-rule {
   scrollbar-width: thin;
   scrollbar-color: var(--color-rule-2) transparent;
@@ -2227,6 +2232,8 @@ html.theme-switching ::after {
 }
 
 @utility passage-tick {
+  transform: scaleX(var(--k, 1));
+  transform-origin: 0 50%;
   transition:
     transform 200ms var(--ease-standard),
     background-color 260ms var(--ease-standard),

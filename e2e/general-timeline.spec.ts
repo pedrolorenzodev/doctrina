@@ -363,3 +363,60 @@ test("a second click on the ruler mid-slide re-aims the slide from where it is, 
   const settled = samples.findIndex((value, index) => index >= peak && Math.abs(value - final) < 2);
   expect(settled - peak).toBeGreaterThan(8);
 });
+
+test.describe("the line scrolls on both axes without mixing them", () => {
+  test.use({ viewport: { width: 1440, height: 900 } });
+
+  async function scroller(page: import("@playwright/test").Page) {
+    await page.goto("/es/historia/linea-de-tiempo");
+    await page.waitForTimeout(1200);
+    const box = page.locator("[data-scroller]");
+    const rect = await box.boundingBox();
+    await page.mouse.move((rect?.x ?? 0) + 400, (rect?.y ?? 0) + 300);
+    return box;
+  }
+
+  const offsets = (box: import("@playwright/test").Locator) =>
+    box.evaluate((element) => ({ left: Math.round(element.scrollLeft), top: Math.round(element.scrollTop) }));
+
+  test("it is a pane shorter than the page that scrolls vertically", async ({ page }) => {
+    const box = await scroller(page);
+    const sizes = await box.evaluate((element) => ({
+      client: element.clientHeight,
+      scroll: element.scrollHeight,
+      view: innerHeight,
+    }));
+    expect(sizes.client).toBeLessThan(sizes.view);
+    expect(sizes.scroll).toBeGreaterThan(sizes.client);
+  });
+
+  test("a vertical gesture moves only the pane's Y, a horizontal one only its X", async ({ page }) => {
+    const box = await scroller(page);
+    await page.mouse.wheel(0, 240);
+    await page.waitForTimeout(300);
+    expect(await offsets(box)).toEqual({ left: 0, top: 240 });
+    await page.mouse.wheel(300, 0);
+    await page.waitForTimeout(300);
+    expect(await offsets(box)).toEqual({ left: 300, top: 240 });
+  });
+
+  test("a diagonal gesture follows its dominant axis only", async ({ page }) => {
+    const box = await scroller(page);
+    await page.mouse.wheel(40, 200);
+    await page.waitForTimeout(300);
+    expect(await offsets(box)).toEqual({ left: 0, top: 200 });
+    await page.mouse.wheel(200, 40);
+    await page.waitForTimeout(300);
+    expect(await offsets(box)).toEqual({ left: 200, top: 200 });
+  });
+
+  test("at the pane's bottom a vertical gesture scrolls the page", async ({ page }) => {
+    const box = await scroller(page);
+    await box.evaluate((element) => element.scrollTo(0, element.scrollHeight));
+    const before = await page.evaluate(() => scrollY);
+    await page.mouse.wheel(0, 300);
+    await page.waitForTimeout(400);
+    expect(await page.evaluate(() => scrollY)).toBeGreaterThan(before);
+    expect((await offsets(box)).left).toBe(0);
+  });
+});
