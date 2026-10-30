@@ -33,6 +33,84 @@ export const editions = {
       "Concordia Triglotta, St. Louis, CPH, 1921 (alemán, latín, inglés; inglés según bookofconcord.org). Dominio público.",
     licence: "public-domain",
   },
+  "status-stsa-el.la": {
+    id: "status-stsa-el.la",
+    works: ["status-stsa-el"],
+    lang: "la",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "status-stsa-el.es": {
+    id: "status-stsa-el.es",
+    works: ["status-stsa-el"],
+    lang: "es",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "status-stsa-el.en": {
+    id: "status-stsa-el.en",
+    works: ["status-stsa-el"],
+    lang: "en",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "status-stsa-el.de": {
+    id: "status-stsa-el.de",
+    works: ["status-stsa-el"],
+    lang: "de",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "status-stsa-pl.la": {
+    id: "status-stsa-pl.la",
+    works: ["status-stsa-pl"],
+    lang: "la",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "status-stsa-pl.es": {
+    id: "status-stsa-pl.es",
+    works: ["status-stsa-pl"],
+    lang: "es",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "status-stsa-pl.en": {
+    id: "status-stsa-pl.en",
+    works: ["status-stsa-pl"],
+    lang: "en",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "status-stsa-pl.de": {
+    id: "status-stsa-pl.de",
+    works: ["status-stsa-pl"],
+    lang: "de",
+    bibliography:
+      "Línea de estado actual del sitio, redactada a partir de la constitución de cada cuerpo luterano (LCMS, ELCA).",
+    licence: "unconfirmed",
+  },
+  "wcf.en": {
+    id: "wcf.en",
+    works: ["wcf", "wlc", "wsc"],
+    lang: "en",
+    bibliography: "Inglés: The Confession of Faith (texto de 1647), Edimburgo, Johnstone, Hunter & Co., 1894.",
+    licence: "public-domain",
+  },
+  "wcf.es": {
+    id: "wcf.es",
+    works: ["wcf", "wlc", "wsc"],
+    lang: "es",
+    bibliography: "Español: Monterrey, Tipografía del Comercio, 1880. Dominio público.",
+    licence: "public-domain",
+  },
   "pa.la": {
     id: "pa.la",
     works: ["pastor-aeternus"],
@@ -359,20 +437,6 @@ export const editions = {
     lang: "de",
     bibliography: "Instrucción. © Libreria Editrice Vaticana: cita breve y enlace.",
     licence: "short-quote",
-  },
-  "wcf.en": {
-    id: "wcf.en",
-    works: ["wcf", "wlc"],
-    lang: "en",
-    bibliography: "Inglés: The Confession of Faith (texto de 1647), Edimburgo, Johnstone, Hunter & Co., 1894.",
-    licence: "public-domain",
-  },
-  "wcf.es": {
-    id: "wcf.es",
-    works: ["wcf", "wlc"],
-    lang: "es",
-    bibliography: "Español: Monterrey, Tipografía del Comercio, 1880. Dominio público.",
-    licence: "public-domain",
   },
   "dos.la": {
     id: "dos.la",

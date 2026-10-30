@@ -39,6 +39,22 @@ export const citations = {
       label: "Leer en bookofconcord.org",
     },
   },
+  "STSA~el": {
+    id: "STSA~el",
+    work: "status-stsa-el",
+    kind: "status",
+    locator: {
+      parts: [],
+    },
+    excerpts: [
+      {
+        es: {
+          text: 'Estado actual: la Iglesia Luterana–Sínodo de Misuri (LCMS) acepta "sin reservas" todos los libros simbólicos, entre ellos los Artículos de Esmalcalda y la Fórmula de Concordia; la ELCA los acepta como "otras interpretaciones válidas de la fe de la Iglesia".',
+          edition: "status-stsa-el.es",
+        },
+      },
+    ],
+  },
   LACX: {
     id: "LACX",
     work: "augsburg",
@@ -2691,6 +2707,1577 @@ export const citations = {
     link: {
       href: "https://bookofconcord.org",
       label: "Leer en bookofconcord.org",
+    },
+  },
+  LTr60: {
+    id: "LTr60",
+    work: "treatise",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "60",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Evangelium tribuit his, qui praesunt ecclesiis, mandatum docendi evangelii, remittendi peccata, administrandi sacramenta",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "El evangelio atribuye a quienes presiden las iglesias el mandato de enseñar el evangelio, perdonar los pecados y administrar los sacramentos",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+      {
+        la: {
+          text: "praeterea iurisdictionem, videlicet mandatum excommunicandi eos, quorum nota sunt crimina, et resipiscentes rursum absolvendi.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "además, jurisdicción, es decir, el mandato de excomulgar a quienes tienen delitos conocidos y de absolver nuevamente a quienes se arrepienten",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LTr61: {
+    id: "LTr61",
+    work: "treatise",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "61",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "hanc potestatem iure divino communem esse omnibus, qui praesunt ecclesiis, sive vocentur pastores sive presbyteri sive episcopi",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "que esta potestad es común por derecho divino a todos los que presiden las iglesias, ya se los llame pastores, presbíteros u obispos",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LTr24: {
+    id: "LTr24",
+    work: "treatise",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "24",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Tribuit igitur principaliter claves ecclesiae et immediate, sicut et ob eam causam ecclesia principaliter habet ius vocationis.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Por tanto, atribuye las llaves a la iglesia de manera principal e inmediata, así como por esa misma razón la iglesia tiene de manera principal el derecho de llamar",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSAII_4_10: {
+    id: "LSAII_4_10",
+    work: "smalcald",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "II.4.10",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "que el papa es el verdadero Anticristo o adversario de Cristo, que se ha puesto y elevado por encima y en contra de Cristo, porque pretende no dejar que los cristianos se salven sin su poder, que sin embargo nada es, ni está ordenado ni mandado por Dios",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el alemán",
+        },
+        de: {
+          text: "daß der Papst der rechte Endechrist oder Widerchrist sei, der sich über und wider Christum gesetzt und erhöht hat, weil er will die Christen nicht lassen selig werden ohne seine Gewalt, welche doch nichts ist, von Gott nicht geordnet noch geboten.",
+          edition: "triglot.de",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LTr9: {
+    id: "LTr9",
+    work: "treatise",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "9",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "Christus pariter mittit apostolos sine discrimine, quum ait: Sicut misit me Pater, ita et ego mitto vos.",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "Cristo envía por igual a los apóstoles, sin distinción, cuando dice: Como me envió el Padre, así también yo os envío",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LTr23: {
+    id: "LTr23",
+    work: "treatise",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "23",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "In omnibus illis dictis Petrus sustinet personam communem totius coetus apostolorum",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "En todos esos dichos Pedro representa a toda la asamblea de los apóstoles",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LTr25: {
+    id: "LTr25",
+    work: "treatise",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "25",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        la: {
+          text: "certe ecclesia non est aedificata super auctoritatem hominis, sed super ministerium illius professionis, quam Petrus fecerat, in qua praedicat Iesum esse Christum, Filium Dei",
+          edition: "triglot.la",
+        },
+        es: {
+          text: "ciertamente la iglesia no está edificada sobre la autoridad de un hombre, sino sobre el ministerio de aquella confesión que Pedro había hecho, en la cual proclama que Jesús es el Cristo, el Hijo de Dios",
+          edition: "triglot.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el latín",
+        },
+      },
+    ],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  "STSA~pl": {
+    id: "STSA~pl",
+    work: "status-stsa-pl",
+    kind: "status",
+    locator: {
+      parts: [],
+    },
+    excerpts: [
+      {
+        es: {
+          text: 'Estado actual: la Iglesia Luterana–Sínodo de Misuri (LCMS) acepta "sin reservas" todos los libros simbólicos, entre ellos los Artículos de Esmalcalda y la Fórmula de Concordia; la ELCA los acepta como "otras interpretaciones válidas de la fe de la Iglesia".',
+          edition: "status-stsa-pl.es",
+        },
+      },
+    ],
+  },
+  LACXXVIII_5: {
+    id: "LACXXVIII_5",
+    work: "augsburg",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "XXVIII.5",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1530,
+      month: 6,
+      day: 25,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LTr7: {
+    id: "LTr7",
+    work: "treatise",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "7",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSAII_4_1: {
+    id: "LSAII_4_1",
+    work: "smalcald",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "II.4.1",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LSAII_4_7_9: {
+    id: "LSAII_4_7_9",
+    work: "smalcald",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "II.4.7–9",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  LTr56: {
+    id: "LTr56",
+    work: "treatise",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "56",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1537,
+    },
+    link: {
+      href: "https://bookofconcord.org",
+      label: "Leer en bookofconcord.org",
+    },
+  },
+  RWSC94: {
+    id: "RWSC94",
+    work: "wsc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "94",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El Bautismo es un sacramento, en el cual, el lavamiento con agua, en nombre del Padre, del Hijo, y del Espíritu Santo, significa y sella nuestra union con Cristo, nuestra participacion en los beneficios de la alianza de gracia y nuestro comprometimiento de ser del Señor.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF28_1: {
+    id: "RWCF28_1",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "28.1",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El bautismo es un sacramento del Nuevo Testamento, instituido por Jesu-Cristo [...] no solo para admitir la persona bautizada en la iglesia visible [...] sino tambien para que sea para ella un signo y sello del concierto de la gracia",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "del hecho que es ingerida en Cristo [...] de su regeneracion [...] de la remision de sus pecados [...] y de su sumision á Dios por Jesu-Cristo, á fin de andar en novedad de vida",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "Segun el mismo mandato de Jesu-Cristo, este sacramento debe continuarse en su iglesia hasta el fin del mundo",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF28_2: {
+    id: "RWCF28_2",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "28.2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El elemento exterior que se emplea en este sacramento es el agua, con la cual la parte que lo recibe se bautiza en el nombre del Padre, y del Hijo, y del Espíritu Santo, por un ministro del evangelio debidamente autorizado.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF28_4: {
+    id: "RWCF28_4",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "28.4",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "No solo los que personalmente profesan su fé en Cristo y su obediencia á El deben ser bautizados [...] sino tambien deben serlo los párvulos cuyos padres son, á lo menos uno de ellos, creyentes",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWSC95: {
+    id: "RWSC95",
+    work: "wsc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "95",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El Bautismo no debe administrarse á los que están fuera de la iglesia visible hasta que no profesen su fé en Cristo y su obediencia á él; mas, los párvulos de los que son miembros de la iglesia visible han de ser bautizados.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF28_3: {
+    id: "RWCF28_3",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "28.3",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La inmersion de la persona en el agua no es necesaria; sino que se administra rectamente el bautismo por la aspersion ó por la efusion del agua sobre la persona.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF28_6: {
+    id: "RWCF28_6",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "28.6",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "la gracia prometida no solamente se ofrece, sino realmente es en debido tiempo demostrada y dada, por el Espíritu Santo, á aquellos (sean adultos ó párvulos) á quienes pertenece aquella gracia, segun el consejo de la propia voluntad de Dios",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "La eficacia del bautismo no se limita al momento mismo en que se administra",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF28_5: {
+    id: "RWCF28_5",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "28.5",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Aunque el menosprecio ó descuido de esta ordenanza sea un grave pecado [...] sin embargo, la gracia y la salvacion, no son tan inseparablemente unidas con ella, que seria imposible ser regenerado ó salvo sin ella [...] y por otra parte, no resulta que todos los que sean bautizados, necesariamente son regenerados",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF28_7: {
+    id: "RWCF28_7",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "28.7",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El sacramento del bautismo no debe administrarse á la misma persona mas de una vez.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC167: {
+    id: "RWLC167",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "167",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El deber necesario, pero muy descuidado, de aprovechar nuestro bautismo debe cumplirse durante toda nuestra vida",
+          edition: "wcf.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "The needful but much neglected duty of improving our baptism, is to be performed by us all our life long",
+          edition: "wcf.en",
+        },
+      },
+      {
+        es: {
+          text: "sacando fuerzas de la muerte y resurrección de Cristo, en quien somos bautizados, para mortificar el pecado y vivificar la gracia",
+          edition: "wcf.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "by drawing strength from the death and resurrection of Christ, into whom we are baptized, for the mortifying of sin, and quickening of grace",
+          edition: "wcf.en",
+        },
+      },
+      {
+        es: {
+          text: "y andar en amor fraternal, por haber sido bautizados por el mismo Espíritu en un solo cuerpo",
+          edition: "wcf.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "and to walk in brotherly love, as being baptized by the same Spirit into one body.",
+          edition: "wcf.en",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC166: {
+    id: "RWLC166",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "166",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "que descienden de padres, ya sea ambos o uno solo de ellos, que profesan fe en Cristo y obediencia a él, están por ese motivo dentro del pacto y deben ser bautizados",
+          edition: "wcf.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "descending from parents, either both, or but one of them, professing faith in Christ, and obedience to him, are in that respect within the covenant, and to be baptized.",
+          edition: "wcf.en",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_10: {
+    id: "RWCF1_10",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.10",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El Espíritu Santo, que habla en las Escrituras, el Juez Supremo, por quien toda controversia religiosa tiene que decidirse y por quien tambien todos los decretos de los concilios, las opiniones de los escritores antiguos, y las doctrinas de los hombres y de los espíritus particulares tienen que determinarse, y en su fallo ó sentencia, podemos descansar confiadamente.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF31_3_4: {
+    id: "RWCF31_3_4",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "31.3–4",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_2: {
+    id: "RWCF1_2",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Todos estos fueron dados por la inspiracion de Dios para ser la regla de la fé y de la práctica.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_4: {
+    id: "RWCF1_4",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.4",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La autoridad de las Sagradas Escrituras, la que hace que deben creerse y obedecerse, no depende del testimonio de ningun hombre ó iglesia cualquiera que fuera, sino enteramente del de Dios, quien es su autor; porque El es la misma verdad; por esto deben ser recibidas porque son la palabra de Dios.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_6: {
+    id: "RWCF1_6",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.6",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Todo el consejo de Dios, tocante á todas las cosas necesarias para su propia gloria y para la salvacion, fé y vida del hombre; es ó expresamente expuesto en las Escrituras ó se puede deducir de ellas por buena y necesaria consecuencia; y á esta revelacion de su voluntad, nada se puede, ni se debe, añadir nunca, ni por nuevas revelaciones del Espíritu, ni por las tradiciones de los hombres.",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "la iluminacion interna del Espíritu de Dios, es necesaria á fin de que se entiendan de una manera salvadora, las cosas reveladas en la palabra",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "hay algunas circunstancias tocante al culto de Dios y al gobierno de la iglesia, comunes á las acciones y sociedades humanas, que deben arreglarse conforme á la luz de la naturaleza y la prudencia cristiana, guardándose siempre las reglas generales de la palabra",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_7: {
+    id: "RWCF1_7",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.7",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Las cosas reveladas en las Escrituras, considerándolas en su naturaleza, no son todas igualmente claras, ni se entienden igualmente por todos",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "las cosas que necesariamente tienen que saberse, creerse y guardarse para conseguir la salvacion, son propuestas y declaradas en uno ú otro lugar de las Escrituras, tan claramente, que no solo los eruditos, sino aun los que no lo son, pueden alcanzar un conocimiento suficiente de ellas, por el debido uso de los medios ordinarios",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_9: {
+    id: "RWCF1_9",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.9",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La misma Escritura es la regla infalible para interpretarse á sí misma; y por tanto, cuando hay una cuestion respecto del sentido verdadero y pleno de cualquier pasaje; cuyo significado no es multíplice, sino uno solo, se puede buscar y establecer segun otros textos que hablan con mas claridad.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_8: {
+    id: "RWCF1_8",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.8",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "la iglesia tiene que apelar finalmente á los originales en esos idiomas en toda controversia",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "la Biblia debe traducirse en la lengua vulgar de todas las naciones á que pueda venir",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_1: {
+    id: "RWCF1_1",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.1",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "para mejor conservar y propagar la verdad, y para el mejor consuelo y establecimiento de la iglesia contra la corrupcion de la carne, la malicia de Satanás y del mundo, le plugo ponerlo todo en escrito",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_5: {
+    id: "RWCF1_5",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.5",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El testimonio de la iglesia puede mover é inducirnos á guardar para las Sagradas Escrituras una estimacion alta y reverencial",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "la obra interior del Espíritu Santo, quien dá testimonio juntamente con la palabra divina, y por ella á nuestros corazones",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWSC2: {
+    id: "RWSC2",
+    work: "wsc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La palabra de Dios que se contiene en las Escrituras del Antiguo y del Nuevo Testamento, es la única regla que ha dado Dios para enseñarnos como hemos de glorificarle y gozar de El.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC156: {
+    id: "RWLC156",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "156",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "por sí mismos y con sus familias; para este fin, las Sagradas Escrituras han de traducirse del original a las lenguas comunes",
+          edition: "wcf.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "by themselves, and with their families: to which end, the holy scriptures are to be translated out of the original into vulgar languages.",
+          edition: "wcf.en",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC157: {
+    id: "RWLC157",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "157",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Las Sagradas Escrituras deben leerse con alta y reverente estima de ellas",
+          edition: "wcf.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "The holy scriptures are to be read with an high and reverent esteem of them",
+          edition: "wcf.en",
+        },
+      },
+      {
+        es: {
+          text: "con deseo de conocer, creer y obedecer la voluntad de Dios revelada en ellas; con diligencia y atención a su contenido y propósito; con meditación, aplicación, negación de uno mismo y oración",
+          edition: "wcf.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "with desire to know, believe, and obey the will of God revealed in them; with diligence, and attention to the matter and scope of them; with meditation, application, self-denial, and prayer.",
+          edition: "wcf.en",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC158: {
+    id: "RWLC158",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "158",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "La palabra de Dios debe ser predicada solamente por quienes están suficientemente dotados y también debidamente aprobados y llamados a ese oficio",
+          edition: "wcf.es",
+          translation: "ai-assisted",
+          derivedFrom: "desde el inglés",
+        },
+        en: {
+          text: "The word of God is to be preached only by such as are sufficiently gifted, and also duly approved and called to that office.",
+          edition: "wcf.en",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF1_3: {
+    id: "RWCF1_3",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "1.3",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWLC160: {
+    id: "RWLC160",
+    work: "wlc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "160",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF25_1: {
+    id: "RWCF25_1",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "25.1",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "que han sido, ó son, ó serán reunidos en uno y sometidos á Cristo la cabeza de la Iglesia; y esta es la esposa, la plenitud de El quien llena todas las cosas en todos",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF25_2: {
+    id: "RWCF25_2",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "25.2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "el reino del Señor Jesu-Cristo [...] la casa y familia de Dios",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF25_3: {
+    id: "RWCF25_3",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "25.3",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "A esta iglesia católica visible, Cristo ha dado el ministerio, los oráculos, y las ordenanzas de Dios; para juntar y perfeccionar á los santos, en la vida presente, hasta el fin del mundo, haciéndoles suficientes para este fin, segun su promesa, por su presencia y Espíritu.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF25_6: {
+    id: "RWCF25_6",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "25.6",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "No hay otra cabeza de la iglesia sino el Señor Jesu-Cristo [...] Ni puede el papa de Roma ser la cabeza de ella en ningun sentido; pues es aquel anti-cristo, aquel inícuo, é hijo de perdicion, que se ensalza en la iglesia contra Cristo, y contra todo lo que se llama Dios",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF25_5: {
+    id: "RWCF25_5",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "25.5",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "están expuestas á errar en doctrina y práctica",
+          edition: "wcf.es",
+        },
+      },
+      {
+        es: {
+          text: "siempre habrá una iglesia en la tierra, para adorar á Dios conforme á su voluntad",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWSC26: {
+    id: "RWSC26",
+    work: "wsc",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "number",
+          value: "26",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Cristo ejecuta el oficio de Rey sujetándonos á sí mismo, rigiendo y defendiéndonos, y restringiendo y venciendo á todos sus enemigos y los nuestros.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF30_2: {
+    id: "RWCF30_2",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "30.2",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "A estos oficiales, son entregadas las llaves del reino de los cielos, en virtud de lo cual, tienen poder para retener y remitir pecados; para cerrar aquel reino contra los impenitentes, por la palabra y por las censuras; y para abrirlo á los pecadores arrepentidos, por el ministerio del evangelio, y por la remocion de las censuras, segun exigen las circunstancias.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF30_3: {
+    id: "RWCF30_3",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "30.3",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "Las censuras eclesiásticas son necesarias para corregir y hacer volver sobre sus pasos á los hermanos que ofenden; para impedir que otros cometan semejantes ofensas; para reivindicar el honor de Cristo, y la santa profesion del evangelio",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF30_1: {
+    id: "RWCF30_1",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "30.1",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "El Señor Jesus, como Rey y Cabeza de su iglesia, ha establecido en ella un gobierno regido por oficiales eclesiásticos distintos del magistrado civil.",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF30_4: {
+    id: "RWCF30_4",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "30.4",
+        },
+      ],
+    },
+    excerpts: [
+      {
+        es: {
+          text: "primero de la amonestacion, y en seguida, de la suspension del culpable del sacramento de la cena del Señor por algun tiempo, y despues de la excomunion de la iglesia, segun la naturaleza del delito de la persona",
+          edition: "wcf.es",
+        },
+      },
+    ],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF31_3: {
+    id: "RWCF31_3",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "31.3",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF31_4: {
+    id: "RWCF31_4",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "31.4",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
+    },
+  },
+  RWCF31_5: {
+    id: "RWCF31_5",
+    work: "wcf",
+    kind: "source",
+    locator: {
+      parts: [
+        {
+          kind: "ref",
+          value: "31.5",
+        },
+      ],
+    },
+    excerpts: [],
+    date: {
+      year: 1647,
+    },
+    link: {
+      href: "https://archive.org/details/doctrinasyreglam00west",
+      label: "Ver el escaneo de 1880 en archive.org",
     },
   },
   PAproem: {

@@ -28,7 +28,13 @@ function load(d) {
   const src = fs.readFileSync(`${ROOT}/${doctrineOf(d)}/${file}`, "utf8");
   const names = [...src.matchAll(/^(?:const|let|var) (\w+)/gm)].map((m) => m[1]);
   const dossierFile = `${ROOT}/${doctrineOf(d)}/${traditionOf(d)}.md`;
-  const ctx = { document: { createElement: () => ({}), head: { appendChild() {} } }, window: {}, console, dossier: fs.existsSync(dossierFile) ? readDossier(dossierFile) : null, readOtherDossier: (doctrine, tradition) => readDossier(`${ROOT}/${doctrine}/${tradition}.md`) };
+  const otherTexts = [];
+  const ctx = { document: { createElement: () => ({}), head: { appendChild() {} } }, window: {}, console, dossier: fs.existsSync(dossierFile) ? readDossier(dossierFile) : null, readOtherDossier: (doctrine, tradition) => {
+      const other = readDossier(`${ROOT}/${doctrine}/${tradition}.md`);
+      otherTexts.push(other.text);
+      return other;
+    },
+  };
   vm.createContext(ctx);
   vm.runInContext(src + "\n;globalThis.__x={" + names.join(",") + "}", ctx);
   const data = JSON.parse(JSON.stringify(ctx.__x));
@@ -36,7 +42,7 @@ function load(d) {
     const notVerbatim = [];
     for (const [id, citation] of Object.entries(data.SRC))
       for (const excerpt of citation.ex ?? [])
-        for (const lang of ["la", "de", "en", "es"]) if (excerpt[lang] && !ctx.dossier.text.includes(excerpt[lang])) notVerbatim.push(`${id}.${lang}`);
+        for (const lang of ["la", "de", "en", "es"]) if (excerpt[lang] && ![ctx.dossier.text, ...otherTexts].some((text) => text.includes(excerpt[lang]))) notVerbatim.push(`${id}.${lang}`);
     if (notVerbatim.length) throw new Error(`quotes that are not verbatim in ${dossierFile}: ${notVerbatim.join(", ")}`);
   }
   return data;
@@ -451,7 +457,7 @@ function buildPage(d) {
     teach: {
       subtitle: x.META.ensenaSub,
       definition: { text: prose(d, x.DEFINITION.text), grades: x.DEFINITION.grades.map((g) => grade(d, g)), sources: x.DEFINITION.sources.map((p) => srcRef(d, p)) },
-      statements: x.QE.map((q) => ({ id: q.id, short: shortOf(fields.statements, q.id), text: prose(d, q.text), grades: q.grades.map((g) => grade(d, g)), sources: q.sources.map((p) => srcRef(d, p)) })),
+      statements: x.QE.map((q) => ({ id: q.id, short: shortOf(fields.statements, q.id), ...(q.question ? { question: prose(d, q.question) } : {}), text: prose(d, q.text), ...(q.status ? { status: q.status.map((id) => mapCid(d, id)) } : {}), grades: q.grades.map((g) => grade(d, g)), sources: q.sources.map((p) => srcRef(d, p)) })),
     },
     why: {
       intro: x.PORQUE.intro.map((t) => prose(d, t)),

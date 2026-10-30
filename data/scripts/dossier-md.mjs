@@ -132,7 +132,9 @@ export function readDossier(file) {
     return found.text;
   }
 
-  const TRIGLOT_WORK = /^(AC|Ap|SA|Tr|SC|LC|FC Ep|FC SD|SD)\s+(RN \d+(?:[–-]\d+)?|[IVX]+(?:\.\d+(?:[–-]\d+)?)*)/;
+  const TRIGLOT_WORK = /^(AC|Ap|SA|Tr|SC|LC|FC Ep|FC SD|SD|WCF|WLC|WSC)\s+(RN \d+(?:[–-]\d+)?|[IVX]+(?:\.\d+(?:[–-]\d+)?)*|\d+(?:\.\d+)?(?:[–-]\d+)?)/;
+  const ENGLISH_ORIGINAL = ["WCF", "WLC", "WSC"];
+  const FROM = { German: "from German", Latin: "from Latin", English: "from English" };
 
   function quoteEntries(blockText) {
     const lines = blockText.split("\n");
@@ -142,8 +144,10 @@ export function readDossier(file) {
       const paragraphs = [[]];
       while (i < lines.length && lines[i].startsWith(">")) {
         const body = lines[i].replace(/^>\s?/, "");
+        const current = paragraphs[paragraphs.length - 1];
         if (body.trim() === "") paragraphs.push([]);
-        else paragraphs[paragraphs.length - 1].push(body);
+        else if (current.length && /^[«“"]/.test(body) && /[»”"]\.?$/.test(current[current.length - 1].trim())) paragraphs.push([body]);
+        else current.push(body);
         i++;
       }
       let j = i;
@@ -156,18 +160,26 @@ export function readDossier(file) {
       const parsedAttribution = group.attribution.replace(/\*\*/g, "");
       const triglot = parsedAttribution.match(/\((?:Triglot )?([IVX]+\.\d+(?:[–-]\d+)?)\)/)?.[1];
       const head = parsedAttribution.slice(2).match(TRIGLOT_WORK);
-      const lang = parsedAttribution.match(/\b(German|Latin|English)\b/)?.[1] ?? (head && ["SC", "LC", "SA", "FC Ep", "FC SD", "SD"].includes(head[1]) ? "German" : null);
+      const work = head ? (head[1] === "SD" ? "FC SD" : head[1]) : null;
+      const lang =
+        parsedAttribution.match(/\b(German|Latin|English)\b/)?.[1] ??
+        (work && ["SC", "LC", "SA", "FC Ep", "FC SD"].includes(work) ? "German" : null);
       const page = parsedAttribution.match(/\bp\. (\d+)/)?.[1];
+      const lastIndexOfClose = (text) => Math.max(text.lastIndexOf("»"), text.lastIndexOf("”"), text.lastIndexOf('"'));
       for (const text of group.paragraphs) {
         const open = text[0];
-        const inner = text.slice(1, Math.max(text.lastIndexOf("»"), text.lastIndexOf("”"), text.lastIndexOf('"')));
+        const inner = text.slice(1, lastIndexOfClose(text));
+        const base = { work, loc: triglot ?? head?.[2] ?? null, page: page ?? null };
         if (open === "“" || open === '"') {
-          entries.push({ work: head ? (head[1] === "SD" ? "FC SD" : head[1]) : null, loc: triglot ?? head?.[2] ?? null, lang: lang ? LANG[lang] : null, page: page ?? null, original: inner, spanish: null, from: null });
-        } else if (open === "«" && entries.length) {
-          const last = entries[entries.length - 1];
-          if (last.spanish === null) {
+          const originalLang = work && ENGLISH_ORIGINAL.includes(work) ? "en" : lang ? LANG[lang] : null;
+          entries.push({ ...base, lang: originalLang, original: inner, spanish: null, from: null });
+        } else if (open === "«") {
+          const last = entries.find((entry) => entry.original !== null && entry.spanish === null);
+          if (last) {
             last.spanish = inner;
-            last.from = parsedAttribution.match(/from (German|Latin)/)?.[0] ?? null;
+            last.from = parsedAttribution.match(/from (?:the preceding )?(German|Latin|English)/)?.[1] ? FROM[parsedAttribution.match(/from (?:the preceding )?(German|Latin|English)/)[1]] : null;
+          } else {
+            entries.push({ ...base, lang: "es", original: null, spanish: inner, from: null });
           }
         }
       }
