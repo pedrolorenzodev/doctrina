@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { AskButton } from "@/components/ask-button";
-import { closedAskDrawer, getAskDrawer, openAskDrawer, subscribeAskDrawer } from "@/lib/ask-drawer";
+import { closedAskDrawer, fieldOnOpen, getAskDrawer, openAskDrawer, subscribeAskDrawer } from "@/lib/ask-drawer";
 import { UndoBar } from "@/components/undo-bar";
 import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { ChapterText, type SecondReading } from "@/features/reader/chapter-text";
@@ -643,7 +643,14 @@ export function ReaderBody({
             onAsk={(selection) => {
               const first = selection.ranges[0]?.verse ?? 0;
               const last = selection.ranges[selection.ranges.length - 1]?.verse ?? first;
-              openAskDrawer({ pill: { reference: referenceOf(first, last), text: selection.text } });
+              openAskDrawer({
+                pill: {
+                  reference: referenceOf(first, last),
+                  text: selection.text,
+                  unit: { prefix: idPrefix, verse: first },
+                },
+                focus: fieldOnOpen(),
+              });
             }}
           />
           <UndoBar

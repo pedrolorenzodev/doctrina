@@ -236,18 +236,14 @@ test.describe("ask drawer: what it can see", () => {
     await expect(page.locator("#ask-context-sees")).not.toHaveAttribute("data-open", "true");
   });
 
-  test("the switch hides «1 nota 1 subrayado verde» and swaps the third suggestion", async ({ page }) => {
+  test("the switch hides «1 nota 1 subrayado verde»", async ({ page }) => {
     await openDrawer(page);
     await openContext(page);
     const line = page.locator("[data-ask-sees] > div[aria-hidden]");
-    await expect(page.locator("[data-ask-suggestions] li").nth(2)).toContainText(
-      "¿Qué subrayé en verde en este capítulo?",
-    );
     await page.locator("[role=switch]").click();
     await expect(page.locator("[role=switch]")).toHaveAttribute("aria-checked", "false");
     await expect(line).toHaveAttribute("aria-hidden", "true");
     await expect.poll(() => line.evaluate((el) => el.getBoundingClientRect().height)).toBe(0);
-    await expect(page.locator("[data-ask-suggestions] li").nth(2)).toContainText("¿Qué palabras de 6:51 vuelven aquí?");
   });
 
   test("the scope indicator slides to the chosen place in 340 ms and the line names the new scope", async ({
@@ -270,27 +266,145 @@ test.describe("ask drawer: what it can see", () => {
   });
 });
 
+const body = "[data-ask-body]";
+const foot = "[data-ask-foot]";
+const chipRow = "[data-ask-suggestions]";
+
+const distanceToEnd = (page: Page) =>
+  page.locator(body).evaluate((el) => el.scrollHeight - el.clientHeight - el.scrollTop);
+
+const selectInVerse = async (page: Page, verse: number, words: string) => {
+  await page.evaluate((target) => {
+    const unit = document.getElementById(`v-${target}`)!;
+    scrollTo(0, unit.getBoundingClientRect().top + scrollY - 300);
+  }, verse);
+  await page.waitForTimeout(400);
+  await page.evaluate(
+    ([target, text]) => {
+      const unit = document.querySelector(`[data-verse-text="${target}"]`)!;
+      const walker = document.createTreeWalker(unit, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        const at = node.textContent!.indexOf(text as string);
+        if (at < 0) continue;
+        const range = document.createRange();
+        range.setStart(node, at);
+        range.setEnd(node, at + (text as string).length);
+        getSelection()!.removeAllRanges();
+        getSelection()!.addRange(range);
+      }
+      document.dispatchEvent(new PointerEvent("pointerup", { pointerType: "mouse" }));
+    },
+    [verse, words],
+  );
+  await page.locator("[role=toolbar][data-open=true]").getByRole("button", { name: "Preguntar" }).click();
+  await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
+  await page.waitForTimeout(350);
+};
+
+test.describe("ask drawer: composer, suggestions and scroll", () => {
+  test("empty, it asks about the chapter in the middle and the composer sits at the bottom with four chips", async ({
+    page,
+  }) => {
+    await openDrawer(page);
+    await expect(page.locator("[data-ask-empty] > p").first()).toHaveText("Pregunta sobre Juan 6");
+    await expect(page.locator(`${chipRow} button`)).toHaveText([
+      "¿Qué dijeron los Padres sobre este capítulo?",
+      "¿Cómo lo lee cada tradición?",
+      "¿Qué otros pasajes de la Biblia tratan este tema?",
+      "¿Qué palabras se repiten en el capítulo?",
+    ]);
+    const frame = (await page.locator(drawer).boundingBox())!;
+    const footBox = (await page.locator(foot).boundingBox())!;
+    expect(Math.round(footBox.y + footBox.height)).toBe(Math.round(frame.y + frame.height));
+    expect(Math.round(footBox.height)).toBe(102);
+    await expect(page.locator(`${foot} textarea`)).toBeFocused();
+    await expect(page.locator(`${foot} textarea`)).toHaveAttribute("placeholder", "Pregunta sobre Juan 6");
+  });
+
+  test("the chips fold away on the first question and the composer never leaves the screen", async ({ page }) => {
+    await openDrawer(page, 1440, 760);
+    await page.locator(`${chipRow} button`).first().click();
+    await expect(page.locator("[data-ask-empty]")).toHaveCount(0);
+    await expect(page.locator(chipRow)).toHaveCount(0);
+    for (let i = 0; i < 8; i += 1) {
+      const field = (await page.locator(`${foot} textarea`).boundingBox())!;
+      expect(field.y + field.height).toBeLessThanOrEqual(760);
+      await page.waitForTimeout(500);
+    }
+    await expect(page.locator("[data-ask-answer] button", { hasText: "Informar un error" })).toBeVisible({
+      timeout: 9000,
+    });
+  });
+
+  test("while it answers the view follows the text; scrolling up releases it and «↓» brings it back", async ({
+    page,
+  }) => {
+    await openDrawer(page, 1440, 700);
+    await page.locator(`${chipRow} button`).first().click();
+    await expect(page.locator("[data-ask-answer] figure")).toHaveCount(4, { timeout: 6000 });
+    await page.waitForTimeout(400);
+    expect(await distanceToEnd(page)).toBeLessThan(40);
+    await page.locator(body).hover();
+    await page.mouse.wheel(0, -400);
+    await page.waitForTimeout(1500);
+    expect(await distanceToEnd(page)).toBeGreaterThan(100);
+    const jump = page.locator("[data-ask-jump]");
+    await expect(jump).toHaveAttribute("data-on", "true");
+    await jump.click();
+    await page.waitForTimeout(450);
+    expect(await distanceToEnd(page)).toBeLessThan(40);
+    await expect(jump).not.toHaveAttribute("data-on", "true");
+  });
+
+  test("opened from a verse, it asks about the verse, offers the verse chips and the line leads to the verse", async ({
+    page,
+  }) => {
+    await openAt(page, 1440, 1000);
+    await selectInVerse(page, 53, "Si no comiereis la carne");
+    await expect(page.locator("[data-ask-empty] > p").first()).toHaveText("Pregunta sobre Juan 6:53");
+    await expect(page.locator(`${chipRow} button`).first()).toHaveText("¿Qué creían los Padres sobre este versículo?");
+    await expect(page.locator(`${foot} textarea`)).toHaveAttribute("placeholder", "Pregunta sobre Juan 6:53");
+    const line = page.locator(`${foot} div:has(> [data-ask-pill-go])`);
+    await page.evaluate(() => scrollTo(0, 0));
+    await page.waitForTimeout(300);
+    await page.locator("[data-ask-pill-go]").hover();
+    await expect.poll(() => line.evaluate((el) => getComputedStyle(el).borderTopColor)).toBe("rgb(174, 171, 164)");
+    await page.locator("[data-ask-pill-go]").click();
+    await expect(page.locator("#v-53")).toHaveAttribute("data-marked", "");
+    await page.waitForTimeout(900);
+    await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
+    const third = await page.evaluate(() => {
+      const offset =
+        parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--spacing-top")) +
+        parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--spacing-scroll-offset"));
+      return Math.round(document.getElementById("v-51")!.getBoundingClientRect().top - offset);
+    });
+    expect(Math.abs(third)).toBeLessThanOrEqual(2);
+    await expect(page.locator("#v-53")).not.toHaveAttribute("data-marked", "", { timeout: 2500 });
+  });
+});
+
 test.describe("ask drawer: conversation", () => {
   test("a suggestion folds the list, streams the answer and ends with follow-ups and actions", async ({ page }) => {
     await openDrawer(page);
     await page.evaluate(() => {
       const seen: string[] = [];
       (window as unknown as { seen: string[] }).seen = seen;
-      const chat = document.querySelector("[data-ask-chat]")!;
+      const chat = document.querySelector("[data-ask-content]")!;
       new MutationObserver(() => seen.push(chat.textContent ?? "")).observe(chat, { childList: true, subtree: true });
     });
     await page.locator("[data-ask-suggestions] button").first().click();
-    await expect(page.locator("[data-ask-chat] [role=log]")).toContainText(
-      "¿Qué dijeron los Padres sobre este versículo?",
+    await expect(page.locator("[data-ask-content] [role=log]")).toContainText(
+      "¿Qué dijeron los Padres sobre este capítulo?",
     );
-    await expect(page.locator("[data-ask-chat] button", { hasText: "Detener" })).toBeVisible();
+    await expect(page.locator("[data-ask-content] button", { hasText: "Detener" })).toBeVisible();
     await expect(page.locator("[data-ask-suggestions]")).toHaveCount(0);
     await expect(page.locator("[data-ask-meta]")).toContainText("Buscado en: todo el corpus.");
     await expect(page.locator("[data-ask-answer] figure")).toHaveCount(4, { timeout: 4000 });
     await expect(page.locator("[data-ask-answer] button", { hasText: "Informar un error" })).toBeVisible({
       timeout: 8000,
     });
-    await expect(page.locator("[data-ask-chat] button", { hasText: "Preguntar" })).toBeVisible();
+    await expect(page.locator("[data-ask-content] button", { hasText: "Preguntar" })).toBeVisible();
     await expect(page.locator("[data-ask-answer] button", { hasText: "¿Quién tiene razón?" })).toBeVisible();
     const seen = await page.evaluate(() => (window as unknown as { seen: string[] }).seen);
     expect(seen.some((text) => text.includes("Buscando en el corpus"))).toBe(true);
@@ -300,14 +414,14 @@ test.describe("ask drawer: conversation", () => {
     await openDrawer(page);
     await page.locator("[data-ask-suggestions] button").first().click();
     await page.waitForTimeout(1100);
-    await page.locator("[data-ask-chat] button", { hasText: "Detener" }).click();
+    await page.locator("[data-ask-content] button", { hasText: "Detener" }).click();
     await expect(page.locator("[data-ask-answer]")).toContainText("Detenida.", { timeout: 3000 });
     await expect(page.locator("[data-ask-answer] button", { hasText: "Informar un error" })).toBeVisible();
   });
 
   test("«¿Quién tiene razón?» gets the disputed answer, never a verdict", async ({ page }) => {
     await openDrawer(page);
-    await page.locator("[data-ask-chat] textarea").fill("¿Quién tiene razón?");
+    await page.locator("[data-ask-content] textarea").fill("¿Quién tiene razón?");
     await page.keyboard.press("Enter");
     await expect(page.locator("[data-ask-answer]")).toContainText("Doctrina no decide quién tiene razón.", {
       timeout: 4000,
@@ -317,7 +431,7 @@ test.describe("ask drawer: conversation", () => {
 
   test("a pastoral request gets the fixed text without actions", async ({ page }) => {
     await openDrawer(page);
-    await page.locator("[data-ask-chat] textarea").fill("quiero confesarme");
+    await page.locator("[data-ask-content] textarea").fill("quiero confesarme");
     await page.keyboard.press("Enter");
     await expect(page.locator("[data-ask-meta]")).toContainText("Texto fijo de Doctrina");
     await expect(page.locator("[data-ask-answer]")).toContainText("busca a un sacerdote o a un pastor", {
@@ -453,7 +567,7 @@ test.describe("ask drawer: the selection", () => {
     const toolbar = page.locator("[role=toolbar][data-open=true]");
     await toolbar.getByRole("button", { name: "Preguntar" }).click();
     await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
-    const pill = page.locator("[data-ask-pill-slot] > div");
+    const pill = page.locator("[data-ask-foot] div:has(> [data-ask-pill-go])");
     await expect(pill).toContainText("Juan 6:53");
     await expect(pill).toContainText("Si no comiereis la carne");
     await pill.getByRole("button", { name: "Quitar lo elegido" }).click();

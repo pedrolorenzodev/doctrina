@@ -1,4 +1,4 @@
-export type AskPill = { reference: string; text: string };
+export type AskPill = { reference: string; text: string; unit?: { prefix: string; verse: number } };
 
 type AskDrawerState = { open: boolean; pill: AskPill | null; focus: boolean; serial: number };
 
@@ -29,9 +29,11 @@ export function closeAskDrawer(): void {
   if (state.open) set({ open: false, pill: null, focus: false });
 }
 
+export const fieldOnOpen = (): boolean => matchMedia("(pointer: fine)").matches;
+
 export function toggleAskDrawer(): void {
   if (state.open) closeAskDrawer();
-  else openAskDrawer();
+  else openAskDrawer({ focus: fieldOnOpen() });
 }
 
 export function clearAskPill(): void {

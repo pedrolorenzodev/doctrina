@@ -18,6 +18,10 @@ export type AskText = {
   };
   chat: {
     suggested: string;
+    empty: string;
+    emptyNote: string;
+    jump: string;
+    pillGo: string;
     placeholder: string;
     question: string;
     send: string;
@@ -69,6 +73,10 @@ export const askText: Record<Locale, AskText> = {
     },
     chat: {
       suggested: "Preguntas sugeridas",
+      empty: "Pregunta sobre {where}",
+      emptyNote: "Con los textos que guarda Doctrina: la Biblia, los Padres y los documentos de cada tradición.",
+      jump: "Ir al final",
+      pillGo: "Ir a {reference} en el texto",
       placeholder: "Pregunta sobre {chapter}",
       question: "Tu pregunta",
       send: "Preguntar",
@@ -118,6 +126,10 @@ export const askText: Record<Locale, AskText> = {
     },
     chat: {
       suggested: "Suggested questions",
+      empty: "Ask about {where}",
+      emptyNote: "With the texts Doctrina keeps: the Bible, the Fathers and each tradition's documents.",
+      jump: "Go to the end",
+      pillGo: "Go to {reference} in the text",
       placeholder: "Ask about {chapter}",
       question: "Your question",
       send: "Ask",

@@ -102,6 +102,7 @@ export function QuoteBlock({
         <CiteButton target={{ quote }} handlers={handlers}>
           {sourceOf(entry)}
         </CiteButton>
+        {entry.bible ? `, ${entry.edition}` : null}
       </figcaption>
     </Entering>
   );

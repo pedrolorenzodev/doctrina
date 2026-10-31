@@ -44,7 +44,6 @@ const isTyping = (target: EventTarget | null) =>
 
 export function AskDrawer({ title, closeLabel, bar, children }: AskDrawerProps) {
   const drawer = useRef<HTMLElement>(null);
-  const body = useRef<HTMLDivElement>(null);
   const { open, focus, serial } = useSyncExternalStore(subscribeAskDrawer, getAskDrawer, () => closedAskDrawer);
   const layout: DrawerLayout = useSyncExternalStore(
     subscribeLayout,
@@ -75,10 +74,6 @@ export function AskDrawer({ title, closeLabel, bar, children }: AskDrawerProps) 
   }, [open, layout]);
 
   useEffect(() => () => applyDrawerRoom(null, false), []);
-
-  useEffect(() => {
-    if (body.current) body.current.style.overflowAnchor = "none";
-  }, []);
 
   useEffect(() => {
     let wasOpen = getAskDrawer().open;
@@ -164,14 +159,7 @@ export function AskDrawer({ title, closeLabel, bar, children }: AskDrawerProps) 
         </button>
       </div>
       {bar}
-      <div
-        ref={body}
-        data-lenis-prevent
-        data-ask-body=""
-        className="relative flex-1 overflow-y-auto overscroll-contain px-5.5 pt-4.5 pb-10 scrollbar-rule"
-      >
-        {children(opening)}
-      </div>
+      {children(opening)}
     </aside>
   );
 }

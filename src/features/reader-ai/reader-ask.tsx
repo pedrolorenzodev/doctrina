@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { fatherWorkHref } from "@/content/routes";
-import { closedAskDrawer, getAskDrawer, subscribeAskDrawer } from "@/lib/ask-drawer";
+import { markArrival } from "@/lib/arrival-mark";
+import { closedAskDrawer, getAskDrawer, subscribeAskDrawer, type AskPill } from "@/lib/ask-drawer";
 import { useActiveChapter } from "@/lib/active-chapter";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import type { Locale } from "@/lib/locale";
-import { scrollToLayoutPosition, scrollToY } from "@/lib/scroll";
+import { scrollOffset, scrollToLayoutPosition, scrollToY } from "@/lib/scroll";
 import { currentTranslationChoice, subscribeTranslationChoice } from "@/lib/translation-choice";
 import type { CiteHandlers } from "@/features/reader-ai/answer-parts";
 import { AskDrawer } from "@/features/reader-ai/ask-drawer";
@@ -31,9 +32,11 @@ type ReaderAskProps = {
   editions: { id: string; name: string }[];
   defaultEdition: string;
   johnSix: { book: string; chapter: number; href: string };
+  bibleHrefs: Record<string, string>;
 };
 
 const showMs = 200;
+const verseLead = 2;
 const hideMs = 120;
 const coarse = () => matchMedia("(pointer: coarse)").matches;
 
@@ -46,6 +49,7 @@ export function ReaderAsk({
   editions,
   defaultEdition,
   johnSix,
+  bibleHrefs,
 }: ReaderAskProps) {
   const router = useRouter();
   const active = useActiveChapter() ?? here;
@@ -121,6 +125,15 @@ export function ReaderAsk({
     scrollToLayoutPosition(unit);
   };
 
+  const goToPill = (chosen: AskPill) => {
+    const unit = chosen.unit;
+    const verse = unit ? document.getElementById(`${unit.prefix}v-${unit.verse}`) : null;
+    if (!unit || !verse) return;
+    const lead = document.getElementById(`${unit.prefix}v-${Math.max(1, unit.verse - verseLead)}`) ?? verse;
+    markArrival(verse);
+    scrollToY(lead.getBoundingClientRect().top + scrollY - scrollOffset());
+  };
+
   const closeWindow = () => {
     setWindowQuote(null);
     const from = windowFrom.current;
@@ -148,6 +161,12 @@ export function ReaderAsk({
     onQuote: (quote, anchor) => {
       if (firstTap(anchor, { quote })) return;
       hidePreview();
+      const bible = quotes[quote].bible;
+      if (bible) {
+        if (bible.book === johnSix.book && bible.chapter === johnSix.chapter) goToVerse(bible.verse);
+        else router.push(`${bibleHrefs[`${bible.book}.${bible.chapter}`]}?place=third#v-${bible.verse}`);
+        return;
+      }
       const father = quotes[quote].father;
       if (father) {
         router.push(`${fatherWorkHref(locale, father.workId)}#d-${father.anchor}`);
@@ -181,7 +200,7 @@ export function ReaderAsk({
         }
       >
         {(opening) => (
-          <div key={opening} data-ask-content="">
+          <div key={opening} data-ask-content="" className="flex min-h-0 flex-1 flex-col">
             <Chat
               text={text.chat}
               chapter={chapter}
@@ -193,6 +212,7 @@ export function ReaderAsk({
               onScopeFix={() => setScope("fathers")}
               onMarks={() => markWords(wordMarks, Number(Object.keys(wordMarks)[0]))}
               onAsk={clearWords}
+              onPillGo={goToPill}
             />
           </div>
         )}

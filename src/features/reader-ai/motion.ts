@@ -49,14 +49,13 @@ export function playEnter(element: HTMLElement | null, enter: Enter, delayMs = 0
 
 const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
-export function smoothScrollBox(host: HTMLElement, to: number): void {
+export function scrollBoxTo(host: HTMLElement, to: number, ms: number): void {
   const from = host.scrollTop;
   const distance = to - from;
-  if (prefersReducedMotion() || Math.abs(distance) < 2) {
+  if (prefersReducedMotion() || Math.abs(distance) < 1) {
     host.scrollTop = to;
     return;
   }
-  const duration = Math.min(720, 380 + Math.abs(distance) * 0.08);
   const start = performance.now();
   let stopped = false;
   const stop = () => {
@@ -66,7 +65,7 @@ export function smoothScrollBox(host: HTMLElement, to: number): void {
   host.addEventListener("touchstart", stop, { once: true, passive: true });
   const step = (now: number) => {
     if (stopped) return;
-    const t = Math.min(1, (now - start) / duration);
+    const t = Math.min(1, (now - start) / ms);
     host.scrollTop = from + distance * easeInOutCubic(t);
     if (t < 1) requestAnimationFrame(step);
   };

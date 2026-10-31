@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { verseText } from "@/features/reader-ai/answer-parts";
 import { motionClassName, motionStyle } from "@/features/reader-ai/motion";
 import { quotes, type QuoteId } from "@/features/reader-ai/quotes";
-import { afterAuthor, afterReference, verseReference } from "@/features/reader-ai/script";
+import { afterAuthor, afterReference, sourceOf, verseReference } from "@/features/reader-ai/script";
 import type { AskText } from "@/features/reader-ai/text";
 import { askTokens } from "@/features/reader-ai/tokens";
 
@@ -60,6 +60,21 @@ function Content({ target, text }: { target: CiteTarget; text: AskText["cite"] }
     );
   }
   const entry = quotes[target.quote];
+  if (entry.bible) {
+    return (
+      <>
+        <p className={`${quoteClassName} font-body`}>{entry.text}</p>
+        <p className={sourceClassName}>
+          <b className="font-medium text-ink-2">{sourceOf(entry)}</b>
+          {afterReference(entry.edition)}
+        </p>
+        <p className={checkClassName}>
+          <Check />
+          {text.verseCheck}
+        </p>
+      </>
+    );
+  }
   return (
     <>
       <p className={`${quoteClassName} font-head italic`}>{entry.text}</p>

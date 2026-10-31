@@ -1,5 +1,17 @@
 export type QuoteId =
-  "cyr224" | "cyr226" | "ddc" | "aug275" | "ccc1336" | "trent8" | "phil340" | "apol10" | "belg35" | "bfm7";
+  | "cyr224"
+  | "cyr226"
+  | "ddc"
+  | "aug275"
+  | "ccc1336"
+  | "trent8"
+  | "phil340"
+  | "apol10"
+  | "belg35"
+  | "bfm7"
+  | "matt26"
+  | "cor11"
+  | "john663";
 
 export type Quote = {
   who: string;
@@ -7,6 +19,7 @@ export type Quote = {
   text: string;
   edition: string;
   father?: { workId: string; at: string; anchor: string; original: string };
+  bible?: { book: string; chapter: number; verse: number };
 };
 
 export const quotes: Record<QuoteId, Quote> = {
@@ -98,7 +111,33 @@ export const quotes: Record<QuoteId, Quote> = {
     text: "La Cena del Señor es un acto simbólico de obediencia por el cual los miembros de la iglesia, al participar del pan y del fruto de la vid, conmemoran la muerte del Redentor y anuncian su segunda venida.",
     edition: "Texto oficial en español de la Convención Bautista del Sur. © SBC: cita breve y enlace.",
   },
+  matt26: {
+    who: "Mateo",
+    work: "26:26-28",
+    text: "Y comiendo ellos, tomó Jesús el pan, y bendijo, y lo partió, y dió á sus discípulos, y dijo: Tomad, comed: esto es mi cuerpo. Y tomando el vaso, y hechas gracias, les dió, diciendo: Bebed de él todos; Porque esto es mi sangre del nuevo pacto, la cual es derramada por muchos para remisión de los pecados.",
+    edition: "Reina-Valera 1909",
+    bible: { book: "Matt", chapter: 26, verse: 26 },
+  },
+  cor11: {
+    who: "1 Corintios",
+    work: "11:24-26",
+    text: "Y habiendo dado gracias, lo partió, y dijo: Tomad, comed: esto es mi cuerpo que por vosotros es partido: haced esto en memoria de mí. Asimismo [tomó] también la copa, después de haber cenado, diciendo: Esta copa es el nuevo pacto en mi sangre: haced esto todas las veces que bebiereis, en memoria de mí. Porque todas las veces que comiereis este pan, y bebiereis esta copa, la muerte del Señor anunciáis hasta que venga.",
+    edition: "Reina-Valera 1909",
+    bible: { book: "1Cor", chapter: 11, verse: 24 },
+  },
+  john663: {
+    who: "Juan",
+    work: "6:63",
+    text: "El espíritu es el que da vida; la carne nada aprovecha: las palabras que yo os he hablado, son espíritu, y son vida.",
+    edition: "Reina-Valera 1909",
+    bible: { book: "John", chapter: 6, verse: 63 },
+  },
 };
+
+export const bibleChapters: [book: string, chapter: number][] = [
+  ["Matt", 26],
+  ["1Cor", 11],
+];
 
 export const johnSix: Record<number, string> = {
   51: "Yo soy el pan vivo que he descendido del cielo: si alguno comiere de este pan, vivirá para siempre; y el pan que yo daré es mi carne, la cual yo daré por la vida del mundo.",

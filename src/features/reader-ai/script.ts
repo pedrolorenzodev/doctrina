@@ -1,8 +1,9 @@
 import type { Quote, QuoteId } from "@/features/reader-ai/quotes";
 
 export type AnswerId =
-  "fathers" | "traditions" | "whoIsRight" | "words" | "mine" | "meaning" | "none" | "scopeMiss" | "pastoral";
-export type ChipId = "fathers" | "traditions" | "whoIsRight" | "words" | "scopeFix" | "mine";
+  "fathers" | "traditions" | "bible" | "whoIsRight" | "words" | "mine" | "meaning" | "none" | "scopeMiss" | "pastoral";
+export type ChipId = "fathers" | "traditions" | "bible" | "whoIsRight" | "words" | "scopeFix" | "mine";
+export type Opening = "chapter" | "verse";
 
 export type Answer = {
   question: string;
@@ -40,6 +41,14 @@ export const answers: Record<AnswerId, Answer> = {
     prose:
       "De estos textos, solo el Catecismo católico cita este capítulo ({60}); los demás hablan de la Cena en general.",
     follow: ["whoIsRight", "fathers"],
+  },
+  bible: {
+    question: "¿En qué otro lugar de la Biblia se habla de este tema?",
+    scope: "Sobre la Biblia, Reina-Valera 1909.",
+    blocks: [{ quote: "matt26" }, { quote: "cor11" }, { quote: "john663" }],
+    prose:
+      "Los tres pasajes unen comer y beber con el cuerpo y la sangre de Jesús: la Última Cena, la carta de Pablo a los corintios y, en este mismo capítulo, el versículo que dice que «la carne nada aprovecha». Doctrina no los lee por ti: aquí están los textos.",
+    follow: ["fathers", "traditions"],
   },
   whoIsRight: {
     question: "¿Quién tiene razón?",
@@ -129,10 +138,26 @@ export const answers: Record<AnswerId, Answer> = {
 export const chips: Record<ChipId, string> = {
   fathers: "¿Qué dijeron los Padres sobre este versículo?",
   traditions: "¿Qué dice cada tradición?",
+  bible: "¿En qué otro lugar de la Biblia se habla de este tema?",
   whoIsRight: "¿Quién tiene razón?",
   words: "¿Qué palabras de 6:51 vuelven aquí?",
   scopeFix: "Buscar en los Padres",
   mine: "¿Qué subrayé en verde en este capítulo?",
+};
+
+export const suggestionSets: Record<Opening, { id: ChipId; label: string }[]> = {
+  chapter: [
+    { id: "fathers", label: "¿Qué dijeron los Padres sobre este capítulo?" },
+    { id: "traditions", label: "¿Cómo lo lee cada tradición?" },
+    { id: "bible", label: "¿Qué otros pasajes de la Biblia tratan este tema?" },
+    { id: "words", label: "¿Qué palabras se repiten en el capítulo?" },
+  ],
+  verse: [
+    { id: "fathers", label: "¿Qué creían los Padres sobre este versículo?" },
+    { id: "bible", label: "¿En qué otro lugar de la Biblia se habla de este tema?" },
+    { id: "traditions", label: "¿Qué dice cada tradición sobre este pasaje?" },
+    { id: "words", label: "¿Qué palabras de este versículo vuelven en los que siguen?" },
+  ],
 };
 
 export const traditions: { name: string; quotes: QuoteId[] }[] = [
@@ -156,7 +181,7 @@ export const yours = {
   note: "Comparar con 1 Corintios 11:27-29.",
 };
 
-export const sourceOf = (quote: Quote) => `${quote.who}, ${quote.work}`;
+export const sourceOf = (quote: Quote) => (quote.bible ? `${quote.who} ${quote.work}` : `${quote.who}, ${quote.work}`);
 export const afterAuthor = (quote: Quote) => `, ${quote.work}. ${quote.edition}`;
 export const afterReference = (edition: string) => `, ${edition}`;
 export const verseLabel = (verse: number) => `6:${verse}`;
@@ -172,6 +197,7 @@ export function routeQuestion(question: string): AnswerId {
   if (/padre|agustin|cirilo|patrist|ignacio/.test(text)) return "fathers";
   if (/razon|correct|quien acierta|debo creer|que creer|herej|verdadera\b/.test(text)) return "whoIsRight";
   if (/tradici|catolic|ortodox|luteran|reformad|bautist|iglesia|protestant/.test(text)) return "traditions";
+  if (/biblia|otro lugar|otros pasajes|cena|corintio|mateo/.test(text)) return "bible";
   if (/palabra|repite|vuelve|comer|beber|sangre|carne/.test(text)) return "words";
   if (/significa|quiere decir|explica|interpreta|literal|simbol/.test(text)) return "meaning";
   return "none";

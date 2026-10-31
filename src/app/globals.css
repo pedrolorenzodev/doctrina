@@ -57,6 +57,8 @@
   --text-source-name--line-height: 1.45;
   --text-reference: 15.5px;
   --text-reference--line-height: 1.5;
+  --text-ask-empty: 26px;
+  --text-ask-empty--line-height: 1.2;
   --text-answer-name: 25px;
   --text-answer-name--line-height: 1.2;
   --text-answer-name-mobile: 23px;
@@ -1018,6 +1020,19 @@
 @utility max-h-timeline {
   max-height: calc(100vh - var(--spacing-top) - 120px);
   max-height: calc(100dvh - var(--spacing-top) - 120px);
+}
+
+@utility chips-scroll {
+  scrollbar-width: none;
+  mask-image: linear-gradient(to right, transparent 0, #000 22px, #000 calc(100% - 22px), transparent 100%);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility fade-bottom {
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent 100%);
 }
 
 @utility scrollbar-rule {

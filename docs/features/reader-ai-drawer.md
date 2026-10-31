@@ -14,13 +14,19 @@ Blocks (each stops for Pedro's review and commit):
 3. The answer as the artifact draws it: live status with seconds and «Consultó N textos», 100 ms per word with a softer word entry and no line jump, quotes and prose, follow chips, actions; quote citations open the site's citation window.
 4. «Nueva conversación» and «Preguntas anteriores» (history in `localStorage`, the artifact's three examples as mock), «Preguntar sobre esto» on a selected fragment of an answer.
 
-Deliberate difference (agent's call): the artifact paints the head and the context line with a flat `--bg` that hides the wall texture under them (a seam in dark mode); the build keeps the texture continuous, as the approved drawer had it.
+Deliberate differences (agent's calls), block 2: the chip row folds in 220 ms on the first question (the artifact removes it at once); the field gets the focus on opening only with a fine pointer (the artifact always focuses it; on a phone that would raise the keyboard every time); the artifact's field grows to 120 px when opened from a verse (a measuring slip of its own), the build keeps 40 px. The «Biblia» answer's verse links lead to Matthew 26 and 1 Corinthians 11 with the third-verse arrival.
+
+Deliberate difference (agent's call), block 1: the artifact paints the head and the context line with a flat `--bg` that hides the wall texture under them (a seam in dark mode); the build keeps the texture continuous, as the approved drawer had it.
+
+**Open, to see again after block 4 (Pedro, 2026-10-31):** the fade and shadow between the answers and the pinned composer are «una mejora» but do not fully convince him; left as is for now.
 
 Usage log (Claude, Opus 5.5 high; weekly % from `usage_check.py`):
 | Step | Weekly before | Weekly after |
 |---|---|---|
 | Session review and plan | 23 % | 23 % |
 | Block 1, context line (built, measured against the artifact, specs, verify) | 23 % | 24 % |
+| Block 2, pinned composer, chips, selection line, follow and release (built, measured, 315 reader specs, verify) | 24 % | 24 % |
+| Pedro's note on block 2: the composer's own background looked abrupt → no own background (the drawer's texture), answers fade in 24 px, `shadow-strip` while text is hidden below | 24 % | 25 % |
 
 ## State (2026-10-29)
 

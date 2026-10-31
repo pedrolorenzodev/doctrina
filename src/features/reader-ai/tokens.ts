@@ -5,6 +5,7 @@ export const askTokens = {
   "--ask-sheet": sheetHeight,
   "--ask-sheet-shadow": sheetShadow,
   "--ask-leading-row": "1.4",
+  "--ask-leading-field": "1.45",
   "--ask-leading-ui": "normal",
   "--ask-leading-prose": "1.65",
   "--ask-leading-meta": "1.45",
