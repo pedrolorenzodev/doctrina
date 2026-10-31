@@ -4,6 +4,24 @@ Intent: the UI of variant 3 of the «IA en el lector» proposal (https://claude.
 
 Out of scope: the simplifier (every variant), any backend, AI calls, saving to the notes store.
 
+## Round 2: the inside of the drawer (2026-10-31, Pedro's picks; DECISIONS 2026-10-31)
+
+Source of truth: `docs/research/proposals/ai-chat/source/template.html` (the published artifact v1), options `ctx: line, cmp: pinned, sg: chips, pl: pill, speed: 100, scroll: follow, status: live, ans: blocks, len: none, fu: chips, fAsk, fHist`. Everything inside the drawer follows it pixel for pixel, «(actual)» options included.
+
+Blocks (each stops for Pedro's review and commit):
+1. Context line «Una línea, se abre a pedido» (scope «Todo el corpus», notes on by default).
+2. Pinned composer, chips over it with the empty heading, the selection line (hover; press scrolls the reader to the verse as third with the 2 s mark), «Seguir y soltar» with the «↓» button.
+3. The answer as the artifact draws it: live status with seconds and «Consultó N textos», 100 ms per word with a softer word entry and no line jump, quotes and prose, follow chips, actions; quote citations open the site's citation window.
+4. «Nueva conversación» and «Preguntas anteriores» (history in `localStorage`, the artifact's three examples as mock), «Preguntar sobre esto» on a selected fragment of an answer.
+
+Deliberate difference (agent's call): the artifact paints the head and the context line with a flat `--bg` that hides the wall texture under them (a seam in dark mode); the build keeps the texture continuous, as the approved drawer had it.
+
+Usage log (Claude, Opus 5.5 high; weekly % from `usage_check.py`):
+| Step | Weekly before | Weekly after |
+|---|---|---|
+| Session review and plan | 23 % | 23 % |
+| Block 1, context line (built, measured against the artifact, specs, verify) | 23 % | 24 % |
+
 ## State (2026-10-29)
 
 - **Integrated in this repo (fourteenth session), not committed yet.** New files copied verbatim from the kit; `reader-body.tsx` and `selection-toolbar.tsx` by patch; `reader-strip.tsx` and the chapter `page.tsx` merged by hand (`6b98b48` had removed the tree button, so the `treeToggle` hunks are gone). The clone `~/Desktop/dev/doctrina-ai` and the kit are no longer the place to work: everything happens here.

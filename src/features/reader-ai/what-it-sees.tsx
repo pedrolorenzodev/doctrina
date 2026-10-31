@@ -14,14 +14,14 @@ type WhatItSeesProps = {
   onScope: (scope: Scope) => void;
 };
 
-const labelClassName = "text-label leading-(--ask-leading-ui) font-medium text-ink-3";
+const labelClassName = "text-label leading-label font-medium text-ink-3";
 const rowClassName =
   "flex min-h-7.5 items-center justify-between gap-2.5 text-btn leading-(--ask-leading-row) text-ink-2";
 
 export function WhatItSees({ text, chapter, edition, notesOn, onNotes, scope, onScope }: WhatItSeesProps) {
   return (
-    <div data-ask-sees="" className="mb-4 grid gap-1.5 border-b border-rule pb-3.5">
-      <p className={`mb-0.5 ${labelClassName}`}>{text.label}</p>
+    <div data-ask-sees="" className="grid gap-1.5 px-5.5 pt-3 pb-4">
+      <p className={labelClassName}>{text.label}</p>
       <div className={rowClassName}>
         <span>{text.chapter}</span>
         <small className="text-label leading-(--ask-leading-ui) text-ink-3">
@@ -58,7 +58,7 @@ export function WhatItSees({ text, chapter, edition, notesOn, onNotes, scope, on
         <i className="inline-block size-2.5 rounded-full bg-hls-green shadow-swatch" />
         <span>{text.green}</span>
       </div>
-      <p className={`mt-2.5 mb-0.5 ${labelClassName}`}>{text.where}</p>
+      <p className={`mt-2 ${labelClassName}`}>{text.where}</p>
       <ScopeControl
         label={text.where}
         value={scope}

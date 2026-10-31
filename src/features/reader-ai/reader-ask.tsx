@@ -13,13 +13,13 @@ import type { CiteHandlers } from "@/features/reader-ai/answer-parts";
 import { AskDrawer } from "@/features/reader-ai/ask-drawer";
 import { BackBar } from "@/features/reader-ai/back-bar";
 import { Chat } from "@/features/reader-ai/chat";
+import { ContextLine } from "@/features/reader-ai/context-line";
 import { CitePreview, type CiteTarget } from "@/features/reader-ai/cite-preview";
 import { QuoteWindow } from "@/features/reader-ai/quote-window";
 import { quotes, type QuoteId } from "@/features/reader-ai/quotes";
 import type { Scope } from "@/features/reader-ai/scope-control";
 import { wordMarks } from "@/features/reader-ai/script";
 import type { AskText } from "@/features/reader-ai/text";
-import { WhatItSees } from "@/features/reader-ai/what-it-sees";
 import { clearWords, markWords } from "@/features/reader-ai/word-marks";
 
 type ReaderAskProps = {
@@ -54,7 +54,8 @@ export function ReaderAsk({
     editions.find((entry) => entry.id === stored) ?? editions.find((entry) => entry.id === defaultEdition);
   const bookTitle = books.find((book) => book.id === active.book)?.title ?? "";
   const chapter = chapterTitle.replace("{book}", bookTitle).replace("{chapter}", String(active.chapter));
-  const [notesOn, setNotesOn] = useState(false);
+  const [notesOn, setNotesOn] = useState(true);
+  const [contextOpen, setContextOpen] = useState(false);
   const [scope, setScope] = useState<Scope>("all");
   const pill = useSyncExternalStore(
     subscribeAskDrawer,
@@ -161,18 +162,26 @@ export function ReaderAsk({
 
   return (
     <>
-      <AskDrawer title={text.title} closeLabel={text.close}>
+      <AskDrawer
+        title={text.title}
+        closeLabel={text.close}
+        bar={
+          <ContextLine
+            text={text.sees}
+            chapter={chapter}
+            edition={edition?.name ?? ""}
+            notesOn={notesOn}
+            onNotes={setNotesOn}
+            scope={scope}
+            scopeName={text.sees.scopes[scope].replace("{chapter}", chapter)}
+            onScope={setScope}
+            open={contextOpen}
+            onOpen={setContextOpen}
+          />
+        }
+      >
         {(opening) => (
           <div key={opening} data-ask-content="">
-            <WhatItSees
-              text={text.sees}
-              chapter={chapter}
-              edition={edition?.name ?? ""}
-              notesOn={notesOn}
-              onNotes={setNotesOn}
-              scope={scope}
-              onScope={setScope}
-            />
             <Chat
               text={text.chat}
               chapter={chapter}

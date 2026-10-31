@@ -187,31 +187,74 @@ const inDrawer = (page: Page, selector: string) =>
     };
   }, selector);
 
+const contextLine = "[data-ask-context] > div:first-child";
+const contextButton = "[data-ask-context] button[aria-expanded]";
+
+const openContext = async (page: Page) => {
+  await page.locator(contextButton).click();
+  await expect(page.locator("#ask-context-sees")).toHaveAttribute("data-open", "true");
+  await page.waitForTimeout(350);
+};
+
 test.describe("ask drawer: what it can see", () => {
-  test("the block names the chapter and edition, with the artifact's measures", async ({ page }) => {
+  test("one line under the head names the chapter, the edition and where it searches; the block stays shut", async ({
+    page,
+  }) => {
     await openDrawer(page);
-    await expect(page.locator("[data-ask-sees]")).toContainText("Juan 6, Reina-Valera 1909");
-    expect(await inDrawer(page, "[data-ask-sees]")).toEqual({ x: 22, y: 69, w: 335, h: 189 });
-    expect(await inDrawer(page, "[role=switch]")).toEqual({ x: 323, y: 133, w: 34, h: 20 });
-    expect(await inDrawer(page, "[data-ask-sees] [role=group]")).toEqual({ x: 22, y: 203, w: 335, h: 40 });
+    await expect(page.locator(`${contextLine} > span`)).toHaveText("Juan 6, Reina-Valera 1909");
+    await expect(page.locator(contextButton)).toHaveText("Todo el corpus");
+    await expect(page.locator(contextButton)).toHaveAttribute("aria-expanded", "false");
+    expect(await inDrawer(page, contextLine)).toEqual({ x: 0, y: 51, w: 379, h: 36 });
+    expect(await inDrawer(page, contextButton)).toEqual({ x: 249, y: 53.5, w: 122, h: 30 });
+    expect(await page.locator("#ask-context-sees").evaluate((el) => el.getBoundingClientRect().height)).toBe(1);
+    expect(await page.locator("#ask-context-sees").evaluate((el) => (el as HTMLElement).inert)).toBe(true);
   });
 
-  test("the switch reveals «1 nota 1 subrayado verde» and swaps the third suggestion", async ({ page }) => {
+  test("the line opens the block in 300 ms with the reveal curve; notes are on and the whole corpus is chosen", async ({
+    page,
+  }) => {
     await openDrawer(page);
-    const line = page.locator("[data-ask-sees] > div[aria-hidden]");
-    await expect(line).toHaveAttribute("aria-hidden", "true");
-    await expect(page.locator("[data-ask-suggestions] li").nth(2)).toContainText("¿Qué palabras de 6:51 vuelven aquí?");
-    await page.locator("[role=switch]").click();
+    const timing = await page.locator("#ask-context-sees").evaluate(async (el) => {
+      document.querySelector<HTMLElement>("[data-ask-context] button[aria-expanded]")!.click();
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+      return el.getAnimations().map((animation) => {
+        const effect = animation.effect!.getTiming();
+        return [(animation as CSSTransition).transitionProperty, effect.duration, effect.easing];
+      });
+    });
+    expect(timing).toContainEqual(["max-height", 300, "cubic-bezier(0.22, 1, 0.36, 1)"]);
+    await page.waitForTimeout(350);
+    await expect(page.locator(contextButton)).toHaveAttribute("aria-expanded", "true");
+    expect(await page.locator(`${contextButton} svg`).evaluate((el) => getComputedStyle(el).rotate)).toBe("180deg");
+    expect(await inDrawer(page, "[data-ask-sees]")).toEqual({ x: 0, y: 87, w: 379, h: 213 });
+    expect(await inDrawer(page, "[role=switch]")).toEqual({ x: 323, y: 161, w: 34, h: 20 });
+    expect(await inDrawer(page, "[data-ask-sees] [role=group]")).toEqual({ x: 22, y: 242, w: 335, h: 42 });
     await expect(page.locator("[role=switch]")).toHaveAttribute("aria-checked", "true");
-    await expect(line).toHaveAttribute("aria-hidden", "false");
-    await expect.poll(() => line.evaluate((el) => el.getBoundingClientRect().height)).toBe(15);
+    await expect(page.locator("[data-ask-sees] > div[aria-hidden]")).toHaveAttribute("aria-hidden", "false");
+    await expect(page.locator("[data-ask-sees] [role=group] button[aria-pressed=true]")).toHaveText("Todo el corpus");
+    await page.locator(contextButton).click();
+    await expect(page.locator("#ask-context-sees")).not.toHaveAttribute("data-open", "true");
+  });
+
+  test("the switch hides «1 nota 1 subrayado verde» and swaps the third suggestion", async ({ page }) => {
+    await openDrawer(page);
+    await openContext(page);
+    const line = page.locator("[data-ask-sees] > div[aria-hidden]");
     await expect(page.locator("[data-ask-suggestions] li").nth(2)).toContainText(
       "¿Qué subrayé en verde en este capítulo?",
     );
+    await page.locator("[role=switch]").click();
+    await expect(page.locator("[role=switch]")).toHaveAttribute("aria-checked", "false");
+    await expect(line).toHaveAttribute("aria-hidden", "true");
+    await expect.poll(() => line.evaluate((el) => el.getBoundingClientRect().height)).toBe(0);
+    await expect(page.locator("[data-ask-suggestions] li").nth(2)).toContainText("¿Qué palabras de 6:51 vuelven aquí?");
   });
 
-  test("the scope indicator slides to the chosen place in 340 ms with the reveal curve", async ({ page }) => {
+  test("the scope indicator slides to the chosen place in 340 ms and the line names the new scope", async ({
+    page,
+  }) => {
     await openDrawer(page);
+    await openContext(page);
     const indicator = page.locator("[data-ask-sees] [role=group] > span[aria-hidden]");
     const timing = await indicator.evaluate(async (el) => {
       el.parentElement!.querySelector("button")!.click();
@@ -223,6 +266,7 @@ test.describe("ask drawer: what it can see", () => {
     });
     expect(timing).toContainEqual(["translate", 340, "cubic-bezier(0.22, 1, 0.36, 1)"]);
     await expect.poll(async () => Math.round((await indicator.boundingBox())!.x)).toBe(26);
+    await expect(page.locator(contextButton)).toHaveText("Juan 6");
   });
 });
 
@@ -287,6 +331,7 @@ test.describe("ask drawer: conversation", () => {
     page,
   }) => {
     await openDrawer(page);
+    await openContext(page);
     await page.locator("[data-ask-sees] [role=group] button").first().click();
     await page.locator("[data-ask-suggestions] button").first().click();
     await expect(page.locator("[data-ask-answer]")).toContainText("En Juan 6 está solo el texto bíblico.", {
@@ -299,7 +344,8 @@ test.describe("ask drawer: conversation", () => {
 
   test("the words answer marks the repeated words in 6:51 and 6:53 behind the text", async ({ page }) => {
     await openDrawer(page);
-    await page.locator("[data-ask-suggestions] button").nth(2).click();
+    await page.locator(`${drawer} textarea`).fill("¿Qué palabras de 6:51 vuelven en 6:53?");
+    await page.keyboard.press("Enter");
     await expect(page.locator("[data-ask-marks]")).toHaveAttribute("data-shown", "", { timeout: 3000 });
     expect(await page.locator("[data-ask-marks] > div").count()).toBe(8);
     const first = await page.evaluate(
