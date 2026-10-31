@@ -203,6 +203,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
         editions={views.map(({ id, displayName }) => ({ id, name: displayName }))}
         defaultEdition={defaultId}
         johnSix={{ book: "John", chapter: 6, href: bibleChapterHref(locale, getBibleBook("John")!, 6) }}
+        citationText={text.citation}
         bibleHrefs={Object.fromEntries(
           bibleChapters.map(([id, number]) => [`${id}.${number}`, bibleChapterHref(locale, getBibleBook(id)!, number)]),
         )}

@@ -20,4 +20,5 @@ export type CitationView = {
   externalLink: { href: string; label: string } | null;
   copyText: string | null;
   fullSource: boolean;
+  fullSourceHref?: string;
 };

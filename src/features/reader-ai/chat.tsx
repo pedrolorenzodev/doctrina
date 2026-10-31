@@ -1,16 +1,22 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import { clearAskPill, type AskPill } from "@/lib/ask-drawer";
+import { clearAskPill, openAskDrawer, type AskPill } from "@/lib/ask-drawer";
 import { prefersReducedMotion } from "@/lib/branch-motion";
 import { Answer } from "@/features/reader-ai/answer";
 import { Entering, type CiteHandlers } from "@/features/reader-ai/answer-parts";
 import { focusRingClassName, motionClassName, motionStyle, scrollBoxTo } from "@/features/reader-ai/motion";
+import {
+  currentConversation,
+  recordEntry,
+  startConversation,
+  type SavedEntry,
+} from "@/features/reader-ai/conversations";
 import { answers, chips, routeQuestion, suggestionSets, type AnswerId, type ChipId } from "@/features/reader-ai/script";
 import type { Scope } from "@/features/reader-ai/scope-control";
 import type { AskText } from "@/features/reader-ai/text";
 
-type Entry = { key: number; id: AnswerId; question: string; pill: AskPill | null; meta: string };
+type Entry = SavedEntry & { replay?: boolean };
 
 type ChatProps = {
   text: AskText["chat"];
@@ -24,6 +30,8 @@ type ChatProps = {
   onMarks: () => void;
   onAsk: () => void;
   onPillGo: (pill: AskPill) => void;
+  chapterSource: string;
+  restored: boolean;
 };
 
 const foldMs = 220;
@@ -36,6 +44,13 @@ const followShare = 0.16;
 const awayPx = 80;
 const bottomPx = 8;
 const upKeys = ["ArrowUp", "PageUp", "Home"];
+const answerSeconds = 4;
+const fragmentMax = 160;
+const toolbarWidth = 180;
+const toolbarHalf = 80;
+const toolbarAbove = 48;
+const toolbarTop = 56;
+const edgePx = 8;
 
 function Cross() {
   return (
@@ -66,8 +81,19 @@ export function Chat({
   onMarks,
   onAsk,
   onPillGo,
+  chapterSource,
+  restored,
 }: ChatProps) {
-  const [entries, setEntries] = useState<Entry[]>([]);
+  const opening = pill?.unit ? "verse" : "chapter";
+  const [entries, setEntries] = useState<Entry[]>(() => {
+    const now = currentConversation();
+    if (!restored && now.opening !== opening) {
+      startConversation(opening);
+      return [];
+    }
+    return now.entries.map((entry) => ({ ...entry, replay: true }));
+  });
+  const [fragment, setFragment] = useState<{ x: number; y: number; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
   const [chipsLeaving, setChipsLeaving] = useState(false);
   const [draft, setDraft] = useState("");
@@ -77,11 +103,10 @@ export function Chat({
   const field = useRef<HTMLTextAreaElement>(null);
   const chipsRow = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
-  const counter = useRef(0);
+  const counter = useRef(entries.reduce((most, entry) => Math.max(most, entry.key), 0));
   const following = useRef(true);
   const busyNow = useRef(false);
-  const asked = useRef(0);
-  const opening = pill?.unit ? "verse" : "chapter";
+  const asked = useRef(entries.length);
   const where = pill?.unit ? pill.reference : chapter;
   const chipsShown = entries.length === 0 || chipsLeaving;
 
@@ -180,6 +205,49 @@ export function Chat({
     };
   }, [updateAway]);
 
+  useEffect(() => {
+    const host = body.current;
+    const drawer = host?.closest<HTMLElement>("[data-ask-drawer]");
+    if (!host || !drawer) return;
+    let timer = 0;
+    const onUp = () => {
+      clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        const selection = getSelection();
+        const picked = selection && !selection.isCollapsed ? selection.toString().trim() : "";
+        const node = selection?.anchorNode ?? null;
+        const element = node instanceof Element ? node : (node?.parentElement ?? null);
+        if (!selection || !picked || !element?.closest("[data-ask-answer]") || !host.contains(element)) {
+          setFragment(null);
+          return;
+        }
+        const range = selection.getRangeAt(0).getBoundingClientRect();
+        const frame = drawer.getBoundingClientRect();
+        setFragment({
+          x: Math.max(
+            edgePx,
+            Math.min(frame.width - toolbarWidth, range.left - frame.left + range.width / 2 - toolbarHalf),
+          ),
+          y: Math.max(toolbarTop, range.top - frame.top - toolbarAbove),
+          text: picked.length > fragmentMax ? `${picked.slice(0, fragmentMax - 3)}…` : picked,
+        });
+      }, 10);
+    };
+    const onDown = (event: PointerEvent) => {
+      if (!(event.target instanceof Element && event.target.closest("[data-ask-fragment]"))) setFragment(null);
+    };
+    const onScroll = () => setFragment(null);
+    document.addEventListener("pointerup", onUp);
+    document.addEventListener("pointerdown", onDown);
+    host.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("pointerup", onUp);
+      document.removeEventListener("pointerdown", onDown);
+      host.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   const ask = (chip: ChipId | null, typed?: string, label?: string) => {
     if (busy) return;
     let id: AnswerId = chip === null ? routeQuestion(typed ?? "") : chip === "scopeFix" ? "fathers" : chip;
@@ -198,17 +266,16 @@ export function Chat({
     if (entries.length === 0) setChipsLeaving(!prefersReducedMotion());
     counter.current += 1;
     const answer = answers[id];
-    const searched = text.searchedIn.replace("{scope}", scopeNames[currentScope]);
-    setEntries((current) => [
-      ...current,
-      {
-        key: counter.current,
-        id,
-        question: typed || label || answer.question || (chip ? chips[chip] : ""),
-        pill,
-        meta: answer.scope ? `${searched} ${answer.scope}` : `${searched} `,
-      },
-    ]);
+    const entry: SavedEntry = {
+      key: counter.current,
+      id,
+      question: typed || label || answer.question || (chip ? chips[chip] : ""),
+      pill,
+      scopeName: scopeNames[currentScope],
+      seconds: answerSeconds,
+    };
+    setEntries((current) => [...current, entry]);
+    recordEntry(entry);
     clearAskPill();
   };
 
@@ -249,20 +316,23 @@ export function Chat({
                   enter={prefersReducedMotion() ? "none" : "pop"}
                   className="grid min-w-0 grid-cols-1 gap-2.5"
                 >
-                  <p className="mb-3 font-head text-strip-name leading-(--ask-leading-question) font-normal text-pretty text-ink opsz-24">
+                  <p className="m-0 font-head text-panel-reference leading-group font-normal text-pretty text-ink opsz-24">
                     {entry.question}
                   </p>
                   {entry.pill ? (
-                    <span className="inline-flex max-w-full items-baseline gap-1.5 text-label leading-(--ask-leading-ui) text-ink-3">
+                    <span className="inline-flex max-w-full items-baseline gap-1.5 text-label leading-label text-ink-3">
                       <b className="flex-none font-medium text-cite">{entry.pill.reference}</b>
-                      <span className="truncate font-body text-btn leading-(--ask-leading-ui) font-light italic guillemets">
+                      <span className="truncate font-body text-ui-sm leading-group font-light italic guillemets">
                         {entry.pill.text}
                       </span>
                     </span>
                   ) : null}
                   <Answer
                     id={entry.id}
-                    meta={entry.meta}
+                    scopeName={entry.scopeName}
+                    replay={entry.replay ?? false}
+                    seconds={entry.seconds}
+                    chapterSource={chapterSource}
                     text={text}
                     stop={stop}
                     handlers={handlers}
@@ -402,6 +472,27 @@ export function Chat({
           </div>
         </div>
       </div>
+      {fragment ? (
+        <div
+          role="toolbar"
+          data-ask-fragment=""
+          style={{ "--x": `${fragment.x}px`, "--y": `${fragment.y}px` } as React.CSSProperties}
+          className="absolute top-(--y) left-(--x) z-20 rounded-8 border border-rule-2 bg-panel p-1 shadow-floating"
+        >
+          <button
+            type="button"
+            data-bare-focus=""
+            onClick={() => {
+              openAskDrawer({ pill: { reference: text.fromAnswer, text: fragment.text }, focus: true });
+              setFragment(null);
+              getSelection()?.removeAllRanges();
+            }}
+            className={`min-h-8.5 cursor-pointer rounded-6 px-3 text-btn leading-(--ask-leading-ui) font-medium text-ink hover:bg-hover ${focusRingClassName}`}
+          >
+            {text.askThis}
+          </button>
+        </div>
+      ) : null}
     </>
   );
 }

@@ -245,3 +245,8 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **First full chromium run ever (2026-10-30): 983 passed, 7 failed.** · The five above and the touch tap on a muted tab (the last tab is off screen on a phone: scroll it into view) were ours; `e2e/reader-keep-position.spec.ts` «A+ keeps the verse at the top» still fails (389 px drift) and was not investigated.
 - **Excerpt unions in the registry types.** · A citation whose first excerpt has no `es` fails `excerpt.es.text`. · Check `"es" in excerpt` (`teach-section.tsx`).
 
+## Ask drawer, round 2 (2026-10-31, seventeenth session)
+
+- **Every direct child of a `texture-layer` box is `position: relative`.** · The history list, placed inside the drawer's content, measured its `absolute` offset from that content (88 px too low); an overlay that must cover the drawer under its head is a direct child of the `aside` (`AskDrawer`'s `overlay` slot). · `src/features/reader-ai/ask-drawer.tsx`
+- **`growSmoothly` starts from the height it last showed, not from the box's current height.** · By the time the ResizeObserver runs, an `auto` box already has its new height, so measuring it animated from the new height to itself (a 25 px jump per line). Measure the painted result after the frame (a `MessageChannel` task after `requestAnimationFrame`), not inside it. · `src/features/reader-ai/motion.ts`, `e2e/reader-ai-drawer.spec.ts`
+

@@ -32,8 +32,11 @@ const enterFrames: Record<Exclude<Enter, "none">, { frames: Keyframe[]; options:
     options: { duration: 200, easing: "cubic-bezier(0.25, 0.1, 0.25, 1)", fill: "both" },
   },
   word: {
-    frames: [{ opacity: 0 }, { opacity: 1 }],
-    options: { duration: 180, easing: "cubic-bezier(0.25, 0.1, 0.25, 1)", fill: "both" },
+    frames: [
+      { opacity: 0, filter: "blur(1.5px)" },
+      { opacity: 1, filter: "blur(0)" },
+    ],
+    options: { duration: 320, easing: "cubic-bezier(0.25, 0.1, 0.25, 1)", fill: "backwards" },
   },
   pill: {
     frames: [{ opacity: 0 }, { opacity: 1 }],
@@ -70,4 +73,33 @@ export function scrollBoxTo(host: HTMLElement, to: number, ms: number): void {
     if (t < 1) requestAnimationFrame(step);
   };
   requestAnimationFrame(step);
+}
+
+const growMs = 220;
+
+export function growSmoothly(outer: HTMLElement, inner: HTMLElement): () => void {
+  let shown = inner.offsetHeight;
+  let growing: Animation | null = null;
+  const observer = new ResizeObserver(() => {
+    const next = inner.offsetHeight;
+    if (next === shown) return;
+    const from = growing ? outer.getBoundingClientRect().height : shown;
+    shown = next;
+    if (prefersReducedMotion()) return;
+    growing?.cancel();
+    outer.style.overflow = "hidden";
+    growing = outer.animate([{ height: `${from}px` }, { height: `${next}px` }], {
+      duration: growMs,
+      easing: "cubic-bezier(0.25, 0.1, 0.25, 1)",
+    });
+    growing.onfinish = () => {
+      outer.style.overflow = "";
+      growing = null;
+    };
+  });
+  observer.observe(inner);
+  return () => {
+    observer.disconnect();
+    growing?.cancel();
+  };
 }

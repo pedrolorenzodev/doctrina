@@ -14,6 +14,10 @@ Blocks (each stops for Pedro's review and commit):
 3. The answer as the artifact draws it: live status with seconds and «Consultó N textos», 100 ms per word with a softer word entry and no line jump, quotes and prose, follow chips, actions; quote citations open the site's citation window.
 4. «Nueva conversación» and «Preguntas anteriores» (history in `localStorage`, the artifact's three examples as mock), «Preguntar sobre esto» on a selected fragment of an answer.
 
+Block 4, how it works: conversations live in `localStorage` under `doctrina-ask-conversations` (newest first, 50 kept; each with its opening, start date and entries: question, answer id, the selection, scope name, seconds); the current one stays in memory, so closing and reopening the drawer keeps it, and opening it from a verse after a chapter conversation (or the reverse) starts a new one, as in the artifact; a saved conversation or an example comes back at once, without streaming. The artifact's three example questions follow the real ones (TODO at the call site: drop them when the answers are real). Deliberate differences: «Preguntar sobre esto» also answers a touch selection (pointerup, not only mouseup); the selection that comes from an answer is not clickable (no verse).
+
+Deliberate differences (agent's calls), block 3: verse and source links stay buttons (inline-block, 0.6 px lower than the artifact's inline links); «Consultó 1 texto» in the singular (the artifact says «1 textos»); the consulted list also names the quotes of the disputed answer; «Detener» also stops the quotes, not only the words; the after-answer chips and actions fade in 200 ms; the citation window is the site's own, with the edition as its note and no date (the mock quotes carry none). Measured on painted frames: the answer grows at most 4.4 px per frame (220 ms per change) and the follow scroll 3 px per frame; each word enters in 320 ms (opacity and a 1.5 px blur).
+
 Deliberate differences (agent's calls), block 2: the chip row folds in 220 ms on the first question (the artifact removes it at once); the field gets the focus on opening only with a fine pointer (the artifact always focuses it; on a phone that would raise the keyboard every time); the artifact's field grows to 120 px when opened from a verse (a measuring slip of its own), the build keeps 40 px. The «Biblia» answer's verse links lead to Matthew 26 and 1 Corinthians 11 with the third-verse arrival.
 
 Deliberate difference (agent's call), block 1: the artifact paints the head and the context line with a flat `--bg` that hides the wall texture under them (a seam in dark mode); the build keeps the texture continuous, as the approved drawer had it.
@@ -27,6 +31,8 @@ Usage log (Claude, Opus 5.5 high; weekly % from `usage_check.py`):
 | Block 1, context line (built, measured against the artifact, specs, verify) | 23 % | 24 % |
 | Block 2, pinned composer, chips, selection line, follow and release (built, measured, 315 reader specs, verify) | 24 % | 24 % |
 | Pedro's note on block 2: the composer's own background looked abrupt → no own background (the drawer's texture), answers fade in 24 px, `shadow-strip` while text is hidden below | 24 % | 25 % |
+| Block 3, the answer as the artifact draws it, live status, soft words and growth, citations in the site's window (built, measured, 514 specs, verify) | 25 % | 25 % |
+| Block 4, «Nueva conversación», «Preguntas anteriores» (localStorage), «Preguntar sobre esto» (built, measured, 519 specs, verify) | 25 % | 25 % |
 
 ## State (2026-10-29)
 

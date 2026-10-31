@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type RefObject } from "react";
+import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import { prefersReducedMotion } from "@/lib/branch-motion";
 import {
   CiteButton,
@@ -16,10 +16,12 @@ import {
   type CiteHandlers,
 } from "@/features/reader-ai/answer-parts";
 import { AnswerActions } from "@/features/reader-ai/answer-actions";
-import { motionClassName, motionStyle, type Enter } from "@/features/reader-ai/motion";
+import { focusRingClassName, growSmoothly, type Enter } from "@/features/reader-ai/motion";
+import { quotes, type QuoteId } from "@/features/reader-ai/quotes";
 import {
   answers,
   chips,
+  sourceOf,
   traditions,
   verseReference,
   yours,
@@ -29,45 +31,101 @@ import {
 import type { AskText } from "@/features/reader-ai/text";
 
 type Piece =
-  | { kind: "status"; leaving: boolean }
+  | { kind: "meta" }
   | { kind: "plain" }
   | { kind: "disputed" }
   | { kind: "words" }
   | { kind: "quote"; index: number }
-  | { kind: "tradition"; index: number }
   | { kind: "yourHighlight" }
   | { kind: "yourNote" }
   | { kind: "prose" }
   | { kind: "stopped" }
-  | { kind: "follow" }
-  | { kind: "actions" };
+  | { kind: "foot" };
 
 type Shown = { piece: Piece; enter: Enter };
 
+type Status = { phase: number; seconds: number } | { done: true; seconds: number } | null;
+
 type AnswerProps = {
   id: AnswerId;
-  meta: string;
+  scopeName: string;
+  chapterSource: string;
   text: AskText["chat"];
   stop: RefObject<boolean>;
   handlers: CiteHandlers;
   onMarks: () => void;
   onFollow: (chip: ChipId) => void;
   onDone: () => void;
+  replay: boolean;
+  seconds: number;
 };
 
-const wordMs = 55;
+const statusMs = 3800;
+const phaseMs = 1300;
+const tickMs = 200;
+const quoteGapMs = 480;
+const wordMs = 100;
 
-export function Answer({ id, meta, text, stop, handlers, onMarks, onFollow, onDone }: AnswerProps) {
+const blocksOf = (id: AnswerId): { quote: QuoteId; head?: string }[] => {
   const answer = answers[id];
+  if (answer.traditions)
+    return traditions.flatMap((group) => group.quotes.map((quote) => ({ quote, head: group.name })));
+  return answer.blocks ?? [];
+};
+
+function Chevron() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className="transition-transform duration-200 ease-standard group-aria-expanded/stat:rotate-90 motion-reduce:transition-none"
+    >
+      <path d="M6 3.5L10.5 8 6 12.5" />
+    </svg>
+  );
+}
+
+const statClassName = "flex min-h-7.5 items-center gap-2 text-left text-ui-sm leading-(--ask-leading-row) text-ink-3";
+
+export function Answer({
+  id,
+  scopeName,
+  chapterSource,
+  text,
+  stop,
+  handlers,
+  onMarks,
+  onFollow,
+  onDone,
+  replay,
+  seconds,
+}: AnswerProps) {
+  const answer = answers[id];
+  const blocks = useMemo(() => blocksOf(id), [id]);
+  const outer = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
   const [pieces, setPieces] = useState<Shown[]>([]);
   const [words, setWords] = useState(0);
-  const [instant] = useState(() => prefersReducedMotion());
+  const [status, setStatus] = useState<Status>(null);
+  const [listOpen, setListOpen] = useState(false);
+  const [instant] = useState(() => replay || prefersReducedMotion());
   const tokens = answer.prose ? answer.prose.split(" ") : [];
   const latest = useRef({ onMarks, onDone });
   useEffect(() => {
     latest.current = { onMarks, onDone };
   });
+
+  useEffect(() => {
+    if (!outer.current || !body.current) return;
+    return growSmoothly(outer.current, body.current);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -82,49 +140,43 @@ export function Answer({ id, meta, text, stop, handlers, onMarks, onFollow, onDo
     const run = async () => {
       setPieces([]);
       setWords(0);
-      if (!answer.fixed && !answer.plain && !instant) {
-        add({ kind: "status", leaving: false }, "fade");
-        await wait(750);
+      const started = performance.now();
+      if (!answer.fixed && !instant) {
+        setStatus({ phase: 0, seconds: 0 });
+        const ticker = window.setInterval(() => {
+          const elapsed = performance.now() - started;
+          setStatus({ phase: Math.min(2, Math.floor(elapsed / phaseMs)), seconds: Math.floor(elapsed / 1000) });
+        }, tickMs);
+        timers.push(ticker);
+        await wait(statusMs);
+        clearInterval(ticker);
         if (cancelled) return;
-        setPieces((current) =>
-          current.map((shown) =>
-            shown.piece.kind === "status" ? { ...shown, piece: { kind: "status", leaving: true } } : shown,
-          ),
-        );
-        await wait(200);
-        if (cancelled) return;
-        setPieces((current) => current.filter((shown) => shown.piece.kind !== "status"));
       }
-      if (answer.plain) {
-        await wait(250);
-        if (cancelled) return;
-        add({ kind: "plain" }, "fade");
-      }
+      if (!answer.fixed)
+        setStatus({
+          done: true,
+          seconds: instant ? seconds : Math.max(1, Math.round((performance.now() - started) / 1000)),
+        });
+      add({ kind: "meta" }, "none");
+      if (answer.plain) add({ kind: "plain" }, "fade");
       if (answer.disputed) {
         add({ kind: "disputed" });
-        await wait(260);
+        await wait(quoteGapMs);
       }
       if (answer.words) {
         add({ kind: "words" });
-        await wait(260);
+        await wait(quoteGapMs);
       }
-      for (const [index] of (answer.blocks ?? []).entries()) {
+      for (const [index] of blocks.entries()) {
         if (cancelled || stop.current) break;
         add({ kind: "quote", index });
-        await wait(280);
-      }
-      if (answer.traditions) {
-        for (const [index] of traditions.entries()) {
-          if (cancelled || stop.current) break;
-          add({ kind: "tradition", index });
-          await wait(280);
-        }
+        await wait(quoteGapMs);
       }
       if (answer.mine) {
         add({ kind: "yourHighlight" });
-        await wait(280);
+        await wait(quoteGapMs);
         add({ kind: "yourNote" });
-        await wait(280);
+        await wait(quoteGapMs);
       }
       if (cancelled) return;
       if (answer.marks) {
@@ -143,34 +195,29 @@ export function Answer({ id, meta, text, stop, handlers, onMarks, onFollow, onDo
       }
       if (cancelled) return;
       if (stop.current) add({ kind: "stopped" }, "fade");
-      if (answer.follow.length > 0) {
-        await wait(160);
-        if (cancelled) return;
-        add({ kind: "follow" }, "fade");
-      }
-      if (!answer.fixed && !answer.plain) add({ kind: "actions" }, "fade");
+      else if (!answer.fixed) add({ kind: "foot" }, "fade");
       latest.current.onDone();
     };
     void run();
     return () => {
       cancelled = true;
-      timers.forEach((timer) => clearTimeout(timer));
+      timers.forEach((timer) => {
+        clearTimeout(timer);
+        clearInterval(timer);
+      });
     };
-  }, [answer, instant, stop, tokens.length]);
+  }, [answer, blocks, instant, seconds, stop, tokens.length]);
+
+  const sources = [...blocks.map((block) => block.quote), ...(answer.words ?? []).map((row) => row.quote)];
+  const consulted = Math.max(sources.length, 1);
 
   const render = ({ piece, enter }: Shown, key: number) => {
     switch (piece.kind) {
-      case "status":
+      case "meta":
         return (
-          <Entering key={key} as="p" enter={enter} className={`${pClassName} text-btn leading-normal text-ink-3`}>
-            <span
-              data-leaving={piece.leaving || undefined}
-              style={motionStyle(["opacity", 200, "standard"])}
-              className={`data-leaving:opacity-0 ${motionClassName}`}
-            >
-              {text.searching}
-            </span>
-          </Entering>
+          <p key={key} data-ask-meta="" className="m-0 text-label leading-normal text-ink-3">
+            {answer.fixed ? text.fixedLine : text.metaLive.replace("{scope}", scopeName)}
+          </p>
         );
       case "plain":
         return (
@@ -206,25 +253,14 @@ export function Answer({ id, meta, text, stop, handlers, onMarks, onFollow, onDo
           </Entering>
         );
       case "quote": {
-        const block = answer.blocks?.[piece.index];
+        const block = blocks[piece.index];
         return block ? (
           <QuoteBlock key={key} quote={block.quote} head={block.head} handlers={handlers} enter={enter} />
         ) : null;
       }
-      case "tradition": {
-        const group = traditions[piece.index]!;
-        return (
-          <Entering key={key} enter={enter} className="grid gap-2.5">
-            <span className={headClassName}>{group.name}</span>
-            {group.quotes.map((quote) => (
-              <QuoteBlock key={quote} quote={quote} handlers={handlers} enter="none" />
-            ))}
-          </Entering>
-        );
-      }
       case "yourHighlight":
         return (
-          <Entering key={key} as="figure" enter={enter} className="m-0 grid gap-1">
+          <Entering key={key} as="figure" enter={enter} className="m-0 border-t border-rule py-3.5">
             <blockquote className={verseQuoteClassName}>
               <mark className="rounded-2 bg-hl-green text-inherit">{verseText(yours.highlightVerse)}</mark>
             </blockquote>
@@ -238,7 +274,7 @@ export function Answer({ id, meta, text, stop, handlers, onMarks, onFollow, onDo
         );
       case "yourNote":
         return (
-          <Entering key={key} as="figure" enter={enter} className="m-0 grid gap-1">
+          <Entering key={key} as="figure" enter={enter} className="m-0 border-t border-rule py-3.5">
             <span className={headClassName}>{yours.noteHead}</span>
             <p className={`${pClassName} font-body text-row leading-(--ask-leading-prose) font-light text-ink-2`}>
               {yours.note}
@@ -260,41 +296,82 @@ export function Answer({ id, meta, text, stop, handlers, onMarks, onFollow, onDo
         );
       case "stopped":
         return (
-          <Entering key={key} as="p" enter={enter} className={`${pClassName} text-btn leading-normal text-ink-3`}>
+          <Entering key={key} as="p" enter={enter} className="m-0 text-btn text-ink-3">
             {text.stopped}
           </Entering>
         );
-      case "follow":
+      case "foot":
         return (
-          <Entering key={key} enter={enter} className="flex flex-wrap gap-1.5">
-            {answer.follow.map((chip) => (
-              <button
-                key={chip}
-                type="button"
-                onClick={() => onFollow(chip)}
-                className="min-h-8.5 cursor-pointer rounded-6 border border-rule px-2.75 py-1.5 text-left text-btn leading-group text-ink-2 transition-colors duration-150 ease-standard hover:border-rule-2 hover:bg-hover hover:text-ink pointer-coarse:min-h-11"
-              >
-                {chips[chip]}
-              </button>
-            ))}
+          <Entering key={key} enter={enter} className="mt-0.5 grid grid-cols-1 gap-3">
+            {answer.follow.length > 0 ? (
+              <div className="flex flex-wrap gap-2">
+                {answer.follow.slice(0, 2).map((chip) => (
+                  <button
+                    key={chip}
+                    type="button"
+                    data-bare-focus=""
+                    onClick={() => onFollow(chip)}
+                    className={`inline-flex min-h-9 cursor-pointer items-center justify-start rounded-6 border border-rule px-2.5 py-1.5 text-left text-ui-xs leading-label text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11 ${focusRingClassName}`}
+                  >
+                    {chips[chip]}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+            <AnswerActions text={text} copyFrom={body} />
           </Entering>
         );
-      case "actions":
-        return <AnswerActions key={key} enter={enter} text={text} copyFrom={body} />;
     }
   };
 
   return (
-    <div
-      ref={body}
-      data-ask-answer={id}
-      className="relative grid min-w-0 grid-cols-1 gap-3 border-l border-rule-2 pl-3.5"
-    >
-      <p data-ask-meta="" className={`${pClassName} text-label leading-(--ask-leading-meta) text-ink-3`}>
-        <b className="block font-medium text-ink-2">{answer.fixed ? text.fixed : text.generated}</b>
-        {answer.fixed ? text.fixedNote : meta}
-      </p>
-      {pieces.map(render)}
+    <div ref={outer} data-ask-answer={id} className="min-w-0">
+      <div ref={body} className="grid min-w-0 grid-cols-1 gap-2.5">
+        {status && "phase" in status ? (
+          <p data-ask-status="" className={`m-0 ${statClassName}`}>
+            <span>{text.phases[status.phase]}</span>
+            <span className="tabular-nums">{text.seconds.replace("{n}", String(status.seconds))}</span>
+          </p>
+        ) : null}
+        {status && "done" in status ? (
+          <div data-ask-status="">
+            <button
+              type="button"
+              data-bare-focus=""
+              aria-expanded={listOpen}
+              onClick={() => setListOpen(!listOpen)}
+              className={`group/stat cursor-pointer ${statClassName} ${focusRingClassName}`}
+            >
+              <span>{consulted === 1 ? text.consultedOne : text.consulted.replace("{n}", String(consulted))}</span>
+              <span className="tabular-nums">{text.seconds.replace("{n}", String(status.seconds))}</span>
+              <Chevron />
+            </button>
+            <ul
+              hidden={!listOpen}
+              className="m-0 mb-1 grid list-none gap-1 border-l border-rule pl-3 text-ui-xs leading-(--ask-leading-meta) text-ink-3"
+            >
+              {sources.length > 0
+                ? sources.map((quote) => <li key={quote}>{sourceOf(quotes[quote])}</li>)
+                : [<li key="chapter">{chapterSource}</li>]}
+            </ul>
+          </div>
+        ) : null}
+        {pieces.length > 0 ? (
+          <>
+            {pieces.filter((shown) => shown.piece.kind === "meta").map(render)}
+            {blocks.length > 0 || answer.mine ? (
+              <div className="grid grid-cols-1">
+                {pieces
+                  .filter((shown) => ["quote", "yourHighlight", "yourNote"].includes(shown.piece.kind))
+                  .map(render)}
+              </div>
+            ) : null}
+            {pieces
+              .filter((shown) => !["meta", "quote", "yourHighlight", "yourNote"].includes(shown.piece.kind))
+              .map(render)}
+          </>
+        ) : null}
+      </div>
     </div>
   );
 }

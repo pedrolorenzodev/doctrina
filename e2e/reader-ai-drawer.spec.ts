@@ -332,7 +332,7 @@ test.describe("ask drawer: composer, suggestions and scroll", () => {
       await page.waitForTimeout(500);
     }
     await expect(page.locator("[data-ask-answer] button", { hasText: "Informar un error" })).toBeVisible({
-      timeout: 9000,
+      timeout: 16000,
     });
   });
 
@@ -341,7 +341,7 @@ test.describe("ask drawer: composer, suggestions and scroll", () => {
   }) => {
     await openDrawer(page, 1440, 700);
     await page.locator(`${chipRow} button`).first().click();
-    await expect(page.locator("[data-ask-answer] figure")).toHaveCount(4, { timeout: 6000 });
+    await expect(page.locator("[data-ask-answer] figure")).toHaveCount(4, { timeout: 10000 });
     await page.waitForTimeout(400);
     expect(await distanceToEnd(page)).toBeLessThan(40);
     await page.locator(body).hover();
@@ -399,15 +399,65 @@ test.describe("ask drawer: conversation", () => {
     );
     await expect(page.locator("[data-ask-content] button", { hasText: "Detener" })).toBeVisible();
     await expect(page.locator("[data-ask-suggestions]")).toHaveCount(0);
-    await expect(page.locator("[data-ask-meta]")).toContainText("Buscado en: todo el corpus.");
+    await expect(page.locator("[data-ask-status]")).toContainText("Buscando en los Padres");
+    await expect(page.locator("[data-ask-status]")).toContainText("Comprobando las citas en la edición", {
+      timeout: 2500,
+    });
+    await expect(page.locator("[data-ask-status]")).toContainText("Redactando", { timeout: 2500 });
+    await expect(page.locator("[data-ask-meta]")).toHaveText("Generada por IA. Buscado en: Todo el corpus.", {
+      timeout: 3000,
+    });
+    await expect(page.locator("[data-ask-status] button")).toHaveText(/^Consultó 4 textos\s*4 s$/);
     await expect(page.locator("[data-ask-answer] figure")).toHaveCount(4, { timeout: 4000 });
     await expect(page.locator("[data-ask-answer] button", { hasText: "Informar un error" })).toBeVisible({
-      timeout: 8000,
+      timeout: 16000,
     });
     await expect(page.locator("[data-ask-content] button", { hasText: "Preguntar" })).toBeVisible();
-    await expect(page.locator("[data-ask-answer] button", { hasText: "¿Quién tiene razón?" })).toBeVisible();
-    const seen = await page.evaluate(() => (window as unknown as { seen: string[] }).seen);
-    expect(seen.some((text) => text.includes("Buscando en el corpus"))).toBe(true);
+    await expect(page.locator("[data-ask-answer] .flex-wrap.gap-2 button")).toHaveText([
+      "¿Qué dice cada tradición?",
+      "¿En qué otro lugar de la Biblia se habla de este tema?",
+    ]);
+    const status = page.locator("[data-ask-status] button");
+    await status.click();
+    await expect(status).toHaveAttribute("aria-expanded", "true");
+    await expect(page.locator("[data-ask-status] li")).toHaveText([
+      "Cirilo de Jerusalén, Catequesis 22, 4",
+      "Cirilo de Jerusalén, Catequesis 22, 6",
+      "Agustín de Hipona, Sobre la doctrina cristiana III, 16, 24",
+      "Agustín de Hipona, Tratados sobre el Evangelio de Juan 27, 5",
+    ]);
+  });
+
+  test("the words arrive at 100 ms each with a soft 320 ms entry and the answer grows without jumps", async ({
+    page,
+  }) => {
+    await openDrawer(page, 1440, 760);
+    await page.locator("[data-ask-suggestions] button").first().click();
+    await page.waitForSelector("[data-ask-answer] p.font-body", { timeout: 12000 });
+    const entry = await page
+      .locator("[data-ask-answer] p.font-body span")
+      .last()
+      .evaluate((el) => el.getAnimations().map((animation) => animation.effect!.getTiming().duration));
+    expect(entry).toContain(320);
+    const steps = await page.evaluate(
+      () =>
+        new Promise<number>((resolve) => {
+          const answer = document.querySelector("[data-ask-answer]")!;
+          const channel = new MessageChannel();
+          let last = answer.getBoundingClientRect().height;
+          let largest = 0;
+          const start = performance.now();
+          channel.port1.onmessage = () => {
+            const height = answer.getBoundingClientRect().height;
+            largest = Math.max(largest, Math.abs(height - last));
+            last = height;
+            if (performance.now() - start < 3000) requestAnimationFrame(() => channel.port2.postMessage(0));
+            else resolve(largest);
+          };
+          requestAnimationFrame(() => channel.port2.postMessage(0));
+        }),
+    );
+    expect(steps).toBeLessThan(8);
   });
 
   test("«Detener» stops the answer and says so", async ({ page }) => {
@@ -415,8 +465,8 @@ test.describe("ask drawer: conversation", () => {
     await page.locator("[data-ask-suggestions] button").first().click();
     await page.waitForTimeout(1100);
     await page.locator("[data-ask-content] button", { hasText: "Detener" }).click();
-    await expect(page.locator("[data-ask-answer]")).toContainText("Detenida.", { timeout: 3000 });
-    await expect(page.locator("[data-ask-answer] button", { hasText: "Informar un error" })).toBeVisible();
+    await expect(page.locator("[data-ask-answer]")).toContainText("Detenida.", { timeout: 6000 });
+    await expect(page.locator("[data-ask-actions]")).toHaveCount(0);
   });
 
   test("«¿Quién tiene razón?» gets the disputed answer, never a verdict", async ({ page }) => {
@@ -424,16 +474,16 @@ test.describe("ask drawer: conversation", () => {
     await page.locator("[data-ask-content] textarea").fill("¿Quién tiene razón?");
     await page.keyboard.press("Enter");
     await expect(page.locator("[data-ask-answer]")).toContainText("Doctrina no decide quién tiene razón.", {
-      timeout: 4000,
+      timeout: 6000,
     });
-    await expect(page.locator("[data-ask-answer] li")).toHaveCount(5);
+    await expect(page.locator("[data-ask-answer] li:visible")).toHaveCount(5);
   });
 
   test("a pastoral request gets the fixed text without actions", async ({ page }) => {
     await openDrawer(page);
     await page.locator("[data-ask-content] textarea").fill("quiero confesarme");
     await page.keyboard.press("Enter");
-    await expect(page.locator("[data-ask-meta]")).toContainText("Texto fijo de Doctrina");
+    await expect(page.locator("[data-ask-meta]")).toHaveText("Texto fijo de Doctrina. No lo escribe la IA.");
     await expect(page.locator("[data-ask-answer]")).toContainText("busca a un sacerdote o a un pastor", {
       timeout: 3000,
     });
@@ -449,18 +499,20 @@ test.describe("ask drawer: conversation", () => {
     await page.locator("[data-ask-sees] [role=group] button").first().click();
     await page.locator("[data-ask-suggestions] button").first().click();
     await expect(page.locator("[data-ask-answer]")).toContainText("En Juan 6 está solo el texto bíblico.", {
-      timeout: 3000,
+      timeout: 6000,
     });
     await page.locator("[data-ask-answer] button", { hasText: "Buscar en los Padres" }).click();
     await expect(page.locator("[data-ask-sees] [role=group] button[aria-pressed=true]")).toHaveText("Padres");
-    await expect(page.locator("[data-ask-meta]").nth(1)).toContainText("Buscado en: Padres.");
+    await expect(page.locator("[data-ask-meta]").nth(1)).toHaveText("Generada por IA. Buscado en: Padres.", {
+      timeout: 6000,
+    });
   });
 
   test("the words answer marks the repeated words in 6:51 and 6:53 behind the text", async ({ page }) => {
     await openDrawer(page);
     await page.locator(`${drawer} textarea`).fill("¿Qué palabras de 6:51 vuelven en 6:53?");
     await page.keyboard.press("Enter");
-    await expect(page.locator("[data-ask-marks]")).toHaveAttribute("data-shown", "", { timeout: 3000 });
+    await expect(page.locator("[data-ask-marks]")).toHaveAttribute("data-shown", "", { timeout: 6000 });
     expect(await page.locator("[data-ask-marks] > div").count()).toBe(8);
     const first = await page.evaluate(
       () =>
@@ -486,7 +538,7 @@ test.describe("ask drawer: citations", () => {
     await openDrawer(page);
     await page.locator("[data-ask-suggestions] button").nth(suggestion).click();
     await expect(page.locator("[data-ask-answer] button", { hasText: "Informar un error" })).toBeVisible({
-      timeout: 9000,
+      timeout: 16000,
     });
   };
 
@@ -516,18 +568,22 @@ test.describe("ask drawer: citations", () => {
     await expect(page.locator("[data-ask-back]")).not.toHaveAttribute("data-open");
   });
 
-  test("a tradition's citation opens the citation window; Esc closes it and keeps the drawer", async ({ page }) => {
+  test("a tradition's citation opens the site's citation window; Esc closes it and keeps the drawer", async ({
+    page,
+  }) => {
     await answered(page, 1);
     const link = page.locator("[data-ask-cite]", { hasText: "§1336" });
+    await link.scrollIntoViewIfNeeded();
     await link.click();
-    const window = page.locator("[data-ask-window]");
+    const window = page.locator('[role=dialog][aria-labelledby="citation-window-kind"]');
     await expect(window).toHaveAttribute("data-open", "true");
     await expect(link).toHaveAttribute("aria-expanded", "true");
-    await expect.poll(async () => (await window.boundingBox())!.y).toBe(130);
-    expect((await window.boundingBox())!.width).toBe(400);
+    await expect(window).toContainText("Catecismo de la Iglesia Católica");
+    await expect(window).toContainText("© Libreria Editrice Vaticana");
+    await expect(window.getByRole("link", { name: "Abrir la fuente completa" })).toHaveCount(0);
     await window.getByRole("button", { name: "Copiar cita" }).click();
     expect(await page.evaluate(() => navigator.clipboard.readText())).toContain(
-      "(Catecismo de la Iglesia Católica, §1336)",
+      "» Catecismo de la Iglesia Católica, §1336",
     );
     await page.keyboard.press("Escape");
     await expect(window).not.toHaveAttribute("data-open");
@@ -535,10 +591,121 @@ test.describe("ask drawer: citations", () => {
     await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
   });
 
-  test("a Father's citation opens the work at that paragraph", async ({ page }) => {
+  test("a Father's citation opens the citation window, whose «Abrir la fuente completa» leads to the paragraph", async ({
+    page,
+  }) => {
     await answered(page, 0);
-    await page.locator("[data-ask-cite]", { hasText: "Catequesis 22, 4" }).click();
+    const link = page.locator("[data-ask-cite]", { hasText: "Catequesis 22, 4" });
+    await link.scrollIntoViewIfNeeded();
+    await link.click();
+    const window = page.locator('[role=dialog][aria-labelledby="citation-window-kind"]');
+    await expect(window).toHaveAttribute("data-open", "true");
+    await expect(window).toContainText("Cirilo de Jerusalén");
+    await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
+    await window.getByRole("link", { name: "Abrir la fuente completa" }).click();
     await page.waitForURL(/obras\/cyril-jerusalem-catechetical-lectures#d-22\.4$/);
+  });
+});
+
+const historyButton = "[data-ask-history-button]";
+const historyPanel = "[data-ask-history]";
+
+const answeredAtOnce = async (page: Page) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await openDrawer(page);
+  await page.locator(`${chipRow} button`).first().click();
+  await expect(page.locator("[data-ask-actions]")).toBeVisible({ timeout: 2000 });
+};
+
+test.describe("ask drawer: conversations and fragments", () => {
+  test("the head carries «Nueva conversación» and «Preguntas anteriores»; the list covers the drawer and Esc closes it", async ({
+    page,
+  }) => {
+    await openDrawer(page);
+    const newChat = page.getByRole("button", { name: "Nueva conversación" });
+    expect(await inDrawer(page, "aside[data-ask-drawer] > div:nth-child(2) button:nth-of-type(1)")).toEqual({
+      x: 255,
+      y: 7,
+      w: 36,
+      h: 36,
+    });
+    await expect(newChat).toBeVisible();
+    await page.locator(historyButton).click();
+    await expect(page.locator(historyButton)).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator(historyPanel)).toHaveAttribute("data-open", "true");
+    expect((await inDrawer(page, historyPanel)).y).toBe(51);
+    await expect(page.locator(`${historyPanel} li`)).toHaveCount(3);
+    await expect(page.locator(`${historyPanel} li`).first()).toContainText("28 oct");
+    await page.keyboard.press("Escape");
+    await expect(page.locator(historyPanel)).not.toHaveAttribute("data-open", "true");
+    await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
+  });
+
+  test("a conversation is kept when the drawer closes, saved in this browser, and comes back from the list", async ({
+    page,
+  }) => {
+    await answeredAtOnce(page);
+    await clickQuietly(page, stripAsk);
+    await expect(page.locator(drawer)).not.toHaveAttribute("data-open", "true");
+    await clickQuietly(page, stripAsk);
+    await expect(page.locator("[role=log]")).toContainText("¿Qué dijeron los Padres sobre este capítulo?");
+    const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("doctrina-ask-conversations") ?? "[]"));
+    expect(stored).toHaveLength(1);
+    await page.getByRole("button", { name: "Nueva conversación" }).click();
+    await expect(page.locator("[data-ask-empty]")).toBeVisible();
+    await expect(page.locator("[role=log]")).toHaveCount(0);
+    await page.reload();
+    await page.evaluate(() => document.fonts.ready);
+    await clickQuietly(page, "[data-ask-button]");
+    await page.locator(historyButton).click();
+    const today = await page.evaluate(() =>
+      new Intl.DateTimeFormat("es", { day: "numeric", month: "short", timeZone: "UTC" })
+        .format(new Date())
+        .replace(".", ""),
+    );
+    const first = page.locator(`${historyPanel} li`).first();
+    await expect(first).toContainText("¿Qué dijeron los Padres sobre este capítulo?");
+    await expect(first).toContainText(today);
+    await expect(page.locator(`${historyPanel} li`)).toHaveCount(4);
+    await first.locator("button").click();
+    await expect(page.locator(historyPanel)).not.toHaveAttribute("data-open", "true");
+    await expect(page.locator("[role=log]")).toContainText("¿Qué dijeron los Padres sobre este capítulo?");
+    await expect(page.locator("[data-ask-status] button")).toContainText("Consultó 4 textos");
+    await expect(page.locator("[data-ask-answer] figure")).toHaveCount(4);
+  });
+
+  test("an example from the list opens with its answer", async ({ page }) => {
+    await openDrawer(page);
+    await page.locator(historyButton).click();
+    await page.locator(`${historyPanel} li button`).first().click();
+    await expect(page.locator("[role=log]")).toContainText("¿Qué dijo Crisóstomo sobre «la carne nada aprovecha»?");
+    await expect(page.locator("[data-ask-answer] figure")).toHaveCount(4);
+  });
+
+  test("selecting words of an answer offers «Preguntar sobre esto», which brings them to the composer", async ({
+    page,
+  }) => {
+    await answeredAtOnce(page);
+    await page.evaluate(() => {
+      const prose = document.querySelector("[data-ask-answer] p.font-body")!;
+      const walker = document.createTreeWalker(prose, NodeFilter.SHOW_TEXT);
+      const first = walker.nextNode()!;
+      const range = document.createRange();
+      range.setStart(first, 0);
+      range.setEnd(first, first.textContent!.length);
+      getSelection()!.removeAllRanges();
+      getSelection()!.addRange(range);
+      document.dispatchEvent(new PointerEvent("pointerup", { pointerType: "mouse" }));
+    });
+    const toolbar = page.locator("[data-ask-fragment]");
+    await expect(toolbar).toBeVisible();
+    await toolbar.getByRole("button", { name: "Preguntar sobre esto" }).click();
+    await expect(toolbar).toHaveCount(0);
+    const line = page.locator(`${foot} > div > div`).first();
+    await expect(line).toContainText("De la respuesta");
+    await expect(line).toContainText("Cirilo");
+    await expect(page.locator("[data-ask-pill-go]")).toHaveCount(0);
+    await expect(page.locator(`${foot} textarea`)).toBeFocused();
   });
 });
 
@@ -664,7 +831,7 @@ test("the hover card never takes the pointer, and Esc hides it before closing an
   await openDrawer(page);
   await page.locator("[data-ask-suggestions] button").first().click();
   await expect(page.locator("[data-ask-answer] button", { hasText: "Informar un error" })).toBeVisible({
-    timeout: 9000,
+    timeout: 16000,
   });
   const link = page.locator("[data-ask-cite]", { hasText: "Catequesis 22, 4" });
   await link.scrollIntoViewIfNeeded();

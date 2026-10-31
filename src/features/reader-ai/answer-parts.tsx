@@ -15,14 +15,14 @@ export type CiteHandlers = {
   ) => void;
 };
 
-export const pClassName = "mb-3";
+export const pClassName = "m-0";
 const citeClassName = `cursor-pointer rounded-2 text-left text-cite underline decoration-dotted decoration-(length:--ask-underline) underline-offset-4 box-decoration-clone transition-colors duration-150 ease-standard hover:bg-cite-weak hover:decoration-solid aria-expanded:bg-cite-weak aria-expanded:decoration-solid ${focusRingClassName}`;
-export const proseClassName = `${pClassName} text-go leading-(--ask-leading-prose) text-ink-2`;
+export const proseClassName = "m-0 font-body text-synthesis font-light text-ink-2 opsz-18";
 const quoteBaseClassName = "m-0 text-passage-compact leading-normal font-light text-ink italic opsz-24 guillemets";
 export const quoteTextClassName = `${quoteBaseClassName} font-head`;
 export const verseQuoteClassName = `${quoteBaseClassName} font-body`;
-export const sourceClassName = "text-ui-xs leading-(--ask-leading-meta) text-ink-3";
-export const headClassName = "text-ui-xs leading-(--ask-leading-ui) font-medium text-ink-2";
+export const sourceClassName = "mt-2 text-btn leading-(--ask-leading-meta) text-ink-3";
+export const headClassName = "mb-1.5 block text-label leading-label font-medium text-ink-3";
 
 export function Entering({
   as: Tag = "div",
@@ -95,7 +95,7 @@ export function QuoteBlock({
 }) {
   const entry = quotes[quote];
   return (
-    <Entering as="figure" enter={enter} className="m-0 grid gap-1">
+    <Entering as="figure" enter={enter} className="m-0 border-t border-rule py-3.5">
       {head ? <span className={headClassName}>{head}</span> : null}
       <blockquote className={quoteTextClassName}>{entry.text}</blockquote>
       <figcaption className={sourceClassName}>

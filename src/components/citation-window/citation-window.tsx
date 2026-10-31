@@ -5,7 +5,7 @@ import { useCitation } from "@/components/citation-window/citation-context";
 import type { CitationView } from "@/lib/citation-view";
 import type { CitationWindowText } from "@/components/citation-window/types";
 import { MiniTimeline } from "@/components/mini-timeline";
-import { ActionButton } from "@/components/ui/action";
+import { ActionButton, ActionLink } from "@/components/ui/action";
 import { PageLink } from "@/components/ui/page-link";
 import { IconButton } from "@/components/ui/icon-button";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
@@ -182,8 +182,9 @@ function WindowBody({ view, text, copied, onCopy }: WindowBodyProps) {
       ) : null}
       {view.externalLink || view.copyText || view.fullSource ? (
         <div className="mt-4.5 flex flex-wrap items-center gap-x-2.5 gap-y-2">
+          {view.fullSourceHref ? <ActionLink href={view.fullSourceHref}>{text.openSource}</ActionLink> : null}
           {/* TODO: «Abrir la fuente completa» opens the reader at the cited division */}
-          {view.fullSource ? <ActionButton>{text.openSource}</ActionButton> : null}
+          {view.fullSource && !view.fullSourceHref ? <ActionButton>{text.openSource}</ActionButton> : null}
           {view.externalLink ? (
             <span className="text-btn">
               <PageLink href={view.externalLink.href} external>

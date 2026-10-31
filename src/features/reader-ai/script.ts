@@ -24,15 +24,10 @@ export const answers: Record<AnswerId, Answer> = {
   fathers: {
     question: "¿Qué dijeron los Padres sobre este versículo?",
     scope: "Sobre Juan 6:53. Pasajes de los Padres que lo citan, en las obras que tiene Doctrina.",
-    blocks: [
-      { quote: "cyr224" },
-      { quote: "cyr226", head: "Dos párrafos después, en la misma catequesis" },
-      { quote: "ddc" },
-      { quote: "aug275" },
-    ],
+    blocks: [{ quote: "cyr224" }, { quote: "cyr226" }, { quote: "ddc" }, { quote: "aug275" }],
     prose:
       "Cirilo cita el versículo y lo lee junto con la reacción de los oyentes, que «se volvieron atrás» ({66}); dos párrafos después pide no juzgar «por el gusto, sino por la fe». Agustín lo usa en Sobre la doctrina cristiana como ejemplo de una frase que se lee como figura, y en los Tratados lo pone junto a «la carne nada aprovecha» ({63}).",
-    follow: ["traditions", "whoIsRight"],
+    follow: ["traditions", "bible"],
   },
   traditions: {
     question: "¿Qué dice cada tradición sobre este pasaje?",
@@ -40,7 +35,7 @@ export const answers: Record<AnswerId, Answer> = {
     traditions: true,
     prose:
       "De estos textos, solo el Catecismo católico cita este capítulo ({60}); los demás hablan de la Cena en general.",
-    follow: ["whoIsRight", "fathers"],
+    follow: ["fathers", "bible"],
   },
   bible: {
     question: "¿En qué otro lugar de la Biblia se habla de este tema?",
@@ -95,7 +90,7 @@ export const answers: Record<AnswerId, Answer> = {
     marks: true,
     prose:
       "Vuelven «comer», «carne» y «vida» ({51}, {53}). «Beber» y «sangre» aparecen por primera vez en el capítulo en {53}, y desde ahí se repiten en {54}, {55} y {56}.",
-    follow: ["fathers", "traditions"],
+    follow: ["fathers", "bible"],
   },
   mine: {
     question: "¿Qué subrayé en verde en este capítulo?",
@@ -116,7 +111,7 @@ export const answers: Record<AnswerId, Answer> = {
     scope: "Sobre Juan 6.",
     plain:
       "El corpus no tiene pasajes que respondan esto con citas, así que no hay respuesta. Prueba con una de estas:",
-    follow: ["fathers", "traditions", "words"],
+    follow: ["fathers", "traditions"],
   },
   scopeMiss: {
     question: "¿Qué dijeron los Padres sobre este versículo?",
@@ -140,7 +135,7 @@ export const chips: Record<ChipId, string> = {
   traditions: "¿Qué dice cada tradición?",
   bible: "¿En qué otro lugar de la Biblia se habla de este tema?",
   whoIsRight: "¿Quién tiene razón?",
-  words: "¿Qué palabras de 6:51 vuelven aquí?",
+  words: "¿Qué palabras de 6:51 vuelven en 6:53?",
   scopeFix: "Buscar en los Padres",
   mine: "¿Qué subrayé en verde en este capítulo?",
 };
@@ -159,6 +154,12 @@ export const suggestionSets: Record<Opening, { id: ChipId; label: string }[]> = 
     { id: "words", label: "¿Qué palabras de este versículo vuelven en los que siguen?" },
   ],
 };
+
+export const exampleHistory: { question: string; date: string }[] = [
+  { question: "¿Qué dijo Crisóstomo sobre «la carne nada aprovecha»?", date: "2026-10-28" },
+  { question: "¿Cómo se cita Juan 6 en el Catecismo?", date: "2026-10-27" },
+  { question: "¿Qué es el pan de vida?", date: "2026-10-24" },
+];
 
 export const traditions: { name: string; quotes: QuoteId[] }[] = [
   { name: "Católica", quotes: ["ccc1336", "trent8"] },
@@ -194,7 +195,7 @@ export function routeQuestion(question: string): AnswerId {
   if (/confesarme|confesion de mis|absol|bendic|bendig|suicid|crisis|quiero morir|me siento muy mal/.test(text))
     return "pastoral";
   if (/subray|mis notas|en verde/.test(text)) return "mine";
-  if (/padre|agustin|cirilo|patrist|ignacio/.test(text)) return "fathers";
+  if (/padre|agustin|cirilo|patrist|ignacio|crisostomo/.test(text)) return "fathers";
   if (/razon|correct|quien acierta|debo creer|que creer|herej|verdadera\b/.test(text)) return "whoIsRight";
   if (/tradici|catolic|ortodox|luteran|reformad|bautist|iglesia|protestant/.test(text)) return "traditions";
   if (/biblia|otro lugar|otros pasajes|cena|corintio|mateo/.test(text)) return "bible";

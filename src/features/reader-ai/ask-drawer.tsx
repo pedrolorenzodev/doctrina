@@ -19,6 +19,8 @@ type AskDrawerProps = {
   title: string;
   closeLabel: string;
   bar: ReactNode;
+  actions: ReactNode;
+  overlay: ReactNode;
   children: (opening: number) => ReactNode;
 };
 
@@ -42,7 +44,7 @@ const motionOf = (layout: DrawerLayout, open: boolean) => {
 const isTyping = (target: EventTarget | null) =>
   target instanceof HTMLElement && Boolean(target.closest("input, textarea, select, [contenteditable]"));
 
-export function AskDrawer({ title, closeLabel, bar, children }: AskDrawerProps) {
+export function AskDrawer({ title, closeLabel, bar, actions, overlay, children }: AskDrawerProps) {
   const drawer = useRef<HTMLElement>(null);
   const { open, focus, serial } = useSyncExternalStore(subscribeAskDrawer, getAskDrawer, () => closedAskDrawer);
   const layout: DrawerLayout = useSyncExternalStore(
@@ -133,10 +135,14 @@ export function AskDrawer({ title, closeLabel, bar, children }: AskDrawerProps) 
         aria-hidden="true"
         className="absolute top-1.75 left-1/2 z-3 -ml-3.5 hidden h-1 w-7 cursor-grab rounded-2 bg-rule-2 group-data-[layout=sheet]/drawer:block"
       />
-      <div className="flex h-reader-strip flex-none items-center justify-between gap-2.5 border-b border-rule pr-2 pl-5.5 group-data-[layout=sheet]/drawer:h-14.25 group-data-[layout=sheet]/drawer:pt-2.5">
-        <span id="ask-drawer-title" className="truncate font-head text-panel-reference font-normal text-ink opsz-24">
+      <div className="flex h-reader-strip flex-none items-center gap-1 border-b border-rule pr-2 pl-5.5 group-data-[layout=sheet]/drawer:h-14.25 group-data-[layout=sheet]/drawer:pt-2.5">
+        <span
+          id="ask-drawer-title"
+          className="min-w-0 flex-1 truncate font-head text-panel-reference font-normal text-ink opsz-24"
+        >
           {title}
         </span>
+        {actions}
         <button
           type="button"
           data-bare-focus=""
@@ -159,6 +165,7 @@ export function AskDrawer({ title, closeLabel, bar, children }: AskDrawerProps) 
         </button>
       </div>
       {bar}
+      {overlay}
       {children(opening)}
     </aside>
   );
