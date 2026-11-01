@@ -1,0 +1,21 @@
+Status: draft, NOT verified by Pedro
+
+# Videos · Sola Scriptura · Catholic (H1, session B): 5 videos checked against their transcripts
+
+## Progress
+- Written 2026-11-01 afternoon (session B). The page `src/content/pages/sola-scriptura/catholic.es.ts` has `videos.items: []`; nothing was added to the page data.
+- Metadata (title as YouTube prints it, channel, duration, date, views) read with `yt-dlp --skip-download --print` on 2026-11-01; ids from the embed on the catholic.com episode page. Views move.
+- «Checked against the transcript»: the transcript or text published on the catholic.com episode page of the same video, with the page's speaker label or byline; it is not YouTube's caption file and carries no times, so no minute is given.
+- Criterion: creators in `docs/research/apologists.md`.
+- Verifier pass: not yet.
+
+| Id (URL `https://www.youtube.com/watch?v=<id>`) | Title | Channel | Lang | Date | Duration | Views | Creator and criterion | What it defends / evidence | Maps to | Note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `w9lTYg4gS6Y` | 7 Bible Verses That Don't Prove Sola Scriptura | Shameless Popery | en | 2024-12-19 | 57:46 | 49,406 | yes: Heschmeyer | transcript on catholic.com (https://www.catholic.com/audio/sp/un-biblical-teachings-vs-sola-scriptura): «he reminds them in Second Thessalonians to stand firm and hold to the traditions which you were taught by us either by word of mouth or by epistle.» | 2 Thess 2:15 (entry 2), 2 Tim 3:16–17 (entry 10), and the verses Protestants cite for sola scriptura | the catholic.com page spells the title «7 Bible Verses That DON'T Prove Sola Scriptura» |
+| `cFnAS2LtBS0` | What Does "the Faith Delivered Once for All" Mean? | The Jimmy Akin Podcast | Jimmy Akin | en | 2026-04-06 | 19:46 | 8,331 | yes: Akin | transcript on catholic.com (https://www.catholic.com/audio/tjap/faith-delivered-once-for-all): «if Jude were saying that all public revelation had ended, then—since Scripture is itself public revelation—the book of Jude itself would have to be the last book of Scripture to be penned.» | Jude 3 (entry 3) | the catholic.com page titles it «Faith Delivered “Once For All”» |
+| `tU4EJhHo_1Y` | Sola Scriptura: Trying Something New | The Jimmy Akin Podcast | Jimmy Akin | en | 2025-02-10 | 1:46:36 | 34,493 | yes: Akin | transcript on catholic.com (https://www.catholic.com/audio/tjap/sola-scriptura-trying-something-new): «there are passages—particularly in the New Testament—that indicate we should adhere to God’s word regardless of whether it is communicated to us in oral or written form.» | 2 Thess 2:15 (entry 2) and Gal 2:1–2 on a teaching authority; a reply to a Protestant definition of sola scriptura | 1 h 46 min: a long discussion; the cited passage is one section of the transcript |
+| `EDSnVY2REIQ` | Are Catholics STILL Wrong about Paul's Traditions? | Dr. Karlo | en | 2026-08-12 | 22:27 | 2,746 | yes: Broussard | transcript on catholic.com (https://www.catholic.com/audio/drk/are-catholics-still-wrong-about-pauls-traditions): «I argue that White’s claim—that these oral traditions were a closed, completed body of revelation identical to Scripture—begs the question, conflicts with the belief that revelation continued until the death of the last apostle, and fails to fit the context of the passage.» | 2 Thess 2:15 (entry 2) | a reply to James White's argument; the YouTube date is 12 Aug 2026, the catholic.com page prints 13 Aug 2026 |
+| `iA7V7N8vL_o` | Sacred Tradition—Overstepping Boundaries? | Dr. Karlo | en | 2026-03-18 | 17:59 | 2,868 | yes: Broussard | transcript on catholic.com (https://www.catholic.com/audio/drk/sacred-tradition-overstepping-boundaries): «if that verse means everything was already fully delivered at that point, then they’d have to toss out the rest of Jude, or at least everything written after verse 3.» | Jude 3 (entry 3); that Scripture is not the only deposit | the Jude argument is one point in a longer defence of oral tradition |
+
+## What was not done
+- «Why I Don't Believe in Sola Scriptura» (Shameless Popery, 9 Feb 2023, `sp/why-i-dont-believe-in-sola-scriptura`) was not entered: the catholic.com page has no YouTube embed to take the id from. No Spanish-language or Otálora video was assessed; H2 and the 16 non-Catholic pages: not started.
