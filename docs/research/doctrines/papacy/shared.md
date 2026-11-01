@@ -1,0 +1,335 @@
+# Papacy · shared content for page 02 (`shared.md`)
+
+Status: draft, NOT verified by Pedro
+
+## Progress
+
+- Written 2026-11-01 (research night, session 1). B1 and B3 below; B2 (early witnesses) is appended at the end when done.
+- Source of every quote: the five Papacy dossiers in this folder (`catholic.md`, `orthodox.md`, `lutheran.md`, `reformed.md`, `baptist.md`) and the edition each names. Tags are the dossier's own (`[verified: scan]` = checked there in the named print scan or official page; `[unverified]` = not). **Nothing was re-fetched from the original editions tonight.**
+- Spanish of Lutheran, Orthodox and Baptist texts is the dossiers' own AI-assisted translation from the original language, unreviewed by Pedro.
+- Agent's calls: (1) The Baptist dossier has almost nothing on this doctrine («sparse», no pope named in NH XIII or BF&M VI): the Baptist cells say so and the page must not invent a Baptist position. (2) A claim goes under «Lo que todas comparten» only if a cited text of each of the five supports it; the Baptist text is the limiting case, so the common ground is deliberately narrow. (3) Where a dossier gives only its own paraphrase of a Smalcald or Treatise passage, the cell says «paráfrasis del dossier»: quote the Triglot page before publishing.
+
+Model followed: `src/content/pages/eucharist/doctrine.es.ts` (`common`, `practice`).
+
+---
+
+## 1. Lo que todas comparten (common ground)
+
+**Draft text for the site (neutral, each sentence supported by a text of each tradition):**
+
+> Las cinco tradiciones ponen a la Iglesia bajo el señorío de Cristo, a quien sus textos llaman su cabeza o su Señor, y describen en ella un ministerio con oficios propios. Entre las tradiciones que se pronuncian sobre ello, discrepan sobre si alguna autoridad humana está por encima de la iglesia local y sobre quién puede definir la doctrina sin error; sobre la roca y las llaves argumentan los textos católicos, luteranos y reformados (los dossiers ortodoxo y bautista no exponen una posición propia).
+
+### 1a. Cristo, cabeza o Señor de la Iglesia
+
+| Tradition | Text | Locator and edition | Tag |
+|---|---|---|---|
+| Catholic | «bajo su única Cabeza, que es Cristo Jesús» | *Ut unum sint* 97 (1995), official Spanish, vatican.va (`catholic.md`, PQ-3 sources) | `[verified: vatican.va]` (dossier) |
+| Orthodox | «αὐτὸς ὁ κύριος ἡμῶν Ἰησοῦς Χριστός ἐστι κεφαλή»; Philaret: «is the Head of the Church, and he is the Saviour of the Body» | Dositheus X, Schaff *Creeds* II pp. 410–411; Philaret Q.272, Schaff II p. 488 (`orthodox.md`, «Definition» and QE-1) | `[verified: scan]`; Spanish `[unverified]` |
+| Lutheran | Smalcald Articles II.4.1 assigns the church's headship to Jesus Christ (dossier's account); SA II.4.9 speaks of living under Christ as head (dossier's paraphrase) | SA II.4.1, p. 470; II.4.9, p. 472, Triglot German (`lutheran.md` QE-4, «Government and equality of office») | `[verified: scan]` for the passages; the wording above is the dossier's paraphrase: quote the Triglot line before publishing |
+| Reformed | «No hay otra cabeza de la iglesia sino el Señor Jesu-Cristo»; «sometidos á Cristo la cabeza de la Iglesia» | WCF 25.1 (opening page of ch. XXV, before p. 130) and 25.6 (p. 133), Monterrey 1880 (`reformed.md`, «Definition» and QE-4) | `[verified: scan]` |
+| Baptist | «Lordship of Christ» (BF&M VI): the church is a congregation under Christ's ordinances and laws, each member accountable to Christ | BF&M 2000 VI, printed p. 7; NH XIII (McGlothlin p. 305) (`baptist.md`, «Current convention statement») | `[verified: scan]`; the Baptist texts read say «Lord», not «head» |
+
+### 1b. Un ministerio con oficios propios
+
+| Tradition | Text | Locator and edition | Tag |
+|---|---|---|---|
+| Catholic | Christ «puso al frente de los demás Apóstoles al bienaventurado Pedro»; the bishops govern «como vicarios y legados de Cristo» | LG 18 (`catholic.md`, Definición breve) and LG 27 (the phrase «vicarios y legados de Cristo» is in `catholic.md` QE-5 without an LG locator; the verifier read LG 27 on vatican.va 2026-11-01) | `[verified: vatican.va]` (dossier) |
+| Orthodox | the Lord steers the Church «διὰ τῶν ἁγίων πατέρων»; the bishop «ἑτέροις μεταδίδωσι» the priestly power | Dositheus X, pp. 410–411 and 414 (`orthodox.md` QE-1, «Distinct episcopal service») | `[verified: scan]`; Spanish `[unverified]` |
+| Lutheran | «Evangelium tribuit his, qui praesunt ecclesiis, mandatum docendi evangelii, remittendi peccata, administrandi sacramenta» | Treatise 60, Triglot p. 520 (`lutheran.md`, «Definition») | `[verified: scan]`; Spanish `[unverified]` |
+| Reformed | «A esta iglesia católica visible, Cristo ha dado el ministerio, los oráculos, y las ordenanzas de Dios» | WCF 25.3, Monterrey 1880 pp. 130–131 (`reformed.md` QE-2) | `[verified: scan]` |
+| Baptist | BF&M VI: two scriptural offices, pastor/elder/overseer and deacon | BF&M 2000 VI, p. 7 (`baptist.md`) | `[verified: scan]` for the article; the offices are the dossier's summary of it |
+
+Not claimed as common ground: that Christ is «head» in the same word for all (the Baptist texts read say «Lord»), and any statement about the pope, which only the Catholic documents make positively.
+
+---
+
+## 2. Lo que se discute (neutral questions)
+
+| Draft question (es) | Each tradition's own position (cited) | Terms checked |
+|---|---|---|
+| **¿Hay en la Iglesia alguna autoridad humana por encima de la iglesia local?** | Catholic: «principio y fundamento perpetuo y visible de unidad» con potestad «plena, suprema y universal» (CEC 882; LG 18, 22). Orthodox: the received canons give Constantinople «the prerogative of honour after the Bishop of Rome» (Constantinople I c. 3) and equal privileges (Trullo c. 36); «un hombre mortal no puede ser cabeza universal y perpetua» (Dositheus X, p. 410, in Schaff's Greek print: a clause the dossier ties to the 1690 revision, so no unchanged-1672 claim; Spanish AI, unreviewed). Lutheran: the Roman bishop is not superior by divine right to other bishops and pastors (Treatise 7, dossier's paraphrase); SA II.4.1. Reformed: «No hay otra cabeza de la iglesia sino el Señor Jesu-Cristo» (WCF 25.6, historical wording). Baptist: the inspected articles describe an autonomous local congregation; no pope is named (`baptist.md`). | No tradition's term in the wording («primado», «cabeza», «sede» avoided). |
+| **¿Puede una persona o una asamblea definir la doctrina sin error?** | Catholic: the pope when he «proclama de una forma definitiva la doctrina de fe y costumbres» (LG 25). Orthodox: the Church «shall never apostatize from the faith» (Philaret Q.271); an ecumenical council acts over the whole Church (Q.278); «La Iglesia ortodoxa oriental y católica de Cristo, fuera del Hijo y Verbo de Dios que se hizo hombre de manera inefable, no conoce a ningún otro que haya sido infalible sobre la tierra» (1895 encyclical §XVIII, Greek; Spanish AI). Reformed: churches «están expuestas á errar en doctrina y práctica» (WCF 25.5); synods and councils can err (WCF 31.4, historical; dossier's paraphrase). Lutheran: the dossier gives no statement on infallibility; Treatise 56 calls synodal judgments judgments of the church (dossier's paraphrase) (`lutheran.md`, «Ecclesial judgment»). Baptist: silent in the articles read. | «Sin error» is the Catholic dossier's phrase (CEC 890); the Orthodox, Reformed and Lutheran texts use «infalible», «error» or «errar», so the wording is closest to the Catholic framing; «definir» is neutral. The Lutheran and Baptist gaps are stated, not filled. |
+| **¿A quién se dieron las llaves y qué es la roca?** | Catholic: Peter is «el único a quien Él confió explícitamente las llaves» (CEC 553); the keys of Mt 18:18 also to the apostolic college «unido a su Cabeza» (LG 22). Lutheran: the keys to the church: «Tribuit igitur principaliter claves ecclesiae et immediate» (Treatise 24); the church «non est aedificata super auctoritatem hominis» but on Peter's confession (Treatise 25). Reformed: the keys «son entregadas» to church officers (WCF 30.2; Mt 16:19; 18:17–18; Jn 20:21–23). Orthodox: the Church «built on the foundation of the Apostles and Prophets, Jesus Christ himself being the chief corner-stone» (Philaret Q.274, Eph 2:19–20), which gives no argument about Peter; the 1895 encyclical §XVIII does argue about Peter (Gal 2:11), which the dossier did not extract. Baptist: not addressed in the passages read. | The question does not assume that the rock is a person, a confession or Christ. |
+
+**Dependent questions («Lo que depende de esto», optional):**
+
+- *Quién juzga las controversias de fe:* the Sola Scriptura page (Catholic OB-6, Reformed WCF 31.4; `papacy/catholic.md` OB-5, OB-6).
+- *Quién es parte de «la Iglesia» y de la comunión:* Catholic «plena comunión» through «los vínculos de la profesión de fe, de los sacramentos y del régimen eclesiástico» (CIC 205; CEC 817–818; `catholic.md` CV-2); the Baptism page (recognition of other baptisms) and the Eucharist page (who communes).
+
+---
+
+## 3. Cómo se vive: practice comparison (B3)
+
+Aspects aligned across the five; each cell is the document's own prescription, not an observation of church life. `silencio` = the documents read say nothing; `no consultado` = the dossier did not read a text that could answer. The Baptist column is mostly empty because the inspected articles do not address the aspects; the Baptist dossier calls this «a research limit, not a doctrine missing from the map» and says its search does not establish silence of all Baptist documents.
+
+| Aspect | Catholic | Orthodox | Lutheran | Reformed | Baptist |
+|---|---|---|---|---|---|
+| **Quién gobierna** | El papa con el colegio de los obispos: «junto con su Cabeza, el Romano Pontífice, y nunca sin esta Cabeza» (LG 22; Iglesia latina, CIC 375 §2, 377 §1) | Los patriarcas y el Santo Sínodo (Philaret Q.279, forma sinodal rusa del siglo XIX); el obispo gobierna su iglesia particular (Dositheus X) | Pastores, presbíteros u obispos con la misma potestad por derecho divino (Treatise 61) | Oficiales eclesiásticos distintos del magistrado civil: «Rey y Cabeza» es Cristo (WCF 30.1) | Congregación local autónoma de creyentes bautizados; pastor y diácono (BF&M VI) |
+| **Cómo se elige o nombra** | (Iglesia latina, CIC) Los cardenales eligen al papa (CIC 349); el papa nombra libremente a los obispos o confirma los elegidos (CIC 377 §1) | La elección se hace en el sínodo propio y la ordenación del obispo por dos o tres obispos (Dositheus X, pp. 413–414) | La iglesia tiene principalmente el derecho de llamar ministros (Treatise 24, «ius vocationis»; dossier QE-3) | no consultado | silencio en BF&M VI (menciona procesos democráticos; no describe el procedimiento) |
+| **Cómo se juzgan las controversias** | El concilio ecuménico ejerce la potestad suprema con el papa; sus decretos obligan si el papa los aprueba (CIC 337 §1, 341 §1) | Un concilio ecuménico es la autoridad que puede actuar sobre toda la Iglesia (Philaret Q.278) | Los juicios sinodales son juicios de la iglesia y no de los pontífices, según la Palabra de Dios (paráfrasis del dossier de Treatise 56) | Los sínodos y concilios determinan controversias; sus decisiones conformes a la Palabra se reciben con sumisión; pueden errar (WCF 31.3–4, historical) | silencio en los pasajes leídos |
+| **Qué se debe a la enseñanza de los pastores** | «asentimiento religioso del entendimiento y de la voluntad, sin que llegue a ser de fe» a la enseñanza ordinaria del papa (CIC 752); «obediencia de la fe» a lo definido (CEC 891) | La obediencia se aprende de la Escritura, los cánones, los concilios, los Padres y las reglas eclesiásticas (Philaret Q.282) | no consultado (Treatise 60 y AC XXVIII.8 dicen qué hace el ministerio, no qué se le debe) | Recibir con reverencia y sumisión lo conforme a la Palabra (WCF 31.3) | no consultado (BF&M VI: cada miembro responde ante Cristo) |
+| **Disciplina** | Cisma: «rechazo de la sujeción al Sumo Pontífice» (CIC 751); profesión de fe para ciertos oficios (CIC 833) | Philaret Q.275 (el dossier lista solo sus referencias: Tito 3:10; 1:10–11; Mt 18:17; texto no leído) | Jurisdicción para excomulgar a quienes tienen delitos conocidos y absolver a quienes se arrepienten (Treatise 60) | Amonestación, suspensión de la Cena, excomunión (WCF 30.4) | no consultado |
+| **Dónde se expresa la unidad** | En cada Misa se nombra al papa «como signo y servidor de la unidad» (CEC 1369) | no consultado | Obispos unidos en doctrina, fe, sacramentos, oración y amor, bajo Cristo como cabeza (paráfrasis del dossier de SA II.4.9, hipotético) | no consultado (el silencio del dossier es sobre procedimientos papales, no sobre dónde se expresa la unidad) | no consultado (el dossier registra NH XIII «fellowship of the Gospel» y el párrafo del Cuerpo de Cristo de BF&M VI; no un lugar de expresión de la unidad) |
+
+Notes:
+
+- The Orthodox «Quién gobierna» and «Qué se debe» cells rest on a 19th-century Russian catechism and the 1672 confession; the dossier says they must not be read as the present organization of every Orthodox church (`orthodox.md`, «Local ministry», «Where obedience is learned»). The 1848 and 1895 patriarchal encyclicals are a distinct, dated layer.
+- WCF chapter 25.6 («the Pope... is that Antichrist») and SA II.4.10 are historical wording with status lines in their dossiers; they are not used as practice cells.
+- The Lutheran «Dónde se expresa la unidad» cell is SA II.4.9's hypothetical proposal, not a description of present practice; the dossier says so (`lutheran.md` QE-6).
+
+## 4. Coverage
+
+| Section | Status | What was searched |
+|---|---|---|
+| Common ground | two sentences, narrow on purpose; Baptist is the limiting case | the five dossiers' Qué enseña |
+| Lo que se discute | three questions; Lutheran and Baptist gaps stated in cell 2 | the five dossiers' Qué enseña, Por qué, Cómo se vive |
+| Practice comparison | six aspects; the Baptist and several Orthodox/Lutheran/Reformed cells are `no consultado` or `silencio` | the five dossiers' Cómo se vive |
+| Early witnesses | §6 below (B2): ANF scans only; the NPNF stretch (c. 256–749) is listed, not quoted | ANF vols. 1 and 5 OCR (archive.org); `neutral/writers-*.md` for dates |
+
+## 6. Testigos neutrales de los primeros siglos (B2)
+
+Status: draft, NOT verified by Pedro. Scope tonight: quotations from the **Ante-Nicene Fathers** (ANF) volumes, checked string by string against the archive.org OCR of the 1885–1886 Buffalo printings (Christian Literature Publishing Company; American reprint of the Edinburgh edition, ed. Roberts and Donaldson), and cleaned only of footnote marks and OCR slips (each slip is named). **The Nicene and Post-Nicene volumes (c. 256–749) were not quoted tonight**: their archive.org text was not retrievable (HTTP 401) and the CCEL pages could not be navigated in the time; the later witnesses are listed in the full list below with the tag `[memory]` or `[source: …]` and need a dated edition before use.
+
+Rules applied (DECISIONS 2026-10-09, three levels): the **Spanish** under each quote is Doctrina's own translation **from the public-domain English of the ANF edition** (level 3, as in the Eucharist witnesses), labelled «asistida por IA, sin revisar por Pedro». No older printed Spanish edition was searched. The editors' footnotes and bracketed notes of the ANF volumes (several are polemical, written by A. C. Coxe) are **never quoted**: only the translated text. Pages are not claimed: ANF pagination is not readable in the OCR with certainty; locators are the work's own divisions (chapter or section as the ANF prints them). Dates come from `docs/research/neutral/writers-to-325.md` and carry that file's tags (most are `[memory]` there).
+
+### Witnesses quoted
+
+The set holds texts the dossiers and the neutral files mention, including texts used for and against the papal claims, so that no side's use of the early Church is left out (the Catholic dossier's OB-4 uses Irenaeus and Ignatius; the claim that writers of every tradition cite each of them is from memory). Not assigned to any modern tradition.
+
+**P-W1 · Ignatius of Antioch, *To the Romans*, inscription** · date c. 107–110 (`writers-to-325.md` §2.3; dating dispute in `ignatius-dating-scholars.md`)  
+Edition: Ignatius, *Epistle to the Romans*, tr. the editors (A. Roberts and J. Donaldson), ANF vol. 1 (Buffalo, 1885), Salutation. `[verified: ANF 1 scan OCR, exact string]`  
+Quote (en): «which also presides in the place of the region of the Romans, worthy of God, worthy of honour, [...] and which presides over love, is named from Christ, and from the Father».  
+Spanish (Doctrina, AI-assisted, unreviewed): «que también preside en el lugar de la región de los romanos, digna de Dios, digna de honor, [...] y que preside sobre el amor, que lleva el nombre de Cristo y del Padre».  
+Note: the ANF prints the long and the short recension of the letters in separate sections; this string is from the printing of the Romans salutation; check which recension on the page image. The Greek word behind «presides over love» (προκαθημένη τῆς ἀγάπης) is not in the OCR and was not checked.
+
+**P-W2 · Irenaeus, *Against Heresies* 3.3.2** · date c. 180–189 (`writers-to-325.md` §2.17 `[memory]`; `open-tags-verification.md` Papacy row: c. 180–189 CONFIRMED by 3.3.3's naming of Eleutherus)  
+Edition: Irenaeus, *Against Heresies*, tr. A. Roberts and W. H. Rambaut, ANF vol. 1 (Buffalo, 1885), III.3.2, archive.org `antenicenefather01buff`. `[verified: ANF 1 scan OCR, exact string]`  
+Quote (en): «For it is a matter of necessity that every Church should agree with this Church, on account of its preeminent authority, that is, the faithful everywhere, inasmuch as the apostolical tradition has been preserved continuously by those [faithful men] who exist everywhere».  
+Latin as the ANF prints it in a note: «Ad hanc enim ecclesiam propter potiorem principalitatem necesse est omnem convenire ecclesiam». The ANF translators themselves write, in their note, that «both the text and meaning have here given rise to much discussion» and that they are «far from sure» their rendering is correct: the quote is therefore given with its Latin and that caution. The Greek original is lost: this passage is a quotation of the ancient Latin translation (`writers-to-325.md` §2.17: the work survives as a whole only in Latin). The long note that follows in the ANF is an editor's polemical aside and is not quoted.  
+Spanish (Doctrina, AI-assisted, unreviewed): «Pues es necesario que toda Iglesia concuerde con esta Iglesia, a causa de su autoridad preeminente, es decir, los fieles de todas partes, por cuanto la tradición apostólica ha sido conservada continuamente por aquellos [hombres fieles] que existen en todas partes».  
+Surrounding paragraph: the section lists the succession of Roman bishops from Linus to Eleutherus as one tradition «handed down» from the apostles. 
+
+**P-W3 · Cyprian, *On the Unity of the Church* 4** · date 251 (`writers-to-325.md` §2.24, `[memory]`)  
+Edition: Cyprian, *Treatises*, tr. R. E. Wallis, ANF vol. 5 (Buffalo: Christian Literature Company, 1888 printing, copyright 1886; archive.org `antenicenefather05buff`: `writers-to-325.md` lists another scan, `…05robeuoft`), *Unity of the Church* ch. 4. `[verified: ANF 5 scan OCR, exact string]`  
+Quote (en): «And although to all the apostles, after His resurrection, He gives an equal power, [...] yet, that He might set forth unity, He arranged by His authority the origin of that unity, as beginning from one. Assuredly the rest of the apostles were also the same as was Peter, endowed with a like partnership both of honour and power: but the beginning proceeds from unity.»  
+Spanish (Doctrina, AI-assisted, unreviewed): «Y aunque a todos los apóstoles, después de su resurrección, da un poder igual, [...] sin embargo, para mostrar la unidad, dispuso con su autoridad el origen de esa unidad, comenzando por uno. Ciertamente los demás apóstoles eran también lo que fue Pedro, dotados de una participación semejante de honor y de poder; pero el principio procede de la unidad.»  
+**Two versions trap** (`writers-to-325.md` §2.24, "The two texts of *De unitate* 4"): the manuscripts carry a «Primacy Text» and a «Received Text». The ANF prints the Received Text and marks the phrases of the Primacy Text («And the primacy is given to Peter...», «Who deserts the chair of Peter...») as «interpolated» and «undoubtedly spurious» in its notes. Most scholars since Bévenot hold both versions to be Cyprian's. The Primacy Text's extra phrases are not quoted as Cyprian's words; the few words of the ANF editors' notes that appear above («interpolated», «undoubtedly spurious») are quoted only to report the edition's position, not as evidence. The Primacy Text needs a critical edition (CCSL 3, ©, not read).  
+Surrounding paragraph: it quotes Matthew 16:18–19, John 20:21–23 and Ephesians 4:4–6, and cites a «Feed my sheep» passage (Jn 21: the footnote number is unreadable in the OCR) («one body and one spirit… one baptism»).
+
+**P-W4 · Firmilian of Caesarea, letter to Cyprian (ANF Epistle LXXIV, A.D. 256 in the ANF heading; Epistle 75 in the Hartel/CPL numbering; ch. 17 by memory)** · date 256 (`writers-to-325.md` §3.25)  
+Edition: *Epistles of Cyprian*, tr. R. E. Wallis, ANF vol. 5 (Buffalo, 1886). `[verified: ANF 5 scan OCR, exact string]`  
+Quote (en): «I am justly indignant at this so open and manifest folly of Stephen, that he who so boasts of the place of his episcopate, and contends that he holds the succession from Peter, on whom the foundations of the Church were laid, should introduce many other rocks and establish new buildings of many churches».  
+Spanish (Doctrina, AI-assisted, unreviewed): «Con justicia me indigno ante esta necedad tan abierta y manifiesta de Esteban: que quien así se jacta del lugar de su episcopado y sostiene que tiene la sucesión de Pedro, sobre quien se pusieron los fundamentos de la Iglesia, introduzca otras muchas rocas y establezca nuevos edificios de muchas iglesias».  
+Note: the letter is a Latin translation of a lost Greek original (`writers-to-325.md` §3.25) and belongs to the dispute with Stephen of Rome over the baptism of heretics. It is a letter that criticizes a claim of succession from Peter made by the bishop of Rome of its day; it is not a statement of any modern tradition. OCR slip cleaned: «epis- copate» hyphenation.
+
+### Witnesses quoted, Nicene and Post-Nicene stretch (session A, 2026-11-01)
+
+Status: draft, NOT verified by Pedro. Same rules as the section above (quotation from the dated English edition, string-matched in the archive.org OCR; OCR slips named; the **Spanish is Doctrina's own AI-assisted rendering from the NPNF English, unreviewed**; editors' notes never quoted unless a line says so; locators are the work's own divisions). Editions (all *A Select Library of Nicene and Post-Nicene Fathers of the Christian Church*, Second Series, ed. Philip Schaff and Henry Wace; archive.org scans whose title pages were read): **vol. VI** Jerome, New York: The Christian Literature Company; Oxford and London: Parker & Company, 1893 (`selectlibraryofn06schauoft`); **vol. XII** Leo the Great and Gregory the Great, 1895 (`selectlibraryofn12schauoft`); **vol. XIV** *The Seven Ecumenical Councils*, ed. Henry R. Percival, New York: Charles Scribner's Sons; Oxford and London: Parker & Company, 1900 (`selectlibraryofn14schauoft`). Dates are those the edition prints.
+
+**P-W5 · Council of Nicaea, canon 6** · date: A.D. 325 (the edition's page heading «I. NICE. A.D. 325») `[verified: NPNF2 14 heading, OCR]`  
+Edition: NPNF Series 2 vol. XIV (1900), the Canons of the 318 Holy Fathers, Canon VI. `[verified: NPNF2 14 scan OCR, exact string]`  
+Quote (en): «Let the ancient customs in Egypt, Libya and Pentapolis prevail, that the Bishop of Alexandria have jurisdiction in all these, since the like is customary for the Bishop of Rome also. Likewise in Antioch and the other provinces, let the Churches retain their privileges.»  
+Spanish (Doctrina, AI-assisted, unreviewed): «Que prevalezcan las antiguas costumbres de Egipto, Libia y la Pentápolis, de modo que el obispo de Alejandría tenga jurisdicción sobre todas ellas, pues lo mismo es costumbre también para el obispo de Roma. Del mismo modo, en Antioquía y en las demás provincias, conserven las Iglesias sus privilegios.»  
+The Ancient Epitome printed with the canon (an old summary, not the editor's own; not quoted) renders «As also the Roman bishop over those subject to Rome». Settles the row «Nicaea I, canon 6» as to the English text; the Greek and Latin were not read.
+
+**P-W6 · Jerome, Letter XV (to Pope Damasus), § 2** · date: «written in 376 or 377 A.D.» (the translators' heading of the letter) `[verified: NPNF2 6 heading, OCR]`  
+Edition: NPNF Series 2 vol. VI (1893), Letter XV, § 2. `[verified: NPNF2 6 scan OCR, exact string]`  
+Quote (en): «As I follow no leader save Christ, so I communicate with none but your blessedness, that is with the chair of Peter. For this, I know, is the rock on which the church is built!»  
+Spanish (Doctrina, AI-assisted, unreviewed): «Como no sigo a ningún jefe sino a Cristo, así no estoy en comunión con nadie sino con vuestra beatitud, es decir, con la cátedra de Pedro. ¡Pues sé que esta es la roca sobre la cual está edificada la Iglesia!»  
+Surrounding text: the letter goes on to say the sender cannot always ask «the holy thing of the Lord» of Damasus because of the distance, and then asks which of three claimants is the true bishop of Antioch. The heading says it «illustrates Jerome's attitude towards the see of Rome at this time». Not assigned to any modern tradition.
+
+**P-W7 · Council of Chalcedon, canon 28** · date: «THE COUNCIL OF CHALCEDON. A.D. 451» (the edition's heading) `[verified: NPNF2 14 heading, OCR]`  
+Edition: NPNF Series 2 vol. XIV (1900), Canon XXVIII. `[verified: NPNF2 14 scan OCR, exact string]`  
+Quote (en): «For the Fathers rightly granted privileges to the throne of old Rome, because it was the royal city. And the One Hundred and Fifty most religious Bishops, actuated by the same consideration, gave equal privileges […] to the most holy throne of New Rome, justly judging that the city which is honoured with the Sovereignty and the Senate, and enjoys equal privileges with the old imperial Rome, should in ecclesiastical matters also be magnified as she is, and rank next after her»  
+Spanish (Doctrina, AI-assisted, unreviewed): «Pues los Padres concedieron con razón privilegios al trono de la antigua Roma, porque era la ciudad regia. Y los ciento cincuenta obispos piadosísimos, movidos por la misma consideración, dieron privilegios iguales […] al santísimo trono de la Nueva Roma, juzgando con justicia que la ciudad honrada con la soberanía y el senado, y que goza de privilegios iguales a los de la antigua Roma imperial, debía también en lo eclesiástico ser engrandecida como ella y ocupar el lugar siguiente después de ella»  
+OCR slips cleaned: «Eome»/«Koine» → «Rome», the Greek parenthesis printed after «privileges» («'era irpea/Sela») is replaced by […]. The quotation is closed without a full stop because the sentence goes on. A note printed with the canon, attributed there to Van Espen (not quoted), says it «was expressly renewed by canon xxxvi. of the Council of Trullo». The canon is an Orthodox dossier text (`orthodox.md` PQ-4, Percival p. 287); this entry only adds the edition's English line. Not assigned to any modern tradition.
+
+**P-W8 · Gregory the Great, Epistle XX (Book V), to Mauricius Augustus** · date: the edition's Prolegomena print «Book V. Indiction XIII. (a.d. 594-5)» and list Epistle XX among that year's letters; Epistle XVIII is dated «Kal. Jan. Indict. 13 (i.e. Jany a.d 595)»; Epistle XX has no date line of its own, so a single year (595) is not printed for it `[verified: NPNF2 12 Prolegomena and Epistle XVIII heading, OCR]`  
+Edition: NPNF Series 2 vol. XII (1895), Gregory the Great, Registrum, Book V, Epistle XX. `[verified: NPNF2 12 scan OCR, exact string]`  
+Quote 1 (en): «For to all who know the Gospel it is apparent that by the Lord's voice the care of the whole Church was committed to the holy Apostle and Prince of all the Apostles, Peter.»  
+Quote 2 (en): «Lo, he received the keys of the heavenly kingdom, and power to bind and loose is given him, the care and principality of the whole Church is committed to him, and yet he is not called the universal apostle; while the most holy man, my fellow-priest John, attempts to be called universal bishop.»  
+Spanish (Doctrina, AI-assisted, unreviewed): 1 «Pues a todos los que conocen el Evangelio les consta que, por la voz del Señor, el cuidado de toda la Iglesia fue confiado al santo Apóstol y Príncipe de todos los Apóstoles, Pedro.» 2 «He aquí que recibió las llaves del reino celestial, y se le dio el poder de atar y desatar, se le confía el cuidado y el principado de toda la Iglesia, y sin embargo no se le llama apóstol universal; mientras que el santísimo varón, mi compañero en el sacerdocio Juan, intenta que se le llame obispo universal.»  
+OCR slips cleaned: «heaven! v kingdom» read «heavenly kingdom»; the editor's footnote («The ironical allusion here to John the Faster is evident») is not quoted. The letter concerns the title taken by the patriarch of Constantinople. Not assigned to any modern tradition.
+
+**Rows of the list below touched by this stretch** (the table below keeps its earlier statuses). *Nicaea I, canon 6*: English text read (P-W5); Greek and Latin not read. *Chalcedon, canon 28*: English line added (P-W7). *Gregory the Great, Ep. 5.18–20*: Epistle XX of Book V is read (P-W8); its year is «594-5» for the book, Ep. XVIII is January 595. *Leo the Great, Ep. 10; Serm. 3–4*, the Chalcedon acclamation, *Sardica*, *Jerome* beyond Letter XV: not read in this pass.
+
+### Full list of early texts on the papacy (for page 10; to c. 749)
+
+| Text | Author | Date (c.) | Locator | Status |
+|---|---|---|---|---|
+| *To the Romans* | Ignatius | 107–110 | salutation | quoted above |
+| *1 Clement* | Clement of Rome | c. 96 | 1; 63–65 | `[memory]` (a letter of the Roman church to Corinth: its use in the debate is disputed) |
+| *Against Heresies* | Irenaeus | 180–189 | 3.3.2 | quoted above |
+| Letter to Victor (Easter) | Irenaeus | c. 190 | in Eusebius, HE 5.24 | `[source: writers-to-325.md §2.17]` |
+| *Unity of the Church* | Cyprian | 251 | 4 | quoted above (two versions) |
+| Letters on Stephen and rebaptism | Cyprian; Firmilian | 256 | ANF Ep. LXXIII (to Pompey) and LXXIV (Firmilian) = Ep. 74–75 in Hartel/CPL | Firmilian quoted above |
+| Nicaea I, canon 6 | council | 325 | 6 | `[memory]`; ordering of sees: Greek and Latin of the canon were not read |
+| Sardica, canon 3–5 | council | 343 | 3–5 | `[memory]`; authority disputed |
+| Constantinople I, canon 3 | council | 381 | 3 | `[source: Orthodox dossier QE-8, Percival NPNF 14 p. 178]` |
+| Damasus, *Decree* (disputed authorship) | Rome | 382 or later | — | `[memory]` |
+| Chalcedon, canon 28; the acclamation to Leo's *Tome* | council | 451 | can. 28; session 2 | `[source: Orthodox dossier PQ-4, Percival p. 287]` for can. 28; acclamation `[memory]` |
+| Leo the Great, letters and sermons | Rome | 440–461 | Ep. 10; Serm. 3–4 | `[memory]` |
+| Gelasius, letters | Rome | 492–496 | — | `[memory]` |
+| Gregory the Great, letters on the title «universal» | Rome | 595 | Ep. 5.18–20; 8.30 | Ep. 5.18–20 and 595 `[memory]`; Ep. VIII.30 `[source: Papacy dossier]` (date pending) |
+| Trullo, canon 36 | council | 692 | 36 | `[source: Orthodox dossier QE-8, Percival p. 382]` |
+| *Exposition of the Orthodox Faith* | John of Damascus | c. 743 | 4.17 | `[memory]` |
+
+## 7. Verification
+
+Verifier: Sonnet 5.5, 2026-11-01 (research night, unattended). Scratch (outside repo): `~/codex-night1101-scratch/v2/` (OCR text, matching scripts).
+
+### Progress
+
+- DONE: method 1 (all quotes in §1–§3 against the five dossiers, fixed-string search, whitespace/markdown/guillemets normalised); method 2 (neutrality, `silencio` / `no consultado` cells against each dossier's Coverage table and text); method 3 (P-W1 to P-W4 against archive.org OCR of ANF vol. 1 `antenicenefather01buff` and vol. 5 `antenicenefather05buff`, hyphenated line breaks joined); method 4 (full list `[source: …]` rows).
+- Extra primary checks made: Lumen gentium 18, 22, 27 and 25 read on vatican.va (official Spanish) to settle three Catholic locators; BF&M 2000 art. VI read on bfm.sbc.net to settle «Lordship of Christ», «Lord» vs «head» and the offices.
+- NOT re-fetched: UUS 97, CEC 553/882/891/1369, CIC canons, Triglot, Schaff, Monterrey 1880, Percival. Those verdicts are "the dossier says so at that place" (the dossier's own tag is repeated), not a new check of the print.
+- NOT reached: nothing skipped, except the `[memory]` rows of the full list, which were only sanity-read.
+
+Legend: CONFIRMED = string or fact found where the cell says. WRONG = the cell says something the source does not (correction given). UNCONFIRMABLE = cannot be checked with what the dossiers or legitimate sources give.
+
+### 7.1 §1 Lo que todas comparten
+
+- V1 CONFIRMED · Catholic «bajo su única Cabeza, que es Cristo Jesús», UUS 97: dossier `catholic.md` line 219 (PQ-3) «Esta función de Pedro debe permanecer en la Iglesia para que, bajo su única Cabeza, que es Cristo Jesús, sea visiblemente…». The dossier's tag is `[verified]`, not `[verified: vatican.va]` (the cell invents a finer tag; the dossier's Sources line says «re-read on vatican.va 2026-10-21»).
+- V2 CONFIRMED · Orthodox Dositheus X Greek, pp. 410–411: `orthodox.md` QE-1 «αὐτὸς ὁ κύριος ἡμῶν Ἰησοῦς Χριστός ἐστι κεφαλὴ καὶ αὐτὸς τοὺς οἴακας ἔχων…». The cell writes κεφαλή (acute), the dossier κεφαλὴ (grave before καὶ): orthographic, harmless.
+- V3 CONFIRMED · Philaret «is the Head of the Church, and he is the Saviour of the Body», Q.272, Schaff II p. 488: `orthodox.md` «Definition», `[verified: scan]`.
+- V4 UNCONFIRMABLE · Lutheran SA II.4.1 and II.4.9: the dossier gives only its own paraphrase («assigns that headship to Jesus Christ»; «proposes living under Christ as head»); there is no Triglot string to check. The cell already says so.
+- V5 CONFIRMED · Reformed «No hay otra cabeza de la iglesia sino el Señor Jesu-Cristo», WCF 25.6, Monterrey p. 133: `reformed.md` QE-4. Caution (not an error): the same quoted sentence continues in the dossier with «Ni puede el papa de Roma ser la cabeza de ella… aquel anti-cristo»; it is a poor choice for a «what all share» row unless the status note travels with it.
+- V6 CONFIRMED / WRONG minor · «sometidos á Cristo la cabeza de la Iglesia»: text found (`reformed.md` «Definition»). Locator «WCF 25.6 and 25.1, Monterrey pp. 130, 133»: the dossier puts 25.1 on «the opening page of chapter XXV, immediately before p. 130», not on p. 130. Write «opening page of ch. XXV (before p. 130)».
+- V7 CONFIRMED · Baptist «Lordship of Christ», BF&M VI, p. 7: `baptist.md`. My own read of bfm.sbc.net/bfm2000 art. VI: «Each congregation operates under the Lordship of Christ through democratic processes. In such a congregation each member is responsible and accountable to Christ as Lord.» The article contains no «head»: the cell's «say “Lord”, not “head”» is right for BF&M VI. (NH XIII: only the dossier's excerpt was read, which has neither word.)
+- V8 CONFIRMED · Draft sentence 1 («Cristo… su cabeza o su Señor… un ministerio con oficios propios») is supported by a cited text of each of the five (Baptist: «Lord», «two scriptural offices… pastor/elder/overseer and deacon», verified on the official page).
+- V9 WRONG · Draft sentence 2: «Discrepan sobre… qué significan la roca y las llaves». The five do not each take a position: `orthodox.md` PQ-2 says «no separate argument about Peter is added» and `baptist.md` «Por qué» says no Petrine exposition (BF&M VI only lists Mt 16:15–19 among its references). Only Catholic, Lutheran and Reformed texts argue about rock and keys. Likewise «sobre quién puede definir la doctrina sin error»: the Baptist articles say nothing. Rewrite as «Las tradiciones que se pronuncian discrepan…» or limit to what each text argues, otherwise a «Discrepan» about a position the Baptist and Orthodox dossiers do not state is an overclaim.
+- V10 CONFIRMED · Catholic «puso al frente de los demás Apóstoles al bienaventurado Pedro», LG 18: found in `catholic.md` and in the official text on vatican.va (fetched).
+- V11 CONFIRMED · «como vicarios y legados de Cristo», LG 27: vatican.va LG 27 «Los Obispos rigen, como vicarios y legados de Cristo, las Iglesias particulares». Note: `catholic.md` has no «LG 27» locator; it quotes the phrase through UUS 95 and in its own site draft (QE-5). The cell says «LG 27 as quoted in catholic.md»: the locator is right but not from the dossier.
+- V12 CONFIRMED · Orthodox «διὰ τῶν ἁγίων πατέρων» (QE-1) and «ἑτέροις μεταδίδωσι» (p. 414, «Distinct episcopal service»).
+- V13 CONFIRMED · Lutheran Tr 60 Latin, Triglot p. 520: `lutheran.md` «Definition», exact string.
+- V14 CONFIRMED · Reformed WCF 25.3, pp. 130–131: `reformed.md` QE-2, exact string.
+- V15 CONFIRMED · Baptist offices: dossier summary matches the official article text («Its two scriptural offices are that of pastor/elder/overseer and deacon»).
+- V16 CONFIRMED · «Not claimed as common ground…» (Baptist say «Lord» not «head»): see V7.
+
+### 7.2 §2 Lo que se discute
+
+- V17 CONFIRMED · Catholic «principio y fundamento perpetuo y visible de unidad» (CEC 882) and «plena, suprema y universal» (LG 22): both found. Locator imprecision: the first string (no commas, no «la») is CEC 882 = LG 23; LG 18 prints «principio y fundamento, perpetuo y visible, de la unidad de fe y de comunión» (vatican.va). Cite «CEC 882 (= LG 23); LG 22».
+- V18 CONFIRMED · Orthodox Constantinople I c. 3 «the prerogative of honour after the Bishop of Rome» and Trullo c. 36 equal privileges: `orthodox.md` QE-8, Percival pp. 178, 382.
+- V19 CONFIRMED text / WRONG (missing caveat) · Dositheus X p. 410 «un hombre mortal no puede ser cabeza universal y perpetua»: found (QE-5). But the dossier ties this clause to the 1690 revision (Schaff's Greek print; «no unchanged-1672 claim is made») and its Spanish is AI, unreviewed. The cell says only «Greek print». Add the recension caveat in the cell.
+- V20 WRONG · Lutheran «not superior «by divine right» (Treatise 7)»: the words are the dossier's English paraphrase («Tr 7 introduces its claim that the Roman bishop is not superior by divine right…», QE-4), not a quoted line; no Latin of Tr 7 is in the dossier. Remove the guillemets or quote the Triglot Latin of Tr 7.
+- V21 CONFIRMED · Reformed «No hay otra cabeza…» (WCF 25.6, historical wording): see V5.
+- V22 CONFIRMED · Baptist «no pope is named» (`baptist.md` «Specifically papal teaching: sparse», bounded scan check B-04).
+- V23 CONFIRMED · LG 25 «proclama de una forma definitiva la doctrina de fe y costumbres» (vatican.va, fetched).
+- V24 CONFIRMED · Philaret Q.271 «shall never apostatize from the faith» (QE-7); Q.278 ecumenical council (QE-4).
+- V25 WRONG · Orthodox «no conoce a ningún otro que haya sido infalible sobre la tierra» (1895 §XVIII): the sentence begins «La Iglesia ortodoxa… fuera del Hijo y Verbo de Dios que se hizo hombre de manera inefable, no conoce a ningún otro…» (`orthodox.md` QE-9). Without the exception «otro» has no referent and the statement reads as a flat denial. Quote the whole sentence.
+- V26 CONFIRMED · WCF 25.5 «están expuestas á errar en doctrina y práctica» (p. 132); WCF 31.3–4 paraphrase (QE-6), labelled.
+- V27 CONFIRMED (minor) · «the dossier gives no statement on infallibility» (Lutheran): true for the church or the pope; but `lutheran.md` «Grado de autoridad» does say «Confessions are not an equal infallible norm» (FC Ep RN 7–8). Say «none on papal or conciliar infallibility».
+- V28 CONFIRMED (narrow) · «Baptist: silent in the articles read»: NH XIII and BF&M VI do not address it; but `baptist.md` «Grado de autoridad» records that the BF&M preamble (p. 21) places sole authority in Scripture and denies confessional finality or infallibility. Not the same question, yet the cell's silence would be less misleading with one clause saying so.
+- V29 WRONG · «Terms checked: «Sin error» appears in the Catholic and Orthodox texts». Catholic: yes (`catholic.md` «la define sin error», CEC 890). Orthodox: no. `orthodox.md` has Philaret Q.271 «fall into error» (English) and 1895 §XVIII «ἀλάθητον» (Spanish «infalible»); the string «sin error» occurs nowhere in that dossier. The Orthodox and Reformed/Lutheran texts use «error»/«errar»/«infalible», the Catholic one «sin error»/«infalible»: say so, because the question's wording («definir… sin error») is closest to the Catholic framing.
+- V30 CONFIRMED · Catholic «el único a quien Él confió explícitamente las llaves» (CEC 553; dossier adds «del Reino»), and «unido a su Cabeza» (LG 22: «dado también al Colegio de los Apóstoles unido a su Cabeza (cf. Mt 18, 18; 28,16-20)», vatican.va).
+- V31 WRONG · Lutheran Treatise 24 «principaliter et immediate»: no such string. Triglot Latin (`lutheran.md` QE-3, p. 510): «Tribuit igitur principaliter claves ecclesiae et immediate». The cell joins two words 8 words apart. Quote «principaliter claves ecclesiae et immediate» or drop the marks.
+- V32 CONFIRMED · Lutheran Tr 25 «non est aedificata super auctoritatem hominis» (PQ-4, p. 510).
+- V33 CONFIRMED · Reformed WCF 30.2 «son entregadas» (PQ-3, p. 152).
+- V34 CONFIRMED / WRONG · Orthodox Philaret Q.274 / Eph 2:19–20 quote confirmed (PQ-2). The clause «no separate argument about Peter in the sources read» is WRONG: `orthodox.md` QE-9 says the 1895 encyclical's «surrounding historical argument names Peter and several Roman bishops», «excerpt before the continuation about Peter», and its Scripture table lists «Galatians 2:11 … Its argument concerning Peter's correction» (1895 §XVIII, p. 48). Correct wording: «Philaret Q.274 gives no argument about Peter; the 1895 encyclical §XVIII argues about Peter (Gal 2:11), which the dossier did not extract».
+- V35 CONFIRMED · Baptist «not addressed in the passages read» (BF&M VI lists Mt 16:15–19 only as an apparatus reference).
+- V36 CONFIRMED / WRONG · Dependent questions: OB-5 and OB-6 exist in `catholic.md` (lines 455, 481); «plena comunión» (CIC 205) and CEC 817–818 are there. WRONG: «profesión de fe, sacramentos y régimen eclesiástico» in guillemets is a compression. CIC 205 as the dossier quotes it (CV-2): «los vínculos de la profesión de fe, de los sacramentos y del régimen eclesiástico».
+- V37 UNCONFIRMABLE (judgment) · Question wording. Q1 «alguna iglesia u obispo»: «obispo» is the vocabulary of the episcopal traditions; the Reformed and Baptist cells answer about «cabeza», not bishops. Q2 presupposes that somebody can define without error. Both are mild; a version like «¿Qué autoridad humana, si alguna, hay sobre la iglesia local?» / «¿Puede una persona o asamblea definir la doctrina sin error?» is less loaded. Not an error of fact.
+
+### 7.3 §3 Cómo se vive (cell by cell)
+
+- V38 WRONG · Catholic «Quién gobierna», «nunca sin su Cabeza» (LG 22; CIC 375 §2, 377 §1): that wording is the dossier's own site-draft heading (`catholic.md` QE-5 title «un solo colegio, nunca sin su cabeza»). LG 22 official Spanish reads «junto con su Cabeza, el Romano Pontífice, y nunca sin esta Cabeza» (vatican.va, fetched; `catholic.md` line 143). Correct: «nunca sin esta Cabeza» (LG 22).
+- V39 CONFIRMED · Orthodox (Q.279; Dositheus X), Lutheran (Tr 61), Reformed (WCF 30.1 «Rey y Cabeza»), Baptist (BF&M VI) «Quién gobierna» cells match their dossiers.
+- V40 CONFIRMED / WRONG minor · Catholic «Cómo se elige» (CIC 349; 377 §1): matches CV-6, CV-8. The dossier states «Latin Church only» (CIC; CCEO not searched, Coverage table row «Cómo se vive»); the practice cells for the Catholic column omit that scope, and CIC 377 §1 is Latin-code law. Add «(Iglesia latina, CIC)».
+- V41 CONFIRMED · Orthodox «Cómo se elige» (Dositheus X pp. 413–414, QE «Local ministry»).
+- V42 WRONG · Lutheran «Cómo se elige»: `no consultado`. The dossier did read texts on this: PQ-3 / QE-3 Tr 24 «ius vocationis» (the church has principally the right of calling ministers; `lutheran.md` p. 510, `[verified: scan]`) and PQ-5 Tr 12–14 on local episcopal elections (p. 506). Replace with the Tr 24 content (Spanish [traducción propia asistida por IA]) or mark as not covered in «Cómo se vive» only.
+- V43 CONFIRMED · Reformed «Cómo se elige»: `no consultado`: the dossier's only silence entry is «papal election/ceremonial» (Coverage table); election of officers was not read.
+- V44 WRONG minor · Baptist «Cómo se elige»: cell says `no consultado` but gives as reason that BF&M VI «no describe el procedimiento en el pasaje leído». That is `silencio` by the table's own legend (the passage was read). Also BF&M VI says «democratic processes», relevant to the row.
+- V45 CONFIRMED · «Cómo se juzgan»: Catholic CIC 337 §1, 341 §1 (CV-10); Orthodox Q.278; Lutheran Tr 56 (labelled paraphrase, matches «Ecclesial judgment»); Reformed WCF 31.3–4. Baptist `silencio`: narrow, see V28.
+- V46 CONFIRMED / WRONG minor · «Qué se debe a la enseñanza de los pastores»: Catholic (CIC 752 string found; «obediencia de la fe» CEC 891 found), Orthodox (Q.282 «This may be learned from holy Scripture, from the canons…») and Reformed (WCF 31.3) confirmed. The Lutheran cell (what the ministry does: Tr 60, AC XXVIII.8) and the Baptist cell (each member answers to Christ) do not answer what is owed to pastors' teaching; the dossiers give no such statement. Mark them `no consultado` or reword the row. The Baptist cell as placed also reads as «nothing is owed to pastors», which no source says.
+- V47 CONFIRMED / WRONG · «Disciplina»: Catholic (CIC 751 string, CIC 833), Lutheran (Tr 60) and Reformed (WCF 30.4, p. 153) confirmed; Baptist `no consultado` accurate. Orthodox `no consultado` WRONG: `orthodox.md` Scripture table records Philaret Q.275, p. 489, «Its discipline concerning false teaching» (Titus 3:10; 1:10–11; Mt 18:17). The text of Q.275 is not in the dossier, so cite it as «Q.275 (dossier lists the references only)».
+- V48 CONFIRMED / WRONG · «Dónde se expresa la unidad»: Catholic «como signo y servidor de la unidad» (CEC 1369) confirmed; Orthodox `no consultado` accurate; Lutheran paraphrase of SA II.4.9 labelled and matches. WRONG: Reformed `silencio: ningún procedimiento papal`: the dossier's silence is about papal election and ceremonial (Coverage table), not about where unity is expressed (WCF 26–29 on communion of saints and sacraments was not read): should be `no consultado`. WRONG: Baptist `silencio`: the dossier's silence is about a specifically papal observance; it also records a Body-of-Christ paragraph («all of the redeemed of all the ages», BF&M VI, confirmed on the official page) and NH XIII «fellowship of the Gospel». Not silent on unity as such.
+- V49 CONFIRMED · Notes 1–3 under the table: Orthodox caution (`orthodox.md` «Local ministry», «Where obedience is learned», 1848/1895 layer), WCF 25.6 / SA II.4.10 status lines, SA II.4.9 hypothetical (`lutheran.md` QE-6).
+- V50 WRONG · Intro of §3: «The Baptist column is mostly empty because the inspected articles do not address the aspects; that is a finding, not a gap to fill.» `baptist.md` says the opposite: «This does not establish silence of all Baptist documents or every convention» and «a research limit, not a doctrine missing from the map»; Coverage rows are `sparse`. Also two cells above carry content (BF&M VI offices, democratic processes). Say «research limit» not «finding».
+- V51 UNCONFIRMABLE · §4 Coverage row «ANF vols. 1, 3, 5, 7 OCR searched»: only vols. 1 and 5 are quoted; no result from vols. 3 or 7 appears in the file, so the search cannot be checked.
+
+### 7.4 §6 Early witnesses (ANF OCR)
+
+OCR files: `~/codex-night1101-scratch/v2/ocr/v1.txt` (vol. 1, title page «Buffalo 1885, Copyright 1885») and `v5.txt` (vol. 5).
+
+- V52 CONFIRMED · P-W1 English: ANF 1 OCR, Romans, «THE EPISTLE OF IGNATIUS TO THE ROMANS. SHORTER AND LONGER VERSIONS»: «…the Church which is beloved and enlightened… which also presides in the place of the region of the Ro7tians, worthy of God, worthy of honour, worthy of the highest happiness, worthy of praise, worthy of obtaining her every desire, worthy of being deemed holy^ and which presides over love, is nattied from Christ, and from the Father, which I also salute…». The cell's ellipsis covers exactly the omitted «worthy of…» run. OCR slips «Ro7tians», «nattied» are not named in the file (it names none for P-W1): add them to the slip list.
+- V53 CONFIRMED (answers the file's own question) · Which recension: the string is in the FIRST of the two parallel salutations the ANF prints one after the other, the shorter text («Most High Father», «beloved and enlightened», no «worthy of credit»). The second, longer text has «sanctified and enlightened… worthy of credit… and is possessed of the Spirit» and omits «also». So the quote is the shorter recension. The note «in separate sections» is inexact: both are in the same chapter heading, one after the other.
+- V54 WRONG minor · P-W1 Spanish: «preside en el amor» renders «presides over love» (in the OCR: «presides over love»), better «preside sobre el amor» or «preside la caridad»; «llamada por Cristo y por el Padre» renders «is named from Christ, and from the Father» as «called by», which changes the sense (taking the name of, not being summoned by): «que lleva el nombre de Cristo y del Padre».
+- V55 WRONG minor · P-W1 «tr. A. Roberts»: ANF 1 does not credit the Ignatian epistles to Roberts alone; the volume preface (OCR) says «The present volume has been translated by the Editors» (Roberts and Donaldson). Use «tr. A. Roberts and J. Donaldson (the editors)».
+- V56 CONFIRMED · P-W1 date c. 107–110 = `writers-to-325.md` §2.3 «Conventional date: under Trajan, c. 107–110 … [memory]». Tag: that sentence is `[memory]`, the file gives no tag; the same section lists dissenting dates (Decrept 116; Barnes 140s; forgery thesis 161–180) tagged `[verified: WP]`: the cell should say «conventional date».
+- V57 UNCONFIRMABLE · P-W1 Greek «προκαθημένη τῆς ἀγάπης»: no Greek in the OCR; the file says it was not checked. Not checked here either.
+- V58 WRONG · P-W2 English is clipped mid-sentence. ANF 1 OCR (III.3.2): «For it is a matter of necessity that every Church should agree with this Church, on account of its preeminent authority, that is, the faithful every- [footnote 3] where, inasmuch as the apostolical tradition has been preserved continuously by those [faithful men] who exist everywhere.» The file ends «…the faithful everywhere.» with a full stop, dropping the whole «inasmuch as…» clause. That clause is the one Catholic, Orthodox and Protestant readers argue over. Correct: quote the full sentence. The Spanish repeats the clip: add «por cuanto la tradición apostólica ha sido conservada continuamente por aquellos [hombres fieles] que existen en todas partes».
+- V59 CONFIRMED · P-W2 Latin: «Ad banc enim ecclesiam propter potiorcm principalitatem necesse est omnem convenire ecclesiam» in the OCR (slips b/h, c/e): equals the file's Latin.
+- V60 WRONG minor · P-W2 editors' caution: «far from sure» is in the ANF note («We are far from sure that the rendering given above is correct»); «has given rise to much discussion» is not: the note reads «Both the text and meaning have here given rise to much discussion». Also «pre-eminent» vs OCR «preeminent» (line break «pre- / eminent»; hyphen not decidable from OCR).
+- V61 CONFIRMED (process note) · P-W2 date c. 180–189: `writers-to-325.md` §2.17 `[memory]`; `open-tags-verification.md` Papacy row says CONFIRMED by 3.3.3 «Eleutherius does now… hold the inheritance of the episcopate» (ANF spells Eleutherius; the file's «Eleutherus» is the writers file's spelling). Also found: the ANF editors' own note dates the work 182–188 (not quoted).
+- V62 CONFIRMED / minor · P-W2 «Surrounding paragraph»: the succession from Linus to Eleutherius and «handed down» are in 3.3.3 (and 3.3.4), not in 3.3.2: «the ecclesiastical tradition from the apostles… have come down to us… preserved in the Church from the apostles until now, and handed down in truth». Locator wording should say 3.3.3.
+- V63 UNCONFIRMABLE-by-file · P-W2 «The Greek original is lost»: `writers-to-325.md` §2.17 says the work survives «as a whole only in Latin» and every quotation is a quotation of an ancient translation. The file does not say that this passage is a quotation of the Latin translation; add it (screen 09 note per writers).
+- V64 CONFIRMED · P-W3 English, ANF 5 OCR, Treatise I ch. 4: «And although to all the apostles, after His resurrection, He gives an equal power, and says, … yet, that He might set forth unity, He arranged by His authority the origin of that unity, as beginning from one. Assuredly the rest of the apostles were also the same as was Peter, endowed with a like partnership both of honour and power : but the beginning proceeds from unit).7» The file's [...] stands for «and says, “As the Father hath sent me … they shall be retained;”6». OCR slips «unit).7», footnote mark 6: not named in the file.
+- V65 WRONG minor · P-W3 Spanish: «like partnership» is «participación igual»; the previous clause «equal power» is also «poder igual»: the translation erases the difference between «equal» (apostles, after the resurrection) and «like» (rest of the apostles with Peter). Use «semejante».
+- V66 CONFIRMED · P-W3 two-versions note vs `writers-to-325.md` §2.24 («Primacy Text», «Received Text», Bévenot 1938/1961, «most scholars hold that both are Cyprian's own», CCSL 3 ©, a page quoting the chapter must name which text it quotes): all consistent. The ANF footnotes (OCR) do print «[Here is interpolated]: “And the primacy is given to Peter…”» and «beyond all question spurious», «Who deserts the chair of Peter, upon whom the Church is founded.» «This passage also is undoubtedly spurious.» Tag gap: the file states Bévenot's view without the tag; writers gives it `[memory]`.
+- V67 WRONG (internal contradiction) · §6 rule says editors' notes are «never quoted», and P-W3 says «Neither the editors' notes nor the Primacy Text's extra phrases are quoted here». Yet the same paragraph quotes «interpolated», «undoubtedly spurious», «And the primacy is given to Peter...» and «Who deserts the chair of Peter...» from the ANF footnotes (and P-W2 quotes footnote 3 twice). Either drop the quoted words or state «short phrases of the editors' notes are quoted to report their position».
+- V68 CONFIRMED · P-W3 «Surrounding paragraph»: Mt 16:18–19 (text and footnote «Matt. xvi. 18, 19»), Jn 20:21–23, Eph 4:4–6 («There is one body and one spirit… one baptism, one God», footnote «Eph. iv. 4»). UNCONFIRMABLE: «John 21:17»: the footnote after «Feed my sheep» is garbled in the OCR («ihn Jtxi, is»), and its reading could be 21:15. Check on the page image.
+- V69 CONFIRMED · P-W3 date 251 = `writers-to-325.md` §2.24 table, tag `[memory]` (the file gives the tag).
+- V70 CONFIRMED · P-W4 English, ANF 5 OCR, letter of Firmilian: «17. And in this respect I am justly indignaal at this so open and manifest folly of Stephen, that he who so boasts of the place of his episcopate, and contends that he holds the succession from Peter," on whom the foundations of the Church were laid, should introduce many other rocks and establish new buildings of many churches; maintaining…». Only OCR slip: «indignaal». The quote stops before «; maintaining that there is baptism in them by his authority»: acceptable, but that clause ties it to the baptism dispute. The file's «epis- copate» note is true of the raw OCR line break.
+- V71 CONFIRMED · P-W4 chapter locator «ch. 17 by memory»: the OCR numbers this passage «17.» (letter divisions as the ANF prints them). The «by memory» can be removed.
+- V72 WRONG · P-W4 «Cyprian's Epistle LXXV in ANF's numbering». ANF 5 heading (OCR): «EPISTLE LXXIW[=LXXIV]. FIRMILIAN, BISHOP OF CAESAREA IN CAPPADOCIA, TO CYPRIAN, AGAINST THE LETTER OF STEPHEN. A.D. 256.»; ANF's own cross-reference: «Letter of Firmilian to Cyprian … p. 390, supra, Ep. lxxiv». ANF Ep. LXXV is «TO MAGNUS». `writers-to-325.md` §3.25 has it right: «Cyprian Ep. 75 (CPL 50)» in the standard numbering, «English ANF 5 (as Cyprian Ep. 74)». Correct: «ANF Ep. LXXIV (= Ep. 75 in Hartel/CPL)».
+- V73 CONFIRMED · P-W4 Spanish, faithful. P-W4 date 256 = `writers-to-325.md` §3.25 (Tier-2 entries are `[memory]` unless tagged; the file gives no tag). New support: the ANF heading prints «A.D. 256» (so `[verified: ANF 5 scan OCR, heading]` is justified for the date).
+- V74 UNCONFIRMABLE · P-W4 note «the earliest text in this list that criticizes the use of Peter's succession by a bishop of Rome»: an editorial judgment about the whole list, no source; the site «never concludes». Replace with a neutral description of the letter.
+- V75 UNCONFIRMABLE · §6 intro «texts that Catholic, Orthodox and Protestant writers all cite and the texts they cite against each other»: a claim about modern use, no citation in the file; flag as from memory or support from a dossier (Catholic OB-4 uses Irenaeus and Ignatius per `catholic.md` line 245).
+- V76 WRONG minor · Edition line: «tr. R. E. Wallis, ANF vol. 5 (Buffalo, 1886)» for `antenicenefather05buff`. That scan's title page reads «BUFFALO: THE CHRISTIAN LITERATURE COMPANY. 1888. Copyright, 1886». Wallis as translator is right (OCR «TRANSLATED BY THE REV. ERNEST WALLIS»). `writers-to-325.md` row «ANF 1–10» lists vol. 5 as `antenicenefather05robeuoft` (1886), a different scan: name the scan actually read («1888 printing of the 1886 copyright, `antenicenefather05buff`»).
+
+### 7.5 Full list of early texts
+
+- V77 CONFIRMED · Irenaeus to Victor, `[source: writers §2.17]` (HE 5.24; c. 190): present in §2.17 («Victor of Rome (c. 190)… Eusebius HE 5.24.11–17»), but the source sentence is `[memory]`.
+- V78 CONFIRMED · Constantinople I c. 3, `[source: Orthodox dossier QE-8, Percival p. 178]`: present, `[verified: scan]`. The date 381 is not in the dossier (`[memory]`).
+- V79 WRONG · Chalcedon c. 28, `[source: Orthodox dossier QE-6]`: QE-6 prints no canon text («[unverified: map control until print excerpts below]»). The print is PQ-4 (Percival 1900, p. 287, `[verified: scan]`): cite PQ-4.
+- V80 CONFIRMED · Trullo c. 36, `[source: Orthodox dossier QE-8, Percival p. 382]`: present. Date 692 `[memory]`.
+- V81 WRONG · Gregory the Great row. Its cited source («Papacy dossier, Pastor aeternus note, «Ep. ad Eulog. VIII.30»: date pending») gives only the Eulogius letter and says the date is pending (`verification-catholic.md` line 199; `decisions-2026-10-20.apply.md` line 83: UNCONFIRMABLE; the neutral files give only the pontificate 590–604). The row's locator «Ep. 5.18–20» and date «595» are not in that source; Ep. 8.30 belongs to Register book VIII, a later letter than 595 (by memory, c. 598, not verified). Correct: tag `[memory]` for 5.18–20 and 595, keep 8.30 «date pending».
+- V82 WRONG · «Letters on Stephen and rebaptism … Ep. LXXIV–LXXV (ANF)». ANF 5: LXXIII «TO POMPEY, AGAINST THE EPISTLE OF STEPHEN», LXXIV Firmilian; LXXV is «TO MAGNUS» (OCR). Correct: «ANF Ep. LXXIII–LXXIV (= Ep. 74–75 in Hartel/CPL)».
+- V83 CONFIRMED (sanity only, `[memory]` rows) · 1 Clement c. 96 (`writers` §2.1: c. 95–96, Clavis); Nicaea I c. 6, Sardica 343, Damasus «382 or later (disputed)», Gelasius 492–496, Leo 440–461, Chalcedon 451 / acclamation session 2: nothing wrong seen at a quick read. UNCONFIRMABLE: John of Damascus *Exposition* «4.17» (locator not checkable here; date c. 743 `[memory]`); Leo «Ep. 10; Serm. 3–4» and Sardica «3–5» locators not checked.
+
+### Wrong items
+
+1. V58 · Irenaeus 3.3.2 quote clipped mid-sentence, full stop added; the «inasmuch as the apostolical tradition has been preserved…» clause is dropped (English and Spanish).
+2. V72, V82 · Firmilian is ANF Ep. LXXIV (not LXXV); Stephen letters are ANF LXXIII–LXXIV (Hartel 74–75).
+3. V38 · «nunca sin su Cabeza» attributed to LG 22; LG 22 reads «nunca sin esta Cabeza»; the quoted words are the dossier's own heading.
+4. V31 · Lutheran «principaliter et immediate» is a splice (Tr 24: «principaliter claves ecclesiae et immediate»).
+5. V36 · CIC 205 «profesión de fe, sacramentos y régimen eclesiástico» compressed inside guillemets.
+6. V20 · «by divine right» (Tr 7) is the dossier's paraphrase, not a quotation.
+7. V25 · 1895 §XVIII clipped: drops «fuera del Hijo y Verbo de Dios…».
+8. V9 · «Discrepan sobre… roca y llaves / sin error»: not true of every tradition (Orthodox, Baptist take no stated position in the sources read).
+9. V34 · «no separate argument about Peter in the sources read» (Orthodox): false, 1895 §XVIII argues about Peter (Gal 2:11).
+10. V29 · «Sin error» does not appear in the Orthodox dossier.
+11. V42 · Lutheran «Cómo se elige» `no consultado`: the dossier has Tr 24 (ius vocationis) and Tr 12–14.
+12. V47 · Orthodox «Disciplina» `no consultado`: dossier lists Philaret Q.275 on discipline (references only).
+13. V48 · Reformed and Baptist «Dónde se expresa la unidad» `silencio`: the dossiers' silences are about papal election/observance, not about unity.
+14. V44 · Baptist «Cómo se elige» `no consultado` contradicts its own reason (it is `silencio`).
+15. V50 · «that is a finding» (Baptist emptiness) contradicts `baptist.md` («a research limit, not a doctrine missing»).
+16. V46 · Lutheran and Baptist «Qué se debe» cells do not answer the row; the Baptist one reads as «nothing is owed».
+17. V67 · §6 says editors' footnotes are never quoted but quotes them (Cyprian 4 and Irenaeus 3.3.2).
+18. V54, V65 · Spanish fidelity: «llamada por Cristo» (named from), «preside en el amor» (presides over love), «igual» for «like».
+19. V55, V76 · Ignatius translator is «the Editors», not A. Roberts; vol. 5 scan is the 1888 printing (©1886).
+20. V79, V81 · Full list: Chalcedon c. 28 source is PQ-4, not QE-6; Gregory row's locators and date are not in the source it cites.
+21. Minor: V6 (WCF 25.1 locator), V17 (LG 18/22 vs LG 23 locator), V19 (missing 1690 recension caveat), V27, V40 (Latin Church only), V60 («has given rise» altered), V62 (3.3.3 not 3.3.2), V1 (tag `[verified: vatican.va]` not in the dossier), V56 and V73 (date tags missing).
+
+### Unconfirmable
+
+- V4 · Lutheran SA II.4.1 / II.4.9 wording (dossier paraphrase only; Triglot line to be quoted before publishing).
+- V37 · Neutrality of the question wording (judgment, not a fact).
+- V51 · ANF vols. 3 and 7 «searched» (nothing from them in the file).
+- V57 · Ignatius Greek προκαθημένη τῆς ἀγάπης (no Greek in the OCR).
+- V63 · Irenaeus «Greek original lost» vs «survives in Latin only» (add the translation note).
+- V68 · Cyprian 4 footnote «John 21:17» (OCR garbled, possibly 21:15).
+- V74 · «earliest text… criticizes…» (editorial judgment, unsourced).
+- V75 · «texts that Catholic, Orthodox and Protestant writers all cite» (unsourced claim about modern use).
+- V83 · John of Damascus 4.17, Leo Ep. 10 / Serm. 3–4, Sardica 3–5 locators.
+- All Spanish of Lutheran, Orthodox and Baptist cells stays `[unverified]` (AI-assisted, unreviewed), as the file already says. Nothing from the Triglot, Schaff, Monterrey, Percival or the CIC/CEC pages was re-fetched tonight.
+
+### Outside this file
+
+- `docs/research/neutral/writers-to-325.md` §3.25 is correct (Ep. 75 / ANF Ep. 74) and its row «ANF 1–10» names vol. 5 as `antenicenefather05robeuoft`: the shared file read `antenicenefather05buff` (1888 printing). Decide which scan is the cited edition and make both files agree.
+- `docs/research/doctrines/papacy/catholic.md` has no «LG 27» locator for «vicarios y legados de Cristo» (it comes through UUS 95). Add «LG 27» there if the phrase is to be cited by that locator; text confirmed on vatican.va.
+- The same kinds of error (splice, heading in guillemets, clipped sentence, `silencio` for «not searched») are likely in `baptism/shared.md` and `eucharist` practice tables built the same way: check their cells against the Coverage tables.
+
+### Corrections applied by the coordinator (2026-11-01, after this pass)
+
+Applied: the common-ground «Discrepan» sentence (limited to the traditions that take a position); locators and splices (V6, V20, V31, V36, V38); the Dositheus recension caveat (V19); the full 1895 §XVIII sentence (V25); Orthodox Peter claim (V34); the two question wordings (V37); the Catholic Latin-Church scope (V40); the Lutheran, Baptist, Orthodox and Reformed practice cells re-labelled to match the dossiers' coverage (V42, V44, V46–V48); §3 intro (V50); the Irenaeus 3.3.2 quote completed with its «inasmuch as…» clause and the Spanish (V58), the translators' note wording and Latin-translation note (V60, V63); «semejante» (V65); the Firmilian and Stephen-letter numbering (ANF LXXIII–LXXIV, V72, V82); the editors'-notes contradiction (V67); the claim about «earliest» (V74) and the modern-use claim (V75); the edition line for vol. 5 (V76); Chalcedon c. 28 and Gregory the Great tags (V79, V81). Not applied (outside this file): choose one scan for ANF vol. 5 across `writers-to-325.md` and this file; `catholic.md` has no LG 27 locator. The Greek of Ignatius's «προκαθημένη τῆς ἀγάπης» (V57) and the Jn 21 footnote (V68) stay unchecked.

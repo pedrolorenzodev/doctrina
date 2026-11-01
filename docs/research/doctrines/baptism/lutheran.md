@@ -220,6 +220,17 @@ LC IV.78 says another pouring with water is not required; IV.79 calls repentance
 
 No description of sponsors, parish scheduling or denominational baptism certificates is inferred from these passages. Those matters require their own mapped practice witness if the owner wants them on the screen.
 
+### How the water is applied (read 2026-11-01, session A)
+
+The Large Catechism, Part IV, was read in full (the whole page of the BookOfConcord.org web transcription of the Triglot English) for the manner of applying the water. It names three actions and prescribes none:
+
+> “by suffering the water to be poured upon you” — LC IV.36.
+> “the body, which can apprehend nothing but the water, is sprinkled” — LC IV.45.
+> “we are sunk under the water, which passes over us, and afterwards are drawn out again” — LC IV.65, where the act is described to explain what baptism signifies.
+> “we need not again be sprinkled with water; for though we were put under the water a hundred times, it would nevertheless be only one Baptism” — LC IV.78.
+
+[verified: BookOfConcord.org web transcription of the Triglot English, searched for dip, immerse, sprinkle, pour, plunge, wash, sunk and under the water across LC IV; the 1921 print page and the German were not collated for these four lines, so no page is given]. No sentence of LC IV says that one manner is required or invalid. The BookOfConcord.org pages of SC IV, AC IX, Ap IX and SA III.5 were searched for the same words (dip, immerse, sprinkle, pour, plunge, submerge): no hit. Result: for the page's «Modo» row the Lutheran documents are not silent, they mention pouring, sprinkling and going under the water without choosing one.
+
 ## Grado de autoridad
 
 ### The documents' grades

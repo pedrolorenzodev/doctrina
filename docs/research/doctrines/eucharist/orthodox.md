@@ -50,7 +50,7 @@ The same paragraph identifies that body through Christ's birth, baptism, passion
 
 > Ἔτι μετὰ τὸν ἁγιασμὸν τοῦ ἄρτου καὶ τοῦ οἴνου οὐκ ἔτι μένειν τὴν οὐσίαν τοῦ ἄρτου καὶ τοῦ οἴνου, ἀλλ' αὐτὸ τὸ σῶμα καὶ τὸ αἷμα τοῦ κυρίου ἐν τῷ τοῦ ἄρτου καὶ τοῦ οἴνου εἴδει καὶ τύπῳ, ταὐτὸν εἰπεῖν, ὑπὸ τοῖς τοῦ ἄρτου συμβεβηκόσιν. [verified: scan]
 
-> «Después de la consagración del pan y del vino ya no permanece la sustancia del pan y del vino, sino el cuerpo mismo y la sangre misma del Señor bajo la apariencia y figura del pan y del vino; es decir, bajo los accidentes del pan». [traducción propia asistida por IA; checked against Greek in S1; unreviewed by Pedro]
+> «Después de la consagración del pan y del vino ya no permanece la sustancia del pan y del vino, sino el cuerpo mismo y la sangre misma del Señor bajo la apariencia y figura del pan y del vino; es decir, bajo los accidentes del pan». [traducción propia asistida por IA; checked against Greek in S1; unreviewed by Pedro] [flag 2026-11-01, session A: the Greek «εἴδει καὶ τύπῳ» of this clause is rendered «bajo la especie y figura» in `reformed.objections.md` OB-1 and «bajo la apariencia y figura» in `orthodox.md` QE-2 and in the registry; both are AI renderings, unreviewed; one wording has to be chosen before import, not chosen here]
 
 **Textual boundary:** this is the Greek formulation printed by Schaff. The map records qualifications and omissions in the Russian 1838 Dositheus; that recension has not been collated here. Do not label the Greek clause a verbatim Russian formula.
 

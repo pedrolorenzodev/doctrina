@@ -1,0 +1,323 @@
+# Sola Scriptura · shared content for page 02 (`shared.md`)
+
+Status: draft, NOT verified by Pedro
+
+## Progress
+
+- Written 2026-11-01 (research night, session 1). B1 and B3 below; B2 (early witnesses) is appended at the end when done.
+- Source of every quote: the five Sola Scriptura dossiers in this folder (`catholic.md`, `orthodox.md`, `lutheran.md`, `reformed.md`, `baptist.md`) and the edition each names. Tags are the dossier's own (`[verified: scan]` = checked there in the named print scan or official page; `[unverified]` = not). **Nothing was re-fetched from the original editions tonight.**
+- Spanish of Lutheran, Orthodox and Baptist texts is the dossiers' own AI-assisted translation from the original language, unreviewed by Pedro. The Reformed WCF quotes are the printed Spanish of Monterrey 1880 (public domain); WLC quotes are the Edinburgh 1894 English with the dossier's AI-assisted Spanish.
+- Agent's calls: (1) The doctrine's name is the Reformation slogan; the Catholic dossier says the phrase does not appear in the texts it searched (`catholic.md`, «Apertura»; VD, PD and CCC 50–73 were not part of the re-check). The questions below are therefore worded about «Escritura», «tradición» and «sentido», never with the Latin phrase. (2) Common ground is limited to what a text of each of the five says; the Orthodox texts say «two channels» (Philaret Q.16), not «supreme», so «supremacy» is not claimed as shared. (3) The page title and the home row are open: nothing in `twelfth-session-queue.md` decides them (`orthodox.md` Question 1 asks the owner to keep «Escritura y Tradición»); this file does not decide them.
+
+Model followed: `src/content/pages/eucharist/doctrine.es.ts` (`common`, `practice`).
+
+---
+
+## 1. Lo que todas comparten (common ground)
+
+**Draft text for the site (neutral; each sentence supported by a text of each tradition):**
+
+> Las cinco tradiciones tienen la Escritura —los libros proféticos y apostólicos— por una norma o autoridad para juzgar lo que se enseña. Sobre si toda la verdad necesaria para la fe está en ella, quién decide su sentido y qué libros la forman, discrepan las tradiciones que se pronuncian (católica, ortodoxa y reformada sobre la primera y la tercera; católica, ortodoxa, luterana y reformada sobre la segunda); los dossiers luterano y bautista no toman posición propia en varias de estas preguntas.
+
+### 1a. La Escritura como norma o autoridad (la cuestión de su origen divino queda abierta para los textos luteranos)
+
+| Tradition | Text | Locator and edition | Tag |
+|---|---|---|---|
+| Catholic | «Dios es el unico autor de ambos» (los dos Testamentos, Trent IV); «constituyen un solo depósito sagrado de la palabra de Dios» (DV 10) | Trent session IV, Ayala 1785 p. 41; DV 9–10, official Spanish, vatican.va (`catholic.md`, «Apertura» item 2 and definition) | `[verified: scan]` (Trent); `[verified: vatican.va]` (DV) |
+| Orthodox | «τὴν θείαν καὶ ἱερὰν γραφὴν εἶναι θεοδίδακτον»; Philaret: «Certain books written by the Spirit of God through men sanctified by God, called Prophets and Apostles» | Dositheus II, Schaff *Creeds* II p. 402; Philaret Q.19, p. 449 (`orthodox.md`, «Definition» and QE-1) | `[verified: scan]`; Spanish `[unverified]` |
+| Lutheran | «die prophetischen und apostolischen Schriften Alten und Neuen Testaments» | FC Epitome, Rule and Norm 1, Triglot p. 776 (`lutheran.md`, «Definition») | `[verified: scan]`; Spanish `[unverified]`. This passage names the Scriptures as the rule; no string in `lutheran.md` says they are of divine origin (verifier V6): read and quote a Triglot passage before a page says so |
+| Reformed | «Todos estos fueron dados por la inspiracion de Dios para ser la regla de la fé y de la práctica»; su autoridad depende «enteramente del de Dios, quien es su autor» | WCF 1.2 and 1.4, Monterrey 1880 pp. 7–8 (`reformed.md`, «Definition» and QE-1) | `[verified: scan]` |
+| Baptist | «the Holy Bible was written by men divinely inspired, and is a perfect treasure of heavenly instruction»; «the supreme standard by which all human conduct, creeds, and opinions should be tried» | NH 1853 I, McGlothlin pp. 301–302 (`baptist.md`, «Por qué» and «Qué enseña») | `[verified: scan]` (B-02) |
+
+### 1b. Una norma frente a la cual se juzga lo que se enseña
+
+| Tradition | Text | Locator and edition | Tag |
+|---|---|---|---|
+| Catholic | el Magisterio «no está sobre la palabra de Dios, sino que la sirve» | DV 10, official Spanish (quoted in the definition draft, `catholic.md`) | `[verified: vatican.va]` (dossier) |
+| Orthodox | tradition must agree with Scripture: «that tradition which agrees with the divine revelation and with holy Scripture, as is taught us by holy Scripture itself» | Philaret Q.23, p. 449 (`orthodox.md` QE-5) | `[verified: scan]` |
+| Lutheran | «die einige Regel und Richtschnur, nach welcher zugleich alle Lehren und Lehrer gerichtet und geurteilt werden sollen, sind allein die prophetischen und apostolischen Schriften» | FC Ep RN 1, Triglot p. 776 (`lutheran.md`, «Definition») | `[verified: scan]`; Spanish `[unverified]` |
+| Reformed | el Espíritu Santo que habla en las Escrituras es «el Juez Supremo, por quien [...] todos los decretos de los concilios, las opiniones de los escritores antiguos, y las doctrinas de los hombres [...] tienen que determinarse» | WCF 1.10, Monterrey 1880 p. 12 (`reformed.md` QE-5) | `[verified: scan]` |
+| Baptist | «the supreme standard by which all human conduct, creeds, and opinions should be tried»; «Confessions are only guides in interpretation» | NH 1853 I, McGlothlin p. 302; BF&M preamble, printed p. 21 (`baptist.md`) | `[verified: scan]` |
+
+Not claimed as common ground: that Scripture is the only authority (the Catholic and Orthodox texts speak of Scripture and tradition together; DV 10's «la palabra de Dios» is Tradition and Scripture together), «sufficiency», that no human teaching stands above Scripture (the wording of WCF 1.10, NH I and FC Ep: not what the Catholic and Orthodox texts say), divine origin for the Lutheran text, and the Latin slogan itself.
+
+---
+
+## 2. Lo que se discute (neutral questions)
+
+| Draft question (es) | Each tradition's own position (cited) | Terms checked |
+|---|---|---|
+| **¿Toda la verdad necesaria para la fe está en la Escritura?** (católica, ortodoxa y reformada se pronuncian; luterana y bautista no toman posición propia en lo leído) | Catholic: «la Iglesia no deriva solamente de la Sagrada Escritura su certeza acerca de todas las verdades reveladas» (DV 9). Orthodox: revelation is spread and preserved «By two channels—holy tradition and holy Scripture» (Philaret Q.16). Lutheran: Scripture is the rule by which «alle Lehren» are judged; useful explanations remain under it (FC Ep RN 1, 7; SD RN 10). Reformed: todo el consejo de Dios «es ó expresamente expuesto en las Escrituras ó se puede deducir de ellas por buena y necesaria consecuencia» (WCF 1.6). Baptist: Scripture is the standard for «conduct, creeds, and opinions» (NH I). | The question avoids «suficiencia», «tradición» and «fuente», but «toda la verdad necesaria para la fe» is close to WCF 1.6's wording, the Reformed form of the question: owner's call (verifier V21). |
+| **¿Quién decide el sentido de la Escritura?** | Catholic: the Magisterium's interpretation (DV 10; `catholic.md` PQ-4). Orthodox: «no de otro modo que como la Iglesia católica la interpretó y la transmitió» (Dositheus II, p. 402, Greek). Lutheran: Scripture is «der einige Richter, Regel und Richtschnur» (FC Ep RN 7); confessions testify and explain. Reformed: «La misma Escritura es la regla infalible para interpretarse á sí misma» (WCF 1.9); synods can err (WCF 31.4, Edinburgh 1894 p. 97, historical numbering). Baptist: confessions are «only guides in interpretation» (preamble). | «Decide» applies to all five; «magisterio» and «Espíritu» avoided. |
+| **¿Qué libros forman la Escritura?** | Catholic: Trent IV receives all the books of both Testaments (decree, Ayala p. 41; the list is in the decree). Orthodox: Dositheus III names Wisdom of Solomon, Judith, Tobit, the Dragon, Susanna, Maccabees and Wisdom of Sirach as canonical (Schaff II p. 435); Philaret Q.31–35 gives its own list (22 books); the map also records Trullo 2 (not read); the dossier does not merge them (`orthodox.md` QE-7). Reformed: WCF 1.2–1.3 lists the books and sets the Apocrypha apart (`reformed.md` QE-6). Lutheran and Baptist: not addressed in the passages read for this page, so the question is a three-way one. | Wording neutral between «canon» and «apócrifos». |
+
+**Dependent questions («Lo que depende de esto», optional):**
+
+- *Quién ha recibido autoridad para enseñar:* the Papacy page (`papacy/shared.md` §2, question on who defines doctrine).
+- *Qué se practica y se rechaza como «tradiciones de hombres»:* the Eucharist and Baptism pages, where each side cites Scripture and tradition for its practice.
+
+---
+
+## 3. Cómo se vive: practice comparison (B3)
+
+Aspects aligned across the five. Cells are the documents' own prescriptions, not observations of church life. `silencio` = the documents read say nothing; `no consultado` = the dossier did not read a text that could answer.
+
+| Aspect | Catholic | Orthodox | Lutheran | Reformed | Baptist |
+|---|---|---|---|---|---|
+| **Lectura personal de la Biblia** | La Iglesia «recomienda insistentemente a todos sus fieles […] la lectura asidua de la Escritura», con oración (CEC 2653; `catholic.md` CV-4) | Jerusalén 1672: «¿Debe la divina Escritura ser leída indistintamente por todos los cristianos? No»; la restringe a quienes tienen formación; la omisión de esa prohibición en ediciones rusas no está colacionada (Dositheus Q. I, Schaff II p. 433) | no consultado | Ha de leerse por sí mismos y con sus familias, y por eso se traduce a lenguas comunes (WCF 1.8; WLC 156) | ninguna regla de lectura solo privada afirmada (preámbulo, B-05); sin plan de lectura ni versión única (silencio en esos dos puntos) |
+| **Cómo debe leerse** | Con oración; *lectio divina* en cuatro pasos (CEC 2653; VD 87) | La claridad para quienes la leen: pregunta de Dositheus Q. II, respuesta en el texto griego (p. 434) | no consultado | «con alta y reverente estima»; «con deseo de conocer, creer y obedecer»; con meditación y oración (WLC 157) | Las confesiones son guías de interpretación, no autoridad sobre la conciencia (preámbulo) |
+| **En el culto y la predicación** | Lecturas, salmos y homilía: la homilía «no se puede omitir sin causa grave» los domingos (SC 24; CIC 767) | Los Salmos están «in continual use in the divine service of the Church» (Philaret Q.42, Schaff II p. 452) | La potestad eclesial se ejerce enseñando la Palabra y administrando los sacramentos (AC XXVIII.8) | La Palabra «debe ser predicada solamente por quienes están suficientemente dotados y […] llamados» (WLC 158) | escaso en los pasajes leídos |
+| **Traducciones y ediciones** | Libros de la Escritura publicados con aprobación de la Sede Apostólica o la Conferencia Episcopal; traducciones con notas (CIC 825 §1) | no consultado | no consultado | La Escritura ha de traducirse a las lenguas comunes (WCF 1.8; WLC 156) | silencio |
+| **Cómo se enseña lo recibido** | Catequesis y predicación fundadas «en la sagrada Escritura, en la Tradición, en la liturgia, en el magisterio y en la vida de la Iglesia» (CIC 760); profesión de fe de quienes asumen ciertos oficios (CIC 833) | Dositheus Q. III: los libros canónicos se confiesan Sagrada Escritura por la transmisión de la Iglesia | La enseñanza se juzga por la Escritura (FC Ep RN 1, 7); los catecismos se usaron «öffentlich in Kirchen, Schulen und Häusern» (FC SD RN 8, informe histórico) | Escuchar y examinar lo predicado por la Escritura (WLC 160) | Las confesiones: instrumentos de rendición de cuentas doctrinal, revisables (preámbulo, paráfrasis del dossier) |
+
+Notes:
+
+- The Orthodox column rests on the 1672 confession in its Greek print and on Philaret's 1839 catechism (dated, Russian synodal); neither is presented as the present rule of every Orthodox church (`orthodox.md` «Reading and hearing»).
+- WLC cells quote the Edinburgh 1894 English; the Spanish is the dossier's AI-assisted translation, unreviewed.
+- The Baptist column has content in two rows and `escaso` or `silencio` in the others: the dossier calls observed practice a «map gap: no observations/surveys collected» and says no private-only reading rule is asserted (`baptist.md`, «Cómo se vive»). Do not fill from the 1689 or other Baptist documents without a dossier pass.
+
+## 4. Coverage
+
+| Section | Status | What was searched |
+|---|---|---|
+| Common ground | two sentences; Lutheran and Baptist 1a cells need the actual passage quoted before publishing | the five dossiers' Qué enseña and Por qué |
+| Lo que se discute | three questions; the canon question has Lutheran and Baptist gaps stated | the five dossiers' Qué enseña and Cómo se vive |
+| Practice comparison | five aspects; many Orthodox, Lutheran and Baptist cells `no consultado` or `silencio` | the five dossiers' Cómo se vive |
+| Early witnesses | §6 below (B2): ANF scans only; the NPNF stretch (c. 256–749) is listed, not quoted | ANF vols. 1, 3, 5, 7 OCR (archive.org); `neutral/writers-*.md` for dates |
+
+## 6. Testigos neutrales de los primeros siglos (B2)
+
+Status: draft, NOT verified by Pedro. Scope tonight: quotations from the **Ante-Nicene Fathers** (ANF) volumes, checked string by string against the archive.org OCR of the 1885–1886 Buffalo printings (Christian Literature Publishing Company; American reprint of the Edinburgh edition, ed. Roberts and Donaldson), and cleaned only of footnote marks and OCR slips (each slip is named). **The Nicene and Post-Nicene volumes (c. 256–749) were not quoted tonight**: their archive.org text was not retrievable (HTTP 401) and the CCEL pages could not be navigated in the time; the later witnesses are listed in the full list below with the tag `[memory]` or `[source: …]` and need a dated edition before use.
+
+Rules applied (DECISIONS 2026-10-09, three levels): the **Spanish** under each quote is Doctrina's own translation **from the public-domain English of the ANF edition** (level 3, as in the Eucharist witnesses), labelled «asistida por IA, sin revisar por Pedro». No older printed Spanish edition was searched. The editors' footnotes and bracketed notes of the ANF volumes (several are polemical, written by A. C. Coxe) are **never quoted**: only the translated text. Pages are not claimed: ANF pagination is not readable in the OCR with certainty; locators are the work's own divisions (chapter or section as the ANF prints them). Dates come from `docs/research/neutral/writers-to-325.md` and carry that file's tags (most are `[memory]` there).
+
+### Witnesses quoted
+
+The set holds texts that Catholic, Orthodox and Protestant writers all cite. Not assigned to any modern tradition. The tradition-versus-Scripture arguments of the Fathers fall in the NPNF stretch (Athanasius, Basil, Augustine, Vincent of Lérins): listed below, not quoted tonight.
+
+**S-W1 · Irenaeus, *Against Heresies* 3.1.1** · date c. 180–189 (`writers-to-325.md` §2.17, `[memory]` there). The ANF English is a translation of the ancient Latin version: the work survives whole only in Latin (§2.17); whether a Greek witness exists for these passages was not checked  
+Edition: Irenaeus, *Against Heresies*, tr. A. Roberts and W. H. Rambaut, ANF vol. 1 (Buffalo, 1885), III.1.1, archive.org `antenicenefather01buff`. `[verified: ANF 1 scan OCR, exact string]`  
+Quote (en): «which they did at one time proclaim in public, and, at a later period, by the will of God, handed down to us in the Scriptures, to be the ground and pillar of our faith». (Same sentence, as read in the OCR: «We have learned from none others the plan of our salvation, than from those through whom the Gospel has come down to us, which they did at one time proclaim in public, and, at a later period, by the will of God, handed down to us in the Scriptures, to be the ground and pillar of our faith.»)  
+Spanish (Doctrina, AI-assisted, unreviewed): «lo que en un tiempo proclamaron en público y, más tarde, por voluntad de Dios, nos transmitieron en las Escrituras, para que fuera fundamento y columna de nuestra fe».  
+Surrounding paragraph: the next sentence says it is unlawful to claim they preached before they possessed «perfect knowledge», and the section describes the Holy Spirit coming on the apostles after the resurrection.
+
+**S-W2 · Irenaeus, *Against Heresies* 3.4.1–2** · date as above  
+Edition: same volume, III.4.1–2. `[verified: ANF 1 scan OCR, exact string]`  
+Quote (en): «For how should it be if the apostles themselves had not left us writings? Would it not be necessary, [in that case,] to follow the course of the tradition which they handed down to those to whom they did commit the Churches?» and, of the barbarian nations: «having salvation written in their hearts by the Spirit, without paper or ink, and, carefully preserving the ancient tradition, believing in one God, the Creator of heaven and earth, and all things therein, by means of Christ Jesus, the Son of God».  
+Spanish (Doctrina, AI-assisted, unreviewed): «Pues ¿qué sería si los apóstoles mismos no nos hubieran dejado escritos? ¿No sería necesario [en ese caso] seguir el curso de la tradición que transmitieron a aquellos a quienes confiaron las Iglesias?»; «teniendo la salvación escrita en sus corazones por el Espíritu, sin papel ni tinta, y conservando con cuidado la antigua tradición, creyendo en un solo Dios, Creador del cielo y de la tierra y de todo lo que hay en ellos, por medio de Cristo Jesús, el Hijo de Dios».  
+Surrounding paragraph: section 1 opens «Since therefore we have such proofs, it is not necessary to seek the truth among others which it is easy to obtain from the Church; since the apostles, like a rich man [depositing his money] in a bank, lodged in her hands most copiously all things pertaining to the truth»; the sentence about a dispute («we should have recourse to the most ancient Churches with which the apostles held constant intercourse») comes later in the same section. The ANF's own chapter heading before these sections says the heretics follow neither Scripture nor tradition. Both Irenaeus witnesses belong together: S-W1 and S-W2 are quoted with their contexts and no reading is added; the importer must not use only one.  
+
+### Witnesses quoted, Nicene and Post-Nicene stretch (session A, 2026-11-01)
+
+Status: draft, NOT verified by Pedro. Same rules as the section above (quotation from the dated English edition, string-matched in the archive.org OCR; OCR slips named; the **Spanish is Doctrina's own AI-assisted rendering from the NPNF English, unreviewed**; editors' notes never quoted unless a line says so). Editions (*A Select Library of Nicene and Post-Nicene Fathers of the Christian Church*, Second Series, ed. Philip Schaff and Henry Wace; archive.org scans whose title pages were read): **vol. IV** Athanasius, New York: The Christian Literature Company; Oxford and London: Parker & Company, 1892 (`selectlibraryofn04schauoft`); **vol. VII** Cyril of Jerusalem (tr. E. H. Gifford), 1894 (`selectlibraryofn07schauoft`); **vol. XI** Sulpitius Severus, Vincent of Lérins, John Cassian, 1894 (`selectlibraryofn11schauoft`). None of the three is assigned to a modern tradition; each is quoted for what it says, not for who uses it.
+
+**SS-W5 · Athanasius, *Against the Heathen*, § 1 (ch. 1, § 3)** · date: c. 318 (the Prolegomena's chronological table: «318: Probable date of the contra Gentes»; the Introduction's own reading of the year is OCR-garbled) `[verified: NPNF2 4 Prolegomena table, OCR]`  
+Edition: NPNF Series 2 vol. IV (1892), *Against the Heathen* (*Contra Gentes*), § 1 (the OCR numbers the sentence «3.»). `[verified: NPNF2 4 scan OCR, exact string]`  
+Quote (en): «For although the sacred and inspired Scriptures are sufficient to declare the truth, — while there are other works of our blessed teachers compiled for this purpose, if he meet with which a man will gain some knowledge of the interpretation of the Scriptures, and be able to learn what he wishes to know, — still, as we have not at present in our hands the compositions of our teachers, we must communicate in writing to you what we learned from them […]»  
+Spanish (Doctrina, AI-assisted, unreviewed): «Pues aunque las sagradas y inspiradas Escrituras son suficientes para declarar la verdad, — y además hay otras obras de nuestros bienaventurados maestros compuestas con este fin; quien dé con ellas ganará algún conocimiento de la interpretación de las Escrituras y podrá aprender lo que desea saber, — con todo, como no tenemos ahora a mano las composiciones de nuestros maestros, debemos comunicaros por escrito lo que de ellos aprendimos […]»  
+OCR slips cleaned: the footnote marks after «sufficient» and «teachers»; the quotation mark printed before «to declare». Neutrality note: the same sentence says the Scriptures are sufficient and that other works help in their interpretation; both halves are quoted.
+
+**SS-W6 · Cyril of Jerusalem, *Catechetical Lectures*, Lecture IV, § 17** · date: Lent 348 as the editor's conditional inference, not a printed date (Introduction p. xliv: «if Dr. Routh is correct in fixing the date of the Disputation … the Lent in which the Lectures were delivered must have been, as Touttée decides, that of 348, not of 347») `[verified: NPNF2 7 Introduction, OCR; the date itself is an inference]`  
+Edition: NPNF Series 2 vol. VII (1894), Lecture IV («On the Ten Points of Doctrine»), § 17. `[verified: NPNF2 7 scan OCR, exact string]` (the lecture title is the dossier's reading, to check)  
+Quote (en): «For concerning the divine and holy mysteries of the Faith, not even a casual statement must be delivered without the Holy Scriptures; nor must we be drawn aside by mere plausibility and artifices of speech. Even to me, who tell thee these things, give not absolute credence, unless thou receive the proof of the things which I announce from the Divine Scriptures.»  
+Spanish (Doctrina, AI-assisted, unreviewed): «Pues acerca de los divinos y santos misterios de la Fe, no debe transmitirse ni siquiera una afirmación ocasional sin las Santas Escrituras; ni debemos dejarnos arrastrar por la mera verosimilitud y los artificios del discurso. Ni siquiera a mí, que te digo estas cosas, des crédito absoluto, a menos que recibas la prueba de lo que te anuncio desde las Divinas Escrituras.»  
+OCR slips cleaned: none beyond footnote marks. The same lecture's list of the canonical books and its summary of the Faith are not quoted.
+
+**SS-W7 · Vincent of Lérins, *Commonitory*, ch. II [5.]** · date: 434 (the edition's Introduction infers it from «ante triennium ferme» after the Council of Ephesus, held in 431: «This gives the date of the Commonitory 434») `[verified: NPNF2 11 Introduction, OCR; an inference, not a printed date]`  
+Edition: NPNF Series 2 vol. XI (1894), *The Commonitory of Vincent of Lérins*, ch. II [5.] (the opening question and the sentence beginning «Therefore, it is very necessary»; [4.] precedes it). `[verified: NPNF2 11 scan OCR, exact string]`  
+Quote (en): «But here some one perhaps will ask. Since the canon of Scripture is complete, and sufficient of itself for everything, and more than sufficient, what need is there to join with it the authority of the Church's interpretation? For this reason, — because, owing to the depth of Holy Scripture, all do not accept it in one and the same sense […] Therefore, it is very necessary, on account of so great intricacies of such various error, that the rule for the right understanding of the prophets and apostles should be framed in accordance with the standard of Ecclesiastical and Catholic interpretation.»  
+Spanish (Doctrina, AI-assisted, unreviewed): «Pero aquí quizá alguien pregunte: puesto que el canon de la Escritura es completo y suficiente de por sí para todo, y más que suficiente, ¿qué necesidad hay de unirle la autoridad de la interpretación de la Iglesia? Por esta razón: porque, debido a la profundidad de la Santa Escritura, no todos la aceptan en un mismo sentido […] Por tanto, es muy necesario, a causa de las tan grandes complicaciones de tan variados errores, que la regla para la recta inteligencia de los profetas y los apóstoles se ajuste a la norma de la interpretación eclesiástica y católica.»  
+OCR slip cleaned: «gseat» → «great». The `[…]` replaces «but one understands its words in one way, another in another; so that it seems to be capable of as many interpretations as there are interpreters. For Novatian expounds it one way, Sabellius another … lastly, Nestorius another» and a footnote of the edition. Both the statement that the canon is sufficient and the reason for joining the Church's interpretation are quoted. Not assigned to any modern tradition.
+
+**Rows of the list below touched by this stretch** (the table below keeps its earlier statuses; its Athanasius row «c. 335» contradicts the edition's «318» for the *Contra Gentes*). The three texts above are now read in the dated edition (they were `[memory]`). Not read in this pass: Basil (*On the Holy Spirit* 27.66: the OCR text of the column is garbled in `selectlibraryofn08schauoft`, to be read on a page image), Augustine *On Christian Doctrine*, Jerome.
+
+### Full list of early texts on Scripture and tradition (for page 10; to c. 749)
+
+| Text | Author | Date (c.) | Locator | Status |
+|---|---|---|---|---|
+| *Against Heresies* | Irenaeus | 180–189 | 3.1.1; 3.2–4; 1.10.1–2 | 3.1.1 and 3.4.1–2 quoted above |
+| *Prescription against Heretics* | Tertullian | c. 203 | 14, 19–21, 36–37 | `[source: writers-to-325.md §2.19, listed as «heretics have no right to argue from Scripture»]`; text not quoted |
+| *Against Hermogenes* | Tertullian | c. 204 | 22 | `[verified: ANF 3 scan OCR, locator and quote]`: «I revere the fulness of His Scripture, in which He manifests to me both the Creator and the creation.» (ch. XXII; the ANF word is «revere»); date from `writers-to-325.md` §2.19 `[memory]` |
+| *Stromata* | Clement of Alexandria | c. 200–215 | 7.16 | `[memory]` |
+| *First Principles* | Origen | c. 220–230 | preface 2 | `[memory]` |
+| *Catechetical Lectures* | Cyril of Jerusalem | c. 350 | 4.17 | `[memory]` |
+| *Against the Heathen* / *Festal Letter* 39 | Athanasius | c. 318 (NPNF2 4 Prolegomena table, «probable»; earlier row said c. 335); 367 | CG 1; Ep. fest. 39 | `[source: writers-to-325.md §2.2 says the Didache is «listed among disputed or rejected books by Eusebius HE 3.25.4, by Athanasius (Festal Letter 39, 367) and Rufinus»]`; the sufficiency passages `[memory]` |
+| *On the Holy Spirit* | Basil of Caesarea | c. 375 | 27 | `[memory]` |
+| *On Christian Doctrine*; *Against Faustus* | Augustine | c. 396–397; c. 400 | — | De doctrina `[source: fingerprint-dates.md, Sola Scriptura]`; Against Faustus `[memory]` |
+| *Commonitorium* | Vincent of Lérins | 434 | 2 | `[memory]` |
+| Canon lists: Laodicea; Carthage 397 | councils | c. 363; 397 | — | `[memory]` |
+| *Exposition of the Orthodox Faith* | John of Damascus | c. 743 | 1.1; 4.17 | `[memory]` |
+
+## 7. Verification
+
+Verifier: Sonnet 5.5, 2026-11-01 (research night, unattended). Scratch (outside repo): `~/codex-night1101-scratch/v3/` (ANF 1 and ANF 3 OCR, matching scripts).
+
+### Progress
+
+- DONE: method 1 (every direct quote of §1–§3 against the dossier named in the cell: fixed-string search, whitespace, markdown and guillemets normalised, then the dossier's own context, locator and tag read); method 2 (neutrality of the draft sentences, the three questions, every practice cell, every `silencio` / `no consultado` against each dossier's text and Coverage table); method 3 (S-W1 and S-W2 against the archive.org OCR of ANF vol. 1 `antenicenefather01buff`, hyphenated line breaks joined; Spanish read against the English; dates against `docs/research/neutral/writers-to-325.md`); method 4 (the `[source: …]` rows, plus the Against Hermogenes row against ANF vol. 3 `antenicenefather03robeuoft`).
+- Extra primary checks: *Dei Verbum* 9 and 10 read on vatican.va (official Spanish, fetched); *Catechism* 2653 read on vatican.va (Spanish, fetched); ANF 1 title page and preface read in the OCR (edition, translators, who writes the bracketed notes).
+- NOT re-fetched (verdict = «the dossier says so at that place», the dossier's own tag repeated): Trent (Ayala 1785), Schaff II (Dositheus, Philaret), Triglot, Monterrey 1880, Edinburgh 1894, McGlothlin, BF&M print, CIC canons, *Verbum Domini* 87, SC 24.
+- NOT reached: nothing skipped. The `[memory]` rows of the full list were only sanity-read (locators and dates not checked against editions).
+
+Legend: CONFIRMED = string or fact found where the cell says. WRONG = the cell says something the source does not (correction given). UNCONFIRMABLE = cannot be checked with what the dossiers or legitimate sources give.
+
+### 7.1 §1 Lo que todas comparten
+
+- V1 CONFIRMED · Catholic «Dios es el unico autor de ambos»: `catholic.md`, «Apertura» item 2, Español (Trento-Ayala, 1785, p. 41): «…todos los libros del viejo y nuevo Testamento, pues Dios es el unico autor de ambos…», `[verified: scan]`. «ambos» = the two Testaments, as the cell says; the missing accent is the print's.
+- V2 CONFIRMED · Catholic «constituyen un solo depósito sagrado de la palabra de Dios» (DV 10): in `catholic.md` (definition draft) and on vatican.va DV 10 («La Sagrada Tradición, pues, y la Sagrada Escritura constituyen un solo depósito sagrado de la palabra de Dios, confiado a la Iglesia»). Caution: the subject is Tradition and Scripture together, so it supports «origen divino» only through «palabra de Dios».
+- V3 CONFIRMED · Orthodox Dositheus II Greek «τὴν θείαν καὶ ἱερὰν γραφὴν εἶναι θεοδίδακτον», Schaff II p. 402: `orthodox.md` «Definition: Scripture taught by God», `[verified: scan]`; Spanish `[unverified]`.
+- V4 CONFIRMED · Orthodox Philaret Q.19, p. 449: `orthodox.md` QE-1 «Certain books written by the Spirit of God through men sanctified by God, called Prophets and Apostles. These books are commonly termed the Bible.» (the cell stops after «Apostles», legitimate fragment, no full stop added).
+- V5 CONFIRMED · Lutheran «die prophetischen und apostolischen Schriften Alten und Neuen Testaments», FC Ep RN 1, Triglot p. 776: `lutheran.md` «Definition», `[verified: scan]`.
+- V6 WRONG · Lutheran 1a note «the dossier's wording on their divine origin is in PQ-1»: `lutheran.md` PQ-1 holds only the Psalm 119:105 wording embedded in FC Ep RN 1 («Dein Wort ist meines Fußes Leuchte…») and the Galatians 1:8 reference; it says nothing about the Scriptures' origin. No string in `lutheran.md` states that the Scriptures are God's word or of divine origin; the nearest are SA II.2.15 «Gottes Wort soll Artikel des Glaubens stellen» and SD RN 10 «weil sie aus Gottes Wort genommen», neither of which equates the Scriptures with «Gottes Wort». So the clause «reciben la Escritura como palabra de origen divino» is not supported for Lutheran by anything the file or the dossier quotes. Fix: read and quote a Triglot passage on this before the sentence is published, or narrow the sentence to the four traditions that state it.
+- V7 CONFIRMED · Reformed «Todos estos fueron dados por la inspiracion de Dios para ser la regla de la fé y de la práctica» (WCF 1.2, Monterrey p. 7) and «enteramente del de Dios, quien es su autor» (WCF 1.4, p. 8): `reformed.md` «Definition» and QE-1, `[verified: scan]`.
+- V8 WRONG (minor) · Baptist 1a cell: it offers the dossier's BF&M 2000 paraphrase and «supreme standard», which show authority, not origin. The dossier has a verbatim line that does support the sentence: NH I, McGlothlin p. 301, «the Holy Bible was written by men divinely inspired, and is a perfect treasure of heavenly instruction» (`baptist.md` «Por qué», `[verified: scan]`, B-02; Spanish AI-assisted). «God is its author» is quoted nowhere in the dossier (the BF&M paraphrase; p. 302 only mentioned). Use the p. 301 line.
+- V9 WRONG · Draft sentence 1, second clause «sostienen que ninguna enseñanza humana está por encima de ella»: not what the five cited texts say as worded. Catholic DV 10 says the Magisterium is not above «la palabra de Dios», which in the same article is Tradition and Scripture together; Orthodox Philaret Q.23 says the tradition to hold is the one that agrees with Scripture, and Q.16–17 call tradition a channel of revelation, not «human teaching». «Enseñanza humana» is the vocabulary of WCF 1.10 («doctrinas de los hombres»), NH («human conduct, creeds, and opinions») and FC Ep («alle Lehren und Lehrer»). The file's own line «Not claimed as common ground: that Scripture is the only authority» contradicts the clause. Rewrite for what all five say (their teaching authority, tradition or confessions serve, agree with or are subject to the word of God), owner to choose the wording.
+- V10 CONFIRMED · Catholic «no está sobre la palabra de Dios, sino que la sirve» (DV 10): `catholic.md` and vatican.va DV 10 (fetched), exact.
+- V11 CONFIRMED · Orthodox Philaret Q.23, p. 449: `orthodox.md` QE-5 «that tradition which agrees with the divine revelation and with holy Scripture, as is taught us by holy Scripture itself», `[verified: scan]` (dossier adds a full stop; the cell omits it, harmless).
+- V12 CONFIRMED · Lutheran «die einige Regel und Richtschnur, nach welcher zugleich alle Lehren und Lehrer gerichtet und geurteilt werden sollen, sind allein die prophetischen und apostolischen Schriften»: exact in `lutheran.md` «Definition» (FC Ep RN 1, p. 776); the cell starts after «Wir glauben, lehren und bekennen, daß».
+- V13 CONFIRMED · Reformed WCF 1.10, Monterrey p. 12: `reformed.md` QE-5. The two `[...]` replace «toda controversia religiosa tiene que decidirse y por quien tambien» and «y de los espíritus particulares»; both ellipses are honest. The cell's «es» outside the quote supplies a verb the printed sentence lacks (the dossier says the syntax is kept).
+- V14 CONFIRMED · Baptist «the supreme standard by which all human conduct, creeds, and opinions should be tried» (NH I, p. 302) and «Confessions are only guides in interpretation» (preamble, printed p. 21): both exact in `baptist.md`, `[verified: scan]`, B-02 and B-05.
+- V15 WRONG · Draft sentence 2 «Discrepan sobre si toda la verdad necesaria para la fe está en la Escritura, sobre quién decide su sentido y sobre qué libros la forman»: «discrepan» is not shown of all five. Question 1: the Lutheran and Baptist cells state what judges doctrine or what Scripture is the standard of, not whether all necessary truth is in Scripture; neither dossier takes that position. Question 2: the Baptist cell says only what confessions are not («only guides»), not who decides. Question 3: the file itself says Lutheran and Baptist are «not addressed», and the Orthodox cell lists differing lists. Rewrite per question naming the traditions that take a position (Q1: Catholic, Orthodox, Reformed; Q3: Catholic, Orthodox, Reformed).
+
+### 7.2 §2 Lo que se discute
+
+- V16 CONFIRMED · Catholic Q1 «la Iglesia no deriva solamente de la Sagrada Escritura su certeza acerca de todas las verdades reveladas» (DV 9): `catholic.md` Conventions and «Apertura», vatican.va DV 9 (fetched), exact. It answers about «certeza», not about «toda la verdad necesaria».
+- V17 CONFIRMED · Orthodox Q1 Philaret Q.16 «By two channels—holy tradition and holy Scripture»: `orthodox.md` QE-2, p. 448, `[verified: scan]`; the dossier says this is about how revelation is «spread and preserved», not about sufficiency.
+- V18 CONFIRMED · Lutheran Q1 locators FC Ep RN 1, 7 and SD RN 10 exist in `lutheran.md` (QE-1, QE-6); «alle Lehren» is in QE-1 («alle Lehren und Lehrer»).
+- V19 CONFIRMED · Reformed Q1 «es ó expresamente expuesto en las Escrituras ó se puede deducir de ellas por buena y necesaria consecuencia» (WCF 1.6, Monterrey p. 9): exact in `reformed.md` QE-2.
+- V20 CONFIRMED · Baptist Q1 «conduct, creeds, and opinions» (NH I): inside the NH p. 302 quote. See V15 for fit to the question.
+- V21 UNCONFIRMABLE (judgment) · Neutrality of Q1 wording: «toda la verdad necesaria para la fe» is close to the words of WCF 1.6 («todas las cosas necesarias para… salvacion, fé y vida»), i.e. the sufficiency question in its Reformed form; the Catholic cell answers about «certeza» and the Orthodox cell about preservation. The «Terms checked» cell says «suficiencia» is avoided but the idea is not. Owner decision.
+- V22 CONFIRMED · Orthodox Q2 «no de otro modo que como la Iglesia católica la interpretó y la transmitió» (Dositheus II, p. 402): `orthodox.md` QE-6, Greek `[verified: scan]`. Two cautions: the Spanish is the dossier's AI translation and the cell prints it in guillemets without the label; the dossier warns that «Catholic Church» is the confession's own ecclesial term, which beside the Roman Catholic cell reads as Roman Catholic unless the warning travels with it.
+- V23 CONFIRMED · Lutheran Q2 «der einige Richter, Regel und Richtschnur» (FC Ep RN 7, p. 778): `lutheran.md` QE-1, `[verified: scan]`. The dossier uses it for what judges doctrine; the on-point Lutheran text for «sentido» is QE-3 (confessions testify to how Scripture was understood), which the cell also cites.
+- V24 CONFIRMED · Reformed Q2 «La misma Escritura es la regla infalible para interpretarse á sí misma» (WCF 1.9, p. 12): exact, QE-4. «synods can err (WCF 31.4)»: PQ-5, Edinburgh 1894 p. 97 in English.
+- V25 WRONG (minor, edition) · «WCF 31.4» has no edition in the cell: it is the historical numbering of the Edinburgh 1894 English print, p. 97 (= American 31.3; the Monterrey 1880 print has altered civil chapters, `reformed.md` Conventions). Write «WCF 31.4 (Edinburgh 1894, p. 97, historical numbering)».
+- V26 CONFIRMED · Baptist Q2 «only guides in interpretation»: see V14; the cell fits «what confessions are» but not «who decides» (V15).
+- V27 UNCONFIRMABLE · Catholic Q3 «the list is in the decree»: `catholic.md` prints the Trent IV receiving clause (Ayala p. 41) and QE-4 states 46 + 27 books, but the dossier excerpt does not print the list; not checked.
+- V28 WRONG (minor) · Orthodox Q3 «Dositheus III names Wisdom, Judith, Tobit, Susanna, Maccabees and Sirach»: `orthodox.md` («Canon: Greek confession», p. 435) names «Wisdom of Solomon, Judith, Tobit, the Dragon, Susanna, Maccabees and Wisdom of Sirach». The cell drops «the Dragon» (Bel and the Dragon); add it.
+- V29 UNCONFIRMABLE · «Philaret and Trullo keep other lists»: Philaret Q.31–35 is read (22 books; Q.34 «Because they do not exist in the Hebrew»). Trullo: `orthodox.md` QE-7 says «[unverified: full canonical corpus not collated]» and «What has not been extracted» lists Trullo 2; no Trullo text was read, so «keep other lists» is the map's claim only.
+- V30 CONFIRMED · Reformed Q3 «WCF 1.2–1.3 lists the books and sets the Apocrypha apart»: `reformed.md` QE-6, pp. 6–7, `[verified: scan]`.
+- V31 CONFIRMED · «Lutheran and Baptist: not addressed in the passages read»: neither dossier has a canon passage and neither claims silence.
+- V32 CONFIRMED · «Dependent questions»: `papacy/shared.md` §2 has «¿Puede una persona o una asamblea definir la doctrina sin error?» (the coordinator may still reword it).
+
+### 7.3 §3 Cómo se vive (cell by cell)
+
+Lectura personal de la Biblia
+- V33 CONFIRMED · Catholic CEC 2653: vatican.va (Spanish) «La Iglesia «recomienda insistentemente a todos sus fieles [...] la lectura asidua de la Escritura para que adquieran “la ciencia suprema de Jesucristo” (Flp 3,8) [...]. Recuerden que a la lectura de la sagrada Escritura debe acompañar la oración…».
+- V34 CONFIRMED · Orthodox Dositheus Q. I, Schaff II p. 433: `orthodox.md` «Reading and hearing», Greek `[verified: scan; O-02]`; «la restringe a quienes tienen formación» matches the dossier's paragraph on the restriction; «la omisión… en ediciones rusas no está colacionada» matches («The Russian recension itself has not been collated here»; Krivoshein attributes the omission to Philaret's 1838 Russian translation, `[verified: e-text, O-05]`).
+- V35 UNCONFIRMABLE · Lutheran `no consultado`: `lutheran.md` «Cómo se vive» says «No statistics, prescribed modern reading schedule or approval of a particular modern Bible translation is derived from the rule-and-norm clauses» and the Coverage table says «No silence about a topic outside the searched loci is asserted». `no consultado` is consistent with that (the dossier searched AC XXVIII and FC SD RN 8–10, not the catechism prefaces); `silencio en los pasajes leídos` would also be defensible. Owner call.
+- V36 CONFIRMED · Reformed: WCF 1.8 (p. 11) and WLC 156 (Edinburgh p. 196) say read by themselves and with families and translate: `reformed.md` «Reading, worship and translation», `[verified: scan]`.
+- V37 WRONG · Baptist `silencio en NH I, BF&M I y el preámbulo (B-05)`: `baptist.md` uses «silent» only for «Fixed reading plan or universal named modern Bible version» (and the Coverage row «Reading schedule / universal modern version: silent»). For personal reading its table row reads «Reading without church or confession? No private-only reading rule asserted. Current preamble joins interpretive guidance, scriptural authority and doctrinal accountability, B-05» and the section is «sparse». Correct cell: «ninguna regla de lectura solo privada (preámbulo, B-05)», or `escaso`, not `silencio`.
+
+Cómo debe leerse
+- V38 CONFIRMED · Catholic CV-4: the dossier lists lectio, meditatio, oratio, contemplatio for VD 87 (`[verified]`); VD not re-fetched; CEC 2653 prayer clause confirmed on vatican.va.
+- V39 CONFIRMED (weak) · Orthodox: Dositheus Q. II question is in `orthodox.md` (p. 434, Greek `[verified: scan]`), but the cell gives only the question. The dossier also records the answer's content (the command to search, Paul's gift of teaching, Peter on difficult passages, the regenerate/trained distinction, `[verified: scan; O-02]`): use it, or the row says nothing about how to read.
+- V40 CONFIRMED · Lutheran `no consultado`: as V35.
+- V41 CONFIRMED · Reformed WLC 157 Spanish: both strings («con alta y reverente estima», «con deseo de conocer, creer y obedecer») are in `reformed.md` (English `[verified: scan]`, Edinburgh pp. 196–197; Spanish AI-assisted); the cell also says «con meditación y oración», in the dossier's longer string.
+- V42 CONFIRMED · Baptist: paraphrase of preamble p. 21 (guides to interpretation, no authority over conscience), `baptist.md` «Cómo se vive», B-05.
+
+En el culto y la predicación
+- V43 CONFIRMED · Catholic «no se puede omitir sin causa grave»: `catholic.md` CV-3, CIC 767 §2, `[verified]` (the dossier says SC 52 is not the source of the other quote there). Edition not named in the cell: CIC 1983, official Spanish.
+- V44 WRONG · Orthodox `no consultado`: `orthodox.md` «Liturgical and catechetical reading» has Philaret Q.42, p. 452: «It is a perfect manual of prayer and praise, and on this account is in continual use in the divine service of the Church» (`[verified: scan]`), plus Q.22 (hearing prophets and apostles in the text) and Q.24 (interpretation with the sacraments and rites). The dossier read and found content. Put Q.42 (Psalms in the divine service, Schaff II p. 452) in the cell.
+- V45 CONFIRMED · Lutheran AC XXVIII.8, Triglot p. 84: `lutheran.md` «Word and sacramental ministry», Latin `[verified: scan]`; the cell paraphrases and drops «solamente».
+- V46 CONFIRMED · Reformed WLC 158, Edinburgh p. 197: the English is «sufficiently gifted, and also duly approved and called»; the cell's «[…]» replaces «también debidamente aprobados», honest.
+- V47 WRONG (label) · Baptist `silencio`: the dossier calls this «sparse» («Detailed translation/assembly rubric? sparse in these selected loci»; Coverage «Cómo se vive: sparse»), not silent. Use `escaso`.
+
+Traducciones y ediciones
+- V48 CONFIRMED · Catholic CIC 825 §1: `catholic.md` CV-5 `[verified]`, including «acompañadas de las notas aclaratorias necesarias y suficientes» (the cell's «traducciones con notas» is the corrected reading).
+- V49 CONFIRMED · Orthodox `no consultado`: the dossier has no translation or edition rule; the only related item is the Russian-edition omission of Q. I (cell for Lectura personal). Consistent.
+- V50 WRONG (misfiled) · Lutheran cell: «los catecismos se usaron «en iglesias, escuelas y casas»: FC SD RN 8»: the string is in `lutheran.md` (Spanish AI: «usados públicamente en iglesias, escuelas y casas»; German p. 852 «öffentlich in Kirchen, Schulen und Häusern gebraucht worden», `[verified: scan]`) but it reports where the catechisms were used, not a rule on translations or editions. It does not answer the row; move it to «Cómo se enseña lo recibido» and leave this cell `no consultado` (or `silencio` per V35).
+- V51 CONFIRMED · Reformed: «translated into the common languages» (WCF 1.8, p. 11, QE-7; WLC 156, p. 196).
+- V52 CONFIRMED (label caveat) · Baptist `silencio`: dossier «silent» for «universal named modern Bible version» and «sparse» for «translation rubric» (see V47).
+
+Cómo se enseña lo recibido
+- V53 WRONG (clip) · Catholic CIC 760: the cell closes the quotation after «…en el magisterio»; `catholic.md` CV-6 and the canon read «se debe fundar en la sagrada Escritura, en la Tradición, en la liturgia, en el magisterio y en la vida de la Iglesia». Add «y en la vida de la Iglesia» or an ellipsis. CIC 833 profession of faith: CONFIRMED (CV-7).
+- V54 CONFIRMED · Orthodox Dositheus Q. III: Greek «κανονικὰ βιβλία κρίνομεν, καὶ ταῦτα τὴν ἱερὰν γραφὴν εἶναι ὁμολογοῦμεν», p. 435, `[verified: scan]`; the dossier says its appeal is to received ecclesial handing on. It is a canon statement, only loosely «how received teaching is taught».
+- V55 CONFIRMED · Lutheran «La enseñanza se juzga por la Escritura» (FC Ep RN 1, 7): QE-1, «Testing teaching».
+- V56 CONFIRMED · Reformed WLC 160, Edinburgh p. 199: `reformed.md` «Reception and application», `[verified: scan; R-05]` (examination of what is heard by Scripture).
+- V57 CONFIRMED · Baptist: confessions as instruments of doctrinal accountability, revisable: dossier's attributed paraphrase of p. 21, B-05, as the cell says.
+
+Notes under the table
+- V58 WRONG · Note 3 «the dossier says «No hay observaciones recogidas»»: the string is not in `baptist.md` (nor in any file of the folder but this one). The dossier's words are «map gap: no observations/surveys collected» (Cómo se vive table) and «Observed practice | map gap | No observational evidence collected» (Coverage). Also «The Baptist column is empty on purpose» is false: the table has Baptist content in two rows and `silencio` in three.
+- V59 CONFIRMED · Note 1 (Orthodox column = 1672 Greek and Philaret 1839, dated, not the present rule): `orthodox.md` «Approval, critique and edition scope».
+- V60 CONFIRMED · Note 2 (WLC English Edinburgh 1894, Spanish AI): `reformed.md`. The cells print only the Spanish, with no «traducción propia» label next to each quote; the note carries it.
+
+Progress block of the file (statements about other files)
+- V61 WRONG (minor) · «the Catholic dossier says the Church's texts do not use it (`catholic.md`, «Apertura»)»: the dossier says «verified negative, scoped to the texts fetched» (DV, UR, UUS, DAS, Dei Filius (la), CCC 74–141, CIC 747–755 and 822–832, the Ayala OCR); VD, PD and CCC 50–73 were not part of the independent re-check. Write «in the texts the dossier searched».
+- V62 UNCONFIRMABLE · «The page title and the home row are the owner's decision (`twelfth-session-queue.md`)»: that file has no such decision for Sola Scriptura (its only mention is the home-proposal line, where the question is «written by the agent… marked as to decide»); ROADMAP «BIG priority» line says the home rows stay muted; `orthodox.md` Question 1 asks Pedro to keep «Escritura y Tradición». Cite the right file or say «open».
+- V63 CONFIRMED · Model file `src/content/pages/eucharist/doctrine.es.ts` exists and has `common` (line 46) and `practice` (line 337).
+
+### 7.4 §6 Early witnesses (ANF OCR)
+
+OCR files: `~/codex-night1101-scratch/v3/anf1.txt` (ANF vol. 1, title page «BUFFALO: THE CHRISTIAN LITERATURE PUBLISHING COMPANY. 1885. Copyright, 1885», «AMERICAN REPRINT OF THE EDINBURGH EDITION», A. Cleveland Coxe) and `antenicenefather03robeuoft.txt` (vol. 3).
+
+- V64 CONFIRMED · S-W1 English, ANF 1 OCR, Book III, «CHAP. I», §1: «…which they did at one time proclaim in public, and, at a later period, by the will of God, handed down to us in the Scriptures, to be the ground and pillar of our faith.^» The file's string matches exactly from «at a later period» to «faith». Only the footnote mark `^` is dropped; that footnote (OCR) is «See I Tim. iii. 15, where these terms are used in reference to the Church», not quoted. No OCR slip in the quoted words (the file says «each slip is named», it names none because none was needed).
+- V65 WRONG · S-W1 note «The subject, «the Gospel»… belongs to the sentence before the OCR window I read»: it is the same sentence. OCR: «We have learned from none others the plan of our salvation, than from those through whom the Gospel has come down to us, which they did at one time proclaim in public, and, at a later period, by the will of God, handed down to us in the Scriptures, to be the ground and pillar of our faith.» The quote also drops the first half of the contrast, «which they did at one time proclaim in public, and,» (oral first, written later), which both sides rely on. Quote from «which they did at one time proclaim in public» to «of our faith».
+- V66 CONFIRMED · S-W1 Spanish: faithful («[lo] transmitieron a nosotros en las Escrituras, para que fuera fundamento y columna de nuestra fe»); the bracket marks the supplied object; «by the will of God» → «por voluntad de Dios».
+- V67 CONFIRMED · S-W1 «Surrounding paragraph»: «it is unlawful to assert that they preached before they possessed «perfect knowledge»…» and the Holy Spirit coming on the apostles after the resurrection are in the same §1.
+- V68 CONFIRMED · S-W2 first quote, ANF 1 OCR, Book III «CHAP. IV» §1 (end): «For how should it be if the apostles themselves had not left us writings? Would it not be necessary, [in that case,] to follow the course of the tradition which they handed down to those to whom they did commit the Churches?» exact, two adjacent sentences; locator III.4.1 right.
+- V69 WRONG (clip) · S-W2 second quote, ANF 1 OCR §2: «To which course many nations of those barbarians who believe in Christ do assent, having salvation written in their hearts by the Spirit, without paper or ink, and, carefully preserving the ancient tradition,^ believing in one God, the Creator of heaven and earth, and all things therein, by means of Christ Jesus, the Son of God; who…» The file's string is exact, but the sentence continues (what the tradition contains) and the file closes the quote with a full stop. End with an ellipsis or continue through «by means of Christ Jesus, the Son of God». The omitted clause is the content of the tradition, which matters for a page on tradition and Scripture.
+- V70 WRONG · S-W2 «Surrounding paragraph: it begins by saying that when a dispute arises «we should have recourse to the most ancient Churches…»»: ANF 1 III.4 §1 begins «Since therefore we have such proofs, it is not necessary to seek the truth among others which it is easy to obtain from the Church; since the apostles, like a rich man [depositing his money] in a bank, lodged in her hands most copiously all things pertaining to the truth…». The «dispute» sentence comes later in the same section, after «to lay hold of the tradition of the truth».
+- V71 WRONG (rule broken) · S-W2 «Note: the ANF footnote to this passage comments on the «primary authority of the written word»: editor's gloss, not quoted.»: the words are quoted, while the §6 intro says editors' footnotes are «never quoted». The OCR reads «primary' anlliority of the written word»: the file repaired the slips without naming them. The footnote (attached to «ancient tradition,») is bracketed, hence the American editor's (ANF 1 preface: «he has bracketed all his own notes»): «[The uneducated barbarians must receive the Gospel on testimony. Irenaeus puts apostolic traditions, genuine and uncorrupt, in this relation to the primary authority of the written word. 2 Thess. ii. 15.]». Either drop the quoted words or say it is a quotation of a footnote.
+- V72 UNCONFIRMABLE (editorial) · S-W2 importer note «S-W2 the tradition as the fallback and the guard against heretics»: «fallback» is the agent's reading of a conditional («if the apostles had not left us writings»); the surrounding argument in ANF 1 III.2 (heading «THE HERETICS FOLLOW NEITHER SCRIPTURE NOR TRADITION») has heretics rejecting both. The site «never concludes»: give the two quotes with their contexts and drop the reading.
+- V73 CONFIRMED · S-W2 Spanish: faithful. «Pues ¿qué sería si…?» renders «For how should it be if…» loosely but without changing the sense; «teniendo la salvación escrita en sus corazones por el Espíritu, sin papel ni tinta» exact.
+- V74 CONFIRMED · Edition line «tr. A. Roberts and W. H. Rambaut, ANF vol. 1 (Buffalo, 1885)»: title page above; ANF 1 translators' note: «The first two books of Irenaeus Against Heresies have been translated by Dr. Roberts. The groundwork of the translation of the third book… has been furnished by the Rev. W. H. Rambaut.» For Book III the credit is Rambaut's groundwork under the editors; say so.
+- V75 WRONG (minor, tag) · Date «c. 180–189 (`writers-to-325.md` §2.17)»: matches the source, but the source tags the date `[memory]` (it rests on 3.3.3 naming Eleutherus); the file shows no tag although its intro says dates «carry that file's tags».
+- V76 UNCONFIRMABLE · Neither Irenaeus quote says it is ANF's English of the ancient Latin version (`writers-to-325.md` §2.17: the work survives whole only in Latin, «every quotation of Irenaeus is, for most passages, a quotation of an ancient translation, which screen 09 should say»). Whether a Greek witness exists for 3.1.1 or 3.4.1–2 (e.g. via Eusebius) was not checked. Add the translation note.
+- V77 CONFIRMED · §6 intro «bracketed notes… written by A. C. Coxe»: ANF 1 preface (OCR) «he has bracketed all his own notes»; the same preface states the American editor adds notes against what he calls distortions of patristic testimony, which supports the file's «polemical».
+- V78 UNCONFIRMABLE · §6 intro: NPNF archive.org text «not retrievable (HTTP 401)» and CCL pages «could not be navigated»: not tested; nothing from NPNF is quoted.
+
+### 7.5 Full list of early texts
+
+- V79 CONFIRMED / minor · Tertullian *De praescriptione* `[source: writers-to-325.md §2.19]`: the §2.19 works table has «*De praescriptione haereticorum* … | 5 | c. 203 | heretics have no right to argue from Scripture, which belongs to the apostolic churches» (5 is the CPL number). The date and description match. The locator «14, 19–21, 36–37» is not in that source (memory) although the row is tagged `[source]`; and `writers-to-325.md` §0 says Tertullian's individual work dates are `[memory]`.
+- V80 WRONG · *Against Hermogenes* 22: «`[memory]`; the passage on Scripture's «fulness» was not located in the ANF 3 OCR»: it is in the ANF 3 OCR (`antenicenefather03robeuoft`; also in `antenicenefather03buff`), «CHAP. XXII. THIS CONCLUSION CONFIRMED BY THE USAGE OF HOLY SCRIPTURE IN ITS HISTORY OF THE CREATION…»: «I revere the fulness of His Scripture, in which He manifests to me both the Creator and the creation.» (ANF footnote: «Adoro: reverently admire»). ANF's word is «revere», not «adore», which is why a search for «adore the fulness» fails. Locator 22 right; date c. 204 = `writers-to-325.md` §2.19 table. Upgrade to `[verified: ANF 3 scan OCR]` for the locator and quote.
+- V81 WRONG (minor) · Athanasius `[source: writers-to-325.md says… Festal Letter 39 (367) lists the Didache among books not canonical]`: the source (§2.2, Didache) says «listed among disputed or rejected books by Eusebius HE 3.25.4, by Athanasius (Festal Letter 39, 367) and Rufinus [verified: WP]». Use the source's words; «not canonical» is the file's.
+- V82 CONFIRMED · Augustine *De doctrina* `[source: fingerprint-dates.md, Sola Scriptura]`: row «Augustine, passage used in CCC 119 | c. 397 … books I–III composed c. 396–397».
+- V83 UNCONFIRMABLE (sanity read, `[memory]` rows) · Locators and dates for Clement *Strom.* 7.16 (the file gives c. 200–215; `writers-to-325.md` §2.18 gives «c. 198–203 and later [memory]»), Origen *First Principles* preface 2 (c. 220–230 matches the Origen entry in `writers-to-325.md`), Cyril *Cat.* 4.17, Basil *On the Holy Spirit* 27, Vincent *Commonitorium* 2, Athanasius CG 1, John of Damascus 1.1 and 4.17, Laodicea and Carthage: nothing visibly wrong, none checked against an edition.
+
+### Wrong items
+
+1. V6 · Lutheran 1a: PQ-1 holds no statement of divine origin; sentence 1 («palabra de origen divino») unsupported for Lutheran.
+2. V9 · Draft sentence 1, «ninguna enseñanza humana está por encima de ella»: not what the Catholic (DV 10: «la palabra de Dios») or Orthodox (Q.23, Q.16) texts say; contradicts the file's own «not claimed» line.
+3. V15 · Draft sentence 2, «Discrepan…»: not shown of all five on any of the three questions (Baptist, Lutheran take no position on Q1; Baptist on Q2; Lutheran and Baptist silent on Q3).
+4. V8 · Baptist 1a: a verbatim «divinely inspired» line exists (NH I p. 301, B-02) and is not used.
+5. V25 · «WCF 31.4» without edition (Edinburgh 1894 p. 97, historical numbering).
+6. V28 · Dositheus III list omits «the Dragon».
+7. V37 · Baptist `silencio` in Lectura personal: the dossier says «No private-only reading rule asserted»; its «silent» concerns reading plan / universal version.
+8. V44 · Orthodox «En el culto» `no consultado`: the dossier has Philaret Q.42 (Psalms in continual use in divine service).
+9. V47 · Baptist «En el culto» `silencio`: dossier says «sparse».
+10. V50 · Lutheran «Traducciones» cell quotes catechism use in churches, schools and homes: does not answer the row.
+11. V53 · CIC 760 clipped (drops «y en la vida de la Iglesia»).
+12. V58 · «No hay observaciones recogidas» is not in `baptist.md` (a paraphrase inside guillemets); «the Baptist column is empty» is false.
+13. V61 · «the Catholic dossier says the Church's texts do not use it»: the negative is scoped to the texts searched.
+14. V65 · S-W1: the subject and the first half of the sentence are in the same OCR sentence; the clip drops «which they did at one time proclaim in public, and,».
+15. V69 · S-W2 second quote clipped mid-sentence, full stop added.
+16. V70 · S-W2 «surrounding paragraph… begins by saying…»: false; III.4.1 begins «Since therefore we have such proofs…».
+17. V71 · S-W2 quotes the editor's footnote while §6 says footnotes are never quoted.
+18. V75 · Irenaeus date shown without its `[memory]` tag.
+19. V80 · *Against Hermogenes* 22 «fulness» passage is in the ANF 3 OCR («I revere the fulness of His Scripture»), in both scans.
+20. V81 · Athanasius row paraphrases its source («not canonical» vs «disputed or rejected»).
+21. Minor: V22 (Spanish of the Orthodox quote unlabelled; «Catholic Church» is Dositheus' own term), V74 (Rambaut credit is Book III groundwork), V79 (locator not in the cited source).
+
+### Unconfirmable
+
+- V21 · Q1 wording as the Reformed formulation of sufficiency (judgment).
+- V27 · Catholic «the list is in the decree» (dossier prints no list).
+- V29 · Trullo «keeps other lists» (dossier: not collated).
+- V35 · Lutheran `no consultado` vs `silencio` (dossier's Limits sentence supports either).
+- V62 · «page title and home row are the owner's decision (`twelfth-session-queue.md`)» (that file has no such decision).
+- V72 · S-W2 importer note «fallback» (editorial reading).
+- V76 · Whether the Irenaeus passages have a Greek witness; the translation-of-the-Latin note is missing.
+- V78 · NPNF «HTTP 401» (not tested).
+- V83 · `[memory]` locators and dates in the full list (sanity read only).
+- Not re-fetched tonight: Trent (Ayala), Schaff II, Triglot, Monterrey 1880, Edinburgh 1894, McGlothlin, BF&M, CIC, VD, SC. All Spanish of Lutheran, Orthodox and Baptist cells stays `[unverified]` (AI-assisted, unreviewed), as the file says.
+
+### Outside this file
+
+- `docs/research/doctrines/sola-scriptura/lutheran.md` has no passage stating that the Scriptures are God's word or of divine origin (PQ-1 is the Psalm 119:105 wording). If the common-ground sentence is to cover Lutheran, the Triglot passage has to be read and added there first.
+- `docs/features/twelfth-session-queue.md` does not record a title or home-row decision for Sola Scriptura; the file's Progress points to it.
+- `docs/research/neutral/writers-to-325.md` row «ANF 1–10» names vol. 3 as `antenicenefather03robeuoft`; the OCR of both `antenicenefather03robeuoft` and `antenicenefather03buff` contains «I revere the fulness of His Scripture» (Against Hermogenes XXII), so either scan serves; the shared file should name the one it cites.
+- The same kinds of error found here (a `no consultado` or `silencio` cell contradicted by the dossier's own text, a paraphrase in guillemets, a clipped quote) should be rechecked in `eucharist` practice tables built the same way.
+
+### Corrections applied by the coordinator (2026-11-01, after this pass)
+
+Applied: draft sentences 1 and 2 rewritten to what the texts support (V6, V8, V9, V15; the Lutheran divine-origin cell is flagged open); the Baptist 1a cell now quotes NH I p. 301; the practice cells re-labelled to match the dossiers (V35, V37, V44, V47, V50; Orthodox «En el culto» now cites Philaret Q.42); the CIC 760 quote completed (V53); the WCF 31.4 edition (V25); «the Dragon» added (V28); the note about Baptist observations (V58); the slogan note and the page-title note (V61, V62); S-W1 and S-W2 rewritten with the full sentence, the correct surrounding paragraph, no quoted editors' footnote and no «fallback» reading (V65, V69–V72); the translation note (V76); the *Against Hermogenes* row upgraded to verified (V80); the Athanasius row (V81). Left open: V21 (the wording of question 1 stays close to WCF 1.6: owner's call), V27, V29, V78, V83. Outside this file: `lutheran.md` needs a Triglot passage on the Scriptures being God's word before the Lutheran text can support a divine-origin statement.
