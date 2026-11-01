@@ -2,6 +2,13 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-11-01 (afternoon) · Independence of apologists and the 1689 in every doctrine (Pedro)
+**Pedro's answers after the first two parallel research sessions:**
+1. **Independence of the Catholic apologists:** «si vayamos con eso» (the agent's recommendation: count independence **by person and work**, not by organisation, and record both counts). Pedro: «priorizar estos apologistas que te nombré como "más populares, fieles a documentos oficiales y profundos en su contenido", pero si hace falta no hay problema con otros apologistas, siempre y cuando cumplan nuestros criterios establecidos.» So: the named Catholic apologists first (Heschmeyer, Horn, Akin, «How to Be Christian», Otálora, Broussard); others only when needed and only if they pass `docs/research/apologists.md`'s criterion.
+2. **The 1689 Confession applies to every doctrine** («El 1689 en todas las doctrinas»): confirms 2026-11-01 answer 3 over 2026-10-15, which discarded the 1689 line (marked «partly replaced» there).
+**Still open from the two sessions' logs (`docs/research/day-2026-11-01/`):** which date to show for the Didache, Justin, Tertullian and Augustine (396/397); whether the cells that now have text replace «silencio» on the page; whether the AI Spanish of the Large Catechism is imported; whether 1689 margins are cited from the 1677 or the 1719 London edition (the McGlothlin book reproduces 1677; the two differ in five places).
+**Weekly cap for both sessions: 40 %** (Pedro, until further notice); the two sessions stopped at 37 %.
+
 ## 2026-11-01 (seventeenth session, night) · Pedro's answers that unblock the research night; two research sessions overnight
 **Pedro's answers to the blocked research questions:**
 1. **Baptist «Pasajes» when the convention gives only proof-text lists:** look for an official per-passage reading first; if none is found, the page says so with a short copy (that no official document of that line reads the passage), never an invented reading.
@@ -1065,6 +1072,7 @@ Positive notes: «1 nota» now looks very good; search, «Ordenar», «Mostrar»
 **Discarded:** filling sparse sections from sources outside the universe or from the agent's own summary; equalizing the number of objections across traditions; reviewing the dossiers as plain Markdown.
 
 ## 2026-10-15 · Who speaks for each tradition (Pedro chose)
+**Partly replaced by 2026-11-01 · Independence of apologists and the 1689 in every doctrine (the «1689 line» discarded below now applies as a labelled answer to every doctrine).**
 **Chosen:** Reformed = the Westminster family (Confession, Larger and Shorter Catechisms); mainline bodies such as PC(USA) are only mentioned on the tradition page. Baptist = the convention line (Baptist Faith and Message, New Hampshire). Pentecostal = the Assemblies of God only, labelled "Asambleas de Dios", never "los pentecostales"; Oneness Pentecostals are out and the site says so; neo-Pentecostals appear only as context. Heidelberg, the Belgic Confession and the 1689 leave the Eucharist pilot.
 **Why:** applies the 2026-10-14 no-sub-families rule; each is the family with the most institutional reach in the Spanish-speaking world and a citable official text (`docs/research/traditions/*.md` §1, §10). Proposal: https://claude.ai/artifact/SkTKoTePNQZqQnJUMyrzNH
 **Discarded:** Three Forms of Unity, both Reformed families side by side, INPM's mixed canon; the 1689 line, both Baptist lines, adding Free Will Baptists; AG with variants in notes, Trinitarian classical Pentecostalism as one column, "the movement" with shared points only.
