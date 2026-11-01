@@ -107,7 +107,7 @@ function closingHeightAbove(nav: HTMLElement, leavingId: string | null, currentR
 }
 
 const rowClassName =
-  "flex min-h-8 items-center gap-0.5 rounded-6 transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11";
+  "relative flex min-h-8 items-center gap-0.5 rounded-6 transition-colors duration-150 ease-standard hover:bg-hover pointer-coarse:min-h-11";
 const entryClassName =
   "flex min-w-0 flex-1 items-baseline gap-2 py-1.5 pr-2 pl-0.5 text-left text-sidebar text-ink-2 no-underline transition-colors duration-150 ease-standard hover:text-ink data-current:font-medium data-current:text-ink data-trail:text-ink pointer-coarse:py-3";
 
@@ -294,7 +294,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
     if (navRef.current && !pageTreeCarry()) scrollCurrentIntoPlace(navRef.current);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const nav = navRef.current;
     if (!nav) return;
     const from = previousId.current;

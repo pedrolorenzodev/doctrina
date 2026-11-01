@@ -24,7 +24,7 @@ export function AskButton({ label, keyHint, className = "" }: AskButtonProps) {
         aria-pressed={open}
         aria-keyshortcuts="/"
         onClick={toggleAskDrawer}
-        className={`inline-flex h-8.5 cursor-pointer items-center justify-center rounded-6 px-2.5 text-btn font-medium whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-accent-weak aria-pressed:text-ink pointer-coarse:h-11 ${className}`}
+        className={`relative inline-flex h-8.5 cursor-pointer items-center justify-center rounded-6 px-2.5 text-btn font-medium whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:selected-lift aria-pressed:text-ink pointer-coarse:h-11 ${className}`}
       >
         {label}
       </button>

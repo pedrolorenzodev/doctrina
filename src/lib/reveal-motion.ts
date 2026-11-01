@@ -8,6 +8,15 @@ const almostOpenClip = "inset(0px -60px 0px -60px)";
 const enter = { clipMs: 340, fadeMs: 260, stepMs: 24, maxSteps: 8 };
 const exit = { clipMs: 220, fadeMs: 160 };
 
+export function menusClosed() {
+  return Promise.allSettled(
+    document
+      .getAnimations()
+      .filter((animation) => animation.id === animationId)
+      .map((animation) => animation.finished),
+  );
+}
+
 function cancelMenuAnimations(menu: HTMLElement) {
   for (const animation of menu.getAnimations({ subtree: true })) {
     if (animation.id === animationId) animation.cancel();

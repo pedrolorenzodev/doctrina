@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { SegmentedFilter } from "@/components/ui/segmented-filter";
 import { stepButtonClassName } from "@/features/reader/text-size-control";
 import {
   chooseReaderText,
@@ -97,19 +98,18 @@ export function TextSettings({ text }: { text: TextSettingsText }) {
       />
       <div data-menu-item="">
         <p className="mb-1.5 text-label font-medium text-ink-3">{text.align.group}</p>
-        <div role="group" aria-label={text.align.group} className="flex gap-0.5 rounded-8 border border-rule p-0.75">
-          {[false, true].map((justify) => (
-            <button
-              key={String(justify)}
-              type="button"
-              aria-pressed={value.justify === justify}
-              onClick={() => chooseReaderText({ justify })}
-              className="inline-flex min-h-7 flex-1 cursor-pointer items-center justify-center rounded-5 px-3.5 py-1 text-ui-xs leading-label font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-accent-weak aria-pressed:text-ink pointer-coarse:min-h-11"
-            >
-              {justify ? text.align.justified : text.align.left}
-            </button>
-          ))}
-        </div>
+        <SegmentedFilter
+          flush
+          stretch
+          compact
+          label={text.align.group}
+          options={[
+            { id: "left", label: text.align.left },
+            { id: "justified", label: text.align.justified },
+          ]}
+          value={value.justify ? "justified" : "left"}
+          onChange={(id) => chooseReaderText({ justify: id === "justified" })}
+        />
       </div>
     </div>
   );

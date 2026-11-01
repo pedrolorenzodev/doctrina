@@ -2,6 +2,7 @@
 
 import { useCallback, useId, useRef, useState, useSyncExternalStore } from "react";
 import { HangingMenu } from "@/components/hanging-menu";
+import { SegmentedFilter } from "@/components/ui/segmented-filter";
 import { TextSettings, type TextSettingsText } from "@/features/reader/text-settings";
 import { TextSizeControl } from "@/features/reader/text-size-control";
 import {
@@ -68,24 +69,22 @@ export function TextOptions({ text, locked, sizeOnly = false }: TextOptionsProps
             <p data-menu-item="" className="mt-3.5 mb-1.5 ml-1 text-label font-medium text-ink-3">
               {text.formatGroup}
             </p>
-            <div
-              data-menu-item=""
-              role="group"
-              aria-label={text.formatGroup}
-              className="mt-0.5 mb-1.5 flex gap-0.5 rounded-8 border border-rule p-0.75"
-            >
-              {readerFormats.map((option) => (
-                <button
-                  key={option}
-                  type="button"
-                  aria-pressed={option === (locked ? "lines" : format)}
-                  disabled={locked && option === "flow"}
-                  onClick={() => chooseReaderFormat(option)}
-                  className="inline-flex min-h-8.5 flex-1 cursor-pointer items-center justify-center rounded-6 px-1 text-btn leading-label font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-accent-weak aria-pressed:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent pointer-coarse:min-h-11"
-                >
-                  {text.formats[option]}
-                </button>
-              ))}
+            <div data-menu-item="" className="mt-0.5 mb-1.5">
+              <SegmentedFilter
+                flush
+                stretch
+                label={text.formatGroup}
+                options={readerFormats.map((option) => ({
+                  id: option,
+                  label: text.formats[option],
+                  disabled: locked && option === "flow",
+                }))}
+                value={locked ? "lines" : format}
+                onChange={(id) => {
+                  const picked = readerFormats.find((option) => option === id);
+                  if (picked) chooseReaderFormat(picked);
+                }}
+              />
             </div>
             {locked ? (
               <p data-menu-item="" className="mt-1.5 ml-1 text-reader-note text-ink-3">

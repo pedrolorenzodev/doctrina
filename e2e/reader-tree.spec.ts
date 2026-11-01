@@ -57,17 +57,23 @@ test("a book's chapters are not in the page until the book is opened; then they 
   expect(await page.evaluate(() => (window as unknown as { stayed?: boolean }).stayed)).toBe(true);
 });
 
-test("the current chapter wears a ring of accent, and the others show the soft fill when hovered", async ({ page }) => {
+test("the current chapter wears a short ink mark, and the others show the soft fill when hovered", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(chapter("juan", 6));
   const circle = (n: number) => page.locator(`${cells("John")}[data-chapter="${n}"] > span`);
-  const accent = await page.evaluate(() =>
-    getComputedStyle(document.documentElement).getPropertyValue("--color-accent"),
-  );
-  expect(await circle(6).evaluate((element) => getComputedStyle(element).boxShadow)).not.toBe("none");
-  expect(await circle(6).evaluate((element) => getComputedStyle(element).fontWeight)).toBe("600");
-  expect(await circle(7).evaluate((element) => getComputedStyle(element).boxShadow)).toBe("none");
-  expect(accent.trim().length).toBeGreaterThan(0);
+  const mark = (n: number) =>
+    circle(n).evaluate((element) => {
+      const style = getComputedStyle(element, "::before");
+      return {
+        opacity: style.opacity,
+        width: style.width,
+        height: style.height,
+        shadow: getComputedStyle(element).boxShadow,
+      };
+    });
+  expect(await mark(6)).toEqual({ opacity: "1", width: "14px", height: "2px", shadow: "none" });
+  expect(await circle(6).evaluate((element) => getComputedStyle(element).fontWeight)).toBe("500");
+  expect((await mark(7)).opacity).toBe("0");
   const before = await circle(8).evaluate((element) => getComputedStyle(element).backgroundColor);
   await circle(8).hover();
   await expect.poll(() => circle(8).evaluate((element) => getComputedStyle(element).backgroundColor)).not.toBe(before);

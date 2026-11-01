@@ -220,7 +220,7 @@ test.describe("book and chapter menu", () => {
     await expect(page.locator('aside nav a[data-chapter="3"][aria-current=page]')).toHaveCount(1);
   });
 
-  test("the current chapter wears the ring in the menu too", async ({ page }) => {
+  test("the current chapter wears the short mark in the menu too", async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(chapter("juan", 6));
     await page.locator(bookButton).click();
@@ -229,8 +229,8 @@ test.describe("book and chapter menu", () => {
     expect(
       await page
         .locator(`${menu} a[data-chapter="6"] > span`)
-        .evaluate((element) => getComputedStyle(element).boxShadow),
-    ).not.toBe("none");
+        .evaluate((element) => getComputedStyle(element, "::before").opacity),
+    ).toBe("1");
   });
 });
 

@@ -37,7 +37,8 @@ export function ScopeControl({ label, options, value, onChange }: ScopeControlPr
       ref={group}
       role="group"
       aria-label={label}
-      className="relative flex w-full rounded-8 border border-rule p-0.75"
+      data-ready={box ? "" : undefined}
+      className="group/scope relative flex w-full rounded-8 border border-rule p-0.75"
     >
       {box ? (
         <span
@@ -49,7 +50,7 @@ export function ScopeControl({ label, options, value, onChange }: ScopeControlPr
               ...(animate ? motionStyle(["translate", 340, "reveal"], ["width", 340, "reveal"]) : {}),
             } as React.CSSProperties
           }
-          className={`pointer-events-none absolute top-0.75 bottom-0.75 left-0 w-(--slide-w) translate-x-(--slide-x) rounded-6 bg-accent-weak shadow-current-underline ${animate ? motionClassName : ""}`}
+          className={`pointer-events-none absolute top-0.75 bottom-0.75 left-0 w-(--slide-w) translate-x-(--slide-x) rounded-6 selected-ink ${animate ? motionClassName : ""}`}
         />
       ) : null}
       {options.map((option) => (
@@ -62,7 +63,7 @@ export function ScopeControl({ label, options, value, onChange }: ScopeControlPr
             setAnimate(true);
             onChange(option.id);
           }}
-          className={`relative z-1 inline-flex min-h-8.5 flex-auto cursor-pointer items-center justify-center rounded-6 px-1.5 text-ui-xs leading-(--ask-leading-ui) whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:font-medium aria-pressed:text-ink pointer-coarse:min-h-11 ${focusRingClassName}`}
+          className={`relative z-1 inline-flex min-h-8.5 flex-auto cursor-pointer items-center justify-center rounded-6 px-1.5 text-ui-xs leading-(--ask-leading-ui) whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:font-medium aria-pressed:text-ink group-data-ready/scope:aria-pressed:text-bg pointer-coarse:min-h-11 ${focusRingClassName}`}
         >
           {option.label}
         </button>

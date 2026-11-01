@@ -68,6 +68,12 @@ for (const scheme of ["light", "dark"] as const) {
       };
       const backgroundOf = (element: Element): Colour => {
         for (let node: Element | null = element; node; node = node.parentElement) {
+          const pad =
+            node.getAttribute("aria-pressed") === "true"
+              ? node.parentElement?.querySelector(":scope > [data-slide-indicator]")
+              : null;
+          const padColour = pad ? parse(getComputedStyle(pad).backgroundColor) : null;
+          if (padColour && padColour.a > 0.9) return padColour;
           const colour = parse(getComputedStyle(node).backgroundColor);
           if (colour && colour.a > 0.9) return colour;
         }

@@ -40,7 +40,7 @@ export function travelMark(
   const mark = document.createElement("span");
   mark.dataset.mark = "";
   mark.setAttribute("aria-hidden", "true");
-  mark.className = "pointer-events-none absolute z-0 rounded-6 bg-accent-weak shadow-current";
+  mark.className = "pointer-events-none absolute z-0 rounded-6 row-current";
   Object.assign(mark.style, {
     left: `${to.x}px`,
     top: `${to.y}px`,

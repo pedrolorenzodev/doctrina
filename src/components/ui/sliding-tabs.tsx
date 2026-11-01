@@ -25,8 +25,8 @@ const groupClassNames = {
 };
 
 const indicatorClassNames = {
-  flat: "top-0 bottom-0 rounded-6 bg-accent-weak shadow-current-underline",
-  heading: "-bottom-px h-0.5 bg-accent",
+  flat: "top-0 bottom-0 rounded-6 selected-lift",
+  heading: "-bottom-px h-0.5 bg-ink",
 };
 
 const tabClassNames = {

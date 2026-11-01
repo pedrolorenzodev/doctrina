@@ -12,7 +12,7 @@ type TranslationRowsProps = {
 const bracketed = (abbreviation: string) => `(${abbreviation})`;
 
 export const translationOptionClassName =
-  "group/option flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:bg-accent-weak aria-selected:font-medium aria-selected:text-ink aria-selected:shadow-current";
+  "group/option flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:font-medium aria-selected:text-ink mark-dash";
 
 export function TranslationRows({
   spanish,

@@ -274,9 +274,6 @@
   --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-title: cubic-bezier(0.33, 1, 0.68, 1);
 
-  --shadow-current: inset 2px 0 0 var(--color-accent);
-  --shadow-current-underline: inset 0 -2px 0 var(--color-accent);
-  --shadow-current-ring: inset 0 0 0 1.5px var(--color-accent);
   --shadow-floating: 0 18px 40px -18px rgb(0 0 0 / 0.45);
   --shadow-search: 0 18px 40px -18px rgb(0 0 0 / 0.5);
   --shadow-swatch: inset 0 0 0 1px rgb(0 0 0 / 0.12);
@@ -294,6 +291,8 @@
   --external-mark: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.4'%3E%3Cpath d='M5 2H2v8h8V7'/%3E%3Cpath d='M7 1.5h3.5V5M10.5 1.5 5.5 6.5'/%3E%3C/svg%3E");
   --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.85%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%221.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2262%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
   --texture-opacity: 0.4;
+  --wall-ink-blend: screen;
+  --wall-ink-opacity: 0.126;
   --reader-weight: 300;
   --reader-measure: var(--container-col);
   color-scheme: light;
@@ -336,6 +335,8 @@
   --color-danger-fill: rgb(232 145 138 / 0.34);
   --texture-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");
   --texture-opacity: 1;
+  --wall-ink-blend: multiply;
+  --wall-ink-opacity: 0.3;
   color-scheme: dark;
 }
 
@@ -1263,20 +1264,65 @@
 }
 
 @utility row-current {
-  background-color: var(--color-accent-weak);
-  box-shadow: var(--shadow-current);
-
-  &:hover {
-    background-color: var(--color-accent-weak);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2px;
+    height: 14px;
+    margin-top: -7px;
+    background-color: var(--color-ink);
   }
 
-  &[data-travelling] {
-    background-color: transparent;
-    box-shadow: none;
+  &[data-travelling]::before {
+    opacity: 0;
+  }
+}
+
+@utility mark-dash {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2px;
+    height: 14px;
+    margin-top: -7px;
+    background-color: var(--color-ink);
+    opacity: 0;
+    transition: opacity 150ms var(--ease-standard);
   }
 
-  &[data-settling] {
-    transition: none;
+  &[aria-selected="true"]::before,
+  &[aria-current="true"]::before,
+  &[aria-current="page"]::before {
+    opacity: 1;
+  }
+}
+
+@utility selected-lift {
+  background-color: var(--color-card);
+  box-shadow: inset 0 0 0 1px var(--color-rule-2);
+}
+
+@utility selected-ink {
+  isolation: isolate;
+  background-color: var(--color-ink);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-image: var(--texture-image);
+    background-size: 420px 420px;
+    opacity: var(--wall-ink-opacity);
+    mix-blend-mode: var(--wall-ink-blend);
+    pointer-events: none;
   }
 }
 

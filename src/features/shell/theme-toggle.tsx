@@ -2,6 +2,7 @@
 
 import type { MouseEvent } from "react";
 import { IconButton } from "@/components/ui/icon-button";
+import { menusClosed } from "@/lib/reveal-motion";
 import { storeTheme, themeSweepEasing, themeSweepMs, type Theme } from "@/lib/theme";
 
 type ThemeToggleProps = {
@@ -22,7 +23,8 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeToggle({ toLight, toDark }: ThemeToggleProps) {
-  function toggle(event: MouseEvent<HTMLButtonElement>) {
+  async function toggle(event: MouseEvent<HTMLButtonElement>) {
+    const button = event.currentTarget;
     const root = document.documentElement;
     const next: Theme = root.dataset.theme === "dark" ? "light" : "dark";
     storeTheme(next);
@@ -30,7 +32,8 @@ export function ThemeToggle({ toLight, toDark }: ThemeToggleProps) {
       applyTheme(next);
       return;
     }
-    const clipPath = sweepKeyframes(event.currentTarget);
+    await menusClosed();
+    const clipPath = sweepKeyframes(button);
     // guard: the theme-switching class and its CSS in globals.css belong together (GOTCHAS, «View transition»)
     root.classList.add("theme-switching");
     const transition = document.startViewTransition(() => applyTheme(next));

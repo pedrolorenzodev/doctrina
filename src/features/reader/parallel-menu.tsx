@@ -2,6 +2,7 @@
 
 import { useCallback, useId, useRef, useState, type KeyboardEvent } from "react";
 import { HangingMenu } from "@/components/hanging-menu";
+import { SegmentedFilter } from "@/components/ui/segmented-filter";
 import type { PickerOption } from "@/features/reader/translation-picker";
 import { TranslationRows } from "@/features/reader/translation-rows";
 import { useSideRoom } from "@/features/reader/use-second-translation";
@@ -82,7 +83,7 @@ export function ParallelMenu({ text, options, firstId, second, unavailable }: Pa
         aria-controls={`${id}-menu`}
         aria-pressed={second.mode !== "off"}
         onClick={() => setOpen((previous) => !previous)}
-        className="inline-grid size-8.5 cursor-pointer place-items-center rounded-6 text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-expanded:bg-hover aria-pressed:bg-accent-weak aria-pressed:text-accent pointer-coarse:size-11"
+        className="relative inline-grid size-8.5 cursor-pointer place-items-center rounded-6 text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-expanded:bg-hover aria-pressed:selected-lift aria-pressed:text-ink pointer-coarse:size-11"
       >
         <span className="sr-only">{text.label}</span>
         <svg
@@ -112,24 +113,18 @@ export function ParallelMenu({ text, options, firstId, second, unavailable }: Pa
         <p data-menu-item="" className="mt-0.5 mb-1.5 ml-1 text-label font-medium text-ink-3">
           {text.mode}
         </p>
-        <div
-          data-menu-item=""
-          role="group"
-          aria-label={text.mode}
-          className="mt-0.5 mb-1.5 flex gap-0.5 rounded-8 border border-rule p-0.75"
-        >
-          {modes.map((mode) => (
-            <button
-              key={mode}
-              type="button"
-              disabled={mode === "side" && !room}
-              aria-pressed={mode === second.mode}
-              onClick={() => setMode(mode)}
-              className="inline-flex min-h-8.5 flex-1 cursor-pointer items-center justify-center rounded-6 px-1 text-btn leading-label font-medium text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent aria-pressed:bg-accent-weak aria-pressed:text-ink pointer-coarse:min-h-11"
-            >
-              {label[mode]}
-            </button>
-          ))}
+        <div data-menu-item="" className="mt-0.5 mb-1.5">
+          <SegmentedFilter
+            flush
+            stretch
+            label={text.mode}
+            options={modes.map((mode) => ({ id: mode, label: label[mode], disabled: mode === "side" && !room }))}
+            value={second.mode}
+            onChange={(id) => {
+              const picked = modes.find((mode) => mode === id);
+              if (picked) setMode(picked);
+            }}
+          />
         </div>
         {room ? null : (
           <p data-menu-item="" className="mt-1.5 ml-1 text-reader-note text-ink-3">

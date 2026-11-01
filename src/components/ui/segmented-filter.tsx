@@ -7,6 +7,7 @@ type SegmentedOption = {
   label: string;
   count?: number | undefined;
   inert?: boolean;
+  disabled?: boolean;
 };
 
 type SegmentedFilterProps = {
@@ -16,6 +17,8 @@ type SegmentedFilterProps = {
   onChange: (id: string) => void;
   stretch?: boolean;
   stackOnPhone?: boolean;
+  flush?: boolean;
+  compact?: boolean;
 };
 
 type Box = { x: number; w: number };
@@ -27,6 +30,8 @@ export function SegmentedFilter({
   onChange,
   stretch = false,
   stackOnPhone = false,
+  flush = false,
+  compact = false,
 }: SegmentedFilterProps) {
   const group = useRef<HTMLDivElement>(null);
   const [box, setBox] = useState<Box | null>(null);
@@ -37,7 +42,7 @@ export function SegmentedFilter({
     if (!element) return;
     const measure = () => {
       const pressed = element.querySelector<HTMLElement>('[aria-pressed="true"]');
-      if (pressed) setBox({ x: pressed.offsetLeft, w: pressed.offsetWidth });
+      if (pressed && pressed.offsetWidth > 0) setBox({ x: pressed.offsetLeft, w: pressed.offsetWidth });
     };
     measure();
     const observer = new ResizeObserver(measure);
@@ -57,7 +62,7 @@ export function SegmentedFilter({
       role="group"
       aria-label={label}
       data-ready={box ? "" : undefined}
-      className={`group/seg relative gap-0.5 rounded-8 border border-rule p-0.75 ${stretch ? "mb-4 flex w-full" : "mb-4.5 inline-flex max-sm:flex max-sm:w-full"} ${stackOnPhone ? "max-sm:flex-col" : ""}`}
+      className={`group/seg relative gap-0.5 rounded-8 border border-rule p-0.75 ${stretch ? "flex w-full" : "inline-flex max-sm:flex max-sm:w-full"} ${flush ? "" : stretch ? "mb-4" : "mb-4.5"} ${stackOnPhone ? "max-sm:flex-col" : ""}`}
     >
       {box ? (
         <span
@@ -65,7 +70,7 @@ export function SegmentedFilter({
           data-instant={settled ? undefined : ""}
           data-slide-indicator=""
           style={{ "--slide-x": `${box.x}px`, "--slide-w": `${box.w}px` } as React.CSSProperties}
-          className={`slide-indicator pointer-events-none absolute top-0.75 bottom-0.75 left-0 w-(--slide-w) translate-x-(--slide-x) rounded-6 bg-accent-weak ${stretch ? "shadow-current-underline" : ""} ${stackOnPhone ? "max-sm:hidden" : ""}`}
+          className={`slide-indicator pointer-events-none absolute top-0.75 bottom-0.75 left-0 w-(--slide-w) translate-x-(--slide-x) ${compact ? "rounded-5" : "rounded-6"} selected-ink ${stackOnPhone ? "max-sm:hidden" : ""}`}
         />
       ) : null}
       {options.map((option) => (
@@ -73,10 +78,11 @@ export function SegmentedFilter({
           key={option.id}
           type="button"
           aria-pressed={option.id === value}
+          disabled={option.disabled}
           onClick={() => {
             if (!option.inert) onChange(option.id);
           }}
-          className={`relative inline-flex min-h-8.5 cursor-pointer items-center justify-center gap-1.75 rounded-6 py-1.5 text-btn leading-label text-ink-2 ${stretch ? "flex-1 px-2" : "px-3 max-sm:flex-1 max-sm:px-2"} transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-accent-weak aria-pressed:font-medium aria-pressed:text-ink group-data-ready/seg:aria-pressed:bg-transparent ${stackOnPhone ? "max-sm:group-data-ready/seg:aria-pressed:bg-accent-weak" : ""} pointer-coarse:min-h-11`}
+          className={`group/opt relative inline-flex cursor-pointer items-center justify-center gap-1.75 text-ink-2 ${compact ? "min-h-7 rounded-5 py-1 text-ui-xs leading-label" : "min-h-8.5 rounded-6 py-1.5 text-btn leading-label"} ${stretch ? (compact ? "flex-1 px-3.5" : flush ? "flex-1 px-1" : "flex-1 px-2") : "px-3 max-sm:flex-1 max-sm:px-2"} disabled:cursor-default disabled:opacity-40 disabled:hover:bg-transparent transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:selected-ink aria-pressed:font-medium aria-pressed:text-bg group-data-ready/seg:aria-pressed:bg-transparent group-data-ready/seg:aria-pressed:before:hidden ${stackOnPhone ? "max-sm:group-data-ready/seg:aria-pressed:bg-ink max-sm:group-data-ready/seg:aria-pressed:before:block" : ""} pointer-coarse:min-h-11`}
         >
           {stretch ? (
             <span data-label={option.label} className="reserve-bold inline-grid">
@@ -86,7 +92,9 @@ export function SegmentedFilter({
             option.label
           )}
           {option.count === undefined ? null : (
-            <span className="text-ui-2xs leading-label font-normal text-ink-3 tabular-nums">{option.count}</span>
+            <span className="text-ui-2xs leading-label font-normal text-ink-3 tabular-nums group-aria-pressed/opt:text-bg group-aria-pressed/opt:opacity-80">
+              {option.count}
+            </span>
           )}
         </button>
       ))}

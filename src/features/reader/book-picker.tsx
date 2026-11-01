@@ -34,7 +34,7 @@ const currentTopGap = 80;
 const sectionOrder = ["old", "deuterocanon", "new"] as const;
 
 const bookClassName =
-  "block min-h-9 w-full cursor-pointer truncate rounded-6 px-2.5 py-2 text-left text-sidebar text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-current:bg-accent-weak aria-current:font-medium aria-current:text-ink aria-current:shadow-current pointer-coarse:min-h-11";
+  "block min-h-9 w-full cursor-pointer truncate rounded-6 px-2.5 py-2 text-left text-sidebar text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-current:font-medium aria-current:text-ink mark-dash pointer-coarse:min-h-11";
 
 export function BookPicker({ text, books, currentBook, currentChapter, title }: BookPickerProps) {
   const id = useId();

@@ -112,7 +112,7 @@ export function PanelPicker({ label, value, options, onChange }: PanelPickerProp
             data-id={option.id}
             data-menu-item=""
             onClick={() => choose(option.id)}
-            className="flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:bg-accent-weak aria-selected:font-medium aria-selected:text-ink aria-selected:shadow-current"
+            className="flex min-h-11 cursor-pointer items-center rounded-6 px-2.5 py-2 text-picker-option text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink focus:outline-none focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent aria-selected:font-medium aria-selected:text-ink mark-dash"
           >
             {option.label}
           </div>

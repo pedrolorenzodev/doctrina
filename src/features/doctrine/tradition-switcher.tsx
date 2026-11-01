@@ -106,7 +106,7 @@ export function TraditionSwitcher({ label, hint, soon, items, current }: Traditi
                 data-label={item.label}
                 aria-current={item.id === current ? "page" : undefined}
                 data-current={item.id === current ? "" : undefined}
-                className="reserve-bold block cursor-pointer rounded-6 px-2.25 py-2 text-btn pointer-coarse:min-h-11 whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink data-current:bg-accent-weak data-current:font-medium data-current:text-ink data-current:shadow-current-underline sm:px-2.75 sm:text-ui-sm"
+                className="reserve-bold relative block cursor-pointer rounded-6 px-2.25 py-2 text-btn pointer-coarse:min-h-11 whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink data-current:selected-lift data-current:font-medium data-current:text-ink data-current:hover:bg-card sm:px-2.75 sm:text-ui-sm"
               >
                 {item.label}
               </button>
