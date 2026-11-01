@@ -1,5 +1,7 @@
 # Tenth session: every pending task and Pedro's notes, in his words
 
+> **Historical (2026-11-01):** the queue is closed; its open items live in `ROADMAP.md` and `docs/research/open-research-2026-11-01.md`.
+
 Written at the end of the ninth session (2026-10-27 night) so the next agent has all of Pedro's indications in detail. **Delete this file when every item is closed** (what matters moves to `DECISIONS.md`, `DESIGN.md`, `GOTCHAS.md`).
 
 ## How we work (Pedro's rules, stated this session)

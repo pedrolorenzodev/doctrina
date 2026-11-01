@@ -1,5 +1,7 @@
 # Catholic dossiers, wave 1 (Baptism, Papacy, Sola Scriptura)
 
+> **Closed (2026-11-01):** superseded; its handoff items are resolved. Open items: `docs/research/open-research-2026-11-01.md`.
+
 Pedro's direction (2026-10-17, 23:00): only Catholic dossiers across several doctrines until he is fully happy with the format, the data, the viewpoints and the arguments; then the Catholic column becomes the format model for the other traditions (model of format, not frame: the other traditions keep their own categories). Same plan, bounds and checks as `docs/features/justification-pilot.md`; this file only records what differs. Deleted when done (lessons go to `docs/playbooks/content-dossier.md` via `/retro`).
 
 ## Plan (/plan-run, 2026-10-17)

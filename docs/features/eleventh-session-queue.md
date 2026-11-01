@@ -1,5 +1,7 @@
 # Eleventh session: the overnight work order (written 2026-10-28 by the tenth session; delete when every block is closed)
 
+> **Historical (2026-11-01):** the queue is closed; its open items live in `ROADMAP.md` and `docs/research/open-research-2026-11-01.md`. «Historia» and Bible book pages are not to be made (DECISIONS 2026-11-01).
+
 Pedro sleeps; **no questions, no permissions, no waiting for commits**: decide with sensible defaults, record every call «to confirm» in `DECISIONS.md`, and freeze each block for him to commit in the morning (rules below). Stop when the Claude weekly usage reaches **89 % inclusive** (use the `usage-guard` skill; check before each block): finish the block in hand, write the state to the repo (ROADMAP «Current state», DECISIONS, GOTCHAS, lessons in `agent-ops.md`, this file's ledger), and stop.
 
 Verbatim notes of Pedro for every task: `docs/features/tenth-session-queue.md` (read the task's section before building it; approved artifacts are listed there). Rules and the design system: `AGENTS.md`, `.claude/rules/ui.md`, `docs/DESIGN.md`, `docs/DECISIONS.md` «Design principles», memories `approved-artifact-checklist`, `adapt-artifacts-to-design-system`, `animation-craft-and-measuring`, `build-ui-inert-with-todo`, `chromium-dia-testing`.

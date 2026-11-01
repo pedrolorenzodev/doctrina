@@ -1,5 +1,7 @@
 # Eucharist: the other five traditions' dossiers
 
+> **Closed (2026-11-01):** superseded; all 20 pairs are live (`docs/features/dossiers-to-web.md`); Pentecostal is out of scope. Open items: `docs/research/open-research-2026-11-01.md`.
+
 Started 2026-10-21 ~21:20 (Pedro: «arrancá los dossiers»). Playbook: `docs/playbooks/content-dossier.md` (steps 2–7); sizing and caps: `docs/playbooks/agent-ops.md`.
 
 - **Intent:** dossiers for the Lutheran, Reformed, Baptist, Pentecostal and Orthodox columns of the Eucharist, plus `shared.md`, in the Catholic format Pedro is reviewing, so screens 02 and the switcher have real content.

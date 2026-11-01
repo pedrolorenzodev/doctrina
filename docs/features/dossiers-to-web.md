@@ -1,5 +1,7 @@
 # Dossiers to the web: the plan (Pedro, 2026-10-29, top priority)
 
+> **Status 2026-11-01:** the §1 inventory is outdated: all 20 pairs are live as drafts; §7 is answered; print pages are not researched (DECISIONS 2026-10-30). What is left: `docs/research/open-research-2026-11-01.md` (A1–A9, B1–B3).
+
 Pedro, 2026-10-29 night: «pongamosle suma prioridad a los dossiers, el tenerlos HECHOS asi como los tenemos a los catolicos. HECHOS E IMPLEMENTADOS.» Budget he gave: **Codex 80 %**, **Claude 14 % of the week** (12 % already used: ~2 points left until the reset, Wed 2026-11-04 17:59). This file is written so another agent can continue it cold. Written by the agent of the sixteenth session; numbers marked «est.» are estimates from earlier runs, not measurements of this plan.
 
 ## 0. What «done and implemented» means (the target per pair)

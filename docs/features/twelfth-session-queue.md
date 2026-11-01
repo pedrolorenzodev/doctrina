@@ -1,5 +1,7 @@
 # Twelfth session: handoff (written 2026-10-28 morning by the eleventh session; delete when every item is closed)
 
+> **Historical (2026-11-01):** the queue is closed; its open items live in `ROADMAP.md` and `docs/research/open-research-2026-11-01.md` (it says 8 glossary terms lack a definition: 9 do).
+
 Pedro's rules stay: `AGENTS.md`, `.claude/rules/ui.md`, `docs/DESIGN.md`, `docs/DECISIONS.md` «Design principles». Talk to Pedro in Spanish (Rioplatense), brief; the repo is English. The agent never writes git history. Weekly usage ceiling: ask Pedro (the eleventh session ran to 88–90 %).
 
 ## 0. What the eleventh session left

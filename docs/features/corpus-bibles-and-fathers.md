@@ -44,7 +44,7 @@ Out of scope for now: Spanish translations of the Fathers (nothing public domain
 **Phase 4, load into Supabase**, only after Pedro approves Phase 3. **Phase 5, the index and book pages: replaced on 2026-10-26** by expansion in the sidebar (groups → books → a grid of chapters) and a fixed header with selectors (DECISIONS «Bible navigation…»; proposal first).
 
 ## Open for Pedro (decide in the session, in this order)
-1. Re-authorize the Supabase connector or create the scoped token (Phase 0).
+1. ~~Re-authorize the Supabase connector or create the scoped token (Phase 0).~~ Resolved 2026-10-25 (the connector works).
 2. Which plan to run on: the free plan pauses after inactivity.
 3. Static generation at build from the database (Vercel needs the keys in its environment) versus runtime reads with caching: recommend build-time generation with revalidation, but measure it with a real Bible.
 4. Whether the Bibles' search index (⌘K) includes verses (size and relevance).
