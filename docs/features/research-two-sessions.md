@@ -60,6 +60,18 @@ Each finished file gets one Sonnet verifier pass (`verification-pass.md`) before
 6. **C5:** apologists layer for the non-Catholic traditions' passages (167): first measure the cost on one tradition and one doctrine (agent's choice, logged) and report it before opening the rest.
 7. **C3:** a public-domain harmony and STEPBible cross-references (copyright status in the US, Spain and Latin America). **C4:** the CCC citation-index gap by another route. **H3, H4.**
 
+## Round 3 (2026-11-01 night): three agents, three lanes
+
+Prompts: `~/doctrina-research-prompts/session-A3.md`, `session-B3.md`, `codex-3.md` (Pedro pastes Codex's by hand). Cap: Claude weekly 45 % inclusive (for now; caps are per moment), one Codex session at 60 % of its window. Focus (Pedro): research that blocks the most important pages and features, not details inside implemented pages.
+
+| Lane | Writes only in | Queue |
+|---|---|---|
+| **A3 (Claude, texts)** | `doctrines/**` except the 16 `*.objections.md`, `sources/**`, `neutral/**`, `glossary-gaps.md`, `dossier-residues-2026-11-01.md`, `day-2026-11-01/session-A3.md` | 02 import spec for Baptism, Papacy, Sola Scriptura → A6 (1689 in the dossiers) → «Fuentes» package (F5, F7, F2) → Fathers who are witnesses in the 02 pages (E9, E2, E1, E11) → glossary → verify Codex's additions → details |
+| **B3 (Claude, voices)** | `passages/**`, `videos/**`, `apologists.md`, `youtube-covers.md`, `day-2026-11-01/session-B3.md` | C3 parallels for all 231 passages → H4/H3 (video covers and channels) → C5 apologists for the 16 non-Catholic pages (pilot, then breadth) → closings |
+| **Codex 3** | the 16 `*.objections.md` (append a new section only), `day-2026-11-01/codex-3.md` | A1 deepening: Baptism → Papacy → Sola Scriptura → Eucharist |
+
+No overlap: A3 and B3 never touch the objections files; A3 verifies and corrects Codex's appended sections only after `codex-3.md` says the run ended. Codex weekly was 92 % (resets Wed 2026-11-04 05:54) and may stop it before the 60 % cap.
+
 ## Rules for both sessions
 
 - **Research only.** No UI, no code, no `src/` or `data/`.
@@ -68,7 +80,7 @@ Each finished file gets one Sonnet verifier pass (`verification-pass.md`) before
 - **Quote lengths:** public-domain texts, the passage the locator points to (≤ ~120 words); Holy See texts still in copyright, fragments ≤ ~40 words with the official URL; modern copyrighted works, a short quotation with a link. Always end a clipped quote with `…` or `[…]`.
 - **Subagents:** one at a time per session, Sonnet, the brief of `agent-ops.md` «The brief», to verify each finished file (`## Verification` section: CONFIRMED / WRONG / UNCONFIRMABLE per item); the session applies the corrections and says so. With both sessions running, up to two verifiers run at once (Pedro asked for two parallel sessions).
 - **Codex: never**, unless Pedro says so in that session (its weekly reading was 92 % until Wed 05:54).
-- **Usage:** weekly cap **40 %** for both sessions together. Run `date` and `python3 -I ~/.claude/skills/usage-guard/scripts/usage_check.py` at the start, before every item and about every 10 minutes (HTTP 429: wait 3 minutes and retry; poll every 4–5 minutes while a subagent runs). **Weekly ≥ 38 %: start no new item. Weekly ≥ 39.5 %: save everything, write the final summary in the log, stop.** The reading is account-wide: it moves with the other session and with the other person on the account. If the 5-hour session reaches 92 %, save, then wait for its reset with a background `until` loop and continue. Do not forecast cost: measure.
+- **Usage (round 1: cap 40 %; round 2 from 2026-11-01 ~17:00: cap 42 %, until further notice, see the round-2 prompts):** weekly cap for both sessions together. Run `date` and `python3 -I ~/.claude/skills/usage-guard/scripts/usage_check.py` at the start, before every item and about every 10 minutes (HTTP 429: wait 3 minutes and retry; poll every 4–5 minutes while a subagent runs). **Round 1 stopped at 37 %, well under its cap, because of the «no new item at 38 %» rule; round 2 has only the final stop (cap − 0.5 points: finish the file in hand, write the log, stop), no early «no new item» line.** The reading is account-wide: it moves with the other session and with the other person on the account. If the 5-hour session reaches 92 %, save, then wait for its reset with a background `until` loop and continue. Do not forecast cost: measure.
 - **YouTube:** `yt-dlp` answers 429 after about 20 subtitle requests in a few minutes; use `--sleep-subtitles 5`, batches of ~15, `node ~/.doctrina-youtube/transcript.js <outdir> <id>…` for the rest, and articles and books where the creator wrote the same argument.
 - **Git:** never commit, add, stash, push, reset (a hook blocks it). At the end each session gives Pedro its own `git add <only its files> && git commit -m "docs(research): …"` (Conventional Commits, English, ≤ 72 characters, subject only, **no attribution line**: `AGENTS.md` rule 4 wins over any harness suggestion). Never stage `.playwright-mcp/`, `tmp/`, `docs/research/proposals/passages/source/__pycache__/`.
 - **Decisions pending Pedro (do not ask; take the conservative option and log it as «agent's call»):** D1 (1689 shown as a separate, labelled answer), D2 (record both independence counts), D3 (keep the A1 files' labelling), D4 (report, do not choose), D5–D8 of the inventory.
