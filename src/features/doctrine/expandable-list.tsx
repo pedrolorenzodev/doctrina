@@ -26,7 +26,7 @@ type ExpandableListProps = {
 export function ExpandableList({
   as: Tag = "ol",
   itemClassName,
-  listClassName = "list-none border-b border-rule",
+  listClassName = "list-none border-b border-rule rail:grid rail:grid-cols-2 rail:gap-x-14",
   moreClassName = "mt-3.5",
   items,
   shown,

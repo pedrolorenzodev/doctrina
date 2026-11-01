@@ -114,6 +114,8 @@ Scale (desktop → ≤720 px). `font-variation-settings: "opsz" n` as listed; da
 | `--container-wide` | 1040px | sections that use the width (02, 04 sources, 09); 06 sections with a side column |
 | `--container-reader-wide` | 1100px | reader column when «Latín · original» is «Al lado» (two columns of 720 → 1fr 1fr, gap 40) |
 | `--spacing-panel` | 400px | reader side panel (= citation window width) |
+| `--spacing-ask` | clamp(380px, 30vw, 520px) | the ask drawer (30 % of the window) |
+| `--spacing-rail` · `--container-rail` · `--container-lead` | 236px · 1360px · 760px | «Doctrinas» pages on wide screens: the section title rail, the widest block, the header and objection box cap |
 | `--spacing-note-card` · `--spacing-note-edge` · `--spacing-note-room` · `--text-note-card` | 240px · 17px · card + 40 + edge = 297px · 15px/1.5 | «Notas al costado» card width, 40 px right of the column · extra room so the note text ends 25 px from the window's edge · the room the column keeps free at its right · the card's text. The `notes:` variant shows the cards from 1083 px (tree closed) / 1355 px (tree open); `reader-column` shifts the column left by `max(0, room − (main − 720) / 2)` while a card group is on screen (never under 66 px of left room), with `left`, never `transform` |
 | `--spacing-dt-side` | 250px | 06 side column («Citar», «Dónde se usa»), gap 56, left border `rule`, padding-left 22; ≥ 1100 px |
 | `--spacing-word-card` | 300px | 06 word-by-word card column, gap 40, sticky at top bar + 24 |
@@ -153,6 +155,8 @@ Z-layers (`--z-*` [inference: names]): page texture 0 · frame 1 · 09 cue 3 · 
 - Utilities in `globals.css`: `figure-grid` and `figure-row` («Por qué» figures; two columns from 1280 px), `label-row` (168 px label | text, one column under 640), `paragraph-gap` (.55em between paragraphs), `link-example` (quiet in-page link), `link-crumb`, `reserve-bold` (a tab keeps the bold width), `fade-right` and `no-scrollbar` (the switcher's strip), `quiet-links` (page links in `ink-2`), `page-fade` («Fundido»), `title-part` and `title-part-0..2` («Título»), `hit-44`.
 - Links: in-place links (`link-cite`, `link-term`, `link-source`) are inline `span role="button"`; a page link or button without a destination renders as a `button` and does nothing (rule in `ui.md`). The doctrine's name in 03's lede takes `cite` at weight 400.
 - Focus: `2px solid accent`, offset 2, radius 3 on every focusable element, defined outside the base layer so it beats the elements' own radius; the colour is set on the element, not only on focus.
+
+**Wide «Doctrinas» pages (`rail` variant, DECISIONS 2026-10-31 night).** `PageMain rail` marks the page (`data-rail-page`, utility `rail-page`). The `rail:` variant is on with ≥ 1180 px of content, decided from the tree's state: window ≥ 84.75rem with `data-tree=closed`, or ≥ 101.75rem with it open. `Section` always renders `.rail-head` (h2 + subtitle) and `.rail-body`; under `rail:` they become a 236 | 1fr grid, gap 64, the head sticky (`sticky-below-switcher`). Lists opt in with `rail:grid rail:grid-cols-2 rail:gap-x-14` (videos `grid-cols-3 gap-x-8`). The tree toggle moves the page with `RailMorph` (FLIP, 360 ms, `--ease-smooth`).
 
 ## 4. Motion
 

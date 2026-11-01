@@ -21,7 +21,7 @@ export function LifeSection({ page, locale }: LifeSectionProps) {
 
   return (
     <Section id="life" title={text.doctrine.life}>
-      <div className="mb-7.5">
+      <div className="mb-7.5 max-w-col">
         {intro.map((paragraph, index) => (
           <p
             key={index}
@@ -33,12 +33,14 @@ export function LifeSection({ page, locale }: LifeSectionProps) {
       </div>
       <ExpandableList
         as="ul"
-        itemClassName="label-row border-t border-rule py-4"
+        itemClassName="label-row border-t border-rule py-4 rail:block"
         items={items.map((item) => ({
           id: item.id,
           content: (
             <>
-              <p className="pt-0.75 text-life-label font-medium text-ink-3 max-sm:pt-0">{item.label}</p>
+              <p className="pt-0.75 text-life-label font-medium text-ink-3 max-sm:pt-0 rail:mb-1.5 rail:pt-0">
+                {item.label}
+              </p>
               <p className="font-body text-passage-body font-light text-ink-2">
                 <RichText text={withoutFinalStop(item.text)} verse={verse} />{" "}
                 <SourceLinks sources={item.sources} parenthesized />

@@ -25,7 +25,7 @@ function ledeParts(lede: string, emphasis: string | undefined) {
 export function PageHeader({ id, className = "", title, lede, emphasis, size = "display" }: PageHeaderProps) {
   const { before, term, after } = ledeParts(lede ?? "", emphasis);
   return (
-    <header id={id} className={`max-w-col ${className}`}>
+    <header id={id} className={`max-w-col rail:*:max-w-lead ${className}`}>
       <h1 className={`title-part title-part-1 font-head ${titleWeights[size]} text-ink ${titleSizes[size]}`}>
         {title}
       </h1>

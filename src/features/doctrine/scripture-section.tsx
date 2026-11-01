@@ -23,7 +23,7 @@ export function ScriptureSection({ page, locale }: ScriptureSectionProps) {
 
   return (
     <Section id="scripture" title={text.doctrine.scripture} subtitle={page.scriptureSubtitle}>
-      <RevealList as="ul" className="list-none border-b border-rule">
+      <RevealList as="ul" className="list-none border-b border-rule rail:grid rail:grid-cols-2 rail:gap-x-14">
         {page.scripture.slice(0, shownPassages).map((passage) => (
           <li key={passage.refs.join(",")} className="border-t border-rule py-6.25">
             <p className="font-body text-passage font-medium text-ink opsz-18">

@@ -8,7 +8,7 @@ test("«La práctica»: title, subtitle and the table with five traditions and t
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await expect(page.locator("#practice h2")).toHaveText("La práctica");
-  await expect(page.locator("#practice > div > p").first()).toContainText("quién preside, con qué pan y vino");
+  await expect(page.locator("#practice > div > div > p").first()).toContainText("quién preside, con qué pan y vino");
   await expect(page.locator(`${table} caption`)).toHaveText("La práctica en las cinco tradiciones");
   await expect(page.locator(`${table} thead th`)).toHaveText([
     "Aspecto",
@@ -78,7 +78,7 @@ test("«Doctrinas conectadas»: only the doctrines that have a page, as one iner
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await expect(page.locator("#connected h2")).toHaveText("Doctrinas conectadas");
-  await expect(page.locator("#connected > div > p").first()).toContainText("pesa también en estas doctrinas");
+  await expect(page.locator("#connected > div > div > p").first()).toContainText("pesa también en estas doctrinas");
   await expect(page.locator("#connected h3")).toHaveText(["El bautismo"]);
   await expect(page.locator("#connected a")).toHaveCount(0);
   const card = page.locator("#connected button");

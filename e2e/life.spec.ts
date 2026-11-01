@@ -8,7 +8,7 @@ const normalize = (text: string | null) => (text ?? "").replace(/[ ⁠]/g, " ")
 test("two intro paragraphs, fourteen rows with eight shown", async ({ page }) => {
   await page.goto(traditionPath);
   await expect(page.locator("#life h2")).toHaveText("Cómo se vive");
-  await expect(page.locator("#life h2 + div p")).toHaveCount(2);
+  await expect(page.locator("#life .rail-body > div:first-child p")).toHaveCount(2);
   const state = await page.evaluate(() => {
     const rows = [...document.querySelectorAll<HTMLElement>("#life li")];
     return { total: rows.length, hidden: rows.filter((row) => row.hidden).length };

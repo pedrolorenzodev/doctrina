@@ -350,7 +350,7 @@ test("«Lo que todas comparten»: the text and the two questions", async ({ page
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await expect(page.locator("#common h2")).toHaveText("Lo que todas comparten");
-  await expect(page.locator("#common > div > div > p")).toContainText("Todas las tradiciones celebran la Cena");
+  await expect(page.locator("#common > div > div > div > p")).toContainText("Todas las tradiciones celebran la Cena");
   await expect(page.locator("#common ul li")).toHaveCount(2);
   await expect(page.locator("#common ul li span")).toHaveText(["Lo que se discute", "Lo que se discute"]);
   await expect(page.locator("#common ul li p")).toHaveText([

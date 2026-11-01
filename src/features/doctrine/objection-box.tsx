@@ -21,7 +21,7 @@ export function ObjectionBox({ objection, quotes, locale }: ObjectionBoxProps) {
   const hidden = Math.max(0, quotes.length - shownObjectorTexts);
   return (
     <>
-      <div className="rounded-6 border border-rule-2 px-4.5 pt-5 pb-4.5 sm:px-7.5 sm:pt-6.5 sm:pb-6">
+      <div className="rounded-6 border border-rule-2 rail:max-w-lead px-4.5 pt-5 pb-4.5 sm:px-7.5 sm:pt-6.5 sm:pb-6">
         <p className="font-body text-prose-mobile font-light text-ink-2 opsz-18 sm:text-prose">
           <RichText text={objection.synthesis} verse={verse} />
         </p>

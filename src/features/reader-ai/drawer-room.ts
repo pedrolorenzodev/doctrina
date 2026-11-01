@@ -96,7 +96,7 @@ export function applyDrawerRoom(layout: DrawerLayout | null, animate: boolean): 
   for (const column of columns) column.style.left = layout ? "0px" : "";
   if (layout === "side") {
     foldTree();
-    content.style.paddingLeft = `calc(var(--spacing-panel) + ${drawerMotion.gapPx}px)`;
+    content.style.paddingLeft = `calc(var(--spacing-ask) + ${drawerMotion.gapPx}px)`;
     content.style.paddingBottom = "";
     if (strip) strip.style.marginLeft = `-${drawerMotion.gapPx}px`;
     return;

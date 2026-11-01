@@ -67,9 +67,12 @@ export function VideoList({ videos, step, filterLabel, filters, moreLabel, seenL
         }))}
       />
       <div className="relative">
-        <ul ref={list} className="list-none border-b border-rule">
+        <ul
+          ref={list}
+          className="list-none border-b border-rule rail:grid rail:grid-cols-3 rail:gap-x-8 rail:border-b-0"
+        >
           {shown.map((video) => (
-            <li key={video.id} data-id={video.id} className="border-t border-rule py-3.75">
+            <li key={video.id} data-id={video.id} className="border-t border-rule py-3.75 rail:pt-5.5 rail:pb-6.5">
               <VideoItem {...video} />
             </li>
           ))}

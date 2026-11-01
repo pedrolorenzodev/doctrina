@@ -245,6 +245,14 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **First full chromium run ever (2026-10-30): 983 passed, 7 failed.** · The five above and the touch tap on a muted tab (the last tab is off screen on a phone: scroll it into view) were ours; `e2e/reader-keep-position.spec.ts` «A+ keeps the verse at the top» still fails (389 px drift) and was not investigated.
 - **Excerpt unions in the registry types.** · A citation whose first excerpt has no `es` fails `excerpt.es.text`. · Check `"es" in excerpt` (`teach-section.tsx`).
 
+## Wide «Doctrinas» pages (2026-10-31, seventeenth session, night)
+
+- **The `rail` variant's breakpoints are sums, not free values.** · 84.75rem = 1180 + the lg paddings of `PageMain` (64 + 112); 101.75rem adds `--spacing-sidebar` (272); `rail-page` computes the block from the same numbers (`100vw - sidebar - 11rem`). Changing the sidebar width or `PageMain`'s lg padding without these shifts the threshold and lets the block overflow. · `src/app/globals.css` (`@custom-variant rail`, `rail-page`).
+- **The layout must be decided by the tree's state, not by a container query.** · A container query flips at the instant the animated column crosses 1180, mid-animation, and the block width changes every frame (text re-wraps). Also `container-type` on `main` makes it the containing block of the `fixed` right-edge ruler. · `rail` variant, `RailMorph`.
+- **`RailMorph` measures before `data-tree` changes.** · `chooseTreeClosed` calls the `prepareTreeChange` callbacks first; anything else that sets `data-tree` skips the morph. Native scroll anchoring is off on these pages (`overflow-anchor: none`) so it doesn't fight the morph's own anchor. · `src/lib/tree-visibility.ts`, `src/components/rail-morph.tsx`.
+- **Specs that select inside a `Section` go through `.rail-head` / `.rail-body`.** · Since 2026-10-31 a section is `section > div > (div.rail-head, div.rail-body)`; `#id > div > p` no longer reaches the body. · `e2e/*.spec.ts`.
+- **In Playwright, focusing the index button (`button[aria-controls=site-sidebar]`, by `locator.click()` or `.focus()`) scrolls the page up ~490 px after a wheel scroll**, on every page tried (glossary included), not only the wide ones; a mouse click does not. Not investigated: whether a real Tab does the same. Specs that toggle the tree after scrolling click it with `page.mouse`. · `e2e/doctrine-rail.spec.ts`.
+
 ## Ask drawer, round 2 (2026-10-31, seventeenth session)
 
 - **Every direct child of a `texture-layer` box is `position: relative`.** · The history list, placed inside the drawer's content, measured its `absolute` offset from that content (88 px too low); an overlay that must cover the drawer under its head is a direct child of the `aside` (`AskDrawer`'s `overlay` slot). · `src/features/reader-ai/ask-drawer.tsx`

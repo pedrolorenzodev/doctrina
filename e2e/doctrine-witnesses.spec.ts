@@ -54,7 +54,7 @@ function stem(page: Page, id: string): Promise<number> {
 test("the section: title, subtitle, twelve markers, twelve rows in date order, status line", async ({ page }) => {
   await open(page);
   await expect(page.locator("#witnesses h2")).toHaveText("Lo que escribieron los primeros cristianos");
-  await expect(page.locator("#witnesses > div > p").first()).toContainText("Esta sección es neutral");
+  await expect(page.locator("#witnesses > div > div > p").first()).toContainText("Esta sección es neutral");
   await expect(page.locator("[data-lr-marker]")).toHaveCount(12);
   await expect(page.locator("#witnesses ol li")).toHaveCount(12);
   await expect(page.locator(status)).toHaveText("12 testigos. Arrastra sobre la regla para elegir años.");

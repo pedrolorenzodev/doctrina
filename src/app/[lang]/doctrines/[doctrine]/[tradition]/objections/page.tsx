@@ -56,7 +56,7 @@ export default async function ObjectionsRoute({
   const header = objectionsPageText(locale, doctrine, tradition);
   return (
     <CitationProvider views={getPageViews(page, locale)} text={text.citation}>
-      <PageMain>
+      <PageMain rail>
         <Breadcrumbs
           label={text.shell.breadcrumb}
           trail={[

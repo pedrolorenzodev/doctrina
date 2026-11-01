@@ -53,7 +53,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
   const text = getUiText(locale);
   return (
     <CitationProvider views={getPageViews(page, locale)} text={text.citation}>
-      <PageMain>
+      <PageMain rail>
         <Breadcrumbs
           label={text.shell.breadcrumb}
           trail={[{ label: text.shell.groupDoctrines }, doctrineCrumb(locale, doctrine)]}

@@ -44,7 +44,7 @@ export function PassagesSection({ id, passages, locale }: PassagesSectionProps) 
       {passages.answer.length > 0 ? (
         <>
           <GroupHeading>{text.groupAnswer}</GroupHeading>
-          <RevealList as="ul" className="list-none border-b border-rule">
+          <RevealList as="ul" className="list-none border-b border-rule rail:grid rail:grid-cols-2 rail:gap-x-14">
             {passages.answer.map((passage) => (
               <li key={passage.id} className={itemClassName}>
                 <PassageBody passage={passage} />

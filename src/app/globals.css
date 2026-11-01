@@ -105,6 +105,8 @@
   --text-micro: 10.5px;
   --text-micro-lg: 11.5px;
   --spacing-panel: 380px;
+  --spacing-ask: clamp(380px, 30vw, 520px);
+  --spacing-rail: 236px;
   --spacing-note-card: 240px;
   --spacing-note-edge: 17px;
   --spacing-note-room: calc(var(--spacing-note-card) + 40px + var(--spacing-note-edge));
@@ -263,6 +265,8 @@
   --container-descriptor: 56ch;
   --container-argument-title: 40ch;
   --container-wide: 1040px;
+  --container-lead: 760px;
+  --container-rail: 1360px;
   --container-synthesis: 680px;
   --container-entries: 870px;
   --container-drawer: min(320px, 86vw);
@@ -1711,7 +1715,7 @@
     scroll-padding-top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
   }
 
-  html:has([data-chapter-text], [data-father-text]) {
+  html:has([data-chapter-text], [data-father-text], [data-rail-page]) {
     overflow-anchor: none;
   }
 }
@@ -2313,5 +2317,76 @@ html.theme-switching ::after {
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
+  }
+}
+
+@custom-variant rail {
+  @media (min-width: 84.75rem) {
+    :root[data-tree="closed"] &:is([data-rail-page], [data-rail-page] *) {
+      @slot;
+    }
+  }
+
+  @media (min-width: 101.75rem) {
+    &:is([data-rail-page], [data-rail-page] *) {
+      @slot;
+    }
+  }
+}
+
+@utility rail-page {
+  --rail-block: min(var(--container-rail), calc(100vw - var(--spacing-sidebar) - 11rem));
+  --rail-off: max(0px, calc((100% - var(--rail-block)) / 2));
+
+  :root[data-tree="closed"] & {
+    --rail-block: min(var(--container-rail), calc(100vw - 11rem));
+  }
+
+  @variant rail {
+    & > :not(.fixed, .sticky) {
+      width: var(--rail-block);
+      max-width: none;
+      margin-left: var(--rail-off);
+    }
+
+    & > .sticky {
+      padding-left: calc(4rem + var(--rail-off));
+      padding-right: calc(7rem + var(--rail-off));
+    }
+  }
+}
+
+@utility rail-section {
+  @variant rail {
+    display: grid;
+    grid-template-columns: var(--spacing-rail) minmax(0, 1fr);
+    column-gap: 4rem;
+    max-width: none;
+  }
+}
+
+@utility rail-head {
+  @variant rail {
+    position: sticky;
+    top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
+    align-self: start;
+
+    & > h2 {
+      margin-top: -6px;
+    }
+
+    & > p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@utility rail-body {
+  @variant rail {
+    min-width: 0;
+
+    & > p {
+      max-width: var(--container-col);
+    }
   }
 }

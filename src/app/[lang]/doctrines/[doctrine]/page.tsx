@@ -73,7 +73,7 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
   );
   return (
     <CitationProvider views={await getDoctrineViews(page, locale)} text={text.citation}>
-      <PageMain>
+      <PageMain rail>
         <Breadcrumbs
           label={text.shell.breadcrumb}
           trail={[{ label: text.shell.groupDoctrines }]}

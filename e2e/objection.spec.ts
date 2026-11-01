@@ -57,7 +57,7 @@ test("the box shows two own-words texts, with source and year, and the quiet lin
   await expect(page.locator(`${quotes}:visible`)).toHaveCount(2);
   await expect(page.locator(`${quotes}:visible figcaption`).first()).toHaveText("Confesión de Westminster 29.21647");
   await expect(page.locator(`${box} > div > p`).first()).toHaveText("En sus propias palabras");
-  await expect(page.locator("#objection div.max-w-col > p").last()).toHaveText(
+  await expect(page.locator("#objection .rail-body > p").last()).toHaveText(
     "Suelen plantearla reformados y luteranos.",
   );
 });
@@ -93,7 +93,7 @@ test("a text that is not in Spanish says so", async ({ page }) => {
 
 test("the answer has its paragraphs and the canon as a quote with its source", async ({ page }) => {
   await page.goto(first);
-  await expect(page.locator("#answer > div > p")).toHaveCount(5);
+  await expect(page.locator("#answer > div > div > p")).toHaveCount(5);
   await expect(page.locator("#answer figure blockquote")).toHaveCount(1);
   await expect(page.locator("#answer figure figcaption [aria-haspopup]")).toHaveText("Trento, sesión XXII, canon 4");
 });

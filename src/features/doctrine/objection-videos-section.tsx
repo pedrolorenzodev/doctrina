@@ -20,9 +20,12 @@ export function ObjectionVideosSection({ id, page, objection, locale }: Objectio
   if (videos.length === 0) return null;
   return (
     <Section id={id} title={text.videos} subtitle={page.objections.videosSubtitle}>
-      <RevealList as="ul" className="list-none border-b border-rule">
+      <RevealList
+        as="ul"
+        className="list-none border-b border-rule rail:grid rail:grid-cols-3 rail:gap-x-8 rail:border-b-0"
+      >
         {videos.map((video) => (
-          <li key={video.id} className="border-t border-rule py-3.75">
+          <li key={video.id} className="border-t border-rule py-3.75 rail:pt-5.5 rail:pb-6.5">
             <VideoItem
               id={video.id}
               title={video.title}

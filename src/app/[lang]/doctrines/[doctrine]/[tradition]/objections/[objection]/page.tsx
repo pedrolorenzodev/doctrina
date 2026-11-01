@@ -108,7 +108,7 @@ export default async function ObjectionRoute({
       )}
       text={text.citation}
     >
-      <PageMain>
+      <PageMain rail>
         <Breadcrumbs
           label={text.shell.breadcrumb}
           trail={[

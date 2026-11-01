@@ -32,17 +32,23 @@ export function AuthoritySection({ page, locale }: AuthoritySectionProps) {
 
   return (
     <Section id="authority" title={text.doctrine.authority} subtitle={page.authority.subtitle}>
-      <table className="w-full border-collapse">
-        <RevealList as="tbody" className="max-sm:block">
+      <table className="w-full border-collapse rail:block">
+        <RevealList
+          as="tbody"
+          className="max-sm:block rail:grid rail:grid-cols-2 rail:gap-x-14 rail:border-b rail:border-rule"
+        >
           {rows.map(({ grade, definition, statements }, index) => (
-            <tr key={grade} className={`max-sm:block ${index === rows.length - 1 ? "border-b border-rule" : ""}`}>
+            <tr
+              key={grade}
+              className={`max-sm:block rail:block rail:border-t rail:border-rule rail:pt-4.5 rail:pb-5 ${index === rows.length - 1 ? "border-b border-rule rail:border-b-0" : ""}`}
+            >
               <th
                 scope="row"
-                className="w-47.5 border-t border-rule py-4.5 pr-6 text-left align-top font-head text-grade-mobile font-normal text-ink opsz-24 max-sm:block max-sm:w-auto max-sm:border-t max-sm:pt-4 max-sm:pr-0 max-sm:pb-1 sm:text-grade"
+                className="w-47.5 border-t border-rule py-4.5 pr-6 text-left align-top font-head text-grade-mobile font-normal text-ink opsz-24 max-sm:block max-sm:w-auto max-sm:border-t max-sm:pt-4 max-sm:pr-0 max-sm:pb-1 sm:text-grade rail:mb-2 rail:block rail:w-auto rail:border-t-0 rail:p-0"
               >
                 {definition.label}
               </th>
-              <td className="border-t border-rule py-4.5 text-left align-top max-sm:block max-sm:border-t-0 max-sm:pt-0 max-sm:pb-4">
+              <td className="border-t border-rule py-4.5 text-left align-top max-sm:block max-sm:border-t-0 max-sm:pt-0 max-sm:pb-4 rail:block rail:border-t-0 rail:p-0">
                 <p className="font-body text-passage-body font-light text-ink-2">
                   {withoutFinalStop(definition.definition ?? "")}{" "}
                   <SourceLinks sources={[definition.source]} parenthesized />

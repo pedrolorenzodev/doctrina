@@ -134,7 +134,7 @@ test("«Quién fue»: the summary and a facts table that sits beside it from 900
 test("«Sus escritos»: each writing with its date, one shared axis and the count", async ({ page }) => {
   await page.goto(father("justin-martyr"));
   await expect(page.locator("#works h2")).toHaveText("Sus escritos");
-  await expect(page.locator("#works > div > div > p").first()).toHaveText("3 escritos, c. 155–161");
+  await expect(page.locator("#works > div > div > div > p").first()).toHaveText("3 escritos, c. 155–161");
   const rows = await page
     .locator("#works li")
     .evaluateAll((items) => items.map((item) => [item.children[0]!.textContent, item.children[1]!.textContent]));
@@ -146,7 +146,7 @@ test("«Sus escritos»: each writing with its date, one shared axis and the coun
   await expect(page.locator("#works li a")).toHaveCount(3);
   await expect(page.locator("#works [aria-hidden=true]")).toHaveCount(1);
   await page.goto(ignatius);
-  await expect(page.locator("#works > div > div > p").first()).toHaveText("7 escritos, c. 107–110");
+  await expect(page.locator("#works > div > div > div > p").first()).toHaveText("7 escritos, c. 107–110");
 });
 
 test("the writings grid: name | 104 px date, in one column of dates", async ({ page }) => {

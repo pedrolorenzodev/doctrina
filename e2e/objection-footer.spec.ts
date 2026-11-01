@@ -9,7 +9,7 @@ test("«Videos»: the three videos of OB-1 with channel and language, opening Yo
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(first);
   await expect(page.locator("#videos h2")).toHaveText("Videos");
-  await expect(page.locator("#videos > div > p")).toHaveText(
+  await expect(page.locator("#videos > div > div > p")).toHaveText(
     "Creadores católicos que responden a esta objeción. Los videos se abren en YouTube.",
   );
   await expect(page.locator("#videos li")).toHaveCount(3);

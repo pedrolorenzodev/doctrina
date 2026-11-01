@@ -54,7 +54,7 @@ export default async function PassagesRoute({
   const data = await getPassages(page, locale);
   return (
     <CitationProvider views={getPageViews(page, locale)} text={text.citation}>
-      <PageMain>
+      <PageMain rail>
         <Breadcrumbs
           label={text.shell.breadcrumb}
           trail={[

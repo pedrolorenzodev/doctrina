@@ -28,7 +28,7 @@ export function ObjectionList({
 }: ObjectionListProps) {
   const verse = (segments: string[]) => verseLink(segments, locale);
   return (
-    <RevealList as="ul" className="list-none border-b border-rule">
+    <RevealList as="ul" className="list-none border-b border-rule rail:grid rail:grid-cols-2 rail:gap-x-14">
       {objections.map((objection, index) => (
         <li
           key={objection.id}

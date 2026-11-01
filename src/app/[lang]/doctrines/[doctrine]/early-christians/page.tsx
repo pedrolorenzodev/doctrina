@@ -42,7 +42,7 @@ export default async function EarlyChristiansRoute({
   const labels = text.earlyChristians;
   const subject = doctrineSubject(locale, doctrine);
   return (
-    <PageMain>
+    <PageMain rail>
       <Breadcrumbs
         label={text.shell.breadcrumb}
         trail={[{ label: text.shell.groupDoctrines }, doctrineCrumb(locale, doctrine)]}

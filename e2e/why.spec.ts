@@ -5,7 +5,7 @@ const normalize = (text: string | null) => (text ?? "").replace(/[ ⁠]/g, " ")
 
 test("the intro groups its references in one parenthesis, with the punctuation after it", async ({ page }) => {
   await page.goto(traditionPath);
-  const paragraphs = await page.locator("#why > div > div:first-of-type p").allTextContents();
+  const paragraphs = await page.locator("#why .rail-body > div:first-of-type p").allTextContents();
   expect(paragraphs.map(normalize)).toEqual([
     "La Iglesia católica funda esta enseñanza, ante todo, en las palabras de Cristo en la última Cena, tomadas en su sentido propio: «Esto es mi cuerpo» (Trento, ses. XIII, caps. 1 y 4).",
     "Las lee junto con el discurso del pan de vida (Juan 6) y con las palabras «que por vosotros es dado» y «derramada por muchos», que muestran un sacrificio (Lucas 22:19; Mateo 26:28; Ecclesia de Eucharistia 16; Catecismo 1336; Catecismo 1365; Ecclesia de Eucharistia 12; Trento, ses. XXII, cap. 1).",

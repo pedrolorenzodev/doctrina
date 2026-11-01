@@ -42,7 +42,7 @@ test("«Las cinco respuestas»: five traditions in order, each with its grade, b
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await expect(page.locator("#answers h2")).toHaveText("Las cinco respuestas");
-  await expect(page.locator("#answers > div > p").first()).toHaveText(
+  await expect(page.locator("#answers > div > div > p").first()).toHaveText(
     "Cada tradición, en sus propias palabras. Debajo de cada una, las objeciones que recibe.",
   );
   await expect(page.locator(`${items} h3`)).toHaveText(["Católica", "Ortodoxa", "Luterana", "Reformada", "Bautista"]);

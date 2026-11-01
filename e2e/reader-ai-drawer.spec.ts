@@ -46,7 +46,7 @@ const sampleOpening = (page: Page, ms: number) =>
   }, ms);
 
 test.describe("ask drawer: entry and motion", () => {
-  test("the strip button opens a 380 px drawer at the left edge, under the top bar, and the text moves right", async ({
+  test("the strip button opens a drawer 30 % of the window wide (432 px at 1440) at the left edge, under the top bar, and the text moves right", async ({
     page,
   }) => {
     await openAt(page, 1440);
@@ -57,15 +57,15 @@ test.describe("ask drawer: entry and motion", () => {
     await expect(page.locator(stripAsk)).toHaveAttribute("aria-pressed", "true");
     await page.waitForTimeout(400);
     const box = await page.locator(drawer).boundingBox();
-    expect(box).toEqual({ x: 0, y: 56, width: 380, height: 900 - 56 });
+    expect(box).toEqual({ x: 0, y: 56, width: 432, height: 900 - 56 });
     await expect(page.locator(`${drawer} #ask-drawer-title`)).toHaveText("Preguntar");
     const padding = await page.locator("#content").evaluate((el) => getComputedStyle(el).paddingLeft);
-    expect(padding).toBe("428px");
+    expect(padding).toBe("480px");
     const stripInner = await page
       .locator("[data-reader-strip] > div.texture-layer")
       .first()
       .evaluate((el) => el.getBoundingClientRect().left + parseFloat(getComputedStyle(el).paddingLeft));
-    expect(stripInner).toBe(394);
+    expect(stripInner).toBe(446);
     expect(await horizontalOverflow(page)).toBe(0);
   });
 
@@ -206,8 +206,8 @@ test.describe("ask drawer: what it can see", () => {
     await expect(page.locator(`${contextLine} > span`)).toHaveText("Juan 6, Reina-Valera 1909");
     await expect(page.locator(contextButton)).toHaveText("Todo el corpus");
     await expect(page.locator(contextButton)).toHaveAttribute("aria-expanded", "false");
-    expect(await inDrawer(page, contextLine)).toEqual({ x: 0, y: 51, w: 379, h: 36 });
-    expect(await inDrawer(page, contextButton)).toEqual({ x: 249, y: 53.5, w: 122, h: 30 });
+    expect(await inDrawer(page, contextLine)).toEqual({ x: 0, y: 51, w: 431, h: 36 });
+    expect(await inDrawer(page, contextButton)).toEqual({ x: 301, y: 53.5, w: 122, h: 30 });
     expect(await page.locator("#ask-context-sees").evaluate((el) => el.getBoundingClientRect().height)).toBe(1);
     expect(await page.locator("#ask-context-sees").evaluate((el) => (el as HTMLElement).inert)).toBe(true);
   });
@@ -228,9 +228,9 @@ test.describe("ask drawer: what it can see", () => {
     await page.waitForTimeout(350);
     await expect(page.locator(contextButton)).toHaveAttribute("aria-expanded", "true");
     expect(await page.locator(`${contextButton} svg`).evaluate((el) => getComputedStyle(el).rotate)).toBe("180deg");
-    expect(await inDrawer(page, "[data-ask-sees]")).toEqual({ x: 0, y: 87, w: 379, h: 213 });
-    expect(await inDrawer(page, "[role=switch]")).toEqual({ x: 323, y: 161, w: 34, h: 20 });
-    expect(await inDrawer(page, "[data-ask-sees] [role=group]")).toEqual({ x: 22, y: 242, w: 335, h: 42 });
+    expect(await inDrawer(page, "[data-ask-sees]")).toEqual({ x: 0, y: 87, w: 431, h: 213 });
+    expect(await inDrawer(page, "[role=switch]")).toEqual({ x: 375, y: 161, w: 34, h: 20 });
+    expect(await inDrawer(page, "[data-ask-sees] [role=group]")).toEqual({ x: 22, y: 242, w: 387, h: 42 });
     await expect(page.locator("[role=switch]")).toHaveAttribute("aria-checked", "true");
     await expect(page.locator("[data-ask-sees] > div[aria-hidden]")).toHaveAttribute("aria-hidden", "false");
     await expect(page.locator("[data-ask-sees] [role=group] button[aria-pressed=true]")).toHaveText("Todo el corpus");
@@ -626,7 +626,7 @@ test.describe("ask drawer: conversations and fragments", () => {
     await openDrawer(page);
     const newChat = page.getByRole("button", { name: "Nueva conversación" });
     expect(await inDrawer(page, "aside[data-ask-drawer] > div:nth-child(2) button:nth-of-type(1)")).toEqual({
-      x: 255,
+      x: 307,
       y: 7,
       w: 36,
       h: 36,

@@ -9,11 +9,19 @@ export function subscribeTree(listener: () => void): () => void {
   return () => listeners.delete(listener);
 }
 
+const preparers = new Set<() => void>();
+
+export function prepareTreeChange(preparer: () => void): () => void {
+  preparers.add(preparer);
+  return () => preparers.delete(preparer);
+}
+
 export function isTreeClosed(): boolean {
   return document.documentElement.dataset.tree === "closed";
 }
 
 export function chooseTreeClosed(closed: boolean): void {
+  if (closed !== isTreeClosed()) preparers.forEach((prepare) => prepare());
   if (closed) document.documentElement.dataset.tree = "closed";
   else delete document.documentElement.dataset.tree;
   try {
