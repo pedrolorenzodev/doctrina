@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { IconButton } from "@/components/ui/icon-button";
 import { useDrawer } from "@/features/shell/drawer";
+import { closeAskDrawer } from "@/lib/ask-drawer";
 import { chooseTreeClosed, isTreeClosed, subscribeTree } from "@/lib/tree-visibility";
 
 const desktopQuery = "(min-width: 64rem)";
@@ -24,8 +25,10 @@ export function MenuButton({ label }: { label: string }) {
   const shown = desktop ? (home ? homeTreeOpen : !closed) : open;
 
   function toggle() {
-    if (!matchMedia(desktopQuery).matches) setOpen(!open);
-    else if (home) setHomeTreeOpen(!homeTreeOpen);
+    if (!matchMedia(desktopQuery).matches) {
+      if (!open) closeAskDrawer();
+      setOpen(!open);
+    } else if (home) setHomeTreeOpen(!homeTreeOpen);
     else chooseTreeClosed(!closed);
   }
 

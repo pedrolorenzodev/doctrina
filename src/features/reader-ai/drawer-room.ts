@@ -6,13 +6,14 @@ export const drawerMotion = { moveMs: 260, fadeMs: 200, gapPx: 48, sheetGapPx: 4
 export const sheetHeight = "54dvh";
 export const sheetShadow = "0 -14px 34px -22px rgb(0 0 0 / 0.5)";
 export const sideQuery = "(min-width: 68.75rem)";
+const dockedTreeQuery = "(min-width: 64rem)";
 
 const move = `${drawerMotion.moveMs}ms var(--ease-move)`;
 const stripTransitions = `translate 220ms var(--ease-move), transform 220ms var(--ease-move), margin-right 380ms var(--ease-smooth), margin-left ${move}`;
 
 type Shell = { content: HTMLElement; grid: HTMLElement | null; strip: HTMLElement | null; columns: HTMLElement[] };
 
-let hidTree: { stored: string | null } | null = null;
+let hidTree: { stored: string | null; wasOpen: boolean } | null = null;
 let ownChange = false;
 let settle = 0;
 
@@ -53,16 +54,18 @@ function setTree(closed: boolean) {
 }
 
 function foldTree() {
-  if (hidTree || isTreeClosed()) return;
-  hidTree = { stored: readStored() };
+  if (hidTree) return;
+  hidTree = { stored: readStored(), wasOpen: !isTreeClosed() };
+  if (!hidTree.wasOpen) return;
   setTree(true);
   writeStored(hidTree.stored);
 }
 
 function unfoldTree() {
   if (!hidTree) return;
-  const { stored } = hidTree;
+  const { stored, wasOpen } = hidTree;
   hidTree = null;
+  if (!wasOpen) return;
   setTree(false);
   writeStored(stored);
 }
@@ -98,7 +101,8 @@ export function applyDrawerRoom(layout: DrawerLayout | null, animate: boolean): 
     if (strip) strip.style.marginLeft = `-${drawerMotion.gapPx}px`;
     return;
   }
-  unfoldTree();
+  if (layout === "sheet" && matchMedia(dockedTreeQuery).matches) foldTree();
+  else unfoldTree();
   content.style.paddingLeft = "";
   if (strip) strip.style.marginLeft = "";
   content.style.paddingBottom = layout === "sheet" ? `calc(${sheetHeight} + ${drawerMotion.sheetGapPx}px)` : "";

@@ -75,7 +75,13 @@ export function AskDrawer({ title, closeLabel, bar, actions, overlay, children }
     shown.current = { open, layout };
   }, [open, layout]);
 
-  useEffect(() => () => applyDrawerRoom(null, false), []);
+  useEffect(
+    () => () => {
+      shown.current = { open: false, layout: shown.current.layout };
+      applyDrawerRoom(null, false);
+    },
+    [],
+  );
 
   useEffect(() => {
     let wasOpen = getAskDrawer().open;

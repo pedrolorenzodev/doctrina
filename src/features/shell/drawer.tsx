@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from "react";
 import { usePathname } from "next/navigation";
+import { getAskDrawer, subscribeAskDrawer } from "@/lib/ask-drawer";
 import { isHomePath } from "@/lib/locale";
 
 type DrawerState = {
@@ -39,6 +40,8 @@ export function DrawerProvider({ children }: { children: ReactNode }) {
     const timer = window.setTimeout(() => setArriving(false), arrivalMs);
     return () => clearTimeout(timer);
   }, [arriving]);
+
+  useEffect(() => subscribeAskDrawer(() => getAskDrawer().open && setOpenState(false)), []);
 
   useEffect(() => {
     const desktop = matchMedia("(min-width: 64rem)");

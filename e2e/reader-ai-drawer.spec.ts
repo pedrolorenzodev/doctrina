@@ -131,9 +131,11 @@ test.describe("ask drawer: entry and motion", () => {
     await expect(page.locator(drawer)).not.toHaveAttribute("data-open");
   });
 
-  test("under 1100 px it is a sheet from the bottom, 54 % high, with a grip and no tree change", async ({ page }) => {
+  test("under 1100 px it is a sheet from the bottom, 54 % high, with a grip, and a docked tree folds out of its way", async ({
+    page,
+  }) => {
     await openAt(page, 1024, 800);
-    const tree = await page.locator("html").getAttribute("data-tree");
+    expect(await page.locator("html").getAttribute("data-tree")).toBeNull();
     await clickQuietly(page, stripAsk);
     await expect(page.locator(drawer)).toHaveAttribute("data-layout", "sheet");
     await page.waitForTimeout(400);
@@ -142,7 +144,7 @@ test.describe("ask drawer: entry and motion", () => {
     expect(box.width).toBe(1024);
     expect(Math.round(box.height)).toBe(Math.round(800 * 0.54));
     expect(Math.round(box.y + box.height)).toBe(800);
-    expect(await page.locator("html").getAttribute("data-tree")).toBe(tree);
+    expect(await page.locator("html").getAttribute("data-tree")).toBe("closed");
     const radius = await page.locator(drawer).evaluate((el) => getComputedStyle(el).borderTopLeftRadius);
     expect(radius).toBe("14px");
   });
