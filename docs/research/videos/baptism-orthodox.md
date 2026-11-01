@@ -1,0 +1,15 @@
+Status: draft, NOT verified by Pedro
+
+# Videos · Baptism · Orthodox (H1, session B2): 2 videos checked against their captions
+
+## Progress
+- Written 2026-11-01 evening (session B2). The page `src/content/pages/baptism/orthodox.es.ts` has no videos; nothing was added to the page data.
+- Metadata (title, channel, date, duration, views) read with `yt-dlp --skip-download --print` on 2026-11-01; views move.
+- «Checked against the captions» here means: the words quoted occur in YouTube's automatic captions of that video, read through the transcript panel (`transcript.js`: yt-dlp subtitle downloads were blocked by HTTP 429), at the cue start time given. Auto-captions are machine-made (mishearings stay in the quotes) and carry **no speaker labels**: who speaks is taken from the title and channel, never from the captions. A row says what the video argues only as far as the lines read show; the videos were not watched or read in full.
+- Criterion: creators in `docs/research/apologists.md` (the apologists layer of that file has open points per creator). A third-party channel (clips, re-uploads) is marked as such.
+- Verifier pass: one offline Sonnet pass on 2026-11-01 evening (`videos/verification-b2-h1.md`: «what it defends» read against the captions, no network); its corrections are applied. It could not judge: who speaks where the captions carry no labels, the unread parts of long videos, and whether a clips channel is the creator's own. Not done: videos from De Young, Damick, Wilken, Fiene (none of their videos on these topics surfaced in the searches), Spanish-language videos, H2 (videos per objection).
+
+| Id (URL `https://www.youtube.com/watch?v=<id>`) | Title | Channel | Lang | Date | Duration | Views | Creator and criterion | What it defends / evidence | Maps to | Note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `Dc8PHJ76uUY` | 5 Miracles That Happen at Baptism | Patristic Nectar | en | 2026-06-09 | 10:50 | 21,439 | speaker not named in the title or the captions; the description says «Father Josiah» (no surname, verified by yt-dlp 2026-11-01); Patristic Nectar publishes Fr. Josiah Trenham (`apologists.md`), that he speaks here is `[inference]` | baptism as union with Christ and indwelling of God; lists its scriptural names (regeneration, illumination, adoption). Captions (cue start times; words as the captions print them): 0:42 «When a person is is baptized, they are united to Christ»; 9:44 «Baptism is called regeneration» `[verified: captions]` | the page |  |
+| `T4vXwr2klmY` | Orthodoxy & Baptism, Pt . 1 \| Fr. Josiah Trenham | Protecting Veil | en | 2022-05-13 | 13:21 | 27,377 | «Fr. Josiah Trenham» (named in the title; channel «Protecting Veil» is not his) | on the Orthodox reception of converts: a Protestant or Latin baptism is accepted «by economy» with chrismation, not because it is Orthodox baptism. Captions (cue start times; words as the captions print them): 8:22 «we are not saying that the baptism that they have outside of the church is orthodox baptism» `[verified: captions]` | the page | a practice question, not the nature of baptism |

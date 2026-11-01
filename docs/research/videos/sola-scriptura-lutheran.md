@@ -1,0 +1,15 @@
+Status: draft, NOT verified by Pedro
+
+# Videos · Sola Scriptura · Lutheran (H1, session B2): 2 videos checked against their captions
+
+## Progress
+- Written 2026-11-01 evening (session B2). The page `src/content/pages/sola-scriptura/lutheran.es.ts` has no videos; nothing was added to the page data.
+- Metadata (title, channel, date, duration, views) read with `yt-dlp --skip-download --print` on 2026-11-01; views move.
+- «Checked against the captions» here means: the words quoted occur in YouTube's automatic captions of that video, read through the transcript panel (`transcript.js`: yt-dlp subtitle downloads were blocked by HTTP 429), at the cue start time given. Auto-captions are machine-made (mishearings stay in the quotes) and carry **no speaker labels**: who speaks is taken from the title and channel, never from the captions. A row says what the video argues only as far as the lines read show; the videos were not watched or read in full.
+- Criterion: creators in `docs/research/apologists.md` (the apologists layer of that file has open points per creator). A third-party channel (clips, re-uploads) is marked as such.
+- Verifier pass: one offline Sonnet pass on 2026-11-01 evening (`videos/verification-b2-h1.md`: «what it defends» read against the captions, no network); its corrections are applied. It could not judge: who speaks where the captions carry no labels, the unread parts of long videos, and whether a clips channel is the creator's own. Not done: videos from De Young, Damick, Wilken, Fiene (none of their videos on these topics surfaced in the searches), Spanish-language videos, H2 (videos per objection).
+
+| Id (URL `https://www.youtube.com/watch?v=<id>`) | Title | Channel | Lang | Date | Duration | Views | Creator and criterion | What it defends / evidence | Maps to | Note |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `4LhwvpAH4VU` | A Defense of Sola Scriptura | Dr. Jordan B Cooper | en | 2019-03-12 | 17:10 | 42,584 | yes: Jordan Cooper | a defence of sola scriptura from Jesus’s treatment of the Pharisees’ traditions: the burden of proof is on the tradition. Captions (cue start times; words as the captions print them): 16:20 «the burden of proof is on then the Pharisees to go back and say no here is where we know that these Traditions are indeed true and infallible and correct» `[verified: captions]` | the page |  |
+| `LuPFYR3jyp4` | Sola Scriptura and the Canon | Dr. Jordan B Cooper | en | 2024-06-10 | 8:45 | 19,664 | yes: Jordan Cooper | answers the canon argument: the Church recognized rather than created the canon; no ecumenical council defined the New Testament canon before Trent; recognition does not establish an infallible magisterium. Captions (cue start times; words as the captions print them): 1:22 «Rome is saying that the church has to make that decision so even if you believe in Solo scriptura you are believing something that the church itself did» `[verified: captions]` | the page | the quote states the argument he answers; his answer is after it (not quoted) |

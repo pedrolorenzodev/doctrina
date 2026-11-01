@@ -1,3 +1,5 @@
+Status: draft, NOT verified by Pedro
+
 # YouTube video covers: policy and branding research
 
 ## Progress
@@ -121,3 +123,20 @@
 **PASS:** unmodified current thumbnail + exact title/channel + official linked YouTube attribution + card opens the cited video/time; API data refreshed at least every 30 days.
 
 **FAIL:** permanently checked-in thumbnail, cropped/recolored cover, translated title replacing the original, inert play icon, missing per-item YouTube attribution in mixed-source results, covered/modified embedded player, cached video file, or metadata left stale beyond 30 days.
+
+## Recheck 2026-11-01 (session B3, H4)
+
+Read on 2026-11-01 from the official pages (WebFetch summaries of each page, not a download of the raw text; quotes below are the fetch's, short):
+
+| Document | «Last updated» in the file (read 2026-10-21) | «Last updated» read 2026-11-01 |
+|---|---|---|
+| API Services Terms of Service | 2026-09-14 | 2026-11-01 |
+| Developer Policies | 2026-10-15 | 2026-11-01 |
+| Required Minimum Functionality | 2026-10-15 | 2026-11-01 |
+| Complying with the Developer Policies (guide) | 2026-09-14 | 2026-09-14 |
+| Branding Guidelines | 2025-08-20 | 2025-08-20 |
+
+- **Revision history** (https://developers.google.com/youtube/terms/revision-history, read 2026-11-01): the newest entries are **4 May 2026** and **1 June 2026**, both about the «Additional policies on derived metrics and data storage» (they apply only to audited developers with analytics use cases that requested extra metrics; they let those developers store some statistical data beyond 30 days). **No entry after 1 June 2026 and none that touches thumbnails, embeds, attribution or the 30-day rule.** The latest dated entries per document: Terms 12 July 2022; Developer Policies 23 January 2025; Required Minimum Functionality 7 July 2025; guide 7 July 2025; Branding Guidelines none dated. `[verified: page read 2026-11-01]`
+- **Reading:** the three pages whose «Last updated» line moved to 2026-11-01 have no corresponding revision-history entry; the line may be page metadata rather than a change. Whether the text changed was **not** compared word for word with the 2026-10-21 reading (the earlier text is not saved). The quotes re-read now match the rules above: III.F.2.a–c (YouTube must be shown as the source; non-YouTube content must not look as if it came from YouTube; display the applicable Brand Features); III.E.4.d (store non-authorized data at most 30 calendar days, then delete or refresh); the autoplay wording of III.E.4.i; «Any YouTube thumbnail that initiates a playback must be at least 120 pixels wide and 70 pixels tall»; «You must not display overlays, frames, or other visual elements in front of any part of a YouTube embedded player»; the guide's «Custom play buttons over the YouTube thumbnail are acceptable, but tapping must initiate playback» and «Links must open in the YouTube application whenever the application is available». The Developer Policies page has **no standalone thumbnail rule**: thumbnails appear only in the III.F.2.a attribution rule.
+- **Official attribution icon:** the Branding Guidelines (updated 2025-08-20) say the YouTube Icon is for attribution when an app mixes content from several sources or space is constrained; every logo or icon «must be clickable and link back to YouTube content» (a YouTube page or a YouTube-related part of the app); it «must meet the minimum size requirements provided on the YouTube brand site»; «fully and clearly visible», not altered or partly covered. Assets: https://www.youtube.com/yt/brand/downloads.html (not downloaded, not checked). The guidelines give no numeric clear space and no fixed minimum size on their own page; the size is on the brand site `[not read]`.
+- **Conclusion for Doctrina:** nothing in the revision history changes the Release checklist above. Before launch: re-read the three pages whose date is 2026-11-01 and the brand-site minimum size (agent's call: not done now because the revision history shows no change to this subject).

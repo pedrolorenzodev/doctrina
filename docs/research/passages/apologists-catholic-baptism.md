@@ -7,6 +7,7 @@ Status: draft, NOT verified by Pedro
 - Criterion for who is quoted: `docs/research/apologists.md` (Catholic: Heschmeyer, Horn, Akin, Broussard, «How to Be Christian», Otálora). Method: `passages/apologists-catholic.md` (pilot) plus the sources below.
 - Independence (decision D2, open): each passage gets **both** counts, by person and work, and by organisation (Heschmeyer, Horn, Akin and Broussard are Catholic Answers staff, or host a Catholic Answers show: `apologists.md`).
 - Verifier pass: quotes machine-matched (see «Sources searched»); locators, dates and attributions not yet read by a second reader.
+- **Round 2 (session B2, 2026-11-01 evening):** entries added: 7, 8, 13. Method: the catholic.com pages (audio transcripts and magazine articles of Heschmeyer, Horn, Akin and Broussard) re-crawled on 2026-11-01 evening (1,742 pages) and every quote extracted from the page text by a script (a quote that did not match stopped the build); sections marked «(round 2, session B2)». Still without a quote: 14, 18, 19 (the lines found cite other verses or other arguments than the page entry's). Second read 2026-11-01 evening (`verification-b2-2.md`, one Sonnet pass over every round-2 quote): quotes, locators, speakers, titles and dates confirmed; one caption cue range, three headings, one count line and ten overreaching headings were corrected; remarks about pages that are not quoted were not re-read. Counts below are by person and work («works» = distinct pages; a print-edition reprint is one work with its online article) and by organisation.
 
 ## Tags
 - `[verified: page]`: the text was fetched today with `curl` from the URL given and the sentence matched in the page; for the transcripts of catholic.com podcast pages the speaker is the page's own label («Joe:»), not a guess. These transcripts are machine-made (they contain mishearings); the words are the page's.
@@ -117,6 +118,31 @@ Status: draft, NOT verified by Pedro
 ## Sources searched
 - The catholic.com podcast pages with a transcript or text (Shameless Popery, 294 pages; Dr. Karlo, 50; The Jimmy Akin Podcast, 108; A Daily Defense, the baptism-related ones; Counsel of Trent, 104 pages, almost none with a transcript) and 146 Catholic Answers Magazine/tract pages whose address matches baptism-related words, all fetched 2026-11-01 with `curl` and searched offline with scripture-reference patterns. Not searched: YouTube captions of Horn (the Counsel of Trent pages carry no transcript), Otálora, «How to Be Christian», books. `[not found]` is not proof none exists.
 - Every quote above was matched, string by string, against the fetched page text by a script on 2026-11-01 (a quote that did not match stopped the build); a clipped quote ends with […].
+
+## 7. Baptism · 1 Cor 6:11; 12:13 (page entry 7) (round 2, session B2)
+
+**Argument A · «by one spirit, we were all baptized into one body» (1 Cor 12:13): Heschmeyer says the Catholic Church recognizes baptism by Orthodox and Protestants «so long as they’re done in the proper way and with the proper intention».**
+- **Joe Heschmeyer**, «The Critical Disagreements That Sparked The SSPX Schism...», Shameless Popery (Catholic Answers), transcript on catholic.com, 21 Jul 2026, https://www.catholic.com/audio/sp/the-critical-disagreements-that-sparked-the-sspx-schism, the paragraph that begins «They’re made members even in the priesthood of…» (the quote starts mid-paragraph at «It’s rooted in the words…») `[verified: page]` (speaker per the page's label or byline): «It’s rooted in the words of St. Paul that by one spirit, we were all baptized into one body. Jews are Greeks, slaves are free and all were made to drink of one spirit. So the Catholic church recognizes the validity of Orthodox and Protestant baptism so long as they’re done in the proper way and with the proper intention.»
+
+**Count and independence.** By person and work: **1 person(s)**, 1 work(s); by organisation: **1** (all Catholic Answers staff). 1 Cor 6:11: Horn quotes it in an article on homosexual behaviour (not about baptism); not quoted. Broussard quotes 1 Cor 12:12–13 in «Communion of Saints» only as a Bible quotation inside an argument about the communion of saints: not quoted.
+**Contested within the tradition:** `[not searched]`.
+
+## 8. Baptism · Rom 5:12 (page entry 8) (round 2, session B2)
+
+**Argument A · The Magisterium reads Rom 5:12 as original sin: Trent’s decree appeals to it (Broussard); Akin lists it among the passages whose sense Trent partially defined (his lead-in is in the count line, not in the quoted line).**
+- **Karlo Broussard**, «Using the Bible to Explain Original Sin», *Catholic Answers Magazine*, 10 Jan 2023, https://www.catholic.com/magazine/online-edition/using-the-bible-to-explain-original-sin, the paragraph that begins «The biblical text that the Magisterium has appealed…» `[verified: page]`: «The biblical text that the Magisterium has appealed to as evidence for this belief is Romans 5:12: “Therefore as sin came into the world through one man and death through sin, and so death spread to all men because all men sinned.” The Council of Trent appeals to this verse in its Decree Concerning Original Sin.»
+- **Jimmy Akin**, «The Limits of Scripture Interpretation», *Catholic Answers Magazine*, 1 Jan 2001, https://www.catholic.com/magazine/print-edition/the-limits-of-scripture-interpretation, the paragraph that begins «(6) Romans 5:12 refers to the reality of…» `[verified: page]`: «(6) Romans 5:12 refers to the reality of original sin.»
+
+**Count and independence.** By person and work: **2 person(s)**, 2 work(s); by organisation: **1** (all Catholic Answers staff). Akin’s line is the sixth of the seven passages whose sense he says the extraordinary magisterium defined, all at Trent (his list opens: «only seven passages of Scripture have had their senses partially (not fully) defined by the extraordinary magisterium. These definitions were made by the Council of Trent»). Neither quoted line speaks of infant baptism.
+**Contested within the tradition:** `[not searched]`.
+
+## 13. Baptism · Eph 4:30; Eph 1:13–14; 2 Cor 1:21–22 (page entry 13) (round 2, session B2)
+
+**Argument A · Baptism by Judas «sticks so to speak, it creates this indelible mark», while John’s symbolic baptism «has to be redone» (Heschmeyer, paraphrasing Augustine; none of the three verses is named).**
+- **Joe Heschmeyer**, «SHOCKINGLY STRONG (and a lil cringe) Moments From the Alex O'Connor vs David Wood DEBATE», Shameless Popery (Catholic Answers), transcript on catholic.com, 10 Apr 2025, https://www.catholic.com/audio/sp/shockingly-strong-and-a-lil-cringe-moments-in-the-alex-oconnor-vs-david-wood-debate, the paragraph that begins «You see this in Acts explicitly, but nobody…» (the quote starts mid-paragraph at «So as a result, Judas…») `[verified: page]` (speaker per the page's label or byline): «So as a result, Judas baptizes and it sticks so to speak, it creates this indelible mark. John does this symbolic baptism and it has to be redone.»
+
+**Count and independence.** By person and work: **1 person(s)**, 1 work(s); by organisation: **1** (all Catholic Answers staff). The sentence paraphrases Augustine; it is Heschmeyer’s own wording in an automatic transcript.
+**Contested within the tradition:** `[not searched]`.
 
 ## Not done
 - Page entries 7 (1 Cor 6:11 / 12:13), 8 (Rom 5:12), 13 (Eph 4:30 / 1:13–14 / 2 Cor 1:21–22), 14 (1 Tim 2:4), 18 (Eph 4:25), 19 (Gal 5:3): nothing found yet in the sources searched. Entries 2, 3 and 12 already carry quotes on the page and are not duplicated here. Mark 10:38 (entry 15) is not covered.
