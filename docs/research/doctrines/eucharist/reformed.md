@@ -140,7 +140,7 @@ No existe un órgano reformado universal que asigne un grado único a cada propo
 
 ### Estándares de Westminster
 
-1. Westminster Assembly, *The Confession of Faith; the Larger and Shorter Catechisms* (Edinburgh: Johnstone, Hunter, & Co., 1894): WCF 29, pp. 93–95; WLC 168–177, pp. 203–210; WSC 96–97, pp. 246–247. [Internet Archive, scan completo](https://archive.org/details/confessionoffaith00chur/page/92/mode/2up). Public domain. OCR local de control: SHA-256 `24cbbfbea9e01b24d418d54485229fd5c8f617cf7382d75fefcf31932cd0856d`. [verified: scan]
+1. Westminster Assembly, *The Confession of Faith; the Larger and Shorter Catechisms* (Edinburgh: Johnstone, Hunter, & Co., 1894): WCF 29, pp. 93–95; WLC 168–177, pp. 203–210; WSC 96–97, pp. 245–246 (corrected 2026-11-01 evening by session A2 on verifier V4's reading). [Internet Archive, scan completo](https://archive.org/details/confessionoffaith00chur/page/92/mode/2up). Public domain. OCR local de control: SHA-256 `24cbbfbea9e01b24d418d54485229fd5c8f617cf7382d75fefcf31932cd0856d`. [verified: scan]
 2. Westminster Assembly, *Doctrinas y reglas de la Iglesia Presbiteriana* (Monterrey: Tipografía del Comercio, 1880): WCF cap. XXIX, pp. 145–151; WSC 96–97, pp. 205–206. [Internet Archive, scan completo](https://archive.org/details/doctrinasyreglam00west/page/144/mode/2up). Public domain. OCR local de control: SHA-256 `3e537e21f01b484281f5030210de911ac23156cdd5af1521f78c84bc8b5eb8b1`. [verified: scan]
 3. Orthodox Presbyterian Church, [Westminster Confession of Faith, chapter 29](https://opc.org/wcf.html#Chapter_29), current web text; used only to check present OPC wording, not as the historical quotation edition. [verified]
 

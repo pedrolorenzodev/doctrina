@@ -1764,14 +1764,14 @@ Research candidates only; no registry edits. Done means the quoted witness and l
         "text": "If any one denieth, that all and each of Christ’s faithful of both sexes are bound, when they have attained to years of discretion, to communicate every year, at least at Easter, in accordance with the precept of holy Mother Church; let him be anathema.",
         "lang": "en",
         "edition": "J. Waterworth (trans.), The Canons and Decrees of the Sacred and Oecumenical Council of Trent, London: C. Dolman, 61 New Bond Street, 1848.",
-        "page": "XIII 9 (numbered locator in scan; printed page not independently collated)"
+        "page": "XIII 9; printed p. 83 (page image read)"
       },
       "at": "XIII 9",
       "sourceURL": "https://archive.org/details/TheCanonsAndDecrees",
       "sourceLocator": "XIII 9 (numbered locator in scan; printed page not independently collated)",
       "sourceEdition": "J. Waterworth (trans.), The Canons and Decrees of the Sacred and Oecumenical Council of Trent, London: C. Dolman, 61 New Bond Street, 1848.",
       "checkedAt": "2026-11-01",
-      "tag": "[unverified: OCR glyph errors in «bound» and «have attained»; Waterworth 1848 page image not collated]",
+      "tag": "[verified: page image of archive.org TheCanonsAndDecrees leaf n353, printed p. 83 (Waterworth 1848), read by verifier V4 on 2026-11-01; the page image settles «bound» and «have attained»]",
       "correction": {
         "date": "2026-11-01 (session A)",
         "source": "docs/research/night-2026-11-01/verification-codex-a2-d1.md",
@@ -8379,7 +8379,7 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "excerpts": [
     {
       "en": {
-        "text": "In the institution narrative, the power of the words and the action of Christ, and the power of the Holy Spirit, make sacramentally present under the species of bread and wine Christ's body and blood",
+        "text": "In the institution narrative, the power of the words and the action of Christ, and the power of the Holy Spirit, make sacramentally present under the species of bread and wine Christ's body and blood […]",
         "lang": "en",
         "edition": "Catechism of the Catholic Church (1992; Latin editio typica 1997), Vatican City: Holy See, official English Vatican IntraText HTML, site edition issued 2003-11-04; retrieved 2026-11-01. No printed English imprint collated.",
         "page": "n. 1353 (official HTML, unpaginated)"
@@ -8389,7 +8389,15 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
       "sourceLocator": "n. 1353 (official HTML, unpaginated)",
       "sourceEdition": "Catechism of the Catholic Church (1992; Latin editio typica 1997), Vatican City: Holy See, official English Vatican IntraText HTML, site edition issued 2003-11-04; retrieved 2026-11-01. No printed English imprint collated.",
       "checkedAt": "2026-11-01",
-      "tag": "[verified: vatican.va official English HTML; paragraph or section, exact string and the corresponding registry Spanish fragment checked 2026-11-01 (session A); the Spanish alignment is by meaning, not by word count]"
+      "tag": "[verified: vatican.va official English HTML; paragraph or section, exact string and the corresponding registry Spanish fragment checked 2026-11-01 (session A); the Spanish alignment is by meaning, not by word count]",
+      "correctionV2": [
+        {
+          "date": "2026-11-01 (session A2, after verifier V4)",
+          "source": "docs/research/sources/verification-corrections-session-A2.md",
+          "what": "clipped: […] added (the page continues «, his sacrifice offered on the cross once for all.»)",
+          "textBefore": "In the institution narrative, the power of the words and the action of Christ, and the power of the Holy Spirit, make sacramentally present under the species of bread and wine Christ's body and blood"
+        }
+      ]
     },
     {
       "en": {
@@ -9551,7 +9559,7 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "excerpts": [
     {
       "en": {
-        "text": "there exists a close connection and communication between sacred tradition and Sacred Scripture. For both of them, flowing from the same divine wellspring, in a certain way merge into a unity and tend toward the same end.",
+        "text": "it is not from Sacred Scripture alone that the Church draws her certainty about everything which has been revealed. Therefore both sacred tradition and Sacred Scripture are to be accepted and venerated with the same sense of loyalty and reverence.",
         "lang": "en",
         "edition": "Second Vatican Council, Dogmatic Constitution Dei Verbum (18 November 1965), official English text on the Holy See website; retrieved 2026-11-01; no printed imprint collated; footnote markers of the page omitted from the quotation.",
         "page": "§ 9 (official HTML, unpaginated)"
@@ -9568,6 +9576,14 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
           "source": "docs/research/sources/verification-english-quotes-session-A.md",
           "what": "41 words: the opening «Hence» dropped",
           "textBefore": "Consequently it is not from Sacred Scripture alone that the Church draws her certainty about everything which has been revealed. Therefore both sacred tradition and Sacred Scripture are to be accepted and venerated with the same sense of loyalty and reverence."
+        }
+      ],
+      "correctionV2": [
+        {
+          "date": "2026-11-01 (session A2, after verifier V4)",
+          "source": "docs/research/sources/verification-corrections-session-A2.md",
+          "what": "restored to the «Consequently» passage (40 words): the first excerpt had become a duplicate of the second after V1's cut; V1's textBefore recorded a different sentence",
+          "textBefore": "there exists a close connection and communication between sacred tradition and Sacred Scripture. For both of them, flowing from the same divine wellspring, in a certain way merge into a unity and tend toward the same end."
         }
       ]
     },
@@ -10219,7 +10235,7 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
     },
     {
       "en": {
-        "text": "the Church of Rome became the Church of Peter and of Paul.",
+        "text": "the Church of Rome became the Church of Peter and of Paul\"",
         "lang": "en",
         "edition": "John Paul II, Encyclical Ut unum sint (25 May 1995), official English text on the Holy See website; retrieved 2026-11-01; no printed imprint collated; footnote markers of the page omitted from the quotation.",
         "page": "§ 90 (official HTML, unpaginated)"
@@ -10236,6 +10252,14 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
           "source": "docs/research/sources/verification-english-quotes-session-A.md",
           "what": "ends at the page's own full stop: added",
           "textBefore": "the Church of Rome became the Church of Peter and of Paul"
+        }
+      ],
+      "correctionV2": [
+        {
+          "date": "2026-11-01 (session A2, after verifier V4)",
+          "source": "docs/research/sources/verification-corrections-session-A2.md",
+          "what": "the full stop added after V1 is not on the page; the page prints «…of Paul\".» (the sentence is a quotation): ends with the closing mark",
+          "textBefore": "the Church of Rome became the Church of Peter and of Paul."
         }
       ]
     }
@@ -12656,7 +12680,8 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "work": "florence-laetentur",
   "locator": "",
   "status": "skipped",
-  "reason": "No dated English edition with a clear licence located in this pass: the Council of Florence decrees in English are Tanner (Georgetown, 1990, copyright) or web transcriptions of unnamed provenance; the registry Spanish comes from Mansi. Left for a later pass."
+  "reason": "No dated English edition with a clear licence located in this pass: the Council of Florence decrees in English are Tanner (Georgetown, 1990, copyright) or web transcriptions of unnamed provenance; the registry Spanish comes from Mansi. Left for a later pass.",
+  "reasonA2": "Session A2 (2026-11-01 evening) searched again: the English texts found are Gill, The Council of Florence (Cambridge UP, 1959, pp. 412–415 for Laetentur caeli: in copyright), Tanner (1990: in copyright) and D. P. Curtin's 2024 volume (in copyright); the Holy See's Eugenius IV page lists Italian and Latin only. No public-domain dated English edition or official English page found; left skipped."
 }
 ```
 
@@ -12668,7 +12693,8 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "work": "florence-laetentur",
   "locator": "",
   "status": "skipped",
-  "reason": "As FLO."
+  "reason": "As FLO.",
+  "reasonA2": "Session A2 (2026-11-01 evening) searched again: the English texts found are Gill, The Council of Florence (Cambridge UP, 1959, pp. 412–415 for Laetentur caeli: in copyright), Tanner (1990: in copyright) and D. P. Curtin's 2024 volume (in copyright); the Holy See's Eugenius IV page lists Italian and Latin only. No public-domain dated English edition or official English page found; left skipped."
 }
 ```
 
@@ -12680,7 +12706,8 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "work": "florence-laetentur",
   "locator": "",
   "status": "skipped",
-  "reason": "As FLO."
+  "reason": "As FLO.",
+  "reasonA2": "Session A2 (2026-11-01 evening) searched again: the English texts found are Gill, The Council of Florence (Cambridge UP, 1959, pp. 412–415 for Laetentur caeli: in copyright), Tanner (1990: in copyright) and D. P. Curtin's 2024 volume (in copyright); the Holy See's Eugenius IV page lists Italian and Latin only. No public-domain dated English edition or official English page found; left skipped."
 }
 ```
 
@@ -12692,7 +12719,8 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "work": "florence-exsultate",
   "locator": "",
   "status": "skipped",
-  "reason": "As FLO."
+  "reason": "As FLO.",
+  "reasonA2": "Session A2 (2026-11-01 evening) searched again: the English texts found are Gill, The Council of Florence (Cambridge UP, 1959, pp. 412–415 for Laetentur caeli: in copyright), Tanner (1990: in copyright) and D. P. Curtin's 2024 volume (in copyright); the Holy See's Eugenius IV page lists Italian and Latin only. No public-domain dated English edition or official English page found; left skipped."
 }
 ```
 
@@ -12704,7 +12732,8 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "work": "florence-cantate",
   "locator": "",
   "status": "skipped",
-  "reason": "As FLO; vatican.va carries Cantate Domino in Latin only."
+  "reason": "As FLO; vatican.va carries Cantate Domino in Latin only.",
+  "reasonA2": "Session A2 (2026-11-01 evening) searched again: the English texts found are Gill, The Council of Florence (Cambridge UP, 1959, pp. 412–415 for Laetentur caeli: in copyright), Tanner (1990: in copyright) and D. P. Curtin's 2024 volume (in copyright); the Holy See's Eugenius IV page lists Italian and Latin only. No public-domain dated English edition or official English page found; left skipped."
 }
 ```
 
@@ -12715,8 +12744,24 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "id": "CR38",
   "work": "roman-catechism",
   "locator": "II 4 38",
-  "status": "skipped",
-  "reason": "No English edition identified in this pass for the Catechism of the Council of Trent (candidates: McHugh–Callan 1923, Donovan 1829); the registry Spanish is the 1833 Zorita translation, which is a different text of the same work."
+  "status": "done",
+  "excerpts": [
+    {
+      "en": {
+        "text": "the word “this,” expresses the entire substance of the thing present; and therefore, if the substance of the bread remained, our Lord could not have said: “This is my body.”",
+        "lang": "en",
+        "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan, Professor, Royal College, Maynooth, Dublin: printed for the translator by W. Folds and Son, published by Richard Coyne, 1829 (public domain); scan archive.org catechismofcounc00counuoft (University of Toronto copy).",
+        "page": "p. 229 (archive leaf n248; section on transubstantiation, «From Scripture»)"
+      },
+      "at": "II 4 38",
+      "sourceURL": "https://archive.org/details/catechismofcounc00counuoft/page/n248/mode/1up",
+      "sourceLocator": "p. 229 (archive leaf n248)",
+      "sourceEdition": "Donovan 1829 (see en.edition)",
+      "checkedAt": "2026-11-01",
+      "tag": "[verified: page image of archive.org leaf n248 read (printed page 229) and the string matched in the scan's OCR, session A2 2026-11-01; Part/chapter/question numbering II.4.38 is the registry's: Donovan's page prints none, so the numbering was not checked against the Latin]"
+    }
+  ],
+  "alignment": "One fragment (public domain, ≤ 120 words). The registry Spanish («parece que de ningun modo se podria decir con verdad: Esto es mi cuerpo», Zorita 1833, p. 223) is a different translation of the same passage; paired by meaning, not by wording."
 }
 ```
 
@@ -12728,7 +12773,8 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "work": "jp-audience-1989",
   "locator": "4",
   "status": "skipped",
-  "reason": "vatican.va English audience page for 13 September 1989 is an empty shell («PDF generation in progress», no text; only DE/ES/FR/IT versions exist), so no official English text could be read."
+  "reason": "vatican.va English audience page for 13 September 1989 is an empty shell («PDF generation in progress», no text; only DE/ES/FR/IT versions exist), so no official English text could be read.",
+  "reasonA2": "Session A2 (2026-11-01 evening): the English page is still an empty shell; the English version of these catecheses is in L'Osservatore Romano's weekly English edition and in later books (in copyright), not reachable as an official text; left skipped."
 }
 ```
 
@@ -12740,7 +12786,8 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
   "work": "jp-audience-1991",
   "locator": "6",
   "status": "skipped",
-  "reason": "vatican.va English audience page for 30 January 1991 is an empty shell (no text; only DE/ES/FR/IT versions exist), so no official English text could be read."
+  "reason": "vatican.va English audience page for 30 January 1991 is an empty shell (no text; only DE/ES/FR/IT versions exist), so no official English text could be read.",
+  "reasonA2": "Session A2 (2026-11-01 evening): the English page is still an empty shell; the English version of these catecheses is in L'Osservatore Romano's weekly English edition and in later books (in copyright), not reachable as an official text; left skipped."
 }
 ```
 
@@ -12769,7 +12816,7 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
     },
     {
       "en": {
-        "text": "they have the right and even at times the duty",
+        "text": "they have the right and even at times the duty […]",
         "lang": "en",
         "edition": "Code of Canon Law, promulgated 25 January 1983, Vatican City: Holy See; official English Vatican HTML witness retrieved 2026-11-01. Amendments not independently collated.",
         "page": "canon 212 §3 (official HTML, unpaginated)"
@@ -12779,7 +12826,15 @@ Status: draft, NOT verified by Pedro. Written by session A from the official Eng
       "sourceLocator": "canon 212 §3 (official HTML, unpaginated)",
       "sourceEdition": "Code of Canon Law, promulgated 25 January 1983, Vatican City: Holy See; official English Vatican HTML witness retrieved 2026-11-01. Amendments not independently collated.",
       "checkedAt": "2026-11-01",
-      "tag": "[verified: vatican.va official English HTML; canon, exact string and the corresponding registry Spanish fragment checked 2026-11-01 (session A, after verifier V1 found the earlier skip reason wrong)]"
+      "tag": "[verified: vatican.va official English HTML; canon, exact string and the corresponding registry Spanish fragment checked 2026-11-01 (session A, after verifier V1 found the earlier skip reason wrong)]",
+      "correctionV2": [
+        {
+          "date": "2026-11-01 (session A2, after verifier V4)",
+          "source": "docs/research/sources/verification-corrections-session-A2.md",
+          "what": "clipped at «the duty»: […] added",
+          "textBefore": "they have the right and even at times the duty"
+        }
+      ]
     }
   ],
   "alignment": "Selected short fragments; the registry's two Spanish fragments of canon 212 §1 and §3 each have one."

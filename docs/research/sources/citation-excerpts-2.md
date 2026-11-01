@@ -5,6 +5,8 @@ Status: draft, NOT verified by Pedro
 
 > **Corrections applied (session A, 2026-11-01, afternoon):** the 28 clipped excerpts listed above were extended or closed with `[…]` using the verifier's wordings, each re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, Schaff's page text, the official vatican.va pages); every corrected record keeps the earlier wording in `correction.textBeforeCorrection`. RWLC173's locator is now pp. 206–207 (leaves n209–n210). ODositheusXV and OPhilaret18 move from `[unverified]` to verified on the verifier's page-image readings. The duplicates RWCF31_3 / RWCF31_3_4 and RWLC171 / RWLC171_172 keep both ids (same text). Still true: the Lutheran text is the web transcription, not a print page. **Spanish (session A, same day):** 11 records now carry the 1880 Monterrey Spanish edition (a published public-domain Spanish text; read in page-level OCR, accents and obvious glyph errors restored, tag `[unverified]`, page image not read) and 8 Larger Catechism records carry an AI Spanish from the English original (labelled; the 1880 volume has no Larger Catechism). **45 excerpts stay `pending`:** the 40 Lutheran ones (the originals are German and Latin; the German of the Triglot OCR is Fraktur and unusable, and the Latin differs from the German the English follows, so a Spanish from the original needs page images) and the 5 Orthodox ones (Greek, Latin and Russian originals, not acquired).
 
+> **AI Spanish added (session A2, 2026-11-01, evening):** the 45 excerpts left `pending` (40 Lutheran, 5 Orthodox) now carry a Spanish translation made by the AI assistant from the dated English text of each record, labelled «Traducción de Doctrina asistida por IA, desde [edition]» in `es.edition`, tagged `[unverified: AI Spanish from the English, unreviewed by Pedro]`, never inside marks without that label (DECISIONS 2026-11-01, decision 3). The 8 Larger Catechism records got the same label wording. The Lutheran English is still the BookOfConcord.org web transcription of the Triglot, not the print page; the German/Latin originals and the Greek/Latin/Russian originals were **not** read (Fraktur OCR unusable, no Orthodox originals acquired), so none of these Spanish texts is from the original. Known English defects carried into the Spanish, not hidden: `LSCIV_4` ends with the stray word «Secondly.» (the start of the next sentence) and has a leading space; `LFCSDVII_79_82` has an unclosed `[` (the clipped bracketed clause); `LFCEpX_3` and `LFCEpX_3_5` are the same sentence; the Bible quotations inside the confessions are translated with the rest, not taken from a Spanish Bible. Not yet verified by a second pass.
+
 ## Progress
 
 - Status: done
@@ -48,7 +50,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending",
+      "es": {
+        "text": "Se acusa falsamente a nuestras iglesias de abolir la Misa; pues la Misa se conserva entre nosotros y se celebra con la mayor reverencia.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "correction": {
         "date": "2026-11-01 (session A)",
         "source": "docs/research/night-2026-11-01/verification-codex-a2-d1.md §1",
@@ -58,7 +66,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -84,7 +92,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Cuando, pues, se amonestó a nuestros sacerdotes acerca de este pecado, se suprimieron entre nosotros las Misas privadas, ya que apenas se celebraban Misas privadas sino por afán de lucro.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     },
     {
       "en": {
@@ -99,10 +113,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Ahora bien, como la Misa es una administración tal del Sacramento, tenemos una comunión cada día de fiesta y, si alguno desea el Sacramento, también otros días, cuando se da a quienes lo piden.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -128,10 +148,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Acerca del Orden eclesiástico enseñan que nadie debe enseñar públicamente en la Iglesia ni administrar los Sacramentos si no ha sido regularmente llamado.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -157,7 +183,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending",
+      "es": {
+        "text": "La confesión no ha sido abolida en las iglesias entre nosotros; pues no es costumbre dar el cuerpo del Señor sino a quienes han sido examinados y absueltos previamente.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "correction": {
         "date": "2026-11-01 (session A)",
         "source": "docs/research/night-2026-11-01/verification-codex-a2-d1.md §1",
@@ -167,7 +199,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -193,10 +225,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pues nadie es admitido sino después de haber sido examinado.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -222,7 +260,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending",
+      "es": {
+        "text": "A los laicos se les dan Ambas Especies en el Sacramento de la Cena del Señor, porque este uso tiene el mandamiento del Señor en Mateo 26:27: Bebed todos de ella, donde Cristo manifiestamente ha mandado acerca de la copa que todos beban.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "correction": {
         "date": "2026-11-01 (session A)",
         "source": "docs/research/night-2026-11-01/verification-codex-a2-d1.md §1",
@@ -244,10 +288,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "del Sacramento no concuerda con la ordenanza de Cristo, solemos omitir la procesión, que hasta ahora ha estado en uso.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -273,10 +323,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pero esta es la opinión de ellos: que el poder de las Llaves, o el poder de los obispos, según el Evangelio, es un poder o mandato de Dios para predicar el Evangelio, remitir y retener pecados y administrar los Sacramentos.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -302,10 +358,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pues entre nosotros se celebran misas cada día del Señor y en las demás fiestas, en las cuales se ofrece el Sacramento a quienes desean usarlo, después de haber sido examinados y absueltos.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -331,10 +393,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pero aunque el uso del Sacramento fuera el sacrificio diario, sin embargo nosotros lo conservaríamos antes que los adversarios, porque entre ellos usan el Sacramento sacerdotes pagados a sueldo. Entre nosotros hay un uso más frecuente y más concienzudo. Pues el pueblo lo usa, pero habiendo sido antes instruido y examinado. Pues a los hombres se les enseña acerca del verdadero uso del Sacramento que fue instituido para ser sello y testimonio de la libre remisión de los pecados, y que, por tanto, debe amonestar a las conciencias alarmadas a confiar verdaderamente y a creer que sus pecados les son libremente remitidos.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -360,7 +428,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot question/answer text matched 2026-11-01; traditional locator crosswalk by question content]",
-      "es": "pending"
+      "es": {
+        "text": "El ayuno y la preparación corporal son, en verdad, un buen ejercicio exterior; pero verdaderamente digno y bien preparado es quien tiene fe en estas palabras: _Dado_, _y derramado por vosotros_, _para remisión de los pecados_. Pero el que no cree estas palabras, o duda, es indigno e inepto; pues las palabras _Por vosotros_ exigen corazones enteramente creyentes.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
   "numbering": "Web numbers question/answer units; traditional locator counts question and answer separately."
@@ -389,7 +463,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot question/answer text matched 2026-11-01; traditional locator crosswalk by question content]",
-      "es": "pending"
+      "es": {
+        "text": "Cristo, nuestro Señor, dice en el último capítulo de Mateo: Id por todo el mundo y enseñad a todas las naciones, bautizándolas en el nombre del Padre, y del Hijo, y del Espíritu Santo. Segundo.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
   "numbering": "Web numbers question/answer units; traditional locator counts question and answer separately."
@@ -418,10 +498,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "El ayuno y la oración, etc., pueden ser, ciertamente, una preparación y disciplina exterior para los niños, a fin de que el cuerpo se mantenga y se comporte con modestia y reverencia hacia el cuerpo y la sangre de Cristo; pero lo que se da en él y con él, el cuerpo no puede captarlo ni apropiárselo. Esto lo hace la fe del corazón, que discierne este tesoro y lo desea.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -447,10 +533,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Ahora bien, es verdad, como hemos dicho, que a nadie se debe coaccionar ni obligar de ningún modo, para no instituir un nuevo asesinato de almas. Sin embargo, debe saberse que quienes se privan del Sacramento y se apartan de él durante tanto tiempo no han de ser considerados cristianos. Porque Cristo no lo instituyó para tratarlo como un espectáculo, sino que mandó a sus cristianos comerlo y beberlo, y recordarle así a Él.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -476,10 +568,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "En conclusión, puesto que ya tenemos la verdadera inteligencia y doctrina del Sacramento, hace falta, en verdad, alguna amonestación y exhortación, para que los hombres no dejen pasar inadvertido un tesoro tan grande, que se administra y reparte cada día entre los cristianos; es decir, que quienes quieran ser cristianos se dispongan a recibir con frecuencia este venerable Sacramento.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -505,7 +603,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Por tanto, debemos hacer aquí una distinción entre los hombres.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     },
     {
       "en": {
@@ -520,7 +624,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Por tanto, tales personas deben aprender que el arte supremo es saber que nuestro Sacramento no depende de nuestra dignidad.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     },
     {
       "en": {
@@ -535,10 +645,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pero quienes sienten su debilidad, desean librarse de ella y anhelan ayuda, deben considerarlo y usarlo solo como un precioso antídoto contra el veneno que llevan dentro.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -564,10 +680,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pues los viejos están ya casi acabados, de modo que estas y otras cosas no pueden lograrse si no formamos a las personas que han de venir después de nosotros y sucedernos en nuestro oficio y obra, para que también ellas críen bien a sus hijos, a fin de que se conserven la Palabra de Dios y la Iglesia cristiana.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -593,7 +715,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending",
+      "es": {
+        "text": "Del mismo modo que hemos oído acerca del santo Bautismo, debemos hablar también del otro Sacramento, a saber, sobre estos tres puntos: ¿Qué es? ¿Cuáles son sus beneficios? y ¿Quién debe recibirlo? Y todo ello se funda en las palabras con las que Cristo lo instituyó, y que debe saber todo el que desee ser cristiano e ir al Sacramento.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "correction": {
         "date": "2026-11-01 (session A)",
         "source": "docs/research/night-2026-11-01/verification-codex-a2-d1.md §1",
@@ -603,7 +731,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -629,10 +757,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Así hacemos también en el bautismo de los niños. Llevamos al niño con la convicción y la esperanza de que cree, y rogamos que Dios le conceda la fe; pero no lo bautizamos sobre esa base, sino únicamente sobre el mandato de Dios. ¿Por qué? Porque sabemos que Dios no miente. Yo, mi prójimo y, en suma, todos los hombres podemos errar y engañar, pero la Palabra de Dios no puede errar.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -658,10 +792,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Por tanto, nuestro Bautismo permanece para siempre; y aunque alguien cayera de él y pecara, sin embargo siempre tenemos acceso a él, para someter de nuevo al viejo hombre.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -687,10 +827,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pero al mismo tiempo creemos, enseñamos y confesamos unánimemente que en el uso de la Santa Cena las palabras de la institución de Cristo no deben omitirse en modo alguno, sino que deben recitarse públicamente, como está escrito en 1 Cor. 10:16: La copa de bendición que bendecimos, etc. Esta bendición se produce mediante la recitación de las palabras de Cristo.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -716,10 +862,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Para zanjar también esta controversia creemos, enseñamos y confesamos unánimemente que las ceremonias o ritos eclesiásticos que ni están mandados ni prohibidos en la Palabra de Dios, sino que han sido instituidos solo por razón de decoro y buen orden, no son en sí mismos culto divino, ni siquiera parte de él. Mat. 15:9: En vano me honran, enseñando como doctrinas mandamientos de hombres.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -745,7 +897,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Creemos, enseñamos y confesamos que la única regla y norma según la cual todos los dogmas junto con [todos] los maestros deben ser estimados y juzgados son las Escrituras proféticas y apostólicas del Antiguo y del Nuevo Testamento solamente, como está escrito en Sal. 119:105: Lámpara es a mis pies tu Palabra, y lumbrera a mi camino.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     },
     {
       "en": {
@@ -760,7 +918,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending",
+      "es": {
+        "text": "De este modo se preserva la distinción entre las Sagradas Escrituras del Antiguo y del Nuevo Testamento y todos los demás escritos, y las Sagradas Escrituras solas siguen siendo el único juez, regla y norma, según las cuales, como única piedra de toque, todos los dogmas deben y han de ser discernidos y juzgados, a fin de ver si son buenos o malos, rectos o erróneos.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "correction": {
         "date": "2026-11-01 (session A)",
         "source": "docs/research/night-2026-11-01/verification-codex-a2-d1.md §1",
@@ -770,7 +934,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -796,10 +960,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "En cuanto a los cismas en materia de fe que han ocurrido en nuestro tiempo, tenemos por consenso y declaración unánime de nuestra fe y confesión cristianas, especialmente contra el Papado y su falso culto, idolatría, superstición, y contra otras sectas, como símbolo de nuestro tiempo, la Primera Confesión de Augsburgo, Inalterada, entregada al emperador Carlos V en Augsburgo en el año 1530, en la gran Dieta, junto con su Apología y los Artículos redactados en Esmalcalda en el año 1537, y suscritos entonces por los principales teólogos.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -825,10 +995,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Y porque tales asuntos conciernen también a los laicos y a la salvación de sus almas, confesamos también los Catecismos Menor y Mayor del Dr. Lutero, tal como están incluidos en las obras de Lutero, como la Biblia de los laicos, en los cuales está comprendido todo lo que se trata con más amplitud en la Sagrada Escritura y que es necesario que un hombre cristiano sepa para su salvación.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -854,10 +1030,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "¿Están en la Santa Cena el verdadero cuerpo y la verdadera sangre de nuestro Señor Jesucristo verdadera y esencialmente presentes, se distribuyen con el pan y el vino y son recibidos con la boca por todos los que usan este Sacramento, sean dignos o indignos, piadosos o impíos, creyentes o incrédulos; por los creyentes para consuelo y vida, por los incrédulos para juicio? Los sacramentarios dicen: No; nosotros decimos: Sí.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -883,10 +1065,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Para zanjar también esta controversia creemos, enseñamos y confesamos unánimemente que las ceremonias o ritos eclesiásticos que ni están mandados ni prohibidos en la Palabra de Dios, sino que han sido instituidos solo por razón de decoro y buen orden, no son en sí mismos culto divino, ni siquiera parte de él. Mat. 15:9: En vano me honran, enseñando como doctrinas mandamientos de hombres.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -912,10 +1100,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Y porque inmediatamente después de los tiempos de los apóstoles, e incluso cuando ellos aún vivían, surgieron falsos maestros y herejes, y se compusieron contra ellos en la Iglesia primitiva símbolos, es decir, confesiones breves y concisas [categóricas], que fueron tenidas por la fe y confesión cristiana unánime y universal de la Iglesia ortodoxa y verdadera, a saber, el Credo de los Apóstoles, el Credo de Nicea y el Credo de Atanasio, nos obligamos a ellos y por la presente rechazamos todas las herejías y dogmas que, contrarios a ellos, se han introducido en la Iglesia de Dios.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -941,10 +1135,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Ahora bien, en la administración de la Santa Cena las palabras de la institución han de pronunciarse o cantarse públicamente ante la congregación, de manera distinta y clara, y no deben omitirse en modo alguno [y esto por muchísimas y gravísimas razones.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -970,7 +1170,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending",
+      "es": {
+        "text": "Sin embargo, esta bendición, o la recitación de las palabras de la institución de Cristo solas, no hace un sacramento si no se observa toda la acción de la Cena, tal como fue instituida por Cristo (como cuando el pan consagrado no se distribuye, ni se recibe, ni se participa de él, sino que se encierra, se sacrifica o se lleva en procesión), sino que el mandato de Cristo, Haced esto (que abarca toda la acción o administración en este Sacramento: que en una asamblea de cristianos se toman pan y vino, se consagran, se distribuyen, se reciben, se comen, se beben, y al mismo tiempo se anuncia la muerte del Señor), debe observarse sin separación e inviolado […]",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "correction": {
         "date": "2026-11-01 (session A)",
         "source": "docs/research/night-2026-11-01/verification-codex-a2-d1.md §1",
@@ -992,10 +1198,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Y fuera de este uso, cuando en la misa papista el pan no se distribuye, sino que se ofrece o se encierra, se lleva en procesión y se expone para adoración, ha de considerarse que no es sacramento; como el agua del bautismo, cuando se usa para consagrar campanas o para curar la lepra, o se exhibe de otro modo para culto, no es sacramento ni bautismo.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -1021,10 +1233,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pues los cristianos de fe débil, inseguros, angustiados y de corazón aterrados por la grandeza y el número de sus pecados, que piensan que en esta su gran impureza no son dignos de este precioso tesoro y de los beneficios de Cristo, y que sienten y lamentan su debilidad de fe, y desean de corazón servir a Dios con una fe más fuerte y gozosa y con pura obediencia, son los huéspedes verdaderamente dignos para quienes este venerabilísimo Sacramento [y sagrado banquete] ha sido especialmente instituido y dispuesto;",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -1050,10 +1268,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Que el Papa no es, según el derecho divino ni según la Palabra de Dios, la cabeza de toda la cristiandad (pues este [nombre] pertenece a Uno solo, cuyo nombre es Jesucristo), sino solamente el obispo y pastor de la Iglesia de Roma, y de aquellos que voluntariamente, o por una criatura humana (es decir, un magistrado político), se han unido a él, para ser cristianos, no bajo él como bajo un señor, sino con él como hermanos [colegas] y compañeros, como muestran los antiguos concilios y la época de san Cipriano.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -1079,7 +1303,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending",
+      "es": {
+        "text": "Y suponiendo que el Papa cediera en este punto, de modo que no fuera supremo por derecho divino ni por mandato de Dios, sino que hubiera que tener [que elegir] una [cierta] cabeza, a la cual se adhirieran todos los demás [como su apoyo] para que se conserve la [concordia y] unidad de los cristianos frente a sectas y herejes, y que tal cabeza fuera elegida por los hombres, y que estuviera dentro de la elección y el poder de los hombres cambiar o remover esta cabeza, tal como el Concilio de Constanza siguió casi este camino con respecto a los Papas, deponiendo a tres y eligiendo a un cuarto; suponiendo, digo, que el Papa y la Sede de Roma cedieran y aceptaran esto (lo cual, sin embargo, es imposible; […]), sin embargo, aun así no se ayudaría a la cristiandad, sino que surgirían muchas más sectas que antes.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "correction": {
         "date": "2026-11-01 (session A)",
         "source": "docs/research/night-2026-11-01/verification-codex-a2-d1.md §1",
@@ -1089,7 +1319,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -1115,10 +1345,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "En primer lugar, pues, mostremos por el [santo] Evangelio que el obispo romano no está por derecho divino por encima de [no puede arrogarse supremacía alguna sobre] los demás obispos y pastores.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -1144,10 +1380,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
-      "es": "pending"
+      "es": {
+        "text": "Pero puesto que las decisiones de los Sínodos son las decisiones de la Iglesia, y no de los Papas, corresponde especialmente a los reyes refrenar la licencia de los Papas [no consentir tal desenfreno] y procurar que no se arrebate a la Iglesia el poder de juzgar y decretar según la Palabra de Dios. Y así como el resto de los cristianos debe censurar todos los demás errores del Papa, así debe también reprender al Papa cuando este elude y estorba la verdadera investigación y la verdadera decisión de la Iglesia.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish pending because no original-language witness acquired."
+  "selection": "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read."
 }
 ```
 
@@ -1191,7 +1433,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1206,7 +1448,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
   "excerpts": [
     {
       "en": {
-        "text": "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture; and therefore are of no authority in the church of God, nor to be any otherwise approved, or made use of, than other human writings.",
+        "text": "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture; and therefore are of no authority in the Church of God, nor to be any otherwise approved, or made use of, than other human writings.",
         "lang": "en",
         "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
         "page": "p. 18; 1.3; archive leaf n21"
@@ -1232,10 +1474,18 @@ Research candidates only; no registry edits. Done means the quoted witness and l
         "what": "clipped: extended to the end of the sentence",
         "textBeforeCorrection": "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture",
         "check": "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)"
-      }
+      },
+      "correctionV2": [
+        {
+          "date": "2026-11-01 (session A2, after verifier V4)",
+          "source": "docs/research/sources/verification-corrections-session-A2.md",
+          "what": "capital C: the 1894 page image (p. 18) prints «Church of God»",
+          "textBefore": "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture; and therefore are of no authority in the church of God, nor to be any otherwise approved, or made use of, than other human writings."
+        }
+      ]
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1279,7 +1529,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1316,7 +1566,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1360,7 +1610,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1404,7 +1654,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1441,7 +1691,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1485,7 +1735,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1529,7 +1779,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1581,7 +1831,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       ]
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -1610,8 +1860,8 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "es": {
         "text": "Se requiere de los que oyen predicar la palabra, que le presten atención con diligencia, preparación y oración; […]",
         "lang": "es",
-        "edition": "Translation made for this site by an AI assistant (session A, 2026-11-01) from the English text of the Westminster Larger Catechism (Edinburgh: Johnstone, Hunter, & Co., 1894); the 1880 Spanish volume does not contain the Larger Catechism",
-        "translation": "[traducción propia asistida por IA] from the English original; unreviewed by Pedro",
+        "edition": "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
         "tag": "[unverified: AI Spanish, unreviewed by Pedro]"
       },
       "correction": {
@@ -1623,7 +1873,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism."
 }
 ```
 
@@ -1652,8 +1902,8 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "es": {
         "text": "Quienes reciben el sacramento de la cena del Señor deben, antes de acercarse, prepararse para ello examinándose a sí mismos […]",
         "lang": "es",
-        "edition": "Translation made for this site by an AI assistant (session A, 2026-11-01) from the English text of the Westminster Larger Catechism (Edinburgh: Johnstone, Hunter, & Co., 1894); the 1880 Spanish volume does not contain the Larger Catechism",
-        "translation": "[traducción propia asistida por IA] from the English original; unreviewed by Pedro",
+        "edition": "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
         "tag": "[unverified: AI Spanish, unreviewed by Pedro]"
       },
       "correction": {
@@ -1665,7 +1915,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism."
 }
 ```
 
@@ -1694,8 +1944,8 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "es": {
         "text": "Quienes reciben el sacramento de la cena del Señor deben, antes de acercarse, prepararse para ello examinándose a sí mismos […]",
         "lang": "es",
-        "edition": "Translation made for this site by an AI assistant (session A, 2026-11-01) from the English text of the Westminster Larger Catechism (Edinburgh: Johnstone, Hunter, & Co., 1894); the 1880 Spanish volume does not contain the Larger Catechism",
-        "translation": "[traducción propia asistida por IA] from the English original; unreviewed by Pedro",
+        "edition": "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
         "tag": "[unverified: AI Spanish, unreviewed by Pedro]"
       },
       "correction": {
@@ -1707,7 +1957,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism."
 }
 ```
 
@@ -1736,8 +1986,8 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "es": {
         "text": "Cristo ha designado a los ministros de su palabra, en la administración de este sacramento de la cena del Señor, para apartar el pan y el vino del uso común, por la palabra de institución, la acción de gracias y la oración; […]",
         "lang": "es",
-        "edition": "Translation made for this site by an AI assistant (session A, 2026-11-01) from the English text of the Westminster Larger Catechism (Edinburgh: Johnstone, Hunter, & Co., 1894); the 1880 Spanish volume does not contain the Larger Catechism",
-        "translation": "[traducción propia asistida por IA] from the English original; unreviewed by Pedro",
+        "edition": "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
         "tag": "[unverified: AI Spanish, unreviewed by Pedro]"
       },
       "correction": {
@@ -1749,7 +1999,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism."
 }
 ```
 
@@ -1778,8 +2028,8 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "es": {
         "text": "Se requiere de quienes reciben el sacramento de la cena del Señor que, durante el tiempo de su administración, con toda santa reverencia y atención esperen en Dios en esa ordenanza […]",
         "lang": "es",
-        "edition": "Translation made for this site by an AI assistant (session A, 2026-11-01) from the English text of the Westminster Larger Catechism (Edinburgh: Johnstone, Hunter, & Co., 1894); the 1880 Spanish volume does not contain the Larger Catechism",
-        "translation": "[traducción propia asistida por IA] from the English original; unreviewed by Pedro",
+        "edition": "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
         "tag": "[unverified: AI Spanish, unreviewed by Pedro]"
       },
       "correction": {
@@ -1791,7 +2041,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism."
 }
 ```
 
@@ -1820,8 +2070,8 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "es": {
         "text": "El deber de los cristianos, después de haber recibido el sacramento de la cena del Señor, es considerar seriamente cómo se han comportado en él, y con qué resultado […]",
         "lang": "es",
-        "edition": "Translation made for this site by an AI assistant (session A, 2026-11-01) from the English text of the Westminster Larger Catechism (Edinburgh: Johnstone, Hunter, & Co., 1894); the 1880 Spanish volume does not contain the Larger Catechism",
-        "translation": "[traducción propia asistida por IA] from the English original; unreviewed by Pedro",
+        "edition": "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
         "tag": "[unverified: AI Spanish, unreviewed by Pedro]"
       },
       "correction": {
@@ -1833,7 +2083,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism."
 }
 ```
 
@@ -1862,8 +2112,8 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "es": {
         "text": "Quienes resulten ignorantes o escandalosos, no obstante su profesión de fe, y deseen acercarse a la cena del Señor, pueden y deben ser apartados de ese sacramento, por el poder que Cristo ha dejado en su iglesia, hasta que reciban instrucción y manifiesten su enmienda.",
         "lang": "es",
-        "edition": "Translation made for this site by an AI assistant (session A, 2026-11-01) from the English text of the Westminster Larger Catechism (Edinburgh: Johnstone, Hunter, & Co., 1894); the 1880 Spanish volume does not contain the Larger Catechism",
-        "translation": "[traducción propia asistida por IA] from the English original; unreviewed by Pedro",
+        "edition": "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
         "tag": "[unverified: AI Spanish, unreviewed by Pedro]"
       },
       "correction": {
@@ -1875,7 +2125,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism."
 }
 ```
 
@@ -1904,8 +2154,8 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "es": {
         "text": "Los sacramentos del bautismo y de la cena del Señor difieren en que el bautismo ha de administrarse una sola vez, con agua, como señal y sello de nuestra regeneración e injerto en Cristo, y esto aun a los niños […]",
         "lang": "es",
-        "edition": "Translation made for this site by an AI assistant (session A, 2026-11-01) from the English text of the Westminster Larger Catechism (Edinburgh: Johnstone, Hunter, & Co., 1894); the 1880 Spanish volume does not contain the Larger Catechism",
-        "translation": "[traducción propia asistida por IA] from the English original; unreviewed by Pedro",
+        "edition": "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
         "tag": "[unverified: AI Spanish, unreviewed by Pedro]"
       },
       "correction": {
@@ -1917,7 +2167,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism."
 }
 ```
 
@@ -1950,7 +2200,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
         "page": "p. 205; Catecismo menor, P. 97; archive leaf n206",
         "translation": "published Spanish edition (1880), not AI",
         "normalisation": "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read. RWSC97 only (verifier V1 read the page image): the page prints «obediencia» (no accent), a comma after «sea» and the misprint «condenacon», kept here as [sic].",
-        "tag": "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]"
+        "tag": "[verified: page image of the 1880 Monterrey volume (archive.org doctrinasyreglam00west, leaf n206, p. 205) read by verifier V4 on 2026-11-01: the Spanish is the page's, with the misprint «condenacon» kept and marked [sic]; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31]"
       },
       "correction": {
         "date": "2026-11-01 (session A)",
@@ -1969,7 +2219,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       ]
     }
   ],
-  "spanishStatus": "pending: 1880 Spanish witness acquired but not passage-collated; it contains no Larger Catechism, and chapter XXXI uses a different numbering. No translation from an English witness supplied under the conservative instruction."
+  "spanishStatus": "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read."
 }
 ```
 
@@ -2628,11 +2878,17 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "J. N. W. B. Robertson (trans.), The Acts and Decrees of the Synod of Jerusalem, London: Thomas Baker, 1899.",
       "checkedAt": "2026-11-01",
       "tag": "[verified: page image of archive.org leaf n146 (Robertson 1899, Decree XV, page header 135) read by the 2026-11-01 verifier; the OCR reads «[z.e.,» and the image «[i.e.,»; upgraded 2026-11-01 by session A on the strength of verification-codex-a2-d1.md §2]",
-      "es": "pending",
+      "es": {
+        "text": "Creemos que hay en la Iglesia Misterios evangélicos [es decir, Sacramentos de la dispensación del Evangelio], y que son siete.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde J. N. W. B. Robertson (trans.), The Acts and Decrees of the Synod of Jerusalem, London: Thomas Baker, 1899.",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "verificationAttempt": "Robertson 1899 scan-backed OCR reads [z.e.] where candidate normalizes [i.e.]; bracket glyph has not been visually collated. Metadata and the full OCR were fetched from actsdecreesofsyn00orth."
     }
   ],
-  "spanishStatus": "pending: no Greek or Russian witness acquired; English was not back-translated.",
+  "spanishStatus": "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired.",
   "reason": "Robertson 1899 scan-backed OCR reads [z.e.] where candidate normalizes [i.e.]; bracket glyph has not been visually collated. Metadata and the full OCR were fetched from actsdecreesofsyn00orth.",
   "tag": "[unverified]"
 }
@@ -2660,10 +2916,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
       "checkedAt": "2026-11-01",
       "tag": "[verified: archive.org dated scan-backed OCR; question/decree located, line-end hyphens, whitespace and obvious OCR glyph errors normalized 2026-11-01; not a full visual collation]",
-      "es": "pending"
+      "es": {
+        "text": "La santa Eucaristía, o el Cuerpo y la Sangre de nuestro Señor Jesucristo, bajo las Especies visibles de Pan y Vino: en la cual, real y propiamente, y según la Cosa misma, Jesucristo está presente.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "spanishStatus": "pending: no Greek or Russian witness acquired; English was not back-translated."
+  "spanishStatus": "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired."
 }
 ```
 
@@ -2689,10 +2951,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
       "checkedAt": "2026-11-01",
       "tag": "[verified: archive.org dated scan-backed OCR; question/decree located, line-end hyphens, whitespace and obvious OCR glyph errors normalized 2026-11-01; not a full visual collation]",
-      "es": "pending"
+      "es": {
+        "text": "Primero, que ningún hombre presuma administrar este Misterio, en ocasión alguna, por urgente que sea; sino solo un Sacerdote legítimamente ordenado.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "spanishStatus": "pending: no Greek or Russian witness acquired; English was not back-translated."
+  "spanishStatus": "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired."
 }
 ```
 
@@ -2718,7 +2986,13 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
       "checkedAt": "2026-11-01",
       "tag": "[verified: page image of archive.org leaf n462 (Schaff, Creeds II, p. 448) read by the 2026-11-01 verifier; OCR glyph «lioly» is «holy»; upgraded 2026-11-01 by session A on the strength of verification-codex-a2-d1.md §2]",
-      "es": "pending",
+      "es": {
+        "text": "Todos los verdaderos creyentes, unidos por la santa tradición de la fe, colectiva y sucesivamente, por voluntad de Dios, componen la Iglesia; y ella es la depositaria segura de la santa tradición, o, como la llama san Pablo, La Iglesia del Dios viviente, columna y fundamento de la verdad.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      },
       "verificationAttempt": "Schaff 1896 scan-backed OCR reads lioly where candidate reads holy. Metadata, title-page OCR and question 18 were fetched from creedschristendo02scha; passage image not collated.",
       "correction": {
         "date": "2026-11-01 (session A)",
@@ -2729,7 +3003,7 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       }
     }
   ],
-  "spanishStatus": "pending: no Greek or Russian witness acquired; English was not back-translated.",
+  "spanishStatus": "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired.",
   "reason": "Schaff 1896 scan-backed OCR reads lioly where candidate reads holy. Metadata, title-page OCR and question 18 were fetched from creedschristendo02scha; passage image not collated.",
   "tag": "[unverified]"
 }
@@ -2757,10 +3031,16 @@ Research candidates only; no registry edits. Done means the quoted witness and l
       "sourceEdition": "Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
       "checkedAt": "2026-11-01",
       "tag": "[verified: archive.org dated scan-backed OCR; question/decree located, line-end hyphens, whitespace and obvious OCR glyph errors normalized 2026-11-01; not a full visual collation]",
-      "es": "pending"
+      "es": {
+        "text": "Es griego, y significa los libros. El nombre significa que los libros sagrados merecen atención antes que todos los demás.",
+        "lang": "es",
+        "edition": "Traducción de Doctrina asistida por IA, desde Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
+        "translation": "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+        "tag": "[unverified: AI Spanish from the English, unreviewed by Pedro]"
+      }
     }
   ],
-  "spanishStatus": "pending: no Greek or Russian witness acquired; English was not back-translated."
+  "spanishStatus": "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired."
 }
 ```
 

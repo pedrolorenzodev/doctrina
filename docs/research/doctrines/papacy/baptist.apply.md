@@ -159,10 +159,11 @@ OC XXXVII, p. 152, referring to Holy Scripture. English [verified: scan]. This p
 
 | Printed reference | Where the confession places it | Status |
 |---|---|---|
+| **Matthew 16:18** (with Psalm 72:17; 102:28; Revelation 12:17) | **2LCF 26.3**, margin note 6 on «Christ always hath had, and ever shall have a Kingdome» (the clause begins at the foot of p. 264 and ends on p. 265 in McGlothlin) | [verified: page images of both prints, session B 2026-11-01]: 1719 p. 106 (f) «Mat. 16.18. Psal. 72.17. and Psal. 102.28. Rev. 12.17.»; McGlothlin 1911 p. 265 (the 1677 print) «⁶ Mat. 16. 18. Ps. 72. 17 & Ps. 102. 28. Rev. 12. 17.»; the two prints agree. **Added 2026-11-01 evening (session A2, A6)**: this row was missing from the table |
 | Colossians 1:18 | Margin note 7 beside Christ's invested headship | [verified: scan], McGlothlin p. 265 |
 | Matthew 28:18–20 | Same note 7 | [verified: scan] |
 | Ephesians 4:11–12 | Same note 7 | [verified: scan] |
-| **2 Thessalonians 2:3–9** | Margin note 8 beside the pope/Antichrist sentence | [verified: scan]; preserve the printed **3–9**, not a shorter range copied from memory |
+| **2 Thessalonians 2:3–9** | Margin note 8 beside the pope/Antichrist sentence | [verified: scan]; preserve the printed **3–9** of McGlothlin 1911 (the 1677 print, p. 265). **Edition note (session A2, 2026-11-01, from session B's page-image reading):** the 1719 fourth edition, p. 106 (h), prints «2 Thess. 2.2.—9.» (2:2–9), and its note (g) reads «Col. 1.18. Mat. 28.19, 12, 20. Eph. 4.11,12.»; per DECISIONS 2026-11-01 decision 4 the 1719 reading is the primary citation and McGlothlin's 3–9 is the variant, never mixed in one citation |
 
 ### OC's directly relevant passages
 

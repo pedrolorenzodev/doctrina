@@ -83,9 +83,9 @@ Dates already documented in the Catholic dossiers were checked against the sourc
 
 | Timeline item | Year to show | Approximate | Source URL | Note |
 |---|---:|:---:|---|---|
-| Didache | c. 100 | yes | [text](https://www.newadvent.org/fathers/0714.htm) | **Correct current 50.** Preserve the dossier's disputed range c. 50–120; a single tick at c. 100 avoids presenting the earliest proposal as settled. |
+| Didache | c. 100 | yes | [text](https://www.newadvent.org/fathers/0714.htm) | **Correct current 50.** **Range decided 2026-11-01 (DECISIONS afternoon item 1): c. 50–150**, tick c. 100 (the earlier c. 50–120 had no edition behind its upper end). A single tick at c. 100 avoids presenting the earliest proposal as settled. |
 | Ignatius of Antioch | c. 107 | yes | [*Smyrnaeans*](https://www.newadvent.org/fathers/0109.htm) | Preserve c. 107–110 in detail; later datings exist. Current 107 is acceptable with `c.`. |
-| Justin Martyr | c. 155 | yes | [*First Apology*](https://www.newadvent.org/fathers/0126.htm) | Dossier range c. 150–155; its timeline already uses c. 155 for the Eucharistic description. |
+| Justin Martyr | c. 155 | yes | [*First Apology*](https://www.newadvent.org/fathers/0126.htm) | Show c. 155 inside the range **148–161** (DECISIONS 2026-11-01 afternoon item 1; BiblIndex «Période 148-161»; the dossier's c. 150–155 is `[memory]`). |
 | Irenaeus | c. 180 | yes | [*Against Heresies* IV](https://www.newadvent.org/fathers/0103418.htm) | Current year agrees; retain `c.`. |
 | Mystagogical Catecheses | c. 350 | yes | [text](https://www.newadvent.org/fathers/310123.htm) | Keep full c. 350–390 authorship/date range and attribution to Cyril or John II in detail. Current 350 is acceptable only with the range visible. |
 | Ambrose, *On the Mysteries* | c. 390 | yes | [text](https://www.newadvent.org/fathers/3405.htm) | Dossier range c. 387–391. Current 390 is a defensible representative tick. |
@@ -111,7 +111,7 @@ Dates already documented in the Catholic dossiers were checked against the sourc
 
 ## Corrections to the demo data
 
-1. Didache: `50` → representative tick `100`, display `c. 50–120`.
+1. Didache: `50` → representative tick `100`, display `c. 50–150` (widened 2026-11-01 by DECISIONS afternoon item 1; was `c. 50–120`).
 2. Augustine, *On Christian Doctrine* III: `396` → `397`, display `c. 396–397`.
 3. Paschasius/Ratramnus: split into `831` and `c. 844`, or use one `c. 844` debate tick with range `831–c. 850`.
 4. Calvin/Consensus Tigurinus: split `1536` and `1549`; the current combined `1536` label is factually misleading.
@@ -124,12 +124,13 @@ Status: draft, NOT verified by Pedro (added 2026-11-01, research night, session 
 
 | Item | Year to show | Approximate | Source URL | Note |
 |---|---:|:---:|---|---|
-| Didache (ch. 7 on baptism) | c. 100 | yes | same row as the Eucharist table | Same item and same range as the Eucharist row: tick c. 100, detail c. 50–120. |
+| Didache (ch. 7 on baptism) | c. 100 | yes | same row as the Eucharist table | Same item and same range as the Eucharist row: tick c. 100, detail c. 50–150 (DECISIONS 2026-11-01 afternoon item 1). |
 | Justin Martyr, *First Apology* (ch. 61) | c. 155 | yes | [BiblIndex, *Apologiae*, CPG 1073](https://www.biblindex.org/index.php/fr/work-editions/apologiae/textes-et-documents-pour-l-etude-historique-du-christianisme-justin-apologies) | Same tick as the Eucharist row (c. 155). `open-tags-verification.md` (Baptism row 1) found only «Période 148-161»: show c. 155 with the range 148–161 in detail, not the dossier's 150–155. [verified: BiblIndex range as quoted in `open-tags-verification.md`; the BiblIndex page returned 403 to the second verifier, so not reproduced tonight]. Agent's call: keep c. 155 so the two doctrines' ticks agree. |
 | Irenaeus, *Demonstration of the Apostolic Preaching* | c. 190 | yes | [BiblIndex, SC 406 / CPG 1307](https://www.biblindex.org/en/work-editions/demonstration-de-la-predication-apostolique) | BiblIndex: «Period 177-200». Show the range; the single tick c. 190 is a mid-range convention, not a datum. [verified: BiblIndex range as quoted in `open-tags-verification.md`; the BiblIndex page returned 403 to the second verifier, so not reproduced tonight]. If only Irenaeus's *Against Heresies* is used, use the Papacy row (c. 180). |
 | Tertullian, *De baptismo* | c. 200 | yes | [Bibliothek der Kirchenväter (BKV, Fribourg), record CPL 8](https://bkv.unifr.ch/en/works/cpl-8/versions/de-baptismo) | The record reads «CPL 8 … Date 198-208» (the Evans 1964 edition record says the same). Show c. 200 with the range 198–208. [verified: BKV record, range only; the tick c. 200 is a mid-range convention]. A 2006 review (sehepunkte) summarising an older view says 200–206. Do not use the narrower sibling date of *De paenitentia* (198–204, confirmed in `open-tags-verification.md`) for this work. |
 | Nicaea I, canon 19 (Paulinists) | 325 | no | same row as the Papacy table | Council year. Canon 19 text not re-read tonight. |
-| Constantinople I (creed; canon 7 on reception of heretics) | 381 | no | [NPNF 2.14, *The Seven Ecumenical Councils*](https://ccel.org/ccel/schaff/npnf214.vi.ii.html) | [unverified: the CCEL page did not return the council's text when fetched; 381 is the conventional year]. Canon 7 is quoted in the Orthodox dossier (O-06 area), not here. |
+| Constantinople I, creed | 381 | no | NPNF Series 2 vol. XIV (1900) pp. 163–164, archive.org `selectlibraryofn14schauoft` | `[verified: NPNF2 14 page heading «I. CONSTANTINOPLE. A.D. 381», OCR; page image not read]` (A2, 2026-11-01; replaces the earlier `[unverified]`). Split from canon 7 by DECISIONS 2026-11-01 evening, item 4. |
+| Constantinople I, «canon 7» (the edition's number) | no tick of its own | no | same volume | The edition's note quoting Hefele says the text is «in no way a decree of the second General Council»; no year is shown for it as a council decree: carry the remark as printed, no conclusion (DECISIONS item 4). `[verified: NPNF2 14 note, OCR]` |
 | Gregory of Nazianzus, *Oration* 40 «On Holy Baptism» | 381 | no | [NPNF 2.7, Oration 40 (CCEL page iii.xxiii)](https://ccel.org/ccel/schaff/npnf207.iii.xxiii.html) | NPNF notes (Oration 39 on page iii.xxii and Oration 40 on iii.xxiii): preached at Constantinople in January 381, the baptism oration the day after the Holy Lights; the two notes disagree on the day, so no day is printed. One 2010s article (Salapatas, *Orthodoxes Forum*, OCR-garbled) says January 380. [verified: NPNF note, one dissent]. The Catholic dossier's «379–383» (`neutral/writers-greek-syriac.md`) is the range for orations 38–40 and 45 together, not for this one. |
 | Ambrose, *De sacramentis* | c. 390 | yes | [`neutral/writers-latin.md`](../neutral/writers-latin.md) | Dossier: c. 387–391, authorship once disputed. Same tick as the Eucharist row for *On the Mysteries* (c. 390). [unverified: dossier and neutral map only; not re-fetched tonight]. |
 | Quinisext Council (Trullo), canon 95 | 692 | no | [Fordham Sourcebook, Trullo (NPNF 2.14)](https://sourcebooks.web.fordham.edu/basis/trullo.asp) | Page: «in the year 692, fifth indiction»; Hefele's reasoning in the same notes: opened after 1 September 691 and before 1 September 692. Show 692, detail 691–692. [verified: NPNF text on the Fordham page; canon 95 itself not reached in the fetch]. |

@@ -65,7 +65,7 @@ Status: draft, NOT verified by Pedro
 
 **Límite de la respuesta:** the dossier records that no text in the column discusses causality or an unbaptized child's fate; it adds none (`baptist.apply.md`, «[unverified except the individual scan excerpts]»).
 
-**Pasajes:** 2LCF 29.1 prints Romans 6:3–5; Colossians 2:12; Galatians 3:27; Mark 1:4; Acts 22:16; Romans 6:2, 4 (`baptist.apply.md` l. 197) · BF&M VII list as above.
+**Pasajes:** 2LCF 29.1 prints Romans 6:3–5; Colossians 2:12; Galatians 3:27; Mark 1:4; Acts 26:16 (as printed in both the 1719 and the 1677 prints; this file said 22:16 before the correction of 2026-11-01, session A2); Romans 6:2, 4 (`baptist.apply.md` l. 197) · BF&M VII list as above.
 
 ### OB-3 · La inmersión no es necesaria: basta con derramar o rociar
 
