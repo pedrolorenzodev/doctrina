@@ -1,102 +1,121 @@
-# Open research and data-gathering tasks (inventory of 2026-11-01)
+# Open research and data-gathering tasks (inventory of 2026-11-01, updated after the research night)
 
-A read-only audit of every markdown file in the repo plus the data that the docs point to (registry `src/content/registry/*.ts`, `data/site/glossary.json`, `data/site/history.json`, the 20 page files, `data/corpus/fathers/`). Numbers tagged **[measured]** were counted on 2026-11-01. Item ids (A1, B2…) are used by `docs/features/research-night.md`. Pedro's answers of 2026-11-01 (DECISIONS) unblock A6, C1, C2, H1, B2 (cutoff) and G2; they are marked **[answered 2026-11-01]**.
+Replaces the first version of this file (same path, same item ids A1, B2…, so `docs/features/research-night.md` and the night logs still resolve). Sources of the states below: the night logs in `docs/research/night-2026-11-01/` (`session-1.md`, `session-2.md`, the two `verification-*.md`), the files the night wrote, and a read of `src/content/pages/*` on 2026-11-01 (afternoon). Numbers tagged **[measured]** were counted on 2026-11-01; states taken from the logs were not re-measured. Every file the night wrote is `Status: draft, NOT verified by Pedro` and had **one** verifier pass (14–20 wrong items per file, all corrected; none re-verified after the corrections).
 
-Headline [measured]: 616 source citations; 92 with a locator and no excerpt (Catholic 34, Lutheran 34, Reformed 19, Orthodox 5); 349 of the 473 citations that have Spanish lack English (Catholic 281, Reformed 32, Lutheran 29, Orthodox 7); `originalLang` empty for all 76 works; `videos.items` empty on 19 of 20 tradition pages (only Eucharist·Catholic has videos); apologists layer only on Baptism·Catholic (8 quotes); no page has parallels.
+Pedro's answers of 2026-11-01 (DECISIONS) unblock A6, C1, C2, H1, B2 (cutoff) and G2; marked **[answered 2026-11-01]**.
+
+Headline [measured]: 616 source citations; 92 with a locator and no excerpt; 349 of the 473 citations that have Spanish lack English; `originalLang` empty for all 76 works; `videos.items` empty on 19 of 20 tradition pages; `objections.items` empty on the 16 non-Catholic pages; only `eucharist/doctrine.es.ts` exists as a doctrine page 02 (the home rows of Baptism, Papacy and Sola Scriptura are muted); apologists layer only on Baptism·Catholic (8 quotes on 3 passages); no page has parallels. Passages [measured]: 64 on the four Catholic pages (Baptism 19, Eucharist 14, Papacy 14, Sola Scriptura 17), 167 on the 16 others.
+
+## UI that research still blocks
+
+| UI | Needs (items) | State |
+|---|---|---|
+| 02 of Baptism, Papacy, Sola Scriptura + home rows | B1, B2 (c. 256–749 missing), B3, B5, B6 | Drafts, one verifier pass; gaps listed below |
+| 03 / objections / tree rows of the 16 non-Catholic pages | A1 (deepen the 14 thin files) | Drafts |
+| Pasajes: apologists layer, Catholic (64 passages) | C1 (2 done) | Gated by decision D2 below |
+| Pasajes: apologists layer, the 16 non-Catholic pages (167 passages) | **C5, new** | Not in the first inventory |
+| Pasajes: Baptist readings, parallels, Catholic gaps | C2, C3, C4, A6 | Drafts |
+| Videos on 19 pages | H1, H2, H3, H4 | One page of 20 checked |
+| Citation windows (excerpts and English/Spanish text) | A2, D1, F1, F2, F5, F7, A3, A7 | Codex drafts with defects open |
+| «Fuentes» and its footer link | F3, F4, D2, F5 | Wait on Pedro (F3, F4) |
+| Fathers (screen 09) | E1, E2, E3, E5, E9, E10, E11, E12 | Not started except E3 residue |
+| Councils and movements entity pages | J1, J2 | J1 waits on Pedro |
+| Word panel (07), Bible | G1, G2 | G2 answered by a finding |
+| Glossary | I1, I2, I3, I4, I5 | Partly |
+| Attribution / licences page | K3, K4 | Findings only |
+
+## Decisions that gate research (Pedro)
+
+- **D1. 1689 / Heidelberg / Belgic in every doctrine.** DECISIONS 2026-10-15 discarded the 1689; 2026-11-01 answer 3 applies it everywhere. The files show it as a separate, labelled answer until Pedro confirms (gates A6, C2, parts of A1).
+- **D2. What «independent» means for the Catholic apologists.** Heschmeyer, Horn, Akin and Broussard are all Catholic Answers staff, so counted by organisation no passage reaches 3. `apologists.md` counts by person and work; `passages/apologists-catholic.md` counts by organisation. Recommended: count by person and work, and add voices outside Catholic Answers (his list is not closed, DECISIONS 2026-10-29), each assessed with the same criterion. Record both counts meanwhile. Gates C1 and C5.
+- **D3. Objections aimed at Rome.** Do Reformed/Lutheran texts rejecting transubstantiation, the Mass sacrifice or adoration count as objections to the Orthodox line (they use Dositheus's terms), and do Trent IV / *Pastor aeternus* count as objections to the Protestant lines? The rule says «rejects in words». Gates the scope of A1.
+- **D4. Date conflicts** between `fingerprint-dates.md` and `neutral/writers-to-325.md`: Didache (50–120 vs 50–150), Justin (148–161, ticked c. 155), Tertullian (198–208); also Augustine 396 vs 397 (A7).
+- **D5. Glosses (G2).** Keep Doctrina's own STEPBible-based glosses (recommended) or ask the author of *Lexicon Omnium Gentium* which English source it used and under what licence.
+- **D6. Sola Scriptura question 1** is worded close to WCF 1.6; what the three «Cómo se vive» tables show in cells left `silencio` / `no consultado` (reading those texts is research; what the page shows is Pedro's).
+- **D7. Where the CC BY attribution goes** (OpenBible, STEPBible, OpenGNT, SermonIndex, «WEB»): K3.
+- **D8. Open points outside the night's files:** `eucharist/lutheran.md` «Asymmetry» says «Orthodox 4» but lists five; the Dositheus XVII clause is translated two ways («especie y figura» in `reformed.apply.md`, «apariencia y figura» in `orthodox.md`); LCMS art. II names the Smalcald Articles but not the Treatise (`papacy/catholic.md` l. 300 vs `papacy/lutheran.md` L-06); the Antichrist clause in `papacy/lutheran.md` lacks its own status line (A9).
+- Still waiting on Pedro from before: A4, E4, F3, F4, G4, G5, G6, J1, J3, J4, K1, K2, L1–L3. Paused: A8, E6–E8. E1 waits on a review pass. B6 needs a proposal first.
 
 ## A. Content dossiers & objections
 
-- **A1. Official-layer objections for the 16 non-Catholic pages («wave 4»).** Objections to each tradition drawn from the other traditions' official texts, in their strongest honest synthesis, each answered in the tradition's own words, with status lines next to harsh wording. Unblocks «Objeciones», the 04 pages and the tree rows of 16 pages (today hidden). Sources: `docs/features/dossiers-to-web.md:79`, `ROADMAP.md` «Current state», `DECISIONS.md` 2026-10-29. Not started (every non-Catholic dossier has §Objeciones `Deferred`). L (16 × M). The debate layer stays paused.
-- **A2. Excerpts for the citations with only a locator** (≈67 beyond the 25 Catholic ones of F1): Catholic CEC892, CIC336/337/341/349, CEC80/104/114, VD87…; Lutheran LAC*/LLC*/LFC*/LTr*; Reformed RWCF*/RWLC*; Orthodox ODositheusXV, OMogila106/107, OPhilaret18/20 [measured]. Unblocks the empty citation windows of all 20 pages. Sources: `DECISIONS.md` 2026-10-30 («missing texts are requested as dossier work later»). M; scans already in use (Triglot 1921, Westminster 1894 / Monterrey 1880, Robertson 1899, vatican.va).
-- **A3. Lutheran Eucharist leftovers:** Theophylact («Vulgarius», Apology X.55) dates and work; the work identifications (Justin *1 Apol.* 66, Augustine *Tract.* 80.3, Irenaeus IV.18.5, «Serm. de Pass.»); DS 1752 = Trent XXII can. 2; communion of the sick beyond SD VII.83–87; re-verify what the apply pass added; body sources for the Variata and closed-communion lines. Sources: `ROADMAP.md` background queue 2, `docs/research/doctrines/eucharist/lutheran.apply.md:120-129`. S–M.
-- **A4. Orthodox source gaps:** Philaret's Russian original (all Philaret quotes are English-only), the 1838 Russian recension and Dositheus 1838 collation, Mogila I.107 full Greek, Krivoshein's date, Jeremias II *Answers*, convert-reception canons and rituals. Sources: `dossiers-to-web.md:19`, `docs/research/doctrines/baptism/orthodox.md:263+`, `eucharist/orthodox.md:276+`. L. Waits on Pedro (how to finish the canonical/ritual sources, `baptism/orthodox.md` Questions item 2).
-- **A5. Westminster 1894 editor line** in `eucharist/reformed.md` (~line 143) and a sweep for the wrong imprint «Offices of the Church of Scotland» (fixed only in `baptism/reformed.md`, R-06). S.
-- **A6. 1689/Heidelberg/Belgic outside the Eucharist** **[answered 2026-11-01: they apply to every doctrine]**: re-verify and reinstate the displaced material kept in `*/baptist.apply.md` and `*/reformed.apply.md`. M.
-- **A7. Catholic dossiers' `[pending: Codex]` items:** Baptism CIC 868 §2 (CV-1), Karmiris/1698 *Tomos* (Q5), FC XII (Q6), Greek/1921 redo (Q10), *Oros* Greek, Mansi 38:617–622 (Q14); Papacy 1895 encyclical §XIV–XIX Greek (Q18), Russo-Greek Papers and *Brief Statement* print (Q20); Sola Scriptura WCF 1647 proof-text lists (Q16), licence re-read (Q17), Augustine 396 vs 397 (Q20). Sources: `docs/research/doctrines/*/review-answers.apply.md`. M. Check the 2026-10-22 DECISIONS answers first.
-- **A8. Apologetic answers unconfirmed (debate layer, paused):** listen to each quoted minute; Akin's tie to Catholic Answers; «Gagnon»/«Gognon»; 2024 *Annuario*; Cullmann; Gregory's letters; Nicaea canon 6 Greek and Latin; Baptism F-7 rows; Heschmeyer and Horn timestamps. Source: `docs/research/doctrines/apologetic-answers.md:567-572`. M.
-- **A9. Status lines for harsh wording** missing on Lutheran citation windows; Trent status lines wherever other dossiers quote Trent's canons. Sources: `DECISIONS.md` «Harsh language», `lutheran.apply.md:133`. S.
+- **A1. Official-layer objections for the 16 non-Catholic pages.** Night result: 16 files `docs/research/doctrines/<doctrine>/<tradition>.objections.md`, verified once (16 + 42 + ~30 wrong corrected). `eucharist/lutheran` is an index only: its 11 objections already live in `eucharist/lutheran.md` §4 and `lutheran.es.ts` has `objections.items: []` (import, not research). The other 14 hold 1–3 objections each (the Catholic pages have 7–11), built from quotations already verified in other dossiers plus WCF on opc.org; many answers say «the dossier has no text on this», which is a limit of the method, not proof the documents are silent. **Open:** reread each objecting tradition's own primary documents (Triglot, Westminster, Dositheus/Mogila/Philaret/1895 encyclical, 1689, Trent/CCC) and add objections where they speak; keep status lines next to harsh wording; apply D3 when answered. L.
+- **A2. Excerpts for the citations with only a locator.** Night result (Codex, `sources/citation-excerpts-2.md`): 91 ids, 67 with excerpt (73 texts), 24 skipped (already in `citation-excerpts.md`); quotes are real. **Open:** 28 excerpts clipped (8 must be corrected: `LSAII_4_7_9`, `RWLC173`, `RWCF29_4`, `LACXXV_1`, `LACXXIV_1_3`, `LFCEpRN_1_y_7`, `LFCSDVII_83_84__87`, `CEC892`; 20 need an ellipsis), the corrected wordings are in `night-2026-11-01/verification-codex-a2-d1.md` §1; duplicates (RWCF31_3 vs 31_3_4, RWLC171 vs 171_172); **58 Spanish texts `pending`** (level 1 where a public-domain Spanish edition exists, otherwise from the original language, labelled AI-assisted); Lutheran text is a BookOfConcord.org web transcription, not the 1921 Triglot print page. S–M.
+- **A3. Lutheran Eucharist leftovers.** Partly done in `dossier-residues-2026-11-01.md` (Theophylact b. c. 1050 d. c. 1108; Justin *1 Apol.* 66, Augustine *Tract.* 80.3, Irenaeus IV.18.5 located; CCC 611 n. 433). **Open:** Apology X.55–56 names no work for «Vulgarius»; Augustine's Latin «Accedit verbum ad elementum»; Chrysostom «Serm. de Pass.» vs *De proditione Iudae* I.6; communion of the sick beyond SD VII.83–87; body sources for the Variata and closed communion; DS 1752 = Trent XXII can. 2 in a source that prints the pair. S–M.
+- **A4. Orthodox source gaps** (Philaret's Russian original, 1838 recension, Mogila I.107 Greek, Krivoshein, Jeremias II, convert-reception canons). Waits on Pedro (`baptism/orthodox.md` Questions item 2). L.
+- **A5. Westminster 1894 editor line.** Found, not applied: the only active wrong imprint is `eucharist/reformed.md:143`; correct «Edinburgh: Johnstone, Hunter, & Co., 1894» (`dossier-residues-2026-11-01.md`). S.
+- **A6. 1689/Heidelberg/Belgic outside the Eucharist** **[answered 2026-11-01: they apply to every doctrine; see D1]**. Not done: re-verify against a scan of a dated edition (read page images, not OCR alone) the margin proof-texts kept in `*/baptist.apply.md` and `*/reformed.apply.md`, which the four `passages/*-baptist.md` files use unverified, and reinstate them. M.
+- **A7. Catholic dossiers' `[pending: Codex]` items** (Baptism CIC 868 §2, Karmiris/1698 *Tomos*, FC XII, *Oros* Greek, Mansi 38:617–622; Papacy 1895 encyclical §XIV–XIX Greek, Russo-Greek Papers, *Brief Statement*; Sola Scriptura WCF 1647 proof-text lists, licence re-read, Augustine 396 vs 397). Not started; read the 2026-10-22 DECISIONS answers (`doctrines/*/review-answers.apply.md`) first. M.
+- **A8. Apologetic answers unconfirmed (debate layer, paused).**
+- **A9. Status lines for harsh wording.** Answered in `dossier-residues-2026-11-01.md` (harsh-wording table); open point D8 (Antichrist clause in `papacy/lutheran.md`). S.
 
-## B. Page 02 shared content (Baptism, Papacy, Sola Scriptura; no `shared.md` exists)
+## B. Page 02 shared content (Baptism, Papacy, Sola Scriptura)
 
-- **B1. Common ground and 1–3 neutral «Lo que se discute» questions** per doctrine, each cited and checked against every tradition. Unblocks 02's header and section and the home rows (muted). Raw material: the 20 verified dossiers. M each. The agent-written home questions are «to decide» (`twelfth-session-queue.md:72`).
-- **B2. Neutral early witnesses per doctrine** (quote, author, work and locator, date, dated edition, Spanish by the three-level rule, surrounding paragraph) and the full list for page 10. Cutoff **[answered 2026-11-01: c. 749]**. Raw material: the PQ sections of the Catholic dossiers, `docs/research/neutral/writers-*.md`. L each.
-- **B3. Practice comparison** (aspects × 5 traditions, cited, aspects aligned). Each page's «Cómo se vive» is raw material; the Eucharist 02 practice facts still rest on search summaries (`docs/research/content-notes.md:45,54,62,72`). M each.
-- **B4. Fingerprint dates for Baptism** (`docs/research/doctrines/fingerprint-dates.md` has Papacy and Sola Scriptura). S.
-- **B5. Connected doctrines' «why» per edge** (only Eucharist edges exist, `data/raw/eucharist.content.json`). S.
+- **B1. Common ground and 1–3 neutral questions** and **B3. practice comparison.** Night result: `docs/research/doctrines/{baptism,papacy,sola-scriptura}/shared.md` (350/304/299 lines; §7 verification 116/83/83 items, 14/20/20 wrong, corrected). **Open:** rows still `[unverified]` (Constantinople I, Florence's day, Ambrose *De sacramentis*, Justin/Irenaeus BiblIndex ranges); cells marked `silencio` / `no consultado` because the dossiers did not read those texts (reading them is research); D6. Also **re-verify the Eucharist practice tables** of `src/content/pages/eucharist/doctrine.es.ts` (built the same way as the files that needed 14–20 corrections; never re-verified; read-only pass, report in `docs/research/`). M.
+- **B2. Neutral early witnesses.** Night result: §6 of each `shared.md`, **only ANF, authors before c. 256**, string-matched in archive.org OCR (ANF vols 1, 3, 5, 7); the three files use different ANF vol. 5 scans (choose one). **Open:** the NPNF stretch c. 256–749 (cutoff answered): archive.org answered 401 and CCL navigation failed at night; try Playwright on CCL, HathiTrust, Wikisource or the scan through a real browser; New Advent only locates, it is not the edition. Candidates: Cyprian, Firmilian, Augustine on baptism and the Donatists, Leo, Gregory, Cyril, Ambrose, whatever each file's §6 and `neutral/writers-*.md` list. L each.
+- **B4. Fingerprint dates for Baptism.** Done (draft): 38 rows in `fingerprint-dates.md` (28 confirmed, 5 corrected, 5 unconfirmable). Proposes registry fixes, **report only, outside `docs/research/`**: `vienne` `yearEnd: 1312`, `wlc`/`wsc` 1647→1648, `oros-1755` loses `alsoYears` and the «/56». Date conflicts: D4.
+- **B5. Connected doctrines' «why» per edge** (only Eucharist edges exist, `data/raw/eucharist.content.json`). Not started. S.
 - **B6. Doctrine history (~25 events) per doctrine:** no page design exists; a proposal comes first. M each.
 
 ## C. Pasajes
 
-- **C1. Apologists layer for every passage of the 4 Catholic pages** (~61 passages: Baptism 19 with 3 having data, Eucharist 14, Papacy 14, Sola Scriptura 17) [measured]: exact quotes with minute or page and URL, at least 3 independent apologists per passage. Criterion **[answered 2026-11-01]**: the most popular apologists recognized as most faithful to their tradition's documents and deep on doctrine; Catholic: those we have plus Karlo Broussard. Source: `docs/features/passages-page.md:48-56`. L.
-- **C2. Baptist Pasajes:** each Baptist page has one block of BF&M proof-texts with no verse assigned to each clause (Papacy has 5 entries). **[answered 2026-11-01]**: look for an official per-passage reading; if none, the page says no official document of that line reads the passage. Also the Baptist apologists (Gavin Ortlund: Reformed or Baptist, to check). L.
-- **C3. Parallels for every passage, sourced** (built but empty; the proposal's sets were unsourced): a public-domain harmony or a licensed cross-reference dataset. M.
-- **C4. Catholic Pasajes of Eucharist, Papacy and Sola Scriptura** (only Baptism·Catholic has a «Pasajes» page): each passage's full reference and the tradition's own reading with citation, from the dossiers' Scripture sections; gaps researched. M.
+- **C1. Apologists layer, the 64 Catholic passages.** Criterion in `apologists.md` (**[answered 2026-11-01]**: the most popular, recognized as most faithful to their tradition's documents and deep on doctrine; Catholic: Heschmeyer, Horn, Akin, «How to Be Christian», Otálora + Karlo Broussard; open doubts: «How to Be Christian» host and credentials, Otálora's identity). Night result: pilot of 2 passages in `passages/apologists-catholic.md` (John 6, Matthew 16:16–19); neither reaches 3 independent persons (D2); the method is written in the file. **Open:** 62 passages (the Baptism page already has 8 quotes on 3 passages: check before duplicating). Each quote: exact words, minute or page, URL, tag; record both independence counts. yt-dlp answers HTTP 429 after about 20 subtitle requests: use `~/.doctrina-youtube/transcript.js` and prefer articles and books. L.
+- **C2. Baptist Pasajes.** Night result: `passages/{eucharist,baptism,sola-scriptura,papacy}-baptist.md`: **no official per-passage reading found** in BF&M 1925/1963/2000, New Hampshire, the Abstract (per Pedro's answer the page says so); the 1689 margin proof-texts come from `baptist.apply.md`, not re-verified (A6). **Open:** recheck whether any Baptist body reads passages one by one (SBC, London Baptist, ARBCA, Baptist Union); Baptist apologists (Ortlund: Baptist or Reformed is an open conflict with D1). L.
+- **C3. Parallels, sourced.** Night result: `passages/parallels.md` recommends OpenBible.info's CC BY 4.0 cross-reference dataset (344,799 pairs; preview for the 64 Catholic passages); its high-vote pairs are often thematic, not parallels. **Open:** a public-domain harmony (Huck, Robertson, Stevens–Burton: check publication years and copyright in the US, Spain, Latin America) and STEPBible cross-references were not searched. M.
+- **C4. Catholic Pasajes of Eucharist, Papacy, Sola Scriptura.** Night result: `passages/{eucharist,papacy,sola-scriptura}-catholic.md`: join of page data and dossier rows with gap flags (verified once). **Open:** the CCC citation-index gap fill found no usable source (vatican.va has no index; try other official or print-scan sources, Wayback, a print index scan). M.
+- **C5 (new). Apologists layer for the 16 non-Catholic pages (167 passages [measured]: Baptism 42, Eucharist 38, Papacy 46, Sola Scriptura 41).** Not in the first inventory. DECISIONS 2026-10-29 / `docs/features/passages-page.md`: every tradition that turns on needs the same layer; criteria as C1; a passage without data keeps its tab muted. `apologists.md` lists candidates per tradition (Orthodox: Trenham, De Young, Damick, Dyer; Lutheran: Cooper, Wilken, Fiene; Reformed: White, Sproul/Ligonier; Baptist: Ortlund) with gaps: Spanish-language creators for the four traditions, independent recognition, Trenham's channel size, Wilken's and Sproul's bios, Cooper's synod, Apologia Church's confession. Suggest measuring cost on one tradition and one doctrine before opening the rest. L.
 
 ## D. English
 
-- **D1. English quotes with a dated English edition:** 349 of 473 [measured] plus the 92 without any excerpt. Mostly lookup: CCC and Vatican II on vatican.va (quotation caps), Trent Waterworth 1848, Lutheran Triglot English, Westminster original English, Orthodox Robertson 1899 / Mogila 1762 / Philaret English. L.
-- **D2. New Advent Fathers' English against the printed ANF/NPNF volumes** (`docs/research/sources/registry-resourcing.md` re-sourced 127/127 Eucharist quotes; not applied; the «replace» rows wait on Pedro, F4). M.
+- **D1. English quotes with a dated English edition.** Night result (Codex, `sources/english-quotes.md`): 213 done + 2 unverified of 369; quotes are real. **Open:** **154 ids left** (Vatican II LG/UR/DV/SC, most of CEC 552–2246, CIC 212/833/1404, UUS, CDF documents, Florence, *Pastor aeternus*; input list `~/.doctrina-youtube/night1101-d1.json`); ~105 fragments end mid-clause; 11 Trent canon fragments lack the anathema frame or give the condemned proposition bare (T6c20, T6can11, T7sacr7, T7b3, T7b4, T7b10, T22can, T7b7, T7b13, T13can9, T7sacr9); Overbeck's «first printed 1762» is contradicted by the scan's own notice; CEC1265 and CEC84 strings not found on the official page; the two 1895 encyclical rows and LACIX_1_2 not fetched; Lutheran text is a web transcription. Corrected wordings in `night-2026-11-01/verification-codex-a2-d1.md` §2 onward. Holy See texts in copyright: fragments ≤ ~40 words (F7). L.
+- **D2. New Advent Fathers' English against the printed ANF/NPNF volumes** (`sources/registry-resourcing.md`; the «replace» rows wait on Pedro, F4). Not started. M.
 
 ## E. Fathers & dates
 
-- **E1. Apply the Fathers verification ledger** (34 CHANGE, 19 QUALIFY) and its unconfirmed residue (Theodoret c. 440; the Damascene's 743 and image treatises; Chrysostom 344; Tertullian 204 and 207–213; Justin's *Apology*; Cyril 351; *De natura et gratia*; Novatian; «died before N»; dates in prose). `ROADMAP.md` background 2c. M. Waits on a review pass.
-- **E2. «Fechas y autenticidad» for the other 55 Fathers** in the `FatherDating` shape (today only Ignatius). L.
-- **E3. Ignatius dating residue:** Schoedel p. 5, Joly p. 115, Pervo pp. 134–135, a citable source for «c. 107–110» (`docs/research/neutral/ignatius-books-verification.md:19-61`). S.
-- **E4. Birth years of 7 persons** (Clement of Rome, Ignatius, Melito, Theophilus, Methodius, Optatus, Vincent of Lérins). Waits on Pedro (stay null?).
-- **E5. Witness paragraphs and the Eucharist page-10 inventory:** 8 outcomes saved, 86 inventory records, nothing applied (`docs/research/neutral/witness-paragraphs.md`). M.
-- **E6. Fathers' English corpus reading pass:** 118 draft works unread; the ten apostolic works failed review-1 and the defects are still in the files. Paused (`DECISIONS.md` «corpus paused»). L.
-- **E7. Corpus continuation and translator clearance** (Novatian; Lewis–Martley, Oxford Galatians, Salmond, Randell, Browne and Swallow). Paused. M.
-- **E8. Spanish Fathers production** (Camino 1807, Manero 1789, Ribadeneyra, Scío; Molina and Díaz de Beyral). Not ordered. L.
-- **E9. «Sus escritos» descriptions for the 56 Fathers** (only Ignatius researched). L.
-- **E10. Spanish labels of 105 works** (`src/content/father-work-links.ts`), the English Fathers registry (unproofread), a registry entry for `aristides-apology`. S–M.
-- **E11. Fathers' dates in the dossiers:** Chrysostom 388 «según Baur»; Ambrose *De mysteriis* 387–391; *Mystagogical Catecheses* range; Gregory Ep. VIII.30 → 598. S.
-- **E12. Ignatius *Smyrnaeans* 6.2 vs 7.1** (corpus vs witness). S.
+- **E1. Apply the Fathers verification ledger** (34 CHANGE, 19 QUALIFY) and its unconfirmed residue. Waits on a review pass. M.
+- **E2. «Fechas y autenticidad» for the other 55 Fathers** (today only Ignatius). Not started. L.
+- **E3. Ignatius dating residue** (Schoedel p. 5, Joly p. 115, Pervo pp. 134–135, a citable source for «c. 107–110»). S.
+- **E4. Birth years of 7 persons.** Waits on Pedro (stay null?).
+- **E5. Witness paragraphs and the Eucharist page-10 inventory** (`neutral/witness-paragraphs.md`: 8 outcomes saved, 86 inventory records, nothing applied). M.
+- **E6–E8.** Fathers' English corpus reading pass, corpus continuation and translator clearance, Spanish Fathers production. Paused.
+- **E9. «Sus escritos» descriptions for the 56 Fathers** (only Ignatius researched; each needs a dated edition per work, so it depends on B2's NPNF access). Not started. L.
+- **E10. Spanish labels of 105 works**, the English Fathers registry, a registry entry for `aristides-apology`. S–M.
+- **E11. Fathers' dates in the dossiers** (Chrysostom 388 «según Baur», Ambrose *De mysteriis*, *Mystagogical Catecheses*, Gregory Ep. VIII.30 → 598). S.
+- **E12. Ignatius *Smyrnaeans* 6.2 vs 7.1.** S.
 
 ## F. Citations, registry & excerpts
 
-- **F1. Apply `docs/research/sources/citation-excerpts.md`** (27 Catholic records, 43 work languages; gates listed in its header). Research done, not applied. S–M, repo only.
-- **F2. `originalLang` for the 33 newer works.** S.
-- **F3. Shared edition bibliographies** (18 records; Mansi col. 1055 vs 1031–1033). Waits on Pedro (a bibliography per doctrine).
-- **F4. Registry re-sourcing to dated scans** (44/44 entries, 127/127 quotes; withhold 5 John 6 passages). Waits on Pedro («replace» rows).
-- **F5. «Fuentes» data gaps:** repeated works in three status rows; Belgic, Heidelberg, London cited with no edition; Waterworth without year; CEC edition and Spanish Westminster incomplete (`twelfth-session-queue.md:71`). S.
-- **F6. Shared councils with speaker `orthodox`** (`chalcedon`, `constantinople-1`, `trullo`, `src/content/registry/works.ts:163-192`). Confirm the neutrality rule.
-- **F7. Holy See quotation budget across the 20 pages** (word counts per text). S.
+- **F1.** Apply `sources/citation-excerpts.md` (research done, repo-only). **F2.** `originalLang` for the 33 newer works. **F3.** Shared edition bibliographies; waits on Pedro. **F4.** Registry re-sourcing to dated scans; waits on Pedro. **F5.** «Fuentes» data gaps (repeated works, Belgic/Heidelberg/London with no edition, Waterworth without year, CEC edition, Spanish Westminster). **F6.** Shared councils with speaker `orthodox`: confirm the neutrality rule. **F7.** Holy See quotation budget across the 20 pages (word counts per text). All as in the first inventory; none started by the night.
 
 ## G. Bible and word data
 
-- **G1. STEPBible TAGNT/TAHOT + TBESG/TBESH for the whole Bible** (screen 07, the verse panel's «Palabras»; today John 6 only). L. After the dossiers.
-- **G2. Spanish glosses** **[answered 2026-11-01: confirm no CC BY Spanish source; else own glosses from STEPBible's CC BY English]**. M.
-- **G3. Spanish section headings and paragraphs:** no public-domain source; an editorial layer seeded from BSB (`docs/research/sources/section-headings.md:59-63`). L authoring.
-- **G4. Spanish deuterocanon** (Torres Amat 1894 OCR; Straubinger's status). Waits on the paying-public-domain question.
-- **G5. Spanish Bible wording when an argument rests on it** (Ps 97:7, Mal 1:11, Gn 14:18, 2 Macc 15:14; D7). Waits on Pedro.
-- **G6. PDDPT's conflicting CC BY / CC BY-SA statements.** Waits on Pedro.
+- **G1.** STEPBible TAGNT/TAHOT + TBESG/TBESH for the whole Bible (today John 6 only); after the dossiers. L.
+- **G2. Spanish glosses.** Night result (`sources/spanish-glosses.md`): one CC BY 4.0 Spanish gloss dataset exists (*Lexicon Omnium Gentium*, Zenodo 10.5281/zenodo.19099634; LLM-generated with MiniMax M2.5, English source unnamed); OpenGNT's Spanish layer has no licence line of its own (its README is BY-SA since 2018-08-27); no other CC BY or public-domain Spanish source found. Recommendation: keep the decided route (own AI-drafted glosses from STEPBible's CC BY English, labelled automatic). Decision D5.
+- **G3.** Spanish section headings and paragraphs (editorial layer seeded from BSB). **G4.** Spanish deuterocanon; waits on Pedro. **G5.** Spanish Bible wording when an argument rests on it; waits on Pedro. **G6.** PDDPT's conflicting licence statements; waits on Pedro.
 
 ## H. Videos
 
-- **H1. Videos for the 19 empty tradition pages** (criterion **[answered 2026-11-01]**, as C1; v2 pool of 70 Eucharist videos in `docs/research/content-notes.md:78` as a start). L.
-- **H2. Map the 15 Eucharist·Catholic videos to its 7 objections** (only OB-1 has its 3) and find more per objection for Eucharist and Baptism; check each video says what its title says. M.
-- **H3. Affiliation of small channels** (`docs/research/content-notes.md:80-82`). S.
-- **H4. YouTube compliance:** the official attribution icon, recheck of the terms' revision history (`docs/research/youtube-covers.md`). S.
+- **H1. Videos for the 19 empty tradition pages** (criterion as C1; v2 pool of 70 Eucharist videos in `content-notes.md:78`). Not started. Per video: title, channel, URL, language, duration, date, what it defends, checked against its captions; output `videos/<doctrine>-<tradition>.md`. L.
+- **H2. Videos per objection.** Night result (`videos/eucharist-catholic.md`): the 15 existing Eucharist·Catholic videos checked against captions, 14 confirmed (Akin's `PucLuJsfekA` has no readable captions); only OB-1 has videos (+ candidate `vpOV2kYPGbs`); candidates OB-2 `_oD0K0qdAQs` (Heschmeyer, strong), OB-3 `jv17wOIn-0w` (speaker unnamed); **none found for OB-4 to OB-7**. **Open:** OB-4..OB-7, and Baptism. The file's table header has rows with an extra column to normalise. M.
+- **H3.** Affiliation of small channels (`content-notes.md:80-82`). **H4.** YouTube compliance (official attribution icon, recheck the terms' revision history, `youtube-covers.md`). Not started. S.
 
 ## I. Glossary
 
-- **I1. 9 terms with no entry** (A28, C3, C16, C17, C24, D28, E2, E3, E4) [measured], 15 fully `[not found]`, D17/D26 need the *Normae universales de anno liturgico* (1969), A22 lacks its Orthodox cell (`docs/research/glossary-terms.md:857-872`). S–M.
-- **I2. 27 quoted entries with no edition, 2 tagged «pending»** [measured] (`data/site/glossary.json`). S.
-- **I3. Kolb–Wengert numbers for the Apology** (needs a licensed copy). S.
-- **I4. B13 (1880 Shorter Catechism Q. 88 vs 1647) and the *Oros* Greek** (D27). S.
-- **I5. Glossary coverage of the 16 new pages** (authority categories and new vocabulary). M.
+- **I1. Terms with no entry.** Night result (`glossary-gaps.md`): of the 9 empty terms (A28, C3, C16, C17, C24, D28, E2, E3, E4) seven already have data in `glossary-terms.md` (verified 2026-10-21) and never reached `data/site/glossary.json` (import, not research); D28 and E4 are `[not found]`. **Open:** 15 fully `[not found]` terms; D17/D26 need the *Normae universales de anno liturgico* (1969); A22 lacks its Orthodox cell. S–M.
+- **I2.** The 27 quoted entries without edition: carry-over table with the edition table in `glossary-gaps.md`; B13 and D27 already answered by Pedro (2026-10-22). S.
+- **I3.** Kolb–Wengert numbers for the Apology (needs a licensed copy; probably «not possible»: report what was tried). **I4.** B13 (1880 Shorter Catechism Q. 88 vs 1647) and the *Oros* Greek. **I5.** Glossary coverage of the 16 new pages. Not started.
 
 ## J. History entities
 
-- **J1. Councils and movements verification log** (`docs/research/neutral/councils-movements.md:113-123`, `docs/research/traditions/consistency.md:169-177`). M–L. Waits on Pedro for §4 Q1–5.
-- **J2. Apply `docs/research/content-and-history-notes.verify.md` to `history.json`**; the divisions and Reformation texts are unverified v2 prose. M.
-- **J3. Short labels for the 119 timeline events.** Waits on Pedro.
-- **J4. Neutral-universe questions** (cutoff answered; Coptic/Armenian «Part E», anonymous corpora, Hippolytus, 2 Clement, the word «Padre», Spanish name forms). Waits on Pedro.
+- **J1.** Councils and movements verification log; waits on Pedro for §4 Q1–5. **J2.** Apply `content-and-history-notes.verify.md` to `history.json` (the divisions and Reformation texts are unverified v2 prose). **J3.** Short labels for the 119 timeline events; waits on Pedro. **J4.** Neutral-universe questions; waits on Pedro.
 
 ## K. Licences & legal
 
-- **K1.** FNA art. 6 exemption procedure (Pedro files it). **K2.** Lawyer questions (`docs/research/sources/legal-gaps.md:322-350`). **K3.** Where CC BY attribution goes (STEPBible, OpenGNT, SermonIndex, «WEB»). **K4.** The 1848 encyclical's English e-text (translator unknown, «© Paul Halsall»): is it used?
+- **K1.** FNA art. 6 exemption procedure (Pedro files it). **K2.** Lawyer questions (`sources/legal-gaps.md:322-350`). **K3.** Where CC BY attribution goes (STEPBible, OpenGNT, OpenBible, SermonIndex, «WEB»); D7. **K4.** The 1848 encyclical's English e-text (translator unknown, «© Paul Halsall»): is it used?
 
 ## L. Other
 
-- **L1.** Supabase paid-plan price. **L2.** Browser storage for notes (Safari) before launch. **L3.** Model decisions that gate data: the Fathers and reasons of «Por qué» that the model has no place for; the doctrine-history page.
+- **L1.** Supabase paid-plan price. **L2.** Browser storage for notes (Safari) before launch. **L3.** Model decisions that gate data (Fathers and «Por qué» reasons with no place in the model; the doctrine-history page).
+
+## Not research (an implementation session does it)
+
+F1, F2, F6 (a confirm), G1 (after the dossiers), G3 (authoring), B6 (design first), L1–L3, importing the night's files (A1 Eucharist·Lutheran, I1's seven terms, the registry fixes of B4 and A5).
