@@ -23,6 +23,7 @@
 # data downloads
 /data/raw/src/
 /data/corpus/
+/data/site/words/
 
 # misc
 .DS_Store
