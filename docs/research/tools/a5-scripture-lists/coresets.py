@@ -1,0 +1,49 @@
+import json,glob,sys,re,os
+sys.path.insert(0,'.')
+from lb import *
+OUT=REPO+'docs/research/doctrines/scripture-lists/'
+def clusters(recs):
+    n=len(recs); par=list(range(n))
+    def f(x):
+        while par[x]!=x: par[x]=par[par[x]]; x=par[x]
+        return x
+    for i in range(n):
+        for j in range(i+1,n):
+            if overlap(recs[i]['refs'][0],recs[j]['refs'][0]): par[f(i)]=f(j)
+    g={}
+    for i in range(n): g.setdefault(f(i),[]).append(i)
+    return list(g.values())
+def cluster_stats(recs,idx):
+    works=set(); locs=set(); refs=[]; inpage=False; tags=set()
+    for i in idx:
+        r=recs[i]; refs.append(r['refs'][0]); inpage|=r['inPage']
+        for x in r['citedBy']: works.add(x['work']); locs.add((x['work'],x['loc']))
+    return refs,works,locs,inpage
+def core(doc,trad,top=5):
+    fn=OUT+f'{doc}-{trad}.json'
+    if not os.path.exists(fn): return None
+    recs=json.load(open(fn))
+    cl=[]
+    for idx in clusters(recs):
+        refs,works,locs,inpage=cluster_stats(recs,idx)
+        cl.append((len(works),len(locs),refs,sorted(works),inpage))
+    cl.sort(key=lambda c:(-c[0],-c[1],c[2][0]))
+    return cl
+def render(doctrines,top=5):
+    L=['# Core sets: the five most cited passages per page','','Status: draft, NOT verified by Pedro','',
+       'Read by session B5 to choose where to look for apologists first. Rank: number of distinct documents (works) citing the passage, then number of citing locators; overlapping ranges are merged into one passage (e.g. `Titus.3.5` and `Titus.3.5-Titus.3.8`). Source: the `scripture-lists/<doctrine>-<tradition>.json` files. Ties at the fifth place are listed too. Generated from the JSON by session A5, 2026-11-01; each list is draft and partly `[unverified: OCR]` (see the list\'s own tags).','']
+    for doc in doctrines:
+        for trad in ['catholic','lutheran','reformed','baptist','orthodox']:
+            cl=core(doc,trad)
+            if cl is None: L+= [f'## {doc} · {trad}','','(list not written yet)','']; continue
+            L+=[f'## {doc} · {trad}','','| # | Passage(s) | Docs | Locators | In page | Cited by |','|---|---|---|---|---|---|']
+            cut=cl[min(4,len(cl)-1)][:2] if cl else None
+            shown=[c for k,c in enumerate(cl) if k<top or (cut and c[:2]==cut and k<top+6)]
+            extra=len([1 for k,c in enumerate(cl) if k>=top+6 and cut and c[:2]==cut])
+            for k,c in enumerate(shown,1):
+                L.append(f"| {k} | {', '.join(f'`{r}`' for r in c[2])} | {c[0]} | {c[1]} | {'yes' if c[4] else '**new**'} | {'; '.join(c[3])} |")
+            if extra: L.append(f'| … | {extra} more passages tie with the fifth place (same documents and locators); not listed | | | | |')
+            L.append('')
+    return '\n'.join(L)
+if __name__=='__main__':
+    open(OUT+'core-sets.md','w').write(render(sys.argv[1:]))

@@ -72,6 +72,40 @@ Prompts: `~/doctrina-research-prompts/session-A3.md`, `session-B3.md`, `codex-3.
 
 No overlap: A3 and B3 never touch the objections files; A3 verifies and corrects Codex's appended sections only after `codex-3.md` says the run ended. Codex weekly was 92 % (resets Wed 2026-11-04 05:54) and may stop it before the 60 % cap.
 
+## Research that blocks coding all the UI (agent's analysis, 2026-11-01 night; Pedro finishes the UI on 2026-11-02 morning and afternoon)
+
+Almost nothing. Measured against the existing code (routes, models, `docs/research/doctrines/02-import-spec.md`):
+- **02 of Baptism, Papacy, Sola Scriptura:** the spec is ready; the converter is implementation. Research left: a verifier pass over the corrections.
+- **Citation windows, videos, parallels:** data ready (parallels need the two decisions applied: `passages/parallels-launch.json`); video covers are YouTube thumbnails, terms rechecked (H4).
+- **Pasajes for the other 19 pages:** the page exists only for Baptism·Catholic (`hasPassages` needs the page's `passages` copy: title, lede, labels); the 19 others need that copy (authoring), not research. The apologists layer is not needed to build them (the tab mutes itself); a few passages per tradition are enough to test it.
+- **Objections of the 16 pages:** drafts of 1–3 each are importable now; deepening is content, not a UI blocker.
+- **Doctrine history (B6):** a UI with no design; a proposal needs a sample of real events (Baptism, ~10): the only small research item that feeds a UI.
+- **Not research but data work that blocks a feature:** the whole-Bible word data (G1: STEPBible TAGNT/TAHOT; the verse panel's «Palabras» works only for John 6).
+- **Waits on Pedro, not research:** the «Fuentes» proposal review, the other proposals of phase 0.
+
+## Round 5 (2026-11-01 late night, Pedro asleep ~8 h): cap Claude weekly 56 % inclusive; replaces round 4
+
+Pedro's order: the «Pasajes» pages of every tradition and doctrine, as complete and deep as possible, before the objections; early Fathers in Spanish (AI, labelled, from the English corpus); whole-Bible word data. Apologists' commentary stored long while the project is private (DECISIONS «late night»). Prompts: `~/doctrina-research-prompts/session-A5.md`, `session-B5.md`, `session-C5.md` (the round-4 files `session-A4.md` and `session-B4.md` are obsolete).
+
+| Lane | Writes only in | Queue |
+|---|---|---|
+| **A5 (Claude high, scripture lists)** | `doctrines/scripture-lists/**`, `sources/**`, `neutral/**`, log | the complete list of Scripture references each tradition's documents use per doctrine (20 pages, Baptism first), core sets of the 5 most cited passages per page (for B5), gaps summary, Baptist 1689 per-clause entries |
+| **B5 (Claude high, apologists)** | `passages/**`, `videos/**`, `apologists.md`, `youtube-covers.md`, log | method first (a local corpus per source, a verse index by script, queries per verse), long-form quotes, Catholic to at least 2 persons per passage, then ≥ 2 apologists in depth per core passage of the 16 non-Catholic pages |
+| **C5 (Claude high, data builds)** | `data/scripts/**` (new), `data/site/words/**`, `data/corpus/fathers-es/**`, notes, log | whole-Bible word data from STEPBible with own Spanish glosses and the «Usos» index (John 6 regression); then the earliest Fathers in Spanish (brake at weekly 52 %) |
+
+### Round 5 results (read on 2026-11-02 from `session-A5.md`, `session-B5.md`, `session-C5.md`, `session-C6.md`, `codex-5.md`; counts measured on the files)
+
+Two sessions stopped early at ~48–49 % (A5: the «endpoint unreadable 25 minutes» rule; C5: a cost forecast); Pedro sent a continuation to A5 and B5 and a fresh session C6 (`continue-A5.md`, `continue-B5.md`, `session-C6.md`); all three reached the 56 % cap at 00:27–00:32. Weekly 43 → 56 % in 2.5 h with three sessions and 23 Sonnet verifiers.
+- **A5 + Codex:** 20 scripture lists (1,119 records, of which 557 are already covered by the page's `scripture` list and **562 are new**; a record is a verse range as the documents print it, not one of the page's passages), `core-sets.md`, `gaps-summary.md`, 9 verifiers (21, 12, 7, ~40, V5, V6, V7, V8, V9 reports in `scripture-lists/verification-*.md`). Codex stopped at its weekly 95 % with four partial Papacy lists (Catholic, Orthodox, Lutheran, Reformed); A5 finished the Baptist one. WCF ch. 1 and 29 rebuilt from page images (V9: no wrong reference). 1688 margins read: 1.6–1.10, 26.1–26.6, 28.1–2, 29.3–4, 30.1–30.6. Open: 1688 margins of 1.1–1.3, 29.1–2, 30.7–8; Larger and Shorter Catechism proof blocks; Belgic Art. 35; nine AC XXVIII and seven Lutheran Eucharist references the verifiers saw and A5 did not add; the Papacy Catholic and Orthodox `.md` tables are Codex's and no longer match their corrected `.json`; Eucharist·Baptist, Baptism·Orthodox, Sola Scriptura·Orthodox have no verifier; no correction of V1, V2, V4–V8 was re-verified; Lumen gentium rows quote up to 128 words (Holy See rule: ≤ 40 per fragment; see the budget below).
+- **B5:** method (`passages/method-apologists.md`), long-form blocks under 92 of 96 Catholic quotes, 7 Catholic second persons, **14 non-Catholic files** (the log says 19: it counted the five verification reports), about 83 long-form blocks; 5 verifiers (9, 27, 15, 20, 21 wrong; the quoted text was never wrong, the claims around it were). Missing: Orthodox Papacy, Reformed Sola Scriptura. Almost no passage has 2 persons, none 3. The Orthodox files rest on one Lord of Spirits episode (auto-captions, two hosts counted as one). Catholic block defects named in each file, not corrected.
+- **C5 + C6:** whole-Bible word data (1,189 chapters, 17,025 lexicon entries, 63 MB, Spanish glosses 84 % Greek / 76 % Hebrew, John 6 regression clean) and **22 Spanish Father works**: the 19 of C5 plus Hermas (complete), Irenaeus *Against Heresies* books 3–5, Justin *Dialogue* 1–19 of 142. Verifier defect rate on read divisions 25–50 % wording, none omitted; unread divisions are less reliable (Irenaeus about 266 of 414, Justin 1–19 and most of Hermas unread). Open: Irenaeus 1–2, Justin 20–142, Tatian and the rest, the unapplied borderline lists.
+- **Decided by earlier entries (agents missed them):** DECISIONS 2026-10-23 «Full corpora stay out of git» (processed corpora local and gitignored, later Supabase): `data/site/words/` is gitignored and `data/corpus/fathers-es/` stays ignored like the English Fathers; only the licence of the AI translations is open.
+- **Holy See budget:** the lists carry up to ~40 words per CCC or Dei verbum sentence and 128 for some Lumen gentium rows: that is research material, not page text; the per-page count (≤ 100 words per document per page, 250 per lesson) is applied when the Pasajes data is built (F7).
+
+## Round 4 (superseded by round 5): cap Claude weekly 53 % inclusive
+
+Prompts: `~/doctrina-research-prompts/session-A4.md`, `session-B4.md`. Lanes as round 3 except that nobody waits for Codex: **A4** (high): verifier pass over the 02 package, then the objections of Baptism and Papacy (8 files, A6 folded in), then A6 for the rest. **B4** (high): final parallels data for the launch, a Baptism history sample for the proposal, the objections of Sola Scriptura and the Eucharist (7 files), then C1's 11 passages, a 15-minute method check and the C5 pilot with books and articles. Fathers, glossary, H2, Holy See per-page counts and the NPNF leftovers wait until the next night.
+
 ## Rules for both sessions
 
 - **Research only.** No UI, no code, no `src/` or `data/`.
