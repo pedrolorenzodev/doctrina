@@ -247,6 +247,7 @@ Edges that wait for the Justification page: Baptism→Justification, Justificati
 3. Missing registry ids: `CIC865`, `CEC1233`, `OPhilaret261`, `OPhilaret275`, `RWCF26_2`, `BBFMXIV`, `ODositheusQuestionI`, the LC Preface, the LC IV paragraphs 36/45/65/78, «BF&M 1925 XIII», and `AC28_21` covers XXVIII.21–28: confirmed. Their texts are in `b3-silence-cells.md` (A3 rows) and, where a record exists, `sources/english-quotes.md`.
 4. Decisions that the model needs: Leo Sermon III year; Jerome Letter CXLVI «unknown date»; legend witnesses; ledes.
 5. The Lutheran page-image collation (`sources/lutheran-triglot-collation.md`) is not done: every Lutheran quote stays `[verified: web transcription]`.
+6. **Update 2026-11-02 (S1a):** `02-closure-2026-11-02.md` fills, with dated editions and locators (all `[unverified: not yet verifier-checked]`): `CIC865`, `CEC1233`, `OPhilaret261`, `OPhilaret275`, `RWCF26_2`, `BBFMXIV`, «BF&M 1925 XIII» (Annual 1925, art. 13), LC IV.36/45/65/77–79, the LC Short Preface, SA II.4.9, Treatise 56, WLC 167; three connected-edge drafts (Baptism → Eucharist placement, Papacy → Eucharist, Sola Scriptura → Baptism); two witnesses (Cyprian Ep. LXX, Seventh Council of Carthage). **Not ready:** the Orthodox Dositheus Q. I cells (Robertson 1899 and Schaff II p. 433 print opposite answers: `decision`), the Baptist preamble, BiblIndex ranges, Ambrose *De sacramentis*, Cyprian's year, Sola Scriptura → Eucharist («none»). Also: `LSCIV_4` points at the Mark 16 answer, the triune formula is SC IV.2 in the Triglot numbering.
 
 ## Verification
 
