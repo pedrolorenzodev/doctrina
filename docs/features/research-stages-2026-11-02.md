@@ -1,6 +1,6 @@
 # Research stages of 2026-11-02 (Pedro): finish the data, measure the cost, recalculate
 
-Status: plan, estimates calculated by the agent on 2026-11-02 13:00 (not measured per task). Written because Pedro asked to keep the estimates so that every agent records the usage at the start and the end of each task and compares it with the estimate.
+Status: plan, estimates calculated by the agent on 2026-11-02 13:00 (not measured per task); stage 1a measured at 19:03 and the stages after it recalculated (section «Recalculated after stage 1a»). Written because Pedro asked to keep the estimates so that every agent records the usage at the start and the end of each task and compares it with the estimate.
 
 ## Parameter (Pedro, 2026-11-02)
 
@@ -27,6 +27,19 @@ Yesterday's research (rounds 1, 2, 3 and 5, readings 33 → 56 %) cost **23 week
 Total of stages 1–3: **~22 points (15–33)**, leaving ~16 for building the UI (the only measured UI datum: ~6 points on 2026-10-30 for the converter, three readers and 16 pages).
 
 Stage 1a is the first session (`~/doctrina-research-prompts/session-S1a.md`, cap 68 %). After it, the estimates of 1b, 2 and 3 are recalculated from the measured costs before the next prompt is written.
+
+## Recalculated after stage 1a (agent, 2026-11-02 19:30)
+
+Datum: S1a did 4 tasks in ~27 minutes for **at most 1 weekly point** (64 → 65 %; integer readings). The plan said 3.5: overestimated ≥ 3.5×. Cross-check with yesterday: 5.7 points per hour for three sessions with verifiers ≈ 1.9 per session-hour. So the working rule is **≤ ~2 points per session-hour**, and the stages are estimated in session-hours (each a guess from the amount of reading or writing, ±50 %; one datum from S1a and one from C6, which wrote ~168 thousand Spanish words in 63 minutes). Baseline now: weekly **65 %** at 19:24.
+
+| Stage | Session-hours | Points (range) | Weekly after | Why |
+|---|---|---|---|---|
+| **1b** Pasajes: verses | ~2.5 | **3** (1.5–5) | ~68 | ~25 documents or document sets to read for references, 4 thin lists to extend, regeneration of the `.md` from the `.json`, Holy See trimming; mostly mining of known printed texts |
+| **2** Pasajes: apologists | ~3 | **4** (2–8) | ~72 | reading is cheap, but finding persons is not: the range is limited by material, not by budget; Orthodox Papacy and Reformed Sola Scriptura have no source yet |
+| **3** Everything in English | ~2.5 | **3** (2–5) | ~75 | ~190 thousand words at C6's measured speed (~1.2 h), plus the 154 English quotes with a dated edition (~1 h); the code that serves English is not counted |
+| later | — | not planned | — | #7 early Fathers (the missing ~285 thousand words of the early tier: ~1.5 h of writing at C6's speed, but it needs the original and a verifier on the divisions, so ~4–6 points), objections |
+
+Stages 1b–3 together: **~10 points (5.5–18)**, down from the 18.5 of the first plan, leaving ~25 of the 35 points to 100 % for the UI (the only measured UI datum: ~6 points on 2026-10-30 for the converter, three readers and 16 pages). Pedro chose the cap of each prompt; the agent proposes it from the table above (stage 1b: 70 %).
 
 ## Rule for every agent that works on a stage (goes into each prompt)
 
