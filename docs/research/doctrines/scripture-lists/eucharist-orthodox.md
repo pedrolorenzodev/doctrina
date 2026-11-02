@@ -1,0 +1,96 @@
+# Scripture lists: Eucharist · Orthodox
+
+Status: draft, NOT verified by Pedro
+
+Official documents used by the page `eucharist/orthodox`: Dositheus Decree XVII (Robertson 1899), Philaret's Longer Catechism Q. 318–346, Mogila I Q. 106 (Overbeck 1898). Collected 2026-11-01 by session A5.
+
+Passages (single ranges as printed, not merged across footnotes): **14**; already in the page `scripture` list: **11**; new: **3**. Count = distinct works citing it; ties broken by distinct locators.
+
+| # | Passage (OSIS) | Count (works / locators) | In page | Cited by (locator, how) | Tag |
+|---|---|---|---|---|---|
+| 1 | `John.6.54` | 2 / 2 | yes | Longer Catechism of the Eastern Church (Philaret) Q. 342 (inline reference); Orthodox Confession of Peter Mogila I. Q. 107 (inline reference) | [unverified: OCR; page image not read] |
+| 2 | `1Cor.11.26` | 2 / 2 | yes | Longer Catechism of the Eastern Church (Philaret) Q. 350 (inline reference); Orthodox Confession of Peter Mogila I. Q. 107 (inline reference) | [unverified: OCR; page image not read] |
+| 3 | `Matt.16.16` | 1 / 1 | **new** | Orthodox Confession of Peter Mogila I. Q. 107 (inline reference) | [unverified: OCR; page image not read] |
+| 4 | `Matt.26.26` | 1 / 1 | yes | Confession of Dositheus (Synod of Jerusalem 1672) Decree XVII, p. 144, fn * (footnote reference (editor's)) | [verified: Robertson 1899 page image read by A5 2026-11-01] |
+| 5 | `Matt.26.26-Matt.26.28` | 1 / 1 | yes | Longer Catechism of the Eastern Church (Philaret) Q. 338 (inline reference) | [unverified: OCR; page image not read] |
+| 6 | `Matt.26.28` | 1 / 1 | yes | Confession of Dositheus (Synod of Jerusalem 1672) Decree XVII, p. 144, fn † (footnote reference (editor's)) | [verified: Robertson 1899 page image read by A5 2026-11-01] |
+| 7 | `Luke.22.19` | 1 / 1 | yes | Longer Catechism of the Eastern Church (Philaret) Q. 344 (inline reference) | [unverified: OCR; page image not read] |
+| 8 | `John.6.51` | 1 / 1 | **new** | Confession of Dositheus (Synod of Jerusalem 1672) Decree XVII, p. 145, fn ‡ (footnote reference (editor's)) | [verified: Robertson 1899 page image read by A5 2026-11-01] |
+| 9 | `John.6.56` | 1 / 1 | yes | Longer Catechism of the Eastern Church (Philaret) Q. 342 (inline reference) | [unverified: OCR; page image not read] |
+| 10 | `John.19.34` | 1 / 1 | yes | Orthodox Confession of Peter Mogila I. Q. 107 (inline reference) | [unverified: OCR; page image not read] |
+| 11 | `John.20.29` | 1 / 1 | yes | Orthodox Confession of Peter Mogila I. Q. 107 (inline reference) | [unverified: OCR; page image not read] |
+| 12 | `1Cor.10.17` | 1 / 1 | yes | Longer Catechism of the Eastern Church (Philaret) Q. 329 (inline reference) | [unverified: OCR; page image not read] |
+| 13 | `1Cor.11.23` | 1 / 1 | **new** | Orthodox Confession of Peter Mogila I. Q. 107 (inline reference) | [unverified: OCR; page image not read] |
+| 14 | `1Cor.11.28-1Cor.11.29` | 1 / 1 | yes | Longer Catechism of the Eastern Church (Philaret) Q. 341 (inline reference) | [unverified: OCR; page image not read] |
+
+## Citing sentences (verbatim from the document at the cited locator)
+
+### `John.6.54`
+- **Longer Catechism of the Eastern Church (Philaret) Q. 342** (inline reference; P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)) · printed as «John vi. 54»: Whoso eateth my Flesh, and drinketh my Blood, hath eternal life. John vi. 54.  — [unverified: OCR; page image not read]  <https://archive.org/details/creedschristendo02scha>
+- **Orthodox Confession of Peter Mogila I. Q. 107** (inline reference; J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text) · printed as «John vi. 54»: […] For so Christ commanded, without making any Distinction (John vi. 54), Except ye eat the Flesh of the Son of Man, and drink his Blood, ye have no Life in you.  — [unverified: OCR; page image not read]  <https://archive.org/details/cu31924029363094>
+
+### `1Cor.11.26`
+- **Longer Catechism of the Eastern Church (Philaret) Q. 350** (inline reference; P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)) · printed as «1 Cor. xi. 26»: Assuredly it will ever continue, even to Christ's coming again, agreeably to the words of the Apostle Paul: For as oft as ye eat this bread, and drink this cup, ye do shew forth the Lord's death till he come. 1 Cor. xi. 26.  — [unverified: OCR; page image not read]  <https://archive.org/details/creedschristendo02scha>
+- **Orthodox Confession of Peter Mogila I. Q. 107** (inline reference; J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text) · printed as «I Cor. xi. 26»: The Fruits of this Mystery are chiefly these: First, A Commemoration of the Sufferings and of the Death of Christ […]: As saith the Scripture (I Cor. xi. 26), As often as ye eat this Bread and drink this Cup, ye do shew the Lord's Death till he come.  — [unverified: OCR; page image not read]  <https://archive.org/details/cu31924029363094>
+
+### `Matt.16.16`
+- **Orthodox Confession of Peter Mogila I. Q. 107** (inline reference; J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text) · printed as «Matth. xvi. 16»: […] as St. Peter, speaking in the Name of all the Apostles, and, as it were, with their Mouth, said, (Matth. xvi. 16), Thou art Christ, the Son of the living God […]  — [unverified: OCR; page image not read]  <https://archive.org/details/cu31924029363094>
+
+### `Matt.26.26`
+- **Confession of Dositheus (Synod of Jerusalem 1672) Decree XVII, p. 144, fn *** (footnote reference (editor's); J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n154–n157 = printed pp. 143–146; pp. 147–150 print no Scripture reference per V5)) · printed as «Matt. xxvi., 26»: For taking bread, and blessing, He gave to His Holy Disciples and Apostles, saying: 'Take, eat ye; This is My Body.' And taking the chalice, and giving thanks, He said: 'Drink ye all of It; This is My Blood, which for you is being poured out, for the remission of sins.'  — [verified: Robertson 1899 page image read by A5 2026-11-01]  <https://archive.org/details/actsdecreesofsyn00orth>
+
+### `Matt.26.26-Matt.26.28`
+- **Longer Catechism of the Eastern Church (Philaret) Q. 338** (inline reference; P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)) · printed as «Matt. xxvi. 26, 27, 28»: The utterance of the words which Jesus Christ spake in instituting the Sacrament: Take, eat; this is my body. Drink ye all of it; for this is my Blood of the New Testament. Matt. xxvi. 26, 27, 28.  — [unverified: OCR; page image not read]  <https://archive.org/details/creedschristendo02scha>
+
+### `Matt.26.28`
+- **Confession of Dositheus (Synod of Jerusalem 1672) Decree XVII, p. 144, fn †** (footnote reference (editor's); J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n154–n157 = printed pp. 143–146; pp. 147–150 print no Scripture reference per V5)) · printed as «Ibid., ver. 28»: For taking bread, and blessing, He gave to His Holy Disciples and Apostles, saying: 'Take, eat ye; This is My Body.' And taking the chalice, and giving thanks, He said: 'Drink ye all of It; This is My Blood, which for you is being poured out, for the remission of sins.'  — [verified: Robertson 1899 page image read by A5 2026-11-01]  <https://archive.org/details/actsdecreesofsyn00orth>
+
+### `Luke.22.19`
+- **Longer Catechism of the Eastern Church (Philaret) Q. 344** (inline reference; P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)) · printed as «Luke xxii. 19»: […] by a continual remembrance of our Lord Jesus Christ, who expressly has commanded us to do this in remembrance of him. Luke xxii. 19.  — [unverified: OCR; page image not read]  <https://archive.org/details/creedschristendo02scha>
+
+### `John.6.51`
+- **Confession of Dositheus (Synod of Jerusalem 1672) Decree XVII, p. 145, fn ‡** (footnote reference (editor's); J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n154–n157 = printed pp. 143–146; pp. 147–150 print no Scripture reference per V5)) · printed as «John vi., 51» · the footnote marker ‡ stands after «the life of the world.»; the marker is placed by the print on the clause about the Blood poured out for the life of the world: […] the bread is transmuted, transubstantiated, converted and transformed into the true Body Itself of the Lord, Which was born in Bethlehem of the ever-Virgin […]; and the wine is converted and transubstantiated into the true Blood Itself of the Lord, Which as He hung upon the Cross, was poured out for the life of the world.  — [verified: Robertson 1899 page image read by A5 2026-11-01]  <https://archive.org/details/actsdecreesofsyn00orth>
+
+### `John.6.56`
+- **Longer Catechism of the Eastern Church (Philaret) Q. 342** (inline reference; P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)) · printed as «John vi. 56»: He is in the closest manner united to Jesus Christ himself, and, in him, is made partaker of everlasting life. He that eateth my Flesh, and drinketh my Blood, dwelleth in me, and I in him. John vi. 56.  — [unverified: OCR; page image not read]  <https://archive.org/details/creedschristendo02scha>
+
+### `John.19.34`
+- **Orthodox Confession of Peter Mogila I. Q. 107** (inline reference; J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text) · printed as «John xix. 34»: […] whereto, in the Time of Celebration, let Water be added; that the Scripture may be fulfilled, which sayeth (John xix. 34), One of the Soldiers pierced his side, and forthwith came thereout Water and Blood.  — [unverified: OCR; page image not read]  <https://archive.org/details/cu31924029363094>
+
+### `John.20.29`
+- **Orthodox Confession of Peter Mogila I. Q. 107** (inline reference; J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text) · printed as «John xx. 29»: […] depending and trusting rather in the Words and Power of our Lord than on our own Senses; and so becoming Partakers of the Blessing which is the Reward of Faith (John xx. 29), Blessed are they that have not seen, and yet have believed.  — [unverified: OCR; page image not read]  <https://archive.org/details/cu31924029363094>
+
+### `1Cor.10.17`
+- **Longer Catechism of the Eastern Church (Philaret) Q. 329** (inline reference; P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)) · printed as «1 Cor. x. 17»: It signifies, as the Apostle explains, that we, being many, are one bread, and one body; for we are all partakers of that one bread. 1 Cor. x. 17.  — [unverified: OCR; page image not read]  <https://archive.org/details/creedschristendo02scha>
+
+### `1Cor.11.23`
+- **Orthodox Confession of Peter Mogila I. Q. 107** (inline reference; J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text) · printed as «1 Cor. xi. 23»: […] As St. Paul writes to the Corinthians (1 Cor. xi. 23), For I received of the Lord that which I also delivered unto you; that the Lord Jesus, in the same Night in which he was betrayed, took Bread […]  — [unverified: OCR; page image not read]  <https://archive.org/details/cu31924029363094>
+
+### `1Cor.11.28-1Cor.11.29`
+- **Longer Catechism of the Eastern Church (Philaret) Q. 341** (inline reference; P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)) · printed as «1 Cor. xi. 28, 29»: […] Let a man examine himself, and so let him eat of that bread, and drink of that cup; for he that eateth and drinketh unworthily, eateth and drinketh damnation to himself not discerning the Lord's Body. 1 Cor. xi. 28, 29.  — [unverified: OCR; page image not read]  <https://archive.org/details/creedschristendo02scha>
+
+## Not reached
+
+- Mogila: V5 found the six references under Q. 107 in the print (the OCR run from the «Question 106» heading covers Q. 106–107); Q. 108 onward is other mysteries.
+- Philaret Q. 318–346 (the Liturgy) was scanned by regex for «Book roman. N»; Philaret Q. 350 added after V5. Orthodox 1895 encyclical and Jeremiah's Answers not searched.
+- Mogila and Philaret: `[unverified: OCR]`, page images not read.
+
+## Notes
+- Every item of the page scripture list (Matt 26:26–28, 1 Cor 10:17, 1 Cor 11:28–29, John 6:54 and 6:56, Luke 22:19, 1 Cor 11:26, John 19:34 and 20:29) was found in these three documents. New against the page: John 6:51 (Dositheus XVII), 1 Cor 11:23 and Matt 16:16 (Mogila).
+- Dositheus XVII (pp. 143–150): pages 143–146 read by A5; V5 read pp. 147–150 and found no Scripture reference; footnotes on p. 144 (Matt 26:26; ver. 28) and p. 145 (John 6:51) are the only Scripture references; p. 146 carries a liturgical quotation only.
+
+## Lectura de los documentos, en profundidad
+
+Status of this section: draft, NOT verified by Pedro. Public-domain texts only (up to ~250 words per passage); the paragraph the locator points to, as printed, with footnote letters or markers of the print removed; the passage the document attaches to the verse is named. OCR text is `[unverified: OCR]` until the page image is read; Robertson 1899 passages were read on page images (`[verified: page image, A5]`).
+
+### Matthew 26:26, 26:28 and John 6:51 (Dositheus, Decree XVII, Robertson 1899 pp. 143–145) `[verified: page images, A5]`
+
+«We believe the All-holy Mystery of the Sacred Eucharist, which we have enumerated above, fourth in order, to be that which our Lord delivered in the night wherein He gave Himself up for the life of the world. For taking bread, and blessing, He gave to His Holy Disciples and Apostles, saying: ‘Take, eat ye; This is My Body.’ And taking the chalice, and giving thanks, He said: ‘Drink ye all of It; This is My Blood, which for you is being poured out, for the remission of sins.’ In the celebration whereof we believe the Lord Jesus Christ to be present, not typically, nor figuratively, nor by superabundant grace, as in the other Mysteries, nor by a bare presence […] but truly and really, so that after the consecration of the bread and of the wine, the bread is transmuted, transubstantiated, converted and transformed into the true Body Itself of the Lord, Which was born in Bethlehem of the ever-Virgin […]; and the wine is converted and transubstantiated into the true Blood Itself of the Lord, Which as He hung upon the Cross, was poured out for the life of the world.» (footnotes: Matt. xxvi., 26 · Ibid., ver. 28 · John vi., 51)
+
+### Philaret, Longer Catechism Q. 338, 341, 342 `[unverified: OCR]`
+
+Q. 338: «The utterance of the words which Jesus Christ spake in instituting the Sacrament: Take, eat; this is my body. Drink ye all of it; for this is my Blood of the New Testament. Matt. xxvi. 26, 27, 28.» Q. 342: «He is in the closest manner united to Jesus Christ himself, and, in him, is made partaker of everlasting life. He that eateth my Flesh, and drinketh my Blood, dwelleth in me, and I in him. John vi. 56. Whoso eateth my Flesh, and drinketh my Blood, hath eternal life. John vi. 54.»
+
+### Mogila, Part I, Q. 107 `[unverified: OCR]`
+
+«[…] depending and trusting rather in the Words and Power of our Lord than on our own Senses; and so becoming Partakers of the Blessing which is the Reward of Faith (John xx. 29), Blessed are they that have not seen, and yet have believed.» «The Fruits of this Mystery are chiefly these: First, A Commemoration of the Sufferings and of the Death of Christ […]: As saith the Scripture (I Cor. xi. 26), As often as ye eat this Bread and drink this Cup, ye do shew the Lord's Death till he come.»

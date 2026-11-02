@@ -1,0 +1,162 @@
+[
+ {
+  "refs": [
+   "Matt.28.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Apology of the Augsburg Confession",
+    "loc": "Art. IX (Of Baptism)",
+    "how": "inline reference",
+    "sentence": "[…] that the promise of salvation may be applied to them, according to Christ's command, Matt. 28, 19: Baptize all nations. Just as here salvation is offered to all, so Baptism is offered to all, to men, women, children, infants. […]",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "Matt. 28, 19"
+   },
+   {
+    "work": "Small Catechism",
+    "loc": "Part IV (Baptism), first question",
+    "how": "inline reference (chapter named)",
+    "sentence": "Christ, our Lord, says in the last chapter of Matthew: Go ye into all the world and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "last chapter of Matthew",
+    "flag": "verse(s) identified from the quoted words by Doctrina; the document prints book and chapter only [unverified]; the OCR reads «@o ye»; read as «Go ye» by Doctrina"
+   },
+   {
+    "work": "Large Catechism",
+    "loc": "Part IV (Baptism), §§3–5 (the words of institution)",
+    "how": "inline reference",
+    "sentence": "[…] where the Lord Christ speaks in the last chapter of Matthew, v.19: Go ye therefore and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "last chapter of Matthew, v.19"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; Triglot page image not read]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Mark.16.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Small Catechism",
+    "loc": "Part IV (Baptism), second question",
+    "how": "inline reference (chapter named)",
+    "sentence": "Christ, our Lord, says in the last chapter of Mark: He that believeth and is baptized shall be saved; but he that believeth not shall be damned.",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "last chapter of Mark",
+    "flag": "verse(s) identified from the quoted words by Doctrina; the document prints book and chapter only [unverified]"
+   },
+   {
+    "work": "Large Catechism",
+    "loc": "Part IV (Baptism), §§3–5 (the words of institution)",
+    "how": "inline reference",
+    "sentence": "Likewise in St. Mark, the last chapter, v.16: He that believeth and is baptized shall be saved; but he that believeth not shall be damned.",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "last chapter, v.16"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; Triglot page image not read]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Rom.6.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Small Catechism",
+    "loc": "Part IV (Baptism), the question «Where is this written?» that follows «Fourthly»",
+    "how": "inline reference (chapter named)",
+    "sentence": "St. Paul says Romans, chapter 6: We are buried with Christ by Baptism into death, that, like as He was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "Romans, chapter 6",
+    "flag": "verse(s) identified from the quoted words by Doctrina; the document prints book and chapter only [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; Triglot page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.5.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Smalcald Articles",
+    "loc": "Part III, Art. V (Of Baptism)",
+    "how": "quoted words, no reference printed",
+    "sentence": "Baptism is nothing else than the Word of God in the water, commanded by His institution, or, as Paul says, a washing in the Word […]",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "flag": "no book, chapter or verse printed: «a washing in the Word» is identified as Eph. 5:26 by the Doctrina page, not by the Triglot [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; Triglot page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Titus.3.5-Titus.3.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Small Catechism",
+    "loc": "Part IV (Baptism), third question",
+    "how": "inline reference (chapter named)",
+    "sentence": "[…] a gracious water of life and a washing of regeneration in the Holy Ghost, as St. Paul says, Titus, chapter three: By the washing of regeneration and renewing of the Holy Ghost, which He shed on us abundantly through Jesus Christ, our Savior, that, being justified by His grace, we should be made heirs according to the hope of eternal life. This is a faithful saying.",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "Titus, chapter three",
+    "flag": "verse(s) identified from the quoted words by Doctrina; the document prints book and chapter only [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; Triglot page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Titus.3.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Large Catechism",
+    "loc": "Part IV (Baptism), the sentence before the Latin paragraph number 28] (the water and the Word)",
+    "how": "inline reference",
+    "sentence": "[…] for by the Word such power is imparted to Baptism that it is a laver of regeneration, as St. Paul also calls it, Titus 3, 5. […]",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "Titus 3, 5"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; Triglot page image not read]",
+  "locCount": 1
+ }
+]

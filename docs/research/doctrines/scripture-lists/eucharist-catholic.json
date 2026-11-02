@@ -1,0 +1,1265 @@
+[
+ {
+  "refs": [
+   "Matt.26.28"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1365, fn 186",
+    "how": "footnote",
+    "sentence": "In the Eucharist Christ gives us the very body which he gave up for us on the cross, the very blood which he \"poured out for many for the forgiveness of sins.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   },
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§13",
+    "how": "inline reference",
+    "sentence": "Mt 26:28; Mk 14:24; Lk 22:20; Jn 10:15), yet it is first and foremost a gift to the Father: “asacrifice that the Father accepted, giving, in return for this total self-giving by his Son, who 'became obedient unto death' (Phil […]",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   },
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§16",
+    "how": "inline reference",
+    "sentence": "The Eucharistic Sacrifice is intrinsically directed to the inward union of the faithful with Christ through communion; we receive the very One who offered himself for us, we receive his body which he gave up for us on the Cross […]",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Luke.22.19"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1376, fn 204",
+    "how": "footnote",
+    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   },
+   {
+    "work": "CCC",
+    "loc": "§1381",
+    "how": "inline",
+    "sentence": "[…] is the truth, he cannot lie.'\" Seeing, touching, tasting are in thee deceived; How says trusty hearing? that shall be believed; What God's Son has told me, take for truth I do; Truth himself speaks truly or there's nothing true.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted inline reference, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XXII (the Mass; page cites ch. 1, 2, 6 and the canons)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] sub- joined, whatsoever is opposed to this most pure faith and sacred doctrine. ON THE SACRIFICE OF THE MASS. Canon i. — If anyone saith that in the mass a true and proper sacrifice is not offered to God ; or that to be offered is nothing else but that Christ is given us to eat ; let him be anathema. Canon ii. — If anyone saith that by those words. Do this for the commemoration of Me (Luke xxii. 19), Christ did not insti- tute the Apostles priests ; […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Luke xxii. 19"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted inline reference, 2026-11-01]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Luke.22.19-Luke.22.20"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1365, fn 185",
+    "how": "footnote",
+    "sentence": "[…] sacrifice. the sacrificial character of the Eucharist is manifested in the very words of institution: \"This is my body which is given for you\" and \"This cup which is poured out for you is the New Covenant in my blood.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   },
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§12",
+    "how": "inline reference",
+    "sentence": "In instituting it, he did not merely say: “This is my body”, “this is my blood”, but went on to add: “which is given for you”, “which is poured out for you” (Lk 22:19-20).",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "John.6.53"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1384, fn 215",
+    "how": "footnote",
+    "sentence": "[…] an invitation to us, urging us to receive him in the sacrament of the Eucharist: \"Truly, I say to you, unless you eat the flesh of the Son of man and drink his blood, you have no life in you.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P42.HTM"
+   },
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§16",
+    "how": "inline reference",
+    "sentence": "When for the first time Jesus spoke of this food, his listeners were astonished and bewildered, which forced the Master to emphasize the objective truth of his words: “Truly, truly, I say to you, unless you eat the flesh of […]",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Heb.7.27"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1085, fn 8",
+    "how": "footnote",
+    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
+   },
+   {
+    "work": "CCC",
+    "loc": "§1366, fn 187",
+    "how": "footnote",
+    "sentence": "[…] bloody sacrifice which he was to accomplish once for all on the cross would be re-presented, its memory perpetuated until the end of the world, and its salutary power be applied to the forgiveness of the sins we daily commit.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Gen.14.18"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1333, fn 153",
+    "how": "footnote",
+    "sentence": "[…] hands,\" but above all as \"fruit of the earth\" and \"of the vine\" - gifts of the Creator. the Church sees in the gesture of the king-priest Melchizedek, who \"brought out bread and wine,\" a prefiguring of her own offering.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3Z.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Num.28"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 348",
+    "how": "footnote",
+    "sentence": "This was the case especially with the sabbath laws, for he recalls, often with rabbinical arguments, that the sabbath rest is not violated by serving God and neighbour, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.104.13-Ps.104.15"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1333, fn 152",
+    "how": "footnote",
+    "sentence": "Thus in the Offertory we give thanks to the Creator for bread and wine, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3Z.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Isa.11.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XXI (communion; page cites ch. 1–3 and can. 2)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] by the Holy Spirit, who is the spirit of wisdom and of understanding, the spirit of counsel and of godliness* and following the judgmentf and usage of the Church itself — declares and teaches that laymen, and clerics when not consecrating,^ are not obliged, by any divine precept, to receive the sacrament of the Eucharist under both species ; and that neither can it by any means be doubted, without injury to faith,§ that communion under either species. * Is. xi. 2. t Concil. Constantiense. } Non confidentes. § Sal […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Is. xi. 2"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mal.1.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XXII (the Mass; page cites ch. 1, 2, 6 and the canons)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] in a bloody manner on the altar of the cross ; the Holy Synod teaches that this sacrifice is truly propitiatory, and that by means thereof this is effected, that we obtain mercy, and find grace in seasonable aid^ if we draw nigh unto God, contrite and penitent, with a sincere heart and upright faith, with fear and reverence. For the Lord, appeased by the oblation thereof, and granting the • Colos. i. 13. t Malach. i. 11. { i Cor. x. 21. § Heb. iv. 6. ON THE SAC […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Malach. i. 11"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.2.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XIII (the Eucharist; page cites ch. 1, 2, 4–6 and can. 1, 2, 4, 6)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] benefit, whereby the victory and triumph of His death are represented. And so indeed did it behove victorious truth to celebrate a triumph over falsehood and heresy, that thus her adversaries, at the sight of so much splendour, and in the midst of so great joy of the universal Church, may either pine away,\\\\ -weakened and broken, or, touched with shame and confounded, at length repent. * Do exhibit, or render, quin exhibeant. t Ps. xcvi. 7. J Matth. ii. 11. § Memores, unforgetful. II Ps. cxi. 10. 8o SESS […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Matth. ii. 11"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.12.5"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 348",
+    "how": "footnote",
+    "sentence": "This was the case especially with the sabbath laws, for he recalls, often with rabbinical arguments, that the sabbath rest is not violated by serving God and neighbour, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.18.20"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1373, fn 196",
+    "how": "footnote",
+    "sentence": "[…] the dead, who is at the right hand of God, who indeed intercedes for us,\" is present in many ways to his Church: in his word, in his Church's prayer, \"where two or three are gathered in my name,\" […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.25.31-Matt.25.46"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1373, fn 197",
+    "how": "footnote",
+    "sentence": "[…] of God, who indeed intercedes for us,\" is present in many ways to his Church: in his word, in his Church's prayer, \"where two or three are gathered in my name,\" in the poor, the sick, and the imprisoned, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.26.26"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1376, fn 204",
+    "how": "footnote",
+    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.2.25-Mark.2.27"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 348",
+    "how": "footnote",
+    "sentence": "This was the case especially with the sabbath laws, for he recalls, often with rabbinical arguments, that the sabbath rest is not violated by serving God and neighbour, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.7.18-Mark.7.21"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 346",
+    "how": "footnote",
+    "sentence": "For from within, out of the heart of man, come evil thoughts. . .\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.14.22"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1376, fn 204",
+    "how": "footnote",
+    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.14.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§13",
+    "how": "inline reference",
+    "sentence": "Mt 26:28; Mk 14:24; Lk 22:20; Jn 10:15), yet it is first and foremost a gift to the Father: “asacrifice that the Father accepted, giving, in return for this total self-giving by his Son, who 'became obedient unto death' (Phil […]",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.13.15-Luke.13.16"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 348",
+    "how": "footnote",
+    "sentence": "This was the case especially with the sabbath laws, for he recalls, often with rabbinical arguments, that the sabbath rest is not violated by serving God and neighbour, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.14.3-Luke.14.4"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 348",
+    "how": "footnote",
+    "sentence": "This was the case especially with the sabbath laws, for he recalls, often with rabbinical arguments, that the sabbath rest is not violated by serving God and neighbour, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.22.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§13",
+    "how": "inline reference",
+    "sentence": "Mt 26:28; Mk 14:24; Lk 22:20; Jn 10:15), yet it is first and foremost a gift to the Father: “asacrifice that the Father accepted, giving, in return for this total self-giving by his Son, who 'became obedient unto death' (Phil […]",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.22.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XIII (the Eucharist; page cites ch. 1, 2, 4–6 and can. 1, 2, 4, 6)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] of life and conversation those subject to them, thinks it meet that the bishops be first of all admonished to bear in mind that they are pastors and not strikers^ and that they ought so to preside over those subject to them, as not to lord it over them,§ but to love them as sons and brethren; and to strive, by exhortation and admonition. ' Habita copia confessoris. f Eo ipso, by that very X Titus i. 7. § Luke xxii. 25. act. ON REFORMATION. 85 to deter them from […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Luke xxii. 25"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.5.36"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 347",
+    "how": "footnote",
+    "sentence": "[…] presenting with divine authority the definitive interpretation of the Law, Jesus found himself confronted by certain teachers of the Law who did not accept his interpretation of the Law, guaranteed though it was by the divine signs that accompanied it.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1338, fn 163",
+    "how": "footnote",
+    "sentence": "[…] of the institution of the Eucharist; St. John, for his part, reports the words of Jesus in the synagogue of Capernaum that prepare for the institution of the Eucharist: Christ calls himself the bread of life, come down from heaven.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3Z.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.55"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§16",
+    "how": "inline reference",
+    "sentence": "This is no metaphorical food: “My flesh is food indeed, and my blood is drink indeed” (Jn 6:55).",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.57"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§16",
+    "how": "inline reference",
+    "sentence": "We are reminded of his words: “As the living Father sent me, and I live because of the Father, so he who eats me will live because of me” (Jn 6:57).",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.60"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1336, fn 158",
+    "how": "footnote",
+    "sentence": "The first announcement of the Eucharist divided the disciples, just as the announcement of the Passion scandalized them: \"This is a hard saying; who can listen to it?\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3Z.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.67"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1336, fn 159",
+    "how": "footnote",
+    "sentence": "\"Will you also go away?\":",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3Z.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.7.22-John.7.24"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 348",
+    "how": "footnote",
+    "sentence": "This was the case especially with the sabbath laws, for he recalls, often with rabbinical arguments, that the sabbath rest is not violated by serving God and neighbour, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.10.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§13",
+    "how": "inline reference",
+    "sentence": "Mt 26:28; Mk 14:24; Lk 22:20; Jn 10:15), yet it is first and foremost a gift to the Father: “asacrifice that the Father accepted, giving, in return for this total self-giving by his Son, who 'became obedient unto death' (Phil […]",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.10.17-John.10.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§13",
+    "how": "inline reference",
+    "sentence": "Jn 10:17-18) is in the first place a gift to his Father.",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.10.25"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 347",
+    "how": "footnote",
+    "sentence": "[…] presenting with divine authority the definitive interpretation of the Law, Jesus found himself confronted by certain teachers of the Law who did not accept his interpretation of the Law, guaranteed though it was by the divine signs that accompanied it.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.10.37-John.10.38"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 347",
+    "how": "footnote",
+    "sentence": "[…] presenting with divine authority the definitive interpretation of the Law, Jesus found himself confronted by certain teachers of the Law who did not accept his interpretation of the Law, guaranteed though it was by the divine signs that accompanied it.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.12.37"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 347",
+    "how": "footnote",
+    "sentence": "[…] presenting with divine authority the definitive interpretation of the Law, Jesus found himself confronted by certain teachers of the Law who did not accept his interpretation of the Law, guaranteed though it was by the divine signs that accompanied it.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.13.1"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1085, fn 8",
+    "how": "footnote",
+    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.13.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§25",
+    "how": "inline reference",
+    "sentence": "Jn 13:25) and to feel the infinite love present in his heart.",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.17.1"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1085, fn 8",
+    "how": "footnote",
+    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.19.34"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XXII (the Mass; page cites ch. 1, 2, 6 and the canons)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] be explained to the people. Although the mass contains great instruction for the faithful people, nevertheless it has not seemed expedient to the Fathers that it should be everywhere§ celebrated in the vulgar tongue. Wherefore, the ancient usage of each church, and the right approved of by the holy Roman Church, the mother and mistress of all churches, being in each place retained ; * Synod. Quini— Sext. cap. 32 ; Con. Carthag. iii. c. 24 ; Concil. Flor. f John xix. 34. JApoc. xvii. 15. § Passim, indiscriminately. 158 […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "John xix. 34"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.42"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1342, fn 166",
+    "how": "footnote",
+    "sentence": "Day by day, attending the temple together and breaking bread in their homes, they partook of food with glad and generous hearts.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3Z.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.46"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1342, fn 166",
+    "how": "footnote",
+    "sentence": "Day by day, attending the temple together and breaking bread in their homes, they partook of food with glad and generous hearts.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3Z.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.6.10"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1085, fn 8",
+    "how": "footnote",
+    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.8.34"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1373, fn 195",
+    "how": "footnote",
+    "sentence": "\"Christ Jesus, who died, yes, who was raised from the dead, who is at the right hand of God, who indeed intercedes for us,\" is present in many ways to his Church: […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.5.7"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1364, fn 184",
+    "how": "footnote",
+    "sentence": "\"As often as the sacrifice of the Cross by which 'Christ our Pasch has been sacrificed' is celebrated on the altar, the work of our redemption is carried out.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.16-1Cor.10.17"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1396, fn 231",
+    "how": "footnote",
+    "sentence": "Because there is one bread, we who are many are one body, for we all partake of the one bread:\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P42.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.23"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1366, fn 187",
+    "how": "footnote",
+    "sentence": "[…] bloody sacrifice which he was to accomplish once for all on the cross would be re-presented, its memory perpetuated until the end of the world, and its salutary power be applied to the forgiveness of the sins we daily commit.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.24"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1376, fn 204",
+    "how": "footnote",
+    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.27-1Cor.11.29"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1385, fn 216",
+    "how": "footnote",
+    "sentence": "For any one who eats and drinks without discerning the body eats and drinks judgment upon himself.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P42.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.12.13"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1396, fn 230",
+    "how": "footnote",
+    "sentence": "In Baptism we have been called to form but one body.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P42.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.11.26"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1341, fn 165",
+    "how": "footnote",
+    "sentence": "It is directed at the liturgical celebration, by the apostles and their successors, of the memorial of Christ, of his life, of his death, of his Resurrection, and of his intercession in the presence of the Father.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3Z.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gal.3.24"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§582, fn 346",
+    "how": "footnote",
+    "sentence": "For from within, out of the heart of man, come evil thoughts. . .\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P1N.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.1.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XXII (the Mass; page cites ch. 1, 2, 6 and the canons)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] that irreverence may be avoided, each, in his own diocese, shall forbid that any wandering or unknown priest be allowed to celebrate mass. Furthermore, they shall not allow anyone who is publicly and notoriously stained with crime, either to minister at the holy altar, or to assist at the sacred services ; nor shall they suffer the holy sacrifice to be celebrated, either by any Seculars or Regulars whatsoever, in * Jerem. xlviii. lo. t Per. J Ephes. i. 5. § Pro missis novis, probably yfri^ masses ; or, m […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Ephes. i. 5"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Phil.2.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§13",
+    "how": "inline reference",
+    "sentence": "Mt 26:28; Mk 14:24; Lk 22:20; Jn 10:15), yet it is first and foremost a gift to the Father: “asacrifice that the Father accepted, giving, in return for this total self-giving by his Son, who 'became obedient unto death' (Phil […]",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.4.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XXII (the Mass; page cites ch. 1, 2, 6 and the canons)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] altar of the cross ; the Holy Synod teaches that this sacrifice is truly propitiatory, and that by means thereof this is effected, that we obtain mercy, and find grace in seasonable aid^ if we draw nigh unto God, contrite and penitent, with a sincere heart and upright faith, with fear and reverence. For the Lord, appeased by the oblation thereof, and granting the • Colos. i. 13. t Malach. i. 11. { i Cor. x. 21. § Heb. iv. 6. ON THE SACRIFICE OF THE MASS. 1 55 grac […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Heb. iv. 6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.7.24"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1366, fn 187",
+    "how": "footnote",
+    "sentence": "[…] bloody sacrifice which he was to accomplish once for all on the cross would be re-presented, its memory perpetuated until the end of the world, and its salutary power be applied to the forgiveness of the sins we daily commit.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.7.25-Heb.7.27"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1364, fn 183",
+    "how": "footnote",
+    "sentence": "When the Church celebrates the Eucharist, she commemorates Christ's Passover, and it is made present the sacrifice Christ offered once for all on the cross remains ever present.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.9.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session XXII (the Mass; page cites ch. 1, 2, 6 and the canons)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] whom He then consti- tuted priests of the New Testament : and by those words, Do this in commemoration of Me^ He commanded them and their successors in the priesthood to offer (them) ; even as the Catholic Church has always understood and taught. For, hav- ing celebrated the ancient Passover, which the multitude of the children of Israel immolated in memory of their going out of * Heb. vii. Ii,', 18. \\ v. II. } Heb. ix. 5. § V. 12. II Ps. cix. 4. II Luke xxii. ig. […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Heb. ix. 5"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.9.12"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1085, fn 8",
+    "how": "footnote",
+    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.9.14"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1367, fn 188",
+    "how": "footnote",
+    "sentence": "\"In this divine sacrifice which is celebrated in the Mass, the same Christ who offered himself once in a bloody manner on the altar of the cross is contained and is offered in an unbloody manner.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.9.27"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1367, fn 188",
+    "how": "footnote",
+    "sentence": "\"In this divine sacrifice which is celebrated in the Mass, the same Christ who offered himself once in a bloody manner on the altar of the cross is contained and is offered in an unbloody manner.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ }
+]

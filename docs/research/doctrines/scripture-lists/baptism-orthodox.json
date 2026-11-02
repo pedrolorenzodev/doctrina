@@ -1,0 +1,411 @@
+[
+ {
+  "refs": [
+   "John.3.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 139, fn †",
+    "how": "footnote reference (editor's)",
+    "sentence": "We believe Holy Baptism, which was instituted by the Lord, and is conferred in the name of the Holy Trinity, to be of the highest necessity. For without it none is able to be saved, as the Lord saith, 'Whosoever is not born of water and of the Spirit, shall in no wise enter into the Kingdom of the Heavens.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John iii., 5"
+   },
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 288",
+    "how": "inline reference",
+    "sentence": "Baptism is a Sacrament, in which a man who believes, having his body thrice plunged in water in the name of God the Father, the Son, and the Holy Ghost, dies to the carnal life of sin, and is born again of the Holy Ghost to a life spiritual and holy. Except a man be born of water and of the Spirit, he can not enter into the kingdom of God. John iii. 5.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "John iii. 5"
+   },
+   {
+    "work": "Orthodox Confession of Peter Mogila",
+    "loc": "I. Q. 102",
+    "how": "inline reference",
+    "sentence": "[…] After which Regeneration by Water and the Spirit a Man is restored to the Grace of God, and the Way opened him into the Kingdom of Heaven; as our Saviour said (John iii. 5), Except a Man be born of Water and of the Spirit, he cannot enter into the Kingdom of God.",
+    "edition": "J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/cu31924029363094",
+    "printed": "John iii. 5"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Gal.3.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 142, footnote",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] If he putteth on Christ, then in effect he becometh free from sin through Baptism.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Gal. iii., 27"
+   },
+   {
+    "work": "Orthodox Confession of Peter Mogila",
+    "loc": "I. Q. 102–103 (fruits of baptism)",
+    "how": "inline reference",
+    "sentence": "Moreover, by Baptism we become Members of Christ's Body, and put on the Lord Jesus, as the Apostle witnesseth (Gal. iii. 27), As many of you as have been Baptized with Christ have put on Christ.",
+    "edition": "J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/cu31924029363094",
+    "printed": "Gal. iii. 27"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Matt.3.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 142, footnote",
+    "how": "footnote reference (editor's)",
+    "sentence": "For if Baptism be by the Spirit and by fire, it is manifest that it is in all a perfect cleansing […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. iii., 11"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.19.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 140, fn *",
+    "how": "footnote reference (editor's)",
+    "sentence": "Moreover, infants are saved, as is said in Matthew; but he that is not baptised is not saved.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xix., 12",
+    "flag": "printed «Matt. xix., 12» in Robertson's footnote; the passage on infants (Matt 19:14) is a different verse; the printed reference is reproduced, not corrected (the apply.md notes the same «anomalous Matthew attribution»)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.28.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 289",
+    "how": "inline reference",
+    "sentence": "Lastly, after his resurrection, he gave the Apostles this solemn commandment: Go ye and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost. Matt. xxviii. 19.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Matt. xxviii. 19"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.16.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 291",
+    "how": "inline reference",
+    "sentence": "[…] He that believeth and is baptized shall be saved. Mark xvi. 16.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Mark xvi. 16"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.16.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 297",
+    "how": "inline reference",
+    "sentence": "Jesus Christ gave to believers this promise: In my name shall they cast out devils. Mark xvi. 17.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Mark xvi. 17"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.38"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 291",
+    "how": "inline reference",
+    "sentence": "Repentance and faith; for which cause, also, before Baptism they recite the Creed. Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost. Acts ii. 38.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Acts ii. 38"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 140, fn †",
+    "how": "footnote reference (editor's)",
+    "sentence": "And in the Acts it is said that the whole houses were baptised, and consequently the infants.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Acts viii., 12; xvi., 33"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.16.33"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 140, fn †",
+    "how": "footnote reference (editor's)",
+    "sentence": "And in the Acts it is said that the whole houses were baptised, and consequently the infants.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Acts viii., 12; xvi., 33"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.19.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 289",
+    "how": "inline reference",
+    "sentence": "First, John baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on Christ Jesus. Acts xix. 4.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Acts xix. 4"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.5.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 142, footnote",
+    "how": "footnote reference (editor's)",
+    "sentence": "This Paul also teacheth more plainly, saying: 'As through one [man] we, being many, were made sinners, so through one [are we made] righteous.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Rom. v., 19"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.6.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Confession of Peter Mogila",
+    "loc": "I. Q. 102–103 (fruits of baptism)",
+    "how": "inline reference",
+    "sentence": "Secondly, It plainly renews or regenerates the Man, and restores him to that State of Justice and Righteousness wherein he stood before […]; As the Apostle testifies (1 Cor. vi. 11), But ye are Washed, but ye are sanctified, but ye are justified, in the Name of the Lord Jesus, and by the Spirit of our God.",
+    "edition": "J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/cu31924029363094",
+    "printed": "1 Cor. vi. 11"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.2.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 296",
+    "how": "inline reference",
+    "sentence": "The Apostle Paul says, that all men, without grace, walk according to the course of this world, according to the prince of the power of the air, the spirit that now worketh in the children of disobedience. Eph. ii. 2.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Eph. ii. 2"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.2.11-Col.2.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 294",
+    "how": "inline reference",
+    "sentence": "From the following words of the Apostle to believers: Ye are circumcised with the circumcision made without hands, in putting off the body of the sins of the flesh, by the circumcision of Christ, buried with him in Baptism. Coloss. ii, 11, 12.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Coloss. ii, 11, 12"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.3.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 142, footnote",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] If the baptised putteth off the old man, then sin also.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Col. iii., 9"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Titus.3.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 142, footnote",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] If it be regeneration, old things are passed away.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Tit. iii., 5"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.6.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 142, footnote",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] If it be light, it dispelleth the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Heb. vi., 4"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ }
+]

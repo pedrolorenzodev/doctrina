@@ -1,0 +1,1628 @@
+[
+ {
+  "refs": [
+   "John.3.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.4 note (f) (1719 p. 117; 1677 p. 270)",
+    "how": "margin note",
+    "sentence": "Immersion, or dipping of the person in water, is necessary to the due administration of this ordinance.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; McGlothlin 1911 p. 270 reads the same (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt 3.16; John 3.23"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.4 note (h) (1688 p. 98)",
+    "how": "margin note",
+    "sentence": "Immersion, or Dipping of the Person in Water, is necessary to the due administration of this Ordinance.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01, printed pp. 96–98",
+    "tagCite": "[verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+    "printed": "«h Mat. 3. 16. Joh. 3. 23.»"
+   },
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XL, p. 185 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+    "printed": "Matt. 3.16; John 3.23; Acts 8.38; Rev. 1.5; Rev. 7.14; Heb. 10.22"
+   },
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Catechism (e-text, Q. 97–101)",
+    "loc": "Q. 97–101",
+    "how": "answers",
+    "sentence": "",
+    "edition": "e-text, numbering belongs only to that transcription",
+    "tagCite": "[unverified: e-text; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 6,
+  "inPage": true,
+  "tag": "[unverified: e-text; recorded in baptism/baptist.apply.md]; [unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]; [unverified: not re-read by A5; recorded in baptism/baptist.apply.md]; [unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]; [verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+  "locCount": 7
+ },
+ {
+  "refs": [
+   "Rom.6.3-Rom.6.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.1 note (a) (1719 p. 116); note (c) (1688 p. 97)",
+    "how": "margin note",
+    "sentence": "Baptism is an Ordinance of the New Testament, ordained by Jesus Christ, to be unto the party Baptized, a sign of his fellowship with him, in his death, and resurrection; of his being engrafted into him; of remission of sins; and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; 1688 p. 97 per session A3 (notes read, wording as 1677) (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1719: «Rom. 6.3,4,5. Col. 2.12. Gal. 3.27.»"
+   },
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XXXIX–XL, p. 185",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 185 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.18, 19; Mark 16.16; Acts 2.37,38; 8.36–38; 18.8; Rom. 6.3–5; 1 Cor. 15.28, 29",
+    "flag": "the last locator is retained as printed (apply.md)"
+   },
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145",
+    "how": "margin note",
+    "sentence": "Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+    "printed": "margin as printed (selection)"
+   },
+   {
+    "work": "Baptist Catechism (e-text, Q. 97–101)",
+    "loc": "Q. 97–101",
+    "how": "answers",
+    "sentence": "",
+    "edition": "e-text, numbering belongs only to that transcription",
+    "tagCite": "[unverified: e-text; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 6,
+  "inPage": true,
+  "tag": "[unverified: e-text; recorded in baptism/baptist.apply.md]; [unverified: not re-read by A5; recorded in baptism/baptist.apply.md]; [verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 6
+ },
+ {
+  "refs": [
+   "Matt.28.19-Matt.28.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "28.1 note (a) (1719 p. 115)",
+    "how": "margin note",
+    "sentence": "Baptism and the Lords Supper are ordinances of positive, and soveraign institution; appointed by the Lord Jesus the only Law-giver, to be continued in his Church to the end of the world.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Mat. 28. 19, 20; 1 Cor. 11. 26 (McGlothlin 1911 p. 269 reads the same)"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.3 note (e) (1719 p. 117; 1677 p. 270)",
+    "how": "margin note",
+    "sentence": "The outward element to be used in this ordinance, is water, wherein the party is to be baptized, in the name of the Father, and of the Son, and of the Holy Spirit.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; McGlothlin 1911 p. 270 reads the same (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Mat. 28. 19, 20, with Act. 8. 38."
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "28.1 note (a) (1688 p. 96)",
+    "how": "margin note",
+    "sentence": "Baptism and the Lord's Supper, are Ordinances of positive and soveraign Institution, appointed by the Lord Jesus, the only Law-giver, to be continued in his Church to the end of the World.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01, printed pp. 96–98",
+    "tagCite": "[verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+    "printed": "«a Matth. 28. 19, 20. 1 Cor.11.26.»"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.3 note (g) (1688 p. 98)",
+    "how": "margin note",
+    "sentence": "The outward Element, to be used in this Ordinance, is Water, wherein the Party is to be baptized, in the Name of the Father, and of the Son, and of the Holy Spirit.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01, printed pp. 96–98",
+    "tagCite": "[verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+    "printed": "«g Matth. 28. 19, 20. with Acts 8. 38.»"
+   },
+   {
+    "work": "Standard Confession (1660)",
+    "loc": "XI, p. 115",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 115 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.19, 20; Mark 16.16; Acts 2.38; 8.12; 18.8"
+   },
+   {
+    "work": "Baptist Catechism (e-text, Q. 97–101)",
+    "loc": "Q. 97–101",
+    "how": "answers",
+    "sentence": "",
+    "edition": "e-text, numbering belongs only to that transcription",
+    "tagCite": "[unverified: e-text; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 5,
+  "inPage": true,
+  "tag": "[unverified: e-text; recorded in baptism/baptist.apply.md]; [unverified: not re-read by A5; recorded in baptism/baptist.apply.md]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]; [verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+  "locCount": 8
+ },
+ {
+  "refs": [
+   "Col.2.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.1 note (a) (1719 p. 116); note (c) (1688 p. 97)",
+    "how": "margin note",
+    "sentence": "Baptism is an Ordinance of the New Testament, ordained by Jesus Christ, to be unto the party Baptized, a sign of his fellowship with him, in his death, and resurrection; of his being engrafted into him; of remission of sins; and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; 1688 p. 97 per session A3 (notes read, wording as 1677) (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1719: «Rom. 6.3,4,5. Col. 2.12. Gal. 3.27.»"
+   },
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Catechism (e-text, Q. 97–101)",
+    "loc": "Q. 97–101",
+    "how": "answers",
+    "sentence": "",
+    "edition": "e-text, numbering belongs only to that transcription",
+    "tagCite": "[unverified: e-text; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 5,
+  "inPage": true,
+  "tag": "[unverified: e-text; recorded in baptism/baptist.apply.md]; [unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]; [unverified: not re-read by A5; recorded in baptism/baptist.apply.md]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 5
+ },
+ {
+  "refs": [
+   "Matt.3.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.4 note (f) (1719 p. 117; 1677 p. 270)",
+    "how": "margin note",
+    "sentence": "Immersion, or dipping of the person in water, is necessary to the due administration of this ordinance.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; McGlothlin 1911 p. 270 reads the same (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt 3.16; John 3.23"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.4 note (h) (1688 p. 98)",
+    "how": "margin note",
+    "sentence": "Immersion, or Dipping of the Person in Water, is necessary to the due administration of this Ordinance.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01, printed pp. 96–98",
+    "tagCite": "[verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+    "printed": "«h Mat. 3. 16. Joh. 3. 23.»"
+   },
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XL, p. 185 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+    "printed": "Matt. 3.16; John 3.23; Acts 8.38; Rev. 1.5; Rev. 7.14; Heb. 10.22"
+   },
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 4,
+  "inPage": true,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]; [unverified: not re-read by A5; recorded in baptism/baptist.apply.md]; [unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]; [verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+  "locCount": 5
+ },
+ {
+  "refs": [
+   "Mark.16.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.2 note (1688 p. 97; 1677)",
+    "how": "margin note",
+    "sentence": "Those who do actually profess repentance towards God, faith in, and obedience, to our Lord Jesus, are the only proper subjects of this ordinance.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1688: «Mar.16.16. Acts 8.36,37.»; 1677 (McGlothlin p. 270): «Mar. 16. 16. Act. 8. 36, 37.»",
+    "flag": "VARIANT: the 1719 prints «Mark 16.16; Acts 8.37,38»; the 1688 print is the primary reading for this margin (DECISIONS 2026-11-01)"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.2 note (d) (1719 p. 116)",
+    "how": "margin note (variant of the 1688 reading)",
+    "sentence": "Those who do actually profess repentance towards God, faith in, and obedience, to our Lord Jesus, are the only proper subjects of this ordinance.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1719: «Mark 16.16; Acts 8.37,38»"
+   },
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XXXIX–XL, p. 185",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 185 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.18, 19; Mark 16.16; Acts 2.37,38; 8.36–38; 18.8; Rom. 6.3–5; 1 Cor. 15.28, 29",
+    "flag": "the last locator is retained as printed (apply.md)"
+   },
+   {
+    "work": "Standard Confession (1660)",
+    "loc": "XI, p. 115",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 115 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.19, 20; Mark 16.16; Acts 2.38; 8.12; 18.8"
+   },
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145",
+    "how": "margin note",
+    "sentence": "Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+    "printed": "margin as printed (selection)"
+   }
+  ],
+  "count": 4,
+  "inPage": false,
+  "tag": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 5
+ },
+ {
+  "refs": [
+   "Gal.3.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.1 note (a) (1719 p. 116); note (c) (1688 p. 97)",
+    "how": "margin note",
+    "sentence": "Baptism is an Ordinance of the New Testament, ordained by Jesus Christ, to be unto the party Baptized, a sign of his fellowship with him, in his death, and resurrection; of his being engrafted into him; of remission of sins; and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; 1688 p. 97 per session A3 (notes read, wording as 1677) (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1719: «Rom. 6.3,4,5. Col. 2.12. Gal. 3.27.»"
+   },
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145",
+    "how": "margin note",
+    "sentence": "Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+    "printed": "margin as printed (selection)"
+   },
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Catechism (e-text, Q. 97–101)",
+    "loc": "Q. 97–101",
+    "how": "answers",
+    "sentence": "",
+    "edition": "e-text, numbering belongs only to that transcription",
+    "tagCite": "[unverified: e-text; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 4,
+  "inPage": false,
+  "tag": "[unverified: e-text; recorded in baptism/baptist.apply.md]; [unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]; [verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "Matt.28.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "28.2 note (b) (1719 p. 116)",
+    "how": "margin note",
+    "sentence": "These holy appointments are to be administered by those only, who are qualified and thereunto called according to the commission of Christ.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Mat. 28. 19; 1 Cor. 4. 1"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "28.2 note (b) (1688 p. 96)",
+    "how": "margin note",
+    "sentence": "These holy appointments are to be administred by those only, who are qualified and thereunto called according to the Commission of Christ.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01, printed pp. 96–98",
+    "tagCite": "[verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+    "printed": "«b Mat.28.19. 1 Cor. 4. 1.»"
+   },
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145",
+    "how": "margin note",
+    "sentence": "Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+    "printed": "margin as printed (selection)"
+   },
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]; [verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]; [verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "Acts.8.38"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.3 note (e) (1719 p. 117; 1677 p. 270)",
+    "how": "margin note",
+    "sentence": "The outward element to be used in this ordinance, is water, wherein the party is to be baptized, in the name of the Father, and of the Son, and of the Holy Spirit.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; McGlothlin 1911 p. 270 reads the same (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Mat. 28. 19, 20, with Act. 8. 38."
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.3 note (g) (1688 p. 98)",
+    "how": "margin note",
+    "sentence": "The outward Element, to be used in this Ordinance, is Water, wherein the Party is to be baptized, in the Name of the Father, and of the Son, and of the Holy Spirit.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01, printed pp. 96–98",
+    "tagCite": "[verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+    "printed": "«g Matth. 28. 19, 20. with Acts 8. 38.»"
+   },
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XL, p. 185 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+    "printed": "Matt. 3.16; John 3.23; Acts 8.38; Rev. 1.5; Rev. 7.14; Heb. 10.22"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]; [verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "1Cor.4.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "28.2 note (b) (1719 p. 116)",
+    "how": "margin note",
+    "sentence": "These holy appointments are to be administered by those only, who are qualified and thereunto called according to the commission of Christ.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Mat. 28. 19; 1 Cor. 4. 1"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "28.2 note (b) (1688 p. 96)",
+    "how": "margin note",
+    "sentence": "These holy appointments are to be administred by those only, who are qualified and thereunto called according to the Commission of Christ.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01, printed pp. 96–98",
+    "tagCite": "[verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+    "printed": "«b Mat.28.19. 1 Cor. 4. 1.»"
+   },
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]; [verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Mark.1.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.1 note (b) (1719 p. 116); note (d) (1688 p. 97)",
+    "how": "margin note",
+    "sentence": "[…] of remission of sins; […]",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; 1688 p. 97 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Mark 1.4. Acts 26.16. (printed «Act. 26. 16» in all three prints)",
+    "flag": "«Acts 26:16» is the printed reference in the 1677, 1688 and 1719 prints; a possible misprint for 22:16 is flagged, not decided (apply.md)"
+   },
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Mark.1.9-Mark.1.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   },
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Acts.2.38"
+  ],
+  "citedBy": [
+   {
+    "work": "Standard Confession (1660)",
+    "loc": "XI, p. 115",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 115 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.19, 20; Mark 16.16; Acts 2.38; 8.12; 18.8"
+   },
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145",
+    "how": "margin note",
+    "sentence": "Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+    "printed": "margin as printed (selection)"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Acts.8.36-Acts.8.38"
+  ],
+  "citedBy": [
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XXXIX–XL, p. 185",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 185 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.18, 19; Mark 16.16; Acts 2.37,38; 8.36–38; 18.8; Rom. 6.3–5; 1 Cor. 15.28, 29",
+    "flag": "the last locator is retained as printed (apply.md)"
+   },
+   {
+    "work": "Baptist Catechism (e-text, Q. 97–101)",
+    "loc": "Q. 97–101",
+    "how": "answers",
+    "sentence": "",
+    "edition": "e-text, numbering belongs only to that transcription",
+    "tagCite": "[unverified: e-text; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: e-text; recorded in baptism/baptist.apply.md]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Acts.18.8"
+  ],
+  "citedBy": [
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XXXIX–XL, p. 185",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 185 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.18, 19; Mark 16.16; Acts 2.37,38; 8.36–38; 18.8; Rom. 6.3–5; 1 Cor. 15.28, 29",
+    "flag": "the last locator is retained as printed (apply.md)"
+   },
+   {
+    "work": "Standard Confession (1660)",
+    "loc": "XI, p. 115",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 115 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.19, 20; Mark 16.16; Acts 2.38; 8.12; 18.8"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Rom.6.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.1 note (c) (1719); note (e) (1688 p. 97 «Rom. 6. 2, 4»); 1677 «Rom. 6. 2, 4»; 1719 prints «Rom, 6. 24»",
+    "how": "margin note",
+    "sentence": "[…] and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; 1688 p. 97 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1677/1688: «Rom. 6. 2, 4»; 1719: «Rom, 6. 24» (comma not visible in the 1719 image)",
+    "flag": "the 1719 reading «6. 24» is not read as 6:2,4 in the 1719 itself; the 1677 and 1688 readings are used"
+   },
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]; [verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "1Cor.11.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "28.1 note (a) (1719 p. 115)",
+    "how": "margin note",
+    "sentence": "Baptism and the Lords Supper are ordinances of positive, and soveraign institution; appointed by the Lord Jesus the only Law-giver, to be continued in his Church to the end of the world.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Mat. 28. 19, 20; 1 Cor. 11. 26 (McGlothlin 1911 p. 269 reads the same)"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "28.1 note (a) (1688 p. 96)",
+    "how": "margin note",
+    "sentence": "Baptism and the Lord's Supper, are Ordinances of positive and soveraign Institution, appointed by the Lord Jesus, the only Law-giver, to be continued in his Church to the end of the World.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01, printed pp. 96–98",
+    "tagCite": "[verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+    "printed": "«a Matth. 28. 19, 20. 1 Cor.11.26.»"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]; [verified: page image of the 1688 print read by A5 2026-11-01 (leaves n119, n121, printed pp. 96, 98); n120 (p. 97) by A3]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Matt.3.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.3.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.3.13-Matt.3.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.26.26-Matt.26.30"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.28.18-Matt.28.19"
+  ],
+  "citedBy": [
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XXXIX–XL, p. 185",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 185 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.18, 19; Mark 16.16; Acts 2.37,38; 8.36–38; 18.8; Rom. 6.3–5; 1 Cor. 15.28, 29",
+    "flag": "the last locator is retained as printed (apply.md)"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.28.18-Matt.28.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Union of Great Britain Declaration of Principle",
+    "loc": "all three clauses",
+    "how": "framing reference",
+    "sentence": "",
+    "edition": "official page, as recorded in apply.md",
+    "tagCite": "[unverified: official page, not re-read by A5]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: official page, not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.1.5"
+  ],
+  "citedBy": [
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.1.9-Mark.1.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145",
+    "how": "margin note",
+    "sentence": "Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+    "printed": "margin as printed (selection)"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.14.22-Mark.14.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.3.21-Luke.3.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.22.19-Luke.22.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.31"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.3.22-John.3.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.37-Acts.2.38"
+  ],
+  "citedBy": [
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XXXIX–XL, p. 185",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 185 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.18, 19; Mark 16.16; Acts 2.37,38; 8.36–38; 18.8; Rom. 6.3–5; 1 Cor. 15.28, 29",
+    "flag": "the last locator is retained as printed (apply.md)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.37-Acts.2.42"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Catechism (e-text, Q. 97–101)",
+    "loc": "Q. 97–101",
+    "how": "answers",
+    "sentence": "",
+    "edition": "e-text, numbering belongs only to that transcription",
+    "tagCite": "[unverified: e-text; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: e-text; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.41"
+  ],
+  "citedBy": [
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.41-Acts.2.42"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Standard Confession (1660)",
+    "loc": "XI, p. 115",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 115 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.19, 20; Mark 16.16; Acts 2.38; 8.12; 18.8"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.35-Acts.8.39"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.36-Acts.8.37"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.2 note (1688 p. 97; 1677)",
+    "how": "margin note",
+    "sentence": "Those who do actually profess repentance towards God, faith in, and obedience, to our Lord Jesus, are the only proper subjects of this ordinance.",
+    "edition": "A Confession of Faith … (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688, page image read by session A3 2026-11-01 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1688: «Mar.16.16. Acts 8.36,37.»; 1677 (McGlothlin p. 270): «Mar. 16. 16. Act. 8. 36, 37.»",
+    "flag": "VARIANT: the 1719 prints «Mark 16.16; Acts 8.37,38»; the 1688 print is the primary reading for this margin (DECISIONS 2026-11-01)"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.36-Acts.8.39"
+  ],
+  "citedBy": [
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.37-Acts.8.38"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.2 note (d) (1719 p. 116)",
+    "how": "margin note (variant of the 1688 reading)",
+    "sentence": "Those who do actually profess repentance towards God, faith in, and obedience, to our Lord Jesus, are the only proper subjects of this ordinance.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1719: «Mark 16.16; Acts 8.37,38»"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.37"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.38-Acts.8.39"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message 1925",
+    "loc": "XIII",
+    "how": "proof-text list",
+    "sentence": "(copyright/short excerpts only; text not quoted here)",
+    "edition": "Annual of the SBC 1925 pp. 73–74, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.16.30-Acts.16.33"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.16.32-Acts.16.34"
+  ],
+  "citedBy": [
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.20.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.26.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.1 note (b) (1719 p. 116); note (d) (1688 p. 97)",
+    "how": "margin note",
+    "sentence": "[…] of remission of sins; […]",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; 1688 p. 97 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Mark 1.4. Acts 26.16. (printed «Act. 26. 16» in all three prints)",
+    "flag": "«Acts 26:16» is the printed reference in the 1677, 1688 and 1719 prints; a possible misprint for 22:16 is flagged, not decided (apply.md)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.6.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.6.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "29.1 note (c) (1719); note (e) (1688 p. 97 «Rom. 6. 2, 4»); 1677 «Rom. 6. 2, 4»; 1719 prints «Rom, 6. 24»",
+    "how": "margin note",
+    "sentence": "[…] and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.",
+    "edition": "A Confession of Faith … fourth edition (London, 1719), archive.org bim_eighteenth-century_a-confession-of-faith-p_1719, margin read on the page image by session B 2026-11-01; 1688 p. 97 (clause text: McGlothlin 1911, the 1677 print; the 1688/1719 wording was not collated clause by clause)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "1677/1688: «Rom. 6. 2, 4»; 1719: «Rom, 6. 24» (comma not visible in the 1719 image)",
+    "flag": "the 1719 reading «6. 24» is not read as 6:2,4 in the 1719 itself; the 1677 and 1688 readings are used"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.23-1Cor.11.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Baptist Faith and Message (1963 and 2000)",
+    "loc": "VII",
+    "how": "proof-text list (shared baptism/Lord's Supper list, not clause by clause)",
+    "sentence": "(copyright: not quoted; official text https://bfm.sbc.net/bfm2000/)",
+    "edition": "BF&M 1963 Annual p. 276; BF&M 2000 official page, as recorded in apply.md",
+    "tagCite": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.12.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145",
+    "how": "margin note",
+    "sentence": "Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+    "printed": "margin as printed (selection)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified earlier: apply.md «selection from the printed margin»; the OCR of this file shows more margin entries (e.g. Acts 8:35,36; John 1, 3:22,23) that the apply.md selection leaves out; OCR not re-read here]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.15.28-1Cor.15.29"
+  ],
+  "citedBy": [
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XXXIX–XL, p. 185",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "McGlothlin 1911 p. 185 (scan, as recorded in apply.md)",
+    "tagCite": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+    "printed": "Matt. 28.18, 19; Mark 16.16; Acts 2.37,38; 8.36–38; 18.8; Rom. 6.3–5; 1 Cor. 15.28, 29",
+    "flag": "the last locator is retained as printed (apply.md)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified earlier: margin read on the page image by session B / A3 and recorded in baptism/baptist.apply.md; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.15.29"
+  ],
+  "citedBy": [
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.3.3"
+  ],
+  "citedBy": [
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Titus.3.5"
+  ],
+  "citedBy": [
+   {
+    "work": "NAFWB Treatise (2026) XVIII.1",
+    "loc": "notes 146–147",
+    "how": "footnote apparatus",
+    "sentence": "",
+    "edition": "NAFWB Treatise, print p. 32 / PDF p. 40, as recorded in apply.md",
+    "tagCite": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: extracted, not visually collated; recorded in baptism/baptist.apply.md]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.6.1-Heb.6.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Creed (1678)",
+    "loc": "XXVIII, pp. 144–145 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+    "printed": "Matt. 3.11; Rom. 6.1 &c.; Acts 8.37; Matt. 3.6; Heb. 6.1,2; John 1.2, 8, 31; 3.22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page and the OCR; not re-read by A5]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.10.22"
+  ],
+  "citedBy": [
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XL, p. 185 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+    "printed": "Matt. 3.16; John 3.23; Acts 8.38; Rev. 1.5; Rev. 7.14; Heb. 10.22"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rev.1.5"
+  ],
+  "citedBy": [
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XL, p. 185 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+    "printed": "Matt. 3.16; John 3.23; Acts 8.38; Rev. 1.5; Rev. 7.14; Heb. 10.22"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rev.7.14"
+  ],
+  "citedBy": [
+   {
+    "work": "First London Confession (1646)",
+    "loc": "XL, p. 185 (further margin entries)",
+    "how": "margin note",
+    "sentence": "",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl, OCR djvu text (reprint of the 1677 print)",
+    "tagCite": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+    "printed": "Matt. 3.16; John 3.23; Acts 8.38; Rev. 1.5; Rev. 7.14; Heb. 10.22"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: read by verifier V2 on the McGlothlin page; not re-read by A5; the dossier calls its First London row a selection]",
+  "locCount": 1
+ }
+]

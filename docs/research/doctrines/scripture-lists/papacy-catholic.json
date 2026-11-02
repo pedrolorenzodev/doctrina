@@ -1,0 +1,2216 @@
+[
+ {
+  "refs": [
+   "John.21.15-John.21.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§553, note 288; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Jn 21:15-17; Cf. 10:11.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§880, note 398; https://www.vatican.va/archive/ENG0015/__P2A.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "LG 19; cf. Lk 6:13; Jn 21:15-17.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§881, note 400; https://www.vatican.va/archive/ENG0015/__P2A.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 16:18-19; Jn 21:15-17.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 139; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Jn. 21:15-17.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 11; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Jn 21:15-17.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   },
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. 21:15-17)",
+    "edition": "25 May 1995; official English Vatican HTML",
+    "flag": "the quoted fragment has no book name; the book is taken from the preceding text of the paragraph (not verified by A5)"
+   },
+   {
+    "work": "Pastor aeternus",
+    "loc": "ch. I; no numbered reference supplied for ch. IV quotations; https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+    "how": "inline",
+    "sentence": "Atque uni Simoni Petro contulit Iesus post suam resurrectionem summi pastoris et rectoris iurisdictionem in totum suum ovile, dicens: Pasce agnos meos: Pasce oves meas (Ioan. XXI, 15-17).",
+    "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML"
+   }
+  ],
+  "count": 5,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.22.32"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§552, note 286; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Lk 22:32.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§25, Scripture note 166; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Lk. 22:32.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   },
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 10; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Lk 22:32.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   },
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. 22:32)",
+    "edition": "25 May 1995; official English Vatican HTML",
+    "flag": "the quoted fragment has no book name; the book is taken from the preceding text of the paragraph (not verified by A5)"
+   },
+   {
+    "work": "Pastor aeternus",
+    "loc": "ch. IV, promise; no numbered reference supplied for ch. IV quotations; https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+    "how": "inline",
+    "sentence": "secundum Domini Salvatoris nostri divinam pollicitationem discipulorum suorum principi factam: Ego rogavi pro te, ut non deficiat fides tua, et tu aliquando conversus confirma fratres tuos […]",
+    "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML",
+    "identified": true,
+    "flag": "the print gives no Scripture reference here; the verse is identified from the quoted words by Codex [unverified]"
+   }
+  ],
+  "count": 4,
+  "inPage": true,
+  "tag": "[verified: official HTML for the documents that print the reference; the Pastor aeternus ch. IV row quotes the Latin but prints no reference: identification [unverified]]"
+ },
+ {
+  "refs": [
+   "Matt.16.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§552, note 284; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt 16:18.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 146; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Rev. 21:14; Mt. 16:18; Eph. 2:20.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 9; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 16:18.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   },
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§869, exact citing parenthesis; https://www.vatican.va/archive/ENG0015/__P29.HTM",
+    "how": "inline",
+    "sentence": "(cf Mt 16:18)",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Pastor aeternus",
+    "loc": "ch. IV, Formula of Hormisdas; no numbered reference supplied for ch. IV quotations; https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+    "how": "inline",
+    "sentence": "Et quia non potest Domini nostri Iesu Christi praetermitti sententia dicentis: Tu es Petrus, et super hanc petram aedificabo Ecclesiam meam […]",
+    "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML",
+    "identified": true,
+    "flag": "the print gives no Scripture reference here; the verse is identified from the quoted words by Codex [unverified]"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[verified: official HTML for the documents that print the reference; the Pastor aeternus ch. IV row quotes the Latin but prints no reference: identification [unverified]]"
+ },
+ {
+  "refs": [
+   "1Cor.15.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§552, note 283; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Mk 3:16; 9:2; Lk 24:34; I Cor 15:5.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. 15:5)",
+    "edition": "25 May 1995; official English Vatican HTML",
+    "flag": "the quoted fragment has no book name; the book is taken from the preceding text of the paragraph (not verified by A5)"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.20.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§861, note 374; https://www.vatican.va/archive/ENG0015/__P29.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "LG 20; cf. Acts 20:28; St. Clement of Rome, Ad Cor. 42, 44: PG 1, 291-300.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§20, Scripture note 148; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Acts 20:28.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.1.42"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   },
+   {
+    "work": "Pastor aeternus",
+    "loc": "ch. I; no numbered reference supplied for ch. IV quotations; https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+    "how": "inline",
+    "sentence": "Unum enim Simonem, cui iam pridem dixerat: Tu vocaberis Cephas (Ioan. I, 42) […]",
+    "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.10.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§553, note 288; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Jn 21:15-17; Cf. 10:11.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§27, Scripture note 171; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Jn. 10:11.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.20.21-John.20.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 141; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:16-20; Mk. 16:15; Lk. 24:45-48; Jn. 20:21-23.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§1441, note 41; https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Jn 20:21-23.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.21.15-John.21.19"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   },
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. Jn 21:15-19)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.22.26-Luke.22.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§894, note 426; https://www.vatican.va/archive/ENG0015/__P2A.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "LG 27; cf. Lk 22:26-27.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§27, Scripture note 169; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Lk. 22:26-27.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.6.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§880, note 398; https://www.vatican.va/archive/ENG0015/__P2A.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "LG 19; cf. Lk 6:13; Jn 21:15-17.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 138; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Lk. 6:13.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.16.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§888, note 415; https://www.vatican.va/archive/ENG0015/__P2A.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "PO 4; cf. Mk 16:15.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 141; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:16-20; Mk. 16:15; Lk. 24:45-48; Jn. 20:21-23.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.3.13-Mark.3.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§551, note 280; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mk 3:13-19.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 137; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Mk. 3:13-19; Mt. 10:1-42.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.3.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§552, note 283; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Mk 3:16; 9:2; Lk 24:34; I Cor 15:5.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 6; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mk 3:16; Lk 6:14; Acts 1: 13.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.16.18-Matt.16.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§881, note 400; https://www.vatican.va/archive/ENG0015/__P2A.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 16:18-19; Jn 21:15-17.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§22, Scripture note 156; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 16.18-19.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.16.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§553, note 287; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt 16:19.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§22, Scripture note 158; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt. 16:19.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§1444, note 45; https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt 16:19; cf. Mt 18:18; 28:16-20.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.18.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§553, note 289; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 18:18.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§22, Scripture note 159; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt. 18:18, 28:16-20.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§1444, note 45; https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt 16:19; cf. Mt 18:18; 28:16-20.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.28.16-Matt.28.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 141; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:16-20; Mk. 16:15; Lk. 24:45-48; Jn. 20:21-23.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§22, Scripture note 159; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt. 18:18, 28:16-20.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§1444, note 45; https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt 16:19; cf. Mt 18:18; 28:16-20.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Rev.21.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 146; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Rev. 21:14; Mt. 16:18; Eph. 2:20.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§869, exact citing parenthesis; https://www.vatican.va/archive/ENG0015/__P29.HTM",
+    "how": "inline",
+    "sentence": "(Rev 21:14)",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Cor.1.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Unitatis redintegratio",
+    "loc": "§3, note 20 (sqq.: starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Cor. 1, 11 sqq; 11, 22.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Cor.11.18-1Cor.11.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Unitatis redintegratio",
+    "loc": "§3, note 19; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Cor. 11, 18-19; Gal. 1, 6-9; 1 Jn. 2, 18-19.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Cor.11.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Unitatis redintegratio",
+    "loc": "§3, note 20 (sqq.: starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Cor. 1, 11 sqq; 11, 22.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Cor.12.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§12, Scripture note 114; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "1 Cor. 12:11.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Cor.4.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 151; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Cor. 4:1.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Cor.4.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 150; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Cor. 4:15.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§27, Scripture note 175; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Cor. 4:15.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1John.2.18-1John.2.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Unitatis redintegratio",
+    "loc": "§3, note 19; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Cor. 11, 18-19; Gal. 1, 6-9; 1 Jn. 2, 18-19.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1John.2.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Mysterium Ecclesiae",
+    "loc": "§2, exact citing parenthesis; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19730705_mysterium-ecclesiae_en.html",
+    "how": "inline",
+    "sentence": "(cf. 1 Jn 2:20, 27)",
+    "edition": "24 June 1973; official English Vatican HTML (URL dated 5 July)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1John.2.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Mysterium Ecclesiae",
+    "loc": "§2, exact citing parenthesis; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19730705_mysterium-ecclesiae_en.html",
+    "how": "inline",
+    "sentence": "(cf. 1 Jn 2:20, 27)",
+    "edition": "24 June 1973; official English Vatican HTML (URL dated 5 July)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Pet.2.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§552, note 285; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "I Pt 2:4.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Pet.5.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§893, note 424; https://www.vatican.va/archive/ENG0015/__P2A.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "1 Pet 5:3.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Thess.2.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§12, Scripture note 112; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Thess. 2:13.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Tim.1.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 163; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:17, 25; 21:19; Rom. 11:13; 1 Tim. 1:12.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "1Tim.4.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 155; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf 1 Tim. 4:14; 2 Tim. 1:6-7.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "2Cor.11.28"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§6, note 23; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html; English prints “Cor” without book number; 2 Cor identification inherited from the current page, not verified here",
+    "how": "inline (footnote reference)",
+    "sentence": "Cor 11:28.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: English HTML omits Corinthian book number]"
+ },
+ {
+  "refs": [
+   "2Cor.12.7-2Cor.12.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. Mt 16:17; 2 Cor 12:7-10)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "2Cor.12.9-2Cor.12.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§92; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "( 2 Cor 12:9-10)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "2Cor.3.8-2Cor.3.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 153; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 2 Cor. 3:8-9.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "2Cor.4.7"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§15, note 49; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 2 Cor 4:7.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "2Tim.1.6-2Tim.1.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 155; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf 1 Tim. 4:14; 2 Tim. 1:6-7.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "2Tim.4.1-2Tim.4.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§25, Scripture note 165; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 2 Tim. 4:1-4.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.1.13"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 6; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mk 3:16; Lk 6:14; Acts 1: 13.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.1.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 163; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:17, 25; 21:19; Rom. 11:13; 1 Tim. 1:12.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.1.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 163; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:17, 25; 21:19; Rom. 11:13; 1 Tim. 1:12.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.1.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 144; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Acts 1.8.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 154; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:8, 2:4, Jn. 20:22-23.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 162 (ff. left open; starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:8- 2:1 ff, 9:15.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.2.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 162 (ff. left open; starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:8- 2:1 ff, 9:15.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.2.1-Acts.2.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 143; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Acts 2:1-26.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.2.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§90; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "\"Peter ... and the Eleven\" (2:14; cf. 2:37, 5:29)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.2.37"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§90; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "\"Peter ... and the Eleven\" (2:14; cf. 2:37, 5:29)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.2.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 154; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:8, 2:4, Jn. 20:22-23.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.20.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 152; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Rom. 15:16; Acts 20:24.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.21.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 163; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:17, 25; 21:19; Rom. 11:13; 1 Tim. 1:12.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.26.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 161 (ff. left open; starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:18; Mk. 16:15-16; Acts 26:17 ff.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.5.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§90; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "\"Peter ... and the Eleven\" (2:14; cf. 2:37, 5:29)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Acts.9.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 162 (ff. left open; starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:8- 2:1 ff, 9:15.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Col.3.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§815, note 265; https://www.vatican.va/archive/ENG0015/__P29.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Col 3:14.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Eph.2.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 146; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Rev. 21:14; Mt. 16:18; Eph. 2:20.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Eph.4.4-Eph.4.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Mysterium Ecclesiae",
+    "loc": "§2, exact citing parenthesis; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19730705_mysterium-ecclesiae_en.html",
+    "how": "inline",
+    "sentence": "(cf. Eph 4:4, 5)",
+    "edition": "24 June 1973; official English Vatican HTML (URL dated 5 July)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Gal.1.6-Gal.1.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Unitatis redintegratio",
+    "loc": "§3, note 19; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. 1 Cor. 11, 18-19; Gal. 1, 6-9; 1 Jn. 2, 18-19.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Gal.2.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§886, note 412; https://www.vatican.va/archive/ENG0015/__P2A.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Gal 2:10.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Heb.13.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§12, Scripture note 110; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Heb. 13:15.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Heb.13.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§27, Scripture note 173; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Heb. 13:17.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Heb.5.1-Heb.5.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§27, Scripture note 172; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Heb. 5:1-2.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.10.11-John.10.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§94; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. Jn 10:11-18)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.13.36-John.13.38"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.13.38"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. 13:38)",
+    "edition": "25 May 1995; official English Vatican HTML",
+    "flag": "the quoted fragment has no book name; the book is taken from the preceding text of the paragraph (not verified by A5)"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.17.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§96; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "( Jn 17:21)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.17.21-John.17.23"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§4, note 18; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Jn 17:21-23 […]",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.20.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§18, Scripture note 136; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Jn. 20:21.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.20.22-John.20.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 154; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:8, 2:4, Jn. 20:22-23.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.21.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§22, Scripture note 157 (ff. left open; starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Jn. 21:15 ff.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.3.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§14, Scripture note 124; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mk. 16:16; Jn. 3.5.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.6.67-John.6.70"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Jude.1.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§12, Scripture note 113; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Jud. 3",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§20, Scripture note 149; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Lk. 10:16.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.2.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Mysterium Ecclesiae",
+    "loc": "§2, exact citing parenthesis; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19730705_mysterium-ecclesiae_en.html",
+    "how": "inline",
+    "sentence": "(cf. Lk. 2:19, 51)",
+    "edition": "24 June 1973; official English Vatican HTML (URL dated 5 July)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.2.51"
+  ],
+  "citedBy": [
+   {
+    "work": "Mysterium Ecclesiae",
+    "loc": "§2, exact citing parenthesis; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19730705_mysterium-ecclesiae_en.html",
+    "how": "inline",
+    "sentence": "(cf. Lk. 2:19, 51)",
+    "edition": "24 June 1973; official English Vatican HTML (URL dated 5 July)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.22.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§88; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "\"I am among you as one who serves\" ( Lk 22:27)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.22.31-Luke.22.32"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. 22:31-32)",
+    "edition": "25 May 1995; official English Vatican HTML",
+    "flag": "the quoted fragment has no book name; the book is taken from the preceding text of the paragraph (not verified by A5)"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.24.34"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§552, note 283; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Mk 3:16; 9:2; Lk 24:34; I Cor 15:5.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.24.45-Luke.24.48"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 141; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:16-20; Mk. 16:15; Lk. 24:45-48; Jn. 20:21-23.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.5.8"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§15, note 48; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Lk 5:8.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.6.14"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 6; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mk 3:16; Lk 6:14; Acts 1: 13.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.7.48"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§1441, note 40; https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Mk 2:5, 10; Lk 7:48.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.9.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§551, note 281; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Lk 9:2[ETML:C/].",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.10.42"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§94; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. Mt 20:25; Mk 10:42)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.10.45"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§27, Scripture note 170; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 20:28; Mk. 10:45.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.16.15-Mark.16.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 161 (ff. left open; starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:18; Mk. 16:15-16; Acts 26:17 ff.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.16.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§14, Scripture note 124; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mk. 16:16; Jn. 3.5.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.16.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 145; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mk. 16:20.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.2.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§1441, note 40; https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Mk 2:5, 10; Lk 7:48.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.2.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§1441, note 40; https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Mk 2:5, 10; Lk 7:48.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.2.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§1441, note 39; https://www.vatican.va/archive/ENG0015/__P4C.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mk 2:7[ETML:C/].",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Mark.9.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§552, note 283; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Mk 3:16; 9:2; Lk 24:34; I Cor 15:5.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.10.1-Matt.10.42"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 137; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Mk. 3:13-19; Mt. 10:1-42.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.10.2"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 5; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Mt 10:2.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.13.52"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§25, Scripture note 164; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 13:52.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.14.28-Matt.14.31"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.16.16-Matt.16.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Pastor aeternus",
+    "loc": "ch. I; no numbered reference supplied for ch. IV quotations; https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-pastor-aeternus-18-iulii-1870.html",
+    "how": "inline",
+    "sentence": "postquam ille suam edidit confessionem inquiens Tu es Christus, Filius Dei vivi, solemnibus his verbis allocutus est Dominus: Beatus es Simon Bar-Iona; quia caro, et sanguis non revelavit tibi, sed Pater meus, qui in cöelis est: et ego dico tibi, quia tu es Petrus, et super hanc petram aedificabo Ecclesiam meam, et portae inferi non praevalebunt adversus eam: et tibi dabo claves regni coelorum: et quodcumque ligaveris super terram erit ligatum et in coelis: et quodcumque solveris super terram, erit solutum et in coelis (Matth. XVI, 16-19) […]",
+    "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.16.16-Matt.16.23"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.16.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. Mt 16:17; 2 Cor 12:7-10)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.16.17-Matt.16.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(16:17-19)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.16.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§91; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "( Mt 16:23)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.19.27-Matt.19.29"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.20.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Ut unum sint",
+    "loc": "§94; explicit parenthetical reference (surrounding prose omitted for quotation budget); https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25051995_ut-unum-sint.html",
+    "how": "inline",
+    "sentence": "(cf. Mt 20:25; Mk 10:42)",
+    "edition": "25 May 1995; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.20.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§27, Scripture note 170; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 20:28; Mk. 10:45.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.26.33-Matt.26.35"
+  ],
+  "citedBy": [
+   {
+    "work": "The Primacy of the Successor of Peter",
+    "loc": "§3, note 7; https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19981031_primato-successore-pietro_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt 14:28-31; 16:16-23 and par.; 19:27-29 and par.; 26:33-35 and par.; Lk 22:32; Jn 1:42; 6:67-70; 13:36-38; 21:15-19.",
+    "edition": "31 October 1998; official English; L’Osservatore Romano, 18 November 1998, pp. 5–6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.28.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 161 (ff. left open; starting verse only); https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:18; Mk. 16:15-16; Acts 26:17 ff.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.28.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 142; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:20.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Lumen gentium",
+    "loc": "§20, Scripture note 147; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Mt. 28:20.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Matt.5.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§23, Scripture note 160; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf . Mt. 5:10.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Rom.1.14-Rom.1.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§27, Scripture note 174; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Rom. 1:14-15.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Rom.1.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§19, Scripture note 140; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Rom. 1:16.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Rom.11.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§24, Scripture note 163; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf Acts 1:17, 25; 21:19; Rom. 11:13; 1 Tim. 1:12.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Rom.15.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Lumen gentium",
+    "loc": "§21, Scripture note 152; https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+    "how": "inline (footnote reference)",
+    "sentence": "Cf. Rom. 15:16; Acts 20:24.",
+    "edition": "21 November 1964; official English Vatican HTML"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "Luke.22.29-Luke.22.30"
+  ],
+  "citedBy": [
+   {
+    "work": "Catechism of the Catholic Church",
+    "loc": "§551, note 282; https://www.vatican.va/archive/ENG0015/__P1L.HTM",
+    "how": "inline (footnote reference)",
+    "sentence": "As my Father appointed a kingdom for me, so do I appoint for you that you may eat and drink at my table in my kingdom, and sit on thrones judging the twelve tribes of Israel.",
+    "edition": "1992 promulgation; English Vatican IntraText, online edition undated",
+    "addedBy": "A5 2026-11-01 (footnote missed by the first pass; found by verifier V3 and a parser audit)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: official HTML, explicit reference matched (A5 addition); online edition caveat in scope]"
+ }
+]

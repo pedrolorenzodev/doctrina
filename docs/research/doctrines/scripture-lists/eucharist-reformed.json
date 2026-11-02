@@ -1,0 +1,1231 @@
+[
+ {
+  "refs": [
+   "1Cor.11.23-1Cor.11.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.1 (letter a)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Our Lord Jesus, in the night wherein he was betrayed, instituted the sacrament of his body and blood, called the Lord's Supper, to be observed in his church unto the end of the world, for the perpetual remembrance of the sacrifice of himself in his death, the sealing all benefits thereof unto true believers, their spiritual nourishment and growth in him, their further engagement in and to all duties which they owe unto him, and to be a bond and pledge of their communion with him, and with each other, as members of his mystical body.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 23, 24, 25, 26; x. 16, 17, 21; xii. 13"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.3 (letter e)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Lord Jesus hath, in this ordinance, appointed his ministers to declare his word of institution to the people, to pray, and bless the elements of bread and wine, and thereby to set them apart from a common to a holy use; and to take and break the bread, to take the cup, and (they communicating also themselves) to give both to the communicants; but to none who are not then present in the congregation.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Matt. xxvi. 26, 27 [See in letter c]; Ver. 28; Mark xiv. 22, 23, 24; Luke xxii. 19, 20; 1 Cor. xi. 23–26 [See all in letter a]"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 168 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated in the OCR; see the Larger Catechism Q. 168; V9 gives it on LC p. 203)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 23 … Ver. 24, 25, 26",
+    "flag": "verse numbers of this block can be OCR errors (e.g. «Luke 22.80», «Zech. 12.26–28» read from the block); block boundaries follow the printed question numbers found in the OCR, and Q. 170 and Q. 177 markers were not found, so their proofs may sit in a neighbouring block"
+   },
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 96 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated; see the Shorter Catechism Q. 96)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images read by verifier V9 2026-11-02]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 23 … Ver. 24, 25, 26",
+    "flag": "block boundaries guessed from the Q. 96 marker (1441737) and an arbitrary 1.8k-character window; refs may include the next question's proofs"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]; [verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]; [verified: page images read by verifier V9 2026-11-02]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "1Cor.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.7 (letter o)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Worthy receivers, outwardly partaking of the visible elements in this sacrament, do then also inwardly by faith, really and indeed, yet not carnally and corporally, but spiritually, receive and feed upon Christ crucified, and all benefits of his death: the body and blood of Christ being then not corporally or carnally in, with, or under the bread and wine; yet as really, but spiritually, present to the faith of believers in that ordinance, as the elements themselves are to their outward senses.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. x. 16"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 168 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated in the OCR; see the Larger Catechism Q. 168; V9 gives it on LC p. 203)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. x. 16",
+    "flag": "verse numbers of this block can be OCR errors (e.g. «Luke 22.80», «Zech. 12.26–28» read from the block); block boundaries follow the printed question numbers found in the OCR, and Q. 170 and Q. 177 markers were not found, so their proofs may sit in a neighbouring block"
+   },
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 96 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated; see the Shorter Catechism Q. 96)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images read by verifier V9 2026-11-02]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. x. 16",
+    "flag": "block boundaries guessed from the Q. 96 marker (1441737) and an arbitrary 1.8k-character window; refs may include the next question's proofs"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]; [verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]; [verified: page images read by verifier V9 2026-11-02]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Matt.26.26-Matt.26.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.3 (letter e)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Lord Jesus hath, in this ordinance, appointed his ministers to declare his word of institution to the people, to pray, and bless the elements of bread and wine, and thereby to set them apart from a common to a holy use; and to take and break the bread, to take the cup, and (they communicating also themselves) to give both to the communicants; but to none who are not then present in the congregation.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Matt. xxvi. 26, 27 [See in letter c]; Ver. 28; Mark xiv. 22, 23, 24; Luke xxii. 19, 20; 1 Cor. xi. 23–26 [See all in letter a]"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.5 (letter k)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The outward elements in this sacrament, duly set apart to the uses ordained by Christ, have such relation to him crucified, as that truly, yet sacramentally only, they are sometimes called by the name of the things they represent, to wit, the body and blood of Christ; albeit, in substance and nature, they still remain truly and only bread and wine, as they were before.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Matt. xxvi. 26, 27, 28"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 168 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated in the OCR; see the Larger Catechism Q. 168; V9 gives it on LC p. 203)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Matt. xxvi. 26 … Ver. 27, 28",
+    "flag": "verse numbers of this block can be OCR errors (e.g. «Luke 22.80», «Zech. 12.26–28» read from the block); block boundaries follow the printed question numbers found in the OCR, and Q. 170 and Q. 177 markers were not found, so their proofs may sit in a neighbouring block"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]; [verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "1Cor.10.16-1Cor.10.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.1 (letter a)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Our Lord Jesus, in the night wherein he was betrayed, instituted the sacrament of his body and blood, called the Lord's Supper, to be observed in his church unto the end of the world, for the perpetual remembrance of the sacrifice of himself in his death, the sealing all benefits thereof unto true believers, their spiritual nourishment and growth in him, their further engagement in and to all duties which they owe unto him, and to be a bond and pledge of their communion with him, and with each other, as members of his mystical body.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 23, 24, 25, 26; x. 16, 17, 21; xii. 13"
+   },
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 97 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated; see the Shorter Catechism Q. 97)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images read by verifier V9 2026-11-02]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. x. 16 … Ver. 17",
+    "flag": "block boundaries guessed from the Q. 96 marker (1441737) and an arbitrary 1.8k-character window; refs may include the next question's proofs"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]; [verified: page images read by verifier V9 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "1Cor.10.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.1 (letter a)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Our Lord Jesus, in the night wherein he was betrayed, instituted the sacrament of his body and blood, called the Lord's Supper, to be observed in his church unto the end of the world, for the perpetual remembrance of the sacrifice of himself in his death, the sealing all benefits thereof unto true believers, their spiritual nourishment and growth in him, their further engagement in and to all duties which they owe unto him, and to be a bond and pledge of their communion with him, and with each other, as members of his mystical body.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 23, 24, 25, 26; x. 16, 17, 21; xii. 13"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 168 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated in the OCR; see the Larger Catechism Q. 168; V9 gives it on LC p. 203)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. x. 14 … Ver. 15, 16, 21",
+    "flag": "verse numbers of this block can be OCR errors (e.g. «Luke 22.80», «Zech. 12.26–28» read from the block); block boundaries follow the printed question numbers found in the OCR, and Q. 170 and Q. 177 markers were not found, so their proofs may sit in a neighbouring block"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]; [verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "1Cor.11.24-1Cor.11.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter c)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 24, 25, 26 [See them in letter a]; Matt. xxvi. 26; Ver. 27"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.6 (letter m)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "That doctrine which maintains a change of the substance of bread and wine into the substance of Christ's body and blood (commonly called Transubstantiation) by consecration of a priest, or by any other way, is repugnant not to Scripture alone, but even to common sense and reason; overthroweth the nature of the sacrament; and hath been and is the cause of manifold superstitions, yea, of gross idolatries.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Acts iii. 21; 1 Cor. xi. 24, 25, 26 [See in letter l]; Luke xxiv. 6; Ver. 39"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Matt.7.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.8 (letter q)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby; but by their unworthy coming thereunto are guilty of the body and blood of the Lord, to their own damnation. Wherefore all ignorant and ungodly persons, as they are unfit to enjoy communion with him, so are they unworthy of the Lord's table, and cannot, without great sin against Christ, while they remain such, partake of these holy mysteries, or be admitted thereunto.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. v. 6; Ver. 7, 13; 2 Thess. iii. 6, 14, 15; Matt. vii. 6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.15.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.4 (letter i)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Private masses, or receiving this sacrament by a priest, or any other, alone; as likewise the denial of the cup to the people; worshipping the elements, the lifting them up, or carrying them about for adoration, and the reserving them for any pretended religious use; are all contrary to the nature of this sacrament, and to the institution of Christ.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Matt. xv. 9"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.26.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 35 (footnote printed on the page)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(English sentence not matched to the note)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "' Act, iii. 21 ; JIarc xvi. 19 ; Matt. xxvi. 11."
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.26.26-Matt.26.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter c)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 24, 25, 26 [See them in letter a]; Matt. xxvi. 26; Ver. 27"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.26.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 35 (footnote printed on the page)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(English sentence not matched to the note)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "' Matt. xxvi. 26 ; Marc xiv. 22 ; Luc"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.26.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.5 (letter l)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The outward elements in this sacrament, duly set apart to the uses ordained by Christ, have such relation to him crucified, as that truly, yet sacramentally only, they are sometimes called by the name of the things they represent, to wit, the body and blood of Christ; albeit, in substance and nature, they still remain truly and only bread and wine, as they were before.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 26, 27, 28; Matt. xxvi. 29"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.14.22-Mark.14.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.3 (letter e)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Lord Jesus hath, in this ordinance, appointed his ministers to declare his word of institution to the people, to pray, and bless the elements of bread and wine, and thereby to set them apart from a common to a holy use; and to take and break the bread, to take the cup, and (they communicating also themselves) to give both to the communicants; but to none who are not then present in the congregation.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Matt. xxvi. 26, 27 [See in letter c]; Ver. 28; Mark xiv. 22, 23, 24; Luke xxii. 19, 20; 1 Cor. xi. 23–26 [See all in letter a]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.14.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.4 (letter h)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Private masses, or receiving this sacrament by a priest, or any other, alone; as likewise the denial of the cup to the people; worshipping the elements, the lifting them up, or carrying them about for adoration, and the reserving them for any pretended religious use; are all contrary to the nature of this sacrament, and to the institution of Christ.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Mark xiv. 23 [See in letter c]; 1 Cor. xi. 25, 26 [See in letter a]; Ver. 27, 28, 29"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.22.19-Luke.22.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.3 (letter e)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Lord Jesus hath, in this ordinance, appointed his ministers to declare his word of institution to the people, to pray, and bless the elements of bread and wine, and thereby to set them apart from a common to a holy use; and to take and break the bread, to take the cup, and (they communicating also themselves) to give both to the communicants; but to none who are not then present in the congregation.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Matt. xxvi. 26, 27 [See in letter c]; Ver. 28; Mark xiv. 22, 23, 24; Luke xxii. 19, 20; 1 Cor. xi. 23–26 [See all in letter a]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.22.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 168 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated in the OCR; see the Larger Catechism Q. 168; V9 gives it on LC p. 203)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Luke xxii. 20",
+    "flag": "verse numbers of this block can be OCR errors (e.g. «Luke 22.80», «Zech. 12.26–28» read from the block); block boundaries follow the printed question numbers found in the OCR, and Q. 170 and Q. 177 markers were not found, so their proofs may sit in a neighbouring block"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.24.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.6 (letter m)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "That doctrine which maintains a change of the substance of bread and wine into the substance of Christ's body and blood (commonly called Transubstantiation) by consecration of a priest, or by any other way, is repugnant not to Scripture alone, but even to common sense and reason; overthroweth the nature of the sacrament; and hath been and is the cause of manifold superstitions, yea, of gross idolatries.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Acts iii. 21; 1 Cor. xi. 24, 25, 26 [See in letter l]; Luke xxiv. 6; Ver. 39"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.24.39"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.6 (letter m)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "That doctrine which maintains a change of the substance of bread and wine into the substance of Christ's body and blood (commonly called Transubstantiation) by consecration of a priest, or by any other way, is repugnant not to Scripture alone, but even to common sense and reason; overthroweth the nature of the sacrament; and hath been and is the cause of manifold superstitions, yea, of gross idolatries.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Acts iii. 21; 1 Cor. xi. 24, 25, 26 [See in letter l]; Luke xxiv. 6; Ver. 39"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.3.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.6 (letter m)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "That doctrine which maintains a change of the substance of bread and wine into the substance of Christ's body and blood (commonly called Transubstantiation) by consecration of a priest, or by any other way, is repugnant not to Scripture alone, but even to common sense and reason; overthroweth the nature of the sacrament; and hath been and is the cause of manifold superstitions, yea, of gross idolatries.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Acts iii. 21; 1 Cor. xi. 24, 25, 26 [See in letter l]; Luke xxiv. 6; Ver. 39"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.20.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.3 (letter f)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Lord Jesus hath, in this ordinance, appointed his ministers to declare his word of institution to the people, to pray, and bless the elements of bread and wine, and thereby to set them apart from a common to a holy use; and to take and break the bread, to take the cup, and (they communicating also themselves) to give both to the communicants; but to none who are not then present in the congregation.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Acts xx. 7; 1 Cor. xi. 20"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.2.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 35 (footnote printed on the page)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(English sentence not matched to the note)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "* 1 Cor. xi. 29 ; 2 Cor. vi. 14, 15 ; 1 Cor. ii. 14."
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.5.6-1Cor.5.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.8 (letter q)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby; but by their unworthy coming thereunto are guilty of the body and blood of the Lord, to their own damnation. Wherefore all ignorant and ungodly persons, as they are unfit to enjoy communion with him, so are they unworthy of the Lord's table, and cannot, without great sin against Christ, while they remain such, partake of these holy mysteries, or be admitted thereunto.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. v. 6; Ver. 7, 13; 2 Thess. iii. 6, 14, 15; Matt. vii. 6"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.5.7-1Cor.5.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 97 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated; see the Shorter Catechism Q. 97)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images read by verifier V9 2026-11-02]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. v. 7 … Ver. 8",
+    "flag": "block boundaries guessed from the Q. 96 marker (1441737) and an arbitrary 1.8k-character window; refs may include the next question's proofs"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images read by verifier V9 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.5.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.8 (letter q)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby; but by their unworthy coming thereunto are guilty of the body and blood of the Lord, to their own damnation. Wherefore all ignorant and ungodly persons, as they are unfit to enjoy communion with him, so are they unworthy of the Lord's table, and cannot, without great sin against Christ, while they remain such, partake of these holy mysteries, or be admitted thereunto.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. v. 6; Ver. 7, 13; 2 Thess. iii. 6, 14, 15; Matt. vii. 6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.2-1Cor.10.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 35 (footnote printed on the page)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(English sentence not matched to the note)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "8 Matt, x.xvi. 2G, etc. ; Luc xxii. 19, 20 ; 1 Cor. x. 2-4."
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.4 (letter g)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Private masses, or receiving this sacrament by a priest, or any other, alone; as likewise the denial of the cup to the people; worshipping the elements, the lifting them up, or carrying them about for adoration, and the reserving them for any pretended religious use; are all contrary to the nature of this sacrament, and to the institution of Christ.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. x. 6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.14-1Cor.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 168 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated in the OCR; see the Larger Catechism Q. 168; V9 gives it on LC p. 203)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. x. 14 … Ver. 15, 16, 21",
+    "flag": "verse numbers of this block can be OCR errors (e.g. «Luke 22.80», «Zech. 12.26–28» read from the block); block boundaries follow the printed question numbers found in the OCR, and Q. 170 and Q. 177 markers were not found, so their proofs may sit in a neighbouring block"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 168 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated in the OCR; see the Larger Catechism Q. 168; V9 gives it on LC p. 203)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. x. 17",
+    "flag": "verse numbers of this block can be OCR errors (e.g. «Luke 22.80», «Zech. 12.26–28» read from the block); block boundaries follow the printed question numbers found in the OCR, and Q. 170 and Q. 177 markers were not found, so their proofs may sit in a neighbouring block"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.3 (letter f)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Lord Jesus hath, in this ordinance, appointed his ministers to declare his word of institution to the people, to pray, and bless the elements of bread and wine, and thereby to set them apart from a common to a holy use; and to take and break the bread, to take the cup, and (they communicating also themselves) to give both to the communicants; but to none who are not then present in the congregation.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Acts xx. 7; 1 Cor. xi. 20"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 168 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated in the OCR; see the Larger Catechism Q. 168; V9 gives it on LC p. 203)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 24",
+    "flag": "verse numbers of this block can be OCR errors (e.g. «Luke 22.80», «Zech. 12.26–28» read from the block); block boundaries follow the printed question numbers found in the OCR, and Q. 170 and Q. 177 markers were not found, so their proofs may sit in a neighbouring block"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.25-1Cor.11.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.4 (letter h)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Private masses, or receiving this sacrament by a priest, or any other, alone; as likewise the denial of the cup to the people; worshipping the elements, the lifting them up, or carrying them about for adoration, and the reserving them for any pretended religious use; are all contrary to the nature of this sacrament, and to the institution of Christ.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Mark xiv. 23 [See in letter c]; 1 Cor. xi. 25, 26 [See in letter a]; Ver. 27, 28, 29"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.26-1Cor.11.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.5 (letter l)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The outward elements in this sacrament, duly set apart to the uses ordained by Christ, have such relation to him crucified, as that truly, yet sacramentally only, they are sometimes called by the name of the things they represent, to wit, the body and blood of Christ; albeit, in substance and nature, they still remain truly and only bread and wine, as they were before.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 26, 27, 28; Matt. xxvi. 29"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.27-1Cor.11.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.8 (letter p)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby; but by their unworthy coming thereunto are guilty of the body and blood of the Lord, to their own damnation. Wherefore all ignorant and ungodly persons, as they are unfit to enjoy communion with him, so are they unworthy of the Lord's table, and cannot, without great sin against Christ, while they remain such, partake of these holy mysteries, or be admitted thereunto.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 27, 28 [See in letter l]; Ver. 29; 2 Cor. vi. 14, 15, 16"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.7 (letter n)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Worthy receivers, outwardly partaking of the visible elements in this sacrament, do then also inwardly by faith, really and indeed, yet not carnally and corporally, but spiritually, receive and feed upon Christ crucified, and all benefits of his death: the body and blood of Christ being then not corporally or carnally in, with, or under the bread and wine; yet as really, but spiritually, present to the faith of believers in that ordinance, as the elements themselves are to their outward senses.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 28 [See in letter l]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.28-1Cor.11.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 97 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated; see the Shorter Catechism Q. 97)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images read by verifier V9 2026-11-02]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 28 … Ver. 29",
+    "flag": "block boundaries guessed from the Q. 96 marker (1441737) and an arbitrary 1.8k-character window; refs may include the next question's proofs"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images read by verifier V9 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 35 (footnote printed on the page)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(English sentence not matched to the note)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "* 1 Cor. xi. 29 ; 2 Cor. vi. 14, 15 ; 1 Cor. ii. 14."
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.31"
+  ],
+  "citedBy": [
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 97 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated; see the Shorter Catechism Q. 97)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images read by verifier V9 2026-11-02]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 31",
+    "flag": "block boundaries guessed from the Q. 96 marker (1441737) and an arbitrary 1.8k-character window; refs may include the next question's proofs"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images read by verifier V9 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.12.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.1 (letter a)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Our Lord Jesus, in the night wherein he was betrayed, instituted the sacrament of his body and blood, called the Lord's Supper, to be observed in his church unto the end of the world, for the perpetual remembrance of the sacrifice of himself in his death, the sealing all benefits thereof unto true believers, their spiritual nourishment and growth in him, their further engagement in and to all duties which they owe unto him, and to be a bond and pledge of their communion with him, and with each other, as members of his mystical body.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 23, 24, 25, 26; x. 16, 17, 21; xii. 13"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.6.14-2Cor.6.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.8 (letter p)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby; but by their unworthy coming thereunto are guilty of the body and blood of the Lord, to their own damnation. Wherefore all ignorant and ungodly persons, as they are unfit to enjoy communion with him, so are they unworthy of the Lord's table, and cannot, without great sin against Christ, while they remain such, partake of these holy mysteries, or be admitted thereunto.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. xi. 27, 28 [See in letter l]; Ver. 29; 2 Cor. vi. 14, 15, 16"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.6.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 35 (footnote printed on the page)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(English sentence not matched to the note)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "* 1 Cor. xi. 29 ; 2 Cor. vi. 14, 15 ; 1 Cor. ii. 14."
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.6.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 35 (footnote printed on the page)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(English sentence not matched to the note)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "* 1 Cor. xi. 29 ; 2 Cor. vi. 14, 15 ; 1 Cor. ii. 14."
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.13.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 97 (proof block)",
+    "how": "proof-text block of the answer",
+    "sentence": "(answer text not isolated; see the Shorter Catechism Q. 97)",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images read by verifier V9 2026-11-02]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "2 Cor. xiii. 5",
+    "flag": "block boundaries guessed from the Q. 96 marker (1441737) and an arbitrary 1.8k-character window; refs may include the next question's proofs"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images read by verifier V9 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.3.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 35 (footnote printed on the page)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(English sentence not matched to the note)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "* 1 Cor. X. 1 6, 1 7 ; Eph. iii. 1 7 ; Jean vi. 35.",
+    "flag": "OCR line reads «Eph. iii. 1» / verse cut; V5 read 3:17 on the page"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Thess.3.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.8 (letter q)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby; but by their unworthy coming thereunto are guilty of the body and blood of the Lord, to their own damnation. Wherefore all ignorant and ungodly persons, as they are unfit to enjoy communion with him, so are they unworthy of the Lord's table, and cannot, without great sin against Christ, while they remain such, partake of these holy mysteries, or be admitted thereunto.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. v. 6; Ver. 7, 13; 2 Thess. iii. 6, 14, 15; Matt. vii. 6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Thess.3.14-2Thess.3.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.8 (letter q)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby; but by their unworthy coming thereunto are guilty of the body and blood of the Lord, to their own damnation. Wherefore all ignorant and ungodly persons, as they are unfit to enjoy communion with him, so are they unworthy of the Lord's table, and cannot, without great sin against Christ, while they remain such, partake of these holy mysteries, or be admitted thereunto.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "1 Cor. v. 6; Ver. 7, 13; 2 Thess. iii. 6, 14, 15; Matt. vii. 6"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.7.23-Heb.7.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter d)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Heb. vii. 23, 24, 27; x. 11, 12, 14, 18"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.7.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter d)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Heb. vii. 23, 24, 27; x. 11, 12, 14, 18"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.9.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter b)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Heb. ix. 22; Ver. 25, 26, 28"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.9.25-Heb.9.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter b)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Heb. ix. 22; Ver. 25, 26, 28"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.9.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter b)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Heb. ix. 22; Ver. 25, 26, 28"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.10.11-Heb.10.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter d)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Heb. vii. 23, 24, 27; x. 11, 12, 14, 18"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.10.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter d)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Heb. vii. 23, 24, 27; x. 11, 12, 14, 18"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.10.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "29.2 (letter d)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "In this sacrament Christ is not offered up to his Father, nor any real sacrifice made at all for remission of sins of the quick or dead; but only a commemoration of that one offering up of himself, by himself, upon the cross, once for all, and a spiritual oblation of all possible praise unto God for the same; so that the Popish sacrifice of the mass, as they call it, is most abominably injurious to Christ's one only sacrifice, the alone propitiation for all the sins of the elect.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (WCF 29: leaves n96–n98 = pp. 93–95; Larger Catechism Q. 168: leaves n206–n207; Shorter Catechism Q. 96–97: leaves n248–n249, confirmed by verifier V9)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Heb. vii. 23, 24, 27; x. 11, 12, 14, 18"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01 (leaves n96–n98, printed pp. 93–95)]",
+  "locCount": 1
+ }
+]
