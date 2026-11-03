@@ -1,0 +1,1054 @@
+{
+ "blocks": [
+  {
+   "catechism": "Larger",
+   "q": 168,
+   "letter": "z",
+   "clause": "The Lord's supper is a sacrament of the New Testament,",
+   "printed": [
+    "Luke xxii. 20"
+   ],
+   "page": 203,
+   "note": "letter printed as z; block starts at foot of left column and continues in right column"
+  },
+  {
+   "catechism": "Larger",
+   "q": 168,
+   "letter": "a",
+   "clause": "feed upon his body and blood, to their spiritual nourishment and growth in grace;",
+   "printed": [
+    "Matt. xxvi. 26; Ver. 27; Ver. 28",
+    "1 Cor. xi. 23; Ver. 24; Ver. 25; Ver. 26"
+   ],
+   "page": 203,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 168,
+   "letter": "b",
+   "clause": "have their union and communion with him confirmed;",
+   "printed": [
+    "1 Cor. x. 16"
+   ],
+   "page": 203,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 168,
+   "letter": "c",
+   "clause": "testify and renew their thankfulness,",
+   "printed": [
+    "1 Cor. xi. 24"
+   ],
+   "page": 203,
+   "note": "printed as [See above in a.]; references of a copied above (1 Cor. xi. 24 sits inside a)",
+   "seeLetter": "a"
+  },
+  {
+   "catechism": "Larger",
+   "q": 168,
+   "letter": "d",
+   "clause": "and engagement to God,",
+   "printed": [
+    "1 Cor. x. 14; Ver. 15; Ver. 16; Ver. 21"
+   ],
+   "page": 203,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 168,
+   "letter": "e",
+   "clause": "and their mutual love and fellowship each with other, as members of the same mystical body.",
+   "printed": [
+    "1 Cor. x. 17"
+   ],
+   "page": 203,
+   "note": "block begins at foot of p203 right column and continues on p204 (text read on p204: one bread, and one body)"
+  },
+  {
+   "catechism": "Larger",
+   "q": 169,
+   "letter": "f",
+   "clause": "to take and eat the bread, and to drink the wine, in thankful remembrance that the body of Christ was broken and given, and his blood shed, for them.",
+   "printed": [
+    "1 Cor. xi. 23, 24",
+    "Matt. xxvi. 26, 27, 28",
+    "Mark xiv. 22; Ver. 23; Ver. 24",
+    "Luke xxii. 19; Ver. 20"
+   ],
+   "page": 204,
+   "note": "first two references printed as [See before under a.] and [See before at a.]; the answer has only letter f (a-e belong to Q168)",
+   "seeLetter": "a"
+  },
+  {
+   "catechism": "Larger",
+   "q": 170,
+   "letter": "g",
+   "clause": "As the body and blood of Christ are not corporally or carnally present in, with, or under the bread and wine in the Lord's supper,",
+   "printed": [
+    "Acts iii. 21"
+   ],
+   "page": 204,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 170,
+   "letter": "h",
+   "clause": "and yet are spiritually present to the faith of the receiver, no less truly and really than the elements themselves are to their outward senses;",
+   "printed": [
+    "Matt. xxvi. 26; Ver. 28"
+   ],
+   "page": 204,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 170,
+   "letter": "i",
+   "clause": "do therein feed upon the body and blood of Christ, not after a corporal and carnal, but in a spiritual manner; yet truly and really,",
+   "printed": [
+    "1 Cor. xi. 24; Ver. 25; Ver. 26; Ver. 27; Ver. 28; Ver. 29"
+   ],
+   "page": 204,
+   "note": "block runs from left column into right column"
+  },
+  {
+   "catechism": "Larger",
+   "q": 170,
+   "letter": "k",
+   "clause": "while by faith they receive and apply unto themselves Christ crucified, and all the benefits of his death.",
+   "printed": [
+    "1 Cor. x. 16"
+   ],
+   "page": 204,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "l",
+   "clause": "by examining themselves",
+   "printed": [
+    "1 Cor. xi. 28"
+   ],
+   "page": 204,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "m",
+   "clause": "of their being in Christ,",
+   "printed": [
+    "2 Cor. xiii. 5"
+   ],
+   "page": 204,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "n",
+   "clause": "of their sins and wants;",
+   "printed": [
+    "1 Cor. v. 7",
+    "Exod. xii. 15"
+   ],
+   "page": 204,
+   "note": "Exod. xii. 15 is introduced by 'Compared with'"
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "o",
+   "clause": "of the truth and measure of their knowledge,",
+   "printed": [
+    "1 Cor. xi. 29"
+   ],
+   "page": 204,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "p",
+   "clause": "faith,",
+   "printed": [
+    "1 Cor. xiii. 5",
+    "Matt. xxvi. 28"
+   ],
+   "page": 204,
+   "note": "printed '1 Cor. xiii. 5. [See above in letter m.]' (m prints 2 Cor. xiii. 5: apparent misprint 1/2 in the source); Matt. xxvi. 28 follows",
+   "seeLetter": "m"
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "q",
+   "clause": "repentance;",
+   "printed": [
+    "Zech. xii. 10",
+    "1 Cor. xi. 31"
+   ],
+   "page": 204,
+   "note": "block continues on p205 (mourn for him ... 1 Cor. xi. 31)"
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "r",
+   "clause": "love to God and the brethren,",
+   "printed": [
+    "1 Cor. x. 16; Ver. 17",
+    "Acts ii. 46; Ver. 47"
+   ],
+   "page": 205,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "s",
+   "clause": "charity to all men,",
+   "printed": [
+    "1 Cor. v. 8",
+    "1 Cor. xi. 18; Ver. 20"
+   ],
+   "page": 205,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "t",
+   "clause": "forgiving those that have done them wrong;",
+   "printed": [
+    "Matt. v. 23; Ver. 24"
+   ],
+   "page": 205,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "v",
+   "clause": "of their desires after Christ,",
+   "printed": [
+    "Isa. lv. 1",
+    "John vii. 37"
+   ],
+   "page": 205,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "w",
+   "clause": "and of their new obedience;",
+   "printed": [
+    "1 Cor. v. 7; Ver. 8"
+   ],
+   "page": 205,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "x",
+   "clause": "and by renewing the exercise of these graces,",
+   "printed": [
+    "1 Cor. xi. 25; Ver. 26; Ver. 28",
+    "Heb. x. 21; Ver. 22; Ver. 24",
+    "Ps. xxvi. 6"
+   ],
+   "page": 205,
+   "note": "block runs from foot of left column to top of right column"
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "y",
+   "clause": "by serious meditation,",
+   "printed": [
+    "1 Cor. xi. 24; Ver. 25"
+   ],
+   "page": 205,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 171,
+   "letter": "z",
+   "clause": "and fervent prayer.",
+   "printed": [
+    "2 Chron. xxx. 18; Ver. 19",
+    "Matt. xxvi. 26"
+   ],
+   "page": 205,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 172,
+   "letter": "a",
+   "clause": "may have true interest in Christ, though he be not yet assured thereof;",
+   "printed": [
+    "Isa. l. 10",
+    "1 John v. 13",
+    "Ps. lxxxviii. throughout",
+    "Ps. lxxvii. to verse 12; Ver. 1; Ver. 2; Ver. 3; Ver. 4; Ver. 7; Ver. 8; Ver. 9; Ver. 10",
+    "Jonah ii. 4; Ver. 7"
+   ],
+   "page": 205,
+   "note": "block starts on p205 right column and continues on p206 left column (Ps. lxxvii verses 9-10, Jonah)"
+  },
+  {
+   "catechism": "Larger",
+   "q": 172,
+   "letter": "b",
+   "clause": "if he be duly affected with the apprehension of the want of it,",
+   "printed": [
+    "Isa. liv. 7; Ver. 8; Ver. 9; Ver. 10",
+    "Matt. v. 3; Ver. 4",
+    "Ps. xxxi. 22",
+    "Ps. lxxiii. 13; Ver. 22; Ver. 23"
+   ],
+   "page": 206,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 172,
+   "letter": "c",
+   "clause": "and unfeignedly desires to be found in Christ,",
+   "printed": [
+    "Phil. iii. 8; Ver. 9",
+    "Ps. x. 17",
+    "Ps. xlii. 1; Ver. 2; Ver. 5; Ver. 11"
+   ],
+   "page": 206,
+   "note": "a printed asterisk precedes Ps. xlii. 1"
+  },
+  {
+   "catechism": "Larger",
+   "q": 172,
+   "letter": "d",
+   "clause": "and to depart from iniquity:",
+   "printed": [
+    "2 Tim. ii. 19",
+    "Isa. l. 10",
+    "Ps. lxvi. 18; Ver. 19; Ver. 20"
+   ],
+   "page": 206,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 172,
+   "letter": "e",
+   "clause": "for the relief even of weak and doubting Christians",
+   "printed": [
+    "Isa. xl. 11; Ver. 29; Ver. 31",
+    "Matt. xi. 28",
+    "Matt. xii. 20",
+    "Matt. xxvi. 28"
+   ],
+   "page": 206,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 172,
+   "letter": "f",
+   "clause": "he is to bewail his unbelief,",
+   "printed": [
+    "Mark ix. 24"
+   ],
+   "page": 206,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 172,
+   "letter": "g",
+   "clause": "and labour to have his doubts resolved;",
+   "printed": [
+    "Acts ii. 37",
+    "Acts xvi. 30"
+   ],
+   "page": 206,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 172,
+   "letter": "h",
+   "clause": "that he may be further strengthened.",
+   "printed": [
+    "Rom. iv. 11",
+    "1 Cor. xi. 28"
+   ],
+   "page": 206,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 173,
+   "letter": "i",
+   "clause": "may and ought to be kept from that sacrament, by the power which Christ hath left in his church,",
+   "printed": [
+    "1 Cor. xi. 27, to the end",
+    "Matt. vii. 6",
+    "1 Cor. chapter v. to the end",
+    "Jude, ver. 23",
+    "1 Tim. v. 22"
+   ],
+   "page": 207,
+   "note": "Matt. vii. 6, 1 Cor. v, Jude 23 and 1 Tim. v. 22 are introduced by 'Compared with' / 'And with'"
+  },
+  {
+   "catechism": "Larger",
+   "q": 173,
+   "letter": "k",
+   "clause": "until they receive instruction, and manifest their reformation.",
+   "printed": [
+    "2 Cor. ii. 7"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "l",
+   "clause": "with all holy reverence and attention they wait upon God in that ordinance,",
+   "printed": [
+    "Lev. x. 3",
+    "Heb. xii. 28",
+    "Ps. v. 7",
+    "1 Cor. xi. 17; Ver. 26; Ver. 27"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "m",
+   "clause": "diligently observe the sacramental elements and actions,",
+   "printed": [
+    "Exod. xxiv. 8",
+    "Matt. xxvi. 28"
+   ],
+   "page": 207,
+   "note": "Matt. xxvi. 28 introduced by 'Compared with', at top of right column"
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "n",
+   "clause": "heedfully discern the Lord's body,",
+   "printed": [
+    "1 Cor. xi. 29"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "o",
+   "clause": "and affectionately meditate on his death and sufferings,",
+   "printed": [
+    "Luke xxii. 19"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "p",
+   "clause": "and thereby stir up themselves to a vigorous exercise of their graces;",
+   "printed": [
+    "1 Cor. xi. 26",
+    "1 Cor. x. 3; Ver. 4; Ver. 5; Ver. 11; Ver. 14"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "q",
+   "clause": "in judging themselves,",
+   "printed": [
+    "1 Cor. xi. 31"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "r",
+   "clause": "and sorrowing for sin;",
+   "printed": [
+    "Zech. xii. 10"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "s",
+   "clause": "in earnest hungering and thirsting after Christ,",
+   "printed": [
+    "Rev. xxii. 17"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "t",
+   "clause": "feeding on him by faith,",
+   "printed": [
+    "John vi. 35"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "v",
+   "clause": "receiving of his fulness,",
+   "printed": [
+    "John i. 16"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "w",
+   "clause": "trusting in his merits,",
+   "printed": [
+    "Phil. iii. 9"
+   ],
+   "page": 207,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "x",
+   "clause": "rejoicing in his love,",
+   "printed": [
+    "Ps. lxiii. 4; Ver. 5",
+    "2 Chron. xxx. 21"
+   ],
+   "page": 208,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "y",
+   "clause": "giving thanks for his grace;",
+   "printed": [
+    "Ps. xxii. 26"
+   ],
+   "page": 208,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "z",
+   "clause": "in renewing of their covenant with God,",
+   "printed": [
+    "Jer. l. 5",
+    "Ps. l. 5"
+   ],
+   "page": 208,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 174,
+   "letter": "a",
+   "clause": "and love to all the saints.",
+   "printed": [
+    "Acts ii. 42"
+   ],
+   "page": 208,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "b",
+   "clause": "is seriously to consider how they have behaved themselves therein, and with what success;",
+   "printed": [
+    "Ps. xxviii. 7",
+    "Ps. lxxxv. 8",
+    "1 Cor. xi. 17; Ver. 30; Ver. 31"
+   ],
+   "page": 208,
+   "note": "block begins at foot of p208 left column area (after the Q174 a block)"
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "c",
+   "clause": "if they find quickening and comfort, to bless God for it,",
+   "printed": [
+    "2 Chron. xxx. 21, 22, 23, 25, 26",
+    "Acts ii. 42; Ver. 46; Ver. 47"
+   ],
+   "page": 208,
+   "note": "the quoted text prints 'Ver. 21' right after the reference list"
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "d",
+   "clause": "beg the continuance of it,",
+   "printed": [
+    "Ps. xxxvi. 10",
+    "Cant. iii. 4",
+    "1 Chron. xxix. 18"
+   ],
+   "page": 208,
+   "note": "block begins at foot of left column and continues in right column"
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "e",
+   "clause": "watch against relapses,",
+   "printed": [
+    "1 Cor. x. 3; Ver. 4; Ver. 5; Ver. 12"
+   ],
+   "page": 208,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "f",
+   "clause": "fulfil their vows,",
+   "printed": [
+    "Ps. l. 14"
+   ],
+   "page": 208,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "g",
+   "clause": "and encourage themselves to a frequent attendance on that ordinance:",
+   "printed": [
+    "1 Cor. xi. 25; Ver. 26",
+    "Acts ii. 42; Ver. 46"
+   ],
+   "page": 208,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "h",
+   "clause": "but if they find no present benefit, more exactly to review their preparation to, and carriage at, the sacrament;",
+   "printed": [
+    "Cant. v. 1; Ver. 2; Ver. 3; Ver. 4; Ver. 5; Ver. 6",
+    "Eccles. v. 1; Ver. 2; Ver. 3; Ver. 4; Ver. 5; Ver. 6"
+   ],
+   "page": 208,
+   "note": "block continues on p209; a printed asterisk precedes Cant. v. 1"
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "i",
+   "clause": "in both which, if they can approve themselves to God and their own consciences, they are to wait for the fruit of it in due time:",
+   "printed": [
+    "Ps. cxxiii. 1; Ver. 2",
+    "Ps. xlii. 5; Ver. 8",
+    "Ps. xliii. 3; Ver. 4; Ver. 5"
+   ],
+   "page": 209,
+   "note": "clause text partly from p209 top; the clause words immediately before the superscript are 'they are to wait for the fruit of it in due time:'"
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "k",
+   "clause": "but, if they see they have failed in either, they are to be humbled,",
+   "printed": [
+    "2 Chron. xxx. 18; Ver. 19",
+    "Isa. i. 16; Ver. 18"
+   ],
+   "page": 209,
+   "note": "block runs from left column into right column"
+  },
+  {
+   "catechism": "Larger",
+   "q": 175,
+   "letter": "l",
+   "clause": "and to attend upon it afterwards with more care and diligence.",
+   "printed": [
+    "2 Cor. vii. 11",
+    "1 Chron. xv. 12; Ver. 13; Ver. 14"
+   ],
+   "page": 209,
+   "note": "letter printed like numeral 1"
+  },
+  {
+   "catechism": "Larger",
+   "q": 176,
+   "letter": "m",
+   "clause": "the author of both is God;",
+   "printed": [
+    "Matt. xxviii. 19",
+    "1 Cor. xi. 23"
+   ],
+   "page": 209,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 176,
+   "letter": "n",
+   "clause": "the spiritual part of both is Christ and his benefits;",
+   "printed": [
+    "Rom. vi. 3; Ver. 4",
+    "1 Cor. x. 16"
+   ],
+   "page": 209,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 176,
+   "letter": "o",
+   "clause": "both are seals of the same covenant,",
+   "printed": [
+    "Rom. iv. 11",
+    "Col. ii. 12",
+    "Matt. xxvi. 27; Ver. 28"
+   ],
+   "page": 209,
+   "note": "block continues on p210 (Matt. xxvi. 28 ends there); Col. ii. 12 introduced by 'Compared with'"
+  },
+  {
+   "catechism": "Larger",
+   "q": 176,
+   "letter": "p",
+   "clause": "are to be dispensed by ministers of the gospel, and by none other;",
+   "printed": [
+    "John i. 33",
+    "Matt. xxviii. 19",
+    "1 Cor. xi. 23",
+    "1 Cor. iv. 1",
+    "Heb. v. 4"
+   ],
+   "page": 210,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 176,
+   "letter": "q",
+   "clause": "and to be continued in the church of Christ until his second coming.",
+   "printed": [
+    "Matt. xxviii. 19; Ver. 20",
+    "1 Cor. xi. 26"
+   ],
+   "page": 210,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 177,
+   "letter": "r",
+   "clause": "baptism is to be administered but once, with water, to be a sign and seal of our regeneration and ingrafting into Christ,",
+   "printed": [
+    "Matt. iii. 11",
+    "Tit. iii. 5",
+    "Gal. iii. 27"
+   ],
+   "page": 210,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 177,
+   "letter": "s",
+   "clause": "and that even to infants;",
+   "printed": [
+    "Gen. xvii. 7; Ver. 9",
+    "Acts ii. 38; Ver. 39",
+    "1 Cor. vii. 14"
+   ],
+   "page": 210,
+   "note": "block runs from left column into right column"
+  },
+  {
+   "catechism": "Larger",
+   "q": 177,
+   "letter": "t",
+   "clause": "to represent and exhibit Christ as spiritual nourishment to the soul,",
+   "printed": [
+    "1 Cor. xi. 23; Ver. 24; Ver. 25; Ver. 26"
+   ],
+   "page": 210,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 177,
+   "letter": "v",
+   "clause": "and to confirm our continuance and growth in him,",
+   "printed": [
+    "1 Cor. x. 16"
+   ],
+   "page": 210,
+   "note": ""
+  },
+  {
+   "catechism": "Larger",
+   "q": 177,
+   "letter": "w",
+   "clause": "and that only to such as are of years and ability to examine themselves.",
+   "printed": [
+    "1 Cor. xi. 28; Ver. 29"
+   ],
+   "page": 210,
+   "note": ""
+  }
+ ],
+ "check": [
+  {
+   "q": 168,
+   "answerLettersFound": [
+    "z",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e"
+   ],
+   "blocksFound": [
+    "z",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e"
+   ]
+  },
+  {
+   "q": 169,
+   "answerLettersFound": [
+    "f"
+   ],
+   "blocksFound": [
+    "f"
+   ]
+  },
+  {
+   "q": 170,
+   "answerLettersFound": [
+    "g",
+    "h",
+    "i",
+    "k"
+   ],
+   "blocksFound": [
+    "g",
+    "h",
+    "i",
+    "k"
+   ]
+  },
+  {
+   "q": 171,
+   "answerLettersFound": [
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+   ],
+   "blocksFound": [
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+   ]
+  },
+  {
+   "q": 172,
+   "answerLettersFound": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h"
+   ],
+   "blocksFound": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h"
+   ]
+  },
+  {
+   "q": 173,
+   "answerLettersFound": [
+    "i",
+    "k"
+   ],
+   "blocksFound": [
+    "i",
+    "k"
+   ]
+  },
+  {
+   "q": 174,
+   "answerLettersFound": [
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "a"
+   ],
+   "blocksFound": [
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "a"
+   ]
+  },
+  {
+   "q": 175,
+   "answerLettersFound": [
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "k",
+    "l"
+   ],
+   "blocksFound": [
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "k",
+    "l"
+   ]
+  },
+  {
+   "q": 176,
+   "answerLettersFound": [
+    "m",
+    "n",
+    "o",
+    "p",
+    "q"
+   ],
+   "blocksFound": [
+    "m",
+    "n",
+    "o",
+    "p",
+    "q"
+   ]
+  },
+  {
+   "q": 177,
+   "answerLettersFound": [
+    "r",
+    "s",
+    "t",
+    "v",
+    "w"
+   ],
+   "blocksFound": [
+    "r",
+    "s",
+    "t",
+    "v",
+    "w"
+   ]
+  }
+ ],
+ "coverageNote": "Larger Catechism Q. 168-177 only (scope cut); Q. 2-4, 157-159 and Shorter Catechism Q. 2-3 NOT extracted. Printed pages: Q168-169 p203-204, Q170-171 p204-205, Q172 p205-206, Q173-174 p206-208, Q175-176 p208-210, Q177 p210. Clauses were typed from images; answerLettersFound equals blocksFound because each letter was matched by eye, not by script."
+}

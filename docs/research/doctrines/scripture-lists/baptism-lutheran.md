@@ -4,16 +4,18 @@ Status: draft, NOT verified by Pedro
 
 Official documents used by the page `baptism/lutheran`: Augsburg Confession IX, Apology IX, Smalcald Articles III V, Small Catechism IV, Large Catechism IV (Concordia Triglotta 1921, English column). Collected 2026-11-01 by session A5.
 
-Passages (single ranges as printed, not merged across footnotes): **6**; already in the page `scripture` list: **6**; new: **0**. Count = distinct works citing it; ties broken by distinct locators.
+Passages (single ranges as printed, not merged across footnotes): **8**; already in the page `scripture` list: **6**; new: **2**. Count = distinct works citing it; ties broken by distinct locators.
 
 | # | Passage (OSIS) | Count (works / locators) | In page | Cited by (locator, how) | Tag |
 |---|---|---|---|---|---|
 | 1 | `Matt.28.19` | 3 / 3 | yes | Apology of the Augsburg Confession Art. IX (Of Baptism) (inline reference); Small Catechism Part IV (Baptism), first question (inline reference (chapter named)); Large Catechism Part IV (Baptism), §§3–5 (the words of institution) (inline reference) | [unverified: OCR; Triglot page image not read] |
 | 2 | `Mark.16.16` | 2 / 2 | yes | Small Catechism Part IV (Baptism), second question (inline reference (chapter named)); Large Catechism Part IV (Baptism), §§3–5 (the words of institution) (inline reference) | [unverified: OCR; Triglot page image not read] |
-| 3 | `Rom.6.4` | 1 / 1 | yes | Small Catechism Part IV (Baptism), the question «Where is this written?» that follows «Fourthly» (inline reference (chapter named)) | [unverified: OCR; Triglot page image not read] |
-| 4 | `Eph.5.26` | 1 / 1 | yes | Smalcald Articles Part III, Art. V (Of Baptism) (quoted words, no reference printed) | [unverified: OCR; Triglot page image not read] |
-| 5 | `Titus.3.5-Titus.3.8` | 1 / 1 | yes | Small Catechism Part IV (Baptism), third question (inline reference (chapter named)) | [unverified: OCR; Triglot page image not read] |
-| 6 | `Titus.3.5` | 1 / 1 | yes | Large Catechism Part IV (Baptism), the sentence before the Latin paragraph number 28] (the water and the Word) (inline reference) | [unverified: OCR; Triglot page image not read] |
+| 3 | `Gen.17.7` | 1 / 1 | **new** | Epitome of the Formula of Concord Art. XII (Of Other Factions and Sects), «Articles that cannot be tolerated in the Church», item 6 (printed p. 839) (inline reference (Book N,N ff.)) | [unverified: OCR; Triglot page image not read] |
+| 4 | `Gen.17.9` | 1 / 1 | **new** | Solid Declaration of the Formula of Concord Art. XII (Of Other Factions and Sects), the Anabaptist errors on baptism, fourth item (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 5 | `Rom.6.4` | 1 / 1 | yes | Small Catechism Part IV (Baptism), the question «Where is this written?» that follows «Fourthly» (inline reference (chapter named)) | [unverified: OCR; Triglot page image not read] |
+| 6 | `Eph.5.26` | 1 / 1 | yes | Smalcald Articles Part III, Art. V (Of Baptism) (quoted words, no reference printed) | [unverified: OCR; Triglot page image not read] |
+| 7 | `Titus.3.5-Titus.3.8` | 1 / 1 | yes | Small Catechism Part IV (Baptism), third question (inline reference (chapter named)) | [unverified: OCR; Triglot page image not read] |
+| 8 | `Titus.3.5` | 1 / 1 | yes | Large Catechism Part IV (Baptism), the sentence before the Latin paragraph number 28] (the water and the Word) (inline reference) | [unverified: OCR; Triglot page image not read] |
 
 ## Citing sentences (verbatim from the document at the cited locator)
 
@@ -25,6 +27,12 @@ Passages (single ranges as printed, not merged across footnotes): **6**; already
 ### `Mark.16.16`
 - **Small Catechism Part IV (Baptism), second question** (inline reference (chapter named); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «last chapter of Mark» · verse(s) identified from the quoted words by Doctrina; the document prints book and chapter only [unverified]: Christ, our Lord, says in the last chapter of Mark: He that believeth and is baptized shall be saved; but he that believeth not shall be damned.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 - **Large Catechism Part IV (Baptism), §§3–5 (the words of institution)** (inline reference; Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «last chapter, v.16»: Likewise in St. Mark, the last chapter, v.16: He that believeth and is baptized shall be saved; but he that believeth not shall be damned.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
+### `Gen.17.7`
+- **Epitome of the Formula of Concord Art. XII (Of Other Factions and Sects), «Articles that cannot be tolerated in the Church», item 6 (printed p. 839)** (inline reference (Book N,N ff.); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Gen. 17,7 ff.» · open range: the print gives «ff.» with no end verse; only the first verse is encoded: […] the children of Christians, because they have been born of Christian and believing parents, are holy and children of God even without and before Baptism; and for this reason they neither attach much importance to the baptism of children nor encourage it, contrary to the express words of God's promise which pertains only to those who keep His covenant and do not despise it. Gen. 17,7 ff.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
+### `Gen.17.9`
+- **Solid Declaration of the Formula of Concord Art. XII (Of Other Factions and Sects), the Anabaptist errors on baptism, fourth item** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Gen. 17, 9» · the Triglot Latin column prints «Gen. 17,9»; the German column's OCR reads «Gen. 17. 5» (unreadable); the English column is followed: […] the children of Christians, since they have been born of Christian and believing parents, are holy and the children of God even without and before Baptism; and for this reason they neither attach much importance to the baptism of children nor encourage it, contrary to the express words of the promise, which extends only to those who keep God's covenant and do not despise it, : Gen. 17, 9.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `Rom.6.4`
 - **Small Catechism Part IV (Baptism), the question «Where is this written?» that follows «Fourthly»** (inline reference (chapter named); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Romans, chapter 6» · verse(s) identified from the quoted words by Doctrina; the document prints book and chapter only [unverified]: St. Paul says Romans, chapter 6: We are buried with Christ by Baptism into death, that, like as He was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
@@ -40,9 +48,9 @@ Passages (single ranges as printed, not merged across footnotes): **6**; already
 
 ## Not reached
 
-- Formula of Concord (Epitome XII, Solid Declaration XII) on the Anabaptists and baptism: not searched in this pass.
-- Augsburg Confession IX: prints no Scripture reference (checked the English column, ~70 words).
-- Triglot page images not read: every record is `[unverified: OCR]` (the loci and sentences were matched in the OCR text).
+- Read in this session in the Triglot English column: Augsburg Confession IX (~70 words, no reference printed), Apology IX (the whole article: one reference, Matt 28:19, already listed; the promise to little children and the argument from the gift of the Holy Ghost carry no reference), Smalcald Articles III V (one quoted wording, «a washing in the Word», Eph 5:26, already listed; no reference printed), Small Catechism IV and Large Catechism IV (the four and three references already listed; Large Catechism IV prints no other reference, counted by script over the English text between the headings «Of Baptism» and «Of the Sacrament of the Altar»), Epitome XII (one reference: Gen 17:7 ff.) and Solid Declaration XII (one reference: Gen 17:9), both on the Anabaptist errors on baptism.
+- Not read for this page: Large Catechism IV in the German column (the Triglot German OCR is Fraktur and unusable), Formula of Concord Solid Declaration II and VII on baptism, the Treatise on the Power and Primacy of the Pope.
+- All records `[unverified: OCR]` (no Triglot page image was read for this list).
 
 ## Notes
 - Page `scripture` items not found in these five documents (AC IX, Apology IX, SA III V, SC IV, LC IV): Eph.4.5-Eph.4.6, Matt.23.2. They come from other documents the page cites (e.g. Apology VII/VIII on ministers) or from the page text; not searched here.

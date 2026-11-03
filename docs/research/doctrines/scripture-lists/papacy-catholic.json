@@ -53,9 +53,21 @@
     "how": "inline",
     "sentence": "Atque uni Simoni Petro contulit Iesus post suam resurrectionem summi pastoris et rectoris iurisdictionem in totum suum ovile, dicens: Pasce agnos meos: Pasce oves meas (Ioan. XXI, 15-17).",
     "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML"
+   },
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 44; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 44] Jn 21, 15-17",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Jn 21, 15-17",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
    }
   ],
-  "count": 5,
+  "count": 6,
   "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
@@ -108,9 +120,21 @@
     "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML",
     "identified": true,
     "flag": "the print gives no Scripture reference here; the verse is identified from the quoted words by Codex [unverified]"
+   },
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 60; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 60] Lk 22, 32.Return to Table of Contents",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Lk 22, 32",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
    }
   ],
-  "count": 4,
+  "count": 6,
   "inPage": true,
   "tag": "[verified: official HTML for the documents that print the reference; the Pastor aeternus ch. IV row quotes the Latin but prints no reference: identification [unverified]]"
  },
@@ -155,9 +179,32 @@
     "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML",
     "identified": true,
     "flag": "the print gives no Scripture reference here; the verse is identified from the quoted words by Codex [unverified]"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "On the ninth article of the Creed (the Church), the successors of Peter, p. 77 area (page not collated); added in S1b",
+    "how": "quoted words, footnote reference not recovered",
+    "sentence": "The Lord said to Peter, «I say to thee Peter! thou art Peter: and upon this rock I will build my Church» […]",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "flag": "verse identified from the quoted words by Doctrina; the footnote that follows the quotation (marker 3) is not legible in the OCR [unverified]; added by S1b",
+    "addedBy": "S1b"
+   },
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 55; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 55] Mt 16, 18.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Mt 16, 18",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
    }
   ],
-  "count": 3,
+  "count": 6,
   "inPage": true,
   "tag": "[verified: official HTML for the documents that print the reference; the Pastor aeternus ch. IV row quotes the Latin but prints no reference: identification [unverified]]"
  },
@@ -228,9 +275,21 @@
     "how": "inline",
     "sentence": "Unum enim Simonem, cui iam pridem dixerat: Tu vocaberis Cephas (Ioan. I, 42) […]",
     "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML"
+   },
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 42; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 42] Jn 1, 42.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Jn 1, 42",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
    }
   ],
-  "count": 2,
+  "count": 3,
   "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
@@ -279,7 +338,7 @@
    }
   ],
   "count": 2,
-  "inPage": false,
+  "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
  {
@@ -303,7 +362,7 @@
    }
   ],
   "count": 2,
-  "inPage": false,
+  "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
  {
@@ -399,7 +458,7 @@
    }
   ],
   "count": 2,
-  "inPage": false,
+  "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
  {
@@ -1044,7 +1103,7 @@
    }
   ],
   "count": 1,
-  "inPage": false,
+  "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
  {
@@ -1350,7 +1409,7 @@
    }
   ],
   "count": 1,
-  "inPage": false,
+  "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
  {
@@ -1402,7 +1461,7 @@
    }
   ],
   "count": 1,
-  "inPage": false,
+  "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
  {
@@ -1416,9 +1475,21 @@
     "how": "inline (footnote reference)",
     "sentence": "Jn. 20:21.",
     "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 40; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 40] Jn 20, 21",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Jn 20, 21",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
    }
   ],
-  "count": 1,
+  "count": 2,
   "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
@@ -1450,9 +1521,21 @@
     "how": "inline (footnote reference)",
     "sentence": "Cf. Jn. 21:15 ff.",
     "edition": "21 November 1964; official English Vatican HTML"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "On the ninth article of the Creed (the Church), footnote, pp. 71–77 (page not collated); added in S1b",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "7 John xxi. 15. » 1 Cor. xii 11, 12. 9 Eph. iv. 3.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John xxi. 15",
+    "flag": "read from the OCR line; the footnote marker and the sentence it belongs to were not recovered; added by S1b",
+    "addedBy": "S1b"
    }
   ],
-  "count": 1,
+  "count": 2,
   "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
@@ -1862,7 +1945,7 @@
    }
   ],
   "count": 1,
-  "inPage": false,
+  "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
  {
@@ -1927,9 +2010,21 @@
     "how": "inline",
     "sentence": "postquam ille suam edidit confessionem inquiens Tu es Christus, Filius Dei vivi, solemnibus his verbis allocutus est Dominus: Beatus es Simon Bar-Iona; quia caro, et sanguis non revelavit tibi, sed Pater meus, qui in cöelis est: et ego dico tibi, quia tu es Petrus, et super hanc petram aedificabo Ecclesiam meam, et portae inferi non praevalebunt adversus eam: et tibi dabo claves regni coelorum: et quodcumque ligaveris super terram erit ligatum et in coelis: et quodcumque solveris super terram, erit solutum et in coelis (Matth. XVI, 16-19) […]",
     "edition": "18 July 1870; ASS VI (1870–1871), pp. 40–47; official Latin HTML"
+   },
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 43; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 43] Mt 16, 16 19",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Mt 16, 16 19",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
    }
   ],
-  "count": 1,
+  "count": 2,
   "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
@@ -1947,7 +2042,7 @@
    }
   ],
   "count": 1,
-  "inPage": false,
+  "inPage": true,
   "tag": "[verified: official HTML, explicit reference matched; online edition caveat in scope]"
  },
  {
@@ -2212,5 +2307,159 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official HTML, explicit reference matched (A5 addition); online edition caveat in scope]"
+ },
+ {
+  "refs": [
+   "John.20.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "On the ninth article of the Creed (the Church), footnote, pp. 77–79 (page not collated); added in S1b",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "~ John xx. 23. b Malt, xviii. 17.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John xx. 23",
+    "flag": "read from the OCR line; the footnote marker and the sentence it belongs to were not recovered; added by S1b",
+    "addedBy": "S1b"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": ""
+ },
+ {
+  "refs": [
+   "1Pet.2.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 37; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 37] 1 Pt 2,25",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "1 Pt 2,25",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": ""
+ },
+ {
+  "refs": [
+   "John.17.20-John.17.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 38; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 38] Jn 17, 20-21",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Jn 17, 20-21",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": ""
+ },
+ {
+  "refs": [
+   "John.15.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 39; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 39] Jn 15, 19",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Jn 15, 19",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": ""
+ },
+ {
+  "refs": [
+   "Matt.7.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 45; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 45] See Mt 7, 25; Lk 6, 48",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Mt 7, 25",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": ""
+ },
+ {
+  "refs": [
+   "Luke.6.48"
+  ],
+  "citedBy": [
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 45; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 45] See Mt 7, 25; Lk 6, 48",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Lk 6, 48",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": ""
+ },
+ {
+  "refs": [
+   "John.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Pastor aeternus (First Vatican Council, 1870)",
+    "loc": "editors' footnote 50; added in S1b",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 50] See Jn 10, 16.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Jn 10, 16",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located; added by S1b",
+    "addedBy": "S1b"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": ""
  }
 ]

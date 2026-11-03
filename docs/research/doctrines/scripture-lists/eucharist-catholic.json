@@ -30,12 +30,33 @@
     "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
     "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Matt. xxvi. 28.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. xxvi. 28",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Council of Florence (Basel-Ferrara-Florence), decree on the form of the Eucharist (after the decree for the Armenians)",
+    "loc": "the clause on the form of the consecration of the Lord's body and blood",
+    "how": "quoted words, no reference printed",
+    "sentence": "[…] And of his blood: For this is the chalice of my blood, of the new and everlasting covenant, the mystery of faith, which will be shed for you and for many unto the remission of sins. […]",
+    "edition": "Council of Basel-Ferrara-Florence, English text as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum17.htm, fetched 2026-11-02); the translator and edition are not printed on the page",
+    "tagCite": "[unverified: online reproduction; verse identified from quoted words by Doctrina]",
+    "url": "https://www.papalencyclicals.net/councils/ecum17.htm",
+    "flag": "no book, chapter or verse printed; identified by Doctrina from the words of institution [unverified]; the passage is in the last part of the page, after the Armenian decree (the exact decree title was not read)"
    }
   ],
-  "count": 2,
+  "count": 4,
   "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
-  "locCount": 3
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [unverified: online reproduction; verse identified from quoted words by Doctrina]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 5
  },
  {
   "refs": [
@@ -68,12 +89,170 @@
     "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
     "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
     "printed": "Luke xxii. 19"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 147–153 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "2 Mark xxvi. 26. xiv. 22. Luke xxii. 19. 1 Cor. xi 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke xxii. 19",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "1 Matt. rxyi. 26. Mark xiv. 22. Luke xxii. 19. 1 Cor. xi. 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke xxii. 19",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Luke xxii. 19. 1 Cor. xi. 24. 5 Cone. Trid. sess. 22. c. 1. t, I Cor. x. 21.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke xxii. 19",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted inline reference, 2026-11-01]",
+  "locCount": 6
+ },
+ {
+  "refs": [
+   "Matt.26.26"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1376, fn 204",
+    "how": "footnote",
+    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Matt. xxvi. 26. s Decretal. 1. 3. de celeb, raise, c. 6.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. xxvi. 26",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "« Matt. xxvi. 26. Mark xiv 22. Luke xxi. 18. 1 Cor. xi. 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. xxvi. 26",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Council of Florence (Basel-Ferrara-Florence), decree on the form of the Eucharist (after the decree for the Armenians)",
+    "loc": "the clause on the form of the consecration of the Lord's body and blood",
+    "how": "quoted words, no reference printed",
+    "sentence": "[…] It uses this form of words in the consecration of the Lord's body: For this is my body. […]",
+    "edition": "Council of Basel-Ferrara-Florence, English text as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum17.htm, fetched 2026-11-02); the translator and edition are not printed on the page",
+    "tagCite": "[unverified: online reproduction; verse identified from quoted words by Doctrina]",
+    "url": "https://www.papalencyclicals.net/councils/ecum17.htm",
+    "flag": "no book, chapter or verse printed; identified by Doctrina from the words of institution [unverified]; the passage is in the last part of the page, after the Armenian decree (the exact decree title was not read)"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [unverified: online reproduction; verse identified from quoted words by Doctrina]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "1Cor.11.24"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1376, fn 204",
+    "how": "footnote",
+    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "1 Matt. rxyi. 26. Mark xiv. 22. Luke xxii. 19. 1 Cor. xi. 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. xi. 24",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "« Matt. xxvi. 26. Mark xiv 22. Luke xxi. 18. 1 Cor. xi. 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. xi. 24",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
    }
   ],
   "count": 2,
   "inPage": true,
-  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted inline reference, 2026-11-01]",
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
   "locCount": 3
+ },
+ {
+  "refs": [
+   "Mark.14.22"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1376, fn 204",
+    "how": "footnote",
+    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "1 Matt. rxyi. 26. Mark xiv. 22. Luke xxii. 19. 1 Cor. xi. 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Mark xiv. 22",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
  },
  {
   "refs": [
@@ -131,6 +310,99 @@
   "count": 2,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "John.6.57"
+  ],
+  "citedBy": [
+   {
+    "work": "Ecclesia de Eucharistia",
+    "loc": "§16",
+    "how": "inline reference",
+    "sentence": "We are reminded of his words: “As the living Father sent me, and I live because of the Father, so he who eats me will live because of me” (Jn 6:57).",
+    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "2 John i. 17. » John vi. 57. * John vl 58. 5 John vi. 52.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John vi. 57",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "John.13.1"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1085, fn 8",
+    "how": "footnote",
+    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 147–153 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "8 John xiii. 1. 9 In Math. horn. 83.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John xiii. 1",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Heb.9.12"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1085, fn 8",
+    "how": "footnote",
+    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "? Heb, ix. 12.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Heb, ix. 12",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
   "locCount": 2
  },
  {
@@ -204,6 +476,28 @@
  },
  {
   "refs": [
+   "Job.26.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "3 1 Cor. x. 21. < Job xxvi. 11. * Isa. vi. 3",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Job xxvi. 11",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Ps.104.13-Ps.104.15"
   ],
   "citedBy": [
@@ -220,6 +514,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Isa.6.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "3 1 Cor. x. 21. < Job xxvi. 11. * Isa. vi. 3",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Isa. vi. 3",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -284,6 +600,50 @@
  },
  {
   "refs": [
+   "Matt.5.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 1 Cor. xi. 29. ' Matt v. 24, 25.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt v. 24, 25",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.5.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 1 Cor. xi. 29. ' Matt v. 24, 25.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt v. 24, 25",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Matt.12.5"
   ],
   "citedBy": [
@@ -300,6 +660,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.14.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "2 Matt. xxvi. 26. Matt. xiv. 23",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. xiv. 23",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -324,6 +706,72 @@
  },
  {
   "refs": [
+   "Matt.22.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "» Gal. v. 6. 9 1 Cor. xi. 28. \"> Matt. xxii. 11",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. xxii. 11",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.22.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "2 Matt. viii. 8. 10. 3 john xxi. 15. < Matt. xxii. 12, 13.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. xxii. 12, 13",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.22.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "2 Matt. viii. 8. 10. 3 john xxi. 15. < Matt. xxii. 12, 13.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. xxii. 12, 13",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Matt.25.31-Matt.25.46"
   ],
   "citedBy": [
@@ -344,22 +792,24 @@
  },
  {
   "refs": [
-   "Matt.26.26"
+   "Matt.26.56"
   ],
   "citedBy": [
    {
-    "work": "CCC",
-    "loc": "§1376, fn 204",
-    "how": "footnote",
-    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 137–147 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "3 Luke xxiv. 49. 4 Matth. xxvi. 56.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matth. xxvi. 56",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -404,22 +854,24 @@
  },
  {
   "refs": [
-   "Mark.14.22"
+   "Mark.14.12"
   ],
   "citedBy": [
    {
-    "work": "CCC",
-    "loc": "§1376, fn 204",
-    "how": "footnote",
-    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 147–153 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "7 Matt, xxv i. 17. Mark xiv. 12. Luke xxii. 7. Vide 1. 3. decretal, tit. de cele-",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Mark xiv. 12",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -440,6 +892,28 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.1.37"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "* Luke i. 37.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke i. 37",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -484,6 +958,50 @@
  },
  {
   "refs": [
+   "Luke.21.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "« Matt. xxvi. 26. Mark xiv 22. Luke xxi. 18. 1 Cor. xi. 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke xxi. 18",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.22.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 147–153 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "7 Matt, xxv i. 17. Mark xiv. 12. Luke xxii. 7. Vide 1. 3. decretal, tit. de cele-",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke xxii. 7",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Luke.22.20"
   ],
   "citedBy": [
@@ -520,6 +1038,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "2 John i. 17. » John vi. 57. * John vl 58. 5 John vi. 52.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "2 John i. 17",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year; the OCR line begins with a footnote number that was joined to the book («2 John» read as John)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -564,6 +1104,72 @@
  },
  {
   "refs": [
+   "John.6.41"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 147–153 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 John vi. 41. Vide de consecr. dist. 2. c. 1. et 2. et 55. ubi habes de hac matena",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John vi. 41",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.52"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 John vi. 52. • John vi. 54. T John vl 56.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John vi. 52",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.54"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 John vi. 52. • John vi. 54. T John vl 56.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John vi. 54",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "John.6.55"
   ],
   "citedBy": [
@@ -572,26 +1178,6 @@
     "loc": "§16",
     "how": "inline reference",
     "sentence": "This is no metaphorical food: “My flesh is food indeed, and my blood is drink indeed” (Jn 6:55).",
-    "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
-   "John.6.57"
-  ],
-  "citedBy": [
-   {
-    "work": "Ecclesia de Eucharistia",
-    "loc": "§16",
-    "how": "inline reference",
-    "sentence": "We are reminded of his words: “As the living Father sent me, and I live because of the Father, so he who eats me will live because of me” (Jn 6:57).",
     "edition": "Ecclesia de Eucharistia (17 Apr 2003), official English text on vatican.va (hf_jp-ii_enc_20030417_eccl-de-euch.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
     "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html"
@@ -764,26 +1350,6 @@
  },
  {
   "refs": [
-   "John.13.1"
-  ],
-  "citedBy": [
-   {
-    "work": "CCC",
-    "loc": "§1085, fn 8",
-    "how": "footnote",
-    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
-   }
-  ],
-  "count": 1,
-  "inPage": false,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
    "John.13.25"
   ],
   "citedBy": [
@@ -824,6 +1390,28 @@
  },
  {
   "refs": [
+   "John.17.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "3 Heb. ix. 26 « John xvii. 9.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John xvii. 9",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "John.19.34"
   ],
   "citedBy": [
@@ -840,6 +1428,50 @@
   "count": 1,
   "inPage": false,
   "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.20.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 137–147 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "7 John xx. 19. SActsii.1.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John xx. 19",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.1.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Acts i. 10. vid. D. Thorn. 3, p. q. 75, art. 3 et 4. ' D. Ambr. lib. 4. de sacr c. 4",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts i. 10",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -880,6 +1512,72 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.5.41"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 137–147 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "9 Acts v. 41.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts v. 41",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.3.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Rom. iii. 25, 26.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Rom. iii. 25, 26",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.3.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Rom. iii. 25, 26.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Rom. iii. 25, 26",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -964,6 +1662,50 @@
  },
  {
   "refs": [
+   "1Cor.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "' 1 Cor. xi. 28, 29. 2 1 Cor. x. 16.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. x. 16",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "3 1 Cor. x. 21. < Job xxvi. 11. * Isa. vi. 3",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. x. 21",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "1Cor.11.23"
   ],
   "citedBy": [
@@ -984,22 +1726,46 @@
  },
  {
   "refs": [
-   "1Cor.11.24"
+   "1Cor.11.25"
   ],
   "citedBy": [
    {
-    "work": "CCC",
-    "loc": "§1376, fn 204",
-    "how": "footnote",
-    "sentence": "This change the holy Catholic Church has fittingly and properly called transubstantiation.\"",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P41.HTM"
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "2 1 Cor. xi. 25.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. xi. 25",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
    }
   ],
   "count": 1,
   "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 147–153 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Luke xxii. 19. 6 1 Cor. xi. 26. 7 Tertul. de Resur. carnis, c. &",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. xi. 26",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -1020,6 +1786,50 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "' 1 Cor. xi. 28, 29. 2 1 Cor. x. 16.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. xi. 28, 29",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.11.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "1 1 Cor. xi. 29.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. xi. 29",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -1084,6 +1894,28 @@
  },
  {
   "refs": [
+   "Gal.5.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 155–177 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "» Gal. v. 6. 9 1 Cor. xi. 28. \"> Matt. xxii. 11",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Gal. v. 6",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Eph.1.5"
   ],
   "citedBy": [
@@ -1120,6 +1952,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Phil.4.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 137–147 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "3 Acts ii. 2. i Phil. iv. 7.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Phil. iv. 7",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -1204,26 +2058,6 @@
  },
  {
   "refs": [
-   "Heb.9.12"
-  ],
-  "citedBy": [
-   {
-    "work": "CCC",
-    "loc": "§1085, fn 8",
-    "how": "footnote",
-    "sentence": "When his Hour comes, he lives out the unique event of history which does not pass away: Jesus dies, is buried, rises from the dead, and is seated at the right hand of the Father \"once for all.\"",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P2W.HTM"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
    "Heb.9.14"
   ],
   "citedBy": [
@@ -1244,6 +2078,50 @@
  },
  {
   "refs": [
+   "Heb.9.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "Heb. ix. 15.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Heb. ix. 15",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.9.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "9 Heb. ix. 18.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Heb. ix. 18",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Heb.9.27"
   ],
   "citedBy": [
@@ -1260,6 +2138,50 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.10.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 153–155 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Heb. x. 20. xiii. 20.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Heb. x. 20",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rev.17.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of the Eucharist, footnote, pp. 147–153 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "* Apoc. xvii. 15.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Apoc. xvii. 15",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  }
 ]

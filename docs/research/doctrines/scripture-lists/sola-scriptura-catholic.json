@@ -29,13 +29,84 @@
     "sentence": "The sacred synod also earnestly and especially urges all the Christian faithful, especially Religious, to learn by frequent reading of the divine Scriptures the \"excellent knowledge of Jesus Christ\" (Phil. 3:8).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 2,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted inline reference, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
   "locCount": 3
+ },
+ {
+  "refs": [
+   "Jude.1.3"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§171, fn 57",
+    "how": "footnote",
+    "sentence": "She guards the memory of Christ's words; it is she who from generation to generation hands on the apostles' confession of faith.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P10.HTM"
+   },
+   {
+    "work": "Dei verbum",
+    "loc": "§8",
+    "how": "inline reference",
+    "sentence": "[… ] letter (see 2 Thess. 2:15), and to fight in defense of the faith handed on once and for all (see Jude 1:3) Now what was handed on by the Apostles includes everything which contributes toward the holiness of life and […]",
+    "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
+   },
+   {
+    "work": "CCC",
+    "loc": "§93, fn 56",
+    "how": "footnote",
+    "sentence": "[…] authority (Magisterium),. . . receives. . . the faith, once for all delivered to the saints. . . the People unfailingly adheres to this faith, penetrates it more deeply with right judgment, and applies it more fully in daily life.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01 (text cached by session A5)",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__PM.HTM"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Matt.28.20"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§80, fn 41",
+    "how": "footnote",
+    "sentence": "Each of them makes present and fruitful in the Church the mystery of Christ, who promised to remain with his own \"always, to the close of the age\".",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__PL.HTM"
+   },
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 3",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 3] See Mt 28, 20.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Mt 28, 20",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
  },
  {
   "refs": [
@@ -58,7 +129,8 @@
     "sentence": "For holy mother Church, relying on the belief of the Apostles (see John 20:31; 2 Tim. 3:16; 2 Peter 1:19-20; 2 Peter 3:15-16), holds that the books of both the Old and New Testaments in their entirety, with all their […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 2,
@@ -87,7 +159,8 @@
     "sentence": "[… ] in the teaching of the Apostles, in the common life, in the breaking of the bread and in prayers (see Acts 2:42, Greek text), so that holding to, practicing and professing the heritage of the faith, it becomes on the […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 2,
@@ -116,7 +189,8 @@
     "sentence": "[… ] applicable to Sacred Scripture: \"For the word of God is living and active\" (Heb. 4:12) and \"it has power to build you up and give you your heritage among all those who are sanctified\" (Acts 20:32; see 1 Thess. 2:13).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 2,
@@ -145,12 +219,45 @@
     "sentence": "For holy mother Church, relying on the belief of the Apostles (see John 20:31; 2 Tim. 3:16; 2 Peter 1:19-20; 2 Peter 3:15-16), holds that the books of both the Old and New Testaments in their entirety, with all their […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 2,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Heb.1.1-Heb.1.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei verbum",
+    "loc": "§4",
+    "how": "inline reference",
+    "sentence": "Then, after speaking in many and varied ways through the prophets, \"now at last in these days God has spoken to us in His Son\" (Heb. 1:1-2).",
+    "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
+   },
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 14",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 14] Heb 1, 1-2",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Heb 1, 1-2",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
   "locCount": 2
  },
  {
@@ -174,7 +281,8 @@
     "sentence": "For holy mother Church, relying on the belief of the Apostles (see John 20:31; 2 Tim. 3:16; 2 Peter 1:19-20; 2 Peter 3:15-16), holds that the books of both the Old and New Testaments in their entirety, with all their […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 2,
@@ -184,32 +292,179 @@
  },
  {
   "refs": [
-   "Jude.1.3"
+   "Rom.1.20"
   ],
   "citedBy": [
    {
-    "work": "CCC",
-    "loc": "§171, fn 57",
-    "how": "footnote",
-    "sentence": "She guards the memory of Christ's words; it is she who from generation to generation hands on the apostles' confession of faith.",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P10.HTM"
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 13",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 13] Rm 1, 20.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Rm 1, 20",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
    },
    {
-    "work": "Dei verbum",
-    "loc": "§8",
-    "how": "inline reference",
-    "sentence": "[… ] letter (see 2 Thess. 2:15), and to fight in defense of the faith handed on once and for all (see Jude 1:3) Now what was handed on by the Apostles includes everything which contributes toward the holiness of life and […]",
-    "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 29",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 29] Rm 1, 20",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Rm 1, 20",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
    }
   ],
-  "count": 2,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 2
+ },
+ {
+  "refs": [
+   "1Tim.2.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 5",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 5] 1 Tm 2, 4.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "1 Tm 2, 4",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   },
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 23",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 23] 1 Tm 2, 4",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "1 Tm 2, 4",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Wis.8.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 11",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 11] Wis 8, 1.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Wis 8, 1",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Wis.16.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 8",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 8] See Wis 16, 12",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Wis 16, 12",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Isa.11.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 22",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 22] Is 11, 12",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Is 11, 12",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Isa.59.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 9",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 9] Is 59, 21",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Is 59, 21",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.11.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 32",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 32] Mt 11, 25",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Mt 11, 25",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
  },
  {
   "refs": [
@@ -224,32 +479,13 @@
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
     "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
-    "printed": "cf. Matt. 28:19-20, and Mark 16:15; Council of Trent, session IV, Decree on Scriptural Canons: Denzinger 783 (1501)."
+    "printed": "cf. Matt. 28:19-20, and Mark 16:15; Council of Trent, session IV, Decree on Scriptural Canons: Denzinger 783 (1501).",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
-   "Matt.28.20"
-  ],
-  "citedBy": [
-   {
-    "work": "CCC",
-    "loc": "§80, fn 41",
-    "how": "footnote",
-    "sentence": "Each of them makes present and fruitful in the Church the mystery of Christ, who promised to remain with his own \"always, to the close of the age\".",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__PL.HTM"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
   "locCount": 1
  },
  {
@@ -265,12 +501,35 @@
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
     "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
-    "printed": "cf. Matt. 28:19-20, and Mark 16:15; Council of Trent, session IV, Decree on Scriptural Canons: Denzinger 783 (1501)."
+    "printed": "cf. Matt. 28:19-20, and Mark 16:15; Council of Trent, session IV, Decree on Scriptural Canons: Denzinger 783 (1501).",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.16.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 18",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 18] Mk 16, 20.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Mk 16, 20",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -291,6 +550,28 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.19.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 6",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 6] Lk 19, 10.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Lk 19, 10",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -325,12 +606,35 @@
     "sentence": "For He sent His Son, the eternal Word, who enlightens all men, so that He might dwell among men and tell them of the innermost being of God (see John 1:1-18).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 30",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 30] Jn 1, 17",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Jn 1, 17",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -345,7 +649,8 @@
     "sentence": "Jesus Christ, therefore, the Word made flesh, was sent as \"a man to men.\" He \"speaks the words of God\" (John 3:34), and completes the work of salvation which His Father gave Him to do (see John 5:36; John 17:4).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -365,12 +670,35 @@
     "sentence": "Jesus Christ, therefore, the Word made flesh, was sent as \"a man to men.\" He \"speaks the words of God\" (John 3:34), and completes the work of salvation which His Father gave Him to do (see John 5:36; John 17:4).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.11.52"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 7",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 7] Jn 11, 52.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Jn 11, 52",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -385,12 +713,33 @@
     "sentence": "To see Jesus is to see His Father (John 14:9).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.16.13"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§91, fn 54",
+    "how": "footnote",
+    "sentence": "They have received the anointing of the Holy Spirit, who instructs them and guides them into all truth.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01 (text cached by session A5)",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__PM.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
   "locCount": 1
  },
  {
@@ -405,7 +754,8 @@
     "sentence": "Jesus Christ, therefore, the Word made flesh, was sent as \"a man to men.\" He \"speaks the words of God\" (John 3:34), and completes the work of salvation which His Father gave Him to do (see John 5:36; John 17:4).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -425,7 +775,8 @@
     "sentence": "[… ] applicable to Sacred Scripture: \"For the word of God is living and active\" (Heb. 4:12) and \"it has power to build you up and give you your heritage among all those who are sanctified\" (Acts 20:32; see 1 Thess. 2:13).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -465,12 +816,35 @@
     "sentence": "\"The obedience of faith\" (Rom. 16:26; see 1:5; 2 Cor 10:5-6) \"is to be given to God who reveals, an obedience by which man commits his whole self freely to God, offering the full submission of intellect and will to […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.2.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 15",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 15] 1 Cor 2, 9.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "1 Cor 2, 9",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -485,7 +859,8 @@
     "sentence": "Therefore Christ the Lord in whom the full revelation of the supreme God is brought to completion (see 2 Cor. 1:20; 3:13; 4:6), commissioned the Apostles to preach to all men that Gospel which is the source of all saving […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -505,7 +880,8 @@
     "sentence": "[… ] Christ the Lord in whom the full revelation of the supreme God is brought to completion (see 2 Cor. 1:20; 3:13; 4:6), commissioned the Apostles to preach to all men that Gospel which is the source of all saving truth […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -525,12 +901,35 @@
     "sentence": "[… ] the Lord in whom the full revelation of the supreme God is brought to completion (see 2 Cor. 1:20; 3:13; 4:6), commissioned the Apostles to preach to all men that Gospel which is the source of all saving truth and […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.5.6-2Cor.5.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 33",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 33] 2 Cor 5, 6-7",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "2 Cor 5, 6-7",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -545,12 +944,79 @@
     "sentence": "\"The obedience of faith\" (Rom. 16:26; see 1:5; 2 Cor 10:5-6) \"is to be given to God who reveals, an obedience by which man commits his whole self freely to God, offering the full submission of intellect and will to […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.1.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 25",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 25] Col 1, 12",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Col 1, 12",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.1.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 24",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 24] 1 Pt 2, 9; Col 1, 13",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Col 1, 13",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.2.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 35",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 35] See Col 2, 8",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Col 2, 8",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -565,7 +1031,8 @@
     "sentence": "[… ] Holy Spirit, through whom the living voice of the Gospel resounds in the Church, and through her, in the world, leads unto all truth those who believe and makes the word of Christ dwell abundantly in them (see Col. 3:16).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -585,7 +1052,8 @@
     "sentence": "[… ] faithful to hold fast to the traditions which they have learned either by word of mouth or by letter (see 2 Thess. 2:15), and to fight in defense of the faith handed on once and for all (see Jude 1:3) […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -625,7 +1093,8 @@
     "sentence": "The Christian dispensation, therefore, as the new and definitive covenant, will never pass away and we now await no further new public revelation before the glorious manifestation of our Lord Jesus Christ (see 1 Tim. 6:14 and Tit. 2:13).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -685,7 +1154,8 @@
     "sentence": "[… ] for teaching the truth and refuting error, for reformation of manners and discipline in right living, so that the man who belongs to God may be efficient and equipped for good work of every kind\" (2 Tim. 3:16-17, Greek text).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -705,7 +1175,8 @@
     "sentence": "The Christian dispensation, therefore, as the new and definitive covenant, will never pass away and we now await no further new public revelation before the glorious manifestation of our Lord Jesus Christ (see 1 Tim. 6:14 and Tit. 2:13).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
@@ -715,22 +1186,24 @@
  },
  {
   "refs": [
-   "Heb.1.1-Heb.1.2"
+   "Heb.2.3"
   ],
   "citedBy": [
    {
-    "work": "Dei verbum",
-    "loc": "§4",
-    "how": "inline reference",
-    "sentence": "Then, after speaking in many and varied ways through the prophets, \"now at last in these days God has spoken to us in His Son\" (Heb. 1:1-2).",
-    "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 26",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 26] Heb 2, 3",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Heb 2, 3",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -745,12 +1218,167 @@
     "sentence": "Consequently these words are perfectly applicable to Sacred Scripture: \"For the word of God is living and active\" (Heb. 4:12) and \"it has power to build you up and give you your heritage among all those who are sanctified\" (Acts […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.4.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 12",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 12] Heb 4, 13.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Heb 4, 13",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.10.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 28",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 28] Heb 10, 12",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Heb 10, 12",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.11.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 17",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 17] Heb 11, 1",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Heb 11, 1",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.11.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 21",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 21] Heb 11, 6.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Heb 11, 6",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.12.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 27",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 27] Heb 12, 2",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Heb 12, 2",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.13.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 4",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 4] See Heb 13, 9",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "Heb 13, 9",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Pet.2.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 24",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 24] 1 Pt 2, 9; Col 1, 13",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "1 Pt 2, 9",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
   "locCount": 1
  },
  {
@@ -785,12 +1413,75 @@
     "sentence": "For holy mother Church, relying on the belief of the Apostles (see John 20:31; 2 Tim. 3:16; 2 Peter 1:19-20; 2 Peter 3:15-16), holds that the books of both the Old and New Testaments in their entirety, with all their […]",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Pet.1.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Dei filius (First Vatican Council, 1870)",
+    "loc": "editors' footnote 19",
+    "how": "footnote reference (editors')",
+    "sentence": "[editors' footnote 19] 2 Pt 1, 19.",
+    "edition": "Decrees of the First Vatican Council, English text with the editors' footnotes as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum20.htm, fetched 2026-11-02); the footnote style («see above, p. 230», «Bruns 2, 178; Msi 8, 713») is that of Tanner, Decrees of the Ecumenical Councils (1990), an attribution not printed on the page",
+    "tagCite": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+    "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+    "printed": "2 Pt 1, 19",
+    "flag": "the Latin of the council (Holy See, vatican.va) prints no Scripture reference; this one is the editors' footnote; the footnote marker is absent from the online text, so the sentence it belongs to is not located"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: online reproduction; footnote marker not present in the text, clause not located]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.2.20"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§91, fn 53",
+    "how": "footnote",
+    "sentence": "They have received the anointing of the Holy Spirit, who instructs them […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01 (text cached by session A5)",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__PM.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.2.27"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§91, fn 53",
+    "how": "footnote",
+    "sentence": "They have received the anointing of the Holy Spirit, who instructs them […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01 (text cached by session A5)",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__PM.HTM"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
   "locCount": 1
  },
  {
@@ -805,7 +1496,8 @@
     "sentence": "[… ] New Testaments are like a mirror in which the pilgrim Church on earth looks at God, from whom she has received everything, until she is brought finally to see Him as He is, face to face (see 1 John 3:2).",
     "edition": "Dei verbum (18 Nov 1965), official English text on vatican.va (vat-ii_const_19651118_dei-verbum_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html"
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+    "flag": "the footnote markers of the official text, printed as «(3)» etc., are dropped from the fragment without a mark (verifier V7); this row was not re-collated in S1b"
    }
   ],
   "count": 1,

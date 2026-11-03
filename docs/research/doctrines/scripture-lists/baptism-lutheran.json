@@ -75,6 +75,50 @@
  },
  {
   "refs": [
+   "Gen.17.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Epitome of the Formula of Concord",
+    "loc": "Art. XII (Of Other Factions and Sects), «Articles that cannot be tolerated in the Church», item 6 (printed p. 839)",
+    "how": "inline reference (Book N,N ff.)",
+    "sentence": "[…] the children of Christians, because they have been born of Christian and believing parents, are holy and children of God even without and before Baptism; and for this reason they neither attach much importance to the baptism of children nor encourage it, contrary to the express words of God's promise which pertains only to those who keep His covenant and do not despise it. Gen. 17,7 ff.",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "Gen. 17,7 ff.",
+    "flag": "open range: the print gives «ff.» with no end verse; only the first verse is encoded"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; Triglot page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gen.17.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Solid Declaration of the Formula of Concord",
+    "loc": "Art. XII (Of Other Factions and Sects), the Anabaptist errors on baptism, fourth item",
+    "how": "inline reference (Book N, N)",
+    "sentence": "[…] the children of Christians, since they have been born of Christian and believing parents, are holy and the children of God even without and before Baptism; and for this reason they neither attach much importance to the baptism of children nor encourage it, contrary to the express words of the promise, which extends only to those who keep God's covenant and do not despise it, : Gen. 17, 9.",
+    "edition": "Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "url": "https://archive.org/details/concordiatriglot00unse",
+    "printed": "Gen. 17, 9",
+    "flag": "the Triglot Latin column prints «Gen. 17,9»; the German column's OCR reads «Gen. 17. 5» (unreadable); the English column is followed"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; Triglot page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Rom.6.4"
   ],
   "citedBy": [

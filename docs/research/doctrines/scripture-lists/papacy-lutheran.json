@@ -43,9 +43,20 @@
     "sentence": "[…] receive all things [even contrary to God's command and Word], since Scripture elsewhere, Acts 5, 29, bids us obey God rather than men. When, therefore, _ they teach wicked things, they are not to be heard. But these are wicked things, namely, that human traditions are services of God, that they are necessary services, […]",
     "edition": "Concordia Triglotta, St. Louis: Concordia Publishing House, 1921, English Bente/Dau; archive concordiatriglot00unse",
     "flag": "the paragraph number is provisional and does not follow the Triglot Latin brackets in about half the entries checked (V6); the printed page is the reliable locator OCR misreadings in the sentence corrected by A5 from V6's list the quoted text copies OCR debris (paragraph mark «_», running header or page number inside the quote); not corrected here (V6)"
+   },
+   {
+    "work": "Augsburg Confession",
+    "loc": "XXVIII, closing paragraphs on observances (after the paragraph on Acts 15:20; printed page not read); added in S1b",
+    "how": "inline",
+    "sentence": "But if it be impossible to obtain a mitigation of such observances as cannot be kept without sin, we are bound to follow the apostolic rule, Acts 5,29, which commands us to obey God rather than men.",
+    "edition": "Concordia Triglotta, St. Louis: Concordia Publishing House, 1921, English Bente/Dau; archive concordiatriglot00unse",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "printed": "Acts 5,29",
+    "flag": "added by S1b from the Triglot English OCR; the paragraph number and the printed page were not collated",
+    "addedBy": "S1b"
    }
   ],
-  "count": 2,
+  "count": 3,
   "inPage": false,
   "tag": "[unverified: OCR]"
  },
@@ -1045,5 +1056,26 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: Triglot page image n802, reference and quoted words read]"
+ },
+ {
+  "refs": [
+   "1Pet.5.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Augsburg Confession",
+    "loc": "XXVIII, closing paragraphs on observances (after Acts 5:29; printed page not read); added in S1b",
+    "how": "inline",
+    "sentence": "Peter, 1 Pet. 5, 3, forbids bishops to be lords, and to rule over the churches.",
+    "edition": "Concordia Triglotta, St. Louis: Concordia Publishing House, 1921, English Bente/Dau; archive concordiatriglot00unse",
+    "tagCite": "[unverified: OCR; Triglot page image not read]",
+    "printed": "1 Pet. 5, 3",
+    "flag": "added by S1b from the Triglot English OCR; the paragraph number and the printed page were not collated; the record was missing from the Codex list",
+    "addedBy": "S1b"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": ""
  }
 ]

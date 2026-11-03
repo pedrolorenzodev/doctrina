@@ -33,12 +33,151 @@
     "tagCite": "[unverified: OCR; page image not read]",
     "url": "https://archive.org/details/cu31924029363094",
     "printed": "John iii. 5"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John iii., 5",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
    }
   ],
   "count": 3,
   "inPage": true,
-  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by A5 2026-11-01]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "Mark.16.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 291",
+    "how": "inline reference",
+    "sentence": "[…] He that believeth and is baptized shall be saved. Mark xvi. 16.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Mark xvi. 16"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Mark xvi., 16",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Mark xvi., 16",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XV (the Mysteries), p. 135, footnote †",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] and by the words, 'He that believeth and is baptised shall be saved, but he that disbelieveth shall be condemned.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decree XV, printed pp. 135–136; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Mark xvi., 16"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "Matt.28.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 289",
+    "how": "inline reference",
+    "sentence": "Lastly, after his resurrection, he gave the Apostles this solemn commandment: Go ye and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost. Matt. xxviii. 19.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Matt. xxviii. 19"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxviii., 19",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XV (the Mysteries), p. 135, footnote *",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] our Lord instituted Holy Baptism by the words, 'Go ye and make disciples of all the nations, baptising them in the name of the Father, and of the Son, and of the Holy Spirit' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decree XV, printed pp. 135–136; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxviii., 19 (OCR «xxvill., το»)",
+    "flag": "OCR of the footnote reads «xxvill., το»; read as xxviii., 19 by Doctrina [unverified]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 3
+ },
+ {
+  "refs": [
+   "Acts.2.38"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 291",
+    "how": "inline reference",
+    "sentence": "Repentance and faith; for which cause, also, before Baptism they recite the Creed. Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost. Acts ii. 38.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Acts ii. 38"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Acts ii., 38",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
  },
  {
   "refs": [
@@ -73,6 +212,103 @@
  },
  {
   "refs": [
+   "Mark.1.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Mark i., 4",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Mark i., 4",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Titus.3.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 142, footnote",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] If it be regeneration, old things are passed away.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Tit. iii., 5"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Tit. iii., 5",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Heb.6.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVI, p. 142, footnote",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] If it be light, it dispelleth the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Heb. vi., 4"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Heb. vi., 4",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
    "Matt.3.11"
   ],
   "citedBy": [
@@ -90,6 +326,27 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.16.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 301 (Schaff II p. 493)",
+    "how": "inline reference",
+    "sentence": "[…] Hence they hang upon the baptized a Cross […] As a visible expression and continual remembrance of Christ's command: If any man will come after me, let him deny himself, and take up his cross, and follow me.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Matt. xvi. 24"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
   "locCount": 1
  },
  {
@@ -116,44 +373,24 @@
  },
  {
   "refs": [
-   "Matt.28.19"
+   "Matt.28.19-Matt.28.20"
   ],
   "citedBy": [
    {
-    "work": "Longer Catechism of the Eastern Church (Philaret)",
-    "loc": "Q. 289",
-    "how": "inline reference",
-    "sentence": "Lastly, after his resurrection, he gave the Apostles this solemn commandment: Go ye and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost. Matt. xxviii. 19.",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
-    "tagCite": "[unverified: OCR; page image not read]",
-    "url": "https://archive.org/details/creedschristendo02scha",
-    "printed": "Matt. xxviii. 19"
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxviii., 19, 20",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
    }
   ],
   "count": 1,
   "inPage": true,
-  "tag": "[unverified: OCR; page image not read]",
-  "locCount": 1
- },
- {
-  "refs": [
-   "Mark.16.16"
-  ],
-  "citedBy": [
-   {
-    "work": "Longer Catechism of the Eastern Church (Philaret)",
-    "loc": "Q. 291",
-    "how": "inline reference",
-    "sentence": "[…] He that believeth and is baptized shall be saved. Mark xvi. 16.",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
-    "tagCite": "[unverified: OCR; page image not read]",
-    "url": "https://archive.org/details/creedschristendo02scha",
-    "printed": "Mark xvi. 16"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[unverified: OCR; page image not read]",
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -179,23 +416,90 @@
  },
  {
   "refs": [
-   "Acts.2.38"
+   "Luke.3.13"
   ],
   "citedBy": [
    {
-    "work": "Longer Catechism of the Eastern Church (Philaret)",
-    "loc": "Q. 291",
-    "how": "inline reference",
-    "sentence": "Repentance and faith; for which cause, also, before Baptism they recite the Creed. Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost. Acts ii. 38.",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, pp. 491–493",
-    "tagCite": "[unverified: OCR; page image not read]",
-    "url": "https://archive.org/details/creedschristendo02scha",
-    "printed": "Acts ii. 38"
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Luke iii., 13",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[unverified: OCR; page image not read]",
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John i., 6",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.33"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "33",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.3.32"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "iii., 32",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -217,6 +521,50 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.36"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Acts viii., 36",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.10.47"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "x., 47",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -263,6 +611,72 @@
  },
  {
   "refs": [
+   "Acts.22.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xxii., 16",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.2.28-Rom.2.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Rom. ii., 28, 29",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.4.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Rom. iv., 11",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Rom.5.19"
   ],
   "citedBy": [
@@ -280,6 +694,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.6.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Rom. vi., 3",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -305,6 +741,50 @@
  },
  {
   "refs": [
+   "Gal.3.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Gal. iii., 12",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gal.3.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Gal. iii., 26",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Eph.2.2"
   ],
   "citedBy": [
@@ -322,6 +802,50 @@
   "count": 1,
   "inPage": true,
   "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.4.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Eph. iv., 5",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.5.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Eph. v., 25",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -347,6 +871,50 @@
  },
  {
   "refs": [
+   "Col.2.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Col. ii., 11",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.2.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVI (printed p. 202)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that Baptism is a Mystery instituted by the Lord, which, except any one receive, he hath no communion with Christ […] so that those that are washed in the Name of the Father, and of the Son, and of the Holy Spirit, are regenerated, cleansed, and justified. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n213 = printed p. 202",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Col. ii., 12",
+    "flag": "printed in two columns after the chapter, in the order of the print; the print does not say which clause each reference serves; «Gal. iii., 12», «Luke iii., 13», «John … iii., 32» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Col.3.9"
   ],
   "citedBy": [
@@ -368,44 +936,67 @@
  },
  {
   "refs": [
-   "Titus.3.5"
+   "Heb.10.22"
   ],
   "citedBy": [
    {
     "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
-    "loc": "Decree XVI, p. 142, footnote",
-    "how": "footnote reference (editor's)",
-    "sentence": "[…] If it be regeneration, old things are passed away.",
-    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
-    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
     "url": "https://archive.org/details/actsdecreesofsyn00orth",
-    "printed": "Tit. iii., 5"
+    "printed": "Heb. x., 22",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
    }
   ],
   "count": 1,
   "inPage": false,
-  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
   "refs": [
-   "Heb.6.4"
+   "1Pet.3.21"
   ],
   "citedBy": [
    {
     "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
-    "loc": "Decree XVI, p. 142, footnote",
-    "how": "footnote reference (editor's)",
-    "sentence": "[…] If it be light, it dispelleth the darkness.",
-    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n150, n151, n153 = printed pp. 139, 140, 142)",
-    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
     "url": "https://archive.org/details/actsdecreesofsyn00orth",
-    "printed": "Heb. vi., 4"
+    "printed": "1 Peter iii., 21",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here as the references of that list that name baptism, circumcision of the heart or washing, chosen by Doctrina from the wording of the verses [unverified]"
    }
   ],
   "count": 1,
   "inPage": false,
-  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Pet.2.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 305 (Schaff II p. 493)",
+    "how": "inline reference",
+    "sentence": "[…] That they are more guilty in their sins than the unbaptized […] For if after they have escaped the pollutions of the world through the knowledge of the Lord and Saviour Jesus Christ, they are again entangled therein and overcome, the latter end is worse with them than the beginning.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 493",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "2 Peter ii. 20"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
   "locCount": 1
  }
 ]

@@ -2,88 +2,91 @@
 
 Status: draft, NOT verified by Pedro
 
-Generated 2026-11-01 by session A5 from the 20 `scripture-lists/*.json` files (the four Papacy files for Catholic, Orthodox, Lutheran, Reformed are Codex's partial checkpoints; the other 16 are A5's). «New» = a passage the documents cite that no verse of the page's `scripture` list covers (A5 files: single-range records; Codex files: its own `inPage`). Ranking of the «ten most important new»: distinct documents citing it, then distinct locators. A passage cited by one document at one locator is the usual case; a new passage is not yet a recommendation to add it to a page. All counts come from drafts: see each file's tags and the verification files.
+Regenerated 2026-11-02 by session S1b (first generated 2026-11-01 by session A5) from the 20 `scripture-lists/*.json` files (the four Papacy files for Catholic, Orthodox, Lutheran, Reformed are Codex's partial checkpoints; the other 16 are A5's). «New» = a passage the documents cite that no verse of the page's `scripture` list covers (A5 files: single-range records; Codex files: its own `inPage`). Ranking of the «ten most important new»: distinct documents citing it, then distinct locators. A passage cited by one document at one locator is the usual case; a new passage is not yet a recommendation to add it to a page. All counts come from drafts: see each file's tags and the verification files.
 
 | Page | Records | New | Verifier (Sonnet) | Main routes not reached |
 |---|---|---|---|---|
-| baptism · catholic | 92 | 58 | V1 (+ parser audit) | Florence, *Exsultate Deo* (FLOexs) and Lateran IV constitution 1 (LAT1): cited by the page, no Scripture reference collected in this pass (n; Roman Catechism and CIC canons cited by the page (CIC 842, 849, 854, 861, 867, 869): canons carry no Scripture references. |
-| baptism · lutheran | 6 | 0 | V1 | Formula of Concord (Epitome XII, Solid Declaration XII) on the Anabaptists and baptism: not searched in this pass.; Augsburg Confession IX: prints no Scripture reference (checked the English column, ~70 words). |
-| baptism · reformed | 79 | 38 | V2 | Scripture proofs of Heidelberg Q. 69–74 and Belgic Art. 34 in a printed Reformed edition other than Schaff 1877: none read.; Westminster 1894 page images: not read; every record is `[unverified: OCR]`. |
+| baptism · catholic | 135 | 94 | V1 (+ parser audit) | Trent: Waterworth OCR only. Known gaps after the V1 verification: the OCR parser does not catch every form («Actsii.», roman «X», «John i.' ; CCC: every paragraph the page cites (including the ones listed only in `citations:` arrays) was parsed from the official English pages, foot |
+| baptism · lutheran | 8 | 2 | V1 | Read in this session in the Triglot English column: Augsburg Confession IX (~70 words, no reference printed), Apology IX (the whole article:; Not read for this page: Large Catechism IV in the German column (the Triglot German OCR is Fraktur and unusable), Formula of Concord Solid D |
+| baptism · reformed | 89 | 45 | V2 | Heidelberg Q. 69–74 proofs: read in the Palatinate edition (Harbaugh, Reading 1889, OCR) in S1b; Belgic Art. 34 notes: unchanged.; Westminster 1894 page images: not read; every record is `[unverified: OCR]`. |
 | baptism · baptist | 61 | 26 | V2 (+1688 margins read by A5) | 1688 print: 28.1–2, 29.1–4 read on page images (A3: 29.1–2; A5: 28.1–2, 29.3–4); the 1688 wording of 29.1 and 29.2 clauses was not collated ; BF&M 1925/1963/2000 proof-text lists were not re-read from the official pages in this pass. |
-| baptism · orthodox | 18 | 10 | no | 1895 Encyclical of the Patriarchate of Constantinople (the page/dossier use it for the reception of Western baptism): not searched in this p; Dositheus Decree XV (the Mysteries) and the Jeremiah Answers: not searched for references. |
-| eucharist · catholic | 60 | 31 | V4 | Florence (Exsultate Deo, Laetentur caeli), Lateran IV, Roman Catechism (Donovan 1829) cited by the page: not read for references.; Sacrosanctum concilium 55, Orientalium ecclesiarum 5–6, GIRM, CIC canons, John Paul II audiences, Pontifical Council notes: not searched (no |
-| eucharist · lutheran | 70 | 35 | V4 | Verifier V4 reports seven references printed in the English columns that this list lacks (Heb 10:10, 1 Pet 2:5, Heb 13:15, 1 Pet 1:2, Heb 5:; Triglot page images not read: every record is `[unverified: OCR]`. |
-| eucharist · reformed | 53 | 14 | V5 + V9 (rebuilt from images) | Larger Catechism Q. 169–177 proof blocks: the first OCR parse was rejected by verifier V5 (about a third of the records wrong, Q. 170 refs f; WLC/WSC clause-to-letter matching not done (interleaved columns). |
-| eucharist · baptist | 47 | 13 | no (1688 margins read by A5) | 2LCF 30.7–30.8 margins (1688 pp. 102–103) and all of chapter 30 in the 1719 print: not read; 30.1–30.6 (and 28.1) read on the 1688 page imag; First London, Standard, Somerset: the dossier found no Supper chapter comparable to 2LCF 30; not searched here. |
-| eucharist · orthodox | 14 | 3 | V5 | Mogila: V5 found the six references under Q. 107 in the print (the OCR run from the «Question 106» heading covers Q. 106–107); Q. 108 onward; Philaret Q. 318–346 (the Liturgy) was scanned by regex for «Book roman. N»; Philaret Q. 350 added after V5. Orthodox 1895 encyclical and Jer |
-| papacy · catholic | 114 | 79 | V3 (corrections applied to JSON) | CCC: §§85–86, 551–553, 815–818, 833–838, 861–862, 869–870, 880–896, 1369, 1441/1444, 2035, 2244–2246 fetched; footnote audit done for biblic; LG official English §12 notes have defects: note 111 prints “Jn. 2:20, 27” without 1; notes 115–116 do not align with the adjacent body quot |
-| papacy · lutheran | 55 | 39 | V6 (corrections applied to JSON) | Triglot OCR route succeeded. Images fetched but not yet read for AC pp.85/87/89/91/93; Ap pp.443–451 and SA pp.471–475 not visually collated; AC XXVIII.25 also quotes the power given “to edification, and not to destruction” without a local verse number; explicit 2 Cor.13:10 is enco |
+| baptism · orthodox | 40 | 27 | no | Philaret Q. 285–306 (Of Baptism) read in full on the OCR text (Schaff II pp. 491–493): Q. 288, 289, 291, 294, 296, 297 (already listed), 301; Dositheus: Decree XV (OCR, pp. 135–137), Chapter XV and Chapter XVI of the Confession (page images, pp. 201–202) read; the Decrees' Mystery  |
+| eucharist · catholic | 95 | 58 | V4 | Sacrosanctum concilium 55, Orientalium ecclesiarum 5–6, GIRM, CIC canons, John Paul II audiences, Pontifical Council notes: not searched (no; Trent: Waterworth OCR; windows are the 90 words of OCR text before the printed reference, not a verified decree sentence. Only the doctrinal |
+| eucharist · lutheran | 78 | 41 | V4 | Triglot page images not read: every record is `[unverified: OCR]`.; S1b: the seven references verifier V4 listed (Heb 10:10, 1 Pet 2:5, Heb 13:15, 1 Pet 1:2, Heb 5:1, Gal 5:19 ff., Col 3:4) were found in the  |
+| eucharist · reformed | 210 | 146 | V5 + V9 (rebuilt from images) | Larger Catechism Q. 168–177 proof blocks (printed pp. 203–210): read on the page images by an extraction subagent in S1b (70 blocks; letters; Larger Catechism Q. 168–177 proof blocks (printed pp. 203–210): read on the page images by an extraction subagent in S1b (70 blocks; letters |
+| eucharist · baptist | 47 | 13 | no (1688 margins read by A5) | 2LCF 30.7–30.8: the 1688 print p. 102 was read on the page image in S1b (margin notes l, m, n: the same references as McGlothlin's 1677 text; First London, Standard, Somerset: the dossier found no Supper chapter comparable to 2LCF 30; not searched here. |
+| eucharist · orthodox | 32 | 20 | V5 | Philaret Q. 315–350 read in full on the OCR text (Schaff II pp. 495–499): references printed at Q. 329, 338, 341, 342, 344, 350 (all already; Dositheus: Decree XV (OCR; footnotes partly garbled), Chapter XV and Chapter XVII of the Confession (page images, pp. 201, 205) read; Decree |
+| papacy · catholic | 121 | 77 | V3 (corrections applied to JSON) | CCC: §§85–86, 551–553, 815–818, 833–838, 861–862, 869–870, 880–896, 1369, 1441/1444, 2035, 2244–2246 fetched; footnote audit done for biblic; LG official English §12 notes have defects: note 111 prints “Jn. 2:20, 27” without 1; notes 115–116 do not align with the adjacent body quot |
+| papacy · lutheran | 56 | 40 | V6 (corrections applied to JSON) | Triglot OCR route succeeded. Images fetched but not yet read for AC pp.85/87/89/91/93; Ap pp.443–451 and SA pp.471–475 not visually collated; AC XXVIII.25 also quotes the power given “to edification, and not to destruction” without a local verse number; explicit 2 Cor.13:10 is enco |
 | papacy · reformed | 103 | 57 | V6 (corrections applied to JSON) | 1894 proof lists: no image collation in this pass. WCF25.6 note o prints 2 Thess.2:3,4,8,9 (last verse continues onto p.88), unlike the curr; WCF30.3 prints 1 Cor.11:27 “to the end”; WCF31.2 prints 2 Chr.19:8 “to the end”. These two open ranges are documented here rather than given |
 | papacy · baptist | 70 | 22 | V8 | 2LCF 26.7 onward in the 1688 print not read; 26.1–26.6 read on the page images by A5.; 2LCF 26.1, 26.2, 26.5 onward margins; First London and Somerset church chapters; AP XIV; NH XIII: not searched here. |
 | papacy · orthodox | 46 | 38 | V3 (corrections applied to JSON) | 1848 encyclical: dossier route is Fordham web transcription; not used as a dated print. No licensed/public-domain print collated this pass. ; 1895 §XIV p. 41 note 1 also prints “Rom. i. 9, xv. 15–xvi”: the open cross-chapter range has no explicit end verse. Rom. 1:9 is encoded; Rom |
-| sola-scriptura · catholic | 37 | 13 | V7 | CCC 9193: paragraph not found by the page parser; Footnote markers «(3)» of Dei verbum are dropped from the quoted fragments without a mark (V7). |
-| sola-scriptura · lutheran | 24 | 11 | V7 | AC XXVIII English refs V7 reports as missing: Acts 15:20, Acts 5:29, 1 Pet 5:3, 1 Tim 4:1, Gal 5:1, 1 Cor 11:5, 14:30, 14:40, Phil 2:14 (the; Triglot page images not read: every record is `[unverified: OCR]` except the two rows taken from the dossier. |
-| sola-scriptura · reformed | 62 | 9 | V9 (rebuilt from images) | Larger Catechism Q. 2–4 and 157–159 and Shorter Catechism Q. 2–3 proof blocks: the first OCR parse was removed after verifier V5 found about; Belgic Confession Art. 2–7 (Schaff III 1877) notes: not collected. |
+| sola-scriptura · catholic | 65 | 37 | V7 | Footnote markers «(3)» of Dei verbum are dropped from the quoted fragments without a mark (V7).; Dei Filius (First Vatican Council): the Holy See page is Latin only in this pass; not read for references. |
+| sola-scriptura · lutheran | 33 | 20 | V7 | Triglot page images not read: every record is `[unverified: OCR]` except the two rows taken from the dossier.; The nine references V7 reported as missing from AC XXVIII were looked for in the Triglot English OCR: eight are printed in AC XXVIII (Acts 1 |
+| sola-scriptura · reformed | 96 | 40 | V9 (rebuilt from images) | Larger Catechism Q. 2–4 and 157–159 and Shorter Catechism Q. 2–3 proof blocks: the first OCR parse was removed after verifier V5 found about; Belgic Confession Art. 2–7 (Schaff III 1877) notes: not collected. |
 | sola-scriptura · baptist | 102 | 63 | V8 | 2LCF 1.1–1.3 margins (1688 pp. 1–2, leaves n24–n25): not read; the 1719 notes for 1.8–1.10 not read. 1688 pp. 4–9 (1.4–1.10) read on page im; Standard Confession XIII (Acts 24:14 / 2:42) and Somerset: not collected as Scripture-for-Scripture rows. |
-| sola-scriptura · orthodox | 6 | 3 | no | Philaret page images not read (`[unverified: OCR]`); Q. 43–55 (the New Testament canon) not scanned for references.; Mogila Part I Q. 1–12 scanned for references (Q. 4 is the passage on Scripture and tradition; the other references there are about faith and |
+| sola-scriptura · orthodox | 107 | 102 | no | Philaret Q. 1–62 read (OCR, Schaff II pp. 445–455): references collected from Q. 14, 15, 18, 23, 32, 37, 58, 60; Q. 2, 4, 5, 6, 8 and 62 pri; Philaret page images not read (`[unverified: OCR]`). |
 
 ## baptism · catholic
 
-92 records, 58 new against the page.
+135 records, 94 new against the page.
 
 Ten most important new passages:
 
+- `Eph.4.22`: 2 document(s) (Council of Trent (Waterworth 1848); Roman Catechism (Catechism of the Council of Trent))
+- `Eph.5.26`: 2 document(s) (CCC; Roman Catechism (Catechism of the Council of Trent))
+- `Rom.8.1`: 2 document(s) (Council of Trent (Waterworth 1848); Roman Catechism (Catechism of the Council of Trent))
 - `Rom.8.17`: 2 document(s) (CCC; Council of Trent (Waterworth 1848))
 - `1Cor.6.19`: 1 document(s) (CCC)
 - `2Cor.5.17`: 1 document(s) (CCC)
-- `1Cor.10.1-1Cor.10.6`: 1 document(s) (CCC)
-- `1Cor.12.27`: 1 document(s) (CCC)
-- `1Cor.16.15-1Cor.16.16`: 1 document(s) (CCC)
-- `1Cor.6.15`: 1 document(s) (CCC)
-- `1John.4.10`: 1 document(s) (CCC)
-- `1John.5.6-1John.5.8`: 1 document(s) (CCC)
-- `1Pet.1.23`: 1 document(s) (CCC)
+- `Acts.4.2`: 1 document(s) (Council of Trent (Waterworth 1848))
+- `Mark.1.10`: 1 document(s) (Roman Catechism (Catechism of the Council of Trent))
+- `1Cor.1.30`: 1 document(s) (Council of Trent (Waterworth 1848))
+- `1Cor.10.1`: 1 document(s) (Roman Catechism (Catechism of the Council of Trent))
 
 Not reached (from the list's own section):
 
-- Florence, *Exsultate Deo* (FLOexs) and Lateran IV constitution 1 (LAT1): cited by the page, no Scripture reference collected in this pass (not read for references).
-- Roman Catechism and CIC canons cited by the page (CIC 842, 849, 854, 861, 867, 869): canons carry no Scripture references.
 - Trent: Waterworth OCR only. Known gaps after the V1 verification: the OCR parser does not catch every form («Actsii.», roman «X», «John i.' 29», «viii. i»), so some printed references of Sessions V, VI and VII (e.g. Session V John 1:29, Rom 8:1, Rom 6:4, Eph 4:22-24, 2 Tim 2:5; Session VI ch. 6 Heb 11:6) may be missing; the «sentence» is a window of OCR text, not the decree sentence; `Acts 4:2` is probably Acts 4:12 and Gal 3:23 (Session XIV) probably Gal 3:27 (unconfirmed, page image not read).
 - CCC: every paragraph the page cites (including the ones listed only in `citations:` arrays) was parsed from the official English pages, footnotes AND inline references; 2 readings are flagged where the page prints a non-existent verse or a missing colon.
+- Roman Catechism (Donovan 1829, OCR): the footnote lines of the chapter on baptism were read by script (lines that begin with a book abbreviation; Part II, about pp. 109–137); the running heads give every second page only; the quoted-words-without-reference cases of the text were not collected; Florence *Exsultate Deo* and Lateran IV c. 1: see the closure file.
+- Trent (S1b): Session V canons 3 and 5 (printed pp. 23–24) read on the page images: Acts iv. 2 is printed as «iv. 2» (not 4:12) and Gal. iii. 27 as 27 (not 23); Session VI chapter 7 notes read in the OCR only; the remaining sessions V, VI, VII, XIII, XIV, XXI, XXII page images were not read; a lenient scan of the OCR of those sessions found 51 reference forms the first parser lost (mostly Session VI Justification: Rom, Matth, John, James; Session XIV Penance: John 20:22–23, Matt 18:18, James 5:14, Luke 13:5, Ps 6:7, Ps 50:6): only the baptism ones are collected here.
+- Florence, Exsultate Deo (Armenians): read the baptism passage in the online English text; the only Scripture wording is «unless we are born again of water and the spirit, … as Truth says» (John 3:5, identified); Lateran IV c. 1 read in full: it prints no Scripture reference and quotes no verse; the Roman Catechism and CIC canons: CIC canons carry no Scripture references.
 
 ## baptism · lutheran
 
-6 records, 0 new against the page.
+8 records, 2 new against the page.
 
 Ten most important new passages:
 
+- `Gen.17.7`: 1 document(s) (Epitome of the Formula of Concord)
+- `Gen.17.9`: 1 document(s) (Solid Declaration of the Formula of Concord)
 
 Not reached (from the list's own section):
 
-- Formula of Concord (Epitome XII, Solid Declaration XII) on the Anabaptists and baptism: not searched in this pass.
-- Augsburg Confession IX: prints no Scripture reference (checked the English column, ~70 words).
-- Triglot page images not read: every record is `[unverified: OCR]` (the loci and sentences were matched in the OCR text).
+- Read in this session in the Triglot English column: Augsburg Confession IX (~70 words, no reference printed), Apology IX (the whole article: one reference, Matt 28:19, already listed; the promise to little children and the argument from the gift of the Holy Ghost carry no reference), Smalcald Articles III V (one quoted wording, «a washing in the Word», Eph 5:26, already listed; no reference printed), Small Catechism IV and Large Catechism IV (the four and three references already listed; Large Catechism IV prints no other reference, counted by script over the English text between the headings «Of Baptism» and «Of the Sacrament of the Altar»), Epitome XII (one reference: Gen 17:7 ff.) and Solid Declaration XII (one reference: Gen 17:9), both on the Anabaptist errors on baptism.
+- Not read for this page: Large Catechism IV in the German column (the Triglot German OCR is Fraktur and unusable), Formula of Concord Solid Declaration II and VII on baptism, the Treatise on the Power and Primacy of the Pope.
+- All records `[unverified: OCR]` (no Triglot page image was read for this list).
 
 ## baptism · reformed
 
-79 records, 38 new against the page.
+89 records, 45 new against the page.
 
 Ten most important new passages:
 
+- `1Cor.6.11`: 2 document(s) (Belgic Confession; Heidelberg Catechism)
+- `Eph.4.22-Eph.4.24`: 2 document(s) (Belgic Confession; Heidelberg Catechism)
+- `John.19.34`: 2 document(s) (Belgic Confession; Heidelberg Catechism)
 - `Matt.3.11`: 2 document(s) (Belgic Confession; Westminster Confession of Faith)
+- `Rev.1.5`: 2 document(s) (Heidelberg Catechism; Larger Catechism)
 - `1Cor.1.11-1Cor.1.13`: 1 document(s) (Larger Catechism)
 - `1Cor.10.2`: 1 document(s) (Belgic Confession)
 - `1Cor.12.25-1Cor.12.27`: 1 document(s) (Larger Catechism)
 - `1Cor.15.29`: 1 document(s) (Larger Catechism)
 - `1Cor.3.5`: 1 document(s) (Belgic Confession)
-- `1Cor.3.7`: 1 document(s) (Belgic Confession)
-- `1Cor.6.11`: 1 document(s) (Belgic Confession)
-- `Acts.10.2`: 1 document(s) (Westminster Confession of Faith)
-- `Acts.10.22`: 1 document(s) (Westminster Confession of Faith)
 
 Not reached (from the list's own section):
 
-- Scripture proofs of Heidelberg Q. 69–74 and Belgic Art. 34 in a printed Reformed edition other than Schaff 1877: none read.
+- Heidelberg Q. 69–74 proofs: read in the Palatinate edition (Harbaugh, Reading 1889, OCR) in S1b; Belgic Art. 34 notes: unchanged.
 - Westminster 1894 page images: not read; every record is `[unverified: OCR]`.
 - Q. 166–167 clause attribution of the proofs (interleaved columns).
 
@@ -112,99 +115,101 @@ Not reached (from the list's own section):
 
 ## baptism · orthodox
 
-18 records, 10 new against the page.
+40 records, 27 new against the page.
 
 Ten most important new passages:
 
 - `Gal.3.27`: 2 document(s) (Confession of Dositheus (Synod of Jerusalem 1672); Orthodox Confession of Peter Mogila)
-- `1Cor.6.11`: 1 document(s) (Orthodox Confession of Peter Mogila)
-- `Acts.16.33`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
-- `Acts.8.12`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
-- `Col.3.9`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
 - `Heb.6.4`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
-- `Matt.19.12`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
-- `Matt.3.11`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
-- `Rom.5.19`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Mark.1.4`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
 - `Titus.3.5`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `1Cor.6.11`: 1 document(s) (Orthodox Confession of Peter Mogila)
+- `1Pet.3.21`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Acts.10.47`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Acts.16.33`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Acts.22.16`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Acts.8.12`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
 
 Not reached (from the list's own section):
 
-- 1895 Encyclical of the Patriarchate of Constantinople (the page/dossier use it for the reception of Western baptism): not searched in this pass.
-- Dositheus Decree XV (the Mysteries) and the Jeremiah Answers: not searched for references.
-- Philaret Q. 292–293 (infants): no Scripture reference printed there (checked the OCR text).
-- Mogila and Philaret records are `[unverified: OCR]` (page images not read); Dositheus XVI was read on the page images (printed pp. 139, 140, 142; p. 141 and 143 carry no scripture footnote).
+- Philaret Q. 285–306 (Of Baptism) read in full on the OCR text (Schaff II pp. 491–493): Q. 288, 289, 291, 294, 296, 297 (already listed), 301 (Matt 16:24) and 305 (2 Pet 2:20) added; Q. 285–287, 290, 292, 293, 295, 298, 299, 300, 302, 303, 304, 306 print no Scripture reference (Q. 298 quotes Cyril of Jerusalem, Q. 295 Dionysius, Q. 299 Dionysius and Tertullian, with no Scripture reference); Q. 307–314 (Unction with Chrism: 1 John 2:20, 27; 2 Cor 1:21–22; Acts 8:14, 16; Exod 30:25; 1 Kings 1:39) belong to a different Mystery and are not collected.
+- Dositheus: Decree XV (OCR, pp. 135–137), Chapter XV and Chapter XVI of the Confession (page images, pp. 201–202) read; the Decrees' Mystery lists give Mark 1:4 etc. only through Chapter XV. 1895 Encyclical (reception of Western baptism) and Jeremiah's Answers: not read (no print in the cached texts).
+- Philaret and Mogila records are `[unverified: OCR]`; Mogila Q. 102–103 was not re-read in this session; Dositheus Decree XVI (pp. 139, 140, 142) and Confession Chapters XV–XVI were read on page images.
 
 ## eucharist · catholic
 
-60 records, 31 new against the page.
+95 records, 58 new against the page.
 
 Ten most important new passages:
 
+- `John.13.1`: 2 document(s) (CCC; Roman Catechism (Catechism of the Council of Trent))
 - `1Cor.12.13`: 1 document(s) (CCC)
 - `2Cor.11.26`: 1 document(s) (CCC)
+- `Acts.1.10`: 1 document(s) (Roman Catechism (Catechism of the Council of Trent))
+- `Acts.5.41`: 1 document(s) (Roman Catechism (Catechism of the Council of Trent))
 - `Eph.1.5`: 1 document(s) (Council of Trent (Waterworth 1848))
 - `Gal.3.24`: 1 document(s) (CCC)
+- `Gal.5.6`: 1 document(s) (Roman Catechism (Catechism of the Council of Trent))
+- `Heb.10.20`: 1 document(s) (Roman Catechism (Catechism of the Council of Trent))
 - `Heb.4.6`: 1 document(s) (Council of Trent (Waterworth 1848))
-- `Heb.9.5`: 1 document(s) (Council of Trent (Waterworth 1848))
-- `Isa.11.2`: 1 document(s) (Council of Trent (Waterworth 1848))
-- `John.10.15`: 1 document(s) (Ecclesia de Eucharistia)
-- `John.10.17-John.10.18`: 1 document(s) (Ecclesia de Eucharistia)
-- `John.10.25`: 1 document(s) (CCC)
 
 Not reached (from the list's own section):
 
-- Florence (Exsultate Deo, Laetentur caeli), Lateran IV, Roman Catechism (Donovan 1829) cited by the page: not read for references.
 - Sacrosanctum concilium 55, Orientalium ecclesiarum 5–6, GIRM, CIC canons, John Paul II audiences, Pontifical Council notes: not searched (no Scripture reference expected in the clause cited; not checked).
 - Trent: Waterworth OCR; windows are the 90 words of OCR text before the printed reference, not a verified decree sentence. Only the doctrinal decrees of Sessions XIII, XXI, XXII were scanned (not the reform decrees), not only the chapters the page cites. After V4 the parser still misses some printed references (e.g. Mal 1:11, 1 Cor 10:21 and about 15 more on the same pages): treat the Trent rows as incomplete.
+- Roman Catechism (Donovan 1829, OCR): the footnote lines of the chapter on the Eucharist were read by script (Part II, about pp. 143–177); markers and pages not collated. Florence and Lateran IV: see the closure file.
+- Roman Catechism (Donovan 1829, OCR): the footnote lines of the chapter on the Eucharist were read by script (Part II, about pp. 143–177); markers and pages not collated. Florence and Lateran IV: see the closure file.
+- Florence: the passage on the form of the Eucharist read (two quoted wordings, no reference printed); Exsultate Deo on the Eucharist (the section on the seven sacraments) names no Scripture; Laetentur caeli not searched for the Eucharist.
 
 ## eucharist · lutheran
 
-70 records, 35 new against the page.
+78 records, 41 new against the page.
 
 Ten most important new passages:
 
 - `1Cor.10.17`: 1 document(s) (Apology)
 - `1Cor.11.33`: 1 document(s) (Augsburg Confession)
 - `1Cor.4.1`: 1 document(s) (Apology)
+- `1Pet.1.2`: 1 document(s) (Apology of the Augsburg Confession)
+- `1Pet.2.5`: 1 document(s) (Apology of the Augsburg Confession)
 - `1Tim.6.15`: 1 document(s) (Solid Declaration)
 - `2Cor.3.6`: 1 document(s) (Apology)
 - `2Cor.5.20`: 1 document(s) (Apology)
 - `2Cor.9.12`: 1 document(s) (Apology)
-- `Dan.11.38`: 1 document(s) (Apology)
-- `Deut.16.10`: 1 document(s) (Apology)
-- `Exod.20.7`: 1 document(s) (Augsburg Confession)
+- `Col.3.4`: 1 document(s) (Solid Declaration of the Formula of Concord)
 
 Not reached (from the list's own section):
 
-- Verifier V4 reports seven references printed in the English columns that this list lacks (Heb 10:10, 1 Pet 2:5, Heb 13:15, 1 Pet 1:2, Heb 5:1, Gal 5:19, Col 3:4): the regex patterns of this pass did not locate them in the OCR; the Epitome VII range was corrected (ten rows from Epitome VI removed); Matt 9:12 / 11:5 and similar «N; N» continuations were read from the print as the print gives them.
 - Triglot page images not read: every record is `[unverified: OCR]`.
-- The Apology and Solid Declaration windows were matched by regex; named references without numbers («as St. Paul says»), and the Smalcald Articles III VI («as Paul says»), were not searched exhaustively.
-- Formula of Concord Epitome/SD VII German and Latin columns were not used.
+- S1b: the seven references verifier V4 listed (Heb 10:10, 1 Pet 2:5, Heb 13:15, 1 Pet 1:2, Heb 5:1, Gal 5:19 ff., Col 3:4) were found in the Triglot English OCR with the printed forms V4 gave and are now listed, with Heb 10:14 (the next reference in the sentence of Heb 10:10); the remaining V4 item (Epitome VII, Matt 11:28, «item 25») was not found: the only Matt 11:28 in the Formula of Concord Eucharist articles is the one of Solid Declaration VII already listed.
+- Apology XXIV: the «Ex. 29, 39 sq.; Dan. 8, 11 sq.; 12, 11» of the Latin column (V4: the English OCR garbled) was not read.
+- Epitome VII and Solid Declaration VII (Eucharist) and Solid Declaration VIII: Scripture references the regex missed (named references without numbers): see T2 in the closure file; not searched beyond the V4 list.
 
 ## eucharist · reformed
 
-53 records, 14 new against the page.
+210 records, 146 new against the page.
 
 Ten most important new passages:
 
-- `1Cor.10.6`: 1 document(s) (Westminster Confession of Faith)
-- `1Cor.11.20`: 1 document(s) (Westminster Confession of Faith)
+- `John.6.35`: 3 document(s) (Belgic Confession; Heidelberg Catechism; Larger Catechism)
+- `Matt.7.6`: 3 document(s) (Heidelberg Catechism; Larger Catechism; Westminster Confession of Faith)
+- `1Cor.11.20`: 2 document(s) (Larger Catechism; Westminster Confession of Faith)
+- `1Cor.5.13`: 2 document(s) (Heidelberg Catechism; Westminster Confession of Faith)
+- `Acts.20.7`: 2 document(s) (Belgic Confession; Westminster Confession of Faith)
+- `John.6.51`: 2 document(s) (Belgic Confession; Heidelberg Catechism)
+- `John.6.63`: 2 document(s) (Belgic Confession; Heidelberg Catechism)
+- `1Cor.11.17`: 1 document(s) (Larger Catechism)
 - `1Cor.2.14`: 1 document(s) (Belgic Confession)
-- `1Cor.5.13`: 1 document(s) (Westminster Confession of Faith)
-- `2Cor.6.14`: 1 document(s) (Belgic Confession)
-- `2Cor.6.14-2Cor.6.16`: 1 document(s) (Westminster Confession of Faith)
-- `2Cor.6.15`: 1 document(s) (Belgic Confession)
-- `2Thess.3.14-2Thess.3.15`: 1 document(s) (Westminster Confession of Faith)
-- `2Thess.3.6`: 1 document(s) (Westminster Confession of Faith)
-- `Acts.20.7`: 1 document(s) (Westminster Confession of Faith)
+- `2Chr.30.18-2Chr.30.19`: 1 document(s) (Larger Catechism)
 
 Not reached (from the list's own section):
 
-- Larger Catechism Q. 169–177 proof blocks: the first OCR parse was rejected by verifier V5 (about a third of the records wrong, Q. 170 refs filed under Q. 171, Q. 176 refs belonging to Q. 177, dozens of printed refs missing) and removed; they need a page-image reading (printed pp. 202–210, leaves n205–n213). Only Q. 168 (confirmed by V5) and the Shorter Catechism Q. 96–97 (confirmed) are kept.
-- WLC/WSC clause-to-letter matching not done (interleaved columns).
-- Belgic Art. 35: about 20 notes in French abbreviations (Marc, Luc, Jean, Act., Es.) printed with the French column were skipped by the parser (V5).
+- Larger Catechism Q. 168–177 proof blocks (printed pp. 203–210): read on the page images by an extraction subagent in S1b (70 blocks; letters matched to clauses by eye, clause words typed from the image; not re-checked by S1b nor by a verifier): a verifier should re-read the Q. 171 and Q. 175 blocks first (Q. 171 «p»: the print reads «1 Cor. xiii. 5. [See above in letter m.]» while block m prints 2 Cor. xiii. 5; Q. 168 first block is lettered z).
+- Larger Catechism Q. 168–177 proof blocks (printed pp. 203–210): read on the page images by an extraction subagent in S1b (70 blocks; letters matched to clauses by eye, clause words typed from the image; not re-checked by S1b nor by a verifier): a verifier should re-read the Q. 171 and Q. 175 blocks first (Q. 171 «p»: the print reads «1 Cor. xiii. 5. [See above in letter m.]» while block m prints 2 Cor. xiii. 5; Q. 168 first block is lettered z).
+- Belgic Art. 35: the notes of pp. 428–431 were read in the OCR text (S1b), with the French-column abbreviations (Marc, Luc, Jean, Act., Es.) mapped; the page images were not read for this article.
 - Heidelberg Q. 75–82 quoted institution words (1 Cor. 11, Matt. 26) are not assigned to verses.
-- Schaff III page images not read: the Belgic Art. 35 records are `[unverified: OCR]` (V9: the `printed` strings are OCR noise and the 8 records are an incomplete subset); WCF 29, LC Q. 168 and SC Q. 96–97 were read on the page images and confirmed by V9.
+- Schaff III page images of Art. 35 not read: the Belgic Art. 35 records are `[unverified: OCR]`; WCF 29, LC Q. 168 and SC Q. 96–97 were read on the page images and confirmed by V9.
+- WLC/WSC clause-to-letter matching: done for Q. 168–177 only (the clause field of each row is the answer words carrying the letter); the other questions of the Larger and Shorter Catechisms are not matched.
 
 ## eucharist · baptist
 
@@ -212,6 +217,7 @@ Not reached (from the list's own section):
 
 Ten most important new passages:
 
+- `2Cor.6.14-2Cor.6.15`: 1 document(s) (Second London Confession (1689))
 - `Acts.3.21`: 1 document(s) (Second London Confession (1689))
 - `Exod.20.4-Exod.20.5`: 1 document(s) (Second London Confession (1689))
 - `Heb.9.25-Heb.9.26`: 1 document(s) (Second London Confession (1689))
@@ -219,47 +225,54 @@ Ten most important new passages:
 - `Luke.24.39`: 1 document(s) (Second London Confession (1689))
 - `Luke.24.6`: 1 document(s) (Second London Confession (1689))
 - `Matt.15.9`: 1 document(s) (Second London Confession (1689))
+- `Matt.7.6`: 1 document(s) (Second London Confession (1689))
 - `1Cor.4.1`: 1 document(s) (Baptist Faith and Message 1925)
-- `2Cor.6.14-2Cor.6.15`: 1 document(s) (Second London Confession (1689))
-- `Gal.3.1`: 1 document(s) (Orthodox Creed (1678))
 
 Not reached (from the list's own section):
 
-- 2LCF 30.7–30.8 margins (1688 pp. 102–103) and all of chapter 30 in the 1719 print: not read; 30.1–30.6 (and 28.1) read on the 1688 page images by A5.
+- 2LCF 30.7–30.8: the 1688 print p. 102 was read on the page image in S1b (margin notes l, m, n: the same references as McGlothlin's 1677 text at 30.8; 30.7's note l is new to this list); the 1688 margins of chapter 30 for 30.2–30.6 were read earlier by A5; chapter 30 in the 1719 print was not read; p. 102 ends with the catchword «CHAP.» (a new chapter follows); p. 103 was not read.
 - First London, Standard, Somerset: the dossier found no Supper chapter comparable to 2LCF 30; not searched here.
 
 ## eucharist · orthodox
 
-14 records, 3 new against the page.
+32 records, 20 new against the page.
 
 Ten most important new passages:
 
-- `1Cor.11.23`: 1 document(s) (Orthodox Confession of Peter Mogila)
-- `John.6.51`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
-- `Matt.16.16`: 1 document(s) (Orthodox Confession of Peter Mogila)
+- `1Cor.11.23`: 2 document(s) (Confession of Dositheus (Synod of Jerusalem 1672); Orthodox Confession of Peter Mogila)
+- `John.6.53`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Mark.14.22`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `1Cor.10.16`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `1Cor.11.27`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `1Cor.12.13`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `2Cor.5.7`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Acts.1.9`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Acts.3.21`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Col.3.1`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
 
 Not reached (from the list's own section):
 
-- Mogila: V5 found the six references under Q. 107 in the print (the OCR run from the «Question 106» heading covers Q. 106–107); Q. 108 onward is other mysteries.
-- Philaret Q. 318–346 (the Liturgy) was scanned by regex for «Book roman. N»; Philaret Q. 350 added after V5. Orthodox 1895 encyclical and Jeremiah's Answers not searched.
+- Philaret Q. 315–350 read in full on the OCR text (Schaff II pp. 495–499): references printed at Q. 329, 338, 341, 342, 344, 350 (all already listed); Q. 315–328, 330–337, 339, 340, 343, 345–349 print no Scripture reference (Q. 340 quotes John of Damascus; Q. 343 refers to Mogila I Q. 90; Q. 332 mentions blood and water from the pierced side without a reference).
+- Dositheus: Decree XV (OCR; footnotes partly garbled), Chapter XV and Chapter XVII of the Confession (page images, pp. 201, 205) read; Decree XVII read earlier on page images (pp. 143–150).
+- Mogila Q. 106–107 read earlier (six references in Q. 107); Q. 108 onward is other Mysteries. 1895 Encyclical and Jeremiah's Answers: not read (no print in the cached texts).
 - Mogila and Philaret: `[unverified: OCR]`, page images not read.
 
 ## papacy · catholic
 
-114 records, 79 new against the page.
+121 records, 77 new against the page.
 
 Ten most important new passages:
 
 - `Acts.20.28`: 2 document(s) (Catechism of the Catholic Church; Lumen gentium)
 - `John.10.11`: 2 document(s) (Catechism of the Catholic Church; Lumen gentium)
-- `John.20.21-John.20.23`: 2 document(s) (Catechism of the Catholic Church; Lumen gentium)
-- `John.21.15-John.21.19`: 2 document(s) (The Primacy of the Successor of Peter; Ut unum sint)
 - `Luke.6.13`: 2 document(s) (Catechism of the Catholic Church; Lumen gentium)
 - `Mark.16.15`: 2 document(s) (Catechism of the Catholic Church; Lumen gentium)
-- `Mark.3.13-Mark.3.19`: 2 document(s) (Catechism of the Catholic Church; Lumen gentium)
 - `Acts.1.8`: 1 document(s) (Lumen gentium)
 - `1Cor.4.15`: 1 document(s) (Lumen gentium)
 - `1Cor.1.11`: 1 document(s) (Unitatis redintegratio)
+- `1Cor.11.18-1Cor.11.19`: 1 document(s) (Unitatis redintegratio)
+- `1Cor.11.22`: 1 document(s) (Unitatis redintegratio)
+- `1Cor.12.11`: 1 document(s) (Lumen gentium)
 
 Not reached (from the list's own section):
 
@@ -272,13 +285,13 @@ Not reached (from the list's own section):
 
 ## papacy · lutheran
 
-55 records, 39 new against the page.
+56 records, 40 new against the page.
 
 Ten most important new passages:
 
+- `Acts.5.29`: 3 document(s) (Apology of the Augsburg Confession; Augsburg Confession; Treatise on the Power and Primacy of the Pope)
 - `Gal.1.8`: 2 document(s) (Augsburg Confession; Treatise on the Power and Primacy of the Pope)
 - `2Cor.10.4`: 2 document(s) (Augsburg Confession; Treatise on the Power and Primacy of the Pope)
-- `Acts.5.29`: 2 document(s) (Apology of the Augsburg Confession; Treatise on the Power and Primacy of the Pope)
 - `Luke.10.16`: 2 document(s) (Apology of the Augsburg Confession; Augsburg Confession)
 - `Matt.7.15`: 2 document(s) (Augsburg Confession; Treatise on the Power and Primacy of the Pope)
 - `1Cor.11.5`: 1 document(s) (Augsburg Confession)
@@ -371,67 +384,69 @@ Not reached (from the list's own section):
 
 ## sola-scriptura · catholic
 
-37 records, 13 new against the page.
+65 records, 37 new against the page.
 
 Ten most important new passages:
 
+- `1Tim.2.4`: 1 document(s) (Dei filius (First Vatican Council, 1870))
+- `Rom.1.20`: 1 document(s) (Dei filius (First Vatican Council, 1870))
+- `1Cor.2.9`: 1 document(s) (Dei filius (First Vatican Council, 1870))
 - `1John.3.2`: 1 document(s) (Dei verbum)
+- `1Pet.2.9`: 1 document(s) (Dei filius (First Vatican Council, 1870))
 - `1Tim.6.14`: 1 document(s) (Dei verbum)
 - `2Cor.1.20`: 1 document(s) (Dei verbum)
 - `2Cor.10.5-2Cor.10.6`: 1 document(s) (Dei verbum)
 - `2Cor.3.13`: 1 document(s) (Dei verbum)
 - `2Cor.4.6`: 1 document(s) (Dei verbum)
-- `John.1.1-John.1.18`: 1 document(s) (Dei verbum)
-- `John.14.9`: 1 document(s) (Dei verbum)
-- `John.17.4`: 1 document(s) (Dei verbum)
-- `John.3.34`: 1 document(s) (Dei verbum)
 
 Not reached (from the list's own section):
 
-- CCC 9193: paragraph not found by the page parser
 - Footnote markers «(3)» of Dei verbum are dropped from the quoted fragments without a mark (V7).
 - Dei Filius (First Vatican Council): the Holy See page is Latin only in this pass; not read for references.
 - Vatican II LG 12, 25; UR 21; SC 7, 24, 51; DH 10; UUS 79; VD 46, 87; Trent VI ch. 8, 20; CIC canons; CDF commentary: cited by the page, not read for references.
 - CCC paragraphs: the footnotes of every cited paragraph and the inline references were parsed (including DV and Trent cross-references, which are not Scripture and not counted).
+- Dei filius: the Holy See Latin prints no reference; the editors' footnotes 3–35 of the online English reproduction were collected in S1b (marker positions not available).
+- CCC 9193: the Catechism has no paragraph 9193 (2,865 paragraphs); agent's call in S1b: it is read as §§91–93 (a joined range) and those three paragraphs are collected; the page's scripture list was not re-opened to confirm.
 
 ## sola-scriptura · lutheran
 
-24 records, 11 new against the page.
+33 records, 20 new against the page.
 
 Ten most important new passages:
 
+- `1Cor.11.5`: 1 document(s) (Augsburg Confession)
+- `1Cor.14.30`: 1 document(s) (Augsburg Confession)
+- `1Cor.14.40`: 1 document(s) (Augsburg Confession)
+- `1Pet.5.3`: 1 document(s) (Augsburg Confession)
+- `1Tim.4.1`: 1 document(s) (Augsburg Confession)
 - `2Cor.13.10`: 1 document(s) (Augsburg Confession)
 - `2Cor.13.8`: 1 document(s) (Augsburg Confession)
 - `2Tim.3.16`: 1 document(s) (Formula of Concord, Solid Declaration)
 - `Acts.15.10`: 1 document(s) (Augsburg Confession)
-- `Acts.15.29`: 1 document(s) (Augsburg Confession)
-- `Col.2.16-Col.2.23`: 1 document(s) (Augsburg Confession)
-- `John.16.12-John.16.13`: 1 document(s) (Augsburg Confession)
-- `Luke.10.16`: 1 document(s) (Augsburg Confession)
-- `Matt.15.13-Matt.15.14`: 1 document(s) (Augsburg Confession)
-- `Matt.7.15`: 1 document(s) (Augsburg Confession)
+- `Acts.15.20`: 1 document(s) (Augsburg Confession)
 
 Not reached (from the list's own section):
 
-- AC XXVIII English refs V7 reports as missing: Acts 15:20, Acts 5:29, 1 Pet 5:3, 1 Tim 4:1, Gal 5:1, 1 Cor 11:5, 14:30, 14:40, Phil 2:14 (the patterns of this pass did not locate them); corrected after V7: ranges widened, Ps 119:105 locator, OCR slips, hyphen joins (the page images of pp. 85, 87, 89, 855–857 were read by V7).
 - Triglot page images not read: every record is `[unverified: OCR]` except the two rows taken from the dossier.
-- The Apology (Art. IV, VII, XV on traditions) and the Smalcald Articles (II, II/III): not searched for references.
+- The nine references V7 reported as missing from AC XXVIII were looked for in the Triglot English OCR: eight are printed in AC XXVIII (Acts 15:20, Acts 5:29, 1 Pet 5:3, 1 Tim 4:1, 1 Cor 11:5, 14:30, 14:40, Phil 2:14) and Gal 5:1 is printed in Apology XXVIII.17, not in the Confession; all nine are now listed.
+- The seven references of the nine V7 reports that the other lists (Papacy · Lutheran) also lack: Acts 5:29 (AC XXVIII) and 1 Pet 5:3 were added to that list too.
 
 ## sola-scriptura · reformed
 
-62 records, 9 new against the page.
+96 records, 40 new against the page.
 
 Ten most important new passages:
 
-- `Isa.59.21`: 1 document(s) (Westminster Confession of Faith)
-- `Luke.16.29`: 1 document(s) (Westminster Confession of Faith)
-- `Luke.16.31`: 1 document(s) (Westminster Confession of Faith)
-- `Matt.4.10`: 1 document(s) (Westminster Confession of Faith)
-- `Matt.4.4`: 1 document(s) (Westminster Confession of Faith)
-- `Matt.4.7`: 1 document(s) (Westminster Confession of Faith)
-- `Prov.22.19-Prov.22.21`: 1 document(s) (Westminster Confession of Faith)
-- `Ps.19.1-Ps.19.3`: 1 document(s) (Westminster Confession of Faith)
-- `Rom.3.2`: 1 document(s) (Westminster Confession of Faith)
+- `1Pet.4.11`: 1 document(s) (Belgic Confession)
+- `2Tim.3.14`: 1 document(s) (Belgic Confession)
+- `Isa.1.12`: 1 document(s) (Belgic Confession)
+- `John.4.25`: 1 document(s) (Belgic Confession)
+- `1Cor.12.6`: 1 document(s) (Belgic Confession)
+- `1Cor.15.2`: 1 document(s) (Belgic Confession)
+- `1Cor.15.2-1Cor.15.3`: 1 document(s) (Belgic Confession)
+- `1Cor.2.4`: 1 document(s) (Belgic Confession)
+- `1Pet.1.1`: 1 document(s) (Belgic Confession)
+- `1Tim.1.3`: 1 document(s) (Belgic Confession)
 
 Not reached (from the list's own section):
 
@@ -463,16 +478,25 @@ Not reached (from the list's own section):
 
 ## sola-scriptura · orthodox
 
-6 records, 3 new against the page.
+107 records, 102 new against the page.
 
 Ten most important new passages:
 
+- `Rom.10.10`: 2 document(s) (Confession of Dositheus (Synod of Jerusalem 1672); Orthodox Confession of Peter Mogila)
+- `2Tim.3.16`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `Acts.17.11`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `John.5.39`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `1Cor.11.12`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
 - `1Cor.11.2`: 1 document(s) (Orthodox Confession of Peter Mogila)
-- `Eph.5.27`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
-- `Ps.26.5`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `1Cor.12.28`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `1Cor.15.3-1Cor.15.4`: 1 document(s) (Confession of Dositheus (Synod of Jerusalem 1672))
+- `1Cor.2.10`: 1 document(s) (Longer Catechism of the Eastern Church (Philaret))
+- `1Cor.2.7-1Cor.2.8`: 1 document(s) (Longer Catechism of the Eastern Church (Philaret))
 
 Not reached (from the list's own section):
 
-- Philaret page images not read (`[unverified: OCR]`); Q. 43–55 (the New Testament canon) not scanned for references.
-- Mogila Part I Q. 1–12 scanned for references (Q. 4 is the passage on Scripture and tradition; the other references there are about faith and the Trinity and are not collected); the rest of Mogila not searched.
-- Dositheus Decree II refs from the Greek; Jeremiah's Answers; the 1848 Encyclical: not searched.
+- Philaret Q. 1–62 read (OCR, Schaff II pp. 445–455): references collected from Q. 14, 15, 18, 23, 32, 37, 58, 60; Q. 2, 4, 5, 6, 8 and 62 print references about catechism, faith and works and the theological virtues, not collected; Q. 16–17, 19–22, 24–31, 33–36, 38–57 print no Scripture reference (Q. 33 and 34 name the books of the Old Testament, Q. 44–55 the New Testament, none with a verse; Q. 24 quotes Basil, Q. 18 Irenaeus).
+- Philaret page images not read (`[unverified: OCR]`).
+- Mogila Part I Q. 1–12 read in the OCR: Q. 4 (the sources of the articles of faith: Scripture and tradition) collected; Q. 1 (James), Q. 8 (the Trinity), Q. 9, 11, 12 print references about faith and the Trinity, not collected; the rest of Mogila Part I that mentions Scripture (Q. 16–36, Q. 54–126) was not read for this page.
+- Dositheus: Decree II (p. 113, three footnotes), the Decrees' appended Questions I–III (pp. 152–156, OCR; Question III prints none), and the Confession's appended Questions I–III (pp. 208–212, read on the page images, reference lists). Decree III (predestination) prints 1 Tim 2:4, James 1:13, Luke 15:7: not collected (not about Scripture). Question IV (images) prints none in the lines read.
+- Jeremiah's Answers and the 1848 Encyclical: not read (no print in the cached texts).

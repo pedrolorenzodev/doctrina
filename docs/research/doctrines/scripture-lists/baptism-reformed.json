@@ -86,9 +86,262 @@
     "url": "https://archive.org/details/creedsofchristen187803scha",
     "printed": "read from the page by verifier V2 (leaves n441–n442); not re-read by A5",
     "flag": "added after V2"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 71 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Matt, xxviii. 19",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 69 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Matt. xxviii. 19",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 5,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 10
+ },
+ {
+  "refs": [
+   "Gal.3.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "28.1 (letter d)",
+    "how": "proof text",
+    "sentence": "[…] of his ingrafting into Christ […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Gal. iii. 27; Rom. vi. 5"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "28.6 (letter r)",
+    "how": "proof text",
+    "sentence": "[…] yet notwithstanding, by the right use of this ordinance, the grace promised is not only offered, but really exhibited and conferred by the Holy Ghost, to such (whether of age or infants) as that grace belongeth unto, according to the counsel of God's own will, in his appointed time.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Gal. iii. 27; Tit. iii. 5; Eph. v. 25; Ver. 26; Acts ii. 38; Ver. 41"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 165",
+    "how": "proof-text block of the answer",
+    "sentence": "Baptism is a sacrament of the New Testament, wherein Christ hath ordained the washing with water in the name of the Father, and of the Son, and of the Holy Ghost, to be a sign and seal of ingrafting into himself, of remission of sins by his blood, and regeneration by his Spirit; of adoption, and resurrection unto everlasting life; and whereby the parties baptized are solemnly admitted into the visible church, and enter into an open and professed engagement to be wholly and only the Lord's.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
+   },
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 94",
+    "how": "proof text",
+    "sentence": "Baptism is a sacrament, wherein the washing with water in the name of the Father, and of the Son, and of the Holy Ghost, doth signify and seal our ingrafting into Christ, and partaking of the benefits of the covenant of grace, and our engagement to be the Lord's.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Matt. xxviii. 19 [See in letter y]; Rom. vi. 4; Gal. iii. 27",
+    "flag": "the 1894 print says «Rom. vi. 4» and «Gal. iii. 27» in the block of Q. 94 (OCR)"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 34, notes printed with the French column",
+    "how": "footnote reference printed with the text",
+    "sentence": "(French column notes; no English sentence matched)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Gal. iii. 27; 1 Cor. xii. 1 3; Eph. iv. 22-24 (OCR)",
+    "flag": "«1 3» read as 13 from OCR [unverified]"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 73 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "For as many of you as have been baptized into Christ, have put on Christ.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Gal. iii. 27",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 5,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 6
+ },
+ {
+  "refs": [
+   "1Cor.7.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "28.4 (letter m)",
+    "how": "proof text",
+    "sentence": "[…] but also the infants of one or both believing parents are to be baptized.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Gen. xvii. 7, 9; Gal. iii. 9, 14 (OCR garbles the letters; legible on the page image per V2); Col. ii. 11, 12; Acts ii. 38, 39; Rom. iv. 11, 12; 1 Cor. vii. 14; Matt. xxviii. 19; Mark x. 13–16; Luke xviii. 15"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 166",
+    "how": "proof-text block of the answer",
+    "sentence": "Baptism is not to be administered to any that are out of the visible church, and so strangers from the covenant of promise, till they profess their faith in Christ, and obedience to him, but infants […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); corrected after verifier V2 (the page image shows five refs earlier listed here belong to Q. 162–164)"
+   },
+   {
+    "work": "Shorter Catechism",
+    "loc": "Q. 95",
+    "how": "proof text",
+    "sentence": "Baptism is not to be administered to any that are out of the visible church, till they profess their faith in Christ, and obedience to him; but the infants of such as are members of the visible church are to be baptized.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 34, notes printed with the French column",
+    "how": "footnote reference printed with the text",
+    "sentence": "(French column notes; no English sentence matched)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Matt. xix. 14; 1 Cor. vii. 14; Gen. xvii. 11, 12; Col. ii. 11, 12"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Else were your children unclean ; but now are they holy.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "1 Cor. vii. 14",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 5,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 5
+ },
+ {
+  "refs": [
+   "Titus.3.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "28.1 (letter e)",
+    "how": "proof text",
+    "sentence": "[…] of regeneration […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Tit. iii. 5"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "28.6 (letter r)",
+    "how": "proof text",
+    "sentence": "[…] yet notwithstanding, by the right use of this ordinance, the grace promised is not only offered, but really exhibited and conferred by the Holy Ghost, to such (whether of age or infants) as that grace belongeth unto, according to the counsel of God's own will, in his appointed time.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Gal. iii. 27; Tit. iii. 5; Eph. v. 25; Ver. 26; Acts ii. 38; Ver. 41"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "28.7 (letter s)",
+    "how": "proof text",
+    "sentence": "The sacrament of baptism is but once to be administered to any person.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Tit. iii. 5 [See in letter r.]",
+    "flag": "the print itself says «to bo administered» (a typo of the print, seen on the page image by V2)"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 165",
+    "how": "proof-text block of the answer",
+    "sentence": "Baptism is a sacrament of the New Testament, wherein Christ hath ordained the washing with water in the name of the Father, and of the Son, and of the Holy Ghost, to be a sign and seal of ingrafting into himself, of remission of sins by his blood, and regeneration by his Spirit; of adoption, and resurrection unto everlasting life; and whereby the parties baptized are solemnly admitted into the visible church, and enter into an open and professed engagement to be wholly and only the Lord's.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 71 (English column)",
+    "how": "quoted phrase, no reference printed",
+    "sentence": "This promise is also repeated where the Scripture calls Baptism the washing of regeneration and the washing away of sins.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "flag": "«the washing of regeneration» is identified as Titus 3:5 by Doctrina; the catechism names no book [unverified]. «The washing away of sins» is not assigned to any verse here"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 34, notes on p. 426 (French column)",
+    "how": "footnote reference printed with the text",
+    "sentence": "(French column notes; no English sentence matched)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "read from the page by verifier V2 (leaves n441–n442); not re-read by A5",
+    "flag": "added after V2; the printed form «Apoc. i. 6» is Rev 1:6"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 69 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "According to his mercy he saved us, by the wash- ing of regeneration, and the renewing of the Holy Ghost.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Tit. iii. 5",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 71 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "According to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Tit. iii. 5",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 4,
   "inPage": true,
   "tag": "[unverified: OCR; scan page image not read]",
   "locCount": 8
@@ -166,19 +419,9 @@
  },
  {
   "refs": [
-   "Titus.3.5"
+   "Acts.2.38"
   ],
   "citedBy": [
-   {
-    "work": "Westminster Confession of Faith",
-    "loc": "28.1 (letter e)",
-    "how": "proof text",
-    "sentence": "[…] of regeneration […]",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Tit. iii. 5"
-   },
    {
     "work": "Westminster Confession of Faith",
     "loc": "28.6 (letter r)",
@@ -190,78 +433,59 @@
     "printed": "Gal. iii. 27; Tit. iii. 5; Eph. v. 25; Ver. 26; Acts ii. 38; Ver. 41"
    },
    {
-    "work": "Westminster Confession of Faith",
-    "loc": "28.7 (letter s)",
-    "how": "proof text",
-    "sentence": "The sacrament of baptism is but once to be administered to any person.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Tit. iii. 5 [See in letter r.]",
-    "flag": "the print itself says «to bo administered» (a typo of the print, seen on the page image by V2)"
-   },
-   {
     "work": "Larger Catechism",
-    "loc": "Q. 165",
+    "loc": "Q. 167",
     "how": "proof-text block of the answer",
-    "sentence": "Baptism is a sacrament of the New Testament, wherein Christ hath ordained the washing with water in the name of the Father, and of the Son, and of the Holy Ghost, to be a sign and seal of ingrafting into himself, of remission of sins by his blood, and regeneration by his Spirit; of adoption, and resurrection unto everlasting life; and whereby the parties baptized are solemnly admitted into the visible church, and enter into an open and professed engagement to be wholly and only the Lord's.",
+    "sentence": "The needful but much neglected duty of improving our baptism, is to be performed by us all our life long […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
-   },
-   {
-    "work": "Heidelberg Catechism",
-    "loc": "Q. 71 (English column)",
-    "how": "quoted phrase, no reference printed",
-    "sentence": "This promise is also repeated where the Scripture calls Baptism the washing of regeneration and the washing away of sins.",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "flag": "«the washing of regeneration» is identified as Titus 3:5 by Doctrina; the catechism names no book [unverified]. «The washing away of sins» is not assigned to any verse here"
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); list completed from the page images by verifier V2 (letters p, r, s, w, y); not re-read by A5"
    },
    {
     "work": "Belgic Confession",
-    "loc": "Art. 34, notes on p. 426 (French column)",
+    "loc": "Art. 34, notes on p. 427 (French column)",
     "how": "footnote reference printed with the text",
     "sentence": "(French column notes; no English sentence matched)",
     "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
     "url": "https://archive.org/details/creedsofchristen187803scha",
     "printed": "read from the page by verifier V2 (leaves n441–n442); not re-read by A5",
-    "flag": "added after V2; the printed form «Apoc. i. 6» is Rev 1:6"
+    "flag": "added after V2"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 73 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Be baptized every one of you in the name of Je- sus Christ for the remission of s.ns.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Acts ii. 38",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Repent and be baptized every one of you in the name of Jesus C hrist, for the remission of sins, and ye shall receive th° gift of the Holy Ghost. For the pro- mise is unto )ou, and to your children, and to all that are afar off, even as many as the Lord our God shall call.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Acts ii. 38, 39",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 4,
   "inPage": true,
   "tag": "[unverified: OCR; scan page image not read]",
-  "locCount": 6
+  "locCount": 5
  },
  {
   "refs": [
-   "Gal.3.27"
+   "Rom.6.4"
   ],
   "citedBy": [
-   {
-    "work": "Westminster Confession of Faith",
-    "loc": "28.1 (letter d)",
-    "how": "proof text",
-    "sentence": "[…] of his ingrafting into Christ […]",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Gal. iii. 27; Rom. vi. 5"
-   },
-   {
-    "work": "Westminster Confession of Faith",
-    "loc": "28.6 (letter r)",
-    "how": "proof text",
-    "sentence": "[…] yet notwithstanding, by the right use of this ordinance, the grace promised is not only offered, but really exhibited and conferred by the Holy Ghost, to such (whether of age or infants) as that grace belongeth unto, according to the counsel of God's own will, in his appointed time.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Gal. iii. 27; Tit. iii. 5; Eph. v. 25; Ver. 26; Acts ii. 38; Ver. 41"
-   },
    {
     "work": "Larger Catechism",
     "loc": "Q. 165",
@@ -271,6 +495,16 @@
     "tagCite": "[unverified: OCR; scan page image not read]",
     "url": "https://archive.org/details/confessionoffaith00chur",
     "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 167",
+    "how": "proof-text block of the answer",
+    "sentence": "The needful but much neglected duty of improving our baptism, is to be performed by us all our life long […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); list completed from the page images by verifier V2 (letters p, r, s, w, y); not re-read by A5"
    },
    {
     "work": "Shorter Catechism",
@@ -284,69 +518,18 @@
     "flag": "the 1894 print says «Rom. vi. 4» and «Gal. iii. 27» in the block of Q. 94 (OCR)"
    },
    {
-    "work": "Belgic Confession",
-    "loc": "Art. 34, notes printed with the French column",
-    "how": "footnote reference printed with the text",
-    "sentence": "(French column notes; no English sentence matched)",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 70 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Put off concerning the former conversation the old man, which is corrupt according to the deceitful lusts ; and be renewed in the spirit of your mind ; and that ve put on the new man, which after God is cre- ated in righteousness and true holiness. Eph. iv. 22 — 24;",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "Gal. iii. 27; 1 Cor. xii. 1 3; Eph. iv. 22-24 (OCR)",
-    "flag": "«1 3» read as 13 from OCR [unverified]"
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Rom. vi. 4",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
-  "count": 4,
-  "inPage": true,
-  "tag": "[unverified: OCR; scan page image not read]",
-  "locCount": 5
- },
- {
-  "refs": [
-   "1Cor.7.14"
-  ],
-  "citedBy": [
-   {
-    "work": "Westminster Confession of Faith",
-    "loc": "28.4 (letter m)",
-    "how": "proof text",
-    "sentence": "[…] but also the infants of one or both believing parents are to be baptized.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Gen. xvii. 7, 9; Gal. iii. 9, 14 (OCR garbles the letters; legible on the page image per V2); Col. ii. 11, 12; Acts ii. 38, 39; Rom. iv. 11, 12; 1 Cor. vii. 14; Matt. xxviii. 19; Mark x. 13–16; Luke xviii. 15"
-   },
-   {
-    "work": "Larger Catechism",
-    "loc": "Q. 166",
-    "how": "proof-text block of the answer",
-    "sentence": "Baptism is not to be administered to any that are out of the visible church, and so strangers from the covenant of promise, till they profess their faith in Christ, and obedience to him, but infants […]",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); corrected after verifier V2 (the page image shows five refs earlier listed here belong to Q. 162–164)"
-   },
-   {
-    "work": "Shorter Catechism",
-    "loc": "Q. 95",
-    "how": "proof text",
-    "sentence": "Baptism is not to be administered to any that are out of the visible church, till they profess their faith in Christ, and obedience to him; but the infants of such as are members of the visible church are to be baptized.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
-   },
-   {
-    "work": "Belgic Confession",
-    "loc": "Art. 34, notes printed with the French column",
-    "how": "footnote reference printed with the text",
-    "sentence": "(French column notes; no English sentence matched)",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "Matt. xix. 14; 1 Cor. vii. 14; Gen. xvii. 11, 12; Col. ii. 11, 12"
-   }
-  ],
-  "count": 4,
+  "count": 3,
   "inPage": true,
   "tag": "[unverified: OCR; scan page image not read]",
   "locCount": 4
@@ -405,6 +588,102 @@
  },
  {
   "refs": [
+   "1Pet.3.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 167",
+    "how": "proof-text block of the answer",
+    "sentence": "The needful but much neglected duty of improving our baptism, is to be performed by us all our life long […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); list completed from the page images by verifier V2 (letters p, r, s, w, y); not re-read by A5"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 34 (English column), note printed in Schaff 3",
+    "how": "footnote reference printed with the text",
+    "sentence": "[…] he, having abolished circumcision, which was done with blood, hath instituted the Sacrament of Baptism instead thereof […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Col. ii. 11; 1 Pier. iii. 21; 1 Cor. x. 2 (OCR)",
+    "flag": "the notes are numbered in the print; which clause each note belongs to is matched by Doctrina to the order of the notes [unverified]"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 34, notes printed with the French column",
+    "how": "footnote reference printed with the text",
+    "sentence": "(French column notes; no English sentence matched)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Eph. v. 2G; Act. xxii. IG; 1 Pier. iii. 21 (OCR)",
+    "flag": "«2G» and «IG» read as 26 and 16 from OCR [unverified]; notes sit with the French text"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 72 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "The like figure whereunto, even baptism, doth also now save us (not the putting away of the filth of the flesh, but the answer of a good conscience towards God), by the resurrection of Jesus Christ.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "1 Pet. iii. 21",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "Gen.17.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "28.4 (letter m)",
+    "how": "proof text",
+    "sentence": "[…] but also the infants of one or both believing parents are to be baptized.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Gen. xvii. 7, 9; Gal. iii. 9, 14 (OCR garbles the letters; legible on the page image per V2); Col. ii. 11, 12; Acts ii. 38, 39; Rom. iv. 11, 12; 1 Cor. vii. 14; Matt. xxviii. 19; Mark x. 13–16; Luke xviii. 15"
+   },
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 166",
+    "how": "proof-text block of the answer",
+    "sentence": "Baptism is not to be administered to any that are out of the visible church, and so strangers from the covenant of promise, till they profess their faith in Christ, and obedience to him, but infants […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); corrected after verifier V2 (the page image shows five refs earlier listed here belong to Q. 162–164)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "[…] f^econd, to the Church of God. Q. How yon prove that the infants of Christians, as well as the adu.ts, belong to the Covnanr of God? -4. I will establish my Covenant between me and thee, and thy seed after thee, in their generations, for an everlasting Covenant, to be a God unto thee, aud to thy seed* after thee",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Gen xvii. 7",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 3
+ },
+ {
+  "refs": [
    "Acts.2.38-Acts.2.39"
   ],
   "citedBy": [
@@ -446,28 +725,18 @@
  },
  {
   "refs": [
-   "Acts.2.38"
+   "Mark.16.16"
   ],
   "citedBy": [
    {
-    "work": "Westminster Confession of Faith",
-    "loc": "28.6 (letter r)",
-    "how": "proof text",
-    "sentence": "[…] yet notwithstanding, by the right use of this ordinance, the grace promised is not only offered, but really exhibited and conferred by the Holy Ghost, to such (whether of age or infants) as that grace belongeth unto, according to the counsel of God's own will, in his appointed time.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 71 (English column)",
+    "how": "quoted words, no reference printed",
+    "sentence": "In the institution of Baptism, which runs thus: Go ye, therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost. He that believeth and is baptized, shall be saved; but he that believeth not, shall be damned.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Gal. iii. 27; Tit. iii. 5; Eph. v. 25; Ver. 26; Acts ii. 38; Ver. 41"
-   },
-   {
-    "work": "Larger Catechism",
-    "loc": "Q. 167",
-    "how": "proof-text block of the answer",
-    "sentence": "The needful but much neglected duty of improving our baptism, is to be performed by us all our life long […]",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); list completed from the page images by verifier V2 (letters p, r, s, w, y); not re-read by A5"
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "flag": "no reference printed in Schaff vol. III; verse identified from the quoted words by Doctrina [unverified]"
    },
    {
     "work": "Belgic Confession",
@@ -479,9 +748,75 @@
     "url": "https://archive.org/details/creedsofchristen187803scha",
     "printed": "read from the page by verifier V2 (leaves n441–n442); not re-read by A5",
     "flag": "added after V2"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 69 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of th* Holy Ghost. Matt, xxviii. 1 9 ;",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Mark xvi. 15, 16",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 71 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "He that believeth and is baptized, shall be saved ; but he that believeth not, shall be damned.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Mark xvi. 16",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
-  "count": 3,
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "Acts.22.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 34, notes printed with the French column",
+    "how": "footnote reference printed with the text",
+    "sentence": "(French column notes; no English sentence matched)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Eph. v. 2G; Act. xxii. IG; 1 Pier. iii. 21 (OCR)",
+    "flag": "«2G» and «IG» read as 26 and 16 from OCR [unverified]; notes sit with the French text"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 69 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Arise, and be baptized, and wash away thy sins, calling on the name of the Lord.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Acts xxii. 16",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 71 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Arise, and be Baptized, and wash away thy sins, calling on the name of the Lord.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Acts xxii 16",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 2,
   "inPage": true,
   "tag": "[unverified: OCR; scan page image not read]",
   "locCount": 3
@@ -520,48 +855,6 @@
     "tagCite": "[unverified: OCR; scan page image not read]",
     "url": "https://archive.org/details/confessionoffaith00chur",
     "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); list completed from the page images by verifier V2 (letters p, r, s, w, y); not re-read by A5"
-   }
-  ],
-  "count": 2,
-  "inPage": true,
-  "tag": "[unverified: OCR; scan page image not read]",
-  "locCount": 3
- },
- {
-  "refs": [
-   "Rom.6.4"
-  ],
-  "citedBy": [
-   {
-    "work": "Larger Catechism",
-    "loc": "Q. 165",
-    "how": "proof-text block of the answer",
-    "sentence": "Baptism is a sacrament of the New Testament, wherein Christ hath ordained the washing with water in the name of the Father, and of the Son, and of the Holy Ghost, to be a sign and seal of ingrafting into himself, of remission of sins by his blood, and regeneration by his Spirit; of adoption, and resurrection unto everlasting life; and whereby the parties baptized are solemnly admitted into the visible church, and enter into an open and professed engagement to be wholly and only the Lord's.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
-   },
-   {
-    "work": "Larger Catechism",
-    "loc": "Q. 167",
-    "how": "proof-text block of the answer",
-    "sentence": "The needful but much neglected duty of improving our baptism, is to be performed by us all our life long […]",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); list completed from the page images by verifier V2 (letters p, r, s, w, y); not re-read by A5"
-   },
-   {
-    "work": "Shorter Catechism",
-    "loc": "Q. 94",
-    "how": "proof text",
-    "sentence": "Baptism is a sacrament, wherein the washing with water in the name of the Father, and of the Son, and of the Holy Ghost, doth signify and seal our ingrafting into Christ, and partaking of the benefits of the covenant of grace, and our engagement to be the Lord's.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Matt. xxviii. 19 [See in letter y]; Rom. vi. 4; Gal. iii. 27",
-    "flag": "the 1894 print says «Rom. vi. 4» and «Gal. iii. 27» in the block of Q. 94 (OCR)"
    }
   ],
   "count": 2,
@@ -612,77 +905,47 @@
  },
  {
   "refs": [
-   "1Pet.3.21"
+   "1Cor.6.11"
   ],
   "citedBy": [
    {
-    "work": "Larger Catechism",
-    "loc": "Q. 167",
-    "how": "proof-text block of the answer",
-    "sentence": "The needful but much neglected duty of improving our baptism, is to be performed by us all our life long […]",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); list completed from the page images by verifier V2 (letters p, r, s, w, y); not re-read by A5"
-   },
-   {
     "work": "Belgic Confession",
-    "loc": "Art. 34 (English column), note printed in Schaff 3",
-    "how": "footnote reference printed with the text",
-    "sentence": "[…] he, having abolished circumcision, which was done with blood, hath instituted the Sacrament of Baptism instead thereof […]",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "Col. ii. 11; 1 Pier. iii. 21; 1 Cor. x. 2 (OCR)",
-    "flag": "the notes are numbered in the print; which clause each note belongs to is matched by Doctrina to the order of the notes [unverified]"
-   },
-   {
-    "work": "Belgic Confession",
-    "loc": "Art. 34, notes printed with the French column",
+    "loc": "Art. 34, notes on p. 426 (French column)",
     "how": "footnote reference printed with the text",
     "sentence": "(French column notes; no English sentence matched)",
     "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
     "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "Eph. v. 2G; Act. xxii. IG; 1 Pier. iii. 21 (OCR)",
-    "flag": "«2G» and «IG» read as 26 and 16 from OCR [unverified]; notes sit with the French text"
-   }
-  ],
-  "count": 2,
-  "inPage": true,
-  "tag": "[unverified: OCR; scan page image not read]",
-  "locCount": 3
- },
- {
-  "refs": [
-   "Gen.17.7"
-  ],
-  "citedBy": [
-   {
-    "work": "Westminster Confession of Faith",
-    "loc": "28.4 (letter m)",
-    "how": "proof text",
-    "sentence": "[…] but also the infants of one or both believing parents are to be baptized.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Gen. xvii. 7, 9; Gal. iii. 9, 14 (OCR garbles the letters; legible on the page image per V2); Col. ii. 11, 12; Acts ii. 38, 39; Rom. iv. 11, 12; 1 Cor. vii. 14; Matt. xxviii. 19; Mark x. 13–16; Luke xviii. 15"
+    "printed": "read from the page by verifier V2 (leaves n441–n442); not re-read by A5",
+    "flag": "added after V2; the printed form «Apoc. i. 6» is Rev 1:6"
    },
    {
-    "work": "Larger Catechism",
-    "loc": "Q. 166",
-    "how": "proof-text block of the answer",
-    "sentence": "Baptism is not to be administered to any that are out of the visible church, and so strangers from the covenant of promise, till they profess their faith in Christ, and obedience to him, but infants […]",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 70 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "But ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God-",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR); corrected after verifier V2 (the page image shows five refs earlier listed here belong to Q. 162–164)"
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "1 Cor. vi. 11",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 72 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "But ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "1 Cor. vi. 11",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 2,
-  "inPage": true,
+  "inPage": false,
   "tag": "[unverified: OCR; scan page image not read]",
-  "locCount": 2
+  "locCount": 3
  },
  {
   "refs": [
@@ -780,33 +1043,33 @@
  },
  {
   "refs": [
-   "Mark.16.16"
+   "John.19.34"
   ],
   "citedBy": [
    {
-    "work": "Heidelberg Catechism",
-    "loc": "Q. 71 (English column)",
-    "how": "quoted words, no reference printed",
-    "sentence": "In the institution of Baptism, which runs thus: Go ye, therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost. He that believeth and is baptized, shall be saved; but he that believeth not, shall be damned.",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "flag": "no reference printed in Schaff vol. III; verse identified from the quoted words by Doctrina [unverified]"
-   },
-   {
     "work": "Belgic Confession",
-    "loc": "Art. 34, notes on p. 427 (French column)",
+    "loc": "Art. 34, notes printed with the French column",
     "how": "footnote reference printed with the text",
     "sentence": "(French column notes; no English sentence matched)",
     "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
     "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "read from the page by verifier V2 (leaves n441–n442); not re-read by A5",
-    "flag": "added after V2"
+    "printed": "Jean xix. 34"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 72 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "And forthwith came thereout blood and water.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "John xix. 34",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 2,
-  "inPage": true,
+  "inPage": false,
   "tag": "[unverified: OCR; scan page image not read]",
   "locCount": 2
  },
@@ -937,6 +1200,39 @@
  },
  {
   "refs": [
+   "Eph.4.22-Eph.4.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 34, notes printed with the French column",
+    "how": "footnote reference printed with the text",
+    "sentence": "(French column notes; no English sentence matched)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Gal. iii. 27; 1 Cor. xii. 1 3; Eph. iv. 22-24 (OCR)",
+    "flag": "«1 3» read as 13 from OCR [unverified]"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 70 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Put off concerning the former conversation the old man, which is corrupt according to the deceitful lusts ; and be renewed in the spirit of your mind ; and that ve put on the new man, which after God is cre- ated in righteousness and true holiness.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Eph. iv. 22 — 24",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 2
+ },
+ {
+  "refs": [
    "Eph.5.26"
   ],
   "citedBy": [
@@ -964,6 +1260,71 @@
   ],
   "count": 2,
   "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Col.2.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. 34 (English column), note printed in Schaff 3",
+    "how": "footnote reference printed with the text",
+    "sentence": "[…] he, having abolished circumcision, which was done with blood, hath instituted the Sacrament of Baptism instead thereof […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Col. ii. 11; 1 Pier. iii. 21; 1 Cor. x. 2 (OCR)",
+    "flag": "the notes are numbered in the print; which clause each note belongs to is matched by Doctrina to the order of the notes [unverified]"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "In whom also ye are circumcised with the cir- cumcision made without hands, in putting off the body of the sins of the flesh by the circumcision of Christ: buri<-d with him in baptism, wherein also ye are risen with him through the faith of the operation of God.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Col. ii. 11, 12",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Rev.1.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Larger Catechism",
+    "loc": "Q. 165",
+    "how": "proof-text block of the answer",
+    "sentence": "Baptism is a sacrament of the New Testament, wherein Christ hath ordained the washing with water in the name of the Father, and of the Son, and of the Holy Ghost, to be a sign and seal of ingrafting into himself, of remission of sins by his blood, and regeneration by his Spirit; of adoption, and resurrection unto everlasting life; and whereby the parties baptized are solemnly admitted into the visible church, and enter into an open and professed engagement to be wholly and only the Lord's.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
+   },
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 73 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Unto him that loved us, and washed us from our sins in his own blood.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Rev. i. 5",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
   "tag": "[unverified: OCR; scan page image not read]",
   "locCount": 2
  },
@@ -1135,6 +1496,50 @@
  },
  {
   "refs": [
+   "Gen.17.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "And ye shall circumcise the flesh of your foreskins ; and it shall be a token of the Covenant betwixt me and you.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Gen. xvii. 11",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gen.17.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "And he that is eight days old shall be circum- cised among you, and every man-child in your gener- ations.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Gen. xvii. 12",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Exod.4.24-Exod.4.26"
   ],
   "citedBy": [
@@ -1169,6 +1574,50 @@
     "url": "https://archive.org/details/creedsofchristen187803scha",
     "printed": "read from the page by verifier V2 (leaves n441–n442); not re-read by A5",
     "flag": "added after V2"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Isa.4.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 73 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "When the Lord shall have washed away the filth of the daughters of Ziun, and shall have purged the blood of Jerusalem from the midst thereof by the spirit of judgment, and by the spirit of burning.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Isa. iv. 4",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page); as printed «Isa. iv. 4»"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ezek.16.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 73 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Neither wast thou washed in water to supple thee.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Ezek. xvi. 4",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 1,
@@ -1241,6 +1690,28 @@
  },
  {
   "refs": [
+   "Mark.10.14-Mark.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "[…] little children to come unto me, and forbid them not ; for of such is the kingdom of God. Verily, I say unto you, v\\ hosoever shall not receive the kingdom of God as a little child, he shall not en- ter therein. And he took t hem up in his arms, put his hands upon them and blessed them.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Mark x. 14 -16",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Mark.16.15-Mark.16.16"
   ],
   "citedBy": [
@@ -1253,6 +1724,28 @@
     "tagCite": "[unverified: OCR; scan page image not read]",
     "url": "https://archive.org/details/confessionoffaith00chur",
     "printed": "Mark xvi. 15; Ver. 16; Acts viii. 37; Ver. 38"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.16.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 69 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of th* Holy Ghost. Matt, xxviii. 1 9 ;",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Mark xvi. 15, 16",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 1,
@@ -1432,22 +1925,23 @@
  },
  {
   "refs": [
-   "John.19.34"
+   "Acts.2.39"
   ],
   "citedBy": [
    {
-    "work": "Belgic Confession",
-    "loc": "Art. 34, notes printed with the French column",
-    "how": "footnote reference printed with the text",
-    "sentence": "(French column notes; no English sentence matched)",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "Repent and be baptized every one of you in the name of Jesus C hrist, for the remission of sins, and ye shall receive th° gift of the Holy Ghost. For the pro- mise is unto )ou, and to your children, and to all that are afar off, even as many as the Lord our God shall call.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "Jean xix. 34"
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Acts ii. 38, 39",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 1,
-  "inPage": false,
+  "inPage": true,
   "tag": "[unverified: OCR; scan page image not read]",
   "locCount": 1
  },
@@ -1685,28 +2179,6 @@
  },
  {
   "refs": [
-   "Acts.22.16"
-  ],
-  "citedBy": [
-   {
-    "work": "Belgic Confession",
-    "loc": "Art. 34, notes printed with the French column",
-    "how": "footnote reference printed with the text",
-    "sentence": "(French column notes; no English sentence matched)",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "Eph. v. 2G; Act. xxii. IG; 1 Pier. iii. 21 (OCR)",
-    "flag": "«2G» and «IG» read as 26 and 16 from OCR [unverified]; notes sit with the French text"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[unverified: OCR; scan page image not read]",
-  "locCount": 1
- },
- {
-  "refs": [
    "Rom.6.2"
   ],
   "citedBy": [
@@ -1919,28 +2391,6 @@
  },
  {
   "refs": [
-   "1Cor.6.11"
-  ],
-  "citedBy": [
-   {
-    "work": "Belgic Confession",
-    "loc": "Art. 34, notes on p. 426 (French column)",
-    "how": "footnote reference printed with the text",
-    "sentence": "(French column notes; no English sentence matched)",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "read from the page by verifier V2 (leaves n441–n442); not re-read by A5",
-    "flag": "added after V2; the printed form «Apoc. i. 6» is Rev 1:6"
-   }
-  ],
-  "count": 1,
-  "inPage": false,
-  "tag": "[unverified: OCR; scan page image not read]",
-  "locCount": 1
- },
- {
-  "refs": [
    "1Cor.10.2"
   ],
   "citedBy": [
@@ -2027,28 +2477,6 @@
  },
  {
   "refs": [
-   "Eph.4.22-Eph.4.24"
-  ],
-  "citedBy": [
-   {
-    "work": "Belgic Confession",
-    "loc": "Art. 34, notes printed with the French column",
-    "how": "footnote reference printed with the text",
-    "sentence": "(French column notes; no English sentence matched)",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
-    "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "Gal. iii. 27; 1 Cor. xii. 1 3; Eph. iv. 22-24 (OCR)",
-    "flag": "«1 3» read as 13 from OCR [unverified]"
-   }
-  ],
-  "count": 1,
-  "inPage": false,
-  "tag": "[unverified: OCR; scan page image not read]",
-  "locCount": 1
- },
- {
-  "refs": [
    "Eph.5.25-Eph.5.26"
   ],
   "citedBy": [
@@ -2070,19 +2498,19 @@
  },
  {
   "refs": [
-   "Col.2.11"
+   "Col.2.12"
   ],
   "citedBy": [
    {
-    "work": "Belgic Confession",
-    "loc": "Art. 34 (English column), note printed in Schaff 3",
-    "how": "footnote reference printed with the text",
-    "sentence": "[…] he, having abolished circumcision, which was done with blood, hath instituted the Sacrament of Baptism instead thereof […]",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, OCR djvu text",
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 74 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "In whom also ye are circumcised with the cir- cumcision made without hands, in putting off the body of the sins of the flesh by the circumcision of Christ: buri<-d with him in baptism, wherein also ye are risen with him through the faith of the operation of God.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/creedsofchristen187803scha",
-    "printed": "Col. ii. 11; 1 Pier. iii. 21; 1 Cor. x. 2 (OCR)",
-    "flag": "the notes are numbered in the print; which clause each note belongs to is matched by Doctrina to the order of the notes [unverified]"
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "Col. ii. 11, 12",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 1,
@@ -2178,18 +2606,41 @@
  },
  {
   "refs": [
-   "Rev.1.5"
+   "1John.1.7"
   ],
   "citedBy": [
    {
-    "work": "Larger Catechism",
-    "loc": "Q. 165",
-    "how": "proof-text block of the answer",
-    "sentence": "Baptism is a sacrament of the New Testament, wherein Christ hath ordained the washing with water in the name of the Father, and of the Son, and of the Holy Ghost, to be a sign and seal of ingrafting into himself, of remission of sins by his blood, and regeneration by his Spirit; of adoption, and resurrection unto everlasting life; and whereby the parties baptized are solemnly admitted into the visible church, and enter into an open and professed engagement to be wholly and only the Lord's.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur, OCR djvu text",
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 72 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "The blood of Jesus Christ his Son cleanseth us from all sin.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
     "tagCite": "[unverified: OCR; scan page image not read]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "flag": "letter-to-clause not resolved: the print sets the proofs in interleaved columns; refs are the set printed in the answer's proof block (OCR)"
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "1 John i. 7",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; scan page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.5.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Heidelberg Catechism",
+    "loc": "Q. 72 (Explanation and Proof)",
+    "how": "proof-text reference (Palatinate edition)",
+    "sentence": "This is he that came by water and blood, even Jesus Christ ; not by water only, but by water and blo)d.",
+    "edition": "The Heidelberg Catechism, with proof-texts and explanations as used in the Palatinate, translated from the German by Rev. H. Harbaugh, D.D. (Reading, Pa.: Daniel Miller, 1889), archive.org heidelbergcatech00harb, OCR djvu text",
+    "tagCite": "[unverified: OCR; scan page image not read]",
+    "url": "https://archive.org/details/heidelbergcatech00harb",
+    "printed": "I John v. 6",
+    "flag": "the Palatinate edition prints the quoted verse words after the question in «Explanation and Proof»; the reference is printed after them; edition date taken from the Internet Archive record (not read on the title page)"
    }
   ],
   "count": 1,

@@ -1,37 +1,6 @@
 [
  {
   "refs": [
-   "John.5.39"
-  ],
-  "citedBy": [
-   {
-    "work": "Westminster Confession of Faith",
-    "loc": "1.8 (letter s)",
-    "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
-    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Isa. viii. 20; Acts xv. 15; John v. 39; Ver. 46"
-   },
-   {
-    "work": "Westminster Confession of Faith",
-    "loc": "1.8 (letter t)",
-    "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
-    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "John v. 39"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-  "locCount": 2
- },
- {
-  "refs": [
    "Rom.15.4"
   ],
   "citedBy": [
@@ -39,21 +8,294 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter d)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20"
+    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    },
    {
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter x)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Rom. xv. 4"
+    "printed": "Rom. xv. 4",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Rom. xv. 4",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 3 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Rom. xv. 4",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]; [verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "2Tim.3.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "1.2 (letter g)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "Under the name of Holy Scripture, or the Word of God written, are now contained all the Books of the Old and New Testaments […] All which are given by inspiration of God, to be the rule of faith and life.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Luke xvi. 29; Ver. 31; Eph. ii. 20; Rev. xxii. 18, 19; 2 Tim. iii. 16"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "1.4 (letter i)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The authority of the holy scripture, for which it ought to be believed and obeyed, dependeth not upon the testimony of any man or church, but wholly upon God, (who is truth itself,) the author thereof; and therefore it is to be received, because it is the word of God.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "2 Pet. i. 19; Ver. 21; 2 Tim. iii. 16; 1 John v. 9; 1 Thess. ii. 13"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. III, note 3 at the foot of p. 385",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "[…] and he himself wrote with his own finger the two tables of the law. Therefore we call such writings holy and divine Scriptures. (note 3 stands on the Apostles in the French column)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n400 = printed p. 385",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "2 Tim. iii. 16",
+    "flag": "the print gives the Revelation as «Apoc. i. 11»"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]; [verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "2Pet.1.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "1.3 (letter h)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture; and therefore are of no authority in the Church of God, nor to be any otherwise approved, or made use of, than other human writings.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Luke xxiv. 27; Ver. 44; Rom. iii. 2; 2 Pet. i. 21"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "1.4 (letter i)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The authority of the holy scripture, for which it ought to be believed and obeyed, dependeth not upon the testimony of any man or church, but wholly upon God, (who is truth itself,) the author thereof; and therefore it is to be received, because it is the word of God.",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "2 Pet. i. 19; Ver. 21; 2 Tim. iii. 16; 1 John v. 9; 1 Thess. ii. 13"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. III (Of the written Word of God), note 1 at the foot of p. 385",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We confess that this Word of God was not sent nor delivered by the will of man, but that holy men of God spake as they were moved by the Holy Ghost, as the Apostle Peter saith. […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n400 = printed p. 385",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "2 Pier. i. 21",
+    "flag": "note 1 stands on «saint Pierre» in the French column; the print reads «2 Pier.» (2 Peter)"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]; [verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Gal.1.8-Gal.1.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "1.6 (letter m)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "2 Tim. iii. 15; Ver. 16, 17; Gal. i. 8; Ver. 9; 2 Thess. ii. 2",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 3 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Gal. i. 8, 9",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]; [verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "2Tim.3.15-2Tim.3.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "1.6 (letter m)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "2 Tim. iii. 15; Ver. 16, 17; Gal. i. 8; Ver. 9; 2 Thess. ii. 2",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "2 Tim. iii. 15, 16, 17",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]; [verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Isa.1.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 5 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Es. i. 12",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 6 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Es. i. 12",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "John.4.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Jean iv. 25",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 4 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Jean iv. 25",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "John.5.39"
+  ],
+  "citedBy": [
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "1.8 (letter s)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "Isa. viii. 20; Acts xv. 15; John v. 39; Ver. 46",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
+   },
+   {
+    "work": "Westminster Confession of Faith",
+    "loc": "1.8 (letter t)",
+    "how": "proof text (1894 Scripture-Proofs, by letter)",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
+    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
+    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+    "url": "https://archive.org/details/confessionoffaith00chur",
+    "printed": "John v. 39",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -94,33 +336,68 @@
  },
  {
   "refs": [
-   "2Tim.3.16"
+   "2Tim.3.14"
   ],
   "citedBy": [
    {
-    "work": "Westminster Confession of Faith",
-    "loc": "1.2 (letter g)",
-    "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Under the name of Holy Scripture, or the Word of God written, are now contained all the Books of the Old and New Testaments […] All which are given by inspiration of God, to be the rule of faith and life.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
-    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Luke xvi. 29; Ver. 31; Eph. ii. 20; Rev. xxii. 18, 19; 2 Tim. iii. 16"
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 2 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "2 Tim. iii. 14",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
    },
    {
-    "work": "Westminster Confession of Faith",
-    "loc": "1.4 (letter i)",
-    "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The authority of the holy scripture, for which it ought to be believed and obeyed, dependeth not upon the testimony of any man or church, but wholly upon God, (who is truth itself,) the author thereof; and therefore it is to be received, because it is the word of God.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
-    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "2 Pet. i. 19; Ver. 21; 2 Tim. iii. 16; 1 John v. 9; 1 Thess. ii. 13"
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 3 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "2 Tim. iii. 14",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "1Pet.4.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 2 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "1 Pier. iv. 11",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   },
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 3 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "1 Pier. iv. 11",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 2
  },
  {
@@ -132,11 +409,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter e)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "2 Tim. iii. 15; 2 Pet. i. 19"
+    "printed": "2 Tim. iii. 15; 2 Pet. i. 19",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    },
    {
     "work": "Westminster Confession of Faith",
@@ -156,34 +434,102 @@
  },
  {
   "refs": [
-   "2Pet.1.21"
+   "Rev.22.18"
   ],
   "citedBy": [
    {
-    "work": "Westminster Confession of Faith",
-    "loc": "1.3 (letter h)",
-    "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture; and therefore are of no authority in the Church of God, nor to be any otherwise approved, or made use of, than other human writings.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
-    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Luke xxiv. 27; Ver. 44; Rom. iii. 2; 2 Pet. i. 21"
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Apoc. xxii. 18",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
    },
    {
-    "work": "Westminster Confession of Faith",
-    "loc": "1.4 (letter i)",
-    "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The authority of the holy scripture, for which it ought to be believed and obeyed, dependeth not upon the testimony of any man or church, but wholly upon God, (who is truth itself,) the author thereof; and therefore it is to be received, because it is the word of God.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
-    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "2 Pet. i. 19; Ver. 21; 2 Tim. iii. 16; 1 John v. 9; 1 Thess. ii. 13"
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 4 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Apoc. xxii. 18",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
    }
   ],
   "count": 1,
   "inPage": true,
-  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 2
+ },
+ {
+  "refs": [
+   "Exod.24.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. III, note 2 at the foot of p. 385",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "[…] our God, of his special care for us and our salvation, commanded his servants, the Prophets and Apostles, to commit his revealed word to writing […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n400 = printed p. 385",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Exod. xxiv. 4",
+    "flag": "note 2 stands on the Prophets in the French column; verse numbers as printed (the print numbers the Psalm cii, Hebrew numbering)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Exod.31.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. III, note 4 at the foot of p. 385",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "[…] and he himself wrote with his own finger the two tables of the law. […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n400 = printed p. 385",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Exod. xxxi. 18",
+    "flag": "note 4 stands on the tables of the Law in the French column"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Deut.12.32"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 4 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Deut. xii. 32",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
  },
  {
   "refs": [
@@ -194,16 +540,105 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter a)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1"
+    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.19.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. II, notes 3–4 at the foot of p. 384",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We know him by two means: first, by the creation, preservation, and government of the universe […] Secondly, he makes himself more clearly and fully known to us by his holy and divine Word […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n399 = printed p. 384",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Psa. xix. 2",
+    "flag": "the footnote numbers sit on words of the French column that the print and Doctrina do not tie to the English clause here; the notes of the page are listed as printed; «1 Cor. xii. 6» is printed with a blot on the verse number (6 or 8)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.19.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. II, notes 3–4 at the foot of p. 384",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We know him by two means: first, by the creation, preservation, and government of the universe […] Secondly, he makes himself more clearly and fully known to us by his holy and divine Word […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n399 = printed p. 384",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Psa. xix. 8",
+    "flag": "the footnote numbers sit on words of the French column that the print and Doctrina do not tie to the English clause here; the notes of the page are listed as printed; «1 Cor. xii. 6» is printed with a blot on the verse number (6 or 8)"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.62.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 7 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Psa. lxii. 10",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.102.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. III, note 2 at the foot of p. 385",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "[…] our God, of his special care for us and our salvation, commanded his servants, the Prophets and Apostles, to commit his revealed word to writing […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n400 = printed p. 385",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Psa. cii. 19",
+    "flag": "note 2 stands on the Prophets in the French column; verse numbers as printed (the print numbers the Psalm cii, Hebrew numbering)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -257,16 +692,61 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter d)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20"
+    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Prov.30.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Prov. xxx. 5",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Prov.30.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 4 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Prov. xxx. 6",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -278,11 +758,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter d)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20"
+    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -299,11 +780,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter s)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Isa. viii. 20; Acts xv. 15; John v. 39; Ver. 46"
+    "printed": "Isa. viii. 20; Acts xv. 15; John v. 39; Ver. 46",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -320,16 +802,39 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.5 (letter l)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by and with the word in our hearts.",
+    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21"
+    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": false,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Hab.2.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. III, note 2 at the foot of p. 385",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "[…] our God, of his special care for us and our salvation, commanded his servants, the Prophets and Apostles, to commit his revealed word to writing […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n400 = printed p. 385",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Hab. ii. 2",
+    "flag": "note 2 stands on the Prophets in the French column; verse numbers as printed (the print numbers the Psalm cii, Hebrew numbering)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -341,11 +846,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter d)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20"
+    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -362,11 +868,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter d)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20"
+    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -383,11 +890,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter d)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20"
+    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -404,16 +912,61 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter r)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Matt. v. 18"
+    "printed": "Matt. v. 18",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.15.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 5 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Matt. xv. 3",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.17.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 5 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "xvii. 5",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -460,6 +1013,28 @@
  },
  {
   "refs": [
+   "Mark.7.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 5 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Marc vii. 7",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Luke.1.3-Luke.1.4"
   ],
   "citedBy": [
@@ -467,11 +1042,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter d)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20"
+    "printed": "Prov. xxii. 19, 20, 21; Luke i. 3, 4; Rom. xv. 4; Matt. iv. 4, 7, 10; Isa. viii. 19, 20",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -572,11 +1148,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter s)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Isa. viii. 20; Acts xv. 15; John v. 39; Ver. 46"
+    "printed": "Isa. viii. 20; Acts xv. 15; John v. 39; Ver. 46",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -593,16 +1170,39 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.6 (letter n)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according to the general rules of the word, which are always to be observed.",
+    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "John vi. 45; 1 Cor. ii. 9; Ver. 10, 11, 12"
+    "printed": "John vi. 45; 1 Cor. ii. 9; Ver. 10, 11, 12",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.15.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Jean xv. 15",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -614,16 +1214,39 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.5 (letter l)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by and with the word in our hearts.",
+    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21"
+    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Act. ii. 27",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -635,11 +1258,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter s)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Isa. viii. 20; Acts xv. 15; John v. 39; Ver. 46"
+    "printed": "Isa. viii. 20; Acts xv. 15; John v. 39; Ver. 46",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -666,6 +1290,28 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.26.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 3 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Act. xxvi. 22",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -698,16 +1344,38 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter a)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1"
+    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.1.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. II (By what means God is made known unto us)",
+    "how": "inline reference",
+    "sentence": "[…] the invisible things of God, namely, his eternal power and Godhead, as the Apostle Paul saith (Rom. i. 20). All which things are sufficient to convince men, and leave them without excuse.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha, English column; page image read: leaf n399 = printed p. 384",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Rom. i. 20"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -719,11 +1387,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter a)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1"
+    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -740,11 +1409,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter a)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1"
+    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -761,11 +1431,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter a)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1"
+    "printed": "Rom. ii. 14; Ver. 15; Rom. i. 19; Ver. 20; Rom. i. 32; Ps. xix. 1, 2, 3; Rom. ii. 1",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -796,6 +1467,28 @@
  },
  {
   "refs": [
+   "Rom.3.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 6 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Rom. iii. 4",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "1Cor.1.21"
   ],
   "citedBy": [
@@ -803,16 +1496,39 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter b)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. i. 21; ii. 13; Ver. 14"
+    "printed": "1 Cor. i. 21; ii. 13; Ver. 14",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.2.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 5 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "1 Cor. ii. 4",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -824,11 +1540,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.6 (letter n)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according to the general rules of the word, which are always to be observed.",
+    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "John vi. 45; 1 Cor. ii. 9; Ver. 10, 11, 12"
+    "printed": "John vi. 45; 1 Cor. ii. 9; Ver. 10, 11, 12",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -845,11 +1562,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.5 (letter l)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by and with the word in our hearts.",
+    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21"
+    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -866,11 +1584,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter b)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. i. 21; ii. 13; Ver. 14"
+    "printed": "1 Cor. i. 21; ii. 13; Ver. 14",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -887,16 +1606,39 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.6 (letter o)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according to the general rules of the word, which are always to be observed.",
+    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. xi. 13; Ver. 14; xiv. 26; Ver. 40"
+    "printed": "1 Cor. xi. 13; Ver. 14; xiv. 26; Ver. 40",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.12.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. II, notes 3–4 at the foot of p. 384",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We know him by two means: first, by the creation, preservation, and government of the universe […] Secondly, he makes himself more clearly and fully known to us by his holy and divine Word […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n399 = printed p. 384",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "1 Cor. xii. 6",
+    "flag": "the footnote numbers sit on words of the French column that the print and Doctrina do not tie to the English clause here; the notes of the page are listed as printed; «1 Cor. xii. 6» is printed with a blot on the verse number (6 or 8)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -908,11 +1650,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter u)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28"
+    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -929,11 +1672,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter u)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28"
+    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -950,11 +1694,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter u)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28"
+    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -971,11 +1716,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter u)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28"
+    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -992,11 +1738,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.6 (letter o)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according to the general rules of the word, which are always to be observed.",
+    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. xi. 13; Ver. 14; xiv. 26; Ver. 40"
+    "printed": "1 Cor. xi. 13; Ver. 14; xiv. 26; Ver. 40",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1013,11 +1760,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter u)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28"
+    "printed": "1 Cor. xiv. 6; Ver. 9; Ver. 11; Ver. 12; Ver. 24; Ver. 27; Ver. 28",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1034,11 +1782,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.6 (letter o)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according to the general rules of the word, which are always to be observed.",
+    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Cor. xi. 13; Ver. 14; xiv. 26; Ver. 40"
+    "printed": "1 Cor. xi. 13; Ver. 14; xiv. 26; Ver. 40",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1048,23 +1797,90 @@
  },
  {
   "refs": [
-   "Gal.1.8-Gal.1.9"
+   "1Cor.15.2-1Cor.15.3"
   ],
   "citedBy": [
    {
-    "work": "Westminster Confession of Faith",
-    "loc": "1.6 (letter m)",
-    "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according to the general rules of the word, which are always to be observed.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
-    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "2 Tim. iii. 15; Ver. 16, 17; Gal. i. 8; Ver. 9; 2 Thess. ii. 2"
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 2 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "1 Cor. xv. 2, 3",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.15.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 3 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "1 Cor. xv. 2",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gal.30.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Gal. xxx. 15",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.4.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. II, notes 3–4 at the foot of p. 384",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We know him by two means: first, by the creation, preservation, and government of the universe […] Secondly, he makes himself more clearly and fully known to us by his holy and divine Word […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n399 = printed p. 384",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Eph. iv. 6",
+    "flag": "the footnote numbers sit on words of the French column that the print and Doctrina do not tie to the English clause here; the notes of the page are listed as printed; «1 Cor. xii. 6» is printed with a blot on the verse number (6 or 8)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -1076,11 +1892,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.8 (letter w)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language of every nation unto which they come, that the word of God dwelling plentifully in all, they may worship him in an acceptable manner, and through patience and comfort of the scriptures, may have hope.",
+    "sentence": "The Old Testament in Hebrew, (which was the native language of the people of God of old,) and the New Testament in Greek, (which at the time of the writing of it was most generally known to the nations,) being immediately inspired by God, and by his singular care and providence kept pure in all ages, are therefore authentical; so as in all controversies of religion, the Church is finally to appeal unto them. But because these original tongues are not known to all the people of God, who have right unto and interest in the scriptures, and are commanded, in the fear of God, to read and search them, therefore they are to be translated into the vulgar language […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Col. iii. 16"
+    "printed": "Col. iii. 16",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1118,16 +1935,39 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.6 (letter m)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according to the general rules of the word, which are always to be observed.",
+    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "2 Tim. iii. 15; Ver. 16, 17; Gal. i. 8; Ver. 9; 2 Thess. ii. 2"
+    "printed": "2 Tim. iii. 15; Ver. 16, 17; Gal. i. 8; Ver. 9; 2 Thess. ii. 2",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Tim.1.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 2 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "1 Tim. i. 3",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -1139,11 +1979,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.5 (letter k)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by and with the word in our hearts.",
+    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 Tim. iii. 15"
+    "printed": "1 Tim. iii. 15",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1160,11 +2001,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter e)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "2 Tim. iii. 15; 2 Pet. i. 19"
+    "printed": "2 Tim. iii. 15; 2 Pet. i. 19",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1174,23 +2016,24 @@
  },
  {
   "refs": [
-   "2Tim.3.15-2Tim.3.17"
+   "2Tim.4.3-2Tim.4.4"
   ],
   "citedBy": [
    {
-    "work": "Westminster Confession of Faith",
-    "loc": "1.6 (letter m)",
-    "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "The whole counsel of God, concerning all things necessary for his own glory, man's salvation, faith, and life, is either expressly set down in scripture, or by good and necessary consequence may be deduced from scripture: unto which nothing at any time is to be added, whether by new revelations of the Spirit, or traditions of men. Nevertheless, we acknowledge the inward illumination of the Spirit of God to be necessary for the saving understanding of such things as are revealed in the word; and that there are some circumstances concerning the worship of God, and government of the Church, common to human actions and societies, which are to be ordered by the light of nature and Christian prudence, according to the general rules of the word, which are always to be observed.",
-    "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
-    "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
-    "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "2 Tim. iii. 15; Ver. 16, 17; Gal. i. 8; Ver. 9; 2 Thess. ii. 2"
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 6 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "2 Tim. iv. 3, 4",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -1202,11 +2045,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter c)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Heb. i. 1"
+    "printed": "Heb. i. 1",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1223,16 +2067,39 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.1 (letter f)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy scripture to be most necessary; those former ways of God's revealing his will unto his people being now ceased.",
+    "sentence": "Although the light of nature, and the works of creation and providence, do so far manifest the goodness, wisdom, and power of God, as to leave men inexcusable; yet they are not sufficient to give that knowledge of God, and of his will, which is necessary unto salvation: therefore it pleased the Lord, at sundry times, and in divers manners, to reveal himself, and to declare that his will unto his Church; and afterwards, for the better preserving and propagating of the truth, and for the more sure establishment and comfort of the Church against the corruption of the flesh, and the malice of Satan and of the world, to commit the same wholly unto writing; which maketh the holy […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "Heb. i. 1; Ver. 2"
+    "printed": "Heb. i. 1; Ver. 2",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Pet.1.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 1 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "1 Pier. i. 1",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -1286,11 +2153,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.5 (letter l)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by and with the word in our hearts.",
+    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21"
+    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1307,11 +2175,12 @@
     "work": "Westminster Confession of Faith",
     "loc": "1.5 (letter l)",
     "how": "proof text (1894 Scripture-Proofs, by letter)",
-    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by and with the word in our hearts.",
+    "sentence": "We may be moved and induced by the testimony of the Church to an high and reverend esteem of the holy scripture, and the heavenliness of the matter, the efficacy of the doctrine, the majesty of the style, the consent of all the parts, the scope of the whole, (which is to give all glory to God,) the full discovery it makes of the only way of man's salvation, the many other incomparable excellencies, and the entire perfection thereof, are arguments whereby it doth abundantly evidence itself to be the word of God; yet, notwithstanding, our full persuasion and assurance of the infallible truth, and divine authority thereof, is from the inward work of the Holy Spirit, bearing witness by […]",
     "edition": "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at large (Edinburgh, 1894), archive.org confessionoffaith00chur; page images read (leaves n20–n24 = printed pp. 17–21)",
     "tagCite": "[verified: page images of the 1894 print read by A5 2026-11-01]",
     "url": "https://archive.org/details/confessionoffaith00chur",
-    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21"
+    "printed": "1 John ii. 20; Ver. 27; John xvi. 13; Ver. 14; 1 Cor. ii. 10, 11, 12; Isa. lix. 21",
+    "flag": "sentence trimmed to 120 words in S1b (rule: public domain, about 120 words)"
    }
   ],
   "count": 1,
@@ -1338,6 +2207,50 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: page images of the 1894 print read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2John.1.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. VII (The sufficiency of the Holy Scriptures to be the only rule of faith), note 2 at the foot of p. 388",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "We believe that these Holy Scriptures fully contain the will of God, and that whatsoever man ought to believe unto salvation is sufficiently taught therein. […] we reject with all our hearts whatsoever doth not agree with this infallible rule […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n403 = printed p. 388",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "2 Jean 10",
+    "flag": "the notes of the page are listed as printed; the footnote numbers stand on words of the French column that the print does not tie to the English clause here; «Gal. xxx. 15» and «Jean iv. 25» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rev.1.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Belgic Confession",
+    "loc": "Art. III, note 3 at the foot of p. 385",
+    "how": "footnote reference (editor's, French-column abbreviations)",
+    "sentence": "[…] and he himself wrote with his own finger the two tables of the law. Therefore we call such writings holy and divine Scriptures. (note 3 stands on the Apostles in the French column)",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. III (New York: Harper, 1877), archive.org creedsofchristen187803scha; page image read: leaf n400 = printed p. 385",
+    "tagCite": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/creedsofchristen187803scha",
+    "printed": "Apoc. i. 11",
+    "flag": "the print gives the Revelation as «Apoc. i. 11»"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Schaff III 1877 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {

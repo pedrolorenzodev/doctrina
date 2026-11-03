@@ -1,6 +1,103 @@
 [
  {
   "refs": [
+   "Luke.22.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 344",
+    "how": "inline reference",
+    "sentence": "[…] by a continual remembrance of our Lord Jesus Christ, who expressly has commanded us to do this in remembrance of him. Luke xxii. 19.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Luke xxii. 19"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Luke xxii., 19",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XV (the Mysteries), p. 136, footnote ||",
+    "how": "footnote reference (editor's)",
+    "sentence": "And the unbloody Sacrifice by the words, 'Take, eat ye; This is My Body'; and 'Drink ye all of It; This is My Blood of the New Testament'; and by the words, 'Except ye eat the Flesh of the Son of Man, ye have not life in yourselves.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decree XV, printed pp. 136–137; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "and cf. Luke xxii., 19",
+    "flag": "OCR of the footnote reads «xxi, το»; read as xxii., 19 by Doctrina [unverified]; the cf. to Luke xxii. in the second footnote is not read (OCR illegible)"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Luke xxii., 19",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here for the verses that name the Supper, chosen by Doctrina from the wording [unverified]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "1Cor.11.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Confession of Peter Mogila",
+    "loc": "I. Q. 107",
+    "how": "inline reference",
+    "sentence": "[…] As St. Paul writes to the Corinthians (1 Cor. xi. 23), For I received of the Lord that which I also delivered unto you; that the Lord Jesus, in the same Night in which he was betrayed, took Bread […]",
+    "edition": "J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/cu31924029363094",
+    "printed": "1 Cor. xi. 23"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Cor. xi., 23",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Cor. xi., 23",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here for the verses that name the Supper, chosen by Doctrina from the wording [unverified]"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 3
+ },
+ {
+  "refs": [
    "John.6.54"
   ],
   "citedBy": [
@@ -28,6 +125,38 @@
   "count": 2,
   "inPage": true,
   "tag": "[unverified: OCR; page image not read]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "John.6.56"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 342",
+    "how": "inline reference",
+    "sentence": "He is in the closest manner united to Jesus Christ himself, and, in him, is made partaker of everlasting life. He that eateth my Flesh, and drinketh my Blood, dwelleth in me, and I in him. John vi. 56.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "John vi. 56"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "56",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 2
  },
  {
@@ -63,6 +192,113 @@
  },
  {
   "refs": [
+   "Matt.26.26"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XVII, p. 144, fn *",
+    "how": "footnote reference (editor's)",
+    "sentence": "For taking bread, and blessing, He gave to His Holy Disciples and Apostles, saying: 'Take, eat ye; This is My Body.' And taking the chalice, and giving thanks, He said: 'Drink ye all of It; This is My Blood, which for you is being poured out, for the remission of sins.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n154–n157 = printed pp. 143–146; pp. 147–150 print no Scripture reference per V5)",
+    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxvi., 26"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxvi., 26",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XV (the Mysteries), p. 136, footnote ||",
+    "how": "footnote reference (editor's)",
+    "sentence": "And the unbloody Sacrifice by the words, 'Take, eat ye; This is My Body'; and 'Drink ye all of It; This is My Blood of the New Testament'; and by the words, 'Except ye eat the Flesh of the Son of Man, ye have not life in yourselves.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decree XV, printed pp. 136–137; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxvi., 26; Mark xiv., 22; and cf. Luke xxii., 19"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by A5 2026-11-01]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Mark.14.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Mark xiv., 22",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XV (the Mysteries), p. 136, footnote ||",
+    "how": "footnote reference (editor's)",
+    "sentence": "And the unbloody Sacrifice by the words, 'Take, eat ye; This is My Body'; and 'Drink ye all of It; This is My Blood of the New Testament'; and by the words, 'Except ye eat the Flesh of the Son of Man, ye have not life in yourselves.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decree XV, printed pp. 136–137; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxvi., 26; Mark xiv., 22; and cf. Luke xxii., 19"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "John.6.53"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "53",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XV (the Mysteries), p. 137, footnote *",
+    "how": "footnote reference (editor's)",
+    "sentence": "And the unbloody Sacrifice by the words, 'Take, eat ye; This is My Body'; and 'Drink ye all of It; This is My Blood of the New Testament'; and by the words, 'Except ye eat the Flesh of the Son of Man, ye have not life in yourselves.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decree XV, printed pp. 136–137; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John vi., 53",
+    "flag": "OCR of the footnote reads «Jobn νι, 53»; read as John vi., 53 by Doctrina [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
    "Matt.16.16"
   ],
   "citedBy": [
@@ -84,27 +320,6 @@
  },
  {
   "refs": [
-   "Matt.26.26"
-  ],
-  "citedBy": [
-   {
-    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
-    "loc": "Decree XVII, p. 144, fn *",
-    "how": "footnote reference (editor's)",
-    "sentence": "For taking bread, and blessing, He gave to His Holy Disciples and Apostles, saying: 'Take, eat ye; This is My Body.' And taking the chalice, and giving thanks, He said: 'Drink ye all of It; This is My Blood, which for you is being poured out, for the remission of sins.'",
-    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read (leaves n154–n157 = printed pp. 143–146; pp. 147–150 print no Scripture reference per V5)",
-    "tagCite": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
-    "url": "https://archive.org/details/actsdecreesofsyn00orth",
-    "printed": "Matt. xxvi., 26"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
    "Matt.26.26-Matt.26.28"
   ],
   "citedBy": [
@@ -117,6 +332,27 @@
     "tagCite": "[unverified: OCR; page image not read]",
     "url": "https://archive.org/details/creedschristendo02scha",
     "printed": "Matt. xxvi. 26, 27, 28"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.26.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XV (the Mysteries), p. 136, footnote ¶",
+    "how": "footnote reference (editor's)",
+    "sentence": "And the unbloody Sacrifice by the words, 'Take, eat ye; This is My Body'; and 'Drink ye all of It; This is My Blood of the New Testament'; and by the words, 'Except ye eat the Flesh of the Son of Man, ye have not life in yourselves.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decree XV, printed pp. 136–137; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxvi., 27; and cf. Mark xiv., 24; Luke xxii."
    }
   ],
   "count": 1,
@@ -147,23 +383,45 @@
  },
  {
   "refs": [
-   "Luke.22.19"
+   "Mark.14.24"
   ],
   "citedBy": [
    {
-    "work": "Longer Catechism of the Eastern Church (Philaret)",
-    "loc": "Q. 344",
-    "how": "inline reference",
-    "sentence": "[…] by a continual remembrance of our Lord Jesus Christ, who expressly has commanded us to do this in remembrance of him. Luke xxii. 19.",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)",
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decree XV (the Mysteries), p. 136, footnote ¶",
+    "how": "footnote reference (editor's)",
+    "sentence": "And the unbloody Sacrifice by the words, 'Take, eat ye; This is My Body'; and 'Drink ye all of It; This is My Blood of the New Testament'; and by the words, 'Except ye eat the Flesh of the Son of Man, ye have not life in yourselves.'",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decree XV, printed pp. 136–137; page image not read)",
     "tagCite": "[unverified: OCR; page image not read]",
-    "url": "https://archive.org/details/creedschristendo02scha",
-    "printed": "Luke xxii. 19"
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxvi., 27; and cf. Mark xiv., 24; Luke xxii."
    }
   ],
   "count": 1,
-  "inPage": true,
+  "inPage": false,
   "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.35"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John vi., 35",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -190,23 +448,68 @@
  },
  {
   "refs": [
-   "John.6.56"
+   "John.6.57"
   ],
   "citedBy": [
    {
-    "work": "Longer Catechism of the Eastern Church (Philaret)",
-    "loc": "Q. 342",
-    "how": "inline reference",
-    "sentence": "He is in the closest manner united to Jesus Christ himself, and, in him, is made partaker of everlasting life. He that eateth my Flesh, and drinketh my Blood, dwelleth in me, and I in him. John vi. 56.",
-    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, Q. 329–350 (printed pp. 496–499)",
-    "tagCite": "[unverified: OCR; page image not read]",
-    "url": "https://archive.org/details/creedschristendo02scha",
-    "printed": "John vi. 56"
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "57",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[unverified: OCR; page image not read]",
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.58"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "58",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.60"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "60",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -253,6 +556,72 @@
  },
  {
   "refs": [
+   "Acts.1.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Acts i., 9",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.3.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "iii., 21",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "x., 16",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "1Cor.10.17"
   ],
   "citedBy": [
@@ -274,23 +643,24 @@
  },
  {
   "refs": [
-   "1Cor.11.23"
+   "1Cor.11.27"
   ],
   "citedBy": [
    {
-    "work": "Orthodox Confession of Peter Mogila",
-    "loc": "I. Q. 107",
-    "how": "inline reference",
-    "sentence": "[…] As St. Paul writes to the Corinthians (1 Cor. xi. 23), For I received of the Lord that which I also delivered unto you; that the Lord Jesus, in the same Night in which he was betrayed, took Bread […]",
-    "edition": "J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text",
-    "tagCite": "[unverified: OCR; page image not read]",
-    "url": "https://archive.org/details/cu31924029363094",
-    "printed": "1 Cor. xi. 23"
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XV (the Mysteries; printed p. 201)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe that there are in the Church Evangelical Mysteries […] that they are seven […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n212 = printed p. 201",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Cor. xi., 27",
+    "flag": "the print gives one list for all seven Mysteries without saying which Mystery each reference serves; listed here for the verses that name the Supper, chosen by Doctrina from the wording [unverified]"
    }
   ],
   "count": 1,
   "inPage": false,
-  "tag": "[unverified: OCR; page image not read]",
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -312,6 +682,138 @@
   "count": 1,
   "inPage": true,
   "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.12.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Cor. xii., 13",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.5.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "2 Cor. v., 7",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gal.2.30"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Gal. ii., 30",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.3.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Eph. iii., 17",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.3.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Col. iii., 1",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.11.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, Chapter XVII (printed pp. 203–205; list on p. 205)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "We believe the other Mystery instituted by the Lord to be what we call the Eucharist. For in the night wherein the Lord gave Himself up, taking bread and blessing, He said to His Apostles: 'Take, eat ye; This is My Body.' […] 'Drink ye all of It, This is My Blood […]' […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page image read: leaf n216 = printed p. 205",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Heb. xi., 1",
+    "flag": "printed in two columns after the chapter; the print does not say which clause each reference serves; «Gal. ii., 30» as printed (Galatians 2 has 21 verses) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  }
 ]

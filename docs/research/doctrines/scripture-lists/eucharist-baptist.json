@@ -145,6 +145,55 @@
  },
  {
   "refs": [
+   "1Cor.10.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.5–7, pp. 271–272",
+    "how": "margin note",
+    "sentence": "[…] albeit in substance, and nature, they still remain truly, and only Bread, and Wine, as they were before […]",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl (2LCF text of the 1677 print); margin readings as recorded in eucharist/baptist.apply.md (clause text of the 1677 print in McGlothlin; the 1688 and 1719 margins of chapter 30 were not collated)",
+    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]",
+    "printed": "the p. 271 margin prints «5.28» after 11:26; its association with 11:28 is a reading question, not corrected",
+    "flag": "locators as printed; «1 Cor. 11:28» is a reading of the printed «5.28»"
+   },
+   {
+    "work": "Baptist Faith and Message 1963",
+    "loc": "VII (Annual p. 276, left column)",
+    "how": "proof-text list (combined baptism/Supper; not all verses are assigned to the Supper)",
+    "sentence": "(copyright: not quoted)",
+    "edition": "Annual of the SBC 1963 p. 276, scan",
+    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
+   },
+   {
+    "work": "Baptist Faith and Message 2000",
+    "loc": "VII (official text)",
+    "how": "proof-text list (as in the 1963 list; not re-checked)",
+    "sentence": "(copyright: not quoted; https://bfm.sbc.net/bfm2000/)",
+    "edition": "official page",
+    "tagCite": "[unverified: not re-read by A5; recorded in eucharist/baptist.apply.md]",
+    "url": "https://bfm.sbc.net/bfm2000/"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.7, 1688 print p. 102 (margin note l)",
+    "how": "margin note",
+    "sentence": "[…] spiritually receive, and feed upon Christ crucified, (l) and all the benefits of his Death; the Body and Blood of Christ being then not corporally, or carnally, but spiritually present to the Faith of Believers, in that Ordinance, as the Elements themselves are to their outward senses.",
+    "edition": "A Confession of Faith, put forth by the Elders and Brethren of many Congregations of Christians (Baptized upon Profession of their Faith) in London and the Country (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688; page image read: leaf n125 = printed p. 102 (microfilm frame)",
+    "tagCite": "[verified: 1688 print page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/bim_early-english-books-1641-1700_a-confession-of-faith-p_1688",
+    "printed": "1 Cor.10.16.",
+    "flag": "the margin prints «1 Cor.10.16. ch.11.23—26.»; «ch.11.23—26» is read as 1 Cor. 11:23–26 [Doctrina]"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: not re-read by A5; recorded in eucharist/baptist.apply.md]; [verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]; [verified: 1688 print page image read by S1b 2026-11-02]",
+  "locCount": 4
+ },
+ {
+  "refs": [
    "Mark.1.9-Mark.1.11"
   ],
   "citedBy": [
@@ -253,44 +302,6 @@
  },
  {
   "refs": [
-   "1Cor.10.16"
-  ],
-  "citedBy": [
-   {
-    "work": "Second London Confession (1689)",
-    "loc": "30.5–7, pp. 271–272",
-    "how": "margin note",
-    "sentence": "[…] albeit in substance, and nature, they still remain truly, and only Bread, and Wine, as they were before […]",
-    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl (2LCF text of the 1677 print); margin readings as recorded in eucharist/baptist.apply.md (clause text of the 1677 print in McGlothlin; the 1688 and 1719 margins of chapter 30 were not collated)",
-    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]",
-    "printed": "the p. 271 margin prints «5.28» after 11:26; its association with 11:28 is a reading question, not corrected",
-    "flag": "locators as printed; «1 Cor. 11:28» is a reading of the printed «5.28»"
-   },
-   {
-    "work": "Baptist Faith and Message 1963",
-    "loc": "VII (Annual p. 276, left column)",
-    "how": "proof-text list (combined baptism/Supper; not all verses are assigned to the Supper)",
-    "sentence": "(copyright: not quoted)",
-    "edition": "Annual of the SBC 1963 p. 276, scan",
-    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
-   },
-   {
-    "work": "Baptist Faith and Message 2000",
-    "loc": "VII (official text)",
-    "how": "proof-text list (as in the 1963 list; not re-checked)",
-    "sentence": "(copyright: not quoted; https://bfm.sbc.net/bfm2000/)",
-    "edition": "official page",
-    "tagCite": "[unverified: not re-read by A5; recorded in eucharist/baptist.apply.md]",
-    "url": "https://bfm.sbc.net/bfm2000/"
-   }
-  ],
-  "count": 3,
-  "inPage": true,
-  "tag": "[unverified: not re-read by A5; recorded in eucharist/baptist.apply.md]; [verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]",
-  "locCount": 3
- },
- {
-  "refs": [
    "Col.2.12"
   ],
   "citedBy": [
@@ -372,12 +383,23 @@
     "sentence": "(short excerpt only; text not quoted here)",
     "edition": "Annual of the SBC 1963 p. 276, scan",
     "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.7, 1688 print p. 102 (margin note l)",
+    "how": "margin note",
+    "sentence": "[…] spiritually receive, and feed upon Christ crucified, (l) and all the benefits of his Death; the Body and Blood of Christ being then not corporally, or carnally, but spiritually present to the Faith of Believers, in that Ordinance, as the Elements themselves are to their outward senses.",
+    "edition": "A Confession of Faith, put forth by the Elders and Brethren of many Congregations of Christians (Baptized upon Profession of their Faith) in London and the Country (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688; page image read: leaf n125 = printed p. 102 (microfilm frame)",
+    "tagCite": "[verified: 1688 print page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/bim_early-english-books-1641-1700_a-confession-of-faith-p_1688",
+    "printed": "ch.11.23—26.",
+    "flag": "read as 1 Cor. 11:23–26 from the preceding «1 Cor.10.16.» [Doctrina]"
    }
   ],
   "count": 2,
   "inPage": true,
-  "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]; [verified: page images of the 1688 print read by A5 2026-11-01 (leaves n119, n122–n124, printed pp. 96, 99–101)]",
-  "locCount": 5
+  "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]; [verified: 1688 print page image read by S1b 2026-11-02]; [verified: page images of the 1688 print read by A5 2026-11-01 (leaves n119, n122–n124, printed pp. 96, 99–101)]",
+  "locCount": 6
  },
  {
   "refs": [
@@ -806,6 +828,35 @@
  },
  {
   "refs": [
+   "Matt.7.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.8, p. 272",
+    "how": "margin note",
+    "sentence": "(clause not transcribed in this file)",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl (2LCF text of the 1677 print); margin readings as recorded in eucharist/baptist.apply.md",
+    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.8, 1688 print p. 102 (margin note n)",
+    "how": "margin note",
+    "sentence": "All ignorant and ungodly Persons, as they are unfit to enjoy Communion (m) with Christ, so are they unworthy of the Lord's Table, and cannot, without great sin against him, while they remain such, partake of these Holy Mysteries, (n) or be admitted thereunto: yea, whosoever shall receive unworthily, are guilty of the Body and Blood of the Lord, eating and drinking Judgment to themselves.",
+    "edition": "A Confession of Faith, put forth by the Elders and Brethren of many Congregations of Christians (Baptized upon Profession of their Faith) in London and the Country (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688; page image read: leaf n125 = printed p. 102 (microfilm frame)",
+    "tagCite": "[verified: 1688 print page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/bim_early-english-books-1641-1700_a-confession-of-faith-p_1688",
+    "printed": "Mat. 7. 6."
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]; [verified: 1688 print page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
    "Matt.15.9"
   ],
   "citedBy": [
@@ -1043,6 +1094,64 @@
  },
  {
   "refs": [
+   "1Cor.11.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.8, p. 272",
+    "how": "margin note",
+    "sentence": "(clause not transcribed in this file)",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl (2LCF text of the 1677 print); margin readings as recorded in eucharist/baptist.apply.md",
+    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.8, 1688 print p. 102 (margin note n)",
+    "how": "margin note",
+    "sentence": "All ignorant and ungodly Persons, as they are unfit to enjoy Communion (m) with Christ, so are they unworthy of the Lord's Table, and cannot, without great sin against him, while they remain such, partake of these Holy Mysteries, (n) or be admitted thereunto: yea, whosoever shall receive unworthily, are guilty of the Body and Blood of the Lord, eating and drinking Judgment to themselves.",
+    "edition": "A Confession of Faith, put forth by the Elders and Brethren of many Congregations of Christians (Baptized upon Profession of their Faith) in London and the Country (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688; page image read: leaf n125 = printed p. 102 (microfilm frame)",
+    "tagCite": "[verified: 1688 print page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/bim_early-english-books-1641-1700_a-confession-of-faith-p_1688",
+    "printed": "1 Cor.11.29."
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]; [verified: 1688 print page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "2Cor.6.14-2Cor.6.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.8, p. 272",
+    "how": "margin note",
+    "sentence": "(clause not transcribed in this file)",
+    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl (2LCF text of the 1677 print); margin readings as recorded in eucharist/baptist.apply.md",
+    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
+   },
+   {
+    "work": "Second London Confession (1689)",
+    "loc": "30.8, 1688 print p. 102 (margin note m)",
+    "how": "margin note",
+    "sentence": "All ignorant and ungodly Persons, as they are unfit to enjoy Communion (m) with Christ, so are they unworthy of the Lord's Table, and cannot, without great sin against him, while they remain such, partake of these Holy Mysteries, (n) or be admitted thereunto: yea, whosoever shall receive unworthily, are guilty of the Body and Blood of the Lord, eating and drinking Judgment to themselves.",
+    "edition": "A Confession of Faith, put forth by the Elders and Brethren of many Congregations of Christians (Baptized upon Profession of their Faith) in London and the Country (London: John Harris, 1688), archive.org bim_early-english-books-1641-1700_a-confession-of-faith-p_1688; page image read: leaf n125 = printed p. 102 (microfilm frame)",
+    "tagCite": "[verified: 1688 print page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/bim_early-english-books-1641-1700_a-confession-of-faith-p_1688",
+    "printed": "2 Cor. 6, 14,15."
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]; [verified: 1688 print page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
    "Heb.9.25-Heb.9.26"
   ],
   "citedBy": [
@@ -1113,25 +1222,6 @@
   ],
   "count": 1,
   "inPage": true,
-  "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]",
-  "locCount": 1
- },
- {
-  "refs": [
-   "Matt.7.6"
-  ],
-  "citedBy": [
-   {
-    "work": "Second London Confession (1689)",
-    "loc": "30.8, p. 272",
-    "how": "margin note",
-    "sentence": "(clause not transcribed in this file)",
-    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl (2LCF text of the 1677 print); margin readings as recorded in eucharist/baptist.apply.md",
-    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
-   }
-  ],
-  "count": 1,
-  "inPage": false,
   "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]",
   "locCount": 1
  },
@@ -1315,44 +1405,6 @@
   ],
   "count": 1,
   "inPage": true,
-  "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]",
-  "locCount": 1
- },
- {
-  "refs": [
-   "1Cor.11.29"
-  ],
-  "citedBy": [
-   {
-    "work": "Second London Confession (1689)",
-    "loc": "30.8, p. 272",
-    "how": "margin note",
-    "sentence": "(clause not transcribed in this file)",
-    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl (2LCF text of the 1677 print); margin readings as recorded in eucharist/baptist.apply.md",
-    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]",
-  "locCount": 1
- },
- {
-  "refs": [
-   "2Cor.6.14-2Cor.6.15"
-  ],
-  "citedBy": [
-   {
-    "work": "Second London Confession (1689)",
-    "loc": "30.8, p. 272",
-    "how": "margin note",
-    "sentence": "(clause not transcribed in this file)",
-    "edition": "W. J. McGlothlin, Baptist Confessions of Faith (Philadelphia: American Baptist Publication Society, 1911), archive.org baptistconfessio00mcgl (2LCF text of the 1677 print); margin readings as recorded in eucharist/baptist.apply.md",
-    "tagCite": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]"
-   }
-  ],
-  "count": 1,
-  "inPage": false,
   "tag": "[verified earlier: scan/margin as recorded in eucharist/baptist.apply.md; not re-read by A5]",
   "locCount": 1
  },

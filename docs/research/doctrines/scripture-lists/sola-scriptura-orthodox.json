@@ -1,6 +1,37 @@
 [
  {
   "refs": [
+   "Rom.10.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decrees, appended Question I (p. 153, footnote)",
+    "how": "quoted words, footnote garbled in the OCR",
+    "sentence": "[…] it is permitted to every Orthodox to hear indeed the Scriptures, that he may believe with the heart unto righteousness, and confess with the mouth unto salvation […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decrees, appended Questions I–II, printed pp. 152–154; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "flag": "the OCR of the footnote is unreadable; the verse is identified from the quoted words by Doctrina [unverified]"
+   },
+   {
+    "work": "Orthodox Confession of Peter Mogila",
+    "loc": "Part I, Q. 4",
+    "how": "inline reference",
+    "sentence": "[…] As the same Apostle teacheth us (Rom. x. 10), With the Heart is believed unto Righteousness, and with the Mouth Confession is made unto Salvation.",
+    "edition": "J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/cu31924029363094",
+    "printed": "Rom. x. 10"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 2
+ },
+ {
+  "refs": [
    "2Thess.2.15"
   ],
   "citedBy": [
@@ -63,6 +94,368 @@
  },
  {
   "refs": [
+   "John.5.39"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John v., 39",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decrees, appended Question II (p. 154, footnote)",
+    "how": "quoted words, footnote garbled in the OCR",
+    "sentence": "If the Divine Scriptures were plain to all Christians that read them, the Lord would not have commanded such as desired to obtain salvation to search the same […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decrees, appended Questions I–II, printed pp. 152–154; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "flag": "the OCR of the footnote is unreadable; the verse is identified from the words «search the Scriptures» by Doctrina [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Acts.17.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xvii., 11",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Acts xvii., 11",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "2Tim.3.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "2 Tim. iii., 16",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   },
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decrees, appended Question I (p. 152, footnote)",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] For that all Scripture is divinely-inspired and profitable we know, and is of such necessity, that without the same it is impossible to be Orthodox at all. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decrees, appended Questions I–II, printed pp. 152–154; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Cf. 2 Tim. iii., 16 (OCR reads «lii.»)",
+    "flag": "OCR of the footnote reads «lii.»; read as iii. by Doctrina [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]; [verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Deut.4.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Deut. iv., 2",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Deut.5.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "v., 1",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Deut.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "vi.",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Deut.6.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Deut. vi., 6",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Deut.12.32"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Deut. xii., 32",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Deut.17.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xvii., 18",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Deut.31.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Deut. xxxi., 11",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Josh.1.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Jos. i., 8",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Neh.8.31"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Neh. viii., 31",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.1.1-Ps.1.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "i., 1, 2",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.19.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Ps. xviii. [xix.], 8",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.25.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xxiv. [xxv.], 5",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Ps.26.5"
   ],
   "citedBy": [
@@ -81,6 +474,1012 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.116.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Confession of Peter Mogila",
+    "loc": "Part I, Q. 4",
+    "how": "inline reference",
+    "sentence": "[…] according to the holy Psalmist and St. Paul (Psal. cxvi. 10), I believed, and therefore have I spoken; we believe, and therefore speak.",
+    "edition": "J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/cu31924029363094",
+    "printed": "Psal. cxvi. 10",
+    "flag": "the print numbers the Psalm cxvi (Hebrew numbering); the verse is not repaired"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.119.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "cxviii. [cxix.], 1",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.119.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Ps. cxviii. [cxix.], 9",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.119.104"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "cxviii. [cxix.], 104",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Prov.30.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Prov. xxx., 5",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eccl.12.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Eccles. xii., 10",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Isa.5.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Esai. v., 13",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Isa.53.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Esai. liii., 10",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Jer.8.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Jer. viii., 9",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Jer.23.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Jer. xxiii., 28",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Jer.31.33"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Jer. xxxi., 33",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Hos.4.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Hos. iv., 6",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.1.22-Matt.1.23"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 58 (Schaff II p. 454)",
+    "how": "inline reference",
+    "sentence": "[…] the holy Evangelist Matthew, when relating the birth of Christ, brings forward the prophecy of Isaiah: Now all this was done, that it might be fulfilled which was spoken of the Lord by the Prophet, saying: Behold a Virgin shall be with child […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 454",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Matt. i. 22, 23"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.11.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xi., 25",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.11.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 14 (Schaff II p. 447)",
+    "how": "inline reference",
+    "sentence": "Jesus Christ himself says: No man knoweth the Son but the Father; neither knoweth any man the Father save the Son, and he to whomsoever the Son will reveal him.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 447",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Matt. xi. 27"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.13.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xiii., 11",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.15.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xv., 14",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.16.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xvi., 17",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.22.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxii., 29",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.23.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Matt. xxiii., 13",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.7.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Mark vii., 27",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.4.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "iv., 16",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.11.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Luke xi., 28",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.11.52"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Luke xi., 52",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.16.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Luke xvi., 29",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.24.44"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 37 (Schaff II p. 452)",
+    "how": "inline reference",
+    "sentence": "Jesus Christ himself gives to these books the general name of the Law of Moses.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 452",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Luke xxiv. 44 (OCR «xxiv. -i-i»)",
+    "flag": "OCR of the reference reads «xxiv. -i-i»; read as 44 by Doctrina [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.24.45"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Luke xxiv., 45",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John i., 7",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.18"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 14 (Schaff II p. 447)",
+    "how": "inline reference",
+    "sentence": "The Evangelist John writes in his Gospel: No man hath seen God at any time; the only-begotten Son, which is in the bosom of the Father, he hath declared him.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 447",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "John i. 18"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.3.30"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John iii., 30",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.5.36"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 60 (Schaff II p. 455)",
+    "how": "inline reference",
+    "sentence": "[…] our Lord Jesus Christ himself owns miracles as a powerful testimony to his divine mission: The works which the Father hath given me to finish, the same works that I do, bear witness of me, that the Father hath sent me.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 455",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "John v. 36"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.6.45"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John vi., 45",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.7.49"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John vii., 49",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.8.31"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "viii., 31",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.10.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "x., 27",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.17.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "John xvii., 3",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.21.31"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xxi., 31",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.23.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xxiii., 6",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.3.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Acts iii., 24",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "viii., 28",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.13.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Acts xiii., 27",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.15.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xv., 21",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.17.26-Acts.17.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 15 (Schaff II p. 448)",
+    "how": "inline reference",
+    "sentence": "And he hath made of one blood all nations of men, for to dwell on all the face of the earth […] For in him we live, and move, and have our being.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 448",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Acts xvii. 26-28"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.26.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xxvi., 22",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.1.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 15 (Schaff II p. 448)",
+    "how": "inline reference",
+    "sentence": "For the invisible things of him, from the creation of the world, are clearly seen, being understood by the things that are made, even his eternal power and Godhead.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 448",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "Rom. i. 20"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.3.1-Rom.3.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Rom. iii., 1, 2",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -106,6 +1505,136 @@
  },
  {
   "refs": [
+   "Rom.12.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Rom. xii., 6",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rom.15.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Rom. xv., 4",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.2.7-1Cor.2.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 14 (Schaff II p. 447)",
+    "how": "inline reference",
+    "sentence": "The same Apostle writes as follows to the Corinthians: But we speak the wisdom of God in a mystery, even the hidden things which God ordained before the world unto our glory, which none of the princes of this world knew. […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 447",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "1 Cor. ii. 7, 8, 10"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.2.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 14 (Schaff II p. 447)",
+    "how": "inline reference",
+    "sentence": "[…] But God hath revealed them unto us by his Spirit; for the Spirit searcheth all things, yea, the deep things of God.",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 447",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "1 Cor. ii. 7, 8, 10"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.3.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Cor. iii., 10",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.4.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Cor. iv., 6",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "1Cor.11.2"
   ],
   "citedBy": [
@@ -127,6 +1656,313 @@
  },
  {
   "refs": [
+   "1Cor.11.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xi., 12",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.12.28"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decrees, appended Question II (p. 154, footnote)",
+    "how": "footnote reference (editor's)",
+    "sentence": "[…] and Paul would have said without reason that God had placed the gift of teaching in the Church […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decrees, appended Questions I–II, printed pp. 152–154; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Cor. xii., 28"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.15.3-1Cor.15.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Cor. xv., 3, 4",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.1.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "2 Cor. i., 13",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.3.9"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "iii., 9",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.3.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "13",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.4.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "iv., 3",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gal.1.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Gal. i., 8",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gal.3.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "iii., 15",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gal.6.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "vi., 16",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.1.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Eph. i., 17",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.2.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Eph. ii., 20",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.3.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "iii., 16",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.3.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "19",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Eph.5.27"
   ],
   "citedBy": [
@@ -144,6 +1980,422 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: Robertson 1899 page image read by A5 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Col.4.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Col. iv., 16",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Thess.5.19-1Thess.5.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Thes. v., 19, 20",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Thess.5.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Thes. v., 27",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Tim.4.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Tim. iv., 10",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Tim.3.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "2 Tim. iii., 15",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.1.1-Heb.1.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Longer Catechism of the Eastern Church (Philaret)",
+    "loc": "Q. 14 (Schaff II p. 447)",
+    "how": "quoted words, book named, no verse printed",
+    "sentence": "The Apostle Paul says, in the beginning of his Epistle to the Hebrews: God, who at sundry times, and in divers manners, spake in times past unto the Fathers by the Prophets, hath in these last days spoken unto us by his Son […]",
+    "edition": "P. Schaff, The Creeds of Christendom, vol. II (New York: Harper, 1877 ed.), archive.org creedschristendo02scha, OCR djvu text; Philaret in the English of Blackmore, p. 447",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/creedschristendo02scha",
+    "printed": "beginning of his Epistle to the Hebrews",
+    "flag": "no chapter or verse printed: «the beginning of his Epistle to the Hebrews»; verses identified from the quoted words by Doctrina [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.11.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Orthodox Confession of Peter Mogila",
+    "loc": "Part I, Q. 4",
+    "how": "inline reference",
+    "sentence": "Faith (according to the blessed Paul, Heb. xi. 1) is the substance of Things hoped for, the Evidence of Things not seen […]",
+    "edition": "J. Overbeck (ed.), The Orthodox Confession of the Catholic and Apostolic Eastern Church (London: Thomas Baker, 1898), archive.org cu31924029363094, OCR djvu text",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/cu31924029363094",
+    "printed": "Heb. xi. 1"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Pet.1.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Peter i., 21",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Pet.4.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 Peter iv., 11",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Pet.3.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "2 Peter iii., 5",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Pet.3.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Decrees, appended Question II (p. 154, footnote)",
+    "how": "quoted words, footnote garbled in the OCR",
+    "sentence": "[…] and Peter would not have said of the Epistles of Paul that they contained some things hard to be understood.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth, OCR djvu text (Decrees, appended Questions I–II, printed pp. 152–154; page image not read)",
+    "tagCite": "[unverified: OCR; page image not read]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "flag": "the OCR of the footnote is unreadable; the verse is identified from the quoted words by Doctrina [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page image not read]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.1.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 John i., 4",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.2.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "ii., 12",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.2.27"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 John ii., 27",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.4.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 John iv., 1",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.5.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "1 John v., 5",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.12.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question II (printed pp. 210–211)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] the dogmas of the Faith therein contained are plain and clear to those that are regenerated and enlightened by the Holy Spirit. […] the Scriptures are a lamp and a light enlightening the understandings of the Faithful, and driving away the darkness.",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "xii., 3",
+    "flag": "printed after the answer (p. 210 foot, p. 211 head); the print does not say which clause each reference serves; «2 Peter iii., 5» and «1 John … xii., 3» as printed (no such chapter in 1 John) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rev.1.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question I (printed p. 209; answer pp. 208–209)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "[…] For neither can we learn from any other source than from the Sacred Scriptures, whether it be by reading the same, or by hearing what is therein expounded by faithful men. […] it is forbidden to no Christian to hear what is in the Sacred Scriptures […] neither it is forbidden to him to read them. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Apoc. i., 3",
+    "flag": "printed in two columns after the answer, in the order of the print; the print does not say which clause each reference serves; «Neh. viii., 31», «John xxi., 31» and «viii., 31» as printed [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Rev.22.18-Rev.22.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Confession of Dositheus (Synod of Jerusalem 1672)",
+    "loc": "Confession, appended Question III (the canon; printed p. 212)",
+    "how": "printed reference list under the chapter (not tied to a clause)",
+    "sentence": "By Sacred Scripture we mean all the Canonical Books, which as a rule of our Faith and salvation we have received and do hold; especially, because they being divinely inspired, teach us doctrine, and are of themselves sufficient to instruct, enlighten, and perfect him that cometh to the Faith. […]",
+    "edition": "J. N. W. B. Robertson, The Acts and Decrees of the Synod of Jerusalem (London: Thomas Baker, 1899), archive.org actsdecreesofsyn00orth; page images read: leaves n220–n223 = printed pp. 209–212",
+    "tagCite": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/actsdecreesofsyn00orth",
+    "printed": "Apoc. xxii., 18, 19",
+    "flag": "printed after the answer; the print does not say which clause each reference serves; «Deut. … vi.» has no verse; «John xxiii., 6» as printed (John has 21 chapters) [not repaired]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Robertson 1899 page image read by S1b 2026-11-02]",
   "locCount": 1
  }
 ]

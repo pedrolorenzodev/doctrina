@@ -66,12 +66,107 @@
     "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
     "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
     "printed": "John iii. 5"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Luke v. 11. 5 John iii. 5 6 Trid. 1. Sess. 7, can. 3, 4. de feutr. in germ.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John iii. 5",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 John iii. 5. 64 Kings vi. 17. 7 1 Cor. xiv. 40.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John iii. 5",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "John iii. 5",
+    "flag": "footnote mark ¶"
+   },
+   {
+    "work": "Council of Florence, decree for the Armenians (Exsultate Deo)",
+    "loc": "the section on the seven sacraments, on baptism",
+    "how": "quoted words, no reference printed",
+    "sentence": "[…] Holy baptism holds the first place among all the sacraments, for it is the gate of the spiritual life […] unless we are born again of water and the spirit, we cannot, as Truth says, enter the kingdom of heaven. […]",
+    "edition": "Council of Basel-Ferrara-Florence, English text as reproduced on papalencyclicals.net (https://www.papalencyclicals.net/councils/ecum17.htm, fetched 2026-11-02); the translator and edition are not printed on the page",
+    "tagCite": "[unverified: online reproduction; verse identified from quoted words by Doctrina]",
+    "url": "https://www.papalencyclicals.net/councils/ecum17.htm",
+    "flag": "no book, chapter or verse printed: «as Truth says» introduces the words; John 3:5 is identified by Doctrina from the wording [unverified]"
    }
   ],
-  "count": 2,
+  "count": 4,
   "inPage": true,
-  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 7
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [unverified: online reproduction; verse identified from quoted words by Doctrina]; [verified: Waterworth scan page image read by S1b 2026-11-02]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 11
+ },
+ {
+  "refs": [
+   "Rom.6.4"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§977, fn 520",
+    "how": "footnote",
+    "sentence": "Baptism is the first and chief sacrament of forgiveness of sins because it unites us with Christ, who died for our sins and rose for our justification, so that \"we too might walk in newness of life.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2E.HTM"
+   },
+   {
+    "work": "Unitatis redintegratio",
+    "loc": "§22, fn 40",
+    "how": "footnote",
+    "sentence": "[…] as the Apostle says: \"You were buried together with Him in Baptism, and in Him also rose again - through faith in the working of God, who raised Him from the dead\". […]",
+    "edition": "Unitatis redintegratio (21 Nov 1964), official English text on vatican.va (vat-ii_decree_19641121_unitatis-redintegratio_en.html); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
+    "printed": "Col. 2, 12; cf. Rom. 6, 4"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Rom. vi. 3, 4. Col. ii. 12.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Rom. vi. 3, 4",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Rom. vi. 4",
+    "flag": "footnote mark ††; printed «Rom. viii. 1; vi. 4»"
+   }
+  ],
+  "count": 4,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: Waterworth scan page image read by S1b 2026-11-02]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
+  "locCount": 4
  },
  {
   "refs": [
@@ -113,12 +208,45 @@
     "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
     "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
     "printed": "Acts ii. 38"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Acts ii. 38. De concupiscentia remanente in baptizatis vide Aug. lib 1. de",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts ii. 38",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Acts ii. 38",
+    "flag": "footnote mark §"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session VI (Justification), chapter 7, footnote chain (printed page not collated)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] the meritorious cause is His most beloved only-begotten our Lord Jesus Christ, who […] merited Justification for us by His most holy Passion on the wood of the cross and made satisfaction for us unto God the Father; the instru- […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Actsii. 38",
+    "flag": "the OCR chain «* Hebr. xi. 6. † Matth. ii. 5. ‡ Eccli. i. 27. § Actsii. 38. ‖ Matth. xxviii. 19. ¶ 1 Kings vii. 3. ** Titus iii. 7» is read as printed; the marks were not matched to the clauses"
    }
   ],
-  "count": 2,
+  "count": 3,
   "inPage": true,
-  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 4
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [unverified: OCR; the reference is read from the OCR text of the scan]; [verified: Waterworth scan page image read by S1b 2026-11-02]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 7
  },
  {
   "refs": [
@@ -152,50 +280,23 @@
     "tagCite": "[verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
     "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
     "printed": "Mk. 16:16."
-   }
-  ],
-  "count": 2,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
-  "locCount": 3
- },
- {
-  "refs": [
-   "Gal.3.27"
-  ],
-  "citedBy": [
-   {
-    "work": "CCC",
-    "loc": "§1227, fn 30",
-    "how": "footnote",
-    "sentence": "The baptized have \"put on Christ.\"",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P3I.HTM"
    },
    {
-    "work": "CCC",
-    "loc": "§1243, fn 42",
-    "how": "footnote",
-    "sentence": "The white garment symbolizes that the person baptized has \"put on Christ,\" […]",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P3J.HTM"
-   },
-   {
-    "work": "Council of Trent (Waterworth 1848)",
-    "loc": "Session V (decree on original sin; page cites can. 4, 5)",
-    "how": "printed reference (footnote/inline)",
-    "sentence": "[…] it is only raised,** or not imputed ; let him be anathema. For in those who are born again, there is nothing that God hates ; because. There is no condemnation to those who are truly buried together with Christ by baptism into death- ; ff who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, XX are made inno- * Acts iv. 2. -f John i.' 29. { Gal. iii. 27. § Acts ii. 38. […]",
-    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
-    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
-    "printed": "Gal. iii. 27"
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "« Mark xvi. 16. * Ephes. v. 26.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Mark xvi. 16",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
    }
   ],
-  "count": 2,
+  "count": 3,
   "inPage": true,
-  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 3
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
+  "locCount": 4
  },
  {
   "refs": [
@@ -229,11 +330,115 @@
     "tagCite": "[verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
     "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
     "printed": "Col. 2, 12; cf. Rom. 6, 4"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Rom. vi. 3, 4. Col. ii. 12.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Col. ii. 12",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 3,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "Gal.3.27"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1227, fn 30",
+    "how": "footnote",
+    "sentence": "The baptized have \"put on Christ.\"",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3I.HTM"
+   },
+   {
+    "work": "CCC",
+    "loc": "§1243, fn 42",
+    "how": "footnote",
+    "sentence": "The white garment symbolizes that the person baptized has \"put on Christ,\" […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3J.HTM"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (decree on original sin; page cites can. 4, 5)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] it is only raised,** or not imputed ; let him be anathema. For in those who are born again, there is nothing that God hates ; because. There is no condemnation to those who are truly buried together with Christ by baptism into death- ; ff who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, XX are made inno- * Acts iv. 2. -f John i.' 29. { Gal. iii. 27. § Acts ii. 38. […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Gal. iii. 27"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Gal. iii. 27",
+    "flag": "footnote mark ‡; the print reads 27 (the earlier suspicion of 3:23 is not borne out)"
    }
   ],
   "count": 2,
   "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: Waterworth scan page image read by S1b 2026-11-02]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 4
+ },
+ {
+  "refs": [
+   "Matt.28.19"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "' Matt, xxviii. 19. 2 Isid. lib. 2. de offic. Eccles. cap. 4.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt, xxviii. 19",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "< Mark xvi. 15. Matth. xxviii. 19, 20.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matth. xxviii. 19, 20",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session VI (Justification), chapter 7, footnote chain (printed page not collated)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] the meritorious cause is His most beloved only-begotten our Lord Jesus Christ, who […] merited Justification for us by His most holy Passion on the wood of the cross and made satisfaction for us unto God the Father; the instru- […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Matth. xxviii. 19",
+    "flag": "the OCR chain «* Hebr. xi. 6. † Matth. ii. 5. ‡ Eccli. i. 27. § Actsii. 38. ‖ Matth. xxviii. 19. ¶ 1 Kings vii. 3. ** Titus iii. 7» is read as printed; the marks were not matched to the clauses"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [unverified: OCR; the reference is read from the OCR text of the scan]",
   "locCount": 3
  },
  {
@@ -263,11 +468,12 @@
     "work": "Lumen gentium",
     "loc": "§16, fn 128",
     "how": "footnote",
-    "sentence": "Nor is God far distant from those who in shadows and images seek the unknown God, for it is He who gives to all men life and breath and all things, and as Saviour wills that all men be saved. Those also can attain to salvation who through no fault of their own do not know the Gospel of Christ or His Church, yet sincerely seek God and moved by grace strive by their deeds to do His will as it is known to them through the dictates of conscience. Nor does Divine Providence deny the helps necessary for salvation to those who, without blame on their part, have not yet arrived at an explicit knowledge of God and with His grace strive to live a good life.",
+    "sentence": "Nor is God far distant from those who in shadows and images seek the unknown God, for it is He who gives to all men life and breath and all things, and as Saviour wills that all men be saved. Those also can attain to salvation who through no fault of their own do not know the Gospel of Christ or His Church, yet sincerely seek God and moved by grace strive by their deeds to do His will as it is known to them through the dictates of conscience. Nor does Divine Providence deny the helps necessary for salvation …",
     "edition": "Lumen gentium (21 Nov 1964), official English text on vatican.va (vat-ii_const_19641121_lumen-gentium_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
     "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
-    "printed": "Cf. 1 Tim. 2:4."
+    "printed": "Cf. 1 Tim. 2:4.",
+    "flag": "sentence trimmed to 100 words in S1b (rule: Holy See, 100 words)"
    }
   ],
   "count": 2,
@@ -277,32 +483,66 @@
  },
  {
   "refs": [
-   "Rom.6.4"
+   "Acts.16.33"
   ],
   "citedBy": [
    {
     "work": "CCC",
-    "loc": "§977, fn 520",
+    "loc": "§1252, fn 53",
     "how": "footnote",
-    "sentence": "Baptism is the first and chief sacrament of forgiveness of sins because it unites us with Christ, who died for our sins and rose for our justification, so that \"we too might walk in newness of life.\"",
+    "sentence": "There is explicit testimony to this practice from the second century on, and it is quite possible that, from the beginning of the apostolic preaching, when whole \"households\" received baptism, infants may also have been baptized.",
     "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P2E.HTM"
+    "url": "https://www.vatican.va/archive/ENG0015/__P3K.HTM"
    },
    {
-    "work": "Unitatis redintegratio",
-    "loc": "§22, fn 40",
-    "how": "footnote",
-    "sentence": "[…] as the Apostle says: \"You were buried together with Him in Baptism, and in Him also rose again - through faith in the working of God, who raised Him from the dead\". […]",
-    "edition": "Unitatis redintegratio (21 Nov 1964), official English text on vatican.va (vat-ii_decree_19641121_unitatis-redintegratio_en.html); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html",
-    "printed": "Col. 2, 12; cf. Rom. 6, 4"
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 1 Cor. i. 16. Acts xvi. 33. 6 Gen. xxi. 4. Lev. xii. 3. Luke i. 59 ; ii. 21",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts xvi. 33",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
    }
   ],
   "count": 2,
   "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]; [verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Rom.8.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "7 Rom. viii. 1. » Eph. iv. 22. 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Rom. viii. 1",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Rom. viii. 1",
+    "flag": "footnote mark ††"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: Waterworth scan page image read by S1b 2026-11-02]",
   "locCount": 2
  },
  {
@@ -336,6 +576,236 @@
  },
  {
   "refs": [
+   "1Cor.1.16"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1252, fn 53",
+    "how": "footnote",
+    "sentence": "There is explicit testimony to this practice from the second century on, and it is quite possible that, from the beginning of the apostolic preaching, when whole \"households\" received baptism, infants may also have been baptized.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3K.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 1 Cor. i. 16. Acts xvi. 33. 6 Gen. xxi. 4. Lev. xii. 3. Luke i. 59 ; ii. 21",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. i. 16",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Eph.4.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (decree on original sin; page cites can. 4, 5)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] condemnation to those who are truly buried together with Christ by baptism into death- ; ff who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, XX are made inno- * Acts iv. 2. -f John i.' 29. { Gal. iii. 27. § Acts ii. 38. II Rom. v. 12. IT John iii. 5. ** Radi, cancelled. tt Rom. viii. i ; vi. 4. tt Ephes. iv. 22, 24. 24 SESSION V. cent, immaculate, pure, harmless […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Ephes. iv. 22, 24"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "7 Rom. viii. 1. » Eph. iv. 22. 24.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Eph. iv. 22",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Eph.5.26"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1228, fn 32",
+    "how": "footnote",
+    "sentence": "Hence Baptism is a bath of water in which the \"imperishable seed\" of the Word of God produces its life-giving effect.",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3I.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "« Mark xvi. 16. * Ephes. v. 26.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Ephes. v. 26",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "1Pet.3.20"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1219, fn 14",
+    "how": "footnote",
+    "sentence": "The Church has seen in Noah's ark a prefiguring of salvation by Baptism, for by it \"a few, that is, eight persons, were saved through water\":",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P3I.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Acts i. 5. 6 Gen, vi. 5. ? 1 Pet. iii. 20, 21. s 4 Kings v 14",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Pet. iii. 20, 21",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "1Pet.3.21"
+  ],
+  "citedBy": [
+   {
+    "work": "CCC",
+    "loc": "§1094, fn 17",
+    "how": "footnote",
+    "sentence": "Thus the flood and Noah's ark prefigured salvation by Baptism, […]",
+    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
+    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+    "url": "https://www.vatican.va/archive/ENG0015/__P2X.HTM"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "3 Rom. vi. 3. 1 Pet. iii. 21. Octo baptism! geneva vid. Damasc. lib. 4. de fidu",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Pet. iii. 21",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 2,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]; [verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Rom.5.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (decree on original sin; page cites can. 4, 5)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] anathema. For in those who are born again, there is nothing that God hates ; because. There is no condemnation to those who are truly buried together with Christ by baptism into death- ; ff who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, XX are made inno- * Acts iv. 2. -f John i.' 29. { Gal. iii. 27. § Acts ii. 38. II Rom. v. 12. IT John iii. 5. ** Radi, cancell […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Rom. v. 12"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 3, printed p. 23 (leaf n295)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] that the said merit of Jesus Christ is applied, both to adults and to infants, by the sacrament of baptism rightly administered in the form of the Church; let him be anathema: For there is no other name under heaven given to men, whereby we must be saved. […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n295 = printed p. 23",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Rom. v. 12",
+    "flag": "footnote mark †; the sentence is the decree text carrying the mark, read on the page image"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Rom. v. 12",
+    "flag": "footnote mark ‖"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: Waterworth scan page image read by S1b 2026-11-02]",
+  "locCount": 3
+ },
+ {
+  "refs": [
+   "Matt.3.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Matt. iii. 16. Mark i. 10. Luke iii. 22. 5 Acts i. 2, 6.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. iii. 16",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Matt. iii. 16, 17. Mark i. 10, 11. Luke ii. 21, 22.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. iii. 16, 17",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 2
+ },
+ {
+  "refs": [
    "Matt.28.19-Matt.28.20"
   ],
   "citedBy": [
@@ -361,6 +831,39 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Mark.1.10"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Matt. iii. 16. Mark i. 10. Luke iii. 22. 5 Acts i. 2, 6.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Mark i. 10",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   },
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Matt. iii. 16, 17. Mark i. 10, 11. Luke ii. 21, 22.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Mark i. 10, 11",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 2
  },
  {
@@ -423,6 +926,37 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 2
+ },
+ {
+  "refs": [
+   "Acts.4.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (decree on original sin; page cites can. 4, 5)",
+    "how": "printed reference (footnote/inline)",
+    "sentence": "[…] taken away ; but says that it is only raised,** or not imputed ; let him be anathema. For in those who are born again, there is nothing that God hates ; because. There is no condemnation to those who are truly buried together with Christ by baptism into death- ; ff who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, XX are made inno- * Acts iv. 2. -f John i.' 29. { Gal […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
+    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+    "printed": "Acts iv. 2"
+   },
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Acts iv. 2",
+    "flag": "footnote mark *; as printed: «Acts iv. 2», most likely a misprint for Acts 4:12 (the decree quotes «no other name under heaven» just before); not repaired; the place of the mark * in the text was not located in the crop read [unverified]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]; [verified: Waterworth scan page image read by S1b 2026-11-02]",
   "locCount": 2
  },
  {
@@ -574,6 +1108,94 @@
  },
  {
   "refs": [
+   "Gen.6.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Acts i. 5. 6 Gen, vi. 5. ? 1 Pet. iii. 20, 21. s 4 Kings v 14",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Gen, vi. 5",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Gen.21.4"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 1 Cor. i. 16. Acts xvi. 33. 6 Gen. xxi. 4. Lev. xii. 3. Luke i. 59 ; ii. 21",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Gen. xxi. 4",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Lev.12.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 1 Cor. i. 16. Acts xvi. 33. 6 Gen. xxi. 4. Lev. xii. 3. Luke i. 59 ; ii. 21",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Lev. xii. 3",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Ps.49.16"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Ps. xlix. 16. 6 Cone. Trid. can. 6. 1 S. Dion, de Eccl. Hier c. 1.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Ps. xlix. 16",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Ps.51.17"
   ],
   "citedBy": [
@@ -614,6 +1236,28 @@
  },
  {
   "refs": [
+   "Ezek.36.25"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "' Ezek. xxxvi. 25. 21 Cor. vi. 11.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Ezek. xxxvi. 25",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Zech.1.3"
   ],
   "citedBy": [
@@ -630,6 +1274,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Zech.13.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "» Zach. xiii. 1 14 D; Hieronymns cpist. 85.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Zach. xiii. 1",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -654,6 +1320,28 @@
  },
  {
   "refs": [
+   "Matt.3.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Matt. iii. 16, 17. Mark i. 10, 11. Luke ii. 21, 22.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matt. iii. 16, 17",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Matt.5.14"
   ],
   "citedBy": [
@@ -670,6 +1358,50 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Matt.28.20"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "< Mark xvi. 15. Matth. xxviii. 19, 20.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Matth. xxviii. 19, 20",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.1.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Matt. iii. 16, 17. Mark i. 10, 11. Luke ii. 21, 22.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Mark i. 10, 11",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -710,6 +1442,138 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Mark.16.15"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "< Mark xvi. 15. Matth. xxviii. 19, 20.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Mark xvi. 15",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.1.59"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 1 Cor. i. 16. Acts xvi. 33. 6 Gen. xxi. 4. Lev. xii. 3. Luke i. 59 ; ii. 21",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke i. 59",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.2.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Matt. iii. 16, 17. Mark i. 10, 11. Luke ii. 21, 22.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke ii. 21, 22",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.2.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 Matt. iii. 16, 17. Mark i. 10, 11. Luke ii. 21, 22.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke ii. 21, 22",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.3.22"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Matt. iii. 16. Mark i. 10. Luke iii. 22. 5 Acts i. 2, 6.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke iii. 22",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Luke.5.11"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Luke v. 11. 5 John iii. 5 6 Trid. 1. Sess. 7, can. 3, 4. de feutr. in germ.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Luke v. 11",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -770,6 +1634,94 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.12"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 John i. 12, 13. 7 Mitt, xxviii. 19.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John i. 12, 13",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.13"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 John i. 12, 13. 7 Mitt, xxviii. 19.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "John i. 12, 13",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.29"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "John i. 29",
+    "flag": "footnote mark †"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "John.1.33"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "2 Matt, xxviii. 19. 3 John i. 33.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "3 John i. 33",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year; the OCR line begins with a footnote number that was joined to the book («2 John» read as John)"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -874,6 +1826,94 @@
  },
  {
   "refs": [
+   "Acts.1.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Matt. iii. 16. Mark i. 10. Luke iii. 22. 5 Acts i. 2, 6.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts i. 2, 6",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.1.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Acts i. 5. 6 Gen, vi. 5. ? 1 Pet. iii. 20, 21. s 4 Kings v 14",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts i. 5",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.1.6"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Matt. iii. 16. Mark i. 10. Luke iii. 22. 5 Acts i. 2, 6.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts i. 2, 6",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.2.3"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "1 Eph v 26. 2 1 John v. 8. 3 Matt. ill. 11. 4 Acts ii. 3",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts ii. 3",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Acts.2.41"
   ],
   "citedBy": [
@@ -894,26 +1934,6 @@
  },
  {
   "refs": [
-   "Acts.4.2"
-  ],
-  "citedBy": [
-   {
-    "work": "Council of Trent (Waterworth 1848)",
-    "loc": "Session V (decree on original sin; page cites can. 4, 5)",
-    "how": "printed reference (footnote/inline)",
-    "sentence": "[…] taken away ; but says that it is only raised,** or not imputed ; let him be anathema. For in those who are born again, there is nothing that God hates ; because. There is no condemnation to those who are truly buried together with Christ by baptism into death- ; ff who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, XX are made inno- * Acts iv. 2. -f John i.' 29. { Gal […]",
-    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
-    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
-    "printed": "Acts iv. 2"
-   }
-  ],
-  "count": 1,
-  "inPage": false,
-  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
-  "locCount": 1
- },
- {
-  "refs": [
    "Acts.8.12-Acts.8.13"
   ],
   "citedBy": [
@@ -930,6 +1950,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Acts.8.38"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 125–127 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "' Acts viii. 38, and x. 48.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Acts viii. 38",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -974,26 +2016,6 @@
  },
  {
   "refs": [
-   "Acts.16.33"
-  ],
-  "citedBy": [
-   {
-    "work": "CCC",
-    "loc": "§1252, fn 53",
-    "how": "footnote",
-    "sentence": "There is explicit testimony to this practice from the second century on, and it is quite possible that, from the beginning of the apostolic preaching, when whole \"households\" received baptism, infants may also have been baptized.",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P3K.HTM"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
    "Acts.17.25-Acts.17.28"
   ],
   "citedBy": [
@@ -1001,11 +2023,12 @@
     "work": "Lumen gentium",
     "loc": "§16, fn 127",
     "how": "footnote",
-    "sentence": "Nor is God far distant from those who in shadows and images seek the unknown God, for it is He who gives to all men life and breath and all things, and as Saviour wills that all men be saved. Those also can attain to salvation who through no fault of their own do not know the Gospel of Christ or His Church, yet sincerely seek God and moved by grace strive by their deeds to do His will as it is known to them through the dictates of conscience. Nor does Divine Providence deny the helps necessary for salvation to those who, without blame on their part, have not yet arrived at an explicit knowledge of God and with His grace strive to live a good life.",
+    "sentence": "Nor is God far distant from those who in shadows and images seek the unknown God, for it is He who gives to all men life and breath and all things, and as Saviour wills that all men be saved. Those also can attain to salvation who through no fault of their own do not know the Gospel of Christ or His Church, yet sincerely seek God and moved by grace strive by their deeds to do His will as it is known to them through the dictates of conscience. Nor does Divine Providence deny the helps necessary for salvation …",
     "edition": "Lumen gentium (21 Nov 1964), official English text on vatican.va (vat-ii_const_19641121_lumen-gentium_en.html); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, note read from the NOTES section, 2026-11-01]",
     "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
-    "printed": "Cf. Acts 17:25-28."
+    "printed": "Cf. Acts 17:25-28.",
+    "flag": "sentence trimmed to 100 words in S1b (rule: Holy See, 100 words)"
    }
   ],
   "count": 1,
@@ -1117,22 +2140,24 @@
  },
  {
   "refs": [
-   "Rom.5.12"
+   "Rom.6.3"
   ],
   "citedBy": [
    {
-    "work": "Council of Trent (Waterworth 1848)",
-    "loc": "Session V (decree on original sin; page cites can. 4, 5)",
-    "how": "printed reference (footnote/inline)",
-    "sentence": "[…] anathema. For in those who are born again, there is nothing that God hates ; because. There is no condemnation to those who are truly buried together with Christ by baptism into death- ; ff who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, XX are made inno- * Acts iv. 2. -f John i.' 29. { Gal. iii. 27. § Acts ii. 38. II Rom. v. 12. IT John iii. 5. ** Radi, cancell […]",
-    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
-    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
-    "printed": "Rom. v. 12"
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 Rom. vi. 3, 4. Col. ii. 12.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Rom. vi. 3, 4",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
    }
   ],
   "count": 1,
   "inPage": true,
-  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -1200,22 +2225,24 @@
  },
  {
   "refs": [
-   "1Cor.1.16"
+   "1Cor.1.30"
   ],
   "citedBy": [
    {
-    "work": "CCC",
-    "loc": "§1252, fn 53",
-    "how": "footnote",
-    "sentence": "There is explicit testimony to this practice from the second century on, and it is quite possible that, from the beginning of the apostolic preaching, when whole \"households\" received baptism, infants may also have been baptized.",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P3K.HTM"
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 3, printed p. 23 (leaf n295)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] that the said merit of Jesus Christ is applied, both to adults and to infants, by the sacrament of baptism rightly administered in the form of the Church; let him be anathema: For there is no other name under heaven given to men, whereby we must be saved. […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n295 = printed p. 23",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "1 Cor. i. 30",
+    "flag": "footnote mark ‖; the sentence is the decree text carrying the mark, read on the page image"
    }
   ],
   "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "inPage": false,
+  "tag": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -1280,6 +2307,72 @@
  },
  {
   "refs": [
+   "1Cor.10.1"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "» John T.I 10 1 Cor. x. 1, 2. » Isaias Iv. 1. >2 Ezek. xlvii. 1.'",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. x. 1, 2",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "» John T.I 10 1 Cor. x. 1, 2. » Isaias Iv. 1. >2 Ezek. xlvii. 1.'",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. x. 1, 2",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.10.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "3 1 Cor. x. 17. 4 Distinct. 93. cap. 13.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. x. 17",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "1Cor.12.27"
   ],
   "citedBy": [
@@ -1296,6 +2389,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1Cor.14.40"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "5 John iii. 5. 64 Kings vi. 17. 7 1 Cor. xiv. 40.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 Cor. xiv. 40",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -1336,6 +2451,28 @@
   "count": 1,
   "inPage": true,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Cor.1.21"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "6 2 Cor. i. 21. - Trid ib. can.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "2 Cor. i. 21",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": true,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -1461,6 +2598,28 @@
  },
  {
   "refs": [
+   "Gal.5.17"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "4 Gal. v. 17. 5 Ph.lip, iv. 8.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Gal. v. 17",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "Gal.6.15"
   ],
   "citedBy": [
@@ -1562,22 +2721,46 @@
  },
  {
   "refs": [
-   "Eph.4.22"
+   "Eph.4.5"
   ],
   "citedBy": [
    {
-    "work": "Council of Trent (Waterworth 1848)",
-    "loc": "Session V (decree on original sin; page cites can. 4, 5)",
-    "how": "printed reference (footnote/inline)",
-    "sentence": "[…] condemnation to those who are truly buried together with Christ by baptism into death- ; ff who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, XX are made inno- * Acts iv. 2. -f John i.' 29. { Gal. iii. 27. § Acts ii. 38. II Rom. v. 12. IT John iii. 5. ** Radi, cancelled. tt Rom. viii. i ; vi. 4. tt Ephes. iv. 22, 24. 24 SESSION V. cent, immaculate, pure, harmless […]",
-    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760, OCR djvu text",
-    "tagCite": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
-    "printed": "Ephes. iv. 22, 24"
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "Eph. iv. 5.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "Eph. iv. 5",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
    }
   ],
   "count": 1,
   "inPage": false,
-  "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Eph.4.22-Eph.4.24"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 5, printed p. 24 (leaf n296)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] For in those who are born again, there is nothing that God hates; because, There is no condemnation to those who are truly buried together with Christ by baptism into death; who walk not according to the flesh, but, putting off the old man, and putting on the new who is created according to God, are made innocent […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n296 = printed p. 24",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Ephes. iv. 22, 24",
+    "flag": "footnote mark ‡‡; printed «iv. 22, 24»; encoded as the span 22–24 [Doctrina; the print gives verses 22 and 24 only]"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -1673,26 +2856,6 @@
     "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
     "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
     "url": "https://www.vatican.va/archive/ENG0015/__P3N.HTM"
-   }
-  ],
-  "count": 1,
-  "inPage": false,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
-   "Eph.5.26"
-  ],
-  "citedBy": [
-   {
-    "work": "CCC",
-    "loc": "§1228, fn 32",
-    "how": "footnote",
-    "sentence": "Hence Baptism is a bath of water in which the \"imperishable seed\" of the Word of God produces its life-giving effect.",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P3I.HTM"
    }
   ],
   "count": 1,
@@ -1802,6 +2965,28 @@
  },
  {
   "refs": [
+   "1Tim.2.5"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 3, printed p. 23 (leaf n295)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] that the said merit of Jesus Christ is applied, both to adults and to infants, by the sacrament of baptism rightly administered in the form of the Church; let him be anathema: For there is no other name under heaven given to men, whereby we must be saved. […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n295 = printed p. 23",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "1 Tim. ii. 5",
+    "flag": "footnote mark §; the sentence is the decree text carrying the mark, read on the page image"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+  "locCount": 1
+ },
+ {
+  "refs": [
    "2Tim.2.5"
   ],
   "citedBy": [
@@ -1818,6 +3003,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "2Tim.4.7"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 127–137 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "1 Rom. vi. 5 2 Tim. iv. 7.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "2 Tim. iv. 7",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -1858,6 +3065,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[unverified: OCR; the reference is read from the OCR text of the scan and its place is not checked on the page image; the «sentence» is a window of OCR text before the reference, not a verified decree sentence]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "Heb.2.14"
+  ],
+  "citedBy": [
+   {
+    "work": "Council of Trent (Waterworth 1848)",
+    "loc": "Session V (original sin), canon 3, printed p. 23 (leaf n295)",
+    "how": "printed reference (footnote)",
+    "sentence": "[…] that the said merit of Jesus Christ is applied, both to adults and to infants, by the sacrament of baptism rightly administered in the form of the Church; let him be anathema: For there is no other name under heaven given to men, whereby we must be saved. […]",
+    "edition": "J. Waterworth, The Canons and Decrees of the Sacred and Oecumenical Council of Trent (London: Burns and Oates; New York: Catholic Publication Society; preface dated 22 May 1848), archive.org cu31924029369760; page image read: leaf n295 = printed p. 23",
+    "tagCite": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
+    "url": "https://archive.org/details/cu31924029369760",
+    "printed": "Hebr. ii. 14",
+    "flag": "footnote mark *; the sentence is the decree text carrying the mark, read on the page image"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[verified: Waterworth scan page image read by S1b 2026-11-02]",
   "locCount": 1
  },
  {
@@ -1982,46 +3211,6 @@
  },
  {
   "refs": [
-   "1Pet.3.20"
-  ],
-  "citedBy": [
-   {
-    "work": "CCC",
-    "loc": "§1219, fn 14",
-    "how": "footnote",
-    "sentence": "The Church has seen in Noah's ark a prefiguring of salvation by Baptism, for by it \"a few, that is, eight persons, were saved through water\":",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P3I.HTM"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
-   "1Pet.3.21"
-  ],
-  "citedBy": [
-   {
-    "work": "CCC",
-    "loc": "§1094, fn 17",
-    "how": "footnote",
-    "sentence": "Thus the flood and Noah's ark prefigured salvation by Baptism, […]",
-    "edition": "Catechism of the Catholic Church, English text, official page on vatican.va (archive/ENG0015; the page states no edition year); retrieved 2026-11-01",
-    "tagCite": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-    "url": "https://www.vatican.va/archive/ENG0015/__P2X.HTM"
-   }
-  ],
-  "count": 1,
-  "inPage": true,
-  "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
-  "locCount": 1
- },
- {
-  "refs": [
    "2Pet.1.4"
   ],
   "citedBy": [
@@ -2038,6 +3227,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.4.2"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 101–113 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "1 John iv. 2. 2 Ac's xix. 3 — 5. 3 Aug. in Joan.",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 John iv. 2",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {
@@ -2078,6 +3289,28 @@
   "count": 1,
   "inPage": false,
   "tag": "[verified: official vatican.va page, machine-extracted footnote, 2026-11-01]",
+  "locCount": 1
+ },
+ {
+  "refs": [
+   "1John.5.8"
+  ],
+  "citedBy": [
+   {
+    "work": "Roman Catechism (Catechism of the Council of Trent)",
+    "loc": "Part II, On the Sacrament of Baptism, footnote, pp. 113–125 (running heads of the print; page not collated)",
+    "how": "footnote reference (print's footnote)",
+    "sentence": "1 Eph v 26. 2 1 John v. 8. 3 Matt. ill. 11. 4 Acts ii. 3",
+    "edition": "The Catechism of the Council of Trent, published by command of Pope Pius the Fifth, translated into English by the Rev. J. Donovan (Baltimore: Lucas Brothers, [1829]), archive.org thecatechismofth00donouoft, OCR djvu text",
+    "tagCite": "[unverified: OCR; page not collated, footnote marker lost]",
+    "url": "https://archive.org/details/thecatechismofth00donouoft",
+    "printed": "1 John v. 8",
+    "flag": "the footnote is read from the OCR line; the footnote marker and the sentence of the catechism it belongs to were not recovered; the 1829 date is the Internet Archive record's, the OCR title page has no year"
+   }
+  ],
+  "count": 1,
+  "inPage": false,
+  "tag": "[unverified: OCR; page not collated, footnote marker lost]",
   "locCount": 1
  },
  {

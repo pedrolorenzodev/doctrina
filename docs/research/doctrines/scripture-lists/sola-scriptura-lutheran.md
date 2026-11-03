@@ -4,7 +4,7 @@ Status: draft, NOT verified by Pedro
 
 Official documents used by the page `sola-scriptura/lutheran`: Formula of Concord Epitome and Solid Declaration (Rule and Norm), Augsburg Confession XXVIII (Concordia Triglotta 1921, English column). Collected 2026-11-01 by session A5.
 
-Passages (single ranges as printed, not merged across footnotes): **24**; already in the page `scripture` list: **13**; new: **11**. Count = distinct works citing it; ties broken by distinct locators.
+Passages (single ranges as printed, not merged across footnotes): **33**; already in the page `scripture` list: **13**; new: **20**. Count = distinct works citing it; ties broken by distinct locators.
 
 | # | Passage (OSIS) | Count (works / locators) | In page | Cited by (locator, how) | Tag |
 |---|---|---|---|---|---|
@@ -12,26 +12,35 @@ Passages (single ranges as printed, not merged across footnotes): **24**; alread
 | 2 | `Ps.119.105` | 1 / 1 | yes | Formula of Concord, Epitome Rule and Norm, §1 (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
 | 3 | `Jer.15.19` | 1 / 1 | yes | Formula of Concord, Solid Declaration Rule and Norm, §14 (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
 | 4 | `Matt.7.15` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 5 | `Matt.15.14` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 5 | `Matt.15.13-Matt.15.14` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
 | 6 | `Mark.16.15` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
 | 7 | `Luke.10.16` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
 | 8 | `Luke.12.14` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
 | 9 | `John.10.12` | 1 / 1 | yes | Formula of Concord, Solid Declaration Rule and Norm, §14 (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 10 | `John.16.12` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 10 | `John.16.12-John.16.13` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
 | 11 | `John.18.36` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 12 | `John.20.21` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 13 | `Acts.15.10` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 14 | `Acts.15.29` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 15 | `Rom.1.16` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 16 | `2Cor.10.4` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 17 | `2Cor.13.8` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 18 | `2Cor.13.10` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 19 | `Phil.3.20` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 20 | `Col.2.16` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
-| 21 | `1Tim.3` | 1 / 1 | yes | Formula of Concord, Solid Declaration Rule and Norm, §14 (English p. 855; German p. 854, Latin p. 856) (chapter named (German/Latin columns)) | [verified: page image n1140 (English p. 855) read by verifier V7 2026-11-02; the German/Latin evidence is the dossier's] |
-| 22 | `2Tim.3.16` | 1 / 1 | **new** | Formula of Concord, Solid Declaration Rule and Norm, §14 (English p. 855; German p. 854, Latin p. 856) (chapter named (German/Latin columns)) | [verified: page image n1140 (English p. 855) read by verifier V7 2026-11-02; the German/Latin evidence is the dossier's] |
-| 23 | `Titus.1.9` | 1 / 1 | yes | Formula of Concord, Solid Declaration Rule and Norm, §14 (English p. 855; German p. 854, Latin p. 856) (inline reference (Book N, N)) | [verified: page image n1140 (English p. 855) read by verifier V7 2026-11-02; the German/Latin evidence is the dossier's] |
-| 24 | `Titus.1.14` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 12 | `John.20.21-John.20.23` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 13 | `Acts.5.29` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), closing paragraphs (after the paragraph on Acts 15:20) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 14 | `Acts.15.10` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 15 | `Acts.15.20` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), closing paragraphs on traditions (printed p. 93) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 16 | `Acts.15.29` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 17 | `Rom.1.16` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 18 | `1Cor.11.5` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on ordinances kept for love and tranquillity (printed p. 91) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 19 | `1Cor.14.30` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on ordinances kept for love and tranquillity (printed p. 91) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 20 | `1Cor.14.40` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on ordinances kept for love and tranquillity (printed p. 91) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 21 | `2Cor.10.4` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 22 | `2Cor.13.8` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 23 | `2Cor.13.10` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 24 | `Gal.5.1` | 1 / 1 | **new** | Apology of the Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on the freedom of ordinances (printed p. 447) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 25 | `Phil.2.14` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on ordinances kept for love and tranquillity (printed p. 91) (inline cross-reference («comp.»)) | [unverified: OCR; Triglot page image not read] |
+| 26 | `Phil.3.20` | 1 / 1 | yes | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 27 | `Col.2.16-Col.2.23` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 28 | `1Tim.3` | 1 / 1 | yes | Formula of Concord, Solid Declaration Rule and Norm, §14 (English p. 855; German p. 854, Latin p. 856) (chapter named (German/Latin columns)) | [verified: page image n1140 (English p. 855) read by verifier V7 2026-11-02; the German/Latin evidence is the dossier's] |
+| 29 | `1Tim.4.1` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on traditions (printed p. 91) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 30 | `2Tim.3.16` | 1 / 1 | **new** | Formula of Concord, Solid Declaration Rule and Norm, §14 (English p. 855; German p. 854, Latin p. 856) (chapter named (German/Latin columns)) | [verified: page image n1140 (English p. 855) read by verifier V7 2026-11-02; the German/Latin evidence is the dossier's] |
+| 31 | `Titus.1.9` | 1 / 1 | yes | Formula of Concord, Solid Declaration Rule and Norm, §14 (English p. 855; German p. 854, Latin p. 856) (inline reference (Book N, N)) | [verified: page image n1140 (English p. 855) read by verifier V7 2026-11-02; the German/Latin evidence is the dossier's] |
+| 32 | `Titus.1.14` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
+| 33 | `1Pet.5.3` | 1 / 1 | **new** | Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), closing paragraphs (after Acts 5:29) (inline reference (Book N, N)) | [unverified: OCR; Triglot page image not read] |
 
 ## Citing sentences (verbatim from the document at the cited locator)
 
@@ -48,7 +57,7 @@ Passages (single ranges as printed, not merged across footnotes): **24**; alread
 ### `Matt.7.15`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Matt. 7, 15»: But when they teach or ordain anything against the Gospel, then the congregations have a commandment of God prohibiting obedience, Matt. 7, 15: Beware of false prophets; Gal. 1, 8: Though an angel from heaven preach any other gospel, let him be accursed; 2 Cor.13,8: We can do nothing against the truth, but for the truth.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
-### `Matt.15.14`
+### `Matt.15.13-Matt.15.14`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Matt. 15, 14» · range widened to what the print gives (V7: «John 20, 21 sqq.», «16, 12. 13», «15, 14. 13», «16—23»): Also in Titus 1, 14 he openly forbids traditions: Not giving heed to Jewish fables and commandments of men that turn from the truth. And Christ, Matt. 15, 14.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `Mark.16.15`
@@ -63,23 +72,38 @@ Passages (single ranges as printed, not merged across footnotes): **24**; alread
 ### `John.10.12`
 - **Formula of Concord, Solid Declaration Rule and Norm, §14** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «John 10, 12» · sentence recut from the print by V7 (the earlier window began with the running head of p. 857 and crossed a page break): […] John 10, 12, and may separate the precious from the vile, Jer. 15, 19, — Therefore we have thoroughly and clearly declared ourselves to one another, also regarding these matters, as follows: that a distinction should and must by all means be observed between unnecessary and useless wrangling […]  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
-### `John.16.12`
+### `John.16.12-John.16.13`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «John 16, 12» · range widened to what the print gives (V7: «John 20, 21 sqq.», «16, 12. 13», «15, 14. 13», «16—23»): They that give this right to the bishops refer to this testimony John 16, 12.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `John.18.36`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «John 18,36»: Let it not break into the office of another; let it not transfer the kingdoms of this world; let it not abrogate the laws of civil rulers; let it not abolish lawful obedience; let it not interfere with judgments concerning civil ordinances or contracts; let it not prescribe laws to civil rulers concerning the form of the Commonwealth. As Christ says, John 18,36: My kingdom is not of this world; also Luke 12,14: Who made Me a judge or a divider over you?  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
-### `John.20.21`
+### `John.20.21-John.20.23`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «John 20, 21» · range widened to what the print gives (V7: «John 20, 21 sqq.», «16, 12. 13», «15, 14. 13», «16—23»): For with this commandment Christ sends forth His Apostles, John 20, 21 sqq.: As My Father hath sent Me, even so send I you.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
+### `Acts.5.29`
+- **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), closing paragraphs (after the paragraph on Acts 15:20)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Acts 5,29»: But if it be impossible to obtain a mitigation of such observances as cannot be kept without sin, we are bound to follow the apostolic rule, Acts 5,29, which commands us to obey God rather than men.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `Acts.15.10`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Acts 15, 10»: Whence have the bishops the right to lay these traditions upon the Church for the ensnaring of consciences, when Peter, Acts 15, 10, forbids to put a yoke upon the neck of the disciples, and Paul says, 2 Cor. 13, 10, that the power given him was to edification, not to destruction?  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
+### `Acts.15.20`
+- **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), closing paragraphs on traditions (printed p. 93)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Acts 15, 20»: The Apostles commanded Acts 15, 20 to abstain from blood. Who does now observe it? And yet they that do it not sin not; for not even the Apostles themselves wanted to burden consciences with such bondage; […]  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `Acts.15.29`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Acts 15,29»: Howbeit when He, the Spirit of Truth, is come, He will guide you into all truth. "They also refer to the example of the Apostles, who commanded to abstain from blood and from things strangled, Acts 15,29.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `Rom.1.16`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Rom. 1, 16»: These things cannot come but by the ministry of the Word and the Sacraments, as Paul says, Rom. 1, 16: The Gospel is the power of God unto salvation to every one that believeth.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
+### `1Cor.11.5`
+- **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on ordinances kept for love and tranquillity (printed p. 91)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «1 Cor. 11, 5»: So Paul ordains, 1 Cor. 11, 5, that women should cover their heads in the congregation, 1 Cor. 14, 30, that interpreters be heard in order in the church, etc.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
+### `1Cor.14.30`
+- **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on ordinances kept for love and tranquillity (printed p. 91)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «1 Cor. 14, 30»: So Paul ordains, 1 Cor. 11, 5, that women should cover their heads in the congregation, 1 Cor. 14, 30, that interpreters be heard in order in the church, etc.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
+### `1Cor.14.40`
+- **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on ordinances kept for love and tranquillity (printed p. 91)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «1 Cor. 14, 40»: […] so far that one do not offend another, that all things be done in the churches in order, and without confusion, 1 Cor. 14, 40; comp. Phil. 2, 14; […]  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `2Cor.10.4`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «2 Cor. 10,4»: Paul also says, Phil. 3, 20: Our citizenship is in heaven; 2 Cor. 10,4: The weapons of our warfare are not carnal, but mighty through God to the casting down of imaginations.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
@@ -90,14 +114,23 @@ Passages (single ranges as printed, not merged across footnotes): **24**; alread
 ### `2Cor.13.10`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «2 Cor. 13, 10»: Whence have the bishops the right to lay these traditions upon the Church for the ensnaring of consciences, when Peter, Acts 15, 10, forbids to put a yoke upon the neck of the disciples, and Paul says, 2 Cor. 13, 10, that the power given him was to edification, not to destruction?  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
+### `Gal.5.1`
+- **Apology of the Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on the freedom of ordinances (printed p. 447)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Gal. 5,1» · verifier V7 listed Gal 5:1 as missing from Augsburg Confession XXVIII; the English column prints it in Apology XXVIII, not in the Confession: […] as Paul teaches when he says, Gal. 5,1: Stand fast, therefore, in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage. The use of such ordinances ought therefore to be left free, provided that offenses be avoided, […]  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
+### `Phil.2.14`
+- **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on ordinances kept for love and tranquillity (printed p. 91)** (inline cross-reference («comp.»); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Phil. 2, 14»: […] that all things be done in the churches in order, and without confusion, 1 Cor. 14, 40; comp. Phil. 2, 14; […]  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
 ### `Phil.3.20`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Phil. 3, 20»: As Christ says, John 18,36: My kingdom is not of this world; also Luke 12,14: Who made Me a judge or a divider over you? Paul also says, Phil. 3, 20: Our citizenship is in heaven; 2 Cor. 10,4: The weapons of our warfare are not carnal, but mighty through God to the casting down of imaginations.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
-### `Col.2.16`
+### `Col.2.16-Col.2.23`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Col. 2, 16» · range widened to what the print gives (V7: «John 20, 21 sqq.», «16, 12. 13», «15, 14. 13», «16—23»): But there are clear testimonies which prohibit the making of such traditions, as though they merited grace or were necessary to salvation. Paul says, Col. 2, 16—23: Let no man judge you in meat, or in drink, or in respect of an holy-day, or of the new moon, or of the Sabbath-days.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `1Tim.3`
 - **Formula of Concord, Solid Declaration Rule and Norm, §14 (English p. 855; German p. 854, Latin p. 856)** (chapter named (German/Latin columns); Concordia Triglotta 1921, German and Latin columns, as recorded in sola-scriptura/lutheran.md) · printed as «1 Timothy 3» · 1 Tim. 3 and 2 Tim. 3:16 are printed together in the English «1 Tim. 3 (2 Tim. 3, 16)»: […] Moreover, since for the preservation of pure doctrine and for thorough, permanent, godly unity in the Church it is necessary, not only that the pure, wholesome doctrine be rightly presented, but also that the opponents who teach otherwise be reproved, 1 Tim. 3 (2 Tim. 3, 16); Titus 1, 9, — for faithful shepherds, as Luther says, should do both, namely, feed or nourish the lambs and resist the wolves, so that the sheep may flee from strange voices, […]  — [verified: page image n1140 (English p. 855) read by verifier V7 2026-11-02; the German/Latin evidence is the dossier's]  <https://archive.org/details/concordiatriglot00unse>
+
+### `1Tim.4.1`
+- **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), on traditions (printed p. 91)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «1 Tim. 4,1»: […] why does Scripture so often prohibit to make, and to listen to, traditions? Why does it call them «doctrines of devils»? 1 Tim. 4,1. Did the Holy Ghost in vain forewarn of these things?  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
 ### `2Tim.3.16`
 - **Formula of Concord, Solid Declaration Rule and Norm, §14 (English p. 855; German p. 854, Latin p. 856)** (chapter named (German/Latin columns); Concordia Triglotta 1921, German and Latin columns, as recorded in sola-scriptura/lutheran.md) · printed as «2 Timothy 3:16 (bracketed in the Latin)» · 1 Tim. 3 and 2 Tim. 3:16 are printed together in the English «1 Tim. 3 (2 Tim. 3, 16)»: […] Moreover, since for the preservation of pure doctrine and for thorough, permanent, godly unity in the Church it is necessary, not only that the pure, wholesome doctrine be rightly presented, but also that the opponents who teach otherwise be reproved, 1 Tim. 3 (2 Tim. 3, 16); Titus 1, 9, — for faithful shepherds, as Luther says, should do both, namely, feed or nourish the lambs and resist the wolves, so that the sheep may flee from strange voices, […]  — [verified: page image n1140 (English p. 855) read by verifier V7 2026-11-02; the German/Latin evidence is the dossier's]  <https://archive.org/details/concordiatriglot00unse>
@@ -108,11 +141,14 @@ Passages (single ranges as printed, not merged across footnotes): **24**; alread
 ### `Titus.1.14`
 - **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «Titus 1, 14»: If ye be dead «with Christ from the rudiments of the world, why, as though living in the world, are ye subject to ordinances (touch not; taste not; handle not, which all are to perish with the using) after the commandments and doctrines of men? which things have indeed a show of wisdom. Also in Titus 1, 14 he openly forbids traditions: Not giving heed to Jewish fables and commandments of men that turn from the truth.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
 
+### `1Pet.5.3`
+- **Augsburg Confession Art. XXVIII (Of Ecclesiastical Power), closing paragraphs (after Acts 5:29)** (inline reference (Book N, N); Concordia Triglotta (St. Louis: Concordia Publishing House, 1921), English column, archive.org concordiatriglot00unse, OCR djvu text) · printed as «1 Pet. 5, 3»: Peter, 1 Pet. 5, 3, forbids bishops to be lords, and to rule over the churches.  — [unverified: OCR; Triglot page image not read]  <https://archive.org/details/concordiatriglot00unse>
+
 ## Not reached
 
-- AC XXVIII English refs V7 reports as missing: Acts 15:20, Acts 5:29, 1 Pet 5:3, 1 Tim 4:1, Gal 5:1, 1 Cor 11:5, 14:30, 14:40, Phil 2:14 (the patterns of this pass did not locate them); corrected after V7: ranges widened, Ps 119:105 locator, OCR slips, hyphen joins (the page images of pp. 85, 87, 89, 855–857 were read by V7).
 - Triglot page images not read: every record is `[unverified: OCR]` except the two rows taken from the dossier.
-- The Apology (Art. IV, VII, XV on traditions) and the Smalcald Articles (II, II/III): not searched for references.
+- The nine references V7 reported as missing from AC XXVIII were looked for in the Triglot English OCR: eight are printed in AC XXVIII (Acts 15:20, Acts 5:29, 1 Pet 5:3, 1 Tim 4:1, 1 Cor 11:5, 14:30, 14:40, Phil 2:14) and Gal 5:1 is printed in Apology XXVIII.17, not in the Confession; all nine are now listed.
+- The seven references of the nine V7 reports that the other lists (Papacy · Lutheran) also lack: Acts 5:29 (AC XXVIII) and 1 Pet 5:3 were added to that list too.
 
 ## Notes
 - Scope: the Lutheran page cites FC Ep RN 7–8 and SD RN 10 (the Rule and Norm). References were scanned in the English columns of Ep RN 1–2, SD RN 14 and the whole of AC XXVIII (30,000 characters from the article heading, which may run past the article's end into the Conclusion). The numbered references found in AC XXVIII are partly beyond §§5–17 the dossier records; they are all printed in the article.
