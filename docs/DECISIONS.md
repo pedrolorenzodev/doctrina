@@ -2,6 +2,11 @@
 
 Newest first. Entries dated before the 2026-10-05 restart come from the v1 and v2 prototypes (consolidated from `handoff/`); they hold unless marked "Replaced by". Things not yet decided live in `ROADMAP.md` as "Decide:", never here. An "owner verdict" on a prototype is feedback, not an adopted design.
 
+## 2026-11-03 · «Palabras», «Usos» and screen 07: build plan (agent's calls, to confirm)
+**Plan:** `docs/features/palabras-07.md`, checklist and deviations table; replica of https://claude.ai/artifact/N3z7ZePYG8wgBJGHgiJGHP (v2, published = archive) and of the reader artifact's `words` and `uses` bodies, adapting only where the artifact contradicts the design system.
+**Agent's calls:** (1) route `/es/palabras/<dStrong>` and `/en/words/<dStrong>` (the lexicon's own ids: `G4561`, `H7225G`); (2) the section order is the artifact's («Sus formas» between «Qué significa» and «Los lugares»), not the session brief's; (3) «Viniste desde …» through `?from=` (a verse as `John.6.53`, or a Father page id); (4) only the chosen variants are built, none of the proposal's switches; (5) the data conflicts (no Father texts, English-only senses without titles, no registry wording, no form → case data, no translation word for the mark, Hebrew font and layout, OpenGNT credit line) are listed with defaults in the feature doc and asked to Pedro in one message.
+**Why:** Pedro: «la pantalla 07, Palabras y secciones de palabras, y USOS»; replicate the approved design, declare every deviation.
+
 ## 2026-11-02 (midday) · Open points of round 5 (agent's recommendations, answered by Pedro)
 1. **Apologists outside `apologists.md`** (Duncan, Cassidy, Zaspel, Robin, Doellinger, Keating, Staples, Nash): kept for now, each flagged; **their standing is verified before publishing** (Pedro: «mantenerlas por ahora, verificarlas antes de publicar»).
 2. **The two hosts of Lord of Spirits count as one person** (the captions do not say who speaks). Accepted.
