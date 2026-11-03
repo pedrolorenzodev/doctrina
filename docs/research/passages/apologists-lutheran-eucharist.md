@@ -7,6 +7,8 @@ Status: draft, NOT verified by Pedro
 - Method: captions through the logged-in transcript panel, passage mentions found with `vq.py` (chapter level), boundaries read cue by cue (`passages/method-apologists.md`).
 - Verifier pass: none yet on the blocks below.
 
+- **Session S2 (2026-11-03), task T2.** One Lutheran pastor added for John 6 from a Steadfast Lutherans article (byline read on the page); agent's call outside `apologists.md`, `standing: to verify before publishing`.
+
 ## Tags
 - `[verified: captions]`: the words occur in YouTube's auto-generated captions of that video at the cue times given (read through the logged-in transcript panel, `transcript.js`). Auto-captions are machine-made: mishearings stay in the text, and they carry no speaker labels.
 - `[verified: page]`: the text was fetched with `curl` from the URL given and copied from the page's paragraphs.
@@ -39,6 +41,25 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **1 person** (Cooper), 1 work.
 **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+<!-- S2-ADDITIONS-BEGIN -->
+
+## S2 additions (session S2, 2026-11-03)
+
+## John 6:51–58 (S2: a second Lutheran person; the passage Cooper reads as the counter-text)
+
+**Argument B · John 6 is figurative and about faith in Christ (v. 29, 35), not about the sacrament: a sacramental reading adds nothing to the proclamation and is not provable from the text.**
+- **Rev. Philip Hale**, «Twice More to John 6: An Analysis of the Sacramental Interpretation», Steadfast Lutherans (steadfastlutherans.org; byline «Rev. Philip Hale – St. Paul, Bancroft and St. John, Lyons NE»; the synod is not stated on the page), 2014-09-11, https://steadfastlutherans.org/blog/2014/09/twice-more-to-john-6-an-analysis-of-the-sacramental-interpretation/, 3 paragraph(s), 497 words, from the paragraph beginning «If the Scriptures are a priori about the sacramental…» to the one ending «…This method of doing theology is inferior to Luther’s.» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; three paragraphs (the page's paragraphs 17 to 19); the article is a reply to a sacramental reading of John 6 and keeps the Lutheran Lord's Supper tied to the words of institution):
+  > If the Scriptures are a priori about the sacramental rites, then of course, any “eating” or “drinking” is sacramental, apart from the context in which those words occur.  Must every lunch we digest also be sacramental if we “take it” and “give thanks” via the common table prayer?  But how does that help proclamation or faith?  The truth is that simply pointing to the outward work of receiving communion is not the Gospel.  It fails to do the hard work of telling us why we should want Christ’s body and blood.  John 6 does proclaim Christ’s atonement and self-giving for the world.  But Communion is not open for all (especially the unbelieving Jews to whom Jesus directs His words) to receive, as is the Gospel.  It is the preacher’s job to connect the text and its context to people and then direct them to the Supper in faith, so they desire the forgiveness it offers.  This a much more difficult task than simply ripping John 6:53 out of its context by an exegetical sleight of hand.
+  > Contra the misleading argument, John 6 is still figurative, even if it is sacramental [58].  Eating Jesus’ “flesh” is cannibalism, not the Supper, if the text is taken literally.  If taking “eating” and “drinking” as faith is “spiritualizing” the text or “allegorical,”  so is making it about the Lord’s Supper [57].   The purely physical eating of John 6 is cannibalism, which does not give life.  The Lutheran Confessions label this literal view of the Jews in John 6 “the Capernaitic eating” and deny that it is the Supper instituted by Jesus.  “Hence we hereby utterly reject and condemn the Capernaitic eating of the body of Christ, as though we taught that His flesh were rent with the teeth, and digested like other food” [FC Ep VII:42].  So the sacramental reading still takes a figurative, half-allegorical approach, while also leaving behind the stated context (Jews) and the theme (faith) of Jesus’ prior words.   It is a forced and inaccurate argument.   Eating Jesus’ big toe like an apple is not the same as receiving the Supper for forgiveness.  The Lutheran confessions are clear on this, whereas the sacramental-redactionists are vague and equivocating.
+  > What does a sacramental vision of John 6 add to proclamation?  Nothing.  It merely shows they have found the sacraments that they assumed  were there (from the unwritten context).  So everything can be “sacramental,” but it will be a generic meaning as presented: “Christians are to see how this meal teaches them about the ongoing presence of the risen Lord, who now prepares and serves his church with the miraculous food of his flesh and blood.”  That is exactly the assumed context in the first place:   Early Christians are gathered around the Supper!  It removes the work of wrestling with faith and the Gospel, as if Christianity were simply a matter of eating and drinking in outward observance at the right spot. This method of doing theology is inferior to Luther’s.
+
+**Count and independence.** Counting this section and Cooper's block above: **2 persons** (Cooper, Hale), 2 works, two outlets (his own channel; Steadfast Lutherans). Depth test: Hale ~500 words on the verse's reading.
+**Contested within the tradition:** the two blocks do not say the same: Hale argues John 6 is not about the Supper; read Cooper's block above for his use of the chapter. `[not compared line by line]`. **Applies the official teaching:** `[not re-read here]`.
+
+**Not covered after S2:**
+- Other Lutheran passages: «Is There Forgiveness of Sins In Baptism? Taking A Closer Look At Acts 2:38» (Steadfast Lutherans, 2013-08-25; 8 mentions of Acts 2:38, ~1,350 words) names no author on the page («As a Lutheran, I …»): not counted as a person. «Great Stuff — The surprising history of Romans 6 and baptism in the early Church» (Steadfast, 2015-06-14) points to a post on Pr. Mark Surburg's blog: the blog itself was not read. A Laymen's Commentary on the Epitome of the Formula of Concord (Steadfast, 2021-02-11, 1 Cor 10:16 four times) names no author on the page.
+
+<!-- S2-ADDITIONS-END -->
 
 ## Not covered
 - Mark 14:22, Matt 11:28, Matt 9:12 (core #4, #6, #8): no creator of `apologists.md` treats them in the Cooper captions read (*The Lord's Supper*, *The Nature of Christ's Presence*, *Christ's Presence in the Lord's Supper (FC VII)*, *Differences Between the Lutheran and Roman Catholic View of the Eucharist*).

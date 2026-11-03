@@ -86,8 +86,11 @@ Status: draft, NOT verified by Pedro
 
 **Argument A · Jesus gives «the Church» binding authority; a paragraph of the same page that begins «Jesus can’t mean “the Church” in the sense of the invisible body…» argues that it is not the invisible church (not quoted).**
 - **Karlo Broussard**, «THIS Argument Proves Sola Scriptura False», Dr. Karlo (Catholic Answers), transcript on catholic.com, 17 Jun 2026, https://www.catholic.com/audio/drk/this-argument-proves-sola-scriptura-false, the paragraph after the quotation of Matt 18:15–18 `[verified: page]` (speaker per the page's label or byline): «Notice Jesus presents “the Church” as an agent who has the authority to make judgments that are binding—so binding, in fact, that rejecting them puts you out of communion with Christ’s Church.»
-  - **Long-form** `[long-form: trim before public release]` `[verified: page]` (transcript, 23 paragraph(s), 688 words, from the paragraph beginning «And they arrive at this conclusion like this:…» to the one ending «…viewed this authority as extending also to doctrinal matters.»; the old quote above lies inside it):
+  - **Long-form** `[long-form: trim before public release]` `[verified: page]` (transcript, 26 paragraph(s), 714 words, the three list items of the page's syllogism included, from the paragraph beginning «And they arrive at this conclusion like this:…» to the one ending «…viewed this authority as extending also to doctrinal matters.»; the old quote above lies inside it):
     > And they arrive at this conclusion like this:
+    > The Bible is an infallible rule of faith.
+    > There are no other infallible rules of faith.
+    > Therefore, the Bible alone is our infallible rule of faith.
     > Now, the key premise in that argument is premise two: there are no other infallible rules of faith.
     > And here’s an important clarification: for most Protestants, that claim doesn’t apply to the first century. They acknowledge that the apostles were infallible—both in their writing and in their preaching. So they agree that during the apostolic age, there were multiple infallible rules of faith—the apostolic writings and oral teachings.
     > But—and this is the crucial point—Protestants argue that after the apostles died, no infallible rule continued other than their writings. Why? Because, they say, no unwritten apostolic teachings were preserved, and no infallible agents succeeded the apostles to give infallible teachings.
