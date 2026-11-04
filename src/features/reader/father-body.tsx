@@ -5,7 +5,6 @@ import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragrap
 import { UndoBar } from "@/components/undo-bar";
 import type { FatherDivision } from "@/content/get-father-works";
 import { getSimplifiedText } from "@/content/simplified-texts";
-import { toneClassName } from "@/features/reader/chapter-text";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
 import { goToUnit } from "@/features/reader/go-to-unit";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
@@ -294,7 +293,7 @@ export function FatherBody({
                         <mark
                           key={segment.from}
                           data-highlight={segment.color}
-                          className={`rounded-2 text-inherit box-decoration-clone transition-colors duration-200 ease-standard ${toneClassName[segment.color]}`}
+                          className="highlight-mark rounded-2 text-inherit box-decoration-clone"
                         >
                           {division.text.slice(segment.from, segment.to)}
                         </mark>

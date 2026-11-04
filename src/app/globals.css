@@ -2211,7 +2211,28 @@ html.theme-switching ::after {
 }
 
 @utility highlight-mark {
+  background-color: var(--highlight-tone);
   transition: background-color 280ms var(--ease-standard);
+
+  &[data-highlight="yellow"] {
+    --highlight-tone: var(--color-hl-yellow);
+  }
+
+  &[data-highlight="green"] {
+    --highlight-tone: var(--color-hl-green);
+  }
+
+  &[data-highlight="sky"] {
+    --highlight-tone: var(--color-hl-sky);
+  }
+
+  &[data-highlight="pink"] {
+    --highlight-tone: var(--color-hl-pink);
+  }
+
+  &[data-highlight="orange"] {
+    --highlight-tone: var(--color-hl-orange);
+  }
 
   @starting-style {
     background-color: transparent;

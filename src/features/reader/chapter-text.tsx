@@ -1,6 +1,6 @@
 import { Fragment, type ReactNode, type RefObject } from "react";
 import type { BibleVerse, ChapterStructure } from "@/content/model/bible";
-import type { HighlightColor, Segment } from "@/lib/highlights";
+import type { Segment } from "@/lib/highlights";
 import { NoteMarkers } from "@/features/reader/note-markers";
 import { splitByRed } from "@/lib/text-pieces";
 
@@ -34,14 +34,6 @@ type ChapterTextProps = {
   onMark: (verse: number, opener: HTMLElement) => void;
   onSelect: (verse: number, byKeyboard: boolean, opener: HTMLElement) => void;
   onSelectSecond: (verse: number, byKeyboard: boolean, opener: HTMLElement) => void;
-};
-
-export const toneClassName: Record<HighlightColor, string> = {
-  yellow: "bg-hl-yellow",
-  green: "bg-hl-green",
-  sky: "bg-hl-sky",
-  pink: "bg-hl-pink",
-  orange: "bg-hl-orange",
 };
 
 export function ChapterText({
@@ -182,7 +174,7 @@ function Marked({ text, red, segments }: MarkedProps) {
       <mark
         key={segment.from}
         data-highlight={segment.color}
-        className={`highlight-mark rounded-2 text-inherit box-decoration-clone ${toneClassName[segment.color]}`}
+        className="highlight-mark rounded-2 text-inherit box-decoration-clone"
       >
         <Red text={text} from={segment.from} to={segment.to} red={red} />
       </mark>

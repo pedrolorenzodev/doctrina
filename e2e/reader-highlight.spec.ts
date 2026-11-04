@@ -198,3 +198,36 @@ test("a highlight and the verse hover colour change in 280 ms; removing a highli
   await expect(page.locator(`${mark(53)}[data-leaving]`)).toHaveCount(1);
   await expect(page.locator(mark(53))).toHaveCount(0);
 });
+
+test("a new highlight fades in and a removed one fades out, frame by frame", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(john);
+  await open(page);
+  const alphas = () =>
+    page.evaluate(async (): Promise<number[]> => {
+      const seen: number[] = [];
+      const start = performance.now();
+      const sample = () => {
+        const el = document.querySelector("#v-53 mark");
+        const color = el ? getComputedStyle(el).backgroundColor : "rgba(0, 0, 0, 0)";
+        const alpha = color.startsWith("rgba") ? Number(color.split(",")[3]!.replace(")", "")) : 1;
+        seen.push(alpha);
+        if (performance.now() - start < 600) requestAnimationFrame(sample);
+      };
+      requestAnimationFrame(sample);
+      await new Promise((resolve) => setTimeout(resolve, 650));
+      return seen;
+    });
+  const run = async (action: () => Promise<void>) => {
+    const sampling = alphas();
+    await action();
+    return sampling;
+  };
+  const entering = await run(() => page.locator(dot("verde")).click());
+  const entered = entering.filter((alpha) => alpha > 0.02 && alpha < 0.24);
+  expect(entered.length).toBeGreaterThan(2);
+  expect(entering.every((alpha, i) => i === 0 || alpha >= entering[i - 1]! - 0.001)).toBe(true);
+  const leaving = await run(() => page.locator(`${panel} button[aria-label="Quitar subrayado"]`).click());
+  expect(leaving.filter((alpha) => alpha > 0.02 && alpha < 0.24).length).toBeGreaterThan(2);
+  expect(leaving.every((alpha, i) => i === 0 || alpha <= leaving[i - 1]! + 0.001)).toBe(true);
+});
