@@ -314,6 +314,42 @@ export const eucharistReformed = {
     {
       refs: ["Matt.26.26-Matt.26.28", "Mark.14.22-Mark.14.24", "Luke.22.19-Luke.22.20", "1Cor.11.23-1Cor.11.26"],
       text: "La Confesión y los Catecismos de Westminster citan estos textos para institución, memoria y proclamación hasta que Cristo venga (la Confesión de Westminster (29.1), 29.3; el Catecismo Mayor (168)–169; el Catecismo Menor (96)).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "La institución es un mandato de recordar: la Cena mira al pasado, a la comunidad presente y al reino futuro",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "The Institution of the Lord’s Supper: Kingdom Feast with R.C. Sproul",
+                outlet: "Ligonier Ministries, YouTube",
+                date: "4 de enero de 2025",
+                locator: "Minutos 2:27 a 5:24",
+                url: "https://www.youtube.com/watch?v=fth_FkAk968&t=147s",
+                text: "And He took bread; He gave thanks and broke it, and gave it to them, saying, ‘This is my body, which is given for you; do this in remembrance of me.’ And likewise He also took the cup after supper, saying, ‘This cup is the new covenant in my blood, which is shed for you. But behold, the hand of my betrayer is with me on the table. And truly the Son of Man goes as it has been determined, but woe to that man by whom He is betrayed!’” Now in this description of the institution of the Lord’s Supper, we see that Jesus makes specific reference to two dimensions of time. The way we generally measure the passing of time in our culture is by referring to the past, to the present, and to the future. And when we look at the meaning and significance of the Lord’s Supper in the life of the Christian community, we see that the Lord’s Supper has significance and application to all three dimensions of time—to the past, to the present, and to the future. Now we see in the first instance its relationship to the past; not only is it related to the past by virtue of its link to the Passover, but also now we understand that what Jesus was talking about in the Upper Room that was to happen on the morrow has since taken place, and so His death on the cross is past to us. And He tells the disciples that they are to do this sacrament, in the first instance, in remembrance of Him; and so to the extent that our celebration of the Lord’s Supper is a remembrance, to that extent, it is that which is related to something that has happened in the past. Now we develop traditions where we try to maintain continual links to the past. In biblical categories, ladies and gentlemen, we see frequently what we call the sacralization of space and of time. That is, we see countless examples where God or where the people of Israel, particularly, give sacred, holy, consecrated significance to particular times and to particular events that take place in this world.",
+                lang: "en",
+              },
+            ],
+          },
+          {
+            title:
+              "«Ustedes anuncian la muerte del Señor»: la propia Cena es la proclamación, el evangelio en forma dramática, con signos visibles que se ofrecen para recibirse y transmitirse",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "The Lord’s Supper: A Proclamation: Things Unseen with Sinclair B. Ferguson",
+                outlet: "Ligonier Ministries, YouTube",
+                date: "7 de octubre de 2024",
+                locator: "Minutos 1:17 a 4:41",
+                url: "https://www.youtube.com/watch?v=i9l9Te1KYak&t=77s",
+                text: "Today’s word is proclamation. Paul writes, in 1 Corinthians 11:26, “As often as you eat this bread and drink the cup, you proclaim the Lord’s death.” Now, I’ve sometimes heard it said that you shouldn’t have the Lord’s Supper without a sermon because of what Paul is teaching here. Well, it’s surely right to have a sermon and exposition of biblical teaching when we come to the table, however short it is. But I’m not at all sure that’s the kind of proclamation Paul is really thinking about here. He’s not saying there needs to be the Lord’s Supper plus a sermon. I think he’s saying that the Lord’s Supper is the sermon. The Lord’s Supper itself is the proclamation. Well, what does that mean? This, I think: the supper is the gospel in dramatic form. Yes, we need words to interpret what’s happening, but when we understand the biblical teaching on the supper, we realize that it’s actually a visible dramatization of the message of the gospel. The supper itself is a gospel proclamation. The broken bread portrays Christ’s body, sacrificed on the cross for us. The poured-out wine portrays His blood, shed for the forgiveness of our sins. And so, a miniature drama is being enacted at the table. We might even borrow Paul’s words in Galatians 3:1 and say that here, at the supper, before our eyes, Christ is publicly portrayed as crucified. And then, these symbols of His body and blood are offered to us. We’re invited to receive them, to eat and to drink, and to take them to ourselves, just as the risen Christ is carried to us in the proclamation of the gospel, and offered to us, and we’re urged to receive Him and to feed on Him. And then this happens—or at least in my own view it should happen: following the pattern of the first Lord’s Supper, we then offer each other the bread and the wine. We pass it to the person sitting beside us so that in this drama, each of us receives Christ in the gospel and offers Christ in the gospel by means of these signs. So here’s something to have fixed in our minds as we are offered the bread and the wine: Jesus is being publicly portrayed before my eyes as crucified, not only in audible words and preaching, or in the words of the liturgy, but in these visible signs. I’m being encouraged to look as well as to listen, to see how much He has loved me and loves me still. And now I have the privilege of feeding on Him as I eat the bread and drink the wine, and then I have the privilege of offering the bread and wine to my neighbor beside me, and perhaps even saying to him or her, “Do this, remembering that Christ died for you, and feed on Him in your heart with thanksgiving.” That’s really amazing. It’s as though each of us can apply Paul’s words about the supper to what we are doing at the table: “I received from the Lord what I also delivered to you.” What a wonderful, wonderful privilege we have. But the word proclamation represents only one privilege,",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["1Cor.10.16-1Cor.10.17", "1Cor.10.21", "1Cor.12.13"],
@@ -335,10 +371,50 @@ export const eucharistReformed = {
     {
       refs: ["Matt.26.26-Matt.26.29", "1Cor.11.26-1Cor.11.28"],
       text: "La Confesión y los Catecismos de Westminster citan estos textos para pan y vino permanecen como elementos (la Confesión de Westminster (29.5)).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "«Ustedes anuncian la muerte del Señor»: la propia Cena es la proclamación, el evangelio en forma dramática, con signos visibles que se ofrecen para recibirse y transmitirse",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "The Lord’s Supper: A Proclamation: Things Unseen with Sinclair B. Ferguson",
+                outlet: "Ligonier Ministries, YouTube",
+                date: "7 de octubre de 2024",
+                locator: "Minutos 1:17 a 4:41",
+                url: "https://www.youtube.com/watch?v=i9l9Te1KYak&t=77s",
+                text: "Today’s word is proclamation. Paul writes, in 1 Corinthians 11:26, “As often as you eat this bread and drink the cup, you proclaim the Lord’s death.” Now, I’ve sometimes heard it said that you shouldn’t have the Lord’s Supper without a sermon because of what Paul is teaching here. Well, it’s surely right to have a sermon and exposition of biblical teaching when we come to the table, however short it is. But I’m not at all sure that’s the kind of proclamation Paul is really thinking about here. He’s not saying there needs to be the Lord’s Supper plus a sermon. I think he’s saying that the Lord’s Supper is the sermon. The Lord’s Supper itself is the proclamation. Well, what does that mean? This, I think: the supper is the gospel in dramatic form. Yes, we need words to interpret what’s happening, but when we understand the biblical teaching on the supper, we realize that it’s actually a visible dramatization of the message of the gospel. The supper itself is a gospel proclamation. The broken bread portrays Christ’s body, sacrificed on the cross for us. The poured-out wine portrays His blood, shed for the forgiveness of our sins. And so, a miniature drama is being enacted at the table. We might even borrow Paul’s words in Galatians 3:1 and say that here, at the supper, before our eyes, Christ is publicly portrayed as crucified. And then, these symbols of His body and blood are offered to us. We’re invited to receive them, to eat and to drink, and to take them to ourselves, just as the risen Christ is carried to us in the proclamation of the gospel, and offered to us, and we’re urged to receive Him and to feed on Him. And then this happens—or at least in my own view it should happen: following the pattern of the first Lord’s Supper, we then offer each other the bread and the wine. We pass it to the person sitting beside us so that in this drama, each of us receives Christ in the gospel and offers Christ in the gospel by means of these signs. So here’s something to have fixed in our minds as we are offered the bread and the wine: Jesus is being publicly portrayed before my eyes as crucified, not only in audible words and preaching, or in the words of the liturgy, but in these visible signs. I’m being encouraged to look as well as to listen, to see how much He has loved me and loves me still. And now I have the privilege of feeding on Him as I eat the bread and drink the wine, and then I have the privilege of offering the bread and wine to my neighbor beside me, and perhaps even saying to him or her, “Do this, remembering that Christ died for you, and feed on Him in your heart with thanksgiving.” That’s really amazing. It’s as though each of us can apply Paul’s words about the supper to what we are doing at the table: “I received from the Lord what I also delivered to you.” What a wonderful, wonderful privilege we have. But the word proclamation represents only one privilege,",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Acts.3.21", "Luke.24.6", "Luke.24.39", "1Cor.11.24-1Cor.11.26"],
       text: "La Confesión y los Catecismos de Westminster citan estos textos para humanidad corporal de Cristo recibida en el cielo (la Confesión de Westminster (29.6); el Catecismo Mayor (170)).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "«Ustedes anuncian la muerte del Señor»: la propia Cena es la proclamación, el evangelio en forma dramática, con signos visibles que se ofrecen para recibirse y transmitirse",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "The Lord’s Supper: A Proclamation: Things Unseen with Sinclair B. Ferguson",
+                outlet: "Ligonier Ministries, YouTube",
+                date: "7 de octubre de 2024",
+                locator: "Minutos 1:17 a 4:41",
+                url: "https://www.youtube.com/watch?v=i9l9Te1KYak&t=77s",
+                text: "Today’s word is proclamation. Paul writes, in 1 Corinthians 11:26, “As often as you eat this bread and drink the cup, you proclaim the Lord’s death.” Now, I’ve sometimes heard it said that you shouldn’t have the Lord’s Supper without a sermon because of what Paul is teaching here. Well, it’s surely right to have a sermon and exposition of biblical teaching when we come to the table, however short it is. But I’m not at all sure that’s the kind of proclamation Paul is really thinking about here. He’s not saying there needs to be the Lord’s Supper plus a sermon. I think he’s saying that the Lord’s Supper is the sermon. The Lord’s Supper itself is the proclamation. Well, what does that mean? This, I think: the supper is the gospel in dramatic form. Yes, we need words to interpret what’s happening, but when we understand the biblical teaching on the supper, we realize that it’s actually a visible dramatization of the message of the gospel. The supper itself is a gospel proclamation. The broken bread portrays Christ’s body, sacrificed on the cross for us. The poured-out wine portrays His blood, shed for the forgiveness of our sins. And so, a miniature drama is being enacted at the table. We might even borrow Paul’s words in Galatians 3:1 and say that here, at the supper, before our eyes, Christ is publicly portrayed as crucified. And then, these symbols of His body and blood are offered to us. We’re invited to receive them, to eat and to drink, and to take them to ourselves, just as the risen Christ is carried to us in the proclamation of the gospel, and offered to us, and we’re urged to receive Him and to feed on Him. And then this happens—or at least in my own view it should happen: following the pattern of the first Lord’s Supper, we then offer each other the bread and the wine. We pass it to the person sitting beside us so that in this drama, each of us receives Christ in the gospel and offers Christ in the gospel by means of these signs. So here’s something to have fixed in our minds as we are offered the bread and the wine: Jesus is being publicly portrayed before my eyes as crucified, not only in audible words and preaching, or in the words of the liturgy, but in these visible signs. I’m being encouraged to look as well as to listen, to see how much He has loved me and loves me still. And now I have the privilege of feeding on Him as I eat the bread and drink the wine, and then I have the privilege of offering the bread and wine to my neighbor beside me, and perhaps even saying to him or her, “Do this, remembering that Christ died for you, and feed on Him in your heart with thanksgiving.” That’s really amazing. It’s as though each of us can apply Paul’s words about the supper to what we are doing at the table: “I received from the Lord what I also delivered to you.” What a wonderful, wonderful privilege we have. But the word proclamation represents only one privilege,",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["1Cor.10.3-1Cor.10.4", "1Cor.10.16", "1Cor.11.28"],
@@ -355,8 +431,34 @@ export const eucharistReformed = {
     {
       refs: ["Acts.2.42", "Acts.2.46-Acts.2.47", "1Cor.11.25-1Cor.11.26"],
       text: "La Confesión y los Catecismos de Westminster citan estos textos para frecuencia y perseverancia (el Catecismo Mayor (175), 177).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "«Ustedes anuncian la muerte del Señor»: la propia Cena es la proclamación, el evangelio en forma dramática, con signos visibles que se ofrecen para recibirse y transmitirse",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "The Lord’s Supper: A Proclamation: Things Unseen with Sinclair B. Ferguson",
+                outlet: "Ligonier Ministries, YouTube",
+                date: "7 de octubre de 2024",
+                locator: "Minutos 1:17 a 4:41",
+                url: "https://www.youtube.com/watch?v=i9l9Te1KYak&t=77s",
+                text: "Today’s word is proclamation. Paul writes, in 1 Corinthians 11:26, “As often as you eat this bread and drink the cup, you proclaim the Lord’s death.” Now, I’ve sometimes heard it said that you shouldn’t have the Lord’s Supper without a sermon because of what Paul is teaching here. Well, it’s surely right to have a sermon and exposition of biblical teaching when we come to the table, however short it is. But I’m not at all sure that’s the kind of proclamation Paul is really thinking about here. He’s not saying there needs to be the Lord’s Supper plus a sermon. I think he’s saying that the Lord’s Supper is the sermon. The Lord’s Supper itself is the proclamation. Well, what does that mean? This, I think: the supper is the gospel in dramatic form. Yes, we need words to interpret what’s happening, but when we understand the biblical teaching on the supper, we realize that it’s actually a visible dramatization of the message of the gospel. The supper itself is a gospel proclamation. The broken bread portrays Christ’s body, sacrificed on the cross for us. The poured-out wine portrays His blood, shed for the forgiveness of our sins. And so, a miniature drama is being enacted at the table. We might even borrow Paul’s words in Galatians 3:1 and say that here, at the supper, before our eyes, Christ is publicly portrayed as crucified. And then, these symbols of His body and blood are offered to us. We’re invited to receive them, to eat and to drink, and to take them to ourselves, just as the risen Christ is carried to us in the proclamation of the gospel, and offered to us, and we’re urged to receive Him and to feed on Him. And then this happens—or at least in my own view it should happen: following the pattern of the first Lord’s Supper, we then offer each other the bread and the wine. We pass it to the person sitting beside us so that in this drama, each of us receives Christ in the gospel and offers Christ in the gospel by means of these signs. So here’s something to have fixed in our minds as we are offered the bread and the wine: Jesus is being publicly portrayed before my eyes as crucified, not only in audible words and preaching, or in the words of the liturgy, but in these visible signs. I’m being encouraged to look as well as to listen, to see how much He has loved me and loves me still. And now I have the privilege of feeding on Him as I eat the bread and drink the wine, and then I have the privilege of offering the bread and wine to my neighbor beside me, and perhaps even saying to him or her, “Do this, remembering that Christ died for you, and feed on Him in your heart with thanksgiving.” That’s really amazing. It’s as though each of us can apply Paul’s words about the supper to what we are doing at the table: “I received from the Lord what I also delivered to you.” What a wonderful, wonderful privilege we have. But the word proclamation represents only one privilege,",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
   ],
+  passages: {
+    title: "Los pasajes de la posición reformada",
+    lede: "Los versículos que la tradición reformada cita sobre la Cena del Señor, completos y con su propia lectura.",
+    officialLabel: "Lo que enseñan los documentos de la tradición reformada.",
+    apologistsLabel: "Cómo lo defienden los apologistas reformados.",
+  },
   videos: {
     subtitle: "Creadores reformados explican y defienden esta postura. Los videos se abren en YouTube.",
     items: [],

@@ -4981,6 +4981,421 @@ export const verses = {
     text: "Y cualquier varón de los hijos de Israel, ó de los extranjeros que peregrinan entre ellos, que cogiere caza de animal ó de ave que sea de comer, derramará su sangre y cubrirála con tierra:",
     edition: "RV1909",
   },
+  "Matt.3.6": {
+    osis: "Matt.3.6",
+    text: "Y eran bautizados de él en el Jordán, confesando sus pecados.",
+    edition: "RV1909",
+  },
+  "Mark.1.5": {
+    osis: "Mark.1.5",
+    text: "Y salía á él toda la provincia de Judea, y los de Jerusalem; y eran todos bautizados por él en el río de Jordán, confesando sus pecados.",
+    edition: "RV1909",
+  },
+  "John.1.2": {
+    osis: "John.1.2",
+    text: "Este era en el principio con Dios.",
+    edition: "RV1909",
+  },
+  "John.1.8": {
+    osis: "John.1.8",
+    text: "No era él la luz, sino para que diese testimonio de la luz.",
+    edition: "RV1909",
+  },
+  "John.1.31": {
+    osis: "John.1.31",
+    text: "Y yo no le conocía; más para que fuese manifestado á Israel, por eso vine yo bautizando con agua.",
+    edition: "RV1909",
+  },
+  "John.3.22": {
+    osis: "John.3.22",
+    text: "Pasado esto, vino Jesús con sus discípulos á la tierra de Judea; y estaba allí con ellos, y bautizaba.",
+    edition: "RV1909",
+  },
+  "Acts.2.40": {
+    osis: "Acts.2.40",
+    text: "Y con otras muchas palabras testificaba y exhortaba, diciendo: Sed salvos de esta perversa generación.",
+    edition: "RV1909",
+  },
+  "Acts.8.12": {
+    osis: "Acts.8.12",
+    text: "Mas cuando creyeron á Felipe, que anunciaba el evangelio del reino de Dios y el nombre de Jesucristo, se bautizaban hombres y mujeres.",
+    edition: "RV1909",
+  },
+  "Acts.16.34": {
+    osis: "Acts.16.34",
+    text: "Y llevándolos á su casa, les puso la mesa: y se gozó de que con toda su casa había creído á Dios.",
+    edition: "RV1909",
+  },
+  "Acts.26.16": {
+    osis: "Acts.26.16",
+    text: "Mas levántate, y ponte sobre tus pies; porque para esto te he aparecido, para ponerte por ministro y testigo de las cosas que has visto, y de aquellas en que apareceré á ti:",
+    edition: "RV1909",
+  },
+  "Rom.6.1": {
+    osis: "Rom.6.1",
+    text: "¿PUES qué diremos? Perseveraremos en pecado para que la gracia crezca?",
+    edition: "RV1909",
+  },
+  "Rom.6.2": {
+    osis: "Rom.6.2",
+    text: "En ninguna manera. Porque los que somos muertos al pecado, ¿cómo viviremos aún en él?",
+    edition: "RV1909",
+  },
+  "1Cor.15.28": {
+    osis: "1Cor.15.28",
+    text: "Mas luego que todas las cosas le fueren sujetas, entonces también el mismo Hijo se sujetará al que le sujetó á él todas las cosas, para que Dios sea todas las cosas en todos.",
+    edition: "RV1909",
+  },
+  "1Cor.15.29": {
+    osis: "1Cor.15.29",
+    text: "De otro modo, ¿qué harán los que se bautizan por los muertos, si en ninguna manera los muertos resucitan? ¿Por qué pues se bautizan por los muertos?",
+    edition: "RV1909",
+  },
+  "Col.3.3": {
+    osis: "Col.3.3",
+    text: "Porque muertos sois, y vuestra vida está escondida con Cristo en Dios.",
+    edition: "RV1909",
+  },
+  "Heb.6.1": {
+    osis: "Heb.6.1",
+    text: "POR tanto, dejando la palabra del comienzo [en la doctrina] de Cristo, vamos adelante á la perfección; no echando otra vez el fundamento del arrepentimiento de obras muertas, y de la fe en Dios,",
+    edition: "RV1909",
+  },
+  "Heb.6.2": {
+    osis: "Heb.6.2",
+    text: "De la doctrina de bautismos, y de la imposición de manos, y de la resurrección de los muertos, y del juicio eterno.",
+    edition: "RV1909",
+  },
+  "Heb.10.22": {
+    osis: "Heb.10.22",
+    text: "Lleguémonos con corazón verdadero, en plena certidumbre de fe, purificados los corazones de mala conciencia, y lavados los cuerpos con agua limpia.",
+    edition: "RV1909",
+  },
+  "Rev.1.5": {
+    osis: "Rev.1.5",
+    text: "Y de Jesucristo, el testigo fiel, el primogénito de los muertos, y príncipe de los reyes de la tierra. Al que nos amó, y nos ha lavado de nuestros pecados con su sangre,",
+    edition: "RV1909",
+  },
+  "Rev.7.14": {
+    osis: "Rev.7.14",
+    text: "Y yo le dije: Señor, tú lo sabes. Y él me dijo: Estos son los que han venido de grande tribulación, y han lavado sus ropas, y las han blanqueado en la sangre del Cordero.",
+    edition: "RV1909",
+  },
+  "Exod.20.4": {
+    osis: "Exod.20.4",
+    text: "No te harás imagen, ni ninguna semejanza [de cosa] que esté arriba en el cielo, ni abajo en la tierra, ni en las aguas debajo de la tierra:",
+    edition: "RV1909",
+  },
+  "Exod.20.5": {
+    osis: "Exod.20.5",
+    text: "No te inclinarás á ellas, ni las honrarás; porque yo soy Jehová tu Dios, fuerte, celoso, que visito la maldad de los padres sobre los hijos, sobre los terceros y sobre los cuartos, á los que me aborrecen,",
+    edition: "RV1909",
+  },
+  "Matt.7.6": {
+    osis: "Matt.7.6",
+    text: "No deis lo santo á los perros, ni echéis vuestras perlas delante de los puercos; porque no las rehuellen con sus pies, y vuelvan y os despedacen.",
+    edition: "RV1909",
+  },
+  "Luke.22.17": {
+    osis: "Luke.22.17",
+    text: "Y tomando el vaso, habiendo dado gracias, dijo: Tomad esto, y partidlo entre vosotros;",
+    edition: "RV1909",
+  },
+  "2Cor.6.15": {
+    osis: "2Cor.6.15",
+    text: "¿Y qué concordia Cristo con Belial? ¿ó qué parte el fiel con el infiel?",
+    edition: "RV1909",
+  },
+  "Gal.3.1": {
+    osis: "Gal.3.1",
+    text: "¡OH Gálatas insensatos! ¿quién os fascinó, para no obedecer á la verdad, ante cuyos ojos Jesucristo fué ya descrito [como] crucificado entre vosotros?",
+    edition: "RV1909",
+  },
+  "Ps.72.17": {
+    osis: "Ps.72.17",
+    text: "Será su nombre para siempre, perpetuaráse su nombre mientras el sol dure: y benditas serán en él todas las gentes: llamarlo han bienaventurado.",
+    edition: "RV1909",
+  },
+  "Ps.102.28": {
+    osis: "Ps.102.28",
+    text: "Los hijos de tus siervos habitarán, y su simiente será afirmada delante de ti.",
+    edition: "RV1909",
+  },
+  "John.10.16": {
+    osis: "John.10.16",
+    text: "También tengo otras ovejas que no son de este redil; aquéllas también me conviene traer, y oirán mi voz; y habrá un rebaño, y un pastor.",
+    edition: "RV1909",
+  },
+  "John.12.32": {
+    osis: "John.12.32",
+    text: "Y yo, si fuere levantado de la tierra, á todos traeré á mí mismo.",
+    edition: "RV1909",
+  },
+  "Acts.11.26": {
+    osis: "Acts.11.26",
+    text: "Y conversaron todo un año allí con la iglesia, y enseñaron á mucha gente; y los discípulos fueron llamados Cristianos primeramente en Antioquía.",
+    edition: "RV1909",
+  },
+  "Acts.17.10": {
+    osis: "Acts.17.10",
+    text: "Entonces los hermanos, luego de noche, enviaron á Pablo y á Silas á Berea; los cuales habiendo llegado, entraron en la sinagoga de los Judíos.",
+    edition: "RV1909",
+  },
+  "1Cor.15.1": {
+    osis: "1Cor.15.1",
+    text: "ADEMÁS os declaro, hermanos, el evangelio que os he predicado, el cual también recibisteis, en el cual también perseveráis;",
+    edition: "RV1909",
+  },
+  "Gal.3.28": {
+    osis: "Gal.3.28",
+    text: "No hay Judío, ni Griego; no hay siervo, ni libre; no hay varón, ni hembra: porque todos vosotros sois uno en Cristo Jesús.",
+    edition: "RV1909",
+  },
+  "Eph.1.20": {
+    osis: "Eph.1.20",
+    text: "La cual obró en Cristo, resucitándole de los muertos, y colocándole á su diestra en los cielos,",
+    edition: "RV1909",
+  },
+  "Eph.1.21": {
+    osis: "Eph.1.21",
+    text: "Sobre todo principado, y potestad, y potencia, y señorío, y todo nombre que se nombra, no sólo en este siglo, mas aun en el venidero:",
+    edition: "RV1909",
+  },
+  "2Thess.2.6": {
+    osis: "2Thess.2.6",
+    text: "Y ahora vosotros sabéis lo que impide, para que á su tiempo se manifieste.",
+    edition: "RV1909",
+  },
+  "2Thess.2.7": {
+    osis: "2Thess.2.7",
+    text: "Porque ya está obrando el misterio de iniquidad: solamente [espera] hasta que sea quitado de en medio el que ahora impide;",
+    edition: "RV1909",
+  },
+  "2Thess.2.11": {
+    osis: "2Thess.2.11",
+    text: "Por tanto, pues, les envía Dios operación de error, para que crean á la mentira;",
+    edition: "RV1909",
+  },
+  "2Thess.2.12": {
+    osis: "2Thess.2.12",
+    text: "Para que sean condenados todos los que no creyeron á la verdad, antes consintieron á la iniquidad.",
+    edition: "RV1909",
+  },
+  "Heb.12.22": {
+    osis: "Heb.12.22",
+    text: "Mas os habéis llegado al monte de Sión, y á la ciudad del Dios vivo, Jerusalem la celestial, y á la compañía de muchos millares de ángeles,",
+    edition: "RV1909",
+  },
+  "Heb.12.23": {
+    osis: "Heb.12.23",
+    text: "Y á la congregación de los primogénitos que están alistados en los cielos, y á Dios el Juez de todos, y á los espíritus de los justos hechos perfectos,",
+    edition: "RV1909",
+  },
+  "Rev.13.8": {
+    osis: "Rev.13.8",
+    text: "Y todos los que moran en la tierra le adoraron, cuyos nombres no están escritos en el libro de la vida del Cordero, el cual fué muerto desde el principio del mundo.",
+    edition: "RV1909",
+  },
+  "Rev.14.1": {
+    osis: "Rev.14.1",
+    text: "Y MIRÉ, y he aquí, el Cordero estaba sobre el monte de Sión, y con él ciento cuarenta y cuatro mil, que tenían el nombre de su Padre escrito en sus frentes.",
+    edition: "RV1909",
+  },
+  "Rev.18.2": {
+    osis: "Rev.18.2",
+    text: "Y clamó con fortaleza en alta voz, diciendo: Caída es, caída es la grande Babilonia, y es hecha habitación de demonios, y guarida de todo espíritu inmundo, y albergue de todas aves sucias y aborrecibles.",
+    edition: "RV1909",
+  },
+  "Deut.12.32": {
+    osis: "Deut.12.32",
+    text: "Cuidaréis de hacer todo lo que yo os mando: no añadirás á ello, ni quitarás de ello.",
+    edition: "RV1909",
+  },
+  "Josh.1.7": {
+    osis: "Josh.1.7",
+    text: "Solamente te esfuerces, y seas muy valiente, para cuidar de hacer conforme á toda la ley que mi siervo Moisés te mandó: no te apartes de ella ni á diestra ni á siniestra, para que seas prosperado en todas las cosas que emprendieres.",
+    edition: "RV1909",
+  },
+  "Ps.119.1": {
+    osis: "Ps.119.1",
+    text: "ALEPH. BIENAVENTURADOS los perfectos de camino; los que andan en la ley de Jehová.",
+    edition: "RV1909",
+  },
+  "Ps.119.2": {
+    osis: "Ps.119.2",
+    text: "Bienaventurados los que guardan sus testimonios, y con todo el corazón le buscan:",
+    edition: "RV1909",
+  },
+  "Ps.119.3": {
+    osis: "Ps.119.3",
+    text: "Pues no hacen iniquidad los que andan en sus caminos.",
+    edition: "RV1909",
+  },
+  "Ps.119.4": {
+    osis: "Ps.119.4",
+    text: "Tú encargaste que sean muy guardados tus mandamientos.",
+    edition: "RV1909",
+  },
+  "Ps.119.5": {
+    osis: "Ps.119.5",
+    text: "¡Ojalá fuesen ordenados mis caminos á observar tus estatutos!",
+    edition: "RV1909",
+  },
+  "Ps.119.6": {
+    osis: "Ps.119.6",
+    text: "Entonces no sería yo avergonzado, cuando atendiese á todos tus mandamientos.",
+    edition: "RV1909",
+  },
+  "Ps.119.7": {
+    osis: "Ps.119.7",
+    text: "Te alabaré con rectitud de corazón, cuando aprendiere los juicios de tu justicia.",
+    edition: "RV1909",
+  },
+  "Ps.119.8": {
+    osis: "Ps.119.8",
+    text: "Tus estatutos guardaré: no me dejes enteramente.",
+    edition: "RV1909",
+  },
+  "Prov.30.5": {
+    osis: "Prov.30.5",
+    text: "Toda palabra de Dios [es] limpia; es escudo á los que en él esperan.",
+    edition: "RV1909",
+  },
+  "Prov.30.6": {
+    osis: "Prov.30.6",
+    text: "No añadas á sus palabras, porque no te reprenda, y seas hallado mentiroso.",
+    edition: "RV1909",
+  },
+  "Matt.22.30": {
+    osis: "Matt.22.30",
+    text: "Porque en la resurrección, ni los hombres tomarán mujeres, ni las mujeres maridos; mas son como los ángeles de Dios en el cielo.",
+    edition: "RV1909",
+  },
+  "Matt.24.23": {
+    osis: "Matt.24.23",
+    text: "Entonces, si alguno os dijere: He aquí está el Cristo, ó allí, no creáis.",
+    edition: "RV1909",
+  },
+  "Luke.16.30": {
+    osis: "Luke.16.30",
+    text: "El entonces dijo: No, padre Abraham: mas si alguno fuere á ellos de los muertos, se arrepentirán.",
+    edition: "RV1909",
+  },
+  "John.5.47": {
+    osis: "John.5.47",
+    text: "Y si á sus escritos no creéis, ¿cómo creeréis á mis palabras?",
+    edition: "RV1909",
+  },
+  "John.10.35": {
+    osis: "John.10.35",
+    text: "Si dijo, dioses, á aquellos á los cuales fué hecha palabra de Dios (y la Escritura no puede ser quebrantada);",
+    edition: "RV1909",
+  },
+  "John.17.12": {
+    osis: "John.17.12",
+    text: "Cuando estaba con ellos en el mundo, yo los guardaba en tu nombre; á los que me diste, yo los guardé, y ninguno de ellos se perdió, sino el hijo de perdición; para que la Escritura se cumpliese.",
+    edition: "RV1909",
+  },
+  "John.20.30": {
+    osis: "John.20.30",
+    text: "Y también hizo Jesús muchas otras señales en presencia de sus discípulos, que no están escritas en este libro.",
+    edition: "RV1909",
+  },
+  "John.21.25": {
+    osis: "John.21.25",
+    text: "Y hay también otras muchas cosas que hizo Jesús, que si se escribiesen cada una por sí, ni aun en el mundo pienso que cabrían los libros que se habrían de escribir. Amén.",
+    edition: "RV1909",
+  },
+  "Acts.3.22": {
+    osis: "Acts.3.22",
+    text: "Porque Moisés dijo á los padres: El Señor vuestro Dios os levantará profeta de vuestros hermanos, como yo; á él oiréis en todas las cosas que os hablare.",
+    edition: "RV1909",
+  },
+  "Acts.3.23": {
+    osis: "Acts.3.23",
+    text: "Y será, que cualquiera alma que no oyere á aquel profeta, será desarraigada del pueblo.",
+    edition: "RV1909",
+  },
+  "Acts.28.23": {
+    osis: "Acts.28.23",
+    text: "Y habiéndole señalado un día, vinieron á él muchos á la posada, á los cuales declaraba y testificaba el reino de Dios, persuadiéndoles lo concerniente á Jesús, por la ley de Moisés y por los profetas, desde la mañana hasta la tarde.",
+    edition: "RV1909",
+  },
+  "Rom.10.13": {
+    osis: "Rom.10.13",
+    text: "Porque todo aquel que invocare el nombre del Señor, será salvo.",
+    edition: "RV1909",
+  },
+  "Rom.11.31": {
+    osis: "Rom.11.31",
+    text: "Así también éstos ahora no han creído, para que, por la misericordia para con vosotros, ellos también alcancen misericordia.",
+    edition: "RV1909",
+  },
+  "Rom.11.32": {
+    osis: "Rom.11.32",
+    text: "Porque Dios encerró á todos en incredulidad, para tener misericordia de todos.",
+    edition: "RV1909",
+  },
+  "Rom.15.5": {
+    osis: "Rom.15.5",
+    text: "Mas el Dios de la paciencia y de la consolación os dé que entre vosotros seáis unánimes según Cristo Jesús;",
+    edition: "RV1909",
+  },
+  "1Cor.1.20": {
+    osis: "1Cor.1.20",
+    text: "¿Qué es del sabio? ¿qué del escriba? ¿qué del escudriñador de este siglo? ¿no ha enloquecido Dios la sabiduría del mundo?",
+    edition: "RV1909",
+  },
+  "2Cor.1.20": {
+    osis: "2Cor.1.20",
+    text: "Porque todas las promesas de Dios son en él Sí, y en él Amén, por nosotros á gloria de Dios.",
+    edition: "RV1909",
+  },
+  "Gal.5.22": {
+    osis: "Gal.5.22",
+    text: "Mas el fruto del Espíritu es: caridad, gozo, paz, tolerancia, benignidad, bondad, fe,",
+    edition: "RV1909",
+  },
+  "2Thess.2.13": {
+    osis: "2Thess.2.13",
+    text: "Mas nosotros debemos dar siempre gracias á Dios por vosotros, hermanos amados del Señor, de que Dios os haya escogido desde el principio para salud, por la santificación del Espíritu y fe de la verdad:",
+    edition: "RV1909",
+  },
+  "1John.1.2": {
+    osis: "1John.1.2",
+    text: "(Porque la vida fué manifestada, y vimos, y testificamos, y os anunciamos aquella vida eterna, la cual estaba con el Padre, y nos ha aparecido;)",
+    edition: "RV1909",
+  },
+  "1John.2.2": {
+    osis: "1John.2.2",
+    text: "Y él es la propiciación por nuestros pecados: y no solamente por los nuestros, sino también por los de todo el mundo.",
+    edition: "RV1909",
+  },
+  "1John.5.19": {
+    osis: "1John.5.19",
+    text: "Sabemos que somos de Dios, y todo el mundo está puesto en maldad.",
+    edition: "RV1909",
+  },
+  "2John.1.7": {
+    osis: "2John.1.7",
+    text: "Porque muchos engañadores son entrados en el mundo, los cuales no confiesan que Jesucristo ha venido en carne. Este tal el engañador es, y el anticristo.",
+    edition: "RV1909",
+  },
+  "2John.1.8": {
+    osis: "2John.1.8",
+    text: "Mirad por vosotros mismos, porque no perdamos las cosas que hemos obrado, sino que recibamos galardón cumplido.",
+    edition: "RV1909",
+  },
+  "2John.1.9": {
+    osis: "2John.1.9",
+    text: "Cualquiera que se rebela, y no persevera en la doctrina de Cristo, no tiene á Dios: el que persevera en la doctrina de Cristo, el tal tiene al Padre y al Hijo.",
+    edition: "RV1909",
+  },
+  "2John.1.10": {
+    osis: "2John.1.10",
+    text: "Si alguno viene á vosotros, y no trae esta doctrina, no lo recibáis en casa, ni le digáis: ¡bienvenido!",
+    edition: "RV1909",
+  },
 } satisfies Record<string, Verse>;
 
 export type VerseId = keyof typeof verses;

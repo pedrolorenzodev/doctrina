@@ -76,6 +76,7 @@ export const es = {
       readOriginal: "Leer el original en inglés",
       hideOriginal: "Ocultar el original",
       aiTranslation: "Traducción propia asistida por IA",
+      untranslated: "Cita en su idioma original (inglés). Todavía sin traducir al español.",
       viewSource: "Ver la fuente",
       previous: "Pasaje anterior",
       next: "Pasaje siguiente",

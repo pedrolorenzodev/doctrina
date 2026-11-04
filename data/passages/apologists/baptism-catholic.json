@@ -1,0 +1,1072 @@
+{
+ "doctrine": "baptism",
+ "tradition": "catholic",
+ "files": [
+  "apologists-catholic-baptism.md",
+  "apologists-catholic.md"
+ ],
+ "sections": [
+  {
+   "text": "1. Baptism · John 3:5 (page entry 1; the dossier reads it with Trent VII, Baptism, can. 2 and CEC 1257)",
+   "primary": "John 3:5 ",
+   "entries": [
+    1
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "John",
+     "chapter": 3,
+     "from": 5,
+     "to": 5
+    }
+   ],
+   "line": 18,
+   "arguments": [
+    {
+     "title": "«Water» means physical water, and the baptismal reading was the Fathers'",
+     "quotes": [
+      {
+       "key": "9c59d6ddb6a8",
+       "speaker": "Jimmy Akin",
+       "work": "“Born of Water”: Does John 3:5 Mean Literal Baptism?",
+       "outlet": "Jimmy Akin, YouTube",
+       "date": "Sin fecha indicada",
+       "dateParts": {
+        "undated": true
+       },
+       "locator": "Minutos 2:10 a 2:27",
+       "locatorFallback": false,
+       "url": "https://www.youtube.com/watch?v=WlZEIiaMlJ8&t=130s",
+       "text": "Hudor is the normal Greek word for water. And what Hudor normally means is water meaning physical water.",
+       "long": false,
+       "tags": [
+        "verified: captions"
+       ],
+       "line": 21
+      },
+      {
+       "key": "18135fe27663",
+       "speaker": "Jimmy Akin",
+       "work": "“Born of Water”: Does John 3:5 Mean Literal Baptism?",
+       "outlet": "Jimmy Akin, YouTube",
+       "date": "Sin fecha indicada",
+       "dateParts": {
+        "undated": true
+       },
+       "locator": "Minutos 4:57 a 5:24",
+       "locatorFallback": false,
+       "url": "https://www.youtube.com/watch?v=WlZEIiaMlJ8&t=297s",
+       "text": "what I found was that every church father and certainly overwhelmingly the church fathers who commented on whe on what the water is in John 3:5, they all understood it as baptismal water, as literal physical water.",
+       "long": false,
+       "tags": [
+        "verified: captions"
+       ],
+       "line": 22
+      },
+      {
+       "key": "017ce0126058",
+       "speaker": "Jimmy Akin",
+       "work": "Being Born Again in Scripture",
+       "outlet": "A Daily Defense, catholic.com",
+       "date": "13 de octubre de 2023",
+       "dateParts": {
+        "year": 2023,
+        "month": 10,
+        "day": 13
+       },
+       "locator": "8 párrafos: del párrafo que empieza «Scripture teaches people are born again in baptism.…» al que termina «…is confirmed by the Church Fathers (see Day 287).»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/ddp/being-born-again-in-scripture",
+       "text": "Scripture teaches people are born again in baptism.\n\nThe phrase translated “born again” occurs in John 3:3, where Jesus tells Nicodemus, “Except a man be born again, he cannot see the kingdom of God” (KJV). In Greek the phrase involves a pun. The word for “again” is anōthen, which can mean either “again” or “from above.” The point is one must receive a second birth and this birth must be from God.\n\nContext reveals how the second birth occurs. Clarifying his initial statement, Jesus tells Nicodemus, “unless one is born of water and the Spirit, he cannot enter the kingdom of God” (John 3:5). The reference to water and the action of the Spirit indicates baptism (John 1:33).\n\nJesus expects Nicodemus to already be familiar with this concept (John 3:10), suggesting an Old Testament background to his teaching. Thus Ezekiel 36:25–27 says that at the restoration of Israel God will sprinkle clean water on people, give them a new heart, and put his Spirit within them so they may keep his commandments, all of which point to Christian baptism.\n\nFurther, in the verse immediately after Jesus’ discussion with Nicodemus, John tells us: “After this Jesus and his disciples went into the land of Judea; there he remained with them and baptized” (John 3:22). This, in turn, is followed by a controversy sparked by Jesus beginning to baptize (John 3:23–4:3). The conversation with Nicodemus sets up the controversy.\n\nAll this indicates being “born again” in baptism. This is confirmed by other passages, which link the reception of new life and regeneration to baptism.\n\nThus Paul tells the Romans: “Do you not know that all of us who have been baptized into Christ Jesus were baptized into his death? We were buried therefore with him by baptism into death, so that as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life” (Rom. 6:3–4). And Paul tells Titus that “he saved us, not because of deeds done by us in righteousness, but in virtue of his own mercy, by the washing of regeneration and renewal in the Holy Spirit” (Titus 3:5).\n\nThis same understanding is confirmed by the Church Fathers (see Day 287).",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 24
+      },
+      {
+       "key": "017ce0126058",
+       "speaker": "Jimmy Akin",
+       "work": "Being Born Again in Scripture",
+       "outlet": "A Daily Defense, catholic.com",
+       "date": "13 de octubre de 2023",
+       "dateParts": {
+        "year": 2023,
+        "month": 10,
+        "day": 13
+       },
+       "locator": "8 párrafos: del párrafo que empieza «Scripture teaches people are born again in baptism.…» al que termina «…is confirmed by the Church Fathers (see Day 287).»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/ddp/being-born-again-in-scripture",
+       "text": "Scripture teaches people are born again in baptism.\n\nThe phrase translated “born again” occurs in John 3:3, where Jesus tells Nicodemus, “Except a man be born again, he cannot see the kingdom of God” (KJV). In Greek the phrase involves a pun. The word for “again” is anōthen, which can mean either “again” or “from above.” The point is one must receive a second birth and this birth must be from God.\n\nContext reveals how the second birth occurs. Clarifying his initial statement, Jesus tells Nicodemus, “unless one is born of water and the Spirit, he cannot enter the kingdom of God” (John 3:5). The reference to water and the action of the Spirit indicates baptism (John 1:33).\n\nJesus expects Nicodemus to already be familiar with this concept (John 3:10), suggesting an Old Testament background to his teaching. Thus Ezekiel 36:25–27 says that at the restoration of Israel God will sprinkle clean water on people, give them a new heart, and put his Spirit within them so they may keep his commandments, all of which point to Christian baptism.\n\nFurther, in the verse immediately after Jesus’ discussion with Nicodemus, John tells us: “After this Jesus and his disciples went into the land of Judea; there he remained with them and baptized” (John 3:22). This, in turn, is followed by a controversy sparked by Jesus beginning to baptize (John 3:23–4:3). The conversation with Nicodemus sets up the controversy.\n\nAll this indicates being “born again” in baptism. This is confirmed by other passages, which link the reception of new life and regeneration to baptism.\n\nThus Paul tells the Romans: “Do you not know that all of us who have been baptized into Christ Jesus were baptized into his death? We were buried therefore with him by baptism into death, so that as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life” (Rom. 6:3–4). And Paul tells Titus that “he saved us, not because of deeds done by us in righteousness, but in virtue of his own mercy, by the washing of regeneration and renewal in the Holy Spirit” (Titus 3:5).\n\nThis same understanding is confirmed by the Church Fathers (see Day 287).",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 34
+      }
+     ]
+    },
+    {
+     "title": "«Water and Spirit» is one birth, not two; and «born of water» is not how Scripture speaks of natural birth",
+     "quotes": [
+      {
+       "key": "7fae21f6e3d6",
+       "speaker": "Joe Heschmeyer",
+       "work": "6 Bible Verses PROVING Water Baptism Saves (REBUTTAL to @NeedGodnet)",
+       "outlet": "Shameless Popery",
+       "date": "27 de mayo de 2025",
+       "dateParts": {
+        "year": 2025,
+        "month": 5,
+        "day": 27
+       },
+       "locator": "Párrafo que empieza «Joe: Ryan’s interpretation separates John three, five…»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/6-bible-verses-proving-water-baptism-saves-rebuttal-to-%E2%81%A8needgodnet%E2%81%A9",
+       "text": "being born again or being born from above of water in the Spirit is clearly one event biblically, particularly in light of Old Testament passages like Isaiah 44 verse three where God talks about pouring out water in the spirit or Ezekiel 36 where he says He is going to sprinkle clean water upon us and put his spirit within us.",
+       "long": false,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 46
+      },
+      {
+       "key": "bcb406689d2d",
+       "speaker": "Karlo Broussard",
+       "work": "Defending Rebirth by Water",
+       "outlet": "Catholic Answers Magazine",
+       "date": "29 de mayo de 2018",
+       "dateParts": {
+        "year": 2018,
+        "month": 5,
+        "day": 29
+       },
+       "locator": "16 párrafos: del párrafo que empieza «“Are you born again?”…» al que termina «…associates the second birth with the “word of God.”»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/online-edition/defending-rebirth-by-water",
+       "text": "“Are you born again?”\n\nProtestants love to ask Catholics this question. Some Catholics fumble their words, not knowing how to respond. But those who study apologetics know to answer with a resounding “Yes,” since Jesus teaches that to be baptized is to be born again:\n\n“Truly, truly, I say to you, unless one is born anew, he cannot see the kingdom of God.” Nicodemus said to him, “How can a man be born when he is old? Can he enter a second time into his mother’s womb and be born?” Jesus answered, “Truly, truly, I say to you, unless one is born of water and the Spirit, he cannot enter the kingdom of God (John 3:3-5; emphasis added).\n\nBut some Protestants don’t see baptism in this passage. They arrive at different conclusions about what it means to be “born of water” and so they have a ready comeback to Catholics who cite the above verses. Let’s examine some of their alternative explanations and see if they carry any weight. One explanation sees the “water” as referring to the amniotic fluid of our mother’s womb, through which we passed during our biological birth. The second birth, so it’s argued, is being born only of the Spirit—when you confess Jesus as Lord.\n\nBut there are some problems with this interpretation. First, isn’t it kind of obvious? Why would Jesus need to stipulate that biological birth is a condition for heaven when all those hearing his message were already born? It seems pedantic.\n\nSecond, the context reveals that Jesus includes both spirit and water in the one act of the second birth. He doesn’t say, “You must be born of water, and then born of the Spirit.”\n\nScott Hahn and Curtis Mitch elaborate:\n\nThe syntax of this verse in Greek suggests that Jesus is speaking, not of two separate births, one by water and another by the Spirit, but of a single birth through the working of water and Spirit together.\n\nThis interpretation is further confirmed by the fact that the Spirit and water together constitute the one event of Jesus’ baptism, which John hints at in John 1:29-34 and Matthew chronicles in Matthew 3:13-17.\n\nTherefore, there is good reason to think that the water and spirit together constitute the second birth that Jesus speaks of in the born again discourse.\n\nA second problem is that “born of water” is not the typical language that Jesus or John uses for biological birth. Take Jesus, for example. In response to Nicodemus’s query about entering again into his mother’s womb (natural birth), Jesus says, “That which is born of the flesh is flesh, and that which is born of the Spirit is spirit” (John 3:6). Jesus’ language for natural birth is “born of flesh,” not “born of water.”\n\nJohn has his own way of referring to biological birth, and it also doesn’t involve water:\n\nBut to all who received him, who believed in his name, he gave power to become children of God; who were born, not of blood nor of the will of the flesh nor of the will of man, but of God (John 1:12-13; emphasis added).\n\nLike Jesus, John draws a distinction between the new birth of God and biological birth. But he doesn’t describe the latter with “water.” He speaks of it as “born of blood.”\n\nSince our Protestant friend only makes an assertion and doesn’t give us any reason to think that being “born of water” refers to biological birth, and since the immediate context of the passage in question provides language for biological birth that doesn’t involve water, it’s unreasonable to interpret the birth by water in John 3:3-5 as referring to our biological birth.\n\nAnother proposed explanation is that the “water” refers to the word of God. Proponents of this interpretation use 1 Peter 1:23 for support: “You have been born anew, not of perishable seed but of imperishable, through the living and abiding word of God.” Notice how Peter associates the second birth with the “word of God.”",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 47
+      },
+      {
+       "key": "69079ff230a3",
+       "speaker": "Karlo Broussard",
+       "work": "Defending Rebirth by Water",
+       "outlet": "Catholic Answers Magazine",
+       "date": "29 de mayo de 2018",
+       "dateParts": {
+        "year": 2018,
+        "month": 5,
+        "day": 29
+       },
+       "locator": "Párrafo que empieza «A second problem is that…»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/online-edition/defending-rebirth-by-water",
+       "text": "Jesus’ language for natural birth is “born of flesh,” not “born of water.”",
+       "long": false,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 65
+      }
+     ]
+    },
+    {
+     "title": "The new birth being spiritual does not exclude a material means",
+     "quotes": [
+      {
+       "key": "a4956a2bea72",
+       "speaker": "Karlo Broussard",
+       "work": "Spiritual Birth, Physical Things",
+       "outlet": "Catholic Answers Magazine",
+       "date": "15 de octubre de 2024",
+       "dateParts": {
+        "year": 2024,
+        "month": 10,
+        "day": 15
+       },
+       "locator": "13 párrafos: del párrafo que empieza «Notice that this interpretation reads into Jesus’ words that…» al que termina «…agent for spiritual rebirth; it must mean something else.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/online-edition/spiritual-birth-physical-things",
+       "text": "Notice that this interpretation reads into Jesus’ words that anything and everything that is material or physical is excluded from being involved in the spiritual rebirth. But that is not what Jesus says.\n\nRather, Jesus juxtaposes two kinds of births: our physical or natural birth, which is “of the flesh,” and the spiritual or supernatural rebirth that is “of the Spirit.” The focus is the essential difference of the births, not what might or might not be involved with those births.\n\nFor example, our physical or natural birth is “of the flesh,” yet that doesn’t mean that anything and everything spiritual is excluded from it, since our natural birth does involve something spiritual—namely, our soul, which is informing the matter. But the birth itself is described as “of the flesh” because that’s an idiom Jesus frequently uses to express things that pertain to the natural order apart from God’s grace.\n\nConsider what he says in John 8:15: “You judge according to the flesh.” There, Jesus is telling the Pharisees that they judge from an earthly perspective alone.\n\nHe also employs this idiom in John 6:63, when he says, “The words that I have spoken to you are spirit and life. The Spirit gives life, the flesh is of no avail.” Per John 8:15, Jesus is teaching his disciples that if they judge his teaching to eat his flesh and drink his blood from an earthly perspective alone, they won’t be able to assent to it. His teaching goes beyond human reason. Consequently, they need a power that is above reason, which only the Spirit can give, and that’s the gift of faith.\n\nSo the birth “of the flesh” that Jesus speaks of is our first birth, which is natural, and that natural birth doesn’t exclude any and all things spiritual, since the soul is present with the body in that first birth.\n\nOur spiritual rebirth, on the other hand, is not a physical birth. It is a spiritual birth. That’s why Jesus says it is “spirit,” “of the Spirit.” But just because the birth is spiritual in nature doesn’t necessarily exclude any and everything material. It may well involve something material, like water, that serves as a means through which the spiritual rebirth takes place.\n\nConsider again John 6:63. Jesus says, “The words that I have spoken to you are spirit and life. The Spirit gives life, the flesh is of no avail.” Affirming that his words are spiritual, and are discerned by the Spirit, doesn’t mean he didn’t use audible sounds, something of the physical world, to communicate his words.\n\nSimilarly, just because Jesus teaches the new birth is spirit and not flesh doesn’t mean all fleshy and physical things, like water, are excluded. It simply refers to a particular kind of birth that is distinct from our physical birth.\n\nThat this is the focus is supported by the fact that Jesus draws this contrast in response to Nicodemus who thought the new birth was to involve a grown man entering into his mother’s womb a second time (v. 4).\n\nTherefore, the spiritual nature of the new birth can’t be appealed to as evidence for water being excluded from the new birth.\n\nLet’s consider one more counter-argument to our interpretation of the new birth being a reference to baptism. This one is offered by Todd Baker, president of B’rit Hadashah Ministries and pastor of Shalom, Shalom Messianic Congregation in Dallas, Texas. In commenting on the new birth of “water and Spirit,” Baker writes,\n\nNothing in this world can generate the power of spiritual rebirth; flesh can produce only flesh. . . . Even in the beginning of John’s Gospel, the reader is told that the power of spiritual rebirth, whereby the believer in Christ becomes a child of God, is not an act that can be exercised by human act of will, or physical generation, or performance of any kind—the act of sacramental baptism included— but is a supernatural, sovereign act of God alone, bestowed upon those who believe in Jesus Christ. Those who are baptized do so by an act of their own will. The new birth is altogether different from this; it is an act of God! . . . So then, “born of water” in John 3:5 cannot mean the physical rite of baptism as the agent for spiritual rebirth; it must mean something else.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 68
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "4. Baptism · Rom 6:3–4; Col 2:12 (page entry 4; the dossier reads them with CEC 1214 and 1227)",
+   "primary": "Rom 6:3–4; Col 2:12 ",
+   "entries": [
+    4
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "Rom",
+     "chapter": 6,
+     "from": 3,
+     "to": 4
+    },
+    {
+     "book": "Col",
+     "chapter": 2,
+     "from": 12,
+     "to": 12
+    }
+   ],
+   "line": 88,
+   "arguments": [
+    {
+     "title": "Baptism is how we enter Christ's death and resurrection, and that is regenerative",
+     "quotes": [
+      {
+       "key": "8cdba62e8e1c",
+       "speaker": "Joe Heschmeyer",
+       "work": "Does Baptism Save Us?",
+       "outlet": "Shameless Popery",
+       "date": "14 de noviembre de 2024",
+       "dateParts": {
+        "year": 2024,
+        "month": 11,
+        "day": 14
+       },
+       "locator": "4 párrafos: del párrafo que empieza «That’s not biblical. That’s not what Jesus lays out.…» al que termina «…going all the way back to the Old Testament.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/does-baptism-save-us",
+       "text": "That’s not biblical. That’s not what Jesus lays out. Okay? You might be protesting. I see where you’re getting all this from, Ezekiel from Acts from Jesus himself, but doesn’t that contradict Paul’s theology? And the answer is no. Hopefully you’ve seen that enough times, right? Like Ananias that we’re getting from St. Paul. But we can also see plenty of time where Paul talks about this important role of baptism in the role of salvation. Now, I’m going to do something a little bit out of order here. I want to look at Romans six at the beginning of chapter six. St. Paul says, what shall we say then? Are we the continue in sin that Grace May abound by no means how can have died to sin still live in it. Now the question should be how do we die to sin in Paul’s theology? And now I want to intentionally jump forward a few verses.\n\nI’m going to skip over verse three and four because we’re going to get back to them and jump all the way down to verse five where St. Paul says, for if we have been united with him in a death like his, we shall certainly be united with him in a resurrection like his. So it seems really important self vally that we die with Christ so we can rise to resurrected life with Christ. So we should be asking according to the theology of St. Paul, how do we do that? Is that something we only achieve by faith alone in the Protestant conception of it? And the answer to that is not at all. Let’s now plug in verses three and four. Paul says, do you not know that all of us who’ve been baptized into Christ Jesus were baptized into his death? We were buried therefore with him by baptism into death so that as Christ was raised from the dead, by the glory of the Father, we too might walk in newness of life.\n\nSo notice according to St. Paul, we enter the death and resurrection of Christ, how well through baptism pretty explicitly. And that’s how we begin to walk in newness of life. That sounds pretty regenerative. That sounds like something that’s happened. That is an actual change. We might even say ontologically. So that’s just Romans six, but it’s not alone. In Colossians chapter two, St. Paul reminds the Colossians in him also, you were circumcised with a circumcision made without hands by putting off the body of flesh in the circumcision of Christ. So what does the circumcision of Christ look like? He says, and you were buried with him in baptism in which you were also raised with him through faith in the working of God who raised him from the dead. So our entrance into the death and resurrection of Christ is through what? Well through baptism. Similarly, in Titus chapter three, he says that God saved us not because of deeds done by us in righteousness, right?\n\nIt’s not work salvation. But in virtue of his own mercy by the washing of regeneration and renewal in the Holy Spirit. Notice this because it is huge. He’s saying it’s not by works in the sense that Paul means it. It’s by baptism, the washing of rebirth or regeneration and in the Holy Spirit that if you just read this without the blinders, it becomes pretty clear. Okay? Yeah, that makes sense. That if Paul thinks that we enter the death and resurrection of Christ through baptism, as he repeatedly says, this would be the beginning of our life of salvation, that this does save us and this is how we enter into this divine life with Christ. And so that’s how he has saved us, not because of any deeds we’ve done, but through baptism. Okay, I want to pivot now from St. Paul’s theology going all the way back to the Old Testament.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 91
+      },
+      {
+       "key": "8cdba62e8e1c",
+       "speaker": "Joe Heschmeyer",
+       "work": "Does Baptism Save Us?",
+       "outlet": "Shameless Popery",
+       "date": "14 de noviembre de 2024",
+       "dateParts": {
+        "year": 2024,
+        "month": 11,
+        "day": 14
+       },
+       "locator": "4 párrafos: del párrafo que empieza «That’s not biblical. That’s not what Jesus lays out.…» al que termina «…going all the way back to the Old Testament.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/does-baptism-save-us",
+       "text": "That’s not biblical. That’s not what Jesus lays out. Okay? You might be protesting. I see where you’re getting all this from, Ezekiel from Acts from Jesus himself, but doesn’t that contradict Paul’s theology? And the answer is no. Hopefully you’ve seen that enough times, right? Like Ananias that we’re getting from St. Paul. But we can also see plenty of time where Paul talks about this important role of baptism in the role of salvation. Now, I’m going to do something a little bit out of order here. I want to look at Romans six at the beginning of chapter six. St. Paul says, what shall we say then? Are we the continue in sin that Grace May abound by no means how can have died to sin still live in it. Now the question should be how do we die to sin in Paul’s theology? And now I want to intentionally jump forward a few verses.\n\nI’m going to skip over verse three and four because we’re going to get back to them and jump all the way down to verse five where St. Paul says, for if we have been united with him in a death like his, we shall certainly be united with him in a resurrection like his. So it seems really important self vally that we die with Christ so we can rise to resurrected life with Christ. So we should be asking according to the theology of St. Paul, how do we do that? Is that something we only achieve by faith alone in the Protestant conception of it? And the answer to that is not at all. Let’s now plug in verses three and four. Paul says, do you not know that all of us who’ve been baptized into Christ Jesus were baptized into his death? We were buried therefore with him by baptism into death so that as Christ was raised from the dead, by the glory of the Father, we too might walk in newness of life.\n\nSo notice according to St. Paul, we enter the death and resurrection of Christ, how well through baptism pretty explicitly. And that’s how we begin to walk in newness of life. That sounds pretty regenerative. That sounds like something that’s happened. That is an actual change. We might even say ontologically. So that’s just Romans six, but it’s not alone. In Colossians chapter two, St. Paul reminds the Colossians in him also, you were circumcised with a circumcision made without hands by putting off the body of flesh in the circumcision of Christ. So what does the circumcision of Christ look like? He says, and you were buried with him in baptism in which you were also raised with him through faith in the working of God who raised him from the dead. So our entrance into the death and resurrection of Christ is through what? Well through baptism. Similarly, in Titus chapter three, he says that God saved us not because of deeds done by us in righteousness, right?\n\nIt’s not work salvation. But in virtue of his own mercy by the washing of regeneration and renewal in the Holy Spirit. Notice this because it is huge. He’s saying it’s not by works in the sense that Paul means it. It’s by baptism, the washing of rebirth or regeneration and in the Holy Spirit that if you just read this without the blinders, it becomes pretty clear. Okay? Yeah, that makes sense. That if Paul thinks that we enter the death and resurrection of Christ through baptism, as he repeatedly says, this would be the beginning of our life of salvation, that this does save us and this is how we enter into this divine life with Christ. And so that’s how he has saved us, not because of any deeds we’ve done, but through baptism. Okay, I want to pivot now from St. Paul’s theology going all the way back to the Old Testament.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 97
+      },
+      {
+       "key": "94877c8d9908",
+       "speaker": "Karlo Broussard",
+       "work": "What Good Is Water Baptism?",
+       "outlet": "Catholic Answers Magazine",
+       "date": "19 de mayo de 2025",
+       "dateParts": {
+        "year": 2025,
+        "month": 5,
+        "day": 19
+       },
+       "locator": "12 párrafos: del párrafo que empieza «Romans 6:3-4 is a go-to passage for many Christians…» al que termina «…which this union with Christ takes becomes a reality.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/online-edition/what-good-is-water-baptism",
+       "text": "Romans 6:3-4 is a go-to passage for many Christians when they want to show from the Bible that baptism actually does something—that it saves. Paul tells us that through baptism, we’re “buried therefore with [Christ] . . . into death . . . [so that] we might walk in newness of life.” Then in verse 7, he adds that in this baptismal death, we’re “freed from sin.”\n\nNow, here’s something interesting: The Greek word translated as “freed” is dikaioō, which actually means “to justify.” In other words, Paul is saying we’re justified—or saved—through baptism. That’s a pretty strong claim. But not everyone agrees. In his book Exodus from Rome: Volume I, Protestant theologian Todd Baker pushes back on this idea. He argues that Paul isn’t even talking about water baptism here. According to Baker, Paul is referring to something merely spiritual. He gives two main reasons for this view, so let’s take a look at both.\n\nBaker’s first argument is that Paul never actually says the word “water.” Here’s how he puts it:\n\nPaul’s use of baptism in Romans 6:3-5 does not mention water anywhere, and therefore can conceivably convey the greater idea of identification with Christ in his death and resurrection for the sinner’s salvation, without necessarily pointing to the idea of the rite or act of water baptism . . . if Paul means a water and ritual baptism in Romans 6, he would have clearly included the term “water” as the descriptive modifier to baptism, which he does not.\n\nBut this is kind of a stretch. Think about it: Paul wrote Romans around A.D. 50. That means for about twenty years, Christians had already been practicing water baptism, following Jesus’ command in Matthew 28:19 to go out and baptize. And we have multiple examples of it in action—just look at Acts 8:16, 10:48, 11:14, 16:15 and 33, and 18:8, plus 1 Corinthians 1:16.\n\nSo, for early Christians, “baptism” would have naturally meant water baptism. It was the norm. Paul wouldn’t have needed to tack on the word “water” every time. Just like today—if someone says he got baptized, you assume he means with water. There’s no confusion.\n\nAnd let’s be real—Paul is describing a powerful transformation here: dying and rising with Christ. That’s a pretty dramatic image, and what better way to symbolize that than through a ritual washing? Ritual washing with water fits the theological message perfectly. Take away the washing, and you lose a lot of the meaning.\n\nNow, Baker might respond by saying, “Well, Paul must be referring to something else besides water baptism because baptism is just a symbol of our union with Christ—it doesn’t actually do anything.” But that’s begging the question. In other words, you can’t argue that Romans 6:3-4 doesn’t support salvation by baptism just because you already believe that baptism doesn’t save. That’s the very thing we’re trying to figure out.\n\nBaker may also counter and say that I’m misunderstanding his argument, thinking he’s arguing that Paul should have merely mentioned the term “water.” But the next few lines specify how Paul would have used “water” as a modifier if he envisioned water baptism. Baker writes (emphasis added),\n\nConsequently, the Apostle would have written Romans 6:3-4, if water baptism were the productive means of salvation and union with Jesus Christ, to read: “As many of us were immersed (baptized) into water in Christ were immersed into water into his death. Therefore we are buried with him by immersing in water into his death.\n\nBaker assumes that if Paul were talking about water baptism, Paul should have said we’re baptized into water. But that would be strange, since Paul would be saying the ritual act of water baptism unites us to water itself, which makes no sense.\n\nMoreover, this detracts from what Paul actually says: “We baptized into Christ.” Spiritual union with Christ is the result of the baptism that Paul speaks about. This fits perfectly with the sacramental reading of the text. Water is just the medium through which this union with Christ takes becomes a reality.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 103
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "5. Baptism · Titus 3:5 (page entry 5; the dossier reads it with CEC 1215)",
+   "primary": "Titus 3:5 ",
+   "entries": [
+    5
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "Titus",
+     "chapter": 3,
+     "from": 5,
+     "to": 5
+    }
+   ],
+   "line": 121,
+   "arguments": [
+    {
+     "title": "«The washing of regeneration» is baptism, and it is God's work, not ours",
+     "quotes": [
+      {
+       "key": "290eef58ad05",
+       "speaker": "Joe Heschmeyer",
+       "work": "Does Baptism Save Us?",
+       "outlet": "Shameless Popery",
+       "date": "14 de noviembre de 2024",
+       "dateParts": {
+        "year": 2024,
+        "month": 11,
+        "day": 14
+       },
+       "locator": "4 párrafos: del párrafo que empieza «I’m going to skip over verse three and four…» al que termina «…way and by night in a pillar of fire.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/does-baptism-save-us",
+       "text": "I’m going to skip over verse three and four because we’re going to get back to them and jump all the way down to verse five where St. Paul says, for if we have been united with him in a death like his, we shall certainly be united with him in a resurrection like his. So it seems really important self vally that we die with Christ so we can rise to resurrected life with Christ. So we should be asking according to the theology of St. Paul, how do we do that? Is that something we only achieve by faith alone in the Protestant conception of it? And the answer to that is not at all. Let’s now plug in verses three and four. Paul says, do you not know that all of us who’ve been baptized into Christ Jesus were baptized into his death? We were buried therefore with him by baptism into death so that as Christ was raised from the dead, by the glory of the Father, we too might walk in newness of life.\n\nSo notice according to St. Paul, we enter the death and resurrection of Christ, how well through baptism pretty explicitly. And that’s how we begin to walk in newness of life. That sounds pretty regenerative. That sounds like something that’s happened. That is an actual change. We might even say ontologically. So that’s just Romans six, but it’s not alone. In Colossians chapter two, St. Paul reminds the Colossians in him also, you were circumcised with a circumcision made without hands by putting off the body of flesh in the circumcision of Christ. So what does the circumcision of Christ look like? He says, and you were buried with him in baptism in which you were also raised with him through faith in the working of God who raised him from the dead. So our entrance into the death and resurrection of Christ is through what? Well through baptism. Similarly, in Titus chapter three, he says that God saved us not because of deeds done by us in righteousness, right?\n\nIt’s not work salvation. But in virtue of his own mercy by the washing of regeneration and renewal in the Holy Spirit. Notice this because it is huge. He’s saying it’s not by works in the sense that Paul means it. It’s by baptism, the washing of rebirth or regeneration and in the Holy Spirit that if you just read this without the blinders, it becomes pretty clear. Okay? Yeah, that makes sense. That if Paul thinks that we enter the death and resurrection of Christ through baptism, as he repeatedly says, this would be the beginning of our life of salvation, that this does save us and this is how we enter into this divine life with Christ. And so that’s how he has saved us, not because of any deeds we’ve done, but through baptism. Okay, I want to pivot now from St. Paul’s theology going all the way back to the Old Testament.\n\nI know I’ve talked about the Old Testament somewhat with Ezekiel and somewhat with Noah’s Ark as well. But I want to look at a few other passages that are really important beginning. This is actually going to be St. Paul’s the pivot point here, beginning with the partying of the Red Sea because one of the things Paul says in one Corinthians 10 is that he wants us to know that our fathers were all under the cloud and all passed through the sea and all were baptized into Moses in the cloud and in the sea. Okay, notice again, you got two ingredients. You got water and you’ve got cloud. Now, what is this about? Well, it’s clearly about baptism in some sense. He’s clearly understanding the parting of the Red Sea using the motif of baptism. What does he mean by this? Let’s look at what he’s talking about by going back to Exodus 13 and 14 and Exodus 13 we’re told that the Lord went before the Israelites by day in a pillar of cloud to lead them along the way and by night in a pillar of fire.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 124
+      },
+      {
+       "key": "f94bab8e144d",
+       "speaker": "Jimmy Akin",
+       "work": "Baptism and Salvation",
+       "outlet": "A Daily Defense, catholic.com",
+       "date": "20 de enero de 2023",
+       "dateParts": {
+        "year": 2023,
+        "month": 1,
+        "day": 20
+       },
+       "locator": "3 párrafos: del párrafo que empieza «The New Testament links baptism to salvation. Baptism is…» al que termina «…baptized through no fault of their own (CCC 1257–61).»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/ddp/baptism-and-salvation-2",
+       "text": "The New Testament links baptism to salvation. Baptism is not just a ritual. It communicates God’s graces, such as the forgiveness of sins and the gift of the Holy Spirit. Thus Peter told the crowd on the day of Pentecost: “Repent, and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins; and you shall receive the gift of the Holy Spirit” (Acts 2:38). Similarly, when he was converted to the Faith, Paul was told: “Rise and be baptized, and wash away your sins, calling on his name” (Acts 22:16). In his letters, Peter explicitly connected baptism with salvation. Comparing baptism to how eight people were saved in Noah’s Ark, he writes: “Baptism, which corresponds to this, now saves you, not as a removal of dirt from the body but as an appeal to God for a clear conscience, through the resurrection of Jesus Christ” (1 Pet. 3:21). Baptism does not save because it makes us physically cleaner, he says. Rather it “now saves you” because it involves “an appeal to God for a clear conscience,” which is granted to us “through the resurrection of Jesus Christ.” The New Testament also indicates that baptism is the means by which we are regenerated or “born again.” Jesus taught: “Truly, truly, I say to you, unless one is born anew, he cannot see the kingdom of God. . . . Unless one is born of water and the Spirit, he cannot enter the kingdom of God” (John 3:3, 5). Paul agrees, saying that “he saved us, not because of deeds done by us in righteousness, but in virtue of his own mercy, by the washing of regeneration and renewal in the Holy Spirit” (Titus 3:5). Baptism thus places us in the state of salvation.\n\nTIP\n\nBaptism is a normative necessity but not an absolute one. To deliberately refuse baptism is to refuse salvation on the terms God offers it, but God can save those who are not baptized through no fault of their own (CCC 1257–61).",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 130
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "6. Baptism · Gal 3:27 (page entry 6; the dossier reads it with CEC 1243 and Trent)",
+   "primary": "Gal 3:27 ",
+   "entries": [
+    6
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "Gal",
+     "chapter": 3,
+     "from": 27,
+     "to": 27
+    }
+   ],
+   "line": 139,
+   "arguments": [
+    {
+     "title": "«Baptized into Christ … put on Christ»: baptism is actually doing something",
+     "quotes": [
+      {
+       "key": "5a4559ea2933",
+       "speaker": "Joe Heschmeyer",
+       "work": "Does Baptism Save Us?",
+       "outlet": "Shameless Popery",
+       "date": "14 de noviembre de 2024",
+       "dateParts": {
+        "year": 2024,
+        "month": 11,
+        "day": 14
+       },
+       "locator": "5 párrafos: del párrafo que empieza «It is trusting in God and obeying which the…» al que termina «…just a one and done thing in the past.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/does-baptism-save-us",
+       "text": "It is trusting in God and obeying which the devil doesn’t do. And that’s not just the first paragraph of Romans one, it’s also the last paragraph of Romans 16, the very last. So it’s the beginning and the end of the epistle to the Romans. St. Paul reiterates that it’s now disclosed and through the prophetic writings is made known to all nations according to the command of the eternal God, to bring about the obedience of faith. So faith in the biblical sense in both Paul and James’s usage is something obedient and something active. So go back to that second warning sign I had that this is based on the idea that baptism can’t do anything. It’s not allowed to do anything for salvation because it’s a work not biblically speaking, it’s an appeal for help and faith can do something for salvation because it’s merely passive.\n\nAgain, not biblically faith in the biblical sense is active and obedient. Now, we can apply all of this to baptism directly. Remember, my complaint after all is there’s a lot of talk about what baptism can and can’t do without looking at the passages, actually talking about baptism. So wouldn’t it be great if St. Paul in the midst of talking about faith and works also mentioned the role of baptism? And fortunately he does. In Galatians chapter three, he writes that the law was our custodian. Pedago, I believe is a Greek word there. It’s like a teaching slave, like a rich family would have a slave who was in charge of teaching their kids. And the idea was you had to obey as like a babysitter you had to obey until you grew up. So that’s what’s meant there by custodian. So the law was our custodian until Christ came that we might be justified by faith, but now that faith has come, we are no longer under a custodian for in Christ Jesus.\n\nYou’re all sons of God through faith. And if it stopped there, you might say, okay, I don’t see any room for baptism there, but it doesn’t stop there. The very next verse says, for as many as you as were baptized Christ have put on Christ. So how do we receive Christ Jesus through faith? Well, through baptism. That’s what Paul says. He doesn’t seem to think well if baptism then not faith. He views by faith through baptism. He’s showing you there that we’ve put on Christ, not simply through belief, but specifically as many of us as we’re baptized into Christ have put on Christ that baptism is actually doing something. And what it’s doing here is it’s us putting on Christ. Alright, so I would suggest that a good question to ask someone who has these theological blinders on is when were you saved? And I’ve heard different answers to this.\n\nYou can imagine any number of different answers. It could be a pivotal moment in your life. It could be when you got baptized. It could be when you prayed the sinner’s prayer. It could be any number of things. The one answer I’ve never heard in all my years asking this question, I’ve never heard anyone say, I got saved on Good Friday that the sufficiency of Christ’s death on the cross didn’t mean that I was saved in 33 ad there still had to be something in my life in which what happened that the work Christ has done had to be applied into my life in some way. That application doesn’t say, Jesus, your work wasn’t enough and it would be outrageous to accuse someone of saying that since Catholics, Protestants, evangelicals reformed, whoever you are, you’ve got to recognize that Christ’s work on good Friday needs to be applied in your life.\n\nAnd that by the way, is the biblical way of speaking about it and the biblical way of speaking about being saved. To give just one example because again, this kind of a rabbit trail, I’m not going to go all the way down it. I’m going to peek that way. St. Paul writing to Timothy says, take heed to yourself and to your teaching. Hold to that for by so doing, you will save both yourself and your heroes. Now notice St. Paul seems totally content with the idea that you might have something to do related to your own salvation. I don’t know another way of reading the phrase, save yourself that doesn’t involve you having some kind of role somewhere in the process. But moreover, notice that in Paul’s conception, he’s running the Timothy who already is a Christian. Salvation isn’t just a one and done thing in the past.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 142
+      }
+     ]
+    },
+    {
+     "title": "Argument B (added by B5) · Paul names baptism, not faith alone, as the way one puts on Christ (Gal 3:26–28); circumcision gave way to baptism (Col 2)",
+     "quotes": [
+      {
+       "key": "e1fdf777a772",
+       "speaker": "Trent Horn",
+       "work": "Answering “Servus Christi” on Salvation by Faith Alone",
+       "outlet": "The Counsel of Trent",
+       "date": "30 de julio de 2020",
+       "dateParts": {
+        "year": 2020,
+        "month": 7,
+        "day": 30
+       },
+       "locator": "5 párrafos: del párrafo que empieza «Then first, then Peter has a false Jesus. He…» al que termina «…with actual water, not just a metaphor about water.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/cot/answering-servus-christi-on-salvation-by-faith-alone",
+       "text": "Then first, then Peter has a false Jesus. He says baptism now saves you, in First Peter 3:21. But is it the case that Paul is not talking about baptism in these verses. That Paul just sees baptism as a mere outward confirmation of a salvafic act that already took place? No. Let’s go to what Paul actually said here. First what he says in Galatians 3:26 through 28, remember what I talked about here, what Paul’s big concern is about, is not about believing and doing good deeds to get to God, it’s you got to be a good Jew to be a good Christian. So, it was Paul saying here, “Now that faith has come, we are no longer under a custodian,” Paidagogos, the Old Testament law, “For in Christ Jesus you are all sons of God through faith,” Don’t got to be a good Jew to be a good Christian, “And how do you enter into,” Remember Colossians chapter two says that it is baptism which is replaced the sign of circumcision.\n\nSo, what is the sign? What is that which brings you into the New Covenant? So that we all can be sons of God. You don’t have to be circumcised, what do you do? “For as many of you as you were baptized into Christ, have put on Christ.” So, here, if it was just faith, now that faith has come we are no longer under a custodian, for in Christ Jesus you are all sons of God through faith, for as many of you as you were… If faith was issue Paul could just say, “For as many of you believed in Christ have put on Christ.” He could have just said it right there.\n\nWhy does it say baptism? Because baptism is where we put on Christ, so that there is neither Jew nor Greek. You don’t have these divisions that were created by the signs of the Old Covenant like circumcision or the dietary laws, or things like that. And we know that Paul means this because is it clearly driven home in Romans chapter six. Roman six Paul says, “Do you not know that all of us who have been baptized into Christ Jesus were baptized into his death. We’re buried therefore with him by baptism into death, so that as Christ was raised from the dead by the glory of the father, we too might walk in newness of life.”\n\nDouglas Moo who is a Protestant theologian at I think Wheaten, Wheaten College. He says a few scholars have denied any reference to water baptism here. And Josh would be a person who would be in that camp. Arguing that baptize means immerse in a metaphorical sense, or that Paul refers to baptism in the spirit, or that he uses baptize as a metaphor for incorporation into the body of Christ. But without discounting the possibility of allusions to one or more of these ideas, a reference to water baptism is primary.\n\nSo, even Protestant scholars who examine what Paul is saying here in Roman six, it’s very clear. He’s not talking about baptism as a mere metaphor to immersing yourself in Christ, just believing in him. You’re actually immersed in water, it is through water that we are united to Christ in his death, because water, think about, go back to First Peter Three, water is a perfect typological symbol for our salvation, because it cleanses. Water cleanses, it removes sin. But water can kill. Water can drown people. It drowned the people in Noah’s flood. So, water kills our old self. We die to Christ. The old self is drowned, and the new self then rises out from there, united to Christ. And that makes sense with actual water, not just a metaphor about water.",
+       "long": false,
+       "tags": [
+        "verified: page",
+        "long-form: trim before public release"
+       ],
+       "line": 152
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "9. Baptism · the household baptisms: Acts 16:15, 16:33, 18:8; 1 Cor 1:16 (page entry 9; the dossier reads them with CEC 1252)",
+   "primary": "the household baptisms: Acts 16:15, 16:33, 18:8; 1 Cor 1:16 ",
+   "entries": [
+    9
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "Acts",
+     "chapter": 16,
+     "from": 15,
+     "to": 15
+    },
+    {
+     "book": "Acts",
+     "chapter": 16,
+     "from": 33,
+     "to": 33
+    },
+    {
+     "book": "Acts",
+     "chapter": 18,
+     "from": 8,
+     "to": 8
+    },
+    {
+     "book": "1Cor",
+     "chapter": 1,
+     "from": 16,
+     "to": 16
+    }
+   ],
+   "line": 162,
+   "arguments": [
+    {
+     "title": "Whole households were baptized, which does not exclude the young",
+     "quotes": [
+      {
+       "key": "80548dadf152",
+       "speaker": "Jimmy Akin",
+       "work": "Infant Baptism and the New Testament",
+       "outlet": "A Daily Defense, catholic.com",
+       "date": "16 de marzo de 2023",
+       "dateParts": {
+        "year": 2023,
+        "month": 3,
+        "day": 16
+       },
+       "locator": "6 párrafos: del párrafo que empieza «The New Testament nowhere restricts baptism to people who…» al que termina «…been buried with him in baptism” (Col. 2:11–12, LEB).»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/ddp/infant-baptism-and-the-new-testament",
+       "text": "The New Testament nowhere restricts baptism to people who are above a certain age. In fact, we read of entire households being baptized, and there are indications that baptism was given to the children of believers, regardless of their age.\n\nThe New Testament never establishes an age requirement for baptism. Most of the people we see being baptized in its pages are adults, but this is because Christianity was a new movement, and most of its converts would naturally have been adults.\n\nThe New Testament also records entire households being baptized (Acts 10:47–11:17, 16:15, 30–34, 18:8, 1 Cor. 1:16). This establishes the principle that whole households were baptized at once, and it does not exclude young children. In fact, Luke records: “Now they were bring-ing even infants to [Jesus] that he might touch them; and when the disciples saw it, they rebuked them. But Jesus called them to him, saying, “Let the children come to me, and do not hinder them; for to such be- longs the kingdom of God. Truly, I say to you, whoever does not receive the kingdom of God like a child shall not enter it” (Luke 18:15–17).\n\nChristians, reflecting on this passage, recognized that if the kingdom belongs to children—“even infants”—then they are appropriate recipients of baptism, just like adults who are willing to receive the kingdom like a child and be baptized.\n\nFurther, the Jewish expectation at the time was that the children of believers would share in the blessings of the covenant along with their parents. Thus on Pentecost Peter told the crowds: “Repent, and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins; and you shall receive the gift of the Holy Spirit. For the promise is to you and to your children” (Acts 2:38–39).\n\nAs the Christian initiation ritual, baptism is the Christian equivalent of circumcision, the Jewish initiation ritual. Paul explicitly identifies baptism as “the circumcision of Christ,” telling his readers: “In [Jesus] also you were circumcised with a circumcision not made by hands, by the removal of the body of the flesh, by the circumcision of Christ, having been buried with him in baptism” (Col. 2:11–12, LEB).",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 165
+      }
+     ]
+    },
+    {
+     "title": "Argument B (added by B5) · Whole households were baptized (Lydia, the jailer, Stephanas); presumably children among them",
+     "quotes": [
+      {
+       "key": "39e0beae171e",
+       "speaker": "Karl Keating",
+       "work": "Should (or Can) Babies Be Baptized?",
+       "outlet": "Catholic Answers Magazine",
+       "date": "24 de agosto de 2015",
+       "dateParts": {
+        "year": 2015,
+        "month": 8,
+        "day": 24
+       },
+       "locator": "3 párrafos: del párrafo que empieza «Lydia, identified as “a seller of purple goods” and…» al que termina «…because of intellectual incapacity, why no mention of that?»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/online-edition/should-or-can-babies-be-baptized",
+       "text": "Lydia, identified as “a seller of purple goods” and “a worshiper of God,” is reported to have given “heed to what was said by Paul. And when she was baptized, with her household” (Acts 16:14-15).\n\nA few verses later comes the story of the imprisonment of Paul and Silas. After their miraculous release, their jailer asked them, “What must I do to be saved?” “And they spoke the word of the Lord to him and to all that were in his house . . . and he was baptized at once, with all his family” (Acts 16:30-33).\n\nIn his introductory remarks to the Corinthians, Paul remarked, “I did baptize also the household of Stephanas” (1 Cor. 1:16). In this and the other two instances entire families or households were baptized. Presumably these included children. If Paul had baptized only the adult members of the families, we would have expected the accounts to note, for instance, that Lydia “and her husband” were baptized, or the jailer “and his wife,” or Stephanas “and his brother,” or some such words. The terms “family” and “household” implied then, as they do today, at least two generations. If children indeed were included in these multiple baptisms, and if the youngest children were excluded because of intellectual incapacity, why no mention of that?",
+       "long": false,
+       "tags": [
+        "verified: page",
+        "long-form: trim before public release"
+       ],
+       "line": 176
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "10. Baptism · Mark 10:14 (page entry 10; the dossier reads it with CEC 1244 and 1261). The quotes below are on the parallel passages, Matt 19 and Luke 18:15–17.",
+   "primary": "Mark 10:14 ",
+   "entries": [
+    10
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "Mark",
+     "chapter": 10,
+     "from": 14,
+     "to": 14
+    }
+   ],
+   "line": 184,
+   "arguments": [
+    {
+     "title": "If the kingdom belongs to children, baptism, the door into it, is not to be denied to them",
+     "quotes": [
+      {
+       "key": "c6267af870b1",
+       "speaker": "Joe Heschmeyer",
+       "work": "The New Covenant Argument Against Baptist Theology",
+       "outlet": "Shameless Popery",
+       "date": "4 de agosto de 2026",
+       "dateParts": {
+        "year": 2026,
+        "month": 8,
+        "day": 4
+       },
+       "locator": "Ver la página enlazada",
+       "locatorFallback": true,
+       "url": "https://www.catholic.com/audio/sp/the-new-covenant-argument-against-baptist-theology",
+       "text": "that the covenant should be open to little kids because the kingdom is open to little kids. And baptism is the door in which we enter the church, enter the kingdom. And therefore, don’t deny it to infants and small children.",
+       "long": false,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 187
+      },
+      {
+       "key": "80548dadf152",
+       "speaker": "Jimmy Akin",
+       "work": "Infant Baptism and the New Testament",
+       "outlet": "A Daily Defense, catholic.com",
+       "date": "16 de marzo de 2023",
+       "dateParts": {
+        "year": 2023,
+        "month": 3,
+        "day": 16
+       },
+       "locator": "6 párrafos: del párrafo que empieza «The New Testament nowhere restricts baptism to people who…» al que termina «…been buried with him in baptism” (Col. 2:11–12, LEB).»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/ddp/infant-baptism-and-the-new-testament",
+       "text": "The New Testament nowhere restricts baptism to people who are above a certain age. In fact, we read of entire households being baptized, and there are indications that baptism was given to the children of believers, regardless of their age.\n\nThe New Testament never establishes an age requirement for baptism. Most of the people we see being baptized in its pages are adults, but this is because Christianity was a new movement, and most of its converts would naturally have been adults.\n\nThe New Testament also records entire households being baptized (Acts 10:47–11:17, 16:15, 30–34, 18:8, 1 Cor. 1:16). This establishes the principle that whole households were baptized at once, and it does not exclude young children. In fact, Luke records: “Now they were bring-ing even infants to [Jesus] that he might touch them; and when the disciples saw it, they rebuked them. But Jesus called them to him, saying, “Let the children come to me, and do not hinder them; for to such be- longs the kingdom of God. Truly, I say to you, whoever does not receive the kingdom of God like a child shall not enter it” (Luke 18:15–17).\n\nChristians, reflecting on this passage, recognized that if the kingdom belongs to children—“even infants”—then they are appropriate recipients of baptism, just like adults who are willing to receive the kingdom like a child and be baptized.\n\nFurther, the Jewish expectation at the time was that the children of believers would share in the blessings of the covenant along with their parents. Thus on Pentecost Peter told the crowds: “Repent, and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins; and you shall receive the gift of the Holy Spirit. For the promise is to you and to your children” (Acts 2:38–39).\n\nAs the Christian initiation ritual, baptism is the Christian equivalent of circumcision, the Jewish initiation ritual. Paul explicitly identifies baptism as “the circumcision of Christ,” telling his readers: “In [Jesus] also you were circumcised with a circumcision not made by hands, by the removal of the body of the flesh, by the circumcision of Christ, having been buried with him in baptism” (Col. 2:11–12, LEB).",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 188
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "11. Baptism · 1 Pet 3:20 (page entry 11; the dossier reads it with CEC 1219)",
+   "primary": "1 Pet 3:20 ",
+   "entries": [
+    11
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "1Pet",
+     "chapter": 3,
+     "from": 20,
+     "to": 20
+    }
+   ],
+   "line": 200,
+   "arguments": [
+    {
+     "title": "Peter's «baptism … now saves you» cannot be a mere symbol",
+     "quotes": [
+      {
+       "key": "10fdf78ff757",
+       "speaker": "Karlo Broussard",
+       "work": "Is Baptism Just a Symbol of Our Salvation?",
+       "outlet": "Catholic Answers Magazine",
+       "date": "13 de noviembre de 2020",
+       "dateParts": {
+        "year": 2020,
+        "month": 11,
+        "day": 13
+       },
+       "locator": "10 párrafos: del párrafo que empieza «Peter states in verse twenty-one the real purpose of…» al que termina «…the flood wouldn’t tell us anything significant about baptism.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/online-edition/is-baptism-just-a-symbol-of-our-salvation",
+       "text": "Peter states in verse twenty-one the real purpose of baptism is the “appeal” or “answer” of a good conscience toward God. The believer makes the pledge that He will now follow Jesus Christ as His obedient disciple united with the Lord in His death, burial, and resurrection. Baptism is an appropriate symbol of this reality for a public confession and act upon the one baptized openly declaring he or she now trusts in Jesus Christ for the forgiveness of sins with a pledge or an appeal to have a clear conscience now, cleansed from all guilt, condemnation, and accusation, that provides a good answer before God.\n\nSo, does this alternative reading of 1 Peter 3:20-21 undermine the common Christian belief, which is held by the Catholic Church, that baptism saves?\n\nPeter’s statement, “an appeal to God for a clear conscience” (v.21), which Baker interprets as a pledge we make to follow Jesus, is one of two statements that Peter intends to explain what he means when he says, “Baptism now saves you.” The other explanatory statement, which comes first and is set in opposition with the other, is “not as a removal of dirt from the body.” This creates a few problems for Baker’s interpretation that baptism doesn’t save us and is merely a symbol of our pledge to follow Jesus. First, such an interpretation would entail Peter’s explanatory statements directly contradicting his principal point: “Baptism now saves you.”\n\nIt’s unreasonable to think Peter would make such an explicit statement about the salvific efficacy of baptism and then immediately afterward deny such efficacy in his explanatory remarks. If Peter meant for the pledge to be what saves us, and not baptism, then the pledge or appeal would not have appeared in an explanatory statement. It would have been the principal statement rather than the one that clearly is: “Baptism now saves you.”\n\nSecond, Baker’s interpretation would have us think that the statement, “as an appeal to God for a clear conscience,” is meant to oppose the statement “Baptism now saves us.” But that’s not what Peter says. Peter contrasts the statement, “as an appeal to God for a clear conscience,” with the idea that baptism saves us “as a removal of dirt from the body.”\n\nThis leads us a third problem with Baker’s interpretation. Baker rightfully recognizes that Peter’s denial of an external cleansing implies the affirmation of an internal cleansing: a “cleansing of guilt,” as he puts it. Where Baker goes wrong is that he divorces this internal cleansing from baptism, saying that baptism is merely a symbol of the internal cleansing. And therein lies the problem. Peter doesn’t contrast external cleansing from internal cleansing in an abstract way independent of baptism. He denies baptism as “a removal of dirt from the body,” thereby implying that baptism is an internal cleansing.\n\nIf baptism were merely a symbol, as Baker asserts, then Peter’s contrast of external cleansing and internal cleansing, and how both relate to baptism, would make no sense. There would be no need for Peter to set up such a contrast if baptism didn’t entail an internal cleansing. In fact, there would be no need to associate cleansing with baptism at all.\n\nAnother problem with Baker’s interpretation, and the last that we’ll consider here, is that it doesn’t correspond with the logic of Peter’s comparison between baptism and the story of Noah and the flood. Peter introduces his comments about baptism by saying, “Baptism, which corresponds to this” (v.21). What is the “this” that Peter is referring to?\n\nIt’s the saving event of Noah and his family in the flood. As quoted above, the preceding verse, which tees up his comments about baptism, reads, “God’s patience waited in the days of Noah, during the building of the ark, in which a few, that is, eight persons, were saved through water” (v.20). It’s the salvation through water to which Peter sees baptism corresponding.\n\nNow, if Baker’s assertion that Peter intends baptism to be merely a symbol were true, then we’d lose the parallel with Noah and his family being saved through water. Having water as the only thing that connects baptism to the story of Noah and the flood wouldn’t tell us anything significant about baptism.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 203
+      },
+      {
+       "key": "9d7ca1b94427",
+       "speaker": "Joe Heschmeyer",
+       "work": "Does Baptism Save Us?",
+       "outlet": "Shameless Popery",
+       "date": "14 de noviembre de 2024",
+       "dateParts": {
+        "year": 2024,
+        "month": 11,
+        "day": 14
+       },
+       "locator": "4 párrafos: del párrafo que empieza «That’s pretty clear from context. If it wasn’t clear…» al que termina «…which is the breath of life from under heaven.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/does-baptism-save-us",
+       "text": "That’s pretty clear from context. If it wasn’t clear enough, you have it spelled out pretty explicitly in verses 46 to 47 talking about the early church, how day by day attending the temple together and breaking bread in their homes, they partook of food with glad and generous hearts praising God and having favor with all the people and the Lord added to their number day by day those who are being saved. So the added to their number is used in Acts two, first in verse 41 and then in verse 47 and in verse 47 is pretty explicitly about being added to the church, and verse 41 is also pretty obviously about being added to the church. So is baptism the doorway to the church according to Acts? Yes, likewise St. Paul, let’s go back to him. He says, for in Christ Jesus, you’re all sons of God through faith for as many as you as were baptized into Christ, have put on Christ.\n\nRemember that’s that passage we looked at before where he doesn’t think there’s a tension between saying this happens through faith and that it happens through baptism, but notice that our entry into Christ is through baptism according to Paul. So let’s go back to those four questions we started with. Does baptism cleanse us from sin? Yep. Are we born again in baptism? Yep. Do we receive the Holy Spirit in baptism? Yep. And is baptism or entrances under the people of God? Yeah. So it looks like the Ezekiel 36 promises are fulfilled in baptism pretty explicitly in the New Testament, but I want to go back to a line that I kind of glossed over. Remember when we were talking about Acts two in verse 47, the Lord added to their number day by day those who were being saved. That looks like it’s saying baptism isn’t just the doorway to the church, but it’s the doorway to salvation.\n\nThat baptism is the beginning of the process of being saved or that baptism saves you in some sense. And of course if the four promises that we saw through Ezekiel are true, that would certainly make sense and becoming the people of God and having God as our father and all of this, that sounds like what we mean by becoming saved. So we should ask, we’ll call it a bonus question, does baptism save you? And the obvious starting point is in first Peter chapter three, where we’re explicitly told yes in context. St. Peter is talking about God’s patience in the days of Noah during the building of the ark, in which a few that is eight persons were saved through water. And then he says, baptism, which corresponds to this now saves you. Now we already saw how does it save you? It’s an appeal to God for a clear conscience.\n\nIt’s not you just scrub really hard and you wash the sins away. It’s rather that in this posture of baptism, whether it’s you or a child, this is one of the reasons a child can be baptized. It’s not something you are doing for God, it’s something God is doing for you. And so anyone can receive that. It’s an appeal to God for a clear conscience. Notice Noah and his children were on the arc. You don’t have to have done all of the work of building the arc. Being on the arc is not what one would normally call a good work, but this is the motif that St. Peter uses to help us understand baptism. So let’s go back briefly to Genesis to see what that was all about. People have gotten really wicked. And so God says in Genesis six, verse 17 to 18, behold, I’ll bring a flood of waters upon the earth to destroy all flesh in which is the breath of life from under heaven.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 215
+      },
+      {
+       "key": "f94bab8e144d",
+       "speaker": "Jimmy Akin",
+       "work": "Baptism and Salvation",
+       "outlet": "A Daily Defense, catholic.com",
+       "date": "20 de enero de 2023",
+       "dateParts": {
+        "year": 2023,
+        "month": 1,
+        "day": 20
+       },
+       "locator": "3 párrafos: del párrafo que empieza «The New Testament links baptism to salvation. Baptism is…» al que termina «…baptized through no fault of their own (CCC 1257–61).»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/ddp/baptism-and-salvation-2",
+       "text": "The New Testament links baptism to salvation. Baptism is not just a ritual. It communicates God’s graces, such as the forgiveness of sins and the gift of the Holy Spirit. Thus Peter told the crowd on the day of Pentecost: “Repent, and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins; and you shall receive the gift of the Holy Spirit” (Acts 2:38). Similarly, when he was converted to the Faith, Paul was told: “Rise and be baptized, and wash away your sins, calling on his name” (Acts 22:16). In his letters, Peter explicitly connected baptism with salvation. Comparing baptism to how eight people were saved in Noah’s Ark, he writes: “Baptism, which corresponds to this, now saves you, not as a removal of dirt from the body but as an appeal to God for a clear conscience, through the resurrection of Jesus Christ” (1 Pet. 3:21). Baptism does not save because it makes us physically cleaner, he says. Rather it “now saves you” because it involves “an appeal to God for a clear conscience,” which is granted to us “through the resurrection of Jesus Christ.” The New Testament also indicates that baptism is the means by which we are regenerated or “born again.” Jesus taught: “Truly, truly, I say to you, unless one is born anew, he cannot see the kingdom of God. . . . Unless one is born of water and the Spirit, he cannot enter the kingdom of God” (John 3:3, 5). Paul agrees, saying that “he saved us, not because of deeds done by us in righteousness, but in virtue of his own mercy, by the washing of regeneration and renewal in the Holy Spirit” (Titus 3:5). Baptism thus places us in the state of salvation.\n\nTIP\n\nBaptism is a normative necessity but not an absolute one. To deliberately refuse baptism is to refuse salvation on the terms God offers it, but God can save those who are not baptized through no fault of their own (CCC 1257–61).",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 221
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "15. Baptism · John 19:34; Mark 10:38 (page entry 15; the dossier reads it with CEC 1225)",
+   "primary": "John 19:34; Mark 10:38 ",
+   "entries": [
+    15
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "John",
+     "chapter": 19,
+     "from": 34,
+     "to": 34
+    },
+    {
+     "book": "Mark",
+     "chapter": 10,
+     "from": 38,
+     "to": 38
+    }
+   ],
+   "line": 230,
+   "arguments": [
+    {
+     "title": "The blood and water from Christ's side were understood from the earliest days as baptism and the Eucharist",
+     "quotes": [
+      {
+       "key": "ab47b76ad2de",
+       "speaker": "Joe Heschmeyer",
+       "work": "What Protestants Get Wrong about the Temple Veil",
+       "outlet": "Shameless Popery",
+       "date": "16 de mayo de 2024",
+       "dateParts": {
+        "year": 2024,
+        "month": 5,
+        "day": 16
+       },
+       "locator": "8 párrafos: del párrafo que empieza «foreshadowing of the tearing of the true temple veil,…» al que termina «…participate in the body and blood of Christ? Well,»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/what-protestants-get-wrong-about-the-temple-veil",
+       "text": "foreshadowing of the tearing of the true temple veil, which is the flesh of Christ. That is where we find this ripping open the side of Christ. That is what it means to say, he’s opened up this living way for us through his flesh. That’s what the curtain is, his flesh. And goes on to say in the next half of the sentence, and since we have a great priest over the house of God, let us draw near with a true heart and full assurance of faith.\n\nwith our hearts sprinkled clean from an evil conscience and our bodies washed with pure water. So it’s true, we can now access the presence of God in a new way. We could pray it before, but we now experience his real presence in a deeper way. So note, this is going to make, I think, a lot of sense of what happens with the tearing of the temple veil. It needs to be read through this temple lens, which is incredibly Eucharistic, because it’s all centered around the body of Christ.\n\nand how we can now receive the body of Christ and enter into this real relation with God at a level we couldn’t before. But I don’t want to miss one other dimension as well. I’m going to mention this in passing, that if you read this, the temple as representative of Christ, then there’s a sort of sense in which we can see a divine tearing of garments. So when Jacob thinks that his son Joseph is dead, what does he do?\n\nhe wrings his garments, Genesis 37, 34. That’s an old Jewish expression of sorrow. You tear the garments. And so the garments of the temple, so to speak, are torn because the garments of Christ, his flesh, are torn. That is, I think, one of the dimensions going on here. But the more directly evidenced one, the one that’s more explicit in Hebrews 10, is that this is about the tearing of the side of Christ.\n\nIn John 19 verse 34, one of the soldiers pierces Jesus’ side with a spear and at once there comes out blood and water. So the new access we have to God is through the open side of Christ, the blood and water. What does that represent? Well, from the earliest days of Christianity, this was understood to represent baptism and the Eucharist. Like no one was denying that, yeah, blood and water literally came out, but they saw in that a symbol of the fact that it is through the healing waters and the healing blood of Christ.\n\nthat we’re able to enter into the communion with God in this deep and abiding sort of way. In 1 Corinthians 10, St. Paul points to this as Christian sacrifice. He says, and those of you who follow this channel know I love this passage, so I’m going to go to it one more time. He says, the cup of blessing which we bless, is it not a participation in the blood of Christ? The bread which we break, is it not a participation in the body of Christ? Well,\n\nHow do we as Christians participate in the body and blood of Christ? How do we enter into this in this deep way? Well, he uses the language of sacrifice. He says first, because there is one bread, or literally like one loaf, we who are many are one body for we all partake of the one bread. Somehow receiving the one loaf, the Eucharist, transforms us into the body of Christ. This is unlike the temple. Going to the temple didn’t make you the temple.\n\nBut going to the body of Christ makes you the body of Christ. That there is a way in which the body of Christ, the Eucharist, makes the body of Christ, the Church. And that’s mysterious and that is a much deeper conversation I’m going to just allude to and not explain adequately for another time. But how does that make sense with how we can receive and participate in the body and blood of Christ? Well,",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 233
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "16. Baptism · Matt 3:13–17 (page entry 16; the dossier reads it with CEC 1224)",
+   "primary": "Matt 3:13–17 ",
+   "entries": [
+    16
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "Matt",
+     "chapter": 3,
+     "from": 13,
+     "to": 17
+    }
+   ],
+   "line": 247,
+   "arguments": [
+    {
+     "title": "Jesus was baptized to sanctify the waters, and the Spirit and the water are one event",
+     "quotes": [
+      {
+       "key": "7a32522459a2",
+       "speaker": "Joe Heschmeyer",
+       "work": "If Jesus Is Sinless, Why Was He Baptized?",
+       "outlet": "Shameless Popery",
+       "date": "13 de enero de 2026",
+       "dateParts": {
+        "year": 2026,
+        "month": 1,
+        "day": 13
+       },
+       "locator": "4 párrafos: del párrafo que empieza «Once again, this gets things half right. Jesus is…» al que termina «…waters at the beginning of our first life biologically.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/if-jesus-is-sinless-why-was-he-baptized",
+       "text": "Once again, this gets things half right. Jesus is baptized to fulfill all righteousness. That is absolutely correct. That is in fact the answer that Jesus gives. In sproll is right to see this as an expression of Jesus’ radical obedience to his father. He’s even right in seeing that this perfect obedience involves the keeping of the Mosaic law perfectly. But here’s the thing, Jews were not required by the Mosaic law or anything else to get baptized. So the mistake that Sproul is making is a common one. He’s turning baptism from a sacrament into a mere ordinance. Treating baptism as a work of the law as if Christ came to fulfill the Mosaic law only to give us a new legal code. I’m going to return to that point at the end, but I don’t want to just critique the views that I think are inaccurate. What does Jesus get baptized for?\n\nWhat are the good reasons? As I’ve said, there are numerous good answers. And so even the inaccurate answers that we’ve seen so far are getting things half right. The problem is that they’re missing this bigger picture. For starters, Jesus is, as I said, submitting himself entirely to the Father’s will. That is certainly what it means to say that he’s fulfilling all righteousness, but he’s also inaugurating his public ministry. And also his baptism is in anticipation of his death. And also he’s allowing himself to be numbered amongst us sinners on his behalf he’s going to die. And also he’s being revealed as the lamb of God who takes away the sins of the world. And also he’s being revealed as the son of God in whom the Father is well pleased and also he’s prefiguring our own baptism. But there’s one reason that the early Christians return to over and over again, and that’s this, that he is baptized to sanctify the waters of baptism.\n\nThat is, Jesus isn’t just prefiguring Christian baptism, he’s making Christian baptism possible. Saint Maximist of Turin, who spread Christianity throughout Northern Italy in the 300s, put it like this. Someone might ask, why would a holy man desire baptism? Listen to the answer. Christ is baptized not to be made holy by the water, but to make the water holy, and by his cleansing to purify the waters which he touched. For the consecration of Christ involves a more significant consecration of the water. For when the savior is washed, all water for our baptism is made clean, purified at its source for the dispensing of baptismal grace to the people of future ages. Christ is the first to be baptized then so that Christians will follow after him with confidence. Jesus tells us that if we want to enter the kingdom of God, we need to be born again by water in the Holy Spirit.\n\nAnd the early Christians recognized in that a clear reference to Christian baptism. John has the waters of the Jordan and in the baptism of Jesus, we see them united with the Holy Spirit who descends upon Jesus like a dove. This is crucial for understanding Christian baptism. Protestants and Catholics alike typically agree. John’s baptism is just a symbolic one. John has water, but he has no pretense about it being anything more than just a symbol. But in Acts 19, those who received this symbolic baptism of John have to be rebaptized with Christian baptism in order to receive the Holy Spirit. And Christians from the 100s, people like origin, point to this as clear biblical evidence that Christian baptism actually does something. John’s baptism is inferior precisely because in Christian baptism, we are being born again spiritually through the bestilling of the Holy Spirit. Now this union of water in the spirit is prefigured all over the Bible, going all the way back to Genesis one in which the spirit of God was moving over the face of the waters at the beginning of our first life biologically.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 250
+      },
+      {
+       "key": "13e5edea5745",
+       "speaker": "Karlo Broussard",
+       "work": "Defending Rebirth by Water",
+       "outlet": "Catholic Answers Magazine",
+       "date": "29 de mayo de 2018",
+       "dateParts": {
+        "year": 2018,
+        "month": 5,
+        "day": 29
+       },
+       "locator": "15 párrafos: del párrafo que empieza «Protestants love to ask Catholics this question. Some Catholics…» al que termina «…associates the second birth with the “word of God.”»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/online-edition/defending-rebirth-by-water",
+       "text": "Protestants love to ask Catholics this question. Some Catholics fumble their words, not knowing how to respond. But those who study apologetics know to answer with a resounding “Yes,” since Jesus teaches that to be baptized is to be born again:\n\n“Truly, truly, I say to you, unless one is born anew, he cannot see the kingdom of God.” Nicodemus said to him, “How can a man be born when he is old? Can he enter a second time into his mother’s womb and be born?” Jesus answered, “Truly, truly, I say to you, unless one is born of water and the Spirit, he cannot enter the kingdom of God (John 3:3-5; emphasis added).\n\nBut some Protestants don’t see baptism in this passage. They arrive at different conclusions about what it means to be “born of water” and so they have a ready comeback to Catholics who cite the above verses. Let’s examine some of their alternative explanations and see if they carry any weight. One explanation sees the “water” as referring to the amniotic fluid of our mother’s womb, through which we passed during our biological birth. The second birth, so it’s argued, is being born only of the Spirit—when you confess Jesus as Lord.\n\nBut there are some problems with this interpretation. First, isn’t it kind of obvious? Why would Jesus need to stipulate that biological birth is a condition for heaven when all those hearing his message were already born? It seems pedantic.\n\nSecond, the context reveals that Jesus includes both spirit and water in the one act of the second birth. He doesn’t say, “You must be born of water, and then born of the Spirit.”\n\nScott Hahn and Curtis Mitch elaborate:\n\nThe syntax of this verse in Greek suggests that Jesus is speaking, not of two separate births, one by water and another by the Spirit, but of a single birth through the working of water and Spirit together.\n\nThis interpretation is further confirmed by the fact that the Spirit and water together constitute the one event of Jesus’ baptism, which John hints at in John 1:29-34 and Matthew chronicles in Matthew 3:13-17.\n\nTherefore, there is good reason to think that the water and spirit together constitute the second birth that Jesus speaks of in the born again discourse.\n\nA second problem is that “born of water” is not the typical language that Jesus or John uses for biological birth. Take Jesus, for example. In response to Nicodemus’s query about entering again into his mother’s womb (natural birth), Jesus says, “That which is born of the flesh is flesh, and that which is born of the Spirit is spirit” (John 3:6). Jesus’ language for natural birth is “born of flesh,” not “born of water.”\n\nJohn has his own way of referring to biological birth, and it also doesn’t involve water:\n\nBut to all who received him, who believed in his name, he gave power to become children of God; who were born, not of blood nor of the will of the flesh nor of the will of man, but of God (John 1:12-13; emphasis added).\n\nLike Jesus, John draws a distinction between the new birth of God and biological birth. But he doesn’t describe the latter with “water.” He speaks of it as “born of blood.”\n\nSince our Protestant friend only makes an assertion and doesn’t give us any reason to think that being “born of water” refers to biological birth, and since the immediate context of the passage in question provides language for biological birth that doesn’t involve water, it’s unreasonable to interpret the birth by water in John 3:3-5 as referring to our biological birth.\n\nAnother proposed explanation is that the “water” refers to the word of God. Proponents of this interpretation use 1 Peter 1:23 for support: “You have been born anew, not of perishable seed but of imperishable, through the living and abiding word of God.” Notice how Peter associates the second birth with the “word of God.”",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 256
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "17. Baptism · 1 Pet 2:5; 2:9 (page entry 17; the dossier reads them with CEC 1268)",
+   "primary": "1 Pet 2:5; 2:9 ",
+   "entries": [
+    17
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "1Pet",
+     "chapter": 2,
+     "from": 5,
+     "to": 5
+    },
+    {
+     "book": "1Pet",
+     "chapter": 2,
+     "from": 9,
+     "to": 9
+    }
+   ],
+   "line": 277,
+   "arguments": [
+    {
+     "title": "«Royal priesthood» is the priesthood all the baptized share in Christ's priesthood (Akin's Day 77 text adds that it does not exclude the ordained priesthood, in paragraphs not quoted here)",
+     "quotes": [
+      {
+       "key": "c7bf2a3384a2",
+       "speaker": "Jimmy Akin",
+       "work": "The Priesthood of All Believers",
+       "outlet": "A Daily Defense, catholic.com",
+       "date": "18 de marzo de 2023",
+       "dateParts": {
+        "year": 2023,
+        "month": 3,
+        "day": 18
+       },
+       "locator": "6 párrafos: del párrafo que empieza «Christians are priests, but Scripture indicates that there is…» al que termina «…Testament elders or presbyters gave English the word “priest.”»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/ddp/the-priesthood-of-all-believers",
+       "text": "Christians are priests, but Scripture indicates that there is also a special, ministerial priesthood.\n\nThe Church agrees that, by baptism, Christians have a share in Christ’s priesthood (CCC 1141, 1268, 1546; cf. 1174, 1322). This is commonly referred to as “the common priesthood of all the faithful” (CCC 1535). However, certain members of the faithful are ordained to a greater participation in Christ’s priesthood by the sacrament of holy orders. This is known as the ministerial priesthood (CCC 1547). Christ—the source of the common and ministerial priesthoods—is our high priest (CCC 1544). The Church thus understands there to be a threefold structure: the common priesthood of all, the ministerial priesthood of the ordained, and the high priesthood of Christ.\n\nThis is what we see in the New Testament. The common priesthood is referred to in 1 Peter 2:9. The ministerial priesthood is referred to in Romans 15:16, where Paul speaks of how he is a minister of Christ “in the priestly service of the gospel of God.” The ministerial priesthood is also referred to in passages that speak of ordained Church leaders known as “elders” (Acts 14:23; 1 Tim. 5:17; Titus 1:5; James 5:14). Finally, the high priesthood of Christ is referred to in passages such as Hebrews 3:1, 4:14–15, 5:5, 6:20, and 9:11.\n\nThis was also the pattern in the Old Testament. Peter was quoting from the Septuagint version of Exodus 19:6, where God told the Israelites that, if they kept his covenant, they would be to him “a royal priesthood and a holy nation” (Greek, basileion hierateuma kai ethnos hagion). There was thus a common priesthood of the Israelites, but that did not stop God from also appointing a ministerial priesthood from the sons of Aaron (Exod. 28:1), with Aaron as the high priest (Ezra 7:5). Rather than undermining the idea of a ministerial priesthood, Peter’s citation of Exodus supports it by invoking for the Church the same priestly concepts that applied to Israel.\n\nTIP\n\nIt is hard to object to Catholics calling their ministers “priests” since this term is derived from the Greek word presbuteros (“elder, presbyter”). The New Testament elders or presbyters gave English the word “priest.”",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 280
+      },
+      {
+       "key": "1a75fa409743",
+       "speaker": "Joe Heschmeyer",
+       "work": "Vlad Savchuk's 10 Catholic Distortions REBUTTED",
+       "outlet": "Shameless Popery",
+       "date": "19 de junio de 2025",
+       "dateParts": {
+        "year": 2025,
+        "month": 6,
+        "day": 19
+       },
+       "locator": "4 párrafos: del párrafo que empieza «The catechism talks about the priesthood of all believers.…» al que termina «…you all like wheat, but I’ve prayed for you.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/vlad-savchuks-10-catholic-distortions-rebutted",
+       "text": "The catechism talks about the priesthood of all believers. In paragraph 1268 by baptism, we share in the priesthood of Christ says, and it goes on to say baptism gives a share in the common priesthood of all believers. So if you think that’s a takedown of Catholicism, and you could literally just quote the catechism, say, aha, what about the priesthood of all believers? And the Catholic church is like, yep, yeah, yeah, we believe in that. Maybe you haven’t found some important difference between Catholicism and the thing you’re calling Christianity. The real thing that’s happening here is like many Protestants, there’s this idea that if there’s a priesthood of all believers, therefore there must not be holy orders. And this is Pastor Vlad’s argument, and this argument is so demonstrably untrue that I think I can explain it pretty shortly here. The passage that he and everyone who makes this argument looks to is first Peter chapter two, verse nine, where St.\n\nPeter reminds us, you are a chosen race, a royal priesthood, a holy nation, God’s own people. So all of us were chosen race a royal priesthood, a holy nation, God’s own people if we’ve been incorporated through baptism into the church. That’s true of all of us. And so the argument goes, aha. Well, therefore there must not be ordained priests. That conclusion pretty obviously doesn’t follow, but just in case that wasn’t clear, a lot of people don’t seem to realize that Peter is quoting from Exodus here. This is a near quotation, maybe a paraphrase of Exodus 19, where God says, now, therefore, if you obey my voice and keep my covenant, you shall be my own possession among all peoples, for all the earth is mine and you shall be to me a kingdom of priests in a holy nation. So the proclamation of being a nation of priests and being called in that way, yeah, that’s something that was promised in the Old Testament.\n\nDid that mean there were no Old Testament priests? Have you read the Old Testament? Of course there were. So it’s possible to both believe in a certain kind of priesthood of all believers and a special kind of priesthood of those in authority. Now, pastor Vlad is going to argue that there can’t be this kind of authority over the laity. What Bible is he reading? I don’t just mean Old Testament, I mean New Testament as well, because that’s not biblical. That might be like American. Nobody’s in charge of us, no kings, whatever. That’s not Christian. It’s not the kingdom of God at all. The kingdom of God has authority, not just Christ as king, but he’s given authority that he shares with the leaders of the church. And he says this at the Last Supper in Luke 22, when the disciples are arguing over greatness, he doesn’t deny leadership.\n\nHe says, let the greatest among you become is the youngest and the leader is one who serves. So there’s going to be a leader, and they’re going to have to be like Jesus, who’s among us as one who serves among them as one who serves. He goes on in the next verse to say to the 12, you are those who continued with me in my trials as my father appointed a kingdom for me. So do I appoint for you? So he’s sharing kingly authority, not with everybody, but with the 12, so that you may eat and drink at my table in my kingdom and sit on thrones judging the 12 tribes of Israel. Then he singles out one of the 12 and tells him that he’s going to have the task of carrying even for the other 11, saying, Simon, Simon saying demanded to have you, that he might have you all like wheat, but I’ve prayed for you.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 288
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "7. Baptism · 1 Cor 6:11; 12:13 (page entry 7) (round 2, session B2)",
+   "primary": "1 Cor 6:11; 12:13 ",
+   "entries": [
+    7
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "1Cor",
+     "chapter": 6,
+     "from": 11,
+     "to": 11
+    },
+    {
+     "book": "1Cor",
+     "chapter": 12,
+     "from": 13,
+     "to": 13
+    }
+   ],
+   "line": 302,
+   "arguments": [
+    {
+     "title": "«by one spirit, we were all baptized into one body» (1 Cor 12:13): Heschmeyer says the Catholic Church recognizes baptism by Orthodox and Protestants «so long as they’re done in the proper way and with the proper intention»",
+     "quotes": [
+      {
+       "key": "f8fd2dfaddb3",
+       "speaker": "Joe Heschmeyer",
+       "work": "The Critical Disagreements That Sparked The SSPX Schism...",
+       "outlet": "Shameless Popery",
+       "date": "21 de julio de 2026",
+       "dateParts": {
+        "year": 2026,
+        "month": 7,
+        "day": 21
+       },
+       "locator": "4 párrafos: del párrafo que empieza «And you’ll see the same argument often being made,…» al que termina «…meant to just be like, okay, you’re good enough.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/the-critical-disagreements-that-sparked-the-sspx-schism",
+       "text": "And you’ll see the same argument often being made, but as a negative by some traditional Catholics. The term often appears in scare quotes in SSPX writings, including those of Lephev himself, or we’ll find the use of the phrase so – called separated brethren. But whether you’re a Protestant who thinks this was a good novelty or a traditionalist who thinks it’s a bad novelty, the truth is that it wasn’t a novelty at all. Terms like separated brethren to describe heretics and schismatics are older than Vatican II. They’re even older than Protestantism. And they’re based upon the theology of baptism. So let me explain. The 1917 Code of Canon law is they were very explicit. By baptism, a man has constituted a person in the church of Christ. When Popeis the 12th appeared to contradict that point in Mystici Corporate Christi, he quickly clarified in Mediatra Day that by the waters of baptism, as by common right, Christians are made members of the mystical body of Christ, the priest.\n\nThey’re made members even in the priesthood of Christ. That’s Christian doctrine. It’s rooted in the words of St. Paul that by one spirit, we were all baptized into one body. Jews are Greeks, slaves are free and all were made to drink of one spirit. So the Catholic church recognizes the validity of Orthodox and Protestant baptism so long as they’re done in the proper way and with the proper intention. The Council of Florence is even explicit that pagans and heretics validly baptize. And so there’s this sense in which we regard even baptized heretics and schismatics as our brothers. This was a point that the church father stressed. St. Optatus of Molevas rebuked the Donates schismatics by saying, “You will not have peace with us that is with your brothers. For you cannot escape being our brothers. Yo, whom together with us, one mother church, is born from the same bowels of her mysteries and whom God the Father has received in the same manner as sons of adoption.” And so we find Pope Lou the XII speaking of the Orthodox back in the late 1800s as our dissident brethren and expressing his hope that they may seek out more readily the embrace of their mother, the church.\n\nAlready then the Orthodox are understood in some sense as being brothers and true sons of Holy Mother Church. In the next year, he speaks the same way about the Anglicans. He ends an encyclical with a prayer. Oh, sorrowful mother intercede for our separated brethren. With us in the one true fold they may be united to the Supreme Shepherd, the vicar of thy son. In 1928, Pope Pius XI wrote an encyclical called mortalium animos, which I’m going to look at more closely because in it, he condemns some bad forms of ecumenism. We have a sort of unity of the expense of truth. But even in that document, he talks about how these separated children should return to the Apostolic Sea. And he speaks of our children both as those who belong to the Catholic community, but also those who are separated from us. So it is perfectly traditional and doctrinally Orthodox to recognize that Orthodox and Protestants are united to the church in one way through the sacrament of baptism.\n\nAnd much more than that in the case of the Orthodox, but that this union is not yet complete. So is it messy to talk about full communion and elements of communion? Sure. But that’s just a reflection of the messiness of the situation. And frankly, the SSPX should be able to relate. Their own relationship to the Catholic church is similarly kind of famously messy, but the underlying doctrine of the church is the same. On the one hand, Vatican II explicitly reams an Orientalium Ecclesiorum that the holy Catholic church, which is the mystical body of Christ, made up of the faithful who are organically united in the Holy Spirit by the same faith, the same sacraments and the same government. On the other hand, in Lumenginsium, which was released the same day, the council also recognizes that many elements of sanctification and of truth are found outside of this visible structure of the church, but that those elements aren’t meant to just be like, okay, you’re good enough.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 305
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "8. Baptism · Rom 5:12 (page entry 8) (round 2, session B2)",
+   "primary": "Rom 5:12 ",
+   "entries": [
+    8
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "Rom",
+     "chapter": 5,
+     "from": 12,
+     "to": 12
+    }
+   ],
+   "line": 315,
+   "arguments": [
+    {
+     "title": "The Magisterium reads Rom 5:12 as original sin: Trent’s decree appeals to it (Broussard); Akin lists it among the passages whose sense Trent partially defined (his lead-in is in the count line, not in the quoted line)",
+     "quotes": [
+      {
+       "key": "6ef88c9c051e",
+       "speaker": "Karlo Broussard",
+       "work": "Using the Bible to Explain Original Sin",
+       "outlet": "Catholic Answers Magazine",
+       "date": "10 de enero de 2023",
+       "dateParts": {
+        "year": 2023,
+        "month": 1,
+        "day": 10
+       },
+       "locator": "13 párrafos: del párrafo que empieza «Original sin is a topic that divides Christians. But…» al que termina «…can reasonably infer that Aristotle is a corporeal being.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/online-edition/using-the-bible-to-explain-original-sin",
+       "text": "Original sin is a topic that divides Christians. But the Church has strong biblical grounds to defend the doctrine.\n\nOriginal sin is one of those topics that divide Christians. Those of us who believe in it profess that it’s essential to Jesus’ saving mission. It’s the reason why we need to be “born again” to “see the kingdom of God” (John 3:3). Those who reject original sin might say it’s not fair for God to punish us for something we didn’t do—or they might just call it “stupid,” or refuse to believe it because they don’t see it as part of God’s revelation.\n\nThe Council of Trent defined original sin as “the death of the soul.” The Catechism of the Catholic Church reaffirmed this definition (403) and added a key nuance: original sin is called sin “only in an analogical sense: it is a sin ‘contracted’ and not ‘committed’—a state and not an act” (404).\n\nThe biblical text that the Magisterium has appealed to as evidence for this belief is Romans 5:12: “Therefore as sin came into the world through one man and death through sin, and so death spread to all men because all men sinned.” The Council of Trent appeals to this verse in its Decree Concerning Original Sin. The Catechism of the Catholic Church appeals to it, too, along with Romans 5:18-19, in its teaching that original sin is a consequence of Adam’s sin for all of humanity (402). But where does the Magisterium get off interpreting Romans 5:12 as a reference to original sin?\n\nWe can start by making a simple either-or statement: Paul has to be talking about either personal sin or original sin. (Personal sin means the sins we commit ourselves, whether they’re venial or mortal.) Now, if we can show that it’s not personal sin, then it would follow that he’s talking about original sin.\n\nHow might we establish that Paul is not talking about personal sin?\n\nWell, consider this question: which members of the human race can’t possibly be guilty of personal sin? Clearly, one answer is infants. Another is the severely mentally handicapped. So if we can show that infants and the severely mentally handicapped must be numbered among the “all” who sinned, then it will follow that Paul is thinking of original sin.\n\nThe key for proving that infants and the severely mentally handicapped must be numbered among the “all” is the connection that Paul makes between death and sin: “death spread to all men because all men sinned.” Notice that Paul draws a parallel between the “all” that constitutes the group who “have sinned” and the “all” that constitutes the group to whom “death spread.” Moreover, Paul sees the death that extends to all as an effect of the sin that extends to all.\n\nDo infants and the severely mentally handicapped die? Yes.\n\nGiven the parallel between the two groups, it follows that infants and the mentally handicapped are included within the category of “all have sinned.” And if that’s the case, then Paul is not thinking of personal sin here; he’s thinking of original sin.\n\nNow, someone might counter, “If we say that whoever dies is included within the category of ‘all have sinned,’ then we must say that Jesus and Mary would have to be included there because they both died (or at least Jesus, if we want to say Mary didn’t die). But to say that Jesus and Mary are included in the “all have sinned” category is absurd.\n\nIn response, this would be true if and only if we didn’t have a source of knowledge other than Jesus’ and Mary’s humanity for knowing that they were exceptions to the rule.\n\nFor example, we can say it belongs to the nature of a human being as a corporeal being—a being with a mortal body—to die. So when I, knowing this, observe that Aristotle has died, I can reasonably infer that Aristotle is a corporeal being.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 318
+      },
+      {
+       "key": "3d69af27132a",
+       "speaker": "Jimmy Akin",
+       "work": "The Limits of Scripture Interpretation",
+       "outlet": "Catholic Answers Magazine",
+       "date": "1 de enero de 2001",
+       "dateParts": {
+        "year": 2001,
+        "month": 1,
+        "day": 1
+       },
+       "locator": "14 párrafos: del párrafo que empieza «The second criteria was that “the living tradition of…» al que termina «…any of the four factors circumscribing the interpreter’s liberty»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/magazine/print-edition/the-limits-of-scripture-interpretation",
+       "text": "The second criteria was that “the living tradition of the whole Church must be taken into account” when interpreting Scripture (ibid.). This states in a general way a limit that was more concretely expressed at Vatican I:\n\n“In matters of faith and morals, affecting the building up of Christian doctrine, that is to be held as the true sense of holy Scripture which holy mother the Church has held and holds, to whom it belongs to judge the true sense and interpretation of holy Scriptures. Therefore no one is allowed to interpret the same sacred Scripture contrary to this sense or contrary to the unanimous consent of the Fathers” (De Filius 2).\n\nThe “living tradition of the whole Church” referred to by Vatican II includes both of the items mentioned by Vatican II—the judgment of Church and that of the Fathers regarding the interpretation of Scripture. Both of these elements must not be violated when seeking to establish the meaning of Scripture.\n\nIn the first regard, the judgment of the Church’s magisterium must not be violated. As when evaluating ecclesiastical statements in general, the strength with which the Church’s judgment has been proposed must be taken into account. The highest form of Church approbation regarding the interpretation of a verse would be for the magisterium to infallibly define the sense of the verse—or a part of its sense. This has been done in a small number of cases.\n\nAs far as I have been able to document, only seven passages of Scripture have had their senses partially (not fully) defined by the extraordinary magisterium. These definitions were made by the Council of Trent:\n\n(1) The reference being “born of water and the Spirit” in John 3:5 does include the idea of baptism.\n\n(2–3) In telling the apostles “Do this [the Eucharist] in memory of me” in Luke 22:19 and 1 Corinthians 11:24, Jesus appointed the apostles priests.\n\n(4–5) In Matthew 18:18 and John 20:22–23, Jesus did confer a power on the apostles to forgive sins, and not everyone shares this power.\n\n(6) Romans 5:12 refers to the reality of original sin.\n\n(7) The presbyters referred to in James 5:14 are ordained and not simply elder members of the Christian community.\n\nIn the second regard—that the judgment of the Church Fathers must not be violated—again the standard set for violation is rather narrow. Only when the Fathers speak with “unanimous consent” is their interpretation mandated. When they do not speak with unanimity—as is the case in the great majority of verses—then there is liberty of interpretation.\n\nFinally, the third limiting criterion named by Vatican II was that the exegete must also take into account “the harmony which exists between elements of the faith” (DV 12), which the Catechism expresses by stating that the exegete must “be attentive to the analogy of faith. . . . [i.e.,] the coherence of the truths of faith among themselves and within the whole plan of revelation” (CCC 114). This means that Scripture cannot be interpreted in a way that contradicts what is theologically certain.\n\nIn addition to these definite boundaries to permissible biblical interpretations, there are also influences that should apply to the process of interpreting Scripture. If other books of Scripture probably—though not certainly—teach something, then that should influence the way a given book is read. If the magisterium leans toward but has not infallibly proposed a particular interpretation, that should have an influence. The same goes for the Church Fathers when they speak with something approaching but not yet at unanimity.\n\nThe liberty of the Scripture interpreter remains extensive. Taking due consideration of the factors that influence proper exegesis, the Catholic Bible interpreter has the liberty to adopt any interpretation of a passage that is not excluded with certainty by other passages of Scripture, by the judgment of the magisterium, by the Church Fathers, or by the analogy of faith. That is a great deal of liberty, as only a few interpretations will be excluded with certainty by any of the four factors circumscribing the interpreter’s liberty",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 333
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  },
+  {
+   "text": "13. Baptism · Eph 4:30; Eph 1:13–14; 2 Cor 1:21–22 (page entry 13) (round 2, session B2)",
+   "primary": "Eph 4:30; Eph 1:13–14; 2 Cor 1:21–22 ",
+   "entries": [
+    13
+   ],
+   "doctrine": "baptism",
+   "verses": [
+    {
+     "book": "Eph",
+     "chapter": 4,
+     "from": 30,
+     "to": 30
+    },
+    {
+     "book": "Eph",
+     "chapter": 1,
+     "from": 13,
+     "to": 14
+    },
+    {
+     "book": "2Cor",
+     "chapter": 1,
+     "from": 21,
+     "to": 22
+    }
+   ],
+   "line": 353,
+   "arguments": [
+    {
+     "title": "Baptism by Judas «sticks so to speak, it creates this indelible mark», while John’s symbolic baptism «has to be redone» (Heschmeyer, paraphrasing Augustine; none of the three verses is named)",
+     "quotes": [
+      {
+       "key": "c35c73d0fcc0",
+       "speaker": "Joe Heschmeyer",
+       "work": "SHOCKINGLY STRONG (and a lil cringe) Moments From the Alex O'Connor vs David Wood DEBATE",
+       "outlet": "Shameless Popery",
+       "date": "10 de abril de 2025",
+       "dateParts": {
+        "year": 2025,
+        "month": 4,
+        "day": 10
+       },
+       "locator": "4 párrafos: del párrafo que empieza «They can only declare sins forgiven because only God…» al que termina «…and we’re going to see that that’s not true.»",
+       "locatorFallback": false,
+       "url": "https://www.catholic.com/audio/sp/shockingly-strong-and-a-lil-cringe-moments-in-the-alex-oconnor-vs-david-wood-debate",
+       "text": "They can only declare sins forgiven because only God can forgive them. And they’re just denying Matthew nine, eight, that God has given divine authority to men, that there are men who operate with divine authority. When the priest says, this is my body, this is my blood. He doesn’t have to say, this is Christ’s body and this is Christ’s blood because he’s acting with divine authority. So much so that we refer to him as acting in the person of Christ. He’s speaking the words of Jesus through him. This notion of divine authority being given from the Father to the Son and from the Son to us is perfectly Christian. We want to agree with Alex on this. St. Paul famously says, it is no longer I who live but Christ who lives in me. So the Father sends the son, the son sends us, he also sends the spirit.\n\nSo some sense of that we have to hold onto. And so when we see, and I’m going to look at the sacraments particularly here as an example, but this isn’t just the sacraments. Anytime you’re doing good things, that’s only from God. God alone is good, but you can also be good not apart from God, but by God working through you, Christ living in you. So example here would be John the Baptist and Judas. Now, those are two starkly different figures. John the Baptist, obviously much holier than Judas, greatest of those born among women who aren’t part of the kingdom. He is never invited during his earthly life to join the church mysteriously. And Jesus instead chooses as part of the kingdom. And one of the apostles, Judas Iscariot, who is not great strikingly, when you read the New Testament, you’ll notice the people who are baptized by John have to get rebaptized.\n\nYou see this in Acts explicitly, but nobody has ever described as being rebaptized who was baptized by Judas. St. Augustine talks about this. His point is that you are not better than John, but the baptism given through you is better than that of John for the one is Christ, the other, John the Baptists. So whether it’s Paul or Peter or even Judas who baptizes it is Christ who baptizes. So as a result, Judas baptizes and it sticks so to speak, it creates this indelible mark. John does this symbolic baptism and it has to be redone. So he says, we don’t prefer Judas to John obviously, but we do prefer the baptism of Christ even when performed at the hands of Judas to the baptism of John the Baptist because his was just symbolic. So all that’s to say, if you have this framework that God delegates authority and that he sends people forth with truly divine power, then you can understand why the baptism that even someone as rascally as Judas Iscariot RAs feels like an understatement as wicked is Judases harriot, even a bad priest, a bad bishop, a bad pope, a bad apostle can baptize and it is still Christ working through that awful instrument because of the delegation of divine authority.\n\nThis is how this works. This is all rooted in this concept, and if you miss this, you miss a lot of the New Testament, okay? So far I agree with all that part with Alex O’Connor, but I think he gets a really, well, I don’t think I know he gets a major thing wrong. How then do we distinguish between the son being sent by the father and say the apostles or Christians more broadly being sent by the sun? What is different about those? And there’s an easy answer to that. I want to flag a thing that he gets wrong pretty repeatedly. He says Cathos because it means just as basically he’s going to argue it means that there has to be a unical relationship, that if X is cathos to Y, it’s just as y. They have to be identical, and that’s not true, and we’re going to see that that’s not true.",
+       "long": true,
+       "tags": [
+        "verified: page"
+       ],
+       "line": 356
+      }
+     ]
+    }
+   ],
+   "file": "apologists-catholic-baptism.md",
+   "fileDoctrine": "baptism"
+  }
+ ],
+ "issues": []
+}

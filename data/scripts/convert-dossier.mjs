@@ -3,6 +3,7 @@ import vm from "node:vm";
 import { WORK_DEFS } from "./dossier-works.mjs";
 import { FIELDS } from "./dossier-fields.mjs";
 import { readDossier } from "./dossier-md.mjs";
+import { applyPassagesLayer } from "./apologists-load.mjs";
 
 const ROOT = new URL("../../docs/research/doctrines", import.meta.url).pathname;
 const CONTENT = process.env.CONTENT_OUT ?? new URL("../../src/content", import.meta.url).pathname;
@@ -409,6 +410,8 @@ function guillemets(value) {
   return value;
 }
 
+const APOLOGIST_REPORTS = {};
+
 function buildPage(d) {
   const x = RAW[d];
   const fields = FIELDS[d];
@@ -471,7 +474,9 @@ function buildPage(d) {
     life: { intro: x.VIVE.intro.map((t) => prose(d, t)), items: x.VIVE.items.map((i) => ({ id: i.id, label: i.l, text: prose(d, i.d), sources: i.s.map((p) => srcRef(d, p)) })) },
     authority: { subtitle: fields.authoritySubtitle ?? "Qué significa, para la Iglesia católica, que una enseñanza sea dogma, doctrina definitiva, magisterio auténtico o disciplina.", grades, other: {} },
   };
-  return guillemets(page);
+  const layered = applyPassagesLayer(page, fields.topic);
+  APOLOGIST_REPORTS[d] = layered.report;
+  return guillemets(layered.page);
 }
 
 const pages = Object.fromEntries(DOCTRINES.map((d) => [d, buildPage(d)]));
@@ -561,4 +566,5 @@ for (const d of DOCTRINES) {
 
 const cnt = (a) => (Array.isArray(a) ? a.length : a);
 console.log(Object.entries(report).map(([k, v]) => `${k}: ${typeof v === "object" && !Array.isArray(v) ? JSON.stringify(v) : cnt(v)}`).join("\n"));
+console.log("apologists:", JSON.stringify(APOLOGIST_REPORTS));
 console.log("registry:", Object.keys(registry.works).length, "works,", Object.keys(registry.editions).length, "editions,", Object.keys(registry.citations).length, "citations,", Object.keys(registry.verses).length, "verses");

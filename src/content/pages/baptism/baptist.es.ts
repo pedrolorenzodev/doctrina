@@ -105,28 +105,697 @@ export const baptismBaptist = {
   scriptureSubtitle: "Los pasajes que los textos bautistas citan sobre el bautismo, y cómo los leen.",
   scripture: [
     {
-      refs: [
-        "Matt.3.13-Matt.3.17",
-        "Matt.26.26-Matt.26.30",
-        "Matt.28.19-Matt.28.20",
-        "Mark.1.9-Mark.1.11",
-        "Mark.14.22-Mark.14.26",
-        "Luke.3.21-Luke.3.22",
-        "Luke.22.19-Luke.22.20",
-        "John.3.23",
-        "Acts.2.41-Acts.2.42",
-        "Acts.8.35-Acts.8.39",
-        "Acts.16.30-Acts.16.33",
-        "Acts.20.7",
-        "Rom.6.3-Rom.6.5",
-        "1Cor.10.16",
-        "1Cor.10.21",
-        "1Cor.11.23-1Cor.11.29",
-        "Col.2.12",
-      ],
-      text: "Fe y Mensaje Bautistas imprime estos textos junto al artículo sobre el bautismo y la Cena, sin asignar versículos a cada cláusula (art. VII).",
+      refs: ["Matt.3.6"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Matt.3.11"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Matt.3.13-Matt.3.17"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Matt.3.16"],
+      text: "Segunda Confesión de Londres (1689), 29.4 nota (f) (1719 p. 117; 1677 p. 270): este versículo figura como nota al margen junto a la cláusula, en inglés, «Immersion, or dipping of the person in water, is necessary to the due administration of this ordinance.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Segunda Confesión de Londres (1689), 29.4 nota (h) (1688 p. 98): este versículo figura como nota al margen junto a la cláusula, en inglés, «Immersion, or Dipping of the Person in Water, is necessary to the due administration of this Ordinance.». Edición: A Confession of Faith (Londres: John Harris, 1688), págs. 96–98. Primera Confesión de Londres (1646), XL, p. 185 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar. Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar. Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Matt.26.26-Matt.26.30"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Matt.28.18-Matt.28.19"],
+      text: "Primera Confesión de Londres (1646), XXXIX–XL, p. 185: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 185.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Jesús exige que sus seguidores sean bautizados: el bautismo es el primer mandato que obedece un nuevo cristiano",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Matt.28.18-Matt.28.20"],
+      text: "Declaración de Principios de la Unión Bautista de Gran Bretaña, las tres cláusulas: este versículo figura como referencia de encuadre. Edición: texto oficial en línea. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Jesús exige que sus seguidores sean bautizados: el bautismo es el primer mandato que obedece un nuevo cristiano",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Matt.28.19-Matt.28.20"],
+      text: "Segunda Confesión de Londres (1689), 28.1 nota (a) (1719 p. 115): este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism and the Lords Supper are ordinances of positive, and soveraign institution; appointed by the Lord Jesus the only Law-giver, to be continued in his Church to the end of the world.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Segunda Confesión de Londres (1689), 29.3 nota (e) (1719 p. 117; 1677 p. 270): este versículo figura como nota al margen junto a la cláusula, en inglés, «The outward element to be used in this ordinance, is water, wherein the party is to be baptized, in the name of the Father, and of the Son, and of the Holy Spirit.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Segunda Confesión de Londres (1689), 28.1 nota (a) (1688 p. 96): este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism and the Lord's Supper, are Ordinances of positive and soveraign Institution, appointed by the Lord Jesus, the only Law-giver, to be continued in his Church to the end of the World.». Edición: A Confession of Faith (Londres: John Harris, 1688), págs. 96–98. Segunda Confesión de Londres (1689), 29.3 nota (g) (1688 p. 98): este versículo figura como nota al margen junto a la cláusula, en inglés, «The outward Element, to be used in this Ordinance, is Water, wherein the Party is to be baptized, in the Name of the Father, and of the Son, and of the Holy Spirit.». Edición: A Confession of Faith (Londres: John Harris, 1688), págs. 96–98. Confesión Estándar (1660), XI, p. 115: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 115. Catecismo Bautista (texto electrónico), P. 97–101: este versículo figura como respuestas del catecismo. Edición: texto electrónico (la numeración pertenece solo a esa transcripción). Lectura todavía sin verificar. Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar. Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Jesús exige que sus seguidores sean bautizados: el bautismo es el primer mandato que obedece un nuevo cristiano",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Matt.28.19"],
+      text: "Segunda Confesión de Londres (1689), 28.2 nota (b) (1719 p. 116): este versículo figura como nota al margen junto a la cláusula, en inglés, «These holy appointments are to be administered by those only, who are qualified and thereunto called according to the commission of Christ.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Segunda Confesión de Londres (1689), 28.2 nota (b) (1688 p. 96): este versículo figura como nota al margen junto a la cláusula, en inglés, «These holy appointments are to be administred by those only, who are qualified and thereunto called according to the Commission of Christ.». Edición: A Confession of Faith (Londres: John Harris, 1688), págs. 96–98. Credo Ortodoxo (1678), XXVIII, pp. 144–145: este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]». Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Jesús exige que sus seguidores sean bautizados: el bautismo es el primer mandato que obedece un nuevo cristiano",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Mark.1.4"],
+      text: "Segunda Confesión de Londres (1689), 29.1 nota (b) (1719 p. 116); nota (d) (1688 p. 97): este versículo figura como nota al margen junto a la cláusula, en inglés, «[…] of remission of sins; […]». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Mark.1.5"],
+      text: "Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Mark.1.9-Mark.1.11"],
+      text: "Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar. Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Mark.1.9-Mark.1.10"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145: este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]». Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911).",
+    },
+    {
+      refs: ["Mark.14.22-Mark.14.26"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Mark.16.16"],
+      text: "Segunda Confesión de Londres (1689), 29.2 nota (1688 p. 97; 1677): este versículo figura como nota al margen junto a la cláusula, en inglés, «Those who do actually profess repentance towards God, faith in, and obedience, to our Lord Jesus, are the only proper subjects of this ordinance.». Edición: A Confession of Faith (Londres: John Harris, 1688). Segunda Confesión de Londres (1689), 29.2 nota (d) (1719 p. 116): este versículo figura como nota al margen (variante de la lectura de 1688) junto a la cláusula, en inglés, «Those who do actually profess repentance towards God, faith in, and obedience, to our Lord Jesus, are the only proper subjects of this ordinance.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Primera Confesión de Londres (1646), XXXIX–XL, p. 185: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 185. Confesión Estándar (1660), XI, p. 115: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 115. Credo Ortodoxo (1678), XXVIII, pp. 144–145: este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]». Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911).",
+    },
+    {
+      refs: ["Luke.3.21-Luke.3.22"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Luke.22.19-Luke.22.20"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["John.1.2"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["John.1.8"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["John.1.31"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["John.3.22-John.3.23"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Juan 3:5, Hebreos 10:22 y Efesios 5:26: el lenguaje del agua de purificación es una categoría más amplia en la que participa el bautismo y que este cumple, no siempre y únicamente el bautismo",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 22:47 a 26:04",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=1367s",
+                text: "category of language of cleansing water that baptism participates in and fulfills and it points to baptism but baptism does not exhaust it it's not always and only talking about baptism without remainder if that makes sense so why do i say that well if you look at these various passages an interesting one would be oh and by the way if you just go into the new testament you can just plainly see this i mean people always quote john 3 and we can talk about john 3 i actually don't think john 3 is an open and shut case either but then you just keep going to john 4 and john 7. you know cleansing water spiritual water is all throughout the book of john and at times it's explicitly identified with the holy spirit rather than baptism as in john 7 38 and 39 which i'll put up on the screen but just looking at a few of these other texts that people often take as baptism when there's reference to cleansing water and they say well that's baptism it's actually impossible to take all of them as baptism i think they point to baptism but i don't think they're necessarily referring to baptism directly so hebrews 10 22 is a good example it talks about you know let us draw near to to god with our hearts sprinkled clean from an evil conscience and our bodies washed with pure water people often see baptism in this text i think it's better to do it the way i framed it remember where it's there's a larger spiritual category of language that baptism participates in but it's not just baptism per se and the reason is it's talking about people who are already christians and he's already talked about the elementary things of the faith like washings in chapter 6 of hebrews this whole passage is about perseverance so to have your body washed with pure water it's not really baptism he's not saying let's be baptized he's talking about the spiritual reality baptism points to and fulfills and is typified in baptism and that that's true with a lot of the language of the old testament i don't think you know with ezekiel 16 i don't think god is saying i baptized you i mean how would you baptize the entire nation at once you could have a an event like the red sea or something like that that could be seen as a type of baptism but again it's not baptism per se another example of this would be ephesians 5 26 which talks about as christ loved the church and gave himself up for her that he might sanctify her having cleansed her by the washing of water with the word some people see baptism in this passage again it's an example of where you've got the language of cleansing water that can't refer just to baptism because you've got a reference to the entire church collectively here there's no episode in which the entire church collectively was baptized but there is we can understand that with reference to the effects of christ's saving death for the church so what i'm trying to say here is there's again linguistic complexity in how we coordinate sign and things signified and i think it's a little bit sloppy to just you know cut through all of that nuance and just say well if it's if it's saving water it's baptism per se now if it's saving water it's got a relationship to baptism but it doesn't necessarily mean it is baptism i'll just i've got so many notes on some of these other passages titus 3 5 and the texts and acts i won't go through all of them for the sake of time and i've said more about first peter 321 in my dialogue with jordan cooper so",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["John.3.23"],
+      text: "Segunda Confesión de Londres (1689), 29.4 nota (f) (1719 p. 117; 1677 p. 270): este versículo figura como nota al margen junto a la cláusula, en inglés, «Immersion, or dipping of the person in water, is necessary to the due administration of this ordinance.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Segunda Confesión de Londres (1689), 29.4 nota (h) (1688 p. 98): este versículo figura como nota al margen junto a la cláusula, en inglés, «Immersion, or Dipping of the Person in Water, is necessary to the due administration of this Ordinance.». Edición: A Confession of Faith (Londres: John Harris, 1688), págs. 96–98. Primera Confesión de Londres (1646), XL, p. 185 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar. Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar. Catecismo Bautista (texto electrónico), P. 97–101: este versículo figura como respuestas del catecismo. Edición: texto electrónico (la numeración pertenece solo a esa transcripción). Lectura todavía sin verificar. Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar. Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Juan 3:5, Hebreos 10:22 y Efesios 5:26: el lenguaje del agua de purificación es una categoría más amplia en la que participa el bautismo y que este cumple, no siempre y únicamente el bautismo",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 22:47 a 26:04",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=1367s",
+                text: "category of language of cleansing water that baptism participates in and fulfills and it points to baptism but baptism does not exhaust it it's not always and only talking about baptism without remainder if that makes sense so why do i say that well if you look at these various passages an interesting one would be oh and by the way if you just go into the new testament you can just plainly see this i mean people always quote john 3 and we can talk about john 3 i actually don't think john 3 is an open and shut case either but then you just keep going to john 4 and john 7. you know cleansing water spiritual water is all throughout the book of john and at times it's explicitly identified with the holy spirit rather than baptism as in john 7 38 and 39 which i'll put up on the screen but just looking at a few of these other texts that people often take as baptism when there's reference to cleansing water and they say well that's baptism it's actually impossible to take all of them as baptism i think they point to baptism but i don't think they're necessarily referring to baptism directly so hebrews 10 22 is a good example it talks about you know let us draw near to to god with our hearts sprinkled clean from an evil conscience and our bodies washed with pure water people often see baptism in this text i think it's better to do it the way i framed it remember where it's there's a larger spiritual category of language that baptism participates in but it's not just baptism per se and the reason is it's talking about people who are already christians and he's already talked about the elementary things of the faith like washings in chapter 6 of hebrews this whole passage is about perseverance so to have your body washed with pure water it's not really baptism he's not saying let's be baptized he's talking about the spiritual reality baptism points to and fulfills and is typified in baptism and that that's true with a lot of the language of the old testament i don't think you know with ezekiel 16 i don't think god is saying i baptized you i mean how would you baptize the entire nation at once you could have a an event like the red sea or something like that that could be seen as a type of baptism but again it's not baptism per se another example of this would be ephesians 5 26 which talks about as christ loved the church and gave himself up for her that he might sanctify her having cleansed her by the washing of water with the word some people see baptism in this passage again it's an example of where you've got the language of cleansing water that can't refer just to baptism because you've got a reference to the entire church collectively here there's no episode in which the entire church collectively was baptized but there is we can understand that with reference to the effects of christ's saving death for the church so what i'm trying to say here is there's again linguistic complexity in how we coordinate sign and things signified and i think it's a little bit sloppy to just you know cut through all of that nuance and just say well if it's if it's saving water it's baptism per se now if it's saving water it's got a relationship to baptism but it doesn't necessarily mean it is baptism i'll just i've got so many notes on some of these other passages titus 3 5 and the texts and acts i won't go through all of them for the sake of time and i've said more about first peter 321 in my dialogue with jordan cooper so",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.2.37-Acts.2.38"],
+      text: "Primera Confesión de Londres (1646), XXXIX–XL, p. 185: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 185.",
+      apologists: {
+        arguments: [
+          {
+            title: "Pedro y Lucas pueden usar bautismo y conversión uno por el otro (Hechos 2:38, 1 Pedro 3:21)",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.2.37-Acts.2.42"],
+      text: "Catecismo Bautista (texto electrónico), P. 97–101: este versículo figura como respuestas del catecismo. Edición: texto electrónico (la numeración pertenece solo a esa transcripción). Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title: "Pedro y Lucas pueden usar bautismo y conversión uno por el otro (Hechos 2:38, 1 Pedro 3:21)",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.2.38"],
+      text: "Confesión Estándar (1660), XI, p. 115: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 115. Credo Ortodoxo (1678), XXVIII, pp. 144–145: este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]». Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911).",
+      apologists: {
+        arguments: [
+          {
+            title: "Pedro y Lucas pueden usar bautismo y conversión uno por el otro (Hechos 2:38, 1 Pedro 3:21)",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.2.41"],
+      text: "Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Acts.2.41-Acts.2.42"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Acts.8.12"],
+      text: "Confesión Estándar (1660), XI, p. 115: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 115.",
+    },
+    {
+      refs: ["Acts.8.35-Acts.8.39"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En los episodios bautismales de Hechos que nombra Ortlund (Hechos 2, 8, 10, 19, con Hechos 9:17–18 y Cornelio), él lee la regeneración y el Espíritu como anteriores al bautismo; el bautismo es la respuesta y el sello",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 11:50 a 15:57",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=710s",
+                text: "about the book of acts if i were to say why do i think people baptism isn't the cause of regeneration one of the reasons is over and over and over and over in my ministry and throughout my life i see people who seem to become regenerate at faith and then baptism happens subsequent to that but in their catechetical process between the baptism and the coming to faith they look regenerate already now that itself is not an argument for anything just yet because the sacramentalist traditions can allow for that as a concession as something that sometimes happens as we'll see but when you look at the book of acts my experience i think is what you see consistently in the book of acts we've got these four major baptismal episodes in acts in acts 2 acts 8 acts 10 and acts 19 there's a few others as well but those are the four most pivotal ones now to acknowledge two things up front these are historically unique events okay they are showing the expansion of the gospel out into different groups so that's true that's how one of the things the other side will say to try to kind of get around these is to say well this is redemptive historically unique and that is true that these are unique they're also odd cases for all of us in some in some of them like acts 8 so i want to acknowledge that as well nonetheless i come back to this i don't see a single time in the book of acts where baptism is the cause of regeneration where someone is baptized and that is the instrumental means by which they are made alive to god on the contrary in every case without exception i see it happening differently where someone comes to faith or someone is regenerated and receives the holy spirit prior to the baptism okay now again i know that there are ways that the other side can respond and interpret that so i'll deal with those in a little bit but first let's just kind of see what this is because even in the the the clearest example is cornelius but even with paul in acts chapter 9 when ananias lays hands on paul the spirit descends upon him upon the laying on of ananias hands and he receives his sight back at that time according to acts 9 17-18 and then subsequently he rises up and is baptized that's not instrumental means of regeneration and that's what you just see over and over throughout acts you get cornelius they respond to this is what i see in my ministry all the time there's the word preached there's a response to the gospel in connection to that there's the holy spirit reception the holy spirit falls down they're speaking in tongues and then in response to that peter says can anyone withhold water from baptizing for baptizing these people who have received the holy spirit just as we have water baptism is then subsequent to and in response to spirit baptism and you know someone can say well those are exceptional circumstances because the gospel's expanding in this way and so forth but maybe you can feel my dilemma you know because basically what i see in my ministry over and over and over and over is the same exception i see only the exception and never the rule i never see someone who is baptized as the and then that is the cause of regeneration over and over i see people who you know they'll come to faith on january 1st they'll go through a catechetical process and they'll be baptized on june 1st and throughout the spring they look regenerate obviously we don't know their heart but they give all the fruits of regeneration so that's sort of an initial observation that starts the process of okay maybe this idea that yeah baptism is doing something with respect to regeneration it's spoken of as regenerative in some ways but it's not actually the cause it's the seal why somebody why that kind of might make sense to somebody based upon what you're seeing universally in your ministry and you universally in the narrative passages of the scripture but what about fourth section of the video all the pattern this will be the longest one",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.8.36-Acts.8.38"],
+      text: "Primera Confesión de Londres (1646), XXXIX–XL, p. 185: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 185. Catecismo Bautista (texto electrónico), P. 97–101: este versículo figura como respuestas del catecismo. Edición: texto electrónico (la numeración pertenece solo a esa transcripción). Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En los episodios bautismales de Hechos que nombra Ortlund (Hechos 2, 8, 10, 19, con Hechos 9:17–18 y Cornelio), él lee la regeneración y el Espíritu como anteriores al bautismo; el bautismo es la respuesta y el sello",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 11:50 a 15:57",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=710s",
+                text: "about the book of acts if i were to say why do i think people baptism isn't the cause of regeneration one of the reasons is over and over and over and over in my ministry and throughout my life i see people who seem to become regenerate at faith and then baptism happens subsequent to that but in their catechetical process between the baptism and the coming to faith they look regenerate already now that itself is not an argument for anything just yet because the sacramentalist traditions can allow for that as a concession as something that sometimes happens as we'll see but when you look at the book of acts my experience i think is what you see consistently in the book of acts we've got these four major baptismal episodes in acts in acts 2 acts 8 acts 10 and acts 19 there's a few others as well but those are the four most pivotal ones now to acknowledge two things up front these are historically unique events okay they are showing the expansion of the gospel out into different groups so that's true that's how one of the things the other side will say to try to kind of get around these is to say well this is redemptive historically unique and that is true that these are unique they're also odd cases for all of us in some in some of them like acts 8 so i want to acknowledge that as well nonetheless i come back to this i don't see a single time in the book of acts where baptism is the cause of regeneration where someone is baptized and that is the instrumental means by which they are made alive to god on the contrary in every case without exception i see it happening differently where someone comes to faith or someone is regenerated and receives the holy spirit prior to the baptism okay now again i know that there are ways that the other side can respond and interpret that so i'll deal with those in a little bit but first let's just kind of see what this is because even in the the the clearest example is cornelius but even with paul in acts chapter 9 when ananias lays hands on paul the spirit descends upon him upon the laying on of ananias hands and he receives his sight back at that time according to acts 9 17-18 and then subsequently he rises up and is baptized that's not instrumental means of regeneration and that's what you just see over and over throughout acts you get cornelius they respond to this is what i see in my ministry all the time there's the word preached there's a response to the gospel in connection to that there's the holy spirit reception the holy spirit falls down they're speaking in tongues and then in response to that peter says can anyone withhold water from baptizing for baptizing these people who have received the holy spirit just as we have water baptism is then subsequent to and in response to spirit baptism and you know someone can say well those are exceptional circumstances because the gospel's expanding in this way and so forth but maybe you can feel my dilemma you know because basically what i see in my ministry over and over and over and over is the same exception i see only the exception and never the rule i never see someone who is baptized as the and then that is the cause of regeneration over and over i see people who you know they'll come to faith on january 1st they'll go through a catechetical process and they'll be baptized on june 1st and throughout the spring they look regenerate obviously we don't know their heart but they give all the fruits of regeneration so that's sort of an initial observation that starts the process of okay maybe this idea that yeah baptism is doing something with respect to regeneration it's spoken of as regenerative in some ways but it's not actually the cause it's the seal why somebody why that kind of might make sense to somebody based upon what you're seeing universally in your ministry and you universally in the narrative passages of the scripture but what about fourth section of the video all the pattern this will be the longest one",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.8.36-Acts.8.37"],
+      text: "Segunda Confesión de Londres (1689), 29.2 nota (1688 p. 97; 1677): este versículo figura como nota al margen junto a la cláusula, en inglés, «Those who do actually profess repentance towards God, faith in, and obedience, to our Lord Jesus, are the only proper subjects of this ordinance.». Edición: A Confession of Faith (Londres: John Harris, 1688).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En los episodios bautismales de Hechos que nombra Ortlund (Hechos 2, 8, 10, 19, con Hechos 9:17–18 y Cornelio), él lee la regeneración y el Espíritu como anteriores al bautismo; el bautismo es la respuesta y el sello",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 11:50 a 15:57",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=710s",
+                text: "about the book of acts if i were to say why do i think people baptism isn't the cause of regeneration one of the reasons is over and over and over and over in my ministry and throughout my life i see people who seem to become regenerate at faith and then baptism happens subsequent to that but in their catechetical process between the baptism and the coming to faith they look regenerate already now that itself is not an argument for anything just yet because the sacramentalist traditions can allow for that as a concession as something that sometimes happens as we'll see but when you look at the book of acts my experience i think is what you see consistently in the book of acts we've got these four major baptismal episodes in acts in acts 2 acts 8 acts 10 and acts 19 there's a few others as well but those are the four most pivotal ones now to acknowledge two things up front these are historically unique events okay they are showing the expansion of the gospel out into different groups so that's true that's how one of the things the other side will say to try to kind of get around these is to say well this is redemptive historically unique and that is true that these are unique they're also odd cases for all of us in some in some of them like acts 8 so i want to acknowledge that as well nonetheless i come back to this i don't see a single time in the book of acts where baptism is the cause of regeneration where someone is baptized and that is the instrumental means by which they are made alive to god on the contrary in every case without exception i see it happening differently where someone comes to faith or someone is regenerated and receives the holy spirit prior to the baptism okay now again i know that there are ways that the other side can respond and interpret that so i'll deal with those in a little bit but first let's just kind of see what this is because even in the the the clearest example is cornelius but even with paul in acts chapter 9 when ananias lays hands on paul the spirit descends upon him upon the laying on of ananias hands and he receives his sight back at that time according to acts 9 17-18 and then subsequently he rises up and is baptized that's not instrumental means of regeneration and that's what you just see over and over throughout acts you get cornelius they respond to this is what i see in my ministry all the time there's the word preached there's a response to the gospel in connection to that there's the holy spirit reception the holy spirit falls down they're speaking in tongues and then in response to that peter says can anyone withhold water from baptizing for baptizing these people who have received the holy spirit just as we have water baptism is then subsequent to and in response to spirit baptism and you know someone can say well those are exceptional circumstances because the gospel's expanding in this way and so forth but maybe you can feel my dilemma you know because basically what i see in my ministry over and over and over and over is the same exception i see only the exception and never the rule i never see someone who is baptized as the and then that is the cause of regeneration over and over i see people who you know they'll come to faith on january 1st they'll go through a catechetical process and they'll be baptized on june 1st and throughout the spring they look regenerate obviously we don't know their heart but they give all the fruits of regeneration so that's sort of an initial observation that starts the process of okay maybe this idea that yeah baptism is doing something with respect to regeneration it's spoken of as regenerative in some ways but it's not actually the cause it's the seal why somebody why that kind of might make sense to somebody based upon what you're seeing universally in your ministry and you universally in the narrative passages of the scripture but what about fourth section of the video all the pattern this will be the longest one",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.8.36-Acts.8.39"],
+      text: "Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En los episodios bautismales de Hechos que nombra Ortlund (Hechos 2, 8, 10, 19, con Hechos 9:17–18 y Cornelio), él lee la regeneración y el Espíritu como anteriores al bautismo; el bautismo es la respuesta y el sello",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 11:50 a 15:57",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=710s",
+                text: "about the book of acts if i were to say why do i think people baptism isn't the cause of regeneration one of the reasons is over and over and over and over in my ministry and throughout my life i see people who seem to become regenerate at faith and then baptism happens subsequent to that but in their catechetical process between the baptism and the coming to faith they look regenerate already now that itself is not an argument for anything just yet because the sacramentalist traditions can allow for that as a concession as something that sometimes happens as we'll see but when you look at the book of acts my experience i think is what you see consistently in the book of acts we've got these four major baptismal episodes in acts in acts 2 acts 8 acts 10 and acts 19 there's a few others as well but those are the four most pivotal ones now to acknowledge two things up front these are historically unique events okay they are showing the expansion of the gospel out into different groups so that's true that's how one of the things the other side will say to try to kind of get around these is to say well this is redemptive historically unique and that is true that these are unique they're also odd cases for all of us in some in some of them like acts 8 so i want to acknowledge that as well nonetheless i come back to this i don't see a single time in the book of acts where baptism is the cause of regeneration where someone is baptized and that is the instrumental means by which they are made alive to god on the contrary in every case without exception i see it happening differently where someone comes to faith or someone is regenerated and receives the holy spirit prior to the baptism okay now again i know that there are ways that the other side can respond and interpret that so i'll deal with those in a little bit but first let's just kind of see what this is because even in the the the clearest example is cornelius but even with paul in acts chapter 9 when ananias lays hands on paul the spirit descends upon him upon the laying on of ananias hands and he receives his sight back at that time according to acts 9 17-18 and then subsequently he rises up and is baptized that's not instrumental means of regeneration and that's what you just see over and over throughout acts you get cornelius they respond to this is what i see in my ministry all the time there's the word preached there's a response to the gospel in connection to that there's the holy spirit reception the holy spirit falls down they're speaking in tongues and then in response to that peter says can anyone withhold water from baptizing for baptizing these people who have received the holy spirit just as we have water baptism is then subsequent to and in response to spirit baptism and you know someone can say well those are exceptional circumstances because the gospel's expanding in this way and so forth but maybe you can feel my dilemma you know because basically what i see in my ministry over and over and over and over is the same exception i see only the exception and never the rule i never see someone who is baptized as the and then that is the cause of regeneration over and over i see people who you know they'll come to faith on january 1st they'll go through a catechetical process and they'll be baptized on june 1st and throughout the spring they look regenerate obviously we don't know their heart but they give all the fruits of regeneration so that's sort of an initial observation that starts the process of okay maybe this idea that yeah baptism is doing something with respect to regeneration it's spoken of as regenerative in some ways but it's not actually the cause it's the seal why somebody why that kind of might make sense to somebody based upon what you're seeing universally in your ministry and you universally in the narrative passages of the scripture but what about fourth section of the video all the pattern this will be the longest one",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.8.37-Acts.8.38"],
+      text: "Segunda Confesión de Londres (1689), 29.2 nota (d) (1719 p. 116): este versículo figura como nota al margen (variante de la lectura de 1688) junto a la cláusula, en inglés, «Those who do actually profess repentance towards God, faith in, and obedience, to our Lord Jesus, are the only proper subjects of this ordinance.». Edición: A Confession of Faith, cuarta edición (Londres, 1719).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En los episodios bautismales de Hechos que nombra Ortlund (Hechos 2, 8, 10, 19, con Hechos 9:17–18 y Cornelio), él lee la regeneración y el Espíritu como anteriores al bautismo; el bautismo es la respuesta y el sello",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 11:50 a 15:57",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=710s",
+                text: "about the book of acts if i were to say why do i think people baptism isn't the cause of regeneration one of the reasons is over and over and over and over in my ministry and throughout my life i see people who seem to become regenerate at faith and then baptism happens subsequent to that but in their catechetical process between the baptism and the coming to faith they look regenerate already now that itself is not an argument for anything just yet because the sacramentalist traditions can allow for that as a concession as something that sometimes happens as we'll see but when you look at the book of acts my experience i think is what you see consistently in the book of acts we've got these four major baptismal episodes in acts in acts 2 acts 8 acts 10 and acts 19 there's a few others as well but those are the four most pivotal ones now to acknowledge two things up front these are historically unique events okay they are showing the expansion of the gospel out into different groups so that's true that's how one of the things the other side will say to try to kind of get around these is to say well this is redemptive historically unique and that is true that these are unique they're also odd cases for all of us in some in some of them like acts 8 so i want to acknowledge that as well nonetheless i come back to this i don't see a single time in the book of acts where baptism is the cause of regeneration where someone is baptized and that is the instrumental means by which they are made alive to god on the contrary in every case without exception i see it happening differently where someone comes to faith or someone is regenerated and receives the holy spirit prior to the baptism okay now again i know that there are ways that the other side can respond and interpret that so i'll deal with those in a little bit but first let's just kind of see what this is because even in the the the clearest example is cornelius but even with paul in acts chapter 9 when ananias lays hands on paul the spirit descends upon him upon the laying on of ananias hands and he receives his sight back at that time according to acts 9 17-18 and then subsequently he rises up and is baptized that's not instrumental means of regeneration and that's what you just see over and over throughout acts you get cornelius they respond to this is what i see in my ministry all the time there's the word preached there's a response to the gospel in connection to that there's the holy spirit reception the holy spirit falls down they're speaking in tongues and then in response to that peter says can anyone withhold water from baptizing for baptizing these people who have received the holy spirit just as we have water baptism is then subsequent to and in response to spirit baptism and you know someone can say well those are exceptional circumstances because the gospel's expanding in this way and so forth but maybe you can feel my dilemma you know because basically what i see in my ministry over and over and over and over is the same exception i see only the exception and never the rule i never see someone who is baptized as the and then that is the cause of regeneration over and over i see people who you know they'll come to faith on january 1st they'll go through a catechetical process and they'll be baptized on june 1st and throughout the spring they look regenerate obviously we don't know their heart but they give all the fruits of regeneration so that's sort of an initial observation that starts the process of okay maybe this idea that yeah baptism is doing something with respect to regeneration it's spoken of as regenerative in some ways but it's not actually the cause it's the seal why somebody why that kind of might make sense to somebody based upon what you're seeing universally in your ministry and you universally in the narrative passages of the scripture but what about fourth section of the video all the pattern this will be the longest one",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.8.37"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En los episodios bautismales de Hechos que nombra Ortlund (Hechos 2, 8, 10, 19, con Hechos 9:17–18 y Cornelio), él lee la regeneración y el Espíritu como anteriores al bautismo; el bautismo es la respuesta y el sello",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 11:50 a 15:57",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=710s",
+                text: "about the book of acts if i were to say why do i think people baptism isn't the cause of regeneration one of the reasons is over and over and over and over in my ministry and throughout my life i see people who seem to become regenerate at faith and then baptism happens subsequent to that but in their catechetical process between the baptism and the coming to faith they look regenerate already now that itself is not an argument for anything just yet because the sacramentalist traditions can allow for that as a concession as something that sometimes happens as we'll see but when you look at the book of acts my experience i think is what you see consistently in the book of acts we've got these four major baptismal episodes in acts in acts 2 acts 8 acts 10 and acts 19 there's a few others as well but those are the four most pivotal ones now to acknowledge two things up front these are historically unique events okay they are showing the expansion of the gospel out into different groups so that's true that's how one of the things the other side will say to try to kind of get around these is to say well this is redemptive historically unique and that is true that these are unique they're also odd cases for all of us in some in some of them like acts 8 so i want to acknowledge that as well nonetheless i come back to this i don't see a single time in the book of acts where baptism is the cause of regeneration where someone is baptized and that is the instrumental means by which they are made alive to god on the contrary in every case without exception i see it happening differently where someone comes to faith or someone is regenerated and receives the holy spirit prior to the baptism okay now again i know that there are ways that the other side can respond and interpret that so i'll deal with those in a little bit but first let's just kind of see what this is because even in the the the clearest example is cornelius but even with paul in acts chapter 9 when ananias lays hands on paul the spirit descends upon him upon the laying on of ananias hands and he receives his sight back at that time according to acts 9 17-18 and then subsequently he rises up and is baptized that's not instrumental means of regeneration and that's what you just see over and over throughout acts you get cornelius they respond to this is what i see in my ministry all the time there's the word preached there's a response to the gospel in connection to that there's the holy spirit reception the holy spirit falls down they're speaking in tongues and then in response to that peter says can anyone withhold water from baptizing for baptizing these people who have received the holy spirit just as we have water baptism is then subsequent to and in response to spirit baptism and you know someone can say well those are exceptional circumstances because the gospel's expanding in this way and so forth but maybe you can feel my dilemma you know because basically what i see in my ministry over and over and over and over is the same exception i see only the exception and never the rule i never see someone who is baptized as the and then that is the cause of regeneration over and over i see people who you know they'll come to faith on january 1st they'll go through a catechetical process and they'll be baptized on june 1st and throughout the spring they look regenerate obviously we don't know their heart but they give all the fruits of regeneration so that's sort of an initial observation that starts the process of okay maybe this idea that yeah baptism is doing something with respect to regeneration it's spoken of as regenerative in some ways but it's not actually the cause it's the seal why somebody why that kind of might make sense to somebody based upon what you're seeing universally in your ministry and you universally in the narrative passages of the scripture but what about fourth section of the video all the pattern this will be the longest one",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.8.38"],
+      text: "Segunda Confesión de Londres (1689), 29.3 nota (e) (1719 p. 117; 1677 p. 270): este versículo figura como nota al margen junto a la cláusula, en inglés, «The outward element to be used in this ordinance, is water, wherein the party is to be baptized, in the name of the Father, and of the Son, and of the Holy Spirit.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Segunda Confesión de Londres (1689), 29.3 nota (g) (1688 p. 98): este versículo figura como nota al margen junto a la cláusula, en inglés, «The outward Element, to be used in this Ordinance, is Water, wherein the Party is to be baptized, in the Name of the Father, and of the Son, and of the Holy Spirit.». Edición: A Confession of Faith (Londres: John Harris, 1688), págs. 96–98. Primera Confesión de Londres (1646), XL, p. 185 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En los episodios bautismales de Hechos que nombra Ortlund (Hechos 2, 8, 10, 19, con Hechos 9:17–18 y Cornelio), él lee la regeneración y el Espíritu como anteriores al bautismo; el bautismo es la respuesta y el sello",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 11:50 a 15:57",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=710s",
+                text: "about the book of acts if i were to say why do i think people baptism isn't the cause of regeneration one of the reasons is over and over and over and over in my ministry and throughout my life i see people who seem to become regenerate at faith and then baptism happens subsequent to that but in their catechetical process between the baptism and the coming to faith they look regenerate already now that itself is not an argument for anything just yet because the sacramentalist traditions can allow for that as a concession as something that sometimes happens as we'll see but when you look at the book of acts my experience i think is what you see consistently in the book of acts we've got these four major baptismal episodes in acts in acts 2 acts 8 acts 10 and acts 19 there's a few others as well but those are the four most pivotal ones now to acknowledge two things up front these are historically unique events okay they are showing the expansion of the gospel out into different groups so that's true that's how one of the things the other side will say to try to kind of get around these is to say well this is redemptive historically unique and that is true that these are unique they're also odd cases for all of us in some in some of them like acts 8 so i want to acknowledge that as well nonetheless i come back to this i don't see a single time in the book of acts where baptism is the cause of regeneration where someone is baptized and that is the instrumental means by which they are made alive to god on the contrary in every case without exception i see it happening differently where someone comes to faith or someone is regenerated and receives the holy spirit prior to the baptism okay now again i know that there are ways that the other side can respond and interpret that so i'll deal with those in a little bit but first let's just kind of see what this is because even in the the the clearest example is cornelius but even with paul in acts chapter 9 when ananias lays hands on paul the spirit descends upon him upon the laying on of ananias hands and he receives his sight back at that time according to acts 9 17-18 and then subsequently he rises up and is baptized that's not instrumental means of regeneration and that's what you just see over and over throughout acts you get cornelius they respond to this is what i see in my ministry all the time there's the word preached there's a response to the gospel in connection to that there's the holy spirit reception the holy spirit falls down they're speaking in tongues and then in response to that peter says can anyone withhold water from baptizing for baptizing these people who have received the holy spirit just as we have water baptism is then subsequent to and in response to spirit baptism and you know someone can say well those are exceptional circumstances because the gospel's expanding in this way and so forth but maybe you can feel my dilemma you know because basically what i see in my ministry over and over and over and over is the same exception i see only the exception and never the rule i never see someone who is baptized as the and then that is the cause of regeneration over and over i see people who you know they'll come to faith on january 1st they'll go through a catechetical process and they'll be baptized on june 1st and throughout the spring they look regenerate obviously we don't know their heart but they give all the fruits of regeneration so that's sort of an initial observation that starts the process of okay maybe this idea that yeah baptism is doing something with respect to regeneration it's spoken of as regenerative in some ways but it's not actually the cause it's the seal why somebody why that kind of might make sense to somebody based upon what you're seeing universally in your ministry and you universally in the narrative passages of the scripture but what about fourth section of the video all the pattern this will be the longest one",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.8.38-Acts.8.39"],
+      text: "Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En los episodios bautismales de Hechos que nombra Ortlund (Hechos 2, 8, 10, 19, con Hechos 9:17–18 y Cornelio), él lee la regeneración y el Espíritu como anteriores al bautismo; el bautismo es la respuesta y el sello",
+            quotes: [
+              {
+                speaker: "Gavin Ortlund",
+                work: "Baptismal Regeneration: Responding to Common Arguments",
+                outlet: "Gavin Ortlund, YouTube",
+                date: "14 de marzo de 2022",
+                locator: "Minutos 11:50 a 15:57",
+                url: "https://www.youtube.com/watch?v=C4BoIc2-P8M&t=710s",
+                text: "about the book of acts if i were to say why do i think people baptism isn't the cause of regeneration one of the reasons is over and over and over and over in my ministry and throughout my life i see people who seem to become regenerate at faith and then baptism happens subsequent to that but in their catechetical process between the baptism and the coming to faith they look regenerate already now that itself is not an argument for anything just yet because the sacramentalist traditions can allow for that as a concession as something that sometimes happens as we'll see but when you look at the book of acts my experience i think is what you see consistently in the book of acts we've got these four major baptismal episodes in acts in acts 2 acts 8 acts 10 and acts 19 there's a few others as well but those are the four most pivotal ones now to acknowledge two things up front these are historically unique events okay they are showing the expansion of the gospel out into different groups so that's true that's how one of the things the other side will say to try to kind of get around these is to say well this is redemptive historically unique and that is true that these are unique they're also odd cases for all of us in some in some of them like acts 8 so i want to acknowledge that as well nonetheless i come back to this i don't see a single time in the book of acts where baptism is the cause of regeneration where someone is baptized and that is the instrumental means by which they are made alive to god on the contrary in every case without exception i see it happening differently where someone comes to faith or someone is regenerated and receives the holy spirit prior to the baptism okay now again i know that there are ways that the other side can respond and interpret that so i'll deal with those in a little bit but first let's just kind of see what this is because even in the the the clearest example is cornelius but even with paul in acts chapter 9 when ananias lays hands on paul the spirit descends upon him upon the laying on of ananias hands and he receives his sight back at that time according to acts 9 17-18 and then subsequently he rises up and is baptized that's not instrumental means of regeneration and that's what you just see over and over throughout acts you get cornelius they respond to this is what i see in my ministry all the time there's the word preached there's a response to the gospel in connection to that there's the holy spirit reception the holy spirit falls down they're speaking in tongues and then in response to that peter says can anyone withhold water from baptizing for baptizing these people who have received the holy spirit just as we have water baptism is then subsequent to and in response to spirit baptism and you know someone can say well those are exceptional circumstances because the gospel's expanding in this way and so forth but maybe you can feel my dilemma you know because basically what i see in my ministry over and over and over and over is the same exception i see only the exception and never the rule i never see someone who is baptized as the and then that is the cause of regeneration over and over i see people who you know they'll come to faith on january 1st they'll go through a catechetical process and they'll be baptized on june 1st and throughout the spring they look regenerate obviously we don't know their heart but they give all the fruits of regeneration so that's sort of an initial observation that starts the process of okay maybe this idea that yeah baptism is doing something with respect to regeneration it's spoken of as regenerative in some ways but it's not actually the cause it's the seal why somebody why that kind of might make sense to somebody based upon what you're seeing universally in your ministry and you universally in the narrative passages of the scripture but what about fourth section of the video all the pattern this will be the longest one",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Acts.16.30-Acts.16.33"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Acts.16.32-Acts.16.34"],
+      text: "Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Acts.18.8"],
+      text: "Primera Confesión de Londres (1646), XXXIX–XL, p. 185: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 185. Confesión Estándar (1660), XI, p. 115: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 115.",
+    },
+    {
+      refs: ["Acts.20.7"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Acts.26.16"],
+      text: "Segunda Confesión de Londres (1689), 29.1 nota (b) (1719 p. 116); nota (d) (1688 p. 97): este versículo figura como nota al margen junto a la cláusula, en inglés, «[…] of remission of sins; […]». Edición: A Confession of Faith, cuarta edición (Londres, 1719).",
+    },
+    {
+      refs: ["Rom.6.1"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Rom.6.2"],
+      text: "Segunda Confesión de Londres (1689), 29.1 nota (c) (1719); nota (e) (1688 p. 97 «Rom. 6. 2, 4»); 1677 «Rom. 6. 2, 4»; 1719 prints «Rom, 6. 24»: este versículo figura como nota al margen junto a la cláusula, en inglés, «[…] and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.». Edición: A Confession of Faith, cuarta edición (Londres, 1719).",
+    },
+    {
+      refs: ["Rom.6.3-Rom.6.5"],
+      text: "Segunda Confesión de Londres (1689), 29.1 nota (a) (1719 p. 116); nota (c) (1688 p. 97): este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an Ordinance of the New Testament, ordained by Jesus Christ, to be unto the party Baptized, a sign of his fellowship with him, in his death, and resurrection; of his being engrafted into him; of remission of sins; and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Primera Confesión de Londres (1646), XXXIX–XL, p. 185: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 185. Credo Ortodoxo (1678), XXVIII, pp. 144–145: este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]». Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Catecismo Bautista (texto electrónico), P. 97–101: este versículo figura como respuestas del catecismo. Edición: texto electrónico (la numeración pertenece solo a esa transcripción). Lectura todavía sin verificar. Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar. Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Pablo supone que todo cristiano al que escribe fue bautizado; bautismo y hacerse cristiano están tan unidos que uno puede valer por el otro",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+          {
+            title:
+              "«Sepultados con Cristo en el bautismo» y «el bautismo ahora salva» hablan del bautismo como expresión de la fe salvadora; la justificación sigue siendo por la fe sola",
+            quotes: [
+              {
+                speaker: "Fred Zaspel",
+                work: "Baptism Saves?",
+                outlet: "Credo Magazine",
+                date: "24 de octubre de 2012",
+                locator:
+                  "5 párrafos: del párrafo que empieza «In 1 Peter 3:21 we find a statement that…» al que termina «…this way we may also say that “baptism saves.”»",
+                url: "https://credomag.com/2012/10/baptism-saves/",
+                text: "In 1 Peter 3:21 we find a statement that has been puzzling to many: “Baptism . . . now saves you.” Are we saved by baptism?\n\nIn much of the nineteenth century conversion for many American Evangelicals came at “the altar call.” This was so much a part of the conversion process that when asked when they were saved many would respond in terms such as, “I walked the aisle in 1966.” At least in the best of these, they would not actually think that walking the aisle after a sermon is what made them a Christian. Rather, it was simply the way in which they first expressed their faith in Christ. “Walking the aisle” was a very real part of the conversion process. And since the reality (faith) was so tightly bound to its form of expression (walking the aisle in a church), the one could simply be spoken of in terms of the other. The terms became almost interchangeable.\n\nThe altar call was unknown in New Testament times. For the earliest Christians it was in baptism that believers first gave expression to their faith in Christ. And in this way baptism was part of the conversion process. A simple glance through the book of Acts will bear this out. When someone came to faith in Christ that faith was immediately expressed in submission to the waters of baptism. There the new believer expressed his faith (Col. 2:12), “calling on the name of the Lord” (Acts 22:16) and making “appeal to God for a good conscience” (1Pet. 3:21).\n\nThe apostles were very clear in teaching that salvation was by faith alone, apart from works of any kind — whether works of personal merit or works of ceremony, such as circumcision. See for example Romans 4:1-13. Justification is by faith alone. And the apostles were not contradicting themselves when they spoke in terms of being “buried with Christ in baptism” (Rom. 6:4; Col. 2:12) or as baptism “saving” (1Pet. 3:21). If baptism is the expression of saving faith, then “faith” and “baptism” in certain contexts can be spoken of almost interchangeably. “Get up, be baptized and wash your sins away, calling on his name” (Acts 22:16) is equivalent to “Believe on the Lord Jesus Christ and you shall be saved (Acts 16:31). The apostles were not teaching baptismal regeneration. They were speaking of faith in terms of its form of expression. The symbol and the reality are so tightly related that one can be spoken of in terms of the other.\n\nWe might consider Romans 10:9 in this regard. Here the apostle Paul tells us that we will be saved if we “confess with our mouth that Jesus is Lord.” Of course he is not implying in this that one who cannot speak therefore cannot be saved. And there is no saving efficacy in simply speaking these words. He is simply referring to the need of faith: “If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.” In this way we may also say that “baptism saves.”",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Rom.6.4"],
+      text: "Segunda Confesión de Londres (1689), 29.1 nota (c) (1719); nota (e) (1688 p. 97 «Rom. 6. 2, 4»); 1677 «Rom. 6. 2, 4»; 1719 prints «Rom, 6. 24»: este versículo figura como nota al margen junto a la cláusula, en inglés, «[…] and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Pablo supone que todo cristiano al que escribe fue bautizado; bautismo y hacerse cristiano están tan unidos que uno puede valer por el otro",
+            quotes: [
+              {
+                speaker: "Ben Robin",
+                work: "Don't Take the Supper at Youth Camp or Get Baptized in the Jordan",
+                outlet: "9Marks",
+                date: "6 de octubre de 2025",
+                locator:
+                  "2 párrafos: del párrafo que empieza «Baptism is an act of obedience for every believer.…» al que termina «…disciple, having received the internal circumcision of the heart.»",
+                url: "https://www.9marks.org/article/dont-take-the-supper-at-youth-camp-or-get-baptized-in-the-jordan/",
+                text: "Baptism is an act of obedience for every believer. Jesus requires his followers to be baptized (Matt. 28:19). It is the first command a new Christian must obey. Paul assumed every Christian he wrote to had already been baptized (Rom. 6:3–4). So close is the association between baptism and becoming a Christian, Peter and Luke can use one to refer to the other (Acts 2:38, 1 Pet. 3:21).11 .When portraying the process of publicly becoming a Christian, the book of Acts exemplifies the close connection between baptism, repentance, faith, forgiveness of sins, and the gift of the Spirit, specifically by using each as a metonymy for the whole complex of Christian conversion. Scripture references here would be too numerous to list, so see Robert Stein, “Baptism in Luke-Acts” in Believer’s Baptism: Sign of the New Covenant in Christ, 35-66.\n\nBaptism is also the way faith goes public.22 .For a fuller treatment of this theme, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership. People are commanded to come to Christ both inwardly (Matt. 11:28) and outwardly (Acts 2:38). In fact, the “outward declares the inward.”33 .In other words, the visible attests to the invisible. It can be tempting today to overemphasize the internal reality at the expense of the external act, yet the Bible is not hesitant to enjoin both upon us. For more on this, see Bobby Jamieson, Going Public: Why Baptism Is Required for Church Membership, 11. In other words, becoming a Christian is always a personal act, but never a private one (cf. Matt. 10:32–33). Jesus wants us to repent, believe, and be immersed in water. He has not only identified with our humanity, but also set an example himself in being baptized (Matt. 3:13–17). Like our Lord, we should be baptized. In the New Testament, baptism is the way a person identifies with, commits to, and is marked off by Jesus (cf. Rom. 6:1–4; 1 Cor. 12:12–13; Gal. 3:26–27; Col. 2:11–12). There simply is no other way to profess faith, identify with Jesus as Savior (Gal. 3:26–27),44 .Baptism is not required for salvation. No doubt, the thief on the cross went to heaven as dry as the asphalt on a hot summer day in Fort Worth (cf. Luke 23:39–43). Furthermore, Paul is glad to have not baptized many of the Corinthian Christians; in fact, he’s uncertain who he baptized! (1 Cor. 1:13–17). commit to following Jesus as Lord (1 Pet. 3:21),55 .Bobby Jamieson calls baptism “a wordless promise or oath.” For, in baptism, we commit to follow Jesus for the rest of our days. For this reason, churches often use verbal vows before the baptism occurs (e.g., “Do you come to be baptized today to declare your trust in the finished work of Jesus Christ? Is it your desire to follow him for the rest of your days?”). and be marked off from the world (Rom. 6:1–4).66 .In and of itself, baptism does not create or affect anything. Yet, when paired with the preaching of the Word and the faith of the recipient, the ordinary act of immersion in water becomes a sign and seal of the New Covenant. Like circumcision, baptism marks a person as a visible member of the covenant (Col. 2:11–12). With Jesus’s own authority, a church declares through baptism that they discern the baptized person is a disciple, having received the internal circumcision of the heart.",
+                lang: "en",
+              },
+            ],
+          },
+          {
+            title:
+              "«Sepultados con Cristo en el bautismo» y «el bautismo ahora salva» hablan del bautismo como expresión de la fe salvadora; la justificación sigue siendo por la fe sola",
+            quotes: [
+              {
+                speaker: "Fred Zaspel",
+                work: "Baptism Saves?",
+                outlet: "Credo Magazine",
+                date: "24 de octubre de 2012",
+                locator:
+                  "5 párrafos: del párrafo que empieza «In 1 Peter 3:21 we find a statement that…» al que termina «…this way we may also say that “baptism saves.”»",
+                url: "https://credomag.com/2012/10/baptism-saves/",
+                text: "In 1 Peter 3:21 we find a statement that has been puzzling to many: “Baptism . . . now saves you.” Are we saved by baptism?\n\nIn much of the nineteenth century conversion for many American Evangelicals came at “the altar call.” This was so much a part of the conversion process that when asked when they were saved many would respond in terms such as, “I walked the aisle in 1966.” At least in the best of these, they would not actually think that walking the aisle after a sermon is what made them a Christian. Rather, it was simply the way in which they first expressed their faith in Christ. “Walking the aisle” was a very real part of the conversion process. And since the reality (faith) was so tightly bound to its form of expression (walking the aisle in a church), the one could simply be spoken of in terms of the other. The terms became almost interchangeable.\n\nThe altar call was unknown in New Testament times. For the earliest Christians it was in baptism that believers first gave expression to their faith in Christ. And in this way baptism was part of the conversion process. A simple glance through the book of Acts will bear this out. When someone came to faith in Christ that faith was immediately expressed in submission to the waters of baptism. There the new believer expressed his faith (Col. 2:12), “calling on the name of the Lord” (Acts 22:16) and making “appeal to God for a good conscience” (1Pet. 3:21).\n\nThe apostles were very clear in teaching that salvation was by faith alone, apart from works of any kind — whether works of personal merit or works of ceremony, such as circumcision. See for example Romans 4:1-13. Justification is by faith alone. And the apostles were not contradicting themselves when they spoke in terms of being “buried with Christ in baptism” (Rom. 6:4; Col. 2:12) or as baptism “saving” (1Pet. 3:21). If baptism is the expression of saving faith, then “faith” and “baptism” in certain contexts can be spoken of almost interchangeably. “Get up, be baptized and wash your sins away, calling on his name” (Acts 22:16) is equivalent to “Believe on the Lord Jesus Christ and you shall be saved (Acts 16:31). The apostles were not teaching baptismal regeneration. They were speaking of faith in terms of its form of expression. The symbol and the reality are so tightly related that one can be spoken of in terms of the other.\n\nWe might consider Romans 10:9 in this regard. Here the apostle Paul tells us that we will be saved if we “confess with our mouth that Jesus is Lord.” Of course he is not implying in this that one who cannot speak therefore cannot be saved. And there is no saving efficacy in simply speaking these words. He is simply referring to the need of faith: “If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.” In this way we may also say that “baptism saves.”",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["1Cor.4.1"],
+      text: "Segunda Confesión de Londres (1689), 28.2 nota (b) (1719 p. 116): este versículo figura como nota al margen junto a la cláusula, en inglés, «These holy appointments are to be administered by those only, who are qualified and thereunto called according to the commission of Christ.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Segunda Confesión de Londres (1689), 28.2 nota (b) (1688 p. 96): este versículo figura como nota al margen junto a la cláusula, en inglés, «These holy appointments are to be administred by those only, who are qualified and thereunto called according to the Commission of Christ.». Edición: A Confession of Faith (Londres: John Harris, 1688), págs. 96–98. Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["1Cor.10.16"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["1Cor.10.21"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["1Cor.11.23-1Cor.11.29"],
+      text: "Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["1Cor.11.26"],
+      text: "Segunda Confesión de Londres (1689), 28.1 nota (a) (1719 p. 115): este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism and the Lords Supper are ordinances of positive, and soveraign institution; appointed by the Lord Jesus the only Law-giver, to be continued in his Church to the end of the world.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Segunda Confesión de Londres (1689), 28.1 nota (a) (1688 p. 96): este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism and the Lord's Supper, are Ordinances of positive and soveraign Institution, appointed by the Lord Jesus, the only Law-giver, to be continued in his Church to the end of the World.». Edición: A Confession of Faith (Londres: John Harris, 1688), págs. 96–98.",
+    },
+    {
+      refs: ["1Cor.12.13"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145: este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]». Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911).",
+    },
+    {
+      refs: ["1Cor.15.28-1Cor.15.29"],
+      text: "Primera Confesión de Londres (1646), XXXIX–XL, p. 185: este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia, 1911), p. 185.",
+    },
+    {
+      refs: ["1Cor.15.29"],
+      text: "Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Gal.3.27"],
+      text: "Segunda Confesión de Londres (1689), 29.1 nota (a) (1719 p. 116); nota (c) (1688 p. 97): este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an Ordinance of the New Testament, ordained by Jesus Christ, to be unto the party Baptized, a sign of his fellowship with him, in his death, and resurrection; of his being engrafted into him; of remission of sins; and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Credo Ortodoxo (1678), XXVIII, pp. 144–145: este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an ordinance of the new testament, ordained by Jesus Christ, to be unto the party baptized, or dipped, a sign of our entrance into the covenant of grace, and ingrafting into Christ, and into the body of Christ, which is his church […]». Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar. Catecismo Bautista (texto electrónico), P. 97–101: este versículo figura como respuestas del catecismo. Edición: texto electrónico (la numeración pertenece solo a esa transcripción). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Col.2.12"],
+      text: "Segunda Confesión de Londres (1689), 29.1 nota (a) (1719 p. 116); nota (c) (1688 p. 97): este versículo figura como nota al margen junto a la cláusula, en inglés, «Baptism is an Ordinance of the New Testament, ordained by Jesus Christ, to be unto the party Baptized, a sign of his fellowship with him, in his death, and resurrection; of his being engrafted into him; of remission of sins; and of his giving up unto God through Jesus Christ, to live and walk in newness of Life.». Edición: A Confession of Faith, cuarta edición (Londres, 1719). Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar. Catecismo Bautista (texto electrónico), P. 97–101: este versículo figura como respuestas del catecismo. Edición: texto electrónico (la numeración pertenece solo a esa transcripción). Lectura todavía sin verificar. Fe y Mensaje Bautistas (1925), XIII: este versículo figura como lista de textos de prueba. Edición: Annual of the Southern Baptist Convention 1925, p. 73–74. Lectura todavía sin verificar. Fe y Mensaje Bautistas (1963 y 2000), VII: este versículo figura como lista de textos de prueba compartida por el bautismo y la Cena, sin asignar cláusula por cláusula. Edición: Annual of the Southern Baptist Convention 1963, p. 276; texto oficial de 2000. Lectura todavía sin verificar.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Los primeros creyentes expresaron su fe primero en el bautismo (Colosenses 2:12; Hechos 22:16; 1 Pedro 3:21)",
+            quotes: [
+              {
+                speaker: "Fred Zaspel",
+                work: "Baptism Saves?",
+                outlet: "Credo Magazine",
+                date: "24 de octubre de 2012",
+                locator:
+                  "5 párrafos: del párrafo que empieza «In 1 Peter 3:21 we find a statement that…» al que termina «…this way we may also say that “baptism saves.”»",
+                url: "https://credomag.com/2012/10/baptism-saves/",
+                text: "In 1 Peter 3:21 we find a statement that has been puzzling to many: “Baptism . . . now saves you.” Are we saved by baptism?\n\nIn much of the nineteenth century conversion for many American Evangelicals came at “the altar call.” This was so much a part of the conversion process that when asked when they were saved many would respond in terms such as, “I walked the aisle in 1966.” At least in the best of these, they would not actually think that walking the aisle after a sermon is what made them a Christian. Rather, it was simply the way in which they first expressed their faith in Christ. “Walking the aisle” was a very real part of the conversion process. And since the reality (faith) was so tightly bound to its form of expression (walking the aisle in a church), the one could simply be spoken of in terms of the other. The terms became almost interchangeable.\n\nThe altar call was unknown in New Testament times. For the earliest Christians it was in baptism that believers first gave expression to their faith in Christ. And in this way baptism was part of the conversion process. A simple glance through the book of Acts will bear this out. When someone came to faith in Christ that faith was immediately expressed in submission to the waters of baptism. There the new believer expressed his faith (Col. 2:12), “calling on the name of the Lord” (Acts 22:16) and making “appeal to God for a good conscience” (1Pet. 3:21).\n\nThe apostles were very clear in teaching that salvation was by faith alone, apart from works of any kind — whether works of personal merit or works of ceremony, such as circumcision. See for example Romans 4:1-13. Justification is by faith alone. And the apostles were not contradicting themselves when they spoke in terms of being “buried with Christ in baptism” (Rom. 6:4; Col. 2:12) or as baptism “saving” (1Pet. 3:21). If baptism is the expression of saving faith, then “faith” and “baptism” in certain contexts can be spoken of almost interchangeably. “Get up, be baptized and wash your sins away, calling on his name” (Acts 22:16) is equivalent to “Believe on the Lord Jesus Christ and you shall be saved (Acts 16:31). The apostles were not teaching baptismal regeneration. They were speaking of faith in terms of its form of expression. The symbol and the reality are so tightly related that one can be spoken of in terms of the other.\n\nWe might consider Romans 10:9 in this regard. Here the apostle Paul tells us that we will be saved if we “confess with our mouth that Jesus is Lord.” Of course he is not implying in this that one who cannot speak therefore cannot be saved. And there is no saving efficacy in simply speaking these words. He is simply referring to the need of faith: “If you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved.” In this way we may also say that “baptism saves.”",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Col.3.3"],
+      text: "Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Titus.3.5"],
+      text: "Tratado de la NAFWB (2026), art. XVIII.1, notas 146–147: este versículo figura como aparato de notas al pie. Edición: Tratado de la NAFWB (2026), p. 32 impresa, p. 40 del PDF. Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Heb.6.1-Heb.6.2"],
+      text: "Credo Ortodoxo (1678), XXVIII, pp. 144–145 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Heb.10.22"],
+      text: "Primera Confesión de Londres (1646), XL, p. 185 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Rev.1.5"],
+      text: "Primera Confesión de Londres (1646), XL, p. 185 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
+    },
+    {
+      refs: ["Rev.7.14"],
+      text: "Primera Confesión de Londres (1646), XL, p. 185 (otras entradas del margen): este versículo figura como nota al margen. Edición: W. J. McGlothlin, Baptist Confessions of Faith (Filadelfia: American Baptist Publication Society, 1911). Lectura todavía sin verificar.",
     },
   ],
+  passages: {
+    title: "Los pasajes de la posición bautista",
+    lede: "Los versículos que la tradición bautista cita sobre el bautismo, completos y con su propia lectura.",
+    officialLabel: "Lo que enseñan los documentos de la tradición bautista.",
+    apologistsLabel: "Cómo lo defienden los apologistas bautistas.",
+  },
   videos: {
     subtitle: "Creadores bautistas explican y defienden esta postura. Los videos se abren en YouTube.",
     items: [],

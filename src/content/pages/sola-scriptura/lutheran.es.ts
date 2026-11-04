@@ -164,6 +164,27 @@ export const solaScripturaLutheran = {
     {
       refs: ["Gal.1.8"],
       text: "La Fórmula de Concordia lo une a la regla con la advertencia sobre un anuncio distinto, aun de un ángel (Epítome, Regla y norma 1).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Pablo maldice un evangelio falso y reclama su autoridad por una revelación que llegó mediante la Palabra externa; la Palabra afirma verdades y rechaza lo falso, y la regla de la enseñanza son los escritos proféticos y apostólicos (la página cita la Fórmula de Concordia)",
+            quotes: [
+              {
+                speaker: "Rev. Paul Doellinger",
+                work: "Bible Study with Luther: Galatians 1:6-20",
+                outlet: "Lutheran Reformation",
+                date: "9 de enero de 2016",
+                locator:
+                  "3 párrafos: del párrafo que empieza «3. Read Acts 9:1-19. In Galatians 1:8-9 Paul doubles…» al que termina «…something contrary, let that one be accursed!’ (Gal. 1:8).”[4]»",
+                url: "https://lutheranreformation.org/theology/bible-study-with-luther-galatians-16-20/",
+                text: "3. Read Acts 9:1-19. In Galatians 1:8-9 Paul doubles down and curses the false teachers in Galatia. In order to proclaim the truth and reject the falsehood, Paul must first claim his authority. Based on Paul’s conversion in Acts 9 and his testimony in Galatians 1:11-12, by what authority can Paul make such an assertion? What is our authority today?\n\n4. Citing his own life as an example, Paul takes comfort in the fact that God “called me by his grace (and) was pleased to reveal His Son to me (Gal. 1:16).” Luther teaches, “Paul himself did not have an inward revelation until he heard the outward Word from heaven, ‘Saul, Saul, why do you persecute me?’ (Acts 9:4). Thus he heard the outward Word first; only then did there follow revelations, the knowledge of the Word, faith, and the gifts of the Spirit.”[3] How is it that you received the outward, external Word? In what outward means of God’s grace can we find comfort, certainty, and the assertion of God’s love and mercy to us?\n\nThe Word of God makes assertions of truth and rejections of falsehood. The Reformation calls us to hold fast to the assertions God makes in His Word. The Formula of Concord states, “We believe, teach, and confess that the only rule and guiding principle according to which all teachings and teachers are to be evaluated and judged are the prophetic and apostolic writings of the Old and New Testaments alone. As it is written, ‘Your Word is a lamp to my feet and a light to my path’ (Ps. 119:105), and Saint Paul: ‘If…an angel from heaven should proclaim to you something contrary, let that one be accursed!’ (Gal. 1:8).”[4]",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["1Tim.3"],
@@ -198,6 +219,12 @@ export const solaScripturaLutheran = {
       text: "La Confesión de Augsburgo los cita para la ciudadanía celestial y las armas espirituales (art. XXVIII.16–17).",
     },
   ],
+  passages: {
+    title: "Los pasajes de la posición luterana",
+    lede: "Los versículos que la tradición luterana cita sobre la Escritura como regla, completos y con su propia lectura.",
+    officialLabel: "Lo que enseñan los documentos de la tradición luterana.",
+    apologistsLabel: "Cómo lo defienden los apologistas luteranos.",
+  },
   videos: {
     subtitle: "Creadores luteranos explican y defienden esta postura. Los videos se abren en YouTube.",
     items: [],

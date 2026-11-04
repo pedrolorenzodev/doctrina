@@ -47,11 +47,12 @@ export type ApologistQuote = {
   text: string;
   original?: string;
   translation?: "ai-assisted";
+  lang?: "en";
 };
 
 export type ApologistArgument = { title: string; quotes: ApologistQuote[] };
 
-export type ApologistLayer = { intro: string; arguments: ApologistArgument[] };
+export type ApologistLayer = { intro?: string; arguments: ApologistArgument[] };
 
 export type ScripturePassage = {
   refs: string[];

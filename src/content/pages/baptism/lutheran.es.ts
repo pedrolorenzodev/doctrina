@@ -156,6 +156,42 @@ export const baptismLutheran = {
     {
       refs: ["Matt.28.19"],
       text: "El Catecismo Menor funda el bautismo en la institución de Cristo y en el nombre del Padre, del Hijo y del Espíritu Santo (Catecismo Menor IV.3–4).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "El bautismo necesita agua y el nombre trinitario, las palabras que Jesús instituyó en Mateo 28; el bautismo se recibe, no se hace uno mismo",
+            quotes: [
+              {
+                speaker: "Jordan B. Cooper",
+                work: "The Doctrine of Baptism Explained Quickly and Simply",
+                outlet: "Dr. Jordan B Cooper, YouTube",
+                date: "30 de diciembre de 2024",
+                locator: "Minutos 0:08 a 1:34",
+                url: "https://www.youtube.com/watch?v=sFXYH_xu5pA&t=8s",
+                text: "then we've got the specifics so we're going to delve into what are the sacraments more particularly well first we've got holy baptism the most foundational Sacrament so how was it done how are you baptized well we have really two things we've got the application of water so the water is applied to the person being baptized you don't do it yourself you are apz someone does it for you that's part of the nature of baptism it's it's that passive thing you know you're not doing it for yourself but it's being given to you because it is a Divine means of Grace it's it's a promise of God um so it is done with the application of water some traditions get very particular about exactly how you do it you have to dunk or you have to sprinkle or you have to pour we're okay with all of those scripture doesn't command one particular mode and and there are some examples I think of each of those in scripture which is precisely why people can AR AR so much about it um but we say it doesn't matter as long as it's applied to you and it's water so we don't baptize with you chocolate milk or something but uh so use water and the second is it has to have the invocation of the Triune name the words that Jesus instituted so these These are you know I baptize you in the name of the Father the Son and the Holy Spirit and so those are the words in Matthew 28 that Jesus delivers to the church so those are the words that we use so it has to have both of those elements the application of water and then the word of God coming in and with the the water to make it baptism so it's not merely pouring water on yourself or someone pouring water on you that constitutes baptism you're not baptized every time you take a take a shower or a bath or something okay then",
+                lang: "en",
+              },
+            ],
+          },
+          {
+            title:
+              "El bautismo es para todas las naciones (Mateo 28:19), más amplio que la antigua alianza, así que se incluye a los niños pequeños",
+            quotes: [
+              {
+                speaker: "Jordan B. Cooper",
+                work: "The Doctrine of Baptism Explained Quickly and Simply",
+                outlet: "Dr. Jordan B Cooper, YouTube",
+                date: "30 de diciembre de 2024",
+                locator: "Minutos 3:37 a 4:31",
+                url: "https://www.youtube.com/watch?v=sFXYH_xu5pA&t=217s",
+                text: "is to be baptized well let's look at some of the things that scripture says Matthew 28:19 tells us that baptism is for all nations this is part of the Great Commission that baptism and discipling is for all nations and what's significant about that is that this is a universal thing when we look at say the the Old Testament the old Covenant well there were benefit for other nations in terms of the Covenant God made with Israel the Covenant was really with particularly the nation of Israel so now baptism however is something that is broader it's it's for more people than the old Covenant was for uh and if the old Covenant was for Israelites and included infants there was no reason to think that infants would not be included now that it's become more Universal not less now it's for all nations it's for men and women unlike you know circumcision which was just for for men uh we also see that there is this practice of household baptisms acts 16:33 and I have a lot on this subject",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Mark.16.16"],
@@ -164,10 +200,79 @@ export const baptismLutheran = {
     {
       refs: ["Titus.3.5-Titus.3.7"],
       text: "El Catecismo Menor lo cita para el lavamiento de la regeneración y de la renovación (Catecismo Menor IV.10).",
+      apologists: {
+        arguments: [
+          {
+            title: "«El lavado de la regeneración» une agua y Espíritu; el lenguaje trata sobre el bautismo",
+            quotes: [
+              {
+                speaker: "Jordan B. Cooper",
+                work: "The Doctrine of Baptism Explained Quickly and Simply",
+                outlet: "Dr. Jordan B Cooper, YouTube",
+                date: "30 de diciembre de 2024",
+                locator: "Minutos 1:43 a 2:17",
+                url: "https://www.youtube.com/watch?v=sFXYH_xu5pA&t=103s",
+                text: "what are its benefits so what does baptism do well the first point here and this is where a lot of debate is but I can't get into that too much here is that baptism is not man's work but it is God's work baptism is not a work of law it is not a command I am not fulfilling some kind of righteous Duty when I get baptized instead it is God's doing it is not works and I have a reference here to Titus Chapter 3 where Paul uses the phrase that is the washing of regeneration which is specifically set as distinct from Works baptism unites us to Christ it brings us into the reality of who Jesus is and what he has done for",
+                lang: "en",
+              },
+              {
+                speaker: "Jordan B. Cooper",
+                work: "The Doctrine of Holy Baptism (Intro to Christian Theology 21)",
+                outlet: "Dr. Jordan B Cooper, YouTube",
+                date: "6 de julio de 2026",
+                locator: "Minutos 55:20 a 56:06",
+                url: "https://www.youtube.com/watch?v=lcRHfOBzPBM&t=3320s",
+                text: "So this language is used throughout throughout scripture. And what I would say is I just don't see language in the New Testament anywhere that speaks about baptism as an act of human obedience. I think it's hard to come to that perspective just from the texts themselves, which seemed to me to speak far more like realistically about baptism. Baptism just does these things. Um, washing of regeneration. Paul says in Titus chapter 3, washing regeneration. Why are these two things tied together? Water and spirit. Washing regeneration. It's I think it's very difficult to say that all of this language really is not about baptism and water is just being used in some other way. I think if the apostles themselves would have had a different view of what baptism did, they would have been more careful in in making these distinctions. Um I just don't see I don't see Baptist preaching this way. You know, I don't see Baptist preaching using the kinds of language that scripture uses there. It would always be really heavily qualified even when they get to those to those kinds of texts.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Rom.6.4"],
       text: "El Catecismo Menor lo cita para la vida nueva que el bautismo significa cada día (Catecismo Menor IV.13–14).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "El bautismo une a los bautizados con la muerte de Cristo y los resucita a una vida nueva; aquí «bautismo» significa bautismo",
+            quotes: [
+              {
+                speaker: "Jordan B. Cooper",
+                work: "Five Scriptural Proofs that Baptism Saves",
+                outlet: "Dr. Jordan B Cooper, YouTube",
+                date: "5 de abril de 2017",
+                locator: "Minutos 5:12 a 6:11",
+                url: "https://www.youtube.com/watch?v=9yN2plB-Bb8&t=312s",
+                text: "the Galatians text and that is from The Book of Romans chapter 6 and he says in verse three Paul writing again he says do you not know that as many of us were baptized into Christ Jesus were baptized into his death therefore we were buried with him through bapt ISM into death that just as Christ was raised from the dead by the glory of the father even so we also should walk in newness of life we are told here that we are baptized into Christ's death baptism unites us to Jesus it connects us to Christ and it connects us specifically to his saving death we are baptized into to his death and we are raised then to newness of life again there's no reason in the text to think that baptism means anything other than baptism Paul doesn't say Spirit baptism not water baptism he just says baptism and if we're going to read these texts together and just take them at face value as Paul understood them uh and as he wanted the Romans and the Galatians to understand these texts it's very clear baptism does save us the",
+                lang: "en",
+              },
+              {
+                speaker: "Jordan B. Cooper",
+                work: "The Doctrine of Baptism Explained Quickly and Simply",
+                outlet: "Dr. Jordan B Cooper, YouTube",
+                date: "30 de diciembre de 2024",
+                locator: "Minutos 2:17 a 3:28",
+                url: "https://www.youtube.com/watch?v=sFXYH_xu5pA&t=137s",
+                text: "as distinct from Works baptism unites us to Christ it brings us into the reality of who Jesus is and what he has done for us that's that subjective justification we were talking about that we are into the reality of Christ's own death and Resurrection as we are baptized we are united to him so Romans 6:3 it brings the Forgiveness of sins Acts 22:16 be baptized and wash away your sins in other words if you are baptized your sins are being washed away it gives the holy spirit this is in Acts 2: 38 at the end of Peter's sermon at at Pentecost I be baptized you'll receive the Forgiveness of sins and receive the gift of the Holy Spirit baptism saves there's that that word you know when somebody says you know are you saved if you've been baptized well you were saved according to St Peter 1 Peter 3:21 says baptism now saves you and he has a connection there to the Ark of the Covenant then we have uh that baptism gives spiritual life Colossians 2: 12-13 finally it regenerates or it makes you born again John 3:5 that you have to be born of water and the spirit as Jesus tells Nicodemus so that's what baptism does those are the benefits that baptism gives then we have the question well who is it for who",
+                lang: "en",
+              },
+              {
+                speaker: "Jordan B. Cooper",
+                work: "The Doctrine of Holy Baptism (Intro to Christian Theology 21)",
+                outlet: "Dr. Jordan B Cooper, YouTube",
+                date: "6 de julio de 2026",
+                locator: "Minutos 53:58 a 55:14",
+                url: "https://www.youtube.com/watch?v=lcRHfOBzPBM&t=3238s",
+                text: "Um, all right. So, those are the those are the various interpretations of that passage. But then you also have um passages like in Galatians where Paul talks about being baptized into Christ or clothed with Christ in baptism. Uh there, you know, Romans chapter 6, Paul talks about how we're buried with Christ in baptism. And these kinds of texts are all over the place in Paul. So they certainly seem to imply that baptism actually does things. That baptism actually buries us with Christ, unites us with his death, clothe us in Christ and his gifts. And so these passages are interpreted by some who reject a more sacramental view of baptism to say that well you know these passages are really not referring to water baptism. They are referring to something else a spirit baptism that's distinct from water baptism. And you know I would just say to that that that's just not addressed in the text. There's no distinction there at all. It just the texts just say baptism. And I think when they say baptism they probably just mean baptism. There's no clear differentiation between a spirit baptism and a water baptism in any of these texts. We also have texts like Acts chapter 238 where Peter says at Pentecost be baptized uh for the forgiveness of sins. Then then later, you know, we have the apostles saying in the book of Acts, be baptized and wash away your sins. To the the Philippian jailer, baptized, wash away your sins.",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Matt.28.19"],
@@ -190,6 +295,12 @@ export const baptismLutheran = {
       text: "El Catecismo Mayor lo cita para la fe que recibe el tesoro prometido (Catecismo Mayor IV.33–34).",
     },
   ],
+  passages: {
+    title: "Los pasajes de la posición luterana",
+    lede: "Los versículos que la tradición luterana cita sobre el bautismo, completos y con su propia lectura.",
+    officialLabel: "Lo que enseñan los documentos de la tradición luterana.",
+    apologistsLabel: "Cómo lo defienden los apologistas luteranos.",
+  },
   videos: {
     subtitle: "Creadores luteranos explican y defienden esta postura. Los videos se abren en YouTube.",
     items: [],

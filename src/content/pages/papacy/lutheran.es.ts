@@ -178,6 +178,26 @@ export const papacyLutheran = {
     {
       refs: ["Matt.16.18-Matt.16.19"],
       text: "El Tratado lo cita para Pedro, la roca, las llaves y la confesión (Tratado 22–25).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "El texto no dice nada sobre sucesores ni sobre infalibilidad; el argumento gira en torno a la roca («petros»/«petra») y a si el arameo puede o no zanjarlo",
+            quotes: [
+              {
+                speaker: "Jordan B. Cooper",
+                work: "A Critique of the Papacy",
+                outlet: "Dr. Jordan B Cooper, YouTube",
+                date: "31 de enero de 2019",
+                locator: "Minutos 8:04 a 13:24",
+                url: "https://www.youtube.com/watch?v=LHk-pmg-9LE&t=484s",
+                text: "jesus the christ okay so that's the that's the text in short okay so what we have here is peter's great confession of jesus um as the son of the living god peter recognizes who jesus is we are told that god himself has revealed this truth to peter in terms of who jesus is and then jesus gives this blessing to peter and so this idea in the roman catholic tradition it's taught that what jesus does here is he says you are peter upon this rock meaning peter's the rock upon you i will build my church and then he gives the keys of the kingdom of heaven specifically to peter and then those keys are passed on from peter to the popes who are the successors of saint peter the bishops of rome um that's a lot to read into that text i think first of all um you know the primary point that i bring up first is this test text says absolutely nothing about peter having successors it says absolutely nothing about peter passing on these keys of the kingdom of heaven to his successors it says absolutely nothing about uh you know these keys you know meaning that peter and his successors would have infallibility would be the heads of the church all of this comes from later history and it's very much read into this text all we're told in this text is that um peter is blessed and there are these things called the keys of the kingdom of heaven that are given to peter and that results in this power of forgiveness binding sins on earth uh and in heaven and then freeing those from sins on earth in heaven so let's talk about what that means so the primary place where the roman catholic argument starts is in making an identification between the rock and peter okay so peter's name petros means rock and what the term that jesus uses in matthew's gospel is is petra to refer to rock later so upon you pratras okay so sorry you are peter petros uh and upon this rock petra i will build my church so the argument is there's overlap between petross and petra and so what jesus is is trying to say here essentially is that peter is that rock upon which he builds the church um and protestant commentators generally have handled this in in a couple different ways one is to point out that the fact that there is a masculine and then there is a feminine so there is a distinction between peter as petros and the rock which is petra so there is a difference in language there and that may be a way of matthew hinting that these are not exactly identical things that are being spoken about here because jesus just does not say petros both times now the response to that from rome and roman apologists oftentimes is to say well jesus wasn't speaking greek jesus was speaking aramaic and the term kipha which we know as you know the background for the term cephas which is what peter is often called uh throughout the new testament um the aramaic term that would have been used there there is no differentiation between masculine and feminine in terms of both the name and the noun so jesus himself when he originally spoke in aramaic would have been using the same term both times um you know that's kind of a i'm sorry but i think that's kind of a silly argument i i just don't think it's it really makes sense of what's going on in the writing of the gospels so um you know matthew writes this in in greek and writes down the words in a very specific way for the readers of that gospel to understand so i'm not convinced that you can try to make a theological argument by what the original authors would have said in the way that these things would have been worded in the original language in which they were spoken face to face um the gospels write things in very particular ways because they're trying to get across very particular ideas um you know so for example this is the case when anybody you know tells a story or tells history you you may be writing out you know a sentence that someone said and it's a truthful sentence but perhaps the word order of the person in speaking was actually different than in the actual sentence so you see this in the gospels you'll find the same events a couple times maybe the words aren't exactly in the same order but it's this the truths are the same because that is in essence what jesus said it's not you know lying or false about what jesus said but the gospel writers put things in such a way and use certain wording to get specific ideas across through through the words of jesus and they're writing in greek so there's necessarily just going to be a little bit of a differentiation between the exact way in which jesus said things and then the way that the gospel writers put them out because jesus would have been speaking in aramaic and so they have to make a decision how are we going to translate this in greek that gets across the idea of what jesus was trying to say and also get it to fit then with the the broader thematic construction of the gospels so that's what's going on here um so we can't really just go back i mean we could do this so many other times in greek and try to find other meanings behind what jesus said by",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["John.21.15"],
@@ -216,6 +236,12 @@ export const papacyLutheran = {
       text: "La Confesión de Augsburgo los cita para distinguir el oficio de la Iglesia del oficio civil (art. XXVIII.13–15).",
     },
   ],
+  passages: {
+    title: "Los pasajes de la posición luterana",
+    lede: "Los versículos que la tradición luterana cita sobre el ministerio y el papado, completos y con su propia lectura.",
+    officialLabel: "Lo que enseñan los documentos de la tradición luterana.",
+    apologistsLabel: "Cómo lo defienden los apologistas luteranos.",
+  },
   videos: {
     subtitle: "Creadores luteranos explican y defienden esta postura. Los videos se abren en YouTube.",
     items: [],

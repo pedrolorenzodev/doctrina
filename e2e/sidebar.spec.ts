@@ -140,7 +140,7 @@ test("four groups with the counts of history and only the published pages, their
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
   expect(counts).toEqual(["56", "41", "18", "10", "20"]);
-  await expect(page.locator('aside nav a:not([href*="/obras/"])')).toHaveCount(119);
+  await expect(page.locator('aside nav a:not([href*="/obras/"])')).toHaveCount(144);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
 });
 

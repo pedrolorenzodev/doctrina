@@ -23,7 +23,11 @@ export function ApologistLayer({ layer, label, text }: ApologistLayerProps) {
         {label}
       </p>
       <p className="mt-2 max-w-measure text-sub text-ink-3">{text.apologistsNote}</p>
-      <p className="mt-7 max-w-measure font-body text-passage-body font-light text-ink-prose opsz-18">{layer.intro}</p>
+      {layer.intro ? (
+        <p className="mt-7 max-w-measure font-body text-passage-body font-light text-ink-prose opsz-18">
+          {layer.intro}
+        </p>
+      ) : null}
       <h3 className="mt-18 font-head text-argument-heading font-light opsz-36">{text.argument}</h3>
       <p className="mt-2 max-w-measure text-sub text-ink-3">{counted(layer, text)}</p>
       {layer.arguments.map((argument) => (
@@ -31,11 +35,12 @@ export function ApologistLayer({ layer, label, text }: ApologistLayerProps) {
           <h4 className="max-w-argument-title font-head text-h3 font-normal text-balance text-ink opsz-24">
             {argument.title}
           </h4>
-          {argument.quotes.map((quote) => (
+          {argument.quotes.map((quote, index) => (
             <ApologistFigure
-              key={`${quote.speaker}-${quote.locator}`}
+              key={`${quote.url}-${index}`}
               quote={quote}
               aiNote={text.aiTranslation}
+              untranslatedNote={text.untranslated}
               readOriginal={text.readOriginal}
               hideOriginal={text.hideOriginal}
               viewSource={text.viewSource}

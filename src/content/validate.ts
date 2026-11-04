@@ -105,6 +105,12 @@ export function validateContent(registry: Registry, pages: Record<string, Tradit
       for (const quote of quotes)
         for (const field of ["speaker", "outlet", "date", "locator", "url", "text"] as const)
           if (!quote[field]) fail(`${name}.scripture.${passage.refs[0]}`, `apologist quote without ${field}`);
+      for (const quote of quotes) {
+        if (quote.translation && !quote.original)
+          fail(`${name}.scripture.${passage.refs[0]}`, "apologist translation without original");
+        if (quote.translation && quote.lang)
+          fail(`${name}.scripture.${passage.refs[0]}`, "apologist quote both translated and in its original language");
+      }
     }
 
     const ids = (items: { id: string }[], what: string) => {

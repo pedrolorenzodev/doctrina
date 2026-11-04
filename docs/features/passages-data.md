@@ -1,0 +1,145 @@
+# Pasajes data: official documents and apologists (build session B3, in the duplicate repo `doctrina-b3`, 2026-11-03 night)
+
+Status: B3.1 to B3.4 built and verified together (one `npm run verify`, the Pasajes e2e and 368 related e2e tests passed); B3.5 not done (TODO). Pedro was away; the session ran alone. Nothing here is committed (no commit kit: each block lists its files and one commit message). Stopped at the weekly cap of 82 % without reaching it; the Spanish rendering stopped for another reason (below).
+
+## Intent
+
+Fill the approved «Pliego» Pasajes page (`docs/features/passages-page.md`, DECISIONS 2026-10-29) with everything the research has: the official readings already in the 20 tradition pages, and the apologists layer imported from `docs/research/passages/apologists-<tradition>-<doctrine>.md` (plus the pilot `apologists-catholic.md`). Change data, not design.
+
+## Acceptance
+
+- Every page with a `passages` block renders the Pasajes page; the apologists tab shows only where a passage has data (muted otherwise, as built).
+- Every quote has speaker, work, outlet, date, locator, URL, text. Nothing in Spanish is invented: a quote is either the AI-assisted Spanish with the original beside it (labelled), or the original English labelled «Cita en su idioma original».
+- Counts are reported (sections imported, unmatched, passages with 0 / 1 / ≥ 2 persons).
+- `npm run verify` and the e2e pass; screenshots at 1440 / 768 / 390 / 360, light and dark; no horizontal overflow at 360.
+
+## Out of scope
+
+B3.5 (English UI strings, tree rows: the tree row turns on by itself when a page has a `passages` block, see «Decisions»), parallels, changing the layout of variant G.
+
+## Pipeline (how the data gets in)
+
+1. `node data/scripts/build-apologists.mjs` reads the 20 markdown files (+ pilot) → `data/passages/apologists/<doctrine>-<tradition>.json` (original English quotes, one record per quote: speaker, work, outlet, Spanish-formatted date, Spanish locator, URL, text, key = sha1 of the text).
+2. `data/passages/translations/quotes.json` and `titles.json`: `key → Spanish`, made with `data/scripts/translation-batches.mjs` (batches ranked by passage rank) and checked/merged by `merge-translations.mjs` (same paragraph count, length ratio, same numbers).
+3. `data/passages/apologists/seeds/baptism-catholic.json`: the 3 hand-written blocks (8 quotes + intros) that were in the Catholic Baptism page; kept so a re-run does not lose them.
+4. `node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON data/scripts/apply-passages.mjs <doctrine>[:<tradition>] …` rewrites the page file: adds `passages` (title, lede, labels) and `apologists` on each matching passage (matching: the heading's «page entry N» first, else verse overlap with the passage refs; a section with no match is listed, never forced). It is idempotent (it strips and rebuilds the layer). `convert-dossier.mjs` calls the same function, so a full reconvert keeps the layer. Why a second path: the Catholic Baptism and Eucharist pages have no entry in `dossier-fields.mjs` (they were not produced by this converter), so the converter cannot rebuild them.
+
+## Decisions made while Pedro was away (agent's call, with the reason)
+
+- **Questions of the brief, defaults taken:** ship partial apologists with no placeholders; build the Baptist passages from the lists as a pilot (B3.4); translate by passage rank within budget, the rest stays in English, labelled.
+- **Quote = the whole stored block.** Where a Catholic record has a short quote and a long-form block, the page shows the long-form (DECISIONS 2026-11-01 «no length limit while private»); the short quote lies inside it. The tag `[long-form: trim before public release]` stays in the research files; the page data carries no tag, so trimming means re-cutting from the markdown.
+- **`intro` is optional.** Only the 3 seeded blocks have an intro (written earlier); the agent does not write defences. The layer hides the intro paragraph when there is none (small change in `apologist-layer.tsx`).
+- **New quote field `lang: "en"`** marks an untranslated quote; the figure shows the label «Cita en su idioma original (inglés). Todavía sin traducir al español.» (shared file `ui-text/es.ts`, one line; English counterpart in `en.ts`). Paragraph breaks inside a quote render with `whitespace-pre-line` (a long block is several paragraphs; `guillemets` stays on the blockquote).
+- **Undated sources** (undated reprints, a YouTube clip whose date the file does not give) show «Sin fecha indicada» as the date; no date is guessed.
+- **Locators** are rebuilt in Spanish from the research text (minutes; N paragraphs from «…» to «…»; the paragraph that begins «…»); when the research line has none of these shapes the locator is «Ver la página enlazada» (counted in the report).
+- **Argument titles** are translated like quotes (`titles.json`); an untranslated title shows in English.
+- **`passages` block (title, lede, labels) for all 20 pages** is generated by the same function: «Los pasajes de la posición X», «Los versículos que {la Iglesia católica | la tradición X} cita sobre {tema}, completos y con su propia lectura.», «Lo que enseñan los documentos de …», «Cómo lo defienden los apologistas X.». The Catholic Baptism strings are identical to the ones that were there. This turns on the tree row and the «Ver los N pasajes» button for every page with no shared-file edit (they read `page.passages`).
+- **Weekly cap:** the brief said 90 %; a message from another session (`doctrina-a8`, relaying Pedro's new shared limit) lowered it to **82 %**. I stopped at 82 %.
+
+## Shared files touched
+
+- `src/content/ui-text/es.ts`: `passagesPage.untranslated` (after `aiTranslation`).
+- `src/content/ui-text/en.ts`: `passagesPage.untranslated` (after `aiTranslation`).
+- `tools/check-content.mjs`: two validator fixtures (translation without original; translated and original-language at once).
+- `src/content/registry/verses.ts`: the RV1909 verses of the new Baptist passages, appended by `apply-passages.mjs` (generated registry file).
+- Not touched: `docs/ROADMAP.md`, `docs/DECISIONS.md`, `docs/GOTCHAS.md`, `docs/DESIGN.md`, tree/sidebar, `globals.css`, `package.json`, the B2 files.
+
+## Usage log
+
+- 22:03 session 26 %, weekly 75 % (start). 22:13 weekly 76 %. 22:35 weekly 77 % (after 6 translation agents). 22:56 weekly 77 % (end). The translation agents were Haiku, one at a time after Pedro's rule (the first five ran in two parallel groups before the message arrived). Session never passed 32 %.
+
+## Counts
+
+Research markdown → data: 111 sections with arguments in the 20 files (+ pilot), **102 imported** into a passage, **9 unmatched** (listed below), 218 quote placements (the same block appears under more than one passage when its section matches several). Unique quotes 192 (95,000 words).
+
+| page | sections | imported | unmatched | quotes | AI Spanish | passages | with layer |
+|---|---|---|---|---|---|---|---|
+| baptism:catholic | 13 | 13 | 0 | 29 + 3 seeded blocks (8 quotes, Spanish) | 29 | 19 | 16 |
+| eucharist:catholic | 14 | 14 | 0 | 30 | 29 | 14 | 13 |
+| papacy:catholic | 14 | 14 | 0 | 29 | 29 | 14 | 13 |
+| sola-scriptura:catholic | 13 | 13 | 0 | 26 | 7 | 17 | 13 |
+| baptism:lutheran | 5 | 3 | 2 | 7 | 0 | 9 | 3 |
+| eucharist:lutheran | 4 | 4 | 0 | 5 | 0 | 21 | 4 |
+| papacy:lutheran | 1 | 1 | 0 | 1 | 0 | 15 | 1 |
+| sola-scriptura:lutheran | 3 | 1 | 2 | 1 | 0 | 10 | 1 |
+| baptism:reformed | 8 | 8 | 0 | 19 | 0 | 22 | 9 |
+| eucharist:reformed | 2 | 2 | 0 | 5 | 0 | 9 | 4 |
+| papacy:reformed | 3 | 3 | 0 | 6 | 0 | 19 | 4 |
+| sola-scriptura:reformed | 4 | 4 | 0 | 7 | 0 | 26 | 5 |
+| baptism:orthodox | 5 | 2 | 3 | 2 | 0 | 10 | 2 |
+| eucharist:orthodox | 4 | 4 | 0 | 5 | 0 | 7 | 5 |
+| papacy:orthodox | 4 | 4 | 0 | 5 | 0 | 7 | 3 |
+| sola-scriptura:orthodox | 4 | 3 | 1 | 10 | 0 | 4 | 2 |
+| baptism:baptist | 6 | 6 | 0 | 22 | 0 | 61 | 20 |
+| eucharist:baptist | 1 | 0 | 1 | 0 | 0 | 47 | 0 |
+| papacy:baptist | 2 | 2 | 0 | 3 | 0 | 70 | 2 |
+| sola-scriptura:baptist | 1 | 1 | 0 | 6 | 0 | 102 | 6 |
+
+**Passages with 0 / 1 / ≥ 2 persons** (persons by speaker name; Catholic Answers staff count as separate persons, the research tally says they are not independent as an organisation):
+
+| page | 0 | 1 | ≥ 2 |
+|---|---|---|---|
+| baptism:catholic | 3 | 3 | 13 |
+| eucharist:catholic | 1 | 2 | 11 |
+| papacy:catholic | 1 | 4 | 9 |
+| sola-scriptura:catholic | 4 | 3 | 10 |
+| baptism:lutheran / eucharist / papacy / sola-scriptura | 6 / 17 / 14 / 9 | 3 / 3 / 1 / 1 | 0 / 1 / 0 / 0 |
+| baptism:reformed / eucharist / papacy / sola-scriptura | 13 / 5 / 15 / 21 | 3 / 3 / 2 / 3 | 6 / 1 / 2 / 2 |
+| baptism:orthodox / eucharist / papacy / sola-scriptura | 8 / 2 / 4 / 2 | 2 / 5 / 2 / 0 | 0 / 0 / 1 / 2 |
+| baptism:baptist (61 passages) | 41 | 18 | 2 |
+| eucharist:baptist (47) | 47 | 0 | 0 |
+| papacy:baptist (70) | 68 | 2 | 0 |
+| sola-scriptura:baptist (102) | 96 | 6 | 0 |
+
+**Sections that match no page passage (not forced; the quotes are in `data/passages/apologists/*.json` and wait for a passage):** Lutheran Baptism «Other passages Cooper reads…» (5 quotes: Acts 2:38 / 22:16, Gal 3:26–27, 1 Pet 3:20–21 are not on the Lutheran page) and «Acts 16:33 and the household baptisms» (1); Lutheran Sola Scriptura «2 Tim 3:16–17» (1) and «Matt 15:1–9» (1); Orthodox Baptism «Gal 3:27» (1), «Other passages the same video reads» (3) and «…the Lord of Spirits episode reads» (2); Orthodox Sola Scriptura «2 Tim 3:15–17» (3); Baptist Eucharist «John 6 and 1 Cor 10:3–4» (1; not in the 47 Baptist list records). **Page passages with no apologists:** the «0» column above (Catholic: Baptism entries 14, 18, 19; Eucharist entry 12; Papacy entry 14; Sola Scriptura entries 9, 12, 16, 17).
+
+Two spurious notes from the matcher (not errors): Catholic Sola Scriptura entry 3 («Jude 3» has no chapter in the heading) and Reformed Papacy entry 15 (the second entry of a double heading is outside the verse text the matcher reads); both matched by the heading's «page entry N».
+
+## What is live, in Spanish or in the original
+
+- **Live (all 20 pages):** the Pasajes page of every tradition (tree row and «Ver los N pasajes» read `page.passages`; checked 20 of 20, the N equals the passage count).
+- **AI Spanish with the original beside it (labelled):** 94 quote placements: Catholic Baptism (all 29 + the seeded 8), Eucharist (29 of 30), Papacy (all 29), Sola Scriptura (7 of 26); all 127 argument titles.
+- **Original English, labelled «Cita en su idioma original (inglés). Todavía sin traducir al español.»:** 124 placements: Catholic Sola Scriptura 19, Lutheran 14, Reformed 37, Orthodox 22, Baptist 31, Catholic Eucharist 1.
+- **Why the Spanish stopped:** the Haiku agents translated batches 1–6 (rank order: Catholic Baptism, Eucharist, Papacy, then Sola Scriptura); the agent given batches 7–8 refused («complete copyrighted articles and transcripts»). I did not retry or route around it: the brief's fallback applies (the rest stays in English, labelled). The text is stored under the project's own decision (private, long-form tagged for trimming); whether to translate the remaining ~41,800 words (85 quotes) is Pedro's call. To resume: `node data/scripts/translation-batches.mjs <scratch dir> 4500` writes the batches of what is still missing (ranked by passage rank); `node data/scripts/merge-translations.mjs quotes <batch> <translated>` checks and merges; then `apply-passages.mjs` on all 20 pairs and `npm run verify`.
+- **Inert / TODO:** B3.5; the Baptist apologists sit on the matching list-built passages (22 + 3 + 6 quotes) and the English quotes there are labelled; no `intro` on any block but the 3 seeded ones; `lang="en"` label text for the English UI is in `en.ts` (English UI stage later).
+
+## Blocks (files and one-line commit message; tested together)
+
+All four ran through one `npm run verify` (exit 0: typecheck, lint, format, build with 20 pages valid, 42 validator fixtures), `e2e/passages.spec.ts` (12 passed) and 368 related e2e tests (doctrine pages, objections, tree, header, a11y, quality; chromium and webkit). Screenshots in `tmp/b3/` (not committed): 1440 / 768 / 390 / 360, light and dark, for Catholic Baptism John 3:5 (2+ persons, long blocks, AI Spanish) and Acts 2:38 (seeded), Lutheran Baptism Matt 28:19 (1 person, English label), Lutheran Baptism Eph 5:26 (no layer, muted tab), Orthodox Sola Scriptura 1 Tim 3:15 (English long block), Baptist Baptism (list passages) and Baptist apologists. No horizontal overflow at 360.
+
+### B3.1 · converter step, validator and Catholic Baptism
+Message: `feat(passages): import the apologists layer from the research files`
+Files: `data/scripts/{passage-refs,apologists-md,apologists-match,apologists-load,build-apologists,apply-passages,merge-translations,translation-batches}.mjs`, `data/scripts/convert-dossier.mjs`, `data/passages/apologists/*.json` (20) and `seeds/baptism-catholic.json`, `data/passages/translations/{quotes,titles}.json`, `src/content/model/page.ts`, `src/content/validate.ts`, `src/features/passages/apologist-layer.tsx`, `src/features/passages/apologist-figure.tsx`, `src/content/ui-text/{es,en}.ts`, `tools/check-content.mjs`, `e2e/passages.spec.ts`, `src/content/pages/baptism/catholic.es.ts`, `docs/features/passages-data.md`.
+Look at: `/es/doctrines/baptism/catholic/passages` → John 3:5 → Apologistas (long blocks, «Leer el original en inglés»); Acts 2:38 (the three old blocks are intact: intro and 8 quotes); the muted tab on «1 Tim 2:4».
+
+### B3.2 · other Catholic pages
+Message: `feat(passages): add the Catholic apologists to eucharist, papacy and scripture`
+Files: `src/content/pages/{eucharist,papacy,sola-scriptura}/catholic.es.ts`.
+
+### B3.3 · Lutheran, Reformed, Orthodox
+Message: `feat(passages): add the Lutheran, Reformed and Orthodox apologists`
+Files: `src/content/pages/{baptism,eucharist,papacy,sola-scriptura}/{lutheran,reformed,orthodox}.es.ts` (12).
+Look at: Lutheran Baptism (English quote with its label), Orthodox Sola Scriptura (5 written voices).
+
+### B3.4 · Baptist passages from the lists (pilot) and the Baptist apologists
+Message: `feat(passages): build the Baptist passages from the confession lists`
+Files: `data/scripts/baptist-passages.mjs`, `src/content/registry/verses.ts` (new verses for the new refs, RV1909), `src/content/pages/{baptism,eucharist,papacy,sola-scriptura}/baptist.es.ts`.
+How it works: one passage per record of `docs/research/doctrines/scripture-lists/<doctrine>-baptist.json` (61 / 47 / 70 / 102), in canonical order; the reading says, per document, which clause margin or proof-text list prints the verse, with the locator and a clean edition string, and the clause sentence in English between «», and «Lectura todavía sin verificar» where the list's tag is `[unverified…]`. No invented reading, no registry citations (so no citation window; the edition is in the sentence). Not done: «Ver los N pasajes» for Baptist now says 61 / 47 / 70 / 102.
+The old single Baptist passage per page (a list of every verse, «sin asignar versículos a cada cláusula») is replaced by these.
+Look at: `/es/doctrines/baptism/baptist/passages`.
+
+## Deviations from the approved variant G (each with its reason)
+
+1. Long blocks: a quote can be 600+ words; paragraphs show with `whitespace-pre-line` inside the same blockquote, no collapse. A 7-quote passage is 8,000+ px tall at 1440 (`john-3-5`). A fold («Leer el pasaje completo») would be new design: Pedro's call.
+2. No intro paragraph where the research has none (see Decisions).
+3. English label under untranslated quotes (see Decisions).
+4. The left ruler has one tick per passage: the Baptist pages (47 to 102 ticks) make it 850 to 1,800 px tall, taller than the viewport (the sticky ruler's lower ticks go out of view). Not changed (design). Options: ruler groups every N passages, or the Baptist route groups the records by chapter.
+5. The page payload carries every quote of every passage of the tradition (the original English beside the Spanish): ~830 KB of HTML for the Baptist Baptism page. Per-passage loading would be a code change; flagged, not done.
+
+## Not done (TODO)
+
+- **B3.5:** English UI strings parity beyond the one new `untranslated` string, the English route/slugs for the Pasajes page, and tree rows in English. (Spanish tree rows and buttons are on for all 20 pages by data, nothing to edit.)
+- The remaining ~41,800 words of Spanish rendering (85 quotes); the 9 unmatched sections above; `intro` for the blocks other than the seeded ones (the agent does not write defences).
+- The Baptist `how` labels and the «Credo Ortodoxo (1678)» name (the document's own title, a General Baptist confession; it can read as «Orthodox church»): check wording.
+- English-language locale of the new Baptist reading text (Spanish only for now, like the other page strings).
+- Regeneration noise: `apply-passages.mjs` writes the page through `JSON.stringify` and prettier, so a few object literals that were on one line became several (Catholic Baptism and Eucharist `themes`, `videos`); no content changed.

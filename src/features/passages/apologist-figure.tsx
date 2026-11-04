@@ -7,21 +7,33 @@ import type { ApologistQuote } from "@/content/model/page";
 type ApologistFigureProps = {
   quote: ApologistQuote;
   aiNote: string;
+  untranslatedNote: string;
   readOriginal: string;
   hideOriginal: string;
   viewSource: string;
 };
 
-export function ApologistFigure({ quote, aiNote, readOriginal, hideOriginal, viewSource }: ApologistFigureProps) {
+export function ApologistFigure({
+  quote,
+  aiNote,
+  untranslatedNote,
+  readOriginal,
+  hideOriginal,
+  viewSource,
+}: ApologistFigureProps) {
   const [open, setOpen] = useState(false);
   const originalId = useId();
   return (
     <figure className="mt-7 quote-figure-grid">
       <div>
-        <blockquote className="m-0 font-head text-quote font-light text-ink italic opsz-24 guillemets">
+        <blockquote
+          lang={quote.lang}
+          className="m-0 whitespace-pre-line font-head text-quote font-light text-ink italic opsz-24 guillemets"
+        >
           {quote.text}
         </blockquote>
         {quote.translation ? <p className="mt-2 text-btn leading-normal text-ink-3">{aiNote}</p> : null}
+        {quote.lang ? <p className="mt-2 text-btn leading-normal text-ink-3">{untranslatedNote}</p> : null}
         {quote.original ? (
           <>
             <MoreButton expanded={open} controls={originalId} onClick={() => setOpen((value) => !value)}>
@@ -29,7 +41,10 @@ export function ApologistFigure({ quote, aiNote, readOriginal, hideOriginal, vie
             </MoreButton>
             <div id={originalId} inert={!open} data-open={open ? "" : undefined} className="fold-grid">
               <div className="min-h-0 overflow-hidden">
-                <p lang="en" className="my-1 font-body text-passage-body font-light text-ink-3 italic guillemets">
+                <p
+                  lang="en"
+                  className="my-1 whitespace-pre-line font-body text-passage-body font-light text-ink-3 italic guillemets"
+                >
                   {quote.original}
                 </p>
               </div>

@@ -78,6 +78,7 @@ export const en: UiText = {
       readOriginal: "Read the English original",
       hideOriginal: "Hide the original",
       aiTranslation: "Own translation, AI-assisted",
+      untranslated: "Quoted in its original language (English).",
       viewSource: "See the source",
       previous: "Previous passage",
       next: "Next passage",

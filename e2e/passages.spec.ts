@@ -41,8 +41,39 @@ test("the apologists layer shows quotes with their source and is muted where the
   await page.getByRole("button", { name: "Apologistas" }).click();
   await expect(page.getByText("El argumento, en sus palabras")).toBeVisible();
   await expect(page.getByRole("link", { name: "Ver la fuente" }).first()).toHaveAttribute("target", "_blank");
-  await page.goto(`${route}#john-3-5`);
+  await page.goto(`${route}#1tim-2-4`);
   await expect(page.getByRole("button", { name: "Apologistas" })).toHaveAttribute("aria-disabled", "true");
+});
+
+test("every apologist quote says whether its text is the AI Spanish or the original language", async ({ page }) => {
+  await page.goto(`${route}#john-3-5`);
+  await page.getByRole("button", { name: "Apologistas" }).click();
+  const quotes = page.locator("figure blockquote");
+  const labelled = page
+    .locator("figure")
+    .filter({ hasText: /Traducción propia asistida por IA|Cita en su idioma original/ });
+  expect(await quotes.count()).toBeGreaterThan(3);
+  expect(await labelled.count()).toBe(await quotes.count());
+});
+
+test("a long quote keeps its paragraphs and the original opens beside it", async ({ page }) => {
+  await page.goto(`${route}#john-3-5`);
+  await page.getByRole("button", { name: "Apologistas" }).click();
+  const long = page
+    .locator("figure blockquote")
+    .filter({ hasText: "Las Escrituras enseñan que las personas nacen de nuevo en el bautismo." });
+  await expect(long).toBeVisible();
+  const lines = await long.evaluate((el) =>
+    Math.round(el.getBoundingClientRect().height / parseFloat(getComputedStyle(el).lineHeight)),
+  );
+  expect(lines).toBeGreaterThan(12);
+  const figure = page.locator("figure").filter({
+    has: page.locator("blockquote", {
+      hasText: "Las Escrituras enseñan que las personas nacen de nuevo en el bautismo.",
+    }),
+  });
+  await figure.getByRole("button", { name: "Leer el original en inglés" }).click();
+  await expect(figure.getByText("Scripture teaches people are born again in baptism.").first()).toBeVisible();
 });
 
 test("the tree row Pasajes is on and the button of the tradition page leads here", async ({ page }) => {
@@ -53,9 +84,12 @@ test("the tree row Pasajes is on and the button of the tradition page leads here
 
 test("no horizontal overflow at 360", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 });
-  await page.goto(`${route}#acts-2-38`);
-  await page.getByRole("button", { name: "Apologistas" }).click();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  for (const hash of ["acts-2-38", "john-3-5"]) {
+    await page.goto(`${route}#${hash}`);
+    await page.getByRole("button", { name: "Apologistas" }).click();
+    await page.getByRole("button", { name: "Leer el original en inglés" }).first().click();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
 });
 
 test("«Leer en el lector» lands with the verse as the third visible one", async ({ page }) => {

@@ -29,6 +29,46 @@ const mutations = [
     "verse John.99.99 not in registry",
   ],
   ["unknown verse in a passage", (r, p) => (p.scripture[0].refs[0] = "Gen.99.1"), "verse Gen.99.1 not in registry"],
+  [
+    "apologist translation without its original",
+    (r, p) =>
+      (p.scripture[0].apologists = {
+        arguments: [
+          {
+            title: "t",
+            quotes: [
+              { speaker: "a", outlet: "b", date: "c", locator: "d", url: "e", text: "f", translation: "ai-assisted" },
+            ],
+          },
+        ],
+      }),
+    "apologist translation without original",
+  ],
+  [
+    "apologist quote marked original-language and translated",
+    (r, p) =>
+      (p.scripture[0].apologists = {
+        arguments: [
+          {
+            title: "t",
+            quotes: [
+              {
+                speaker: "a",
+                outlet: "b",
+                date: "c",
+                locator: "d",
+                url: "e",
+                text: "f",
+                lang: "en",
+                translation: "ai-assisted",
+                original: "g",
+              },
+            ],
+          },
+        ],
+      }),
+    "apologist quote both translated and in its original language",
+  ],
   ["unknown section", (r, p) => (p.teach.statements[0].text += " {s:nowhere|x}"), "unknown section nowhere"],
   ["glossary token", (r, p) => (p.teach.statements[0].text += " {g:term}"), "no glossary entry term"],
   ["malformed token", (r, p) => (p.teach.statements[0].text += " {c:A}"), "citation without label"],

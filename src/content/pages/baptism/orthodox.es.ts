@@ -169,6 +169,26 @@ export const baptismOrthodox = {
     {
       refs: ["John.3.5"],
       text: "El Catecismo extenso de Filareto y la Confesión de Dositeo lo citan para el nacimiento de agua y de Espíritu, cada uno con su propia redacción (Filareto, pregunta 288; Dositeo, decreto XVI).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "El nuevo nacimiento de Juan 3 es el santo bautismo; el «lavado de la regeneración» de Tito 3 es lo mismo",
+            quotes: [
+              {
+                speaker: "Fr. Josiah Trenham",
+                work: "5 Miracles That Happen at Baptism",
+                outlet: "Patristic Nectar, YouTube",
+                date: "9 de junio de 2026",
+                locator: "Minutos 3:58 a 4:44",
+                url: "https://www.youtube.com/watch?v=Dc8PHJ76uUY&t=238s",
+                text: "life to God. This is how Christians live. A second miracle of holy baptism is new birth. Is new birth. We see this of course in Jesus's conversation with Nicodemus in the third chapter of St. John's gospel where Jesus speaks about being born from again being born again by water and the spirit. This is also a beautifully described by St. Paul in his epistle to his spiritual son Titus in chapter 3. I'll read this to you. It's a it's a beautiful text. But when the kindness of God our Savior, and his love for mankind appeared, he saved us not on the basis of deeds which we have done in righteousness, but according to his mercy, by the washing of regeneration and renewal by the Holy Spirit. Here again you have this beautiful description of holy baptism as a washing of regeneration and a renewal of the Holy Spirit. This is new birth, the",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Acts.19.4"],
@@ -189,6 +209,26 @@ export const baptismOrthodox = {
     {
       refs: ["Col.2.11-Col.2.12"],
       text: "El Catecismo extenso lo cita para la circuncisión y la sepultura con Cristo en el bautismo (Filareto, pregunta 294).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "El bautismo es el modo en que se confieren los beneficios de la circuncisión de Cristo; el argumento de Pablo es que los gentiles no necesitan circuncisión propia",
+            quotes: [
+              {
+                speaker: "the hosts of The Lord of Spirits",
+                work: "Lord of Spirits - Baptism Now Saves [Ep. 54]",
+                outlet: "Ancient Faith, YouTube",
+                date: "11 de octubre de 2023",
+                locator: "Minutos 1:06:46 a 1:10:53",
+                url: "https://www.youtube.com/watch?v=iwQRhEwtQ-I&t=4006s",
+                text: "of God right um and so there is a place that I already alluded to right which occurs in the epistle reading for the Feast of Christ circumcision it's actually Colossians uh where Saint Paul really pulls all of these ideas we've just been discussing together all in one place okay yes so Colossians chapter 2 verses 8 through 12. Saint Paul says see to it that no one takes you captive by philosophy and empty deceit according to human tradition according to the elemental spirits of the world and not according to Christ for in him the whole fullness of deity dwells bodily and you have been filled in him who is the head of all Rule and Authority in him also you were circumcised with a circumcision made without hands by cutting off the body of the flesh by the circumcision of Christ having been buried with him in baptism in which you were also raised with him through faithfulness in the powerful working of God who raised him from the dead and so here we have very clearly right the benefits of Christ's circumcision are bestowed upon these Gentiles in colossae explicitly through baptism yeah so it sets up the same relationship as um being the wife or daughter of a circumcised man in the old Covenant you know because the church is the bride of Christ and so therefore the relationship in this in these terms is the same Christ's circumcision counts for the church all right and this is why Hebrews and several other places talk about Christ sanctifying himself before his crucifixion hmm and that's those are weird passages that people kind of don't know like why did he have like Christ was holy the whole time right why did he have to sanctify himself what is it this is talking about that him being set apart so that that can be bestowed upon us right uh as his bride through his circumcision and so this is the ultimate argument from Saint Paul as to why Gentile Christians not only don't have to get circumcised to be able to receive the Eucharist and be full participants in in Christian right ritual life but should not be yeah because for Saint Paul by demanding that they be circumcised individually In the Flesh as he says that would be replacing Christ circumcision for Saint Paul with their own yeah it would be like if you were baptized in the church and then you decided to go get your own baptism somewhere else because you felt like it wasn't right it wasn't it didn't really do the job or whatever you know it would be saying I'm not going to be made Holy by Christ I'm going to make myself holy yeah and this is why this contact St Paul talks about people trying to establish their own righteousness right rather than receiving the righteousness of Christ through faithfulness yeah it's not about yeah I mean if you think about that like right people talking about him talking about people establishing their own righteousness that's often especially in in Reformation framework is read as you know stop trying to do good things Christ has already done good things but right that's not what's going on it's the establishment of righteousness it's not just doing good things right and that righteousness is received through faithfulness yeah which involves keeping Commandments yep if you love me you will keep my Commandments at all which it says a gazillion times in the Bible yes like like just do a word search everybody for love and Commandments uh and see how many places they are paired together in the Bible it's a bunch a bunch all right well with that said there's a good beefy first half we're going to go ahead and take our first break we'll be",
+                lang: "en",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Eph.2.2"],
@@ -207,6 +247,12 @@ export const baptismOrthodox = {
       text: "El Catecismo extenso lo cita como advertencia sobre el pecado después del bautismo (Filareto, pregunta 305).",
     },
   ],
+  passages: {
+    title: "Los pasajes de la posición ortodoxa",
+    lede: "Los versículos que la tradición ortodoxa cita sobre el bautismo, completos y con su propia lectura.",
+    officialLabel: "Lo que enseñan los documentos de la tradición ortodoxa.",
+    apologistsLabel: "Cómo lo defienden los apologistas ortodoxos.",
+  },
   videos: {
     subtitle: "Creadores ortodoxos explican y defienden esta postura. Los videos se abren en YouTube.",
     items: [],
