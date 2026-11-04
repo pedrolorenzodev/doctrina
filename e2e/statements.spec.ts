@@ -11,8 +11,7 @@ const list = (page: Page) =>
       hidden: items.filter((item) => item.hidden).length,
       rv: items.map((item) => item.dataset.rv ?? "-"),
       opacity: items.map((item) => Number(getComputedStyle(item).opacity)),
-      ghosts:
-        document.querySelector("#teach [aria-hidden=true].absolute:not(.invisible)")?.children.length ?? -1,
+      ghosts: document.querySelector("#teach [aria-hidden=true].absolute:not(.invisible)")?.children.length ?? -1,
       animations: document.querySelector("#teach ol")?.getAnimations({ subtree: true }).length ?? -1,
     };
   });
@@ -33,9 +32,7 @@ test("show more and show less leave no ghost and no running animation", async ({
   await expect(page.locator(more)).toHaveText("Mostrar menos");
   const ghostsRightAfterClick = await page.evaluate((selector) => {
     (document.querySelector(selector) as HTMLElement).click();
-    return (
-      document.querySelector("#teach [aria-hidden=true].absolute:not(.invisible)")?.children.length ?? -1
-    );
+    return document.querySelector("#teach [aria-hidden=true].absolute:not(.invisible)")?.children.length ?? -1;
   }, more);
   expect(ghostsRightAfterClick).toBe(4);
   await page.waitForTimeout(900);

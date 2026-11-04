@@ -44,7 +44,9 @@ async function startSampling(page: Page, index: number) {
         t: performance.now() - start,
         box: box ? box.getBoundingClientRect().height : -1,
         para: para.getBoundingClientRect().top,
-        below: (root.nextElementSibling as HTMLElement)?.getBoundingClientRect().top ?? 0,
+        below: (
+          (root.nextElementSibling ?? root.parentElement?.nextElementSibling) as HTMLElement
+        ).getBoundingClientRect().top,
         scroll: scrollY,
         words: box ? [...box.querySelectorAll("[data-word]")].filter(visible).length : 0,
         dashed: box ? getComputedStyle(box.firstElementChild!).borderLeftStyle === "dashed" : false,
@@ -293,4 +295,57 @@ test("the label «Simplificado por IA» is visible whenever the simplified text 
   await page.waitForTimeout(700);
   await expect(panel.locator("[data-simplifier-label]")).toBeVisible();
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+});
+
+const smyrnaeans = "/es/historia/obras/ignatius-smyrnaeans";
+
+test("the Fathers' reader offers the simplifier on one paragraph, in English, with the same animation rules", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(smyrnaeans, { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+  test.skip((await page.locator("[data-simplifier-mark]").count()) === 0, "the simplifier switch is off in this build");
+  await expect(page.locator("[data-simplifier-mark]")).toHaveCount(1);
+  await expect(page.locator("[data-father-text] > div")).toHaveCount(29);
+  await expect(page.locator("[data-simplifier] [data-division-open]")).toHaveText("6.2");
+  await bringUp(page, 0);
+  await startSampling(page, 0);
+  await page.waitForTimeout(100);
+  await mark(page, 0).click();
+  await page.waitForTimeout(9000);
+  const frames = await stopSampling(page);
+  const opened = frames.filter((frame) => frame.box >= 0);
+  expectInStep(frames);
+  expect(new Set(opened.map((frame) => frame.words)).size).toBeGreaterThan(10);
+  const text = page.locator("[data-simplifier-text]");
+  await expect(text).toHaveAttribute("lang", "en");
+  await expect(text).toContainText("Take note of those who hold strange teaching");
+  await expect(page.locator("[data-simplifier-label]")).toHaveText("Simplificado por IA");
+  await page.getByRole("button", { name: "Muy simple" }).click();
+  await page.waitForTimeout(700);
+  await expect(text).toContainText("This goes against what God thinks.");
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+});
+
+test("pointing at a sentence number marks its original sentence", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(smyrnaeans, { waitUntil: "networkidle" });
+  test.skip((await page.locator("[data-simplifier-mark]").count()) === 0, "the simplifier switch is off in this build");
+  await bringUp(page, 0);
+  await mark(page, 0).click();
+  await page.waitForTimeout(9000);
+  await page.locator("[data-simplifier-text] sup").nth(1).hover();
+  const marked = await page.evaluate(() => {
+    const highlight = (CSS as unknown as { highlights: Map<string, Set<Range>> }).highlights.get("simplifier-pair");
+    return highlight ? [...highlight].map((range) => range.toString()) : [];
+  });
+  expect(marked).toEqual([
+    "They have no care for love, none for the widow, none for the orphan, none for the afflicted, none for the prisoner, none for the hungry or thirsty.",
+  ]);
+  await page.mouse.move(5, 5);
+  const cleared = await page.evaluate(() =>
+    (CSS as unknown as { highlights: Map<string, unknown> }).highlights.has("simplifier-pair"),
+  );
+  expect(cleared).toBe(false);
 });

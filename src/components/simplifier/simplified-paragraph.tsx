@@ -17,7 +17,7 @@ type Tone = "prose" | "definition" | "reader";
 type SimplifiedParagraphProps = {
   id: string;
   locale: Locale;
-  entry: SimplifiedEntry;
+  entry: SimplifiedEntry | undefined;
   tone: Tone;
   className?: string;
   children: ReactNode;
@@ -31,7 +31,24 @@ const toneClassName: Record<Tone, string> = {
 
 const wordCount = (sentences: string[]) => sentences.reduce((total, sentence) => total + sentence.split(" ").length, 0);
 
-export function SimplifiedParagraph({ id, locale, entry, tone, className = "", children }: SimplifiedParagraphProps) {
+export function SimplifiedParagraph(props: SimplifiedParagraphProps) {
+  const { entry, children } = props;
+  if (!entry) return <>{children}</>;
+  return (
+    <SimplifiedView {...props} entry={entry}>
+      {children}
+    </SimplifiedView>
+  );
+}
+
+function SimplifiedView({
+  id,
+  locale,
+  entry,
+  tone,
+  className = "",
+  children,
+}: SimplifiedParagraphProps & { entry: SimplifiedEntry }) {
   const text = getSimplifierText(locale);
   const panelId = useId();
   const [shown, setShown] = useState(false);

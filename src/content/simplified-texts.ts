@@ -47,6 +47,24 @@ const texts: Record<string, SimplifiedEntry> = {
       "La Iglesia llama «transubstanciación» a este cambio.",
     ],
   },
+  "ignatius-smyrnaeans/6.2": {
+    lang: "en",
+    original: [
+      "But mark ye those who hold strange doctrine touching the grace of Jesus Christ which came to us, how that they are contrary to the mind of God.",
+      "They have no care for love, none for the widow, none for the orphan, none for the afflicted, none for the prisoner, none for the hungry or thirsty.",
+      "They abstain from eucharist (thanksgiving) and prayer, because they allow not that the eucharist is the flesh of our Saviour Jesus Christ, which flesh suffered for our sins, and which the Father of His goodness raised up.",
+    ],
+    clear: [
+      "Take note of those who hold strange teaching about the grace of Jesus Christ that came to us: they are opposed to the mind of God.",
+      "They have no concern for love: none for the widow, none for the orphan, none for the afflicted, none for the prisoner, none for the hungry or thirsty.",
+      "They keep away from the eucharist (thanksgiving) and from prayer, because they do not admit that the eucharist is the flesh of our Saviour Jesus Christ, the flesh that suffered for our sins and that the Father in His goodness raised up.",
+    ],
+    very: [
+      "Some teach something different about the grace that Jesus Christ brought us. This goes against what God thinks.",
+      "They do not care about love. They do not look after widows, orphans, people who suffer, prisoners, or people who are hungry or thirsty.",
+      "They stay away from the eucharist (thanksgiving) and from prayer. They do not accept that the eucharist is the flesh of our Saviour Jesus Christ. That flesh suffered for our sins, and the Father, in His goodness, raised it up.",
+    ],
+  },
 };
 
 export function getSimplifiedText(id: string): SimplifiedEntry | undefined {

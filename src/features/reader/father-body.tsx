@@ -1,8 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragraph";
 import { UndoBar } from "@/components/undo-bar";
 import type { FatherDivision } from "@/content/get-father-works";
+import { getSimplifiedText } from "@/content/simplified-texts";
 import { toneClassName } from "@/features/reader/chapter-text";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
 import { goToUnit } from "@/features/reader/go-to-unit";
@@ -255,47 +257,54 @@ export function FatherBody({
               {division.heading ? (
                 <p className="m-0 mb-1 font-ui text-ui-xs font-medium text-ink-3">{division.heading}</p>
               ) : null}
-              <p
-                className={`relative verse-mid -mx-3 -mt-2 mb-0 px-3 pt-2 font-body text-reader font-reader text-ink-2 ${mark && !stacked ? "md:indent-5.75" : ""}`}
+              <SimplifiedParagraph
+                id={`${workId}/${division.locator}`}
+                locale={locale === "en" ? "en" : "es"}
+                entry={getSimplifiedText(`${workId}/${division.locator}`)}
+                tone="reader"
               >
-                <span
-                  className={`mb-0.5 flex min-h-6 items-center gap-2 font-ui text-division font-normal text-ink-3 tabular-nums ${stacked ? "" : "md:contents"}`}
+                <p
+                  className={`relative verse-mid -mx-3 -mt-2 mb-0 px-3 pt-2 font-body text-reader font-reader text-ink-2 ${mark && !stacked ? "md:indent-5.75" : ""}`}
                 >
-                  <button
-                    type="button"
-                    data-division-open={anchorOf(division.locator)}
-                    data-locator={division.locator}
-                    onClick={(event) => openFrom(division.ordinal, event.currentTarget, event.detail === 0)}
-                    className={`cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline ${stacked ? "" : hangingLocator}`}
+                  <span
+                    className={`mb-0.5 flex min-h-6 items-center gap-2 font-ui text-division font-normal text-ink-3 tabular-nums ${stacked ? "" : "md:contents"}`}
                   >
-                    {division.locator === "prologue" ? prologue : division.locator}
-                  </button>
-                  {mark ? (
-                    <NoteMarkers
-                      mark={mark}
-                      previewed={previewed === division.ordinal}
-                      hideLabel={false}
-                      onOpen={(event) => open(division.ordinal, false, event.currentTarget)}
-                      onPreview={(on) => setPreviewed(on ? division.ordinal : null)}
-                    />
-                  ) : null}
-                </span>
-                <span data-verse-text={division.ordinal}>
-                  {highlights.segmentsFor(division.ordinal, division.text.length).map((segment) =>
-                    segment.color ? (
-                      <mark
-                        key={segment.from}
-                        data-highlight={segment.color}
-                        className={`rounded-2 text-inherit box-decoration-clone transition-colors duration-200 ease-standard ${toneClassName[segment.color]}`}
-                      >
-                        {division.text.slice(segment.from, segment.to)}
-                      </mark>
-                    ) : (
-                      division.text.slice(segment.from, segment.to)
-                    ),
-                  )}
-                </span>
-              </p>
+                    <button
+                      type="button"
+                      data-division-open={anchorOf(division.locator)}
+                      data-locator={division.locator}
+                      onClick={(event) => openFrom(division.ordinal, event.currentTarget, event.detail === 0)}
+                      className={`cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline ${stacked ? "" : hangingLocator}`}
+                    >
+                      {division.locator === "prologue" ? prologue : division.locator}
+                    </button>
+                    {mark ? (
+                      <NoteMarkers
+                        mark={mark}
+                        previewed={previewed === division.ordinal}
+                        hideLabel={false}
+                        onOpen={(event) => open(division.ordinal, false, event.currentTarget)}
+                        onPreview={(on) => setPreviewed(on ? division.ordinal : null)}
+                      />
+                    ) : null}
+                  </span>
+                  <span data-verse-text={division.ordinal}>
+                    {highlights.segmentsFor(division.ordinal, division.text.length).map((segment) =>
+                      segment.color ? (
+                        <mark
+                          key={segment.from}
+                          data-highlight={segment.color}
+                          className={`rounded-2 text-inherit box-decoration-clone transition-colors duration-200 ease-standard ${toneClassName[segment.color]}`}
+                        >
+                          {division.text.slice(segment.from, segment.to)}
+                        </mark>
+                      ) : (
+                        division.text.slice(segment.from, segment.to)
+                      ),
+                    )}
+                  </span>
+                </p>
+              </SimplifiedParagraph>
             </div>
           );
         })}
