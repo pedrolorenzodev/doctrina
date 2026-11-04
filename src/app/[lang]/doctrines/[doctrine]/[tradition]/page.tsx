@@ -6,6 +6,7 @@ import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPageViews } from "@/content/get-page-views";
+import { ledeEmphasis } from "@/content/lede-emphasis";
 import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
@@ -75,7 +76,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
           className="mt-5.5 sm:mt-7.5"
           title={page.title}
           lede={page.lede}
-          emphasis={doctrineTitle(locale, doctrine)}
+          emphasis={ledeEmphasis(locale, doctrine, tradition) ?? doctrineTitle(locale, doctrine)}
         />
         <TeachSection page={page} locale={locale} />
         <WhySection page={page} locale={locale} />

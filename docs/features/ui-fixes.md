@@ -19,6 +19,19 @@ Method per fix: reproduce with a measurement, find the root cause, fix there, e2
 
 Each fix: a measurement before (the bug) and after (fixed), an e2e that fails on the old code, `npm run verify`, screenshots 1440 / 768 / 390 / 360 light and dark where visual.
 
+## Fix 3: the 20 emphasised subtitle words
+
+The «subtitle» is the page header's lede (`PageHeader`, `emphasis`). The old mechanism matched only the doctrine's title («Eucaristía», «bautismo», «papado»), so Lutheran/Reformed/Baptist Eucharist («Santa Cena», «Cena del Señor») and 9 other pages had no emphasis. Now `src/content/lede-emphasis.ts` (es only, keyed doctrine → tradition) is read by the tradition route, falling back to the old rule; no page or converter touched.
+
+| Doctrine | Catholic | Orthodox | Lutheran | Reformed | Baptist |
+|---|---|---|---|---|---|
+| Eucharist | Eucaristía | Eucaristía | Santa Cena | Cena del Señor | Cena del Señor |
+| Baptism | bautismo | bautismo | bautismo | bautismo | bautismo |
+| Papacy | papa | cabeza de la Iglesia | papado | papado | gobierno |
+| Sola Scriptura | solo la Escritura | Escritura | Escritura | Escritura | Escritura |
+
+Notes: each word is verified against the page's real lede in the data files. For Sola Scriptura the non-Catholic ones are «Escritura» without the article (the earlier proposal said «la Escritura»): one word, as the existing «Eucaristía»/«bautismo» carry no article. Not done (not asked): the doctrine landing pages (`/es/doctrinas/<doctrina>`, their lede is a question) and the objections and Pasajes headers. English: no pages yet, falls back to the old rule.
+
 ## Decisions made while Pedro was away
 
 (agent's call, newest last)
@@ -31,6 +44,7 @@ Each fix: a measurement before (the bug) and after (fixed), an e2e that fails on
 
 - `src/app/globals.css` (`highlight-mark`), `src/features/reader/chapter-text.tsx`, `src/features/reader/father-body.tsx`, `docs/GOTCHAS.md`, `e2e/reader-highlight.spec.ts` (fix 1).
 - `src/components/simplifier/panel-motion.ts`, `src/components/simplifier/simplifier-text.ts`, `src/features/reader-ai/text.ts`, `e2e/simplifier.spec.ts`, `docs/GOTCHAS.md` (fix 2).
+- `src/content/lede-emphasis.ts` (new), `src/app/[lang]/doctrines/[doctrine]/[tradition]/page.tsx`, `e2e/doctrine-lede-emphasis.spec.ts` (new) (fix 3).
 
 ## Usage log
 
@@ -38,4 +52,4 @@ Each fix: a measurement before (the bug) and after (fixed), an e2e that fails on
 
 ## State
 
-Fix 1 frozen (block 227). Fix 2 frozen (block 228). Next: fix 3 (subtitle highlight).
+Fix 1 frozen (block 227). Fix 2 frozen (block 228). Fix 3 frozen (block 229). Next: fix 4 (tree mark).
