@@ -143,3 +143,69 @@ Look at: `/es/doctrines/baptism/baptist/passages`.
 - The Baptist `how` labels and the «Credo Ortodoxo (1678)» name (the document's own title, a General Baptist confession; it can read as «Orthodox church»): check wording.
 - English-language locale of the new Baptist reading text (Spanish only for now, like the other page strings).
 - Regeneration noise: `apply-passages.mjs` writes the page through `JSON.stringify` and prettier, so a few object literals that were on one line became several (Catholic Baptism and Eucharist `themes`, `videos`); no content changed.
+
+## Round 2 (2026-11-03 night / 2026-11-04) — Pedro's decisions after B3.1–B3.4
+
+Pedro's two decisions: translate everything possible into Spanish with a visible AI label (DECISIONS «2026-11-03 (late night)»), and make every Pasajes page light and fast without changing the approved look. Both done. Verified: `npm run verify` exit 0 (20 pages valid), `e2e/passages.spec.ts` 16 passed (4 new), 368 related e2e passed (chromium and webkit), screenshots of the translated layer at 360 dark and 1440 light, no overflow. Weekly 77 → 78 % (cap 82 %). One agent at a time throughout (Haiku, the same prompt every time, never reworded).
+
+### R2.1 · Translation (all of it)
+
+- **Done:** the 85 quotes that were still in English (41,802 words, 10 batches in passage-rank order) are translated; all 127 titles were already. Every one of the 218 quote placements on the 20 pages now shows Spanish with the original beside it, except the one seeded Spanish quote of Otálora (Catholic Baptism, Spanish original, nothing to translate). **Declined by the translating agent: none.** The refusal of round 1 (batches 7–8, full copyrighted texts) did not repeat with the same task text; I did not retry it with other wording, did not split it and did not change the model. Nothing stays in English.
+- **Checks:** the merge step compares paragraph counts, length ratio and numbers (each batch passed; 84 + 85 unique quotes, 169 keys in `data/passages/translations/quotes.json`); a scan for untranslated English words found one hit, a book title («The Expositor's Bible Commentary») kept on purpose. The agents kept transcription errors as they are (e.g. «apz», «Juan 1613») as instructed; names of authors' works stay in English.
+- **Label:** the copy is now **«Traducido con IA»** (`passagesPage.aiTranslation`, es; «Translated with AI», en), shown under every translated quote, beside the existing button «Leer el original en inglés». The «Cita en su idioma original (inglés)…» label stays for any quote that has no translation (none today).
+- **Trim before public release:** DECISIONS says the AI translation will be cut back to what is legal at launch; to cut, delete keys from `data/passages/translations/quotes.json` and run `apply-passages.mjs` on the 20 pairs: those quotes go back to English with the label, no code change.
+- Message: `feat(passages): translate every apologist quote into Spanish with the AI label`
+- Files: `data/passages/translations/quotes.json`, `src/content/ui-text/es.ts`, `src/content/ui-text/en.ts`, `e2e/passages.spec.ts` (label text), the 20 pages `src/content/pages/{baptism,eucharist,papacy,sola-scriptura}/{catholic,lutheran,reformed,orthodox,baptist}.es.ts`, `docs/features/passages-data.md`.
+
+### R2.2 · Lazy loading
+
+**Baseline (measured on a production build, localhost, 3 runs, the median):** every Pasajes page weighed 536 to 909 KB of HTML (gzip 59 to 140 KB). Time to content is tiny on localhost (DOMContentLoaded 17 to 33 ms) so the numbers that matter are bytes. What the bytes were: a site shell of about 540 KB raw / 53 KB gzip that every page of the site carries (tree, search index, fonts; not owned by this block), plus per page the whole passage data (every passage, 5 translations of every verse, every quotation with its original: 55 to 300 KB) plus the citation views of the whole tradition page (up to 112 KB; the Pasajes page only needs the ones of the readings).
+
+**Budget (chosen with those numbers):** (1) the passage data in the first HTML ≤ about 30 KB raw, i.e. the first passage plus the list; (2) first HTML gzip ≤ 75 KB on every page, which is within 20 KB of the shell's own floor; (3) a passage already prefetched opens in under 150 ms from the key press or click, its apologists in under 250 ms; (4) no layout shift caused by loading; (5) a deep link lands on its passage. The «first HTML under 150 KB» idea cannot hold in raw bytes because the shell alone is 540 KB; the gzip number is the one a visitor pays.
+
+**Approach.**
+- The page ships the summaries (id, title, short title, whether it has apologists) of every passage, the editions and the first passage's verses and reading. Everything else is static JSON generated at build time (629 files, `src/app/[lang]/doctrines/[doctrine]/[tradition]/passages/data/[n]/[part]/route.ts`, `generateStaticParams`, part `core` = verses of every edition + reading + links, part `apologists` = the quotes); the index in the URL is the 1-based position, not the slug (two passages of the Lutheran Baptism page share a slug).
+- `use-passage-store.ts` keeps what was fetched and the requests in flight. `passages-view.tsx` changes passage **only when its data is there**: no empty box, no spinner, no skeleton, no placeholder height, so nothing can jump. When the data is not there yet (a deep link on a slow network) the passage on screen stays until the new one arrives, then the usual «Deslizar» runs.
+- **Prefetch before the reader asks:** on idle after a passage appears (the next two and the previous one, plus the apologists of the shown one and of the next); on hover or focus of a tick of the left rule, of the strip ticks on the phone and of the two navigation boxes (that passage, and its apologists if that layer is on); on hover or focus anywhere in the layers block (the shown passage's apologists). Idle requests are low priority; hover and focus are high.
+- The citation views of the page are now built from the passages only (`getPassageViews`), not from the whole tradition page.
+- Unchanged: the left rule, the hash and its anchors, ← and →, the layer that persists between passages, the muted tab, the look.
+
+**Result** (20 pages; the table is HTML bytes before and after):
+
+| page | HTML before | gz before | HTML after | gz after |
+|---|---|---|---|---|
+| papacy/catholic | 909 KB | 140 KB | 568 KB | 57 KB |
+| baptism/catholic | 895 KB | 139 KB | 579 KB | 58 KB |
+| sola-scriptura/baptist | 886 KB | 101 KB | 654 KB | 58 KB |
+| eucharist/catholic | 882 KB | 134 KB | 593 KB | 60 KB |
+| papacy/baptist | 823 KB | 101 KB | 617 KB | 57 KB |
+| baptism/baptist | 816 KB | 85 KB | 603 KB | 55 KB |
+| sola-scriptura/catholic | 809 KB | 120 KB | 576 KB | 57 KB |
+| eucharist/baptist | 696 KB | 72 KB | 592 KB | 56 KB |
+| eucharist/lutheran | 695 KB | 79 KB | 576 KB | 56 KB |
+| sola-scriptura/reformed | 673 KB | 78 KB | 576 KB | 56 KB |
+| baptism/reformed | 665 KB | 78 KB | 560 KB | 54 KB |
+| papacy/reformed | 649 KB | 75 KB | 558 KB | 55 KB |
+| eucharist/reformed | 636 KB | 67 KB | 563 KB | 56 KB |
+| papacy/lutheran | 588 KB | 62 KB | 549 KB | 53 KB |
+| eucharist/orthodox | 586 KB | 64 KB | 542 KB | 54 KB |
+| papacy/orthodox | 579 KB | 62 KB | 539 KB | 53 KB |
+| baptism/lutheran | 577 KB | 60 KB | 541 KB | 53 KB |
+| sola-scriptura/orthodox | 575 KB | 63 KB | 536 KB | 53 KB |
+| baptism/orthodox | 572 KB | 59 KB | 543 KB | 53 KB |
+| sola-scriptura/lutheran | 569 KB | 59 KB | 542 KB | 53 KB |
+
+- First HTML gzip is now 53 to 60 KB everywhere (before 59 to 140); the heaviest raw page went from 909 to 654 KB (Baptist Sola Scriptura: the 102-tick rule titles are in the first HTML; the left rule is out of scope). The remaining ~540 KB is the shell shared by the whole site.
+- Opening times, measured in the browser on the production build (Catholic Baptism, Baptist Sola Scriptura, Lutheran Baptism; 1440 px): passage already prefetched **6 to 15 ms** (budget 150), apologists tab of a prefetched passage **10 to 14 ms** (budget 250), deep link to a passage that is not the first **8 to 27 ms** locally and **190 to 340 ms on a throttled connection** (150 ms RTT, 1.6 Mbps; one round trip plus the file: the data starts loading after the page script runs). Layout shift caused by loading: **0.0000** locally; with the throttled connection 0.003 to 0.027 (below the 0.1 «good» line), caused by the deep link swapping the first passage for the target on a slow load, as it did before this change.
+- e2e (4 new): the first HTML holds only the first passage's verses and no quotes; a passage prefetched on idle opens in under 150 ms and no shift is recorded; the apologists tab of the shown passage opens in under 250 ms; a deep link to Ps 119:105 on the 102-passage Baptist page and to Acts 2:38 with its quotes lands on it.
+- Not done on purpose: starting the deep-link fetch from an inline script before hydration (it would cut the cold case by the script load time; it adds a head script, say so if you want it); virtualising the left rule (parked by Pedro).
+- Message: `perf(passages): load each passage and its quotes on demand with prefetch`
+- Files: `src/content/get-passages.ts`, `src/app/[lang]/doctrines/[doctrine]/[tradition]/passages/page.tsx`, `src/app/[lang]/doctrines/[doctrine]/[tradition]/passages/data/[n]/[part]/route.ts` (new), `src/features/passages/passages-view.tsx`, `src/features/passages/passage-ruler.tsx`, `src/features/passages/use-passage-store.ts` (new), `e2e/passages.spec.ts`, `docs/features/passages-data.md`.
+
+### Usage log
+
+- 23:46 weekly 77 % (round 2 start), 23:55 77 %, 00:05 78 %, 00:13 78 % (end). Session never above 13 %.
+
+### What Pedro looks at first
+
+Any Catholic page → a passage → Apologistas: Spanish text with «Traducido con IA» under it and «Leer el original en inglés». Then open the Baptist Sola Scriptura page and click along the passages: each one appears at once.

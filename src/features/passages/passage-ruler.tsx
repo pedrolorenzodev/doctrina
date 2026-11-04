@@ -7,6 +7,7 @@ type PassageRulerProps = {
   titles: string[];
   current: number;
   onSelect: (index: number) => void;
+  onIntent: (index: number) => void;
 };
 
 const tickPitch = 18;
@@ -18,7 +19,7 @@ function bulge(index: number, hovered: number | null, count: number): number {
   return Math.max(1, 2.5 + 2 * Math.cos((Math.PI * Math.abs(index - hovered)) / Math.max(count, bulgeFloor)));
 }
 
-export function PassageRuler({ label, titles, current, onSelect }: PassageRulerProps) {
+export function PassageRuler({ label, titles, current, onSelect, onIntent }: PassageRulerProps) {
   const [hovered, setHovered] = useState<number | null>(null);
   return (
     <>
@@ -43,7 +44,11 @@ export function PassageRuler({ label, titles, current, onSelect }: PassageRulerP
             data-current={index === current ? "" : undefined}
             data-hover={index === hovered ? "" : undefined}
             onClick={() => onSelect(index)}
-            onFocus={() => setHovered(index)}
+            onFocus={() => {
+              setHovered(index);
+              onIntent(index);
+            }}
+            onPointerEnter={() => onIntent(index)}
             onBlur={() => setHovered(null)}
             style={{ "--y": `${index * tickPitch}px`, "--k": bulge(index, hovered, titles.length) } as CSSProperties}
             className="group/tick absolute top-(--y) left-0 block h-4.5 w-full cursor-pointer p-0"
@@ -70,6 +75,7 @@ export function PassageRuler({ label, titles, current, onSelect }: PassageRulerP
             aria-current={index === current ? "true" : undefined}
             data-current={index === current ? "" : undefined}
             onClick={() => onSelect(index)}
+            onFocus={() => onIntent(index)}
             className="group/strip grid h-full flex-1 cursor-pointer place-items-end p-0"
           >
             <span

@@ -49,9 +49,7 @@ test("every apologist quote says whether its text is the AI Spanish or the origi
   await page.goto(`${route}#john-3-5`);
   await page.getByRole("button", { name: "Apologistas" }).click();
   const quotes = page.locator("figure blockquote");
-  const labelled = page
-    .locator("figure")
-    .filter({ hasText: /Traducción propia asistida por IA|Cita en su idioma original/ });
+  const labelled = page.locator("figure").filter({ hasText: /Traducido con IA|Cita en su idioma original/ });
   expect(await quotes.count()).toBeGreaterThan(3);
   expect(await labelled.count()).toBe(await quotes.count());
 });
@@ -138,4 +136,77 @@ test("the left ruler's bars swell smoothly, frame by frame, not in one step", as
   const between = samples.filter((value) => value > samples[0]! + 0.1 && value < samples.at(-1)! - 0.1);
   expect(between.length).toBeGreaterThan(3);
   expect(samples.at(-1)).toBeGreaterThan(4);
+});
+
+test("the first HTML carries only the first passage: the rest loads on demand", async ({ request }) => {
+  const html = await (await request.get(route)).text();
+  expect(html).toContain("no naciere de agua");
+  expect(html).not.toContain("make disciples of all nations");
+  expect(html).not.toContain("Las Escrituras enseñan que las personas nacen de nuevo");
+  const response = await request.get("/es/doctrines/baptism/catholic/passages/data/2/core");
+  expect(response.ok()).toBe(true);
+  expect(JSON.stringify(await response.json())).toContain("make disciples of all nations");
+  expect((await request.get("/es/doctrines/baptism/catholic/passages/data/999/core")).status()).toBe(404);
+});
+
+test("after the idle prefetch the next passage opens at once and nothing moves", async ({ page }) => {
+  const shifts = await page.addInitScript(() => {
+    (window as unknown as { shift: number }).shift = 0;
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries() as unknown as { value: number; hadRecentInput: boolean }[])
+        if (!entry.hadRecentInput) (window as unknown as { shift: number }).shift += entry.value;
+    }).observe({ type: "layout-shift", buffered: true });
+  });
+  void shifts;
+  await page.goto(route);
+  await page.waitForLoadState("networkidle");
+  await page.waitForTimeout(1500);
+  const before = await page.evaluate(() => document.documentElement.scrollHeight);
+  const opened = await page.evaluate(
+    () =>
+      new Promise<number>((resolve) => {
+        const first = document.querySelector("h2")?.textContent;
+        const start = performance.now();
+        new MutationObserver((_records, observer) => {
+          const now = document.querySelector("h2")?.textContent;
+          if (now && now !== first) {
+            observer.disconnect();
+            resolve(performance.now() - start);
+          }
+        }).observe(document.body, { childList: true, subtree: true, characterData: true });
+        window.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowRight" }));
+      }),
+  );
+  expect(opened).toBeLessThan(150);
+  expect(before).toBeGreaterThan(0);
+  expect(await page.evaluate(() => (window as unknown as { shift: number }).shift)).toBeLessThan(0.001);
+});
+
+test("the apologists tab of the shown passage is ready before the click", async ({ page }) => {
+  await page.goto(`${route}#acts-2-38`);
+  await page.waitForLoadState("networkidle");
+  await page.waitForTimeout(1500);
+  const shown = await page.evaluate(
+    () =>
+      new Promise<number>((resolve) => {
+        const start = performance.now();
+        new MutationObserver((_records, observer) => {
+          if (document.body.textContent?.includes("El argumento, en sus palabras")) {
+            observer.disconnect();
+            resolve(performance.now() - start);
+          }
+        }).observe(document.body, { childList: true, subtree: true, characterData: true });
+        [...document.querySelectorAll("button")].find((button) => button.textContent === "Apologistas")?.click();
+      }),
+  );
+  expect(shown).toBeLessThan(250);
+});
+
+test("a deep link to a passage far down the list lands on it with its quotes", async ({ page }) => {
+  await page.goto("/es/doctrines/sola-scriptura/baptist/passages#ps-119-105");
+  await expect(page.getByRole("heading", { level: 2 })).toHaveText("Salmo 119:105");
+  await expect(page.getByText(/Pasaje \d+ de 102/)).toBeVisible();
+  await page.goto("/es/doctrines/baptism/catholic/passages#acts-2-38");
+  await page.getByRole("button", { name: "Apologistas" }).click();
+  await expect(page.getByText("El argumento, en sus palabras")).toBeVisible();
 });

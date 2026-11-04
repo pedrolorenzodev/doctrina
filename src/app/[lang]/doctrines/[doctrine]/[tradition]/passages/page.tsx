@@ -5,8 +5,7 @@ import { CitationProvider } from "@/components/citation-window/citation-context"
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
-import { getPageViews } from "@/content/get-page-views";
-import { getPassages } from "@/content/get-passages";
+import { getPassageViews, getPassages } from "@/content/get-passages";
 import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { passagesHref, traditionHref } from "@/content/routes";
@@ -53,7 +52,7 @@ export default async function PassagesRoute({
   const text = getUiText(locale);
   const data = await getPassages(page, locale);
   return (
-    <CitationProvider views={getPageViews(page, locale)} text={text.citation}>
+    <CitationProvider views={getPassageViews(page, locale)} text={text.citation}>
       <PageMain rail>
         <Breadcrumbs
           label={text.shell.breadcrumb}
@@ -85,6 +84,7 @@ export default async function PassagesRoute({
         />
         <PassagesView
           data={data}
+          dataBase={`/${locale}/doctrines/${doctrine}/${tradition}/passages/data`}
           defaultEdition={locale === "es" ? "rv1909" : "bsb"}
           labels={page.passages}
           text={text.doctrine.passagesPage}

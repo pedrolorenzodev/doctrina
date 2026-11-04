@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ActionLink } from "@/components/ui/action";
 import { MoreButton } from "@/components/ui/more-button";
 import { SlidingTabs } from "@/components/ui/sliding-tabs";
@@ -11,12 +11,14 @@ import { ApologistLayer } from "@/features/passages/apologist-layer";
 import { PassageRuler } from "@/features/passages/passage-ruler";
 import { ReadingText } from "@/features/passages/reading-text";
 import { VerseBlocks } from "@/features/passages/verse-blocks";
+import { usePassageStore } from "@/features/passages/use-passage-store";
 import { locate } from "@/features/passages/word-text";
 import { useChosenTranslation } from "@/lib/use-chosen-translation";
 import { chooseTranslation } from "@/lib/translation-choice";
 
 type PassagesViewProps = {
   data: PassagesData;
+  dataBase: string;
   defaultEdition: string;
   labels: PassagesPageText;
   text: UiText["doctrine"]["passagesPage"];
@@ -51,8 +53,24 @@ function indexFromHash(data: PassagesData): number {
   );
 }
 
-export function PassagesView({ data, defaultEdition, labels, text }: PassagesViewProps) {
+function whenIdle(task: () => void): () => void {
+  if (typeof requestIdleCallback === "function") {
+    const handle = requestIdleCallback(task, { timeout: 1500 });
+    return () => cancelIdleCallback(handle);
+  }
+  const handle = setTimeout(task, 300);
+  return () => clearTimeout(handle);
+}
+
+const prefetchAhead = [1, -1, 2] as const;
+
+export function PassagesView({ data, dataBase, defaultEdition, labels, text }: PassagesViewProps) {
   const { entries, editions } = data;
+  const store = usePassageStore(
+    dataBase,
+    data.first,
+    entries.map((candidate) => candidate.hasApologists),
+  );
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState<"next" | "back" | null>(null);
   const [layer, setLayer] = useState<Layer>("official");
@@ -68,28 +86,71 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
     defaultEdition,
   );
 
-  useEffect(() => {
-    const read = () => setIndex(indexFromHash(data));
-    read();
-    addEventListener("hashchange", read);
-    return () => removeEventListener("hashchange", read);
-  }, [data]);
+  const indexRef = useRef(0);
+  const layerRef = useRef<Layer>("official");
+  const ticket = useRef(0);
 
-  const entry = entries[index]!;
-  const hasApologists = entry.apologists !== null;
-  const shownLayer: Layer = layer === "apologists" && hasApologists ? "apologists" : "official";
-
-  const select = useCallback(
-    (target: number) => {
-      if (target < 0 || target >= entries.length || target === index) return;
-      setDirection(target > index ? "next" : "back");
+  const show = useCallback(
+    async (target: number, fromHash: boolean) => {
+      if (target < 0 || target >= entries.length || target === indexRef.current) return;
+      const mine = ++ticket.current;
+      const ready = await store.ensure(target, layerRef.current === "apologists");
+      if (!ready || mine !== ticket.current) return;
+      setDirection(fromHash ? null : target > indexRef.current ? "next" : "back");
+      indexRef.current = target;
       setIndex(target);
       setChange((value) => ({ from: null, key: value.key + 1, crossLanguage: false }));
       setParallelsOpen(false);
       setPhrase(null);
-      history.replaceState(null, "", `#${entries[target]!.id}`);
+      if (!fromHash) history.replaceState(null, "", `#${entries[target]!.id}`);
     },
-    [entries, index],
+    [entries, store],
+  );
+
+  const select = useCallback((target: number) => void show(target, false), [show]);
+
+  const intend = useCallback(
+    (target: number) => {
+      store.prefetch(target, "core", "high");
+      if (layerRef.current === "apologists") store.prefetch(target, "apologists", "high");
+    },
+    [store],
+  );
+
+  useEffect(() => {
+    const read = () => void show(indexFromHash(data), true);
+    read();
+    addEventListener("hashchange", read);
+    return () => removeEventListener("hashchange", read);
+  }, [data, show]);
+
+  useEffect(() => {
+    layerRef.current = layer;
+  }, [layer]);
+
+  useEffect(
+    () =>
+      whenIdle(() => {
+        for (const step of prefetchAhead) store.prefetch(index + step, "core");
+        store.prefetch(index, "apologists");
+        store.prefetch(index + 1, "apologists");
+      }),
+    [index, store],
+  );
+
+  const summary = entries[index]!;
+  const core = store.core(index)!;
+  const apologists = store.apologists(index);
+  const hasApologists = summary.hasApologists;
+  const shownLayer: Layer = layer === "apologists" && hasApologists && apologists ? "apologists" : "official";
+
+  const chooseLayer = useCallback(
+    async (id: string) => {
+      if (id !== "apologists") return setLayer("official");
+      if (!store.apologists(index)) await store.ensure(index, true);
+      if (store.apologists(index)) setLayer("apologists");
+    },
+    [index, store],
   );
 
   useEffect(() => {
@@ -112,14 +173,14 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
   }
 
   const lightable = (candidate: string) =>
-    [...entry.main, ...entry.parallels].some((block) =>
+    [...core.main, ...core.parallels].some((block) =>
       block.verses.some((verse) => locate(verse.text[edition] ?? "", candidate).length > 0),
     );
 
   const previous = entries[index - 1];
   const next = entries[index + 1];
   const motion = direction === "next" ? "passage-in-next" : direction === "back" ? "passage-in-back" : "";
-  const single = entry.main.length === 1 ? entry.main[0]! : null;
+  const single = core.main.length === 1 ? core.main[0]! : null;
 
   return (
     <div className="mt-14 passages-grid">
@@ -129,6 +190,7 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
           titles={entries.map((candidate) => candidate.short)}
           current={index}
           onSelect={select}
+          onIntent={intend}
         />
       </div>
       <div className="min-w-0">
@@ -151,9 +213,9 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
             />
           </div>
         </div>
-        <div key={entry.id} className={motion}>
+        <div key={summary.id} className={motion}>
           <h2 className="mt-7.25 font-head text-h2-mobile font-light text-balance text-ink-3 opsz-60 sm:mt-7.5 sm:text-h2">
-            {entry.title}
+            {summary.title}
           </h2>
           {single ? (
             <div className="mt-5">
@@ -164,7 +226,7 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
             </div>
           ) : null}
           <VerseBlocks
-            blocks={entry.main}
+            blocks={core.main}
             editionId={edition}
             changeFrom={change.from}
             flashKey={change.key}
@@ -174,14 +236,14 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
             className={`mt-9 ${change.crossLanguage ? "passage-in-fade" : ""}`}
             paragraphClassName="font-body text-verse font-light text-ink-2 opsz-18"
           />
-          {entry.parallels.length > 0 ? (
+          {core.parallels.length > 0 ? (
             <div className="mt-10">
               <MoreButton
                 expanded={parallelsOpen}
                 controls="parallels"
                 onClick={() => setParallelsOpen((open) => !open)}
               >
-                {parallelsOpen ? text.hideParallels : text.parallels.replace("{n}", String(entry.parallels.length))}
+                {parallelsOpen ? text.hideParallels : text.parallels.replace("{n}", String(core.parallels.length))}
               </MoreButton>
               <div
                 id="parallels"
@@ -191,7 +253,7 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
               >
                 <div className="min-h-0 overflow-hidden">
                   <VerseBlocks
-                    blocks={entry.parallels}
+                    blocks={core.parallels}
                     editionId={edition}
                     changeFrom={change.from}
                     flashKey={change.key}
@@ -206,12 +268,17 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
             </div>
           ) : null}
         </div>
-        <div key={`${entry.id}-layers`} className={`mt-16 ${motion}`}>
+        <div
+          key={`${summary.id}-layers`}
+          className={`mt-16 ${motion}`}
+          onPointerEnter={() => store.prefetch(index, "apologists", "high")}
+          onFocusCapture={() => store.prefetch(index, "apologists", "high")}
+        >
           <SlidingTabs
             label={text.layers}
             variant="heading"
             value={shownLayer}
-            onChange={(id) => setLayer(id === "apologists" ? "apologists" : "official")}
+            onChange={(id) => void chooseLayer(id)}
             tabs={[
               { id: "official", label: text.official },
               {
@@ -223,8 +290,8 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
             ]}
           />
           <div key={shownLayer} className="passage-in-fade">
-            {shownLayer === "apologists" && entry.apologists ? (
-              <ApologistLayer layer={entry.apologists} label={labels.apologistsLabel} text={text} />
+            {shownLayer === "apologists" && apologists ? (
+              <ApologistLayer layer={apologists} label={labels.apologistsLabel} text={text} />
             ) : (
               <div>
                 <p className="mt-9 max-w-descriptor font-head text-descriptor font-light text-ink-2 italic opsz-30 text-pretty">
@@ -232,8 +299,8 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
                 </p>
                 <p className="mt-7 max-w-measure font-body text-prose font-light text-ink-2 opsz-18">
                   <ReadingText
-                    text={entry.reading}
-                    verseLinks={entry.verseLinks}
+                    text={core.reading}
+                    verseLinks={core.verseLinks}
                     onPhrase={setPhrase}
                     lightable={lightable}
                   />
@@ -244,7 +311,13 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
         </div>
         <nav className="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label={text.ruler}>
           {previous ? (
-            <button type="button" onClick={() => select(index - 1)} className={boxClassName}>
+            <button
+              type="button"
+              onClick={() => select(index - 1)}
+              onPointerEnter={() => intend(index - 1)}
+              onFocus={() => intend(index - 1)}
+              className={boxClassName}
+            >
               <small className="mb-1 block text-neighbor-label text-ink-3">{text.previous}</small>
               <span className="font-body text-neighbor-title">{previous.short}</span>
             </button>
@@ -252,7 +325,13 @@ export function PassagesView({ data, defaultEdition, labels, text }: PassagesVie
             <div />
           )}
           {next ? (
-            <button type="button" onClick={() => select(index + 1)} className={`${boxClassName} sm:text-right`}>
+            <button
+              type="button"
+              onClick={() => select(index + 1)}
+              onPointerEnter={() => intend(index + 1)}
+              onFocus={() => intend(index + 1)}
+              className={`${boxClassName} sm:text-right`}
+            >
               <small className="mb-1 block text-neighbor-label text-ink-3">{text.next}</small>
               <span className="font-body text-neighbor-title">{next.short}</span>
             </button>
