@@ -1,6 +1,6 @@
 # «Palabras», «Usos» and screen 07 (the word page)
 
-Status: B1.0 written 2026-11-03, waiting for Pedro's look. Nothing in `src/` yet.
+Status: B1.0 approved by Pedro 2026-11-03 («OK a tus 8 puntos» with the adjustments below); B1.1 done and frozen (kit 219). The file was renamed from `palabras-07.md`: `npm run lint` rejects Spanish file names (AGENTS rule 8).
 
 ## Intent
 
@@ -104,6 +104,13 @@ Screen 08, the word index, any page for Bible books, richer registry data (the 1
 9. **Route**: agent's call, recorded in DECISIONS: `/es/palabras/<dStrong>` and `/en/words/<dStrong>` (`G4561`, `H7225G`: the lexicon's own ids; the Spanish segment through the existing rewrites); «Viniste desde» via `?from=John.6.53` (a verse) or a Father page id.
 10. **Licence to flag**: STEPBible asks «please do not redistribute it yourself»; the data is derived and stays local until Supabase. Not resolved here.
 
+## Pedro's answers (2026-11-03) and what was done
+
+- (2) the senses stay in English, labelled, no AI translation now. (6) `build_words.py` touched, data regenerated (below). (8) Noto Serif Hebrew, only the Hebrew subset, as a declared deviation. Route, section order and every other default approved.
+- **Data regenerated 2026-11-03 (B1.1):** backup of `data/site/words/` in the scratchpad first; STEPBible files re-downloaded at commit `be4191f0` (all ten sha256 equal the manifest's), OpenScriptures HebrewLexicon at `21c9add`; order `merge_glosses_es.py` (0 changes: already merged) → `build_words.py` → `build_greek_senses.py` → `build_hebrew_defs.py` → `check_words.py`. Only `occurrences/*.json` and the manifest's `generated` and `changes` differ from the backup; every occurrence entry is equal except the new `fm` (form → {morph: count}). Spanish: Hebrew 251,582 / 305,648 = 82.3 %, Greek 117,254 / 137,919 = 85.0 %; John 6 regression: only the field `es` differs (774, as before).
+- **Agent's calls (B1.1):** the loader is `src/content/get-words.ts` (no `server-only`, like the Bible's local source; the check imports it); `tools/check-words.mjs` is in `npm run lint`, skipped where `data/site/words` is absent (CI), and checks John 6 against `data/site/john6.json`, one Hebrew chapter, the shards, the ids and the missing Hebrew entries; the model drops the field `para` (a Spanish word for the lint, unused). **The site has no Greek font yet** (DESIGN lists `--font-greek` Gentium Book Plus, never built): it is added with the first Greek UI, B1.2, from `next/font/google`, together with Noto Serif Hebrew. The word pages are rendered on demand: 17,025 lexicon entries × 2 locales cannot be prerendered, so the route has no `generateStaticParams` for the word (the `[lang]` layout keeps its own).
+- **Open and not mine:** `docs/research/sources/fuentes-data-gaps.md` (committed by the research session) makes `npm run lint` fail the English-names check, so `npm run verify` stops there; every other step of the chain passes (run one by one). Pedro to rename it.
+
 ## Acceptance
 
 Every checklist line ticked or listed in the deviations table; John 6 regression of the loader; one Hebrew chapter; `npm run verify`; e2e specs for every behaviour (switch memory, filters, folds, motion frames, keyboard, 360 overflow); screenshots at 360/390/768/1440, light and dark, side by side with the artifact; Pedro's approval before each commit command.
@@ -111,3 +118,4 @@ Every checklist line ticked or listed in the deviations table; John 6 regression
 ## Usage log
 
 - 2026-11-03 18:39 (start of B1.0): session 7 %, weekly 72 % (cap 82 % inclusive). B1.0: reading and measuring the artifact, writing this file.
+- 2026-11-03 18:59 (B1.0 → B1.1, data regeneration and loader): weekly 72 %.

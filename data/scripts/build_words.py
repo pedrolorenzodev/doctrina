@@ -346,6 +346,7 @@ nt_n = Counter()
 nt_nany = Counter()
 nt_refs = defaultdict(lambda: defaultdict(list))
 nt_forms = defaultdict(Counter)
+nt_fm = defaultdict(lambda: defaultdict(Counter))
 greek_morphs = {}
 greek_used = set()
 
@@ -365,6 +366,8 @@ for w in gc.iter_tagnt():
     en = clean_gloss(w["english"])
     if in_na28_any(w):
         ref = f"{w['chapter']}.{w['verse']}"
+        for d, g in sg:
+            nt_fm[d][greek][g] += 1
         for d, _ in sg:
             nt_n[d] += 1
             lst = nt_refs[d][osis]
@@ -395,6 +398,7 @@ heb_verses = defaultdict(lambda: defaultdict(lambda: {"words": []}))
 ot_n = Counter()
 ot_refs = defaultdict(lambda: defaultdict(list))
 ot_forms = defaultdict(Counter)
+ot_fm = defaultdict(lambda: defaultdict(Counter))
 heb_morphs = {}
 heb_used = set()
 heb_part_counts = Counter()
@@ -418,6 +422,9 @@ for w in wc.iter_tahot(SRC):
             lst.append(ref)
     if root:
         ot_forms[root][re.sub(r"[/]", "", word)] += 1
+        root_grammar = w["grammar"].split("/")
+        if len(root_grammar) == len(parts) and root in parts:
+            ot_fm[root][re.sub(r"[/]", "", word)][root_grammar[parts.index(root)]] += 1
     gparts = wc.heb_gloss_parts(w["english"])
     es_parts = []
     mparts = w["grammar"].split("/")
@@ -524,12 +531,15 @@ occurrences = {}
 for d in sorted(set(nt_nany) | set(ot_n)):
     if d.startswith("G"):
         refs, forms, n, nany = nt_refs.get(d, {}), nt_forms.get(d, {}), nt_n.get(d, 0), nt_nany.get(d, 0)
+        fm = nt_fm.get(d, {})
     else:
         refs, forms, n, nany = ot_refs.get(d, {}), ot_forms.get(d, {}), ot_n.get(d, 0), ot_n.get(d, 0)
+        fm = ot_fm.get(d, {})
     occurrences[d] = OrderedDict([
         ("n", n), ("nAny", nany), ("v", sum(len(x) for x in refs.values())),
         ("b", {b: x for b, x in refs.items()}),
         ("f", dict(sorted(forms.items(), key=lambda kv: (-kv[1], kv[0])))),
+        ("fm", {f: dict(c.most_common()) for f, c in sorted(fm.items(), key=lambda kv: (-forms.get(kv[0], 0), kv[0]))}),
     ])
 
 
@@ -614,6 +624,7 @@ if not only:
             ("files", {n: sha(n) for n in wc.TAGNT_NAMES + wc.TAHOT_NAMES + ["TBESG.txt", "TBESH.txt", "TEGMC.txt", "TEHMC.txt"]}),
         ])),
         ("changes", [
+            "Occurrences carry fm: each form with the morphology codes of its occurrences and their counts (the word page's table of forms).",
             "Greek and Hebrew split from punctuation; morphology codes expanded to English through TEGMC and TEHMC; lexicon definitions cleaned of markup.",
             "Greek words: l and lt are written only when they differ from the lexicon entry's lemma and transliteration; parse is in morph.json.",
             "Hebrew lexicon definitions are NOT included (def is null): TBESH's header says its definitions are Online Bible's abridged BDB and that permission must be asked before use.",
