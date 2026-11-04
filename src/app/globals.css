@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant verse-back (html[data-verse-back] &);
+@custom-variant verse-wide (@media (min-width: 1100px));
+@custom-variant verse-narrow (@media (max-width: 420px));
 
 @theme {
   --color-*: initial;
@@ -310,6 +313,21 @@
   --shadow-swatch: inset 0 0 0 1px rgb(0 0 0 / 0.12);
   --shadow-swatch-current: 0 0 0 2px var(--color-panel), 0 0 0 3.5px var(--color-ink);
   --shadow-strip: 0 -10px 18px -12px rgb(0 0 0 / 0.3);
+
+  --spacing-dt-side: 250px;
+  --spacing-word-card: 300px;
+  --text-verse-current: 27px;
+  --text-verse-current--line-height: 1.42;
+  --text-verse-current-mobile: 23px;
+  --text-verse-current-mobile--line-height: 1.42;
+  --text-verse-text: 17px;
+  --text-verse-text--line-height: 1.6;
+  --text-verse-use: 15.5px;
+  --text-verse-use--line-height: 1.4;
+  --text-verse-tile: 22px;
+  --text-verse-tile--line-height: 1.25;
+  --text-verse-side-title: 22px;
+  --text-verse-side-title--line-height: 1.25;
 }
 
 @theme inline {
@@ -947,6 +965,70 @@
 
 @utility mail-field {
   flex: 1 1 240px;
+}
+
+@utility verse-grid {
+  @media (min-width: 1100px) {
+    display: grid;
+    max-width: var(--container-wide);
+    grid-template-columns: minmax(0, var(--container-col)) var(--spacing-dt-side);
+    column-gap: calc(var(--spacing) * 14);
+  }
+}
+
+@utility verse-pass-row {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  column-gap: calc(var(--spacing) * 2);
+
+  @media (min-width: 40rem) {
+    grid-template-columns: 52px minmax(0, 1fr);
+    column-gap: calc(var(--spacing) * 3);
+  }
+}
+
+@utility verse-uses-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: calc(var(--spacing) * 6);
+
+  @media (min-width: 40rem) {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+}
+
+@utility verse-facts {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+}
+
+@utility verse-words-grid {
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--spacing-word-card);
+    align-items: start;
+    column-gap: calc(var(--spacing) * 10);
+  }
+}
+
+@utility verse-card-sticky {
+  @media (min-width: 48rem) {
+    position: sticky;
+    top: calc(var(--spacing-top) + var(--spacing) * 6);
+  }
+}
+
+@utility verse-picker-list {
+  width: min(340px, calc(100vw - 2rem));
+  max-height: min(420px, 60vh);
+}
+
+@utility transition-selected {
+  transition:
+    color 150ms var(--ease-standard),
+    background-color 150ms var(--ease-standard),
+    border-color 150ms var(--ease-standard),
+    box-shadow 150ms var(--ease-standard);
 }
 
 @utility entry-row {

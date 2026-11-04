@@ -417,6 +417,7 @@ Durations have no Tailwind namespace; keep them as plain variables in `@theme` [
 - Saving per user (browser storage at launch) is open (ROADMAP «Now» 4).
 
 ### 06 verse
+- **Built 2026-11-04** (replica of https://claude.ai/artifact/NYBF1wY8WNz2rpDAPPKutn; deviations in `docs/features/verse-06.md`). Route `/es/biblia/<libro>/<cap>/<verso>` (`/en/bible/…`), rendered on demand; reached from the verse panel's «Ver el detalle completo», which leaves the mark of the strip «Volver a donde estabas». Tokens `--spacing-dt-side`, `--spacing-word-card`, `--text-verse-*`; utilities `verse-*`, `transition-selected`; variants `verse-back`, `verse-wide` (1100), `verse-narrow` (420).
 - Header: the strip's hairline sits 30 px (22 phone) from the title, the same as 03's switcher-to-title. «Citar» and «Dónde se usa en Doctrina» in a side column (≥ 1100, `--spacing-dt-side`) beside «Traducción»; «En griego, palabra por palabra» and «Comparar traducciones» use the full width. Passage: previous/next division in body 300 17/1.6 ink-3 (3 lines + «Mostrar más»), the current one 21/1.62 ink (Bible: head 300 27/1.42), number column 52 px.
 - **«Citar»**: `ci-t` short citation (body 300 15.5 in the column) + «Citar» (copies the short form → «Cita copiada» 1.6 s) and «Citar con texto» side by side, «Copiar enlace» below. The full citation lives only on the source page.
 - **«Dónde se usa en Doctrina»**: place + text, hairline rows (title body 15.5, line 14.5 ink-3); one item and «Ver N más» (`btn-more`; FLIP; «Ver menos» hides again).

@@ -221,6 +221,7 @@ export function spanishRewrites() {
   return [
     { source: timelineHref("es"), destination: timelineRoute("es") },
     { source: `/es/${bibleSegments.es}/:book/:chapter`, destination: "/es/bible/:book/:chapter" },
+    { source: `/es/${bibleSegments.es}/:book/:chapter/:verse`, destination: "/es/bible/:book/:chapter/:verse" },
     {
       source: fatherHref("es", ":father"),
       destination: fatherRoute("es", ":father"),

@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { SidePanel } from "@/components/side-panel";
 import { ActionButton } from "@/components/ui/action";
 import { CopyButton } from "@/components/ui/copy-button";
@@ -8,6 +9,7 @@ import { PanelSections, type PanelSection } from "@/features/reader/panel-sectio
 import type { PanelUsesText } from "@/features/reader/panel-uses";
 import type { PanelWordsText } from "@/features/reader/panel-words";
 import { flipBlocks } from "@/lib/block-motion";
+import { rememberVerseBack, type VerseBack } from "@/lib/verse-back";
 import { useRef, type ReactNode } from "react";
 import type { HighlightColor } from "@/lib/highlights";
 
@@ -53,6 +55,7 @@ type VersePanelProps = {
   onClose: () => void;
   link?: () => string;
   withDetail?: boolean;
+  detail?: { href: string; from: VerseBack } | undefined;
   sections?: PanelSection[];
   forceSection?: string | null;
   children?: ReactNode;
@@ -71,10 +74,12 @@ export function VersePanel({
   onClose,
   link = () => `${location.origin}${location.pathname}#v-${verse}`,
   withDetail = true,
+  detail,
   sections,
   forceSection = null,
   children,
 }: VersePanelProps) {
+  const router = useRouter();
   const body = useRef<HTMLDivElement>(null);
   const ghosts = useRef<HTMLDivElement>(null);
   const flip = (mutate: () => void) => {
@@ -119,10 +124,20 @@ export function VersePanel({
           <PanelSections label={text.sections.group} sections={sections} forceId={forceSection} flip={flip} />
         ) : null}
         {children}
-        {/* TODO: opens the verse's own page (06) once it exists */}
         {withDetail ? (
           <div data-flip-block="detail" className="mt-5 flow-root">
-            <ActionButton>{text.openDetail}</ActionButton>
+            <ActionButton
+              onClick={
+                detail
+                  ? () => {
+                      rememberVerseBack(detail.from);
+                      router.push(detail.href);
+                    }
+                  : () => undefined
+              }
+            >
+              {text.openDetail}
+            </ActionButton>
           </div>
         ) : null}
         <div ref={ghosts} aria-hidden="true" className="pointer-events-none absolute inset-0 flip-ghosts" />

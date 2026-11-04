@@ -621,6 +621,14 @@ export function ReaderBody({
             }}
             onClose={close}
             link={() => `${location.origin}${href}#v-${verse}`}
+            detail={
+              verse === null
+                ? undefined
+                : {
+                    href: `${href}/${verse}`,
+                    from: { href: `${href}#v-${verse}`, label: `${panel.bookName} ${panel.chapter}` },
+                  }
+            }
             sections={sections}
             forceSection={editor ? "notes" : null}
           />
