@@ -10,7 +10,7 @@ import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { officialObjections } from "@/content/official-objections";
 import { objectionsPageText } from "@/content/objections-page-text";
-import { traditionHref } from "@/content/routes";
+import { objectionsHref, traditionHref } from "@/content/routes";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ThemedObjectionList } from "@/features/doctrine/themed-objection-list";
@@ -74,6 +74,7 @@ export default async function ObjectionsRoute({
             id,
             label: traditionName(locale, id),
             available: builtTraditions(doctrine).includes(id),
+            href: objectionsHref(locale, doctrine, id),
           }))}
           current={tradition}
         />

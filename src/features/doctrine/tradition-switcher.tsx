@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type FocusEvent } from "react";
+import { useRouter } from "next/navigation";
 import { Tooltip } from "@/components/ui/tooltip";
 import { useStuck } from "@/lib/use-stuck";
 
@@ -8,6 +9,7 @@ type SwitcherItem = {
   id: string;
   label: string;
   available: boolean;
+  href: string;
 };
 
 type TraditionSwitcherProps = {
@@ -16,11 +18,13 @@ type TraditionSwitcherProps = {
   soon: string;
   items: SwitcherItem[];
   current: string;
+  keepSection?: boolean;
 };
 
 const pressedMs = 2200;
 
-export function TraditionSwitcher({ label, hint, soon, items, current }: TraditionSwitcherProps) {
+export function TraditionSwitcher({ label, hint, soon, items, current, keepSection = false }: TraditionSwitcherProps) {
+  const router = useRouter();
   const bar = useRef<HTMLElement>(null);
   const strip = useRef<HTMLUListElement>(null);
   const caption = useRef<HTMLSpanElement>(null);
@@ -80,7 +84,23 @@ export function TraditionSwitcher({ label, hint, soon, items, current }: Traditi
     releaseTimer.current = window.setTimeout(() => setTip(null), pressedMs);
   }
 
-  // TODO: tabs navigate to the same section of that tradition's page, with the sliding indicator and the content slide
+  function sectionInView(): string {
+    const barBottom = bar.current?.getBoundingClientRect().bottom ?? 0;
+    const line = barBottom + (innerHeight - barBottom) * 0.3;
+    let found = "";
+    for (const section of document.querySelectorAll<HTMLElement>("main section[id]")) {
+      if (section.getBoundingClientRect().top <= line) found = section.id;
+    }
+    return found;
+  }
+
+  function go(item: SwitcherItem) {
+    if (item.id === current) return;
+    const section = keepSection ? sectionInView() : "";
+    router.push(section ? `${item.href}#${section}` : item.href);
+  }
+
+  // TODO: the sliding indicator and the content slide between traditions need a motion proposal first
   return (
     <nav
       ref={bar}
@@ -106,6 +126,7 @@ export function TraditionSwitcher({ label, hint, soon, items, current }: Traditi
                 data-label={item.label}
                 aria-current={item.id === current ? "page" : undefined}
                 data-current={item.id === current ? "" : undefined}
+                onClick={() => go(item)}
                 className="reserve-bold relative block cursor-pointer rounded-6 px-2.25 py-2 text-btn pointer-coarse:min-h-11 whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink data-current:selected-lift data-current:font-medium data-current:text-ink data-current:hover:bg-card sm:px-2.75 sm:text-ui-sm"
               >
                 {item.label}

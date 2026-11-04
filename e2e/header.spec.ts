@@ -17,7 +17,7 @@ test("crumbs: Doctrinas (inert) / La Eucaristía (a link) / Católica, the last 
   expect(page.url()).toBe(url);
 });
 
-test("switcher: six tabs in the fixed order, Católica current, the others inert", async ({ page }) => {
+test("switcher: six tabs in the fixed order, Católica current, the built ones lead to their page", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
   await expect(page.locator(`${switcher} li button`)).toHaveText([
@@ -29,10 +29,9 @@ test("switcher: six tabs in the fixed order, Católica current, the others inert
     "Pentecostal",
   ]);
   await expect(page.locator(`${switcher} [aria-current=page]`)).toHaveText("Católica");
-  const url = page.url();
-  await page.locator(`${switcher} li button`, { hasText: "Luterana" }).click({ force: true });
-  expect(page.url()).toBe(url);
-  await expect(page.locator(`${switcher} [aria-current=page]`)).toHaveText("Católica");
+  await page.locator(`${switcher} li button`, { hasText: "Luterana" }).click();
+  await expect(page).toHaveURL(/\/es\/doctrinas\/eucaristia\/luterana$/);
+  await expect(page.locator(`${switcher} [aria-current=page]`)).toHaveText("Luterana");
 });
 
 test("switcher: marking a tab does not move the others", async ({ page }) => {

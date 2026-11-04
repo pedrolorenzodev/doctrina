@@ -487,7 +487,7 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
                 </div>
               ) : null}
               <p className="m-0 mt-3 text-ui-sm">
-                {/* TODO: only the Fathers' pages exist; councils and movements link to their pages once they exist */}
+                {/* TODO: entries without a page of their own link to it once one exists */}
                 {panelEntry.href ? (
                   <PageLink href={panelEntry.href}>{panelEntry.linkLabel}</PageLink>
                 ) : (

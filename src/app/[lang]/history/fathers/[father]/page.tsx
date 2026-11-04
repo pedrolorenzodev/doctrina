@@ -14,7 +14,7 @@ import { getFatherAppearances } from "@/content/get-father-appearances";
 import { worksByFather } from "@/content/father-work-links";
 import { getFatherWorks } from "@/content/get-father-works";
 import { getFather, getFatherNeighbors, getPublishedFathers } from "@/content/get-fathers";
-import { fatherHref, timelineHref } from "@/content/routes";
+import { fatherHref, fathersIndexHref, timelineHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { FatherAppearsSection } from "@/features/history/father-appears-section";
@@ -58,10 +58,10 @@ export default async function FatherRoute({ params }: PageProps<"/[lang]/history
     view.writings.length === 1 ? labels.writingsOne : labels.writingsMany.replace("{n}", String(view.writings.length));
   const page = (
     <PageMain>
-      {/* TODO: «Historia» and «Padres» lead to their index pages once those exist */}
+      {/* TODO: «Historia» leads to its index page once it exists */}
       <Breadcrumbs
         label={text.shell.breadcrumb}
-        trail={[{ label: text.shell.tree.history }, { label: text.shell.tree.fathers }]}
+        trail={[{ label: text.shell.tree.history }, { label: text.shell.tree.fathers, href: fathersIndexHref(locale) }]}
         current={view.name}
       />
       <PageHeader id="top" className="mt-10" title={view.name} />

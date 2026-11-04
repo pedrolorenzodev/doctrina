@@ -17,7 +17,9 @@ test("Ignatius: title, tab, crumbs and the four facts of the header", async ({ p
   await page.goto(ignatius);
   await expect(page.locator("main h1")).toHaveText("Ignacio de Antioquía");
   await expect(page).toHaveTitle("Ignacio de Antioquía · Padres");
-  await expect(page.locator(`${crumbs} > span.text-ink-3`)).toHaveText(["Historia", "Padres"]);
+  await expect(page.locator(`${crumbs} > span.text-ink-3`)).toHaveText(["Historia"]);
+  await expect(page.locator(`${crumbs} a`)).toHaveText("Padres");
+  await expect(page.locator(`${crumbs} a`)).toHaveAttribute("href", "/es/historia/padres");
   await expect(page.locator(`${crumbs} [aria-current=page]`)).toHaveText("Ignacio de Antioquía");
   expect(await headerFactsOf(page)).toEqual([
     ["Nació", "desconocido"],

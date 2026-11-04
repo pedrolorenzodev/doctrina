@@ -37,6 +37,34 @@ Notes: each word is verified against the page's real lede in the data files. For
 Sampled per frame (page navigation by sidebar link, 1440): near moves were already one mark with continuous motion. Broken: (a) a target far from the visible part of the tree: the tree scrolled instantly (1598 px in one frame), so the mark jumped across the viewport; (b) a target inside a closed group: the group opened instantly, the rows below jumped 306 px and the mark with them; (c) a second click while the mark travels: the mark restarted from the previous row (the cancel removed the travelling mark before its position was read). Now: tree scroll and mark share one animation loop and the start box is read first; groups open animated during a travel. After: no frame with a step above 45 % of the mark's reach, tree scroll steps ≤ 30 % of its distance, one mark in every frame (5 cases in `e2e/tree-mark-travel.spec.ts`, 4 failed before).
 Not covered (no row with a short mark): Bible chapters (their current marker is the chapter cell), the word page; going Bible → doctrine still launches a mark from the book row (existing behaviour, left as is).
 
+## Fix 5: the tradition switcher and the inert controls
+
+Switcher: every built tab now goes to the same kind of page of that tradition: the tradition page (keeping the section being read, as a `#section` hash; at the top it lands at the top), the Pasajes page, or the Objeciones page. Pentecostal stays inert (no page). No sliding indicator or content slide was added (new motion needs a proposal): the `TODO` says so. There is no doctrine switcher anywhere in the site.
+
+Audit (grep of `TODO`, `href="#"`, `aria-disabled`, `PageLink` without `href`):
+
+| Where | What it should do | Status |
+|---|---|---|
+| Tradition / Pasajes / Objeciones switcher | go to the chosen tradition | wired |
+| Father timeline (`father-timeline`): currents | page of the current (`currentHref`) | wired |
+| Father timeline: councils | «Ver en la línea de tiempo» → `/historia/linea-de-tiempo#<council>` | wired |
+| Father page breadcrumb «Padres» | Fathers index | wired |
+| General timeline: councils and currents | their pages | already wired (stale TODO reworded) |
+| Father timeline: historical events | no page and not on the general timeline | left inert, `TODO` |
+| Breadcrumb «Historia» (all history pages, timeline) | no `/historia` index page exists | left inert, `TODO` |
+| Breadcrumb «Biblia» and testament (Bible chapter, word page) | no Bible index page | left inert, `TODO` |
+| Doctrine witnesses link «La historia completa de …» | a per-doctrine history page does not exist | left inert (doubtful: could point to the timeline, not equivalent) |
+| Early-christians list «Leer …» | the reader at that division; the witness has no work id, only a title | left inert (data would need `workId`) |
+| Passage reference / passage title / «Abrir detalle» in the verse panel | verse page (06) / passage detail: not built | left inert (doubtful: could open the reader at that verse) |
+| Home «Fuentes» | Fuentes page: proposal only | left inert |
+| Home doctrine rows, «Estudiar la postura», connected cards | data driven: link when the doctrine/tradition has a page | already wired; the unpublished ones (justification, Pentecostal) stay muted |
+| «Guardar en Tus notas» (drawer, simplifier), «Informar un error» (drawer, simplifier) | notes store / report queue | left inert (no backend) |
+| Mail form, red-letter notice address | backend / project address | left inert |
+| Citation window «Abrir la fuente completa» | reader at the cited division | wired where `fullSourceHref` exists, inert otherwise |
+| Words page Greek-Father quotes, senses titles | data, not links | open |
+
+Stale tests fixed while here: `header.spec` (switcher was asserted inert), `father.spec` crumbs, `soon-screens` (the home no longer mutes bautismo, papado, sola scriptura). Three `father.spec` cases («Dónde aparece»: 167, 193, 203) already failed before this work because doctrine pages now cite the Fathers in more places: not touched, for the next round.
+
 ## Decisions made while Pedro was away
 
 (agent's call, newest last)
@@ -51,6 +79,7 @@ Not covered (no row with a short mark): Bible chapters (their current marker is 
 - `src/components/simplifier/panel-motion.ts`, `src/components/simplifier/simplifier-text.ts`, `src/features/reader-ai/text.ts`, `e2e/simplifier.spec.ts`, `docs/GOTCHAS.md` (fix 2).
 - `src/content/lede-emphasis.ts` (new), `src/app/[lang]/doctrines/[doctrine]/[tradition]/page.tsx`, `e2e/doctrine-lede-emphasis.spec.ts` (new) (fix 3).
 - `src/features/shell/tree-motion.ts`, `src/features/shell/sidebar.tsx`, `e2e/tree-mark-travel.spec.ts` (new), `docs/GOTCHAS.md` (fix 4).
+- `src/features/doctrine/tradition-switcher.tsx`, the three tradition route pages (main, objections, passages), `src/content/father-timeline.ts`, `src/features/history/father-timeline.tsx`, `src/features/history/general-timeline.tsx`, `src/app/[lang]/history/fathers/[father]/page.tsx`, `e2e/tradition-switcher.spec.ts` (new), `e2e/header.spec.ts`, `e2e/father.spec.ts`, `e2e/soon-screens.spec.ts` (fix 5).
 
 ## Usage log
 
@@ -58,4 +87,4 @@ Not covered (no row with a short mark): Bible chapters (their current marker is 
 
 ## State
 
-Fix 1 frozen (block 227). Fix 2 frozen (block 228). Fix 3 frozen (block 229). Fix 4 frozen (block 230). Next: fix 5 (switcher and inert links).
+Fix 1 frozen (block 227). Fix 2 frozen (block 228). Fix 3 frozen (block 229). Fix 4 frozen (block 230). Fix 5 frozen (block 231). Next: fix 6 (reader position and infinite scroll).

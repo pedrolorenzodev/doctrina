@@ -54,13 +54,13 @@ test("on touch a tap on a muted tab shows the message for about two seconds and 
   await context.close();
 });
 
-test("the home mutes the doctrines without a page and the Fuentes link, and keeps the Eucaristía row live", async ({
+test("the home mutes the doctrine without a page and the Fuentes link, and keeps the Eucaristía row live", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/es");
   const muted = page.locator('main button[aria-disabled="true"]');
-  await expect(muted).toHaveText([/La justificación/, /El bautismo/, /El papado/, /Sola Scriptura/, /Fuentes/]);
+  await expect(muted).toHaveText([/La justificación/, /Fuentes/]);
   await expect(page.locator('main a[href="/es/doctrinas/eucaristia"]').first()).toBeVisible();
 });
 

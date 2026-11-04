@@ -9,7 +9,7 @@ import { getPageViews } from "@/content/get-page-views";
 import { getPassages } from "@/content/get-passages";
 import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
-import { traditionHref } from "@/content/routes";
+import { passagesHref, traditionHref } from "@/content/routes";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
@@ -72,6 +72,7 @@ export default async function PassagesRoute({
             id,
             label: traditionName(locale, id),
             available: builtTraditions(doctrine).includes(id),
+            href: passagesHref(locale, doctrine, id),
           }))}
           current={tradition}
         />

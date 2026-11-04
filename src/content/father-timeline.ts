@@ -2,7 +2,7 @@ import { formatYear } from "@/content/format-date";
 import { lifeBounds, lifeMarks, lifeText } from "@/content/father-life";
 import { councils, heresies, historyEvents } from "@/content/history/timeline-sources";
 import type { Father, HistoryEventKind, Localized } from "@/content/model/history";
-import { fatherHref } from "@/content/routes";
+import { currentHref, fatherHref, timelineHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
 import { firstSentence } from "@/lib/first-sentence";
 import type { Locale } from "@/lib/locale";
@@ -129,6 +129,7 @@ function dated(
   summary: string,
   locale: Locale,
   linkLabel: string,
+  href: string | null,
 ): TimelineItem {
   const rowDate = rangeLabel(start, end, approx);
   return {
@@ -152,7 +153,7 @@ function dated(
     isRange: end !== null && end > start,
     openEnd: false,
     own: false,
-    href: null,
+    href,
     linkLabel,
   };
 }
@@ -188,6 +189,7 @@ export function buildFatherTimeline(father: Father, all: Father[], locale: Local
         firstSentence(heresy.teaching[locale]),
         locale,
         labels.pageOf.replace("{name}", heresy.name[locale]),
+        currentHref(locale, heresy.id),
       ),
     );
 
@@ -213,6 +215,7 @@ export function buildFatherTimeline(father: Father, all: Father[], locale: Local
           capitalize(event.label[locale]),
           locale,
           labels.seeOnTimeline,
+          null,
         ),
       })),
     ...councils
@@ -234,6 +237,7 @@ export function buildFatherTimeline(father: Father, all: Father[], locale: Local
             council.name[locale],
             locale,
             labels.seeOnTimeline,
+            `${timelineHref(locale)}#${council.id}`,
           ),
         ),
       })),

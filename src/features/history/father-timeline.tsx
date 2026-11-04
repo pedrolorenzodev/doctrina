@@ -272,7 +272,7 @@ export function FatherTimeline({ from, to, marks, entries, text }: FatherTimelin
             <p className="m-0 mt-2 max-w-155 font-body text-passage-body font-light text-ink-2">{selected.text}</p>
             {selected.own ? null : (
               <p className="m-0 mt-2.5 text-ui-sm">
-                {/* TODO: only the Fathers' pages exist; currents, councils and events link to screen 08 once it exists */}
+                {/* TODO: events link to a page of their own once one exists */}
                 {selected.href ? (
                   <PageLink href={selected.href}>{selected.linkLabel}</PageLink>
                 ) : (
@@ -429,7 +429,7 @@ function FixedStrip({ entry, detail }: { entry: TimelineEntry | null; detail: Re
             </p>
             {entry.own ? null : (
               <p className="m-0 shrink-0 text-ui-sm">
-                {/* TODO: only the Fathers' pages exist; currents, councils and events link to screen 08 once it exists */}
+                {/* TODO: events link to a page of their own once one exists */}
                 {entry.href ? (
                   <PageLink href={entry.href}>{entry.linkLabel}</PageLink>
                 ) : (

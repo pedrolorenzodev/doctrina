@@ -7,6 +7,7 @@ import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPageViews } from "@/content/get-page-views";
 import { ledeEmphasis } from "@/content/lede-emphasis";
+import { traditionHref } from "@/content/routes";
 import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
@@ -68,8 +69,10 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
             id,
             label: traditionName(locale, id),
             available: builtTraditions(doctrine).includes(id),
+            href: traditionHref(locale, doctrine, id),
           }))}
           current={tradition}
+          keepSection
         />
         <PageHeader
           id="top"
