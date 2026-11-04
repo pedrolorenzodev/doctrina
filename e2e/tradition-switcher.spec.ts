@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
 const switcher = 'main nav[aria-label="Tradición"]';
 const doctrines = ["eucaristia", "bautismo", "papado", "sola-scriptura"];
@@ -68,6 +68,53 @@ for (const [kind, segment] of [
       .filter({ hasText: /^Reformada$/ })
       .click();
     await expect(page).toHaveURL(new RegExp(`/es/doctrinas/eucaristia/reformada/${segment}$`));
+  });
+}
+
+async function sampleIndicator(page: Page, ms: number) {
+  return page.evaluate(
+    (duration) =>
+      new Promise<{ count: number; left: number; width: number }[]>((resolve) => {
+        const out: { count: number; left: number; width: number }[] = [];
+        const start = performance.now();
+        const tick = () => {
+          const found = document.querySelectorAll('main nav[aria-label="Tradición"] [data-slide-indicator]');
+          const box = found[0]?.getBoundingClientRect();
+          out.push({ count: found.length, left: box?.left ?? -1, width: box?.width ?? -1 });
+          if (performance.now() - start < duration) requestAnimationFrame(tick);
+          else resolve(out);
+        };
+        tick();
+      }),
+    ms,
+  );
+}
+
+for (const [from, to] of [
+  ["catolica", "reformada"],
+  ["reformada", "ortodoxa"],
+] as const) {
+  test(`one indicator slides from ${from} to ${to} and never disappears`, async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/es/doctrinas/eucaristia/${from}`);
+    const target = page.locator(`${switcher} li button[data-label]`).filter({ hasText: new RegExp(`^${label(to)}$`) });
+    await expect(page.locator(`${switcher} [data-slide-indicator]`)).toHaveCount(1);
+    await page.waitForTimeout(500);
+    const startLeft = (await page.locator(`${switcher} [data-slide-indicator]`).boundingBox())!.x;
+    const sampling = sampleIndicator(page, 1600);
+    await target.click();
+    const frames = await sampling;
+    await expect(page).toHaveURL(new RegExp(`/eucaristia/${to}$`));
+    expect(frames.every((frame) => frame.count === 1)).toBe(true);
+    const endLeft = (await target.boundingBox())!.x;
+    const direction = Math.sign(endLeft - startLeft);
+    const lefts = frames.map((frame) => frame.left);
+    for (let index = 1; index < lefts.length; index += 1)
+      expect(direction * (lefts[index]! - lefts[index - 1]!)).toBeGreaterThanOrEqual(-0.5);
+    expect(
+      lefts.filter((left) => Math.abs(left - startLeft) > 4 && Math.abs(left - endLeft) > 4).length,
+    ).toBeGreaterThan(5);
+    expect(Math.abs(lefts.at(-1)! - endLeft)).toBeLessThan(1.5);
   });
 }
 

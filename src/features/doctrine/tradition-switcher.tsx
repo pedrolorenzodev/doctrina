@@ -1,6 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties, type MouseEvent, type FocusEvent } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type MouseEvent,
+  type FocusEvent,
+} from "react";
 import { useRouter } from "next/navigation";
 import { Tooltip } from "@/components/ui/tooltip";
 import { useStuck } from "@/lib/use-stuck";
@@ -22,6 +30,11 @@ type TraditionSwitcherProps = {
 };
 
 const pressedMs = 2200;
+const memoryMs = 3000;
+
+type Box = { x: number; w: number };
+
+let memory: { signature: string; box: Box; at: number } | null = null;
 
 export function TraditionSwitcher({ label, hint, soon, items, current, keepSection = false }: TraditionSwitcherProps) {
   const router = useRouter();
@@ -36,6 +49,54 @@ export function TraditionSwitcher({ label, hint, soon, items, current, keepSecti
   const [tip, setTip] = useState<number | null>(null);
   const holdUntil = useRef(0);
   const releaseTimer = useRef(0);
+  const [box, setBox] = useState<Box | null>(null);
+  const [instant, setInstant] = useState(true);
+  const signature = items.map((item) => `${item.id}:${item.available ? 1 : 0}`).join("|");
+
+  useLayoutEffect(() => {
+    const list = strip.current;
+    if (!list) return;
+    const measure = () => {
+      const target = list.querySelector<HTMLElement>("button[data-current]");
+      if (target && target.offsetWidth > 0) {
+        setBox({ x: target.offsetLeft, w: target.offsetWidth });
+      }
+    };
+    const place = (next: Box, still: boolean) => {
+      setBox(next);
+      setInstant(still);
+    };
+    const remembered =
+      memory && memory.signature === signature && Date.now() - memory.at < memoryMs ? memory.box : null;
+    memory = null;
+    let frame = 0;
+    if (remembered) {
+      place(remembered, true);
+      frame = requestAnimationFrame(() => {
+        setInstant(false);
+        measure();
+      });
+    } else {
+      measure();
+      frame = requestAnimationFrame(() => setInstant(false));
+    }
+    const observer = new ResizeObserver(measure);
+    list.querySelectorAll("button").forEach((button) => observer.observe(button));
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      const element = list.querySelector<HTMLElement>("[data-slide-indicator]");
+      if (element) {
+        const shown = element.getBoundingClientRect();
+        const origin = list.getBoundingClientRect();
+        memory = {
+          signature,
+          box: { x: shown.left - origin.left + list.scrollLeft, w: shown.width },
+          at: Date.now(),
+        };
+      }
+    };
+  }, [current, signature]);
 
   useEffect(() => {
     const element = bar.current;
@@ -94,13 +155,14 @@ export function TraditionSwitcher({ label, hint, soon, items, current, keepSecti
     return found;
   }
 
-  function go(item: SwitcherItem) {
+  function go(item: SwitcherItem, target: HTMLElement) {
     if (item.id === current) return;
+    setBox({ x: target.offsetLeft, w: target.offsetWidth });
     const section = keepSection ? sectionInView() : "";
     router.push(section ? `${item.href}#${section}` : item.href);
   }
 
-  // TODO: the sliding indicator and the content slide between traditions need a motion proposal first
+  // TODO: the content slide between traditions needs a motion proposal first
   return (
     <nav
       ref={bar}
@@ -116,8 +178,17 @@ export function TraditionSwitcher({ label, hint, soon, items, current, keepSecti
         ref={strip}
         data-lenis-prevent
         data-fade={fade ? "" : undefined}
-        className="m-0 flex min-w-0 list-none gap-0.5 overflow-x-auto p-0 no-scrollbar data-fade:fade-right"
+        className="relative m-0 flex min-w-0 list-none gap-0.5 overflow-x-auto p-0 no-scrollbar data-fade:fade-right"
       >
+        {box ? (
+          <li
+            aria-hidden="true"
+            data-instant={instant ? "" : undefined}
+            data-slide-indicator=""
+            style={{ "--slide-x": `${box.x}px`, "--slide-w": `${box.w}px` } as CSSProperties}
+            className="slide-indicator pointer-events-none absolute top-0 bottom-0 left-0 w-(--slide-w) translate-x-(--slide-x) rounded-6 selected-lift"
+          />
+        ) : null}
         {items.map((item) => (
           <li key={item.id}>
             {item.available ? (
@@ -126,8 +197,8 @@ export function TraditionSwitcher({ label, hint, soon, items, current, keepSecti
                 data-label={item.label}
                 aria-current={item.id === current ? "page" : undefined}
                 data-current={item.id === current ? "" : undefined}
-                onClick={() => go(item)}
-                className="reserve-bold relative block cursor-pointer rounded-6 px-2.25 py-2 text-btn pointer-coarse:min-h-11 whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink data-current:selected-lift data-current:font-medium data-current:text-ink data-current:hover:bg-card sm:px-2.75 sm:text-ui-sm"
+                onClick={(event) => go(item, event.currentTarget)}
+                className="reserve-bold relative block cursor-pointer rounded-6 px-2.25 py-2 text-btn pointer-coarse:min-h-11 whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink data-current:font-medium data-current:text-ink data-current:hover:bg-transparent sm:px-2.75 sm:text-ui-sm"
               >
                 {item.label}
               </button>
