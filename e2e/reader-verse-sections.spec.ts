@@ -43,21 +43,21 @@ test("the verse panel has Notas, Palabras, Usos and Traducciones with their coun
   await expect(labels).toHaveCount(4);
   await expect(labels.nth(0)).toContainText("Notas");
   await expect(labels.nth(0)).toContainText("1");
-  await expect(labels.nth(1)).toHaveText("Palabras");
+  await expect(labels.nth(1)).toContainText("Palabras");
+  await expect(labels.nth(1)).toContainText("28");
   await expect(labels.nth(2)).toHaveText("Usos");
   await expect(labels.nth(3)).toContainText("Traducciones");
   await expect(labels.nth(0)).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(body)).toContainText("El discurso del pan de vida.");
 });
 
-test("«Palabras» and «Usos» are inert: pressing them changes nothing", async ({ page }) => {
+test("«Usos» is inert: pressing it changes nothing", async ({ page }) => {
   await openVerse(page);
   const before = await page.locator(body).innerText();
-  await tab(page, /^Palabras/).click();
   await tab(page, /^Usos/).click();
   await page.waitForTimeout(500);
   await expect(tab(page, /^Notas/)).toHaveAttribute("aria-pressed", "true");
-  await expect(tab(page, /^Palabras/)).toHaveAttribute("aria-pressed", "false");
+  await expect(tab(page, /^Usos/)).toHaveAttribute("aria-pressed", "false");
   expect(await page.locator(body).innerText()).toBe(before);
 });
 
@@ -71,10 +71,10 @@ test("«Traducciones» lists the other editions of the verse with their language
   await expect(page.locator(body)).not.toContainText("The Jews therefore strove");
 });
 
-test("with no notes the first section is «Traducciones» and «Notas» is not offered", async ({ page }) => {
+test("with no notes the first section is «Palabras» and «Notas» is not offered", async ({ page }) => {
   await openVerse(page, false);
   await expect(page.locator(strip).getByRole("button", { name: /^Notas/ })).toHaveCount(0);
-  await expect(tab(page, /^Traducciones/)).toHaveAttribute("aria-pressed", "true");
+  await expect(tab(page, /^Palabras/)).toHaveAttribute("aria-pressed", "true");
 });
 
 test("the indicator slides in about 340 ms and the content leaves and enters", async ({ page }) => {

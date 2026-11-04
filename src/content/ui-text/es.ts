@@ -300,6 +300,23 @@ export const es = {
         spanish: "español",
         english: "inglés",
       },
+      words: {
+        list: "Palabras del versículo",
+        strong: "Strong",
+        countNew: "En el Nuevo Testamento",
+        countOld: "En el Antiguo Testamento",
+        means: "Significa",
+        form: "Forma",
+        base: "Palabra base",
+        times: "{n} veces",
+        timesOne: "1 vez",
+        inBook: "{n} versículos en {book}",
+        inBookOne: "1 versículo en {book}",
+        open: "Abrir el estudio de {word}",
+        english: "inglés",
+        source:
+          "Texto original y análisis: STEPBible (Tyndale House), CC BY 4.0. Glosas en español: de Doctrina, redactadas con IA y sin revisar; las marcadas «inglés» aún no tienen traducción.",
+      },
     },
     redNotice: {
       message:

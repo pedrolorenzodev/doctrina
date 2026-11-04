@@ -4,11 +4,13 @@ import { defineConfig } from "@playwright/test";
 const port = 3100;
 
 const hasCorpus = existsSync("data/corpus/bibles/rv1909.json");
+const hasWords = existsSync("data/site/words/manifest.json");
 const needsCorpus = ["**/reader-*.spec.ts", "**/father-reader.spec.ts"];
+const needsWords = ["**/words-*.spec.ts", "**/reader-panel-words.spec.ts"];
 
 export default defineConfig({
   testDir: "e2e",
-  testIgnore: hasCorpus ? [] : needsCorpus,
+  testIgnore: [...(hasCorpus ? [] : needsCorpus), ...(hasWords ? [] : needsWords)],
   fullyParallel: true,
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,

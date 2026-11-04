@@ -75,10 +75,10 @@ Screen 08, the word index, any page for Bible books, richer registry data (the 1
 - [ ] H6 Tab title and metadata (the site's pattern; not in the artifact).
 
 ### P. Verse panel tab «Palabras» (reader artifact `words`, 'filas')
-- [ ] P1 Tab label «Palabras» with a count (the verse's words, `.n` 12 ink-3); body = hairline list (top per item, bottom on the last) of one row per word.
-- [ ] P2 Row (button, min 44, padding 9 6, radius 4, hover `hover`): grid minmax(120,170) | 1fr | 22 (gap 4 18): Greek or Hebrew word (`--font-greek` 20/1.3 ink), gloss (Source Serif 300 16.5/1.45 ink-2) followed by its transliteration (`small`, 12.5 ink-3, margin-left 10; follows the switch), chevron turning 90° in 200 ms; `aria-expanded`.
-- [ ] P3 Expanding opens the word card under the row: height and opacity 380 ms `ease-reveal`; closing: opacity 180 ms `ease-in` then height 380 ms `ease-reveal` (delay 180); reduced motion: none. Card (padding 4 6 18): word 32 Gentium, transliteration 14 ink-3 (mb 14), `dl` 118 | 1fr with hairlines (term 13 ink-3, value Source Serif 16 ink): Strong · En el Nuevo Testamento («147 veces, 12 en Juan») · Significa · Forma (parse in Spanish) · Palabra base (lemma Greek + (translit)); `btn-go` «Abrir el estudio de σάρξ» (opens screen 07; inert until B1.4 lands).
-- [ ] P4 Source line under the list (`ww-src`, 13/1.5 ink-3, mt 14): «Griego: STEP Bible, CC BY 4.0. Glosas: …». **Text must change** (open point 4).
+- [x] P1 Tab label «Palabras» with a count (the verse's words, `.n` 12 ink-3); body = hairline list (top per item, bottom on the last) of one row per word.
+- [x] P2 Row (button, min 44, padding 9 6, radius 4, hover `hover`): grid minmax(120,170) | 1fr | 22 (gap 4 18): Greek or Hebrew word (`--font-greek` 20/1.3 ink), gloss (Source Serif 300 16.5/1.45 ink-2) followed by its transliteration (`small`, 12.5 ink-3, margin-left 10; follows the switch), chevron turning 90° in 200 ms; `aria-expanded`.
+- [x] P3 Expanding opens the word card under the row: height and opacity 380 ms `ease-reveal`; closing: opacity 180 ms `ease-in` then height 380 ms `ease-reveal` (delay 180); reduced motion: none. Card (padding 4 6 18): word 32 Gentium, transliteration 14 ink-3 (mb 14), `dl` 118 | 1fr with hairlines (term 13 ink-3, value Source Serif 16 ink): Strong · En el Nuevo Testamento («147 veces, 12 en Juan») · Significa · Forma (parse in Spanish) · Palabra base (lemma Greek + (translit)); `btn-go` «Abrir el estudio de σάρξ» (opens screen 07; inert until B1.4 lands).
+- [x] P4 Source line under the list (`ww-src`, 13/1.5 ink-3, mt 14): «Griego: STEP Bible, CC BY 4.0. Glosas: …». **Text must change** (open point 4).
 
 ### U. Verse panel tab «Usos» (reader artifact `uses`)
 - [ ] U1 Tab label «Usos» with a count; body = list `cd-du` (no bullets; item padding 9 0, hairline above all but the first; the first has no top padding).
@@ -89,7 +89,15 @@ Screen 08, the word index, any page for Bible books, richer registry data (the 1
 
 | Element | What the proposal had | What the site has | Design-system reason |
 |---|---|---|---|
-| (none yet) | | | |
+| P (panel) | panel 399 wide, tab selected with an accent underline on `accent-weak` | 380 wide (shared `SidePanel`, DEC 2026-10-26), the «Tinta llena» sliding pad of the site | DESIGN «Selected states», «Reader side panel»; the two are the panel's, not the words' |
+| P2 gloss | Spanish glosses of OpenGNT (CC BY-SA) | Doctrina's own Spanish (AI-drafted, unreviewed); where a word has none, the English one with `lang="en"` and a quiet «inglés» tag; the data covers 85.0 % of Greek and 82.3 % of Hebrew words | DEC 2026-11-01 (answer 5), «Anything unverified is marked draft», content rule «label ours» |
+| P2 transliteration | always beside the gloss | follows the site's stored choice (`doctrina-transliteration`, default on) and is turned off only from the word page's switch | DEC 2026-10-22: transliteration always offered, with a quiet toggle; the switch lives on screen 07 (A2) |
+| P3 count line | «147 veces, 12 en Juan» (hand-written for John) | «147 veces, 12 versículos en Juan» (the book of the open verse; «versículos» because the data counts verses per book, not occurrences) | trust rule: say what the data counts |
+| P4 credit line | «Glosas: Open Greek New Testament, CC BY-SA 4.0» | «Texto original y análisis: STEPBible (Tyndale House), CC BY 4.0. Glosas en español: de Doctrina, redactadas con IA y sin revisar; las marcadas «inglés» aún no tienen traducción.» | OpenGNT is not used (DEC 2026-11-01); attribution of the sources actually used |
+| P3 button | «Abrir el estudio de σάρξ» opens screen 07 | built, inert, `TODO` | the word page lands in B1.4 (`ui.md`: inert with a `TODO`) |
+| P (Hebrew) | none (Greek only) | the same rows and card for Hebrew verses: Hebrew in Noto Serif Hebrew (new font token `--font-hebrew`, only the Hebrew subset, Pedro 2026-11-03), transliteration of STEPBible with the prefix join written «-», «En el Antiguo Testamento», parse in Spanish from the same dictionary | Pedro's answer 8; data-driven |
+| P (fonts) | `Gentium Book Plus` for Greek | added to the site with `next/font` (`--font-greek`, listed in DESIGN since 2026-10-21 but never built), Greek and Latin subsets, 400/700 | DESIGN §2 token |
+| P (no data) | sections without data are hidden | «Palabras» stays visible and inert where the verse has no word data (deuterocanonical books) or the chosen edition numbers the chapter differently from the default | Pedro's decision of 2026-10-27 (inert, visible); `numberingDiffers` as «Traducciones» |
 
 ## Data conflicts and open points (batched to Pedro 2026-11-03; defaults in brackets)
 
@@ -119,3 +127,4 @@ Every checklist line ticked or listed in the deviations table; John 6 regression
 
 - 2026-11-03 18:39 (start of B1.0): session 7 %, weekly 72 % (cap 82 % inclusive). B1.0: reading and measuring the artifact, writing this file.
 - 2026-11-03 18:59 (B1.0 → B1.1, data regeneration and loader): weekly 72 %.
+- 2026-11-03 19:15 (B1.2 built and tested): weekly 73 %.

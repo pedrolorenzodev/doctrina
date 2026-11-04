@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { ChapterWords, LexiconEntry, VerseWords, WordLanguage, WordOccurrence } from "@/content/model/words";
 
@@ -70,4 +70,18 @@ export async function getParseNames(language: WordLanguage): Promise<Record<stri
 
 export async function hasWordData(): Promise<boolean> {
   return (await readJson<unknown>("manifest.json")) !== null;
+}
+
+export async function getWordChapters(): Promise<{ book: string; chapter: number }[]> {
+  const books = await readdir(join(wordsDir(), "verses")).catch(() => []);
+  const perBook = await Promise.all(
+    books.map(async (book) => {
+      const names = await readdir(join(wordsDir(), "verses", book)).catch(() => []);
+      return names.flatMap((name) => {
+        const chapter = Number(name.replace(".json", ""));
+        return Number.isInteger(chapter) ? [{ book, chapter }] : [];
+      });
+    }),
+  );
+  return perBook.flat();
 }

@@ -1,6 +1,7 @@
 import { getBibleBook, type BibleBook } from "@/content/bible-books";
 import { defaultTranslationId } from "@/content/bible/default-translation";
 import { translationMeta, translationOrder } from "@/content/bible/translation-meta";
+import { getChapterWordCounts } from "@/content/get-chapter-word-view";
 import { getBibleChapter, getBibleTranslations } from "@/content/get-bible";
 import type { BibleVerse, ChapterRef, ChapterStructure } from "@/content/model/bible";
 import type { Locale } from "@/lib/locale";
@@ -23,6 +24,7 @@ export type ReaderChapter = {
   views: ReaderTranslationView[];
   previous: ChapterRef | null;
   next: ChapterRef | null;
+  wordCounts: Record<string, number>;
 };
 
 export async function getReaderChapter(locale: Locale, bookId: string, chapter: number): Promise<ReaderChapter | null> {
@@ -51,5 +53,6 @@ export async function getReaderChapter(locale: Locale, bookId: string, chapter: 
     .sort((a, b) => translationOrder.findIndex((id) => id === a.id) - translationOrder.findIndex((id) => id === b.id));
   const reference = chapters.find((entry) => entry?.translation.id === defaultId);
   if (!reference) return null;
-  return { book, chapter, defaultId, views, previous: reference.previous, next: reference.next };
+  const wordCounts = await getChapterWordCounts(book.id, chapter);
+  return { book, chapter, defaultId, views, previous: reference.previous, next: reference.next, wordCounts };
 }

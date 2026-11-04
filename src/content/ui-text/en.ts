@@ -302,6 +302,23 @@ export const en: UiText = {
         spanish: "Spanish",
         english: "English",
       },
+      words: {
+        list: "Words of the verse",
+        strong: "Strong",
+        countNew: "In the New Testament",
+        countOld: "In the Old Testament",
+        means: "Means",
+        form: "Form",
+        base: "Base word",
+        times: "{n} times",
+        timesOne: "1 time",
+        inBook: "{n} verses in {book}",
+        inBookOne: "1 verse in {book}",
+        open: "Open the study of {word}",
+        english: "English",
+        source:
+          "Original text and analysis: STEPBible (Tyndale House), CC BY 4.0. Spanish glosses: Doctrina's own, drafted with AI and unreviewed.",
+      },
     },
     redNotice: {
       message:

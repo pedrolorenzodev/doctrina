@@ -28,6 +28,7 @@ import { clearNoteWords, markNoteWords } from "@/features/reader/note-words";
 import { PanelNotes } from "@/features/reader/panel-notes";
 import type { PanelSection } from "@/features/reader/panel-sections";
 import { PanelTranslations } from "@/features/reader/panel-translations";
+import { PanelWords } from "@/features/reader/panel-words";
 import type { ReaderSelection, VerseRange } from "@/features/reader/read-selection";
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
 import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
@@ -46,6 +47,7 @@ import type { ReaderTranslationView } from "@/content/get-reader-chapter";
 
 type ReaderBodyProps = {
   views: ReaderTranslationView[];
+  wordCounts: Record<string, number>;
   defaultId: string;
   bookId: string;
   deuteroNotice: string | null;
@@ -93,6 +95,7 @@ const noteClassName = "mt-5.5 mb-0 max-w-140 text-reader-note text-ink-3";
 
 export function ReaderBody({
   views,
+  wordCounts,
   defaultId,
   bookId,
   deuteroNotice,
@@ -281,6 +284,7 @@ export function ReaderBody({
   const editor = notes.editing && notes.editing.draft.verse === verse ? notes.editing : null;
   const verseNotes = verse === null ? [] : notes.at(verse).filter((note) => note.id !== editor?.noteId);
   const sectionText = panel.text.sections;
+  const wordsOfVerse = verse === null ? 0 : (wordCounts[String(verse)] ?? 0);
   const otherEditions =
     verse === null
       ? []
@@ -328,8 +332,23 @@ export function ReaderBody({
           },
         ]
       : []),
-    // TODO: «Palabras» shows the verse's words once the STEPBible word layer is loaded
-    { id: "words", label: sectionText.words, content: null },
+    wordsOfVerse > 0 && !differs
+      ? {
+          id: "words",
+          label: sectionText.words,
+          count: wordsOfVerse,
+          content: (
+            <PanelWords
+              locale={panel.locale}
+              book={bookId}
+              bookName={panel.bookName}
+              chapter={panel.chapter}
+              verse={verse ?? 0}
+              text={panel.text.words}
+            />
+          ),
+        }
+      : { id: "words", label: sectionText.words, content: null },
     // TODO: «Usos» lists where Doctrina cites this verse once the citation registry is queryable
     { id: "uses", label: sectionText.uses, content: null },
     ...(otherEditions.length > 0
