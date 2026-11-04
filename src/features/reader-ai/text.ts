@@ -174,3 +174,10 @@ export const askText: Record<Locale, AskText> = {
     },
   },
 };
+
+const thisWork: Record<Locale, string> = { es: "Esta obra", en: "This work" };
+
+export const fatherAskText = (locale: Locale): AskText => ({
+  ...askText[locale],
+  sees: { ...askText[locale].sees, chapter: thisWork[locale] },
+});

@@ -1,10 +1,14 @@
 import { fatherWorkHref } from "@/content/routes";
 import type { CitationView } from "@/lib/citation-view";
 import type { Locale } from "@/lib/locale";
-import { quotes } from "@/features/reader-ai/quotes";
+import type { Quote } from "@/features/reader-ai/quotes";
 import type { AskText } from "@/features/reader-ai/text";
 
-export function quoteViews(locale: Locale, text: AskText["cite"]): Record<string, CitationView> {
+export function quoteViews(
+  locale: Locale,
+  text: AskText["cite"],
+  quotes: Record<string, Quote>,
+): Record<string, CitationView> {
   return Object.fromEntries(
     Object.entries(quotes)
       .filter(([, quote]) => !quote.bible)

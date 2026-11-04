@@ -1,4 +1,4 @@
-export type AskPill = { reference: string; text: string; unit?: { prefix: string; verse: number } };
+export type AskPill = { reference: string; text: string; unit?: { prefix: string; verse: number; anchor?: string } };
 
 type AskDrawerState = { open: boolean; pill: AskPill | null; focus: boolean; serial: number };
 

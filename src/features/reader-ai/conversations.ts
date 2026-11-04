@@ -10,24 +10,27 @@ export type SavedEntry = {
   seconds: number;
 };
 
-export type Conversation = { id: string; opening: Opening; startedAt: string; entries: SavedEntry[] };
+export type Conversation = { id: string; script: string; opening: Opening; startedAt: string; entries: SavedEntry[] };
 
 const storageKey = "doctrina-ask-conversations";
 const keep = 50;
 
-const fresh = (opening: Opening): Conversation => ({
+const fresh = (opening: Opening, script: string): Conversation => ({
   id: `c${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,
+  script,
   opening,
   startedAt: new Date().toISOString(),
   entries: [],
 });
 
-let current: Conversation = fresh("chapter");
+let current: Conversation = fresh("chapter", "bible");
 
 function readStored(): Conversation[] {
   try {
     const parsed: unknown = JSON.parse(localStorage.getItem(storageKey) ?? "[]");
-    return Array.isArray(parsed) ? (parsed as Conversation[]) : [];
+    return Array.isArray(parsed)
+      ? (parsed as Conversation[]).map((saved) => ({ ...saved, script: saved.script ?? "bible" }))
+      : [];
   } catch {
     return [];
   }
@@ -45,8 +48,8 @@ export function currentConversation(): Conversation {
   return current;
 }
 
-export function startConversation(opening: Opening): Conversation {
-  current = fresh(opening);
+export function startConversation(opening: Opening, script: string): Conversation {
+  current = fresh(opening, script);
   return current;
 }
 
@@ -59,6 +62,6 @@ export function recordEntry(entry: SavedEntry): void {
   writeStored([current, ...readStored().filter((saved) => saved.id !== current.id)]);
 }
 
-export function savedConversations(): Conversation[] {
-  return readStored().filter((saved) => saved.entries.length > 0);
+export function savedConversations(script: string): Conversation[] {
+  return readStored().filter((saved) => saved.script === script && saved.entries.length > 0);
 }

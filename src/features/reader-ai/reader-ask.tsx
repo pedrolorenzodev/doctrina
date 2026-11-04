@@ -8,6 +8,7 @@ import { markArrival } from "@/lib/arrival-mark";
 import { clearAskPill, closedAskDrawer, getAskDrawer, subscribeAskDrawer, type AskPill } from "@/lib/ask-drawer";
 import { useActiveChapter } from "@/lib/active-chapter";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
+import { useChosenFatherEdition } from "@/lib/father-edition-choice";
 import type { Locale } from "@/lib/locale";
 import { scrollOffset, scrollToLayoutPosition, scrollToY } from "@/lib/scroll";
 import { currentTranslationChoice, subscribeTranslationChoice } from "@/lib/translation-choice";
@@ -25,10 +26,10 @@ import { HistoryPanel } from "@/features/reader-ai/history-panel";
 import { focusRingClassName } from "@/features/reader-ai/motion";
 import { ContextLine } from "@/features/reader-ai/context-line";
 import { CitePreview, type CiteTarget } from "@/features/reader-ai/cite-preview";
+import { AskScriptProvider, bibleScript, useAskScript, type AskScript } from "@/features/reader-ai/ask-script";
 import { quoteViews } from "@/features/reader-ai/quote-views";
-import { quotes } from "@/features/reader-ai/quotes";
 import type { Scope } from "@/features/reader-ai/scope-control";
-import { exampleHistory, routeQuestion, wordMarks } from "@/features/reader-ai/script";
+import { wordMarks } from "@/features/reader-ai/script";
 import type { AskText } from "@/features/reader-ai/text";
 import { clearWords, markWords } from "@/features/reader-ai/word-marks";
 
@@ -40,9 +41,11 @@ type ReaderAskProps = {
   here: { book: string; chapter: number };
   editions: { id: string; name: string }[];
   defaultEdition: string;
-  johnSix: { book: string; chapter: number; href: string };
-  bibleHrefs: Record<string, string>;
+  johnSix?: { book: string; chapter: number; href: string };
+  bibleHrefs?: Record<string, string>;
   citationText: CitationWindowText;
+  script?: AskScript;
+  fatherEditions?: boolean;
 };
 
 const showMs = 200;
@@ -52,12 +55,14 @@ const coarse = () => matchMedia("(pointer: coarse)").matches;
 const headButtonClassName = `grid size-9 flex-none cursor-pointer place-items-center rounded-6 text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-hover aria-pressed:text-ink pointer-coarse:size-11 ${focusRingClassName}`;
 
 export function ReaderAsk(props: ReaderAskProps) {
-  const { locale, text, citationText } = props;
-  const views = useMemo(() => quoteViews(locale, text.cite), [locale, text.cite]);
+  const { locale, text, citationText, script = bibleScript } = props;
+  const views = useMemo(() => quoteViews(locale, text.cite, script.quotes), [locale, text.cite, script]);
   return (
-    <CitationProvider views={views} text={citationText}>
-      <AskLayer {...props} />
-    </CitationProvider>
+    <AskScriptProvider value={script}>
+      <CitationProvider views={views} text={citationText}>
+        <AskLayer {...props} />
+      </CitationProvider>
+    </AskScriptProvider>
   );
 }
 
@@ -70,12 +75,19 @@ function AskLayer({
   editions,
   defaultEdition,
   johnSix,
-  bibleHrefs,
+  bibleHrefs = {},
+  fatherEditions = false,
 }: ReaderAskProps) {
+  const script = useAskScript();
   const router = useRouter();
   const citation = useCitation();
   const active = useActiveChapter() ?? here;
-  const stored = useSyncExternalStore(subscribeTranslationChoice, currentTranslationChoice, () => null);
+  const bibleStored = useSyncExternalStore(subscribeTranslationChoice, currentTranslationChoice, () => null);
+  const fatherStored = useChosenFatherEdition(
+    editions.map((entry) => entry.id),
+    defaultEdition,
+  );
+  const stored = fatherEditions ? fatherStored : bibleStored;
   const edition =
     editions.find((entry) => entry.id === stored) ?? editions.find((entry) => entry.id === defaultEdition);
   const bookTitle = books.find((book) => book.id === active.book)?.title ?? "";
@@ -130,19 +142,20 @@ function AskLayer({
       },
     })),
     // TODO: drop the example questions once the answers are real
-    ...exampleHistory.map((example) => ({
+    ...script.exampleHistory.map((example) => ({
       key: example.date,
       question: example.question,
       date: dayOf(example.date),
       onPick: () => {
         openConversation({
           id: `example-${example.date}`,
+          script: script.id,
           opening: "chapter",
           startedAt: `${example.date}T12:00:00.000Z`,
           entries: [
             {
               key: 1,
-              id: routeQuestion(example.question),
+              id: script.route(example.question),
               question: example.question,
               pill: null,
               scopeName: scopeNames[scope],
@@ -195,6 +208,7 @@ function AskLayer({
   };
 
   const goToVerse = (verse: number) => {
+    if (!johnSix) return;
     const unit = document.getElementById(`v-${verse}`);
     const inJohnSix = here.book === johnSix.book && here.chapter === johnSix.chapter;
     if (!inJohnSix || !unit) {
@@ -209,9 +223,10 @@ function AskLayer({
 
   const goToPill = (chosen: AskPill) => {
     const unit = chosen.unit;
-    const verse = unit ? document.getElementById(`${unit.prefix}v-${unit.verse}`) : null;
+    const verse = unit ? document.getElementById(unit.anchor ?? `${unit.prefix}v-${unit.verse}`) : null;
     if (!unit || !verse) return;
-    const lead = document.getElementById(`${unit.prefix}v-${Math.max(1, unit.verse - verseLead)}`) ?? verse;
+    const lead =
+      (unit.anchor ? null : document.getElementById(`${unit.prefix}v-${Math.max(1, unit.verse - verseLead)}`)) ?? verse;
     markArrival(verse);
     scrollToY(lead.getBoundingClientRect().top + scrollY - scrollOffset());
   };
@@ -235,8 +250,8 @@ function AskLayer({
     onQuote: (quote, anchor) => {
       if (firstTap(anchor, { quote })) return;
       hidePreview();
-      const bible = quotes[quote].bible;
-      if (bible) {
+      const bible = script.quote(quote).bible;
+      if (bible && johnSix) {
         if (bible.book === johnSix.book && bible.chapter === johnSix.chapter) goToVerse(bible.verse);
         else router.push(`${bibleHrefs[`${bible.book}.${bible.chapter}`]}?place=third#v-${bible.verse}`);
         return;
@@ -280,7 +295,7 @@ function AskLayer({
               aria-label={text.chat.newChat}
               title={text.chat.newChat}
               onClick={() => {
-                startConversation(pill?.unit ? "verse" : "chapter");
+                startConversation(pill?.unit ? "verse" : "chapter", script.id);
                 setHistoryOpen(false);
                 setConversation((current) => ({ serial: current.serial + 1, restored: false }));
               }}
@@ -307,7 +322,7 @@ function AskLayer({
               title={text.chat.history}
               aria-pressed={historyOpen}
               onClick={() => {
-                if (!historyOpen) setSaved(savedConversations());
+                if (!historyOpen) setSaved(savedConversations(script.id));
                 setHistoryOpen(!historyOpen);
               }}
               className={headButtonClassName}

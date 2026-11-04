@@ -3,12 +3,12 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { verseText } from "@/features/reader-ai/answer-parts";
 import { motionClassName, motionStyle } from "@/features/reader-ai/motion";
-import { quotes, type QuoteId } from "@/features/reader-ai/quotes";
+import { useAskScript } from "@/features/reader-ai/ask-script";
 import { afterAuthor, afterReference, sourceOf, verseReference } from "@/features/reader-ai/script";
 import type { AskText } from "@/features/reader-ai/text";
 import { askTokens } from "@/features/reader-ai/tokens";
 
-export type CiteTarget = { verse: number } | { quote: QuoteId };
+export type CiteTarget = { verse: number } | { quote: string };
 
 type CitePreviewProps = {
   text: AskText["cite"];
@@ -44,6 +44,7 @@ const checkClassName =
   "mt-2 mb-3 flex items-center gap-1.5 border-t border-rule pt-2 text-ui-2xs leading-(--ask-leading-ui) text-ink-3";
 
 function Content({ target, text }: { target: CiteTarget; text: AskText["cite"] }) {
+  const script = useAskScript();
   if ("verse" in target) {
     return (
       <>
@@ -59,7 +60,7 @@ function Content({ target, text }: { target: CiteTarget; text: AskText["cite"] }
       </>
     );
   }
-  const entry = quotes[target.quote];
+  const entry = script.quote(target.quote);
   if (entry.bible) {
     return (
       <>

@@ -12,6 +12,7 @@ import { NoteEditor } from "@/features/reader/note-editor";
 import { NoteMarkers } from "@/features/reader/note-markers";
 import { PanelNotes } from "@/features/reader/panel-notes";
 import type { ReaderSelection } from "@/features/reader/read-selection";
+import { fieldOnOpen, openAskDrawer } from "@/lib/ask-drawer";
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
 import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
@@ -406,6 +407,18 @@ export function FatherBody({
         onHighlight={highlights.apply}
         onRemove={highlights.remove}
         onNote={noteOnWords}
+        onAsk={(selection) => {
+          const first = selection.ranges[0]?.verse ?? 0;
+          const last = selection.ranges[selection.ranges.length - 1]?.verse ?? first;
+          openAskDrawer({
+            pill: {
+              reference: referenceOf(first, last),
+              text: selection.text,
+              unit: { prefix: "", verse: first, anchor: anchorOfOrdinal(first) },
+            },
+            focus: fieldOnOpen(),
+          });
+        }}
       />
       <UndoBar
         open={undoState.undo?.open ?? false}

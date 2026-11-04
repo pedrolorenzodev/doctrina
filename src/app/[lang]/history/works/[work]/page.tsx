@@ -13,6 +13,8 @@ import { ByFatherEdition } from "@/features/reader/by-father-edition";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { FatherStrip } from "@/features/reader/father-strip";
 import { FatherBody } from "@/features/reader/father-body";
+import { FatherAsk } from "@/features/reader-ai/father-ask";
+import { fatherAskText } from "@/features/reader-ai/text";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { VerseArrival } from "@/features/reader/verse-arrival";
@@ -38,6 +40,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
   if (!work) notFound();
   const text = getUiText(locale);
   const labels = text.reader;
+  const ask = fatherAskText(locale);
   const licences: Record<string, string> = labels.licences;
   const spanish = await getSpanishFatherWork(id);
   const editionLine = (edition: FatherWork["edition"]) =>
@@ -50,7 +53,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
     text: { ...labels.panel, label: labels.fatherWork.panelLabel },
     highlight: labels.highlight,
     notes: labels.notes,
-    toolbar: labels.toolbar,
+    toolbar: { ...labels.toolbar, ask: ask.ask },
     yourNotes: labels.yourNotes,
     shortCitation: labels.shortCitation,
   };
@@ -132,6 +135,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           formats: { lines: labels.textOptions.lines, flow: labels.textOptions.flow },
           locked: labels.parallel.locked,
         }}
+        ask={{ label: ask.ask, keyHint: ask.keyHint }}
         picker={{
           text: { label: labels.picker.label, spanish: labels.picker.spanish, english: labels.picker.english },
           options: pickerOptions,
@@ -164,6 +168,14 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           next={neighbor(labels.fatherWork.next, next)}
         />
       </div>
+      <FatherAsk
+        locale={locale}
+        text={ask}
+        workId={work.id}
+        workName={workName(work.id, locale, work.title)}
+        editions={pickerOptions.map((option) => ({ id: option.id, name: option.displayName }))}
+        citationText={text.citation}
+      />
     </PageMain>
   );
 }

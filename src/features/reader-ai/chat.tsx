@@ -12,7 +12,8 @@ import {
   startConversation,
   type SavedEntry,
 } from "@/features/reader-ai/conversations";
-import { answers, chips, routeQuestion, suggestionSets, type AnswerId, type ChipId } from "@/features/reader-ai/script";
+import { useAskScript } from "@/features/reader-ai/ask-script";
+import type { AnswerId, ChipId } from "@/features/reader-ai/script";
 import type { Scope } from "@/features/reader-ai/scope-control";
 import type { AskText } from "@/features/reader-ai/text";
 
@@ -84,11 +85,12 @@ export function Chat({
   chapterSource,
   restored,
 }: ChatProps) {
+  const script = useAskScript();
   const opening = pill?.unit ? "verse" : "chapter";
   const [entries, setEntries] = useState<Entry[]>(() => {
     const now = currentConversation();
-    if (!restored && now.opening !== opening) {
-      startConversation(opening);
+    if (now.script !== script.id || (!restored && now.opening !== opening)) {
+      startConversation(opening, script.id);
       return [];
     }
     return now.entries.map((entry) => ({ ...entry, replay: true }));
@@ -250,7 +252,7 @@ export function Chat({
 
   const ask = (chip: ChipId | null, typed?: string, label?: string) => {
     if (busy) return;
-    let id: AnswerId = chip === null ? routeQuestion(typed ?? "") : chip === "scopeFix" ? "fathers" : chip;
+    let id: AnswerId = chip === null ? script.route(typed ?? "") : chip === "scopeFix" ? "fathers" : chip;
     let currentScope = scope;
     if (chip === "scopeFix") {
       onScopeFix();
@@ -265,11 +267,11 @@ export function Chat({
     setBusy(true);
     if (entries.length === 0) setChipsLeaving(!prefersReducedMotion());
     counter.current += 1;
-    const answer = answers[id];
+    const answer = script.answer(id);
     const entry: SavedEntry = {
       key: counter.current,
       id,
-      question: typed || label || answer.question || (chip ? chips[chip] : ""),
+      question: typed || label || answer.question || (chip ? (script.chips[chip] ?? "") : ""),
       pill,
       scopeName: scopeNames[currentScope],
       seconds: answerSeconds,
@@ -392,7 +394,7 @@ export function Chat({
             inert={chipsLeaving}
             className="-mx-5.5 mb-2 flex gap-2 overflow-x-auto overscroll-contain px-5.5 chips-scroll"
           >
-            {suggestionSets[opening].map((chip) => (
+            {script.suggestionSets[opening].map((chip) => (
               <button
                 key={chip.id}
                 type="button"

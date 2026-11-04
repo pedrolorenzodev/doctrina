@@ -21,4 +21,5 @@ Session «Padres», 2026-11-04. Pedro's words are quoted in the task prompt; thi
 
 ## State
 - Done: step 1 (block 235); steps 2 and 3 (block 236): loader `get-father-works-es.ts`, `ByFatherEdition`, `FatherStrip` picker, page `history/works/[work]`, e2e `father-edition.spec.ts` (7 pass), screenshots 1440/390 light and dark checked.
-- Next: step 4 (chat in the Fathers' reader): read `reader-ask.tsx`, `ask-drawer.tsx`, `script.ts`, `text.ts`, `quotes.ts`; the drawer is Bible-bound (chapter, John 6, scopes).
+- Step 4 done (block 237): `ask-script.tsx` (context), `father-script-data.ts` + `father-script.ts`, `father-ask.tsx`, button in `father-strip.tsx`, toolbar «Preguntar» in `father-body.tsx`, `conversations.ts` per script, `tools/check-father-script.mjs` in the lint chain, `e2e/father-ask.spec.ts` (9 pass) + `reader-ai-drawer.spec.ts` (39 pass) + 70 others green.
+- Next: Pedro's review in Dia; open: the scripted answers are only Spanish (as the Bible's); on phones the header button is hidden as in the Bible.

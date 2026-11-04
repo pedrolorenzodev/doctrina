@@ -17,17 +17,8 @@ import {
 } from "@/features/reader-ai/answer-parts";
 import { AnswerActions } from "@/features/reader-ai/answer-actions";
 import { focusRingClassName, growSmoothly, type Enter } from "@/features/reader-ai/motion";
-import { quotes, type QuoteId } from "@/features/reader-ai/quotes";
-import {
-  answers,
-  chips,
-  sourceOf,
-  traditions,
-  verseReference,
-  yours,
-  type AnswerId,
-  type ChipId,
-} from "@/features/reader-ai/script";
+import { useAskScript, type AskScript } from "@/features/reader-ai/ask-script";
+import { sourceOf, verseReference, yours, type AnswerId, type ChipId } from "@/features/reader-ai/script";
 import type { AskText } from "@/features/reader-ai/text";
 
 type Piece =
@@ -66,10 +57,10 @@ const tickMs = 200;
 const quoteGapMs = 480;
 const wordMs = 100;
 
-const blocksOf = (id: AnswerId): { quote: QuoteId; head?: string }[] => {
-  const answer = answers[id];
+const blocksOf = (script: AskScript, id: AnswerId): { quote: string; head?: string }[] => {
+  const answer = script.answer(id);
   if (answer.traditions)
-    return traditions.flatMap((group) => group.quotes.map((quote) => ({ quote, head: group.name })));
+    return script.traditions.flatMap((group) => group.quotes.map((quote) => ({ quote, head: group.name })));
   return answer.blocks ?? [];
 };
 
@@ -107,8 +98,9 @@ export function Answer({
   replay,
   seconds,
 }: AnswerProps) {
-  const answer = answers[id];
-  const blocks = useMemo(() => blocksOf(id), [id]);
+  const script = useAskScript();
+  const answer = script.answer(id);
+  const blocks = useMemo(() => blocksOf(script, id), [script, id]);
   const outer = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
   const [pieces, setPieces] = useState<Shown[]>([]);
@@ -313,7 +305,7 @@ export function Answer({
                     onClick={() => onFollow(chip)}
                     className={`inline-flex min-h-9 cursor-pointer items-center justify-start rounded-6 border border-rule px-2.5 py-1.5 text-left text-ui-xs leading-label text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11 ${focusRingClassName}`}
                   >
-                    {chips[chip]}
+                    {script.chips[chip]}
                   </button>
                 ))}
               </div>
@@ -351,7 +343,7 @@ export function Answer({
               className="m-0 mb-1 grid list-none gap-1 border-l border-rule pl-3 text-ui-xs leading-(--ask-leading-meta) text-ink-3"
             >
               {sources.length > 0
-                ? sources.map((quote) => <li key={quote}>{sourceOf(quotes[quote])}</li>)
+                ? sources.map((quote) => <li key={quote}>{sourceOf(script.quote(quote))}</li>)
                 : [<li key="chapter">{chapterSource}</li>]}
             </ul>
           </div>

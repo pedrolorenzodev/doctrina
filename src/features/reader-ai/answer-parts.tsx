@@ -2,14 +2,15 @@
 
 import { useLayoutEffect, useRef, type ReactNode } from "react";
 import { focusRingClassName, playEnter, type Enter } from "@/features/reader-ai/motion";
-import { quotes, johnSix, type QuoteId } from "@/features/reader-ai/quotes";
+import { useAskScript } from "@/features/reader-ai/ask-script";
+import { johnSix } from "@/features/reader-ai/quotes";
 import { sourceOf, verseLabel } from "@/features/reader-ai/script";
 
 export type CiteHandlers = {
   onVerse: (verse: number, element: HTMLElement) => void;
-  onQuote: (quote: QuoteId, element: HTMLElement) => void;
+  onQuote: (quote: string, element: HTMLElement) => void;
   onPreview: (
-    target: { verse: number } | { quote: QuoteId } | null,
+    target: { verse: number } | { quote: string } | null,
     element: HTMLElement | null,
     immediate?: boolean,
   ) => void;
@@ -50,7 +51,7 @@ export function CiteButton({
   className = "",
   children,
 }: {
-  target: { verse: number } | { quote: QuoteId };
+  target: { verse: number } | { quote: string };
   handlers: CiteHandlers;
   className?: string;
   children: ReactNode;
@@ -88,12 +89,12 @@ export function QuoteBlock({
   handlers,
   enter,
 }: {
-  quote: QuoteId;
+  quote: string;
   head?: string | undefined;
   handlers: CiteHandlers;
   enter: Enter;
 }) {
-  const entry = quotes[quote];
+  const entry = useAskScript().quote(quote);
   return (
     <Entering as="figure" enter={enter} className="m-0 border-t border-rule py-3.5">
       {head ? <span className={headClassName}>{head}</span> : null}

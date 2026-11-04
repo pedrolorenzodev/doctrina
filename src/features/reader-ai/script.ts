@@ -1,17 +1,16 @@
-import type { Quote, QuoteId } from "@/features/reader-ai/quotes";
+import type { Quote } from "@/features/reader-ai/quotes";
 
-export type AnswerId =
-  "fathers" | "traditions" | "bible" | "whoIsRight" | "words" | "mine" | "meaning" | "none" | "scopeMiss" | "pastoral";
-export type ChipId = "fathers" | "traditions" | "bible" | "whoIsRight" | "words" | "scopeFix" | "mine";
+export type AnswerId = string;
+export type ChipId = string;
 export type Opening = "chapter" | "verse";
 
 export type Answer = {
   question: string;
   scope: string;
-  blocks?: { quote: QuoteId; head?: string }[];
+  blocks?: { quote: string; head?: string }[];
   traditions?: boolean;
   disputed?: string;
-  words?: { tradition: string; source: string; words: string; quote: QuoteId }[];
+  words?: { tradition: string; source: string; words: string; quote: string }[];
   marks?: boolean;
   mine?: boolean;
   prose?: string;
@@ -20,7 +19,7 @@ export type Answer = {
   follow: ChipId[];
 };
 
-export const answers: Record<AnswerId, Answer> = {
+export const answers: Record<string, Answer> = {
   fathers: {
     question: "¿Qué dijeron los Padres sobre este versículo?",
     scope: "Sobre Juan 6:53. Pasajes de los Padres que lo citan, en las obras que tiene Doctrina.",
@@ -130,7 +129,7 @@ export const answers: Record<AnswerId, Answer> = {
   },
 };
 
-export const chips: Record<ChipId, string> = {
+export const chips: Record<string, string> = {
   fathers: "¿Qué dijeron los Padres sobre este versículo?",
   traditions: "¿Qué dice cada tradición?",
   bible: "¿En qué otro lugar de la Biblia se habla de este tema?",
@@ -161,7 +160,7 @@ export const exampleHistory: { question: string; date: string }[] = [
   { question: "¿Qué es el pan de vida?", date: "2026-10-24" },
 ];
 
-export const traditions: { name: string; quotes: QuoteId[] }[] = [
+export const traditions: { name: string; quotes: string[] }[] = [
   { name: "Católica", quotes: ["ccc1336", "trent8"] },
   { name: "Ortodoxa", quotes: ["phil340"] },
   { name: "Luterana", quotes: ["apol10"] },
