@@ -1,0 +1,21 @@
+{
+  "slug": "olivetree",
+  "url": "https://www.olivetree.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:44:09.836Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.olivetree.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 1150,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.olivetree.com/",
+  "title": "Olive Tree Bible Software",
+  "og": null,
+  "themeColor": []
+}

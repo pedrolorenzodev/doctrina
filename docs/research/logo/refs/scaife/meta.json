@@ -1,0 +1,20 @@
+{
+  "slug": "scaife",
+  "url": "https://scaife.perseus.org/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:45:09.412Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://scaife.perseus.org/favicon.ico",
+      "status": "not-image",
+      "ct": "text/html; charset=utf-8"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://scaife.perseus.org/",
+  "title": "Scaife Viewer | Home",
+  "og": null,
+  "themeColor": []
+}

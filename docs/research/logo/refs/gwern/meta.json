@@ -1,0 +1,97 @@
+{
+  "slug": "gwern",
+  "url": "https://gwern.net/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:58.280Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://gwern.net/static/img/logo/logo-favicon-small.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://gwern.net/static/img/logo/logo-favicon-small-dark.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "all and (prefers-color-scheme: dark)",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://gwern.net/static/img/logo/logo-favicon-appletouch.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://gwern.net/static/img/logo/logo-favicon-appletouch-dark.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "all and (prefers-color-scheme: dark)",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://gwern.net/static/img/logo/logo-favicon-small.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1565,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://gwern.net/static/img/logo/logo-favicon-small-dark.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "all and (prefers-color-scheme: dark)",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1322,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://gwern.net/static/img/logo/logo-favicon-appletouch.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 5180,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://gwern.net/static/img/logo/logo-favicon-appletouch-dark.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "all and (prefers-color-scheme: dark)",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 5402,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://gwern.net/favicon.ico",
+      "status": "not-image",
+      "ct": "text/html; charset=utf-8"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://gwern.net/",
+  "title": "Essays · Gwern.net",
+  "og": "https://gwern.net/static/img/logo/logo-whitebg-large-border.png",
+  "themeColor": []
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "apple-books",
+  "url": "https://www.apple.com/apple-books/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:33.487Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.apple.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 22382,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.apple.com/apple-books/",
+  "title": "Apple Books - Apple",
+  "og": "https://www.apple.com/v/apple-books/c/images/meta/overview__c62sgivpjxyu_og.png?202604161040",
+  "themeColor": []
+}

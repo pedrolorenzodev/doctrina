@@ -1,0 +1,60 @@
+{
+  "slug": "wikipedia",
+  "url": "https://www.wikipedia.org/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:45:00.350Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.wikipedia.org/static/apple-touch/wikipedia.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.wikipedia.org/static/favicon/wikipedia.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.wikipedia.org/static/apple-touch/wikipedia.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-apple-touch-icon.png",
+      "bytes": 1313,
+      "ct": "image/png"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.wikipedia.org/static/favicon/wikipedia.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-shortcut_icon.ico",
+      "bytes": 2734,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.wikipedia.org/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 2734,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.wikipedia.org/",
+  "title": "Wikipedia",
+  "og": "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/250px-Wikipedia-logo-v2.svg.png",
+  "themeColor": []
+}

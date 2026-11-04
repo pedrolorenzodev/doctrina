@@ -1,0 +1,25 @@
+{
+  "slug": "goarch",
+  "url": "https://www.goarch.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:35.850Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.goarch.org/favicon.ico",
+      "status": 403
+    },
+    {
+      "rel": "google-s2",
+      "href": "https://www.google.com/s2/favicons?domain=www.goarch.org&sz=64",
+      "file": "10-google-s2-64.png",
+      "via": "google-s2-cache"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.goarch.org/",
+  "title": "Just a moment...",
+  "og": null,
+  "themeColor": []
+}

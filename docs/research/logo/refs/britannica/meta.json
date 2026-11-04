@@ -1,0 +1,39 @@
+{
+  "slug": "britannica",
+  "url": "https://www.britannica.com/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:45:05.479Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.britannica.com/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.britannica.com/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 864,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.britannica.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.britannica.com/",
+  "title": "Encyclopedia Britannica | Britannica",
+  "og": "https://cdn.britannica.com/mendel-resources/3-207/images/EBLogo.jpg?v=3.207.15",
+  "themeColor": []
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "tgc-spanish",
+  "url": "https://www.coalicionporelevangelio.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:44:24.274Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.coalicionporelevangelio.org/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.coalicionporelevangelio.org/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.coalicionporelevangelio.org/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.coalicionporelevangelio.org/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 891,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.coalicionporelevangelio.org/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.coalicionporelevangelio.org/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 5954,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.coalicionporelevangelio.org/",
+  "title": "Coalici\u00f3n por el Evangelio - Recursos centrados en el evangelio",
+  "og": "https://media.thegospelcoalition.org/wp-content/uploads/sites/4/2020/07/31035906/WEB-4-1024x683.jpg",
+  "themeColor": []
+}

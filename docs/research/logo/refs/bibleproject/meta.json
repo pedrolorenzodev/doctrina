@@ -1,0 +1,79 @@
+{
+  "slug": "bibleproject",
+  "url": "https://bibleproject.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:42:57.089Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://static.bibleproject.com/web/eb0dda1/favicon.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.bibleproject.com/web/eb0dda1/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.bibleproject.com/web/eb0dda1/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://static.bibleproject.com/web/eb0dda1/favicon.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.bibleproject.com/web/eb0dda1/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "01-icon.svg",
+      "bytes": 214,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.bibleproject.com/web/eb0dda1/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 533,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://bibleproject.com/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://bibleproject.com/",
+  "title": "Study the Story of the Bible With Free Tools | BibleProject™",
+  "og": "https://ik.imagekit.io/bpweb1/media//tr:q-65,w-1200/meta-fallback-image.jpg",
+  "themeColor": []
+}

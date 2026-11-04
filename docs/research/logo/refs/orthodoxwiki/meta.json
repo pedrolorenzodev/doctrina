@@ -1,0 +1,41 @@
+{
+  "slug": "orthodoxwiki",
+  "url": "https://orthodoxwiki.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:44:33.012Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://orthodoxwiki.org/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://orthodoxwiki.org/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 8439,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://orthodoxwiki.org/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 7398,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://orthodoxwiki.org/",
+  "title": "OrthodoxWiki",
+  "og": null,
+  "themeColor": []
+}

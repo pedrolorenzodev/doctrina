@@ -1,0 +1,60 @@
+{
+  "slug": "pray-com",
+  "url": "https://www.pray.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:44:01.584Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.pray.com/assets/icon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.pray.com/assets/apple-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.pray.com/assets/icon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 374,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.pray.com/assets/apple-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 7001,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.pray.com/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 396,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.pray.com/",
+  "title": "Pray.com: Daily Prayer, Bible Stories & Christian Podcasts",
+  "og": "https://www.pray.com/assets/og/pray-passion-v1.jpg",
+  "themeColor": []
+}

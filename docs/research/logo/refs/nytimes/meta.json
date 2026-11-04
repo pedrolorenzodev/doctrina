@@ -1,0 +1,21 @@
+{
+  "slug": "nytimes",
+  "url": "https://www.nytimes.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:44.295Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.nytimes.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 1648,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.nytimes.com/",
+  "title": "nytimes.com",
+  "og": null,
+  "themeColor": []
+}

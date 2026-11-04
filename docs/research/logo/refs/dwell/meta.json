@@ -1,0 +1,212 @@
+{
+  "slug": "dwell",
+  "url": "https://dwellapp.io/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:50:10.351Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-57x57-f310eaa3a83ca58d77e919c9749efb17a5347193e97567e0233edb42be44d5e7.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-114x114-38a016755e365a71851a035c6b872b31e6bb0102858b2eb5325afdb6dd14d519.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-72x72-186ff6464cc6d1a2600b7c23c0752c8cd9c98f4041567b2f76d48387cc7b7ec3.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-144x144-76075b331d411edc709ce77d1e77515788b346ca8b3d000a9e8ea162771a19dc.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-60x60-b67c32e11b2f476d361538492aa78c8ae0a4d0432ccc4012652fa72c1d54fe13.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-120x120-6bdd1a599db8be98f4593ea55d1c6add508a272f18e3fc681a3cfcb4a44f5b6f.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-76x76-ae40d1dfb63febe273f9204fb6a31cedfe505be4adda144d5cccf8fd4a8d6ebf.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-152x152-64a5fb1b79a555ffd581023a42b2a1357c8b00b1ca6adbd7f712568a85d85d5d.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-196x196-c19df33162887743c01e68893d64c4b3909aadd3f9361bb47f6f0c994330ee8b.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-96x96-21b8c3a5576ba84f31063be96a01755bd79300ae918cdfa498034f90bd6cd4bf.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-32x32-00dea2d7c844aef02a1d4ce9e0da20d4f92f7dc3b2b3d1e68e34b3fb70012ba9.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-16x16-be8addb550fcad8f2f63f8605c8f99ded39cd73265d12c073088d5ace93fae84.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-128-b26102e19b4363424a1a13839f260e61c2beaf775f3079749e75d6baa1d451b5.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-196x196-c19df33162887743c01e68893d64c4b3909aadd3f9361bb47f6f0c994330ee8b.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 13480,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-96x96-21b8c3a5576ba84f31063be96a01755bd79300ae918cdfa498034f90bd6cd4bf.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1340,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-32x32-00dea2d7c844aef02a1d4ce9e0da20d4f92f7dc3b2b3d1e68e34b3fb70012ba9.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 497,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-16x16-be8addb550fcad8f2f63f8605c8f99ded39cd73265d12c073088d5ace93fae84.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 290,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://dwellapp.io/assets/favicon-128-b26102e19b4363424a1a13839f260e61c2beaf775f3079749e75d6baa1d451b5.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 1816,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-57x57-f310eaa3a83ca58d77e919c9749efb17a5347193e97567e0233edb42be44d5e7.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon-precomposed.png",
+      "bytes": 1384,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-114x114-38a016755e365a71851a035c6b872b31e6bb0102858b2eb5325afdb6dd14d519.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon-precomposed.png",
+      "bytes": 4547,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://dwellapp.io/assets/apple-touch-icon-72x72-186ff6464cc6d1a2600b7c23c0752c8cd9c98f4041567b2f76d48387cc7b7ec3.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon-precomposed.png",
+      "bytes": 1736,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://dwellapp.io/",
+  "title": "Dwell — The #1 Audio Bible App | Listen to Scripture Daily",
+  "og": "https://dwellapp.io/assets/dwell-og-image-817f344ab8ea7ce74f38e99f354dc1c57b621b123c17f4bca779185f2639dab7.jpg",
+  "themeColor": [
+    {
+      "content": "#E4DDD0",
+      "media": ""
+    }
+  ]
+}

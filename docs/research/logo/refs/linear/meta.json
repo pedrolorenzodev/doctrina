@@ -1,0 +1,84 @@
+{
+  "slug": "linear",
+  "url": "https://linear.app/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:46:15.495Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://linear.app/favicon.ico?v=2",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://linear.app/static/favicon.svg?v=2",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://linear.app/static/apple-touch-icon.png?v=2",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://linear.app/favicon.ico?v=2",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://linear.app/static/favicon.svg?v=2",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "01-icon.svg",
+      "bytes": 697,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://linear.app/static/apple-touch-icon.png?v=2",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 25274,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://linear.app/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://linear.app/",
+  "title": "Linear – The system for product development",
+  "og": "https://linear.app/api/og/main?title=Linear&v=4",
+  "themeColor": [
+    {
+      "content": "#08090a",
+      "media": ""
+    }
+  ]
+}

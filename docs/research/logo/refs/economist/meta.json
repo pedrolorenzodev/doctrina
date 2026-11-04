@@ -1,0 +1,21 @@
+{
+  "slug": "economist",
+  "url": "https://www.economist.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:48.490Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.economist.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 5558,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.economist.com/",
+  "title": "economist.com",
+  "og": null,
+  "themeColor": []
+}

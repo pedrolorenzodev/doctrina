@@ -1,0 +1,44 @@
+{
+  "slug": "arc",
+  "url": "https://arc.net/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:46:17.911Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://arc.net/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://arc.net/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.png",
+      "bytes": 1586,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://arc.net/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://arc.net/",
+  "title": "A farewell to Arc",
+  "og": "https://arc.net/farewell/og.png",
+  "themeColor": [
+    {
+      "content": "#3139FB",
+      "media": "(prefers-color-scheme: light)"
+    }
+  ]
+}

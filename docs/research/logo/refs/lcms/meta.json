@@ -1,0 +1,134 @@
+{
+  "slug": "lcms",
+  "url": "https://www.lcms.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:42.181Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicon.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/favicon.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicon.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/favicon.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 15406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "02-icon.svg",
+      "bytes": 1994,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 665,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 389,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.lcms.org/themes/custom/lcms_bootstrap/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon.png",
+      "bytes": 4576,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.lcms.org/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.lcms.org/",
+  "title": "Home | Lutheran Church - Missouri Synod",
+  "og": "http://www.lcms.org/themes/custom/lcms_bootstrap/images/og-image.png",
+  "themeColor": []
+}

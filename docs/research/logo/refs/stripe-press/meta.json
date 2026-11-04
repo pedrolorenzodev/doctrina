@@ -1,0 +1,96 @@
+{
+  "slug": "stripe-press",
+  "url": "https://press.stripe.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:14.263Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://images.stripeassets.com/fzn2n1nzq965/1hgcBNd12BfT9VLgbId7By/01d91920114b124fb4cf6d448f9f06eb/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=96&h=96",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://assets.stripeassets.com/fzn2n1nzq965/nu0iR4KqmkdJ52fgRts09/c3a10df318e7ffb1f516073daadea625/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://images.stripeassets.com/fzn2n1nzq965/1hgcBNd12BfT9VLgbId7By/01d91920114b124fb4cf6d448f9f06eb/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 412,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=96&h=96",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1487,
+      "ct": "image/png"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://assets.stripeassets.com/fzn2n1nzq965/nu0iR4KqmkdJ52fgRts09/c3a10df318e7ffb1f516073daadea625/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-shortcut_icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://images.stripeassets.com/fzn2n1nzq965/4vVgZi0ZMoEzOhkcv7EVwK/8cce6fdcf2733b2ec8e99548908847ed/favicon.png?w=180&h=180",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 3143,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://press.stripe.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://press.stripe.com/",
+  "title": "Stripe Press — Ideas for progress",
+  "og": "https://images.stripeassets.com/fzn2n1nzq965/13zaWB3aiz08hqNr69CMW4/772586e910faef5d26d15e01edb9c010/social.png?q=80",
+  "themeColor": []
+}

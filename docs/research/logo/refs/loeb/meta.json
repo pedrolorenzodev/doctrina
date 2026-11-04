@@ -1,0 +1,34 @@
+{
+  "slug": "loeb",
+  "url": "https://www.loebclassics.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:43.265Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.loebclassics.com/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.loebclassics.com/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 318,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.loebclassics.com/",
+  "title": "Home | Loeb Classical Library",
+  "og": "http://www.loebclassics.com/loeb-facebook-icon.png",
+  "themeColor": []
+}

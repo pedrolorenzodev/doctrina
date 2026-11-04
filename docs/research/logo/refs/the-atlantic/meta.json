@@ -1,0 +1,117 @@
+{
+  "slug": "the-atlantic",
+  "url": "https://www.theatlantic.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:53.538Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/favicon-3888b0e329526a975703e3059a02b92d.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/apple-touch-icon-default-b504d70343a9438df64c32ce339c7ebc.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/apple-touch-icon-76x76-d5accc11b8265af76495fbfa9d38dd3b.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/apple-touch-icon-120x120-419ba228184c040a691628d3dd82c206.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/apple-touch-icon-152x152-aafde20dd981a38fcd549b29b2b3b785.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/favicon-3888b0e329526a975703e3059a02b92d.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 1068,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/apple-touch-icon-default-b504d70343a9438df64c32ce339c7ebc.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 1000,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/apple-touch-icon-76x76-d5accc11b8265af76495fbfa9d38dd3b.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 1238,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/apple-touch-icon-120x120-419ba228184c040a691628d3dd82c206.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 1773,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.theatlantic.com/_next/static/images/apple-touch-icon-152x152-aafde20dd981a38fcd549b29b2b3b785.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 2172,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.theatlantic.com/favicon.ico",
+      "file": "05-default-favicon.ico",
+      "bytes": 1068,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.theatlantic.com/world/",
+  "title": "World Edition - The Atlantic",
+  "og": "https://cdn.theatlantic.com/static/theatlantic/img/lacroix-default-thumbnail.png",
+  "themeColor": []
+}

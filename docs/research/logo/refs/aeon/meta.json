@@ -1,0 +1,65 @@
+{
+  "slug": "aeon",
+  "url": "https://aeon.co/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:23.019Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://aeon.co/favicon.ico?favicon.1hwawo4wxq5ma.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://aeon.co/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#9D1D20"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://aeon.co/favicon.ico?favicon.1hwawo4wxq5ma.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 9662,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://aeon.co/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#9D1D20",
+      "file": "01-mask-icon.svg",
+      "bytes": 1632,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://aeon.co/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 9662,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://aeon.co/",
+  "title": "Aeon | a world of ideas",
+  "og": "https://aeon.co/opengraph-image.jpg?opengraph-image.405o8axcfedo1.jpg",
+  "themeColor": [
+    {
+      "content": "#0c776d",
+      "media": ""
+    }
+  ]
+}

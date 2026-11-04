@@ -1,0 +1,60 @@
+{
+  "slug": "internet-archive",
+  "url": "https://archive.org/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:44:54.685Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://archive.org/offshoot_assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://archive.org/offshoot_assets/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://archive.org/offshoot_assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://archive.org/offshoot_assets/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 1313,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://archive.org/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://archive.org/",
+  "title": "Internet Archive: Digital Library of Free & Borrowable Texts, Movies, Music & Wayback Machine",
+  "og": null,
+  "themeColor": []
+}

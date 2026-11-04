@@ -1,0 +1,79 @@
+{
+  "slug": "works-in-progress",
+  "url": "https://worksinprogress.co/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:19.146Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://worksinprogress.co/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://worksinprogress.co/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://worksinprogress.co/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://worksinprogress.co/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 10829,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://worksinprogress.co/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 4053,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://worksinprogress.co/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 9173,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://worksinprogress.co/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 3306,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://worksinprogress.co/",
+  "title": "Works in Progress Magazine",
+  "og": "https://worksinprogress.co/wip-image/uploads/2022/12/WIP_Banner-1024x549-1.jpeg",
+  "themeColor": []
+}

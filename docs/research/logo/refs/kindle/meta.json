@@ -1,0 +1,49 @@
+{
+  "slug": "kindle",
+  "url": "https://read.amazon.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:30.688Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://m.media-amazon.com/images/G/01/kfw/mobile/kindle_favicon._CB624847354_.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/kfw/mobile/kindle_favicon._CB624847354_.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://m.media-amazon.com/images/G/01/kfw/mobile/kindle_favicon._CB624847354_.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.png",
+      "bytes": 3198,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://read.amazon.com/favicon.ico",
+      "file": "01-default-favicon.png",
+      "bytes": 3198,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://read.amazon.com/landing",
+  "title": "Amazon Kindle: Your free personal library you can take anywhere",
+  "og": "https://m.media-amazon.com/images/G/01/kfw/landing/img_kindleWeb_US._CB610886625_.png",
+  "themeColor": []
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "jstor",
+  "url": "https://www.jstor.org/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:45:07.673Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.jstor.org/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 9413,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.jstor.org/",
+  "title": "Client Challenge",
+  "og": null,
+  "themeColor": []
+}

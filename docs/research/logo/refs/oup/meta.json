@@ -1,0 +1,56 @@
+{
+  "slug": "oup",
+  "url": "https://global.oup.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:38.846Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://corp.oup.com/wp-content/uploads/2025/10/favicon-1.png",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://corp.oup.com/wp-content/uploads/2025/10/favicon-1.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://corp.oup.com/wp-content/uploads/2025/10/favicon-1.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://corp.oup.com/wp-content/uploads/2025/10/favicon-1.png",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1940,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://corp.oup.com/favicon.ico",
+      "status": "not-image",
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://corp.oup.com/",
+  "title": "Homepage - Oxford University Press",
+  "og": null,
+  "themeColor": []
+}

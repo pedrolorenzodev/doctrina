@@ -1,0 +1,41 @@
+{
+  "slug": "biblestudytools",
+  "url": "https://www.biblestudytools.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:44:13.521Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://media.swncdn.com/bst4/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://media.swncdn.com/bst4/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 16958,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.biblestudytools.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 7406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.biblestudytools.com/",
+  "title": "The Bible - Search & Read the Bible Online with Study Tools | Bible Study Tools",
+  "og": null,
+  "themeColor": []
+}

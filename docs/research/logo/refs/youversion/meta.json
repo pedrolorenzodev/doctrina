@@ -1,0 +1,27 @@
+{
+  "slug": "youversion",
+  "url": "https://www.bible.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:42:25.905Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.bible.com/favicon.ico",
+      "status": 403
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.bible.com/favicon.ico",
+      "file": "10-default-favicon-retry.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon",
+      "via": "browser-navigation"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.bible.com/",
+  "title": "Read the Bible online. A free Bible on your phone, tablet, or computer. - Bible App",
+  "og": "https://imageproxy.youversionapi.com/200/https://web-assets.youversion.com/app-icons/en.png",
+  "themeColor": []
+}

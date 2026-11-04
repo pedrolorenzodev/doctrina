@@ -1,0 +1,21 @@
+{
+  "slug": "sep",
+  "url": "https://plato.stanford.edu/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:44:50.492Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://plato.stanford.edu/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 568,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://plato.stanford.edu/",
+  "title": "Stanford Encyclopedia of Philosophy",
+  "og": null,
+  "themeColor": []
+}

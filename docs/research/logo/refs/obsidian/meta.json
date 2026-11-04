@@ -1,0 +1,72 @@
+{
+  "slug": "obsidian",
+  "url": "https://obsidian.md/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:46:13.125Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://obsidian.md/favicon.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://obsidian.md/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://obsidian.md/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://obsidian.md/favicon.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 31332,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://obsidian.md/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "01-icon.svg",
+      "bytes": 1361,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://obsidian.md/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 5856,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://obsidian.md/",
+  "title": "Obsidian - Sharpen your thinking",
+  "og": "https://obsidian.md/images/banner.png",
+  "themeColor": []
+}

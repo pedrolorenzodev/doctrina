@@ -1,0 +1,63 @@
+{
+  "slug": "folio-society",
+  "url": "https://www.foliosociety.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:53.683Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.foliosociety.com/row/assets/icons/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.foliosociety.com/row/assets/icons/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.foliosociety.com/row/assets/icons/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 182442,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.foliosociety.com/row/assets/icons/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-shortcut_icon.png",
+      "bytes": 1982,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.foliosociety.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.foliosociety.com/row/",
+  "title": "Beautifully Illustrated Hardcover Books | Folio Society",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

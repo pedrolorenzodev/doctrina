@@ -1,0 +1,88 @@
+{
+  "slug": "substack",
+  "url": "https://substack.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:04.643Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://substackcdn.com/icons/substack/favicon.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://substackcdn.com/icons/substack/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://substackcdn.com/icons/substack/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://substackcdn.com/icons/substack/favicon.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://substackcdn.com/icons/substack/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "01-icon.svg",
+      "bytes": 2107,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://substackcdn.com/icons/substack/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 16376,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://substack.com/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://substack.com/",
+  "title": "Substack",
+  "og": "https://substackcdn.com/image/fetch/$s_!Xim-!,w_400,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficons%2Fsubstack%2Ficon.svg",
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    },
+    {
+      "content": "#16171d",
+      "media": ""
+    }
+  ]
+}

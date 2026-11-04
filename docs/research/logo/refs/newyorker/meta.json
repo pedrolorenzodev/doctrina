@@ -1,0 +1,65 @@
+{
+  "slug": "newyorker",
+  "url": "https://www.newyorker.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:46.048Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.newyorker.com/verso/static/thenewyorker-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.newyorker.com/verso/static/thenewyorker-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.newyorker.com/verso/static/thenewyorker-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.newyorker.com/verso/static/thenewyorker-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.newyorker.com/verso/static/thenewyorker-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 5430,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.newyorker.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 5430,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.newyorker.com/",
+  "title": "The New Yorker",
+  "og": "https://media.newyorker.com/photos/6aeac6e5a116c4cbf8a25efe/16:9/w_1280,c_limit/GettyImages-2303425585.jpg",
+  "themeColor": []
+}

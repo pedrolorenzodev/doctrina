@@ -1,0 +1,60 @@
+{
+  "slug": "library-of-america",
+  "url": "https://www.loa.org/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:47.130Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.loa.org/wp-content/themes/loa/assets/images/favicon_152.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.loa.org/wp-content/themes/loa/assets/images/favicon_32.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.loa.org/wp-content/themes/loa/assets/images/favicon_152.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-apple-touch-icon-precomposed.png",
+      "bytes": 1554,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.loa.org/wp-content/themes/loa/assets/images/favicon_32.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 660,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.loa.org/favicon.ico",
+      "file": "02-default-favicon.gif",
+      "bytes": 43,
+      "ct": "image/gif"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.loa.org/",
+  "title": "Home - Library of America",
+  "og": null,
+  "themeColor": []
+}

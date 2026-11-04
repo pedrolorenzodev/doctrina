@@ -1,0 +1,58 @@
+{
+  "slug": "esv",
+  "url": "https://www.esv.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:42:52.720Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://dch8lckz6x8ar.cloudfront.net/static/img/apple-touch-icon.a1ed3d10db96.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://dch8lckz6x8ar.cloudfront.net/static/img/favicon.7e14cbe1912e.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://dch8lckz6x8ar.cloudfront.net/static/img/apple-touch-icon.a1ed3d10db96.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-apple-touch-icon.png",
+      "bytes": 13340,
+      "ct": "image/png"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://dch8lckz6x8ar.cloudfront.net/static/img/favicon.7e14cbe1912e.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "01-shortcut_icon.ico",
+      "bytes": 2500,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.esv.org/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.esv.org/",
+  "title": "ESV.org",
+  "og": "https://dch8lckz6x8ar.cloudfront.net/static/img/logo-facebook.dbab05d37e79.png",
+  "themeColor": []
+}

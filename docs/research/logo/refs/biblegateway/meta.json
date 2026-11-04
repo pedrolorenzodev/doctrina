@@ -1,0 +1,98 @@
+{
+  "slug": "biblegateway",
+  "url": "https://www.biblegateway.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:42:43.129Z",
+  "links": [
+    {
+      "rel": "favorite icon",
+      "href": "https://www.biblegateway.com/favicon.ico?d3b2766e",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.biblegateway.com/assets/images/ios/touch-icon-ipad.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.biblegateway.com/assets/images/ios/touch-icon-iphone-retina.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.biblegateway.com/assets/images/ios/touch-icon-ipad-retina.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "favorite icon",
+      "href": "https://www.biblegateway.com/favicon.ico?d3b2766e",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-favorite_icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.biblegateway.com/assets/images/ios/touch-icon-ipad.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 85133,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.biblegateway.com/assets/images/ios/touch-icon-iphone-retina.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 90255,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.biblegateway.com/assets/images/ios/touch-icon-ipad-retina.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 96626,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.biblegateway.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.biblegateway.com/",
+  "title": "BibleGateway.com: A searchable online Bible in over 150 versions and 50 languages.",
+  "og": "https://www.biblegateway.com/assets/images/logos/logo_bg-sharing.png?d3b2766e",
+  "themeColor": []
+}

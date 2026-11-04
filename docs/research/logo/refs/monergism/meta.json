@@ -1,0 +1,21 @@
+{
+  "slug": "monergism",
+  "url": "https://www.monergism.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:15.271Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.monergism.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 3262,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.monergism.com/",
+  "title": "Monergism — Reformed Theology Digital Library: eBooks, Sermons and Confessions",
+  "og": null,
+  "themeColor": []
+}

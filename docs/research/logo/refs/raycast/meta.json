@@ -1,0 +1,39 @@
+{
+  "slug": "raycast",
+  "url": "https://www.raycast.com/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:47:20.505Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.raycast.com/favicon-production.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.raycast.com/favicon-production.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 18876,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.raycast.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.raycast.com/",
+  "title": "Raycast - Your shortcut to everything",
+  "og": "https://www.raycast.com/opengraph-image-pwu6ef.png?opengraph-image.1f-98etzkaz5s.png",
+  "themeColor": []
+}

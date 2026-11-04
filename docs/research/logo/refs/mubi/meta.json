@@ -1,0 +1,53 @@
+{
+  "slug": "mubi",
+  "url": "https://mubi.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:35.420Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://mubi.com/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://mubi.com/apple-touch-icon.png?ver=2",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://mubi.com/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 5430,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://mubi.com/apple-touch-icon.png?ver=2",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 7037,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://mubi.com/en/ar",
+  "title": "MUBI: Watch and Discover Movies",
+  "og": "https://assets.mubicdn.net/splash/volver.jpg",
+  "themeColor": []
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "stepbible",
+  "url": "https://www.stepbible.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:44:17.378Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.stepbible.org/images/step-favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.stepbible.org/images/step-favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.stepbible.org/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.stepbible.org/",
+  "title": "Gen 1 | ESV | STEP | In the beginning, God created the heavens and the earth.",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#17758F",
+      "media": ""
+    }
+  ]
+}

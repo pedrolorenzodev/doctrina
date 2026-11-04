@@ -1,0 +1,588 @@
+[
+  {
+    "slug": "aciprensa",
+    "family": "christian",
+    "tab": "02-icon.svg",
+    "tabRel": "icon",
+    "touch": "01-apple-touch-icon.png"
+  },
+  {
+    "slug": "aeon",
+    "family": "editorial",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "ancientfaith",
+    "family": "christian",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "anthropic",
+    "family": "tools",
+    "tab": "00-shortcut_icon.ico",
+    "tabRel": "shortcut icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "apple-books",
+    "family": "editorial",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "arc",
+    "family": "tools",
+    "tab": "00-shortcut_icon.png",
+    "tabRel": "shortcut icon"
+  },
+  {
+    "slug": "are-na",
+    "family": "editorial",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "banneroftruth",
+    "family": "christian",
+    "tab": "10-icon-retry.webp",
+    "tabRel": "icon",
+    "touch": "12-apple-touch-icon-retry.webp"
+  },
+  {
+    "slug": "biblegateway",
+    "family": "christian",
+    "tab": "00-favorite_icon.ico",
+    "tabRel": "favorite icon",
+    "touch": "03-apple-touch-icon.png"
+  },
+  {
+    "slug": "biblehub",
+    "family": "christian",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "bibleproject",
+    "family": "christian",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "biblestudytools",
+    "family": "christian",
+    "tab": "00-shortcut_icon.ico",
+    "tabRel": "shortcut icon"
+  },
+  {
+    "slug": "blueletterbible",
+    "family": "christian",
+    "tab": "02-icon.png",
+    "tabRel": "icon",
+    "touch": "06-apple-touch-icon-precomposed.png"
+  },
+  {
+    "slug": "britannica",
+    "family": "text-study",
+    "tab": "00-icon.png",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "catholic-answers",
+    "family": "christian",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "ccel",
+    "family": "christian",
+    "tab": "00-shortcut_icon.ico",
+    "tabRel": "shortcut icon",
+    "touch": "04-apple-touch-icon.png"
+  },
+  {
+    "slug": "christianitytoday",
+    "family": "christian",
+    "tab": "00-icon.png",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "claude",
+    "family": "tools",
+    "tab": "00-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "craft",
+    "family": "tools",
+    "tab": "00-icon.ico",
+    "tabRel": "icon",
+    "dark": "01-icon.ico"
+  },
+  {
+    "slug": "desiringgod",
+    "family": "christian",
+    "tab": "05-icon.png",
+    "tabRel": "icon",
+    "touch": "03-apple-touch-icon.png"
+  },
+  {
+    "slug": "dia",
+    "family": "tools",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "03-apple-touch-icon.png"
+  },
+  {
+    "slug": "dwell",
+    "family": "christian",
+    "tab": "02-icon.png",
+    "tabRel": "icon",
+    "touch": "06-apple-touch-icon-precomposed.png"
+  },
+  {
+    "slug": "earlychristianwritings",
+    "family": "christian"
+  },
+  {
+    "slug": "economist",
+    "family": "editorial",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "elca",
+    "family": "christian",
+    "tab": "00-shortcut_icon.png",
+    "tabRel": "shortcut icon",
+    "touch": "01-apple-touch-icon.png"
+  },
+  {
+    "slug": "esv",
+    "family": "christian",
+    "tab": "01-shortcut_icon.ico",
+    "tabRel": "shortcut icon",
+    "touch": "00-apple-touch-icon.png"
+  },
+  {
+    "slug": "every",
+    "family": "editorial",
+    "tab": "00-shortcut_icon.svg",
+    "tabRel": "shortcut icon",
+    "dark": "02-icon.png"
+  },
+  {
+    "slug": "faithlife",
+    "family": "christian",
+    "tab": "04-icon.png",
+    "tabRel": "icon",
+    "touch": "03-apple-touch-icon.png"
+  },
+  {
+    "slug": "faithlife-bible-reader",
+    "family": "christian",
+    "tab": "00-shortcut_icon.ico",
+    "tabRel": "shortcut icon",
+    "touch": "01-apple-touch-icon-precomposed.png"
+  },
+  {
+    "slug": "figma",
+    "family": "tools",
+    "tab": "04-icon.svg",
+    "tabRel": "icon",
+    "touch": "07-apple-touch-icon.png"
+  },
+  {
+    "slug": "folio-society",
+    "family": "editorial",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "ft",
+    "family": "editorial",
+    "tab": "00-icon.svg",
+    "tabRel": "icon",
+    "touch": "03-apple-touch-icon.png"
+  },
+  {
+    "slug": "ghost",
+    "family": "editorial",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "github",
+    "family": "tools",
+    "tab": "03-icon.svg",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "glorify",
+    "family": "christian",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "goarch",
+    "family": "christian",
+    "tab": "10-google-s2-64.png",
+    "tabRel": "google-s2"
+  },
+  {
+    "slug": "goodreads",
+    "family": "editorial",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "gospelcoalition",
+    "family": "christian",
+    "tab": "10-google-s2-64.png",
+    "tabRel": "google-s2"
+  },
+  {
+    "slug": "gotquestions",
+    "family": "christian",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "gutenberg",
+    "family": "text-study",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "gwern",
+    "family": "editorial",
+    "tab": "00-icon.png",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png",
+    "dark": "01-icon.png"
+  },
+  {
+    "slug": "hallow",
+    "family": "christian",
+    "tab": "00-icon.ico",
+    "tabRel": "icon",
+    "touch": "01-apple-touch-icon.png"
+  },
+  {
+    "slug": "internet-archive",
+    "family": "text-study",
+    "tab": "00-icon.ico",
+    "tabRel": "icon",
+    "touch": "01-apple-touch-icon.png"
+  },
+  {
+    "slug": "jstor",
+    "family": "text-study",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "kagi",
+    "family": "tools",
+    "tab": "00-icon.png",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "kindle",
+    "family": "editorial",
+    "tab": "00-shortcut_icon.png",
+    "tabRel": "shortcut icon"
+  },
+  {
+    "slug": "lcms",
+    "family": "christian",
+    "tab": "02-icon.svg",
+    "tabRel": "icon",
+    "touch": "05-apple-touch-icon.png"
+  },
+  {
+    "slug": "letterboxd",
+    "family": "editorial",
+    "tab": "03-shortcut_icon.ico",
+    "tabRel": "shortcut icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "library-of-america",
+    "family": "editorial",
+    "tab": "01-icon.png",
+    "tabRel": "icon",
+    "touch": "00-apple-touch-icon-precomposed.png"
+  },
+  {
+    "slug": "ligonier",
+    "family": "christian",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "linear",
+    "family": "tools",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "loeb",
+    "family": "editorial",
+    "tab": "00-shortcut_icon.ico",
+    "tabRel": "shortcut icon"
+  },
+  {
+    "slug": "logos",
+    "family": "christian",
+    "tab": "03-shortcut_icon.svg",
+    "tabRel": "shortcut icon",
+    "touch": "00-apple-touch-icon.png"
+  },
+  {
+    "slug": "medium",
+    "family": "editorial",
+    "tab": "00-icon.png",
+    "tabRel": "icon",
+    "touch": "01-apple-touch-icon.png"
+  },
+  {
+    "slug": "monergism",
+    "family": "christian",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "mubi",
+    "family": "editorial",
+    "tab": "00-icon.ico",
+    "tabRel": "icon",
+    "touch": "01-apple-touch-icon.png"
+  },
+  {
+    "slug": "newadvent",
+    "family": "christian",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "newyorker",
+    "family": "editorial",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "notion",
+    "family": "tools",
+    "tab": "00-icon.ico",
+    "tabRel": "icon",
+    "touch": "01-apple-touch-icon.png"
+  },
+  {
+    "slug": "nyrb",
+    "family": "editorial",
+    "tab": "00-icon.ico",
+    "tabRel": "icon",
+    "touch": "06-apple-touch-icon-precomposed.png"
+  },
+  {
+    "slug": "nytimes",
+    "family": "editorial",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "obsidian",
+    "family": "tools",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "oca",
+    "family": "christian",
+    "tab": "00-icon.png",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "olivetree",
+    "family": "christian",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "orthodoxwiki",
+    "family": "christian",
+    "tab": "00-icon.svg",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "oup",
+    "family": "editorial",
+    "tab": "00-icon.png",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "our-world-in-data",
+    "family": "editorial",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "penguin",
+    "family": "editorial",
+    "tab": "01-icon.png",
+    "tabRel": "icon",
+    "touch": "00-apple-touch-icon.png"
+  },
+  {
+    "slug": "perplexity",
+    "family": "tools",
+    "tab": "00-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "perseus",
+    "family": "text-study",
+    "tab": "10-default-favicon-retry.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "pray-com",
+    "family": "christian",
+    "tab": "00-icon.png",
+    "tabRel": "icon",
+    "touch": "01-apple-touch-icon.png"
+  },
+  {
+    "slug": "quran-com",
+    "family": "text-study",
+    "tab": "01-icon.ico",
+    "tabRel": "icon",
+    "touch": "00-apple-touch-icon.png"
+  },
+  {
+    "slug": "raycast",
+    "family": "tools",
+    "tab": "00-icon.png",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "readwise",
+    "family": "editorial",
+    "tab": "00-icon.png",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "scaife",
+    "family": "text-study"
+  },
+  {
+    "slug": "sefaria",
+    "family": "text-study",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "03-apple-touch-icon.png"
+  },
+  {
+    "slug": "sep",
+    "family": "text-study",
+    "tab": "00-default-favicon.ico",
+    "tabRel": "default-favicon"
+  },
+  {
+    "slug": "stepbible",
+    "family": "christian",
+    "tab": "00-shortcut_icon.ico",
+    "tabRel": "shortcut icon"
+  },
+  {
+    "slug": "stripe",
+    "family": "tools",
+    "tab": "00-icon.svg",
+    "tabRel": "icon",
+    "touch": "03-apple-touch-icon.png"
+  },
+  {
+    "slug": "stripe-press",
+    "family": "editorial",
+    "tab": "00-icon.svg",
+    "tabRel": "icon",
+    "touch": "03-apple-touch-icon.png"
+  },
+  {
+    "slug": "substack",
+    "family": "editorial",
+    "tab": "01-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "tgc-spanish",
+    "family": "christian",
+    "tab": "00-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "the-atlantic",
+    "family": "editorial",
+    "tab": "00-icon.ico",
+    "tabRel": "icon",
+    "touch": "04-apple-touch-icon.png"
+  },
+  {
+    "slug": "usccb",
+    "family": "christian",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "vatican",
+    "family": "christian",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "vercel",
+    "family": "tools",
+    "tab": "00-icon_shortcut.ico",
+    "tabRel": "icon shortcut",
+    "touch": "07-apple-touch-icon.png"
+  },
+  {
+    "slug": "wikipedia",
+    "family": "text-study",
+    "tab": "01-shortcut_icon.ico",
+    "tabRel": "shortcut icon",
+    "touch": "00-apple-touch-icon.png"
+  },
+  {
+    "slug": "wikisource",
+    "family": "text-study",
+    "tab": "00-icon.ico",
+    "tabRel": "icon"
+  },
+  {
+    "slug": "works-in-progress",
+    "family": "editorial",
+    "tab": "00-icon.svg",
+    "tabRel": "icon",
+    "touch": "02-apple-touch-icon.png"
+  },
+  {
+    "slug": "youversion",
+    "family": "christian",
+    "tab": "10-default-favicon-retry.ico",
+    "tabRel": "default-favicon"
+  }
+]

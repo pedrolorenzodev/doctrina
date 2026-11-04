@@ -1,0 +1,136 @@
+{
+  "slug": "faithlife",
+  "url": "https://faithlife.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:42:33.212Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/42413075/content.png?signature=SQqqIUaLU6WKgc7mxlWEPFY8g8Y",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/42413042/content.png?signature=9oYIXIpdU_PJoQKdXihH5XKI9hY",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/42413071/content.png?signature=7N0gwHJnS3P3RmpBuSLRAJsK_3g",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/42413067/content.png?signature=p2O03fd1yQIL7WdwV2MgrILnoNA",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://files.logoscdn.com/v1/files/42412919/content.png?signature=IpugnzX1nO1XsHFaRiDg07rUB30",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://files.logoscdn.com/v1/files/42412915/content.png?signature=oiSXdhl6Tn1kKYY8BdVm41BZYqk",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/42413075/content.png?signature=SQqqIUaLU6WKgc7mxlWEPFY8g8Y",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-apple-touch-icon.png",
+      "bytes": 1226,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/42413042/content.png?signature=9oYIXIpdU_PJoQKdXihH5XKI9hY",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 1724,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/42413071/content.png?signature=7N0gwHJnS3P3RmpBuSLRAJsK_3g",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 2093,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/42413067/content.png?signature=p2O03fd1yQIL7WdwV2MgrILnoNA",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 2376,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://files.logoscdn.com/v1/files/42412919/content.png?signature=IpugnzX1nO1XsHFaRiDg07rUB30",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 716,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://files.logoscdn.com/v1/files/42412915/content.png?signature=oiSXdhl6Tn1kKYY8BdVm41BZYqk",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "05-icon.png",
+      "bytes": 362,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://faithlife.com/favicon.ico",
+      "file": "06-default-favicon.ico",
+      "bytes": 5430,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://faithlife.com/",
+  "title": "Faithlife - Faithlife",
+  "og": "https://static1.faithlifecdn.com/content/Images/faithlife-icon-open-graph.png",
+  "themeColor": []
+}

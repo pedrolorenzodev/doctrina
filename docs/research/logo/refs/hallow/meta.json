@@ -1,0 +1,60 @@
+{
+  "slug": "hallow",
+  "url": "https://hallow.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:55.153Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://hallow.com/favicon.ico?3c4853069091516e",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://hallow.com/apple-icon.png?bfded4f194b05b69",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://hallow.com/favicon.ico?3c4853069091516e",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://hallow.com/apple-icon.png?bfded4f194b05b69",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 10166,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://hallow.com/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://hallow.com/",
+  "title": "#1 App for Christian & Catholic Prayer, Meditation, Bible + Sleep | Hallow",
+  "og": "https://hallow.com/opengraph-image.png",
+  "themeColor": []
+}

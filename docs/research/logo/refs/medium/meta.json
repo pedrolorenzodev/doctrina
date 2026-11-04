@@ -1,0 +1,180 @@
+{
+  "slug": "medium",
+  "url": "https://medium.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:02.463Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://miro.medium.com/v2/5d8de952517e8160e40ef9841c781cdc14a5db313057fa3c3de41c6f5b494b19",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:304:304/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:240:240/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:152:152/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:120:120/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:1000:1000/7*GAOKVe--MXbEJmV9230oOQ.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#171717"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:76:76/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:60:60/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:500:500/7*GAOKVe--MXbEJmV9230oOQ.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#171717"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://miro.medium.com/v2/5d8de952517e8160e40ef9841c781cdc14a5db313057fa3c3de41c6f5b494b19",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1183,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:304:304/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 7341,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:240:240/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 7341,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:152:152/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 6084,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:120:120/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 4692,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:1000:1000/7*GAOKVe--MXbEJmV9230oOQ.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#171717",
+      "file": "05-mask-icon.png",
+      "bytes": 18047,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:76:76/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 2990,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://miro.medium.com/v2/resize:fill:60:60/10fd5c419ac61637245384e7099e131627900034828f4f386bdaa47a74eae156",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon.png",
+      "bytes": 2297,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://medium.com/",
+  "title": "Medium: Read and write stories.",
+  "og": "https://miro.medium.com/v2/da:true/167cff2a3d17ac1e64d0762539978f2d54c0058886e8b3c8a03a725a83012ec0",
+  "themeColor": [
+    {
+      "content": "#000000",
+      "media": ""
+    }
+  ]
+}

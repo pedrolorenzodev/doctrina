@@ -1,0 +1,103 @@
+{
+  "slug": "github",
+  "url": "https://github.com/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:47:15.362Z",
+  "links": [
+    {
+      "rel": "fluid-icon",
+      "href": "https://github.com/fluidicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#000000"
+    },
+    {
+      "rel": "alternate icon",
+      "href": "https://github.githubassets.com/favicons/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://github.githubassets.com/favicons/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "fluid-icon",
+      "href": "https://github.com/fluidicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-fluid-icon.png",
+      "bytes": 33270,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#000000",
+      "file": "01-mask-icon.svg",
+      "bytes": 1009,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "alternate icon",
+      "href": "https://github.githubassets.com/favicons/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-alternate_icon.png",
+      "bytes": 958,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://github.githubassets.com/favicons/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "03-icon.svg",
+      "bytes": 959,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://github.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 6518,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://github.com/",
+  "title": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub · GitHub",
+  "og": "https://images.ctfassets.net/8aevphvgewt8/76epZKB2wF998m4e4bLLXn/c505f20b00ec70b88b1be5aec42c4be4/OG_image.jpg",
+  "themeColor": [
+    {
+      "content": "#1e2327",
+      "media": ""
+    }
+  ]
+}

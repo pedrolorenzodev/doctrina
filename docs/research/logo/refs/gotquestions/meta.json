@@ -1,0 +1,21 @@
+{
+  "slug": "gotquestions",
+  "url": "https://www.gotquestions.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:44:20.377Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.gotquestions.org/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.gotquestions.org/",
+  "title": "Bible Questions Answered | GotQuestions.org",
+  "og": "https://www.gotquestions.org/img/OG/Bible-Questions-Answered.jpg",
+  "themeColor": []
+}

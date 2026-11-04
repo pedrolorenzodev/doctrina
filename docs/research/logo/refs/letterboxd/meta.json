@@ -1,0 +1,96 @@
+{
+  "slug": "letterboxd",
+  "url": "https://letterboxd.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:38.832Z",
+  "links": [
+    {
+      "rel": "mask-icon",
+      "href": "https://s.ltrbxd.com/static/img/letterboxd-decal-l-16px-DorUFlWn.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#445566"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://s.ltrbxd.com/static/img/touch-icon-192x192-lO1g3Ot4.png",
+      "sizes": "196x196",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://letterboxd.com/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://letterboxd.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "mask-icon",
+      "href": "https://s.ltrbxd.com/static/img/letterboxd-decal-l-16px-DorUFlWn.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#445566",
+      "file": "00-mask-icon.svg",
+      "bytes": 512,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://s.ltrbxd.com/static/img/touch-icon-192x192-lO1g3Ot4.png",
+      "sizes": "196x196",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-shortcut_icon.png",
+      "bytes": 1948,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://letterboxd.com/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 5017,
+      "ct": "image/png;charset=ISO-8859-1"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://letterboxd.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-shortcut_icon.ico",
+      "bytes": 22382,
+      "ct": "image/x-icon;charset=ISO-8859-1"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://letterboxd.com/",
+  "title": "Letterboxd • Social film discovery.",
+  "og": "https://s.ltrbxd.com/static/img/default-share-7md9L34t.png",
+  "themeColor": [
+    {
+      "content": "#14181C",
+      "media": ""
+    }
+  ]
+}

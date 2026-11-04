@@ -1,0 +1,77 @@
+{
+  "slug": "are-na",
+  "url": "https://www.are.na/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:25.206Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.are.na/favicon.ico",
+      "sizes": "48x48",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.are.na/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.are.na/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.are.na/favicon.ico",
+      "sizes": "48x48",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.are.na/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "01-icon.svg",
+      "bytes": 1183,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.are.na/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 6901,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.are.na/",
+  "title": "Are.na",
+  "og": "https://www.are.na/og-image.png",
+  "themeColor": [
+    {
+      "content": "#FFF",
+      "media": ""
+    }
+  ]
+}

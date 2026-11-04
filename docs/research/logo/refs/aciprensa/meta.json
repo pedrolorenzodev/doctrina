@@ -1,0 +1,99 @@
+{
+  "slug": "aciprensa",
+  "url": "https://www.aciprensa.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:44:26.387Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.ewtnnews.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.ewtnnews.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://res.cloudinary.com/ewtn/image/upload/v1766435749/apple-touch-icon_eyeqks.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.ewtnnews.com/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.ewtnnews.com/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.ewtnnews.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://res.cloudinary.com/ewtn/image/upload/v1766435749/apple-touch-icon_eyeqks.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 20071,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.ewtnnews.com/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "02-icon.svg",
+      "bytes": 7125,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.ewtnnews.com/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 2033,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.ewtnnews.com/es?redirectedfrom=aci-prensa",
+  "title": "EWTN News",
+  "og": "https://www.ewtnnews.com/EWTNNewsLogo.png",
+  "themeColor": []
+}

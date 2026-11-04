@@ -1,0 +1,39 @@
+{
+  "slug": "usccb",
+  "url": "https://www.usccb.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:30.021Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.usccb.org/sites/default/files/Ox8RYeG3.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.usccb.org/sites/default/files/Ox8RYeG3.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 16958,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.usccb.org/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.usccb.org/",
+  "title": "United States Conference of Catholic Bishops",
+  "og": null,
+  "themeColor": []
+}

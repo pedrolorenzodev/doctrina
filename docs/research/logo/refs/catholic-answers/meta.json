@@ -1,0 +1,34 @@
+{
+  "slug": "catholic-answers",
+  "url": "https://www.catholic.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:25.283Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.catholic.com/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.catholic.com/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 2622,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.catholic.com/",
+  "title": "Catholic Faith, Beliefs, & Prayers | Catholic Answers",
+  "og": null,
+  "themeColor": []
+}

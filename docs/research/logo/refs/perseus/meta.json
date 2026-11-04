@@ -1,0 +1,27 @@
+{
+  "slug": "perseus",
+  "url": "https://www.perseus.tufts.edu/hopper/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:44:46.811Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.perseus.tufts.edu/favicon.ico",
+      "status": 403
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.perseus.tufts.edu/favicon.ico",
+      "file": "10-default-favicon-retry.ico",
+      "bytes": 1406,
+      "ct": "image/vnd.microsoft.icon",
+      "via": "browser-navigation"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.perseus.tufts.edu/hopper/?_pc=1",
+  "title": "Perseus Digital Library",
+  "og": null,
+  "themeColor": []
+}

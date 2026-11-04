@@ -1,0 +1,21 @@
+{
+  "slug": "goodreads",
+  "url": "https://www.goodreads.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:46:41.437Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.goodreads.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 1062,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.goodreads.com/",
+  "title": "Goodreads | Meet your next favorite book",
+  "og": "https://s.gr-assets.com/assets/facebook/goodreads_wide-5b93ced856c0da068d73467d3cb82a2c.png",
+  "themeColor": []
+}

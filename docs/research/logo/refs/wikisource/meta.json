@@ -1,0 +1,41 @@
+{
+  "slug": "wikisource",
+  "url": "https://en.wikisource.org/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:44:44.723Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://en.wikisource.org/static/favicon/wikisource.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://en.wikisource.org/static/favicon/wikisource.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 5721,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://en.wikisource.org/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 5721,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://en.wikisource.org/wiki/Main_Page",
+  "title": "Wikisource, the free library",
+  "og": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Accueil_scribe_invert_300.jpg?utm_source=en.wikisource.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+  "themeColor": []
+}

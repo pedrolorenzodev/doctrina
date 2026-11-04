@@ -1,0 +1,60 @@
+{
+  "slug": "kagi",
+  "url": "https://kagi.com/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:46:30.957Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://kagi.com/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://kagi.com/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://kagi.com/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1393,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://kagi.com/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 585,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://kagi.com/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 5430,
+      "ct": "application/octet-stream"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://kagi.com/",
+  "title": "Kagi - Better search results. No ads.",
+  "og": "https://kagi.com/_mkt/img/og-image.png",
+  "themeColor": []
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "readwise",
+  "url": "https://readwise.io/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:27.487Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://d34adp677peecb.cloudfront.net/static/images/favicons/favicon-32x32.8706bd85b82f.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://d34adp677peecb.cloudfront.net/static/images/favicons/favicon-32x32.8706bd85b82f.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 834,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://readwise.io/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 3075,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://readwise.io/",
+  "title": "Readwise: Get the most out of what you read",
+  "og": "https://d34adp677peecb.cloudfront.net/static/images/landing2/share-card.2874a5b7ba41.jpg",
+  "themeColor": []
+}

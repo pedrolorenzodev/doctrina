@@ -1,0 +1,79 @@
+{
+  "slug": "penguin",
+  "url": "https://www.penguin.co.uk/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:36.192Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.penguin.co.uk/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.penguin.co.uk/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.penguin.co.uk/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.penguin.co.uk/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-apple-touch-icon.png",
+      "bytes": 10323,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.penguin.co.uk/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1360,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.penguin.co.uk/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 660,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.penguin.co.uk/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.penguin.co.uk/",
+  "title": "Penguin Books UK | Official Website",
+  "og": "https://wp.penguin.co.uk/wp-content/uploads/2022/05/Penguin-logo.png",
+  "themeColor": []
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "gutenberg",
+  "url": "https://www.gutenberg.org/",
+  "family": "text-study",
+  "fetched": "2026-11-04T13:45:02.663Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.gutenberg.org/gutenberg/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.gutenberg.org/gutenberg/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 764,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.gutenberg.org/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 764,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.gutenberg.org/",
+  "title": "Free eBooks | Project Gutenberg",
+  "og": "https://www.gutenberg.org/gutenberg/pg-logo-144x144.png",
+  "themeColor": []
+}

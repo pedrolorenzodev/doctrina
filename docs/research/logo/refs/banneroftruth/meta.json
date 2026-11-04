@@ -1,0 +1,101 @@
+{
+  "slug": "banneroftruth",
+  "url": "https://banneroftruth.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:51.591Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-32x32.jpg",
+      "sizes": "32x32",
+      "type": "",
+      "media": ""
+    },
+    {
+      "rel": "icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-192x192.jpg",
+      "sizes": "192x192",
+      "type": "",
+      "media": ""
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-180x180.jpg",
+      "sizes": null,
+      "type": "",
+      "media": ""
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-32x32.jpg",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-192x192.jpg",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-180x180.jpg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://banneroftruth.org/favicon.ico",
+      "status": 403
+    },
+    {
+      "rel": "icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-32x32.jpg",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "file": "10-icon-retry.webp",
+      "bytes": 676,
+      "ct": "image/webp",
+      "via": "browser-navigation"
+    },
+    {
+      "rel": "icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-192x192.jpg",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "file": "11-icon-retry.webp",
+      "bytes": 4594,
+      "ct": "image/webp",
+      "via": "browser-navigation"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2018/02/cropped-cropped-Banner-FilledIn-WithOval-1-180x180.jpg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "file": "12-apple-touch-icon-retry.webp",
+      "bytes": 4390,
+      "ct": "image/webp",
+      "via": "browser-navigation"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://banneroftruth.org/uk/",
+  "title": "Banner of Truth - Christian Publisher of Reformed & Puritan Books",
+  "og": "https://banneroftruth.org/uk/wp-content/uploads/sites/6/2015/09/1619303_10152009227311976_3978164821797516248_n.jpg",
+  "themeColor": []
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "notion",
+  "url": "https://www.notion.com/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:46:10.508Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.notion.com/front-static/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.notion.com/front-static/logo-ios.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.notion.com/front-static/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 32038,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.notion.com/front-static/logo-ios.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 8078,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.notion.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.notion.com/",
+  "title": "The AI workspace that works for you. | Notion",
+  "og": "https://www.notion.com/front-static/meta/teams-and-agents.jpg",
+  "themeColor": []
+}

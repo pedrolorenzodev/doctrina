@@ -1,0 +1,21 @@
+{
+  "slug": "ancientfaith",
+  "url": "https://www.ancientfaith.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:37.735Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.ancientfaith.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 1150,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.ancientfaith.com/",
+  "title": "Ancient Faith Home | Ancient Faith Ministries",
+  "og": null,
+  "themeColor": []
+}

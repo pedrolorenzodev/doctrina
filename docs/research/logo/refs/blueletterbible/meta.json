@@ -1,0 +1,207 @@
+{
+  "slug": "blueletterbible",
+  "url": "https://www.blueletterbible.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:50:05.228Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-60x60.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-76x76.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 23525,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 7165,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 1548,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 661,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/favicon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 9165,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon-precomposed.png",
+      "bytes": 3543,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon-precomposed.png",
+      "bytes": 9558,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.blueletterbible.org/assets/images/favicon/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon-precomposed.png",
+      "bytes": 4815,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.blueletterbible.org/",
+  "title": "Bible Search and Study Tools - Blue Letter Bible",
+  "og": "https://www.blueletterbible.org/assets/images/blbFBpreview.jpg",
+  "themeColor": []
+}

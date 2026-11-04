@@ -1,0 +1,84 @@
+{
+  "slug": "oca",
+  "url": "https://www.oca.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:32.385Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.oca.org/assets/i/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.oca.org/assets/i/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.oca.org/assets/i/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.oca.org/assets/i/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1984,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.oca.org/assets/i/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 6618,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.oca.org/assets/i/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 1432,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.oca.org/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 1150,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.oca.org/",
+  "title": "Orthodox Church in America",
+  "og": "https://assets.oca.org/img/domes_sm.png",
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

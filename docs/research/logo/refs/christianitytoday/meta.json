@@ -1,0 +1,79 @@
+{
+  "slug": "christianitytoday",
+  "url": "https://www.christianitytoday.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:12.788Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.christianitytoday.com/wp-content/uploads/2024/07/cropped-ct_site_icon.png?w=32",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.christianitytoday.com/wp-content/uploads/2024/07/cropped-ct_site_icon.png?w=192",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.christianitytoday.com/wp-content/uploads/2024/07/cropped-ct_site_icon.png?w=180",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.christianitytoday.com/wp-content/uploads/2024/07/cropped-ct_site_icon.png?w=32",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 237,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.christianitytoday.com/wp-content/uploads/2024/07/cropped-ct_site_icon.png?w=192",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1818,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.christianitytoday.com/wp-content/uploads/2024/07/cropped-ct_site_icon.png?w=180",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 1759,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.christianitytoday.com/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 198,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.christianitytoday.com/",
+  "title": "Christianity Today - Seek the Kingdom.",
+  "og": "https://www.christianitytoday.com/wp-content/uploads/2024/08/ogimage.png?resize=1200,628",
+  "themeColor": []
+}

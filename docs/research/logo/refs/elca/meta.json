@@ -1,0 +1,58 @@
+{
+  "slug": "elca",
+  "url": "https://www.elca.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:48.628Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://cdn.prod.website-files.com/68408db19b3a4e614e664444/684c2784cd4c45506c44291f_fav32.png",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.prod.website-files.com/68408db19b3a4e614e664444/684c2786066471bab0d31aa6_fav256.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://cdn.prod.website-files.com/68408db19b3a4e614e664444/684c2784cd4c45506c44291f_fav32.png",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.png",
+      "bytes": 1659,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.prod.website-files.com/68408db19b3a4e614e664444/684c2786066471bab0d31aa6_fav256.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 15070,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.elca.org/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.elca.org/",
+  "title": "Discover the Evangelical Lutheran Church in America | ELCA",
+  "og": null,
+  "themeColor": []
+}

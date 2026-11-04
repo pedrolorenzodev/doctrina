@@ -1,0 +1,96 @@
+{
+  "slug": "dia",
+  "url": "https://www.diabrowser.com/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:46:20.245Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.diabrowser.com/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.diabrowser.com/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.diabrowser.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.diabrowser.com/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.diabrowser.com/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 3591,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.diabrowser.com/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "01-icon.svg",
+      "bytes": 10290,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.diabrowser.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-shortcut_icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.diabrowser.com/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 7439,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.diabrowser.com/",
+  "title": "Dia | The browser for better days at work.",
+  "og": "https://cdn.sanity.io/images/e5fj2khm/production/2d41d699e7809faa14b264580c1a371606e4070a-1296x678.png?auto=format&q=80&fm=jpg&w=1200&h=630&fit=crop",
+  "themeColor": [
+    {
+      "content": "#F8F8F8",
+      "media": ""
+    }
+  ]
+}

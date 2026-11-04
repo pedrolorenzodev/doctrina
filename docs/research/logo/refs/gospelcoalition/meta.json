@@ -1,0 +1,69 @@
+{
+  "slug": "gospelcoalition",
+  "url": "https://www.thegospelcoalition.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:10.136Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.thegospelcoalition.org/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": ""
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.thegospelcoalition.org/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": ""
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.thegospelcoalition.org/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": ""
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.thegospelcoalition.org/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.thegospelcoalition.org/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.thegospelcoalition.org/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "google-s2",
+      "href": "https://www.google.com/s2/favicons?domain=www.thegospelcoalition.org&sz=64",
+      "file": "10-google-s2-64.png",
+      "via": "google-s2-cache"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.thegospelcoalition.org/",
+  "title": "The Gospel Coalition (TGC)",
+  "og": "https://media.thegospelcoalition.org/wp-content/uploads/2026/04/28122203/TGC_fallback_1.jpg",
+  "themeColor": []
+}

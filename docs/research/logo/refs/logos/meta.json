@@ -1,0 +1,98 @@
+{
+  "slug": "logos",
+  "url": "https://www.logos.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:42:27.690Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/71034992/assets/14918879/content.png?signature=PiQTel28glOPrUQdtAId_qGaZuQ",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://files.logoscdn.com/v1/files/71035024/assets/14918879/content.png?signature=efX_JkzH8DmQrPfj9jiwjd2zDv8",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://files.logoscdn.com/v1/files/71035033/assets/14918879/content.png?signature=fzcIyt8bDI7W6PK26y0nKx8PTg4",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://files.logoscdn.com/v1/files/71035034/assets/14918879/content.svg?signature=_Eloy0yD2DL1CVbVLSQeoRaan8E",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://files.logoscdn.com/v1/files/71034992/assets/14918879/content.png?signature=PiQTel28glOPrUQdtAId_qGaZuQ",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-apple-touch-icon.png",
+      "bytes": 5879,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://files.logoscdn.com/v1/files/71035024/assets/14918879/content.png?signature=efX_JkzH8DmQrPfj9jiwjd2zDv8",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1095,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://files.logoscdn.com/v1/files/71035033/assets/14918879/content.png?signature=fzcIyt8bDI7W6PK26y0nKx8PTg4",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 535,
+      "ct": "image/png"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://files.logoscdn.com/v1/files/71035034/assets/14918879/content.svg?signature=_Eloy0yD2DL1CVbVLSQeoRaan8E",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-shortcut_icon.svg",
+      "bytes": 2222,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.logos.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.logos.com/",
+  "title": "Logos | Logos Bible Study Platform",
+  "og": "https://files.logoscdn.com/v1/assets/16407897/optimized",
+  "themeColor": []
+}

@@ -1,0 +1,175 @@
+{
+  "slug": "nyrb",
+  "url": "https://www.nybooks.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:45:51.106Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 7886,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon-precomposed.png",
+      "bytes": 1901,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon-precomposed.png",
+      "bytes": 5739,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon-precomposed.png",
+      "bytes": 2750,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon-precomposed.png",
+      "bytes": 8174,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon-precomposed.png",
+      "bytes": 6100,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon-precomposed.png",
+      "bytes": 9764,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.nybooks.com/wp-content/themes/nyrb_2020/img/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "07-icon.png",
+      "bytes": 801,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.nybooks.com/",
+  "title": "Home | The New York Review of Books",
+  "og": "https://www.nybooks.com/wp-content/uploads/2024/02/NYR-Logo-Social-1600px.png",
+  "themeColor": []
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "faithlife-bible-reader",
+  "url": "https://biblia.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:42:47.986Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://biblia.com/biblia-v2.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://biblia.com/public/images/touch-v2.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://biblia.com/biblia-v2.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://biblia.com/public/images/touch-v2.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon-precomposed.png",
+      "bytes": 4400,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://biblia.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://biblia.com/books/esv/Jn1.1",
+  "title": "John 1:1 (ESV) - Biblia.com",
+  "og": "http://biblia.com/public/images/logo-sharing-v2.png",
+  "themeColor": []
+}

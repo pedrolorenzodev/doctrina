@@ -1,0 +1,49 @@
+{
+  "slug": "vatican",
+  "url": "https://www.vatican.va/content/vatican/en.html",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:27.535Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.vatican.va/etc/designs/vatican/favicon.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.vatican.va/etc/designs/vatican/favicon.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.vatican.va/etc/designs/vatican/favicon.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 4286,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.vatican.va/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 4286,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.vatican.va/content/vatican/en.html",
+  "title": "The Holy See",
+  "og": null,
+  "themeColor": []
+}

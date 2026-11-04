@@ -1,0 +1,21 @@
+{
+  "slug": "biblehub",
+  "url": "https://biblehub.com/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:42:44.936Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://biblehub.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://biblehub.com/",
+  "title": "Bible Hub: Online Bible Study Suite",
+  "og": null,
+  "themeColor": []
+}

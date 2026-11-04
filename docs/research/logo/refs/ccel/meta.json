@@ -1,0 +1,117 @@
+{
+  "slug": "ccel",
+  "url": "https://www.ccel.org/",
+  "family": "christian",
+  "fetched": "2026-11-04T13:43:17.333Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.ccel.org/img/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://ccel.org/img/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://ccel.org/img/apple-touch-icon@2x.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://ccel.org/img/apple-touch-icon_ipad.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://ccel.org/img/apple-touch-icon_ipad@2x.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.ccel.org/img/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 1406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://ccel.org/img/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 3559,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://ccel.org/img/apple-touch-icon@2x.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 8818,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://ccel.org/img/apple-touch-icon_ipad.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 4606,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://ccel.org/img/apple-touch-icon_ipad@2x.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 10442,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.ccel.org/favicon.ico",
+      "file": "05-default-favicon.ico",
+      "bytes": 1406,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.ccel.org/",
+  "title": "Home - Christian Classics Ethereal Library",
+  "og": null,
+  "themeColor": []
+}

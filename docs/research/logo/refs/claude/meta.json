@@ -1,0 +1,77 @@
+{
+  "slug": "claude",
+  "url": "https://claude.ai/",
+  "family": "tools",
+  "fetched": "2026-11-04T13:46:26.603Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://claude.ai/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-0ZbJsTbu.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 2558,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://claude.ai/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-shortcut_icon.ico",
+      "bytes": 2445,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-0ZbJsTbu.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 47143,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://claude.ai/login",
+  "title": "Sign in - Claude",
+  "og": "https://claude.ai/images/claude_ogimage.png",
+  "themeColor": [
+    {
+      "content": "rgb(255, 255, 255)",
+      "media": ""
+    }
+  ]
+}

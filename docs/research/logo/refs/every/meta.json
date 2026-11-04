@@ -1,0 +1,125 @@
+{
+  "slug": "every",
+  "url": "https://every.to/",
+  "family": "editorial",
+  "fetched": "2026-11-04T13:47:05.587Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://every.to/favicon-dark.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-dark.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-32x32-dark.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "(prefers-color-scheme: dark)",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-16x16-dark.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "(prefers-color-scheme: dark)",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://every.to/favicon-dark.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.svg",
+      "bytes": 1782,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1148,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-32x32-dark.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "(prefers-color-scheme: dark)",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 761,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 521,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://every.to/favicon-16x16-dark.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "(prefers-color-scheme: dark)",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 336,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://every.to/favicon.ico",
+      "file": "05-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://every.to/",
+  "title": "Every",
+  "og": "https://every.to/og/og_cover.png",
+  "themeColor": []
+}
