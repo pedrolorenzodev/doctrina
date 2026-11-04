@@ -53,6 +53,8 @@ const objectionsSlugs: Record<Locale, string> = { es: "objeciones", en: "objecti
 
 const passagesSlugs: Record<Locale, string> = { es: "pasajes", en: "passages" };
 
+const wordsSegments: Record<Locale, string> = { es: "palabras", en: "words" };
+
 const glossarySegments: Record<Locale, string> = { es: "glosario", en: "glossary" };
 
 export function glossaryHref(locale: Locale): string {
@@ -61,6 +63,14 @@ export function glossaryHref(locale: Locale): string {
 
 export function glossaryTermHref(locale: Locale, slug: string): string {
   return `${glossaryHref(locale)}/${slug}`;
+}
+
+export function wordHref(locale: Locale, id: string): string {
+  return `/${locale}/${wordsSegments[locale]}/${id}`;
+}
+
+export function wordRoute(locale: Locale, id: string): string {
+  return `/${locale}/words/${id}`;
 }
 
 export function doctrineHref(locale: Locale, doctrine: DoctrineId): string {
@@ -225,6 +235,7 @@ export function spanishRewrites() {
     { source: movementHref("es", ":movement"), destination: movementRoute("es", ":movement") },
     { source: councilHref("es", ":council"), destination: councilRoute("es", ":council") },
     { source: currentHref("es", ":current"), destination: currentRoute("es", ":current") },
+    { source: wordHref("es", ":word"), destination: wordRoute("es", ":word") },
     { source: glossaryHref("es"), destination: "/es/glossary" },
     { source: glossaryTermHref("es", ":term"), destination: "/es/glossary/:term" },
     ...doctrineRewrites(),

@@ -52,11 +52,23 @@ test("opening a word shows its card with Strong, counts, parse and base word; cl
   await expect(card).toContainText("147 veces, 12 versículos en Juan");
   await expect(card).toContainText("Sustantivo, acusativo femenino singular");
   await expect(card.locator("dd", { hasText: "σάρξ" })).toContainText("(sarx)");
-  await expect(card.getByRole("button", { name: /Abrir el estudio de σάρξ/ })).toBeVisible();
+  await expect(card.getByRole("link", { name: /Abrir el estudio de σάρξ/ })).toBeVisible();
   await sarka.click();
   await expect(sarka).toHaveAttribute("aria-expanded", "false");
   await page.waitForTimeout(900);
   await expect(card).toBeHidden();
+});
+
+test("the card's button opens the word page, coming from the verse", async ({ page }) => {
+  await openWords(page, "/es/biblia/juan/6", 53);
+  await page.locator(rows).nth(13).click();
+  await page.waitForTimeout(500);
+  const link = page.getByRole("link", { name: /Abrir el estudio de σάρξ/ });
+  await expect(link).toHaveAttribute("href", "/es/palabras/G4561?from=John.6.53");
+  await link.click();
+  await expect(page).toHaveURL(/\/es\/palabras\/G4561\?from=John\.6\.53$/);
+  await expect(page.getByText("Viniste desde")).toBeVisible();
+  await expect(page.locator("h1 [lang=grc]")).toHaveText("σάρξ");
 });
 
 test("the card opens on a monotonic height tween of about 380 ms and closes after fading", async ({ page }) => {

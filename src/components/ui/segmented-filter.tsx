@@ -1,10 +1,11 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 
 type SegmentedOption = {
   id: string;
   label: string;
+  content?: ReactNode;
   count?: number | undefined;
   inert?: boolean;
   disabled?: boolean;
@@ -19,6 +20,7 @@ type SegmentedFilterProps = {
   stackOnPhone?: boolean;
   flush?: boolean;
   compact?: boolean;
+  wrap?: boolean;
 };
 
 type Box = { x: number; w: number };
@@ -32,6 +34,7 @@ export function SegmentedFilter({
   stackOnPhone = false,
   flush = false,
   compact = false,
+  wrap = false,
 }: SegmentedFilterProps) {
   const group = useRef<HTMLDivElement>(null);
   const [box, setBox] = useState<Box | null>(null);
@@ -62,7 +65,7 @@ export function SegmentedFilter({
       role="group"
       aria-label={label}
       data-ready={box ? "" : undefined}
-      className={`group/seg relative gap-0.5 rounded-8 border border-rule p-0.75 ${stretch ? "flex w-full" : "inline-flex max-sm:flex max-sm:w-full"} ${flush ? "" : stretch ? "mb-4" : "mb-4.5"} ${stackOnPhone ? "max-sm:flex-col" : ""}`}
+      className={`group/seg relative gap-0.5 rounded-8 border border-rule p-0.75 ${stretch ? "flex w-full" : "inline-flex max-sm:flex max-sm:w-full"} ${flush ? "" : stretch ? "mb-4" : "mb-4.5"} ${stackOnPhone ? "max-sm:flex-col" : ""} ${wrap ? "flex-wrap" : ""}`}
     >
       {box ? (
         <span
@@ -89,7 +92,7 @@ export function SegmentedFilter({
               {option.label}
             </span>
           ) : (
-            option.label
+            (option.content ?? option.label)
           )}
           {option.count === undefined ? null : (
             <span className="text-ui-2xs leading-label font-normal text-ink-3 tabular-nums group-aria-pressed/opt:text-bg group-aria-pressed/opt:opacity-80">

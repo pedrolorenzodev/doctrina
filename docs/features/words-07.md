@@ -21,58 +21,58 @@ Screen 08, the word index, any page for Bible books, richer registry data (the 1
 ## Checklist (one line per element, state and motion; tick `[x]` only side by side with the artifact at 1440 / 768 / 390 / 360, light and dark)
 
 ### A. Page bar and title block (`.wd-bar`, `.wd-head`)
-- [ ] A1 Breadcrumb «Biblia / Nuevo Testamento / σάρξ»; the last is `aria-current` and shows the Greek word. «Biblia» and «Nuevo Testamento» inert (DECISIONS 2026-11-01: no pages for them). For Hebrew: «Antiguo Testamento».
-- [ ] A2 «Transliteración» switch at the right of the bar (`tl-t`): 36 high, label 13 ink-3, track 26×15 with a 9 px knob that slides 11 px in 200 ms; on: label ink-2, track `accent-weak` + accent border, knob accent; hover `hover` fill; `aria-pressed`; the choice is remembered (key `tl`, default on) and applies to the whole site's Greek («offers to turn it on», DECISIONS 2026-10-22); wraps under the breadcrumb on a phone.
-- [ ] A3 «Viniste desde …» line (`.ctx`, 13.5 ink-3, margin −22 0 28): only when the reader arrived from a verse («Juan 6:53», a link) or a place («Ignacio de Antioquía»); absent otherwise.
-- [ ] A4 Kicker «Estudio de una palabra griega» (13 ink-3, mb 10) / «… hebrea».
-- [ ] A5 `h1`: the word (Greek 64 on desktop, 50 ≤ 720) and, beside it, its transliteration in italic (30, 24 ≤ 720) that follows the switch; baseline aligned, gap 4 22.
-- [ ] A6 Lede paragraph (Newsreader italic 300 24/1.38 ink-2, mt 14; 20 ≤ 720).
-- [ ] A7 Header facts, «En fila» (`dl.facts`): term 12.5 ink-3 over value 18/1.4 (secondary 15 ink-3); the six facts: Significado literal · Clase de palabra · En el Nuevo Testamento («147 veces» a quiet source link that opens the citation window «Texto griego NA28 · datos de STEPBible (Tyndale House), CC BY 4.0», plus «en 126 versículos») · Genitivo (Greek with transliteration) · Palabras derivadas (two lines, each Greek + translit + «N veces») · Número de Strong (`G4561`, UI font 15 ink-2).
+- [x] A1 Breadcrumb «Biblia / Nuevo Testamento / σάρξ»; the last is `aria-current` and shows the Greek word. «Biblia» and «Nuevo Testamento» inert (DECISIONS 2026-11-01: no pages for them). For Hebrew: «Antiguo Testamento».
+- [x] A2 «Transliteración» switch at the right of the bar (`tl-t`): 36 high, label 13 ink-3, track 26×15 with a 9 px knob that slides 11 px in 200 ms; on: label ink-2, track `accent-weak` + accent border, knob accent; hover `hover` fill; `aria-pressed`; the choice is remembered (key `tl`, default on) and applies to the whole site's Greek («offers to turn it on», DECISIONS 2026-10-22); wraps under the breadcrumb on a phone.
+- [x] A3 «Viniste desde …» line (`.ctx`, 13.5 ink-3, margin −22 0 28): only when the reader arrived from a verse («Juan 6:53», a link) or a place («Ignacio de Antioquía»); absent otherwise.
+- [x] A4 Kicker «Estudio de una palabra griega» (13 ink-3, mb 10) / «… hebrea».
+- [x] A5 `h1`: the word (Greek 64 on desktop, 50 ≤ 720) and, beside it, its transliteration in italic (30, 24 ≤ 720) that follows the switch; baseline aligned, gap 4 22.
+- [x] A6 Lede paragraph (Newsreader italic 300 24/1.38 ink-2, mt 14; 20 ≤ 720).
+- [x] A7 Header facts, «En fila» (`dl.facts`): term 12.5 ink-3 over value 18/1.4 (secondary 15 ink-3); the six facts: Significado literal · Clase de palabra · En el Nuevo Testamento («147 veces» a quiet source link that opens the citation window «Texto griego NA28 · datos de STEPBible (Tyndale House), CC BY 4.0», plus «en 126 versículos») · Genitivo (Greek with transliteration) · Palabras derivadas (two lines, each Greek + translit + «N veces») · Número de Strong (`G4561`, UI font 15 ink-2).
 
 ### B. «Dónde aparece» (`#donde`, wide 1040)
-- [ ] B1 `h2`, then «En el Nuevo Testamento» (21 head 400, mt 18; the title no longer says «27 libros») and «Versículos por libro, en el orden del canon.» (13 ink-3, mb 22).
-- [ ] B2 Two columns (gap 56, max 960; one column ≤ 720): left «Evangelios», «Hechos», «Cartas de Pablo»; right «Hebreos y las otras cartas», «Apocalipsis»; group header 12.5/500 ink-3 (padding 16 0 6, none above the first of a column).
-- [ ] B3 Row (button) = name (132 col) | bar | count (34): 36 high, hairline on top, padding 4 6, 14.5 ink-2; hover `hover` fill + ink and bar opacity .5 → .8 (150 ms); bar width `n / max × 100 %`, min 3 px; count 14.5/500 ink tabular. Zero rows: not buttons, ink-3, count «0» weight 400, no bar. All 27 books in canon order, zeros included. For Hebrew: the Old Testament's books in canon order (the artifact has no OT layout: groups are an adaptation, listed).
-- [ ] B4 Selected row: `accent-weak` fill (site: the selected state rule of DESIGN «Selected states»), bar accent, weight 500, `aria-pressed`. Click filters «Los lugares» to that book and scrolls to it (`scrollToEl`); click again clears.
-- [ ] B5 Tip «Tocá un libro para ver sus versículos.» (13 ink-3, mt 14).
-- [ ] B6 ≤ 1099: columns gap 40 and row grid 118 | 1fr | 30; coarse pointer: row min-height 44.
+- [x] B1 `h2`, then «En el Nuevo Testamento» (21 head 400, mt 18; the title no longer says «27 libros») and «Versículos por libro, en el orden del canon.» (13 ink-3, mb 22).
+- [x] B2 Two columns (gap 56, max 960; one column ≤ 720): left «Evangelios», «Hechos», «Cartas de Pablo»; right «Hebreos y las otras cartas», «Apocalipsis»; group header 12.5/500 ink-3 (padding 16 0 6, none above the first of a column).
+- [x] B3 Row (button) = name (132 col) | bar | count (34): 36 high, hairline on top, padding 4 6, 14.5 ink-2; hover `hover` fill + ink and bar opacity .5 → .8 (150 ms); bar width `n / max × 100 %`, min 3 px; count 14.5/500 ink tabular. Zero rows: not buttons, ink-3, count «0» weight 400, no bar. All 27 books in canon order, zeros included. For Hebrew: the Old Testament's books in canon order (the artifact has no OT layout: groups are an adaptation, listed).
+- [x] B4 Selected row: `accent-weak` fill (site: the selected state rule of DESIGN «Selected states»), bar accent, weight 500, `aria-pressed`. Click filters «Los lugares» to that book and scrolls to it (`scrollToEl`); click again clears.
+- [x] B5 Tip «Tocá un libro para ver sus versículos.» (13 ink-3, mt 14).
+- [x] B6 ≤ 1099: columns gap 40 and row grid 118 | 1fr | 30; coarse pointer: row min-height 44.
 
 ### C. «Qué significa» (`#significa`, column 720) — «Sentidos: todos abiertos»
-- [ ] C1 `h2` + sub «Los usos que el léxico de Abbott-Smith (1922) distingue, con un versículo de ejemplo de cada uno. La etiqueta dice de dónde viene el uso.» (14.5/1.55 ink-3, max 620).
-- [ ] C2 Hairline list (top per item, bottom on the last, padding 20 0 18, max 760). Each sense: title (Newsreader 21/1.3), origin tag beside it (`otag`, 12.5 ink-3, border `rule-2`, radius 5: «Uso griego» / «Modo de hablar hebreo»), plain description (Source Serif 300 17/1.6 ink-2, max 640, a Greek word in it with its transliteration), example quote (left rule 2 `rule-2`, padding-left 16, Newsreader italic 300 19/1.45 ink with «» added by CSS, the word marked with `mark`) with its reference as a link below (14/500), then a fold «Los N lugares que cita el léxico» (`<details>`: «+» turning 45° in 200 ms, 13.5/500 ink-2, min 32 high) listing the references as links separated by commas (14, line 1.8, ink-2, no wrap per reference).
-- [ ] C3 Note «Traducción de Doctrina asistida por IA, desde Abbott-Smith, … (1922, dominio público), en la versión de STEPBible (CC BY 4.0). Texto de los ejemplos: Reina-Valera 1909.» (13/1.55 ink-3, mt 16, max 640).
-- [ ] C4 `btn-more` «Ver la entrada original, en inglés» (`MoreButton`, plus icon): opens the original entry (Source Serif 300 15.5/1.6, `pre-line`, max 680, padding-top 16) with a 420 ms rise (opacity, 8 px, `cubic-bezier(.22,1,.36,1)`); label becomes «Ocultar la entrada original»; `aria-expanded`; reduced motion: none.
+- [x] C1 `h2` + sub «Los usos que el léxico de Abbott-Smith (1922) distingue, con un versículo de ejemplo de cada uno. La etiqueta dice de dónde viene el uso.» (14.5/1.55 ink-3, max 620).
+- [x] C2 Hairline list (top per item, bottom on the last, padding 20 0 18, max 760). Each sense: title (Newsreader 21/1.3), origin tag beside it (`otag`, 12.5 ink-3, border `rule-2`, radius 5: «Uso griego» / «Modo de hablar hebreo»), plain description (Source Serif 300 17/1.6 ink-2, max 640, a Greek word in it with its transliteration), example quote (left rule 2 `rule-2`, padding-left 16, Newsreader italic 300 19/1.45 ink with «» added by CSS, the word marked with `mark`) with its reference as a link below (14/500), then a fold «Los N lugares que cita el léxico» (`<details>`: «+» turning 45° in 200 ms, 13.5/500 ink-2, min 32 high) listing the references as links separated by commas (14, line 1.8, ink-2, no wrap per reference).
+- [x] C3 Note «Traducción de Doctrina asistida por IA, desde Abbott-Smith, … (1922, dominio público), en la versión de STEPBible (CC BY 4.0). Texto de los ejemplos: Reina-Valera 1909.» (13/1.55 ink-3, mt 16, max 640).
+- [x] C4 `btn-more` «Ver la entrada original, en inglés» (`MoreButton`, plus icon): opens the original entry (Source Serif 300 15.5/1.6, `pre-line`, max 680, padding-top 16) with a 420 ms rise (opacity, 8 px, `cubic-bezier(.22,1,.36,1)`); label becomes «Ocultar la entrada original»; `aria-expanded`; reduced motion: none.
 
 ### D. «Sus formas» (`#formas`, column 720)
-- [ ] D1 `h2` + sub «El griego cambia la terminación según el caso y el número … las seis formas que aparecen …, con las veces que se usa cada una.» (the count of forms comes from the data).
-- [ ] D2 Rows in textbook order (nominative, genitive, dative, accusative, singular then plural), grid 170 | 1fr | 110 | 150 (gap 24, padding 12, hairlines, max 820): Greek form (Gentium 22 with translit 14), case and number («Nominativo singular», 15 ink-2), bar (6 high, width `n / max × 72` px, ink-3 .5) + count (15/500, min 2ch, right), button «Ver los N versículos» / «Ver el versículo» (13.5/500 ink-2, hover `hover`, right aligned). ≤ 860: 2 columns, case on its own line, button under, left aligned. Coarse: min-height 44.
-- [ ] D3 The button sets the form filter of «Los lugares» and scrolls there.
-- [ ] D4 Note «Caso y número de cada aparición: análisis de STEPBible (TAGNT).» with the source link (citation window).
+- [x] D1 `h2` + sub «El griego cambia la terminación según el caso y el número … las seis formas que aparecen …, con las veces que se usa cada una.» (the count of forms comes from the data).
+- [x] D2 Rows in textbook order (nominative, genitive, dative, accusative, singular then plural), grid 170 | 1fr | 110 | 150 (gap 24, padding 12, hairlines, max 820): Greek form (Gentium 22 with translit 14), case and number («Nominativo singular», 15 ink-2), bar (6 high, width `n / max × 72` px, ink-3 .5) + count (15/500, min 2ch, right), button «Ver los N versículos» / «Ver el versículo» (13.5/500 ink-2, hover `hover`, right aligned). ≤ 860: 2 columns, case on its own line, button under, left aligned. Coarse: min-height 44.
+- [x] D3 The button sets the form filter of «Los lugares» and scrolls there.
+- [x] D4 Note «Caso y número de cada aparición: análisis de STEPBible (TAGNT).» with the source link (citation window).
 
 ### E. «Los lugares, uno por uno» (`#lugares`, wide) — «Por libros, plegado»
-- [ ] E1 `h2`; status «Los 126 versículos del Nuevo Testamento donde aparece, en el orden del canon, con la Reina-Valera 1909.» (13.5/1.5 ink-3, mb 16).
-- [ ] E2 Form filter (`vf`, «como el de Videos (03)»: segmented, padding 3, border `rule`, radius 8, buttons min 34, 13.5; «Todas» + one per form with its Greek, translit and a count in 12 ink-3; the count follows the book filter; ≤ 720 full width). Site: `SegmentedFilter` as built for Videos (DESIGN «Selected states»: not the artifact's accent fill).
-- [ ] E3 Filter chips line (`lg-f`, only when filtering): «N de 126 versículos», a chip per active filter (book name / form) with ×, «Quitar filtros»; chips 32 high, border `rule-2`, radius 6, hover border ink + `hover`; hidden without filters.
-- [ ] E4 List of books, only books that have visible verses; each row = a button (name Newsreader 19 | «N versículos» 13 ink-3 | chevron that turns 90° in 200 ms), min 44; hover underlines the name. Opening: panel height + opacity 220 ms `cubic-bezier(.22,1,.36,1)`; closing 160 ms `cubic-bezier(.25,.1,.25,1)`; open books are remembered; the book filter opens its book; a filter change re-draws the list with FLIP; reduced motion: none.
-- [ ] E5 Inside a book: rows 104 | 1fr | auto (gap 22, padding 9, hairlines): reference link («6:53», `aria-label` with the book), fragment of the verse around the marked word (Source Serif 300 16.5, one line with ellipsis; ≤ 720 two lines, clamp), the form tag on the right (Greek 15 + translit + «· acus. sing.», 12.5 ink-3, no wrap; ≤ 720 in the first line). Several forms in one verse are joined with « ; ».
-- [ ] E6 Edition note «Texto en español: Reina-Valera 1909 (dominio público). Está marcada la palabra «carne» donde la traducción la usa. Efesios 2:15 corresponde a 2:14 en la numeración del NA28.» (13/1.55 ink-3, max 700, mt 14).
+- [x] E1 `h2`; status «Los 126 versículos del Nuevo Testamento donde aparece, en el orden del canon, con la Reina-Valera 1909.» (13.5/1.5 ink-3, mb 16).
+- [x] E2 Form filter (`vf`, «como el de Videos (03)»: segmented, padding 3, border `rule`, radius 8, buttons min 34, 13.5; «Todas» + one per form with its Greek, translit and a count in 12 ink-3; the count follows the book filter; ≤ 720 full width). Site: `SegmentedFilter` as built for Videos (DESIGN «Selected states»: not the artifact's accent fill).
+- [x] E3 Filter chips line (`lg-f`, only when filtering): «N de 126 versículos», a chip per active filter (book name / form) with ×, «Quitar filtros»; chips 32 high, border `rule-2`, radius 6, hover border ink + `hover`; hidden without filters.
+- [x] E4 List of books, only books that have visible verses; each row = a button (name Newsreader 19 | «N versículos» 13 ink-3 | chevron that turns 90° in 200 ms), min 44; hover underlines the name. Opening: panel height + opacity 220 ms `cubic-bezier(.22,1,.36,1)`; closing 160 ms `cubic-bezier(.25,.1,.25,1)`; open books are remembered; the book filter opens its book; a filter change re-draws the list with FLIP; reduced motion: none.
+- [x] E5 Inside a book: rows 104 | 1fr | auto (gap 22, padding 9, hairlines): reference link («6:53», `aria-label` with the book), fragment of the verse around the marked word (Source Serif 300 16.5, one line with ellipsis; ≤ 720 two lines, clamp), the form tag on the right (Greek 15 + translit + «· acus. sing.», 12.5 ink-3, no wrap; ≤ 720 in the first line). Several forms in one verse are joined with « ; ».
+- [x] E6 Edition note «Texto en español: Reina-Valera 1909 (dominio público). Está marcada la palabra «carne» donde la traducción la usa. Efesios 2:15 corresponde a 2:14 en la numeración del NA28.» (13/1.55 ink-3, max 700, mt 14).
 
 ### F. «En los Padres que cita Doctrina» (`#padres`, column) — «Español primero, con la ficha de la palabra»
-- [ ] F1 `h2` + sub «Dónde aparece la palabra en los textos griegos de los Padres que Doctrina ya cita.»
+- [x] F1 `h2` + sub «Dónde aparece la palabra en los textos griegos de los Padres que Doctrina ya cita.»
 - [ ] F2 One item with hairlines top and bottom (padding 22 0 20): Spanish quote (Newsreader italic 300 22/1.45 ink, «» by CSS, the word in `b` weight 400); Greek (Gentium 18/1.65 ink-2, mt 16, the word marked with `mark`) and its transliteration line (italic UI 15/1.6 ink-3, mt 6, follows the switch); the word box (max 520, padding 14 16, border `rule-2`, radius 6: «La palabra en esta cita» 12.5, form Greek 22 + translit, «Caso y número: …», link «Ver los N lugares con esta forma» that sets the form filter and scrolls); the source line (14 ink-3, «Ignacio de Antioquía» in `b`, the work as a citation-window link, date) and «Griego de la edición de Kirsopp Lake (1912). Traducción de Doctrina asistida por IA.» (12.5 ink-3).
 - [ ] F3 The citation link opens the citation window with the quote and the reader «Carta a los Esmirniotas» at 7.1.
 
 ### G. Footer navigation (`.pn`)
-- [ ] G1 Two links (grid 1fr 1fr, gap 16, mt 84, max 1040; one column ≤ 720): small label (12.5 ink-3) over a body 16.5 line with the Greek (18) + translit + gloss; border `rule`, radius 6, padding 14 18 15, hover border `rule-2` + `hover`; the second right-aligned (left ≤ 720).
-- [ ] G2 Coming from a verse: «Palabra anterior en Juan 6:53» / «… siguiente …» (the neighbours inside the verse, with their lemma and gloss); otherwise «Palabra anterior» / «Palabra siguiente» (lexicon neighbours).
+- [x] G1 Two links (grid 1fr 1fr, gap 16, mt 84, max 1040; one column ≤ 720): small label (12.5 ink-3) over a body 16.5 line with the Greek (18) + translit + gloss; border `rule`, radius 6, padding 14 18 15, hover border `rule-2` + `hover`; the second right-aligned (left ≤ 720).
+- [x] G2 Coming from a verse: «Palabra anterior en Juan 6:53» / «… siguiente …» (the neighbours inside the verse, with their lemma and gloss); otherwise «Palabra anterior» / «Palabra siguiente» (lexicon neighbours).
 
 ### H. Page-wide
-- [ ] H1 Section rhythm: gap 140 between sections (96 on a phone), `scroll-margin` under the bar; the edge ruler lists the sections (data-label): «Dónde aparece», «Qué significa», «Sus formas», «Los lugares», «En los Padres». (**Order is the artifact's: «Sus formas» sits between «Qué significa» and «Los lugares»**; the session brief listed it last.)
-- [ ] H2 Entrance: the title block fades in (`title-fade`, the site's `page-fade`); lists use the scroll reveal and FLIP (`RevealList`).
-- [ ] H3 Responsive: ≥ 1100, ≤ 1099, ≤ 860, ≤ 720, coarse pointer (sizes above); no horizontal overflow at 360.
-- [ ] H4 Dark mode: the same tokens (`mark` dark, `accent-weak` dark, panel and text values of DESIGN §1).
-- [ ] H5 Focus: `:focus-visible` outlines as the site's.
-- [ ] H6 Tab title and metadata (the site's pattern; not in the artifact).
+- [x] H1 Section rhythm: gap 140 between sections (96 on a phone), `scroll-margin` under the bar; the edge ruler lists the sections (data-label): «Dónde aparece», «Qué significa», «Sus formas», «Los lugares», «En los Padres». (**Order is the artifact's: «Sus formas» sits between «Qué significa» and «Los lugares»**; the session brief listed it last.)
+- [x] H2 Entrance: the title block fades in (`title-fade`, the site's `page-fade`); lists use the scroll reveal and FLIP (`RevealList`).
+- [x] H3 Responsive: ≥ 1100, ≤ 1099, ≤ 860, ≤ 720, coarse pointer (sizes above); no horizontal overflow at 360.
+- [x] H4 Dark mode: the same tokens (`mark` dark, `accent-weak` dark, panel and text values of DESIGN §1).
+- [x] H5 Focus: `:focus-visible` outlines as the site's.
+- [x] H6 Tab title and metadata (the site's pattern; not in the artifact).
 
 ### P. Verse panel tab «Palabras» (reader artifact `words`, 'filas')
 - [x] P1 Tab label «Palabras» with a count (the verse's words, `.n` 12 ink-3); body = hairline list (top per item, bottom on the last) of one row per word.
@@ -100,6 +100,26 @@ Screen 08, the word index, any page for Bible books, richer registry data (the 1
 | U2 link and line | the page and section as a link («La posición católica, La Escritura que usa»), a hand-written line («En el pasaje Juan 6:51-58, con su lectura católica.») | the same link (page title, section label) from the registry's pages; the line is generated: «La Eucaristía. En el pasaje Juan 6:51–58, 60–69.» for a passage of «La Escritura que usa» (its own refs, parallels and verse references inside its text) or «La Eucaristía. Citado en el texto de esta sección.» for a reference in the prose of a section | DEC 2026-11-03 (open point 5): no data holds the hand-written wording; nothing is invented |
 | U (data) | uses of Juan 6:51-58 and 53-56 by tradition, plus the Fathers' use | every section of every published page (teach, why, scripture, objections, life, authority) whose text cites the verse (`{v:…}`), and every passage ref covering it; a whole-chapter ref («Juan 6») covers each verse of the chapter; only Spanish pages exist (the English panel's «Usos» stays inert); the Fathers' use («Agustín lo cita…») is not in the registry | the registry is what exists; richer data waits |
 | U3 | no empty state | none: a verse nobody cites keeps «Usos» visible and inert (as «Palabras» without data) | Pedro 2026-10-27 (visible, inert) |
+| A3 | «Viniste desde …» for a verse or a place (Ignacio de Antioquía) | the verse form only (`?from=John.6.53`, the panel's button sets it); the place form waits for a Father page to arrive from | the data has no place-to-word link yet; `TODO` in the plan |
+| A6 lede | one hand-written paragraph of prose | the Spanish gloss as one line («Carne.») | no data holds the prose (DEC 2026-11-03, open point 3); the lede paragraph stays as the gap |
+| A7 facts | «Palabras derivadas» (two lines with counts), «Genitivo» always | «Palabras derivadas» omitted (no data); «Genitivo» only for nouns with a genitive singular in the data; «Clase de palabra» translated from the lexicon's `pos`; the count link is the site's «source» link style | open point 3; DESIGN «Links (three kinds)» |
+| A (draft) | none | a quiet line under the facts: «Borrador: los datos de palabras aún no están verificados.» | «Anything unverified is marked draft» (AGENTS), as the glossary pages do |
+| B3 selected | accent-weak fill, accent bar | `selected-lift` fill with the 1 px hairline, ink bar | DESIGN «Selected states» (chips and toggle buttons) |
+| B (Hebrew) | none | OT books in five groups (La Ley, Libros históricos, Libros poéticos y de sabiduría, Profetas mayores, Profetas menores) in two columns | the artifact has no OT layout (Pedro: follow the design, list the differences) |
+| C2 senses | six Spanish senses with a plain title, a Spanish explanation and a «Uso griego» / «Modo de hablar hebreo» tag | each leaf sense of the lexicon in English, headed «Sentido 1(a)», tag «Abbott-Smith» (Hebrew: one BDB entry, tag «BDB»), the first reference as the example (RV1909, or BSB in English), the places as links; the plain title is a `TODO` | Pedro 2026-11-03 answer 2: English, labelled, no AI translation now |
+| C3 note | «Traducción de Doctrina asistida por IA…» | says the text is the lexicon's own English | nothing was translated |
+| C4 | the entry as the artifact's text | the lexicon's full `def` (Greek words that have a numbered sense list; Hebrew shows its BDB entry as the body) | data |
+| D2 labels | «Nominativo singular» | the full parse: «Sustantivo, nominativo femenino singular»; each row's form is the most frequent of its parse; counts are occurrences | data (`fm`); one `morph` code per row |
+| D3 buttons | «Ver los N versículos» on every row | omitted on words with more than 1,200 verses | those words' places are not listed (see E) |
+| E4 fold | height + opacity 220 / 160 ms with the proposal's curves | `foldBox` («Despliegue», 300 ms `ease-move`) | DESIGN §4: the approved fold of lists |
+| E2 filter | accent fill, counts are verses | `SegmentedFilter` (new `wrap` and rich-label options), counts are verses | DESIGN «Segments, Tinta llena»; the control slides |
+| E5 text | the verse with «carne» marked, cut around it | the verse unmarked, one line with an ellipsis (two on a phone), in RV1909 or BSB | open point 7; no data says which translation word renders the Greek one |
+| E6 note | «…Efesios 2:15 corresponde a 2:14…» | only the edition line | that sentence was specific to σάρξ |
+| E (many verses) | all words list their verses | words with more than 1,200 verses (the article, «και», ...) show their books and counts and the sentence «Aparece en N versículos: son demasiados para listarlos uno por uno.» | page weight; the artifact only had σάρξ |
+| F | one Father quote with the word box | the heading and subtitle only, a `TODO` (no original-language Father texts) | open point 1 |
+| G1 | «Palabra anterior» shows Greek + translit + «, «de carne»» | the same with the gloss in guillemets; inside a verse: the form, «de» its lemma and the gloss; `NeighborLinks` (now takes rich titles and `wide`) | reuse of the site's component |
+| H1 | page and sections in the proposal's shell | the site's shell, `Section`, `EdgeRuler`, `PageMain`, `PageFade`/title parts | the site's own |
+| H6 | none | `generateMetadata` title = the lemma | site pattern |
 | P (no data) | sections without data are hidden | «Palabras» stays visible and inert where the verse has no word data (deuterocanonical books) or the chosen edition numbers the chapter differently from the default | Pedro's decision of 2026-10-27 (inert, visible); `numberingDiffers` as «Traducciones» |
 
 ## Data conflicts and open points (batched to Pedro 2026-11-03; defaults in brackets)
@@ -132,3 +152,5 @@ Every checklist line ticked or listed in the deviations table; John 6 regression
 - 2026-11-03 18:59 (B1.0 → B1.1, data regeneration and loader): weekly 72 %.
 - 2026-11-03 19:15 (B1.2 built and tested): weekly 73 %.
 - 2026-11-03 19:24 (B1.2 frozen as kit 220; B1.3 «Usos» built): weekly 73 %.
+- 2026-11-03 19:33 (B1.3 frozen as kit 221): weekly 73 %.
+- 2026-11-03 20:20 (B1.4 the word page built and tested, full chromium suite 1056 passed + the known intermittent `reader-keep-position` A+): weekly 74 %.

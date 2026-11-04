@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { ActionButton } from "@/components/ui/action";
+import { ActionLink } from "@/components/ui/action";
 import { Chevron } from "@/components/ui/chevron";
 import type { ChapterWordView, WordView } from "@/content/get-chapter-word-view";
+import { wordHref } from "@/content/routes";
 import { loadChapterWords, loadedChapterWords } from "@/features/reader/chapter-words";
 import { foldCard } from "@/lib/card-fold";
 import type { Locale } from "@/lib/locale";
@@ -46,11 +47,19 @@ function WordCard({
   data,
   bookName,
   text,
+  locale,
+  book,
+  chapter,
+  verse,
 }: {
   word: WordView;
   data: ChapterWordView;
   bookName: string;
   text: PanelWordsText;
+  locale: Locale;
+  book: string;
+  chapter: number;
+  verse: number;
 }) {
   const lexicon = data.lexicon[word.lexicon];
   const times = lexicon
@@ -90,12 +99,11 @@ function WordCard({
       </dl>
       {lexicon ? (
         <div className="mt-4">
-          {/* TODO: this opens the word page (screen 07) once its route exists */}
-          <ActionButton>
+          <ActionLink href={`${wordHref(locale, word.lexicon)}?from=${book}.${chapter}.${verse}`}>
             {text.open.split("{word}")[0]}
             <span lang={lang}>{lexicon.lemma}</span>
             {text.open.split("{word}")[1]}
-          </ActionButton>
+          </ActionLink>
         </div>
       ) : null}
     </div>
@@ -180,7 +188,16 @@ export function PanelWords({ locale, book, bookName, chapter, verse, text }: Pan
               }}
               className="overflow-hidden"
             >
-              <WordCard word={word} data={data} bookName={bookName} text={text} />
+              <WordCard
+                word={word}
+                data={data}
+                bookName={bookName}
+                text={text}
+                locale={locale}
+                book={book}
+                chapter={chapter}
+                verse={verse}
+              />
             </div>
           </li>
         ))}

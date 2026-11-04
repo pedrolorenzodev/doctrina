@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 
 type Crumb = {
   label: string;
@@ -9,7 +9,7 @@ type Crumb = {
 type BreadcrumbsProps = {
   label: string;
   trail: Crumb[];
-  current?: string;
+  current?: ReactNode;
 };
 
 const separator = "/";

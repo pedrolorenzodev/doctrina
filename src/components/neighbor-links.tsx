@@ -1,8 +1,9 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 type Neighbor = {
   label: string;
-  title: string;
+  title: ReactNode;
   href: string;
 };
 
@@ -11,6 +12,7 @@ type NeighborLinksProps = {
   previous: Neighbor | null;
   next: Neighbor | null;
   className?: string;
+  wide?: boolean;
 };
 
 const boxClassName =
@@ -25,9 +27,9 @@ function NeighborBox({ neighbor, className }: { neighbor: Neighbor; className: s
   );
 }
 
-export function NeighborLinks({ label, previous, next, className = "mt-18" }: NeighborLinksProps) {
+export function NeighborLinks({ label, previous, next, className = "mt-18", wide = false }: NeighborLinksProps) {
   return (
-    <nav aria-label={label} className={`max-w-col ${className}`}>
+    <nav aria-label={label} className={`${wide ? "max-w-wide" : "max-w-col"} ${className}`}>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {previous ? <NeighborBox neighbor={previous} className="" /> : null}
         {next ? <NeighborBox neighbor={next} className={`sm:col-start-2 sm:text-right`} /> : null}

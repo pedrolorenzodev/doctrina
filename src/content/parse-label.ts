@@ -136,7 +136,13 @@ const capitalised = (text: string) => text.charAt(0).toUpperCase() + text.slice(
 export function parseLabel(english: string, locale: Locale): string {
   const base = cleaned(english);
   if (locale === "en") return capitalised(base);
-  const withPersons = base.replace(/(\d)(?:st|nd|rd) person/g, (_, number: string) => `${number}.ª persona`);
+  const withPatterns = base
+    .replace(/definite article/g, "artículo definido")
+    .replace(
+      /(personal|demonstrative|relative|reflexive|reciprocal|interrogative|indefinite|possessive) pronoun/g,
+      (_, kind: string) => `pronombre ${spanishWords[kind] ?? kind}`,
+    );
+  const withPersons = withPatterns.replace(/(\d)(?:st|nd|rd) person/g, (_, number: string) => `${number}.ª persona`);
   const translated = withPersons.replace(/[A-Za-z]+/g, (word) => {
     const key = word.toLowerCase();
     return ordinals[key] ?? spanishWords[key] ?? word;

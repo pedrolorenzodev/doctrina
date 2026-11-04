@@ -38,8 +38,11 @@ export function getTransliteration(): TransliterationMode {
 
 export const serverTransliteration = (): TransliterationMode => "on";
 
+export const transliterationInitScript = `try{if(localStorage.getItem("${transliterationStorageKey}")==="off")document.documentElement.dataset.transliteration="off"}catch(e){}`;
+
 export function setTransliteration(mode: TransliterationMode): void {
   cache = mode;
+  document.documentElement.dataset.transliteration = mode;
   try {
     localStorage.setItem(transliterationStorageKey, mode);
   } catch {
