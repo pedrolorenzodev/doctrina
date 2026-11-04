@@ -1,6 +1,6 @@
 # «Palabras», «Usos» and screen 07 (the word page)
 
-Status: B1.0 approved by Pedro 2026-11-03 («OK a tus 8 puntos» with the adjustments below); B1.1 done and frozen (kit 219). The file was renamed from `palabras-07.md`: `npm run lint` rejects Spanish file names (AGENTS rule 8).
+Status: B1.0–B1.5 built 2026-11-03 and frozen in the kit as 219–223, waiting for Pedro's visual review and his `apply.sh` (the first line of «Open» below is the state). B1.0 was approved by Pedro («OK a tus 8 puntos» with the adjustments below). The file was renamed from `palabras-07.md`: `npm run lint` rejects Spanish file names (AGENTS rule 8).
 
 ## Intent
 
@@ -142,6 +142,15 @@ Screen 08, the word index, any page for Bible books, richer registry data (the 1
 - **Agent's calls (B1.1):** the loader is `src/content/get-words.ts` (no `server-only`, like the Bible's local source; the check imports it); `tools/check-words.mjs` is in `npm run lint`, skipped where `data/site/words` is absent (CI), and checks John 6 against `data/site/john6.json`, one Hebrew chapter, the shards, the ids and the missing Hebrew entries; the model drops the field `para` (a Spanish word for the lint, unused). **The site has no Greek font yet** (DESIGN lists `--font-greek` Gentium Book Plus, never built): it is added with the first Greek UI, B1.2, from `next/font/google`, together with Noto Serif Hebrew. The word pages are rendered on demand: 17,025 lexicon entries × 2 locales cannot be prerendered, so the route has no `generateStaticParams` for the word (the `[lang]` layout keeps its own).
 - **Open and not mine:** `docs/research/sources/fuentes-data-gaps.md` (committed by the research session) makes `npm run lint` fail the English-names check, so `npm run verify` stops there; every other step of the chain passes (run one by one). Pedro to rename it.
 
+## Open, and the state to continue from (written 2026-11-03 night)
+
+- **Done and frozen in the kit:** 219 loader, 220 «Palabras», 221 «Usos», 222 the word page, 223 wiring, strings and docs. Pedro runs `apply.sh` with explicit numbers.
+- **Inert with a `TODO`:** «En los Padres» (F2, F3: no original-language Father texts), the plain-language sense titles (C2).
+- **Not done (no design or no data):** «Viniste desde» for a place (a Father page); links to the word page from the glossary, from Greek quotes and from the 06 verse page (06 is not built); the attribution page (DECISIONS 2026-10-27: later); the transliteration of the form rows in Hebrew uses STEPBible's scheme (no academic scheme was decided for Hebrew).
+- **For Pedro to decide:** whether «Usos» should list a whole-chapter reference (`John.6`) on every verse of the chapter; the English text of the senses (or an AI draft in Spanish, labelled); the Hebrew transliteration scheme; whether words with more than 1,200 verses should list them page by page; the licence line «please do not redistribute» (STEPBible) before the data goes to Supabase.
+- **Not mine:** `docs/research/sources/fuentes-data-gaps.md` makes the English-names lint fail (rename it to `sources-data-gaps.md`).
+- **Retro:** not run; the playbook `build-approved-design.md` held. What the run taught is in GOTCHAS (the oxia/tonos lemma, the data regeneration order, the word page's dynamic route).
+
 ## Acceptance
 
 Every checklist line ticked or listed in the deviations table; John 6 regression of the loader; one Hebrew chapter; `npm run verify`; e2e specs for every behaviour (switch memory, filters, folds, motion frames, keyboard, 360 overflow); screenshots at 360/390/768/1440, light and dark, side by side with the artifact; Pedro's approval before each commit command.
@@ -153,4 +162,5 @@ Every checklist line ticked or listed in the deviations table; John 6 regression
 - 2026-11-03 19:15 (B1.2 built and tested): weekly 73 %.
 - 2026-11-03 19:24 (B1.2 frozen as kit 220; B1.3 «Usos» built): weekly 73 %.
 - 2026-11-03 19:33 (B1.3 frozen as kit 221): weekly 73 %.
+- 2026-11-03 20:30 (B1.5 docs and strings; end of the run): weekly 74 %.
 - 2026-11-03 20:20 (B1.4 the word page built and tested, full chromium suite 1056 passed + the known intermittent `reader-keep-position` A+): weekly 74 %.

@@ -302,7 +302,7 @@ export const en: UiText = {
     sections: "Sections of the page",
     sourceKicker: "Source",
     sourceWho: "Greek text NA28",
-    sourceWhoHebrew: "Hebrew text BHS",
+    sourceWhoHebrew: "Hebrew text of the Leningrad Codex",
     sourceWork: "data from STEPBible (Tyndale House), CC BY 4.0",
     sourceNote: "Occurrences of {word} ({strong}): {times} in {verses}.",
     sourceLink: "See the data at STEPBible",

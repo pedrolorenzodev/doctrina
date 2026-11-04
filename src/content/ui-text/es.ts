@@ -301,7 +301,7 @@ export const es = {
     sections: "Secciones de la página",
     sourceKicker: "Fuente",
     sourceWho: "Texto griego NA28",
-    sourceWhoHebrew: "Texto hebreo BHS",
+    sourceWhoHebrew: "Texto hebreo del Códice de Leningrado",
     sourceWork: "datos de STEPBible (Tyndale House), CC BY 4.0",
     sourceNote: "Apariciones de {word} ({strong}): {times} en {verses}.",
     sourceLink: "Ver los datos en STEPBible",
