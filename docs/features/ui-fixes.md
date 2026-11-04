@@ -32,6 +32,11 @@ The «subtitle» is the page header's lede (`PageHeader`, `emphasis`). The old m
 
 Notes: each word is verified against the page's real lede in the data files. For Sola Scriptura the non-Catholic ones are «Escritura» without the article (the earlier proposal said «la Escritura»): one word, as the existing «Eucaristía»/«bautismo» carry no article. Not done (not asked): the doctrine landing pages (`/es/doctrinas/<doctrina>`, their lede is a question) and the objections and Pasajes headers. English: no pages yet, falls back to the old rule.
 
+## Fix 4: the tree's mark, what was measured
+
+Sampled per frame (page navigation by sidebar link, 1440): near moves were already one mark with continuous motion. Broken: (a) a target far from the visible part of the tree: the tree scrolled instantly (1598 px in one frame), so the mark jumped across the viewport; (b) a target inside a closed group: the group opened instantly, the rows below jumped 306 px and the mark with them; (c) a second click while the mark travels: the mark restarted from the previous row (the cancel removed the travelling mark before its position was read). Now: tree scroll and mark share one animation loop and the start box is read first; groups open animated during a travel. After: no frame with a step above 45 % of the mark's reach, tree scroll steps ≤ 30 % of its distance, one mark in every frame (5 cases in `e2e/tree-mark-travel.spec.ts`, 4 failed before).
+Not covered (no row with a short mark): Bible chapters (their current marker is the chapter cell), the word page; going Bible → doctrine still launches a mark from the book row (existing behaviour, left as is).
+
 ## Decisions made while Pedro was away
 
 (agent's call, newest last)
@@ -45,6 +50,7 @@ Notes: each word is verified against the page's real lede in the data files. For
 - `src/app/globals.css` (`highlight-mark`), `src/features/reader/chapter-text.tsx`, `src/features/reader/father-body.tsx`, `docs/GOTCHAS.md`, `e2e/reader-highlight.spec.ts` (fix 1).
 - `src/components/simplifier/panel-motion.ts`, `src/components/simplifier/simplifier-text.ts`, `src/features/reader-ai/text.ts`, `e2e/simplifier.spec.ts`, `docs/GOTCHAS.md` (fix 2).
 - `src/content/lede-emphasis.ts` (new), `src/app/[lang]/doctrines/[doctrine]/[tradition]/page.tsx`, `e2e/doctrine-lede-emphasis.spec.ts` (new) (fix 3).
+- `src/features/shell/tree-motion.ts`, `src/features/shell/sidebar.tsx`, `e2e/tree-mark-travel.spec.ts` (new), `docs/GOTCHAS.md` (fix 4).
 
 ## Usage log
 
@@ -52,4 +58,4 @@ Notes: each word is verified against the page's real lede in the data files. For
 
 ## State
 
-Fix 1 frozen (block 227). Fix 2 frozen (block 228). Fix 3 frozen (block 229). Next: fix 4 (tree mark).
+Fix 1 frozen (block 227). Fix 2 frozen (block 228). Fix 3 frozen (block 229). Fix 4 frozen (block 230). Next: fix 5 (switcher and inert links).

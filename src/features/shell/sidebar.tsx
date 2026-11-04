@@ -13,7 +13,7 @@ import { useDrawer } from "@/features/shell/drawer";
 import { useActiveChapter } from "@/lib/active-chapter";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { trapTab } from "@/lib/focus";
-import { travelMark, visibleRow } from "@/features/shell/tree-motion";
+import { boxWithin, travelMark, visibleRow } from "@/features/shell/tree-motion";
 import { prefersReducedMotion, setBranch } from "@/lib/branch-motion";
 import { pageTreeCarry, subscribeNever } from "@/lib/tree-carry";
 
@@ -87,14 +87,13 @@ function scrollCurrentIntoPlace(nav: HTMLElement, settlingShift = 0) {
   if (row) nav.scrollTop = Math.max(0, row.offsetTop - settlingShift - nav.clientHeight * 0.35);
 }
 
-function keepCurrentInView(nav: HTMLElement, settlingShift = 0) {
+function placeTargetOf(nav: HTMLElement, settlingShift: number): number | null {
   const row = nav.querySelector<HTMLElement>(currentRowSelector);
-  if (!row) return;
+  if (!row) return null;
   const rowRect = row.getBoundingClientRect();
   const navRect = nav.getBoundingClientRect();
-  if (rowRect.top - settlingShift < navRect.top || rowRect.bottom - settlingShift > navRect.bottom) {
-    scrollCurrentIntoPlace(nav, settlingShift);
-  }
+  const outside = rowRect.top - settlingShift < navRect.top || rowRect.bottom - settlingShift > navRect.bottom;
+  return outside ? Math.max(0, row.offsetTop - settlingShift - nav.clientHeight * 0.35) : null;
 }
 
 function closingHeightAbove(nav: HTMLElement, leavingId: string | null, currentRow: HTMLElement | null): number {
@@ -300,12 +299,16 @@ export function Sidebar({ groups, text }: SidebarProps) {
     const from = previousId.current;
     previousId.current = currentId;
     if (from === currentId) return;
+    const travelling = Boolean(from && currentId) && !prefersReducedMotion();
+    const earlierRow = from ? visibleRow(nav, from) : null;
+    const flying = nav.querySelector<HTMLElement>("[data-mark]");
+    const startBox = flying ? boxWithin(nav, flying) : earlierRow ? boxWithin(nav, earlierRow) : null;
     cancelTravel.current?.();
     cancelTravel.current = null;
     clearTravelAttributes(nav);
     for (const id of ancestorsOf(index, currentId)) {
       const item = nav.querySelector<HTMLElement>(`li[data-id="${CSS.escape(id)}"]`);
-      if (item) setItemOpen(item, true, false, text);
+      if (item) setItemOpen(item, true, travelling, text);
     }
     const leavingBook = from?.startsWith("book/") ? from : null;
     const currentRow = nav.querySelector<HTMLElement>("[data-row].row-current");
@@ -319,15 +322,17 @@ export function Sidebar({ groups, text }: SidebarProps) {
       const item = nav.querySelector<HTMLElement>(`li[data-id="${CSS.escape(currentBookId)}"]`);
       if (item) setItemOpen(item, true, leavingBook !== null, text);
     }
-    keepCurrentInView(nav, settlingShift);
-    if (!from || !currentId || prefersReducedMotion()) return;
-    const fromRow = visibleRow(nav, from);
-    const toRow = visibleRow(nav, currentId);
-    if (!fromRow || !toRow || !currentRow || fromRow === toRow) return;
+    const placeTarget = placeTargetOf(nav, settlingShift);
+    const toRow = currentId ? visibleRow(nav, currentId) : null;
+    const flies = travelling && startBox && toRow && currentRow && earlierRow !== toRow;
+    if (!flies) {
+      if (placeTarget !== null) nav.scrollTop = placeTarget;
+      return;
+    }
     currentRow.dataset.travelling = "";
     cancelTravel.current = travelMark(
       nav,
-      fromRow,
+      startBox,
       toRow,
       () => {
         currentRow.dataset.settling = "";
@@ -339,6 +344,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
         );
       },
       settlingShift,
+      placeTarget,
     );
   }, [currentId, currentBookId, index, text]);
 
