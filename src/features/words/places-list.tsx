@@ -98,7 +98,10 @@ export function PlacesList({ places, forms, language, total, text }: PlacesListP
       else next.delete(id);
       return next;
     });
-    if (element) void foldBox(element, want);
+    if (element) {
+      if (want) element.hidden = false;
+      void foldBox(element, want);
+    }
   };
 
   const formOptions = [

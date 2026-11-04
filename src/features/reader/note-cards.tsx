@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, type RefObject } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type RefObject } from "react";
 
 export type NoteCard = { id: string; verse: number; place: string; text: string; date: string };
 
@@ -28,11 +28,16 @@ const resizeDelayMs = 150;
 
 export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onPreview, previewed }: NoteCardsProps) {
   const box = useRef<HTMLDivElement>(null);
+  const [rootChecks, setRootChecks] = useState(0);
 
   useLayoutEffect(() => {
     const container = box.current;
     const root = rootRef.current;
-    if (!container || !root) return;
+    if (!container) return;
+    if (!root) {
+      const frame = requestAnimationFrame(() => setRootChecks((count) => count + 1));
+      return () => cancelAnimationFrame(frame);
+    }
     let timer = 0;
     const place = () => {
       if (container.offsetParent === null) return;
@@ -56,7 +61,7 @@ export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onP
       observer.disconnect();
       window.removeEventListener("resize", later);
     };
-  }, [cards, hidden, rootRef, idPrefix]);
+  }, [cards, hidden, rootRef, idPrefix, rootChecks]);
 
   useEffect(() => () => onPreview(null), [onPreview]);
 

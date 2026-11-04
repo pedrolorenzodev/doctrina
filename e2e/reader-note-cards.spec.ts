@@ -89,6 +89,32 @@ test("with the tree closed, from 1083 px, a note is a card 40 px right of the co
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 });
 
+test("arriving at the chapter by a link from the previous one still puts every card level with its verse", async ({
+  page,
+}) => {
+  await page.addInitScript((notes) => {
+    if (!localStorage.getItem("doctrina-notes")) localStorage.setItem("doctrina-notes", JSON.stringify(notes));
+  }, seeded);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/biblia/juan/5");
+  await page.locator('a[href="/es/biblia/juan/6"]').first().click();
+  await expect(page).toHaveURL(/juan\/6$/);
+  await expect(page.locator(card)).toHaveCount(4);
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        [35, 53, 57].map((verse) => {
+          const cardElement = document.querySelector(`[data-note-card][data-verse="${verse}"]`)!;
+          const verseElement = cardElement.closest("section")!.querySelector(`[id$="v-${verse}"]`)!;
+          return Math.abs(
+            Math.round(cardElement.getBoundingClientRect().top - verseElement.getBoundingClientRect().top),
+          );
+        }),
+      ),
+    )
+    .toEqual([0, 0, 0]);
+});
+
 test("two cards on one verse keep 8 px between them", async ({ page }) => {
   await openWithNotes(page);
   const [one, two] = [
