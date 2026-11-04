@@ -5,9 +5,11 @@ import { PageHeader } from "@/components/page-header";
 import { NeighborLinks } from "@/components/neighbor-links";
 import { PageMain } from "@/components/page-main";
 import { neighborsOfWork, workName } from "@/content/father-work-links";
-import { getFatherWork, getFatherWorks } from "@/content/get-father-works";
+import { getFatherWork, getFatherWorks, type FatherWork } from "@/content/get-father-works";
+import { getSpanishFatherWork } from "@/content/get-father-works-es";
 import { fatherWorkHref, fathersIndexHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
+import { ByFatherEdition } from "@/features/reader/by-father-edition";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { FatherStrip } from "@/features/reader/father-strip";
 import { FatherBody } from "@/features/reader/father-body";
@@ -37,10 +39,81 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
   const text = getUiText(locale);
   const labels = text.reader;
   const licences: Record<string, string> = labels.licences;
-  const licence = licences[work.edition.licence];
-  const editionLine = (work.edition.lang === "en" ? labels.fatherWork.editionEn : labels.fatherWork.editionEs)
-    .replace("{translator}", work.edition.translator)
-    .replace("{year}", String(work.edition.year));
+  const spanish = await getSpanishFatherWork(id);
+  const editionLine = (edition: FatherWork["edition"]) =>
+    (edition.lang === "en" ? labels.fatherWork.editionEn : labels.fatherWork.editionEs)
+      .replace("{translator}", edition.translator)
+      .replace("{year}", String(edition.year));
+  const firstTranslator = work.edition.translator.split(/,| and /)[0] ?? work.edition.translator;
+  const surname = firstTranslator.trim().split(" ").pop() ?? firstTranslator;
+  const panel = {
+    text: { ...labels.panel, label: labels.fatherWork.panelLabel },
+    highlight: labels.highlight,
+    notes: labels.notes,
+    toolbar: labels.toolbar,
+    yourNotes: labels.yourNotes,
+    shortCitation: labels.shortCitation,
+  };
+  const placeOf = (division: { locator: string }) =>
+    division.locator === "prologue" ? labels.fatherWork.prologue : division.locator;
+  const editionView = (edition: FatherWork, ai: boolean, partial: boolean) => {
+    const licence = licences[edition.edition.licence];
+    const first = edition.divisions[0];
+    const last = edition.divisions[edition.divisions.length - 1];
+    return (
+      <>
+        <p className="title-part title-part-2 mt-2.5 mb-0 text-reader-note text-ink-3">
+          {editionLine(edition.edition)}
+        </p>
+        {ai ? (
+          <p className="title-part title-part-2 mt-1 mb-0 text-reader-note text-ink-3">
+            {labels.fatherWork.aiTranslation}
+            {partial && first && last
+              ? ` · ${labels.fatherWork.partial.replace("{first}", placeOf(first)).replace("{last}", placeOf(last))}`
+              : ""}
+          </p>
+        ) : edition.edition.status === "draft" ? (
+          <p className="title-part title-part-2 mt-1 mb-0 text-reader-note text-ink-3">{labels.fatherWork.draft}</p>
+        ) : null}
+        <FatherBody
+          workId={edition.id}
+          editionKey={ai ? edition.edition.id : edition.id}
+          simplified={!ai}
+          workName={workName(edition.id, locale, edition.title)}
+          title={edition.title}
+          lang={edition.edition.lang}
+          prologue={labels.fatherWork.prologue}
+          divisions={edition.divisions}
+          editionTag={`${edition.edition.translator}, ${edition.edition.year}`}
+          locale={locale}
+          panel={panel}
+        />
+        <ChapterFoot
+          title={labels.foot.title}
+          edition={edition.edition.bibliography}
+          licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
+        />
+      </>
+    );
+  };
+  const pickerOptions = [
+    ...(spanish
+      ? [
+          {
+            id: "es",
+            abbreviation: labels.fatherWork.aiAbbreviation.replace("{year}", String(spanish.edition.year)),
+            displayName: labels.fatherWork.aiName,
+            language: "es" as const,
+          },
+        ]
+      : []),
+    {
+      id: "en",
+      abbreviation: `${surname} ${work.edition.year}`,
+      displayName: firstTranslator,
+      language: "en" as const,
+    },
+  ];
   const { previous, next } = neighborsOfWork(work.id, await getFatherWorks(), locale);
   const neighbor = (label: string, other: typeof previous) =>
     other ? { label, title: other.label, href: fatherWorkHref(locale, other.id) } : null;
@@ -59,6 +132,11 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           formats: { lines: labels.textOptions.lines, flow: labels.textOptions.flow },
           locked: labels.parallel.locked,
         }}
+        picker={{
+          text: { label: labels.picker.label, spanish: labels.picker.spanish, english: labels.picker.english },
+          options: pickerOptions,
+          defaultId: "en",
+        }}
       />
       <div className="mx-auto max-w-reader">
         {/* TODO: «Historia» leads to its index page once it exists */}
@@ -71,32 +149,12 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           current={work.title}
         />
         <PageHeader id="top" className="mt-9" size="reader" title={work.title} />
-        <p className="title-part title-part-2 mt-2.5 mb-0 text-reader-note text-ink-3">{editionLine}</p>
-        {work.edition.status === "draft" ? (
-          <p className="title-part title-part-2 mt-1 mb-0 text-reader-note text-ink-3">{labels.fatherWork.draft}</p>
-        ) : null}
-        <FatherBody
-          workId={work.id}
-          workName={workName(work.id, locale, work.title)}
-          title={work.title}
-          lang={work.edition.lang}
-          prologue={labels.fatherWork.prologue}
-          divisions={work.divisions}
-          editionTag={`${work.edition.translator}, ${work.edition.year}`}
-          locale={locale}
-          panel={{
-            text: { ...labels.panel, label: labels.fatherWork.panelLabel },
-            highlight: labels.highlight,
-            notes: labels.notes,
-            toolbar: labels.toolbar,
-            yourNotes: labels.yourNotes,
-            shortCitation: labels.shortCitation,
-          }}
-        />
-        <ChapterFoot
-          title={labels.foot.title}
-          edition={work.edition.bibliography}
-          licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
+        <ByFatherEdition
+          defaultId="en"
+          editions={[
+            { id: "en", node: editionView(work, false, false) },
+            ...(spanish ? [{ id: "es", node: editionView(spanish, true, spanish.partial) }] : []),
+          ]}
         />
         <VerseArrival />
         <NeighborLinks

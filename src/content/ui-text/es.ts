@@ -491,6 +491,7 @@ export const es = {
       "web-c": "Dominio público",
       dra: "Dominio público",
       "public-domain": "Dominio público",
+      "cc0-translation": "Traducción de Doctrina, dominio público (CC0)",
     },
     fatherWork: {
       panelLabel: "Detalle del pasaje",
@@ -500,6 +501,10 @@ export const es = {
       editionEs: "Texto en español. Traducción de {translator}, {year}.",
       draft: "Borrador: la transcripción de esta obra todavía no tuvo una lectura independiente.",
       prologue: "Prólogo",
+      aiTranslation: "Traducido con IA",
+      partial: "Esta traducción cubre una parte de la obra: de {first} a {last}.",
+      aiName: "Traducción de Doctrina con IA",
+      aiAbbreviation: "IA {year}",
     },
   },
   glossary: {

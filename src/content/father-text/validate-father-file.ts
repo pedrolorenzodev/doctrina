@@ -12,6 +12,7 @@ export type FatherFile = {
     retrievedAt: string;
     sha256: string;
     locatorNotes?: string | null;
+    translatedFrom?: { editionId: string; file: string; sha256: string };
   };
   divisions: { locator: string; ordinal: number; heading: string | null; text: string }[];
 };
@@ -28,7 +29,9 @@ export function validateFatherFile(file: FatherFile, label: string): string[] {
   if (!edition || !kebab.test(edition.id ?? "")) fail(`edition id "${edition?.id}" is not kebab-case`);
   if (edition) {
     if (!languages.includes(edition.lang)) fail(`language "${edition.lang}" is not one of ${languages.join(", ")}`);
-    if (edition.licence !== "public-domain") fail(`licence is "${edition.licence}", only public-domain is loaded`);
+    const allowed = edition.translatedFrom ? ["public-domain", "cc0-translation"] : ["public-domain"];
+    if (!allowed.includes(edition.licence))
+      fail(`licence is "${edition.licence}", only ${allowed.join(" or ")} is loaded`);
     if (!/^[0-9a-f]{64}$/.test(edition.sha256 ?? "")) fail("sha256 is not 64 hex characters");
     if (!/^\d{4}-\d{2}-\d{2}$/.test(edition.retrievedAt ?? "")) fail("retrievedAt is not a date");
     if (!edition.bibliography || !edition.source) fail("edition needs a bibliography and a source");

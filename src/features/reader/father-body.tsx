@@ -30,6 +30,8 @@ import { clippedQuote, type NoteDraft } from "@/lib/notes";
 
 type FatherBodyProps = {
   workId: string;
+  editionKey: string;
+  simplified: boolean;
   workName: string;
   title: string;
   lang: string;
@@ -68,6 +70,8 @@ const chapterOfWork = 1;
 
 export function FatherBody({
   workId,
+  editionKey,
+  simplified,
   workName,
   title,
   lang,
@@ -87,7 +91,7 @@ export function FatherBody({
   const yourOpen = useYourNotesOpen();
   const undoState = useUndo();
   const highlights = useChapterHighlights({
-    translationId: workId,
+    translationId: editionKey,
     column: "first",
     root: textRoot,
     book: workId,
@@ -97,7 +101,7 @@ export function FatherBody({
     showUndo: undoState.show,
   });
   const notes = useChapterNotes({
-    translationId: workId,
+    translationId: editionKey,
     book: workId,
     chapter: chapterOfWork,
     removedMessage: panel.notes.removed,
@@ -259,7 +263,7 @@ export function FatherBody({
               <SimplifiedParagraph
                 id={`${workId}/${division.locator}`}
                 locale={locale === "en" ? "en" : "es"}
-                entry={getSimplifiedText(`${workId}/${division.locator}`)}
+                entry={simplified ? getSimplifiedText(`${workId}/${division.locator}`) : undefined}
                 tone="reader"
               >
                 <p

@@ -91,7 +91,7 @@ edition = {
     ),
     "source": e["source"],
     "scan": e.get("scan"),
-    "licence": "pending: translation by Doctrina (AI-assisted) of a public-domain English text; licence to be decided by Pedro",
+    "licence": "cc0-translation",
     "retrievedAt": "2026-11-01",
     "sha256": hashlib.sha256(en_bytes).hexdigest(),
     "locatorNotes": notes if notes else e.get("locatorNotes"),

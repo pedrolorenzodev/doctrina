@@ -492,6 +492,7 @@ export const en: UiText = {
       "web-c": "Public domain",
       dra: "Public domain",
       "public-domain": "Public domain",
+      "cc0-translation": "Doctrina translation, public domain (CC0)",
     },
     fatherWork: {
       panelLabel: "Passage detail",
@@ -501,6 +502,10 @@ export const en: UiText = {
       editionEs: "Text in Spanish. Translated by {translator}, {year}.",
       draft: "Draft: this transcription has not yet had an independent reading.",
       prologue: "Prologue",
+      aiTranslation: "Translated with AI",
+      partial: "This translation covers part of the work: {first} to {last}.",
+      aiName: "Doctrina AI translation",
+      aiAbbreviation: "AI {year}",
     },
   },
   glossary: {
