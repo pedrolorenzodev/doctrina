@@ -101,7 +101,7 @@ export const askText: Record<Locale, AskText> = {
       save: "Guardar en Tus notas",
       saved: "Guardada en Tus notas",
       report: "Informar un error",
-      reported: "Gracias. Lo revisará una persona.",
+      reported: "Gracias. Esta versión todavía no envía reportes.",
     },
     cite: {
       window: "Cita",
@@ -158,7 +158,7 @@ export const askText: Record<Locale, AskText> = {
       save: "Save to Your notes",
       saved: "Saved to Your notes",
       report: "Report an error",
-      reported: "Thank you. A person will review it.",
+      reported: "Thank you. This version does not send reports yet.",
     },
     cite: {
       window: "Citation",

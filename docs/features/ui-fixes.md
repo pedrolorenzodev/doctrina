@@ -25,9 +25,12 @@ Each fix: a measurement before (the bug) and after (fixed), an e2e that fails on
 
 - Fix 1: the Fathers' reader (`father-body.tsx`) had the same bug and no fade-out at all (plain `transition-colors`, no `data-leaving` rule); it now uses `highlight-mark` too, so both readers share one behaviour. Audit of the other verse-background states (sampled per frame at 1440): hover and pressed fade in and out in ~280 ms, arrival mark 200 ms in, recolour 280 ms, word-mark layer fades by opacity: all already smooth. Not screenshotted: colours unchanged, only the entrance timing.
 
+- Fix 2: «Informar un error» said «Lo revisará una persona» and nobody reviews it: now «Gracias. Esta versión todavía no envía reportes.» / «Thank you. This version does not send reports yet.» in the simplifier and, same false claim, in the AI drawer (`src/features/reader-ai/text.ts`).
+
 ## Shared files touched
 
 - `src/app/globals.css` (`highlight-mark`), `src/features/reader/chapter-text.tsx`, `src/features/reader/father-body.tsx`, `docs/GOTCHAS.md`, `e2e/reader-highlight.spec.ts` (fix 1).
+- `src/components/simplifier/panel-motion.ts`, `src/components/simplifier/simplifier-text.ts`, `src/features/reader-ai/text.ts`, `e2e/simplifier.spec.ts`, `docs/GOTCHAS.md` (fix 2).
 
 ## Usage log
 
@@ -35,4 +38,4 @@ Each fix: a measurement before (the bug) and after (fixed), an e2e that fails on
 
 ## State
 
-Fix 1 done and frozen as block 227. Next: fix 2 (simplifier double push).
+Fix 1 frozen (block 227). Fix 2 frozen (block 228). Next: fix 3 (subtitle highlight).

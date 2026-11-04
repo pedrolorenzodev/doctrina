@@ -394,3 +394,45 @@ test("the 8 Catholic and Baptist pages simplify their definition and first two s
   }
   await context.close();
 });
+
+function expectOneMotion(frames: Frame[]) {
+  const positions = frames.map((frame) => frame.below + frame.scroll);
+  const steps = positions.slice(1).map((position, at) => Math.abs(position - positions[at]!));
+  const peak = steps.indexOf(Math.max(...steps));
+  expect(positions.at(-1)).not.toBe(positions[0]);
+  for (let at = peak + 1; at < steps.length; at += 1) expect(steps[at]!).toBeLessThanOrEqual(steps[at - 1]! + 1.5);
+}
+
+const oneMotionPages = [
+  { route: traditionPath, index: 1 },
+  { route: "/es/historia/obras/ignatius-smyrnaeans", index: 0 },
+];
+
+for (const { route, index } of oneMotionPages) {
+  test(`${route}: the content below moves in one motion on open, close, reopen and level change`, async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(route, { waitUntil: "networkidle" });
+    await page.evaluate(() => document.fonts.ready);
+    test.skip(
+      (await page.locator("[data-simplifier-mark]").count()) === 0,
+      "the simplifier switch is off in this build",
+    );
+    await bringUp(page, index);
+    const sampled = async (action: () => Promise<void>) => {
+      await startSampling(page, index);
+      await action();
+      await page.waitForTimeout(1500);
+      return stopSampling(page);
+    };
+    expectOneMotion(await sampled(() => mark(page, index).click()));
+    await expect(page.locator(container(index)).locator("[data-simplifier-hide]")).toBeVisible({ timeout: 12000 });
+    expectOneMotion(await sampled(() => page.locator(container(index)).locator("[data-simplifier-hide]").click()));
+    await expect(page.locator(container(index)).locator("[data-simplifier-panel]")).toHaveCount(0);
+    expectOneMotion(await sampled(() => mark(page, index).click()));
+    const panel = page.locator(container(index)).locator("[data-simplifier-panel]");
+    const heightBefore = (await panel.boundingBox())!.height;
+    await page.waitForTimeout(300);
+    const frames = await sampled(() => panel.locator("button").nth(1).click());
+    if (Math.abs((await panel.boundingBox())!.height - heightBefore) > 2) expectOneMotion(frames);
+  });
+}

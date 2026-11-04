@@ -35,7 +35,7 @@ const es: SimplifierText = {
   save: "Guardar en Tus notas",
   saved: "Guardada en Tus notas",
   report: "Informar un error",
-  reported: "Gracias. Lo revisará una persona.",
+  reported: "Gracias. Esta versión todavía no envía reportes.",
   status: "Texto de prueba, sin revisar",
   sentence: "Frase {n} del original",
 };
@@ -55,7 +55,7 @@ const en: SimplifierText = {
   save: "Save to Your notes",
   saved: "Saved to Your notes",
   report: "Report an error",
-  reported: "Thank you. A person will review it.",
+  reported: "Thank you. This version does not send reports yet.",
   status: "Test text, not reviewed",
   sentence: "Sentence {n} of the original",
 };

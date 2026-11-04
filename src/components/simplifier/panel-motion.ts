@@ -17,7 +17,7 @@ export function openPanelBox(box: HTMLElement, inner: HTMLElement, fade: boolean
   const from = running ? heightOf(box) : 0;
   const startOpacity = running ? Number(getComputedStyle(inner).opacity) : 0;
   cancelPanelMotion(box);
-  box.animate([{ height: `${from}px` }, { height: `${heightOf(inner)}px` }], {
+  box.animate([{ height: `${from}px` }, { height: `${heightOf(box)}px` }], {
     duration: motion.heightMs,
     easing: easeReveal,
     id: animationId,
