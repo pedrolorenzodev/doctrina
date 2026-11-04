@@ -323,6 +323,28 @@ test.describe("ask drawer: composer, suggestions and scroll", () => {
     await expect(page.locator(`${foot} textarea`)).toHaveAttribute("placeholder", "Pregunta sobre Juan 6");
   });
 
+  test("a horizontal or diagonal wheel gesture over the chips slides them and never moves the verses behind", async ({
+    page,
+  }) => {
+    await openDrawer(page, 1440, 760);
+    await page.evaluate(() => scrollTo(0, 900));
+    await page.waitForTimeout(500);
+    const row = page.locator(chipRow);
+    const box = (await row.boundingBox())!;
+    await page.mouse.move(box.x + 120, box.y + box.height / 2);
+    const pageBefore = await page.evaluate(() => scrollY);
+    for (const [x, y] of [
+      [200, 0],
+      [200, 30],
+      [-120, 12],
+    ] as const) {
+      await page.mouse.wheel(x, y);
+      await page.waitForTimeout(450);
+    }
+    expect(await page.evaluate(() => scrollY)).toBe(pageBefore);
+    expect(await row.evaluate((el) => el.scrollLeft)).toBeGreaterThan(0);
+  });
+
   test("the chips fold away on the first question and the composer never leaves the screen", async ({ page }) => {
     await openDrawer(page, 1440, 760);
     await page.locator(`${chipRow} button`).first().click();

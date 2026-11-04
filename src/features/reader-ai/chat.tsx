@@ -388,8 +388,9 @@ export function Chat({
           <div
             ref={chipsRow}
             data-ask-suggestions=""
+            data-lenis-prevent
             inert={chipsLeaving}
-            className="-mx-5.5 mb-2 flex gap-2 overflow-x-auto px-5.5 chips-scroll"
+            className="-mx-5.5 mb-2 flex gap-2 overflow-x-auto overscroll-contain px-5.5 chips-scroll"
           >
             {suggestionSets[opening].map((chip) => (
               <button
