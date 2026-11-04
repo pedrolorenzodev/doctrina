@@ -351,9 +351,12 @@ test("a second click on the ruler mid-slide re-aims the slide from where it is, 
   await page.mouse.down();
   await page.mouse.up();
   await page.waitForTimeout(200);
-  await page.mouse.move(rulerBox.x + rulerBox.width * 0.3, y);
+  const windowBox = (await page.locator("[data-ruler-window]").boundingBox())!;
+  const aim = rulerBox.x + rulerBox.width * 0.02;
+  expect(windowBox.x).toBeGreaterThan(aim + 4);
+  await page.mouse.move(aim, y);
   await page.mouse.down();
-  await page.mouse.move(rulerBox.x + rulerBox.width * 0.3 + 1, y);
+  await page.mouse.move(aim + 1, y);
   await page.waitForTimeout(30);
   await page.mouse.up();
   await page.waitForTimeout(1500);

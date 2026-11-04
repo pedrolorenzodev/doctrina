@@ -11,7 +11,10 @@ export function useKeepTopVerse(root: RefObject<HTMLElement | null>, unitsSelect
     const element = root.current;
     if (!element) return;
     let anchor: Anchor | null = null;
+    const layoutKey = () => `${element.offsetHeight}|${Math.round(element.getBoundingClientRect().top + scrollY)}`;
+    let settled = layoutKey();
     const record = () => {
+      if (layoutKey() !== settled) return;
       if (scrollY <= topZonePx) {
         anchor = null;
         return;
@@ -34,11 +37,13 @@ export function useKeepTopVerse(root: RefObject<HTMLElement | null>, unitsSelect
       anchor = unit ? { id: unit.id, top: unit.getBoundingClientRect().top } : null;
     };
     const restore = () => {
-      if (!anchor) return;
-      const unit = document.getElementById(anchor.id);
-      if (!unit || !element.contains(unit)) return;
-      const shift = unit.getBoundingClientRect().top - anchor.top;
-      if (Math.abs(shift) >= minShiftPx) jumpQuietly(scrollY + shift);
+      const unit = anchor ? document.getElementById(anchor.id) : null;
+      if (anchor && unit && element.contains(unit)) {
+        const shift = unit.getBoundingClientRect().top - anchor.top;
+        if (Math.abs(shift) >= minShiftPx) jumpQuietly(scrollY + shift);
+      }
+      settled = layoutKey();
+      record();
     };
     record();
     const observer = new ResizeObserver(restore);

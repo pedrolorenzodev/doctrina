@@ -106,9 +106,17 @@ test("«Al lado» aligns the two translations verse by verse in two columns", as
     .evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
   expect(columns).toBe(2);
   for (const n of [1, 35, 71]) {
-    const left = (await page.locator(`#v-${n}`).boundingBox())!;
-    const right = (await page.locator(secondOfJohn6(n)).boundingBox())!;
-    expect(Math.abs(left.y - right.y)).toBeLessThan(14);
+    const { left, right } = await page.evaluate(
+      ([first, second]) => {
+        const box = (selector: string) => {
+          const rect = document.querySelector(selector)!.getBoundingClientRect();
+          return { x: rect.x, y: rect.y, width: rect.width };
+        };
+        return { left: box(first!), right: box(second!) };
+      },
+      [`#v-${n}`, secondOfJohn6(n)],
+    );
+    expect(Math.abs(left.y - right.y)).toBeLessThan(1);
     expect(right.x).toBeGreaterThan(left.x + left.width / 2);
   }
   await expect(page.locator(`${john6} p`).filter({ hasText: "Reina-Valera 1909" }).first()).toBeVisible();

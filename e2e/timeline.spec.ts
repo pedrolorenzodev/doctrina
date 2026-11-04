@@ -45,7 +45,8 @@ test("choosing an item shows its detail with a link to its page, and nothing for
   await expect(page.locator("#time [aria-live] h3")).toHaveText("Ignacio de Antioquía");
   await expect(page.locator("#time [aria-live] a, #time [aria-live] button")).toHaveCount(0);
   await item(page, "Docetismo").click();
-  await expect(page.locator("#time [aria-live] button")).toHaveText("Ir a la página de Docetismo");
+  await expect(page.locator("#time [aria-live] a")).toHaveText("Ir a la página de Docetismo");
+  await expect(page.locator("#time [aria-live] a")).toHaveAttribute("href", /\/es\/historia\/corrientes\/docetism$/);
 });
 
 test("the fixed strip shows while the detail is below the screen and hides once the detail is in view", async ({

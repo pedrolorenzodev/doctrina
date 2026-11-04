@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-type Frame = { scroll: number; marks: number[] };
+type Frame = { at: number; scroll: number; marks: number[] };
 
 const doctrines = "/es/doctrinas";
 const history = "/es/historia";
@@ -23,7 +23,7 @@ async function sample(page: Page, hrefs: string[], gap: number): Promise<Frame[]
         const rect = mark.getBoundingClientRect();
         marks.push(rect.top + rect.height / 2 - top);
       }
-      frames.push({ scroll: nav.scrollTop, marks });
+      frames.push({ at: performance.now(), scroll: nav.scrollTop, marks });
       if (performance.now() - start < 1400) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -39,17 +39,21 @@ async function sample(page: Page, hrefs: string[], gap: number): Promise<Frame[]
   return page.evaluate(() => (window as unknown as { __frames: Frame[] }).__frames);
 }
 
+const steepestSlope = 4.6;
+const travelMs = 360;
+const allowedShare = (milliseconds: number) => (steepestSlope * milliseconds) / travelMs + 0.4;
+
 function expectGlide(frames: Frame[]) {
   expect(frames.every((frame) => frame.marks.length === 1)).toBe(true);
   const marks = frames.map((frame) => frame.marks[0]!);
-  const shown = marks.map((mark) => Math.abs(mark - marks[0]!));
-  const reach = Math.max(...shown);
-  const steps = marks.slice(1).map((mark, at) => Math.abs(mark - marks[at]!));
-  expect(Math.max(...steps)).toBeLessThanOrEqual(0.45 * reach + 12);
+  const reach = Math.max(...marks.map((mark) => Math.abs(mark - marks[0]!)));
   const scrolls = frames.map((frame) => frame.scroll);
   const travelled = Math.abs(scrolls.at(-1)! - scrolls[0]!);
-  const scrollSteps = scrolls.slice(1).map((scroll, at) => Math.abs(scroll - scrolls[at]!));
-  expect(Math.max(...scrollSteps)).toBeLessThanOrEqual(0.3 * travelled + 12);
+  for (let at = 1; at < frames.length; at += 1) {
+    const share = allowedShare(frames[at]!.at - frames[at - 1]!.at);
+    expect(Math.abs(marks[at]! - marks[at - 1]!)).toBeLessThanOrEqual(reach * share + 8);
+    expect(Math.abs(scrolls[at]! - scrolls[at - 1]!)).toBeLessThanOrEqual(travelled * share + 8);
+  }
 }
 
 const cases = [

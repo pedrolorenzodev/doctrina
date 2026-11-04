@@ -71,6 +71,20 @@ Reproduced (Chromium, real wheel events, per frame: where the verse at the top o
 Fixed: trim holds the reading chapter; tree chapter links scroll within the stream when they can, reset to the opening chapter when it is the one chosen, and navigate otherwise (phone drawer closes). Measured after: 0 jumps over 400 steps; tree picks of mounted chapters land on their first verse. Pinned-at-the-edge check: in 300-step flings (40 and 100 px) the viewport reached the document's end in at most 1–2 frames, so the content stays ahead locally (one fast local network: not measured on a slow one).
 Not changed: how many chapters are mounted (5) and the prefetch distance. A single-frame hitch of ~4500 px appeared once in a dev-server smooth scroll of the tree jump upward (a long frame, not a layout jump); not seen on the production build.
 
+## Fix 7: the right-edge ruler at about 1700 px
+
+Not reproduced. Measured on the home, the doctrine landing, a tradition page and a Father's page at 1400×900, 1700×1100, 1920×1080 and 2560×1300, each with a plain mouse, device pixel ratio 2, touch emulation and mobile+touch emulation: 13 px pitch, 16×3 bars, 18 px from the edge and the same hover bulge (72, 71, 70, 67, 63 px) in every combination. DECISIONS 2026-10-29 already records the cause found then (touch emulation made the ticks 44 px tall) and its fix, marked «to confirm» by Pedro; the ROADMAP line is stale. Added a guard over four pages and four sizes (`e2e/ruler-sizes.spec.ts`) that compares every size with the 1400 px measurement. If Pedro still sees it in Dia: what is needed is the exact mode (Dia's responsive mode with which device, zoom level, pointer type), since the CSS pixels do not change with the size.
+
+## Fix 8: unstable tests
+
+| Test | Cause | Fix |
+|---|---|---|
+| `reader-parallel` «Al lado» aligns | two `boundingBox()` calls, the stream moved between them under load (14.7 px); alone it is 0 px | both boxes read in one `page.evaluate`, tolerance tightened to < 1 px |
+| `general-timeline` «a second click mid-slide» | the aim point (30 % of the ruler) was inside the window box 200 ms into the first slide, so the press grabbed the window and the 1 px of jitter dragged it (instant). A property of the geometry, not a bug | aim at 2 % and assert the window is not there |
+| `reader-keep-position` «A+» | a real bug: with a scroll event in the same frame as the layout change, `useKeepTopVerse` recorded its anchor too late and restored nothing (454 px drift, 4 of 16 runs at 6 workers) | the hook no longer records during an unsettled layout; 16 of 16 and 54 of 54 under load after |
+
+Related to fix 6: same family as the stream trim bug.
+
 ## Decisions made while Pedro was away
 
 (agent's call, newest last)
@@ -87,11 +101,17 @@ Not changed: how many chapters are mounted (5) and the prefetch distance. A sing
 - `src/features/shell/tree-motion.ts`, `src/features/shell/sidebar.tsx`, `e2e/tree-mark-travel.spec.ts` (new), `docs/GOTCHAS.md` (fix 4).
 - `src/features/doctrine/tradition-switcher.tsx`, the three tradition route pages (main, objections, passages), `src/content/father-timeline.ts`, `src/features/history/father-timeline.tsx`, `src/features/history/general-timeline.tsx`, `src/app/[lang]/history/fathers/[father]/page.tsx`, `e2e/tradition-switcher.spec.ts` (new), `e2e/header.spec.ts`, `e2e/father.spec.ts`, `e2e/soon-screens.spec.ts` (fix 5).
 - `src/features/reader/reader-stream.tsx`, `src/components/chapter-grid.tsx`, `src/features/reader/book-picker.tsx`, `src/features/shell/sidebar.tsx` (fix 4 + 6), `e2e/reader-stream-scroll.spec.ts` (new), `docs/GOTCHAS.md` (fix 6).
+- `src/features/reader/use-keep-top-verse.ts` (fix 8), `e2e/ruler-sizes.spec.ts` (new), `e2e/general-timeline.spec.ts`, `e2e/reader-parallel.spec.ts`, `docs/GOTCHAS.md` (fix 7, 8).
 
 ## Usage log
 
 - 2026-11-03 23:51 · session 7 %, weekly 77 % (stop at 84 %).
 
+## Full suite (chromium, 3 workers, 2026-11-04 ~01:30)
+
+1132 passed, 12 failed, 1 skipped. Mine and fixed afterwards: `timeline.spec:32` (the current's detail link is now a link) and `tree-mark-travel` «second click» (the per-frame limit now scales with the frame time; 30 of 30 under load). The other ten are older and about content that changed under them (doctrines without a page were asserted inert; the two new doctrines' pages cite the Fathers more), not touched here: `early-christians:179`, `father:167/193/203`, `home-sections:4`, `scripture:19/51`, `search:155/166`, `why:146`. Next round: update each expectation to the published pages (they are stale tests, not bugs, from what each message shows; not verified against a clean HEAD build).
+
 ## State
 
-Fix 1 frozen (block 227). Fix 2 frozen (block 228). Fix 3 frozen (block 229). Fix 4 frozen (block 230). Fix 5 frozen (block 231). Fix 6 frozen (block 232). Next: fix 7 (ruler at 1700 px), then fix 8 (unstable tests).
+All 8 items worked through in order and frozen in the kit: fixes 1–6 as blocks 227–232, fixes 7–8 (ruler guard, test stabilisations, `use-keep-top-verse.ts`, the `timeline` and `tree-mark-travel` spec updates) as block 233. `npm run verify` passes.
+Open: the doubtful inert controls (table in Fix 5), the ten stale specs above, Pedro's confirmation of the ruler in Dia, the verse-page and Fuentes destinations that do not exist, a slow-network check of the stream's look-ahead.
