@@ -349,3 +349,48 @@ test("pointing at a sentence number marks its original sentence", async ({ page 
   );
   expect(cleared).toBe(false);
 });
+
+const catholicAndBaptist = ["eucaristia", "bautismo", "papado", "sola-scriptura"].flatMap((doctrine) =>
+  ["catolica", "bautista"].map((tradition) => `/es/doctrinas/${doctrine}/${tradition}`),
+);
+
+test("the 8 Catholic and Baptist pages simplify their definition and first two statements, each sentence paired with its original", async ({
+  browser,
+}) => {
+  test.setTimeout(240000);
+  const context = await browser.newContext({ reducedMotion: "reduce", viewport: { width: 1440, height: 900 } });
+  const page = await context.newPage();
+  for (const route of catholicAndBaptist) {
+    await page.goto(route, { waitUntil: "networkidle" });
+    test.skip(
+      (await page.locator("[data-simplifier-mark]").count()) === 0,
+      "the simplifier switch is off in this build",
+    );
+    await expect(page.locator("[data-simplifier-mark]"), route).toHaveCount(3);
+    for (let index = 0; index < 3; index += 1) {
+      await bringUp(page, index);
+      await mark(page, index).click();
+      const panel = page.locator(container(index)).locator("[data-simplifier-panel]");
+      await expect(panel.locator("[data-simplifier-label]"), route).toHaveText("Simplificado por IA");
+      for (const level of ["Más claro", "Muy simple"]) {
+        await panel.getByRole("button", { name: level }).click();
+        const sups = panel.locator("[data-simplifier-text] sup");
+        const count = await sups.count();
+        expect(count, `${route} ${index} ${level}`).toBeGreaterThan(0);
+        for (let at = 0; at < count; at += 1) {
+          await sups.nth(at).hover();
+          const marked = await page.evaluate(() => {
+            const highlight = (CSS as unknown as { highlights: Map<string, Set<Range>> }).highlights.get(
+              "simplifier-pair",
+            );
+            return highlight ? [...highlight].map((range) => range.toString()).join("") : "";
+          });
+          expect(marked.length, `${route} ${index} ${level} sentence ${at + 1}`).toBeGreaterThan(10);
+        }
+      }
+      await panel.locator("[data-simplifier-hide]").click();
+      await expect(panel).toHaveCount(0);
+    }
+  }
+  await context.close();
+});
