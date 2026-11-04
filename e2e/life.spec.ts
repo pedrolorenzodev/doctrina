@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { horizontalOverflow, traditionPath } from "./helpers";
 
 const items = "#life li";
-const more = "#life button[aria-expanded]:not([aria-haspopup])";
+const more = "#life button[aria-expanded]:not([aria-haspopup]):not([data-simplifier-mark])";
 const normalize = (text: string | null) => (text ?? "").replace(/[ ⁠]/g, " ").replace(/\s+/g, " ").trim();
 
 test("two intro paragraphs, fourteen rows with eight shown", async ({ page }) => {

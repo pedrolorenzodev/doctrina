@@ -1,10 +1,13 @@
+import type { ReactNode } from "react";
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
+import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragraph";
 import { shownStatements } from "@/content/doctrine-rules";
 import type { GradeLine, TraditionPage } from "@/content/model/page";
 import { gradeViewId, verseLink } from "@/content/page-views";
 import { registry } from "@/content/registry";
+import { getSimplifiedText } from "@/content/simplified-texts";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { SourceLinks } from "@/features/doctrine/source-links";
@@ -50,6 +53,23 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
     return guillemets(body.startsWith(prefix) ? body.slice(prefix.length) : body);
   };
 
+  const simplifiable = (
+    key: string,
+    tone: "prose" | "definition",
+    node: (simplified: boolean) => ReactNode,
+    className = "",
+  ) => {
+    const id = `${page.doctrine}/${page.tradition}/${key}`;
+    const entry = getSimplifiedText(id);
+    return entry ? (
+      <SimplifiedParagraph id={id} locale={locale} entry={entry} tone={tone} className={className}>
+        {node(true)}
+      </SimplifiedParagraph>
+    ) : (
+      node(false)
+    );
+  };
+
   const items = page.teach.statements.map((statement) => ({
     id: statement.id,
     content: (
@@ -59,9 +79,11 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
             <RichText text={statement.question} verse={verse} />
           </p>
         ) : null}
-        <p className="font-body text-prose-mobile font-light text-ink-2 opsz-18 sm:text-prose">
-          <RichText text={statement.text} verse={verse} />
-        </p>
+        {simplifiable(statement.id, "prose", () => (
+          <p className="font-body text-prose-mobile font-light text-ink-2 opsz-18 sm:text-prose">
+            <RichText text={statement.text} verse={verse} />
+          </p>
+        ))}
         <p className="mt-3 text-line text-ink-3">
           <span className="font-semibold text-ink-2">{gradeLinks(statement.id, statement.grades)}</span>
           <span className="divider-inline" aria-hidden="true" />
@@ -83,12 +105,21 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
 
   return (
     <Section id="teach" title={text.doctrine.teach} subtitle={page.teach.subtitle}>
-      <p className="mb-7.5 font-head text-defn-mobile font-light text-ink opsz-24 sm:text-defn">
-        <RichText text={definition.text} verse={verse} />{" "}
-        <span className="font-ui text-defn-source">
-          <SourceLinks sources={definition.sources} parenthesized />
-        </span>
-      </p>
+      {simplifiable(
+        "definition",
+        "definition",
+        (simplified) => (
+          <p
+            className={`${simplified ? "" : "mb-7.5 "}font-head text-defn-mobile font-light text-ink opsz-24 sm:text-defn`}
+          >
+            <RichText text={definition.text} verse={verse} />{" "}
+            <span className="font-ui text-defn-source">
+              <SourceLinks sources={definition.sources} parenthesized />
+            </span>
+          </p>
+        ),
+        "mb-7.5 rail:max-w-col",
+      )}
       <ExpandableList
         itemClassName="border-t border-rule pt-5.5 pb-6"
         items={items}

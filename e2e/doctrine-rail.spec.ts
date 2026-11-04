@@ -45,7 +45,7 @@ test("1728 with the tree closed: titles in a 236 px rail, lists in two columns, 
   const statements = await boxes(page, "#teach li:not([hidden])");
   expect(statements[1]!.y).toBe(statements[0]!.y);
   expect(statements[1]!.x).toBeGreaterThan(statements[0]!.x + 400);
-  const definition = (await boxes(page, "#teach .rail-body > p"))[0]!;
+  const definition = (await boxes(page, "#teach .rail-body p"))[0]!;
   expect(definition.w).toBeLessThanOrEqual(720);
   const videos = await boxes(page, "#videos li");
   expect(new Set(videos.slice(0, 3).map((video) => video.y)).size).toBe(1);

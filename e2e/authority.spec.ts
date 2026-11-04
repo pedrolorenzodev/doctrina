@@ -71,7 +71,9 @@ test("arriving with the hash of a hidden statement expands the list and shows it
       timeout: 5000,
     })
     .toBe(landing);
-  await expect(page.locator("#teach button[aria-expanded]:not([aria-haspopup])")).toHaveText("Mostrar menos");
+  await expect(
+    page.locator("#teach button[aria-expanded]:not([aria-haspopup]):not([data-simplifier-mark])"),
+  ).toHaveText("Mostrar menos");
 });
 
 for (const [width, beside] of [

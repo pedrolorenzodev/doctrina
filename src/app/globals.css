@@ -136,6 +136,12 @@
   --text-dialog-title--line-height: 1.25;
   --text-note-card--line-height: 1.5;
   --spacing-sheet: 52dvh;
+  --text-simplified: 16px;
+  --text-simplified--line-height: 1.65;
+  --text-simplified-note: 12.5px;
+  --text-simplified-note--line-height: 1.45;
+  --leading-natural: normal;
+  --spacing-simplifier-ring: calc(0.5lh - 11px);
   --text-dating: 14.5px;
   --text-dating--line-height: 1.45;
   --text-strip-name: 18px;
@@ -2524,4 +2530,16 @@ html.theme-switching ::after {
 
 html[data-transliteration="off"] [data-transliteration] {
   display: none;
+}
+
+::highlight(simplifier-pair) {
+  background-color: var(--color-cite-weak);
+}
+
+@utility no-scroll-anchor {
+  overflow-anchor: none;
+}
+
+@utility simplifier-ring-line {
+  border-width: 1.5px;
 }

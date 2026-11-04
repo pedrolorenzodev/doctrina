@@ -177,7 +177,7 @@ test("citations with a quote in another language say which one", async ({ page }
 
 test("every citation in the statements is a link: no plain «(Catecismo …)» is left", async ({ page }) => {
   await page.goto(traditionPath);
-  await page.locator("#teach button[aria-expanded]:not([aria-haspopup])").click();
+  await page.locator("#teach button[aria-expanded]:not([aria-haspopup]):not([data-simplifier-mark])").click();
   await page.waitForTimeout(900);
   const plain = await page.evaluate(
     () =>

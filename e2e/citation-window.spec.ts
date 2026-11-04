@@ -130,7 +130,7 @@ test.describe("desktop", () => {
     await expect(page.locator(`${dialog} h3`)).toHaveText("Dogma");
     await expect(page.getByRole("button", { name: "Copiar cita" })).toHaveCount(0);
     await page.keyboard.press("Escape");
-    await page.locator("#teach button[aria-expanded]:not([aria-haspopup])").click();
+    await page.locator("#teach button[aria-expanded]:not([aria-haspopup]):not([data-simplifier-mark])").click();
     await page.waitForTimeout(900);
     await page.locator("#teach li [aria-haspopup]", { hasText: "Lucas" }).first().click();
     await expect(page.locator("#citation-window-kind")).toHaveText("Escritura");

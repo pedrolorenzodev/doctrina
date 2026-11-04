@@ -39,7 +39,7 @@ for (const width of [360, 390, 768, 1024, 1440]) {
   test(`no horizontal overflow at ${width} px, with every statement shown`, async ({ page }) => {
     await page.setViewportSize({ width, height: 800 });
     await page.goto(traditionPath);
-    await page.locator("#teach button[aria-expanded]:not([aria-haspopup])").click();
+    await page.locator("#teach button[aria-expanded]:not([aria-haspopup]):not([data-simplifier-mark])").click();
     await page.waitForTimeout(700);
     expect(await horizontalOverflow(page)).toBe(0);
   });
