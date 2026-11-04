@@ -1,4 +1,5 @@
 import { baptismBaptist } from "@/content/pages/baptism/baptist.es";
+import { baptismDoctrine } from "@/content/pages/baptism/doctrine.es";
 import { baptismCatholic } from "@/content/pages/baptism/catholic.es";
 import { baptismLutheran } from "@/content/pages/baptism/lutheran.es";
 import { baptismOrthodox } from "@/content/pages/baptism/orthodox.es";
@@ -9,11 +10,13 @@ import { eucharistBaptist } from "@/content/pages/eucharist/baptist.es";
 import { eucharistLutheran } from "@/content/pages/eucharist/lutheran.es";
 import { eucharistOrthodox } from "@/content/pages/eucharist/orthodox.es";
 import { eucharistReformed } from "@/content/pages/eucharist/reformed.es";
+import { papacyDoctrine } from "@/content/pages/papacy/doctrine.es";
 import { papacyCatholic } from "@/content/pages/papacy/catholic.es";
 import { papacyBaptist } from "@/content/pages/papacy/baptist.es";
 import { papacyLutheran } from "@/content/pages/papacy/lutheran.es";
 import { papacyOrthodox } from "@/content/pages/papacy/orthodox.es";
 import { papacyReformed } from "@/content/pages/papacy/reformed.es";
+import { solaScripturaDoctrine } from "@/content/pages/sola-scriptura/doctrine.es";
 import { solaScripturaBaptist } from "@/content/pages/sola-scriptura/baptist.es";
 import { solaScripturaCatholic } from "@/content/pages/sola-scriptura/catholic.es";
 import { solaScripturaLutheran } from "@/content/pages/sola-scriptura/lutheran.es";
@@ -43,4 +46,9 @@ export const spanishPages = {
   "sola-scriptura/orthodox": solaScripturaOrthodox,
 };
 
-export const spanishDoctrinePages = { eucharist: eucharistDoctrine };
+export const spanishDoctrinePages = {
+  eucharist: eucharistDoctrine,
+  baptism: baptismDoctrine,
+  papacy: papacyDoctrine,
+  "sola-scriptura": solaScripturaDoctrine,
+};

@@ -351,8 +351,8 @@ export const eucharistDoctrine = {
             sources: [{ citations: ["MOG107"], label: "Confesión de Pedro Mogila I.107" }],
           },
           lutheran: {
-            text: "Un pastor ordenado y debidamente llamado",
-            sources: [{ citations: [], label: "Confesión de Augsburgo XIV" }],
+            text: "Quien ha sido debidamente llamado",
+            sources: [{ citations: ["LACXIV"], label: "Confesión de Augsburgo XIV" }],
           },
           reformed: {
             text: "Solo un ministro de la Palabra legítimamente ordenado",
@@ -381,8 +381,8 @@ export const eucharistDoctrine = {
             sources: [{ citations: ["AC22"], label: "Confesión de Augsburgo XXII" }],
           },
           reformed: {
-            text: "Pan y vino, que siguen siendo «verdadera y únicamente pan y vino»",
-            sources: [{ citations: [], label: "Confesión de Westminster 29.5" }],
+            text: "Pan y vino, que siguen siendo, en sustancia y naturaleza, «verdadera y solamente, pan y vino»",
+            sources: [{ citations: ["RWCF29_5"], label: "Confesión de Westminster 29.5" }],
           },
           baptist: { text: "Pan y vino", sources: [{ citations: [], label: "Segunda Confesión de Londres 30.3" }] },
         },
@@ -401,8 +401,14 @@ export const eucharistDoctrine = {
             ],
           },
           orthodox: {
-            text: "Se guardan dones consagrados para la Liturgia de los Presantificados, en Cuaresma",
-            sources: [{ citations: [], label: "Concilio Quinisexto, can. 52" }],
+            text: "Mogila (Pregunta 107) no dice qué se hace con lo que sobra; Dositeo (Decreto XVII) dice que lo reservado en las píxides para la comunión de los moribundos es el verdadero Cuerpo del Señor",
+            sources: [
+              {
+                citations: ["OMogila107"],
+                label:
+                  "Confesión de Pedro Mogila I.107; Confesión de Dositeo, decreto 17 (traducción de Doctrina asistida por IA, desde Robertson, 1899)",
+              },
+            ],
           },
           lutheran: {
             text: "No se reserva para la adoración ni se lleva en procesión: fuera del uso instituido no hay sacramento",
@@ -429,7 +435,7 @@ export const eucharistDoctrine = {
       },
       {
         doctrine: "baptism",
-        text: "Todas las tradiciones exigen el bautismo antes de la comunión; de este vínculo surgen las disputas sobre el bautismo de niños (bautistas) y la comunión de niños (ortodoxos).",
+        text: "Los textos bautistas hacen del bautismo un requisito previo para la Cena y para ser miembro de la iglesia ({c:BNHXIV|Nueva Hampshire XIV}; {c:BBFMVII|Fe y Mensaje Bautistas VII}); el Catecismo católico llama al bautismo «la puerta que abre el acceso a los otros sacramentos» ({c:CEC1213|Catecismo 1213}).",
       },
     ],
   },

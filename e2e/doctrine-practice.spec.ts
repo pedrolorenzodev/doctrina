@@ -37,8 +37,8 @@ test("each cell ends with its source in parentheses; registry sources open their
   await expect(page.locator("[role=dialog]")).toContainText("Catecismo");
   await page.keyboard.press("Escape");
   await expect(link).toBeFocused();
-  const plain = page.locator(`${table} tbody tr`).first().locator("td").nth(2);
-  await expect(plain).toContainText("(Confesión de Augsburgo XIV).");
+  const plain = page.locator(`${table} tbody tr`).nth(2).locator("td").nth(2);
+  await expect(plain).toContainText("(Fórmula de Concordia, Declaración Sólida VII.85–87).");
   await expect(plain.locator("[aria-haspopup]")).toHaveCount(0);
 });
 
@@ -74,26 +74,23 @@ test("under 900 px every aspect lists its five traditions with their sources", a
   await expect(page.locator("#practice ul").first().locator("li").first()).toContainText("(Catecismo 1348, 1411).");
 });
 
-test("«Doctrinas conectadas»: only the doctrines that have a page, as one inert card", async ({ page }) => {
+test("«Doctrinas conectadas»: only the doctrines that have a page, as one link card", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await expect(page.locator("#connected h2")).toHaveText("Doctrinas conectadas");
   await expect(page.locator("#connected > div > div > p").first()).toContainText("pesa también en estas doctrinas");
   await expect(page.locator("#connected h3")).toHaveText(["El bautismo"]);
-  await expect(page.locator("#connected a")).toHaveCount(0);
-  const card = page.locator("#connected button");
+  await expect(page.locator("#connected button")).toHaveCount(0);
+  const card = page.locator("#connected a");
   await expect(card).toHaveCount(1);
-  await expect(card).toContainText("Todas las tradiciones exigen el bautismo antes de la comunión");
-  const url = page.url();
-  await card.click();
-  expect(page.url()).toBe(url);
+  await expect(card).toContainText("la puerta que abre el acceso a los otros sacramentos");
   await expect(page.locator("#connected")).not.toContainText("justificación");
 });
 
 test("a card underlines its title and darkens its text on hover and on focus", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
-  const card = page.locator("#connected button");
+  const card = page.locator("#connected a");
   await card.scrollIntoViewIfNeeded();
   const title = card.locator("h3");
   const before = await title.evaluate((node) => getComputedStyle(node).textDecorationColor);
