@@ -300,6 +300,11 @@ export const es = {
         spanish: "español",
         english: "inglés",
       },
+      uses: {
+        list: "Dónde se usa en Doctrina",
+        inPassage: "{doctrine}. En el pasaje {passage}.",
+        inText: "{doctrine}. Citado en el texto de esta sección.",
+      },
       words: {
         list: "Palabras del versículo",
         strong: "Strong",

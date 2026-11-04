@@ -302,6 +302,11 @@ export const en: UiText = {
         spanish: "Spanish",
         english: "English",
       },
+      uses: {
+        list: "Where Doctrina uses it",
+        inPassage: "{doctrine}. In the passage {passage}.",
+        inText: "{doctrine}. Cited in the text of this section.",
+      },
       words: {
         list: "Words of the verse",
         strong: "Strong",

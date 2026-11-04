@@ -309,6 +309,7 @@ export function ReaderStream({
             <ReaderBody
               views={data.views}
               wordCounts={data.wordCounts}
+              uses={data.uses}
               defaultId={data.defaultId}
               bookId={data.book.id}
               deuteroNotice={data.book.section === "deuterocanon" ? deuteroNotice : null}

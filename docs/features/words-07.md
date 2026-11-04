@@ -81,9 +81,9 @@ Screen 08, the word index, any page for Bible books, richer registry data (the 1
 - [x] P4 Source line under the list (`ww-src`, 13/1.5 ink-3, mt 14): «Griego: STEP Bible, CC BY 4.0. Glosas: …». **Text must change** (open point 4).
 
 ### U. Verse panel tab «Usos» (reader artifact `uses`)
-- [ ] U1 Tab label «Usos» with a count; body = list `cd-du` (no bullets; item padding 9 0, hairline above all but the first; the first has no top padding).
-- [ ] U2 Item: a link to the place (body 18/1.4 `ln-go`, e.g. «La posición católica, La Escritura que usa») and, in a block under it, a 14/1.45 ink-3 line saying how the verse is used there. The link opens the page at that section.
-- [ ] U3 No item: the tab is shown without content only if Pedro keeps «visible and inert» (DECISIONS 2026-10-27); when data exists, it lists; for a verse nothing cites, an empty state is **not** in the artifact (open point 5).
+- [x] U1 Tab label «Usos» with a count; body = list `cd-du` (no bullets; item padding 9 0, hairline above all but the first; the first has no top padding).
+- [x] U2 Item: a link to the place (body 18/1.4 `ln-go`, e.g. «La posición católica, La Escritura que usa») and, in a block under it, a 14/1.45 ink-3 line saying how the verse is used there. The link opens the page at that section.
+- [x] U3 No item: the tab is shown without content only if Pedro keeps «visible and inert» (DECISIONS 2026-10-27); when data exists, it lists; for a verse nothing cites, an empty state is **not** in the artifact (open point 5).
 
 ## Deviations from the approved artifact (filled as blocks are built)
 
@@ -97,6 +97,9 @@ Screen 08, the word index, any page for Bible books, richer registry data (the 1
 | P3 button | «Abrir el estudio de σάρξ» opens screen 07 | built, inert, `TODO` | the word page lands in B1.4 (`ui.md`: inert with a `TODO`) |
 | P (Hebrew) | none (Greek only) | the same rows and card for Hebrew verses: Hebrew in Noto Serif Hebrew (new font token `--font-hebrew`, only the Hebrew subset, Pedro 2026-11-03), transliteration of STEPBible with the prefix join written «-», «En el Antiguo Testamento», parse in Spanish from the same dictionary | Pedro's answer 8; data-driven |
 | P (fonts) | `Gentium Book Plus` for Greek | added to the site with `next/font` (`--font-greek`, listed in DESIGN since 2026-10-21 but never built), Greek and Latin subsets, 400/700 | DESIGN §2 token |
+| U2 link and line | the page and section as a link («La posición católica, La Escritura que usa»), a hand-written line («En el pasaje Juan 6:51-58, con su lectura católica.») | the same link (page title, section label) from the registry's pages; the line is generated: «La Eucaristía. En el pasaje Juan 6:51–58, 60–69.» for a passage of «La Escritura que usa» (its own refs, parallels and verse references inside its text) or «La Eucaristía. Citado en el texto de esta sección.» for a reference in the prose of a section | DEC 2026-11-03 (open point 5): no data holds the hand-written wording; nothing is invented |
+| U (data) | uses of Juan 6:51-58 and 53-56 by tradition, plus the Fathers' use | every section of every published page (teach, why, scripture, objections, life, authority) whose text cites the verse (`{v:…}`), and every passage ref covering it; a whole-chapter ref («Juan 6») covers each verse of the chapter; only Spanish pages exist (the English panel's «Usos» stays inert); the Fathers' use («Agustín lo cita…») is not in the registry | the registry is what exists; richer data waits |
+| U3 | no empty state | none: a verse nobody cites keeps «Usos» visible and inert (as «Palabras» without data) | Pedro 2026-10-27 (visible, inert) |
 | P (no data) | sections without data are hidden | «Palabras» stays visible and inert where the verse has no word data (deuterocanonical books) or the chosen edition numbers the chapter differently from the default | Pedro's decision of 2026-10-27 (inert, visible); `numberingDiffers` as «Traducciones» |
 
 ## Data conflicts and open points (batched to Pedro 2026-11-03; defaults in brackets)
@@ -128,3 +131,4 @@ Every checklist line ticked or listed in the deviations table; John 6 regression
 - 2026-11-03 18:39 (start of B1.0): session 7 %, weekly 72 % (cap 82 % inclusive). B1.0: reading and measuring the artifact, writing this file.
 - 2026-11-03 18:59 (B1.0 → B1.1, data regeneration and loader): weekly 72 %.
 - 2026-11-03 19:15 (B1.2 built and tested): weekly 73 %.
+- 2026-11-03 19:24 (B1.2 frozen as kit 220; B1.3 «Usos» built): weekly 73 %.

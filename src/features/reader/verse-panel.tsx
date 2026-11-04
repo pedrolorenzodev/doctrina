@@ -5,6 +5,7 @@ import { ActionButton } from "@/components/ui/action";
 import { CopyButton } from "@/components/ui/copy-button";
 import { HighlightColors } from "@/features/reader/highlight-colors";
 import { PanelSections, type PanelSection } from "@/features/reader/panel-sections";
+import type { PanelUsesText } from "@/features/reader/panel-uses";
 import type { PanelWordsText } from "@/features/reader/panel-words";
 import { flipBlocks } from "@/lib/block-motion";
 import { useRef, type ReactNode } from "react";
@@ -30,6 +31,7 @@ type VersePanelText = {
     english: string;
   };
   words: PanelWordsText;
+  uses: PanelUsesText & { inPassage: string; inText: string };
 };
 
 type VersePanelProps = {

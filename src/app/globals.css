@@ -80,6 +80,8 @@
   --text-row--line-height: 1.45;
   --text-panel-translation: 16px;
   --text-panel-translation--line-height: 1.6;
+  --text-panel-use: 18px;
+  --text-panel-use--line-height: 1.4;
   --text-word-original: 20px;
   --text-word-original--line-height: 1.3;
   --text-word-gloss: 16.5px;

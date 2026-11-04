@@ -45,18 +45,23 @@ test("the verse panel has Notas, Palabras, Usos and Traducciones with their coun
   await expect(labels.nth(0)).toContainText("1");
   await expect(labels.nth(1)).toContainText("Palabras");
   await expect(labels.nth(1)).toContainText("28");
-  await expect(labels.nth(2)).toHaveText("Usos");
+  await expect(labels.nth(2)).toContainText("Usos");
+  await expect(labels.nth(2)).toContainText(/\d/);
   await expect(labels.nth(3)).toContainText("Traducciones");
   await expect(labels.nth(0)).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(body)).toContainText("El discurso del pan de vida.");
 });
 
-test("«Usos» is inert: pressing it changes nothing", async ({ page }) => {
+test("«Usos» is inert where nothing cites the verse: pressing it changes nothing", async ({ page }) => {
   await openVerse(page);
+  await page.goto("/es/biblia/juan/2");
+  await page.locator(verseButton(1)).click();
+  await expect(page.locator(panel)).toHaveAttribute("data-open", "true");
+  await page.waitForTimeout(500);
   const before = await page.locator(body).innerText();
   await tab(page, /^Usos/).click();
   await page.waitForTimeout(500);
-  await expect(tab(page, /^Notas/)).toHaveAttribute("aria-pressed", "true");
+  await expect(tab(page, /^Palabras/)).toHaveAttribute("aria-pressed", "true");
   await expect(tab(page, /^Usos/)).toHaveAttribute("aria-pressed", "false");
   expect(await page.locator(body).innerText()).toBe(before);
 });

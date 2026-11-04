@@ -44,10 +44,13 @@ import { nbspBeforeDigits } from "@/lib/locator";
 import { clippedQuote, type Note, type NoteDraft } from "@/lib/notes";
 import { numberingDiffers } from "@/content/bible/numbering-note";
 import type { ReaderTranslationView } from "@/content/get-reader-chapter";
+import type { VerseUse } from "@/content/get-verse-uses";
+import { PanelUses } from "@/features/reader/panel-uses";
 
 type ReaderBodyProps = {
   views: ReaderTranslationView[];
   wordCounts: Record<string, number>;
+  uses: Record<string, VerseUse[]>;
   defaultId: string;
   bookId: string;
   deuteroNotice: string | null;
@@ -96,6 +99,7 @@ const noteClassName = "mt-5.5 mb-0 max-w-140 text-reader-note text-ink-3";
 export function ReaderBody({
   views,
   wordCounts,
+  uses,
   defaultId,
   bookId,
   deuteroNotice,
@@ -284,6 +288,7 @@ export function ReaderBody({
   const editor = notes.editing && notes.editing.draft.verse === verse ? notes.editing : null;
   const verseNotes = verse === null ? [] : notes.at(verse).filter((note) => note.id !== editor?.noteId);
   const sectionText = panel.text.sections;
+  const usesOfVerse = verse === null || differs ? [] : (uses[String(verse)] ?? []);
   const wordsOfVerse = verse === null ? 0 : (wordCounts[String(verse)] ?? 0);
   const otherEditions =
     verse === null
@@ -349,8 +354,14 @@ export function ReaderBody({
           ),
         }
       : { id: "words", label: sectionText.words, content: null },
-    // TODO: «Usos» lists where Doctrina cites this verse once the citation registry is queryable
-    { id: "uses", label: sectionText.uses, content: null },
+    usesOfVerse.length > 0
+      ? {
+          id: "uses",
+          label: sectionText.uses,
+          count: usesOfVerse.length,
+          content: <PanelUses uses={usesOfVerse} text={panel.text.uses} />,
+        }
+      : { id: "uses", label: sectionText.uses, content: null },
     ...(otherEditions.length > 0
       ? [
           {
