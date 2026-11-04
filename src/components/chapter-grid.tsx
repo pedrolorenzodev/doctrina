@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useSyncExternalStore } from "react";
+import { useSyncExternalStore, type MouseEvent } from "react";
+import { scrollToChapter } from "@/lib/active-chapter";
 import { getReadChapters, noReadChapters, subscribeReadChapters } from "@/lib/read-chapter-store";
 import { readChapterKey } from "@/lib/read-chapters";
 
@@ -13,6 +14,7 @@ type ChapterGridProps = {
   currentChapter: number | null;
   labelTemplate: string;
   roomy?: boolean;
+  onPick?: () => void;
 };
 
 const cellClassName =
@@ -31,8 +33,14 @@ export function ChapterGrid({
   currentChapter,
   labelTemplate,
   roomy = false,
+  onPick,
 }: ChapterGridProps) {
   const read = useSyncExternalStore(subscribeReadChapters, getReadChapters, () => noReadChapters);
+  const stayInStream = (event: MouseEvent<HTMLAnchorElement>, chapter: number) => {
+    onPick?.();
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (scrollToChapter({ book: bookId, chapter })) event.preventDefault();
+  };
   return Array.from({ length: count }, (_, index) => {
     const chapter = index + 1;
     const isCurrent = chapter === currentChapter;
@@ -44,6 +52,7 @@ export function ChapterGrid({
           aria-label={labelTemplate.replace("{book}", bookName).replace("{chapter}", String(chapter))}
           aria-current={isCurrent ? "page" : undefined}
           data-chapter={chapter}
+          onClick={(event) => stayInStream(event, chapter)}
           data-current={isCurrent || undefined}
           data-read={read.has(readChapterKey(bookId, chapter)) || undefined}
           className={roomy ? `${cellClassName} ${roomyCellClassName}` : cellClassName}

@@ -140,6 +140,7 @@ export function BookPicker({ text, books, currentBook, currentChapter, title }: 
                   currentChapter={picked.id === currentBook ? currentChapter : null}
                   labelTemplate={text.chapterOf}
                   roomy
+                  onPick={close}
                 />
               </ul>
             </>

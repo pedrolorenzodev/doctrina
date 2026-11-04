@@ -119,6 +119,7 @@ type TreeItemProps = {
   openedBooks: Set<string>;
   currentChapter: number | null;
   text: SidebarText;
+  onPick: () => void;
 };
 
 function TreeItem({
@@ -130,6 +131,7 @@ function TreeItem({
   openedBooks,
   currentChapter,
   text,
+  onPick,
 }: TreeItemProps) {
   if (node.kind === "heading") {
     return (
@@ -226,6 +228,7 @@ function TreeItem({
               count={chapters.count}
               currentChapter={isCurrentBook ? currentChapter : null}
               labelTemplate={text.chapterOf}
+              onPick={onPick}
             />
           ) : null}
         </ul>
@@ -242,6 +245,7 @@ function TreeItem({
               openedBooks={openedBooks}
               currentChapter={currentChapter}
               text={text}
+              onPick={onPick}
             />
           ))}
         </ul>
@@ -461,6 +465,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
                     openedBooks={shownBooks}
                     currentChapter={currentChapter}
                     text={text}
+                    onPick={() => setOpen(false)}
                   />
                 ))}
               </ul>

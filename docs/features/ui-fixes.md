@@ -65,6 +65,12 @@ Audit (grep of `TODO`, `href="#"`, `aria-disabled`, `PageLink` without `href`):
 
 Stale tests fixed while here: `header.spec` (switcher was asserted inert), `father.spec` crumbs, `soon-screens` (the home no longer mutes bautismo, papado, sola scriptura). Three `father.spec` cases («Dónde aparece»: 167, 193, 203) already failed before this work because doctrine pages now cite the Fathers in more places: not touched, for the next round.
 
+## Fix 6: the reader's chapter jumps, what was measured
+
+Reproduced (Chromium, real wheel events, per frame: where the verse at the top of the reading area is): (1) fast scroll down (400 wheel steps of 100 px from John 6): 71 frames where the verse on screen jumped 2700–5500 px, up to ~4000 px forward = «el scroll se teletransporta a un capítulo más lejano»; cause in GOTCHAS (trim of the window when a scroll event arrives before the observer). Scroll up across a book boundary (Luke 2 → Mark): no jumps. (2) Tree: picking a chapter that is mounted or next door navigated (full re-mount) instead of scrolling; picking the chapter the page was opened on, after the window had moved on, only changed the URL (Next saw the same URL as its own, the stream had replaced it): nothing happened on screen. Picking a far chapter lands correctly (route change).
+Fixed: trim holds the reading chapter; tree chapter links scroll within the stream when they can, reset to the opening chapter when it is the one chosen, and navigate otherwise (phone drawer closes). Measured after: 0 jumps over 400 steps; tree picks of mounted chapters land on their first verse. Pinned-at-the-edge check: in 300-step flings (40 and 100 px) the viewport reached the document's end in at most 1–2 frames, so the content stays ahead locally (one fast local network: not measured on a slow one).
+Not changed: how many chapters are mounted (5) and the prefetch distance. A single-frame hitch of ~4500 px appeared once in a dev-server smooth scroll of the tree jump upward (a long frame, not a layout jump); not seen on the production build.
+
 ## Decisions made while Pedro was away
 
 (agent's call, newest last)
@@ -80,6 +86,7 @@ Stale tests fixed while here: `header.spec` (switcher was asserted inert), `fath
 - `src/content/lede-emphasis.ts` (new), `src/app/[lang]/doctrines/[doctrine]/[tradition]/page.tsx`, `e2e/doctrine-lede-emphasis.spec.ts` (new) (fix 3).
 - `src/features/shell/tree-motion.ts`, `src/features/shell/sidebar.tsx`, `e2e/tree-mark-travel.spec.ts` (new), `docs/GOTCHAS.md` (fix 4).
 - `src/features/doctrine/tradition-switcher.tsx`, the three tradition route pages (main, objections, passages), `src/content/father-timeline.ts`, `src/features/history/father-timeline.tsx`, `src/features/history/general-timeline.tsx`, `src/app/[lang]/history/fathers/[father]/page.tsx`, `e2e/tradition-switcher.spec.ts` (new), `e2e/header.spec.ts`, `e2e/father.spec.ts`, `e2e/soon-screens.spec.ts` (fix 5).
+- `src/features/reader/reader-stream.tsx`, `src/components/chapter-grid.tsx`, `src/features/reader/book-picker.tsx`, `src/features/shell/sidebar.tsx` (fix 4 + 6), `e2e/reader-stream-scroll.spec.ts` (new), `docs/GOTCHAS.md` (fix 6).
 
 ## Usage log
 
@@ -87,4 +94,4 @@ Stale tests fixed while here: `header.spec` (switcher was asserted inert), `fath
 
 ## State
 
-Fix 1 frozen (block 227). Fix 2 frozen (block 228). Fix 3 frozen (block 229). Fix 4 frozen (block 230). Fix 5 frozen (block 231). Next: fix 6 (reader position and infinite scroll).
+Fix 1 frozen (block 227). Fix 2 frozen (block 228). Fix 3 frozen (block 229). Fix 4 frozen (block 230). Fix 5 frozen (block 231). Fix 6 frozen (block 232). Next: fix 7 (ruler at 1700 px), then fix 8 (unstable tests).

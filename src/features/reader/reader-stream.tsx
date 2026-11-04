@@ -11,7 +11,7 @@ import { foldBox } from "@/lib/fold-box";
 import { setYourNotesOpen } from "@/features/reader/your-notes-store";
 import { useKeepTopVerse } from "@/features/reader/use-keep-top-verse";
 import { loadChapter, seedChapter } from "@/features/reader/chapter-data";
-import { isSmoothScrolling, scrollOffset, scrollToY, shiftScroll } from "@/lib/scroll";
+import { isSmoothScrolling, jumpToY, scrollOffset, scrollToY, shiftScroll } from "@/lib/scroll";
 
 type Panel = ComponentProps<typeof ReaderBody>["panel"];
 
@@ -55,6 +55,7 @@ export function ReaderStream({
   const busy = useRef(false);
   const latest = useRef(chapters);
   const holding = useRef<{ key: string; docTop: number } | null>(null);
+  const resetToTop = useRef(false);
   const mounted = useRef(new Set<string>());
   useEffect(() => {
     latest.current = chapters;
@@ -87,6 +88,12 @@ export function ReaderStream({
     mounted.current = new Set(chapters.map((entry) => keyOf(entry.book.id, entry.chapter)));
   }, [chapters]);
   useLayoutEffect(() => {
+    if (resetToTop.current) {
+      resetToTop.current = false;
+      holding.current = null;
+      jumpToY(0);
+      return;
+    }
     const held = holding.current;
     if (!held) return;
     holding.current = null;
@@ -174,6 +181,14 @@ export function ReaderStream({
     };
     registerChapterScroller((target) => {
       if (toSection(target)) return true;
+      if (keyOf(target.book, target.chapter) === firstKey) {
+        resetToTop.current = true;
+        foldRan.current = false;
+        setFoldStarted(false);
+        setChapters([initial]);
+        setActiveKey(firstKey);
+        return true;
+      }
       const list = latest.current;
       const sides = [
         ["previous", list[0]?.previous],
@@ -185,7 +200,7 @@ export function ReaderStream({
       return true;
     });
     return () => registerChapterScroller(null);
-  }, [extend]);
+  }, [extend, firstKey, initial]);
 
   useEffect(() => {
     for (const side of ["previous", "next"] as const) {
@@ -224,17 +239,23 @@ export function ReaderStream({
   }, [extend]);
 
   useEffect(() => {
-    if (chapters.length <= windowSize) return;
+    if (chapters.length <= windowSize || latest.current !== chapters) return;
     const sections = [...(stream.current?.querySelectorAll<HTMLElement>("[data-stream-chapter]") ?? [])];
-    const activeIndex = sections.findIndex((section) => section.dataset.streamChapter === activeKey);
-    if (activeIndex < 0) return;
-    const keep = Math.floor(windowSize / 2);
-    setChapters((current) => {
-      if (current.length <= windowSize) return current;
-      const start = Math.min(Math.max(0, activeIndex - keep), current.length - windowSize);
-      return current.slice(start, start + windowSize);
-    });
-  }, [chapters.length, activeKey]);
+    const line = scrollOffset();
+    const reading = sections.findIndex((section) => section.getBoundingClientRect().bottom > line);
+    const center =
+      reading >= 0 ? reading : sections.findIndex((section) => section.dataset.streamChapter === activeKey);
+    const readingSection = sections[center];
+    if (!readingSection?.dataset.streamChapter) return;
+    const start = Math.min(Math.max(0, center - Math.floor(windowSize / 2)), chapters.length - windowSize);
+    if (start > 0) {
+      holding.current = {
+        key: readingSection.dataset.streamChapter,
+        docTop: readingSection.getBoundingClientRect().top + scrollY,
+      };
+    }
+    setChapters(chapters.slice(start, start + windowSize));
+  }, [chapters, activeKey]);
 
   useEffect(() => {
     let frame = 0;
