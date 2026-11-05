@@ -59,6 +59,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
     yourNotes: labels.yourNotes,
     shortCitation: labels.shortCitation,
     markers: labels.fatherWork.markers,
+    cardsLabel: labels.fatherWork.notesCardsLabel,
     columnHeads: {
       first: labels.picker.label,
       second: labels.parallel.label,

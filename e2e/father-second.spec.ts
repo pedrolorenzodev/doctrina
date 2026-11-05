@@ -92,7 +92,7 @@ test.describe("Fathers' reader: the second translation", () => {
     const first = (await page.locator("#d-1").boundingBox())!;
     const second = (await page.locator(secondOf(1)).boundingBox())!;
     expect(second.y).toBeGreaterThan(first.y + first.height - 12);
-    await expect(page.locator(`${root} > div`)).toHaveCount(32);
+    await expect(page.locator(`${root} > div:not([role="group"])`)).toHaveCount(32);
   });
 
   test("«Al lado» aligns the two editions division by division in two columns", async ({ page }) => {

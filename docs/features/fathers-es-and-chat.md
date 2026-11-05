@@ -30,7 +30,7 @@ Session «Padres», 2026-11-04. Pedro's words are quoted in the task prompt; thi
 2. **Edition by site language on first visit.** `defaultEdition = locale === "es" && spanish ? "es" : "en"` in the work page, passed to `ByFatherEdition`, the picker and `FatherAsk`. Verified: `father-edition.spec.ts` (first visit es/en, choice wins and is remembered, no-Spanish work shows English); `father-reader` and `father-ask` specs pre-set the English choice (`helpers.ts`).
 3. **Reading-content translation.** The work's `h1`, `workName` (panel, citations), the `prologue`/`preface`/`moscow` markers follow the edition's language (`markers` in `ui-text`, `father-marker.ts`); the division headings and the Spanish titles come from the Spanish corpus. Page-level parts (breadcrumb current, document title, chat context, the partial-range line) stay in the site language. Verified: three new specs in `father-edition.spec.ts`; screenshots `tmp/shots/round2/s3-*` (1440/390, light/dark, es/en).
 4. **«Segunda traducción».** `createSecondChoiceStore`, `fatherSecondStore`, `ParallelMenu`/hooks with a store argument, `FatherStrip` button, `FatherBody` over `views` (both editions), page wrapper widens for side. Verified: `e2e/father-second.spec.ts` (15 pass), Bible `reader-parallel` and `reader-translation` still pass; screenshots `tmp/shots/round2/s4-*` (1440 side/below, 390 below, light/dark, Bible beside).
-5. Notes preview cards in the Fathers' reader: pending.
+5. **Notes preview cards.** `NoteCards` (`topOf`), `FatherBody` cards + word previews + `hideLabel`, `fatherTop`; the page wrapper already carried `reader-column`. Verified: `e2e/father-note-cards.spec.ts` (17 pass, the Bible's geometry numbers: 40 px, 240 px, 8 px gap, shift 297/151/83/66, 0 → 57 px), Bible `reader-note-cards` still green; screenshots `tmp/shots/round2/s5-*` beside the Bible's.
 
 ### Decisions made while Pedro was away (round 2)
 - Step 1 read as «30 % less than now» (.3 × .7 = .21), the same reading as the 2026-10-31 light tuning (.18 → .126).
@@ -42,4 +42,4 @@ Session «Padres», 2026-11-04. Pedro's words are quoted in the task prompt; thi
 - 2026-11-05 09:02 session 4 %, weekly 1 % (week had reset).
 
 ### State (round 2)
-- Step 1 done, frozen as block 238. Step 2 done (dev server; full run on the build pending at the end). Step 3 done. Step 4 done. Next: step 5 (notes cards).
+- Step 1 done, frozen as block 238. Step 2 done (dev server; full run on the build pending at the end). Step 3 done. Step 4 done. Step 5 done. Next: full verify on the build, critique pass, final report.

@@ -15,7 +15,7 @@ test("a Father's work is read division by division with its locator, edition and
   await expect(page.locator("main")).toContainText(
     "Texto en inglés. Traducción de Joseph Barber Lightfoot and J. R. Harmer, 1891.",
   );
-  const divisions = page.locator("[data-father-text] > div");
+  const divisions = page.locator("[data-father-text] > div[id^='d-']");
   await expect(divisions).toHaveCount(16);
   await expect(divisions.first()).toContainText("There are two ways");
   await expect(page.locator("[data-father-text]")).toHaveAttribute("lang", "en");
@@ -25,7 +25,7 @@ test("a Father's work is read division by division with its locator, edition and
 test("the division locator sits in the left margin from 768 px and above the text below it", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(didache);
-  const first = page.locator("[data-father-text] > div").first();
+  const first = page.locator("[data-father-text] > div[id^='d-']").first();
   const locator = (await first.locator("button").first().boundingBox())!;
   const textLeft = await first.locator("[data-verse-text]").evaluate((node) => node.getClientRects()[0]!.left);
   expect(locator.x + locator.width).toBeLessThan(textLeft);
@@ -256,7 +256,7 @@ test("«Tus notas» of a work lists its notes and a note on the whole work", asy
 test("a division with a note shows the pen between its locator and its text, 8 / 5 / 8 px, level with the first line", async ({
   page,
 }) => {
-  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.setViewportSize({ width: 1300, height: 900 });
   await page.addInitScript(() => {
     localStorage.setItem(
       "doctrina-notes",
@@ -312,7 +312,7 @@ test("a division with a heading keeps its locator and pen level with the first l
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/es/historia/obras/1-clement");
   const placed = await page.evaluate(() => {
-    const row = [...document.querySelectorAll<HTMLElement>("[data-father-text] > div")].find((item) =>
+    const row = [...document.querySelectorAll<HTMLElement>("[data-father-text] > div[id^='d-']")].find((item) =>
       item.querySelector("p.font-ui"),
     );
     if (!row) return null;
@@ -334,8 +334,9 @@ test("a division with a heading keeps its locator and pen level with the first l
 test.describe("division numbers never touch the paragraph", () => {
   test.use({ viewport: { width: 1024, height: 768 } });
 
-  const placeOf = (page: import("@playwright/test").Page, locator: string) =>
-    page.evaluate((wanted) => {
+  const placeOf = async (page: import("@playwright/test").Page, locator: string) => {
+    await page.locator(`[data-locator="${locator}"]`).waitFor();
+    return page.evaluate((wanted) => {
       const label = document.querySelector<HTMLElement>(`[data-locator="${wanted}"]`)!.getBoundingClientRect();
       const text = document
         .querySelector<HTMLElement>(`[data-locator="${wanted}"]`)!
@@ -349,6 +350,7 @@ test.describe("division numbers never touch the paragraph", () => {
         textTop: text.top,
       };
     }, locator);
+  };
 
   test("a long locator such as 1.preface.1 is set above its paragraph, inside the column", async ({ page }) => {
     await page.goto("/es/historia/obras/irenaeus-against-heresies");

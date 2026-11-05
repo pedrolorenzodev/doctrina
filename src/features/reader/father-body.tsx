@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragraph";
 import { UndoBar } from "@/components/undo-bar";
 import type { FatherDivision } from "@/content/get-father-works";
@@ -9,11 +9,13 @@ import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
 import { goToUnit } from "@/features/reader/go-to-unit";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
+import { NoteCards, type NoteCard } from "@/features/reader/note-cards";
+import { clearNoteWords, markNoteWords } from "@/features/reader/note-words";
 import { NoteEditor } from "@/features/reader/note-editor";
 import { NoteMarkers } from "@/features/reader/note-markers";
 import { PanelNotes } from "@/features/reader/panel-notes";
 import type { ReaderSelection, VerseRange } from "@/features/reader/read-selection";
-import { fieldOnOpen, openAskDrawer } from "@/lib/ask-drawer";
+import { closedAskDrawer, fieldOnOpen, getAskDrawer, openAskDrawer, subscribeAskDrawer } from "@/lib/ask-drawer";
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
 import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
@@ -33,7 +35,7 @@ import { chooseFatherEdition, useChosenFatherEdition } from "@/lib/father-editio
 import { fatherSecondStore } from "@/lib/father-second-translation";
 import { nbspBeforeDigits } from "@/lib/locator";
 import type { Segment } from "@/lib/highlights";
-import { clippedQuote, type NoteDraft } from "@/lib/notes";
+import { clippedQuote, type Note, type NoteDraft } from "@/lib/notes";
 
 export type FatherEditionView = {
   id: string;
@@ -68,6 +70,7 @@ type FatherBodyProps = {
       one: string;
       many: string;
       inEdition: string;
+      cardForeign: string;
       delete: DeleteNoteText;
       removed: string;
     };
@@ -76,6 +79,7 @@ type FatherBodyProps = {
     shortCitation: string;
     columnHeads: ColumnHeadText;
     markers: Record<string, string>;
+    cardsLabel: string;
   };
 };
 
@@ -86,6 +90,12 @@ const anchorOf = (locator: string) => `d-${locator.replace(/[^a-zA-Z0-9.-]+/g, "
 const excerptLimit = 90;
 const excerptOf = (text: string) => (text.length > excerptLimit ? `${text.slice(0, excerptLimit).trimEnd()}…` : text);
 const chapterOfWork = 1;
+
+const fatherTop = (root: HTMLElement, ordinal: string) => {
+  const text = root.querySelector<HTMLElement>(`[data-verse-text="${ordinal}"]`);
+  const line = text?.parentElement;
+  return line ? line.getBoundingClientRect().top - root.getBoundingClientRect().top : 0;
+};
 
 export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBodyProps) {
   const ids = views.map((view) => view.id);
@@ -123,6 +133,11 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
   const textRoot = useRef<HTMLDivElement>(null);
   useKeepTopVerse(textRoot);
   const yourOpen = useYourNotesOpen();
+  const askOpen = useSyncExternalStore(
+    subscribeAskDrawer,
+    () => getAskDrawer().open,
+    () => closedAskDrawer.open,
+  );
   const undoState = useUndo();
   const highlights = useChapterHighlights({
     translationId: selected.key,
@@ -312,6 +327,53 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
       }),
     )
     .sort((a, b) => a.verse - b.verse || a.at - b.at);
+  const chapterNotes = selected.divisions.flatMap((division) => notes.at(division.ordinal));
+  const cards: NoteCard[] = chapterNotes.map((note) => {
+    const first = note.verse ?? 0;
+    const place = nbspBeforeDigits(referenceOf(selected, first, note.verseTo ?? first));
+    const foreign = note.scope === "words" && note.translationId !== selected.key;
+    const edition = views.find((candidate) => candidate.key === note.translationId)?.abbreviation;
+    return {
+      id: note.id,
+      verse: first,
+      place:
+        foreign && edition
+          ? panel.notes.cardForeign.replace("{reference}", place).replace("{edition}", edition)
+          : place,
+      text: note.text,
+      date: dateLabel(note.updatedAt),
+    };
+  });
+  const secondKey = secondView?.key ?? null;
+  const latest = useRef({ chapterNotes, key: selected.key, secondKey, notesAt: notes.at });
+  useEffect(() => {
+    latest.current = { chapterNotes, key: selected.key, secondKey, notesAt: notes.at };
+  });
+  const previewNotes = useCallback((found: Note[], ordinal: number | null) => {
+    if (found.length > 0 && textRoot.current)
+      markNoteWords(textRoot.current, found, latest.current.key, latest.current.secondKey);
+    else clearNoteWords();
+    setPreviewed(ordinal);
+  }, []);
+  const previewNote = useCallback(
+    (id: string | null) => {
+      const note = id === null ? undefined : latest.current.chapterNotes.find((candidate) => candidate.id === id);
+      previewNotes(note ? [note] : [], note?.verse ?? null);
+    },
+    [previewNotes],
+  );
+  const previewDivision = useCallback(
+    (ordinal: number | null) => previewNotes(ordinal === null ? [] : latest.current.notesAt(ordinal), ordinal),
+    [previewNotes],
+  );
+  const openCard = (id: string, element: HTMLElement) => {
+    const note = chapterNotes.find((candidate) => candidate.id === id);
+    if (!note || note.verse === null) return;
+    open(note.verse, false, element);
+    notes.openExisting(note);
+  };
+  const cardsShown = verse === null && !yourOpen && !askOpen && !sideLayout;
+
   const deletingNote = deleting === null ? null : (listedNotes.find((item) => item.id === deleting) ?? null);
 
   const textSpan = (division: FatherDivision, marked: Segment[], attributes: object) => (
@@ -401,9 +463,9 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
                         <NoteMarkers
                           mark={mark}
                           previewed={previewed === division.ordinal}
-                          hideLabel={false}
+                          hideLabel={cardsShown}
                           onOpen={(event) => open(division.ordinal, false, event.currentTarget)}
-                          onPreview={(on) => setPreviewed(on ? division.ordinal : null)}
+                          onPreview={(on) => previewDivision(on ? division.ordinal : null)}
                         />
                       ) : null}
                     </span>
@@ -444,6 +506,18 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
             </Fragment>
           );
         })}
+        {sideLayout ? null : (
+          <NoteCards
+            label={panel.cardsLabel}
+            cards={cards}
+            hidden={verse !== null || yourOpen || askOpen}
+            rootRef={textRoot}
+            topOf={fatherTop}
+            onOpen={openCard}
+            onPreview={previewNote}
+            previewed={previewed}
+          />
+        )}
       </div>
       {selected.foot}
       {second ? second.view.foot : null}

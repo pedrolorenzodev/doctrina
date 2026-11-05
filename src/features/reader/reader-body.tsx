@@ -14,7 +14,7 @@ import { readChapterKey } from "@/lib/read-chapters";
 import { goToUnit } from "@/features/reader/go-to-unit";
 import { keepAboveSheet } from "@/features/reader/keep-above-sheet";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
-import { NoteCards, type NoteCard } from "@/features/reader/note-cards";
+import { NoteCards, verseTop, type NoteCard } from "@/features/reader/note-cards";
 import { YourNotesButton } from "@/features/reader/your-notes-button";
 import { YourNotesPanel, type YourNotesText } from "@/features/reader/your-notes-panel";
 import {
@@ -485,6 +485,7 @@ export function ReaderBody({
     });
     return release;
   }, []);
+  const topOf = useCallback((root: HTMLElement, number: string) => verseTop(root, number, idPrefix), [idPrefix]);
   const openCard = (id: string, element: HTMLElement) => {
     const note = chapterNotes.find((candidate) => candidate.id === id);
     if (!note || note.verse === null) return;
@@ -564,7 +565,7 @@ export function ReaderBody({
               cards={cards}
               hidden={verse !== null || yourOpen || askOpen}
               rootRef={textRoot}
-              idPrefix={idPrefix}
+              topOf={topOf}
               onOpen={openCard}
               onPreview={previewNote}
               previewed={previewed}

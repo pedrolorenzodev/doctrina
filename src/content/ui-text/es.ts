@@ -509,6 +509,7 @@ export const es = {
       partial: "Esta traducción cubre una parte de la obra: de {first} a {last}.",
       aiName: "Traducción de Doctrina con IA",
       aiAbbreviation: "IA {year}",
+      notesCardsLabel: "Notas de esta obra",
       missingWork: "La traducción elegida no está en esta obra; se muestra de nuevo en las que la tienen.",
     },
   },

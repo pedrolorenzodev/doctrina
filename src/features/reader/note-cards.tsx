@@ -9,7 +9,7 @@ type NoteCardsProps = {
   cards: NoteCard[];
   hidden: boolean;
   rootRef: RefObject<HTMLDivElement | null>;
-  idPrefix: string;
+  topOf: (root: HTMLElement, verse: string) => number;
   onOpen: (id: string, opener: HTMLElement) => void;
   onPreview: (id: string | null) => void;
   previewed: number | null;
@@ -17,7 +17,7 @@ type NoteCardsProps = {
 
 const gapPx = 8;
 
-function verseTop(root: HTMLElement, verse: string, idPrefix: string): number {
+export function verseTop(root: HTMLElement, verse: string, idPrefix: string): number {
   const unit = document.getElementById(`${idPrefix}v-${verse}`);
   if (!unit) return 0;
   const line = unit.querySelector<HTMLElement>("[data-verse-text]")?.getClientRects()[0];
@@ -26,7 +26,7 @@ function verseTop(root: HTMLElement, verse: string, idPrefix: string): number {
 }
 const resizeDelayMs = 150;
 
-export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onPreview, previewed }: NoteCardsProps) {
+export function NoteCards({ label, cards, hidden, rootRef, topOf, onOpen, onPreview, previewed }: NoteCardsProps) {
   const box = useRef<HTMLDivElement>(null);
   const [rootChecks, setRootChecks] = useState(0);
 
@@ -43,7 +43,7 @@ export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onP
       if (container.offsetParent === null) return;
       let floor = 0;
       for (const card of container.querySelectorAll<HTMLElement>("[data-note-card]")) {
-        const top = Math.max(verseTop(root, card.dataset.verse ?? "", idPrefix), floor);
+        const top = Math.max(topOf(root, card.dataset.verse ?? ""), floor);
         card.style.setProperty("--note-top", `${top}px`);
         floor = top + card.offsetHeight + gapPx;
       }
@@ -61,7 +61,7 @@ export function NoteCards({ label, cards, hidden, rootRef, idPrefix, onOpen, onP
       observer.disconnect();
       window.removeEventListener("resize", later);
     };
-  }, [cards, hidden, rootRef, idPrefix, rootChecks]);
+  }, [cards, hidden, rootRef, topOf, rootChecks]);
 
   useEffect(() => () => onPreview(null), [onPreview]);
 

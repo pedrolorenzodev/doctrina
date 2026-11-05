@@ -63,8 +63,8 @@ test.describe("Fathers' reader: the translation switch", () => {
     await expect(page.locator(pickerButton)).toHaveText(/^Traducción\s*Lightfoot 1891$/);
     await choose(page, /IA 2026/);
     await expect(page.locator(body)).toHaveAttribute("lang", "es");
-    await expect(page.locator(`${body} > div`)).toHaveCount(16);
-    await expect(page.locator(`${body} > div`).first()).toContainText("Hay dos caminos");
+    await expect(page.locator(`${body} > div[id^="d-"]`)).toHaveCount(16);
+    await expect(page.locator(`${body} > div[id^="d-"]`).first()).toContainText("Hay dos caminos");
     await expect(page.locator(pickerButton)).toHaveText(/^Traducción\s*IA 2026$/);
     await expect(page.locator("main")).toContainText("Licencia: Traducción de Doctrina, dominio público (CC0)");
     await expect(page.locator("main")).not.toContainText("Borrador: la transcripción");
@@ -131,13 +131,19 @@ test.describe("Fathers' reader: the translation switch", () => {
     page,
   }) => {
     await open(page, "/es/historia/obras/irenaeus-against-heresies");
-    const spanishFirst = await page.locator(`${body} > div`).evaluateAll((nodes) => nodes.map((node) => node.id));
+    const spanishFirst = await page
+      .locator(`${body} > div[id^="d-"]`)
+      .evaluateAll((nodes) => nodes.map((node) => node.id));
     await chooseEnglish(page);
     await expect.poll(() => page.locator(body).getAttribute("lang")).toBe("en");
-    const englishAnchors = await page.locator(`${body} > div`).evaluateAll((nodes) => nodes.map((node) => node.id));
+    const englishAnchors = await page
+      .locator(`${body} > div[id^="d-"]`)
+      .evaluateAll((nodes) => nodes.map((node) => node.id));
     await choose(page, /IA 2026/);
     await expect(page.locator("main")).toContainText("Esta traducción cubre una parte de la obra: de 3.1.1 a 5.36.3.");
-    const spanishAnchors = await page.locator(`${body} > div`).evaluateAll((nodes) => nodes.map((node) => node.id));
+    const spanishAnchors = await page
+      .locator(`${body} > div[id^="d-"]`)
+      .evaluateAll((nodes) => nodes.map((node) => node.id));
     expect(spanishAnchors).toEqual(spanishFirst);
     expect(spanishAnchors.length).toBeGreaterThan(300);
     expect(spanishAnchors.length).toBeLessThan(englishAnchors.length);
@@ -146,14 +152,14 @@ test.describe("Fathers' reader: the translation switch", () => {
 
   test("the same paragraph carries its note across editions and a highlight stays in its own", async ({ page }) => {
     await open(page, didache);
-    await page.locator(`${body} > div`).first().locator("button").first().click();
+    await page.locator(`${body} > div[id^="d-"]`).first().locator("button").first().click();
     await page.getByRole("button", { name: "Nota", exact: true }).first().click();
     await page.getByRole("textbox").first().fill("una nota");
     await page.waitForTimeout(500);
     await page.keyboard.press("Escape");
     await chooseEnglish(page);
     await expect(page.locator(body)).toHaveAttribute("lang", "en");
-    await expect(page.locator(`${body} > div`).first()).toContainText("1 nota");
+    await expect(page.locator(`${body} > div[id^="d-"]`).first()).toContainText("1 nota");
   });
 
   test("at 390 px the strip keeps the switch and nothing overflows", async ({ page }) => {
