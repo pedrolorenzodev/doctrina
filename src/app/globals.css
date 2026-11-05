@@ -1517,6 +1517,10 @@
   }
 }
 
+@utility h-cap {
+  height: 1cap;
+}
+
 @utility selected-lift {
   background-color: var(--color-card);
   box-shadow: inset 0 0 0 1px var(--color-rule-2);

@@ -15,6 +15,7 @@ import { TreeCarryScript, TreeScript } from "@/features/shell/tree-script";
 import { SmoothScroll } from "@/features/shell/smooth-scroll";
 import { TopBar } from "@/features/shell/top-bar";
 import { currentLocale } from "@/lib/current-locale";
+import { shareImage, siteUrl } from "@/lib/site-url";
 import { locales } from "@/lib/locale";
 import "@/app/globals.css";
 
@@ -25,8 +26,27 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { site } = getUiText(await currentLocale());
-  return { title: site.title, description: site.description };
+  const locale = await currentLocale();
+  const { site } = getUiText(locale);
+  return {
+    metadataBase: new URL(siteUrl),
+    title: site.title,
+    description: site.description,
+    openGraph: {
+      type: "website",
+      siteName: site.title,
+      title: site.title,
+      description: site.description,
+      locale: locale === "es" ? "es_AR" : "en_US",
+      images: [{ url: shareImage.path, width: shareImage.width, height: shareImage.height, alt: site.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: site.title,
+      description: site.description,
+      images: [shareImage.path],
+    },
+  };
 }
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {

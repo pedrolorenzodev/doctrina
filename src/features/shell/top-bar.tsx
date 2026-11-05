@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/brand-mark";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { MenuButton } from "@/features/shell/menu-button";
 import { LanguageSwitch } from "@/features/shell/language-switch";
@@ -15,8 +16,9 @@ export async function TopBar({ withMenu }: { withMenu: boolean }) {
       {withMenu ? <MenuButton label={shell.menuOpen} /> : null}
       <Link
         href={localeHref(locale)}
-        className="font-head text-logo font-normal text-ink no-underline opsz-24 pointer-coarse:py-3"
+        className="inline-flex items-baseline gap-2.25 font-head text-logo font-normal text-ink no-underline opsz-24 pointer-coarse:py-3"
       >
+        <BrandMark />
         {site.title}
       </Link>
       <SearchTrigger label={search.label} placeholder={search.placeholder} />
