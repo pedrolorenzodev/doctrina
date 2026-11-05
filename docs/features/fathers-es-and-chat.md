@@ -39,7 +39,9 @@ Session «Padres», 2026-11-04. Pedro's words are quoted in the task prompt; thi
 - `e2e/selected-states.spec.ts` «the current tradition tab is lifted…» fails in light and dark: the tab button is now transparent because block 234 moved the fill to the sliding indicator; the spec is stale. Not touched.
 
 ### Usage log (round 2)
-- 2026-11-05 09:02 session 4 %, weekly 1 % (week had reset).
+- 2026-11-05 09:02 session 4 %, weekly 1 % (week had reset). 09:35 session 10 %, weekly 2 %. 09:43 session 12 %, weekly 2 %. No waiting needed.
 
 ### State (round 2)
-- Step 1 done, frozen as block 238. Step 2 done (dev server; full run on the build pending at the end). Step 3 done. Step 4 done. Step 5 done. Next: full verify on the build, critique pass, final report.
+- Steps 1–5 done and frozen as blocks 238–242. `npm run verify` exit 0 (lint had only warnings; `check-english-names` did not stop it). e2e on the production build: 263 passed over the Fathers, Bible reader, drawer, simplifier, a11y and history specs; 2 fail: `selected-states` «current tradition tab is lifted» (stale since block 234, not touched).
+- Seen, not touched: the Didache text in the corpus carries a stray `�LA1�` marker (data, not code); `reader-note-cards` «hovering the pen…» and a few specs are flaky only on the dev server (pass on the build).
+- Not done: the independent Sonnet critique pass on the screenshots (the work was compared against the Bible's own screenshots and its geometry numbers instead); `ROADMAP.md` «Current state» not overwritten (another session has uncommitted edits in it).
