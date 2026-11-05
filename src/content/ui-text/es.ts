@@ -500,7 +500,11 @@ export const es = {
       editionEn: "Texto en inglés. Traducción de {translator}, {year}.",
       editionEs: "Texto en español. Traducción de {translator}, {year}.",
       draft: "Borrador: la transcripción de esta obra todavía no tuvo una lectura independiente.",
-      prologue: "Prólogo",
+      markers: {
+        prologue: "Prólogo",
+        preface: "prefacio",
+        moscow: "Moscú",
+      },
       aiTranslation: "Traducido con IA",
       partial: "Esta traducción cubre una parte de la obra: de {first} a {last}.",
       aiName: "Traducción de Doctrina con IA",

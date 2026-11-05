@@ -501,7 +501,11 @@ export const en: UiText = {
       editionEn: "Text in English. Translated by {translator}, {year}.",
       editionEs: "Text in Spanish. Translated by {translator}, {year}.",
       draft: "Draft: this transcription has not yet had an independent reading.",
-      prologue: "Prologue",
+      markers: {
+        prologue: "Prologue",
+        preface: "preface",
+        moscow: "moscow",
+      },
       aiTranslation: "Translated with AI",
       partial: "This translation covers part of the work: {first} to {last}.",
       aiName: "Doctrina AI translation",

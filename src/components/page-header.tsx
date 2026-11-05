@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
+
 type PageHeaderProps = {
   id?: string;
   className?: string;
-  title: string;
+  title: ReactNode;
   lede?: string;
   emphasis?: string;
   size?: keyof typeof titleSizes;

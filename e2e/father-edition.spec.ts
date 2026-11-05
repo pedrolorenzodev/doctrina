@@ -72,6 +72,46 @@ test.describe("Fathers' reader: the translation switch", () => {
     await expect(page.locator(body)).toHaveAttribute("lang", "es");
   });
 
+  test("the work's title follows the edition in use, on both site languages, and the h1 element is kept", async ({
+    page,
+  }) => {
+    await open(page, "/es/historia/obras/1-clement");
+    const title = page.getByRole("heading", { level: 1 });
+    await expect(title).toHaveText("La epístola de san Clemente a los corintios");
+    await title.evaluate((element) => ((element as HTMLElement).dataset.kept = "yes"));
+    await chooseEnglish(page);
+    await expect(title).toHaveText("The Epistle of S. Clement to the Corinthians");
+    await expect(title).toHaveAttribute("data-kept", "yes");
+    await open(page, "/en/history/works/1-clement");
+    await expect(title).toHaveText("The Epistle of S. Clement to the Corinthians");
+    await choose(page, /AI 2026/);
+    await expect(title).toHaveText("La epístola de san Clemente a los corintios");
+  });
+
+  test("the prologue marker and the other division markers are in the language of the edition", async ({ page }) => {
+    await open(page, "/es/historia/obras/1-clement");
+    const marker = page.locator(`${body} [data-locator="prologue"]`);
+    await expect(marker).toHaveText("Prólogo");
+    await chooseEnglish(page);
+    await expect(marker).toHaveText("Prologue");
+    await open(page, "/en/history/works/1-clement");
+    await expect(marker).toHaveText("Prologue");
+    await choose(page, /AI 2026/);
+    await expect(marker).toHaveText("Prólogo");
+    await open(page, "/es/historia/obras/irenaeus-against-heresies");
+    await expect(page.locator(`${body} [data-locator="4.preface.1"]`)).toHaveText("4.prefacio.1");
+    await chooseEnglish(page);
+    await expect(page.locator(`${body} [data-locator="4.preface.1"]`)).toHaveText("4.preface.1");
+  });
+
+  test("the headings inside the work come from the corpus of the edition chosen", async ({ page }) => {
+    await open(page, "/es/historia/obras/shepherd-hermas");
+    await expect(page.locator(body)).toContainText("Visión 1");
+    await chooseEnglish(page);
+    await expect(page.locator(body)).toContainText("Vision 1");
+    await expect(page.locator(body)).not.toContainText("Visión 1");
+  });
+
   test("the choice does not touch the Bible's translation", async ({ page }) => {
     await open(page, didache);
     await choose(page, /IA 2026/);

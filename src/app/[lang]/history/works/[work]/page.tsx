@@ -10,6 +10,7 @@ import { getSpanishFatherWork } from "@/content/get-father-works-es";
 import { fatherWorkHref, fathersIndexHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ByFatherEdition } from "@/features/reader/by-father-edition";
+import { markerLabel } from "@/features/reader/father-marker";
 import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { FatherStrip } from "@/features/reader/father-strip";
 import { FatherBody } from "@/features/reader/father-body";
@@ -58,8 +59,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
     yourNotes: labels.yourNotes,
     shortCitation: labels.shortCitation,
   };
-  const placeOf = (division: { locator: string }) =>
-    division.locator === "prologue" ? labels.fatherWork.prologue : division.locator;
+  const placeOf = (division: { locator: string }) => markerLabel(division.locator, labels.fatherWork.markers);
   const editionView = (edition: FatherWork, ai: boolean, partial: boolean) => {
     const licence = licences[edition.edition.licence];
     const first = edition.divisions[0];
@@ -83,10 +83,10 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           workId={edition.id}
           editionKey={ai ? edition.edition.id : edition.id}
           simplified={!ai}
-          workName={workName(edition.id, locale, edition.title)}
+          workName={workName(edition.id, edition.edition.lang, edition.title)}
           title={edition.title}
           lang={edition.edition.lang}
-          prologue={labels.fatherWork.prologue}
+          markers={getUiText(edition.edition.lang).reader.fatherWork.markers}
           divisions={edition.divisions}
           editionTag={`${edition.edition.translator}, ${edition.edition.year}`}
           locale={locale}
@@ -153,7 +153,17 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           ]}
           current={work.title}
         />
-        <PageHeader id="top" className="mt-9" size="reader" title={work.title} />
+        <PageHeader
+          id="top"
+          className="mt-9"
+          size="reader"
+          title={
+            <ByFatherEdition
+              defaultId={defaultEdition}
+              editions={[{ id: "en", node: work.title }, ...(spanish ? [{ id: "es", node: spanish.title }] : [])]}
+            />
+          }
+        />
         <ByFatherEdition
           defaultId={defaultEdition}
           editions={[

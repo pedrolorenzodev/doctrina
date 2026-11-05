@@ -27,6 +27,7 @@ import {
   useYourNotesOpen,
 } from "@/features/reader/your-notes-store";
 import { nbspBeforeDigits } from "@/lib/locator";
+import { markerLabel } from "@/features/reader/father-marker";
 import { clippedQuote, type NoteDraft } from "@/lib/notes";
 
 type FatherBodyProps = {
@@ -36,7 +37,7 @@ type FatherBodyProps = {
   workName: string;
   title: string;
   lang: string;
-  prologue: string;
+  markers: Record<string, string>;
   divisions: FatherDivision[];
   editionTag: string;
   locale: string;
@@ -76,7 +77,7 @@ export function FatherBody({
   workName,
   title,
   lang,
-  prologue,
+  markers,
   divisions,
   editionTag,
   locale,
@@ -112,7 +113,7 @@ export function FatherBody({
   const byOrdinal = new Map(divisions.map((division) => [division.ordinal, division]));
   const placeName = (ordinal: number) => {
     const locator = byOrdinal.get(ordinal)?.locator ?? String(ordinal);
-    return locator === "prologue" ? prologue : locator;
+    return markerLabel(locator, markers);
   };
   const referenceOf = (first: number, last: number) =>
     first === last ? `${workName} ${placeName(first)}` : `${workName} ${placeName(first)}–${placeName(last)}`;
@@ -280,7 +281,7 @@ export function FatherBody({
                       onClick={(event) => openFrom(division.ordinal, event.currentTarget, event.detail === 0)}
                       className={`cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline ${stacked ? "" : hangingLocator}`}
                     >
-                      {division.locator === "prologue" ? prologue : division.locator}
+                      {markerLabel(division.locator, markers)}
                     </button>
                     {mark ? (
                       <NoteMarkers
