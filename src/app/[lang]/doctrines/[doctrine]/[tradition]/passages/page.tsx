@@ -14,6 +14,7 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
 import { PassagesView } from "@/features/passages/passages-view";
 import { currentLocale } from "@/lib/current-locale";
+import { leanBuild } from "@/lib/lean-build";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
@@ -24,6 +25,7 @@ function isTradition(value: string): value is TraditionId {
 }
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   return getPublishedPages("es")
     .filter((page) => page.hasPassages)
     .map(({ doctrine, tradition }) => ({ lang: "es", doctrine, tradition }));

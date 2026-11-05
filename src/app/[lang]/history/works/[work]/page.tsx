@@ -21,8 +21,10 @@ import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { VerseArrival } from "@/features/reader/verse-arrival";
 import { currentLocale } from "@/lib/current-locale";
 import { locales } from "@/lib/locale";
+import { leanBuild } from "@/lib/lean-build";
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   const works = await getFatherWorks();
   return locales.flatMap((lang) => works.map((work) => ({ lang, work: work.id })));
 }

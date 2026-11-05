@@ -29,6 +29,7 @@ import { SourcesSection } from "@/features/doctrine/sources-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 import type { Locale } from "@/lib/locale";
+import { leanBuild } from "@/lib/lean-build";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
@@ -51,6 +52,7 @@ async function findObjection(
 }
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   const pages = await Promise.all(
     getPublishedPages("es").map(async ({ doctrine, tradition }) => {
       const page = await getTraditionPage(doctrine, tradition, "es");

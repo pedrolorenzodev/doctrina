@@ -16,6 +16,7 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ThemedObjectionList } from "@/features/doctrine/themed-objection-list";
 import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
 import { currentLocale } from "@/lib/current-locale";
+import { leanBuild } from "@/lib/lean-build";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
@@ -26,6 +27,7 @@ function isTradition(value: string): value is TraditionId {
 }
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   return getPublishedPages("es").map(({ doctrine, tradition }) => ({ lang: "es", doctrine, tradition }));
 }
 

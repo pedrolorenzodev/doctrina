@@ -2,12 +2,14 @@ import { getPassageApologists, getPassageCore } from "@/content/get-passages";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { isLocale } from "@/lib/locale";
+import { leanBuild } from "@/lib/lean-build";
 
 type PassageDataContext = {
   params: Promise<{ lang: string; doctrine: string; tradition: string; n: string; part: string }>;
 };
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   const out: { lang: string; doctrine: string; tradition: string; n: string; part: string }[] = [];
   for (const { doctrine, tradition } of getPublishedPages("es").filter((page) => page.hasPassages)) {
     const page = await getTraditionPage(doctrine, tradition, "es");

@@ -11,12 +11,14 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { CriterionFold } from "@/features/doctrine/criterion-fold";
 import { EarlyChristiansList } from "@/features/doctrine/early-christians-list";
 import { currentLocale } from "@/lib/current-locale";
+import { leanBuild } from "@/lib/lean-build";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
 }
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   return getPublishedDoctrines("es").map((doctrine) => ({ lang: "es", doctrine }));
 }
 

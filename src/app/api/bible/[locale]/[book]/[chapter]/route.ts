@@ -2,11 +2,12 @@ import { getBibleBook } from "@/content/bible-books";
 import { getReadableChapters } from "@/content/get-bible";
 import { getReaderChapter } from "@/content/get-reader-chapter";
 import { locales } from "@/lib/locale";
+import { leanBuild } from "@/lib/lean-build";
 
 export const dynamic = "force-static";
-export const dynamicParams = false;
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   const perLocale = await Promise.all(
     locales.map(async (locale) => ({ locale, chapters: await getReadableChapters(locale) })),
   );

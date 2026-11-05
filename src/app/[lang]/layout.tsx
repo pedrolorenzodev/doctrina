@@ -19,8 +19,6 @@ import { shareImage, siteUrl } from "@/lib/site-url";
 import { locales } from "@/lib/locale";
 import "@/app/globals.css";
 
-export const dynamicParams = false;
-
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }

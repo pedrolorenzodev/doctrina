@@ -25,8 +25,10 @@ import { FatherProfileSection } from "@/features/history/father-profile-section"
 import { FatherWritingsSection } from "@/features/history/father-writings-section";
 import { currentLocale } from "@/lib/current-locale";
 import { locales } from "@/lib/locale";
+import { leanBuild } from "@/lib/lean-build";
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   return locales.flatMap((lang) => getPublishedFathers(lang).map((father) => ({ lang, father: father.id })));
 }
 

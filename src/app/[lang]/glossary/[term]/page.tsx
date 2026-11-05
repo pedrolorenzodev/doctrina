@@ -17,12 +17,14 @@ import { doctrineHref, glossaryHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { HistoryLinkList } from "@/features/history/history-link-list";
 import { currentLocale } from "@/lib/current-locale";
+import { leanBuild } from "@/lib/lean-build";
 
 const siteTraditions: GlossaryTradition[] = ["catholic", "orthodox", "lutheran", "reformed", "baptist"];
 
 const unquoted = (quote: string) => quote.replace(/^[«"]|[»"]$/g, "");
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   return glossaryLocales.flatMap((lang) => getGlossaryTerms().map((term) => ({ lang, term: glossarySlug(term) })));
 }
 

@@ -1,11 +1,12 @@
 import { getChapterWordView } from "@/content/get-chapter-word-view";
 import { getWordChapters } from "@/content/get-words";
 import { locales } from "@/lib/locale";
+import { leanBuild } from "@/lib/lean-build";
 
 export const dynamic = "force-static";
-export const dynamicParams = false;
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   const chapters = await getWordChapters();
   return locales.flatMap((locale) => chapters.map(({ book, chapter }) => ({ locale, book, chapter: String(chapter) })));
 }

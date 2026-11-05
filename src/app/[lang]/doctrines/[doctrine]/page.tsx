@@ -25,12 +25,14 @@ import { PracticeSection } from "@/features/doctrine/practice-section";
 import { WitnessesSection } from "@/features/doctrine/witnesses-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
+import { leanBuild } from "@/lib/lean-build";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
 }
 
 export async function generateStaticParams() {
+  if (leanBuild) return [];
   return getPublishedDoctrines("es").map((doctrine) => ({ lang: "es", doctrine }));
 }
 
