@@ -58,10 +58,16 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
     toolbar: { ...labels.toolbar, ask: ask.ask },
     yourNotes: labels.yourNotes,
     shortCitation: labels.shortCitation,
+    markers: labels.fatherWork.markers,
+    columnHeads: {
+      first: labels.picker.label,
+      second: labels.parallel.label,
+      spanish: labels.picker.spanish,
+      english: labels.picker.english,
+    },
   };
   const placeOf = (division: { locator: string }) => markerLabel(division.locator, labels.fatherWork.markers);
-  const editionView = (edition: FatherWork, ai: boolean, partial: boolean) => {
-    const licence = licences[edition.edition.licence];
+  const headOf = (edition: FatherWork, ai: boolean, partial: boolean) => {
     const first = edition.divisions[0];
     const last = edition.divisions[edition.divisions.length - 1];
     return (
@@ -79,27 +85,37 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         ) : edition.edition.status === "draft" ? (
           <p className="title-part title-part-2 mt-1 mb-0 text-reader-note text-ink-3">{labels.fatherWork.draft}</p>
         ) : null}
-        <FatherBody
-          workId={edition.id}
-          editionKey={ai ? edition.edition.id : edition.id}
-          simplified={!ai}
-          workName={workName(edition.id, edition.edition.lang, edition.title)}
-          title={edition.title}
-          lang={edition.edition.lang}
-          markers={getUiText(edition.edition.lang).reader.fatherWork.markers}
-          divisions={edition.divisions}
-          editionTag={`${edition.edition.translator}, ${edition.edition.year}`}
-          locale={locale}
-          panel={panel}
-        />
-        <ChapterFoot
-          title={labels.foot.title}
-          edition={edition.edition.bibliography}
-          licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
-        />
       </>
     );
   };
+  const footOf = (edition: FatherWork) => {
+    const licence = licences[edition.edition.licence];
+    return (
+      <ChapterFoot
+        title={labels.foot.title}
+        edition={edition.edition.bibliography}
+        licence={licence ? labels.foot.licence.replace("{licence}", licence) : null}
+      />
+    );
+  };
+  const viewOf = (
+    edition: FatherWork,
+    ai: boolean,
+    option: { id: string; abbreviation: string; displayName: string },
+  ) => ({
+    id: option.id,
+    key: ai ? edition.edition.id : edition.id,
+    lang: edition.edition.lang,
+    abbreviation: option.abbreviation,
+    name: option.displayName,
+    simplified: !ai,
+    workName: workName(edition.id, locale, edition.title),
+    title: edition.title,
+    editionTag: `${edition.edition.translator}, ${edition.edition.year}`,
+    markers: getUiText(edition.edition.lang).reader.fatherWork.markers,
+    divisions: edition.divisions,
+    foot: footOf(edition),
+  });
   const pickerOptions = [
     ...(spanish
       ? [
@@ -142,8 +158,18 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           options: pickerOptions,
           defaultId: defaultEdition,
         }}
+        parallelText={{
+          label: labels.parallel.label,
+          mode: labels.parallel.mode,
+          none: labels.parallel.none,
+          below: labels.parallel.below,
+          side: labels.parallel.side,
+          sideNote: labels.parallel.sideNote,
+          missing: labels.fatherWork.missingWork,
+          list: labels.parallel.list,
+        }}
       />
-      <div className="mx-auto max-w-reader">
+      <div className="reader-column mx-auto max-w-reader has-data-[second=side]:max-w-wide">
         {/* TODO: «Historia» leads to its index page once it exists */}
         <Breadcrumbs
           label={text.shell.breadcrumb}
@@ -167,8 +193,18 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         <ByFatherEdition
           defaultId={defaultEdition}
           editions={[
-            { id: "en", node: editionView(work, false, false) },
-            ...(spanish ? [{ id: "es", node: editionView(spanish, true, spanish.partial) }] : []),
+            { id: "en", node: headOf(work, false, false) },
+            ...(spanish ? [{ id: "es", node: headOf(spanish, true, spanish.partial) }] : []),
+          ]}
+        />
+        <FatherBody
+          workId={work.id}
+          defaultId={defaultEdition}
+          locale={locale}
+          panel={panel}
+          views={[
+            ...(spanish ? [viewOf(spanish, true, pickerOptions[0]!)] : []),
+            viewOf(work, false, pickerOptions[pickerOptions.length - 1]!),
           ]}
         />
         <VerseArrival />

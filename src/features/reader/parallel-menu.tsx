@@ -7,10 +7,10 @@ import type { PickerOption } from "@/features/reader/translation-picker";
 import { TranslationRows } from "@/features/reader/translation-rows";
 import { useSideRoom } from "@/features/reader/use-second-translation";
 import {
-  chooseSecondTranslation,
-  getSecondChoice,
+  bibleSecondStore,
   noSecond,
   type SecondChoice,
+  type SecondChoiceStore,
   type SecondMode,
 } from "@/lib/second-translation";
 
@@ -33,11 +33,19 @@ type ParallelMenuProps = {
   firstId: string;
   second: SecondChoice;
   unavailable: boolean;
+  store?: SecondChoiceStore;
 };
 
 const modes: SecondMode[] = ["off", "below", "side"];
 
-export function ParallelMenu({ text, options, firstId, second, unavailable }: ParallelMenuProps) {
+export function ParallelMenu({
+  text,
+  options,
+  firstId,
+  second,
+  unavailable,
+  store = bibleSecondStore,
+}: ParallelMenuProps) {
   const id = useId();
   const button = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
@@ -47,11 +55,11 @@ export function ParallelMenu({ text, options, firstId, second, unavailable }: Pa
   const label: Record<SecondMode, string> = { off: text.none, below: text.below, side: text.side };
 
   const setMode = (mode: SecondMode) => {
-    if (mode === "off") chooseSecondTranslation(noSecond);
-    else chooseSecondTranslation({ mode, id: second.id ?? getSecondChoice().id ?? others[0]?.id ?? null });
+    if (mode === "off") store.choose(noSecond);
+    else store.choose({ mode, id: second.id ?? store.get().id ?? others[0]?.id ?? null });
   };
   const setTranslation = (translation: string) =>
-    chooseSecondTranslation({ mode: second.mode === "off" ? "below" : second.mode, id: translation });
+    store.choose({ mode: second.mode === "off" ? "below" : second.mode, id: translation });
 
   const onListKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const rows = Array.from(event.currentTarget.querySelectorAll<HTMLElement>('[role="option"]'));

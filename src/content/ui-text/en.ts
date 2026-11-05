@@ -510,6 +510,7 @@ export const en: UiText = {
       partial: "This translation covers part of the work: {first} to {last}.",
       aiName: "Doctrina AI translation",
       aiAbbreviation: "AI {year}",
+      missingWork: "The chosen translation is not in this work; it shows again in the works that have it.",
     },
   },
   glossary: {
