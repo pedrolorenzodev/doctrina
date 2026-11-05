@@ -43,6 +43,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
   const ask = fatherAskText(locale);
   const licences: Record<string, string> = labels.licences;
   const spanish = await getSpanishFatherWork(id);
+  const defaultEdition = locale === "es" && spanish ? "es" : "en";
   const editionLine = (edition: FatherWork["edition"]) =>
     (edition.lang === "en" ? labels.fatherWork.editionEn : labels.fatherWork.editionEs)
       .replace("{translator}", edition.translator)
@@ -139,7 +140,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         picker={{
           text: { label: labels.picker.label, spanish: labels.picker.spanish, english: labels.picker.english },
           options: pickerOptions,
-          defaultId: "en",
+          defaultId: defaultEdition,
         }}
       />
       <div className="mx-auto max-w-reader">
@@ -154,7 +155,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         />
         <PageHeader id="top" className="mt-9" size="reader" title={work.title} />
         <ByFatherEdition
-          defaultId="en"
+          defaultId={defaultEdition}
           editions={[
             { id: "en", node: editionView(work, false, false) },
             ...(spanish ? [{ id: "es", node: editionView(spanish, true, spanish.partial) }] : []),
@@ -174,6 +175,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         workId={work.id}
         workName={workName(work.id, locale, work.title)}
         editions={pickerOptions.map((option) => ({ id: option.id, name: option.displayName }))}
+        defaultEdition={defaultEdition}
         citationText={text.citation}
       />
     </PageMain>

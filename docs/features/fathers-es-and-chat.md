@@ -27,7 +27,7 @@ Session «Padres», 2026-11-04. Pedro's words are quoted in the task prompt; thi
 ## Round 2 (2026-11-04/05)
 
 1. **Dark wall texture 30 % milder.** `--wall-ink-opacity` dark .3 → .21; light .126 and the page background (`--texture-opacity`) untouched. Only two elements use `selected-ink` (segmented filter, scope control), both read the token. Verified: computed `::before` opacity 0.3 → 0.21 dark, 0.126 light unchanged; e2e `selected-states.spec.ts` «wall layer» failed before (0.3) and passes after; screenshots `tmp/shots/round2/wall-{before,after}-{dark,light}.png`.
-2. Edition by site language on first visit: pending.
+2. **Edition by site language on first visit.** `defaultEdition = locale === "es" && spanish ? "es" : "en"` in the work page, passed to `ByFatherEdition`, the picker and `FatherAsk`. Verified: `father-edition.spec.ts` (first visit es/en, choice wins and is remembered, no-Spanish work shows English); `father-reader` and `father-ask` specs pre-set the English choice (`helpers.ts`).
 3. Reading-content translation (title, «Prólogo», division markers): pending.
 4. «Segunda traducción» in the Fathers' reader: pending.
 5. Notes preview cards in the Fathers' reader: pending.
@@ -42,4 +42,4 @@ Session «Padres», 2026-11-04. Pedro's words are quoted in the task prompt; thi
 - 2026-11-05 09:02 session 4 %, weekly 1 % (week had reset).
 
 ### State (round 2)
-- Step 1 done, frozen as block 238. Next: step 2.
+- Step 1 done, frozen as block 238. Step 2 done (dev server; full run on the build pending at the end). Next: step 3.

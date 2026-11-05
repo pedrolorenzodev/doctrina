@@ -17,12 +17,17 @@ const choose = async (page: Page, name: RegExp) => {
   await page.getByRole("option", { name }).click();
 };
 
+const chooseEnglish = async (page: Page) => {
+  await page.locator(pickerButton).click();
+  await page.getByRole("listbox").getByRole("option").last().click();
+};
+
 test.describe("Fathers' reader: the translation switch", () => {
   test("a work with a Spanish edition offers two groups, and the button shows only the abbreviation of the one in use", async ({
     page,
   }) => {
     await open(page, didache);
-    await expect(page.locator(pickerButton)).toHaveText(/^Traducción\s*Lightfoot 1891$/);
+    await expect(page.locator(pickerButton)).toHaveText(/^Traducción\s*IA 2026$/);
     await page.locator(pickerButton).click();
     const list = page.getByRole("listbox", { name: "Traducción" });
     await expect(list).toBeVisible();
@@ -32,28 +37,39 @@ test.describe("Fathers' reader: the translation switch", () => {
       "Traducción de Doctrina con IA (IA 2026)",
       "Joseph Barber Lightfoot (Lightfoot 1891)",
     ]);
-    await expect(list.getByRole("option", { selected: true })).toContainText("Lightfoot");
+    await expect(list.getByRole("option", { selected: true })).toContainText("IA 2026");
   });
 
-  test("choosing the Spanish edition swaps the text, labels it as AI-translated and is remembered", async ({
+  test("the first visit follows the site language: Spanish site opens the Spanish edition, English site the English one", async ({
     page,
   }) => {
     await open(page, didache);
+    await expect(page.locator(body)).toHaveAttribute("lang", "es");
+    await expect(page.locator("main")).toContainText("Traducido con IA");
+    await page.evaluate(() => localStorage.clear());
+    await open(page, "/en/history/works/didache");
     await expect(page.locator(body)).toHaveAttribute("lang", "en");
+    await expect(page.locator(pickerButton)).toHaveText(/^Translation\s*Lightfoot 1891$/);
+    await expect(page.locator("main")).not.toContainText("Translated with AI");
+  });
+
+  test("once the reader chooses, the choice wins over the site language and is remembered", async ({ page }) => {
+    await open(page, didache);
+    await choose(page, /Lightfoot/);
+    await expect(page.locator(body)).toHaveAttribute("lang", "en");
+    await expect(page.locator("main")).not.toContainText("Traducido con IA");
+    await page.reload();
+    await expect(page.locator(body)).toHaveAttribute("lang", "en");
+    await expect(page.locator(pickerButton)).toHaveText(/^Traducción\s*Lightfoot 1891$/);
     await choose(page, /IA 2026/);
     await expect(page.locator(body)).toHaveAttribute("lang", "es");
     await expect(page.locator(`${body} > div`)).toHaveCount(16);
     await expect(page.locator(`${body} > div`).first()).toContainText("Hay dos caminos");
     await expect(page.locator(pickerButton)).toHaveText(/^Traducción\s*IA 2026$/);
-    await expect(page.locator("main")).toContainText("Traducido con IA");
     await expect(page.locator("main")).toContainText("Licencia: Traducción de Doctrina, dominio público (CC0)");
     await expect(page.locator("main")).not.toContainText("Borrador: la transcripción");
     await page.reload();
     await expect(page.locator(body)).toHaveAttribute("lang", "es");
-    await expect(page.locator(pickerButton)).toHaveText(/^Traducción\s*IA 2026$/);
-    await choose(page, /Lightfoot/);
-    await expect(page.locator(body)).toHaveAttribute("lang", "en");
-    await expect(page.locator("main")).not.toContainText("Traducido con IA");
   });
 
   test("the choice does not touch the Bible's translation", async ({ page }) => {
@@ -75,10 +91,14 @@ test.describe("Fathers' reader: the translation switch", () => {
     page,
   }) => {
     await open(page, "/es/historia/obras/irenaeus-against-heresies");
+    const spanishFirst = await page.locator(`${body} > div`).evaluateAll((nodes) => nodes.map((node) => node.id));
+    await chooseEnglish(page);
+    await expect.poll(() => page.locator(body).getAttribute("lang")).toBe("en");
     const englishAnchors = await page.locator(`${body} > div`).evaluateAll((nodes) => nodes.map((node) => node.id));
     await choose(page, /IA 2026/);
     await expect(page.locator("main")).toContainText("Esta traducción cubre una parte de la obra: de 3.1.1 a 5.36.3.");
     const spanishAnchors = await page.locator(`${body} > div`).evaluateAll((nodes) => nodes.map((node) => node.id));
+    expect(spanishAnchors).toEqual(spanishFirst);
     expect(spanishAnchors.length).toBeGreaterThan(300);
     expect(spanishAnchors.length).toBeLessThan(englishAnchors.length);
     for (const anchor of spanishAnchors) expect(englishAnchors).toContain(anchor);
@@ -91,13 +111,13 @@ test.describe("Fathers' reader: the translation switch", () => {
     await page.getByRole("textbox").first().fill("una nota");
     await page.waitForTimeout(500);
     await page.keyboard.press("Escape");
-    await choose(page, /IA 2026/);
+    await chooseEnglish(page);
+    await expect(page.locator(body)).toHaveAttribute("lang", "en");
     await expect(page.locator(`${body} > div`).first()).toContainText("1 nota");
   });
 
   test("at 390 px the strip keeps the switch and nothing overflows", async ({ page }) => {
     await open(page, didache, 390);
-    await choose(page, /IA 2026/);
     await expect(page.locator(pickerButton)).toHaveText(/^Traducción\s*IA 2026$/);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
   });

@@ -13,10 +13,11 @@ type FatherAskProps = {
   workId: string;
   workName: string;
   editions: { id: string; name: string }[];
+  defaultEdition: string;
   citationText: CitationWindowText;
 };
 
-export function FatherAsk({ locale, text, workId, workName, editions, citationText }: FatherAskProps) {
+export function FatherAsk({ locale, text, workId, workName, editions, defaultEdition, citationText }: FatherAskProps) {
   const script = useMemo(() => fatherScript(workId), [workId]);
   return (
     <ReaderAsk
@@ -28,7 +29,7 @@ export function FatherAsk({ locale, text, workId, workName, editions, citationTe
       books={[{ id: workId, title: workName }]}
       here={{ book: workId, chapter: 1 }}
       editions={editions}
-      defaultEdition="en"
+      defaultEdition={defaultEdition}
       citationText={citationText}
     />
   );

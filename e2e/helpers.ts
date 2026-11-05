@@ -48,3 +48,11 @@ export function landingTop(page: Page): Promise<number> {
     );
   });
 }
+
+export async function preferEnglishFatherEdition(page: Page) {
+  await page.addInitScript(() => {
+    try {
+      if (!localStorage.getItem("doctrina-father-edition")) localStorage.setItem("doctrina-father-edition", "en");
+    } catch {}
+  });
+}

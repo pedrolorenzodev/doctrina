@@ -1,8 +1,12 @@
 import { expect, test } from "@playwright/test";
-import { horizontalOverflow } from "./helpers";
+import { horizontalOverflow, preferEnglishFatherEdition } from "./helpers";
 
 const didache = "/es/historia/obras/didache";
 const strip = "main [data-reader-strip]";
+
+test.beforeEach(async ({ page }) => {
+  await preferEnglishFatherEdition(page);
+});
 
 test("a Father's work is read division by division with its locator, edition and licence", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });

@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow } from "./helpers";
+import { horizontalOverflow, preferEnglishFatherEdition } from "./helpers";
 
 const smyrnaeans = "/es/historia/obras/ignatius-smyrnaeans";
 const strip = "main [data-reader-strip]";
@@ -39,6 +39,10 @@ const select = async (page: Page, locator: string, words: string) => {
 };
 
 test.describe("Fathers' reader: the AI chat", () => {
+  test.beforeEach(async ({ page }) => {
+    await preferEnglishFatherEdition(page);
+  });
+
   test("«Preguntar» sits at the left of the fixed header with the same inset as the right side", async ({ page }) => {
     await open(page, smyrnaeans);
     await expect(page.locator(askButton)).toHaveText("Preguntar");
