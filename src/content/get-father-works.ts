@@ -1,56 +1,29 @@
-import { readdir, readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { supabaseCorpus } from "@/content/corpus-env";
+import type { FatherSource, FatherWork, FatherWorkSummary } from "@/content/father-text/father-types";
+import { createLocalFatherSource } from "@/content/father-text/local-father-source";
+import { createSupabaseFatherSource } from "@/content/father-text/supabase-father-source";
 
-export type FatherDivision = { locator: string; ordinal: number; heading?: string | null; text: string };
+export type { FatherDivision, FatherWork, FatherWorkSummary } from "@/content/father-text/father-types";
 
-export type FatherWork = {
-  id: string;
-  title: string;
-  author: string;
-  edition: {
-    id: string;
-    lang: "es" | "en";
-    translator: string;
-    year: number;
-    bibliography: string;
-    licence: string;
-    status?: string;
-  };
-  divisions: FatherDivision[];
-};
-
-type FatherFile = {
-  work: { id: string; title: string; author: string };
-  edition: FatherWork["edition"];
-  divisions: FatherDivision[];
-};
-
-const root = join(process.cwd(), "data", "corpus", "fathers");
-
-let loaded: Promise<FatherWork[]> | null = null;
-
-async function readWork(folder: string): Promise<FatherWork[]> {
-  const files = (await readdir(join(root, folder))).filter((name) => name.endsWith(".json")).sort();
-  const [first] = files;
-  if (!first) return [];
-  const parsed = JSON.parse(await readFile(join(root, folder, first), "utf8")) as FatherFile;
-  return [{ ...parsed.work, edition: parsed.edition, divisions: parsed.divisions }];
+function chooseSource(): FatherSource {
+  const remote = supabaseCorpus();
+  return remote ? createSupabaseFatherSource(remote.url, remote.key) : createLocalFatherSource();
 }
 
-async function readAll(): Promise<FatherWork[]> {
-  try {
-    const folders = (await readdir(root, { withFileTypes: true })).filter((entry) => entry.isDirectory());
-    return (await Promise.all(folders.map((folder) => readWork(folder.name)))).flat();
-  } catch {
-    return [];
-  }
+let source: FatherSource | null = null;
+
+export function currentFatherSource(): FatherSource {
+  source ??= chooseSource();
+  return source;
 }
 
-export function getFatherWorks(): Promise<FatherWork[]> {
-  loaded ??= readAll();
-  return loaded;
+let listed: Promise<FatherWorkSummary[]> | null = null;
+
+export function getFatherWorks(): Promise<FatherWorkSummary[]> {
+  listed ??= currentFatherSource().works();
+  return listed;
 }
 
-export async function getFatherWork(id: string): Promise<FatherWork | null> {
-  return (await getFatherWorks()).find((work) => work.id === id) ?? null;
+export function getFatherWork(id: string): Promise<FatherWork | null> {
+  return currentFatherSource().work(id);
 }

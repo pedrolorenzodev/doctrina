@@ -118,5 +118,14 @@ export function createLocalBibleSource(): BibleSource {
       );
       return row ? { verse: row.verse, text: row.text } : null;
     },
+    async verseTexts(translationId, refs) {
+      const wanted = new Set(refs.map((ref) => `${ref.book}.${ref.chapter}.${ref.verse}`));
+      const found = new Map<string, string>();
+      for (const row of await rows(translationId)) {
+        const key = `${row.book}.${row.chapter}.${row.verse}`;
+        if (wanted.has(key)) found.set(key, row.text);
+      }
+      return found;
+    },
   };
 }

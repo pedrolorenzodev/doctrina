@@ -1,5 +1,6 @@
+import { supabaseCorpus } from "@/content/corpus-env";
 import { bibleBooks, getBibleBook } from "@/content/bible-books";
-import type { BibleSource } from "@/content/bible/bible-source";
+import type { BibleSource, VerseRef } from "@/content/bible/bible-source";
 import { chapterNeighbors } from "@/content/bible/chapter-neighbors";
 import { createLocalBibleSource } from "@/content/bible/local-source";
 import { defaultTranslationId } from "@/content/bible/default-translation";
@@ -8,12 +9,8 @@ import type { BibleChapter, BibleTranslation, BibleVerse, ChapterRef, ChapterSum
 import type { Locale } from "@/lib/locale";
 
 function chooseSource(): BibleSource {
-  if (process.env.CORPUS_SOURCE !== "supabase") return createLocalBibleSource();
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
-  if (!url || !key)
-    throw new Error("CORPUS_SOURCE=supabase needs NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY");
-  return createSupabaseBibleSource(url, key);
+  const remote = supabaseCorpus();
+  return remote ? createSupabaseBibleSource(remote.url, remote.key) : createLocalBibleSource();
 }
 
 let source: BibleSource | null = null;
@@ -86,4 +83,8 @@ export async function getBibleChapterCounts(locale: Locale): Promise<Map<string,
     counts.set(book, Math.max(counts.get(book) ?? 0, chapter));
   }
   return counts;
+}
+
+export function getBibleVerseTexts(translationId: string, refs: VerseRef[]): Promise<Map<string, string>> {
+  return currentSource().verseTexts(translationId, refs);
 }

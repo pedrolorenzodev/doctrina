@@ -1,24 +1,30 @@
-import { readdir, readFile } from "node:fs/promises";
-import { join } from "node:path";
-import type { ChapterWords, LexiconEntry, VerseWords, WordLanguage, WordOccurrence } from "@/content/model/words";
+import { supabaseWordsCorpus } from "@/content/corpus-env";
+import type {
+  ChapterWords,
+  LexiconEntry,
+  VerseWord,
+  VerseWords,
+  WordLanguage,
+  WordOccurrence,
+} from "@/content/model/words";
+import { createLocalWordsSource } from "@/content/words/local-words-source";
+import { createSupabaseWordsSource } from "@/content/words/supabase-words-source";
+import { shardOf } from "@/content/words/shard-of";
+import type { WordBrief, WordsSource } from "@/content/words/words-source";
 
-type MorphTable = { greek: Record<string, string>; hebrew: Record<string, string> };
-
-const wordsDir = () => join(process.cwd(), "data", "site", "words");
-
-const files = new Map<string, Promise<unknown>>();
-
-function readJson<T>(path: string): Promise<T | null> {
-  let pending = files.get(path);
-  if (!pending) {
-    pending = readFile(join(wordsDir(), path), "utf8").then(
-      (text) => JSON.parse(text) as unknown,
-      () => null,
-    );
-    files.set(path, pending);
-  }
-  return pending as Promise<T | null>;
+function chooseSource(): WordsSource {
+  const remote = supabaseWordsCorpus();
+  return remote ? createSupabaseWordsSource(remote.url, remote.key) : createLocalWordsSource();
 }
+
+let source: WordsSource | null = null;
+
+function currentSource(): WordsSource {
+  source ??= chooseSource();
+  return source;
+}
+
+export { shardOf };
 
 export function wordLanguageOf(id: string): WordLanguage | null {
   if (id.startsWith("G")) return "grc";
@@ -26,15 +32,9 @@ export function wordLanguageOf(id: string): WordLanguage | null {
   return null;
 }
 
-export function shardOf(id: string): string | null {
-  const match = /^([GH])(\d+)[A-Z]?$/.exec(id);
-  if (!match?.[1] || !match[2]) return null;
-  return `${match[1]}${String(Math.floor(Number(match[2]) / 100)).padStart(3, "0")}`;
-}
-
 export function getChapterWords(book: string, chapter: number): Promise<ChapterWords | null> {
   if (!/^[0-9A-Za-z]+$/.test(book) || !Number.isInteger(chapter) || chapter < 1) return Promise.resolve(null);
-  return readJson<ChapterWords>(`verses/${book}/${chapter}.json`);
+  return currentSource().chapter(book, chapter);
 }
 
 export async function getVerseWords(book: string, chapter: number, verse: number): Promise<VerseWords | null> {
@@ -44,44 +44,35 @@ export async function getVerseWords(book: string, chapter: number, verse: number
 
 export async function getLexiconEntry(id: string): Promise<LexiconEntry | null> {
   const shard = shardOf(id);
-  if (!shard) return null;
-  const entries = await readJson<Record<string, LexiconEntry>>(`lexicon/${shard}.json`);
-  return entries?.[id] ?? null;
+  return shard ? currentSource().lexiconEntry(shard, id) : null;
 }
 
 export async function getWordOccurrence(id: string): Promise<WordOccurrence | null> {
   const shard = shardOf(id);
-  if (!shard) return null;
-  const entries = await readJson<Record<string, WordOccurrence>>(`occurrences/${shard}.json`);
-  return entries?.[id] ?? null;
+  return shard ? currentSource().occurrence(shard, id) : null;
 }
 
 export async function getLexiconShardIds(id: string): Promise<string[]> {
   const shard = shardOf(id);
-  if (!shard) return [];
-  const entries = await readJson<Record<string, LexiconEntry>>(`lexicon/${shard}.json`);
-  return entries ? Object.keys(entries) : [];
+  return shard ? currentSource().shardIds(shard) : [];
 }
 
-export async function getParseNames(language: WordLanguage): Promise<Record<string, string>> {
-  const table = await readJson<MorphTable>("morph.json");
-  return (language === "grc" ? table?.greek : table?.hebrew) ?? {};
+export function getParseNames(language: WordLanguage): Promise<Record<string, string>> {
+  return currentSource().parseNames(language);
 }
 
-export async function hasWordData(): Promise<boolean> {
-  return (await readJson<unknown>("manifest.json")) !== null;
+export function hasWordData(): Promise<boolean> {
+  return currentSource().hasData();
 }
 
-export async function getWordChapters(): Promise<{ book: string; chapter: number }[]> {
-  const books = await readdir(join(wordsDir(), "verses")).catch(() => []);
-  const perBook = await Promise.all(
-    books.map(async (book) => {
-      const names = await readdir(join(wordsDir(), "verses", book)).catch(() => []);
-      return names.flatMap((name) => {
-        const chapter = Number(name.replace(".json", ""));
-        return Number.isInteger(chapter) ? [{ book, chapter }] : [];
-      });
-    }),
-  );
-  return perBook.flat();
+export function getWordChapters(): Promise<{ book: string; chapter: number }[]> {
+  return currentSource().chapters();
+}
+
+export function getLexiconBrief(ids: string[], book: string): Promise<Map<string, WordBrief>> {
+  return currentSource().lexiconBrief(ids, book);
+}
+
+export function getPlaceWords(id: string, occurrence: WordOccurrence): Promise<Map<string, VerseWord[]>> {
+  return currentSource().placeWords(id, occurrence);
 }

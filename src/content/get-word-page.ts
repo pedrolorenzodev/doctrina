@@ -2,10 +2,10 @@ import { bibleBooks, getBibleBook, type BibleBook } from "@/content/bible-books"
 import { bibleChapterHref } from "@/content/bible-routes";
 import { defaultTranslationId } from "@/content/bible/default-translation";
 import { formatVerseRef } from "@/content/format-verse";
-import { getBibleVerse } from "@/content/get-bible";
+import { getBibleVerse, getBibleVerseTexts } from "@/content/get-bible";
 import { strongNumber } from "@/content/get-chapter-word-view";
 import {
-  getChapterWords,
+  getPlaceWords,
   getLexiconEntry,
   getLexiconShardIds,
   getParseNames,
@@ -174,30 +174,15 @@ async function scanVerses(id: string, language: WordLanguage, occurrence: WordOc
     string,
     { book: string; chapter: number; verse: number; forms: { form: string; morph: string; t: string }[] }
   >();
-  const chapters = new Map<string, Set<number>>();
-  for (const [book, refs] of Object.entries(occurrence.b)) {
-    for (const ref of refs) {
-      const [chapter = "0", verse = "0"] = ref.split(".");
-      const key = `${book}.${chapter}`;
-      chapters.set(key, (chapters.get(key) ?? new Set()).add(Number(verse)));
+  for (const [key, words] of await getPlaceWords(id, occurrence)) {
+    const [book = "", chapter = "0", verse = "0"] = key.split(".");
+    const found: { form: string; morph: string; t: string }[] = [];
+    for (const word of words) {
+      const index = partIndex(word, language, id);
+      if (index >= 0) found.push({ form: formOf(word, language), morph: morphOf(word, language, index), t: word.t });
     }
+    rows.set(key, { book, chapter: Number(chapter), verse: Number(verse), forms: found });
   }
-  await Promise.all(
-    [...chapters.entries()].map(async ([key, verses]) => {
-      const [book = "", chapter = "0"] = key.split(".");
-      const data = await getChapterWords(book, Number(chapter));
-      if (!data) return;
-      for (const verse of verses) {
-        const found: { form: string; morph: string; t: string }[] = [];
-        for (const word of data.verses[String(verse)]?.words ?? []) {
-          const index = partIndex(word, language, id);
-          if (index >= 0)
-            found.push({ form: formOf(word, language), morph: morphOf(word, language, index), t: word.t });
-        }
-        rows.set(`${book}.${chapter}.${verse}`, { book, chapter: Number(chapter), verse, forms: found });
-      }
-    }),
-  );
   return rows;
 }
 
@@ -368,6 +353,22 @@ export async function getWordPage(locale: Locale, id: string, fromParam?: string
   let places: PlaceBook[] | null = null;
   if (scan) {
     const result: PlaceBook[] = [];
+    const wanted = new Map<string, { book: string; chapter: number; verse: number }[]>();
+    for (const row of scan.values()) {
+      const entry = getBibleBook(row.book);
+      if (!entry) continue;
+      const translationId = defaultTranslationId(locale, entry);
+      wanted.set(translationId, [
+        ...(wanted.get(translationId) ?? []),
+        { book: row.book, chapter: row.chapter, verse: row.verse },
+      ]);
+    }
+    const texts = new Map<string, string>();
+    await Promise.all(
+      [...wanted.entries()].map(async ([translationId, refs]) => {
+        for (const [key, text] of await getBibleVerseTexts(translationId, refs)) texts.set(key, text);
+      }),
+    );
     for (const row of books) {
       const verses: PlaceVerse[] = [];
       for (const ref of occurrence.b[row.id] ?? []) {
@@ -375,12 +376,11 @@ export async function getWordPage(locale: Locale, id: string, fromParam?: string
         const found = scan.get(`${row.id}.${chapter}.${verse}`);
         const book = getBibleBook(row.id);
         if (!found || !book) continue;
-        const stored = await getBibleVerse(defaultTranslationId(locale, book), row.id, Number(chapter), Number(verse));
         verses.push({
           reference: `${chapter}:${verse}`,
           number: Number(verse),
           href: `${bibleChapterHref(locale, book, Number(chapter))}#v-${verse}`,
-          text: (stored?.text ?? "").replace(/\s+/g, " ").trim(),
+          text: (texts.get(`${row.id}.${Number(chapter)}.${Number(verse)}`) ?? "").replace(/\s+/g, " ").trim(),
           forms: found.forms
             .filter(
               (entryForm, at, all) =>

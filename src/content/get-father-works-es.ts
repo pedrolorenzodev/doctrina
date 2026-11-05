@@ -1,16 +1,6 @@
-import { readdir, readFile } from "node:fs/promises";
-import { join } from "node:path";
-import { getFatherWork, type FatherWork } from "@/content/get-father-works";
+import { currentFatherSource, getFatherWork, type FatherWork } from "@/content/get-father-works";
 
 export type SpanishFatherWork = FatherWork & { partial: boolean; translatedFrom: string };
-
-type SpanishFile = {
-  work: { id: string; title: string; author: string };
-  edition: FatherWork["edition"] & { translatedFrom: { editionId: string } };
-  divisions: FatherWork["divisions"];
-};
-
-const root = join(process.cwd(), "data", "corpus", "fathers-es");
 
 const cache = new Map<string, Promise<SpanishFatherWork | null>>();
 
@@ -18,9 +8,8 @@ async function read(id: string): Promise<SpanishFatherWork | null> {
   const english = await getFatherWork(id);
   if (!english) return null;
   try {
-    const [name] = (await readdir(join(root, id))).filter((entry) => entry.endsWith(".json")).sort();
-    if (!name) return null;
-    const file = JSON.parse(await readFile(join(root, id, name), "utf8")) as SpanishFile;
+    const file = await currentFatherSource().spanishFile(id);
+    if (!file) return null;
     const ordinalOf = new Map(english.divisions.map((division) => [division.locator, division.ordinal]));
     const aligned = file.divisions.flatMap((division) => {
       const ordinal = ordinalOf.get(division.locator);

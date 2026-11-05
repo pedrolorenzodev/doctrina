@@ -1,25 +1,21 @@
-import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { bibleBooks } from "@/content/bible-books";
 import { bibleVersification, normalizeBibleFile } from "@/content/bible/normalize-bible";
 import { validateFatherFile } from "@/content/father-text/validate-father-file";
+import { count, credentials, rest, sha256, upsert } from "./supabase-load.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..", "..");
 const BIBLES = resolve(ROOT, "data", "corpus", "bibles");
 const FATHERS = resolve(ROOT, "data", "corpus", "fathers");
+const FATHERS_ES = resolve(ROOT, "data", "corpus", "fathers-es");
 const EXPORT = resolve(ROOT, "data", "corpus", "export");
 const SOURCES = resolve(ROOT, "data", "sources", "bibles.json");
-const BATCH = 1000;
 
 const args = process.argv.slice(2);
 const load = args.includes("--load");
 const fathers = args.includes("--fathers");
 const only = args.filter((arg) => !arg.startsWith("--"));
-
-function sha256(buffer) {
-  return createHash("sha256").update(buffer).digest("hex");
-}
 
 function csvField(value) {
   const text = String(value);
@@ -83,9 +79,10 @@ function readTranslation(source) {
   return { verses, chapters: [...chapters.values()], structure, books: books.size, sha256: digest, errors };
 }
 
-function translationRow(source) {
+function translationRow(source, ordinal) {
   return {
     id: source.id,
+    ordinal,
     language: source.lang,
     name: source.name,
     licence: source.licence,
@@ -111,7 +108,7 @@ function exportCsv(translations, chapters, verses, structure) {
   writeFileSync(
     resolve(EXPORT, "translations.csv"),
     toCsv(
-      ["id", "language", "name", "licence", "versification", "book_count", "source_url", "source_sha256", "retrieved_on"],
+      ["id", "ordinal", "language", "name", "licence", "versification", "book_count", "source_url", "source_sha256", "retrieved_on"],
       translations,
     ),
   );
@@ -140,50 +137,12 @@ function arrayLiteral(values) {
   return `{${values.map((value) => `"${String(value).replaceAll("\\", "\\\\").replaceAll('"', '\\"')}"`).join(",")}}`;
 }
 
-function credentials() {
-  try {
-    process.loadEnvFile(resolve(ROOT, ".env.local"));
-  } catch {}
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.SUPABASE_SECRET_KEY;
-  if (!url || !key) throw new Error("NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SECRET_KEY must be set in .env.local");
-  return { url, key };
-}
-
-async function rest({ url, key }, path, { method = "GET", body, prefer } = {}) {
-  const response = await fetch(`${url}/rest/v1/${path}`, {
-    method,
-    headers: {
-      apikey: key,
-      "Content-Type": "application/json",
-      ...(prefer ? { Prefer: prefer } : {}),
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  if (!response.ok) throw new Error(`${method} ${path}: ${response.status} ${await response.text()}`);
-  return response;
-}
-
-async function upsert(client, table, conflict, rows) {
-  for (let start = 0; start < rows.length; start += BATCH) {
-    await rest(client, `${table}?on_conflict=${conflict}`, {
-      method: "POST",
-      body: rows.slice(start, start + BATCH),
-      prefer: "resolution=merge-duplicates,return=minimal",
-    });
-  }
-}
-
-async function count(client, query) {
-  const response = await rest(client, query, { method: "HEAD", prefer: "count=exact" });
-  return Number(response.headers.get("content-range").split("/")[1]);
-}
-
-async function loadTranslation(client, source, parsed) {
+async function loadTranslation(client, source, parsed, ordinal) {
   const manifestRows = await (await rest(client, `corpus_manifest?id=eq.${source.id}&select=sha256,row_count`)).json();
   const [previous] = manifestRows;
   const loaded = await count(client, `verses?translation_id=eq.${source.id}`);
   if (previous?.sha256 === parsed.sha256 && loaded === parsed.verses.length) {
+    await upsert(client, "translations", "id", [translationRow(source, ordinal)]);
     console.log(`${source.id}: unchanged, ${loaded} verses already loaded`);
     return;
   }
@@ -192,7 +151,7 @@ async function loadTranslation(client, source, parsed) {
     await rest(client, `chapters?translation_id=eq.${source.id}`, { method: "DELETE" });
     await rest(client, `verses?translation_id=eq.${source.id}`, { method: "DELETE" });
   }
-  await upsert(client, "translations", "id", [translationRow(source)]);
+  await upsert(client, "translations", "id", [translationRow(source, ordinal)]);
   await upsert(client, "verses", "translation_id,book,chapter,verse", parsed.verses);
   await upsert(client, "chapters", "translation_id,book,chapter", parsed.chapters);
   await upsert(client, "chapter_structure", "translation_id,book,chapter", parsed.structure);
@@ -205,7 +164,9 @@ async function loadTranslation(client, source, parsed) {
 }
 
 async function runBibles() {
-  const sources = JSON.parse(readFileSync(SOURCES, "utf8")).filter((source) => only.length === 0 || only.includes(source.id));
+  const all = JSON.parse(readFileSync(SOURCES, "utf8"));
+  const ordinalOf = new Map(all.map((source, index) => [source.id, index + 1]));
+  const sources = all.filter((source) => only.length === 0 || only.includes(source.id));
   if (sources.length === 0) throw new Error(`no translation matches ${only.join(", ")}`);
 
   const parsed = sources.map((source) => ({ source, ...readTranslation(source) }));
@@ -218,7 +179,7 @@ async function runBibles() {
 
   if (!load) {
     exportCsv(
-      sources.map(translationRow),
+      sources.map((source) => translationRow(source, ordinalOf.get(source.id))),
       parsed.flatMap((entry) => entry.chapters),
       parsed.flatMap((entry) => entry.verses),
       parsed.flatMap((entry) => entry.structure),
@@ -227,7 +188,7 @@ async function runBibles() {
   } else {
     const client = credentials();
     await upsert(client, "books", "id", bookRows);
-    for (const entry of parsed) await loadTranslation(client, entry.source, entry);
+    for (const entry of parsed) await loadTranslation(client, entry.source, entry, ordinalOf.get(entry.source.id));
   }
 }
 
@@ -235,13 +196,17 @@ function readFatherFiles() {
   const files = [];
   const errors = [];
   if (!existsSync(FATHERS)) return { files, errors: [`${FATHERS} does not exist`] };
-  for (const work of readdirSync(FATHERS).filter((name) => statSync(resolve(FATHERS, name)).isDirectory())) {
-    if (only.length > 0 && !only.includes(work)) continue;
-    for (const name of readdirSync(resolve(FATHERS, work)).filter((entry) => entry.endsWith(".json"))) {
-      const buffer = readFileSync(resolve(FATHERS, work, name));
-      const file = JSON.parse(buffer.toString("utf8"));
-      errors.push(...validateFatherFile(file, `${work}/${name}`));
-      files.push({ file, label: `${work}/${name}`, sha256: sha256(buffer) });
+  for (const [root, spanish] of [[FATHERS, false], [FATHERS_ES, true]]) {
+    if (!existsSync(root)) continue;
+    for (const work of readdirSync(root).filter((name) => statSync(resolve(root, name)).isDirectory())) {
+      if (only.length > 0 && !only.includes(work)) continue;
+      for (const name of readdirSync(resolve(root, work)).filter((entry) => entry.endsWith(".json"))) {
+        const buffer = readFileSync(resolve(root, work, name));
+        const file = JSON.parse(buffer.toString("utf8"));
+        const label = `${spanish ? "fathers-es/" : ""}${work}/${name}`;
+        errors.push(...validateFatherFile(file, label));
+        files.push({ file, label, sha256: sha256(buffer), spanish });
+      }
     }
   }
   return { files, errors };
@@ -249,20 +214,34 @@ function readFatherFiles() {
 
 const workRow = ({ work }) => ({ id: work.id, title: work.title, author: work.author });
 
-const editionRow = ({ work, edition }) => ({
-  work_id: work.id,
-  id: edition.id,
-  language: edition.lang,
-  translator: edition.translator ?? "",
-  year: edition.year ?? "",
-  bibliography: edition.bibliography,
-  source_url: edition.source,
-  scan_url: edition.scan ?? "",
-  licence: edition.licence,
-  retrieved_on: edition.retrievedAt,
-  source_sha256: edition.sha256,
-  locator_notes: edition.locatorNotes ?? "",
-});
+const editionColumns = new Set([
+  "id", "lang", "translator", "year", "bibliography", "source", "scan", "licence",
+  "retrievedAt", "sha256", "locatorNotes", "status", "translatedFrom",
+]);
+
+const editionRow = ({ work, edition }) => {
+  const { translatedFrom, ...rest } = edition;
+  const extra = Object.fromEntries(Object.entries(rest).filter(([key]) => !editionColumns.has(key)));
+  if (translatedFrom) extra.translatedFrom = { file: translatedFrom.file, sha256: translatedFrom.sha256 };
+  return {
+    work_id: work.id,
+    id: edition.id,
+    title: work.title,
+    language: edition.lang,
+    translator: edition.translator ?? "",
+    year: edition.year ?? "",
+    bibliography: edition.bibliography,
+    source_url: edition.source,
+    scan_url: edition.scan ?? "",
+    licence: edition.licence,
+    retrieved_on: edition.retrievedAt,
+    source_sha256: edition.sha256,
+    locator_notes: edition.locatorNotes ?? "",
+    status: edition.status ?? "",
+    translated_from: translatedFrom?.editionId ?? "",
+    extra,
+  };
+};
 
 const divisionRows = ({ work, edition, divisions }) =>
   divisions.map((division) => ({
@@ -287,7 +266,7 @@ async function loadFatherEdition(client, entry) {
     return;
   }
   if (previous && previous.sha256 !== entry.sha256) await rest(client, `divisions?${where}`, { method: "DELETE" });
-  await upsert(client, "works", "id", [workRow(file)]);
+  if (!entry.spanish) await upsert(client, "works", "id", [workRow(file)]);
   await upsert(client, "editions", "work_id,id", [nullable(editionRow(file))]);
   await upsert(client, "divisions", "work_id,edition_id,locator", divisionRows(file).map(nullable));
   const after = await count(client, `divisions?${where}`);
@@ -306,13 +285,13 @@ async function runFathers() {
   }
   if (!load) {
     mkdirSync(EXPORT, { recursive: true });
-    const works = [...new Map(files.map(({ file }) => [file.work.id, workRow(file)])).values()];
+    const works = [...new Map(files.filter((entry) => !entry.spanish).map(({ file }) => [file.work.id, workRow(file)])).values()];
     writeFileSync(resolve(EXPORT, "works.csv"), toCsv(["id", "title", "author"], works));
     writeFileSync(
       resolve(EXPORT, "editions.csv"),
       toCsv(
-        ["work_id", "id", "language", "translator", "year", "bibliography", "source_url", "scan_url", "licence", "retrieved_on", "source_sha256", "locator_notes"],
-        files.map(({ file }) => editionRow(file)),
+        ["work_id", "id", "title", "language", "translator", "year", "bibliography", "source_url", "scan_url", "licence", "retrieved_on", "source_sha256", "locator_notes", "status", "translated_from", "extra"],
+        files.map(({ file }) => ({ ...editionRow(file), extra: JSON.stringify(editionRow(file).extra) })),
       ),
     );
     writeFileSync(

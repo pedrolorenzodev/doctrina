@@ -2,9 +2,10 @@ import type { BibleSource } from "@/content/bible/bible-source";
 import { sortChapters } from "@/content/bible/chapter-neighbors";
 import { redSpansOf } from "@/content/bible/red-letters";
 import type { BibleTranslation, BibleVerse, ChapterStructure, ChapterSummary } from "@/content/model/bible";
+import { createSupabaseSelect } from "@/content/supabase-rest";
 import type { Locale } from "@/lib/locale";
 
-const PAGE = 1000;
+const REF_CHUNK = 80;
 
 type VerseRow = { verse: number; text: string; red: string[] | null };
 
@@ -20,26 +21,13 @@ type TranslationRow = {
 };
 
 export function createSupabaseBibleSource(url: string, publishableKey: string): BibleSource {
-  async function select<Row>(query: string): Promise<Row[]> {
-    const rows: Row[] = [];
-    for (;;) {
-      const response = await fetch(`${url}/rest/v1/${query}&limit=${PAGE}&offset=${rows.length}`, {
-        headers: { apikey: publishableKey, Prefer: "count=exact" },
-        cache: "force-cache",
-      });
-      if (!response.ok) throw new Error(`Supabase ${query}: ${response.status} ${await response.text()}`);
-      const page = (await response.json()) as Row[];
-      rows.push(...page);
-      const total = Number(response.headers.get("content-range")?.split("/")[1]);
-      if (page.length === 0 || !(rows.length < total)) return rows;
-    }
-  }
+  const select = createSupabaseSelect(url, publishableKey, "corpus-bible");
 
   const key = (value: string | number) => encodeURIComponent(String(value));
 
   return {
     async translations() {
-      const rows = await select<TranslationRow>("translations?select=*&order=id");
+      const rows = await select<TranslationRow>("translations?select=*&order=ordinal");
       return rows.map((row): BibleTranslation => ({
         id: row.id,
         language: row.language,
@@ -81,6 +69,23 @@ export function createSupabaseBibleSource(url: string, publishableKey: string): 
         `verses?translation_id=eq.${key(translationId)}&book=eq.${key(book)}&chapter=eq.${chapter}&verse=eq.${verse}&select=verse,text`,
       );
       return row ?? null;
+    },
+    async verseTexts(translationId, refs) {
+      const found = new Map<string, string>();
+      const chunks: (typeof refs)[] = [];
+      for (let start = 0; start < refs.length; start += REF_CHUNK) chunks.push(refs.slice(start, start + REF_CHUNK));
+      await Promise.all(
+        chunks.map(async (chunk) => {
+          const filter = chunk
+            .map((ref) => `and(book.eq.${key(ref.book)},chapter.eq.${ref.chapter},verse.eq.${ref.verse})`)
+            .join(",");
+          const rows = await select<{ book: string; chapter: number; verse: number; text: string }>(
+            `verses?translation_id=eq.${key(translationId)}&or=(${filter})&select=book,chapter,verse,text`,
+          );
+          for (const row of rows) found.set(`${row.book}.${row.chapter}.${row.verse}`, row.text);
+        }),
+      );
+      return found;
     },
   };
 }

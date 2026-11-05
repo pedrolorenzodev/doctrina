@@ -1,5 +1,5 @@
 import { getBibleBook } from "@/content/bible-books";
-import { getChapterWords, getLexiconEntry, getParseNames, getWordOccurrence } from "@/content/get-words";
+import { getChapterWords, getLexiconBrief, getParseNames } from "@/content/get-words";
 import { parseLabel } from "@/content/parse-label";
 import type { VerseWord, WordLanguage } from "@/content/model/words";
 import type { Locale } from "@/lib/locale";
@@ -58,18 +58,17 @@ export async function getChapterWordView(
   const verses: Record<string, WordView[]> = {};
   const ids = new Set<string>();
   for (const verse of Object.values(data.verses)) for (const word of verse.words) ids.add(lexiconIdOf(word, data.lang));
-  await Promise.all(
-    [...ids].map(async (id) => {
-      const [entry, occurrence] = await Promise.all([getLexiconEntry(id), getWordOccurrence(id)]);
-      if (!entry) return;
-      lexicon[id] = {
-        lemma: entry.lemma.normalize("NFC"),
-        transliteration: entry.tr,
-        times: entry.n,
-        verses: occurrence?.b[bookId]?.length ?? 0,
-      };
-    }),
-  );
+  const briefs = await getLexiconBrief([...ids], bookId);
+  for (const id of ids) {
+    const brief = briefs.get(id);
+    if (!brief) continue;
+    lexicon[id] = {
+      lemma: brief.lemma.normalize("NFC"),
+      transliteration: brief.tr,
+      times: brief.n,
+      verses: brief.verses,
+    };
+  }
   for (const [number, verse] of Object.entries(data.verses)) {
     verses[number] = verse.words.map((word) => {
       const gloss = glossOf(word, data.lang, locale);
