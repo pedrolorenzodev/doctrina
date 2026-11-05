@@ -1,0 +1,82 @@
+{
+  "slug": "verso",
+  "url": "https://www.versobooks.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:16:59.123Z",
+  "links": [
+    {
+      "rel": "alternate icon",
+      "href": "https://www.versobooks.com/cdn/shop/t/13/assets/favicon.static.ico?v=131415544810586218661674082169",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.versobooks.com/cdn/shop/t/13/assets/favicon.static.svg?v=83747225362036470991674082170",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.versobooks.com/cdn/shop/t/13/assets/apple-touch-icon.static.png?v=19150402310172402201674082166",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.versobooks.com/cdn/shop/t/13/assets/favicon.static.svg?v=83747225362036470991674082170",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 189,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "alternate icon",
+      "href": "https://www.versobooks.com/cdn/shop/t/13/assets/favicon.static.ico?v=131415544810586218661674082169",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-alternate_icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.versobooks.com/cdn/shop/t/13/assets/apple-touch-icon.static.png?v=19150402310172402201674082166",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 1193,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.versobooks.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.versobooks.com/en-gb",
+  "title": "Verso Books | Books, Blog, and Book Club",
+  "og": "http://www.versobooks.com/cdn/shop/files/VERSO_logo.png?v=1680518674",
+  "themeColor": [
+    {
+      "content": "",
+      "media": ""
+    }
+  ]
+}

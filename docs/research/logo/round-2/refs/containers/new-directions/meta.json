@@ -1,0 +1,103 @@
+{
+  "slug": "new-directions",
+  "url": "https://www.ndbooks.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:20.695Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.ndbooks.com/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.ndbooks.com/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.ndbooks.com/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.ndbooks.com/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#5bbad5"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.ndbooks.com/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1159,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.ndbooks.com/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 682,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.ndbooks.com/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 5767,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.ndbooks.com/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#5bbad5",
+      "file": "03-mask-icon.svg",
+      "bytes": 10798,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.ndbooks.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.ndbooks.com/",
+  "title": "New Directions Publishing",
+  "og": "https://cdn.sanity.io/images/p34gzxcg/production/679b6a97ea232405f5df5612db53d1eed943fcac-512x512.png?auto=format&w=1000",
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

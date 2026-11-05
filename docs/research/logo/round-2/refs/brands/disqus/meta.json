@@ -1,0 +1,215 @@
+{
+  "slug": "disqus",
+  "url": "https://disqus.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:17:12.383Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-60x60.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-76x76.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-160x160.png",
+      "sizes": "160x160",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1057,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-160x160.png",
+      "sizes": "160x160",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 942,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 552,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 196,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 291,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon.png",
+      "bytes": 398,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 801,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon.png",
+      "bytes": 509,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://disqus.com/",
+  "title": "#1 in audience engagement and community growth | Disqus",
+  "og": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-192x192.png",
+  "themeColor": []
+}

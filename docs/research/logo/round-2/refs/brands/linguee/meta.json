@@ -1,0 +1,117 @@
+{
+  "slug": "linguee",
+  "url": "https://www.linguee.com/",
+  "family": "language",
+  "fetched": "2026-11-04T15:14:57.355Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/apple-touch-icon3.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 1817,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1280,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 771,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 5360,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.linguee.com/static/49ac27c2/img5/apple-touch-icon3.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 5650,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.linguee.com/favicon.ico",
+      "file": "05-default-favicon.ico",
+      "bytes": 7406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.linguee.com/",
+  "title": "Linguee | Dictionary for German, French, Spanish, and more",
+  "og": null,
+  "themeColor": []
+}

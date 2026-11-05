@@ -1,0 +1,41 @@
+{
+  "slug": "vodafone",
+  "url": "https://www.vodafone.com/",
+  "family": "brand-mark",
+  "fetched": "2026-11-04T15:12:58.799Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.vodafone.com/~/media/C202CC9916254ACCB647C18EC991C36B.png",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.vodafone.com/~/media/C202CC9916254ACCB647C18EC991C36B.png",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.png",
+      "bytes": 444,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.vodafone.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 198,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.vodafone.com/",
+  "title": "Vodafone",
+  "og": "https://www.vodafone.com/~/media/Images/V/vodafone/universal/logos/og-logo.jpg",
+  "themeColor": []
+}

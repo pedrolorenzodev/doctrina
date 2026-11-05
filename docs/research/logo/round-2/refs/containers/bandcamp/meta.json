@@ -1,0 +1,167 @@
+{
+  "slug": "bandcamp",
+  "url": "https://bandcamp.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:16:52.365Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://s4.bcbits.com/client-bundle/1/PageLayout_1/favicon-e91a942bb76c26f619d5945a00cf8e60.static/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://s4.bcbits.com/client-bundle/1/PageLayout_1/favicon-e91a942bb76c26f619d5945a00cf8e60.static/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://s4.bcbits.com/client-bundle/1/PageLayout_1/favicon-e91a942bb76c26f619d5945a00cf8e60.static/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://s4.bcbits.com/client-bundle/1/PageLayout_1/favicon-e91a942bb76c26f619d5945a00cf8e60.static/favicon/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#1da0c3"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAKE/YAAAAABGdBTUEAALGPC/xhBQAAAYxQTFRF////qdvpM6nJOKvKSbLO7fj72O/1I6LEHaDDHqHESbPPVrfSH6LEJaTF0uzzyunxJqTGIKLEX7zURbHOJKTF3vH3uuLtJ6TGIqLFcMPZ/v//JaPF6fb6qtzpKKTGg8vf+f3+LqfHJqXG8vr8mdTlJ6XGlNLj8/r8LKbH+P3+h83gJqPFp9vo6/f6NqrK/f7/dMXaJKPEt+Hs4PL3Qa/NY77VIqHEJ6TFx+jw1e70H6HEUbbRNarJptroKKXGq9zpu+PtRrHOXrzUIKHETbTQwubvJqTFIaLEZ7/WPq7MJaPE5PT4st/rJKPFecfc/P7/M6rJJaPGotnni87g9/z9K6bGKaXH9fv9j9Dindbm8Pn7JaTGMKjI+/7+fsndr97q5/X5OqzLbMHZIqLEv+Tu2/D2HqDEWrnTzuvya8HYJKLFfcjdntbmjtDi9vv9K6XGjM/hodjn7vj7MqnI5fT4aMDX2e/1V7jSH6HDJqPG0ezzy+ryI6PEb8PZHqHD6Pb5iM3fY77WYLzV1O30q9McfwAAAhxJREFUeAHtwWVbkwEYBeCjCD5DXpg6fIXhCBkpBkrrJGcxMLAIUZGwu1v/uD/Cc51P575hZmZmZmZmZmZmZmZmZmZmZmZmZkawa3cVyZ5qiNTsDZJMLVT21QVJUg+RhmyQ7D8AlYPBkmuEyKE0SA43QaS5KljyLRA5UgiSpBUibe3B0nEUIp3FIEm7INJdCJaeXoj09QdJegwiA0mwHD8BkZOngiQdhMjpXLCcgcrQcJCMjEJkLB8k4xNQmRgPkvwYREZHgmR4CCpngiV3GiKDaZCcOgmRE2eDJRmAyLlSkPT3QaS3J1gK3RDpSoOk2AmRox3B0t4GkdYkSErnIdKSD5aqZog0HQ6SdBIijblgmYLK9EyQZBsgUp8ESd0+qMxmgiSpgchcOUguXITKpWC5fAUi86UgqSxAZPFqsFyrhsj1QpCUb0Bk6Waw3LoNkTtpkKR3IbK8EiyraxC5VwmSdB0i9/PB8gAqDzeCJH0Ekc1KkGzVQmV7JkiSHYjslINkfBsqtVtBUtmEyKNikGw8hsqDYHlyHyLraZDknkJkbTVYVpYh8qwYJNnnEHlxK1heLkHk1UqQlF5D5E05WN4uQmShEiSleYi8uxwsl6Dy/kKQlOcg8iEJkswsVD5+CpLPXyDyNRskM9NQmcoESaURIpNpkHz7DpHmoPnxEyK3f/0m+fMXZmZmZmZmZmZmZmZmZmZmZmZmZmb/7R/6Gu2we5s5dAAAAABJRU5ErkJggg==",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAzFBMVEUAAAAdoMMeoMMeocQeoMQdn8Ibn8Ieo8UfocQcn8IcoMIeosQdocMeocUcoMMfosUgo8QeosUeocMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMfosUdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMeocQdoMMdoMMdoMMdoMMdoMMdoMMdn8IdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMcoMMdoMMdoMMdoMMdoMMdoMP///8al1lIAAAAQnRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAwQBVWRgYWNbTP2SAcn5+/raD1/8ZwrY0QZzVhbm/sABh0MCI/KumzKaARVy0sgKk2+GAAAAAWJLR0RDZ9ANYgAAAAd0SU1FB+MEEQ8KGdT5UsEAAAEXSURBVDjLzVLZUgIxENw2iuCtyQICCxJuRGSRU1R0/v+jnCXLy2ZqHy37IVWp6fSkZzoI/g8AaCNAp/UTIGROnoAy5Ur1MYta3dVPzzQaFFEWETWPAoXWE7VtBh3q9lz9XKNPA09gQEP3LYRqNPY7RPQ8KboGBi9kBYEpEptFdvg6o9ivz0tvSQtcGCwEgZiW0Ey4xArrjSSw5QoToDTeBQtkd0xQgeJz5+vziw9olQhcrbD1BWLarPnpNRM0lsKQLS1gbg4ePgtzSWD2xe4VEzSmwg8t7Xl6hznfTr6lIY9HKkz3MBS31Ie+c4RelzrZNbfpp1U65qspWIipweZSQr3m5axaKZv7/IAmCX5Ib3LYcxP+5/gFzD1sP8rfy6wAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMDQtMTdUMTU6MTA6MjUrMDI6MDC8n04vAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTA0LTE3VDE1OjEwOjI1KzAyOjAwzcL2kwAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAdVBMVEUAAAAdoMMcoMMeocQbn8Icn8IeocMdoMIdocMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMP///9+mAVhAAAAJXRSTlMAAAAAAAAAAAABAwIaq7CvrrSVBIv8/Wom9P77+b6eRTayNYqWe6+z5QAAAAFiS0dEJloImLUAAAAHdElNRQfjBBEPChnU+VLBAAAAkElEQVQY01WP7RaCMAxDExV1DBBExjeI2vd/RcsQON5fbZZ2DQD+gVkw4Yb1BkMegOUNR22jOLl50uwOnnI+pBCPkxK0rOqmLWY66Q9gyGE3jITl0y2tyhOtCtNqEPdSgaO41TDoPIJeOr+xbepKf0C5G97MA+KTpctRSRzpjWcYnwe4+ARa2z2Y+WXduM7CFwePDzkv9+PCAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTA0LTE3VDE1OjEwOjI1KzAyOjAwvJ9OLwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wNC0xN1QxNToxMDoyNSswMjowMM3C9pMAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "data:image/svg+xml,%3csvg%20version='1.0'%20xmlns='http://www.w3.org/2000/svg'%20width='688.000000pt'%20height='688.000000pt'%20viewBox='0%200%20688.000000%20688.000000'%20preserveAspectRatio='xMidYMid%20meet'%3e%3cg%20transform='translate(0.000000,688.000000)%20scale(0.100000,-0.100000)'%20fill='%230CACD7'%20stroke='none'%3e%3cpath%20d='M2024%205146%20c-92%20-171%20-176%20-325%20-186%20-343%20-9%20-18%20-34%20-63%20-54%20-100%20-20%20-37%20-45%20-81%20-54%20-98%20-10%20-16%20-40%20-73%20-67%20-125%20-42%20-78%20-194%20-360%20-391%20-720%20-19%20-36%20-47%20-87%20-62%20-115%20-28%20-54%20-34%20-64%20-268%20-495%20-85%20-157%20-171%20-316%20-192%20-355%20-20%20-38%20-95%20-176%20-165%20-305%20-70%20-129%20-144%20-264%20-163%20-300%20-19%20-36%20-47%20-87%20-62%20-115%20-15%20-27%20-47%20-86%20-70%20-130%20-24%20-44%20-52%20-96%20-63%20-115%20-11%20-19%20-42%20-78%20-70%20-130%20-28%20-52%20-70%20-131%20-94%20-175%20-25%20-44%20-45%20-84%20-46%20-90%20-1%20-7%20782%20-10%202331%20-11%20l2333%200%2018%2025%20c10%2014%2054%2094%2098%20176%2045%2083%2092%20170%20105%20195%2014%2025%2042%2077%2062%20115%2021%2039%2051%2093%2066%20120%2015%2028%2047%2086%2070%20130%2024%2044%2055%20103%2070%20130%2054%2099%20283%20522%20323%20595%2022%2041%2050%2093%2062%20115%2012%2022%2038%2069%2057%20105%2030%2055%20364%20672%20463%20855%2018%2033%2090%20166%20160%20295%20125%20230%20165%20305%20230%20425%2018%2033%20106%20195%20195%20360%2090%20165%20173%20319%20186%20343%2013%2023%2024%2044%2024%2046%200%201%20-1053%202%20-2339%202%20l-2339%200%20-168%20-310z'/%3e%3c/g%3e%3c/svg%3e",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#0CACD7"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://s4.bcbits.com/client-bundle/1/PageLayout_1/favicon-e91a942bb76c26f619d5945a00cf8e60.static/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 919,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://s4.bcbits.com/client-bundle/1/PageLayout_1/favicon-e91a942bb76c26f619d5945a00cf8e60.static/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 668,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAzFBMVEUAAAAdoMMeoMMeocQeoMQdn8Ibn8Ieo8UfocQcn8IcoMIeosQdocMeocUcoMMfosUgo8QeosUeocMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMfosUdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMeocQdoMMdoMMdoMMdoMMdoMMdoMMdn8IdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMcoMMdoMMdoMMdoMMdoMMdoMP///8al1lIAAAAQnRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAwQBVWRgYWNbTP2SAcn5+/raD1/8ZwrY0QZzVhbm/sABh0MCI/KumzKaARVy0sgKk2+GAAAAAWJLR0RDZ9ANYgAAAAd0SU1FB+MEEQ8KGdT5UsEAAAEXSURBVDjLzVLZUgIxENw2iuCtyQICCxJuRGSRU1R0/v+jnCXLy2ZqHy37IVWp6fSkZzoI/g8AaCNAp/UTIGROnoAy5Ur1MYta3dVPzzQaFFEWETWPAoXWE7VtBh3q9lz9XKNPA09gQEP3LYRqNPY7RPQ8KboGBi9kBYEpEptFdvg6o9ivz0tvSQtcGCwEgZiW0Ey4xArrjSSw5QoToDTeBQtkd0xQgeJz5+vziw9olQhcrbD1BWLarPnpNRM0lsKQLS1gbg4ePgtzSWD2xe4VEzSmwg8t7Xl6hznfTr6lIY9HKkz3MBS31Ie+c4RelzrZNbfpp1U65qspWIipweZSQr3m5axaKZv7/IAmCX5Ib3LYcxP+5/gFzD1sP8rfy6wAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMDQtMTdUMTU6MTA6MjUrMDI6MDC8n04vAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTA0LTE3VDE1OjEwOjI1KzAyOjAwzcL2kwAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 919,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAdVBMVEUAAAAdoMMcoMMeocQbn8Icn8IeocMdoMIdocMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMMdoMP///9+mAVhAAAAJXRSTlMAAAAAAAAAAAABAwIaq7CvrrSVBIv8/Wom9P77+b6eRTayNYqWe6+z5QAAAAFiS0dEJloImLUAAAAHdElNRQfjBBEPChnU+VLBAAAAkElEQVQY01WP7RaCMAxDExV1DBBExjeI2vd/RcsQON5fbZZ2DQD+gVkw4Yb1BkMegOUNR22jOLl50uwOnnI+pBCPkxK0rOqmLWY66Q9gyGE3jITl0y2tyhOtCtNqEPdSgaO41TDoPIJeOr+xbepKf0C5G97MA+KTpctRSRzpjWcYnwe4+ARa2z2Y+WXduM7CFwePDzkv9+PCAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTA0LTE3VDE1OjEwOjI1KzAyOjAwvJ9OLwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wNC0xN1QxNToxMDoyNSswMjowMM3C9pMAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 668,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://s4.bcbits.com/client-bundle/1/PageLayout_1/favicon-e91a942bb76c26f619d5945a00cf8e60.static/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 1021,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://s4.bcbits.com/client-bundle/1/PageLayout_1/favicon-e91a942bb76c26f619d5945a00cf8e60.static/favicon/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#1da0c3",
+      "file": "05-mask-icon.svg",
+      "bytes": 1262,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAKE/YAAAAABGdBTUEAALGPC/xhBQAAAYxQTFRF////qdvpM6nJOKvKSbLO7fj72O/1I6LEHaDDHqHESbPPVrfSH6LEJaTF0uzzyunxJqTGIKLEX7zURbHOJKTF3vH3uuLtJ6TGIqLFcMPZ/v//JaPF6fb6qtzpKKTGg8vf+f3+LqfHJqXG8vr8mdTlJ6XGlNLj8/r8LKbH+P3+h83gJqPFp9vo6/f6NqrK/f7/dMXaJKPEt+Hs4PL3Qa/NY77VIqHEJ6TFx+jw1e70H6HEUbbRNarJptroKKXGq9zpu+PtRrHOXrzUIKHETbTQwubvJqTFIaLEZ7/WPq7MJaPE5PT4st/rJKPFecfc/P7/M6rJJaPGotnni87g9/z9K6bGKaXH9fv9j9Dindbm8Pn7JaTGMKjI+/7+fsndr97q5/X5OqzLbMHZIqLEv+Tu2/D2HqDEWrnTzuvya8HYJKLFfcjdntbmjtDi9vv9K6XGjM/hodjn7vj7MqnI5fT4aMDX2e/1V7jSH6HDJqPG0ezzy+ryI6PEb8PZHqHD6Pb5iM3fY77WYLzV1O30q9McfwAAAhxJREFUeAHtwWVbkwEYBeCjCD5DXpg6fIXhCBkpBkrrJGcxMLAIUZGwu1v/uD/Cc51P575hZmZmZmZmZmZmZmZmZmZmZmZmZkawa3cVyZ5qiNTsDZJMLVT21QVJUg+RhmyQ7D8AlYPBkmuEyKE0SA43QaS5KljyLRA5UgiSpBUibe3B0nEUIp3FIEm7INJdCJaeXoj09QdJegwiA0mwHD8BkZOngiQdhMjpXLCcgcrQcJCMjEJkLB8k4xNQmRgPkvwYREZHgmR4CCpngiV3GiKDaZCcOgmRE2eDJRmAyLlSkPT3QaS3J1gK3RDpSoOk2AmRox3B0t4GkdYkSErnIdKSD5aqZog0HQ6SdBIijblgmYLK9EyQZBsgUp8ESd0+qMxmgiSpgchcOUguXITKpWC5fAUi86UgqSxAZPFqsFyrhsj1QpCUb0Bk6Waw3LoNkTtpkKR3IbK8EiyraxC5VwmSdB0i9/PB8gAqDzeCJH0Ekc1KkGzVQmV7JkiSHYjslINkfBsqtVtBUtmEyKNikGw8hsqDYHlyHyLraZDknkJkbTVYVpYh8qwYJNnnEHlxK1heLkHk1UqQlF5D5E05WN4uQmShEiSleYi8uxwsl6Dy/kKQlOcg8iEJkswsVD5+CpLPXyDyNRskM9NQmcoESaURIpNpkHz7DpHmoPnxEyK3f/0m+fMXZmZmZmZmZmZmZmZmZmZmZmZmZmb/7R/6Gu2we5s5dAAAAABJRU5ErkJggg==",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 1021,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "data:image/svg+xml,%3csvg%20version='1.0'%20xmlns='http://www.w3.org/2000/svg'%20width='688.000000pt'%20height='688.000000pt'%20viewBox='0%200%20688.000000%20688.000000'%20preserveAspectRatio='xMidYMid%20meet'%3e%3cg%20transform='translate(0.000000,688.000000)%20scale(0.100000,-0.100000)'%20fill='%230CACD7'%20stroke='none'%3e%3cpath%20d='M2024%205146%20c-92%20-171%20-176%20-325%20-186%20-343%20-9%20-18%20-34%20-63%20-54%20-100%20-20%20-37%20-45%20-81%20-54%20-98%20-10%20-16%20-40%20-73%20-67%20-125%20-42%20-78%20-194%20-360%20-391%20-720%20-19%20-36%20-47%20-87%20-62%20-115%20-28%20-54%20-34%20-64%20-268%20-495%20-85%20-157%20-171%20-316%20-192%20-355%20-20%20-38%20-95%20-176%20-165%20-305%20-70%20-129%20-144%20-264%20-163%20-300%20-19%20-36%20-47%20-87%20-62%20-115%20-15%20-27%20-47%20-86%20-70%20-130%20-24%20-44%20-52%20-96%20-63%20-115%20-11%20-19%20-42%20-78%20-70%20-130%20-28%20-52%20-70%20-131%20-94%20-175%20-25%20-44%20-45%20-84%20-46%20-90%20-1%20-7%20782%20-10%202331%20-11%20l2333%200%2018%2025%20c10%2014%2054%2094%2098%20176%2045%2083%2092%20170%20105%20195%2014%2025%2042%2077%2062%20115%2021%2039%2051%2093%2066%20120%2015%2028%2047%2086%2070%20130%2024%2044%2055%20103%2070%20130%2054%2099%20283%20522%20323%20595%2022%2041%2050%2093%2062%20115%2012%2022%2038%2069%2057%20105%2030%2055%20364%20672%20463%20855%2018%2033%2090%20166%20160%20295%20125%20230%20165%20305%20230%20425%2018%2033%20106%20195%20195%20360%2090%20165%20173%20319%20186%20343%2013%2023%2024%2044%2024%2046%200%201%20-1053%202%20-2339%202%20l-2339%200%20-168%20-310z'/%3e%3c/g%3e%3c/svg%3e",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#0CACD7",
+      "file": "07-mask-icon.svg",
+      "bytes": 1104,
+      "ct": "image/svg+xml"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://bandcamp.com/",
+  "title": "Bandcamp",
+  "og": "https://f4.bcbits.com/img/0048215579_171.jpg",
+  "themeColor": []
+}

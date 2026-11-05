@@ -1,0 +1,66 @@
+{
+  "slug": "anagrama",
+  "url": "https://www.anagrama-ed.es/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:16:33.971Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.anagrama-ed.es/favicon-dark.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "(prefers-color-scheme: dark)",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.anagrama-ed.es/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "(prefers-color-scheme: light)",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.anagrama-ed.es/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "(prefers-color-scheme: no-preference)",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.anagrama-ed.es/favicon-dark.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "(prefers-color-scheme: dark)",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 4286,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.anagrama-ed.es/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "(prefers-color-scheme: light)",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 4286,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.anagrama-ed.es/",
+  "title": "Editorial Anagrama",
+  "og": "https://www.anagrama-ed.es/img/logo.png",
+  "themeColor": [
+    {
+      "content": "#1f140f",
+      "media": ""
+    }
+  ]
+}

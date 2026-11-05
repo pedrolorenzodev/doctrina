@@ -1,0 +1,68 @@
+{
+  "slug": "discourse",
+  "url": "https://www.discourse.org/",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:17:17.292Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.discourse.org/a/img/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.discourse.org/a/img/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.discourse.org/a/img/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.discourse.org/a/img/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 99678,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.discourse.org/a/img/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 3575,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.discourse.org/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 99678,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.discourse.org/",
+  "title": "Discourse | One platform. Any community.",
+  "og": "https://www.discourse.org/a/img/srcset/discourse-home.jpg",
+  "themeColor": []
+}

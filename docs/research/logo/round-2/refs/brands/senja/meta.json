@@ -1,0 +1,41 @@
+{
+  "slug": "senja",
+  "url": "https://senja.io/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:26.386Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://senja.io/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://senja.io/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 2175,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://senja.io/favicon.ico",
+      "file": "01-default-favicon.png",
+      "bytes": 2175,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://senja.io/",
+  "title": "Senja - Collect, Manage and Share Testimonials",
+  "og": "https://senja.io/_astro/og-default.zJVZog2w.png",
+  "themeColor": []
+}

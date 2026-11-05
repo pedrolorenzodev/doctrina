@@ -1,0 +1,39 @@
+{
+  "slug": "haskell",
+  "url": "https://www.haskell.org/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:18.307Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.haskell.org/img/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.haskell.org/img/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 1270,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.haskell.org/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.haskell.org/",
+  "title": "Haskell Language",
+  "og": null,
+  "themeColor": []
+}

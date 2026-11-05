@@ -1,0 +1,41 @@
+{
+  "slug": "fundeu",
+  "url": "https://www.fundeu.es/",
+  "family": "language",
+  "fetched": "2026-11-04T15:15:09.446Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.fundeu.es/wp-content/themes/fundeu_v2/favicon3.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.fundeu.es/wp-content/themes/fundeu_v2/favicon3.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 1150,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.fundeu.es/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 4710,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.fundeu.es/",
+  "title": "Fundación del Español Urgente",
+  "og": "https://www.fundeu.es/wp-content/themes/fundeu_v2/images/thumb_fundeu.jpg",
+  "themeColor": []
+}

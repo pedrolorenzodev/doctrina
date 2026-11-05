@@ -1,0 +1,39 @@
+{
+  "slug": "htmx",
+  "url": "https://htmx.org/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:50.559Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://htmx.org/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://htmx.org/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 3292,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://htmx.org/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://htmx.org/",
+  "title": "</> htmx - high power tools for html",
+  "og": null,
+  "themeColor": []
+}

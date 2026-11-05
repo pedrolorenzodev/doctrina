@@ -1,0 +1,58 @@
+{
+  "slug": "eldiario",
+  "url": "https://www.eldiario.es/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:16:20.004Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.eldiario.es/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.eldiario.es/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.eldiario.es/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": "not-image",
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.eldiario.es/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-apple-touch-icon.png",
+      "bytes": 3761,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.eldiario.es/favicon.ico",
+      "status": "not-image",
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.eldiario.es/",
+  "title": "elDiario.es - Noticias de actualidad - Periodismo a pesar de todo",
+  "og": "https://static.eldiario.es/clip/4737196c-2353-44b1-b78e-3c26b1adcfe8_facebook-aspect-ratio_default_0.jpg",
+  "themeColor": []
+}

@@ -1,0 +1,34 @@
+{
+  "slug": "brackets",
+  "url": "https://brackets.io/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:15.680Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://brackets.io/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://brackets.io/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 1150,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://brackets.io/",
+  "title": "Brackets — Now Phoenix Code | Free Open Source Code Editor with Live Preview",
+  "og": "https://brackets.io/img/hero@2x.png",
+  "themeColor": []
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "ia-writer",
+  "url": "https://ia.net/writer",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:17:05.500Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://static.ia.net/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.ia.net/favicon-180.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.ia.net/favicon-192.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://static.ia.net/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 7406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.ia.net/favicon-180.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 2343,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.ia.net/favicon-192.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 3385,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://ia.net/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://ia.net/writer",
+  "title": "iA Writer: The Benchmark of Markdown Writing Apps - iA",
+  "og": "https://static.ia.net/2023/01/og-writer.webp",
+  "themeColor": []
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "astro",
+  "url": "https://astro.build/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:53.288Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://astro.build/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://astro.build/favicon.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#8D46E7"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://astro.build/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 1235,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://astro.build/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://astro.build/",
+  "title": "Astro",
+  "og": "https://astro.build/og/astro.jpg",
+  "themeColor": [
+    {
+      "content": "#8D46E7",
+      "media": ""
+    }
+  ]
+}

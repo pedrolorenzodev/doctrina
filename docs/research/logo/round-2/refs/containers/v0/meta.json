@@ -1,0 +1,101 @@
+{
+  "slug": "v0",
+  "url": "https://v0.app/",
+  "family": "container",
+  "fetched": "2026-11-04T15:20:00.131Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://v0.app/assets/icon-light-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "(prefers-color-scheme: light)",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://v0.app/assets/icon-dark-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "(prefers-color-scheme: dark)",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://v0.app/assets/icon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://v0.app/assets/apple-icon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://v0.app/assets/icon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 1304,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://v0.app/assets/icon-light-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "(prefers-color-scheme: light)",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 566,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://v0.app/assets/icon-dark-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "(prefers-color-scheme: dark)",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 585,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://v0.app/assets/apple-icon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 2626,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://v0.app/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://v0.app/",
+  "title": "v0 by Vercel - Build Full-Stack Web Apps with AI",
+  "og": "https://v0.app/chat/api/og",
+  "themeColor": [
+    {
+      "content": "#FAFAFA",
+      "media": ""
+    }
+  ]
+}

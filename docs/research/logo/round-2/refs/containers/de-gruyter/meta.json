@@ -1,0 +1,41 @@
+{
+  "slug": "de-gruyter",
+  "url": "https://www.degruyterbrill.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:10.054Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.degruyterbrill.com/assets/images/7ceceb5f0284fef9bd38295e9cda0098-favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.degruyterbrill.com/assets/images/7ceceb5f0284fef9bd38295e9cda0098-favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 1150,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.degruyterbrill.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 1150,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.degruyterbrill.com/",
+  "title": "De Gruyter Brill",
+  "og": "https://www.degruyterbrill.com/assets/images/4c2669143186c1ecfda2f251c5bebf10-dgbrill-og-logo.png",
+  "themeColor": []
+}

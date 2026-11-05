@@ -1,0 +1,41 @@
+{
+  "slug": "microsoft",
+  "url": "https://www.microsoft.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:08.420Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.microsoft.com/favicon.ico?v2",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.microsoft.com/favicon.ico?v2",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 17174,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.microsoft.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 17174,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.microsoft.com/es-ar",
+  "title": "Microsoft: IA, nube, productividad, informática, juegos y aplicaciones",
+  "og": null,
+  "themeColor": []
+}

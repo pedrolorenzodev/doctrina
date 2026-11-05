@@ -1,0 +1,19 @@
+{
+  "slug": "laphams",
+  "url": "https://www.laphamsquarterly.org/",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:16:52.984Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.laphamsquarterly.org/favicon.ico",
+      "status": 403
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.laphamsquarterly.org/",
+  "title": "403 Forbidden",
+  "og": null,
+  "themeColor": []
+}

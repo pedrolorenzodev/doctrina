@@ -1,0 +1,188 @@
+{
+  "slug": "plex",
+  "url": "https://www.plex.tv/",
+  "family": "media",
+  "fetched": "2026-11-04T15:13:18.409Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://watch.plex.tv/icons/plex-76.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://watch.plex.tv/icons/plex-120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://watch.plex.tv/icons/plex-152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://watch.plex.tv/icons/plex-167.png",
+      "sizes": "167x167",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://watch.plex.tv/icons/plex-180.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 4286,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 4263,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 5528,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 8512,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://watch.plex.tv/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 11667,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://watch.plex.tv/icons/plex-76.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon.png",
+      "bytes": 821,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://watch.plex.tv/icons/plex-120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 1154,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://watch.plex.tv/icons/plex-152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon.png",
+      "bytes": 1429,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://watch.plex.tv/",
+  "title": "Watch Movies and TV Shows Free Online - Plex",
+  "og": "https://watch.plex.tv/_next/static/media/watch-social-share.14b2sbwc3buhf.png",
+  "themeColor": [
+    {
+      "content": "#000000",
+      "media": ""
+    }
+  ]
+}

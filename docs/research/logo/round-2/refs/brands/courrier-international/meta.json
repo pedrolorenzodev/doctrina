@@ -1,0 +1,103 @@
+{
+  "slug": "courrier-international",
+  "url": "https://www.courrierinternational.com/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:23.399Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/icon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/apple-touch-icon-180x180.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 4375,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/icon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 3988,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/apple-touch-icon-180x180.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 2409,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.courrierinternational.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.courrierinternational.com/",
+  "title": "Courrier international - Actualités France et Monde",
+  "og": "https://www.courrierinternational.com/bucket/assets/74e06a026032e08afb9933b38d241904b70068d0/img/logos/default-image.jpg",
+  "themeColor": [
+    {
+      "content": "#2e3844",
+      "media": "(prefers-color-scheme: dark)"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "slug": "lovable",
+  "url": "https://lovable.dev/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:57.412Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon.ico",
+      "sizes": "48x48",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://lovable.dev/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 7276,
+      "ct": "image/svg+xml; charset=utf-8"
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "01-icon.svg",
+      "bytes": 7019,
+      "ct": "image/svg+xml; charset=utf-8"
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon.ico",
+      "sizes": "48x48",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-icon.ico",
+      "bytes": 7645,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 751,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 1990,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "05-icon.png",
+      "bytes": 1898,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "06-icon.png",
+      "bytes": 5248,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://lovable.dev/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "07-icon.png",
+      "bytes": 15657,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://lovable.dev/",
+  "title": "App & Website Builder | Build Software in Minutes | Lovable",
+  "og": "https://assets.lovable.dev/content/marketing/social/lovable-social-preview-fe2fea6c.jpg",
+  "themeColor": [
+    {
+      "content": "#fcfbf8",
+      "media": ""
+    }
+  ]
+}

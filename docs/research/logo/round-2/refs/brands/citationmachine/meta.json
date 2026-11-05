@@ -1,0 +1,39 @@
+{
+  "slug": "citationmachine",
+  "url": "https://www.citationmachine.net/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:35.963Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.citationmachine.net/static/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.citationmachine.net/static/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 1150,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.citationmachine.net/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.citationmachine.net/",
+  "title": "Citation Machine®: Format & Generate - APA, MLA, & Chicago",
+  "og": null,
+  "themeColor": []
+}

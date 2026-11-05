@@ -1,0 +1,41 @@
+{
+  "slug": "wikiquote-es",
+  "url": "https://es.wikiquote.org/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:09.666Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://es.wikiquote.org/static/favicon/wikiquote.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://es.wikiquote.org/static/favicon/wikiquote.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 5336,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://es.wikiquote.org/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 5336,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://es.wikiquote.org/wiki/Portada",
+  "title": "Wikiquote",
+  "og": null,
+  "themeColor": []
+}

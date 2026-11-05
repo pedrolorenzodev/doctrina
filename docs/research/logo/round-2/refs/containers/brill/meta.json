@@ -1,0 +1,39 @@
+{
+  "slug": "brill",
+  "url": "https://brill.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:04.242Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://brill.com/fileasset/brillcom-favicon-20180215.png",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://brill.com/fileasset/brillcom-favicon-20180215.png",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.png",
+      "bytes": 21162,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://brill.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://brill.com/",
+  "title": "Brill",
+  "og": "https://brill.com/fileasset/fileasset/appbar/logo-brill-300x100-transparent-desktop.png",
+  "themeColor": []
+}

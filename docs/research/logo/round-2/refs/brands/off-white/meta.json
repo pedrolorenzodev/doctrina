@@ -1,0 +1,26 @@
+{
+  "slug": "off-white",
+  "url": "https://www.off---white.com/",
+  "family": "brand-mark",
+  "fetched": "2026-11-04T15:17:20.272Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.off---white.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 571,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.off---white.com/en-ar/",
+  "title": "Off-White™ Official Website",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#fffffe",
+      "media": ""
+    }
+  ]
+}

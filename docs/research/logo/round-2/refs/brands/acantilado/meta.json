@@ -1,0 +1,75 @@
+{
+  "slug": "acantilado",
+  "url": "https://www.acantilado.es/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:16:36.688Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.acantilado.es/wp-content/uploads/cropped-Acantilado-Favicon-01-32x32.jpg",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.acantilado.es/wp-content/uploads/cropped-Acantilado-Favicon-01-192x192.jpg",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.acantilado.es/wp-content/uploads/cropped-Acantilado-Favicon-01-180x180.jpg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.acantilado.es/wp-content/uploads/cropped-Acantilado-Favicon-01-32x32.jpg",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.jpg",
+      "bytes": 299,
+      "ct": "image/jpeg"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.acantilado.es/wp-content/uploads/cropped-Acantilado-Favicon-01-192x192.jpg",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.jpg",
+      "bytes": 719,
+      "ct": "image/jpeg"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.acantilado.es/wp-content/uploads/cropped-Acantilado-Favicon-01-180x180.jpg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": 404
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.acantilado.es/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.acantilado.es/",
+  "title": "Editorial Acantilado",
+  "og": null,
+  "themeColor": []
+}

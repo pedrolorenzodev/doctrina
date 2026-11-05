@@ -1,0 +1,22 @@
+.th-light { --bg: #e8e5de; --ink: #1c1713; --ink-2: #2a2620; --ink-3: #615c54; --rule: #c9c5bc; --texture-image: __TEX_L__; --texture-opacity: .4; }
+.th-dark { --bg: #1d1d1c; --ink: #f2f2f0; --ink-2: #d0d0cc; --ink-3: #9a9a96; --rule: #3a3a38; --texture-image: __TEX_D__; --texture-opacity: 1; }
+.hdr { color: var(--ink); }
+.hdr-demo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+.hdr-col { display: grid; gap: 10px; align-content: start; }
+.hdr-col .cap { margin: 0 0 8px; }
+.hdr-col .tag { font-size: 12.5px; font-weight: 500; color: var(--ink-3); margin-bottom: 2px; }
+.pick2 { appearance: none; border: 0; background: none; padding: 6px; cursor: pointer; border-radius: 8px; display: flex; justify-content: center; position: relative; }
+.pick2:hover { background: var(--hover); }
+.pick2[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--accent); }
+.pick2:focus-visible, .go2:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pick2 .mk { line-height: 0; }
+.go2 { appearance: none; background: none; border: 0; font: 500 13.5px/1 var(--ui); color: var(--ink-2); padding: 12px 8px; margin-left: -8px; cursor: pointer; border-radius: 6px; }
+.go2:hover { background: var(--hover); color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.row-mark .stg { padding: 8px; background: var(--panel); border-radius: 6px; line-height: 0; }
+.look { font-size: 13.5px; line-height: 1.55; color: var(--ink-3); margin-top: 8px; max-width: 640px; }
+.look b { font-weight: 500; color: var(--ink-2); margin-right: 6px; }
+.zooms { display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-end; }
+.zc { display: grid; gap: 8px; justify-items: start; font-size: 12.5px; color: var(--ink-3); }
+.zc canvas { image-rendering: pixelated; border-radius: 4px; display: block; }
+.wa-dom { display: block; color: var(--wa-sub); font-size: 12px; margin-top: 2px; }
+@media (max-width: 760px) { .row2 .row-mark .stg svg { width: 56px; height: 56px; } .row2 { grid-template-columns: 72px minmax(0, 1fr); } }

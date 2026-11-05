@@ -1,0 +1,21 @@
+{
+  "slug": "readwise-reader",
+  "url": "https://readwise.io/read",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:11:54.785Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://readwise.io/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 3075,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://readwise.io/read",
+  "title": "Readwise Reader | The first read-it-later app built for power readers.",
+  "og": "https://d34adp677peecb.cloudfront.net/static/images/reader/OG-Reader.9fe9ca92418f.jpg",
+  "themeColor": []
+}

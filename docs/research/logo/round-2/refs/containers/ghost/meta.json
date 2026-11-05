@@ -1,0 +1,26 @@
+{
+  "slug": "ghost",
+  "url": "https://ghost.org/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:27.885Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://ghost.org/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://ghost.org/",
+  "title": "Ghost: The best open source blog & newsletter platform",
+  "og": "https://ghost.org/images/meta/ghost-6.png",
+  "themeColor": [
+    {
+      "content": "#15171A",
+      "media": ""
+    }
+  ]
+}

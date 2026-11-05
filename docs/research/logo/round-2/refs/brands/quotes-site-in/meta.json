@@ -1,0 +1,80 @@
+{
+  "slug": "quotes-site-in",
+  "url": "https://citas.in/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:51.707Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://citas.in/static/assets/logo-48.cc6ef8edb266.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://citas.in/static/assets/logo.d6382a4dc6a3.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://citas.in/static/assets/apple-touch-icon-180.983e9adbe839.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://citas.in/static/assets/logo.d6382a4dc6a3.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 5594,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://citas.in/static/assets/logo-48.cc6ef8edb266.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 872,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://citas.in/static/assets/apple-touch-icon-180.983e9adbe839.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 2343,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://citas.in/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://citas.in/",
+  "title": "Frases de famosos: La mayor colecci\u00f3n de frases, citas, pensamientos y aforismos",
+  "og": "https://citas.in/static/assets/logo-black-bg-400x400.c35e1ba073dc.png",
+  "themeColor": [],
+  "note": "site citas.in (folder renamed for the English-only file-name rule)"
+}

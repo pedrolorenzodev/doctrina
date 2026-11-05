@@ -1,0 +1,21 @@
+{
+  "slug": "loc",
+  "url": "https://www.loc.gov/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:01.965Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.loc.gov/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 34494,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.loc.gov/",
+  "title": "Home | Library of Congress",
+  "og": "http://www.loc.gov/static/images/favicons/open-graph-logo.png",
+  "themeColor": []
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "scribd",
+  "url": "https://www.scribd.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:14.027Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://s-f.scribdassets.com/scribd_rebrand.ico?v=5",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://s-f.scribdassets.com/scribd_rebrand.ico?v=5",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.scribd.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.scribd.com/",
+  "title": "Scribd: Home to the world’s documents.",
+  "og": "https://assets.production.scribd.com/mfe-scribd-landing-pages/_next/static/media/scribd_og.0p_8r5h84smix.png",
+  "themeColor": []
+}

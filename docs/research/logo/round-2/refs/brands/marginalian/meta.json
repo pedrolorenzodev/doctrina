@@ -1,0 +1,98 @@
+{
+  "slug": "marginalian",
+  "url": "https://www.themarginalian.org/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:54.838Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.themarginalian.org/wp-content/themes/themarginalian/images/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://i0.wp.com/www.themarginalian.org/wp-content/uploads/2021/10/cropped-tm_site_icon-1.png?fit=32%2C32&ssl=1",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://i0.wp.com/www.themarginalian.org/wp-content/uploads/2021/10/cropped-tm_site_icon-1.png?fit=192%2C192&ssl=1",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://i0.wp.com/www.themarginalian.org/wp-content/uploads/2021/10/cropped-tm_site_icon-1.png?fit=180%2C180&ssl=1",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.themarginalian.org/wp-content/themes/themarginalian/images/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 7406,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://i0.wp.com/www.themarginalian.org/wp-content/uploads/2021/10/cropped-tm_site_icon-1.png?fit=32%2C32&ssl=1",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 480,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://i0.wp.com/www.themarginalian.org/wp-content/uploads/2021/10/cropped-tm_site_icon-1.png?fit=192%2C192&ssl=1",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 3635,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://i0.wp.com/www.themarginalian.org/wp-content/uploads/2021/10/cropped-tm_site_icon-1.png?fit=180%2C180&ssl=1",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 1602,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.themarginalian.org/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 7406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.themarginalian.org/",
+  "title": "The Marginalian – Marginalia on our search for meaning.",
+  "og": "https://i1.wp.com/www.themarginalian.org/wp-content/themes/themarginalian/images/the_marginalian_opengraph.png",
+  "themeColor": []
+}

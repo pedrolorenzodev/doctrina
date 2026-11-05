@@ -1,0 +1,21 @@
+{
+  "slug": "practicaltypography",
+  "url": "https://practicaltypography.com/",
+  "family": "type",
+  "fetched": "2026-11-04T15:18:13.074Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://practicaltypography.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 1406,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://practicaltypography.com/",
+  "title": "Butterick’s Practical Typography",
+  "og": "https://practicaltypography.com/images/og-image.jpg?1784662551",
+  "themeColor": []
+}

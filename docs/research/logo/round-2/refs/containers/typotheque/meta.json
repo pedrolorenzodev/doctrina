@@ -1,0 +1,77 @@
+{
+  "slug": "typotheque",
+  "url": "https://www.typotheque.com/",
+  "family": "type",
+  "fetched": "2026-11-04T15:17:51.074Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.typotheque.com/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.typotheque.com/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.typotheque.com/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.typotheque.com/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 851,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.typotheque.com/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 7406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.typotheque.com/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 4418,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.typotheque.com/",
+  "title": "Typotheque type foundry - unique, high quality fonts for print and screens",
+  "og": "https://www.typotheque.com/api/og",
+  "themeColor": [
+    {
+      "content": "#ff6600",
+      "media": ""
+    }
+  ]
+}

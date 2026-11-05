@@ -1,0 +1,91 @@
+{
+  "slug": "production-type",
+  "url": "https://www.productiontype.com/",
+  "family": "type",
+  "fetched": "2026-11-04T15:18:18.279Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://productiontype.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://productiontype.com/favicon-16x16.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://productiontype.com/favicon-32x32.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://productiontype.com/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://productiontype.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://productiontype.com/favicon-16x16.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 254,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://productiontype.com/favicon-32x32.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 505,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://productiontype.com/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 3669,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://productiontype.com/",
+  "title": "Home | Production Type",
+  "og": null,
+  "themeColor": []
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "chevron",
+  "url": "https://www.chevron.com/",
+  "family": "brand-mark",
+  "fetched": "2026-11-04T15:13:08.310Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.chevron.com/assets/fav/apple-touch-icon.png?v=7k4MjPGMX6",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.chevron.com/assets/fav/favicon-32x32.png?v=7k4MjPGMX6",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.chevron.com/assets/fav/favicon-16x16.png?v=7k4MjPGMX6",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.chevron.com/assets/fav/favicon.ico?v=7k4MjPGMX6",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.chevron.com/assets/fav/favicon-32x32.png?v=7k4MjPGMX6",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1310,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.chevron.com/assets/fav/favicon-16x16.png?v=7k4MjPGMX6",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 789,
+      "ct": "image/png"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.chevron.com/assets/fav/favicon.ico?v=7k4MjPGMX6",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-shortcut_icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.chevron.com/assets/fav/apple-touch-icon.png?v=7k4MjPGMX6",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 4142,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.chevron.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 1150,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.chevron.com/",
+  "title": "Chevron Corporation - Human Energy — Chevron",
+  "og": "https://www.chevron.com/-/media/chevron/homepage/images/hero_slider_03_fallback_large.jpg?w=1200&h=630&hash=8EA63D3AE2DE77299F03E97983AE6A77",
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

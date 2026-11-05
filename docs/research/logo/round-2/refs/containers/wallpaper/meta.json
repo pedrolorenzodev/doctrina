@@ -1,0 +1,103 @@
+{
+  "slug": "wallpaper",
+  "url": "https://www.wallpaper.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:01.092Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/fpqjm7sfgp1656622778.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/iiwmrp3wre1656622788.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/fpqjm7sfgp1656622778.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/iiwmrp3wre1656622788.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/slmsmdauvh1656622783.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/fpqjm7sfgp1656622778.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/iiwmrp3wre1656622788.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 353,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/fpqjm7sfgp1656622778.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 2632,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://cdn.mos.cms.futurecdn.net/flexiimages/slmsmdauvh1656622783.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 621,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.wallpaper.com/favicon.ico",
+      "file": "03-default-favicon.png",
+      "bytes": 353,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.wallpaper.com/",
+  "title": "Wallpaper*: design, interiors, architecture, fashion, art",
+  "og": null,
+  "themeColor": []
+}

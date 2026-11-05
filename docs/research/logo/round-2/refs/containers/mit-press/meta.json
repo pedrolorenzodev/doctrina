@@ -1,0 +1,19 @@
+{
+  "slug": "mit-press",
+  "url": "https://mitpress.mit.edu/",
+  "family": "container",
+  "fetched": "2026-11-04T15:16:54.597Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://mitpress.mit.edu/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://mitpress.mit.edu/",
+  "title": "Access Denied",
+  "og": null,
+  "themeColor": []
+}

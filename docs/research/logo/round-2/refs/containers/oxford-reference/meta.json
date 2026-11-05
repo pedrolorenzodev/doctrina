@@ -1,0 +1,41 @@
+{
+  "slug": "oxford-reference",
+  "url": "https://www.oxfordreference.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:18:55.895Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.oxfordreference.com/assets/ctx/6ab902f7/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.oxfordreference.com/assets/ctx/6ab902f7/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 20590,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.oxfordreference.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 20590,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.oxfordreference.com/",
+  "title": "Oxford Reference - Answers with Authority",
+  "og": null,
+  "themeColor": []
+}

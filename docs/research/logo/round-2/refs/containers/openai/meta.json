@@ -1,0 +1,79 @@
+{
+  "slug": "openai",
+  "url": "https://openai.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:48.998Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://openai.com/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://openai.com/favicon.ico?favicon.1ui9v3a-0dgo4.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://openai.com/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 2466,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://openai.com/favicon.ico?favicon.1ui9v3a-0dgo4.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 15406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://openai.com/apple-icon.png?apple-icon.3o0tf8iy4mx7y.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 6578,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://openai.com/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://openai.com/",
+  "title": "OpenAI | Research & Deployment",
+  "og": "https://images.ctfassets.net/kftzwdyauwt9/6iFRMxhUWyxFR6zpThf2Am/1f826b5095ca8854064989ecec465049/SEO_Banner_2400x1350_04.png?w=1600&h=900&fit=fill",
+  "themeColor": []
+}

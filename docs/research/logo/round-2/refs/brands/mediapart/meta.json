@@ -1,0 +1,84 @@
+{
+  "slug": "mediapart",
+  "url": "https://www.mediapart.fr/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:32.938Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.mediapart.fr/icon-news.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.mediapart.fr/icon-news.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.mediapart.fr/icon-news-180x180.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.mediapart.fr/icon-news.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 8675,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.mediapart.fr/icon-news.ico",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.mediapart.fr/icon-news-180x180.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 7029,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.mediapart.fr/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.mediapart.fr/",
+  "title": "Mediapart - Actualité, enquêtes et dossiers d’investigation en toute indépendance !",
+  "og": "https://www.mediapart.fr/assets/front/images/social/og_image/journal.png",
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

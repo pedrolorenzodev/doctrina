@@ -1,0 +1,153 @@
+{
+  "slug": "lemonde",
+  "url": "https://www.lemonde.fr/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:15.927Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.lemonde.fr/bucket/resources/front/img/logos/favicon.e92b44c2b7f5c147.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/pwa-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/pwa-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/icon-60.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/icon-76.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/icon-120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/icon-152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.lemonde.fr/bucket/resources/front/img/logos/favicon.e92b44c2b7f5c147.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 362,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/pwa-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1890,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/icon-60.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon-precomposed.png",
+      "bytes": 3274,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/icon-76.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon-precomposed.png",
+      "bytes": 4293,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/icon-120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon-precomposed.png",
+      "bytes": 7325,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/icon-152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon-precomposed.png",
+      "bytes": 8862,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.lemonde.fr/favicon.ico",
+      "file": "06-default-favicon.ico",
+      "bytes": 362,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.lemonde.fr/",
+  "title": "Le Monde.fr - Actualités et Infos en France et dans le monde",
+  "og": "https://asset.lemde.fr/medias/img/social-network/default.png",
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    },
+    {
+      "content": "#FFFFFF",
+      "media": ""
+    }
+  ]
+}

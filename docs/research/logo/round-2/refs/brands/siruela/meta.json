@@ -1,0 +1,19 @@
+{
+  "slug": "siruela",
+  "url": "https://www.siruela.com/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:16:42.381Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.siruela.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.siruela.com/",
+  "title": "Ediciones Siruela",
+  "og": null,
+  "themeColor": []
+}

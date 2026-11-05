@@ -1,0 +1,39 @@
+{
+  "slug": "lithub",
+  "url": "https://lithub.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:16:49.179Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://s26162.pcdn.co/wp-content/uploads/2015/04/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://s26162.pcdn.co/wp-content/uploads/2015/04/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 1150,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://lithub.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://lithub.com/",
+  "title": "Literary Hub",
+  "og": "https://s0.wp.com/i/blank.jpg",
+  "themeColor": []
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "liberation",
+  "url": "https://www.liberation.fr/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:17.988Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.liberation.fr/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 18094,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.liberation.fr/",
+  "title": "liberation.fr",
+  "og": null,
+  "themeColor": []
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "svelte",
+  "url": "https://svelte.dev/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:48.095Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://svelte.dev/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://svelte.dev/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1373,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://svelte.dev/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://svelte.dev/",
+  "title": "Svelte • Web development for the rest of us",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#ff3e00",
+      "media": ""
+    }
+  ]
+}

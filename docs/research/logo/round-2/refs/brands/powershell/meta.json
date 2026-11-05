@@ -1,0 +1,21 @@
+{
+  "slug": "powershell",
+  "url": "https://learn.microsoft.com/en-us/powershell/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:21.840Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://learn.microsoft.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 17174,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://learn.microsoft.com/en-us/powershell/",
+  "title": "PowerShell Documentation - PowerShell | Microsoft Learn",
+  "og": "https://learn.microsoft.com/media/logos/logo-powershell-social.png",
+  "themeColor": []
+}

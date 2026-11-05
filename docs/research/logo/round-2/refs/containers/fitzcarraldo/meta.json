@@ -1,0 +1,21 @@
+{
+  "slug": "fitzcarraldo",
+  "url": "https://fitzcarraldoeditions.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:15.997Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://fitzcarraldoeditions.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 320,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://fitzcarraldoeditions.com/",
+  "title": "Fitzcarraldo Editions",
+  "og": "https://fitzcarraldoeditions.com/images/aFvcq6B1OT8t5dmD/plain/wp/Fitzcarraldo-Editions.png",
+  "themeColor": []
+}

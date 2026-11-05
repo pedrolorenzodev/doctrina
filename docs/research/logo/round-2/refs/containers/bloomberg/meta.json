@@ -1,0 +1,21 @@
+{
+  "slug": "bloomberg",
+  "url": "https://www.bloomberg.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:03.664Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.bloomberg.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.bloomberg.com/",
+  "title": "Bloomberg - Are you a robot?",
+  "og": null,
+  "themeColor": []
+}

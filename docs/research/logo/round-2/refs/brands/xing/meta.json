@@ -1,0 +1,79 @@
+{
+  "slug": "xing",
+  "url": "https://www.xing.com/",
+  "family": "brand-mark",
+  "fetched": "2026-11-04T15:13:12.807Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://static.xingcdn.com/crate/entrypoint-c6d4bb33/xing-favicon-j55l9ifu.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://static.xingcdn.com/crate/entry-150bfe9b/xing-favicon-bj9turp3.ico",
+      "sizes": null,
+      "type": "image/ico",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.xingcdn.com/crate/entry-150bfe9b/xing-apple-touch-icon-migi90o0.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://static.xingcdn.com/crate/entrypoint-c6d4bb33/xing-favicon-j55l9ifu.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 1342,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://static.xingcdn.com/crate/entry-150bfe9b/xing-favicon-bj9turp3.ico",
+      "sizes": null,
+      "type": "image/ico",
+      "media": "",
+      "color": null,
+      "file": "01-shortcut_icon.ico",
+      "bytes": 1342,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.xingcdn.com/crate/entry-150bfe9b/xing-apple-touch-icon-migi90o0.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 848,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.xing.com/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 1342,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.xing.com/",
+  "title": "Find the right job for you. Or get found!",
+  "og": "https://static.xingcdn.com/og-cover-image.png",
+  "themeColor": []
+}

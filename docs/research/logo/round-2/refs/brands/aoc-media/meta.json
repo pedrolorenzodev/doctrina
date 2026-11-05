@@ -1,0 +1,199 @@
+{
+  "slug": "aoc-media",
+  "url": "https://aoc.media/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:25.683Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon-32x32.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-60x60.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-76x76.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 1150,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 3737,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 1153,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon-32x32.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 1845,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 3737,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "05-icon.png",
+      "bytes": 10836,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 6850,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://aoc.media/wp-content/themes/AOC/dist/images/favicons/apple-icon-60x60.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon.png",
+      "bytes": 2411,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://aoc.media/",
+  "title": "AOC media - Analyse Opinion Critique - AOC est un quotidien d'auteurs en ligne, écrit par des chercheurs, des intellectuels, des écrivains et... des journalistes",
+  "og": "https://aoc.media/wp-content/uploads/2024/01/logo.png",
+  "themeColor": []
+}

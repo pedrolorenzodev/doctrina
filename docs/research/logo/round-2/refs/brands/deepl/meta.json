@@ -1,0 +1,79 @@
+{
+  "slug": "deepl",
+  "url": "https://www.deepl.com/",
+  "family": "language",
+  "fetched": "2026-11-04T15:15:03.470Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.deepl.com/favicon.ico?favicon.2q65ixsfts1dv.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.deepl.com/icon?96dd39650c8ded7a",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.deepl.com/apple-icon?fb6f62776db8f84a",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.deepl.com/icon?96dd39650c8ded7a",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 2099,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.deepl.com/favicon.ico?favicon.2q65ixsfts1dv.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 12306,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.deepl.com/apple-icon?fb6f62776db8f84a",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 3389,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.deepl.com/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 12306,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.deepl.com/en",
+  "title": "DeepL AI Platform: Translation, Voice & API",
+  "og": "https://www.deepl.com/img/favicon/automatic_social_share_deepl.png",
+  "themeColor": []
+}

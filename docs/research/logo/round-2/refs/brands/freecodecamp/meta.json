@@ -1,0 +1,175 @@
+{
+  "slug": "freecodecamp",
+  "url": "https://www.freecodecamp.org/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:09.392Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.freecodecamp.org/favicon-32x32.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.freecodecamp.org/favicon-32x32.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1211,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 1794,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 2937,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 3822,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 5689,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon.png",
+      "bytes": 7889,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 11188,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.freecodecamp.org/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon.png",
+      "bytes": 18452,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.freecodecamp.org/",
+  "title": "Learn to Code for Free. Coding Courses & Certifications | freeCodeCamp",
+  "og": "https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png",
+  "themeColor": []
+}

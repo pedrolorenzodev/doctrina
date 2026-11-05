@@ -1,0 +1,180 @@
+{
+  "slug": "klim",
+  "url": "https://klim.co.nz/",
+  "family": "type",
+  "fetched": "2026-11-04T15:17:33.890Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://klim.co.nz/favicon-32x32.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-1024.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "1024x1024",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-16.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "16x16",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-24.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "24x24",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-29.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "29x29",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-32.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-36.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "36x36",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-40.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "40x40",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://klim.co.nz/favicons/klim-mask-icon.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#000000"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://klim.co.nz/favicon-32x32.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 884,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-1024.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "1024x1024",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 33141,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-16.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "16x16",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 437,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-24.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "24x24",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 665,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-29.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "29x29",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 788,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-32.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon.png",
+      "bytes": 884,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-36.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "36x36",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 1006,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://klim.co.nz/static/favicons/klim-favicon-40.png?v=7b50a9deb58e35dc4a051d953a04e724",
+      "sizes": "40x40",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon.png",
+      "bytes": 1141,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://klim.co.nz/",
+  "title": "Klim Type Foundry",
+  "og": "https://klim.imgix.net/manual/klim-share.png?auto=format%2Ccompress&cs=srgb&q=90",
+  "themeColor": [
+    {
+      "content": "#000000",
+      "media": ""
+    }
+  ]
+}

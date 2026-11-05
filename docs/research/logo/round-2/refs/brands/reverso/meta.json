@@ -1,0 +1,37 @@
+{
+  "slug": "reverso",
+  "url": "https://www.reverso.net/",
+  "family": "language",
+  "fetched": "2026-11-04T15:15:00.976Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.reverso.net/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.reverso.net/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "status": 403
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.reverso.net/text-translation",
+  "title": "Reverso | Free translation, dictionary",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#0970ac",
+      "media": ""
+    }
+  ]
+}

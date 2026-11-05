@@ -1,0 +1,115 @@
+{
+  "slug": "lefigaro",
+  "url": "https://www.lefigaro.fr/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:20.887Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.lefigaro.fr/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lefigaro.fr/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lefigaro.fr/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.lefigaro.fr/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#163860"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.lefigaro.fr/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.lefigaro.fr/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 531,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.lefigaro.fr/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 351,
+      "ct": "image/png"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.lefigaro.fr/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-shortcut_icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.lefigaro.fr/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 805,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.lefigaro.fr/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#163860",
+      "file": "04-mask-icon.svg",
+      "bytes": 1848,
+      "ct": "image/svg+xml"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.lefigaro.fr/",
+  "title": "Le Figaro - Actualité en direct et informations en continu",
+  "og": "https://i.f1g.fr/media/ext/1200x1200_crop/static.lefigaro.fr/f1/lefigaro/metas/og-image.png",
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

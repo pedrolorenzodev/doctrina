@@ -1,0 +1,21 @@
+{
+  "slug": "goodreads-quotes",
+  "url": "https://www.goodreads.com/quotes",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:20.562Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.goodreads.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 1062,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.goodreads.com/quotes",
+  "title": "Popular Quotes",
+  "og": null,
+  "themeColor": []
+}

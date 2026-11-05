@@ -1,0 +1,21 @@
+{
+  "slug": "accenture",
+  "url": "https://www.accenture.com/",
+  "family": "brand-mark",
+  "fetched": "2026-11-04T15:13:03.213Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.accenture.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.accenture.com/ar-es",
+  "title": "Argentina | Let There Be Change | Accenture",
+  "og": null,
+  "themeColor": []
+}

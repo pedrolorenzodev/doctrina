@@ -1,0 +1,58 @@
+{
+  "slug": "codecademy",
+  "url": "https://www.codecademy.com/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:13.019Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.codecademy.com/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.codecademy.com/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.codecademy.com/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 6518,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.codecademy.com/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 2322,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.codecademy.com/",
+  "title": "Learn to Code - for Free | Codecademy",
+  "og": "https://images.codecademy.com/social/logo-codecademy-social.png",
+  "themeColor": [
+    {
+      "content": "#10162F",
+      "media": ""
+    }
+  ]
+}

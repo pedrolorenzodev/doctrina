@@ -1,0 +1,21 @@
+{
+  "slug": "google-docs",
+  "url": "https://docs.google.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:11.363Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://accounts.google.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 5430,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/&emr=1&followup=https://docs.google.com/&osid=1&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-685157775:1793805431828827",
+  "title": "Sign in - Google Accounts",
+  "og": null,
+  "themeColor": []
+}

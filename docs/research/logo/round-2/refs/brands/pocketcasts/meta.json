@@ -1,0 +1,158 @@
+{
+  "slug": "pocketcasts",
+  "url": "https://pocketcasts.com/",
+  "family": "media",
+  "fetched": "2026-11-04T15:13:54.996Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://pocketcasts.com/favicons/maskable-512x512.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://pocketcasts.com/favicons/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://pocketcasts.com/favicons/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 33310,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 713,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 1794,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 7942,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 14246,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://pocketcasts.com/favicons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "05-icon.png",
+      "bytes": 29648,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://pocketcasts.com/favicons/maskable-512x512.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 30471,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://pocketcasts.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://pocketcasts.com/",
+  "title": "Listen to podcasts with the best free podcasting app - built by listeners, for listeners. - Pocket Casts",
+  "og": "https://static.pocketcasts.com/webplayer/assets/hero-background-COfs_3B6.png",
+  "themeColor": [
+    {
+      "content": "#F7F9FA",
+      "media": ""
+    }
+  ]
+}

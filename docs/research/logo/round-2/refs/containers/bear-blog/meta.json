@@ -1,0 +1,68 @@
+{
+  "slug": "bear-blog",
+  "url": "https://bearblog.dev/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:32.621Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://bearblog.dev/static/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://bearblog.dev/static/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://bearblog.dev/static/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://bearblog.dev/static/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 2209,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://bearblog.dev/static/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 9084,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://bearblog.dev/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 2146,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://bearblog.dev/",
+  "title": "Bear Blog",
+  "og": "https://bear-images.sfo2.cdn.digitaloceanspaces.com/herman-1683556668-0.png",
+  "themeColor": []
+}

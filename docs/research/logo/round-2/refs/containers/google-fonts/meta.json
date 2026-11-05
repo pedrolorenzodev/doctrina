@@ -1,0 +1,115 @@
+{
+  "slug": "google-fonts",
+  "url": "https://fonts.google.com/",
+  "family": "type",
+  "fetched": "2026-11-04T15:18:28.066Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.gstatic.com/images/branding/product/1x/google_fonts_64dp.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.gstatic.com/images/branding/product/1x/google_fonts_96dp.png",
+      "sizes": "96x96",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.gstatic.com/images/branding/product/2x/google_fonts_64dp.png",
+      "sizes": "128x128",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.gstatic.com/images/branding/product/2x/google_fonts_96dp.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 519,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.gstatic.com/images/branding/product/1x/google_fonts_64dp.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 1351,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.gstatic.com/images/branding/product/1x/google_fonts_96dp.png",
+      "sizes": "96x96",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 1781,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.gstatic.com/images/branding/product/2x/google_fonts_64dp.png",
+      "sizes": "128x128",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 2649,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.gstatic.com/images/branding/product/2x/google_fonts_96dp.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 3808,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://fonts.google.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://fonts.google.com/",
+  "title": "Browse Fonts - Google Fonts",
+  "og": "https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/opengraph_color.png",
+  "themeColor": []
+}

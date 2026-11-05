@@ -1,0 +1,34 @@
+{
+  "slug": "proverbia",
+  "url": "https://proverbia.net/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:47.071Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://proverbia.net/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://proverbia.net/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 32988,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://proverbia.net/",
+  "title": "Proverbia: Frases y citas célebres",
+  "og": null,
+  "themeColor": []
+}

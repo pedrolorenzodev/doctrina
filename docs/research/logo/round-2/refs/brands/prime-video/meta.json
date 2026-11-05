@@ -1,0 +1,231 @@
+{
+  "slug": "prime-video",
+  "url": "https://www.primevideo.com/",
+  "family": "media",
+  "fetched": "2026-11-04T15:14:05.974Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon.png",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-60x60.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-76x76.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-precomposed.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon.png",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.png",
+      "bytes": 290,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 525,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 421,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 895,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 1135,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "05-icon.png",
+      "bytes": 1858,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 1529,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/apple-touch-icon-60x60.png",
+      "sizes": "60x60",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon.png",
+      "bytes": 1812,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.primevideo.com/offers/nonprimehomepage?ref_=dv_web_force_root",
+  "title": "Welcome to Prime Video",
+  "og": "https://m.media-amazon.com/images/G/01/primevideo/seo/primevideo-seo-logo.png",
+  "themeColor": []
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "paris-review",
+  "url": "https://www.theparisreview.org/",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:16:56.339Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.theparisreview.org/images/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theparisreview.org/images/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theparisreview.org/images/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.theparisreview.org/images/favicons/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#5bbad5"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.theparisreview.org/images/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 28769,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theparisreview.org/images/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 28386,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.theparisreview.org/images/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 37099,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.theparisreview.org/images/favicons/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#5bbad5",
+      "file": "03-mask-icon.svg",
+      "bytes": 24690,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.theparisreview.org/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 3638,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.theparisreview.org/",
+  "title": "Paris Review - Writers, Quotes, Biography, Interviews, Artists",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

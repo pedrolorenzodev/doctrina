@@ -1,0 +1,107 @@
+{
+  "slug": "flipboard",
+  "url": "https://flipboard.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:16:49.583Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://s.flipboard.com/webapp/images/favicon/apple-touch-icon.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://s.flipboard.com/webapp/images/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://s.flipboard.com/webapp/images/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://s.flipboard.com/webapp/images/favicon/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#000"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://s.flipboard.com/webapp/images/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 230,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://s.flipboard.com/webapp/images/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 225,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://s.flipboard.com/webapp/images/favicon/apple-touch-icon.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 359,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://s.flipboard.com/webapp/images/favicon/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#000",
+      "file": "03-mask-icon.svg",
+      "bytes": 192,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://flipboard.com/favicon.ico",
+      "file": "04-default-favicon.png",
+      "bytes": 230,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://flipboard.com/",
+  "title": "Flipboard: Your Social Magazine",
+  "og": "https://cdn.flipboard.com/itemshare/Logo-250X250.png",
+  "themeColor": [
+    {
+      "content": "#f52828",
+      "media": ""
+    },
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

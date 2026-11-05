@@ -1,0 +1,21 @@
+{
+  "slug": "bloomsbury",
+  "url": "https://www.bloomsbury.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:18:47.510Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.bloomsbury.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 23546,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.bloomsbury.com/uk/",
+  "title": "Bloomsbury Publishing (UK) - Bloomsbury",
+  "og": null,
+  "themeColor": []
+}

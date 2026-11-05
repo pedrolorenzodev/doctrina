@@ -1,0 +1,58 @@
+{
+  "slug": "actes-sud",
+  "url": "https://www.actes-sud.fr/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:16:05.009Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://actes-sud.fr/build/images/favicon/favicon-apple-touch-as.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://actes-sud.fr/build/images/favicon/favicon-as.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://actes-sud.fr/build/images/favicon/favicon-as.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 648,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://actes-sud.fr/build/images/favicon/favicon-apple-touch-as.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 1586,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://actes-sud.fr/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://actes-sud.fr/",
+  "title": "Éditions Actes Sud",
+  "og": "https://actes-sud.fr/build/images/meta/logo-actes-sud.png",
+  "themeColor": []
+}

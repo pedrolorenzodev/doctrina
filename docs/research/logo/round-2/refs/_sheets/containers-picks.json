@@ -1,0 +1,317 @@
+[
+ {
+  "slug": "academia-edu",
+  "family": "container",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "anthropic",
+  "family": "container",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "are-na",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "bandcamp",
+  "family": "container",
+  "tab": "00-icon.png",
+  "touch": "04-apple-touch-icon.png"
+ },
+ {
+  "slug": "bear-blog",
+  "family": "container",
+  "tab": "00-icon.svg"
+ },
+ {
+  "slug": "bloomberg",
+  "family": "container",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "bloomsbury",
+  "family": "container",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "bolt",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "04-apple-touch-icon.png"
+ },
+ {
+  "slug": "brill",
+  "family": "container",
+  "tab": "00-shortcut_icon.png"
+ },
+ {
+  "slug": "buttondown",
+  "family": "container",
+  "tab": "00-icon.png",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "cambridge-core",
+  "family": "container",
+  "tab": "00-icon.ico"
+ },
+ {
+  "slug": "claude",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "commercial-type",
+  "family": "type",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "cursor",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "04-apple-touch-icon.png"
+ },
+ {
+  "slug": "de-gruyter",
+  "family": "container",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "dinamo",
+  "family": "type",
+  "tab": "00-icon.svg",
+  "touch": "04-apple-touch-icon.png"
+ },
+ {
+  "slug": "faber",
+  "family": "container"
+ },
+ {
+  "slug": "fitzcarraldo",
+  "family": "container",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "flipboard",
+  "family": "container",
+  "tab": "00-icon.png",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "fontsinuse",
+  "family": "type",
+  "tab": "01-shortcut_icon.ico",
+  "touch": "05-apple-touch-icon.png"
+ },
+ {
+  "slug": "ghost",
+  "family": "container",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "google-docs",
+  "family": "container",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "google-fonts",
+  "family": "type",
+  "tab": "00-icon.svg",
+  "touch": "04-apple-touch-icon.png"
+ },
+ {
+  "slug": "grilli",
+  "family": "type",
+  "tab": "01-icon.png",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "guardian",
+  "family": "container",
+  "tab": "00-icon.ico",
+  "touch": "01-apple-touch-icon.svg"
+ },
+ {
+  "slug": "ilovetypography",
+  "family": "type",
+  "tab": "00-icon.png",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "klim",
+  "family": "type",
+  "tab": "00-icon.png",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "linear",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "loc",
+  "family": "container",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "lovable",
+  "family": "container",
+  "tab": "00-icon.svg"
+ },
+ {
+  "slug": "microsoft",
+  "family": "container",
+  "tab": "00-icon.ico"
+ },
+ {
+  "slug": "mistral",
+  "family": "container",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "mit-press",
+  "family": "container"
+ },
+ {
+  "slug": "monocle",
+  "family": "container",
+  "tab": "00-icon.png",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "new-directions",
+  "family": "container",
+  "tab": "00-icon.png",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "nyrb-classics",
+  "family": "container",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "openai",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "oxford-reference",
+  "family": "container",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "perlego",
+  "family": "container",
+  "tab": "00-shortcut_icon.png",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "perplexity",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "pitchfork",
+  "family": "container",
+  "tab": "00-icon.ico"
+ },
+ {
+  "slug": "practicaltypography",
+  "family": "type",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "production-type",
+  "family": "type",
+  "tab": "00-icon.ico",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "replit",
+  "family": "container",
+  "tab": "00-shortcut_icon.png"
+ },
+ {
+  "slug": "scribd",
+  "family": "container",
+  "tab": "00-icon.ico"
+ },
+ {
+  "slug": "sefaria",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "shadycharacters",
+  "family": "type",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "substack",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "the-verge",
+  "family": "container",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "06-apple-touch-icon.png"
+ },
+ {
+  "slug": "typetogether",
+  "family": "type",
+  "tab": "00-icon.svg",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "typewolf",
+  "family": "type",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "typography-com",
+  "family": "type",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "typotheque",
+  "family": "type",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "underware",
+  "family": "type",
+  "tab": "00-SHORTCUT_ICON.ico",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "v0",
+  "family": "container",
+  "tab": "00-icon.svg",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "vercel",
+  "family": "container",
+  "tab": "00-icon_shortcut.ico",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "wallpaper",
+  "family": "container",
+  "tab": "00-icon.png"
+ }
+]

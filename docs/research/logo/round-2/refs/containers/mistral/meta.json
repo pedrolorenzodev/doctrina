@@ -1,0 +1,21 @@
+{
+  "slug": "mistral",
+  "url": "https://mistral.ai/",
+  "family": "container",
+  "fetched": "2026-11-04T15:20:10.878Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://mistral.ai/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 2107,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://mistral.ai/",
+  "title": "Mistral | #1 in Sovereign AI: Frontier Open Models You Own",
+  "og": "https://mistral.ai/cms-media/api/media/file/cover-mistral-sovereign%20copie.webp",
+  "themeColor": []
+}

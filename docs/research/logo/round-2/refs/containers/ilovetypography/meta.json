@@ -1,0 +1,103 @@
+{
+  "slug": "ilovetypography",
+  "url": "https://ilovetypography.com/",
+  "family": "type",
+  "fetched": "2026-11-04T15:18:00.306Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://fonts.ilovetypography.com/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://fonts.ilovetypography.com/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://fonts.ilovetypography.com/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://fonts.ilovetypography.com/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#dd4e39"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://fonts.ilovetypography.com/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1511,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://fonts.ilovetypography.com/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 882,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://fonts.ilovetypography.com/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 3593,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://fonts.ilovetypography.com/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#dd4e39",
+      "file": "03-mask-icon.svg",
+      "bytes": 5776,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://fonts.ilovetypography.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://fonts.ilovetypography.com/",
+  "title": "I Love Typography | Shop & Download quality curated Fonts from the…",
+  "og": "https://empty-grouse.transforms.svdcdn.com/production/page/ILT-logo-square.png?w=1200&h=630&q=82&auto=format&fit=min&dm=1623820075&s=a611f39a67b56d1e0b4aef16eb838d06",
+  "themeColor": [
+    {
+      "content": "#dd4e39",
+      "media": ""
+    }
+  ]
+}

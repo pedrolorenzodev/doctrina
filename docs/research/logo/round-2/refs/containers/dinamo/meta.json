@@ -1,0 +1,134 @@
+{
+  "slug": "dinamo",
+  "url": "https://abcdinamo.com/",
+  "family": "type",
+  "fetched": "2026-11-04T15:18:21.561Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://abcdinamo.com/assets/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://abcdinamo.com/assets/favicon/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#ffffff"
+    },
+    {
+      "rel": "icon",
+      "href": "https://abcdinamo.com/assets/favicon/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://abcdinamo.com/assets/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://abcdinamo.com/assets/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://abcdinamo.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://abcdinamo.com/assets/favicon/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 7940,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://abcdinamo.com/assets/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 795,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://abcdinamo.com/assets/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 456,
+      "ct": "image/png"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://abcdinamo.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-shortcut_icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://abcdinamo.com/assets/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 5262,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://abcdinamo.com/assets/favicon/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#ffffff",
+      "file": "05-mask-icon.svg",
+      "bytes": 8050,
+      "ct": "image/svg+xml"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://abcdinamo.com/",
+  "title": "Home — Dinamo Typefaces",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

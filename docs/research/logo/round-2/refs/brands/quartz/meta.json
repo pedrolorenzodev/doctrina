@@ -1,0 +1,98 @@
+{
+  "slug": "quartz",
+  "url": "https://qz.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:17:02.420Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://qz.com/favicon.ico?favicon.3wdaq5n_7swqw.ico?dpl=uvj5ny1lokmw",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://qz.com/icon0.svg?icon0.14xdwkyxtsu44.svg?dpl=uvj5ny1lokmw",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://qz.com/icon1.png?icon1.21g_mgqo30rot.png?dpl=uvj5ny1lokmw",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://qz.com/apple-icon.png?apple-icon.3wt-9ka77jlh4.png?dpl=uvj5ny1lokmw",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://qz.com/icon0.svg?icon0.14xdwkyxtsu44.svg?dpl=uvj5ny1lokmw",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 4818,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://qz.com/favicon.ico?favicon.3wdaq5n_7swqw.ico?dpl=uvj5ny1lokmw",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://qz.com/icon1.png?icon1.21g_mgqo30rot.png?dpl=uvj5ny1lokmw",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 2266,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://qz.com/apple-icon.png?apple-icon.3wt-9ka77jlh4.png?dpl=uvj5ny1lokmw",
+      "sizes": "180x180",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 5965,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://qz.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://qz.com/",
+  "title": "Home",
+  "og": "https://qz.com/cdn-cgi/image/width=1200,quality=85,format=auto/https://assets.qz.com/logos/email-logo.png",
+  "themeColor": []
+}

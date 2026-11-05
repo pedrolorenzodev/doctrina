@@ -1,0 +1,141 @@
+{
+  "slug": "guardian",
+  "url": "https://www.theguardian.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:16:56.545Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon.svg",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-512.png",
+      "sizes": "512x512",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-360.png",
+      "sizes": "360x360",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-240.png",
+      "sizes": "240x240",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.guim.co.uk/images/favicon-32x32.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://static.guim.co.uk/images/favicon-32x32.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon.svg",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.svg",
+      "bytes": 411,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-512.png",
+      "sizes": "512x512",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 5132,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-360.png",
+      "sizes": "360x360",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 3742,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-240.png",
+      "sizes": "240x240",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 2718,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon.png",
+      "bytes": 1578,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.theguardian.com/favicon.ico",
+      "file": "06-default-favicon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.theguardian.com/international",
+  "title": "Latest news, sport and opinion from the Guardian",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#052962",
+      "media": ""
+    }
+  ]
+}

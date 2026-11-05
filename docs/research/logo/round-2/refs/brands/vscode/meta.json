@@ -1,0 +1,60 @@
+{
+  "slug": "vscode",
+  "url": "https://code.visualstudio.com/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:36.181Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://code.visualstudio.com/assets/favicon.ico",
+      "sizes": "128x128",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://code.visualstudio.com/assets/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://code.visualstudio.com/assets/favicon.ico",
+      "sizes": "128x128",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 113128,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://code.visualstudio.com/assets/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 13468,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://code.visualstudio.com/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 113128,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://code.visualstudio.com/?_exp_home=e855cfac50",
+  "title": "Visual Studio Code - Build what comes next",
+  "og": "https://code.visualstudio.com/opengraphimg/opengraph-home.png",
+  "themeColor": []
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "citroen",
+  "url": "https://www.citroen.com/",
+  "family": "brand-mark",
+  "fetched": "2026-11-04T15:13:05.363Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.citroen.com/etc/designs/citroen/favicon.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.citroen.com/etc/designs/citroen/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.citroen.com/etc/designs/citroen/favicon.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.citroen.com/etc/designs/citroen/favicon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 3988,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.citroen.com/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.citroen.com/en",
+  "title": "Home",
+  "og": null,
+  "themeColor": []
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "wordreference",
+  "url": "https://www.wordreference.com/",
+  "family": "language",
+  "fetched": "2026-11-04T15:15:07.136Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.wordreference.com/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.wordreference.com/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdnawsw.wordreference.net/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.wordreference.com/icon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 24503,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.wordreference.com/favicon.ico",
+      "sizes": "any",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.ico",
+      "bytes": 4286,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdnawsw.wordreference.net/apple-touch-icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": 418
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.wordreference.com/",
+  "title": "English to French, Italian, German & Spanish Dictionary - WordReference.com",
+  "og": null,
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

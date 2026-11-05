@@ -1,0 +1,103 @@
+{
+  "slug": "academia-edu",
+  "url": "https://www.academia.edu/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:21.214Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://c.academia-assets.com/images/favicons/favicon-production.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.academia-assets.com/images/favicons/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.academia-assets.com/images/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.academia-assets.com/images/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://c.academia-assets.com/images/favicons/favicon-production.ico",
+      "sizes": null,
+      "type": "image/vnd.microsoft.icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 7406,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.academia-assets.com/images/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1256,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://c.academia-assets.com/images/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 797,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://c.academia-assets.com/images/favicons/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 4606,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.academia.edu/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 7406,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.academia.edu/",
+  "title": "Academia.edu - Find Research Papers, Topics, Researchers",
+  "og": "//c.academia-assets.com/images/open-graph-icons/horizontal-black.png",
+  "themeColor": [
+    {
+      "content": "#ffffff",
+      "media": ""
+    }
+  ]
+}

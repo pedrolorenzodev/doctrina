@@ -1,0 +1,41 @@
+{
+  "slug": "openedition",
+  "url": "https://www.openedition.org/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:39.758Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.openedition.org/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.openedition.org/favicon.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 923,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.openedition.org/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 923,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.openedition.org/",
+  "title": "OpenEdition: four platforms for electronic resources in the humanities and social sciences: OpenEdition Books, OpenEdition Journals, Hypotheses, Calenda",
+  "og": null,
+  "themeColor": []
+}

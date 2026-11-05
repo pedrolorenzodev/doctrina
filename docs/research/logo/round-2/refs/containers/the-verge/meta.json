@@ -1,0 +1,167 @@
+{
+  "slug": "the-verge",
+  "url": "https://www.theverge.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:06.109Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.theverge.com/static-assets/icons/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.theverge.com/static-assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.theverge.com/static-assets/icons/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.theverge.com/static-assets/icons/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 1379,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 2234,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "03-icon.png",
+      "bytes": 934,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "04-icon.png",
+      "bytes": 5335,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.theverge.com/static-assets/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "05-icon.png",
+      "bytes": 17381,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.theverge.com/static-assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon.png",
+      "bytes": 2832,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.theverge.com/static-assets/icons/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-mask-icon.svg",
+      "bytes": 5459,
+      "ct": "image/svg+xml"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.theverge.com/",
+  "title": "The Verge",
+  "og": "https://platform.theverge.com/wp-content/uploads/sites/2/2024/10/the_verge_social_share.png",
+  "themeColor": []
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "faber",
+  "url": "https://www.faber.co.uk/",
+  "family": "container",
+  "fetched": "2026-11-04T15:18:53.998Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.faber.co.uk/favicon.ico",
+      "status": 403
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.faber.co.uk/",
+  "title": "Just a moment...",
+  "og": null,
+  "themeColor": []
+}

@@ -1,0 +1,125 @@
+{
+  "slug": "rae",
+  "url": "https://www.rae.es/",
+  "family": "language",
+  "fetched": "2026-11-04T15:15:13.612Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.rae.es/themes/custom/front/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.rae.es/themes/custom/front/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 425,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-icon.png",
+      "bytes": 1041,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/safari-pinned-tab.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-mask-icon.svg",
+      "bytes": 69349,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.rae.es/themes/custom/front/src/assets/images/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon.png",
+      "bytes": 14862,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.rae.es/favicon.ico",
+      "file": "05-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.rae.es/",
+  "title": "Inicio | Real Academia Española",
+  "og": null,
+  "themeColor": []
+}

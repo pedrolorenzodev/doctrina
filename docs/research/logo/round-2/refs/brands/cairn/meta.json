@@ -1,0 +1,20 @@
+{
+  "slug": "cairn",
+  "url": "https://shs.cairn.info/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:36.394Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://shs.cairn.info/favicon.ico",
+      "status": "not-image",
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://shs.cairn.info/",
+  "title": "cairn.info",
+  "og": null,
+  "themeColor": []
+}

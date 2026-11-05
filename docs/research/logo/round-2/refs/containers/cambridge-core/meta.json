@@ -1,0 +1,47 @@
+{
+  "slug": "cambridge-core",
+  "url": "https://www.cambridge.org/core",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:15.034Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.cambridge.org/core/cambridge-core/public/images/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.cambridge.org/core/cambridge-core/public/images/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.cambridge.org/core/cambridge-core/public/images/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 1407,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.cambridge.org/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.cambridge.org/core",
+  "title": "Cambridge Core - Journals & Books Online | Cambridge University Press",
+  "og": "https://www.cambridge.org/core/cambridge-core/public/images/logo_core_page_share_600x600.jpg",
+  "themeColor": []
+}

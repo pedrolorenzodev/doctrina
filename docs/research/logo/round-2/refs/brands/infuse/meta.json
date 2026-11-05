@@ -1,0 +1,107 @@
+{
+  "slug": "infuse",
+  "url": "https://firecore.com/infuse",
+  "family": "media",
+  "fetched": "2026-11-04T15:13:59.844Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://static.firecore.com/fav/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.firecore.com/fav/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.firecore.com/fav/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.firecore.com/fav/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://static.firecore.com/fav/favicon.svg",
+      "sizes": null,
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "file": "00-icon.svg",
+      "bytes": 57838,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.firecore.com/fav/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 10248,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.firecore.com/fav/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "02-icon.ico",
+      "bytes": 5868,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.firecore.com/fav/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon.png",
+      "bytes": 14972,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://firecore.com/favicon.ico",
+      "file": "04-default-favicon.ico",
+      "bytes": 5868,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://firecore.com/infuse",
+  "title": "Infuse - Video Player for Apple TV, iPhone, iPad, Mac & Vision | Firecore",
+  "og": "https://static.firecore.com/fav/infuse-og-card.jpg",
+  "themeColor": [
+    {
+      "content": "#121212",
+      "media": "(prefers-color-scheme: light)"
+    },
+    {
+      "content": "#121212",
+      "media": "(prefers-color-scheme: dark)"
+    }
+  ]
+}

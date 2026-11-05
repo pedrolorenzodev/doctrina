@@ -1,0 +1,79 @@
+{
+  "slug": "monocle",
+  "url": "https://monocle.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:29.643Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://monocle.com/wp-content/uploads/2025/11/cropped-MONOCLE_DIGI_BLACK-BGWHITE-M-MARK_1.png?fit=32%2C32",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://monocle.com/wp-content/uploads/2025/11/cropped-MONOCLE_DIGI_BLACK-BGWHITE-M-MARK_1.png?fit=192%2C192",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://monocle.com/wp-content/uploads/2025/11/cropped-MONOCLE_DIGI_BLACK-BGWHITE-M-MARK_1.png?fit=180%2C180",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://monocle.com/wp-content/uploads/2025/11/cropped-MONOCLE_DIGI_BLACK-BGWHITE-M-MARK_1.png?fit=32%2C32",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1441,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://monocle.com/wp-content/uploads/2025/11/cropped-MONOCLE_DIGI_BLACK-BGWHITE-M-MARK_1.png?fit=192%2C192",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.webp",
+      "bytes": 5064,
+      "ct": "image/webp"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://monocle.com/wp-content/uploads/2025/11/cropped-MONOCLE_DIGI_BLACK-BGWHITE-M-MARK_1.png?fit=180%2C180",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 6116,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://monocle.com/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 198,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://monocle.com/",
+  "title": "Monocle - global affairs, culture and design",
+  "og": "https://monocle.com/wp-content/uploads/2025/11/cropped-MONOCLE_DIGI_BLACK-BGWHITE-M-MARK_2.png",
+  "themeColor": []
+}

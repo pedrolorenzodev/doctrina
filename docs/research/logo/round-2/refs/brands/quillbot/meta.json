@@ -1,0 +1,19 @@
+{
+  "slug": "quillbot",
+  "url": "https://quillbot.com/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:44.202Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://quillbot.com/favicon.ico",
+      "status": 403
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://quillbot.com/",
+  "title": "Quillbot: Write, Design & Create",
+  "og": null,
+  "themeColor": []
+}

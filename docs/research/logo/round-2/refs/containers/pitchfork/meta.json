@@ -1,0 +1,65 @@
+{
+  "slug": "pitchfork",
+  "url": "https://pitchfork.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:16:58.656Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://pitchfork.com/verso/static/pitchfork-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://pitchfork.com/verso/static/pitchfork-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://pitchfork.com/verso/static/pitchfork-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://pitchfork.com/verso/static/pitchfork-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://pitchfork.com/verso/static/pitchfork-us/assets/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 4286,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://pitchfork.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://pitchfork.com/",
+  "title": "Pitchfork | The Most Trusted Voice in Music. | Pitchfork",
+  "og": "https://media.pitchfork.com/photos/5935a027a28a096fc4292134/16:9/w_1280,c_limit/c53c3aba.jpg",
+  "themeColor": []
+}

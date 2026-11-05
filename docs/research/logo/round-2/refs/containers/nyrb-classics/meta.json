@@ -1,0 +1,44 @@
+{
+  "slug": "nyrb-classics",
+  "url": "https://www.nyrb.com/collections/classics",
+  "family": "container",
+  "fetched": "2026-11-04T15:17:24.619Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.nyrb.com/cdn/shop/files/nyrb-logo-favicon.png?crop=center&height=32&v=1679675451&width=32",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.nyrb.com/cdn/shop/files/nyrb-logo-favicon.png?crop=center&height=32&v=1679675451&width=32",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1469,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.nyrb.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.nyrb.com/collections/classics",
+  "title": "NYRB Classics – New York Review Books",
+  "og": "http://www.nyrb.com/cdn/shop/collections/Header_Classics-R.jpg?v=1680089978",
+  "themeColor": [
+    {
+      "content": "",
+      "media": ""
+    }
+  ]
+}

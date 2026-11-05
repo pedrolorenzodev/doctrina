@@ -1,0 +1,77 @@
+{
+  "slug": "codepen",
+  "url": "https://codepen.io/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:31.605Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://public.codepenassets.com/favicon/favicon.b1eed293f82bd36978497ca73fc006.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://public.codepenassets.com/favicon/apple-touch-icon.7e021328587a469af40c84130b5a9e.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://public.codepenassets.com/favicon/logo-pin.8f3771b1072e3c38bd662872f6b673.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#111"
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://public.codepenassets.com/favicon/favicon.b1eed293f82bd36978497ca73fc006.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 1506,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://public.codepenassets.com/favicon/apple-touch-icon.7e021328587a469af40c84130b5a9e.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 1958,
+      "ct": "image/png"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "https://public.codepenassets.com/favicon/logo-pin.8f3771b1072e3c38bd662872f6b673.svg",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": "#111",
+      "file": "02-mask-icon.svg",
+      "bytes": 666,
+      "ct": "image/svg+xml"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://codepen.io/favicon.ico",
+      "status": 403
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://codepen.io/",
+  "title": "CodePen – Online Code Editor For Building & Deploying Websites",
+  "og": "https://codepen.io/public-assets/two/opengraph-image.jpg",
+  "themeColor": []
+}

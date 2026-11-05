@@ -1,0 +1,88 @@
+{
+  "slug": "glasp",
+  "url": "https://glasp.co/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:00.925Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://glasp.co/favicon.ico?favicon.1nx4uaz7n7vbj.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://glasp.co/icon.png?icon.1dvyl9u0qyqz_.png",
+      "sizes": "198x198",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://glasp.co/icon.svg?icon.0k7qkeqpkiuh6.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://glasp.co/apple-icon.png?apple-icon.1dvyl9u0qyqz_.png",
+      "sizes": "198x198",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://glasp.co/icon.svg?icon.0k7qkeqpkiuh6.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "icon",
+      "href": "https://glasp.co/favicon.ico?favicon.1nx4uaz7n7vbj.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "icon",
+      "href": "https://glasp.co/icon.png?icon.1dvyl9u0qyqz_.png",
+      "sizes": "198x198",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://glasp.co/apple-icon.png?apple-icon.1dvyl9u0qyqz_.png",
+      "sizes": "198x198",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "status": 403
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://glasp.co/favicon.ico",
+      "status": 403
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://glasp.co/",
+  "title": "Glasp: PDF & Web Highlighter for Researchers & Learners",
+  "og": "https://glasp.co/opengraph-image-1c1a04?08d5bb5e139a605e",
+  "themeColor": []
+}

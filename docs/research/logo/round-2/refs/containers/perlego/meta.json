@@ -1,0 +1,68 @@
+{
+  "slug": "perlego",
+  "url": "https://www.perlego.com/",
+  "family": "container",
+  "fetched": "2026-11-04T15:19:18.131Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://intercom.help/perlego-help/assets/favicon",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://intercom.help/perlego-help/assets/favicon",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.perlego.com/apple-touch-icon.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://intercom.help/perlego-help/assets/favicon",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.png",
+      "bytes": 10133,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.perlego.com/apple-touch-icon.png",
+      "sizes": "76x76",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 862,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.perlego.com/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 7406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.perlego.com/",
+  "title": "Perlego | An online subscription for all your academic books",
+  "og": "https://img.perlego.com/images/frontend/perlego-logo-og-no-border.png",
+  "themeColor": []
+}

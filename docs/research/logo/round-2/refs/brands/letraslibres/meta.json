@@ -1,0 +1,55 @@
+{
+  "slug": "letraslibres",
+  "url": "https://letraslibres.com/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:16:24.203Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://letraslibres.com/wp-content/uploads/2025/01/letras-libres-favico.png",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://letraslibres.com/wp-content/uploads/2025/01/letras-libres-favico.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://letraslibres.com/wp-content/uploads/2025/01/letras-libres-favico.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://letraslibres.com/wp-content/uploads/2025/01/letras-libres-favico.png",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 311,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://letraslibres.com/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://letraslibres.com/",
+  "title": "Letras Libres",
+  "og": "https://letraslibres.com/wp-content/uploads/2026/11/2026_10_20_CAMPANA-LECTURA_300x250_MUJERCITAS.gif",
+  "themeColor": []
+}

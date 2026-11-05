@@ -1,0 +1,51 @@
+{
+  "slug": "typography-com",
+  "url": "https://www.typography.com/",
+  "family": "type",
+  "fetched": "2026-11-04T15:17:53.969Z",
+  "links": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.typography.com/favicon.ico",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.typography.com/favicon.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.typography.com/favicon.ico",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 37123,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.typography.com/",
+  "title": "Fonts by Hoefler&Co.",
+  "og": "https://d31td5fkd89rr1.cloudfront.net/social/global.png",
+  "themeColor": [
+    {
+      "content": "#222222",
+      "media": ""
+    },
+    {
+      "content": "rgb(35, 35, 35)",
+      "media": ""
+    }
+  ]
+}

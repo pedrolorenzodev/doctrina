@@ -1,0 +1,79 @@
+{
+  "slug": "elpais",
+  "url": "https://elpais.com/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:16:12.784Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://static.elpais.com/dist/resources/images/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.elpais.com/dist/resources/images/favicon_96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.elpais.com/dist/resources/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://static.elpais.com/dist/resources/images/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 1150,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://static.elpais.com/dist/resources/images/favicon_96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 401,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.elpais.com/dist/resources/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 5506,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://elpais.com/favicon.ico",
+      "file": "03-default-favicon.ico",
+      "bytes": 1150,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://elpais.com/argentina/",
+  "title": "EL PAÍS Edición Argentina: el periódico global",
+  "og": "https://imagenes.elpais.com/resizer/v2/SEJWTPYCSNDKVH3VOQNGOQGKKE.png?auth=b640870211b3a4af7ef9c423e5198d4a40e0b827510ab604d5a10c6ed173fac6",
+  "themeColor": []
+}

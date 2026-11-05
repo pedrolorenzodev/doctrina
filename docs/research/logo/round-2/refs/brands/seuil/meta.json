@@ -1,0 +1,41 @@
+{
+  "slug": "seuil",
+  "url": "https://www.seuil.com/",
+  "family": "press-fr-es",
+  "fetched": "2026-11-04T15:15:57.290Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://www.seuil.com/sites/default/files/favicon_0.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://www.seuil.com/sites/default/files/favicon_0.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1141,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.seuil.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 7406,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.seuil.com/",
+  "title": "Editions du Seuil, Maison d'édition, Littérature - Seuil.com | Editions Seuil",
+  "og": null,
+  "themeColor": []
+}

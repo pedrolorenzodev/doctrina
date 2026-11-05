@@ -1,0 +1,65 @@
+{
+  "slug": "testimonial-to",
+  "url": "https://testimonial.to/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:29.428Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://testimonial.to/static/assets/favicon.5a179920.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://testimonial.to/static/assets/logo192.9040aa53.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://testimonial.to/static/assets/favicon.5a179920.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://testimonial.to/static/assets/logo192.9040aa53.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-apple-touch-icon.png",
+      "bytes": 4982,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://testimonial.to/favicon.ico",
+      "file": "02-default-favicon.ico",
+      "bytes": 15406,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://testimonial.to/",
+  "title": "Testimonial — Capture, measure & showcase customer love",
+  "og": "https://testimonial.to/assets/twitter-meta-img.png",
+  "themeColor": [
+    {
+      "content": "#000000",
+      "media": ""
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "brainyquote",
+  "url": "https://www.brainyquote.com/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:12.887Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.brainyquote.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 15086,
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.brainyquote.com/",
+  "title": "Just a moment...",
+  "og": null,
+  "themeColor": []
+}

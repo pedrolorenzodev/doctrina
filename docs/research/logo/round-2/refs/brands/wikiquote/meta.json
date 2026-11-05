@@ -1,0 +1,58 @@
+{
+  "slug": "wikiquote",
+  "url": "https://www.wikiquote.org/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:06.908Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.wikiquote.org/static/apple-touch/wikiquote.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.wikiquote.org/static/favicon/wikiquote.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://www.wikiquote.org/static/favicon/wikiquote.ico",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-shortcut_icon.ico",
+      "bytes": 5336,
+      "ct": "image/vnd.microsoft.icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://www.wikiquote.org/static/apple-touch/wikiquote.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "status": 404
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://www.wikiquote.org/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 5336,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.wikiquote.org/",
+  "title": "Wikiquote",
+  "og": null,
+  "themeColor": []
+}

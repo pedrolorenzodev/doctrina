@@ -1,0 +1,446 @@
+[
+ {
+  "slug": "acantilado",
+  "family": "press-fr-es",
+  "tab": "00-icon.jpg"
+ },
+ {
+  "slug": "accenture",
+  "family": "brand-mark",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "actes-sud",
+  "family": "press-fr-es",
+  "tab": "00-icon.png",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "anagrama",
+  "family": "press-fr-es",
+  "tab": "00-icon.ico"
+ },
+ {
+  "slug": "aoc-media",
+  "family": "press-fr-es",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "06-apple-touch-icon.png"
+ },
+ {
+  "slug": "astro",
+  "family": "code",
+  "tab": "00-icon.svg"
+ },
+ {
+  "slug": "brackets",
+  "family": "code",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "brainyquote",
+  "family": "quote-notes",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "cairn",
+  "family": "press-fr-es"
+ },
+ {
+  "slug": "chevron",
+  "family": "brand-mark",
+  "tab": "00-icon.png",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "quotes-site-in",
+  "family": "quote-notes",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "citationmachine",
+  "family": "quote-notes",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "citroen",
+  "family": "brand-mark",
+  "tab": "00-icon.ico",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "codecademy",
+  "family": "code",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "codepen",
+  "family": "code",
+  "tab": "00-icon.ico",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "coder",
+  "family": "code",
+  "tab": "04-icon.svg"
+ },
+ {
+  "slug": "comillas-university",
+  "family": "press-fr-es",
+  "tab": "00-icon.png",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "courrier-international",
+  "family": "press-fr-es",
+  "tab": "00-icon.svg",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "deepl",
+  "family": "language",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "discourse",
+  "family": "editorial",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "disqus",
+  "family": "editorial",
+  "tab": "04-icon.png",
+  "touch": "06-apple-touch-icon.png"
+ },
+ {
+  "slug": "eldiario",
+  "family": "press-fr-es",
+  "touch": "00-apple-touch-icon.png"
+ },
+ {
+  "slug": "elpais",
+  "family": "press-fr-es",
+  "tab": "00-icon.ico",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "famewall",
+  "family": "quote-notes",
+  "tab": "01-icon.png",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "freecodecamp",
+  "family": "code",
+  "tab": "00-icon.png",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "fundeu",
+  "family": "language",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "gallimard",
+  "family": "press-fr-es",
+  "tab": "01-icon.png",
+  "touch": "05-apple-touch-icon.png"
+ },
+ {
+  "slug": "glasp",
+  "family": "quote-notes"
+ },
+ {
+  "slug": "goodreads-quotes",
+  "family": "quote-notes",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "haskell",
+  "family": "code",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "htmx",
+  "family": "code",
+  "tab": "00-icon.svg"
+ },
+ {
+  "slug": "hyper",
+  "family": "code",
+  "tab": "00-icon.png",
+  "touch": "07-apple-touch-icon-precomposed.png"
+ },
+ {
+  "slug": "hypothesis",
+  "family": "quote-notes",
+  "tab": "00-icon.ico"
+ },
+ {
+  "slug": "ia-writer",
+  "family": "editorial",
+  "tab": "00-icon.ico",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "infuse",
+  "family": "media",
+  "tab": "00-icon.svg",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "kindle-notebook",
+  "family": "quote-notes",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "kodi",
+  "family": "media",
+  "tab": "00-icon.svg",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "lanacion",
+  "family": "press-fr-es",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "laphams",
+  "family": "editorial"
+ },
+ {
+  "slug": "lefigaro",
+  "family": "press-fr-es",
+  "tab": "00-icon.png",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "lemonde",
+  "family": "press-fr-es",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "05-apple-touch-icon-precomposed.png"
+ },
+ {
+  "slug": "letraslibres",
+  "family": "press-fr-es",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "liberation",
+  "family": "press-fr-es",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "linguee",
+  "family": "language",
+  "tab": "00-icon.svg",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "lithub",
+  "family": "editorial",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "marginalian",
+  "family": "quote-notes",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "markdown-guide",
+  "family": "editorial",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "mdn",
+  "family": "code",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "mediapart",
+  "family": "press-fr-es",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "off-white",
+  "family": "brand-mark",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "openedition",
+  "family": "press-fr-es",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "paris-review",
+  "family": "editorial",
+  "tab": "00-icon.png",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "plex",
+  "family": "media",
+  "tab": "00-icon.ico",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "pocketcasts",
+  "family": "media",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "06-apple-touch-icon.png"
+ },
+ {
+  "slug": "powershell",
+  "family": "code",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "prime-video",
+  "family": "media",
+  "tab": "00-shortcut_icon.png",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "proverbia",
+  "family": "quote-notes",
+  "tab": "00-icon.ico"
+ },
+ {
+  "slug": "quartz",
+  "family": "editorial",
+  "tab": "00-icon.svg",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "quillbot",
+  "family": "quote-notes"
+ },
+ {
+  "slug": "quotebacks",
+  "family": "quote-notes",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "quotefancy",
+  "family": "quote-notes",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "quoteinvestigator",
+  "family": "quote-notes",
+  "tab": "00-icon.png",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "rae",
+  "family": "language",
+  "tab": "00-icon.ico",
+  "touch": "04-apple-touch-icon.png"
+ },
+ {
+  "slug": "readwise-reader",
+  "family": "quote-notes",
+  "tab": "00-default-favicon.ico"
+ },
+ {
+  "slug": "reverso",
+  "family": "language"
+ },
+ {
+  "slug": "rewind-limitless",
+  "family": "media"
+ },
+ {
+  "slug": "scribbr",
+  "family": "quote-notes",
+  "tab": "01-icon.png",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "senja",
+  "family": "quote-notes",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "seuil",
+  "family": "press-fr-es",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "siruela",
+  "family": "press-fr-es"
+ },
+ {
+  "slug": "svelte",
+  "family": "code",
+  "tab": "00-icon.png"
+ },
+ {
+  "slug": "testimonial-to",
+  "family": "quote-notes",
+  "tab": "00-icon.ico",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "theconversation",
+  "family": "editorial",
+  "tab": "01-default-favicon.ico",
+  "touch": "00-apple-touch-icon.png"
+ },
+ {
+  "slug": "verso",
+  "family": "editorial",
+  "tab": "00-icon.svg",
+  "touch": "02-apple-touch-icon.png"
+ },
+ {
+  "slug": "vodafone",
+  "family": "brand-mark",
+  "tab": "00-shortcut_icon.png"
+ },
+ {
+  "slug": "vscode",
+  "family": "code",
+  "tab": "00-shortcut_icon.ico",
+  "touch": "01-apple-touch-icon.png"
+ },
+ {
+  "slug": "w3schools",
+  "family": "code",
+  "tab": "00-icon.ico",
+  "touch": "03-apple-touch-icon.png"
+ },
+ {
+  "slug": "warp",
+  "family": "code",
+  "tab": "01-icon.png",
+  "touch": "07-apple-touch-icon.png"
+ },
+ {
+  "slug": "wikiquote",
+  "family": "quote-notes",
+  "tab": "00-shortcut_icon.ico"
+ },
+ {
+  "slug": "wikiquote-es",
+  "family": "quote-notes",
+  "tab": "00-icon.ico"
+ },
+ {
+  "slug": "wordreference",
+  "family": "language",
+  "tab": "00-icon.svg"
+ },
+ {
+  "slug": "xing",
+  "family": "brand-mark",
+  "tab": "00-icon.ico",
+  "touch": "02-apple-touch-icon.png"
+ }
+]

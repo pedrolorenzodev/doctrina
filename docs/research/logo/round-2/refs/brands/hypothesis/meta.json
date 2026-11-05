@@ -1,0 +1,34 @@
+{
+  "slug": "hypothesis",
+  "url": "https://web.hypothes.is/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:11:58.244Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://web.hypothes.is/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://web.hypothes.is/favicon.ico",
+      "sizes": null,
+      "type": "image/x-icon",
+      "media": "",
+      "color": null,
+      "file": "00-icon.ico",
+      "bytes": 15086,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://web.hypothes.is/",
+  "title": "Hypothesis | The #1 Social Annotation Tool for Higher Education",
+  "og": "https://d242fdlp0qlcia.cloudfront.net/uploads/2020/05/25133654/HypothesisFeaturedDefault.png",
+  "themeColor": []
+}

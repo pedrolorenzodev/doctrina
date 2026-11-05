@@ -1,0 +1,21 @@
+{
+  "slug": "typewolf",
+  "url": "https://www.typewolf.com/",
+  "family": "type",
+  "fetched": "2026-11-04T15:18:05.522Z",
+  "links": [],
+  "files": [
+    {
+      "rel": "default-favicon",
+      "href": "https://www.typewolf.com/favicon.ico",
+      "file": "00-default-favicon.ico",
+      "bytes": 6518,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://www.typewolf.com/",
+  "title": "What’s Trending in Type · Typewolf",
+  "og": "https://www.typewolf.com/assets/img/typewolf-og.png",
+  "themeColor": []
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "quotefancy",
+  "url": "https://quotefancy.com/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:14.815Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://quotefancy.com/frontend/img/icons/favicon-blue.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://quotefancy.com/frontend/img/icons/favicon-blue.png",
+      "sizes": null,
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 2732,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://quotefancy.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 2732,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://quotefancy.com/",
+  "title": "Inspirational Quotes on Beautiful Wallpapers - QuoteFancy",
+  "og": "https://quotefancy.com/media/wallpaper/1600x900/18846-Anonymous-Quote-Work-hard-in-silence-let-your-success-be-your.jpg",
+  "themeColor": []
+}

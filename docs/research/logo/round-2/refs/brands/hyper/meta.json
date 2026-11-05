@@ -1,0 +1,172 @@
+{
+  "slug": "hyper",
+  "url": "https://hyper.is/",
+  "family": "code",
+  "fetched": "2026-11-04T15:14:24.496Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://hyper.is/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://hyper.is/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://hyper.is/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 387,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://hyper.is/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 237,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon-precomposed.png",
+      "bytes": 893,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-114x114.png",
+      "sizes": "114x114",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "03-apple-touch-icon-precomposed.png",
+      "bytes": 2444,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "04-apple-touch-icon-precomposed.png",
+      "bytes": 1250,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "05-apple-touch-icon-precomposed.png",
+      "bytes": 3171,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "06-apple-touch-icon-precomposed.png",
+      "bytes": 2392,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon-precomposed",
+      "href": "https://hyper.is/apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "07-apple-touch-icon-precomposed.png",
+      "bytes": 3464,
+      "ct": "image/png"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://hyper.is/",
+  "title": "Hyper™",
+  "og": "https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png",
+  "themeColor": [
+    {
+      "content": "#000000",
+      "media": ""
+    }
+  ]
+}

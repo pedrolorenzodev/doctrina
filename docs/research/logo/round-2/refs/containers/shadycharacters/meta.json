@@ -1,0 +1,47 @@
+{
+  "slug": "shadycharacters",
+  "url": "https://shadycharacters.co.uk/",
+  "family": "type",
+  "fetched": "2026-11-04T15:18:08.841Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://shadycharacters.co.uk/icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://shadycharacters.co.uk/icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://shadycharacters.co.uk/icon.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 5412,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://shadycharacters.co.uk/favicon.ico",
+      "status": 404
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://shadycharacters.co.uk/",
+  "title": "Shady Characters",
+  "og": "https://shadycharacters.co.uk/image/3xLrx816hd-619.jpeg",
+  "themeColor": []
+}

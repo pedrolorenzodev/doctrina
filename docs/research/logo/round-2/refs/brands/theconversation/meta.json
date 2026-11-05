@@ -1,0 +1,41 @@
+{
+  "slug": "theconversation",
+  "url": "https://theconversation.com/",
+  "family": "editorial",
+  "fetched": "2026-11-04T15:16:46.768Z",
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://images.theconversation.com/files/581997/original/9275d5c0-7dd5-4ddf-b50b-98d537e016f4.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://images.theconversation.com/files/581997/original/9275d5c0-7dd5-4ddf-b50b-98d537e016f4.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-apple-touch-icon.png",
+      "bytes": 260565,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://theconversation.com/favicon.ico",
+      "file": "01-default-favicon.ico",
+      "bytes": 5430,
+      "ct": "image/vnd.microsoft.icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://theconversation.com/global",
+  "title": "The Conversation: In-depth analysis, research, news and ideas from leading academics and researchers.",
+  "og": null,
+  "themeColor": []
+}

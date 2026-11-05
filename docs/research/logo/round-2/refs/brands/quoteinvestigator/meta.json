@@ -1,0 +1,78 @@
+{
+  "slug": "quoteinvestigator",
+  "url": "https://quoteinvestigator.com/",
+  "family": "quote-notes",
+  "fetched": "2026-11-04T15:12:16.930Z",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://quoteinvestigator.com/wp-content/uploads/2018/10/cropped-magnify720-1-32x32.png",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "icon",
+      "href": "https://quoteinvestigator.com/wp-content/uploads/2018/10/cropped-magnify720-1-192x192.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://quoteinvestigator.com/wp-content/uploads/2018/10/cropped-magnify720-1-180x180.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null
+    }
+  ],
+  "files": [
+    {
+      "rel": "icon",
+      "href": "https://quoteinvestigator.com/wp-content/uploads/2018/10/cropped-magnify720-1-32x32.png",
+      "sizes": "32x32",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "00-icon.png",
+      "bytes": 1556,
+      "ct": "image/png"
+    },
+    {
+      "rel": "icon",
+      "href": "https://quoteinvestigator.com/wp-content/uploads/2018/10/cropped-magnify720-1-192x192.png",
+      "sizes": "192x192",
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "01-icon.png",
+      "bytes": 19429,
+      "ct": "image/png"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://quoteinvestigator.com/wp-content/uploads/2018/10/cropped-magnify720-1-180x180.png",
+      "sizes": null,
+      "type": "",
+      "media": "",
+      "color": null,
+      "file": "02-apple-touch-icon.png",
+      "bytes": 17356,
+      "ct": "image/png"
+    },
+    {
+      "rel": "default-favicon",
+      "href": "https://quoteinvestigator.com/favicon.ico",
+      "status": "not-image",
+      "ct": "image/x-icon"
+    }
+  ],
+  "error": null,
+  "finalUrl": "https://quoteinvestigator.com/",
+  "title": "Quote Investigator® – Tracing Quotations",
+  "og": null,
+  "themeColor": []
+}
