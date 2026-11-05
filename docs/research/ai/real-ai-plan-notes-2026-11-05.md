@@ -1,0 +1,50 @@
+# Real AI for the chat and the simplifier: Pedro's decisions, pending research and the design brief
+
+Written 2026-11-05 (coordinator session). Not yet copied to `docs/DECISIONS.md` and `docs/ROADMAP.md` (a join session was editing the real repo that evening: copy these entries there when it finishes, then keep this file as the source brief). Today the chat and the simplifier are UI with scripted/mock content (`docs/features/reader-ai-drawer.md`, `docs/features/simplifier-ui.md`).
+
+## 1. Decisions (Pedro, 2026-11-05, in his words)
+1. **Real AI in both features.** «Quiero que haya una interacción con una AI real, al pedirse esas requests en estas features.» This **replaces** the decision of 2026-10-05 / PROJECT «generated chat answers are out for good» («they break neutrality and trust, and cost per query with no revenue»): that decision is marked «Replaced by» this one. It holds only under these conditions (the agent's, accepted): the answers are **grounded in the project's sources** (retrieval, not the model's memory); **every statement carries a citation to a source we provided and the server verifies that the quoted text is literally in that source**; the system prompt forbids concluding which tradition is right; a spend cap and rate limits exist before anyone outside uses it.
+2. **Budget:** «puedo poner unos 5 USD iniciales por ahora.» (The provider's API is billed separately from Pedro's Claude subscription.) A hard monthly cap on the provider side plus a daily cap in the app.
+3. **Who can use it:** «Cualquiera con el link.» So: per-IP and per-day limits, a bot check (Cloudflare Turnstile is free), a global daily budget that switches the feature off with a clear message, a kill switch.
+4. **Simplifier scope:** **without the Bible** (Pedro agrees: a generated simplification of a verse would be another Bible without an editor); any other text of the site may be simplified (Fathers' works, tradition pages, doctrine pages 02, glossary). **UX undecided:** Pedro is «no tan seguro» about the reader-level switch («veámoslo»): see §5.
+5. **The chat's logic is to be designed by Opus 5.5 High**, which Pedro will switch the coordinator to for that task: «que razones cautelosamente para que diseñes el plan de CÓMO funcionaría la lógica de la AI a la hora de responder»: see §4.
+
+## 2. Pending research (do later, with the web; write the result in `docs/research/ai/provider-and-models.md`)
+**Pedro: «una investigación importante: QUÉ provider pagamos y qué modelo específico usamos para cada función».** Brief:
+- Candidates: Anthropic (Claude models), OpenAI, Google (Gemini), and an open-weights model served through an API router; **verify every price, limit and term on the provider's current pages; do not answer from memory** (AGENTS: never assert a market claim without researching it).
+- Per function: **chat** (tool use, long context, structured output with citation ids, prompt caching, streaming, quality on theology in Spanish and English, refusal behaviour) and **simplifier** (fast, cheap, faithful rewriting in Spanish and English; the cost is small because every result is cached).
+- Money: the cost of one chat answer (tokens in with the system prompt and retrieved passages, tokens out, number of tool calls) and of one simplification, how many of each $5 buys, hard spending limits offered by each provider, rate limits, data terms (are user questions kept or used for training), free tiers and what they cost in privacy.
+- Embeddings (only if the design uses them): provider, dimensions, price, and whether a smaller index fits the free Supabase plan (500 MB, ~131 MB used).
+- Output: a table by function with one recommended pair (provider, model), one cheaper fallback, the monthly cost at 100, 1,000 and 10,000 answers, and the risks.
+
+## 3. Constraints that the design must respect (from the project)
+- AGENTS «Trust and neutrality»: no claim without a citation, no citation without an edition; the site never concludes and never says «we believe»; each tradition speaks in its own words; Church Fathers are never assigned to a modern tradition.
+- Copyright: the corpus holds full public-domain texts and only short quotes of copyrighted ones (CCC, BF&M, STEPBible data is «do not redistribute»: the word data is server-only). The AI may quote only what the retrieval gives it, with the same licence rules as the pages.
+- Free tiers: Supabase 500 MB (pauses after 7 days idle); Vercel Hobby. The corpus lives in Supabase (Bibles 164,462 verses, Fathers 17,822 divisions in 172 works, 17,025 lexicon entries); the editorial content is still TypeScript in git.
+- The UI exists: the drawer, answer parts, quotes, «Cita comprobada», per-source previews (`src/features/reader-ai/`), and the simplifier with its one-push animation rule (the box must reach its final height in one motion: no token-by-token growth).
+
+## 4. The chat: brief for the design task (Opus 5.5 High)
+**Pedro's questions:** how does it get the data? how do we make it reach ALL the sources we have and will have in the database? how do we make it always neutral and focused on EVIDENCE, not on deciding who is right: «lo importante es que la IA sea capaz de dar la MAYOR CAPACIDAD DE EVIDENCIA POSIBLE a la pregunta del usuario, sin interpretar, ofrecer la evidencia meramente» (and: «si no coincidís con esto podés decirme que estoy equivocado»).
+
+**The coordinator's position, to be tested in the design (agent's reading, not a decision):**
+1. **«Inject everything» is not possible and not wanted:** the Bible is ~4M tokens, the Fathers ~12M; no context holds them and a model ignores the middle of a huge context. The model must **search** the project's sources with tools (full-text search in Postgres first; embeddings only for a subset that fits; reference lookup for Bible verses and Father locators; fetch of a tradition's statement, a glossary term, a registry excerpt) and answer from what the tools return.
+2. **Structured answers, verified by the server:** each part of an answer = text + the ids of the retrieved passages it rests on; the server checks that each quoted string occurs in that passage; failures are rejected or regenerated; the UI shows the quote with its edition (the «Cita comprobada» line already exists).
+3. **On Pedro's «only evidence, no interpretation»: agreed as the goal, with three corrections.** (a) Pure absence of interpretation is impossible: choosing, ranking and ordering passages is an editorial act. The honest version is: **no conclusions, no «this means», no adjudicating between traditions, every sentence attributable** («Para la Iglesia católica…, CEC 1374») and the selection rules visible and balanced. (b) **Bias by retrieval:** if the search returns more from one tradition, the answer looks like a verdict. Mitigation: retrieve per tradition with a quota, show «qué buscamos y qué no encontramos» («no hay fuente de la tradición X para esto en el corpus»). (c) **«All sources» must be honest about coverage:** the corpus has the Fathers of tier 1 and 150 English works but not everything; the answer states what was searched. And «the greatest possible evidence» competes with readability: the design needs a length policy (a short evidence list first, more on demand).
+4. **Neutrality is enforced in three layers:** the system prompt (rules above), the structure (the schema has no field for a conclusion), and an evaluation set (50+ questions across the four doctrines and the five traditions, including loaded questions, requests to take sides and attempts at prompt injection) run before opening it and after every prompt change.
+5. **Cost and abuse:** retrieval keeps the prompt small; prompt caching for the fixed part; a cache of answers to identical questions; per-IP and global limits; the provider's own hard cap; a kill switch; log of spend, never of personal data beyond what is needed.
+6. **Open questions for the design:** one model with tools or a retrieval step followed by an answer step (cheaper, more predictable)? how to chunk Fathers (by division, as stored) and the Bible (by verse with a window)? how to show «what was searched»? multi-turn memory? English and Spanish: answer language and source language mixing?
+
+## 5. The simplifier: options for the «any paragraph» UX (to see, Pedro undecided on the switch)
+Goal: any paragraph (except the Bible) can be simplified, clean and seamless, without the ring on every paragraph.
+- **A. Reader switch** («Ayudas de lectura → simplificar párrafos», off by default): turns on the ring on hover of every paragraph. Clean by default; one more setting.
+- **B. Selection toolbar button** («Simplificar» next to «Preguntar»): zero UI at rest, needs a selection; touch-friendly.
+- **C. Hover ring on every paragraph, always:** discoverable, noisy; Pedro does not want it.
+- **D. Keyboard / long-press on touch** as a complement to B.
+- **E. Per-section affordance:** a small «Simplificar» only in the reading contexts (Fathers' works, long statements), not in lists or headings.
+Recommendation to evaluate with a proposal Artifact (AGENTS main rule: UI without a definition): **B + D as the base** (nothing at rest), with A as an opt-in for people who read this way; the ring stays where it already is. Technical rule that comes with any option: generation completes on the server (about 3–6 s) behind a fixed-height state and the text is revealed already complete with the approved animation (one push); results cached by text, edition, level and language, so the second request is free; a paragraph that was simplified before is instant.
+
+## 6. Order of work proposed
+1. The provider and model research (§2): needed to price everything.
+2. The simplifier (smaller, cheaper, tests the pipeline: endpoint, cache table in Supabase, key handling, limits, Turnstile), after a UX proposal (§5).
+3. The chat design by Opus 5.5 High (§4), then the build: search tools, verification, evaluation set, limits.
+Estimates (not measured; raw, before the usual correction ×0.75): simplifier 4–6 points, chat 10–15, limits and anti-abuse 2–3.
