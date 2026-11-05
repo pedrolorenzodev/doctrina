@@ -23,3 +23,23 @@ Session «Padres», 2026-11-04. Pedro's words are quoted in the task prompt; thi
 - Done: step 1 (block 235); steps 2 and 3 (block 236): loader `get-father-works-es.ts`, `ByFatherEdition`, `FatherStrip` picker, page `history/works/[work]`, e2e `father-edition.spec.ts` (7 pass), screenshots 1440/390 light and dark checked.
 - Step 4 done (block 237): `ask-script.tsx` (context), `father-script-data.ts` + `father-script.ts`, `father-ask.tsx`, button in `father-strip.tsx`, toolbar «Preguntar» in `father-body.tsx`, `conversations.ts` per script, `tools/check-father-script.mjs` in the lint chain, `e2e/father-ask.spec.ts` (9 pass) + `reader-ai-drawer.spec.ts` (39 pass) + 70 others green.
 - Next: Pedro's review in Dia; open: the scripted answers are only Spanish (as the Bible's); on phones the header button is hidden as in the Bible.
+
+## Round 2 (2026-11-04/05)
+
+1. **Dark wall texture 30 % milder.** `--wall-ink-opacity` dark .3 → .21; light .126 and the page background (`--texture-opacity`) untouched. Only two elements use `selected-ink` (segmented filter, scope control), both read the token. Verified: computed `::before` opacity 0.3 → 0.21 dark, 0.126 light unchanged; e2e `selected-states.spec.ts` «wall layer» failed before (0.3) and passes after; screenshots `tmp/shots/round2/wall-{before,after}-{dark,light}.png`.
+2. Edition by site language on first visit: pending.
+3. Reading-content translation (title, «Prólogo», division markers): pending.
+4. «Segunda traducción» in the Fathers' reader: pending.
+5. Notes preview cards in the Fathers' reader: pending.
+
+### Decisions made while Pedro was away (round 2)
+- Step 1 read as «30 % less than now» (.3 × .7 = .21), the same reading as the 2026-10-31 light tuning (.18 → .126).
+
+### Not mine, seen failing
+- `e2e/selected-states.spec.ts` «the current tradition tab is lifted…» fails in light and dark: the tab button is now transparent because block 234 moved the fill to the sliding indicator; the spec is stale. Not touched.
+
+### Usage log (round 2)
+- 2026-11-05 09:02 session 4 %, weekly 1 % (week had reset).
+
+### State (round 2)
+- Step 1 done, frozen as block 238. Next: step 2.

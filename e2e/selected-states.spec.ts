@@ -80,6 +80,14 @@ for (const scheme of ["light", "dark"] as const) {
       expect(await pressed.evaluate((element) => getComputedStyle(element, "::before").display)).toBe("none");
     });
 
+    test("the wall layer of every ink pad is 0.126 in light and 0.21 in dark", async ({ page }) => {
+      await page.goto(tradition);
+      const pad = page.locator('[role="group"][data-ready]').first().locator("[data-slide-indicator]");
+      await pad.scrollIntoViewIfNeeded();
+      const layerOpacity = await pad.evaluate((element) => getComputedStyle(element, "::before").opacity);
+      expect(layerOpacity).toBe(scheme === "light" ? "0.126" : "0.21");
+    });
+
     test("changing page leaves exactly one short mark in the tree at every frame while it travels", async ({
       page,
     }) => {
