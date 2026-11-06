@@ -1,0 +1,124 @@
+{
+  "answerId": "stub-answer",
+  "kind": "evidence",
+  "question": "¿Qué dicen los Padres y las tradiciones sobre la Eucaristía?",
+  "scope": "Se consultaron 5 textos: Escritura (2), Padres de la Iglesia (2) y la tradición católica (1). No se buscó en las otras tradiciones.",
+  "blocks": [
+    {
+      "quote": "q2",
+      "head": "Escritura"
+    },
+    {
+      "quote": "q1",
+      "head": "Padres de la Iglesia"
+    },
+    {
+      "quote": "q3",
+      "head": "Iglesia católica"
+    }
+  ],
+  "prose": "Juan 6:53 se cita en la edición Reina-Valera 1909 {q:q2}. Ignacio de Antioquía habla de la eucaristía en su carta a los esmirniotas {q:q1}. La página de la tradición católica define la Eucaristía con estas palabras {q:q3}.",
+  "quotes": {
+    "q1": {
+      "id": "q1",
+      "text": "They abstain from eucharist (thanksgiving) and prayer, because they allow not that the eucharist is the flesh of our Saviour Jesus Christ, which flesh suffered for our sins",
+      "key": "fathers:ignatius-smyrnaeans:lightfoot-1889:6.2:0",
+      "who": "Ignacio de Antioquía",
+      "work": "A los esmirniotas 6.2",
+      "edition": "J. B. Lightfoot, 1889. Dominio público.",
+      "translatedByAi": false,
+      "speaker": "shared",
+      "father": {
+        "workId": "ignatius-smyrnaeans",
+        "at": "6.2",
+        "anchor": "6.2",
+        "original": ""
+      },
+      "context": {
+        "before": " us, how that they are contrary to the mind of God. They have no care for love, none for the widow, none for the orphan, none for the afflicted, none for the prisoner, none for the hungry or thirsty. ",
+        "after": ", and which the Father of His goodness raised up."
+      }
+    },
+    "q2": {
+      "id": "q2",
+      "text": "Si no comiereis la carne del Hijo del hombre, y bebiereis su sangre, no tendréis vida en vosotros",
+      "key": "bible:rv1909:John.6.53",
+      "who": "Juan",
+      "work": "Juan 6:53",
+      "edition": "Reina-Valera 1909. Dominio público.",
+      "translatedByAi": false,
+      "speaker": "shared",
+      "bible": {
+        "book": "John",
+        "chapter": 6,
+        "verse": 53
+      },
+      "context": {
+        "before": "Y Jesús les dijo: De cierto, de cierto os digo: ",
+        "after": "."
+      }
+    },
+    "q3": {
+      "id": "q3",
+      "text": "la Eucaristía es el sacrificio del cuerpo y la sangre de Cristo, instituido en la última Cena",
+      "key": "tradition:eucharist:catholic:definition",
+      "who": "Iglesia católica",
+      "work": "Definición de la Eucaristía",
+      "edition": "Texto de Doctrina sobre la tradición católica.",
+      "translatedByAi": false,
+      "speaker": "catholic",
+      "href": "/es/doctrines/eucharist/catholic",
+      "context": {
+        "before": "Para la Iglesia católica, ",
+        "after": " para hacer presente el sacrificio de la cruz hasta que él vuelva, y a la vez el banquete en el que se recibe a Cristo mismo."
+      }
+    },
+    "q4": {
+      "id": "q4",
+      "text": "We give Thee thanks, O our Father, for the life and knowledge which Thou didst make known unto us through Thy Son Jesus",
+      "key": "fathers:didache:lightfoot-harmer-1891:9:0",
+      "who": "Didajé",
+      "work": "Didajé 9",
+      "edition": "Lightfoot y Harmer, 1891. Dominio público.",
+      "translatedByAi": false,
+      "speaker": "shared",
+      "father": {
+        "workId": "didache",
+        "at": "9",
+        "anchor": "9",
+        "original": ""
+      },
+      "context": {
+        "before": ": We give Thee thanks, O our Father, for the holy vine of Thy son David, which Thou madest known unto us through Thy Son Jesus; Thine is the glory for ever and ever. Then as regards the broken bread: ",
+        "after": "; Thine is the glory for ever and ever. As this broken bread was scattered upon the mountains and being gathered together became one, so may Thy Church be gathered together from the ends of the earth "
+      }
+    },
+    "q5": {
+      "id": "q5",
+      "text": "unless you eat the flesh and drink the blood of the Son of Man, you have no life in you",
+      "key": "bible:bsb:John.6.53",
+      "who": "John",
+      "work": "John 6:53",
+      "edition": "Berean Standard Bible. Dominio público.",
+      "translatedByAi": false,
+      "speaker": "shared",
+      "bible": {
+        "book": "John",
+        "chapter": 6,
+        "verse": 53
+      },
+      "context": {
+        "before": "So Jesus said to them, “Truly, truly, I tell you, ",
+        "after": "."
+      }
+    }
+  },
+  "consulted": ["q1", "q2", "q3", "q4", "q5"],
+  "followups": [
+    "¿Qué textos de los Padres cita cada tradición?",
+    "¿Qué dice la Escritura que cada tradición cita sobre la Eucaristía?"
+  ],
+  "more": true,
+  "cached": false,
+  "promptVersion": "chat-2026-11-06.1"
+}
