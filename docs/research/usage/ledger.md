@@ -29,7 +29,7 @@ Purpose (Pedro, 2026-11-06): a skill `estimate-weekly-usage` that answers «how 
 | Label | Start | Sessions | Equivalent cost | Points | Clean | Task, model, notes |
 |---|---|---|---|---|---|---|
 | week 2026-11-04 18:00 → 2026-11-06 14:00 | 2026-11-04 18:00 | 12 | $90.11 (Sonnet $71.92, Opus $18.18) | 13 | no (several sessions, plus Pedro's other use unknown) | Rough whole-week point: **≈ $6.9 per point** if the counter were proportional to equivalent cost. Not a calibration, only a first order of magnitude |
-| ai-block-f (so far) | 2026-11-06 13:30 | 1 | $3.64 after ≈ 30 min (Sonnet) | ? | no (Join step 7 ran in parallel) | Block F of the real-AI plan; its estimate was 1.5 to 2.0 points, which at $6.9/point is ≈ $10 to $14 |
+| ai-block-f | 2026-11-06 13:30 | 1 | $3.78 (Sonnet, one session, no subagents) | +1 as the session itself read it (12 → 13) | no (Join steps 7 to 8 ran in parallel) | Block F of the real-AI plan (contracts, providers, store, stubs, 840+ checks, 5 e2e). Plan estimate 1.5 to 2.0 points (raw) or 1.5 (×0.75). At $6.9 per point, $3.78 is ≈ 0.55 point: the counter's +1 is consistent with rounding, and the estimate was ≈ 3× too high |
 
 ## Calibration questions (answered by the data, in this order)
 1. Is `points ≈ k × equivalent cost` stable across clean runs (spread ≤ ±25 %)?
