@@ -1,0 +1,40 @@
+# Usage ledger: measuring the weekly counter against real tokens
+
+Purpose (Pedro, 2026-11-06): a skill `estimate-weekly-usage` that answers «how many weekly points would task X spend?» from data, not from intuition. Time does not matter, only weekly points.
+
+## What is measured
+- **Weekly counter:** `usage_check.py --raw` returns `seven_day.utilization`, an **integer** (e.g. `13.0`). One reading has ±0.5 point of rounding, so a window needs ≥ 3 points to be usable.
+- **Tokens:** every Claude Code session writes exact usage per message and per model to `~/.claude/projects/**/*.jsonl` (subagents included). `tools/usage/measure.py` sums them (input, output, cache read, cache write), de-duplicating streamed messages, and converts them to an **equivalent cost** with the API prices of each model (`PRICES` in the script; Sonnet 5.5, Opus 5.5, Haiku 5.5 as of 2026-11-06). The equivalent cost is a hypothesis for how the subscription counts usage: calibration tests it.
+- **Not captured:** claude.ai web or desktop chats and other devices (they spend the same counter but leave no transcript). A «clean» window has none.
+
+## Commands (from the repo root)
+| Command | What it does |
+|---|---|
+| `python3 -I tools/usage/measure.py start <label>` | Records the counter now (writes `docs/research/usage/marks.jsonl`) |
+| `python3 -I tools/usage/measure.py end <label>` | Records the counter again |
+| `python3 -I tools/usage/measure.py report <label> [--project <folder-substring>]` | Tokens, equivalent cost and sessions between the marks, the counter delta, equivalent cost per point, and a ledger row to paste below |
+| `python3 -I tools/usage/measure.py window --since <ISO time> [--until <ISO time>] [--project <substring>]` | Tokens of any window without marks (works for sessions already running) |
+| `python3 -I tools/usage/measure.py week` | Tokens of the current week against the current counter |
+
+## Protocol for a calibration run (a task sent alone)
+1. Nothing else uses Claude (no other session working, no claude.ai chat, no other device). Idle open sessions are fine.
+2. `start <label>` right before sending the prompt; `end <label>` right after the final report.
+3. The window must not cross the weekly reset (Wednesday 18:00): `report` flags it.
+4. Aim for ≥ 3 points of spend; smaller tasks are measured together in one window.
+5. Run `report`, paste its row below, and write what the task was (type, model, subagents, how many files/tests).
+
+## Rows
+`Equivalent cost` is from the tokens of all sessions in the window. `Points` is the counter delta (`?` when the window had no marks). `Clean` = no other Claude use.
+
+| Label | Start | Sessions | Equivalent cost | Points | Clean | Task, model, notes |
+|---|---|---|---|---|---|---|
+| week 2026-11-04 18:00 → 2026-11-06 14:00 | 2026-11-04 18:00 | 12 | $90.11 (Sonnet $71.92, Opus $18.18) | 13 | no (several sessions, plus Pedro's other use unknown) | Rough whole-week point: **≈ $6.9 per point** if the counter were proportional to equivalent cost. Not a calibration, only a first order of magnitude |
+| ai-block-f (so far) | 2026-11-06 13:30 | 1 | $3.64 after ≈ 30 min (Sonnet) | ? | no (Join step 7 ran in parallel) | Block F of the real-AI plan; its estimate was 1.5 to 2.0 points, which at $6.9/point is ≈ $10 to $14 |
+
+## Calibration questions (answered by the data, in this order)
+1. Is `points ≈ k × equivalent cost` stable across clean runs (spread ≤ ±25 %)?
+2. Does Opus weigh what its price says (2× Sonnet) or something else? (needs one clean Opus run, or a regression over several weeks)
+3. Does the cache-read price weigh what it says, or more? (the bulk of every session's tokens)
+4. Do past weeks agree? Rebuild each week from the transcripts (kept ≈ 30 days) against the final counter noted in the memory files.
+
+When 1 to 3 hold with ≥ 4 clean points, build the skill: per task type, the ledger gives the typical equivalent cost (median and range) and the skill returns `points = k × cost` with the range and the number of runs it rests on; with fewer than 3 runs of the type it answers «no data» and says which similar type to use.
