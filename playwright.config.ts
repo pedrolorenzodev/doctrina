@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { defineConfig } from "@playwright/test";
 
-const port = 3100;
+const port = Number(process.env.E2E_PORT ?? 3100);
 
 const hasCorpus = existsSync("data/corpus/bibles/rv1909.json");
 const hasWords = existsSync("data/site/words/manifest.json");
@@ -20,6 +20,11 @@ export default defineConfig({
     command: `npx next start -p ${port}`,
     url: `http://localhost:${port}/es`,
     reuseExistingServer: !process.env.CI,
+    env: {
+      ...process.env,
+      AI_PROVIDER: process.env.AI_PROVIDER ?? "fake",
+      AI_STORE: process.env.AI_STORE ?? "memory",
+    },
   },
   projects: [
     { name: "chromium", use: { browserName: "chromium" } },
