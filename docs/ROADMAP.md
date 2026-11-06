@@ -13,6 +13,8 @@
 
 ## Now
 
+**Red specs, on purpose (Pedro, 2026-11-06):** `e2e/shell.spec.ts` «/fr is a 404 that shows Spanish and English» and «/foo is a 404 …» fail since the deploy changes: removing `dynamicParams = false` from the `[lang]` layout made `/fr` and `/foo` answer 404 with Next's generic English page instead of `global-not-found` (confirmed: with the line back, all 14 `shell` specs pass; `dynamicParams` must be a literal, so it cannot follow `LEAN_BUILD`). **Decided (Pedro): fix it in `src/proxy.ts` by rewriting any first segment that is not a locale to the bilingual 404, as «mini-step 8» of the join session, after the Supabase reload (step 7).** Until then the two specs stay red; do not edit them.
+
 **Agreed with Pedro, 2026-10-29 (queue and details):**
 - **TOP PRIORITY (Pedro, 2026-10-29 night): every dossier done and implemented on the web, as the Catholic ones. Plan: `docs/features/dossiers-to-web.md` (pipeline verify → apply → shape → import → Pedro's review; waves; capacity: Codex 80 %, Claude 14 % of the week with ~2 points left until Nov 4; questions for Pedro in its §7). Waves 0–3 done 2026-10-30 (all 20 pages live as drafts); wave 4 (objections, excerpts, 02 content) is inventory A1, A2, B1–B3.**
 - **BIG priority, right after the tradition pages (Pedro, 2026-10-29): the doctrine pages 02 of Baptism, Papacy and Sola Scriptura** (each needs a `shared.md` that does not exist: common ground, neutral witnesses, practice comparison; the home rows stay muted until then).
