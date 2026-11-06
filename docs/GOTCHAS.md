@@ -318,3 +318,9 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **A gloss key is shared by Greek and Hebrew.** · `glosses-es.json` maps an English piece to one Spanish rendering for both languages; the later TSV wins a conflict (`I delivered` Greek «entregué» vs Hebrew «libré», `I rejoiced`, `I make`, `I have kept`). Before merging, remove from the later file the keys the other language already has with a different sense. · `data/scripts/merge_glosses_es.py`.
 - **Greek `you …` glosses are written in the second person singular.** · `greek_word_es` drops every 2nd-person plural verb (`-2P`), so a singular atom is safe and a plural atom (`-áis`, `-éis`, `-ísteis`) would show wrongly on the 2nd-person singular words. · `data/scripts/build_words.py`.
 - **At 360 × 740 the picker's list is covered by the reader strip when the sheet is open (Playwright click intercepted).** · Seen only in a test; set the edition before opening the panel in specs at that size. Not investigated further.
+
+## Wide layouts (2026-11-05)
+
+- **A media query written as `max-width: 101.7499rem` still matches at 1628 px in Chrome (rem rounding).** · Use the range form `(width < 101.75rem)` for exclusive bands, as `rail-s` does against `rail`. · `src/app/globals.css`.
+- **The compact rail's block width comes from the viewport and the tree state, never from the animating column.** · `RailMorph` animates the column; a width read from it would resize the block during the FLIP. · `src/app/globals.css` (`rail-page`, `rail-s` branches), `e2e/doctrine-rail.spec.ts`.
+- **The home is `rail="wide-only"`: `rail-s` matches only `data-rail-page=""`.** · The home's sidebar is hidden, so its content area is 1265 px at 1440; a 992 px compact block would shrink the ruler. · `src/components/page-main.tsx`, `src/app/[lang]/page.tsx`.
