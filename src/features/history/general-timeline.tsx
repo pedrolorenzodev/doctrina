@@ -43,6 +43,9 @@ type GeneralTimelineProps = {
 const pixelsPerYear = 5.85;
 const rowGap = 18;
 const labelPadding = 6;
+const flipGap = 8;
+const flipHysteresis = 24;
+const edgeMargin = 10;
 const gestureIdleMs = 160;
 const panDistance = 5;
 const sectionOrder: GeneralSection[] = ["people", "councils", "works", "currents"];
@@ -61,16 +64,24 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
   const scale: Scale = useMemo(() => ({ from, to, width }), [from, to, width]);
   const selected = entries.find((entry) => entry.id === selectedId) ?? null;
 
+  const labelWidths = useMemo(
+    () =>
+      new Map(
+        entries.map((entry) => [
+          entry.id,
+          measure(`${entry.label}${listSeparator}${entry.rowDate}`, 13.5, 600) + labelPadding,
+        ]),
+      ),
+    [entries, measure],
+  );
+
   const placed = useMemo(() => {
     const byId = new Map<string, PlacedItem>();
     for (const entry of entries) {
-      byId.set(
-        entry.id,
-        placeItem(scale, entry, measure(`${entry.label}${listSeparator}${entry.rowDate}`, 13.5, 600) + labelPadding),
-      );
+      byId.set(entry.id, placeItem(scale, entry, labelWidths.get(entry.id) ?? 0));
     }
     return byId;
-  }, [entries, scale, measure]);
+  }, [entries, scale, labelWidths]);
 
   const rowsOf = (section: GeneralSection) =>
     packRows(
@@ -166,6 +177,48 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
       });
     });
   }, [ready, entries]);
+
+  useEffect(() => {
+    const box = scroller.current;
+    if (!box || !ready) return;
+    const buttons = Array.from(box.querySelectorAll<HTMLButtonElement>("button[data-flip-start]"));
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const right = box.scrollLeft + box.clientWidth - edgeMargin;
+      for (const button of buttons) {
+        const label = button.querySelector<HTMLElement>("[data-timeline-label]");
+        if (!label) continue;
+        const start = Number(button.dataset.labelStart);
+        const width = Number(button.dataset.labelWidth);
+        const flipStart = Number(button.dataset.flipStart);
+        const flipped = label.dataset.flipped === "";
+        const crosses = start + width > right;
+        const fitsFlipped = flipStart + width <= right;
+        const shouldFlip = flipped ? !(start + width < right - flipHysteresis) && fitsFlipped : crosses && fitsFlipped;
+        if (shouldFlip === flipped) continue;
+        if (shouldFlip) {
+          label.dataset.flipped = "";
+          label.style.setProperty("--lx", px(Number(button.dataset.flipOffset)));
+        } else {
+          delete label.dataset.flipped;
+          label.style.removeProperty("--lx");
+        }
+      }
+    };
+    const schedule = () => {
+      if (frame === 0) frame = requestAnimationFrame(update);
+    };
+    update();
+    box.addEventListener("scroll", schedule, { passive: true });
+    const resize = new ResizeObserver(schedule);
+    resize.observe(box);
+    return () => {
+      cancelAnimationFrame(frame);
+      box.removeEventListener("scroll", schedule);
+      resize.disconnect();
+    };
+  }, [ready, placed]);
 
   useEffect(() => {
     const box = scroller.current;
@@ -351,14 +404,24 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
                   </p>
                   {rows.map((row) => (
                     <div key={row.map((item) => item.id).join()} className="relative h-10 pointer-coarse:h-11">
-                      {row.map((item) => {
+                      {row.map((item, index) => {
                         const entry = entries.find((candidate) => candidate.id === item.id);
                         if (!entry) return null;
+                        const labelWidth = labelWidths.get(entry.id) ?? 0;
+                        const labelStart = item.left + item.labelLeft;
+                        const flipStart = Math.max(0, pixelsOf(scale, Math.min(entry.end, scale.to)) - labelWidth);
+                        const previous = row[index - 1];
+                        const canFlip =
+                          flipStart < labelStart && flipStart >= (previous ? previous.right + flipGap : 0);
                         return (
                           <button
                             key={entry.id}
                             type="button"
                             data-entry={entry.id}
+                            data-label-start={labelStart}
+                            data-label-width={labelWidth}
+                            data-flip-start={canFlip ? flipStart : undefined}
+                            data-flip-offset={canFlip ? flipStart - item.left : undefined}
                             aria-pressed={entry.id === selectedId}
                             tabIndex={entry.id === tabbableId ? 0 : -1}
                             onClick={(event) => choose(entry.id, event.detail === 0)}
@@ -372,7 +435,10 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
                           >
                             <span className="absolute inset-0 pointer-coarse:top-1">
                               <TimelineMarks entry={entry} scale={scale} left={item.left} />
-                              <span className="absolute top-4.75 left-(--lx) px-px transition-colors duration-150 group-hover:text-ink group-hover:underline group-hover:decoration-rule-2 group-hover:underline-offset-3 group-aria-pressed:font-semibold group-aria-pressed:text-ink">
+                              <span
+                                data-timeline-label=""
+                                className="absolute top-4.75 left-(--lx) px-px transition-colors duration-150 group-hover:text-ink group-hover:underline group-hover:decoration-rule-2 group-hover:underline-offset-3 group-aria-pressed:font-semibold group-aria-pressed:text-ink"
+                              >
                                 {entry.label}
                                 {listSeparator}
                                 {entry.diedSpoken ? (
