@@ -26,7 +26,6 @@ export default async function GlossaryRoute() {
         current={labels.title}
       />
       <PageHeader id="top" className="mt-10" title={labels.title} lede={labels.lede} />
-      <p className="title-part title-part-2 mt-1 mb-0 text-reader-note text-ink-3">{labels.draft}</p>
       <HistoryIndexList
         groups={glossaryIndexGroups(locale, (id) => labels.doctrines[id])}
         filter={{ label: labels.filter, none: labels.none }}

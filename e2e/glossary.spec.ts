@@ -7,9 +7,8 @@ test("the glossary lists the hundred terms by letter, filters them and is reache
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/es/glosario");
   await expect(page.locator("h1")).toHaveText("Glosario");
-  await expect(page.locator("main")).toContainText("Borrador");
   await expect(page.locator(rows)).toHaveCount(100);
-  await expect(page.locator("main h3").first()).toHaveText("A");
+  await expect(page.locator("main h2").first()).toHaveText("A");
   const filter = page.getByRole("searchbox", { name: "Filtrar por nombre" });
   await filter.fill("cisma");
   await expect(page.locator(rows)).toHaveCount(1);

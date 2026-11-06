@@ -85,8 +85,6 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
               ? ` · ${labels.fatherWork.partial.replace("{first}", placeOf(first)).replace("{last}", placeOf(last))}`
               : ""}
           </p>
-        ) : edition.edition.status === "draft" ? (
-          <p className="title-part title-part-2 mt-1 mb-0 text-reader-note text-ink-3">{labels.fatherWork.draft}</p>
         ) : null}
       </>
     );

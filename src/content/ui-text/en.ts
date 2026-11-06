@@ -8,6 +8,7 @@ export const en: UiText = {
   },
   shell: {
     language: "Language",
+    languageUnavailable: "This page is not in Spanish yet",
     themeToLight: "Switch to light mode",
     themeToDark: "Switch to dark mode",
     menuOpen: "Open the index",
@@ -91,6 +92,7 @@ export const en: UiText = {
       apologistsMuted: "There are no apologist comments on this passage yet",
       apologistsNote: "Popular authors and apologists. Not official documents.",
       ruler: "Passages",
+      neighbors: "Previous and next passage",
       andMore: "and {n} more",
       layers: "Passage layers",
     },
@@ -188,6 +190,7 @@ export const en: UiText = {
   search: {
     label: "Search",
     placeholder: "Search doctrines, verses, Fathers, words",
+    triggerShort: ["Search doctrines", "Search doctrines, verses", "Search doctrines, verses, Fathers"],
     recents: "Recent",
     empty: "Type to search doctrines, objections and the Fathers' texts.",
     none: "Nothing matches «{query}». Try a shorter word.",
@@ -307,7 +310,6 @@ export const en: UiText = {
     sourceWork: "data from STEPBible (Tyndale House), CC BY 4.0",
     sourceNote: "Occurrences of {word} ({strong}): {times} in {verses}.",
     sourceLink: "See the data at STEPBible",
-    draft: "Draft: the word data is not verified yet.",
   },
   reader: {
     chapterTitle: "{book} {chapter}",
@@ -500,7 +502,6 @@ export const en: UiText = {
       next: "Next work",
       editionEn: "Text in English. Translated by {translator}, {year}.",
       editionEs: "Text in Spanish. Translated by {translator}, {year}.",
-      draft: "Draft: this transcription has not yet had an independent reading.",
       markers: {
         prologue: "Prologue",
         preface: "preface",
@@ -520,7 +521,6 @@ export const en: UiText = {
     lede: "Terms each tradition's texts use, defined in their own words, with the source.",
     filter: "Filter by name",
     none: "No term matches «{query}».",
-    draft: "Draft: these definitions have not had an independent review yet.",
     usedIn: "Used in",
     where: "Where it is used",
     ai: "Doctrina's AI-assisted translation",

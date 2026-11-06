@@ -66,7 +66,6 @@ export default async function GlossaryTermRoute({ params }: PageProps<"/[lang]/g
         current={term.name}
       />
       <PageHeader id="top" className="mt-10" title={term.name} />
-      <p className="title-part title-part-2 mt-1 mb-0 text-reader-note text-ink-3">{labels.draft}</p>
       {term.doctrines.length > 0 ? (
         <p className="title-part title-part-3 mt-4 mb-0 text-ui-sm text-ink-3">
           {labels.usedIn}{" "}

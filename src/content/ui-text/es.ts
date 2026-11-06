@@ -6,6 +6,7 @@ export const es = {
   },
   shell: {
     language: "Idioma",
+    languageUnavailable: "Esta página todavía no está en inglés",
     themeToLight: "Cambiar a modo claro",
     themeToDark: "Cambiar a modo oscuro",
     menuOpen: "Abrir el índice",
@@ -89,6 +90,7 @@ export const es = {
       apologistsMuted: "Todavía no hay comentarios de apologistas para este pasaje",
       apologistsNote: "Autores y apologistas populares. No son documentos oficiales.",
       ruler: "Pasajes",
+      neighbors: "Pasaje anterior y siguiente",
       andMore: "y {n} más",
       layers: "Capas del pasaje",
     },
@@ -186,6 +188,7 @@ export const es = {
   search: {
     label: "Buscar",
     placeholder: "Buscar doctrinas, versículos, Padres, palabras",
+    triggerShort: ["Buscar doctrinas", "Buscar doctrinas, versículos", "Buscar doctrinas, versículos, Padres"],
     recents: "Recientes",
     empty: "Escribe para buscar doctrinas, objeciones y textos de los Padres.",
     none: "Nada coincide con «{query}». Prueba con una palabra más corta.",
@@ -306,7 +309,6 @@ export const es = {
     sourceWork: "datos de STEPBible (Tyndale House), CC BY 4.0",
     sourceNote: "Apariciones de {word} ({strong}): {times} en {verses}.",
     sourceLink: "Ver los datos en STEPBible",
-    draft: "Borrador: los datos de palabras aún no están verificados.",
   },
   reader: {
     chapterTitle: "{book} {chapter}",
@@ -499,7 +501,6 @@ export const es = {
       next: "Obra siguiente",
       editionEn: "Texto en inglés. Traducción de {translator}, {year}.",
       editionEs: "Texto en español. Traducción de {translator}, {year}.",
-      draft: "Borrador: la transcripción de esta obra todavía no tuvo una lectura independiente.",
       markers: {
         prologue: "Prólogo",
         preface: "prefacio",
@@ -519,7 +520,6 @@ export const es = {
     lede: "Términos que los textos de cada tradición usan, con su definición en sus propias palabras y su fuente.",
     filter: "Filtrar por nombre",
     none: "Ningún término coincide con «{query}».",
-    draft: "Borrador: estas definiciones todavía no tuvieron una revisión independiente.",
     usedIn: "Se usa en",
     where: "Dónde se usa",
     ai: "Traducción de Doctrina asistida por IA",

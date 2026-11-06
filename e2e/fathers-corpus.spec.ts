@@ -18,12 +18,10 @@ test.describe("the Fathers' corpus in the reader", () => {
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
   });
 
-  test("a draft work says so; an approved one does not", async ({ page }) => {
+  test("no work shows a draft banner, draft or approved", async ({ page }) => {
     await page.goto("/es/historia/obras/origen-against-celsus");
     await expect(page.locator("h1")).toContainText("Against Celsus");
-    await expect(page.locator("main")).toContainText(
-      "Borrador: la transcripción de esta obra todavía no tuvo una lectura independiente.",
-    );
+    await expect(page.locator("main")).not.toContainText("Borrador:");
     await page.goto("/es/historia/obras/didache");
     await expect(page.locator("main")).not.toContainText("Borrador:");
   });
@@ -56,8 +54,6 @@ test.describe("the Fathers' corpus in the reader", () => {
     await expect(page.locator("h1")).toHaveText("Origen");
     await page.locator('#works a[href="/en/history/works/origen-against-celsus"]').click();
     await expect(page.locator("h1")).toContainText("Against Celsus");
-    await expect(page.locator("main")).toContainText(
-      "Draft: this transcription has not yet had an independent reading.",
-    );
+    await expect(page.locator("main")).not.toContainText("Draft:");
   });
 });

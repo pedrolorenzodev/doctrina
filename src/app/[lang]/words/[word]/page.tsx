@@ -216,7 +216,6 @@ export default async function WordRoute({ params, searchParams }: PageProps<"/[l
                 </div>
               ))}
             </dl>
-            <p className="title-part title-part-3 m-0 mt-5 text-label text-ink-3">{labels.draft}</p>
           </header>
 
           <Section id="where" title={labels.where.title} wide>
