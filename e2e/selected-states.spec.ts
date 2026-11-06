@@ -20,12 +20,15 @@ for (const scheme of ["light", "dark"] as const) {
   test.describe(`selected states, ${scheme}`, () => {
     test.use({ colorScheme: scheme, viewport: { width: 1440, height: 900 } });
 
-    test("the current tradition tab is lifted: the fill of the translation picker and a grey hairline", async ({
+    test("the current tradition tab is lifted by the sliding indicator: the fill of the translation picker and a grey hairline", async ({
       page,
     }) => {
       await page.goto(tradition);
-      const tab = page.locator("button[data-label][data-current]");
-      const style = await tab.evaluate((element) => {
+      await page.waitForTimeout(800);
+      const nav = page.getByRole("navigation", { name: "Tradición" });
+      const tab = nav.locator("button[data-label][data-current]");
+      const indicator = nav.locator("[data-slide-indicator]");
+      const style = await indicator.evaluate((element) => {
         const css = getComputedStyle(element);
         return {
           fill: css.backgroundColor,
@@ -36,6 +39,12 @@ for (const scheme of ["light", "dark"] as const) {
       expect(style.fill).toBe(await probe(page, "backgroundColor", "--color-card"));
       expect(style.outline).toBe("none");
       expect(style.shadow).toBe(`${await probe(page, "backgroundColor", "--color-rule-2")} 0px 0px 0px 1px inset`);
+      const [pad, current] = await Promise.all([indicator.boundingBox(), tab.boundingBox()]);
+      expect(Math.abs(pad!.x - current!.x)).toBeLessThan(1);
+      expect(Math.abs(pad!.width - current!.width)).toBeLessThan(1);
+      expect(Math.abs(pad!.y - current!.y)).toBeLessThan(1);
+      expect(Math.abs(pad!.height - current!.height)).toBeLessThan(1);
+      expect(await tab.evaluate((element) => getComputedStyle(element).backgroundColor)).toBe("rgba(0, 0, 0, 0)");
     });
 
     test("a pressed toggle button is lifted too, with the same grey hairline and no accent border", async ({

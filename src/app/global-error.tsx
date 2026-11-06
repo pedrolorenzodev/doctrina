@@ -3,6 +3,7 @@
 import { Document } from "@/components/document";
 import { PageMain } from "@/components/page-main";
 import { StatusPage } from "@/components/status-page";
+import { TitleEntrance } from "@/features/shell/title-entrance";
 import { ActionButton } from "@/components/ui/action";
 import { errorText } from "@/content/ui-text/error-text";
 import { locales } from "@/lib/locale";
@@ -11,6 +12,7 @@ import "@/app/globals.css";
 export default function GlobalError({ retry }: { retry: () => void }) {
   return (
     <Document lang="es">
+      <TitleEntrance />
       <PageMain>
         {locales.map((locale) => (
           <div key={locale} lang={locale} className="mb-16">
