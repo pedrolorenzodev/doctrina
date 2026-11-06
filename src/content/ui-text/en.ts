@@ -408,6 +408,9 @@ export const en: UiText = {
         translations: "Translations",
         spanish: "Spanish",
         english: "English",
+        numbering:
+          "{edition} numbers this chapter differently from {reference}, so the words and uses of this verse can't be shown here.",
+        showInDefault: "See the verse in {reference}",
       },
       uses: {
         list: "Where Doctrina uses it",

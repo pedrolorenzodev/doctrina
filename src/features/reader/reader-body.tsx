@@ -28,6 +28,7 @@ import { clearNoteWords, markNoteWords } from "@/features/reader/note-words";
 import { PanelNotes } from "@/features/reader/panel-notes";
 import type { PanelSection } from "@/features/reader/panel-sections";
 import { PanelTranslations } from "@/features/reader/panel-translations";
+import { PanelNumbering } from "@/features/reader/panel-numbering";
 import { PanelWords } from "@/features/reader/panel-words";
 import type { ReaderSelection, VerseRange } from "@/features/reader/read-selection";
 import { SelectionToolbar } from "@/features/reader/selection-toolbar";
@@ -289,6 +290,17 @@ export function ReaderBody({
   const verseNotes = verse === null ? [] : notes.at(verse).filter((note) => note.id !== editor?.noteId);
   const sectionText = panel.text.sections;
   const usesOfVerse = verse === null || differs ? [] : (uses[String(verse)] ?? []);
+  const numberingBody = (
+    <PanelNumbering
+      message={sectionText.numbering
+        .replace("{edition}", selected.abbreviation)
+        .replace("{reference}", defaultView.abbreviation)}
+      action={sectionText.showInDefault.replace("{reference}", defaultView.abbreviation)}
+      onShowDefault={() => changeFirst(defaultView.id)}
+    />
+  );
+  const wordsOfChapter = Object.keys(wordCounts).length > 0;
+  const usesOfChapter = Object.keys(uses).length > 0;
   const wordsOfVerse = verse === null ? 0 : (wordCounts[String(verse)] ?? 0);
   const otherEditions =
     verse === null
@@ -353,7 +365,7 @@ export function ReaderBody({
             />
           ),
         }
-      : { id: "words", label: sectionText.words, content: null },
+      : { id: "words", label: sectionText.words, content: differs && wordsOfChapter ? numberingBody : null },
     usesOfVerse.length > 0
       ? {
           id: "uses",
@@ -361,7 +373,7 @@ export function ReaderBody({
           count: usesOfVerse.length,
           content: <PanelUses uses={usesOfVerse} text={panel.text.uses} />,
         }
-      : { id: "uses", label: sectionText.uses, content: null },
+      : { id: "uses", label: sectionText.uses, content: differs && usesOfChapter ? numberingBody : null },
     ...(otherEditions.length > 0
       ? [
           {

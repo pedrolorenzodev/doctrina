@@ -31,6 +31,8 @@ type VersePanelText = {
     translations: string;
     spanish: string;
     english: string;
+    numbering: string;
+    showInDefault: string;
   };
   words: PanelWordsText;
   uses: PanelUsesText & { inPassage: string; inText: string };

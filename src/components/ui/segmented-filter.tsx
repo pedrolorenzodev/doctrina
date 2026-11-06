@@ -45,7 +45,8 @@ export function SegmentedFilter({
     if (!element) return;
     const measure = () => {
       const pressed = element.querySelector<HTMLElement>('[aria-pressed="true"]');
-      if (pressed && pressed.offsetWidth > 0)
+      if (!pressed) setBox(null);
+      else if (pressed.offsetWidth > 0)
         setBox({ x: pressed.offsetLeft, w: pressed.offsetWidth, y: pressed.offsetTop, h: pressed.offsetHeight });
     };
     measure();

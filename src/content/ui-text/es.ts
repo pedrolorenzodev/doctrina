@@ -407,6 +407,9 @@ export const es = {
         translations: "Traducciones",
         spanish: "español",
         english: "inglés",
+        numbering:
+          "{edition} numera este capítulo distinto de {reference}, por eso aquí no se pueden mostrar las palabras ni los usos de este versículo.",
+        showInDefault: "Ver el versículo en {reference}",
       },
       uses: {
         list: "Dónde se usa en Doctrina",
