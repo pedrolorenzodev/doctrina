@@ -65,8 +65,8 @@ test("the trigger sits 38 px after the logo (14 gap + 24 margin): 36 px high, up
   expect(box!.height).toBe(36);
   expect(box!.width).toBe(380);
   expect(Math.round(box!.x - (logo!.x + logo!.width))).toBe(38);
-  await expect(page.locator(trigger)).toHaveAttribute("aria-label", "Buscar");
-  await expect(page.locator(trigger)).toContainText("Buscar doctrinas, versículos, Padres, palabras");
+  await expect(page.locator(trigger)).toHaveAttribute("aria-label", "Buscar doctrinas, versículos, Padres, palabras");
+  await expect(page.locator(trigger).locator("span:visible")).toHaveText("Buscar doctrinas, versículos, Padres");
   await expect(page.locator(`${trigger} kbd`)).toHaveText(/^(⌘K|Ctrl K)$/);
 });
 
@@ -76,7 +76,11 @@ test("on a phone the trigger is an icon, 40 px wide, at the right", async ({ pag
   const box = await page.locator(trigger).boundingBox();
   expect(box!.width).toBe(40);
   await expect(page.locator(`${trigger} kbd`)).toBeHidden();
-  await expect(page.locator(`${trigger} span`)).toBeHidden();
+  expect(
+    await page
+      .locator(`${trigger} span`)
+      .evaluateAll((spans) => spans.every((span) => (span as HTMLElement).offsetParent === null)),
+  ).toBe(true);
   const theme = await page.locator("header button").last().boundingBox();
   expect(theme!.x).toBeGreaterThan(box!.x + box!.width - 1);
 });
@@ -566,7 +570,7 @@ test("the search is on every page, in the language of the page", async ({ page }
     await expect(page.locator(trigger)).toHaveCount(1);
   }
   await page.goto("/en");
-  await expect(page.locator(trigger)).toHaveAttribute("aria-label", "Search");
+  await expect(page.locator(trigger)).toHaveAttribute("aria-label", "Search doctrines, verses, Fathers, words");
   await page.locator(trigger).click();
   const english = page.locator("[data-search-dialog]");
   await expect(english.locator("[role=combobox]")).toHaveAttribute(

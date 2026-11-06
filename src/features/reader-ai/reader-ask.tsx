@@ -144,7 +144,7 @@ function AskLayer({
     // TODO: drop the example questions once the answers are real
     ...script.exampleHistory.map((example) => ({
       key: example.date,
-      question: example.question,
+      question: text.chat.examples[example.date] ?? example.question,
       date: dayOf(example.date),
       onPick: () => {
         openConversation({
@@ -156,7 +156,7 @@ function AskLayer({
             {
               key: 1,
               id: script.route(example.question),
-              question: example.question,
+              question: text.chat.examples[example.date] ?? example.question,
               pill: null,
               scopeName: scopeNames[scope],
               seconds: 4,

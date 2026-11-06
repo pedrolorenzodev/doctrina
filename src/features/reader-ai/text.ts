@@ -1,3 +1,4 @@
+import type { Opening } from "@/features/reader-ai/script";
 import type { Locale } from "@/lib/locale";
 
 export type AskText = {
@@ -19,6 +20,8 @@ export type AskText = {
   chat: {
     empty: string;
     emptyNote: string;
+    suggestions: Record<Opening, Record<string, string>>;
+    examples: Record<string, string>;
     jump: string;
     newChat: string;
     history: string;
@@ -78,6 +81,8 @@ export const askText: Record<Locale, AskText> = {
     chat: {
       empty: "Pregunta sobre {where}",
       emptyNote: "Con los textos que guarda Doctrina: la Biblia, los Padres y los documentos de cada tradición.",
+      suggestions: { chapter: {}, verse: {} },
+      examples: {},
       jump: "Ir al final",
       newChat: "Nueva conversación",
       history: "Preguntas anteriores",
@@ -135,6 +140,25 @@ export const askText: Record<Locale, AskText> = {
     chat: {
       empty: "Ask about {where}",
       emptyNote: "With the texts Doctrina keeps: the Bible, the Fathers and each tradition's documents.",
+      suggestions: {
+        chapter: {
+          fathers: "What did the Fathers say about this chapter?",
+          traditions: "How does each tradition read it?",
+          bible: "Which other passages of the Bible deal with this subject?",
+          words: "Which words repeat in the chapter?",
+        },
+        verse: {
+          fathers: "What did the Fathers believe about this verse?",
+          bible: "Where else does the Bible speak of this subject?",
+          traditions: "What does each tradition say about this passage?",
+          words: "Which words of this verse come back in the ones that follow?",
+        },
+      },
+      examples: {
+        "2026-10-28": "What did Chrysostom say about «the flesh profits nothing»?",
+        "2026-10-27": "How is John 6 quoted in the Catechism?",
+        "2026-10-24": "What is the bread of life?",
+      },
       jump: "Go to the end",
       newChat: "New conversation",
       history: "Earlier questions",

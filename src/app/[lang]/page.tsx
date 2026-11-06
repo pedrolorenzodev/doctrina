@@ -7,6 +7,7 @@ import { bibleBooks, type BibleSection } from "@/content/bible-books";
 import { bibleChapterHref } from "@/content/bible-routes";
 import { getCitationViews } from "@/content/get-citation-views";
 import { getDoctrinePage } from "@/content/get-doctrine-page";
+import { glossaryLocales } from "@/content/get-glossary";
 import { getHomeTimeline } from "@/content/get-home-timeline";
 import { homeDraftQuestions } from "@/content/home-doctrines";
 import { doctrineIds } from "@/content/model/ids";
@@ -109,7 +110,10 @@ export default async function Home() {
         <MailForm text={home.mail} />
         <HomeFooter
           site={site.title}
-          glossary={{ label: home.footer.glossary, href: glossaryHref(locale) }}
+          glossary={{
+            label: home.footer.glossary,
+            href: glossaryLocales.includes(locale) ? glossaryHref(locale) : null,
+          }}
           sources={{ label: home.footer.sources, soon: shell.soon }}
           other={{ label: home.footer.other, href: localeHref(other), lang: other }}
         />

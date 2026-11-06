@@ -285,3 +285,31 @@ export function swapHistoryLocale(pathname: string, from: Locale, to: Locale): s
   if (!match) return null;
   return `/${to}/${historySegments[to]}/${match[to]}${detail ? `/${rest.join("/")}` : ""}`;
 }
+
+export function visibleSpanishPath(pathname: string): string {
+  for (const { source, destination } of spanishRewrites()) {
+    const params = matchPattern(destination, pathname);
+    if (params) return fillPattern(source, params);
+  }
+  return pathname;
+}
+
+function matchPattern(pattern: string, pathname: string): Record<string, string> | null {
+  const wanted = pattern.split("/");
+  const actual = pathname.split("/");
+  if (wanted.length !== actual.length) return null;
+  const params: Record<string, string> = {};
+  for (const [index, part] of wanted.entries()) {
+    const value = actual[index] ?? "";
+    if (part.startsWith(":")) params[part.slice(1)] = value;
+    else if (part !== value) return null;
+  }
+  return params;
+}
+
+function fillPattern(pattern: string, params: Record<string, string>): string {
+  return pattern
+    .split("/")
+    .map((part) => (part.startsWith(":") ? (params[part.slice(1)] ?? "") : part))
+    .join("/");
+}

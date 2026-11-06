@@ -394,17 +394,20 @@ export function Chat({
             inert={chipsLeaving}
             className="-mx-5.5 mb-2 flex gap-2 overflow-x-auto overscroll-contain px-5.5 chips-scroll"
           >
-            {script.suggestionSets[opening].map((chip) => (
-              <button
-                key={chip.id}
-                type="button"
-                data-bare-focus=""
-                onClick={() => ask(chip.id, undefined, chip.label)}
-                className={`inline-flex min-h-8.5 flex-none cursor-pointer items-center justify-center rounded-6 border border-rule px-2.5 text-ui-xs leading-label whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11 ${focusRingClassName}`}
-              >
-                {chip.label}
-              </button>
-            ))}
+            {script.suggestionSets[opening].map((chip) => {
+              const label = text.suggestions[opening][chip.id] ?? chip.label;
+              return (
+                <button
+                  key={chip.id}
+                  type="button"
+                  data-bare-focus=""
+                  onClick={() => ask(chip.id, undefined, label)}
+                  className={`inline-flex min-h-8.5 flex-none cursor-pointer items-center justify-center rounded-6 border border-rule px-2.5 text-ui-xs leading-label whitespace-nowrap text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11 ${focusRingClassName}`}
+                >
+                  {label}
+                </button>
+              );
+            })}
           </div>
         ) : null}
         <div className="grid min-w-0 grid-cols-1 gap-2">

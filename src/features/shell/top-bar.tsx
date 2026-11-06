@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
+import { getLanguageAvailability } from "@/content/get-language-availability";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { MenuButton } from "@/features/shell/menu-button";
 import { LanguageSwitch } from "@/features/shell/language-switch";
@@ -21,9 +22,14 @@ export async function TopBar({ withMenu }: { withMenu: boolean }) {
         <BrandMark />
         {site.title}
       </Link>
-      <SearchTrigger label={search.label} placeholder={search.placeholder} />
+      <SearchTrigger placeholder={search.placeholder} tiers={search.triggerShort} />
       <span className="hidden flex-1 sm:block" />
-      <LanguageSwitch current={locale} label={shell.language} />
+      <LanguageSwitch
+        current={locale}
+        label={shell.language}
+        unavailable={shell.languageUnavailable}
+        availability={getLanguageAvailability()}
+      />
       <ThemeToggle toLight={shell.themeToLight} toDark={shell.themeToDark} />
     </header>
   );

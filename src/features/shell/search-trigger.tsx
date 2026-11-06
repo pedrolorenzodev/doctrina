@@ -4,13 +4,13 @@ import { useSyncExternalStore } from "react";
 import { useSearch } from "@/components/search-provider";
 
 type SearchTriggerProps = {
-  label: string;
   placeholder: string;
+  tiers: string[];
 };
 
 const isApple = () => /Mac|iPhone|iPad/.test(navigator.platform);
 
-export function SearchTrigger({ label, placeholder }: SearchTriggerProps) {
+export function SearchTrigger({ placeholder, tiers }: SearchTriggerProps) {
   const { open, show } = useSearch();
   const apple = useSyncExternalStore(
     () => () => undefined,
@@ -20,7 +20,7 @@ export function SearchTrigger({ label, placeholder }: SearchTriggerProps) {
   return (
     <button
       type="button"
-      aria-label={label}
+      aria-label={placeholder}
       aria-haspopup="dialog"
       aria-expanded={open}
       aria-keyshortcuts="Control+K Meta+K"
@@ -39,7 +39,9 @@ export function SearchTrigger({ label, placeholder }: SearchTriggerProps) {
         <circle cx="7" cy="7" r="5" />
         <path d="m11 11 3.5 3.5" />
       </svg>
-      <span className="min-w-0 flex-1 truncate text-left max-sm:hidden">{placeholder}</span>
+      <span className="min-w-0 flex-1 truncate text-left max-sm:hidden md:hidden">{tiers[0]}</span>
+      <span className="min-w-0 flex-1 truncate text-left max-md:hidden lg:hidden">{tiers[1]}</span>
+      <span className="min-w-0 flex-1 truncate text-left max-lg:hidden">{tiers[2]}</span>
       <kbd className="rounded-4 border border-rule px-1.5 py-px font-ui text-micro-lg text-ink-3 max-sm:hidden">
         {apple ? "⌘K" : "Ctrl K"}
       </kbd>
