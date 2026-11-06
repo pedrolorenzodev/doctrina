@@ -122,35 +122,54 @@ function VerseWordCard({
 export function VerseWordsView(props: VerseWordsProps) {
   const { words, text, title, subtitle } = props;
   const { differs } = useVerseEdition();
-  const [shown, setShown] = useState(() => firstShown(words.words));
+  const [hovered, setHovered] = useState(() => firstShown(words.words));
+  const [pinned, setPinned] = useState<number | null>(null);
   if (differs) return null;
   const lang = words.language;
+  const shown = pinned ?? hovered;
+  const preview = (index: number) => {
+    if (pinned === null) setHovered(index);
+  };
+  const toggle = (index: number) => {
+    if (pinned === index) {
+      setPinned(null);
+      setHovered(index);
+    } else setPinned(index);
+  };
   return (
     <Section id="words" title={title} subtitle={subtitle} wide>
       <div className="verse-words-grid">
         <ul dir={lang === "hbo" ? "rtl" : undefined} className="m-0 flex list-none flex-wrap gap-x-0.5 gap-y-1 p-0">
-          {words.words.map((word, index) => (
-            <li key={`${index}-${word.g}`}>
-              <button
-                type="button"
-                aria-pressed={index === shown}
-                onClick={() => setShown(index)}
-                onFocus={() => setShown(index)}
-                onPointerEnter={(event) => {
-                  if (event.pointerType === "mouse") setShown(index);
-                }}
-                className="flex min-h-11 cursor-pointer flex-col items-start gap-px rounded-6 border-0 bg-transparent px-2.25 py-1.75 text-left transition-selected hover:bg-hover aria-pressed:selected-lift"
-              >
-                <span lang={lang} className="text-verse-tile text-ink">
-                  {word.g}
-                </span>
-                <span dir="ltr" className="text-ui-xs text-ink-2">
-                  <span lang={word.english ? "en" : undefined}>{word.gloss}</span>
-                  {word.english ? <span className="ml-1.5 text-ui-2xs text-ink-3">{text.english}</span> : null}
-                </span>
-              </button>
-            </li>
-          ))}
+          {words.words.map((word, index) => {
+            const isPinned = index === pinned;
+            return (
+              <li key={`${index}-${word.g}`}>
+                <button
+                  type="button"
+                  aria-pressed={index === shown}
+                  data-pinned={isPinned ? "" : undefined}
+                  onClick={() => toggle(index)}
+                  onFocus={() => preview(index)}
+                  onPointerEnter={(event) => {
+                    if (event.pointerType === "mouse") preview(index);
+                  }}
+                  className={`flex min-h-11 cursor-pointer flex-col items-start gap-px rounded-6 border-0 px-2.25 py-1.75 text-left transition-selected ${isPinned ? "relative selected-ink" : "bg-transparent hover:bg-hover aria-pressed:selected-lift"}`}
+                >
+                  <span lang={lang} className={`text-verse-tile ${isPinned ? "text-bg" : "text-ink"}`}>
+                    {word.g}
+                  </span>
+                  <span dir="ltr" className={`text-ui-xs ${isPinned ? "text-bg" : "text-ink-2"}`}>
+                    <span lang={word.english ? "en" : undefined}>{word.gloss}</span>
+                    {word.english ? (
+                      <span className={`ml-1.5 text-ui-2xs ${isPinned ? "text-bg opacity-80" : "text-ink-3"}`}>
+                        {text.english}
+                      </span>
+                    ) : null}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
         </ul>
         <div className="mt-4.5 border-t border-rule pt-4 verse-card-sticky md:mt-0 md:border-t-0 md:border-l md:pt-0 md:pl-6">
           <div className="grid">
