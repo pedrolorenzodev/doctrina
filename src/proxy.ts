@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { isLocale } from "@/lib/locale";
 
 const robotsBody = "User-agent: *\nDisallow: /\n";
 
@@ -20,21 +21,32 @@ function passwordMatches(header: string | null, password: string): boolean {
   return difference === 0;
 }
 
+function isOutsideEveryLocale(pathname: string): boolean {
+  const segments = pathname.split("/").filter(Boolean);
+  const [first] = segments;
+  if (!first || isLocale(first) || first === "api" || first.startsWith("_")) return false;
+  return !segments[segments.length - 1]!.includes(".");
+}
+
 export function proxy(request: NextRequest) {
   const password = process.env.SITE_PASSWORD;
-  if (!password) return NextResponse.next();
   const noindex = { "X-Robots-Tag": "noindex, nofollow" };
-  if (request.nextUrl.pathname === "/robots.txt") {
-    return new NextResponse(robotsBody, { headers: { ...noindex, "Content-Type": "text/plain" } });
+  if (password) {
+    if (request.nextUrl.pathname === "/robots.txt") {
+      return new NextResponse(robotsBody, { headers: { ...noindex, "Content-Type": "text/plain" } });
+    }
+    if (!passwordMatches(request.headers.get("authorization"), password)) {
+      return new NextResponse("Authentication required", {
+        status: 401,
+        headers: { ...noindex, "WWW-Authenticate": 'Basic realm="Doctrina", charset="UTF-8"' },
+      });
+    }
   }
-  if (!passwordMatches(request.headers.get("authorization"), password)) {
-    return new NextResponse("Authentication required", {
-      status: 401,
-      headers: { ...noindex, "WWW-Authenticate": 'Basic realm="Doctrina", charset="UTF-8"' },
-    });
-  }
-  const response = NextResponse.next();
-  response.headers.set("X-Robots-Tag", noindex["X-Robots-Tag"]);
+  // GUARD: keeps /fr and /foo on global-not-found, because the [lang] layout cannot set dynamicParams = false (GOTCHAS, lean build).
+  const response = isOutsideEveryLocale(request.nextUrl.pathname)
+    ? NextResponse.rewrite(new URL("/_not-found", request.url))
+    : NextResponse.next();
+  if (password) response.headers.set("X-Robots-Tag", noindex["X-Robots-Tag"]);
   return response;
 }
 
