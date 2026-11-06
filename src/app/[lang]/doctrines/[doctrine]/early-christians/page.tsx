@@ -59,8 +59,10 @@ export default async function EarlyChristiansRoute({
       <CriterionFold id="criterion" label={labels.criterion.label}>
         <p className="m-0 text-note text-ink-3">{labels.criterion.body}</p>
       </CriterionFold>
-      <div className="max-w-entries">
-        <EarlyChristiansList witnesses={page.witnesses.items} locale={locale} readLabel={labels.read} />
+      <div>
+        <div className="max-w-entries rail-offset">
+          <EarlyChristiansList witnesses={page.witnesses.items} locale={locale} readLabel={labels.read} />
+        </div>
       </div>
     </PageMain>
   );
