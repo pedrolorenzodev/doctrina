@@ -309,7 +309,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
             )}
           </div>
         </div>
-        <nav className="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label={text.ruler}>
+        <nav className="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label={text.neighbors}>
           {previous ? (
             <button
               type="button"

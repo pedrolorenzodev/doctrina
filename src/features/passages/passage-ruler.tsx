@@ -66,7 +66,10 @@ export function PassageRuler({ label, titles, current, onSelect, onIntent }: Pas
           </button>
         ))}
       </nav>
-      <nav aria-label={label} className="flex h-8.5 items-end justify-between px-0.5 sm:hidden">
+      <nav
+        aria-label={label}
+        className="flex h-8.5 items-end justify-between px-0.5 pointer-coarse:-mt-2.5 pointer-coarse:h-11 sm:hidden"
+      >
         {titles.map((title, index) => (
           <button
             key={title}

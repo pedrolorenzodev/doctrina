@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { MoreButton } from "@/components/ui/more-button";
 import { easeReveal, prefersReducedMotion } from "@/lib/branch-motion";
+import { OriginalScripts } from "@/components/original-scripts";
 
 type OriginalEntryProps = { entry: string; show: string; hide: string };
 
@@ -34,7 +35,7 @@ export function OriginalEntry({ entry, show, hide }: OriginalEntryProps) {
         hidden={!open}
         className="m-0 max-w-170 pt-4 font-body text-reference font-light whitespace-pre-line text-ink-2"
       >
-        {entry}
+        <OriginalScripts text={entry} />
       </p>
     </>
   );

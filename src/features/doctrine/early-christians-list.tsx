@@ -8,6 +8,7 @@ import { fatherHref } from "@/content/routes";
 import { witnessReference } from "@/content/witness-view";
 import type { Locale } from "@/lib/locale";
 import { nbspBeforeDigits } from "@/lib/locator";
+import { OriginalScripts } from "@/components/original-scripts";
 
 type EarlyChristiansListProps = {
   witnesses: Witness[];
@@ -35,7 +36,9 @@ export function EarlyChristiansList({ witnesses, locale, readLabel }: EarlyChris
             <div className="pt-0.75 text-ui-base leading-normal font-medium text-ink tabular-nums">
               {formatDate(witness.date, locale)}
               {witness.note ? (
-                <small className="mt-0.75 block text-date-note font-normal text-ink-3">{witness.note}</small>
+                <small className="mt-0.75 block text-date-note font-normal text-ink-3">
+                  <OriginalScripts text={witness.note} />
+                </small>
               ) : null}
             </div>
             <div>

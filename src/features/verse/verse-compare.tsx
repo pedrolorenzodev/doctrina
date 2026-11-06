@@ -76,7 +76,7 @@ export function VerseCompare({ text }: { text: VerseCompareText }) {
                   }),
                 )
               }
-              className="inline-flex min-h-9.5 cursor-pointer items-center justify-center rounded-6 border border-rule bg-transparent px-3 py-1.5 text-btn leading-label text-ink-2 transition-selected hover:bg-hover hover:text-ink aria-pressed:border-transparent aria-pressed:selected-lift aria-pressed:font-medium aria-pressed:text-ink"
+              className="hit-44 inline-flex min-h-9.5 cursor-pointer items-center justify-center rounded-6 border border-rule bg-transparent px-3 py-1.5 text-btn leading-label text-ink-2 transition-selected hover:bg-hover hover:text-ink aria-pressed:border-transparent aria-pressed:selected-lift aria-pressed:font-medium aria-pressed:text-ink"
             >
               {edition.displayName}
             </button>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { RevealList } from "@/components/reveal-list";
-import { Tooltip } from "@/components/ui/tooltip";
+import { PressTooltip } from "@/components/ui/press-tooltip";
 import { RowChevron } from "@/features/home/row-chevron";
 
 export type HomeEdition = { id: string; abbreviation: string; name: string };
@@ -11,14 +11,14 @@ export function BibleRows({ editions, rows }: { editions: HomeEdition[]; rows: H
     <>
       <div className="mt-4.5 flex flex-wrap gap-x-2 gap-y-1.5">
         {editions.map((edition) => (
-          <Tooltip key={edition.id} label={edition.name}>
+          <PressTooltip key={edition.id} label={edition.name} align="center">
             <span
               tabIndex={0}
-              className="inline-flex min-h-8 cursor-default items-center rounded-6 border border-rule px-2.5 text-ui-xs font-medium text-ink-2"
+              className="pointer-coarse:hit-44 inline-flex min-h-8 cursor-default items-center rounded-6 border border-rule px-2.5 text-ui-xs font-medium text-ink-2"
             >
               {edition.abbreviation}
             </span>
-          </Tooltip>
+          </PressTooltip>
         ))}
       </div>
       <RevealList as="ul" className="m-0 mt-5.5 list-none p-0">

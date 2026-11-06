@@ -23,7 +23,7 @@ type SegmentedFilterProps = {
   wrap?: boolean;
 };
 
-type Box = { x: number; w: number };
+type Box = { x: number; w: number; y: number; h: number };
 
 export function SegmentedFilter({
   label,
@@ -45,7 +45,8 @@ export function SegmentedFilter({
     if (!element) return;
     const measure = () => {
       const pressed = element.querySelector<HTMLElement>('[aria-pressed="true"]');
-      if (pressed && pressed.offsetWidth > 0) setBox({ x: pressed.offsetLeft, w: pressed.offsetWidth });
+      if (pressed && pressed.offsetWidth > 0)
+        setBox({ x: pressed.offsetLeft, w: pressed.offsetWidth, y: pressed.offsetTop, h: pressed.offsetHeight });
     };
     measure();
     const observer = new ResizeObserver(measure);
@@ -72,8 +73,15 @@ export function SegmentedFilter({
           aria-hidden="true"
           data-instant={settled ? undefined : ""}
           data-slide-indicator=""
-          style={{ "--slide-x": `${box.x}px`, "--slide-w": `${box.w}px` } as React.CSSProperties}
-          className={`slide-indicator pointer-events-none absolute top-0.75 bottom-0.75 left-0 w-(--slide-w) translate-x-(--slide-x) ${compact ? "rounded-5" : "rounded-6"} selected-ink ${stackOnPhone ? "max-sm:hidden" : ""}`}
+          style={
+            {
+              "--slide-x": `${box.x}px`,
+              "--slide-w": `${box.w}px`,
+              "--slide-y": `${box.y}px`,
+              "--slide-h": `${box.h}px`,
+            } as React.CSSProperties
+          }
+          className={`slide-indicator pointer-events-none absolute left-0 w-(--slide-w) translate-x-(--slide-x) ${wrap ? "top-0 h-(--slide-h) translate-y-(--slide-y)" : "top-0.75 bottom-0.75"} ${compact ? "rounded-5" : "rounded-6"} selected-ink ${stackOnPhone ? "max-sm:hidden" : ""}`}
         />
       ) : null}
       {options.map((option) => (

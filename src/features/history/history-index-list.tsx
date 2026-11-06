@@ -82,7 +82,7 @@ export function HistoryIndexList({ groups, filter, letters, columns = false }: H
                 data-id={`group-${group.title}`}
                 className="mt-7.5 break-inside-avoid-column break-after-avoid-column first:mt-0"
               >
-                <GroupHeading>{group.title}</GroupHeading>
+                <GroupHeading as="h2">{group.title}</GroupHeading>
               </li>,
               ...group.rows.map((row, index) => (
                 <li

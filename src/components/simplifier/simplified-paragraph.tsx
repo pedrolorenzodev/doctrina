@@ -166,7 +166,7 @@ function SimplifiedView({
               aria-expanded={shown}
               aria-controls={mounted ? panelId : undefined}
               onClick={() => (shown ? close(false) : open())}
-              className="group/ring grid size-7 cursor-pointer place-items-center rounded-full opacity-0 transition-opacity duration-150 ease-standard group-hover/simplifier:opacity-100 focus-visible:opacity-100 aria-expanded:opacity-100 pointer-coarse:opacity-100 max-md:size-11 max-md:opacity-100"
+              className="group/ring hit-44 grid size-7 cursor-pointer place-items-center rounded-full opacity-0 transition-opacity duration-150 ease-standard group-hover/simplifier:opacity-100 focus-visible:opacity-100 aria-expanded:opacity-100 pointer-coarse:opacity-100 max-md:size-11 max-md:opacity-100"
             >
               <i className="block size-3.5 rounded-full simplifier-ring-line border-ink-3 transition-colors duration-150 ease-standard group-hover/ring:border-ink group-aria-expanded/ring:border-ink group-aria-expanded/ring:bg-ink" />
             </button>

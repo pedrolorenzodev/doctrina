@@ -16,7 +16,7 @@ for (const [path, title, count] of indexes) {
     await page.goto(path);
     await expect(page.locator("h1")).toHaveText(title);
     await expect(page.locator(rows)).toHaveCount(count);
-    await expect(page.locator("main h3").first()).toHaveText(/^Siglo [IVX]+$/);
+    await expect(page.locator("main h2").first()).toHaveText(/^Siglo [IVX]+$/);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
   });
 }
@@ -28,7 +28,7 @@ test("the filter appears from 30 items, narrows the rows and the century titles,
   const filter = page.getByRole("searchbox", { name: "Filtrar por nombre" });
   await filter.fill("trento");
   await expect(page.locator(rows)).toHaveCount(1);
-  await expect(page.locator("main h3")).toHaveCount(1);
+  await expect(page.locator("main h2")).toHaveCount(1);
   await filter.fill("zzzz");
   await expect(page.locator("main")).toContainText("Nada coincide con «zzzz».");
   await filter.fill("");

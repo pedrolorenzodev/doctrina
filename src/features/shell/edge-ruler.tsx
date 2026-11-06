@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { scrollToElement } from "@/lib/scroll";
+import { OriginalScripts } from "@/components/original-scripts";
 
 type RulerSection = {
   id: string;
@@ -114,7 +115,7 @@ export function EdgeRuler({ label, sections }: EdgeRulerProps) {
             aria-hidden="true"
             className="pointer-events-none absolute top-1/2 right-22.5 -translate-y-1/2 translate-x-1.25 text-ruler font-normal whitespace-nowrap text-ink opacity-0 font-head group-data-hover/tick:translate-x-0 group-data-hover/tick:opacity-100 group-data-hover/tick:transition group-data-hover/tick:duration-200 group-data-hover/tick:ease-standard"
           >
-            {section.label}
+            <OriginalScripts text={section.label} />
           </span>
           <span
             aria-hidden="true"

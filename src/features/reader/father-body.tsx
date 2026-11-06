@@ -36,6 +36,7 @@ import { fatherSecondStore } from "@/lib/father-second-translation";
 import { nbspBeforeDigits } from "@/lib/locator";
 import type { Segment } from "@/lib/highlights";
 import { clippedQuote, type Note, type NoteDraft } from "@/lib/notes";
+import { OriginalScripts } from "@/components/original-scripts";
 
 export type FatherEditionView = {
   id: string;
@@ -84,7 +85,8 @@ type FatherBodyProps = {
 };
 
 const maxHangingLocator = 8;
-const hangingLocator = "md:absolute md:verse-number-top md:-left-13 md:w-14 md:indent-0 md:text-right";
+const hangingLocator =
+  "md:absolute pointer-coarse:md:absolute md:verse-number-top md:-left-13 md:w-14 md:indent-0 md:text-right";
 
 const anchorOf = (locator: string) => `d-${locator.replace(/[^a-zA-Z0-9.-]+/g, "-")}`;
 const excerptLimit = 90;
@@ -385,10 +387,10 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
             data-highlight={segment.color}
             className="highlight-mark rounded-2 text-inherit box-decoration-clone"
           >
-            {division.text.slice(segment.from, segment.to)}
+            <OriginalScripts text={division.text.slice(segment.from, segment.to)} />
           </mark>
         ) : (
-          division.text.slice(segment.from, segment.to)
+          <OriginalScripts key={segment.from} text={division.text.slice(segment.from, segment.to)} />
         ),
       )}
     </span>
@@ -455,7 +457,7 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
                         data-division-open={anchorOf(division.locator)}
                         data-locator={division.locator}
                         onClick={(event) => openFrom(division.ordinal, event.currentTarget, event.detail === 0)}
-                        className={`cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline ${stacked ? "" : hangingLocator}`}
+                        className={`pointer-coarse:hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline ${stacked ? "" : hangingLocator}`}
                       >
                         {markerLabel(division.locator, selected.markers)}
                       </button>

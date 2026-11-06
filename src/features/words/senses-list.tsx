@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { OriginalScripts } from "@/components/original-scripts";
 import type { SenseView } from "@/content/get-word-page";
 
 const plus = "+";
@@ -28,7 +29,7 @@ export function SensesList({ senses, tag, senseLabel, placesLabel, placesOneLabe
             </span>
           </div>
           <p lang="en" className="m-0 mt-2.5 max-w-160 font-body text-definition font-light text-ink-2">
-            {sense.text}
+            <OriginalScripts text={sense.text} />
           </p>
           {sense.example ? (
             <blockquote className="m-0 mt-3.5 max-w-160 border-l-2 border-rule-2 pl-4">

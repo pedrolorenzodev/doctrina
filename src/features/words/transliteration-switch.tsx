@@ -16,7 +16,7 @@ export function TransliterationSwitch({ label }: { label: string }) {
       type="button"
       aria-pressed={on}
       onClick={() => setTransliteration(on ? "off" : "on")}
-      className="group/switch -mr-2 inline-flex min-h-9 cursor-pointer items-center gap-2.25 rounded-6 py-1.5 pr-2 pl-2.5 text-ui-xs text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:text-ink-2"
+      className="group/switch hit-44 -mr-2 inline-flex min-h-9 cursor-pointer items-center gap-2.25 rounded-6 py-1.5 pr-2 pl-2.5 text-ui-xs text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:text-ink-2"
     >
       <span>{label}</span>
       <span

@@ -6,6 +6,7 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessReference, witnessViewId } from "@/content/witness-view";
 import { WitnessExplorer } from "@/features/doctrine/witness-explorer";
 import type { Locale } from "@/lib/locale";
+import { OriginalScripts } from "@/components/original-scripts";
 
 type WitnessesSectionProps = {
   id: string;
@@ -31,7 +32,9 @@ export function WitnessesSection({ id, page, locale }: WitnessesSectionProps) {
       <WitnessExplorer witnesses={witnesses} text={text} />
       <p className="mt-8.5 text-ui-base">
         <PageLink>{page.witnesses.historyLink.label}</PageLink>
-        <span className="mt-1 block text-btn text-ink-3">{page.witnesses.historyLink.note}</span>
+        <span className="mt-1 block text-btn text-ink-3">
+          <OriginalScripts text={page.witnesses.historyLink.note} />
+        </span>
       </p>
     </Section>
   );
