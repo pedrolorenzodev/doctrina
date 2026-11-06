@@ -19,7 +19,7 @@ export default async function GlossaryRoute() {
   const text = getUiText(locale);
   const labels = text.glossary;
   return (
-    <PageMain>
+    <PageMain rail>
       <Breadcrumbs
         label={text.shell.breadcrumb}
         trail={[{ label: text.shell.tree.reference }]}

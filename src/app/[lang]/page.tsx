@@ -79,7 +79,7 @@ export default async function Home() {
   const other = locales.find((candidate) => candidate !== locale)!;
   return (
     <CitationProvider views={views} text={text.citation}>
-      <PageMain>
+      <PageMain rail="wide-only">
         <PageHeader title={site.title} lede={home.lede} />
         <HomeResume here={localeHref(locale)} text={{ label: home.resume, detail: home.resumeDetail }} />
         <section id="years" aria-labelledby="years-title" className="title-part title-part-3 mt-14 scroll-mt-offset">

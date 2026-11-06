@@ -95,106 +95,112 @@ export default async function VerseRoute({ params }: PageProps<"/[lang]/bible/[b
   const entry = (id: string, label: string) => ({ id, label });
 
   return (
-    <PageMain>
-      <VerseBackScript />
-      <VerseEditionProvider editions={data.editions} defaultId={data.defaultId} book={book.id}>
-        <div className="mb-5">
-          <Breadcrumbs
-            label={text.shell.breadcrumb}
-            trail={[
-              { label: text.shell.tree.bible },
-              { label: sectionLabel },
-              { label: bookName },
-              { label: chapterLabel, href: chapterHref },
-            ]}
-            current={`${chapter}:${verse}`}
-          />
-        </div>
-        <VerseBackStrip text={labels.back} />
-        <div className="mt-5.5 sm:mt-7.5">
-          <p className="title-part title-part-1 m-0 mb-2 text-ui-xs text-ink-3">{kicker}</p>
-          <PageHeader title={reference} />
-        </div>
-        <div className="verse-grid">
-          <VersePassage
-            text={labels}
-            picker={<VerseTranslationPicker text={text.reader.picker} />}
-            verse={verse}
-            base={base}
-            chapterHref={`${chapterHref}#v-${verse}`}
-            chapterTitle={text.reader.chapterTitle.replace("{book}", bookName).replace("{chapter}", String(chapter))}
-            numberingNote={text.reader.numberingNote}
-          />
-          <aside
-            aria-label={labels.cite.title}
-            className="mt-12 hidden self-start border-l border-rule pl-5.5 verse-wide:col-start-2 verse-wide:row-start-1 verse-wide:block"
-          >
-            <h2 className="m-0 mb-2.5 font-head text-verse-side-title font-normal text-ink opsz-30">
-              {labels.cite.title}
-            </h2>
-            <VerseCite text={labels.cite} reference={reference} />
-            {hasUses ? (
-              <HideWhenNumberingDiffers>
-                <div className="mt-13.75">
-                  <h2 className="m-0 mb-2.5 font-head text-verse-side-title font-normal text-ink opsz-30">
-                    {labels.uses.title}
-                  </h2>
-                  <VerseUsesSide items={data.uses} text={labels.uses} />
-                </div>
-              </HideWhenNumberingDiffers>
+    <PageMain rail>
+      <div>
+        <div className="rail:mx-auto rail:max-w-wide">
+          <VerseBackScript />
+          <VerseEditionProvider editions={data.editions} defaultId={data.defaultId} book={book.id}>
+            <div className="mb-5">
+              <Breadcrumbs
+                label={text.shell.breadcrumb}
+                trail={[
+                  { label: text.shell.tree.bible },
+                  { label: sectionLabel },
+                  { label: bookName },
+                  { label: chapterLabel, href: chapterHref },
+                ]}
+                current={`${chapter}:${verse}`}
+              />
+            </div>
+            <VerseBackStrip text={labels.back} />
+            <div className="mt-5.5 sm:mt-7.5">
+              <p className="title-part title-part-1 m-0 mb-2 text-ui-xs text-ink-3">{kicker}</p>
+              <PageHeader title={reference} />
+            </div>
+            <div className="verse-grid">
+              <VersePassage
+                text={labels}
+                picker={<VerseTranslationPicker text={text.reader.picker} />}
+                verse={verse}
+                base={base}
+                chapterHref={`${chapterHref}#v-${verse}`}
+                chapterTitle={text.reader.chapterTitle
+                  .replace("{book}", bookName)
+                  .replace("{chapter}", String(chapter))}
+                numberingNote={text.reader.numberingNote}
+              />
+              <aside
+                aria-label={labels.cite.title}
+                className="mt-12 hidden self-start border-l border-rule pl-5.5 verse-wide:col-start-2 verse-wide:row-start-1 verse-wide:block"
+              >
+                <h2 className="m-0 mb-2.5 font-head text-verse-side-title font-normal text-ink opsz-30">
+                  {labels.cite.title}
+                </h2>
+                <VerseCite text={labels.cite} reference={reference} />
+                {hasUses ? (
+                  <HideWhenNumberingDiffers>
+                    <div className="mt-13.75">
+                      <h2 className="m-0 mb-2.5 font-head text-verse-side-title font-normal text-ink opsz-30">
+                        {labels.uses.title}
+                      </h2>
+                      <VerseUsesSide items={data.uses} text={labels.uses} />
+                    </div>
+                  </HideWhenNumberingDiffers>
+                ) : null}
+              </aside>
+            </div>
+            {data.words ? (
+              <VerseWordsView
+                locale={locale}
+                book={book.id}
+                bookName={bookName}
+                chapter={chapter}
+                verse={verse}
+                words={data.words}
+                text={text.reader.panel.words}
+                title={wordsTitle}
+                subtitle={labels.words.subtitle}
+              />
             ) : null}
-          </aside>
-        </div>
-        {data.words ? (
-          <VerseWordsView
-            locale={locale}
-            book={book.id}
-            bookName={bookName}
-            chapter={chapter}
-            verse={verse}
-            words={data.words}
-            text={text.reader.panel.words}
-            title={wordsTitle}
-            subtitle={labels.words.subtitle}
-          />
-        ) : null}
-        <VerseCompare
-          text={{
-            ...labels.compare,
-            languageSpanish: text.reader.panel.sections.spanish,
-            languageEnglish: text.reader.panel.sections.english,
-          }}
-        />
-        <div className="verse-wide:hidden">
-          {hasUses ? (
-            <HideWhenNumberingDiffers>
-              <Section id="uses" title={labels.uses.title} subtitle={labels.uses.subtitle}>
-                <VerseUsesGroups groups={groups} />
+            <VerseCompare
+              text={{
+                ...labels.compare,
+                languageSpanish: text.reader.panel.sections.spanish,
+                languageEnglish: text.reader.panel.sections.english,
+              }}
+            />
+            <div className="verse-wide:hidden">
+              {hasUses ? (
+                <HideWhenNumberingDiffers>
+                  <Section id="uses" title={labels.uses.title} subtitle={labels.uses.subtitle}>
+                    <VerseUsesGroups groups={groups} />
+                  </Section>
+                </HideWhenNumberingDiffers>
+              ) : null}
+              <Section id="cite" title={labels.cite.title}>
+                <VerseCite text={labels.cite} reference={reference} />
               </Section>
-            </HideWhenNumberingDiffers>
-          ) : null}
-          <Section id="cite" title={labels.cite.title}>
-            <VerseCite text={labels.cite} reference={reference} />
-          </Section>
+            </div>
+            {data.previous !== null || data.next !== null ? (
+              <NeighborLinks
+                label={labels.passageNav}
+                previous={neighborOf(labels.previous, data.previous)}
+                next={neighborOf(labels.next, data.next)}
+                className="mt-21"
+              />
+            ) : null}
+            <VerseRuler
+              Ruler={EdgeRuler}
+              label={text.shell.sections}
+              translation={entry("translation", labels.translation)}
+              words={data.words ? entry("words", wordsTitle) : null}
+              compare={entry("compare", labels.compare.title)}
+              uses={hasUses ? entry("uses", labels.uses.title) : null}
+              cite={entry("cite", labels.cite.title)}
+            />
+          </VerseEditionProvider>
         </div>
-        {data.previous !== null || data.next !== null ? (
-          <NeighborLinks
-            label={labels.passageNav}
-            previous={neighborOf(labels.previous, data.previous)}
-            next={neighborOf(labels.next, data.next)}
-            className="mt-21"
-          />
-        ) : null}
-        <VerseRuler
-          Ruler={EdgeRuler}
-          label={text.shell.sections}
-          translation={entry("translation", labels.translation)}
-          words={data.words ? entry("words", wordsTitle) : null}
-          compare={entry("compare", labels.compare.title)}
-          uses={hasUses ? entry("uses", labels.uses.title) : null}
-          cite={entry("cite", labels.cite.title)}
-        />
-      </VerseEditionProvider>
+      </div>
     </PageMain>
   );
 }

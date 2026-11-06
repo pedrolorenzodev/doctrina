@@ -20,7 +20,7 @@ export async function HistoryIndexView({ kind }: { kind: HistoryIndexKind }) {
   const title = text.shell.tree[treeKey[kind]];
   const index = getHistoryIndex(kind, locale);
   return (
-    <PageMain>
+    <PageMain rail>
       <Breadcrumbs label={text.shell.breadcrumb} trail={[{ label: text.shell.tree.history }]} current={title} />
       <PageHeader id="top" className="mt-10" title={title} lede={index.intro} />
       <HistoryIndexList

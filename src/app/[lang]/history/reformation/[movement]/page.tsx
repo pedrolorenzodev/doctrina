@@ -58,7 +58,7 @@ export default async function MovementRoute({ params }: PageProps<"/[lang]/histo
     ...(influences.length > 0 ? [{ id: "influences", label: labels.influences }] : []),
   ];
   return (
-    <PageMain>
+    <PageMain rail>
       <Breadcrumbs
         label={text.shell.breadcrumb}
         trail={[

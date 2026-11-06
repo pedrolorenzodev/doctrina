@@ -57,7 +57,7 @@ export default async function DivisionRoute({ params }: PageProps<"/[lang]/histo
     ...(councils.length > 0 ? [{ id: "councils", label: labels.councils }] : []),
   ];
   return (
-    <PageMain>
+    <PageMain rail>
       <Breadcrumbs
         label={text.shell.breadcrumb}
         trail={[

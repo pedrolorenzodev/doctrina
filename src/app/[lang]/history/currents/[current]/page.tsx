@@ -56,7 +56,7 @@ export default async function CurrentRoute({ params }: PageProps<"/[lang]/histor
   const neighbor = (label: string, other: typeof previous) =>
     other ? { label, title: other.name[locale], href: currentHref(locale, other.id) } : null;
   return (
-    <PageMain>
+    <PageMain rail>
       {/* TODO: «Historia» leads to its index page once it exists */}
       <Breadcrumbs
         label={text.shell.breadcrumb}

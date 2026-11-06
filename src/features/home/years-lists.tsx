@@ -83,7 +83,7 @@ function Group({
 export function YearsLists({ groups, expanded, text, box, ghosts, hot, onToggle, onHot }: YearsListsProps) {
   const { fathers, councils, divisions } = groups;
   return (
-    <div className="relative mt-7.5 max-w-wide">
+    <div className="relative mt-7.5 max-w-wide rail:max-w-none">
       <div ref={box} className="years-lists">
         <div data-k="col-a">
           {fathers.length ? (

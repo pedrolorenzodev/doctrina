@@ -174,7 +174,7 @@ export default async function WordRoute({ params, searchParams }: PageProps<"/[l
     <CitationProvider views={{ [sourceId]: source }} text={text.citation}>
       <TransliterationScript />
       <WordFiltersProvider>
-        <PageMain>
+        <PageMain rail>
           <div className="mb-10 flex max-w-col flex-wrap items-center justify-between gap-x-6 gap-y-2.5">
             <Breadcrumbs
               label={text.shell.breadcrumb}

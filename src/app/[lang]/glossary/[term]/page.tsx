@@ -59,7 +59,7 @@ export default async function GlossaryTermRoute({ params }: PageProps<"/[lang]/g
     chosen.source ?? entries.find((entry) => entry.source)?.source ?? null;
 
   return (
-    <PageMain>
+    <PageMain rail>
       <Breadcrumbs
         label={text.shell.breadcrumb}
         trail={[{ label: text.shell.tree.reference }, { label: labels.title, href: glossaryHref(locale) }]}
