@@ -11,6 +11,7 @@ Pedro commits your kit blocks himself; then he copies the tree for the next bloc
 ## Read first (in this order; do not skip)
 1. `AGENTS.md` whole (rules: no comments except `TODO`/tool silencers/one-line guards, English names, layers `app → features → content | components → lib`, named exports, `@/` imports, trust and neutrality invariants).
 2. `docs/research/ai/contracts.md` whole: **the frozen interfaces you build against. Do not change them**; if one is impossible, stop and write why.
+2b. **`docs/research/ai/amendment-2026-11-06.md` whole** (Pedro, 2026-11-06: rich answers by default and the reader's notes are not sources). It overrides any number or rule below that contradicts it; its section C says what changes for your block.
 3. `docs/features/ai-real.md`: your block's section, the ownership table at the end, «Block specifications» of the blocks you depend on.
 4. `docs/research/ai/chat-design.md` §6 and §8, `simplifier-design.md` §4–§5, `abuse-and-cost-control.md` §4, `schema-and-api.md` §3–§4, `provider-and-models.md` §2 and §5.
 5. The prototype `docs/research/ai/prototypes/verify-quote.mjs` and its cases `docs/research/ai/prototypes/test-verify.mjs` (the algorithm is also fully specified in `chat-design.md` §8.1–§8.2).

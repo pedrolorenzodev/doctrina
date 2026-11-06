@@ -11,6 +11,7 @@ Block INT copies **only the files you own** (listed below) into the real repo, i
 ## Read first (in this order; do not skip)
 1. `AGENTS.md` whole (rules: no comments except `TODO`/tool silencers/one-line guards, English names, layers `app → features → content | components → lib`, named exports, `@/` imports, trust and neutrality invariants).
 2. `docs/research/ai/contracts.md` whole: **the frozen interfaces you build against. Do not change them**; if one is impossible, stop and write why.
+2b. **`docs/research/ai/amendment-2026-11-06.md` whole** (Pedro, 2026-11-06: rich answers by default and the reader's notes are not sources). It overrides any number or rule below that contradicts it; its section C says what changes for your block.
 3. `docs/features/ai-real.md`: your block's section, the ownership table at the end, «Block specifications» of the blocks you depend on.
 4. `docs/features/reader-ai-drawer.md` whole, `docs/features/fathers-es-and-chat.md` (step 4 and round 2), DECISIONS 2026-10-28 and 2026-10-31 (the drawer and its inside, Pedro's words); `docs/research/ai/chat-design.md` §6 (mapping), §9–§14, §17 (the privacy line).
 5. `.claude/rules/ui.md`, `docs/DESIGN.md` §«AI drawer»; all of `src/features/reader-ai/`; the drawer specs `e2e/reader-ai-drawer.spec.ts`, `e2e/father-ask.spec.ts`, `e2e/ask-drawer-tree.spec.ts`.

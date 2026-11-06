@@ -1,5 +1,8 @@
 # Real AI (chat and simplifier): index, decisions for Pedro, open questions
 
+> **AMENDED 2026-11-06:** read `amendment-2026-11-06.md` (rich answers by default, `depth`, the reader's notes are not sources). Where it differs from this file, it wins; §1 and §3 below already carry its numbers.
+
+
 Planning session «AI plan», 2026-11-06, Opus 5.5 high, in the duplicate `doctrina-aiplan`. Planning only: nothing under `src/`, `e2e/` or Supabase was changed. The executable plan is `docs/features/ai-real.md`.
 
 ## Files

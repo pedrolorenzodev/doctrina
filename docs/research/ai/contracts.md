@@ -1,5 +1,8 @@
 # Frozen contracts between the AI blocks
 
+> **AMENDED 2026-11-06:** read `amendment-2026-11-06.md` (rich answers by default, `depth`, the reader's notes are not sources). Where it differs from this file, it wins; §1 and §3 below already carry its numbers.
+
+
 Version **contracts-2026-11-06.1**. Every block prompt points here. A block may **add** optional fields or new files it owns; it may **not** rename, remove or change the meaning of anything below without a new version of this file agreed with Pedro (record the change at the end, §13). Where code is shown, it is the exact shape to implement (names, fields, literals), not a sketch. Explanations: `chat-design.md`, `simplifier-design.md`, `abuse-and-cost-control.md`, `schema-and-api.md`.
 
 Repo rules that apply to all of it (AGENTS): English names; no comments except `TODO`, tool silencers and the one-line guard; named exports; `@/` imports; layers `app → features → content | components → lib`, no feature imports another feature, `components` never imports `content`.
@@ -17,10 +20,13 @@ export const MAX_NOTES = 20;
 export const MAX_NOTES_CHARS = 4000;
 export const MAX_SELECTION_CHARS = 1000;
 export const MAX_TURNS = 6;
-export const MAX_QUOTES = 8;
-export const MAX_PROSE_WORDS = 110;
+export const MAX_QUOTES = 24;
+export const MAX_QUOTES_BRIEF = 6;
+export const MAX_PROSE_WORDS = 150;
+export const MAX_PROSE_WORDS_BRIEF = 60;
 export const MAX_FOLLOWUPS = 3;
-export const PACK_TOKEN_BUDGET = 11000;
+export const PACK_TOKEN_BUDGET = 24000;
+export const PACK_TOKEN_BUDGET_BRIEF = 8000;
 export const WINDOW_CHARS = 1200;
 export const SIMPLIFY_MAX_WORDS = 1500;
 export const SIMPLIFY_MAX_CHARS = 9000;
@@ -254,6 +260,7 @@ export const searchPlanSchema = z.object({
   authors: z.array(z.string()),
   works: z.array(z.string()),
   followsPrevious: z.boolean(),
+  depth: z.enum(["rich", "brief"]),
 });
 export type SearchPlan = z.infer<typeof searchPlanSchema>;
 
@@ -278,7 +285,7 @@ export const judgeSchema = z.object({
   usefulness: z.enum(["1", "2", "3"]), notes: z.string(),
 });
 ```
-Server-side limits after parsing (not in the schema): plan arrays ≤ 8 terms / 4 phrases / 6 refs / 6 authors / 6 works, each string ≤ 80 chars; `about` ∈ `bible | fathers | doctrine | glossary | mine | tradition:<TraditionId>`; ≤ `MAX_QUOTES`; prose ≤ `MAX_PROSE_WORDS`; ≤ `MAX_FOLLOWUPS` followups of ≤ 140 chars; `words.words` 2–8 words.
+Server-side limits after parsing (not in the schema): plan arrays ≤ 8 terms / 4 phrases / 6 refs / 6 authors / 6 works, each string ≤ 80 chars; `about` ∈ `bible | fathers | doctrine | glossary | mine | tradition:<TraditionId>`; ≤ `MAX_QUOTES` (`MAX_QUOTES_BRIEF` when `plan.depth` is `brief`); prose ≤ `MAX_PROSE_WORDS` (`MAX_PROSE_WORDS_BRIEF` for brief); ≤ `MAX_FOLLOWUPS` followups of ≤ 140 chars; `words.words` 2–8 words.
 
 ## 4. The chat wire format (`src/lib/ai/contracts.ts`, block F)
 ```ts

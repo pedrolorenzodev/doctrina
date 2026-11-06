@@ -1,5 +1,8 @@
 # The AI chat: how it answers (design)
 
+> **AMENDED 2026-11-06:** read `amendment-2026-11-06.md` (rich answers by default, `depth`, the reader's notes are not sources). Where it differs from this file, it wins; §1 and §3 below already carry its numbers.
+
+
 Written 2026-11-06 by the «AI plan» session (Opus 5.5). Inputs: Pedro's decisions and the coordinator's position in `real-ai-plan-notes-2026-11-05.md` §1 and §4; AGENTS «Trust and neutrality»; the approved drawer (`docs/features/reader-ai-drawer.md`); the research `docs/research/ai-chat-and-simplifier.md` §5–§6. Tags: **[measured]** = run in this session (how is said), **[verified]** = read on an official page (URL in `provider-and-models.md`), **[repo]** = read in the code or docs, **[inference]** = my reasoning, not tested.
 
 Frozen types, routes and names live in `contracts.md`; this file explains why they are what they are.
