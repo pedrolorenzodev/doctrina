@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withBotId } from "botid/next/config";
 import { spanishRewrites } from "./src/content/routes";
 import { defaultLocale } from "./src/lib/locale";
 
@@ -12,4 +13,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBotId(nextConfig);
