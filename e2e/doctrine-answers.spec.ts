@@ -296,7 +296,7 @@ test("the study link of the Catholic answer opens its page", async ({ page }) =>
 
 test("the columns are 200 and 680 px from 1100 px, 170 px from 640 and one column on phones", async ({ page }) => {
   for (const [width, expected] of [
-    [1440, ["200px", "680px"]],
+    [1440, ["200px", "496px"]],
     [1100, ["200px", null]],
     [1099, ["170px", null]],
     [768, ["170px", null]],

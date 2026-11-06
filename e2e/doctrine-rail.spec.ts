@@ -55,13 +55,53 @@ test("1728 with the tree closed: titles in a 236 px rail, lists in two columns, 
   expect(await horizontalOverflow(page)).toBe(0);
 });
 
-test("1440 with the tree open keeps today's single 720 px column", async ({ page }) => {
+const railBands = [
+  { tree: "open", width: 1280, rail: 0 },
+  { tree: "open", width: 1366, rail: 0 },
+  { tree: "open", width: 1407, rail: 0 },
+  { tree: "open", width: 1408, rail: 200 },
+  { tree: "open", width: 1440, rail: 200 },
+  { tree: "open", width: 1536, rail: 200 },
+  { tree: "open", width: 1600, rail: 200 },
+  { tree: "open", width: 1627, rail: 200 },
+  { tree: "open", width: 1628, rail: 236 },
+  { tree: "closed", width: 1100, rail: 0 },
+  { tree: "closed", width: 1135, rail: 0 },
+  { tree: "closed", width: 1136, rail: 200 },
+  { tree: "closed", width: 1280, rail: 200 },
+  { tree: "closed", width: 1355, rail: 200 },
+  { tree: "closed", width: 1356, rail: 236 },
+] as const;
+
+for (const band of railBands) {
+  test(`rail at ${band.width} with the tree ${band.tree}: ${band.rail === 0 ? "stacked" : `${band.rail} px titles`}`, async ({
+    page,
+  }) => {
+    await openWithTree(page, band.width, 900, band.tree);
+    const head = (await boxes(page, "#teach .rail-head"))[0]!;
+    const body = (await boxes(page, "#teach .rail-body"))[0]!;
+    const position = await page.locator("#teach .rail-head").evaluate((el) => getComputedStyle(el).position);
+    if (band.rail === 0) {
+      expect(position).toBe("static");
+      expect(body.x).toBe(head.x);
+      expect(head.w).toBe(720);
+    } else {
+      expect(position).toBe("sticky");
+      expect(head.w).toBe(band.rail);
+      expect(body.x - head.x).toBe(band.rail + (band.rail === 200 ? 40 : 64));
+      expect(body.w).toBeGreaterThanOrEqual(720);
+    }
+    expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+  });
+}
+
+test("1440 with the tree open: compact rail, one column of statements, the page fills 992 px", async ({ page }) => {
   await openWithTree(page, 1440, 900, "open");
   const section = (await boxes(page, "#teach > div"))[0]!;
-  expect(section.w).toBe(720);
+  expect(section.w).toBe(992);
   const statements = await boxes(page, "#teach li:not([hidden])");
   expect(statements[1]!.x).toBe(statements[0]!.x);
-  expect(await page.locator("#teach .rail-head").evaluate((el) => getComputedStyle(el).position)).toBe("static");
+  expect(statements[0]!.w).toBe(752);
 });
 
 test("folding the tree at 1440 moves the sections with it and keeps the reading place", async ({ page }) => {

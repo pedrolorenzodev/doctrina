@@ -131,6 +131,7 @@
   --spacing-panel: 380px;
   --spacing-ask: clamp(380px, 30vw, 520px);
   --spacing-rail: 236px;
+  --spacing-rail-s: 200px;
   --spacing-note-card: 240px;
   --spacing-note-edge: 17px;
   --spacing-note-room: calc(var(--spacing-note-card) + 40px + var(--spacing-note-edge));
@@ -2578,6 +2579,20 @@ html.theme-switching ::after {
   }
 }
 
+@custom-variant rail-s {
+  @media (min-width: 71rem) and (width < 84.75rem) {
+    :root[data-tree="closed"] &:is([data-rail-page=""], [data-rail-page=""] *) {
+      @slot;
+    }
+  }
+
+  @media (min-width: 88rem) and (width < 101.75rem) {
+    :root:not([data-tree="closed"]) &:is([data-rail-page=""], [data-rail-page=""] *) {
+      @slot;
+    }
+  }
+}
+
 @utility rail-page {
   --rail-block: min(var(--container-rail), calc(100vw - var(--spacing-sidebar) - 11rem));
   --rail-off: max(0px, calc((100% - var(--rail-block)) / 2));
@@ -2598,6 +2613,19 @@ html.theme-switching ::after {
       padding-right: calc(7rem + var(--rail-off));
     }
   }
+
+  @variant rail-s {
+    & > :not(.fixed, .sticky) {
+      width: var(--rail-block);
+      max-width: none;
+      margin-left: var(--rail-off);
+    }
+
+    & > .sticky {
+      padding-left: calc(4rem + var(--rail-off));
+      padding-right: calc(7rem + var(--rail-off));
+    }
+  }
 }
 
 @utility rail-section {
@@ -2606,6 +2634,19 @@ html.theme-switching ::after {
     grid-template-columns: var(--spacing-rail) minmax(0, 1fr);
     column-gap: 4rem;
     max-width: none;
+  }
+
+  @variant rail-s {
+    display: grid;
+    grid-template-columns: var(--spacing-rail-s) minmax(0, 1fr);
+    column-gap: 2.5rem;
+    max-width: none;
+  }
+}
+
+@utility rail-offset {
+  @variant rail {
+    margin-left: calc(var(--spacing-rail) + 4rem);
   }
 }
 
@@ -2623,10 +2664,32 @@ html.theme-switching ::after {
       margin-bottom: 0;
     }
   }
+
+  @variant rail-s {
+    position: sticky;
+    top: calc(var(--spacing-top) + var(--spacing-scroll-offset));
+    align-self: start;
+
+    & > h2 {
+      margin-top: -6px;
+    }
+
+    & > p {
+      margin-bottom: 0;
+    }
+  }
 }
 
 @utility rail-body {
   @variant rail {
+    min-width: 0;
+
+    & > p {
+      max-width: var(--container-col);
+    }
+  }
+
+  @variant rail-s {
     min-width: 0;
 
     & > p {
