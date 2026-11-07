@@ -115,6 +115,7 @@ test.describe("Fathers' reader: the AI chat", () => {
   test("a free question with no passage says there is no answer, and a pastoral one gets the fixed text", async ({
     page,
   }) => {
+    test.skip(process.env.NEXT_PUBLIC_AI_CHAT === "real", "typed free questions go to the live route in real mode");
     await open(page, "/es/historia/obras/didache");
     await click(page, askButton);
     await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
@@ -124,6 +125,7 @@ test.describe("Fathers' reader: the AI chat", () => {
   });
 
   test("a work with no prepared questions says so and offers no chips", async ({ page }) => {
+    test.skip(process.env.NEXT_PUBLIC_AI_CHAT === "real", "typed free questions go to the live route in real mode");
     await open(page, "/es/historia/obras/ambrose-de-fide");
     await click(page, askButton);
     await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
