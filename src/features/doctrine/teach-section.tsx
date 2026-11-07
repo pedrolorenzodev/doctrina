@@ -7,12 +7,12 @@ import { shownStatements } from "@/content/doctrine-rules";
 import type { GradeLine, TraditionPage } from "@/content/model/page";
 import { gradeViewId, verseLink } from "@/content/page-views";
 import { registry } from "@/content/registry";
-import { getSimplifiedText } from "@/content/simplified-texts";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { SourceLinks } from "@/features/doctrine/source-links";
 import type { Locale } from "@/lib/locale";
 import { guillemets, labelSeparator } from "@/lib/punctuation";
+import { simplifierEnabled } from "@/lib/simplifier-enabled";
 
 type TeachSectionProps = {
   page: TraditionPage;
@@ -60,7 +60,7 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
     className = "",
   ) => {
     const id = `${page.doctrine}/${page.tradition}/${key}`;
-    return getSimplifiedText(id) ? (
+    return simplifierEnabled ? (
       <SimplifiedParagraph
         id={id}
         locale={locale}

@@ -1,5 +1,9 @@
 import { expect, test, type Page, type Route } from "@playwright/test";
-import { horizontalOverflow, traditionPath } from "./helpers";
+import { horizontalOverflow, storeSimplifyOn, traditionPath } from "./helpers";
+
+test.beforeEach(async ({ context }) => {
+  await storeSimplifyOn(context);
+});
 
 type Frame = { para: number; below: number; scroll: number; box: number; ring: string; busy: string | null };
 
@@ -387,8 +391,6 @@ test("the request carries the paragraph's address, not its text", async ({ page 
 });
 
 test("the Father's paragraph asks with a father address that names the edition", async ({ page }) => {
-  // TODO: father-body sends the picker option id ("en") as address.edition, the server wants the edition id ("lightfoot-1889"); see "Needs Pedro" in ai-real-int.md.
-  test.fixme(true, "address.edition carries the picker option id");
   const bodies: { address: Record<string, string>; locale: string }[] = [];
   await page.route(simplifyRoute, (route) => {
     if (route.request().method() !== "POST") return noProbe(route);
@@ -397,9 +399,15 @@ test("the Father's paragraph asks with a father address that names the edition",
   });
   await page.addInitScript(() => localStorage.setItem("doctrina-father-edition", "en"));
   await openPage(page, 1440, 900, "/es/historia/obras/ignatius-smyrnaeans");
-  await bringUp(page, 0);
-  await mark(page, 0).click();
-  await expect(panelOf(page, 0).locator("[data-simplifier-text]")).toContainText(
+  const at = await page.evaluate(() =>
+    [...document.querySelectorAll("[data-simplifier]")].findIndex(
+      (element) => element.closest('[id="d-6.2"]') !== null,
+    ),
+  );
+  expect(at).toBeGreaterThanOrEqual(0);
+  await bringUp(page, at);
+  await mark(page, at).click();
+  await expect(panelOf(page, at).locator("[data-simplifier-text]")).toContainText(
     "Take note of those who hold strange teaching",
   );
   expect(bodies).toHaveLength(1);
@@ -409,6 +417,7 @@ test("the Father's paragraph asks with a father address that names the edition",
 
 test("reduced motion: the pending paragraph opens with every word and no streaming", async ({ browser }) => {
   const context = await browser.newContext({ reducedMotion: "reduce", viewport: { width: 1440, height: 900 } });
+  await storeSimplifyOn(context);
   const page = await context.newPage();
   const counter = { posts: 0, gets: 0 };
   await slowRoute(page, 400, counter);

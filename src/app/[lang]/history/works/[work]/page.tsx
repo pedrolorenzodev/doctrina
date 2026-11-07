@@ -22,6 +22,7 @@ import { VerseArrival } from "@/features/reader/verse-arrival";
 import { currentLocale } from "@/lib/current-locale";
 import { locales } from "@/lib/locale";
 import { leanBuild } from "@/lib/lean-build";
+import { simplifierEnabled } from "@/lib/simplifier-enabled";
 
 export async function generateStaticParams() {
   if (leanBuild) return [];
@@ -106,6 +107,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
   ) => ({
     id: option.id,
     key: ai ? edition.edition.id : edition.id,
+    editionId: edition.edition.id,
     lang: edition.edition.lang,
     abbreviation: option.abbreviation,
     name: option.displayName,
@@ -152,6 +154,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
           formatGroup: labels.textOptions.formatGroup,
           formats: { lines: labels.textOptions.lines, flow: labels.textOptions.flow },
           locked: labels.parallel.locked,
+          ...(simplifierEnabled ? { simplify: labels.textOptions.simplify } : {}),
         }}
         ask={{ label: ask.ask, keyHint: ask.keyHint }}
         picker={{

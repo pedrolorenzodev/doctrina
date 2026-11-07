@@ -15,6 +15,7 @@ import { prefersReducedMotion } from "@/lib/branch-motion";
 import type { Locale } from "@/lib/locale";
 import { simplifierEnabled } from "@/lib/simplifier-enabled";
 import type { SimplifierLevel } from "@/lib/simplifier-types";
+import { takeSimplifierMark } from "@/lib/simplifier-mark-request";
 import { useSimplifierVisibility } from "@/lib/simplifier-visibility";
 
 type Tone = "prose" | "definition" | "reader";
@@ -66,6 +67,7 @@ function SimplifiedView({
   const [streaming, setStreaming] = useState(false);
   const [stoppedAt, setStoppedAt] = useState<number | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
+  const [selected, setSelected] = useState<string | null>(null);
   const root = useRef<HTMLDivElement>(null);
   const ring = useRef<HTMLButtonElement>(null);
   const box = useRef<HTMLDivElement>(null);
@@ -102,6 +104,8 @@ function SimplifiedView({
     const found = outcome.kind === "entry";
     const first = found && !hasStreamed(id) && !prefersReducedMotion();
     if (found) markStreamed(id);
+    const requested = takeSimplifierMark(id);
+    setSelected(found ? requested : null);
     closing.current = false;
     fadeOnOpen.current = !first;
     setContent(
@@ -248,6 +252,7 @@ function SimplifiedView({
           tick={stream.tick}
           stoppedAt={stoppedAt}
           hovered={hovered}
+          selection={selected}
           boxRef={box}
           innerRef={inner}
           wrapRef={wrap}

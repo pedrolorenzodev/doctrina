@@ -1,5 +1,9 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow, traditionPath } from "./helpers";
+import { horizontalOverflow, storeSimplifyOn, traditionPath } from "./helpers";
+
+test.beforeEach(async ({ context }) => {
+  await storeSimplifyOn(context);
+});
 
 type Frame = {
   t: number;
@@ -243,6 +247,7 @@ test("switching the level cross-fades the text and moves the box and the content
 
 test("with reduced motion everything is instant and nothing streams", async ({ browser }) => {
   const context = await browser.newContext({ reducedMotion: "reduce", viewport: { width: 1440, height: 900 } });
+  await storeSimplifyOn(context);
   const page = await context.newPage();
   await openPage(page);
   await bringUp(page, 1);
@@ -359,6 +364,7 @@ test("the 8 Catholic and Baptist pages simplify their definition and first two s
 }) => {
   test.setTimeout(240000);
   const context = await browser.newContext({ reducedMotion: "reduce", viewport: { width: 1440, height: 900 } });
+  await storeSimplifyOn(context);
   const page = await context.newPage();
   for (const route of catholicAndBaptist) {
     await page.goto(route, { waitUntil: "networkidle" });
@@ -366,7 +372,9 @@ test("the 8 Catholic and Baptist pages simplify their definition and first two s
       (await page.locator("[data-simplifier-mark]").count()) === 0,
       "the simplifier switch is off in this build",
     );
-    await expect(page.locator("[data-simplifier-mark]"), route).toHaveCount(3);
+    const rings = await page.locator("[data-simplifier-mark]").count();
+    expect(rings, route).toBe(await page.locator("[data-simplifier]").count());
+    expect(rings, route).toBeGreaterThanOrEqual(3);
     for (let index = 0; index < 3; index += 1) {
       await bringUp(page, index);
       await mark(page, index).click();

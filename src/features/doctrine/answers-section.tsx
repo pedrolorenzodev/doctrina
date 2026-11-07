@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { RevealList } from "@/components/reveal-list";
 import { RichText } from "@/components/rich-text";
+import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragraph";
 import { Section } from "@/components/section";
 import { PageLink } from "@/components/ui/page-link";
 import { answerGradeViewId } from "@/content/get-doctrine-views";
@@ -13,6 +14,7 @@ import { traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ObjectionsFold } from "@/features/doctrine/objections-fold";
 import type { Locale } from "@/lib/locale";
+import { simplifierEnabled } from "@/lib/simplifier-enabled";
 
 type AnswersSectionProps = {
   id: string;
@@ -99,9 +101,22 @@ export async function AnswersSection({ id, page, locale }: AnswersSectionProps) 
                 </p>
               </div>
               <div>
-                <p className="m-0 font-body text-answer-mobile font-light text-ink-2 opsz-18 sm:text-answer">
-                  <RichText text={answer.summary} verse={verse} />
-                </p>
+                {simplifierEnabled ? (
+                  <SimplifiedParagraph
+                    id={`${page.doctrine}/02/answers/${answer.tradition}`}
+                    locale={locale}
+                    address={{ kind: "doctrine", doctrine: page.doctrine, section: "answers", id: answer.tradition }}
+                    tone="prose"
+                  >
+                    <p className="m-0 font-body text-answer-mobile font-light text-ink-2 opsz-18 sm:text-answer">
+                      <RichText text={answer.summary} verse={verse} />
+                    </p>
+                  </SimplifiedParagraph>
+                ) : (
+                  <p className="m-0 font-body text-answer-mobile font-light text-ink-2 opsz-18 sm:text-answer">
+                    <RichText text={answer.summary} verse={verse} />
+                  </p>
+                )}
                 <ObjectionsFold
                   id={`objections-${answer.tradition}`}
                   heading={labels.objectionsReceived}

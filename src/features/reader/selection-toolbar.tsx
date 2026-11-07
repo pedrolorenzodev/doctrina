@@ -15,6 +15,7 @@ type SelectionToolbarText = {
   find: string;
   note: string;
   ask?: string;
+  simplify?: string;
   highlight: Parameters<typeof HighlightColors>[0]["text"];
 };
 
@@ -30,6 +31,8 @@ type SelectionToolbarProps = {
   onRemove: (ranges: VerseRange[]) => void;
   onNote: (selection: ReaderSelection) => void;
   onAsk?: (selection: ReaderSelection) => void;
+  onSimplify?: (selection: ReaderSelection) => void;
+  canSimplify?: (selection: ReaderSelection) => boolean;
 };
 
 const dockedQuery = "(max-width: 40rem), (pointer: coarse)";
@@ -56,6 +59,8 @@ export function SelectionToolbar({
   onRemove,
   onNote,
   onAsk,
+  onSimplify,
+  canSimplify,
 }: SelectionToolbarProps) {
   const bar = useRef<HTMLDivElement>(null);
   const { show: showSearch } = useSearch();
@@ -173,6 +178,12 @@ export function SelectionToolbar({
     finish();
   };
 
+  const simplify = () => {
+    if (!current || !onSimplify) return;
+    onSimplify(current);
+    finish();
+  };
+
   const find = () => {
     if (!current) return;
     const query = current.text.slice(0, searchLength);
@@ -229,6 +240,11 @@ export function SelectionToolbar({
       {text.ask && onAsk ? (
         <button type="button" onClick={ask} className={askButtonClassName}>
           {text.ask}
+        </button>
+      ) : null}
+      {text.simplify && onSimplify && current && (canSimplify?.(current) ?? true) ? (
+        <button type="button" onClick={simplify} className={askButtonClassName}>
+          {text.simplify}
         </button>
       ) : null}
       <span aria-hidden="true" className="mx-1 h-5 w-px bg-rule group-data-docked/toolbar:hidden" />

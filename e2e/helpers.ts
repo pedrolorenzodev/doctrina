@@ -1,7 +1,15 @@
 import { existsSync } from "node:fs";
-import type { Page } from "@playwright/test";
+import type { BrowserContext, Page } from "@playwright/test";
 
 export const hasCorpus = existsSync("data/corpus/bibles/rv1909.json");
+
+export function storeSimplifyOn(context: BrowserContext) {
+  return context.addInitScript(() => {
+    try {
+      localStorage.setItem("doctrina-simplify", "on");
+    } catch {}
+  });
+}
 
 export const traditionPath = "/es/doctrinas/eucaristia/catolica";
 

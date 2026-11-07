@@ -5,7 +5,6 @@ import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragrap
 import { UndoBar } from "@/components/undo-bar";
 import type { FatherDivision } from "@/content/get-father-works";
 import { divisionAnchor } from "@/content/routes";
-import { getSimplifiedText } from "@/content/simplified-texts";
 import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
 import { goToUnit } from "@/features/reader/go-to-unit";
@@ -38,10 +37,15 @@ import { nbspBeforeDigits } from "@/lib/locator";
 import type { Segment } from "@/lib/highlights";
 import { clippedQuote, type Note, type NoteDraft } from "@/lib/notes";
 import { OriginalScripts } from "@/components/original-scripts";
+import { openSimplifier } from "@/components/simplifier/simplifier-openers";
+import { canSimplify } from "@/lib/ai/simplify-limits";
+import { simplifierEnabled } from "@/lib/simplifier-enabled";
+import { requestSimplifierMark } from "@/lib/simplifier-mark-request";
 
 export type FatherEditionView = {
   id: string;
   key: string;
+  editionId: string;
   lang: "en" | "es";
   abbreviation: string;
   name: string;
@@ -211,6 +215,23 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
     setPicked(next);
     if (element) keepAboveSheet(element, readerPanelFrom);
   };
+  const simplifiableDivision = (selection: ReaderSelection) => {
+    const first = selection.ranges[0];
+    const division = first ? byOrdinal.get(first.verse) : undefined;
+    const second = first?.translationId !== undefined && first.translationId === secondView?.key;
+    return division && !second && selected.simplified && simplifierEnabled && canSimplify(division.text)
+      ? division
+      : null;
+  };
+  const canSimplifySelection = (selection: ReaderSelection) => simplifiableDivision(selection) !== null;
+  const simplifySelection = (selection: ReaderSelection) => {
+    const division = simplifiableDivision(selection);
+    if (!division) return;
+    const id = `${workId}/${division.locator}`;
+    requestSimplifierMark(id, selection.ranges.length === 1 ? selection.text : "");
+    openSimplifier(id);
+  };
+
   const openFrom = (ordinal: number, element: HTMLElement, keyboard: boolean) => {
     if (picked === ordinal && !pickedSecond) {
       close();
@@ -444,8 +465,8 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
                   id={`${workId}/${division.locator}`}
                   locale={locale === "en" ? "en" : "es"}
                   address={
-                    selected.simplified && getSimplifiedText(`${workId}/${division.locator}`)
-                      ? { kind: "father", work: workId, edition: selected.id, locator: division.locator }
+                    selected.simplified && simplifierEnabled && canSimplify(division.text)
+                      ? { kind: "father", work: workId, edition: selected.editionId, locator: division.locator }
                       : undefined
                   }
                   tone="reader"
@@ -628,6 +649,8 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
         chosenIn={(ranges) => highlightsOf(ranges).chosenIn(ranges)}
         hasHighlightIn={(ranges) => highlightsOf(ranges).hasHighlightIn(ranges)}
         citation={selectionCitation}
+        onSimplify={simplifySelection}
+        canSimplify={canSimplifySelection}
         onHighlight={(ranges, color) => highlightsOf(ranges).apply(ranges, color)}
         onRemove={(ranges) => highlightsOf(ranges).remove(ranges)}
         onNote={noteOnWords}

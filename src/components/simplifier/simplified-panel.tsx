@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, type Ref } from "react";
+import { useEffect, useMemo, useRef, useState, type Ref } from "react";
 import { SegmentedFilter } from "@/components/ui/segmented-filter";
 import type { SimplifierText } from "@/components/simplifier/simplifier-text";
+import { prefersReducedMotion } from "@/lib/branch-motion";
+import { findSelectionMark } from "@/lib/simplifier-selection";
 import type { SimplifiedEntry, SimplifierLevel, SimplifyStatus } from "@/lib/simplifier-types";
 
 export type PanelContent =
@@ -18,6 +20,7 @@ type SimplifiedPanelProps = {
   tick: number;
   stoppedAt: number | null;
   hovered: number | null;
+  selection?: string | null;
   boxRef: Ref<HTMLDivElement>;
   innerRef: Ref<HTMLDivElement>;
   wrapRef: Ref<HTMLDivElement>;
@@ -31,6 +34,9 @@ type SimplifiedPanelProps = {
 
 const footButton =
   "inline-flex min-h-8 cursor-pointer items-center justify-center rounded-6 px-2 text-ui-xs font-medium whitespace-nowrap text-ink-3 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11";
+const markDelayMs = 400;
+const markHoldMs = 2000;
+const viewMargin = 64;
 const noteLine = "ml-2 text-simplified-note text-ink-3";
 
 export function SimplifiedPanel({
@@ -42,6 +48,7 @@ export function SimplifiedPanel({
   tick,
   stoppedAt,
   hovered,
+  selection = null,
   boxRef,
   innerRef,
   wrapRef,
@@ -56,6 +63,31 @@ export function SimplifiedPanel({
   const [saved, setSaved] = useState(false);
   const [reported, setReported] = useState(false);
   const sentences = content.kind === "entry" ? content.entry[level] : [];
+  const marked = useMemo(
+    () =>
+      selection && content.kind === "entry"
+        ? findSelectionMark(content.entry.original, content.entry[level], selection)
+        : null,
+    [selection, content, level],
+  );
+  const [markOn, setMarkOn] = useState(false);
+  const firstMarked = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    if (!marked || streaming) return;
+    const start = window.setTimeout(() => {
+      setMarkOn(true);
+      const word = firstMarked.current;
+      const box = word?.getBoundingClientRect();
+      if (word && box && (box.top < viewMargin || box.bottom > innerHeight - viewMargin))
+        word.scrollIntoView({ block: "center", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    }, markDelayMs);
+    const end = window.setTimeout(() => setMarkOn(false), markDelayMs + markHoldMs);
+    return () => {
+      clearTimeout(start);
+      clearTimeout(end);
+      setMarkOn(false);
+    };
+  }, [marked, streaming]);
   const limit = stoppedAt ?? (streaming ? tick : Number.POSITIVE_INFINITY);
   const sizes = sentences.map((sentence) => sentence.split(" ").length);
   const starts = sizes.map((_, index) => sizes.slice(0, index).reduce((total, size) => total + size, 0));
@@ -178,12 +210,22 @@ export function SimplifiedPanel({
                     <span
                       className={`rounded-2 ${hovered === index ? "bg-cite-weak" : ""} ${stoppedAt !== null && first >= limit ? "hidden" : ""}`}
                     >
-                      {words.map((word, at) => (
-                        <span key={at} data-word="" className={mark(first + at + 1 <= limit)}>
-                          {at > 0 ? " " : ""}
-                          {word}
-                        </span>
-                      ))}
+                      {words.map((word, at) => {
+                        const inMark =
+                          marked !== null && marked.sentence === index && at >= marked.from && at < marked.to;
+                        return (
+                          <span
+                            key={at}
+                            ref={inMark && at === marked.from ? firstMarked : undefined}
+                            data-word=""
+                            data-marked={inMark && markOn ? "" : undefined}
+                            className={`${mark(first + at + 1 <= limit)} ${inMark ? "rounded-2 transition-colors duration-1200 ease-standard data-marked:bg-mark data-marked:duration-200" : ""}`}
+                          >
+                            {at > 0 ? " " : ""}
+                            {word}
+                          </span>
+                        );
+                      })}
                     </span>
                     <span className={mark(last + 1 <= limit)}>
                       <sup
