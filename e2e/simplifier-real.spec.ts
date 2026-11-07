@@ -94,10 +94,11 @@ test("pending: the ring takes the writing look, aria-busy, live region and toolt
   const frames = await sampling;
   const waiting = frames.filter((frame) => frame.busy === "true");
   expect(waiting.length).toBeGreaterThan(40);
-  for (const frame of waiting) {
-    expect(frame.box).toBe(-1);
-    expect(frame.ring).toBe("dashed");
-  }
+  for (const frame of waiting) expect(frame.box).toBe(-1);
+  const turningAt = waiting.findIndex((frame) => frame.ring === "dashed");
+  expect(turningAt).toBeGreaterThan(5);
+  expect(turningAt).toBeLessThan(25);
+  for (const [at, frame] of waiting.entries()) expect(frame.ring).toBe(at < turningAt ? "solid" : "dashed");
   const first = frames[0]!;
   for (const frame of frames) {
     expect(Math.abs(frame.para - first.para)).toBeLessThan(0.5);

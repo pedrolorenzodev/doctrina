@@ -1,0 +1,525 @@
+<title>Giro de carga</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..600;1,8..60,300..600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; every demo sits in a framed stage that follows the site's own container rules (desktop column or 390 px phone). */
+:root{
+  --bg:#e8e5de;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--cite:#5f3d0c;--cite-weak:rgb(95 61 12 / .09);--panel:#efece6;
+  --tip-bg:#1c1713;--tip-ink:#f4f1ea;--hover:rgb(28 23 19 / .05);--danger:#9c2f28;
+  --hls-yellow:#e3bb3c;--hls-green:#76aa5e;--hls-sky:#4fa6c9;--hls-pink:#d6789a;
+  --tex:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.85%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%221.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2262%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");--tex-o:.4;
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.1,.25,1);--ease-smooth:cubic-bezier(.32,.72,0,1);
+  --shadow:0 18px 40px -18px rgb(0 0 0 / .45);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--cite:#d6a865;--cite-weak:rgb(214 168 101 / .12);--panel:#262625;
+  --tip-bg:#f2f2f0;--tip-ink:#1d1d1c;--hover:rgb(255 255 255 / .05);--danger:#e8918a;
+  --hls-yellow:#cfa463;--hls-green:#86b878;--hls-sky:#6fb3d2;--hls-pink:#d48aa6;
+  --tex:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");--tex-o:1;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--cite:#d6a865;--cite-weak:rgb(214 168 101 / .12);--panel:#262625;
+  --tip-bg:#f2f2f0;--tip-ink:#1d1d1c;--hover:rgb(255 255 255 / .05);--danger:#e8918a;
+  --hls-yellow:#cfa463;--hls-green:#86b878;--hls-sky:#6fb3d2;--hls-pink:#d48aa6;
+  --tex:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");--tex-o:1;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-block:0 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1040px;margin-inline:auto}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding-block:10px;margin-bottom:8px}
+.bar-title{font-family:var(--head);font-size:18px;margin-right:auto;white-space:nowrap}
+.bar label{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);min-height:36px}
+.seg{display:inline-flex;gap:2px;border:1px solid var(--rule);border-radius:8px;padding:3px}
+.seg button{min-height:30px;padding:4px 12px;border-radius:6px;font-size:13.5px;line-height:1.2;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.seg button:hover{background:var(--hover);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);font-weight:500}
+.seg.sm button{min-height:26px;padding:3px 10px;font-size:13px}
+h1,h2,h3{font-family:var(--head);font-weight:350;text-wrap:balance;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(34px,6vw,56px);line-height:1.05}
+h2{font-size:clamp(28px,4.4vw,38px);line-height:1.1}
+h3{font-size:21px;line-height:1.25}
+p{margin:0}
+.lede{font-family:var(--head);font-style:italic;font-weight:300;font-size:clamp(19px,2.6vw,24px);line-height:1.38;color:var(--ink-2);max-width:42rem}
+.sec{display:grid;gap:22px;padding-top:56px}
+.sec>.head{display:grid;gap:10px}
+.note{color:var(--ink-3);font-size:14px;line-height:1.55;max-width:44rem}
+.tag{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;font-family:var(--head);font-size:18px;margin-right:12px;vertical-align:middle}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:0;border-top:1px solid var(--rule)}
+.cols>div{padding:16px 22px 18px 0;display:grid;gap:6px;align-content:start;min-width:0}
+.cols dt,.k{font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.cols dd{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.tablewrap{overflow-x:auto;border-top:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:12px 18px 12px 0;border-bottom:1px solid var(--rule);color:var(--ink-2)}
+th{font-weight:500;color:var(--ink);font-size:14px}
+tbody th{font-weight:500;color:var(--ink-3);font-size:12.5px;width:150px}
+.ok{color:var(--ink)}
+ul.plain{margin:0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--rule)}
+ul.plain li{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:4px 28px;padding:13px 0;border-bottom:1px solid var(--rule);font-size:14.5px;color:var(--ink-2);line-height:1.55}
+ul.plain li b{font-weight:500;color:var(--ink)}
+@media (max-width:640px){ul.plain li{grid-template-columns:1fr}}
+.decide{display:grid;gap:0;border-top:1px solid var(--ink);counter-reset:d}
+.decide>div{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--rule);counter-increment:d}
+.decide>div::before{grid-row:1 / span 2;content:counter(d);font-family:var(--head);font-size:22px;line-height:1.2;color:var(--ink-3)}
+.decide b{font-weight:500}
+.decide p{color:var(--ink-2);font-size:15px;line-height:1.55}
+.decide .rec{color:var(--ink-3);font-size:14px;margin-top:4px}
+figure{margin:0;display:grid;gap:10px}
+figcaption{font-size:13px;color:var(--ink-3);line-height:1.5;max-width:46rem}
+.ctl{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+/* ---- the stage: site texture, site tokens, container queries stand in for breakpoints ---- */
+.stage{position:relative;container-type:inline-size;width:100%;max-width:980px;border:1px solid var(--rule-2);border-radius:10px;background:var(--bg);overflow:clip;isolation:isolate}
+.stage::after{content:"";position:absolute;inset:0;background-image:var(--tex);background-size:420px 420px;opacity:var(--tex-o);mix-blend-mode:multiply;pointer-events:none;z-index:0}
+.stage>*{position:relative;z-index:1}
+body[data-w="phone"] .stage{max-width:390px;margin-inline:auto}
+.pad{padding:36px 56px 40px 28px;display:grid;gap:30px}
+@container (max-width:640px){.pad{padding:24px 16px 28px}}
+.read{font-family:var(--body);font-weight:350;font-size:19px;line-height:1.66;color:var(--ink-2)}
+.prose{font-family:var(--body);font-weight:350;font-size:19px;line-height:1.66;color:var(--ink-2)}
+.defn{font-family:var(--body);font-weight:350;font-size:23px;line-height:1.5;color:var(--ink)}
+@container (max-width:640px){.read,.prose{font-size:18px}.defn{font-size:20px}}
+.loc{font-family:var(--ui);font-size:12.5px;font-weight:500;color:var(--ink-3);margin-bottom:6px}
+.cite-line{font-size:.78em;color:var(--ink-3)}
+.cite-line u{text-decoration:underline dotted;text-decoration-color:var(--cite);color:var(--cite);text-underline-offset:3px}
+.meta{margin-top:10px;font-family:var(--ui);font-size:14px;color:var(--cite)}
+.meta b{color:var(--ink);font-weight:600;border-right:1px solid var(--rule-2);padding-right:12px;margin-right:12px}
+.stmt+.stmt{border-top:1px solid var(--rule);padding-top:26px}
+/* ---- ring (copied from src/components/simplifier) ---- */
+.sim-body{position:relative}
+.ring-slot{position:absolute;top:calc(.5lh - 11px);right:-40px;z-index:5;opacity:0;transition:opacity .15s var(--ease)}
+.stage[data-rings="off"] .sim:not(.is-open):not(.is-pending) .ring-slot{display:none}
+.stage[data-rings="on"] .ring-slot,.stage.hint .ring-slot{opacity:1}
+.sim:hover .ring-slot,.ring-slot:focus-within,.sim.is-open .ring-slot,.sim.is-pending .ring-slot{opacity:1}
+@container (max-width:640px){.stage:not([data-rings="off"]) .ring-slot{opacity:1}.ring-slot{top:-34px;right:-14px}}
+.ring{position:relative;width:28px;height:28px;display:grid;place-items:center;border-radius:50%}
+.ring::before{content:"";position:absolute;inset:-8px}
+@container (max-width:640px){.ring{width:44px;height:44px}.ring::before{inset:0}}
+.ring i{display:block;width:14px;height:14px;border-radius:50%;border:1.5px solid var(--ink-3);transition:border-color .15s var(--ease),background-color .15s var(--ease)}
+.ring:hover i{border-color:var(--ink)}
+.sim.is-open .ring i{border-color:var(--ink);background:var(--ink)}
+.sim.is-pending .ring i{border-style:dashed}
+.tip{position:absolute;bottom:calc(100% + 4px);right:0;white-space:nowrap;background:var(--tip-bg);color:var(--tip-ink);font-size:12.5px;line-height:1;padding:7px 9px;border-radius:5px;opacity:0;pointer-events:none;transition:opacity .12s var(--ease)}
+.ring:hover .tip,.ring:focus-visible .tip{opacity:1}
+@media (pointer:coarse){.ring:hover .tip{opacity:0}}
+/* ---- panel ---- */
+.box{display:grid;grid-template-rows:0fr;transition:grid-template-rows 380ms var(--ease-smooth)}
+.box.open{grid-template-rows:1fr}
+.box>.in{overflow:hidden;min-height:0}
+@media (prefers-reduced-motion:reduce){.box{transition:none}}
+.pn{margin:12px 0 0 2px;display:grid;gap:10px;border-left:1px solid var(--rule-2);padding:6px 0 18px 16px}
+.pn.live{border-left-style:dashed}
+.pn-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.pn-note{font-family:var(--ui);font-size:12.5px;line-height:1.45;color:var(--ink-3)}
+.pn-text{font-family:var(--ui);font-size:16px;line-height:1.65;color:var(--ink-2);margin:0 0 12px}
+.pn-text.msg{color:var(--ink-3)}
+.pn-text .w.hid{visibility:hidden}
+.pn-text sup{font-size:10.5px;font-weight:500;color:var(--cite);padding:0 2px;margin-left:1px;line-height:0}
+.pn-foot{display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin-left:-8px}
+.fb{min-height:32px;padding:0 8px;border-radius:6px;font-size:13px;font-weight:500;color:var(--ink-3);white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.fb:hover{background:var(--hover);color:var(--ink)}
+@container (max-width:640px){.fb{min-height:44px}}
+.pn-foot .pn-note{margin-left:8px}
+.pn-foot[hidden]{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ---- switch, Aa, menu, toolbar ---- */
+.sw{display:inline-flex;align-items:center;gap:10px;min-height:36px;text-align:left}
+.sw-t{width:30px;height:18px;border-radius:9px;border:1.5px solid var(--ink-3);position:relative;flex:none;transition:background-color .15s var(--ease),border-color .15s var(--ease)}
+.sw-t::after{content:"";position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;background:var(--ink-3);transition:translate .18s var(--ease-smooth),background-color .15s var(--ease)}
+.sw[aria-checked="true"] .sw-t{background:var(--ink);border-color:var(--ink)}
+.sw[aria-checked="true"] .sw-t::after{translate:12px 0;background:var(--bg)}
+@container (max-width:640px){.sw{min-height:44px}}
+.strip{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--rule);padding:6px 12px 6px 28px;min-height:52px;background:var(--bg)}
+@container (max-width:640px){.strip{padding-left:16px}}
+.strip-t{font-size:14px;color:var(--ink-3);min-width:0}
+.strip-t b{font-weight:500;color:var(--ink)}
+.aa{min-height:34px;min-width:36px;padding:0 10px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.aa:hover,.aa[aria-expanded="true"]{background:var(--hover);color:var(--ink)}
+@container (max-width:640px){.aa{min-height:44px;min-width:44px}}
+.menu{position:absolute;top:56px;right:12px;width:360px;max-width:calc(100% - 16px);z-index:12;background:var(--panel);border:1px solid var(--rule-2);border-radius:8px;box-shadow:var(--shadow);padding:14px 16px 16px;display:grid;gap:14px;opacity:0;visibility:hidden;translate:0 -4px;transition:opacity .22s var(--ease-smooth),translate .34s var(--ease-smooth),visibility 0s .22s}
+.menu.open{opacity:1;visibility:visible;translate:0 0;transition:opacity .22s var(--ease-smooth),translate .34s var(--ease-smooth),visibility 0s}
+@container (max-width:640px){.menu{left:8px;right:8px;width:auto;max-width:none}}
+.menu .g{display:grid;gap:6px}
+.step{display:inline-flex;gap:2px;border:1px solid var(--rule);border-radius:8px;padding:3px;justify-self:start}
+.step span{min-width:36px;min-height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:5px;font-size:13px;color:var(--ink-2)}
+.menu hr{border:0;border-top:1px solid var(--rule);margin:0}
+.menu .help{font-size:13px;line-height:1.5;color:var(--ink-3)}
+.tbar{position:absolute;z-index:14;left:0;top:0;display:flex;align-items:center;flex-wrap:nowrap;gap:2px;background:var(--bg);border:1px solid var(--rule-2);border-radius:8px;padding:3px 6px;box-shadow:var(--shadow);opacity:0;visibility:hidden;pointer-events:none;translate:0 4px;transition:opacity .15s var(--ease),translate .15s var(--ease),visibility 0s .15s}
+.tbar.open{opacity:1;visibility:visible;pointer-events:auto;translate:0 0;transition:opacity .15s var(--ease),translate .15s var(--ease),visibility 0s}
+.tbar.docked.open{position:sticky;left:auto!important;top:auto!important;bottom:0;border-radius:0;border-width:1px 0 0;justify-content:center;flex-wrap:wrap;padding-bottom:max(3px,env(safe-area-inset-bottom,0px))}
+.tb{min-height:36px;padding:0 10px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.tb:hover{background:var(--hover);color:var(--ink)}
+.tb.strong{color:var(--ink)}
+.tbar.docked .tb{min-height:44px}
+.dots{display:inline-flex;align-items:center;gap:2px}
+.dots button{width:30px;height:30px;display:grid;place-items:center;border-radius:50%}
+.dots i{width:16px;height:16px;border-radius:50%;box-shadow:inset 0 0 0 1px rgb(0 0 0 / .12)}
+.vs{width:1px;height:20px;background:var(--rule);margin:0 4px}
+.tbar.docked .vs{display:none}
+.tbar.docked .dots button{width:44px;height:44px}
+/* ---- tradition replica ---- */
+.crumb{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;font-size:14px;color:var(--ink-3)}
+.crumb nav{display:flex;gap:8px;flex-wrap:wrap}
+.crumb nav span+span::before{content:"/";margin-right:8px;color:var(--rule-2)}
+.crumb nav b{font-weight:400;color:var(--ink)}
+.tabs{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:15px;color:var(--ink-2)}
+.tabs span{padding:6px 10px;border-radius:6px}
+.tabs span.on{border:1px solid var(--rule-2);background:var(--panel);color:var(--ink);font-weight:500}
+.tabs small{font-size:14px;color:var(--ink-3);margin-right:6px}
+.ttl{font-family:var(--head);font-weight:350;font-size:clamp(40px,7vw,60px);line-height:1.03;letter-spacing:-.01em}
+.sub{font-family:var(--head);font-style:italic;font-weight:300;font-size:22px;line-height:1.38;color:var(--ink-2)}
+@container (max-width:640px){.sub{font-size:19px}}
+.qe{display:grid;grid-template-columns:240px minmax(0,1fr);gap:20px 40px;align-items:start}
+@container (max-width:640px){.qe{grid-template-columns:1fr}}
+.qe h2{font-size:38px;line-height:1.1;color:var(--ink)}
+@container (max-width:640px){.qe h2{font-size:32px}}
+.qe-side{display:grid;gap:12px;font-size:14.5px;color:var(--ink-3);line-height:1.6}
+.qe-main{display:grid;gap:26px;min-width:0}
+.sec-btn{justify-self:start;min-height:34px;padding:0 10px;margin-left:-10px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.sec-btn:hover{background:var(--hover);color:var(--ink)}
+.sec-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@container (max-width:640px){.sec-btn{min-height:44px}}
+.sec-foot{border-top:1px solid var(--rule);padding-top:14px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 18px}
+.sec-foot span{font-size:14px;color:var(--ink-3)}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.cap{font-size:12.5px;color:var(--ink-3)}
+a{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+
+/* ---- loader variants (the ring i is 14px, border 1.5px; every loader keeps that box) ---- */
+.ring svg.ld,.ring b.ld{display:none;position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;pointer-events:none}
+.ring svg.ld circle{fill:none;stroke-width:1.5}
+.ring svg.ld .tr{stroke:var(--rule-2)}
+.ring svg.ld .ac{stroke:var(--ink);stroke-linecap:round}
+.sim.is-pending:not(.is-spin) .ring i{border-style:solid;border-color:var(--ink)}
+.stage[data-loader="today"] .sim.is-pending .ring i{border-style:dashed;border-color:var(--ink-3)}
+.stage[data-loader="arc"] .sim.is-spin .ring i,.stage[data-loader="trim"] .sim.is-spin .ring i{border-color:transparent}
+.stage[data-loader="arc"] .sim.is-spin .ring svg.ld-arc{display:block;animation:ld-arc 1s cubic-bezier(.45,.1,.55,.9) infinite}
+.stage[data-loader="trim"] .sim.is-spin .ring svg.ld-trim{display:block;animation:ld-turn 1.6s linear infinite}
+.stage[data-loader="trim"] .sim.is-spin .ring svg.ld-trim .ac{animation:ld-trim 1.6s cubic-bezier(.4,0,.2,1) infinite}
+.stage[data-loader="dash"] .sim.is-spin .ring i{border-style:dashed;border-color:var(--ink);animation:ld-turn 2.4s linear infinite}
+.stage[data-loader="orbit"] .sim.is-spin .ring i{border-color:var(--rule-2)}
+.stage[data-loader="orbit"] .sim.is-spin .ring b.ld-orbit{display:block;animation:ld-turn 1.1s cubic-bezier(.45,.1,.55,.9) infinite}
+.ring b.ld-orbit::after{content:"";position:absolute;left:50%;top:-1px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--ink)}
+@keyframes ld-arc{0%{transform:rotate(0)}50%{transform:rotate(190deg)}100%{transform:rotate(360deg)}}
+@keyframes ld-turn{to{transform:rotate(360deg)}}
+@keyframes ld-trim{0%{stroke-dasharray:3 36.3;stroke-dashoffset:0}50%{stroke-dasharray:26 13.3;stroke-dashoffset:-9}100%{stroke-dasharray:3 36.3;stroke-dashoffset:-39.3}}
+/* reduced motion: static fallback, a three-quarter arc that is not the closed resting ring */
+@media (prefers-reduced-motion:reduce){
+  .stage[data-loader]:not([data-loader="today"]) .sim.is-spin .ring svg.ld,.stage[data-loader]:not([data-loader="today"]) .sim.is-spin .ring i,.stage[data-loader]:not([data-loader="today"]) .sim.is-spin .ring b.ld{animation:none!important}
+}
+body[data-rm="1"] .stage .sim.is-spin .ring svg.ld,body[data-rm="1"] .stage .sim.is-spin .ring i,body[data-rm="1"] .stage .sim.is-spin .ring b.ld,body[data-rm="1"] .stage .sim.is-spin .ring svg.ld .ac{animation:none!important}
+.stage[data-loader="trim"] .sim.is-spin .ring svg.ld-trim .ac{stroke-dasharray:29.5 9.8}
+@media (prefers-reduced-motion:reduce){.stage[data-loader="trim"] .sim.is-spin .ring svg.ld-trim .ac{stroke-dasharray:29.5 9.8}}
+body[data-rm="1"] .stage[data-loader="trim"] .sim.is-spin .ring svg.ld-trim .ac{stroke-dasharray:29.5 9.8}
+.stage[data-loader="orbit"] .sim.is-spin .ring b.ld-orbit{rotate:0deg}
+.log{font-size:13px;color:var(--ink-3);line-height:1.5;min-height:1.5em;font-variant-numeric:tabular-nums}
+.bench{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border-top:1px solid var(--rule)}
+.bench>div{padding:18px 14px 16px 0;display:grid;gap:12px;align-content:start;justify-items:start}
+.bench .k{font-size:13px;font-weight:500;color:var(--ink)}
+.bench .row{display:flex;align-items:center;gap:22px}
+.big{transform:scale(4);transform-origin:left center;width:14px;margin-right:40px}
+.bench .stage-mini{container-type:normal}
+@media (max-width:640px){.bar{position:static}}
+.stage.mini{border:0;background:none;border-radius:0;overflow:visible;width:auto;max-width:none;display:inline-block}
+.stage.mini::after{display:none}
+.stage.mini .ring{position:relative;display:grid}
+</style>
+<div class="wrap">
+<div class="bar" role="toolbar" aria-label="Controles de las demos">
+  <span class="bar-title">Giro de carga</span>
+  <div class="seg sm" role="group" aria-label="Ancho de las demos"><button type="button" data-w="desktop" aria-pressed="true">Escritorio</button><button type="button" data-w="phone" aria-pressed="false">Teléfono</button></div>
+  <div class="seg sm" role="group" aria-label="Tema"><button type="button" data-theme-set="light" aria-pressed="true">Claro</button><button type="button" data-theme-set="dark" aria-pressed="false">Oscuro</button></div>
+  <div class="seg sm" role="group" aria-label="Movimiento"><button type="button" data-rm="0" aria-pressed="true">Con movimiento</button><button type="button" data-rm="1" aria-pressed="false">Movimiento reducido</button></div>
+  <div class="seg sm" role="group" aria-label="Respuesta del servidor"><button type="button" data-resp="new" aria-pressed="true">Respuesta nueva, 2,6 s</button><button type="button" data-resp="cache" aria-pressed="false">Desde el caché, 0,12 s</button></div>
+  <div class="seg sm" role="group" aria-label="Retraso antes del giro"><button type="button" data-delay="0" aria-pressed="false">Giro a 0 ms</button><button type="button" data-delay="200" aria-pressed="true">a 200 ms</button><button type="button" data-delay="300" aria-pressed="false">a 300 ms</button></div>
+</div>
+
+<header class="sec" style="padding-top:40px">
+  <div class="head">
+    <h1>Que se note que está cargando</h1>
+    <p class="lede">Al tocar el círculo, hoy queda una línea punteada quieta y nada indica que algo trabaja. Cuatro formas de mostrarlo con el mismo círculo, en el mismo lugar y con la misma tinta.</p>
+  </div>
+  <p class="note">Tocá un círculo en cualquier demo. Arriba elegís el ancho, el tema, si la respuesta viene del caché o es nueva, y a los cuántos milisegundos aparece el giro. Un segundo toque cancela.</p>
+</header>
+
+<section class="sec" aria-labelledby="hoy">
+  <div class="head"><h2 id="hoy">Hoy</h2>
+  <p class="note">El círculo pasa a línea punteada y se queda quieto. Un lector de pantalla oye «Simplificando…» (el círculo marca <code>aria-busy</code> y hay una región viva); quien mira no ve nada que se mueva, y una cosa quieta se lee como trabada. Esperá unos segundos para ver cuánto dura.</p></div>
+  <figure>
+    <div class="stage" id="s-today" data-loader="today" data-rings="hover"><div class="pad">
+      <div data-sim="euc-def" data-tone="defn"></div>
+      <div data-sim="ign-62" data-tone="read" data-loc="Ignacio de Antioquía, A los Esmirniotas 6.2 · edición Lightfoot, 1889"></div>
+    </div></div>
+    <figcaption class="log" data-log-for="s-today" aria-live="off">Sin tocar todavía.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="size">
+  <div class="head"><h2 id="size">Los cuatro, al tamaño real y ampliados</h2>
+  <p class="note">El círculo mide 14 px con línea de 1,5 px, igual que hoy. Todos giran sin parar para que los compares; en el sitio solo giran mientras se espera. Arriba, el tamaño real; abajo, ×4.</p></div>
+  <div class="bench" id="bench"></div>
+</section>
+
+<section class="sec" aria-labelledby="a">
+  <div class="head"><h2 id="a"><span class="tag">A</span>Arco que gira</h2>
+  <p class="note"><b style="font-weight:500">Dónde:</b> en el lugar del círculo punteado, mismo tamaño. Un arco de tres cuartos en tinta fuerte recorre el círculo sobre una pista tenue; la velocidad sube y baja un poco en cada media vuelta. <b style="font-weight:500">Referencia:</b> el indicador de actividad de Apple y el Spinner de Primer son círculos que giran, y el Spinner de shadcn es el ícono Loader2 de Lucide con <code>animate-spin</code>, un arco que gira. Es la forma más común; aquí se distingue por la pista tenue y la variación de velocidad. <b style="font-weight:500">Costo:</b> un SVG de dos circunferencias y una animación de <code>transform</code> (solo compositor). Sin JavaScript de animación.</p></div>
+  <figure>
+    <div class="stage" id="s-arc" data-loader="arc" data-rings="hover"><div class="pad">
+      <div data-sim="euc-def" data-tone="defn"></div>
+      <div data-sim="ign-62" data-tone="read" data-loc="Ignacio de Antioquía, A los Esmirniotas 6.2 · edición Lightfoot, 1889"></div>
+    </div></div>
+    <figcaption class="log" data-log-for="s-arc">Sin tocar todavía.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="b">
+  <div class="head"><h2 id="b"><span class="tag">B</span>La línea punteada, girando</h2>
+  <p class="note"><b style="font-weight:500">Dónde:</b> es el círculo de hoy, con su borde punteado, que ahora gira despacio (2,4 s por vuelta). Mantiene el aspecto ya aprobado. <b style="font-weight:500">Referencia:</b> ninguna externa; sale del propio estado actual. <b style="font-weight:500">Costo:</b> CSS puro, una animación de <code>transform</code> sobre el elemento que ya existe. Riesgo: a 14 px los trazos de un borde punteado son irregulares y al girar tiemblan; se parece más a un adorno que a un indicador de carga.</p></div>
+  <figure>
+    <div class="stage" id="s-dash" data-loader="dash" data-rings="hover"><div class="pad">
+      <div data-sim="euc-def" data-tone="defn"></div>
+      <div data-sim="ign-62" data-tone="read" data-loc="Ignacio de Antioquía, A los Esmirniotas 6.2 · edición Lightfoot, 1889"></div>
+    </div></div>
+    <figcaption class="log" data-log-for="s-dash">Sin tocar todavía.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="c">
+  <div class="head"><h2 id="c"><span class="tag">C</span>Trazo que se dibuja y se borra</h2>
+  <p class="note"><b style="font-weight:500">Dónde:</b> el mismo círculo; un trazo crece desde un punto hasta casi tres cuartos y se acorta mientras todo el círculo gira (1,6 s). <b style="font-weight:500">Referencia:</b> el indicador circular indeterminado de Material, que según su guía antigua crece y se achica a lo largo de la pista (no verifiqué la especificación de Material 3). <b style="font-weight:500">Costo:</b> SVG con <code>stroke-dasharray</code> animado: esa propiedad se repinta en cada cuadro, aceptable a 14 px pero es la única opción que no es solo compositor. Es la más viva y la más reconocible como «cargando»; también la más cercana a un spinner de librería.</p></div>
+  <figure>
+    <div class="stage" id="s-trim" data-loader="trim" data-rings="hover"><div class="pad">
+      <div data-sim="euc-def" data-tone="defn"></div>
+      <div data-sim="ign-62" data-tone="read" data-loc="Ignacio de Antioquía, A los Esmirniotas 6.2 · edición Lightfoot, 1889"></div>
+    </div></div>
+    <figcaption class="log" data-log-for="s-trim">Sin tocar todavía.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="d">
+  <div class="head"><h2 id="d"><span class="tag">D</span>Punto que orbita</h2>
+  <p class="note"><b style="font-weight:500">Dónde:</b> el círculo queda como pista tenue y un punto de 4 px recorre su borde (1,1 s por vuelta, con la misma variación suave). <b style="font-weight:500">Referencia:</b> propia; no encontré una fuente que lo documente. <b style="font-weight:500">Costo:</b> CSS puro, <code>transform</code> sobre un elemento y un punto. A 14 px el punto se lee como cuenta de un collar más que como arco; es el más sobrio y el menos convencional.</p></div>
+  <figure>
+    <div class="stage" id="s-orbit" data-loader="orbit" data-rings="hover"><div class="pad">
+      <div data-sim="euc-def" data-tone="defn"></div>
+      <div data-sim="ign-62" data-tone="read" data-loc="Ignacio de Antioquía, A los Esmirniotas 6.2 · edición Lightfoot, 1889"></div>
+    </div></div>
+    <figcaption class="log" data-log-for="s-orbit">Sin tocar todavía.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="time">
+  <div class="head"><h2 id="time">Cuándo aparece, cuánto dura y qué pasa sin movimiento</h2></div>
+  <ul class="plain">
+    <li><b>0 ms: el toque se nota en el círculo</b><span>El círculo toma la tinta fuerte al instante, y <code>aria-busy</code> y «Simplificando…» se anuncian ya. Lo único que se retrasa es el giro.</span></li>
+    <li><b>200 ms: aparece el giro</b><span>Si la respuesta viene del caché (50 a 150 ms según el diseño del servidor) el panel se abre sin que se vea ningún giro. Mozilla recomienda no mostrar el indicador en acciones de menos de 200 ms, porque un destello menor a eso se ve como parpadeo; Primer ofrece 300 ms como retraso corto. Para una simplificación nueva (2 a 5 s) 200 ms se nota apenas.</span></li>
+    <li><b>Una vez visible, al menos 400 ms</b><span>Mozilla fija 400 ms mínimos de exposición. Con un retraso de 200 ms solo importa si la respuesta llega entre 200 y 600 ms, un caso raro que costaría hasta 350 ms de espera extra.</span></li>
+    <li><b>El panel se abre una sola vez</b><span>Mientras carga no se abre nada ni se mueve nada (regla de un solo empujón); cuando llega el resultado el círculo deja de girar y el panel se abre a su altura final, como hoy.</span></li>
+    <li><b>Segundo toque o Esc cancelan</b><span>El giro se corta y el círculo vuelve al reposo, igual que hoy.</span></li>
+    <li><b>Movimiento reducido</b><span>Nada se anima, como en el resto del sitio. El giro se reemplaza por un arco quieto de tres cuartos, que no es el círculo cerrado de reposo. Un indicador quieto puede parecer trabado (Apple lo advierte); el texto «Simplificando…» sigue en el tooltip y en la región viva. Probalo con «Movimiento reducido» arriba.</span></li>
+  </ul>
+</section>
+
+<section class="sec" aria-labelledby="desc">
+  <div class="head"><h2 id="desc">Lo que descarto, y por qué</h2></div>
+  <ul class="plain">
+    <li><b>Anillo grueso estilo Bootstrap, rayos de iOS, puntos que rebotan</b><span>Los tres se leen como anticuados o de plantilla. Además un círculo de 14 px no tiene sitio para ocho rayos.</span></li>
+    <li><b>Degradado cónico, brillo, píldora luminosa</b><span>De la lista de lo que parece generado por IA (DECISIONS, «Design principles»): el sitio usa líneas finas, una sola tinta y nada de brillos.</span></li>
+    <li><b>Destellos, estrellas, un distintivo «IA» flotante</b><span>Misma lista.</span></li>
+    <li><b>Una caja o un esqueleto que se rellena donde irá el panel</b><span>Sería un segundo empujón: algo aparece y luego se reemplaza. Pedro quiere un solo movimiento hasta la altura final.</span></li>
+    <li><b>Texto «Simplificando…» visible junto al círculo</b><span>Agrega ruido a cada párrafo. Se mantiene en el tooltip y en la región viva.</span></li>
+    <li><b>Barra o porcentaje de avance</b><span>No hay forma honesta de medirlo: el modelo no informa avance.</span></li>
+  </ul>
+</section>
+
+<section class="sec" aria-labelledby="dec">
+  <div class="head"><h2 id="dec">Qué hay que decidir</h2></div>
+  <div class="decide">
+    <div><p><b>La forma:</b> A (arco), B (punteado girando), C (trazo) o D (punto).</p><p class="rec">Mi recomendación: A. Se reconoce como «cargando» sin explicación, es solo compositor, conserva el tamaño y la tinta, y no tiene brillos. C es más viva pero repinta y se parece más a lo genérico.</p></div>
+    <div><p><b>El retraso del giro:</b> 0, 200 o 300 ms.</p><p class="rec">Recomiendo 200 ms: con el caché no se ve ningún giro, y con una respuesta nueva casi no se nota la espera.</p></div>
+    <div><p><b>El mínimo visible de 400 ms</b> una vez que apareció el giro: sí o no.</p><p class="rec">Recomiendo que sí; cuesta poco porque casi nunca se da.</p></div>
+    <div><p><b>El reemplazo con movimiento reducido:</b> arco quieto, o la línea punteada de hoy.</p><p class="rec">Recomiendo el arco quieto: es distinto del círculo cerrado de reposo.</p></div>
+  </div>
+  <p class="note">Con eso sigo. No construyo nada hasta tu respuesta.</p>
+</section>
+
+<footer class="sec" style="padding-top:36px">
+  <p class="note">Sobre los textos: el párrafo de la Eucaristía y el de Ignacio (6.2, Lightfoot 1889) y sus simplificaciones son los que ya existen en el sitio. Los tiempos del servidor (0,12 s y 2,6 s) son valores de la demo basados en el diseño del simplificador (caché de 50 a 150 ms, respuesta nueva de 2 a 5 s).</p>
+</footer>
+</div>
+<script>
+const ENT={
+"euc-def":{lang:"es",
+original:["Para la Iglesia católica, la Eucaristía es el sacrificio del cuerpo y la sangre de Cristo, instituido en la última Cena para hacer presente el sacrificio de la cruz hasta que él vuelva, y a la vez el banquete en el que se recibe a Cristo mismo."],
+clear:["Para la Iglesia católica, la Eucaristía es el sacrificio del cuerpo y la sangre de Cristo, que él instituyó en la última Cena para hacer presente el sacrificio de la cruz hasta que vuelva; y es a la vez el banquete en el que se recibe a Cristo mismo."],
+very:["Para la Iglesia católica, la Eucaristía es el sacrificio del cuerpo y la sangre de Cristo. Él lo dejó en la última Cena para hacer presente su sacrificio en la cruz hasta que vuelva. Y es también el banquete en el que se recibe a Cristo mismo."]},
+"ign-62":{lang:"en",
+original:["But mark ye those who hold strange doctrine touching the grace of Jesus Christ which came to us, how that they are contrary to the mind of God.","They have no care for love, none for the widow, none for the orphan, none for the afflicted, none for the prisoner, none for the hungry or thirsty.","They abstain from eucharist (thanksgiving) and prayer, because they allow not that the eucharist is the flesh of our Saviour Jesus Christ, which flesh suffered for our sins, and which the Father of His goodness raised up."],
+clear:["Take note of those who hold strange teaching about the grace of Jesus Christ that came to us: they are opposed to the mind of God.","They have no concern for love: none for the widow, none for the orphan, none for the afflicted, none for the prisoner, none for the hungry or thirsty.","They keep away from the eucharist (thanksgiving) and from prayer, because they do not admit that the eucharist is the flesh of our Saviour Jesus Christ, the flesh that suffered for our sins and that the Father in His goodness raised up."],
+very:["Some teach something different about the grace that Jesus Christ brought us. This goes against what God thinks.","They do not care about love. They do not look after widows, orphans, people who suffer, prisoners, or people who are hungry or thirsty.","They stay away from the eucharist (thanksgiving) and from prayer. They do not accept that the eucharist is the flesh of our Saviour Jesus Christ. That flesh suffered for our sins, and the Father, in His goodness, raised it up."]}
+};
+const EXTRA={"euc-def":' <span class="cite-line">(<u>Sacrosanctum Concilium 47</u>; <u>Catecismo 1323</u>; <u>Catecismo 1382</u>)</span>'};
+const cfg={resp:"new",delay:200,min:400};
+const reduced=()=>document.body.dataset.rm==="1"||matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const sims=new Map();
+const SVG={
+ arc:'<svg class="ld ld-arc" viewBox="0 0 14 14" aria-hidden="true"><circle class="tr" cx="7" cy="7" r="6.25"/><circle class="ac" cx="7" cy="7" r="6.25" stroke-dasharray="29.45 9.82" transform="rotate(-90 7 7)"/></svg>',
+ trim:'<svg class="ld ld-trim" viewBox="0 0 14 14" aria-hidden="true"><circle class="tr" cx="7" cy="7" r="6.25"/><circle class="ac" cx="7" cy="7" r="6.25" transform="rotate(-90 7 7)"/></svg>',
+ orbit:'<b class="ld ld-orbit" aria-hidden="true"></b>'
+};
+const RING='<i></i>'+SVG.arc+SVG.trim+SVG.orbit;
+
+$$("[data-sim]").forEach(el=>{
+  const k=el.dataset.sim,e=ENT[k];
+  el.classList.add("sim");el.dataset.key=k;
+  const loc=el.dataset.loc?'<p class="loc">'+el.dataset.loc+'</p>':"";
+  el.innerHTML=loc+'<div class="sim-body '+el.dataset.tone+'" lang="'+e.lang+'"><p style="margin:0">'+e.original.join(" ")+(k==="euc-def"?EXTRA[k]:"")+'</p></div>';
+});
+
+class Sim{
+  constructor(el){
+    this.el=el;this.stage=el.closest(".stage");this.e=ENT[el.dataset.key];this.level="clear";this.opened=false;this.status="idle";
+    this.timer=0;this.spinTimer=0;this.stream=0;this.spinAt=0;this.events=[];
+    this.logEl=$('[data-log-for="'+this.stage.id+'"]');
+    this.body=$(".sim-body",el);
+    this.body.insertAdjacentHTML("beforeend",'<span class="ring-slot"><button type="button" class="ring" aria-label="En palabras simples" aria-expanded="false">'+RING+'<span class="tip">En palabras simples</span></button></span><span class="sr" role="status"></span>');
+    this.ring=$(".ring",el);this.tip=$(".tip",el);this.live=$("[role=status]",el);
+    el.insertAdjacentHTML("beforeend",'<div class="box"><div class="in"></div></div>');
+    this.box=$(".box",el);this.inner=$(".in",el);
+    this.ring.addEventListener("click",()=>this.press());
+    this.inner.addEventListener("click",ev=>{
+      const b=ev.target.closest("button");if(!b)return;
+      if(b.dataset.l)this.setLevel(b.dataset.l);
+      else if(b.dataset.a==="hide")this.hide(true);
+      else if(b.dataset.a==="stop")this.endStream();
+    });
+    el.addEventListener("keydown",ev=>{
+      if(ev.key!=="Escape")return;
+      if(this.status==="pending"){ev.preventDefault();this.cancel()}
+      else if(this.status!=="idle"){ev.preventDefault();this.hide(true)}
+    });
+    sims.set(el,this);
+  }
+  log(text){
+    const t=Math.round(performance.now()-this.t0);
+    this.events.push(t+" ms · "+text);
+    if(this.logEl)this.logEl.textContent=this.events.join("   ");
+  }
+  press(){
+    if(this.status==="pending")this.cancel();
+    else if(this.status!=="idle")this.hide(false);
+    else this.load();
+  }
+  load(){
+    this.t0=performance.now();this.events=[];this.spinAt=0;
+    this.setStatus("pending");
+    this.log("pulsación");
+    const today=this.stage.dataset.loader==="today";
+    const delay=today?0:cfg.delay;
+    this.spinTimer=setTimeout(()=>{
+      if(this.status!=="pending")return;
+      if(!today){this.el.classList.add("is-spin");this.spinAt=performance.now()}
+      this.log(today?"punteado quieto":"aparece el giro");
+    },delay);
+    const respMs=cfg.resp==="cache"?120:2600;
+    this.timer=setTimeout(()=>{
+      const wait=this.spinAt?Math.max(0,cfg.min-(performance.now()-this.spinAt)):0;
+      if(wait>0){this.log("llegó la respuesta; el giro sigue hasta completar "+cfg.min+" ms");this.timer=setTimeout(()=>this.finish(),wait)}
+      else this.finish();
+    },respMs);
+  }
+  finish(){
+    this.log(this.spinAt?"se abre el panel y el giro termina":"se abre el panel, sin giro");
+    this.show();
+  }
+  cancel(){
+    clearTimeout(this.timer);clearTimeout(this.spinTimer);
+    this.log("cancelado, el círculo vuelve al reposo");
+    this.setStatus("idle");
+  }
+  setStatus(s){
+    this.status=s;
+    this.el.classList.toggle("is-pending",s==="pending");
+    this.el.classList.toggle("is-open",s==="open");
+    if(s!=="pending")this.el.classList.remove("is-spin");
+    this.ring.setAttribute("aria-expanded",String(s==="open"));
+    this.ring.toggleAttribute("aria-busy",s==="pending");
+    this.tip.textContent=s==="pending"?"Simplificando…":"En palabras simples";
+    this.live.textContent=s==="pending"?"Simplificando…":"";
+  }
+  show(){
+    clearTimeout(this.timer);clearTimeout(this.spinTimer);clearTimeout(this.stream);
+    const first=!this.opened&&!reduced();
+    this.opened=true;
+    this.setStatus("open");
+    this.render(first);
+    this.box.offsetHeight;
+    this.box.classList.add("open");
+    if(first)this.runStream();
+  }
+  hide(focus){
+    clearTimeout(this.stream);
+    this.box.classList.remove("open");
+    this.setStatus("idle");
+    if(focus)this.ring.focus({preventScroll:true});
+    setTimeout(()=>{if(this.status==="idle")this.inner.innerHTML=""},420);
+  }
+  setLevel(l){
+    if(l===this.level)return;
+    this.level=l;clearTimeout(this.stream);
+    $$("[data-l]",this.inner).forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.l===l)));
+    const t=$("[data-t]",this.inner);if(t)t.innerHTML=this.textHTML(false);
+    this.endStream();
+  }
+  textHTML(hidden){
+    return this.e[this.level].map((s,i)=>s.split(" ").map((w,j)=>'<span class="w'+(hidden?" hid":"")+'">'+(j?" ":"")+w+"</span>").join("")+'<sup class="w'+(hidden?" hid":"")+'">'+(i+1)+"</sup> ").join("");
+  }
+  render(streaming){
+    const head='<div class="pn-head"><div class="seg sm" role="group" aria-label="Nivel de lectura"><button type="button" data-l="clear" aria-pressed="'+(this.level==="clear")+'">Más claro</button><button type="button" data-l="very" aria-pressed="'+(this.level==="very")+'">Muy simple</button></div><span class="pn-note">Simplificado por IA</span></div>';
+    const body='<p class="pn-text" lang="'+this.e.lang+'" data-t>'+this.textHTML(streaming)+"</p>";
+    const foot='<div class="pn-foot" data-final'+(streaming?" hidden":"")+'><button type="button" class="fb" data-a="hide">Ocultar</button><span class="pn-note">Generado por IA</span></div><div class="pn-foot" data-live'+(streaming?"":" hidden")+'><button type="button" class="fb" data-a="stop">Detener</button><span class="pn-note">Escribiendo</span></div>';
+    this.inner.innerHTML='<div class="pn'+(streaming?" live":"")+'">'+head+"<div>"+body+"</div>"+foot+"</div>";
+  }
+  runStream(){
+    const ws=$$(".w.hid",this.inner);let i=0;
+    const step=()=>{if(i>=ws.length){this.endStream();return}ws[i++].classList.remove("hid");this.stream=setTimeout(step,24)};
+    step();
+  }
+  endStream(){
+    clearTimeout(this.stream);
+    $$(".w.hid",this.inner).forEach(w=>w.classList.remove("hid"));
+    const pn=$(".pn",this.inner);if(!pn)return;
+    pn.classList.remove("live");
+    const f=$("[data-final]",pn),l=$("[data-live]",pn);
+    if(f)f.hidden=false;if(l)l.hidden=true;
+  }
+}
+$$(".sim").forEach(el=>new Sim(el));
+
+/* bench: every loader, real size and x4, spinning without end */
+const bench=$("#bench");
+[["today","Hoy"],["arc","A · Arco"],["dash","B · Punteado girando"],["trim","C · Trazo"],["orbit","D · Punto"]].forEach(([k,name])=>{
+  const mini='<span class="stage mini" data-loader="'+k+'"><span class="sim is-pending is-spin"><button type="button" class="ring" tabindex="-1" aria-hidden="true">'+RING+'</button></span></span>';
+  bench.insertAdjacentHTML("beforeend",'<div><span class="k">'+name+'</span><div class="row">'+mini+'</div><div class="row"><div class="big">'+mini+'</div></div></div>');
+});
+$$("#bench .ring").forEach(r=>{r.style.pointerEvents="none"});
+
+const syncSeg=(attr,val)=>$$("["+attr+"]").forEach(b=>b.setAttribute("aria-pressed",String(b.getAttribute(attr)===String(val))));
+$$("[data-w]").forEach(b=>b.addEventListener("click",()=>{document.body.dataset.w=b.dataset.w;syncSeg("data-w",b.dataset.w)}));
+$$("[data-rm]").forEach(b=>b.addEventListener("click",()=>{document.body.dataset.rm=b.dataset.rm;syncSeg("data-rm",b.dataset.rm)}));
+$$("[data-resp]").forEach(b=>b.addEventListener("click",()=>{cfg.resp=b.dataset.resp;syncSeg("data-resp",cfg.resp)}));
+$$("[data-delay]").forEach(b=>b.addEventListener("click",()=>{cfg.delay=Number(b.dataset.delay);syncSeg("data-delay",cfg.delay)}));
+const root=document.documentElement;
+const darkNow=()=>root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+function syncTheme(){$$("[data-theme-set]").forEach(b=>b.setAttribute("aria-pressed",String((b.dataset.themeSet==="dark")===darkNow())))}
+$$("[data-theme-set]").forEach(b=>b.addEventListener("click",()=>{root.dataset.theme=b.dataset.themeSet;syncTheme()}));
+syncTheme();
+</script>

@@ -2714,6 +2714,18 @@ html[data-transliteration="off"] [data-transliteration] {
   border-width: 1.5px;
 }
 
+@utility simplifier-ring-turn {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: simplifier-ring-turn 2.4s linear infinite;
+  }
+}
+
+@keyframes simplifier-ring-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 html[data-simplifier-reveal] [data-simplifier-mark] {
   opacity: 1;
 }

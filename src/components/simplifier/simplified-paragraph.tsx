@@ -35,6 +35,9 @@ const toneClassName: Record<Tone, string> = {
   reader: "text-reader",
 };
 
+const spinDelayMs = 200;
+const spinMinMs = 400;
+
 const wordCount = (sentences: string[]) => sentences.reduce((total, sentence) => total + sentence.split(" ").length, 0);
 
 export function SimplifiedParagraph(props: SimplifiedParagraphProps) {
@@ -68,6 +71,12 @@ function SimplifiedView({
   const [stoppedAt, setStoppedAt] = useState<number | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
+  const [spinning, setSpinning] = useState(false);
+  const [holding, setHolding] = useState(false);
+  const spunAt = useRef<number | null>(null);
+  const spinTimer = useRef(0);
+  const hold = useRef<{ cancel: () => void } | null>(null);
+  const busy = simplification.pending || holding;
   const root = useRef<HTMLDivElement>(null);
   const ring = useRef<HTMLButtonElement>(null);
   const box = useRef<HTMLDivElement>(null);
@@ -128,8 +137,39 @@ function SimplifiedView({
       reveal(known);
       return;
     }
+    spinTimer.current = window.setTimeout(() => {
+      spunAt.current = performance.now();
+      setSpinning(true);
+    }, spinDelayMs);
     const outcome = await simplification.load();
-    if (outcome) reveal(outcome);
+    clearTimeout(spinTimer.current);
+    let go = outcome !== null;
+    const rest = spunAt.current === null ? 0 : spinMinMs - (performance.now() - spunAt.current);
+    if (outcome && rest > 0) {
+      setHolding(true);
+      go = await new Promise<boolean>((resolve) => {
+        const id = window.setTimeout(() => {
+          hold.current = null;
+          resolve(true);
+        }, rest);
+        hold.current = {
+          cancel: () => {
+            clearTimeout(id);
+            hold.current = null;
+            resolve(false);
+          },
+        };
+      });
+    }
+    spunAt.current = null;
+    setSpinning(false);
+    setHolding(false);
+    if (outcome && go) reveal(outcome);
+  };
+
+  const stopWaiting = () => {
+    if (hold.current) hold.current.cancel();
+    else simplification.cancel();
   };
 
   const openRef = useRef(open);
@@ -146,6 +186,14 @@ function SimplifiedView({
     });
     return () => unregisterOpener(id);
   }, [id]);
+
+  useEffect(
+    () => () => {
+      clearTimeout(spinTimer.current);
+      hold.current?.cancel();
+    },
+    [],
+  );
 
   const close = (returnFocus: boolean) => {
     setStreaming(false);
@@ -202,19 +250,19 @@ function SimplifiedView({
       data-simplifier=""
       className={className}
       onKeyDown={(event) => {
-        if (event.key !== "Escape" || !(shown || simplification.pending)) return;
+        if (event.key !== "Escape" || !(shown || busy)) return;
         event.preventDefault();
         event.stopPropagation();
         if (shown) close(true);
-        else simplification.cancel();
+        else stopWaiting();
       }}
     >
       <div ref={root} className={`group/simplifier relative ${toneClassName[tone]}`}>
         {children}
         <span
-          className={`absolute top-simplifier-ring -right-10 z-10 max-md:-top-8.5 max-md:-right-3.5 ${visibility === "hidden" && !shown && !simplification.pending ? "hidden" : ""}`}
+          className={`absolute top-simplifier-ring -right-10 z-10 max-md:-top-8.5 max-md:-right-3.5 ${visibility === "hidden" && !shown && !busy ? "hidden" : ""}`}
         >
-          <Tooltip label={simplification.pending ? text.pending : text.mark} align="end">
+          <Tooltip label={busy ? text.pending : text.mark} align="end">
             <button
               ref={ring}
               type="button"
@@ -222,24 +270,24 @@ function SimplifiedView({
               aria-label={text.mark}
               aria-expanded={shown}
               aria-controls={mounted ? panelId : undefined}
-              aria-busy={simplification.pending}
+              aria-busy={busy}
               onPointerEnter={simplification.prefetch}
               onFocus={simplification.prefetch}
               onClick={() => {
-                if (simplification.pending) simplification.cancel();
+                if (busy) stopWaiting();
                 else if (shown) close(false);
                 else void open();
               }}
               className="group/ring hit-44 grid size-7 cursor-pointer place-items-center rounded-full opacity-0 transition-opacity duration-150 ease-standard group-hover/simplifier:opacity-100 focus-visible:opacity-100 aria-expanded:opacity-100 aria-busy:opacity-100 pointer-coarse:opacity-100 max-md:size-11 max-md:opacity-100"
             >
               <i
-                className={`block size-3.5 rounded-full simplifier-ring-line border-ink-3 transition-colors duration-150 ease-standard group-hover/ring:border-ink group-aria-expanded/ring:border-ink group-aria-expanded/ring:bg-ink ${simplification.pending ? "border-dashed" : ""}`}
+                className={`block size-3.5 rounded-full simplifier-ring-line transition-colors duration-150 ease-standard group-hover/ring:border-ink group-aria-expanded/ring:border-ink group-aria-expanded/ring:bg-ink ${busy ? (spinning ? "border-dashed border-ink simplifier-ring-turn" : "border-ink") : "border-ink-3"}`}
               />
             </button>
           </Tooltip>
         </span>
         <span role="status" className="sr-only">
-          {simplification.pending ? text.pending : content?.kind === "message" && shown ? content.text : ""}
+          {busy ? text.pending : content?.kind === "message" && shown ? content.text : ""}
         </span>
       </div>
       {mounted && content ? (
