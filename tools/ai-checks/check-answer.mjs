@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { verifyAnswer, needsRepair } from "@/features/ask/verify-answer";
+import { verifyAnswer } from "@/features/ask/verify-answer";
+import { anchoredSpan, bestSpan } from "@/features/ask/excerpt";
 import { mapAnswer } from "@/features/ask/map-answer";
 import { coverageLine } from "@/features/ask/coverage-line";
 import { clampPlan } from "@/features/ask/plan";
@@ -90,7 +91,17 @@ const pack = [
 
 const names = fatherNameForms(["Ignatius of Antioch", "Ignacio de Antioquía", "Justin Martyr", "Justino Mártir"]);
 const options = { depth: "rich", fatherNames: names };
-const model = (fields) => ({ kind: "evidence", sections: [], words: [], prose: "", followups: [], ...fields });
+const quotedForProse = [
+  { about: "bible", quotes: ["P1", "P2", "P3", "P4", "P5"].map((passage) => ({ passage, quote: "" })) },
+];
+const model = (fields) => ({
+  kind: "evidence",
+  sections: fields.prose ? quotedForProse : [],
+  words: [],
+  prose: "",
+  followups: [],
+  ...fields,
+});
 const section = (about, ...quotes) => ({ about, quotes: quotes.map(([passage, quote]) => ({ passage, quote })) });
 const run = (fields, opts = options) => verifyAnswer(model(fields), pack, opts);
 const shown = (verified) => verified.sections.flatMap((s) => s.quotes);
@@ -110,36 +121,40 @@ check("literal quote accepted", () => {
   assert.equal(shown(v).length, 1);
   assert.equal(v.failed.length, 0);
 });
-check("case differs, display keeps the edition", () => {
+check("case differs, display keeps the edition and ends the sentence", () => {
   const v = run({ sections: [section("fathers", ["P2", "they abstain from EUCHARIST (thanksgiving) and prayer"])] });
-  assert.equal(shown(v)[0].text, "They abstain from eucharist (thanksgiving) and prayer");
+  assert.ok(shown(v)[0].text.startsWith("They abstain from eucharist (thanksgiving) and prayer"));
+  assert.ok(shown(v)[0].text.endsWith("raised up."), shown(v)[0].text);
 });
 check("curly quotes accepted", () => {
   const v = run({ sections: [section("fathers", ["P5", '"This do ye in remembrance of Me, this is My body."'])] });
   assert.equal(shown(v).length, 1);
 });
-check("ellipsis with two segments", () => {
+check("anchors: first and last words give one continuous literal span", () => {
   const v = run({
-    sections: [
-      section("fathers", [
-        "P2",
-        "They abstain from eucharist (thanksgiving) and prayer … the flesh of our Saviour Jesus Christ",
-      ]),
-    ],
+    sections: [section("fathers", ["P2", "They abstain from eucharist … the flesh of our Saviour"])],
   });
-  assert.match(shown(v)[0].text, / \[…\] /);
+  const text = shown(v)[0].text;
+  assert.ok(!text.includes("[…]"));
+  assert.ok(text.startsWith("They abstain") && text.includes("flesh of our Saviour Jesus Christ"), text);
+  assert.ok(ignatius.includes(text));
 });
-check("three segments rejected", () => {
-  const v = run({
-    sections: [
-      section("fathers", ["P2", "But mark ye those who … none for the widow, none … none for the prisoner, none for"]),
-    ],
-  });
-  assert.equal(v.failed[0]?.reason, "too-many-segments");
+check("anchor starting mid-sentence snaps back to the sentence start", () => {
+  const span = anchoredSpan(ignatius, "none for the orphan, none", 80);
+  assert.ok(ignatius.slice(span[0], span[1]).startsWith("They have no care for love"));
+  assert.ok(ignatius.slice(span[0], span[1]).endsWith("thirsty."));
 });
-check("gap over 400 rejected", () => {
-  const v = run({ sections: [section("fathers", ["P6", "Alpha beta gamma delta ... zeta eta theta iota"])] });
-  assert.equal(v.failed[0]?.reason, "gap-too-long");
+check("an anchor that is not in the passage falls back to the server's excerpt", () => {
+  const v = run({ sections: [section("fathers", ["P2", "invented words for this test only"])] });
+  assert.equal(shown(v).length, 1);
+  assert.equal(v.anchorMisses, 1);
+  assert.ok(ignatius.includes(shown(v)[0].text));
+});
+check("empty anchor: the server picks whole sentences with the terms", () => {
+  const span = bestSpan(ignatius, ["eucharist", "flesh"], [], 80);
+  assert.ok(ignatius.slice(span[0], span[1]).includes("They abstain from eucharist"));
+  const short = bestSpan(justin, ["bread"], [], 40);
+  assert.ok(justin.slice(short[0], short[1]).split(/\s+/).length <= 40);
 });
 check("wrong passage id", () => {
   const v = run({ sections: [section("fathers", ["P99", "They abstain from eucharist (thanksgiving) and prayer"])] });
@@ -154,11 +169,12 @@ check("quote over maxQuoteWords cut at a sentence", () => {
 check("window offset maps to the full passage", () => {
   const v = run({ sections: [section("bible", ["P1", "Si no comiereis la carne del Hijo del hombre"])] });
   const q = shown(v)[0];
-  assert.equal(verse.slice(q.start, q.end), "Si no comiereis la carne del Hijo del hombre");
+  assert.equal(verse.slice(q.start, q.end), q.text);
+  assert.ok(q.text.includes("Si no comiereis la carne del Hijo del hombre"));
 });
 check("verdict sentence removed (es)", () => {
   const v = run({
-    sections: [section("fathers", ["P2", "They abstain from eucharist (thanksgiving) and prayer"])],
+    sections: [section("fathers", ["P2", "They abstain from eucharist (thanksgiving) and prayer"], ["P3", ""])],
     prose: "Ignacio habla de la eucaristía {P2}. Claramente tiene razón la Iglesia {P3}.",
   });
   assert.equal(v.prose, "Ignacio habla de la eucaristía {P2}.");
@@ -216,6 +232,13 @@ check("prose citing only a note as the reader's note kept", () => {
   });
   assert.equal(v.prose, "En tu nota de Juan 3:5 planteaste el nacimiento del agua {P7}.");
 });
+check("a prose citation of a passage that is not shown is dropped", () => {
+  const v = run({
+    sections: [section("fathers", ["P2", "They abstain from eucharist (thanksgiving) and prayer"])],
+    prose: "Ignacio habla de la eucaristía {P2}. Justino describe el pan {P5}.",
+  });
+  assert.equal(v.prose, "Ignacio habla de la eucaristía {P2}.");
+});
 check("sentence without a citation removed", () => {
   const v = run({ prose: "Ignacio escribe a Esmirna. Justino describe el pan {P5}." });
   assert.equal(v.prose, "Justino describe el pan {P5}.");
@@ -265,33 +288,103 @@ check("duplicate passage quoted once", () => {
   });
   assert.equal(shown(v).length, 1);
 });
-check("more than 30 % failed asks for a repair", () => {
-  const v = run({
-    sections: [
-      section(
-        "fathers",
-        ["P2", "They abstain from eucharist (thanksgiving) and prayer"],
-        ["P5", "words that are not in the passage at all"],
-      ),
-    ],
-  });
-  assert.equal(needsRepair(v), true);
+const topUpOptions = { ...options, terms: ["eucharist", "Eucaristía", "Cena", "carne"], phrases: [] };
+check("top-up: once the answer shows a tradition, every tradition in the pack gets two passages", () => {
+  const extra = [
+    passage("P8", {
+      collection: "tradition",
+      speaker: "catholic",
+      lang: "es",
+      text: "Cristo está presente en la Eucaristía de modo verdadero, real y sustancial.",
+    }),
+    passage("P9", {
+      collection: "tradition",
+      speaker: "baptist",
+      lang: "es",
+      text: "La Cena del Señor recuerda la muerte de Cristo hasta que él venga.",
+    }),
+  ];
+  const v = verifyAnswer(
+    model({
+      sections: [section("fathers", ["P2", "They abstain from eucharist"]), section("tradition:catholic", ["P3", ""])],
+    }),
+    [...pack, ...extra],
+    {
+      ...topUpOptions,
+      topUp: { namedAuthors: false, namedTraditions: false },
+    },
+  );
+  const abouts = shown(v).map((q) => (q.passage.collection === "tradition" ? q.passage.speaker : q.passage.collection));
+  assert.equal(abouts.filter((a) => a === "catholic").length, 2);
+  assert.equal(abouts.filter((a) => a === "baptist").length, 2);
+  assert.ok(!abouts.includes("mine"));
+  assert.ok(v.toppedUp >= 3);
+  for (const q of shown(v)) assert.ok(q.passage.window.includes(q.text));
 });
-check("all quotes failed asks for a repair", () => {
-  const v = run({ sections: [section("fathers", ["P2", "invented words for this test only"])] });
-  assert.equal(needsRepair(v), true);
-  assert.equal(shown(v).length, 0);
+check("top-up: never adds a tradition section the model left out", () => {
+  const v = run(
+    { sections: [section("fathers", ["P2", "They abstain from eucharist"])] },
+    { ...topUpOptions, topUp: { namedAuthors: false, namedTraditions: false } },
+  );
+  assert.ok(shown(v).every((q) => q.passage.collection === "fathers"));
 });
-check("disputed tradition emptied asks for a repair", () => {
+check("top-up: a named author keeps traditions out", () => {
+  const v = run(
+    { sections: [section("fathers", ["P2", "They abstain from eucharist"])] },
+    { ...topUpOptions, topUp: { namedAuthors: true, namedTraditions: false } },
+  );
+  assert.ok(shown(v).every((q) => q.passage.collection !== "tradition"));
+});
+check("top-up: never for brief or not found, never without the option", () => {
+  const thin = { sections: [section("fathers", ["P2", "They abstain from eucharist"])] };
+  const focus = { namedAuthors: false, namedTraditions: false };
+  assert.equal(run(thin, { ...topUpOptions, depth: "brief", topUp: focus }).toppedUp, 0);
+  assert.equal(run({ kind: "not_found" }, { ...topUpOptions, topUp: focus }).toppedUp, 0);
+  assert.equal(run(thin).toppedUp, 0);
+});
+check("a reference abbreviation does not split a prose sentence", () => {
   const v = run({
-    kind: "disputed",
-    sections: [
-      section("tradition:catholic", ["P3", "La Eucaristía es fuente y cima"]),
-      section("tradition:baptist", ["P4", "un rito inventado que no está en el texto"]),
-    ],
+    prose: "Fe y Mensaje Bautistas (art. VII) llama a la Cena un acto simbólico {P4}. Justino describe el pan {P5}.",
   });
-  assert.deepEqual(v.emptiedTraditions, ["baptist"]);
-  assert.equal(needsRepair(v), true);
+  assert.equal(
+    v.prose,
+    "Fe y Mensaje Bautistas (art. VII) llama a la Cena un acto simbólico {P4}. Justino describe el pan {P5}.",
+  );
+});
+check("the server's excerpt does not start or end inside a reference like «art. VII»", () => {
+  const text =
+    "Según Fe y Mensaje Bautistas (art. VII), los miembros participan del pan y del fruto de la vid. La misma sección presenta el bautismo como requisito.";
+  const span = bestSpan(text, ["pan", "vid"], [], 80);
+  assert.ok(text.slice(span[0], span[1]).startsWith("Según Fe y Mensaje Bautistas (art. VII)"));
+});
+check("disputed: blocks and words together stay within 24", () => {
+  const many = Array.from({ length: 30 }, (_, i) =>
+    passage(`P${i + 10}`, { text: `Common words of passage number ${i} for the cap test here` }),
+  );
+  const v = verifyAnswer(
+    model({
+      kind: "disputed",
+      sections: [section("fathers", ...many.map((p, i) => [p.id, `Common words of passage number ${i}`]))],
+      words: [{ tradition: "catholic", passage: "P3", words: "fuente y cima", quote: "" }],
+    }),
+    [...pack, ...many],
+    options,
+  );
+  assert.equal(shown(v).length + v.words.length, 24);
+});
+check("a word ending in an accented letter plus «n.» still ends its sentence", () => {
+  const v = run({
+    prose: "No corresponde decidir quién tiene razón; solo se muestra cada tradición. Justino describe el pan {P5}.",
+  });
+  assert.equal(v.prose, "Justino describe el pan {P5}.");
+});
+check("prose in the wrong language is removed", () => {
+  const v = run(
+    { prose: "Los textos católicos citan la definición del Catecismo sobre la Eucaristía y también la carne {P3}." },
+    { ...options, language: "en" },
+  );
+  assert.equal(v.prose, "");
+  assert.equal(v.removed[0]?.reason, "language");
 });
 check("disputed words verified, bad ones dropped", () => {
   const v = run({

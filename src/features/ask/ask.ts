@@ -20,15 +20,16 @@ import type { AuthorEntry, CorpusSearch, EvidencePack, PackPassage, Passage } fr
 import { windowAround } from "@/content/ai-search/windows";
 import { getAiStore } from "@/content/ai-store/get-ai-store";
 import type { AiRequestLog } from "@/content/ai-store/types";
-import { newMeter, runAnswer, runRepair, type Meter } from "@/features/ask/answer";
+import { newMeter, runAnswer, runSecondReading, type Meter } from "@/features/ask/answer";
 import { coverageLine } from "@/features/ask/coverage-line";
 import { isPastoral } from "@/features/ask/fixed-texts";
 import { fatherNameForms } from "@/features/ask/lexicon";
 import { fixedAnswer, mapAnswer } from "@/features/ask/map-answer";
 import { runPlan } from "@/features/ask/plan";
-import { needsRepair, verifyAnswer, type Verified } from "@/features/ask/verify-answer";
+import { verifyAnswer, type Verified } from "@/features/ask/verify-answer";
 
 const LOGGED_QUESTION_CHARS = 500;
+const SECOND_READING_MIN = 12;
 
 export type OpenedAsk =
   | { kind: "cached"; answer: WireAnswer; ticket: GuardTicket }
@@ -153,27 +154,26 @@ async function live(
       removed: [],
       emptiedTraditions: [],
       wordsDropped: [],
+      anchorMisses: 0,
+      toppedUp: 0,
     };
   } else {
     phase(send, "write");
-    const options = { depth: plan.depth, fatherNames: fatherNamesOf(authors), language: plan.answerLanguage };
-    const model = await runAnswer(opened.provider, trace.meter, input, plan, pack.passages);
+    const options = {
+      depth: plan.depth,
+      fatherNames: fatherNamesOf(authors),
+      language: plan.answerLanguage,
+      terms: [...plan.termsEn, ...plan.termsEs],
+      phrases: [...plan.phrasesEn, ...plan.phrasesEs],
+      topUp: { namedAuthors: plan.authors.length > 0, namedTraditions: plan.traditions.length > 0 },
+    };
+    let model = await runAnswer(opened.provider, trace.meter, input, plan, pack.passages);
+    if (model.kind === "not_found" && sources.length >= SECOND_READING_MIN && coverage.missingAuthors.length === 0) {
+      trace.checks.secondReading = true;
+      model = await runSecondReading(opened.provider, trace.meter, input, plan, pack.passages);
+    }
     phase(send, "check");
     verified = verifyAnswer(model, pack.passages, options);
-    if (needsRepair(verified)) {
-      trace.repaired = true;
-      trace.checks.firstPass = { total: verified.total, failed: verified.failed.map((item) => item.reason) };
-      const repaired = await runRepair(
-        opened.provider,
-        trace.meter,
-        input,
-        plan,
-        pack.passages,
-        model,
-        verified.failed,
-      );
-      verified = verifyAnswer(repaired, pack.passages, options);
-    }
     trace.verified = verified;
     const shown = verified.sections.reduce((sum, section) => sum + section.quotes.length, 0);
     if (verified.kind !== "not_found" && shown === 0) throw new AiError("ai_verify_failed");
@@ -246,6 +246,8 @@ function logRow(
             failed: verified.failed.map((item) => item.reason),
             removed: verified.removed.map((item) => item.reason),
             wordsDropped: verified.wordsDropped,
+            anchorMisses: verified.anchorMisses,
+            toppedUp: verified.toppedUp,
             depth: trace.plan?.depth ?? null,
             quotesShown: answer?.blocks.length ?? 0,
           }

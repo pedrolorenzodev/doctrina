@@ -10,7 +10,7 @@ import { replayKey } from "@/lib/ai/cache-keys";
 import { AiError } from "@/lib/ai/errors";
 import type { AiCallInput, AiProvider, AiUsage } from "@/lib/ai/provider";
 import type { PackPassage } from "@/content/ai-search/types";
-import { REPAIR_INSTRUCTION, answerSystem } from "@/features/ask/prompts";
+import { SECOND_READING, answerSystem } from "@/features/ask/prompts";
 
 export type Meter = {
   costMicros: number;
@@ -113,6 +113,7 @@ export function answerUser(request: AskRequest, plan: SearchPlan, passages: Pack
     `depth: ${plan.depth}`,
     `answerLanguage: ${plan.answerLanguage}`,
     `question: ${request.question}`,
+    `passagesInPack: ${passages.filter((passage) => passage.collection !== "mine").length}`,
     ...(previous ? [`previousQuestion: ${previous}`] : []),
     "",
     ...passages.map(formatPassage),
@@ -142,22 +143,14 @@ export function runAnswer(
   return callModel(provider, meter, "answer", input, modelAnswerSchema, ANSWER_TIMEOUT_MS);
 }
 
-export function runRepair(
+export function runSecondReading(
   provider: AiProvider,
   meter: Meter,
   request: AskRequest,
   plan: SearchPlan,
   passages: PackPassage[],
-  previous: ModelAnswer,
-  failed: { passage: string; quote: string }[],
 ): Promise<ModelAnswer> {
-  const list = failed.map((item) => `${item.passage}: "${item.quote}"`).join("; ");
-  const user = [
-    answerUser(request, plan, passages),
-    "",
-    `Your previous answer: ${JSON.stringify(previous)}`,
-    "",
-    REPAIR_INSTRUCTION.replace("{failed}", list),
-  ].join("\n");
-  return callModel(provider, meter, "repair", answerInput(plan, user), modelAnswerSchema, ANSWER_TIMEOUT_MS);
+  const sources = passages.filter((passage) => passage.collection !== "mine").length;
+  const user = [answerUser(request, plan, passages), "", SECOND_READING.replace("{n}", String(sources))].join("\n");
+  return callModel(provider, meter, "reread", answerInput(plan, user), modelAnswerSchema, ANSWER_TIMEOUT_MS);
 }

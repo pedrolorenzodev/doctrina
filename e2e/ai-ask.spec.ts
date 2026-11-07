@@ -60,7 +60,7 @@ test("the ask route streams phases and then a valid answer", async ({ request })
   expect(sent.at(-1)?.event).toBe("answer");
   const answer = sent.at(-1)?.data as Answer;
   expect(answer.cached).toBe(false);
-  expect(answer.promptVersion).toBe("chat-2026-11-06.1");
+  expect(answer.promptVersion).toBe("chat-2026-11-07.f");
   expect(["evidence", "disputed", "not_found"]).toContain(answer.kind);
 });
 

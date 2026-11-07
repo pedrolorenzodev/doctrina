@@ -6,7 +6,8 @@ import { collectionLabels, traditionLabels } from "@/content/ai-search/collectio
 import type { PackPassage } from "@/content/ai-search/types";
 import type { TraditionId } from "@/content/model/ids";
 import { fixedTexts } from "@/features/ask/fixed-texts";
-import { capSpans, quoteIdOf, type About, type Verified } from "@/features/ask/verify-answer";
+import { capSpans } from "@/features/ask/excerpt";
+import { quoteIdOf, type About, type Verified } from "@/features/ask/verify-answer";
 
 const CONTEXT_CHARS = 200;
 

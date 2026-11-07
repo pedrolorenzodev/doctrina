@@ -1,8 +1,8 @@
 import { z } from "zod";
 
 export const CONTRACTS_VERSION = "contracts-2026-11-06.1";
-export const PLAN_PROMPT_VERSION = "plan-2026-11-06.1";
-export const ANSWER_PROMPT_VERSION = "chat-2026-11-06.1";
+export const PLAN_PROMPT_VERSION = "plan-2026-11-07.3";
+export const ANSWER_PROMPT_VERSION = "chat-2026-11-07.f";
 export const SIMPLIFY_PROMPT_VERSION = "simplify-2026-11-07.1";
 export const JUDGE_PROMPT_VERSION = "judge-2026-11-06.1";
 export const MAX_QUESTION_CHARS = 600;
