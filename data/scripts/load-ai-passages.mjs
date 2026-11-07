@@ -226,6 +226,17 @@ export function traditionRows() {
         text: plainOf(statement.text),
       });
     }
+    page.scripture.forEach((passage, index) => {
+      const text = plainOf(passage.text);
+      if (!text) return;
+      rows.push({
+        ...base,
+        source_key: `tradition:${page.doctrine}:${page.tradition}:scripture:${index}`,
+        title: formatVerseRef(passage.refs, "es"),
+        refs: [...new Set(passage.refs)],
+        text,
+      });
+    });
     rows.push(...excerptRows(page, citationsOf(page)));
   }
   return rows;
@@ -365,6 +376,11 @@ async function existingKeys(client) {
   }
 }
 
+function onlyCollections() {
+  const flag = process.argv.find((arg) => arg.startsWith("--collections="));
+  return flag ? flag.slice("--collections=".length).split(",") : null;
+}
+
 async function load(rows, corpusVersion) {
   const client = credentials();
   try {
@@ -372,17 +388,20 @@ async function load(rows, corpusVersion) {
   } catch (error) {
     throw new Error(`ai_passages is not reachable (migration 20261106100100 applied?): ${error.message.slice(0, 160)}`);
   }
+  const only = onlyCollections();
+  const inScope = (key) => only === null || only.includes(key.split(":")[0]);
   const wanted = new Set(rows.map((row) => row.source_key));
-  const stale = (await existingKeys(client)).filter((key) => !wanted.has(key));
+  const stale = (await existingKeys(client)).filter((key) => inScope(key) && !wanted.has(key));
+  const sent = rows.filter((row) => inScope(row.source_key));
   let written = 0;
-  for (const batch of batches(rows.map((row) => ({ ...row, corpus_version: corpusVersion })))) {
+  for (const batch of batches(sent.map((row) => ({ ...row, corpus_version: corpusVersion })))) {
     await rest(client, "ai_passages?on_conflict=source_key", {
       method: "POST",
       body: batch,
       prefer: "resolution=merge-duplicates,return=minimal",
     });
     written += batch.length;
-    if (written % 5000 < BATCH_ROWS) console.log(`  upserted ${written} / ${rows.length}`);
+    if (written % 5000 < BATCH_ROWS) console.log(`  upserted ${written} / ${sent.length}`);
   }
   for (let start = 0; start < stale.length; start += 40) {
     const list = stale
