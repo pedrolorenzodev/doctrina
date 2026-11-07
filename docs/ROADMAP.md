@@ -3,6 +3,8 @@
 ## Current state
 > Overwritten at the end of every session. 15 lines max.
 
+**2026-11-07, Real AI (block INT, `docs/features/ai-real-int.md`): merged and working end to end, not launched.** The drawer's chat (`/api/ai/ask`, Haiku 5.5, search over 53,745 passages in Supabase) and the simplifier answer for real behind `NEXT_PUBLIC_AI_CHAT=real` / `NEXT_PUBLIC_SIMPLIFIER=on`; limits, kill switch and budget tested live; spend of the whole integration ≈ $0.35. **The evaluation gate FAILED** (answers show too few quotes: richEnough 11 %; one wire bug fixed since; the judge truncates), so the launch waits for Pedro's decisions in «Needs Pedro» of that file (prompt change, latency, search retries). Deploy needs his yes and the Vercel variables listed there.
+
 **2026-11-03, session B1 (words): built, frozen in the kit as blocks 219–223 (Pedro runs `apply.sh` with those numbers).** The whole-Bible word data loader, «Palabras» and «Usos» in the verse panel, the word page `/es/palabras/<id>` (screen 07), all as replicas of the approved artifact with 21 declared deviations in `docs/features/words-07.md`. Inert with a `TODO`: «En los Padres» (no original-language Father texts), the plain titles of the senses (the lexicon has only numbers, in English). Open: the research session's `sources-data-gaps.md` breaks the English-names lint (rename it); the `reader-keep-position` «A+» spec is still intermittent.
 
 **2026-11-01, seventeenth session (close).** Built and committed: the ask drawer's inside and streaming, the drawer and the tree never open together, the selected states and sliding selectors, the «Doctrinas» pages on wide screens (option C: title rail, grids, the morph with the tree, the ask drawer at 30 %). All 20 tradition pages are live as `status: draft` since 2026-10-30.
@@ -12,6 +14,8 @@
 **Tests:** the full suite (1130) passes except two intermittent specs (`reader-keep-position` «A+», the drawer's «the view follows the text»). Codex runs only on Pedro's say-so.
 
 ## Now
+
+- **Real AI, after the evaluation (2026-11-07, `docs/features/ai-real-int.md`):** Pedro decides the prompt change for richer answers, the latency and the search retry, then the evaluation is rerun (≈ $0.45); S-ENTRY (any-paragraph entry points for the simplifier) still waits for Pedro's choice among the proposal's options (`docs/research/ai/simplifier-design.md` §7.4), nothing built.
 
 **Agreed with Pedro, 2026-10-29 (queue and details):**
 - **TOP PRIORITY (Pedro, 2026-10-29 night): every dossier done and implemented on the web, as the Catholic ones. Plan: `docs/features/dossiers-to-web.md` (pipeline verify → apply → shape → import → Pedro's review; waves; capacity: Codex 80 %, Claude 14 % of the week with ~2 points left until Nov 4; questions for Pedro in its §7). Waves 0–3 done 2026-10-30 (all 20 pages live as drafts); wave 4 (objections, excerpts, 02 content) is inventory A1, A2, B1–B3.**
