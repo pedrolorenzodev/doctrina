@@ -309,16 +309,13 @@ test("a result that is not reviewed says «Generado por IA»", async ({ page }) 
   await expect(panelOf(page, 1)).not.toContainText("Texto de prueba");
 });
 
-test("both levels come in one response; switching and reopening make no new request", async ({ page }) => {
+test("one response serves a paragraph; hiding and reopening make no new request", async ({ page }) => {
   const counter = { posts: 0, gets: 0 };
   await slowRoute(page, 0, counter);
   await openPage(page);
   await bringUp(page, 1);
   await mark(page, 1).click();
   await expect(panelOf(page, 1).locator("[data-simplifier-hide]")).toBeVisible({ timeout: 12000 });
-  await page.getByRole("button", { name: "Muy simple" }).first().click();
-  await page.waitForTimeout(500);
-  await page.getByRole("button", { name: "Más claro" }).first().click();
   await panelOf(page, 1).locator("[data-simplifier-hide]").click();
   await expect(panelOf(page, 1)).toHaveCount(0);
   await mark(page, 1).click();

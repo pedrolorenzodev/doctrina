@@ -296,10 +296,6 @@ test("the label «Simplificado por IA» is visible whenever the simplified text 
   await expect(panel.locator("[data-simplifier-label]")).toHaveText("Simplificado por IA");
   await page.waitForTimeout(1200);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
-  await page.getByRole("button", { name: "Muy simple" }).first().click();
-  await page.waitForTimeout(700);
-  await expect(panel.locator("[data-simplifier-label]")).toBeVisible();
-  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 });
 
 const smyrnaeans = "/es/historia/obras/ignatius-smyrnaeans";
@@ -359,7 +355,7 @@ const catholicAndBaptist = ["eucaristia", "bautismo", "papado", "sola-scriptura"
   ["catolica", "bautista"].map((tradition) => `/es/doctrinas/${doctrine}/${tradition}`),
 );
 
-test("the 8 Catholic and Baptist pages simplify their definition and first two statements, each sentence paired with its original", async ({
+test("the 8 Catholic and Baptist pages simplify their served paragraphs in «Más claro» only, each sentence paired with its original", async ({
   browser,
 }) => {
   test.setTimeout(240000);
@@ -374,14 +370,15 @@ test("the 8 Catholic and Baptist pages simplify their definition and first two s
     );
     const rings = await page.locator("[data-simplifier-mark]").count();
     expect(rings, route).toBe(await page.locator("[data-simplifier]").count());
-    expect(rings, route).toBeGreaterThanOrEqual(3);
-    for (let index = 0; index < 3; index += 1) {
+    expect(rings, route).toBeGreaterThanOrEqual(2);
+    for (let index = 0; index < Math.min(3, rings); index += 1) {
       await bringUp(page, index);
       await mark(page, index).click();
       const panel = page.locator(container(index)).locator("[data-simplifier-panel]");
       await expect(panel.locator("[data-simplifier-label]"), route).toHaveText("Simplificado por IA");
-      for (const level of ["Más claro", "Muy simple"]) {
-        await panel.getByRole("button", { name: level }).click();
+      await expect(panel.getByRole("button", { name: "Muy simple" }), route).toHaveCount(0);
+      await expect(panel.getByRole("button", { name: "Más claro" }), route).toHaveCount(0);
+      for (const level of ["Más claro"]) {
         const sups = panel.locator("[data-simplifier-text] sup");
         const count = await sups.count();
         expect(count, `${route} ${index} ${level}`).toBeGreaterThan(0);
@@ -417,7 +414,9 @@ const oneMotionPages = [
 ];
 
 for (const { route, index } of oneMotionPages) {
-  test(`${route}: the content below moves in one motion on open, close, reopen and level change`, async ({ page }) => {
+  test(`${route}: the content below moves in one motion on open, close, reopen and, where there are levels, level change`, async ({
+    page,
+  }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(route, { waitUntil: "networkidle" });
     await page.evaluate(() => document.fonts.ready);
@@ -440,6 +439,7 @@ for (const { route, index } of oneMotionPages) {
     const panel = page.locator(container(index)).locator("[data-simplifier-panel]");
     const heightBefore = (await panel.boundingBox())!.height;
     await page.waitForTimeout(300);
+    if ((await panel.getByRole("button", { name: "Muy simple" }).count()) === 0) return;
     const frames = await sampled(() => panel.locator("button").nth(1).click());
     if (Math.abs((await panel.boundingBox())!.height - heightBefore) > 2) expectOneMotion(frames);
   });

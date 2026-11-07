@@ -3,13 +3,46 @@
 **Proposal (private Artifact):** https://claude.ai/artifact/RAAujgg9cZ6EoZhxV2Qqir (source: `docs/research/proposals/simplifier-entry/index.html`)
 
 ## State
-- **Done:** Step 1 (proposal), Step 2 (A·1 + B built) and the follow-up: the two broken specs fixed, the four other failures classified against a clean clone of the real tree, the switch's hover colour reverted, the design note for reviewed-only pages written (nothing built for it).
-- **In progress:** nothing.
-- **Verification now:** `npm run verify` exit 0; `e2e/simplifier-entry.spec.ts` 11 of 11; in `simplifier-real.spec.ts`, `simplifier.spec.ts` and `early-christians.spec.ts` the only failures left are the ones that also fail on the clean base or come from my duplicate's older source (table in «Existing specs»).
-- **Needs Pedro:** see «Needs Pedro» (first item: the smooth scroll to the highlighted words).
-- **Not verified:** touch devices, iOS long-press selection, screen readers, WebKit and Firefox.
-- **How to resume:** read this State; `source ~/.nvm/nvm.sh && nvm use`; `NEXT_PUBLIC_SIMPLIFIER=on npm run build`; `E2E_PORT=3150 npm run e2e -- e2e/simplifier-entry.spec.ts --project=chromium`.
-- **Cap:** 28 % weekly. Weekly reading at the end of the follow-up: 24 %. Money spent on the API: 0 (`AI_PROVIDER=fake`).
+- **Hecho (2026-11-08, noche):** panel de un solo nivel y círculos atados al manifiesto, sobre un clon fresco del repo real (`doctrina-ai-sentry2`, puerto 3150). `npm run verify` pasa (exit 0). Specs del simplificador: 61 pasan, 3 saltados, 1 falla (el rojo conocido de «switching the level cross-fades…», que también falla en la base).
+- **En curso:** nada.
+- **Needs Pedro:** (1) el scroll suave al resaltado y los 3 px del círculo de escritorio, ya anotados abajo; (2) las tarjetas «connected» de 02 y el glosario siguen sin círculo (ver «Calls» 2 y 3 de esta tanda).
+- **No verificado:** dispositivos táctiles, lectores de pantalla, WebKit y Firefox; no corrí la suite completa de Playwright, solo los cinco archivos del simplificador.
+- **Cómo retomar:** `source ~/.nvm/nvm.sh && nvm use`; `NEXT_PUBLIC_SIMPLIFIER=on npm run build`; `AI_PROVIDER=fake AI_STORE=memory npx next start -p 3150`; `E2E_PORT=3150 npm run e2e -- e2e/simplifier-levels.spec.ts --project=chromium`.
+- **Tope:** 45 % semanal; lecturas: 18:55 → 35 %, 19:07 → 35 %, 19:14 → 35 %. Sin gasto de API.
+
+### Qué cambió en esta tanda
+| Qué | Antes | Ahora |
+|---|---|---|
+| Panel en tradición, 02 | selector «Más claro – Muy simple» y dos textos | sin selector, solo «Más claro»; el encabezado queda con «Simplificado por IA» a la izquierda; el resto del panel igual |
+| Panel de los Padres | selector de dos niveles | igual (sin cambios) |
+| Panel de error en tradición, 02 | con selector | sin selector (se decide por el tipo de dirección) |
+| Círculos en tradición y 02 | en todos los párrafos | solo en los que `isSimplificationServed` dice que sí (eucaristía católica: 3; 02 de eucaristía: 6) |
+| Círculos en los Padres | todo párrafo que pasa `canSimplify` | igual |
+| Interruptor de la fila de la ruta | siempre en tradición y 02 | solo si la página tiene al menos un párrafo servible |
+| Condición vieja `getSimplifiedText` | ya no estaba en los call sites | sin cambios; solo la usa el sembrado de pruebas del servidor |
+
+### Calls de esta tanda (para vetar)
+1. **El manifiesto se lee del lado del servidor, en las páginas.** Las páginas de tradición y de 02 siguen siendo Server Components: cada una llama a `servedIdsOf(...)` (nuevo `src/features/doctrine/served-paragraphs.ts`, que usa `isSimplificationServed`) y le pasa a cada sección un `served: ReadonlySet<string>` con los ids servidos (`addressId`). Ningún cliente toca el manifiesto ni hace pedidos para saberlo. Con el flag apagado el conjunto es vacío.
+2. **«connected» de 02 no tiene círculo.** Cada tarjeta es un enlace o un botón entero; un círculo adentro sería un botón dentro de un enlace (interactivo anidado) y llevaría a otra página al tocarlo. Es una interfaz sin definición precisa: necesita una propuesta (regla principal de AGENTS). Las 4 entradas «connected» del manifiesto quedan sin círculo.
+3. **El glosario no tiene círculo todavía.** El manifiesto no tiene entradas de glosario (no está generado) y sus citas son `blockquote` con otro rol tipográfico; `SimplifiedParagraph` solo conoce los tonos `prose`, `definition` y `reader`. Pedido para el componente: un cuarto tono `quote`. Cuando haya entradas, hay que atarlas igual a `isSimplificationServed`.
+4. **Interruptor en una página sin nada servible: se oculta** (no se muestra inerte). Es lo que dejé escrito en la nota de diseño anterior, y un control que no cambia nada es un control muerto. Hoy ninguna página publicada cae en ese caso (todas tienen entre 2 y 8 párrafos servidos), así que no hay e2e de esa rama.
+5. **Qué decide «un solo nivel».** En el panel: la respuesta trae `levels: ["clear"]` (la lee `use-simplification.ts` y la guarda en `SimplifiedEntry.levels`); si no hay respuesta (estado de error o rechazo), se decide por el tipo de dirección (todo lo que no sea `father` es de un nivel). Texto y claves de nivel de cada párrafo se calculan por párrafo (`shownLevel`), así que la memoria de nivel (`simplifier-memory.ts`) de un párrafo de los Padres nunca se aplica a uno de tradición.
+6. **Conflicto con el Artifact (no resuelto):** el diseño aprobado muestra siempre el selector de dos niveles; el panel de un solo nivel es un estado nuevo que Pedro aprobó por mensaje. Lo único que cambia es que el selector no se dibuja; ningún otro elemento del encabezado se movió.
+7. **Specs actualizados de forma mecánica:** `simplifier-entry` («solo los párrafos servidos tienen círculo»), `simplifier-real` («una respuesta sirve un párrafo; ocultar y reabrir no hacen otro pedido»: se quitaron los dos clics de nivel), `simplifier` («las 8 páginas…»: ahora «Más claro» solo, sin selector, hasta 3 párrafos servidos; «label»: sin el clic en «Muy simple»; «un solo movimiento»: el cambio de nivel solo si hay selector). El rojo conocido «switching the level cross-fades…» ahora falla también por falta de selector en la página de tradición; para que vuelva a significar algo habría que apuntarlo a un párrafo de los Padres (no lo hice: ya estaba rojo).
+8. **Dos tests dependen de la carga de la máquina** (`simplifier-loading` «a fast answer…» y `simplifier` «las 8 páginas…») y fallaron una vez con 3 workers; con 2 workers pasan.
+
+### Archivos y puntos de edición (esta tanda)
+- Nuevo: `src/features/doctrine/served-paragraphs.ts`, `e2e/simplifier-levels.spec.ts`.
+- `src/components/simplifier/simplified-panel.tsx` (prop `singleLevel`; el selector no se dibuja), `simplified-paragraph.tsx` (`singleLevel`, `shownLevel`, guarda en `chooseLevel`), `use-simplification.ts` (lee `levels`), `src/lib/simplifier-types.ts` (`SimplifiedEntry.levels?`).
+- `src/features/doctrine/teach-section.tsx`, `common-section.tsx`, `answers-section.tsx` (prop `served`; la condición del `SimplifiedParagraph`), `src/app/[lang]/doctrines/[doctrine]/page.tsx` y `[tradition]/page.tsx` (`servedIdsOf`, `served`, y `aside` solo si `served.size > 0`).
+- Specs: `e2e/simplifier-entry.spec.ts`, `e2e/simplifier-real.spec.ts`, `e2e/simplifier.spec.ts`.
+
+### Comandos de commit (repo real)
+```
+git add src/lib/simplifier-types.ts src/components/simplifier/use-simplification.ts src/components/simplifier/simplified-panel.tsx src/components/simplifier/simplified-paragraph.tsx && git commit -m "feat(simplifier): show one level when the answer has only clear"
+git add src/features/doctrine/served-paragraphs.ts src/features/doctrine/teach-section.tsx src/features/doctrine/common-section.tsx src/features/doctrine/answers-section.tsx "src/app/[lang]/doctrines/[doctrine]/page.tsx" "src/app/[lang]/doctrines/[doctrine]/[tradition]/page.tsx" && git commit -m "feat(simplifier): ring only the paragraphs the manifest serves"
+git add e2e/simplifier-levels.spec.ts e2e/simplifier-entry.spec.ts e2e/simplifier-real.spec.ts e2e/simplifier.spec.ts docs/features/ai-real-sentry.md && git commit -m "test(simplifier): cover single-level panels and manifest rings"
+```
 
 ## Pedro's decision (his words, for DECISIONS)
 «Me gustó mucho el concepto de la opción "A" (Interruptor en «Aa» · A·1 Arriba, en la fila de la ruta), que sea una elección para todo el sitio (el switch de habilitar para simplificar) de la forma que recomienda el agente, y que al activar la función, los círculos se muestren 2 s.»

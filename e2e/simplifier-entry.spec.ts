@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
 import { horizontalOverflow, preferEnglishFatherEdition, traditionPath } from "./helpers";
 
@@ -72,14 +73,16 @@ test.describe("simplifier entry: the switch", () => {
     ).toBe(1);
   });
 
-  test("the choice survives a reload, and every statement of the page gets a ring", async ({ page }) => {
+  test("the choice survives a reload, and only the served paragraphs get a ring", async ({ page }) => {
     await open(page, traditionPath);
     await routeSwitch(page).click();
     await page.reload({ waitUntil: "networkidle" });
     await expect(routeSwitch(page)).toHaveAttribute("aria-checked", "true");
     expect(await page.evaluate((key) => localStorage.getItem(key), storageKey)).toBe("on");
-    const statements = await page.locator("[data-simplifier]").count();
-    expect(statements).toBeGreaterThan(5);
+    const served = [
+      ...readFileSync("src/content/simplified-manifest.ts", "utf8").matchAll(/^ {2}"eucharist\/catholic\/[^"]+":/gm),
+    ];
+    expect(await page.locator("[data-simplifier]").count()).toBe(served.length);
   });
 
   test("works from the keyboard", async ({ page }) => {
