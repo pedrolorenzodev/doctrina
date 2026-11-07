@@ -18,6 +18,7 @@ PRICES = {
     "opus": {"input": 4.00, "output": 20.00, "cache_read": 0.20, "cache_write": 5.00},
 }
 FIELDS = ("input", "output", "cache_read", "cache_write")
+SPANS = {}
 
 
 def family(model):
@@ -85,7 +86,7 @@ def collect(since, until, project):
                 }
                 current = best.get(key)
                 if current is None:
-                    best[key] = (session, model, tokens)
+                    best[key] = (session, model, tokens, when)
                 else:
                     for field in FIELDS:
                         current[2][field] = max(current[2][field], tokens[field])
@@ -95,7 +96,10 @@ def collect(since, until, project):
 def summarise(rows):
     by_model = collections.defaultdict(lambda: dict.fromkeys(FIELDS, 0))
     by_session = collections.defaultdict(float)
-    for session, model, tokens in rows:
+    for session, model, tokens, when in rows:
+        span = SPANS.setdefault(session, [when, when])
+        span[0] = min(span[0], when)
+        span[1] = max(span[1], when)
         for field in FIELDS:
             by_model[model][field] += tokens[field]
         by_session[session] += dollars(tokens, family(model))
@@ -136,6 +140,13 @@ def print_summary(by_model, by_session, title):
             f" · cache write {tokens['cache_write']:,} · ${cost:,.2f}{known}"
         )
     print(f"  total equivalent cost: ${total:,.2f} across {len(by_session)} sessions")
+    minutes = 0.0
+    for name, cost in sorted(by_session.items(), key=lambda item: SPANS[item[0]][0]):
+        first, last = SPANS[name]
+        length = (last - first).total_seconds() / 60
+        minutes += length
+        print(f"    session {name[:8]}: first message {first.astimezone():%H:%M}, last {last.astimezone():%H:%M} ({length:.0f} min of activity), ${cost:,.2f}")
+    print(f"  session-minutes of activity (from the first to the last message of each session): {minutes:.0f}")
     return total
 
 
@@ -163,7 +174,7 @@ def command_report(args):
     by_model, by_session = summarise(rows)
     total = print_summary(by_model, by_session, f"{args.label}: {since:%a %d %H:%M} to {until:%a %d %H:%M} UTC")
     if end:
-        crossed = start["weekly_resets"] != end["weekly_resets"]
+        crossed = start["weekly_resets"][:13] != end["weekly_resets"][:13]
         delta = end["weekly"] - start["weekly"]
         print(f"  weekly counter: {start['weekly']:.0f} % -> {end['weekly']:.0f} % = {delta:+.0f} points" + ("  (RESET CROSSED: unusable)" if crossed else ""))
         if delta > 0 and not crossed:
