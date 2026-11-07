@@ -1,70 +1,57 @@
-import { addressId, simplifyAddressSchema, simplifyRequestSchema, type SimplifyResponse } from "@/lib/ai/contracts";
-import { AiError, aiErrorBody, aiErrorStatus } from "@/lib/ai/errors";
-import { ESTIMATE_MICROS } from "@/lib/ai/contracts";
-import { getSimplifiedText } from "@/content/simplified-texts";
-import { guardRequest, settleTicket, type GuardTicket } from "@/content/ai-guard/guard";
+import { parseAddress } from "@/content/ai-simplify/resolve-address";
+import { cachedSimplification, simplifyParagraph, type SimplifyOutcome } from "@/features/simplify/simplify";
+import { AiError, aiErrorBody, aiErrorStatus, type AiErrorCode } from "@/lib/ai/errors";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 type Locale = "es" | "en";
 
-function failure(error: unknown, locale: Locale, ticket: GuardTicket | null): Response {
-  const code = error instanceof AiError ? error.code : "ai_misconfigured";
-  const response = Response.json(aiErrorBody(code, locale, "simplify"), { status: aiErrorStatus[code] });
-  if (ticket?.setCookie) response.headers.append("Set-Cookie", ticket.setCookie);
+const localeOf = (value: unknown): Locale => (value === "en" ? "en" : "es");
+
+function reply(outcome: SimplifyOutcome, locale: Locale, empty: number): Response {
+  const response = outcome.error
+    ? Response.json(aiErrorBody(outcome.error, locale, "simplify"), { status: aiErrorStatus[outcome.error] })
+    : outcome.body
+      ? Response.json(outcome.body)
+      : new Response(null, { status: empty });
+  response.headers.set("Cache-Control", "no-store");
+  if (outcome.setCookie) response.headers.append("Set-Cookie", outcome.setCookie);
   return response;
 }
 
-function respond(address: Parameters<typeof addressId>[0], cached: boolean): SimplifyResponse {
-  const entry = getSimplifiedText(addressId(address));
-  if (!entry) throw new AiError("ai_not_found");
-  return {
-    lang: entry.lang,
-    original: entry.original,
-    clear: entry.clear,
-    very: entry.very,
-    status: "generated",
-    cached,
-  };
+function refused(error: unknown, locale: Locale): Response {
+  const code: AiErrorCode = error instanceof AiError ? error.code : "ai_bad_request";
+  return reply({ body: null, error: code, setCookie: null }, locale, 400);
 }
 
-// TODO(S-SRV): replace this stub with the real simplifier route.
 export async function POST(request: Request): Promise<Response> {
-  let locale: Locale = "es";
-  let ticket: GuardTicket | null = null;
+  const raw = (await request.json().catch(() => null)) as { address?: unknown; locale?: unknown } | null;
+  const locale = localeOf(raw?.locale);
   try {
-    const raw: unknown = await request.json().catch(() => null);
-    if ((raw as { locale?: unknown } | null)?.locale === "en") locale = "en";
-    const parsed = simplifyRequestSchema.safeParse(raw);
-    if (!parsed.success) throw new AiError("ai_bad_request");
-    locale = parsed.data.locale;
-    ticket = await guardRequest(request, "simplify", ESTIMATE_MICROS.simplify);
-    const response = Response.json(respond(parsed.data.address, false));
-    if (ticket.setCookie) response.headers.append("Set-Cookie", ticket.setCookie);
-    return response;
+    if (raw?.locale !== "es" && raw?.locale !== "en") throw new AiError("ai_bad_request");
+    const address = parseAddress(raw.address);
+    return reply(await simplifyParagraph(request, { address, locale }), locale, 500);
   } catch (error) {
-    return failure(error, locale, ticket);
-  } finally {
-    if (ticket) await settleTicket(ticket, 0);
+    return refused(error, locale);
   }
 }
 
 export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url);
-  const locale: Locale = url.searchParams.get("locale") === "en" ? "en" : "es";
+  const locale = localeOf(url.searchParams.get("locale"));
   try {
     if (url.searchParams.get("cacheOnly") !== "1") throw new AiError("ai_bad_request");
-    const raw = url.searchParams.get("address");
-    if (!raw) throw new AiError("ai_bad_request");
-    const address = simplifyAddressSchema.safeParse(JSON.parse(Buffer.from(raw, "base64url").toString("utf8")));
-    if (!address.success) throw new AiError("ai_bad_request");
+    const encoded = url.searchParams.get("address") ?? "";
+    let raw: unknown = null;
     try {
-      return Response.json(respond(address.data, true));
+      raw = JSON.parse(Buffer.from(encoded, "base64url").toString("utf8"));
     } catch {
-      return new Response(null, { status: 204 });
+      throw new AiError("ai_bad_request");
     }
+    const address = parseAddress(raw);
+    return reply(await cachedSimplification(request, { address, locale }), locale, 204);
   } catch (error) {
-    return failure(error instanceof SyntaxError ? new AiError("ai_bad_request") : error, locale, null);
+    return refused(error, locale);
   }
 }
