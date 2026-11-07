@@ -112,6 +112,34 @@ test.describe("Fathers' reader: the AI chat", () => {
     await page.waitForURL(/obras\/ignatius-smyrnaeans#d-6\.2$/);
   });
 
+  test("in real mode a typed question with a keyword goes to the live route; a pastoral one stays fixed", async ({
+    page,
+  }) => {
+    test.skip(process.env.NEXT_PUBLIC_AI_CHAT !== "real", "needs a build with NEXT_PUBLIC_AI_CHAT=real");
+    const questions: string[] = [];
+    await page.route("**/api/ai/ask", (route) => {
+      questions.push((route.request().postDataJSON() as { question: string }).question);
+      return route.fulfill({
+        status: 503,
+        contentType: "application/json",
+        body: JSON.stringify({ code: "ai_disabled", message: "La IA está apagada por ahora.", retry: false }),
+      });
+    });
+    await open(page, "/es/historia/obras/ignatius-smyrnaeans");
+    await click(page, askButton);
+    await expect(page.locator(drawer)).toHaveAttribute("data-open", "true");
+    await page.locator(`${drawer} textarea`).fill("¿Qué dicen los padres sobre la iglesia?");
+    await page.keyboard.press("Enter");
+    await expect(page.locator("[data-ask-answer]")).toContainText("La IA está apagada por ahora.", { timeout: 8000 });
+    expect(questions).toEqual(["¿Qué dicen los padres sobre la iglesia?"]);
+    await page.locator(`${drawer} textarea`).fill("quiero confesarme");
+    await page.keyboard.press("Enter");
+    await expect(page.locator("[data-ask-meta]").last()).toHaveText("Texto fijo de Doctrina. No lo escribe la IA.", {
+      timeout: 8000,
+    });
+    expect(questions).toHaveLength(1);
+  });
+
   test("a free question with no passage says there is no answer, and a pastoral one gets the fixed text", async ({
     page,
   }) => {

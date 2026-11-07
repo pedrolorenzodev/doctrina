@@ -494,6 +494,7 @@ test.describe("ask drawer: conversation", () => {
   });
 
   test("«¿Quién tiene razón?» gets the disputed answer, never a verdict", async ({ page }) => {
+    test.skip(process.env.NEXT_PUBLIC_AI_CHAT === "real", "typed free questions go to the live route in real mode");
     await openDrawer(page);
     await page.locator("[data-ask-content] textarea").fill("¿Quién tiene razón?");
     await page.keyboard.press("Enter");
@@ -533,6 +534,7 @@ test.describe("ask drawer: conversation", () => {
   });
 
   test("the words answer marks the repeated words in 6:51 and 6:53 behind the text", async ({ page }) => {
+    test.skip(process.env.NEXT_PUBLIC_AI_CHAT === "real", "typed free questions go to the live route in real mode");
     await openDrawer(page);
     await page.locator(`${drawer} textarea`).fill("¿Qué palabras de 6:51 vuelven en 6:53?");
     await page.keyboard.press("Enter");

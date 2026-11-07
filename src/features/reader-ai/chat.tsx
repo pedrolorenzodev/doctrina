@@ -408,6 +408,10 @@ export function Chat({
       return;
     }
     let id: AnswerId = chip === null ? script.route(typed ?? "") : chip === "scopeFix" ? "fathers" : chip;
+    if (live && chip === null && id !== "pastoral") {
+      askLive(typed ?? "", null);
+      return;
+    }
     let currentScope = scope;
     if (chip === "scopeFix") {
       onScopeFix();
@@ -415,10 +419,6 @@ export function Chat({
     }
     if (id === "fathers" && (currentScope === "chapter" || currentScope === "bible")) id = "scopeMiss";
     if (id === "mine" && !notesOn) id = "none";
-    if (live && chip === null && id === "none") {
-      askLive(typed ?? "", null);
-      return;
-    }
     onAsk();
     stop.current = false;
     following.current = true;

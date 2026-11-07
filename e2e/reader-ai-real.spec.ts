@@ -107,6 +107,48 @@ test.describe("ask drawer: real answers", () => {
     expect(bodies[0]!.here).toMatchObject({ kind: "bible", book: "John", chapter: 6 });
   });
 
+  for (const typed of ["¿Qué dijeron los Padres sobre este capítulo?", "¿Qué piensa la iglesia de esto?"]) {
+    test(`a typed question with a keyword of the old router goes to the live route: ${typed}`, async ({ page }) => {
+      const questions: string[] = [];
+      await page.route("**/api/ai/ask", (route) => {
+        questions.push((route.request().postDataJSON() as { question: string }).question);
+        return stream(route, wireAnswer(2));
+      });
+      await openDrawer(page);
+      await ask(page, typed);
+      await expect(page.locator(`${answers} blockquote`)).toHaveCount(2, { timeout: 8000 });
+      expect(questions).toEqual([typed]);
+    });
+  }
+
+  test("a suggestion chip still shows its prepared answer without calling the server", async ({ page }) => {
+    let calls = 0;
+    await page.route("**/api/ai/ask", (route) => {
+      calls += 1;
+      return stream(route, wireAnswer(2));
+    });
+    await openDrawer(page);
+    await page.locator("[data-ask-suggestions] button").first().click();
+    await expect(page.locator(answers)).toContainText(/\S/, { timeout: 8000 });
+    await page.waitForTimeout(600);
+    expect(calls).toBe(0);
+  });
+
+  test("a pastoral phrase typed in real mode still gets the fixed text without calling the server", async ({
+    page,
+  }) => {
+    let calls = 0;
+    await page.route("**/api/ai/ask", (route) => {
+      calls += 1;
+      return stream(route, wireAnswer(2));
+    });
+    await openDrawer(page);
+    await ask(page, "quiero confesarme");
+    await expect(page.locator("[data-ask-meta]")).toHaveText("Texto fijo de Doctrina. No lo escribe la IA.");
+    await page.waitForTimeout(400);
+    expect(calls).toBe(0);
+  });
+
   test("a prose citation opens the citation window with «Abrir la fuente completa» to the work", async ({ page }) => {
     await page.route("**/api/ai/ask", (route) => stream(route, wireAnswer(2)));
     await openDrawer(page);
