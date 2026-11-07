@@ -9,7 +9,7 @@ export const JUDGE_ADDENDUM =
 export const JUDGE_SYSTEM = `${JUDGE_BASE}${JUDGE_ADDENDUM}`;
 
 const MAX_QUOTE_CHARS = 500;
-const JUDGE_MAX_TOKENS = 300;
+const JUDGE_MAX_TOKENS = 1000;
 
 function displayedQuotes(answer) {
   const ids = new Set();

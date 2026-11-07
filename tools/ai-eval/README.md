@@ -57,7 +57,7 @@ Displayed quotes are the ones used by a block, a `words` entry or a prose token;
 
 ## Judge (`--judge`)
 
-Runs inside the harness through `getAiProvider()` with role `judge`, `maxTokens` 300 (one retry at 1.5× on `max_tokens`). The system prompt is the one of the brief, verbatim (`JUDGE_BASE` in `judge.mjs`), plus one sentence asking for two more fields the 2026-11-06 amendment needs: `irrelevantQuotes` (ids of displayed quotes that do not bear on the question) and `notBiasedByNotes`. The schema is `judgeSchema` plus those two fields. Advisory: a judge `false` never fails a question, it shows in the report and in the gate lines of the human-read set.
+Runs inside the harness through `getAiProvider()` with role `judge`, `maxTokens` 1,000 (one retry at 1.5× on `max_tokens`). The system prompt is the one of the brief, verbatim (`JUDGE_BASE` in `judge.mjs`), plus one sentence asking for two more fields the 2026-11-06 amendment needs: `irrelevantQuotes` (ids of displayed quotes that do not bear on the question) and `notBiasedByNotes`. The schema is `judgeSchema` plus those two fields. Advisory: a judge `false` never fails a question, it shows in the report and in the gate lines of the human-read set.
 
 ## Report
 

@@ -424,7 +424,7 @@ const cut = await judgeAnswer(byId("v01"), fixture, {
       costMicros: 100,
       latencyMs: 1,
       model: "m",
-      stopReason: input.maxTokens >= 450 ? "end" : "max_tokens",
+      stopReason: input.maxTokens >= 1500 ? "end" : "max_tokens",
     };
   },
 });
@@ -444,7 +444,7 @@ await judgeAnswer(byId("v01"), fixture, {
 });
 expect(
   seenInput[0].role === "judge" &&
-    seenInput[0].maxTokens === 300 &&
+    seenInput[0].maxTokens === 1000 &&
     seenInput[0].cacheSystem === true &&
     seenInput[0].system === JUDGE_SYSTEM,
   "judge call parameters",
