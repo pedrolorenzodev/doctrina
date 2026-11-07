@@ -19,22 +19,36 @@ function connection(): Connection {
   return { url, key };
 }
 
-async function call<T>(path: string, init?: { body: unknown }): Promise<T> {
+const RETRY_AFTER_MS = 400;
+
+type Fetch = typeof fetch;
+
+export async function callRest<T>(path: string, init?: { body: unknown }, fetchImpl: Fetch = fetch): Promise<T> {
   const { url, key } = connection();
-  let response: Response;
-  try {
-    response = await fetch(`${url}/rest/v1/${path}`, {
+  const once = () =>
+    fetchImpl(`${url}/rest/v1/${path}`, {
       method: init ? "POST" : "GET",
       headers: { apikey: key, "Content-Type": "application/json" },
       ...(init ? { body: JSON.stringify(init.body) } : {}),
       cache: "no-store",
     });
+  let response: Response;
+  try {
+    response = await once();
+    if (response.status >= 500) {
+      console.error(`[ai] search 5xx ${response.status}`);
+      await new Promise((resolve) => setTimeout(resolve, RETRY_AFTER_MS));
+      response = await once();
+      if (response.status >= 500) console.error(`[ai] search 5xx ${response.status}`);
+    }
   } catch {
     throw new AiError("ai_provider_down");
   }
   if (!response.ok) throw new AiError(response.status >= 500 ? "ai_provider_down" : "ai_misconfigured");
   return (await response.json()) as T;
 }
+
+const call = <T>(path: string, init?: { body: unknown }) => callRest<T>(path, init);
 
 type Ranked = PassageRow & { rank: number };
 

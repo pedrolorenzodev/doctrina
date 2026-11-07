@@ -1,5 +1,6 @@
 import { biblePassage, osisParts, passageFromRow } from "@/content/ai-search/collections";
 import { buildPack } from "@/content/ai-search/pack";
+import { callRest } from "@/content/ai-search/supabase-search";
 import { fixtureSearch } from "@/content/ai-search/fixture-search";
 import { scoreText, windowAround } from "@/content/ai-search/windows";
 import fixture from "../../src/content/ai-search/fixture-passages.json" with { type: "json" };
@@ -488,6 +489,47 @@ check(
   "licence words for short quotes",
   passageFromRow({ ...row, licence: "short-quote", max_quote_words: 40 }, "es").editionLabel.includes("Cita breve"),
 );
+
+const restEnv = { url: process.env.NEXT_PUBLIC_SUPABASE_URL, key: process.env.SUPABASE_SECRET_KEY };
+process.env.NEXT_PUBLIC_SUPABASE_URL = "http://supabase.test";
+process.env.SUPABASE_SECRET_KEY = "test-key";
+const logged = [];
+const consoleError = console.error;
+console.error = (line) => logged.push(String(line));
+const replies = (...statuses) => {
+  const seen = [];
+  const fetchImpl = async () => {
+    const status = statuses[Math.min(seen.length, statuses.length - 1)];
+    seen.push(status);
+    return new Response(JSON.stringify([{ ok: status }]), { status });
+  };
+  return { seen, fetchImpl };
+};
+const once503 = replies(503, 200);
+const recovered = await callRest("rpc/ai_search_passages", { body: {} }, once503.fetchImpl);
+check("search 5xx is retried once and recovers", once503.seen.join() === "503,200" && recovered[0].ok === 200);
+const twice = replies(500, 502);
+const down = await callRest("rpc/ai_search_passages", { body: {} }, twice.fetchImpl).then(
+  () => null,
+  (error) => error.code,
+);
+check("search 5xx twice is ai_provider_down", down === "ai_provider_down" && twice.seen.length === 2);
+const client = replies(400);
+const misconfigured = await callRest("rpc/ai_search_passages", { body: {} }, client.fetchImpl).then(
+  () => null,
+  (error) => error.code,
+);
+check("search 4xx is not retried", misconfigured === "ai_misconfigured" && client.seen.length === 1);
+check(
+  "search 5xx logs one line per failure without secrets",
+  logged.join("|") === "[ai] search 5xx 503|[ai] search 5xx 500|[ai] search 5xx 502" &&
+    !logged.join().includes("test-key"),
+);
+console.error = consoleError;
+if (restEnv.url === undefined) delete process.env.NEXT_PUBLIC_SUPABASE_URL;
+else process.env.NEXT_PUBLIC_SUPABASE_URL = restEnv.url;
+if (restEnv.key === undefined) delete process.env.SUPABASE_SECRET_KEY;
+else process.env.SUPABASE_SECRET_KEY = restEnv.key;
 
 if (failures.length) throw new Error(failures.slice(0, 25).join("\n"));
 console.log(`ok ${checks} checks`);
