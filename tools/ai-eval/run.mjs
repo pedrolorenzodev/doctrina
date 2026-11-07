@@ -331,15 +331,81 @@ function checkLimits(question, answer, ids) {
   );
 }
 
+const SOURCE_OF_PREFIX = {
+  bible: "bible",
+  fathers: "fathers",
+  tradition: "traditions",
+  doctrine: "doctrine",
+  glossary: "glossary",
+  mine: "notes",
+};
+const FOCUSED_TAGS = new Set([
+  "verse-anchored",
+  "named-father",
+  "named-tradition",
+  ...TRADITIONS_WITH_PAGES,
+  "pentecostal",
+]);
+const QUOTED = /“[^”]*”|«[^»]*»|"[^"]*"/gu;
+const BARE_SHARE = 0.6;
+
+export function sourceOf(key) {
+  return SOURCE_OF_PREFIX[key.split(":")[0]] ?? null;
+}
+
+export function quotedShare(text) {
+  const letters = (value) => (value.match(/\p{L}/gu) ?? []).length;
+  const total = letters(text);
+  if (total === 0) return 0;
+  return [...text.matchAll(QUOTED)].reduce((sum, match) => sum + letters(match[0]), 0) / total;
+}
+
+function isGeneral(question) {
+  return !(question.expect.sources?.length > 0) && !question.tags.some((tag) => FOCUSED_TAGS.has(tag));
+}
+
+function checkScopeFaithful(question, answer, ids) {
+  const sources = question.expect.sources;
+  const traditions = question.expect.traditions;
+  if (!sources?.length && !traditions?.length) return null;
+  return ids.every((id) => {
+    const quote = answer.quotes[id];
+    const source = sourceOf(quote.key);
+    if (source === "notes") return true;
+    if (sources?.length && !sources.includes(source)) return false;
+    if (traditions?.length && source === "traditions" && !traditions.includes(quote.speaker)) return false;
+    return true;
+  });
+}
+
+function checkNotBareQuotation(question, answer, ids) {
+  const fathers = ids.filter((id) => answer.quotes[id].key.startsWith("fathers:"));
+  if (fathers.length === 0) return null;
+  return fathers.every((id) => quotedShare(answer.quotes[id].text) <= BARE_SHARE);
+}
+
+function checkTraditionsRequested(question, answer, ids) {
+  const wanted = question.expect.traditions;
+  if (!wanted?.length) return null;
+  return wanted.every((tradition) => {
+    const shown = ids.some((id) => answer.quotes[id].speaker === tradition);
+    const named = TRADITION_NAMES[tradition]?.test(answer.scope ?? "") ?? /pentecost/iu.test(answer.scope ?? "");
+    return shown || (tradition === "pentecostal" ? /pentecost/iu.test(answer.scope ?? "") : named);
+  });
+}
+
 function checkRichEnough(question, answer, ids) {
   if (isBrief(question) || question.expect.notFound) return null;
   const allowed = expectedKinds(question);
   if (allowed.some((kind) => ["not_found", "out_of_scope", "pastoral"].includes(kind))) return null;
   if (question.expect.intent !== "evidence" && question.expect.intent !== "verdict_request") return null;
   if (!["evidence", "disputed"].includes(answer.kind)) return false;
-  const packQuotes = Object.values(answer.quotes);
+  const sources = question.expect.sources;
+  const packQuotes = Object.values(answer.quotes).filter(
+    (quote) => !sources?.length || sources.includes(sourceOf(quote.key)),
+  );
   if (ids.length < Math.min(12, packQuotes.length)) return false;
-  if (["fathers", "all"].includes(question.scope)) {
+  if (["fathers", "all"].includes(question.scope) && isGeneral(question)) {
     const packAuthors = new Set(
       packQuotes.filter((quote) => quote.key.startsWith("fathers:")).map((quote) => quote.who),
     );
@@ -436,6 +502,9 @@ export function scoreAnswer(question, answer) {
     noVerdict: hits.length === 0,
     richEnough: checkRichEnough(question, answer, ids),
     noteNotEvidence: checkNoteNotEvidence(question, answer),
+    scopeFaithful: checkScopeFaithful(question, answer, ids),
+    notBareQuotation: checkNotBareQuotation(question, answer, ids),
+    traditionsRequested: checkTraditionsRequested(question, answer, ids),
   };
   return {
     checks,
@@ -460,6 +529,8 @@ const HARD_CHECKS = [
   "noVerdict",
   "richEnough",
   "noteNotEvidence",
+  "scopeFaithful",
+  "traditionsRequested",
 ];
 
 export function questionPassed(question, checks) {

@@ -1,5 +1,6 @@
 import { biblePassage, osisParts, passageFromRow } from "@/content/ai-search/collections";
-import { buildPack } from "@/content/ai-search/pack";
+import { buildPack, verseTargets } from "@/content/ai-search/pack";
+import { coverageLine } from "@/features/ask/coverage-line";
 import { callRest } from "@/content/ai-search/supabase-search";
 import { fixtureSearch } from "@/content/ai-search/fixture-search";
 import { scoreText, windowAround } from "@/content/ai-search/windows";
@@ -488,6 +489,103 @@ check(
 check(
   "licence words for short quotes",
   passageFromRow({ ...row, licence: "short-quote", max_quote_words: 40 }, "es").editionLabel.includes("Cita breve"),
+);
+
+const fixtureFathers = (
+  await search.searchPassages({
+    termsEn: ["eucharist", "flesh", "bread"],
+    phrasesEn: [],
+    termsEs: [],
+    phrasesEs: [],
+    collections: ["fathers"],
+    doctrines: null,
+    speakers: null,
+    authors: null,
+    works: null,
+    limit: 40,
+    perGroup: 40,
+    locale: "es",
+  })
+).slice(-3);
+const verseSearch = {
+  ...search,
+  async passagesByVerses(target, collection) {
+    return collection === "fathers" && target.book === "John" && target.chapter === 6
+      ? fixtureFathers.map((passage, index) => ({ ...passage, rank: 3 - index * 0.5, verses: ["John.6.53"] }))
+      : [];
+  },
+};
+check(
+  "verse targets come from the plan's refs first",
+  JSON.stringify(verseTargets(plan({ bibleRefs: ["John.6.53-58", "John.6"] }), ask())) ===
+    JSON.stringify([
+      { book: "John", chapter: 6, from: 53, to: 58 },
+      { book: "John", chapter: 6, from: 1, to: 999 },
+    ]),
+);
+check(
+  "a selected verse is the target when the plan names none",
+  verseTargets(plan(), ask({ selection: { text: "x", at: { kind: "verse", book: "John", chapter: 6, verse: 53 } } }))[0]
+    ?.from === 53,
+);
+check(
+  "«este capítulo» targets the open chapter",
+  verseTargets(plan(), ask({ question: "¿Qué Padres citan versículos de este capítulo?" }))[0]?.to === 999,
+);
+check("a doctrinal question without refs has no verse target", verseTargets(plan(), ask()).length === 0);
+check(
+  "«este capítulo» keeps the whole chapter even when the plan narrows the verses",
+  JSON.stringify(
+    verseTargets(
+      plan({ bibleRefs: ["John.6.22-29"] }),
+      ask({ question: "Los Padres que citan versículos de este capítulo" }),
+    )[0],
+  ) === JSON.stringify({ book: "John", chapter: 6, from: 1, to: 999 }),
+);
+const anchoredPack = await buildPack(plan({ bibleRefs: ["John.6"] }), ask(), verseSearch);
+const anchoredKeys = new Set(fixtureFathers.map((passage) => passage.key));
+const namedPack = await buildPack(
+  plan({ bibleRefs: ["John.6"], authors: ["John Chrysostom"] }),
+  ask({ question: "¿Qué dicen los Padres sobre Juan 6:53?" }),
+  verseSearch,
+);
+check(
+  "an author the plan names but the question does not («Juan» is the Gospel) does not filter the verse hits",
+  fixtureFathers.every((passage) => namedPack.passages.some((item) => item.key === passage.key)),
+);
+check(
+  "passages that cite the verse enter the Fathers' share",
+  [...anchoredKeys].every((key) => anchoredPack.passages.some((passage) => passage.key === key)),
+);
+check(
+  "the coverage records the verse search",
+  anchoredPack.coverage.verseSearches?.[0]?.found === fixtureFathers.length,
+  JSON.stringify(anchoredPack.coverage.verseSearches),
+);
+const allPack = await buildPack(
+  plan({ bibleRefs: ["John.6"] }),
+  ask({ question: "Tirame todos los Padres que citan Juan 6" }),
+  verseSearch,
+);
+check(
+  "a question that names a passage gets only the Fathers that cite it, no full-text padding",
+  allPack.passages
+    .filter((passage) => passage.collection === "fathers")
+    .every((passage) => anchoredKeys.has(passage.key)),
+);
+const line = coverageLine(
+  {
+    ...anchoredPack.coverage,
+    verseSearches: [{ target: { book: "John", chapter: 6, from: 1, to: 999 }, found: 0, collections: ["fathers"] }],
+  },
+  ask(),
+  "es",
+);
+check(
+  "the coverage line says which verses were searched and what was not found",
+  line.replace(/\u00a0/g, " ").includes("los textos de los Padres que citan Juan 6") &&
+    line.replace(/\u00a0/g, " ").includes("Ningún texto del corpus cita Juan 6."),
+  line,
 );
 
 const restEnv = { url: process.env.NEXT_PUBLIC_SUPABASE_URL, key: process.env.SUPABASE_SECRET_KEY };

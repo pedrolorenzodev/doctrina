@@ -13,6 +13,9 @@ const CHECK_NAMES = [
   "noVerdict",
   "richEnough",
   "noteNotEvidence",
+  "scopeFaithful",
+  "notBareQuotation",
+  "traditionsRequested",
 ];
 const TEXT_LIMIT = 600;
 

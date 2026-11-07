@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { verifyAnswer } from "@/features/ask/verify-answer";
-import { anchoredSpan, bestSpan } from "@/features/ask/excerpt";
+import { anchoredSpan, bestSpan, withCommentary } from "@/features/ask/excerpt";
 import { mapAnswer } from "@/features/ask/map-answer";
 import { coverageLine } from "@/features/ask/coverage-line";
 import { clampPlan } from "@/features/ask/plan";
@@ -378,6 +378,19 @@ check("a word ending in an accented letter plus «n.» still ends its sentence",
   });
   assert.equal(v.prose, "Justino describe el pan {P5}.");
 });
+check("a Father's quotation of a verse is cut together with the comment that follows it", () => {
+  const text =
+    "And we ask that this bread should be given to us daily. “I am the bread of life which came down from heaven. If any man eat of my bread, he shall live for ever.” When, therefore, He says, that whoever shall eat of His bread shall live for ever; as it is manifest that those who partake of His body and receive the Eucharist are living, so we must fear lest any one should remain at a distance from salvation.";
+  const span = bestSpan(text, ["bread", "eat", "eucharist"], [], 80);
+  assert.ok(text.slice(span[0], span[1]).includes("receive the Eucharist are living"), text.slice(span[0], span[1]));
+});
+check("an excerpt that is only a quotation grows until it reaches the comment", () => {
+  const text =
+    "And then it is written: “All we who were baptized into Christ were baptized into His death.” So he shows that the font is a grave.";
+  const end = text.indexOf("” So") + 1;
+  const span = withCommentary(text, [0, end], 80);
+  assert.ok(text.slice(span[0], span[1]).includes("the font is a grave"));
+});
 check("prose in the wrong language is removed", () => {
   const v = run(
     { prose: "Los textos católicos citan la definición del Catecismo sobre la Eucaristía y también la carne {P3}." },
@@ -536,6 +549,47 @@ check("coverage line names gaps and missing authors", () => {
   );
   assert.match(line, /Sin textos de: bautista, pentecostal \(no hay página todavía\)\./);
   assert.match(line, /Doctrina no tiene obras de Juan Damasceno todavía\./);
+});
+const planBase = {
+  intent: "evidence",
+  answerLanguage: "es",
+  doctrines: [],
+  traditions: [],
+  termsEn: [],
+  phrasesEn: [],
+  termsEs: [],
+  phrasesEs: [],
+  bibleRefs: [],
+  authors: [],
+  works: [],
+  followsPrevious: false,
+  depth: "rich",
+  sources: [],
+  traditionGroups: [],
+  era: "any",
+};
+check("plan scope: a tradition group expands and implies the traditions source", () => {
+  const { plan } = clampPlan({ ...planBase, traditionGroups: ["protestant"] }, [], "y los protestantes?");
+  assert.deepEqual(plan.traditions, ["lutheran", "reformed", "baptist", "pentecostal"]);
+  assert.deepEqual(plan.sources, ["traditions"]);
+});
+check("plan scope: authors the question does not name are dropped", () => {
+  const authors = [
+    {
+      id: "augustine-of-hippo",
+      name: "Agustín de Hipona",
+      names: { es: "Agustín de Hipona", en: "Augustine of Hippo" },
+      works: [],
+    },
+  ];
+  assert.deepEqual(
+    clampPlan({ ...planBase, authors: ["augustine-of-hippo"] }, authors, "¿Qué dicen los Padres?").plan.authors,
+    [],
+  );
+  assert.deepEqual(
+    clampPlan({ ...planBase, authors: ["augustine-of-hippo"] }, authors, "¿Qué dice Agustín?").plan.authors,
+    ["augustine-of-hippo"],
+  );
 });
 check("plan clamp drops unknown authors and long lists", () => {
   const { plan, unknownAuthors } = clampPlan(

@@ -1776,5 +1776,233 @@
       "language": "en"
     },
     "tags": ["notes", "eucharist", "traditions"]
+  },
+  {
+    "id": "va01",
+    "lang": "es",
+    "question": "¿Qué dicen los Padres sobre Juan 6:53?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:chrysostom-homilies-john:stupart-schaff-1889:47:",
+        "fathers:cyril-alexandria-commentary-john:pusey-1874:4.2:",
+        "fathers:augustine-tractates-john:gibb-innes-1888:26:"
+      ],
+      "language": "es"
+    },
+    "tags": ["verse-anchored", "fathers", "eucharist"]
+  },
+  {
+    "id": "va02",
+    "lang": "en",
+    "question": "How did the Fathers read John 6:53, \"unless you eat the flesh of the Son of Man\"?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:chrysostom-homilies-john:stupart-schaff-1889:47:",
+        "fathers:cyril-alexandria-commentary-john:pusey-1874:4.2:",
+        "fathers:augustine-tractates-john:gibb-innes-1888:26:"
+      ],
+      "language": "en"
+    },
+    "tags": ["verse-anchored", "fathers", "eucharist"]
+  },
+  {
+    "id": "va03",
+    "lang": "es",
+    "question": "¿Cómo comentan los Padres Juan 3:5, nacer del agua y del Espíritu?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 3,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:chrysostom-homilies-john:stupart-schaff-1889:25:",
+        "fathers:augustine-tractates-john:gibb-innes-1888:11:",
+        "fathers:cyril-alexandria-commentary-john:pusey-1874:2.1:"
+      ],
+      "language": "es"
+    },
+    "tags": ["verse-anchored", "fathers", "baptism"]
+  },
+  {
+    "id": "va04",
+    "lang": "en",
+    "question": "What do the Church Fathers say about \"this is my body\" in Matthew 26:26?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Matt",
+      "chapter": 26,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:chrysostom-homilies-matthew:prevost-riddle-1888:82:",
+        "fathers:justin-first-apology",
+        "fathers:cyril-jerusalem-catechetical-lectures:church-gifford-1894:22.1:"
+      ],
+      "language": "en"
+    },
+    "tags": ["verse-anchored", "fathers", "eucharist"]
+  },
+  {
+    "id": "va05",
+    "lang": "es",
+    "question": "¿Cómo citan los Padres 1 Corintios 11:27-29, comer indignamente?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "1Cor",
+      "chapter": 11,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:chrysostom-homilies-1-corinthians:cornish-medley-chambers-1889:28:",
+        "fathers:theodoret-eranistes"
+      ],
+      "language": "es"
+    },
+    "tags": ["verse-anchored", "fathers", "eucharist"]
+  },
+  {
+    "id": "va06",
+    "lang": "en",
+    "question": "Which Church Fathers quote Romans 6:3-4, buried with him by baptism?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Rom",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:augustine-enchiridion:shaw-1887:52:",
+        "fathers:chrysostom-homilies-romans:morris-simcox-stevens-1889:10:",
+        "fathers:irenaeus-against-heresies"
+      ],
+      "language": "en"
+    },
+    "tags": ["verse-anchored", "fathers", "baptism"]
+  },
+  {
+    "id": "va07",
+    "lang": "es",
+    "question": "¿Qué dicen los Padres sobre Mateo 16:18, «sobre esta piedra»?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Matt",
+      "chapter": 16,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:cyprian-de-unitate:wallis-anf-1886:4:",
+        "fathers:chrysostom-homilies-matthew:prevost-riddle-1888:54:"
+      ],
+      "language": "es"
+    },
+    "tags": ["verse-anchored", "fathers", "papacy"]
+  },
+  {
+    "id": "va08",
+    "lang": "en",
+    "question": "What do the Fathers say about John 6:63, \"the flesh profits nothing\"?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:augustine-tractates-john:gibb-innes-1888:27:",
+        "fathers:tertullian-de-resurrectione-carnis:holmes-anf-1885:37:",
+        "fathers:chrysostom-homilies-john:stupart-schaff-1889:47:"
+      ],
+      "language": "en"
+    },
+    "tags": ["verse-anchored", "fathers", "eucharist"]
+  },
+  {
+    "id": "va09",
+    "lang": "es",
+    "question": "buscá exhaustivamente y tirame las citas de TODOS los escritos patrísticos que encuentres que referencien explícitamente algún versículo de este capítulo y lo relacionen con la eucaristía",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:augustine-tractates-john",
+        "fathers:chrysostom-homilies-john",
+        "fathers:cyril-alexandria-commentary-john"
+      ],
+      "language": "es"
+    },
+    "tags": ["verse-anchored", "fathers", "eucharist"]
+  },
+  {
+    "id": "va10",
+    "lang": "en",
+    "question": "Which Fathers comment on John 6:51, \"I am the living bread\"?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "mustInclude": [
+        "fathers:cyril-alexandria-commentary-john:pusey-1874:4.2:",
+        "fathers:chrysostom-homilies-john:stupart-schaff-1889:46:",
+        "fathers:origen-commentary-john:menzies-1903:10.13:"
+      ],
+      "language": "en"
+    },
+    "tags": ["verse-anchored", "fathers", "eucharist"]
   }
 ]

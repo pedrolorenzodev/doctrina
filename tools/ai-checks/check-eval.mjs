@@ -16,6 +16,7 @@ import {
   requestBody,
   resolveProvider,
   scoreAnswer,
+  quotedShare,
   selectQuestions,
   verdictHits,
   wireProblems,
@@ -35,7 +36,7 @@ const fixture = JSON.parse(readFileSync(resolve(ROOT, "src/lib/ai/fixtures/wire-
 const byId = (id) => questions.find((question) => question.id === id);
 const clone = (value) => JSON.parse(JSON.stringify(value));
 
-expect(questions.length === 92, `questions.json has ${questions.length} questions, expected 92`);
+expect(questions.length === 102, `questions.json has ${questions.length} questions, expected 102`);
 expect(new Set(questions.map((question) => question.id)).size === questions.length, "question ids are not unique");
 expect(questions.filter((question) => question.tags.includes("brief")).length === 6, "expected 6 brief questions");
 const noted = questions.filter((question) => question.tags.includes("notes"));
@@ -167,6 +168,24 @@ expect(t.checks.traditionsAll === false, "fixture misses most traditions");
 expect(t.checks.richEnough === false, "fixture is not rich enough for a traditions question");
 expect(scoreAnswer(byId("br01"), fixture).checks.richEnough === null, "brief questions have no richEnough");
 expect(scoreAnswer(byId("n01"), fixture).checks.richEnough === null, "not_found questions have no richEnough");
+const fathersOnly = {
+  ...byId("e03"),
+  id: "s-fathers",
+  tags: ["fathers"],
+  expect: { ...byId("e03").expect, sources: ["fathers"] },
+};
+expect(scoreAnswer(fathersOnly, fixture).checks.scopeFaithful === false, "a Bible quote breaks a Fathers-only scope");
+expect(scoreAnswer(byId("e03"), fixture).checks.scopeFaithful === null, "no requested sources, no scope check");
+expect(
+  quotedShare("“I am the bread of life.” He says this") > 0.5,
+  "quoted share counts letters inside quotation marks",
+);
+expect(quotedShare("He explains what the bread means") === 0, "no quotation marks, no quoted share");
+const protestants = { ...byId("e03"), expect: { ...byId("e03").expect, traditions: ["lutheran", "reformed"] } };
+expect(
+  scoreAnswer(protestants, fixture).checks.traditionsRequested === false,
+  "requested traditions must appear or be listed",
+);
 const over = clone(fixture);
 over.followups = ["a", "b", "c", "d"];
 expect(scoreAnswer(e02, over).checks.limits === false, "four followups break limits");

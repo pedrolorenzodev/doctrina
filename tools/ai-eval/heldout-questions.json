@@ -1,0 +1,593 @@
+[
+  {
+    "id": "ho01",
+    "lang": "es",
+    "question": "¿Qué dicen los Padres sobre Romanos 6:3-4?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Rom",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "fathers", "baptism", "verse-anchored"]
+  },
+  {
+    "id": "ho02",
+    "lang": "en",
+    "question": "What do the Orthodox say about Matthew 16:18?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Matt",
+      "chapter": 16,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["traditions"],
+      "traditions": ["orthodox"]
+    },
+    "tags": ["heldout", "papacy", "verse-anchored"]
+  },
+  {
+    "id": "ho03",
+    "lang": "es",
+    "question": "¿Qué dicen católicos y reformados sobre Juan 3:5?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 3,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["traditions"],
+      "traditions": ["catholic", "reformed"]
+    },
+    "tags": ["heldout", "baptism", "verse-anchored"]
+  },
+  {
+    "id": "ho04",
+    "lang": "en",
+    "question": "Only the Bible: what does it say about baptism?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Rom",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["bible"]
+    },
+    "tags": ["heldout", "baptism"]
+  },
+  {
+    "id": "ho05",
+    "lang": "es",
+    "question": "Mostrame la Biblia y los Padres sobre la Cena del Señor, sin tradiciones modernas",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["bible", "fathers"]
+    },
+    "tags": ["heldout", "eucharist"]
+  },
+  {
+    "id": "ho06",
+    "lang": "en",
+    "question": "What did the Fathers before Nicaea say about the real presence?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "eucharist", "era"]
+  },
+  {
+    "id": "ho07",
+    "lang": "es",
+    "question": "Resumime en una línea qué dice Lucas 22:19",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Luke",
+      "chapter": 22,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es"
+    },
+    "tags": ["heldout", "brief", "eucharist", "verse-anchored"]
+  },
+  {
+    "id": "ho08",
+    "lang": "en",
+    "question": "What is the Eucharist?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en"
+    },
+    "tags": ["heldout", "eucharist", "general"]
+  },
+  {
+    "id": "ho09",
+    "lang": "es",
+    "question": "¿Qué dicen los luteranos sobre 1 Corintios 10:16?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "1Cor",
+      "chapter": 10,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["traditions"],
+      "traditions": ["lutheran"]
+    },
+    "tags": ["heldout", "eucharist", "verse-anchored"]
+  },
+  {
+    "id": "ho10",
+    "lang": "en",
+    "question": "How do Baptists read Acts 2:38?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Acts",
+      "chapter": 2,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["traditions"],
+      "traditions": ["baptist"]
+    },
+    "tags": ["heldout", "baptism", "verse-anchored"]
+  },
+  {
+    "id": "ho11",
+    "lang": "es",
+    "question": "¿Qué dicen los Padres de Tito 3:5, el lavamiento de la regeneración?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Titus",
+      "chapter": 3,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "baptism", "verse-anchored"]
+  },
+  {
+    "id": "ho12",
+    "lang": "en",
+    "question": "What do the Fathers say about James 2:24?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Jas",
+      "chapter": 2,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "justification", "verse-anchored"]
+  },
+  {
+    "id": "ho13",
+    "lang": "es",
+    "question": "¿Cómo entienden los protestantes Mateo 26:26?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Matt",
+      "chapter": 26,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["traditions"],
+      "traditions": ["lutheran", "reformed", "baptist", "pentecostal"]
+    },
+    "tags": ["heldout", "eucharist", "verse-anchored"]
+  },
+  {
+    "id": "ho14",
+    "lang": "en",
+    "question": "Which Bible verses speak about the authority of tradition? Only Scripture please.",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "2Thess",
+      "chapter": 2,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["bible"]
+    },
+    "tags": ["heldout", "sola-scriptura"]
+  },
+  {
+    "id": "ho15",
+    "lang": "es",
+    "question": "¿Qué enseñan los ortodoxos sobre el bautismo de niños?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Acts",
+      "chapter": 2,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["traditions"],
+      "traditions": ["orthodox"]
+    },
+    "tags": ["heldout", "baptism"]
+  },
+  {
+    "id": "ho16",
+    "lang": "en",
+    "question": "What do Catholics say about 2 Thessalonians 2:15?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "2Thess",
+      "chapter": 2,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["traditions"],
+      "traditions": ["catholic"]
+    },
+    "tags": ["heldout", "sola-scriptura", "verse-anchored"]
+  },
+  {
+    "id": "ho17",
+    "lang": "es",
+    "question": "¿Qué dicen los Padres sobre Lucas 22:32, «confirma a tus hermanos»?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Luke",
+      "chapter": 22,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "papacy", "verse-anchored"]
+  },
+  {
+    "id": "ho18",
+    "lang": "en",
+    "question": "What do the Reformed churches say about 2 Timothy 3:16?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "2Tim",
+      "chapter": 3,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["traditions"],
+      "traditions": ["reformed"]
+    },
+    "tags": ["heldout", "sola-scriptura", "verse-anchored"]
+  },
+  {
+    "id": "ho19",
+    "lang": "es",
+    "question": "¿Qué dice la Biblia sobre la justificación por la fe? Solo la Biblia.",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Rom",
+      "chapter": 3,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["bible"]
+    },
+    "tags": ["heldout", "justification"]
+  },
+  {
+    "id": "ho20",
+    "lang": "en",
+    "question": "Show me what the early Church Fathers wrote about 1 Peter 3:21.",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "1Pet",
+      "chapter": 3,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "baptism", "verse-anchored"]
+  },
+  {
+    "id": "ho21",
+    "lang": "es",
+    "question": "¿Qué dicen los católicos y los ortodoxos sobre Juan 20:23?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 20,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence", "not_found"],
+      "language": "es",
+      "sources": ["traditions"],
+      "traditions": ["catholic", "orthodox"]
+    },
+    "tags": ["heldout", "verse-anchored"]
+  },
+  {
+    "id": "ho22",
+    "lang": "en",
+    "question": "What do Lutherans say about baptism?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Rom",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["traditions"],
+      "traditions": ["lutheran"]
+    },
+    "tags": ["heldout", "baptism"]
+  },
+  {
+    "id": "ho23",
+    "lang": "es",
+    "question": "Contame qué dicen los Padres sobre Mateo 28:19",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Matt",
+      "chapter": 28,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "baptism", "verse-anchored"]
+  },
+  {
+    "id": "ho24",
+    "lang": "en",
+    "question": "Do the Fathers before 325 talk about infant baptism?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Acts",
+      "chapter": 16,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "baptism", "era"]
+  },
+  {
+    "id": "ho25",
+    "lang": "es",
+    "question": "¿Qué textos bíblicos citan los bautistas sobre la Cena?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "1Cor",
+      "chapter": 11,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["bible", "traditions"],
+      "traditions": ["baptist"]
+    },
+    "tags": ["heldout", "eucharist"]
+  },
+  {
+    "id": "ho26",
+    "lang": "en",
+    "question": "Briefly: what does Romans 6:4 say?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Rom",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en"
+    },
+    "tags": ["heldout", "brief", "baptism", "verse-anchored"]
+  },
+  {
+    "id": "ho27",
+    "lang": "es",
+    "question": "¿Qué dice la Iglesia sobre el papado?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Matt",
+      "chapter": 16,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es"
+    },
+    "tags": ["heldout", "papacy", "general"]
+  },
+  {
+    "id": "ho28",
+    "lang": "en",
+    "question": "What do the Fathers say about Hebrews 10 and the sacrifice?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "Heb",
+      "chapter": 10,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["fathers"]
+    },
+    "tags": ["heldout", "eucharist", "verse-anchored"]
+  },
+  {
+    "id": "ho29",
+    "lang": "es",
+    "question": "¿Y los reformados?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "sources": ["traditions"],
+      "traditions": ["reformed"]
+    },
+    "tags": ["heldout", "eucharist", "multi-turn", "verse-anchored"],
+    "history": [
+      {
+        "question": "¿Qué dicen los Padres sobre Juan 6:53?",
+        "prose": ""
+      }
+    ]
+  },
+  {
+    "id": "ho30",
+    "lang": "en",
+    "question": "what about the orthodox?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "1Cor",
+      "chapter": 11,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "en",
+      "sources": ["traditions"],
+      "traditions": ["orthodox"]
+    },
+    "tags": ["heldout", "eucharist", "multi-turn", "verse-anchored"],
+    "history": [
+      {
+        "question": "What do Lutherans say about 1 Corinthians 11:24?",
+        "prose": ""
+      }
+    ]
+  }
+]
