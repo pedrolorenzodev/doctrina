@@ -30,6 +30,8 @@ const WINDOW_STEPS = [WINDOW_CHARS, 900, 700, 500];
 const FATHER_POOL = 60;
 const VERSE_POOL = 12;
 const NAMED_AUTHOR_POOL = 12;
+const NAMED_CAP = 8;
+const NAMED_CAP_BRIEF = 4;
 
 const collectionOrder = ["bible", "fathers", "tradition", "doctrine", "glossary", "mine"] as const;
 
@@ -156,7 +158,7 @@ function pickTradition(rows: Ranked[], quota: number, answerLang: Locale): { cho
 function selectFathers(
   pool: Ranked[],
   quota: number,
-  perAuthor: number,
+  capOf: (author: string) => number,
   answerLang: Locale,
 ): { chosen: Ranked[]; rest: Ranked[] } {
   const editionPerLocator = new Map<string, string>();
@@ -170,12 +172,19 @@ function selectFathers(
     const preferred = candidates.find((candidate) => candidate.lang === answerLang) ?? candidates[0];
     if (preferred?.father) editionPerLocator.set(key, preferred.father.editionId);
   }
+  const bestRank = new Map(
+    [...byLocator].map(([key, candidates]) => [key, Math.max(...candidates.map((candidate) => candidate.rank))]),
+  );
   const unique = pool
     .filter(
       (passage) =>
         passage.father &&
         editionPerLocator.get(`${passage.father.workId}:${passage.father.locator}`) === passage.father.editionId,
     )
+    .map((passage) => ({
+      ...passage,
+      rank: Math.max(passage.rank, bestRank.get(`${passage.father?.workId}:${passage.father?.locator}`) ?? 0),
+    }))
     .sort((a, b) => b.rank - a.rank || a.key.localeCompare(b.key));
   const perAuthorList = new Map<string, Ranked[]>();
   for (const passage of unique) {
@@ -183,10 +192,11 @@ function selectFathers(
     perAuthorList.set(author, [...(perAuthorList.get(author) ?? []), passage]);
   }
   const tiers: Ranked[] = [];
-  for (let tier = 0; tier < perAuthor; tier += 1) {
-    const layer = [...perAuthorList.values()].flatMap((list) => {
+  const deepest = Math.max(0, ...[...perAuthorList].map(([author]) => capOf(author)));
+  for (let tier = 0; tier < deepest; tier += 1) {
+    const layer = [...perAuthorList].flatMap(([author, list]) => {
       const item = list[tier];
-      return item ? [item] : [];
+      return item && tier < capOf(author) ? [item] : [];
     });
     tiers.push(...layer.sort((a, b) => b.rank - a.rank));
   }
@@ -444,7 +454,14 @@ export async function buildPack(plan: SearchPlan, request: AskRequest, search: C
       : Promise.resolve([] as Ranked[]),
   ]);
 
-  const fathers = selectFathers(fatherPool, quotas.fathers, quotas.perAuthor, locale);
+  const namedCap = brief ? NAMED_CAP_BRIEF : NAMED_CAP;
+  const namedFew = plan.authors.length >= 1 && plan.authors.length <= 2;
+  const fathers = selectFathers(
+    fatherPool,
+    quotas.fathers,
+    (author) => (namedFew && named.ids.includes(author) ? namedCap : quotas.perAuthor),
+    locale,
+  );
 
   const scopedTradition = traditionRows.filter(
     (row) =>

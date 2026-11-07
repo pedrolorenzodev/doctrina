@@ -316,6 +316,71 @@ check(
   ranked.slice(0, 3).some((p) => p.key.startsWith("fathers:ignatius-smyrnaeans:lightfoot-1889:6.2")),
   ranked.map((p) => p.key).join(" "),
 );
+const cyrilTerms = {
+  doctrines: [],
+  termsEn: ["body", "blood", "christ", "bread", "cup", "spiritual", "lord"],
+  phrasesEn: [],
+  termsEs: [],
+};
+const cyrilCount = (pack) => pack.passages.filter((p) => p.author === "cyril-of-jerusalem").length;
+const cyrilPool = await search.searchPassages({
+  ...cyrilTerms,
+  phrasesEs: [],
+  collections: ["fathers"],
+  speakers: null,
+  authors: ["cyril-of-jerusalem"],
+  works: null,
+  limit: 60,
+  perGroup: 60,
+  doctrines: null,
+});
+check("fixture holds at least 9 Cyril passages that match", cyrilPool.length >= 9, String(cyrilPool.length));
+const oneNamed = await buildPack(
+  plan({ ...cyrilTerms, authors: ["Cyril of Jerusalem"] }),
+  ask({ scope: "fathers" }),
+  search,
+);
+check("one named Father gets up to 8 passages", cyrilCount(oneNamed) === 8, String(cyrilCount(oneNamed)));
+const twoNamed = await buildPack(
+  plan({ ...cyrilTerms, authors: ["Cyril of Jerusalem", "Ignatius"] }),
+  ask({ scope: "fathers" }),
+  search,
+);
+check(
+  "two named Fathers get up to 8 each",
+  cyrilCount(twoNamed) === 8 && twoNamed.passages.filter((p) => p.author === "ignatius-of-antioch").length >= 2,
+  String(cyrilCount(twoNamed)),
+);
+check("named Fathers stay inside the quota of 16", twoNamed.passages.length <= 16);
+const noNames = await buildPack(plan({ ...cyrilTerms }), ask({ scope: "fathers" }), search);
+check("no named Father keeps 3 per author", cyrilCount(noNames) === 3, String(cyrilCount(noNames)));
+const threeNames = await buildPack(
+  plan({ ...cyrilTerms, authors: ["Cyril of Jerusalem", "Ignatius", "Justin"] }),
+  ask({ scope: "fathers" }),
+  search,
+);
+check("three names keep 3 per author", cyrilCount(threeNames) === 3, String(cyrilCount(threeNames)));
+const briefNamed = await buildPack(
+  plan({ ...cyrilTerms, authors: ["Cyril of Jerusalem"], depth: "brief" }),
+  ask({ scope: "fathers" }),
+  search,
+);
+check("brief named Father gets up to 4", cyrilCount(briefNamed) === 4, String(cyrilCount(briefNamed)));
+check(
+  "extra keeps the named Father's leftovers",
+  oneNamed.extra.some((p) => p.author === "cyril-of-jerusalem") || cyrilPool.length <= 8,
+);
+
+const spanishEdition = await buildPack(
+  plan({ doctrines: [], termsEn: ["eucharist", "flesh", "bread", "cup"], phrasesEn: [], termsEs: ["eucaristía"] }),
+  ask({ scope: "fathers" }),
+  search,
+);
+check(
+  "choosing the Spanish edition does not demote the passage",
+  spanishEdition.passages.some((p) => /^fathers:ignatius-smyrnaeans:[^:]+:6\.2:/.test(p.key)),
+  spanishEdition.passages.map((p) => p.key).join(" "),
+);
 const missing = await buildPack(plan({ doctrines: [], authors: ["John Damascene"] }), ask(), search);
 check("missing author is reported", missing.coverage.missingAuthors.join() === "John Damascene");
 
