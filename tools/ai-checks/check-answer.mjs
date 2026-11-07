@@ -316,6 +316,27 @@ check("disputed words verified, bad ones dropped", () => {
   assert.equal(v.words.length, 1);
   assert.equal(v.words[0].tradition, "catholic");
 });
+check("mapping: a words quote is the id of a quote in quotes, with the verified words inside", () => {
+  const v = run({
+    kind: "disputed",
+    sections: [section("tradition:catholic", ["P3", "La Eucaristía es fuente y cima"])],
+    words: [
+      {
+        tradition: "catholic",
+        passage: "P3",
+        words: "fuente y cima",
+        quote: "La Eucaristía es fuente y cima de toda la vida cristiana",
+      },
+    ],
+  });
+  const wire = mapAnswer({ verified: v, passages: pack, question: "q", scope: "s", locale: "es", more: false });
+  assert.equal(wire.kind, "disputed");
+  assert.equal(wire.words.length, 1);
+  const quote = wire.quotes[wire.words[0].quote];
+  assert.ok(quote);
+  assert.equal(quote.id, wire.words[0].quote);
+  assert.ok(quote.text.includes(wire.words[0].words));
+});
 check("words accept a prefixed tradition id", () => {
   const v = run({
     kind: "disputed",

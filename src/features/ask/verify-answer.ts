@@ -17,7 +17,14 @@ import { fatherAssignmentHit, verdictHit } from "@/features/ask/lexicon";
 export type About = "bible" | "fathers" | "doctrine" | "glossary" | "mine" | `tradition:${TraditionId}`;
 
 export type VerifiedQuote = { quoteId: string; passage: PackPassage; text: string; start: number; end: number };
-export type VerifiedWords = { tradition: TraditionId; passage: PackPassage; words: string; quote: string };
+export type VerifiedWords = {
+  tradition: TraditionId;
+  passage: PackPassage;
+  words: string;
+  quote: string;
+  start: number;
+  end: number;
+};
 export type QuoteFailure = { passage: string; quote: string; reason: string };
 
 export type Verified = {
@@ -145,6 +152,8 @@ function verifyWords(model: ModelAnswer, byId: Map<string, PackPassage>, dropped
       passage,
       words: words.ok ? words.display : entry.words.trim(),
       quote: quote.text,
+      start: quote.start,
+      end: quote.end,
     });
   }
   return kept;

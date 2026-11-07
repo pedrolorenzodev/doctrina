@@ -114,12 +114,19 @@ export function mapAnswer(input: MapInput): WireAnswer {
   const prose = notFound ? "" : verified.prose.replace(/\{(P\d+)\}/g, (_, id: string) => `{q:${quoteIdOf(id)}}`);
   const words =
     kind === "disputed"
-      ? verified.words.map((entry) => ({
-          tradition: traditionLabels[entry.tradition][locale],
-          source: entry.passage.locatorLabel,
-          words: entry.words,
-          quote: entry.quote,
-        }))
+      ? verified.words.map((entry) => {
+          const id = `${quoteIdOf(entry.passage.id)}w`;
+          quotes[id] = {
+            ...wireQuote(entry.passage, { text: entry.quote, start: entry.start, end: entry.end }, locale),
+            id,
+          };
+          return {
+            tradition: traditionLabels[entry.tradition][locale],
+            source: entry.passage.locatorLabel,
+            words: entry.words,
+            quote: id,
+          };
+        })
       : [];
   return {
     answerId: "",
