@@ -26,6 +26,7 @@ ap.add_argument("--out", default=str(Path(__file__).resolve().parent.parent / "s
 ap.add_argument("--glosses", default=None)
 ap.add_argument("--worklist", default=None)
 ap.add_argument("--only", default=None, help="Book.chapter, e.g. John.6 (writes only that chapter's verse file)")
+ap.add_argument("--fill-spanish", action="store_true", help="Fill only empty Spanish fields in an existing dataset, retaining enrichments")
 args = ap.parse_args()
 
 SRC = Path(args.src)
@@ -299,7 +300,7 @@ def name_es(en):
     return prefix + (f"[{bare}]" if name.startswith("[") else bare)
 
 
-def greek_word_es(en, morph, dstrong=""):
+def greek_word_es_base(en, morph, dstrong=""):
     single = dstrong and " + " not in dstrong
     if single and (dstrong, en) in DS_OVERRIDES:
         return DS_OVERRIDES[(dstrong, en)]
@@ -330,6 +331,10 @@ def greek_word_es(en, morph, dstrong=""):
     if r.count("[") != r.count("]"):
         return None
     return r
+
+
+def greek_word_es(en, morph, dstrong=""):
+    return ES.get(f"grc:{morph}:{en}") or greek_word_es_base(en, morph, dstrong)
 
 
 def in_na28_any(w):
@@ -478,7 +483,7 @@ for w in wc.iter_tahot(SRC):
     item = OrderedDict([
         ("g", word), ("p", punct), ("t", w["translit"]),
         ("s", "/".join(parts)), ("r", root), ("m", w["grammar"]),
-        ("en", w["english"]), ("es", "/".join(es_parts) if all(e is not None for e in es_parts) else None),
+        ("en", w["english"]), ("es", ES.get(f"hbo:{w['grammar']}:{w['english']}") or ("/".join(es_parts) if all(e is not None for e in es_parts) else None)),
     ])
     if w["type"] != "L":
         item["ty"] = w["type"]
@@ -544,7 +549,35 @@ for d in sorted(set(nt_nany) | set(ot_n)):
 
 
 # ------------------------------------------------------------------ write
+def fill_spanish_fields(previous, rebuilt):
+    if isinstance(previous, list):
+        if not isinstance(rebuilt, list) or len(previous) != len(rebuilt):
+            raise ValueError("Cannot fill Spanish in a changed word sequence")
+        return [fill_spanish_fields(old, new) for old, new in zip(previous, rebuilt)]
+    if not isinstance(previous, dict):
+        return previous
+    result = dict(previous)
+    for key in ("g", "s", "m", "en", "book", "chapter", "lang"):
+        if key in previous and previous[key] != rebuilt.get(key):
+            raise ValueError(f"Cannot fill Spanish with a changed {key}")
+    for key, value in rebuilt.items():
+        if key in ("es", "glossEs"):
+            if not previous.get(key) and value:
+                result[key] = value
+        elif key in previous and isinstance(previous[key], (dict, list)):
+            result[key] = fill_spanish_fields(previous[key], value)
+    return result
+
+
 def dump(path, obj):
+    if args.fill_spanish:
+        previous = json.loads(path.read_text(encoding="utf-8"))
+        if path.name == "manifest.json":
+            obj = dict(previous, generated=str(date.today()))
+        else:
+            obj = fill_spanish_fields(previous, obj)
+        if obj == previous:
+            return
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 

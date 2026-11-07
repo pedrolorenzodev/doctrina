@@ -31,11 +31,20 @@ test("John 6:53 lists its 28 words with Greek, Spanish gloss and transliteration
   await expect(page.locator(strip).getByRole("button", { name: /^Palabras/ })).toContainText("28");
 });
 
-test("a word without a Spanish gloss shows the English one, labelled", async ({ page }) => {
+test("a second-person-plural verb uses its Spanish form", async ({ page }) => {
   await openWords(page, "/es/biblia/juan/6", 53);
   const row = page.locator(rows).nth(11);
   await expect(row.locator('[lang="grc"]')).toHaveText("φάγητε");
-  await expect(row.locator('[lang="en"]')).toContainText("you shall have eaten");
+  await expect(row).toContainText("comáis");
+  await expect(row.locator('[lang="en"]')).toHaveCount(0);
+  await expect(row).not.toContainText("inglés");
+});
+
+test("a word without a Spanish gloss shows the English one, labelled", async ({ page }) => {
+  await openWords(page, "/es/biblia/juan/6", 53);
+  const row = page.locator(rows).nth(19);
+  await expect(row.locator('[lang="grc"]')).toHaveText("πίητε");
+  await expect(row.locator('[lang="en"]')).toContainText("shall have drunk");
   await expect(row).toContainText("inglés");
 });
 
