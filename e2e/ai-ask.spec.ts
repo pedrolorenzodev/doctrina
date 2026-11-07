@@ -1,7 +1,14 @@
 import { expect, test, type APIRequestContext } from "@playwright/test";
 
 type Sent = { event: string; data: unknown };
-type Answer = { answerId: string; kind: string; question: string; cached: boolean; more: boolean; promptVersion: string };
+type Answer = {
+  answerId: string;
+  kind: string;
+  question: string;
+  cached: boolean;
+  more: boolean;
+  promptVersion: string;
+};
 
 let counter = 0;
 

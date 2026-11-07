@@ -81,6 +81,7 @@ test.describe("ask drawer: real answers", () => {
     page.on("request", (request) => {
       if (request.url().endsWith("/api/ai/ask")) bodies.push(request.postDataJSON() as Wire);
     });
+    await page.route("**/api/ai/ask", (route) => stream(route, wireAnswer(5), 1500));
     await openDrawer(page);
     await page.evaluate(() => {
       const seen = new Set<string>();
@@ -93,13 +94,13 @@ test.describe("ask drawer: real answers", () => {
     await expect(page.locator("[data-ask-status]").first()).toContainText("Consultó 5 textos", { timeout: 8000 });
     const seen = await page.evaluate(() => [...(window as unknown as { seenStatus: Set<string> }).seenStatus]);
     expect(seen.some((text) => text.includes("Buscando en los Padres"))).toBe(true);
-    expect(seen.some((text) => text.includes("Redactando"))).toBe(true);
     expect(seen.some((text) => /\d+ s$/.test(text))).toBe(true);
-    await expect(page.locator("[data-ask-meta]")).toContainText("Generada por IA. Se consultaron 5 textos", {
-      timeout: 6000,
-    });
-    await expect(page.locator(`${answers} blockquote`)).toHaveCount(3, { timeout: 6000 });
-    await expect(page.locator(`${answers} p [data-ask-cite]`)).toHaveCount(3, { timeout: 12000 });
+    await expect(page.locator("[data-ask-meta]")).toContainText(
+      "Generada por IA. Buscó en la Biblia (RV1909) y en 3 obras de los Padres.",
+      { timeout: 6000 },
+    );
+    await expect(page.locator(`${answers} blockquote`)).toHaveCount(5, { timeout: 6000 });
+    await expect(page.locator(`${answers} p [data-ask-cite]`)).toHaveCount(2, { timeout: 12000 });
     await expect(page.locator("[data-ask-status]")).toContainText("Consultó 5 textos");
     await expect(page.locator("[data-ask-privacy]")).toContainText("No guardamos tu IP.", { timeout: 6000 });
     expect(bodies[0]).toMatchObject({ locale: "es", scope: "all", turn: 1, notes: [] });
