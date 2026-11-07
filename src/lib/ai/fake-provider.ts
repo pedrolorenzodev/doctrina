@@ -129,6 +129,7 @@ const BUILDERS: Record<AiRole, (user: string) => unknown> = {
   answer: fakeAnswer,
   simplify: fakeSimplify,
   judge: fakeJudge,
+  fidelity: () => ({ changes: [] }),
 };
 
 export class FakeProvider implements AiProvider {

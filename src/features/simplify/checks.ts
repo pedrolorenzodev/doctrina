@@ -4,9 +4,14 @@ import { splitSentences } from "@/lib/ai/sentences";
 export type SimplifiedLevels = { clear: string[]; very: string[] };
 
 export type CheckName =
-  "shape" | "length" | "numbers" | "quotes" | "names" | "scripts" | "claims" | "language" | "levels" | "fidelity";
+  "shape" | "length" | "numbers" | "quotes" | "names" | "scripts" | "claims" | "language" | "levels" | "meaning";
 
-export type CheckReport = { passed: boolean; failures: string[]; results: Record<CheckName, boolean> };
+export type CheckReport = {
+  passed: boolean;
+  failures: string[];
+  results: Record<CheckName, boolean>;
+  notes?: string[];
+};
 
 type Level = { name: "clear" | "very"; units: string[]; text: string };
 
@@ -84,6 +89,7 @@ const NOT_NAMES = new Set([
   "Él",
   "Su",
   "Sus",
+  "O",
 ]);
 const OPENS_CLAUSE = /(?:^|[«“"‘(\[¿¡:]|[.?!;]\s)\s*$/u;
 
@@ -184,7 +190,7 @@ function checkNumbers(source: string, levels: Level[], failures: string[]): bool
 }
 
 function checkQuotes(source: string, levels: Level[], failures: string[]): boolean {
-  const original = flat(source);
+  const originalQuotes = quotedSpans(source).map(flat);
   let passed = true;
   for (const level of levels) {
     const text = flat(level.text);
@@ -194,9 +200,9 @@ function checkQuotes(source: string, levels: Level[], failures: string[]): boole
         passed = false;
       }
     for (const span of quotedSpans(level.text))
-      if (!original.includes(flat(span))) {
+      if (!originalQuotes.some((quote) => quote.includes(flat(span)))) {
         failures.push(
-          `quotes: "${level.name}" puts «${span}» in quotation marks, but those words are not in the original`,
+          `quotes: "${level.name}" puts «${span}» in quotation marks, but the original does not quote those words; remove the quotation marks`,
         );
         passed = false;
       }
@@ -261,7 +267,13 @@ function checkClaims(original: string[], levels: Level[], failures: string[]): b
         passed = false;
       }
       const verdict = VERDICT.exec(stripQuotes(unit));
-      if (verdict && !VERDICT.test(stripQuotes(sentence))) {
+      const saidAlready =
+        verdict !== null &&
+        verdict[0]
+          .toLowerCase()
+          .split(/\s+/)
+          .every((part) => word(part).test(stripQuotes(sentence)));
+      if (verdict && !VERDICT.test(stripQuotes(sentence)) && !saidAlready) {
         failures.push(
           `claims: "${level.name}" entry ${index + 1} adds the judgement «${verdict[0]}», which the original sentence does not make`,
         );
@@ -299,12 +311,18 @@ function checkLanguage(levels: Level[], lang: ReadingLang, failures: string[]): 
 function checkLevels(
   original: string[],
   output: SimplifiedLevels,
-  options: { allowIdentity: boolean; lang?: ReadingLang },
+  options: { allowIdentity: boolean; lang?: ReadingLang; terms?: readonly string[]; onlyClear?: boolean },
   failures: string[],
 ): boolean {
   if (options.allowIdentity) return true;
   if (output.clear.length !== original.length || output.very.length !== original.length) return true;
-  const found = levelSeparation(original, output, options.lang ?? guessLang(original.join(" ")));
+  const separation = levelSeparation(
+    original,
+    output,
+    options.lang ?? guessLang(original.join(" ")),
+    options.terms ?? [],
+  );
+  const found = options.onlyClear ? separation.filter((failure) => !failure.includes('"very"')) : separation;
   failures.push(...found);
   return found.length === 0;
 }
@@ -312,13 +330,20 @@ function checkLevels(
 export function checkSimplification(
   original: string[],
   output: SimplifiedLevels,
-  options: { allowIdentity: boolean; lang?: ReadingLang } = { allowIdentity: false },
+  options: { allowIdentity: boolean; lang?: ReadingLang; terms?: readonly string[]; onlyClear?: boolean } = {
+    allowIdentity: false,
+  },
 ): CheckReport {
+  original = original.map((sentence) => sentence.normalize("NFC"));
+  output = {
+    clear: output.clear.map((unit) => unit.normalize("NFC")),
+    very: output.very.map((unit) => unit.normalize("NFC")),
+  };
   const source = original.join(" ");
   const levels: Level[] = [
-    { name: "clear", units: output.clear, text: output.clear.join(" ") },
-    { name: "very", units: output.very, text: output.very.join(" ") },
-  ];
+    { name: "clear" as const, units: output.clear, text: output.clear.join(" ") },
+    { name: "very" as const, units: output.very, text: output.very.join(" ") },
+  ].filter((level) => !options.onlyClear || level.name === "clear");
   const failures: string[] = [];
   const results: Record<CheckName, boolean> = {
     shape: checkShape(original, levels, failures),
@@ -330,7 +355,7 @@ export function checkSimplification(
     claims: checkClaims(original, levels, failures),
     language: checkLanguage(levels, options.lang ?? guessLang(source), failures),
     levels: checkLevels(original, output, options, failures),
-    fidelity: true,
+    meaning: true,
   };
   return { passed: failures.length === 0, failures, results };
 }
@@ -346,6 +371,7 @@ export type ReadingMetrics = {
   grade: number;
 };
 
+const TERM_MARK = "qqq";
 const STRONG_VOWELS = /[aeoáéíóú]/;
 const READING_WORDS = /[\p{L}\p{N}]+(?:['’][\p{L}]+)*/gu;
 
@@ -398,7 +424,9 @@ function grams(tokens: string[], size: number): string[] {
 
 export function wordOverlap(version: string, reference: string, size: 1 | 2 = 1): number {
   const known = new Set(grams(readingTokens(reference), size));
-  const tokens = grams(readingTokens(stripQuotes(version)), size);
+  const tokens = grams(readingTokens(stripQuotes(version)), size).filter(
+    (gram) => !gram.split(" ").includes(TERM_MARK),
+  );
   if (tokens.length === 0) return 0;
   return tokens.filter((token) => known.has(token)).length / tokens.length;
 }
@@ -416,20 +444,52 @@ export const SEPARATION = {
   shortSentenceWords: 15,
 } as const;
 
+export const SEPARATION_WITH_MARGIN = {
+  clear: { gradeDrop: 1, easyGrade: 7.5, sentenceShare: 0.8, maxOverlap: 0.78 },
+  very: {
+    gradeDrop: 3,
+    easyGrade: 5.5,
+    maxSentenceWords: 14,
+    maxOverlap: 0.65,
+    maxOverlapClear: 0.75,
+    gradeBelowClear: 0.75,
+  },
+  shortSentenceWords: 15,
+} as const;
+
 const fixed = (value: number) => value.toFixed(1);
 const percent = (value: number) => `${Math.round(value * 100)} %`;
 
 const QUOTATION_AS_WORD = (text: string) => QUOTED.reduce((rest, pattern) => rest.replace(pattern, "cita"), text);
 
-export function levelSeparation(original: string[], output: SimplifiedLevels, lang: ReadingLang): string[] {
-  const source = original.join(" ");
-  const clearText = QUOTATION_AS_WORD(output.clear.join(" "));
-  const veryText = QUOTATION_AS_WORD(output.very.join(" "));
+function maskTerms(text: string, terms: readonly string[]): string {
+  return [...terms]
+    .sort((a, b) => b.length - a.length)
+    .reduce(
+      (rest, term) =>
+        rest.replace(
+          new RegExp(`(?<![\\p{L}])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\p{L}])`, "giu"),
+          ` ${TERM_MARK} `,
+        ),
+      text,
+    );
+}
+
+export function levelSeparation(
+  original: string[],
+  output: SimplifiedLevels,
+  lang: ReadingLang,
+  terms: readonly string[] = [],
+  gate: typeof SEPARATION | typeof SEPARATION_WITH_MARGIN = SEPARATION,
+): string[] {
+  const source = maskTerms(original.join(" "), terms);
+  const clearText = QUOTATION_AS_WORD(maskTerms(output.clear.join(" "), terms));
+  const veryText = QUOTATION_AS_WORD(maskTerms(output.very.join(" "), terms));
   const base = readingMetrics(QUOTATION_AS_WORD(source), lang);
   const clear = readingMetrics(clearText, lang);
   const very = readingMetrics(veryText, lang);
   const failures: string[] = [];
-  const { clear: forClear, very: forVery, shortSentenceWords } = SEPARATION;
+  const { clear: forClear, very: forVery, shortSentenceWords } = gate;
   const clearTarget = Math.max(forClear.easyGrade, base.grade - forClear.gradeDrop);
   if (clear.grade > clearTarget)
     failures.push(

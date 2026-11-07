@@ -16,6 +16,8 @@ import type { AiRequestLog, SimplificationRow } from "@/content/ai-store/types";
 import {
   checkSimplification,
   levelSeparation,
+  SEPARATION_WITH_MARGIN,
+  wordOverlap,
   type CheckReport,
   type SimplifiedLevels,
 } from "@/features/simplify/checks";
@@ -50,6 +52,8 @@ export type Generation = {
 const CALL_TIMEOUT_MS = 25_000;
 const fidelityEnabled = () => process.env.AI_SIMPLIFY_FIDELITY === "on";
 const CHUNK_WORDS = 160;
+const CANDIDATES = 2;
+const ROUNDS = 2;
 const MAX_REJECTIONS = 2;
 const providerSchema = toProviderSchema(simplificationSchema);
 const EMPTY_USAGE: AiUsage = { inputTokens: 0, cachedInputTokens: 0, cacheWriteTokens: 0, outputTokens: 0 };
@@ -80,7 +84,15 @@ function addUsage(total: AiUsage, usage: AiUsage): AiUsage {
   };
 }
 
-export type GenerationOptions = { allowIdentity: boolean; fidelity?: boolean; signal?: AbortSignal };
+export type GenerationOptions = {
+  allowIdentity: boolean;
+  fidelity?: boolean;
+  signal?: AbortSignal;
+  whole?: boolean;
+  terms?: readonly string[];
+  onlyClear?: boolean;
+  feedback?: { failures: string[]; previous: SimplifiedLevels | null };
+};
 
 type Unit = { sentences: string[]; speaker: string; outputLang: "es" | "en" };
 
@@ -113,7 +125,8 @@ export async function generateSimplification(
 ): Promise<Generation> {
   const outputLang = outputLanguage(resolved);
   const signal = options.signal ?? AbortSignal.timeout(CALL_TIMEOUT_MS);
-  const chunks = chunkSentences(splitSentences(resolved.text));
+  const sentences = splitSentences(resolved.text);
+  const chunks = options.whole ? [sentences] : chunkSentences(sentences);
   const unitOptions = { ...options, signal };
   if (chunks.length === 1)
     return generateUnit(provider, { sentences: chunks[0] ?? [], speaker: resolved.speaker, outputLang }, unitOptions);
@@ -174,38 +187,55 @@ function mergeReports(reports: CheckReport[]): CheckReport {
   };
 }
 
-async function generateUnit(provider: AiProvider, unit: Unit, options: GenerationOptions): Promise<Generation> {
+type Attempt = {
+  levels: SimplifiedLevels | null;
+  report: CheckReport;
+  usage: AiUsage;
+  costMicros: number;
+  latencyMs: number;
+  model: string;
+  error: AiErrorCode | null;
+};
+
+async function attemptOnce(
+  provider: AiProvider,
+  unit: Unit,
+  options: GenerationOptions,
+  signal: AbortSignal,
+  feedback: { failures: string[]; previous: SimplifiedLevels | null },
+): Promise<Attempt> {
   const { sentences: original, speaker, outputLang } = unit;
-  const system = simplifySystemPrompt(outputLang);
-  const signal = options.signal ?? AbortSignal.timeout(CALL_TIMEOUT_MS);
-  let failures: string[] = [];
-  let previous: SimplifiedLevels | null = null;
-  let usage = EMPTY_USAGE;
-  let costMicros = 0;
-  let latencyMs = 0;
-  let model = "";
-  let report: CheckReport | null = null;
-  const spentSoFar = (attempts: number) => ({
-    report: report ?? emptyReport(),
-    attempts,
-    usage,
-    costMicros,
-    latencyMs,
-    model,
-  });
-  const account = (result: AiCallResult) => {
-    usage = addUsage(usage, result.usage);
-    costMicros += result.costMicros;
-    latencyMs += result.latencyMs;
+  const attempt: Attempt = {
+    levels: null,
+    report: emptyReport(),
+    usage: EMPTY_USAGE,
+    costMicros: 0,
+    latencyMs: 0,
+    model: "",
+    error: null,
   };
-  for (let attempt = 1; attempt <= 2; attempt += 1) {
-    const user = simplifyUserMessage({ sentences: original, speaker, outputLang, failures, previous });
-    let maxTokens = simplifyMaxTokens(original.join(" "));
-    let result: AiCallResult | null = null;
+  const account = (result: AiCallResult) => {
+    attempt.usage = addUsage(attempt.usage, result.usage);
+    attempt.costMicros += result.costMicros;
+    attempt.latencyMs += result.latencyMs;
+    attempt.model = result.model;
+  };
+  const user = simplifyUserMessage({
+    sentences: original,
+    speaker,
+    outputLang,
+    failures: feedback.failures,
+    previous: feedback.previous,
+    ...(options.terms ? { terms: options.terms } : {}),
+    ...(options.onlyClear ? { onlyClear: true } : {}),
+  });
+  let maxTokens = simplifyMaxTokens(original.join(" "));
+  let result: AiCallResult | null = null;
+  try {
     for (let call = 0; call < 2; call += 1) {
       const input = {
         role: "simplify" as const,
-        system,
+        system: simplifySystemPrompt(outputLang),
         user,
         schemaName: "simplification",
         schema: providerSchema,
@@ -213,45 +243,181 @@ async function generateUnit(provider: AiProvider, unit: Unit, options: Generatio
         cacheSystem: true,
         signal,
       };
-      try {
-        result = await provider.call({ ...input, replayKey: replayKey(input) });
-      } catch (error) {
-        throw new SimplifyFailure(error instanceof AiError ? error.code : "ai_provider_down", spentSoFar(attempt));
-      }
+      result = await provider.call({ ...input, replayKey: replayKey(input) });
       account(result);
-      model = result.model;
       if (result.stopReason !== "max_tokens") break;
       maxTokens = Math.ceil(maxTokens * 1.5);
     }
-    if (result?.stopReason === "refusal") throw new SimplifyFailure("ai_refused", spentSoFar(attempt));
-    const parsed = simplificationSchema.safeParse(result?.json);
-    report = parsed.success
-      ? checkSimplification(original, parsed.data, { allowIdentity: options.allowIdentity, lang: outputLang })
-      : { ...emptyReport(), failures: ['shape: the answer must be JSON with "clear" and "very" arrays of strings'] };
-    if (parsed.success && report.passed && options.fidelity) {
-      let judged;
-      try {
-        judged = await judgeFidelity(provider, original, parsed.data, signal);
-      } catch (error) {
-        throw new SimplifyFailure(error instanceof AiError ? error.code : "ai_provider_down", spentSoFar(attempt));
-      }
-      account(judged.result);
-      report = {
-        passed: judged.failures.length === 0,
-        failures: judged.failures,
-        results: { ...report.results, fidelity: judged.failures.length === 0 },
-      };
-    }
-    if (parsed.success && report.passed)
-      return { original, levels: parsed.data, report, attempts: attempt, usage, costMicros, latencyMs, model };
-    failures = report.failures;
-    previous = parsed.success ? parsed.data : null;
+  } catch (error) {
+    attempt.error = error instanceof AiError ? error.code : "ai_provider_down";
+    return attempt;
   }
-  const onlyLevels =
-    !options.fidelity && previous && report && report.failures.every((failure) => failure.startsWith("levels:"))
-      ? { original, levels: previous }
-      : null;
-  throw new SimplifyFailure("ai_simplify_failed", spentSoFar(2), onlyLevels);
+  if (result?.stopReason === "refusal") {
+    attempt.error = "ai_refused";
+    return attempt;
+  }
+  const parsed = simplificationSchema.safeParse(result?.json);
+  if (!parsed.success) {
+    attempt.report = {
+      ...emptyReport(),
+      failures: ['shape: the answer must be JSON with "clear" and "very" arrays of strings'],
+    };
+    return attempt;
+  }
+  const clear = realign(original, parsed.data.clear);
+  const levels = { clear, very: options.onlyClear ? clear : realign(original, parsed.data.very) };
+  attempt.levels = levels;
+  attempt.report = checkSimplification(original, levels, {
+    allowIdentity: options.allowIdentity,
+    lang: outputLang,
+    ...(options.terms ? { terms: options.terms } : {}),
+    ...(options.onlyClear ? { onlyClear: true } : {}),
+  });
+  if (!attempt.report.passed || !options.fidelity) return attempt;
+  try {
+    const judged = await judgeFidelity(provider, original, levels, signal, options.onlyClear ?? false);
+    account(judged.result);
+    attempt.report = {
+      passed: judged.failures.length === 0,
+      failures: judged.failures,
+      results: { ...attempt.report.results, meaning: judged.failures.length === 0 },
+    };
+  } catch (error) {
+    attempt.error = error instanceof AiError ? error.code : "ai_provider_down";
+  }
+  return attempt;
+}
+
+export function realign(original: string[], units: string[]): string[] {
+  const sentences = original.length;
+  const parts = units.length;
+  if (parts <= sentences || parts > 3 * sentences) return units;
+  const score = (from: number, to: number, sentence: number) =>
+    wordOverlap(units.slice(from, to).join(" "), original[sentence] ?? "");
+  const best: number[][] = Array.from({ length: parts + 1 }, () => new Array<number>(sentences + 1).fill(-Infinity));
+  const cut: number[][] = Array.from({ length: parts + 1 }, () => new Array<number>(sentences + 1).fill(0));
+  best[0]![0] = 0;
+  for (let used = 1; used <= parts; used += 1)
+    for (let sentence = 1; sentence <= Math.min(sentences, used); sentence += 1)
+      for (let from = sentence - 1; from < used; from += 1) {
+        const value = (best[from]![sentence - 1] ?? -Infinity) + score(from, used, sentence - 1);
+        if (value > (best[used]![sentence] ?? -Infinity)) {
+          best[used]![sentence] = value;
+          cut[used]![sentence] = from;
+        }
+      }
+  const merged: string[] = [];
+  let end = parts;
+  for (let sentence = sentences; sentence >= 1; sentence -= 1) {
+    const from = cut[end]![sentence] ?? 0;
+    merged.unshift(units.slice(from, end).join(" "));
+    end = from;
+  }
+  return merged;
+}
+
+const bestOf = (attempts: Attempt[]) =>
+  attempts
+    .filter((attempt) => attempt.levels && !attempt.error)
+    .sort((a, b) => a.report.failures.length - b.report.failures.length)[0] ?? null;
+
+async function generateUnit(provider: AiProvider, unit: Unit, options: GenerationOptions): Promise<Generation> {
+  const original = unit.sentences;
+  const signal = options.signal ?? AbortSignal.timeout(CALL_TIMEOUT_MS);
+  const all: Attempt[] = [];
+  let usage = EMPTY_USAGE;
+  let costMicros = 0;
+  let latencyMs = 0;
+  let model = "";
+  let rounds = 0;
+  let feedback = { failures: options.feedback?.failures ?? [], previous: options.feedback?.previous ?? null };
+  const spent = () => ({
+    report: bestOf(all)?.report ?? all.at(-1)?.report ?? emptyReport(),
+    attempts: rounds,
+    usage,
+    costMicros,
+    latencyMs,
+    model,
+  });
+  for (let round = 1; round <= ROUNDS; round += 1) {
+    rounds = round;
+    const feedbacks =
+      round === 1 || feedback.failures.length === 0
+        ? Array.from({ length: CANDIDATES }, () => feedback)
+        : [feedback, ...Array.from({ length: CANDIDATES - 1 }, () => ({ failures: [], previous: null }))];
+    const attempts = await Promise.all(feedbacks.map((each) => attemptOnce(provider, unit, options, signal, each)));
+    for (const attempt of attempts) {
+      all.push(attempt);
+      usage = addUsage(usage, attempt.usage);
+      costMicros += attempt.costMicros;
+      model = attempt.model || model;
+    }
+    latencyMs += Math.max(0, ...attempts.map((attempt) => attempt.latencyMs));
+    const winner = attempts.find((attempt) => attempt.levels && !attempt.error && attempt.report.passed);
+    if (winner?.levels)
+      return {
+        original,
+        levels: winner.levels,
+        report: winner.report,
+        attempts: round,
+        usage,
+        costMicros,
+        latencyMs,
+        model,
+      };
+    if (attempts.every((attempt) => attempt.error)) {
+      const code = attempts.find((attempt) => attempt.error === "ai_refused") ? "ai_refused" : attempts[0]?.error;
+      throw new SimplifyFailure(code ?? "ai_provider_down", spent());
+    }
+    const best = bestOf(attempts);
+    if (best) feedback = { failures: best.report.failures, previous: best.levels };
+  }
+  const nearlySeparated = options.fidelity
+    ? null
+    : all.find(
+        (attempt) =>
+          attempt.levels &&
+          !attempt.error &&
+          attempt.report.failures.length > 0 &&
+          attempt.report.failures.every((failure) => failure.startsWith("levels:")) &&
+          levelSeparation(
+            original,
+            attempt.levels,
+            unit.outputLang,
+            options.terms ?? [],
+            SEPARATION_WITH_MARGIN,
+          ).filter((failure) => !options.onlyClear || !failure.includes('"very"')).length === 0,
+      );
+  if (nearlySeparated?.levels)
+    return {
+      original,
+      levels: nearlySeparated.levels,
+      report: {
+        passed: true,
+        failures: [],
+        results: { ...nearlySeparated.report.results, levels: true },
+        notes: ["levels: passed with the margin", ...nearlySeparated.report.failures],
+      },
+      attempts: rounds,
+      usage,
+      costMicros,
+      latencyMs,
+      model,
+    };
+  const onlyLevels = options.fidelity
+    ? null
+    : all.find(
+        (attempt) =>
+          attempt.levels &&
+          !attempt.error &&
+          attempt.report.failures.length > 0 &&
+          attempt.report.failures.every((failure) => failure.startsWith("levels:")),
+      );
+  throw new SimplifyFailure(
+    "ai_simplify_failed",
+    spent(),
+    onlyLevels?.levels ? { original, levels: onlyLevels.levels } : null,
+  );
 }
 
 function emptyReport(): CheckReport {
@@ -268,13 +434,25 @@ function emptyReport(): CheckReport {
       claims: false,
       language: false,
       levels: false,
-      fidelity: false,
+      meaning: false,
     },
   };
 }
 
+export function failedCheckNames(report: CheckReport): string[] {
+  return [...new Set(report.failures.map((failure) => failure.replace(/^part \d+: /, "").split(":")[0] ?? ""))].filter(
+    Boolean,
+  );
+}
+
 function checksOf(report: CheckReport, attempts: number): Record<string, unknown> {
-  return { ...report.results, failures: report.failures, attempts };
+  return {
+    ...report.results,
+    failures: report.failures,
+    failedChecks: failedCheckNames(report),
+    ...(report.notes ? { notes: report.notes } : {}),
+    attempts,
+  };
 }
 
 async function logRequest(
@@ -304,7 +482,7 @@ async function find(input: SimplifyRequest): Promise<Found> {
   const cacheKey = simplificationKey(input.address, resolved);
   const provider = getAiProvider();
   await seedFixture(provider, input.address, resolved, cacheKey);
-  return { resolved, cacheKey, provider, cached: await readSimplification(cacheKey, input.address) };
+  return { resolved, cacheKey, provider, cached: await readSimplification(cacheKey, input.address, resolved.text) };
 }
 
 function codeOf(error: unknown): AiErrorCode {
@@ -342,7 +520,9 @@ async function serveHit(
 
 async function generate(request: Request, input: SimplifyRequest, found: Found): Promise<SimplifyOutcome> {
   if (found.cached.rejections >= MAX_REJECTIONS) throw new AiError("ai_not_simplifiable");
-  const ticket: GuardTicket = await guardRequest(request, "simplify", ESTIMATE_MICROS.simplify);
+  const reservation =
+    ESTIMATE_MICROS.simplify * CANDIDATES * chunkSentences(splitSentences(found.resolved.text)).length;
+  const ticket: GuardTicket = await guardRequest(request, "simplify", reservation);
   const provider = found.provider;
   let spentMicros = 0;
   try {
@@ -386,6 +566,7 @@ async function generate(request: Request, input: SimplifyRequest, found: Found):
   } catch (error) {
     const code = codeOf(error);
     const spent = error instanceof SimplifyFailure ? error.spent : null;
+    if (spent) console.error(`[ai] simplify ${code}: ${failedCheckNames(spent.report).join(",") || "no checks"}`);
     spentMicros = spent?.costMicros ?? spentMicros;
     await logRequest({
       locale: input.locale,

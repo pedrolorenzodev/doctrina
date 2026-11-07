@@ -1,4 +1,4 @@
-export type AiRole = "plan" | "answer" | "simplify" | "judge";
+export type AiRole = "plan" | "answer" | "simplify" | "judge" | "fidelity";
 export type AiProviderId = "anthropic" | "fake" | "replay";
 export type Effort = "low" | "medium" | "high";
 export type JsonSchema = Record<string, unknown>;

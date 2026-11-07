@@ -6,6 +6,7 @@ const DEFAULTS: Record<AiRole, { env: string; model: string; effort: Effort }> =
   answer: { env: "AI_MODEL_ANSWER", model: "claude-haiku-5-5", effort: "medium" },
   simplify: { env: "AI_MODEL_SIMPLIFY", model: "claude-haiku-5-5", effort: "low" },
   judge: { env: "AI_MODEL_JUDGE", model: "claude-haiku-5-5", effort: "low" },
+  fidelity: { env: "AI_MODEL_FIDELITY", model: "claude-sonnet-5-5", effort: "low" },
 };
 
 const EFFORTS: readonly string[] = ["low", "medium", "high"];
