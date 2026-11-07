@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 import { isLocale } from "@/lib/locale";
 
 const robotsBody = "User-agent: *\nDisallow: /\n";
+const botIdPathSegment = "149e9513-01fa-4fb0-aad4-566afd725d1b";
 
 function passwordMatches(header: string | null, password: string): boolean {
   if (!header?.startsWith("Basic ")) return false;
@@ -24,7 +25,7 @@ function passwordMatches(header: string | null, password: string): boolean {
 function isOutsideEveryLocale(pathname: string): boolean {
   const segments = pathname.split("/").filter(Boolean);
   const [first] = segments;
-  if (!first || isLocale(first) || first === "api" || first.startsWith("_")) return false;
+  if (!first || isLocale(first) || first === "api" || first === botIdPathSegment || first.startsWith("_")) return false;
   return !segments[segments.length - 1]!.includes(".");
 }
 

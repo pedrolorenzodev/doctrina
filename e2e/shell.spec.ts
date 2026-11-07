@@ -15,6 +15,17 @@ for (const path of ["/fr", "/foo", "/es/nothing", "/en/doctrinas/x"]) {
   });
 }
 
+test("BotID's challenge path is not rewritten to the 404 page while /fr still is", async ({ request }) => {
+  const challenge = await request.get(
+    "/149e9513-01fa-4fb0-aad4-566afd725d1b/2d206a39-8ed7-437e-a3be-862e0f06eea3/a-4-a/c.js",
+    { timeout: 15000, failOnStatusCode: false },
+  );
+  expect(await challenge.text()).not.toContain("Esta página no existe");
+  const missing = await request.get("/fr");
+  expect(missing.status()).toBe(404);
+  expect(await missing.text()).toContain("Esta página no existe");
+});
+
 test("the Spanish and the canonical URLs of a tradition both work; English has none yet", async ({ page }) => {
   expect((await page.goto(traditionPath))?.status()).toBe(200);
   expect((await page.goto("/es/doctrines/eucharist/catholic"))?.status()).toBe(200);
