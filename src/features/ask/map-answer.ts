@@ -1,5 +1,7 @@
 import { ANSWER_PROMPT_VERSION, type AnswerKind, type WireAnswer, type WireQuote } from "@/lib/ai/contracts";
 import type { Locale } from "@/lib/locale";
+import { getBibleBook } from "@/content/bible-books";
+import { bibleChapterHref } from "@/content/bible-routes";
 import { collectionLabels, traditionLabels } from "@/content/ai-search/collections";
 import type { PackPassage } from "@/content/ai-search/types";
 import type { TraditionId } from "@/content/model/ids";
@@ -21,12 +23,21 @@ function editionOf(passage: PackPassage, locale: Locale): string {
   return `${locale === "es" ? "Traducido con IA." : "Translated with AI."} ${passage.editionLabel}`;
 }
 
+function hrefOf(passage: PackPassage, locale: Locale): string | undefined {
+  const book = passage.bible ? getBibleBook(passage.bible.book) : undefined;
+  if (passage.bible && book) {
+    return `${bibleChapterHref(locale, book, passage.bible.chapter)}#v-${passage.bible.verse}`;
+  }
+  return passage.href ?? undefined;
+}
+
 export function wireQuote(
   passage: PackPassage,
   slice: { text: string; start: number; end: number },
   locale: Locale,
 ): WireQuote {
   const full = passage.text.normalize("NFC");
+  const href = hrefOf(passage, locale);
   const before = full.slice(Math.max(0, slice.start - CONTEXT_CHARS), slice.start);
   const after = full.slice(slice.end, slice.end + CONTEXT_CHARS);
   return {
@@ -58,7 +69,7 @@ export function wireQuote(
           },
         }
       : {}),
-    ...(passage.href ? { href: passage.href } : {}),
+    ...(href ? { href } : {}),
     context: { before, after },
   };
 }

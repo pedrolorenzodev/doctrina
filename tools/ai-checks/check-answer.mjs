@@ -378,6 +378,7 @@ check("mapping: tokens, heads, consulted, context", () => {
   assert.equal(wire.quotes.q2.father.workId, "ignatius-smyrnaeans");
   assert.ok(wire.quotes.q2.context.before.length <= 200 && wire.quotes.q2.context.before.endsWith("thirsty. "));
   assert.equal(wire.quotes.q1.bible.verse, 53);
+  assert.match(wire.quotes.q1.href, /^\/es\/biblia\/juan\/6#v-53$/);
   assert.ok(wire.quotes.q3.text.length > 0);
 });
 check("mapping: not found gives the plain text", () => {
