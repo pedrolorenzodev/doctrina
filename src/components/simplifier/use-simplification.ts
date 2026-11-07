@@ -7,7 +7,7 @@ import type { Locale } from "@/lib/locale";
 import type { SimplifiedEntry, SimplifyStatus } from "@/lib/simplifier-types";
 
 const route = "/api/ai/simplify";
-const timeoutMs = 20_000;
+const timeoutMs = 25_000;
 
 export type SimplifyOutcome =
   | { kind: "entry"; entry: SimplifiedEntry; status: SimplifyStatus }

@@ -260,7 +260,7 @@ test("«Reintentar» asks again and the answer opens as the simplified text", as
 
 const failChain = (route: Route) => failWith(503, "ai_provider_down", true)(route);
 
-test("a request that never answers ends at 20 s with the timeout message", async ({ page }) => {
+test("a request that never answers ends at 25 s with the timeout message", async ({ page }) => {
   await page.clock.install();
   await page.route(simplifyRoute, async (route) => {
     await new Promise((resolve) => setTimeout(resolve, 60000));
@@ -270,7 +270,7 @@ test("a request that never answers ends at 20 s with the timeout message", async
   await bringUp(page, 1);
   await mark(page, 1).click();
   await expect(mark(page, 1)).toHaveAttribute("aria-busy", "true");
-  await page.clock.fastForward(19000);
+  await page.clock.fastForward(24000);
   await expect(mark(page, 1)).toHaveAttribute("aria-busy", "true");
   await page.clock.fastForward(1500);
   await expect(panelOf(page, 1).locator("[data-simplifier-message]")).toHaveText(
