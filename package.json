@@ -19,7 +19,7 @@
     "ai:usage": "node --import ./tools/register-alias.mjs tools/ai-usage-report.mjs",
     "compare": "node tools/compare-clean.mjs",
     "components": "node tools/components.mjs",
-    "deploy:demo": "LEAN_BUILD=1 NEXT_PUBLIC_SIMPLIFIER=on npx vercel@65.11.0 build --prod && npx vercel@65.11.0 deploy --prebuilt --prod",
+    "deploy:demo": "LEAN_BUILD=1 NEXT_PUBLIC_SIMPLIFIER=on NEXT_PUBLIC_AI_CHAT=real npx vercel@65.11.0 build --prod && npx vercel@65.11.0 deploy --prebuilt --prod",
     "verify": "npm run typecheck && npm run lint && npm run format:check && npm run build"
   },
   "dependencies": {
