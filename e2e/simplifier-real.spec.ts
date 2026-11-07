@@ -272,7 +272,7 @@ test("a request that never answers ends at 20 s with the timeout message", async
   );
 });
 
-test("the status line says «Generado por IA, sin revisar», and «Revisado» for a reviewed result", async ({ page }) => {
+test("the status line says «Generado por IA», and «Revisado» for a reviewed result", async ({ page }) => {
   await page.route(simplifyRoute, async (route) => {
     if (route.request().method() !== "POST") return noProbe(route);
     const response = await route.fetch();
@@ -284,15 +284,16 @@ test("the status line says «Generado por IA, sin revisar», and «Revisado» fo
   await mark(page, 1).click();
   await expect(panelOf(page, 1).locator("[data-simplifier-hide]")).toBeVisible({ timeout: 12000 });
   await expect(panelOf(page, 1)).toContainText("Revisado");
-  await expect(panelOf(page, 1)).not.toContainText("sin revisar");
+  await expect(panelOf(page, 1)).not.toContainText("Generado por IA");
 });
 
-test("the default status is «Generado por IA, sin revisar»", async ({ page }) => {
+test("the default status is «Generado por IA»", async ({ page }) => {
   await openPage(page);
   await bringUp(page, 1);
   await mark(page, 1).click();
   await expect(panelOf(page, 1).locator("[data-simplifier-hide]")).toBeVisible({ timeout: 12000 });
-  await expect(panelOf(page, 1)).toContainText("Generado por IA, sin revisar");
+  await expect(panelOf(page, 1)).toContainText("Generado por IA");
+  await expect(panelOf(page, 1)).not.toContainText("sin revisar");
   await expect(panelOf(page, 1)).not.toContainText("Texto de prueba");
 });
 
