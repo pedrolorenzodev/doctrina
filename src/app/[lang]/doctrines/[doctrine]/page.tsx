@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { CitationProvider } from "@/components/citation-window/citation-context";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { SimplifySwitch } from "@/components/simplify-switch";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { PageLink } from "@/components/ui/page-link";
@@ -26,6 +27,7 @@ import { WitnessesSection } from "@/features/doctrine/witnesses-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 import { leanBuild } from "@/lib/lean-build";
+import { simplifierEnabled } from "@/lib/simplifier-enabled";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
@@ -80,6 +82,11 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
           label={text.shell.breadcrumb}
           trail={[{ label: text.shell.groupDoctrines }]}
           current={doctrineName(locale, doctrine)}
+          aside={
+            simplifierEnabled ? (
+              <SimplifySwitch row label={text.shell.simplifyRow.label} ariaLabel={text.shell.simplifyRow.aria} />
+            ) : undefined
+          }
         />
         <PageHeader id="top" className="mt-5" title={doctrineName(locale, doctrine)} lede={page.lede} />
         <div className="title-part title-part-3 max-w-col">

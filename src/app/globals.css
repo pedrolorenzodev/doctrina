@@ -2713,3 +2713,7 @@ html[data-transliteration="off"] [data-transliteration] {
 @utility simplifier-ring-line {
   border-width: 1.5px;
 }
+
+html[data-simplifier-reveal] [data-simplifier-mark] {
+  opacity: 1;
+}

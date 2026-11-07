@@ -3,6 +3,7 @@
 import { useCallback, useId, useRef, useState, useSyncExternalStore } from "react";
 import { HangingMenu } from "@/components/hanging-menu";
 import { SegmentedFilter } from "@/components/ui/segmented-filter";
+import { SimplifySwitch } from "@/components/simplify-switch";
 import { TextSettings, type TextSettingsText } from "@/features/reader/text-settings";
 import { TextSizeControl } from "@/features/reader/text-size-control";
 import {
@@ -21,6 +22,7 @@ type TextOptionsText = {
   formatGroup: string;
   formats: { lines: string; flow: string };
   locked: string;
+  simplify?: { group: string; label: string; help: string };
 };
 
 type TextOptionsProps = { text: TextOptionsText; locked: boolean; sizeOnly?: boolean };
@@ -64,6 +66,15 @@ export function TextOptions({ text, locked, sizeOnly = false }: TextOptionsProps
           <TextSizeControl text={text.size} />
         </div>
         <TextSettings text={text.settings} />
+        {text.simplify ? (
+          <div data-menu-item="" className="mt-3.5 grid gap-1.5 border-t border-rule pt-3.5">
+            <p className="ml-1 text-label font-medium text-ink-3">{text.simplify.group}</p>
+            <div className="pl-1">
+              <SimplifySwitch label={text.simplify.label} />
+            </div>
+            <p className="ml-1 text-ui-xs text-ink-3">{text.simplify.help}</p>
+          </div>
+        ) : null}
         {sizeOnly ? null : (
           <>
             <p data-menu-item="" className="mt-3.5 mb-1.5 ml-1 text-label font-medium text-ink-3">

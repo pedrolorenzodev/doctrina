@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CitationProvider } from "@/components/citation-window/citation-context";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { SimplifySwitch } from "@/components/simplify-switch";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
@@ -23,6 +24,7 @@ import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 import { leanBuild } from "@/lib/lean-build";
+import { simplifierEnabled } from "@/lib/simplifier-enabled";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
@@ -62,6 +64,11 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
           label={text.shell.breadcrumb}
           trail={[{ label: text.shell.groupDoctrines }, doctrineCrumb(locale, doctrine)]}
           current={traditionName(locale, tradition)}
+          aside={
+            simplifierEnabled ? (
+              <SimplifySwitch row label={text.shell.simplifyRow.label} ariaLabel={text.shell.simplifyRow.aria} />
+            ) : undefined
+          }
         />
         <TraditionSwitcher
           label={text.shell.traditionLabel}

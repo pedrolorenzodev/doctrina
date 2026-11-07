@@ -10,15 +10,16 @@ type BreadcrumbsProps = {
   label: string;
   trail: Crumb[];
   current?: ReactNode;
+  aside?: ReactNode;
 };
 
 const separator = "/";
 
-export function Breadcrumbs({ label, trail, current }: BreadcrumbsProps) {
-  return (
+export function Breadcrumbs({ label, trail, current, aside }: BreadcrumbsProps) {
+  const nav = (
     <nav
       aria-label={label}
-      className="title-part title-part-0 flex max-w-col flex-wrap items-center gap-y-1 text-ui-xs text-ink-3"
+      className={`flex max-w-col flex-wrap items-center gap-y-1 text-ui-xs text-ink-3 ${aside ? "" : "title-part title-part-0"}`}
     >
       {trail.map((crumb, index) => (
         <Fragment key={crumb.label}>
@@ -42,5 +43,12 @@ export function Breadcrumbs({ label, trail, current }: BreadcrumbsProps) {
         </span>
       ) : null}
     </nav>
+  );
+  if (!aside) return nav;
+  return (
+    <div className="title-part title-part-0 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+      {nav}
+      {aside}
+    </div>
   );
 }

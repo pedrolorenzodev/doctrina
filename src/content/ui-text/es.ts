@@ -19,6 +19,7 @@ export const es = {
     chapterOf: "{book} {chapter}",
     soon: "En construcción",
     breadcrumb: "Ruta",
+    simplifyRow: { label: "Simplificar", aria: "Simplificar párrafos" },
     traditionLabel: "Tradición",
     traditionHint: "Al cambiar, sigues en la misma sección.",
     objectionsHint: "Al cambiar, sigues en las objeciones.",
@@ -378,6 +379,7 @@ export const es = {
       citeCopied: "Cita copiada",
       find: "Buscar",
       note: "Nota",
+      simplify: "Simplificar",
     },
     highlight: {
       label: "Subrayar",
@@ -451,6 +453,11 @@ export const es = {
       mark: "Aa",
       label: "Texto",
       formatGroup: "Formato",
+      simplify: {
+        group: "Ayudas de lectura",
+        label: "Simplificar párrafos",
+        help: "Muestra un círculo junto a cada párrafo. Al tocarlo se abre una versión en palabras más simples, escrita por IA.",
+      },
       lines: "Un versículo por línea",
       flow: "En párrafo",
       settings: {

@@ -21,6 +21,7 @@ export const en: UiText = {
     chapterOf: "{book} {chapter}",
     soon: "Under construction",
     breadcrumb: "Breadcrumb",
+    simplifyRow: { label: "Simplify", aria: "Simplify paragraphs" },
     traditionLabel: "Tradition",
     traditionHint: "When you switch, you stay in the same section.",
     objectionsHint: "When you switch, you stay in the objections.",
@@ -379,6 +380,7 @@ export const en: UiText = {
       citeCopied: "Citation copied",
       find: "Search",
       note: "Note",
+      simplify: "Simplify",
     },
     highlight: {
       label: "Highlight",
@@ -452,6 +454,11 @@ export const en: UiText = {
       mark: "Aa",
       label: "Text",
       formatGroup: "Format",
+      simplify: {
+        group: "Reading aids",
+        label: "Simplify paragraphs",
+        help: "Shows a circle beside each paragraph. Pressing it opens a version in simpler words, written by AI.",
+      },
       lines: "One verse per line",
       flow: "As a paragraph",
       settings: {
