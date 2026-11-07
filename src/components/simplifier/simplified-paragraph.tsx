@@ -1,23 +1,28 @@
 "use client";
 
-import { useCallback, useId, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { showPair } from "@/components/simplifier/pair-highlight";
 import { closePanelBox, crossfade, glideHeight, openPanelBox } from "@/components/simplifier/panel-motion";
-import { SimplifiedPanel } from "@/components/simplifier/simplified-panel";
+import { SimplifiedPanel, type PanelContent } from "@/components/simplifier/simplified-panel";
 import { hasStreamed, levelOf, markStreamed, rememberLevel } from "@/components/simplifier/simplifier-memory";
-import { getSimplifierText } from "@/components/simplifier/simplifier-text";
-import type { SimplifiedEntry, SimplifierLevel } from "@/lib/simplifier-types";
+import { registerOpener, unregisterOpener } from "@/components/simplifier/simplifier-openers";
+import { getSimplifierText, simplifyMessage } from "@/components/simplifier/simplifier-text";
+import { useSimplification, type SimplifyOutcome } from "@/components/simplifier/use-simplification";
 import { useStream } from "@/components/simplifier/use-stream";
 import { Tooltip } from "@/components/ui/tooltip";
+import type { SimplifyAddress } from "@/lib/ai/contracts";
 import { prefersReducedMotion } from "@/lib/branch-motion";
 import type { Locale } from "@/lib/locale";
+import { simplifierEnabled } from "@/lib/simplifier-enabled";
+import type { SimplifierLevel } from "@/lib/simplifier-types";
+import { useSimplifierVisibility } from "@/lib/simplifier-visibility";
 
 type Tone = "prose" | "definition" | "reader";
 
 type SimplifiedParagraphProps = {
   id: string;
   locale: Locale;
-  entry: SimplifiedEntry | undefined;
+  address: SimplifyAddress | undefined;
   tone: Tone;
   className?: string;
   children: ReactNode;
@@ -32,10 +37,10 @@ const toneClassName: Record<Tone, string> = {
 const wordCount = (sentences: string[]) => sentences.reduce((total, sentence) => total + sentence.split(" ").length, 0);
 
 export function SimplifiedParagraph(props: SimplifiedParagraphProps) {
-  const { entry, children } = props;
-  if (!entry) return <>{children}</>;
+  const { address, children } = props;
+  if (!address || !simplifierEnabled) return <>{children}</>;
   return (
-    <SimplifiedView {...props} entry={entry}>
+    <SimplifiedView {...props} address={address}>
       {children}
     </SimplifiedView>
   );
@@ -44,13 +49,16 @@ export function SimplifiedParagraph(props: SimplifiedParagraphProps) {
 function SimplifiedView({
   id,
   locale,
-  entry,
+  address,
   tone,
   className = "",
   children,
-}: SimplifiedParagraphProps & { entry: SimplifiedEntry }) {
+}: SimplifiedParagraphProps & { address: SimplifyAddress }) {
   const text = getSimplifierText(locale);
   const panelId = useId();
+  const simplification = useSimplification(address, locale);
+  const visibility = useSimplifierVisibility();
+  const [content, setContent] = useState<PanelContent | null>(null);
   const [shown, setShown] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [openCount, setOpenCount] = useState(0);
@@ -69,7 +77,8 @@ function SimplifiedView({
   const closing = useRef(false);
 
   const finish = useCallback(() => setStreaming(false), []);
-  const stream = useStream(streaming, wordCount(entry[level]) + 1, finish);
+  const entry = content?.kind === "entry" ? content.entry : null;
+  const stream = useStream(streaming, entry ? wordCount(entry[level]) + 1 : 0, finish);
 
   useLayoutEffect(() => {
     if (openCount === 0 || !box.current || !inner.current) return;
@@ -85,15 +94,21 @@ function SimplifiedView({
   }, [level, stoppedAt]);
 
   useLayoutEffect(() => {
-    showPair(root.current, hovered === null ? null : (entry.original[hovered] ?? null));
+    showPair(root.current, hovered === null || !entry ? null : (entry.original[hovered] ?? null));
     return () => showPair(null, null);
-  }, [hovered, entry.original]);
+  }, [hovered, entry]);
 
-  const open = () => {
-    const first = !hasStreamed(id) && !prefersReducedMotion();
-    markStreamed(id);
+  const reveal = (outcome: SimplifyOutcome) => {
+    const found = outcome.kind === "entry";
+    const first = found && !hasStreamed(id) && !prefersReducedMotion();
+    if (found) markStreamed(id);
     closing.current = false;
     fadeOnOpen.current = !first;
+    setContent(
+      found
+        ? outcome
+        : { kind: "message", text: simplifyMessage(outcome.code, locale), retry: outcome.retry, lang: locale },
+    );
     setLevel(levelOf(id));
     setStoppedAt(null);
     stream.reset();
@@ -102,6 +117,31 @@ function SimplifiedView({
     setMounted(true);
     setOpenCount((count) => count + 1);
   };
+
+  const open = async () => {
+    const known = simplification.recall();
+    if (known) {
+      reveal(known);
+      return;
+    }
+    const outcome = await simplification.load();
+    if (outcome) reveal(outcome);
+  };
+
+  const openRef = useRef(open);
+  useEffect(() => {
+    openRef.current = open;
+  });
+  const shownRef = useRef(shown);
+  useEffect(() => {
+    shownRef.current = shown;
+  });
+  useEffect(() => {
+    registerOpener(id, () => {
+      if (!shownRef.current) void openRef.current();
+    });
+    return () => unregisterOpener(id);
+  }, [id]);
 
   const close = (returnFocus: boolean) => {
     setStreaming(false);
@@ -121,6 +161,11 @@ function SimplifiedView({
 
   const chooseLevel = (next: SimplifierLevel) => {
     if (next === level) return;
+    if (content?.kind !== "entry") {
+      rememberLevel(id, next);
+      setLevel(next);
+      return;
+    }
     const current = layer.current;
     const ghost = current && wrap.current ? (current.cloneNode(true) as HTMLElement) : null;
     if (ghost && wrap.current) {
@@ -137,6 +182,11 @@ function SimplifiedView({
     setLevel(next);
   };
 
+  const retry = () => {
+    close(true);
+    void open();
+  };
+
   const stop = () => {
     glide.current = { from: wrap.current?.getBoundingClientRect().height ?? 0, ghost: null };
     setStreaming(false);
@@ -148,16 +198,19 @@ function SimplifiedView({
       data-simplifier=""
       className={className}
       onKeyDown={(event) => {
-        if (event.key !== "Escape" || !shown) return;
+        if (event.key !== "Escape" || !(shown || simplification.pending)) return;
         event.preventDefault();
         event.stopPropagation();
-        close(true);
+        if (shown) close(true);
+        else simplification.cancel();
       }}
     >
       <div ref={root} className={`group/simplifier relative ${toneClassName[tone]}`}>
         {children}
-        <span className="absolute top-simplifier-ring -right-10 z-10 max-md:-top-8.5 max-md:-right-3.5">
-          <Tooltip label={text.mark} align="end">
+        <span
+          className={`absolute top-simplifier-ring -right-10 z-10 max-md:-top-8.5 max-md:-right-3.5 ${visibility === "hidden" && !shown && !simplification.pending ? "hidden" : ""}`}
+        >
+          <Tooltip label={simplification.pending ? text.pending : text.mark} align="end">
             <button
               ref={ring}
               type="button"
@@ -165,19 +218,31 @@ function SimplifiedView({
               aria-label={text.mark}
               aria-expanded={shown}
               aria-controls={mounted ? panelId : undefined}
-              onClick={() => (shown ? close(false) : open())}
-              className="group/ring hit-44 grid size-7 cursor-pointer place-items-center rounded-full opacity-0 transition-opacity duration-150 ease-standard group-hover/simplifier:opacity-100 focus-visible:opacity-100 aria-expanded:opacity-100 pointer-coarse:opacity-100 max-md:size-11 max-md:opacity-100"
+              aria-busy={simplification.pending}
+              onPointerEnter={simplification.prefetch}
+              onFocus={simplification.prefetch}
+              onClick={() => {
+                if (simplification.pending) simplification.cancel();
+                else if (shown) close(false);
+                else void open();
+              }}
+              className="group/ring hit-44 grid size-7 cursor-pointer place-items-center rounded-full opacity-0 transition-opacity duration-150 ease-standard group-hover/simplifier:opacity-100 focus-visible:opacity-100 aria-expanded:opacity-100 aria-busy:opacity-100 pointer-coarse:opacity-100 max-md:size-11 max-md:opacity-100"
             >
-              <i className="block size-3.5 rounded-full simplifier-ring-line border-ink-3 transition-colors duration-150 ease-standard group-hover/ring:border-ink group-aria-expanded/ring:border-ink group-aria-expanded/ring:bg-ink" />
+              <i
+                className={`block size-3.5 rounded-full simplifier-ring-line border-ink-3 transition-colors duration-150 ease-standard group-hover/ring:border-ink group-aria-expanded/ring:border-ink group-aria-expanded/ring:bg-ink ${simplification.pending ? "border-dashed" : ""}`}
+              />
             </button>
           </Tooltip>
         </span>
+        <span role="status" className="sr-only">
+          {simplification.pending ? text.pending : content?.kind === "message" && shown ? content.text : ""}
+        </span>
       </div>
-      {mounted ? (
+      {mounted && content ? (
         <SimplifiedPanel
           id={panelId}
           text={text}
-          entry={entry}
+          content={content}
           level={level}
           streaming={streaming}
           tick={stream.tick}
@@ -191,6 +256,7 @@ function SimplifiedView({
           onStop={stop}
           onHide={() => close(true)}
           onHover={setHovered}
+          onRetry={retry}
         />
       ) : null}
     </div>

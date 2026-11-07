@@ -443,7 +443,11 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
                 <SimplifiedParagraph
                   id={`${workId}/${division.locator}`}
                   locale={locale === "en" ? "en" : "es"}
-                  entry={selected.simplified ? getSimplifiedText(`${workId}/${division.locator}`) : undefined}
+                  address={
+                    selected.simplified && getSimplifiedText(`${workId}/${division.locator}`)
+                      ? { kind: "father", work: workId, edition: selected.id, locator: division.locator }
+                      : undefined
+                  }
                   tone="reader"
                 >
                   <p

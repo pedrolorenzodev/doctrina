@@ -60,9 +60,14 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
     className = "",
   ) => {
     const id = `${page.doctrine}/${page.tradition}/${key}`;
-    const entry = getSimplifiedText(id);
-    return entry ? (
-      <SimplifiedParagraph id={id} locale={locale} entry={entry} tone={tone} className={className}>
+    return getSimplifiedText(id) ? (
+      <SimplifiedParagraph
+        id={id}
+        locale={locale}
+        address={{ kind: "statement", doctrine: page.doctrine, tradition: page.tradition, id: key }}
+        tone={tone}
+        className={className}
+      >
         {node(true)}
       </SimplifiedParagraph>
     ) : (
