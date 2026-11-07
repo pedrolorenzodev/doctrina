@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { addressId, SIMPLIFY_PROMPT_VERSION, simplificationSchema, toProviderSchema } from "@/lib/ai/contracts";
 import {
-  readSimplification,
+  hasStoredSimplification,
   simplificationKey,
   writeSimplification,
   outputLanguage,
@@ -87,7 +87,7 @@ function option(args, name, fallback) {
 async function storeState(items) {
   try {
     const cached = new Set();
-    for (const item of items) if ((await readSimplification(item.cacheKey)).row) cached.add(item.cacheKey);
+    for (const item of items) if (await hasStoredSimplification(item.cacheKey)) cached.add(item.cacheKey);
     return { usable: true, cached };
   } catch {
     return { usable: false, cached: new Set() };

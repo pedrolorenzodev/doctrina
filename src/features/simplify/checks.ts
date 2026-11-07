@@ -3,7 +3,8 @@ import { splitSentences } from "@/lib/ai/sentences";
 
 export type SimplifiedLevels = { clear: string[]; very: string[] };
 
-export type CheckName = "shape" | "length" | "numbers" | "quotes" | "names" | "scripts" | "claims";
+export type CheckName =
+  "shape" | "length" | "numbers" | "quotes" | "names" | "scripts" | "claims" | "language" | "levels" | "fidelity";
 
 export type CheckReport = { passed: boolean; failures: string[]; results: Record<CheckName, boolean> };
 
@@ -61,17 +62,39 @@ const ADDED_CLAIM_ANYWHERE = word(
 );
 
 const TRADITION_WORDS =
-  /(?<![\p{L}])(?:cat[oó]lic|ortodox|luteran|reformad|bautist|pentecostal|protestant|evang[eé]lic|catholic|orthodox|lutheran|reformed|baptist)\p{L}*/giu;
+  /(?<![\p{L}])(cat[oó]lic|ortodox|luteran|reformad|bautist|pentecostal|protestant|evang[eé]lic|catholic|orthodox|lutheran|reformed|baptist)\p{L}*/giu;
 
 const QUOTED = [/«([^«»]+)»/g, /“([^“”]+)”/g, /"([^"]+)"/g];
 const ORIGINAL_SCRIPTS = /[\p{Script=Greek}\p{Script=Hebrew}][\p{Script=Greek}\p{Script=Hebrew}\p{M}]*/gu;
-const WORDS = /[\p{L}\p{M}]+(?:['’-][\p{L}\p{M}]+)*/gu;
-const NOT_NAMES = new Set(["I"]);
+const WORDS = /[\p{L}\p{M}]+(?:['’-](?![sS](?![\p{L}]))[\p{L}\p{M}]+)*/gu;
+const NOT_NAMES = new Set([
+  "I",
+  "He",
+  "Him",
+  "His",
+  "Himself",
+  "Thee",
+  "Thou",
+  "Thy",
+  "Thine",
+  "Thyself",
+  "Who",
+  "Whom",
+  "Whose",
+  "Él",
+  "Su",
+  "Sus",
+]);
 const OPENS_CLAUSE = /(?:^|[«“"‘(\[¿¡:]|[.?!;]\s)\s*$/u;
 
 const flat = (text: string) => normalize(text).text;
 const wordCount = (text: string) => text.split(/\s+/).filter(Boolean).length;
-const stems = (text: string) => new Set([...text.matchAll(TRADITION_WORDS)].map((match) => match[0].toLowerCase()));
+const stems = (text: string) =>
+  new Set(
+    [...text.matchAll(TRADITION_WORDS)].map((match) =>
+      (match[1] ?? "").toLowerCase().replace("ó", "o").replace("é", "e"),
+    ),
+  );
 const stripQuotes = (text: string) => QUOTED.reduce((rest, pattern) => rest.replace(pattern, " "), text);
 
 function meanSentenceWords(text: string): number {
@@ -248,10 +271,48 @@ function checkClaims(original: string[], levels: Level[], failures: string[]): b
   return passed;
 }
 
+const SPANISH_MARKS = /[áéíóúñ¿¡]|(?<![\p{L}])(?:que|los|las|del|por|una|para|es)(?![\p{L}])/giu;
+const ENGLISH_MARKS = /(?<![\p{L}])(?:the|and|of|that|which|is|to|for)(?![\p{L}])/giu;
+
+function guessLang(text: string): ReadingLang {
+  return (text.match(SPANISH_MARKS) ?? []).length >= (text.match(ENGLISH_MARKS) ?? []).length ? "es" : "en";
+}
+
+const LANGUAGE_NAMES = { es: "Spanish", en: "English" } as const;
+
+function checkLanguage(levels: Level[], lang: ReadingLang, failures: string[]): boolean {
+  let passed = true;
+  for (const level of levels)
+    level.units.forEach((unit, index) =>
+      splitSentences(stripQuotes(unit)).forEach((sentence) => {
+        if (wordCount(sentence) < 4 || guessLang(sentence) === lang) return;
+        if ((sentence.match(lang === "es" ? ENGLISH_MARKS : SPANISH_MARKS) ?? []).length < 2) return;
+        failures.push(
+          `language: "${level.name}" entry ${index + 1} has a sentence that is not in ${LANGUAGE_NAMES[lang]}: «${sentence.trim()}»`,
+        );
+        passed = false;
+      }),
+    );
+  return passed;
+}
+
+function checkLevels(
+  original: string[],
+  output: SimplifiedLevels,
+  options: { allowIdentity: boolean; lang?: ReadingLang },
+  failures: string[],
+): boolean {
+  if (options.allowIdentity) return true;
+  if (output.clear.length !== original.length || output.very.length !== original.length) return true;
+  const found = levelSeparation(original, output, options.lang ?? guessLang(original.join(" ")));
+  failures.push(...found);
+  return found.length === 0;
+}
+
 export function checkSimplification(
   original: string[],
   output: SimplifiedLevels,
-  options: { allowIdentity: boolean } = { allowIdentity: false },
+  options: { allowIdentity: boolean; lang?: ReadingLang } = { allowIdentity: false },
 ): CheckReport {
   const source = original.join(" ");
   const levels: Level[] = [
@@ -267,6 +328,147 @@ export function checkSimplification(
     names: checkNames(source, levels, failures),
     scripts: checkScripts(source, levels, failures),
     claims: checkClaims(original, levels, failures),
+    language: checkLanguage(levels, options.lang ?? guessLang(source), failures),
+    levels: checkLevels(original, output, options, failures),
+    fidelity: true,
   };
   return { passed: failures.length === 0, failures, results };
+}
+
+export type ReadingLang = "es" | "en";
+
+export type ReadingMetrics = {
+  words: number;
+  sentences: number;
+  wordsPerSentence: number;
+  charsPerWord: number;
+  readability: number;
+  grade: number;
+};
+
+const STRONG_VOWELS = /[aeoáéíóú]/;
+const READING_WORDS = /[\p{L}\p{N}]+(?:['’][\p{L}]+)*/gu;
+
+function spanishSyllables(token: string): number {
+  const runs = token.match(/[aeiouáéíóúü]+|y$/g) ?? [];
+  let count = 0;
+  for (const run of runs) {
+    count += 1;
+    for (let i = 1; i < run.length; i += 1)
+      if (STRONG_VOWELS.test(run[i - 1] ?? "") && STRONG_VOWELS.test(run[i] ?? "")) count += 1;
+  }
+  return Math.max(1, count);
+}
+
+function englishSyllables(token: string): number {
+  const lower = token.replace(/[^a-z]/g, "");
+  if (lower.length <= 3) return 1;
+  const trimmed = lower.replace(/(?:[^laeiouy]es|[^laeiouy]ed|[^laeiouy]e)$/, "").replace(/^y/, "");
+  return Math.max(1, (trimmed.match(/[aeiouy]{1,2}/g) ?? []).length);
+}
+
+function readingTokens(text: string): string[] {
+  return normalize(text).text.match(READING_WORDS) ?? [];
+}
+
+export function readingMetrics(text: string, lang: ReadingLang): ReadingMetrics {
+  const tokens = readingTokens(text);
+  const words = Math.max(1, tokens.length);
+  const sentences = Math.max(1, splitSentences(text).length);
+  const countSyllables = lang === "es" ? spanishSyllables : englishSyllables;
+  const syllables = tokens.reduce((sum, token) => sum + countSyllables(token), 0);
+  const letters = tokens.reduce((sum, token) => sum + token.length, 0);
+  const huerta = 206.84 - 0.6 * ((100 * syllables) / words) - 1.02 * (words / sentences);
+  const kincaid = 0.39 * (words / sentences) + 11.8 * (syllables / words) - 15.59;
+  return {
+    words: tokens.length,
+    sentences,
+    wordsPerSentence: words / sentences,
+    charsPerWord: letters / words,
+    readability: lang === "es" ? huerta : kincaid,
+    grade: lang === "es" ? (110 - huerta) / 5 : kincaid,
+  };
+}
+
+function grams(tokens: string[], size: number): string[] {
+  return tokens
+    .slice(0, Math.max(0, tokens.length - size + 1))
+    .map((_, index) => tokens.slice(index, index + size).join(" "));
+}
+
+export function wordOverlap(version: string, reference: string, size: 1 | 2 = 1): number {
+  const known = new Set(grams(readingTokens(reference), size));
+  const tokens = grams(readingTokens(stripQuotes(version)), size);
+  if (tokens.length === 0) return 0;
+  return tokens.filter((token) => known.has(token)).length / tokens.length;
+}
+
+export const SEPARATION = {
+  clear: { gradeDrop: 2, easyGrade: 7, sentenceShare: 0.7, maxOverlap: 0.7 },
+  very: {
+    gradeDrop: 4,
+    easyGrade: 5,
+    maxSentenceWords: 12,
+    maxOverlap: 0.55,
+    maxOverlapClear: 0.65,
+    gradeBelowClear: 1.5,
+  },
+  shortSentenceWords: 15,
+} as const;
+
+const fixed = (value: number) => value.toFixed(1);
+const percent = (value: number) => `${Math.round(value * 100)} %`;
+
+const QUOTATION_AS_WORD = (text: string) => QUOTED.reduce((rest, pattern) => rest.replace(pattern, "cita"), text);
+
+export function levelSeparation(original: string[], output: SimplifiedLevels, lang: ReadingLang): string[] {
+  const source = original.join(" ");
+  const clearText = QUOTATION_AS_WORD(output.clear.join(" "));
+  const veryText = QUOTATION_AS_WORD(output.very.join(" "));
+  const base = readingMetrics(QUOTATION_AS_WORD(source), lang);
+  const clear = readingMetrics(clearText, lang);
+  const very = readingMetrics(veryText, lang);
+  const failures: string[] = [];
+  const { clear: forClear, very: forVery, shortSentenceWords } = SEPARATION;
+  const clearTarget = Math.max(forClear.easyGrade, base.grade - forClear.gradeDrop);
+  if (clear.grade > clearTarget)
+    failures.push(
+      `levels: "clear" reads at grade ${fixed(clear.grade)}, the original at ${fixed(base.grade)}; bring it to grade ${fixed(clearTarget)} or easier with shorter sentences and everyday words`,
+    );
+  if (
+    base.wordsPerSentence > shortSentenceWords &&
+    clear.wordsPerSentence > forClear.sentenceShare * base.wordsPerSentence
+  )
+    failures.push(
+      `levels: "clear" sentences average ${fixed(clear.wordsPerSentence)} words, the original's ${fixed(base.wordsPerSentence)}; split them to at most ${fixed(forClear.sentenceShare * base.wordsPerSentence)}`,
+    );
+  const clearOverlap = wordOverlap(clearText, source, 2);
+  if (clearOverlap > forClear.maxOverlap)
+    failures.push(
+      `levels: ${percent(clearOverlap)} of the word pairs of "clear" are copied from the original; reword it in modern everyday language (at most ${percent(forClear.maxOverlap)})`,
+    );
+  const veryTarget = Math.max(forVery.easyGrade, base.grade - forVery.gradeDrop);
+  if (very.grade > veryTarget)
+    failures.push(
+      `levels: "very" reads at grade ${fixed(very.grade)}, the original at ${fixed(base.grade)}; bring it to grade ${fixed(veryTarget)} or easier, as if for a twelve-year-old`,
+    );
+  if (very.wordsPerSentence > forVery.maxSentenceWords)
+    failures.push(
+      `levels: "very" sentences average ${fixed(very.wordsPerSentence)} words; split them to at most ${forVery.maxSentenceWords}`,
+    );
+  const veryOverlap = wordOverlap(veryText, source, 2);
+  if (veryOverlap > forVery.maxOverlap)
+    failures.push(
+      `levels: ${percent(veryOverlap)} of the word pairs of "very" are copied from the original; rewrite it in your own everyday words (at most ${percent(forVery.maxOverlap)})`,
+    );
+  const veryClearOverlap = wordOverlap(veryText, clearText, 2);
+  if (veryClearOverlap > forVery.maxOverlapClear)
+    failures.push(
+      `levels: "very" repeats ${percent(veryClearOverlap)} of the word pairs of "clear"; it must be a different, much simpler rewrite, not "clear" cut into pieces (at most ${percent(forVery.maxOverlapClear)})`,
+    );
+  if (very.grade > forVery.easyGrade && clear.grade - very.grade < forVery.gradeBelowClear)
+    failures.push(
+      `levels: "very" (grade ${fixed(very.grade)}) is not clearly simpler than "clear" (grade ${fixed(clear.grade)}); it must be at least ${forVery.gradeBelowClear} grades easier`,
+    );
+  return failures;
 }

@@ -1,13 +1,14 @@
 process.env.NEXT_PUBLIC_SIMPLIFIER = "on";
 
-const { readFileSync } = await import("node:fs");
+const { readFileSync, readdirSync } = await import("node:fs");
 const { parseAddress, resolveAddress } = await import("@/content/ai-simplify/resolve-address");
-const { simplificationKey, readSimplification } = await import("@/content/ai-simplify/cache");
+const { simplificationKey, readSimplification, generatesLive, writeSimplification, hasStoredSimplification } =
+  await import("@/content/ai-simplify/cache");
 const { seedFixture } = await import("@/content/ai-simplify/seed-fixtures");
 const { getSimplifiedText } = await import("@/content/simplified-texts");
-const { checkSimplification } = await import("@/features/simplify/checks");
+const { checkSimplification, levelSeparation } = await import("@/features/simplify/checks");
 const { simplifyUserMessage, simplifySystemPrompt } = await import("@/features/simplify/prompt");
-const { generateSimplification, SimplifyFailure } = await import("@/features/simplify/simplify");
+const { generateSimplification, SimplifyFailure, chunkSentences } = await import("@/features/simplify/simplify");
 const { FakeProvider } = await import("@/lib/ai/fake-provider");
 const { canSimplify } = await import("@/lib/ai/simplify-limits");
 const { splitSentences } = await import("@/lib/ai/sentences");
@@ -115,7 +116,7 @@ for (const id of ids) {
   const paragraph = await resolveAddress(address, "es");
   const cacheKey = simplificationKey(address, paragraph);
   await seedFixture(fake, address, paragraph, cacheKey);
-  const { row } = await readSimplification(cacheKey);
+  const { row } = await readSimplification(cacheKey, address);
   const mock = getSimplifiedText(id);
   if (row && row.status === "reviewed" && JSON.stringify(row.very) === JSON.stringify(mock.very)) served += 1;
 }
@@ -148,17 +149,18 @@ const original = [
 ];
 const good = {
   clear: [
-    "Según el Catecismo 1374, Cristo está presente en la Eucaristía «verdadera, real y sustancialmente».",
-    "Ignacio de Antioquía la llama εὐχαριστία en su carta a los de Esmirna, cerca del año 110.",
-    "Para la Iglesia católica, ese modo de estar presente es único.",
+    "El Catecismo 1374 dice que en la Eucaristía Cristo está presente. Lo está «verdadera, real y sustancialmente».",
+    "Ignacio de Antioquía usa para ella la palabra εὐχαριστία. Lo hace cerca del año 110, cuando escribe a los de Esmirna.",
+    "Para la Iglesia católica, este modo de estar presente es único.",
   ],
   very: [
-    "El Catecismo 1374 dice que Cristo está en la Eucaristía. Está «verdadera, real y sustancialmente».",
-    "Ignacio de Antioquía la llama εὐχαριστία. Lo dice en su carta a los de Esmirna, cerca del año 110.",
-    "Para la Iglesia católica, esa presencia es única.",
+    "El Catecismo 1374 habla de la Eucaristía. Dice que Cristo está ahí. Está «verdadera, real y sustancialmente».",
+    "Ignacio de Antioquía le da el nombre εὐχαριστία. Escribió esto a la gente de Esmirna. Fue cerca del año 110.",
+    "Para la Iglesia católica, esa presencia no tiene igual: es única.",
   ],
 };
-check("a faithful simplification passes", checkSimplification(original, good).passed);
+const goodReport = checkSimplification(original, good);
+check(`a faithful simplification passes (${goodReport.failures.join(" | ")})`, goodReport.passed);
 
 const swap = (level, index, from, to) => ({
   ...good,
@@ -178,10 +180,62 @@ const bad = [
   ["dropped attribution", swap("very", 2, "Para la Iglesia católica, esa", "Esa"), "names"],
   ["quote invented", swap("clear", 2, "es único", "es «único y verdadero»"), "quotes"],
 ];
+const copied = { clear: [...original], very: good.very };
+const pieces = {
+  clear: good.clear,
+  very: good.clear.map((unit) => unit.replace(/, /g, ". ").replace(/ y /g, ". Y ")),
+};
+const longVery = { ...good, very: [good.very.join(" ").replace(/\. /g, ", y ")] };
+bad.push(
+  ["clear copies the original", copied, "levels"],
+  ["very is clear cut into pieces", pieces, "levels"],
+  [
+    "English inside a Spanish level",
+    swap(
+      "very",
+      2,
+      "Para la Iglesia católica, esa presencia no tiene igual: es única.",
+      "Para la Iglesia católica, esa presencia es única. The bread is not a missing body.",
+    ),
+    "language",
+  ],
+  ["very keeps long sentences", { ...longVery, very: [longVery.very[0], good.very[1], good.very[2]] }, "levels"],
+);
 for (const [name, output, failed] of bad) {
   const report = checkSimplification(original, output);
   check(`bad output caught: ${name}`, !report.passed && report.results[failed] === false && report.failures.length > 0);
 }
+
+const english = {
+  original: [
+    "Wherefore, brethren, let us not grow weary in well-doing, neither let us be dismayed by the afflictions which befall us, knowing that he who promised is faithful, and that the reward of patience is laid up for them that endure unto the end.",
+  ],
+  clear: [
+    "So, brothers, let us not get tired of doing good. Let us not lose heart because of the troubles that come to us. We know that he who made the promise is faithful. A reward for patience is kept for those who hold on to the end.",
+  ],
+  very: [
+    "So, brothers, let us keep doing good. Hard things will happen to us. Let us not give up. He who made the promise keeps his word. People who wait and hold on to the end will get a reward.",
+  ],
+};
+check("an English pair at two clear levels passes", levelSeparation(english.original, english, "en").length === 0);
+check(
+  "the language of the levels gate is inferred when not given",
+  checkSimplification(english.original, english).results.levels &&
+    !checkSimplification(english.original, { ...english, clear: english.original }).results.levels,
+);
+check(
+  "a levels failure tells the model what to change",
+  levelSeparation(english.original, { ...english, very: english.clear }, "en").some((failure) =>
+    failure.includes('not "clear" cut into pieces'),
+  ),
+);
+const easyOriginal = ["Dios es amor."];
+check(
+  "an original that is already easy is not pushed further",
+  levelSeparation(easyOriginal, { clear: ["Dios es amor."], very: ["Dios ama."] }, "es").every(
+    (failure) => !failure.includes("grades easier"),
+  ),
+);
 
 function scripted(answers) {
   const calls = [];
@@ -242,6 +296,190 @@ check(
 check(
   "the call uses the simplify role and a cached system",
   truncated.calls[0].role === "simplify" && truncated.calls[0].cacheSystem,
+);
+
+const statementAddress = { kind: "statement", doctrine: "baptism", tradition: "orthodox", id: "QE-1" };
+const fatherAddress = { kind: "father", work: "ignatius-smyrnaeans", edition: "lightfoot-1889", locator: "7.1" };
+check(
+  "only Father divisions generate live",
+  generatesLive(fatherAddress) &&
+    !generatesLive(statementAddress) &&
+    !generatesLive({ kind: "doctrine", doctrine: "baptism", section: "common", id: "text" }) &&
+    !generatesLive({ kind: "glossary", term: "magisterio", tradition: "catholic" }),
+);
+const rowFor = async (address, status) => {
+  const paragraph = await resolveAddress(address, "es");
+  const cacheKey = simplificationKey(address, paragraph);
+  const original = splitSentences(paragraph.text);
+  await writeSimplification({
+    cacheKey,
+    address,
+    textSha256: "test",
+    sourceLang: paragraph.sourceLang,
+    outputLang: paragraph.sourceLang,
+    model: "test",
+    promptVersion: "test",
+    original,
+    clear: original,
+    very: original,
+    status,
+    checks: {},
+    tokensIn: 0,
+    tokensOut: 0,
+    costMicros: 0,
+  });
+  return cacheKey;
+};
+const generatedStatement = await rowFor(statementAddress, "generated");
+check(
+  "a generated tradition-page row is never served",
+  (await readSimplification(generatedStatement, statementAddress)).row === null &&
+    (await hasStoredSimplification(generatedStatement)),
+);
+await rowFor(statementAddress, "reviewed");
+check(
+  "a reviewed tradition-page row is served",
+  (await readSimplification(generatedStatement, statementAddress)).row?.status === "reviewed",
+);
+const generatedFather = await rowFor(fatherAddress, "generated");
+check(
+  "a generated Father row is served",
+  (await readSimplification(generatedFather, fatherAddress)).row?.status === "generated",
+);
+const rejectedFather = await rowFor(fatherAddress, "rejected");
+check("a rejected row is never served", (await readSimplification(rejectedFather, fatherAddress)).row === null);
+check(
+  "seeding refuses a real provider",
+  !(await seedFixture({ id: "anthropic", call: async () => ({}) }, ignatius, resolved, key)),
+);
+const reviewedWriters = ["src", "tools"]
+  .flatMap((root) => readdirSync(root, { recursive: true }).map((file) => `${root}/${file}`))
+  .filter((file) => /\.(ts|tsx|mjs)$/.test(file) && !file.startsWith("tools/ai-checks/"))
+  .filter((file) => /status: "reviewed"|"--approve", "reviewed"/.test(readFileSync(file, "utf8")));
+check(
+  `only --approve and the fake seed write reviewed rows (${reviewedWriters.join(", ")})`,
+  reviewedWriters.sort().join(",") === "src/content/ai-simplify/seed-fixtures.ts,tools/ai-review-simplifications.mjs",
+);
+
+const longSentences = Array.from(
+  { length: 32 },
+  (_, index) => `Sentence ${index} ${"word ".repeat(18 + (index % 5))}end.`,
+);
+const chunks = chunkSentences(longSentences);
+const chunkWords = chunks.map((chunk) => chunk.join(" ").split(/\s+/).length);
+check(
+  `a long paragraph splits at sentence boundaries into balanced parts (${chunkWords.join(", ")})`,
+  chunks.length === 5 && chunks.flat().join("|") === longSentences.join("|") && Math.max(...chunkWords) <= 200,
+);
+check(
+  "archaic pronouns are not names, titles still are",
+  checkSimplification(["For He gave it to Thee, and the Lord kept it."], {
+    clear: ["For he gave it to you, and the Lord kept it."],
+    very: ["He gave it to you. The Lord kept it."],
+  }).results.names &&
+    !checkSimplification(["For He gave it to Thee, and the Lord kept it."], {
+      clear: ["For he gave it to you, and God kept it."],
+      very: ["He gave it to you. God kept it."],
+    }).results.names,
+);
+check("a short paragraph stays one part", chunkSentences(longSentences.slice(0, 5)).length === 1);
+const echo = { id: "anthropic", calls: 0 };
+echo.call = async (input) => {
+  echo.calls += 1;
+  return {
+    json: (await fake.call(input)).json,
+    usage: { inputTokens: 10, cachedInputTokens: 0, cacheWriteTokens: 0, outputTokens: 10 },
+    provider: "anthropic",
+    model: "claude-haiku-5-5",
+    costMicros: 5,
+    latencyMs: 100,
+    stopReason: "end",
+  };
+};
+const longParagraph = {
+  text: longSentences.join(" "),
+  sourceLang: "en",
+  editionId: null,
+  speaker: "test",
+  simplifiable: true,
+};
+const parallel = await generateSimplification(echo, longParagraph, { allowIdentity: true });
+check(
+  "a long paragraph is simplified in parallel parts and stays aligned",
+  echo.calls === 5 &&
+    parallel.original.join("|") === longSentences.join("|") &&
+    parallel.levels.clear.length === longSentences.length &&
+    parallel.costMicros === 25 &&
+    parallel.latencyMs === 100,
+);
+
+const verdicts = (answers) => {
+  const calls = [];
+  return {
+    calls,
+    provider: {
+      id: "anthropic",
+      async call(input) {
+        calls.push(input);
+        const judged = calls.filter((call) => call.role === "judge").length;
+        const json = input.role === "judge" ? answers[Math.min(judged - 1, answers.length - 1)] : good;
+        return {
+          json,
+          usage: { inputTokens: 10, cachedInputTokens: 0, cacheWriteTokens: 0, outputTokens: 10 },
+          provider: "anthropic",
+          model: "claude-haiku-5-5",
+          costMicros: 7,
+          latencyMs: 10,
+          stopReason: "end",
+        };
+      },
+    },
+  };
+};
+const shifted = {
+  changes: [
+    {
+      level: "very",
+      kind: "term",
+      original: "verdadera, real y sustancialmente",
+      rewrite: "de algún modo",
+      reader: "the presence is no longer substantial",
+      verdict: "different meaning",
+    },
+  ],
+};
+const sameOnly = { changes: [{ ...shifted.changes[0], verdict: "same meaning" }] };
+const repairedByJudge = verdicts([shifted, sameOnly]);
+const judgedOk = await generateSimplification(repairedByJudge.provider, paragraph, {
+  allowIdentity: false,
+  fidelity: true,
+});
+check(
+  "a fidelity failure goes into the repair loop and lists the change",
+  judgedOk.attempts === 2 &&
+    judgedOk.report.results.fidelity &&
+    repairedByJudge.calls[2].user.includes("de algún modo") &&
+    repairedByJudge.calls.filter((call) => call.role === "judge").length === 2,
+);
+await rejects(
+  "two fidelity failures give ai_simplify_failed",
+  () => generateSimplification(verdicts([shifted]).provider, paragraph, { allowIdentity: false, fidelity: true }),
+  "ai_simplify_failed",
+);
+await rejects(
+  "an unreadable fidelity verdict fails closed",
+  () =>
+    generateSimplification(verdicts([{ nonsense: true }]).provider, paragraph, {
+      allowIdentity: false,
+      fidelity: true,
+    }),
+  "ai_simplify_failed",
+);
+const unjudged = verdicts([shifted]);
+await generateSimplification(unjudged.provider, paragraph, { allowIdentity: false });
+check(
+  "with the switch off the judge is never called",
+  unjudged.calls.every((call) => call.role !== "judge"),
 );
 
 console.log(`ok ${count} checks`);

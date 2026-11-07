@@ -24,10 +24,24 @@ function rejectionsOf(row: SimplificationRow): number {
   return (typeof previous === "number" ? previous : 0) + (row.status === "rejected" ? 1 : 0);
 }
 
-export async function readSimplification(cacheKey: string): Promise<CacheLookup> {
+export function generatesLive(address: SimplifyAddress): boolean {
+  return address.kind === "father";
+}
+
+function servable(address: SimplifyAddress, row: SimplificationRow): boolean {
+  if (row.status === "rejected") return false;
+  return generatesLive(address) || row.status === "reviewed";
+}
+
+export async function readSimplification(cacheKey: string, address: SimplifyAddress): Promise<CacheLookup> {
   const row = await getAiStore().getSimplification(cacheKey);
   if (!row) return { row: null, rejections: 0 };
-  return { row: row.status === "rejected" ? null : row, rejections: rejectionsOf(row) };
+  return { row: servable(address, row) ? row : null, rejections: rejectionsOf(row) };
+}
+
+export async function hasStoredSimplification(cacheKey: string): Promise<boolean> {
+  const row = await getAiStore().getSimplification(cacheKey);
+  return row !== null && row.status !== "rejected";
 }
 
 export async function writeSimplification(row: SimplificationRow): Promise<void> {

@@ -3,6 +3,7 @@ import { expect, test } from "@playwright/test";
 const ignatius = { kind: "father", work: "ignatius-smyrnaeans", edition: "lightfoot-1889", locator: "6.2" };
 const catholic = { kind: "statement", doctrine: "eucharist", tradition: "catholic", id: "QE-1" };
 const orthodox = { kind: "statement", doctrine: "eucharist", tradition: "orthodox", id: "definition" };
+const unseededFather = { ...ignatius, locator: "7.1" };
 const encode = (value: unknown) => Buffer.from(JSON.stringify(value)).toString("base64url");
 const cacheOnly = (address: unknown, locale = "es") =>
   `/api/ai/simplify?address=${encode(address)}&locale=${locale}&cacheOnly=1`;
@@ -20,34 +21,49 @@ test("the test-set paragraphs return their reviewed texts", async ({ request }) 
   expect(statement.original[1]).toBe("No está solo como en un signo o una figura.");
 });
 
-test("any other paragraph gets an aligned simplification, then a cache hit", async ({ request }) => {
-  const first = await request.post("/api/ai/simplify", { data: { address: orthodox, locale: "es" } });
+test("a Father division gets a live aligned simplification, then a cache hit", async ({ request }) => {
+  const first = await request.post("/api/ai/simplify", { data: { address: unseededFather, locale: "es" } });
   expect(first.status()).toBe(200);
   expect(first.headers()["cache-control"]).toBe("no-store");
   const entry = await first.json();
-  expect(entry).toMatchObject({ lang: "es", status: "generated", cached: false });
+  expect(entry).toMatchObject({ lang: "en", status: "generated", cached: false });
   expect(entry.original.length).toBeGreaterThan(0);
   expect(entry.clear).toHaveLength(entry.original.length);
   expect(entry.very).toHaveLength(entry.original.length);
   const started = Date.now();
-  const again = await (await request.post("/api/ai/simplify", { data: { address: orthodox, locale: "es" } })).json();
+  const again = await (
+    await request.post("/api/ai/simplify", { data: { address: unseededFather, locale: "es" } })
+  ).json();
   expect(Date.now() - started).toBeLessThan(200);
   expect(again).toMatchObject({ cached: true, original: entry.original });
-  const hit = await request.get(cacheOnly(orthodox));
+  const hit = await request.get(cacheOnly(unseededFather));
   expect(hit.status()).toBe(200);
   expect((await hit.json()).cached).toBe(true);
 });
 
-test("02 and glossary paragraphs resolve", async ({ request }) => {
-  const common = await request.post("/api/ai/simplify", {
-    data: { address: { kind: "doctrine", doctrine: "baptism", section: "common", id: "text" }, locale: "es" },
+test("tradition pages, 02 pages and the glossary serve only reviewed texts", async ({ request }) => {
+  const notReviewed = [
+    orthodox,
+    { kind: "doctrine", doctrine: "baptism", section: "common", id: "text" },
+    { kind: "glossary", term: "magisterio", tradition: "catholic" },
+  ];
+  for (const address of notReviewed) {
+    const response = await request.post("/api/ai/simplify", { data: { address, locale: "es" } });
+    expect(response.status()).toBe(400);
+    expect(await response.json()).toEqual({
+      code: "ai_not_simplifiable",
+      message: "Este párrafo no se puede simplificar.",
+      retry: false,
+    });
+    expect((await request.get(cacheOnly(address))).status()).toBe(204);
+  }
+  const unknownTerm = await request.post("/api/ai/simplify", {
+    data: { address: { kind: "glossary", term: "no-such-term", tradition: "catholic" }, locale: "es" },
   });
-  expect(common.status()).toBe(200);
-  const glossary = await request.post("/api/ai/simplify", {
-    data: { address: { kind: "glossary", term: "magisterio", tradition: "catholic" }, locale: "es" },
-  });
-  expect(glossary.status()).toBe(200);
-  expect((await glossary.json()).original.join(" ")).toContain("Magisterio vivo de la Iglesia");
+  expect(unknownTerm.status()).toBe(404);
+  const reviewed = await request.get(cacheOnly(catholic));
+  test.skip(reviewed.status() === 204, "the simplifier switch is off in this build, so nothing is seeded");
+  expect((await reviewed.json()).status).toBe("reviewed");
 });
 
 test("the cache-only GET never generates", async ({ request }) => {
