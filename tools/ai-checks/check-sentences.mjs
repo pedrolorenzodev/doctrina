@@ -16,6 +16,11 @@ const cases = [
   ["semicolon before capital", "Tomó el pan; Dio gracias y lo partió.", ["Tomó el pan;", "Dio gracias y lo partió."]],
   ["semicolon before lowercase", "Tomó el pan; dio gracias y lo partió.", ["Tomó el pan; dio gracias y lo partió."]],
   [
+    "article abbreviation",
+    "Así lo dice Fe y Mensaje (art. VII), sobre la Cena. Otros no coinciden.",
+    ["Así lo dice Fe y Mensaje (art. VII), sobre la Cena.", "Otros no coinciden."],
+  ],
+  [
     "locator number",
     "Ignatius, Smyrn. 6.2 says they abstain from the eucharist. Then he warns the church.",
     ["Ignatius, Smyrn. 6.2 says they abstain from the eucharist.", "Then he warns the church."],

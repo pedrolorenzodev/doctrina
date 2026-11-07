@@ -1,5 +1,8 @@
 const ABBREVIATIONS = [
   "p. ej",
+  "art",
+  "arts",
+  "cap",
   "etc",
   "cf",
   "st",
