@@ -1,5 +1,5 @@
 import { normalize, type Normalized } from "@/lib/ai/normalize";
-import { scoreText } from "@/content/ai-search/windows";
+import { quotedShare, scoreText } from "@/content/ai-search/windows";
 
 export type Span = [number, number];
 
@@ -11,8 +11,11 @@ const EDGES = /^[\s"'.,;:\-]+|[\s"'.,;:\-]+$/g;
 const MIN_QUOTE_WORDS = 4;
 const MIN_ANCHOR_WORDS = 2;
 const SNAP_WORDS = 45;
-const AUTO_WORDS = 55;
+const AUTO_WORDS = 70;
 const LEAD_ADVANTAGE = 1.5;
+const QUOTED_SENTENCE = 0.6;
+const QUOTED_DISCOUNT = 0.5;
+const QUOTED_IN_SPAN = 0.2;
 
 const wordsOf = (text: string) => text.split(/\s+/).filter(Boolean);
 export const wordCount = (text: string) => wordsOf(text).length;
@@ -108,6 +111,18 @@ function capped(text: string, span: Span, maxWords: number): Span | null {
   return kept;
 }
 
+export function withCommentary(text: string, span: Span | null, maxWords: number): Span | null {
+  let current = span;
+  while (current && quotedShare(text.slice(current[0], current[1])) > QUOTED_SENTENCE) {
+    const from = current;
+    const next = ends(text).find((end) => end > from[1]);
+    const longer = next === undefined ? null : capped(text, [from[0], next], maxWords);
+    if (!longer || longer[1] <= from[1]) break;
+    current = longer;
+  }
+  return current;
+}
+
 export function anchoredSpan(text: string, anchor: string, maxWords: number): Span | null {
   const segments = anchor
     .split(ELLIPSIS)
@@ -121,7 +136,7 @@ export function anchoredSpan(text: string, anchor: string, maxWords: number): Sp
   const last = segments.length > 1 ? findAnchor(norm, segments.at(-1) ?? "", head[1]) : null;
   const start = snapStart(text, head[0]);
   const end = snapEnd(text, last ? last[1] : head[1]);
-  return capped(text, [start, end], maxWords);
+  return withCommentary(text, capped(text, [start, end], maxWords), maxWords);
 }
 
 export function wordsSpan(text: string, words: string): Span | null {
@@ -136,11 +151,33 @@ export function sentenceAround(text: string, inner: Span, maxWords: number): Spa
   return capped(text, [inner[0], end], maxWords);
 }
 
+function quotedMask(text: string): boolean[] {
+  const mask = new Array<boolean>(text.length).fill(false);
+  for (const match of text.matchAll(/“[^”]*”|«[^»]*»/g)) {
+    for (let at = match.index ?? 0; at < (match.index ?? 0) + match[0].length; at += 1) mask[at] = true;
+  }
+  return mask;
+}
+
 export function bestSpan(text: string, terms: string[], phrases: string[], maxWords: number): Span | null {
   const sentences = sentenceSpans(text);
   if (sentences.length === 0) return null;
   const target = Math.min(maxWords, AUTO_WORDS);
-  const scores = sentences.map(([start, end]) => scoreText(text.slice(start, end), terms, phrases));
+  const inQuote = quotedMask(text);
+  const shareOf = (start: number, end: number) => {
+    let letters = 0;
+    let inside = 0;
+    for (let at = start; at < end; at += 1) {
+      if (!/\p{L}/u.test(text.charAt(at))) continue;
+      letters += 1;
+      if (inQuote[at]) inside += 1;
+    }
+    return letters === 0 ? 0 : inside / letters;
+  };
+  const quoted = sentences.map(([start, end]) => shareOf(start, end) > QUOTED_SENTENCE);
+  const scores = sentences.map(
+    ([start, end], index) => scoreText(text.slice(start, end), terms, phrases) * (quoted[index] ? QUOTED_DISCOUNT : 1),
+  );
   let best = 0;
   scores.forEach((score, index) => {
     if (score > (scores[best] ?? 0) * LEAD_ADVANTAGE && score > (scores[best] ?? 0)) best = index;
@@ -148,7 +185,9 @@ export function bestSpan(text: string, terms: string[], phrases: string[], maxWo
   let first = best;
   let last = best;
   const words = (from: number, to: number) => wordCount(text.slice(sentences[from]![0], sentences[to]![1]));
-  while (last + 1 < sentences.length && words(first, last + 1) <= target) last += 1;
+  const quotes = (from: number, to: number) => shareOf(sentences[from]![0], sentences[to]![1]) > QUOTED_IN_SPAN;
+  while (last + 1 < sentences.length && words(first, last + 1) <= (quotes(first, last) ? maxWords : target)) last += 1;
   while (first > 0 && words(first, last) < 15 && words(first - 1, last) <= target) first -= 1;
-  return capped(text, [sentences[first]![0], sentences[last]![1]], maxWords);
+  if (first > 0 && quoted[first - 1] && words(first - 1, last) <= maxWords) first -= 1;
+  return withCommentary(text, capped(text, [sentences[first]![0], sentences[last]![1]], maxWords), maxWords);
 }

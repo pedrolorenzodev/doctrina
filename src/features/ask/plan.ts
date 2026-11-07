@@ -61,21 +61,71 @@ function knownWork(raw: string, authors: AuthorEntry[]): boolean {
   );
 }
 
-export function clampPlan(raw: SearchPlan, authors: AuthorEntry[]): PlanOutcome {
-  const named = clampList(raw.authors, LIMITS.authors).filter((name) => fold(name).trim().length >= 3);
+export const TRADITION_GROUPS: Record<SearchPlan["traditionGroups"][number], SearchPlan["traditions"]> = {
+  protestant: ["lutheran", "reformed", "baptist", "pentecostal"],
+};
+
+const COMMON_NAME_WORDS = new Set([
+  "juan",
+  "john",
+  "pedro",
+  "peter",
+  "pablo",
+  "paul",
+  "santo",
+  "saint",
+  "padre",
+  "father",
+]);
+
+const wordsOf = (text: string) => new Set(fold(text).split(/[^\p{L}\p{N}]+/u));
+
+function namedIn(asked: Set<string>, names: (string | undefined)[]): boolean {
+  return names.some((name) =>
+    [...wordsOf(name ?? "")].some((word) => word.length >= 5 && !COMMON_NAME_WORDS.has(word) && asked.has(word)),
+  );
+}
+
+function authorNamed(raw: string, authors: AuthorEntry[], asked: Set<string>): boolean {
+  const entry = authors.find((author) => fold(author.id) === fold(raw).trim());
+  return namedIn(asked, entry ? [entry.name, entry.names?.es, entry.names?.en, entry.id] : [raw]);
+}
+
+function workNamed(raw: string, authors: AuthorEntry[], asked: Set<string>): boolean {
+  const work = authors.flatMap((author) => author.works).find((entry) => fold(entry.id) === fold(raw).trim());
+  return namedIn(asked, work ? [work.title, work.id.split("-").slice(1).join(" ")] : [raw]);
+}
+
+function sourcesOf(raw: SearchPlan, grouped: SearchPlan["traditions"]): SearchPlan["sources"] {
+  const sources = [...new Set(raw.sources ?? [])];
+  if (sources.length > 0) return sources;
+  return raw.traditions.length > 0 || grouped.length > 0 ? ["traditions"] : [];
+}
+
+export function clampPlan(raw: SearchPlan, authors: AuthorEntry[], askedText?: string): PlanOutcome {
+  const asked = askedText === undefined ? null : wordsOf(askedText);
+  const named = clampList(raw.authors, LIMITS.authors)
+    .filter((name) => fold(name).trim().length >= 3)
+    .filter((name) => asked === null || authorNamed(name, authors, asked));
   const unknownAuthors = named.filter((name) => !knownAuthor(name, authors));
+  const grouped = (raw.traditionGroups ?? []).flatMap((group) => TRADITION_GROUPS[group] ?? []);
   return {
     plan: {
       ...raw,
       doctrines: [...new Set(raw.doctrines)],
-      traditions: [...new Set(raw.traditions)],
+      traditions: [...new Set([...raw.traditions, ...grouped])],
+      sources: sourcesOf(raw, grouped),
+      traditionGroups: [...new Set(raw.traditionGroups ?? [])],
+      era: raw.era ?? "any",
       termsEn: clampList(raw.termsEn, LIMITS.terms),
       phrasesEn: clampList(raw.phrasesEn, LIMITS.phrases),
       termsEs: clampList(raw.termsEs, LIMITS.terms),
       phrasesEs: clampList(raw.phrasesEs, LIMITS.phrases),
       bibleRefs: clampList(raw.bibleRefs, LIMITS.refs),
       authors: named.filter((name) => !unknownAuthors.includes(name)),
-      works: clampList(raw.works, LIMITS.works).filter((work) => knownWork(work, authors)),
+      works: clampList(raw.works, LIMITS.works).filter(
+        (work) => knownWork(work, authors) && (asked === null || workNamed(work, authors, asked)),
+      ),
     },
     unknownAuthors,
   };
@@ -103,5 +153,5 @@ export async function runPlan(
     searchPlanSchema,
     PLAN_TIMEOUT_MS,
   );
-  return clampPlan(raw, authors);
+  return clampPlan(raw, authors, [request.question, ...request.history.map((turn) => turn.question)].join(" "));
 }

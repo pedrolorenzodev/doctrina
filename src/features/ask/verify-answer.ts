@@ -10,7 +10,7 @@ import {
 import { splitSentences } from "@/lib/ai/sentences";
 import { verifyQuote } from "@/lib/ai/verify-quote";
 import type { PackPassage } from "@/content/ai-search/types";
-import { scoreText, termStems, tokenize } from "@/content/ai-search/windows";
+import { quotedShare, scoreText, termStems, tokenize } from "@/content/ai-search/windows";
 import { traditionIds, type TraditionId } from "@/content/model/ids";
 import { anchoredSpan, bestSpan, sentenceAround, wordCount, wordsSpan, type Span } from "@/features/ask/excerpt";
 import { fatherAssignmentHit, verdictHit } from "@/features/ask/lexicon";
@@ -62,6 +62,8 @@ const TRADITION_MAX = 4;
 const FATHER_AUTHORS = 5;
 const TOP_UP_PRIORITY = 1000;
 const MIN_COVERAGE = 2;
+const BARE_SHARE = 0.6;
+const VERSE_WORDS = 22;
 const SHARED_COLLECTIONS: string[] = ["bible", "fathers"];
 const MAX_FOLLOWUP_CHARS = 140;
 const TOKEN = /\{(P\d+)\}/g;
@@ -335,7 +337,13 @@ function topUp(accepted: Picked[], passages: PackPassage[], options: VerifyOptio
     }
   }
 
-  const strong = (passage: PackPassage) => score(passage) >= Math.max(MIN_COVERAGE, bar.get(passage.collection) ?? 0);
+  const bare = (passage: PackPassage) =>
+    passage.collection === "fathers" &&
+    (quotedShare(passage.window) > BARE_SHARE ||
+      passage.refs.length * VERSE_WORDS >= BARE_SHARE * wordCount(passage.window));
+  const versed = (passage: PackPassage) => passage.collection === "fathers" && passage.refs.length > 0;
+  const strong = (passage: PackPassage) =>
+    !bare(passage) && (versed(passage) || score(passage) >= Math.max(MIN_COVERAGE, bar.get(passage.collection) ?? 0));
   const fathersPool = pool.filter((passage) => passage.collection === "fathers" && passage.author && strong(passage));
   const authorsOf = (list: { author: string | null }[]) => new Set(list.map((item) => item.author ?? ""));
   const shownAuthors = authorsOf(

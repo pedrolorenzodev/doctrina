@@ -22,7 +22,8 @@ export type Meter = {
 export const newMeter = (): Meter => ({ costMicros: 0, usage: {}, latencyMs: {}, models: {} });
 
 export const ANSWER_MAX_TOKENS = { rich: 8000, brief: 2500 } as const;
-const ANSWER_TIMEOUT_MS = 40_000;
+const ANSWER_TIMEOUT_MS = 85_000;
+const SECOND_READING_TIMEOUT_MS = 25_000;
 const answerProviderSchema = toProviderSchema(modelAnswerSchema);
 
 function addUsage(meter: Meter, label: string, usage: AiUsage): void {
@@ -152,5 +153,5 @@ export function runSecondReading(
 ): Promise<ModelAnswer> {
   const sources = passages.filter((passage) => passage.collection !== "mine").length;
   const user = [answerUser(request, plan, passages), "", SECOND_READING.replace("{n}", String(sources))].join("\n");
-  return callModel(provider, meter, "reread", answerInput(plan, user), modelAnswerSchema, ANSWER_TIMEOUT_MS);
+  return callModel(provider, meter, "reread", answerInput(plan, user), modelAnswerSchema, SECOND_READING_TIMEOUT_MS);
 }
