@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
+import type { AskPhase } from "@/lib/ai/contracts";
 import { prefersReducedMotion } from "@/lib/branch-motion";
 import {
   CiteButton,
@@ -18,7 +19,14 @@ import {
 import { AnswerActions } from "@/features/reader-ai/answer-actions";
 import { focusRingClassName, growSmoothly, type Enter } from "@/features/reader-ai/motion";
 import { useAskScript, type AskScript } from "@/features/reader-ai/ask-script";
-import { sourceOf, verseReference, yours, type AnswerId, type ChipId } from "@/features/reader-ai/script";
+import {
+  sourceOf,
+  verseReference,
+  yours,
+  type Answer as AnswerData,
+  type AnswerId,
+  type ChipId,
+} from "@/features/reader-ai/script";
 import type { AskText } from "@/features/reader-ai/text";
 
 type Piece =
@@ -49,6 +57,8 @@ type AnswerProps = {
   onDone: () => void;
   replay: boolean;
   seconds: number;
+  live?: { pending: boolean; phase: AskPhase | null } | undefined;
+  privacy?: string | undefined;
 };
 
 const statusMs = 3800;
@@ -56,11 +66,15 @@ const phaseMs = 1300;
 const tickMs = 200;
 const quoteGapMs = 480;
 const wordMs = 100;
+const liveSlowQuotes = 8;
+const liveTailGapMs = 160;
+const liveProseCapMs = 6000;
 
-const blocksOf = (script: AskScript, id: AnswerId): { quote: string; head?: string }[] => {
-  const answer = script.answer(id);
+const liveStatusIndex = (phase: AskPhase | null) => (phase === "write" ? 2 : phase === "check" ? 1 : 0);
+
+const blocksOf = (answer: AnswerData, traditions: AskScript["traditions"]): { quote: string; head?: string }[] => {
   if (answer.traditions)
-    return script.traditions.flatMap((group) => group.quotes.map((quote) => ({ quote, head: group.name })));
+    return traditions.flatMap((group) => group.quotes.map((quote) => ({ quote, head: group.name })));
   return answer.blocks ?? [];
 };
 
@@ -97,10 +111,16 @@ export function Answer({
   onDone,
   replay,
   seconds,
+  live,
+  privacy,
 }: AnswerProps) {
   const script = useAskScript();
   const answer = script.answer(id);
-  const blocks = useMemo(() => blocksOf(script, id), [script, id]);
+  const blocks = useMemo(() => blocksOf(answer, script.traditions), [answer, script.traditions]);
+  const isLive = live !== undefined;
+  const pending = live?.pending ?? false;
+  const livePhase = live?.phase ?? null;
+  const startedAt = useRef(0);
   const outer = useRef<HTMLDivElement>(null);
   const body = useRef<HTMLDivElement>(null);
   const [pieces, setPieces] = useState<Shown[]>([]);
@@ -120,6 +140,23 @@ export function Answer({
   }, []);
 
   useEffect(() => {
+    startedAt.current = performance.now();
+  }, []);
+
+  useEffect(() => {
+    if (!pending) return;
+    const tick = () =>
+      setStatus({
+        phase: liveStatusIndex(livePhase),
+        seconds: Math.floor((performance.now() - startedAt.current) / 1000),
+      });
+    tick();
+    const ticker = window.setInterval(tick, tickMs);
+    return () => clearInterval(ticker);
+  }, [pending, livePhase]);
+
+  useEffect(() => {
+    if (pending) return;
     let cancelled = false;
     const timers: number[] = [];
     const wait = (ms: number) =>
@@ -132,8 +169,9 @@ export function Answer({
     const run = async () => {
       setPieces([]);
       setWords(0);
-      const started = performance.now();
-      if (!answer.fixed && !instant) {
+      const started = isLive ? startedAt.current : performance.now();
+      if (answer.fixed) setStatus(null);
+      if (!answer.fixed && !instant && !isLive) {
         setStatus({ phase: 0, seconds: 0 });
         const ticker = window.setInterval(() => {
           const elapsed = performance.now() - started;
@@ -147,7 +185,7 @@ export function Answer({
       if (!answer.fixed)
         setStatus({
           done: true,
-          seconds: instant ? seconds : Math.max(1, Math.round((performance.now() - started) / 1000)),
+          seconds: instant && !isLive ? seconds : Math.max(1, Math.round((performance.now() - started) / 1000)),
         });
       add({ kind: "meta" }, "none");
       if (answer.plain) add({ kind: "plain" }, "fade");
@@ -161,8 +199,9 @@ export function Answer({
       }
       for (const [index] of blocks.entries()) {
         if (cancelled || stop.current) break;
-        add({ kind: "quote", index });
-        await wait(quoteGapMs);
+        const tail = isLive && index >= liveSlowQuotes;
+        add({ kind: "quote", index }, tail ? "fade" : "pop");
+        await wait(tail ? liveTailGapMs : quoteGapMs);
       }
       if (answer.mine) {
         add({ kind: "yourHighlight" });
@@ -182,12 +221,13 @@ export function Answer({
           for (let count = 1; count <= tokens.length; count += 1) {
             if (cancelled || stop.current) break;
             setWords(count);
-            await new Promise<void>((resolve) => timers.push(window.setTimeout(resolve, wordMs)));
+            const gap = isLive ? Math.min(wordMs, liveProseCapMs / tokens.length) : wordMs;
+            await new Promise<void>((resolve) => timers.push(window.setTimeout(resolve, gap)));
           }
       }
       if (cancelled) return;
       if (stop.current) add({ kind: "stopped" }, "fade");
-      else if (!answer.fixed) add({ kind: "foot" }, "fade");
+      else if (!answer.fixed || answer.follow.length > 0) add({ kind: "foot" }, "fade");
       latest.current.onDone();
     };
     void run();
@@ -198,17 +238,20 @@ export function Answer({
         clearInterval(timer);
       });
     };
-  }, [answer, blocks, instant, seconds, stop, tokens.length]);
+  }, [answer, blocks, instant, isLive, pending, seconds, stop, tokens.length]);
 
-  const sources = [...blocks.map((block) => block.quote), ...(answer.words ?? []).map((row) => row.quote)];
-  const consulted = Math.max(sources.length, 1);
+  const sources = answer.consulted ?? [
+    ...blocks.map((block) => block.quote),
+    ...(answer.words ?? []).map((row) => row.quote),
+  ];
+  const consulted = answer.consulted ? sources.length : Math.max(sources.length, 1);
 
   const render = ({ piece, enter }: Shown, key: number) => {
     switch (piece.kind) {
       case "meta":
         return (
           <p key={key} data-ask-meta="" className="m-0 text-label leading-normal text-ink-3">
-            {answer.fixed ? text.fixedLine : text.metaLive.replace("{scope}", scopeName)}
+            {answer.meta ?? (answer.fixed ? text.fixedLine : text.metaLive.replace("{scope}", scopeName))}
           </p>
         );
       case "plain":
@@ -295,9 +338,14 @@ export function Answer({
       case "foot":
         return (
           <Entering key={key} enter={enter} className="mt-0.5 grid grid-cols-1 gap-3">
+            {privacy ? (
+              <p data-ask-privacy="" className="m-0 text-label leading-normal text-ink-3">
+                {privacy}
+              </p>
+            ) : null}
             {answer.follow.length > 0 ? (
               <div className="flex flex-wrap gap-2">
-                {answer.follow.slice(0, 2).map((chip) => (
+                {answer.follow.slice(0, isLive ? answer.follow.length : 2).map((chip) => (
                   <button
                     key={chip}
                     type="button"
@@ -310,7 +358,7 @@ export function Answer({
                 ))}
               </div>
             ) : null}
-            <AnswerActions text={text} copyFrom={body} />
+            {answer.fixed ? null : <AnswerActions text={text} copyFrom={body} />}
           </Entering>
         );
     }
@@ -325,7 +373,13 @@ export function Answer({
             <span className="tabular-nums">{text.seconds.replace("{n}", String(status.seconds))}</span>
           </p>
         ) : null}
-        {status && "done" in status ? (
+        {status && "done" in status && consulted === 0 ? (
+          <p data-ask-status="" className={`m-0 ${statClassName}`}>
+            <span>{text.consulted.replace("{n}", "0")}</span>
+            <span className="tabular-nums">{text.seconds.replace("{n}", String(status.seconds))}</span>
+          </p>
+        ) : null}
+        {status && "done" in status && consulted > 0 ? (
           <div data-ask-status="">
             <button
               type="button"

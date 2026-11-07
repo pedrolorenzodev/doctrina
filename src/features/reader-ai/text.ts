@@ -40,6 +40,12 @@ export type AskText = {
     metaLive: string;
     fixedLine: string;
     stopped: string;
+    retry: string;
+    more: string;
+    metaCoverage: string;
+    metaMore: string;
+    privacy: string;
+    privacyNotes: string;
     copy: string;
     copied: string;
     save: string;
@@ -101,6 +107,14 @@ export const askText: Record<Locale, AskText> = {
       metaLive: "Generada por IA. Buscado en: {scope}.",
       fixedLine: "Texto fijo de Doctrina. No lo escribe la IA.",
       stopped: "Detenida.",
+      retry: "Reintentar",
+      more: "Más textos sobre esto",
+      metaCoverage: "Generada por IA. {scope}",
+      metaMore: "Más pasajes de la misma búsqueda, citados tal cual.",
+      privacy:
+        "Tus preguntas se envían a un proveedor de IA y se guardan 30 días para revisar errores. No guardamos tu IP.",
+      privacyNotes:
+        "Tus notas y subrayados se envían con la pregunta mientras ese interruptor esté activo; Doctrina no los guarda.",
       copy: "Copiar con citas",
       copied: "Copiado",
       save: "Guardar en Tus notas",
@@ -177,6 +191,14 @@ export const askText: Record<Locale, AskText> = {
       metaLive: "AI-generated. Searched in: {scope}.",
       fixedLine: "Fixed text from Doctrina. Not written by the AI.",
       stopped: "Stopped.",
+      retry: "Try again",
+      more: "More texts about this",
+      metaCoverage: "AI-generated. {scope}",
+      metaMore: "More passages from the same search, quoted as they are.",
+      privacy:
+        "Your questions are sent to an AI provider and kept for 30 days to review errors. We do not keep your IP.",
+      privacyNotes:
+        "Your notes and highlights are sent with the question while that switch is on; Doctrina does not keep them.",
       copy: "Copy with citations",
       copied: "Copied",
       save: "Save to Your notes",

@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { CitationProvider, useCitation } from "@/components/citation-window/citation-context";
 import type { CitationWindowText } from "@/components/citation-window/types";
 import { markArrival } from "@/lib/arrival-mark";
+import { getHighlights } from "@/lib/highlight-store";
+import { getNotes } from "@/lib/note-store";
 import { clearAskPill, closedAskDrawer, getAskDrawer, subscribeAskDrawer, type AskPill } from "@/lib/ask-drawer";
 import { useActiveChapter } from "@/lib/active-chapter";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
@@ -15,7 +17,7 @@ import { currentTranslationChoice, subscribeTranslationChoice } from "@/lib/tran
 import type { CiteHandlers } from "@/features/reader-ai/answer-parts";
 import { AskDrawer } from "@/features/reader-ai/ask-drawer";
 import { BackBar } from "@/features/reader-ai/back-bar";
-import { Chat } from "@/features/reader-ai/chat";
+import { Chat, type LiveChat } from "@/features/reader-ai/chat";
 import {
   openConversation,
   savedConversations,
@@ -26,11 +28,20 @@ import { HistoryPanel } from "@/features/reader-ai/history-panel";
 import { focusRingClassName } from "@/features/reader-ai/motion";
 import { ContextLine } from "@/features/reader-ai/context-line";
 import { CitePreview, type CiteTarget } from "@/features/reader-ai/cite-preview";
-import { AskScriptProvider, bibleScript, useAskScript, type AskScript } from "@/features/reader-ai/ask-script";
+import {
+  AskScriptProvider,
+  bibleScript,
+  useAskScript,
+  liveQuoteViews,
+  withLiveAnswers,
+  type AskScript,
+} from "@/features/reader-ai/ask-script";
+import { getLive, noLiveAnswers, putLiveAnswer, subscribeLive } from "@/features/reader-ai/live-answers";
 import { quoteViews } from "@/features/reader-ai/quote-views";
 import type { Scope } from "@/features/reader-ai/scope-control";
 import { wordMarks } from "@/features/reader-ai/script";
 import type { AskText } from "@/features/reader-ai/text";
+import { pickNotes } from "@/features/reader-ai/use-ask-stream";
 import { clearWords, markWords } from "@/features/reader-ai/word-marks";
 
 type ReaderAskProps = {
@@ -48,6 +59,7 @@ type ReaderAskProps = {
   fatherEditions?: boolean;
 };
 
+const realChat = process.env.NEXT_PUBLIC_AI_CHAT === "real";
 const showMs = 200;
 const verseLead = 2;
 const hideMs = 120;
@@ -55,8 +67,27 @@ const coarse = () => matchMedia("(pointer: coarse)").matches;
 const headButtonClassName = `grid size-9 flex-none cursor-pointer place-items-center rounded-6 text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-hover aria-pressed:text-ink pointer-coarse:size-11 ${focusRingClassName}`;
 
 export function ReaderAsk(props: ReaderAskProps) {
-  const { locale, text, citationText, script = bibleScript } = props;
-  const views = useMemo(() => quoteViews(locale, text.cite, script.quotes), [locale, text.cite, script]);
+  const { locale, text, citationText, script: base = bibleScript } = props;
+  const live = useSyncExternalStore(subscribeLive, getLive, () => noLiveAnswers);
+  const script = useMemo(
+    () =>
+      realChat
+        ? withLiveAnswers(base, live, {
+            more: text.chat.more,
+            retry: text.chat.retry,
+            metaCoverage: text.chat.metaCoverage,
+            metaMore: text.chat.metaMore,
+          })
+        : base,
+    [base, live, text.chat],
+  );
+  const views = useMemo(
+    () => ({
+      ...quoteViews(locale, text.cite, base.quotes),
+      ...(realChat ? liveQuoteViews(locale, text.cite, live) : {}),
+    }),
+    [locale, text.cite, base, live],
+  );
   return (
     <AskScriptProvider value={script}>
       <CitationProvider views={views} text={citationText}>
@@ -137,6 +168,9 @@ function AskLayer({
       question: entry.entries[0]?.question ?? "",
       date: dayOf(entry.startedAt),
       onPick: () => {
+        entry.entries.forEach((item) => {
+          if (item.live) putLiveAnswer(item.live);
+        });
         openConversation(entry);
         showConversation(true);
       },
@@ -231,6 +265,19 @@ function AskLayer({
     scrollToY(lead.getBoundingClientRect().top + scrollY - scrollOffset());
   };
 
+  const goToLiveVerse = (bible: { book: string; chapter: number; verse: number }, href: string) => {
+    const unit = document.getElementById(`v-${bible.verse}`);
+    if (active.book !== bible.book || active.chapter !== bible.chapter || !unit) {
+      const [path = href, hash] = href.split("#");
+      router.push(`${path}${path.includes("?") ? "&" : "?"}place=third#${hash ?? `v-${bible.verse}`}`);
+      return;
+    }
+    setBack((current) => current ?? { from: chapter, y: scrollY });
+    history.replaceState(null, "", `#v-${bible.verse}`);
+    dispatchEvent(new HashChangeEvent("hashchange"));
+    scrollToLayoutPosition(unit);
+  };
+
   const handlers: CiteHandlers = {
     onPreview: (target, anchor, immediate = false) => {
       clearTimeout(timers.current.show);
@@ -251,6 +298,11 @@ function AskLayer({
       if (firstTap(anchor, { quote })) return;
       hidePreview();
       const bible = script.quote(quote).bible;
+      const liveHref = getLive().wire[quote]?.href;
+      if (bible && liveHref) {
+        goToLiveVerse(bible, liveHref);
+        return;
+      }
       if (bible && johnSix) {
         if (bible.book === johnSix.book && bible.chapter === johnSix.chapter) goToVerse(bible.verse);
         else router.push(`${bibleHrefs[`${bible.book}.${bible.chapter}`]}?place=third#v-${bible.verse}`);
@@ -266,6 +318,32 @@ function AskLayer({
       citation.open(quote, anchor);
     },
   };
+
+  const liveChat: LiveChat | null = realChat
+    ? {
+        locale,
+        here: fatherEditions
+          ? { kind: "father", work: active.book, edition: edition?.id ?? defaultEdition, locator: null }
+          : { kind: "bible", book: active.book, chapter: active.chapter, translation: edition?.id ?? defaultEdition },
+        notes: (question) =>
+          pickNotes({
+            notes: getNotes(),
+            highlights: getHighlights(),
+            active: { book: active.book, chapter: active.chapter },
+            question,
+            refOf: (book, number, verse) => {
+              const title = books.find((entry) => entry.id === book)?.title ?? book;
+              if (fatherEditions) return verse ? `${title} ${verse}` : title;
+              return verse ? `${title} ${number}:${verse}` : `${title} ${number}`;
+            },
+            highlightText: (highlight) => {
+              const spots = document.querySelectorAll<HTMLElement>(`[data-verse-text="${highlight.verse}"]`);
+              const spot = spots.length === 1 ? spots[0] : null;
+              return spot?.textContent ? spot.textContent.slice(highlight.from, highlight.to) : null;
+            },
+          }),
+      }
+    : null;
 
   return (
     <>
@@ -361,6 +439,7 @@ function AskLayer({
               onPillGo={goToPill}
               chapterSource={`${edition?.name ?? ""}, ${chapter}`}
               restored={conversation.restored}
+              live={liveChat}
             />
           </div>
         )}

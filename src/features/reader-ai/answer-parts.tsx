@@ -112,11 +112,22 @@ export function QuoteBlock({
 export function ProseWord({ token, handlers, enter }: { token: string; handlers: CiteHandlers; enter: Enter }) {
   const element = useRef<HTMLSpanElement>(null);
   useLayoutEffect(() => playEnter(element.current, enter), [enter]);
-  const parts = token.split(/(\{\d+\})/);
+  const script = useAskScript();
+  const parts = token.split(/(\{\d+\}|\{q:[^}\s]+\})/);
   return (
     <span ref={element}>
       {parts.map((part, index) => {
         const verse = /^\{(\d+)\}$/.exec(part);
+        const cited = /^\{q:([^}\s]+)\}$/.exec(part)?.[1];
+        if (cited) {
+          if (!(cited in script.quotes)) return null;
+          const entry = script.quote(cited);
+          return (
+            <CiteButton key={index} target={{ quote: cited }} handlers={handlers}>
+              {entry.bible ? sourceOf(entry) : entry.work}
+            </CiteButton>
+          );
+        }
         return verse ? (
           <CiteButton key={index} target={{ verse: Number(verse[1]) }} handlers={handlers}>
             {verseLabel(Number(verse[1]))}

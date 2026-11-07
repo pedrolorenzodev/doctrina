@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import type { AskPhase, AskRequest, WireAnswer } from "@/lib/ai/contracts";
 import { clearAskPill, openAskDrawer, type AskPill } from "@/lib/ask-drawer";
 import { prefersReducedMotion } from "@/lib/branch-motion";
 import { Answer } from "@/features/reader-ai/answer";
@@ -13,11 +14,35 @@ import {
   type SavedEntry,
 } from "@/features/reader-ai/conversations";
 import { useAskScript } from "@/features/reader-ai/ask-script";
+import {
+  compactForSave,
+  errorAsAnswer,
+  getLive,
+  isErrorAnswer,
+  liveClock,
+  liveId,
+  moreAsAnswer,
+  moreOffset,
+  parseLiveChip,
+  pendingLiveId,
+  putLiveAnswer,
+  retryTargets,
+  rootOf,
+} from "@/features/reader-ai/live-answers";
 import type { AnswerId, ChipId } from "@/features/reader-ai/script";
 import type { Scope } from "@/features/reader-ai/scope-control";
 import type { AskText } from "@/features/reader-ai/text";
+import { useAskStream, type AskNote, type AskOutcome } from "@/features/reader-ai/use-ask-stream";
 
 type Entry = SavedEntry & { replay?: boolean };
+
+export type LiveChat = {
+  locale: "es" | "en";
+  here: AskRequest["here"];
+  notes: (question: string) => AskNote[];
+};
+
+type LiveState = { pending: boolean; phase: AskPhase | null };
 
 type ChatProps = {
   text: AskText["chat"];
@@ -33,6 +58,7 @@ type ChatProps = {
   onPillGo: (pill: AskPill) => void;
   chapterSource: string;
   restored: boolean;
+  live: LiveChat | null;
 };
 
 const foldMs = 220;
@@ -46,6 +72,9 @@ const awayPx = 80;
 const bottomPx = 8;
 const upKeys = ["ArrowUp", "PageUp", "Home"];
 const answerSeconds = 4;
+const maxTurns = 6;
+const historyProseChars = 750;
+const selectionChars = 1000;
 const fragmentMax = 160;
 const toolbarWidth = 180;
 const toolbarHalf = 80;
@@ -84,8 +113,11 @@ export function Chat({
   onPillGo,
   chapterSource,
   restored,
+  live,
 }: ChatProps) {
   const script = useAskScript();
+  const stream = useAskStream();
+  const [liveState, setLiveState] = useState<Record<number, LiveState>>({});
   const opening = pill?.unit ? "verse" : "chapter";
   const [entries, setEntries] = useState<Entry[]>(() => {
     const now = currentConversation();
@@ -111,6 +143,8 @@ export function Chat({
   const asked = useRef(entries.length);
   const where = pill?.unit ? pill.reference : chapter;
   const chipsShown = entries.length === 0 || chipsLeaving;
+  const privacyKey = entries.find((entry) => entry.live && !isErrorAnswer(entry.live))?.key;
+  const privacyLine = notesOn ? `${text.privacy} ${text.privacyNotes}` : text.privacy;
 
   const maxTop = () => (body.current ? body.current.scrollHeight - body.current.clientHeight : 0);
 
@@ -250,8 +284,129 @@ export function Chat({
     };
   }, []);
 
+  const selectionOf = (): AskRequest["selection"] => {
+    if (!pill || !live) return null;
+    const text = pill.text.slice(0, selectionChars);
+    if (!pill.unit) return { text, at: { kind: "answer" } };
+    if (live.here.kind === "father") {
+      return pill.unit.anchor
+        ? {
+            text,
+            at: {
+              kind: "division",
+              work: live.here.work,
+              edition: live.here.edition,
+              locator: pill.unit.anchor.replace(/^d-/, ""),
+            },
+          }
+        : null;
+    }
+    return {
+      text,
+      at: { kind: "verse", book: live.here.book, chapter: live.here.chapter, verse: pill.unit.verse },
+    };
+  };
+
+  const historyOf = (): AskRequest["history"] =>
+    entries.slice(-2).map((entry) => ({
+      question: entry.question.slice(0, 600),
+      prose: (script.answer(entry.id).prose ?? "").replace(/\{[^}]*\}/g, "").slice(0, historyProseChars),
+    }));
+
+  const startLive = (
+    question: string,
+    redo: string | null,
+    run: (onPhase: (phase: AskPhase) => void) => Promise<AskOutcome>,
+  ) => {
+    onAsk();
+    stop.current = false;
+    following.current = true;
+    asked.current += 1;
+    setBusy(true);
+    if (entries.length === 0) setChipsLeaving(!prefersReducedMotion());
+    counter.current += 1;
+    const entry: Entry = {
+      key: counter.current,
+      id: pendingLiveId(counter.current),
+      question,
+      pill,
+      scopeName: scopeNames[scope],
+      seconds: 0,
+    };
+    setEntries((current) => [...current, entry]);
+    setLiveState((current) => ({ ...current, [entry.key]: { pending: true, phase: null } }));
+    clearAskPill();
+    const began = liveClock();
+    void run((phase) => setLiveState((current) => ({ ...current, [entry.key]: { pending: true, phase } }))).then(
+      (outcome) => {
+        let wire: WireAnswer;
+        let keep = false;
+        if (outcome.kind === "answer") {
+          wire = outcome.answer;
+          keep = true;
+        } else if (outcome.kind === "error") {
+          wire = errorAsAnswer(outcome.error.message, outcome.error.retry, question, redo);
+        } else {
+          stop.current = false;
+          wire = errorAsAnswer(text.stopped, true, question, redo);
+        }
+        const scoped = putLiveAnswer(wire);
+        const resolved: Entry = {
+          ...entry,
+          id: liveId(scoped.answerId),
+          seconds: Math.max(1, Math.round((liveClock() - began) / 1000)),
+          live: compactForSave(wire),
+        };
+        setEntries((current) => current.map((item) => (item.key === entry.key ? resolved : item)));
+        setLiveState((current) => ({ ...current, [entry.key]: { pending: false, phase: null } }));
+        if (keep) recordEntry(resolved);
+      },
+    );
+  };
+
+  const askLive = (question: string, redo: string | null) => {
+    if (!live) return;
+    const request: AskRequest = {
+      question: question.slice(0, 600),
+      locale: live.locale,
+      scope: scope === "chapter" && live.here.kind === "father" ? "work" : scope,
+      here: live.here,
+      selection: selectionOf(),
+      history: historyOf(),
+      notes: notesOn ? live.notes(question) : [],
+      turn: Math.min(maxTurns, entries.length + 1),
+    };
+    startLive(question, redo, (onPhase) => stream.ask(request, onPhase));
+  };
+
+  const askMore = (owner: string, chip: string) => {
+    if (!live) return;
+    const snapshot = getLive();
+    const root = rootOf(owner);
+    const base = snapshot.answers[root];
+    if (!base) return;
+    const offset = moreOffset(snapshot, root);
+    const question = script.chips[chip] ?? "";
+    startLive(question, chip, async () => {
+      const outcome = await stream.more(root, offset, live.locale);
+      if (outcome.kind !== "more") return outcome;
+      return { kind: "answer", answer: moreAsAnswer(base, offset, outcome.response, question) };
+    });
+  };
+
   const ask = (chip: ChipId | null, typed?: string, label?: string) => {
     if (busy) return;
+    const liveChip = chip ? parseLiveChip(chip) : null;
+    if (chip && liveChip) {
+      if (liveChip.action === "more") askMore(liveChip.answerId, chip);
+      else if (liveChip.action === "followup") askLive(script.chips[chip] ?? "", null);
+      else {
+        const target = retryTargets.get(liveChip.answerId);
+        if (target) ask(target);
+        else askLive(script.answer(liveId(liveChip.answerId)).question, null);
+      }
+      return;
+    }
     let id: AnswerId = chip === null ? script.route(typed ?? "") : chip === "scopeFix" ? "fathers" : chip;
     let currentScope = scope;
     if (chip === "scopeFix") {
@@ -260,6 +415,10 @@ export function Chat({
     }
     if (id === "fathers" && (currentScope === "chapter" || currentScope === "bible")) id = "scopeMiss";
     if (id === "mine" && !notesOn) id = "none";
+    if (live && chip === null && id === "none") {
+      askLive(typed ?? "", null);
+      return;
+    }
     onAsk();
     stop.current = false;
     following.current = true;
@@ -341,6 +500,8 @@ export function Chat({
                     onMarks={onMarks}
                     onFollow={(chip) => ask(chip)}
                     onDone={() => setBusy(false)}
+                    live={liveState[entry.key]}
+                    privacy={entry.key === privacyKey ? privacyLine : undefined}
                   />
                 </Entering>
               ))}
@@ -468,8 +629,10 @@ export function Chat({
               type="button"
               data-bare-focus=""
               onClick={() => {
-                if (busy) stop.current = true;
-                else send();
+                if (busy) {
+                  stop.current = true;
+                  stream.stop();
+                } else send();
               }}
               className={`inline-flex min-h-10 flex-none cursor-pointer items-center justify-center rounded-7 border border-rule-2 bg-card px-3.5 text-ui-sm leading-(--ask-leading-ui) font-medium text-ink transition-colors duration-150 ease-standard hover:border-ink hover:bg-hover ${focusRingClassName}`}
             >
