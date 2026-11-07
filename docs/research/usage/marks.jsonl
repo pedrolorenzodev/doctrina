@@ -1,2 +1,3 @@
 {"label": "tanda-1", "kind": "start", "time": "2026-11-06T19:13:32.727349+00:00", "weekly": 13.0, "session": 12.0, "weekly_resets": "2026-11-11T21:00:00.463957+00:00"}
 {"label": "tanda-1", "kind": "end", "time": "2026-11-06T23:34:33.695480+00:00", "weekly": 19.0, "session": 10.0, "weekly_resets": "2026-11-11T21:00:00.550273+00:00"}
+{"label": "tanda-2", "kind": "start", "time": "2026-11-07T00:41:20.083287+00:00", "weekly": 19.0, "session": 12.0, "weekly_resets": "2026-11-11T21:00:00.904341+00:00"}
