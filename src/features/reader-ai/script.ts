@@ -16,6 +16,8 @@ export type Answer = {
   prose?: string;
   plain?: string;
   fixed?: boolean;
+  meta?: string;
+  consulted?: string[];
   follow: ChipId[];
 };
 
