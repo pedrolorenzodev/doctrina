@@ -146,6 +146,10 @@ const simplifyOverrides: Partial<Record<AiErrorCode, Messages>> = {
     es: "La simplificación está pausada por hoy.",
     en: "Simplification is paused for today.",
   },
+  ai_bot_check_failed: {
+    es: "No pudimos comprobar que el pedido viene de una persona. Recargá la página y probá de nuevo.",
+    en: "We could not check that the request comes from a person. Reload the page and try again.",
+  },
 };
 
 export function aiErrorBody(

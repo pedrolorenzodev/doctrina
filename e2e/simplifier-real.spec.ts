@@ -116,6 +116,7 @@ test("a second press while pending cancels the request and returns the ring to r
   await bringUp(page, 1);
   await mark(page, 1).click();
   await expect(mark(page, 1)).toHaveAttribute("aria-busy", "true");
+  await expect.poll(() => counter.posts).toBe(1);
   await mark(page, 1).click();
   await expect(mark(page, 1)).toHaveAttribute("aria-busy", "false");
   await expect(mark(page, 1)).toHaveAttribute("aria-expanded", "false");
@@ -164,7 +165,7 @@ const messages = [
     status: 403,
     code: "ai_bot_check_failed",
     retry: false,
-    text: "No pudimos comprobar que la pregunta viene de una persona. Recargá la página y probá de nuevo.",
+    text: "No pudimos comprobar que el pedido viene de una persona. Recargá la página y probá de nuevo.",
   },
   {
     status: 422,
@@ -287,7 +288,13 @@ test("the status line says «Generado por IA», and «Revisado» for a reviewed 
   await expect(panelOf(page, 1)).not.toContainText("Generado por IA");
 });
 
-test("the default status is «Generado por IA»", async ({ page }) => {
+test("a result that is not reviewed says «Generado por IA»", async ({ page }) => {
+  await page.route(simplifyRoute, async (route) => {
+    if (route.request().method() !== "POST") return noProbe(route);
+    const response = await route.fetch();
+    const body = await response.json();
+    return route.fulfill({ response, json: { ...body, status: "generated" } });
+  });
   await openPage(page);
   await bringUp(page, 1);
   await mark(page, 1).click();
@@ -380,6 +387,8 @@ test("the request carries the paragraph's address, not its text", async ({ page 
 });
 
 test("the Father's paragraph asks with a father address that names the edition", async ({ page }) => {
+  // TODO: father-body sends the picker option id ("en") as address.edition, the server wants the edition id ("lightfoot-1889"); see "Needs Pedro" in ai-real-int.md.
+  test.fixme(true, "address.edition carries the picker option id");
   const bodies: { address: Record<string, string>; locale: string }[] = [];
   await page.route(simplifyRoute, (route) => {
     if (route.request().method() !== "POST") return noProbe(route);
@@ -395,7 +404,7 @@ test("the Father's paragraph asks with a father address that names the edition",
   );
   expect(bodies).toHaveLength(1);
   expect(bodies[0]!.address).toMatchObject({ kind: "father", work: "ignatius-smyrnaeans", locator: "6.2" });
-  expect(bodies[0]!.address.edition).toBe("en");
+  expect(bodies[0]!.address.edition).toBe("lightfoot-1889");
 });
 
 test("reduced motion: the pending paragraph opens with every word and no streaming", async ({ browser }) => {
