@@ -1,0 +1,428 @@
+import { biblePassage, osisParts, passageFromRow } from "@/content/ai-search/collections";
+import { buildPack } from "@/content/ai-search/pack";
+import { fixtureSearch } from "@/content/ai-search/fixture-search";
+import { scoreText, windowAround } from "@/content/ai-search/windows";
+import fixture from "../../src/content/ai-search/fixture-passages.json" with { type: "json" };
+
+let checks = 0;
+const failures = [];
+const check = (name, condition, detail = "") => {
+  checks += 1;
+  if (!condition) failures.push(`${name}${detail ? `: ${detail}` : ""}`);
+};
+
+const plan = (extra = {}) => ({
+  intent: "evidence",
+  answerLanguage: "es",
+  doctrines: ["eucharist"],
+  traditions: [],
+  termsEn: ["eucharist", "flesh", "blood", "bread", "cup", "body"],
+  phrasesEn: ["body and blood"],
+  termsEs: ["eucaristía", "cuerpo", "sangre", "pan"],
+  phrasesEs: [],
+  bibleRefs: [],
+  authors: [],
+  works: [],
+  followsPrevious: false,
+  depth: "rich",
+  ...extra,
+});
+const ask = (extra = {}) => ({
+  question: "¿Qué enseña cada tradición sobre la Eucaristía?",
+  locale: "es",
+  scope: "all",
+  here: { kind: "bible", book: "John", chapter: 6, translation: "rv1909" },
+  selection: null,
+  history: [],
+  notes: [],
+  turn: 1,
+  ...extra,
+});
+
+const search = fixtureSearch;
+check("fixture search id", search.id === "fixture");
+check(
+  "fixture holds at least 60 passages",
+  fixture.rows.length + fixture.verses.length >= 60,
+  String(fixture.rows.length + fixture.verses.length),
+);
+check("fixture corpus version", (await search.corpusVersion()) === "fixture");
+check("fixture authors include five Fathers at least", (await search.authors()).length >= 5);
+
+const keys = new Set();
+for (const row of fixture.rows) {
+  check(`unique key ${row.source_key}`, !keys.has(row.source_key));
+  keys.add(row.source_key);
+  const shape =
+    row.collection === "fathers"
+      ? row.source_key.split(":").length === 5
+      : /^(tradition|doctrine|glossary):/.test(row.source_key);
+  check(`key format ${row.source_key}`, shape);
+  check(`text length ${row.source_key}`, row.text.length > 0 && row.text.length <= 4000);
+}
+for (const need of [
+  "fathers:ignatius-smyrnaeans:lightfoot-1889:6.2:0",
+  "tradition:eucharist:catholic:definition",
+  "tradition:baptism:baptist:definition",
+  "doctrine:eucharist:common:common",
+]) {
+  check(`fixture contains ${need}`, keys.has(need));
+}
+for (const translation of ["bsb", "rv1909"]) {
+  for (let verse = 51; verse <= 58; verse += 1) {
+    check(
+      `John 6:${verse} ${translation}`,
+      fixture.verses.some(
+        (v) => v.translationId === translation && v.book === "John" && v.chapter === 6 && v.verse === verse,
+      ),
+    );
+  }
+  for (let verse = 23; verse <= 29; verse += 1) {
+    check(
+      `1Cor 11:${verse} ${translation}`,
+      fixture.verses.some(
+        (v) => v.translationId === translation && v.book === "1Cor" && v.chapter === 11 && v.verse === verse,
+      ),
+    );
+  }
+}
+
+const pack = await buildPack(
+  plan(),
+  ask({ notes: [{ text: "Pensé en nacer del agua y del Espíritu.", ref: "Juan 3:5" }] }),
+  search,
+);
+const real = pack.passages.filter((p) => p.collection !== "mine");
+const traditionsInPack = new Set(real.filter((p) => p.collection === "tradition").map((p) => p.speaker));
+for (const tradition of ["catholic", "orthodox", "lutheran", "reformed", "baptist"]) {
+  check(`eucharist pack has ${tradition}`, traditionsInPack.has(tradition));
+}
+const status = Object.fromEntries(pack.coverage.traditions.map((t) => [t.tradition, t.status]));
+check("pentecostal is no-page", status.pentecostal === "no-page", JSON.stringify(status));
+check(
+  "the five page traditions are found",
+  ["catholic", "orthodox", "lutheran", "reformed", "baptist"].every((t) => status[t] === "found"),
+);
+const perTradition = new Map();
+for (const p of real.filter((x) => x.collection === "tradition"))
+  perTradition.set(p.speaker, (perTradition.get(p.speaker) ?? 0) + 1);
+check(
+  "traditions share the same maximum",
+  [...perTradition.values()].every((n) => n <= 4),
+  JSON.stringify([...perTradition]),
+);
+check(
+  "every tradition gets at least 3 passages",
+  Math.min(...perTradition.values()) >= 3,
+  JSON.stringify([...perTradition]),
+);
+const perAuthor = new Map();
+for (const p of real.filter((x) => x.collection === "fathers"))
+  perAuthor.set(p.author, (perAuthor.get(p.author) ?? 0) + 1);
+check(
+  "fathers at most 3 per author",
+  [...perAuthor.values()].every((n) => n <= 3),
+  JSON.stringify([...perAuthor]),
+);
+check("fathers spread over at least 5 authors or all the fixture has", perAuthor.size >= 4, String(perAuthor.size));
+const locators = real.filter((p) => p.father).map((p) => `${p.father.workId}:${p.father.locator}`);
+const uniqueLocators = new Set(
+  real.filter((p) => p.father).map((p) => `${p.father.workId}:${p.father.locator}:${p.father.editionId}`),
+);
+check(
+  "no two editions of one locator",
+  new Set(locators).size === new Set(locators.map((l) => l)).size &&
+    uniqueLocators.size === real.filter((p) => p.father).length,
+);
+const editionsOf = new Map();
+for (const p of real.filter((x) => x.father)) {
+  const id = `${p.father.workId}:${p.father.locator}`;
+  editionsOf.set(id, new Set([...(editionsOf.get(id) ?? []), p.father.editionId]));
+}
+check(
+  "one edition per locator",
+  [...editionsOf.values()].every((s) => s.size === 1),
+);
+check(
+  "spanish edition preferred for a spanish answer",
+  real.some((p) => p.key.includes("doctrina-ia-2026:9:") && p.translatedByAi),
+);
+check("bible at most 12", real.filter((p) => p.collection === "bible").length <= 12);
+check(
+  "rich pack has the canonical John 6 range",
+  real.some((p) => p.bible?.book === "John" && p.bible.chapter === 6),
+);
+check(
+  "verse ranges do not overlap",
+  (() => {
+    const bible = real.filter((p) => p.bible);
+    return bible.every((a, i) =>
+      bible.every(
+        (b, j) =>
+          i === j ||
+          a.bible.book !== b.bible.book ||
+          a.bible.chapter !== b.bible.chapter ||
+          (a.bible.verseEnd ?? a.bible.verse) < b.bible.verse ||
+          (b.bible.verseEnd ?? b.bible.verse) < a.bible.verse,
+      ),
+    );
+  })(),
+);
+
+check(
+  "ids are P1..Pn in order",
+  pack.passages.every((p, i) => p.id === `P${i + 1}`),
+);
+const order = ["bible", "fathers", "tradition", "doctrine", "glossary", "mine"];
+check(
+  "canonical collection order",
+  pack.passages.every(
+    (p, i) => i === 0 || order.indexOf(pack.passages[i - 1].collection) <= order.indexOf(p.collection),
+  ),
+);
+const fatherYears = real.filter((p) => p.collection === "fathers").map((p) => p.year ?? 9999);
+check(
+  "fathers by year",
+  fatherYears.every((y, i) => i === 0 || fatherYears[i - 1] <= y),
+  fatherYears.join(","),
+);
+const traditionOrder = ["catholic", "orthodox", "lutheran", "reformed", "baptist", "pentecostal"];
+const traditionSeq = real.filter((p) => p.collection === "tradition").map((p) => traditionOrder.indexOf(p.speaker));
+check(
+  "traditions in traditionIds order",
+  traditionSeq.every((v, i) => i === 0 || traditionSeq[i - 1] <= v),
+);
+const biblePos = real.filter((p) => p.bible).map((p) => p.bible.book);
+check(
+  "bible by book order",
+  biblePos.join(",") ===
+    ["Matt", "Luke", "John", "1Cor"]
+      .filter((b) => biblePos.includes(b))
+      .join(",")
+      .split(",")
+      .flatMap((b) => biblePos.filter((x) => x === b))
+      .join(","),
+);
+const mine = pack.passages.filter((p) => p.collection === "mine");
+check(
+  "notes are last and in their own collection",
+  mine.length === 1 && pack.passages.at(-1).collection === "mine" && pack.passages.at(-1).key === "mine:1",
+);
+check(
+  "notes stay out of coverage and extra",
+  !pack.coverage.collections.some((c) => c.collection === "mine") && !pack.extra.some((p) => p.collection === "mine"),
+);
+check("note licence", mine[0].licence === "reader" && mine[0].speaker === "reader");
+
+const tokens = Math.ceil(pack.passages.reduce((sum, p) => sum + p.window.length, 0) / 3.2);
+check("pack within the rich budget", tokens <= 24000, String(tokens));
+for (const p of pack.passages) {
+  check(
+    `window of ${p.id} is a slice of its text`,
+    p.window.length <= 1200 && p.text.slice(p.windowStart, p.windowStart + p.window.length) === p.window,
+  );
+}
+check(
+  "fathers windows hold a query term",
+  real
+    .filter((p) => p.collection === "fathers")
+    .every(
+      (p) =>
+        scoreText(p.window, plan().termsEn, plan().phrasesEn) > 0 ||
+        scoreText(p.window, plan().termsEs, plan().phrasesEs) > 0,
+    ),
+);
+
+const brief = await buildPack(plan({ depth: "brief" }), ask(), search);
+const briefReal = brief.passages.filter((p) => p.collection !== "mine");
+check("brief bible at most 8", briefReal.filter((p) => p.collection === "bible").length <= 8);
+check("brief fathers at most 8", briefReal.filter((p) => p.collection === "fathers").length <= 8);
+const briefCounts = new Map();
+for (const p of briefReal.filter((x) => x.collection === "tradition"))
+  briefCounts.set(p.speaker, (briefCounts.get(p.speaker) ?? 0) + 1);
+check(
+  "brief traditions at most 3",
+  [...briefCounts.values()].every((n) => n <= 3),
+  JSON.stringify([...briefCounts]),
+);
+check(
+  "brief pack within its budget",
+  Math.ceil(brief.passages.reduce((sum, p) => sum + p.window.length, 0) / 3.2) <= 8000,
+);
+
+const fathersOnly = await buildPack(plan(), ask({ scope: "fathers" }), search);
+check(
+  "scope fathers",
+  fathersOnly.passages.length > 0 && fathersOnly.passages.every((p) => p.collection === "fathers"),
+);
+check("scope fathers has no traditions in coverage", fathersOnly.coverage.traditions.length === 0);
+const bibleOnly = await buildPack(plan(), ask({ scope: "bible" }), search);
+check("scope bible", bibleOnly.passages.length > 0 && bibleOnly.passages.every((p) => p.collection === "bible"));
+const chapterPack = await buildPack(plan(), ask({ scope: "chapter" }), search);
+check(
+  "scope chapter keeps bible in the chapter",
+  chapterPack.passages.filter((p) => p.bible).every((p) => p.bible.book === "John" && p.bible.chapter === 6),
+);
+check(
+  "scope chapter keeps only tradition passages citing the chapter",
+  chapterPack.passages
+    .filter((p) => p.collection === "tradition")
+    .every((p) => p.refs.some((r) => osisParts(r)?.book === "John" && osisParts(r)?.chapter === 6)),
+);
+check("scope chapter has no fathers", !chapterPack.passages.some((p) => p.collection === "fathers"));
+const workPack = await buildPack(
+  plan(),
+  ask({ scope: "work", here: { kind: "father", work: "didache", edition: "lightfoot-harmer-1891", locator: "9" } }),
+  search,
+);
+check("scope work", workPack.passages.length > 0 && workPack.passages.every((p) => p.father?.workId === "didache"));
+
+const named = await buildPack(
+  plan({
+    doctrines: [],
+    authors: ["Ignatius"],
+    termsEn: ["eucharist", "flesh", "bread", "cup"],
+    phrasesEn: [],
+    termsEs: [],
+  }),
+  ask({ scope: "fathers" }),
+  search,
+);
+check(
+  "named author filters the Fathers",
+  named.passages.length > 0 && named.passages.every((p) => p.author === "ignatius-of-antioch"),
+);
+const topKeys = named.passages.map((p) => p.key);
+check(
+  "Ignatius Smyrnaeans 6.2 is in the pack",
+  topKeys.some((k) => /^fathers:ignatius-smyrnaeans:[^:]+:6\.2:/.test(k)),
+  topKeys.join(" "),
+);
+const ranked = await search.searchPassages({
+  termsEn: ["eucharist", "flesh", "bread", "cup"],
+  phrasesEn: [],
+  termsEs: [],
+  phrasesEs: [],
+  collections: ["fathers"],
+  doctrines: null,
+  speakers: null,
+  authors: ["ignatius-of-antioch"],
+  works: null,
+  limit: 8,
+  perGroup: 8,
+});
+check(
+  "Ignatius question: Smyrnaeans 6.2 in the top 3",
+  ranked.slice(0, 3).some((p) => p.key.startsWith("fathers:ignatius-smyrnaeans:lightfoot-1889:6.2")),
+  ranked.map((p) => p.key).join(" "),
+);
+const missing = await buildPack(plan({ doctrines: [], authors: ["John Damascene"] }), ask(), search);
+check("missing author is reported", missing.coverage.missingAuthors.join() === "John Damascene");
+
+const justification = await buildPack(plan({ doctrines: ["justification"] }), ask(), search);
+check(
+  "justification has no tradition pages",
+  justification.coverage.traditions.every((t) => t.status === "no-page" || t.status === "none"),
+);
+check(
+  "justification keeps Fathers and Bible",
+  justification.passages.some((p) => p.collection === "fathers"),
+);
+
+const narrowed = await buildPack(plan({ traditions: ["lutheran", "baptist"] }), ask(), search);
+check(
+  "named traditions narrow the pack",
+  narrowed.passages
+    .filter((p) => p.collection === "tradition")
+    .every((p) => ["lutheran", "baptist"].includes(p.speaker)),
+);
+check(
+  "named traditions narrow the coverage",
+  narrowed.coverage.traditions.map((t) => t.tradition).join() === "lutheran,baptist",
+);
+
+const english = await buildPack(
+  plan({
+    answerLanguage: "en",
+    doctrines: ["baptism"],
+    termsEn: ["baptism", "water", "regeneration"],
+    termsEs: [],
+    bibleRefs: ["Matt.28.19"],
+  }),
+  ask({ locale: "en", here: { kind: "bible", book: "John", chapter: 3, translation: "bsb" } }),
+  search,
+);
+check(
+  "english labels",
+  english.passages.some((p) => p.who === "Catholic Church") &&
+    english.passages.some((p) => p.collection === "bible" && p.editionLabel.includes("Public domain")),
+);
+check(
+  "english bible edition",
+  english.coverage.bibleEdition === "bsb" && english.passages.some((p) => p.bible?.translationId === "bsb"),
+);
+check(
+  "english hrefs",
+  english.passages.filter((p) => p.href).every((p) => p.href.startsWith("/en/")),
+);
+check(
+  "explicit reference is in the pack",
+  english.passages.some((p) => p.key === "bible:bsb:Matt.28.19"),
+);
+
+const empty = await buildPack(
+  plan({ doctrines: [], termsEn: ["zzzqqq"], phrasesEn: [], termsEs: ["zzzqqq"], bibleRefs: [] }),
+  ask({ question: "zzzqqq" }),
+  search,
+);
+check("an empty search gives an empty pack", empty.passages.length === 0 && empty.extra.length === 0);
+
+const parts = (ref) => JSON.stringify(osisParts(ref));
+check("osis verse", parts("John.6.53") === '{"book":"John","chapter":6,"verse":53,"verseEnd":null}');
+check("osis range", parts("John.6.51-58") === '{"book":"John","chapter":6,"verse":51,"verseEnd":58}');
+check(
+  "osis cross-book form",
+  parts("Matt.26.26-Matt.26.28") === '{"book":"Matt","chapter":26,"verse":26,"verseEnd":28}',
+);
+check("osis numbered book", parts("1Cor.11.23-1Cor.11.26") === '{"book":"1Cor","chapter":11,"verse":23,"verseEnd":26}');
+check("osis chapter", parts("John.6") === '{"book":"John","chapter":6,"verse":null,"verseEnd":null}');
+check("osis clips long ranges", osisParts("Ps.119.1-100")?.verseEnd === 8);
+check("osis rejects junk", osisParts("Nope.1.1") === null && osisParts("hello") === null);
+check(
+  "lookup range joins verses",
+  (await search.lookupVerses(["John.6.53-55"], "bsb", "en"))[0]?.key === "bible:bsb:John.6.53-55",
+);
+check("lookup unknown verse", (await search.lookupVerses(["Gen.1.1"], "bsb")).length === 0);
+
+const long = Array.from({ length: 400 }, (_, i) => (i === 200 ? "eucharist" : `palabra${i}`)).join(" ");
+const win = windowAround(long, ["eucharist"]);
+check("window at most 1200", win.window.length <= 1200);
+check("window holds the match", win.window.includes("eucharist"));
+check("window starts at a word", win.windowStart === 0 || /\s/.test(long.charAt(win.windowStart - 1)));
+check(
+  "window ends at a word",
+  /\s|^$/.test(long.charAt(win.windowStart + win.window.length)) || win.windowStart + win.window.length === long.length,
+);
+check("window offset is exact", long.slice(win.windowStart, win.windowStart + win.window.length) === win.window);
+check("short text is whole", windowAround("short text", ["text"]).window === "short text");
+check("window without a match starts at 0", windowAround(long, ["zzzz"]).windowStart === 0);
+
+const row = fixture.rows.find((r) => r.collection === "fathers");
+const labelled = passageFromRow(row, "en");
+check(
+  "father label in english",
+  labelled.who.length > 0 && labelled.href.startsWith("/en/") && labelled.father.workId === row.work_id,
+);
+check("draft marker becomes a flag", passageFromRow({ ...row, edition_label: "X, 1900 [draft]" }, "es").draft === true);
+check(
+  "bible passage key for a range",
+  biblePassage({ translationId: "bsb", book: "John", chapter: 6, verse: 51, verseEnd: 58, text: "x" }, null, "es")
+    ?.key === "bible:bsb:John.6.51-58",
+);
+check(
+  "licence words for short quotes",
+  passageFromRow({ ...row, licence: "short-quote", max_quote_words: 40 }, "es").editionLabel.includes("Cita breve"),
+);
+
+if (failures.length) throw new Error(failures.slice(0, 25).join("\n"));
+console.log(`ok ${checks} checks`);
