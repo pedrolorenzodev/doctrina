@@ -8,7 +8,7 @@ import { sameChapter, type ChapterKey, type Note } from "@/lib/notes";
 
 const askRoute = "/api/ai/ask";
 const moreRoute = "/api/ai/ask/more";
-const timeoutMs = 60_000;
+const timeoutMs = 120_000;
 const maxNotes = 20;
 const maxNotesChars = 4000;
 const maxNoteChars = 1000;
