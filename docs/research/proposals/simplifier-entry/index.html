@@ -1,0 +1,582 @@
+<title>Simplificar cualquier párrafo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..600;1,8..60,300..600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; every demo sits in a framed stage that follows the site's own container rules (desktop column or 390 px phone). */
+:root{
+  --bg:#e8e5de;--ink:#1c1713;--ink-2:#2a2620;--ink-3:#615c54;--rule:#c9c5bc;--rule-2:#aeaba4;
+  --accent:#2c4a9e;--cite:#5f3d0c;--cite-weak:rgb(95 61 12 / .09);--panel:#efece6;
+  --tip-bg:#1c1713;--tip-ink:#f4f1ea;--hover:rgb(28 23 19 / .05);--danger:#9c2f28;
+  --hls-yellow:#e3bb3c;--hls-green:#76aa5e;--hls-sky:#4fa6c9;--hls-pink:#d6789a;
+  --tex:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.85%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%221.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2262%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");--tex-o:.4;
+  --head:"Newsreader",Georgia,serif;--body:"Source Serif 4",Georgia,serif;--ui:"Work Sans",system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.1,.25,1);--ease-smooth:cubic-bezier(.32,.72,0,1);
+  --shadow:0 18px 40px -18px rgb(0 0 0 / .45);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1d1d1c;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--cite:#d6a865;--cite-weak:rgb(214 168 101 / .12);--panel:#262625;
+  --tip-bg:#f2f2f0;--tip-ink:#1d1d1c;--hover:rgb(255 255 255 / .05);--danger:#e8918a;
+  --hls-yellow:#cfa463;--hls-green:#86b878;--hls-sky:#6fb3d2;--hls-pink:#d48aa6;
+  --tex:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");--tex-o:1;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1d1d1c;--ink:#f2f2f0;--ink-2:#d0d0cc;--ink-3:#9a9a96;--rule:#3a3a38;--rule-2:#4d4d4a;
+  --accent:#9eb3ee;--cite:#d6a865;--cite-weak:rgb(214 168 101 / .12);--panel:#262625;
+  --tip-bg:#f2f2f0;--tip-ink:#1d1d1c;--hover:rgb(255 255 255 / .05);--danger:#e8918a;
+  --hls-yellow:#cfa463;--hls-green:#86b878;--hls-sky:#6fb3d2;--hls-pink:#d48aa6;
+  --tex:url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22420%22%3E%3Cfilter%20id%3D%22n%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.7%22%20numOctaves%3D%224%22%20seed%3D%227%22%20stitchTiles%3D%22stitch%22%20result%3D%22t%22%2F%3E%3CfeDiffuseLighting%20in%3D%22t%22%20lighting-color%3D%22%23ffffff%22%20surfaceScale%3D%222.6%22%20diffuseConstant%3D%221%22%3E%3CfeDistantLight%20azimuth%3D%22235%22%20elevation%3D%2252%22%2F%3E%3C%2FfeDiffuseLighting%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%2F%3E%3C%2Fsvg%3E");--tex-o:1;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:15px;line-height:1.5;
+  padding-block:0 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1040px;margin-inline:auto}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding-block:10px;margin-bottom:8px}
+.bar-title{font-family:var(--head);font-size:18px;margin-right:auto;white-space:nowrap}
+.bar label{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);min-height:36px}
+.seg{display:inline-flex;gap:2px;border:1px solid var(--rule);border-radius:8px;padding:3px}
+.seg button{min-height:30px;padding:4px 12px;border-radius:6px;font-size:13.5px;line-height:1.2;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.seg button:hover{background:var(--hover);color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);font-weight:500}
+.seg.sm button{min-height:26px;padding:3px 10px;font-size:13px}
+h1,h2,h3{font-family:var(--head);font-weight:350;text-wrap:balance;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(34px,6vw,56px);line-height:1.05}
+h2{font-size:clamp(28px,4.4vw,38px);line-height:1.1}
+h3{font-size:21px;line-height:1.25}
+p{margin:0}
+.lede{font-family:var(--head);font-style:italic;font-weight:300;font-size:clamp(19px,2.6vw,24px);line-height:1.38;color:var(--ink-2);max-width:42rem}
+.sec{display:grid;gap:22px;padding-top:56px}
+.sec>.head{display:grid;gap:10px}
+.note{color:var(--ink-3);font-size:14px;line-height:1.55;max-width:44rem}
+.tag{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;font-family:var(--head);font-size:18px;margin-right:12px;vertical-align:middle}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:0;border-top:1px solid var(--rule)}
+.cols>div{padding:16px 22px 18px 0;display:grid;gap:6px;align-content:start;min-width:0}
+.cols dt,.k{font-size:12.5px;font-weight:500;color:var(--ink-3)}
+.cols dd{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.tablewrap{overflow-x:auto;border-top:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:12px 18px 12px 0;border-bottom:1px solid var(--rule);color:var(--ink-2)}
+th{font-weight:500;color:var(--ink);font-size:14px}
+tbody th{font-weight:500;color:var(--ink-3);font-size:12.5px;width:150px}
+.ok{color:var(--ink)}
+ul.plain{margin:0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--rule)}
+ul.plain li{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:4px 28px;padding:13px 0;border-bottom:1px solid var(--rule);font-size:14.5px;color:var(--ink-2);line-height:1.55}
+ul.plain li b{font-weight:500;color:var(--ink)}
+@media (max-width:640px){ul.plain li{grid-template-columns:1fr}}
+.decide{display:grid;gap:0;border-top:1px solid var(--ink);counter-reset:d}
+.decide>div{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--rule);counter-increment:d}
+.decide>div::before{grid-row:1 / span 2;content:counter(d);font-family:var(--head);font-size:22px;line-height:1.2;color:var(--ink-3)}
+.decide b{font-weight:500}
+.decide p{color:var(--ink-2);font-size:15px;line-height:1.55}
+.decide .rec{color:var(--ink-3);font-size:14px;margin-top:4px}
+figure{margin:0;display:grid;gap:10px}
+figcaption{font-size:13px;color:var(--ink-3);line-height:1.5;max-width:46rem}
+.ctl{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+/* ---- the stage: site texture, site tokens, container queries stand in for breakpoints ---- */
+.stage{position:relative;container-type:inline-size;width:100%;max-width:980px;border:1px solid var(--rule-2);border-radius:10px;background:var(--bg);overflow:clip;isolation:isolate}
+.stage::after{content:"";position:absolute;inset:0;background-image:var(--tex);background-size:420px 420px;opacity:var(--tex-o);mix-blend-mode:multiply;pointer-events:none;z-index:0}
+.stage>*{position:relative;z-index:1}
+body[data-w="phone"] .stage{max-width:390px;margin-inline:auto}
+.pad{padding:36px 56px 40px 28px;display:grid;gap:30px}
+@container (max-width:640px){.pad{padding:24px 16px 28px}}
+.read{font-family:var(--body);font-weight:350;font-size:19px;line-height:1.66;color:var(--ink-2)}
+.prose{font-family:var(--body);font-weight:350;font-size:19px;line-height:1.66;color:var(--ink-2)}
+.defn{font-family:var(--body);font-weight:350;font-size:23px;line-height:1.5;color:var(--ink)}
+@container (max-width:640px){.read,.prose{font-size:18px}.defn{font-size:20px}}
+.loc{font-family:var(--ui);font-size:12.5px;font-weight:500;color:var(--ink-3);margin-bottom:6px}
+.cite-line{font-size:.78em;color:var(--ink-3)}
+.cite-line u{text-decoration:underline dotted;text-decoration-color:var(--cite);color:var(--cite);text-underline-offset:3px}
+.meta{margin-top:10px;font-family:var(--ui);font-size:14px;color:var(--cite)}
+.meta b{color:var(--ink);font-weight:600;border-right:1px solid var(--rule-2);padding-right:12px;margin-right:12px}
+.stmt+.stmt{border-top:1px solid var(--rule);padding-top:26px}
+/* ---- ring (copied from src/components/simplifier) ---- */
+.sim-body{position:relative}
+.ring-slot{position:absolute;top:calc(.5lh - 11px);right:-40px;z-index:5;opacity:0;transition:opacity .15s var(--ease)}
+.stage[data-rings="off"] .sim:not(.is-open):not(.is-pending) .ring-slot{display:none}
+.stage[data-rings="on"] .ring-slot,.stage.hint .ring-slot{opacity:1}
+.sim:hover .ring-slot,.ring-slot:focus-within,.sim.is-open .ring-slot,.sim.is-pending .ring-slot{opacity:1}
+@container (max-width:640px){.stage:not([data-rings="off"]) .ring-slot{opacity:1}.ring-slot{top:-34px;right:-14px}}
+.ring{position:relative;width:28px;height:28px;display:grid;place-items:center;border-radius:50%}
+.ring::before{content:"";position:absolute;inset:-8px}
+@container (max-width:640px){.ring{width:44px;height:44px}.ring::before{inset:0}}
+.ring i{display:block;width:14px;height:14px;border-radius:50%;border:1.5px solid var(--ink-3);transition:border-color .15s var(--ease),background-color .15s var(--ease)}
+.ring:hover i{border-color:var(--ink)}
+.sim.is-open .ring i{border-color:var(--ink);background:var(--ink)}
+.sim.is-pending .ring i{border-style:dashed}
+.tip{position:absolute;bottom:calc(100% + 4px);right:0;white-space:nowrap;background:var(--tip-bg);color:var(--tip-ink);font-size:12.5px;line-height:1;padding:7px 9px;border-radius:5px;opacity:0;pointer-events:none;transition:opacity .12s var(--ease)}
+.ring:hover .tip,.ring:focus-visible .tip{opacity:1}
+@media (pointer:coarse){.ring:hover .tip{opacity:0}}
+/* ---- panel ---- */
+.box{display:grid;grid-template-rows:0fr;transition:grid-template-rows 380ms var(--ease-smooth)}
+.box.open{grid-template-rows:1fr}
+.box>.in{overflow:hidden;min-height:0}
+@media (prefers-reduced-motion:reduce){.box{transition:none}}
+.pn{margin:12px 0 0 2px;display:grid;gap:10px;border-left:1px solid var(--rule-2);padding:6px 0 18px 16px}
+.pn.live{border-left-style:dashed}
+.pn-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.pn-note{font-family:var(--ui);font-size:12.5px;line-height:1.45;color:var(--ink-3)}
+.pn-text{font-family:var(--ui);font-size:16px;line-height:1.65;color:var(--ink-2);margin:0 0 12px}
+.pn-text.msg{color:var(--ink-3)}
+.pn-text .w.hid{visibility:hidden}
+.pn-text sup{font-size:10.5px;font-weight:500;color:var(--cite);padding:0 2px;margin-left:1px;line-height:0}
+.pn-foot{display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin-left:-8px}
+.fb{min-height:32px;padding:0 8px;border-radius:6px;font-size:13px;font-weight:500;color:var(--ink-3);white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.fb:hover{background:var(--hover);color:var(--ink)}
+@container (max-width:640px){.fb{min-height:44px}}
+.pn-foot .pn-note{margin-left:8px}
+.pn-foot[hidden]{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ---- switch, Aa, menu, toolbar ---- */
+.sw{display:inline-flex;align-items:center;gap:10px;min-height:36px;text-align:left}
+.sw-t{width:30px;height:18px;border-radius:9px;border:1.5px solid var(--ink-3);position:relative;flex:none;transition:background-color .15s var(--ease),border-color .15s var(--ease)}
+.sw-t::after{content:"";position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;background:var(--ink-3);transition:translate .18s var(--ease-smooth),background-color .15s var(--ease)}
+.sw[aria-checked="true"] .sw-t{background:var(--ink);border-color:var(--ink)}
+.sw[aria-checked="true"] .sw-t::after{translate:12px 0;background:var(--bg)}
+@container (max-width:640px){.sw{min-height:44px}}
+.strip{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--rule);padding:6px 12px 6px 28px;min-height:52px;background:var(--bg)}
+@container (max-width:640px){.strip{padding-left:16px}}
+.strip-t{font-size:14px;color:var(--ink-3);min-width:0}
+.strip-t b{font-weight:500;color:var(--ink)}
+.aa{min-height:34px;min-width:36px;padding:0 10px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.aa:hover,.aa[aria-expanded="true"]{background:var(--hover);color:var(--ink)}
+@container (max-width:640px){.aa{min-height:44px;min-width:44px}}
+.menu{position:absolute;top:56px;right:12px;width:360px;max-width:calc(100% - 16px);z-index:12;background:var(--panel);border:1px solid var(--rule-2);border-radius:8px;box-shadow:var(--shadow);padding:14px 16px 16px;display:grid;gap:14px;opacity:0;visibility:hidden;translate:0 -4px;transition:opacity .22s var(--ease-smooth),translate .34s var(--ease-smooth),visibility 0s .22s}
+.menu.open{opacity:1;visibility:visible;translate:0 0;transition:opacity .22s var(--ease-smooth),translate .34s var(--ease-smooth),visibility 0s}
+@container (max-width:640px){.menu{left:8px;right:8px;width:auto;max-width:none}}
+.menu .g{display:grid;gap:6px}
+.step{display:inline-flex;gap:2px;border:1px solid var(--rule);border-radius:8px;padding:3px;justify-self:start}
+.step span{min-width:36px;min-height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:5px;font-size:13px;color:var(--ink-2)}
+.menu hr{border:0;border-top:1px solid var(--rule);margin:0}
+.menu .help{font-size:13px;line-height:1.5;color:var(--ink-3)}
+.tbar{position:absolute;z-index:14;left:0;top:0;display:flex;align-items:center;flex-wrap:nowrap;gap:2px;background:var(--bg);border:1px solid var(--rule-2);border-radius:8px;padding:3px 6px;box-shadow:var(--shadow);opacity:0;visibility:hidden;pointer-events:none;translate:0 4px;transition:opacity .15s var(--ease),translate .15s var(--ease),visibility 0s .15s}
+.tbar.open{opacity:1;visibility:visible;pointer-events:auto;translate:0 0;transition:opacity .15s var(--ease),translate .15s var(--ease),visibility 0s}
+.tbar.docked.open{position:sticky;left:auto!important;top:auto!important;bottom:0;border-radius:0;border-width:1px 0 0;justify-content:center;flex-wrap:wrap;padding-bottom:max(3px,env(safe-area-inset-bottom,0px))}
+.tb{min-height:36px;padding:0 10px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.tb:hover{background:var(--hover);color:var(--ink)}
+.tb.strong{color:var(--ink)}
+.tbar.docked .tb{min-height:44px}
+.dots{display:inline-flex;align-items:center;gap:2px}
+.dots button{width:30px;height:30px;display:grid;place-items:center;border-radius:50%}
+.dots i{width:16px;height:16px;border-radius:50%;box-shadow:inset 0 0 0 1px rgb(0 0 0 / .12)}
+.vs{width:1px;height:20px;background:var(--rule);margin:0 4px}
+.tbar.docked .vs{display:none}
+.tbar.docked .dots button{width:44px;height:44px}
+/* ---- tradition replica ---- */
+.crumb{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;font-size:14px;color:var(--ink-3)}
+.crumb nav{display:flex;gap:8px;flex-wrap:wrap}
+.crumb nav span+span::before{content:"/";margin-right:8px;color:var(--rule-2)}
+.crumb nav b{font-weight:400;color:var(--ink)}
+.tabs{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:15px;color:var(--ink-2)}
+.tabs span{padding:6px 10px;border-radius:6px}
+.tabs span.on{border:1px solid var(--rule-2);background:var(--panel);color:var(--ink);font-weight:500}
+.tabs small{font-size:14px;color:var(--ink-3);margin-right:6px}
+.ttl{font-family:var(--head);font-weight:350;font-size:clamp(40px,7vw,60px);line-height:1.03;letter-spacing:-.01em}
+.sub{font-family:var(--head);font-style:italic;font-weight:300;font-size:22px;line-height:1.38;color:var(--ink-2)}
+@container (max-width:640px){.sub{font-size:19px}}
+.qe{display:grid;grid-template-columns:240px minmax(0,1fr);gap:20px 40px;align-items:start}
+@container (max-width:640px){.qe{grid-template-columns:1fr}}
+.qe h2{font-size:38px;line-height:1.1;color:var(--ink)}
+@container (max-width:640px){.qe h2{font-size:32px}}
+.qe-side{display:grid;gap:12px;font-size:14.5px;color:var(--ink-3);line-height:1.6}
+.qe-main{display:grid;gap:26px;min-width:0}
+.sec-btn{justify-self:start;min-height:34px;padding:0 10px;margin-left:-10px;border-radius:6px;font-size:13.5px;font-weight:500;color:var(--ink-2);display:inline-flex;align-items:center;justify-content:center;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.sec-btn:hover{background:var(--hover);color:var(--ink)}
+.sec-btn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@container (max-width:640px){.sec-btn{min-height:44px}}
+.sec-foot{border-top:1px solid var(--rule);padding-top:14px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 18px}
+.sec-foot span{font-size:14px;color:var(--ink-3)}
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.cap{font-size:12.5px;color:var(--ink-3)}
+a{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+<div class="wrap">
+<div class="bar" role="toolbar" aria-label="Controles de las demos">
+  <span class="bar-title">Simplificar cualquier párrafo</span>
+  <div class="seg sm" role="group" aria-label="Ancho de las demos"><button type="button" data-w="desktop" aria-pressed="true">Escritorio</button><button type="button" data-w="phone" aria-pressed="false">Teléfono</button></div>
+  <div class="seg sm" role="group" aria-label="Tema"><button type="button" data-theme-set="light" aria-pressed="true">Claro</button><button type="button" data-theme-set="dark" aria-pressed="false">Oscuro</button></div>
+  <label for="fail"><input type="checkbox" id="fail"> Que la próxima simplificación falle</label>
+</div>
+
+<header class="sec" style="padding-top:40px">
+  <div class="head">
+    <h1>Pedir la simplificación de cualquier párrafo</h1>
+    <p class="lede">Hoy solo 25 párrafos tienen el círculo. El resto del sitio no tiene forma de pedirla, y en reposo no debe haber nada a la vista.</p>
+  </div>
+  <p class="note">Todo lo de abajo funciona: pasá el cursor, tocá, elegí ancho de teléfono arriba. Los círculos, el panel y los estados son los que ya están aprobados; lo único nuevo es cómo se llega a ellos.</p>
+</header>
+
+<section class="sec" aria-labelledby="hoy">
+  <div class="head"><h2 id="hoy">Hoy</h2>
+  <p class="note">El círculo aparece al pasar el cursor sobre el párrafo; en pantallas táctiles está siempre. Solo existe en los párrafos de prueba (definiciones y algunas afirmaciones de las páginas 03, y un párrafo de Ignacio). El segundo párrafo de abajo, de una edición de un Padre, no tiene nada.</p></div>
+  <div class="ctl" role="group" aria-label="Estado del primer párrafo"><span class="cap">Estado del primer párrafo</span>
+    <div class="seg sm"><button type="button" data-force="idle" aria-pressed="true">Reposo</button><button type="button" data-force="pending" aria-pressed="false">Pendiente</button><button type="button" data-force="open" aria-pressed="false">Abierto</button><button type="button" data-force="error" aria-pressed="false">Error</button></div></div>
+  <figure>
+    <div class="stage" id="s-today" data-rings="hover"><div class="pad">
+      <div data-sim="euc-def" data-tone="defn"></div>
+      <div data-sim="ign-72" data-tone="read" data-loc="Ignacio de Antioquía, A los Esmirniotas 7.2 · edición Lightfoot, 1889" data-noring></div>
+    </div></div>
+    <figcaption>Una simplificación nueva tarda unos 2 a 5 segundos [estimado, simplifier-design §2]; en la demo, 1 segundo. Mientras espera, el círculo se vuelve de línea punteada y nada más se mueve.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="comp">
+  <div class="head"><h2 id="comp">Las tres formas de llegar</h2>
+  <p class="note">Las letras vienen del análisis previo; C y D quedaron descartadas (abajo).</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Hoy</th><th><span class="tag" style="min-width:26px;height:26px;font-size:15px;margin-right:8px">A</span>Interruptor en «Aa»</th><th><span class="tag" style="min-width:26px;height:26px;font-size:15px;margin-right:8px">B</span>Botón en la barra de selección</th><th><span class="tag" style="min-width:26px;height:26px;font-size:15px;margin-right:8px">E</span>Botón por sección</th></tr></thead>
+    <tbody>
+      <tr><th>En reposo</th><td>Nada en escritorio. Círculo visible en teléfono, solo en 25 párrafos.</td><td>Nada hasta activarlo.</td><td>Nada.</td><td>Un botón de texto pequeño al comienzo de cada sección.</td></tr>
+      <tr><th>En el teléfono</th><td>Círculo de 44 px siempre visible.</td><td>Con el interruptor activo, un círculo junto a cada párrafo.</td><td>Selección con pulsación larga; la barra queda abajo, pegada al borde.</td><td>Botón de 44 px; luego círculos solo en esa sección.</td></tr>
+      <tr><th>Teclado y lector de pantalla</th><td>Cada círculo es un botón con nombre.</td><td>Interruptor con rol «switch». Activo, suma una parada de tabulación por párrafo.</td><td>La barra se lee como barra de herramientas. Seleccionar con Mayús + flechas es posible pero poco descubrible.</td><td>Un solo botón con estado; luego los círculos.</td></tr>
+      <tr><th>Dónde cubre</th><td>25 párrafos.</td><td>Padres (ediciones no hechas con IA), páginas 03, 02 y glosario.</td><td>Solo la lectura de los Padres. La Biblia queda fuera; en 03 y glosario no hay barra de selección.</td><td>Cualquier sección que lleve el botón: 03, 02, una obra de un Padre.</td></tr>
+      <tr><th>Peticiones por lector</th><td>Ninguna hasta tocar el círculo.</td><td>Ninguna hasta tocar un círculo. Es la que más riesgo tiene de toques sin querer en el teléfono.</td><td>Ninguna hasta tocar el botón. La menos expuesta: hay que seleccionar a propósito.</td><td>Ninguna hasta tocar un círculo.</td></tr>
+      <tr><th>Costo de cada pedido</th><td colspan="4">Un párrafo nuevo es una llamada al modelo, unos US$ 0,0007 con Haiku 5.5 [estimado, simplifier-design §9]. Uno ya simplificado sale del caché, sin costo. Pasar el cursor sobre el círculo solo consulta el caché.</td></tr>
+      <tr><th>Referencia</th><td>El círculo ya aprobado.</td><td>El menú «Aa» del propio sitio.</td><td>La barra de selección del propio sitio; Readwise Ghostreader.</td><td>Ninguna directa.</td></tr>
+    </tbody></table></div>
+  <p class="note">Las referencias externas vienen del análisis previo del proyecto y no las verifiqué en esta sesión.</p>
+</section>
+
+<section class="sec" aria-labelledby="a">
+  <div class="head"><h2 id="a"><span class="tag">A</span>Interruptor en «Aa»</h2>
+  <p class="note">Va en el menú «Aa» de la lectura de los Padres, en un grupo nuevo al final. Se activa una vez y el sitio lo recuerda. Con el interruptor activo, el círculo aparece como hoy: al pasar el cursor, siempre en teléfono. Abrí «Aa», activalo y mirá los párrafos.</p></div>
+  <figure>
+    <div class="stage" id="s-a" data-rings="off">
+      <div class="strip"><span class="strip-t"><b>Ignacio de Antioquía</b> · A los Esmirniotas</span>
+        <button type="button" class="aa" data-aa aria-haspopup="dialog" aria-expanded="false"><span class="sr">Texto</span><span aria-hidden="true">Aa</span></button></div>
+      <div class="menu" role="dialog" aria-label="Texto">
+        <div class="g"><span class="k">Grosor del texto</span><div class="step"><span>−</span><span>+</span></div></div>
+        <div class="g"><span class="k">Interlineado</span><div class="step"><span>−</span><span>+</span></div></div>
+        <hr>
+        <div class="g"><span class="k">Ayudas de lectura</span>
+          <button type="button" class="sw" role="switch" aria-checked="false" data-rings-switch="s-a"><span class="sw-t" aria-hidden="true"></span><span>Simplificar párrafos</span></button>
+          <p class="help">Muestra un círculo junto a cada párrafo. Al tocarlo se abre una versión en palabras más simples, escrita por IA.</p></div>
+      </div>
+      <div class="pad">
+        <div data-sim="ign-62" data-tone="read" data-loc="6.2"></div>
+        <div data-sim="ign-71" data-tone="read" data-loc="7.1"></div>
+        <div data-sim="ign-72" data-tone="read" data-loc="7.2"></div>
+      </div>
+    </div>
+    <figcaption>Cuesta: un círculo por párrafo mientras esté activo, que en teléfono son varias zonas de toque en cada pantalla. Al activarlo, los círculos se muestran un par de segundos para que se vea que pasó algo; después vuelven al comportamiento normal.</figcaption>
+  </figure>
+  <h3>Dónde vive el interruptor en las páginas sin «Aa»</h3>
+  <p class="note">Las páginas 03, 02 y el glosario no tienen «Aa». Dos lugares posibles; ambos activan lo mismo que el interruptor de arriba.</p>
+  <div class="pick" role="group" aria-label="Lugar del interruptor"><span class="cap">Mostrar</span><div class="seg sm"><button type="button" data-place="a1" aria-pressed="true">A·1 Arriba, en la fila de la ruta</button><button type="button" data-place="a2" aria-pressed="false">A·2 Al final de «Qué enseña»</button></div></div>
+  <figure>
+    <div class="stage" id="s-a1" data-rings="off" data-placeview="a1"><div class="pad">
+      <div class="crumb"><nav aria-label="Ruta"><span>Doctrinas</span><span>La Eucaristía</span><span><b>Católica</b></span></nav>
+        <button type="button" class="sw" role="switch" aria-checked="false" aria-label="Simplificar párrafos" data-rings-switch="s-a1" data-place-only="a1"><span class="sw-t" aria-hidden="true"></span><span>Simplificar</span></button></div>
+      <div class="tabs"><small>Tradición</small><span class="on">Católica</span><span>Ortodoxa</span><span>Luterana</span><span>Reformada</span><span>Bautista</span></div>
+      <div><p class="ttl">La posición católica</p></div>
+      <div class="qe"><div class="qe-side"><h2>Qué enseña</h2><p>Lo que la Iglesia católica enseña sobre la Eucaristía, con el grado de autoridad que le corresponde según las categorías de la Iglesia.</p></div>
+        <div class="qe-main"><div class="stmt" data-sim="euc-def" data-tone="defn"></div>
+        <div class="sec-foot" data-place-only="a2"><span>Cada párrafo puede leerse en palabras más simples.</span>
+          <button type="button" class="sw" role="switch" aria-checked="false" data-rings-switch="s-a1"><span class="sw-t" aria-hidden="true"></span><span>Simplificar párrafos</span></button></div></div></div>
+    </div></div>
+    <figcaption><b style="font-weight:500">A·1</b> se ve apenas se abre la página y es un control permanente, aunque chico, en cada página de tradición. <b style="font-weight:500">A·2</b> no agrega nada arriba, pero solo lo encuentra quien llega al final de la sección.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="b">
+  <div class="head"><h2 id="b"><span class="tag">B</span>«Simplificar» en la barra de selección</h2>
+  <p class="note">Aparece junto a «Preguntar» cuando se selecciona texto en la lectura de los Padres. Simplifica el párrafo completo que contiene la selección, no solo las palabras elegidas: el servidor trabaja con la dirección del párrafo, nunca con texto suelto, para que nadie pueda usar el sitio como un servicio gratuito de reescritura. En teléfono la barra queda pegada abajo.</p></div>
+  <div class="ctl"><div class="seg sm"><button type="button" data-select-sample aria-pressed="false">Seleccionar una frase de ejemplo</button></div><span class="cap">O seleccioná texto vos con el mouse o con el dedo.</span></div>
+  <figure>
+    <div class="stage" id="s-b" data-rings="off">
+      <div class="pad">
+        <div data-sim="ign-62" data-tone="read" data-loc="6.2"></div>
+        <div data-sim="ign-72" data-tone="read" data-loc="7.2"></div>
+      </div>
+      <div class="tbar" id="tbar" role="toolbar" aria-label="Acciones sobre la selección">
+        <span class="dots" role="group" aria-label="Subrayar"><button type="button" aria-label="Amarillo"><i style="background:var(--hls-yellow)"></i></button><button type="button" aria-label="Verde"><i style="background:var(--hls-green)"></i></button><button type="button" aria-label="Celeste"><i style="background:var(--hls-sky)"></i></button><button type="button" aria-label="Rosa"><i style="background:var(--hls-pink)"></i></button></span>
+        <button type="button" class="tb">Nota</button><button type="button" class="tb strong">Preguntar</button><button type="button" class="tb strong" data-simplify>Simplificar</button>
+        <span class="vs" aria-hidden="true"></span><button type="button" class="tb">Citar</button><button type="button" class="tb">Buscar</button>
+      </div>
+    </div>
+    <figcaption>Cuesta: nada nuevo en la pantalla. Se llega solo si se selecciona a propósito, así que casi no hay pedidos por toques sin querer. Solo existe donde hay barra de selección: la Biblia queda fuera, y en 03, 02 y glosario no hay barra.</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="e">
+  <div class="head"><h2 id="e"><span class="tag">E</span>Botón por sección</h2>
+  <p class="note">Un botón de texto debajo de la descripción de cada sección larga («Qué enseña», una obra de un Padre). Al tocarlo, los círculos quedan visibles en esa sección, no solo al pasar el cursor, porque el lector acaba de pedirlos.</p></div>
+  <figure>
+    <div class="stage" id="s-e" data-rings="off"><div class="pad">
+      <div class="qe"><div class="qe-side"><h2>Qué enseña</h2><p>Lo que la Iglesia católica enseña sobre la Eucaristía, con el grado de autoridad que le corresponde según las categorías de la Iglesia.</p>
+        <button type="button" class="sec-btn" aria-pressed="false" data-rings-button="s-e">Simplificar párrafos</button></div>
+        <div class="qe-main"><div class="stmt" data-sim="euc-def" data-tone="defn"></div><div class="stmt" data-sim="euc-qe1" data-tone="prose"></div></div></div>
+    </div></div>
+    <figcaption>Cuesta: un elemento visible en cada sección, aunque sea pequeño. En cambio no pide ningún control permanente arriba ni depende de «Aa».</figcaption>
+  </figure>
+</section>
+
+<section class="sec" aria-labelledby="desc">
+  <div class="head"><h2 id="desc">Lo que descarto, y por qué</h2></div>
+  <ul class="plain">
+    <li><b>C. Círculo siempre a la vista en todos los párrafos</b><span>No lo querés: es ruido en cada párrafo, lo opuesto a «limpio y fluido».</span></li>
+    <li><b>D. Atajo de teclado o pulsación larga, solo</b><span>La pulsación larga choca con la selección de texto del sistema en iOS y Android; un atajo sin pista visible no lo descubre nadie. Sirve como complemento, no como entrada.</span></li>
+    <li><b>Botón flotante «IA»</b><span>De la lista de lo que parece generado por IA (DECISIONS, «Design principles»): un control siempre encima del texto que compite con la lectura.</span></li>
+    <li><b>Ícono de chispas</b><span>Misma lista. El círculo ya aprobado dice lo que hace sin imitar a todos los productos de IA.</span></li>
+    <li><b>Degradados y píldora con borde brillante</b><span>Misma lista: el sitio usa líneas finas, un solo acento y nada de brillos.</span></li>
+    <li><b>Simplificar por texto suelto</b><span>Convertiría la API en un reescritor gratuito para cualquiera. Por eso B simplifica el párrafo entero.</span></li>
+  </ul>
+</section>
+
+<section class="sec" aria-labelledby="dec">
+  <div class="head"><h2 id="dec">Qué hay que decidir</h2></div>
+  <div class="decide">
+    <div><p><b>Qué opciones se construyen.</b> A, B, E, o una combinación.</p><p class="rec">Mi recomendación: A más B. A cubre todo lo simplificable con un solo gesto de una vez, B es el gesto natural en los Padres y es la entrada con menos pedidos accidentales. E solo si no querés ningún control permanente arriba.</p></div>
+    <div><p><b>Dónde vive el interruptor en páginas sin «Aa».</b> A·1 (fila de la ruta) o A·2 (final de «Qué enseña»).</p><p class="rec">Recomiendo A·1: A·2 es difícil de encontrar. Pero A·1 es un control fijo en cada página de tradición; si eso te molesta, la salida es E.</p></div>
+    <div><p><b>Si la elección es por sitio o por tipo de página.</b></p><p class="rec">Recomiendo una sola elección para todo el sitio, recordada en el navegador, con el control visible solo en las páginas que tienen algo para simplificar (nunca en la Biblia).</p></div>
+    <div><p><b>Si al activarlo los círculos se muestran un par de segundos.</b></p><p class="rec">Recomiendo que sí: en escritorio los círculos solo aparecen al pasar el cursor, y sin ese aviso el interruptor parece no hacer nada.</p></div>
+  </div>
+  <p class="note">Con eso sigo. No construyo nada hasta tu respuesta.</p>
+</section>
+
+<footer class="sec" style="padding-top:36px">
+  <p class="note">Sobre los textos: las páginas muestran los párrafos reales de Doctrina (Catecismo y ediciones de los Padres tal como están en el sitio). Las simplificaciones del párrafo 6.2 de Ignacio y de las páginas 03 son las que ya existen en el sitio. Las de 7.1 y 7.2 las escribí a mano con las reglas del contrato de simplificación, solo para esta demo.</p>
+</footer>
+</div>
+<script>
+const ENT={
+"euc-def":{lang:"es",
+original:["Para la Iglesia católica, la Eucaristía es el sacrificio del cuerpo y la sangre de Cristo, instituido en la última Cena para hacer presente el sacrificio de la cruz hasta que él vuelva, y a la vez el banquete en el que se recibe a Cristo mismo."],
+clear:["Para la Iglesia católica, la Eucaristía es el sacrificio del cuerpo y la sangre de Cristo, que él instituyó en la última Cena para hacer presente el sacrificio de la cruz hasta que vuelva; y es a la vez el banquete en el que se recibe a Cristo mismo."],
+very:["Para la Iglesia católica, la Eucaristía es el sacrificio del cuerpo y la sangre de Cristo. Él lo dejó en la última Cena para hacer presente su sacrificio en la cruz hasta que vuelva. Y es también el banquete en el que se recibe a Cristo mismo."]},
+"euc-qe1":{lang:"es",
+original:["En la Eucaristía, después de la consagración, está contenido verdadera, real y sustancialmente Cristo entero: su cuerpo y su sangre, con su alma y su divinidad.","No está solo como en un signo o una figura.","La Iglesia la llama presencia «real» por excelencia, no porque las otras presencias de Cristo (en su Palabra, en la oración de la Iglesia, en los sacramentos) no sean reales."],
+clear:["En la Eucaristía, después de la consagración, Cristo está presente entero, de verdad, de modo real y en su sustancia: su cuerpo y su sangre, con su alma y su divinidad.","No está solo como en un signo o una figura.","La Iglesia la llama presencia «real» por excelencia, y no porque las otras presencias de Cristo (en su Palabra, en la oración de la Iglesia, en los sacramentos) no sean reales."],
+very:["Después de la consagración, Cristo está presente en la Eucaristía de verdad, de modo real y en su sustancia: entero, con su cuerpo y su sangre, su alma y su divinidad.","No está solo como un signo o una figura.","La Iglesia llama «real» a esta presencia de manera especial. No lo hace porque las otras presencias de Cristo (en su Palabra, en la oración de la Iglesia, en los sacramentos) no sean reales."]},
+"ign-62":{lang:"en",
+original:["But mark ye those who hold strange doctrine touching the grace of Jesus Christ which came to us, how that they are contrary to the mind of God.","They have no care for love, none for the widow, none for the orphan, none for the afflicted, none for the prisoner, none for the hungry or thirsty.","They abstain from eucharist (thanksgiving) and prayer, because they allow not that the eucharist is the flesh of our Saviour Jesus Christ, which flesh suffered for our sins, and which the Father of His goodness raised up."],
+clear:["Take note of those who hold strange teaching about the grace of Jesus Christ that came to us: they are opposed to the mind of God.","They have no concern for love: none for the widow, none for the orphan, none for the afflicted, none for the prisoner, none for the hungry or thirsty.","They keep away from the eucharist (thanksgiving) and from prayer, because they do not admit that the eucharist is the flesh of our Saviour Jesus Christ, the flesh that suffered for our sins and that the Father in His goodness raised up."],
+very:["Some teach something different about the grace that Jesus Christ brought us. This goes against what God thinks.","They do not care about love. They do not look after widows, orphans, people who suffer, prisoners, or people who are hungry or thirsty.","They stay away from the eucharist (thanksgiving) and from prayer. They do not accept that the eucharist is the flesh of our Saviour Jesus Christ. That flesh suffered for our sins, and the Father, in His goodness, raised it up."]},
+"ign-71":{lang:"en",
+original:["They therefore that gainsay the good gift of God perish by their questionings.","But it were expedient for them to have love, that they may also rise again."],
+clear:["Those who oppose the good gift of God perish through their disputes.","But it would be better for them to have love, so that they may also rise again."],
+very:["Those who reject the good gift of God are lost in their arguments.","It would be better for them to have love. Then they would rise again too."]},
+"ign-72":{lang:"en",
+original:["It is therefore meet that ye should abstain from such, and not speak of them either privately or in public; but should give heed to the Prophets, and especially to the Gospel, wherein the passion is shown unto us and the resurrection is accomplished."],
+clear:["It is therefore right that you keep away from such people, and do not speak of them either privately or in public; but pay attention to the Prophets, and especially to the Gospel, in which the passion is shown to us and the resurrection is accomplished."],
+very:["So you should keep away from such people and not speak of them, in private or in public. Pay attention to the Prophets, and especially to the Gospel. In it the passion is shown to us and the resurrection is accomplished."]}
+};
+const EXTRA={
+"euc-def":' <span class="cite-line">(<u>Sacrosanctum Concilium 47</u>; <u>Catecismo 1323</u>; <u>Catecismo 1382</u>)</span>',
+"euc-qe1":'<p class="meta"><b>Dogma</b><u style="text-decoration:underline dotted;text-underline-offset:3px">Trento, ses. XIII, cap. 1</u>, <u style="text-decoration:underline dotted;text-underline-offset:3px">Catecismo 1373–1374</u></p>'
+};
+const reduced=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const state={fail:false};
+const sims=new Map();
+
+$$("[data-sim]").forEach(el=>{
+  const k=el.dataset.sim,e=ENT[k];
+  el.classList.add("sim");el.dataset.key=k;
+  if(el.dataset.noring!==undefined)el.dataset.noring="";
+  const loc=el.dataset.loc?'<p class="loc">'+el.dataset.loc+'</p>':"";
+  const text=e.original.join(" ");
+  el.innerHTML=loc+'<div class="sim-body '+el.dataset.tone+'" lang="'+e.lang+'"><p style="margin:0">'+text+(k==="euc-def"?EXTRA[k]:"")+'</p>'+(k==="euc-qe1"?EXTRA[k]:"")+'</div>';
+});
+
+class Sim{
+  constructor(el){
+    this.el=el;this.e=ENT[el.dataset.key];this.level="clear";this.opened=false;this.status="idle";this.timer=0;this.stream=0;
+    this.body=$(".sim-body",el);
+    this.body.insertAdjacentHTML("beforeend",'<span class="ring-slot"><button type="button" class="ring" aria-label="En palabras simples" aria-expanded="false"><i></i><span class="tip">En palabras simples</span></button></span><span class="sr" role="status"></span>');
+    this.ring=$(".ring",el);this.tip=$(".tip",el);this.live=$("[role=status]",el);
+    el.insertAdjacentHTML("beforeend",'<div class="box"><div class="in"></div></div>');
+    this.box=$(".box",el);this.inner=$(".in",el);
+    this.ring.addEventListener("click",()=>this.press());
+    this.inner.addEventListener("click",ev=>{
+      const b=ev.target.closest("button");if(!b)return;
+      if(b.dataset.l)this.setLevel(b.dataset.l);
+      else if(b.dataset.a==="hide")this.hide(true);
+      else if(b.dataset.a==="retry"){this.hide(true);this.load()}
+      else if(b.dataset.a==="stop")this.endStream();
+      else if(b.dataset.a==="copy"){try{navigator.clipboard.writeText(this.e[this.level].join(" ")).catch(()=>{})}catch(x){}b.textContent="Copiado"}
+      else if(b.dataset.a==="save")b.textContent="Guardada en Tus notas";
+      else if(b.dataset.a==="report")b.textContent="Gracias por avisar";
+    });
+    el.addEventListener("keydown",ev=>{
+      if(ev.key!=="Escape")return;
+      if(this.status==="pending"){ev.preventDefault();this.cancel()}
+      else if(this.status!=="idle"){ev.preventDefault();this.hide(true)}
+    });
+    sims.set(el,this);
+  }
+  press(){
+    if(this.status==="pending")this.cancel();
+    else if(this.status!=="idle")this.hide(false);
+    else this.load();
+  }
+  load(){
+    this.setStatus("pending");
+    this.timer=setTimeout(()=>this.show(state.fail?"error":"open",true),1100);
+  }
+  cancel(){clearTimeout(this.timer);this.setStatus("idle")}
+  setStatus(s){
+    this.status=s;
+    this.el.classList.toggle("is-pending",s==="pending");
+    this.el.classList.toggle("is-open",s==="open"||s==="error");
+    this.ring.setAttribute("aria-expanded",String(s==="open"||s==="error"));
+    this.ring.toggleAttribute("aria-busy",s==="pending");
+    this.tip.textContent=s==="pending"?"Simplificando…":"En palabras simples";
+    this.live.textContent=s==="pending"?"Simplificando…":"";
+  }
+  show(kind,allowStream){
+    clearTimeout(this.timer);clearTimeout(this.stream);
+    const first=allowStream&&kind==="open"&&!this.opened&&!reduced();
+    if(kind==="open")this.opened=true;
+    this.setStatus(kind);
+    this.render(kind,first);
+    this.box.offsetHeight;
+    this.box.classList.add("open");
+    if(first)this.runStream();
+  }
+  hide(focus){
+    clearTimeout(this.timer);clearTimeout(this.stream);
+    this.box.classList.remove("open");
+    this.setStatus("idle");
+    if(focus)this.ring.focus({preventScroll:true});
+    setTimeout(()=>{if(this.status==="idle")this.inner.innerHTML=""},reduced()?0:420);
+  }
+  force(s){
+    clearTimeout(this.timer);clearTimeout(this.stream);
+    if(s==="idle"){this.box.classList.remove("open");this.setStatus("idle");setTimeout(()=>{if(this.status==="idle")this.inner.innerHTML=""},420)}
+    else if(s==="pending"){this.box.classList.remove("open");this.setStatus("pending")}
+    else this.show(s,false);
+  }
+  setLevel(l){
+    if(l===this.level)return;
+    this.level=l;clearTimeout(this.stream);
+    $$("[data-l]",this.inner).forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.l===l)));
+    const t=$("[data-t]",this.inner);if(t)t.innerHTML=this.textHTML(false);
+    this.endStream();
+  }
+  textHTML(hidden){
+    return this.e[this.level].map((s,i)=>s.split(" ").map((w,j)=>'<span class="w'+(hidden?" hid":"")+'">'+(j?" ":"")+w+"</span>").join("")+'<sup class="w'+(hidden?" hid":"")+'" aria-label="Frase '+(i+1)+' del original">'+(i+1)+"</sup> ").join("");
+  }
+  render(kind,streaming){
+    const head='<div class="pn-head"><div class="seg sm" role="group" aria-label="Nivel de lectura"><button type="button" data-l="clear" aria-pressed="'+(this.level==="clear")+'">Más claro</button><button type="button" data-l="very" aria-pressed="'+(this.level==="very")+'">Muy simple</button></div><span class="pn-note">Simplificado por IA</span></div>';
+    let body,foot;
+    if(kind==="error"){
+      body='<p class="pn-text msg" lang="es" data-m>No se pudo simplificar este párrafo sin cambiar su sentido. El original está arriba.</p>';
+      foot='<div class="pn-foot"><button type="button" class="fb" data-a="hide">Ocultar</button><button type="button" class="fb" data-a="retry">Reintentar</button></div>';
+    }else{
+      body='<p class="pn-text" lang="'+this.e.lang+'" data-t>'+this.textHTML(streaming)+"</p>";
+      foot='<div class="pn-foot" data-final'+(streaming?" hidden":"")+'><button type="button" class="fb" data-a="hide">Ocultar</button><button type="button" class="fb" data-a="copy">Copiar</button><button type="button" class="fb" data-a="save">Guardar en Tus notas</button><button type="button" class="fb" data-a="report">Informar un error</button><span class="pn-note">Generado por IA</span></div>'
+        +'<div class="pn-foot" data-live'+(streaming?"":" hidden")+'><button type="button" class="fb" data-a="stop">Detener</button><span class="pn-note">Escribiendo</span></div>';
+    }
+    this.inner.innerHTML='<div class="pn'+(streaming?" live":"")+'" id="p-'+Math.random().toString(36).slice(2,7)+'">'+head+'<div>'+body+"</div>"+foot+"</div>";
+  }
+  runStream(){
+    const ws=$$(".w.hid",this.inner);let i=0;
+    const step=()=>{if(i>=ws.length){this.endStream();return}ws[i++].classList.remove("hid");this.stream=setTimeout(step,24)};
+    step();
+  }
+  endStream(){
+    clearTimeout(this.stream);
+    $$(".w.hid",this.inner).forEach(w=>w.classList.remove("hid"));
+    const pn=$(".pn",this.inner);if(!pn)return;
+    pn.classList.remove("live");
+    const f=$("[data-final]",pn),l=$("[data-live]",pn);
+    if(f)f.hidden=false;if(l)l.hidden=true;
+  }
+}
+$$(".sim").forEach(el=>{if(el.dataset.noring===undefined)new Sim(el)});
+
+const root=document.documentElement;
+$$("[data-w]").forEach(b=>b.addEventListener("click",()=>{
+  document.body.dataset.w=b.dataset.w;
+  $$("[data-w]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+}));
+const darkNow=()=>root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+function syncTheme(){$$("[data-theme-set]").forEach(b=>b.setAttribute("aria-pressed",String((b.dataset.themeSet==="dark")===darkNow())))}
+$$("[data-theme-set]").forEach(b=>b.addEventListener("click",()=>{root.dataset.theme=b.dataset.themeSet;syncTheme()}));
+syncTheme();
+$("#fail").addEventListener("change",ev=>{state.fail=ev.target.checked});
+
+$$("[data-force]").forEach(b=>b.addEventListener("click",()=>{
+  $$("[data-force]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  const sim=sims.get($("#s-today .sim:not([data-noring])"));
+  if(sim)sim.force(b.dataset.force);
+}));
+
+function hint(stage){
+  stage.classList.add("hint");clearTimeout(stage._hint);
+  stage._hint=setTimeout(()=>stage.classList.remove("hint"),reduced()?0:2400);
+}
+const swSync={};
+$$("[data-rings-switch]").forEach(sw=>sw.addEventListener("click",()=>{
+  const on=sw.getAttribute("aria-checked")!=="true";
+  const stage=document.getElementById(sw.dataset.ringsSwitch);
+  $$('[data-rings-switch="'+sw.dataset.ringsSwitch+'"]').forEach(x=>x.setAttribute("aria-checked",String(on)));
+  stage.dataset.rings=on?"hover":"off";
+  if(on)hint(stage);else stage.classList.remove("hint");
+}));
+$$("[data-rings-button]").forEach(b=>b.addEventListener("click",()=>{
+  const stage=document.getElementById(b.dataset.ringsButton);
+  const on=b.getAttribute("aria-pressed")!=="true";
+  b.setAttribute("aria-pressed",String(on));
+  b.textContent=on?"Ocultar los círculos":"Simplificar párrafos";
+  stage.dataset.rings=on?"on":"off";
+}));
+$$("[data-aa]").forEach(b=>{
+  const stage=b.closest(".stage"),menu=$(".menu",stage);
+  const set=v=>{menu.classList.toggle("open",v);b.setAttribute("aria-expanded",String(v))};
+  b.addEventListener("click",ev=>{ev.stopPropagation();set(!menu.classList.contains("open"))});
+  document.addEventListener("click",ev=>{if(!menu.contains(ev.target))set(false)});
+  stage.addEventListener("keydown",ev=>{if(ev.key==="Escape"&&menu.classList.contains("open")){set(false);b.focus()}});
+});
+const a1=$("#s-a1");
+function place(v){
+  $$("[data-place]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.place===v)));
+  $$("[data-place-only]",a1).forEach(el=>{el.hidden=el.dataset.placeOnly!==v});
+}
+$$("[data-place]").forEach(b=>b.addEventListener("click",()=>place(b.dataset.place)));
+place("a1");
+
+(function(){
+  const stage=$("#s-b"),bar=$("#tbar");let host=null,timer=0;
+  const hideBar=()=>bar.classList.remove("open");
+  function show(){
+    const sel=getSelection();
+    if(!sel||sel.isCollapsed||!sel.rangeCount){hideBar();return}
+    const r=sel.getRangeAt(0);
+    const node=r.commonAncestorContainer.nodeType===1?r.commonAncestorContainer:r.commonAncestorContainer.parentElement;
+    const h=node&&node.closest?node.closest(".sim"):null;
+    if(!h||!stage.contains(h)||!sims.has(h)){hideBar();return}
+    host=h;
+    const docked=stage.clientWidth<=640||matchMedia("(pointer: coarse)").matches;
+    bar.classList.toggle("docked",docked);
+    if(!docked){
+      const sr=stage.getBoundingClientRect(),rr=r.getBoundingClientRect();
+      const w=bar.offsetWidth,hh=bar.offsetHeight;
+      const x=Math.min(Math.max(rr.left-sr.left,8),Math.max(8,sr.width-w-8));
+      let y=rr.bottom-sr.top+8;
+      if(y+hh>stage.clientHeight-8)y=rr.top-sr.top-hh-8;
+      bar.style.left=Math.round(x)+"px";bar.style.top=Math.round(y)+"px";
+    }
+    bar.classList.add("open");
+  }
+  const later=()=>{clearTimeout(timer);timer=setTimeout(show,260)};
+  document.addEventListener("selectionchange",later);
+  stage.addEventListener("mouseup",later);
+  bar.addEventListener("mousedown",ev=>ev.preventDefault());
+  $("[data-simplify]",bar).addEventListener("click",()=>{
+    const s=host&&sims.get(host);
+    getSelection().removeAllRanges();hideBar();
+    if(s&&s.status==="idle")s.load();
+  });
+  $("[data-select-sample]").addEventListener("click",()=>{
+    const w=document.createTreeWalker(stage,NodeFilter.SHOW_TEXT);let n;
+    while((n=w.nextNode())){
+      const i=n.data.indexOf("strange doctrine touching the grace of Jesus Christ");
+      if(i>=0){const r=document.createRange();r.setStart(n,i);r.setEnd(n,i+"strange doctrine touching the grace of Jesus Christ".length);const s=getSelection();s.removeAllRanges();s.addRange(r);show();break}
+    }
+  });
+})();
+</script>
