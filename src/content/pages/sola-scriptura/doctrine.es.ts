@@ -149,6 +149,7 @@ export const solaScripturaDoctrine = {
         author: "Ireneo de Lyon",
         work: "Contra las herejías",
         locator: "III.1.1",
+        reader: { work: "irenaeus-against-heresies", locator: "3.1.1" },
         date: { year: 180, yearEnd: 189, circa: true },
         quote:
           "lo que en un tiempo proclamaron en público y, más tarde, por voluntad de Dios, nos transmitieron en las Escrituras, para que fuera fundamento y columna de nuestra fe",
@@ -162,6 +163,7 @@ export const solaScripturaDoctrine = {
         author: "Ireneo de Lyon",
         work: "Contra las herejías",
         locator: "III.4.1–2",
+        reader: { work: "irenaeus-against-heresies", locator: "3.4.1" },
         date: { year: 180, yearEnd: 189, circa: true },
         quote:
           "Pues ¿qué sería si los apóstoles mismos no nos hubieran dejado escritos? ¿No sería necesario [en ese caso] seguir el curso de la tradición que transmitieron a aquellos a quienes confiaron las Iglesias? [...] teniendo la salvación escrita en sus corazones por el Espíritu, sin papel ni tinta, y conservando con cuidado la antigua tradición, creyendo en un solo Dios, Creador del cielo y de la tierra y de todo lo que hay en ellos, por medio de Cristo Jesús, el Hijo de Dios",
@@ -188,6 +190,7 @@ export const solaScripturaDoctrine = {
         author: "Cirilo de Jerusalén",
         work: "Catequesis IV",
         locator: "§ 17",
+        reader: { work: "cyril-jerusalem-catechetical-lectures", locator: "4.17" },
         date: { year: 348, circa: true },
         quote:
           "Pues acerca de los divinos y santos misterios de la Fe, no debe transmitirse ni siquiera una afirmación ocasional sin las Santas Escrituras; ni debemos dejarnos arrastrar por la mera verosimilitud y los artificios del discurso. Ni siquiera a mí, que te digo estas cosas, des crédito absoluto, a menos que recibas la prueba de lo que te anuncio desde las Divinas Escrituras.",
@@ -201,6 +204,7 @@ export const solaScripturaDoctrine = {
         author: "Basilio de Cesarea",
         work: "Sobre el Espíritu Santo",
         locator: "27.66",
+        reader: { work: "basil-de-spiritu-sancto", locator: "27.66" },
         date: { year: 374 },
         quote:
           'De las creencias y prácticas, ya sean de aceptación general o prescritas públicamente, que se conservan en la Iglesia, algunas las poseemos derivadas de la enseñanza escrita; otras las hemos recibido transmitidas "en misterio" por la tradición de los apóstoles; y unas y otras, en relación con la verdadera religión, tienen la misma fuerza. Y a estas nadie se opondrá; nadie, al menos, que esté medianamente versado en las instituciones de la Iglesia. Pues si intentáramos rechazar las costumbres que no tienen autoridad escrita, con el pretexto de que su importancia es pequeña, dañaríamos sin querer el Evangelio en sus mismas entrañas; o más bien, haríamos de nuestra definición pública una mera frase y nada más.',
@@ -213,6 +217,7 @@ export const solaScripturaDoctrine = {
         author: "Agustín de Hipona",
         work: "Sobre la doctrina cristiana",
         locator: "II.8.12",
+        reader: { work: "augustine-de-doctrina-christiana", locator: "2.8" },
         date: { year: 397 },
         quote:
           "Ahora bien, en cuanto a las Escrituras canónicas, debe seguir el parecer del mayor número de iglesias católicas; y entre estas, por supuesto, se ha de dar un lugar alto a las que han sido tenidas por dignas de ser sede de un apóstol y de recibir cartas. Por consiguiente, entre las Escrituras canónicas juzgará según la norma siguiente: preferir las que son recibidas por todas las iglesias católicas a las que algunas no reciben. Entre las que no son recibidas por todas, preferirá las que tienen el respaldo del mayor número y de mayor autoridad, a las que son sostenidas por el menor número y de menor autoridad.",

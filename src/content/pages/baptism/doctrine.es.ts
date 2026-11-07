@@ -163,6 +163,7 @@ export const baptismDoctrine = {
         author: "Anónimo",
         work: "Didaché",
         locator: "7.1–3",
+        reader: { work: "didache", locator: "7" },
         date: { year: 50, yearEnd: 150, circa: true },
         quote:
           "Y en cuanto al bautismo, bautizad así: habiendo dicho antes todas estas cosas, bautizad en el nombre del Padre y del Hijo y del Espíritu Santo, en agua viva. Pero si no tienes agua viva, bautiza en otra agua; y si no puedes en fría, en tibia. Pero si no tienes ninguna de las dos, derrama agua tres veces sobre la cabeza en el nombre del Padre, del Hijo y del Espíritu Santo.",
@@ -177,6 +178,7 @@ export const baptismDoctrine = {
         author: "Justino Mártir",
         work: "Primera Apología",
         locator: "61",
+        reader: { work: "justin-first-apology", locator: "61" },
         date: { year: 148, yearEnd: 161, circa: true },
         quote:
           "Luego los llevamos adonde hay agua y nacen de nuevo de la misma manera en que nosotros mismos nacimos de nuevo. Pues en el nombre de Dios, Padre y Señor del universo, y de nuestro Salvador Jesucristo, y del Espíritu Santo, reciben entonces el lavado con agua.",
@@ -189,6 +191,7 @@ export const baptismDoctrine = {
         author: "Tertuliano",
         work: "Sobre el bautismo",
         locator: "18",
+        reader: { work: "tertullian-de-baptismo", locator: "18" },
         date: { year: 198, yearEnd: 208, circa: true },
         quote:
           "Y así, según las circunstancias y la disposición, e incluso la edad, de cada persona, es preferible retrasar el bautismo; principalmente, sin embargo, en el caso de los niños pequeños.",
@@ -202,6 +205,7 @@ export const baptismDoctrine = {
         author: "Cipriano de Cartago",
         work: "Carta LVIII a Fido",
         locator: "6",
+        reader: { work: "cyprian-correspondence", locator: "58.6" },
         date: { year: 253, circa: true },
         quote:
           "Por tanto, queridísimo hermano, este fue nuestro parecer en el concilio: que por nosotros nadie sea impedido del bautismo y de la gracia de Dios, que es misericordioso, bondadoso y amante con todos. Y puesto que esto ha de observarse y mantenerse respecto de todos, pensamos que ha de observarse aún más respecto de los niños y recién nacidos.",
@@ -226,6 +230,7 @@ export const baptismDoctrine = {
         author: "Cirilo de Jerusalén",
         work: "Catequesis",
         locator: "Procatequesis 16",
+        reader: { work: "cyril-jerusalem-catechetical-lectures", locator: "procatechesis.16" },
         date: { year: 348, circa: true },
         quote:
           "Grande es el bautismo que tenéis por delante: rescate de cautivos; remisión de ofensas; muerte del pecado; nuevo nacimiento del alma; vestidura de luz; sello santo e indisoluble; carro hacia el cielo; delicia del Paraíso; acogida en el reino; don de la adopción.",
@@ -239,6 +244,7 @@ export const baptismDoctrine = {
         author: "Basilio de Cesarea",
         work: "Sobre el Espíritu Santo",
         locator: "27.66",
+        reader: { work: "basil-de-spiritu-sancto", locator: "27.66" },
         date: { year: 374 },
         quote:
           "Además bendecimos el agua del bautismo y el óleo de la unción, y, junto con esto, al catecúmeno que es bautizado. ¿Con qué autoridad escrita hacemos esto? ¿No es nuestra autoridad la tradición silenciosa y misteriosa? Y aun la unción con óleo, ¿por qué palabra escrita se enseña? ¿Y de dónde viene la costumbre de bautizar tres veces? Y en cuanto a las demás costumbres del bautismo, ¿de qué Escritura sacamos la renuncia a Satanás y a sus ángeles? ¿No viene esto de aquella enseñanza no publicada y secreta que nuestros padres guardaron en un silencio fuera del alcance de la intromisión curiosa y de la indagación indiscreta?",
@@ -251,6 +257,7 @@ export const baptismDoctrine = {
         author: "Gregorio Nacianceno",
         work: "Oración 40, Sobre el santo bautismo",
         locator: "§ 17",
+        reader: { work: "gregory-nazianzus-selected-orations", locator: "40" },
         date: { year: 381 },
         quote:
           "¿Tienes un hijo pequeño? No dejes que el pecado encuentre ocasión alguna, sino que sea santificado desde la infancia; desde su más tierna edad sea consagrado por el Espíritu. ¿Temes el Sello por la debilidad de la naturaleza? ¡Oh, qué madre de poca alma y de cuán poca fe!",
@@ -263,6 +270,7 @@ export const baptismDoctrine = {
         author: "Ambrosio de Milán",
         work: "Sobre los misterios",
         locator: "5 § 28",
+        reader: { work: "ambrose-de-mysteriis", locator: "5.28" },
         date: { year: 387, circa: true },
         quote:
           "Descendisteis, pues (al agua); recordad lo que respondisteis a las preguntas: que creéis en el Padre, que creéis en el Hijo, que creéis en el Espíritu Santo.",

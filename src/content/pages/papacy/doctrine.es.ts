@@ -155,6 +155,7 @@ export const papacyDoctrine = {
         author: "Ignacio de Antioquía",
         work: "Carta a los Romanos",
         locator: "salutación",
+        reader: { work: "ignatius-romans", locator: "prologue" },
         date: { year: 107, yearEnd: 110, circa: true },
         quote:
           "que también preside en el lugar de la región de los romanos, digna de Dios, digna de honor, [...] y que preside sobre el amor, que lleva el nombre de Cristo y del Padre",
@@ -168,6 +169,7 @@ export const papacyDoctrine = {
         author: "Ireneo de Lyon",
         work: "Contra las herejías",
         locator: "III.3.2",
+        reader: { work: "irenaeus-against-heresies", locator: "3.3.2" },
         date: { year: 180, yearEnd: 189, circa: true },
         quote:
           "Pues es necesario que toda Iglesia concuerde con esta Iglesia, a causa de su autoridad preeminente, es decir, los fieles de todas partes, por cuanto la tradición apostólica ha sido conservada continuamente por aquellos [hombres fieles] que existen en todas partes",
@@ -181,6 +183,7 @@ export const papacyDoctrine = {
         author: "Cipriano de Cartago",
         work: "Sobre la unidad de la Iglesia",
         locator: "4",
+        reader: { work: "cyprian-de-unitate", locator: "4" },
         date: { year: 251, circa: true },
         quote:
           "Y aunque a todos los apóstoles, después de su resurrección, da un poder igual, [...] sin embargo, para mostrar la unidad, dispuso con su autoridad el origen de esa unidad, comenzando por uno. Ciertamente los demás apóstoles eran también lo que fue Pedro, dotados de una participación semejante de honor y de poder; pero el principio procede de la unidad.",
@@ -193,6 +196,7 @@ export const papacyDoctrine = {
         author: "Firmiliano de Cesarea",
         work: "Carta a Cipriano",
         locator: "LXXIV (ANF)",
+        reader: { work: "cyprian-correspondence", locator: "74.1" },
         date: { year: 256 },
         quote:
           "Con justicia me indigno ante esta necedad tan abierta y manifiesta de Esteban: que quien así se jacta del lugar de su episcopado y sostiene que tiene la sucesión de Pedro, sobre quien se pusieron los fundamentos de la Iglesia, introduzca otras muchas rocas y establezca nuevos edificios de muchas iglesias",
@@ -241,6 +245,7 @@ export const papacyDoctrine = {
         author: "León Magno",
         work: "Sermón III",
         locator: "cap. III",
+        reader: { work: "leo-great-selected-sermons", locator: "3" },
         date: { year: 440, circa: true },
         quote:
           "La dispensación de la Verdad permanece, pues, y el bienaventurado Pedro, perseverando en la fortaleza de la Roca que recibió, no ha abandonado el timón de la Iglesia que tomó a su cargo. [...] Y así, si algo se hace con rectitud y con rectitud se decreta por nosotros, si algo se obtiene de la misericordia de Dios con nuestras súplicas diarias, es por obra y méritos de aquel cuyo poder vive y cuya autoridad prevalece en su Sede.",
@@ -265,6 +270,7 @@ export const papacyDoctrine = {
         author: "Gregorio Magno",
         work: "Carta V.XX al emperador Mauricio",
         locator: "Libro V, carta XX",
+        reader: { work: "gregory-great-selected-letters", locator: "5.20" },
         date: { year: 594, yearEnd: 595, circa: true },
         quote:
           "Pues a todos los que conocen el Evangelio les consta que, por la voz del Señor, el cuidado de toda la Iglesia fue confiado al santo Apóstol y Príncipe de todos los Apóstoles, Pedro. [...] He aquí que recibió las llaves del reino celestial, y se le dio el poder de atar y desatar, se le confía el cuidado y el principado de toda la Iglesia, y sin embargo no se le llama apóstol universal; mientras que el santísimo varón, mi compañero en el sacerdocio Juan, intenta que se le llame obispo universal.",

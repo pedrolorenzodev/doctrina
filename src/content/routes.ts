@@ -181,6 +181,14 @@ export function fatherWorkRoute(locale: Locale, id: string): string {
   return `/${locale}/history/works/${id}`;
 }
 
+export function divisionAnchor(locator: string): string {
+  return `d-${locator.replace(/[^a-zA-Z0-9.-]+/g, "-")}`;
+}
+
+export function fatherDivisionHref(locale: Locale, workId: string, locator: string): string {
+  return `${fatherWorkHref(locale, workId)}#${divisionAnchor(locator)}`;
+}
+
 export function traditionHref(locale: Locale, doctrine: DoctrineId, tradition: TraditionId): string {
   return `/${locale}/${doctrinesSegment[locale]}/${doctrineSlugs[locale][doctrine]}/${traditionSlugs[locale][tradition]}`;
 }

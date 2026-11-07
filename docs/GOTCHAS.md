@@ -328,3 +328,8 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 ## Deploy and the 404 (2026-11-06)
 
 - **`dynamicParams` must be a literal in a layout, so the `[lang]` layout cannot set it from `LEAN_BUILD`; the proxy keeps unknown locales on `global-not-found`.** · Without `dynamicParams = false`, `/fr` matches `[lang]` and the layout's `notFound()` renders Next's generic English 404; with it, the lean build 404s every page it did not prerender. `src/proxy.ts` rewrites any path whose first segment is not a locale (not `api`, not `_…`, no file extension) to `/_not-found`, which renders `global-not-found` with status 404. A new top-level route outside `[lang]` (other than `api`, `_…` or a file) needs an exception in `isOutsideEveryLocale`. · `src/proxy.ts`, `e2e/shell.spec.ts`.
+
+## Fixes B (2026-11-07)
+
+- **A link to a division of a work only lands if the selected edition has that division.** · The Spanish editions of some works are partial (Justino's Diálogo con Trifón stops before 41), and the Spanish edition is the default in the Spanish locale: `…/justin-dialogue-trypho#d-41` opens at the top. `Witness.reader` is left out until the Spanish edition covers the division; `e2e/early-christians.spec.ts` fetches every link's page and fails if its `d-…` id is missing.
+- **`divisionAnchor` (`routes.ts`) is the one place that turns a locator into the `d-…` id.** · The Fathers' reader renders ids with it and the early-christians links build their hash with it; a second copy of the regex would break the link without any error.

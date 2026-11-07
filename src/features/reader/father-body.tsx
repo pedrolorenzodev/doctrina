@@ -4,6 +4,7 @@ import { Fragment, useCallback, useEffect, useRef, useState, useSyncExternalStor
 import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragraph";
 import { UndoBar } from "@/components/undo-bar";
 import type { FatherDivision } from "@/content/get-father-works";
+import { divisionAnchor } from "@/content/routes";
 import { getSimplifiedText } from "@/content/simplified-texts";
 import { ColumnHead, type ColumnHeadText } from "@/features/reader/column-head";
 import { DeleteNoteDialog, type DeleteNoteText } from "@/features/reader/delete-note-dialog";
@@ -88,7 +89,6 @@ const maxHangingLocator = 8;
 const hangingLocator =
   "md:absolute pointer-coarse:md:absolute md:verse-number-top md:-left-13 md:w-14 md:indent-0 md:text-right";
 
-const anchorOf = (locator: string) => `d-${locator.replace(/[^a-zA-Z0-9.-]+/g, "-")}`;
 const excerptLimit = 90;
 const excerptOf = (text: string) => (text.length > excerptLimit ? `${text.slice(0, excerptLimit).trimEnd()}…` : text);
 const chapterOfWork = 1;
@@ -195,7 +195,7 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
     .replace("{edition}", selected.editionTag);
   const verse = picked !== null && byOrdinal.has(picked) ? picked : null;
   const plainReference = verse === null ? "" : referenceOf(contextView, verse, verse);
-  const anchorOfOrdinal = (ordinal: number) => anchorOf(locatorOf(ordinal));
+  const anchorOfOrdinal = (ordinal: number) => divisionAnchor(locatorOf(ordinal));
 
   const close = useCallback(() => {
     setPicked(null);
@@ -434,7 +434,7 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
           return (
             <Fragment key={division.ordinal}>
               <div
-                id={anchorOf(division.locator)}
+                id={divisionAnchor(division.locator)}
                 className="relative -mx-3 mb-1.5 rounded-6 px-3 py-2 arrival-mark data-marked:bg-mark data-selected:bg-accent-weak"
               >
                 {division.heading ? (
@@ -458,7 +458,7 @@ export function FatherBody({ workId, views, defaultId, locale, panel }: FatherBo
                     >
                       <button
                         type="button"
-                        data-division-open={anchorOf(division.locator)}
+                        data-division-open={divisionAnchor(division.locator)}
                         data-locator={division.locator}
                         onClick={(event) => openFrom(division.ordinal, event.currentTarget, event.detail === 0)}
                         className={`pointer-coarse:hit-44 cursor-pointer rounded-3 text-division text-ink-3 transition-colors duration-150 ease-standard hover:text-ink hover:underline ${stacked ? "" : hangingLocator}`}

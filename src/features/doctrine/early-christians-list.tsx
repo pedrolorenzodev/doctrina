@@ -4,7 +4,7 @@ import { PageLink } from "@/components/ui/page-link";
 import { formatDate } from "@/content/format-date";
 import type { Witness } from "@/content/model/doctrine-page";
 import { highlightParagraph } from "@/content/witness-paragraph";
-import { fatherHref } from "@/content/routes";
+import { fatherDivisionHref, fatherHref } from "@/content/routes";
 import { witnessReference } from "@/content/witness-view";
 import type { Locale } from "@/lib/locale";
 import { nbspBeforeDigits } from "@/lib/locator";
@@ -60,9 +60,15 @@ export function EarlyChristiansList({ witnesses, locale, readLabel }: EarlyChris
                   ),
                 )}
               </p>
-              {/* TODO: opens the reader at this division once screen 05 exists */}
+              {/* TODO: witnesses without a corpus text have no reader to open */}
               <p className="mt-4 mb-0 flex min-h-10 items-center text-go leading-normal">
-                <PageLink>{readLabel.replace("{reference}", reference)}</PageLink>
+                <PageLink
+                  {...(witness.reader
+                    ? { href: fatherDivisionHref(locale, witness.reader.work, witness.reader.locator) }
+                    : {})}
+                >
+                  {readLabel.replace("{reference}", reference)}
+                </PageLink>
               </p>
             </div>
           </li>

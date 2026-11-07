@@ -150,17 +150,133 @@ test("only the Didaché, Cirilo, Agustín and Crisóstomo carry a note under the
   expect(notes[8]).toBe("Libros I a III.");
 });
 
-test("every author name is a link to his page and every «Leer …» link is built and inert", async ({ page }) => {
+const readLinks = `${entries} > div:last-child > p:last-child`;
+
+test("every author name is a link to his page; «Leer …» opens the work except Trifón's (its Spanish edition stops short of it) and Damasceno's (no text yet)", async ({
+  page,
+}) => {
   await page.goto(path);
   await expect(page.locator(`${entries} h2 a`)).toHaveCount(12);
-  const labels = await page.locator(`${entries} > div:last-child > p:last-child button`).allInnerTexts();
-  expect(labels).toHaveLength(12);
-  expect(labels[1]!.replace(/ /g, " ")).toBe("Leer Carta a los Esmirniotas 7.1 en la obra completa");
-  expect(labels[0]!.replace(/ /g, " ")).toBe("Leer Didaché 14.1–3 en la obra completa");
+  await expect(page.locator(`${readLinks} a`)).toHaveCount(10);
+  await expect(page.locator(`${readLinks} button`)).toHaveCount(2);
+  const labels = await page.locator(`${readLinks} a`).allInnerTexts();
+  expect(labels[1]!.replace(/\u00a0/g, " ")).toBe("Leer Carta a los Esmirniotas 7.1 en la obra completa");
+  expect(labels[0]!.replace(/\u00a0/g, " ")).toBe("Leer Didaché 14.1–3 en la obra completa");
+  await expect(page.locator(`${readLinks} a`).first()).toHaveAttribute("href", "/es/historia/obras/didache#d-14");
+  const inert = page.locator(`${readLinks} button`);
+  await expect(inert).toHaveText([/Diálogo con Trifón\s41/, /Exposición exacta de la fe ortodoxa\sIV\.13/]);
   const url = page.url();
-  await page.locator(`${entries} > div:last-child > p:last-child button`).first().click();
+  await inert.first().click();
   expect(page.url()).toBe(url);
 });
+
+test("«Leer Didaché 14.1–3» lands on the first division of the range and marks it as a verse arrival does", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.addInitScript(() => {
+    const alpha = (value: string) => {
+      const match = value.match(/\/\s*([\d.]+)\s*\)|rgba\([^)]*,\s*([\d.]+)\)/);
+      return match ? Number(match[1] ?? match[2]) : value.startsWith("rgba(0, 0, 0, 0)") ? 0 : 1;
+    };
+    const frames: { marked: boolean; fill: number; border: number }[] = [];
+    (window as unknown as { __frames: typeof frames }).__frames = frames;
+    const tick = () => {
+      const el = document.getElementById("d-14");
+      if (el) {
+        const style = getComputedStyle(el);
+        frames.push({
+          marked: el.hasAttribute("data-marked"),
+          fill: alpha(style.backgroundColor),
+          border: style.boxShadow === "none" ? 0 : alpha(style.boxShadow),
+        });
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+  await page.goto(path);
+  await page.locator(`${readLinks} a`).first().click();
+  await expect(page).toHaveURL(/\/es\/historia\/obras\/didache#d-14$/);
+  const division = page.locator("#d-14");
+  await expect(division).toHaveAttribute("data-marked", "");
+  await expect
+    .poll(async () => {
+      const top = await division.evaluate((el) => el.getBoundingClientRect().top);
+      return top > 40 && top < 260;
+    })
+    .toBe(true);
+  await expect(division).not.toHaveAttribute("data-marked", "", { timeout: 6000 });
+  await expect
+    .poll(
+      () =>
+        page.evaluate(() => {
+          const frames = (window as unknown as { __frames: { fill: number; border: number }[] }).__frames;
+          const last = frames[frames.length - 1]!;
+          return last.fill === 0 && last.border === 0;
+        }),
+      { timeout: 6000 },
+    )
+    .toBe(true);
+  const frames = await page.evaluate(
+    () => (window as unknown as { __frames: { marked: boolean; fill: number; border: number }[] }).__frames,
+  );
+  expect(Math.max(...frames.map((frame) => frame.fill))).toBeGreaterThan(0.3);
+  expect(Math.max(...frames.map((frame) => frame.border))).toBeGreaterThan(0.9);
+});
+
+test("a work with no Spanish edition lands on its division too: Contra Marción IV.40", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(path);
+  await page.locator(`${readLinks} a`, { hasText: "Contra Marción" }).click();
+  await expect(page).toHaveURL(/\/es\/historia\/obras\/tertullian-against-marcion#d-4\.40$/);
+  const division = page.locator("#d-4\\.40");
+  await expect(division).toHaveAttribute("data-marked", "");
+  await expect
+    .poll(async () => {
+      const top = await division.evaluate((el) => el.getBoundingClientRect().top);
+      return top > 40 && top < 260;
+    })
+    .toBe(true);
+});
+
+test("a work with a Spanish edition lands on its division in Spanish: Ireneo IV.18.5", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(path);
+  await page.locator(`${readLinks} a`, { hasText: "Contra las herejías" }).click();
+  await expect(page).toHaveURL(/\/es\/historia\/obras\/irenaeus-against-heresies#d-4\.18\.5$/);
+  const division = page.locator("#d-4\\.18\\.5");
+  await expect(division).toHaveAttribute("data-marked", "");
+  await expect(page.locator("main")).toContainText("Traducción");
+  await expect
+    .poll(async () => {
+      const top = await division.evaluate((el) => el.getBoundingClientRect().top);
+      return top > 40 && top < 260;
+    })
+    .toBe(true);
+});
+
+const earlyPages = [
+  "/es/doctrinas/eucaristia/primeros-cristianos",
+  "/es/doctrinas/bautismo/primeros-cristianos",
+  "/es/doctrinas/papado/primeros-cristianos",
+  "/es/doctrinas/sola-scriptura/primeros-cristianos",
+];
+
+for (const early of earlyPages) {
+  test(`every «Leer …» link of ${early} points at a division that exists`, async ({ page, request }) => {
+    await page.goto(early);
+    const hrefs = await page
+      .locator(`${readLinks} a`)
+      .evaluateAll((links) => links.map((a) => a.getAttribute("href")!));
+    expect(hrefs.length).toBeGreaterThan(0);
+    for (const href of hrefs) {
+      const [work, hash] = href.split("#") as [string, string];
+      const html = await (await request.get(work)).text();
+      expect(html, href).toContain(`id="${hash}"`);
+    }
+  });
+}
 
 test("the sidebar lists the page first under La Eucaristía and marks it as current", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -337,7 +453,7 @@ test("Tab reaches the toggle, then each author name and each reading link, with 
     .evaluate((node) => getComputedStyle(node).outlineStyle);
   expect(outline).toBe("solid");
   await page.keyboard.press("Tab");
-  await expect(page.locator(`${entries} > div:last-child > p:last-child button`).first()).toBeFocused();
+  await expect(page.locator(`${readLinks} a`).first()).toBeFocused();
 });
 
 for (const width of [360, 390, 768, 1024, 1440]) {

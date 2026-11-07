@@ -164,6 +164,7 @@ export const eucharistDoctrine = {
         author: "Anónimo",
         work: "Didaché",
         locator: "14.1–3",
+        reader: { work: "didache", locator: "14" },
         date: { year: 50, yearEnd: 120, circa: true },
         quote:
           "Cada día del Señor reuníos, partid el pan y dad gracias, después de haber confesado vuestras transgresiones, para que vuestro sacrificio sea puro. [...] Porque esto es lo que dijo el Señor: En todo lugar y tiempo ofrecedme un sacrificio puro.",
@@ -182,6 +183,7 @@ export const eucharistDoctrine = {
         author: "Ignacio de Antioquía",
         work: "Carta a los Esmirniotas",
         locator: "7.1",
+        reader: { work: "ignatius-smyrnaeans", locator: "7.1" },
         date: { year: 107, yearEnd: 110, circa: true },
         quote:
           "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.",
@@ -197,6 +199,7 @@ export const eucharistDoctrine = {
         author: "Justino Mártir",
         work: "Primera Apología",
         locator: "66",
+        reader: { work: "justin-first-apology", locator: "66" },
         date: { year: 150, yearEnd: 155, circa: true },
         quote:
           "Porque no tomamos estas cosas como pan común ni bebida común; sino que, así como Jesucristo nuestro Salvador, hecho carne por la Palabra de Dios, tuvo carne y sangre para nuestra salvación, así también se nos ha enseñado que el alimento sobre el que se ha dado gracias por la oración de su palabra, y del cual nuestra sangre y nuestra carne se nutren por transformación, es la carne y la sangre de aquel Jesús que se hizo carne.",
@@ -227,6 +230,7 @@ export const eucharistDoctrine = {
         author: "Ireneo de Lyon",
         work: "Contra las herejías",
         locator: "IV.18.5",
+        reader: { work: "irenaeus-against-heresies", locator: "4.18.5" },
         date: { year: 180, circa: true },
         quote:
           "Porque así como el pan, que proviene de la tierra, al recibir la invocación de Dios ya no es pan común, sino Eucaristía, compuesta de dos realidades, terrena y celestial, así también nuestros cuerpos, al recibir la Eucaristía, ya no son corruptibles, pues tienen la esperanza de la resurrección para siempre.",
@@ -243,6 +247,7 @@ export const eucharistDoctrine = {
         author: "Tertuliano",
         work: "Contra Marción",
         locator: "IV.40",
+        reader: { work: "tertullian-against-marcion", locator: "4.40" },
         date: { year: 207, yearEnd: 208, circa: true },
         quote:
           "Luego, tomando el pan y dándolo a sus discípulos, lo hizo su propio cuerpo diciendo: “Esto es mi cuerpo”, es decir, la figura de mi cuerpo. Pero no habría podido haber figura si antes no hubiera habido un cuerpo verdadero.",
@@ -256,6 +261,7 @@ export const eucharistDoctrine = {
         author: "Cirilo de Jerusalén (atribuido)",
         work: "Catequesis mistagógicas",
         locator: "5.7",
+        reader: { work: "cyril-jerusalem-catechetical-lectures", locator: "23.7" },
         date: { year: 350, yearEnd: 390, circa: true },
         quote:
           "Después, habiéndonos santificado con estos himnos espirituales, suplicamos al Dios misericordioso que envíe su Espíritu Santo sobre los dones presentes, para que haga del pan el cuerpo de Cristo y del vino la sangre de Cristo; porque todo lo que el Espíritu Santo toca queda santificado y cambiado.",
@@ -270,6 +276,7 @@ export const eucharistDoctrine = {
         author: "Ambrosio de Milán",
         work: "Sobre los misterios",
         locator: "9.52",
+        reader: { work: "ambrose-de-mysteriis", locator: "9.52" },
         date: { year: 387, yearEnd: 391, circa: true },
         quote:
           "Si la palabra de Elías tuvo poder para hacer bajar fuego del cielo, ¿no tendrá la palabra de Cristo poder para cambiar la naturaleza de los elementos? [...] La palabra de Cristo, que pudo hacer de la nada lo que no existía, ¿no podrá cambiar las cosas que ya existen en lo que no eran?",
@@ -283,6 +290,7 @@ export const eucharistDoctrine = {
         author: "Agustín de Hipona",
         work: "Sobre la doctrina cristiana",
         locator: "III.16.24",
+        reader: { work: "augustine-de-doctrina-christiana", locator: "3.16" },
         date: { year: 396, yearEnd: 397, circa: true },
         quote:
           "“Si no comiereis la carne del Hijo del hombre y bebiereis su sangre, no tendréis vida en vosotros”, dice Cristo. Esto parece mandar un crimen o una maldad; es, por tanto, una figura, que manda que participemos de los padecimientos del Señor y que guardemos un recuerdo dulce y provechoso de que su carne fue herida y crucificada por nosotros.",
@@ -297,6 +305,7 @@ export const eucharistDoctrine = {
         author: "Juan Crisóstomo",
         work: "Homilías sobre Hebreos",
         locator: "homilía 17.6",
+        reader: { work: "chrysostom-homilies-hebrews", locator: "17" },
         date: { year: 403, yearEnd: 404, circa: true },
         quote:
           "¿Qué, pues? ¿No ofrecemos cada día? Ofrecemos, sí, pero haciendo memoria de su muerte, y esta [memoria] es una y no muchas. [...] Porque ofrecemos siempre lo mismo, no hoy una oveja y mañana otra, sino siempre lo mismo, de modo que el sacrificio es uno. [...] No es otro sacrificio, como el del sumo sacerdote, sino que ofrecemos siempre el mismo, o más bien hacemos memoria de un sacrificio.",
@@ -311,6 +320,7 @@ export const eucharistDoctrine = {
         author: "Teodoreto de Ciro",
         work: "Eranistes (Diálogos)",
         locator: "diálogo II",
+        reader: { work: "theodoret-eranistes", locator: "2" },
         date: { year: 447, circa: true },
         quote:
           "Porque aun después de la consagración los símbolos místicos no quedan privados de su propia naturaleza; permanecen en su sustancia, figura y forma anteriores; son visibles y tangibles como antes. Pero se los considera como lo que han llegado a ser, se cree que lo son y se los adora como lo que se cree que son.",

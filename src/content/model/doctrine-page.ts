@@ -35,6 +35,7 @@ export type Witness = {
   anonymous?: true;
   authorLine?: string;
   paragraph?: string;
+  reader?: { work: string; locator: string };
 };
 
 export type PracticeCell<C extends string = string> = {
