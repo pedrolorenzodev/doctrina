@@ -24,6 +24,36 @@ export type Passage = {
   year: number | null;
   father: { workId: string; editionId: string; locator: string } | null;
   bible: { book: string; chapter: number; verse: number; verseEnd: number | null; translationId: string } | null;
+  draft?: boolean;
+};
+
+export type PassageRow = {
+  source_key: string;
+  collection: Exclude<Collection, "mine">;
+  speaker: Exclude<Speaker, "reader">;
+  doctrine: DoctrineId | null;
+  lang: Passage["lang"];
+  work_id: string | null;
+  edition_id: string | null;
+  locator: string | null;
+  part: number | null;
+  author: string | null;
+  year: number | null;
+  title: string;
+  edition_label: string;
+  licence: Exclude<Licence, "reader">;
+  translated_by_ai: boolean;
+  max_quote_words: number;
+  href: string | null;
+  refs: string[];
+  text: string;
+};
+
+export type AuthorEntry = {
+  id: string;
+  name: string;
+  names?: { es: string; en: string };
+  works: { id: string; title: string }[];
 };
 
 export type PackPassage = Passage & { id: string; window: string; windowStart: number };
@@ -51,6 +81,7 @@ export type PassageQuery = {
   works: string[] | null;
   limit: number;
   perGroup: number;
+  locale?: "es" | "en";
 };
 
 export type VerseQuery = {
@@ -60,14 +91,15 @@ export type VerseQuery = {
   books: string[] | null;
   chapter: number | null;
   limit: number;
+  locale?: "es" | "en";
 };
 
 export interface CorpusSearch {
   readonly id: "supabase" | "fixture";
   searchPassages(query: PassageQuery): Promise<(Passage & { rank: number })[]>;
   searchVerses(query: VerseQuery): Promise<(Passage & { rank: number })[]>;
-  lookupVerses(refs: string[], translationId: string): Promise<Passage[]>;
-  traditionPassages(doctrine: DoctrineId): Promise<Passage[]>;
-  authors(): Promise<{ id: string; name: string; works: { id: string; title: string }[] }[]>;
+  lookupVerses(refs: string[], translationId: string, locale?: "es" | "en"): Promise<Passage[]>;
+  traditionPassages(doctrine: DoctrineId, locale?: "es" | "en"): Promise<Passage[]>;
+  authors(): Promise<AuthorEntry[]>;
   corpusVersion(): Promise<string>;
 }
