@@ -2,11 +2,55 @@
 
 ## State
 
-- **Done:** parts 420, 421, 422 and 423 are written and verified (`npm run verify` exit 0). `check-pack` 347 checks ok. The loader's dry run works on the real corpus. **Not done, on purpose:** `--load` into Supabase (LIM's migrations are not applied on the remote project: `ai_passages` and `ai_settings` answer 404), so the Supabase search class is tested only against a local PGlite copy of the same SQL (below), never against the remote.
+- **Done:** parts 420 to 423 (first session) and the follow-up of 2026-11-07: the 53,745 passages are **loaded** in `ai_passages`, the search function was rewritten natively (migrations v2 to v5, applied with Pedro's yes), the four test questions run against the real database, the named-Father cap is 8. `check-pack` 365 checks ok, `npm run verify` exit 0. The sections below «Follow-up 2026-11-07» describe the first session; where they say «not loaded» or «not measured», the follow-up supersedes them.
 - **In progress:** nothing.
-- **Next (INT):** apply LIM's migrations, run `data/scripts/load-ai-passages.mjs --load` (Pedro's yes pending: «¿Cargo los ~54.000 pasajes en Supabase (unos 120 MB, tabla solo de servidor)?»), then `explain analyze` the three searches (see «For INT»).
-- **How to resume:** read this State; `node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./tools/register-alias.mjs tools/check-ai.mjs` re-runs every check; `git status` against «Files».
-- **Usage readings (weekly):** 16:46 → 14 %, 16:58 → 15 %, 17:02 → 15 % (session 22 %). Cap 25 %. Not close.
+- **Next (INT):** copy the files of «Follow-up files» to the real repo and commit them. Nothing else is pending for RET.
+- **How to resume:** read this State and «Follow-up 2026-11-07»; `node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./tools/register-alias.mjs tools/check-ai.mjs` re-runs every check; `tmp/ai-ret/real-db.mjs` re-runs the pack test against the real database (needs `.env.local`).
+- **Usage readings (weekly):** first session 14 % → 15 %; follow-up 19 % at the start, 21 % after the load and the migrations, 21 % at the end (cap 25 %).
+
+## Follow-up 2026-11-07 (load, native measurements, cap)
+
+**Loaded** (`load-ai-passages.mjs --load`, 57 s, loader unchanged): 53,745 rows = fathers/shared 52,521; tradition 1,052 (catholic 670, lutheran 134, reformed 98, orthodox 97, baptist 53); glossary 162 (catholic 123, reformed 14, lutheran 13, orthodox 10, baptist 2); doctrine/site 10. `ai_settings.corpus_version = afb83955e012769c`. **`ai_passages` = 122 MB** (heap 65 MB, GIN 15 MB); **database 168 MB → 290 MB** of 500 (under the 400 MB line). Same numbers as the PGlite copy.
+
+**Native times** (`explain analyze` of `ai_search_passages` through the Supabase tools, limit 20, 3 per group; the instance is shared and noisy: a cold first run can be 10× a warm one):
+
+| Search | Draft function (LIM's migration) | v5 (applied) |
+|---|---|---|
+| Broad Fathers, Eucharist (5,024 hits) | 5,152 ms (6,705 ms once) | **219 ms** warm (3.4 s once, cold) |
+| Author: Ignatius | 96 ms | **75 ms** |
+| Spanish: tradition + Fathers, «escritura, tradición, autoridad» | 416 ms | **100 ms** |
+
+Target < 150 ms: met for the author and the Spanish search, **not for the broadest one (219 ms warm)**: it matches 5,024 passages and must rank all of them. The GIN index is used in every plan (`Bitmap Index Scan on ai_passages_tsv_idx`, 5 ms for 6,062 index hits; the match step alone is 31 ms).
+
+**Root cause found natively** (the PGlite theory of the first session was wrong): `ts_rank_cd(p.tsv, <CASE …>, 1)` or a constant tsquery makes Postgres re-process the query for **every row** (5 s for 5,024 rows, against 0.26 s with a materialised column). Steps: v2 (the PGlite rewrite): no gain natively (6.7 s); v3: `with q as materialized` and the language branch outside `ts_rank_cd`: broad 332 ms, but Ignatius 430 ms (the planner now preferred the GIN index to the author index); v4: a separate arm for named authors with a non-indexable match `(p.tsv || ''::tsvector)`: Ignatius 4.5 s (the `p_authors is null or …` predicate kills the author index); **v5**: one arm per case (no filter, authors, works only), each predicate without `is null or` where it matters: the numbers above. Every version was checked in PGlite for **the same keys** as the draft over five calls (broad, Ignatius, Spanish, works, mixed).
+
+**Migrations** (new files; none of the four applied ones edited; **all four are already applied on the remote** through the Supabase tools, each a `create or replace function` with the same signature and columns, so the last one wins): `supabase/migrations/20261106100400_ai_search_passages_v2.sql`, `…100500_…_v3.sql`, `…100600_…_v4.sql`, `…100700_…_v5.sql`. The remote history has them as `ai_search_passages_v2` … `_v5` with their own timestamps. Pedro said yes once, for the faster rewrite; v3 to v5 correct that same function after the native measurements (the rewrite did not help as first written); nothing else was touched. INT may squash the four into one file with the v5 body if it prefers a short history (the remote already has the effect).
+
+**The four test questions against the real database** (my `supabase-search.ts` over HTTP, `CORPUS_SOURCE=supabase` for Bible texts):
+- Ignatius on the Eucharist (author filter): raw search top 5 = Smyrn. 6.2 (0.1057, **rank 1**), Eph. 8.2, Philad. 4.1, Magn. 13.2, Rom. 7.3. Pack with the author named: 8 Ignatius passages, among them Smyrn. 6.2 (Spanish AI edition, the answer language) and Smyrn. 3.1.
+- Presencia real: 16 Fathers from 16 authors (Justin *1 Apol.* 66, Irenaeus *AH* 5.14.1, Clement of Alexandria, Tertullian, Origen, Hippolytus, Athanasius, Cyril of Jerusalem, Basil, Gregory of Nyssa, Chrysostom, Ambrose, Augustine, Cyril of Alexandria, Theodoret, Leo) and 12 verses with John 6:51–58, 1 Cor 10:16 and 11:23–26, Matt 26:26–28, Luke 22:19–20.
+- Baptism, each tradition: 16 Fathers from 16 authors (Didache 7, Theophilus, Tertullian *De baptismo* 9, Cyril *Cat.* 3.5, Gregory Nazianzen 39.24, Augustine, …), John 3:5, Matt 28:19, Acts 2:38, Rom 6:4, Col 2:11–12, Titus 3:5–7; five traditions `found`, Pentecostal `no-page`.
+- Sola Scriptura: 16 Fathers from 16 authors, 12 verses, the same coverage.
+- Packs of 37 to 53 passages, ~6,000 to ~12,300 tokens, `extra` 24; `buildPack` over HTTP 0.4 to 2.8 s (the 2.8 s includes cold index reads). `authors()` 311 ms (cached 10 minutes after that).
+
+**The cap** (`pack.ts`): when `plan.authors` has 1 or 2 names and they resolve, each named author gets up to **8** passages (rich) or **4** (brief); 3 or 0 names keep 3 [2] per author; the quota of 16 Fathers still holds and the leftovers go to «Más textos». **One more fix found with the real data:** choosing the Spanish edition of a locator used to demote the passage (the Spanish text ranks lower with English terms): in the first run Smyrn. 6.2 vanished from the pack of the Ignatius question. Now the chosen edition inherits the best rank of that locator across editions. Checks added: fixture Cyril of Jerusalem 22.1–22.9 (nine passages), one name → 8, two names → 8 each inside 16, three names → 3, no names → 3, brief → 4, the Spanish edition does not demote Smyrn. 6.2.
+
+**Agent's calls (follow-up):** v3 to v5 applied without asking again (same function, same approved intent, correcting my own first rewrite); brief cap 4 (Pedro only spoke of the rich case); `plan.authors` counts the names the plan gave, not the ids they resolved to; the fixture grew by three real Cyril passages (the build script's pattern widened to 22.1–22.9).
+
+**Follow-up files** (changed since the first integration; the coordinator copies these):
+
+```
+src/content/ai-search/pack.ts
+src/content/ai-search/fixture-passages.json
+tools/ai-checks/check-pack.mjs
+supabase/migrations/20261106100400_ai_search_passages_v2.sql
+supabase/migrations/20261106100500_ai_search_passages_v3.sql
+supabase/migrations/20261106100600_ai_search_passages_v4.sql
+supabase/migrations/20261106100700_ai_search_passages_v5.sql
+docs/features/ai-real-ret.md
+```
+
+Commit messages (Pedro runs the commands; the three groups of files are the three blocks above, messages ≤ 72 characters): `feat(ai): take up to 8 passages per named Father in the pack` · `perf(ai): rewrite the passage search function in four steps` · `docs(ai): record the passage load and the native measurements`. The exact stage-and-commit commands are in the final message.
 
 ## What was built
 
