@@ -72,6 +72,9 @@ export const fixtureSearch: CorpusSearch = {
         return passage ? [{ ...passage, rank: hit.rank }] : [];
       });
   },
+  async passagesByVerses() {
+    return [];
+  },
   async lookupVerses(refs, translationId, locale = "es") {
     const found: Passage[] = [];
     for (const ref of refs) {

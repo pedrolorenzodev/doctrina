@@ -58,8 +58,12 @@ export type AuthorEntry = {
 
 export type PackPassage = Passage & { id: string; window: string; windowStart: number };
 
+export type VerseTarget = { book: string; chapter: number; from: number; to: number };
+
 export type Coverage = {
   collections: { collection: Collection; count: number }[];
+  verseSearches?: { target: VerseTarget; found: number; collections: ("fathers" | "tradition")[] }[];
+  searched?: Collection[];
   traditions: { tradition: TraditionId; status: "found" | "none" | "no-page" }[];
   doctrines: DoctrineId[];
   missingAuthors: string[];
@@ -99,6 +103,12 @@ export interface CorpusSearch {
   searchPassages(query: PassageQuery): Promise<(Passage & { rank: number })[]>;
   searchVerses(query: VerseQuery): Promise<(Passage & { rank: number })[]>;
   lookupVerses(refs: string[], translationId: string, locale?: "es" | "en"): Promise<Passage[]>;
+  passagesByVerses(
+    target: VerseTarget,
+    collection: "fathers" | "tradition",
+    limit: number,
+    locale?: "es" | "en",
+  ): Promise<(Passage & { rank: number; verses: string[] })[]>;
   traditionPassages(doctrine: DoctrineId, locale?: "es" | "en"): Promise<Passage[]>;
   authors(): Promise<AuthorEntry[]>;
   corpusVersion(): Promise<string>;

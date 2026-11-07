@@ -133,3 +133,12 @@ export function windowAround(text: string, terms: string[], maxChars: number = W
   while (end > start && /\s/.test(text.charAt(end - 1))) end -= 1;
   return { window: text.slice(start, end), windowStart: start };
 }
+
+const QUOTED = /“[^”]*”|«[^»]*»|"[^"]*"/g;
+
+export function quotedShare(text: string): number {
+  const letters = (value: string) => (value.match(/\p{L}/gu) ?? []).length;
+  const total = letters(text);
+  if (total === 0) return 0;
+  return [...text.matchAll(QUOTED)].reduce((sum, match) => sum + letters(match[0]), 0) / total;
+}

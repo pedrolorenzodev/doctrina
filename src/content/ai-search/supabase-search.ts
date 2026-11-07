@@ -1,11 +1,16 @@
 import { biblePassage, fatherIdsByWork, fatherNames, passageFromRow } from "@/content/ai-search/collections";
 import type { AuthorEntry, CorpusSearch, Passage, PassageRow } from "@/content/ai-search/types";
+import { capPerGroup, rankVerseLinks, type VerseLink } from "@/content/ai-search/verse-links";
 import { lookupVerseRefs } from "@/content/ai-search/verse-lookup";
 import { workName } from "@/content/father-work-links";
 import { AiError } from "@/lib/ai/errors";
 
 const CACHE_MS = 10 * 60 * 1000;
 const VERSION_MS = 60 * 1000;
+const VERSE_LINKS_MAX = 5000;
+const PAGE_ROWS = 1000;
+const VERSE_CANDIDATES = 300;
+const VERSE_PER_AUTHOR = 8;
 
 const columns =
   "source_key,collection,speaker,doctrine,lang,work_id,edition_id,locator,part,author,year,title,edition_label,licence,translated_by_ai,max_quote_words,href,refs,text";
@@ -106,6 +111,45 @@ export const supabaseSearch: CorpusSearch = {
       );
       return passage ? [{ ...passage, rank: row.rank }] : [];
     });
+  },
+  async passagesByVerses(target, collection, limit, locale = "es") {
+    const links: VerseLink[] = [];
+    for (let offset = 0; offset < VERSE_LINKS_MAX; offset += PAGE_ROWS) {
+      const page = await call<VerseLink[]>(
+        `ai_scripture_links?select=passage_id,verse_from,kind,score,ai_passages!inner(collection)&ai_passages.collection=eq.${collection}&book=eq.${encodeURIComponent(target.book)}&chapter=eq.${target.chapter}&verse_from=lte.${target.to}&verse_to=gte.${target.from}&order=passage_id,verse_from,kind&limit=${PAGE_ROWS}&offset=${offset}`,
+      );
+      links.push(...page);
+      if (page.length < PAGE_ROWS) break;
+    }
+    const ranked = rankVerseLinks(links);
+    if (ranked.length === 0) return [];
+    const chunks: number[][] = [];
+    for (let at = 0; at < ranked.length; at += VERSE_CANDIDATES) {
+      chunks.push(ranked.slice(at, at + VERSE_CANDIDATES).map((entry) => entry.passageId));
+    }
+    const rows = (
+      await Promise.all(
+        chunks.map((ids) =>
+          call<(PassageRow & { id: number })[]>(
+            `ai_passages?select=id,${columns}&collection=eq.${collection}&id=in.(${ids.join(",")})`,
+          ),
+        ),
+      )
+    ).flat();
+    const byId = new Map(rows.map((row) => [row.id, row]));
+    const hits = ranked.flatMap((entry) => {
+      const row = byId.get(entry.passageId);
+      return row
+        ? [
+            {
+              ...passageFromRow(row, locale),
+              rank: entry.rank,
+              verses: entry.verses.map((verse) => `${target.book}.${target.chapter}.${verse}`),
+            },
+          ]
+        : [];
+    });
+    return capPerGroup(hits, (hit) => hit.author ?? hit.father?.workId ?? hit.speaker, VERSE_PER_AUTHOR, limit);
   },
   lookupVerses(refs, translationId, locale = "es") {
     return lookupVerseRefs(refs, translationId, locale);

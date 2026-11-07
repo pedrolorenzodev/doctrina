@@ -1,4 +1,5 @@
 import {
+  MAX_QUOTES,
   PACK_TOKEN_BUDGET,
   PACK_TOKEN_BUDGET_BRIEF,
   WINDOW_CHARS,
@@ -14,9 +15,17 @@ import {
   type OsisRef,
 } from "@/content/ai-search/collections";
 import { buildCoverage } from "@/content/ai-search/coverage";
-import type { AuthorEntry, CorpusSearch, EvidencePack, PackPassage, Passage } from "@/content/ai-search/types";
-import { fold, scoreText, windowAround } from "@/content/ai-search/windows";
+import type {
+  AuthorEntry,
+  CorpusSearch,
+  EvidencePack,
+  PackPassage,
+  Passage,
+  VerseTarget,
+} from "@/content/ai-search/types";
+import { fold, quotedShare, scoreText, windowAround } from "@/content/ai-search/windows";
 import { getBibleBook } from "@/content/bible-books";
+import { bookNames } from "@/content/verse-names";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import type { Locale } from "@/lib/locale";
 
@@ -32,10 +41,45 @@ const VERSE_POOL = 12;
 const NAMED_AUTHOR_POOL = 12;
 const NAMED_CAP = 8;
 const NAMED_CAP_BRIEF = 4;
+const VERSE_HITS = 60;
+const VERSE_RANK = 100;
+const TOPIC_WEIGHT = 1;
+const BARE_QUOTE_SHARE = 0.6;
+const BARE_PENALTY = 1.5;
+const VERSE_WORDS = 22;
+const ANTE_NICENE_YEAR = 325;
+const MAX_VERSE_TARGETS = 4;
+const VERSE_QUESTION = /(?<![\p{L}])(?:vers[ií]culos?|cap[ií]tulos?|verses?|chapters?)(?![\p{L}])/iu;
+const CHAPTER_QUESTION = /(?<![\p{L}])(?:cap[ií]tulos?|chapters?)(?![\p{L}])/iu;
+const BIBLICAL_NAMES = new Set([
+  "juan",
+  "pedro",
+  "pablo",
+  "mateo",
+  "marcos",
+  "lucas",
+  "santiago",
+  "james",
+  "peter",
+  "matthew",
+]);
+const WANTS_ALL = /(?<![\p{L}])(?:tod[oa]s|all|every|exhaustiv\p{L}*)(?![\p{L}])/iu;
 
 const collectionOrder = ["bible", "fathers", "tradition", "doctrine", "glossary", "mine"] as const;
 
 type Allowed = { bible: boolean; fathers: boolean; tradition: boolean; doctrine: boolean; glossary: boolean };
+
+function scopedTo(allowed: Allowed, sources: SearchPlan["sources"]): Allowed {
+  if (!sources || sources.length === 0) return allowed;
+  const wanted = new Set<string>(sources.map((source) => (source === "traditions" ? "tradition" : source)));
+  return {
+    bible: allowed.bible && wanted.has("bible"),
+    fathers: allowed.fathers && wanted.has("fathers"),
+    tradition: allowed.tradition && wanted.has("tradition"),
+    doctrine: allowed.doctrine && wanted.has("doctrine"),
+    glossary: allowed.glossary && wanted.has("glossary"),
+  };
+}
 
 function allowedFor(request: AskRequest): Allowed {
   const scope =
@@ -119,6 +163,79 @@ function scoreOf(passage: Passage, plan: SearchPlan, fallback: string[]): number
   const terms = es ? plan.termsEs : plan.termsEn;
   const phrases = es ? plan.phrasesEs : plan.phrasesEn;
   return scoreText(passage.text, terms.length + phrases.length > 0 ? terms : fallback, phrases);
+}
+
+const BOOK_MENTION = new RegExp(
+  `(?<![\\p{L}])(?:${[...new Set(Object.values(bookNames).flatMap((names) => [names.es, names.en]))]
+    .map((name) =>
+      fold(name)
+        .replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+        .replace(/ /g, "\\s?"),
+    )
+    .join("|")})\\s+\\d`,
+  "iu",
+);
+
+export function namesPassage(request: AskRequest): boolean {
+  return (
+    request.selection?.at.kind === "verse" ||
+    BOOK_MENTION.test(fold(request.question)) ||
+    (request.here.kind === "bible" && VERSE_QUESTION.test(request.question))
+  );
+}
+
+export function verseTargets(plan: SearchPlan, request: AskRequest): VerseTarget[] {
+  const fromPlan = plan.bibleRefs.flatMap((ref): VerseTarget[] => {
+    const parts = osisParts(ref);
+    if (!parts) return [];
+    const from = parts.verse ?? 1;
+    return [{ book: parts.book, chapter: parts.chapter, from, to: parts.verseEnd ?? parts.verse ?? 999 }];
+  });
+  const wholeChapter: VerseTarget[] =
+    request.here.kind === "bible" && CHAPTER_QUESTION.test(request.question)
+      ? [{ book: request.here.book, chapter: request.here.chapter, from: 1, to: 999 }]
+      : [];
+  if (fromPlan.length > 0 || wholeChapter.length > 0) {
+    const seen = new Set<string>();
+    return [...wholeChapter, ...fromPlan]
+      .filter((target) => {
+        const key = `${target.book}.${target.chapter}.${target.from}.${target.to}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .slice(0, MAX_VERSE_TARGETS);
+  }
+  const at = request.selection?.at;
+  if (at?.kind === "verse") return [{ book: at.book, chapter: at.chapter, from: at.verse, to: at.verse }];
+  if (request.here.kind === "bible" && VERSE_QUESTION.test(request.question)) {
+    return [{ book: request.here.book, chapter: request.here.chapter, from: 1, to: 999 }];
+  }
+  return [];
+}
+
+function anchoredFathers(
+  hits: (Ranked & { verses: string[] })[][],
+  keep: (passage: Ranked) => boolean,
+  topical: (passage: Passage) => number = () => 0,
+): Ranked[] {
+  const best = new Map<string, Ranked>();
+  for (const hit of hits.flat()) {
+    if (!keep(hit)) continue;
+    const division = hit.father ? `${hit.father.workId}:${hit.father.editionId}:${hit.father.locator}` : hit.key;
+    const words = hit.text.split(/\s+/).length;
+    const repeats =
+      quotedShare(hit.text) > BARE_QUOTE_SHARE || hit.verses.length * VERSE_WORDS >= BARE_QUOTE_SHARE * words;
+    const bare = hit.collection === "fathers" && repeats ? BARE_PENALTY : 0;
+    const ranked = {
+      ...hit,
+      refs: hit.verses,
+      rank: VERSE_RANK + hit.rank + TOPIC_WEIGHT * Math.min(topical(hit), 1) - bare,
+    };
+    const current = best.get(division);
+    if (!current || ranked.rank > current.rank) best.set(division, ranked);
+  }
+  return [...best.values()].sort((a, b) => b.rank - a.rank);
 }
 
 function refsInChapter(refs: string[], book: string, chapter: number): boolean {
@@ -377,7 +494,9 @@ export async function buildPack(plan: SearchPlan, request: AskRequest, search: C
   const brief = plan.depth === "brief";
   const quotas = brief ? briefQuotas : richQuotas;
   const budget = brief ? PACK_TOKEN_BUDGET_BRIEF : PACK_TOKEN_BUDGET;
-  const allowed = allowedFor(request);
+  const allowed = scopedTo(allowedFor(request), plan.sources);
+  const eraOk = (passage: Passage) =>
+    plan.era !== "ante-nicene" || (passage.year !== null && passage.year <= ANTE_NICENE_YEAR);
   const chapter = chapterOf(request);
   const fallback = questionTerms(request.question);
   const useFallback = [plan.termsEn, plan.phrasesEn, plan.termsEs, plan.phrasesEs].every((list) => list.length === 0);
@@ -405,70 +524,130 @@ export async function buildPack(plan: SearchPlan, request: AskRequest, search: C
     locale,
   };
 
-  const [fatherPool, traditionRows, doctrineHits, glossaryHits] = await Promise.all([
-    allowed.fathers
-      ? search.searchPassages({
-          ...base,
-          collections: ["fathers"],
-          limit: FATHER_POOL,
-          perGroup: named.ids.length > 0 ? NAMED_AUTHOR_POOL : quotas.perAuthor,
-        })
-      : Promise.resolve([] as Ranked[]),
-    allowed.tradition
-      ? doctrines.length > 0
-        ? Promise.all(doctrines.map((doctrine) => search.traditionPassages(doctrine, locale))).then((lists) =>
-            lists.flat().map((passage): Ranked => ({ ...passage, rank: scoreOf(passage, plan, fallback) })),
-          )
-        : search.searchPassages({
+  const targets = allowed.fathers || allowed.tradition ? verseTargets(plan, request) : [];
+  const passageFocus = targets.length > 0 && namesPassage(request);
+  const verseTradition = allowed.tradition && passageFocus;
+  const [fatherVerseHits, traditionVerseHits, rawFatherPool, traditionRows, doctrineHits, glossaryHits] =
+    await Promise.all([
+      allowed.fathers
+        ? Promise.all(targets.map((target) => search.passagesByVerses(target, "fathers", VERSE_HITS, locale)))
+        : Promise.resolve([] as (Ranked & { verses: string[] })[][]),
+      verseTradition
+        ? Promise.all(targets.map((target) => search.passagesByVerses(target, "tradition", VERSE_HITS, locale)))
+        : Promise.resolve([] as (Ranked & { verses: string[] })[][]),
+      allowed.fathers
+        ? search.searchPassages({
+            ...base,
+            collections: ["fathers"],
+            limit: FATHER_POOL,
+            perGroup: named.ids.length > 0 ? NAMED_AUTHOR_POOL : quotas.perAuthor,
+          })
+        : Promise.resolve([] as Ranked[]),
+      allowed.tradition
+        ? doctrines.length > 0
+          ? Promise.all(doctrines.map((doctrine) => search.traditionPassages(doctrine, locale))).then((lists) =>
+              lists.flat().map((passage): Ranked => ({ ...passage, rank: scoreOf(passage, plan, fallback) })),
+            )
+          : search.searchPassages({
+              ...base,
+              authors: null,
+              works: null,
+              speakers: traditionFilter,
+              collections: ["tradition"],
+              limit: 40,
+              perGroup: quotas.perTradition,
+            })
+        : Promise.resolve([] as Ranked[]),
+      allowed.doctrine
+        ? search.searchPassages({
             ...base,
             authors: null,
             works: null,
-            speakers: traditionFilter,
-            collections: ["tradition"],
-            limit: 40,
-            perGroup: quotas.perTradition,
+            doctrines: doctrines.length > 0 ? doctrines : null,
+            collections: ["doctrine"],
+            limit: 6,
+            perGroup: 6,
           })
-      : Promise.resolve([] as Ranked[]),
-    allowed.doctrine
-      ? search.searchPassages({
-          ...base,
-          authors: null,
-          works: null,
-          doctrines: doctrines.length > 0 ? doctrines : null,
-          collections: ["doctrine"],
-          limit: 6,
-          perGroup: 6,
-        })
-      : Promise.resolve([] as Ranked[]),
-    allowed.glossary
-      ? search.searchPassages({
-          ...base,
-          authors: null,
-          works: null,
-          doctrines: doctrines.length > 0 ? doctrines : null,
-          speakers: traditionFilter,
-          collections: ["glossary"],
-          limit: 8,
-          perGroup: 2,
-        })
-      : Promise.resolve([] as Ranked[]),
-  ]);
+        : Promise.resolve([] as Ranked[]),
+      allowed.glossary
+        ? search.searchPassages({
+            ...base,
+            authors: null,
+            works: null,
+            doctrines: doctrines.length > 0 ? doctrines : null,
+            speakers: traditionFilter,
+            collections: ["glossary"],
+            limit: 8,
+            perGroup: 2,
+          })
+        : Promise.resolve([] as Ranked[]),
+    ]);
 
+  const questionWords = new Set(fold(request.question).split(/[^\p{L}]+/u));
+  const namedInQuestion = named.ids.filter((id) =>
+    authorList.some(
+      (author) =>
+        author.id === id &&
+        [author.name, author.names?.es, author.names?.en].some((name) =>
+          fold(name ?? "")
+            .split(/[^\p{L}]+/u)
+            .some((word) => word.length >= 5 && !BIBLICAL_NAMES.has(word) && questionWords.has(word)),
+        ),
+    ),
+  );
+  const anchored = anchoredFathers(
+    fatherVerseHits,
+    (passage) =>
+      (namedInQuestion.length === 0 || (passage.author !== null && namedInQuestion.includes(passage.author))) &&
+      eraOk(passage) &&
+      (request.scope !== "work" || (passage.father !== null && workIds.includes(passage.father.workId))),
+    (passage) => scoreOf(passage, plan, fallback),
+  );
+  const anchoredKeys = new Set(anchored.map((passage) => passage.key));
+  const fatherQuota = anchored.length > 0 && !brief && WANTS_ALL.test(request.question) ? MAX_QUOTES : quotas.fathers;
   const namedCap = brief ? NAMED_CAP_BRIEF : NAMED_CAP;
+  const fatherPool = rawFatherPool.filter(eraOk);
   const namedFew = plan.authors.length >= 1 && plan.authors.length <= 2;
-  const fathers = selectFathers(
-    fatherPool,
-    quotas.fathers,
-    (author) => (namedFew && named.ids.includes(author) ? namedCap : quotas.perAuthor),
+  const capOf = (author: string) => (namedFew && named.ids.includes(author) ? namedCap : quotas.perAuthor);
+  const anchoredChosen = selectFathers(anchored, fatherQuota, capOf, locale);
+  const locatorOf = (passage: Passage) =>
+    passage.father ? `${passage.father.workId}:${passage.father.locator}` : passage.key;
+  const twins = new Map(
+    fatherPool.filter((passage) => passage.lang === locale).map((passage) => [locatorOf(passage), passage]),
+  );
+  anchoredChosen.chosen = anchoredChosen.chosen.map((passage) => {
+    const twin = passage.lang === locale ? undefined : twins.get(locatorOf(passage));
+    return twin ? { ...twin, rank: passage.rank } : passage;
+  });
+  const anchoredLocators = new Set(anchoredChosen.chosen.map(locatorOf));
+  const usedByAuthor = new Map<string, number>();
+  for (const passage of anchoredChosen.chosen) {
+    const author = passage.author ?? passage.father?.workId ?? passage.key;
+    usedByAuthor.set(author, (usedByAuthor.get(author) ?? 0) + 1);
+  }
+  const textChosen = selectFathers(
+    fatherPool.filter((passage) => !anchoredKeys.has(passage.key) && !anchoredLocators.has(locatorOf(passage))),
+    passageFocus && anchoredChosen.chosen.length > 0 ? 0 : fatherQuota - anchoredChosen.chosen.length,
+    (author) => Math.max(capOf(author) - (usedByAuthor.get(author) ?? 0), 0),
     locale,
   );
+  const fathers = {
+    chosen: [...anchoredChosen.chosen, ...textChosen.chosen],
+    rest: [...anchoredChosen.rest, ...textChosen.rest],
+  };
 
-  const scopedTradition = traditionRows.filter(
-    (row) =>
-      (traditionFilter === null || traditionFilter.includes(row.speaker as TraditionId)) &&
-      (doctrines.length > 0 || row.rank >= MIN_RANK) &&
-      (chapter === null || refsInChapter(row.refs, chapter.book, chapter.chapter)),
-  );
+  const scopedTradition = verseTradition
+    ? anchoredFathers(
+        traditionVerseHits,
+        (row) => doctrines.length === 0 || doctrines.includes(row.doctrine as DoctrineId),
+      ).filter((row) => traditionFilter === null || traditionFilter.includes(row.speaker as TraditionId))
+    : traditionRows.filter(
+        (row) =>
+          !row.key.includes(":scripture:") &&
+          (traditionFilter === null || traditionFilter.includes(row.speaker as TraditionId)) &&
+          (doctrines.length > 0 || row.rank >= MIN_RANK) &&
+          (chapter === null || refsInChapter(row.refs, chapter.book, chapter.chapter)),
+      );
   const bySpeaker = new Map<string, Ranked[]>();
   for (const row of scopedTradition) bySpeaker.set(row.speaker, [...(bySpeaker.get(row.speaker) ?? []), row]);
   const traditionChosen: Ranked[] = [];
@@ -477,7 +656,9 @@ export async function buildPack(plan: SearchPlan, request: AskRequest, search: C
   for (const speaker of traditionIds) {
     const rows = bySpeaker.get(speaker);
     if (!rows) continue;
-    const picked = pickTradition(rows, quotas.perTradition, locale);
+    const picked = verseTradition
+      ? { chosen: rows.slice(0, quotas.perTradition), rest: rows.slice(quotas.perTradition) }
+      : pickTradition(rows, quotas.perTradition, locale);
     traditionChosen.push(...picked.chosen);
     traditionRest.push(...picked.rest);
     traditionRefGroups.push([...new Set(picked.chosen.flatMap((row) => row.refs))]);
@@ -663,6 +844,19 @@ export async function buildPack(plan: SearchPlan, request: AskRequest, search: C
   });
   const scopedCoverage = {
     ...coverage,
+    searched: (["bible", "fathers", "tradition", "doctrine", "glossary"] as const).filter((name) => allowed[name]),
+    ...(targets.length > 0 && (allowed.fathers || verseTradition)
+      ? {
+          verseSearches: targets.map((target, index) => ({
+            target,
+            found: anchoredFathers([fatherVerseHits[index] ?? [], traditionVerseHits[index] ?? []], () => true).length,
+            collections: [
+              ...(allowed.fathers ? (["fathers"] as const) : []),
+              ...(verseTradition ? (["tradition"] as const) : []),
+            ],
+          })),
+        }
+      : {}),
     traditions: allowed.tradition
       ? coverage.traditions.filter((entry) => traditionFilter === null || traditionFilter.includes(entry.tradition))
       : [],
