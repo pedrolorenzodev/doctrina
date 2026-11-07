@@ -1,3 +1,4 @@
+import type { WireAnswer } from "@/lib/ai/contracts";
 import type { AskPill } from "@/lib/ask-drawer";
 import type { AnswerId, Opening } from "@/features/reader-ai/script";
 
@@ -8,6 +9,7 @@ export type SavedEntry = {
   pill: AskPill | null;
   scopeName: string;
   seconds: number;
+  live?: WireAnswer;
 };
 
 export type Conversation = { id: string; script: string; opening: Opening; startedAt: string; entries: SavedEntry[] };
