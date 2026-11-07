@@ -12,14 +12,14 @@ import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { SourceLinks } from "@/features/doctrine/source-links";
 import type { Locale } from "@/lib/locale";
 import { guillemets, labelSeparator } from "@/lib/punctuation";
-import { simplifierEnabled } from "@/lib/simplifier-enabled";
 
 type TeachSectionProps = {
   page: TraditionPage;
   locale: Locale;
+  served: ReadonlySet<string>;
 };
 
-export function TeachSection({ page, locale }: TeachSectionProps) {
+export function TeachSection({ page, locale, served }: TeachSectionProps) {
   const text = getUiText(locale);
   const verse = (segments: string[]) => verseLink(segments, locale);
 
@@ -60,7 +60,7 @@ export function TeachSection({ page, locale }: TeachSectionProps) {
     className = "",
   ) => {
     const id = `${page.doctrine}/${page.tradition}/${key}`;
-    return simplifierEnabled ? (
+    return served.has(id) ? (
       <SimplifiedParagraph
         id={id}
         locale={locale}

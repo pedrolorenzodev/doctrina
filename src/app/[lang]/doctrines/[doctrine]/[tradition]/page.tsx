@@ -24,7 +24,7 @@ import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 import { leanBuild } from "@/lib/lean-build";
-import { simplifierEnabled } from "@/lib/simplifier-enabled";
+import { servedIdsOf, traditionAddresses } from "@/features/doctrine/served-paragraphs";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
@@ -57,6 +57,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
   const page = await getTraditionPage(doctrine, tradition, locale);
   if (!page) notFound();
   const text = getUiText(locale);
+  const served = await servedIdsOf(traditionAddresses(page));
   return (
     <CitationProvider views={getPageViews(page, locale)} text={text.citation}>
       <PageMain rail>
@@ -65,7 +66,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
           trail={[{ label: text.shell.groupDoctrines }, doctrineCrumb(locale, doctrine)]}
           current={traditionName(locale, tradition)}
           aside={
-            simplifierEnabled ? (
+            served.size > 0 ? (
               <SimplifySwitch row label={text.shell.simplifyRow.label} ariaLabel={text.shell.simplifyRow.aria} />
             ) : undefined
           }
@@ -90,7 +91,7 @@ export default async function TraditionRoute({ params }: PageProps<"/[lang]/doct
           lede={page.lede}
           emphasis={ledeEmphasis(locale, doctrine, tradition) ?? doctrineTitle(locale, doctrine)}
         />
-        <TeachSection page={page} locale={locale} />
+        <TeachSection page={page} locale={locale} served={served} />
         <WhySection page={page} locale={locale} />
         <ScriptureSection page={page} locale={locale} />
         <ObjectionsSection page={page} locale={locale} />

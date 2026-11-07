@@ -5,21 +5,21 @@ import type { DoctrinePage } from "@/content/model/doctrine-page";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@/lib/locale";
-import { simplifierEnabled } from "@/lib/simplifier-enabled";
 
 type CommonSectionProps = {
   id: string;
   page: DoctrinePage;
   locale: Locale;
+  served: ReadonlySet<string>;
 };
 
-export function CommonSection({ id, page, locale }: CommonSectionProps) {
+export function CommonSection({ id, page, locale, served }: CommonSectionProps) {
   const text = getUiText(locale).doctrinePage;
   const verse = (segments: string[]) => verseLink(segments, locale);
   return (
     <Section id={id} title={text.common} wide>
       <div className="common-grid">
-        {simplifierEnabled ? (
+        {served.has(`${page.doctrine}/02/common/text`) ? (
           <SimplifiedParagraph
             id={`${page.doctrine}/02/common/text`}
             locale={locale}

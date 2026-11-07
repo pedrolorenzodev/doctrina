@@ -14,12 +14,12 @@ import { traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ObjectionsFold } from "@/features/doctrine/objections-fold";
 import type { Locale } from "@/lib/locale";
-import { simplifierEnabled } from "@/lib/simplifier-enabled";
 
 type AnswersSectionProps = {
   id: string;
   page: DoctrinePage;
   locale: Locale;
+  served: ReadonlySet<string>;
 };
 
 type ObjectionRow = { key: string; title: string; href: string | null };
@@ -44,7 +44,7 @@ function Chevron() {
   );
 }
 
-export async function AnswersSection({ id, page, locale }: AnswersSectionProps) {
+export async function AnswersSection({ id, page, locale, served }: AnswersSectionProps) {
   const text = getUiText(locale);
   const labels = text.doctrinePage;
   const verse = (segments: string[]) => verseLink(segments, locale);
@@ -101,7 +101,7 @@ export async function AnswersSection({ id, page, locale }: AnswersSectionProps) 
                 </p>
               </div>
               <div>
-                {simplifierEnabled ? (
+                {served.has(`${page.doctrine}/02/answers/${answer.tradition}`) ? (
                   <SimplifiedParagraph
                     id={`${page.doctrine}/02/answers/${answer.tradition}`}
                     locale={locale}

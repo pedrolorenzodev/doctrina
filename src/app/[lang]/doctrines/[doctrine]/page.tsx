@@ -27,7 +27,7 @@ import { WitnessesSection } from "@/features/doctrine/witnesses-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
 import { leanBuild } from "@/lib/lean-build";
-import { simplifierEnabled } from "@/lib/simplifier-enabled";
+import { doctrineAddresses, servedIdsOf } from "@/features/doctrine/served-paragraphs";
 
 function isDoctrine(value: string): value is DoctrineId {
   return (doctrineIds as readonly string[]).includes(value);
@@ -53,6 +53,7 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
   const page = await getDoctrinePage(doctrine, locale);
   if (!page) notFound();
   const text = getUiText(locale);
+  const served = await servedIdsOf(doctrineAddresses(page));
   const labels = text.doctrinePage;
   const marks = page.fingerprint.marks;
   const first = marks[0];
@@ -83,7 +84,7 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
           trail={[{ label: text.shell.groupDoctrines }]}
           current={doctrineName(locale, doctrine)}
           aside={
-            simplifierEnabled ? (
+            served.size > 0 ? (
               <SimplifySwitch row label={text.shell.simplifyRow.label} ariaLabel={text.shell.simplifyRow.aria} />
             ) : undefined
           }
@@ -122,8 +123,8 @@ export default async function DoctrineRoute({ params }: PageProps<"/[lang]/doctr
             closeLabel={labels.legend.close}
           />
         </div>
-        <CommonSection id="common" page={page} locale={locale} />
-        <AnswersSection id="answers" page={page} locale={locale} />
+        <CommonSection id="common" page={page} locale={locale} served={served} />
+        <AnswersSection id="answers" page={page} locale={locale} served={served} />
         <WitnessesSection id="witnesses" page={page} locale={locale} />
         <PracticeSection id="practice" page={page} locale={locale} />
         <ConnectedSection id="connected" page={page} locale={locale} />
