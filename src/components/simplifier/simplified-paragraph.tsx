@@ -89,7 +89,9 @@ function SimplifiedView({
 
   const finish = useCallback(() => setStreaming(false), []);
   const entry = content?.kind === "entry" ? content.entry : null;
-  const stream = useStream(streaming, entry ? wordCount(entry[level]) + 1 : 0, finish);
+  const singleLevel = entry ? entry.levels !== undefined : address.kind !== "father";
+  const shownLevel: SimplifierLevel = singleLevel ? "clear" : level;
+  const stream = useStream(streaming, entry ? wordCount(entry[shownLevel]) + 1 : 0, finish);
 
   useLayoutEffect(() => {
     if (openCount === 0 || !box.current || !inner.current) return;
@@ -212,7 +214,7 @@ function SimplifiedView({
   };
 
   const chooseLevel = (next: SimplifierLevel) => {
-    if (next === level) return;
+    if (singleLevel || next === level) return;
     if (content?.kind !== "entry") {
       rememberLevel(id, next);
       setLevel(next);
@@ -295,7 +297,8 @@ function SimplifiedView({
           id={panelId}
           text={text}
           content={content}
-          level={level}
+          level={shownLevel}
+          singleLevel={singleLevel}
           streaming={streaming}
           tick={stream.tick}
           stoppedAt={stoppedAt}

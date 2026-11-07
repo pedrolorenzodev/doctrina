@@ -7,4 +7,5 @@ export type SimplifiedEntry = {
   original: string[];
   clear: string[];
   very: string[];
+  levels?: ["clear"];
 };

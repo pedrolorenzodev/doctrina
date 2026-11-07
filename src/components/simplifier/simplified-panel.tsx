@@ -16,6 +16,7 @@ type SimplifiedPanelProps = {
   text: SimplifierText;
   content: PanelContent;
   level: SimplifierLevel;
+  singleLevel: boolean;
   streaming: boolean;
   tick: number;
   stoppedAt: number | null;
@@ -44,6 +45,7 @@ export function SimplifiedPanel({
   text,
   content,
   level,
+  singleLevel,
   streaming,
   tick,
   stoppedAt,
@@ -160,16 +162,18 @@ export function SimplifiedPanel({
         className={`mt-3 ml-0.5 grid gap-2.5 border-l border-rule-2 pt-1.5 pb-4.5 pl-4 ${streaming ? "border-dashed" : ""}`}
       >
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-          <SegmentedFilter
-            label={text.levels}
-            flush
-            options={[
-              { id: "clear", label: text.clear },
-              { id: "very", label: text.very },
-            ]}
-            value={level}
-            onChange={(next) => onLevel(next as SimplifierLevel)}
-          />
+          {singleLevel ? null : (
+            <SegmentedFilter
+              label={text.levels}
+              flush
+              options={[
+                { id: "clear", label: text.clear },
+                { id: "very", label: text.very },
+              ]}
+              value={level}
+              onChange={(next) => onLevel(next as SimplifierLevel)}
+            />
+          )}
           <span data-simplifier-label="" className="text-simplified-note text-ink-3">
             {text.label}
           </span>

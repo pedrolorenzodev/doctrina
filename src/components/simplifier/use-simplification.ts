@@ -25,11 +25,16 @@ const isLines = (value: unknown): value is string[] =>
 
 function readEntry(body: unknown): EntryOutcome | null {
   if (typeof body !== "object" || body === null) return null;
-  const { lang, original, clear, very, status } = body as Record<string, unknown>;
+  const { lang, original, clear, very, status, levels } = body as Record<string, unknown>;
   if (lang !== "es" && lang !== "en") return null;
   if (!isLines(original) || !isLines(clear) || !isLines(very)) return null;
   if (status !== "generated" && status !== "reviewed") return null;
-  return { kind: "entry", entry: { lang, original, clear, very }, status };
+  const single = Array.isArray(levels) && levels.length === 1 && levels[0] === "clear";
+  return {
+    kind: "entry",
+    entry: { lang, original, clear, very, ...(single ? { levels: ["clear" as const] } : {}) },
+    status,
+  };
 }
 
 function failureByStatus(status: number): SimplifyOutcome {
