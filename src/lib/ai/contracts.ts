@@ -3,7 +3,7 @@ import type { CitationView } from "@/lib/citation-view";
 
 export const CONTRACTS_VERSION = "contracts-2026-11-06.1";
 export const PLAN_PROMPT_VERSION = "plan-2026-11-08.1";
-export const ANSWER_PROMPT_VERSION = "chat-2026-11-08.2";
+export const ANSWER_PROMPT_VERSION = "chat-2026-11-08.3";
 export const SIMPLIFY_PROMPT_VERSION = "simplify-2026-11-07.4";
 export const JUDGE_PROMPT_VERSION = "judge-2026-11-06.1";
 export const MAX_QUESTION_CHARS = 600;
