@@ -216,6 +216,12 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **Cached answers show no timeline** · an answer stored before the change has no `date` on its quotes until it expires or `ANSWER_PROMPT_VERSION` changes.
 - **E2E in a real-mode build** · run the specs with `NEXT_PUBLIC_AI_CHAT=real` in the test process too: the scripted-answer tests skip themselves on that variable, and without it they fail against a real build.
 
+## Chat note follow-up (2026-11-07)
+- **The citation reaches the reader through a window event** · `openNoteEvent` in `src/lib/notes.ts`; `reader-body` must cancel the event when it opens the note, or the drawer also navigates · `src/features/reader/reader-body.tsx`.
+- **The model never writes the note's words** · `noteFollowup` carries only an id and a kind; the server maps `mine:<n>` to `request.notes[n-1]`, so changing how `pack.ts` keys notes breaks the mapping · `src/features/ask/note-followup.ts`.
+- **`note-followup.ts` imports `ui-text/es` and `en` directly** · `get-ui-text` imports `server-only`, which the Node check runner cannot load.
+- **Notes and highlights travel together as «notes»** · a highlight the model judges related is offered too, and its citation finds no note to open.
+
 ## Traps found on 2026-10-28 night (eleventh session)
 
 - **`data/corpus/` is gitignored.** `kjv.red.json`, the `*.red.computed.json` files and every other corpus file exist only on this machine; a block that «adds red letters» commits only its script, loader and specs.
