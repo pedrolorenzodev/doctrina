@@ -11,6 +11,63 @@ Status: draft, NOT verified by Pedro
 - Verifier pass: first read of the entries added after the earlier verifier done 2026-11-01 evening (session B2, `passages/verification-b2-1.md`): every quote matched the page text; the locators found wrong were corrected. Count lines and the other entries of the file were not re-read by this pass.
 - **Round 2 (session B2, 2026-11-01 evening):** entries added: 1, 10, 11, 14 and a supplement to entry 3 (John 6:63, Akin, from captions). Method: the catholic.com pages (audio transcripts and magazine articles of Heschmeyer, Horn, Akin and Broussard) re-crawled on 2026-11-01 evening (1,742 pages) and every quote extracted from the page text by a script (a quote that did not match stopped the build); sections marked «(round 2, session B2)». Still without a quote: 12, 13 (only unrelated mentions). Second read 2026-11-01 evening (`verification-b2-2.md`, one Sonnet pass over every round-2 quote): quotes, locators, speakers, titles and dates confirmed; one caption cue range, three headings, one count line and ten overreaching headings were corrected; remarks about pages that are not quoted were not re-read. Counts below are by person and work («works» = distinct pages; a print-edition reprint is one work with its online article) and by organisation.
 
+- **C5 harvest (2026-11-08):** signed Armstrong / Marshall text added where noted below; full page-row inventory, corpus sizes, rejected hits and resume state in `apologists-c5-log.md`. Corpora still being completed; no claim that the remaining passages have two deep expositors.
+- Status: partial
+
+### C5 page-row checkpoint (2026-11-08 10:12 UTC)
+
+These are recorded persons on at least part of each entry, including existing inline page records; they are not a claim of two deep expositors on every constituent verse. Corpus counts below are documents with explicit indexed references, not counts of qualifying explanations. Catholic Answers and Hahn crawls remain in progress.
+
+| Entry / passage(s) | Recorded persons | Armstrong documents (1,470 posts) | Marshall documents (4,186 posts) | State |
+|---|---|---|---|---|
+| 1. Matt.26.26-Matt.26.28, Mark.14.22-Mark.14.24, Luke.22.19-Luke.22.20, 1Cor.11.23-1Cor.11.26 | 4 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard, Trent Horn) | 35 | 6 | existing evidence retained; remaining corpora pending |
+| 2. Luke.22.19 | 4 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard, Trent Horn) | 14 | 1 | existing evidence retained; remaining corpora pending |
+| 3. John.6.51-John.6.58, John.6.60-John.6.69 | 3 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard) | 30 | 7 | existing evidence retained; remaining corpora pending |
+| 4. 1Cor.10.16-1Cor.10.17 | 2 (Jimmy Akin, Joe Heschmeyer) | 22 | 0 | existing evidence retained; remaining corpora pending |
+| 5. 1Cor.10.21 | 2 (Joe Heschmeyer, Karlo Broussard) | 14 | 2 | existing evidence retained; remaining corpora pending |
+| 6. 1Cor.11.26 | 2 (Joe Heschmeyer, Karlo Broussard) | 4 | 0 | existing evidence retained; remaining corpora pending |
+| 7. 1Cor.11.27-1Cor.11.29 | 2 (Jimmy Akin, Karlo Broussard) | 18 | 1 | existing evidence retained; remaining corpora pending |
+| 8. Mal.1.11 | 2 (Jimmy Akin, Joe Heschmeyer) | 13 | 0 | existing evidence retained; remaining corpora pending |
+| 9. Gen.14.18, Ps.110.4 | 3 (Joe Heschmeyer, Taylor Marshall, Tom Nash) | 8 | 4 | Marshall: Gen 14, not Ps 110:4; remaining corpora pending |
+| 10. Heb.7.11-Heb.7.27, Heb.9.12-Heb.9.14, Heb.9.27 | 2 (Joe Heschmeyer, Karlo Broussard) | 25 | 5 | existing evidence retained; remaining corpora pending |
+| 11. Exod.12, 1Cor.5.7 | 2 (Joe Heschmeyer, Trent Horn) | 7 | 0 | existing evidence retained; remaining corpora pending |
+| 12. Heb.1.6, Ps.97.7, Matt.2.11, Matt.28.17 | 0 (none) | 7 | 1 | no additional qualifying cut recorded; remaining corpora pending |
+| 13. 1Cor.4.1, 1Cor.11.34 | 2 (Karlo Broussard, Taylor Marshall) | 3 | 1 | one speaker per constituent verse; application; remaining corpora pending |
+| 14. Acts.2.42, Acts.2.46, Acts.20.7 | 2 (Joe Heschmeyer, Trent Horn) | 24 | 6 | existing evidence retained; remaining corpora pending |
+
+- Resume: finish Catholic Answers and Hahn indexes; use `meta/reads.jsonl` before selecting candidates, at most three per page entry across sources. Existing pilot passages and inline records must not be duplicated. Scripture Catholic is blocked at robots (406); no corpus negative is claimed for it.
+- Status: partial
+
+- **C5 Pitre harvest (2026-11-08):** 58 publisher pages crawled; only 24 marked full transcripts indexed as speaker text. Five exact cuts added from those transcripts, with one shared-source cross-reference. No summary/FAQ is quoted as Pitre. See log for all source paths, rejected candidates and budgets. Catholic Answers still pending.
+- Status: partial
+
+### C5 bounded pass closed (2026-11-08 10:51 UTC)
+
+“Done” follows the work order’s worked-pass finish line: every current page row has recorded material or a scoped search line. It does **not** mean two deep expositors on every constituent verse. All old blocks and tags remain; the newer source/standing and depth limitations are stated in each addition.
+
+Corpus columns count documents with indexed explicit references: Armstrong 1,470 posts; Marshall 4,186 posts; Catholic Answers 883 retrieved topical pages (16/899 selected URLs returned 404); Hahn 168 written reflections; Pitre 24 eligible marked transcripts from 58 crawled pages. Scripture Catholic was blocked at robots (406), so it supplies no negative corpus evidence.
+
+| Entry / passage(s) | Recorded persons | Armstrong / Marshall / CA / Hahn / Pitre documents | Result / limitation |
+|---|---|---|---|
+| 1. Matt.26.26-Matt.26.28, Mark.14.22-Mark.14.24, Luke.22.19-Luke.22.20, 1Cor.11.23-1Cor.11.26 | 4 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard, Trent Horn) | 35 / 6 / 44 / 9 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 2. Luke.22.19 | 4 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard, Trent Horn) | 14 / 1 / 22 / 3 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 3. John.6.51-John.6.58, John.6.60-John.6.69 | 3 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard) | 30 / 7 / 44 / 4 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 4. 1Cor.10.16-1Cor.10.17 | 2 (Jimmy Akin, Joe Heschmeyer) | 22 / 0 / 24 / 1 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 5. 1Cor.10.21 | 2 (Joe Heschmeyer, Karlo Broussard) | 14 / 2 / 4 / 0 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 6. 1Cor.11.26 | 2 (Joe Heschmeyer, Karlo Broussard) | 4 / 0 / 16 / 1 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 7. 1Cor.11.27-1Cor.11.29 | 2 (Jimmy Akin, Karlo Broussard) | 18 / 1 / 30 / 0 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 8. Mal.1.11 | 2 (Jimmy Akin, Joe Heschmeyer) | 13 / 0 / 6 / 0 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 9. Gen.14.18, Ps.110.4 | 3 (Joe Heschmeyer, Taylor Marshall, Tom Nash) | 8 / 4 / 4 / 3 / 0 | Marshall Gen 14; Ps 110:4 not separately expanded |
+| 10. Heb.7.11-Heb.7.27, Heb.9.12-Heb.9.14, Heb.9.27 | 2 (Joe Heschmeyer, Karlo Broussard) | 25 / 5 / 17 / 5 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 11. Exod.12, 1Cor.5.7 | 2 (Joe Heschmeyer, Trent Horn) | 7 / 0 / 10 / 2 / 1 | existing records preserved; their depth/standing not newly reverified |
+| 12. Heb.1.6, Ps.97.7, Matt.2.11, Matt.28.17 | 0 (none) | 7 / 1 / 3 / 6 / 0 | zero qualifying expositors within three reads; lists not counted |
+| 13. 1Cor.4.1, 1Cor.11.34 | 2 (Karlo Broussard, Taylor Marshall) | 3 / 1 / 5 / 1 / 0 | Broussard 11:34 / Marshall 4:1; not two per constituent verse |
+| 14. Acts.2.42, Acts.2.46, Acts.20.7 | 3 (Dr. Brant Pitre, Joe Heschmeyer, Trent Horn) | 24 / 6 / 10 / 2 / 1 | existing records preserved; their depth/standing not newly reverified |
+
+- Timing: Catholic work approximately 09:58–10:49 UTC (~51 minutes), including serial crawls/indexes and exact-text audits. Weekly 36% at pilot close → latest 43% account reading: +7 account-wide points, not attributable solely to this run.
+- Resume: use the saved manifests and `meta/reads.jsonl`; do not recrawl. Known uncut public leads, short applications and partial grouped passages are next-run work. No claim that a printed book or paid transcript is the only remedy.
+- Status: done
+
 ## Tags
 - `[verified: page]`: the text was fetched on 2026-11-01 with `curl` from the URL given and matched in the page; for the transcripts of catholic.com podcast pages the speaker is the page's own label («Joe:») or byline, not a guess; those transcripts are machine-made (they contain mishearings). Quotations are short; a clipped quote ends with […]; the words are the source's.
 - «Not checked» against the dossier row means the dossier's reading was not compared sentence by sentence.
@@ -142,6 +199,12 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **1 person** (Heschmeyer), 1 work. By organisation: 1. Gap stated: Akin, Broussard, Horn not found on this passage (a Broussard transcript quotes Gen 14:18 only on wine).
 **B5 addition:** Tom Nash added to this passage (work: «What Is the Point of a Priest?», 474 words). Recount: the persons listed in the line above plus Tom Nash; by organisation still 1 (Catholic Answers).
 **Contested within the tradition:** `[not searched]`.
+
+**C5 addition (2026-11-08) · Bread and wine, Melchizedek and the thanksgiving sacrifice.**
+- **Taylor Marshall**, author named by the source (no additional church office established here), «Saint Paul’s Use of the Word "Eucharist"», taylormarshall.com, 2010-06-29; online edition retrieved 2026-11-08, https://taylormarshall.com/2010/06/saint-pauls-use-of-word-eucharist.html. Locator: under “Eucharistic Sacrifice”, whole paragraph beginning “In the Old Testament”; 199 words; first words «In the Old Testament, we read that the todah»; last words «bread and wine “thanksgiving” offering of the Old Testament.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The page says it excerpts his forthcoming *The Catholic Perspective on Paul* (Fall 2010); online article edition is used here. Gen 14:18 and Heb 7:1–17 are explicit; Ps 110:4 is not separately interpreted in the cut.
+  > In the Old Testament, we read that the todah thanksgiving sacrifices were offered with wheat flour and wine (Num 15:1-10). This sacrifice of wheat and wine evokes the sacrifice of bread and wine offered by Melchizedek who blessed the patriarch Abraham (Gen 14:18). We learn that Christ is a “priest according to the order of Melchizedek” (Heb 7:1-17), and so Jews would expect the Messiah to offer a sacrifice of bread and wine. Moreoever, read that King David offered the todah sacrifice with bread and wine (1 Chr 16:3). We also read about how the prophet Jonah, having been swallowed by the whale, vowed to the Lord a todah sacrifice if he should be delivered from death after spending three days in darkness (Jon 2:3-10). The earliest Christians came to perceive that the Last Supper of Christ was in fact a todah sacrifice of bread and wine in union with the sacrifice of Christ. The Davidic todah—thanksgiving theme and the promised todah—thanksgiving of Jonah who also rose from the belly of the fish on the third day confirmed that the wheat and wine ritual of Christ hearkened back to the bread and wine “thanksgiving” offering of the Old Testament.
+
+**C5 count and independence.** Recorded by person and work: 3 persons (Heschmeyer, Nash, Marshall), 3 works; by organisation/outlet: 2 (Catholic Answers, Marshall’s blog). For this new combined explanation, **2 persons** (Heschmeyer, Marshall) are the conservative count; the earlier Nash block is preserved without a new review. No independence inferred; Ps 110:4 still needs its own second exposition. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
 
 ## 2. Eucharist · Luke 22:19 (page entry 2) (added after the verifier pass)
 
@@ -307,6 +370,12 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **2 person(s)**, 2 work(s); by organisation: **1** (all Catholic Answers staff). Heschmeyer’s paragraph is from an episode on the Sabbath and Sunday worship; it cites Acts 20:7 and 2:42 for the breaking of the bread as liturgy.
 **Contested within the tradition:** `[not searched]`.
 
+**C5 addition (2026-11-08) · The four activities of Acts 2:42 correspond to doctrine, sacraments, fellowship and prayer.**
+- **Dr. Brant Pitre**, named speaker of *The Mass Readings Explained* in the page’s transcript introduction (no additional church office established here), «Doubting Thomas: My Lord and My God (John 20)», Catholic Productions, 2020-04-23; public publisher-transcript edition retrieved 2026-11-08, https://catholicproductions.com/blogs/blog/doubting-thomas-and-the-activity-of-the-early-apostolic-church. Locator: within the marked “Full Transcript,” segment beginning «One of the reasons I think» and ending before «And for me I think»; 197 words; first words «One of the reasons I think that that's fascinating»; last words «present in this initial description of the early Church.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The preceding passage is explicitly introduced as Acts 2:42 and following. This interprets the four activities, identifying the breaking of bread with the Eucharist. Acts 20:7 is not separately expounded. The same exact cut also supports the Catholic Sola Scriptura entry on Acts 2:42; stored once here. The publisher’s introductory summary and FAQ are excluded.
+  > One of the reasons I think that that's fascinating is that you can kind of correlate that with the four parts of the Catechism of the Catholic Church. So if you have the Catechism of the Catholic Church — I have used it before, it's the official compendium of the Church's teaching on matters of faith and morals — what is interesting is it is broken up into four parts. The first part is on the apostles' teaching, it is on the doctrine, the creed. The second part is on the sacraments, above all the Eucharist, the breaking of the bread. The third part is on life in Christ, on fellowship with one another. How do we love God and how do we love our neighbor. How do we keep the Commandments and live with one another according to justice and mercy and love. And then the fourth part of Catechism is on prayer. It's on the Lord's Prayer in particular, but on the life of prayer in general. So it's kind of neat there that you see that those four pillars of the Church's teaching are already present in this initial description of the early Church.
+
+**C5 count and independence.** By person and work: **3 persons** (Horn, Heschmeyer, Pitre), 3 works; by organisation/outlet: 2 (Catholic Answers, Catholic Productions), with no independence inferred. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## 13. Eucharist · 1 Cor 4:1; 11:34 (page entry 13; added by B5)
 
 **Argument A · Paul says he will give further directions (1 Cor 11:34): not everything he taught on the Eucharist is written.**
@@ -338,5 +407,19 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **1 person** (Karlo Broussard), 1 work; by organisation 1 (Catholic Answers). The passage had no quote before B5. Not a verse-by-verse exposition of the page's passage: the speaker uses the verse inside a broader argument about tradition.
 **Contested within the tradition:** `[not searched]`.
 
+**C5 addition (2026-11-08) · “Stewards of the mysteries” describes a priest’s public sacramental ministry.**
+- **Taylor Marshall**, author named by the source (no additional church office established here), «The Double Standard Regarding Roman Priests and Roman Polanski», taylormarshall.com, 2009-10-04; online edition retrieved 2026-11-08, https://taylormarshall.com/2009/10/double-standard-regarding-roman-priests.html. Locator: two paragraphs beginning “Priests should be held” and “I’m not arguing”; 169 words; first words «Priests should be held to a higher standard than»; last words «person of Christ” when they celebrate the Holy Eucharist.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The preceding quotation from Fr. Thomas Reese is excluded. This cut is Marshall’s own response. The moral controversy occasioning the post is not adopted or independently researched here. 1 Cor 4:1 is explicit; 1 Cor 11:34 is absent.
+  > Priests should be held to a higher standard than everyone else. We call these men by the most intimate title in the world: “Father.” They are present for all the most important events of our lives: birth, adolescence, marriage, sickness, and death. Catholic priests are called to sanctify the faithful through Word and Sacrament and thus we rightly expect for them to live holy lives. Priests are celibate to show their sacrificial commitment to the Church. They have volunteered to live public lives as “stewards of the mysteries” (1 Cor 4:1). Saint Paul did literally everything he could do “that all men might be saved” (1 Cor 10:33).
+
+I’m not arguing for anything touching the Donatist heresy – that the ministry and efficacy of the priestly ministry depends on the moral excellence of priests. No, all priests are sinners and fail to a certain extent. Yet, they are given graces and called to be exemplars, even to speak “in the person of Christ” when they celebrate the Holy Eucharist.
+
+**C5 count and independence.** By person and work: **2 persons** (Broussard, Marshall), 2 works; by organisation/outlet: 2 (Catholic Answers, Marshall’s blog). No independence inferred. Broussard addresses 1 Cor 11:34; Marshall applies 1 Cor 4:1. This is two persons across the grouped entry, not two on each verse, and Marshall’s treatment is an application rather than an extended exegesis. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## Not done
 - Eucharist entries 1 (Mt 26 etc.), 3 (John 6, more voices), 10 (Heb 7, 9), 11 (Ex 12; 1 Cor 5:7), 12 (Heb 1:6; adoration), 13 (1 Cor 4:1; 11:34), 14 (Acts 2:42, 2:46, 20:7). The corpus searched has hits for several (Passover, Hebrews) not yet read.
+
+## 12. Eucharist · Heb 1:6; Ps 97:7; Matt 2:11; Matt 28:17 (page entry 12; C5 coverage)
+
+No qualifying in-depth Eucharistic-adoration explanation recorded within the three-candidate read budget: Armstrong proof lists; Hahn’s Christmas reflection explains the Son and divine speech rather than Heb 1:6’s worship command; Peters gives propositions and Bible/Watchtower proof lists. Indexed document counts are in the Progress table. Those references are not treated as personal exposition, nor is a Christmas/Christology statement silently turned into a Eucharistic-adoration argument. Other ranked candidates were not opened once the budget was spent.
+
+**Count and independence.** **0 persons**, 0 qualifying works, 0 organisations/outlets. **Contested within the tradition:** `[not searched]`.

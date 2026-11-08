@@ -10,6 +10,77 @@ Status: draft, NOT verified by Pedro
 - Verifier pass: quotes machine-matched (see «Sources searched»); locators, dates and attributions not yet read by a second reader.
 - **Round 2 (session B2, 2026-11-01 evening):** entries added: 7, 8, 13. Method: the catholic.com pages (audio transcripts and magazine articles of Heschmeyer, Horn, Akin and Broussard) re-crawled on 2026-11-01 evening (1,742 pages) and every quote extracted from the page text by a script (a quote that did not match stopped the build); sections marked «(round 2, session B2)». Still without a quote: 14, 18, 19 (the lines found cite other verses or other arguments than the page entry's). Second read 2026-11-01 evening (`verification-b2-2.md`, one Sonnet pass over every round-2 quote): quotes, locators, speakers, titles and dates confirmed; one caption cue range, three headings, one count line and ten overreaching headings were corrected; remarks about pages that are not quoted were not re-read. Counts below are by person and work («works» = distinct pages; a print-edition reprint is one work with its online article) and by organisation.
 
+- **C5 (2026-11-08), first group:** Armstrong’s 1,470 Blogger posts recrawled and indexed once; a 144-word explanation of 1 Cor 6:11 / John 3:5 / Titus 3:5 and a 106-word reply on Acts 16 with Acts 2 added. Exact cuts matched to the feed HTML. Opponent’s blue text excluded. First-hit windows often contain lists or another speaker; those are not counted. Catholic Answers topical crawl and Marshall crawl still in progress; complete per-entry state and source manifests in `apologists-c5-log.md`.
+- **C5 continuation (Claude, 2026-11-08):** 1 Tim 2:4 got a second person (Joan Summers, Catholic Answers magazine, 2003); see the section «1 Tim 2:4» and the log.
+- Status: partial
+
+- **C5 harvest (2026-11-08):** signed Armstrong / Marshall text added where noted below; full page-row inventory, corpus sizes, rejected hits and resume state in `apologists-c5-log.md`. Corpora still being completed; no claim that the remaining passages have two deep expositors.
+- Status: partial
+
+### C5 page-row checkpoint (2026-11-08 10:12 UTC)
+
+These are recorded persons on at least part of each entry, including existing inline page records; they are not a claim of two deep expositors on every constituent verse. Corpus counts below are documents with explicit indexed references, not counts of qualifying explanations. Catholic Answers and Hahn crawls remain in progress.
+
+| Entry / passage(s) | Recorded persons | Armstrong documents (1,470 posts) | Marshall documents (4,186 posts) | State |
+|---|---|---|---|---|
+| 1. John.3.5 | 3 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard) | 25 | 9 | existing evidence retained; remaining corpora pending |
+| 2. Matt.28.19-Matt.28.20, Mark.16.15-Mark.16.16 | 2 (Joe Heschmeyer, Trent Horn) | 54 | 2 | existing evidence retained; remaining corpora pending |
+| 3. Acts.2.38 | 2 (Joe Heschmeyer, Karlo Broussard) | 29 | 1 | existing evidence retained; remaining corpora pending |
+| 4. Rom.6.3-Rom.6.4, Col.2.12 | 2 (Joe Heschmeyer, Karlo Broussard) | 20 | 9 | existing evidence retained; remaining corpora pending |
+| 5. Titus.3.5 | 2 (Jimmy Akin, Joe Heschmeyer) | 22 | 3 | existing evidence retained; remaining corpora pending |
+| 6. Gal.3.27 | 2 (Joe Heschmeyer, Trent Horn) | 6 | 2 | existing evidence retained; remaining corpora pending |
+| 7. 1Cor.6.11, 1Cor.12.13 | 2 (Dave Armstrong, Joe Heschmeyer) | 27 | 4 | Armstrong: 1 Cor 6:11 only; remaining corpora pending |
+| 8. Rom.5.12 | 2 (Jimmy Akin, Karlo Broussard) | 16 | 4 | existing evidence retained; remaining corpora pending |
+| 9. Acts.16.15, Acts.16.33, Acts.18.8, 1Cor.1.16 | 3 (Dave Armstrong, Jimmy Akin, Karl Keating) | 7 | 0 | Armstrong: jailer only; remaining corpora pending |
+| 10. Mark.10.14 | 2 (Jimmy Akin, Joe Heschmeyer) | 0 | 0 | existing evidence retained; remaining corpora pending |
+| 11. 1Pet.3.20 | 3 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard) | 21 | 2 | existing evidence retained; remaining corpora pending |
+| 12. 1Pet.3.21 | 2 (Joe Heschmeyer, Trent Horn) | 18 | 4 | existing evidence retained; remaining corpora pending |
+| 13. Eph.4.30, Eph.1.13-Eph.1.14, 2Cor.1.21-2Cor.1.22 | 1 (Joe Heschmeyer) | 17 | 0 | no additional qualifying cut recorded; remaining corpora pending |
+| 14. 1Tim.2.4 | 1 (Taylor Marshall) | 18 | 2 | Marshall: short explanation; remaining corpora pending |
+| 15. John.19.34, Mark.10.38 | 2 (Joe Heschmeyer, Taylor Marshall) | 13 | 1 | one speaker per constituent passage; remaining corpora pending |
+| 16. Matt.3.13-Matt.3.17 | 2 (Joe Heschmeyer, Karlo Broussard) | 3 | 3 | existing evidence retained; remaining corpora pending |
+| 17. 1Pet.2.5, 1Pet.2.9 | 2 (Jimmy Akin, Joe Heschmeyer) | 10 | 1 | existing evidence retained; remaining corpora pending |
+| 18. Eph.4.25 | 0 (none) | 2 | 0 | no additional qualifying cut recorded; remaining corpora pending |
+| 19. Gal.5.3 | 0 (none) | 0 | 0 | no additional qualifying cut recorded; remaining corpora pending |
+
+- Resume: finish Catholic Answers and Hahn indexes; use `meta/reads.jsonl` before selecting candidates, at most three per page entry across sources. Existing pilot passages and inline records must not be duplicated. Scripture Catholic is blocked at robots (406); no corpus negative is claimed for it.
+- Status: partial
+
+- **C5 Pitre harvest (2026-11-08):** 58 publisher pages crawled; only 24 marked full transcripts indexed as speaker text. Five exact cuts added from those transcripts, with one shared-source cross-reference. No summary/FAQ is quoted as Pitre. See log for all source paths, rejected candidates and budgets. Catholic Answers still pending.
+- Status: partial
+
+### C5 bounded pass closed (2026-11-08 10:51 UTC)
+
+“Done” follows the work order’s worked-pass finish line: every current page row has recorded material or a scoped search line. It does **not** mean two deep expositors on every constituent verse. All old blocks and tags remain; the newer source/standing and depth limitations are stated in each addition.
+
+Corpus columns count documents with indexed explicit references: Armstrong 1,470 posts; Marshall 4,186 posts; Catholic Answers 883 retrieved topical pages (16/899 selected URLs returned 404); Hahn 168 written reflections; Pitre 24 eligible marked transcripts from 58 crawled pages. Scripture Catholic was blocked at robots (406), so it supplies no negative corpus evidence.
+
+| Entry / passage(s) | Recorded persons | Armstrong / Marshall / CA / Hahn / Pitre documents | Result / limitation |
+|---|---|---|---|
+| 1. John.3.5 | 4 (Dr. Brant Pitre, Jimmy Akin, Joe Heschmeyer, Karlo Broussard) | 25 / 9 / 35 / 0 / 1 | existing records preserved; their depth/standing not newly reverified |
+| 2. Matt.28.19-Matt.28.20, Mark.16.15-Mark.16.16 | 2 (Joe Heschmeyer, Trent Horn) | 54 / 2 / 49 / 4 / 0 | legacy inline Heschmeyer/Horn; no duplicate quote |
+| 3. Acts.2.38 | 3 (Dr. Brant Pitre, Joe Heschmeyer, Karlo Broussard) | 29 / 1 / 33 / 0 / 1 | existing records preserved; their depth/standing not newly reverified |
+| 4. Rom.6.3-Rom.6.4, Col.2.12 | 3 (Dr. Brant Pitre, Joe Heschmeyer, Karlo Broussard) | 20 / 9 / 32 / 5 / 2 | existing records preserved; their depth/standing not newly reverified |
+| 5. Titus.3.5 | 2 (Jimmy Akin, Joe Heschmeyer) | 22 / 3 / 14 / 0 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 6. Gal.3.27 | 2 (Joe Heschmeyer, Trent Horn) | 6 / 2 / 8 / 2 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 7. 1Cor.6.11, 1Cor.12.13 | 2 (Dave Armstrong, Joe Heschmeyer) | 27 / 4 / 15 / 2 / 0 | new 1 Cor 6:11 argument; 12:13 unchanged |
+| 8. Rom.5.12 | 2 (Jimmy Akin, Karlo Broussard) | 16 / 4 / 5 / 6 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 9. Acts.16.15, Acts.16.33, Acts.18.8, 1Cor.1.16 | 3 (Dave Armstrong, Jimmy Akin, Karl Keating) | 7 / 0 / 9 / 0 / 1 | jailer additionally explained; other households unchanged |
+| 10. Mark.10.14 | 2 (Jimmy Akin, Joe Heschmeyer) | 0 / 0 / 1 / 1 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 11. 1Pet.3.20 | 3 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard) | 21 / 2 / 10 / 1 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 12. 1Pet.3.21 | 2 (Joe Heschmeyer, Trent Horn) | 18 / 4 / 25 / 1 / 0 | legacy inline and 1 Pet 3:20–21 source material; no duplicate quote |
+| 13. Eph.4.30, Eph.1.13-Eph.1.14, 2Cor.1.21-2Cor.1.22 | 2 (Joe Heschmeyer, Tim Staples) | 17 / 0 / 2 / 3 / 0 | new Eph 4:30 confirmation context, not all three passages |
+| 14. 1Tim.2.4 | 1 (Taylor Marshall) | 18 / 2 / 4 / 1 / 0 | one short Marshall explanation; read cap; CA leads remain |
+| 15. John.19.34, Mark.10.38 | 2 (Joe Heschmeyer, Taylor Marshall) | 13 / 1 / 5 / 4 / 1 | one source per constituent passage; deeper coverage remains |
+| 16. Matt.3.13-Matt.3.17 | 2 (Joe Heschmeyer, Karlo Broussard) | 3 / 3 / 10 / 1 / 1 | existing records preserved; their depth/standing not newly reverified |
+| 17. 1Pet.2.5, 1Pet.2.9 | 2 (Jimmy Akin, Joe Heschmeyer) | 10 / 1 / 9 / 7 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 18. Eph.4.25 | 0 (none) | 2 / 0 / 0 / 0 / 0 | no qualifying explanation; Armstrong two lists, all other corpora zero |
+| 19. Gal.5.3 | 1 (Joan Summers) | 0 / 0 / 1 / 0 / 0 | one Summers application, zero extended expositions |
+
+- Timing: Catholic work approximately 09:58–10:49 UTC (~51 minutes), including serial crawls/indexes and exact-text audits. Weekly 36% at pilot close → latest 43% account reading: +7 account-wide points, not attributable solely to this run.
+- Resume: use the saved manifests and `meta/reads.jsonl`; do not recrawl. Known uncut public leads, short applications and partial grouped passages are next-run work. No claim that a printed book or paid transcript is the only remedy.
+- Status: done
+
 ## Tags
 - `[verified: page]`: the text was fetched today with `curl` from the URL given and the sentence matched in the page; for the transcripts of catholic.com podcast pages the speaker is the page's own label («Joe:»), not a guess. These transcripts are machine-made (they contain mishearings); the words are the page's.
 - `[verified: captions]`: read today in YouTube's auto-generated captions (via `~/.doctrina-youtube/transcript.js`); cue times are the captions'. Who speaks is taken from the video's title and channel, never from the captions (they carry no speaker labels).
@@ -85,6 +156,12 @@ Status: draft, NOT verified by Pedro
 **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** the dossier reads John 3:5 through Trent VII, Baptism, can. 2 and CEC 1257 (`catholic.es.ts`, entry 1); the quotes defend the baptismal reading, consistent with it `[inference]`.
 
 
+**C5 addition (2026-11-08) · Rebirth “from above” is the Spirit’s action in baptism.**
+- **Dr. Brant Pitre**, named speaker of *The Mass Readings Explained* in the page’s transcript introduction (no additional church office established here), «Baptism in the Bible: Where Scripture Teaches It», Catholic Productions, 2019-07-18; public publisher-transcript edition retrieved 2026-11-08, https://catholicproductions.com/blogs/blog/baptism-in-the-bible. Locator: within the marked “Full Transcript,” segment beginning «This is such an important passage» and ending before «So that’s a first text»; 159 words; first words «This is such an important passage because it shows»; last words «child of God, a temple of the Holy Spirit.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The segment explains Jesus’ “water and spirit” language and the double meaning of anothen. It is Pitre’s first-person explanation after the Nicodemus quotation, not the preceding Bible reading. The publisher’s introductory summary and FAQ are excluded.
+  > This is such an important passage because it shows that for Jesus himself, baptism is not simply an outward sign of an inward conversion. It’s a spiritual sacrament. It’s a supernatural rebirth that takes place in the soul when a person is baptized in the power of the water and the spirit, and the Holy Spirit is united with the water and that person is given new life, becomes a new creation in Christ. And you can already see this in the expression of Jesus above in the earlier verses. When he says the words “born again”, in Greek the word “again” is anothen. It has a double meaning. It can mean born again, but it can also mean born from above. When were we born from above? When the Holy Spirit came down from heaven and entered into our souls at the very moment of baptism, making us a child of God, a temple of the Holy Spirit.
+
+**C5 count and independence.** By person and work: **4 persons** (Akin, Heschmeyer, Broussard, Pitre), 6 works (the earlier five plus this transcript); by organisation/outlet: 2 (Catholic Answers, Catholic Productions), with no independence inferred. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## 4. Baptism · Rom 6:3–4; Col 2:12 (page entry 4; the dossier reads them with CEC 1214 and 1227)
 
 **Argument A · Baptism is how we enter Christ's death and resurrection, and that is regenerative.**
@@ -117,6 +194,12 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **2 persons** (Heschmeyer, Broussard), 2 works by organisation Catholic Answers; by organisation: **1**. Akin, Horn: no hit on this passage in the sources searched (the catholic.com podcast pages and magazine articles listed under «Sources searched»).
 **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** consistent with CEC 1214 and 1227 as the dossier cites them `[inference]`.
+
+**C5 addition (2026-11-08) · Baptism participates in both Christ’s death and His resurrection.**
+- **Dr. Brant Pitre**, named speaker of *The Mass Readings Explained* in the page’s transcript introduction (no additional church office established here), «Baptism in Romans 6 Explained: Dying and Rising», Catholic Productions, 2020-05-07; public publisher-transcript edition retrieved 2026-11-08, https://catholicproductions.com/blogs/blog/baptism-in-romans-6. Locator: within the marked “Full Transcript,” segment beginning «So what is Paul describing» and ending before «Why Christians Worship»; 174 words; first words «So what is Paul describing here? Baptism is, in»; last words «of a new creation and resurrection from the dead.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The section follows Pitre’s reading of Rom 6:3–11 and explains immersion as participation in burial and resurrection/new creation. Col 2:12 is not separately treated in this cut. The publisher’s introductory summary and FAQ are excluded.
+  > So what is Paul describing here? Baptism is, in short, our participation in not just the death of Jesus Christ, but also his resurrection. Baptism is not just our participation in his burial, into the waters of death, but also our participation in his resurrection from the waters of death through the power of the Holy Spirit. This is one of the reasons, by the way, that baptism by immersion is such a powerful symbol of death and resurrection. Because if you take a child and you immerse that child, for example, or an adult, in the waters of Baptism, when you go underwater and you come up from the water, what you do? You take a deep breath. It's like the intake of the Holy Spirit and the beginning of new life in Christ. It is the beginning of a new creation. And that's really the theme that the Church is calling us to focus on at the Easter vigil. It is the theme of a new creation and resurrection from the dead.
+
+**C5 count and independence.** By person and work: **3 persons** (Heschmeyer, Broussard, Pitre), 3 works; by organisation/outlet: 2 (Catholic Answers, Catholic Productions), with no independence inferred. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
 
 ## 5. Baptism · Titus 3:5 (page entry 5; the dossier reads it with CEC 1215)
 
@@ -181,6 +264,12 @@ Status: draft, NOT verified by Pedro
 **B5 addition:** Karl Keating added to this passage (work: «Should (or Can) Babies Be Baptized?», 217 words). Recount: the persons listed in the line above plus Karl Keating; by organisation still 1 (Catholic Answers).
 **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** CEC 1252 calls it «very possible» (the dossier); Akin's «does not exclude» is consistent `[inference]`.
 
+**C5 addition (2026-11-08) · The jailer’s immediate baptism is read alongside Acts 2:38–39.**
+- **Dave Armstrong**, the page's byline names him (no additional office established here), «Dialogue with a Baptist Pastor on Whether Infant Baptism is Indicated in the New Testament», *Biblical Evidence for Catholicism*, 2015-04-29; Blogger online edition retrieved 2026-11-08, https://socrates58.blogspot.com/2015/04/dialogue-with-baptist-pastor-on-whether.html. Locator: reply after the Acts 16:29–34 discussion; two consecutive replies beginning “Now, of course” and “In other words”, ending before “Nor is just believe”; 106 words; first words «Now, of course, you say the repentance only brings»; last words «out as explicitly as it is in Acts 2:38-39.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The introduction says the Baptist pastor’s words are blue. Both quoted replies have no blue ancestor in the feed HTML; the intervening blue objections are excluded. No words are attributed to the unnamed pastor. Acts 16:33 and Acts 2:38–39 are the passages under discussion; the other households are not separately expounded in this cut.
+  > Now, of course, you say the repentance only brings about the forgiveness and salvation and reception of the Holy Spirit, and the baptism is mere symbol. I say it is just as, if not more plausible to interpret this (especially in light of other verses) as baptism having as much relation to forgiveness as the repentance does.In other words, here Peter does seem to connect salvation and baptism. The fact remains that the Philippian jailer was baptized as soon as possible. This is not inconsistent with what we (and Lutherans, Orthodox, etc.) teach. It's just not spelled out as explicitly as it is in Acts 2:38-39.
+
+**C5 count and independence.** Recorded by person and work: 3 persons (Akin, Keating, Armstrong), 3 works; by organisation/outlet: 2 (Catholic Answers, Armstrong’s blog). The old Keating block is brief. For the fuller argument: **2 persons** (Akin, Armstrong); no organisational independence is inferred. Only the jailer’s household receives this additional explanation; Lydia, Crispus and Stephanas retain their earlier evidence. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## 10. Baptism · Mark 10:14 (page entry 10; the dossier reads it with CEC 1244 and 1261). The quotes below are on the parallel passages, Matt 19 and Luke 18:15–17.
 
 **Argument A · If the kingdom belongs to children, baptism, the door into it, is not to be denied to them.**
@@ -243,6 +332,12 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **1 person** (Heschmeyer), 1 work. By organisation: 1. Mark 10:38 not covered. Gap stated.
 **Contested within the tradition:** `[not searched]`.
+
+**C5 addition (2026-11-08) · Christ’s death is called a baptism; water baptism unites the baptized to that death.**
+- **Taylor Marshall**, author named by the source (no additional church office established here), «Why Was Christ Baptized If He Was Without Sin?», taylormarshall.com, 2010-01-10; online edition retrieved 2026-11-08, https://taylormarshall.com/2010/01/why-was-christ-baptized-if-he-was.html. Locator: under “Is Baptism a Ceremonial Washing?”, paragraph before “As we can see then”; 101 words; first words «The Hebrew word tevilah was translated by the Greek»; last words «the baptism with which I am baptized?” (Mk 10:38)». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The page identifies the text as an excerpt from Marshall’s *The Crucified Rabbi: Judaism and the Origins of Catholic Christianity*; no print year or page is supplied in this record because the printed book was not opened. Mark 10:38 is expressly named; John 19:34 is not expounded in this cut.
+  > The Hebrew word tevilah was translated by the Greek word baptisma. They both mean wash or immerse. The idea of plunging into water is associated with Christ plunging into death and rising again in newness of life (Rom 6:4-6). Baptism unites us to the mystery of Christ’s death and resurrection and it is therefore associated with regeneration, recreation, the forgiveness of sins, life everlasting, and the final resurrection of the body. Christ spoke of his death as a “baptism” when he asked John and James, “Are you able to be baptized with the baptism with which I am baptized?” (Mk 10:38)
+
+**C5 count and independence.** By person and work: **2 persons** (Heschmeyer, Marshall), 2 works; by organisation/outlet: 2 (Catholic Answers, Marshall’s blog). No independence inferred. This joins Heschmeyer on John 19:34 with Marshall on Mark 10:38; it does not supply two persons for each constituent verse. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
 
 ## 16. Baptism · Matt 3:13–17 (page entry 16; the dossier reads it with CEC 1224)
 
@@ -312,6 +407,12 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **1 person(s)**, 1 work(s); by organisation: **1** (all Catholic Answers staff). 1 Cor 6:11: Horn quotes it in an article on homosexual behaviour (not about baptism); not quoted. Broussard quotes 1 Cor 12:12–13 in «Communion of Saints» only as a Bible quotation inside an argument about the communion of saints: not quoted.
 **Contested within the tradition:** `[not searched]`.
 
+**C5 addition (2026-11-08) · A threefold parallel links washing, justification and the Spirit.**
+- **Dave Armstrong**, the page's byline names him (no additional office established here), «Biblical Evidence for Baptismal Regeneration vs. John Calvin's "Sign and Seal"», *Biblical Evidence for Catholicism*, 2009-08-14; Blogger online edition retrieved 2026-11-08, https://socrates58.blogspot.com/2009/08/biblical-evidence-for-baptismal.html. Locator: the argument following the Titus / John comparison, ending before “I shall also answer Calvin with Luther”; 144 words; first words «What is "washing" in one verse (with two other»; last words «and regeneration are the subject matter of John 3:5.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The page identifies this as an excerpt from his *The Catholic Verses* (2004), pp. 102–111; the printed book was not opened. This cut is Armstrong’s prose, including his embedded biblical quotation, not Calvin’s quoted objection.
+  > What is "washing" in one verse (with two other common elements) is "water" in the other. Thus, baptism is tied to salvation, in accord with the other verses above. 1 Corinthians 6:11 is also similar to Titus 3:5 and John 3:5: “And such were some of you. But you were washed, you were sanctified, you were justified in the name of the Lord Jesus Christ and in the Spirit of our God.”The "justified" is the parallel of "kingdom of God" and "saved" in Titus 3:5 and John 3:5; "washed" goes along with "washing of regeneration" and "born of water," and all this was done by the Spirit. Now it is a striking threefold parallelism. Furthermore, it is notable that baptism, justification, and sanctification are all mentioned together. This cross-referencing supports the argument that both baptism and regeneration are the subject matter of John 3:5.
+
+**C5 count and independence.** By person and work: **2 persons** (Heschmeyer, Armstrong), 2 works; by organisation/outlet: 2 (Catholic Answers, Armstrong’s blog). No independence inferred. Armstrong expressly interprets 1 Cor 6:11 alongside John 3:5 and Titus 3:5; **1 Cor 12:13 is not treated in this cut**. The two-person count applies to the first verse of the grouped entry, not every verse. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## 8. Baptism · Rom 5:12 (page entry 8) (round 2, session B2)
 
 **Argument A · The Magisterium reads Rom 5:12 as original sin: Trent’s decree appeals to it (Broussard); Akin lists it among the passages whose sense Trent partially defined (his lead-in is in the count line, not in the quoted line).**
@@ -362,6 +463,12 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **1 person(s)**, 1 work(s); by organisation: **1** (all Catholic Answers staff). The sentence paraphrases Augustine; it is Heschmeyer’s own wording in an automatic transcript.
 **Contested within the tradition:** `[not searched]`.
+
+**C5 addition (2026-11-08) · An indelible seal does not make perseverance unnecessary.**
+- **Tim Staples**, named author in the page’s byline (additional office not established on this article), «What Does the Bible Say About Confirmation?», Catholic Answers, 5/30/2023; public online article/transcript edition retrieved 2026-11-08, https://www.catholic.com/magazine/online-edition/where-is-confirmation-in-the-bible. Locator: whole paragraph beginning “Yet the Bible knows nothing of this”; 90 words; first words «Yet the Bible knows nothing of this. This “seal”»; last words «of grace we receive this side of the veil.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article is about confirmation following baptism, using Acts 8:14–17 and Eph 4:30. It must not be presented as a second baptism-only interpretation, nor as an exposition of Eph 1:13–14 or 2 Cor 1:21–22. The catechism and Lumen gentium quotations elsewhere in the article are not copied.
+  > Yet the Bible knows nothing of this. This “seal” of Eph. 4:30 is indelible—for (Greek eis, or “unto”) the day of redemption—and it helps us to cooperate with the grace it provides. But there is nothing in that text that guarantees heaven. The truth is this: if we do not cooperate with the grace of the sacrament, our rejection of those graces will only take us to a lower state in hell! And this is true of all of the gifts of grace we receive this side of the veil.
+
+**C5 count and independence.** By person and work: **2 persons** (Heschmeyer, Staples), 2 works; by organisation/outlet: 1 (Catholic Answers). No independence inferred. The new exposition is specifically about Eph 4:30’s seal in the confirmation context. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
 
 ## Not done
 - Page entries 7 (1 Cor 6:11 / 12:13), 8 (Rom 5:12), 13 (Eph 4:30 / 1:13–14 / 2 Cor 1:21–22), 14 (1 Tim 2:4), 18 (Eph 4:25), 19 (Gal 5:3): nothing found yet in the sources searched. Entries 2, 3 and 12 already carry quotes on the page and are not duplicated here. Mark 10:38 (entry 15) is not covered.
@@ -443,3 +550,53 @@ Counts (294, 50, 108, 104, 146) not recounted, as instructed. Not checked: the P
 - Locators: 26 CONFIRMED, 19 WRONG (9 wrong paragraph, 10 wording).
 - Count lines: 19 of 20 CONFIRMED, 1 WRONG.
 - Headings: 5 quotes or clauses do not carry the argument.
+
+## 14. Baptism · 1 Tim 2:4 (page entry 14)
+
+**C5 addition (2026-11-08) · How the commission reasons from God’s universal saving will to hope for infants.**
+- **Taylor Marshall**, author named by the source (no additional church office established here), «Salvation of Unbaptized Infants (Limbo Part II)», taylormarshall.com, 2007-10-20; online edition retrieved 2026-11-08, https://taylormarshall.com/2007/10/salvation-of-unbaptized-infants-limbo.html. Locator: whole paragraph beginning “These are the two doctrines”; 99 words; first words «These are the two doctrines on which HOSFI centers»; last words «– a way not necessitating the waters of baptism.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. Marshall is explaining the reasoning of the International Theological Commission document discussed in the post; this is not presented as a new dogmatic definition. The preceding official-document quotation is not copied.
+  > These are the two doctrines on which HOSFI centers the debate. The conclusion of the documents will follow from these premises. Primarily, HOSFI seeks to amplify 1 Tm 2:4 – that God desires that all men be saved. This is the major premise of their argument. If it is the case that God desires all men to be saved, then He also desires that all babies be saved. Babies cannot ask for baptism or refuse it. So HOSFI looks for another way in which salvation might be applied to infants – a way not necessitating the waters of baptism.
+
+**C5 count and independence.** By person and work: **1 person** (Marshall), 1 work; by organisation/outlet: 1 (his blog). Short exposition of 1 Tim 2:4 in the infant-baptism context; a second person remains missing. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
+## 3. Baptism · Acts 2:38 (page entry 3; C5 addition)
+
+**C5 addition (2026-11-08) · Repentance and baptism bring forgiveness, rather than merely symbolizing it.**
+- **Dr. Brant Pitre**, named speaker of *The Mass Readings Explained* in the page’s transcript introduction (no additional church office established here), «Repent and Be Baptized: Acts 2:38 & Infant Baptism», Catholic Productions, 2020-05-22; public publisher-transcript edition retrieved 2026-11-08, https://catholicproductions.com/blogs/blog/repent-and-be-baptized. Locator: within the marked “Full Transcript,” segment beginning «Wow! So what is important» and ending before «Third. Notice»; 110 words; first words «Wow! So what is important about this passage? Well»; last words «is what Baptism does. It washes away our sin.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The short complete argument explicitly interprets Acts 2:38; the following discussion of children is not copied. The page’s existing inline Broussard and Heschmeyer records were checked before adding this different person and work. The publisher’s introductory summary and FAQ are excluded.
+  > Wow! So what is important about this passage? Well at least three things. Number one. When the people hear Peter's homily and are cut to the heart, his response to them is repent and be baptized. In other words, he points them, as I just said, to the sacraments. Number two. Notice here that Peter considers Baptism not just to be a symbol, but to be what we would call a sacrament. It has the power to forgive sins. That's why he says here, "be baptized in the name of the Lord Jesus Christ for the forgiveness of your sins." That is what Baptism does. It washes away our sin.
+
+**C5 count and independence.** Recorded by person and work: **3 persons** (Broussard, Heschmeyer, Pitre), 3 works including the two existing inline page works; by organisation/outlet: 2 (Catholic Answers, Catholic Productions), with no independence inferred. The old inline words are not duplicated here or newly verified. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
+## 19. Baptism · Gal 5:3 (page entry 19; C5 addition)
+
+**C5 addition (2026-11-08) · The law cannot serve as a self-made route to salvation.**
+- **Joan Summers**, named author in the page’s byline; no church office established here, «Salvation for Non-Christians Explained Sola Scriptura», Catholic Answers, 2/1/2003; public online article/transcript edition retrieved 2026-11-08, https://www.catholic.com/magazine/print-edition/salvation-for-non-christians-explained-sola-scriptura. Locator: whole paragraph beginning “Paul distinguishes”; 69 words; first words «Paul distinguishes between three kinds of people. Those who»; last words «merciful initiative of God’s grace in offering them salvation.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. Gal 5:3 is one of three supporting citations within a discussion of salvation for non-Christians. This is a brief application, not an extended exposition of circumcision or baptism.
+  > Paul distinguishes between three kinds of people. Those who knowingly reject God receive God’s condemnation (Rom. 1:18–21). Those who try a do-it-yourself way of salvation through following the law will be judged by the law and condemned, since they fail to keep the law perfectly (Gal 3:10, Rom. 3:20, Gal. 5:3). Both of these groups of people have rejected the merciful initiative of God’s grace in offering them salvation.
+
+**C5 count and independence.** Recorded by person and work: 1 person (Summers), 1 work; by organisation/outlet: 1 (Catholic Answers). Extended verse-level exposition: **0 persons**. The words are retained as what was found, without promoting the citation list into two deep readings. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
+## 2. Baptism · Matt 28:19–20; Mark 16:15–16 (page entry 2; C5 coverage)
+
+The existing inline page records contain Heschmeyer and Horn; Otálora is excluded by the standing decision. Their exact words are already in the page and are not copied again. Hahn’s Matthew commission cut is stored once in `apologists-catholic-sola-scriptura.md`, page entry 1; no separate Mark expansion is claimed.
+
+**Count and independence.** **2 persons** (Heschmeyer, Horn) in the legacy inline evidence; 2 works, 1 organisation/outlet (Catholic Answers). Old words not newly verified. **Contested within the tradition:** `[not searched]`.
+
+## 12. Baptism · 1 Pet 3:21 (page entry 12; C5 coverage)
+
+The existing page inline evidence and the earlier 1 Pet 3:20–21 baptism arguments are retained; a heading/index boundary must not turn their verse 21 material into a false zero. No quote or person is duplicated here.
+
+**Count and independence.** Existing persons and works are inventoried in the current page-row table above; the underlying inline/source blocks retain their editions and tags. **Contested within the tradition:** `[not searched]`.
+
+## 18. Baptism · Eph 4:25 (page entry 18; C5 coverage)
+
+Not found as a qualifying in-depth baptism exposition: indexed Armstrong 1,470 (two list documents); Marshall 4,186, CA 883, Hahn 168 and Pitre 24 eligible transcripts (zero each). Armstrong’s first candidate lists truth-language references; the other is an official-document excerpt collection, not a new named apologist. No third-party summary is counted.
+
+**Count and independence.** **0 persons**, 0 qualifying works, 0 organisations/outlets recorded for a new explanation. **Contested within the tradition:** `[not searched]`.
+
+## 1 Tim 2:4 (God wills all men to be saved) (C5 additions: Catholic Answers corpus)
+
+**Argument A · Because Paul says God wills all men to be saved, salvation must be at least possible for everyone, including those who through no fault of their own never heard of Christ or were never baptized.**
+- **Joan Summers**, «Salvation for Non-Christians Explained Sola Scriptura», Catholic Answers, 2003-02-01, https://www.catholic.com/magazine/print-edition/salvation-for-non-christians-explained-sola-scriptura, 1 paragraph(s), 132 words, from the paragraph beginning «Paul assures us that God wills…» to the one ending «…means for them to be saved.» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «Joan Summers» (the page's author field in its saved page data); `standing: to verify before publishing`; not a person of `apologists.md`):
+  > Paul assures us that God wills all men to be saved (1 Tim. 2:4). He must then have provided the means for that will to be accomplished, which means salvation must be at least possible for everyone. At the time the gospel first went out it was confined primarily to the Mediterranean lands. So what about the people of northern Europe, Australia, North and South America, southern Africa, and the Far East? The gospel didn’t come to the shores of the Americas until the 16th century. Even today most of the world remains unbaptized. Is the greater part of humanity without any hope of salvation? It would make no sense for God to say he wants all men to be saved and then not provide the means for them to be saved.
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (Joan Summers), 1 work(s) in this group; Catholic Answers staff are several persons of one organisation. **Applies the official teaching:** `[not re-read here]`. **Contested within the tradition:** `[not searched]`.

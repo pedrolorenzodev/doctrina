@@ -7,6 +7,11 @@ Status: draft, NOT verified by Pedro
 - Method: captions through the logged-in transcript panel, passage mentions found with `vq.py` (chapter level), boundaries read cue by cue (`passages/method-apologists.md`).
 - Verifier pass: none yet on the blocks below.
 
+- **C5 start (2026-11-08):** Catholic bounded pass closed before this file. Current page rows are inventoried individually in `apologists-c5-log.md` (280 Baptist rows in total, rather than the older prompt’s page count). Rebuild named public text corpora once, measure all rows, then read at most three ranked candidates per row; retain prior quoted blocks and the S2 rejected-lead notes. No new quote has yet been added here.
+- **Resume:** 9Marks public REST custom type `article` crawl in scratch; Credo/Founders/Truth Unites next if quota allows. Attribute to the actual byline, never the outlet or a generic WordPress user. All page rows remain not reached until their measured/search result is written to the log.
+- **C5 continuation (Claude, 2026-11-08):** the Baptist indexes were built over 9Marks (2,100), Credo (1,000) and Truth Unites (577) and the best-matching articles were read in ±1,500-character windows; the new records are in the sections headed «C5 additions». Rows with at least 2 persons are counted in `apologists-c5-log.md` (the Baptist tables and the «Baptist continuation» section); rows not reached stay marked there as `measured, not read` or `not found`. Bylines come from each page's own author metadata; standing is `to verify before publishing`.
+- Status: partial
+
 ## Tags
 - `[verified: captions]`: the words occur in YouTube's auto-generated captions of that video at the cue times given (read through the logged-in transcript panel, `transcript.js`). Auto-captions are machine-made: mishearings stay in the text, and they carry no speaker labels.
 - `[verified: page]`: the text was fetched with `curl` from the URL given and copied from the page's paragraphs.
@@ -21,6 +26,106 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **1 person** (Ortlund), 1 work.
 **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
+## 1 Cor 11:25–26, Matt 26:29 (the Supper looks back to the Passover and forward to the marriage supper) (C5 additions: 9Marks, Credo and Truth Unites corpora)
+
+**Argument A · Every celebration of the Supper draws the church back to the Last Supper and the Passover and forward to the marriage supper of the Lamb; the bread and cup proclaim the Lord's death until he comes.**
+- **Andrew Wilson**, «How the Exodus Connects to Baptism & the Lord’s Supper», 9Marks, 2018-05-07, https://www.9marks.org/article/how-the-exodus-connects-to-baptism-the-lords-supper/, 1 paragraph(s), 175 words, from the paragraph beginning «Similar things are true of the…» to the one ending «…the wine to come (Num. 13:23–24).» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «Andrew Wilson» (the page's own author metadata); the quote starts mid-argument: «Similar things are true of the Lord's Supper» refers to a baptism paragraph that is not included; `standing: to verify before publishing`; not a person of `apologists.md`):
+  > Similar things are true of the Lord’s Supper. Every time we celebrate it, we’re drawn back to the Last Supper and, beyond that, to all of the many exoduses and passovers that preceded it. Not for nothing did Jesus tell us, “Do this, as often as you drink it, in remembrance of me” (1 Cor. 11:25). At the same time, we’re also drawn forward to what await us in the future: the great marriage supper, for which the bread and wine are only the entrée: “I will not drink again of the fruit of the vine until that day when I drink it new with you in my Father’s kingdom” (Matt. 26:29). Or, as Paul put it, “As often as you eat this bread and drink the cup, you proclaim the Lord’s death until he comes” (1 Cor. 11:26). As we tear the loaf and share the cup, we are Joshua and Caleb, remembering the Passover meal. But we are also tasting the grapes of Eshcol and reveling in the wine to come (Num. 13:23–24).
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (Andrew Wilson), 1 work(s) in this group; 9Marks is one organisation with different bylines. **Applies the official teaching:** `[not applicable: no per-passage reading by the Baptist bodies; the confessions are BF&M, 1689, New Hampshire]`. **Contested within the tradition:** `[not searched]`.
+
+## 1 Cor 11:23–25, 10:16 (remembering the Lord's death together) (C5 additions: 9Marks, Credo and Truth Unites corpora)
+
+**Argument A · At the Lord's Table the church remembers the Lord's death for us; the Supper is personal but not private, and remembering happens in community, first with Christ and then with the brothers and sisters.**
+- **Caleb Batchelor**, «Reservations for Two: Remembering the Lord’s Death at the Lord’s Table Together», 9Marks, 2020-08-07, https://www.9marks.org/article/reservations-for-two-remembering-the-lords-death-at-the-lords-table-together/, 2 paragraph(s), 120 words, from the paragraph beginning «At the Lord’s Table, we remember…» to the one ending «…old covenant meal was communal, too.» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «Caleb Batchelor» (the page's own author metadata); `standing: to verify before publishing`; not a person of `apologists.md`):
+  > At the Lord’s Table, we remember the Lord’s death for us (1 Cor. 11:23–25). But while the Supper is personal, it is not private. As Guy Waters has written, “The meaning of the Supper is not the sum total of our unaided powers of reflection. . . . We engage our minds so that in the Supper we may commune with the Savior.”
+  > The Supper isn’t like flipping through old photo albums by yourself, pondering fond memories from your youth. Remembering happens in community—first with Christ and then with your brothers and sisters in Christ (1 Cor. 10:16, 25). The new covenant meal is communal to its core. And that shouldn’t surprise us. The old covenant meal was communal, too.
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (Caleb Batchelor), 1 work(s) in this group; 9Marks is one organisation with different bylines. **Applies the official teaching:** `[not applicable: no per-passage reading by the Baptist bodies; the confessions are BF&M, 1689, New Hampshire]`. **Contested within the tradition:** `[not searched]`.
+
+## Baptism and the Lord's Supper as visible signs of union with Christ (Rom 6:3–4, Col 2:11–12, Acts 22:16, Acts 2:38) (C5 additions: 9Marks, Credo and Truth Unites corpora)
+
+**Argument A · Baptism and the Supper are visible signs of the gospel: baptism shows the repentant sinner washed and united to Christ in his death and resurrection, the Supper shows the local church as one body, and the ordinances display salvation and union with Christ and point to changed people.**
+- **Tiago Oliveira**, «Yes, the Ordinances Really Do Change People», 9Marks, 2021-07-26, https://www.9marks.org/article/yes-the-ordinances-really-do-change-people/, 4 paragraph(s), 247 words, from the paragraph beginning «In baptism, we see the gospel…» to the one ending «…he will return (1 Cor. 11:23–26).» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «Tiago Oliveira» (the page's own author metadata); `standing: to verify before publishing`; not a person of `apologists.md`):
+  > In baptism, we see the gospel represented in the immersion of the repentant sinner. Through baptism, their sin has been “washed away” (Acts 22:16); their baptism proclaims that they are united to Christ in his death and resurrection (Col. 2:11–12; cf. Rom. 6:3–4).
+  > In the Lord’s Supper, we see the gospel portrayed when a local church, as one body, partakes of the Bread and the Cup (1 Cor. 10:16–17). The Lord’s Supper is a memorial meal in which the body of Christ remembers Christ’s body which he gave in the place of his people and Christ’s blood which he shed to establish the new covenant.
+  > These symbols are not abstract. They visibly display invisible truths—of salvation, regeneration, and union with Christ. That’s why Christ gave these symbols to the church. Those who participate in the ordinances ought to be Christians, such that the visible representation matches the invisible reality. In other words, yes, the ordinances change people. But they also point to changed people. Here’s what I mean.
+  > When we got baptized, we identified with both our repentance (Acts 2:38; cf. Rom 6:3–4) and our regeneration, that is, our new life in Christ (John 3:5–7; Rom. 6:4). Furthermore, we publicly affirmed our commitment not only to God, but also to his people. This latter commitment is crystallized through the Lord’s Supper, in which the local church comes together to remember the death of the Lord Jesus and anticipate the day when he will return (1 Cor. 11:23–26).
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (Tiago Oliveira), 1 work(s) in this group; 9Marks is one organisation with different bylines. **Applies the official teaching:** `[not applicable: no per-passage reading by the Baptist bodies; the confessions are BF&M, 1689, New Hampshire]`. **Contested within the tradition:** `[not searched]`.
+
+## 1 Cor 10:16–17, 10:21 (communion at the Lord's table) (C5 additions: 9Marks, Credo and Truth Unites corpora)
+
+**Argument A · The cup and the bread are visible, material signs; when the members of a local church partake they become the means by which they fellowship with Christ and one another, and one cannot partake at the table of the Lord and the table of demons.**
+- **Tiago Oliveira**, «Yes, the Ordinances Really Do Change People», 9Marks, 2021-07-26, https://www.9marks.org/article/yes-the-ordinances-really-do-change-people/, 2 paragraph(s), 150 words, from the paragraph beginning «Concerning the Lord’s Supper, Paul asks…» to the one ending «…rightly, we’re communing with something else.» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «Tiago Oliveira» (the page's own author metadata); `standing: to verify before publishing`; not a person of `apologists.md`):
+  > Concerning the Lord’s Supper, Paul asks the Corinthians: “The cup of blessing that we bless, is it not a participation in the blood of Christ? The bread that we break, is it not a participation in the body of Christ? Because there is one bread, we who are many are one body, for we all partake of the one bread” (1 Cor. 10:16–17; cf. John 6:53–58).
+  > The cup and the bread are visible, material signs. But when the members of a local church partake of these elements, they become something more. They become the means by which we fellowship with Christ and one another. That’s why Paul later says that “you cannot partake in the table of the Lord and the table of demons” (1 Cor. 10:21). When we’re participating rightly, there’s true communion with God and with one another. When we’re not participating rightly, we’re communing with something else.
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (Tiago Oliveira), 1 work(s) in this group; 9Marks is one organisation with different bylines. **Applies the official teaching:** `[not applicable: no per-passage reading by the Baptist bodies; the confessions are BF&M, 1689, New Hampshire]`. **Contested within the tradition:** `[not searched]`.
+
+## Acts 2:38, 2:41, 8:36–38, 9:18, 10:34–46, 16:33 (the baptisms recorded in Acts) (C5 additions: 9Marks, Credo and Truth Unites corpora)
+
+**Argument A · The baptisms recorded in Acts are largely immediate, and the writer sets out five that could model spontaneous baptism; he names three features of the Acts baptisms (first converts, supernatural acts of the Spirit, response to the apostolic message) and develops the first in the quoted part.**
+- **Caleb Morell**, «Does the Book of Acts Teach Spontaneous Baptisms?», 9Marks, 2020-03-10, https://www.9marks.org/article/does-the-book-of-acts-teach-spontaneous-baptisms/, 19 paragraph(s), 525 words, from the paragraph beginning «Of the nine instances of baptism…» to the one ending «…the gospel advances to new regions.» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «Caleb Morell» (the page's own author metadata); the quote flattens the page's headings and list items into lines; `standing: to verify before publishing`; not a person of `apologists.md`):
+  > Of the nine instances of baptism in Acts, two are ambiguous about the timing: the baptism of Lydia and her household in Philippi in Acts 16:14–15, and the Corinthians who “believed and were baptized” in Acts 18:8. Two involve the delayed reception of the Holy Spirit until after baptism: the Samaritans in Acts 8, and the baptism of the twelve disciples of John the Baptist at Ephesus in Acts 19:5. We’re left with five instances of baptism as possible models for spontaneous baptisms. (For a comprehensive list of baptisms in Acts see Table 1 below.)
+  > Here are the five spontaneous instances of baptism:
+  > Pentecost (Acts 2:38, 41)
+  > The Ethiopian Eunuch (Acts 8:36–38)
+  > Saul (Acts 9:18)
+  > Cornelius and his household (Acts 10:34–46)
+  > The Philippian jailer and his family (Acts 16:33)
+  > The Purposes of Baptisms in Acts
+  > The pattern of immediate baptisms is relatively clear. The question, however, is whether or not these examples of spontaneity are normative for churches today. Can we draw a positive warrant from them that spontaneous baptisms are permissible or even required?
+  > Luke records surprisingly few baptisms in Acts. In a book where thousands are converted and dozens of churches are started, he mentions only nine instances of baptism. In fact, Paul’s entire first missionary journey goes by without a single mention of baptism (see Acts 13–14). This suggests that the baptisms actually recorded are unusual or even inimitable. It raises the question: what’s so special about the recorded baptisms in Acts?
+  > Three features characterize the baptisms in Acts:
+  > The baptisms recorded all involve “first converts” in a historically-redemptively significant setting.
+  > Nearly every baptism is accompanied by supernatural acts of the Holy Spirit.
+  > Each baptism takes place in response to believing the Apostolic message.
+  > Let’s look at each of these in turn.
+  > The Baptism of “First Converts”
+  > The dominant theme of the baptisms in Acts is that they all involve so-called “first converts”—that is, the first people to believe in new regions that follow the outward trajectory of Jesus’ commission: “you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth” (Acts 1:8). So on Pentecost, 3000 are baptized as the church is established in Jerusalem. Just as the Exodus marked the creation of the people of God in the Old Testament and was accompanied by supernatural signs of judgment, so the New Covenant people of God is created at Pentecost with similar signs and wonders.
+  > In Acts 8, the gospel comes to the historic enemies of the Jews—the Samaritans—and they are baptized (Acts 8:12–13). Later in the same chapter, the gospel reaches an Ethiopian proselyte (Acts 8:36–38). Continuing the theme of gospel expansion, Acts 10 records the first instance of Gentile conversions and baptisms (Acts 10:34–46).
+  > At this point, however, the baptisms in Acts basically stop. With the notable exceptions of the baptisms in Philippi (Acts 16:14–15; 16:31–34) and Corinth, which signal the move outward to the ends of the earth, Luke largely goes silent. Why? Because one of the main reasons baptisms are recorded in Acts is to highlight God’s work in pioneer settings as the gospel advances to new regions.
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (Caleb Morell), 1 work(s) in this group; 9Marks is one organisation with different bylines. **Applies the official teaching:** `[not applicable: no per-passage reading by the Baptist bodies; the confessions are BF&M, 1689, New Hampshire]`. **Contested within the tradition:** `[not searched]`.
+
+## Rom 6:3–6, Gal 3:25–29 (baptism as the sign that unites) (C5 additions: 9Marks, Credo and Truth Unites corpora)
+
+**Argument A · Baptism publicly identifies Christians with Christ and with one another; Paul appeals to a common baptism as a means of unity in the church.**
+- **David Schrock**, «Waters That Unite: Five Truths About Water Baptism», 9Marks, 2016-03-14, https://www.9marks.org/article/waters-that-unite-five-truths-about-water-baptism/, 1 paragraph(s), 88 words, from the paragraph beginning «Too often baptism is seen as…» to the one ending «…those who are one in Christ.» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «David Schrock» (the page's own author metadata); `standing: to verify before publishing`; not a person of `apologists.md`):
+  > Too often baptism is seen as waters that divide. In the New Testament, however, baptism publicly identifies Christians with their Lord and one another. Especially in Paul, baptism is appealed to as a means of unity in the church. Those who have died and risen again with Christ are known by their common baptism (Romans 6:3–6). As Paul says in Galatians 3:25–29, all those who are “one in Christ Jesus” have been “baptized into Christ.” Baptism, therefore, is a means of identifying those who are one in Christ.
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (David Schrock), 1 work(s) in this group; 9Marks is one organisation with different bylines. **Applies the official teaching:** `[not applicable: no per-passage reading by the Baptist bodies; the confessions are BF&M, 1689, New Hampshire]`. **Contested within the tradition:** `[not searched]`.
+
+## 1 Cor 10:16–17, 11:25–26, Isa 25:6–8, Rev 19:6–9 (the Supper as foretaste of the heavenly banquet) (C5 additions: 9Marks, Credo and Truth Unites corpora)
+
+**Argument A · In the Supper the church shares by faith the benefits of Christ's sacrifice and tastes beforehand the feast that Isaiah and Revelation promise: an appetizer for the marriage supper of the Lamb.**
+- **Bobby Jamieson**, «The Lord’s Supper: A Foretaste of the Heavenly Banquet», 9Marks, 2020-12-22, https://www.9marks.org/article/the-lords-supper-a-foretaste-of-the-heavenly-banquet/, 13 paragraph(s), 237 words, from the paragraph beginning «In the Lord’s Supper, we remember…» to the one ending «…from all peoples. A feast forever.» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «Bobby Jamieson» (the page's own author metadata); `standing: to verify before publishing`; not a person of `apologists.md`):
+  > In the Lord’s Supper, we remember and proclaim Jesus’ death (1 Cor. 11:25–26). In the Lord’s Supper, we share together by faith the saving benefits of Christ’s sacrifice for us (1 Cor. 10:16–17). And in the Lord’s Supper, we experience a foretaste of the heavenly banquet. The Lord’s Supper is an appetizer for the feast that will commence on the day when Christ reunites heaven and earth.
+  > Consider God’s promises in Isaiah 25:6–8:
+  > On this mountain the LORD of hosts will make for all peoples
+  > a feast of rich food, a feast of well-aged wine,
+  > of rich food full of marrow, of aged wine well refined.
+  > And he will swallow up on this mountain
+  > the covering that is cast over all peoples,
+  > the veil that is spread over all nations.
+  > He will swallow up death forever;
+  > and the Lord GOD will wipe away tears from all faces,
+  > and the reproach of his people he will take away from all the earth,
+  > for the LORD has spoken.
+  > On that day, tears and shame will be forgotten forever. On that day, the smothering, strangling sheet of death that now suffocates us all will not just be lifted but consumed. On that day, death won’t be deferred or deflected but devoured. If all these miseries will be removed, what will take their place? A feast. A feast of the best. A feast for people from all peoples. A feast forever.
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (Bobby Jamieson), 1 work(s) in this group; 9Marks is one organisation with different bylines. **Applies the official teaching:** `[not applicable: no per-passage reading by the Baptist bodies; the confessions are BF&M, 1689, New Hampshire]`. **Contested within the tradition:** `[not searched]`.
+
+## Matt 28:19, Acts 2:41, 1 Cor 10:16–17 (baptism and the Supper as badges of belonging) (C5 additions: 9Marks, Credo and Truth Unites corpora)
+
+**Argument A · Baptism is a badge of belonging that marks a believer as the property of the Triune God and makes believers each other's family; the Supper enacts communion with Christ and so with one another.**
+- **Bobby Jamieson**, «The Ordinances: A True and Better Identity Politics», 9Marks, 2022-03-18, https://www.9marks.org/article/the-ordinances-a-true-and-better-identity-politics/, 2 paragraph(s), 212 words, from the paragraph beginning «Both baptism and the Lord’s Supper…» to the one ending «…the one bread” (1 Cor 10:17).» `[verified: page]` `[long-form: trim before public release]` (speaker per the page's byline; byline «Bobby Jamieson» (the page's own author metadata); `standing: to verify before publishing`; not a person of `apologists.md`):
+  > Both baptism and the Lord’s Supper proclaim that we belong to God, and, because we belong to God, we also belong to each other. When Jesus commands his disciples to baptize new believers “in the name” of the Father and Son and Holy Spirit, he is saying that baptism is a badge of belonging (Matt. 28:19). Baptism marks off a believer as the personal property of the Triune God. And because baptism makes us God’s property, it also makes us each other’s family. Those who were baptized at Pentecost were, by that act, “added to the church” (Acts 2:41). Baptism creates a new body politic, one defined not by any prior criterion of group membership, but by repentance and faith in Christ.
+  > And the Lord’s Supper corporately enacts our communion with Christ and thereby our communion with each other. That is, in the Lord’s Supper, a local church, by faith, shares in the benefits of Christ together (1 Cor. 10:16). And by so sharing in Christ, we come to share a single common life. By partaking of the bread that stands for his body, we ourselves solidify into solidarity: “Because there is one bread, we who are many are one body, for we all partake of the one bread” (1 Cor 10:17).
+
+**Count and independence (these additions only).** By person and work: **1 person(s)** (Bobby Jamieson), 1 work(s) in this group; 9Marks is one organisation with different bylines. **Applies the official teaching:** `[not applicable: no per-passage reading by the Baptist bodies; the confessions are BF&M, 1689, New Hampshire]`. **Contested within the tradition:** `[not searched]`.
 
 ## Not covered
 - The core-set passages (1 Cor 11:23–26, 10:16–17, Matt 26:26, Matt 28:19–20, 1 Cor 10:21): for Matt 28:19–20 the Baptist Baptism file has Ben Robin (about baptism, not the Supper); the verse index found no creator of `apologists.md` treating the others; Ortlund's 1 Cor 10:16 mention (Reformed View) is a quotation of older authors.

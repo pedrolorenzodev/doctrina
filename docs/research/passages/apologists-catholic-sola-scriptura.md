@@ -11,6 +11,69 @@ Status: draft, NOT verified by Pedro
 - Verifier pass: first read of the entries added after the earlier verifier done 2026-11-01 evening (session B2, `passages/verification-b2-1.md`): every quote matched the page text; the locators found wrong were corrected. Count lines and the other entries of the file were not re-read by this pass.
 - **Round 2 (session B2, 2026-11-01 evening):** entries added: 1, 5, 7, 11, 13, 14, 15. Method: the catholic.com pages (audio transcripts and magazine articles of Heschmeyer, Horn, Akin and Broussard) re-crawled on 2026-11-01 evening (1,742 pages) and every quote extracted from the page text by a script (a quote that did not match stopped the build); sections marked «(round 2, session B2)». Still without a quote: 8, 9, 12, 16, 17 (only unrelated mentions of the verses, or a Church document quoted inside an article). Second read 2026-11-01 evening (`verification-b2-2.md`, one Sonnet pass over every round-2 quote): quotes, locators, speakers, titles and dates confirmed; one caption cue range, three headings, one count line and ten overreaching headings were corrected; remarks about pages that are not quoted were not re-read. Counts below are by person and work («works» = distinct pages; a print-edition reprint is one work with its online article) and by organisation.
 
+### C5 page-row checkpoint (2026-11-08 10:12 UTC)
+
+These are recorded persons on at least part of each entry, including existing inline page records; they are not a claim of two deep expositors on every constituent verse. Corpus counts below are documents with explicit indexed references, not counts of qualifying explanations. Catholic Answers and Hahn crawls remain in progress.
+
+| Entry / passage(s) | Recorded persons | Armstrong documents (1,470 posts) | Marshall documents (4,186 posts) | State |
+|---|---|---|---|---|
+| 1. Matt.28.19-Matt.28.20, Mark.16.15 | 1 (Jimmy Akin) | 39 | 2 | no additional qualifying cut recorded; remaining corpora pending |
+| 2. 2Thess.2.15 | 3 (Jimmy Akin, Joe Heschmeyer, Karlo Broussard) | 37 | 2 | existing evidence retained; remaining corpora pending |
+| 3. Jude.1.3 | 2 (Jimmy Akin, Karlo Broussard) | 3 | 1 | existing evidence retained; remaining corpora pending |
+| 4. 1Tim.3.15 | 2 (Joe Heschmeyer, Trent Horn) | 41 | 2 | existing evidence retained; remaining corpora pending |
+| 5. 1Tim.6.20, 2Tim.1.12-2Tim.1.14 | 3 (Joe Heschmeyer, Karlo Broussard, Trent Horn) | 41 | 0 | existing evidence retained; remaining corpora pending |
+| 6. Luke.10.16 | 2 (Jimmy Akin, Joe Heschmeyer) | 12 | 2 | existing evidence retained; remaining corpora pending |
+| 7. Acts.2.42 | 2 (Joe Heschmeyer, Trent Horn) | 17 | 0 | existing evidence retained; remaining corpora pending |
+| 8. Luke.2.19, Luke.2.51 | 1 (Jimmy Akin) | 14 | 1 | no additional qualifying cut recorded; remaining corpora pending |
+| 9. Col.3.16 | 0 (none) | 2 | 0 | no additional qualifying cut recorded; remaining corpora pending |
+| 10. John.20.31, 2Tim.3.16-2Tim.3.17, 2Pet.1.19-2Pet.1.21, 2Pet.3.15-2Pet.3.16 | 2 (Jimmy Akin, Joe Heschmeyer) | 61 | 7 | existing evidence retained; remaining corpora pending |
+| 11. 1Thess.2.13, Heb.4.12, Acts.20.32 | 2 (Joe Heschmeyer, Trent Horn) | 34 | 2 | existing evidence retained; remaining corpora pending |
+| 12. Luke.24.45, Luke.24.25-Luke.24.27, Luke.24.44-Luke.24.46 | 0 (none) | 15 | 0 | no additional qualifying cut recorded; remaining corpora pending |
+| 13. Rom.12.6 | 2 (Jimmy Akin, Trent Horn) | 2 | 0 | existing evidence retained; remaining corpora pending |
+| 14. 1John.2.20-1John.2.27, John.16.13 | 2 (Joe Heschmeyer, Karlo Broussard) | 28 | 1 | existing evidence retained; remaining corpora pending |
+| 15. Heb.1.1-Heb.1.2 | 1 (Joe Heschmeyer) | 4 | 1 | no additional qualifying cut recorded; remaining corpora pending |
+| 16. Phil.3.8 | 0 (none) | 8 | 1 | no additional qualifying cut recorded; remaining corpora pending |
+| 17. Matt.18.20 | 0 (none) | 6 | 0 | no additional qualifying cut recorded; remaining corpora pending |
+
+- Resume: finish Catholic Answers and Hahn indexes; use `meta/reads.jsonl` before selecting candidates, at most three per page entry across sources. Existing pilot passages and inline records must not be duplicated. Scripture Catholic is blocked at robots (406); no corpus negative is claimed for it.
+- Status: partial
+
+- **C5 Hahn harvest (2026-11-08):** 168 attributed written reflections indexed (4,081 keys, 5,729 mentions). Public article text, not captions or a shop summary. Exact new cuts and limits below; the log retains all four page hit manifests. Catholic Answers crawl remains pending.
+- Status: partial
+
+- **C5 Pitre harvest (2026-11-08):** 58 publisher pages crawled; only 24 marked full transcripts indexed as speaker text. Five exact cuts added from those transcripts, with one shared-source cross-reference. No summary/FAQ is quoted as Pitre. See log for all source paths, rejected candidates and budgets. Catholic Answers still pending.
+- Status: partial
+
+### C5 bounded pass closed (2026-11-08 10:51 UTC)
+
+“Done” follows the work order’s worked-pass finish line: every current page row has recorded material or a scoped search line. It does **not** mean two deep expositors on every constituent verse. All old blocks and tags remain; the newer source/standing and depth limitations are stated in each addition.
+
+Corpus columns count documents with indexed explicit references: Armstrong 1,470 posts; Marshall 4,186 posts; Catholic Answers 883 retrieved topical pages (16/899 selected URLs returned 404); Hahn 168 written reflections; Pitre 24 eligible marked transcripts from 58 crawled pages. Scripture Catholic was blocked at robots (406), so it supplies no negative corpus evidence.
+
+| Entry / passage(s) | Recorded persons | Armstrong / Marshall / CA / Hahn / Pitre documents | Result / limitation |
+|---|---|---|---|
+| 1. Matt.28.19-Matt.28.20, Mark.16.15 | 2 (Jimmy Akin, Scott Hahn) | 39 / 2 / 41 / 4 / 0 | Hahn Matthew commission; Mark not separately expanded |
+| 2. 2Thess.2.15 | 4 (Dr. Brant Pitre, Jimmy Akin, Joe Heschmeyer, Karlo Broussard) | 37 / 2 / 41 / 0 / 1 | Akin + Pitre explicit tradition argument; four recorded in all |
+| 3. Jude.1.3 | 2 (Jimmy Akin, Karlo Broussard) | 3 / 1 / 2 / 0 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 4. 1Tim.3.15 | 2 (Joe Heschmeyer, Trent Horn) | 41 / 2 / 24 / 0 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 5. 1Tim.6.20, 2Tim.1.12-2Tim.1.14 | 3 (Joe Heschmeyer, Karlo Broussard, Trent Horn) | 41 / 0 / 15 / 0 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 6. Luke.10.16 | 2 (Jimmy Akin, Joe Heschmeyer) | 12 / 2 / 22 / 2 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 7. Acts.2.42 | 3 (Dr. Brant Pitre, Joe Heschmeyer, Trent Horn) | 17 / 0 / 10 / 2 / 1 | existing records preserved; their depth/standing not newly reverified |
+| 8. Luke.2.19, Luke.2.51 | 2 (Jimmy Akin, Scott Hahn) | 14 / 1 / 0 / 2 / 0 | two recorded; Hahn is a short application, not a second oral-source argument |
+| 9. Col.3.16 | 1 (Scott Hahn) | 2 / 0 / 2 / 4 / 0 | one short application; two CA leads remain unread at cap |
+| 10. John.20.31, 2Tim.3.16-2Tim.3.17, 2Pet.1.19-2Pet.1.21, 2Pet.3.15-2Pet.3.16 | 2 (Jimmy Akin, Joe Heschmeyer) | 61 / 7 / 53 / 4 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 11. 1Thess.2.13, Heb.4.12, Acts.20.32 | 2 (Joe Heschmeyer, Trent Horn) | 34 / 2 / 12 / 2 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 12. Luke.24.45, Luke.24.25-Luke.24.27, Luke.24.44-Luke.24.46 | 2 (Fr. John Waiss, Scott Hahn) | 15 / 0 / 9 / 7 / 0 | Hahn + Waiss; specified Luke verses and limitations in records |
+| 13. Rom.12.6 | 2 (Jimmy Akin, Trent Horn) | 2 / 0 / 1 / 0 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 14. 1John.2.20-1John.2.27, John.16.13 | 2 (Joe Heschmeyer, Karlo Broussard) | 28 / 1 / 15 / 1 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 15. Heb.1.1-Heb.1.2 | 2 (Joe Heschmeyer, Scott Hahn) | 4 / 1 / 5 / 2 / 0 | Hahn on revelation in the Son, not a canon proof |
+| 16. Phil.3.8 | 1 (Dave Armstrong) | 8 / 1 / 3 / 2 / 0 | one Armstrong verse commentary; other candidates address surrounding verses |
+| 17. Matt.18.20 | 1 (Scott Hahn) | 6 / 0 / 1 / 1 / 0 | one Hahn exposition; read cap; CA list not promoted |
+
+- Timing: Catholic work approximately 09:58–10:49 UTC (~51 minutes), including serial crawls/indexes and exact-text audits. Weekly 36% at pilot close → latest 43% account reading: +7 account-wide points, not attributable solely to this run.
+- Resume: use the saved manifests and `meta/reads.jsonl`; do not recrawl. Known uncut public leads, short applications and partial grouped passages are next-run work. No claim that a printed book or paid transcript is the only remedy.
+- Status: done
+
 ## Tags
 - `[verified: page]`: the text was fetched on 2026-11-01 with `curl` from the URL given and matched in the page; for the transcripts of catholic.com podcast pages the speaker is the page's own label («Joe:») or byline, not a guess; those transcripts are machine-made (they contain mishearings). Quotations are short; a clipped quote ends with […]; the words are the source's.
 - «Not checked» against the dossier row means the dossier's reading was not compared sentence by sentence.
@@ -52,6 +115,12 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** Quoted: 3 persons (Akin, Broussard, Heschmeyer), 3 works; **but only Akin's quote states the argument of the heading** (the verifier's finding): Heschmeyer recites the verse and Broussard's summary answers White's reading, so the independent support for the heading is 1 person. By organisation: **1**. Horn: not found.
 **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not checked]` against the dossier row.
+
+**C5 addition (2026-11-08) · Apostolic traditions bind whether delivered orally or by letter.**
+- **Dr. Brant Pitre**, named speaker of *The Mass Readings Explained* in the page’s transcript introduction (no additional church office established here), «Jesus and the Traditions of Men (Mark 7) Explained», Catholic Productions, 2019-04-24; public publisher-transcript edition retrieved 2026-11-08, https://catholicproductions.com/blogs/blog/jesus-and-the-traditions-of-men. Locator: within the marked “Full Transcript,” segment beginning «But then there are certain traditions» and ending before «Now you might think»; 166 words; first words «But then there are certain traditions which are binding.»; last words «oral form. Those traditions we have to keep, right.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. This is Pitre’s explanation of 2 Thess 2:15 within a comparison with Mark 7; Jesus’ rejection of human traditions is distinguished from apostolic tradition. The later catechism quotation is not copied. The publisher’s introductory summary and FAQ are excluded.
+  > But then there are certain traditions which are binding. And so again we interpret, whenever we look at a passage in the Bible, we interpret it in context and in 2 Thessalonians 2:15, Paul says to the Christians, “stand firm and hold fast to the traditions,” paradosis, same word Jesus uses, “which you have heard from us, whether by word of mouth or by letter.” So St. Paul, inspired by the Holy Spirit, elsewhere in the New Testament says we actually do have to keep the traditions, whether they’re written or they’re oral, as long as they’re from the apostles. So apostolic tradition has to be kept. So in essence, what's going on here is we need to make the distinction between a tradition of men which contradicts the word of God, Jesus condemns that, and an apostolic tradition which is guided by the Holy Spirit and given to the church as binding, whether in written or oral form. Those traditions we have to keep, right.
+
+**C5 count and independence.** Recorded by person and work: 4 persons (Akin, Broussard, Heschmeyer, Pitre), 4 works; by organisation/outlet: 2 (Catholic Answers, Catholic Productions). For the explicit oral-and-written apostolic-tradition argument: **2 persons** (Akin, Pitre), following the earlier verifier’s limitation on the other two. No independence inferred. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
 
 ## 3. Sola Scriptura · Jude 3 (page entry 3)
 
@@ -195,6 +264,12 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **1 person(s)**, 1 work(s); by organisation: **1** (all Catholic Answers staff). The sentence is about teaching authority, not about preaching coming before writing (the page’s reading of Dei Verbum 7): only partly the same argument. Heschmeyer, Horn and Broussard cite Matt 28:19–20 in other arguments (baptism, the mission of the Church, the Trinity); those lines were not read as a Sola Scriptura argument and are not quoted.
 **Contested within the tradition:** `[not searched]`.
 
+**C5 addition (2026-11-08) · The commission calls God’s adopted children to observe all that Jesus commanded.**
+- **Scott Hahn**, named as the commentator in the page title; no church office established on this article, «Family of Love: Scott Hahn Reflects on the Solemnity of the Holy Trinity», St. Paul Center, publication date not established on the page examined; public online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/family-of-love-scott-hahn-reflects-on-the-solemnity-of-the-holy-trinity. Locator: paragraphs beginning «In Jesus, God’s word took flesh», ending before «Sign up for our newsletter»; 136 words; first words «In Jesus, God’s word took flesh as a son»; last words «live forever in the promised land of His kingdom.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article lists Matt 28:16–20 in its readings and interprets the commission and the promise of Christ’s presence. Mark 16:15 is not separately expounded. The Eucharistic application is Hahn’s, not an inference added by Doctrina.
+  > In Jesus, God’s word took flesh as a son of Abraham (see Matthew 1:1). And Jesus reveals in the Gospel today that the one God is Father, Son, and Spirit, and that He desires to make all people His own. As He led Israel out of Egypt, God freed us from slavery, Paul says in today’s Epistle. As He adopted Israel (see Romans 9:4), He gives us the Spirit by which we can know Him as “Our Father.” As God’s heirs, we receive the commissions of Moses and Jesus today. We are to fix our hearts on Him, and to observe all that He has commanded. The Eucharist is His pledge—that He will be with us until the end, that He will deliver us from death to live forever in the promised land of His kingdom.
+
+**C5 count and independence.** By person and work: **2 persons** (Akin, Hahn), 2 works; by organisation/outlet: 2 (Catholic Answers, St. Paul Center). No independence inferred. The additional explanation concerns the Matthew portion of the grouped entry. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## 5. Sola Scriptura · 1 Tim 6:20; 2 Tim 1:12–14 (page entry 5) (round 2, session B2)
 
 **Argument A · The deposit of faith is closed with the last apostles and is wider than the 66 books; Tradition and Scripture are both part of it (Horn, Heschmeyer, Broussard). None of the three names 1 Tim 6:20 or 2 Tim 1:12–14 in the quoted lines.**
@@ -242,6 +317,10 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **2 person(s)**, 2 work(s); by organisation: **1** (all Catholic Answers staff).
 **Contested within the tradition:** `[not searched]`.
+
+**C5 shared-source extension (2026-11-08).** **Dr. Brant Pitre**, named speaker of *The Mass Readings Explained*, «Doubting Thomas: My Lord and My God (John 20)», Catholic Productions, publication date not established here; publisher-transcript edition retrieved 2026-11-08, https://catholicproductions.com/blogs/blog/doubting-thomas-and-the-activity-of-the-early-apostolic-church. Exact cut stored once in `apologists-catholic-eucharist.md`, page entry 14; first words «One of the reasons I think that that's fascinating»; last words «present in this initial description of the early Church.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. Pitre expounds the apostles’ teaching, fellowship, breaking of bread and prayers; the cut does not derive a canon boundary from the verse.
+
+**C5 count and independence.** By person and work: **3 persons** (Heschmeyer, Horn, Pitre), 3 works; by organisation/outlet: 2 (Catholic Answers, Catholic Productions), with no independence inferred. **Contested within the tradition:** `[not searched]`.
 
 ## 11. Sola Scriptura · 1 Thess 2:13; Heb 4:12; Acts 20:32 (page entry 11) (round 2, session B2)
 
@@ -355,6 +434,12 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **1 person(s)**, 2 work(s); by organisation: **1** (all Catholic Answers staff).
 **Contested within the tradition:** `[not searched]`.
 
+**C5 addition (2026-11-08) · God speaks through His Son, the creator and sustainer, unveiling the last days.**
+- **Scott Hahn**, named as the commentator in the page title; no church office established on this article, «New Song: Scott Hahn Reflects on the Nativity of the Lord», St. Paul Center, publication date not established on the page examined; public online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/new-song-scott-hahn-reflects-on-the-nativity-of-the-lord. Locator: paragraphs beginning «Jesus is the new king.», ending before «He is the one Isaiah foretold»; 117 words; first words «Jesus is the new king. He is the royal»; last words «of a world that has exiled itself from God.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article lists Heb 1:1–6 in its readings and explains the Son and divine speech. It does not expound Heb 1:6’s worship command in this cut; it is not counted for the Eucharist adoration entry.
+  > Jesus is the new king. He is the royal firstborn son and Son of God promised to David, as we hear in today’s Epistle (see Psalms 2:7; 2 Samuel 7:14). And as our Gospel reveals, He is the Word of God, the one through whom the universe was created, the one through whom the universe is sustained. In speaking to us through His Son, God has unveiled a new age, the last days. The new age is a new creation. In the beginning, God spoke His Word and light shone in the darkness. Now, in this new age, He sends us the true light to scatter the darkness of a world that has exiled itself from God.
+
+**C5 count and independence.** By person and work: **2 persons** (Heschmeyer, Hahn), 2 works; by organisation/outlet: 2 (Catholic Answers, St. Paul Center). No independence inferred. This concerns the revelation in the Son; no canon conclusion is added. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## 8. Sola Scriptura · Luke 2:19; 2:51 (page entry 8; added by B5)
 
 **Argument A · Luke's Gospel draws on oral tradition from Mary (Luke 2:19, 2:51).**
@@ -368,5 +453,47 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **1 person** (Jimmy Akin), 1 work; by organisation 1 (Catholic Answers). The passage had no quote before B5. Not a verse-by-verse exposition of the page's passage: the speaker uses the verse inside a broader argument about tradition.
 **Contested within the tradition:** `[not searched]`.
 
+**C5 addition (2026-11-08) · Mary models keeping and reflecting on the word.**
+- **Scott Hahn**, named as the commentator in the page title; no church office established on this article, «Children of God: Scott Hahn Reflects on the Feast of Mary, Mother of God», St. Paul Center, publication date not established on the page examined; public online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/children-of-god-scott-hahn-reflects-on-the-feast-of-mary-mother-of-god. Locator: paragraphs beginning «This is the good news of great joy», ending before «Sign up for our newsletter»; 63 words; first words «This is the good news of great joy that»; last words «it dwell richly in our hearts (see Colossians 3:16).». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article lists Luke 2:16–21 and applies Mary’s response with Col 3:16. It does not separately discuss Luke 2:51, nor argue that Mary transmitted Luke’s source material orally. This is a devotional application, not an extended verse-level argument.
+  > This is the good news of great joy that the shepherds make known in Bethlehem today (see Luke 2:10). Like the shepherds, we too should make haste today to find Jesus with Mary and Joseph, to glorify God for His blessings. And like Mary, we should keep His word and reflect upon it, letting it dwell richly in our hearts (see Colossians 3:16).
+
+**C5 count and independence.** Recorded by person and work: 2 persons (Akin, Hahn), 2 works; by organisation/outlet: 2 (Catholic Answers, St. Paul Center). For the fuller oral-source argument: **1 person** (Akin). No independence inferred. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## Not done
 - Sola Scriptura entries 1 (Mt 28:19–20; Mc 16:15), 5 (1 Tim 6:20; 2 Tim 1:12–14), 7 (Hch 2:42), 8 (Lc 2:19; 2:51), 9 (Col 3:16), 11 (1 Tes 2:13; Heb 4:12; Hch 20:32), 12 (Lc 24), 13 (Ro 12:6), 14 (1 Jn 2:20–27; Jn 16:13), 15 (Heb 1:1–2), 16 (Flp 3:8), 17 (Mt 18:20). Entry 10 covers 2 Tim 3:16–17 only; Jn 20:31 and 2 Pet 1:19–21; 3:15–16 of that entry are not quoted.
+
+## 12. Sola-Scriptura · Luke 24:45; 24:25–27; 24:44–46 (page entry 12; C5 addition)
+
+**C5 addition (2026-11-08) · The apostles are taught how the prophets witness to Christ and then teach the Church.**
+- **Scott Hahn**, named as the commentator in the page title; no church office established on this article, «Seeing and Believing: Scott Hahn Reflects on Easter Sunday», St. Paul Center, publication date not established on the page examined; public online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/seeing-and-believing-scott-hahn-reflects-on-easter-sunday. Locator: paragraphs beginning «Chosen to be His “witnesses,”», ending before «We are the children»; 111 words; first words «Chosen to be His “witnesses,” today’s First Reading tells»; last words «and exaltation (see Luke 20:17; Matthew 21:42; Acts 4:11).». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. Luke 24:27 and 44 are explicit in the cut. Verse 45 is not separately quoted or expounded. The interpretation connects the risen Christ’s instruction with the apostolic preaching; it is not presented as a separate proof of any later canonical boundary.
+  > Chosen to be His “witnesses,” today’s First Reading tells us, the Apostles were “commissioned . . . to preach . . . and testify” to all that they had seen—from His anointing with the Holy Spirit at the Jordan to the empty tomb. More than their own experience, they were instructed in the mysteries of the divine economy, God’s saving plan—to know how “all the prophets bear witness” to Him (see Luke 24:27, 44). Now they could “understand the Scripture,” could teach us what He had told them—that He was “the Stone which the builders rejected,” that today’s Psalm prophesies His Resurrection and exaltation (see Luke 20:17; Matthew 21:42; Acts 4:11).
+
+**C5 count and independence.** By person and work: **1 person** (Hahn), 1 work; by organisation/outlet: 1 (St. Paul Center). A second person remains missing for this grouped entry. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
+**C5 addition (2026-11-08) · Christ opens the disciples’ minds to an interpretation of all the Scriptures.**
+- **Fr. John Waiss**, named in the page’s byline; no parish or other office established here, «Must We Prove the Assumption from the Bible?», Catholic Answers, 8/15/2025; public online article/transcript edition retrieved 2026-11-08, https://www.catholic.com/magazine/online-edition/must-we-prove-the-assumption-from-the-bible. Locator: three paragraphs beginning “Later, when Jesus rose,” including the Luke 24 quotation, ending before “This is how the ancient Church”; 187 words; first words «Later, when Jesus rose from the dead, as the»; last words «the scriptures” “beginning with Moses and all the prophets.”». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. Waiss uses this interpretive pattern later as an analogy in an article on the Assumption. The cut is an explanation of Luke 24:25–27 and 45; it is not presented as a narrative of Mary’s assumption or a historical verification of the later analogy.
+  > Later, when Jesus rose from the dead, as the disciples “did not [yet] know the scripture, that he must rise from the dead” (John 20:9), he appeared to them to explain Scripture to them. He did it first with the disciples traveling to Emmaus: “O foolish men, and slow of heart to believe all that the prophets have spoken! Was it not necessary that the Christ should suffer these things and enter into his glory?” And beginning with Moses and all the prophets, he interpreted to them in all the scriptures the things concerning himself. . . . And their eyes were opened and they recognized him; and he vanished out of their sight. They said to each other, “Did not our hearts burn within us while he talked to us on the road, while he opened to us the scriptures?” (Luke 24:25-27, 31-32). He had to do it with the apostles, too, to open “their minds to understand the scriptures” (Luke 24:45). But he seems to quote not just one or two passages to them, but “all the scriptures” “beginning with Moses and all the prophets.”
+
+**C5 count and independence.** By person and work: **2 persons** (Hahn, Waiss), 2 works; by organisation/outlet: 2 (St. Paul Center, Catholic Answers), with no independence inferred. The selected verse ranges are identified in each record; not every verse in the grouped entry receives separate exposition. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
+## 17. Sola-Scriptura · Matt 18:20 (page entry 17; C5 addition)
+
+**C5 addition (2026-11-08) · The Church’s binding authority is exercised in communion with Christ, gathered in His name.**
+- **Scott Hahn**, named as the commentator in the page title; no church office established on this article, «To Win Them Back: Scott Hahn Reflects on the Twenty-Third Sunday in Ordinary Time», St. Paul Center, publication date not established on the page examined; public online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/to-win-them-back-scott-hahn-reflects-on-the-twenty-third-sunday-in-ordinary-time. Locator: paragraphs beginning «As Ezekiel is appointed watchman», ending before «But today’s readings are more»; 152 words; first words «As Ezekiel is appointed watchman over the house of»; last words «pray and seek the will of our heavenly Father.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article lists Matt 18:15–20 and interprets the gathering in verse 20 in the context of binding, loosing and reconciling. It explicitly links the apostolic powers with successors. The cut also covers the Matt 18:18 part of Catholic Papacy entry 5; stored once here.
+  > As Ezekiel is appointed watchman over the house of Israel in today’s first Reading, so Jesus in the Gospel today establishes His disciples as guardians of the new Israel of God, the Church (see Galatians 6:16). He also puts in place procedures for dealing with sin and breaches of the faith, building on rules of discipline prescribed by Moses for Israel (see Leviticus 19:17–20; Deuteronomy 19:13). The heads of the new Israel, however, receive extraordinary powers—similar to those given to Peter (see Matthew 16:19). They have the power to bind and loose, to forgive sins and to reconcile sinners in His name (see John 20:21–23). But the powers He gives the Apostles and their successors depend on their communion with Him. As Ezekiel is only to teach what he hears God saying, so the disciples are to gather in His name and to pray and seek the will of our heavenly Father.
+
+**C5 count and independence.** By person and work: **1 person** (Hahn), 1 work; by organisation/outlet: 1 (St. Paul Center). A second person remains missing on the specific Matt 18:20 entry. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
+## 9. Sola-Scriptura · Col 3:16 (page entry 9; C5 extension)
+
+**C5 shared-source extension (2026-11-08).** **Scott Hahn**, «Children of God: Scott Hahn Reflects on the Feast of Mary, Mother of God», St. Paul Center, publication date not established; online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/children-of-god-scott-hahn-reflects-on-the-feast-of-mary-mother-of-god. The exact cut is stored once in `apologists-catholic-sola-scriptura.md`, page entry 8; first words «This is the good news of great joy that», last words «it dwell richly in our hearts (see Colossians 3:16).». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The final sentence applies Col 3:16’s indwelling word to the reader’s imitation of Mary. It does not treat the text as a complete statement about the canon.
+
+**C5 count and independence.** Recorded by person and work: **1 person** (Hahn), 1 work; by organisation/outlet: 1 (St. Paul Center). The application is short; two deep expositors are not established. **Contested within the tradition:** `[not searched]`.
+
+## 16. Sola Scriptura · Phil 3:8 (page entry 16; C5 verse-commentary addition)
+
+**Argument A · The comparison devalues possessions beside knowing Christ; it does not call a human being worthless.**
+- **Dave Armstrong**, named author in the page byline (no additional church office established here), «Has Martin Luther's "Snow-Covered Dunghill" Mystery-Legend Been Solved?!», *Biblical Evidence for Catholicism*, 2005-10-05; Blogger online edition retrieved 2026-11-08, https://socrates58.blogspot.com/2005/10/has-martin-luthers-snow-covered.html. Locator: sentence-bounded segment from «As a related aside» to the sentence before «This was one of the novel»; 121 words; first words «As a related aside, Scripture (KJV) does use the»; last words «though he is fallen, he is not worthless excrement.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article specifies KJV for the embedded Bible quotation, without a particular KJV printing. This is verse commentary within a justification debate, not a claim that Phil 3:8 itself defines Scripture’s authority or the canon. The subsequent historical charge about the Reformation is outside the cut.
+  > As a related aside, Scripture (KJV) does use the word dung some 28 or so times, but never, as far as I can tell from scanning a concordance, as a description of man. St. Paul, for example, writes in Philippians 3:8, in that same version: . . . I count all things but loss for the excellency of the knowledge of Christ Jesus my Lord: for whom I have suffered the loss of all things, and do count them but dung, that I may win Christ. Possessions are dung compared to the riches of Christ Jesus: a far different statement from calling man himself "dung." Man is made in God's image, and though he is fallen, he is not worthless excrement.
+
+**Count and independence.** By person and work: **1 person** (Armstrong), 1 work; by organisation/outlet: 1 (his blog). A second exposition of verse 8 remains missing. The Hahn reflection’s listed reading spans Phil 3:8–14, but its own explanation emphasizes verses 10–14; it is not counted as a second interpretation of verse 8. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.

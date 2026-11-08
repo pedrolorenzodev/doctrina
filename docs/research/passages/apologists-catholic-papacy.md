@@ -11,6 +11,63 @@ Status: draft, NOT verified by Pedro
 - Verifier pass: first read of the entries added after the earlier verifier done 2026-11-01 evening (session B2, `passages/verification-b2-1.md`): every quote matched the page text; the locators found wrong were corrected. Count lines and the other entries of the file were not re-read by this pass.
 - **Round 2 (session B2, 2026-11-01 evening):** entries added: 2, 3, 6, 7, 8, 9, 10, 11, 13. Method: the catholic.com pages (audio transcripts and magazine articles of Heschmeyer, Horn, Akin and Broussard) re-crawled on 2026-11-01 evening (1,742 pages) and every quote extracted from the page text by a script (a quote that did not match stopped the build); sections marked «(round 2, session B2)». Still without a quote: 14 (2 Cor 11:28: no on-point line found in the pages searched). Second read 2026-11-01 evening (`verification-b2-2.md`, one Sonnet pass over every round-2 quote): quotes, locators, speakers, titles and dates confirmed; one caption cue range, three headings, one count line and ten overreaching headings were corrected; remarks about pages that are not quoted were not re-read. Counts below are by person and work («works» = distinct pages; a print-edition reprint is one work with its online article) and by organisation.
 
+- **C5 harvest (2026-11-08):** signed Armstrong / Marshall text added where noted below; full page-row inventory, corpus sizes, rejected hits and resume state in `apologists-c5-log.md`. Corpora still being completed; no claim that the remaining passages have two deep expositors.
+- Status: partial
+
+### C5 page-row checkpoint (2026-11-08 10:12 UTC)
+
+These are recorded persons on at least part of each entry, including existing inline page records; they are not a claim of two deep expositors on every constituent verse. Corpus counts below are documents with explicit indexed references, not counts of qualifying explanations. Catholic Answers and Hahn crawls remain in progress.
+
+| Entry / passage(s) | Recorded persons | Armstrong documents (1,470 posts) | Marshall documents (4,186 posts) | State |
+|---|---|---|---|---|
+| 1. Matt.16.16-Matt.16.19 | 3 (Jimmy Akin, Karlo Broussard, Trent Horn) | 60 | 5 | existing evidence retained; remaining corpora pending |
+| 2. John.1.42 | 2 (Joe Heschmeyer, Trent Horn) | 6 | 0 | existing evidence retained; remaining corpora pending |
+| 3. John.21.15-John.21.17 | 3 (Joe Heschmeyer, Karlo Broussard, Trent Horn) | 18 | 0 | existing evidence retained; remaining corpora pending |
+| 4. Luke.22.31-Luke.22.32 | 2 (Jimmy Akin, Joe Heschmeyer) | 11 | 1 | existing evidence retained; remaining corpora pending |
+| 5. Matt.18.18, Matt.28.16-Matt.28.20 | 1 (Karlo Broussard) | 53 | 3 | no additional qualifying cut recorded; remaining corpora pending |
+| 6. John.20.21 | 2 (Joe Heschmeyer, Taylor Marshall) | 5 | 2 | Marshall: broader commissioning context; citation limitation; remaining corpora pending |
+| 7. Matt.10.2, Mark.3.16, Luke.6.14, Acts.1.13 | 1 (Trent Horn) | 11 | 1 | no additional qualifying cut recorded; remaining corpora pending |
+| 8. Acts.2.14, Acts.2.37, Acts.5.29 | 2 (Tim Staples, Trent Horn) | 12 | 1 | existing evidence retained; remaining corpora pending |
+| 9. 1Cor.15.5 | 1 (Trent Horn) | 11 | 1 | no additional qualifying cut recorded; remaining corpora pending |
+| 10. Matt.16.23, John.13.38, Luke.5.8 | 3 (Joe Heschmeyer, Karlo Broussard, Trent Horn) | 8 | 0 | existing evidence retained; remaining corpora pending |
+| 11. Luke.22.26-Luke.22.27, Matt.20.25 | 3 (Joe Heschmeyer, Karlo Broussard, Trent Horn) | 0 | 0 | existing evidence retained; remaining corpora pending |
+| 12. Eph.2.20, Rev.21.14, 1Pet.2.4 | 2 (Jimmy Akin, Trent Horn) | 13 | 0 | existing evidence retained; remaining corpora pending |
+| 13. John.17.21 | 2 (Joe Heschmeyer, Karlo Broussard) | 11 | 0 | existing evidence retained; remaining corpora pending |
+| 14. 2Cor.11.28 | 1 (Dave Armstrong) | 8 | 0 | Armstrong: short counterargument; remaining corpora pending |
+
+- Resume: finish Catholic Answers and Hahn indexes; use `meta/reads.jsonl` before selecting candidates, at most three per page entry across sources. Existing pilot passages and inline records must not be duplicated. Scripture Catholic is blocked at robots (406); no corpus negative is claimed for it.
+- Status: partial
+
+- **C5 Hahn harvest (2026-11-08):** 168 attributed written reflections indexed (4,081 keys, 5,729 mentions). Public article text, not captions or a shop summary. Exact new cuts and limits below; the log retains all four page hit manifests. Catholic Answers crawl remains pending.
+- Status: partial
+
+### C5 bounded pass closed (2026-11-08 10:51 UTC)
+
+“Done” follows the work order’s worked-pass finish line: every current page row has recorded material or a scoped search line. It does **not** mean two deep expositors on every constituent verse. All old blocks and tags remain; the newer source/standing and depth limitations are stated in each addition.
+
+Corpus columns count documents with indexed explicit references: Armstrong 1,470 posts; Marshall 4,186 posts; Catholic Answers 883 retrieved topical pages (16/899 selected URLs returned 404); Hahn 168 written reflections; Pitre 24 eligible marked transcripts from 58 crawled pages. Scripture Catholic was blocked at robots (406), so it supplies no negative corpus evidence.
+
+| Entry / passage(s) | Recorded persons | Armstrong / Marshall / CA / Hahn / Pitre documents | Result / limitation |
+|---|---|---|---|
+| 1. Matt.16.16-Matt.16.19 | 3 (Jimmy Akin, Karlo Broussard, Trent Horn) | 60 / 5 / 99 / 3 / 1 | existing records preserved; their depth/standing not newly reverified |
+| 2. John.1.42 | 2 (Joe Heschmeyer, Trent Horn) | 6 / 0 / 14 / 1 / 1 | existing records preserved; their depth/standing not newly reverified |
+| 3. John.21.15-John.21.17 | 3 (Joe Heschmeyer, Karlo Broussard, Trent Horn) | 18 / 0 / 36 / 2 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 4. Luke.22.31-Luke.22.32 | 2 (Jimmy Akin, Joe Heschmeyer) | 11 / 1 / 26 / 1 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 5. Matt.18.18, Matt.28.16-Matt.28.20 | 2 (Karlo Broussard, Scott Hahn) | 53 / 3 / 53 / 4 / 0 | Hahn on Matt 18; Matt 28 portion still limited |
+| 6. John.20.21 | 2 (Joe Heschmeyer, Taylor Marshall) | 5 / 2 / 4 / 7 / 0 | commissioning-context reading with citation-range limitation |
+| 7. Matt.10.2, Mark.3.16, Luke.6.14, Acts.1.13 | 2 (Scott Hahn, Trent Horn) | 11 / 1 / 20 / 1 / 0 | two recorded, one primacy-from-list argument; Hahn gives context |
+| 8. Acts.2.14, Acts.2.37, Acts.5.29 | 2 (Tim Staples, Trent Horn) | 12 / 1 / 9 / 4 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 9. 1Cor.15.5 | 2 (Scott Hahn, Trent Horn) | 11 / 1 / 5 / 1 / 0 | Hahn appearance in context of apostolic call |
+| 10. Matt.16.23, John.13.38, Luke.5.8 | 3 (Joe Heschmeyer, Karlo Broussard, Trent Horn) | 8 / 0 / 12 / 3 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 11. Luke.22.26-Luke.22.27, Matt.20.25 | 3 (Joe Heschmeyer, Karlo Broussard, Trent Horn) | 0 / 0 / 9 / 2 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 12. Eph.2.20, Rev.21.14, 1Pet.2.4 | 2 (Jimmy Akin, Trent Horn) | 13 / 0 / 19 / 7 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 13. John.17.21 | 2 (Joe Heschmeyer, Karlo Broussard) | 11 / 0 / 5 / 1 / 0 | existing records preserved; their depth/standing not newly reverified |
+| 14. 2Cor.11.28 | 2 (Dave Armstrong, Suan Sonna) | 8 / 0 / 1 / 0 / 0 | Armstrong + labelled Sonna turns |
+
+- Timing: Catholic work approximately 09:58–10:49 UTC (~51 minutes), including serial crawls/indexes and exact-text audits. Weekly 36% at pilot close → latest 43% account reading: +7 account-wide points, not attributable solely to this run.
+- Resume: use the saved manifests and `meta/reads.jsonl`; do not recrawl. Known uncut public leads, short applications and partial grouped passages are next-run work. No claim that a printed book or paid transcript is the only remedy.
+- Status: done
+
 ## Tags
 - `[verified: page]`: the text was fetched on 2026-11-01 with `curl` from the URL given and matched in the page; for the transcripts of catholic.com podcast pages the speaker is the page's own label («Joe:») or byline, not a guess; those transcripts are machine-made (they contain mishearings). Quotations are short; a clipped quote ends with […]; the words are the source's.
 - «Not checked» against the dossier row means the dossier's reading was not compared sentence by sentence.
@@ -116,6 +173,10 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **1 person** (Broussard), 1 work. By organisation: 1. Gap stated: the quote is about the Church's authority, an argument used for the papacy only indirectly. Matt 28:16–20 not covered.
 **Contested within the tradition:** `[not searched]`.
+
+**C5 shared-source extension (2026-11-08).** **Scott Hahn**, «To Win Them Back: Scott Hahn Reflects on the Twenty-Third Sunday in Ordinary Time», St. Paul Center, publication date not established; online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/to-win-them-back-scott-hahn-reflects-on-the-twenty-third-sunday-in-ordinary-time. The exact cut is stored once in `apologists-catholic-sola-scriptura.md`, page entry 17; first words «As Ezekiel is appointed watchman over the house of», last words «pray and seek the will of our heavenly Father.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The additional cut expounds Matt 18:18–20. It does not by itself supply a second reading of Matt 28:16–20; see the separate Matthew commission cut in Sola Scriptura entry 1.
+
+**C5 count and independence.** By person and work: **2 persons** (Broussard, Hahn), 2 works; by organisation/outlet: 2 (Catholic Answers, St. Paul Center), with no independence inferred. **Contested within the tradition:** `[not searched]`.
 
 ## 12. Papacy · Eph 2:20; Rev 21:14; 1 Pet 2:4 (page entry 12) (added after the verifier pass)
 
@@ -259,6 +320,12 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **1 person(s)**, 2 work(s); by organisation: **1** (all Catholic Answers staff). The two quotes argue the apostles’ authority; neither speaks of the bishops as Peter’s fellow-successors (the reading of Lumen gentium 18 on the page). Akin, Horn, Broussard: not found on this verse.
 **Contested within the tradition:** `[not searched]`.
 
+**C5 addition (2026-11-08) · Apostolic succession transmits the promises made to the apostles.**
+- **Taylor Marshall**, author named by the source (no additional church office established here), «Roman Ecclesiology and Protestants», taylormarshall.com, 2007-07-17; online edition retrieved 2026-11-08, https://taylormarshall.com/2007/07/roman-ecclesiology-and-protestants.html. Locator: whole paragraph beginning “We might also remember”; 97 words; first words «We might also remember that the Catholic Church defines»; last words «the Sacraments, chiefly the Holy Sacrifice of the Mass.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article prints “Jn 20:19-21” beside forgiving sins. That printed range is preserved as the source’s locator; the explicit forgiveness wording occurs later in the Gospel narrative, so the record does not present it as a quotation of verse 21 itself.
+  > We might also remember that the Catholic Church defines the Church as a visible reality that is historically connected to Christ and His twelve Apostles through Holy Baptism and Apostolic Succession. The latter term refers to the unbroken chain of ordinations extending from the Apostles to the modern day bishops of the Church. This unbroken chain of ordinations ensures that these men receive the promises of Christ: 1) to “bind on earth” through doctrine and discipline; 2) to “forgive sins” (Jn 20:19-21); and to have authority to celebrate the Sacraments, chiefly the Holy Sacrifice of the Mass.
+
+**C5 count and independence.** By person and work: **2 persons** (Heschmeyer, Marshall), 2 works; by organisation/outlet: 2 (Catholic Answers, Marshall’s blog). No independence inferred. Marshall is applying the passage’s broader commissioning context to succession; the citation-range limitation above remains. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
 ## 7. Papacy · Matt 10:2; Mark 3:16; Luke 6:14; Acts 1:13 (page entry 7) (round 2, session B2)
 
 **Argument A · Peter is named first in every list of the apostles (Horn).**
@@ -276,6 +343,12 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **1 person(s)**, 1 work(s); by organisation: **1** (all Catholic Answers staff). Horn’s paragraph does not name the four verses. Heschmeyer, Akin, Broussard: not found making this point (a Heschmeyer interview question on it, `the-biggest-mistakes-apologists-make`, is a question, not an argument; not quoted).
 **Contested within the tradition:** `[not searched]`.
+
+**C5 addition (2026-11-08) · The apostles and Mary gather in prayer as a sign of the Church’s unity.**
+- **Scott Hahn**, named as the commentator in the page title; no church office established on this article, «Knowing God: Scott Hahn Reflects on the Seventh Sunday of Easter», St. Paul Center, publication date not established on the page examined; public online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/knowing-god-scott-hahn-reflects-on-the-seventh-sunday-of-easter. Locator: paragraphs beginning «Jesus has been taken up», ending before «Jesus has proclaimed»; 97 words; first words «Jesus has been taken up into heaven as we»; last words «union of Father, Son, and Spirit in the Trinity.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article reads Acts 1:12–14 as a unit. It does not explain the order of the names or argue Peter’s primacy from the list; this is contextual commentary, not a second version of Horn’s primacy argument.
+  > Jesus has been taken up into heaven as we begin today’s First Reading. His disciples—including the Apostles and Mary—return to the upper room where He celebrated the Last Supper (see Luke 22:12). There, they devote themselves with one accord to prayer, awaiting the Spirit that He promised would come upon them (see Acts 1:8). The unity of the early Church at Jerusalem is a sign of the oneness that Christ prays for in today’s Gospel. The Church is to be a communion on earth that mirrors the glorious union of Father, Son, and Spirit in the Trinity.
+
+**C5 count and independence.** Recorded by person and work: 2 persons (Horn, Hahn), 2 works; by organisation/outlet: 2 (Catholic Answers, St. Paul Center), no independence inferred. For the specific primacy-from-the-list argument: **1 person** (Horn); Hahn adds context for Acts 1:13–14 only. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
 
 ## 8. Papacy · Acts 2:14; 2:37; 5:29 (page entry 8) (round 2, session B2)
 
@@ -336,6 +409,12 @@ Status: draft, NOT verified by Pedro
 
 **Count and independence.** By person and work: **1 person(s)**, 1 work(s); by organisation: **1** (all Catholic Answers staff). One sentence in Horn’s «Refuting Papal Myths — “Peter Was Not a Pope”», in the paragraph that answers the objection from Peter’s failings; Heschmeyer’s «Corinthian Creed» episode uses 1 Cor 15:5 for the resurrection, not the papacy. Akin, Broussard: not found.
 **Contested within the tradition:** `[not searched]`.
+
+**C5 addition (2026-11-08) · Peter’s weakness, obedient response and encounter with the risen Lord.**
+- **Scott Hahn**, named as the commentator in the page title; no church office established on this article, «Into the Deep: Scott Hahn Reflects on the Fifth Sunday in Ordinary Time», St. Paul Center, publication date not established on the page examined; public online edition retrieved 2026-11-08, https://stpaulcenter.com/posts/into-the-deep-scott-hahn-reflects-on-the-fifth-sunday-in-ordinary-time. Locator: paragraphs beginning «God’s Word comes to us», ending before «Jesus has made us worthy»; 88 words; first words «God’s Word comes to us as it came to»; last words «will become the first to see the risen Lord.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The article’s listed Epistle is 1 Cor 15:1–11; the statement that Peter will see the risen Lord first evokes verse 5 without printing that verse number separately. The sentence is retained as Hahn’s wording, not harmonized with other resurrection accounts.
+  > God’s Word comes to us as it came to Peter, Paul, Isaiah, and today’s Psalmist—as a personal call to leave everything and follow Him, to surrender our weaknesses in order to be filled with His strength. Simon put out into deep waters even though, as a professional fisherman, he knew it would be foolhardy to expect to catch anything. In humbling himself before the Lord’s command, he was exalted—his nets filled to overflowing; later, as Paul tells us, he will become the first to see the risen Lord.
+
+**C5 count and independence.** By person and work: **2 persons** (Horn, Hahn), 2 works; by organisation/outlet: 2 (Catholic Answers, St. Paul Center). No independence inferred. Hahn places the appearance in an exposition of apostolic calling rather than making a separate argument for universal jurisdiction. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
 
 ## 10. Papacy · Matt 16:23; John 13:38; Luke 5:8 (page entry 10) (round 2, session B2)
 
@@ -430,3 +509,18 @@ Status: draft, NOT verified by Pedro
 
 ## Not done
 - Papacy entries 2 (Jn 1:42), 3 (Jn 21:15–17), 6 (Jn 20:21), 7 (Mt 10:2…), 8 (Acts 2:14…), 9 (1 Cor 15:5), 10 (Mt 16:23…), 11 (Lc 22:26–27), 13 (Jn 17:21), 14 (2 Cor 11:28) and more voices for entry 1. Leads found, not read: Heschmeyer on John 21 (episode «jesus-went-to-heaven-now-what»), on 1 Cor 15:5 («the-creed-written-days-after-jesus-rose»); Akin on Galatians (`ddp/peter-in-galatians`); Broussard (`drk/peter-a-regular-ole-pillar`); Horn and Steve Ray (`cot/understanding-the-papacy-part-1-with-steve-ray`: speaker labels unreliable for quoting).
+
+## 14. Papacy · 2 Cor 11:28 (page entry 14)
+
+**C5 addition (2026-11-08) · Concern for all churches does not by itself make Paul a pope.**
+- **Dave Armstrong**, author named by the source (no additional church office established here), «Reply to a Critique of my "50 NT Proofs for Petrine Primacy and the Papacy" (vs. Jason Engwer)», Biblical Evidence for Catholicism (Blogger), 2007-03-07; online edition retrieved 2026-11-08, https://socrates58.blogspot.com/2007/03/reply-to-critique-of-my-50-new.html. Locator: Armstrong’s reply to the sentence comparing 1 Pet 5:1 with 2 Cor 11:28; 70 words; first words «Anyone might have "anxiety for all the churches." That's»; last words «presented what Bible scholars (Protestants all) think about that.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The page byline dates the original exchange 2002-03-14; the Blogger publication date above is the online edition. The introduction marks Engwer’s words blue; the quoted paragraph is Armstrong’s response, not Engwer’s objection. This is a short counterargument, not a full commentary.
+  > Anyone might have "anxiety for all the churches." That's called prayer (intercession), charity, concern, fellowship, Christian unity. You don't have to be a pope (or even an apostle) to do that. The relevant factors here (for the purpose of our discussion) are the intended recipients of 1 Peter (and 2 Peter, if it is Petrine). I have done my homework and presented what Bible scholars (Protestants all) think about that.
+
+**C5 count and independence.** By person and work: **1 person** (Armstrong), 1 work; by organisation/outlet: 1 (his blog). A second person remains missing. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
+
+**C5 addition (2026-11-08) · Paul’s universal apostolic authority does not by itself identify him as pope.**
+- **Suan Sonna**, guest identified by name in the title and speaker labels of the interview with Trent Horn; no church office established here, «The “Pauline Parody Argument” Against the Papacy (with Suan Sonna)», Catholic Answers, 7/28/2022; public online article/transcript edition retrieved 2026-11-08, https://www.catholic.com/audio/cot/the-pauline-parody-argument-against-the-papacy-with-suan-sonna. Locator: two Sonna turns, first beginning “So number five” and second “Scripture and tradition”; intervening Horn turns are omitted, not attributed to Sonna; 174 words; first words «So number five is Paul is the only apostle»; last words «being Paul, but by virtue of being an apostle.». `[verified: page]` `[long-form: trim before public release]` `standing: to verify before publishing`. The first turn explicitly names 2 Cor 11:28 with 1 Cor 4:17 and 7:17. Both cuts have the speaker label “Suan Sonna”; the byline “Trent Horn” is not used to assign these words to Horn. These are excerpts from one dialogue, not two independent works.
+  > So number five is Paul is the only apostle who refers to his authority over all the churches. It’s like, “Okay. Well …” So let me just actually include the scriptures. So 1 Corinthians 4:17, 7:17, and then 2 Corinthians 11:28. The first problem with this is okay, even if Paul is the only one who refers to his authority over all the churches, so what? I mean all the apostles have authority over the church. All of them have this kind of universal power so to speak. I don’t think that’s necessarily problematic.
+  > Scripture and tradition, but not only that, one could argue that they are in a sense the deposit of the faith, especially Paul and Peter and the others who wrote Epistles. So the apostolic deposit has universal authority over the church and the apostles being the chief guardians, they can have universal rule through accessing that deposit and teaching definitively with it. Right? So Paul has authority not by virtue of being Paul, but by virtue of being an apostle.
+
+**C5 count and independence.** By person and work: **2 persons** (Armstrong, Sonna), 2 works; by organisation/outlet: 2 (Armstrong’s blog, Catholic Answers), with no independence inferred. **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
