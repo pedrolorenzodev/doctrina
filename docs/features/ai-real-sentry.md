@@ -5,6 +5,7 @@
 ## State
 - **Hecho (2026-11-08, noche):** panel de un solo nivel y círculos atados al manifiesto, sobre un clon fresco del repo real (`doctrina-ai-sentry2`, puerto 3150). `npm run verify` pasa (exit 0). Specs del simplificador: 61 pasan, 3 saltados, 1 falla (el rojo conocido de «switching the level cross-fades…», que también falla en la base).
 - **En curso:** nada.
+- **Nota (2026-11-07):** «switching the level cross-fades…» (`e2e/simplifier.spec.ts`) ahora corre sobre el párrafo 6.2 de Ignacio (edición inglesa, el único tipo con selector de nivel) y pasa; ya no es el rojo conocido.
 - **Needs Pedro:** (1) el scroll suave al resaltado y los 3 px del círculo de escritorio, ya anotados abajo; (2) las tarjetas «connected» de 02 y el glosario siguen sin círculo (ver «Calls» 2 y 3 de esta tanda).
 - **No verificado:** dispositivos táctiles, lectores de pantalla, WebKit y Firefox; no corrí la suite completa de Playwright, solo los cinco archivos del simplificador.
 - **Cómo retomar:** `source ~/.nvm/nvm.sh && nvm use`; `NEXT_PUBLIC_SIMPLIFIER=on npm run build`; `AI_PROVIDER=fake AI_STORE=memory npx next start -p 3150`; `E2E_PORT=3150 npm run e2e -- e2e/simplifier-levels.spec.ts --project=chromium`.

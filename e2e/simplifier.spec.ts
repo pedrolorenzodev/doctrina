@@ -214,19 +214,29 @@ test("closing fades then collapses: the box and the content below move in step a
 });
 
 test("switching the level cross-fades the text and moves the box and the content below in step", async ({ page }) => {
-  await openPage(page);
-  await bringUp(page, 2);
-  await openAndSettle(page, 2);
-  await hide(page, 2);
-  await mark(page, 2).click();
+  await page.addInitScript(() => localStorage.setItem("doctrina-father-edition", "en"));
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/obras/ignatius-smyrnaeans", { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts.ready);
+  test.skip((await page.locator("[data-simplifier-mark]").count()) === 0, "the simplifier switch is off in this build");
+  const at = await page.evaluate(() =>
+    [...document.querySelectorAll("[data-simplifier]")].findIndex(
+      (element) => element.closest('[id="d-6.2"]') !== null,
+    ),
+  );
+  expect(at).toBeGreaterThanOrEqual(0);
+  await bringUp(page, at);
+  await openAndSettle(page, at);
+  await hide(page, at);
+  await mark(page, at).click();
   await page.waitForTimeout(700);
   const before = await page
-    .locator(container(2))
+    .locator(container(at))
     .locator("[data-simplifier-panel]")
     .evaluate((el) => el.getBoundingClientRect().height);
-  await startSampling(page, 2);
+  await startSampling(page, at);
   await page.waitForTimeout(100);
-  await page.locator(container(2)).getByRole("button", { name: "Muy simple" }).click();
+  await page.locator(container(at)).getByRole("button", { name: "Muy simple" }).click();
   await page.waitForTimeout(800);
   const frames = await stopSampling(page);
   const after = frames.at(-1)!.box;
@@ -242,7 +252,7 @@ test("switching the level cross-fades the text and moves the box and the content
   }
   expect(frames.some((frame) => frame.layers === 2)).toBe(true);
   expect(frames.at(-1)!.layers).toBe(1);
-  await expect(page.locator(container(2)).locator("[data-simplifier-text]")).toContainText("Cristo");
+  await expect(page.locator(container(at)).locator("[data-simplifier-text]")).toContainText("Christ");
 });
 
 test("with reduced motion everything is instant and nothing streams", async ({ browser }) => {
