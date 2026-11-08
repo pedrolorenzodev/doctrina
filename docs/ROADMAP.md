@@ -15,6 +15,7 @@
 
 ## Now
 
+- **Night 2026-11-07 → 08 (DECISIONS 2026-11-08):** chat quality round 4 by `csrv2-1d` in `doctrina-ai-r4` (cap 43 %); technical close of both AI features (full e2e twice with the real flags, `contracts.md`, GOTCHAS, «Current state») after it; Codex finishes Fuentes and dead links (Pedro tells them to continue). Pedro tomorrow: read the ≈ 22 control answers, Vercel launch together, visual review of Fuentes and links, decide the 7 unsimplifiable paragraphs and the «connected» cards.
 - **Chat fixes (Pedro, 2026-11-07 evening, DECISIONS same date):** the timeline in the chat's citation window and hover card is **built and merged**; the follow-up on the reader's notes: Pedro chose A + B combined (DECISIONS same date), **built and merged** (`docs/features/ai-notes-followup.md`); two small points wait for Pedro (DECISIONS same date). Open, not agreed: add the Reformed and Baptist readings of John 6 to their eucharist content (data gap measured in that entry); date the 97 undated Father works and 28 registry citations (needs sourced research).
 - **Real AI, after the evaluation (2026-11-07, `docs/features/ai-real-int.md`):** Pedro decides the prompt change for richer answers, the latency and the search retry, then the evaluation is rerun (≈ $0.45); S-ENTRY (any-paragraph entry points for the simplifier) still waits for Pedro's choice among the proposal's options (`docs/research/ai/simplifier-design.md` §7.4), nothing built.
 
