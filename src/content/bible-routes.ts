@@ -1,4 +1,4 @@
-import { bibleBooks, type BibleBook } from "@/content/bible-books";
+import { bibleBooks, getBibleBook, type BibleBook } from "@/content/bible-books";
 import { bibleSegments } from "@/content/bible-segments";
 import type { Locale } from "@/lib/locale";
 
@@ -29,6 +29,16 @@ export function bibleChapterHref(locale: Locale, book: BibleBook, chapter: numbe
 
 export function bibleVerseHref(locale: Locale, book: BibleBook, chapter: number, verse: number): string {
   return `${bibleChapterHref(locale, book, chapter)}/${verse}`;
+}
+
+export function bibleReferenceHref(locale: Locale, reference: string): string | null {
+  const start = reference.split("-")[0] ?? "";
+  const [id = "", chapter = "", verse] = start.split(".");
+  const book = getBibleBook(id);
+  if (!book || !/^\d+$/.test(chapter) || Number(chapter) < 1) return null;
+  if (verse === undefined) return bibleChapterHref(locale, book, Number(chapter));
+  if (!/^\d+$/.test(verse) || Number(verse) < 1) return null;
+  return bibleVerseHref(locale, book, Number(chapter), Number(verse));
 }
 
 export function bibleBookRoute(locale: Locale, book: BibleBook): string {

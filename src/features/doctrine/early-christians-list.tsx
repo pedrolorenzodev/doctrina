@@ -2,9 +2,10 @@ import { Fragment } from "react";
 import { RevealList } from "@/components/reveal-list";
 import { PageLink } from "@/components/ui/page-link";
 import { formatDate } from "@/content/format-date";
+import { getWitnessEntityHref } from "@/content/get-witness-entity-href";
 import type { Witness } from "@/content/model/doctrine-page";
 import { highlightParagraph } from "@/content/witness-paragraph";
-import { fatherDivisionHref, fatherHref } from "@/content/routes";
+import { fatherDivisionHref } from "@/content/routes";
 import { witnessReference } from "@/content/witness-view";
 import type { Locale } from "@/lib/locale";
 import { nbspBeforeDigits } from "@/lib/locator";
@@ -21,6 +22,7 @@ export function EarlyChristiansList({ witnesses, locale, readLabel }: EarlyChris
     <RevealList as="ol" className="m-0 mt-11 list-none border-b border-rule p-0">
       {witnesses.map((witness) => {
         const reference = witnessReference(witness);
+        const entityHref = getWitnessEntityHref(witness, locale);
         const parts = (witness.paragraph ? highlightParagraph(witness.paragraph, witness.quote) : null) ?? [
           { text: witness.quote, highlighted: true },
         ];
@@ -43,9 +45,7 @@ export function EarlyChristiansList({ witnesses, locale, readLabel }: EarlyChris
             </div>
             <div>
               <h2 className="m-0 font-ui text-source-name font-normal text-ink-3">
-                <PageLink {...(witness.entity ? { href: fatherHref(locale, witness.entity) } : {})}>
-                  {heading.link}
-                </PageLink>
+                <PageLink {...(entityHref ? { href: entityHref } : {})}>{heading.link}</PageLink>
                 {nbspBeforeDigits(heading.tail)}
               </h2>
               {witness.authorLine ? <p className="mt-0.5 text-meta text-ink-3">{witness.authorLine}</p> : null}

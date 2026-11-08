@@ -1,9 +1,10 @@
 import { formatYear } from "@/content/format-date";
 import { lifeText } from "@/content/father-life";
 import { personItem } from "@/content/father-timeline";
+import { writingWorkIds } from "@/content/father-writing-links";
 import { councils, heresies } from "@/content/history/timeline-sources";
 import type { Father } from "@/content/model/history";
-import { councilHref, currentHref, fatherHref } from "@/content/routes";
+import { councilHref, currentHref, fatherHref, fatherWorkHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
 import type { TimelineEntry } from "@/lib/timeline-entry";
 import { firstSentence } from "@/lib/first-sentence";
@@ -16,7 +17,7 @@ export type GeneralEntry = TimelineEntry & {
   facts: { label: string; value: string }[];
   ecumenical: boolean;
   note: { heading: string; text: string } | null;
-  writings: { title: string; date: string }[];
+  writings: { title: string; date: string; href: string | null }[];
 };
 
 export type GeneralTimeline = {
@@ -36,9 +37,15 @@ function years(start: number, end: number | null, circa: boolean): string {
   return end === null || end === start ? first : `${first}–${end}`;
 }
 
-export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: UiText): GeneralTimeline {
+export function buildGeneralTimeline(
+  fathers: Father[],
+  locale: Locale,
+  text: UiText,
+  workIds: string[] = [],
+): GeneralTimeline {
   const labels = text.generalTimeline;
   const entries: GeneralEntry[] = [];
+  const availableWorks = new Set(workIds);
   for (const father of fathers) {
     const own = personItem(father, false, locale, text);
     const died = formatYear({ year: father.died, circa: father.approx });
@@ -70,7 +77,18 @@ export function buildGeneralTimeline(fathers: Father[], locale: Locale, text: Ui
       ecumenical: false,
       note: null,
       writings:
-        father.kind === "work" ? [] : father.works.map((work) => ({ title: work.title[locale], date: work.date })),
+        father.kind === "work"
+          ? []
+          : father.works.map((work, index) => {
+              const ids = (writingWorkIds[father.id]?.[index] ?? []).filter((id) => availableWorks.has(id));
+              const first = ids[0];
+              const href = first
+                ? ids.length === 1
+                  ? fatherWorkHref(locale, first)
+                  : `${fatherHref(locale, father.id)}#works`
+                : null;
+              return { title: work.title[locale], date: work.date, href };
+            }),
     });
   }
   for (const council of councils.filter((item) => item.year >= from && item.year <= to)) {

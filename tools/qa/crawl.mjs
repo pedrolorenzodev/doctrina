@@ -20,7 +20,7 @@ async function visit(path) {
   const re = /href="([^"#]*)(#[^"]*)?"/g;
   let m;
   while ((m = re.exec(html))) {
-    const h = m[1].replace(/&amp;/g, "&");
+    const h = Buffer.from(m[1].replace(/&amp;/g, "&")).toString("utf8");
     if (!h.startsWith("/") || h.startsWith("//")) continue;
     if (/^\/(_next|api)\//.test(h) || /\.(png|ico|svg|css|js|woff2?|json|txt|xml|jpg|webp)(\?|$)/.test(h)) continue;
     links.add(h);

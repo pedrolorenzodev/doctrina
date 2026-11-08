@@ -19,6 +19,7 @@ export const writingWorkIds: Record<string, string[][]> = {
   "polycarp-of-smyrna": [["polycarp-philippians"]],
   "justin-martyr": [["justin-first-apology"], ["justin-dialogue-trypho"], ["justin-second-apology"]],
   "irenaeus-of-lyon": [["irenaeus-against-heresies"], ["irenaeus-demonstration"]],
+  "theophilus-of-antioch": [["theophilus-to-autolycus"]],
   "clement-of-alexandria": [
     ["clement-alexandria-protrepticus"],
     ["clement-alexandria-paedagogus"],
@@ -41,6 +42,7 @@ export const writingWorkIds: Record<string, string[][]> = {
   ],
   "basil-of-caesarea": [[], ["basil-de-spiritu-sancto"]],
   "cyril-of-jerusalem": [["cyril-jerusalem-catechetical-lectures"]],
+  "cyril-of-alexandria": [["cyril-alexandria-commentary-john"]],
   "gregory-of-nyssa": [["gregory-nyssa-against-eunomius"], ["gregory-nyssa-great-catechism"]],
   "ambrose-of-milan": [["ambrose-de-fide"], ["ambrose-de-officiis"], ["ambrose-de-mysteriis"]],
   "john-chrysostom": [

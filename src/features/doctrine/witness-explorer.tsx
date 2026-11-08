@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { CitationLink } from "@/components/citation-window/citation-link";
+import { PageLink } from "@/components/ui/page-link";
 import { WitnessTrack, type TrackWitness, type YearRange } from "@/features/doctrine/witness-track";
 import { flipList } from "@/lib/list-motion";
 import { layoutTop, scrollOffset, scrollToY } from "@/lib/scroll";
@@ -12,6 +13,7 @@ export type ExplorerWitness = TrackWitness & {
   viewId: string;
   quote: string;
   reference: string;
+  entityHref: string | null;
 };
 
 type ExplorerText = {
@@ -189,7 +191,13 @@ export function WitnessExplorer({ witnesses, text }: WitnessExplorerProps) {
                     {witness.quote}
                   </p>
                   <p className="mt-2.5 text-witness-by text-ink-3">
-                    <span className="font-medium text-ink">{witness.author}</span>
+                    <span className="font-medium text-ink">
+                      {witness.entityHref ? (
+                        <PageLink href={witness.entityHref}>{witness.author}</PageLink>
+                      ) : (
+                        witness.author
+                      )}
+                    </span>
                     <br />
                     <CitationLink id={witness.viewId}>{witness.reference}</CitationLink>
                   </p>

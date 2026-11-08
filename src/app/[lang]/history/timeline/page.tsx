@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { buildGeneralTimeline } from "@/content/get-general-timeline";
 import { getPublishedFathers } from "@/content/get-fathers";
+import { getFatherWorks } from "@/content/get-father-works";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { GeneralTimeline } from "@/features/history/general-timeline";
 import { currentLocale } from "@/lib/current-locale";
@@ -20,7 +21,12 @@ export default async function TimelineRoute() {
   if (fathers.length === 0) notFound();
   const text = getUiText(locale);
   const labels = text.generalTimeline;
-  const timeline = buildGeneralTimeline(fathers, locale, text);
+  const timeline = buildGeneralTimeline(
+    fathers,
+    locale,
+    text,
+    (await getFatherWorks()).map((work) => work.id),
+  );
   return (
     <PageMain>
       {/* TODO: «Historia» leads to its index page once it exists */}

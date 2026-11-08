@@ -539,7 +539,9 @@ export function GeneralTimeline({ from, to, marks, entries, text }: GeneralTimel
                   <ul className="m-0 list-none p-0">
                     {panelEntry.writings.map((writing) => (
                       <li key={writing.title} className="border-t border-rule py-2 last:border-b">
-                        <p className="m-0 text-source-name font-medium text-ink">{writing.title}</p>
+                        <p className="m-0 text-source-name font-medium text-ink">
+                          {writing.href ? <PageLink href={writing.href}>{writing.title}</PageLink> : writing.title}
+                        </p>
                         <p className="m-0 text-label text-ink-3 tabular-nums">{writing.date}</p>
                       </li>
                     ))}

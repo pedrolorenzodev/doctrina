@@ -1,6 +1,7 @@
 import { Section } from "@/components/section";
 import { PageLink } from "@/components/ui/page-link";
 import { formatDate } from "@/content/format-date";
+import { getWitnessEntityHref } from "@/content/get-witness-entity-href";
 import type { DoctrinePage } from "@/content/model/doctrine-page";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessReference, witnessViewId } from "@/content/witness-view";
@@ -19,6 +20,7 @@ export function WitnessesSection({ id, page, locale }: WitnessesSectionProps) {
   const witnesses = page.witnesses.items.map((witness) => ({
     id: witness.id,
     author: witness.author,
+    entityHref: witness.anonymous ? null : getWitnessEntityHref(witness, locale),
     dateLabel: formatDate(witness.date, locale),
     start: witness.date.year,
     end: witness.date.yearEnd ?? witness.date.year,

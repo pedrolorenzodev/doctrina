@@ -19,7 +19,6 @@ type PassagesSectionProps = {
 };
 
 function PassageBody({ passage }: { passage: PassageItem }) {
-  // TODO: the reference opens the verse page (06)
   return (
     <>
       {passage.text ? (
@@ -28,7 +27,7 @@ function PassageBody({ passage }: { passage: PassageItem }) {
         </blockquote>
       ) : null}
       <p className="m-0 text-reference">
-        <PageLink>{passage.label}</PageLink>
+        <PageLink {...(passage.href ? { href: passage.href } : {})}>{passage.label}</PageLink>
       </p>
     </>
   );
