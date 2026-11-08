@@ -16,6 +16,7 @@ const CHECK_NAMES = [
   "scopeFaithful",
   "notBareQuotation",
   "traditionsRequested",
+  "noteFollowup",
 ];
 const TEXT_LIMIT = 600;
 

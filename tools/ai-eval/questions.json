@@ -2004,5 +2004,128 @@
       "language": "en"
     },
     "tags": ["verse-anchored", "fathers", "eucharist"]
+  },
+  {
+    "id": "nf01",
+    "lang": "es",
+    "question": "¿Qué dicen los Padres sobre comer la carne de Cristo en este capítulo?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "notes": [
+      {
+        "text": "¿Qué significan “carne” y “sangre” acá?",
+        "ref": "Juan 6:53"
+      }
+    ],
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "noteFollowup": "question",
+      "noteRef": "Juan 6:53"
+    },
+    "tags": ["note-followup", "eucharist"]
+  },
+  {
+    "id": "nf02",
+    "lang": "es",
+    "question": "¿Qué dicen las tradiciones sobre la presencia de Cristo en la Cena?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "notes": [
+      {
+        "text": "Para mí esto es simbólico: Jesús no habla de comer su cuerpo de verdad.",
+        "ref": "Juan 6:63"
+      }
+    ],
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "noteFollowup": "claim",
+      "noteRef": "Juan 6:63"
+    },
+    "tags": ["note-followup", "eucharist"]
+  },
+  {
+    "id": "nf03",
+    "lang": "es",
+    "question": "¿Qué dicen los Padres sobre comer la carne de Cristo en este capítulo?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "notes": [
+      {
+        "text": "Para leer con la familia el domingo.",
+        "ref": "Salmo 23:1"
+      }
+    ],
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "noteFollowup": "none"
+    },
+    "tags": ["note-followup", "eucharist"]
+  },
+  {
+    "id": "nf04",
+    "lang": "es",
+    "question": "¿Qué dicen los Padres sobre comer la carne de Cristo en este capítulo?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "notes": [],
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "noteFollowup": "none"
+    },
+    "tags": ["note-followup", "eucharist"]
+  },
+  {
+    "id": "nf05",
+    "lang": "es",
+    "question": "En una línea: ¿qué dice Juan 6:53?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "notes": [
+      {
+        "text": "¿Qué significan “carne” y “sangre” acá?",
+        "ref": "Juan 6:53"
+      }
+    ],
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "noteFollowup": "question",
+      "noteRef": "Juan 6:53"
+    },
+    "tags": ["note-followup", "brief", "eucharist"]
   }
 ]

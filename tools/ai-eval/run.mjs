@@ -394,6 +394,13 @@ function checkTraditionsRequested(question, answer, ids) {
   });
 }
 
+function checkNoteFollowup(question, answer) {
+  const wanted = question.expect.noteFollowup;
+  if (wanted === undefined) return null;
+  if (wanted === "none") return answer.note === undefined;
+  return answer.note?.kind === wanted && answer.note.ref === question.expect.noteRef;
+}
+
 function checkRichEnough(question, answer, ids) {
   if (isBrief(question) || question.expect.notFound) return null;
   const allowed = expectedKinds(question);
@@ -505,6 +512,7 @@ export function scoreAnswer(question, answer) {
     scopeFaithful: checkScopeFaithful(question, answer, ids),
     notBareQuotation: checkNotBareQuotation(question, answer, ids),
     traditionsRequested: checkTraditionsRequested(question, answer, ids),
+    noteFollowup: checkNoteFollowup(question, answer),
   };
   return {
     checks,
@@ -531,6 +539,7 @@ const HARD_CHECKS = [
   "noteNotEvidence",
   "scopeFaithful",
   "traditionsRequested",
+  "noteFollowup",
 ];
 
 export function questionPassed(question, checks) {

@@ -36,9 +36,9 @@ const fixture = JSON.parse(readFileSync(resolve(ROOT, "src/lib/ai/fixtures/wire-
 const byId = (id) => questions.find((question) => question.id === id);
 const clone = (value) => JSON.parse(JSON.stringify(value));
 
-expect(questions.length === 102, `questions.json has ${questions.length} questions, expected 102`);
+expect(questions.length === 107, `questions.json has ${questions.length} questions, expected 107`);
 expect(new Set(questions.map((question) => question.id)).size === questions.length, "question ids are not unique");
-expect(questions.filter((question) => question.tags.includes("brief")).length === 6, "expected 6 brief questions");
+expect(questions.filter((question) => question.tags.includes("brief")).length === 7, "expected 7 brief questions");
 const noted = questions.filter((question) => question.tags.includes("notes"));
 expect(
   noted.length === 4 && noted.every((question) => (question.notes ?? []).length > 0),
@@ -113,8 +113,8 @@ expect(requestBody(byId("k01")).selection.at.kind === "verse", "requestBody sele
 expect(requestBody(byId("nt01")).notes.length === 1 && requestBody(byId("nt01")).turn === 1, "requestBody notes");
 expect(requestBody(byId("e01")).turn === 1, "requestBody first turn");
 
-expect(selectQuestions(questions, { subset: "brief" }).length === 6, "subset brief");
-expect(selectQuestions(questions, { subset: "brief,notes" }).length === 10, "subset two tags");
+expect(selectQuestions(questions, { subset: "brief" }).length === 7, "subset brief");
+expect(selectQuestions(questions, { subset: "brief,notes" }).length === 11, "subset two tags");
 expect(
   selectQuestions(questions, { ids: "e01,v01" })
     .map((question) => question.id)
