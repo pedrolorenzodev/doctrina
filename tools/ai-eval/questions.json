@@ -2127,5 +2127,35 @@
       "noteRef": "Juan 6:53"
     },
     "tags": ["note-followup", "brief", "eucharist"]
+  },
+  {
+    "id": "nf06",
+    "lang": "es",
+    "question": "Hey, que creian los primeros padres, los mas tempranos, acerca de la eucaristia como simbolo?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "notes": [
+      {
+        "text": "Bread of life: compare with the manna in Exodus 16",
+        "ref": "Juan 6:35"
+      },
+      {
+        "text": "What did Jesus meant by His \"FLESH\" and \"BLOOD\"",
+        "ref": "Juan 6:53"
+      }
+    ],
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "noteFollowup": "question",
+      "noteRef": "Juan 6:53"
+    },
+    "tags": ["note-followup", "eucharist", "fathers"]
   }
 ]

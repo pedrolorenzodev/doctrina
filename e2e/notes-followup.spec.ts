@@ -225,4 +225,45 @@ test.describe("ask drawer: the follow-up on a reader's note", () => {
     await expect(page.locator(line)).toHaveCount(1);
     await expect(page.locator(chip)).toHaveCount(1);
   });
+  test("notes written in another edition of the open chapter travel with the question", async ({ page }) => {
+    await page.addInitScript(() => {
+      const now = Date.now();
+      const note = (id: string, verse: number, text: string) => ({
+        id,
+        scope: "unit",
+        translationId: "bsb",
+        book: "John",
+        chapter: 6,
+        verse,
+        verseTo: null,
+        from: null,
+        to: null,
+        quote: null,
+        text,
+        createdAt: now,
+        updatedAt: now,
+      });
+      localStorage.setItem(
+        "doctrina-notes",
+        JSON.stringify([
+          note("n1", 53, 'What did Jesus meant by His "FLESH" and "BLOOD"'),
+          note("n2", 35, "Bread of life: compare with the manna in Exodus 16"),
+        ]),
+      );
+      localStorage.setItem("doctrina-translation", "bsb");
+    });
+    const sent: { notes: { text: string; ref: string | null }[] }[] = [];
+    await page.route("**/api/ai/ask", (route) => {
+      sent.push(route.request().postDataJSON() as { notes: { text: string; ref: string | null }[] });
+      return stream(route, wire());
+    });
+    await openDrawer(page);
+    await ask(page, "Hey, que creian los primeros padres, los mas tempranos, acerca de la eucaristia como simbolo?");
+    await expect.poll(() => sent.length).toBe(1);
+    expect(sent[0]?.notes).toContainEqual({
+      text: 'What did Jesus meant by His "FLESH" and "BLOOD"',
+      ref: "Juan 6:53",
+    });
+    expect(sent[0]?.notes).toHaveLength(2);
+  });
 });

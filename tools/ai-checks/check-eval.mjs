@@ -36,7 +36,7 @@ const fixture = JSON.parse(readFileSync(resolve(ROOT, "src/lib/ai/fixtures/wire-
 const byId = (id) => questions.find((question) => question.id === id);
 const clone = (value) => JSON.parse(JSON.stringify(value));
 
-expect(questions.length === 107, `questions.json has ${questions.length} questions, expected 107`);
+expect(questions.length === 108, `questions.json has ${questions.length} questions, expected 108`);
 expect(new Set(questions.map((question) => question.id)).size === questions.length, "question ids are not unique");
 expect(questions.filter((question) => question.tags.includes("brief")).length === 7, "expected 7 brief questions");
 const noted = questions.filter((question) => question.tags.includes("notes"));
