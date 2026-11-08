@@ -1,10 +1,16 @@
 "use client";
 
 import { useLayoutEffect, useRef, type ReactNode } from "react";
+import { useRouter } from "next/navigation";
 import { focusRingClassName, playEnter, type Enter } from "@/features/reader-ai/motion";
 import { useAskScript } from "@/features/reader-ai/ask-script";
 import { johnSix } from "@/features/reader-ai/quotes";
 import { sourceOf, verseLabel } from "@/features/reader-ai/script";
+import { openNoteEvent, type OpenNoteDetail } from "@/lib/notes";
+import { getNotes } from "@/lib/note-store";
+import type { Locale } from "@/lib/locale";
+import { getBibleBook } from "@/content/bible-books";
+import { bibleChapterHref } from "@/content/bible-routes";
 
 export type CiteHandlers = {
   onVerse: (verse: number, element: HTMLElement) => void;
@@ -141,3 +147,51 @@ export function ProseWord({ token, handlers, enter }: { token: string; handlers:
 }
 
 export const verseText = (verse: number) => johnSix[verse] ?? "";
+
+export type NoteToken = { word: string } | { ref: string; tail: string };
+
+export function noteTokens(before: string, ref: string, after: string): NoteToken[] {
+  const words = (text: string) => text.split(" ").filter(Boolean);
+  const [tail = "", ...rest] = after.startsWith(" ") ? ["", ...words(after)] : words(after);
+  return [...words(before).map((word) => ({ word })), { ref, tail }, ...rest.map((word) => ({ word }))];
+}
+
+function openNote(text: string, locale: Locale, go: (href: string) => void) {
+  const event = new CustomEvent<OpenNoteDetail>(openNoteEvent, { detail: { text }, cancelable: true });
+  if (!window.dispatchEvent(event)) return;
+  const note = getNotes().find((candidate) => candidate.text === text);
+  const book = note ? getBibleBook(note.book) : undefined;
+  if (!note || !book) return;
+  go(`${bibleChapterHref(locale, book, note.chapter)}${note.verse === null ? "" : `#v-${note.verse}`}`);
+}
+
+export function NoteWord({
+  token,
+  noteText,
+  locale,
+  enter,
+}: {
+  token: NoteToken;
+  noteText: string;
+  locale: Locale;
+  enter: Enter;
+}) {
+  const element = useRef<HTMLSpanElement>(null);
+  const router = useRouter();
+  useLayoutEffect(() => playEnter(element.current, enter), [enter]);
+  if ("word" in token) return <span ref={element}>{token.word} </span>;
+  return (
+    <span ref={element}>
+      <button
+        type="button"
+        data-ask-note-cite=""
+        data-bare-focus=""
+        onClick={() => openNote(noteText, locale, (href) => router.push(href))}
+        className={citeClassName}
+      >
+        {token.ref}
+      </button>
+      {token.tail}{" "}
+    </span>
+  );
+}

@@ -79,6 +79,7 @@ export function withLiveAnswers(base: AskScript, live: LiveSnapshot, labels: Liv
         labels,
       );
     });
+    if (wire.note) chipLabels[liveChipId(wire.answerId, "note")] = wire.note.suggestion;
     chipLabels[liveChipId(wire.answerId, "more")] = labels.more;
     chipLabels[liveChipId(wire.answerId, "retry")] = labels.retry;
   }

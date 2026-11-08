@@ -3,9 +3,12 @@
 import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import type { AskPhase } from "@/lib/ai/contracts";
 import { prefersReducedMotion } from "@/lib/branch-motion";
+import type { Locale } from "@/lib/locale";
 import {
   CiteButton,
   Entering,
+  NoteWord,
+  noteTokens,
   ProseWord,
   QuoteBlock,
   headClassName,
@@ -38,6 +41,7 @@ type Piece =
   | { kind: "yourHighlight" }
   | { kind: "yourNote" }
   | { kind: "prose" }
+  | { kind: "note" }
   | { kind: "stopped" }
   | { kind: "foot" };
 
@@ -58,6 +62,8 @@ type AnswerProps = {
   replay: boolean;
   seconds: number;
   live?: { pending: boolean; phase: AskPhase | null } | undefined;
+  noteOffered?: boolean;
+  locale?: Locale;
   privacy?: string | undefined;
 };
 
@@ -112,6 +118,8 @@ export function Answer({
   replay,
   seconds,
   live,
+  noteOffered = false,
+  locale = "es",
   privacy,
 }: AnswerProps) {
   const script = useAskScript();
@@ -125,10 +133,14 @@ export function Answer({
   const body = useRef<HTMLDivElement>(null);
   const [pieces, setPieces] = useState<Shown[]>([]);
   const [words, setWords] = useState(0);
+  const [noteWords, setNoteWords] = useState(0);
   const [status, setStatus] = useState<Status>(null);
   const [listOpen, setListOpen] = useState(false);
   const [instant] = useState(() => replay || prefersReducedMotion());
   const tokens = answer.prose ? answer.prose.split(" ") : [];
+  const note = answer.note && !noteOffered ? answer.note : null;
+  const closing = note ? noteTokens(note.before, note.ref, note.after) : [];
+  const follow = noteOffered ? answer.follow.filter((chip) => !chip.endsWith(":note")) : answer.follow;
   const latest = useRef({ onMarks, onDone });
   useEffect(() => {
     latest.current = { onMarks, onDone };
@@ -169,6 +181,7 @@ export function Answer({
     const run = async () => {
       setPieces([]);
       setWords(0);
+      setNoteWords(0);
       const started = isLive ? startedAt.current : performance.now();
       if (answer.fixed) setStatus(null);
       if (!answer.fixed && !instant && !isLive) {
@@ -225,6 +238,17 @@ export function Answer({
             await new Promise<void>((resolve) => timers.push(window.setTimeout(resolve, gap)));
           }
       }
+      if (note && !stop.current && !cancelled) {
+        add({ kind: "note" }, "none");
+        if (instant) setNoteWords(closing.length);
+        else
+          for (let count = 1; count <= closing.length; count += 1) {
+            if (cancelled || stop.current) break;
+            setNoteWords(count);
+            const gap = isLive ? Math.min(wordMs, liveProseCapMs / closing.length) : wordMs;
+            await new Promise<void>((resolve) => timers.push(window.setTimeout(resolve, gap)));
+          }
+      }
       if (cancelled) return;
       if (stop.current) add({ kind: "stopped" }, "fade");
       else if (!answer.fixed || answer.follow.length > 0) add({ kind: "foot" }, "fade");
@@ -238,7 +262,7 @@ export function Answer({
         clearInterval(timer);
       });
     };
-  }, [answer, blocks, instant, isLive, pending, seconds, stop, tokens.length]);
+  }, [answer, blocks, instant, isLive, pending, seconds, stop, tokens.length, note, closing.length]);
 
   const sources = answer.consulted ?? [
     ...blocks.map((block) => block.quote),
@@ -329,6 +353,20 @@ export function Answer({
             ))}
           </p>
         );
+      case "note":
+        return note ? (
+          <p key={key} data-ask-note-line="" className={proseClassName}>
+            {closing.slice(0, noteWords).map((token, index) => (
+              <NoteWord
+                key={index}
+                token={token}
+                noteText={note.noteText}
+                locale={locale}
+                enter={instant ? "none" : "word"}
+              />
+            ))}
+          </p>
+        ) : null;
       case "stopped":
         return (
           <Entering key={key} as="p" enter={enter} className="m-0 text-btn text-ink-3">
@@ -343,13 +381,14 @@ export function Answer({
                 {privacy}
               </p>
             ) : null}
-            {answer.follow.length > 0 ? (
+            {follow.length > 0 ? (
               <div className="flex flex-wrap gap-2">
-                {answer.follow.slice(0, isLive ? answer.follow.length : 2).map((chip) => (
+                {follow.slice(0, isLive ? follow.length : 2).map((chip) => (
                   <button
                     key={chip}
                     type="button"
                     data-bare-focus=""
+                    data-ask-note-chip={chip.endsWith(":note") ? "" : undefined}
                     onClick={() => onFollow(chip)}
                     className={`inline-flex min-h-9 cursor-pointer items-center justify-start rounded-6 border border-rule px-2.5 py-1.5 text-left text-ui-xs leading-label text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink pointer-coarse:min-h-11 ${focusRingClassName}`}
                   >

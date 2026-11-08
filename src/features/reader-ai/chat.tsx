@@ -23,6 +23,7 @@ import {
   liveId,
   moreAsAnswer,
   moreOffset,
+  isLiveId,
   parseLiveChip,
   pendingLiveId,
   putLiveAnswer,
@@ -364,6 +365,12 @@ export function Chat({
     );
   };
 
+  const noteTextOf = (id: string | undefined) => (id && isLiveId(id) ? script.answer(id).note?.noteText : undefined);
+  const noteOfferedBefore = (index: number) => {
+    const text = noteTextOf(entries[index]?.id);
+    return text !== undefined && entries.slice(0, index).some((entry) => noteTextOf(entry.id) === text);
+  };
+
   const askLive = (question: string, redo: string | null) => {
     if (!live) return;
     const request: AskRequest = {
@@ -400,6 +407,7 @@ export function Chat({
     if (chip && liveChip) {
       if (liveChip.action === "more") askMore(liveChip.answerId, chip);
       else if (liveChip.action === "followup") askLive(script.chips[chip] ?? "", null);
+      else if (liveChip.action === "note") askLive(getLive().answers[liveChip.answerId]?.note?.question ?? "", null);
       else {
         const target = retryTargets.get(liveChip.answerId);
         if (target) ask(target);
@@ -471,7 +479,7 @@ export function Chat({
               aria-atomic="false"
               className="grid min-w-0 flex-none grid-cols-1 gap-6.5"
             >
-              {entries.map((entry) => (
+              {entries.map((entry, index) => (
                 <Entering
                   key={entry.key}
                   enter={prefersReducedMotion() ? "none" : "pop"}
@@ -501,6 +509,8 @@ export function Chat({
                     onFollow={(chip) => ask(chip)}
                     onDone={() => setBusy(false)}
                     live={liveState[entry.key]}
+                    noteOffered={noteOfferedBefore(index)}
+                    locale={live?.locale ?? "es"}
                     privacy={entry.key === privacyKey ? privacyLine : undefined}
                   />
                 </Entering>

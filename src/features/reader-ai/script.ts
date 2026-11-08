@@ -1,3 +1,4 @@
+import type { WireNoteFollowup } from "@/lib/ai/contracts";
 import type { Quote } from "@/features/reader-ai/quotes";
 
 export type AnswerId = string;
@@ -18,6 +19,7 @@ export type Answer = {
   fixed?: boolean;
   meta?: string;
   consulted?: string[];
+  note?: WireNoteFollowup;
   follow: ChipId[];
 };
 

@@ -108,3 +108,6 @@ export function isNote(value: unknown): value is Note {
     (item.scope === "source" || item.verse !== null)
   );
 }
+
+export const openNoteEvent = "doctrina:open-note";
+export type OpenNoteDetail = { text: string };

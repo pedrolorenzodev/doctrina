@@ -42,7 +42,7 @@ import { chooseTranslation } from "@/lib/translation-choice";
 import { useUndo } from "@/features/reader/use-undo";
 import { readerPanelFrom, VersePanel } from "@/features/reader/verse-panel";
 import { nbspBeforeDigits } from "@/lib/locator";
-import { clippedQuote, type Note, type NoteDraft } from "@/lib/notes";
+import { clippedQuote, openNoteEvent, type Note, type NoteDraft, type OpenNoteDetail } from "@/lib/notes";
 import { numberingDiffers } from "@/content/bible/numbering-note";
 import type { ReaderTranslationView } from "@/content/get-reader-chapter";
 import type { VerseUse } from "@/content/get-verse-uses";
@@ -408,6 +408,18 @@ export function ReaderBody({
   const latest = useRef({ chapterNotes, translationId: selected.id, secondId, notesAt: notes.at });
   useEffect(() => {
     latest.current = { chapterNotes, translationId: selected.id, secondId, notesAt: notes.at };
+  });
+  useEffect(() => {
+    const onOpenNote = (event: Event) => {
+      const { text } = (event as CustomEvent<OpenNoteDetail>).detail;
+      const note = notes.ofChapter.find((candidate) => candidate.text === text);
+      if (!note || note.verse === null) return;
+      event.preventDefault();
+      open(note.verse, false, null);
+      notes.openExisting(note);
+    };
+    window.addEventListener(openNoteEvent, onOpenNote);
+    return () => window.removeEventListener(openNoteEvent, onOpenNote);
   });
   const [previewed, setPreviewed] = useState<number | null>(null);
   const previewNotes = useCallback((found: Note[], verseNumber: number | null) => {

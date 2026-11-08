@@ -11,10 +11,10 @@ export type LiveSnapshot = {
 
 export type LiveLabels = { more: string; retry: string; metaCoverage: string; metaMore: string };
 
-export type LiveChip = { answerId: string; action: "followup" | "more" | "retry"; index: number };
+export type LiveChip = { answerId: string; action: "followup" | "more" | "retry" | "note"; index: number };
 
 const liveEntryPrefix = "live:";
-const chipPattern = /^live:(.+):(f(\d+)|more|retry)$/;
+const chipPattern = /^live:(.+):(f(\d+)|more|retry|note)$/;
 const tokenPattern = /\{q:([^}\s]+)\}/g;
 const errorPrefix = "error:";
 
@@ -30,7 +30,8 @@ export const liveChipId = (answerId: string, action: LiveChip["action"], index =
 export function parseLiveChip(chip: string): LiveChip | null {
   const found = chipPattern.exec(chip);
   if (!found?.[1] || !found[2]) return null;
-  if (found[2] === "more" || found[2] === "retry") return { answerId: found[1], action: found[2], index: 0 };
+  if (found[2] === "more" || found[2] === "retry" || found[2] === "note")
+    return { answerId: found[1], action: found[2], index: 0 };
   return { answerId: found[1], action: "followup", index: Number(found[3]) };
 }
 
@@ -170,6 +171,7 @@ export function liveAsAnswer(wire: WireAnswer, labels: LiveLabels): Answer {
   const follow = error
     ? wire.followups.map(() => liveChipId(id, "retry"))
     : [
+        ...(wire.note ? [liveChipId(id, "note")] : []),
         ...wire.followups.map((_, index) => liveChipId(id, "followup", index)),
         ...(wire.more ? [liveChipId(id, "more")] : []),
       ];
@@ -190,6 +192,7 @@ export function liveAsAnswer(wire: WireAnswer, labels: LiveLabels): Answer {
     ...(wire.fixed ? { fixed: true } : {}),
     ...(meta ? { meta } : {}),
     consulted: wire.consulted,
+    ...(wire.note && !error ? { note: wire.note } : {}),
     follow,
   };
 }
@@ -197,5 +200,6 @@ export function liveAsAnswer(wire: WireAnswer, labels: LiveLabels): Answer {
 export function liveChipLabel(wire: WireAnswer, chip: LiveChip, labels: LiveLabels): string {
   if (chip.action === "more") return labels.more;
   if (chip.action === "retry") return labels.retry;
+  if (chip.action === "note") return wire.note?.suggestion ?? "";
   return wire.followups[chip.index] ?? "";
 }
