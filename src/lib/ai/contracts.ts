@@ -3,7 +3,7 @@ import type { CitationView } from "@/lib/citation-view";
 
 export const CONTRACTS_VERSION = "contracts-2026-11-06.1";
 export const PLAN_PROMPT_VERSION = "plan-2026-11-08.1";
-export const ANSWER_PROMPT_VERSION = "chat-2026-11-08.1";
+export const ANSWER_PROMPT_VERSION = "chat-2026-11-08.2";
 export const SIMPLIFY_PROMPT_VERSION = "simplify-2026-11-07.4";
 export const JUDGE_PROMPT_VERSION = "judge-2026-11-06.1";
 export const MAX_QUESTION_CHARS = 600;
@@ -64,6 +64,9 @@ export const modelAnswerSchema = z.object({
   ),
   prose: z.string(),
   followups: z.array(z.string()),
+  noteFollowup: z
+    .object({ passage: z.string(), kind: z.enum(["question", "claim", "none"]) })
+    .default({ passage: "", kind: "none" }),
 });
 export type ModelAnswer = z.infer<typeof modelAnswerSchema>;
 
@@ -133,6 +136,16 @@ export type WireQuote = {
   context?: { before: string; after: string };
 };
 
+export type WireNoteFollowup = {
+  kind: "question" | "claim";
+  before: string;
+  ref: string;
+  after: string;
+  suggestion: string;
+  question: string;
+  noteText: string;
+};
+
 export type WireAnswer = {
   answerId: string;
   kind: AnswerKind;
@@ -151,6 +164,7 @@ export type WireAnswer = {
   cached: boolean;
   levels?: ["clear"];
   promptVersion: string;
+  note?: WireNoteFollowup;
 };
 
 export type AskPhase = "plan" | "search" | "read" | "write" | "check";

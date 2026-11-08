@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import {
   ANSWER_PROMPT_VERSION,
+  type ModelAnswer,
   ESTIMATE_MICROS,
   type AskPhase,
   type AskRequest,
@@ -25,6 +26,7 @@ import { coverageLine } from "@/features/ask/coverage-line";
 import { isPastoral } from "@/features/ask/fixed-texts";
 import { fatherNameForms } from "@/features/ask/lexicon";
 import { fixedAnswer, mapAnswer } from "@/features/ask/map-answer";
+import { noteFollowup } from "@/features/ask/note-followup";
 import { runPlan } from "@/features/ask/plan";
 import { verifyAnswer, type Verified } from "@/features/ask/verify-answer";
 
@@ -142,6 +144,7 @@ async function live(
   phase(send, "read", sources.length);
 
   let verified: Verified;
+  let lastModel: ModelAnswer | null = null;
   if (sources.length === 0) {
     verified = {
       kind: "not_found",
@@ -172,6 +175,7 @@ async function live(
       trace.checks.secondReading = true;
       model = await runSecondReading(opened.provider, trace.meter, input, plan, pack.passages);
     }
+    lastModel = model;
     phase(send, "check");
     verified = verifyAnswer(model, pack.passages, options);
     trace.verified = verified;
@@ -195,7 +199,7 @@ async function live(
   );
   const notFound = verified.kind === "not_found" || verified.sections.length === 0;
   const extra = notFound ? [...sources, ...pack.extra] : pack.extra;
-  const wire = mapAnswer({
+  const mapped = mapAnswer({
     verified,
     passages: pack.passages,
     question: input.question,
@@ -203,6 +207,8 @@ async function live(
     locale: answerLocale,
     more: extra.some((passage) => passage.collection !== "mine"),
   });
+  const note = lastModel ? noteFollowup(lastModel, verified, pack.passages, input.notes, answerLocale) : null;
+  const wire = note ? { ...mapped, note } : mapped;
   const answerId = await saveAnswer({
     cacheKey: opened.cacheKey,
     locale: answerLocale,

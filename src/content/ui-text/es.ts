@@ -870,4 +870,12 @@ export const es = {
       all: "Todas",
     },
   },
+  noteFollowup: {
+    sentence: "Vi tu nota de {ref}, «{excerpt}». ",
+    askQuestion: "¿Querés que lo analicemos?",
+    askClaim: "¿Querés ver qué dicen las tradiciones sobre lo que escribiste?",
+    suggestion: "Tu nota de {ref}: {question}",
+    sent: "{ref}, tu nota: {question}",
+    claimQuestion: "¿qué dicen las tradiciones sobre lo que escribiste?",
+  },
 };

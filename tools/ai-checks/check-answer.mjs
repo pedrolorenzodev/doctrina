@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { verifyAnswer } from "@/features/ask/verify-answer";
 import { anchoredSpan, bestSpan, withCommentary } from "@/features/ask/excerpt";
 import { leadSlice, mapAnswer, wireQuote } from "@/features/ask/map-answer";
+import { noteExcerpt, noteFollowup } from "@/features/ask/note-followup";
 import { coverageLine } from "@/features/ask/coverage-line";
 import { clampPlan } from "@/features/ask/plan";
 import { fatherNameForms, verdictHit, fatherAssignmentHit } from "@/features/ask/lexicon";
@@ -686,5 +687,56 @@ let missing = null;
 await askMore("unknown", 0).catch((error) => (missing = error.code));
 check("more on an expired answer is ai_not_found", () => assert.equal(missing, "ai_not_found"));
 check("pastoral in English", () => assert.equal(isPastoral("Can you pray for my mother? She is very ill."), true));
+
+const notePack = [
+  ...pack,
+  passage("P20", {
+    key: "mine:1",
+    collection: "mine",
+    speaker: "reader",
+    text: "¿Qué significan “carne” y “sangre” acá?",
+  }),
+  passage("P21", {
+    key: "mine:2",
+    collection: "mine",
+    speaker: "reader",
+    text: "Para mí esto es simbólico: Jesús no habla de comer su cuerpo de verdad.",
+  }),
+];
+const sentNotes = [
+  { text: "¿Qué significan “carne” y “sangre” acá?", ref: "Juan 6:53" },
+  { text: "Para mí esto es simbólico: Jesús no habla de comer su cuerpo de verdad.", ref: "Juan 6:63" },
+];
+const answered = verifyAnswer(model({ sections: [section("fathers", ["P2", ""])] }), notePack, options);
+const follow = (passage, kind, verified = answered, locale = "es") =>
+  noteFollowup(model({ noteFollowup: { passage, kind } }), verified, notePack, sentNotes, locale);
+check(
+  "note follow-up: a question note gets option A's sentence and option B's suggestion, with the note's own words",
+  () => {
+    const note = follow("P20", "question");
+    assert.equal(
+      `${note.before}${note.ref}${note.after}`,
+      "Vi tu nota de Juan 6:53, «¿Qué significan “carne” y “sangre” acá?». ¿Querés que lo analicemos?",
+    );
+    assert.equal(note.suggestion, "Tu nota de Juan 6:53: ¿qué significan “carne” y “sangre” acá?");
+    assert.equal(note.question, "Juan 6:53, tu nota: ¿qué significan “carne” y “sangre” acá?");
+  },
+);
+check("note follow-up: a doctrinal claim gets the invitation to see the traditions, never a correction", () => {
+  const note = follow("P21", "claim");
+  assert.ok(note.after.endsWith("¿Querés ver qué dicen las tradiciones sobre lo que escribiste?"));
+  assert.equal(note.suggestion, "Tu nota de Juan 6:63: ¿qué dicen las tradiciones sobre lo que escribiste?");
+});
+check("note follow-up: none, a source id, an unknown id or a not found answer show nothing", () => {
+  assert.equal(follow("", "none"), null);
+  assert.equal(follow("P2", "question"), null);
+  assert.equal(follow("P99", "claim"), null);
+  assert.equal(follow("P20", "question", verifyAnswer(model({ kind: "not_found" }), notePack, options)), null);
+});
+check("note follow-up: long notes are cut at 80 characters with an ellipsis, English copy", () => {
+  assert.equal(noteExcerpt("a".repeat(100)), `${"a".repeat(79)}…`);
+  const note = follow("P20", "question", answered, "en");
+  assert.ok(note.before.startsWith("I saw your note on") && note.suggestion.startsWith("Your note on Juan 6:53:"));
+});
 
 console.log(`ok ${checks} checks`);

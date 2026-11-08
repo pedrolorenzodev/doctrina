@@ -871,4 +871,12 @@ export const en: UiText = {
       all: "All",
     },
   },
+  noteFollowup: {
+    sentence: "I saw your note on {ref}, «{excerpt}». ",
+    askQuestion: "Do you want us to look into it?",
+    askClaim: "Do you want to see what the traditions say about what you wrote?",
+    suggestion: "Your note on {ref}: {question}",
+    sent: "{ref}, your note: {question}",
+    claimQuestion: "what do the traditions say about what you wrote?",
+  },
 };
