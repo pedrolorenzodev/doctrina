@@ -163,6 +163,55 @@ test.describe("ask drawer: real answers", () => {
     await expect(link).toHaveAttribute("href", /ignatius-smyrnaeans.*#d-6\.2$/);
   });
 
+  test("a live Father quote and a live tradition quote show the timeline in the card and the window, a verse does not", async ({
+    page,
+  }) => {
+    const answer = wireAnswer(3, {
+      quotes: {
+        q1: quote("q1", { date: { label: "c. 107–110", start: 107, end: 110 } }),
+        q2: quote("q2", {
+          key: "tradition:eucharist:catholic:cite:CEC1336:0:es",
+          who: "Catecismo de la Iglesia Católica",
+          work: "§1336",
+          father: undefined,
+          date: { label: "1992/1997", start: 1992, end: null },
+        }),
+        q3: quote("q3", {
+          who: "Juan",
+          work: "6:53",
+          father: undefined,
+          bible: { book: "John", chapter: 6, verse: 53 },
+        }),
+      },
+      prose: "Ignacio {q:q1}. El Catecismo {q:q2}. Juan {q:q3}.",
+    });
+    await page.route("**/api/ai/ask", (route) => stream(route, answer));
+    await openDrawer(page);
+    await ask(page);
+    const cites = page.locator(`${answers} p [data-ask-cite]`);
+    await expect(cites).toHaveCount(3, { timeout: 9000 });
+    const card = page.locator("[data-ask-preview]");
+    const window = page.locator('[role=dialog][aria-labelledby="citation-window-kind"]');
+    for (const [index, year] of [
+      [0, "c. 107–110"],
+      [1, "1992/1997"],
+    ] as const) {
+      await cites.nth(index).hover();
+      await expect(card).toHaveAttribute("data-open", "true");
+      await expect(card).toContainText("Fecha");
+      await expect(card).toContainText(year);
+      await cites.nth(index).click();
+      await expect(window).toHaveAttribute("data-open", "true");
+      await expect(window).toContainText("Fecha");
+      await expect(window).toContainText(year);
+      await page.keyboard.press("Escape");
+      await expect(window).not.toHaveAttribute("data-open");
+    }
+    await cites.nth(2).hover();
+    await expect(card).toHaveAttribute("data-open", "true");
+    await expect(card).not.toContainText("Fecha");
+  });
+
   test("suggestion chips and routed questions never call the route", async ({ page }) => {
     let calls = 0;
     await page.route("**/api/ai/ask", (route) => {

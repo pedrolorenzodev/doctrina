@@ -209,6 +209,13 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **A real far jump exists on HEAD: switching to «En párrafo» in the middle of a chapter with its neighbours loaded ends in the next chapter.** · The page shrinks, the previous chapter mounts by proximity (`reach()`), `holding` and `useKeepTopVerse` both move the page; the reading verse ends ~1700 px off (John 6:35 → John 7:6). Repro: `test.fixme` in `e2e/reader-keep-position.spec.ts`; logger: `localStorage.setItem("doctrina-debug-scroll","1")` then `window.__scrollLog`. Parked by Pedro (T4b). · `src/features/reader/reader-stream.tsx`, `use-keep-top-verse.ts`
 - **Do not measure the reading position from JS in the middle of a frame.** · A `getBoundingClientRect` between a style change and the frame's ResizeObserver step sees the unrestored layout (389 px «drift» that is never painted). Sample inside a ResizeObserver created after the app's own, or compare `layout-shift` entries. · `e2e/reader-keep-position.spec.ts`
 
+## Chat citation timeline (2026-11-07)
+- **`quote-dating.ts` must stay Node-loadable** · `src/features/ask/map-answer.ts` imports it and Node tools load that file (`tools/ai-checks/check-answer.mjs`); it must not import `father-view.ts`, `routes.ts` or anything with `server-only`, which is why `writingYears` lives in `writing-years.ts` and the `en`/`es` UI text is imported directly, not through `getUiText` · `src/content/quote-dating.ts`.
+- **A scripted Father quote needs a mapped work** · `Quote.father.workId` must be a work that `father-writing-links.ts` maps, or the quote shows no timeline.
+- **`registry.citations` has a literal type** · index it after `Object.hasOwn`.
+- **Cached answers show no timeline** · an answer stored before the change has no `date` on its quotes until it expires or `ANSWER_PROMPT_VERSION` changes.
+- **E2E in a real-mode build** · run the specs with `NEXT_PUBLIC_AI_CHAT=real` in the test process too: the scripted-answer tests skip themselves on that variable, and without it they fail against a real build.
+
 ## Traps found on 2026-10-28 night (eleventh session)
 
 - **`data/corpus/` is gitignored.** `kjv.red.json`, the `*.red.computed.json` files and every other corpus file exist only on this machine; a block that «adds red letters» commits only its script, loader and specs.

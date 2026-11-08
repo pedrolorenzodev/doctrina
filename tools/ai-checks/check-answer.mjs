@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { verifyAnswer } from "@/features/ask/verify-answer";
 import { anchoredSpan, bestSpan, withCommentary } from "@/features/ask/excerpt";
-import { mapAnswer } from "@/features/ask/map-answer";
+import { leadSlice, mapAnswer, wireQuote } from "@/features/ask/map-answer";
 import { coverageLine } from "@/features/ask/coverage-line";
 import { clampPlan } from "@/features/ask/plan";
 import { fatherNameForms, verdictHit, fatherAssignmentHit } from "@/features/ask/lexicon";
@@ -115,6 +115,23 @@ function check(name, fn) {
     throw new Error(`check-answer: ${name}: ${error.message}`);
   }
 }
+
+check("wire quotes carry the site's date for Fathers and cited sources, never for verses", () => {
+  const wire = (p) => wireQuote(p, leadSlice(p), "es");
+  const [bible, father, , , undatedFather] = [pack[0], pack[1], pack[2], pack[3], pack[4]];
+  assert.equal(wire(bible).date, undefined);
+  assert.deepEqual(wire(father).date, { label: "c. 107–110", start: 107, end: 110 });
+  assert.equal(wire(undatedFather).date, undefined);
+  const cited = passage("P8", {
+    collection: "tradition",
+    speaker: "catholic",
+    key: "tradition:eucharist:catholic:cite:CEC1336:0:es",
+    father: null,
+    text: "El primer anuncio de la Eucaristía dividió a los discípulos.",
+  });
+  assert.deepEqual(wire(cited).date, { label: "1992/1997", start: 1992, end: null });
+  assert.equal(wire(pack[2]).date, undefined);
+});
 
 check("literal quote accepted", () => {
   const v = run({ sections: [section("fathers", ["P2", "They abstain from eucharist (thanksgiving) and prayer"])] });

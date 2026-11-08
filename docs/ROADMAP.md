@@ -15,7 +15,7 @@
 
 ## Now
 
-- **Chat fixes (Pedro, 2026-11-07 evening, DECISIONS same date):** the timeline in the chat's citation window and hover preview (session `chatfix`, clone `doctrina-ai-chatfix`); the follow-up on the reader's notes: proposal Artifact first, then build (the prompt and server part is C-SRV work, Opus). Open, not agreed: add the Reformed and Baptist readings of John 6 to their eucharist content (data gap measured in that entry).
+- **Chat fixes (Pedro, 2026-11-07 evening, DECISIONS same date):** the timeline in the chat's citation window and hover card is **built and merged**; the follow-up on the reader's notes has its proposal (https://claude.ai/artifact/Y4C28LK6hHMCewcBqGrCz7), waiting for Pedro's pick, then build (the prompt and server part is C-SRV work, Opus). Open, not agreed: add the Reformed and Baptist readings of John 6 to their eucharist content (data gap measured in that entry); date the 97 undated Father works and 28 registry citations (needs sourced research).
 - **Real AI, after the evaluation (2026-11-07, `docs/features/ai-real-int.md`):** Pedro decides the prompt change for richer answers, the latency and the search retry, then the evaluation is rerun (≈ $0.45); S-ENTRY (any-paragraph entry points for the simplifier) still waits for Pedro's choice among the proposal's options (`docs/research/ai/simplifier-design.md` §7.4), nothing built.
 
 **Agreed with Pedro, 2026-10-29 (queue and details):**

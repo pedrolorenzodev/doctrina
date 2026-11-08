@@ -581,6 +581,55 @@ test.describe("ask drawer: citations", () => {
     expect((await card.boundingBox())!.width).toBe(320);
   });
 
+  const citationWindow = '[role=dialog][aria-labelledby="citation-window-kind"]';
+
+  const hover = async (page: Page, hasText: string) => {
+    const link = page.locator("[data-ask-cite]", { hasText });
+    await link.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(200);
+    await link.hover();
+    const card = page.locator("[data-ask-preview]");
+    await expect(card).toHaveAttribute("data-open", "true");
+    return { link, card };
+  };
+
+  for (const [name, suggestion, citation, year, lastMark] of [
+    ["a Father's work", 0, "Catequesis 22, 4", "c. 348–350", "800"],
+    ["a tradition's source", 1, "§1336", "1992/1997", "2026"],
+  ] as const) {
+    test(`the card and the window show the timeline of ${name}`, async ({ page }) => {
+      await answered(page, suggestion);
+      const { link, card } = await hover(page, citation);
+      await expect(card).toContainText("Fecha");
+      await expect(card).toContainText(year);
+      await expect(card.getByText(lastMark, { exact: true })).toBeVisible();
+      await link.click();
+      const window = page.locator(citationWindow);
+      await expect(window).toHaveAttribute("data-open", "true");
+      await expect(window).toContainText("Fecha");
+      await expect(window).toContainText(year);
+      await expect(window.getByText(lastMark, { exact: true })).toBeVisible();
+    });
+  }
+
+  test("a Father's work with no date in the site's data shows no timeline in the card or the window", async ({
+    page,
+  }) => {
+    await answered(page, 0);
+    const { link, card } = await hover(page, "Sobre la doctrina cristiana");
+    await expect(card).not.toContainText("Fecha");
+    await link.click();
+    const window = page.locator(citationWindow);
+    await expect(window).toHaveAttribute("data-open", "true");
+    await expect(window).not.toContainText("Fecha");
+  });
+
+  test("a verse has no timeline in its card", async ({ page }) => {
+    await answered(page, 0);
+    const { card } = await hover(page, "6:66");
+    await expect(card).not.toContainText("Fecha");
+  });
+
   test("a verse citation jumps to the verse, marks it and offers the way back", async ({ page }) => {
     await answered(page, 0);
     const start = await page.evaluate(() => scrollY);
