@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "reac
 import { useRouter } from "next/navigation";
 import { CitationProvider, useCitation } from "@/components/citation-window/citation-context";
 import type { CitationWindowText } from "@/components/citation-window/types";
+import type { QuoteDate } from "@/content/quote-dating";
 import { markArrival } from "@/lib/arrival-mark";
 import { getHighlights } from "@/lib/highlight-store";
 import { getNotes } from "@/lib/note-store";
@@ -56,6 +57,7 @@ type ReaderAskProps = {
   bibleHrefs?: Record<string, string>;
   citationText: CitationWindowText;
   script?: AskScript;
+  quoteDates?: Record<string, QuoteDate>;
   fatherEditions?: boolean;
 };
 
@@ -67,7 +69,7 @@ const coarse = () => matchMedia("(pointer: coarse)").matches;
 const headButtonClassName = `grid size-9 flex-none cursor-pointer place-items-center rounded-6 text-ink-2 transition-colors duration-150 ease-standard hover:bg-hover hover:text-ink aria-pressed:bg-hover aria-pressed:text-ink pointer-coarse:size-11 ${focusRingClassName}`;
 
 export function ReaderAsk(props: ReaderAskProps) {
-  const { locale, text, citationText, script: base = bibleScript } = props;
+  const { locale, text, citationText, script: base = bibleScript, quoteDates } = props;
   const live = useSyncExternalStore(subscribeLive, getLive, () => noLiveAnswers);
   const script = useMemo(
     () =>
@@ -83,10 +85,10 @@ export function ReaderAsk(props: ReaderAskProps) {
   );
   const views = useMemo(
     () => ({
-      ...quoteViews(locale, text.cite, base.quotes),
+      ...quoteViews(locale, text.cite, base.quotes, quoteDates),
       ...(realChat ? liveQuoteViews(locale, text.cite, live) : {}),
     }),
-    [locale, text.cite, base, live],
+    [locale, text.cite, base, live, quoteDates],
   );
   return (
     <AskScriptProvider value={script}>

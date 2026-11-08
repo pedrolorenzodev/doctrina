@@ -1,6 +1,8 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
+import { CitationDate } from "@/components/citation-window/citation-date";
+import { useCitation } from "@/components/citation-window/citation-context";
 import { verseText } from "@/features/reader-ai/answer-parts";
 import { motionClassName, motionStyle } from "@/features/reader-ai/motion";
 import { useAskScript } from "@/features/reader-ai/ask-script";
@@ -45,6 +47,7 @@ const checkClassName =
 
 function Content({ target, text }: { target: CiteTarget; text: AskText["cite"] }) {
   const script = useAskScript();
+  const citation = useCitation();
   if ("verse" in target) {
     return (
       <>
@@ -76,6 +79,7 @@ function Content({ target, text }: { target: CiteTarget; text: AskText["cite"] }
       </>
     );
   }
+  const date = target.quote in citation.views ? citation.views[target.quote]?.date : null;
   return (
     <>
       <p className={`${quoteClassName} font-head italic`}>{entry.text}</p>
@@ -93,6 +97,7 @@ function Content({ target, text }: { target: CiteTarget; text: AskText["cite"] }
         <b className="font-medium text-ink-2">{entry.who}</b>
         {afterAuthor(entry)}
       </p>
+      {date ? <CitationDate date={date} label={citation.text.dateLabel} className="mt-2.5" /> : null}
       <p className={checkClassName}>
         <Check />
         {entry.father ? text.fatherCheck : text.storedCheck}

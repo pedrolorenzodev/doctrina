@@ -2,6 +2,7 @@ import { lifeText, type FatherFact } from "@/content/father-life";
 import { formatYear } from "@/content/format-date";
 import type { FatherWorkRow } from "@/content/father-work-links";
 import { writingWorkIds } from "@/content/father-writing-links";
+import { writingYears } from "@/content/writing-years";
 import type { Father } from "@/content/model/history";
 import { fatherWorkHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
@@ -22,14 +23,8 @@ export type FatherView = {
 };
 
 const bishopRole = /^(obispo|arzobispo|bishop|archbishop) (?:de |of )(.+)$/i;
-const yearRange = /(\d+)\s*[–-]\s*(\d+)/;
 
 const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
-
-function writingYears(date: string, year: number): { start: number; end: number | null } {
-  const range = yearRange.exec(date);
-  return range ? { start: Number(range[1]), end: Number(range[2]) } : { start: year, end: null };
-}
 
 type DatedWriting = { id: string; title: string; dateLabel: string };
 

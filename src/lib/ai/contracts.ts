@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { CitationView } from "@/lib/citation-view";
 
 export const CONTRACTS_VERSION = "contracts-2026-11-06.1";
 export const PLAN_PROMPT_VERSION = "plan-2026-11-08.1";
@@ -128,6 +129,7 @@ export type WireQuote = {
   father?: { workId: string; at: string; anchor: string; original: string };
   bible?: { book: string; chapter: number; verse: number; verseEnd?: number };
   href?: string;
+  date?: NonNullable<CitationView["date"]>;
   context?: { before: string; after: string };
 };
 

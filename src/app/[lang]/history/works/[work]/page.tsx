@@ -15,6 +15,8 @@ import { ChapterFoot } from "@/features/reader/chapter-foot";
 import { FatherStrip } from "@/features/reader/father-strip";
 import { FatherBody } from "@/features/reader/father-body";
 import { FatherAsk } from "@/features/reader-ai/father-ask";
+import { fatherScriptData } from "@/features/reader-ai/father-script-data";
+import { scriptQuoteDates } from "@/features/reader-ai/quote-dates";
 import { fatherAskText } from "@/features/reader-ai/text";
 import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderTextScript } from "@/features/reader/reader-text-script";
@@ -227,6 +229,7 @@ export default async function FatherWorkRoute({ params }: PageProps<"/[lang]/his
         editions={pickerOptions.map((option) => ({ id: option.id, name: option.displayName }))}
         defaultEdition={defaultEdition}
         citationText={text.citation}
+        quoteDates={scriptQuoteDates(locale, fatherScriptData[work.id]?.quotes ?? {})}
       />
     </PageMain>
   );

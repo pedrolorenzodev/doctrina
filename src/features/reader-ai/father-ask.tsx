@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import type { CitationWindowText } from "@/components/citation-window/types";
+import type { QuoteDate } from "@/content/quote-dating";
 import { fatherScript } from "@/features/reader-ai/father-script";
 import { ReaderAsk } from "@/features/reader-ai/reader-ask";
 import type { AskText } from "@/features/reader-ai/text";
@@ -15,9 +16,19 @@ type FatherAskProps = {
   editions: { id: string; name: string }[];
   defaultEdition: string;
   citationText: CitationWindowText;
+  quoteDates: Record<string, QuoteDate>;
 };
 
-export function FatherAsk({ locale, text, workId, workName, editions, defaultEdition, citationText }: FatherAskProps) {
+export function FatherAsk({
+  locale,
+  text,
+  workId,
+  workName,
+  editions,
+  defaultEdition,
+  citationText,
+  quoteDates,
+}: FatherAskProps) {
   const script = useMemo(() => fatherScript(workId), [workId]);
   return (
     <ReaderAsk
@@ -31,6 +42,7 @@ export function FatherAsk({ locale, text, workId, workName, editions, defaultEdi
       editions={editions}
       defaultEdition={defaultEdition}
       citationText={citationText}
+      quoteDates={quoteDates}
     />
   );
 }

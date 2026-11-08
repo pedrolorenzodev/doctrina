@@ -132,7 +132,8 @@ export function liveQuoteViews(
       const href = wire?.father
         ? `${fatherWorkHref(locale, wire.father.workId)}#d-${wire.father.anchor}`
         : (wire?.href ?? null);
-      return [id, href ? { ...view, fullSource: true, fullSourceHref: href } : view];
+      const dated = wire?.date ? { ...view, date: wire.date } : view;
+      return [id, href ? { ...dated, fullSource: true, fullSourceHref: href } : dated];
     }),
   );
 }

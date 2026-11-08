@@ -3,6 +3,7 @@ import type { Locale } from "@/lib/locale";
 import { getBibleBook } from "@/content/bible-books";
 import { bibleChapterHref } from "@/content/bible-routes";
 import { collectionLabels, traditionLabels } from "@/content/ai-search/collections";
+import { passageDate } from "@/content/quote-dating";
 import type { PackPassage } from "@/content/ai-search/types";
 import type { TraditionId } from "@/content/model/ids";
 import { fixedTexts } from "@/features/ask/fixed-texts";
@@ -39,6 +40,7 @@ export function wireQuote(
 ): WireQuote {
   const full = passage.text.normalize("NFC");
   const href = hrefOf(passage, locale);
+  const date = passageDate(passage, locale);
   const before = full.slice(Math.max(0, slice.start - CONTEXT_CHARS), slice.start);
   const after = full.slice(slice.end, slice.end + CONTEXT_CHARS);
   return {
@@ -71,6 +73,7 @@ export function wireQuote(
         }
       : {}),
     ...(href ? { href } : {}),
+    ...(date ? { date } : {}),
     context: { before, after },
   };
 }

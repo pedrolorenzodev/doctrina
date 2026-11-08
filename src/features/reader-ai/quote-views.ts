@@ -1,4 +1,5 @@
 import { fatherWorkHref } from "@/content/routes";
+import type { QuoteDate } from "@/content/quote-dating";
 import type { CitationView } from "@/lib/citation-view";
 import type { Locale } from "@/lib/locale";
 import type { Quote } from "@/features/reader-ai/quotes";
@@ -8,6 +9,7 @@ export function quoteViews(
   locale: Locale,
   text: AskText["cite"],
   quotes: Record<string, Quote>,
+  dates: Record<string, QuoteDate> = {},
 ): Record<string, CitationView> {
   return Object.fromEntries(
     Object.entries(quotes)
@@ -23,7 +25,7 @@ export function quoteViews(
           who: quote.who,
           locator: quote.work,
           note: { label: text.edition, text: quote.edition },
-          date: null,
+          date: dates[id] ?? null,
           externalLink: null,
           copyText: `«${quote.text}» ${quote.who}, ${quote.work}`,
           fullSource: Boolean(quote.father),

@@ -17,6 +17,8 @@ import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { ReaderStrip } from "@/features/reader/reader-strip";
 import { VerseArrival } from "@/features/reader/verse-arrival";
+import { scriptQuoteDates } from "@/features/reader-ai/quote-dates";
+import { quotes as scriptedQuotes } from "@/features/reader-ai/quotes";
 import { ReaderAsk } from "@/features/reader-ai/reader-ask";
 import { bibleChapters } from "@/features/reader-ai/quotes";
 import { askText } from "@/features/reader-ai/text";
@@ -206,6 +208,7 @@ export default async function ChapterRoute({ params }: PageProps<"/[lang]/bible/
         defaultEdition={defaultId}
         johnSix={{ book: "John", chapter: 6, href: bibleChapterHref(locale, getBibleBook("John")!, 6) }}
         citationText={text.citation}
+        quoteDates={scriptQuoteDates(locale, scriptedQuotes)}
         bibleHrefs={Object.fromEntries(
           bibleChapters.map(([id, number]) => [`${id}.${number}`, bibleChapterHref(locale, getBibleBook(id)!, number)]),
         )}

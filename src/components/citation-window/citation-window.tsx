@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } fr
 import { useCitation } from "@/components/citation-window/citation-context";
 import type { CitationView } from "@/lib/citation-view";
 import type { CitationWindowText } from "@/components/citation-window/types";
-import { MiniTimeline } from "@/components/mini-timeline";
+import { CitationDate } from "@/components/citation-window/citation-date";
 import { ActionButton, ActionLink } from "@/components/ui/action";
 import { PageLink } from "@/components/ui/page-link";
 import { IconButton } from "@/components/ui/icon-button";
@@ -166,20 +166,7 @@ function WindowBody({ view, text, copied, onCopy }: WindowBodyProps) {
           {view.note.text}
         </p>
       ) : null}
-      {view.date ? (
-        <>
-          <p className="mt-3.5 flex items-baseline gap-2.5 text-ui-xs text-ink-3">
-            {view.date.heading ?? text.dateLabel}
-            <b className="text-ui-base font-medium text-ink tabular-nums">{view.date.label}</b>
-          </p>
-          <MiniTimeline
-            start={view.date.start}
-            end={view.date.end}
-            label={view.date.markerLabel ?? view.date.label}
-            {...(view.date.span ? { span: view.date.span } : {})}
-          />
-        </>
-      ) : null}
+      {view.date ? <CitationDate date={view.date} label={text.dateLabel} /> : null}
       {view.externalLink || view.copyText || view.fullSource ? (
         <div className="mt-4.5 flex flex-wrap items-center gap-x-2.5 gap-y-2">
           {view.fullSourceHref ? <ActionLink href={view.fullSourceHref}>{text.openSource}</ActionLink> : null}
