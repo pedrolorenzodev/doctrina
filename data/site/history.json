@@ -30,8 +30,8 @@
    "city": "Rome",
    "language": "greek",
    "role": {
-    "es": "obispo de Roma",
-    "en": "bishop of Rome"
+    "es": "obispo de Roma, según la tradición",
+    "en": "bishop of Rome, by tradition"
    },
    "keyWorks": [
     {
@@ -39,7 +39,7 @@
       "es": "Primera Carta de Clemente a los Corintios",
       "en": "First Letter of Clement to the Corinthians (1 Clement)"
      },
-     "date": "c. 96",
+     "date": "c. 75–110",
      "year": 96
     }
    ],
@@ -47,7 +47,7 @@
     "es": "Figura destacada de la Iglesia de Roma a fines del siglo I; las listas antiguas de obispos lo ubican como tercer o cuarto sucesor de Pedro. Su carta a los corintios, escrita en nombre de la Iglesia de Roma para resolver la deposición de unos presbíteros, es uno de los escritos cristianos no canónicos más antiguos que se conservan.",
     "en": "A leading figure of the Roman church at the end of the first century; ancient episcopal lists place him third or fourth after Peter. His letter to the Corinthians, written in the name of the Roman church to address the removal of presbyters, is one of the oldest surviving non-canonical Christian writings."
    },
-   "note": "1 Clement is conventionally dated c. 96 (end of Domitian's reign); a minority of scholars argue for c. 70 or a broader 80–100 range. Death date c. 99–101 is traditional only."
+   "note": "1 Clement is conventionally dated c. 96 (end of Domitian's reign); a minority of scholars argue for c. 70 or a broader 80–100 range. Death date c. 99–101 is traditional only. Applied 2026-11-08 from fathers-verification.md D: 1 Clement is dated 75–110 from internal evidence, probably the last decade of the 1st century (Lake 1912, pp. 4–5); the episcopal ordering and death 99 are traditional. Was \"c. 96\"."
   },
   {
    "id": "didache",
@@ -75,7 +75,7 @@
       "es": "Didajé",
       "en": "Didache"
      },
-     "date": "c. 50–120",
+     "date": "c. 50–150",
      "year": 100
     }
    ],
@@ -83,7 +83,7 @@
     "es": "Breve manual anónimo de enseñanza moral, bautismo, ayuno, oración y Eucaristía, probablemente compilado en Siria o Palestina. Redescubierto en 1873 en un códice de Constantinopla, es un testimonio temprano de la vida litúrgica y la organización de las primeras comunidades.",
     "en": "A short anonymous manual on moral teaching, baptism, fasting, prayer and the Eucharist, probably compiled in Syria or Palestine. Rediscovered in 1873 in a Constantinople codex, it is an early witness to the liturgical life and organization of the first communities."
    },
-   "note": "Kind \"work\": `died` holds a conventional composition year, not a death. Scholarly dating ranges from c. 50 to c. 120 (often \"late first century\"); the text is likely composite. Provenance (Syria, Palestine or Egypt) is debated."
+   "note": "Kind \"work\": `died` holds a conventional composition year, not a death. Scholarly dating ranges from c. 50 to c. 120 (often \"late first century\"); the text is likely composite. Provenance (Syria, Palestine or Egypt) is debated. Applied 2026-11-08 (fathers-verification.md D): a work, not a person; `died` is only the timeline marker. Composition: latter half of the 1st to first half of the 2nd century, layered (Cambridge Edition of Early Christian Writings, 2025). Was \"c. 50–120\"."
   },
   {
    "id": "ignatius-of-antioch",
@@ -128,7 +128,7 @@
     "es": "Papías de Hierápolis",
     "en": "Papias of Hierapolis"
    },
-   "born": 70,
+   "born": null,
    "died": 130,
    "approx": true,
    "region": {
@@ -155,7 +155,7 @@
     "es": "Obispo de Hierápolis que, según Ireneo, había escuchado a Juan y fue compañero de Policarpo. Su obra se perdió, pero los fragmentos citados por Ireneo y Eusebio contienen las noticias más antiguas sobre el origen de los evangelios de Marcos y Mateo.",
     "en": "Bishop of Hierapolis who, according to Irenaeus, had heard John and was a companion of Polycarp. His work is lost, but fragments quoted by Irenaeus and Eusebius contain the earliest reports on the origins of the Gospels of Mark and Matthew."
    },
-   "note": "Dates of Papias are very uncertain. The Exposition is usually dated c. 110–130, but some scholars (Bartlet, Yarbrough, Bauckham) argue for c. 95–110. Birth c. 60–70 and death c. 130 are estimates."
+   "note": "Dates of Papias are very uncertain. The Exposition is usually dated c. 110–130, but some scholars (Bartlet, Yarbrough, Bauckham) argue for c. 95–110. Birth c. 60–70 and death c. 130 are estimates. Applied 2026-11-08 (fathers-verification.md D, partly): born 70 removed as unattested; died 130 kept only as the timeline marker. The Exposition date is not changed: the ledger's c. 100–150 and \"nearer 140\" were not confirmed in the spot-check (Cambridge HTR 2025: probably Trajanic, 97–118)."
   },
   {
    "id": "epistle-of-barnabas",
@@ -255,7 +255,7 @@
       "es": "Carta a Diogneto",
       "en": "Epistle to Diognetus"
      },
-     "date": "c. 130–200",
+     "date": "c. 150–200",
      "year": 150
     }
    ],
@@ -263,7 +263,7 @@
     "es": "Breve apología anónima dirigida a un pagano culto, conocida por su descripción de los cristianos como “el alma del mundo”. Se conservó en un único manuscrito medieval, destruido en 1870, y suele agruparse con los Padres Apostólicos aunque su género es apologético.",
     "en": "A short anonymous apology addressed to an educated pagan, known for describing Christians as \"the soul of the world\". It survived in a single medieval manuscript, destroyed in 1870, and is usually grouped with the Apostolic Fathers although its genre is apologetic."
    },
-   "note": "Kind \"work\": `died` = conventional composition year. Date and provenance unknown; proposals range from c. 120 to c. 200 (some later). Chapters 11–12 are probably a separate addition. Region is a placeholder (provenance unknown)."
+   "note": "Kind \"work\": `died` = conventional composition year. Date and provenance unknown; proposals range from c. 120 to c. 200 (some later). Chapters 11–12 are probably a separate addition. Region is a placeholder (provenance unknown). Applied 2026-11-08 (fathers-verification.md D, third batch): c. 130 is not a settled lower bound (proposals run from 117 to 310; the ANF 1885 introduction is the source of 130); the mainstream band is the middle or latter half of the 2nd century (Encyclopedia.com, \"Diognetus, Epistle to\"). Was \"c. 130–200\"."
   },
   {
    "id": "polycarp-of-smyrna",
@@ -327,7 +327,7 @@
       "es": "Primera Apología",
       "en": "First Apology"
      },
-     "date": "c. 155",
+     "date": "c. 148–161",
      "year": 155
     },
     {
@@ -343,7 +343,7 @@
       "es": "Segunda Apología",
       "en": "Second Apology"
      },
-     "date": "c. 161",
+     "date": "c. 148–161",
      "year": 161
     }
    ],
@@ -351,7 +351,7 @@
     "es": "Filósofo nacido en Flavia Neápolis (Samaria) que, tras su conversión, enseñó en Roma y defendió la fe ante emperadores y ante interlocutores judíos. Su Primera Apología contiene la descripción más antigua conocida de una celebración dominical del bautismo y la Eucaristía; murió mártir en Roma.",
     "en": "A philosopher born in Flavia Neapolis (Samaria) who, after his conversion, taught in Rome and defended the faith before emperors and Jewish interlocutors. His First Apology contains the oldest known description of a Sunday baptismal and eucharistic celebration; he died a martyr in Rome."
    },
-   "note": "Martyrdom under the prefect Rusticus, c. 162–168 (often given as 165)."
+   "note": "Martyrdom under the prefect Rusticus, c. 162–168 (often given as 165). Applied 2026-11-08 (fathers-verification.md D, softened by the spot-check): the Apologies fall between 147/148 and 161 (Schaff-Herzog; CPG 1073 per the ledger); older reference works give 153–155 and Grant 155–157; 148–161 is an envelope, not a verified narrower date. Was \"c. 155\" and \"c. 161\"."
   },
   {
    "id": "melito-of-sardis",
@@ -563,7 +563,7 @@
       "es": "Contra Marción",
       "en": "Against Marcion"
      },
-     "date": "c. 207–208",
+     "date": "c. 207–212",
      "year": 207
     },
     {
@@ -579,7 +579,7 @@
     "es": "Primer gran autor cristiano en latín, cuyo vocabulario teológico (por ejemplo trinitas, persona, substantia) influyó en toda la tradición occidental. En su madurez se acercó al montanismo, por lo que no suele ser venerado como santo, aunque se lo cita ampliamente como testigo de la fe de su época.",
     "en": "The first major Christian author in Latin, whose theological vocabulary (e.g. trinitas, persona, substantia) shaped the whole Western tradition. Later in life he moved toward Montanism, so he is not usually venerated as a saint, though he is widely cited as a witness to the faith of his time."
    },
-   "note": "Birth c. 155–160; death unknown, after c. 220 (some say c. 240). Jerome's report that he was a presbyter is debated by modern scholars."
+   "note": "Birth c. 155–160; death unknown, after c. 220 (some say c. 240). Jerome's report that he was a presbyter is debated by modern scholars. Applied 2026-11-08 (fathers-verification.md D, corrected by the spot-check): the extant third edition of Against Marcion runs from 207/208 (book I) to c. 212 (books IV–V, tertullian.org chronology after CCL II); the ledger's 213 end was not confirmed. Was \"c. 207–208\"."
   },
   {
    "id": "hippolytus-of-rome",
@@ -588,7 +588,7 @@
     "es": "Hipólito de Roma",
     "en": "Hippolytus of Rome"
    },
-   "born": 170,
+   "born": null,
    "died": 235,
    "approx": true,
    "region": {
@@ -631,7 +631,7 @@
     "es": "Presbítero y escritor de Roma que entró en conflicto con los obispos Ceferino y Calixto y encabezó una comunidad rival. Exiliado a Cerdeña en 235 junto con el obispo Ponciano, se reconcilió y ambos murieron allí; es venerado como mártir.",
     "en": "A Roman presbyter and writer who clashed with bishops Zephyrinus and Callistus and led a rival community. Exiled to Sardinia in 235 with bishop Pontian, he was reconciled and both died there; he is venerated as a martyr."
    },
-   "note": "Identity and corpus are among the most debated in patristics: the Apostolic Tradition is often seen as a composite text of uncertain origin; some scholars distinguish two or more authors named Hippolytus."
+   "note": "Identity and corpus are among the most debated in patristics: the Apostolic Tradition is often seen as a composite text of uncertain origin; some scholars distinguish two or more authors named Hippolytus. Applied 2026-11-08 (fathers-verification.md D, second batch): born 170 removed as unattested (Catholic Encyclopedia: \"date of birth unknown; d. about 236\")."
   },
   {
    "id": "origen",
@@ -744,7 +744,7 @@
     "es": "Novaciano",
     "en": "Novatian"
    },
-   "born": 200,
+   "born": null,
    "died": 258,
    "approx": true,
    "region": {
@@ -771,7 +771,7 @@
     "es": "Presbítero romano y teólogo de talla, autor del primer gran tratado latino sobre la Trinidad escrito en Roma. En 251 se opuso a la elección de Cornelio y fue consagrado obispo rival, dando origen a una iglesia separada que rechazaba readmitir a los caídos.",
     "en": "A Roman presbyter and capable theologian, author of the first major Latin treatise on the Trinity written in Rome. In 251 he opposed the election of Cornelius and was consecrated a rival bishop, starting a separate church that refused to readmit the lapsed."
    },
-   "note": "Death c. 258 is based on a late tradition of martyrdom under Valerian; uncertain. Not usually counted as a \"Father\" because of the schism; included as a source."
+   "note": "Death c. 258 is based on a late tradition of martyrdom under Valerian; uncertain. Not usually counted as a \"Father\" because of the schism; included as a source. Applied 2026-11-08 (fathers-verification.md D, second batch): born 200 removed as unattested (Catholic Encyclopedia gives no birth year (\"We know little of his life\"))."
   },
   {
    "id": "dionysius-of-alexandria",
@@ -887,7 +887,7 @@
       "es": "Sobre la muerte de los perseguidores",
       "en": "On the Deaths of the Persecutors"
      },
-     "date": "c. 314–315",
+     "date": "c. 314–316",
      "year": 315
     }
    ],
@@ -895,7 +895,7 @@
     "es": "Profesor de retórica africano llamado por Diocleciano a Nicomedia, que se convirtió y perdió su cargo durante la gran persecución. Sus Instituciones divinas presentan la fe en latín clásico para lectores cultos, y en su vejez fue tutor de Crispo, hijo de Constantino, en Tréveris.",
     "en": "An African teacher of rhetoric summoned by Diocletian to Nicomedia, who converted and lost his post in the Great Persecution. His Divine Institutes present the faith in polished Latin for educated readers, and in old age he tutored Constantine's son Crispus at Trier."
    },
-   "note": "Birth c. 250, death c. 320–325."
+   "note": "Birth c. 250, death c. 320–325. Applied 2026-11-08 (fathers-verification.md D, second batch): On the Deaths of the Persecutors c. 314–316 (Schwarte, via earlychristianwritings.com: \"from the end of 313 to the summer of 316\"). Was \"c. 314–315\"."
   },
   {
    "id": "eusebius-of-caesarea",
@@ -956,7 +956,7 @@
     "es": "Afraates, el Sabio Persa",
     "en": "Aphrahat, the Persian Sage"
    },
-   "born": 270,
+   "born": null,
    "died": 345,
    "approx": true,
    "region": {
@@ -975,7 +975,7 @@
       "es": "Demostraciones (23)",
       "en": "Demonstrations (23)"
      },
-     "date": "337–345",
+     "date": "337; 344; 345",
      "year": 340
     }
    ],
@@ -983,7 +983,7 @@
     "es": "Escritor siríaco que vivió bajo el Imperio sasánida, fuera del Imperio romano, posiblemente obispo o monje. Sus veintitrés Demostraciones, fechadas por él mismo entre 337 y 345, muestran un cristianismo semítico poco influido por las controversias griegas de su tiempo.",
     "en": "A Syriac writer who lived under the Sasanian Empire, outside the Roman Empire, possibly a bishop or monk. His twenty-three Demonstrations, self-dated between 337 and 345, show a Semitic Christianity little touched by the Greek controversies of his day."
    },
-   "note": "Dates of birth and death unknown; the Demonstrations are dated internally (337, 344, 345). Later tradition links him to the monastery of Mar Mattai near Mosul; city unknown."
+   "note": "Dates of birth and death unknown; the Demonstrations are dated internally (337, 344, 345). Later tradition links him to the monastery of Mar Mattai near Mosul; city unknown. Applied 2026-11-08 (fathers-verification.md D, second batch): born 270 removed as unattested (Catholic Encyclopedia: \"the last half of the third century\"); the Demonstrations are dated 337, 344 and 345 (same source). Was \"337–345\"."
   },
   {
    "id": "hilary-of-poitiers",
@@ -1507,7 +1507,7 @@
       "es": "Panarion (Botiquín contra las herejías)",
       "en": "Panarion (Medicine Chest against Heresies)"
      },
-     "date": "c. 374–377",
+     "date": "375–377",
      "year": 376
     }
    ],
@@ -1515,7 +1515,7 @@
     "es": "Monje nacido en Palestina y obispo de Salamina en Chipre desde 367, conocido por su celo contra las herejías y contra el origenismo. Su Panarion describe ochenta herejías y conserva información y fragmentos únicos sobre grupos antiguos, aunque su fiabilidad varía según la sección.",
     "en": "A Palestinian-born monk and bishop of Salamis in Cyprus from 367, known for his zeal against heresies and against Origenism. His Panarion describes eighty heresies and preserves unique information and fragments on ancient groups, though its reliability varies by section."
    },
-   "note": "Birth c. 310–320; death 403."
+   "note": "Birth c. 310–320; death 403. Applied 2026-11-08 (fathers-verification.md D, fourth batch): Panarion begun in 375 and finished in 377, after the Ancoratus of 374 (Osburn, SBL 2004, p. 8). Was \"c. 374–377\"."
   },
   {
    "id": "john-chrysostom",
@@ -1534,8 +1534,8 @@
    "city": "Antioch / Constantinople",
    "language": "greek",
    "role": {
-    "es": "arzobispo de Constantinopla (398–404)",
-    "en": "archbishop of Constantinople (398–404)"
+    "es": "obispo de Constantinopla (398–404)",
+    "en": "bishop of Constantinople (398–404)"
    },
    "keyWorks": [
     {
@@ -1567,7 +1567,7 @@
     "es": "Predicador de Antioquía, apodado “Boca de Oro” (Crisóstomo), elegido arzobispo de Constantinopla en 398. Sus críticas al lujo de la corte y sus conflictos con Teófilo de Alejandría llevaron a su deposición y destierro, donde murió en 407; la principal liturgia bizantina lleva su nombre.",
     "en": "A preacher from Antioch, nicknamed \"Golden Mouth\" (Chrysostom), chosen archbishop of Constantinople in 398. His criticism of court luxury and conflicts with Theophilus of Alexandria led to his deposition and exile, where he died in 407; the main Byzantine liturgy bears his name."
    },
-   "note": "Birth c. 347–349; death 14 September 407 (secure). The attribution of the Divine Liturgy of St John Chrysostom in its present form is traditional; its anaphora may go back to him in part."
+   "note": "Birth c. 347–349; death 14 September 407 (secure). The attribution of the Divine Liturgy of St John Chrysostom in its present form is traditional; its anaphora may go back to him in part. Applied 2026-11-08 (fathers-verification.md D, second batch): \"archbishop\" replaced by \"bishop\" (Catholic Encyclopedia: \"ordained Bishop of Constantinople on 26 February, 398\"). Birth stays disputed, 344–354."
   },
   {
    "id": "rufinus-of-aquileia",
@@ -1644,10 +1644,10 @@
    "keyWorks": [
     {
      "title": {
-      "es": "Vulgata (traducción latina de la Biblia)",
-      "en": "Vulgate (Latin translation of the Bible)"
+      "es": "Traducciones latinas de la Biblia (revisión de los Evangelios; Antiguo Testamento desde el hebreo)",
+      "en": "Latin translations of the Bible (Gospel revision; Old Testament from the Hebrew)"
      },
-     "date": "c. 382–405",
+     "date": "383–384; 390–407",
      "year": 405
     },
     {
@@ -1671,7 +1671,7 @@
     "es": "Erudito nacido en Estridón (Dalmacia), secretario del papa Dámaso en Roma y luego monje en Belén desde 386. Revisó los evangelios latinos y tradujo gran parte del Antiguo Testamento directamente del hebreo, base de la Vulgata, que fue la Biblia del Occidente latino durante más de mil años.",
     "en": "A scholar born in Stridon (Dalmatia), secretary to Pope Damasus in Rome and later a monk in Bethlehem from 386. He revised the Latin Gospels and translated most of the Old Testament directly from Hebrew, forming the basis of the Vulgate, the Bible of the Latin West for over a thousand years."
    },
-   "note": "Birth c. 342–347 (debated); death 30 September 420 (traditional, sometimes 419). The Vulgate as a whole includes texts not revised by Jerome (e.g. parts of the NT outside the Gospels)."
+   "note": "Birth c. 342–347 (debated); death 30 September 420 (traditional, sometimes 419). The Vulgate as a whole includes texts not revised by Jerome (e.g. parts of the NT outside the Gospels). Applied 2026-11-08 (fathers-verification.md D): not a sole-authored whole Bible: the Gospel revision 383–384 and principally the Hebrew Old Testament 390–407 (Handbook of the Vulgate, ch. 10, pp. 167–168: \"some of these dates remain conjectural\"; the ledger's 382 comes from Houghton, not opened). Was \"Vulgate (Latin translation of the Bible)\", \"c. 382–405\"."
   },
   {
    "id": "augustine-of-hippo",
@@ -1699,7 +1699,7 @@
       "es": "Confesiones",
       "en": "Confessions"
      },
-     "date": "c. 397–400",
+     "date": "c. 396–400",
      "year": 398
     },
     {
@@ -1707,7 +1707,7 @@
       "es": "Sobre la Trinidad",
       "en": "On the Trinity"
      },
-     "date": "c. 400–420",
+     "date": "399–419",
      "year": 416
     },
     {
@@ -1715,14 +1715,15 @@
       "es": "La ciudad de Dios",
       "en": "The City of God"
      },
-     "date": "413–426",
+     "date": "412–426",
      "year": 426
     }
    ],
    "summary": {
     "es": "Retórico nacido en Tagaste, convertido en Milán en 386 y obispo de Hipona desde 395/396, es el autor latino más influyente de la Antigüedad cristiana. Sus escritos contra maniqueos, donatistas y pelagianos marcaron la teología occidental de la gracia, la Iglesia y los sacramentos, y fueron invocados tanto por católicos como por reformadores.",
     "en": "A rhetorician born in Thagaste, converted in Milan in 386 and bishop of Hippo from 395/396, he is the most influential Latin author of Christian antiquity. His writings against the Manichaeans, Donatists and Pelagians shaped Western theology of grace, the Church and the sacraments, and were invoked by Catholics and Reformers alike."
-   }
+   },
+   "note": "Applied 2026-11-08 (fathers-verification.md D, second batch): key works per SEP \"Augustine\": Confessions \"ca. 396–400\" (O'Donnell gives 397), On the Trinity \"begun in 399 and completed in 419 or perhaps as late as 426\", City of God \"begun in 412 … completed in 426\". Were \"c. 397–400\", \"c. 400–420\", \"413–426\"."
   },
   {
    "id": "john-cassian",
@@ -1837,8 +1838,8 @@
    "city": "Lérins",
    "language": "latin",
    "role": {
-    "es": "monje de Lérins",
-    "en": "monk of Lérins"
+    "es": "monje y presbítero de Lérins",
+    "en": "monk and presbyter of Lérins"
    },
    "keyWorks": [
     {
@@ -1854,7 +1855,7 @@
     "es": "Monje de la abadía de Lérins, en el sur de la Galia, que escribió bajo el seudónimo de “Peregrino”. Su Conmonitorio propone como criterio de la fe católica “lo que ha sido creído en todas partes, siempre y por todos” y trata del desarrollo legítimo de la doctrina.",
     "en": "A monk of the abbey of Lérins in southern Gaul who wrote under the pseudonym \"Peregrinus\". His Commonitorium proposes as the test of catholic faith \"what has been believed everywhere, always and by all\" and discusses the legitimate development of doctrine."
    },
-   "note": "Death c. 445, certainly before 450. Some scholars link him to anti-Augustinian circles in Gaul."
+   "note": "Death c. 445, certainly before 450. Some scholars link him to anti-Augustinian circles in Gaul. Applied 2026-11-08 (fathers-verification.md D, second batch): presbyter added on Gennadius, De viris illustribus 65 (\"presbyter in the Monastery on the Island of Lerins\"). Was \"monk of Lérins\"."
   },
   {
    "id": "peter-chrysologus",
@@ -1863,7 +1864,7 @@
     "es": "Pedro Crisólogo",
     "en": "Peter Chrysologus"
    },
-   "born": 380,
+   "born": null,
    "died": 450,
    "approx": true,
    "region": {
@@ -1890,7 +1891,7 @@
     "es": "Obispo de Ravena, entonces sede de la corte imperial de Occidente, desde c. 433. Sus sermones breves y cuidados, conservados en una colección del siglo VIII, le dieron el sobrenombre de “Crisólogo” (palabra de oro); escribió a Eutiques exhortándolo a someterse al obispo de Roma.",
     "en": "Bishop of Ravenna, then seat of the Western imperial court, from c. 433. His brief, polished sermons, preserved in an eighth-century collection, earned him the name \"Chrysologus\" (golden word); he wrote to Eutyches urging him to defer to the bishop of Rome."
    },
-   "note": "Birth c. 380; death c. 450 (traditionally 31 July 450)."
+   "note": "Birth c. 380; death c. 450 (traditionally 31 July 450). Applied 2026-11-08 (fathers-verification.md D, second batch): born 380 removed: no source found for it. Sources disagree on his birth: the Catholic Encyclopedia gives 406; the ledger treats it as unknown. Episcopate from c. 426–433 (Catholic Encyclopedia: 433)."
   },
   {
    "id": "prosper-of-aquitaine",
@@ -2003,7 +2004,7 @@
     "es": "León Magno",
     "en": "Leo the Great"
    },
-   "born": 400,
+   "born": null,
    "died": 461,
    "approx": true,
    "region": {
@@ -2038,7 +2039,7 @@
     "es": "Obispo de Roma de 440 a 461, cuyo Tomo a Flaviano expuso las dos naturalezas de Cristo en una sola persona y fue recibido en el Concilio de Calcedonia (451). Desarrolló una teología del primado romano basada en Pedro y, según la tradición, negoció con Atila (452) y con los vándalos (455).",
     "en": "Bishop of Rome from 440 to 461, whose Tome to Flavian set out the two natures of Christ in one person and was received at the Council of Chalcedon (451). He developed a theology of Roman primacy grounded in Peter and, according to tradition, negotiated with Attila (452) and the Vandals (455)."
    },
-   "note": "Birth c. 400; death 10 November 461 (secure)."
+   "note": "Birth c. 400; death 10 November 461 (secure). Applied 2026-11-08 (fathers-verification.md D): born 400 removed, birth year unknown (Vatican: born in Tuscia, no date); pontificate 29 Sep 440 – 10 Nov 461. Sermon years 442/443 left unchanged: Oxford and Feltoe disagree."
   },
   {
    "id": "pseudo-dionysius",
@@ -2230,7 +2231,7 @@
       "es": "Sobre los oficios eclesiásticos",
       "en": "On Ecclesiastical Offices"
      },
-     "date": "c. 598–615",
+     "date": "598–636",
      "year": 610
     },
     {
@@ -2238,7 +2239,7 @@
       "es": "Historia de los godos",
       "en": "History of the Goths"
      },
-     "date": "624",
+     "date": "c. 619/620; c. 624",
      "year": 624
     }
    ],
@@ -2246,7 +2247,7 @@
     "es": "Obispo de Sevilla desde c. 600, sucesor de su hermano Leandro, en la Hispania visigoda ya convertida al catolicismo. Sus Etimologías, una enciclopedia del saber antiguo, fueron uno de los libros más copiados de la Edad Media; presidió el IV Concilio de Toledo (633).",
     "en": "Bishop of Seville from c. 600, succeeding his brother Leander, in Visigothic Spain after its conversion to Catholicism. His Etymologies, an encyclopedia of ancient learning, was one of the most copied books of the Middle Ages; he presided over the Fourth Council of Toledo (633)."
    },
-   "note": "Birth c. 560; death 4 April 636 (secure)."
+   "note": "Birth c. 560; death 4 April 636 (secure). Applied 2026-11-08 (fathers-verification.md D, third batch): On Ecclesiastical Offices \"certainly after AD 598\" with no terminus before his death (Presbyters Project, source 1289); was \"c. 598–615\". History of the Goths in two recensions, c. 619/620 and c. 624 (Kasperski; Catholic Encyclopedia); was \"624\". Etymologies not changed: the ledger's dates were not confirmed."
   },
   {
    "id": "sophronius-of-jerusalem",
@@ -2276,21 +2277,13 @@
      },
      "date": "634",
      "year": 634
-    },
-    {
-     "title": {
-      "es": "El prado espiritual (con Juan Mosco)",
-      "en": "The Spiritual Meadow (with John Moschus)"
-     },
-     "date": "c. 615–630",
-     "year": 620
     }
    ],
    "summary": {
     "es": "Monje y patriarca de Jerusalén, el primer gran opositor del monoenergismo, la doctrina de una sola “energía” en Cristo promovida como fórmula de unión. Le tocó entregar Jerusalén al califa Umar tras el asedio árabe (637/638) y murió poco después.",
     "en": "A monk and patriarch of Jerusalem, the first major opponent of monoenergism, the doctrine of a single \"energy\" in Christ promoted as a formula of union. He surrendered Jerusalem to Caliph Umar after the Arab siege (637/638) and died shortly afterward."
    },
-   "note": "Birth c. 560; death 11 March 638 (traditional). The Spiritual Meadow is by John Moschus; Sophronius was his companion and probably completed/edited it."
+   "note": "Birth c. 560; death 11 March 638 (traditional). The Spiritual Meadow is by John Moschus; Sophronius was his companion and probably completed/edited it. Applied 2026-11-08 (fathers-verification.md D): The Spiritual Meadow removed from his key works: it is John Moschus's work, dedicated to Sophronius (Brzozowska et al. 2017, p. 59)."
   },
   {
    "id": "maximus-the-confessor",
@@ -2351,7 +2344,7 @@
     "es": "Isaac de Nínive (Isaac el Sirio)",
     "en": "Isaac of Nineveh (Isaac the Syrian)"
    },
-   "born": 613,
+   "born": null,
    "died": 700,
    "approx": true,
    "region": {
@@ -2386,7 +2379,7 @@
     "es": "Monje nacido en Beth Qatraye (Arabia oriental), consagrado obispo de Nínive hacia 676 por el católicos de la Iglesia del Oriente, cargo que dejó a los pocos meses para retirarse a la vida solitaria. Sus escritos sobre la oración y la misericordia de Dios, traducidos al griego en el siglo IX, son muy leídos en las tradiciones ortodoxa y ortodoxa oriental, además de la suya propia.",
     "en": "A monk born in Beth Qatraye (eastern Arabia), consecrated bishop of Nineveh around 676 by the catholicos of the Church of the East, a post he left after a few months for solitary life. His writings on prayer and God's mercy, translated into Greek in the ninth century, are widely read in the Eastern and Oriental Orthodox traditions as well as his own."
    },
-   "note": "Birth c. 613 and death c. 700 are estimates. He belonged to the Church of the East (which did not accept Ephesus 431), yet is venerated as a saint in Eastern Orthodoxy — note this neutrally."
+   "note": "Birth c. 613 and death c. 700 are estimates. He belonged to the Church of the East (which did not accept Ephesus 431), yet is venerated as a saint in Eastern Orthodoxy — note this neutrally. Applied 2026-11-08 (fathers-verification.md D, second batch): born 613 removed as unattested (Syriaca person 550 and Brock 2024 give only a later-7th-century floruit)."
   },
   {
    "id": "bede",

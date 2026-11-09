@@ -17,8 +17,8 @@ export const fathers: Father[] = [
     },
     language: "greek",
     role: {
-      es: "obispo de Roma",
-      en: "bishop of Rome",
+      es: "obispo de Roma, según la tradición",
+      en: "bishop of Rome, by tradition",
     },
     works: [
       {
@@ -26,7 +26,7 @@ export const fathers: Father[] = [
           es: "Primera Carta de Clemente a los Corintios",
           en: "First Letter of Clement to the Corinthians (1 Clement)",
         },
-        date: "c. 96",
+        date: "c. 75–110",
         year: 96,
       },
     ],
@@ -60,7 +60,7 @@ export const fathers: Father[] = [
           es: "Didajé",
           en: "Didache",
         },
-        date: "c. 50–120",
+        date: "c. 50–150",
         year: 100,
       },
     ],
@@ -110,7 +110,7 @@ export const fathers: Father[] = [
       es: "Papías de Hierápolis",
       en: "Papias of Hierapolis",
     },
-    born: 70,
+    born: null,
     died: 130,
     approx: true,
     region: {
@@ -230,7 +230,7 @@ export const fathers: Father[] = [
           es: "Carta a Diogneto",
           en: "Epistle to Diognetus",
         },
-        date: "c. 130–200",
+        date: "c. 150–200",
         year: 150,
       },
     ],
@@ -298,7 +298,7 @@ export const fathers: Father[] = [
           es: "Primera Apología",
           en: "First Apology",
         },
-        date: "c. 155",
+        date: "c. 148–161",
         year: 155,
       },
       {
@@ -314,7 +314,7 @@ export const fathers: Father[] = [
           es: "Segunda Apología",
           en: "Second Apology",
         },
-        date: "c. 161",
+        date: "c. 148–161",
         year: 161,
       },
     ],
@@ -524,7 +524,7 @@ export const fathers: Father[] = [
           es: "Contra Marción",
           en: "Against Marcion",
         },
-        date: "c. 207–208",
+        date: "c. 207–212",
         year: 207,
       },
       {
@@ -548,7 +548,7 @@ export const fathers: Father[] = [
       es: "Hipólito de Roma",
       en: "Hippolytus of Rome",
     },
-    born: 170,
+    born: null,
     died: 235,
     approx: true,
     region: {
@@ -698,7 +698,7 @@ export const fathers: Father[] = [
       es: "Novaciano",
       en: "Novatian",
     },
-    born: 200,
+    born: null,
     died: 258,
     approx: true,
     region: {
@@ -834,7 +834,7 @@ export const fathers: Father[] = [
           es: "Sobre la muerte de los perseguidores",
           en: "On the Deaths of the Persecutors",
         },
-        date: "c. 314–315",
+        date: "c. 314–316",
         year: 315,
       },
     ],
@@ -900,7 +900,7 @@ export const fathers: Father[] = [
       es: "Afraates, el Sabio Persa",
       en: "Aphrahat, the Persian Sage",
     },
-    born: 270,
+    born: null,
     died: 345,
     approx: true,
     region: {
@@ -918,7 +918,7 @@ export const fathers: Father[] = [
           es: "Demostraciones (23)",
           en: "Demonstrations (23)",
         },
-        date: "337–345",
+        date: "337; 344; 345",
         year: 340,
       },
     ],
@@ -1428,7 +1428,7 @@ export const fathers: Father[] = [
           es: "Panarion (Botiquín contra las herejías)",
           en: "Panarion (Medicine Chest against Heresies)",
         },
-        date: "c. 374–377",
+        date: "375–377",
         year: 376,
       },
     ],
@@ -1453,8 +1453,8 @@ export const fathers: Father[] = [
     },
     language: "greek",
     role: {
-      es: "arzobispo de Constantinopla (398–404)",
-      en: "archbishop of Constantinople (398–404)",
+      es: "obispo de Constantinopla (398–404)",
+      en: "bishop of Constantinople (398–404)",
     },
     works: [
       {
@@ -1559,10 +1559,10 @@ export const fathers: Father[] = [
     works: [
       {
         title: {
-          es: "Vulgata (traducción latina de la Biblia)",
-          en: "Vulgate (Latin translation of the Bible)",
+          es: "Traducciones latinas de la Biblia (revisión de los Evangelios; Antiguo Testamento desde el hebreo)",
+          en: "Latin translations of the Bible (Gospel revision; Old Testament from the Hebrew)",
         },
-        date: "c. 382–405",
+        date: "383–384; 390–407",
         year: 405,
       },
       {
@@ -1612,7 +1612,7 @@ export const fathers: Father[] = [
           es: "Confesiones",
           en: "Confessions",
         },
-        date: "c. 397–400",
+        date: "c. 396–400",
         year: 398,
       },
       {
@@ -1620,7 +1620,7 @@ export const fathers: Father[] = [
           es: "Sobre la Trinidad",
           en: "On the Trinity",
         },
-        date: "c. 400–420",
+        date: "399–419",
         year: 416,
       },
       {
@@ -1628,7 +1628,7 @@ export const fathers: Father[] = [
           es: "La ciudad de Dios",
           en: "The City of God",
         },
-        date: "413–426",
+        date: "412–426",
         year: 426,
       },
     ],
@@ -1745,8 +1745,8 @@ export const fathers: Father[] = [
     },
     language: "latin",
     role: {
-      es: "monje de Lérins",
-      en: "monk of Lérins",
+      es: "monje y presbítero de Lérins",
+      en: "monk and presbyter of Lérins",
     },
     works: [
       {
@@ -1770,7 +1770,7 @@ export const fathers: Father[] = [
       es: "Pedro Crisólogo",
       en: "Peter Chrysologus",
     },
-    born: 380,
+    born: null,
     died: 450,
     approx: true,
     region: {
@@ -1904,7 +1904,7 @@ export const fathers: Father[] = [
       es: "León Magno",
       en: "Leo the Great",
     },
-    born: 400,
+    born: null,
     died: 461,
     approx: true,
     region: {
@@ -2122,7 +2122,7 @@ export const fathers: Father[] = [
           es: "Sobre los oficios eclesiásticos",
           en: "On Ecclesiastical Offices",
         },
-        date: "c. 598–615",
+        date: "598–636",
         year: 610,
       },
       {
@@ -2130,7 +2130,7 @@ export const fathers: Father[] = [
           es: "Historia de los godos",
           en: "History of the Goths",
         },
-        date: "624",
+        date: "c. 619/620; c. 624",
         year: 624,
       },
     ],
@@ -2166,14 +2166,6 @@ export const fathers: Father[] = [
         },
         date: "634",
         year: 634,
-      },
-      {
-        title: {
-          es: "El prado espiritual (con Juan Mosco)",
-          en: "The Spiritual Meadow (with John Moschus)",
-        },
-        date: "c. 615–630",
-        year: 620,
       },
     ],
     summary: {
@@ -2238,7 +2230,7 @@ export const fathers: Father[] = [
       es: "Isaac de Nínive (Isaac el Sirio)",
       en: "Isaac of Nineveh (Isaac the Syrian)",
     },
-    born: 613,
+    born: null,
     died: 700,
     approx: true,
     region: {

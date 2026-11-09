@@ -44,7 +44,7 @@ test("a born and a dead year, circa or not, and a role that is not a bishop's", 
     ["Obispo de", "Hipona"],
   ]);
   await page.goto(father("john-chrysostom"));
-  expect((await headerFactsOf(page))[2]).toEqual(["Arzobispo de", "Constantinopla (398–404)"]);
+  expect((await headerFactsOf(page))[2]).toEqual(["Obispo de", "Constantinopla (398–404)"]);
 });
 
 test("an anonymous work has a date, what it is and its language, and no birth or death", async ({ page }) => {
@@ -136,14 +136,14 @@ test("«Quién fue»: the summary and a facts table that sits beside it from 900
 test("«Sus escritos»: each writing with its date, one shared axis and the count", async ({ page }) => {
   await page.goto(father("justin-martyr"));
   await expect(page.locator("#works h2")).toHaveText("Sus escritos");
-  await expect(page.locator("#works > div > div > div > p").first()).toHaveText("3 escritos, c. 155–161");
+  await expect(page.locator("#works > div > div > div > p").first()).toHaveText("3 escritos, c. 148–161");
   const rows = await page
     .locator("#works li")
     .evaluateAll((items) => items.map((item) => [item.children[0]!.textContent, item.children[1]!.textContent]));
   expect(rows).toEqual([
-    ["Primera Apología", "c. 155"],
+    ["Primera Apología", "c. 148–161"],
     ["Diálogo con Trifón", "c. 160"],
-    ["Segunda Apología", "c. 161"],
+    ["Segunda Apología", "c. 148–161"],
   ]);
   await expect(page.locator("#works li a")).toHaveCount(3);
   await expect(page.locator("#works [aria-hidden=true]")).toHaveCount(1);

@@ -8,12 +8,12 @@ export const eucharistDoctrine = {
   legend: { witnessId: "ew-flesh", citationLabel: "Esmirniotas 7.1" },
   fingerprint: {
     marks: [
-      { year: 50, yearEnd: 120, label: "La Didaché" },
-      { year: 107, yearEnd: 110, label: "Ignacio de Antioquía" },
-      { year: 150, label: "Justino Mártir, Primera Apología" },
+      { year: 50, yearEnd: 150, label: "La Didaché" },
+      { year: 107, yearEnd: 108, label: "Ignacio de Antioquía" },
+      { year: 148, yearEnd: 161, label: "Justino Mártir, Primera Apología" },
       { year: 155, label: "Justino Mártir" },
       { year: 180, label: "Ireneo de Lyon" },
-      { year: 207, label: "Tertuliano, Contra Marción" },
+      { year: 207, yearEnd: 212, label: "Tertuliano, Contra Marción" },
       { year: 350, yearEnd: 390, label: "Catequesis mistagógicas (Jerusalén)" },
       { year: 387, label: "Ambrosio de Milán, Sobre los misterios" },
       { year: 390, label: "Ambrosio de Milán" },
@@ -165,12 +165,12 @@ export const eucharistDoctrine = {
         work: "Didaché",
         locator: "14.1–3",
         reader: { work: "didache", locator: "14" },
-        date: { year: 50, yearEnd: 120, circa: true },
+        date: { year: 50, yearEnd: 150, circa: true },
         quote:
           "Cada día del Señor reuníos, partid el pan y dad gracias, después de haber confesado vuestras transgresiones, para que vuestro sacrificio sea puro. [...] Porque esto es lo que dijo el Señor: En todo lugar y tiempo ofrecedme un sacrificio puro.",
         edition:
           "Traducción al español de Doctrina, hecha desde la edición inglesa de dominio público: ANF vol. 7 (Roberts y Donaldson), 1885.",
-        note: "La fecha se discute: las propuestas van de mediados del siglo I a comienzos del II.",
+        note: "La fecha se discute: la obra tiene varias capas y se ubica entre la segunda mitad del siglo I y la primera mitad del II.",
         anonymous: true,
         authorLine:
           "Breve manual anónimo de enseñanza moral, bautismo, ayuno, oración y Eucaristía, probablemente compilado en Siria o Palestina.",
@@ -184,7 +184,8 @@ export const eucharistDoctrine = {
         work: "Carta a los Esmirniotas",
         locator: "7.1",
         reader: { work: "ignatius-smyrnaeans", locator: "7.1" },
-        date: { year: 107, yearEnd: 110, circa: true },
+        date: { year: 107, yearEnd: 108, circa: true },
+        note: "Fecha tradicional, según Eusebio: 107 o 108. La cronología de las cartas de Ignacio se discute.",
         quote:
           "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.",
         edition:
@@ -200,7 +201,8 @@ export const eucharistDoctrine = {
         work: "Primera Apología",
         locator: "66",
         reader: { work: "justin-first-apology", locator: "66" },
-        date: { year: 150, yearEnd: 155, circa: true },
+        date: { year: 148, yearEnd: 161, circa: true },
+        note: "Escrita entre 148 y 161; obras de referencia más antiguas la fechan en 153–155.",
         quote:
           "Porque no tomamos estas cosas como pan común ni bebida común; sino que, así como Jesucristo nuestro Salvador, hecho carne por la Palabra de Dios, tuvo carne y sangre para nuestra salvación, así también se nos ha enseñado que el alimento sobre el que se ha dado gracias por la oración de su palabra, y del cual nuestra sangre y nuestra carne se nutren por transformación, es la carne y la sangre de aquel Jesús que se hizo carne.",
         edition:
@@ -248,7 +250,8 @@ export const eucharistDoctrine = {
         work: "Contra Marción",
         locator: "IV.40",
         reader: { work: "tertullian-against-marcion", locator: "4.40" },
-        date: { year: 207, yearEnd: 208, circa: true },
+        date: { year: 207, yearEnd: 212, circa: true },
+        note: "La obra se escribió por etapas: el libro I en 207 o 208 y los libros IV y V hacia 212.",
         quote:
           "Luego, tomando el pan y dándolo a sus discípulos, lo hizo su propio cuerpo diciendo: “Esto es mi cuerpo”, es decir, la figura de mi cuerpo. Pero no habría podido haber figura si antes no hubiera habido un cuerpo verdadero.",
         edition:

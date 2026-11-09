@@ -59,7 +59,7 @@ test("the section: title, subtitle, twelve markers, twelve rows in date order, s
   await expect(page.locator("#witnesses ol li")).toHaveCount(12);
   await expect(page.locator(status)).toHaveText("12 testigos. Arrastra sobre la regla para elegir años.");
   const dates = await page.locator("#witnesses ol li > div:first-child").allTextContents();
-  expect(dates[0]).toBe("c. 50–120");
+  expect(dates[0]).toBe("c. 50–150");
   expect(dates[11]).toBe("c. 743");
   await expect(page.locator("#witnesses ol li").nth(1)).toContainText("Ignacio de Antioquía");
   await expect(page.locator("#witnesses ol li").nth(1).locator("[aria-haspopup]")).toHaveText(
@@ -91,7 +91,7 @@ test("hovering a marker raises it 22 px on an accent stem and shows «Nombre, fe
     text: node.textContent,
     opacity: getComputedStyle(node).opacity,
   }));
-  expect(label.text).toBe("Ignacio de Antioquía, c. 107–110");
+  expect(label.text).toBe("Ignacio de Antioquía, c. 107–108");
   expect(label.opacity).toBe("1");
   await expect(page.locator(row("ew-flesh"))).toHaveAttribute("data-hot", "");
 });
@@ -535,7 +535,7 @@ test("a quote's source opens its window with the translation's quote and date", 
   const dialog = page.locator("[role=dialog]");
   await expect(dialog).toHaveAttribute("data-open", "true");
   await expect(dialog).toContainText("Se abstienen de la Eucaristía");
-  await expect(dialog).toContainText("c. 107–110");
+  await expect(dialog).toContainText("c. 107–108");
   await page.keyboard.press("Escape");
   await expect(link).toBeFocused();
 });
