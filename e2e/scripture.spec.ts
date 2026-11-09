@@ -8,9 +8,9 @@ test("four passages with the reference as the title and the reading under it", a
   await expect(page.locator(items)).toHaveCount(4);
   const titles = await page.locator(`${items} > p:first-child`).allTextContents();
   expect(titles.map((title) => title.replace(/ /g, " "))).toEqual([
-    "Mateo 26:26–28; Marcos 14:22–24; Lucas 22:19–20; 1 Corintios 11:23–26",
-    "Lucas 22:19",
     "Juan 6:51–58, 60–69",
+    "Mateo 26:26–28; Marcos 14:22–24; Lucas 22:19–20; 1 Corintios 11:23–26",
+    "1 Corintios 11:27–29",
     "1 Corintios 10:16–17",
   ]);
   await expect(page.locator("#scripture h2")).toHaveText("La Escritura que usa");
@@ -22,7 +22,7 @@ test("titles and the button are pressable and do nothing yet", async ({ page }) 
   const url = page.url();
   const title = page.locator(`${items} > p:first-child button`).first();
   await title.click();
-  const all = page.locator("#scripture button", { hasText: "Ver los 14 pasajes" });
+  const all = page.locator("#scripture button", { hasText: "Ver los 12 pasajes" });
   await expect(all).toBeVisible();
   await all.click();
   expect(page.url()).toBe(url);
