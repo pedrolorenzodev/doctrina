@@ -4,6 +4,8 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 
 ## Next.js and tooling
 
+- **Crawler href substrings can retain entire HTML documents.** · On Node 24, keeping regex capture strings as map keys made the expanded crawl reach the default 4 GiB heap limit after 9,000 fetches. Decoding ampersands with `replace` does not necessarily detach a substring. `Buffer.from(...).toString("utf8")` creates an independent href string; a 200-document reproduction retained 47.73 MiB before and 0.27 MiB after. Keep this copy when changing the parser. · `tools/qa/crawl.mjs`; measured 2026-11-08, details in `docs/features/dead-links.md`.
+
 - **`tsc --noEmit` alone fails with `Cannot find name 'LayoutProps'`** on a clean clone or after deleting `.next`. · Next generates the global route types (`LayoutProps`, `PageProps`) into `.next/types`. · `package.json` → `typecheck` runs `next typegen` first; always use `npm run typecheck`.
 - **A root `app/` folder makes Next silently ignore `src/app`.** · Next only looks in `src/` when there is no root `app/` (tested 2026-10-05: routes under `src/app` vanished from the build). · Repo root: never create `app/` (or `pages/`) there.
 - **`proxy.ts` (formerly `middleware.ts`) must live inside `src/`.** · Next docs, `03-file-conventions/src-folder.md`. · `src/proxy.ts` when it exists.
@@ -222,6 +224,17 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **`note-followup.ts` imports `ui-text/es` and `en` directly** · `get-ui-text` imports `server-only`, which the Node check runner cannot load.
 - **Notes and highlights travel together as «notes»** · a highlight the model judges related is offered too, and its citation finds no note to open.
 
+## Citation excerpts (2026-11-08)
+- **The registry validator rejects internal vocabulary** (`.md`, «verificación», «pendiente»…) in any registry string: provenance that names research files goes to `docs/research/sources/citation-excerpts-withheld.json`, never into `citations.ts`.
+- **`apply-excerpts.mjs` is not idempotent:** it fills `excerpts: []` and replaces the two repairs; run it only on a registry that still has the empty citations (restore the file by reading it from the repository, never with a git write).
+- **`quoteLabel` shows only for `ai-assisted` passages:** 84 other passages carry a `label` with bibliographic text that the window must not show.
+
+## Chat round 4 (2026-11-08)
+- **Evaluation traffic spends the production budget:** `x-ai-eval` skips BotID and the per-person quotas but not the daily and monthly caps (`ai_usage`), so a full evaluation run can exhaust the month (it did on 2026-11-08: $4.00 of $4.00); review servers can override the caps in their own environment.
+- **`clampPlan` adds `fathers`** when the question names a known author or work and the plan restricted the sources without them; do not remove it when changing the plan prompt (a prompt-only version of the rule narrowed other questions).
+- **Labels of `ai_passages` rows are contracted when read** (`withContractions` in `passageFromRow`), not in the database: the stored titles still say «de el» until the next load (`load-ai-passages.mjs` now contracts them).
+- **`pickNotes` sends notes of other chapters without shared words:** up to 6 such notes per request; `maxNotes`, `maxNotesChars` and `maxNoteChars` bound the cost and what leaves the browser.
+
 ## Traps found on 2026-10-28 night (eleventh session)
 
 - **`data/corpus/` is gitignored.** `kjv.red.json`, the `*.red.computed.json` files and every other corpus file exist only on this machine; a block that «adds red letters» commits only its script, loader and specs.
@@ -357,3 +370,12 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **`AI_PROVIDER` decides what costs money, in two places.** · The server and the evaluation harness each read it; `.env.local` has `ANTHROPIC_API_KEY`, which makes `anthropic` the default. `fake` (default in `playwright.config.ts`, with `AI_STORE=memory`) is free and seeds the 25 reviewed paragraphs; `replay` reads `AI_REPLAY_DIR`; a run with `AI_RECORD_DIR` writes `tools/ai-eval/recordings/` (git-ignored). The eval header `x-ai-eval` (`AI_EVAL_SECRET`, local only) skips BotID and the per-person quotas, never the budget, and is ignored when `VERCEL=1`.
 - **The simplifier's Father address carries the edition id, not the picker option id.** · The server wants `lightfoot-1889`; `father-body.tsx` sends `selected.id`, which is the picker option (`en`, `es`), so the Father test in `simplifier-real.spec.ts` is `fixme` until the view carries its edition id.
 - **A 600-word paragraph does not fit the simplifier's clocks.** · The server's deadline is 25 s for all calls of a request and the client gives up at 20 s; Athanasius, *De incarnatione* 21 (638 words) hit the server deadline twice on Haiku 5.5 (≈ 6,000 output tokens), while Justin *1 Apol.* 32 (632 words) took 7 s. Long divisions are a lottery until one of the two clocks and the thinking budget are settled.
+
+## Sources catalogue (2026-11-07)
+
+- **The legacy catalogue uses zero for unparsed century dates.** · The two liturgies with “4th century” labels have `year: 0`; plotting them at zero made All years (1–2026) omit them. Treat zero as no numeric year, keep the century label and include them through the undated option. · `src/content/get-sources.ts`, `e2e/sources.spec.ts`.
+- **Compact source marks are packed from every source, not just the filter matches.** · Repacking only matching rows changed the ruler height and moved every filter below it by 36 px. The shared ruler accepts visible IDs separately from its layout data. · `src/components/years-ruler.tsx`, `src/features/sources/sources-catalogue.tsx`.
+
+- **`flipList` measures painted boxes before cancelling a running move.** · Cancelling first reset a Sources row to its previous target before the next FLIP measured it, causing a 549 px interruption jump. · `src/lib/list-motion.ts`, `e2e/sources.spec.ts`.
+
+- **Touch-only pseudo-element utilities must carry the pointer media variant too.** · A bare `before:w-11` created `::before` for fine pointers although `yr-handle` positions it only under `pointer: coarse`; the extra grid item displaced the visible grip. Compact handles use `pointer-coarse:before:*`. · `src/components/years-ruler.tsx`, `e2e/sources.spec.ts`.
