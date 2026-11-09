@@ -235,6 +235,24 @@ export const baptismReformed = {
               },
             ],
           },
+          {
+            title:
+              "Currie lee la Gran Comisión (Mt 28:19–20) y dice que no hay prioridad mayor para los cristianos que el discipulado de sus propios hijos; observa que en el primer bautismo registrado después de la comisión, el sermón de Pentecostés de Pedro, Pedro dice «la promesa es para ustedes, para sus hijos y para todos los que están lejos» (Hch 2:39)",
+            quotes: [
+              {
+                speaker: "John Currie",
+                work: "Infant Baptism: What Does Scripture Teach? | Dr. John Currie",
+                outlet: "Westminster Theological Seminary",
+                date: "21 de enero de 2021",
+                locator: "Minutos 0:20 a 1:27",
+                url: "https://www.youtube.com/watch?v=hUPaQ4leYEc&t=20s",
+                text: "Antes de que Jesús ascendiera, al final del Evangelio de Mateo, se registra que dio este mandato y encargo a sus discípulos. Vayan, pues, y hagan discípulos de todas las naciones, bautizándolos en el nombre del Padre y del Hijo y del Espíritu Santo, enseñándoles a guardar todo lo que yo les he mandado. Y he aquí, yo estoy con ustedes siempre, hasta el fin de los tiempos. Bueno, no puede haber mayor prioridad ni privilegio para los cristianos que el discipulado de sus propios hijos. Y es muy significativo que en el primer bautismo que vemos registrado en la Escritura después de que se dio ese mandato y encargo a los discípulos de Jesús, en el sermón de Pentecostés del apóstol Pedro en Hechos capítulo 2, cuando unas 3.000 personas llegan a la fe en Jesús. Al final de ese sermón, el apóstol Pedro dice esto en Hechos capítulo 2 versículo 39. Dice: Porque la promesa es para ustedes y para sus hijos, y para todos los que están lejos, para todos los que el Señor nuestro Dios llame para sí.",
+                original:
+                  "Before Jesus ascended, at the end of the Gospel of Matthew, it records that he gave this command and commission to his disciples. Go, therefore, and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, even to the end of the age. Well, there could be no greater priority and privilege for Christians than the discipleship of their own children. And it's very significant that in the first baptism that we see recorded in Scripture after that command and commission was given to Jesus' disciples, the Pentecost sermon of the Apostle Peter in Acts chapter 2 when some 3,000 come to faith in Jesus. At the end of that sermon, the Apostle Peter says this in Acts chapter 2 verse 39. He says, For the promise is for you and for your children and for all who are far off, everyone whom the Lord our God calls to himself.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
@@ -322,16 +340,114 @@ export const baptismReformed = {
               },
             ],
           },
+          {
+            title:
+              "Currie dice que Pablo nos dice tres cosas sobre esta promesa del pacto: en Cristo todas las promesas de Dios son sí (2 Cor 1:20); los hijos de los creyentes están apartados en una relación de pacto con Dios, llamados santos (1 Cor 7:14); y el signo del nuevo pacto que reemplazó a la circuncisión es el bautismo (Col 2:11–12); por lo tanto, siguiendo el mandato de Jesús, el bautismo se aplica a los hijos de los creyentes",
+            quotes: [
+              {
+                speaker: "John Currie",
+                work: "Infant Baptism: What Does Scripture Teach? | Dr. John Currie",
+                outlet: "Westminster Theological Seminary",
+                date: "21 de enero de 2021",
+                locator: "Minutos 2:27 a 3:30",
+                url: "https://www.youtube.com/watch?v=hUPaQ4leYEc&t=147s",
+                text: "Cuando llegamos al Nuevo Testamento, el apóstol Pablo nos dice tres cosas muy importantes en relación con esta promesa del pacto. En primer lugar, en 2 Corintios 1, versículo 20, nos dice que en Cristo todas las promesas de Dios son sí. En segundo lugar, nos dice en 1 Corintios 7, versículo 14, que los hijos de los creyentes están apartados en relación de pacto con Dios. Él los llama santos. Y en tercer lugar, en Colosenses 2, versículos 11 y 12, nos dice que el signo del nuevo pacto, que ha reemplazado aquel antiguo signo del pacto, la circuncisión, es en realidad la señal que Jesús dio a sus discípulos, la señal del bautismo. Y por eso, creer en la promesa del pacto que Dios le hizo a Abraham es lo que Pedro y Pablo interpretan: que seguimos el mandato de Jesús de hacer discípulos aplicando la señal del bautismo a los hijos de los creyentes.",
+                original:
+                  "When we come to the New Testament, the Apostle Paul tells us three very important things in relationship to this covenant promise. First of all, in 2 Corinthians 1, verse 20, he tells us that in Christ, all the promises of God are yes. Second, he tells us in 1 Corinthians 7, verse 14, that the children of believers are set apart in covenant relationship to God. He calls them holy. And then thirdly, in Colossians 2, verse 11 and 12, he tells us that the sign of the new covenant, which has replaced that old covenant sign of circumcision, is actually the sign Jesus gave to his disciples, the sign of baptism. And so it's believing God's covenant promise that he gave to Abraham is that's interpreted by Peter and by Paul that we follow Jesus' command in making disciples by applying the sign of baptism to the children of believers.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
     {
       refs: ["Gal.3.27"],
       text: "Se cita para la unión con Cristo (Confesión 28.1 y 28.6; Catecismo Menor 94).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Ferguson dice que las discusiones sobre el bautismo se centran en con qué somos bautizados, el agua, e ignoran en qué somos bautizados: Pablo dice en Rom 6:3 que todos los que han sido bautizados en Cristo Jesús fueron bautizados en su muerte, y usa un lenguaje similar en Gál 3:27; somos bautizados con agua para entrar en comunión con una persona, y, como un anillo de bodas, el bautismo es la expresión visible del compromiso de Cristo con nosotros en su unión con nosotros",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "Baptized: A New Identity",
+                outlet: "Things Unseen with Sinclair B. Ferguson",
+                date: "3 de septiembre de 2026",
+                locator: "Minutos 1:57 a 3:43",
+                url: "https://ligonier.org/podcasts/things-unseen-with-sinclair-ferguson/baptized-a-new-identity#t=117",
+                text: "sobre con qué somos bautizados e ignorar en qué somos bautizados. Somos bautizados con agua. El agua es el instrumento, el medio que usamos para bautizar. Pero a pesar de todas nuestras discusiones sobre la cantidad de agua que usamos, eso no es realmente el foco principal de aquello en lo que somos bautizados. Seguramente lo saben, porque están familiarizados con la manera en que Pablo habla del bautismo en Romanos capítulo 6 versículo 3. ¿No saben, dice, que todos los que fuimos bautizados en Cristo Jesús fuimos bautizados en su muerte? Usa un lenguaje similar en Gálatas capítulo 3 versículo 27. Somos bautizados con el elemento del agua, pero somos bautizados en comunión con una persona, el Señor Jesucristo. Quizás una analogía ayude aquí. Han estado en bodas y han visto al novio colocar una alianza en el dedo anular de la novia y decir: Con este anillo te desposo, con todos mis bienes terrenales te doto. ¿Sabían que ni las palabras ni el anillo son en realidad esenciales para su matrimonio? Las palabras y el anillo son un signo y un sello de este. Son una representación visible del vínculo matrimonial. Lo grande no es el anillo, sino lo que el anillo representa. El anillo no es el compromiso, pero lo expresa de esta manera visual conmovedora. Y el bautismo es así. Es la expresión visible del compromiso de Cristo con nosotros en su unión con nosotros.",
+                original:
+                  "on what we're baptized with and ignore what we're baptized into. We're baptized with water. Water is the instrument, the means that we use to baptize. But despite all our discussions about the amount of water we use, that's not really the chief focus of what we're baptized into. You know that, I'm sure, because you're familiar with the way Paul talks about baptism in Romans chapter 6 verse 3. Don't you know, he says, that all of us who have been baptized into Christ Jesus were baptized into his death? He uses similar language in Galatians chapter 3 verse 27. We are baptized with the element of water, but we are baptized into fellowship with a person, the Lord Jesus Christ. Perhaps an analogy helps here. You've been at weddings and watched the groom place a wedding band on the bride's ring finger and say, With this ring I thee wed, with all my worldly goods I thee endow. Did you know that neither the words nor the ring are actually essential to their marriage? The words in the ring are a sign and seal of it. They're a visible representation of the marriage bond. The big thing is not the ring, but what the ring represents. The ring isn't the commitment, but it expresses the commitment in this moving visual way. And baptism is like that. It's the visible expression of Christ's commitment to us in His union with us.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title:
+              "Cooper dice que Abram creyó la promesa de Dios y le fue contado por justicia (Gn 15:6), revelación de Dios de que la fe en él es el modo en que las personas son aceptadas y se hacen herederas de sus promesas; «como dice Pablo en Romanos capítulo 4 y Gálatas capítulo 3», Abraham fue justificado por la fe sola, fe en promesas que hallaron su cumplimiento en Cristo",
+            quotes: [
+              {
+                speaker: "Barry Cooper",
+                work: "The Abrahamic Covenant",
+                outlet: "Simply Put",
+                date: "15 de abril de 2025",
+                locator: "Minutos 1:49 a 2:47",
+                url: "https://ligonier.org/podcasts/simply-put/the-abrahamic-covenant#t=109",
+                text: "Sin embargo, Abram cree la promesa de Dios de que le daría un hijo. Y se nos dice que, por la fe en la promesa de Dios, Abraham fue contado como justo. Eso es lo que significa Génesis capítulo 15 versículo 6 cuando dice: Abraham creyó al Señor, y se lo reputó por justicia. Este es realmente un momento asombroso. La revelación de Dios de que la fe en él es el mecanismo por el cual las personas son aceptadas por él y se convierten en herederos de sus promesas. Como dice Pablo en Romanos capítulo 4 y Gálatas capítulo 3, Abraham fue justificado por la fe sola, la fe en las promesas de Dios, promesas que encontraron su cumplimiento en Cristo. Que Dios opere así es una noticia abrumadoramente buena, no solo para Abraham,",
+                original:
+                  "Nevertheless, Abram believes God's promise that he would provide a son for him. And we're told that through belief in the promise of God, Abraham was counted righteous. That's what Genesis chapter 15 verse 6 means when it says, Abraham believed the Lord and he counted it to him as righteousness. Now this really is a stunning moment. God's revelation that faith in him is the mechanism by which people are accepted by him and become heirs of his promises. As Paul says in Romans chapter 4 and Galatians chapter 3, Abraham was justified by faith alone, faith in the promises of God, promises which found their fulfillment in Christ. That God operates like this is overwhelmingly good news, not just for Abraham,",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Rom.6.3-Rom.6.5"],
       text: "Se cita para la vida nueva y la muerte y resurrección de Cristo (Confesión 28.1; Catecismo Mayor 167).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul dice que el bautismo simboliza, entre otras cosas, nuestra unión con Jesús y nuestra participación en su muerte y resurrección; Pablo subraya nuestra unión mística con Cristo, de modo que morimos con él en el Calvario en virtud de esta unión y, como dice Rom 6:4, fuimos «sepultados con él por el bautismo para muerte», para que anduviéramos en vida nueva",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "No Longer Slaves to Sin (Romans 6:4–11) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "22 de junio de 2025",
+                locator: "Minutos 5:04 a 7:45",
+                url: "https://www.youtube.com/watch?v=fbPEbiOW4A4&t=304s",
+                text: "Y mencioné en nuestro estudio de la semana pasada que nuestro bautismo simboliza, entre otras cosas, nuestra unión con Jesús, nuestra participación con Él en su muerte y en su resurrección. Ahora, antes de seguir, creo que es absolutamente esencial, si queremos entender lo que Pablo enseña aquí en el capítulo sexto de esta epístola, detenernos un momento a mirar de nuevo con qué fuerza Pablo articula la idea de nuestra unión mística con Cristo. Que por el Espíritu Santo, toda persona que cree en Cristo es entonces unida a Cristo espiritualmente. De modo que si soy creyente, ahora estoy en Cristo, y Cristo está en mí. Y la iglesia invisible está formada por todos los que están en Cristo Jesús, todos los que participan de esta unión mística entre nosotros y Cristo. Bueno, aquí en el texto, Pablo lleva esta idea de nuestra unión mística un poco más lejos, que Pero él nos dice que en un sentido espiritual, no solo nuestros pecados son imputados a Cristo en su muerte en la cruz, y los beneficios de su resurrección nos son transferidos, y los beneficios de su justicia nos son imputados por transacción legal, sino que va más allá. Llega a este asunto de nuestra verdadera unión espiritual con nuestro Salvador. En un sentido espiritual, morimos con Él en el Calvario. Porque cuando Él fue a la cruz, no fue por sí mismo sino por sus ovejas. Y realizó una obra que nosotros no podríamos hacer por nosotros mismos. Pero era nuestro pecado el que cargaba en su muerte. Y así, cuando murió, no murió simplemente por nosotros, sino que nosotros, en virtud de esta unión espiritual, morimos con Él. Por eso, dice Pablo, fuimos sepultados con Él mediante el bautismo en la muerte, y así como Cristo fue resucitado de entre los muertos por la gloria del Padre, así también nosotros debemos andar en novedad de vida.",
+                original:
+                  "And I mentioned in our study last week that our baptism symbolizes among other things our union with Jesus, our participation with Him in His death and His resurrection. Now before I go on here, I think what is absolutely essential, if we're going to make any sense of what Paul is teaching here in the sixth chapter of this epistle is to just take for a moment to look again at how strongly Paul articulates the idea of our mystical union with Christ. That by the Holy Spirit, every person who believes in Christ is then joined to Christ spiritually. So that if I am a believer, I am now in Christ, and Christ is in me. And the invisible church is made up of all of those who are in Christ Jesus, all who participate in this mystical union between us and Christ. Well here in the text, Paul takes this idea of our mystical union a little further, that But he tells us that in a spiritual sense, not only are our sins imputed to Christ in His death on the cross, and the benefits of His resurrection transferred to us, and the benefits of His righteousness imputed to us by legal transaction, but it goes beyond that. It goes to this business of our real spiritual union with our Savior. In a spiritual sense, we died with Him on Calvary. Because when He went to the cross, He went not for himself but for His sheep. And He did a work that we couldn't possibly do for ourselves. But it was our sin that He was carrying in His death. And so when He died, He didn't simply die for us, but we, by virtue of this spiritual union, died with Him. Therefore, Paul says, we were buried with Him through baptism into death, and just as Christ was raised from the dead by the glory of the Father, even so we should also walk in the newness of life.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title:
+              "Ferguson dice que las discusiones sobre el bautismo se centran en con qué somos bautizados, el agua, e ignoran en qué somos bautizados: Pablo dice en Rom 6:3 que todos los que han sido bautizados en Cristo Jesús fueron bautizados en su muerte, y usa un lenguaje similar en Gál 3:27; somos bautizados con agua para entrar en comunión con una persona, y, como un anillo de bodas, el bautismo es la expresión visible del compromiso de Cristo con nosotros en su unión con nosotros",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "Baptized: A New Identity",
+                outlet: "Things Unseen with Sinclair B. Ferguson",
+                date: "3 de septiembre de 2026",
+                locator: "Minutos 1:57 a 3:43",
+                url: "https://ligonier.org/podcasts/things-unseen-with-sinclair-ferguson/baptized-a-new-identity#t=117",
+                text: "sobre con qué somos bautizados e ignorar en qué somos bautizados. Somos bautizados con agua. El agua es el instrumento, el medio que usamos para bautizar. Pero a pesar de todas nuestras discusiones sobre la cantidad de agua que usamos, eso no es realmente el foco principal de aquello en lo que somos bautizados. Seguramente lo saben, porque están familiarizados con la manera en que Pablo habla del bautismo en Romanos capítulo 6 versículo 3. ¿No saben, dice, que todos los que fuimos bautizados en Cristo Jesús fuimos bautizados en su muerte? Usa un lenguaje similar en Gálatas capítulo 3 versículo 27. Somos bautizados con el elemento del agua, pero somos bautizados en comunión con una persona, el Señor Jesucristo. Quizás una analogía ayude aquí. Han estado en bodas y han visto al novio colocar una alianza en el dedo anular de la novia y decir: Con este anillo te desposo, con todos mis bienes terrenales te doto. ¿Sabían que ni las palabras ni el anillo son en realidad esenciales para su matrimonio? Las palabras y el anillo son un signo y un sello de este. Son una representación visible del vínculo matrimonial. Lo grande no es el anillo, sino lo que el anillo representa. El anillo no es el compromiso, pero lo expresa de esta manera visual conmovedora. Y el bautismo es así. Es la expresión visible del compromiso de Cristo con nosotros en su unión con nosotros.",
+                original:
+                  "on what we're baptized with and ignore what we're baptized into. We're baptized with water. Water is the instrument, the means that we use to baptize. But despite all our discussions about the amount of water we use, that's not really the chief focus of what we're baptized into. You know that, I'm sure, because you're familiar with the way Paul talks about baptism in Romans chapter 6 verse 3. Don't you know, he says, that all of us who have been baptized into Christ Jesus were baptized into his death? He uses similar language in Galatians chapter 3 verse 27. We are baptized with the element of water, but we are baptized into fellowship with a person, the Lord Jesus Christ. Perhaps an analogy helps here. You've been at weddings and watched the groom place a wedding band on the bride's ring finger and say, With this ring I thee wed, with all my worldly goods I thee endow. Did you know that neither the words nor the ring are actually essential to their marriage? The words in the ring are a sign and seal of it. They're a visible representation of the marriage bond. The big thing is not the ring, but what the ring represents. The ring isn't the commitment, but it expresses the commitment in this moving visual way. And baptism is like that. It's the visible expression of Christ's commitment to us in His union with us.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Titus.3.5"],
@@ -381,6 +497,28 @@ export const baptismReformed = {
     {
       refs: ["Mark.1.4"],
       text: "Se cita para la remisión de los pecados (Confesión 28.1).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul, en un sermón sobre Mc 1:9–13, pone en boca de Juan que su bautismo era «un bautismo de arrepentimiento del pecado» y que él acababa de anunciar a Jesús como el Cordero de Dios; pregunta por qué Jesús, sin pecado, se sometería a un rito instituido para limpiar a pecadores",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "The Baptism and Temptation of Jesus ( Mark 1:9–13) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "25 de octubre de 2020",
+                locator: "Minutos 5:09 a 6:09",
+                url: "https://www.youtube.com/watch?v=OFkBfnMy63g&t=309s",
+                text: "se adelanta hacia Juan, y le dice a Juan: quiero que me bautices. Y Juan dice: oh, no puedo hacer eso. Le he dicho a todos que este es un bautismo de arrepentimiento del pecado, y acabo de anunciarte como el Cordero de Dios, el Cordero sin mancha que quita el pecado del mundo. Si te bautizo, arruino todo. Quiero decir, seguramente, Jesús, déjame ayudarte con tu teología por un segundo. Tú deberías bautizarme a mí. Yo no debería bautizarte a ti. Así que eso plantea inmediatamente la pregunta, ¿no?, de por qué Jesús, que es sin pecado, se sometería a un rito instituido para limpiar a los pecadores de su pecado.",
+                original:
+                  "forward to John, and he says to John, I want you to baptize me. And John says, oh, I can't do that. I've told everybody that this is a baptism of repentance from sin, and I just announced you as the Lamb of God, the Lamb without blemish who takes away the sin of the world. If I baptize you, I ruin everything. I mean, surely, Jesus, let me help you with your theology here for a second. You should be baptizing me. I shouldn't be baptizing you. So that immediately raises the question, doesn't it, why would Jesus, who is sinless, submit Himself to a right instituted to cleanse sinners from their sin.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Acts.22.16"],
@@ -415,22 +553,132 @@ export const baptismReformed = {
     {
       refs: ["Acts.2.41", "Acts.16.33"],
       text: "Se cita para la administración con agua (Confesión 28.3).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Ferguson dice que en Hechos la primera de las pequeñas imágenes fijas de Lucas sobre cómo era la iglesia aparece al final de Hch 2: el Espíritu ha sido derramado, se reunió una nueva asamblea, 3.000 personas fueron bautizadas y se añadieron nuevos conversos, y Lucas hace una pausa y pone a esta comunidad bajo la lupa, de modo que Hch 2:42 y siguientes muestran cómo es la iglesia que Jesús edifica",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "Belonging to the Church",
+                outlet: "Renewing Your Mind",
+                date: "15 de agosto de 2026",
+                locator: "Minutos 11:41 a 12:36",
+                url: "https://renewingyourmind.org/2026/08/15/belonging-to-the-church#t=701",
+                text: "Y es muy interesante que el primero de estos esté al final de Hechos capítulo 2, ¿no es cierto? En Hechos capítulo 2, versículo 42 y siguientes. ¿Qué encuentran ahí? Encuentran que el Espíritu ha sido derramado, que esta nueva asamblea de personas se ha reunido, que 3.000 personas han sido bautizadas. Hay todos estos nuevos conversos. Y Lucas dice: apretemos el botón de pausa, pongamos a esta nueva comunidad bajo la lupa, y veremos cómo es realmente la iglesia que Jesús edifica. Así que Hechos capítulo 2, versículo 42 y siguientes no son comentarios al azar. Están escritos de manera muy deliberada para decirnos a nosotros, como lectores de los Hechos de los Apóstoles: cuando Jesús edifica la iglesia, así es como se ve la iglesia.",
+                original:
+                  "And it's very interesting that the first of these is at the end of Acts chapter 2, isn't it? In Acts chapter 2, verse 42 following. What do you find there? You find here, the Spirit has been poured out, this new assembly of people has been gathered, 3,000 people have been baptized. There are all of these new converts. And Luke says, let's press the pause button and let's put this new community under the magnifying glass and we'll see what the church that Jesus builds actually looks like. So Acts chapter 2 verse 42 and following are not haphazard comments. They look very deliberately saying to us as readers of the Acts of the Apostles, when Jesus builds the church, this is what the church looks like.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Mark.7.4"],
       text: "Se cita para los lavamientos (Confesión 28.3).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul dice que la queja de los fariseos contra los discípulos de Jesús no era de higiene sino de limpieza ritual e impureza ritual: el lavado era un mero símbolo, con tan poca agua que no hacía nada por la higiene, realizado para cumplir un rito fijado por la tradición de los ancianos (Mc 7:3–4)",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "The Idolatry of Legalism",
+                outlet: "Renewing Your Mind",
+                date: "1 de noviembre de 2026",
+                locator: "Minutos 4:52 a 5:55",
+                url: "https://renewingyourmind.org/2026/11/01/the-idolatry-of-legalism#t=292",
+                text: "Ahora, puede que cuando lean este texto piensen que lo que les preocupaba era la higiene. Y dicen: ¿no les preocupa la salud de sus discípulos, que los dejan comer sin practicar debidamente la higiene perfecta? No. La higiene no tenía absolutamente nada que ver con esta queja que se presenta contra Jesús y sus discípulos. Lo que estaba en juego aquí era la purificación ritual, la contaminación ritual. El lavado era un mero símbolo. De hecho, la cantidad de agua que usaban para lavarse las manos era tan poca que no servía de mucho para promover una buena higiene; más bien, debían cumplir esta acción de lavarse las manos antes de comer su pan para cumplir un rito que había sido establecido",
+                original:
+                  "Now, you may think when you read this text that what they were concerned about was hygiene. And they say, aren't you concerned about the health of your disciples, that you're letting them eat food without properly practicing perfect hygiene? No. Hygiene had nothing whatsoever to do with this complaint that is being lodged against Jesus and His disciples. What was in view here was ritual cleansing, ritual defilement. The washing was a mere symbol. In fact, the amount of water that they would use to wash their hands was so slight that it wouldn't do very much to promote good hygiene, but rather they were to go through this action of washing their hands before they ate their bread to fulfill a ritual that had been set forth",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Mark.16.15-Mark.16.16", "Acts.8.37-Acts.8.38"],
       text: "Se cita para la profesión de fe antes del bautismo (Confesión 28.4).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul dice que Felipe seguramente había explicado la Gran Comisión y que, así como la circuncisión era el signo del pacto antes de Jesús, el bautismo es el signo del nuevo pacto; cuando el eunuco preguntó qué le impedía ser bautizado y profesó su fe, esto muestra que las personas que llegan por primera vez a la comunidad del pacto como adultos, nunca circuncidados de niños, debían hacer una profesión de fe antes de recibir el signo, «y eso sigue siendo cierto en la iglesia de hoy»",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "The Ethiopian Eunuch (Acts 8:25-40) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "7 de abril de 2024",
+                locator: "Minutos 21:29 a 22:58",
+                url: "https://www.youtube.com/watch?v=vniJTENZ0D0&t=1289s",
+                text: '¿Qué me impide ser bautizado?" Así que estoy seguro de que Felipe ya había hablado del gran mandato de ir por todo el mundo predicando y enseñando a Cristo y bautizando a todas las naciones en el nombre del Padre, del Hijo y del Espíritu Santo. Estoy seguro de que le explicó al eunuco que, así como la circuncisión era el signo del pacto antes de Jesús. Ahora, el nuevo signo del pacto del reino de Dios y del nuevo pacto era el signo del bautismo. Y el eunuco había absorbido todas estas cosas, y ve agua. Y dice: ¿hay algo que me impida ser bautizado? Felipe dijo: si crees con todo tu corazón, puedes ser bautizado." Y él respondió y dijo: Creo que Jesucristo es el Hijo de Dios, rápidamente. ¿Cuál es la importancia de esto? En la iglesia primitiva, cuando el evangelio se predicaba a extranjeros, personas ajenas al Antiguo Pacto, personas que nunca habían sido circuncidadas de niños, personas que llegaban por primera vez a la comunidad del pacto como adultos. Antes de poder recibir el signo de ese nuevo pacto, tenían que hacer una profesión de fe, y eso sigue siendo cierto en la iglesia de hoy. Pero al mismo tiempo, en la iglesia primitiva,',
+                original:
+                  "What hinders me from being baptized?\" So I'm sure Philip had already talked about the great commission to go into all the world preaching and teaching Christ and baptizing all nations in the name of the Father, Son, and Holy Spirit. I'm sure he explained to the eunuch that just as circumcision was the sign of the covenant before Jesus. Now the new sign of the covenant of the kingdom of God and of the new covenant was the sign of baptism. And all of these things the eunuch had absorbed, and he sees water. And he says, is there anything that keeps me from being baptized? Philip said, if you believe with all of your heart, you may be baptized.\" And he answered and said, I believe that Jesus Christ is the Son of God quickly. What's the significance of this? In the early church, when the gospel was preached to foreigners, people who were strangers to the Old Covenant, people who had never been circumcised as infants, people who were coming for the first time to the covenant community as adults. Before they could receive the sign of that new covenant, they had to make a profession of faith, and that's still true in the church today. But at the same time, in the early church,",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Gen.17.7", "Gen.17.9"],
       text: "Se cita para el pacto y la descendencia (Confesión 28.4; Catecismo Mayor 166).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Currie dice que la audiencia de Pedro estaba empapada de las promesas del Antiguo Testamento, sobre todo del pacto de Dios con Abraham en Gn 17: un pacto con Abraham y su descendencia después de él, un pacto perpetuo, con la circuncisión como su signo (17:11)",
+            quotes: [
+              {
+                speaker: "John Currie",
+                work: "Infant Baptism: What Does Scripture Teach? | Dr. John Currie",
+                outlet: "Westminster Theological Seminary",
+                date: "21 de enero de 2021",
+                locator: "Minutos 1:28 a 2:26",
+                url: "https://www.youtube.com/watch?v=hUPaQ4leYEc&t=88s",
+                text: "Ahora, ¿por qué el apóstol Pedro elegiría incluir a los niños en esa afirmación? Porque Pedro y el auditorio al que habla están empapados de las promesas del Antiguo Testamento, cuyo centro es la promesa del pacto que Dios dio a Abraham. Lo encontramos en Génesis capítulo 17. Y estableceré mi pacto entre mí y ti y tu descendencia después de ti por sus generaciones, por pacto perpetuo, para ser Dios tuyo y de tu descendencia después de ti. Y luego, en el capítulo 17 versículo 11, dice esto: Serás circuncidado en la carne de tu prepucio, y será una señal del pacto entre mí y ti. Así que Dios estableció su pacto con Abraham y prometió que ese pacto sería con la descendencia de Abraham para siempre, y que la señal de ese pacto sería la señal de la circuncisión.",
+                original:
+                  "Now, why would the Apostle Peter choose to include children in that statement? Because Peter and the audience he's speaking to are soaked in the promises of the Old Testament, central to which is the promise of the covenant that God gave to Abraham. We find it in Genesis chapter 17. And I will establish my covenant between me and you and your offspring after you throughout their generations for an everlasting covenant to be God to you and your offspring after you. And then in chapter 17 verse 11 he says this, You shall be circumcised in the flesh of your foreskin and it shall be a sign of the covenant between me and you. So God established His covenant with Abraham and promised that that covenant would be with Abraham's offspring forever and that the sign of that covenant would be the sign of circumcision.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Gal.3.9", "Gal.3.14"],
       text: "Se cita para la bendición de Abraham y la promesa (Confesión 28.4; Catecismo Mayor 166).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Cooper dice que Abram creyó la promesa de Dios y le fue contado por justicia (Gn 15:6), revelación de Dios de que la fe en él es el modo en que las personas son aceptadas y se hacen herederas de sus promesas; «como dice Pablo en Romanos capítulo 4 y Gálatas capítulo 3», Abraham fue justificado por la fe sola, fe en promesas que hallaron su cumplimiento en Cristo",
+            quotes: [
+              {
+                speaker: "Barry Cooper",
+                work: "The Abrahamic Covenant",
+                outlet: "Simply Put",
+                date: "15 de abril de 2025",
+                locator: "Minutos 1:49 a 2:47",
+                url: "https://ligonier.org/podcasts/simply-put/the-abrahamic-covenant#t=109",
+                text: "Sin embargo, Abram cree la promesa de Dios de que le daría un hijo. Y se nos dice que, por la fe en la promesa de Dios, Abraham fue contado como justo. Eso es lo que significa Génesis capítulo 15 versículo 6 cuando dice: Abraham creyó al Señor, y se lo reputó por justicia. Este es realmente un momento asombroso. La revelación de Dios de que la fe en él es el mecanismo por el cual las personas son aceptadas por él y se convierten en herederos de sus promesas. Como dice Pablo en Romanos capítulo 4 y Gálatas capítulo 3, Abraham fue justificado por la fe sola, la fe en las promesas de Dios, promesas que encontraron su cumplimiento en Cristo. Que Dios opere así es una noticia abrumadoramente buena, no solo para Abraham,",
+                original:
+                  "Nevertheless, Abram believes God's promise that he would provide a son for him. And we're told that through belief in the promise of God, Abraham was counted righteous. That's what Genesis chapter 15 verse 6 means when it says, Abraham believed the Lord and he counted it to him as righteousness. Now this really is a stunning moment. God's revelation that faith in him is the mechanism by which people are accepted by him and become heirs of his promises. As Paul says in Romans chapter 4 and Galatians chapter 3, Abraham was justified by faith alone, faith in the promises of God, promises which found their fulfillment in Christ. That God operates like this is overwhelmingly good news, not just for Abraham,",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Acts.2.38-Acts.2.39"],
@@ -493,6 +741,24 @@ export const baptismReformed = {
               },
             ],
           },
+          {
+            title:
+              "Currie lee la Gran Comisión (Mt 28:19–20) y dice que no hay prioridad mayor para los cristianos que el discipulado de sus propios hijos; observa que en el primer bautismo registrado después de la comisión, el sermón de Pentecostés de Pedro, Pedro dice «la promesa es para ustedes, para sus hijos y para todos los que están lejos» (Hch 2:39)",
+            quotes: [
+              {
+                speaker: "John Currie",
+                work: "Infant Baptism: What Does Scripture Teach? | Dr. John Currie",
+                outlet: "Westminster Theological Seminary",
+                date: "21 de enero de 2021",
+                locator: "Minutos 0:20 a 1:27",
+                url: "https://www.youtube.com/watch?v=hUPaQ4leYEc&t=20s",
+                text: "Antes de que Jesús ascendiera, al final del Evangelio de Mateo, se registra que dio este mandato y encargo a sus discípulos. Vayan, pues, y hagan discípulos de todas las naciones, bautizándolos en el nombre del Padre y del Hijo y del Espíritu Santo, enseñándoles a guardar todo lo que yo les he mandado. Y he aquí, yo estoy con ustedes siempre, hasta el fin de los tiempos. Bueno, no puede haber mayor prioridad ni privilegio para los cristianos que el discipulado de sus propios hijos. Y es muy significativo que en el primer bautismo que vemos registrado en la Escritura después de que se dio ese mandato y encargo a los discípulos de Jesús, en el sermón de Pentecostés del apóstol Pedro en Hechos capítulo 2, cuando unas 3.000 personas llegan a la fe en Jesús. Al final de ese sermón, el apóstol Pedro dice esto en Hechos capítulo 2 versículo 39. Dice: Porque la promesa es para ustedes y para sus hijos, y para todos los que están lejos, para todos los que el Señor nuestro Dios llame para sí.",
+                original:
+                  "Before Jesus ascended, at the end of the Gospel of Matthew, it records that he gave this command and commission to his disciples. Go, therefore, and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, even to the end of the age. Well, there could be no greater priority and privilege for Christians than the discipleship of their own children. And it's very significant that in the first baptism that we see recorded in Scripture after that command and commission was given to Jesus' disciples, the Pentecost sermon of the Apostle Peter in Acts chapter 2 when some 3,000 come to faith in Jesus. At the end of that sermon, the Apostle Peter says this in Acts chapter 2 verse 39. He says, For the promise is for you and for your children and for all who are far off, everyone whom the Lord our God calls to himself.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
@@ -519,16 +785,78 @@ export const baptismReformed = {
               },
             ],
           },
+          {
+            title:
+              "Currie dice que Pablo nos dice tres cosas sobre esta promesa del pacto: en Cristo todas las promesas de Dios son sí (2 Cor 1:20); los hijos de los creyentes están apartados en una relación de pacto con Dios, llamados santos (1 Cor 7:14); y el signo del nuevo pacto que reemplazó a la circuncisión es el bautismo (Col 2:11–12); por lo tanto, siguiendo el mandato de Jesús, el bautismo se aplica a los hijos de los creyentes",
+            quotes: [
+              {
+                speaker: "John Currie",
+                work: "Infant Baptism: What Does Scripture Teach? | Dr. John Currie",
+                outlet: "Westminster Theological Seminary",
+                date: "21 de enero de 2021",
+                locator: "Minutos 2:27 a 3:30",
+                url: "https://www.youtube.com/watch?v=hUPaQ4leYEc&t=147s",
+                text: "Cuando llegamos al Nuevo Testamento, el apóstol Pablo nos dice tres cosas muy importantes en relación con esta promesa del pacto. En primer lugar, en 2 Corintios 1, versículo 20, nos dice que en Cristo todas las promesas de Dios son sí. En segundo lugar, nos dice en 1 Corintios 7, versículo 14, que los hijos de los creyentes están apartados en relación de pacto con Dios. Él los llama santos. Y en tercer lugar, en Colosenses 2, versículos 11 y 12, nos dice que el signo del nuevo pacto, que ha reemplazado aquel antiguo signo del pacto, la circuncisión, es en realidad la señal que Jesús dio a sus discípulos, la señal del bautismo. Y por eso, creer en la promesa del pacto que Dios le hizo a Abraham es lo que Pedro y Pablo interpretan: que seguimos el mandato de Jesús de hacer discípulos aplicando la señal del bautismo a los hijos de los creyentes.",
+                original:
+                  "When we come to the New Testament, the Apostle Paul tells us three very important things in relationship to this covenant promise. First of all, in 2 Corinthians 1, verse 20, he tells us that in Christ, all the promises of God are yes. Second, he tells us in 1 Corinthians 7, verse 14, that the children of believers are set apart in covenant relationship to God. He calls them holy. And then thirdly, in Colossians 2, verse 11 and 12, he tells us that the sign of the new covenant, which has replaced that old covenant sign of circumcision, is actually the sign Jesus gave to his disciples, the sign of baptism. And so it's believing God's covenant promise that he gave to Abraham is that's interpreted by Peter and by Paul that we follow Jesus' command in making disciples by applying the sign of baptism to the children of believers.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
     {
       refs: ["Luke.18.15-Luke.18.16", "Rom.11.16"],
       text: "Se citan para los niños y para la raíz y las ramas (Catecismo Mayor 166).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul explica las imágenes de Pablo en Rom 11:16: así como las primicias consagraban toda la cosecha, y una porción santa de levadura hace santa toda la masa, así «si la raíz es santa, también lo son las ramas»; lo que hace santas a las ramas no es algo innato en ellas, sino solo su conexión con la raíz",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "The Goodness and Severity of God (Romans 11:11–23) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "30 de noviembre de 2025",
+                locator: "Minutos 26:27 a 28:22",
+                url: "https://www.youtube.com/watch?v=6FH7yWgnfGw&t=1587s",
+                text: "llevadas al templo en el Antiguo Testamento. Las primicias de las cosechas que se llevaban significaban las primeras floraciones; lo mejor del fruto se presentaba ante Dios. Pero la idea era que si estaban consagradas en el lugar donde se hacía esta ofrenda de las primicias, la bendición no se quedaba simplemente restringida a las primicias, sino que toda la cosecha quedaba consagrada. toda la cosecha era sagrada para el Señor. Y luego usa la analogía de la levadura del pan, donde se introduce un pequeño trozo de levadura para hacer que el pan suba. Y si ese agente leudante es sagrado para Dios, si es santo y apartado, ¿qué hay de toda la masa, toda la porción que está infundida por el trozo inicial de levadura? No solo ese trozo inicial es santo, sino toda la masa, dice, es santa. Y de nuevo, ahora cambia la metáfora a la del árbol. Dijo: si la raíz es santa, también lo son las ramas. Pero ¿de dónde viene la consagración de las ramas? Este es el punto que el apóstol se esfuerza en señalar aquí. Que lo que hace santas a las ramas no es algo que se encuentre en las ramas del árbol de manera inherente o innata. Solo por la conexión de la rama con la raíz es que la rama se considera sagrada o santa.",
+                original:
+                  "brought into the temple in the Old Testament. The first fruits from the harvests that were brought meant the initial blossomings, the best of the fruit was brought before God. But the idea was that if they were consecrated where this offering was made of the first fruits, that the blessedness did not simply remain restricted to the first fruits, but the whole crop was consecrated. the whole crop was sacred unto the Lord. And then he uses the analogy from the leaven of the bread which is made where you introduce a little piece of leaven in order to make the bread rise. And if that leavening agent is sacred to God, if it is holy and set apart, what about the whole loaf, the whole lump that is infused by the initial piece of leaven? Not just that initial piece is holy, but the whole lump, he says, is holy. And again, he now turns the metaphor to that of the tree. He said, if the root is holy, so are the branches. But from whence cometh the consecration of the branches? This is the point that the apostle is laboring here. That what makes the branches holy is not something that is found in the branches of the tree inherently or innately. It's only by the connection of the branch to the root that the branch is considered sacred or holy.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["John.3.5", "John.3.8"],
       text: "Se cita para la obra del Espíritu (Confesión 28.6).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul dice que lleva cuarenta años luchando con «nacer de agua y del Espíritu»; algunos ven una referencia oblicua al bautismo, pero él no ve razón para que Jesús esperara que un maestro de Israel entendiera eso, y lee el agua y el Espíritu del valle de los huesos secos de Ezequiel: los no regenerados son impuros y espiritualmente muertos, y deben ser purificados y levantados por el poder del Espíritu Santo, aunque agrega que podría estar equivocado",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "Rebirth (John 3:1–13) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "3 de mayo de 2026",
+                locator: "Minutos 22:06 a 24:20",
+                url: "https://www.youtube.com/watch?v=1Q9RH0_v4eQ&t=1326s",
+                text: "Oh, queridas personas, cuánto quisiera saber lo que Jesús quiso decir cuando dice esto, pero no lo sé. He luchado con este texto durante cuarenta años y algo más. ¿Qué quiere decir con el agua y el Espíritu? Sé lo que quiere decir con la referencia al Espíritu. Está hablando de nacer de lo alto, nacer por el poder del Espíritu Santo. ¿Cuál es la importancia del agua? Algunas personas ven en este texto una referencia oblicua al bautismo, y que lo que Jesús está diciendo es: Tienes que ser bautizado en agua y regenerado por el Espíritu Santo para entrar en Mi reino. Pero no hay ninguna razón en el mundo por la que Jesús esperara que un maestro de Israel entendiera eso. Creo que tenemos que mirar el uso del agua en el Antiguo Testamento y esta combinación de los términos agua y espíritu en el Antiguo Testamento para entender lo que Jesús está señalando. En los profetas del Antiguo Testamento, particularmente en el libro de Ezequiel, para el valle de los huesos secos, para que la muerte de las almas de Israel fuera renovada, dos cosas tenían que Tenían que ser purificadas y tenían que ser resucitadas por el poder de Dios. Y así, las dos cosas que yo oigo, y creo que tengo razón, pero podría estar equivocado aquí, creo que lo que Jesús está diciendo es: Nicodemo, todos ahí afuera que no han sido regenerados son impuros y espiritualmente muertos. Y mientras seas impuro y espiritualmente muerto, nunca entrarás al reino de Dios. Y así, para entrar en el reino de Dios, tienes que ser purificado y tienes que ser resucitado de la muerte espiritual. Tienes que ser vivificado por el poder del Espíritu Santo y tienes que ser limpiado por el poder del Espíritu Santo. Agua y Espíritu.",
+                original:
+                  "Oh dear people, how I wish I knew what Jesus meant when He says this, but I don't. I've struggled with this text for forty years and then some. What does he mean by the water and the Spirit? I know what he means by the reference to the Spirit. He's talking about being born from above, born by the power of the Holy Spirit. What's the significance of the water? Some people see in this text an oblique reference to baptism and that what Jesus is saying is You have to be baptized in water and regenerated by the Holy Ghost in order to come into My kingdom. But there's no reason in the world why Jesus would expect a teacher of Israel to understand that. I think we have to look to the Old Testament use of water and of this combination of the term water and spirit to the Old Testament to understand what Jesus is getting at. In the Old Testament prophets, particularly in the book of Ezekiel, for the valley of the dry bones, for the death of the souls of Israel to be renewed, two things had to They had to be purified and they had to be resurrected by the power of God. And so the two things I hear, and I think I'm right, but I could be wrong here, but I think what Jesus is saying is Nicodemus, everybody out there who's unregenerate is impure and spiritually dead. And as long as you're impure and spiritually dead, you'll never enter into the kingdom of God. And so to enter into the kingdom of God, you have to be purified and you have to be raised from spiritual death. You have to be quickened by the power of the Holy Ghost and you have to be cleansed by the power of the Holy Ghost. Water and spirit.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Eph.5.25-Eph.5.26", "Acts.2.38", "Acts.2.41"],
@@ -591,6 +919,24 @@ export const baptismReformed = {
               },
             ],
           },
+          {
+            title:
+              "Ferguson dice que en Hechos la primera de las pequeñas imágenes fijas de Lucas sobre cómo era la iglesia aparece al final de Hch 2: el Espíritu ha sido derramado, se reunió una nueva asamblea, 3.000 personas fueron bautizadas y se añadieron nuevos conversos, y Lucas hace una pausa y pone a esta comunidad bajo la lupa, de modo que Hch 2:42 y siguientes muestran cómo es la iglesia que Jesús edifica",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "Belonging to the Church",
+                outlet: "Renewing Your Mind",
+                date: "15 de agosto de 2026",
+                locator: "Minutos 11:41 a 12:36",
+                url: "https://renewingyourmind.org/2026/08/15/belonging-to-the-church#t=701",
+                text: "Y es muy interesante que el primero de estos esté al final de Hechos capítulo 2, ¿no es cierto? En Hechos capítulo 2, versículo 42 y siguientes. ¿Qué encuentran ahí? Encuentran que el Espíritu ha sido derramado, que esta nueva asamblea de personas se ha reunido, que 3.000 personas han sido bautizadas. Hay todos estos nuevos conversos. Y Lucas dice: apretemos el botón de pausa, pongamos a esta nueva comunidad bajo la lupa, y veremos cómo es realmente la iglesia que Jesús edifica. Así que Hechos capítulo 2, versículo 42 y siguientes no son comentarios al azar. Están escritos de manera muy deliberada para decirnos a nosotros, como lectores de los Hechos de los Apóstoles: cuando Jesús edifica la iglesia, así es como se ve la iglesia.",
+                original:
+                  "And it's very interesting that the first of these is at the end of Acts chapter 2, isn't it? In Acts chapter 2, verse 42 following. What do you find there? You find here, the Spirit has been poured out, this new assembly of people has been gathered, 3,000 people have been baptized. There are all of these new converts. And Luke says, let's press the pause button and let's put this new community under the magnifying glass and we'll see what the church that Jesus builds actually looks like. So Acts chapter 2 verse 42 and following are not haphazard comments. They look very deliberately saying to us as readers of the Acts of the Apostles, when Jesus builds the church, this is what the church looks like.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
@@ -643,6 +989,28 @@ export const baptismReformed = {
     {
       refs: ["Rom.6.22"],
       text: "Se cita para la santidad y la justicia de vida (Catecismo Mayor 167).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul lee Rom 6:21–22: el fin de esas cosas es muerte, pero ahora, libres del pecado y hechos siervos de Dios, tienen su fruto para santidad y el fin, vida eterna; lo llama un éxodo y dice que la libertad del pecado significa libertad de y para la justicia y para la vida eterna",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "From Slaves of Sin to Slaves of God (Romans 6:12–23) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "29 de junio de 2025",
+                locator: "Minutos 40:09 a 40:55",
+                url: "https://www.youtube.com/watch?v=1mOWpcBa1to&t=2409s",
+                text: "¿Qué fruto tenían entonces en aquellas cosas de las que ahora se avergüenzan? Porque el fin de aquellas cosas, el fin del pecado, es la muerte. Pero ahora, han tenido su éxodo. Han sido liberados del pecado, y habiéndose hecho esclavos de Dios, ahora tienen su fruto para la santidad y como fin la vida eterna. La libertad del pecado significa libertad de justicia, libertad para la justicia, libertad para la vida eterna.",
+                original:
+                  "What fruit did you have then in the things of which you are now ashamed? For the end of those things, the end of sin, is death. But now, you've had your exodus. You've been set free from sin. and having become slaves of God, you now have your fruit to holiness and the end everlasting life. Freedom from sin means freedom of righteousness, freedom for righteousness, freedom for eternal life.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
   ],
   passages: {

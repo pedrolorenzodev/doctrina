@@ -9,9 +9,13 @@ const DATE_FORMS = [
   [/\b(\d{4})-(\d{2})-(\d{2})\b/, (m) => ({ year: +m[1], month: +m[2], day: +m[3] })],
   [/\b(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* (\d{4})\b/, (m) => ({ year: +m[3], month: MONTHS[m[2].toLowerCase()], day: +m[1] })],
   [/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* (\d{1,2}), (\d{4})\b/, (m) => ({ year: +m[3], month: MONTHS[m[1].toLowerCase()], day: +m[2] })],
+  [/\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b/, (m) => ({ year: +m[3], month: +m[1], day: +m[2] })],
   [/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* (\d{4})\b/, (m) => ({ year: +m[2], month: MONTHS[m[1].toLowerCase()] })],
   [/(?:^|[ ,(])((?:19|20)\d{2})(?=[ ,).]|$)/, (m) => ({ year: +m[1] })],
 ];
+
+const ARGUMENT_LEAD_TEXT = /^(?:Argument(?: [A-Z](?: \([^)]*\))?)?|C5 (?:further argument|addition)(?: \([^)]*\))?)\s*·\s*/;
+const ARGUMENT_LEAD = new RegExp(`^\\*\\*${ARGUMENT_LEAD_TEXT.source.slice(1)}`);
 
 export function spanishDate(d) {
   if (!d) return undefined;
@@ -20,6 +24,12 @@ export function spanishDate(d) {
   if (d.day) return `${d.day} de ${MONTHS_ES[d.month - 1]} de ${d.year}`;
   if (d.month) return `${MONTHS_ES[d.month - 1]} de ${d.year}`;
   return String(d.year);
+}
+
+const RETRIEVAL = /\b(?:retrieved|reopened|accessed)\b[^;]*/gi;
+
+function datable(text) {
+  return text.replace(/`[^`]*`/g, (m) => " ".repeat(m.length)).replace(RETRIEVAL, (m) => " ".repeat(m.length));
 }
 
 function findDate(text) {
@@ -57,12 +67,27 @@ function cleanOutlet(raw) {
   return strip(s).replace(/^[\s,]+|[\s,]+$/g, "");
 }
 
+const SPEAKER_ALIASES = { "Carlos Andres Murr": "Carlos Andrés Murr", "Stephen Wellum": "Stephen J. Wellum", "Brant Pitre": "Dr. Brant Pitre" };
+
+function audioHeader(line) {
+  const at = line.indexOf(" Work: «");
+  if (at < 0) return null;
+  const tail = line.slice(at + 1);
+  const work = /^Work: «([^»]+)»/.exec(tail)?.[1];
+  const url = /https?:\/\/[^\s;,)`»]+/.exec(tail)?.[0].replace(/[.;:]+$/, "");
+  const channel = /(?:show\/channel|outlet):\s*([^;]*)/.exec(tail);
+  if (!work || !url || !channel) return null;
+  const between = tail.slice(channel.index + channel[0].length, tail.indexOf("http"));
+  const found = findDate(datable(between));
+  return { work, url, outlet: cleanOutlet(channel[1]), date: found ? found.date : { undated: true } };
+}
+
 function plural(n, one, many) {
   return n === 1 ? one : many;
 }
 
 function locatorOf(header, longHead) {
-  const minutes = /minutes?\s+(\d+:\d+(?::\d+)?)\s+to\s+(\d+:\d+(?::\d+)?)/i.exec(header);
+  const minutes = /minutes?(?:\s+range)?:?\s+(\d+:\d+(?::\d+)?)\s*(?:to|[–-])\s*(\d+:\d+(?::\d+)?)/i.exec(header);
   if (minutes) return `Minutos ${minutes[1]} a ${minutes[2]}`;
   const span = /(\d+)\s+paragraph\(s\)[^«]*from the (paragraph|sentence) beginning\s+«([^»]+)»\s+to the one ending\s+«([^»]+)»/;
   for (const text of [header, longHead ?? ""]) {
@@ -73,8 +98,11 @@ function locatorOf(header, longHead) {
       return `${n} ${plural(n, "párrafo", "párrafos")}: del párrafo que empieza «${m[3]}» al que termina «${m[4]}»`;
     }
   }
-  const begins = /the (?:(?:first|second|third|fourth|fifth|last)\s+)?paragraph(?: that| which)?(?: begins| beginning)\s+«([^»]+)»/.exec(header);
-  if (begins) return `Párrafo que empieza «${begins[1]}»`;
+  const begins = /(?:(?:the|whole) )?(?:(?:first|second|third|fourth|fifth|last)\s+)?(paragraphs?|segment)(?:\(s\))?(?: that| which)?(?: begins| beginning)\s+[«“]([^»”]+)[»”]/.exec(header);
+  if (begins) {
+    const lead = begins[1] === "segment" ? "Fragmento que empieza" : begins[1] === "paragraphs" ? "Párrafos que empiezan" : "Párrafo que empieza";
+    return `${lead} «${begins[2]}»`;
+  }
   return null;
 }
 
@@ -91,6 +119,16 @@ function inlineQuote(line) {
   return null;
 }
 
+const SPANISH_WORDS = new Set(["que", "el", "la", "los", "las", "de", "en", "y", "un", "una", "es", "por", "con", "para", "se", "del", "no", "lo", "su", "como", "pero"]);
+const ENGLISH_WORDS = new Set(["the", "and", "of", "to", "in", "is", "that", "for", "with", "as", "this", "it", "was", "not", "he", "his", "are", "be"]);
+
+export function languageOf(text) {
+  const words = text.toLowerCase().match(/[a-záéíóúñü]+/g) ?? [];
+  const es = words.filter((w) => SPANISH_WORDS.has(w)).length;
+  const en = words.filter((w) => ENGLISH_WORDS.has(w)).length;
+  return es > 2 * en ? "es" : "en";
+}
+
 export function quoteKey(text) {
   return crypto.createHash("sha1").update(text).digest("hex").slice(0, 12);
 }
@@ -103,9 +141,14 @@ function headingOf(raw) {
   const cut = afterDot.indexOf("(");
   const primary = cut >= 0 ? afterDot.slice(0, cut) : afterDot;
   const entries = [];
-  for (const m of text.matchAll(/page entr(?:y|ies)\s+([\d, and]+?)(?=[;)\s]*(?:\(|;|\)|$| of | and core|[a-z]))/g))
+  for (const m of text.matchAll(/(?:page |baptism |eucharist |papacy |sola[- ]scriptura )?entr(?:y|ies)\s+([\d, and]+?)(?=[;)\s]*(?:\(|;|\)|·|$| of | and core|[a-z]))/gi))
     for (const n of m[1].match(/\d+/g) ?? []) entries.push(Number(n));
-  return { text, primary, entries: [...new Set(entries)], doctrine: doctrineWord ? DOCTRINE_WORDS[doctrineWord] : undefined, verses: versesOfHeading(primary) };
+  let verses = versesOfHeading(primary);
+  if (!verses.length) {
+    const quoted = /\(([^()]*\d+:\d+[^()]*)\)/.exec(afterDot);
+    if (quoted) verses = versesOfHeading(quoted[1]);
+  }
+  return { text, primary, entries: [...new Set(entries)], doctrine: doctrineWord ? DOCTRINE_WORDS[doctrineWord] : undefined, verses };
 }
 
 export function parseApologists(file) {
@@ -139,6 +182,7 @@ export function parseApologists(file) {
         locatorFallback: quote.locatorFallback,
         url: quote.url,
         text,
+        language: languageOf(text),
         long: quote.long.length > 0,
         tags: quote.tags,
         line: quote.line,
@@ -160,13 +204,13 @@ export function parseApologists(file) {
       continue;
     }
     if (!section) continue;
-    if (/^\*\*Argument [A-Z]\b/.test(line)) {
+    if (ARGUMENT_LEAD.test(line)) {
       finishQuote();
-      argument = { title: strip(line).replace(/^Argument [A-Z]\s*·\s*/, "").replace(/\.$/, ""), quotes: [] };
+      argument = { title: strip(line).replace(ARGUMENT_LEAD_TEXT, "").replace(/\.$/, ""), quotes: [] };
       section.arguments.push(argument);
       continue;
     }
-    if (/^\*\*(Count|Contested)/.test(line)) {
+    if (/^\*\*(Count|Contested|C5 count)/.test(line)) {
       finishQuote();
       argument = null;
       continue;
@@ -175,13 +219,17 @@ export function parseApologists(file) {
     if (/^- \*\*[^*]+\*\*(?:,|\s*\()/.test(line) && !/^- \*\*Long-form/.test(line)) {
       finishQuote();
       const m = /^- \*\*(.+?)\*\*,?\s*(.*)$/.exec(line);
-      const speaker = strip(dropNotes(m[1]));
+      const named = strip(dropNotes(m[1]));
+      const speaker = SPEAKER_ALIASES[named] ?? named;
       let rest = m[2];
       const inherits = /^same (?:short )?(?:video|article|page|post|lecture|podcast|episode|answer|reprint|paper)/i.test(rest);
       let work = inherits ? previous?.work : undefined;
       let outlet = inherits ? previous?.outlet : undefined;
       let date = inherits ? previous?.date : undefined;
-      if (!inherits) {
+      const audio = inherits ? null : audioHeader(line);
+      if (audio) {
+        ({ work, outlet, date } = audio);
+      } else if (!inherits) {
         const w = /^(?:«([^»]+)»|\*([^*]+)\*)\s*,?\s*/.exec(rest);
         if (w) {
           work = w[1] ?? w[2];
@@ -193,17 +241,17 @@ export function parseApologists(file) {
             rest = rest.slice(inner[0].length);
           }
         }
-        const d = findDate(rest.replace(/https?:\/\/\S+/g, " "));
+        const d = findDate(datable(rest.replace(/https?:\/\/\S+/g, (u) => " ".repeat(u.length))));
         if (!d) {
           date = { undated: true };
-          outlet = cleanOutlet(rest.split(/https?:/)[0]);
+          outlet = cleanOutlet(dropNotes(rest.split(/https?:/)[0]).split(";")[0].replace(/,?\s*(?:publication |upload )?date not established.*$/i, ""));
         } else {
           date = d.date;
           const before = rest.replace(/https?:\/\/\S+/g, (u) => " ".repeat(u.length)).slice(0, d.index);
           outlet = cleanOutlet(before);
         }
       }
-      const url = /https?:\/\/[^\s,)`»]+/.exec(line)?.[0].replace(/[.;:]+$/, "") ?? (inherits ? previous?.url : undefined);
+      const url = audio?.url ?? /https?:\/\/[^\s,)`»]+/.exec(line)?.[0].replace(/[.;:]+$/, "") ?? (inherits ? previous?.url : undefined);
       const tags = [...line.matchAll(/`\[([^\]]+)\]`/g)].map((t) => t[1]);
       quote = {
         line: lineNo, speaker, work, outlet, date, url, tags,

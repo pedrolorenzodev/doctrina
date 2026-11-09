@@ -714,6 +714,23 @@ export const baptismCatholic = {
               },
             ],
           },
+          {
+            title: "El nuevo nacimiento «desde lo alto» es obra del Espíritu en el bautismo",
+            quotes: [
+              {
+                speaker: "Dr. Brant Pitre",
+                work: "Baptism in the Bible: Where Scripture Teaches It",
+                outlet: "Catholic Productions",
+                date: "18 de julio de 2019",
+                locator: "Fragmento que empieza «This is such an important passage»",
+                url: "https://catholicproductions.com/blogs/blog/baptism-in-the-bible",
+                text: "Este pasaje es tan importante porque muestra que, para el mismo Jesús, el bautismo no es simplemente un signo externo de una conversión interior. Es un sacramento espiritual. Es un renacimiento sobrenatural que se produce en el alma cuando una persona es bautizada en el poder del agua y del Espíritu, y el Espíritu Santo se une al agua y esa persona recibe una vida nueva, se convierte en una nueva criatura en Cristo. Y ya se puede ver esto en la expresión de Jesús en los versículos anteriores. Cuando dice las palabras “nacer de nuevo”, en griego la palabra “de nuevo” es anothen. Tiene un doble sentido. Puede significar nacer de nuevo, pero también nacer de lo alto. ¿Cuándo nacimos de lo alto? Cuando el Espíritu Santo descendió del cielo y entró en nuestras almas en el mismo momento del bautismo, haciéndonos hijos de Dios, un templo del Espíritu Santo.",
+                original:
+                  "This is such an important passage because it shows that for Jesus himself, baptism is not simply an outward sign of an inward conversion. It’s a spiritual sacrament. It’s a supernatural rebirth that takes place in the soul when a person is baptized in the power of the water and the spirit, and the Holy Spirit is united with the water and that person is given new life, becomes a new creation in Christ. And you can already see this in the expression of Jesus above in the earlier verses. When he says the words “born again”, in Greek the word “again” is anothen. It has a double meaning. It can mean born again, but it can also mean born from above. When were we born from above? When the Holy Spirit came down from heaven and entered into our souls at the very moment of baptism, making us a child of God, a temple of the Holy Spirit.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
@@ -822,6 +839,23 @@ export const baptismCatholic = {
               },
             ],
           },
+          {
+            title: "El arrepentimiento y el bautismo traen perdón, en lugar de solo simbolizarlo",
+            quotes: [
+              {
+                speaker: "Dr. Brant Pitre",
+                work: "Repent and Be Baptized: Acts 2:38 & Infant Baptism",
+                outlet: "Catholic Productions",
+                date: "22 de mayo de 2020",
+                locator: "Fragmento que empieza «Wow! So what is important»",
+                url: "https://catholicproductions.com/blogs/blog/repent-and-be-baptized",
+                text: '¡Uau! Entonces, ¿qué es importante de este pasaje? Bueno, al menos tres cosas. Número uno. Cuando la gente escucha la homilía de Pedro y se les traspasa el corazón, su respuesta es: arrepiéntanse y bautícense. Dicho de otro modo, los señala, como acabo de decir, hacia los sacramentos. Número dos. Noten aquí que Pedro considera el Bautismo no solo como un símbolo, sino como lo que llamaríamos un sacramento. Tiene el poder de perdonar pecados. Por eso dice aquí: "bautícense en el nombre del Señor Jesucristo para el perdón de sus pecados". Eso es lo que hace el Bautismo. Lava nuestro pecado.',
+                original:
+                  "Wow! So what is important about this passage? Well at least three things. Number one. When the people hear Peter's homily and are cut to the heart, his response to them is repent and be baptized. In other words, he points them, as I just said, to the sacraments. Number two. Notice here that Peter considers Baptism not just to be a symbol, but to be what we would call a sacrament. It has the power to forgive sins. That's why he says here, \"be baptized in the name of the Lord Jesus Christ for the forgiveness of your sins.\" That is what Baptism does. It washes away our sin.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
@@ -858,6 +892,23 @@ export const baptismCatholic = {
                 text: "Romanos 6:3-4 es un pasaje al que recurren muchos cristianos cuando quieren mostrar desde la Biblia que el bautismo realmente hace algo: que salva. Pablo dice que por medio del bautismo “somos sepultados juntamente con [Cristo] . . . para muerte . . . [para que] andemos en vida nueva”. Luego, en el versículo 7, agrega que en esa muerte bautismal somos “libres del pecado”.\n\nAhora bien, aquí hay algo interesante: la palabra griega traducida como “libres” es dikaioō, que en realidad significa “justificar”. En otras palabras, Pablo está diciendo que somos justificados —o salvados— por medio del bautismo. Es una afirmación bastante fuerte. Pero no todos están de acuerdo. En su libro Exodus from Rome: Volume I, el teólogo protestante Todd Baker se opone a esta idea. Sostiene que Pablo ni siquiera está hablando aquí del bautismo en agua. Según Baker, Pablo se refiere a algo meramente espiritual. Da dos razones principales para esta postura, así que veamos ambas.\n\nEl primer argumento de Baker es que Pablo nunca dice la palabra “agua”. Así lo expresa:\n\nEl uso que hace Pablo del bautismo en Romanos 6:3-5 no menciona el agua en ningún lugar, y por lo tanto puede transmitir razonablemente la idea más amplia de identificación con Cristo en su muerte y resurrección para la salvación del pecador, sin señalar necesariamente la idea del rito o acto del bautismo en agua . . . si Pablo se refiere a un bautismo ritual y en agua en Romanos 6, habría incluido claramente el término “agua” como modificador descriptivo del bautismo, cosa que no hace.\n\nPero esto es bastante forzado. Piénsenlo: Pablo escribió Romanos alrededor del año 50 d. C. Eso significa que durante unos veinte años, los cristianos ya practicaban el bautismo en agua, siguiendo el mandato de Jesús en Mateo 28:19 de salir a bautizar. Y tenemos múltiples ejemplos de esto en acción: basta ver Hechos 8:16, 10:48, 11:14, 16:15 y 33, y 18:8, además de 1 Corintios 1:16.\n\nAsí que, para los primeros cristianos, “bautismo” significaba naturalmente bautismo en agua. Era lo normal. Pablo no habría necesitado agregar la palabra “agua” cada vez. Como hoy: si alguien dice que se bautizó, uno supone que fue con agua. No hay confusión.\n\nY seamos realistas: Pablo está describiendo aquí una transformación poderosa: morir y resucitar con Cristo. Es una imagen bastante dramática, y ¿qué mejor manera de simbolizarla que con un lavado ritual? El lavado con agua encaja perfectamente con el mensaje teológico. Quitar el lavado, y se pierde gran parte del significado.\n\nAhora, Baker podría responder diciendo: “Bueno, Pablo debe estar refiriéndose a algo distinto del bautismo en agua, porque el bautismo es solo un símbolo de nuestra unión con Cristo: no hace realmente nada”. Pero eso es dar por supuesto lo que se quiere demostrar. En otras palabras, no se puede argumentar que Romanos 6:3-4 no respalda la salvación por el bautismo solo porque ya se cree que el bautismo no salva. Eso es justamente lo que estamos tratando de averiguar.\n\nBaker también podría contraargumentar diciendo que estoy malinterpretando su argumento, pensando que sostiene que Pablo debería haber mencionado simplemente el término “agua”. Pero las líneas siguientes precisan cómo Pablo habría usado el “agua” como modificador si tuviera en mente el bautismo en agua. Baker escribe (énfasis agregado):\n\nEn consecuencia, el Apóstol habría escrito Romanos 6:3-4, si el bautismo en agua fuera el medio productivo de la salvación y de la unión con Jesucristo, así: “Como muchos de nosotros fuimos sumergidos (bautizados) en agua en Cristo, fuimos sumergidos en agua en su muerte. Por lo tanto, somos sepultados con él por la inmersión en agua en su muerte.\n\nBaker supone que si Pablo hablara del bautismo en agua, debería haber dicho que somos bautizados en agua. Pero eso sería extraño, porque Pablo estaría diciendo que el acto ritual del bautismo en agua nos une con el agua misma, lo cual no tiene sentido.\n\nAdemás, esto desvía de lo que Pablo realmente dice: “Fuimos bautizados en Cristo”. La unión espiritual con Cristo es el resultado del bautismo del que habla Pablo. Esto encaja perfectamente con la lectura sacramental del texto. El agua es solo el medio a través del cual esta unión con Cristo se hace realidad.",
                 original:
                   "Romans 6:3-4 is a go-to passage for many Christians when they want to show from the Bible that baptism actually does something—that it saves. Paul tells us that through baptism, we’re “buried therefore with [Christ] . . . into death . . . [so that] we might walk in newness of life.” Then in verse 7, he adds that in this baptismal death, we’re “freed from sin.”\n\nNow, here’s something interesting: The Greek word translated as “freed” is dikaioō, which actually means “to justify.” In other words, Paul is saying we’re justified—or saved—through baptism. That’s a pretty strong claim. But not everyone agrees. In his book Exodus from Rome: Volume I, Protestant theologian Todd Baker pushes back on this idea. He argues that Paul isn’t even talking about water baptism here. According to Baker, Paul is referring to something merely spiritual. He gives two main reasons for this view, so let’s take a look at both.\n\nBaker’s first argument is that Paul never actually says the word “water.” Here’s how he puts it:\n\nPaul’s use of baptism in Romans 6:3-5 does not mention water anywhere, and therefore can conceivably convey the greater idea of identification with Christ in his death and resurrection for the sinner’s salvation, without necessarily pointing to the idea of the rite or act of water baptism . . . if Paul means a water and ritual baptism in Romans 6, he would have clearly included the term “water” as the descriptive modifier to baptism, which he does not.\n\nBut this is kind of a stretch. Think about it: Paul wrote Romans around A.D. 50. That means for about twenty years, Christians had already been practicing water baptism, following Jesus’ command in Matthew 28:19 to go out and baptize. And we have multiple examples of it in action—just look at Acts 8:16, 10:48, 11:14, 16:15 and 33, and 18:8, plus 1 Corinthians 1:16.\n\nSo, for early Christians, “baptism” would have naturally meant water baptism. It was the norm. Paul wouldn’t have needed to tack on the word “water” every time. Just like today—if someone says he got baptized, you assume he means with water. There’s no confusion.\n\nAnd let’s be real—Paul is describing a powerful transformation here: dying and rising with Christ. That’s a pretty dramatic image, and what better way to symbolize that than through a ritual washing? Ritual washing with water fits the theological message perfectly. Take away the washing, and you lose a lot of the meaning.\n\nNow, Baker might respond by saying, “Well, Paul must be referring to something else besides water baptism because baptism is just a symbol of our union with Christ—it doesn’t actually do anything.” But that’s begging the question. In other words, you can’t argue that Romans 6:3-4 doesn’t support salvation by baptism just because you already believe that baptism doesn’t save. That’s the very thing we’re trying to figure out.\n\nBaker may also counter and say that I’m misunderstanding his argument, thinking he’s arguing that Paul should have merely mentioned the term “water.” But the next few lines specify how Paul would have used “water” as a modifier if he envisioned water baptism. Baker writes (emphasis added),\n\nConsequently, the Apostle would have written Romans 6:3-4, if water baptism were the productive means of salvation and union with Jesus Christ, to read: “As many of us were immersed (baptized) into water in Christ were immersed into water into his death. Therefore we are buried with him by immersing in water into his death.\n\nBaker assumes that if Paul were talking about water baptism, Paul should have said we’re baptized into water. But that would be strange, since Paul would be saying the ritual act of water baptism unites us to water itself, which makes no sense.\n\nMoreover, this detracts from what Paul actually says: “We baptized into Christ.” Spiritual union with Christ is the result of the baptism that Paul speaks about. This fits perfectly with the sacramental reading of the text. Water is just the medium through which this union with Christ takes becomes a reality.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "El bautismo participa tanto de la muerte de Cristo como de su resurrección",
+            quotes: [
+              {
+                speaker: "Dr. Brant Pitre",
+                work: "Baptism in Romans 6 Explained: Dying and Rising",
+                outlet: "Catholic Productions",
+                date: "7 de mayo de 2020",
+                locator: "Fragmento que empieza «So what is Paul describing»",
+                url: "https://catholicproductions.com/blogs/blog/baptism-in-romans-6",
+                text: "Entonces, ¿qué describe Pablo aquí? El bautismo es, en resumen, nuestra participación no solo en la muerte de Jesucristo, sino también en su resurrección. El bautismo no es solo nuestra participación en su sepultura, en las aguas de la muerte, sino también en su resurrección de las aguas de la muerte por el poder del Espíritu Santo. Esta es, por cierto, una de las razones por las que el bautismo por inmersión es un símbolo tan poderoso de muerte y resurrección. Porque si tomas a un niño y lo sumerges, por ejemplo, o a un adulto, en las aguas del Bautismo, cuando te sumerges bajo el agua y sales de ella, ¿qué haces? Tomas una respiración profunda. Es como la inhalación del Espíritu Santo y el comienzo de una vida nueva en Cristo. Es el comienzo de una nueva creación. Y ese es realmente el tema en el que la Iglesia nos llama a concentrarnos en la vigilia pascual. Es el tema de una nueva creación y de la resurrección de entre los muertos.",
+                original:
+                  "So what is Paul describing here? Baptism is, in short, our participation in not just the death of Jesus Christ, but also his resurrection. Baptism is not just our participation in his burial, into the waters of death, but also our participation in his resurrection from the waters of death through the power of the Holy Spirit. This is one of the reasons, by the way, that baptism by immersion is such a powerful symbol of death and resurrection. Because if you take a child and you immerse that child, for example, or an adult, in the waters of Baptism, when you go underwater and you come up from the water, what you do? You take a deep breath. It's like the intake of the Holy Spirit and the beginning of new life in Christ. It is the beginning of a new creation. And that's really the theme that the Church is calling us to focus on at the Easter vigil. It is the theme of a new creation and resurrection from the dead.",
                 translation: "ai-assisted",
               },
             ],
@@ -929,7 +980,7 @@ export const baptismCatholic = {
           },
           {
             title:
-              "Argumento B (añadido por B5) · Pablo nombra el bautismo, no la fe sola, como la manera de revestirse de Cristo (Gálatas 3:26–28); la circuncisión dio paso al bautismo (Colosenses 2)",
+              "Pablo nombra el bautismo, y no la fe sola, como la manera de revestirse de Cristo (Gál 3:26–28); la circuncisión dio paso al bautismo (Col 2)",
             quotes: [
               {
                 speaker: "Trent Horn",
@@ -969,6 +1020,23 @@ export const baptismCatholic = {
                 text: "Y vas a ver el mismo argumento muy seguido, pero como algo negativo, por algunos católicos tradicionalistas. El término aparece a menudo entre comillas de burla en los escritos de la FSSPX, incluidos los del propio Lefebvre, o encontramos el uso de la frase llamados así – “hermanos separados”. Pero tanto si eres un protestante que piensa que esto fue una buena novedad como si eres un tradicionalista que piensa que es una mala novedad, la verdad es que no fue una novedad en absoluto. Términos como “hermanos separados” para describir a herejes y cismáticos son más antiguos que el Vaticano II. Son incluso más antiguos que el protestantismo. Y se basan en la teología del bautismo. Así que permíteme explicar. El Código de Derecho Canónico de 1917 era muy explícito. Por el bautismo, un hombre queda constituido como persona en la Iglesia de Cristo. Cuando el papa Pío XII pareció contradecir ese punto en Mystici Corporis Christi, aclaró enseguida en Mediator Dei que por las aguas del bautismo, como por derecho común, los cristianos son hechos miembros del cuerpo místico de Cristo, el sacerdote.\n\nSon hechos miembros incluso del sacerdocio de Cristo. Esa es la doctrina cristiana. Está enraizada en las palabras de San Pablo de que en un solo Espíritu fuimos todos bautizados en un solo cuerpo: judíos o griegos, esclavos o libres, y todos fuimos hechos beber de un solo Espíritu. Por eso, la Iglesia católica reconoce la validez del bautismo ortodoxo y protestante siempre que se realice de la manera correcta y con la intención correcta. El Concilio de Florencia es incluso explícito en que los paganos y los herejes bautizan válidamente. Y así existe este sentido en el que consideramos incluso a los herejes y cismáticos bautizados como nuestros hermanos. Este fue un punto que subrayaron los Padres de la Iglesia. San Optato de Molevas reprendió a los cismáticos donatistas diciendo: “No tendrán paz con nosotros, es decir, con sus hermanos. Porque no pueden dejar de ser nuestros hermanos. Yo, a quien junto con nosotros, una sola madre Iglesia, nace de las mismas entrañas de sus misterios, y a quien Dios Padre ha recibido de la misma manera como hijos de adopción.” Y así encontramos al papa León XII hablando de los ortodoxos a finales de 1800 como nuestros hermanos disidentes, y expresando su esperanza de que busquen más fácilmente el abrazo de su madre, la Iglesia.\n\nYa entonces los ortodoxos son entendidos en algún sentido como hermanos e hijos verdaderos de la Santa Madre Iglesia. Al año siguiente, habla de la misma manera de los anglicanos. Termina una encíclica con una oración. Oh, madre dolorosa, intercede por nuestros hermanos separados. Que con nosotros, en el único y verdadero redil, puedan ser unidos al Supremo Pastor, el vicario de tu Hijo. En 1928, el papa Pío XI escribió una encíclica llamada Mortalium animos, que voy a mirar más de cerca porque en ella condena algunas malas formas de ecumenismo. Tenemos una especie de unidad a expensas de la verdad. Pero incluso en ese documento habla de cómo estos hijos separados deberían volver a la Sede Apostólica. Y habla de nuestros hijos tanto como de los que pertenecen a la comunidad católica, pero también de los que están separados de nosotros. Así que es perfectamente tradicional y doctrinalmente ortodoxo reconocer que los ortodoxos y los protestantes están unidos a la Iglesia de una manera por el sacramento del bautismo.\n\nY mucho más que eso en el caso de los ortodoxos, pero esta unión todavía no está completa. ¿Es confuso hablar de comunión plena y de elementos de comunión? Claro. Pero eso es sólo un reflejo del desorden de la situación. Y francamente, la FSSPX debería poder identificarse. Su propia relación con la Iglesia católica es igualmente, digamos, famosamente complicada, pero la doctrina subyacente de la Iglesia es la misma. Por un lado, el Vaticano II reafirma explícitamente en Orientalium Ecclesiarum que la santa Iglesia católica, que es el cuerpo místico de Cristo, está formada por los fieles que están orgánicamente unidos en el Espíritu Santo por la misma fe, los mismos sacramentos y el mismo gobierno. Por otro lado, en Lumen gentium, que se publicó el mismo día, el concilio también reconoce que muchos elementos de santificación y de verdad se encuentran fuera de esta estructura visible de la Iglesia, pero que esos elementos no están pensados para ser simplemente como, bueno, estás bien así.",
                 original:
                   "And you’ll see the same argument often being made, but as a negative by some traditional Catholics. The term often appears in scare quotes in SSPX writings, including those of Lephev himself, or we’ll find the use of the phrase so – called separated brethren. But whether you’re a Protestant who thinks this was a good novelty or a traditionalist who thinks it’s a bad novelty, the truth is that it wasn’t a novelty at all. Terms like separated brethren to describe heretics and schismatics are older than Vatican II. They’re even older than Protestantism. And they’re based upon the theology of baptism. So let me explain. The 1917 Code of Canon law is they were very explicit. By baptism, a man has constituted a person in the church of Christ. When Popeis the 12th appeared to contradict that point in Mystici Corporate Christi, he quickly clarified in Mediatra Day that by the waters of baptism, as by common right, Christians are made members of the mystical body of Christ, the priest.\n\nThey’re made members even in the priesthood of Christ. That’s Christian doctrine. It’s rooted in the words of St. Paul that by one spirit, we were all baptized into one body. Jews are Greeks, slaves are free and all were made to drink of one spirit. So the Catholic church recognizes the validity of Orthodox and Protestant baptism so long as they’re done in the proper way and with the proper intention. The Council of Florence is even explicit that pagans and heretics validly baptize. And so there’s this sense in which we regard even baptized heretics and schismatics as our brothers. This was a point that the church father stressed. St. Optatus of Molevas rebuked the Donates schismatics by saying, “You will not have peace with us that is with your brothers. For you cannot escape being our brothers. Yo, whom together with us, one mother church, is born from the same bowels of her mysteries and whom God the Father has received in the same manner as sons of adoption.” And so we find Pope Lou the XII speaking of the Orthodox back in the late 1800s as our dissident brethren and expressing his hope that they may seek out more readily the embrace of their mother, the church.\n\nAlready then the Orthodox are understood in some sense as being brothers and true sons of Holy Mother Church. In the next year, he speaks the same way about the Anglicans. He ends an encyclical with a prayer. Oh, sorrowful mother intercede for our separated brethren. With us in the one true fold they may be united to the Supreme Shepherd, the vicar of thy son. In 1928, Pope Pius XI wrote an encyclical called mortalium animos, which I’m going to look at more closely because in it, he condemns some bad forms of ecumenism. We have a sort of unity of the expense of truth. But even in that document, he talks about how these separated children should return to the Apostolic Sea. And he speaks of our children both as those who belong to the Catholic community, but also those who are separated from us. So it is perfectly traditional and doctrinally Orthodox to recognize that Orthodox and Protestants are united to the church in one way through the sacrament of baptism.\n\nAnd much more than that in the case of the Orthodox, but that this union is not yet complete. So is it messy to talk about full communion and elements of communion? Sure. But that’s just a reflection of the messiness of the situation. And frankly, the SSPX should be able to relate. Their own relationship to the Catholic church is similarly kind of famously messy, but the underlying doctrine of the church is the same. On the one hand, Vatican II explicitly reams an Orientalium Ecclesiorum that the holy Catholic church, which is the mystical body of Christ, made up of the faithful who are organically united in the Holy Spirit by the same faith, the same sacraments and the same government. On the other hand, in Lumenginsium, which was released the same day, the council also recognizes that many elements of sanctification and of truth are found outside of this visible structure of the church, but that those elements aren’t meant to just be like, okay, you’re good enough.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "Un paralelo triple vincula el lavamiento, la justificación y el Espíritu",
+            quotes: [
+              {
+                speaker: "Dave Armstrong",
+                work: 'Biblical Evidence for Baptismal Regeneration vs. John Calvin\'s "Sign and Seal"',
+                outlet: "Biblical Evidence for Catholicism",
+                date: "14 de agosto de 2009",
+                locator: "Ver la página enlazada",
+                url: "https://socrates58.blogspot.com/2009/08/biblical-evidence-for-baptismal.html",
+                text: 'Lo que es "lavar" en un versículo (con otros dos elementos comunes) es "agua" en el otro. Así, el bautismo está ligado a la salvación, de acuerdo con los otros versículos citados arriba. 1 Corintios 6:11 también es similar a Tito 3:5 y Juan 3:5: “Y tales eran algunos de ustedes. Pero fueron lavados, fueron santificados, fueron justificados en el nombre del Señor Jesucristo y en el Espíritu de nuestro Dios.”El "justificados" es el paralelo de "reino de Dios" y "salvados" en Tito 3:5 y Juan 3:5; "lavados" va junto con "lavado de regeneración" y "nacido de agua", y todo esto fue hecho por el Espíritu. Ahora bien, es un paralelismo triple llamativo. Además, es notable que el bautismo, la justificación y la santificación se mencionen todos juntos. Esta referencia cruzada apoya el argumento de que tanto el bautismo como la regeneración son el tema de Juan 3:5.',
+                original:
+                  'What is "washing" in one verse (with two other common elements) is "water" in the other. Thus, baptism is tied to salvation, in accord with the other verses above. 1 Corinthians 6:11 is also similar to Titus 3:5 and John 3:5: “And such were some of you. But you were washed, you were sanctified, you were justified in the name of the Lord Jesus Christ and in the Spirit of our God.”The "justified" is the parallel of "kingdom of God" and "saved" in Titus 3:5 and John 3:5; "washed" goes along with "washing of regeneration" and "born of water," and all this was done by the Spirit. Now it is a striking threefold parallelism. Furthermore, it is notable that baptism, justification, and sanctification are all mentioned together. This cross-referencing supports the argument that both baptism and regeneration are the subject matter of John 3:5.',
                 translation: "ai-assisted",
               },
             ],
@@ -1041,7 +1109,7 @@ export const baptismCatholic = {
           },
           {
             title:
-              "Argumento B (añadido por B5) · Se bautizaron familias enteras (Lidia, el carcelero, Estéfanas); presumiblemente había niños entre ellos",
+              "Casas enteras fueron bautizadas (Lidia, el carcelero, Estéfanas); presumiblemente, niños entre ellas",
             quotes: [
               {
                 speaker: "Karl Keating",
@@ -1054,6 +1122,23 @@ export const baptismCatholic = {
                 text: "Lidia, identificada como “vendedora de púrpura” y “adoradora de Dios”, según se relata, “escuchaba lo que decía Pablo. Y cuando fue bautizada, con su casa” (Hechos 16:14-15).\n\nUnos versículos después viene la historia del encarcelamiento de Pablo y Silas. Tras su liberación milagrosa, el carcelero les preguntó: “¿Qué debo hacer para ser salvo?” “Y le hablaron la palabra del Señor, a él y a todos los que estaban en su casa … y él fue bautizado en seguida, con toda su familia” (Hechos 16:30-33).\n\nEn su introducción a los corintios, Pablo señaló: “También bauticé a la familia de Estéfanas” (1 Cor. 1:16). En este caso y en las otras dos ocasiones se bautizó a familias o casas enteras. Presumiblemente, estas incluían niños. Si Pablo hubiera bautizado sólo a los miembros adultos de las familias, esperaríamos que los relatos señalaran, por ejemplo, que Lidia “y su marido” fueron bautizados, o el carcelero “y su mujer”, o Estéfanas “y su hermano”, o alguna expresión similar. Los términos “familia” y “casa” implicaban entonces, como hoy, al menos dos generaciones. Si efectivamente se incluyó a niños en estos bautismos múltiples, y si se excluyó a los niños más pequeños por incapacidad intelectual, ¿por qué no hay ninguna mención de eso?",
                 original:
                   "Lydia, identified as “a seller of purple goods” and “a worshiper of God,” is reported to have given “heed to what was said by Paul. And when she was baptized, with her household” (Acts 16:14-15).\n\nA few verses later comes the story of the imprisonment of Paul and Silas. After their miraculous release, their jailer asked them, “What must I do to be saved?” “And they spoke the word of the Lord to him and to all that were in his house . . . and he was baptized at once, with all his family” (Acts 16:30-33).\n\nIn his introductory remarks to the Corinthians, Paul remarked, “I did baptize also the household of Stephanas” (1 Cor. 1:16). In this and the other two instances entire families or households were baptized. Presumably these included children. If Paul had baptized only the adult members of the families, we would have expected the accounts to note, for instance, that Lydia “and her husband” were baptized, or the jailer “and his wife,” or Stephanas “and his brother,” or some such words. The terms “family” and “household” implied then, as they do today, at least two generations. If children indeed were included in these multiple baptisms, and if the youngest children were excluded because of intellectual incapacity, why no mention of that?",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "El bautismo inmediato del carcelero se lee junto con Hch 2:38–39",
+            quotes: [
+              {
+                speaker: "Dave Armstrong",
+                work: "Dialogue with a Baptist Pastor on Whether Infant Baptism is Indicated in the New Testament",
+                outlet: "Biblical Evidence for Catholicism",
+                date: "29 de abril de 2015",
+                locator: "Ver la página enlazada",
+                url: "https://socrates58.blogspot.com/2015/04/dialogue-with-baptist-pastor-on-whether.html",
+                text: "Ahora, por supuesto, dices que el arrepentimiento solo produce el perdón, la salvación y la recepción del Espíritu Santo, y que el bautismo es mero símbolo. Yo digo que es igual de plausible, o incluso más, interpretar esto (especialmente a la luz de otros versículos) como que el bautismo tiene tanta relación con el perdón como el arrepentimiento.En otras palabras, aquí Pedro sí parece conectar la salvación y el bautismo. El hecho es que el carcelero filipense fue bautizado tan pronto como fue posible. Esto no es incompatible con lo que nosotros (y los luteranos, los ortodoxos, etc.) enseñamos. Simplemente no está expresado tan explícitamente como en Hechos 2:38-39.",
+                original:
+                  "Now, of course, you say the repentance only brings about the forgiveness and salvation and reception of the Holy Spirit, and the baptism is mere symbol. I say it is just as, if not more plausible to interpret this (especially in light of other verses) as baptism having as much relation to forgiveness as the repentance does.In other words, here Peter does seem to connect salvation and baptism. The fact remains that the Philippian jailer was baptized as soon as possible. This is not inconsistent with what we (and Lutherans, Orthodox, etc.) teach. It's just not spelled out as explicitly as it is in Acts 2:38-39.",
                 translation: "ai-assisted",
               },
             ],
@@ -1214,12 +1299,70 @@ export const baptismCatholic = {
               },
             ],
           },
+          {
+            title: "Un sello indeleble no vuelve innecesaria la perseverancia",
+            quotes: [
+              {
+                speaker: "Tim Staples",
+                work: "What Does the Bible Say About Confirmation?",
+                outlet: "Catholic Answers",
+                date: "30 de mayo de 2023",
+                locator: "Párrafo que empieza «Yet the Bible knows nothing of this»",
+                url: "https://www.catholic.com/magazine/online-edition/where-is-confirmation-in-the-bible",
+                text: "Sin embargo, la Biblia no sabe nada de esto. Este “sello” de Ef. 4:30 es indeleble —porque (en griego eis, o “hasta”) el día de la redención— y nos ayuda a cooperar con la gracia que proporciona. Pero no hay nada en ese texto que garantice el cielo. La verdad es esta: si no cooperamos con la gracia del sacramento, nuestro rechazo de esas gracias solo nos llevará a un estado inferior en el infierno. Y esto es cierto de todos los dones de gracia que recibimos en este lado del velo.",
+                original:
+                  "Yet the Bible knows nothing of this. This “seal” of Eph. 4:30 is indelible—for (Greek eis, or “unto”) the day of redemption—and it helps us to cooperate with the grace it provides. But there is nothing in that text that guarantees heaven. The truth is this: if we do not cooperate with the grace of the sacrament, our rejection of those graces will only take us to a lower state in hell! And this is true of all of the gifts of grace we receive this side of the veil.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
     {
       refs: ["1Tim.2.4"],
       text: "Dios «quiere que todos los hombres sean salvos»: el Catecismo lo cita como razón de que, en caso de necesidad, cualquiera pueda bautizar, y de su confianza en «un camino de salvación para los niños que mueren sin Bautismo» {c:CEC1256|Catecismo 1256} {c:CEC1261|Catecismo 1261}.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Cómo la comisión razona desde la voluntad universal de salvación de Dios para fundar la esperanza por los infantes",
+            quotes: [
+              {
+                speaker: "Taylor Marshall",
+                work: "Salvation of Unbaptized Infants (Limbo Part II)",
+                outlet: "taylormarshall.com",
+                date: "20 de octubre de 2007",
+                locator: "Párrafo que empieza «These are the two doctrines»",
+                url: "https://taylormarshall.com/2007/10/salvation-of-unbaptized-infants-limbo.html",
+                text: "Estas son las dos doctrinas sobre las que HOSFI centra el debate. Las conclusiones de los documentos se seguirán de estas premisas. Principalmente, HOSFI busca amplificar 1 Tm 2:4: que Dios desea que todos los hombres se salven. Esta es la premisa mayor de su argumento. Si es cierto que Dios desea que todos los hombres se salven, entonces también desea que todos los bebés se salven. Los bebés no pueden pedir el bautismo ni rechazarlo. Entonces HOSFI busca otra manera en que la salvación pueda aplicarse a los infantes, una manera que no necesite las aguas del bautismo.",
+                original:
+                  "These are the two doctrines on which HOSFI centers the debate. The conclusion of the documents will follow from these premises. Primarily, HOSFI seeks to amplify 1 Tm 2:4 – that God desires that all men be saved. This is the major premise of their argument. If it is the case that God desires all men to be saved, then He also desires that all babies be saved. Babies cannot ask for baptism or refuse it. So HOSFI looks for another way in which salvation might be applied to infants – a way not necessitating the waters of baptism.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title:
+              "Porque Pablo dice que Dios quiere que todos los hombres sean salvos, la salvación debe ser al menos posible para todos, incluidos quienes, sin culpa propia, nunca oyeron de Cristo o nunca fueron bautizados",
+            quotes: [
+              {
+                speaker: "Joan Summers",
+                work: "Salvation for Non-Christians Explained Sola Scriptura",
+                outlet: "Catholic Answers",
+                date: "1 de febrero de 2003",
+                locator:
+                  "1 párrafo: del párrafo que empieza «Paul assures us that God wills…» al que termina «…means for them to be saved.»",
+                url: "https://www.catholic.com/magazine/print-edition/salvation-for-non-christians-explained-sola-scriptura",
+                text: "Pablo nos asegura que Dios quiere que todos los hombres se salven (1 Tim. 2:4). Entonces debió haber provisto los medios para que esa voluntad se cumpliera, lo que significa que la salvación debe ser al menos posible para todos. En el momento en que el evangelio se difundió por primera vez, quedó confinado principalmente a las tierras del Mediterráneo. Entonces, ¿qué pasa con los pueblos del norte de Europa, Australia, América del Norte y del Sur, el sur de África y el Lejano Oriente? El evangelio no llegó a las costas de América hasta el siglo XVI. Incluso hoy, la mayor parte del mundo sigue sin bautizarse. ¿La mayor parte de la humanidad está sin ninguna esperanza de salvación? No tendría ningún sentido que Dios dijera que quiere que todos los hombres se salven y luego no proveyera los medios para que se salven.",
+                original:
+                  "Paul assures us that God wills all men to be saved (1 Tim. 2:4). He must then have provided the means for that will to be accomplished, which means salvation must be at least possible for everyone. At the time the gospel first went out it was confined primarily to the Mediterranean lands. So what about the people of northern Europe, Australia, North and South America, southern Africa, and the Far East? The gospel didn’t come to the shores of the Americas until the 16th century. Even today most of the world remains unbaptized. Is the greater part of humanity without any hope of salvation? It would make no sense for God to say he wants all men to be saved and then not provide the means for them to be saved.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["John.19.34", "Mark.10.38"],
@@ -1241,6 +1384,23 @@ export const baptismCatholic = {
                 text: "prefiguración del rasgado del velo verdadero del templo, que es la carne de Cristo. Ahí es donde encontramos este desgarro del costado de Cristo. Eso es lo que significa decir que él nos abrió este camino vivo a través de su carne. Eso es la cortina: su carne. Y en la segunda mitad de la oración sigue diciendo: “y como tenemos un gran sacerdote sobre la casa de Dios, acerquémonos con corazón sincero y plena seguridad de fe”.\n\n“con nuestros corazones rociados y limpios de una conciencia mala, y nuestros cuerpos lavados con agua pura”. Así que es verdad: ahora podemos acceder a la presencia de Dios de una manera nueva. Podíamos orar así antes, pero ahora experimentamos su presencia real de una manera más profunda. Así que noten que esto va a tener, creo yo, mucho sentido con lo que pasa con el rasgado del velo del templo. Hay que leerlo a través de este lente del templo, que es increíblemente eucarístico, porque todo gira en torno al cuerpo de Cristo.\n\ny cómo ahora podemos recibir el cuerpo de Cristo y entrar en esta relación real con Dios a un nivel que antes no podíamos. Pero no quiero dejar pasar otra dimensión. La voy a mencionar de pasada: si leen esto, el templo como representación de Cristo, entonces hay un sentido en el que podemos ver un desgarro divino de vestiduras. Así que cuando Jacob cree que su hijo José está muerto, ¿qué hace?\n\nse rasga las vestiduras, Génesis 37, 34. Esa es una antigua expresión judía de dolor. Uno rasga las vestiduras. Y así, las vestiduras del templo, por así decirlo, se rasgan porque las vestiduras de Cristo, su carne, están rasgadas. Eso es, creo, una de las dimensiones que están en juego aquí. Pero la más directamente evidenciada, la que es más explícita en Hebreos 10, es que esto trata del desgarro del costado de Cristo.\n\nEn Juan 19, versículo 34, uno de los soldados traspasa el costado de Jesús con una lanza y de inmediato salen sangre y agua. Así que el nuevo acceso que tenemos a Dios es a través del costado abierto de Cristo, la sangre y el agua. ¿Qué representa eso? Bueno, desde los primeros días del cristianismo, esto se entendió como representación del bautismo y de la Eucaristía. Nadie negaba que sí, que sangre y agua salieron literalmente, pero veían en eso un símbolo del hecho de que es a través de las aguas sanadoras y la sangre sanadora de Cristo\n\nque podemos entrar en la comunión con Dios de esa manera profunda y duradera. En 1 Corintios 10, san Pablo señala esto como sacrificio cristiano. Dice: “La copa de bendición que bendecimos, ¿no es acaso participación en la sangre de Cristo? El pan que partimos, ¿no es acaso participación en el cuerpo de Cristo?” Bueno,\n\n¿Cómo participamos los cristianos del cuerpo y la sangre de Cristo? ¿Cómo entramos en esto de una manera tan profunda? Bueno, él usa el lenguaje del sacrificio. Dice primero: “porque hay un solo pan, nosotros, que somos muchos, somos un cuerpo, pues todos participamos de aquel un pan”. De algún modo, al recibir el único pan, la Eucaristía, nos transforma en el cuerpo de Cristo. Esto no es como el templo. Ir al templo no te hacía el templo.\n\nPero ir al cuerpo de Cristo te hace el cuerpo de Cristo. Hay una manera en la que el cuerpo de Cristo, la Eucaristía, hace el cuerpo de Cristo, la Iglesia. Eso es misterioso y es una conversación mucho más profunda, a la que solo voy a aludir sin explicarla adecuadamente, para otra ocasión. Pero ¿cómo tiene sentido eso con la manera en que podemos recibir y participar del cuerpo y la sangre de Cristo? Bueno,",
                 original:
                   "foreshadowing of the tearing of the true temple veil, which is the flesh of Christ. That is where we find this ripping open the side of Christ. That is what it means to say, he’s opened up this living way for us through his flesh. That’s what the curtain is, his flesh. And goes on to say in the next half of the sentence, and since we have a great priest over the house of God, let us draw near with a true heart and full assurance of faith.\n\nwith our hearts sprinkled clean from an evil conscience and our bodies washed with pure water. So it’s true, we can now access the presence of God in a new way. We could pray it before, but we now experience his real presence in a deeper way. So note, this is going to make, I think, a lot of sense of what happens with the tearing of the temple veil. It needs to be read through this temple lens, which is incredibly Eucharistic, because it’s all centered around the body of Christ.\n\nand how we can now receive the body of Christ and enter into this real relation with God at a level we couldn’t before. But I don’t want to miss one other dimension as well. I’m going to mention this in passing, that if you read this, the temple as representative of Christ, then there’s a sort of sense in which we can see a divine tearing of garments. So when Jacob thinks that his son Joseph is dead, what does he do?\n\nhe wrings his garments, Genesis 37, 34. That’s an old Jewish expression of sorrow. You tear the garments. And so the garments of the temple, so to speak, are torn because the garments of Christ, his flesh, are torn. That is, I think, one of the dimensions going on here. But the more directly evidenced one, the one that’s more explicit in Hebrews 10, is that this is about the tearing of the side of Christ.\n\nIn John 19 verse 34, one of the soldiers pierces Jesus’ side with a spear and at once there comes out blood and water. So the new access we have to God is through the open side of Christ, the blood and water. What does that represent? Well, from the earliest days of Christianity, this was understood to represent baptism and the Eucharist. Like no one was denying that, yeah, blood and water literally came out, but they saw in that a symbol of the fact that it is through the healing waters and the healing blood of Christ.\n\nthat we’re able to enter into the communion with God in this deep and abiding sort of way. In 1 Corinthians 10, St. Paul points to this as Christian sacrifice. He says, and those of you who follow this channel know I love this passage, so I’m going to go to it one more time. He says, the cup of blessing which we bless, is it not a participation in the blood of Christ? The bread which we break, is it not a participation in the body of Christ? Well,\n\nHow do we as Christians participate in the body and blood of Christ? How do we enter into this in this deep way? Well, he uses the language of sacrifice. He says first, because there is one bread, or literally like one loaf, we who are many are one body for we all partake of the one bread. Somehow receiving the one loaf, the Eucharist, transforms us into the body of Christ. This is unlike the temple. Going to the temple didn’t make you the temple.\n\nBut going to the body of Christ makes you the body of Christ. That there is a way in which the body of Christ, the Eucharist, makes the body of Christ, the Church. And that’s mysterious and that is a much deeper conversation I’m going to just allude to and not explain adequately for another time. But how does that make sense with how we can receive and participate in the body and blood of Christ? Well,",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "La muerte de Cristo se llama bautismo; el bautismo con agua une al bautizado a esa muerte",
+            quotes: [
+              {
+                speaker: "Taylor Marshall",
+                work: "Why Was Christ Baptized If He Was Without Sin?",
+                outlet: "taylormarshall.com",
+                date: "10 de enero de 2010",
+                locator: "Ver la página enlazada",
+                url: "https://taylormarshall.com/2010/01/why-was-christ-baptized-if-he-was.html",
+                text: "La palabra hebrea tevilah fue traducida por la palabra griega baptisma. Ambas significan lavar o sumergir. La idea de sumergirse en el agua se asocia con Cristo sumergiéndose en la muerte y resucitando a una vida nueva (Rom 6:4-6). El bautismo nos une al misterio de la muerte y resurrección de Cristo, y por eso se asocia con la regeneración, la recreación, el perdón de los pecados, la vida eterna y la resurrección final del cuerpo. Cristo habló de su muerte como un “bautismo” cuando le preguntó a Juan y a Santiago: “¿Son ustedes capaces de ser bautizados con el bautismo con que yo soy bautizado?” (Mc 10:38)",
+                original:
+                  "The Hebrew word tevilah was translated by the Greek word baptisma. They both mean wash or immerse. The idea of plunging into water is associated with Christ plunging into death and rising again in newness of life (Rom 6:4-6). Baptism unites us to the mystery of Christ’s death and resurrection and it is therefore associated with regeneration, recreation, the forgiveness of sins, life everlasting, and the final resurrection of the body. Christ spoke of his death as a “baptism” when he asked John and James, “Are you able to be baptized with the baptism with which I am baptized?” (Mk 10:38)",
                 translation: "ai-assisted",
               },
             ],
@@ -1330,10 +1490,104 @@ export const baptismCatholic = {
     {
       refs: ["Eph.4.25"],
       text: "«[…] somos miembros los unos de los otros»: el Catecismo lo cita para decir que el bautismo «hace de nosotros miembros del Cuerpo de Cristo» {c:CEC1267|Catecismo 1267}.",
+      apologists: {
+        arguments: [
+          {
+            title: "Horn relaciona la pertenencia al cuerpo de Cristo con el bautismo y con la comunidad reunida",
+            quotes: [
+              {
+                speaker: "Trent Horn",
+                work: "Rebutting Gavin Ortlund on Baptismal Regeneration",
+                outlet: "; show: The Counsel of Trent, Catholic Answers;",
+                date: "29 de marzo de 2022",
+                locator: "Ver la página enlazada",
+                url: "https://www.catholic.com/audio/cot/rebutting-gavin-ortlund-on-baptismal-regeneration",
+                text: "Hay otro paralelo aquí con el bautismo que nos hace miembros del cuerpo de Cristo, y con este tipo de elemento corporal. El catecismo dice que el bautismo nos hace miembros del cuerpo de Cristo, por lo tanto somos miembros unos de otros. El bautismo nos incorpora a la Iglesia. Y así, cuando somos bautizados, esta es también una ocasión para que el cuerpo de Cristo sea bendecido por medio de cosas como la renovación de nuestros votos bautismales. Pero todavía tenemos que enfrentar la pregunta central: ¿me salvé antes de ser bautizado o después de ser bautizado? ¿Fue el bautismo lo que me salvó, o el bautismo simplemente acompañó a otra cosa que me salvó?",
+                original:
+                  "There’s another parallel here to baptism making us members of the body of Christ and to have this kind of corporal element. The catechism says baptism makes us members of the body of Christ, therefore we are members one of another. Baptism incorporates us into the church. And so when we’re baptized, this is also an opportunity for the body of Christ to be blessed through things like the renewal of our baptismal vows. But we still have to confront the central question, am I saved before I was baptized or after I was baptized? Was baptism what saved me or did baptism just accompany something else that saved me?",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "Horn aplica la instrucción de Pablo de desechar la mentira y la ira a las acusaciones en línea",
+            quotes: [
+              {
+                speaker: "Trent Horn",
+                work: "What Pope Francis Needs to Do",
+                outlet: "Catholic Answers",
+                date: "18 de septiembre de 2024",
+                locator: "Minutos 11:56 a 12:29",
+                url: "https://www.catholic.com/audio/cot/what-pope-francis-needs-to-do",
+                text: "Pero en medio de ese enojo, recuerdo lo que dice la Escritura en Efesios capítulo cuatro: por eso, desechen la falsedad. Que cada uno hable la verdad con su prójimo, porque somos miembros unos de otros. Enójense, pero no pequen. No dejen que el sol se ponga sobre su enojo, ni den lugar al diablo. Dejen de lado las falsedades y no se aferren al enojo. El problema es que internet nos enseña a hacer lo contrario de esas cosas, y eso es realmente malo para nuestras almas.",
+                original:
+                  "But in the midst of that anger, I remember what scripture says in Ephesians chapter four, therefore putting away falsehood. Let everyone speak the truth with his neighbor. For we are members one of another, be angry, but do not sin. Do not let the sun go down on your anger and give no opportunity to the devil. Put away falsehoods and don’t hold on to anger. The problem is that the internet teaches us to do the opposite of those things, and that’s really bad for our souls.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Gal.5.3"],
       text: "El bautizado queda obligado «a toda la ley de Cristo», no solo a la fe {c:T7b7|Trento, ses. VII, Del bautismo, can. 7}.",
+      apologists: {
+        arguments: [
+          {
+            title: "La ley no puede servir como un camino de salvación hecho por uno mismo",
+            quotes: [
+              {
+                speaker: "Joan Summers",
+                work: "Salvation for Non-Christians Explained Sola Scriptura",
+                outlet: "Catholic Answers",
+                date: "1 de febrero de 2003",
+                locator: "Párrafo que empieza «Paul distinguishes»",
+                url: "https://www.catholic.com/magazine/print-edition/salvation-for-non-christians-explained-sola-scriptura",
+                text: "Pablo distingue entre tres clases de personas. Quienes rechazan a Dios a sabiendas reciben la condenación de Dios (Rom. 1:18–21). Quienes intentan un camino de salvación por cuenta propia, siguiendo la ley, serán juzgados por la ley y condenados, ya que no cumplen la ley perfectamente (Gál. 3:10, Rom. 3:20, Gál. 5:3). Ambos grupos de personas han rechazado la iniciativa misericordiosa de la gracia de Dios que les ofrece la salvación.",
+                original:
+                  "Paul distinguishes between three kinds of people. Those who knowingly reject God receive God’s condemnation (Rom. 1:18–21). Those who try a do-it-yourself way of salvation through following the law will be judged by the law and condemned, since they fail to keep the law perfectly (Gal 3:10, Rom. 3:20, Gal. 5:3). Both of these groups of people have rejected the merciful initiative of God’s grace in offering them salvation.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title:
+              "Horn contrasta la relación de la circuncisión con la salvación con la unión con Cristo en el bautismo",
+            quotes: [
+              {
+                speaker: "Trent Horn",
+                work: "Rebutting Gavin Ortlund on Baptismal Regeneration",
+                outlet: "; show: The Counsel of Trent, Catholic Answers;",
+                date: "29 de marzo de 2022",
+                locator: "Ver la página enlazada",
+                url: "https://www.catholic.com/audio/cot/rebutting-gavin-ortlund-on-baptismal-regeneration",
+                text: "Pero el problema de esta comparación es que Pablo no cree que la circuncisión en sí misma contribuya a la salvación, aunque Pablo piensa que no hay nada malo en estar circuncidado en sí mismo. Pablo no piensa que sea intrínsecamente malo estar circuncidado, porque en Hechos 16:3 Pablo hizo circuncidar a Timoteo para ayudarle a evangelizar a los judíos. Pero Pablo sí dice que atar la circuncisión a la salvación lleva a la condenación. Dice en Gálatas capítulo cinco: “Si reciben la circuncisión, Cristo no les servirá de nada. Vuelvo a testificar a todo hombre que recibe la circuncisión que está obligado a guardar toda la ley; ustedes están separados de Cristo. Ustedes que quieren ser justificados por la ley han caído de la gracia.” Trent Horn: Entonces Pablo está diciendo: quieres circuncidarte, bien, pero también tienes que renovar tu corazón y no hacer de la fe solo un ritual externo.” Así que Pablo hace una distinción entre lo que muestra una señal física y el cambio interior que también debe darse. Y no los conecta en la circuncisión, pero sí lo hace con el bautismo. Aquí está lo que Pablo escribe en Romanos capítulo 6:1-3: “¿No saben que todos los que fuimos bautizados en Cristo Jesús fuimos bautizados en su muerte? Fuimos, pues, sepultados con él por el bautismo en la muerte, para que, así como Cristo fue levantado de los muertos por la gloria del Padre, también nosotros andemos en novedad de vida. Porque si fuimos unidos con él en una muerte semejante a la suya, ciertamente también lo seremos en una resurrección semejante a la suya.”",
+                original:
+                  "But the problem with this comparison is that Paul does not believe circumcision itself contributes to salvation even though Paul thinks there’s nothing wrong with being circumcised per se. Paul doesn’t think it’s intrinsically wrong to be circumcised because in Acts 16:3 Paul had Timothy circumcised in order to help him evangelize to Jewish people. But Paul does say that tying circumcision to salvation leads to damnation. He says in Galatians chapter five, “If you receive circumcision, Christ will be of no advantage to you. I testify again to every man who receives circumcision that he is bound to keep the whole law, you are severed from Christ. You who would be justified by the law, you have fallen away from grace.” Trent Horn: So Paul is saying, you want to be circumcised, fine, but you also have to renew your heart and not make faith only an external ritual.” So Paul makes a distinction between what a physical sign shows and the internal change that must also take place. And he doesn’t connect the two of them in circumcision, but he does do that with baptism. Here’s what Paul writes in Romans chapter 6:1-3, “Do you not know that all of us who have been baptized into Christ Jesus were baptized into his death.” We were buried therefore with him by baptism into death. So that as Christ was raised from the dead by the glory of the father, we too might walk in newness of life. For if we have been United with him in a death like his, we shall certainly be United with him in a resurrection like his.”",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "Akin lee Gál 5:3–6 en la disputa sobre la circuncisión y la observancia gentil de la Ley mosaica",
+            quotes: [
+              {
+                speaker: "Jimmy Akin",
+                work: "Works of the Law",
+                outlet: "Catholic Answers",
+                date: "4 de marzo de 2023",
+                locator: "Ver la página enlazada",
+                url: "https://www.catholic.com/audio/ddp/works-of-the-law",
+                text: "Las obras de la ley se refieren a los actos realizados para obedecer la Ley de Moisés, la ley fundamental del judaísmo. Así, después de decir que somos justificados aparte de las obras de la ley, Pablo pregunta: “¿O es Dios solamente Dios de los judíos? ¿No lo es también de los gentiles?” (Rom. 3:29). Luego se refiere a la circuncisión —el requisito más famoso de la Ley de Moisés— diciendo que Dios “justificará a los circuncisos por la fe y a los incircuncisos por medio de la fe” (Rom. 3:30). En otro lugar, Pablo plantea la cuestión de judíos y gentiles y dice que “el hombre no es justificado por las obras de la ley, sino por medio de la fe en Jesucristo” (Gál. 2:16). Justo antes de esto, mencionó el concilio de Jerusalén y señaló que su compañero Tito no fue obligado a circuncidarse, aunque era griego (Gál. 2:1–10). Este acontecimiento se describe en Hechos. Ocurrió cuando “algunos hombres descendieron de Judea y enseñaban a los hermanos: Si no se circuncidan conforme a la costumbre de Moisés, no pueden ser salvos” (Hech. 15:1). El concilio resultante reiteró que los cristianos gentiles no necesitaban circuncidarse y hacerse judíos. Eso es de lo que Pablo habla en Romanos y Gálatas. Él insiste en que no hace falta circuncidarse, hacerse judío y obedecer la Ley mosaica para ser salvo. Por eso dice: “Otra vez testifico a todo hombre que se circuncida, que está obligado a guardar toda la ley. Ustedes están separados de Cristo, ustedes que quieren ser justificados por la ley; han caído de la gracia. Porque por el Espíritu, por la fe, esperamos la esperanza de la justicia. Porque en Cristo Jesús ni la circuncisión ni la incircuncisión valen nada, sino la fe que obra por medio del amor” (Gál. 5:3–6).",
+                original:
+                  "Works of the law refer to acts undertaken to obey the Law of Moses, the fundamental law of Judaism. Thus, after saying we are justified apart from works of the law, Paul asks, “Or is God the God of Jews only? Is he not the God of Gentiles also?” (Rom. 3:29). He then refers to circumcision—the most famous requirement of the Law of Moses—saying God “will justify the circumcised on the ground of their faith and the uncircumcised through their faith” (Rom. 3:30). Elsewhere, Paul raises the question of Jews and Gentiles and says that “a man is not justified by works of the law but through faith in Jesus Christ” (Gal. 2:16). Just before this, he referred to the Jerusalem council and noted his companion Titus was not required to undergo circumcision, though he was Greek (Gal. 2:1–10). This event is described in Acts. It occurred when “some men came down from Judea and were teaching the brethren, ‘Unless you are circumcised according to the custom of Moses, you cannot be saved’” (Acts 15:1). The resulting council reiterated that Gentile Christians did not need to be circumcised and become Jews. That’s what Paul is talking about in Romans and Galatians. He is stressing that you don’t have to be circumcised, become a Jew, and obey the Mosaic Law to be saved. Thus he says: “I testify again to every man who receives circum- cision that he is bound to keep the whole law. You are severed from Christ, you who would be justified by the law; you have fallen away from grace. For through the Spirit, by faith, we wait for the hope of righteousness. For in Christ Jesus neither circumcision nor uncircumcision is of any avail, but faith working through love” (Gal. 5:3–6).",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
   ],
   passages: {

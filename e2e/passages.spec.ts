@@ -41,7 +41,7 @@ test("the apologists layer shows quotes with their source and is muted where the
   await page.getByRole("button", { name: "Apologistas" }).click();
   await expect(page.getByText("El argumento, en sus palabras")).toBeVisible();
   await expect(page.getByRole("link", { name: "Ver la fuente" }).first()).toHaveAttribute("target", "_blank");
-  await page.goto(`${route}#1tim-2-4`);
+  await page.goto("/es/doctrinas/bautismo/luterana/pasajes#eph-5-26");
   await expect(page.getByRole("button", { name: "Apologistas" })).toHaveAttribute("aria-disabled", "true");
 });
 

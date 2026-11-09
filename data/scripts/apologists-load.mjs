@@ -7,6 +7,7 @@ const readJson = (file) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(fil
 const paragraphs = (text) => text.split("\n\n");
 
 function finalQuote(quote, translations) {
+  if (quote.language === "es") return { speaker: quote.speaker, work: quote.work, outlet: quote.outlet, date: quote.date, locator: quote.locator, url: quote.url, text: quote.text };
   const es = translations?.[quote.key];
   const base = { speaker: quote.speaker, work: quote.work, outlet: quote.outlet, date: quote.date, locator: quote.locator, url: quote.url };
   if (es) return { ...base, text: es, original: quote.text, translation: "ai-assisted" };

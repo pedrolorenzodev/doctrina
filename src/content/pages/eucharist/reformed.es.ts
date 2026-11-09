@@ -358,6 +358,28 @@ export const eucharistReformed = {
     {
       refs: ["1Cor.10.16-1Cor.10.17", "1Cor.10.21", "1Cor.12.13"],
       text: "La Confesión y los Catecismos de Westminster citan estos textos para comunión real con Cristo y unidad del cuerpo (la Confesión de Westminster (29.1), 29.7; el Catecismo Mayor (168), 170; el Catecismo Menor (96)).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Ferguson toma «participación» o «comunión» como la palabra del día para la Cena del Señor y lee la pregunta de Pablo en 1 Cor 10:16–17: la copa de bendición y el pan que partimos son una participación en la sangre y en el cuerpo de Cristo, porque hay un solo pan y nosotros, siendo muchos, somos un solo cuerpo; el griego es koinonía, comunión o compartir, y dice que Pablo se hace eco de lo que Jesús dijo en la institución",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "Participation in Christ’s Body and Blood: Things Unseen with Sinclair B. Ferguson",
+                outlet: "Ligonier Ministries",
+                date: "9 de octubre de 2024",
+                locator: "Minutos 0:27 a 1:34",
+                url: "https://www.youtube.com/watch?v=8BrhgrMnNWE&t=27s",
+                text: "la palabra es participación, o si prefieren, comunión. ¿Recuerdan la pregunta de Pablo a los cristianos de Corinto? La copa de bendición que bendecimos, ¿no es una participación o comunión en la sangre de Cristo? Y el pan que partimos, ¿no es una participación o comunión en el cuerpo de Cristo? Porque hay un solo pan, nosotros, que somos muchos, somos un solo cuerpo, porque todos participamos del único pan. Estoy seguro de que saben que la palabra griega que está detrás de la palabra participación o comunión es koinonía. Es la palabra para comunión, compañerismo, compartir algo. Así que Pablo dice que cuando recibimos la cena, compartimos, tenemos comunión en el cuerpo y la sangre del Señor. Pero ¿qué significa eso? Bueno, él obviamente se hace eco aquí de lo que Jesús dijo cuando instituyó la Cena del Señor. Dio a los discípulos el pan y el vino y dijo: esto es mi cuerpo, esta es mi sangre del pacto que es derramada por muchos para el perdón de los pecados.",
+                original:
+                  "word is participation, or if you prefer, communion. You remember Paul's question to the Corinthian Christians? The cup of blessing that we bless, is it not a participation or communion in the blood of Christ? And the bread that we break, is it not a participation or communion in the body of Christ? Because there is one bread, we who are many are one body, because we all partake of the one bread. I'm sure you know that the Greek word that lies behind the word participation or communion is koinonia. It's the word for fellowship, communion, sharing in something. So, Paul is saying that when we receive the supper, we are sharing in, we're having communion in the Lord's body and blood. But what does that mean? Well, he's obviously echoing here what Jesus said when he instituted the Lord's Supper. He gave the disciples the bread and the wine and said, this is my body, this is my blood of the covenant which is poured out for many for the forgiveness of sins.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: [
@@ -427,6 +449,28 @@ export const eucharistReformed = {
     {
       refs: ["1Cor.10.3-1Cor.10.4", "1Cor.10.16", "1Cor.11.28"],
       text: "La Confesión y los Catecismos de Westminster citan estos textos para participación espiritual por la fe (la Confesión de Westminster (29.7); el Catecismo Mayor (170)).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Ferguson toma «participación» o «comunión» como la palabra del día para la Cena del Señor y lee la pregunta de Pablo en 1 Cor 10:16–17: la copa de bendición y el pan que partimos son una participación en la sangre y en el cuerpo de Cristo, porque hay un solo pan y nosotros, siendo muchos, somos un solo cuerpo; el griego es koinonía, comunión o compartir, y dice que Pablo se hace eco de lo que Jesús dijo en la institución",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "Participation in Christ’s Body and Blood: Things Unseen with Sinclair B. Ferguson",
+                outlet: "Ligonier Ministries",
+                date: "9 de octubre de 2024",
+                locator: "Minutos 0:27 a 1:34",
+                url: "https://www.youtube.com/watch?v=8BrhgrMnNWE&t=27s",
+                text: "la palabra es participación, o si prefieren, comunión. ¿Recuerdan la pregunta de Pablo a los cristianos de Corinto? La copa de bendición que bendecimos, ¿no es una participación o comunión en la sangre de Cristo? Y el pan que partimos, ¿no es una participación o comunión en el cuerpo de Cristo? Porque hay un solo pan, nosotros, que somos muchos, somos un solo cuerpo, porque todos participamos del único pan. Estoy seguro de que saben que la palabra griega que está detrás de la palabra participación o comunión es koinonía. Es la palabra para comunión, compañerismo, compartir algo. Así que Pablo dice que cuando recibimos la cena, compartimos, tenemos comunión en el cuerpo y la sangre del Señor. Pero ¿qué significa eso? Bueno, él obviamente se hace eco aquí de lo que Jesús dijo cuando instituyó la Cena del Señor. Dio a los discípulos el pan y el vino y dijo: esto es mi cuerpo, esta es mi sangre del pacto que es derramada por muchos para el perdón de los pecados.",
+                original:
+                  "word is participation, or if you prefer, communion. You remember Paul's question to the Corinthian Christians? The cup of blessing that we bless, is it not a participation or communion in the blood of Christ? And the bread that we break, is it not a participation or communion in the body of Christ? Because there is one bread, we who are many are one body, because we all partake of the one bread. I'm sure you know that the Greek word that lies behind the word participation or communion is koinonia. It's the word for fellowship, communion, sharing in something. So, Paul is saying that when we receive the supper, we are sharing in, we're having communion in the Lord's body and blood. But what does that mean? Well, he's obviously echoing here what Jesus said when he instituted the Lord's Supper. He gave the disciples the bread and the wine and said, this is my body, this is my blood of the covenant which is poured out for many for the forgiveness of sins.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["1Cor.11.27-1Cor.11.32", "2Cor.13.5"],
@@ -435,6 +479,28 @@ export const eucharistReformed = {
     {
       refs: ["1Cor.5.7-1Cor.5.8", "1Cor.10.16-1Cor.10.17", "1Cor.11.31"],
       text: "La Confesión y los Catecismos de Westminster citan estos textos para arrepentimiento, amor y nueva obediencia (el Catecismo Mayor (171); el Catecismo Menor (97)).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Ferguson toma «participación» o «comunión» como la palabra del día para la Cena del Señor y lee la pregunta de Pablo en 1 Cor 10:16–17: la copa de bendición y el pan que partimos son una participación en la sangre y en el cuerpo de Cristo, porque hay un solo pan y nosotros, siendo muchos, somos un solo cuerpo; el griego es koinonía, comunión o compartir, y dice que Pablo se hace eco de lo que Jesús dijo en la institución",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "Participation in Christ’s Body and Blood: Things Unseen with Sinclair B. Ferguson",
+                outlet: "Ligonier Ministries",
+                date: "9 de octubre de 2024",
+                locator: "Minutos 0:27 a 1:34",
+                url: "https://www.youtube.com/watch?v=8BrhgrMnNWE&t=27s",
+                text: "la palabra es participación, o si prefieren, comunión. ¿Recuerdan la pregunta de Pablo a los cristianos de Corinto? La copa de bendición que bendecimos, ¿no es una participación o comunión en la sangre de Cristo? Y el pan que partimos, ¿no es una participación o comunión en el cuerpo de Cristo? Porque hay un solo pan, nosotros, que somos muchos, somos un solo cuerpo, porque todos participamos del único pan. Estoy seguro de que saben que la palabra griega que está detrás de la palabra participación o comunión es koinonía. Es la palabra para comunión, compañerismo, compartir algo. Así que Pablo dice que cuando recibimos la cena, compartimos, tenemos comunión en el cuerpo y la sangre del Señor. Pero ¿qué significa eso? Bueno, él obviamente se hace eco aquí de lo que Jesús dijo cuando instituyó la Cena del Señor. Dio a los discípulos el pan y el vino y dijo: esto es mi cuerpo, esta es mi sangre del pacto que es derramada por muchos para el perdón de los pecados.",
+                original:
+                  "word is participation, or if you prefer, communion. You remember Paul's question to the Corinthian Christians? The cup of blessing that we bless, is it not a participation or communion in the blood of Christ? And the bread that we break, is it not a participation or communion in the body of Christ? Because there is one bread, we who are many are one body, because we all partake of the one bread. I'm sure you know that the Greek word that lies behind the word participation or communion is koinonia. It's the word for fellowship, communion, sharing in something. So, Paul is saying that when we receive the supper, we are sharing in, we're having communion in the Lord's body and blood. But what does that mean? Well, he's obviously echoing here what Jesus said when he instituted the Lord's Supper. He gave the disciples the bread and the wine and said, this is my body, this is my blood of the covenant which is poured out for many for the forgiveness of sins.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Acts.2.42", "Acts.2.46-Acts.2.47", "1Cor.11.25-1Cor.11.26"],
@@ -455,6 +521,24 @@ export const eucharistReformed = {
                 text: "La palabra de hoy es proclamación. Pablo escribe, en 1 Corintios 11:26: “Cada vez que comen este pan y beben la copa, proclaman la muerte del Señor.” Ahora bien, a veces he oído decir que no debería haber Cena del Señor sin un sermón, por lo que Pablo enseña aquí. Bueno, sin duda es correcto tener un sermón y una exposición de la enseñanza bíblica cuando nos acercamos a la mesa, por breve que sea. Pero no estoy nada seguro de que ese sea el tipo de proclamación en que realmente piensa Pablo aquí. No dice que haga falta la Cena del Señor más un sermón. Creo que lo que dice es que la Cena del Señor es el sermón. La Cena del Señor en sí misma es la proclamación. Bien, ¿qué significa eso? Esto, creo: la cena es el Evangelio en forma dramática. Sí, necesitamos palabras para interpretar lo que está pasando, pero cuando entendemos la enseñanza bíblica sobre la cena, nos damos cuenta de que en realidad es una dramatización visible del mensaje del Evangelio. La cena misma es una proclamación del Evangelio. El pan partido representa el cuerpo de Cristo, sacrificado en la cruz por nosotros. El vino derramado representa su sangre, derramada para el perdón de nuestros pecados. Así que en la mesa se representa un drama en miniatura. Incluso podríamos tomar prestadas las palabras de Pablo en Gálatas 3:1 y decir que aquí, en la cena, delante de nuestros ojos, Cristo es públicamente presentado como crucificado. Y luego se nos ofrecen estos símbolos de su cuerpo y su sangre. Se nos invita a recibirlos, a comer y a beber, y a tomarlos para nosotros, así como el Cristo resucitado nos es llevado en la proclamación del Evangelio, y se nos ofrece, y se nos exhorta a recibirlo y a alimentarnos de él. Y luego pasa esto, o al menos en mi opinión debería pasar: siguiendo el patrón de la primera Cena del Señor, nos ofrecemos unos a otros el pan y el vino. Se lo pasamos a la persona sentada a nuestro lado, de modo que en este drama cada uno de nosotros recibe a Cristo en el Evangelio y ofrece a Cristo en el Evangelio por medio de estos signos. Así que aquí hay algo para tener fijo en la mente mientras se nos ofrecen el pan y el vino: Jesús está siendo públicamente presentado ante mis ojos como crucificado, no solo en palabras audibles y en la predicación, o en las palabras de la liturgia, sino en estos signos visibles. Se me anima a mirar tanto como a escuchar, a ver cuánto me ha amado y me sigue amando. Y ahora tengo el privilegio de alimentarme de él al comer el pan y beber el vino, y luego tengo el privilegio de ofrecer el pan y el vino a mi prójimo que está a mi lado, y quizá incluso decirle: “Hagan esto, recordando que Cristo murió por ustedes, y alimenten de él su corazón con acción de gracias.” Eso es realmente asombroso. Es como si cada uno de nosotros pudiera aplicar las palabras de Pablo sobre la cena a lo que hacemos en la mesa: “Yo recibí del Señor lo que también les he transmitido.” Qué privilegio tan maravilloso, tan maravilloso, tenemos. Pero la palabra proclamación representa solo un privilegio,",
                 original:
                   "Today’s word is proclamation. Paul writes, in 1 Corinthians 11:26, “As often as you eat this bread and drink the cup, you proclaim the Lord’s death.” Now, I’ve sometimes heard it said that you shouldn’t have the Lord’s Supper without a sermon because of what Paul is teaching here. Well, it’s surely right to have a sermon and exposition of biblical teaching when we come to the table, however short it is. But I’m not at all sure that’s the kind of proclamation Paul is really thinking about here. He’s not saying there needs to be the Lord’s Supper plus a sermon. I think he’s saying that the Lord’s Supper is the sermon. The Lord’s Supper itself is the proclamation. Well, what does that mean? This, I think: the supper is the gospel in dramatic form. Yes, we need words to interpret what’s happening, but when we understand the biblical teaching on the supper, we realize that it’s actually a visible dramatization of the message of the gospel. The supper itself is a gospel proclamation. The broken bread portrays Christ’s body, sacrificed on the cross for us. The poured-out wine portrays His blood, shed for the forgiveness of our sins. And so, a miniature drama is being enacted at the table. We might even borrow Paul’s words in Galatians 3:1 and say that here, at the supper, before our eyes, Christ is publicly portrayed as crucified. And then, these symbols of His body and blood are offered to us. We’re invited to receive them, to eat and to drink, and to take them to ourselves, just as the risen Christ is carried to us in the proclamation of the gospel, and offered to us, and we’re urged to receive Him and to feed on Him. And then this happens—or at least in my own view it should happen: following the pattern of the first Lord’s Supper, we then offer each other the bread and the wine. We pass it to the person sitting beside us so that in this drama, each of us receives Christ in the gospel and offers Christ in the gospel by means of these signs. So here’s something to have fixed in our minds as we are offered the bread and the wine: Jesus is being publicly portrayed before my eyes as crucified, not only in audible words and preaching, or in the words of the liturgy, but in these visible signs. I’m being encouraged to look as well as to listen, to see how much He has loved me and loves me still. And now I have the privilege of feeding on Him as I eat the bread and drink the wine, and then I have the privilege of offering the bread and wine to my neighbor beside me, and perhaps even saying to him or her, “Do this, remembering that Christ died for you, and feed on Him in your heart with thanksgiving.” That’s really amazing. It’s as though each of us can apply Paul’s words about the supper to what we are doing at the table: “I received from the Lord what I also delivered to you.” What a wonderful, wonderful privilege we have. But the word proclamation represents only one privilege,",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title:
+              "Sproul dice que el «partimiento del pan» de Hch 2:42 tiene dos significados: la comida cotidiana y las cenas de iglesia, y, incorporada en esas comidas, la celebración de la Cena del Señor; junto con el estudio de la Palabra, la comunión y la oración, el sacramento marca la vida de la comunidad del siglo primero",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "Life in the Early Church (Acts 2:40–47) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "7 de enero de 2024",
+                locator: "Minutos 17:09 a 18:47",
+                url: "https://www.youtube.com/watch?v=Dp3LnNXACZ8&t=1029s",
+                text: "Así que perseveraban firmemente en la doctrina y en la comunión, en el partimiento del pan. Ahora bien, el partimiento del pan tiene aquí dos significados. Por un lado, el partimiento del pan se refería simplemente a la hora de comer y no siempre exclusivamente al partimiento del pan del que hablamos con respecto a la Cena del Señor. Pero sabemos esto: las cenas de la iglesia eran una gran parte de la iglesia primitiva. La familia que come unida permanece unida. Realmente no hay una experiencia de amistad más cálida que compartir comidas juntos. Hay algo en eso. Nos sentamos alrededor de una mesa, salimos a cenar, invitamos a personas a nuestros hogares, de la forma que sea. Hay una cierta calidez, una cierta intimidad, una cierta empatía que se experimenta cuando las personas se reúnen alrededor de una comida. Y así, en primer lugar, como comían muchas comidas juntos, pero incorporando en esas comidas, como veremos en un minuto, también celebraban la Cena del Señor. Así que tienen la Palabra, el estudio de la Palabra, la proclamación de la Palabra, el disfrute de la comunión, el partimiento del pan, el sacramento de la Cena del Señor, ¿y qué más? Y la oración. Jesús mismo designó a la iglesia, el templo,",
+                original:
+                  "So they continued steadfastly in doctrine and fellowship in the breaking of bread. Now the breaking of bread has two significances here. On the one hand, the breaking of bread referred simply to mealtime and not always exclusively to the breaking of bread that we speak of with respect to the Lord's Supper. But we know this, church dinners were a big part of the early church. The family that eats together stays together. really is no more warm experience of friendship than sharing meals together. There's just something about it. We sit around a table, we go out to dinner, we invite people into our homes, however it is. There's a certain warmth, a certain intimacy, a certain empathy that is experienced when people gather together around a meal. And so in the first instance, since they were eating a lot of meals together, but incorporated in those meals, as we'll see in a little minute, they also celebrated the Lord's Supper. So you have the Word, study of the Word, the proclamation of the Word, the enjoyment of fellowship, the breaking of bread, the sacrament to the Lord's Supper, and what else? And prayer. Jesus Himself designated the church, the temple,",
                 translation: "ai-assisted",
               },
             ],

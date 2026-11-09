@@ -40,7 +40,7 @@ for (const key of order) {
       for (const a of list) {
         if (!titles.has(a.title) && !doneTitles[quoteKey(a.title)]) titles.set(a.title, key);
         for (const q of a.quotes) {
-          if (seen.has(q.key) || done[q.key]) continue;
+          if (seen.has(q.key) || done[q.key] || q.language === "es") continue;
           seen.add(q.key);
           quotes.push({ key: q.key, page: key, passage: i + 1, rank, words: q.text.split(/\s+/).length, text: q.text });
         }

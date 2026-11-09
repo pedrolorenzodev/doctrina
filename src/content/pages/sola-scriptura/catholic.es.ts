@@ -510,6 +510,23 @@ export const solaScripturaCatholic = {
               },
             ],
           },
+          {
+            title: "La comisión llama a los hijos adoptivos de Dios a observar todo lo que Jesús mandó",
+            quotes: [
+              {
+                speaker: "Scott Hahn",
+                work: "Family of Love: Scott Hahn Reflects on the Solemnity of the Holy Trinity",
+                outlet: "St. Paul Center",
+                date: "Sin fecha indicada",
+                locator: "Párrafos que empiezan «In Jesus, God’s word took flesh»",
+                url: "https://stpaulcenter.com/posts/family-of-love-scott-hahn-reflects-on-the-solemnity-of-the-holy-trinity",
+                text: "En Jesús, la Palabra de Dios se hizo carne como hijo de Abraham (ver Mateo 1:1). Y Jesús revela en el Evangelio de hoy que el único Dios es Padre, Hijo y Espíritu, y que desea hacer suyos a todos los pueblos. Así como sacó a Israel de Egipto, Dios nos liberó de la esclavitud, dice Pablo en la Epístola de hoy. Así como adoptó a Israel (ver Romanos 9:4), nos da el Espíritu por el cual podemos conocerlo como “Padre nuestro”. Como herederos de Dios, recibimos hoy los encargos de Moisés y de Jesús. Debemos fijar nuestro corazón en Él y observar todo lo que nos ha mandado. La Eucaristía es su promesa: que estará con nosotros hasta el fin, que nos librará de la muerte para vivir para siempre en la tierra prometida de su reino.",
+                original:
+                  "In Jesus, God’s word took flesh as a son of Abraham (see Matthew 1:1). And Jesus reveals in the Gospel today that the one God is Father, Son, and Spirit, and that He desires to make all people His own. As He led Israel out of Egypt, God freed us from slavery, Paul says in today’s Epistle. As He adopted Israel (see Romans 9:4), He gives us the Spirit by which we can know Him as “Our Father.” As God’s heirs, we receive the commissions of Moses and Jesus today. We are to fix our hearts on Him, and to observe all that He has commanded. The Eucharist is His pledge—that He will be with us until the end, that He will deliver us from death to live forever in the promised land of His kingdom.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
@@ -559,6 +576,23 @@ export const solaScripturaCatholic = {
                 text: "Porque si no fuera verdad, es claro que el autor no estaría enseñando solis scriptura, porque no estaría enseñando una falsedad. Entonces, al pensar en 2 Timoteo 3:16-17, una de dos cosas es verdad. Una: san Pablo afirma que todo lo que necesitamos es la Escritura, y entonces estaría enseñando lo que en ese momento era una falsa enseñanza, solo scriptura, porque sabemos que solo scriptura no era verdad mientras él escribía. O dos: él no está enseñando solo scriptura, y si Pablo no enseña solo scriptura en 2 Timoteo 3:16-17, no tomes ese como el texto principal en el que te apoyas para intentar probar solo scriptura. Bueno, pasemos a lo siguiente. Así que, como digo, sin duda es, con diferencia, el pasaje número uno que veo que los protestantes usan para intentar probar soul. La Escritura y el hecho de que se aferran a un solo pasaje, y un pasaje que no enseña soul.\n\nEl S script, cuando lo lees con cuidado otra vez, debería ser una señal de alarma, pero no es el único pasaje que he visto. Así que vayamos al que probablemente es el segundo más citado y a menudo mal usado. Es Marcos 7:8-9, cuando Jesús reprende a los fariseos por poner sus tradiciones por encima del mandamiento de Dios. Ahora, el error aquí creo que es tan obvio que ni siquiera voy a dar una refutación extensa, porque creo que es muy simple. Jesús habla claramente de la tradición de los hombres, de la tradición humana, y la llama tu tradición; pero la afirmación católica no es que todas las tradiciones sean buenas, ni que la tradición humana esté al mismo nivel que los mandamientos de Dios o al mismo nivel que la Escritura. La afirmación católica es más bien que hay tradiciones que no son humanas, que no tienen origen humano sino divino, y puedes pensarlo de una manera muy simple.\n\nEn 2 Tesalonicenses, capítulo 2, san Pablo advierte a los tesalonicenses que no crean las falsas enseñanzas que circulan tanto de palabra como por carta, por una epístola que pretende venir de nosotros. Sería incorrecto decir que, bueno, como Pablo menosprecia algunas epístolas, entonces todas las epístolas son malas. Esa sería una conclusión claramente falsa. No se puede pasar de “hay algunas malas tradiciones” a “todas las tradiciones son malas”, ni siquiera a “todas las tradiciones están por debajo de la Escritura”. Del mismo modo, no se puede pasar de “algunas epístolas son malas” a “por lo tanto todas las epístolas son malas”. No se sigue lógicamente. En cambio, san Pablo recuerda a los tesalonicenses —y volveremos a este pasaje más adelante— que se mantengan firmes y conserven las tradiciones que se les enseñaron por nosotros, ya sea de palabra o por epístola. Así que, si ayuda, puedes pensarlo así: cuando el texto bíblico se refiere a otros textos como escrituras, la palabra que se usa allí significa literalmente simplemente escritos.\n\nEso es lo que significa escritura. Nosotros usamos la palabra escritura para decir escrito sagrado. El Nuevo Testamento no lo hace; simplemente usa una palabra que genéricamente significa escritos, claramente. No todos los escritos son sagrados. Están los escritos sagrados, que son los que san Pablo menciona en 2 Timoteo, capítulo 3, pero también hay escritos humanos. Algunos son buenos. Piensa en todas las grandes obras teológicas que te gustan y que pueden ayudarte en tu vida espiritual. Piensa en libros no religiosos que siguen siendo buenos para cualquier cantidad de otros propósitos. No estamos menospreciando otros escritos. Así que esos están en una especie de nivel intermedio. Son buenos escritos humanos. No están al mismo nivel que la Escritura, pero son buenos. Y por debajo de eso, está lo perverso. Es como las falsas enseñanzas que circulan, que falsamente pretenden ser de san Pablo.",
                 original:
                   "Because if it wasn’t true, then clearly the author isn’t teaching solis scriptura because they wouldn’t be teaching a false teaching. So as you’re thinking about two Timothy three 16 to 17, either one of two things is true. Either one St. Paul is claiming all we need is scripture. Therefore he’s teaching what was then a false teaching solo scriptura because we know solo scriptura wasn’t true While he’s writing or second he’s not teaching solo scriptura, and if Paul isn’t teaching solo scriptura in two Timothy three 16 to 17, don’t have that be the primary text you lean on to try to prove solo scriptura. Okay, let’s move on. So that as I say, is without a doubt far and away the number one passage I see Protestants rely on to try to prove soul. The scripture and the fact that they’re looking to one passage and a passage that doesn’t teach soul.\n\nThe S script when you actually carefully read it again should be a red flag, but it’s not the only passage I’ve seen. So let’s turn to the one that is probably the second most often cited and often misused one. This is Mark chapter seven, verses eight to nine when Jesus rebukes the Pharisees for elevating their traditions over the commandment of God. Now the error here I think is so obvious that I’m not even going to give you a lengthy kind of takedown because I think it is very simple. Jesus is clearly speaking of the tradition of men or manmade tradition and refers to it as your tradition, but the Catholic claim is not that all traditions are good, nor is it that manmade tradition is on the same level as God’s commands or on the same level as scripture. The Catholic claim is instead that there are traditions which aren’t manmade, that they’re not of human origin, they’re of divine origin, and you can think about this in a really simple way.\n\nIn Second Thessalonians chapter two, St. Paul warns the Thessalonians not to believe false teachings which are being circulated both by word or by letter, by epistle purporting to be from us. It would be wrong to say that, okay, well because Paul is demean some epistles, therefore all epistles are bad. That would be very clearly a false conclusion to draw from them. You can’t go from, there are some bad traditions to all traditions are bad or even all traditions are below scripture. Likewise, you can’t go from some epistles are bad to therefore all epistles are bad. It doesn’t fall logically. Instead, St. Paul reminds the Thessalonians, and we’re going to get back to this passage later, but he reminds them in Second Thessalonians to stand firm and hold to the traditions which you were taught by us either by word of mouth or by epistle. So if it helps, you can think about it like this when the biblical text refer to other texts as scriptures, the word being used there literally just means writing.\n\nThat’s what scripture means. We use the word scripture to mean like sacred writing. The New Testament doesn’t, it just uses a word that generically means writings clearly. Not all writings are sacred. You have the sacred writings. These are the ones St. Paul’s talked about in a second Timothy chapter three, but you’ve also got manmade writing. These are, some of them are good. Think that all the great theological works that you like that may help you in your spiritual life. Think about non-religious books that are still good for any number of other purposes. We’re not bashing other writing. So those are in that kind of middle tier. They’re good manmade writings. They’re not on the same level of scripture though, but they’re good. And then beneath that, you have wicked. It’s like the false teachings going around falsely purporting to claim to be by St. Paul.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "Las tradiciones apostólicas obligan sea que se transmitan de palabra o por carta",
+            quotes: [
+              {
+                speaker: "Dr. Brant Pitre",
+                work: "Jesus and the Traditions of Men (Mark 7) Explained",
+                outlet: "Catholic Productions",
+                date: "24 de abril de 2019",
+                locator: "Fragmento que empieza «But then there are certain traditions»",
+                url: "https://catholicproductions.com/blogs/blog/jesus-and-the-traditions-of-men",
+                text: "Pero luego hay ciertas tradiciones que son vinculantes. Así que, de nuevo, interpretamos: cada vez que miramos un pasaje de la Biblia, lo interpretamos en contexto, y en 2 Tesalonicenses 2:15 Pablo dice a los cristianos: “manténganse firmes y aférrense a las tradiciones”, paradosis, la misma palabra que usa Jesús, “que han aprendido de nosotros, ya sea de palabra o por carta”. Así que san Pablo, inspirado por el Espíritu Santo, dice en otro lugar del Nuevo Testamento que de hecho sí tenemos que guardar las tradiciones, ya sean escritas u orales, siempre que vengan de los apóstoles. Así que la tradición apostólica tiene que conservarse. En esencia, lo que está pasando aquí es que tenemos que distinguir entre una tradición de hombres que contradice la Palabra de Dios, y eso Jesús lo condena, y una tradición apostólica que está guiada por el Espíritu Santo y se entrega a la Iglesia como vinculante, ya sea en forma escrita u oral. Esas tradiciones tenemos que guardarlas, ¿verdad?",
+                original:
+                  "But then there are certain traditions which are binding. And so again we interpret, whenever we look at a passage in the Bible, we interpret it in context and in 2 Thessalonians 2:15, Paul says to the Christians, “stand firm and hold fast to the traditions,” paradosis, same word Jesus uses, “which you have heard from us, whether by word of mouth or by letter.” So St. Paul, inspired by the Holy Spirit, elsewhere in the New Testament says we actually do have to keep the traditions, whether they’re written or they’re oral, as long as they’re from the apostles. So apostolic tradition has to be kept. So in essence, what's going on here is we need to make the distinction between a tradition of men which contradicts the word of God, Jesus condemns that, and an apostolic tradition which is guided by the Holy Spirit and given to the church as binding, whether in written or oral form. Those traditions we have to keep, right.",
                 translation: "ai-assisted",
               },
             ],
@@ -800,12 +834,51 @@ export const solaScripturaCatholic = {
               },
             ],
           },
+          {
+            title: "María muestra cómo guardar y meditar la palabra",
+            quotes: [
+              {
+                speaker: "Scott Hahn",
+                work: "Children of God: Scott Hahn Reflects on the Feast of Mary, Mother of God",
+                outlet: "St. Paul Center",
+                date: "Sin fecha indicada",
+                locator: "Párrafos que empiezan «This is the good news of great joy»",
+                url: "https://stpaulcenter.com/posts/children-of-god-scott-hahn-reflects-on-the-feast-of-mary-mother-of-god",
+                text: "Esta es la buena noticia de gran alegría que los pastores dan a conocer hoy en Belén (ver Lucas 2:10). Como los pastores, también nosotros debemos apresurarnos hoy a encontrar a Jesús con María y José, para glorificar a Dios por sus bendiciones. Y como María, debemos guardar su palabra y meditarla, dejándola habitar abundantemente en nuestros corazones (ver Colosenses 3:16).",
+                original:
+                  "This is the good news of great joy that the shepherds make known in Bethlehem today (see Luke 2:10). Like the shepherds, we too should make haste today to find Jesus with Mary and Joseph, to glorify God for His blessings. And like Mary, we should keep His word and reflect upon it, letting it dwell richly in our hearts (see Colossians 3:16).",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
     {
       refs: ["Col.3.16"],
       text: "Dei Verbum 8 cita este versículo para decir que, por la Tradición, el Espíritu Santo hace «que la palabra de Cristo habite en ellos abundantemente» {c:DV8|Dei Verbum 8}.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Horn usa Col 3:16 para distinguir la adoración en el canto del entusiasmo por un espectáculo tipo concierto",
+            quotes: [
+              {
+                speaker: "Trent Horn",
+                work: "This One Thing Makes Modern Worship Songs Terrible",
+                outlet: "Catholic Answers",
+                date: "15 de junio de 2026",
+                locator: "Ver la página enlazada",
+                url: "https://www.catholic.com/audio/cot/this-one-thing-makes-modern-worship-songs-terrible",
+                text: "Los servicios de alabanza y adoración pueden tener su lugar, especialmente como alternativa a las cosas malas que suceden en los conciertos seculares. Efesios 5:19-20 dice: “No se emborrachen con vino, porque eso es disipación, sino llénense del Espíritu, cantando salmos, himnos y cánticos espirituales unos a otros, cantando y haciendo melodía al Señor en sus corazones, dando gracias a Dios Padre en todo tiempo y por todo, en el nombre de nuestro Señor Jesucristo.” O Colosenses 3:16: “Que la palabra de Cristo habite en ustedes con abundancia; enséñense y exhórtense unos a otros con toda sabiduría, y canten salmos, himnos y cánticos espirituales con gratitud en sus corazones a Dios.” Mi preocupación es cuando estos servicios dejan de ser momentos para adorar a Dios en el canto y se convierten en espectáculos donde nos emocionamos mucho, en un lugar al estilo de un concierto, para cantar canciones sobre adorar a Dios en lugar de estar centrados en el acto mismo de la adoración.",
+                original:
+                  "Praise and worship services can have their place, especially as an alternative to the bad things that happen at secular concerts. Ephesians 5:19- 20 says, “Do not get drunk with wine, for that is debauchery, but be filled with the spirit as you sing psalms and hymns and spiritual songs to one another, singing and making melody to the Lord in your hearts, giving thanks to God the Father at all times and for everything in the name of our Lord Jesus Christ.” Or Colossians 3:16, “Let the word of Christ dwell in you richly as you teach and admonish one another in all wisdom and as you sing psalms and hymns and spiritual songs with thankfulness in your hearts to God.” My concern is when these services stop being times to worship God in song and just turn into spectacles where we get really excited in a concert-like venue to sing songs about worshiping God instead of being focused on the act of worship itself.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["John.20.31", "2Tim.3.16-2Tim.3.17", "2Pet.1.19-2Pet.1.21", "2Pet.3.15-2Pet.3.16"],
@@ -889,6 +962,45 @@ export const solaScripturaCatholic = {
     {
       refs: ["Luke.24.45", "Luke.24.25-Luke.24.27", "Luke.24.44-Luke.24.46"],
       text: "Para que la Escritura no quede en letra muerta, Cristo, por el Espíritu Santo, «nos abra el espíritu a la inteligencia de las mismas»; la Escritura se lee desde Cristo, su centro {c:CEC108,CEC112|Catecismo 108, 112}.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Los apóstoles son instruidos sobre cómo los profetas dan testimonio de Cristo, y luego enseñan a la Iglesia",
+            quotes: [
+              {
+                speaker: "Scott Hahn",
+                work: "Seeing and Believing: Scott Hahn Reflects on Easter Sunday",
+                outlet: "St. Paul Center",
+                date: "Sin fecha indicada",
+                locator: "Párrafos que empiezan «Chosen to be His “witnesses,»",
+                url: "https://stpaulcenter.com/posts/seeing-and-believing-scott-hahn-reflects-on-easter-sunday",
+                text: "Elegidos para ser sus “testigos”, dice la Primera Lectura de hoy, los Apóstoles fueron “comisionados… para predicar… y dar testimonio” de todo lo que habían visto: desde su unción con el Espíritu Santo en el Jordán hasta la tumba vacía. Más allá de su propia experiencia, fueron instruidos en los misterios de la economía divina, el plan de salvación de Dios: para saber cómo “todos los profetas dan testimonio” de Él (ver Lucas 24:27, 44). Ahora podían “entender las Escrituras”, podían enseñarnos lo que Él les había dicho: que Él era “la piedra que los edificadores desecharon”, y que el Salmo de hoy profetiza su Resurrección y exaltación (ver Lucas 20:17; Mateo 21:42; Hechos 4:11).",
+                original:
+                  "Chosen to be His “witnesses,” today’s First Reading tells us, the Apostles were “commissioned . . . to preach . . . and testify” to all that they had seen—from His anointing with the Holy Spirit at the Jordan to the empty tomb. More than their own experience, they were instructed in the mysteries of the divine economy, God’s saving plan—to know how “all the prophets bear witness” to Him (see Luke 24:27, 44). Now they could “understand the Scripture,” could teach us what He had told them—that He was “the Stone which the builders rejected,” that today’s Psalm prophesies His Resurrection and exaltation (see Luke 20:17; Matthew 21:42; Acts 4:11).",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "Cristo abre el entendimiento de los discípulos a la interpretación de todas las Escrituras",
+            quotes: [
+              {
+                speaker: "Fr. John Waiss",
+                work: "Must We Prove the Assumption from the Bible?",
+                outlet: "Catholic Answers",
+                date: "15 de agosto de 2025",
+                locator: "Párrafos que empiezan «Later, when Jesus rose,»",
+                url: "https://www.catholic.com/magazine/online-edition/must-we-prove-the-assumption-from-the-bible",
+                text: "Más tarde, cuando Jesús resucitó de entre los muertos, como los discípulos “no [todavía] conocían la escritura, que él debía resucitar de entre los muertos” (Juan 20:9), se les apareció para explicarles la Escritura. Lo hizo primero con los discípulos que viajaban a Emaús: “¡Oh insensatos, y tardos de corazón para creer todo lo que los profetas han dicho! ¿No era necesario que el Cristo padeciera estas cosas y entrara en su gloria?” Y comenzando por Moisés y todos los profetas, les interpretó en todas las escrituras las cosas referentes a sí mismo. . . . Entonces se les abrieron los ojos y lo reconocieron; y él desapareció de su vista. Y se dijeron el uno al otro: “¿No ardía nuestro corazón en nosotros cuando nos hablaba en el camino, cuando nos abría las escrituras?” (Lucas 24:25-27, 31-32). También tuvo que hacerlo con los apóstoles, para abrir “su entendimiento para comprender las escrituras” (Lucas 24:45). Pero parece que no les cita solo uno o dos pasajes, sino “todas las escrituras” “comenzando por Moisés y todos los profetas”.",
+                original:
+                  "Later, when Jesus rose from the dead, as the disciples “did not [yet] know the scripture, that he must rise from the dead” (John 20:9), he appeared to them to explain Scripture to them. He did it first with the disciples traveling to Emmaus: “O foolish men, and slow of heart to believe all that the prophets have spoken! Was it not necessary that the Christ should suffer these things and enter into his glory?” And beginning with Moses and all the prophets, he interpreted to them in all the scriptures the things concerning himself. . . . And their eyes were opened and they recognized him; and he vanished out of their sight. They said to each other, “Did not our hearts burn within us while he talked to us on the road, while he opened to us the scriptures?” (Luke 24:25-27, 31-32). He had to do it with the apostles, too, to open “their minds to understand the scriptures” (Luke 24:45). But he seems to quote not just one or two passages to them, but “all the scriptures” “beginning with Moses and all the prophets.”",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Rom.12.6"],
@@ -956,7 +1068,7 @@ export const solaScripturaCatholic = {
           },
           {
             title:
-              "Argumento B (añadido por B5) · La frase de Juan «no necesitan que nadie les enseñe» no niega una autoridad docente: el contexto advierte contra los falsos maestros y pide retener lo que oyeron desde el principio",
+              "La frase de Juan «no tienen necesidad de que nadie les enseñe» no niega una autoridad de enseñanza: el contexto advierte contra los falsos maestros y dice a los lectores que retengan lo que oyeron desde el principio",
             quotes: [
               {
                 speaker: "Karlo Broussard",
@@ -1013,16 +1125,94 @@ export const solaScripturaCatholic = {
               },
             ],
           },
+          {
+            title: "Dios habla por medio de su Hijo, creador y sustentador, revelando los últimos días",
+            quotes: [
+              {
+                speaker: "Scott Hahn",
+                work: "New Song: Scott Hahn Reflects on the Nativity of the Lord",
+                outlet: "St. Paul Center",
+                date: "Sin fecha indicada",
+                locator: "Párrafos que empiezan «Jesus is the new king.»",
+                url: "https://stpaulcenter.com/posts/new-song-scott-hahn-reflects-on-the-nativity-of-the-lord",
+                text: "Jesús es el nuevo rey. Él es el primogénito real y Hijo de Dios prometido a David, como escuchamos en la Epístola de hoy (ver Salmos 2:7; 2 Samuel 7:14). Y como revela nuestro Evangelio, Él es la Palabra de Dios, aquel por medio del cual fue creado el universo, aquel por medio del cual el universo es sostenido. Al hablarnos por medio de su Hijo, Dios ha revelado una nueva era, los últimos días. La nueva era es una nueva creación. En el principio, Dios habló su Palabra y la luz brilló en las tinieblas. Ahora, en esta nueva era, nos envía la verdadera luz para dispersar las tinieblas de un mundo que se ha exiliado a sí mismo de Dios.",
+                original:
+                  "Jesus is the new king. He is the royal firstborn son and Son of God promised to David, as we hear in today’s Epistle (see Psalms 2:7; 2 Samuel 7:14). And as our Gospel reveals, He is the Word of God, the one through whom the universe was created, the one through whom the universe is sustained. In speaking to us through His Son, God has unveiled a new age, the last days. The new age is a new creation. In the beginning, God spoke His Word and light shone in the darkness. Now, in this new age, He sends us the true light to scatter the darkness of a world that has exiled itself from God.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
     {
       refs: ["Phil.3.8"],
       text: "«El sublime conocimiento de Jesucristo» se aprende con la lectura frecuente de la Escritura: «el desconocimiento de las Escrituras es desconocimiento de Cristo» {c:DV25|Dei Verbum 25}.",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "La comparación devalúa las posesiones frente al conocimiento de Cristo; no declara sin valor a un ser humano",
+            quotes: [
+              {
+                speaker: "Dave Armstrong",
+                work: 'Has Martin Luther\'s "Snow-Covered Dunghill" Mystery-Legend Been Solved?!',
+                outlet: "Biblical Evidence for Catholicism",
+                date: "5 de octubre de 2005",
+                locator: "Ver la página enlazada",
+                url: "https://socrates58.blogspot.com/2005/10/has-martin-luthers-snow-covered.html",
+                text: "Como comentario relacionado, la Escritura (KJV) sí usa la palabra estiércol unas 28 veces, pero nunca, que yo sepa tras revisar una concordancia, como descripción del hombre. San Pablo, por ejemplo, escribe en Filipenses 3:8, en esa misma versión: . . . Y en verdad considero todas las cosas como pérdida por la excelencia del conocimiento de Cristo Jesús, mi Señor, por quien lo he perdido todo, y lo considero estiércol, para ganar a Cristo. Las posesiones son estiércol comparadas con las riquezas de Cristo Jesús: una afirmación muy distinta a llamar “estiércol” al hombre mismo. El hombre está hecho a imagen de Dios, y aunque esté caído, no es un excremento sin valor.",
+                original:
+                  'As a related aside, Scripture (KJV) does use the word dung some 28 or so times, but never, as far as I can tell from scanning a concordance, as a description of man. St. Paul, for example, writes in Philippians 3:8, in that same version: . . . I count all things but loss for the excellency of the knowledge of Christ Jesus my Lord: for whom I have suffered the loss of all things, and do count them but dung, that I may win Christ. Possessions are dung compared to the riches of Christ Jesus: a far different statement from calling man himself "dung." Man is made in God\'s image, and though he is fallen, he is not worthless excrement.',
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Matt.18.20"],
       text: "Cristo está presente en su palabra: «cuando se lee en la Iglesia la Sagrada Escritura, es El quien habla» {c:SC7|Sacrosanctum Concilium 7}.",
+      apologists: {
+        arguments: [
+          {
+            title: "La autoridad vinculante de la Iglesia se ejerce en comunión con Cristo, reunida en su nombre",
+            quotes: [
+              {
+                speaker: "Scott Hahn",
+                work: "To Win Them Back: Scott Hahn Reflects on the Twenty-Third Sunday in Ordinary Time",
+                outlet: "St. Paul Center",
+                date: "Sin fecha indicada",
+                locator: "Párrafos que empiezan «As Ezekiel is appointed watchman»",
+                url: "https://stpaulcenter.com/posts/to-win-them-back-scott-hahn-reflects-on-the-twenty-third-sunday-in-ordinary-time",
+                text: "Así como Ezequiel es designado centinela de la casa de Israel en la primera lectura de hoy, así Jesús, en el Evangelio de hoy, establece a sus discípulos como guardianes del nuevo Israel de Dios, la Iglesia (ver Gálatas 6:16). También establece procedimientos para tratar el pecado y las violaciones de la fe, basándose en las normas de disciplina prescritas por Moisés para Israel (ver Levítico 19:17–20; Deuteronomio 19:13). Los jefes del nuevo Israel, sin embargo, reciben poderes extraordinarios, semejantes a los dados a Pedro (ver Mateo 16:19). Tienen el poder de atar y desatar, de perdonar los pecados y de reconciliar a los pecadores en su nombre (ver Juan 20:21–23). Pero los poderes que Él da a los apóstoles y a sus sucesores dependen de su comunión con Él. Así como Ezequiel solo debe enseñar lo que oye decir a Dios, así los discípulos deben reunirse en su nombre, orar y buscar la voluntad de nuestro Padre celestial.",
+                original:
+                  "As Ezekiel is appointed watchman over the house of Israel in today’s first Reading, so Jesus in the Gospel today establishes His disciples as guardians of the new Israel of God, the Church (see Galatians 6:16). He also puts in place procedures for dealing with sin and breaches of the faith, building on rules of discipline prescribed by Moses for Israel (see Leviticus 19:17–20; Deuteronomy 19:13). The heads of the new Israel, however, receive extraordinary powers—similar to those given to Peter (see Matthew 16:19). They have the power to bind and loose, to forgive sins and to reconcile sinners in His name (see John 20:21–23). But the powers He gives the Apostles and their successors depend on their communion with Him. As Ezekiel is only to teach what he hears God saying, so the disciples are to gather in His name and to pray and seek the will of our heavenly Father.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title:
+              "Pitre dice que Mt 18:19–20 suele sacarse de contexto como promesa de que cualquier dos cristianos que estén de acuerdo en la oración serán escuchados; en el contexto, Jesús sigue hablando a los apóstoles sobre atar y desatar, de modo que el sentido principal es el poder de la oración apostólica, y lo aplica a los obispos reunidos en concilio ecuménico (Vaticano II, Trento), que toman decisiones vinculantes sobre fe, moral y disciplina y son «los dos o tres que se han reunido en el nombre de Jesús»",
+            quotes: [
+              {
+                speaker: "Dr. Brant Pitre",
+                work: "Apostolic Authority: Binding and Loosing Explained | Dr. Brant Pitre",
+                outlet: "Catholic Productions",
+                date: "19 de junio de 2020",
+                locator: "Minutos 3:14 a 4:34",
+                url: "https://www.youtube.com/watch?v=Jbn_ARzLngc&t=194s",
+                text: "Y donde dos o tres se reúnan en mi nombre, allí estoy yo en medio de ellos. Ahora bien, a veces la gente podría sacar esto de contexto y simplemente decir: Bueno, si dos cristianos están de acuerdo en algo y oran por ello, entonces debería suceder, ¿no? Bueno, no. Eso no es exactamente lo que Jesús está señalando en el contexto aquí. Él sigue hablando a los apóstoles sobre la autoridad de atar y desatar que tienen. Y aquí lo que realmente quiere decir, su significado principal en el contexto, es sobre el poder de la oración apostólica. Sobre el poder de la oración de dos de sus apóstoles cuando están de acuerdo en algo, ¿no? O cuando le piden algo al Señor. Es una oración particularmente poderosa porque Jesús les está dando esta autoridad especial dentro de la iglesia. Y aquí se puede pensar, por ejemplo, en la oración de los obispos, en comunión unos con otros, en un concilio ecuménico. ¿Qué es lo tan importante de un concilio ecuménico como el Vaticano II o el Concilio de Trento? Bueno, es porque los sucesores de los apóstoles se han reunido para orar y para tomar decisiones vinculantes para la iglesia sobre asuntos de fe y de moral, así como sobre asuntos de disciplina, ¿no? Ellos son los dos o tres que se han reunido en el nombre de Jesús. Y cuando se reúnen en el nombre de Jesús, Él está presente en sus apóstoles de una manera especial, de una manera poderosa, con autoridad.",
+                original:
+                  "And where two or three are gathered in my name, there I am in the midst of them. Now, sometimes people might take this out of context and just say, Well, if two Christians agree on anything and they pray about it, then it should happen, right? Well, no. That's not exactly what Jesus is getting at in context here. He's still talking to the apostles about the binding and loosing authority that they have. And here what he's really getting at, its primary meaning in context, is about the power of apostolic prayer. About the power of the prayer of two of his apostles when they agree on something, right? Or when they ask the Lord something. That is a particularly powerful prayer because Jesus is giving them this special authority within the church. And you can think here about the prayer of bishops, for example, in communion with one another at an ecumenical council. What's so important about an ecumenical council like Vatican II or the Council of Trent? Well, it's because the successors of the apostles have gathered together to pray and to make binding decisions for the church on matters of faith and morals, as well as matters of discipline, right? They are the two or three who have gathered in the name of Jesus. And when they gather in the name of Jesus, He's present in his apostles in a special way, in a powerful way, in an authoritative way.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
   ],
   passages: {

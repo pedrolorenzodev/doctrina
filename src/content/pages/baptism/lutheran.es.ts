@@ -194,12 +194,67 @@ export const baptismLutheran = {
               },
             ],
           },
+          {
+            title: "El alcance de «todas las naciones» incluye a los niños",
+            quotes: [
+              {
+                speaker: "Rev. Matthew Zickler",
+                work: "Concerning Rebaptism",
+                outlet: "Lutheran Reformation",
+                date: "4 de mayo de 2017",
+                locator: "Párrafo que empieza «Some might argue»",
+                url: "https://lutheranreformation.org/theology/concerning-rebaptism/",
+                text: "Algunos podrían argumentar que esto no prueba nada, porque Jesús no mandó específicamente bautizar a los niños. La respuesta de Lutero: “Tampoco ha mandado específicamente bautizar a los adultos, ni a los hombres ni a las mujeres, así que más vale que no bauticemos a nadie.”[6] Jesús no ha especificado ningún tipo particular de persona para bautizar. Dijo “todas las naciones”. Así que, o podemos bautizar a los niños, porque son parte de eso, o si la lógica excluye a los niños, entonces no podemos bautizar a nadie.",
+                original:
+                  "Some might argue that this doesn’t prove anything because Jesus didn’t specifically command the baptism of children. Luther’s response: “Neither has he specifically commanded the baptism of adults, nor of men or of women, so we had better not baptize anybody.”[6] Jesus hasn’t specified any particular sort of person to baptize. He said, “all nations.” So, either we can baptize children, as a they are a part of that, or if logic precludes children, then we can baptize no one.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "Un solo nombre divino, tres personas",
+            quotes: [
+              {
+                speaker: "T. R. Halvorson",
+                work: "Vicarious Satisfaction in Liturgy: Invocation",
+                outlet: "Steadfast Lutherans",
+                date: "9 de enero de 2023",
+                locator: "Párrafo que empieza «Jesus said, “Go therefore»",
+                url: "https://steadfastlutherans.org/blog/2023/01/vicarious-satisfaction-in-liturgy-invocation/",
+                text: "Jesús dijo: “Id, pues, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo.” (Mateo 28:19) Esto revela la Trinidad. El nombre de Dios es singular: nombre, no nombres. Las personas son tres: Padre, Hijo y Espíritu Santo. Cristo revela este nombre de Dios en su encargo de bautizar en el Nombre. Por sí solo, esto le da a la Invocación un significado trinitario y bautismal.",
+                original:
+                  "Jesus said, “Go therefore and make disciples of all the nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit.” (Matthew 28:19) This reveals the Trinity. The name of God is singular: name, not names. The persons are three: Father, Son, and Holy Spirit. Christ reveals this name of God in his commission to baptize into the Name. All by itself, this gives the Invocation trinitarian and baptismal significance.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
     {
       refs: ["Mark.16.16"],
       text: "El Catecismo Menor cita este versículo como la promesa de salvación para quien cree y es bautizado (Catecismo Menor IV.7–8).",
+      apologists: {
+        arguments: [
+          {
+            title: "El bautismo y Jesús no son objetos de fe que compitan entre sí",
+            quotes: [
+              {
+                speaker: "Pastor Andrew Preus",
+                work: "Proposed Catechism Explanation Revision: Baptism",
+                outlet: "Steadfast Lutherans",
+                date: "13 de octubre de 2016",
+                locator: "Párrafo que empieza «The connection between faith and baptism»",
+                url: "https://steadfastlutherans.org/blog/2016/10/proposed-catechism-explanation-revision-baptism/",
+                text: "La conexión entre fe y bautismo también se trata en la pregunta bajo el poder del bautismo: “¿La fe de un cristiano está en el Bautismo o en Jesús?” Podemos señalar en la respuesta a esto que el objeto de “creer” en Marcos 16:16 es el bautismo. Por otra parte, es una muy buena pregunta para hacer, y se responde bien que “Bautismo o Jesús” es una falsa dicotomía.",
+                original:
+                  "The connection between faith and baptism is also treated in the question under the power of baptism, “Is a Christian’s faith in Baptism or in Jesus?” We can point out in the answer to this that the object of “believe” in Mark 16:16 is baptism. This otherwise is a very good question to ask, and it is answered well that “Baptism or Jesus” is a false dichotomy.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Titus.3.5-Titus.3.7"],
@@ -285,6 +340,23 @@ export const baptismLutheran = {
               },
             ],
           },
+          {
+            title: "El bautismo introduce al bautizado en la muerte de Cristo y promete la resurrección",
+            quotes: [
+              {
+                speaker: "Pr. Mark Surburg",
+                work: "Great Stuff — The surprising history of Romans 6 and baptism in the early Church",
+                outlet: "Steadfast Lutherans",
+                date: "14 de junio de 2015",
+                locator: "Párrafo que empieza «Paul asks them if they’ve forgotten»",
+                url: "https://steadfastlutherans.org/blog/2015/06/great-stuff-the-surprising-history-of-romans-6-and-baptism-in-the-early-church/",
+                text: "Pablo les pregunta si se han olvidado de que cuantos han sido bautizados en Cristo Jesús han sido bautizados en su muerte (6:3).[2] Su pregunta se basa en el supuesto de que esto es algo que los romanos sí saben. Presume que entienden que en el bautismo “el cristiano no se identifica meramente con el ‘Cristo moribundo’, que ha ganado la victoria sobre el pecado, sino que es introducido en el acto mismo por el cual esa victoria se gana”.[3] Pablo continúa diciendo en 6:4 que el bautismo es el medio por el cual han participado en la muerte de Cristo; de hecho, fueron sepultados con Cristo en la muerte. La afirmación de 6:5 añade entonces que si han participado en la muerte de Cristo mediante el bautismo, ciertamente también participarán en su resurrección en el Último Día.",
+                original:
+                  "Paul asks them if they’ve forgotten that as many as have been baptized into Christ Jesus have been baptized into his death (6:3).[2] His question is based on the assumption that this is something the Romans do know. He presumes that they understand that in baptism “the Christian is not merely identified with the ‘dying Christ,’ who has won the victory over sin, but is introduced into the very act by which that victory is won.”[3] Paul goes on to say in 6:4 that baptism is the means through which they have shared in Christ’s death – in fact they were buried with Christ into death. The statement in 6:5 then adds that if they have shared in Christ’s death through baptism, they will certainly also share in his resurrection on the Last Day.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
         ],
       },
     },
@@ -299,10 +371,69 @@ export const baptismLutheran = {
     {
       refs: ["Eph.4.5-Eph.4.6"],
       text: "La Confesión de Augsburgo lo cita para la unidad de la fe y del bautismo (art. VII).",
+      apologists: {
+        arguments: [
+          {
+            title: "Las ceremonias pueden cambiar mientras el bautismo permanece igual",
+            quotes: [
+              {
+                speaker: "Rev. Dr. Mark Birkholz",
+                work: "Luther’s Baptismal Rites",
+                outlet: "Lutheran Reformation",
+                date: "11 de noviembre de 2017",
+                locator: "Párrafo que empieza «In our day»",
+                url: "https://lutheranreformation.org/worship/luthers-baptismal-rites/",
+                text: "En nuestros días, algunas de estas prácticas han regresado (p. ej., la vela bautismal). Se han añadido otras nuevas (p. ej., la bienvenida por parte de la congregación). En el tiempo de Lutero fue necesario reducir un poco las ceremonias, porque distraían del bautismo mismo. Lutero consideró necesario enfatizar que el agua y la Palabra de Dios eran lo principal en el rito bautismal, reduciendo la cantidad de ceremonias. En algunos lugares se ha visto que las ceremonias adicionales son útiles para enseñar y enfatizar lo que sucede en el bautismo. “Cada generación recorta un poco, agrega un poco (el elogio nunca termina); pero el Bautismo en sí permanece siempre igual: ‘un Señor, una fe, un bautismo’ (Ef 4:5).”[13]",
+                original:
+                  "In our day, some of these practices have come back (e.g. the baptismal candle). Other new ones have been added (e.g. the welcome by the congregation). In Luther’s day it was necessary to pare back the ceremonies a bit, as they were distracting from the baptism itself. Luther found it necessary to emphasize that the water and the Word of God were the main thing in the baptismal rite by reducing the number of ceremonies. In some places the additional ceremonies have been found to be helpful to teach and emphasize what is happening in baptism. “Each generation trims a little, adds a little (extolling is never finished); but always the actual Baptism itself remains the same: ‘one Lord, one faith, one baptism’ (Eph 4:5).”[13]",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title: "Un solo Señor y un solo bautismo unen a la iglesia",
+            quotes: [
+              {
+                speaker: "Pastor Rolf Preus",
+                work: "Seventeenth Sunday after Trinity – The True Unity of the Church",
+                outlet: "Steadfast Lutherans",
+                date: "19 de septiembre de 2018",
+                locator: "Párrafo que empieza «Let us take a closer look»",
+                url: "https://steadfastlutherans.org/blog/2018/09/seventeenth-sunday-after-trinity-the-true-unity-of-the-church/",
+                text: "Veamos más de cerca el texto que tenemos delante hoy. San Pablo tiene una lista de siete unos. Tres de estos unos se refieren a las tres personas de la Santísima Trinidad. Hay un Espíritu. Hay un Señor, es decir, un Señor Jesús. Hay un Dios y Padre. Dios es uno. Las tres personas distintas no son tres dioses diferentes. Hay un solo Dios y solo uno, como confesaba el pueblo de Dios en el Antiguo Testamento: “Oye, Israel: El Señor nuestro Dios, el Señor es uno.” Confesamos en el Credo Atanasiano:\n\nHay un solo bautismo. No hay un bautismo de agua por un lado y un bautismo del Espíritu por el otro. No, el bautismo de agua es el bautismo del Espíritu Santo.",
+                original:
+                  "Let us take a closer look at the text before us today. St. Paul has a list of seven ones. Three of these ones refer to the three persons of the Holy Trinity. There is one Spirit. There is one Lord, that is, one Lord Jesus. There is one God and Father. God is one. The three distinct persons are not three different gods. There is one God and only one God as God’s people during the Old Testament confessed, “Hear O Israel, the LORD our God, the LORD is one!” We confess in the Athanasian Creed:\n\nThere is but one baptism. There isn’t a baptism of water on the one hand and a baptism of the Spirit on the other. No, the baptism of water is the baptism of the Holy Spirit.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Matt.23.2"],
       text: "La Confesión de Augsburgo lo cita para la eficacia del bautismo aun cuando el ministro es indigno (art. VIII.1–2).",
+      apologists: {
+        arguments: [
+          {
+            title: "La eficacia de la Palabra y de los sacramentos no depende de la santidad del ministro",
+            quotes: [
+              {
+                speaker: "Dr. Paul Edmon",
+                work: "A Laymen’s Commentary on the Augsburg Confession: What the Church Is",
+                outlet: "Steadfast Lutherans",
+                date: "3 de octubre de 2018",
+                locator: "Párrafo que empieza «We even have pastors who are hypocrites»",
+                url: "https://steadfastlutherans.org/blog/2018/10/a-laymens-commentary-on-the-augsburg-confession-what-the-church-is/",
+                text: "Incluso tenemos pastores que son hipócritas. En el día de Jesús, a pesar de que los escribas, fariseos y sacerdotes eran hipócritas, los sacrificios que ellos administraban y la Palabra que ellos predicaban seguían siendo eficaces. Lo mismo ocurre con los pastores de hoy que son hipócritas. Los sacramentos y la Palabra son eficaces por la Palabra de Dios, no por la santidad del pastor (Mateo 23).",
+                original:
+                  "We even have pastors who are hypocrites. In Jesus’s day in spite of the fact that the Scribes, Pharisees, and Priests were hypocrites the sacrifices administered by them and the Word preached by them was still efficacious. Same with pastors today who are hypocrites. The Sacraments and the Word are efficacious because of God’s Word not because of the sanctity of the pastor (Matthew 23).",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
       refs: ["Mark.16.16"],
