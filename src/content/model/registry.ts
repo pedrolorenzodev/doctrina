@@ -63,6 +63,29 @@ export type Passage = {
   verified?: Verification;
   translation?: TranslationLevel;
   derivedFrom?: string;
+  label?: string;
+  translationNote?: string;
+  tag?: string;
+  normalisation?: string;
+};
+
+export type ExcerptSource = {
+  url?: string;
+  locator?: string;
+  edition?: string;
+  checkedAt?: string;
+  tag?: string;
+  verificationAttempt?: string;
+};
+
+export type ExcerptCorrection = {
+  label: string;
+  date?: string;
+  source?: string;
+  what?: string;
+  check?: string;
+  textBefore?: string | string[];
+  textBeforeCorrection?: string;
 };
 
 export type Excerpt = {
@@ -74,6 +97,8 @@ export type Excerpt = {
   at?: string;
   note?: string;
   citedIn?: string[];
+  source?: ExcerptSource;
+  corrections?: ExcerptCorrection[];
 };
 
 export type Citation = {
@@ -83,6 +108,7 @@ export type Citation = {
   locator: Locator;
   date?: DateInfo;
   excerpts: Excerpt[];
+  research?: Record<string, unknown>;
   link?: LinkRef;
 };
 

@@ -1360,7 +1360,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Se acusa falsamente a nuestras iglesias de abolir la Misa; pues la Misa se conserva entre nosotros y se celebra con la mayor reverencia.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Falsely are our churches accused of abolishing the Mass; for the Mass is retained among us, and celebrated with the highest reverence.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXIV.1–3; sentence/fragment at web anchor ac-xxiv-0001 (unpaginated)",
+        },
+        at: "XXIV.1–3",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-the-mass/#ac-xxiv-0001",
+          locator: "XXIV.1–3; sentence/fragment at web anchor ac-xxiv-0001 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "MUST FIX: extended to the end of the sentence",
+            textBeforeCorrection:
+              "Falsely are our churches accused of abolishing the Mass; for the Mass is retained among",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1530,
       month: 6,
@@ -1383,7 +1429,71 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Cuando, pues, se amonestó a nuestros sacerdotes acerca de este pecado, se suprimieron entre nosotros las Misas privadas, ya que apenas se celebraban Misas privadas sino por afán de lucro.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "When, therefore our priests were admonished concerning this sin, Private Masses were discontinued among us, as scarcely any Private Masses were celebrated except for lucre’s sake.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXIV.13, 34; sentence/fragment at web anchor ac-xxiv-0013 (unpaginated)",
+        },
+        at: "XXIV.13, 34",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-the-mass/#ac-xxiv-0013",
+          locator: "XXIV.13, 34; sentence/fragment at web anchor ac-xxiv-0013 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+      {
+        es: {
+          text: "Ahora bien, como la Misa es una administración tal del Sacramento, tenemos una comunión cada día de fiesta y, si alguno desea el Sacramento, también otros días, cuando se da a quienes lo piden.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Now, forasmuch as the Mass is such a giving of the Sacrament, we hold one communion every holy-day, and, if any desire the Sacrament, also on other days, when it is given to such as ask for it.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXIV.13, 34; sentence/fragment at web anchor ac-xxiv-0034 (unpaginated)",
+        },
+        at: "XXIV.13, 34",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-the-mass/#ac-xxiv-0034",
+          locator: "XXIV.13, 34; sentence/fragment at web anchor ac-xxiv-0034 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1530,
       month: 6,
@@ -1406,7 +1516,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pues entre nosotros se celebran misas cada día del Señor y en las demás fiestas, en las cuales se ofrece el Sacramento a quienes desean usarlo, después de haber sido examinados y absueltos.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "For among us masses are celebrated every Lord’s Day and on the other festivals, in which the Sacrament is offered to those who wish to use it, after they have been examined and absolved.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXIV.1; sentence/fragment at web anchor ap-xxiv-0001 (unpaginated)",
+        },
+        at: "XXIV.1",
+        source: {
+          url: "https://bookofconcord.org/defense/of-the-mass/#ap-xxiv-0001",
+          locator: "XXIV.1; sentence/fragment at web anchor ap-xxiv-0001 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1531,
     },
@@ -1427,7 +1572,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Acerca del Orden eclesiástico enseñan que nadie debe enseñar públicamente en la Iglesia ni administrar los Sacramentos si no ha sido regularmente llamado.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Of Ecclesiastical Order they teach that no one should publicly\nteach in the Church or administer the Sacraments unless he be\nregularly called.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XIV; sentence/fragment at web anchor  (unpaginated)",
+        },
+        at: "XIV",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-ecclesiastical-order/#",
+          locator: "XIV; sentence/fragment at web anchor  (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1530,
       month: 6,
@@ -1450,7 +1630,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "La confesión no ha sido abolida en las iglesias entre nosotros; pues no es costumbre dar el cuerpo del Señor sino a quienes han sido examinados y absueltos previamente.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Confession in the churches is not abolished among us; for it is not usual to give the body of the Lord, except to them that have been previously examined and absolved.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXV.1; sentence/fragment at web anchor ac-xxv-0001 (unpaginated)",
+        },
+        at: "XXV.1",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-confession-xxv/#ac-xxv-0001",
+          locator: "XXV.1; sentence/fragment at web anchor ac-xxv-0001 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "MUST FIX: dangling «And» removed",
+            textBeforeCorrection:
+              "Confession in the churches is not abolished among us; for it is not usual to give the body of the Lord, except to them that have been previously examined and absolved. And",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1530,
       month: 6,
@@ -1473,7 +1699,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pues nadie es admitido sino después de haber sido examinado.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "For none are admitted except they be first examined.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXIV.6–7; sentence/fragment at web anchor ac-xxiv-0006 (unpaginated)",
+        },
+        at: "XXIV.6–7",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-the-mass/#ac-xxiv-0006",
+          locator: "XXIV.6–7; sentence/fragment at web anchor ac-xxiv-0006 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1530,
       month: 6,
@@ -1496,7 +1757,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pero aunque el uso del Sacramento fuera el sacrificio diario, sin embargo nosotros lo conservaríamos antes que los adversarios, porque entre ellos usan el Sacramento sacerdotes pagados a sueldo. Entre nosotros hay un uso más frecuente y más concienzudo. Pues el pueblo lo usa, pero habiendo sido antes instruido y examinado. Pues a los hombres se les enseña acerca del verdadero uso del Sacramento que fue instituido para ser sello y testimonio de la libre remisión de los pecados, y que, por tanto, debe amonestar a las conciencias alarmadas a confiar verdaderamente y a creer que sus pecados les son libremente remitidos.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "But if the use of the Sacrament would be the daily sacrifice, nevertheless we would retain it rather than the adversaries, because with them priests hired for pay use the Sacrament. With us there is a more frequent and more conscientious use. For the people use it, but after having first been instructed and examined. For men are taught concerning the true use of the Sacrament that it was instituted for the purpose of being a seal and testimony of the free remission of sins, and that, accordingly, it ought to admonish alarmed consciences to be truly confident and believe that their sins are freely remitted.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXIV.49; sentence/fragment at web anchor ap-xxiv-0049 (unpaginated)",
+        },
+        at: "XXIV.49",
+        source: {
+          url: "https://bookofconcord.org/defense/of-the-mass/#ap-xxiv-0049",
+          locator: "XXIV.49; sentence/fragment at web anchor ap-xxiv-0049 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1531,
     },
@@ -1518,7 +1814,41 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "El ayuno y la preparación corporal son, en verdad, un buen ejercicio exterior; pero verdaderamente digno y bien preparado es quien tiene fe en estas palabras: _Dado_, _y derramado por vosotros_, _para remisión de los pecados_. Pero el que no cree estas palabras, o duda, es indigno e inepto; pues las palabras _Por vosotros_ exigen corazones enteramente creyentes.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Fasting and bodily preparation is, indeed, a fine outward training; but he is truly worthy and well prepared who has faith in these words: _Given_, _and shed for you_, _for the remission of sins_. But he that does not believe these words, or doubts, is unworthy and unfit; for the words _For you_ require altogether believing hearts.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "VI.9–10 (Lutero); sc-sacrament-altar-0005 (question and answer; unpaginated)",
+        },
+        at: "VI.9–10 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/small-catechism/the-sacrament-of-the-altar/#sc-sacrament-altar-0005",
+          locator: "VI.9–10 (Lutero); sc-sacrament-altar-0005 (question and answer; unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot question/answer text matched 2026-11-01; traditional locator crosswalk by question content]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      numbering: "Web numbers question/answer units; traditional locator counts question and answer separately.",
+    },
     date: {
       year: 1529,
     },
@@ -1540,7 +1870,42 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "El ayuno y la oración, etc., pueden ser, ciertamente, una preparación y disciplina exterior para los niños, a fin de que el cuerpo se mantenga y se comporte con modestia y reverencia hacia el cuerpo y la sangre de Cristo; pero lo que se da en él y con él, el cuerpo no puede captarlo ni apropiárselo. Esto lo hace la fe del corazón, que discierne este tesoro y lo desea.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Fasting and prayer, etc., may indeed be an external preparation and discipline for children, that the body may keep and bear itself modestly and reverently towards the body and blood of Christ; yet what is given in and with it the body cannot seize and appropriate. But this is done by the faith of the heart, which discerns this treasure and desires it.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "V.37 (Lutero); sentence/fragment at web anchor lc-v-0037 (unpaginated)",
+        },
+        at: "V.37 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/sacrament-of-the-altar/#lc-v-0037",
+          locator: "V.37 (Lutero); sentence/fragment at web anchor lc-v-0037 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1529,
     },
@@ -1561,7 +1926,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pero al mismo tiempo creemos, enseñamos y confesamos unánimemente que en el uso de la Santa Cena las palabras de la institución de Cristo no deben omitirse en modo alguno, sino que deben recitarse públicamente, como está escrito en 1 Cor. 10:16: La copa de bendición que bendecimos, etc. Esta bendición se produce mediante la recitación de las palabras de Cristo.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "But at the same time we also believe, teach, and confess unanimously that in the use of the Holy Supper the words of the institution of Christ should in no way be omitted, but should be publicly recited, as it is written 1 Cor. 10:16: The cup of blessing which we bless, etc. This blessing occurs through the recitation of the words of Christ.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "VII.9; sentence/fragment at web anchor ep-vii-0009 (unpaginated)",
+        },
+        at: "VII.9",
+        source: {
+          url: "https://bookofconcord.org/epitome/the-lords-supper/#ep-vii-0009",
+          locator: "VII.9; sentence/fragment at web anchor ep-vii-0009 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1582,7 +1982,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Ahora bien, en la administración de la Santa Cena las palabras de la institución han de pronunciarse o cantarse públicamente ante la congregación, de manera distinta y clara, y no deben omitirse en modo alguno [y esto por muchísimas y gravísimas razones.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Now, in the administration of the Holy Supper the words of institution are to be publicly spoken or sung before the congregation distinctly and clearly, and should in no way be omitted [and this for very many and the most important reasons.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "VII.79–82; sentence/fragment at web anchor sd-vii-0079 (unpaginated)",
+        },
+        at: "VII.79–82",
+        source: {
+          url: "https://bookofconcord.org/solid-declaration/the-holy-supper/#sd-vii-0079",
+          locator: "VII.79–82; sentence/fragment at web anchor sd-vii-0079 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1603,7 +2038,82 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Sin embargo, esta bendición, o la recitación de las palabras de la institución de Cristo solas, no hace un sacramento si no se observa toda la acción de la Cena, tal como fue instituida por Cristo (como cuando el pan consagrado no se distribuye, ni se recibe, ni se participa de él, sino que se encierra, se sacrifica o se lleva en procesión), sino que el mandato de Cristo, Haced esto (que abarca toda la acción o administración en este Sacramento: que en una asamblea de cristianos se toman pan y vino, se consagran, se distribuyen, se reciben, se comen, se beben, y al mismo tiempo se anuncia la muerte del Señor), debe observarse sin separación e inviolado […]",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "However, this blessing, or the recitation of the words of institution of Christ alone does not make a sacrament if the entire action of the Supper, as it was instituted by Christ, is not observed (as when the consecrated bread is not distributed, received, and partaken of, but is enclosed, sacrificed, or carried about), but the command of Christ, This do (which embraces the entire action or administration in this Sacrament, that in an assembly of Christians bread and wine are taken, consecrated, distributed, received, eaten, drunk, and the Lord’s death is shown forth at the same time) must be observed unseparated and inviolate […]",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "VII.83–84, 87; sentence/fragment at web anchor sd-vii-0083 (unpaginated)",
+        },
+        at: "VII.83–84, 87",
+        source: {
+          url: "https://bookofconcord.org/solid-declaration/the-holy-supper/#sd-vii-0083",
+          locator: "VII.83–84, 87; sentence/fragment at web anchor sd-vii-0083 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "MUST FIX: «This» completed; ends with […] because the sentence goes on",
+            textBeforeCorrection:
+              "However, this blessing, or the recitation of the words of institution of Christ alone does not make a sacrament if the entire action of the Supper, as it was instituted by Christ, is not observed (as when the consecrated bread is not distributed, received, and partaken of, but is enclosed, sacrificed, or carried about), but the command of Christ, This",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+      {
+        es: {
+          text: "Y fuera de este uso, cuando en la misa papista el pan no se distribuye, sino que se ofrece o se encierra, se lleva en procesión y se expone para adoración, ha de considerarse que no es sacramento; como el agua del bautismo, cuando se usa para consagrar campanas o para curar la lepra, o se exhibe de otro modo para culto, no es sacramento ni bautismo.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "And apart from this use, when in the papistic mass the bread is not distributed, but offered up or enclosed, borne about, and exhibited for adoration, it is to be regarded as no sacrament; just as the water of baptism, when used to consecrate bells or to cure leprosy, or otherwise exhibited for worship, is no sacrament or baptism.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "VII.83–84, 87; sentence/fragment at web anchor sd-vii-0087 (unpaginated)",
+        },
+        at: "VII.83–84, 87",
+        source: {
+          url: "https://bookofconcord.org/solid-declaration/the-holy-supper/#sd-vii-0087",
+          locator: "VII.83–84, 87; sentence/fragment at web anchor sd-vii-0087 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1624,7 +2134,82 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "A los laicos se les dan Ambas Especies en el Sacramento de la Cena del Señor, porque este uso tiene el mandamiento del Señor en Mateo 26:27: Bebed todos de ella, donde Cristo manifiestamente ha mandado acerca de la copa que todos beban.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "To the laity are given Both Kinds in the Sacrament of the Lord’s Supper, because this usage has the commandment of the Lord in Matt. 26:27: Drink ye all of it, where Christ has manifestly commanded concerning the cup that all should drink.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXII.1–2, 12; sentence/fragment at web anchor ac-xxii-0001 (unpaginated)",
+        },
+        at: "XXII.1–2, 12",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-both-kinds-in-the-sacrament/#ac-xxii-0001",
+          locator: "XXII.1–2, 12; sentence/fragment at web anchor ac-xxii-0001 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection:
+              "To the laity are given Both Kinds in the Sacrament of the Lord’s Supper, because this usage has the commandment of the Lord in Matt. 26:27: Drink ye all of it,",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+      {
+        es: {
+          text: "del Sacramento no concuerda con la ordenanza de Cristo, solemos omitir la procesión, que hasta ahora ha estado en uso.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "of the Sacrament does not agree with the ordinance of Christ, we are accustomed to omit the procession, which hitherto has been in use.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXII.1–2, 12; sentence/fragment at web anchor ac-xxii-0012 (unpaginated)",
+        },
+        at: "XXII.1–2, 12",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-both-kinds-in-the-sacrament/#ac-xxii-0012",
+          locator: "XXII.1–2, 12; sentence/fragment at web anchor ac-xxii-0012 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1530,
       month: 6,
@@ -1648,7 +2233,42 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Ahora bien, es verdad, como hemos dicho, que a nadie se debe coaccionar ni obligar de ningún modo, para no instituir un nuevo asesinato de almas. Sin embargo, debe saberse que quienes se privan del Sacramento y se apartan de él durante tanto tiempo no han de ser considerados cristianos. Porque Cristo no lo instituyó para tratarlo como un espectáculo, sino que mandó a sus cristianos comerlo y beberlo, y recordarle así a Él.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Now, it is true, as we have said, that no one should by any means be coerced or compelled, lest we institute a new murdering of souls. Nevertheless, it must be known that such people as deprive themselves of, and withdraw from, the Sacrament so long a time are not to be considered Christians. For Christ has not instituted it to be treated as a show, but has commanded His Christians to eat and drink it, and thereby remember Him.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "V.42 (Lutero); sentence/fragment at web anchor lc-v-0042 (unpaginated)",
+        },
+        at: "V.42 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/sacrament-of-the-altar/#lc-v-0042",
+          locator: "V.42 (Lutero); sentence/fragment at web anchor lc-v-0042 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1529,
     },
@@ -1670,7 +2290,42 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "En conclusión, puesto que ya tenemos la verdadera inteligencia y doctrina del Sacramento, hace falta, en verdad, alguna amonestación y exhortación, para que los hombres no dejen pasar inadvertido un tesoro tan grande, que se administra y reparte cada día entre los cristianos; es decir, que quienes quieran ser cristianos se dispongan a recibir con frecuencia este venerable Sacramento.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "In conclusion, since we have now the true understanding and doctrine of the Sacrament, there is indeed need of some admonition and exhortation, that men may not let so great a treasure which is daily administered and distributed among Christians pass by unheeded, that is, that those who would be Christians make ready to receive this venerable Sacrament often.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "V.39–47 (Lutero); sentence/fragment at web anchor lc-v-0039 (unpaginated)",
+        },
+        at: "V.39–47 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/sacrament-of-the-altar/#lc-v-0039",
+          locator: "V.39–47 (Lutero); sentence/fragment at web anchor lc-v-0039 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1529,
     },
@@ -1692,7 +2347,100 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Por tanto, debemos hacer aquí una distinción entre los hombres.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "We must, therefore, make a distinction here among men.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "V.58, 61, 70–72 (Lutero); sentence/fragment at web anchor lc-v-0058 (unpaginated)",
+        },
+        at: "V.58, 61, 70–72 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/sacrament-of-the-altar/#lc-v-0058",
+          locator: "V.58, 61, 70–72 (Lutero); sentence/fragment at web anchor lc-v-0058 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+      {
+        es: {
+          text: "Por tanto, tales personas deben aprender que el arte supremo es saber que nuestro Sacramento no depende de nuestra dignidad.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Therefore such people must learn that it is the highest art to know that our Sacrament does not depend upon our worthiness.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "V.58, 61, 70–72 (Lutero); sentence/fragment at web anchor lc-v-0061 (unpaginated)",
+        },
+        at: "V.58, 61, 70–72 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/sacrament-of-the-altar/#lc-v-0061",
+          locator: "V.58, 61, 70–72 (Lutero); sentence/fragment at web anchor lc-v-0061 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+      {
+        es: {
+          text: "Pero quienes sienten su debilidad, desean librarse de ella y anhelan ayuda, deben considerarlo y usarlo solo como un precioso antídoto contra el veneno que llevan dentro.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "But those who are sensible of their weakness, desire to be rid of it and long for help, should regard and use it only as a precious antidote against the poison which they have in them.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "V.58, 61, 70–72 (Lutero); sentence/fragment at web anchor lc-v-0070 (unpaginated)",
+        },
+        at: "V.58, 61, 70–72 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/sacrament-of-the-altar/#lc-v-0070",
+          locator: "V.58, 61, 70–72 (Lutero); sentence/fragment at web anchor lc-v-0070 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1529,
     },
@@ -1713,7 +2461,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pues los cristianos de fe débil, inseguros, angustiados y de corazón aterrados por la grandeza y el número de sus pecados, que piensan que en esta su gran impureza no son dignos de este precioso tesoro y de los beneficios de Cristo, y que sienten y lamentan su debilidad de fe, y desean de corazón servir a Dios con una fe más fuerte y gozosa y con pura obediencia, son los huéspedes verdaderamente dignos para quienes este venerabilísimo Sacramento [y sagrado banquete] ha sido especialmente instituido y dispuesto;",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "For Christians who are of weak faith, diffident, troubled, and heartily terrified because of the greatness and number of their sins, and think that in this their great impurity they are not worthy of this precious treasure and the benefits of Christ, and who feel and lament their weakness of faith, and from their hearts desire that they may serve God with stronger, more joyful faith and pure obedience, they are the truly worthy guests for whom this highly venerable Sacrament [and sacred feast] has been especially instituted and appointed;",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "VII.69–71; sentence/fragment at web anchor sd-vii-0069 (unpaginated)",
+        },
+        at: "VII.69–71",
+        source: {
+          url: "https://bookofconcord.org/solid-declaration/the-holy-supper/#sd-vii-0069",
+          locator: "VII.69–71; sentence/fragment at web anchor sd-vii-0069 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1735,7 +2518,42 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pues los viejos están ya casi acabados, de modo que estas y otras cosas no pueden lograrse si no formamos a las personas que han de venir después de nosotros y sucedernos en nuestro oficio y obra, para que también ellas críen bien a sus hijos, a fin de que se conserven la Palabra de Dios y la Iglesia cristiana.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "For the old are now well-nigh done for, so that these and other things cannot be attained, unless we train the people who are to come after us and succeed us in our office and work, in order that they also may bring up their children successfully, that the Word of God and the Christian Church may be preserved.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "V.86–87 (Lutero); sentence/fragment at web anchor lc-v-0086 (unpaginated)",
+        },
+        at: "V.86–87 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/sacrament-of-the-altar/#lc-v-0086",
+          locator: "V.86–87 (Lutero); sentence/fragment at web anchor lc-v-0086 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1529,
     },
@@ -1757,7 +2575,53 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Del mismo modo que hemos oído acerca del santo Bautismo, debemos hablar también del otro Sacramento, a saber, sobre estos tres puntos: ¿Qué es? ¿Cuáles son sus beneficios? y ¿Quién debe recibirlo? Y todo ello se funda en las palabras con las que Cristo lo instituyó, y que debe saber todo el que desee ser cristiano e ir al Sacramento.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "In the same manner as we have heard regarding Holy Baptism, we must speak also concerning the other Sacrament, namely, these three points: What is it? What are its benefits? and, Who is to receive it? And all these are established by the words by which Christ has instituted it, and which every one who desires to be a Christian and go to the Sacrament should know.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "V (Lutero); sentence/fragment at web anchor lc-v-0001 (unpaginated)",
+        },
+        at: "V (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/sacrament-of-the-altar/#lc-v-0001",
+          locator: "V (Lutero); sentence/fragment at web anchor lc-v-0001 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection:
+              "In the same manner as we have heard regarding Holy Baptism, we must speak also concerning the other Sacrament, namely, these three points: What is it? What are its benefits? and, Who is to receive it? And all these are established by the words by which Christ has instituted it,",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1529,
     },
@@ -1778,7 +2642,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Para zanjar también esta controversia creemos, enseñamos y confesamos unánimemente que las ceremonias o ritos eclesiásticos que ni están mandados ni prohibidos en la Palabra de Dios, sino que han sido instituidos solo por razón de decoro y buen orden, no son en sí mismos culto divino, ni siquiera parte de él. Mat. 15:9: En vano me honran, enseñando como doctrinas mandamientos de hombres.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "For settling also this controversy we unanimously believe, teach, and confess that the ceremonies or church rites which are neither commanded nor forbidden in God’s Word, but have been instituted alone for the sake of propriety and good order, are in and of themselves no divine worship, nor even a part of it. Matt. 15:9:In vain they do worship Me, teaching for doctrines the commandments of men.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "X.3–5; sentence/fragment at web anchor ep-x-0003 (unpaginated)",
+        },
+        at: "X.3–5",
+        source: {
+          url: "https://bookofconcord.org/epitome/church-rites/#ep-x-0003",
+          locator: "X.3–5; sentence/fragment at web anchor ep-x-0003 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1799,7 +2698,82 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Creemos, enseñamos y confesamos que la única regla y norma según la cual todos los dogmas junto con [todos] los maestros deben ser estimados y juzgados son las Escrituras proféticas y apostólicas del Antiguo y del Nuevo Testamento solamente, como está escrito en Sal. 119:105: Lámpara es a mis pies tu Palabra, y lumbrera a mi camino.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "We believe, teach, and confess that the sole rule and standard according to which all dogmas together with [all] teachers should be estimated and judged are the prophetic and apostolic Scriptures of the Old and of the New Testament alone, as it is written Ps. 119:105: Thy Word is a lamp unto my feet and a light unto my path.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "RN 1 y 7; sentence/fragment at web anchor ep-rule-and-norm-0001 (unpaginated)",
+        },
+        at: "RN 1 y 7",
+        source: {
+          url: "https://bookofconcord.org/epitome/rule-and-norm/#ep-rule-and-norm-0001",
+          locator: "RN 1 y 7; sentence/fragment at web anchor ep-rule-and-norm-0001 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+      {
+        es: {
+          text: "De este modo se preserva la distinción entre las Sagradas Escrituras del Antiguo y del Nuevo Testamento y todos los demás escritos, y las Sagradas Escrituras solas siguen siendo el único juez, regla y norma, según las cuales, como única piedra de toque, todos los dogmas deben y han de ser discernidos y juzgados, a fin de ver si son buenos o malos, rectos o erróneos.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "In this way the distinction between the Holy Scriptures of the Old and of the New Testament and all other writings is preserved, and the Holy Scriptures alone remain the only judge, rule, and standard, according to which, as the only test-stone, all dogmas shall and must be discerned and judged, as to whether they are good or evil, right or wrong.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "RN 1 y 7; sentence/fragment at web anchor ep-rule-and-norm-0007 (unpaginated)",
+        },
+        at: "RN 1 y 7",
+        source: {
+          url: "https://bookofconcord.org/epitome/rule-and-norm/#ep-rule-and-norm-0007",
+          locator: "RN 1 y 7; sentence/fragment at web anchor ep-rule-and-norm-0007 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "MUST FIX: «right» completed with «or wrong»",
+            textBeforeCorrection:
+              "In this way the distinction between the Holy Scriptures of the Old and of the New Testament and all other writings is preserved, and the Holy Scriptures alone remain the only judge, rule, and standard, according to which, as the only test-stone, all dogmas shall and must be discerned and judged, as to whether they are good or evil, right",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1854,7 +2828,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "En cuanto a los cismas en materia de fe que han ocurrido en nuestro tiempo, tenemos por consenso y declaración unánime de nuestra fe y confesión cristianas, especialmente contra el Papado y su falso culto, idolatría, superstición, y contra otras sectas, como símbolo de nuestro tiempo, la Primera Confesión de Augsburgo, Inalterada, entregada al emperador Carlos V en Augsburgo en el año 1530, en la gran Dieta, junto con su Apología y los Artículos redactados en Esmalcalda en el año 1537, y suscritos entonces por los principales teólogos.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "As to the schisms in matters of faith, however, which have occurred in our time, we regard as the unanimous consensus and declaration of our Christian faith and confession, especially against the Papacy and its false worship, idolatry, superstition, and against other sects, as the symbol of our time, the First, Unaltered Augsburg Confession, delivered to the Emperor Charles V at Augsburg in the year 1530, in the great Diet, together with its Apology, and the Articles composed at Smalcald in the year 1537, and subscribed at that time by the chief theologians.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "RN 4; sentence/fragment at web anchor ep-rule-and-norm-0004 (unpaginated)",
+        },
+        at: "RN 4",
+        source: {
+          url: "https://bookofconcord.org/epitome/rule-and-norm/#ep-rule-and-norm-0004",
+          locator: "RN 4; sentence/fragment at web anchor ep-rule-and-norm-0004 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1875,7 +2884,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Y porque tales asuntos conciernen también a los laicos y a la salvación de sus almas, confesamos también los Catecismos Menor y Mayor del Dr. Lutero, tal como están incluidos en las obras de Lutero, como la Biblia de los laicos, en los cuales está comprendido todo lo que se trata con más amplitud en la Sagrada Escritura y que es necesario que un hombre cristiano sepa para su salvación.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "And because such matters concern also the laity and the salvation of their souls, we also confess the Small and Large Catechisms of Dr. Luther, as they are included in Luther’s works, as the Bible of the laity, wherein everything is comprised which is treated at greater length in Holy Scripture, and is necessary for a Christian man to know for his salvation.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "RN 5; sentence/fragment at web anchor ep-rule-and-norm-0005 (unpaginated)",
+        },
+        at: "RN 5",
+        source: {
+          url: "https://bookofconcord.org/epitome/rule-and-norm/#ep-rule-and-norm-0005",
+          locator: "RN 5; sentence/fragment at web anchor ep-rule-and-norm-0005 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1896,7 +2940,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "¿Están en la Santa Cena el verdadero cuerpo y la verdadera sangre de nuestro Señor Jesucristo verdadera y esencialmente presentes, se distribuyen con el pan y el vino y son recibidos con la boca por todos los que usan este Sacramento, sean dignos o indignos, piadosos o impíos, creyentes o incrédulos; por los creyentes para consuelo y vida, por los incrédulos para juicio? Los sacramentarios dicen: No; nosotros decimos: Sí.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Whether in the Holy Supper the true body and blood of our Lord Jesus Christ are truly and essentially present, are distributed with the bread and wine, and received with the mouth by all those who use this Sacrament, whether they be worthy or unworthy, godly or ungodly, believing or unbelieving; by the believing for consolation and life, by the unbelieving for judgment? The Sacramentarians say, No; we say, Yes.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "VII; sentence/fragment at web anchor ep-vii-0002 (unpaginated)",
+        },
+        at: "VII",
+        source: {
+          url: "https://bookofconcord.org/epitome/the-lords-supper/#ep-vii-0002",
+          locator: "VII; sentence/fragment at web anchor ep-vii-0002 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -1951,7 +3030,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Para zanjar también esta controversia creemos, enseñamos y confesamos unánimemente que las ceremonias o ritos eclesiásticos que ni están mandados ni prohibidos en la Palabra de Dios, sino que han sido instituidos solo por razón de decoro y buen orden, no son en sí mismos culto divino, ni siquiera parte de él. Mat. 15:9: En vano me honran, enseñando como doctrinas mandamientos de hombres.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "For settling also this controversy we unanimously believe, teach, and confess that the ceremonies or church rites which are neither commanded nor forbidden in God’s Word, but have been instituted alone for the sake of propriety and good order, are in and of themselves no divine worship, nor even a part of it. Matt. 15:9:In vain they do worship Me, teaching for doctrines the commandments of men.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "X.3; sentence/fragment at web anchor ep-x-0003 (unpaginated)",
+        },
+        at: "X.3",
+        source: {
+          url: "https://bookofconcord.org/epitome/church-rites/#ep-x-0003",
+          locator: "X.3; sentence/fragment at web anchor ep-x-0003 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -2405,7 +3519,41 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Cristo, nuestro Señor, dice en el último capítulo de Mateo: Id por todo el mundo y enseñad a todas las naciones, bautizándolas en el nombre del Padre, y del Hijo, y del Espíritu Santo. Segundo.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: " Christ, our Lord, says in the last chapter of Matthew : Go ye into all the world and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost. Secondly.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "IV.4 (Lutero); sc-baptism-0002 (question and answer; unpaginated)",
+        },
+        at: "IV.4 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/small-catechism/the-sacrament-of-holy-baptism/#sc-baptism-0002",
+          locator: "IV.4 (Lutero); sc-baptism-0002 (question and answer; unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot question/answer text matched 2026-11-01; traditional locator crosswalk by question content]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      numbering: "Web numbers question/answer units; traditional locator counts question and answer separately.",
+    },
     date: {
       year: 1529,
     },
@@ -2427,7 +3575,42 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Así hacemos también en el bautismo de los niños. Llevamos al niño con la convicción y la esperanza de que cree, y rogamos que Dios le conceda la fe; pero no lo bautizamos sobre esa base, sino únicamente sobre el mandato de Dios. ¿Por qué? Porque sabemos que Dios no miente. Yo, mi prójimo y, en suma, todos los hombres podemos errar y engañar, pero la Palabra de Dios no puede errar.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Thus we do also in infant baptism. We bring the child in the conviction and hope that it believes, and we pray that God may grant it faith; but we do not baptize it upon that, but solely upon the command of God. Why so? Because we know that God does not lie. I and my neighbor and, in short, all men, may err and deceive, but the Word of God cannot err.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "IV.57 (Lutero); sentence/fragment at web anchor lc-iv-0057 (unpaginated)",
+        },
+        at: "IV.57 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/holy-baptism/#lc-iv-0057",
+          locator: "IV.57 (Lutero); sentence/fragment at web anchor lc-iv-0057 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1529,
     },
@@ -2449,7 +3632,42 @@ export const citations = {
       ],
       qualifier: "Lutero",
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Por tanto, nuestro Bautismo permanece para siempre; y aunque alguien cayera de él y pecara, sin embargo siempre tenemos acceso a él, para someter de nuevo al viejo hombre.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Therefore our Baptism abides forever; and even though some one should fall from it and sin, nevertheless we always have access thereto, that we may again subdue the old man.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "IV.77–79 (Lutero); sentence/fragment at web anchor lc-iv-0077 (unpaginated)",
+        },
+        at: "IV.77–79 (Lutero)",
+        source: {
+          url: "https://bookofconcord.org/large-catechism/holy-baptism/#lc-iv-0077",
+          locator: "IV.77–79 (Lutero); sentence/fragment at web anchor lc-iv-0077 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1529,
     },
@@ -2700,7 +3918,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Y porque inmediatamente después de los tiempos de los apóstoles, e incluso cuando ellos aún vivían, surgieron falsos maestros y herejes, y se compusieron contra ellos en la Iglesia primitiva símbolos, es decir, confesiones breves y concisas [categóricas], que fueron tenidas por la fe y confesión cristiana unánime y universal de la Iglesia ortodoxa y verdadera, a saber, el Credo de los Apóstoles, el Credo de Nicea y el Credo de Atanasio, nos obligamos a ellos y por la presente rechazamos todas las herejías y dogmas que, contrarios a ellos, se han introducido en la Iglesia de Dios.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "And because directly after the times of the apostles, and even while they were still living, false teachers and heretics arose, and symbols, i. e., brief, succinct [categorical] confessions, were composed against them in the early Church, which were regarded as the unanimous, universal Christian faith and confession of the orthodox and true Church, namely, the Apostles' Creed, the Nicene Creed, and the Athanasian Creed, we pledge ourselves to them, and hereby reject all heresies and dogmas which, contrary to them, have been introduced into the Church of God.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "RN 3; sentence/fragment at web anchor ep-rule-and-norm-0003 (unpaginated)",
+        },
+        at: "RN 3",
+        source: {
+          url: "https://bookofconcord.org/epitome/rule-and-norm/#ep-rule-and-norm-0003",
+          locator: "RN 3; sentence/fragment at web anchor ep-rule-and-norm-0003 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1577,
     },
@@ -2987,7 +4240,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pero esta es la opinión de ellos: que el poder de las Llaves, o el poder de los obispos, según el Evangelio, es un poder o mandato de Dios para predicar el Evangelio, remitir y retener pecados y administrar los Sacramentos.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "But this is their opinion, that the power of the Keys, or the power of the bishops, according to the Gospel, is a power or commandment of God, to preach the Gospel, to remit and retain sins, and to administer Sacraments.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "XXVIII.5; sentence/fragment at web anchor ac-xxviii-0005 (unpaginated)",
+        },
+        at: "XXVIII.5",
+        source: {
+          url: "https://bookofconcord.org/augsburg-confession/of-ecclesiastical-power/#ac-xxviii-0005",
+          locator: "XXVIII.5; sentence/fragment at web anchor ac-xxviii-0005 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1530,
       month: 6,
@@ -3010,7 +4298,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "En primer lugar, pues, mostremos por el [santo] Evangelio que el obispo romano no está por derecho divino por encima de [no puede arrogarse supremacía alguna sobre] los demás obispos y pastores.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "In the first place, therefore, let us show from the [holy] Gospel that the Roman bishop is not by divine right above [cannot arrogate to himself any supremacy whatever over] other bishops and pastors.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "7; sentence/fragment at web anchor tr-i-0007 (unpaginated)",
+        },
+        at: "7",
+        source: {
+          url: "https://bookofconcord.org/power-and-primacy/treatise-compiled-at-smalcald/#tr-i-0007",
+          locator: "7; sentence/fragment at web anchor tr-i-0007 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1537,
     },
@@ -3031,7 +4354,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Que el Papa no es, según el derecho divino ni según la Palabra de Dios, la cabeza de toda la cristiandad (pues este [nombre] pertenece a Uno solo, cuyo nombre es Jesucristo), sino solamente el obispo y pastor de la Iglesia de Roma, y de aquellos que voluntariamente, o por una criatura humana (es decir, un magistrado político), se han unido a él, para ser cristianos, no bajo él como bajo un señor, sino con él como hermanos [colegas] y compañeros, como muestran los antiguos concilios y la época de san Cipriano.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "That the Pope is not, according to divine law or according to the Word of God the head of all Christendom (for this [name] belongs to One only, whose name is Jesus Christ), but is only the bishop and pastor of the Church at Rome, and of those who voluntarily or through a human creature (that is, a political magistrate) have attached themselves to him, to be Christians, not under him as a lord, but with him as brethren [colleagues] and comrades, as the ancient councils and the age of St. Cyprian show.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "II.4.1; sentence/fragment at web anchor sa-ii-iv-0001 (unpaginated)",
+        },
+        at: "II.4.1",
+        source: {
+          url: "https://bookofconcord.org/smalcald-articles/ii/of-the-papacy/#sa-ii-iv-0001",
+          locator: "II.4.1; sentence/fragment at web anchor sa-ii-iv-0001 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1537,
     },
@@ -3052,7 +4410,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Y suponiendo que el Papa cediera en este punto, de modo que no fuera supremo por derecho divino ni por mandato de Dios, sino que hubiera que tener [que elegir] una [cierta] cabeza, a la cual se adhirieran todos los demás [como su apoyo] para que se conserve la [concordia y] unidad de los cristianos frente a sectas y herejes, y que tal cabeza fuera elegida por los hombres, y que estuviera dentro de la elección y el poder de los hombres cambiar o remover esta cabeza, tal como el Concilio de Constanza siguió casi este camino con respecto a los Papas, deponiendo a tres y eligiendo a un cuarto; suponiendo, digo, que el Papa y la Sede de Roma cedieran y aceptaran esto (lo cual, sin embargo, es imposible; […]), sin embargo, aun así no se ayudaría a la cristiandad, sino que surgirían muchas más sectas que antes.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "And supposing that the Pope would yield this point, so as not to be supreme by divine right or from God’s command, but that we must have [there must be elected] a [certain] head, to whom all the rest adhere [as their support] in order that the [concord and] unity of Christians may be preserved against sects and heretics, and that such a head were chosen by men, and that it were placed within the choice and power of men to change or remove this head, just as the Council of Constance adopted nearly this course with reference to the Popes, deposing three and electing a fourth; supposing, I say, that the Pope and See at Rome would yield and accept this (which, nevertheless, is impossible; […]), nevertheless, even in this way Christianity would not be helped, but many more sects would arise than before.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "II.4.7–9; sentence/fragment at web anchor sa-ii-iv-0007 (unpaginated)",
+        },
+        at: "II.4.7–9",
+        source: {
+          url: "https://bookofconcord.org/smalcald-articles/ii/of-the-papacy/#sa-ii-iv-0007",
+          locator: "II.4.7–9; sentence/fragment at web anchor sa-ii-iv-0007 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "MUST FIX: the quote was only the supposition; the Articles' answer added, the parenthesis shortened with […]",
+            textBeforeCorrection:
+              "And supposing that the Pope would yield this point, so as not to be supreme by divine right or from God’s command, but that we must have [there must be elected] a [certain] head, to whom all the rest adhere [as their support] in order that the [concord and] unity of Christians may be preserved against sects and heretics, and that such a head were chosen by men, and that it were placed within the choice and power of men to change or remove this head, just as the Council of Constance adopted nearly this course with reference to the Popes, deposing three and electing a fourth; supposing, I say, that the Pope and See at Rome would yield and",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1537,
     },
@@ -3073,7 +4477,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pero puesto que las decisiones de los Sínodos son las decisiones de la Iglesia, y no de los Papas, corresponde especialmente a los reyes refrenar la licencia de los Papas [no consentir tal desenfreno] y procurar que no se arrebate a la Iglesia el poder de juzgar y decretar según la Palabra de Dios. Y así como el resto de los cristianos debe censurar todos los demás errores del Papa, así debe también reprender al Papa cuando este elude y estorba la verdadera investigación y la verdadera decisión de la Iglesia.",
+          edition: "triglot.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). English text read in the BookOfConcord.org web transcription of the Triglot, not the print page; the German and Latin originals were not read.",
+          derivedFrom: "triglot.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "But since the decisions of Synods are the decisions of the Church, and not of the Popes, it is especially incumbent on kings to check the license of the Popes [not allow such wantonness], and to act so that the power of judging and decreeing from the Word of God is not wrested from the Church. And as the rest of the Christians must censure all other errors of the Pope, so they must also rebuke the Pope when he evades and impedes the true investigation and true decision of the Church.",
+          edition: "triglot.en",
+          label:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          page: "56; sentence/fragment at web anchor tr-i-0056 (unpaginated)",
+        },
+        at: "56",
+        source: {
+          url: "https://bookofconcord.org/power-and-primacy/treatise-compiled-at-smalcald/#tr-i-0056",
+          locator: "56; sentence/fragment at web anchor tr-i-0056 (unpaginated)",
+          edition:
+            "F. Bente and W. H. T. Dau (eds./trans.), Concordia Triglotta: The Symbolical Books of the Evangelical Lutheran Church, German-Latin-English, St. Louis: Concordia Publishing House, 1921; English web transcription, BookOfConcord.org.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: BookOfConcord.org Triglot transcription; numbered anchor inspected and quoted string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      selection:
+        "Selected sentence(s) within or overlapping the cited range; Spanish is an AI translation from the English, labelled (session A2, 2026-11-01); no original-language witness was read.",
+    },
     date: {
       year: 1537,
     },
@@ -3484,7 +4923,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pertenece á los sínodos y á los concílios el decidir ministerialmente cuestiones con respecto de la fé, el resolver casos de conciencia, el asentar reglas é instrucciones para el mejor gobierno en el culto público, y la disciplina de la iglesia de Dios, el oir y el determinar autoritativamente quejas respecto de los casos de mala administracion y sus decretos y decisiones cuando concuerden con la palabra de Dios, deben recibirse con reverencia y sumision, no solo por ser conformes á esta palabra, sino tambien porque la autoridad de dichos sínodos y concílios viene de Dios, pues así lo ordena en su palabra.",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 154; XXXI.II (the 1894 English numbers it III); archive leaf n155",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "It belongeth to synods and councils ministerially to determine controversies of faith, and cases of conscience; to set down rules and directions for the better ordering of the publick worship of God, and government of his church; to receive complaints in cases of maladministration, and authoritatively to determine the same: which decrees and determinations, if consonant to the word of God, are to be received with reverence and submission, not only for their agreement with the word, but also for the power whereby they are made, as being an ordinance of God, appointed thereunto in his word.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 97; 31.3–4; archive leaf n100",
+        },
+        at: "31.3–4",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n100/mode/1up",
+          locator: "p. 97; 31.3–4; archive leaf n100",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence; this id and the other (RWCF31_3 / RWCF31_3_4) carry the same text: ids kept, the repo's id list is not edited here",
+            textBeforeCorrection:
+              "It belongeth to synods and councils ministerially to determine controversies of faith, and cases of conscience; to set down rules and directions for the better ordering of the publick worship of God, and government of his church",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -3901,7 +5386,60 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Los libros que comunmente se titulan Apócrifos, por no ser de inspiracion divina, no son parte del Canon de las Sagradas Escrituras; y por lo mismo, no son de autoridad para la Iglesia de Dios; ni deben ser aprobados ni usados, sino de la misma manera de la que son otros escritos humanos.",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 7; I.III; archive leaf n8",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture; and therefore are of no authority in the Church of God, nor to be any otherwise approved, or made use of, than other human writings.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 18; 1.3; archive leaf n21",
+        },
+        at: "1.3",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n21/mode/1up",
+          locator: "p. 18; 1.3; archive leaf n21",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection:
+              "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+          {
+            label: "correction V2",
+            date: "2026-11-01 (session A2, after verifier V4)",
+            what: "capital C: the 1894 page image (p. 18) prints «Church of God»",
+            textBefore:
+              "The Books commonly called Apocrypha, not being of divine inspiration, are no part of the canon of the scripture; and therefore are of no authority in the church of God, nor to be any otherwise approved, or made use of, than other human writings.",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -3922,7 +5460,52 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Se requiere de los que oyen predicar la palabra, que le presten atención con diligencia, preparación y oración; […]",
+          edition: "site-translation.wlc.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
+          derivedFrom: "wcat.en",
+          tag: "[unverified: AI Spanish, unreviewed by Pedro]",
+        },
+        en: {
+          text: "It is required of those that hear the word preached, that they attend upon it with diligence, preparation and prayer; […]",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 199; 160; archive leaf n202",
+        },
+        at: "160",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n202/mode/1up",
+          locator: "p. 199; 160; archive leaf n202",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: next clause added, then […]",
+            textBeforeCorrection: "It is required of those that hear the word preached, that they attend upon it",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism.",
+    },
     date: {
       year: 1647,
     },
@@ -4229,7 +5812,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Pertenece á los sínodos y á los concílios el decidir ministerialmente cuestiones con respecto de la fé, el resolver casos de conciencia, el asentar reglas é instrucciones para el mejor gobierno en el culto público, y la disciplina de la iglesia de Dios, el oir y el determinar autoritativamente quejas respecto de los casos de mala administracion y sus decretos y decisiones cuando concuerden con la palabra de Dios, deben recibirse con reverencia y sumision, no solo por ser conformes á esta palabra, sino tambien porque la autoridad de dichos sínodos y concílios viene de Dios, pues así lo ordena en su palabra.",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 154; XXXI.II (the 1894 English numbers it III); archive leaf n155",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "It belongeth to synods and councils ministerially to determine controversies of faith, and cases of conscience; to set down rules and directions for the better ordering of the publick worship of God, and government of his church; to receive complaints in cases of maladministration, and authoritatively to determine the same: which decrees and determinations, if consonant to the word of God, are to be received with reverence and submission, not only for their agreement with the word, but also for the power whereby they are made, as being an ordinance of God, appointed thereunto in his word.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 97; 31.3; archive leaf n100",
+        },
+        at: "31.3",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n100/mode/1up",
+          locator: "p. 97; 31.3; archive leaf n100",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence; this id and the other (RWCF31_3 / RWCF31_3_4) carry the same text: ids kept, the repo's id list is not edited here",
+            textBeforeCorrection:
+              "It belongeth to synods and councils ministerially to determine controversies of faith, and cases of conscience; to set down rules and directions for the better ordering of the publick worship of God, and government of his church",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -4250,7 +5879,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Todos los sínodos ó concílios despues de los tiempos de los apostoles, sean generales o particulares, están expuestos á errar, y muchos de ellos han errado; por esto sus decisiones no deben tenerse como reglas de fé o de práctica, sino como una ayuda en todo lo que pertenece á estos.",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 155; XXXI.III (the 1894 English numbers it IV); archive leaf n156",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "All synods or councils since the apostles’ times, whether general or particular, may err, and many have erred; therefore they are not to be made the rule of faith or practice, but to be used as an help in both.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 97; 31.4; archive leaf n100",
+        },
+        at: "31.4",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n100/mode/1up",
+          locator: "p. 97; 31.4; archive leaf n100",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -4271,7 +5935,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Los sínodos y los concílios no deben ocuparse sino en lo que sea puramente eclesiástico; y no deben entrometerse en las cosas políticas que conciernen al gobierno civil, sino solamente por via de peticiones respetuosas en casos extraordinários; ó por via de consejos para satisfacer la conciencia; si á eso son excitados por el magistrado civil.",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 155; XXXI.IV (the 1894 English numbers it V); archive leaf n156",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "Synods and councils are to handle or conclude nothing but that which is ecclesiastical; and are not to intermeddle with civil affairs, which concern the commonwealth, unless by way of humble petition, in cases extraordinary; or by way of advice for satisfaction of conscience, if they be thereunto required by the civil magistrate.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 97; 31.5; archive leaf n100",
+        },
+        at: "31.5",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n100/mode/1up",
+          locator: "p. 97; 31.5; archive leaf n100",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection:
+              "Synods and councils are to handle or conclude nothing but that which is ecclesiastical",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -4750,7 +6460,46 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Creemos que hay en la Iglesia Misterios evangélicos [es decir, Sacramentos de la dispensación del Evangelio], y que son siete.",
+          edition: "site-translation.dositheus.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde J. N. W. B. Robertson (trans.), The Acts and Decrees of the Synod of Jerusalem, London: Thomas Baker, 1899.",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+          derivedFrom: "robertson.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "We believe that there are in the Church Evangelical Mysteries [i.e., Sacraments of the Gospel Dispensation], and that they are seven.",
+          edition: "robertson.en",
+          label:
+            "J. N. W. B. Robertson (trans.), The Acts and Decrees of the Synod of Jerusalem, London: Thomas Baker, 1899.",
+          page: "p. 135; Decree XV",
+        },
+        at: "XV",
+        source: {
+          url: "https://archive.org/details/actsdecreesofsyn00orth",
+          locator: "p. 135; Decree XV",
+          edition:
+            "J. N. W. B. Robertson (trans.), The Acts and Decrees of the Synod of Jerusalem, London: Thomas Baker, 1899.",
+          checkedAt: "2026-11-01",
+          verificationAttempt:
+            "Robertson 1899 scan-backed OCR reads [z.e.] where candidate normalizes [i.e.]; bracket glyph has not been visually collated. Metadata and the full OCR were fetched from actsdecreesofsyn00orth.",
+        },
+      },
+    ],
+    research: {
+      status: "unverified",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired.",
+      reason:
+        "Robertson 1899 scan-backed OCR reads [z.e.] where candidate normalizes [i.e.]; bracket glyph has not been visually collated. Metadata and the full OCR were fetched from actsdecreesofsyn00orth.",
+      tag: "[unverified]",
+    },
     date: {
       year: 1672,
     },
@@ -5113,7 +6862,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "La santa Eucaristía, o el Cuerpo y la Sangre de nuestro Señor Jesucristo, bajo las Especies visibles de Pan y Vino: en la cual, real y propiamente, y según la Cosa misma, Jesucristo está presente.",
+          edition: "mogila.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+          derivedFrom: "overbeck.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "The holy Eucharist, or the Body and Blood of our Lord Jesus Christ, under the visible Species of Bread and Wine: Wherein, really and properly, and according to the Thing itself, Jesus Christ is present.",
+          edition: "overbeck.en",
+          label:
+            "Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
+          page: "p. 79; Part I, question 106",
+        },
+        at: "106",
+        source: {
+          url: "https://archive.org/details/cu31924029363094",
+          locator: "p. 79; Part I, question 106",
+          edition:
+            "Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org dated scan-backed OCR; question/decree located, line-end hyphens, whitespace and obvious OCR glyph errors normalized 2026-11-01; not a full visual collation]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired.",
+    },
     date: {
       year: 1643,
     },
@@ -5134,7 +6918,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Primero, que ningún hombre presuma administrar este Misterio, en ocasión alguna, por urgente que sea; sino solo un Sacerdote legítimamente ordenado.",
+          edition: "mogila.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+          derivedFrom: "overbeck.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "First, That no man do presume to administer this Mystery, on any Occasion whatsoever, although ever so urgent; but only a Priest lawfully ordained.",
+          edition: "overbeck.en",
+          label:
+            "Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
+          page: "p. 79; Part I, question 107",
+        },
+        at: "107",
+        source: {
+          url: "https://archive.org/details/cu31924029363094",
+          locator: "p. 79; Part I, question 107",
+          edition:
+            "Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church, J. J. Overbeck (ed.), introduction by J. N. W. B. Robertson, London: Thomas Baker, 1898; the scan’s own introductory notice says the old English translation was «originally published in 1772» and gives its translator’s death as 1767 (internally inconsistent; no date for the first printing is claimed here).",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org dated scan-backed OCR; question/decree located, line-end hyphens, whitespace and obvious OCR glyph errors normalized 2026-11-01; not a full visual collation]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired.",
+    },
     date: {
       year: 1643,
     },
@@ -5527,7 +7346,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Es griego, y significa los libros. El nombre significa que los libros sagrados merecen atención antes que todos los demás.",
+          edition: "schaff.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+          derivedFrom: "schaff.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "It is Greek, and means the books. The name signifies that the sacred books deserve attention before all others.",
+          edition: "schaff.en",
+          label:
+            "Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
+          page: "p. 449; question 20",
+        },
+        at: "20",
+        source: {
+          url: "https://archive.org/details/creedschristendo02scha",
+          locator: "p. 449; question 20",
+          edition:
+            "Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org dated scan-backed OCR; question/decree located, line-end hyphens, whitespace and obvious OCR glyph errors normalized 2026-11-01; not a full visual collation]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired.",
+    },
     date: {
       year: 1839,
     },
@@ -5548,7 +7402,57 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Todos los verdaderos creyentes, unidos por la santa tradición de la fe, colectiva y sucesivamente, por voluntad de Dios, componen la Iglesia; y ella es la depositaria segura de la santa tradición, o, como la llama san Pablo, La Iglesia del Dios viviente, columna y fundamento de la verdad.",
+          edition: "schaff.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3). The Greek, Latin and Russian originals were not acquired.",
+          derivedFrom: "schaff.en",
+          tag: "[unverified: AI Spanish from the English, unreviewed by Pedro]",
+        },
+        en: {
+          text: "All true believers united by the holy tradition of the faith, collectively and successively, by the will of God, compose the Church; and she is the sure repository of holy tradition, or, as St. Paul expresses it, The Church of the living God, the pillar and ground of the truth.",
+          edition: "schaff.en",
+          label:
+            "Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
+          page: "p. 448; question 18",
+        },
+        at: "18",
+        source: {
+          url: "https://archive.org/details/creedschristendo02scha",
+          locator: "p. 448; question 18",
+          edition:
+            "Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church, English translation in Philip Schaff, The Creeds of Christendom, vol. II, New York: Harper & Brothers, 1896 (copyright 1877).",
+          checkedAt: "2026-11-01",
+          verificationAttempt:
+            "Schaff 1896 scan-backed OCR reads lioly where candidate reads holy. Metadata, title-page OCR and question 18 were fetched from creedschristendo02scha; passage image not collated.",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection:
+              "All true believers united by the holy tradition of the faith, collectively and successively, by the will of God, compose the Church; and she is the sure repository of holy tradition",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "unverified",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A2, 2026-11-01, decision 3 of the DECISIONS entry «Independence of apologists and the 1689…»); no Greek or Russian witness acquired.",
+      reason:
+        "Schaff 1896 scan-backed OCR reads lioly where candidate reads holy. Metadata, title-page OCR and question 18 were fetched from creedschristendo02scha; passage image not collated.",
+      tag: "[unverified]",
+    },
     date: {
       year: 1839,
     },
@@ -6004,7 +7908,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "para que fuese observado en su iglesia, hasta el fin del mundo; para ser un recuerdo perpetuo del sacrifício de sí mismo por su muerte, para sellar á los verdaderos creyentes los benefícios de ella, para su alimentacion espiritual y crecimiento en El, y para hacerles mas devotos en el cumplimiento de todos sus deberes para con El; y para que fuese un lazo y una prenda de su comunion con Él y de la de los unos con los otros, como miembros de su cuerpo místico.",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 145; XXIX.I; archive leaf n146",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "to be observed in his church unto the end of the world, for the perpetual remembrance of the sacrifice of himself in his death, the sealing all benefits thereof unto true believers, their spiritual nourishment and growth in him, their further engagement in and to all duties which they owe unto him, and to be a bond and pledge of their communion with him, and with each other, as members of his mystical body.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 93; 29.1; archive leaf n96",
+        },
+        at: "29.1",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n96/mode/1up",
+          locator: "p. 93; 29.1; archive leaf n96",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection:
+              "to be observed in his church unto the end of the world, for the perpetual remembrance of the sacrifice of himself in his death",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -6053,7 +8003,42 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "pero con todo, permanecen todavia en sustancia y naturaleza, verdadera y solamente, pan y vino, tales como fueron antes",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 148; XXIX.V; archive leaf n149",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "albeit, in substance and nature, they still remain truly and only bread and wine, as they were before.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 94; 29.5; archive leaf n97",
+        },
+        at: "29.5",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n97/mode/1up",
+          locator: "p. 94; 29.5; archive leaf n97",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -6102,7 +8087,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Aunque los ignorantes y malvados reciban los elementos materiales en este sacramento, sin embargo, no reciben la cosa significada por ellos; sino acercándose indignamente á ellos se hacen culpables del cuerpo y sangre del Señor, para condenacion.",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 150; XXIX.VIII; archive leaf n151",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby; but by their unworthy coming thereunto are guilty of the body and blood of the Lord, to their own damnation.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 95; 29.8; archive leaf n98",
+        },
+        at: "29.8",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n98/mode/1up",
+          locator: "p. 95; 29.8; archive leaf n98",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection:
+              "Although ignorant and wicked men receive the outward elements in this sacrament, yet they receive not the thing signified thereby",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -6123,7 +8154,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "El Señor Jesus ha determinado con respecto á esta ordenanza, que sus ministros declarasen las palabras de institucion al pueblo, que orasen y bendijesen los elementos del pan y del vino, y que los apartasen así de los usos ordinários á los servicios sagrados […]",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 147; XXIX.III; archive leaf n148",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "The Lord Jesus hath, in this ordinance, appointed his ministers to declare his word of institution to the people, to pray, and bless the elements of bread and wine, and thereby to set them apart from a common to a holy use; […]",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 93; 29.3; archive leaf n96",
+        },
+        at: "29.3",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n96/mode/1up",
+          locator: "p. 93; 29.3; archive leaf n96",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: […] added",
+            textBeforeCorrection:
+              "The Lord Jesus hath, in this ordinance, appointed his ministers to declare his word of institution to the people, to pray, and bless the elements of bread and wine, and thereby to set them apart from a common to a holy use",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -6144,7 +8221,59 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "es necesario que hagan un exámen, del conocimiento que tienen para distinguir al cuerpo del Señor: de su fé para alimentarse en él; de su arrepentimiento, amor y nueva obediencia, para que no sea, que recibiendo indignamente el sacramento, coman y beban su propia condenacon [sic].",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 205; Catecismo menor, P. 97; archive leaf n206",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[verified: page image of the 1880 Monterrey volume (archive.org doctrinasyreglam00west, leaf n206, p. 205) read by verifier V4 on 2026-11-01: the Spanish is the page's, with the misprint «condenacon» kept and marked [sic]; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read. RWSC97 only (verifier V1 read the page image): the page prints «obediencia» (no accent), a comma after «sea» and the misprint «condenacon», kept here as [sic].",
+        },
+        en: {
+          text: "that they examine themselves of their knowledge to discern the Lord’s body, of their faith to feed upon him, of their repentance, love, and new obedience; lest, coming unworthily, they eat and drink judgment to themselves.",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 246; 97; archive leaf n249",
+        },
+        at: "97",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n249/mode/1up",
+          locator: "p. 246; 97; archive leaf n249",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection: "that they examine themselves of their knowledge to discern the Lord’s body",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+          {
+            label: "correction V1",
+            date: "2026-11-01 (session A, after verifier V1)",
+            what: "Spanish text brought to the page image's reading",
+            textBefore:
+              "es necesario que hagan un exámen, del conocimiento que tienen para distinguir al cuerpo del Señor: de su fé para alimentarse en él; de su arrepentimiento, amor y nueva obediência, para que no sea que recibiendo indignamente el sacramento, coman y beban su propia condenacion.",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -6165,7 +8294,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Quienes reciben el sacramento de la cena del Señor deben, antes de acercarse, prepararse para ello examinándose a sí mismos […]",
+          edition: "site-translation.wlc.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
+          derivedFrom: "wcat.en",
+          tag: "[unverified: AI Spanish, unreviewed by Pedro]",
+        },
+        en: {
+          text: "They that receive the sacrament of the Lord’s supper are, before they come, to prepare themselves thereunto, by examining themselves […]",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 204; 171; archive leaf n207",
+        },
+        at: "171",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n207/mode/1up",
+          locator: "p. 204; 171; archive leaf n207",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: […] added; this id and RWLC171 / RWLC171_172 carry the same text: ids kept",
+            textBeforeCorrection:
+              "They that receive the sacrament of the Lord’s supper are, before they come, to prepare themselves thereunto, by examining themselves",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism.",
+    },
     date: {
       year: 1647,
     },
@@ -6214,7 +8389,60 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Las misas privadas, ó la recepcion de este sacramento por un sacerdote, ó por cualquiera otra persona cuando esté sola; como tambien la negacion del cáliz al pueblo; la adoracion de los elementos, el elevarlos, ó llevarlos en procesion ó de otra manera cualquiera para recibir adoracion, y la conservacion de ellos para supuestos usos religiosos, son todas costumbres y prácticas contrarias á la naturaleza de este sacramento, y á la institucion de Cristo.",
+          edition: "wcf.es",
+          label:
+            "Doctrinas y reglamentos de la Iglesia Presbiteriana, formulados por la Asamblea de Westminster, traducido del inglés, Monterrey, Tipografía del Comercio, 1880 (dominio público); scan archive.org doctrinasyreglam00west.",
+          page: "p. 148; XXIX.IV; archive leaf n149",
+          translationNote: "published Spanish edition (1880), not AI",
+          tag: "[unverified: page-level OCR of the 1880 Spanish scan; the words were read in the OCR and normalised as stated, no page image collated; chapter section numbers of the 1880 volume differ from the 1894 English for WCF 31 (II, III, IV there = 3, 4, 5 here)]",
+          normalisation:
+            "OCR glyphs normalised by session A (e.g. «dei»→«del», «Senor»/«Seiíor»→«Señor», «liaber»→«haber», stray symbols removed); the page image was not read.",
+        },
+        en: {
+          text: "Private masses, or receiving this sacrament by a priest, or any other, alone; as likewise the denial of the cup to the people; worshipping the elements, the lifting them up, or carrying them about for adoration, and the reserving them for any pretended religious use; are all contrary to the nature of this sacrament, and to the institution of Christ.",
+          edition: "wcf.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 94; 29.4; archive leaf n97",
+        },
+        at: "29.4",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n97/mode/1up",
+          locator: "p. 94; 29.4; archive leaf n97",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "MUST FIX: the verdict clause was missing; the full sentence from its start",
+            textBeforeCorrection:
+              "the lifting them up, or carrying them about for adoration, and the reserving them for any pretended religious use",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+          {
+            label: "correction V1",
+            date: "2026-11-01 (session A, after verifier V1)",
+            what: "punctuation as printed on the 1894 page (no comma after «likewise»; a semicolon after «people»); page field «p. 94»",
+            textBefore:
+              "Private masses, or receiving this sacrament by a priest, or any other, alone; as likewise, the denial of the cup to the people, worshipping the elements, the lifting them up, or carrying them about for adoration, and the reserving them for any pretended religious use; are all contrary to the nature of this sacrament, and to the institution of Christ.",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "Level 1: published Spanish edition (Monterrey 1880), read in page-level OCR, tagged unverified (session A, 2026-11-01); page image not read.",
+    },
     date: {
       year: 1647,
     },
@@ -6235,7 +8463,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Quienes reciben el sacramento de la cena del Señor deben, antes de acercarse, prepararse para ello examinándose a sí mismos […]",
+          edition: "site-translation.wlc.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
+          derivedFrom: "wcat.en",
+          tag: "[unverified: AI Spanish, unreviewed by Pedro]",
+        },
+        en: {
+          text: "They that receive the sacrament of the Lord’s supper are, before they come, to prepare themselves thereunto, by examining themselves […]",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 204; 171–172; archive leaf n207",
+        },
+        at: "171–172",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n207/mode/1up",
+          locator: "p. 204; 171–172; archive leaf n207",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: […] added; this id and RWLC171 / RWLC171_172 carry the same text: ids kept",
+            textBeforeCorrection:
+              "They that receive the sacrament of the Lord’s supper are, before they come, to prepare themselves thereunto, by examining themselves",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism.",
+    },
     date: {
       year: 1647,
     },
@@ -6256,7 +8530,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Cristo ha designado a los ministros de su palabra, en la administración de este sacramento de la cena del Señor, para apartar el pan y el vino del uso común, por la palabra de institución, la acción de gracias y la oración; […]",
+          edition: "site-translation.wlc.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
+          derivedFrom: "wcat.en",
+          tag: "[unverified: AI Spanish, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Christ hath appointed the ministers of his word, in the administration of this sacrament of the Lord’s supper, to set apart the bread and wine from common use, by the word of institution, thanksgiving, and prayer; […]",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 203; 169; archive leaf n206",
+        },
+        at: "169",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n206/mode/1up",
+          locator: "p. 203; 169; archive leaf n206",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: […] added",
+            textBeforeCorrection:
+              "Christ hath appointed the ministers of his word, in the administration of this sacrament of the Lord’s supper, to set apart the bread and wine from common use, by the word of institution, thanksgiving, and prayer",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism.",
+    },
     date: {
       year: 1647,
     },
@@ -6277,7 +8597,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Se requiere de quienes reciben el sacramento de la cena del Señor que, durante el tiempo de su administración, con toda santa reverencia y atención esperen en Dios en esa ordenanza […]",
+          edition: "site-translation.wlc.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
+          derivedFrom: "wcat.en",
+          tag: "[unverified: AI Spanish, unreviewed by Pedro]",
+        },
+        en: {
+          text: "It is required of them that receive the sacrament of the Lord’s supper, that, during the time of the administration of it, with all holy reverence and attention they wait upon God in that ordinance […]",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 207; 174; archive leaf n210",
+        },
+        at: "174",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n210/mode/1up",
+          locator: "p. 207; 174; archive leaf n210",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: […] added",
+            textBeforeCorrection:
+              "It is required of them that receive the sacrament of the Lord’s supper, that, during the time of the administration of it, with all holy reverence and attention they wait upon God in that ordinance",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism.",
+    },
     date: {
       year: 1647,
     },
@@ -6298,7 +8664,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "El deber de los cristianos, después de haber recibido el sacramento de la cena del Señor, es considerar seriamente cómo se han comportado en él, y con qué resultado […]",
+          edition: "site-translation.wlc.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
+          derivedFrom: "wcat.en",
+          tag: "[unverified: AI Spanish, unreviewed by Pedro]",
+        },
+        en: {
+          text: "The duty of Christians, after they have received the sacrament of the Lord’s supper, is seriously to consider how they have behaved themselves therein, and with what success […]",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 208; 175; archive leaf n211",
+        },
+        at: "175",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n211/mode/1up",
+          locator: "p. 208; 175; archive leaf n211",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: […] added",
+            textBeforeCorrection:
+              "The duty of Christians, after they have received the sacrament of the Lord’s supper, is seriously to consider how they have behaved themselves therein, and with what success",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism.",
+    },
     date: {
       year: 1647,
     },
@@ -6319,7 +8731,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Quienes resulten ignorantes o escandalosos, no obstante su profesión de fe, y deseen acercarse a la cena del Señor, pueden y deben ser apartados de ese sacramento, por el poder que Cristo ha dejado en su iglesia, hasta que reciban instrucción y manifiesten su enmienda.",
+          edition: "site-translation.wlc.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
+          derivedFrom: "wcat.en",
+          tag: "[unverified: AI Spanish, unreviewed by Pedro]",
+        },
+        en: {
+          text: "Such as are found to be ignorant or scandalous, notwithstanding their profession of the faith, and desire to come to the Lord’s supper, may and ought to be kept from that sacrament, by the power which Christ hath left in his church, until they receive instruction, and manifest their reformation.",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "pp. 206–207; 173; archive leaves n209–n210",
+        },
+        at: "173",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n209/mode/1up",
+          locator: "pp. 206–207; 173; archive leaves n209–n210",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "MUST FIX: subject without predicate; predicate is on the next leaf",
+            textBeforeCorrection:
+              "Such as are found to be ignorant or scandalous, notwithstanding their profession of the faith",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism.",
+    },
     date: {
       year: 1647,
     },
@@ -6340,7 +8798,53 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Los sacramentos del bautismo y de la cena del Señor difieren en que el bautismo ha de administrarse una sola vez, con agua, como señal y sello de nuestra regeneración e injerto en Cristo, y esto aun a los niños […]",
+          edition: "site-translation.wlc.es",
+          label:
+            "Traducción de Doctrina asistida por IA, desde The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894. (the 1880 Spanish volume does not contain the Larger Catechism)",
+          translation: "ai-assisted",
+          translationNote:
+            "[traducción de Doctrina asistida por IA] from the English text of the edition above; unreviewed by Pedro (DECISIONS 2026-11-01, decision 3).",
+          derivedFrom: "wcat.en",
+          tag: "[unverified: AI Spanish, unreviewed by Pedro]",
+        },
+        en: {
+          text: "The sacraments of baptism and the Lord’s supper differ, in that baptism is to be administered but once, with water, to be a sign and seal of our regeneration and ingrafting into Christ, and that even to infants […]",
+          edition: "wcat.en",
+          label:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          page: "p. 210; 177; archive leaf n213",
+        },
+        at: "177",
+        source: {
+          url: "https://archive.org/details/confessionoffaith00chur/page/n213/mode/1up",
+          locator: "p. 210; 177; archive leaf n213",
+          edition:
+            "The Confession of Faith; the Larger and Shorter Catechisms, with the Scripture-Proofs at Large, Edinburgh: Johnstone, Hunter & Co., 1894.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: archive.org 1894 scan-backed OCR; numbered passage located, whitespace, line-end hyphens and proof-text markers normalized; title-page image checked 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the clause end, then […]",
+            textBeforeCorrection:
+              "The sacraments of baptism and the Lord’s supper differ, in that baptism is to be administered but once, with water, to be a sign and seal of our regeneration and ingrafting into Christ",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+      spanishStatus:
+        "AI Spanish from the English, labelled (session A 2026-11-01, labelled to decision 3 on 2026-11-01 evening); the 1880 Spanish volume has no Larger Catechism.",
+    },
     date: {
       year: 1647,
     },
@@ -8499,7 +11003,41 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: 'A esta enseñanza ordinaria, los fieles deben "adherirse con espíritu de obediencia religiosa" (LG 25) que, aunque distinto del asentimiento de la fe, es una prolongación de él.',
+          edition: "cec.es",
+          label:
+            "Catecismo de la Iglesia Católica (1992; Latin editio typica 1997), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01; no printed Spanish imprint collated.",
+          page: "892 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "892",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p123a9p4_sp.html",
+          locator: "892 (official HTML, unpaginated)",
+          edition:
+            "Catecismo de la Iglesia Católica (1992; Latin editio typica 1997), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01; no printed Spanish imprint collated.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "MUST FIX: the relative clause was omitted",
+            textBeforeCorrection:
+              'A esta enseñanza ordinaria, los fieles deben "adherirse con espíritu de obediencia religiosa"',
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -8880,7 +11418,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "es también, en unión con su cabeza y nunca sin esa cabeza, sujeto de la potestad suprema y plena sobre toda la Iglesia.",
+          edition: "cic.es",
+          label:
+            "Código de Derecho Canónico (1983), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          page: "336 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "336",
+        source: {
+          url: "https://www.vatican.va/archive/cod-iuris-canonici/esp/documents/cic_libro2_cann336-341_sp.html",
+          locator: "336 (official HTML, unpaginated)",
+          edition:
+            "Código de Derecho Canónico (1983), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 1983,
     },
@@ -8905,7 +11466,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "La potestad del Colegio de los Obispos sobre toda la Iglesia se ejerce de modo solemne en el Concilio Ecuménico.",
+          edition: "cic.es",
+          label:
+            "Código de Derecho Canónico (1983), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          page: "337 1 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "337 1",
+        source: {
+          url: "https://www.vatican.va/archive/cod-iuris-canonici/esp/documents/cic_libro2_cann336-341_sp.html",
+          locator: "337 1 (official HTML, unpaginated)",
+          edition:
+            "Código de Derecho Canónico (1983), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 1983,
     },
@@ -8930,7 +11514,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "son confirmados por el Papa y promulgados por mandato suyo.",
+          edition: "cic.es",
+          label:
+            "Código de Derecho Canónico (1983), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          page: "341 1 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "341 1",
+        source: {
+          url: "https://www.vatican.va/archive/cod-iuris-canonici/esp/documents/cic_libro2_cann336-341_sp.html",
+          locator: "341 1 (official HTML, unpaginated)",
+          edition:
+            "Código de Derecho Canónico (1983), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 1983,
     },
@@ -8951,7 +11558,41 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Los Cardenales de la Santa Iglesia Romana constituyen un Colegio peculiar, al que compete proveer a la elección del Romano Pontífice, según la norma del derecho peculiar […]",
+          edition: "cic.es",
+          label:
+            "Código de Derecho Canónico (1983), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          page: "349 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "349",
+        source: {
+          url: "https://www.vatican.va/archive/cod-iuris-canonici/esp/documents/cic_libro2_cann349-359_sp.html",
+          locator: "349 (official HTML, unpaginated)",
+          edition:
+            "Código de Derecho Canónico (1983), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: […] added",
+            textBeforeCorrection:
+              "Los Cardenales de la Santa Iglesia Romana constituyen un Colegio peculiar, al que compete proveer a la elección del Romano Pontífice, según la norma del derecho peculiar",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 1983,
     },
@@ -13213,7 +15854,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "están íntimamente unidas y compenetradas.",
+          edition: "cec.es",
+          label:
+            "Catecismo de la Iglesia Católica (1992; Latin editio typica 1997), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01; no printed Spanish imprint collated.",
+          page: "80 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "80",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p1s1c2a2_sp.html",
+          locator: "80 (official HTML, unpaginated)",
+          edition:
+            "Catecismo de la Iglesia Católica (1992; Latin editio typica 1997), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01; no printed Spanish imprint collated.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -13509,7 +16173,40 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "En la sagrada Escritura, la Iglesia encuentra sin cesar su alimento y su fuerza (cf. DV 24), porque, en ella, no recibe solamente una palabra humana, sino lo que es realmente: la Palabra de Dios (cf. 1 Ts 2,13).",
+          edition: "cec.es",
+          label:
+            "Catecismo de la Iglesia Católica (1992; Latin editio typica 1997), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01; no printed Spanish imprint collated.",
+          page: "104 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "104",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p1s1c2a3_sp.html",
+          locator: "104 (official HTML, unpaginated)",
+          edition:
+            "Catecismo de la Iglesia Católica (1992; Latin editio typica 1997), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01; no printed Spanish imprint collated.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+        corrections: [
+          {
+            label: "correction",
+            date: "2026-11-01 (session A)",
+            what: "clipped: extended to the end of the sentence",
+            textBeforeCorrection: "En la sagrada Escritura, la Iglesia encuentra sin cesar su alimento y su fuerza",
+            check:
+              "new wording re-matched against the cached source (BookOfConcord.org transcription, page-level OCR of the 1894 Westminster scan, the Schaff page text, or the official vatican.va page)",
+          },
+        ],
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -13690,7 +16387,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Por «analogía de la fe» entendemos la cohesión de las verdades de la fe entre sí y en el proyecto total de la Revelación.",
+          edition: "cec.es",
+          label:
+            "Catecismo de la Iglesia Católica (1992; Latin editio typica 1997), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01; no printed Spanish imprint collated.",
+          page: "114 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "114",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p1s1c2a3_sp.html",
+          locator: "114 (official HTML, unpaginated)",
+          edition:
+            "Catecismo de la Iglesia Católica (1992; Latin editio typica 1997), Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01; no printed Spanish imprint collated.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -14369,7 +17089,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "se comienza con la lectura (lectio) del texto, que suscita la cuestión sobre el conocimiento de su contenido auténtico: ¿Qué dice el texto bíblico en sí mismo?",
+          edition: "vd.es",
+          label:
+            "Benedict XVI, Verbum Domini, 30 September 2010, Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          page: "87 (official HTML, unpaginated)",
+          translation: "official",
+        },
+        at: "87",
+        source: {
+          url: "https://www.vatican.va/content/benedict-xvi/es/apost_exhortations/documents/hf_ben-xvi_exh_20100930_verbum-domini.html",
+          locator: "87 (official HTML, unpaginated)",
+          edition:
+            "Benedict XVI, Verbum Domini, 30 September 2010, Vatican City: Holy See, official Spanish Vatican HTML, retrieved 2026-11-01.",
+          checkedAt: "2026-11-01",
+          tag: "[verified: vatican.va official Spanish HTML, exact whitespace-normalized string matched 2026-11-01]",
+        },
+      },
+    ],
+    research: {
+      status: "done",
+    },
     date: {
       year: 2010,
       month: 9,
@@ -15937,7 +18680,33 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Si alguno dixere , que el ministro que está en pecado mortal no efectua sacramento , ó no lo confiere , aunque observe quantas cosas esenciales pertenecen á efectuarlo , ó conferirlo , sea excomulgado.",
+          edition: "trent.es",
+          page: "113",
+          verified: "scan",
+          translation: "printed-original",
+        },
+        note: "The Latin prints anathema sit; the 1785 Spanish translation prints sea excomulgado. This is the general-sacraments canon XII, not the separately numbered baptism canon XII.",
+      },
+    ],
+    research: {
+      sourceEdition:
+        "Ignacio López de Ayala, El sacrosanto y ecuménico concilio de Trento, second edition (Madrid: Imprenta Real, 1785), Spanish with Latin",
+      sourceURL: "https://archive.org/details/elsacrosantoyec00madgoog/page/n135/mode/1up",
+      checkedAt: "2026-10-28",
+      tag: "CONFIRMED: visually checked dated print-page images; excerpt exact against saved diplomatic transcription, line-wrap hyphens removed",
+      verification: {
+        pdfPages: [135],
+        pdfSHA256: "a64ca90245d51e9cfc19f520d81a174037b907a1a173c5426948236fce9e1dd1",
+        matchedOcrAnchor: "si alguno dixere que el ministro que está en pecado mortal no",
+        transcriptionSHA256: "ca13c85be1376cf3d1e4f07f90052473563db76ac17ebc364a64dc6e677bf18b",
+        notes:
+          "Source OCR is defective; no full exact match to uncorrected OCR is claimed. Printed words and punctuation retained; physical line wraps removed. PDF page numbers are one-based, independent of the printed pagination.",
+      },
+    },
     date: {
       year: 1547,
       month: 3,
@@ -17045,7 +19814,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Todas las prefiguraciones de la Antigua Alianza culminan en Cristo Jesús.",
+          edition: "cec.es",
+          page: "n. 1223 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1223",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1223%20Todas%20las%20prefiguraciones%20de%20la%20Antigua%20Alianza%20culminan%20en%20Cristo%20Jes%C3%BAs.%20Comienza",
+          locator: "Catechism paragraph 1223",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -17269,7 +20061,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "el catecumenado de adultos, dividido en diversos grados",
+          edition: "cec.es",
+          page: "n. 1232 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1232",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1232%20El%20Concilio%20Vaticano%20II%20ha%20restaurado%20para%20la%20Iglesia%20latina%2C%20%22el%20catecumenado",
+          locator: "Catechism paragraph 1232",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -17291,7 +20106,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "la gracia del sacramento del Bautismo",
+          edition: "cec.es",
+          page: "n. 1234 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1234",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1234%20El%20sentido%20y%20la%20gracia%20del%20sacramento%20del%20Bautismo%20aparece%20claramente%20en",
+          locator: "Catechism paragraph 1234",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -17344,7 +20182,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "ha resucitado con Cristo",
+          edition: "cec.es",
+          page: "n. 1243 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1243",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1243%20La%20vestidura%20blanca%20simboliza%20que%20el%20bautizado%20se%20ha%20%22revestido%20de%20Cristo%22",
+          locator: "Catechism paragraph 1243",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -17366,7 +20227,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Las Iglesias orientales conservan una conciencia viva de la unidad de la iniciación cristiana",
+          edition: "cec.es",
+          page: "n. 1244 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1244",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1244%20La%20primera%20comuni%C3%B3n%20eucar%C3%ADstica.%20Hecho%20hijo%20de%20Dios%2C%20revestido%20de%20la%20t%C3%BAnica",
+          locator: "Catechism paragraph 1244",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -17388,7 +20272,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "el Bautismo de adultos es la práctica más común",
+          edition: "cec.es",
+          page: "n. 1247 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1247",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1247%20En%20los%20or%C3%ADgenes%20de%20la%20Iglesia%2C%20cuando%20el%20anuncio%20del%20Evangelio%20est%C3%A1",
+          locator: "Catechism paragraph 1247",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -17440,7 +20347,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "alimentar la vida que Dios les ha confiado",
+          edition: "cec.es",
+          page: "n. 1251 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1251",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1251%20Los%20padres%20cristianos%20deben%20reconocer%20que%20esta%20pr%C3%A1ctica%20corresponde%20tambi%C3%A9n%20a%20su",
+          locator: "Catechism paragraph 1251",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -17562,7 +20492,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "es importante la ayuda de los padres",
+          edition: "cec.es",
+          page: "n. 1255 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1255",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1255%20Para%20que%20la%20gracia%20bautismal%20pueda%20desarrollarse%20es%20importante%20la%20ayuda%20de",
+          locator: "Catechism paragraph 1255",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -18243,7 +21196,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "tener confianza en la misericordia divina",
+          edition: "cec.es",
+          page: "n. 1283 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1283",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1283%20En%20cuanto%20a%20los%20ni%C3%B1os%20muertos%20sin%20bautismo%2C%20la%20liturgia%20de%20la",
+          locator: "Catechism paragraph 1283",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -18265,7 +21241,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "En caso de necesidad, toda persona puede bautizar",
+          edition: "cec.es",
+          page: "n. 1284 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1284",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a1_sp.html#:~:text=1284%20En%20caso%20de%20necesidad%2C%20toda%20persona%20puede%20bautizar%2C%20con%20tal%20que%20tenga",
+          locator: "Catechism paragraph 1284",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "07b574b80957ab530aa703e5125a4af773dd9436d548a4e9cfeafaa0808b5c6f",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -19028,7 +22027,27 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Restáurese el catecumenado de adultos dividido en distintas etapas",
+          edition: "sc.es",
+          page: "n. 64 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+      },
+    ],
+    research: {
+      sourceEdition:
+        "Sacrosanctum Concilium, constitution promulgated 4 December 1963; official Spanish Vatican web witness, local snapshot 2026-10-27",
+      sourceURL:
+        "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_sp.html#:~:text=Rest%C3%A1urese%20el%20catecumenado%20de%20adultos%20dividido%20en%20distintas%20etapas",
+      sourceLocator: "paragraph 64",
+      sourceSHA256: "bf93beb3d9ee5f40e89109fd14eb1bda8985a52af31ea0127fcad382e68fdf47",
+      checkedAt: "2026-10-28",
+      tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+    },
     date: {
       year: 1963,
       month: 12,
@@ -20686,7 +23705,32 @@ export const citations = {
           page: "80–81",
         },
       },
+      {
+        es: {
+          text: "ninguno sabedor de que está en pecado mortal , se puede acercar , por muy contrito que le parezca hallarse , á recibir la sagrada Eucaristía , sin disponerse antes con la confesion sacramental",
+          edition: "trent.es",
+          page: "167–168 (excerpt on 168)",
+          verified: "scan",
+          translation: "printed-original",
+        },
+        note: "The chapter continues on p.168 with the priest/confessor exception, urgent celebration and subsequent prompt confession. Keep that context; do not make the excerpt an exceptionless paraphrase. Add this Spanish witness alongside the existing English excerpt, not as a replacement for it.",
+      },
     ],
+    research: {
+      sourceEdition:
+        "Ignacio López de Ayala, El sacrosanto y ecuménico concilio de Trento, second edition (Madrid: Imprenta Real, 1785), Spanish with Latin",
+      sourceURL: "https://archive.org/details/elsacrosantoyec00madgoog/page/n190/mode/1up",
+      checkedAt: "2026-10-28",
+      tag: "CONFIRMED: visually checked dated print-page images; excerpt exact against saved diplomatic transcription, line-wrap hyphens removed",
+      verification: {
+        pdfPages: [189, 190],
+        pdfSHA256: "a64ca90245d51e9cfc19f520d81a174037b907a1a173c5426948236fce9e1dd1",
+        matchedOcrAnchor: "ninguno sabedor de que está en pecado mortal",
+        transcriptionSHA256: "25531f3329cd863501a2a04ec6ef474b29d7b8496d02c9bce5b0d14740faef1f",
+        notes:
+          "Source OCR is defective; no full exact match to uncorrected OCR is claimed. Printed words and punctuation retained; physical line wraps removed. PDF page numbers are one-based, independent of the printed pagination.",
+      },
+    },
     date: {
       year: 1551,
       month: 10,
@@ -20925,13 +23969,38 @@ export const citations = {
     excerpts: [
       {
         es: {
-          text: "«en Pasqua florida»",
+          text: "están obligados á comulgar todos los años , á lo menos en Pasqua florida, segun el precepto de nuestra santa madre Iglesia",
           edition: "trent.es",
           page: "173",
+          verified: "scan",
           translation: "printed-original",
         },
+        note: "Replace the present isolated en Pasqua florida fragment with this obligation clause. The canon condemns denial of the obligation; its preceding scope is the faithful of both sexes who have reached the use of reason. The Latin prints anathema sit and the 1785 Spanish sea excomulgado.",
+        corrections: [
+          {
+            label: "repair",
+            date: "2026-11-08",
+            what: "excerpt replaced by the research repair",
+            textBefore: ["«en Pasqua florida»"],
+          },
+        ],
       },
     ],
+    research: {
+      sourceEdition:
+        "Ignacio López de Ayala, El sacrosanto y ecuménico concilio de Trento, second edition (Madrid: Imprenta Real, 1785), Spanish with Latin",
+      sourceURL: "https://archive.org/details/elsacrosantoyec00madgoog/page/n195/mode/1up",
+      checkedAt: "2026-10-28",
+      tag: "CONFIRMED: visually checked dated print-page images; excerpt exact against saved diplomatic transcription, line-wrap hyphens removed",
+      verification: {
+        pdfPages: [195],
+        pdfSHA256: "a64ca90245d51e9cfc19f520d81a174037b907a1a173c5426948236fce9e1dd1",
+        matchedOcrAnchor: "comulgar todos los años á lo menos en",
+        transcriptionSHA256: "a1cb84cd752f4f6f6330233e2ca809065f99406276c7debf5a9ba8cb39e0e163",
+        notes:
+          "Source OCR is defective; no full exact match to uncorrected OCR is claimed. Printed words and punctuation retained; physical line wraps removed. PDF page numbers are one-based, independent of the printed pagination.",
+      },
+    },
     date: {
       year: 1551,
       month: 10,
@@ -21555,7 +24624,33 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "es precepto de la Iglesia que los sacerdotes mezclen agua con el vino que han de ofrecer en el caliz",
+          edition: "trent.es",
+          page: "322",
+          verified: "scan",
+          translation: "printed-original",
+        },
+        note: "This is chapter VII on water mixed with the wine; do not confuse it with chapter VI on Masses where the priest alone communicates. Retain the 1785 spelling caliz.",
+      },
+    ],
+    research: {
+      sourceEdition:
+        "Ignacio López de Ayala, El sacrosanto y ecuménico concilio de Trento, second edition (Madrid: Imprenta Real, 1785), Spanish with Latin",
+      sourceURL: "https://archive.org/details/elsacrosantoyec00madgoog/page/n344/mode/1up",
+      checkedAt: "2026-10-28",
+      tag: "CONFIRMED: visually checked dated print-page images; excerpt exact against saved diplomatic transcription, line-wrap hyphens removed",
+      verification: {
+        pdfPages: [344],
+        pdfSHA256: "a64ca90245d51e9cfc19f520d81a174037b907a1a173c5426948236fce9e1dd1",
+        matchedOcrAnchor: "es precepto de la iglesia que los sacerdotes mezclen agua con el",
+        transcriptionSHA256: "448cb28bc871a76d29fbf729687cff2e99b402cff9fefa0b0ac75bf0e81f19ef",
+        notes:
+          "Source OCR is defective; no full exact match to uncorrected OCR is claimed. Printed words and punctuation retained; physical line wraps removed. PDF page numbers are one-based, independent of the printed pagination.",
+      },
+    },
     date: {
       year: 1562,
       month: 9,
@@ -22377,7 +25472,42 @@ export const citations = {
     locator: {
       parts: [],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Bendice y santifica esta ofrenda, Padre, haciéndola perfecta, espiritual y digna de ti",
+          edition: "misal.es",
+          page: "162",
+          verified: "page",
+          translation: "official",
+        },
+        note: "Short clause from a dated official liturgical use. This is not a licence for the full Roman Missal and is not a claim that the booklet prints the Missal section number 90. The source uses this 2026 Spanish wording; do not replace it silently with an older wording.",
+      },
+    ],
+    research: {
+      sourceEdition:
+        "Viaggio apostolico di Sua Santità Leone XIV in Spagna, 6–12 giugno 2026, official Vatican liturgical booklet, Santa Cruz de Tenerife Mass, 12 June 2026, p.162, Spanish Quam oblationem of the Roman Canon.",
+      sourceURL: "https://www.vatican.va/content/dam/liturgy/pdf/2026/20260606-12-messale-spagna.pdf#page=162",
+      checkedAt: "2026-10-28",
+      tag: "CONFIRMED: exact PDF text string and visual check of printed p.162",
+      sourceSHA256: "09e3874e507b021c608bbf068a32c9b05a0faeb80ed2e1b36eb8e47f08997b39",
+      verification: {
+        pdfPage: 162,
+        printedPage: "162",
+        context: "Santa Cruz de Tenerife – 12 giugno 2026; prayer immediately before the institution narrative",
+        identitySource:
+          "Official Spanish General Instruction of the Roman Missal, 219–222: https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_sp.html",
+      },
+      proposedEditionUpdate: {
+        id: "misal.es",
+        works: ["misal"],
+        lang: "es",
+        bibliography:
+          "Viaggio apostolico di Sua Santità Leone XIV in Spagna, 6–12 giugno 2026, official Vatican liturgical booklet, Santa Cruz de Tenerife Mass, 12 June 2026, p.162, Spanish Quam oblationem of the Roman Canon.",
+        licence: "short-quote",
+        access: "https://www.vatican.va/content/dam/liturgy/pdf/2026/20260606-12-messale-spagna.pdf#page=162",
+      },
+    },
   },
   OGMR: {
     id: "OGMR",
@@ -22722,7 +25852,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "el pan de vida, bajado del cielo",
+          edition: "cec.es",
+          page: "n. 1338 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1338",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1338%20Los%20tres%20evangelios%20sin%C3%B3pticos%20y%20san%20Pablo%20nos%20han%20transmitido%20el%20relato",
+          locator: "Catechism paragraph 1338",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -22744,7 +25897,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "la Pascua nueva, es anticipada en la Cena",
+          edition: "cec.es",
+          page: "n. 1340 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1340",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1340%20Al%20celebrar%20la%20%C3%BAltima%20Cena%20con%20sus%20Ap%C3%B3stoles%20en%20el%20transcurso%20del",
+          locator: "Catechism paragraph 1340",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -22766,7 +25942,48 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Requiere la celebración litúrgica",
+          edition: "cec.es",
+          page: "n. 1341 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1341",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1341%20El%20mandamiento%20de%20Jes%C3%BAs%20de%20repetir%20sus%20gestos%20y%20sus%20palabras%20%22hasta",
+          locator: "Catechism paragraph 1341",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+      {
+        es: {
+          text: "el memorial no es solamente el recuerdo",
+          edition: "cec.es",
+          page: "n. 1363 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1363",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1363%20En%20el%20sentido%20empleado%20por%20la%20Sagrada%20Escritura%2C%20el%20memorial%20no%20es",
+          locator: "Catechism paragraph 1363",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -22788,7 +26005,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "la Iglesia fue fiel a la orden del Señor",
+          edition: "cec.es",
+          page: "n. 1342 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1342",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1342%20Desde%20el%20comienzo%20la%20Iglesia%20fue%20fiel%20a%20la%20orden%20del%20Se%C3%B1or.",
+          locator: "Catechism paragraph 1342",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -23287,7 +26527,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "la Iglesia católica ha llamado justa y apropiadamente a este cambio transubstanciación",
+          edition: "cec.es",
+          page: "n. 1376 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1376",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1376%20El%20Concilio%20de%20Trento%20resume%20la%20fe%20cat%C3%B3lica%20cuando%20afirma%3A%20%22Porque%20Cristo%2C",
+          locator: "Catechism paragraph 1376",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -23448,7 +26711,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Comulgar es recibir a Cristo mismo que se ofrece por nosotros.",
+          edition: "cec.es",
+          page: "n. 1382 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1382",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1382%20La%20misa%20es%2C%20a%20la%20vez%20e%20inseparablemente%2C%20el%20memorial%20sacrificial%20en",
+          locator: "Catechism paragraph 1382",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -23470,7 +26756,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "debe recibir el sacramento de la Reconciliación antes de acercarse a comulgar",
+          edition: "cec.es",
+          page: "n. 1385 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1385",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1385%20Para%20responder%20a%20esta%20invitaci%C3%B3n%2C%20debemos%20prepararnos%20para%20este%20momento%20tan%20grande",
+          locator: "Catechism paragraph 1385",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -23492,7 +26801,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "los fieles deben observar el ayuno prescrito por la Iglesia",
+          edition: "cec.es",
+          page: "n. 1387 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1387",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1387%20Para%20prepararse%20convenientemente%20a%20recibir%20este%20sacramento%2C%20los%20fieles%20deben%20observar%20el",
+          locator: "Catechism paragraph 1387",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -23829,7 +27161,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "debe hallarse en estado de gracia",
+          edition: "cec.es",
+          page: "n. 1415 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1415",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1415%20El%20que%20quiere%20recibir%20a%20Cristo%20en%20la%20Comuni%C3%B3n%20eucar%C3%ADstica%20debe%20hallarse",
+          locator: "Catechism paragraph 1415",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -23880,7 +27235,30 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "al menos una vez al año",
+          edition: "cec.es",
+          page: "n. 1417 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+        at: "1417",
+        source: {
+          url: "https://www.vatican.va/archive/catechism_sp/p2s2c1a3_sp.html#:~:text=1417%20La%20Iglesia%20recomienda%20vivamente%20a%20los%20fieles%20que%20reciban%20la%20sagrada%20comuni%C3%B3n",
+          locator: "Catechism paragraph 1417",
+          edition:
+            "Catecismo de la Iglesia Católica, official Spanish Vatican HTML; local snapshot retrieved 2026-10-27",
+          checkedAt: "2026-10-28",
+          tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+        },
+      },
+    ],
+    research: {
+      workTitle: "Catechism of the Catholic Church",
+      sourceSHA256: "276b605c53b840341fd25e85dd468d0c66998093accd66a5b80d8daf60fe0de9",
+    },
     date: {
       year: 1992,
       alsoYears: [1997],
@@ -24199,7 +27577,28 @@ export const citations = {
         },
       ],
     },
-    excerpts: [],
+    excerpts: [
+      {
+        es: {
+          text: "Se debe administrar el Viático a los fieles que, por cualquier motivo, se hallen en peligro de muerte.",
+          edition: "cic.es",
+          page: "can. 921 §1 (official HTML, unpaginated)",
+          verified: "page",
+          translation: "official",
+        },
+      },
+    ],
+    research: {
+      sourceEdition:
+        "Código de Derecho Canónico (1983), official Spanish Vatican web text, canons 912–923; downloaded 2026-10-28 through the official Spanish index",
+      sourceURL:
+        "https://www.vatican.va/archive/cod-iuris-canonici/esp/documents/cic_libro4_cann912-923_sp.html#:~:text=Se%20debe%20administrar%20el%20Vi%C3%A1tico%20a%20los%20fieles%20que%2C%20por%20cualquier%20motivo%2C%20se%20hallen%20en%20peligro%20de%20muerte.",
+      sourceLocator: "canon 921 §1",
+      sourceSHA256: "f4a4c973e6d97e9b43bb20113ed7479aa10c5de7cd1ac1392885030edef10bd7",
+      checkedAt: "2026-10-28",
+      tag: "CONFIRMED: exact decoded/whitespace-normalized string in the official HTML snapshot",
+      officialIndex: "https://www.vatican.va/archive/cod-iuris-canonici/cic_index_sp.html",
+    },
     date: {
       year: 1983,
     },

@@ -214,3 +214,43 @@ test("«Abrir la fuente completa» is in citation windows only and does nothing 
   await page.locator("#why p [aria-haspopup]", { hasText: "Lucas 22:19" }).click();
   await expect(page.getByRole("dialog").getByRole("button", { name: "Abrir la fuente completa" })).toHaveCount(0);
 });
+
+test.describe("AI Spanish label", () => {
+  const openWindow = async (page: Page, path: string, link: string, text = "") => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(path);
+    await page.waitForTimeout(300);
+    await page.evaluate(
+      ([selector, wanted]) => {
+        const element = [...document.querySelectorAll<HTMLElement>(selector!)].find((node) =>
+          new RegExp(wanted!).test(node.textContent ?? ""),
+        )!;
+        element.scrollIntoView({ block: "center" });
+        element.click();
+      },
+      [link, text],
+    );
+    await expect(page.locator(dialog)).toHaveAttribute("data-open", "true");
+  };
+
+  test("a window of an AI Spanish excerpt shows its label above the quote and copies it", async ({ page }) => {
+    await openWindow(page, "/es/doctrinas/eucaristia/luterana", "#CV-1 .link-cite");
+    const label = page.locator(`${dialog} [data-quote-label]`);
+    await expect(label).toContainText("Traducción de Doctrina asistida por IA, desde");
+    await expect(label).toContainText("Concordia Triglotta");
+    await expect(page.locator(dialog)).toContainText("Se acusa falsamente a nuestras iglesias");
+    const order = await page.evaluate((selector) => {
+      const box = document.querySelector(selector)!;
+      const tag = box.querySelector("[data-quote-label]")!;
+      const quote = box.querySelector("p[lang]")!;
+      return Boolean(tag.compareDocumentPosition(quote) & Node.DOCUMENT_POSITION_FOLLOWING);
+    }, dialog);
+    expect(order).toBe(true);
+  });
+
+  test("a window of an official Spanish excerpt shows no label", async ({ page }) => {
+    await openWindow(page, traditionPath, ".link-cite", "Catecismo\\s1382");
+    await expect(page.locator(dialog)).toContainText("Comulgar es recibir a Cristo mismo");
+    await expect(page.locator(`${dialog} [data-quote-label]`)).toHaveCount(0);
+  });
+});

@@ -5,6 +5,7 @@ export type CitationView = {
   subtitle?: string | null;
   quote: { text: string; lang: string } | null;
   quoteLanguage: string | null;
+  quoteLabel?: string | null;
   definition: string | null;
   who: string | null;
   locator: string;
