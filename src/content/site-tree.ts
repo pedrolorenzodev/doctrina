@@ -16,11 +16,19 @@ import {
   objectionsRoute,
   passagesHref,
   passagesRoute,
+  councilHref,
+  councilRoute,
   councilsIndexHref,
+  currentHref,
+  currentRoute,
   currentsIndexHref,
+  divisionHref,
+  divisionRoute,
   divisionsIndexHref,
   fathersIndexHref,
   historyIndexRoute,
+  movementHref,
+  movementRoute,
   reformationIndexHref,
   earlyChristiansHref,
   earlyChristiansRoute,
@@ -106,6 +114,11 @@ const traditionNames: Record<Locale, Record<TraditionId, string>> = {
 };
 
 export type BuiltScreens = { doctrines: DoctrineId[]; pairs: string[] };
+
+export type HistoryEntities = Record<
+  "councils" | "currents" | "divisions" | "reformation",
+  { id: string; name: string }[]
+>;
 
 export type PublishedPage = {
   doctrine: DoctrineId;
@@ -198,6 +211,7 @@ export function buildSiteTree(
   bookChapters: Map<string, number>,
   fatherWorks: Record<string, { id: string; label: string }[]>,
   built: BuiltScreens,
+  entities: HistoryEntities,
 ): TreeGroup[] {
   const doctrineNodes = doctrineIds.map((doctrine) => {
     const doctrineBuilt =
@@ -272,6 +286,17 @@ export function buildSiteTree(
   const deuteroBooks = bibleBooks.filter((entry) => entry.section === "deuterocanon").map((entry) => entry.id);
   const ntBooks = bookKeys.slice(firstNewTestamentBook);
   const { counts, fathers } = historyIndex;
+  const entityNodes = (
+    section: string,
+    list: { id: string; name: string }[],
+    href: (locale: Locale, id: string) => string,
+    route: (locale: Locale, id: string) => string,
+  ) =>
+    list.map((entity) => ({
+      ...leaf(`${section}/${entity.id}`, entity.name),
+      href: href(locale, entity.id),
+      route: route(locale, entity.id),
+    }));
   return [
     { id: "doctrines", label: text.groupDoctrines, nodes: doctrineNodes },
     {
@@ -315,22 +340,42 @@ export function buildSiteTree(
           route: historyIndexRoute(locale, "fathers"),
         },
         {
-          ...leaf("history/councils", text.tree.councils, counts.councils),
+          ...branch(
+            "history/councils",
+            text.tree.councils,
+            entityNodes("history/councils", entities.councils, councilHref, councilRoute),
+            entities.councils.length,
+          ),
           href: councilsIndexHref(locale),
           route: historyIndexRoute(locale, "councils"),
         },
         {
-          ...leaf("history/heresies", text.tree.heresies, counts.heresies),
+          ...branch(
+            "history/heresies",
+            text.tree.heresies,
+            entityNodes("history/heresies", entities.currents, currentHref, currentRoute),
+            entities.currents.length,
+          ),
           href: currentsIndexHref(locale),
           route: historyIndexRoute(locale, "currents"),
         },
         {
-          ...leaf("history/divisions", text.tree.divisions, counts.divisions),
+          ...branch(
+            "history/divisions",
+            text.tree.divisions,
+            entityNodes("history/divisions", entities.divisions, divisionHref, divisionRoute),
+            entities.divisions.length,
+          ),
           href: divisionsIndexHref(locale),
           route: historyIndexRoute(locale, "divisions"),
         },
         {
-          ...leaf("history/reformation", text.tree.reformation, counts.reformation),
+          ...branch(
+            "history/reformation",
+            text.tree.reformation,
+            entityNodes("history/reformation", entities.reformation, movementHref, movementRoute),
+            entities.reformation.length,
+          ),
           href: reformationIndexHref(locale),
           route: historyIndexRoute(locale, "reformation"),
         },

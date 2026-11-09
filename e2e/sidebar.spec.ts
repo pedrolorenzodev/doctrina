@@ -72,7 +72,7 @@ async function openBaptism(page: Page) {
   await page.waitForTimeout(300);
 }
 
-test("pressing the link of a row with children navigates and unfolds it with «Despliegue»; again keeps it open", async ({
+test("pressing the link of a row with children navigates and unfolds it with «Despliegue»; pressing it again on its own page toggles it", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -106,6 +106,11 @@ test("pressing the link of a row with children navigates and unfolds it with «D
   expect(
     await page.locator(baptismCatholicList).evaluate((element) => element.getAnimations({ subtree: true }).length),
   ).toBe(0);
+  await page.locator(baptismCatholicLink).click();
+  await page.waitForTimeout(400);
+  await expect(page).toHaveURL(/\/es\/doctrinas\/bautismo\/catolica$/);
+  await expect(page.locator(baptismCatholicList)).toBeHidden();
+  await expect(page.locator(baptismCatholicTwisty)).toHaveAttribute("aria-expanded", "false");
   await page.locator(baptismCatholicLink).click();
   await page.waitForTimeout(400);
   await expect(page.locator(baptismCatholicList)).toBeVisible();
@@ -235,7 +240,7 @@ test("four groups with the counts of history and only the published pages, their
     .locator("aside nav li[data-id^='history/'] > [data-row] span.tabular-nums")
     .allTextContents();
   expect(counts).toEqual(["56", "41", "18", "10", "20"]);
-  await expect(page.locator('aside nav a:not([href*="/obras/"])')).toHaveCount(145);
+  await expect(page.locator('aside nav a:not([href*="/obras/"])')).toHaveCount(234);
   await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
 });
 
@@ -304,4 +309,165 @@ test("switching language keeps the tree as it was: the branches opened or closed
   await expect(branchOf(john).locator("a, button").first()).toBeVisible();
   expect(Math.abs((await nav.evaluate((element) => element.scrollTop)) - before)).toBeLessThanOrEqual(1);
   await expect(page.locator("html")).not.toHaveAttribute("data-tree-carry", /.*/);
+});
+
+const historySections = [
+  { id: "history/councils", count: 41, es: "/es/historia/concilios", en: "/en/history/councils" },
+  { id: "history/heresies", count: 18, es: "/es/historia/herejias", en: "/en/history/currents" },
+  { id: "history/divisions", count: 10, es: "/es/historia/divisiones", en: "/en/history/divisions" },
+  { id: "history/reformation", count: 20, es: "/es/historia/reforma", en: "/en/history/reformation" },
+] as const;
+
+for (const lang of ["es", "en"] as const) {
+  test(`the four history sections are branches with one link per entity (${lang})`, async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(lang === "es" ? "/es/historia/padres" : "/en/history/fathers");
+    for (const section of historySections) {
+      const item = page.locator(`aside nav li[data-id="${section.id}"]`);
+      await expect(item.locator("> ul > li")).toHaveCount(section.count);
+      await expect(item.locator("> ul > li > [data-row] a")).toHaveCount(section.count);
+      await expect(item.locator("> [data-row] span.tabular-nums")).toHaveText(String(section.count));
+      await expect(item.locator("> [data-row] a")).toHaveAttribute("href", section[lang]);
+      await expect(item.locator("> [data-row] [data-twisty]")).toHaveAttribute("aria-expanded", "false");
+      await expect(item.locator("> ul")).toBeHidden();
+    }
+  });
+}
+
+test("the children keep the order of the index page", async ({ page }) => {
+  await page.goto("/es/historia/concilios");
+  const inIndex = await page
+    .locator("main ul li:not([data-id^=group-]) a")
+    .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+  const inTree = await page
+    .locator('aside nav li[data-id="history/councils"] > ul > li > [data-row] a')
+    .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+  expect(inTree).toEqual(inIndex);
+});
+
+test("an entity page opens its section, marks its row and the trail; the breadcrumb agrees", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/concilios/nicaea-1");
+  const councils = page.locator('aside nav li[data-id="history/councils"]');
+  await expect(councils.locator("> ul")).toBeVisible();
+  await expect(councils.locator("> [data-row] [data-twisty]")).toHaveAttribute("aria-expanded", "true");
+  await expect(councils.locator("> [data-row] a")).toHaveAttribute("data-trail", "true");
+  const current = page.locator("aside nav a[aria-current=page]");
+  await expect(current).toHaveCount(1);
+  await expect(current).toHaveAttribute("href", "/es/historia/concilios/nicaea-1");
+  await expect(page.locator('aside nav li[data-id="history/heresies"] > ul')).toBeHidden();
+  await expect(page.locator('main nav a[href="/es/historia/concilios"]').first()).toHaveText("Concilios");
+  await expect(councils.locator("> [data-row] a")).toHaveAttribute("href", "/es/historia/concilios");
+  const box = await current.boundingBox();
+  const nav = await page.locator("aside nav").boundingBox();
+  expect(box && nav && box.y >= nav.y && box.y + box.height <= nav.y + nav.height).toBe(true);
+  const place = await page.locator("aside nav [data-row].row-current").evaluate((row) => {
+    const scroller = row.closest("nav")!;
+    return (row as HTMLElement).offsetTop - scroller.scrollTop - scroller.clientHeight * 0.35;
+  });
+  expect(Math.abs(place)).toBeLessThanOrEqual(2);
+});
+
+test("the biggest section opens with «Despliegue»: its height grows and settles, no animation is left", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/padres");
+  const councils = 'li[data-id="history/councils"] > ul';
+  const opening = trackElement(page, councils, 450);
+  await page.locator('li[data-id="history/councils"] > [data-row] [data-twisty]').click();
+  const frames = await opening;
+  const heights = frames.map((frame) => frame.height);
+  expect(heights.some((height) => height > 0 && height < Math.max(...heights))).toBe(true);
+  await expect(page.locator(councils)).toHaveAttribute("data-open", "true");
+  await page.waitForTimeout(500);
+  expect(await page.locator(councils).evaluate((element) => element.getAnimations({ subtree: true }).length)).toBe(0);
+  await page.locator('li[data-id="history/councils"] > [data-row] [data-twisty]').click();
+  await expect(page.locator(councils)).toBeHidden();
+});
+
+test("pressing a section link unfolds its children; a child link navigates and takes the mark", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/padres");
+  const heresies = page.locator('aside nav li[data-id="history/heresies"]');
+  await heresies.locator("> [data-row] a").click();
+  await expect(page).toHaveURL("/es/historia/herejias");
+  await expect(heresies.locator("> ul")).toBeVisible();
+  await expect(heresies.locator("> ul")).toHaveAttribute("data-open", "true");
+  await heresies.locator("> [data-row] a").click();
+  await page.waitForTimeout(400);
+  await expect(heresies.locator("> ul")).toBeHidden();
+  await heresies.locator("> [data-row] a").click();
+  await page.waitForTimeout(400);
+  await expect(heresies.locator("> ul")).toBeVisible();
+  await heresies.locator("> ul > li").nth(2).locator("> [data-row] a").click();
+  await expect(page).toHaveURL(/\/es\/historia\/corrientes\/.+/);
+  await expect(page.locator("aside nav a[aria-current=page]")).toHaveCount(1);
+  await expect(heresies.locator("> ul")).toHaveAttribute("data-open", "true");
+  await expect(heresies.locator("> ul > li").nth(2).locator("> [data-row]")).toHaveClass(/row-current/);
+});
+
+test("«Contraer todo menos dónde estoy» keeps the open section of an entity page and closes the others", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/concilios/nicaea-1");
+  await page.locator('aside nav li[data-id="history/divisions"] > [data-row] [data-twisty]').click();
+  await expect(page.locator('aside nav li[data-id="history/divisions"] > ul')).toBeVisible();
+  await page.locator("[data-collapse-all]").click();
+  await page.waitForTimeout(500);
+  await expect(page.locator('aside nav li[data-id="history/councils"] > ul')).toBeVisible();
+  await expect(page.locator('aside nav li[data-id="history/divisions"] > ul')).toBeHidden();
+});
+
+test("switching language on an entity page keeps its section open and its row marked", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/es/historia/reforma");
+  await page.locator('aside nav li[data-id="history/reformation"] > [data-row] [data-twisty]').click();
+  await page.waitForTimeout(400);
+  await page.locator('aside nav li[data-id="history/reformation"] > ul > li a').first().click();
+  await expect(page).toHaveURL(/\/es\/historia\/reforma\/.+/);
+  const href = new URL(page.url()).pathname.split("/").pop();
+  await page.getByRole("link", { name: "EN", exact: true }).click();
+  await expect(page).toHaveURL(`/en/history/reformation/${href}`);
+  const section = page.locator('aside nav li[data-id="history/reformation"]');
+  await expect(section.locator("> ul")).toHaveAttribute("data-open", "true");
+  await expect(page.locator("aside nav a[aria-current=page]")).toHaveAttribute(
+    "href",
+    `/en/history/reformation/${href}`,
+  );
+});
+
+test.describe("drawer with a history section", () => {
+  test.use({ viewport: { width: 390, height: 780 } });
+
+  test("opening it puts the current row of a long branch at 35 % of the drawer", async ({ page }) => {
+    await page.goto("/es/historia/concilios/nicaea-1");
+    await page.locator("header button[aria-controls]").click();
+    await expect(page.locator("aside")).toHaveAttribute("data-open", "true");
+    await page.waitForTimeout(500);
+    const place = await page.locator("aside nav [data-row].row-current").evaluate((row) => {
+      const scroller = row.closest("nav")!;
+      return (row as HTMLElement).offsetTop - scroller.scrollTop - scroller.clientHeight * 0.35;
+    });
+    expect(Math.abs(place)).toBeLessThanOrEqual(2);
+  });
+
+  test("a child link closes the drawer; reopened, the section is open and the row marked", async ({ page }) => {
+    await page.goto("/es/historia/padres");
+    const menu = page.locator("header button[aria-controls]");
+    await menu.click();
+    await expect(page.locator("aside")).toHaveAttribute("data-open", "true");
+    const divisions = page.locator('aside nav li[data-id="history/divisions"]');
+    await divisions.locator("> [data-row] [data-twisty]").click();
+    await expect(divisions.locator("> ul > li").first()).toBeVisible();
+    await page.waitForTimeout(300);
+    await divisions.locator("> ul > li").first().locator("> [data-row] a").click();
+    await expect(page).toHaveURL(/\/es\/historia\/divisiones\/.+/);
+    await expect(page.locator("aside")).not.toHaveAttribute("data-open", "true");
+    await menu.click();
+    await expect(page.locator("aside")).toHaveAttribute("data-open", "true");
+    await expect(divisions.locator("> ul")).toBeVisible();
+    await expect(divisions.locator("> ul > li").first().locator("> [data-row]")).toHaveClass(/row-current/);
+  });
 });

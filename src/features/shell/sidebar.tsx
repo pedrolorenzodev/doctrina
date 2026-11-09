@@ -357,7 +357,7 @@ export function Sidebar({ groups, text }: SidebarProps) {
     const nav = navRef.current;
     const aside = asideRef.current;
     if (nav) scrollCurrentIntoPlace(nav);
-    aside?.querySelector<HTMLElement>("a[href], button")?.focus();
+    aside?.querySelector<HTMLElement>("a[href], button")?.focus({ preventScroll: true });
     const release = registerEscape(escapePriority.drawer, () => {
       setOpen(false);
       menuRef.current?.focus();
@@ -393,7 +393,11 @@ export function Sidebar({ groups, text }: SidebarProps) {
     const link = target.closest<HTMLElement>("[data-row] a[href]");
     if (link && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
       const item = link.closest<HTMLElement>("li");
-      if (item) setItemOpen(item, true, true, text);
+      const list = item?.querySelector<HTMLElement>(":scope > ul[data-branch]");
+      if (item && list) {
+        const opening = link.getAttribute("aria-current") !== "page" || list.dataset.open !== "true";
+        setItemOpen(item, opening, true, text);
+      }
       return;
     }
     if (target.closest("[data-collapse-all]")) {

@@ -39,6 +39,14 @@ const pages: [string, string, (page: Page) => Promise<void>][] = [
     },
   ],
   [
+    "a council page with its section open in the tree",
+    "/es/historia/concilios/nicaea-1",
+    async (page) => {
+      await expect(page.locator('aside nav li[data-id="history/councils"] > ul')).toBeVisible();
+      await page.waitForTimeout(400);
+    },
+  ],
+  [
     "a Father's page with a timeline item chosen",
     "/es/historia/padres/ignatius-of-antioch",
     async (page) => {

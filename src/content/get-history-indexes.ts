@@ -5,6 +5,7 @@ import { buildFatherView } from "@/content/father-view";
 import { formatYear } from "@/content/format-date";
 import { getPublishedFathers } from "@/content/get-fathers";
 import { councilHref, currentHref, divisionHref, fatherHref, movementHref } from "@/content/routes";
+import type { HistoryEntities } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { firstSentence } from "@/lib/first-sentence";
 import type { Locale } from "@/lib/locale";
@@ -177,5 +178,16 @@ export function getHistoryIndex(
     intro: labels.reformation.intro.replace("{n}", String(entries.length)),
     groups: grouped(entries, locale, century),
     filterable: false,
+  };
+}
+
+export function getHistoryEntities(locale: Locale): HistoryEntities {
+  const entitiesOf = (kind: Exclude<HistoryIndexKind, "fathers">) =>
+    getHistoryIndex(kind, locale).groups.flatMap((group) => group.rows.map((row) => ({ id: row.id, name: row.name })));
+  return {
+    councils: entitiesOf("councils"),
+    currents: entitiesOf("currents"),
+    divisions: entitiesOf("divisions"),
+    reformation: entitiesOf("reformation"),
   };
 }

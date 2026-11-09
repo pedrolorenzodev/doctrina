@@ -4,6 +4,7 @@ import { getPublishedDoctrines } from "@/content/get-doctrine-page";
 import { worksByFather } from "@/content/father-work-links";
 import { getFatherWorks } from "@/content/get-father-works";
 import { getPublishedFathers } from "@/content/get-fathers";
+import { getHistoryEntities } from "@/content/get-history-indexes";
 import { getPublishedPages } from "@/content/get-tradition-page";
 import { getSourceCount } from "@/content/get-sources";
 import { buildSiteTree, type TreeGroup } from "@/content/site-tree";
@@ -27,5 +28,6 @@ export async function getSiteTree(locale: Locale): Promise<TreeGroup[]> {
       doctrines: getPublishedDoctrines("es"),
       pairs: getPublishedPages("es").map((page) => `${page.doctrine}/${page.tradition}`),
     },
+    getHistoryEntities(locale),
   );
 }
