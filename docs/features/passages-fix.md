@@ -1,6 +1,6 @@
 # Pasajes: repeated passages, context ranges and priority order (Pedro, 2026-11-09)
 
-Status: decided with Pedro, to build. Audit: `~/doctrina-research-prompts/pasajes-audit-report.md` (read-only, 503 entries in the 20 pages, proposals only). Brief for the builder: `~/doctrina-research-prompts/passages-fix.md`.
+Status: built in the clone `doctrina-pasajes-fix` (2026-11-09), pending Pedro's review on the 3101 server. Audit: `~/doctrina-research-prompts/pasajes-audit-report.md` (read-only, 503 entries in the 20 pages, proposals only). Brief for the builder: `~/doctrina-research-prompts/passages-fix.md`.
 
 ## Intent
 
@@ -40,6 +40,58 @@ The passage pager of every `/doctrinas/<doctrine>/<tradition>/pasajes` page must
 | Orthodox · Supper | John 6:54-56; Matt 26:26-28; 1 Cor 11:28-29; 1 Cor 10:17; Luke 22:19; 1 Cor 11:26; John 19:34 |
 | Orthodox · Papacy | Gal 2:11; Matt 18:17; Eph 2:19-20; Eph 5:23; Eph 4:11-12; 2 Thess 2:15; Titus 3:10 (Matt 16:18-19 to add) |
 | Orthodox · Sola Scriptura | 2 Thess 2:15; 1 Tim 3:15; Rom 3:2; Luke 24:44 (2 Tim 3:16-17 and John 21:25 to add) |
+
+## What was built
+
+- **One normalising step for all 20 pages:** `data/scripts/passage-normalize.mjs`, called by `applyPassagesLayer` (so `apply-passages.mjs` and `convert-dossier.mjs` both keep it; a rebuild of the Baptist lists keeps it too). Order inside: remove (rules per page in `data/passages/normalize-rules.json`), widen to the canonical range (same file, `canonical`: a segment inside the range that holds the central verse becomes the range), merge (an entry inside another entry, or two single-ref entries that overlap or are adjacent in one chapter, become one with the union range; the sentences are joined, none dropped), parallels (Baptist Baptism: baptism of Jesus, Great Commission; Baptist Eucharist: the Supper accounts; one entry with several `refs`). Idempotent: running it again on its own output changes nothing.
+- **Order as data:** `data/passages/order/<doctrine>-<tradition>.json` (`order`: verses of the agreed list; `toAdd`: passages Pedro agreed to add later). `data/scripts/passage-order.mjs` places each listed passage first (the first entry that contains it; a listed passage already inside a placed entry is skipped), then the rest by distinct speakers (descending), ties by the previous order. `tools/check-passage-order.mjs` (in `npm run lint`) fails if a listed passage is not on the page, if the first places do not follow the list, if a `toAdd` passage is already there, or if two entries repeat verses (two multi-ref groups may overlap).
+- **Apologist attachments follow the merges:** `data/passages/legacy-entries/*.json` freezes the entry list the «page entry N» headings were written for; the matcher resolves each number to the new entry that contains those verses (`apologists-match.mjs`, `legacyTargets`). Chosen over verse overlap alone because overlap would spread a quote to every group that shares a verse (Reformed Supper). Stale case fixed: the two papacy-Baptist headings (and the research `.md`) no longer carry an entry number, so «Sal 72:17» and «Sal 102:28» have no arguments any more and the Mat 16 / Acts 15 ones sit on the right entries. Seeds of Catholic Baptism re-keyed to the new refs (3 of 3 found).
+- **Verse registry** is now filled from the final refs (`apply-passages.mjs`), because a parallel spec can add verses no record printed (Luke 22:18).
+- Catholic Baptism and Eucharist were not hand-edited: the same step rewrites them through `apply-passages.mjs`.
+
+### Counts per page (before to after)
+
+| page | entries before to after | merged | removed | grouped | ranges widened | distinct quotes before to after |
+|---|---|---|---|---|---|---|
+| baptism:catholic | 19 to 18 | 1 | 0 | 0 | 8 | 49 to 49 |
+| baptism:lutheran | 9 to 7 | 2 | 0 | 0 | 6 | 14 to 14 |
+| baptism:reformed | 22 to 21 | 1 | 0 | 0 | 8 | 26 to 26 |
+| baptism:orthodox | 10 to 9 | 1 | 0 | 0 | 4 | 2 to 2 |
+| baptism:baptist | 61 to 26 | 23 | 9 | 2 | 11 | 32 to 30 |
+| eucharist:catholic | 14 to 12 | 2 | 0 | 0 | 1 | 33 to 33 |
+| eucharist:lutheran | 21 to 17 | 4 | 0 | 0 | 2 | 4 to 4 |
+| eucharist:reformed | 9 to 9 | 0 | 0 | 0 | 2 | 4 to 4 |
+| eucharist:orthodox | 7 to 6 | 1 | 0 | 0 | 3 | 4 to 4 |
+| eucharist:baptist | 47 to 16 | 16 | 11 | 1 | 6 | 19 to 14 |
+| papacy:catholic | 14 to 14 | 0 | 0 | 0 | 4 | 29 to 29 |
+| papacy:lutheran | 15 to 12 | 3 | 0 | 0 | 5 | 1 to 1 |
+| papacy:reformed | 19 to 17 | 2 | 0 | 0 | 6 | 14 to 14 |
+| papacy:orthodox | 7 to 7 | 0 | 0 | 0 | 5 | 4 to 4 |
+| papacy:baptist | 70 to 52 | 18 | 0 | 0 | 5 | 42 to 42 |
+| sola-scriptura:catholic | 17 to 17 | 0 | 0 | 0 | 5 | 36 to 36 |
+| sola-scriptura:lutheran | 10 to 10 | 0 | 0 | 0 | 0 | 1 to 1 |
+| sola-scriptura:reformed | 26 to 24 | 2 | 0 | 0 | 8 | 18 to 18 |
+| sola-scriptura:orthodox | 4 to 4 | 0 | 0 | 0 | 3 | 10 to 10 |
+| sola-scriptura:baptist | 102 to 87 | 15 | 0 | 0 | 5 | 33 to 33 |
+
+Quotes: no quote lost on 18 pages. Baptist Baptism lost 2 and Baptist Eucharist lost 5, all because their entry was an off-topic one removed as decided; each of the 7 exists on the sibling Baptist page (checked by speaker, URL and text).
+
+### First entries as pages now open (all equal to the agreed list; where an entry was merged or regrouped it is the merged one)
+
+Baptist Baptism: Acts 8:35-39; Matt 28:18-20 · Mark 16:15-16; Acts 2:37-42; Rom 6:1-5; Col 2:11-12; Acts 16:30-34. Baptist Supper: Matt 26:26-30 · Mark 14:22-26 · Luke 22:17-20 · 1 Cor 11:23-29; 1 Cor 10:16-17. Catholic Baptism: John 3:3-8; 1 Pet 3:18-22; Acts 2:37-42; Matt 28:18-20 · Mark 16:15-16; Rom 6:3-5 · Col 2:11-12; Titus 3:4-7. Lutheran Baptism: Matt 28:18-20; Mark 16:15-16; Titus 3:4-7. The test `e2e/passages-order.spec.ts` pins the first entry and the count of every page.
+
+### Provisional ranges for Pedro to review (only 4 were verified in RV1909: Acts 2:37-42, 1 Pet 3:18-22, Titus 3:4-7, Matt 16:13-20)
+
+John 3:3-8; Matt 28:18-20; Mark 16:15-16; Rom 6:3-5; Col 2:11-12; Gal 3:26-29; 1 Cor 12:12-13; Matt 18:15-20; John 20:21-23; John 21:15-17; 2 Tim 3:14-17; 1 Tim 3:14-16; 2 Thess 2:13-15; Luke 24:44-46; Eph 2:19-22; Eph 4:11-13; Eph 5:22-32; Acts 17:10-11; 1 Cor 11:27-29; 1 Cor 10:16-17; Luke 22:19-20; Heb 9:25-28. All are rows of `canonical` in `data/passages/normalize-rules.json`; changing a row and re-running `apply-passages.mjs` for the 20 keys is the whole fix.
+
+### Agent's calls (to confirm)
+
+- Baptist merged ranges follow the printed union (Rom 6:1-5, Acts 16:30-34, Acts 15:1-31, Eph 1:20-23), not the shorter shared range.
+- Non-Baptist pages: single-ref entries that overlap or are adjacent merge too (Orthodox Mark 16:15-17, Lutheran Supper 1 Cor 11:26-29, Lutheran Papacy Matt 18:15-20); multi-ref groups only merge when one is inside the other. Reformed Papacy «Matt 16:18» and «Matt 16:19 · Matt 18:17-18» became one entry (Matt 16:13-20 · Matt 18:15-20) because the canonical range makes the first contain the other.
+- Reformed Baptism «Acts 2:38-39» now sits inside the group «Eph 5:25-26 · Acts 2:37-42» (it was merged into it by the canonical range), which is the entry that the list item «Acts 2:38-39» finds.
+- Kept on purpose: «1 Cor 11:26» on Baptist Baptism (not from the shared list), «1 Cor 4:1» on both Baptist pages (shared list, but a verse about the ordinances in general), Baptist Supper «Matt 28:19-20» (the agreed order lists it).
+- Not done: Matt 3:6 and 3:11 stay apart from Matt 3:13-17; Acts 15 entries merge only as far as the printed ranges (Q5 of the audit was not answered); Heb 9:25-28 is in the canonical table to join the two gap entries.
+- «Dónde aparece»-style external e2e failures (father.spec, doctrine-answers, doctrine-header) were not touched.
 
 ## How it is verified
 
