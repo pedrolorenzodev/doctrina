@@ -832,7 +832,7 @@ export async function buildPack(plan: SearchPlan, request: AskRequest, search: C
     passages: realPassages,
     doctrines,
     traditionsWithPages,
-    missingAuthors: named.missing,
+    missingAuthors: allowed.fathers ? named.missing : [],
     bibleEdition: mainTranslation(request),
     fatherWorks: allowed.fathers
       ? workIds.length > 0

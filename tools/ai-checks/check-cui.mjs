@@ -139,22 +139,22 @@ const far = [
 ];
 const picked = pickNotes(sources({ notes: [...here, ...far] }));
 same(
-  "chapter notes by verse, then related ones",
+  "chapter notes by verse, then other chapters' notes by shared words, then the rest",
   picked.map((item) => item.ref),
-  ["John 6:51", "John 6:53", "Acts 2:38", "John 3:5"],
+  ["John 6:51", "John 6:53", "Acts 2:38", "John 3:5", "Rom 1:1"],
 );
 same(
-  "unrelated notes stay home",
-  picked.some((item) => item.text.includes("nada que ver")),
-  false,
+  "a note with no shared word still travels (the model decides): across languages nothing is shared",
+  pickNotes(sources({ notes: [note("f", "John", 3, 3, "Born again: what does it mean?")] })).map((item) => item.ref),
+  ["John 3:3"],
 );
 
 const many = Array.from({ length: 30 }, (_, index) => note(`m${index}`, "John", 6, index + 1, `nota ${index}`));
 const capped = pickNotes(sources({ notes: [...many, ...far] }));
 same(
-  "at most 20 items, related ones kept",
-  [capped.length, capped.slice(-2).map((item) => item.ref)],
-  [20, ["Acts 2:38", "John 3:5"]],
+  "at most 20 items, other chapters' notes kept",
+  [capped.length, capped.slice(-3).map((item) => item.ref)],
+  [20, ["Acts 2:38", "John 3:5", "Rom 1:1"]],
 );
 
 const long = Array.from({ length: 8 }, (_, index) => note(`l${index}`, "John", 6, index + 1, "x".repeat(900)));

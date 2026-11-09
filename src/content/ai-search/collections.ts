@@ -260,14 +260,17 @@ export function passageFromRow(row: PassageRow, locale: Locale): Passage {
     href = hrefs.tradition(locale, row.doctrine, tradition);
   else if (row.collection === "doctrine" && row.doctrine) href = hrefs.doctrine(locale, row.doctrine);
   else if (row.collection === "glossary") href = hrefs.glossary(locale, row.source_key.split(":")[1] ?? "");
-  const who = isExcerpt || !tradition ? row.title : traditionLabels[tradition][locale];
+  const title = withContractions(row.title);
+  const who = isExcerpt || !tradition ? title : traditionLabels[tradition][locale];
   const locatorLabel =
-    isExcerpt && locator
-      ? `${row.title}, ${locator}`
-      : row.collection === "glossary"
-        ? (locator ?? row.title)
-        : row.title;
-  return { ...common, title: row.title, who, locatorLabel, href, father: null, bible: null };
+    isExcerpt && locator ? `${title}, ${locator}` : row.collection === "glossary" ? (locator ?? title) : title;
+  return { ...common, title, who, locatorLabel, href, father: null, bible: null };
+}
+
+export function withContractions(label: string): string {
+  return label.replace(/(?<![\p{L}])([Dd]e|[Aa]) el(?![\p{L}])/gu, (_, word: string) =>
+    word.toLowerCase() === "de" ? (word === "De" ? "Del" : "del") : word === "A" ? "Al" : "al",
+  );
 }
 
 export function bibleKey(translationId: string, book: string, chapter: number, verse: number, verseEnd: number | null) {

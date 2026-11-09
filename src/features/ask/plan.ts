@@ -96,10 +96,12 @@ function workNamed(raw: string, authors: AuthorEntry[], asked: Set<string>): boo
   return namedIn(asked, work ? [work.title, work.id.split("-").slice(1).join(" ")] : [raw]);
 }
 
-function sourcesOf(raw: SearchPlan, grouped: SearchPlan["traditions"]): SearchPlan["sources"] {
+function sourcesOf(raw: SearchPlan, grouped: SearchPlan["traditions"], namesFather: boolean): SearchPlan["sources"] {
   const sources = [...new Set(raw.sources ?? [])];
-  if (sources.length > 0) return sources;
-  return raw.traditions.length > 0 || grouped.length > 0 ? ["traditions"] : [];
+  if (sources.length > 0) return namesFather && !sources.includes("fathers") ? [...sources, "fathers"] : sources;
+  return raw.traditions.length > 0 || grouped.length > 0
+    ? ["traditions", ...(namesFather ? ["fathers" as const] : [])]
+    : [];
 }
 
 export function clampPlan(raw: SearchPlan, authors: AuthorEntry[], askedText?: string): PlanOutcome {
@@ -109,12 +111,16 @@ export function clampPlan(raw: SearchPlan, authors: AuthorEntry[], askedText?: s
     .filter((name) => asked === null || authorNamed(name, authors, asked));
   const unknownAuthors = named.filter((name) => !knownAuthor(name, authors));
   const grouped = (raw.traditionGroups ?? []).flatMap((group) => TRADITION_GROUPS[group] ?? []);
+  const works = clampList(raw.works, LIMITS.works).filter(
+    (work) => knownWork(work, authors) && (asked === null || workNamed(work, authors, asked)),
+  );
+  const knownNamed = named.filter((name) => !unknownAuthors.includes(name));
   return {
     plan: {
       ...raw,
       doctrines: [...new Set(raw.doctrines)],
       traditions: [...new Set([...raw.traditions, ...grouped])],
-      sources: sourcesOf(raw, grouped),
+      sources: sourcesOf(raw, grouped, knownNamed.length > 0 || works.length > 0),
       traditionGroups: [...new Set(raw.traditionGroups ?? [])],
       era: raw.era ?? "any",
       termsEn: clampList(raw.termsEn, LIMITS.terms),
@@ -122,10 +128,8 @@ export function clampPlan(raw: SearchPlan, authors: AuthorEntry[], askedText?: s
       termsEs: clampList(raw.termsEs, LIMITS.terms),
       phrasesEs: clampList(raw.phrasesEs, LIMITS.phrases),
       bibleRefs: clampList(raw.bibleRefs, LIMITS.refs),
-      authors: named.filter((name) => !unknownAuthors.includes(name)),
-      works: clampList(raw.works, LIMITS.works).filter(
-        (work) => knownWork(work, authors) && (asked === null || workNamed(work, authors, asked)),
-      ),
+      authors: knownNamed,
+      works,
     },
     unknownAuthors,
   };

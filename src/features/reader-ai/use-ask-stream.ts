@@ -227,7 +227,6 @@ export function pickNotes({ notes, highlights, active, question, refOf, highligh
   const related = notes
     .filter((note) => !sameChapter(note, active) && note.text.trim() !== "")
     .map((note) => ({ note, score: [...keywords(note.text)].filter((word) => wanted.has(word)).length }))
-    .filter(({ score }) => score > 0)
     .sort((left, right) => right.score - left.score || right.note.updatedAt - left.note.updatedAt)
     .slice(0, maxRelated)
     .map(({ note }) => note);

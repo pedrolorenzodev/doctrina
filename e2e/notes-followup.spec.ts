@@ -266,4 +266,41 @@ test.describe("ask drawer: the follow-up on a reader's note", () => {
     });
     expect(sent[0]?.notes).toHaveLength(2);
   });
+  test("a note of another chapter in another language travels with the question", async ({ page }) => {
+    await page.addInitScript(() => {
+      const now = Date.now();
+      localStorage.setItem(
+        "doctrina-notes",
+        JSON.stringify([
+          {
+            id: "far",
+            scope: "unit",
+            translationId: "bsb",
+            book: "John",
+            chapter: 3,
+            verse: 5,
+            verseTo: null,
+            from: null,
+            to: null,
+            quote: null,
+            text: "What does it mean to be born of water and the Spirit?",
+            createdAt: now,
+            updatedAt: now,
+          },
+        ]),
+      );
+    });
+    const sent: { notes: { text: string; ref: string | null }[] }[] = [];
+    await page.route("**/api/ai/ask", (route) => {
+      sent.push(route.request().postDataJSON() as { notes: { text: string; ref: string | null }[] });
+      return stream(route, wire());
+    });
+    await openDrawer(page);
+    await ask(page, "¿Qué decían los Padres sobre nacer del agua?");
+    await expect.poll(() => sent.length).toBe(1);
+    expect(sent[0]?.notes).toContainEqual({
+      text: "What does it mean to be born of water and the Spirit?",
+      ref: "Juan 3:5",
+    });
+  });
 });

@@ -10,6 +10,7 @@ import {
   licenceOfGlossary,
   maxQuoteWordsFor,
   speakerOfWork,
+  withContractions,
 } from "@/content/ai-search/collections";
 import { formatLocator } from "@/content/format-locator";
 import { formatVerseRef } from "@/content/format-verse";
@@ -213,7 +214,7 @@ export function traditionRows() {
     rows.push({
       ...base,
       source_key: `tradition:${page.doctrine}:${page.tradition}:definition`,
-      title: `Definición de ${subjects[page.doctrine]}`,
+      title: withContractions(`Definición de ${subjects[page.doctrine]}`),
       refs: [...new Set([...versesOf(definition.text), ...scriptureRefs])],
       text: plainOf(definition.text),
     });

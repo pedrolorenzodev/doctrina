@@ -476,6 +476,10 @@ check("words accept a prefixed tradition id", () => {
   });
   assert.equal(v.words[0]?.tradition, "catholic");
 });
+check("a sentence about «el paquete» is removed too", () => {
+  const v = run({ prose: "Justino describe el pan {P5}. La Escritura del paquete incluye Juan 6 {P1}." });
+  assert.equal(v.prose, "Justino describe el pan {P5}.");
+});
 check("a sentence about the pack is removed", () => {
   const v = run({ prose: "Justino describe el pan {P5}. El pack no indica qué textos cita cada tradición {P2}." });
   assert.equal(v.prose, "Justino describe el pan {P5}.");
@@ -607,6 +611,36 @@ check("plan scope: authors the question does not name are dropped", () => {
   assert.deepEqual(
     clampPlan({ ...planBase, authors: ["augustine-of-hippo"] }, authors, "¿Qué dice Agustín?").plan.authors,
     ["augustine-of-hippo"],
+  );
+});
+check("plan scope: a named Father adds the Fathers to the asked sources", () => {
+  const authors = [
+    {
+      id: "ignatius-of-antioch",
+      name: "Ignacio de Antioquía",
+      names: { es: "Ignacio de Antioquía", en: "Ignatius of Antioch" },
+      works: [{ id: "ignatius-smyrnaeans", title: "To the Smyrnaeans" }],
+    },
+  ];
+  const named = { ...planBase, sources: ["traditions"], traditions: ["catholic"], authors: ["ignatius-of-antioch"] };
+  assert.deepEqual(clampPlan(named, authors, "Was Ignatius of Antioch a Catholic?").plan.sources, [
+    "traditions",
+    "fathers",
+  ]);
+  assert.deepEqual(
+    clampPlan(
+      { ...planBase, traditions: ["catholic"], authors: ["ignatius-of-antioch"] },
+      authors,
+      "¿Ignacio era católico?",
+    ).plan.sources,
+    ["traditions", "fathers"],
+  );
+  assert.deepEqual(clampPlan({ ...named, authors: [] }, authors, "What do Catholics say about bishops?").plan.sources, [
+    "traditions",
+  ]);
+  assert.deepEqual(
+    clampPlan({ ...planBase, authors: ["ignatius-of-antioch"] }, authors, "¿Qué dice Ignacio?").plan.sources,
+    [],
   );
 });
 check("plan clamp drops unknown authors and long lists", () => {

@@ -31,7 +31,6 @@ import { runPlan } from "@/features/ask/plan";
 import { verifyAnswer, type Verified } from "@/features/ask/verify-answer";
 
 const LOGGED_QUESTION_CHARS = 500;
-const SECOND_READING_MIN = 12;
 
 export type OpenedAsk =
   | { kind: "cached"; answer: WireAnswer; ticket: GuardTicket }
@@ -171,7 +170,7 @@ async function live(
       topUp: { namedAuthors: plan.authors.length > 0, namedTraditions: plan.traditions.length > 0 },
     };
     let model = await runAnswer(opened.provider, trace.meter, input, plan, pack.passages);
-    if (model.kind === "not_found" && sources.length >= SECOND_READING_MIN && coverage.missingAuthors.length === 0) {
+    if (model.kind === "not_found" && coverage.missingAuthors.length === 0) {
       trace.checks.secondReading = true;
       model = await runSecondReading(opened.provider, trace.meter, input, plan, pack.passages);
     }

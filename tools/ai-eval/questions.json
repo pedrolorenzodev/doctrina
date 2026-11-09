@@ -854,6 +854,96 @@
     "tags": ["verdict", "sola-scriptura"]
   },
   {
+    "id": "v11",
+    "lang": "es",
+    "question": "¿Ignacio de Antioquía era católico?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "verdict_request",
+      "kind": ["disputed", "evidence"],
+      "language": "es"
+    },
+    "tags": ["verdict", "fathers-assignment"]
+  },
+  {
+    "id": "v12",
+    "lang": "en",
+    "question": "Was Tertullian a Protestant?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "verdict_request",
+      "kind": ["disputed", "evidence"],
+      "language": "en"
+    },
+    "tags": ["verdict", "fathers-assignment"]
+  },
+  {
+    "id": "v13",
+    "lang": "es",
+    "question": "¿Orígenes era ortodoxo?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "verdict_request",
+      "kind": ["disputed", "evidence"],
+      "language": "es"
+    },
+    "tags": ["verdict", "fathers-assignment"]
+  },
+  {
+    "id": "v14",
+    "lang": "en",
+    "question": "Was Cyril of Jerusalem Orthodox or Catholic?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "bsb"
+    },
+    "expect": {
+      "intent": "verdict_request",
+      "kind": ["disputed", "evidence"],
+      "language": "en"
+    },
+    "tags": ["verdict", "fathers-assignment"]
+  },
+  {
+    "id": "v15",
+    "lang": "es",
+    "question": "¿Cipriano de Cartago era católico?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "expect": {
+      "intent": "verdict_request",
+      "kind": ["disputed", "evidence"],
+      "language": "es"
+    },
+    "tags": ["verdict", "fathers-assignment"]
+  },
+  {
     "id": "l01",
     "lang": "es",
     "question": "¿Por qué los católicos adoran un pedazo de pan?",
@@ -2157,5 +2247,31 @@
       "noteRef": "Juan 6:53"
     },
     "tags": ["note-followup", "eucharist", "fathers"]
+  },
+  {
+    "id": "nf07",
+    "lang": "es",
+    "question": "¿Qué decían los Padres sobre nacer del agua y del Espíritu?",
+    "scope": "all",
+    "here": {
+      "kind": "bible",
+      "book": "John",
+      "chapter": 6,
+      "translation": "rv1909"
+    },
+    "notes": [
+      {
+        "text": "What does it mean to be born of water and the Spirit?",
+        "ref": "Juan 3:5"
+      }
+    ],
+    "expect": {
+      "intent": "evidence",
+      "kind": ["evidence"],
+      "language": "es",
+      "noteFollowup": "question",
+      "noteRef": "Juan 3:5"
+    },
+    "tags": ["note-followup", "baptism", "fathers"]
   }
 ]

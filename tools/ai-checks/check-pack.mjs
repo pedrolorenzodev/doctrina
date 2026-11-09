@@ -1,4 +1,4 @@
-import { biblePassage, osisParts, passageFromRow } from "@/content/ai-search/collections";
+import { biblePassage, osisParts, passageFromRow, withContractions } from "@/content/ai-search/collections";
 import { buildPack, verseTargets } from "@/content/ai-search/pack";
 import { coverageLine } from "@/features/ask/coverage-line";
 import { callRest } from "@/content/ai-search/supabase-search";
@@ -385,6 +385,15 @@ check(
 );
 const missing = await buildPack(plan({ doctrines: [], authors: ["John Damascene"] }), ask(), search);
 check("missing author is reported", missing.coverage.missingAuthors.join() === "John Damascene");
+const notSearched = await buildPack(
+  plan({ doctrines: [], authors: ["ignatius-of-antioch"], sources: ["traditions"] }),
+  ask(),
+  search,
+);
+check(
+  "a Father is not reported missing when the Fathers were not searched",
+  notSearched.coverage.missingAuthors.length === 0,
+);
 
 const justification = await buildPack(plan({ doctrines: ["justification"] }), ask(), search);
 check(
@@ -628,6 +637,24 @@ if (restEnv.url === undefined) delete process.env.NEXT_PUBLIC_SUPABASE_URL;
 else process.env.NEXT_PUBLIC_SUPABASE_URL = restEnv.url;
 if (restEnv.key === undefined) delete process.env.SUPABASE_SECRET_KEY;
 else process.env.SUPABASE_SECRET_KEY = restEnv.key;
+
+check(
+  "Spanish labels contract «de el» and «a el», never inside words",
+  withContractions("Definición de el papado") === "Definición del papado" &&
+    withContractions("De el bautismo, a el templo") === "Del bautismo, al templo" &&
+    withContractions("Fiel a ellos, de elección") === "Fiel a ellos, de elección",
+);
+check(
+  "a tradition row's stored label is shown contracted",
+  passageFromRow(
+    {
+      ...fixture.rows.find((r) => r.collection === "tradition"),
+      title: "Definición de el papado",
+      source_key: "tradition:papacy:catholic:definition",
+    },
+    "es",
+  ).locatorLabel === "Definición del papado",
+);
 
 if (failures.length) throw new Error(failures.slice(0, 25).join("\n"));
 console.log(`ok ${checks} checks`);
