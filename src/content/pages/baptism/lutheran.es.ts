@@ -154,8 +154,8 @@ export const baptismLutheran = {
   scriptureSubtitle: "Los pasajes que las confesiones luteranas citan sobre el bautismo, y cómo los leen.",
   scripture: [
     {
-      refs: ["Matt.28.19"],
-      text: "El Catecismo Menor funda el bautismo en la institución de Cristo y en el nombre del Padre, del Hijo y del Espíritu Santo (Catecismo Menor IV.3–4).",
+      refs: ["Matt.28.18-Matt.28.20"],
+      text: "El Catecismo Menor funda el bautismo en la institución de Cristo y en el nombre del Padre, del Hijo y del Espíritu Santo (Catecismo Menor IV.3–4). La Apología aplica el mandato de bautizar también a los niños (Apología IX.52).",
       apologists: {
         arguments: [
           {
@@ -232,8 +232,8 @@ export const baptismLutheran = {
       },
     },
     {
-      refs: ["Mark.16.16"],
-      text: "El Catecismo Menor cita este versículo como la promesa de salvación para quien cree y es bautizado (Catecismo Menor IV.7–8).",
+      refs: ["Mark.16.15-Mark.16.16"],
+      text: "El Catecismo Menor cita este versículo como la promesa de salvación para quien cree y es bautizado (Catecismo Menor IV.7–8). El Catecismo Mayor lo cita para la fe que recibe el tesoro prometido (Catecismo Mayor IV.33–34).",
       apologists: {
         arguments: [
           {
@@ -257,7 +257,7 @@ export const baptismLutheran = {
       },
     },
     {
-      refs: ["Titus.3.5-Titus.3.7"],
+      refs: ["Titus.3.4-Titus.3.7"],
       text: "El Catecismo Menor lo cita para el lavamiento de la regeneración y de la renovación (Catecismo Menor IV.10).",
       apologists: {
         arguments: [
@@ -294,7 +294,7 @@ export const baptismLutheran = {
       },
     },
     {
-      refs: ["Rom.6.4"],
+      refs: ["Rom.6.3-Rom.6.5"],
       text: "El Catecismo Menor lo cita para la vida nueva que el bautismo significa cada día (Catecismo Menor IV.13–14).",
       apologists: {
         arguments: [
@@ -359,10 +359,6 @@ export const baptismLutheran = {
           },
         ],
       },
-    },
-    {
-      refs: ["Matt.28.19"],
-      text: "La Apología aplica el mandato de bautizar también a los niños (Apología IX.52).",
     },
     {
       refs: ["Eph.5.26"],
@@ -434,10 +430,6 @@ export const baptismLutheran = {
           },
         ],
       },
-    },
-    {
-      refs: ["Mark.16.16"],
-      text: "El Catecismo Mayor lo cita para la fe que recibe el tesoro prometido (Catecismo Mayor IV.33–34).",
     },
   ],
   passages: {

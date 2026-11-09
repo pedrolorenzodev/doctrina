@@ -5396,6 +5396,86 @@ export const verses = {
     text: "Si alguno viene á vosotros, y no trae esta doctrina, no lo recibáis en casa, ni le digáis: ¡bienvenido!",
     edition: "RV1909",
   },
+  "John.3.3": {
+    osis: "John.3.3",
+    text: "Respondió Jesús, y díjole: De cierto, de cierto te digo, que el que no naciere otra vez, no puede ver el reino de Dios.",
+    edition: "RV1909",
+  },
+  "John.3.4": {
+    osis: "John.3.4",
+    text: "Dícele Nicodemo: ¿Cómo puede el hombre nacer siendo viejo? ¿puede entrar otra vez en el vientre de su madre, y nacer?",
+    edition: "RV1909",
+  },
+  "John.3.6": {
+    osis: "John.3.6",
+    text: "Lo que es nacido de la carne, carne es; y lo que es nacido del Espíritu, espíritu es.",
+    edition: "RV1909",
+  },
+  "John.3.7": {
+    osis: "John.3.7",
+    text: "No te maravilles de que te dije: Os es necesario nacer otra vez.",
+    edition: "RV1909",
+  },
+  "1Pet.3.18": {
+    osis: "1Pet.3.18",
+    text: "Porque también Cristo padeció una vez por los pecados, el justo por los injustos, para llevarnos á Dios, siendo á la verdad muerto en la carne, pero vivificado en espíritu;",
+    edition: "RV1909",
+  },
+  "1Pet.3.19": {
+    osis: "1Pet.3.19",
+    text: "En el cual también fué y predicó á los espíritus encarcelados;",
+    edition: "RV1909",
+  },
+  "1Pet.3.22": {
+    osis: "1Pet.3.22",
+    text: "El cual está á la diestra de Dios, habiendo subido al cielo; estando á él sujetos los ángeles, y las potestades, y virtudes.",
+    edition: "RV1909",
+  },
+  "Titus.3.4": {
+    osis: "Titus.3.4",
+    text: "Mas cuando se manifestó la bondad de Dios nuestro Salvador, y su amor para con los hombres,",
+    edition: "RV1909",
+  },
+  "Gal.3.26": {
+    osis: "Gal.3.26",
+    text: "Porque todos sois hijos de Dios por la fe en Cristo Jesús.",
+    edition: "RV1909",
+  },
+  "Gal.3.29": {
+    osis: "Gal.3.29",
+    text: "Y si vosotros sois de Cristo, ciertamente la simiente de Abraham sois, y conforme á la promesa los herederos.",
+    edition: "RV1909",
+  },
+  "Matt.16.13": {
+    osis: "Matt.16.13",
+    text: "Y viniendo Jesús á las partes de Cesarea de Filipo, preguntó á sus discípulos, diciendo: ¿Quién dicen los hombres que es el Hijo del hombre?",
+    edition: "RV1909",
+  },
+  "Matt.16.14": {
+    osis: "Matt.16.14",
+    text: "Y ellos dijeron: Unos, Juan el Bautista; y otros, Elías; y otros, Jeremías, ó alguno de los profetas.",
+    edition: "RV1909",
+  },
+  "Matt.16.20": {
+    osis: "Matt.16.20",
+    text: "Entonces mandó á sus discípulos que á nadie dijesen que él era Jesús el Cristo.",
+    edition: "RV1909",
+  },
+  "2Thess.2.14": {
+    osis: "2Thess.2.14",
+    text: "A lo cual os llamó por nuestro evangelio, para alcanzar la gloria de nuestro Señor Jesucristo.",
+    edition: "RV1909",
+  },
+  "2Tim.3.14": {
+    osis: "2Tim.3.14",
+    text: "Empero persiste tú en lo que has aprendido y te persuadiste, sabiendo de quién has aprendido;",
+    edition: "RV1909",
+  },
+  "Luke.22.18": {
+    osis: "Luke.22.18",
+    text: "Porque os digo, que no beberé más del fruto de la vid, hasta que el reino de Dios venga.",
+    edition: "RV1909",
+  },
 } satisfies Record<string, Verse>;
 
 export type VerseId = keyof typeof verses;

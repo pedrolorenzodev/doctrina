@@ -32,8 +32,8 @@ for (const key of keys) {
   if (!topic) throw new Error(`no topic for ${key}`);
   const source = JSON.parse(JSON.stringify(page));
   if (tradition === "baptist") source.scripture = baptistPassages(doctrine);
-  for (const passage of source.scripture) for (const ref of passage.refs) for (const verse of expandSegment(ref)) newVerses[verse] = { osis: verse, text: rv1909[verse], edition: "RV1909" };
   const layered = applyPassagesLayer(source, topic);
+  for (const passage of layered.page.scripture) for (const ref of passage.refs) for (const verse of expandSegment(ref)) newVerses[verse] = { osis: verse, text: rv1909[verse], edition: "RV1909" };
   reports[key] = layered.report;
   fs.writeFileSync(
     file,

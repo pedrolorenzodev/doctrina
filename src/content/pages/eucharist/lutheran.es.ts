@@ -349,7 +349,7 @@ export const eucharistLutheran = {
   scripture: [
     {
       refs: ["Matt.26.26-Matt.26.28", "Mark.14.22-Mark.14.24", "Luke.22.19-Luke.22.20", "1Cor.11.23-1Cor.11.25"],
-      text: "Para las confesiones luteranas, los tres evangelistas y Pablo repiten «con las mismas palabras y sílabas» «Esto es mi cuerpo», sin ninguna figura (Fórmula de Concordia, Declaración sólida VII.52): por eso se entienden como suenan. «Esto es mi cuerpo, que por vosotros es dado» (Lucas 22:19).",
+      text: "Para las confesiones luteranas, los tres evangelistas y Pablo repiten «con las mismas palabras y sílabas» «Esto es mi cuerpo», sin ninguna figura (Fórmula de Concordia, Declaración sólida VII.52): por eso se entienden como suenan. «Esto es mi cuerpo, que por vosotros es dado» (Lucas 22:19). «Bebed de él todos» (Mateo 26:27) es para la Confesión de Augsburgo un mandato: Cristo «mandó claramente acerca de la copa que todos beban» (art. XXII). La Fórmula de Concordia cita «y bebieron de él todos» (Marcos 14:23) para mostrar que el cuerpo y la sangre se reciben también con la boca.",
       apologists: {
         arguments: [
           {
@@ -374,15 +374,7 @@ export const eucharistLutheran = {
       },
     },
     {
-      refs: ["Matt.26.27"],
-      text: "«Bebed de él todos» (Mateo 26:27) es para la Confesión de Augsburgo un mandato: Cristo «mandó claramente acerca de la copa que todos beban» (art. XXII).",
-    },
-    {
-      refs: ["Mark.14.23"],
-      text: "La Fórmula de Concordia cita «y bebieron de él todos» (Marcos 14:23) para mostrar que el cuerpo y la sangre se reciben también con la boca.",
-    },
-    {
-      refs: ["1Cor.10.16"],
+      refs: ["1Cor.10.16-1Cor.10.17"],
       text: "«El pan que partimos, ¿no es la comunión del cuerpo de Cristo?» (1 Corintios 10:16). Para la Apología, si el cuerpo no estuviera presente, el pan sería comunión «solo del espíritu de Cristo» (X.54). Los Artículos de Esmalcalda leen en el mismo versículo que allí sigue habiendo pan (III.6.5).",
       apologists: {
         arguments: [
@@ -408,8 +400,8 @@ export const eucharistLutheran = {
       },
     },
     {
-      refs: ["1Cor.11.27-1Cor.11.29"],
-      text: "«Cualquiera que comiere este pan ó bebiere esta copa del Señor indignamente, será culpado del cuerpo y de la sangre del Señor» (1 Corintios 11:27). Para la Fórmula de Concordia, nadie es culpable de un cuerpo ausente: también el indigno recibe el cuerpo de Cristo, para juicio (Declaración sólida VII.60).",
+      refs: ["1Cor.11.26-1Cor.11.29"],
+      text: "«Cualquiera que comiere este pan ó bebiere esta copa del Señor indignamente, será culpado del cuerpo y de la sangre del Señor» (1 Corintios 11:27). Para la Fórmula de Concordia, nadie es culpable de un cuerpo ausente: también el indigno recibe el cuerpo de Cristo, para juicio (Declaración sólida VII.60). Pablo lo sigue llamando «pan» después de la consagración: para los Artículos de Esmalcalda, allí «hay pan y sigue habiéndolo» (III.6.5). «La muerte del Señor anunciáis hasta que venga» (1 Corintios 11:26): para la Apología, la ceremonia está unida a la predicación, la fe y la acción de gracias, y «no debe separarse de ellas» (XXIV.35).",
       apologists: {
         arguments: [
           {
@@ -432,42 +424,6 @@ export const eucharistLutheran = {
           },
         ],
       },
-    },
-    {
-      refs: ["1Cor.11.28"],
-      text: "Pablo lo sigue llamando «pan» después de la consagración: para los Artículos de Esmalcalda, allí «hay pan y sigue habiéndolo» (III.6.5).",
-    },
-    {
-      refs: ["1Cor.11.26"],
-      text: "«La muerte del Señor anunciáis hasta que venga» (1 Corintios 11:26): para la Apología, la ceremonia está unida a la predicación, la fe y la acción de gracias, y «no debe separarse de ellas» (XXIV.35).",
-    },
-    {
-      refs: ["Heb.10.4", "Heb.10.10", "Heb.10.14"],
-      text: "«En la cual voluntad somos santificados por la ofrenda del cuerpo de Jesucristo [hecha] una sola vez» (Hebreos 10:10). Para la Apología, la muerte de Cristo es el único sacrificio propiciatorio (XXIV.22).",
-    },
-    {
-      refs: ["Isa.53.10"],
-      text: "Para la Apología, Isaías llama a la muerte de Cristo «expiación por el pecado» (53:10): esa es la verdadera satisfacción, no las ceremonias.",
-    },
-    {
-      refs: ["Mal.1.11", "Lev.3", "Lev.7", "Ps.56"],
-      text: "Para la Apología, los sacrificios de alabanza son «la predicación del Evangelio, la fe, la invocación, la acción de gracias» (XXIV.25); el «presente limpio» de Malaquías 1:11 se refiere a ellos, no a la misa (XXIV.31–32).",
-    },
-    {
-      refs: ["John.4.23-John.4.24"],
-      text: "«Los verdaderos adoradores adorarán al Padre en espíritu y en verdad»: para la Apología, el culto del Nuevo Testamento es espiritual, y ninguna ofrenda vale por la sola obra (XXIV.27).",
-    },
-    {
-      refs: ["Acts.3.21"],
-      text: "«Al cual de cierto es menester que el cielo tenga» (Hechos 3:21). Para la Fórmula de Concordia, el versículo no dice que el cielo encierre a Cristo de modo que no pueda estar en la Cena (Declaración sólida VII.119).",
-    },
-    {
-      refs: ["Eph.1.22"],
-      text: "Cristo, según su naturaleza humana, está sentado a la diestra de Dios, y Dios «sometió todas las cosas debajo de sus pies» (Efesios 1:22): para la Fórmula de Concordia, ese es uno de los fundamentos de su presencia en la Cena.",
-    },
-    {
-      refs: ["John.1.14", "Col.2.9", "Acts.10.38", "2Cor.5.19"],
-      text: "Así como «aquel Verbo fué hecho carne» (Juan 1:14) sin que la divinidad se convierta en humanidad, en la Cena el pan, sin cambiar, y el cuerpo de Cristo están unidos (Declaración sólida VII.36–38).",
     },
     {
       refs: ["John.6"],
@@ -513,6 +469,34 @@ export const eucharistLutheran = {
           },
         ],
       },
+    },
+    {
+      refs: ["Heb.10.4", "Heb.10.10", "Heb.10.14"],
+      text: "«En la cual voluntad somos santificados por la ofrenda del cuerpo de Jesucristo [hecha] una sola vez» (Hebreos 10:10). Para la Apología, la muerte de Cristo es el único sacrificio propiciatorio (XXIV.22).",
+    },
+    {
+      refs: ["Mal.1.11", "Lev.3", "Lev.7", "Ps.56"],
+      text: "Para la Apología, los sacrificios de alabanza son «la predicación del Evangelio, la fe, la invocación, la acción de gracias» (XXIV.25); el «presente limpio» de Malaquías 1:11 se refiere a ellos, no a la misa (XXIV.31–32).",
+    },
+    {
+      refs: ["Isa.53.10"],
+      text: "Para la Apología, Isaías llama a la muerte de Cristo «expiación por el pecado» (53:10): esa es la verdadera satisfacción, no las ceremonias.",
+    },
+    {
+      refs: ["John.4.23-John.4.24"],
+      text: "«Los verdaderos adoradores adorarán al Padre en espíritu y en verdad»: para la Apología, el culto del Nuevo Testamento es espiritual, y ninguna ofrenda vale por la sola obra (XXIV.27).",
+    },
+    {
+      refs: ["Acts.3.21"],
+      text: "«Al cual de cierto es menester que el cielo tenga» (Hechos 3:21). Para la Fórmula de Concordia, el versículo no dice que el cielo encierre a Cristo de modo que no pueda estar en la Cena (Declaración sólida VII.119).",
+    },
+    {
+      refs: ["Eph.1.22"],
+      text: "Cristo, según su naturaleza humana, está sentado a la diestra de Dios, y Dios «sometió todas las cosas debajo de sus pies» (Efesios 1:22): para la Fórmula de Concordia, ese es uno de los fundamentos de su presencia en la Cena.",
+    },
+    {
+      refs: ["John.1.14", "Col.2.9", "Acts.10.38", "2Cor.5.19"],
+      text: "Así como «aquel Verbo fué hecho carne» (Juan 1:14) sin que la divinidad se convierta en humanidad, en la Cena el pan, sin cambiar, y el cuerpo de Cristo están unidos (Declaración sólida VII.36–38).",
     },
     {
       refs: ["Matt.11.28", "Matt.9.12", "2Cor.12.9", "Rom.14.1"],

@@ -167,7 +167,7 @@ export const baptismOrthodox = {
   scriptureSubtitle: "Los pasajes que los textos ortodoxos citan sobre el bautismo, y cómo los leen.",
   scripture: [
     {
-      refs: ["John.3.5"],
+      refs: ["John.3.3-John.3.8"],
       text: "El Catecismo extenso de Filareto y la Confesión de Dositeo lo citan para el nacimiento de agua y de Espíritu, cada uno con su propia redacción (Filareto, pregunta 288; Dositeo, decreto XVI).",
       apologists: {
         arguments: [
@@ -193,20 +193,16 @@ export const baptismOrthodox = {
       },
     },
     {
-      refs: ["Acts.19.4"],
-      text: "El Catecismo extenso lo cita para el bautismo de arrepentimiento de Juan y la fe en el que había de venir (Filareto, pregunta 289).",
-    },
-    {
-      refs: ["Matt.28.19"],
+      refs: ["Matt.28.18-Matt.28.20"],
       text: "El Catecismo extenso lo cita para el mandato del Cristo resucitado y el nombre trino (Filareto, pregunta 289).",
     },
     {
-      refs: ["Acts.2.38"],
+      refs: ["Acts.2.37-Acts.2.42"],
       text: "El Catecismo extenso lo cita para el arrepentimiento, el bautismo, la remisión y el don del Espíritu (Filareto, pregunta 291).",
     },
     {
-      refs: ["Mark.16.16"],
-      text: "El Catecismo extenso lo cita para la fe y el bautismo (Filareto, pregunta 291).",
+      refs: ["Mark.16.15-Mark.16.17"],
+      text: "El Catecismo extenso lo cita para la fe y el bautismo (Filareto, pregunta 291). El Catecismo extenso lo cita para la invocación en el nombre de Cristo (Filareto, pregunta 297).",
     },
     {
       refs: ["Col.2.11-Col.2.12"],
@@ -235,12 +231,12 @@ export const baptismOrthodox = {
       },
     },
     {
-      refs: ["Eph.2.2"],
-      text: "El Catecismo extenso lo cita para explicar el exorcismo (Filareto, pregunta 296).",
+      refs: ["Acts.19.4"],
+      text: "El Catecismo extenso lo cita para el bautismo de arrepentimiento de Juan y la fe en el que había de venir (Filareto, pregunta 289).",
     },
     {
-      refs: ["Mark.16.17"],
-      text: "El Catecismo extenso lo cita para la invocación en el nombre de Cristo (Filareto, pregunta 297).",
+      refs: ["Eph.2.2"],
+      text: "El Catecismo extenso lo cita para explicar el exorcismo (Filareto, pregunta 296).",
     },
     {
       refs: ["Matt.16.24"],

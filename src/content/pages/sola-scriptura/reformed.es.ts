@@ -177,109 +177,54 @@ export const solaScripturaReformed = {
     "Los pasajes que los Estándares de Westminster citan sobre la Escritura como regla, y cómo los leen.",
   scripture: [
     {
-      refs: ["Rom.1.19-Rom.1.20", "Rom.1.32", "Rom.2.1", "Rom.2.14-Rom.2.15"],
-      text: "La Confesión de Westminster lo cita para los límites de la revelación natural (Confesión 1.1).",
+      refs: ["2Tim.3.14-2Tim.3.17", "1John.5.9", "1Thess.2.13"],
+      text: "La Confesión de Westminster lo cita para la autoridad divina (Confesión 1.4).",
       apologists: {
         arguments: [
           {
             title:
-              "Todos conocen que Dios existe por la revelación general (creación, providencia, conciencia): Pablo dice que lo que se puede conocer de Dios es manifiesto a todos (Romanos 1:19–20), y los cielos cuentan la gloria de Dios (Salmo 19:1)",
+              "Dios «exhala» su Palabra como habló para crear: la Escritura es el propio discurso de Dios, y es el instrumento con el que el hombre de Dios queda equipado",
             quotes: [
               {
-                speaker: "Keith Mathison",
-                work: "The Heavens Declare",
+                speaker: "Eric Watkins",
+                work: "Listening to God’s Word",
                 outlet: "Ligonier Ministries",
-                date: "1 de noviembre de 2004",
+                date: "22 de mayo de 2025",
                 locator:
-                  "2 párrafos: del párrafo que empieza «The knowledge of the existence of God is known…» al que termina «…be saved, the special grace of God is required.»",
-                url: "https://learn.ligonier.org/articles/heavens-declare",
-                text: "El conocimiento de la existencia de Dios es conocido por todos mediante la revelación general. Pablo dice: “Lo que de Dios se puede conocer les es manifiesto [a todos los hombres], porque Dios se lo ha manifestado. Porque sus atributos invisibles, su eterno poder y su naturaleza divina, se han visto claramente desde la creación del mundo, siendo entendidos por medio de lo que ha sido hecho” (Romanos 1:19-20). Como exclama el salmista: “Los cielos cuentan la gloria de Dios, y el firmamento anuncia la obra de sus manos” (Salmo 19:1).\n\nA pesar de que el favor inmerecido de Dios se extiende a toda la humanidad, esta gracia común no debe confundirse con la gracia especial (es decir, la gracia salvadora). La gracia común de Dios deja al hombre sin excusa (Romanos 1:20), pero la gracia común por sí sola no es salvífica. No salva ni puede salvar. La salvación se halla exclusivamente en Jesucristo. “Y en ningún otro hay salvación; porque no hay otro nombre bajo el cielo, dado a los hombres, en que podamos ser salvos” (Hechos 4:12). Para que el hombre sea salvo, se requiere la gracia especial de Dios.",
+                  "3 párrafos: del párrafo que empieza «The language of God “breathing out” His Word is…» al que termina «…do with us than it does with God’s Word.»",
+                url: "https://learn.ligonier.org/articles/listening-to-gods-word",
+                text: "La expresión de que Dios “exhala” su Palabra es notable. Nos recuerda que Dios es un Dios que habla. No simplemente existe, ni es el recluso definitivo que permanece oculto; más bien, es el Dios que habla. La Biblia está llena de reflexiones sobre Dios que habla. Comienza y termina así, y está llena de principio a fin de Dios hablando a su pueblo. Fue por su palabra que Dios creó por primera vez. En Génesis 1 se nos dice repetidamente que Dios “habló… y así fue”. Cuando Dios habla, las cosas suceden. Podría haber creado sin hablar, y sin embargo habló. No debemos perder de vista que siempre hay un propósito detrás del hablar de Dios. Ese propósito es, en última instancia, su propia gloria. Todo lo que hace terminará dando gloria a sí mismo, y todo lo que dice hará lo mismo. Por eso habló la creación a la existencia: para su propia gloria.\n\nOtra conexión importante entre la creación y 2 Timoteo 3:16–17 es la creación de Adán en Génesis 2:7: “Entonces el Señor Dios formó al hombre del polvo de la tierra, y sopló en su nariz aliento de vida, y el hombre fue un ser viviente.” Es curioso que cuando Dios creó por primera vez a Adán, este estaba sin vida. Tenía un cuerpo, pero no aliento. Era como los versículos iniciales de Génesis: creación comenzada, pero no completada. Pero eso cambió cuando Dios “sopló”. Así como Dios infundió vida a la creación al hablarla a la existencia, infundió vida a Adán personalmente, llenándolo con el aliento de vida. Y así fue: Adán llegó a ser un ser viviente, pero de una manera que se eleva por encima del resto de la creación. Adán fue creado de manera única por Dios para portar la imagen de Dios y dar gloria a Dios. El hombre, a imagen de Dios, glorificaría y disfrutaría de Dios de maneras que trascienden con creces al resto de la creación. En este sentido, fue creado de manera única e inspirado de manera única.\n\nEsto nos devuelve a la Palabra de Dios, y en particular a 2 Timoteo 3:16–17. Este versículo nos enseña que la Palabra de Dios también ha sido inspirada de manera única. Es “exhalada por Dios”, de forma similar a la creación de la tierra en Génesis 1 y a la creación de Adán en Génesis 2. El fin principal de la Palabra de Dios es traerle gloria. Dios mismo promete preservar su Palabra por el mismo Espíritu Santo por el que la inspiró en primer lugar. Trasciende el tiempo, el espacio y la historia porque está ligada al Espíritu de Dios, que no puede ser asfixiado por las arenas del tiempo, expulsado del mundo ni cambiado por el curso de la historia. En otras palabras, la veracidad y la relevancia de la Biblia no dependen del hombre ni de sus designios. La Palabra de Dios está ligada a Dios mismo. Por lo tanto, el problema entre nosotros y la Palabra de Dios tiene mucho más que ver con nosotros que con la Palabra de Dios.",
                 original:
-                  "The knowledge of the existence of God is known to all through general revelation. Paul says, “What can be known about God is plain to them [all mankind], because God has shown it to them. For his invisible attributes, namely, his eternal power and divine nature, have been clearly perceived, ever since the creation of the world, in the things that have been made” (Rom. 1:19–20). As the Psalmist exclaims, “The heavens declare the glory of God, and the sky above proclaims his handiwork” (Psalm 19:1).\n\nDespite the fact that God’s unmerited favor is extended to all mankind, this common grace must not be confused with special grace (that is, saving grace). God’s common grace leaves man with no excuse (Rom. 1:20), but common grace alone is not salvific. It does not and cannot save. Salvation is found exclusively in Jesus Christ. “There is salvation in no one else, for there is no other name under heaven given among men by which we must be saved” (Acts 4:12). In order for man to be saved, the special grace of God is required.",
+                  "The language of God “breathing out” His Word is noteworthy. It reminds us that God is a speaking God. He does not simply exist, nor is He the ultimate recluse who remains hidden; rather, He is the God who speaks. The Bible is replete with reflection on God speaking. It begins and ends that way, and is filled from cover to cover with God speaking to His people. It was by His speaking that God first created. In Genesis 1 we are told repeatedly that God “spoke. . .and it was so.” When God speaks, things happen. He could have simply created without speaking, and yet He spoke. We should not lose sight of the fact that there is always purpose behind God’s speaking. That purpose is ultimately His own glory. All that He does will ultimately bring glory to Himself, and all that He says will do the same. That is why He spoke creation into existence—for His own glory.\n\nAnother important connection between creation and 2 Timothy 3:16–17 is the creation of Adam in Genesis 2:7: “Then the Lord God formed the man of dust from the ground and breathed into his nostrils the breath of life, and the man became a living creature.” It is a curious thing that when God first created Adam, he was lifeless. He had a body, but no breath. He was like the opening verses of Genesis: creation begun, but not completed. But that changed when God “breathed.” Just as God breathed life into creation by speaking it into existence, He breathed life into Adam personally, filling him with the breath of life. It was so—Adam became a living being, but in a way that rises above the rest of creation. Adam was uniquely created by God to bear God’s image and bring God glory. Man, in the image of God, would glorify and enjoy God in ways that far transcend the rest of creation. In this sense, he was uniquely created and uniquely inspired.\n\nThis brings us back to God’s Word, and to 2 Timothy 3:16–17 in particular. This verse teaches us that God’s Word has also been uniquely inspired. It is “God-breathed,” similar to the creation of the earth in Genesis 1 and similar to the creation of Adam in Genesis 2. The chief end of God’s Word is to bring Him glory. God Himself promises to preserve His Word by the same Holy Spirit through which He first inspired it. It transcends time, space, and history because it is bound to the Spirit of God, who cannot be suffocated by the sands of time, cast out of the world, or changed by the flow of history. In other words, the Bible’s truthfulness and relevance do not depend upon man and his designs. God’s Word is bound to God Himself. Thus, the problem between us and God’s Word has much more to do with us than it does with God’s Word.",
                 translation: "ai-assisted",
               },
             ],
           },
-        ],
-      },
-    },
-    {
-      refs: ["1Cor.1.21", "1Cor.2.13-1Cor.2.14"],
-      text: "La Confesión de Westminster lo cita para el conocimiento salvador (Confesión 1.1).",
-      apologists: {
-        arguments: [
           {
             title:
-              "Ferguson recuerda 1 Cor 2:14: el hombre natural no acepta las cosas del Espíritu de Dios, son locura para él y no puede entenderlas porque se disciernen espiritualmente; en cambio, el evangelio llega con palabras no enseñadas por sabiduría humana, interpretando verdades espirituales en lenguaje espiritual, de modo que la gramática del evangelio es una lengua extranjera para el hombre natural",
+              "La teología debe estar fundada en la Escritura: la palabra de Dios que da vida, 2 Timoteo 3:15, es la primera de las cinco solas",
             quotes: [
               {
-                speaker: "Sinclair B. Ferguson",
-                work: "The Grammar of the Gospel",
-                outlet: "Things Unseen with Sinclair B. Ferguson",
-                date: "5 de octubre de 2026",
-                locator: "Minutos 2:03 a 2:55",
-                url: "https://ligonier.org/podcasts/things-unseen-with-sinclair-ferguson/the-grammar-of-the-gospel#t=123",
-                text: "¿Recuerdan cómo lo dice Pablo cuando escribe a los corintios en 1 Corintios 2, versículo 14? Estaban demasiado impresionados por el lenguaje y la sabiduría de este mundo. Y él dice: miren, el hombre natural no acepta las cosas del Espíritu de Dios, le son locura, y no es capaz de entenderlas porque son espiritualmente repudiadas. En cambio, dice, el evangelio viene con palabras no enseñadas por sabiduría humana, interpretando verdades espirituales en lenguaje espiritual. Ahora, estoy citando ahí de la English Standard Version. Pablo no está diciendo, obviamente, que el evangelio no pueda expresarse en inglés. Pero sí está diciendo que la gramática del evangelio es distinta de la gramática del hombre natural, y por eso el hombre natural tiene dificultad para entenderlo.",
-                original:
-                  "Remember how Paul says this when he writes to the Corinthians in 1 Corinthians 2, verse 14? They were overly impressed by this world's language and wisdom. And he says, look, the natural man doesn't accept the things of the Spirit of God, they're folly to him, and he is not able to understand them because they're spiritually disowned. By contrast, he says, the gospel comes in words not taught by human wisdom, interpreting spiritual truths in spiritual language. Now, I'm quoting there from the English Standard Version. Paul isn't saying that the gospel can't be expressed in English, obviously. But he is saying that the gospel's grammar is different from the grammar of the natural man, and so the natural man has difficulty understanding it.",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      refs: ["Heb.1.1-Heb.1.2"],
-      text: "La Confesión de Westminster lo cita para los modos antiguos de hablar Dios y el Hijo (Confesión 1.1).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "Shaw lee Heb 1:1–2 («en otro tiempo Dios habló muchas veces y de muchas maneras a los padres por los profetas, pero en estos últimos días nos ha hablado por el Hijo») y dice que hubo un tiempo en que los profetas eran necesarios, pero ese tiempo ha pasado: la revelación final ha llegado en Jesucristo y está registrada en el Nuevo Testamento, que completa las Escrituras, de modo que no necesitamos profetas porque tenemos las Escrituras; agrega Dt 13 sobre los falsos profetas y que nuestra base es la Palabra escrita de Dios",
-            quotes: [
-              {
-                speaker: "Ben Shaw",
-                work: "Why Don't We Have Prophets Today like in the Old Testament?",
-                outlet: "Ask Ligonier",
-                date: "22 de julio de 2021",
-                locator: "Minutos 0:20 a 1:37",
-                url: "https://ask.ligonier.org/podcast-episodes/why-dont-we-have-prophets-today-like-in-the-old-testament#t=20",
-                text: "Respuesta rápida: Hebreos capítulo 1, versículos 1 y 2, dice: Hace mucho tiempo, en muchas ocasiones y de muchas maneras, Dios habló a nuestros padres por los profetas. Pero en estos últimos días nos ha hablado por su Hijo, a quien designó heredero de todas las cosas, por medio de quien también creó el mundo. La idea es que hubo un tiempo en que los profetas eran necesarios. Dios enviaba hombres de parte suya para hablar su palabra a su pueblo, para advertirles contra pecados y transgresiones y para dirigirlos en el camino de Dios. Pero ese tiempo ha pasado. La revelación final nos ha llegado en Jesucristo, y la encontramos registrada para nosotros en el Nuevo Testamento, que completa las Escrituras, y por eso no necesitamos profetas hoy, porque tenemos las Escrituras. En Deuteronomio capítulo 13, por ejemplo, advierte contra los falsos profetas, y los falsos profetas serían los que llevarían a la gente a algo contrario a lo que enseña la Palabra de Dios. Y así nuestra base, lo que sostiene nuestra posición, es la Palabra escrita de Dios. Y si un hombre habla en contra de eso, se llame profeta o no, no lo es.",
-                original:
-                  "Quick answer, Hebrews chapter 1 verses 1 and 2 says, Long ago, at many times and in many ways, God spoke to our fathers by the prophets. But in these last days, he has spoken to us by his Son, whom he appointed the heir of all things, through whom also he created the world. The point being that there was a time when prophets were necessary. God sent men from him to speak his word to his people, to warn them against sins and transgressions and to direct them in the way of God. But that time has passed. The final revelation has come to us in Jesus Christ, and we find that recorded for us then in the New Testament, which completes the Scriptures, and therefore we don't need prophets today because we have the Scriptures. In Deuteronomy chapter 13, for example, it warns against false prophets, and false prophets would be those who would lead people contrary to what the Word of God teaches. And so our basis, what we stand on, is the written Word of God. And if a man speaks contrary to that, whether he calls himself a prophet or not, he's not.",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      refs: ["Luke.1.3-Luke.1.4", "Rom.15.4"],
-      text: "La Confesión de Westminster lo cita para la escritura, la certeza y el consuelo (Confesión 1.1).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "Sproul lee Rom 15:4, «porque todo lo que se escribió antes, para nuestra enseñanza se escribió, a fin de que por la paciencia y la consolación de las Escrituras tengamos esperanza», y añade que no conoce nada más consolador para el alma que la Palabra de Dios, ni mayor panacea para un alma abatida que sumergirse en ella",
-            quotes: [
-              {
-                speaker: "R. C. Sproul",
-                work: "Bearing Others’ Burdens (Romans 14:19–15:13) — A Sermon by R.C. Sproul",
+                speaker: "Ryan McGraw",
+                work: "What Are the Five Solas?",
                 outlet: "Ligonier Ministries",
-                date: "8 de marzo de 2026",
-                locator: "Minutos 28:14 a 29:26",
-                url: "https://www.youtube.com/watch?v=OsnYxamR2Kg&t=1694s",
-                text: "en ese proceso. Todo lo que antes fue escrito, para nuestra enseñanza fue escrito, para que por la paciencia y la consolación de las Escrituras tengamos esperanza. Ay, no puedo pasar eso por alto. Por la paciencia y la consolación de las Escrituras. No conozco nada en este planeta más consolador para el alma que la Palabra de Dios. Cuando estoy abatido, cuando mi alma está postrada, y lo está de vez en cuando, como le pasa a todo el mundo. En medio de las penas, en medio del temor, si necesito que mi alma se levante de nuevo de la depresión, no hay mayor panacea para eso que sumergirme en la Palabra de Dios.",
+                date: "21 de octubre de 2025",
+                locator:
+                  "1 párrafo: del párrafo que empieza «Theology must be Scripturally grounded. God’s life-giving speech reveals…» al que termina «…with the God who is light (1 John 1:7).»",
+                url: "https://learn.ligonier.org/articles/what-are-the-five-solas",
+                text: "La teología debe estar fundada en la Escritura. La palabra vivificante de Dios nos revela su salvación y nos llama a la fe y al arrepentimiento. Éramos tinieblas, pero ahora somos luz en el Señor (Efesios 5:8). Satanás ciega la mente de los incrédulos, para que no vean la luz del evangelio de la gloria de Cristo (2 Corintios 4:4). Pero el Dios que manda que de las tinieblas resplandezca la luz resplandece en nuestros corazones, dándonos la luz “del conocimiento de la gloria de Dios en el rostro de Jesucristo” (2 Corintios 4:6). Dios siempre hace esto por el Espíritu que obra por medio de la Palabra. El Espíritu Santo es el autor de la Escritura, y habla por medio de ella (Hebreos 3:7). Las Escrituras nos enseñan todo lo que necesitamos para hacernos sabios para la salvación mediante la fe en Cristo y para estar enteramente capacitados para toda buena obra (2 Timoteo 3:15-17). Por eso, quienes no hablan según la regla de la Escritura no tienen luz en ellos (Isaías 8:20). Pero sin el Espíritu, ni siquiera las Escrituras pueden ayudarnos. Estamos muertos en delitos y pecados (Efesios 2:1-2), nuestras mentes y corazones están oscurecidos (Efesios 4:18; Romanos 1:21), y necesitamos a alguien que nos levante de entre los muertos y encienda las luces (Efesios 5:14). Si la Escritura es suficiente para hacernos sabios para la fe y la vida en Cristo, entonces la Escritura sola puede ser nuestra guía para caminar con Dios. Todo lo demás es a la vez inútil y superfluo. Pero debemos nacer del Espíritu para ver el reino de Dios (Juan 3:5). Solo por medio del Espíritu que obra por medio de las Escrituras y con ellas en nuestros corazones podemos caminar en la luz con Dios, que es luz (1 Juan 1:7).",
                 original:
-                  "in that process. Whatever things were written before were written for our learning, that we, through the patience and comfort of the Scriptures, might have hope. Ooh, I can't pass over that. Through the patience and comfort of the Scriptures, I know of nothing on this planet more comforting to the soul than the Word of God. When I am down, when my soul is cast down, and it is cast down from time to time, just as everyone is. In the midst of sorrows, in the midst of fear, if I need to have my soul raised again out of depression, There is no greater panacea for it than to immerse myself in the Word of God.",
+                  "Theology must be Scripturally grounded. God’s life-giving speech reveals to us His salvation and calls us to faith and repentance. We were once darkness, but now we are light in the Lord (Eph. 5:8). Satan blinds the minds of unbelievers, lest they see the light of the gospel of the glory of Christ (2 Cor. 4:4). Yet the God who commands light to shine out of darkness shines in our hearts, giving us the light “of the glory of God in the face of Jesus Christ” (2 Cor. 4:6). God always does this by the Spirit working through the Word. The Holy Spirit is the Author of Scripture, and He speaks through Scripture (Heb. 3:7). The Scriptures teach us everything that we need to make us wise for salvation through faith in Christ and to be thoroughly equipped for every good work (2 Tim. 3:15–17). This is why those who do not speak according to the rule of Scripture have no light in them (Isa. 8:20). Yet without the Spirit, even the Scriptures cannot help us. We are dead in trespasses and sins (Eph. 2:1–2), our minds and hearts are darkened (Eph. 4:18; Rom. 1:21), and we need someone to raise us from the dead and turn on the lights (Eph. 5:14). If Scripture is sufficient to make us wise for faith and life in Christ, then Scripture alone can be our guide to walking with God. Everything else is both useless and superfluous. Yet we must be born of the Spirit in order to see God’s kingdom (John 3:5). Only through the Spirit working by and with the Scriptures in our hearts can we walk in the light with the God who is light (1 John 1:7).",
                 translation: "ai-assisted",
               },
             ],
           },
         ],
       },
+    },
+    {
+      refs: ["2Tim.3.15", "2Pet.1.19"],
+      text: "La Confesión de Westminster lo cita para la necesidad de la Escritura (Confesión 1.1).",
     },
     {
       refs: ["Isa.8.20", "Rev.22.18"],
@@ -309,11 +254,51 @@ export const solaScripturaReformed = {
       },
     },
     {
-      refs: ["2Tim.3.15", "2Pet.1.19"],
-      text: "La Confesión de Westminster lo cita para la necesidad de la Escritura (Confesión 1.1).",
+      refs: ["Eph.2.19-Eph.2.22", "Acts.17.10-Acts.17.11", "1Cor.2.5", "2Cor.1.24"],
+      text: "La Confesión de Westminster lo cita para los concilios como ayuda (Confesión 31.4, numeración histórica). El Catecismo Mayor lo cita para la lectura diligente (Catecismo Mayor 157).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul dice que los de Berea, de quienes han tomado su nombre miles de estudios bíblicos, se distinguen porque al oír la predicación de Pablo escudriñaban las Escrituras (Hch 17:11); añade que una mirada superficial no basta y que los creyentes deben escudriñar profunda y diariamente la Palabra de Dios",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "Reasoning from the Scriptures (Acts 16:35–17:15) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "8 de septiembre de 2024",
+                locator: "Minutos 21:12 a 22:24",
+                url: "https://www.youtube.com/watch?v=IKVz5rsNPxY&t=1272s",
+                text: "de la Escritura. La gente de Berea, de la que han tomado el nombre miles de estudios bíblicos, se distingue porque cuando oyeron la predicación de Pablo, ¿qué hicieron? Escudriñaron las Escrituras. En nuestros días no escudriñamos las Escrituras. Obtenemos un pequeño manual que nos dice cómo leer la Biblia en 15 minutos al día. Eso no basta. Si realmente quieres crecer en tu fe, amado, tienes que escudriñar la Palabra de Dios. Tienes que comerla y beberla. Tienes que meditar en ella día y noche. No puedes conformarte con una mirada superficial de la Escritura sagrada. Si quieres las riquezas que Dios tiene para ti, escudriña su Palabra profundamente, a diario, aplicando tu mente y tu corazón a la comprensión de estas cosas, y entonces veremos quién es Jesús.",
+                original:
+                  "of Scripture. The people at Berea, from whom thousands of Bible studies have been named, are distinguished because when they heard the preaching of Paul, what did they do? they searched the Scriptures. In our day and age, we don't search the Scriptures. We get a little handbook that tells us how to read through the Bible in 15 minutes a day. That won't do it. If you really want to grow in your faith, beloved, you've got to search the Word of God. You've got to eat it and drink it. You've got to meditate in it day and night. You can't be satisfied with a casual overview of sacred Scripture. If you want the riches that God has for you, search His Word deeply, daily, applying your minds and your hearts to the understanding of these things, and then we will see who Jesus is.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+          {
+            title:
+              "Cooper dice que Pablo escribe en Efesios 2 que la iglesia está edificada sobre el fundamento de los apóstoles y profetas, siendo Cristo Jesús mismo la piedra angular, y que un fundamento se pone una sola vez: después de que los apóstoles del siglo primero lo pusieron y murieron no puede haber más apóstoles en ese sentido, por eso el testimonio escrito de los apóstoles y de quienes ellos avalaron tiene una autoridad única hoy, con la autoridad para hablar en nombre de Cristo",
+            quotes: [
+              {
+                speaker: "Barry Cooper",
+                work: "Apostles",
+                outlet: "Simply Put",
+                date: "28 de enero de 2025",
+                locator: "Minutos 2:16 a 3:56",
+                url: "https://ligonier.org/podcasts/simply-put/apostles#t=136",
+                text: "En Efesios capítulo 2, Pablo escribe que la iglesia está edificada sobre el fundamento de los apóstoles y profetas, siendo Cristo Jesús mismo la piedra angular. Esa visión de los apóstoles como parte del fundamento de la fe cristiana es crucial para entender, porque un fundamento se pone una sola vez. Así que, después de que aquellos apóstoles pusieron el fundamento en el primer siglo y luego murieron, por definición no pudo haber más apóstoles. Nadie después podría afirmar con verdad ser apóstol en el sentido en que Pablo habla en Efesios, porque no serían testigos de primera mano del Señor Jesús resucitado, como lo fueron los apóstoles. Tampoco habrían recibido el respaldo visible de los apóstoles del primer siglo. Esa es una de las razones por las que el testimonio escrito de los apóstoles en el Nuevo Testamento, y los escritos del Nuevo Testamento de aquellos específicamente avalados por los apóstoles, es tan singularmente autoritativo hoy. En el Imperio romano, un apostolos, de donde viene la palabra en inglés apostle, era cualquiera con autoridad para hablar a otros en nombre del emperador. Tal era su autoridad que, si desobedecías a esa persona, era como si desobedecieras al propio emperador. Ese es el tipo de autoridad que tiene el testimonio escrito de los apóstoles. Tienen la autoridad para hablarnos en nombre de, y con",
+                original:
+                  "In Ephesians chapter 2, Paul writes that the church is built on the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone. That view of the apostles as being included in the foundation of the Christian faith is crucial to understand because a foundation is laid only once. So after those apostles laid the foundation in the first century and then eventually died, there could be, by definition, no further apostles. No one subsequently could truthfully claim to be an apostle in the sense Paul talks about in Ephesians, because they would not be first-hand witnesses of the risen Lord Jesus, as the apostles were. Nor would they have received the visible endorsement of those first century apostles. That's one of the reasons why the written testimony of the apostles in the New Testament, and the New Testament writings of those specifically endorsed by the apostles, is so uniquely authoritative today. In the Roman Empire, an apostolos, from which we get the English word apostle, was anyone with the authority to speak to others on behalf of the emperor. Such was their authority that if you disobeyed them, it was as if you were disobeying the emperor himself. That's the kind of authority that the apostles' written testimony has. They have the authority to speak to us on behalf of, and with",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
     },
     {
-      refs: ["Eph.2.20", "Rev.22.18-Rev.22.19", "2Tim.3.16"],
+      refs: ["Eph.2.19-Eph.2.22", "Rev.22.18-Rev.22.19", "2Tim.3.14-2Tim.3.17"],
       text: "La Confesión de Westminster lo cita para la regla escrita inspirada (Confesión 1.2).",
       apologists: {
         arguments: [
@@ -377,120 +362,6 @@ export const solaScripturaReformed = {
       },
     },
     {
-      refs: ["Luke.24.27", "Luke.24.44", "2Pet.1.21"],
-      text: "La Confesión de Westminster lo cita para el límite del canon (Confesión 1.3).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "En su sermón sobre Juan 5:31–47, Sproul recuerda el camino a Emaús: Jesús, «comenzando por Moisés», recorrió todo el Antiguo Testamento y explicó cómo las Escrituras daban testimonio de él una y otra vez; sin embargo, cuando apareció el Mesías del que hablaba cada página, los suyos no lo recibieron, y los hombres trajeron tinieblas consigo incluso cuando escudriñaban las Escrituras",
-            quotes: [
-              {
-                speaker: "R. C. Sproul",
-                work: "The Witnesses to Christ (John 5:31–47) — A Sermon by R.C. Sproul",
-                outlet: "Ligonier Ministries",
-                date: "28 de junio de 2026",
-                locator: "Minutos 21:39 a 23:18",
-                url: "https://www.youtube.com/watch?v=LkFTIyLRkF0&t=1299s",
-                text: "¿Recuerdan el camino a Emaús, después de la resurrección, cuando Cristo se unió a estas dos personas que estaban tan abatidas después de los acontecimientos en Jerusalén que andaban cabizbajas y lamentándose? Y Jesús dijo: ¿qué pasa? ¿Qué les sucede? Y ellos dijeron: ¿no saben lo que acaba de pasar allá en Jerusalén? Jesús dice: cuéntenme. Ellos dijeron: bueno, este Jesús, esperábamos que fuera el Mesías, pero lo mataron. Ahora algunas de las mujeres, Dios no lo permita, sugieren que resucitó de entre los muertos. Pero ustedes saben que no se puede creer en cuentos de viejas como esos. ¿Qué le dice Jesús? Comenzando por Moisés, recorre todo el Antiguo Testamento con estas personas que deberían haberlo sabido mejor, y les explica cómo las Escrituras habían dado testimonio de él una y otra vez. Pero cuando el Mesías que el Antiguo Testamento enseñaba en cada página apareció en medio del pueblo, vino a lo suyo, y los suyos no lo recibieron. La luz vino al mundo, pero los hombres prefirieron las tinieblas antes que la luz. Y trajeron esa oscuridad consigo, incluso cuando escudriñaban las Escrituras.",
-                original:
-                  "Do you remember on the road to Emmaus after the resurrection and Christ fell in with these two people who were so dejected after the events in Jerusalem that they're hanging their heads and moaning, and Jesus said, what's going on? What's the matter? And they said, don't you know what just went on over there in Jerusalem? Jesus says, tell me about it. They said, well, this Jesus, we hoped that He was going to be the Messiah, but they killed Him. Now some of the women, God forbid, are suggesting that He was raised from the dead. But you know you can't believe old wives tales like that. What does Jesus say? Beginning with Moses, and He goes through the entire Old Testament with these people who should have known better, and explain to them how the Scriptures had testified to Him again and again. But when the Messiah that the Old Testament taught on every page appeared in the midst to the people, He came to His own, and His own received Him not. The light came into the world, but men preferred the darkness rather than the light. And they brought that darkness with them even when they searched the Scriptures.",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      refs: ["2Tim.3.16", "1John.5.9", "1Thess.2.13"],
-      text: "La Confesión de Westminster lo cita para la autoridad divina (Confesión 1.4).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "Dios «exhala» su Palabra como habló para crear: la Escritura es el propio discurso de Dios, y es el instrumento con el que el hombre de Dios queda equipado",
-            quotes: [
-              {
-                speaker: "Eric Watkins",
-                work: "Listening to God’s Word",
-                outlet: "Ligonier Ministries",
-                date: "22 de mayo de 2025",
-                locator:
-                  "3 párrafos: del párrafo que empieza «The language of God “breathing out” His Word is…» al que termina «…do with us than it does with God’s Word.»",
-                url: "https://learn.ligonier.org/articles/listening-to-gods-word",
-                text: "La expresión de que Dios “exhala” su Palabra es notable. Nos recuerda que Dios es un Dios que habla. No simplemente existe, ni es el recluso definitivo que permanece oculto; más bien, es el Dios que habla. La Biblia está llena de reflexiones sobre Dios que habla. Comienza y termina así, y está llena de principio a fin de Dios hablando a su pueblo. Fue por su palabra que Dios creó por primera vez. En Génesis 1 se nos dice repetidamente que Dios “habló… y así fue”. Cuando Dios habla, las cosas suceden. Podría haber creado sin hablar, y sin embargo habló. No debemos perder de vista que siempre hay un propósito detrás del hablar de Dios. Ese propósito es, en última instancia, su propia gloria. Todo lo que hace terminará dando gloria a sí mismo, y todo lo que dice hará lo mismo. Por eso habló la creación a la existencia: para su propia gloria.\n\nOtra conexión importante entre la creación y 2 Timoteo 3:16–17 es la creación de Adán en Génesis 2:7: “Entonces el Señor Dios formó al hombre del polvo de la tierra, y sopló en su nariz aliento de vida, y el hombre fue un ser viviente.” Es curioso que cuando Dios creó por primera vez a Adán, este estaba sin vida. Tenía un cuerpo, pero no aliento. Era como los versículos iniciales de Génesis: creación comenzada, pero no completada. Pero eso cambió cuando Dios “sopló”. Así como Dios infundió vida a la creación al hablarla a la existencia, infundió vida a Adán personalmente, llenándolo con el aliento de vida. Y así fue: Adán llegó a ser un ser viviente, pero de una manera que se eleva por encima del resto de la creación. Adán fue creado de manera única por Dios para portar la imagen de Dios y dar gloria a Dios. El hombre, a imagen de Dios, glorificaría y disfrutaría de Dios de maneras que trascienden con creces al resto de la creación. En este sentido, fue creado de manera única e inspirado de manera única.\n\nEsto nos devuelve a la Palabra de Dios, y en particular a 2 Timoteo 3:16–17. Este versículo nos enseña que la Palabra de Dios también ha sido inspirada de manera única. Es “exhalada por Dios”, de forma similar a la creación de la tierra en Génesis 1 y a la creación de Adán en Génesis 2. El fin principal de la Palabra de Dios es traerle gloria. Dios mismo promete preservar su Palabra por el mismo Espíritu Santo por el que la inspiró en primer lugar. Trasciende el tiempo, el espacio y la historia porque está ligada al Espíritu de Dios, que no puede ser asfixiado por las arenas del tiempo, expulsado del mundo ni cambiado por el curso de la historia. En otras palabras, la veracidad y la relevancia de la Biblia no dependen del hombre ni de sus designios. La Palabra de Dios está ligada a Dios mismo. Por lo tanto, el problema entre nosotros y la Palabra de Dios tiene mucho más que ver con nosotros que con la Palabra de Dios.",
-                original:
-                  "The language of God “breathing out” His Word is noteworthy. It reminds us that God is a speaking God. He does not simply exist, nor is He the ultimate recluse who remains hidden; rather, He is the God who speaks. The Bible is replete with reflection on God speaking. It begins and ends that way, and is filled from cover to cover with God speaking to His people. It was by His speaking that God first created. In Genesis 1 we are told repeatedly that God “spoke. . .and it was so.” When God speaks, things happen. He could have simply created without speaking, and yet He spoke. We should not lose sight of the fact that there is always purpose behind God’s speaking. That purpose is ultimately His own glory. All that He does will ultimately bring glory to Himself, and all that He says will do the same. That is why He spoke creation into existence—for His own glory.\n\nAnother important connection between creation and 2 Timothy 3:16–17 is the creation of Adam in Genesis 2:7: “Then the Lord God formed the man of dust from the ground and breathed into his nostrils the breath of life, and the man became a living creature.” It is a curious thing that when God first created Adam, he was lifeless. He had a body, but no breath. He was like the opening verses of Genesis: creation begun, but not completed. But that changed when God “breathed.” Just as God breathed life into creation by speaking it into existence, He breathed life into Adam personally, filling him with the breath of life. It was so—Adam became a living being, but in a way that rises above the rest of creation. Adam was uniquely created by God to bear God’s image and bring God glory. Man, in the image of God, would glorify and enjoy God in ways that far transcend the rest of creation. In this sense, he was uniquely created and uniquely inspired.\n\nThis brings us back to God’s Word, and to 2 Timothy 3:16–17 in particular. This verse teaches us that God’s Word has also been uniquely inspired. It is “God-breathed,” similar to the creation of the earth in Genesis 1 and similar to the creation of Adam in Genesis 2. The chief end of God’s Word is to bring Him glory. God Himself promises to preserve His Word by the same Holy Spirit through which He first inspired it. It transcends time, space, and history because it is bound to the Spirit of God, who cannot be suffocated by the sands of time, cast out of the world, or changed by the flow of history. In other words, the Bible’s truthfulness and relevance do not depend upon man and his designs. God’s Word is bound to God Himself. Thus, the problem between us and God’s Word has much more to do with us than it does with God’s Word.",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-          {
-            title:
-              "La teología debe estar fundada en la Escritura: la palabra de Dios que da vida, 2 Timoteo 3:15, es la primera de las cinco solas",
-            quotes: [
-              {
-                speaker: "Ryan McGraw",
-                work: "What Are the Five Solas?",
-                outlet: "Ligonier Ministries",
-                date: "21 de octubre de 2025",
-                locator:
-                  "1 párrafo: del párrafo que empieza «Theology must be Scripturally grounded. God’s life-giving speech reveals…» al que termina «…with the God who is light (1 John 1:7).»",
-                url: "https://learn.ligonier.org/articles/what-are-the-five-solas",
-                text: "La teología debe estar fundada en la Escritura. La palabra vivificante de Dios nos revela su salvación y nos llama a la fe y al arrepentimiento. Éramos tinieblas, pero ahora somos luz en el Señor (Efesios 5:8). Satanás ciega la mente de los incrédulos, para que no vean la luz del evangelio de la gloria de Cristo (2 Corintios 4:4). Pero el Dios que manda que de las tinieblas resplandezca la luz resplandece en nuestros corazones, dándonos la luz “del conocimiento de la gloria de Dios en el rostro de Jesucristo” (2 Corintios 4:6). Dios siempre hace esto por el Espíritu que obra por medio de la Palabra. El Espíritu Santo es el autor de la Escritura, y habla por medio de ella (Hebreos 3:7). Las Escrituras nos enseñan todo lo que necesitamos para hacernos sabios para la salvación mediante la fe en Cristo y para estar enteramente capacitados para toda buena obra (2 Timoteo 3:15-17). Por eso, quienes no hablan según la regla de la Escritura no tienen luz en ellos (Isaías 8:20). Pero sin el Espíritu, ni siquiera las Escrituras pueden ayudarnos. Estamos muertos en delitos y pecados (Efesios 2:1-2), nuestras mentes y corazones están oscurecidos (Efesios 4:18; Romanos 1:21), y necesitamos a alguien que nos levante de entre los muertos y encienda las luces (Efesios 5:14). Si la Escritura es suficiente para hacernos sabios para la fe y la vida en Cristo, entonces la Escritura sola puede ser nuestra guía para caminar con Dios. Todo lo demás es a la vez inútil y superfluo. Pero debemos nacer del Espíritu para ver el reino de Dios (Juan 3:5). Solo por medio del Espíritu que obra por medio de las Escrituras y con ellas en nuestros corazones podemos caminar en la luz con Dios, que es luz (1 Juan 1:7).",
-                original:
-                  "Theology must be Scripturally grounded. God’s life-giving speech reveals to us His salvation and calls us to faith and repentance. We were once darkness, but now we are light in the Lord (Eph. 5:8). Satan blinds the minds of unbelievers, lest they see the light of the gospel of the glory of Christ (2 Cor. 4:4). Yet the God who commands light to shine out of darkness shines in our hearts, giving us the light “of the glory of God in the face of Jesus Christ” (2 Cor. 4:6). God always does this by the Spirit working through the Word. The Holy Spirit is the Author of Scripture, and He speaks through Scripture (Heb. 3:7). The Scriptures teach us everything that we need to make us wise for salvation through faith in Christ and to be thoroughly equipped for every good work (2 Tim. 3:15–17). This is why those who do not speak according to the rule of Scripture have no light in them (Isa. 8:20). Yet without the Spirit, even the Scriptures cannot help us. We are dead in trespasses and sins (Eph. 2:1–2), our minds and hearts are darkened (Eph. 4:18; Rom. 1:21), and we need someone to raise us from the dead and turn on the lights (Eph. 5:14). If Scripture is sufficient to make us wise for faith and life in Christ, then Scripture alone can be our guide to walking with God. Everything else is both useless and superfluous. Yet we must be born of the Spirit in order to see God’s kingdom (John 3:5). Only through the Spirit working by and with the Scriptures in our hearts can we walk in the light with the God who is light (1 John 1:7).",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      refs: ["1Tim.3.15"],
-      text: "La Confesión de Westminster lo cita para el testimonio de la iglesia (Confesión 1.5).",
-    },
-    {
-      refs: ["1John.2.20", "1John.2.27", "John.16.13-John.16.14", "1Cor.2.10-1Cor.2.11"],
-      text: "La Confesión de Westminster lo cita para el testimonio del Espíritu (Confesión 1.5).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "Ferguson dice que el sermón de Pentecostés de Pedro no trata tanto de lo que hace el Espíritu como de lo que la obra del Espíritu nos dice sobre el Señor Jesús, en consonancia con las palabras de Jesús en el aposento alto, Juan 16:14: «cuando venga el Espíritu, él me glorificará, porque tomará de lo mío y se lo declarará a ustedes»; añade Juan 14:16, la promesa de otro Consolador, el Espíritu de verdad",
-            quotes: [
-              {
-                speaker: "Sinclair B. Ferguson",
-                work: "The Promise of the Holy Spirit",
-                outlet: "Things Unseen with Sinclair B. Ferguson",
-                date: "28 de mayo de 2026",
-                locator: "Minutos 0:30 a 1:17",
-                url: "https://ligonier.org/podcasts/things-unseen-with-sinclair-ferguson/the-promise-of-the-holy-spirit#t=30",
-                text: "Porque su sermón no trata tanto de lo que el Espíritu está haciendo, sino del hecho de que lo que el Espíritu está haciendo nos dice algo sobre el Señor Jesús. Y eso, por supuesto, es consistente con las palabras de Jesús en el aposento alto. Cuando dice, Juan 16, 14: cuando venga el Espíritu, él me glorificará, porque tomará lo mío y se lo declarará a ustedes. Pero hay otra promesa que Jesús dio a los apóstoles en el aposento alto, que es muy relevante aquí. ¿Recuerdan cómo dijo en Juan 14, versículo 16: yo rogaré al Padre, y él les dará otro Ayudador para que esté con ustedes para siempre, el Espíritu de verdad, a quien el mundo no puede recibir.",
-                original:
-                  "Because his sermon is not so much about what the Spirit is doing, but about the fact that what the Spirit is doing tells us something about the Lord Jesus. And that, of course, is consistent with Jesus' words in the upper room. When he says, John 16, 14, when the Spirit comes, he will glorify me, for he will take what is mine and declare it to you. But there's another promise Jesus gave the apostles in the upper room that's very relevant here. Remember how he said in John 14 verse 16, I will ask the Father, and he will give you another helper to be with you forever, even the Spirit of truth whom the world cannot receive.",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      refs: ["2Tim.3.16-2Tim.3.17", "Gal.1.8", "2Thess.2.2"],
-      text: "La Confesión de Westminster lo cita para la suficiencia y las adiciones (Confesión 1.6).",
-    },
-    {
-      refs: ["John.6.45", "1Cor.2.9-1Cor.2.10", "1Cor.2.12"],
-      text: "La Confesión de Westminster lo cita para la iluminación salvadora (Confesión 1.6).",
-    },
-    {
-      refs: ["1Cor.11.13-1Cor.11.14", "1Cor.14.26", "1Cor.14.40"],
-      text: "La Confesión de Westminster lo cita para las circunstancias y el orden (Confesión 1.6).",
-    },
-    {
       refs: ["2Pet.3.15-2Pet.3.16", "Ps.119.105", "Ps.119.130"],
       text: "La Confesión de Westminster lo cita para la dificultad y la claridad (Confesión 1.7).",
       apologists: {
@@ -544,6 +415,110 @@ export const solaScripturaReformed = {
       },
     },
     {
+      refs: ["John.5.39"],
+      text: "La Confesión de Westminster lo cita para leer y escudriñar (Confesión 1.8).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En su sermón sobre Juan 5:31–47, Sproul recuerda el camino a Emaús: Jesús, «comenzando por Moisés», recorrió todo el Antiguo Testamento y explicó cómo las Escrituras daban testimonio de él una y otra vez; sin embargo, cuando apareció el Mesías del que hablaba cada página, los suyos no lo recibieron, y los hombres trajeron tinieblas consigo incluso cuando escudriñaban las Escrituras",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "The Witnesses to Christ (John 5:31–47) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "28 de junio de 2026",
+                locator: "Minutos 21:39 a 23:18",
+                url: "https://www.youtube.com/watch?v=LkFTIyLRkF0&t=1299s",
+                text: "¿Recuerdan el camino a Emaús, después de la resurrección, cuando Cristo se unió a estas dos personas que estaban tan abatidas después de los acontecimientos en Jerusalén que andaban cabizbajas y lamentándose? Y Jesús dijo: ¿qué pasa? ¿Qué les sucede? Y ellos dijeron: ¿no saben lo que acaba de pasar allá en Jerusalén? Jesús dice: cuéntenme. Ellos dijeron: bueno, este Jesús, esperábamos que fuera el Mesías, pero lo mataron. Ahora algunas de las mujeres, Dios no lo permita, sugieren que resucitó de entre los muertos. Pero ustedes saben que no se puede creer en cuentos de viejas como esos. ¿Qué le dice Jesús? Comenzando por Moisés, recorre todo el Antiguo Testamento con estas personas que deberían haberlo sabido mejor, y les explica cómo las Escrituras habían dado testimonio de él una y otra vez. Pero cuando el Mesías que el Antiguo Testamento enseñaba en cada página apareció en medio del pueblo, vino a lo suyo, y los suyos no lo recibieron. La luz vino al mundo, pero los hombres prefirieron las tinieblas antes que la luz. Y trajeron esa oscuridad consigo, incluso cuando escudriñaban las Escrituras.",
+                original:
+                  "Do you remember on the road to Emmaus after the resurrection and Christ fell in with these two people who were so dejected after the events in Jerusalem that they're hanging their heads and moaning, and Jesus said, what's going on? What's the matter? And they said, don't you know what just went on over there in Jerusalem? Jesus says, tell me about it. They said, well, this Jesus, we hoped that He was going to be the Messiah, but they killed Him. Now some of the women, God forbid, are suggesting that He was raised from the dead. But you know you can't believe old wives tales like that. What does Jesus say? Beginning with Moses, and He goes through the entire Old Testament with these people who should have known better, and explain to them how the Scriptures had testified to Him again and again. But when the Messiah that the Old Testament taught on every page appeared in the midst to the people, He came to His own, and His own received Him not. The light came into the world, but men preferred the darkness rather than the light. And they brought that darkness with them even when they searched the Scriptures.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Matt.22.29", "Matt.22.31", "Eph.2.19-Eph.2.22"],
+      text: "La Confesión de Westminster lo cita para el juez supremo (Confesión 1.10).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Cooper dice que Pablo escribe en Efesios 2 que la iglesia está edificada sobre el fundamento de los apóstoles y profetas, siendo Cristo Jesús mismo la piedra angular, y que un fundamento se pone una sola vez: después de que los apóstoles del siglo primero lo pusieron y murieron no puede haber más apóstoles en ese sentido, por eso el testimonio escrito de los apóstoles y de quienes ellos avalaron tiene una autoridad única hoy, con la autoridad para hablar en nombre de Cristo",
+            quotes: [
+              {
+                speaker: "Barry Cooper",
+                work: "Apostles",
+                outlet: "Simply Put",
+                date: "28 de enero de 2025",
+                locator: "Minutos 2:16 a 3:56",
+                url: "https://ligonier.org/podcasts/simply-put/apostles#t=136",
+                text: "En Efesios capítulo 2, Pablo escribe que la iglesia está edificada sobre el fundamento de los apóstoles y profetas, siendo Cristo Jesús mismo la piedra angular. Esa visión de los apóstoles como parte del fundamento de la fe cristiana es crucial para entender, porque un fundamento se pone una sola vez. Así que, después de que aquellos apóstoles pusieron el fundamento en el primer siglo y luego murieron, por definición no pudo haber más apóstoles. Nadie después podría afirmar con verdad ser apóstol en el sentido en que Pablo habla en Efesios, porque no serían testigos de primera mano del Señor Jesús resucitado, como lo fueron los apóstoles. Tampoco habrían recibido el respaldo visible de los apóstoles del primer siglo. Esa es una de las razones por las que el testimonio escrito de los apóstoles en el Nuevo Testamento, y los escritos del Nuevo Testamento de aquellos específicamente avalados por los apóstoles, es tan singularmente autoritativo hoy. En el Imperio romano, un apostolos, de donde viene la palabra en inglés apostle, era cualquiera con autoridad para hablar a otros en nombre del emperador. Tal era su autoridad que, si desobedecías a esa persona, era como si desobedecieras al propio emperador. Ese es el tipo de autoridad que tiene el testimonio escrito de los apóstoles. Tienen la autoridad para hablarnos en nombre de, y con",
+                original:
+                  "In Ephesians chapter 2, Paul writes that the church is built on the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone. That view of the apostles as being included in the foundation of the Christian faith is crucial to understand because a foundation is laid only once. So after those apostles laid the foundation in the first century and then eventually died, there could be, by definition, no further apostles. No one subsequently could truthfully claim to be an apostle in the sense Paul talks about in Ephesians, because they would not be first-hand witnesses of the risen Lord Jesus, as the apostles were. Nor would they have received the visible endorsement of those first century apostles. That's one of the reasons why the written testimony of the apostles in the New Testament, and the New Testament writings of those specifically endorsed by the apostles, is so uniquely authoritative today. In the Roman Empire, an apostolos, from which we get the English word apostle, was anyone with the authority to speak to others on behalf of the emperor. Such was their authority that if you disobeyed them, it was as if you were disobeying the emperor himself. That's the kind of authority that the apostles' written testimony has. They have the authority to speak to us on behalf of, and with",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Luke.24.27", "Luke.24.44-Luke.24.46", "2Pet.1.21"],
+      text: "La Confesión de Westminster lo cita para el límite del canon (Confesión 1.3).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "En su sermón sobre Juan 5:31–47, Sproul recuerda el camino a Emaús: Jesús, «comenzando por Moisés», recorrió todo el Antiguo Testamento y explicó cómo las Escrituras daban testimonio de él una y otra vez; sin embargo, cuando apareció el Mesías del que hablaba cada página, los suyos no lo recibieron, y los hombres trajeron tinieblas consigo incluso cuando escudriñaban las Escrituras",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "The Witnesses to Christ (John 5:31–47) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "28 de junio de 2026",
+                locator: "Minutos 21:39 a 23:18",
+                url: "https://www.youtube.com/watch?v=LkFTIyLRkF0&t=1299s",
+                text: "¿Recuerdan el camino a Emaús, después de la resurrección, cuando Cristo se unió a estas dos personas que estaban tan abatidas después de los acontecimientos en Jerusalén que andaban cabizbajas y lamentándose? Y Jesús dijo: ¿qué pasa? ¿Qué les sucede? Y ellos dijeron: ¿no saben lo que acaba de pasar allá en Jerusalén? Jesús dice: cuéntenme. Ellos dijeron: bueno, este Jesús, esperábamos que fuera el Mesías, pero lo mataron. Ahora algunas de las mujeres, Dios no lo permita, sugieren que resucitó de entre los muertos. Pero ustedes saben que no se puede creer en cuentos de viejas como esos. ¿Qué le dice Jesús? Comenzando por Moisés, recorre todo el Antiguo Testamento con estas personas que deberían haberlo sabido mejor, y les explica cómo las Escrituras habían dado testimonio de él una y otra vez. Pero cuando el Mesías que el Antiguo Testamento enseñaba en cada página apareció en medio del pueblo, vino a lo suyo, y los suyos no lo recibieron. La luz vino al mundo, pero los hombres prefirieron las tinieblas antes que la luz. Y trajeron esa oscuridad consigo, incluso cuando escudriñaban las Escrituras.",
+                original:
+                  "Do you remember on the road to Emmaus after the resurrection and Christ fell in with these two people who were so dejected after the events in Jerusalem that they're hanging their heads and moaning, and Jesus said, what's going on? What's the matter? And they said, don't you know what just went on over there in Jerusalem? Jesus says, tell me about it. They said, well, this Jesus, we hoped that He was going to be the Messiah, but they killed Him. Now some of the women, God forbid, are suggesting that He was raised from the dead. But you know you can't believe old wives tales like that. What does Jesus say? Beginning with Moses, and He goes through the entire Old Testament with these people who should have known better, and explain to them how the Scriptures had testified to Him again and again. But when the Messiah that the Old Testament taught on every page appeared in the midst to the people, He came to His own, and His own received Him not. The light came into the world, but men preferred the darkness rather than the light. And they brought that darkness with them even when they searched the Scriptures.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Heb.1.1-Heb.1.2"],
+      text: "La Confesión de Westminster lo cita para los modos antiguos de hablar Dios y el Hijo (Confesión 1.1).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Shaw lee Heb 1:1–2 («en otro tiempo Dios habló muchas veces y de muchas maneras a los padres por los profetas, pero en estos últimos días nos ha hablado por el Hijo») y dice que hubo un tiempo en que los profetas eran necesarios, pero ese tiempo ha pasado: la revelación final ha llegado en Jesucristo y está registrada en el Nuevo Testamento, que completa las Escrituras, de modo que no necesitamos profetas porque tenemos las Escrituras; agrega Dt 13 sobre los falsos profetas y que nuestra base es la Palabra escrita de Dios",
+            quotes: [
+              {
+                speaker: "Ben Shaw",
+                work: "Why Don't We Have Prophets Today like in the Old Testament?",
+                outlet: "Ask Ligonier",
+                date: "22 de julio de 2021",
+                locator: "Minutos 0:20 a 1:37",
+                url: "https://ask.ligonier.org/podcast-episodes/why-dont-we-have-prophets-today-like-in-the-old-testament#t=20",
+                text: "Respuesta rápida: Hebreos capítulo 1, versículos 1 y 2, dice: Hace mucho tiempo, en muchas ocasiones y de muchas maneras, Dios habló a nuestros padres por los profetas. Pero en estos últimos días nos ha hablado por su Hijo, a quien designó heredero de todas las cosas, por medio de quien también creó el mundo. La idea es que hubo un tiempo en que los profetas eran necesarios. Dios enviaba hombres de parte suya para hablar su palabra a su pueblo, para advertirles contra pecados y transgresiones y para dirigirlos en el camino de Dios. Pero ese tiempo ha pasado. La revelación final nos ha llegado en Jesucristo, y la encontramos registrada para nosotros en el Nuevo Testamento, que completa las Escrituras, y por eso no necesitamos profetas hoy, porque tenemos las Escrituras. En Deuteronomio capítulo 13, por ejemplo, advierte contra los falsos profetas, y los falsos profetas serían los que llevarían a la gente a algo contrario a lo que enseña la Palabra de Dios. Y así nuestra base, lo que sostiene nuestra posición, es la Palabra escrita de Dios. Y si un hombre habla en contra de eso, se llame profeta o no, no lo es.",
+                original:
+                  "Quick answer, Hebrews chapter 1 verses 1 and 2 says, Long ago, at many times and in many ways, God spoke to our fathers by the prophets. But in these last days, he has spoken to us by his Son, whom he appointed the heir of all things, through whom also he created the world. The point being that there was a time when prophets were necessary. God sent men from him to speak his word to his people, to warn them against sins and transgressions and to direct them in the way of God. But that time has passed. The final revelation has come to us in Jesus Christ, and we find that recorded for us then in the New Testament, which completes the Scriptures, and therefore we don't need prophets today because we have the Scriptures. In Deuteronomy chapter 13, for example, it warns against false prophets, and false prophets would be those who would lead people contrary to what the Word of God teaches. And so our basis, what we stand on, is the written Word of God. And if a man speaks contrary to that, whether he calls himself a prophet or not, he's not.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
       refs: ["Matt.5.18"],
       text: "La Confesión de Westminster lo cita para el texto original (Confesión 1.8).",
       apologists: {
@@ -570,8 +545,113 @@ export const solaScripturaReformed = {
       },
     },
     {
+      refs: ["Rom.1.19-Rom.1.20", "Rom.1.32", "Rom.2.1", "Rom.2.14-Rom.2.15"],
+      text: "La Confesión de Westminster lo cita para los límites de la revelación natural (Confesión 1.1).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Todos conocen que Dios existe por la revelación general (creación, providencia, conciencia): Pablo dice que lo que se puede conocer de Dios es manifiesto a todos (Romanos 1:19–20), y los cielos cuentan la gloria de Dios (Salmo 19:1)",
+            quotes: [
+              {
+                speaker: "Keith Mathison",
+                work: "The Heavens Declare",
+                outlet: "Ligonier Ministries",
+                date: "1 de noviembre de 2004",
+                locator:
+                  "2 párrafos: del párrafo que empieza «The knowledge of the existence of God is known…» al que termina «…be saved, the special grace of God is required.»",
+                url: "https://learn.ligonier.org/articles/heavens-declare",
+                text: "El conocimiento de la existencia de Dios es conocido por todos mediante la revelación general. Pablo dice: “Lo que de Dios se puede conocer les es manifiesto [a todos los hombres], porque Dios se lo ha manifestado. Porque sus atributos invisibles, su eterno poder y su naturaleza divina, se han visto claramente desde la creación del mundo, siendo entendidos por medio de lo que ha sido hecho” (Romanos 1:19-20). Como exclama el salmista: “Los cielos cuentan la gloria de Dios, y el firmamento anuncia la obra de sus manos” (Salmo 19:1).\n\nA pesar de que el favor inmerecido de Dios se extiende a toda la humanidad, esta gracia común no debe confundirse con la gracia especial (es decir, la gracia salvadora). La gracia común de Dios deja al hombre sin excusa (Romanos 1:20), pero la gracia común por sí sola no es salvífica. No salva ni puede salvar. La salvación se halla exclusivamente en Jesucristo. “Y en ningún otro hay salvación; porque no hay otro nombre bajo el cielo, dado a los hombres, en que podamos ser salvos” (Hechos 4:12). Para que el hombre sea salvo, se requiere la gracia especial de Dios.",
+                original:
+                  "The knowledge of the existence of God is known to all through general revelation. Paul says, “What can be known about God is plain to them [all mankind], because God has shown it to them. For his invisible attributes, namely, his eternal power and divine nature, have been clearly perceived, ever since the creation of the world, in the things that have been made” (Rom. 1:19–20). As the Psalmist exclaims, “The heavens declare the glory of God, and the sky above proclaims his handiwork” (Psalm 19:1).\n\nDespite the fact that God’s unmerited favor is extended to all mankind, this common grace must not be confused with special grace (that is, saving grace). God’s common grace leaves man with no excuse (Rom. 1:20), but common grace alone is not salvific. It does not and cannot save. Salvation is found exclusively in Jesus Christ. “There is salvation in no one else, for there is no other name under heaven given among men by which we must be saved” (Acts 4:12). In order for man to be saved, the special grace of God is required.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["1Cor.1.21", "1Cor.2.13-1Cor.2.14"],
+      text: "La Confesión de Westminster lo cita para el conocimiento salvador (Confesión 1.1).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Ferguson recuerda 1 Cor 2:14: el hombre natural no acepta las cosas del Espíritu de Dios, son locura para él y no puede entenderlas porque se disciernen espiritualmente; en cambio, el evangelio llega con palabras no enseñadas por sabiduría humana, interpretando verdades espirituales en lenguaje espiritual, de modo que la gramática del evangelio es una lengua extranjera para el hombre natural",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "The Grammar of the Gospel",
+                outlet: "Things Unseen with Sinclair B. Ferguson",
+                date: "5 de octubre de 2026",
+                locator: "Minutos 2:03 a 2:55",
+                url: "https://ligonier.org/podcasts/things-unseen-with-sinclair-ferguson/the-grammar-of-the-gospel#t=123",
+                text: "¿Recuerdan cómo lo dice Pablo cuando escribe a los corintios en 1 Corintios 2, versículo 14? Estaban demasiado impresionados por el lenguaje y la sabiduría de este mundo. Y él dice: miren, el hombre natural no acepta las cosas del Espíritu de Dios, le son locura, y no es capaz de entenderlas porque son espiritualmente repudiadas. En cambio, dice, el evangelio viene con palabras no enseñadas por sabiduría humana, interpretando verdades espirituales en lenguaje espiritual. Ahora, estoy citando ahí de la English Standard Version. Pablo no está diciendo, obviamente, que el evangelio no pueda expresarse en inglés. Pero sí está diciendo que la gramática del evangelio es distinta de la gramática del hombre natural, y por eso el hombre natural tiene dificultad para entenderlo.",
+                original:
+                  "Remember how Paul says this when he writes to the Corinthians in 1 Corinthians 2, verse 14? They were overly impressed by this world's language and wisdom. And he says, look, the natural man doesn't accept the things of the Spirit of God, they're folly to him, and he is not able to understand them because they're spiritually disowned. By contrast, he says, the gospel comes in words not taught by human wisdom, interpreting spiritual truths in spiritual language. Now, I'm quoting there from the English Standard Version. Paul isn't saying that the gospel can't be expressed in English, obviously. But he is saying that the gospel's grammar is different from the grammar of the natural man, and so the natural man has difficulty understanding it.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["Luke.1.3-Luke.1.4", "Rom.15.4"],
+      text: "La Confesión de Westminster lo cita para la escritura, la certeza y el consuelo (Confesión 1.1).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Sproul lee Rom 15:4, «porque todo lo que se escribió antes, para nuestra enseñanza se escribió, a fin de que por la paciencia y la consolación de las Escrituras tengamos esperanza», y añade que no conoce nada más consolador para el alma que la Palabra de Dios, ni mayor panacea para un alma abatida que sumergirse en ella",
+            quotes: [
+              {
+                speaker: "R. C. Sproul",
+                work: "Bearing Others’ Burdens (Romans 14:19–15:13) — A Sermon by R.C. Sproul",
+                outlet: "Ligonier Ministries",
+                date: "8 de marzo de 2026",
+                locator: "Minutos 28:14 a 29:26",
+                url: "https://www.youtube.com/watch?v=OsnYxamR2Kg&t=1694s",
+                text: "en ese proceso. Todo lo que antes fue escrito, para nuestra enseñanza fue escrito, para que por la paciencia y la consolación de las Escrituras tengamos esperanza. Ay, no puedo pasar eso por alto. Por la paciencia y la consolación de las Escrituras. No conozco nada en este planeta más consolador para el alma que la Palabra de Dios. Cuando estoy abatido, cuando mi alma está postrada, y lo está de vez en cuando, como le pasa a todo el mundo. En medio de las penas, en medio del temor, si necesito que mi alma se levante de nuevo de la depresión, no hay mayor panacea para eso que sumergirme en la Palabra de Dios.",
+                original:
+                  "in that process. Whatever things were written before were written for our learning, that we, through the patience and comfort of the Scriptures, might have hope. Ooh, I can't pass over that. Through the patience and comfort of the Scriptures, I know of nothing on this planet more comforting to the soul than the Word of God. When I am down, when my soul is cast down, and it is cast down from time to time, just as everyone is. In the midst of sorrows, in the midst of fear, if I need to have my soul raised again out of depression, There is no greater panacea for it than to immerse myself in the Word of God.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      refs: ["1John.2.20", "1John.2.27", "John.16.13-John.16.14", "1Cor.2.10-1Cor.2.11"],
+      text: "La Confesión de Westminster lo cita para el testimonio del Espíritu (Confesión 1.5).",
+      apologists: {
+        arguments: [
+          {
+            title:
+              "Ferguson dice que el sermón de Pentecostés de Pedro no trata tanto de lo que hace el Espíritu como de lo que la obra del Espíritu nos dice sobre el Señor Jesús, en consonancia con las palabras de Jesús en el aposento alto, Juan 16:14: «cuando venga el Espíritu, él me glorificará, porque tomará de lo mío y se lo declarará a ustedes»; añade Juan 14:16, la promesa de otro Consolador, el Espíritu de verdad",
+            quotes: [
+              {
+                speaker: "Sinclair B. Ferguson",
+                work: "The Promise of the Holy Spirit",
+                outlet: "Things Unseen with Sinclair B. Ferguson",
+                date: "28 de mayo de 2026",
+                locator: "Minutos 0:30 a 1:17",
+                url: "https://ligonier.org/podcasts/things-unseen-with-sinclair-ferguson/the-promise-of-the-holy-spirit#t=30",
+                text: "Porque su sermón no trata tanto de lo que el Espíritu está haciendo, sino del hecho de que lo que el Espíritu está haciendo nos dice algo sobre el Señor Jesús. Y eso, por supuesto, es consistente con las palabras de Jesús en el aposento alto. Cuando dice, Juan 16, 14: cuando venga el Espíritu, él me glorificará, porque tomará lo mío y se lo declarará a ustedes. Pero hay otra promesa que Jesús dio a los apóstoles en el aposento alto, que es muy relevante aquí. ¿Recuerdan cómo dijo en Juan 14, versículo 16: yo rogaré al Padre, y él les dará otro Ayudador para que esté con ustedes para siempre, el Espíritu de verdad, a quien el mundo no puede recibir.",
+                original:
+                  "Because his sermon is not so much about what the Spirit is doing, but about the fact that what the Spirit is doing tells us something about the Lord Jesus. And that, of course, is consistent with Jesus' words in the upper room. When he says, John 16, 14, when the Spirit comes, he will glorify me, for he will take what is mine and declare it to you. But there's another promise Jesus gave the apostles in the upper room that's very relevant here. Remember how he said in John 14 verse 16, I will ask the Father, and he will give you another helper to be with you forever, even the Spirit of truth whom the world cannot receive.",
+                translation: "ai-assisted",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
       refs: ["Isa.8.20", "Acts.15.15", "John.5.46"],
-      text: "La Confesión de Westminster lo cita para la apelación en las controversias (Confesión 1.8).",
+      text: "La Confesión de Westminster lo cita para la apelación en las controversias (Confesión 1.8). La Confesión de Westminster lo cita para la Escritura que interpreta la Escritura (Confesión 1.9).",
       apologists: {
         arguments: [
           {
@@ -606,32 +686,6 @@ export const solaScripturaReformed = {
                 text: "sobre el primer concilio ecuménico. No es Pedro quien manda aquí, es Santiago. Y dice: hermanos, escúchenme. Simón ha declarado cómo Dios visitó primero a los gentiles para tomar de ellos un pueblo para su nombre. Y con esto concuerdan los profetas. Esto no es algo nuevo. Continúa citando a Amós, diciendo: después de esto volveré, y reedificaré el tabernáculo de David, que ha caído; reconstruiré sus ruinas y lo levantaré, para que el resto de la humanidad busque al Señor, y todos los gentiles sobre los que es invocado mi nombre, dice el Señor, que hace todas estas cosas. La idea de incorporar a los gentiles al cuerpo de Cristo y a la iglesia estaba en la visión de Dios desde el principio. Así que eso no debería sorprenderlos. Si realmente tienen celo por el Antiguo Testamento, vean cuántas veces los profetas del Antiguo Testamento hablaron de la obra del Mesías que salvaría no solo a los judíos, sino a los mismos gentiles",
                 original:
                   "over the first ecumenical council. It's not Peter who's in charge here, it's James. And he says, men and brothers, listen to me. Simon has declared how God at the first visited the Gentiles to take them out of the people for His name. And with this the prophets agreed. This isn't something new. He goes on and quotes from Amos, saying, after this I will return. I'll rebuild the tabernacle of David which has fallen down. I will rebuild its ruins, and I will set it up, so that the rest of mankind may seek the Lord, even all the Gentiles who are called by my name, says the Lord who does all this thing. The idea of incorporating the Gentiles into the body of Christ and into the church was in God's view from the beginning. So that shouldn't surprise you. If you really are jealous for the Old Testament, see how many times the Old Testament prophets spoke about the work of the Messiah who would save not just the Jews, but the Gentiles Himself",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      refs: ["John.5.39"],
-      text: "La Confesión de Westminster lo cita para leer y escudriñar (Confesión 1.8).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "En su sermón sobre Juan 5:31–47, Sproul recuerda el camino a Emaús: Jesús, «comenzando por Moisés», recorrió todo el Antiguo Testamento y explicó cómo las Escrituras daban testimonio de él una y otra vez; sin embargo, cuando apareció el Mesías del que hablaba cada página, los suyos no lo recibieron, y los hombres trajeron tinieblas consigo incluso cuando escudriñaban las Escrituras",
-            quotes: [
-              {
-                speaker: "R. C. Sproul",
-                work: "The Witnesses to Christ (John 5:31–47) — A Sermon by R.C. Sproul",
-                outlet: "Ligonier Ministries",
-                date: "28 de junio de 2026",
-                locator: "Minutos 21:39 a 23:18",
-                url: "https://www.youtube.com/watch?v=LkFTIyLRkF0&t=1299s",
-                text: "¿Recuerdan el camino a Emaús, después de la resurrección, cuando Cristo se unió a estas dos personas que estaban tan abatidas después de los acontecimientos en Jerusalén que andaban cabizbajas y lamentándose? Y Jesús dijo: ¿qué pasa? ¿Qué les sucede? Y ellos dijeron: ¿no saben lo que acaba de pasar allá en Jerusalén? Jesús dice: cuéntenme. Ellos dijeron: bueno, este Jesús, esperábamos que fuera el Mesías, pero lo mataron. Ahora algunas de las mujeres, Dios no lo permita, sugieren que resucitó de entre los muertos. Pero ustedes saben que no se puede creer en cuentos de viejas como esos. ¿Qué le dice Jesús? Comenzando por Moisés, recorre todo el Antiguo Testamento con estas personas que deberían haberlo sabido mejor, y les explica cómo las Escrituras habían dado testimonio de él una y otra vez. Pero cuando el Mesías que el Antiguo Testamento enseñaba en cada página apareció en medio del pueblo, vino a lo suyo, y los suyos no lo recibieron. La luz vino al mundo, pero los hombres prefirieron las tinieblas antes que la luz. Y trajeron esa oscuridad consigo, incluso cuando escudriñaban las Escrituras.",
-                original:
-                  "Do you remember on the road to Emmaus after the resurrection and Christ fell in with these two people who were so dejected after the events in Jerusalem that they're hanging their heads and moaning, and Jesus said, what's going on? What's the matter? And they said, don't you know what just went on over there in Jerusalem? Jesus says, tell me about it. They said, well, this Jesus, we hoped that He was going to be the Messiah, but they killed Him. Now some of the women, God forbid, are suggesting that He was raised from the dead. But you know you can't believe old wives tales like that. What does Jesus say? Beginning with Moses, and He goes through the entire Old Testament with these people who should have known better, and explain to them how the Scriptures had testified to Him again and again. But when the Messiah that the Old Testament taught on every page appeared in the midst to the people, He came to His own, and His own received Him not. The light came into the world, but men preferred the darkness rather than the light. And they brought that darkness with them even when they searched the Scriptures.",
                 translation: "ai-assisted",
               },
             ],
@@ -692,76 +746,6 @@ export const solaScripturaReformed = {
       },
     },
     {
-      refs: ["Acts.15.15", "John.5.46"],
-      text: "La Confesión de Westminster lo cita para la Escritura que interpreta la Escritura (Confesión 1.9).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "Sproul lee las palabras de Jesús en Jn 5:45–46 (Moisés los acusa; «si creyeran a Moisés, me creerían a mí, porque él escribió de mí») y dice que la teoría de la crítica superior de que Moisés no escribió nada puso en crisis la credibilidad de Moisés y de Jesús; Jesús afirma públicamente que Moisés escribió de él, y quienes lo niegan tienen que decir que Jesús se equivocó",
-            quotes: [
-              {
-                speaker: "R. C. Sproul",
-                work: "The Witnesses to Christ (John 5:31–47) — A Sermon by R.C. Sproul",
-                outlet: "Ligonier Ministries",
-                date: "28 de junio de 2026",
-                locator: "Minutos 27:30 a 29:07",
-                url: "https://www.youtube.com/watch?v=LkFTIyLRkF0&t=1650s",
-                text: 'pero ustedes se niegan a honrar al Hijo de Dios. No piensen que yo los acusaré delante del Padre. Hay uno que los acusa, Moisés, en quien ustedes confían. Porque si creyeran a Moisés, me creerían a mí, porque él escribió acerca de mí." ¿Era un texto controvertido? Ustedes, los que son estudiantes de teología o de estudios bíblicos, saben que las teorías de la crítica superior niegan que Moisés escribiera algo. Dicen que el Pentateuco fue compilado a lo largo de muchísimos siglos por diferentes editores y redactores, y que Moisés no tuvo nada que ver con eso. Pero los cuatro autores, J, E, D y P, lo juntaron, y así sucesivamente. Y eso, por supuesto, provocó una crisis no solo con la credibilidad de Moisés en la erudición bíblica, sino también con la credibilidad de Jesús. Y uno debería ver las acrobacias que la gente hace para rodear este texto, donde nuestro Señor mismo declara públicamente: Moisés escribió de mí. Tenemos la declaración de Jesús de que Moisés escribió la autoridad, la teoría de Graf-Wellhausen en contrario. Y el punto es que ahora tienen que decir: bueno, Jesús estaba equivocado en lo que enseñó sobre',
-                original:
-                  "but you refuse to honor the Son of God. do not think that I will accuse you to the Father. There is one who accuses you, Moses, in whom you trust. For if you believed Moses, you would believe Me, for He wrote about Me.\" Was that a controversial text? Those of you who are students of theology, biblical studies, you know that higher critical theories deny that Moses wrote anything. They say that the Pentateuch was compiled over many, many centuries by different editors and redactors and that Moses didn't have anything to do with it. But the four authors, J, E, D, and P, put it together, and so on. And that, of course, provoked a crisis not only with the credibility of Moses in biblical scholarship but also with the credibility of Jesus. And you ought to see the gymnastics people go through to get around this text where our Lord Himself pronounces publicly, Moses wrote of me. We have Jesus' declaration that Moses wrote the authority, the Graf-Wellhausen theory to the contrary. And the point is that now they have to say, well, Jesus was wrong in what He taught about",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-          {
-            title:
-              "Sproul dice que quien dirige el concilio de Jerusalén no es Pedro sino Santiago, que dice «con esto concuerdan las palabras de los profetas» y cita a Amós sobre reedificar el tabernáculo caído de David para que los gentiles busquen al Señor; la inclusión de los gentiles en la iglesia estaba en la mirada de Dios desde el principio",
-            quotes: [
-              {
-                speaker: "R. C. Sproul",
-                work: "The Judaizer Threat (Acts 15:1–21) — A Sermon by R.C. Sproul",
-                outlet: "Ligonier Ministries",
-                date: "4 de agosto de 2024",
-                locator: "Minutos 26:54 a 27:56",
-                url: "https://www.youtube.com/watch?v=72nycRFDMjo&t=1614s",
-                text: "sobre el primer concilio ecuménico. No es Pedro quien manda aquí, es Santiago. Y dice: hermanos, escúchenme. Simón ha declarado cómo Dios visitó primero a los gentiles para tomar de ellos un pueblo para su nombre. Y con esto concuerdan los profetas. Esto no es algo nuevo. Continúa citando a Amós, diciendo: después de esto volveré, y reedificaré el tabernáculo de David, que ha caído; reconstruiré sus ruinas y lo levantaré, para que el resto de la humanidad busque al Señor, y todos los gentiles sobre los que es invocado mi nombre, dice el Señor, que hace todas estas cosas. La idea de incorporar a los gentiles al cuerpo de Cristo y a la iglesia estaba en la visión de Dios desde el principio. Así que eso no debería sorprenderlos. Si realmente tienen celo por el Antiguo Testamento, vean cuántas veces los profetas del Antiguo Testamento hablaron de la obra del Mesías que salvaría no solo a los judíos, sino a los mismos gentiles",
-                original:
-                  "over the first ecumenical council. It's not Peter who's in charge here, it's James. And he says, men and brothers, listen to me. Simon has declared how God at the first visited the Gentiles to take them out of the people for His name. And with this the prophets agreed. This isn't something new. He goes on and quotes from Amos, saying, after this I will return. I'll rebuild the tabernacle of David which has fallen down. I will rebuild its ruins, and I will set it up, so that the rest of mankind may seek the Lord, even all the Gentiles who are called by my name, says the Lord who does all this thing. The idea of incorporating the Gentiles into the body of Christ and into the church was in God's view from the beginning. So that shouldn't surprise you. If you really are jealous for the Old Testament, see how many times the Old Testament prophets spoke about the work of the Messiah who would save not just the Jews, but the Gentiles Himself",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      refs: ["Matt.22.29", "Matt.22.31", "Eph.2.20"],
-      text: "La Confesión de Westminster lo cita para el juez supremo (Confesión 1.10).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "Cooper dice que Pablo escribe en Efesios 2 que la iglesia está edificada sobre el fundamento de los apóstoles y profetas, siendo Cristo Jesús mismo la piedra angular, y que un fundamento se pone una sola vez: después de que los apóstoles del siglo primero lo pusieron y murieron no puede haber más apóstoles en ese sentido, por eso el testimonio escrito de los apóstoles y de quienes ellos avalaron tiene una autoridad única hoy, con la autoridad para hablar en nombre de Cristo",
-            quotes: [
-              {
-                speaker: "Barry Cooper",
-                work: "Apostles",
-                outlet: "Simply Put",
-                date: "28 de enero de 2025",
-                locator: "Minutos 2:16 a 3:56",
-                url: "https://ligonier.org/podcasts/simply-put/apostles#t=136",
-                text: "En Efesios capítulo 2, Pablo escribe que la iglesia está edificada sobre el fundamento de los apóstoles y profetas, siendo Cristo Jesús mismo la piedra angular. Esa visión de los apóstoles como parte del fundamento de la fe cristiana es crucial para entender, porque un fundamento se pone una sola vez. Así que, después de que aquellos apóstoles pusieron el fundamento en el primer siglo y luego murieron, por definición no pudo haber más apóstoles. Nadie después podría afirmar con verdad ser apóstol en el sentido en que Pablo habla en Efesios, porque no serían testigos de primera mano del Señor Jesús resucitado, como lo fueron los apóstoles. Tampoco habrían recibido el respaldo visible de los apóstoles del primer siglo. Esa es una de las razones por las que el testimonio escrito de los apóstoles en el Nuevo Testamento, y los escritos del Nuevo Testamento de aquellos específicamente avalados por los apóstoles, es tan singularmente autoritativo hoy. En el Imperio romano, un apostolos, de donde viene la palabra en inglés apostle, era cualquiera con autoridad para hablar a otros en nombre del emperador. Tal era su autoridad que, si desobedecías a esa persona, era como si desobedecieras al propio emperador. Ese es el tipo de autoridad que tiene el testimonio escrito de los apóstoles. Tienen la autoridad para hablarnos en nombre de, y con",
-                original:
-                  "In Ephesians chapter 2, Paul writes that the church is built on the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone. That view of the apostles as being included in the foundation of the Christian faith is crucial to understand because a foundation is laid only once. So after those apostles laid the foundation in the first century and then eventually died, there could be, by definition, no further apostles. No one subsequently could truthfully claim to be an apostle in the sense Paul talks about in Ephesians, because they would not be first-hand witnesses of the risen Lord Jesus, as the apostles were. Nor would they have received the visible endorsement of those first century apostles. That's one of the reasons why the written testimony of the apostles in the New Testament, and the New Testament writings of those specifically endorsed by the apostles, is so uniquely authoritative today. In the Roman Empire, an apostolos, from which we get the English word apostle, was anyone with the authority to speak to others on behalf of the emperor. Such was their authority that if you disobeyed them, it was as if you were disobeying the emperor himself. That's the kind of authority that the apostles' written testimony has. They have the authority to speak to us on behalf of, and with",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
       refs: ["Acts.28.25"],
       text: "La Confesión de Westminster lo cita para el Espíritu que habla por la Escritura (Confesión 1.10).",
       apologists: {
@@ -788,74 +772,20 @@ export const solaScripturaReformed = {
       },
     },
     {
-      refs: ["Eph.2.20", "Acts.17.11", "1Cor.2.5", "2Cor.1.24"],
-      text: "La Confesión de Westminster lo cita para los concilios como ayuda (Confesión 31.4, numeración histórica).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "Sproul dice que los de Berea, de quienes han tomado su nombre miles de estudios bíblicos, se distinguen porque al oír la predicación de Pablo escudriñaban las Escrituras (Hch 17:11); añade que una mirada superficial no basta y que los creyentes deben escudriñar profunda y diariamente la Palabra de Dios",
-            quotes: [
-              {
-                speaker: "R. C. Sproul",
-                work: "Reasoning from the Scriptures (Acts 16:35–17:15) — A Sermon by R.C. Sproul",
-                outlet: "Ligonier Ministries",
-                date: "8 de septiembre de 2024",
-                locator: "Minutos 21:12 a 22:24",
-                url: "https://www.youtube.com/watch?v=IKVz5rsNPxY&t=1272s",
-                text: "de la Escritura. La gente de Berea, de la que han tomado el nombre miles de estudios bíblicos, se distingue porque cuando oyeron la predicación de Pablo, ¿qué hicieron? Escudriñaron las Escrituras. En nuestros días no escudriñamos las Escrituras. Obtenemos un pequeño manual que nos dice cómo leer la Biblia en 15 minutos al día. Eso no basta. Si realmente quieres crecer en tu fe, amado, tienes que escudriñar la Palabra de Dios. Tienes que comerla y beberla. Tienes que meditar en ella día y noche. No puedes conformarte con una mirada superficial de la Escritura sagrada. Si quieres las riquezas que Dios tiene para ti, escudriña su Palabra profundamente, a diario, aplicando tu mente y tu corazón a la comprensión de estas cosas, y entonces veremos quién es Jesús.",
-                original:
-                  "of Scripture. The people at Berea, from whom thousands of Bible studies have been named, are distinguished because when they heard the preaching of Paul, what did they do? they searched the Scriptures. In our day and age, we don't search the Scriptures. We get a little handbook that tells us how to read through the Bible in 15 minutes a day. That won't do it. If you really want to grow in your faith, beloved, you've got to search the Word of God. You've got to eat it and drink it. You've got to meditate in it day and night. You can't be satisfied with a casual overview of sacred Scripture. If you want the riches that God has for you, search His Word deeply, daily, applying your minds and your hearts to the understanding of these things, and then we will see who Jesus is.",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-          {
-            title:
-              "Cooper dice que Pablo escribe en Efesios 2 que la iglesia está edificada sobre el fundamento de los apóstoles y profetas, siendo Cristo Jesús mismo la piedra angular, y que un fundamento se pone una sola vez: después de que los apóstoles del siglo primero lo pusieron y murieron no puede haber más apóstoles en ese sentido, por eso el testimonio escrito de los apóstoles y de quienes ellos avalaron tiene una autoridad única hoy, con la autoridad para hablar en nombre de Cristo",
-            quotes: [
-              {
-                speaker: "Barry Cooper",
-                work: "Apostles",
-                outlet: "Simply Put",
-                date: "28 de enero de 2025",
-                locator: "Minutos 2:16 a 3:56",
-                url: "https://ligonier.org/podcasts/simply-put/apostles#t=136",
-                text: "En Efesios capítulo 2, Pablo escribe que la iglesia está edificada sobre el fundamento de los apóstoles y profetas, siendo Cristo Jesús mismo la piedra angular. Esa visión de los apóstoles como parte del fundamento de la fe cristiana es crucial para entender, porque un fundamento se pone una sola vez. Así que, después de que aquellos apóstoles pusieron el fundamento en el primer siglo y luego murieron, por definición no pudo haber más apóstoles. Nadie después podría afirmar con verdad ser apóstol en el sentido en que Pablo habla en Efesios, porque no serían testigos de primera mano del Señor Jesús resucitado, como lo fueron los apóstoles. Tampoco habrían recibido el respaldo visible de los apóstoles del primer siglo. Esa es una de las razones por las que el testimonio escrito de los apóstoles en el Nuevo Testamento, y los escritos del Nuevo Testamento de aquellos específicamente avalados por los apóstoles, es tan singularmente autoritativo hoy. En el Imperio romano, un apostolos, de donde viene la palabra en inglés apostle, era cualquiera con autoridad para hablar a otros en nombre del emperador. Tal era su autoridad que, si desobedecías a esa persona, era como si desobedecieras al propio emperador. Ese es el tipo de autoridad que tiene el testimonio escrito de los apóstoles. Tienen la autoridad para hablarnos en nombre de, y con",
-                original:
-                  "In Ephesians chapter 2, Paul writes that the church is built on the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone. That view of the apostles as being included in the foundation of the Christian faith is crucial to understand because a foundation is laid only once. So after those apostles laid the foundation in the first century and then eventually died, there could be, by definition, no further apostles. No one subsequently could truthfully claim to be an apostle in the sense Paul talks about in Ephesians, because they would not be first-hand witnesses of the risen Lord Jesus, as the apostles were. Nor would they have received the visible endorsement of those first century apostles. That's one of the reasons why the written testimony of the apostles in the New Testament, and the New Testament writings of those specifically endorsed by the apostles, is so uniquely authoritative today. In the Roman Empire, an apostolos, from which we get the English word apostle, was anyone with the authority to speak to others on behalf of the emperor. Such was their authority that if you disobeyed them, it was as if you were disobeying the emperor himself. That's the kind of authority that the apostles' written testimony has. They have the authority to speak to us on behalf of, and with",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
+      refs: ["1Tim.3.14-1Tim.3.16"],
+      text: "La Confesión de Westminster lo cita para el testimonio de la iglesia (Confesión 1.5).",
     },
     {
-      refs: ["Acts.17.11"],
-      text: "El Catecismo Mayor lo cita para la lectura diligente (Catecismo Mayor 157).",
-      apologists: {
-        arguments: [
-          {
-            title:
-              "Sproul dice que los de Berea, de quienes han tomado su nombre miles de estudios bíblicos, se distinguen porque al oír la predicación de Pablo escudriñaban las Escrituras (Hch 17:11); añade que una mirada superficial no basta y que los creyentes deben escudriñar profunda y diariamente la Palabra de Dios",
-            quotes: [
-              {
-                speaker: "R. C. Sproul",
-                work: "Reasoning from the Scriptures (Acts 16:35–17:15) — A Sermon by R.C. Sproul",
-                outlet: "Ligonier Ministries",
-                date: "8 de septiembre de 2024",
-                locator: "Minutos 21:12 a 22:24",
-                url: "https://www.youtube.com/watch?v=IKVz5rsNPxY&t=1272s",
-                text: "de la Escritura. La gente de Berea, de la que han tomado el nombre miles de estudios bíblicos, se distingue porque cuando oyeron la predicación de Pablo, ¿qué hicieron? Escudriñaron las Escrituras. En nuestros días no escudriñamos las Escrituras. Obtenemos un pequeño manual que nos dice cómo leer la Biblia en 15 minutos al día. Eso no basta. Si realmente quieres crecer en tu fe, amado, tienes que escudriñar la Palabra de Dios. Tienes que comerla y beberla. Tienes que meditar en ella día y noche. No puedes conformarte con una mirada superficial de la Escritura sagrada. Si quieres las riquezas que Dios tiene para ti, escudriña su Palabra profundamente, a diario, aplicando tu mente y tu corazón a la comprensión de estas cosas, y entonces veremos quién es Jesús.",
-                original:
-                  "of Scripture. The people at Berea, from whom thousands of Bible studies have been named, are distinguished because when they heard the preaching of Paul, what did they do? they searched the Scriptures. In our day and age, we don't search the Scriptures. We get a little handbook that tells us how to read through the Bible in 15 minutes a day. That won't do it. If you really want to grow in your faith, beloved, you've got to search the Word of God. You've got to eat it and drink it. You've got to meditate in it day and night. You can't be satisfied with a casual overview of sacred Scripture. If you want the riches that God has for you, search His Word deeply, daily, applying your minds and your hearts to the understanding of these things, and then we will see who Jesus is.",
-                translation: "ai-assisted",
-              },
-            ],
-          },
-        ],
-      },
+      refs: ["2Tim.3.14-2Tim.3.17", "Gal.1.8", "2Thess.2.2"],
+      text: "La Confesión de Westminster lo cita para la suficiencia y las adiciones (Confesión 1.6).",
+    },
+    {
+      refs: ["John.6.45", "1Cor.2.9-1Cor.2.10", "1Cor.2.12"],
+      text: "La Confesión de Westminster lo cita para la iluminación salvadora (Confesión 1.6).",
+    },
+    {
+      refs: ["1Cor.11.13-1Cor.11.14", "1Cor.14.26", "1Cor.14.40"],
+      text: "La Confesión de Westminster lo cita para las circunstancias y el orden (Confesión 1.6).",
     },
   ],
   passages: {

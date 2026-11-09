@@ -1,6 +1,7 @@
 import { overlaps, versesOfOsis } from "./passage-refs.mjs";
+import { verseSet } from "./passage-normalize.mjs";
 
-export function matchSections(sections, passages, doctrine, fileDoctrine) {
+export function matchSections(sections, passages, doctrine, fileDoctrine, legacyRefs = null) {
   const perPassage = passages.map(() => []);
   const unmatched = [];
   const notes = [];
@@ -8,7 +9,7 @@ export function matchSections(sections, passages, doctrine, fileDoctrine) {
   for (const section of sections) {
     if (section.arguments.length === 0) continue;
     if ((section.doctrine ?? fileDoctrine) !== doctrine) continue;
-    let targets = section.entries.filter((n) => n >= 1 && n <= passages.length).map((n) => n - 1);
+    let targets = legacyTargets(section.entries, passages, legacyRefs, notes, section);
     if (targets.length) {
       for (const t of targets)
         if (section.verses.length && !overlaps(section.verses, sets[t])) notes.push(`${section.text.slice(0, 70)}: entry ${t + 1} does not overlap the heading's verses`);
@@ -29,6 +30,20 @@ export function matchSections(sections, passages, doctrine, fileDoctrine) {
     if (perArgument.length === section.arguments.length) unmatched.push({ heading: section.text, arguments: section.arguments.length, quotes: section.arguments.reduce((n, a) => n + a.quotes.length, 0) });
   }
   return { perPassage, unmatched, notes };
+}
+
+function legacyTargets(entries, passages, legacyRefs, notes, section) {
+  if (!legacyRefs) return entries.filter((n) => n >= 1 && n <= passages.length).map((n) => n - 1);
+  const targets = new Set();
+  for (const n of entries) {
+    const refs = legacyRefs[n - 1];
+    if (!refs) continue;
+    const wanted = verseSet(refs);
+    const hit = passages.findIndex((p) => [...wanted].every((v) => verseSet(p.refs).has(v)));
+    if (hit >= 0) targets.add(hit);
+    else notes.push(`${section.text.slice(0, 70)}: page entry ${n} (${refs.join(" · ")}) no longer on the page`);
+  }
+  return [...targets];
 }
 
 import { versesOfHeading } from "./passage-refs.mjs";

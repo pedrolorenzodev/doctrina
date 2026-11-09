@@ -1,0 +1,217 @@
+{
+ "canonical": [
+  {
+   "central": [
+    "Acts.2.38"
+   ],
+   "range": "Acts.2.37-Acts.2.42"
+  },
+  {
+   "central": [
+    "1Pet.3.21"
+   ],
+   "range": "1Pet.3.18-1Pet.3.22"
+  },
+  {
+   "central": [
+    "John.3.5"
+   ],
+   "range": "John.3.3-John.3.8"
+  },
+  {
+   "central": [
+    "Titus.3.5"
+   ],
+   "range": "Titus.3.4-Titus.3.7"
+  },
+  {
+   "central": [
+    "Matt.28.19"
+   ],
+   "range": "Matt.28.18-Matt.28.20"
+  },
+  {
+   "central": [
+    "Mark.16.16"
+   ],
+   "range": "Mark.16.15-Mark.16.16"
+  },
+  {
+   "central": [
+    "Rom.6.4"
+   ],
+   "range": "Rom.6.3-Rom.6.5"
+  },
+  {
+   "central": [
+    "Col.2.12"
+   ],
+   "range": "Col.2.11-Col.2.12"
+  },
+  {
+   "central": [
+    "Gal.3.27"
+   ],
+   "range": "Gal.3.26-Gal.3.29"
+  },
+  {
+   "central": [
+    "1Cor.12.13"
+   ],
+   "range": "1Cor.12.12-1Cor.12.13"
+  },
+  {
+   "central": [
+    "Matt.16.18",
+    "Matt.16.19"
+   ],
+   "range": "Matt.16.13-Matt.16.20"
+  },
+  {
+   "central": [
+    "Matt.18.17",
+    "Matt.18.18"
+   ],
+   "range": "Matt.18.15-Matt.18.20"
+  },
+  {
+   "central": [
+    "John.20.21",
+    "John.20.22",
+    "John.20.23"
+   ],
+   "range": "John.20.21-John.20.23"
+  },
+  {
+   "central": [
+    "John.21.15"
+   ],
+   "range": "John.21.15-John.21.17"
+  },
+  {
+   "central": [
+    "2Tim.3.16"
+   ],
+   "range": "2Tim.3.14-2Tim.3.17"
+  },
+  {
+   "central": [
+    "1Tim.3.15"
+   ],
+   "range": "1Tim.3.14-1Tim.3.16"
+  },
+  {
+   "central": [
+    "2Thess.2.15"
+   ],
+   "range": "2Thess.2.13-2Thess.2.15"
+  },
+  {
+   "central": [
+    "Luke.24.44"
+   ],
+   "range": "Luke.24.44-Luke.24.46"
+  },
+  {
+   "central": [
+    "Eph.2.20"
+   ],
+   "range": "Eph.2.19-Eph.2.22"
+  },
+  {
+   "central": [
+    "Eph.4.11"
+   ],
+   "range": "Eph.4.11-Eph.4.13"
+  },
+  {
+   "central": [
+    "Eph.5.23"
+   ],
+   "range": "Eph.5.22-Eph.5.32"
+  },
+  {
+   "central": [
+    "Acts.17.11"
+   ],
+   "range": "Acts.17.10-Acts.17.11"
+  },
+  {
+   "central": [
+    "1Cor.11.28",
+    "1Cor.11.29"
+   ],
+   "range": "1Cor.11.27-1Cor.11.29"
+  },
+  {
+   "central": [
+    "1Cor.10.16",
+    "1Cor.10.17"
+   ],
+   "range": "1Cor.10.16-1Cor.10.17"
+  },
+  {
+   "central": [
+    "Luke.22.19"
+   ],
+   "range": "Luke.22.19-Luke.22.20"
+  },
+  {
+   "central": [
+    "Heb.9.25",
+    "Heb.9.26",
+    "Heb.9.28"
+   ],
+   "range": "Heb.9.25-Heb.9.28"
+  }
+ ],
+ "pages": {
+  "baptism:baptist": {
+   "remove": [
+    "Matt.26.26-Matt.26.30",
+    "Mark.14.22-Mark.14.26",
+    "Luke.22.19-Luke.22.20",
+    "Acts.20.7",
+    "1Cor.10.16",
+    "1Cor.10.21",
+    "1Cor.11.23-1Cor.11.29",
+    "John.1.2",
+    "John.1.8"
+   ],
+   "parallels": [
+    [
+     "Matt.3.13-Matt.3.17",
+     "Mark.1.9-Mark.1.11",
+     "Luke.3.21-Luke.3.22"
+    ],
+    [
+     "Matt.28.18-Matt.28.20",
+     "Mark.16.15-Mark.16.16"
+    ]
+   ]
+  },
+  "eucharist:baptist": {
+   "remove": [
+    "Mark.1.9-Mark.1.11",
+    "John.3.23",
+    "Rom.6.3-Rom.6.5",
+    "Col.2.12",
+    "Matt.3.13-Matt.3.17",
+    "Luke.3.21-Luke.3.22",
+    "Acts.8.35-Acts.8.39",
+    "Acts.16.30-Acts.16.33",
+    "Matt.3.16",
+    "Mark.1.4",
+    "Acts.8.38-Acts.8.39"
+   ],
+   "parallels": [
+    [
+     "Matt.26.26-Matt.26.30",
+     "Mark.14.22-Mark.14.26",
+     "Luke.22.17-Luke.22.20",
+     "1Cor.11.23-1Cor.11.29"
+    ]
+   ]
+  }
+ }
+}

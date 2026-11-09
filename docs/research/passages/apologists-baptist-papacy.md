@@ -19,7 +19,7 @@ Status: draft, NOT verified by Pedro
 - `[long-form: trim before public release]`: stored whole while the project is private (DECISIONS 2026-11-01 late night); the locator is exact, so trimming needs no new research.
 - AI Spanish: none in this file; every quote is in the original English.
 
-## 1. Papacy · Matt 16:15–19; 18:15–20 (page entry 1)
+## 1. Papacy · Matt 16:15–19; 18:15–20
 
 **Argument A · Ortlund argues the rock is Peter in his confession of Christ (Augustine's final view) and that authority to govern is given to the apostles together; Matt 18:18 is cited in the first block for that last point (the second says «two chapters later» without a verse).**
 - **Gavin Ortlund**, «Augustine on the "Rock" of Matthew 16 (This Will Surprise You)», channel Gavin Ortlund (Truth Unites; Baptist per `apologists.md` (agent's call, with the 1689)), YouTube, 2024-12-18, https://www.youtube.com/watch?v=Mslw0lS1ZLQ&t=0s, minutes 0:00 to 11:38 (first cue to last cue read), 87 cues, 2237 words `[verified: captions]` `[long-form: trim before public release]` (auto-captions: machine transcript, mishearings and punctuation are YouTube's; no speaker labels, so the speaker comes from the video's title and channel; the whole video is about Matt 16):
@@ -30,7 +30,7 @@ Status: draft, NOT verified by Pedro
 **Count and independence.** By person and work: **1 person** (Ortlund), 2 works. Matt 18:18 is cited inside the first block only; Matt 18:15–20 as church discipline is not expounded in these captions.
 **Contested within the tradition:** `[not searched]`. **Applies the official teaching:** `[not re-read here]`.
 
-## 2. Papacy · Acts 15 (page entry 2; core set)
+## 2. Papacy · Acts 15 (core set)
 
 **Argument A · At the council of Acts 15 Peter is one apostle among several who speak; James is seen in the Fathers as having the greater authority.**
 - **Gavin Ortlund**, «The Papacy Is Not From God», channel Gavin Ortlund (Truth Unites; Baptist per `apologists.md` (agent's call, with the 1689)), YouTube, 2025-10-15, https://www.youtube.com/watch?v=z7zwIN8vEkA&t=819s, minutes 13:39 to 15:28 (first cue to last cue read), 15 cues, 340 words `[verified: captions]` `[long-form: trim before public release]` (auto-captions: machine transcript, mishearings and punctuation are YouTube's; no speaker labels, so the speaker comes from the video's title and channel; the last cue ends with the question «where in the New Testament do we find this office?»):

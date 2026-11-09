@@ -223,28 +223,25 @@ export const papacyOrthodox = {
     "Los pasajes que los textos ortodoxos citan sobre la cabeza de la Iglesia y el ministerio, y cómo los leen.",
   scripture: [
     {
-      refs: ["Eph.5.23"],
-      text: "El Catecismo extenso lo cita para Cristo como cabeza y salvador del cuerpo (Filareto, pregunta 272).",
-    },
-    {
-      refs: ["Eph.2.19-Eph.2.20"],
-      text: "El Catecismo extenso lo cita para el fundamento apostólico y Cristo como piedra angular (Filareto, pregunta 274).",
+      refs: ["Gal.2.11"],
+      text: "La encíclica de 1895 lo cita en su argumento sobre la corrección de Pedro (encíclica, §XVIII).",
       apologists: {
         arguments: [
           {
-            title: "Los demás apóstoles también fueron el fundamento sobre el que se edificó la Iglesia (Efesios 2:20)",
+            title:
+              "Pedro y Pablo fundaron la iglesia de Antioquía (Hechos 13:1; Gálatas 2:11), así que Roma no es la única sede apostólica",
             quotes: [
               {
-                speaker: "Fr. John Maxwell",
-                work: "Thou Art Peter",
-                outlet: "Orthodox Research Institute",
-                date: "octubre de 1998",
+                speaker: "Robert Arakaki",
+                work: "Why I Did Not Become Roman Catholic — A Sort of Response to Jason Stellman",
+                outlet: "Orthodox-Reformed Bridge",
+                date: "28 de julio de 2012",
                 locator:
-                  "1 párrafo: del párrafo que empieza «First of all, although Peter was given the prominent…» al que termina «…they seemed unaware that Christ had already picked Peter.»",
-                url: "http://www.orthodoxresearchinstitute.org/articles/ecumenical/maxwell_peter.html",
-                text: "En primer lugar, aunque a Pedro se le dio un papel prominente como el primero de los apóstoles, siempre fue igual a los demás apóstoles. Cristo les dijo a los apóstoles que se sentarían en doce tronos (Mateo 19:28). No se preparó un trono especial para Pedro. Además, las “llaves” se dieron a todos los apóstoles (Mateo 18:18). Los demás apóstoles también eran el fundamento sobre el que se edificó la Iglesia (Efesios 2:20). Si se ha de creer la visión romana, es interesante notar que cuando los discípulos discutían entre sí quién sería el mayor (Lucas 22:24-27), parecían no saber que Cristo ya había elegido a Pedro.",
+                  "1 párrafo: del párrafo que empieza «An Evangelical who finds himself in the midst of…» al que termina «…odds with the canons of the Seven Ecumenical Councils.»",
+                url: "https://orthodoxbridge.com/2012/07/28/why-i-did-not-become-roman-catholic-a-sort-of-response-to-jason-stellman/",
+                text: "Un evangélico que se encuentra en medio de las ruinas de una teología protestante destrozada necesita considerar con cuidado sus opciones. No hay una sino dos opciones. La Iglesia de Roma puede afirmar que fue fundada por los apóstoles Pedro y Pablo, pero la misma afirmación puede hacerla la Iglesia de Antioquía (ver Hechos 13:1 para Pablo y Gálatas 2:11 para Pedro y Pablo). Así que, si bien la Iglesia de Roma puede parecer la opción más obvia, hay otra opción. Pero hay otra opción histórica y bíblicamente sólida: la Iglesia de Antioquía, es decir, la Iglesia ortodoxa oriental. La Iglesia de Antioquía puede reclamar una cadena de sucesión apostólica igualmente válida y más antigua que la de Roma. Los primeros concilios no le asignaron al obispo de Roma una autoridad mayor que la de los demás obispos. La pretensión de Roma de supremacía sobre los demás obispos y patriarcados es un desarrollo posterior y está en contradicción con los cánones de los siete concilios ecuménicos.",
                 original:
-                  "First of all, although Peter was given the prominent role as the first of the apostles, he was always equal to the other apostles. Christ told the apostles that they would sit on twelve thrones (Matt. 19:28). A special throne was not set up for Peter. Moreover the “keys” were given to all the apostles (Matt. 18:18). The other apostles were also the foundation upon which the Church was built (Eph. 2:20). If the Roman view is to be believed, it is interesting to note that when the disciples disputed among themselves as to who would be the greatest, (Lk. 22:24-27), they seemed unaware that Christ had already picked Peter.",
+                  "An Evangelical who finds himself in the midst of the rubble of a shattered Protestant theology needs to consider carefully what his options are.  There exist not one but two options.  The Church of Rome may claim to have been founded by the Apostles Peter and Paul, but the same claim can be made by the Church of Antioch (see Acts 13:1 for Paul and Galatians 2:11 for Peter and Paul).  So while the Church of Rome may seem to be most obvious option there is another option. But there is another historically and biblically sound option: the Church of Antioch, that is, the Eastern Orthodox Church.  The Church of Antioch can claim a chain of apostolic succession that is equally valid and older than Rome’s.  The early Councils did not assign the Bishop of Rome an authority greater than the other bishops.  Rome’s claim to supremacy over the other bishops and patriarchates is a later development and is at odds with the canons of the Seven Ecumenical Councils.",
                 translation: "ai-assisted",
               },
             ],
@@ -253,19 +250,7 @@ export const papacyOrthodox = {
       },
     },
     {
-      refs: ["Eph.4.11-Eph.4.12"],
-      text: "El Catecismo extenso lo cita para los dones y el ministerio para la edificación (Filareto, pregunta 277).",
-    },
-    {
-      refs: ["2Thess.2.15"],
-      text: "El Catecismo extenso lo cita para mantener la enseñanza apostólica de palabra o por carta (Filareto, pregunta 275).",
-    },
-    {
-      refs: ["Titus.3.10", "Titus.1.10-Titus.1.11"],
-      text: "El Catecismo extenso lo cita para su disciplina frente a la falsa enseñanza (Filareto, pregunta 275).",
-    },
-    {
-      refs: ["Matt.18.17"],
+      refs: ["Matt.18.15-Matt.18.20"],
       text: "El Catecismo extenso lo cita para oír a la Iglesia (Filareto, pregunta 275).",
       apologists: {
         arguments: [
@@ -330,31 +315,46 @@ export const papacyOrthodox = {
       },
     },
     {
-      refs: ["Gal.2.11"],
-      text: "La encíclica de 1895 lo cita en su argumento sobre la corrección de Pedro (encíclica, §XVIII).",
+      refs: ["Eph.2.19-Eph.2.22"],
+      text: "El Catecismo extenso lo cita para el fundamento apostólico y Cristo como piedra angular (Filareto, pregunta 274).",
       apologists: {
         arguments: [
           {
-            title:
-              "Pedro y Pablo fundaron la iglesia de Antioquía (Hechos 13:1; Gálatas 2:11), así que Roma no es la única sede apostólica",
+            title: "Los demás apóstoles también fueron el fundamento sobre el que se edificó la Iglesia (Efesios 2:20)",
             quotes: [
               {
-                speaker: "Robert Arakaki",
-                work: "Why I Did Not Become Roman Catholic — A Sort of Response to Jason Stellman",
-                outlet: "Orthodox-Reformed Bridge",
-                date: "28 de julio de 2012",
+                speaker: "Fr. John Maxwell",
+                work: "Thou Art Peter",
+                outlet: "Orthodox Research Institute",
+                date: "octubre de 1998",
                 locator:
-                  "1 párrafo: del párrafo que empieza «An Evangelical who finds himself in the midst of…» al que termina «…odds with the canons of the Seven Ecumenical Councils.»",
-                url: "https://orthodoxbridge.com/2012/07/28/why-i-did-not-become-roman-catholic-a-sort-of-response-to-jason-stellman/",
-                text: "Un evangélico que se encuentra en medio de las ruinas de una teología protestante destrozada necesita considerar con cuidado sus opciones. No hay una sino dos opciones. La Iglesia de Roma puede afirmar que fue fundada por los apóstoles Pedro y Pablo, pero la misma afirmación puede hacerla la Iglesia de Antioquía (ver Hechos 13:1 para Pablo y Gálatas 2:11 para Pedro y Pablo). Así que, si bien la Iglesia de Roma puede parecer la opción más obvia, hay otra opción. Pero hay otra opción histórica y bíblicamente sólida: la Iglesia de Antioquía, es decir, la Iglesia ortodoxa oriental. La Iglesia de Antioquía puede reclamar una cadena de sucesión apostólica igualmente válida y más antigua que la de Roma. Los primeros concilios no le asignaron al obispo de Roma una autoridad mayor que la de los demás obispos. La pretensión de Roma de supremacía sobre los demás obispos y patriarcados es un desarrollo posterior y está en contradicción con los cánones de los siete concilios ecuménicos.",
+                  "1 párrafo: del párrafo que empieza «First of all, although Peter was given the prominent…» al que termina «…they seemed unaware that Christ had already picked Peter.»",
+                url: "http://www.orthodoxresearchinstitute.org/articles/ecumenical/maxwell_peter.html",
+                text: "En primer lugar, aunque a Pedro se le dio un papel prominente como el primero de los apóstoles, siempre fue igual a los demás apóstoles. Cristo les dijo a los apóstoles que se sentarían en doce tronos (Mateo 19:28). No se preparó un trono especial para Pedro. Además, las “llaves” se dieron a todos los apóstoles (Mateo 18:18). Los demás apóstoles también eran el fundamento sobre el que se edificó la Iglesia (Efesios 2:20). Si se ha de creer la visión romana, es interesante notar que cuando los discípulos discutían entre sí quién sería el mayor (Lucas 22:24-27), parecían no saber que Cristo ya había elegido a Pedro.",
                 original:
-                  "An Evangelical who finds himself in the midst of the rubble of a shattered Protestant theology needs to consider carefully what his options are.  There exist not one but two options.  The Church of Rome may claim to have been founded by the Apostles Peter and Paul, but the same claim can be made by the Church of Antioch (see Acts 13:1 for Paul and Galatians 2:11 for Peter and Paul).  So while the Church of Rome may seem to be most obvious option there is another option. But there is another historically and biblically sound option: the Church of Antioch, that is, the Eastern Orthodox Church.  The Church of Antioch can claim a chain of apostolic succession that is equally valid and older than Rome’s.  The early Councils did not assign the Bishop of Rome an authority greater than the other bishops.  Rome’s claim to supremacy over the other bishops and patriarchates is a later development and is at odds with the canons of the Seven Ecumenical Councils.",
+                  "First of all, although Peter was given the prominent role as the first of the apostles, he was always equal to the other apostles. Christ told the apostles that they would sit on twelve thrones (Matt. 19:28). A special throne was not set up for Peter. Moreover the “keys” were given to all the apostles (Matt. 18:18). The other apostles were also the foundation upon which the Church was built (Eph. 2:20). If the Roman view is to be believed, it is interesting to note that when the disciples disputed among themselves as to who would be the greatest, (Lk. 22:24-27), they seemed unaware that Christ had already picked Peter.",
                 translation: "ai-assisted",
               },
             ],
           },
         ],
       },
+    },
+    {
+      refs: ["Eph.5.22-Eph.5.32"],
+      text: "El Catecismo extenso lo cita para Cristo como cabeza y salvador del cuerpo (Filareto, pregunta 272).",
+    },
+    {
+      refs: ["Eph.4.11-Eph.4.13"],
+      text: "El Catecismo extenso lo cita para los dones y el ministerio para la edificación (Filareto, pregunta 277).",
+    },
+    {
+      refs: ["2Thess.2.13-2Thess.2.15"],
+      text: "El Catecismo extenso lo cita para mantener la enseñanza apostólica de palabra o por carta (Filareto, pregunta 275).",
+    },
+    {
+      refs: ["Titus.3.10", "Titus.1.10-Titus.1.11"],
+      text: "El Catecismo extenso lo cita para su disciplina frente a la falsa enseñanza (Filareto, pregunta 275).",
     },
   ],
   passages: {

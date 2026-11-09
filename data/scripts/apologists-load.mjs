@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import { quoteKey } from "./apologists-md.mjs";
 import { assemble, matchSections } from "./apologists-match.mjs";
+import { normalizePassages } from "./passage-normalize.mjs";
+import { orderPassages } from "./passage-order.mjs";
 
 const DATA = new URL("../passages/", import.meta.url).pathname;
 const readJson = (file) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null);
@@ -15,13 +17,14 @@ function finalQuote(quote, translations) {
 }
 
 export function loadApologists(doctrine, tradition, scripture) {
+  const legacyRefs = readJson(`${DATA}legacy-entries/${doctrine}-${tradition}.json`);
   const data = readJson(`${DATA}apologists/${doctrine}-${tradition}.json`);
   const seeds = readJson(`${DATA}apologists/seeds/${doctrine}-${tradition}.json`) ?? [];
   const translations = readJson(`${DATA}translations/quotes.json`) ?? {};
   const titles = readJson(`${DATA}translations/titles.json`) ?? {};
   const result = scripture.map(() => undefined);
   const report = { sections: data?.sections.length ?? 0, importedSections: 0, unmatched: [], notes: [], quotes: 0, translated: 0, seeds: 0 };
-  const matched = data ? matchSections(data.sections, scripture, doctrine, doctrine) : { perPassage: scripture.map(() => []), unmatched: [], notes: [] };
+  const matched = data ? matchSections(data.sections, scripture, doctrine, doctrine, legacyRefs) : { perPassage: scripture.map(() => []), unmatched: [], notes: [] };
   report.unmatched = matched.unmatched;
   report.notes = matched.notes;
   const usedSections = new Set();
@@ -67,12 +70,19 @@ export function passagesText(tradition, topic) {
 }
 
 export function applyPassagesLayer(page, topic) {
-  const clean = page.scripture.map((passage) => Object.fromEntries(Object.entries(passage).filter(([key]) => key !== "apologists")));
+  const stripped = page.scripture.map((passage) => Object.fromEntries(Object.entries(passage).filter(([key]) => key !== "apologists")));
+  const key = `${page.doctrine}:${page.tradition}`;
+  const normalized = normalizePassages(stripped, key);
+  const clean = normalized.passages;
   const { layers, report } = loadApologists(page.doctrine, page.tradition, clean);
-  const rest = Object.fromEntries(Object.entries(page).filter(([key]) => key !== "passages"));
-  const scripture = clean.map((passage, i) => (layers[i] ? { ...passage, apologists: layers[i] } : passage));
+  const rest = Object.fromEntries(Object.entries(page).filter(([k]) => k !== "passages"));
+  const layered = clean.map((passage, i) => (layers[i] ? { ...passage, apologists: layers[i] } : passage));
+  const ordered = orderPassages(layered, key);
   const entries = Object.entries(rest);
-  const at = entries.findIndex(([key]) => key === "scripture");
-  entries.splice(at, 1, ["scripture", scripture], ["passages", passagesText(page.tradition, topic)]);
-  return { page: Object.fromEntries(entries), report: { ...report, passages: clean.length, withLayer: layers.filter(Boolean).length } };
+  const at = entries.findIndex(([k]) => k === "scripture");
+  entries.splice(at, 1, ["scripture", ordered.passages], ["passages", passagesText(page.tradition, topic)]);
+  return {
+    page: Object.fromEntries(entries),
+    report: { ...report, passages: clean.length, withLayer: layers.filter(Boolean).length, normalize: normalized.stats, order: ordered.report },
+  };
 }

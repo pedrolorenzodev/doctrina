@@ -189,16 +189,16 @@ export const solaScripturaLutheran = {
       },
     },
     {
-      refs: ["1Tim.3"],
-      text: "La Declaración sólida lo cita para conservar la doctrina pura y refutar a quienes la contradicen (Declaración sólida, Regla y norma 14).",
+      refs: ["Rom.1.16"],
+      text: "La Confesión de Augsburgo lo cita para el Evangelio como poder de Dios para salvación (art. XXVIII.9).",
     },
     {
       refs: ["Titus.1.9"],
       text: "La Declaración sólida lo cita para el mismo oficio de enseñar (Declaración sólida, Regla y norma 14).",
     },
     {
-      refs: ["John.10.12", "Jer.15.19"],
-      text: "La Declaración sólida los cita para el cuidado del rebaño y para distinguir lo precioso de lo vil (Declaración sólida, Regla y norma 14).",
+      refs: ["1Tim.3"],
+      text: "La Declaración sólida lo cita para conservar la doctrina pura y refutar a quienes la contradicen (Declaración sólida, Regla y norma 14).",
     },
     {
       refs: ["John.20.21-John.20.23"],
@@ -209,8 +209,8 @@ export const solaScripturaLutheran = {
       text: "La Confesión de Augsburgo lo cita para la proclamación del Evangelio (art. XXVIII.7).",
     },
     {
-      refs: ["Rom.1.16"],
-      text: "La Confesión de Augsburgo lo cita para el Evangelio como poder de Dios para salvación (art. XXVIII.9).",
+      refs: ["John.10.12", "Jer.15.19"],
+      text: "La Declaración sólida los cita para el cuidado del rebaño y para distinguir lo precioso de lo vil (Declaración sólida, Regla y norma 14).",
     },
     {
       refs: ["John.18.36", "Luke.12.14"],

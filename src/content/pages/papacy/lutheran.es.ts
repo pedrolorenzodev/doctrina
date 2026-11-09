@@ -156,27 +156,7 @@ export const papacyLutheran = {
     "Los pasajes que las confesiones luteranas citan sobre el ministerio y el papado, y cómo los leen.",
   scripture: [
     {
-      refs: ["Luke.22.25"],
-      text: "El Tratado lo cita para contraponer el servicio común al dominio entre los apóstoles (Tratado 8).",
-    },
-    {
-      refs: ["Matt.18.2"],
-      text: "El Tratado lo cita en la disputa sobre quién es el mayor, con el niño como ejemplo (Tratado 8).",
-    },
-    {
-      refs: ["John.20.21"],
-      text: "El Tratado lo cita para el envío igual de los apóstoles (Tratado 9).",
-    },
-    {
-      refs: ["Gal.2.7"],
-      text: "El Tratado lo cita para el llamamiento de Pablo y su relación con Pedro (Tratado 10).",
-    },
-    {
-      refs: ["1Cor.3.6"],
-      text: "El Tratado lo cita para los ministros y la iglesia (Tratado 11).",
-    },
-    {
-      refs: ["Matt.16.18-Matt.16.19"],
+      refs: ["Matt.16.13-Matt.16.20"],
       text: "El Tratado lo cita para Pedro, la roca, las llaves y la confesión (Tratado 22–25).",
       apologists: {
         arguments: [
@@ -202,32 +182,40 @@ export const papacyLutheran = {
       },
     },
     {
-      refs: ["John.21.15"],
-      text: "El Tratado nombra «Apacienta mis ovejas» entre los textos disputados (Tratado 22).",
-    },
-    {
-      refs: ["Matt.18.18"],
-      text: "El Tratado lo cita para el encargo en plural junto a la palabra dirigida a uno (Tratado 23).",
-    },
-    {
-      refs: ["John.20.23"],
-      text: "El Tratado lo cita para las llaves dadas a todos los apóstoles (Tratado 23).",
-    },
-    {
-      refs: ["Matt.18.19"],
-      text: "El Tratado lo cita para las llaves que pertenecen a la iglesia (Tratado 24).",
-    },
-    {
       refs: ["2Thess.2.4"],
       text: "Los Artículos de Esmalcalda lo citan en la designación histórica de Anticristo (II.4.10–11).",
     },
     {
-      refs: ["Titus.1.5"],
-      text: "El Tratado lo cita, por medio de Jerónimo, para obispos y presbíteros (Tratado 62).",
+      refs: ["Luke.22.25"],
+      text: "El Tratado lo cita para contraponer el servicio común al dominio entre los apóstoles (Tratado 8).",
+    },
+    {
+      refs: ["John.21.15-John.21.17"],
+      text: "El Tratado nombra «Apacienta mis ovejas» entre los textos disputados (Tratado 22).",
+    },
+    {
+      refs: ["Matt.18.15-Matt.18.20"],
+      text: "El Tratado lo cita para el encargo en plural junto a la palabra dirigida a uno (Tratado 23). El Tratado lo cita para las llaves que pertenecen a la iglesia (Tratado 24).",
     },
     {
       refs: ["John.20.21-John.20.23", "Mark.16.15"],
-      text: "La Confesión de Augsburgo los cita para el ministerio del Evangelio y las llaves (art. XXVIII.5–7).",
+      text: "El Tratado lo cita para el envío igual de los apóstoles (Tratado 9). El Tratado lo cita para las llaves dadas a todos los apóstoles (Tratado 23). La Confesión de Augsburgo los cita para el ministerio del Evangelio y las llaves (art. XXVIII.5–7).",
+    },
+    {
+      refs: ["Gal.2.7"],
+      text: "El Tratado lo cita para el llamamiento de Pablo y su relación con Pedro (Tratado 10).",
+    },
+    {
+      refs: ["Matt.18.2"],
+      text: "El Tratado lo cita en la disputa sobre quién es el mayor, con el niño como ejemplo (Tratado 8).",
+    },
+    {
+      refs: ["1Cor.3.6"],
+      text: "El Tratado lo cita para los ministros y la iglesia (Tratado 11).",
+    },
+    {
+      refs: ["Titus.1.5"],
+      text: "El Tratado lo cita, por medio de Jerónimo, para obispos y presbíteros (Tratado 62).",
     },
     {
       refs: ["Rom.1.16"],
