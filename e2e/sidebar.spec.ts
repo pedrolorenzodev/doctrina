@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import { hasCorpus, traditionPath, trackElement } from "./helpers";
 
 const branch = 'li[data-id="eucharist"]';
@@ -57,6 +57,101 @@ test("«Contraer todo menos dónde estoy» keeps the ancestors of the current pa
   await page.locator("[data-collapse-all]").click();
   await page.waitForTimeout(400);
   await expect(page.locator(list)).toBeVisible();
+});
+
+const baptismPath = "/es/doctrinas/bautismo";
+const baptismCatholic = 'li[data-id="baptism/catholic"]';
+const baptismCatholicList = `${baptismCatholic} > ul[data-branch]`;
+const baptismCatholicLink = `${baptismCatholic} > [data-row] a`;
+const baptismCatholicTwisty = `${baptismCatholic} > [data-row] [data-twisty]`;
+const baptismTwisty = 'li[data-id="baptism"] > [data-row] [data-twisty]';
+
+async function openBaptism(page: Page) {
+  await page.locator(baptismTwisty).click();
+  await expect(page.locator(baptismCatholicLink)).toBeVisible();
+  await page.waitForTimeout(300);
+}
+
+test("pressing the link of a row with children navigates and unfolds it with «Despliegue»; again keeps it open", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(baptismPath);
+  await openBaptism(page);
+  await expect(page.locator(baptismCatholicList)).toBeHidden();
+  await expect(page.locator(baptismCatholicTwisty)).toHaveAttribute("aria-expanded", "false");
+  await page.evaluate((selector) => {
+    const target = document.querySelector(selector) as HTMLElement;
+    const seen: number[] = [];
+    (window as unknown as { seenTreeAnimations: number[] }).seenTreeAnimations = seen;
+    const sample = () => {
+      for (const animation of target.getAnimations({ subtree: true })) {
+        if (animation.id === "tree") seen.push(Number((animation.effect as KeyframeEffect).getTiming().duration));
+      }
+      requestAnimationFrame(sample);
+    };
+    sample();
+  }, baptismCatholicList);
+  await page.locator(baptismCatholicLink).click();
+  await page.waitForTimeout(400);
+  const ran = await page.evaluate(() => (window as unknown as { seenTreeAnimations: number[] }).seenTreeAnimations);
+  expect(ran).toContain(220);
+  await expect(page).toHaveURL(/\/es\/doctrinas\/bautismo\/catolica$/);
+  await expect(page.locator(baptismCatholicList)).toBeVisible();
+  await expect(page.locator(baptismCatholicList)).toHaveAttribute("data-open", "true");
+  await expect(page.locator(baptismCatholicTwisty)).toHaveAttribute("aria-expanded", "true");
+  await expect(page.locator(baptismCatholicTwisty)).toHaveAttribute("aria-label", "Contraer Católica");
+  await expect(page.locator("aside nav [aria-current=page]")).toHaveText("Católica");
+  await page.waitForTimeout(400);
+  expect(
+    await page.locator(baptismCatholicList).evaluate((element) => element.getAnimations({ subtree: true }).length),
+  ).toBe(0);
+  await page.locator(baptismCatholicLink).click();
+  await page.waitForTimeout(400);
+  await expect(page.locator(baptismCatholicList)).toBeVisible();
+  await expect(page.locator(baptismCatholicTwisty)).toHaveAttribute("aria-expanded", "true");
+  await page.locator(baptismCatholicTwisty).click();
+  await expect(page.locator(baptismCatholicList)).toBeHidden();
+  await page.locator(baptismCatholicTwisty).click();
+  await expect(page.locator(baptismCatholicList)).toBeVisible();
+});
+
+test("Enter on the link of a row with children also unfolds it", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(baptismPath);
+  await openBaptism(page);
+  await page.locator(baptismCatholicLink).focus();
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/\/es\/doctrinas\/bautismo\/catolica$/);
+  await expect(page.locator(baptismCatholicList)).toBeVisible();
+  await expect(page.locator(baptismCatholicList)).toHaveAttribute("data-open", "true");
+});
+
+test("a modified click does not unfold the row", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(baptismPath);
+  await openBaptism(page);
+  await page.locator(baptismCatholicLink).click({ modifiers: ["Shift"] });
+  await expect(page.locator(baptismCatholicList)).toBeHidden();
+});
+
+test.describe("drawer", () => {
+  test.use({ viewport: { width: 390, height: 780 } });
+
+  test("a link with children closes the drawer and finds its branch open the next time", async ({ page }) => {
+    await page.goto(baptismPath);
+    const menu = page.locator("header button[aria-controls]");
+    await menu.click();
+    await expect(page.locator("aside")).toHaveAttribute("data-open", "true");
+    await openBaptism(page);
+    await page.locator(baptismCatholicLink).click();
+    await expect(page).toHaveURL(/\/es\/doctrinas\/bautismo\/catolica$/);
+    await expect(page.locator("aside")).not.toHaveAttribute("data-open", "true");
+    await menu.click();
+    await expect(page.locator("aside")).toHaveAttribute("data-open", "true");
+    await expect(page.locator(baptismCatholicList)).toBeVisible();
+    await expect(page.locator(baptismCatholicTwisty)).toHaveAttribute("aria-expanded", "true");
+  });
 });
 
 test.describe("drawer", () => {

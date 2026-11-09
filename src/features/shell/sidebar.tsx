@@ -390,6 +390,12 @@ export function Sidebar({ groups, text }: SidebarProps) {
       }
       return;
     }
+    const link = target.closest<HTMLElement>("[data-row] a[href]");
+    if (link && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+      const item = link.closest<HTMLElement>("li");
+      if (item) setItemOpen(item, true, true, text);
+      return;
+    }
     if (target.closest("[data-collapse-all]")) {
       const keep = new Set([...ancestorsOf(index, currentId), ...(currentBookId ? [currentBookId] : [])]);
       for (const item of nav.querySelectorAll<HTMLElement>("li[data-id]")) {
