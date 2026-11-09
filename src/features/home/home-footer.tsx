@@ -4,7 +4,7 @@ import { PressTooltip } from "@/components/ui/press-tooltip";
 type HomeFooterProps = {
   site: string;
   glossary: { label: string; href: string | null };
-  sources: { label: string; soon: string };
+  sources: { label: string; soon: string; href: string };
   other: { label: string; href: string; lang: string };
 };
 
@@ -29,12 +29,9 @@ export function HomeFooter({ site, glossary, sources, other }: HomeFooterProps) 
           </button>
         </PressTooltip>
       )}
-      {/* TODO: link to the Fuentes page once it exists, and drop the muted state */}
-      <PressTooltip label={sources.soon}>
-        <button type="button" aria-disabled="true" className={inertClassName}>
-          {sources.label}
-        </button>
-      </PressTooltip>
+      <Link href={sources.href} className={linkClassName}>
+        {sources.label}
+      </Link>
       <a href={other.href} hrefLang={other.lang} lang={other.lang} className={linkClassName}>
         {other.label}
       </a>

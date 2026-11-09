@@ -25,6 +25,7 @@ import {
   earlyChristiansHref,
   earlyChristiansRoute,
   glossaryHref,
+  sourcesHref,
   traditionHref,
   traditionRoute,
 } from "@/content/routes";
@@ -192,7 +193,7 @@ export function buildSiteTree(
   published: PublishedPage[],
   publishedDoctrines: DoctrineId[],
   text: TreeText,
-  sourceTitles: string[],
+  sourceCount: number,
   publishedFathers: string[],
   bookChapters: Map<string, number>,
   fatherWorks: Record<string, { id: string; label: string }[]>,
@@ -342,7 +343,11 @@ export function buildSiteTree(
         locale === "es"
           ? { ...leaf("reference/glossary", text.tree.glossary), href: glossaryHref(locale), route: "/es/glossary" }
           : leaf("reference/glossary", text.tree.glossary),
-        soon(branch("reference/sources", text.tree.sources, [], sourceTitles.length)),
+        {
+          ...leaf("reference/sources", text.tree.sources, sourceCount),
+          href: sourcesHref(locale),
+          route: `/${locale}/sources`,
+        },
       ],
     },
   ];

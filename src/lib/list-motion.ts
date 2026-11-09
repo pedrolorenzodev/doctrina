@@ -121,12 +121,12 @@ export function flipList(list: HTMLElement, ghosts: HTMLElement, mutate: () => v
     mutate();
     return;
   }
-  for (const animation of [...list.getAnimations({ subtree: true }), ...(list.parentElement?.getAnimations() ?? [])]) {
-    if (animation.id === flipAnimationId) animation.cancel();
-  }
   for (const item of itemsOf(list)) if (item.dataset.rv === "shown") delete item.dataset.rv;
   const before = measure(list);
   const armed = new Set([...before.nodes].filter(([, node]) => node.dataset.rv === "armed").map(([key]) => key));
+  for (const animation of [...list.getAnimations({ subtree: true }), ...(list.parentElement?.getAnimations() ?? [])]) {
+    if (animation.id === flipAnimationId) animation.cancel();
+  }
   mutate();
   const after = measure(list);
   const listRect = list.getBoundingClientRect();

@@ -57,6 +57,10 @@ const wordsSegments: Record<Locale, string> = { es: "palabras", en: "words" };
 
 const glossarySegments: Record<Locale, string> = { es: "glosario", en: "glossary" };
 
+export function sourcesHref(locale: Locale): string {
+  return `/${locale}/${locale === "es" ? "fuentes" : "sources"}`;
+}
+
 export function glossaryHref(locale: Locale): string {
   return `/${locale}/${glossarySegments[locale]}`;
 }
@@ -245,6 +249,7 @@ export function spanishRewrites() {
     { source: councilHref("es", ":council"), destination: councilRoute("es", ":council") },
     { source: currentHref("es", ":current"), destination: currentRoute("es", ":current") },
     { source: wordHref("es", ":word"), destination: wordRoute("es", ":word") },
+    { source: sourcesHref("es"), destination: "/es/sources" },
     { source: glossaryHref("es"), destination: "/es/glossary" },
     { source: glossaryTermHref("es", ":term"), destination: "/es/glossary/:term" },
     ...doctrineRewrites(),

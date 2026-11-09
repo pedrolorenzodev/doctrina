@@ -5,21 +5,21 @@ import { worksByFather } from "@/content/father-work-links";
 import { getFatherWorks } from "@/content/get-father-works";
 import { getPublishedFathers } from "@/content/get-fathers";
 import { getPublishedPages } from "@/content/get-tradition-page";
-import { registry } from "@/content/registry/index";
+import { getSourceCount } from "@/content/get-sources";
 import { buildSiteTree, type TreeGroup } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@/lib/locale";
 
 export async function getSiteTree(locale: Locale): Promise<TreeGroup[]> {
   const { shell } = getUiText(locale);
-  const sourceTitles = locale === "es" ? Object.values(registry.works).map((work) => work.title) : [];
+  const sourceCount = await getSourceCount();
   const publishedFathers = getPublishedFathers(locale).map((father) => father.id);
   return buildSiteTree(
     locale,
     getPublishedPages(locale),
     getPublishedDoctrines(locale),
     shell,
-    sourceTitles,
+    sourceCount,
     publishedFathers,
     await getBibleChapterCounts(locale),
     worksByFather(await getFatherWorks(), locale),

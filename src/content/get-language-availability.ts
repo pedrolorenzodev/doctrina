@@ -6,6 +6,7 @@ import type { Locale } from "@/lib/locale";
 
 function availabilityIn(locale: Locale): PageAvailability {
   return {
+    sources: true,
     glossary: glossaryLocales.includes(locale),
     doctrines: getPublishedDoctrines(locale),
     traditions: getPublishedPages(locale).map((page) => ({

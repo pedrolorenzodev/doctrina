@@ -17,6 +17,7 @@ import { getUiText } from "@/content/ui-text/get-ui-text";
 import { buildWitnessView, witnessViewId } from "@/content/witness-view";
 import { BibleRows } from "@/features/home/bible-rows";
 import { DoctrineRows } from "@/features/home/doctrine-rows";
+import { sourcesHref } from "@/content/routes";
 import { HomeFooter } from "@/features/home/home-footer";
 import { HomeResume } from "@/features/home/home-resume";
 import { MailForm } from "@/features/home/mail-form";
@@ -114,7 +115,7 @@ export default async function Home() {
             label: home.footer.glossary,
             href: glossaryLocales.includes(locale) ? glossaryHref(locale) : null,
           }}
-          sources={{ label: home.footer.sources, soon: shell.soon }}
+          sources={{ label: home.footer.sources, soon: shell.soon, href: sourcesHref(locale) }}
           other={{ label: home.footer.other, href: localeHref(other), lang: other }}
         />
         <EdgeRuler

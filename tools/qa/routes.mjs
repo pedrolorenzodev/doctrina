@@ -44,6 +44,8 @@ export const routes = [
   ["reformation-waldensians", "/es/historia/reforma/waldensians"],
   ["work-1clement", "/es/historia/obras/1-clement"],
   ["work-tractates", "/es/historia/obras/augustine-tractates-john"],
+  ["sources", "/es/fuentes"],
+  ["en-sources", "/en/sources"],
   ["glossary", "/es/glosario"],
   ["glossary-term", "/es/glosario/anafora"],
   ["not-found", "/es/ruta-que-no-existe"],

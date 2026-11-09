@@ -6,6 +6,7 @@ import {
   doctrineHref,
   earlyChristiansHref,
   glossaryHref,
+  sourcesHref,
   glossaryTermHref,
   objectionHref,
   objectionsHref,
@@ -18,6 +19,7 @@ import {
 
 export type PageAvailability = {
   glossary: boolean;
+  sources?: boolean;
   doctrines: DoctrineId[];
   traditions: { doctrine: DoctrineId; tradition: TraditionId; objections: string[]; passages: boolean }[];
 };
@@ -55,6 +57,7 @@ export function languageSwitchHref(
   const swapped = swapHistoryLocale(pathname, from, to);
   if (swapped) return swapped;
   const target = availability[to];
+  if (pathname === sourcesHref(from)) return target.sources ? sourcesHref(to) : null;
   if (pathname.startsWith(wordHref(from, ""))) return wordHref(to, pathname.slice(wordHref(from, "").length));
   if (isWithin(pathname, glossaryHref(from)) && target.glossary)
     return pathname === glossaryHref(from)

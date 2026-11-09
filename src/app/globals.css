@@ -1658,6 +1658,87 @@
   }
 }
 
+@utility yr-compact-axis {
+  --axis-top: var(--at0);
+
+  @container (min-width: 344px) {
+    --axis-top: var(--at1);
+  }
+
+  @container (min-width: 360px) {
+    --axis-top: var(--at2);
+  }
+
+  @container (min-width: 380px) {
+    --axis-top: var(--at3);
+  }
+
+  @container (min-width: 440px) {
+    --axis-top: var(--at4);
+  }
+
+  @container (min-width: 520px) {
+    --axis-top: var(--at5);
+  }
+
+  @container (min-width: 620px) {
+    --axis-top: var(--at6);
+  }
+
+  @container (min-width: 760px) {
+    --axis-top: var(--at7);
+  }
+
+  @container (min-width: 900px) {
+    --axis-top: var(--at8);
+  }
+
+  @container (min-width: 1040px) {
+    --axis-top: var(--at9);
+  }
+}
+
+@utility yr-compact-row {
+  --r: var(--r0);
+  top: calc(30px + var(--r) * 14px) !important;
+
+  @container (min-width: 344px) {
+    --r: var(--r1);
+  }
+
+  @container (min-width: 360px) {
+    --r: var(--r2);
+  }
+
+  @container (min-width: 380px) {
+    --r: var(--r3);
+  }
+
+  @container (min-width: 440px) {
+    --r: var(--r4);
+  }
+
+  @container (min-width: 520px) {
+    --r: var(--r5);
+  }
+
+  @container (min-width: 620px) {
+    --r: var(--r6);
+  }
+
+  @container (min-width: 760px) {
+    --r: var(--r7);
+  }
+
+  @container (min-width: 900px) {
+    --r: var(--r8);
+  }
+
+  @container (min-width: 1040px) {
+    --r: var(--r9);
+  }
+}
+
 @utility yr-ring {
   position: absolute;
   --r: var(--rp);

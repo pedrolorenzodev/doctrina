@@ -3,7 +3,7 @@ import { horizontalOverflow } from "./helpers";
 
 const catholic = "/es/doctrines/eucharist/catholic";
 const tabs = 'nav[aria-label="Tradición"]';
-const tabTip = `${tabs} [aria-hidden="true"].pointer-events-none`;
+const tabTip = `${tabs} span[aria-hidden="true"].pointer-events-none`;
 
 const fingerTap = async (page: Page, selector: string) => {
   await page.locator(selector).first().scrollIntoViewIfNeeded();
@@ -17,7 +17,7 @@ test("the tree marks every doctrine and tradition without a screen as under cons
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(catholic);
   const soon = page.locator("aside li[data-soon]");
-  for (const label of ["La justificación", "Pentecostal", "Fuentes"]) {
+  for (const label of ["La justificación", "Pentecostal"]) {
     await expect(soon.filter({ hasText: label }).first()).toBeAttached();
   }
   await expect(page.locator('aside li[data-id="justification"] [data-twisty]')).toHaveCount(0);
@@ -54,13 +54,11 @@ test("on touch a tap on a muted tab shows the message for about two seconds and 
   await context.close();
 });
 
-test("the home mutes the doctrine without a page and the Fuentes link, and keeps the Eucaristía row live", async ({
-  page,
-}) => {
+test("the home mutes the doctrine without a page and keeps Sources and the Eucharist live", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/es");
   const muted = page.locator('main button[aria-disabled="true"]');
-  await expect(muted).toHaveText([/La justificación/, /Fuentes/]);
+  await expect(muted).toHaveText([/La justificación/]);
   await expect(page.locator('main a[href="/es/doctrinas/eucaristia"]').first()).toBeVisible();
 });
 

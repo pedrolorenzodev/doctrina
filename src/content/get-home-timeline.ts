@@ -29,26 +29,8 @@ type History = {
   divisions: { id: string; name: Localized; year: number; endYear?: number }[];
 };
 
-export type YearsFather = {
-  id: string;
-  name: string;
-  start: number;
-  end: number;
-  date: string;
-  detail: string;
-  href: string;
-};
-export type YearsCouncil = {
-  id: string;
-  name: string;
-  year: number;
-  seven: boolean;
-  date: string;
-  detail: string;
-  href: string;
-};
-export type YearsDivision = { id: string; name: string; year: number; end: number; date: string; href: string };
-export type YearsData = { fathers: YearsFather[]; councils: YearsCouncil[]; divisions: YearsDivision[] };
+export type { YearsData } from "@/lib/years-data";
+import type { YearsData, YearsFather, YearsCouncil, YearsDivision } from "@/lib/years-data";
 
 const history = JSON.parse(readFileSync(join(process.cwd(), "data/site/history.json"), "utf8")) as History;
 
