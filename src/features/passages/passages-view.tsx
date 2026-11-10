@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ActionLink } from "@/components/ui/action";
 import { MoreButton } from "@/components/ui/more-button";
 import { SlidingTabs } from "@/components/ui/sliding-tabs";
@@ -8,6 +8,7 @@ import type { PassagesData } from "@/content/get-passages";
 import type { PassagesPageText } from "@/content/model/page";
 import type { UiText } from "@/content/ui-text/types";
 import { ApologistLayer } from "@/features/passages/apologist-layer";
+import { settlePassagePending } from "@/features/passages/passage-pending";
 import { PassageRuler } from "@/features/passages/passage-ruler";
 import { ReadingText } from "@/features/passages/reading-text";
 import { VerseBlocks } from "@/features/passages/verse-blocks";
@@ -46,7 +47,12 @@ const chevron = (
 );
 
 function indexFromHash(data: PassagesData): number {
-  const hash = decodeURIComponent(location.hash.slice(1));
+  let hash = location.hash.slice(1);
+  try {
+    hash = decodeURIComponent(hash);
+  } catch {
+    return 0;
+  }
   return Math.max(
     0,
     data.entries.findIndex((entry) => entry.id === hash),
@@ -61,6 +67,8 @@ function whenIdle(task: () => void): () => void {
   const handle = setTimeout(task, 300);
   return () => clearTimeout(handle);
 }
+
+const whilePending = "passage-pending:invisible";
 
 const prefetchAhead = [1, -1, 2] as const;
 
@@ -88,10 +96,12 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
 
   const show = useCallback(
     async (target: number, fromHash: boolean) => {
-      if (target < 0 || target >= entries.length || target === indexRef.current) return;
+      if (target < 0 || target >= entries.length) return;
+      if (target === indexRef.current) return settlePassagePending();
       const mine = ++ticket.current;
       const ready = await store.ensure(target, layerRef.current === "apologists");
-      if (!ready || mine !== ticket.current) return;
+      if (mine !== ticket.current) return;
+      if (!ready) return settlePassagePending();
       setDirection(fromHash ? null : target > indexRef.current ? "next" : "back");
       indexRef.current = target;
       setIndex(target);
@@ -119,6 +129,10 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
     addEventListener("hashchange", read);
     return () => removeEventListener("hashchange", read);
   }, [data, show]);
+
+  useLayoutEffect(() => {
+    if (index !== 0) settlePassagePending();
+  }, [index]);
 
   useEffect(() => {
     layerRef.current = layer;
@@ -190,7 +204,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
       </div>
       <div className="min-w-0">
         <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-3 max-sm:mt-3.5">
-          <span className="text-ui-xs leading-normal text-ink-3 tabular-nums">
+          <span className={`text-ui-xs leading-normal text-ink-3 tabular-nums ${whilePending}`}>
             {text.count.replace("{n}", String(index + 1)).replace("{total}", String(entries.length))}
           </span>
           <div className="flex max-w-full flex-wrap items-center gap-x-3.5 gap-y-1.5">
@@ -208,7 +222,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
             />
           </div>
         </div>
-        <div key={summary.id} className={motion}>
+        <div key={summary.id} className={`${motion} ${whilePending}`}>
           <h2 className="mt-7.25 font-head text-h2-mobile font-light text-balance text-ink-3 opsz-60 sm:mt-7.5 sm:text-h2">
             {summary.title}
           </h2>
@@ -265,7 +279,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
         </div>
         <div
           key={`${summary.id}-layers`}
-          className={`mt-16 ${motion}`}
+          className={`mt-16 ${motion} ${whilePending}`}
           onPointerEnter={() => store.prefetch(index, "apologists", "high")}
           onFocusCapture={() => store.prefetch(index, "apologists", "high")}
         >
@@ -299,7 +313,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
             )}
           </div>
         </div>
-        <nav className="mt-24 grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label={text.neighbors}>
+        <nav className={`mt-24 grid grid-cols-1 gap-4 sm:grid-cols-2 ${whilePending}`} aria-label={text.neighbors}>
           {previous ? (
             <button
               type="button"

@@ -2,6 +2,7 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @custom-variant verse-back (html[data-verse-back] &);
+@custom-variant passage-pending (html[data-passage-pending] &);
 @custom-variant verse-wide (@media (min-width: 1100px));
 @custom-variant verse-narrow (@media (max-width: 420px));
 

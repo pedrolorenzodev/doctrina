@@ -13,6 +13,7 @@ import { passagesHref, traditionHref } from "@/content/routes";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { TraditionSwitcher } from "@/features/doctrine/tradition-switcher";
+import { PassagePendingScript } from "@/features/passages/passage-pending-script";
 import { PassagesView } from "@/features/passages/passages-view";
 import { currentLocale } from "@/lib/current-locale";
 import { leanBuild } from "@/lib/lean-build";
@@ -85,6 +86,7 @@ export default async function PassagesRoute({
           lede={page.passages.lede}
           emphasis={doctrineTitle(locale, doctrine)}
         />
+        <PassagePendingScript ids={data.entries.map((entry) => entry.id)} />
         <PassagesView
           data={data}
           dataBase={`/${locale}/doctrines/${doctrine}/${tradition}/passages/data`}

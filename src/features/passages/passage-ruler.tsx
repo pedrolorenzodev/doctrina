@@ -55,7 +55,7 @@ export function PassageRuler({ label, titles, current, onSelect, onIntent }: Pas
           >
             <span
               aria-hidden="true"
-              className="absolute top-1/2 left-0 -mt-0.375 h-0.75 w-4 rounded-2 bg-ink opacity-30 passage-tick group-data-current/tick:bg-accent group-data-current/tick:opacity-100 group-data-hover/tick:opacity-100"
+              className="absolute top-1/2 left-0 -mt-0.375 h-0.75 w-4 rounded-2 bg-ink opacity-30 passage-tick group-data-current/tick:bg-accent group-data-current/tick:opacity-100 group-data-hover/tick:opacity-100 passage-pending:group-data-current/tick:bg-ink passage-pending:group-data-current/tick:opacity-30"
             />
             <span
               aria-hidden="true"
@@ -83,7 +83,7 @@ export function PassageRuler({ label, titles, current, onSelect, onIntent }: Pas
           >
             <span
               aria-hidden="true"
-              className="h-3.5 w-0.75 rounded-2 bg-ink opacity-30 passage-strip-tick group-data-current/strip:h-6.5 group-data-current/strip:bg-accent group-data-current/strip:opacity-100"
+              className="h-3.5 w-0.75 rounded-2 bg-ink opacity-30 passage-strip-tick group-data-current/strip:h-6.5 group-data-current/strip:bg-accent group-data-current/strip:opacity-100 passage-pending:group-data-current/strip:h-3.5 passage-pending:group-data-current/strip:bg-ink passage-pending:group-data-current/strip:opacity-30"
             />
           </button>
         ))}
