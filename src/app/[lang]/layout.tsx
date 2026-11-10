@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Document } from "@/components/document";
-import { getSearchIndex } from "@/content/get-search-index";
+import { getSearchIndexAsset } from "@/content/search-index-asset";
 import { getSiteTree } from "@/content/get-site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { DrawerProvider } from "@/features/shell/drawer";
@@ -50,7 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const locale = await currentLocale();
   const { shell, search } = getUiText(locale);
-  const searchIndex = await getSearchIndex(locale);
+  const searchIndex = await getSearchIndexAsset(locale);
   const groups = await getSiteTree(locale);
   const hasTree = groups.length > 0;
   const text = {
@@ -69,7 +69,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
       <TitleEntrance />
       <LastPlaceRecorder />
       <DrawerProvider>
-        <SearchProvider>
+        <SearchProvider indexUrl={searchIndex.url}>
           <a
             href="#content"
             className="fixed top-2 left-2 z-100 -translate-y-20 rounded-6 border border-rule-2 bg-bg flex min-h-11 items-center px-3.5 text-ui-sm font-medium text-ink no-underline transition-transform duration-150 ease-standard focus:translate-y-0"
@@ -87,7 +87,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
           ) : (
             children
           )}
-          <SearchDialog entries={searchIndex} text={search} />
+          <SearchDialog text={search} />
         </SearchProvider>
       </DrawerProvider>
     </Document>

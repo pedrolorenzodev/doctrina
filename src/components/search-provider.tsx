@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 
 type SearchState = {
+  indexUrl: string;
   open: boolean;
   session: number;
   query: string;
@@ -15,7 +16,7 @@ const SearchContext = createContext<SearchState | null>(null);
 
 const lockClass = "scroll-locked-root";
 
-export function SearchProvider({ children }: { children: ReactNode }) {
+export function SearchProvider({ indexUrl, children }: { indexUrl: string; children: ReactNode }) {
   const [open, setOpen] = useState(false);
   const [session, setSession] = useState(0);
   const [query, setQuery] = useState("");
@@ -57,7 +58,10 @@ export function SearchProvider({ children }: { children: ReactNode }) {
     };
   }, [open, hide]);
 
-  const value = useMemo(() => ({ open, session, query, show, hide }), [open, session, query, show, hide]);
+  const value = useMemo(
+    () => ({ indexUrl, open, session, query, show, hide }),
+    [indexUrl, open, session, query, show, hide],
+  );
   return <SearchContext.Provider value={value}>{children}</SearchContext.Provider>;
 }
 

@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useEffect, useMemo, useRef, useState, type ChangeEvent, type KeyboardEvent } from "react";
 import { flushSync } from "react-dom";
 import { placeWhen, usePlaceBefore, type LastPlace } from "@/lib/last-place";
+import { loadedSearchIndex, loadSearchIndex } from "@/features/shell/search-index-client";
 import { rememberResult, useRecentIds } from "@/features/shell/search-recents";
 import { useSearch } from "@/components/search-provider";
 import { trapTab } from "@/lib/focus";
@@ -35,7 +36,6 @@ export type SearchText = {
 };
 
 type SearchDialogProps = {
-  entries: SearchEntry[];
   text: SearchText;
 };
 
@@ -144,8 +144,11 @@ function PlaceRow({
   );
 }
 
-function SearchPanel({ entries, text }: SearchDialogProps) {
-  const { hide, query: initialQuery } = useSearch();
+function SearchPanel({ text }: SearchDialogProps) {
+  const { hide, query: initialQuery, indexUrl } = useSearch();
+  const [loadedEntries, setEntries] = useState<SearchEntry[] | null>(() => loadedSearchIndex(indexUrl));
+  const ready = loadedEntries !== null;
+  const entries = useMemo(() => loadedEntries ?? [], [loadedEntries]);
   const router = useRouter();
   const recentIds = useRecentIds();
   const [query, setQuery] = useState(initialQuery);
@@ -204,12 +207,39 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
     if (list.current) enterList(list.current, 0);
   }, []);
 
+  const readyAtMount = useRef(ready);
+  useEffect(() => {
+    if (ready && !readyAtMount.current && list.current) enterList(list.current, 0);
+  }, [ready]);
+
+  const submitWhenReady = useRef(false);
+  useEffect(() => {
+    if (!ready || !submitWhenReady.current) return;
+    submitWhenReady.current = false;
+    pick(options[active]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready]);
+
+  useEffect(() => {
+    let current = true;
+    loadSearchIndex(indexUrl).then(
+      (loaded) => {
+        if (current) setEntries(loaded);
+      },
+      () => undefined,
+    );
+    return () => {
+      current = false;
+    };
+  }, [indexUrl]);
+
   useEffect(() => {
     list.current?.querySelector("[data-selected]")?.scrollIntoView({ block: "nearest" });
   }, [active, query]);
 
   function change(event: ChangeEvent<HTMLInputElement>) {
     const value = event.target.value;
+    if (value.trim() === "") submitWhenReady.current = false;
     const apply = () => {
       setQuery(value);
       setSelected(0);
@@ -244,7 +274,8 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
       setSelected(Math.max(0, Math.min(options.length - 1, active + (event.key === "ArrowDown" ? 1 : -1))));
     } else if (event.key === "Enter") {
       event.preventDefault();
-      pick(options[active]);
+      if (!ready && typed) submitWhenReady.current = true;
+      else pick(options[active]);
     }
   }
 
@@ -352,12 +383,12 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
               </li>
             );
           })}
-          {typed && rows.length === 0 ? (
+          {ready && typed && rows.length === 0 ? (
             <li data-id="none" role="presentation" className="px-3 py-3.5 text-ui-sm text-ink-3">
               {text.none.replace("{query}", query.trim())}
             </li>
           ) : null}
-          {!typed && rows.length === 0 ? (
+          {ready && !typed && rows.length === 0 ? (
             <li data-id="empty" role="presentation" className="px-3 py-3.5 text-ui-sm text-ink-3">
               {text.empty}
             </li>
@@ -377,7 +408,7 @@ function SearchPanel({ entries, text }: SearchDialogProps) {
   );
 }
 
-export function SearchDialog({ entries, text }: SearchDialogProps) {
+export function SearchDialog({ text }: SearchDialogProps) {
   const { open, session, hide } = useSearch();
   return (
     <div
@@ -396,7 +427,7 @@ export function SearchDialog({ entries, text }: SearchDialogProps) {
         data-open={open || undefined}
         className="texture-layer relative flex w-full max-w-155 search-max-height translate-y-1.5 flex-col overflow-hidden rounded-10 border border-rule-2 bg-panel text-ink shadow-search transition-transform duration-200 ease-standard data-open:translate-y-0"
       >
-        {session > 0 ? <SearchPanel key={session} entries={entries} text={text} /> : null}
+        {session > 0 ? <SearchPanel key={session} text={text} /> : null}
       </div>
     </div>
   );
