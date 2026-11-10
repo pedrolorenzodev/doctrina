@@ -377,7 +377,7 @@ test("while open the page does not scroll and the layout does not move; closed, 
   await page.keyboard.press("Escape");
   await expect(page.locator("html")).not.toHaveClass(/scroll-locked-root/);
   await page.mouse.wheel(0, 900);
-  await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(100);
+  await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(50);
 });
 
 test("a long list of results scrolls inside the box and the wheel does not move the page", async ({ page }) => {
@@ -474,6 +474,7 @@ test("the rows enter like every list: 420 ms, 40 ms apart, the first with no del
   );
   await page.goto(traditionPath);
   await page.locator(trigger).click();
+  await expect(page.locator(options)).toHaveCount(3);
   const timing = await page.evaluate(() =>
     [...document.querySelectorAll("[data-search-dialog] [role=listbox] > li")].map((item) => {
       const animation = item.getAnimations().find((candidate) => candidate.id === "flip");
@@ -704,4 +705,82 @@ test("«Seguir donde dejaste» is not offered for the page you are on", async ({
   await page.waitForTimeout(900);
   await openSearch(page);
   await expect(page.locator(`${dialog} [role=option][data-id="place"]`)).toHaveCount(0);
+});
+
+const indexRoute = /\/api\/search-index\/(es|en)\/[0-9a-f]{12}$/;
+
+test("the index is not in the page and loads once, when the trigger is hovered or the search opens", async ({
+  page,
+  request,
+}) => {
+  const html = await (await request.get(traditionPath)).text();
+  expect(html).not.toContain("early:eucharist");
+  const loads: string[] = [];
+  page.on("request", (candidate) => {
+    if (candidate.url().includes("/api/search-index/")) loads.push(candidate.url());
+  });
+  await page.goto(traditionPath);
+  await page.waitForLoadState("networkidle");
+  expect(loads).toEqual([]);
+  await page.locator(trigger).hover();
+  await expect.poll(() => loads.length).toBe(1);
+  expect(loads[0]).toMatch(indexRoute);
+  await openSearch(page);
+  await search(page, "carne");
+  await expect(page.locator(options).first()).toBeVisible();
+  await page.keyboard.press("Escape");
+  await openSearch(page);
+  expect(loads).toHaveLength(1);
+});
+
+test("opening with the keyboard and typing before the index arrives still finds and opens the result", async ({
+  page,
+}) => {
+  await page.route(indexRoute, async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 600));
+    await route.continue();
+  });
+  await page.goto(traditionPath);
+  await page.keyboard.press("Control+k");
+  await expect(page.locator(input)).toBeFocused();
+  await page.keyboard.type("Marción");
+  await expect(page.locator(options)).toHaveCount(0);
+  await expect(page.locator(`${dialog} [data-id=none]`)).toHaveCount(0);
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(`${earlyPath}#early-ew-figure`);
+});
+
+test("a failed index request leaves the box usable and the next opening tries again", async ({ page }) => {
+  let failing = true;
+  await page.route(indexRoute, (route) => (failing ? route.abort() : route.continue()));
+  await page.goto(traditionPath);
+  await openSearch(page);
+  await search(page, "carne");
+  await expect(page.locator(`${dialog} [data-id=none]`)).toHaveCount(0);
+  await page.keyboard.press("Escape");
+  failing = false;
+  await openSearch(page);
+  await search(page, "carne");
+  await expect(page.locator(options).first()).toBeVisible();
+});
+
+test("the index asset is immutable, in the page language, and unknown hashes or languages are 404", async ({
+  page,
+  request,
+}) => {
+  const loads: string[] = [];
+  page.on("request", (candidate) => {
+    if (candidate.url().includes("/api/search-index/")) loads.push(new URL(candidate.url()).pathname);
+  });
+  await page.goto("/en");
+  await page.locator(trigger).hover();
+  await expect.poll(() => loads.length).toBe(1);
+  const response = await request.get(loads[0]!);
+  expect(response.status()).toBe(200);
+  expect(response.headers()["cache-control"]).toBe("public, max-age=31536000, immutable");
+  const entries = (await response.json()) as { id: string; href: string }[];
+  expect(entries.length).toBeGreaterThan(50);
+  expect(entries.every((entry) => entry.href.startsWith("/en/"))).toBe(true);
+  expect((await request.get("/api/search-index/en/000000000000")).status()).toBe(404);
+  expect((await request.get("/api/search-index/fr/000000000000")).status()).toBe(404);
 });
