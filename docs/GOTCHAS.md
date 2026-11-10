@@ -409,3 +409,30 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **The tree's link count in `e2e/sidebar.spec.ts` follows `history.json`.** · 234 links = the 145 of before + the 89 entities (41 + 18 + 10 + 20); adding an entity to the file changes it, as does a published Father. · `e2e/sidebar.spec.ts`.
 - **Opening the drawer must not let `focus()` scroll the tree.** · The drawer scrolls the current row to 35 % and then focuses its first button, at the top of the list; without `preventScroll` the focus undid the scroll on every page. · `src/features/shell/sidebar.tsx`, `e2e/sidebar.spec.ts` (drawer test).
 - **The tree's HTML weight grows with every row.** · Each row costs about 650 bytes of markup plus 250 of serialised props, the same on every page (89 history rows added 80 KB raw, 5 KB gzipped). Think twice before adding another large branch; the fix would be to render closed branches lazily, which touches «Despliegue» and the carried state. · `src/features/shell/sidebar.tsx`.
+
+## Names (2026-11-09)
+
+- **A work or source name is edited in `data/site/names.json` and nowhere else.** · The registry titles (`registry/works.ts`, `data/scripts/dossier-works.mjs`), the Father page strings (`history/fathers.ts`) and the scripted AI quotes (`reader-ai/quotes.ts`) still hold a copy as seed; `tools/check-names.mjs` fails lint if a copy differs, so after changing a name run the check and paste the new string into the seeds it names. · `data/site/names.json`, `tools/check-names.mjs`.
+- **A converter rerun can reintroduce an old title.** · `convert-dossier.mjs` writes `registry/works.ts` from `dossier-works.mjs`; a new work needs its record in `names.json` first or lint fails with «no canonical name». · `data/scripts/dossier-works.mjs`.
+- **`short` is for Father works only and never the whole name.** · It is shown only where the author is beside it; Fuentes and citations use the full name. A short that equals another item's full name fails the check (the «El Pastor» case). · `src/content/item-names.ts`.
+- **The check reads whole string literals only.** · A name inside a sentence or a locator («Catequesis 22, 4») is not caught. · `tools/check-names.mjs`.
+
+## Tests audit (2026-11-09)
+
+- **Never select a toggle by `button[aria-expanded]` alone.** · The simplifier's ring is a `button[aria-expanded]` inside the same row (`data-simplifier-mark`), so a flag-on build matches two buttons and Playwright's strict mode fails; add `:not([data-simplifier-mark])` (the other specs already do). It was the cause of the 17 failing tests of `doctrine-answers.spec.ts` (found 2026-11-09). · `e2e/doctrine-answers.spec.ts`.
+
+- **A simplifier spec must prove it ran.** · `test.skip` on «no ring on the page» hides a missing precondition: three Fathers' specs skipped for weeks with the flag on because the Spanish edition has no ring and they never chose English (`preferEnglishFatherEdition`). Set the preconditions (edition, `storeSimplifyOn`) before the skip, and look at the «skipped» count of a flag-on run. · `e2e/simplifier.spec.ts`.
+
+- **The simplifier switch gates the ring, also for hit-area specs.** · With the switch off the ring's wrapper is `display: none` at every width, so `scrollIntoViewIfNeeded` times out; set `localStorage["doctrina-simplify"] = "on"` first. · `e2e/touch-targets.spec.ts`.
+
+- **A route row with the switch animates its wrapper, not the `nav`.** · `Breadcrumbs` with `aside` puts `title-part-0` on the wrapper div; query `.title-part-0`, not `nav[aria-label=Ruta]`, for the entrance. Its `lg:-my-2.5` keeps the crumbs level with the sidebar's first label despite the 36 px switch. · `src/components/breadcrumbs.tsx`, `e2e/entrance.spec.ts`, `e2e/home.spec.ts`.
+
+- **`#common > div > div > div > p` breaks when the paragraph is served.** · A simplified paragraph adds `div[data-simplifier] > div` around the `p`; depth selectors only pass with the flag off. Use `#common p`. · `e2e/doctrine-header.spec.ts`.
+
+- **The home timeline's pixel height and lanes follow the Fathers' data.** · `home-years.spec.ts` pinned 271 px and «Agustín in the first row»; a data change (dates, names) moves both. The test now picks the first-row bar nearest the window and pins 266 px; expect to update the number when the ledger changes. · `e2e/home-years.spec.ts`.
+
+- **A plain build is flag-on here: `.env.local` carries `NEXT_PUBLIC_SIMPLIFIER=on`.** · To test the flag-off site build with `NEXT_PUBLIC_SIMPLIFIER=off` in the environment (it wins over the file); a build with the variable merely missing still shows the rings, so a «flag off» run that skips nothing is flag-on. The deploy script sets it to `on` explicitly. · `.env.local`, `package.json` (`deploy:demo`).
+
+## Passages apologists-only (2026-11-09)
+
+- **Pasajes indices are positions among shown passages, not in `page.scripture`.** · `getPassages`, `getPassageCore`, `getPassageApologists`, the data route and its `generateStaticParams` all go through `shownScripture`; a new reader of `page.scripture[i]` for the Pasajes page would point at a different passage once any is hidden. A passage appears the moment its apologists get a quote; `data/passages/order/*.json` may list hidden ones (reported as «hidden» by `tools/check-passage-order.mjs`). · `src/content/shown-passages.ts`.
