@@ -229,7 +229,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
             labelled={!single}
             readLabel={text.readInReader}
             className={`mt-9 ${change.crossLanguage ? "passage-in-fade" : ""}`}
-            paragraphClassName="font-body text-verse font-light text-ink-2 opsz-18"
+            paragraphClassName="font-body text-verse font-light opsz-18"
           />
           {core.parallels.length > 0 ? (
             <div className="mt-10">
@@ -256,7 +256,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
                     labelled
                     readLabel={text.readInReader}
                     className="pt-5.5"
-                    paragraphClassName="font-body text-verse-parallel font-light text-ink-2 opsz-18"
+                    paragraphClassName="font-body text-verse-parallel font-light opsz-18"
                   />
                 </div>
               </div>

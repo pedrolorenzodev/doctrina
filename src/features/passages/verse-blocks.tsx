@@ -31,12 +31,17 @@ function Verse({
   paragraphClassName: string;
 }) {
   const raw = verse.text[editionId] ?? "";
+  const focused = verse.focus;
   const lit = phrase ? highlightedWords(raw, locate(raw, phrase)) : new Set<number>();
   const changed = changeFrom ? changedWords(verse.text[changeFrom] ?? "", raw) : new Set<number>();
   return (
-    <p className={`relative mt-1.5 first:mt-0 ${paragraphClassName}`}>
+    <p
+      className={`relative ${focused ? "verse-focus text-ink" : "mt-1.5 first:mt-0 text-ink-2"} ${paragraphClassName}`}
+    >
       {numbered ? (
-        <span className="text-ui-2xs font-ui leading-none font-normal text-ink-3 tabular-nums verse-numeral">
+        <span
+          className={`text-ui-2xs font-ui leading-none tabular-nums verse-numeral ${focused ? "font-medium text-ink" : "font-normal text-ink-3"}`}
+        >
           {verse.n}
         </span>
       ) : null}

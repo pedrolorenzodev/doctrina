@@ -26,6 +26,7 @@
   --color-tip-ink: #f4f1ea;
   --color-hover: rgb(28 23 19 / 0.05);
   --color-mark: rgb(240 200 60 / 0.45);
+  --color-verse-focus: rgb(28 23 19 / 0.07);
   --color-chg: rgb(44 74 158 / 0.2);
   --color-scrim: rgb(0 0 0 / 0.35);
   --color-scrim-strong: rgb(28 23 19 / 0.4);
@@ -380,6 +381,7 @@
   --color-hls-orange: #d6935c;
   --color-hover: rgb(255 255 255 / 0.05);
   --color-mark: rgb(214 168 101 / 0.28);
+  --color-verse-focus: rgb(242 242 240 / 0.07);
   --color-chg: rgb(158 179 238 / 0.24);
   --color-scrim-strong: rgb(0 0 0 / 0.55);
   --color-danger: #e8918a;
@@ -2614,6 +2616,46 @@ html.theme-switching ::after {
   @media (max-width: 39.99rem) {
     margin-right: 8px;
     vertical-align: 0.15em;
+  }
+}
+
+@utility verse-focus {
+  isolation: isolate;
+  margin-block: 12px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset-block: -7px;
+    inset-inline: -12px;
+    border-radius: var(--radius-6);
+    background: var(--color-verse-focus);
+    pointer-events: none;
+
+    @media (min-width: 40rem) {
+      inset-inline: -40px -14px;
+    }
+  }
+
+  &:has(+ &) {
+    margin-bottom: 6px;
+
+    &::before {
+      bottom: -3px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  & + & {
+    margin-top: 6px;
+
+    &::before {
+      top: -3px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   }
 }
 

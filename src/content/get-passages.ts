@@ -6,6 +6,7 @@ import { translationMeta, translationOrder } from "@/content/bible/translation-m
 import { formatVerseRef } from "@/content/format-verse";
 import type { ApologistLayer, ScripturePassage, TraditionPage } from "@/content/model/page";
 import { collectPageViews, verseLink } from "@/content/page-views";
+import { passageFocus } from "@/content/passage-focus";
 import { shownScripture } from "@/content/shown-passages";
 import { registry } from "@/content/registry/index";
 import type { CitationView } from "@/lib/citation-view";
@@ -15,7 +16,7 @@ import type { Locale } from "@/lib/locale";
 
 export type PassageEdition = { id: string; abbreviation: string; name: string; language: Locale };
 
-export type PassageVerse = { n: number; text: Record<string, string> };
+export type PassageVerse = { n: number; text: Record<string, string>; focus: boolean };
 
 export type PassageBlock = { ref: string; readerHref: string; verses: PassageVerse[] };
 
@@ -53,7 +54,12 @@ function parseRef(segment: string): { book: string; chapter: number; from: numbe
   return { book, chapter: Number(chapter), from: Number(verse), to: Number(lastVerse) };
 }
 
-async function block(segment: string, editions: PassageEdition[], locale: Locale): Promise<PassageBlock> {
+async function block(
+  segment: string,
+  editions: PassageEdition[],
+  locale: Locale,
+  focus: Set<string> = new Set(),
+): Promise<PassageBlock> {
   const { book, chapter, from, to } = parseRef(segment);
   const entry = getBibleBook(book);
   if (!entry) throw new Error(`Unknown book in passage ${segment}`);
@@ -64,7 +70,7 @@ async function block(segment: string, editions: PassageEdition[], locale: Locale
       const verse = await getBibleVerse(edition.id, book, chapter, n);
       text[edition.id] = (verse?.text ?? "").replace(/\s+/g, " ").trim();
     }
-    verses.push({ n, text });
+    verses.push({ n, text, focus: focus.has(`${book}.${chapter}.${n}`) });
   }
   return {
     ref: formatVerseRef([segment], locale),
@@ -100,7 +106,8 @@ export async function getPassageCore(
   const passage = shownScripture(page)[index];
   if (!passage) return null;
   const editions = loaded ?? (await loadEditions());
-  const main = await Promise.all(passage.refs.map((ref) => block(ref, editions, locale)));
+  const focus = passageFocus(page, passage.refs);
+  const main = await Promise.all(passage.refs.map((ref) => block(ref, editions, locale, focus)));
   const parallels = await Promise.all((passage.parallels ?? []).flat().map((ref) => block(ref, editions, locale)));
   const verseLinks: PassageCore["verseLinks"] = {};
   for (const node of parseInline(passage.text)) {
