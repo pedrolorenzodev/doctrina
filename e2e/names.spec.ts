@@ -18,3 +18,13 @@ test("a Father's work page shows its full name", async ({ page }) => {
   await page.goto("/es/historia/obras/ignatius-ephesians");
   await expect(page.locator("main").getByText("Carta a los Efesios").first()).toBeAttached();
 });
+
+test("a work once English-only shows its sourced Spanish name in Spanish and its English name in English", async ({
+  page,
+}) => {
+  await page.goto("/es/historia/obras/athenagoras-plea-christians");
+  await expect(page.locator("main").getByText("Súplica en favor de los cristianos").first()).toBeAttached();
+  await page.goto("/en/history/works/athenagoras-plea-christians");
+  await expect(page.locator("main").getByText("A Plea for the Christians").first()).toBeAttached();
+  await expect(page.locator("main").getByText("Súplica en favor de los cristianos")).toHaveCount(0);
+});

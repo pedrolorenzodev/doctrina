@@ -581,10 +581,9 @@
  },
  "aristides-apology": {
   "name": {
-   "es": "Apology",
+   "es": "Apología",
    "en": "Apology"
-  },
-  "onlyIn": "en"
+  }
  },
  "athanasius-against-arians": {
   "name": {
@@ -612,17 +611,15 @@
  },
  "athenagoras-plea-christians": {
   "name": {
-   "es": "A Plea for the Christians",
+   "es": "Súplica en favor de los cristianos",
    "en": "A Plea for the Christians"
-  },
-  "onlyIn": "en"
+  }
  },
  "athenagoras-resurrection-dead": {
   "name": {
-   "es": "On the Resurrection of the Dead (Traditionally Attributed)",
+   "es": "Sobre la resurrección de los muertos (atribución tradicional)",
    "en": "On the Resurrection of the Dead (Traditionally Attributed)"
-  },
-  "onlyIn": "en"
+  }
  },
  "augustine-city-of-god": {
   "name": {
@@ -742,10 +739,9 @@
  },
  "chrysostom-homilies-colossians": {
   "name": {
-   "es": "Homilies on Colossians",
+   "es": "Homilías sobre la Carta a los Colosenses",
    "en": "Homilies on Colossians"
-  },
-  "onlyIn": "en"
+  }
  },
  "chrysostom-homilies-ephesians": {
   "name": {
@@ -810,10 +806,9 @@
  },
  "clement-alexandria-prophetic-eclogues": {
   "name": {
-   "es": "Prophetic Eclogues — sections 1–63",
+   "es": "Églogas proféticas — secciones 1–63",
    "en": "Prophetic Eclogues — sections 1–63"
-  },
-  "onlyIn": "en"
+  }
  },
  "clement-alexandria-protrepticus": {
   "name": {
@@ -992,10 +987,9 @@
  },
  "gregory-nazianzus-selected-orations": {
   "name": {
-   "es": "Selected Orations",
+   "es": "Discursos",
    "en": "Selected Orations"
-  },
-  "onlyIn": "en"
+  }
  },
  "gregory-nyssa-against-eunomius": {
   "name": {
@@ -1247,10 +1241,9 @@
  },
  "origen-commentary-john": {
   "name": {
-   "es": "Commentary on John — ANF partial translation",
+   "es": "Comentario al Evangelio de Juan — traducción parcial de ANF",
    "en": "Commentary on John — ANF partial translation"
-  },
-  "onlyIn": "en"
+  }
  },
  "origen-commentary-matthew": {
   "name": {
@@ -1309,17 +1302,15 @@
  },
  "tatian-address-greeks": {
   "name": {
-   "es": "Address to the Greeks",
+   "es": "Discurso contra los griegos",
    "en": "Address to the Greeks"
-  },
-  "onlyIn": "en"
+  }
  },
  "tatian-diatessaron-arabic": {
   "name": {
-   "es": "Diatessaron — Arabic version",
+   "es": "Diatessaron — versión árabe",
    "en": "Diatessaron — Arabic version"
-  },
-  "onlyIn": "en"
+  }
  },
  "tertullian-ad-martyras": {
   "name": {
@@ -1347,10 +1338,9 @@
  },
  "tertullian-adversus-iudaeos": {
   "name": {
-   "es": "An Answer to the Jews",
+   "es": "La respuesta a los judíos",
    "en": "An Answer to the Jews"
-  },
-  "onlyIn": "en"
+  }
  },
  "tertullian-against-hermogenes": {
   "name": {
