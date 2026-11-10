@@ -1,6 +1,10 @@
 process.env.NEXT_PUBLIC_SIMPLIFIER = "on";
 
-const { readFileSync, readdirSync } = await import("node:fs");
+const { existsSync, readFileSync, readdirSync } = await import("node:fs");
+if (!existsSync("data/corpus/fathers")) {
+  console.log("check-simplify.mjs: skipped, no Fathers corpus here (the git-only CI)");
+  process.exit(0);
+}
 const { parseAddress, resolveAddress } = await import("@/content/ai-simplify/resolve-address");
 const {
   simplificationKey,
@@ -58,11 +62,12 @@ await rejects(
   () => resolveAddress({ ...ignatius, locator: "99.9" }, "es"),
   "ai_not_found",
 );
-await rejects(
-  "the AI-translated Spanish edition is not simplifiable",
-  () => resolveAddress({ ...ignatius, edition: "doctrina-ia-2026" }, "es"),
-  "ai_not_simplifiable",
-);
+if (existsSync("data/corpus/fathers-es"))
+  await rejects(
+    "the AI-translated Spanish edition is not simplifiable",
+    () => resolveAddress({ ...ignatius, edition: "doctrina-ia-2026" }, "es"),
+    "ai_not_simplifiable",
+  );
 await rejects(
   "a tradition without a page is not found",
   () => resolveAddress({ kind: "statement", doctrine: "eucharist", tradition: "pentecostal", id: "definition" }, "es"),

@@ -1,5 +1,11 @@
 import { spanishPages } from "@/content/pages/index";
 import { loadFocus, validateFocus } from "../data/scripts/passage-focus-data.mjs";
+import { hasBibleCorpus } from "../data/scripts/passage-normalize.mjs";
+
+if (!hasBibleCorpus) {
+  console.log("check-passage-focus.mjs: skipped, no Bible corpus here (the git-only CI)");
+  process.exit(0);
+}
 
 const passage = (refs) => ({ refs, text: "" });
 const fixtures = [

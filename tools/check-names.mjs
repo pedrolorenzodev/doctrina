@@ -28,6 +28,8 @@ export function problemsOf({
   statusIds,
   records,
   known,
+  hasCorpus,
+  registryIds,
   corpusAuthors,
   registryTitles,
   fatherNames,
@@ -39,14 +41,15 @@ export function problemsOf({
   const problems = [];
   const ids = Object.keys(records);
   for (const id of known) if (!records[id]) problems.push(`${id}: no canonical name in data/site/names.json`);
-  for (const id of ids) if (!known.has(id)) problems.push(`${id}: canonical name for an item that does not exist`);
+  if (hasCorpus)
+    for (const id of ids) if (!known.has(id)) problems.push(`${id}: canonical name for an item that does not exist`);
   for (const id of ids) {
     const record = records[id];
     for (const locale of LOCALES)
       if (typeof record.name?.[locale] !== "string" || !record.name[locale].trim())
         problems.push(`${id}: missing ${locale} name`);
     if (record.short) {
-      if (!corpusAuthors[id])
+      if (hasCorpus ? !corpusAuthors[id] : registryIds.has(id))
         problems.push(`${id}: a short name is only allowed on a Father's work (it needs its author beside it)`);
       for (const locale of LOCALES)
         if (record.short[locale] === record.name[locale])
@@ -55,7 +58,7 @@ export function problemsOf({
   }
   for (const locale of LOCALES) {
     const byName = new Map();
-    for (const id of ids.filter((id) => !statusIds.has(id))) {
+    for (const id of ids.filter((id) => !statusIds.has(id) && (hasCorpus || known.has(id)))) {
       const name = records[id].name?.[locale];
       if (!name) continue;
       const key = `${corpusAuthors[id] ?? ""}|${name}`;
@@ -144,6 +147,8 @@ const model = {
   ),
   records,
   known,
+  hasCorpus: corpus.length > 0,
+  registryIds: new Set(Object.keys(registry.works)),
   corpusAuthors,
   registryTitles: Object.fromEntries(Object.values(registry.works).map((work) => [work.id, work.title])),
   fatherNames: Object.fromEntries(allFathers.map((father) => [father.id, father.name])),
@@ -157,11 +162,17 @@ const model = {
 };
 
 const clone = () => {
-  const copy = structuredClone({ ...model, known: [...model.known], statusIds: [], sourceFiles: {} });
-  return { ...copy, known: new Set(copy.known), statusIds: new Set() };
+  const copy = structuredClone({
+    ...model,
+    known: [...model.known],
+    statusIds: [],
+    registryIds: [...model.registryIds],
+    sourceFiles: {},
+  });
+  return { ...copy, known: new Set(copy.known), statusIds: new Set(), registryIds: new Set(copy.registryIds) };
 };
 const fixtures = [
-  ["a work without a canonical name", (m) => delete m.records["tertullian-de-baptismo"], "no canonical name"],
+  ["a work without a canonical name", (m) => delete m.records.trent, "no canonical name"],
   ["a missing English name", (m) => (m.records.trent.name.en = ""), "missing en name"],
   [
     "two items with one name",

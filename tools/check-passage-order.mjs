@@ -1,7 +1,12 @@
 import { spanishPages } from "@/content/pages/index";
 import { hasApologistQuote } from "@/content/shown-passages";
 import { loadOrder } from "../data/scripts/passage-order.mjs";
-import { verseSet } from "../data/scripts/passage-normalize.mjs";
+import { verseSet, hasBibleCorpus } from "../data/scripts/passage-normalize.mjs";
+
+if (!hasBibleCorpus) {
+  console.log("check-passage-order.mjs: skipped, no Bible corpus here (the git-only CI)");
+  process.exit(0);
+}
 
 const subset = (a, b) => [...a].every((v) => b.has(v));
 const errors = [];

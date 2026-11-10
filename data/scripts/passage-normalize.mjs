@@ -1,7 +1,9 @@
 import fs from "node:fs";
 
 const RULES = JSON.parse(fs.readFileSync(new URL("../passages/normalize-rules.json", import.meta.url), "utf8"));
-const rv1909 = JSON.parse(fs.readFileSync(new URL("../corpus/bibles/rv1909.json", import.meta.url).pathname, "utf8"));
+const rv1909Path = new URL("../corpus/bibles/rv1909.json", import.meta.url).pathname;
+export const hasBibleCorpus = fs.existsSync(rv1909Path);
+const rv1909 = hasBibleCorpus ? JSON.parse(fs.readFileSync(rv1909Path, "utf8")) : {};
 const KEYS = Object.keys(rv1909);
 const INDEX = new Map(KEYS.map((k, i) => [k, i]));
 
