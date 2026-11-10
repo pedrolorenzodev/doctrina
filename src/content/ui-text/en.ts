@@ -148,7 +148,6 @@ export const en: UiText = {
       quotesManyOneSpeaker: "{n} quotes from {m} apologist. Each links to its source.",
       official: "Official documents",
       apologists: "Apologists",
-      apologistsMuted: "There are no apologist comments on this passage yet",
       apologistsNote: "Popular authors and apologists. Not official documents.",
       ruler: "Passages",
       neighbors: "Previous and next passage",

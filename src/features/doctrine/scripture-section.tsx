@@ -9,6 +9,7 @@ import { formatVerseRef } from "@/content/format-verse";
 import type { TraditionPage } from "@/content/model/page";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
+import { shownScripture } from "@/content/shown-passages";
 import { passagesHref } from "@/content/routes";
 import type { Locale } from "@/lib/locale";
 
@@ -20,6 +21,7 @@ type ScriptureSectionProps = {
 export function ScriptureSection({ page, locale }: ScriptureSectionProps) {
   const text = getUiText(locale);
   const verse = (segments: string[]) => verseLink(segments, locale);
+  const shownCount = shownScripture(page).length;
 
   return (
     <Section id="scripture" title={text.doctrine.scripture} subtitle={page.scriptureSubtitle}>
@@ -38,11 +40,13 @@ export function ScriptureSection({ page, locale }: ScriptureSectionProps) {
           );
         })}
       </RevealList>
-      <div className="mt-5.5">
-        <ActionLink {...(page.passages ? { href: passagesHref(locale, page.doctrine, page.tradition) } : {})}>
-          {text.doctrine.allPassages.replace("{n}", String(page.scripture.length))}
-        </ActionLink>
-      </div>
+      {shownCount > 0 || !page.passages ? (
+        <div className="mt-5.5">
+          <ActionLink {...(page.passages ? { href: passagesHref(locale, page.doctrine, page.tradition) } : {})}>
+            {text.doctrine.allPassages.replace("{n}", String(page.passages ? shownCount : page.scripture.length))}
+          </ActionLink>
+        </div>
+      ) : null}
     </Section>
   );
 }

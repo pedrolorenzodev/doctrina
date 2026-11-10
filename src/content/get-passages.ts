@@ -4,8 +4,9 @@ import { getBibleBook } from "@/content/bible-books";
 import { getBibleTranslations, getBibleVerse } from "@/content/get-bible";
 import { translationMeta, translationOrder } from "@/content/bible/translation-meta";
 import { formatVerseRef } from "@/content/format-verse";
-import type { ApologistLayer, TraditionPage } from "@/content/model/page";
+import type { ApologistLayer, ScripturePassage, TraditionPage } from "@/content/model/page";
 import { collectPageViews, verseLink } from "@/content/page-views";
+import { shownScripture } from "@/content/shown-passages";
 import { registry } from "@/content/registry/index";
 import type { CitationView } from "@/lib/citation-view";
 import { getUiText } from "@/content/ui-text/get-ui-text";
@@ -25,12 +26,13 @@ export type PassageCore = {
   verseLinks: Record<string, { id: string; label: string }>;
 };
 
-export type PassageSummary = { id: string; title: string; short: string; hasApologists: boolean };
+export type PassageSummary = { id: string; title: string; short: string };
 
 export type PassagesData = {
   editions: PassageEdition[];
   entries: PassageSummary[];
   first: PassageCore;
+  firstApologists: ApologistLayer;
 };
 
 const versesBeforeThird = 2;
@@ -85,7 +87,7 @@ async function loadEditions(): Promise<PassageEdition[]> {
   });
 }
 
-function refLabels(passage: TraditionPage["scripture"][number], locale: Locale): string[] {
+function refLabels(passage: ScripturePassage, locale: Locale): string[] {
   return passage.refs.map((ref) => formatVerseRef([ref], locale));
 }
 
@@ -95,7 +97,7 @@ export async function getPassageCore(
   locale: Locale,
   loaded?: PassageEdition[],
 ): Promise<PassageCore | null> {
-  const passage = page.scripture[index];
+  const passage = shownScripture(page)[index];
   if (!passage) return null;
   const editions = loaded ?? (await loadEditions());
   const main = await Promise.all(passage.refs.map((ref) => block(ref, editions, locale)));
@@ -108,13 +110,13 @@ export async function getPassageCore(
 }
 
 export function getPassageApologists(page: TraditionPage, index: number): ApologistLayer | null {
-  return page.scripture[index]?.apologists ?? null;
+  return shownScripture(page)[index]?.apologists ?? null;
 }
 
 export async function getPassages(page: TraditionPage, locale: Locale): Promise<PassagesData> {
   const editions = await loadEditions();
   const text = getUiText(locale).doctrine.passagesPage;
-  const entries: PassageSummary[] = page.scripture.map((passage) => {
+  const entries: PassageSummary[] = shownScripture(page).map((passage) => {
     const labels = refLabels(passage, locale);
     const extra = labels.length - shownInShortTitle;
     return {
@@ -125,12 +127,13 @@ export async function getPassages(page: TraditionPage, locale: Locale): Promise<
           ? (labels[0] ?? "")
           : labels.slice(0, shownInShortTitle).join(titleSeparator) +
             (extra > 0 ? ` ${text.andMore.replace("{n}", String(extra))}` : ""),
-      hasApologists: Boolean(passage.apologists),
     };
   });
   const first = await getPassageCore(page, 0, locale, editions);
-  if (!first) throw new Error(`Tradition page without passages: ${page.doctrine}/${page.tradition}`);
-  return { editions, entries, first };
+  const firstApologists = getPassageApologists(page, 0);
+  if (!first || !firstApologists)
+    throw new Error(`Tradition page without passages with apologists: ${page.doctrine}/${page.tradition}`);
+  return { editions, entries, first, firstApologists };
 }
 
 export function getPassageViews(page: TraditionPage, locale: Locale): Record<string, CitationView> {

@@ -2,6 +2,7 @@ import "server-only";
 import type { DoctrineId, TraditionId } from "@/content/model/ids";
 import type { TraditionPage } from "@/content/model/page";
 import { spanishPages } from "@/content/pages/index";
+import { shownScripture } from "@/content/shown-passages";
 import { registry } from "@/content/registry/index";
 import { validateContent } from "@/content/validate";
 import type { Locale } from "@/lib/locale";
@@ -18,14 +19,14 @@ export function getPublishedPages(locale: Locale): {
   themes: { id: string; name: string; ids: string[] }[];
   hasPassages: boolean;
 }[] {
-  return Object.values(pagesByLocale[locale]).map(({ doctrine, tradition, objections, passages }) => ({
-    doctrine,
-    tradition,
-    objections: objections.items.flatMap((objection) =>
+  return Object.values(pagesByLocale[locale]).map((page) => ({
+    doctrine: page.doctrine,
+    tradition: page.tradition,
+    objections: page.objections.items.flatMap((objection) =>
       objection.layer === "official" && objection.short ? [{ id: objection.id, short: objection.short }] : [],
     ),
-    themes: objections.themes ?? [],
-    hasPassages: passages !== undefined,
+    themes: page.objections.themes ?? [],
+    hasPassages: page.passages !== undefined && shownScripture(page).length > 0,
   }));
 }
 

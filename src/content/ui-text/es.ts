@@ -146,7 +146,6 @@ export const es = {
       quotesManyOneSpeaker: "{n} citas de {m} apologista. Cada una enlaza a su fuente.",
       official: "Documentos oficiales",
       apologists: "Apologistas",
-      apologistsMuted: "Todavía no hay comentarios de apologistas para este pasaje",
       apologistsNote: "Autores y apologistas populares. No son documentos oficiales.",
       ruler: "Pasajes",
       neighbors: "Pasaje anterior y siguiente",

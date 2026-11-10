@@ -1,4 +1,5 @@
 import { getPassageApologists, getPassageCore } from "@/content/get-passages";
+import { shownScripture } from "@/content/shown-passages";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
 import { isLocale } from "@/lib/locale";
@@ -13,10 +14,9 @@ export async function generateStaticParams() {
   const out: { lang: string; doctrine: string; tradition: string; n: string; part: string }[] = [];
   for (const { doctrine, tradition } of getPublishedPages("es").filter((page) => page.hasPassages)) {
     const page = await getTraditionPage(doctrine, tradition, "es");
-    page?.scripture.forEach((passage, index) => {
+    shownScripture(page ?? { scripture: [] }).forEach((_passage, index) => {
       const base = { lang: "es", doctrine, tradition, n: String(index + 1) };
-      out.push({ ...base, part: "core" });
-      if (passage.apologists) out.push({ ...base, part: "apologists" });
+      out.push({ ...base, part: "core" }, { ...base, part: "apologists" });
     });
   }
   return out;

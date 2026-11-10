@@ -8,6 +8,7 @@ import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPassageViews, getPassages } from "@/content/get-passages";
 import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
+import { shownScripture } from "@/content/shown-passages";
 import { passagesHref, traditionHref } from "@/content/routes";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
@@ -50,7 +51,7 @@ export default async function PassagesRoute({
   if (!isDoctrine(doctrine) || !isTradition(tradition)) notFound();
   const locale = await currentLocale();
   const page = await getTraditionPage(doctrine, tradition, locale);
-  if (!page?.passages) notFound();
+  if (!page?.passages || shownScripture(page).length === 0) notFound();
   const text = getUiText(locale);
   const data = await getPassages(page, locale);
   return (

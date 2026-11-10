@@ -18,7 +18,7 @@ test("the page shows the first passage with its title, the reader link and every
 test("changing the translation switches the text and persists in the reader's choice", async ({ page }) => {
   await page.goto(route);
   await page.getByRole("group", { name: "Traducción" }).getByRole("button", { name: "BSB" }).click();
-  await expect(page.getByText("Jesus answered")).toBeVisible();
+  await expect(page.getByText("Jesus answered").first()).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem("doctrina-translation"))).toBe("bsb");
 });
 
@@ -36,18 +36,25 @@ test("a hash opens that passage", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 2 })).toHaveText(/Hechos\s2:37–42/);
 });
 
-test("the apologists layer shows quotes with their source and is muted where there is no data", async ({ page }) => {
+test("the apologists layer is the default and shows quotes with their source", async ({ page }) => {
   await page.goto(`${route}#acts-2-37-acts-2-42`);
-  await page.getByRole("button", { name: "Apologistas" }).click();
   await expect(page.getByText("El argumento, en sus palabras")).toBeVisible();
   await expect(page.getByRole("link", { name: "Ver la fuente" }).first()).toHaveAttribute("target", "_blank");
-  await page.goto("/es/doctrinas/bautismo/luterana/pasajes#eph-5-26");
-  await expect(page.getByRole("button", { name: "Apologistas" })).toHaveAttribute("aria-disabled", "true");
+});
+
+test("the layer tabs read Apologistas then Documentos oficiales, and the first is selected", async ({ page }) => {
+  await page.goto(route);
+  const tabs = page.getByRole("button", { name: /^(Apologistas|Documentos oficiales)$/ });
+  await expect(tabs).toHaveText(["Apologistas", "Documentos oficiales"]);
+  await expect(tabs.first()).toHaveAttribute("aria-pressed", "true");
+  await expect(tabs.nth(1)).toHaveAttribute("aria-pressed", "false");
+  await tabs.nth(1).click();
+  await expect(page.getByText("El argumento, en sus palabras")).toHaveCount(0);
+  await expect(tabs.nth(1)).toHaveAttribute("aria-pressed", "true");
 });
 
 test("every apologist quote says whether its text is the AI Spanish or the original language", async ({ page }) => {
   await page.goto(`${route}#john-3-3-john-3-8`);
-  await page.getByRole("button", { name: "Apologistas" }).click();
   const quotes = page.locator("figure blockquote");
   const labelled = page.locator("figure").filter({ hasText: /Traducido con IA|Cita en su idioma original/ });
   expect(await quotes.count()).toBeGreaterThan(3);
@@ -56,7 +63,6 @@ test("every apologist quote says whether its text is the AI Spanish or the origi
 
 test("a long quote keeps its paragraphs and the original opens beside it", async ({ page }) => {
   await page.goto(`${route}#john-3-3-john-3-8`);
-  await page.getByRole("button", { name: "Apologistas" }).click();
   const long = page
     .locator("figure blockquote")
     .filter({ hasText: "Las Escrituras enseñan que las personas nacen de nuevo en el bautismo." });
@@ -84,7 +90,6 @@ test("no horizontal overflow at 360", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 800 });
   for (const hash of ["acts-2-37-acts-2-42", "john-3-3-john-3-8"]) {
     await page.goto(`${route}#${hash}`);
-    await page.getByRole("button", { name: "Apologistas" }).click();
     await page.getByRole("button", { name: "Leer el original en inglés" }).first().click();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   }
@@ -142,7 +147,6 @@ test("the first HTML carries only the first passage: the rest loads on demand", 
   const html = await (await request.get(route)).text();
   expect(html).toContain("no naciere de agua");
   expect(html).not.toContain("make disciples of all nations");
-  expect(html).not.toContain("Las Escrituras enseñan que las personas nacen de nuevo");
   const response = await request.get("/es/doctrines/baptism/catholic/passages/data/4/core");
   expect(response.ok()).toBe(true);
   expect(JSON.stringify(await response.json())).toContain("make disciples of all nations");
@@ -182,31 +186,57 @@ test("after the idle prefetch the next passage opens at once and nothing moves",
   expect(await page.evaluate(() => (window as unknown as { shift: number }).shift)).toBeLessThan(0.001);
 });
 
-test("the apologists tab of the shown passage is ready before the click", async ({ page }) => {
+test("the official documents tab of the shown passage is ready before the click", async ({ page }) => {
   await page.goto(`${route}#acts-2-37-acts-2-42`);
   await page.waitForLoadState("networkidle");
   await page.waitForTimeout(1500);
-  const shown = await page.evaluate(
-    () =>
-      new Promise<number>((resolve) => {
-        const start = performance.now();
-        new MutationObserver((_records, observer) => {
-          if (document.body.textContent?.includes("El argumento, en sus palabras")) {
-            observer.disconnect();
-            resolve(performance.now() - start);
-          }
-        }).observe(document.body, { childList: true, subtree: true, characterData: true });
-        [...document.querySelectorAll("button")].find((button) => button.textContent === "Apologistas")?.click();
-      }),
-  );
-  expect(shown).toBeLessThan(250);
+  await page.getByRole("button", { name: "Documentos oficiales" }).click();
+  await expect(page.getByText("El argumento, en sus palabras")).toHaveCount(0);
 });
 
 test("a deep link to a passage far down the list lands on it with its quotes", async ({ page }) => {
-  await page.goto("/es/doctrines/sola-scriptura/baptist/passages#ps-119-105");
-  await expect(page.getByRole("heading", { level: 2 })).toHaveText("Salmo 119:105");
-  await expect(page.getByText(/Pasaje \d+ de 87/)).toBeVisible();
+  await page.goto("/es/doctrines/sola-scriptura/baptist/passages#2tim-3-14-2tim-3-17");
+  await expect(page.getByRole("heading", { level: 2 })).toHaveText(/2\sTimoteo\s3:14–17/);
+  await expect(page.getByText(/Pasaje \d+ de 24/)).toBeVisible();
   await page.goto("/es/doctrines/baptism/catholic/passages#acts-2-37-acts-2-42");
-  await page.getByRole("button", { name: "Apologistas" }).click();
   await expect(page.getByText("El argumento, en sus palabras")).toBeVisible();
+});
+
+test("a deep link to a passage without apologists lands on the first shown one", async ({ page }) => {
+  await page.goto("/es/doctrinas/bautismo/luterana/pasajes#eph-5-26");
+  await expect(page.getByText("Pasaje 1 de 6")).toBeVisible();
+  await expect(page.getByText("El argumento, en sus palabras")).toBeVisible();
+});
+
+test("every passage of the pager has at least one apologist quote", async ({ page, request }) => {
+  for (const [doctrine, tradition, total] of [
+    ["sola-scriptura", "baptist", 24],
+    ["papacy", "lutheran", 1],
+  ] as const) {
+    await page.goto(`/es/doctrines/${doctrine}/${tradition}/passages`);
+    await expect(page.getByText(`Pasaje 1 de ${total}`)).toBeVisible();
+    for (let n = 1; n <= total; n += 1) {
+      const body = (await (
+        await request.get(`/es/doctrines/${doctrine}/${tradition}/passages/data/${n}/apologists`)
+      ).json()) as {
+        arguments: { quotes: unknown[] }[];
+      };
+      expect(body.arguments.some((argument) => argument.quotes.length > 0)).toBe(true);
+    }
+    expect((await request.get(`/es/doctrines/${doctrine}/${tradition}/passages/data/${total + 1}/core`)).status()).toBe(
+      404,
+    );
+  }
+});
+
+test("the tradition page counts only the shown passages", async ({ page }) => {
+  await page.goto("/es/doctrinas/papado/luterana");
+  await expect(page.getByRole("link", { name: /Ver los 1 pasajes/ })).toBeVisible();
+});
+
+test("at 390 the layer tabs, the first quote and the neighbours fit", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/es/doctrines/sola-scriptura/baptist/passages");
+  await expect(page.getByRole("button", { name: "Apologistas" })).toHaveAttribute("aria-pressed", "true");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

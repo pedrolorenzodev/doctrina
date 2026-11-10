@@ -66,14 +66,10 @@ const prefetchAhead = [1, -1, 2] as const;
 
 export function PassagesView({ data, dataBase, defaultEdition, labels, text }: PassagesViewProps) {
   const { entries, editions } = data;
-  const store = usePassageStore(
-    dataBase,
-    data.first,
-    entries.map((candidate) => candidate.hasApologists),
-  );
+  const store = usePassageStore(dataBase, data.first, data.firstApologists, entries.length);
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState<"next" | "back" | null>(null);
-  const [layer, setLayer] = useState<Layer>("official");
+  const [layer, setLayer] = useState<Layer>("apologists");
   const [phrase, setPhrase] = useState<string | null>(null);
   const [parallelsOpen, setParallelsOpen] = useState(false);
   const [change, setChange] = useState<{ from: string | null; key: number; crossLanguage: boolean }>({
@@ -87,7 +83,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
   );
 
   const indexRef = useRef(0);
-  const layerRef = useRef<Layer>("official");
+  const layerRef = useRef<Layer>("apologists");
   const ticket = useRef(0);
 
   const show = useCallback(
@@ -141,8 +137,7 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
   const summary = entries[index]!;
   const core = store.core(index)!;
   const apologists = store.apologists(index);
-  const hasApologists = summary.hasApologists;
-  const shownLayer: Layer = layer === "apologists" && hasApologists && apologists ? "apologists" : "official";
+  const shownLayer: Layer = layer === "apologists" && apologists ? "apologists" : "official";
 
   const chooseLayer = useCallback(
     async (id: string) => {
@@ -280,13 +275,8 @@ export function PassagesView({ data, dataBase, defaultEdition, labels, text }: P
             value={shownLayer}
             onChange={(id) => void chooseLayer(id)}
             tabs={[
+              { id: "apologists", label: text.apologists },
               { id: "official", label: text.official },
-              {
-                id: "apologists",
-                label: text.apologists,
-                disabled: !hasApologists,
-                ...(hasApologists ? {} : { title: text.apologistsMuted }),
-              },
             ]}
           />
           <div key={shownLayer} className="passage-in-fade">
