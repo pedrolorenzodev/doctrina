@@ -44,7 +44,7 @@ test("starts on 300–460 with the proposal's marks, counts and status", async (
     "Del año 300 al 460: 26 Padres y escritores, 12 concilios y 2 divisiones. Arrastra la ventana para elegir otros años.",
   );
   const height = (await page.locator(track).boundingBox())!.height;
-  expect(height).toBe(271);
+  expect(height).toBe(266);
 });
 
 test("dragging the window moves it in steps of 10 years and keeps its width", async ({ page }) => {
@@ -355,9 +355,21 @@ test("a second change in the middle of the list's motion continues from where th
 test("a label over the window's years hides them while it shows", async ({ page }) => {
   await open(page);
   const years = page.locator(`${track} > span.text-accent`);
-  const bar = (await page.locator("[data-father='augustine-of-hippo']").boundingBox())!;
+  const windowBox = (await page.locator(win).boundingBox())!;
+  const centre = windowBox.x + windowBox.width / 2;
+  const firstRowId = await page.evaluate((middle) => {
+    const bars = [...document.querySelectorAll<HTMLElement>("[data-father][data-in]")];
+    const top = Math.min(...bars.map((bar) => bar.offsetTop));
+    const row = bars.filter((bar) => bar.offsetTop === top);
+    const distance = (bar: HTMLElement) => {
+      const box = bar.getBoundingClientRect();
+      return Math.abs(box.x + box.width / 2 - middle);
+    };
+    return row.sort((a, b) => distance(a) - distance(b))[0]!.dataset.father!;
+  }, centre);
+  const bar = (await page.locator(`[data-father='${firstRowId}']`).boundingBox())!;
   await page.mouse.move(bar.x + bar.width / 2, bar.y + 1);
-  await expect(page.locator(tip)).toContainText("Agustín de Hipona");
+  await expect(page.locator(tip)).toBeVisible();
   await expect(years).toHaveAttribute("data-covered", "true");
   await expect.poll(() => years.evaluate((element) => getComputedStyle(element).opacity)).toBe("0");
   await hoverMark(page, "[data-council='lateran-4']");

@@ -143,11 +143,8 @@ test("the note's section link leads to 02's early Christians section and lands u
     .toBeLessThanOrEqual(1);
 });
 
-test("on a doctrine with no 02 page the note's link is built and inert", async ({ page }) => {
+test("on the baptism page the note's link leads to its 02 page too", async ({ page }) => {
   await page.goto("/es/doctrinas/bautismo/catolica");
-  const url = page.url();
-  const link = page.locator("#why p.text-note button", { hasText: "Lo que escribieron los primeros cristianos" });
-  await expect(link).toHaveCSS("text-decoration-line", "underline");
-  await link.click();
-  expect(page.url()).toBe(url);
+  const link = page.locator("#why p.text-note a", { hasText: "Lo que escribieron los primeros cristianos" });
+  await expect(link).toHaveAttribute("href", "/es/doctrinas/bautismo#witnesses");
 });

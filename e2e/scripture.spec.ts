@@ -16,18 +16,14 @@ test("four passages with the reference as the title and the reading under it", a
   await expect(page.locator("#scripture h2")).toHaveText("La Escritura que usa");
 });
 
-test("titles and the button are pressable and do nothing yet", async ({ page }) => {
+test("the titles link to their first verse and «Ver los 12 pasajes» to the Pasajes page", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(traditionPath);
-  const url = page.url();
-  const title = page.locator(`${items} > p:first-child button`).first();
-  await title.click();
-  const all = page.locator("#scripture button", { hasText: "Ver los 12 pasajes" });
+  await expect(page.locator(`${items} > p:first-child a`).first()).toHaveAttribute("href", "/es/biblia/juan/6/51");
+  await expect(page.locator(`${items} > p:first-child button`)).toHaveCount(0);
+  const all = page.locator("#scripture a", { hasText: "Ver los 12 pasajes" });
   await expect(all).toBeVisible();
-  await all.click();
-  expect(page.url()).toBe(url);
-  await expect(page.locator("[role=dialog]")).not.toHaveAttribute("data-open", "true");
-  await expect(page.locator("#scripture a")).toHaveCount(0);
+  await expect(all).toHaveAttribute("href", `${traditionPath}/pasajes`);
 });
 
 test("a reference in a reading opens the window and gives the focus back", async ({ page }) => {

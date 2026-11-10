@@ -140,7 +140,7 @@ test("the tip names the mark and its date, ranges with «c.», and stays inside 
   await page.goto(path);
   await settled(page);
   await pointerAt(page, 107);
-  await expect(page.locator("[data-fp-tip]")).toHaveText("Ignacio de Antioquía, c. 107–110");
+  await expect(page.locator("[data-fp-tip]")).toHaveText("Ignacio de Antioquía, c. 107–108");
   await pointerAt(page, 1);
   const box = await stripBox(page);
   await page.mouse.move(box.x + 2, box.y + box.height / 2);
@@ -350,7 +350,7 @@ test("«Lo que todas comparten»: the text and the two questions", async ({ page
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await expect(page.locator("#common h2")).toHaveText("Lo que todas comparten");
-  await expect(page.locator("#common > div > div > div > p")).toContainText("Todas las tradiciones celebran la Cena");
+  await expect(page.locator("#common p").first()).toContainText("Todas las tradiciones celebran la Cena");
   await expect(page.locator("#common ul li")).toHaveCount(2);
   await expect(page.locator("#common ul li span")).toHaveText(["Lo que se discute", "Lo que se discute"]);
   await expect(page.locator("#common ul li p")).toHaveText([

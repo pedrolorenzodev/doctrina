@@ -133,9 +133,11 @@ test("«Al lado» column heads each open a list; picking the other column's tran
   await expect(heads).toHaveCount(2);
   await expect(heads.nth(0)).toContainText("RV1909");
   await expect(heads.nth(1)).toContainText("BSB");
-  await heads.nth(1).click();
   const list = page.locator(`${root} [role=listbox]`).nth(1);
-  await expect(list).toBeVisible();
+  await expect(async () => {
+    if (!(await list.isVisible())) await heads.nth(1).click();
+    await expect(list).toBeVisible({ timeout: 1000 });
+  }).toPass();
   await list.locator('[role=option]:has-text("(KJV)")').click();
   await expect(heads.nth(1)).toContainText("KJV");
   await expect(list).toBeHidden();

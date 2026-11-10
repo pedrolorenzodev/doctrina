@@ -13,9 +13,9 @@ test("Doctrinas: the five doctrines with their questions, the published one as a
   await expect(rows).toHaveText([
     /La Eucaristía\s*¿Qué pasa con el pan y el vino en la Cena del Señor\?/,
     /La justificación\s*¿Cómo es declarado justo el pecador ante Dios\?/,
-    /El bautismo\s*¿Qué hace el bautismo, y a quién se le da\?/,
-    /El papado\s*¿Tiene el obispo de Roma autoridad sobre toda la Iglesia\?/,
-    /Sola Scriptura\s*¿Es la Escritura la única regla infalible de fe\?/,
+    /El bautismo\s*¿Qué es el bautismo y a quién se le administra\?/,
+    /El papado\s*¿Quién tiene autoridad en la Iglesia, y hasta dónde llega\?/,
+    /Sola Scriptura\s*¿Qué autoridad tiene la Escritura, y quién decide lo que significa\?/,
   ]);
   await expect(rows.first().locator("a")).toHaveAttribute("href", "/es/doctrinas/eucaristia");
   await expect(rows.nth(1).locator("button")).toHaveCount(1);

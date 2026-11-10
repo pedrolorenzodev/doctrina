@@ -164,7 +164,7 @@ test("«1 Corintios» is never split from its number", async ({ page }) => {
   await page.goto(traditionPath);
   const titles = await page.locator("#scripture li > p:first-child").allTextContents();
   for (const title of titles) expect(title).not.toMatch(/\d [A-ZÁÉÍÓÚ]/);
-  expect(titles[0]).toContain("1 Corintios");
+  expect(titles[1]).toContain("1 Corintios");
 });
 
 test("citations with a quote in another language say which one", async ({ page }) => {

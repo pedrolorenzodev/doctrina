@@ -44,7 +44,7 @@ test("choosing a person: dates as labelled facts, the band of his time, his year
   await expect(detail(page).locator("dl dd")).toHaveText(["no después de c. 69/70 (deducido)", "155 o 156"]);
   await expect(detail(page)).toBeVisible();
   await expect(detail(page).locator("h2")).toHaveText("Policarpo de Esmirna");
-  await expect(detail(page).locator("a")).toHaveAttribute("href", /polycarp-of-smyrna$/);
+  await expect(detail(page).locator('a[href$="/polycarp-of-smyrna"]')).toHaveCount(1);
   await expect(page.locator("[data-scroller] .bg-accent-weak")).toHaveCount(1);
   await expect(page.locator("[data-scroller] [aria-hidden=true] .bg-ink").first()).toBeVisible();
   await item(page, "polycarp-of-smyrna").click();

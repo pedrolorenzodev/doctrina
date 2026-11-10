@@ -171,10 +171,14 @@ test("«Dónde aparece en Doctrina»: the doctrine page that cites him, grouped 
   await page.goto(ignatius);
   await expect(page.locator("#appears h2")).toHaveText("Dónde aparece en Doctrina");
   await expect(page.locator("#appears h3")).toHaveText("En una doctrina");
-  await expect(page.locator("#appears li a")).toHaveText("La Eucaristía: lo que escribieron los primeros cristianos");
-  await expect(page.locator("#appears li p").last()).toHaveText(
+  await expect(page.locator("#appears li a")).toHaveText([
+    "La Eucaristía: lo que escribieron los primeros cristianos",
+    "El papado: lo que escribieron los primeros cristianos",
+  ]);
+  await expect(page.locator("#appears li p", { hasText: "Testigo" })).toHaveText([
     "Testigo en esta doctrina: Carta a los Esmirniotas 7.1.",
-  );
+    "Testigo en esta doctrina: Carta a los Romanos, salutación.",
+  ]);
   const layout = await page.evaluate(() => {
     const heading = document.querySelector("#appears h3")!.getBoundingClientRect();
     const list = document.querySelector("#appears ul")!.getBoundingClientRect();
@@ -192,7 +196,7 @@ test("«Dónde aparece en Doctrina»: the doctrine page that cites him, grouped 
 
 test("a Father cited twice lists both references; one nobody cites has no such section", async ({ page }) => {
   await page.goto(father("justin-martyr"));
-  await expect(page.locator("#appears li p").last()).toHaveText(
+  await expect(page.locator("#appears li p", { hasText: "Testigo" }).first()).toHaveText(
     "Testigo en esta doctrina: Primera Apología 66; Diálogo con Trifón 41.",
   );
   await page.goto(father("clement-of-rome"));
@@ -203,7 +207,7 @@ test("a Father cited twice lists both references; one nobody cites has no such s
 test("the link from «Dónde aparece» lands on the witness entry", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(father("tertullian"));
-  await page.locator("#appears li a").click();
+  await page.locator("#appears li a").first().click();
   await expect(page).toHaveURL("/es/doctrinas/eucaristia/primeros-cristianos#early-ew-figure");
   const top = await landingTop(page);
   await expect

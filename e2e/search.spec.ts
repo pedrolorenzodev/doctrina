@@ -160,9 +160,13 @@ test("only what is shown can match: the date, the path and the text, nothing hid
   await page.goto(traditionPath);
   await openSearch(page);
   await search(page, "107");
-  await expect.poll(() => titles(page)).toEqual(["Carta a los Esmirniotas 7.1", "Ignacio de Antioquía"]);
+  await expect
+    .poll(() => titles(page))
+    .toEqual(["Carta a los Esmirniotas 7.1", "Carta a los Romanos, salutación", "Ignacio de Antioquía"]);
   await search(page, "Padres Justino");
-  await expect.poll(() => titles(page)).toEqual(["Justino Mártir", "Primera Apología 66", "Diálogo con Trifón 41"]);
+  await expect
+    .poll(() => titles(page))
+    .toEqual(["Justino Mártir", "Primera Apología 66", "Diálogo con Trifón 41", "Primera Apología 61"]);
   await search(page, "keywords");
   await expect(page.locator(options)).toHaveCount(0);
 });
@@ -171,7 +175,13 @@ test("the pages are in the index: 02, 10, the tradition, Objeciones and each obj
   await page.goto(traditionPath);
   await openSearch(page);
   await search(page, "primeros cristianos");
-  await expect.poll(() => titles(page)).toEqual(["Lo que escribieron los primeros cristianos"]);
+  await expect
+    .poll(() => titles(page))
+    .toEqual([
+      "Lo que escribieron los primeros cristianos",
+      "Lo que escribieron los primeros cristianos",
+      "Lo que escribieron los primeros cristianos",
+    ]);
   await search(page, "Objeciones");
   await expect(page.locator(options).first().locator("> span").first()).toHaveText("Objeciones");
   await search(page, "Un solo sacrificio");

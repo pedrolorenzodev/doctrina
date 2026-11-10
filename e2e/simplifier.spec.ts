@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow, storeSimplifyOn, traditionPath } from "./helpers";
+import { horizontalOverflow, preferEnglishFatherEdition, storeSimplifyOn, traditionPath } from "./helpers";
 
 test.beforeEach(async ({ context }) => {
   await storeSimplifyOn(context);
@@ -32,6 +32,14 @@ async function bringUp(page: Page, index: number) {
   });
   await page.waitForTimeout(150);
 }
+
+const containerOf = (page: Page, division: string) =>
+  page
+    .locator("[data-simplifier]")
+    .evaluateAll(
+      (items, label) => items.findIndex((item) => item.querySelector("[data-division-open]")?.textContent === label),
+      division,
+    );
 
 const mark = (page: Page, index: number) => page.locator("[data-simplifier-mark]").nth(index);
 
@@ -310,20 +318,21 @@ test("the label «Simplificado por IA» is visible whenever the simplified text 
 
 const smyrnaeans = "/es/historia/obras/ignatius-smyrnaeans";
 
-test("the Fathers' reader offers the simplifier on one paragraph, in English, with the same animation rules", async ({
+test("the Fathers' reader offers the simplifier on every division, in English, with the same animation rules", async ({
   page,
 }) => {
+  await preferEnglishFatherEdition(page);
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(smyrnaeans, { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
   test.skip((await page.locator("[data-simplifier-mark]").count()) === 0, "the simplifier switch is off in this build");
-  await expect(page.locator("[data-simplifier-mark]")).toHaveCount(1);
-  await expect(page.locator("[data-father-text] > div")).toHaveCount(29);
-  await expect(page.locator("[data-simplifier] [data-division-open]")).toHaveText("6.2");
-  await bringUp(page, 0);
-  await startSampling(page, 0);
+  await expect(page.locator("[data-simplifier-mark]")).toHaveCount(29);
+  await expect(page.locator("[data-father-text] > div")).toHaveCount(30);
+  const at = await containerOf(page, "6.2");
+  await bringUp(page, at);
+  await startSampling(page, at);
   await page.waitForTimeout(100);
-  await mark(page, 0).click();
+  await mark(page, at).click();
   await page.waitForTimeout(9000);
   const frames = await stopSampling(page);
   const opened = frames.filter((frame) => frame.box >= 0);
@@ -340,11 +349,13 @@ test("the Fathers' reader offers the simplifier on one paragraph, in English, wi
 });
 
 test("pointing at a sentence number marks its original sentence", async ({ page }) => {
+  await preferEnglishFatherEdition(page);
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(smyrnaeans, { waitUntil: "networkidle" });
   test.skip((await page.locator("[data-simplifier-mark]").count()) === 0, "the simplifier switch is off in this build");
-  await bringUp(page, 0);
-  await mark(page, 0).click();
+  const at = await containerOf(page, "6.2");
+  await bringUp(page, at);
+  await mark(page, at).click();
   await page.waitForTimeout(9000);
   await page.locator("[data-simplifier-text] sup").nth(1).hover();
   const marked = await page.evaluate(() => {
@@ -427,6 +438,7 @@ for (const { route, index } of oneMotionPages) {
   test(`${route}: the content below moves in one motion on open, close, reopen and, where there are levels, level change`, async ({
     page,
   }) => {
+    await preferEnglishFatherEdition(page);
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(route, { waitUntil: "networkidle" });
     await page.evaluate(() => document.fonts.ready);

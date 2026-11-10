@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { traditionPath } from "./helpers";
 
-const part = (index: number) => ["main nav[aria-label='Ruta']", "main h1", "main header p"][index] as string;
+const part = (index: number) => ["main .title-part-0", "main h1", "main header p"][index] as string;
 
 test("«Título»: crumbs, title and lede fade in 80 ms apart after the fonts, with no movement", async ({ page }) => {
   await page.goto(traditionPath);

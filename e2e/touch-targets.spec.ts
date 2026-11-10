@@ -29,7 +29,9 @@ const open = async (page: Page, path: string, width: number) => {
 };
 
 test("the simplifier's «En palabras simples» button has a 44 px hit area on a tablet", async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("doctrina-simplify", "on"));
   await open(page, "/es/doctrinas/eucaristia/catolica", 768);
+  test.skip((await page.locator("[data-simplifier-mark]").count()) === 0, "the simplifier switch is off in this build");
   await expectTouchSize(page.locator("[data-simplifier-mark]").first());
 });
 

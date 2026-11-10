@@ -6,7 +6,8 @@ const items = "#answers ol > li";
 const traditions = ["catholic", "orthodox", "lutheran", "reformed", "baptist"];
 const counts = [7, 3, 3, 3, 3];
 const box = (tradition: string) => `#objections-${tradition}`;
-const toggle = (tradition: string) => `${items}[data-id=${tradition}] button[aria-expanded]`;
+const toggle = (tradition: string) =>
+  `${items}[data-id=${tradition}] button[aria-expanded]:not([data-simplifier-mark])`;
 
 type Frame = { t: number; height: number; marginTop: number; rows: number };
 

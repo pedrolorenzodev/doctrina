@@ -8,12 +8,12 @@ const crumbs = 'main nav[aria-label="Ruta"]';
 const toggle = "main button[aria-controls=criterion]";
 
 const dates = [
-  "c. 50–120",
-  "c. 107–110",
-  "c. 150–155",
+  "c. 50–150",
+  "c. 107–108",
+  "c. 148–161",
   "c. 155–160",
   "c. 180",
-  "c. 207–208",
+  "c. 207–212",
   "c. 350–390",
   "c. 387–391",
   "c. 396–397",
@@ -75,7 +75,7 @@ test("the Didaché entry, word for word", async ({ page }) => {
     "Breve manual anónimo de enseñanza moral, bautismo, ayuno, oración y Eucaristía, probablemente compilado en Siria o Palestina.",
   );
   await expect(first.locator("small")).toHaveText(
-    "La fecha se discute: las propuestas van de mediados del siglo I a comienzos del II.",
+    "La fecha se discute: la obra tiene varias capas y se ubica entre la segunda mitad del siglo I y la primera mitad del II.",
   );
   await expect(first.locator("mark")).toHaveText([
     "Cada día del Señor reuníos, partid el pan y dad gracias, después de haber confesado vuestras transgresiones, para que vuestro sacrificio sea puro.",
@@ -95,7 +95,9 @@ test("the Ignatius entry: the paragraph around his sentence", async ({ page }) =
     "Se abstienen de la Eucaristía y de la oración, porque no confiesan que la Eucaristía es la carne de nuestro Salvador Jesucristo, la que padeció por nuestros pecados y la que el Padre, en su bondad, resucitó.",
   );
   await expect(entry.locator("h2 + p + p")).toContainText("Evitad todas las divisiones, como principio de males.");
-  await expect(entry.locator("small")).toHaveCount(0);
+  await expect(entry.locator("small")).toHaveText(
+    "Fecha tradicional, según Eusebio: 107 o 108. La cronología de las cartas de Ignacio se discute.",
+  );
 });
 
 test("the sentence on the doctrine is ink and its context ink-3, in both themes", async ({ page }) => {
@@ -128,18 +130,20 @@ test("a witness with no paragraph shows its quote whole, in ink, with a single m
   await expect(entry.locator("h2 + p + p")).toHaveText(await entry.locator("mark").innerText());
 });
 
-test("only the Didaché, Cirilo, Agustín and Crisóstomo carry a note under the date", async ({ page }) => {
+test("only the Didaché, Ignacio, the first Justino, Tertuliano, Cirilo, Agustín and Crisóstomo carry a note under the date", async ({
+  page,
+}) => {
   await page.goto(path);
   const notes = await page
     .locator(entries)
     .evaluateAll((items) => items.map((item) => item.querySelector("small")?.textContent ?? null));
   expect(notes.map((note) => note !== null)).toEqual([
     true,
+    true,
+    true,
     false,
     false,
-    false,
-    false,
-    false,
+    true,
     true,
     false,
     true,
@@ -292,13 +296,13 @@ test("the sidebar lists the page first under La Eucaristía and marks it as curr
   await expect(page.locator('aside nav li[data-id="eucharist"] > ul')).toHaveAttribute("data-open", "true");
 });
 
-test("from 02 the sidebar link opens the page, and the other doctrines show it inert", async ({ page }) => {
+test("from 02 the sidebar link opens the page, and baptism has its own", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(doctrinePath);
   await page.locator('aside nav li[data-id="eucharist"] > [data-row] [data-twisty]').click();
   await page.locator('aside nav li[data-id="eucharist/early-christians"] a').click();
   await expect(page).toHaveURL(path);
-  await expect(page.locator('aside nav li[data-id="baptism/early-christians"] a')).toHaveCount(0);
+  await expect(page.locator('aside nav li[data-id="baptism/early-christians"] a')).toHaveCount(1);
 });
 
 test("the list: date column 150 px from 640, stacked under it; text capped at 680 and the list at 870", async ({

@@ -104,13 +104,12 @@ test("«Pasajes»: two answer passages, four objector passages and «Mostrar los
   await expect(page.locator(`${passageItems}:visible`)).toHaveCount(6);
 });
 
-test("each passage shows its verse as a quote and its reference as an inert page link", async ({ page }) => {
+test("each passage shows its verse as a quote and its reference as a link to that verse", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(first);
   await expect(page.locator("#passages blockquote").first()).toContainText("sacerdocio inmutable");
-  const url = page.url();
-  await page.locator("#passages li button").first().click();
-  expect(page.url()).toBe(url);
+  await expect(page.locator("#passages li a").first()).toHaveAttribute("href", "/es/biblia/hebreos/7/24");
+  await expect(page.locator("#passages li button")).toHaveCount(0);
 });
 
 test("one hidden passage reads «Mostrar el otro texto de prueba»; an empty group has no heading", async ({ page }) => {
