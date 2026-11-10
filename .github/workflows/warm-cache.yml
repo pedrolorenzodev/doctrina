@@ -1,0 +1,39 @@
+name: warm-cache
+
+on:
+  deployment_status:
+  repository_dispatch:
+    types: [vercel.deployment.success]
+  status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  warm:
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || (github.event_name == 'deployment_status'
+          && github.event.deployment_status.state == 'success'
+          && github.event.deployment_status.environment == 'Production')
+      || (github.event_name == 'repository_dispatch'
+          && contains(fromJSON('["production", "Production"]'), github.event.client_payload.environment))
+      || (github.event_name == 'status'
+          && startsWith(github.event.context, 'Vercel')
+          && github.event.state == 'success'
+          && contains(github.event.branches.*.name, 'main'))
+    concurrency:
+      group: warm-cache
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: tools
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: node tools/warm-cache.mjs --delay 30
