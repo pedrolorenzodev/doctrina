@@ -46,7 +46,7 @@ export function Breadcrumbs({ label, trail, current, aside }: BreadcrumbsProps) 
   );
   if (!aside) return nav;
   return (
-    <div className="title-part title-part-0 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+    <div className="title-part title-part-0 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 lg:-my-2.5">
       {nav}
       {aside}
     </div>
