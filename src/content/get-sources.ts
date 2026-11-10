@@ -121,7 +121,7 @@ export async function getSources(locale: Locale): Promise<SourceEntry[]> {
         });
       if (full && !editions.some((edition) => edition.bibliography === full.edition.bibliography))
         editions.push({ bibliography: full.edition.bibliography, licence: full.edition.licence, href: null });
-      const title = itemName(full?.id ?? id, locale);
+      const title = itemName(full?.id ?? readerIds[id] ?? id, locale);
       return {
         id,
         kind: kindOf(
