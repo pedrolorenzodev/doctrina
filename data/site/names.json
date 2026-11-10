@@ -1,0 +1,1644 @@
+{
+ "small-catechism": {
+  "name": {
+   "es": "Catecismo Menor (Lutero)",
+   "en": "Small Catechism (Luther)"
+  }
+ },
+ "augsburg": {
+  "name": {
+   "es": "Confesión de Augsburgo",
+   "en": "Augsburg Confession"
+  }
+ },
+ "apology": {
+  "name": {
+   "es": "Apología de la Confesión de Augsburgo",
+   "en": "Apology of the Augsburg Confession"
+  }
+ },
+ "fc-epitome": {
+  "name": {
+   "es": "Fórmula de Concordia, Epítome",
+   "en": "Formula of Concord, Epitome"
+  }
+ },
+ "fc-sd": {
+  "name": {
+   "es": "Fórmula de Concordia, Declaración Sólida",
+   "en": "Formula of Concord, Solid Declaration"
+  }
+ },
+ "smalcald": {
+  "name": {
+   "es": "Artículos de Esmalcalda",
+   "en": "Smalcald Articles"
+  }
+ },
+ "large-catechism": {
+  "name": {
+   "es": "Catecismo Mayor (Lutero)",
+   "en": "Large Catechism (Luther)"
+  }
+ },
+ "treatise": {
+  "name": {
+   "es": "Tratado sobre el poder y la primacía del papa",
+   "en": "Treatise on the Power and Primacy of the Pope"
+  }
+ },
+ "wsc": {
+  "name": {
+   "es": "Catecismo Menor de Westminster",
+   "en": "Westminster Shorter Catechism"
+  }
+ },
+ "wcf": {
+  "name": {
+   "es": "Confesión de Westminster",
+   "en": "Westminster Confession of Faith"
+  }
+ },
+ "wlc": {
+  "name": {
+   "es": "Catecismo Mayor de Westminster",
+   "en": "Westminster Larger Catechism"
+  }
+ },
+ "philaret": {
+  "name": {
+   "es": "Filareto, Catecismo extenso de la Iglesia ortodoxa, católica y oriental",
+   "en": "Philaret, The Longer Catechism of the Orthodox, Catholic, Eastern Church"
+  }
+ },
+ "dositheus": {
+  "name": {
+   "es": "Confesión de Dositeo (Sínodo de Jerusalén, 1672)",
+   "en": "Confession of Dositheus (Synod of Jerusalem, 1672)"
+  }
+ },
+ "mogila": {
+  "name": {
+   "es": "Pedro Mogila, Confesión ortodoxa de la Iglesia católica y apostólica oriental",
+   "en": "Peter Mogila, The Orthodox Confession of the Catholic and Apostolic Eastern Church"
+  }
+ },
+ "constantinople-1": {
+  "name": {
+   "es": "Primer Concilio de Constantinopla",
+   "en": "First Council of Constantinople"
+  },
+  "entity": "constantinople-1"
+ },
+ "trullo": {
+  "name": {
+   "es": "Concilio Quinisexto o de Trullo",
+   "en": "Quinisext Council (Council in Trullo)"
+  },
+  "entity": "trullo-692"
+ },
+ "enc-1895": {
+  "name": {
+   "es": "Encíclica patriarcal y sinodal de 1895",
+   "en": "Patriarchal and Synodal Encyclical of 1895"
+  }
+ },
+ "chalcedon": {
+  "name": {
+   "es": "Concilio de Calcedonia, Definición de fe",
+   "en": "Council of Chalcedon, Definition of Faith"
+  }
+ },
+ "new-hampshire": {
+  "name": {
+   "es": "Confesión de Fe de New Hampshire (1853)",
+   "en": "New Hampshire Confession of Faith (1853)"
+  }
+ },
+ "bfm-2000": {
+  "name": {
+   "es": "Fe y Mensaje Bautistas (2000)",
+   "en": "Baptist Faith and Message (2000)"
+  }
+ },
+ "pastor-aeternus": {
+  "name": {
+   "es": "Concilio Vaticano I, Pastor aeternus",
+   "en": "First Vatican Council, Pastor aeternus"
+  }
+ },
+ "florence-laetentur": {
+  "name": {
+   "es": "Concilio de Florencia, Laetentur caeli",
+   "en": "Council of Florence, Laetentur caeli"
+  }
+ },
+ "lg": {
+  "name": {
+   "es": "Concilio Vaticano II, Lumen gentium",
+   "en": "Second Vatican Council, Lumen gentium"
+  }
+ },
+ "ur": {
+  "name": {
+   "es": "Concilio Vaticano II, Unitatis redintegratio",
+   "en": "Second Vatican Council, Unitatis redintegratio"
+  }
+ },
+ "gs": {
+  "name": {
+   "es": "Concilio Vaticano II, Gaudium et spes",
+   "en": "Second Vatican Council, Gaudium et spes"
+  }
+ },
+ "cec": {
+  "name": {
+   "es": "Catecismo de la Iglesia Católica",
+   "en": "Catechism of the Catholic Church"
+  }
+ },
+ "cic": {
+  "name": {
+   "es": "Código de Derecho Canónico",
+   "en": "Code of Canon Law"
+  }
+ },
+ "uus": {
+  "name": {
+   "es": "Juan Pablo II, Ut unum sint",
+   "en": "John Paul II, Ut unum sint"
+  }
+ },
+ "cdf-primado": {
+  "name": {
+   "es": "CDF, El primado del Sucesor de Pedro en el misterio de la Iglesia",
+   "en": "CDF, The Primacy of the Successor of Peter in the Mystery of the Church"
+  }
+ },
+ "cdf-note-1998": {
+  "name": {
+   "es": "CDF, Nota doctrinal ilustrativa de la fórmula conclusiva de la Professio fidei",
+   "en": "CDF, Doctrinal Commentary on the Concluding Formula of the Professio fidei"
+  }
+ },
+ "mysterium-ecclesiae": {
+  "name": {
+   "es": "CDF, Mysterium Ecclesiae",
+   "en": "CDF, Mysterium Ecclesiae"
+  }
+ },
+ "sempiternus-rex": {
+  "name": {
+   "es": "Pío XII, Sempiternus Rex Christus",
+   "en": "Pius XII, Sempiternus Rex Christus"
+  }
+ },
+ "donum-veritatis": {
+  "name": {
+   "es": "CDF, Donum veritatis",
+   "en": "CDF, Donum veritatis"
+  }
+ },
+ "enc-1848": {
+  "name": {
+   "es": "Encíclica de los patriarcas orientales de 1848",
+   "en": "Encyclical of the Eastern Patriarchs of 1848"
+  }
+ },
+ "trent": {
+  "name": {
+   "es": "Concilio de Trento",
+   "en": "Council of Trent"
+  },
+  "entity": "trent"
+ },
+ "pft": {
+  "name": {
+   "es": "Professio fidei Tridentina",
+   "en": "Professio fidei Tridentina"
+  }
+ },
+ "pf-1989": {
+  "name": {
+   "es": "Professio fidei (1989)",
+   "en": "Professio fidei (1989)"
+  }
+ },
+ "dei-filius": {
+  "name": {
+   "es": "Concilio Vaticano I, Dei Filius",
+   "en": "First Vatican Council, Dei Filius"
+  }
+ },
+ "dei-verbum": {
+  "name": {
+   "es": "Concilio Vaticano II, Dei Verbum",
+   "en": "Second Vatican Council, Dei Verbum"
+  }
+ },
+ "dh": {
+  "name": {
+   "es": "Concilio Vaticano II, Dignitatis humanae",
+   "en": "Second Vatican Council, Dignitatis humanae"
+  }
+ },
+ "sc": {
+  "name": {
+   "es": "Concilio Vaticano II, Sacrosanctum Concilium",
+   "en": "Second Vatican Council, Sacrosanctum Concilium"
+  }
+ },
+ "providentissimus": {
+  "name": {
+   "es": "León XIII, Providentissimus Deus",
+   "en": "Leo XIII, Providentissimus Deus"
+  }
+ },
+ "divino-afflante": {
+  "name": {
+   "es": "Pío XII, Divino afflante Spiritu",
+   "en": "Pius XII, Divino afflante Spiritu"
+  }
+ },
+ "verbum-domini": {
+  "name": {
+   "es": "Benedicto XVI, Verbum Domini",
+   "en": "Benedict XVI, Verbum Domini"
+  }
+ },
+ "florence-exsultate": {
+  "name": {
+   "es": "Concilio de Florencia, Exsultate Deo",
+   "en": "Council of Florence, Exsultate Deo"
+  }
+ },
+ "lateran-4": {
+  "name": {
+   "es": "Cuarto Concilio de Letrán",
+   "en": "Fourth Lateran Council"
+  },
+  "entity": "lateran-4"
+ },
+ "vienne": {
+  "name": {
+   "es": "Concilio de Vienne, Fidei catholicae",
+   "en": "Council of Vienne, Fidei catholicae"
+  }
+ },
+ "gestis-verbisque": {
+  "name": {
+   "es": "Dicasterio para la Doctrina de la Fe, Gestis verbisque",
+   "en": "Dicastery for the Doctrine of the Faith, Gestis verbisque"
+  }
+ },
+ "fidei-depositum": {
+  "name": {
+   "es": "Juan Pablo II, Fidei depositum",
+   "en": "John Paul II, Fidei depositum"
+  }
+ },
+ "oros-1755": {
+  "name": {
+   "es": "Oros de Constantinopla (1755/56)",
+   "en": "Oros of Constantinople (1755/56)"
+  }
+ },
+ "ag-sft": {
+  "name": {
+   "es": "Asambleas de Dios, Declaración de Verdades Fundamentales",
+   "en": "Assemblies of God, Statement of Fundamental Truths"
+  }
+ },
+ "roman-catechism": {
+  "name": {
+   "es": "Catecismo Romano",
+   "en": "Roman Catechism"
+  }
+ },
+ "oe": {
+  "name": {
+   "es": "Concilio Vaticano II, Orientalium Ecclesiarum",
+   "en": "Second Vatican Council, Orientalium Ecclesiarum"
+  }
+ },
+ "mysterium-fidei": {
+  "name": {
+   "es": "Pablo VI, Mysterium fidei",
+   "en": "Paul VI, Mysterium fidei"
+  }
+ },
+ "ede": {
+  "name": {
+   "es": "Juan Pablo II, Ecclesia de Eucharistia",
+   "en": "John Paul II, Ecclesia de Eucharistia"
+  }
+ },
+ "misal": {
+  "name": {
+   "es": "Misal Romano, Plegaria eucarística I (Canon romano)",
+   "en": "Roman Missal, Eucharistic Prayer I (Roman Canon)"
+  }
+ },
+ "ogmr": {
+  "name": {
+   "es": "Ordenación General del Misal Romano",
+   "en": "General Instruction of the Roman Missal"
+  }
+ },
+ "sacramentum-caritatis": {
+  "name": {
+   "es": "Benedicto XVI, Sacramentum caritatis",
+   "en": "Benedict XVI, Sacramentum caritatis"
+  }
+ },
+ "pcpcu-2001": {
+  "name": {
+   "es": "PCPCU, Orientaciones para la admisión a la Eucaristía entre la Iglesia caldea y la Iglesia asiria del Oriente",
+   "en": "PCPCU, Guidelines for Admission to the Eucharist between the Chaldean Church and the Assyrian Church of the East"
+  }
+ },
+ "jp-audience-1989": {
+  "name": {
+   "es": "Juan Pablo II, audiencia general del 13 de septiembre de 1989",
+   "en": "John Paul II, general audience of 13 September 1989"
+  }
+ },
+ "jp-audience-1991": {
+  "name": {
+   "es": "Juan Pablo II, audiencia general del 30 de enero de 1991",
+   "en": "John Paul II, general audience of 30 January 1991"
+  }
+ },
+ "florence-cantate": {
+  "name": {
+   "es": "Concilio de Florencia, Cantate Domino",
+   "en": "Council of Florence, Cantate Domino"
+  }
+ },
+ "heidelberg": {
+  "name": {
+   "es": "Catecismo de Heidelberg",
+   "en": "Heidelberg Catechism"
+  }
+ },
+ "london-baptist-1689": {
+  "name": {
+   "es": "Segunda Confesión Bautista de Londres",
+   "en": "Second London Baptist Confession"
+  }
+ },
+ "cyril-jerusalem-mystagogical": {
+  "name": {
+   "es": "Catequesis mistagógicas (Catequesis 19–23)",
+   "en": "Mystagogical Catecheses (Catechetical Lectures 19–23)"
+  }
+ },
+ "john-damascus-exact-exposition": {
+  "name": {
+   "es": "Exposición exacta de la fe ortodoxa",
+   "en": "An Exact Exposition of the Orthodox Faith"
+  }
+ },
+ "augustine-contra-faustum": {
+  "name": {
+   "es": "Réplica a Fausto el maniqueo",
+   "en": "Reply to Faustus the Manichaean"
+  }
+ },
+ "aquinas-summa": {
+  "name": {
+   "es": "Suma teológica",
+   "en": "Summa Theologiae"
+  }
+ },
+ "liturgy-chrysostom": {
+  "name": {
+   "es": "Divina Liturgia de San Juan Crisóstomo",
+   "en": "Divine Liturgy of St John Chrysostom"
+  }
+ },
+ "liturgy-basil": {
+  "name": {
+   "es": "Divina Liturgia de San Basilio el Grande",
+   "en": "Divine Liturgy of St Basil the Great"
+  }
+ },
+ "hapgood-service-book": {
+  "name": {
+   "es": "Libro de servicio de la Santa Iglesia Ortodoxa Católica Apostólica",
+   "en": "Service Book of the Holy Orthodox-Catholic Apostolic Church"
+  }
+ },
+ "cabasilas-divine-liturgy": {
+  "name": {
+   "es": "Comentario a la Divina Liturgia",
+   "en": "A Commentary on the Divine Liturgy"
+  }
+ },
+ "apostolic-constitutions": {
+  "name": {
+   "es": "Constituciones apostólicas",
+   "en": "Apostolic Constitutions"
+  }
+ },
+ "augustine-merits-remission": {
+  "name": {
+   "es": "Sobre los méritos y el perdón de los pecados, y el bautismo de los niños",
+   "en": "On the Merits and Remission of Sins, and on the Baptism of Infants"
+  }
+ },
+ "luther-confession-lords-supper-1528": {
+  "name": {
+   "es": "Confesión acerca de la Cena de Cristo (Gran Confesión)",
+   "en": "Confession Concerning Christ's Supper (Vom Abendmahl Christi, Bekenntnis)"
+  }
+ },
+ "marburg-articles": {
+  "name": {
+   "es": "Artículos de Marburgo",
+   "en": "Marburg Articles"
+  }
+ },
+ "belgic": {
+  "name": {
+   "es": "Confesión Belga",
+   "en": "Belgic Confession"
+  }
+ },
+ "calvin-institutes": {
+  "name": {
+   "es": "Institución de la religión cristiana",
+   "en": "Institutes of the Christian Religion"
+  }
+ },
+ "augustine-letters": {
+  "name": {
+   "es": "Cartas",
+   "en": "Letters"
+  }
+ },
+ "abstract-of-principles": {
+  "name": {
+   "es": "Principios Abstractos",
+   "en": "Abstract of Principles"
+  }
+ },
+ "augustine-contra-adimantum": {
+  "name": {
+   "es": "Contra Adimanto, discípulo de Manes",
+   "en": "Against Adimantus, Disciple of Mani"
+  }
+ },
+ "augustine-expositions-psalms": {
+  "name": {
+   "es": "Comentarios a los Salmos",
+   "en": "Expositions on the Psalms"
+  }
+ },
+ "gelasius-two-natures": {
+  "name": {
+   "es": "Sobre las dos naturalezas en Cristo, contra Eutiques y Nestorio",
+   "en": "On the Two Natures in Christ, against Eutyches and Nestorius"
+  }
+ },
+ "1-clement": {
+  "name": {
+   "es": "Primera Carta de Clemente a los Corintios (1 Clemente)",
+   "en": "First Letter of Clement to the Corinthians (1 Clement)"
+  },
+  "short": {
+   "es": "1 Clemente",
+   "en": "1 Clement"
+  }
+ },
+ "2-clement": {
+  "name": {
+   "es": "2 Clemente (autor desconocido)",
+   "en": "2 Clement (author unknown)"
+  }
+ },
+ "ambrose-de-excessu-fratris": {
+  "name": {
+   "es": "Sobre la muerte de su hermano Sátiro",
+   "en": "On the Decease of His Brother Satyrus"
+  }
+ },
+ "ambrose-de-fide": {
+  "name": {
+   "es": "Exposición de la fe cristiana (De fide)",
+   "en": "Exposition of the Christian Faith (De fide)"
+  }
+ },
+ "ambrose-de-mysteriis": {
+  "name": {
+   "es": "Sobre los misterios / Sobre los sacramentos",
+   "en": "On the Mysteries / On the Sacraments"
+  },
+  "short": {
+   "es": "Sobre los misterios",
+   "en": "On the Mysteries"
+  }
+ },
+ "ambrose-de-officiis": {
+  "name": {
+   "es": "Sobre los deberes de los ministros",
+   "en": "On the Duties of the Clergy (De officiis)"
+  },
+  "short": {
+   "es": "Sobre los deberes del clero",
+   "en": "On the Duties of the Clergy"
+  }
+ },
+ "ambrose-de-paenitentia": {
+  "name": {
+   "es": "Sobre la penitencia",
+   "en": "Concerning Repentance"
+  }
+ },
+ "ambrose-de-spiritu-sancto": {
+  "name": {
+   "es": "Sobre el Espíritu Santo",
+   "en": "On the Holy Spirit"
+  }
+ },
+ "ambrose-de-viduis": {
+  "name": {
+   "es": "Sobre las viudas",
+   "en": "Concerning Widows"
+  }
+ },
+ "ambrose-de-virginibus": {
+  "name": {
+   "es": "Sobre las vírgenes",
+   "en": "Concerning Virgins"
+  }
+ },
+ "ambrose-selected-letters": {
+  "name": {
+   "es": "Cartas escogidas y el sermón contra Auxencio",
+   "en": "Selected Letters and the Sermon Against Auxentius"
+  }
+ },
+ "aristides-apology": {
+  "name": {
+   "es": "Apology",
+   "en": "Apology"
+  },
+  "onlyIn": "en"
+ },
+ "athanasius-against-arians": {
+  "name": {
+   "es": "Discursos contra los arrianos",
+   "en": "Orations against the Arians"
+  },
+  "short": {
+   "en": "Discourses Against the Arians"
+  }
+ },
+ "athanasius-de-incarnatione": {
+  "name": {
+   "es": "Sobre la Encarnación del Verbo",
+   "en": "On the Incarnation of the Word"
+  },
+  "short": {
+   "es": "Sobre la encarnación del Verbo"
+  }
+ },
+ "athanasius-life-antony": {
+  "name": {
+   "es": "Vida de Antonio",
+   "en": "Life of Antony"
+  }
+ },
+ "athenagoras-plea-christians": {
+  "name": {
+   "es": "A Plea for the Christians",
+   "en": "A Plea for the Christians"
+  },
+  "onlyIn": "en"
+ },
+ "athenagoras-resurrection-dead": {
+  "name": {
+   "es": "On the Resurrection of the Dead (Traditionally Attributed)",
+   "en": "On the Resurrection of the Dead (Traditionally Attributed)"
+  },
+  "onlyIn": "en"
+ },
+ "augustine-city-of-god": {
+  "name": {
+   "es": "La ciudad de Dios",
+   "en": "The City of God"
+  }
+ },
+ "augustine-confessions": {
+  "name": {
+   "es": "Confesiones",
+   "en": "Confessions"
+  }
+ },
+ "augustine-de-catechizandis-rudibus": {
+  "name": {
+   "es": "Sobre la catequesis de los principiantes",
+   "en": "On the Catechising of the Uninstructed"
+  }
+ },
+ "augustine-de-doctrina-christiana": {
+  "name": {
+   "es": "Sobre la doctrina cristiana",
+   "en": "On Christian Doctrine"
+  }
+ },
+ "augustine-de-fide-et-symbolo": {
+  "name": {
+   "es": "Sobre la fe y el credo",
+   "en": "On Faith and the Creed"
+  }
+ },
+ "augustine-enchiridion": {
+  "name": {
+   "es": "Enquiridión",
+   "en": "The Enchiridion"
+  }
+ },
+ "augustine-sermon-on-the-mount": {
+  "name": {
+   "es": "Sermón del Señor en el monte",
+   "en": "Our Lord's Sermon on the Mount"
+  }
+ },
+ "augustine-tractates-john": {
+  "name": {
+   "es": "Tratados sobre el Evangelio de Juan",
+   "en": "Tractates on the Gospel of John"
+  }
+ },
+ "barnabas": {
+  "name": {
+   "es": "Epístola de Bernabé",
+   "en": "Epistle of Barnabas"
+  },
+  "short": {
+   "es": "Carta de Bernabé"
+  }
+ },
+ "basil-de-spiritu-sancto": {
+  "name": {
+   "es": "Sobre el Espíritu Santo",
+   "en": "On the Holy Spirit"
+  }
+ },
+ "basil-hexaemeron": {
+  "name": {
+   "es": "Hexamerón",
+   "en": "Hexaemeron"
+  }
+ },
+ "basil-letters": {
+  "name": {
+   "es": "Cartas",
+   "en": "Letters"
+  }
+ },
+ "chrysostom-homilies-1-corinthians": {
+  "name": {
+   "es": "Homilías sobre 1 Corintios",
+   "en": "Homilies on First Corinthians"
+  }
+ },
+ "chrysostom-homilies-1-thessalonians": {
+  "name": {
+   "es": "Homilies on First Thessalonians",
+   "en": "Homilies on First Thessalonians"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-1-timothy": {
+  "name": {
+   "es": "Homilies on First Timothy",
+   "en": "Homilies on First Timothy"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-2-corinthians": {
+  "name": {
+   "es": "Homilies on Second Corinthians",
+   "en": "Homilies on Second Corinthians"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-2-thessalonians": {
+  "name": {
+   "es": "Homilies on Second Thessalonians",
+   "en": "Homilies on Second Thessalonians"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-2-timothy": {
+  "name": {
+   "es": "Homilies on Second Timothy",
+   "en": "Homilies on Second Timothy"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-colossians": {
+  "name": {
+   "es": "Homilies on Colossians",
+   "en": "Homilies on Colossians"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-ephesians": {
+  "name": {
+   "es": "Homilies on Ephesians",
+   "en": "Homilies on Ephesians"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-hebrews": {
+  "name": {
+   "es": "Homilías sobre Hebreos",
+   "en": "Homilies on Hebrews"
+  }
+ },
+ "chrysostom-homilies-john": {
+  "name": {
+   "es": "Homilías sobre el Evangelio de Juan",
+   "en": "Homilies on the Gospel of John"
+  }
+ },
+ "chrysostom-homilies-matthew": {
+  "name": {
+   "es": "Homilías sobre Mateo",
+   "en": "Homilies on Matthew"
+  }
+ },
+ "chrysostom-homilies-philemon": {
+  "name": {
+   "es": "Homilies on Philemon",
+   "en": "Homilies on Philemon"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-philippians": {
+  "name": {
+   "es": "Homilies on Philippians",
+   "en": "Homilies on Philippians"
+  },
+  "onlyIn": "en"
+ },
+ "chrysostom-homilies-romans": {
+  "name": {
+   "es": "Homilías sobre Romanos",
+   "en": "Homilies on Romans"
+  }
+ },
+ "chrysostom-homilies-titus": {
+  "name": {
+   "es": "Homilies on Titus",
+   "en": "Homilies on Titus"
+  },
+  "onlyIn": "en"
+ },
+ "clement-alexandria-paedagogus": {
+  "name": {
+   "es": "El Pedagogo",
+   "en": "The Instructor (Paedagogus)"
+  },
+  "short": {
+   "en": "The Instructor"
+  }
+ },
+ "clement-alexandria-prophetic-eclogues": {
+  "name": {
+   "es": "Prophetic Eclogues — sections 1–63",
+   "en": "Prophetic Eclogues — sections 1–63"
+  },
+  "onlyIn": "en"
+ },
+ "clement-alexandria-protrepticus": {
+  "name": {
+   "es": "Protréptico (Exhortación a los griegos)",
+   "en": "Protrepticus (Exhortation to the Greeks)"
+  },
+  "short": {
+   "es": "Exhortación a los paganos",
+   "en": "Exhortation to the Heathen"
+  }
+ },
+ "clement-alexandria-quis-dives-salvetur": {
+  "name": {
+   "es": "¿Qué rico se salva?",
+   "en": "Who Is the Rich Man That Shall Be Saved?"
+  }
+ },
+ "clement-alexandria-stromata": {
+  "name": {
+   "es": "Stromata (Misceláneas)",
+   "en": "Stromata (Miscellanies)"
+  },
+  "short": {
+   "es": "Stromata",
+   "en": "The Stromata"
+  }
+ },
+ "cyprian-ad-demetrianum": {
+  "name": {
+   "es": "A Demetriano",
+   "en": "To Demetrianus"
+  }
+ },
+ "cyprian-ad-fortunatum": {
+  "name": {
+   "es": "Exhortación al martirio",
+   "en": "Exhortation to Martyrdom"
+  }
+ },
+ "cyprian-correspondence": {
+  "name": {
+   "es": "Cartas",
+   "en": "Letters"
+  },
+  "short": {
+   "en": "Epistles"
+  }
+ },
+ "cyprian-de-bono-patientiae": {
+  "name": {
+   "es": "Sobre el bien de la paciencia",
+   "en": "On the Advantage of Patience"
+  }
+ },
+ "cyprian-de-dominica-oratione": {
+  "name": {
+   "es": "Sobre la oración del Señor",
+   "en": "On the Lord's Prayer"
+  }
+ },
+ "cyprian-de-habitu-virginum": {
+  "name": {
+   "es": "Sobre el atuendo de las vírgenes",
+   "en": "On the Dress of Virgins"
+  }
+ },
+ "cyprian-de-lapsis": {
+  "name": {
+   "es": "Sobre los caídos (De lapsis)",
+   "en": "On the Lapsed"
+  },
+  "short": {
+   "es": "Sobre los caídos"
+  }
+ },
+ "cyprian-de-mortalitate": {
+  "name": {
+   "es": "Sobre la mortalidad",
+   "en": "On the Mortality"
+  }
+ },
+ "cyprian-de-opere-et-eleemosynis": {
+  "name": {
+   "es": "Sobre las obras y la limosna",
+   "en": "On Works and Alms"
+  }
+ },
+ "cyprian-de-unitate": {
+  "name": {
+   "es": "Sobre la unidad de la Iglesia católica",
+   "en": "On the Unity of the Catholic Church"
+  },
+  "short": {
+   "es": "Sobre la unidad de la Iglesia",
+   "en": "On the Unity of the Church"
+  }
+ },
+ "cyprian-de-zelo-et-livore": {
+  "name": {
+   "es": "Sobre los celos y la envidia",
+   "en": "On Jealousy and Envy"
+  }
+ },
+ "cyprian-quod-idola-dii-non-sint": {
+  "name": {
+   "es": "Sobre la vanidad de los ídolos",
+   "en": "On the Vanity of Idols"
+  }
+ },
+ "cyprian-testimonia-ad-quirinum": {
+  "name": {
+   "es": "Testimonios a Quirino",
+   "en": "Testimonies to Quirinus"
+  }
+ },
+ "cyril-alexandria-commentary-john": {
+  "name": {
+   "es": "Comentario al Evangelio de Juan",
+   "en": "Commentary on the Gospel of John"
+  }
+ },
+ "cyril-jerusalem-catechetical-lectures": {
+  "name": {
+   "es": "Catequesis prebautismales",
+   "en": "Catechetical Lectures (pre-baptismal)"
+  },
+  "short": {
+   "es": "Catequesis",
+   "en": "Catechetical Lectures"
+  }
+ },
+ "didache": {
+  "name": {
+   "es": "Didajé (Enseñanza de los Doce Apóstoles)",
+   "en": "Didache (Teaching of the Twelve Apostles)"
+  },
+  "short": {
+   "es": "Didajé",
+   "en": "Didache"
+  }
+ },
+ "epistle-diognetus": {
+  "name": {
+   "es": "Carta a Diogneto",
+   "en": "Epistle to Diognetus"
+  }
+ },
+ "eusebius-church-history": {
+  "name": {
+   "es": "Historia eclesiástica",
+   "en": "Ecclesiastical History"
+  },
+  "short": {
+   "en": "Church History"
+  }
+ },
+ "gregory-great-pastoral-rule": {
+  "name": {
+   "es": "Regla pastoral",
+   "en": "Pastoral Rule"
+  }
+ },
+ "gregory-great-selected-letters": {
+  "name": {
+   "es": "Selected Epistles",
+   "en": "Selected Epistles"
+  },
+  "onlyIn": "en"
+ },
+ "gregory-nazianzus-selected-letters": {
+  "name": {
+   "es": "Selected Letters",
+   "en": "Selected Letters"
+  },
+  "onlyIn": "en"
+ },
+ "gregory-nazianzus-selected-orations": {
+  "name": {
+   "es": "Selected Orations",
+   "en": "Selected Orations"
+  },
+  "onlyIn": "en"
+ },
+ "gregory-nyssa-against-eunomius": {
+  "name": {
+   "es": "Contra Eunomio",
+   "en": "Against Eunomius"
+  }
+ },
+ "gregory-nyssa-answer-eunomius-second-book": {
+  "name": {
+   "es": "Respuesta al segundo libro de Eunomio",
+   "en": "Answer to Eunomius' Second Book"
+  }
+ },
+ "gregory-nyssa-baptism-christ": {
+  "name": {
+   "es": "Sobre el bautismo de Cristo",
+   "en": "On the Baptism of Christ"
+  }
+ },
+ "gregory-nyssa-faith": {
+  "name": {
+   "es": "Sobre la fe",
+   "en": "On the Faith"
+  }
+ },
+ "gregory-nyssa-great-catechism": {
+  "name": {
+   "es": "Gran discurso catequético",
+   "en": "Great Catechetical Oration"
+  },
+  "short": {
+   "es": "Gran catequesis",
+   "en": "The Great Catechism"
+  }
+ },
+ "gregory-nyssa-holy-spirit": {
+  "name": {
+   "es": "Sobre el Espíritu Santo",
+   "en": "On the Holy Spirit"
+  }
+ },
+ "gregory-nyssa-holy-trinity": {
+  "name": {
+   "es": "Sobre la Santa Trinidad",
+   "en": "On the Holy Trinity"
+  }
+ },
+ "gregory-nyssa-infants-early-deaths": {
+  "name": {
+   "es": "Sobre los niños muertos prematuramente",
+   "en": "On Infants' Early Deaths"
+  }
+ },
+ "gregory-nyssa-letters": {
+  "name": {
+   "es": "Cartas escogidas",
+   "en": "Selected Letters"
+  }
+ },
+ "gregory-nyssa-making-man": {
+  "name": {
+   "es": "Sobre la creación del hombre",
+   "en": "On the Making of Man"
+  }
+ },
+ "gregory-nyssa-meletius": {
+  "name": {
+   "es": "Oración fúnebre por Melecio",
+   "en": "Funeral Oration on Meletius"
+  }
+ },
+ "gregory-nyssa-not-three-gods": {
+  "name": {
+   "es": "Sobre «no tres dioses»",
+   "en": "On Not Three Gods"
+  }
+ },
+ "gregory-nyssa-pilgrimages": {
+  "name": {
+   "es": "Sobre las peregrinaciones",
+   "en": "On Pilgrimages"
+  }
+ },
+ "gregory-nyssa-soul-resurrection": {
+  "name": {
+   "es": "Sobre el alma y la resurrección",
+   "en": "On the Soul and the Resurrection"
+  }
+ },
+ "gregory-nyssa-virginity": {
+  "name": {
+   "es": "Sobre la virginidad",
+   "en": "On Virginity"
+  }
+ },
+ "hippolytus-against-noetus": {
+  "name": {
+   "es": "Contra la herejía de Noeto",
+   "en": "Against the Heresy of Noetus"
+  }
+ },
+ "hippolytus-christ-antichrist": {
+  "name": {
+   "es": "Sobre Cristo y el Anticristo",
+   "en": "Treatise on Christ and Antichrist"
+  }
+ },
+ "hippolytus-refutation": {
+  "name": {
+   "es": "Refutación de todas las herejías (atribución debatida)",
+   "en": "Refutation of All Heresies (attribution debated)"
+  },
+  "short": {
+   "es": "Refutación de todas las herejías",
+   "en": "Refutation of All Heresies"
+  }
+ },
+ "ignatius-ephesians": {
+  "name": {
+   "es": "Carta a los Efesios",
+   "en": "Epistle to the Ephesians"
+  },
+  "short": {
+   "es": "A los Efesios",
+   "en": "To the Ephesians"
+  }
+ },
+ "ignatius-magnesians": {
+  "name": {
+   "es": "Carta a los Magnesios",
+   "en": "Epistle to the Magnesians"
+  },
+  "short": {
+   "es": "A los Magnesios",
+   "en": "To the Magnesians"
+  }
+ },
+ "ignatius-philadelphians": {
+  "name": {
+   "es": "Carta a los Filadelfios",
+   "en": "Epistle to the Philadelphians"
+  },
+  "short": {
+   "es": "A los Filadelfios",
+   "en": "To the Philadelphians"
+  }
+ },
+ "ignatius-polycarp": {
+  "name": {
+   "es": "Carta a Policarpo",
+   "en": "Epistle to Polycarp"
+  },
+  "short": {
+   "es": "A Policarpo",
+   "en": "To Polycarp"
+  }
+ },
+ "ignatius-romans": {
+  "name": {
+   "es": "Carta a los Romanos",
+   "en": "Epistle to the Romans"
+  },
+  "short": {
+   "es": "A los Romanos",
+   "en": "To the Romans"
+  }
+ },
+ "ignatius-smyrnaeans": {
+  "name": {
+   "es": "Carta a los Esmirniotas",
+   "en": "Epistle to the Smyrnaeans"
+  },
+  "short": {
+   "es": "A los Esmirniotas",
+   "en": "To the Smyrnaeans"
+  }
+ },
+ "ignatius-trallians": {
+  "name": {
+   "es": "Carta a los Tralianos",
+   "en": "Epistle to the Trallians"
+  },
+  "short": {
+   "es": "A los Tralianos",
+   "en": "To the Trallians"
+  }
+ },
+ "irenaeus-against-heresies": {
+  "name": {
+   "es": "Contra las herejías (Adversus haereses)",
+   "en": "Against Heresies (Adversus haereses)"
+  },
+  "short": {
+   "es": "Contra las herejías",
+   "en": "Against Heresies"
+  }
+ },
+ "irenaeus-demonstration": {
+  "name": {
+   "es": "Demostración de la predicación apostólica",
+   "en": "Demonstration of the Apostolic Preaching"
+  },
+  "short": {
+   "en": "The Demonstration of the Apostolic Preaching"
+  }
+ },
+ "justin-dialogue-trypho": {
+  "name": {
+   "es": "Diálogo con Trifón",
+   "en": "Dialogue with Trypho"
+  }
+ },
+ "justin-first-apology": {
+  "name": {
+   "es": "Primera Apología",
+   "en": "First Apology"
+  }
+ },
+ "justin-second-apology": {
+  "name": {
+   "es": "Segunda Apología",
+   "en": "Second Apology"
+  }
+ },
+ "leo-great-selected-letters": {
+  "name": {
+   "es": "Selected Letters",
+   "en": "Selected Letters"
+  },
+  "onlyIn": "en"
+ },
+ "leo-great-selected-sermons": {
+  "name": {
+   "es": "Sermones",
+   "en": "Sermons"
+  }
+ },
+ "martyrdom-polycarp": {
+  "name": {
+   "es": "Martirio de Policarpo",
+   "en": "Martyrdom of Polycarp"
+  }
+ },
+ "origen-against-celsus": {
+  "name": {
+   "es": "Contra Celso",
+   "en": "Against Celsus"
+  }
+ },
+ "origen-commentary-john": {
+  "name": {
+   "es": "Commentary on John — ANF partial translation",
+   "en": "Commentary on John — ANF partial translation"
+  },
+  "onlyIn": "en"
+ },
+ "origen-commentary-matthew": {
+  "name": {
+   "es": "Commentary on Matthew — ANF partial translation",
+   "en": "Commentary on Matthew — ANF partial translation"
+  },
+  "onlyIn": "en"
+ },
+ "origen-de-principiis": {
+  "name": {
+   "es": "Sobre los principios (De principiis)",
+   "en": "On First Principles (De principiis)"
+  },
+  "short": {
+   "es": "Sobre los principios",
+   "en": "On First Principles"
+  }
+ },
+ "origen-letter-africanus": {
+  "name": {
+   "es": "Carta a Africano",
+   "en": "Letter to Africanus"
+  }
+ },
+ "origen-letter-gregory": {
+  "name": {
+   "es": "Carta a Gregorio",
+   "en": "Letter to Gregory"
+  }
+ },
+ "papias-fragments": {
+  "name": {
+   "es": "Exposición de los oráculos del Señor (fragmentos)",
+   "en": "Exposition of the Sayings of the Lord (fragments)"
+  },
+  "short": {
+   "es": "Fragmentos",
+   "en": "Fragments"
+  }
+ },
+ "polycarp-philippians": {
+  "name": {
+   "es": "Carta a los Filipenses",
+   "en": "Letter to the Philippians"
+  },
+  "short": {
+   "es": "A los Filipenses",
+   "en": "To the Philippians"
+  }
+ },
+ "shepherd-hermas": {
+  "name": {
+   "es": "El Pastor de Hermas",
+   "en": "The Shepherd of Hermas"
+  }
+ },
+ "tatian-address-greeks": {
+  "name": {
+   "es": "Address to the Greeks",
+   "en": "Address to the Greeks"
+  },
+  "onlyIn": "en"
+ },
+ "tatian-diatessaron-arabic": {
+  "name": {
+   "es": "Diatessaron — Arabic version",
+   "en": "Diatessaron — Arabic version"
+  },
+  "onlyIn": "en"
+ },
+ "tertullian-ad-martyras": {
+  "name": {
+   "es": "A los mártires",
+   "en": "To the Martyrs"
+  }
+ },
+ "tertullian-ad-nationes": {
+  "name": {
+   "es": "A las naciones",
+   "en": "Ad Nationes"
+  }
+ },
+ "tertullian-ad-scapulam": {
+  "name": {
+   "es": "A Escápula",
+   "en": "To Scapula"
+  }
+ },
+ "tertullian-ad-uxorem": {
+  "name": {
+   "es": "A su esposa",
+   "en": "To His Wife"
+  }
+ },
+ "tertullian-adversus-iudaeos": {
+  "name": {
+   "es": "An Answer to the Jews",
+   "en": "An Answer to the Jews"
+  },
+  "onlyIn": "en"
+ },
+ "tertullian-against-hermogenes": {
+  "name": {
+   "es": "Contra Hermógenes",
+   "en": "Against Hermogenes"
+  }
+ },
+ "tertullian-against-marcion": {
+  "name": {
+   "es": "Contra Marción",
+   "en": "Against Marcion"
+  }
+ },
+ "tertullian-against-praxeas": {
+  "name": {
+   "es": "Contra Práxeas",
+   "en": "Against Praxeas"
+  },
+  "short": {
+   "es": "Contra Praxeas"
+  }
+ },
+ "tertullian-against-valentinians": {
+  "name": {
+   "es": "Contra los valentinianos",
+   "en": "Against the Valentinians"
+  }
+ },
+ "tertullian-apologeticus": {
+  "name": {
+   "es": "Apologético",
+   "en": "Apology (Apologeticum)"
+  },
+  "short": {
+   "en": "Apologeticus"
+  }
+ },
+ "tertullian-de-anima": {
+  "name": {
+   "es": "Sobre el alma",
+   "en": "On the Soul"
+  }
+ },
+ "tertullian-de-baptismo": {
+  "name": {
+   "es": "Sobre el bautismo",
+   "en": "On Baptism"
+  }
+ },
+ "tertullian-de-carne-christi": {
+  "name": {
+   "es": "Sobre la carne de Cristo",
+   "en": "On the Flesh of Christ"
+  }
+ },
+ "tertullian-de-corona": {
+  "name": {
+   "es": "Sobre la corona",
+   "en": "On the Chaplet"
+  }
+ },
+ "tertullian-de-cultu-feminarum": {
+  "name": {
+   "es": "Sobre el atavío de las mujeres",
+   "en": "On the Apparel of Women"
+  }
+ },
+ "tertullian-de-exhortatione-castitatis": {
+  "name": {
+   "es": "Exhortación a la castidad",
+   "en": "On Exhortation to Chastity"
+  }
+ },
+ "tertullian-de-fuga": {
+  "name": {
+   "es": "Sobre la huida en la persecución",
+   "en": "On Flight in Persecution"
+  }
+ },
+ "tertullian-de-idololatria": {
+  "name": {
+   "es": "Sobre la idolatría",
+   "en": "On Idolatry"
+  }
+ },
+ "tertullian-de-ieiunio": {
+  "name": {
+   "es": "Sobre el ayuno",
+   "en": "On Fasting"
+  }
+ },
+ "tertullian-de-monogamia": {
+  "name": {
+   "es": "Sobre la monogamia",
+   "en": "On Monogamy"
+  }
+ },
+ "tertullian-de-oratione": {
+  "name": {
+   "es": "Sobre la oración",
+   "en": "On Prayer"
+  }
+ },
+ "tertullian-de-paenitentia": {
+  "name": {
+   "es": "Sobre la penitencia",
+   "en": "On Repentance"
+  }
+ },
+ "tertullian-de-pallio": {
+  "name": {
+   "es": "Sobre el palio",
+   "en": "On the Pallium"
+  }
+ },
+ "tertullian-de-patientia": {
+  "name": {
+   "es": "Sobre la paciencia",
+   "en": "On Patience"
+  }
+ },
+ "tertullian-de-praescriptione": {
+  "name": {
+   "es": "Sobre la prescripción de los herejes",
+   "en": "On the Prescription of Heretics"
+  },
+  "short": {
+   "es": "Prescripción contra los herejes",
+   "en": "The Prescription Against Heretics"
+  }
+ },
+ "tertullian-de-pudicitia": {
+  "name": {
+   "es": "Sobre el pudor",
+   "en": "On Modesty"
+  }
+ },
+ "tertullian-de-resurrectione-carnis": {
+  "name": {
+   "es": "Sobre la resurrección de la carne",
+   "en": "On the Resurrection of the Flesh"
+  }
+ },
+ "tertullian-de-spectaculis": {
+  "name": {
+   "es": "Sobre los espectáculos",
+   "en": "On the Shows"
+  }
+ },
+ "tertullian-de-testimonio-animae": {
+  "name": {
+   "es": "Sobre el testimonio del alma",
+   "en": "On the Testimony of the Soul"
+  }
+ },
+ "tertullian-de-virginibus-velandis": {
+  "name": {
+   "es": "Sobre el velo de las vírgenes",
+   "en": "On the Veiling of Virgins"
+  }
+ },
+ "tertullian-scorpiace": {
+  "name": {
+   "es": "Escorpiaco",
+   "en": "Scorpiace"
+  }
+ },
+ "theodoret-church-history": {
+  "name": {
+   "es": "Historia eclesiástica",
+   "en": "Ecclesiastical History"
+  }
+ },
+ "theodoret-eranistes": {
+  "name": {
+   "es": "Eranistes (Diálogos)",
+   "en": "Eranistes (Dialogues)"
+  }
+ },
+ "theodoret-selected-correspondence": {
+  "name": {
+   "es": "Selected Letters and Correspondence",
+   "en": "Selected Letters and Correspondence"
+  },
+  "onlyIn": "en"
+ },
+ "theophilus-to-autolycus": {
+  "name": {
+   "es": "A Autólico",
+   "en": "To Autolycus"
+  }
+ },
+ "status-stsa-el": {
+  "name": {
+   "es": "Artículos de Esmalcalda y Fórmula de Concordia",
+   "en": "Artículos de Esmalcalda y Fórmula de Concordia"
+  },
+  "onlyIn": "es"
+ },
+ "status-stsa-pl": {
+  "name": {
+   "es": "Artículos de Esmalcalda y Fórmula de Concordia",
+   "en": "Artículos de Esmalcalda y Fórmula de Concordia"
+  },
+  "onlyIn": "es"
+ },
+ "status-stort-eo": {
+  "name": {
+   "es": "Confesión de Dositeo (Sínodo de Jerusalén)",
+   "en": "Confesión de Dositeo (Sínodo de Jerusalén)"
+  },
+  "onlyIn": "es"
+ },
+ "status-stdos-po": {
+  "name": {
+   "es": "Confesión de Dositeo (Sínodo de Jerusalén), decreto X",
+   "en": "Confesión de Dositeo (Sínodo de Jerusalén), decreto X"
+  },
+  "onlyIn": "es"
+ },
+ "status-stwcf-er": {
+  "name": {
+   "es": "Confesión de Westminster 29.2 y 29.6",
+   "en": "Confesión de Westminster 29.2 y 29.6"
+  },
+  "onlyIn": "es"
+ },
+ "status-stwcf-p": {
+  "name": {
+   "es": "Confesión de Westminster XXV.6",
+   "en": "Confesión de Westminster XXV.6"
+  },
+  "onlyIn": "es"
+ },
+ "status-stlut-p": {
+  "name": {
+   "es": "Artículos de Esmalcalda y Tratado",
+   "en": "Artículos de Esmalcalda y Tratado"
+  },
+  "onlyIn": "es"
+ },
+ "status-stlutac-p": {
+  "name": {
+   "es": "Los pasajes del Anticristo (Esmalcalda y Tratado)",
+   "en": "Los pasajes del Anticristo (Esmalcalda y Tratado)"
+  },
+  "onlyIn": "es"
+ },
+ "status-st1848-p": {
+  "name": {
+   "es": "Encíclica de los patriarcas orientales de 1848",
+   "en": "Encíclica de los patriarcas orientales de 1848"
+  },
+  "onlyIn": "es"
+ },
+ "status-st1895-p": {
+  "name": {
+   "es": "Encíclica patriarcal y sinodal de 1895",
+   "en": "Encíclica patriarcal y sinodal de 1895"
+  },
+  "onlyIn": "es"
+ },
+ "status-stlut-s": {
+  "name": {
+   "es": "Apología y Artículos de Esmalcalda",
+   "en": "Apología y Artículos de Esmalcalda"
+  },
+  "onlyIn": "es"
+ },
+ "status-stwcf": {
+  "name": {
+   "es": "Confesión de Westminster 29.2 y 29.6",
+   "en": "Confesión de Westminster 29.2 y 29.6"
+  },
+  "onlyIn": "es"
+ },
+ "status-stsa": {
+  "name": {
+   "es": "Artículos de Esmalcalda II.2.1",
+   "en": "Artículos de Esmalcalda II.2.1"
+  },
+  "onlyIn": "es"
+ },
+ "status-st1895": {
+  "name": {
+   "es": "Encíclica patriarcal de 1895",
+   "en": "Encíclica patriarcal de 1895"
+  },
+  "onlyIn": "es"
+ }
+}

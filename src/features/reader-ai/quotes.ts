@@ -15,6 +15,7 @@ export type QuoteId =
 
 export type Quote = {
   who: string;
+  sourceId?: string;
   work: string;
   text: string;
   edition: string;
@@ -76,18 +77,21 @@ export const quotes: Record<QuoteId, Quote> = {
   },
   ccc1336: {
     who: "Catecismo de la Iglesia Católica",
+    sourceId: "cec",
     work: "§1336",
     text: "El primer anuncio de la Eucaristía dividió a los discípulos, igual que el anuncio de la pasión los escandalizó: “Es duro este lenguaje, ¿quién puede escucharlo?” (Jn 6,60). La Eucaristía y la cruz son piedras de escándalo. Es el mismo misterio, y no cesa de ser ocasión de división.",
     edition: "© Libreria Editrice Vaticana: cita breve y enlace.",
   },
   trent8: {
     who: "Concilio de Trento",
+    sourceId: "trent",
     work: "Sesión XIII (1551), canon 8",
     text: "Si alguno dijere, que Cristo, dado en la Eucaristía, sólo se recibe espiritualmente, y no también sacramental y realmente; sea excomulgado.",
     edition: "Castellano de López de Ayala, 1785. Dominio público.",
   },
   phil340: {
-    who: "Filareto de Moscú, Catecismo extenso",
+    who: "Filareto, Catecismo extenso de la Iglesia ortodoxa, católica y oriental",
+    sourceId: "philaret",
     work: "pregunta 340",
     text: "En la exposición de la fe de los patriarcas orientales se dice que la palabra transubstanciación no ha de tomarse como definición del modo en que el pan y el vino se cambian en el cuerpo y la sangre del Señor, pues esto nadie puede entenderlo sino Dios; sino que solo significa que el pan verdadera, real y sustancialmente se convierte en el verdadero cuerpo del Señor, y el vino en la verdadera sangre del Señor.",
     edition:
@@ -95,18 +99,21 @@ export const quotes: Record<QuoteId, Quote> = {
   },
   apol10: {
     who: "Apología de la Confesión de Augsburgo",
+    sourceId: "apology",
     work: "art. X",
     text: "Confesamos que creemos que en la Cena del Señor el cuerpo y la sangre de Cristo están verdadera y sustancialmente presentes, y son verdaderamente ofrecidos, con las cosas que se ven, el pan y el vino, a los que reciben el Sacramento.",
     edition: "Traducción de Doctrina. Original en inglés: Triglot Concordia (Bente y Dau), 1921. Dominio público.",
   },
   belg35: {
     who: "Confesión Belga",
+    sourceId: "belgic",
     work: "art. 35",
     text: "No erramos cuando decimos que lo que comemos y bebemos es el propio y natural cuerpo y la propia sangre de Cristo. Pero el modo en que participamos de ellos no es por la boca, sino por el Espíritu mediante la fe.",
     edition: "Traducción de Doctrina. Original en inglés: Schaff, Creeds of Christendom III, 1877. Dominio público.",
   },
   bfm7: {
     who: "Fe y Mensaje Bautistas (2000)",
+    sourceId: "bfm-2000",
     work: "art. VII",
     text: "La Cena del Señor es un acto simbólico de obediencia por el cual los miembros de la iglesia, al participar del pan y del fruto de la vid, conmemoran la muerte del Redentor y anuncian su segunda venida.",
     edition: "Texto oficial en español de la Convención Bautista del Sur. © SBC: cita breve y enlace.",

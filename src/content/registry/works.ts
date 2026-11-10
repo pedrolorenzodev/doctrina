@@ -127,7 +127,7 @@ export const works = {
   },
   philaret: {
     id: "philaret",
-    title: "Filareto, Catecismo extenso",
+    title: "Filareto, Catecismo extenso de la Iglesia ortodoxa, católica y oriental",
     short: "Filareto",
     kind: "catechism",
     speaker: "orthodox",
@@ -135,7 +135,7 @@ export const works = {
   },
   dositheus: {
     id: "dositheus",
-    title: "Dositeo, Confesión (Jerusalén, 1672)",
+    title: "Confesión de Dositeo (Sínodo de Jerusalén, 1672)",
     short: "Dositeo",
     kind: "confession",
     speaker: "orthodox",
@@ -151,7 +151,7 @@ export const works = {
   },
   mogila: {
     id: "mogila",
-    title: "Pedro Mogila, Confesión ortodoxa",
+    title: "Pedro Mogila, Confesión ortodoxa de la Iglesia católica y apostólica oriental",
     short: "Mogila",
     kind: "confession",
     speaker: "orthodox",
@@ -170,7 +170,7 @@ export const works = {
   },
   trullo: {
     id: "trullo",
-    title: "Concilio Quinisexto (Trulo)",
+    title: "Concilio Quinisexto o de Trullo",
     short: "Trulo",
     kind: "council",
     speaker: "orthodox",
@@ -186,7 +186,7 @@ export const works = {
   },
   chalcedon: {
     id: "chalcedon",
-    title: "Concilio de Calcedonia",
+    title: "Concilio de Calcedonia, Definición de fe",
     short: "Calcedonia",
     kind: "council",
     speaker: "orthodox",
@@ -210,7 +210,7 @@ export const works = {
   },
   "new-hampshire": {
     id: "new-hampshire",
-    title: "Confesión de New Hampshire (1853)",
+    title: "Confesión de Fe de New Hampshire (1853)",
     short: "New Hampshire",
     kind: "confession",
     speaker: "baptist",
@@ -474,7 +474,7 @@ export const works = {
   },
   "lateran-4": {
     id: "lateran-4",
-    title: "IV Concilio de Letrán",
+    title: "Cuarto Concilio de Letrán",
     short: "Letrán IV",
     kind: "council",
     speaker: "catholic",

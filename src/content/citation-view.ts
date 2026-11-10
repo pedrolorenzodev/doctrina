@@ -4,6 +4,7 @@ import { formatLocator } from "@/content/format-locator";
 import type { DocLang } from "@/content/model/ids";
 import type { Excerpt, Passage, Registry } from "@/content/model/registry";
 import type { UiText } from "@/content/ui-text/types";
+import { itemName } from "@/content/item-names";
 import type { Locale } from "@/lib/locale";
 
 const fallbackOrder: DocLang[] = ["la", "en", "es", "de", "el"];
@@ -41,7 +42,7 @@ export function buildCitationView(id: string, registry: Registry, locale: Locale
   const dateLabel = dateInfo
     ? `${formatDate(dateInfo, locale)}${dateInfo.unconfirmed ? ` (${text.citation.dateUnconfirmed})` : ""}`
     : null;
-  const reference = [work.title + (locator ? `, ${locator}` : ""), dateLabel].filter(Boolean).join(", ");
+  const reference = [itemName(work.id, locale) + (locator ? `, ${locator}` : ""), dateLabel].filter(Boolean).join(", ");
   return {
     id,
     kind: text.citation.kind,
@@ -50,7 +51,7 @@ export function buildCitationView(id: string, registry: Registry, locale: Locale
     quoteLanguage: quote && quote.lang !== locale ? (text.citation.quoteIn[quote.lang as DocLang] ?? null) : null,
     quoteLabel,
     definition: null,
-    who: work.title,
+    who: itemName(work.id, locale),
     locator,
     note: null,
     date: dateInfo && dateLabel ? { label: dateLabel, start: dateInfo.year, end: dateInfo.yearEnd ?? null } : null,

@@ -152,7 +152,7 @@ test("a division's locator opens the panel with the citation and the link; Esc c
   await expect(panel).toHaveAttribute("data-open", "false");
   await page.locator('[data-division-open="d-1.1"]').click();
   await expect(panel).toHaveAttribute("data-open", "true");
-  await expect(panel).toContainText("A los Romanos 1.1");
+  await expect(panel).toContainText("Carta a los Romanos 1.1");
   await expect(page.locator("#d-1\\.1")).toHaveAttribute("data-selected", "");
   await panel.getByRole("button", { name: "Citar" }).click();
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(

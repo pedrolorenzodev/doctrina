@@ -23,7 +23,7 @@ export const fathers: Father[] = [
     works: [
       {
         title: {
-          es: "Primera Carta de Clemente a los Corintios",
+          es: "Primera Carta de Clemente a los Corintios (1 Clemente)",
           en: "First Letter of Clement to the Corinthians (1 Clement)",
         },
         date: "c. 75–110",
@@ -57,8 +57,8 @@ export const fathers: Father[] = [
     works: [
       {
         title: {
-          es: "Didajé",
-          en: "Didache",
+          es: "Didajé (Enseñanza de los Doce Apóstoles)",
+          en: "Didache (Teaching of the Twelve Apostles)",
         },
         date: "c. 50–150",
         year: 100,
@@ -193,8 +193,8 @@ export const fathers: Father[] = [
     works: [
       {
         title: {
-          es: "El Pastor (Visiones, Mandatos y Semejanzas)",
-          en: "The Shepherd (Visions, Mandates and Similitudes)",
+          es: "El Pastor de Hermas",
+          en: "The Shepherd of Hermas",
         },
         date: "c. 100–150",
         year: 140,
@@ -1291,8 +1291,8 @@ export const fathers: Father[] = [
     works: [
       {
         title: {
-          es: "Sobre la fe",
-          en: "On the Faith (De fide)",
+          es: "Exposición de la fe cristiana (De fide)",
+          en: "Exposition of the Christian Faith (De fide)",
         },
         date: "378–380",
         year: 379,
@@ -1877,8 +1877,8 @@ export const fathers: Father[] = [
       },
       {
         title: {
-          es: "Eranistes",
-          en: "Eranistes",
+          es: "Eranistes (Diálogos)",
+          en: "Eranistes (Dialogues)",
         },
         date: "c. 447",
         year: 447,

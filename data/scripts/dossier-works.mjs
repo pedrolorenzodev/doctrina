@@ -2,7 +2,7 @@ const R = (s) => new RegExp("^(?:" + s + ")");
 
 export const WORK_DEFS = [
   { id: "trent", title: "Concilio de Trento", short: "Trento", kind: "council", speaker: "catholic", re: R("Concilio de Trento,?"), scheme: ["session", "chapter", "canon", "decree", "locus"] },
-  { id: "lateran-4", title: "IV Concilio de Letrán", short: "Letrán IV", kind: "council", speaker: "catholic", re: R("(?:IV Concilio de Letrán|Concilio IV de Letrán),?"), scheme: ["constitution", "locus"] },
+  { id: "lateran-4", title: "Cuarto Concilio de Letrán", short: "Letrán IV", kind: "council", speaker: "catholic", re: R("(?:IV Concilio de Letrán|Concilio IV de Letrán),?"), scheme: ["constitution", "locus"] },
   { id: "florence-exsultate", title: "Concilio de Florencia, Exsultate Deo", short: "Florencia, Exsultate Deo", kind: "council", speaker: "catholic", re: R("Concilio de Florencia, Exsultate Deo \\(decreto para los armenios\\)"), scheme: [] },
   { id: "florence-laetentur", title: "Concilio de Florencia, Laetentur caeli", short: "Florencia, Laetentur caeli", kind: "council", speaker: "catholic", re: R("Concilio de Florencia, Laetentur caeli"), scheme: [] },
   { id: "florence-cantate", title: "Concilio de Florencia, Cantate Domino", short: "Florencia, Cantate Domino", kind: "council", speaker: "catholic", re: R("Concilio de Florencia, Cantate Domino"), scheme: [] },
@@ -56,17 +56,17 @@ export const WORK_DEFS = [
   { id: "wlc", title: "Catecismo Mayor de Westminster", short: "CMW", kind: "catechism", speaker: "reformed", re: R("Catecismo Mayor de Westminster,?"), scheme: ["number", "question"] },
   { id: "wsc", title: "Catecismo Menor de Westminster", short: "CmW", kind: "catechism", speaker: "reformed", re: R("Catecismo Menor de Westminster,?"), scheme: ["question"] },
   { id: "bfm-2000", title: "Fe y Mensaje Bautistas (2000)", short: "FMB 2000", kind: "confession", speaker: "baptist", re: R("Fe y Mensaje Bautistas \\(2000\\),?"), scheme: ["article", "locus"] },
-  { id: "new-hampshire", title: "Confesión de New Hampshire (1853)", short: "New Hampshire", kind: "confession", speaker: "baptist", re: R("Confesión de New Hampshire \\(1853\\),?"), scheme: ["article"] },
+  { id: "new-hampshire", title: "Confesión de Fe de New Hampshire (1853)", short: "New Hampshire", kind: "confession", speaker: "baptist", re: R("Confesión de New Hampshire \\(1853\\),?"), scheme: ["article"] },
   { id: "ag-sft", title: "Asambleas de Dios, Declaración de Verdades Fundamentales", short: "AD, Verdades", kind: "confession", speaker: "pentecostal", re: R("Asambleas de Dios, Declaración de Verdades Fundamentales,?"), scheme: ["article"] },
   { id: "enc-1895", title: "Encíclica patriarcal y sinodal de 1895", short: "Encíclica 1895", kind: "patriarchal-letter", speaker: "orthodox", re: R("Encíclica patriarcal y sinodal de 1895,?"), scheme: ["section", "locus"] },
   { id: "enc-1848", title: "Encíclica de los patriarcas orientales de 1848", short: "Encíclica 1848", kind: "patriarchal-letter", speaker: "orthodox", re: R("Encíclica de los patriarcas orientales de 1848,?"), scheme: ["section"] },
   { id: "constantinople-1", title: "Primer Concilio de Constantinopla", short: "Constantinopla I", kind: "council", speaker: "orthodox", re: R("Primer Concilio de Constantinopla,?"), scheme: ["canon"] },
-  { id: "chalcedon", title: "Concilio de Calcedonia", short: "Calcedonia", kind: "council", speaker: "orthodox", re: R("Concilio de Calcedonia,?"), scheme: ["canon"] },
-  { id: "trullo", title: "Concilio Quinisexto (Trulo)", short: "Trulo", kind: "council", speaker: "orthodox", re: R("Concilio Quinisexto \\(Trulo\\),?"), scheme: ["canon"] },
-  { id: "mogila", title: "Pedro Mogila, Confesión ortodoxa", short: "Mogila", kind: "confession", speaker: "orthodox", re: R("Pedro Mogila, Confesión ortodoxa I,?"), scheme: ["question"] },
-  { id: "philaret", title: "Filareto, Catecismo extenso", short: "Filareto", kind: "catechism", speaker: "orthodox", re: R("Filareto, Catecismo extenso,?"), scheme: ["question"] },
+  { id: "chalcedon", title: "Concilio de Calcedonia, Definición de fe", short: "Calcedonia", kind: "council", speaker: "orthodox", re: R("Concilio de Calcedonia,?"), scheme: ["canon"] },
+  { id: "trullo", title: "Concilio Quinisexto o de Trullo", short: "Trulo", kind: "council", speaker: "orthodox", re: R("Concilio Quinisexto \\(Trulo\\),?"), scheme: ["canon"] },
+  { id: "mogila", title: "Pedro Mogila, Confesión ortodoxa de la Iglesia católica y apostólica oriental", short: "Mogila", kind: "confession", speaker: "orthodox", re: R("Pedro Mogila, Confesión ortodoxa I,?"), scheme: ["question"] },
+  { id: "philaret", title: "Filareto, Catecismo extenso de la Iglesia ortodoxa, católica y oriental", short: "Filareto", kind: "catechism", speaker: "orthodox", re: R("Filareto, Catecismo extenso,?"), scheme: ["question"] },
   { id: "oros-1755", title: "Oros de Constantinopla (1755/56)", short: "Oros 1755", kind: "patriarchal-letter", speaker: "orthodox", re: R("Oros de Constantinopla \\(1755/56\\),?"), scheme: ["locus"] },
-  { id: "dositheus", title: "Dositeo, Confesión (Jerusalén, 1672)", short: "Dositeo", kind: "confession", speaker: "orthodox", re: R("(?:Dositeo, Confesión \\(Jerusalén, 1672\\)|Confesión de Dositeo \\(Sínodo de Jerusalén\\)),?"), scheme: ["decree"] },
+  { id: "dositheus", title: "Confesión de Dositeo (Sínodo de Jerusalén, 1672)", short: "Dositeo", kind: "confession", speaker: "orthodox", re: R("(?:Dositeo, Confesión \\(Jerusalén, 1672\\)|Confesión de Dositeo \\(Sínodo de Jerusalén\\)),?"), scheme: ["decree"] },
 ];
 
 export const STATUS_RE = /: estado actual$|estado actual$/;

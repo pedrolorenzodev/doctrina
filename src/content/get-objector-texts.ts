@@ -4,6 +4,7 @@ import { formatLocator } from "@/content/format-locator";
 import { pickQuote } from "@/content/citation-view";
 import type { DocLang } from "@/content/model/ids";
 import type { Objection } from "@/content/model/page";
+import { itemName } from "@/content/item-names";
 import type { Registry } from "@/content/model/registry";
 import { registry } from "@/content/registry/index";
 import type { SourceRow } from "@/lib/source-row";
@@ -40,12 +41,14 @@ export function getObjectorTexts(objection: Objection, locale: Locale): Objector
         text: quote.text,
         lang: quote.lang,
         languageNote: quote.lang === locale ? null : (text.citation.quoteIn[quote.lang as DocLang] ?? null),
-        label: locator ? `${work.title}${onlyReference ? " " : ", "}${locator}` : work.title,
+        label: locator
+          ? `${itemName(work.id, locale)}${onlyReference ? " " : ", "}${locator}`
+          : itemName(work.id, locale),
         year: date ? formatYear(date) : null,
         source: {
           id,
           citationId: id,
-          name: work.title,
+          name: itemName(work.id, locale),
           work: locator,
           date: date ? { label: formatDate(date, locale), start: date.year, end: date.yearEnd ?? null } : null,
         },
