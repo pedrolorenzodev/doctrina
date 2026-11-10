@@ -39,6 +39,7 @@ export function ChapterStep({ direction, neighbor, fallbackLabel, onStep }: Chap
     <Tooltip label={neighbor.label}>
       <Link
         href={neighbor.href}
+        prefetch={false}
         aria-label={neighbor.ariaLabel}
         data-step={direction}
         onClick={(event) => {

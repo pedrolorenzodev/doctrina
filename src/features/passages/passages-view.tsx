@@ -16,6 +16,7 @@ import { usePassageStore } from "@/features/passages/use-passage-store";
 import { locate } from "@/features/passages/word-text";
 import { useChosenTranslation } from "@/lib/use-chosen-translation";
 import { chooseTranslation } from "@/lib/translation-choice";
+import { whenIdle } from "@/lib/when-idle";
 
 type PassagesViewProps = {
   data: PassagesData;
@@ -57,15 +58,6 @@ function indexFromHash(data: PassagesData): number {
     0,
     data.entries.findIndex((entry) => entry.id === hash),
   );
-}
-
-function whenIdle(task: () => void): () => void {
-  if (typeof requestIdleCallback === "function") {
-    const handle = requestIdleCallback(task, { timeout: 1500 });
-    return () => cancelIdleCallback(handle);
-  }
-  const handle = setTimeout(task, 300);
-  return () => clearTimeout(handle);
 }
 
 const whilePending = "passage-pending:invisible";

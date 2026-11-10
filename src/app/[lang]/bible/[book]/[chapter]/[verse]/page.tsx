@@ -25,6 +25,10 @@ import { VerseWordsView } from "@/features/verse/verse-words";
 import { currentLocale } from "@/lib/current-locale";
 import type { Locale } from "@/lib/locale";
 
+export function generateStaticParams() {
+  return [];
+}
+
 const gospels = ["Matt", "Mark", "Luke", "John"];
 
 async function loadVerse(locale: Locale, bookParam: string, chapterParam: string, verseParam: string) {

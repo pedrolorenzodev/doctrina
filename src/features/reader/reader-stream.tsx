@@ -11,7 +11,9 @@ import { foldBox } from "@/lib/fold-box";
 import { setYourNotesOpen } from "@/features/reader/your-notes-store";
 import { useKeepTopVerse } from "@/features/reader/use-keep-top-verse";
 import { loadChapter, seedChapter } from "@/features/reader/chapter-data";
+import { speculativeLoadsAllowed } from "@/lib/data-saver";
 import { isSmoothScrolling, jumpToY, scrollOffset, scrollToY, shiftScroll } from "@/lib/scroll";
+import { whenIdle } from "@/lib/when-idle";
 
 type Panel = ComponentProps<typeof ReaderBody>["panel"];
 
@@ -161,7 +163,7 @@ export function ReaderStream({
         if (present) return current;
         return direction === "next" ? [...current, data] : [data, ...current];
       });
-      let ahead: ReaderChapter | null = data;
+      let ahead: ReaderChapter | null = speculativeLoadsAllowed() ? data : null;
       for (let step = 0; step < prefetchAhead && ahead?.[direction]; step += 1) {
         const nextRef: { book: string; chapter: number } = ahead[direction]!;
         ahead = await loadChapter(panel.locale, nextRef.book, nextRef.chapter);
@@ -203,10 +205,13 @@ export function ReaderStream({
   }, [extend, firstKey, initial]);
 
   useEffect(() => {
-    for (const side of ["previous", "next"] as const) {
-      const target = initial[side];
-      if (target) void loadChapter(panel.locale, target.book, target.chapter);
-    }
+    if (!speculativeLoadsAllowed()) return;
+    return whenIdle(() => {
+      for (const side of ["previous", "next"] as const) {
+        const target = initial[side];
+        if (target) void loadChapter(panel.locale, target.book, target.chapter);
+      }
+    });
   }, [initial, panel.locale]);
 
   useEffect(() => {
