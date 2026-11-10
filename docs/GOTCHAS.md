@@ -395,6 +395,15 @@ Traps that bite, and the why of every guard in the code. Format: **what** bites 
 - **Opening the drawer must not let `focus()` scroll the tree.** · The drawer scrolls the current row to 35 % and then focuses its first button, at the top of the list; without `preventScroll` the focus undid the scroll on every page. · `src/features/shell/sidebar.tsx`, `e2e/sidebar.spec.ts` (drawer test).
 - **The tree's HTML weight grows with every row.** · Each row costs about 650 bytes of markup plus 250 of serialised props, the same on every page (89 history rows added 80 KB raw, 5 KB gzipped). Think twice before adding another large branch; the fix would be to render closed branches lazily, which touches «Despliegue» and the carried state. · `src/features/shell/sidebar.tsx`.
 
+## Bible reference (2026-11-10)
+
+- **Roman numerals collide with book names.** · `I Sa` (1 Samuel) keyed without digits becomes `isa`, the key of Isaiah; the table then throws at load. Roman numerals are turned into digits before the key is built (`ordinalsToDigits`). · `src/content/bible-reference/names.ts`.
+- **A bare book name is not a passage on BibleGateway.** · `John` and `Jude` open a keyword search there; the app opens chapter 1 (Pedro's rule), so a bare name must go through `resolveReferences`, not through BibleGateway's behaviour. · `route.ts`, `resolve.ts`.
+- **One-chapter books: `Jude 3` is a verse, `Jude 1` is the chapter.** · Multi-chapter books read a bare number as a chapter. The rule is in the resolver, not in the table. · `resolve.ts`.
+- **`Jo` is Job, `Jn` is John, `Mar` is Mark.** · English abbreviations of BibleGateway overlap with the Spanish set; `Jo` and `Mar` are English-only in the table, and `Jn` maps to John in both. · `names.ts`.
+- **The corpus lacks verses the KJV has, and the table counts them.** · BSB omits 16 KJV verses (Matt 17:21 and others) and the table keeps their numbers as `gaps`; the resolver does not read `gaps` yet, so a request for those verses resolves and shows no text. · `versification.ts`, `tools/build-bible-versification.mjs`.
+- **The versification table needs the corpus to be rebuilt.** · `versification.ts` is generated; `tools/check-bible-reference.mjs` compares it with the corpus when the corpus exists and skips otherwise (CI). · `tools/check-bible-reference.mjs`.
+
 ## Passages normalising and order (2026-11-09)
 
 - **The «page entry N» headings of the apologists research mean the OLD lists, not the page you see.** · After a merge or a reorder the numbers are stale; `data/passages/legacy-entries/<doctrine>-<tradition>.json` freezes the old lists and the matcher maps each number to the new entry that contains those verses. A rebuild of `data/passages/apologists/*.json` from the markdown keeps working; a new research file should use verse headings, not entry numbers. · `data/scripts/apologists-match.mjs`.
