@@ -1,0 +1,17 @@
+{
+ "passages": [
+  {
+   "refs": [
+    "Matt.26.26-Matt.26.28",
+    "Mark.14.22-Mark.14.24",
+    "Luke.22.19-Luke.22.20",
+    "1Cor.11.23-1Cor.11.25"
+   ],
+   "focus": [
+    "Matt.26.26",
+    "Mark.14.22"
+   ],
+   "status": "proposed"
+  }
+ ]
+}

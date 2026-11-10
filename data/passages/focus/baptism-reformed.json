@@ -1,0 +1,42 @@
+{
+ "passages": [
+  {
+   "refs": [
+    "Matt.28.18-Matt.28.20"
+   ],
+   "focus": [
+    "Matt.28.19"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Eph.5.25-Eph.5.26",
+    "Acts.2.37-Acts.2.42"
+   ],
+   "focus": [
+    "Acts.2.38",
+    "Acts.2.39"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Gal.3.26-Gal.3.29"
+   ],
+   "focus": [
+    "Gal.3.27"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "1Pet.3.18-1Pet.3.22"
+   ],
+   "focus": [
+    "1Pet.3.21"
+   ],
+   "status": "proposed"
+  }
+ ]
+}

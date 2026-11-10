@@ -1,0 +1,49 @@
+{
+ "passages": [
+  {
+   "refs": [
+    "2Tim.3.14-2Tim.3.17"
+   ],
+   "focus": [
+    "2Tim.3.16"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Acts.17.10-Acts.17.11"
+   ],
+   "focus": [
+    "Acts.17.11"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Acts.15.15-Acts.15.16"
+   ],
+   "focus": [
+    "Acts.15.15"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Eph.2.19-Eph.2.22"
+   ],
+   "focus": [
+    "Eph.2.20"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Heb.1.1-Heb.1.2"
+   ],
+   "focus": [
+    "Heb.1.1"
+   ],
+   "status": "proposed"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "passages": [
+  {
+   "refs": [
+    "Acts.8.35-Acts.8.39"
+   ],
+   "focus": [
+    "Acts.8.36"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Acts.2.37-Acts.2.42"
+   ],
+   "focus": [
+    "Acts.2.38"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Col.2.11-Col.2.12"
+   ],
+   "focus": [
+    "Col.2.12"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Gal.3.26-Gal.3.29"
+   ],
+   "focus": [
+    "Gal.3.27"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Matt.3.13-Matt.3.17",
+    "Mark.1.9-Mark.1.11",
+    "Luke.3.21-Luke.3.22"
+   ],
+   "focus": [
+    "Matt.3.16"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Titus.3.4-Titus.3.7"
+   ],
+   "focus": [
+    "Titus.3.5"
+   ],
+   "status": "proposed"
+  }
+ ]
+}

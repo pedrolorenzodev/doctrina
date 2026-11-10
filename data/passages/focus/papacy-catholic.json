@@ -1,0 +1,22 @@
+{
+ "passages": [
+  {
+   "refs": [
+    "Luke.22.31-Luke.22.32"
+   ],
+   "focus": [
+    "Luke.22.32"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "John.20.21-John.20.23"
+   ],
+   "focus": [
+    "John.20.21"
+   ],
+   "status": "proposed"
+  }
+ ]
+}

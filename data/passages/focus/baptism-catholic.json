@@ -1,0 +1,60 @@
+{
+ "passages": [
+  {
+   "refs": [
+    "John.3.3-John.3.8"
+   ],
+   "focus": [
+    "John.3.5"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "1Pet.3.18-1Pet.3.22"
+   ],
+   "focus": [
+    "1Pet.3.20",
+    "1Pet.3.21"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Acts.2.37-Acts.2.42"
+   ],
+   "focus": [
+    "Acts.2.38"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Titus.3.4-Titus.3.7"
+   ],
+   "focus": [
+    "Titus.3.5"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "Gal.3.26-Gal.3.29"
+   ],
+   "focus": [
+    "Gal.3.27"
+   ],
+   "status": "proposed"
+  },
+  {
+   "refs": [
+    "1Cor.6.11",
+    "1Cor.12.12-1Cor.12.13"
+   ],
+   "focus": [
+    "1Cor.12.13"
+   ],
+   "status": "proposed"
+  }
+ ]
+}
