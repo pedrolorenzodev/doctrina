@@ -221,7 +221,7 @@ test.describe("Fathers' reader: the second translation", () => {
     await page.locator('[data-division-open="d-1.1"]').click();
     const panel = page.locator('aside[data-side-panel][aria-label="Detalle del pasaje"]');
     await expect(panel).toHaveAttribute("data-open", "true");
-    await expect(panel).toContainText("A los Romanos 1.1");
+    await expect(panel).toContainText("Carta a los Romanos 1.1");
   });
 
   test.describe("the second column", () => {

@@ -98,8 +98,8 @@ test.describe("Fathers' reader: note cards", () => {
     expect(first.width).toBe(240);
     expect(Math.abs(first.y - line.y)).toBeLessThan(2);
     await expect(page.locator(mark(5))).toBeHidden();
-    await expect(page.locator(cardAt(9))).toContainText("Didajé 9, en IA 2026");
-    await expect(page.locator(cardAt(7))).toContainText("Didajé 7–8");
+    await expect(page.locator(cardAt(9))).toContainText("Didajé (Enseñanza de los Doce Apóstoles) 9, en IA 2026");
+    await expect(page.locator(cardAt(7))).toContainText("Didajé (Enseñanza de los Doce Apóstoles) 7–8");
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
   });
 
@@ -173,7 +173,7 @@ test.describe("Fathers' reader: note cards", () => {
     await openWithNotes(page);
     await page.locator('[data-reader-strip] button[aria-haspopup="listbox"]').click();
     await page.locator('[data-reader-strip] [role=option][data-id="es"]').click();
-    await expect(page.locator(cardAt(9))).toContainText("Didajé 9");
+    await expect(page.locator(cardAt(9))).toContainText("Didajé (Enseñanza de los Doce Apóstoles) 9");
     await expect(page.locator(cardAt(9))).not.toContainText("en IA 2026");
   });
 
