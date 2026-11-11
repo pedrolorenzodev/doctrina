@@ -1,4 +1,4 @@
-import { redSpansOf } from "../src/content/bible/red-letters.ts";
+import { redSpansOf } from "../apps/web/src/content/bible/red-letters.ts";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

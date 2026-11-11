@@ -1,4 +1,12 @@
-import { clippedQuote, createNote, draftOf, isNote, notesAtVerse, removeNote, saveNoteText } from "../src/lib/notes.ts";
+import {
+  clippedQuote,
+  createNote,
+  draftOf,
+  isNote,
+  notesAtVerse,
+  removeNote,
+  saveNoteText,
+} from "../apps/web/src/lib/notes.ts";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

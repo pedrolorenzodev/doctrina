@@ -27,7 +27,7 @@ function objectionTitles(doctrine, tradition) {
 }
 
 async function traditionPage(doctrine, tradition) {
-  const loaded = await import(pathToFileURL(join(root, "src/content/pages", doctrine, `${tradition}.es.ts`)).href);
+  const loaded = await import(pathToFileURL(join(root, "apps/web/src/content/pages", doctrine, `${tradition}.es.ts`)).href);
   return Object.values(loaded)[0];
 }
 
@@ -123,7 +123,7 @@ export function renderPage(doctrine, page) {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const [doctrine, outDir] = process.argv.slice(2);
   if (!doctrine) throw new Error("usage: convert-doctrine.mjs <doctrine> [outDir]");
-  const out = join(outDir ?? join(root, "src/content/pages"), doctrine);
+  const out = join(outDir ?? join(root, "apps/web/src/content/pages"), doctrine);
   mkdirSync(out, { recursive: true });
   writeFileSync(join(out, "doctrine.es.ts"), renderPage(doctrine, await buildPage(doctrine)));
 }

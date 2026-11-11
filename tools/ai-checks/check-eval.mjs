@@ -32,7 +32,7 @@ const expect = (condition, message) => {
 
 const ROOT = resolve(fileURLToPath(new URL("../../", import.meta.url)));
 const questions = JSON.parse(readFileSync(resolve(ROOT, "tools/ai-eval/questions.json"), "utf8"));
-const fixture = JSON.parse(readFileSync(resolve(ROOT, "src/lib/ai/fixtures/wire-answer.es.json"), "utf8"));
+const fixture = JSON.parse(readFileSync(resolve(ROOT, "apps/web/src/lib/ai/fixtures/wire-answer.es.json"), "utf8"));
 const byId = (id) => questions.find((question) => question.id === id);
 const clone = (value) => JSON.parse(JSON.stringify(value));
 

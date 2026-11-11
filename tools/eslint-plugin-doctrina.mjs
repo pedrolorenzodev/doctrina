@@ -2,7 +2,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spanishWordsIn } from "./spanish-words.mjs";
 
-const SRC = fileURLToPath(new URL("../src", import.meta.url));
+const SRC = fileURLToPath(new URL("../apps/web/src", import.meta.url));
 
 const ALLOWED = {
   app: ["app", "features", "components", "content", "lib"],

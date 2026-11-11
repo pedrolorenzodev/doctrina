@@ -2,7 +2,7 @@ import { existsSync, writeFileSync } from "node:fs";
 import { isServable, readStoredSimplification } from "@/content/ai-simplify/cache";
 import { pregenerationItems } from "./ai-pregenerate-simplifications.mjs";
 
-const OUT = "src/content/simplified-manifest.ts";
+const OUT = "apps/web/src/content/simplified-manifest.ts";
 
 export function manifestSource(entries) {
   const lines = [...entries]
@@ -12,7 +12,7 @@ export function manifestSource(entries) {
 }
 
 async function main() {
-  if (existsSync(".env.local")) process.loadEnvFile(".env.local");
+  if (existsSync("apps/web/.env.local")) process.loadEnvFile("apps/web/.env.local");
   const entries = new Map();
   let stored = 0;
   for (const item of await pregenerationItems()) {

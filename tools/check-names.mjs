@@ -15,13 +15,13 @@ const FATHER_ENTITY_WORKS = {
   "epistle-to-diognetus": "epistle-diognetus",
 };
 const OWNERS = [
-  "src/content/item-names.ts",
-  "src/content/registry/",
-  "src/content/history/fathers.ts",
-  "src/content/history/",
-  "src/features/reader-ai/quotes.ts",
-  "src/content/pages/",
-  "src/content/words/",
+  "apps/web/src/content/item-names.ts",
+  "apps/web/src/content/registry/",
+  "apps/web/src/content/history/fathers.ts",
+  "apps/web/src/content/history/",
+  "apps/web/src/features/reader-ai/quotes.ts",
+  "apps/web/src/content/pages/",
+  "apps/web/src/content/words/",
 ];
 
 export function problemsOf({
@@ -155,7 +155,7 @@ const model = {
   writingTitles,
   councils: Object.fromEntries(history.councils.map((council) => [council.id, council.name])),
   sourceFiles: Object.fromEntries(
-    walk("src")
+    walk("apps/web/src")
       .filter((path) => !OWNERS.some((owner) => path.startsWith(owner)))
       .map((path) => [path, readFileSync(path, "utf8")]),
   ),
@@ -200,7 +200,7 @@ const fixtures = [
   ["a scripted quote name that drifted", (m) => (m.scriptedQuotes.phil340.who = "Filareto de Moscú"), "scripted quote"],
   [
     "a name written in code",
-    (m) => (m.sourceFiles = { "src/features/x.tsx": `const label = "${m.records.trent.name.es}";` }),
+    (m) => (m.sourceFiles = { "apps/web/src/features/x.tsx": `const label = "${m.records.trent.name.es}";` }),
     "written in code",
   ],
 ];

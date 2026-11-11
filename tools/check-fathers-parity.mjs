@@ -4,7 +4,7 @@ import { createLocalFatherSource } from "@/content/father-text/local-father-sour
 import { createSupabaseFatherSource } from "@/content/father-text/supabase-father-source";
 
 try {
-  process.loadEnvFile(resolve(import.meta.dirname, "..", ".env.local"));
+  process.loadEnvFile(resolve(import.meta.dirname, "..", "apps/web/.env.local"));
 } catch {}
 
 const local = createLocalFatherSource();

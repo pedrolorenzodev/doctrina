@@ -1,7 +1,7 @@
 import { dayKey, monthKey } from "@/lib/ai/dates";
 
 try {
-  process.loadEnvFile(".env.local");
+  process.loadEnvFile("apps/web/.env.local");
 } catch {
   // the variables may already be in the environment
 }

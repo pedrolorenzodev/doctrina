@@ -1,8 +1,8 @@
-// Builds src/content/data/eucharist.v2.json (v2 schema) and src/content/data/sources.extra.json
+// Builds apps/web/src/content/data/eucharist.v2.json (v2 schema) and apps/web/src/content/data/sources.extra.json
 // from the research draft data/raw/eucharist.content.json. Re-run after editing the draft.
 import { readFileSync, writeFileSync } from "fs";
 const d = JSON.parse(readFileSync("data/raw/eucharist.content.json", "utf8"));
-const headlines = JSON.parse(readFileSync("src/content/data/objection-headlines.json", "utf8"));
+const headlines = JSON.parse(readFileSync("apps/web/src/content/data/objection-headlines.json", "utf8"));
 const tid = (id) => (id === "baptist-evangelical" ? "baptist" : id);
 
 const books = {
@@ -168,8 +168,8 @@ sources.push({
   edition: { name: "Reina-Valera 1909 (es), Berean Standard Bible (en)", license: "public-domain", url: "https://ebible.org/spaRV1909/" },
 });
 
-writeFileSync("src/content/data/eucharist.v2.json", JSON.stringify({ studies, glossary, witnesses, timeline, connected }, null, 1));
-writeFileSync("src/content/data/sources.extra.json", JSON.stringify(sources, null, 1));
+writeFileSync("apps/web/src/content/data/eucharist.v2.json", JSON.stringify({ studies, glossary, witnesses, timeline, connected }, null, 1));
+writeFileSync("apps/web/src/content/data/sources.extra.json", JSON.stringify(sources, null, 1));
 console.log("studies", Object.keys(studies).length, "glossary", glossary.length, "witnesses", witnesses.length, "timeline", timeline.length, "sources", sources.length,
   "videos", Object.values(studies).reduce((n, s) => n + s.videos.length + s.objections.reduce((m, o) => m + o.videos.length, 0), 0),
   "unparsed osis", Object.values(studies).flatMap((s) => s.dossier).filter((x) => !x.osis.includes(".")).map((x) => x.osis));

@@ -1,4 +1,4 @@
-import { snapToWords } from "../src/lib/word-snap.ts";
+import { snapToWords } from "../apps/web/src/lib/word-snap.ts";
 import {
   addHighlight,
   chosenColor,
@@ -9,7 +9,7 @@ import {
   removeRange,
   removeVerse,
   segmentsOf,
-} from "../src/lib/highlights.ts";
+} from "../apps/web/src/lib/highlights.ts";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

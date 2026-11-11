@@ -3,12 +3,12 @@ import { join } from "node:path";
 import { chromium } from "playwright";
 
 const base = process.env.SHOT_BASE ?? "http://localhost:3000";
-const appDir = join(process.cwd(), "src", "app");
+const appDir = join(process.cwd(), "apps", "web", "src", "app");
 const paper = "#e8e5de";
 const ink = "#1c1713";
 const iconSvg = readFileSync(join(appDir, "icon.svg"), "utf8");
 const markPath = /<path d="([^"]+)"/.exec(iconSvg)?.[1];
-if (!markPath) throw new Error("src/app/icon.svg has no path");
+if (!markPath) throw new Error("apps/web/src/app/icon.svg has no path");
 
 const tile = (size, radius) =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="${size}" height="${size}"><rect width="32" height="32" rx="${radius}" fill="${paper}"/><path d="${markPath}" fill="${ink}"/></svg>`;

@@ -6,7 +6,7 @@ import { readDossier } from "./dossier-md.mjs";
 import { applyPassagesLayer } from "./apologists-load.mjs";
 
 const ROOT = new URL("../../docs/research/doctrines", import.meta.url).pathname;
-const CONTENT = process.env.CONTENT_OUT ?? new URL("../../src/content", import.meta.url).pathname;
+const CONTENT = process.env.CONTENT_OUT ?? new URL("../../apps/web/src/content", import.meta.url).pathname;
 const BIBLE = new URL("../../data/corpus/bibles/rv1909.json", import.meta.url).pathname;
 const DOCTRINES = process.argv.length > 2 ? process.argv.slice(2) : ["eucharist"];
 const doctrineOf = (key) => key.split(":")[0];

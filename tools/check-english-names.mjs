@@ -13,10 +13,11 @@ export function problemsOf(path) {
   if (/[^\x20-\x7e]/.test(path)) problems.push("non-ASCII characters");
   const spanish = spanishWordsIn(path);
   if (spanish.length > 0) problems.push(`Spanish words: ${spanish.join(", ")}`);
-  if (path.startsWith("src/")) {
+  const appSrc = /^(apps|packages)\/[^/]+\/src\//.exec(path);
+  if (appSrc) {
     const bad = path
+      .slice(appSrc[0].length)
       .split("/")
-      .slice(1)
       .filter((segment) => !SRC_SEGMENT.test(segment));
     if (bad.length > 0) problems.push(`not kebab-case: ${bad.join(", ")}`);
   }
@@ -24,13 +25,13 @@ export function problemsOf(path) {
 }
 
 const fixtures = [
-  ["src/features/doctrine/citation-window.tsx", false],
-  ["src/app/[lang]/(site)/page.tsx", false],
-  ["src/app/[lang]/[...slug]/page.tsx", false],
-  ["src/features/shell/fuente-modal.tsx", true],
-  ["src/features/shell/CitationWindow.tsx", true],
-  ["src/components/ui/botón.tsx", true],
-  ["src/lib/listaDeCitas.ts", true],
+  ["apps/web/src/features/doctrine/citation-window.tsx", false],
+  ["apps/web/src/app/[lang]/(site)/page.tsx", false],
+  ["apps/web/src/app/[lang]/[...slug]/page.tsx", false],
+  ["apps/web/src/features/shell/fuente-modal.tsx", true],
+  ["apps/web/src/features/shell/CitationWindow.tsx", true],
+  ["apps/web/src/components/ui/botón.tsx", true],
+  ["apps/web/src/lib/listaDeCitas.ts", true],
   ["docs/research/objeciones.md", true],
   ["data/scripts/build-bibles.mjs", false],
   ["docs/research/proposals/site-clean/fuente.js", false],

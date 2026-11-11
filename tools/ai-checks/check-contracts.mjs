@@ -27,7 +27,7 @@ const expect = (condition, message) => {
 };
 
 const fixture = JSON.parse(
-  readFileSync(new URL("../../src/lib/ai/fixtures/wire-answer.es.json", import.meta.url), "utf8"),
+  readFileSync(new URL("../../apps/web/src/lib/ai/fixtures/wire-answer.es.json", import.meta.url), "utf8"),
 );
 expect(fixture.kind === "evidence", "fixture kind");
 expect(Object.keys(fixture.quotes).length === 5, "fixture has 5 quotes");

@@ -715,7 +715,7 @@ async function main() {
       provider: { type: "string" },
     },
   });
-  if (existsSync(resolve(ROOT, ".env.local"))) process.loadEnvFile(resolve(ROOT, ".env.local"));
+  if (existsSync(resolve(ROOT, "apps/web/.env.local"))) process.loadEnvFile(resolve(ROOT, "apps/web/.env.local"));
 
   const base = values.base.replace(/\/$/u, "");
   const maxUsd = Number(values["max-usd"]);
@@ -745,7 +745,7 @@ async function main() {
     (response) => response.status < 500,
     () => false,
   );
-  if (!reachable) usage(`nothing answers at ${base}: start the server first (npx next start -p <port>)`);
+  if (!reachable) usage(`nothing answers at ${base}: start the server first (npm run start -- -p <port>)`);
 
   const outDir = resolve(ROOT, values.out ?? `tmp/ai-eval/${timestamp()}`);
   mkdirSync(outDir, { recursive: true });

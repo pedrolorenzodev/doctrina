@@ -80,7 +80,7 @@ Result: https://claude.ai/artifact/XQrDNnEYsMRp9HJqAqRxpi (private). Work dir: `
 - Check each variant in light and dark and at 390x844 (`shots.mjs` takes `w`/`h`); numerals are inline on phones, so marks need a phone offset.
 
 ### 5. The proposal text
-- Order of work: repo first (`DESIGN.md` verse/current-vs-neighbour pattern in the 06 row, Marca corta, "four marks never mixed up", Don'ts, DECISIONS slop list, passages-page.md, `src/features/passages`), then 8 web references (search, cite only what the result text confirms; say what you could not confirm), then build.
+- Order of work: repo first (`DESIGN.md` verse/current-vs-neighbour pattern in the 06 row, Marca corta, "four marks never mixed up", Don'ts, DECISIONS slop list, passages-page.md, `apps/web/src/features/passages`), then 8 web references (search, cite only what the result text confirms; say what you could not confirm), then build.
 - Per variant: what it is, where it goes (file/component), reference, cost (tokens, accessibility, print, conflicts with `mark`/`accent-weak`/red letters/lit phrases), risk. Then discarded with reasons (the slop list), data, decisions, and a "limits of this demo" note. Data section: compute counts from the real `spanishPages` dump (`node --import ./tools/register-alias.mjs <script outside repo>`), and test any selection rule on Pedro's own calibration examples before proposing it.
 
 ### 6. Artifact-tool gotchas

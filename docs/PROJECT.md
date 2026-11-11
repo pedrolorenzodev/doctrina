@@ -72,15 +72,20 @@ Carried from v1/v2, not yet re-confirmed (revisit freely): `next/font` self-host
 ## Architecture
 
 ```
-src/
-  app/                routing only: layouts, pages, metadata, globals.css
-  features/<feature>/ one folder per domain: components/, and hooks, types, data… only when needed
-  content/            editorial content as typed modules + the async data-access layer (getters by locale)
-  components/ui/      reusable primitives with no domain logic
-  lib/                pure functions and constants, no React, no domain
-data/                 content drafts and builder scripts (not imported by code yet)
+apps/web/             the Next.js site (npm workspace @doctrina/web; Vercel Root Directory)
+  src/
+    app/                routing only: layouts, pages, metadata, globals.css
+    features/<feature>/ one folder per domain: components/, and hooks, types, data… only when needed
+    content/            editorial content as typed modules + the async data-access layer (getters by locale)
+    components/ui/      reusable primitives with no domain logic
+    lib/                pure functions and constants, no React, no domain
+  e2e/                  Playwright specs
+data/                 site JSON (imported with @data/*), corpus (git-ignored) and builder scripts
+tools/                lint plugin, checks and scripts; they run from the repo root
 docs/                 these docs; docs/research/ holds the research reports and v2 screenshots
 ```
+
+The repo is an npm workspaces monorepo (`apps/*`, `packages/*`); `apps/mobile` and `packages/core` come with the mobile plan (`docs/features/mobile-app.md`). Root `package.json` scripts delegate `dev`, `build`, `start`, `typecheck` and `e2e` to `@doctrina/web`; `lint`, `format` and `verify` run from the root.
 
 - **`app/`**: only what Next needs to route. Pages are thin: they import a feature component and pass props; no business logic, state or complex UI in a `page.tsx`. Route groups `(group)` when different layouts are needed.
 - **`features/<name>/`**: everything of one domain together. A change or bug in that domain is solved in one folder; deleting the feature is deleting the folder.
@@ -88,9 +93,9 @@ docs/                 these docs; docs/research/ holds the research reports and 
 - **Dependencies flow one way: `app → features → content | components → lib`.** A feature never imports from another feature; shared code moves up to `components/` or `lib/`; `components/` never imports `content/`. Enforced by the `doctrina/layers` lint rule (`tools/eslint-plugin-doctrina.mjs`), which also bans `../` imports.
 - **Server Components by default**; `"use client"` as low in the tree as possible.
 - Start minimal. Any other folder (`hooks/`, `types/`, `config/`, `services/`…) is created when a concrete piece needs it. Over-structuring, giant global components and business logic inside pages are documented mistakes.
-- Root keeps only `public/`, `.env.*`, configs, docs and tool scripts.
+- The root keeps the workspace config, shared lint and format config, docs, data and tool scripts; Next config, `public/` and `.env.*` live in `apps/web/`.
 
-**Why this shape.** `src/` is a preference, not an official best practice (Next's docs call themselves unopinionated): it leaves the root for configuration and docs and puts all code in one place, which also helps an agent. Routing-only `app/` plus feature folders is the literature's consensus for mid-size projects; grouping by file type scatters related code as it grows. Discarded: code in the root without `src/`; colocating code per route inside `app/` with private `_folders` (valid, but features are clearer when a piece is reused across pages); client/server role directories (extra folders without need). No rule on barrel files (`index.ts` re-exports): no solid source supports one. Sources: `node_modules/next/dist/docs/01-app/01-getting-started/02-project-structure.md`, `.../03-api-reference/03-file-conventions/src-folder.md`, [GitHub discussion 190342](https://github.com/orgs/community/discussions/190342), [dev.to: App Router directory design](https://dev.to/pipipi-dev/app-router-directory-design-nextjs-project-structure-patterns-31eo).
+**Why this shape.** `apps/web/src/` is a preference, not an official best practice (Next's docs call themselves unopinionated): it leaves the root for configuration and docs and puts all code in one place, which also helps an agent. Routing-only `app/` plus feature folders is the literature's consensus for mid-size projects; grouping by file type scatters related code as it grows. Discarded: code in the root without `apps/web/src/`; colocating code per route inside `app/` with private `_folders` (valid, but features are clearer when a piece is reused across pages); client/server role directories (extra folders without need). No rule on barrel files (`index.ts` re-exports): no solid source supports one. Sources: `node_modules/next/dist/docs/01-app/01-getting-started/02-project-structure.md`, `.../03-api-reference/03-file-conventions/src-folder.md`, [GitHub discussion 190342](https://github.com/orgs/community/discussions/190342), [dev.to: App Router directory design](https://dev.to/pipipi-dev/app-router-directory-design-nextjs-project-structure-patterns-31eo).
 
 **Applying it to existing code.** It is a target, not a blind recipe: if code already has a clear, working organization, respect it and document the difference. What matters is grouped domains, thin routes, shared code apart and one-way dependencies. Migrate step by step, run `npm run verify` after each step, and never mix a migration with behavior changes.
 
@@ -100,8 +105,8 @@ docs/                 these docs; docs/research/ holds the research reports and 
 - **Reference corpus** (full tagged Bible including Hebrew OT via STEPBible TAHOT or OSHB, lexicon, translations, patristic passages, history, source registry) → **Supabase Postgres**, loaded by idempotent import scripts.
 - **User data** (accounts, recents / "Seguir donde dejaste", bookmarks, notes, progress, error reports, email list) → Supabase with Auth and row-level security.
 - Pages stay static / ISR; only search and personal data query at runtime. Doctrines reference verses by OSIS id (`John.6.53`).
-- **AI**: (1) semantic search (pgvector) over our curated content, user-visible, the demo feature; (2) internal tooling with human review: draft Spanish translations of Fathers (labelled as translation), citation checking against editions, cross-link and glossary suggestions. (3) **Real AI (2026-11-07, replaces «no generated chat answers»):** the drawer's chat and the simplifier call Haiku 5.5 through `src/lib/ai/` (plan → retrieve → answer → verify); the evidence is `ai_passages` (full-text search in Supabase, ≈ 54,000 passages), every quote is checked literally against its passage, caches and limits live in `ai_*` tables closed to `anon`; spend is capped by settings ($0.25 a day, $4.00 a month), BotID and a kill switch. Plan and contracts: `docs/research/ai/`.
-- Prepared from the start: table-shaped data with stable ids (OSIS refs, slugs, source ids); provenance on every record (license, edition, verified flag); `.env.example`, no secrets in the repo. Pages never import JSON directly: they go through an async data-access layer (`getDoctrine`, `getVerse`, `getFather`…), so swapping to Supabase touches only that layer. The layer is `src/content/` (DECISIONS 2026-10-23, «Block 0»).
+- **AI**: (1) semantic search (pgvector) over our curated content, user-visible, the demo feature; (2) internal tooling with human review: draft Spanish translations of Fathers (labelled as translation), citation checking against editions, cross-link and glossary suggestions. (3) **Real AI (2026-11-07, replaces «no generated chat answers»):** the drawer's chat and the simplifier call Haiku 5.5 through `apps/web/src/lib/ai/` (plan → retrieve → answer → verify); the evidence is `ai_passages` (full-text search in Supabase, ≈ 54,000 passages), every quote is checked literally against its passage, caches and limits live in `ai_*` tables closed to `anon`; spend is capped by settings ($0.25 a day, $4.00 a month), BotID and a kill switch. Plan and contracts: `docs/research/ai/`.
+- Prepared from the start: table-shaped data with stable ids (OSIS refs, slugs, source ids); provenance on every record (license, edition, verified flag); `.env.example`, no secrets in the repo. Pages never import JSON directly: they go through an async data-access layer (`getDoctrine`, `getVerse`, `getFather`…), so swapping to Supabase touches only that layer. The layer is `apps/web/src/content/` (DECISIONS 2026-10-23, «Block 0»).
 - Rough table sketch: books, verses, words (verse, position, original, transliteration, lemma, morphology, glosses), lemmas (Strong's, definition, counts), verse_texts (verse, edition, text), editions (license); works, patristic_passages (text, locator, license) + passage_verses; persons, councils, heresies, divisions, events; profiles, history, bookmarks, notes, progress, error_reports.
 - Supabase limits and prices: verify before deciding.
 

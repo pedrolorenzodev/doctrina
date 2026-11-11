@@ -6,7 +6,7 @@ import { works } from "@/content/registry/works";
 import { reviewVocabulary } from "@/content/validate";
 
 const FILES = ["docs/research/sources/citation-excerpts.md", "docs/research/sources/citation-excerpts-2.md"];
-const TARGET = "src/content/registry/citations.ts";
+const TARGET = "apps/web/src/content/registry/citations.ts";
 const TODAY = "2026-11-08";
 const WITHHELD = "docs/research/sources/citation-excerpts-withheld.json";
 const LANGS = ["es", "en", "la", "de", "el"];
@@ -145,11 +145,11 @@ function wordsOf(text) {
 
 function pageCitations() {
   const pages = {};
-  for (const doctrine of readdirSync("src/content/pages", { withFileTypes: true })) {
+  for (const doctrine of readdirSync("apps/web/src/content/pages", { withFileTypes: true })) {
     if (!doctrine.isDirectory()) continue;
-    for (const file of readdirSync(`src/content/pages/${doctrine.name}`)) {
+    for (const file of readdirSync(`apps/web/src/content/pages/${doctrine.name}`)) {
       if (!file.endsWith(".es.ts")) continue;
-      const text = readFileSync(`src/content/pages/${doctrine.name}/${file}`, "utf8");
+      const text = readFileSync(`apps/web/src/content/pages/${doctrine.name}/${file}`, "utf8");
       const ids = new Set();
       for (const match of text.matchAll(/citations:\s*\[([^\]]*)\]/g)) {
         for (const id of match[1].matchAll(/"([^"]+)"/g)) ids.add(id[1]);

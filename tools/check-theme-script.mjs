@@ -1,5 +1,5 @@
 import vm from "node:vm";
-import { themeInitScript, themeStorageKey } from "../src/lib/theme.ts";
+import { themeInitScript, themeStorageKey } from "../apps/web/src/lib/theme.ts";
 
 const STORAGE_FAILS = Symbol("storage fails");
 

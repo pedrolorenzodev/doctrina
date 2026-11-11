@@ -11,7 +11,7 @@ export function sha256(buffer) {
 
 export function credentials() {
   try {
-    process.loadEnvFile(resolve(ROOT, ".env.local"));
+    process.loadEnvFile(resolve(ROOT, "apps/web/.env.local"));
   } catch {}
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SECRET_KEY;

@@ -5,7 +5,7 @@ if (!outDir) {
   console.error("Usage: node --import ./tools/register-alias.mjs data/scripts/merge-registry.mjs <CONTENT_OUT of the converter>");
   process.exit(1);
 }
-const existingDir = new URL("../../src/content/registry", import.meta.url).pathname;
+const existingDir = new URL("../../apps/web/src/content/registry", import.meta.url).pathname;
 const types = { works: ["Work", "WorkId"], editions: ["Edition", "EditionId"], citations: ["Citation", "CitationId"], verses: ["Verse", "VerseId"] };
 const literal = (value) => JSON.stringify(value, null, 1);
 

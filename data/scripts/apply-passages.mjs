@@ -4,12 +4,12 @@ import { applyPassagesLayer } from "./apologists-load.mjs";
 import { FIELDS } from "./dossier-fields.mjs";
 import { baptistPassages } from "./baptist-passages.mjs";
 
-const PAGES = new URL("../../src/content/pages/", import.meta.url).pathname;
+const PAGES = new URL("../../apps/web/src/content/pages/", import.meta.url).pathname;
 const TOPICS = { "baptism:catholic": "el bautismo", "eucharist:catholic": "la Eucaristía" };
 const camel = (id) => id.replace(/-(\w)/g, (_, c) => c.toUpperCase());
 const keys = process.argv.slice(2);
 const lit = (v) => JSON.stringify(v, null, 1);
-const REGISTRY = new URL("../../src/content/registry/verses.ts", import.meta.url).pathname;
+const REGISTRY = new URL("../../apps/web/src/content/registry/verses.ts", import.meta.url).pathname;
 const rv1909 = JSON.parse(fs.readFileSync(new URL("../corpus/bibles/rv1909.json", import.meta.url).pathname, "utf8"));
 const rvKeys = Object.keys(rv1909);
 function expandSegment(segment) {

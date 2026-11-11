@@ -2,7 +2,7 @@ import { resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "..");
 try {
-  process.loadEnvFile(resolve(ROOT, ".env.local"));
+  process.loadEnvFile(resolve(ROOT, "apps/web/.env.local"));
 } catch {}
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
