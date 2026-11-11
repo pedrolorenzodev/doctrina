@@ -75,6 +75,7 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 ## Verification
 
 13. Before calling anything done: `npm run verify` (typecheck + lint + build). For UI, also screenshots at the relevant sizes (mobile 360/390, tablet, desktop) compared against the approved proposal or the given reference, then Pedro's approval. For large UI work, run an independent critique pass on the screenshots.
+    **Mobile app (Pedro, 2026-11-11): mobile-first.** The app is reviewed on the iOS simulator and Pedro's iPhone 14 Pro (development build), not on the web; the coordinator asks what he has installed and guides the setup step by step (`docs/features/mobile-app.md` §1.7).
 
 ## Documentation
 
