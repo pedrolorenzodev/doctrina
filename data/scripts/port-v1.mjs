@@ -44,12 +44,12 @@ const studies = v1.eucharist.positions.map((p) => {
 
 const header = (imp) => `// Generated from the v1 pilot by tools/port-v1.mjs, then edited by hand.\n${imp}\n\n`;
 writeFileSync(
-  "src/content/sources.ts",
+  "apps/web/src/content/sources.ts",
   header('import type { Source } from "./schema";') +
     `/** Primary-source registry. Only editions whose legal status we know. */\nexport const sources: Source[] = ${JSON.stringify(sources, null, 2)};\n\nexport const sourceById = new Map(sources.map((s) => [s.id, s]));\n`,
 );
 writeFileSync(
-  "src/content/traditions.ts",
+  "apps/web/src/content/traditions.ts",
   header('import type { Tradition, TraditionId } from "./schema";') +
     `/** The five MVP traditions, in order of visible origin. Each defines itself in its own words. */\nexport const traditions: Tradition[] = ${JSON.stringify(
       v1.traditions.map(({ normativeSources, ...t }) => ({ ...t, id: tid(t.id), ...(t.id === "baptist-evangelical" ? { short: { es: "Bautista", en: "Baptist" } } : {}) })),

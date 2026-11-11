@@ -1,4 +1,4 @@
-import { parseReadChapters, readChapterKey } from "../src/lib/read-chapters.ts";
+import { parseReadChapters, readChapterKey } from "../apps/web/src/lib/read-chapters.ts";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

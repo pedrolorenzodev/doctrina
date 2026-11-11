@@ -1,5 +1,5 @@
 import vm from "node:vm";
-import { passagePendingScript } from "../src/features/passages/passage-pending.ts";
+import { passagePendingScript } from "../apps/web/src/features/passages/passage-pending.ts";
 
 const ids = ["first-passage", "second-passage", "third</script>passage"];
 

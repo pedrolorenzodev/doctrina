@@ -28,7 +28,7 @@ for (const key of order) {
   const file = `${DATA}apologists/${d}-${t}.json`;
   if (!fs.existsSync(file)) continue;
   const data = JSON.parse(fs.readFileSync(file, "utf8"));
-  const pageSrc = fs.readFileSync(`${ROOT}src/content/pages/${d}/${t}.es.ts`, "utf8");
+  const pageSrc = fs.readFileSync(`${ROOT}apps/web/src/content/pages/${d}/${t}.es.ts`, "utf8");
   const scripture = [...pageSrc.slice(pageSrc.indexOf("  scripture: [")).matchAll(/^\s{4}\{\n\s+refs: \[([^\]]*)\]/gm)].map((m) => ({ refs: m[1].replace(/["\s]/g, "").split(",").filter(Boolean) }));
   const { perPassage } = matchSections(data.sections, scripture, d, d);
   const ranked = perPassage.map((matches, i) => {

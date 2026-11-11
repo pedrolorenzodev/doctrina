@@ -8,11 +8,11 @@ Two shells, the same `AI_EVAL_SECRET` in both (32+ random bytes; local only, nev
 
 ```sh
 export AI_EVAL_SECRET="$(openssl rand -base64 32)"   # then in the SAME shell:
-npm run build && AI_PROVIDER=fake AI_STORE=memory npx next start -p 3180 &
+npm run build && AI_PROVIDER=fake AI_STORE=memory npm run start -w @doctrina/web -- -p 3180 &
 AI_PROVIDER=fake npm run ai:eval -- --base http://localhost:3180
 ```
 
-`.env.local` may hold `ANTHROPIC_API_KEY`, which makes `AI_PROVIDER` default to `anthropic`: always set `AI_PROVIDER` explicitly for the server **and** for the harness (the harness uses it to decide whether the run costs money, and the judge uses it too).
+`apps/web/.env.local` may hold `ANTHROPIC_API_KEY`, which makes `AI_PROVIDER` default to `anthropic`: always set `AI_PROVIDER` explicitly for the server **and** for the harness (the harness uses it to decide whether the run costs money, and the judge uses it too).
 
 ## Flags
 
@@ -70,7 +70,7 @@ With `AI_STORE=supabase` (and `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SECRET_KEY`)
 1. **Record** (real, costs money, once per prompt/model/corpus change): start the server with the real provider and a recordings folder, run the eval with the same `AI_PROVIDER=anthropic`:
 
    ```sh
-   AI_PROVIDER=anthropic AI_RECORD_DIR=tools/ai-eval/recordings AI_STORE=memory npx next start -p 3180 &
+   AI_PROVIDER=anthropic AI_RECORD_DIR=../../tools/ai-eval/recordings AI_STORE=memory npm run start -w @doctrina/web -- -p 3180 &
    AI_PROVIDER=anthropic AI_RECORD_DIR=tools/ai-eval/recordings npm run ai:eval -- --base http://localhost:3180 --judge --max-usd 0.75
    ```
 
@@ -79,7 +79,7 @@ With `AI_STORE=supabase` (and `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SECRET_KEY`)
 2. **Replay** (free): start a fresh server (so the in-memory answer cache does not hide anything) and run the harness in replay mode:
 
    ```sh
-   AI_PROVIDER=replay AI_REPLAY_DIR=tools/ai-eval/recordings AI_STORE=memory npx next start -p 3180 &
+   AI_PROVIDER=replay AI_REPLAY_DIR=../../tools/ai-eval/recordings AI_STORE=memory npm run start -w @doctrina/web -- -p 3180 &
    AI_PROVIDER=replay AI_REPLAY_DIR=tools/ai-eval/recordings npm run ai:eval -- --base http://localhost:3180 --judge
    ```
 

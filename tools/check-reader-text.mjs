@@ -8,7 +8,7 @@ import {
   readerTextStorageKey,
   readerWeights,
   steppedValue,
-} from "../src/lib/reader-text.ts";
+} from "../apps/web/src/lib/reader-text.ts";
 
 const STORAGE_FAILS = Symbol("storage fails");
 

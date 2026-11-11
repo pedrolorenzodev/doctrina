@@ -4,7 +4,7 @@ import { createLocalBibleSource } from "@/content/bible/local-source";
 import { createSupabaseBibleSource } from "@/content/bible/supabase-source";
 
 try {
-  process.loadEnvFile(resolve(import.meta.dirname, "..", ".env.local"));
+  process.loadEnvFile(resolve(import.meta.dirname, "..", "apps/web/.env.local"));
 } catch {}
 
 const all = process.argv.includes("--all");

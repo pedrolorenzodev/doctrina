@@ -117,7 +117,7 @@ check(
   key === simplificationKey({ ...ignatius, locator: "6.3" }, resolved),
 );
 
-const ids = [...readFileSync("src/content/simplified-texts.ts", "utf8").matchAll(/^ {2}"([^"]+)": \{/gm)].map(
+const ids = [...readFileSync("apps/web/src/content/simplified-texts.ts", "utf8").matchAll(/^ {2}"([^"]+)": \{/gm)].map(
   (match) => match[1],
 );
 check("the test build has 25 mock paragraphs", ids.length === 25);
@@ -391,16 +391,17 @@ check(
   "seeding refuses a real provider",
   !(await seedFixture({ id: "anthropic", call: async () => ({}) }, ignatius, resolved, key)),
 );
-const reviewedWriters = ["src", "tools"]
+const reviewedWriters = ["apps/web/src", "tools"]
   .flatMap((root) => readdirSync(root, { recursive: true }).map((file) => `${root}/${file}`))
   .filter((file) => /\.(ts|tsx|mjs)$/.test(file) && !file.startsWith("tools/ai-checks/"))
   .filter((file) => /status: "reviewed"|"--approve", "reviewed"/.test(readFileSync(file, "utf8")));
 check(
   `only --approve and the fake seed write reviewed rows (${reviewedWriters.join(", ")})`,
-  reviewedWriters.sort().join(",") === "src/content/ai-simplify/seed-fixtures.ts,tools/ai-review-simplifications.mjs",
+  reviewedWriters.sort().join(",") ===
+    "apps/web/src/content/ai-simplify/seed-fixtures.ts,tools/ai-review-simplifications.mjs",
 );
 
-const fidelityWriters = ["src", "tools"]
+const fidelityWriters = ["apps/web/src", "tools"]
   .flatMap((root) => readdirSync(root, { recursive: true }).map((file) => `${root}/${file}`))
   .filter((file) => /\.(ts|tsx|mjs)$/.test(file) && !file.startsWith("tools/ai-checks/"))
   .filter((file) => /fidelity:\s*\{[\s\S]{0,300}?passed:\s*true/.test(readFileSync(file, "utf8")));

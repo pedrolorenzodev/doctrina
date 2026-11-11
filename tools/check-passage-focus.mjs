@@ -9,7 +9,7 @@ const onDisk = readdirSync(focusDir)
   .filter((file) => file.endsWith(".json"))
   .map((file) => file.slice(0, -5))
   .sort();
-const recordSource = readFileSync(new URL("../src/content/passage-focus.ts", import.meta.url), "utf8");
+const recordSource = readFileSync(new URL("../apps/web/src/content/passage-focus.ts", import.meta.url), "utf8");
 const inRecord = [...recordSource.matchAll(/^ {2}"([a-z-]+)": \w+,$/gm)].map((match) => match[1]).sort();
 const imported = [...recordSource.matchAll(/@data\/passages\/focus\/([a-z-]+)\.json/g)].map((match) => match[1]).sort();
 for (const key of onDisk) {

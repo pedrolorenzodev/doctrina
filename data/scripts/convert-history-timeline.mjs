@@ -38,5 +38,5 @@ export const councils: Council[] = ${JSON.stringify(councils, null, 2)};
 
 export const heresies: Heresy[] = ${JSON.stringify(heresies, null, 2)};
 `;
-writeFileSync("src/content/history/timeline-sources.ts", out);
+writeFileSync("apps/web/src/content/history/timeline-sources.ts", out);
 console.log(`${events.length} events, ${councils.length} councils, ${heresies.length} heresies`);

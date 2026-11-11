@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
-const SRC = fileURLToPath(new URL("../src/", import.meta.url));
+const SRC = fileURLToPath(new URL("../apps/web/src/", import.meta.url));
 const DATA = fileURLToPath(new URL("../data/", import.meta.url));
 
 export async function resolve(specifier, context, next) {

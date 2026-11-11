@@ -1,4 +1,4 @@
-import { splitByRed } from "../src/lib/text-pieces.ts";
+import { splitByRed } from "../apps/web/src/lib/text-pieces.ts";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

@@ -1,6 +1,6 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { validateFatherFile } from "../../src/content/father-text/validate-father-file.ts";
+import { validateFatherFile } from "../../apps/web/src/content/father-text/validate-father-file.ts";
 
 const root = fileURLToPath(new URL("../corpus/fathers-es/", import.meta.url));
 let files = 0;

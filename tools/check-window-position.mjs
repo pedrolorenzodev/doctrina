@@ -1,4 +1,4 @@
-import { clampWindow, firstWindowPosition } from "../src/lib/window-position.ts";
+import { clampWindow, firstWindowPosition } from "../apps/web/src/lib/window-position.ts";
 
 const cases = [
   ["inside stays", clampWindow({ x: 300, y: 200 }, { width: 1440, height: 900 }), { x: 300, y: 200 }],

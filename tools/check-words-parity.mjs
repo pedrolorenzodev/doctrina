@@ -4,7 +4,7 @@ import { createLocalWordsSource } from "@/content/words/local-words-source";
 import { createSupabaseWordsSource } from "@/content/words/supabase-words-source";
 
 try {
-  process.loadEnvFile(resolve(import.meta.dirname, "..", ".env.local"));
+  process.loadEnvFile(resolve(import.meta.dirname, "..", "apps/web/.env.local"));
 } catch {}
 
 const local = createLocalWordsSource();

@@ -10,10 +10,13 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
+    settings: { next: { rootDir: "apps/web/" } },
+  },
+  {
     linterOptions: { reportUnusedDisableDirectives: "error" },
   },
   {
-    files: ["src/**/*.{ts,tsx,js,jsx,mjs}"],
+    files: ["apps/web/src/**/*.{ts,tsx,js,jsx,mjs}"],
     plugins: { doctrina: doctrinaPlugin },
     rules: {
       "doctrina/layers": "error",
@@ -21,7 +24,7 @@ const eslintConfig = defineConfig([
     },
   },
   {
-    files: ["src/**/*.tsx"],
+    files: ["apps/web/src/**/*.tsx"],
     rules: {
       "react/jsx-no-literals": ["error", { noStrings: true, ignoreProps: true, allowedStrings: [" "] }],
       "no-restricted-syntax": [
@@ -46,11 +49,11 @@ const eslintConfig = defineConfig([
     },
   },
   globalIgnores([
-    ".next/**",
+    "apps/web/.next/**",
     ".vercel/**",
     "out/**",
     "build/**",
-    "next-env.d.ts",
+    "apps/web/next-env.d.ts",
     "tmp/**",
     "handoff/**",
     "docs/**",

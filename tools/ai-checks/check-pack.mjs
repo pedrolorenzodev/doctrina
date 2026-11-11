@@ -4,7 +4,7 @@ import { coverageLine } from "@/features/ask/coverage-line";
 import { callRest } from "@/content/ai-search/supabase-search";
 import { fixtureSearch } from "@/content/ai-search/fixture-search";
 import { scoreText, windowAround } from "@/content/ai-search/windows";
-import fixture from "../../src/content/ai-search/fixture-passages.json" with { type: "json" };
+import fixture from "../../apps/web/src/content/ai-search/fixture-passages.json" with { type: "json" };
 
 let checks = 0;
 const failures = [];

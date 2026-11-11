@@ -57,7 +57,7 @@ function summary(measures) {
 
 async function handWritten() {
   process.env.NEXT_PUBLIC_SIMPLIFIER = "on";
-  const source = readFileSync("src/content/simplified-texts.ts", "utf8");
+  const source = readFileSync("apps/web/src/content/simplified-texts.ts", "utf8");
   const ids = [...source.matchAll(/^ {2}"([^"]+)": \{/gm)].map((match) => match[1]);
   const { getSimplifiedText } = await import("@/content/simplified-texts");
   return ids.map((id) => ({ id, ...getSimplifiedText(id) })).filter((entry) => entry.original);

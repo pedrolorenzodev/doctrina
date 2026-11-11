@@ -135,7 +135,7 @@ export async function setStatus(entries, targets, status) {
 }
 
 async function main() {
-  if (existsSync(".env.local")) process.loadEnvFile(".env.local");
+  if (existsSync("apps/web/.env.local")) process.loadEnvFile("apps/web/.env.local");
   const args = process.argv.slice(2);
   const entries = await storedEntries();
   for (const [flag, status] of [

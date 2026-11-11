@@ -5,7 +5,7 @@ import {
   readerSizeStorageKey,
   readerSizes,
   steppedReaderSize,
-} from "../src/lib/reader-size.ts";
+} from "../apps/web/src/lib/reader-size.ts";
 
 const STORAGE_FAILS = Symbol("storage fails");
 

@@ -307,7 +307,7 @@ function aiCheckedRow(state, judgeModel, batchIds) {
 }
 
 async function main() {
-  if (existsSync(".env.local")) process.loadEnvFile(".env.local");
+  if (existsSync("apps/web/.env.local")) process.loadEnvFile("apps/web/.env.local");
   const args = process.argv.slice(2);
   const run = args.includes("--run");
   const maxUsd = Number(option(args, "--max-usd", "0.50"));

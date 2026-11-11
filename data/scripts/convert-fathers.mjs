@@ -19,5 +19,5 @@ const out = `import type { Father } from "@/content/model/history";
 
 export const fathers: Father[] = ${JSON.stringify(fathers, null, 2)};
 `;
-writeFileSync("src/content/history/fathers.ts", out);
+writeFileSync("apps/web/src/content/history/fathers.ts", out);
 console.log(`${fathers.length} fathers`);

@@ -1,13 +1,13 @@
 ---
 paths:
-  - "src/**/*.tsx"
-  - "src/**/*.css"
+  - "apps/web/src/**/*.tsx"
+  - "apps/web/src/**/*.css"
 ---
 
 # UI rules
 
 - Read `docs/DESIGN.md` first. If it doesn't exist yet, the design direction isn't approved: don't implement UI, apply the main rule in `AGENTS.md` (proposal with live demos).
-- Zero hardcoded style values: everything comes from the `@theme` tokens in `src/app/globals.css`. If a token is missing, add it first and document it in `DESIGN.md`.
+- Zero hardcoded style values: everything comes from the `@theme` tokens in `apps/web/src/app/globals.css`. If a token is missing, add it first and document it in `DESIGN.md`.
 - Tailwind in the element's `className`, always. Forbidden: `style={{}}`, CSS Modules, `<style>` and `@apply` in separate files. Single exception: a value computed at runtime, passed as a CSS custom property.
 - Excellent responsive behavior at every size: mobile-first, Tailwind's default breakpoints, verified on mobile, tablet and desktop. How to split the work between sizes:
   - similar UI → all sizes together;

@@ -1,4 +1,4 @@
-import { noSecond, parseSecondChoice } from "../src/lib/second-translation.ts";
+import { noSecond, parseSecondChoice } from "../apps/web/src/lib/second-translation.ts";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

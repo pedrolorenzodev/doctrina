@@ -1,5 +1,5 @@
 import { buildPage } from "./convert-doctrine.mjs";
-import { eucharistDoctrine } from "../../src/content/pages/eucharist/doctrine.es.ts";
+import { eucharistDoctrine } from "../../apps/web/src/content/pages/eucharist/doctrine.es.ts";
 
 const allowed = ["presides", "bread-and-wine", "leftovers"];
 const built = await buildPage("eucharist");

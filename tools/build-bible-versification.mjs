@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 const root = new URL("../", import.meta.url).pathname;
 const corpusDir = join(root, "data", "corpus", "bibles");
-const outFile = join(root, "src", "content", "bible-reference", "versification.ts");
+const outFile = join(root, "apps", "web", "src", "content", "bible-reference", "versification.ts");
 
 export const translationIds = ["rv1909", "kjv", "bsb", "dra", "web-c"];
 

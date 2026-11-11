@@ -215,7 +215,7 @@ await runCases("memory", new MemoryAiStore());
 let ran = "memory";
 if (process.env.AI_STORE === "supabase") {
   try {
-    process.loadEnvFile(".env.local");
+    process.loadEnvFile("apps/web/.env.local");
   } catch {
     // the variables may already be in the environment
   }

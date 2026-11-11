@@ -1,7 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 
-const roots = ["src/components", "src/features"];
+const roots = ["apps/web/src/components", "apps/web/src/features"];
 const exported = /export\s+(?:async\s+)?(?:function|const)\s+([A-Z]\w*)/g;
 const query = process.argv[2]?.toLowerCase();
 
