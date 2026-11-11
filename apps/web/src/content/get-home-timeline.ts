@@ -3,7 +3,7 @@ import historyJson from "@data/site/history.json" with { type: "json" };
 import { formatYear } from "@/content/format-date";
 import { councilHref, divisionHref, fatherHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type Localized = { es: string; en: string };
 

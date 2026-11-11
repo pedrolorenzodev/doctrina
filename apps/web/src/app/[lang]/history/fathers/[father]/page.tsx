@@ -24,7 +24,7 @@ import { FatherTimelineSection } from "@/features/history/father-timeline-sectio
 import { FatherProfileSection } from "@/features/history/father-profile-section";
 import { FatherWritingsSection } from "@/features/history/father-writings-section";
 import { currentLocale } from "@/lib/current-locale";
-import { locales } from "@/lib/locale";
+import { locales } from "@doctrina/core/locale";
 import { leanBuild } from "@/lib/lean-build";
 
 export async function generateStaticParams() {

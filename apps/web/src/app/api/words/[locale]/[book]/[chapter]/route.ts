@@ -1,6 +1,6 @@
 import { getChapterWordView } from "@/content/get-chapter-word-view";
 import { getWordChapters } from "@/content/get-words";
-import { locales } from "@/lib/locale";
+import { locales } from "@doctrina/core/locale";
 import { leanBuild } from "@/lib/lean-build";
 
 export const dynamic = "force-static";

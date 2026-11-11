@@ -7,7 +7,7 @@ import { allFathers } from "@/content/history/all-fathers";
 import type { DoctrineId, TraditionId } from "@/content/model/ids";
 import { bookNames } from "@/content/verse-names";
 import type { Collection, Licence, Passage, PassageRow, Speaker } from "@/content/ai-search/types";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export const PART_MAX_CHARS = 1800;
 export const CUT_ABOVE_CHARS = 2400;

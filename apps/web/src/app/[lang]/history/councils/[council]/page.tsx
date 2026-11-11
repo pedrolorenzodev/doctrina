@@ -13,7 +13,7 @@ import { FatherFacts } from "@/features/history/father-facts";
 import { FatherProfileSection } from "@/features/history/father-profile-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
-import { locales } from "@/lib/locale";
+import { locales } from "@doctrina/core/locale";
 import { leanBuild } from "@/lib/lean-build";
 
 const timelineLastYear = 800;

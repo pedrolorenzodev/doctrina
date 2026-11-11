@@ -4,7 +4,7 @@ import { themeGroups, themeLayout, themedOrder } from "@/content/objection-theme
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ObjectionList } from "@/features/doctrine/objection-list";
 import { ObjectionThemeFilter } from "@/features/doctrine/objection-theme-filter";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type ThemedObjectionListProps = {
   page: TraditionPage;

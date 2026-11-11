@@ -7,7 +7,7 @@ import { LanguageSwitch } from "@/features/shell/language-switch";
 import { SearchTrigger } from "@/features/shell/search-trigger";
 import { ThemeToggle } from "@/features/shell/theme-toggle";
 import { currentLocale } from "@/lib/current-locale";
-import { localeHref } from "@/lib/locale";
+import { localeHref } from "@doctrina/core/locale";
 
 export async function TopBar({ withMenu }: { withMenu: boolean }) {
   const locale = await currentLocale();

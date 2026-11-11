@@ -7,7 +7,7 @@ import { traditionHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { bookOrder } from "@/content/verse-names";
 import { parseInline } from "@/lib/inline-refs";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type VerseUse = { id: string; href: string; title: string; context: string };
 

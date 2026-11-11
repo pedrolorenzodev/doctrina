@@ -5,7 +5,7 @@ import type { ObjectorText } from "@/content/get-objector-texts";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const shownObjectorTexts = 2;
 

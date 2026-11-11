@@ -7,7 +7,7 @@ import type { WordView } from "@/content/get-chapter-word-view";
 import type { VerseWords } from "@/content/get-verse-page";
 import { wordHref } from "@/content/routes";
 import { useVerseEdition } from "@/features/verse/verse-edition";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type PanelWordsText = {
   strong: string;

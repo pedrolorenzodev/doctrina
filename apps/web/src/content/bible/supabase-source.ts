@@ -3,7 +3,7 @@ import { sortChapters } from "@/content/bible/chapter-neighbors";
 import { redSpansOf } from "@/content/bible/red-letters";
 import type { BibleTranslation, BibleVerse, ChapterStructure, ChapterSummary } from "@/content/model/bible";
 import { createSupabaseSelect } from "@/content/supabase-rest";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const REF_CHUNK = 80;
 

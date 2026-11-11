@@ -6,7 +6,7 @@ import { StatusPage } from "@/components/status-page";
 import { TitleEntrance } from "@/features/shell/title-entrance";
 import { ActionButton } from "@/components/ui/action";
 import { errorText } from "@/content/ui-text/error-text";
-import { locales } from "@/lib/locale";
+import { locales } from "@doctrina/core/locale";
 import "@/app/globals.css";
 
 export default function GlobalError({ retry }: { retry: () => void }) {

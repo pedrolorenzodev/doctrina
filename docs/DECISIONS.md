@@ -1702,3 +1702,9 @@ Canvas: [UX round 1](https://claude.ai/artifact/1emZWrzgH7utqFHpri1R3C) (structu
 **Chosen:** Next.js App Router with static generation (SSG / ISR); Tailwind `@theme` tokens; `next/font` self-hosted; content as typed modules / JSON in git, no CMS; bilingual routing under `/{es|en}` with English route segments for now (v2); Vercel; PostHog free tier (needs return visits and scroll depth, which Plausible can't do); Gumroad or Polar + Mercado Pago (no Stripe in Argentina).
 **Why:** SEO and i18n routing, Pedro knows React, diffable reviewable content, zero-config hosting.
 **Discarded:** a CMS; Plausible; Stripe.
+
+## 2026-11-11 · Mobile app, M-B block B0: `packages/core` skeleton and `locale`
+**Chosen:** `@doctrina/core` as planned in `docs/features/mobile-app.md` §3.1 (`exports: "./*": "./src/*.ts"`, no barrel, no build step, imports by package name, `tsconfig.base.json` shared with the web, core tsconfig without `dom`). `lib/locale.ts` moved to `packages/core/src/locale.ts`; the 134 importers and `next.config.ts` import `@doctrina/core/locale` (the planned fallback with a relative import was not needed). Core's lint block also bans relative imports inside core (the plan said «by package name»); tests are plain `node --test` scripts in `packages/core/test/*.mjs` (no TypeScript test files, so no second tsconfig); the root `typecheck` runs core's first and `lint` ends with `npm test -w @doctrina/core`.
+**Why:** the web must not change: 8917 prerendered routes identical, `npm run verify` green, git-only Vercel-like lean build green.
+**Discarded:** a `turbopack`/`transpilePackages` setting (not needed); tests in `.ts` (would need types for `node:test`).
+

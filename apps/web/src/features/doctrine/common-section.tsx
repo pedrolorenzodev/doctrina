@@ -4,7 +4,7 @@ import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragrap
 import type { DoctrinePage } from "@/content/model/doctrine-page";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type CommonSectionProps = {
   id: string;

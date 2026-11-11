@@ -80,17 +80,19 @@ apps/web/             the Next.js site (npm workspace @doctrina/web; Vercel Root
     components/ui/      reusable primitives with no domain logic
     lib/                pure functions and constants, no React, no domain
   e2e/                  Playwright specs
+packages/core/        @doctrina/core: framework-free TypeScript shared by the apps (src/, node tests in test/)
 data/                 site JSON (imported with @data/*), corpus (git-ignored) and builder scripts
 tools/                lint plugin, checks and scripts; they run from the repo root
 docs/                 these docs; docs/research/ holds the research reports and v2 screenshots
 ```
 
-The repo is an npm workspaces monorepo (`apps/*`, `packages/*`); `apps/mobile` and `packages/core` come with the mobile plan (`docs/features/mobile-app.md`). Root `package.json` scripts delegate `dev`, `build`, `start`, `typecheck` and `e2e` to `@doctrina/web`; `lint`, `format` and `verify` run from the root.
+The repo is an npm workspaces monorepo (`apps/*`, `packages/*`); `apps/mobile` comes with the mobile plan (`docs/features/mobile-app.md`, which also lists what moves to core and when). Root `package.json` scripts delegate `dev`, `build`, `start` and `e2e` to `@doctrina/web` (`typecheck` runs core's too); `lint`, `format` and `verify` run from the root.
 
 - **`app/`**: only what Next needs to route. Pages are thin: they import a feature component and pass props; no business logic, state or complex UI in a `page.tsx`. Route groups `(group)` when different layouts are needed.
 - **`features/<name>/`**: everything of one domain together. A change or bug in that domain is solved in one folder; deleting the feature is deleting the folder.
 - **`components/ui/`**: generic primitives (button, tag, card…). If only one feature uses it, it lives in that feature.
 - **Dependencies flow one way: `app → features → content | components → lib`.** A feature never imports from another feature; shared code moves up to `components/` or `lib/`; `components/` never imports `content/`. Enforced by the `doctrina/layers` lint rule (`tools/eslint-plugin-doctrina.mjs`), which also bans `../` imports.
+- **`packages/core` (`@doctrina/core`)**: modules move here only when a mobile phase needs them. `exports: "./*": "./src/*.ts"`, no barrel, no build step; inside core imports use the package name, and the web imports `@doctrina/core/<module>` (the layer flow above ends at it). Core never imports React, DOM, Node built-ins, `next/*`, `server-only`, an app or a relative path, never reads `process.env`; its own lint block and tsconfig (no `dom`) enforce it, and its tests are `node --test` files in `packages/core/test/` (run by `npm run lint`).
 - **Server Components by default**; `"use client"` as low in the tree as possible.
 - Start minimal. Any other folder (`hooks/`, `types/`, `config/`, `services/`…) is created when a concrete piece needs it. Over-structuring, giant global components and business logic inside pages are documented mistakes.
 - The root keeps the workspace config, shared lint and format config, docs, data and tool scripts; Next config, `public/` and `.env.*` live in `apps/web/`.

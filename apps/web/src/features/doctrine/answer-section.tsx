@@ -2,7 +2,7 @@ import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 import type { Objection } from "@/content/model/page";
 import { verseLink } from "@/content/page-views";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type AnswerSectionProps = {
   id: string;

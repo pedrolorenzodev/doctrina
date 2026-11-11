@@ -28,7 +28,7 @@ import { PassagesSection } from "@/features/doctrine/passages-section";
 import { SourcesSection } from "@/features/doctrine/sources-section";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { leanBuild } from "@/lib/lean-build";
 
 function isDoctrine(value: string): value is DoctrineId {

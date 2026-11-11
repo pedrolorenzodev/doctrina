@@ -13,7 +13,7 @@ import { objectionHref, traditionHref } from "@/content/routes";
 import { traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ObjectionsFold } from "@/features/doctrine/objections-fold";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type AnswersSectionProps = {
   id: string;

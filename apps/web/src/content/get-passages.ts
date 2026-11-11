@@ -12,7 +12,7 @@ import { registry } from "@/content/registry/index";
 import type { CitationView } from "@/lib/citation-view";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { parseInline } from "@/lib/inline-refs";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type PassageEdition = { id: string; abbreviation: string; name: string; language: Locale };
 

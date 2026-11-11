@@ -1,7 +1,7 @@
 import "server-only";
 import { createHash } from "node:crypto";
 import { getSearchIndex } from "@/content/get-search-index";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type SearchIndexAsset = { json: string; hash: string; url: string };
 

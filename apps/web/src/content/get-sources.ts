@@ -8,7 +8,7 @@ import { registry } from "@/content/registry/index";
 import { itemName } from "@/content/item-names";
 import { sourceDate } from "@/content/source-labels";
 import { fatherWorkHref } from "@/content/routes";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 import { canonical, catalogue, readerIds, type CatalogueSource } from "@/content/source-catalogue";
 import { sourceKinds, type SourceKind } from "@/content/source-kinds";

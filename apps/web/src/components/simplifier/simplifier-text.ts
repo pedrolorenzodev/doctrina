@@ -1,5 +1,5 @@
 import { aiErrorBody, type AiErrorCode } from "@/lib/ai/errors";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type SimplifierText = {
   mark: string;

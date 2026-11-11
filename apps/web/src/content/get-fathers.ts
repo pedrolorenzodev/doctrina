@@ -1,7 +1,7 @@
 import { allFathers } from "@/content/history/all-fathers";
 import type { Father } from "@/content/model/history";
 import { validateFathers } from "@/content/validate-history";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const problems = validateFathers(allFathers);
 if (problems.length > 0) throw new Error(`Invalid history content:\n${problems.slice(0, 20).join("\n")}`);

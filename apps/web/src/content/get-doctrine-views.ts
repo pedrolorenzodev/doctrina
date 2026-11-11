@@ -8,7 +8,7 @@ import { registry } from "@/content/registry/index";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { buildWitnessView, witnessViewId } from "@/content/witness-view";
 import type { CitationView } from "@/lib/citation-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export function answerGradeViewId(tradition: string): string {
   return `answer-grade:${tradition}`;

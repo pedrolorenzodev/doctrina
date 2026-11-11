@@ -12,7 +12,7 @@ import { clearAskPill, closedAskDrawer, getAskDrawer, subscribeAskDrawer, type A
 import { useActiveChapter } from "@/lib/active-chapter";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
 import { useChosenFatherEdition } from "@/lib/father-edition-choice";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { scrollOffset, scrollToLayoutPosition, scrollToY } from "@/lib/scroll";
 import { currentTranslationChoice, subscribeTranslationChoice } from "@/lib/translation-choice";
 import type { CiteHandlers } from "@/features/reader-ai/answer-parts";

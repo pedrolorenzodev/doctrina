@@ -5,7 +5,7 @@ import { StatusPage } from "@/components/status-page";
 import { TitleEntrance } from "@/features/shell/title-entrance";
 import { ActionLink } from "@/components/ui/action";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import { locales, localeHref } from "@/lib/locale";
+import { locales, localeHref } from "@doctrina/core/locale";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {

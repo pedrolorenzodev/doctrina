@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import type { AskPhase } from "@/lib/ai/contracts";
 import { prefersReducedMotion } from "@/lib/branch-motion";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import {
   CiteButton,
   Entering,

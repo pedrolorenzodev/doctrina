@@ -1,5 +1,5 @@
 import type { ChapterWordView } from "@/content/get-chapter-word-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const requests = new Map<string, Promise<ChapterWordView | null>>();
 const loaded = new Map<string, ChapterWordView>();

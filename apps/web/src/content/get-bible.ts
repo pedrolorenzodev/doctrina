@@ -6,7 +6,7 @@ import { createLocalBibleSource } from "@/content/bible/local-source";
 import { defaultTranslationId } from "@/content/bible/default-translation";
 import { createSupabaseBibleSource } from "@/content/bible/supabase-source";
 import type { BibleChapter, BibleTranslation, BibleVerse, ChapterRef, ChapterSummary } from "@/content/model/bible";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 function chooseSource(): BibleSource {
   const remote = supabaseCorpus();

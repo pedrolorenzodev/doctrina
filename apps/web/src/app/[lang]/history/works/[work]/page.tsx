@@ -22,7 +22,7 @@ import { ReaderSizeScript } from "@/features/reader/reader-size-script";
 import { ReaderTextScript } from "@/features/reader/reader-text-script";
 import { VerseArrival } from "@/features/reader/verse-arrival";
 import { currentLocale } from "@/lib/current-locale";
-import { locales } from "@/lib/locale";
+import { locales } from "@doctrina/core/locale";
 import { leanBuild } from "@/lib/lean-build";
 import { simplifierEnabled } from "@/lib/simplifier-enabled";
 

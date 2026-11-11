@@ -3,7 +3,7 @@ import { getFather } from "@/content/get-fathers";
 import { getCouncilPage } from "@/content/get-history-pages";
 import type { Witness } from "@/content/model/doctrine-page";
 import { councilHref, fatherHref } from "@/content/routes";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const witnessCouncils: Record<string, string> = {
   "bw-nicaea-19": "nicaea-1",

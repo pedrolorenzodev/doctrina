@@ -12,7 +12,7 @@ import { useStream } from "@/components/simplifier/use-stream";
 import { Tooltip } from "@/components/ui/tooltip";
 import type { SimplifyAddress } from "@/lib/ai/contracts";
 import { prefersReducedMotion } from "@/lib/branch-motion";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { simplifierEnabled } from "@/lib/simplifier-enabled";
 import type { SimplifierLevel } from "@/lib/simplifier-types";
 import { takeSimplifierMark } from "@/lib/simplifier-mark-request";

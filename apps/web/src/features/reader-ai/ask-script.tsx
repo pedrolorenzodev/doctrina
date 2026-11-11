@@ -3,7 +3,7 @@
 import { createContext, useContext } from "react";
 import { fatherWorkHref } from "@/content/routes";
 import type { CitationView } from "@/lib/citation-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import {
   isLiveId,
   isPendingLiveId,

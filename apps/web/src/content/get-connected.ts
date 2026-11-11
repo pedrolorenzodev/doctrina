@@ -3,7 +3,7 @@ import { getPublishedDoctrines } from "@/content/get-doctrine-page";
 import { getPublishedPages } from "@/content/get-tradition-page";
 import type { ConnectedDoctrine, DoctrinePage } from "@/content/model/doctrine-page";
 import type { DoctrineId } from "@/content/model/ids";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export function getConnected(
   page: DoctrinePage,

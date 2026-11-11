@@ -9,7 +9,7 @@ import { getPublishedPages } from "@/content/get-tradition-page";
 import { getSourceCount } from "@/content/get-sources";
 import { buildSiteTree, type TreeGroup } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export async function getSiteTree(locale: Locale): Promise<TreeGroup[]> {
   const { shell } = getUiText(locale);

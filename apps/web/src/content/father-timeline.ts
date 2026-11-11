@@ -5,7 +5,7 @@ import type { Father, HistoryEventKind, Localized } from "@/content/model/histor
 import { currentHref, fatherHref, timelineHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
 import { firstSentence } from "@/lib/first-sentence";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type TimelineGroupId = "people" | "currents" | "events";
 

@@ -8,7 +8,7 @@ import { councilHref, currentHref, fatherHref, fatherWorkHref } from "@/content/
 import type { UiText } from "@/content/ui-text/types";
 import type { TimelineEntry } from "@/lib/timeline-entry";
 import { firstSentence } from "@/lib/first-sentence";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type GeneralSection = "people" | "works" | "councils" | "currents";
 

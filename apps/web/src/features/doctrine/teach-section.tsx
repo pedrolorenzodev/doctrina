@@ -10,7 +10,7 @@ import { registry } from "@/content/registry";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { SourceLinks } from "@/features/doctrine/source-links";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { guillemets, labelSeparator } from "@/lib/punctuation";
 
 type TeachSectionProps = {

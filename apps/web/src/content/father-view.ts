@@ -6,7 +6,7 @@ import { writingYears } from "@/content/writing-years";
 import type { Father } from "@/content/model/history";
 import { fatherWorkHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type { FatherFact };
 

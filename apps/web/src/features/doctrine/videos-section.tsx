@@ -3,7 +3,7 @@ import type { TraditionPage } from "@/content/model/page";
 import { videosPerStep } from "@/content/doctrine-rules";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { VideoList } from "@/features/doctrine/video-list";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type VideosSectionProps = {
   page: TraditionPage;

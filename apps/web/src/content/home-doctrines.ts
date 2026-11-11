@@ -1,5 +1,5 @@
 import type { DoctrineId } from "@/content/model/ids";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type HomeQuestion = { question: string; draft: true };
 

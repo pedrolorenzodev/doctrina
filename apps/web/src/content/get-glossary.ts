@@ -2,7 +2,7 @@ import glossaryJson from "@data/site/glossary.json" with { type: "json" };
 import type { HistoryIndexGroup } from "@/content/get-history-indexes";
 import type { DoctrineId } from "@/content/model/ids";
 import { glossaryTermHref } from "@/content/routes";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type GlossaryTradition = "catholic" | "orthodox" | "lutheran" | "reformed" | "baptist" | "pentecostal";
 

@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export const PASTORAL_PATTERN =
   /confesarme|confesi[oó]n de mis|absu[eé]lv[ae]me|absoluci[oó]n de mis|bend[ií]ceme|bendecime|bend[ií]game|dame (?:la|una|tu) bendici[oó]n|suicid|estoy en crisis|crisis personal|quiero morir|me siento muy mal|confess my|absolve me|absolution for me|bless me|blessing for me|pray for (?:me|my|us)\b|rez(?:a|á|ar) por (?:m[ií]|mi|nosotros)\b|self-harm|kill myself|want to die/i;

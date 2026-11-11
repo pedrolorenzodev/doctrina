@@ -7,7 +7,7 @@ import { verseLink } from "@/content/page-views";
 import { doctrineHref } from "@/content/routes";
 import { doctrineName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type ConnectedSectionProps = {
   id: string;

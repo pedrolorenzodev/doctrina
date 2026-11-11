@@ -6,7 +6,7 @@ import type { Registry } from "@/content/model/registry";
 import type { UiText } from "@/content/ui-text/types";
 import { parseInline, referencesIn } from "@/lib/inline-refs";
 import type { CitationView } from "@/lib/citation-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export function verseViewId(segments: string[]): string {
   return `verse:${segments.join(",")}`;

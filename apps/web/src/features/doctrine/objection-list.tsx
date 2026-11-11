@@ -5,7 +5,7 @@ import type { DoctrineId, TraditionId } from "@/content/model/ids";
 import type { Objection } from "@/content/model/page";
 import { plainRich, verseLink } from "@/content/page-views";
 import { objectionHref } from "@/content/routes";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type ObjectionListProps = {
   objections: Objection[];

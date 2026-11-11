@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const dates: Record<string, Record<Locale, string>> = {
   "c. 396–397 (Books I–III.35)": { es: "c. 396–397 (libros I–III.35)", en: "c. 396–397 (Books I–III.35)" },

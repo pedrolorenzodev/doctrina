@@ -1,7 +1,7 @@
 import { fatherWorkHref } from "@/content/routes";
 import type { QuoteDate } from "@/content/quote-dating";
 import type { CitationView } from "@/lib/citation-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import type { Quote } from "@/features/reader-ai/quotes";
 import type { AskText } from "@/features/reader-ai/text";
 

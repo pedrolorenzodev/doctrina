@@ -1,6 +1,6 @@
 import type { Father } from "@/content/model/history";
 import type { UiText } from "@/content/ui-text/types";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type FatherFact = { label: string; value: string };
 

@@ -4,7 +4,7 @@ import type { Objection } from "@/content/model/page";
 import { buildVerseView, verseLink } from "@/content/page-views";
 import { registry } from "@/content/registry/index";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type PassageItem = {
   id: string;

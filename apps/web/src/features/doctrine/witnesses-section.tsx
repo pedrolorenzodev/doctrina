@@ -6,7 +6,7 @@ import type { DoctrinePage } from "@/content/model/doctrine-page";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessReference, witnessViewId } from "@/content/witness-view";
 import { WitnessExplorer } from "@/features/doctrine/witness-explorer";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { OriginalScripts } from "@/components/original-scripts";
 
 type WitnessesSectionProps = {

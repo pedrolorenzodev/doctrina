@@ -5,7 +5,7 @@ import { getChapterUses, type VerseUse } from "@/content/get-verse-uses";
 import { getChapterWordCounts } from "@/content/get-chapter-word-view";
 import { getBibleChapter, getBibleTranslations } from "@/content/get-bible";
 import type { BibleVerse, ChapterRef, ChapterStructure } from "@/content/model/bible";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type ReaderTranslationView = {
   id: string;

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { SimplifyAddress } from "@/lib/ai/contracts";
 import { aiErrorStatus, type AiErrorCode } from "@/lib/ai/errors";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import type { SimplifiedEntry, SimplifyStatus } from "@/lib/simplifier-types";
 
 const route = "/api/ai/simplify";

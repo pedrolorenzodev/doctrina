@@ -25,7 +25,7 @@ import { MethodSection } from "@/features/home/method-section";
 import { YearsExplorer } from "@/features/home/years-explorer";
 import { EdgeRuler } from "@/features/shell/edge-ruler";
 import { currentLocale } from "@/lib/current-locale";
-import { localeHref, locales } from "@/lib/locale";
+import { localeHref, locales } from "@doctrina/core/locale";
 
 const councilCitation = "T13c4";
 const fathersExample = { doctrine: "eucharist", witness: "ew-flesh", locale: "es" } as const;

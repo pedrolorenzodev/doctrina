@@ -4,7 +4,7 @@ import type { ObjectorText } from "@/content/get-objector-texts";
 import type { SourceRow } from "@/lib/source-row";
 import { splitSourceName } from "@/content/split-source-name";
 import { timelineSpan, type TimelineSpan } from "@/lib/timeline-span";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type ObjectionSources = {
   answer: SourceRow[];

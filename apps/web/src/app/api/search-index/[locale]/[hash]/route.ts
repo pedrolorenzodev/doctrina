@@ -1,5 +1,5 @@
 import { getSearchIndexAsset } from "@/content/search-index-asset";
-import { locales } from "@/lib/locale";
+import { locales } from "@doctrina/core/locale";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;

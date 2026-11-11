@@ -6,7 +6,7 @@ import { PageMain } from "@/components/page-main";
 import { StatusPage } from "@/components/status-page";
 import { ActionButton, ActionLink } from "@/components/ui/action";
 import { errorText } from "@/content/ui-text/error-text";
-import { defaultLocale, isLocale, localeHref } from "@/lib/locale";
+import { defaultLocale, isLocale, localeHref } from "@doctrina/core/locale";
 
 type ErrorProps = {
   error: Error & { digest?: string };

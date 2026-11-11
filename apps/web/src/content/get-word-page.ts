@@ -16,7 +16,7 @@ import {
 } from "@/content/get-words";
 import type { LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@/content/model/words";
 import { parseLabel } from "@/content/parse-label";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { transliterateGreek } from "@/lib/transliterate-greek";
 
 export type WordGroup =

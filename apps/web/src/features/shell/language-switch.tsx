@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { PressTooltip } from "@/components/ui/press-tooltip";
 import { languageSwitchHref, type LanguageAvailability } from "@/content/language-switch";
-import { locales, type Locale } from "@/lib/locale";
+import { locales, type Locale } from "@doctrina/core/locale";
 import { saveTreeCarry } from "@/lib/tree-carry";
 
 type LanguageSwitchProps = {

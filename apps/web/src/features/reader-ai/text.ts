@@ -1,5 +1,5 @@
 import type { Opening } from "@/features/reader-ai/script";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type AskText = {
   ask: string;

@@ -22,7 +22,7 @@ import { TransliterationSwitch } from "@/features/words/transliteration-switch";
 import { WordFiltersProvider } from "@/features/words/word-filters";
 import { currentLocale } from "@/lib/current-locale";
 import type { CitationView } from "@/lib/citation-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const dataSource = "https://github.com/STEPBible/STEPBible-Data";
 const sourceId = "word-source";

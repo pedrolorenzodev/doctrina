@@ -1,5 +1,5 @@
 import { hasItemName, itemName, itemShortName } from "@/content/item-names";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const fatherOfWork: Record<string, string> = {
   "1-clement": "clement-of-rome",

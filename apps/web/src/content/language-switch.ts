@@ -1,5 +1,5 @@
-import type { Locale } from "@/lib/locale";
-import { localeHref } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
+import { localeHref } from "@doctrina/core/locale";
 import { swapBibleLocale } from "./bible-routes";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "./model/ids";
 import {

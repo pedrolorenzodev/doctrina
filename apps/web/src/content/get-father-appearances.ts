@@ -4,7 +4,7 @@ import { earlyChristiansHref } from "@/content/routes";
 import { doctrineName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessReference } from "@/content/witness-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type FatherAppearance = { id: string; title: string; note: string; href: string };
 

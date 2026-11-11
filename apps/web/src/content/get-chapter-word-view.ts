@@ -2,7 +2,7 @@ import { getBibleBook } from "@/content/bible-books";
 import { getChapterWords, getLexiconBrief, getParseNames } from "@/content/get-words";
 import { parseLabel } from "@/content/parse-label";
 import type { VerseWord, WordLanguage } from "@/content/model/words";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type WordView = {
   g: string;

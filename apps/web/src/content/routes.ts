@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { bibleSegments } from "./bible-segments";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "./model/ids";
 

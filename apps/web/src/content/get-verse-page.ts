@@ -3,7 +3,7 @@ import { getChapterWordView, type WordLexiconView, type WordView } from "@/conte
 import { getChapterUses, type VerseUse } from "@/content/get-verse-uses";
 import { getReaderChapter } from "@/content/get-reader-chapter";
 import type { WordLanguage } from "@/content/model/words";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type VerseNeighbor = { verse: number; text: string };
 

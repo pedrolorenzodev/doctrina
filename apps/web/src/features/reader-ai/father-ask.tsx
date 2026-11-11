@@ -6,7 +6,7 @@ import type { QuoteDate } from "@/content/quote-dating";
 import { fatherScript } from "@/features/reader-ai/father-script";
 import { ReaderAsk } from "@/features/reader-ai/reader-ask";
 import type { AskText } from "@/features/reader-ai/text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type FatherAskProps = {
   locale: Locale;

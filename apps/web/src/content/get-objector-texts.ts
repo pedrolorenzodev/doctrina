@@ -9,7 +9,7 @@ import type { Registry } from "@/content/model/registry";
 import { registry } from "@/content/registry/index";
 import type { SourceRow } from "@/lib/source-row";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const data: Registry = registry;
 

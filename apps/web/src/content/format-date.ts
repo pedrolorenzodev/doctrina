@@ -1,5 +1,5 @@
 import type { DateInfo } from "@/content/model/registry";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const months: Record<Locale, string[]> = {
   es: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],

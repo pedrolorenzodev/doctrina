@@ -7,7 +7,7 @@ import { councilHref, currentHref, divisionHref, fatherHref, movementHref } from
 import type { HistoryEntities } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { firstSentence } from "@/lib/first-sentence";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type Localized = { es: string; en: string };
 

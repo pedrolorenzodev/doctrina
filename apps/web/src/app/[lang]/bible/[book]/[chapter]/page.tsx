@@ -23,7 +23,7 @@ import { ReaderAsk } from "@/features/reader-ai/reader-ask";
 import { bibleChapters } from "@/features/reader-ai/quotes";
 import { askText } from "@/features/reader-ai/text";
 import { currentLocale } from "@/lib/current-locale";
-import { locales, type Locale } from "@/lib/locale";
+import { locales, type Locale } from "@doctrina/core/locale";
 import { leanBuild } from "@/lib/lean-build";
 
 export async function generateStaticParams() {

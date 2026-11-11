@@ -7,7 +7,7 @@ import type { Witness } from "@/content/model/doctrine-page";
 import { highlightParagraph } from "@/content/witness-paragraph";
 import { fatherDivisionHref } from "@/content/routes";
 import { witnessReference } from "@/content/witness-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { nbspBeforeDigits } from "@/lib/locator";
 import { OriginalScripts } from "@/components/original-scripts";
 

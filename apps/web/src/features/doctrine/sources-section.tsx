@@ -4,7 +4,7 @@ import { Section } from "@/components/section";
 import { GroupHeading } from "@/components/group-heading";
 import type { ObjectionSources } from "@/content/get-objection-sources";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type SourcesSectionProps = {
   id: string;

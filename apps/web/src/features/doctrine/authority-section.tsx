@@ -6,7 +6,7 @@ import type { TraditionPage } from "@/content/model/page";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { SourceLinks } from "@/features/doctrine/source-links";
 import { StatementLink } from "@/features/doctrine/statement-link";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { finalStop, withoutFinalStop } from "@/lib/punctuation";
 
 type AuthoritySectionProps = {

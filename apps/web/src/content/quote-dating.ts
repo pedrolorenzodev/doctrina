@@ -7,7 +7,7 @@ import { en } from "@/content/ui-text/en";
 import { es } from "@/content/ui-text/es";
 import type { UiText } from "@/content/ui-text/types";
 import type { CitationView } from "@/lib/citation-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type QuoteDate = NonNullable<CitationView["date"]>;
 

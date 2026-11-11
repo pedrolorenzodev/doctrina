@@ -1,5 +1,5 @@
 import type { ReaderChapter } from "@/content/get-reader-chapter";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const loaded = new Map<string, Promise<ReaderChapter | null>>();
 

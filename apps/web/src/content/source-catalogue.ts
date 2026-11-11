@@ -1,6 +1,6 @@
 import v1 from "@data/raw/v1.json" with { type: "json" };
 import sourcesExtra from "@data/site/sources.extra.json" with { type: "json" };
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type Localized = Record<Locale, string>;
 export type CatalogueSource = {

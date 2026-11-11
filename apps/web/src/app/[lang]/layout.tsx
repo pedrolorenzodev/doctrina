@@ -16,7 +16,7 @@ import { SmoothScroll } from "@/features/shell/smooth-scroll";
 import { TopBar } from "@/features/shell/top-bar";
 import { currentLocale } from "@/lib/current-locale";
 import { shareImage, siteUrl } from "@/lib/site-url";
-import { locales } from "@/lib/locale";
+import { locales } from "@doctrina/core/locale";
 import "@/app/globals.css";
 
 export function generateStaticParams() {

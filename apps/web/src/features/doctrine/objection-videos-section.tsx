@@ -3,7 +3,7 @@ import { Section } from "@/components/section";
 import type { Objection, TraditionPage } from "@/content/model/page";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { VideoItem } from "@/features/doctrine/video-item";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type ObjectionVideosSectionProps = {
   id: string;

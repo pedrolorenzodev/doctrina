@@ -1,5 +1,5 @@
 import names from "@data/site/names.json" with { type: "json" };
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type ItemNameRecord = {
   name: Record<Locale, string>;

@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export const bookNames: Record<string, Record<Locale, string>> = {
   Gen: { es: "Génesis", en: "Genesis" },

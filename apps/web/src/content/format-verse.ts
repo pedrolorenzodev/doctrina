@@ -1,6 +1,6 @@
 import { bookNames } from "@/content/verse-names";
 import { nbspBeforeDigits } from "@/lib/locator";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type Point = { book: string; chapter: number; verse: number | null };
 

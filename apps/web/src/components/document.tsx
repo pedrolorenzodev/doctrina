@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { ThemeScript } from "@/components/theme-script";
 import { fontVariables } from "@/lib/fonts";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type DocumentProps = {
   lang: Locale;

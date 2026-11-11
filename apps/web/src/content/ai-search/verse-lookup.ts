@@ -1,7 +1,7 @@
 import { biblePassage, bibleOrdinal, osisParts } from "@/content/ai-search/collections";
 import type { Passage } from "@/content/ai-search/types";
 import { getBibleVerseTexts } from "@/content/get-bible";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export async function lookupVerseRefs(refs: string[], translationId: string, locale: Locale): Promise<Passage[]> {
   const wanted = refs.flatMap((ref) => {

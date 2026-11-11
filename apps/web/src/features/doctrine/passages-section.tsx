@@ -7,7 +7,7 @@ import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { GroupHeading } from "@/components/group-heading";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const shownObjectorPassages = 4;
 const itemClassName = "border-t border-rule pt-4.5 pb-4.75";

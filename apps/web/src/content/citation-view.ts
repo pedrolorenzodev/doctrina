@@ -5,7 +5,7 @@ import type { DocLang } from "@/content/model/ids";
 import type { Excerpt, Passage, Registry } from "@/content/model/registry";
 import type { UiText } from "@/content/ui-text/types";
 import { itemName } from "@/content/item-names";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const fallbackOrder: DocLang[] = ["la", "en", "es", "de", "el"];
 

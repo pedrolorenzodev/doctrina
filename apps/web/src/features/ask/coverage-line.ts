@@ -1,5 +1,5 @@
 import type { AskRequest } from "@/lib/ai/contracts";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { bibleTranslationName, doctrineSubjects } from "@/content/ai-search/collections";
 import type { Coverage, VerseTarget } from "@/content/ai-search/types";
 import { formatVerseRef } from "@/content/format-verse";

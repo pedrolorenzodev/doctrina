@@ -6,7 +6,7 @@ import { sortChapters } from "@/content/bible/chapter-neighbors";
 import { redSpansOf } from "@/content/bible/red-letters";
 import { localDataDir } from "@/content/local-data-dir";
 import type { BibleTranslation, ChapterStructure, ChapterSummary } from "@/content/model/bible";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type StructureEntry = { s: [number, string][]; p: number[] };
 

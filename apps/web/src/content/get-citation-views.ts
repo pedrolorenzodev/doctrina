@@ -3,7 +3,7 @@ import type { CitationView } from "@/lib/citation-view";
 import { buildCitationView } from "@/content/citation-view";
 import { registry } from "@/content/registry/index";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export function getCitationViews(ids: string[], locale: Locale): Record<string, CitationView> {
   const text = getUiText(locale);

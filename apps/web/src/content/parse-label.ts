@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const spanishWords: Record<string, string> = {
   absolute: "absoluto",

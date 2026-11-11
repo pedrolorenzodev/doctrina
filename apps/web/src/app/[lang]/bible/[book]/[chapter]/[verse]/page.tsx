@@ -23,7 +23,7 @@ import { VerseTranslationPicker } from "@/features/verse/verse-translation-picke
 import { VerseUsesGroups, VerseUsesSide, type VerseUseGroup } from "@/features/verse/verse-uses";
 import { VerseWordsView } from "@/features/verse/verse-words";
 import { currentLocale } from "@/lib/current-locale";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export function generateStaticParams() {
   return [];

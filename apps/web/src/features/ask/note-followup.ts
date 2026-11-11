@@ -1,5 +1,5 @@
 import type { AskRequest, ModelAnswer, WireNoteFollowup } from "@/lib/ai/contracts";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import type { PackPassage } from "@/content/ai-search/types";
 import { en } from "@/content/ui-text/en";
 import { es } from "@/content/ui-text/es";

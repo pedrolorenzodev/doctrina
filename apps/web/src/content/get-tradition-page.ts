@@ -5,7 +5,7 @@ import { spanishPages } from "@/content/pages/index";
 import { shownScripture } from "@/content/shown-passages";
 import { registry } from "@/content/registry/index";
 import { validateContent } from "@/content/validate";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 const problems = validateContent(registry, spanishPages);
 if (problems.length > 0) throw new Error(`Invalid content:\n${problems.slice(0, 20).join("\n")}`);

@@ -71,6 +71,26 @@ const cases = [
     'export const page = { title: "La posición católica", lang: "es", el: 1, de: 2 };',
     null,
   ],
+  ["packages/core/src/a.ts", 'import { useState } from "react";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { x } from "react-dom/client";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { readFileSync } from "node:fs";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { readFileSync } from "fs";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { revalidateTag } from "next/cache";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import "server-only";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { View } from "react-native";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { x } from "expo-sqlite";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { x } from "@/lib/x";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { x } from "./x";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'import { x } from "../x";', "no-restricted-imports"],
+  ["packages/core/src/a.ts", 'export const a = localStorage.getItem("a");', "no-restricted-globals"],
+  ["packages/core/src/a.ts", "export const a = window.innerWidth;", "no-restricted-globals"],
+  ["packages/core/src/a.ts", "export const a = document.title;", "no-restricted-globals"],
+  ["packages/core/src/a.ts", "export const a = navigator.language;", "no-restricted-globals"],
+  ["packages/core/src/a.ts", "export const a = process.env.A;", "no-restricted-globals"],
+  ["packages/core/src/a.ts", "export const a = crypto.randomUUID();", "no-restricted-globals"],
+  ["packages/core/src/a.ts", "export const listaDeCitas = [];", "doctrina/english-names"],
+  ["packages/core/src/a.ts", 'import { x } from "@doctrina/core/locale"; export const a = x;', null],
+  ["packages/core/src/a.ts", 'export const a = setTimeout(() => {}, 1); console.log("a");', null],
 ];
 
 const eslint = new ESLint();
@@ -80,7 +100,14 @@ for (const [filePath, code, expected] of cases) {
   const [result] = await eslint.lintText(code, { filePath });
   const ids = (result?.messages ?? []).map((m) => m.ruleId ?? m.message);
   const ours = ids.filter((id) =>
-    ["doctrina/layers", "doctrina/english-names", "react/jsx-no-literals", "no-restricted-syntax"].includes(id),
+    [
+      "doctrina/layers",
+      "doctrina/english-names",
+      "react/jsx-no-literals",
+      "no-restricted-syntax",
+      "no-restricted-imports",
+      "no-restricted-globals",
+    ].includes(id),
   );
   const fatal = (result?.messages ?? []).some((m) => m.fatal);
   const ok = !fatal && (expected ? ours.includes(expected) : ours.length === 0);

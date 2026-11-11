@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 import { withBotId } from "botid/next/config";
 import { spanishRewrites } from "./src/content/routes";
-import { defaultLocale } from "./src/lib/locale";
+import { defaultLocale } from "@doctrina/core/locale";
 
 const nextConfig: NextConfig = {
   experimental: { globalNotFound: true },

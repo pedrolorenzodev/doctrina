@@ -21,7 +21,7 @@ import {
 import { doctrineName, doctrineSubject, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessReference } from "@/content/witness-view";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { pathSeparator } from "@/lib/punctuation";
 import type { SearchEntry } from "@/lib/search-match";
 

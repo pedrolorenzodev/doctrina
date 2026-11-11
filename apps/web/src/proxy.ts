@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { isLocale } from "@/lib/locale";
+import { isLocale } from "@doctrina/core/locale";
 
 const robotsBody = "User-agent: *\nDisallow: /\n";
 const botIdPathSegment = "149e9513-01fa-4fb0-aad4-566afd725d1b";

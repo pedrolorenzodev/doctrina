@@ -11,7 +11,7 @@ import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { shownScripture } from "@/content/shown-passages";
 import { passagesHref } from "@/content/routes";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type ScriptureSectionProps = {
   page: TraditionPage;

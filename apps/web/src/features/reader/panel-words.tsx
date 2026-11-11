@@ -7,7 +7,7 @@ import type { ChapterWordView, WordView } from "@/content/get-chapter-word-view"
 import { wordHref } from "@/content/routes";
 import { loadChapterWords, loadedChapterWords } from "@/features/reader/chapter-words";
 import { foldCard } from "@/lib/card-fold";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { getTransliteration, serverTransliteration, subscribeTransliteration } from "@/lib/transliteration";
 
 export type PanelWordsText = {

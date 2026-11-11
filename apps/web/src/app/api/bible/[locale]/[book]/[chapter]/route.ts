@@ -1,7 +1,7 @@
 import { getBibleBook } from "@/content/bible-books";
 import { getReadableChapters } from "@/content/get-bible";
 import { getReaderChapter } from "@/content/get-reader-chapter";
-import { locales } from "@/lib/locale";
+import { locales } from "@doctrina/core/locale";
 import { leanBuild } from "@/lib/lean-build";
 
 export const dynamic = "force-static";

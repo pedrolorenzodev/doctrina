@@ -5,7 +5,7 @@ import type { DoctrinePage, PracticeCell } from "@/content/model/doctrine-page";
 import { traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { closeParenthesis, finalStop, openParenthesis } from "@/lib/punctuation";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type PracticeSectionProps = {
   id: string;

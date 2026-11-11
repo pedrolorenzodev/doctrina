@@ -3,7 +3,7 @@ import { biblePassage, bibleOrdinal, fatherNames, osisParts, passageFromRow } fr
 import type { AuthorEntry, CorpusSearch, Passage, PassageRow } from "@/content/ai-search/types";
 import { scoreText } from "@/content/ai-search/windows";
 import { workName } from "@/content/father-work-links";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 type FixtureVerse = { translationId: string; book: string; chapter: number; verse: number; text: string };
 

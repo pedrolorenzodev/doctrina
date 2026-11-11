@@ -8,7 +8,7 @@ import type { Father, TraditionPage } from "@/content/model/page";
 import { verseLink } from "@/content/page-views";
 import { doctrineHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { closeParenthesis, openParenthesis } from "@/lib/punctuation";
 
 type WhySectionProps = {

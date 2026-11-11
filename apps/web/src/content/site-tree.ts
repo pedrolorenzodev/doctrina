@@ -40,7 +40,7 @@ import {
 import { bibleBookRoute, bibleChapterBase, bibleChapterHref } from "@/content/bible-routes";
 import { bibleBooks, bookListName, getBibleBook } from "@/content/bible-books";
 import { bookNames } from "@/content/verse-names";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type TreeNode = {
   id: string;

@@ -1,5 +1,5 @@
 import { citationDate, fatherWorkDate, type QuoteDate } from "@/content/quote-dating";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import type { Quote } from "@/features/reader-ai/quotes";
 
 const registryCitationOfQuote: Record<string, string> = {

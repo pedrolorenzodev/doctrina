@@ -36,7 +36,7 @@ import { useChapterHighlights } from "@/features/reader/use-chapter-highlights";
 import { useChapterNotes } from "@/features/reader/use-chapter-notes";
 import { useChosenTranslation } from "@/lib/use-chosen-translation";
 import { useSecondMode, useSecondTranslation, useSideRoom } from "@/features/reader/use-second-translation";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 import { chooseSecondTranslation } from "@/lib/second-translation";
 import { chooseTranslation } from "@/lib/translation-choice";
 import { useUndo } from "@/features/reader/use-undo";

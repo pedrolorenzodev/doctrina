@@ -1,6 +1,6 @@
 import { bibleBooks, getBibleBook, type BibleBook } from "@/content/bible-books";
 import { bibleSegments } from "@/content/bible-segments";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 function slugify(name: string): string {
   return name

@@ -1,7 +1,7 @@
 import { bibleBooks, bookListName, type BibleSection } from "@/content/bible-books";
 import { bibleChapterBase } from "@/content/bible-routes";
 import { getBibleChapterCounts } from "@/content/get-bible";
-import type { Locale } from "@/lib/locale";
+import type { Locale } from "@doctrina/core/locale";
 
 export type BookEntry = {
   id: string;
