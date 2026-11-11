@@ -1,13 +1,3 @@
-<!-- BEGIN:nextjs-agent-rules -->
-
-# This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
-
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
-
 # Doctrina
 
 Bilingual (es/en) deep-study resource on Christian doctrine. What it is, scope and architecture: `docs/PROJECT.md`. The owner is Pedro: talk to Pedro in Spanish (Rioplatense), very briefly, and explain technical concepts concretely.
@@ -58,7 +48,7 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 8. Language: the whole repo is in English (docs, code, names, comments, commits). Only site content and UI strings are bilingual (es/en). Conversation with Pedro is in Spanish. `npm run lint` rejects Spanish file names and identifiers (DECISIONS 2026-10-23); never add an exception to silence it.
 9. Comments: only `TODO` or to silence a tool (`eslint-disable`, `@ts-expect-error`). Nothing that explains what the code does or why a value was chosen, including doc-comments on types, props and data. If something only makes sense with a paragraph beside it, the code is the problem: a better name, or split it. What the comment would have said goes to `docs/GOTCHAS.md`.
    **Single exception: the guard.** One line, only where an innocent local edit silently breaks something non-local. It doesn't explain, it warns that there is a wire; its why goes to `GOTCHAS.md`. Before writing one, try to make the constraint unbreakable (a name that says it). Applies going forward; don't clean existing comments unless asked.
-- Structure: `src/app` (routing only) → `src/features` (one domain per folder) → `src/content` (data access) | `src/components` → `src/lib`. Dependencies flow one way, no imports between features; a lint rule enforces it. Server Components by default; `"use client"` only where interactivity requires it, as low in the tree as possible. Details and rationale: `docs/PROJECT.md`.
+- Structure: `apps/web/src/app` (routing only) → `apps/web/src/features` (one domain per folder) → `apps/web/src/content` (data access) | `apps/web/src/components` → `apps/web/src/lib`. Dependencies flow one way, no imports between features; a lint rule enforces it. Server Components by default; `"use client"` only where interactivity requires it, as low in the tree as possible. Details and rationale: `docs/PROJECT.md`.
 - Files in kebab-case that say what they do. Named exports, one main component per file; default exports only where Next requires them (`page`, `layout`, `not-found`, `loading`, `error`, `template`, `default`, metadata image files). Imports via `@/…`, never long relative paths.
 - Componentize and reuse before writing new code. No over-engineering, no abstraction for a second use case that doesn't exist yet. Folders, tokens, components and abstractions are created only when a concrete piece needs them.
 
@@ -110,4 +100,4 @@ Iterate on the same page, keeping the previous version beside it. When approved,
 
 ## Commands
 
-Node 24: `nvm use` first. `npm run dev` · `npm run verify` (= `typecheck` + `lint` with its rule fixtures and tool checks + `format:check` + `build`) · `npm run e2e` (Playwright specs in `e2e/`, after a build; every animation, focus and scroll behaviour is tested there) · `npm run typecheck` (`next typegen && tsc --noEmit`) · `npm run format` · `npm run shot -- <route> <out.png> [w] [h] [full] [theme]` · `npm run components [word]`.
+Node 24: `nvm use` first. All commands run from the repo root (npm workspaces: the web app is `apps/web`, package `@doctrina/web`; Next config and `.env.local` live there). `npm run dev` · `npm run verify` (= `typecheck` + `lint` with its rule fixtures and tool checks + `format:check` + `build`) · `npm run e2e` (Playwright specs in `apps/web/e2e/`, after a build; every animation, focus and scroll behaviour is tested there) · `npm run typecheck` (`next typegen && tsc --noEmit`) · `npm run format` · `npm run shot -- <route> <out.png> [w] [h] [full] [theme]` · `npm run components [word]`.

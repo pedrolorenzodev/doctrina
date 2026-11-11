@@ -18,12 +18,12 @@ How to turn a design Pedro approved in an artifact into the site, as an exact re
 ## Building
 
 - Blocks of one section or component, each verified before the next (`AGENTS.md` rule 10). Number kit blocks continuously; freeze each with `snapshot.py`, remove `docs/` from the block folder, give Pedro the `apply.sh` numbers.
-- Real data only, through a loader in `src/content/` (the home: `get-home-timeline.ts` from `data/site/history.json`). Where the data disagrees with the proposal's text, the data wins and the difference is listed (councils marked approximate read «c. 49»).
+- Real data only, through a loader in `apps/web/src/content/` (the home: `get-home-timeline.ts` from `data/site/history.json`). Where the data disagrees with the proposal's text, the data wins and the difference is listed (councils marked approximate read «c. 49»).
 - Reuse the site's components where the proposal had a local copy of the same thing (`MoreButton`, `InPlaceLink`, `Tooltip`, the drawer, the top bar, `RevealList`, the edge ruler); list each 1–2 px difference this causes.
 - Port behaviour, not shortcuts: copy constants (durations, delays, snaps, thresholds) from the script, then fix what the proposal does wrong and say so (its FLIP snapped rows when interrupted; ours continues from the visible position).
 - Positions computed at runtime go through CSS variables (`style={{ "--x": … }}` + `left-(--x)`); vertical geometry that depends on the width is computed per range in CSS (`years-rows`), never from a measured width, so nothing jumps on load.
 - Before adding an `@utility` or token, grep for the name: Tailwind 4 silently merges two utilities with the same name (GOTCHAS).
-- Nested list changes use `flipKeyed` (`src/lib/keyed-flip.ts`) with the change wrapped in `flushSync`.
+- Nested list changes use `flipKeyed` (`apps/web/src/lib/keyed-flip.ts`) with the change wrapped in `flushSync`.
 
 ## Verifying each block
 
