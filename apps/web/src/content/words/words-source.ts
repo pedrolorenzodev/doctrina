@@ -1,4 +1,4 @@
-import type { ChapterWords, LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@/content/model/words";
+import type { ChapterWords, LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@doctrina/core/model/words";
 
 export type WordBrief = { lemma: string; tr: string; n: number; verses: number };
 

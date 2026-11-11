@@ -16,7 +16,7 @@ import { formatLocator } from "@/content/format-locator";
 import { formatVerseRef } from "@/content/format-verse";
 import { spanishDoctrinePages, spanishPages } from "@/content/pages/index";
 import { registry } from "@/content/registry/index";
-import { parseInline } from "@/lib/inline-refs";
+import { parseInline } from "@doctrina/core/inline-refs";
 import { count, credentials, rest, sha256 } from "./supabase-load.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..", "..");

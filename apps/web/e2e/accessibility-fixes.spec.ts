@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { hasCorpus } from "./helpers";
+import { hasCorpus, hasWords } from "./helpers";
 
 const openAt = async (page: Page, path: string, width: number, scheme: "light" | "dark" = "light") => {
   await page.emulateMedia({ colorScheme: scheme });
@@ -63,12 +63,14 @@ for (const path of [
 ]) {
   test(`${path}: every Greek or Hebrew run carries its own lang`, async ({ page }) => {
     test.skip(!hasCorpus && path.includes("augustine"));
+    test.skip(!hasWords && path.includes("/palabras/"), "needs the local word-study data");
     await openAt(page, path, 1440);
     expect(await scan(page)).toEqual([]);
   });
 }
 
 test("a wrapped filter's pad covers only the chosen option", async ({ page }) => {
+  test.skip(!hasWords, "needs the local word-study data");
   await openAt(page, "/es/palabras/G4561", 390);
   const group = page.getByRole("group", { name: "Forma" });
   await group.scrollIntoViewIfNeeded();
@@ -87,6 +89,7 @@ test("a wrapped filter's pad covers only the chosen option", async ({ page }) =>
 });
 
 test("a wrapped filter's pad follows the chosen option onto another row", async ({ page }) => {
+  test.skip(!hasWords, "needs the local word-study data");
   await openAt(page, "/es/palabras/G4561", 390);
   const group = page.getByRole("group", { name: "Forma" });
   await group.scrollIntoViewIfNeeded();

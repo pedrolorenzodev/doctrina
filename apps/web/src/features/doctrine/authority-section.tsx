@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 import { RevealList } from "@/components/reveal-list";
 import { Section } from "@/components/section";
-import { churchGrades } from "@/content/model/ids";
-import type { TraditionPage } from "@/content/model/page";
+import { churchGrades } from "@doctrina/core/model/ids";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { SourceLinks } from "@/features/doctrine/source-links";
 import { StatementLink } from "@/features/doctrine/statement-link";
 import type { Locale } from "@doctrina/core/locale";
-import { finalStop, withoutFinalStop } from "@/lib/punctuation";
+import { finalStop, withoutFinalStop } from "@doctrina/core/punctuation";
 
 type AuthoritySectionProps = {
   page: TraditionPage;

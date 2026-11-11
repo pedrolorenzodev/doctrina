@@ -1,6 +1,6 @@
 import "server-only";
-import type { DoctrineId, TraditionId } from "@/content/model/ids";
-import type { TraditionPage } from "@/content/model/page";
+import type { DoctrineId, TraditionId } from "@doctrina/core/model/ids";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { spanishPages } from "@/content/pages/index";
 import { shownScripture } from "@/content/shown-passages";
 import { registry } from "@/content/registry/index";

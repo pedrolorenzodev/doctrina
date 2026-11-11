@@ -1,6 +1,6 @@
 import "server-only";
 import { getPublishedDoctrines } from "@/content/get-doctrine-page";
-import type { DoctrineId } from "@/content/model/ids";
+import type { DoctrineId } from "@doctrina/core/model/ids";
 import { doctrineHref } from "@/content/routes";
 import { doctrineName } from "@/content/site-tree";
 import type { Locale } from "@doctrina/core/locale";

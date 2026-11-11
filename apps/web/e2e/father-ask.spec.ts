@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow, preferEnglishFatherEdition } from "./helpers";
+import { hasFathers, horizontalOverflow, preferEnglishFatherEdition } from "./helpers";
 
 const smyrnaeans = "/es/historia/obras/ignatius-smyrnaeans";
 const strip = "main [data-reader-strip]";
@@ -39,6 +39,7 @@ const select = async (page: Page, locator: string, words: string) => {
 };
 
 test.describe("Fathers' reader: the AI chat", () => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   test.beforeEach(async ({ page }) => {
     await preferEnglishFatherEdition(page);
   });

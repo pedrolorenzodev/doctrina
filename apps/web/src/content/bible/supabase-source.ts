@@ -1,7 +1,7 @@
 import type { BibleSource } from "@/content/bible/bible-source";
 import { sortChapters } from "@/content/bible/chapter-neighbors";
-import { redSpansOf } from "@/content/bible/red-letters";
-import type { BibleTranslation, BibleVerse, ChapterStructure, ChapterSummary } from "@/content/model/bible";
+import { redSpansOf } from "@doctrina/core/bible/red-letters";
+import type { BibleTranslation, BibleVerse, ChapterStructure, ChapterSummary } from "@doctrina/core/model/bible";
 import { createSupabaseSelect } from "@/content/supabase-rest";
 import type { Locale } from "@doctrina/core/locale";
 

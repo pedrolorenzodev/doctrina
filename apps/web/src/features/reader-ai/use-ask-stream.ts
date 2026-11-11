@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useRef } from "react";
 import type { AskMoreResponse, AskPhase, AskRequest, WireAnswer } from "@/lib/ai/contracts";
 import { aiErrorBody, aiErrorStatus, type AiErrorBody, type AiErrorCode } from "@/lib/ai/errors";
-import type { Highlight } from "@/lib/highlights";
-import { sameChapter, type ChapterKey, type Note } from "@/lib/notes";
+import type { Highlight } from "@doctrina/core/highlights";
+import { sameChapter, type ChapterKey, type Note } from "@doctrina/core/notes";
 
 const askRoute = "/api/ai/ask";
 const moreRoute = "/api/ai/ask/more";

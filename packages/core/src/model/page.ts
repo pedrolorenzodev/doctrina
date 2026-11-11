@@ -1,5 +1,5 @@
-import type { DoctrineId, TraditionId, UnclassifiedReason } from "@/content/model/ids";
-import type { DateInfo } from "@/content/model/registry";
+import type { DoctrineId, TraditionId, UnclassifiedReason } from "@doctrina/core/model/ids";
+import type { DateInfo } from "@doctrina/core/model/registry";
 
 export type Rich = string;
 

@@ -1,7 +1,7 @@
 import "server-only";
 import { getFather } from "@/content/get-fathers";
 import { getCouncilPage } from "@/content/get-history-pages";
-import type { Witness } from "@/content/model/doctrine-page";
+import type { Witness } from "@doctrina/core/model/doctrine-page";
 import { councilHref, fatherHref } from "@/content/routes";
 import type { Locale } from "@doctrina/core/locale";
 

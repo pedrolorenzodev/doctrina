@@ -7,7 +7,7 @@ import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPageViews } from "@/content/get-page-views";
 import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
-import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
+import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@doctrina/core/model/ids";
 import { officialObjections } from "@/content/official-objections";
 import { objectionsPageText } from "@/content/objections-page-text";
 import { objectionsHref, traditionHref } from "@/content/routes";

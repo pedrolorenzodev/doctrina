@@ -1,4 +1,4 @@
-import { InlineSyntaxError, parseInline, referencesIn } from "../apps/web/src/lib/inline-refs.ts";
+import { InlineSyntaxError, parseInline, referencesIn } from "@doctrina/core/inline-refs";
 
 const text = (t) => ({ kind: "text", text: t });
 

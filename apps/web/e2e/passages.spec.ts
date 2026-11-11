@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import { hasCorpus } from "./helpers";
 
 const route = "/es/doctrinas/bautismo/catolica/pasajes";
 
 test("the page shows the first passage with its title, the reader link and every edition", async ({ page }) => {
+  test.skip(!hasCorpus, "needs the local Bible corpus");
   await page.goto(route);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Los pasajes de la posición católica");
   await expect(page.getByRole("heading", { level: 2 })).toHaveText(/Juan\s3:3–8/);
@@ -16,6 +18,7 @@ test("the page shows the first passage with its title, the reader link and every
 });
 
 test("changing the translation switches the text and persists in the reader's choice", async ({ page }) => {
+  test.skip(!hasCorpus, "needs the local Bible corpus");
   await page.goto(route);
   await page.getByRole("group", { name: "Traducción" }).getByRole("button", { name: "BSB" }).click();
   await expect(page.getByText("Jesus answered").first()).toBeVisible();
@@ -96,6 +99,7 @@ test("no horizontal overflow at 360", async ({ page }) => {
 });
 
 test("«Leer en el lector» lands with the verse as the third visible one", async ({ page }) => {
+  test.skip(!hasCorpus, "needs the local Bible corpus");
   await page.goto(`${route}#acts-2-37-acts-2-42`);
   await page.getByRole("link", { name: /Leer en el lector/ }).click();
   await expect(page).toHaveURL(/\/hechos\/2\?place=third#v-37$/);
@@ -144,6 +148,7 @@ test("the left ruler's bars swell smoothly, frame by frame, not in one step", as
 });
 
 test("the first HTML carries only the first passage: the rest loads on demand", async ({ request }) => {
+  test.skip(!hasCorpus, "needs the local Bible corpus");
   const html = await (await request.get(route)).text();
   expect(html).toContain("no naciere de agua");
   expect(html).not.toContain("make disciples of all nations");

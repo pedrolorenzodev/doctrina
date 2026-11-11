@@ -7,7 +7,7 @@ import { TimelineMarks } from "@/components/timeline-marks";
 import { PageLink } from "@/components/ui/page-link";
 import type { GeneralEntry, GeneralSection } from "@/content/get-general-timeline";
 import { at, px, vars } from "@/lib/css-vars";
-import { listSeparator } from "@/lib/punctuation";
+import { listSeparator } from "@doctrina/core/punctuation";
 import { scrollToElement } from "@/lib/scroll";
 import { packRows, pixelsOf, placeItem, type PlacedItem, type Scale } from "@/lib/timeline-layout";
 import { useFontsReady, useLabelMeasure } from "@/lib/use-timeline-box";

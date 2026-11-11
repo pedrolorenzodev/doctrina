@@ -11,7 +11,7 @@ import { splitSentences } from "@/lib/ai/sentences";
 import { verifyQuote } from "@/lib/ai/verify-quote";
 import type { PackPassage } from "@/content/ai-search/types";
 import { quotedShare, scoreText, termStems, tokenize } from "@/content/ai-search/windows";
-import { traditionIds, type TraditionId } from "@/content/model/ids";
+import { traditionIds, type TraditionId } from "@doctrina/core/model/ids";
 import { anchoredSpan, bestSpan, sentenceAround, wordCount, wordsSpan, type Span } from "@/features/ask/excerpt";
 import { fatherAssignmentHit, verdictHit } from "@/features/ask/lexicon";
 

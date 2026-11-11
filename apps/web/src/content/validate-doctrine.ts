@@ -1,10 +1,10 @@
-import type { DoctrinePage } from "@/content/model/doctrine-page";
-import type { TraditionPage } from "@/content/model/page";
-import type { Registry } from "@/content/model/registry";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
+import type { TraditionPage } from "@doctrina/core/model/page";
+import type { Registry } from "@doctrina/core/model/registry";
 import { missingVerses, reviewVocabulary, sectionIds, walkStrings } from "@/content/validate";
 import { fathers } from "@/content/history/fathers";
 import { highlightParagraph } from "@/content/witness-paragraph";
-import { InlineSyntaxError, parseInline, referencesIn } from "@/lib/inline-refs";
+import { InlineSyntaxError, parseInline, referencesIn } from "@doctrina/core/inline-refs";
 
 export function validateDoctrinePages(
   registry: Registry,

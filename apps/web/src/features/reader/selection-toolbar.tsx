@@ -6,7 +6,7 @@ import { HighlightColors } from "@/features/reader/highlight-colors";
 import { readSelection, type ReaderSelection, type VerseRange } from "@/features/reader/read-selection";
 import { useSearch } from "@/components/search-provider";
 import { escapePriority, registerEscape } from "@/lib/escape-stack";
-import type { HighlightColor } from "@/lib/highlights";
+import type { HighlightColor } from "@doctrina/core/highlights";
 
 type SelectionToolbarText = {
   label: string;

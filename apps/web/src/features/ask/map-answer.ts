@@ -5,7 +5,7 @@ import { bibleChapterHref } from "@/content/bible-routes";
 import { collectionLabels, traditionLabels } from "@/content/ai-search/collections";
 import { passageDate } from "@/content/quote-dating";
 import type { PackPassage } from "@/content/ai-search/types";
-import type { TraditionId } from "@/content/model/ids";
+import type { TraditionId } from "@doctrina/core/model/ids";
 import { fixedTexts } from "@/features/ask/fixed-texts";
 import { capSpans } from "@/features/ask/excerpt";
 import { quoteIdOf, type About, type Verified } from "@/features/ask/verify-answer";

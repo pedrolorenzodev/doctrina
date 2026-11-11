@@ -1,6 +1,6 @@
 import { RevealList } from "@/components/reveal-list";
 import { Section } from "@/components/section";
-import type { Objection, TraditionPage } from "@/content/model/page";
+import type { Objection, TraditionPage } from "@doctrina/core/model/page";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { VideoItem } from "@/features/doctrine/video-item";
 import type { Locale } from "@doctrina/core/locale";

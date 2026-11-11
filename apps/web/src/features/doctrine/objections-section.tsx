@@ -1,7 +1,7 @@
 import { Section } from "@/components/section";
 import { ActionLink } from "@/components/ui/action";
 import { shownObjections } from "@/content/doctrine-rules";
-import type { TraditionPage } from "@/content/model/page";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { officialObjections } from "@/content/official-objections";
 import { objectionsHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";

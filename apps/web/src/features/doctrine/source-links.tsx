@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { CitationLink } from "@/components/citation-window/citation-link";
-import type { SourceRef } from "@/content/model/page";
-import { closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
+import type { SourceRef } from "@doctrina/core/model/page";
+import { closeParenthesis, openParenthesis, referenceSeparator } from "@doctrina/core/punctuation";
 
 type SourceLinksProps = {
   sources: SourceRef[];

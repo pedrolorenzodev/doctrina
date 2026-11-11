@@ -2,6 +2,8 @@ import { existsSync } from "node:fs";
 import type { BrowserContext, Page } from "@playwright/test";
 
 export const hasCorpus = existsSync("../../data/corpus/bibles/rv1909.json");
+export const hasFathers = existsSync("../../data/corpus/fathers");
+export const hasWords = existsSync("../../data/site/words/manifest.json");
 
 export function storeSimplifyOn(context: BrowserContext) {
   return context.addInitScript(() => {

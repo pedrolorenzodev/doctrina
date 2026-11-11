@@ -1,4 +1,4 @@
-import type { DoctrinePage } from "@/content/model/doctrine-page";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
 import type { CitationId } from "@/content/registry/citations";
 
 export const papacyDoctrine = {

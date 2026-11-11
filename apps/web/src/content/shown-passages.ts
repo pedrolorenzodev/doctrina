@@ -1,4 +1,4 @@
-import type { ScripturePassage, TraditionPage } from "@/content/model/page";
+import type { ScripturePassage, TraditionPage } from "@doctrina/core/model/page";
 
 export function hasApologistQuote(passage: ScripturePassage): boolean {
   return (passage.apologists?.arguments ?? []).some((argument) => argument.quotes.length > 0);

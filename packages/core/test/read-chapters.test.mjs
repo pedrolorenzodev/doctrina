@@ -1,4 +1,4 @@
-import { parseReadChapters, readChapterKey } from "../apps/web/src/lib/read-chapters.ts";
+import { parseReadChapters, readChapterKey } from "@doctrina/core/read-chapters";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

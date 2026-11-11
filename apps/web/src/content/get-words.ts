@@ -6,10 +6,10 @@ import type {
   VerseWords,
   WordLanguage,
   WordOccurrence,
-} from "@/content/model/words";
+} from "@doctrina/core/model/words";
 import { createLocalWordsSource } from "@/content/words/local-words-source";
 import { createSupabaseWordsSource } from "@/content/words/supabase-words-source";
-import { shardOf } from "@/content/words/shard-of";
+import { shardOf } from "@doctrina/core/words/shard-of";
 import type { WordBrief, WordsSource } from "@/content/words/words-source";
 
 function chooseSource(): WordsSource {

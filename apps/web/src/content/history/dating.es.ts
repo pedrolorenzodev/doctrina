@@ -1,4 +1,4 @@
-import type { FatherDating } from "@/content/model/history";
+import type { FatherDating } from "@doctrina/core/model/history";
 
 export const datingByFather: Record<string, FatherDating> = {
   "ignatius-of-antioch": {

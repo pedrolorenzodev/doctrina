@@ -1,4 +1,4 @@
-import type { FatherDating } from "@/content/model/history";
+import type { FatherDating } from "@doctrina/core/model/history";
 import type { UiText } from "@/content/ui-text/types";
 import type { CitationView } from "@/lib/citation-view";
 

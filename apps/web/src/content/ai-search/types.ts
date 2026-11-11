@@ -1,4 +1,4 @@
-import type { DoctrineId, TraditionId } from "@/content/model/ids";
+import type { DoctrineId, TraditionId } from "@doctrina/core/model/ids";
 
 export type Collection = "bible" | "fathers" | "tradition" | "doctrine" | "glossary" | "mine";
 export type Speaker = "shared" | "site" | "reader" | TraditionId;

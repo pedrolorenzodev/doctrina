@@ -1,4 +1,4 @@
-import type { DoctrineId } from "@/content/model/ids";
+import type { DoctrineId } from "@doctrina/core/model/ids";
 
 export const shownPassages = 4;
 

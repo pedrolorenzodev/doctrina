@@ -1,5 +1,5 @@
 import { getBibleBook } from "@/content/bible-books";
-import type { ChapterRef, ChapterSummary } from "@/content/model/bible";
+import type { ChapterRef, ChapterSummary } from "@doctrina/core/model/bible";
 
 function bookOrdinal(book: string): number {
   return getBibleBook(book)?.ordinal ?? Number.MAX_SAFE_INTEGER;

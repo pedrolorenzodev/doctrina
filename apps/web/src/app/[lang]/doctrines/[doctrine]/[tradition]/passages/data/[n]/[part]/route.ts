@@ -1,7 +1,7 @@
 import { getPassageApologists, getPassageCore } from "@/content/get-passages";
 import { shownScripture } from "@/content/shown-passages";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
-import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
+import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@doctrina/core/model/ids";
 import { isLocale } from "@doctrina/core/locale";
 import { leanBuild } from "@/lib/lean-build";
 

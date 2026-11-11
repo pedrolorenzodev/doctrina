@@ -1,5 +1,5 @@
 import { formatDate } from "@/content/format-date";
-import type { Objection } from "@/content/model/page";
+import type { Objection } from "@doctrina/core/model/page";
 import type { ObjectorText } from "@/content/get-objector-texts";
 import type { SourceRow } from "@/lib/source-row";
 import { splitSourceName } from "@/content/split-source-name";

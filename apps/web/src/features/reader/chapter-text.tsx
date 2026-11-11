@@ -1,8 +1,8 @@
 import { Fragment, type ReactNode, type RefObject } from "react";
-import type { BibleVerse, ChapterStructure } from "@/content/model/bible";
-import type { Segment } from "@/lib/highlights";
+import type { BibleVerse, ChapterStructure } from "@doctrina/core/model/bible";
+import type { Segment } from "@doctrina/core/highlights";
 import { NoteMarkers } from "@/features/reader/note-markers";
-import { splitByRed } from "@/lib/text-pieces";
+import { splitByRed } from "@doctrina/core/text-pieces";
 
 export type SecondReading = {
   id: string;

@@ -1,4 +1,4 @@
-import type { DoctrineId, TraditionId } from "@/content/model/ids";
+import type { DoctrineId, TraditionId } from "@doctrina/core/model/ids";
 import { doctrineSubject, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@doctrina/core/locale";

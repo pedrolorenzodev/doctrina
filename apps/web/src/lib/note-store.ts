@@ -1,4 +1,4 @@
-import { isNote, type Note } from "@/lib/notes";
+import { isNote, type Note } from "@doctrina/core/notes";
 
 export const notesStorageKey = "doctrina-notes";
 

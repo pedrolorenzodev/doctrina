@@ -8,13 +8,13 @@ import { SegmentedFilter } from "@/components/ui/segmented-filter";
 import { NoteEditor } from "@/features/reader/note-editor";
 import { PanelPicker } from "@/features/reader/panel-picker";
 import { readerPanelFrom } from "@/features/reader/verse-panel";
-import { highlightColors, type HighlightColor } from "@/lib/highlights";
+import { highlightColors, type HighlightColor } from "@doctrina/core/highlights";
 import { easeReveal, prefersReducedMotion } from "@/lib/branch-motion";
 import { flipBlocks } from "@/lib/block-motion";
 import { flipList } from "@/lib/list-motion";
 import { downloadText, notesMarkdown } from "@/lib/notes-markdown";
-import type { NoteScope } from "@/lib/notes";
-import { fold, fragmentAround, searchWords } from "@/lib/search-match";
+import type { NoteScope } from "@doctrina/core/notes";
+import { fold, fragmentAround, searchWords } from "@doctrina/core/search-match";
 
 export type YourNotesText = {
   button: string;

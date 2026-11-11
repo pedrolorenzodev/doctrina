@@ -1,7 +1,7 @@
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragraph";
-import type { DoctrinePage } from "@/content/model/doctrine-page";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@doctrina/core/locale";

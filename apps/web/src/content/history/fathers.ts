@@ -1,4 +1,4 @@
-import type { Father } from "@/content/model/history";
+import type { Father } from "@doctrina/core/model/history";
 
 export const fathers: Father[] = [
   {

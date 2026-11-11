@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { getNotes, noNotes, subscribeNotes } from "@/lib/note-store";
-import { sameChapter } from "@/lib/notes";
+import { sameChapter } from "@doctrina/core/notes";
 import { setYourNotesOpen } from "@/features/reader/your-notes-store";
 
 type YourNotesButtonProps = {

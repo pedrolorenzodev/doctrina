@@ -1,6 +1,6 @@
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { RichText } from "@/components/rich-text";
-import type { Objection } from "@/content/model/page";
+import type { Objection } from "@doctrina/core/model/page";
 import type { ObjectorText } from "@/content/get-objector-texts";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";

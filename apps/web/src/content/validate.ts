@@ -1,6 +1,6 @@
-import type { TraditionPage } from "@/content/model/page";
-import type { Registry } from "@/content/model/registry";
-import { InlineSyntaxError, parseInline, referencesIn } from "@/lib/inline-refs";
+import type { TraditionPage } from "@doctrina/core/model/page";
+import type { Registry } from "@doctrina/core/model/registry";
+import { InlineSyntaxError, parseInline, referencesIn } from "@doctrina/core/inline-refs";
 
 export const sectionIds: readonly string[] = ["early-witnesses"];
 

@@ -3,7 +3,7 @@ import { worksByFather } from "@/content/father-work-links";
 import { writingWorkIds } from "@/content/father-writing-links";
 import { getPublishedFathers } from "@/content/get-fathers";
 import { getFatherWorks } from "@/content/get-father-works";
-import type { DateInfo, Registry } from "@/content/model/registry";
+import type { DateInfo, Registry } from "@doctrina/core/model/registry";
 import { registry } from "@/content/registry/index";
 import { itemName } from "@/content/item-names";
 import { sourceDate } from "@/content/source-labels";

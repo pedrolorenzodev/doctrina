@@ -1,5 +1,5 @@
-import type { DoctrineId, TraditionId } from "@/content/model/ids";
-import { doctrineIds, traditionIds } from "@/content/model/ids";
+import type { DoctrineId, TraditionId } from "@doctrina/core/model/ids";
+import { doctrineIds, traditionIds } from "@doctrina/core/model/ids";
 import { historyIndex } from "@/content/history-index";
 import {
   doctrineHref,

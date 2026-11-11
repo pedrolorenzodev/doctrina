@@ -1,4 +1,4 @@
-import { highlightColors, isHighlight, type Highlight, type HighlightColor } from "@/lib/highlights";
+import { highlightColors, isHighlight, type Highlight, type HighlightColor } from "@doctrina/core/highlights";
 
 export const highlightsStorageKey = "doctrina-highlights";
 

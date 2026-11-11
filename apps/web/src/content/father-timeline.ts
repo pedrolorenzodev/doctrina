@@ -1,7 +1,7 @@
 import { formatYear } from "@/content/format-date";
 import { lifeBounds, lifeMarks, lifeText } from "@/content/father-life";
 import { councils, heresies, historyEvents } from "@/content/history/timeline-sources";
-import type { Father, HistoryEventKind, Localized } from "@/content/model/history";
+import type { Father, HistoryEventKind, Localized } from "@doctrina/core/model/history";
 import { currentHref, fatherHref, timelineHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
 import { firstSentence } from "@/lib/first-sentence";

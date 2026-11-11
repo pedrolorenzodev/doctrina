@@ -3,7 +3,7 @@ import type { Locale } from "@doctrina/core/locale";
 import { bibleTranslationName, doctrineSubjects } from "@/content/ai-search/collections";
 import type { Coverage, VerseTarget } from "@/content/ai-search/types";
 import { formatVerseRef } from "@/content/format-verse";
-import type { TraditionId } from "@/content/model/ids";
+import type { TraditionId } from "@doctrina/core/model/ids";
 
 const traditionAdjectives: Record<TraditionId, Record<Locale, string>> = {
   catholic: { es: "católica", en: "Catholic" },

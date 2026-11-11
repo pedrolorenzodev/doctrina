@@ -5,7 +5,7 @@ import { ActionLink } from "@/components/ui/action";
 import { MoreButton } from "@/components/ui/more-button";
 import { SlidingTabs } from "@/components/ui/sliding-tabs";
 import type { PassagesData } from "@/content/get-passages";
-import type { PassagesPageText } from "@/content/model/page";
+import type { PassagesPageText } from "@doctrina/core/model/page";
 import type { UiText } from "@/content/ui-text/types";
 import { ApologistLayer } from "@/features/passages/apologist-layer";
 import { settlePassagePending } from "@/features/passages/passage-pending";

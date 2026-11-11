@@ -1,8 +1,8 @@
 import "server-only";
 import { buildCitationView } from "@/content/citation-view";
 import { getTraditionPage } from "@/content/get-tradition-page";
-import type { DoctrinePage } from "@/content/model/doctrine-page";
-import type { GradeDefinition } from "@/content/model/page";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
+import type { GradeDefinition } from "@doctrina/core/model/page";
 import { buildGradeDefinitionView } from "@/content/page-views";
 import { registry } from "@/content/registry/index";
 import { getUiText } from "@/content/ui-text/get-ui-text";

@@ -7,7 +7,7 @@ import { PageMain } from "@/components/page-main";
 import { Section } from "@/components/section";
 import { bibleChapterHref, bibleVerseHref, bookFromSlug } from "@/content/bible-routes";
 import { getVersePage } from "@/content/get-verse-page";
-import type { DoctrineId } from "@/content/model/ids";
+import type { DoctrineId } from "@doctrina/core/model/ids";
 import { doctrineName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { EdgeRuler } from "@/features/shell/edge-ruler";

@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { hasCorpus } from "./helpers";
+import { hasCorpus, hasWords } from "./helpers";
 
 const otherLanguage = (page: Page, locale: "en" | "es") =>
   page.getByRole("group", { name: locale === "en" ? "Idioma" : "Language" }).locator(`[lang="${locale}"]`);
@@ -38,6 +38,7 @@ const withEnglish: [string, string][] = [
 
 for (const [spanish, english] of withEnglish) {
   test(`${spanish}: EN leads to ${english}, which exists`, async ({ page, request }) => {
+    test.skip(!hasWords && spanish.includes("/palabras/"), "needs the local word-study data");
     await page.goto(spanish);
     const link = otherLanguage(page, "en");
     await expect(link).toHaveAttribute("href", english);
@@ -99,6 +100,7 @@ for (const path of sameOnServer) {
   test(`${path}: the switch is the same in the server's HTML and in the browser, and hydration keeps the page's attributes`, async ({
     browser,
   }) => {
+    test.skip(!hasWords && path.includes("/palabras/"), "needs the local word-study data");
     const bare = await browser.newContext({ javaScriptEnabled: false });
     const served = await bare.newPage();
     await served.goto(path);

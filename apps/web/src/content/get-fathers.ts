@@ -1,5 +1,5 @@
 import { allFathers } from "@/content/history/all-fathers";
-import type { Father } from "@/content/model/history";
+import type { Father } from "@doctrina/core/model/history";
 import { validateFathers } from "@/content/validate-history";
 import type { Locale } from "@doctrina/core/locale";
 

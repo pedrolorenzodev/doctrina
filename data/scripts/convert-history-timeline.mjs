@@ -30,7 +30,7 @@ const heresies = history.heresies.map((heresy) => ({
   fathers: heresy.fathers,
 }));
 
-const out = `import type { Council, Heresy, HistoryEvent } from "@/content/model/history";
+const out = `import type { Council, Heresy, HistoryEvent } from "@doctrina/core/model/history";
 
 export const historyEvents: HistoryEvent[] = ${JSON.stringify(events, null, 2)};
 

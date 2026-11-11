@@ -12,7 +12,7 @@ import { sourceKinds } from "@/content/source-kinds";
 import type { UiText } from "@/content/ui-text/types";
 import { SourceItem } from "@/features/sources/source-item";
 import { flipList, revealList } from "@/lib/list-motion";
-import { fold } from "@/lib/search-match";
+import { fold } from "@doctrina/core/search-match";
 import type { YearsData } from "@/lib/years-data";
 
 type SourcesCatalogueProps = { sources: SourceEntry[]; text: UiText["sourcesPage"] };

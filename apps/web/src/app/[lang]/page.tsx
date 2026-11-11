@@ -2,7 +2,7 @@ import { CitationProvider } from "@/components/citation-window/citation-context"
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { Section } from "@/components/section";
-import { translationMeta, translationOrder } from "@/content/bible/translation-meta";
+import { translationMeta, translationOrder } from "@doctrina/core/bible/translation-meta";
 import { bibleBooks, type BibleSection } from "@/content/bible-books";
 import { bibleChapterHref } from "@/content/bible-routes";
 import { getCitationViews } from "@/content/get-citation-views";
@@ -10,7 +10,7 @@ import { getDoctrinePage } from "@/content/get-doctrine-page";
 import { glossaryLocales } from "@/content/get-glossary";
 import { getHomeTimeline } from "@/content/get-home-timeline";
 import { homeDraftQuestions } from "@/content/home-doctrines";
-import { doctrineIds } from "@/content/model/ids";
+import { doctrineIds } from "@doctrina/core/model/ids";
 import { doctrineHref, glossaryHref } from "@/content/routes";
 import { doctrineName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";

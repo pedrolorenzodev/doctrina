@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { PassageCore } from "@/content/get-passages";
-import type { ApologistLayer } from "@/content/model/page";
+import type { ApologistLayer } from "@doctrina/core/model/page";
 
 type Part = "core" | "apologists";
 type Priority = "low" | "high";

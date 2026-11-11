@@ -9,7 +9,7 @@ import {
   saveNoteText,
   type Note,
   type NoteDraft,
-} from "@/lib/notes";
+} from "@doctrina/core/notes";
 
 type Options = {
   translationId: string;

@@ -1,4 +1,4 @@
-import type { ChapterWords, LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@/content/model/words";
+import type { ChapterWords, LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@doctrina/core/model/words";
 import { createSupabaseSelect } from "@/content/supabase-rest";
 import type { WordBrief, WordsSource } from "@/content/words/words-source";
 

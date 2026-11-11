@@ -5,10 +5,10 @@ import { flushSync } from "react-dom";
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { MoreButton } from "@/components/ui/more-button";
 import { scholarViewId } from "@/content/father-dating-views";
-import type { DatingRow } from "@/content/model/history";
+import type { DatingRow } from "@doctrina/core/model/history";
 import { flipList, revealList } from "@/lib/list-motion";
 import { scrollOffset, scrollToElement } from "@/lib/scroll";
-import { finalStop, openParenthesis, closeParenthesis } from "@/lib/punctuation";
+import { finalStop, openParenthesis, closeParenthesis } from "@doctrina/core/punctuation";
 
 type Axis = { from: number; to: number; marks: number[] };
 

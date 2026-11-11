@@ -1,6 +1,6 @@
-import type { ChurchGrade, DoctrineId, TraditionId } from "@/content/model/ids";
-import type { DateInfo } from "@/content/model/registry";
-import type { GradeDefinition, Rich, SourceRef } from "@/content/model/page";
+import type { ChurchGrade, DoctrineId, TraditionId } from "@doctrina/core/model/ids";
+import type { DateInfo } from "@doctrina/core/model/registry";
+import type { GradeDefinition, Rich, SourceRef } from "@doctrina/core/model/page";
 
 export type FingerprintMark = {
   year: number;

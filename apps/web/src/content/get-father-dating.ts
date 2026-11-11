@@ -1,5 +1,5 @@
 import { datingByFather } from "@/content/history/dating.es";
-import type { DatingRow, FatherDating } from "@/content/model/history";
+import type { DatingRow, FatherDating } from "@doctrina/core/model/history";
 import type { Locale } from "@doctrina/core/locale";
 
 const byDate = (a: DatingRow, b: DatingRow) =>

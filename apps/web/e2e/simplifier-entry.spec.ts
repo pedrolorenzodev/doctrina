@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow, preferEnglishFatherEdition, traditionPath } from "./helpers";
+import { hasCorpus, horizontalOverflow, preferEnglishFatherEdition, traditionPath } from "./helpers";
 
 const smyrnaeans = "/es/historia/obras/ignatius-smyrnaeans";
 const doctrinePath = "/es/doctrinas/eucaristia";
@@ -196,6 +196,7 @@ test.describe("simplifier entry: the selection toolbar", () => {
   });
 
   test("the Bible reader's toolbar has no «Simplificar»", async ({ page }) => {
+    test.skip(!hasCorpus, "needs the local Bible corpus");
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto("/es/biblia/juan/1", { waitUntil: "networkidle" });
     await page.evaluate(() => {

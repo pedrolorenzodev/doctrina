@@ -1,4 +1,4 @@
-import type { Council, Heresy, HistoryEvent } from "@/content/model/history";
+import type { Council, Heresy, HistoryEvent } from "@doctrina/core/model/history";
 
 export const historyEvents: HistoryEvent[] = [
   {

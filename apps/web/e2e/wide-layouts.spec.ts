@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow, traditionPath } from "./helpers";
+import { hasCorpus, hasWords, horizontalOverflow, traditionPath } from "./helpers";
 
 const pages = {
   verse: "/es/biblia/juan/6/53",
@@ -18,6 +18,10 @@ const pages = {
   home: "/es",
   early: "/es/doctrinas/bautismo/primeros-cristianos",
 };
+
+const available = Object.entries(pages).filter(
+  ([name]) => (hasCorpus || name !== "verse") && (hasWords || name !== "word"),
+);
 
 async function open(page: Page, path: string, width: number, height: number, tree: "open" | "closed") {
   await page.setViewportSize({ width, height });
@@ -46,7 +50,7 @@ for (const [width, height, tree] of [
     page,
   }) => {
     const frameLeft = await traditionTitleLeft(page, width, height, tree);
-    for (const [name, path] of Object.entries(pages)) {
+    for (const [name, path] of available) {
       await open(page, path, width, height, tree);
       const title = await left(page, name === "home" ? "main h1" : "main h1, main header h1");
       const expected = name === "verse" ? frameLeft + 160 : frameLeft;
@@ -59,7 +63,7 @@ for (const [width, height, tree] of [
 }
 
 test("1440 with the tree open: nothing moves, the column keeps its 64 px from the tree", async ({ page }) => {
-  for (const path of Object.values(pages)) {
+  for (const [, path] of available) {
     if (path === "/es") continue;
     await open(page, path, 1440, 900, "open");
     expect(await left(page, "main h1, main header h1"), path).toBe(336);

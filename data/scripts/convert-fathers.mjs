@@ -15,7 +15,7 @@ const fathers = history.fathers.map((father) => ({
   summary: father.summary,
 }));
 
-const out = `import type { Father } from "@/content/model/history";
+const out = `import type { Father } from "@doctrina/core/model/history";
 
 export const fathers: Father[] = ${JSON.stringify(fathers, null, 2)};
 `;

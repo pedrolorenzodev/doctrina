@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { horizontalOverflow, trackElement } from "./helpers";
+import { hasFathers, horizontalOverflow, trackElement } from "./helpers";
 
 const path = "/es/doctrinas/eucaristia/primeros-cristianos";
 const doctrinePath = "/es/doctrinas/eucaristia";
@@ -177,6 +177,7 @@ test("every author name is a link to his page; «Leer …» opens the work excep
 test("«Leer Didaché 14.1–3» lands on the first division of the range and marks it as a verse arrival does", async ({
   page,
 }) => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.addInitScript(() => {
     const alpha = (value: string) => {
@@ -230,6 +231,7 @@ test("«Leer Didaché 14.1–3» lands on the first division of the range and ma
 });
 
 test("a work with no Spanish edition lands on its division too: Contra Marción IV.40", async ({ page }) => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await page.locator(`${readLinks} a`, { hasText: "Contra Marción" }).click();
@@ -245,6 +247,7 @@ test("a work with no Spanish edition lands on its division too: Contra Marción 
 });
 
 test("a work with a Spanish edition lands on its division in Spanish: Ireneo IV.18.5", async ({ page }) => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(path);
   await page.locator(`${readLinks} a`, { hasText: "Contra las herejías" }).click();
@@ -269,6 +272,7 @@ const earlyPages = [
 
 for (const early of earlyPages) {
   test(`every «Leer …» link of ${early} points at a division that exists`, async ({ page, request }) => {
+    test.skip(!hasFathers, "needs the local Fathers corpus");
     await page.goto(early);
     const hrefs = await page
       .locator(`${readLinks} a`)

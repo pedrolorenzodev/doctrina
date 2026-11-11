@@ -1,8 +1,8 @@
 import { Fragment, type ReactNode } from "react";
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { PageLink } from "@/components/ui/page-link";
-import { parseInline, type InlineNode } from "@/lib/inline-refs";
-import { closeParenthesis, openParenthesis, referenceSeparator } from "@/lib/punctuation";
+import { parseInline, type InlineNode } from "@doctrina/core/inline-refs";
+import { closeParenthesis, openParenthesis, referenceSeparator } from "@doctrina/core/punctuation";
 
 type RichTextProps = {
   text: string;

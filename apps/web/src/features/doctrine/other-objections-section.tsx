@@ -1,5 +1,5 @@
 import { Section } from "@/components/section";
-import type { Objection, TraditionPage } from "@/content/model/page";
+import type { Objection, TraditionPage } from "@doctrina/core/model/page";
 import { officialObjections } from "@/content/official-objections";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ThemedObjectionList } from "@/features/doctrine/themed-objection-list";

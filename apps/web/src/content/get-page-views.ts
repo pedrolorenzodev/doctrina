@@ -1,6 +1,6 @@
 import "server-only";
 import { collectPageViews } from "@/content/page-views";
-import type { TraditionPage } from "@/content/model/page";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { registry } from "@/content/registry/index";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { CitationView } from "@/lib/citation-view";

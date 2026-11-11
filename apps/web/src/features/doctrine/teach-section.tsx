@@ -4,14 +4,14 @@ import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 import { SimplifiedParagraph } from "@/components/simplifier/simplified-paragraph";
 import { shownStatements } from "@/content/doctrine-rules";
-import type { GradeLine, TraditionPage } from "@/content/model/page";
+import type { GradeLine, TraditionPage } from "@doctrina/core/model/page";
 import { gradeViewId, verseLink } from "@/content/page-views";
 import { registry } from "@/content/registry";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { SourceLinks } from "@/features/doctrine/source-links";
 import type { Locale } from "@doctrina/core/locale";
-import { guillemets, labelSeparator } from "@/lib/punctuation";
+import { guillemets, labelSeparator } from "@doctrina/core/punctuation";
 
 type TeachSectionProps = {
   page: TraditionPage;

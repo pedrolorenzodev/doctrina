@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { horizontalOverflow, landingTop } from "./helpers";
+import { hasFathers, horizontalOverflow, landingTop } from "./helpers";
 
 const father = (id: string) => `/es/historia/padres/${id}`;
 const ignatius = father("ignatius-of-antioch");
@@ -134,6 +134,7 @@ test("«Quién fue»: the summary and a facts table that sits beside it from 900
 });
 
 test("«Sus escritos»: each writing with its date, one shared axis and the count", async ({ page }) => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   await page.goto(father("justin-martyr"));
   await expect(page.locator("#works h2")).toHaveText("Sus escritos");
   await expect(page.locator("#works > div > div > div > p").first()).toHaveText("3 escritos, c. 148–161");

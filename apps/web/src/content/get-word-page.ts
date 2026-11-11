@@ -14,10 +14,10 @@ import {
   shardOf,
   wordLanguageOf,
 } from "@/content/get-words";
-import type { LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@/content/model/words";
+import type { LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@doctrina/core/model/words";
 import { parseLabel } from "@/content/parse-label";
 import type { Locale } from "@doctrina/core/locale";
-import { transliterateGreek } from "@/lib/transliterate-greek";
+import { transliterateGreek } from "@doctrina/core/transliterate-greek";
 
 export type WordGroup =
   "gospels" | "acts" | "paul" | "general" | "revelation" | "law" | "history" | "wisdom" | "major" | "minor";

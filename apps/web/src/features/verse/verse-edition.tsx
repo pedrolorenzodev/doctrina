@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, type ReactNode } from "react";
-import { numberingDiffers } from "@/content/bible/numbering-note";
+import { numberingDiffers } from "@doctrina/core/bible/numbering-note";
 import type { VerseEdition } from "@/content/get-verse-page";
 import { chooseTranslation } from "@/lib/translation-choice";
 import { useChosenTranslation } from "@/lib/use-chosen-translation";

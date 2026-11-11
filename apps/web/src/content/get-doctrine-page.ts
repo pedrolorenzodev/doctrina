@@ -1,6 +1,6 @@
 import "server-only";
-import type { DoctrineId } from "@/content/model/ids";
-import type { DoctrinePage } from "@/content/model/doctrine-page";
+import type { DoctrineId } from "@doctrina/core/model/ids";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
 import { spanishDoctrinePages, spanishPages } from "@/content/pages/index";
 import { registry } from "@/content/registry/index";
 import { validateDoctrinePages } from "@/content/validate-doctrine";

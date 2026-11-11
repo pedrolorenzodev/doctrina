@@ -1,10 +1,10 @@
 import { bibleBooks, getBibleBook } from "@/content/bible-books";
 import { bibleVerseHref } from "@/content/bible-routes";
-import { translationMeta } from "@/content/bible/translation-meta";
+import { translationMeta } from "@doctrina/core/bible/translation-meta";
 import { workName, worksByFather } from "@/content/father-work-links";
 import { writingWorkIds } from "@/content/father-writing-links";
 import { allFathers } from "@/content/history/all-fathers";
-import type { DoctrineId, TraditionId } from "@/content/model/ids";
+import type { DoctrineId, TraditionId } from "@doctrina/core/model/ids";
 import { bookNames } from "@/content/verse-names";
 import type { Collection, Licence, Passage, PassageRow, Speaker } from "@/content/ai-search/types";
 import type { Locale } from "@doctrina/core/locale";

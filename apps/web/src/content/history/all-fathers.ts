@@ -1,6 +1,6 @@
 import { fatherLives } from "@/content/history/father-lives";
 import { fathers } from "@/content/history/fathers";
-import type { Father, FatherLife } from "@/content/model/history";
+import type { Father, FatherLife } from "@doctrina/core/model/history";
 
 function withLife(father: Father, life: FatherLife): Father {
   const spanned = life.active ?? life.composed;

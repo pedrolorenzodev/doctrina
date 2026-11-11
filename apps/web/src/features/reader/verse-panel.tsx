@@ -11,7 +11,7 @@ import type { PanelWordsText } from "@/features/reader/panel-words";
 import { flipBlocks } from "@/lib/block-motion";
 import { rememberVerseBack, type VerseBack } from "@/lib/verse-back";
 import { useRef, type ReactNode } from "react";
-import type { HighlightColor } from "@/lib/highlights";
+import type { HighlightColor } from "@doctrina/core/highlights";
 
 export const readerPanelFrom = "xl";
 

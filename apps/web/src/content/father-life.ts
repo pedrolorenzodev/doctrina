@@ -1,4 +1,4 @@
-import type { Father } from "@/content/model/history";
+import type { Father } from "@doctrina/core/model/history";
 import type { UiText } from "@/content/ui-text/types";
 import type { Locale } from "@doctrina/core/locale";
 

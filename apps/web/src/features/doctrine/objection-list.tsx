@@ -1,8 +1,8 @@
 import { RevealList } from "@/components/reveal-list";
 import { RichText } from "@/components/rich-text";
 import { PageLink } from "@/components/ui/page-link";
-import type { DoctrineId, TraditionId } from "@/content/model/ids";
-import type { Objection } from "@/content/model/page";
+import type { DoctrineId, TraditionId } from "@doctrina/core/model/ids";
+import type { Objection } from "@doctrina/core/model/page";
 import { plainRich, verseLink } from "@/content/page-views";
 import { objectionHref } from "@/content/routes";
 import type { Locale } from "@doctrina/core/locale";

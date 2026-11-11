@@ -1,5 +1,5 @@
 import { expect, test, type Locator, type Page } from "@playwright/test";
-import { hasCorpus } from "./helpers";
+import { hasCorpus, hasWords } from "./helpers";
 
 test.use({ hasTouch: true, isMobile: true });
 
@@ -36,6 +36,7 @@ test("the simplifier's «En palabras simples» button has a 44 px hit area on a 
 });
 
 test("the transliteration switch has a 44 px hit area", async ({ page }) => {
+  test.skip(!hasWords, "needs the local word-study data");
   await open(page, "/es/palabras/G4561", 390);
   await expectTouchSize(page.getByRole("button", { name: "Transliteración" }));
 });

@@ -1,4 +1,4 @@
-import type { Objection, TraditionPage } from "@/content/model/page";
+import type { Objection, TraditionPage } from "@doctrina/core/model/page";
 
 export function officialObjections(page: TraditionPage): Objection[] {
   return page.objections.order.flatMap((id) => {

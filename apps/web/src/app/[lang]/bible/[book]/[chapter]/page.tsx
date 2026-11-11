@@ -8,7 +8,7 @@ import { bibleChapterHref, bookFromSlug, bookSlug } from "@/content/bible-routes
 import { getReadableChapters } from "@/content/get-bible";
 import { getBookIndex } from "@/content/get-book-index";
 import { getReaderChapter } from "@/content/get-reader-chapter";
-import type { ChapterRef } from "@/content/model/bible";
+import type { ChapterRef } from "@doctrina/core/model/bible";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ReaderStream } from "@/features/reader/reader-stream";
 import { RedNoticeScript } from "@/features/reader/red-notice-script";

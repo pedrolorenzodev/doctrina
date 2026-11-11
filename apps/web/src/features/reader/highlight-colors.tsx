@@ -1,4 +1,4 @@
-import { highlightColors, type HighlightColor } from "@/lib/highlights";
+import { highlightColors, type HighlightColor } from "@doctrina/core/highlights";
 
 type HighlightColorsText = {
   label: string;

@@ -1,6 +1,6 @@
 import glossaryJson from "@data/site/glossary.json" with { type: "json" };
 import type { HistoryIndexGroup } from "@/content/get-history-indexes";
-import type { DoctrineId } from "@/content/model/ids";
+import type { DoctrineId } from "@doctrina/core/model/ids";
 import { glossaryTermHref } from "@/content/routes";
 import type { Locale } from "@doctrina/core/locale";
 

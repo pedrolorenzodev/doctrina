@@ -1,10 +1,10 @@
 import { CitationLink } from "@/components/citation-window/citation-link";
 import { RevealList } from "@/components/reveal-list";
 import { Section } from "@/components/section";
-import type { DoctrinePage, PracticeCell } from "@/content/model/doctrine-page";
+import type { DoctrinePage, PracticeCell } from "@doctrina/core/model/doctrine-page";
 import { traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import { closeParenthesis, finalStop, openParenthesis } from "@/lib/punctuation";
+import { closeParenthesis, finalStop, openParenthesis } from "@doctrina/core/punctuation";
 import type { Locale } from "@doctrina/core/locale";
 
 type PracticeSectionProps = {

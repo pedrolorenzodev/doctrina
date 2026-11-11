@@ -12,7 +12,7 @@ import { getDoctrinePage, getPublishedDoctrines } from "@/content/get-doctrine-p
 import { getConnected } from "@/content/get-connected";
 import { getDoctrineViews } from "@/content/get-doctrine-views";
 import { getPublishedPages } from "@/content/get-tradition-page";
-import { doctrineIds, type DoctrineId } from "@/content/model/ids";
+import { doctrineIds, type DoctrineId } from "@doctrina/core/model/ids";
 import { traditionHref } from "@/content/routes";
 import { doctrineName, doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";

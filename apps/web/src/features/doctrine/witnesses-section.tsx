@@ -2,7 +2,7 @@ import { Section } from "@/components/section";
 import { PageLink } from "@/components/ui/page-link";
 import { formatDate } from "@/content/format-date";
 import { getWitnessEntityHref } from "@/content/get-witness-entity-href";
-import type { DoctrinePage } from "@/content/model/doctrine-page";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessReference, witnessViewId } from "@/content/witness-view";
 import { WitnessExplorer } from "@/features/doctrine/witness-explorer";

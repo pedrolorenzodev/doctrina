@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Objection, TraditionPage } from "@/content/model/page";
+import type { Objection, TraditionPage } from "@doctrina/core/model/page";
 import { themeGroups, themeLayout, themedOrder } from "@/content/objection-themes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ObjectionList } from "@/features/doctrine/objection-list";

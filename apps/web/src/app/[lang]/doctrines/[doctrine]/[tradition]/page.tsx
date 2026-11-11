@@ -10,7 +10,7 @@ import { getPageViews } from "@/content/get-page-views";
 import { ledeEmphasis } from "@/content/lede-emphasis";
 import { traditionHref } from "@/content/routes";
 import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
-import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
+import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@doctrina/core/model/ids";
 import { doctrineTitle, traditionName } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { VideosSection } from "@/features/doctrine/videos-section";

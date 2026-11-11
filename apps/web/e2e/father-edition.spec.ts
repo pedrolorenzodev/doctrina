@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow } from "./helpers";
+import { hasFathers, horizontalOverflow } from "./helpers";
 
 const didache = "/es/historia/obras/didache";
 const strip = "main [data-reader-strip]";
@@ -23,6 +23,7 @@ const chooseEnglish = async (page: Page) => {
 };
 
 test.describe("Fathers' reader: the translation switch", () => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   test("a work with a Spanish edition offers two groups, and the button shows only the abbreviation of the one in use", async ({
     page,
   }) => {

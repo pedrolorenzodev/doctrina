@@ -7,7 +7,7 @@ import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getPassageViews, getPassages } from "@/content/get-passages";
 import { builtTraditions, getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
-import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
+import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@doctrina/core/model/ids";
 import { shownScripture } from "@/content/shown-passages";
 import { passagesHref, traditionHref } from "@/content/routes";
 import { doctrineTitle, traditionName } from "@/content/site-tree";

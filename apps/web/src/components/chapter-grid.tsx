@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useSyncExternalStore, type MouseEvent } from "react";
 import { scrollToChapter } from "@/lib/active-chapter";
 import { getReadChapters, noReadChapters, subscribeReadChapters } from "@/lib/read-chapter-store";
-import { readChapterKey } from "@/lib/read-chapters";
+import { readChapterKey } from "@doctrina/core/read-chapters";
 
 type ChapterGridProps = {
   bookId: string;

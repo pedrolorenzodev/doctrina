@@ -1,4 +1,4 @@
-import type { Edition } from "@/content/model/registry";
+import type { Edition } from "@doctrina/core/model/registry";
 
 export const editions = {
   "triglot.la": {

@@ -1,4 +1,4 @@
-import type { CitationKind, DocLang, LocatorKind, WorkKind, TraditionId } from "@/content/model/ids";
+import type { CitationKind, DocLang, LocatorKind, WorkKind, TraditionId } from "@doctrina/core/model/ids";
 
 export type LinkRef = {
   href: string;

@@ -1,6 +1,6 @@
 import "server-only";
 import { bibleReferenceHref } from "@/content/bible-routes";
-import type { Objection } from "@/content/model/page";
+import type { Objection } from "@doctrina/core/model/page";
 import { buildVerseView, verseLink } from "@/content/page-views";
 import { registry } from "@/content/registry/index";
 import { getUiText } from "@/content/ui-text/get-ui-text";

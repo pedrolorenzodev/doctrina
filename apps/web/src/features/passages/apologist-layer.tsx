@@ -1,4 +1,4 @@
-import type { ApologistLayer as ApologistLayerData } from "@/content/model/page";
+import type { ApologistLayer as ApologistLayerData } from "@doctrina/core/model/page";
 import type { UiText } from "@/content/ui-text/types";
 import { ApologistFigure } from "@/features/passages/apologist-figure";
 

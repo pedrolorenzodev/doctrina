@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { hasFathers } from "./helpers";
 
 type Frame = { at: number; scroll: number; marks: number[] };
 
@@ -74,6 +75,7 @@ const cases = [
 
 for (const { name, from, to } of cases) {
   test(`the current-page mark glides to ${name}: one mark in every frame, no jump`, async ({ page }) => {
+    test.skip(!hasFathers && from.includes("/obras/"), "needs the local Fathers corpus");
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(from, { waitUntil: "networkidle" });
     await page.waitForTimeout(500);

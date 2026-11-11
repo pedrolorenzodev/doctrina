@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import { MoreButton } from "@/components/ui/more-button";
-import type { ApologistQuote } from "@/content/model/page";
+import type { ApologistQuote } from "@doctrina/core/model/page";
 
 type ApologistFigureProps = {
   quote: ApologistQuote;

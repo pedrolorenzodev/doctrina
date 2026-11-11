@@ -1,5 +1,5 @@
 import type { Collection, Coverage, Passage } from "@/content/ai-search/types";
-import { traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
+import { traditionIds, type DoctrineId, type TraditionId } from "@doctrina/core/model/ids";
 
 export type CoverageInput = {
   passages: Passage[];

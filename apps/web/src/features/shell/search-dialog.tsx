@@ -18,7 +18,7 @@ import {
   type SearchEntry,
   type SearchResult,
   type Segment,
-} from "@/lib/search-match";
+} from "@doctrina/core/search-match";
 
 export type SearchText = {
   label: string;

@@ -1,4 +1,4 @@
-import type { SearchEntry } from "@/lib/search-match";
+import type { SearchEntry } from "@doctrina/core/search-match";
 
 const loaded = new Map<string, SearchEntry[]>();
 const loading = new Map<string, Promise<SearchEntry[]>>();

@@ -5,7 +5,7 @@ import { TimelineMarks } from "@/components/timeline-marks";
 import type { TimelineEntry } from "@/lib/timeline-entry";
 import { PageLink } from "@/components/ui/page-link";
 import { at, px, vars } from "@/lib/css-vars";
-import { listSeparator } from "@/lib/punctuation";
+import { listSeparator } from "@doctrina/core/punctuation";
 import { packRows, percentOf, placeItem, type PlacedItem, type Scale } from "@/lib/timeline-layout";
 import { LifeKeyItems } from "@/components/life-key-items";
 import { useBoxWidth, useLabelMeasure } from "@/lib/use-timeline-box";

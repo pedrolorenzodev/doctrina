@@ -6,7 +6,7 @@ import { focusRingClassName, playEnter, type Enter } from "@/features/reader-ai/
 import { useAskScript } from "@/features/reader-ai/ask-script";
 import { johnSix } from "@/features/reader-ai/quotes";
 import { sourceOf, verseLabel } from "@/features/reader-ai/script";
-import { openNoteEvent, type OpenNoteDetail } from "@/lib/notes";
+import { openNoteEvent, type OpenNoteDetail } from "@doctrina/core/notes";
 import { getNotes } from "@/lib/note-store";
 import type { Locale } from "@doctrina/core/locale";
 import { getBibleBook } from "@/content/bible-books";

@@ -281,6 +281,7 @@ test("entries without a page are pressable and do nothing; branches still open",
 test("switching language keeps the tree as it was: the branches opened or closed by hand and the scroll", async ({
   page,
 }) => {
+  test.skip(!hasCorpus, "needs the local Bible corpus");
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/es/historia/padres/origen");
   const nav = page.locator("#site-sidebar nav");

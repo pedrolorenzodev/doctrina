@@ -1,4 +1,4 @@
-import type { TraditionPage } from "@/content/model/page";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import type { CitationId } from "@/content/registry/citations";
 
 export const papacyReformed = {

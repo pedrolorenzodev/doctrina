@@ -1,4 +1,4 @@
-import type { FatherLife } from "@/content/model/history";
+import type { FatherLife } from "@doctrina/core/model/history";
 
 export const fatherLives: Record<string, FatherLife> = {
   "clement-of-rome": {

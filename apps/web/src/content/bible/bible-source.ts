@@ -1,4 +1,4 @@
-import type { BibleTranslation, BibleVerse, ChapterStructure, ChapterSummary } from "@/content/model/bible";
+import type { BibleTranslation, BibleVerse, ChapterStructure, ChapterSummary } from "@doctrina/core/model/bible";
 
 export type VerseRef = { book: string; chapter: number; verse: number };
 

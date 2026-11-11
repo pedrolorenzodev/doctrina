@@ -3,7 +3,7 @@ import { RevealList } from "@/components/reveal-list";
 import { PageLink } from "@/components/ui/page-link";
 import { formatDate } from "@/content/format-date";
 import { getWitnessEntityHref } from "@/content/get-witness-entity-href";
-import type { Witness } from "@/content/model/doctrine-page";
+import type { Witness } from "@doctrina/core/model/doctrine-page";
 import { highlightParagraph } from "@/content/witness-paragraph";
 import { fatherDivisionHref } from "@/content/routes";
 import { witnessReference } from "@/content/witness-view";

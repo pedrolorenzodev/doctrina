@@ -1,4 +1,4 @@
-import type { Verse } from "@/content/model/registry";
+import type { Verse } from "@doctrina/core/model/registry";
 
 export const verses = {
   "Matt.26.26": {

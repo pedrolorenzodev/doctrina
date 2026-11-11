@@ -1,4 +1,4 @@
-import { splitByRed } from "../apps/web/src/lib/text-pieces.ts";
+import { splitByRed } from "@doctrina/core/text-pieces";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

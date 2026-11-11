@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { hasCorpus } from "./helpers";
 
 const route = "/es/doctrinas/bautismo/catolica/pasajes";
 const focused = (page: import("@playwright/test").Page) => page.locator("p.verse-focus");
@@ -63,6 +64,7 @@ test("Acts 2:37-42 fills verse 38", async ({ page }) => {
 });
 
 test("a block without enough evidence has no fill", async ({ page }) => {
+  test.skip(!hasCorpus, "needs the local Bible corpus");
   await page.goto(`${route}#matt-28-18-matt-28-20`);
   await expect(page.getByRole("heading", { level: 2 })).toHaveText(/Mateo\s28:18–20/);
   await expect(page.locator("p:has(.verse-numeral)").first()).toBeVisible();
@@ -123,6 +125,7 @@ test.describe("390 px", () => {
 });
 
 test("the fill sits below the letters", async ({ page }) => {
+  test.skip(!hasCorpus, "needs the local Bible corpus");
   await page.goto(`${route}#john-3-3-john-3-8`);
   const paragraph = focused(page);
   await paragraph.scrollIntoViewIfNeeded();

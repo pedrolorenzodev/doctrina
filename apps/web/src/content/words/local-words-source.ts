@@ -1,8 +1,8 @@
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
-import type { ChapterWords, LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@/content/model/words";
+import type { ChapterWords, LexiconEntry, VerseWord, WordLanguage, WordOccurrence } from "@doctrina/core/model/words";
 import { localDataDir } from "@/content/local-data-dir";
-import { shardOf } from "@/content/words/shard-of";
+import { shardOf } from "@doctrina/core/words/shard-of";
 import type { WordBrief, WordsSource } from "@/content/words/words-source";
 
 type MorphTable = { greek: Record<string, string>; hebrew: Record<string, string> };

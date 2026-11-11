@@ -111,7 +111,7 @@ export async function buildPage(doctrine) {
 export function renderPage(doctrine, page) {
   const name = `${camel(doctrine)}Doctrine`;
   const code = [
-    'import type { DoctrinePage } from "@/content/model/doctrine-page";',
+    'import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";',
     'import type { CitationId } from "@/content/registry/citations";',
     "",
     `export const ${name} = ${JSON.stringify(page)} satisfies DoctrinePage<CitationId>;`,

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 import { getConnected } from "@/content/get-connected";
-import type { DoctrinePage } from "@/content/model/doctrine-page";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
 import { verseLink } from "@/content/page-views";
 import { doctrineHref } from "@/content/routes";
 import { doctrineName } from "@/content/site-tree";

@@ -3,9 +3,9 @@ import { join } from "node:path";
 import { bibleVersification, normalizeBibleFile, type BibleRow } from "@/content/bible/normalize-bible";
 import type { BibleSource } from "@/content/bible/bible-source";
 import { sortChapters } from "@/content/bible/chapter-neighbors";
-import { redSpansOf } from "@/content/bible/red-letters";
+import { redSpansOf } from "@doctrina/core/bible/red-letters";
 import { localDataDir } from "@/content/local-data-dir";
-import type { BibleTranslation, ChapterStructure, ChapterSummary } from "@/content/model/bible";
+import type { BibleTranslation, ChapterStructure, ChapterSummary } from "@doctrina/core/model/bible";
 import type { Locale } from "@doctrina/core/locale";
 
 type StructureEntry = { s: [number, string][]; p: number[] };

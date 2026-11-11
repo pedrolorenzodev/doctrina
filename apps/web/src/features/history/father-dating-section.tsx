@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { RevealList } from "@/components/reveal-list";
 import { Section } from "@/components/section";
-import type { FatherDating } from "@/content/model/history";
+import type { FatherDating } from "@doctrina/core/model/history";
 import type { UiText } from "@/content/ui-text/types";
 import { DatingList } from "@/features/history/dating-list";
 

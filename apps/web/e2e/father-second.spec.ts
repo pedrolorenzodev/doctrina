@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow } from "./helpers";
+import { hasFathers, horizontalOverflow } from "./helpers";
 
 const didache = "/es/historia/obras/didache";
 const strip = "main [data-reader-strip]";
@@ -25,6 +25,7 @@ const store = (page: Page, value: object) =>
   page.addInitScript(([key, raw]) => localStorage.setItem(key!, raw!), [storageKey, JSON.stringify(value)]);
 
 test.describe("Fathers' reader: the second translation", () => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   test("the button opens a menu with No, Debajo and Al lado; the list leaves out the edition being read", async ({
     page,
   }) => {

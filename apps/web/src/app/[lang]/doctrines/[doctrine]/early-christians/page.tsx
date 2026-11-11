@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { doctrineCrumb } from "@/content/doctrine-crumb";
 import { getDoctrinePage, getPublishedDoctrines } from "@/content/get-doctrine-page";
-import { doctrineIds, type DoctrineId } from "@/content/model/ids";
+import { doctrineIds, type DoctrineId } from "@doctrina/core/model/ids";
 import { doctrineSubject, doctrineTitle } from "@/content/site-tree";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { CriterionFold } from "@/features/doctrine/criterion-fold";

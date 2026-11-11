@@ -1,15 +1,20 @@
-import { snapToWords } from "../apps/web/src/lib/word-snap.ts";
+import { snapToWords } from "@doctrina/core/word-snap";
 import {
-  addHighlight,
+  addHighlight as addHighlightWith,
   chosenColor,
   colorsIn,
   hasHighlightIn,
   isCovered,
   isHighlight,
-  removeRange,
+  removeRange as removeRangeWith,
   removeVerse,
   segmentsOf,
-} from "../apps/web/src/lib/highlights.ts";
+} from "@doctrina/core/highlights";
+
+let nextId = 0;
+const newId = () => `id-${(nextId += 1)}`;
+const addHighlight = (list, next) => addHighlightWith(list, next, newId);
+const removeRange = (list, key, from, to) => removeRangeWith(list, key, from, to, newId);
 
 const failures = [];
 const check = (name, ok, detail = "") => {

@@ -19,7 +19,7 @@ import solaScripturaCatholic from "@data/passages/focus/sola-scriptura-catholic.
 import solaScripturaLutheran from "@data/passages/focus/sola-scriptura-lutheran.json" with { type: "json" };
 import solaScripturaOrthodox from "@data/passages/focus/sola-scriptura-orthodox.json" with { type: "json" };
 import solaScripturaReformed from "@data/passages/focus/sola-scriptura-reformed.json" with { type: "json" };
-import type { TraditionPage } from "@/content/model/page";
+import type { TraditionPage } from "@doctrina/core/model/page";
 
 type FocusEntry = { refs: string[]; focus: string[]; status: "proposed" | "confirmed" };
 

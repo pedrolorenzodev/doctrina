@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
-import { horizontalOverflow } from "./helpers";
+import { hasFathers, horizontalOverflow } from "./helpers";
 
 const root = "[data-sources]";
 const rows = `${root} ul[aria-label] > [data-source]`;
@@ -264,6 +264,7 @@ test("available Ambrose, Athanasius and Cyprian works retain their reader links"
 test("includes every corpus work and all seven Ignatius letters with usable marks and controls @webkit", async ({
   page,
 }) => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   const corpus = readdirSync("../../data/corpus/fathers", { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => {
@@ -314,6 +315,7 @@ for (const width of [1440, 390]) {
   test(`every ruler mark sits on its year of the axis, and the labels end at 2000, within ${markTolerancePx} px at ${width} px`, async ({
     page,
   }) => {
+    test.skip(!hasFathers, "needs the local Fathers corpus");
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/es/fuentes");
     const track = page.locator(`${root} [data-years-track]`);

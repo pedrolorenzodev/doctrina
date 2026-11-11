@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { horizontalOverflow, preferEnglishFatherEdition } from "./helpers";
+import { hasFathers, horizontalOverflow, preferEnglishFatherEdition } from "./helpers";
 
 const didache = "/es/historia/obras/didache";
 const panel = 'aside[data-side-panel][aria-label="Detalle del pasaje"]';
@@ -86,6 +86,7 @@ const columnPlaces = (page: Page) =>
   });
 
 test.describe("Fathers' reader: note cards", () => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   test("with the tree closed, from 1083 px, a note is a card 40 px right of the column, level with its paragraph, and the margin mark is gone", async ({
     page,
   }) => {

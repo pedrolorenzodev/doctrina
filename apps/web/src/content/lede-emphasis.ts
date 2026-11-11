@@ -1,4 +1,4 @@
-import type { DoctrineId, TraditionId } from "@/content/model/ids";
+import type { DoctrineId, TraditionId } from "@doctrina/core/model/ids";
 import type { Locale } from "@doctrina/core/locale";
 
 type EmphasisMap = Partial<Record<DoctrineId, Partial<Record<TraditionId, string>>>>;

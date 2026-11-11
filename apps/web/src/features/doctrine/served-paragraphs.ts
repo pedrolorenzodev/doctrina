@@ -1,6 +1,6 @@
 import { isSimplificationServed } from "@/content/ai-simplify/served";
-import type { DoctrinePage } from "@/content/model/doctrine-page";
-import type { TraditionPage } from "@/content/model/page";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { addressId, type SimplifyAddress } from "@/lib/ai/contracts";
 import { simplifierEnabled } from "@/lib/simplifier-enabled";
 

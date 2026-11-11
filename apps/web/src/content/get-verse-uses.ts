@@ -1,12 +1,12 @@
 import { formatVerseRef } from "@/content/format-verse";
 import { getPublishedPages, getTraditionPage } from "@/content/get-tradition-page";
-import type { DoctrineId, TraditionId } from "@/content/model/ids";
-import type { TraditionPage } from "@/content/model/page";
+import type { DoctrineId, TraditionId } from "@doctrina/core/model/ids";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { doctrineName } from "@/content/site-tree";
 import { traditionHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { bookOrder } from "@/content/verse-names";
-import { parseInline } from "@/lib/inline-refs";
+import { parseInline } from "@doctrina/core/inline-refs";
 import type { Locale } from "@doctrina/core/locale";
 
 export type VerseUse = { id: string; href: string; title: string; context: string };

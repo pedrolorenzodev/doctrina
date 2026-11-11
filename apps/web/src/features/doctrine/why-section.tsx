@@ -4,12 +4,12 @@ import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 import { formatDate } from "@/content/format-date";
 import { getPublishedDoctrines } from "@/content/get-doctrine-page";
-import type { Father, TraditionPage } from "@/content/model/page";
+import type { Father, TraditionPage } from "@doctrina/core/model/page";
 import { verseLink } from "@/content/page-views";
 import { doctrineHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import type { Locale } from "@doctrina/core/locale";
-import { closeParenthesis, openParenthesis } from "@/lib/punctuation";
+import { closeParenthesis, openParenthesis } from "@doctrina/core/punctuation";
 
 type WhySectionProps = {
   page: TraditionPage;

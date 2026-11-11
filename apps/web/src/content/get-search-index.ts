@@ -5,7 +5,7 @@ import { formatDate } from "@/content/format-date";
 import { getPublishedFathers } from "@/content/get-fathers";
 import { getDoctrinePage, getPublishedDoctrines } from "@/content/get-doctrine-page";
 import { getTraditionPage } from "@/content/get-tradition-page";
-import { traditionIds } from "@/content/model/ids";
+import { traditionIds } from "@doctrina/core/model/ids";
 import { officialObjections } from "@/content/official-objections";
 import { objectionsPageText } from "@/content/objections-page-text";
 import { plainRich } from "@/content/page-views";
@@ -22,8 +22,8 @@ import { doctrineName, doctrineSubject, traditionName } from "@/content/site-tre
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { witnessReference } from "@/content/witness-view";
 import type { Locale } from "@doctrina/core/locale";
-import { pathSeparator } from "@/lib/punctuation";
-import type { SearchEntry } from "@/lib/search-match";
+import { pathSeparator } from "@doctrina/core/punctuation";
+import type { SearchEntry } from "@doctrina/core/search-match";
 
 const gap = /\[\.\.\.\]/g;
 

@@ -1,10 +1,10 @@
 import { buildCitationView } from "@/content/citation-view";
 import { expandSegment, sortedVerseKeys } from "@/content/expand-verses";
 import { formatVerseRef } from "@/content/format-verse";
-import type { GradeDefinition, GradeLine, Objection, TraditionPage } from "@/content/model/page";
-import type { Registry } from "@/content/model/registry";
+import type { GradeDefinition, GradeLine, Objection, TraditionPage } from "@doctrina/core/model/page";
+import type { Registry } from "@doctrina/core/model/registry";
 import type { UiText } from "@/content/ui-text/types";
-import { parseInline, referencesIn } from "@/lib/inline-refs";
+import { parseInline, referencesIn } from "@doctrina/core/inline-refs";
 import type { CitationView } from "@/lib/citation-view";
 import type { Locale } from "@doctrina/core/locale";
 

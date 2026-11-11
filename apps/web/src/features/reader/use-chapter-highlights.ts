@@ -18,9 +18,10 @@ import {
   segmentsOf,
   type HighlightColor,
   type VerseKey,
-} from "@/lib/highlights";
+} from "@doctrina/core/highlights";
 
 const fadeMs = 280;
+const newId = () => crypto.randomUUID();
 const unitAttribute = { first: "data-verse-text", second: "data-second-text" } as const;
 
 type Column = keyof typeof unitAttribute;
@@ -96,7 +97,11 @@ export function useChapterHighlights({ translationId, column, root, book, chapte
     apply: (ranges: VerseRange[], color: HighlightColor) => {
       let next = getHighlights();
       for (const range of ranges) {
-        next = addHighlight(next, { ...keyOf(range.verse), from: range.from, to: range.to, color, at: Date.now() });
+        next = addHighlight(
+          next,
+          { ...keyOf(range.verse), from: range.from, to: range.to, color, at: Date.now() },
+          newId,
+        );
       }
       rememberHighlightColor(color);
       commit(next, done);
@@ -104,7 +109,7 @@ export function useChapterHighlights({ translationId, column, root, book, chapte
     remove: (ranges: VerseRange[]) => {
       const run = () => {
         let next = getHighlights();
-        for (const range of ranges) next = removeRange(next, keyOf(range.verse), range.from, range.to);
+        for (const range of ranges) next = removeRange(next, keyOf(range.verse), range.from, range.to, newId);
         commit(next, removed);
       };
       if (fadeMarks(root.current, column, ranges)) window.setTimeout(run, fadeMs);

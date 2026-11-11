@@ -6,7 +6,7 @@ import {
   notesAtVerse,
   removeNote,
   saveNoteText,
-} from "../apps/web/src/lib/notes.ts";
+} from "@doctrina/core/notes";
 
 const failures = [];
 const check = (name, ok, detail = "") => {

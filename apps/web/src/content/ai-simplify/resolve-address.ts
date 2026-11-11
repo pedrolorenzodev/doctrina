@@ -1,9 +1,9 @@
 import { getFatherWork } from "@/content/get-father-works";
 import { getSpanishFatherWork } from "@/content/get-father-works-es";
 import type { GlossaryEntry } from "@/content/get-glossary";
-import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
-import type { DoctrinePage } from "@/content/model/doctrine-page";
-import type { TraditionPage } from "@/content/model/page";
+import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@doctrina/core/model/ids";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { plainRich } from "@/content/page-views";
 import { spanishDoctrinePages, spanishPages } from "@/content/pages/index";
 import { simplifyAddressSchema, type SimplifyAddress } from "@/lib/ai/contracts";

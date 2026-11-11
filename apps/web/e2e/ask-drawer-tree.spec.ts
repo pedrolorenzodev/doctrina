@@ -1,6 +1,9 @@
 import { expect, test, type Page } from "@playwright/test";
+import { hasCorpus } from "./helpers";
 
 const chapter = "/es/biblia/juan/6";
+
+test.skip(!hasCorpus, "needs the local Bible corpus");
 const askButton = "button[data-ask-button]:visible";
 const menuButton = "header button[aria-controls='site-sidebar']";
 

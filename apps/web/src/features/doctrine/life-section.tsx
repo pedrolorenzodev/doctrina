@@ -1,13 +1,13 @@
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 import { shownLifeItems } from "@/content/doctrine-rules";
-import type { TraditionPage } from "@/content/model/page";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { ExpandableList } from "@/features/doctrine/expandable-list";
 import { SourceLinks } from "@/features/doctrine/source-links";
 import type { Locale } from "@doctrina/core/locale";
-import { finalStop, withoutFinalStop } from "@/lib/punctuation";
+import { finalStop, withoutFinalStop } from "@doctrina/core/punctuation";
 
 type LifeSectionProps = {
   page: TraditionPage;

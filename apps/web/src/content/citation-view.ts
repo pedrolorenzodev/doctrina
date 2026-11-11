@@ -1,8 +1,8 @@
 import type { CitationView } from "@/lib/citation-view";
 import { formatDate } from "@/content/format-date";
 import { formatLocator } from "@/content/format-locator";
-import type { DocLang } from "@/content/model/ids";
-import type { Excerpt, Passage, Registry } from "@/content/model/registry";
+import type { DocLang } from "@doctrina/core/model/ids";
+import type { Excerpt, Passage, Registry } from "@doctrina/core/model/registry";
 import type { UiText } from "@/content/ui-text/types";
 import { itemName } from "@/content/item-names";
 import type { Locale } from "@doctrina/core/locale";

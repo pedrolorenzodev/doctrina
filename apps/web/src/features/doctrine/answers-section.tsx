@@ -7,7 +7,7 @@ import { Section } from "@/components/section";
 import { PageLink } from "@/components/ui/page-link";
 import { answerGradeViewId } from "@/content/get-doctrine-views";
 import { getTraditionPage } from "@/content/get-tradition-page";
-import type { DoctrinePage } from "@/content/model/doctrine-page";
+import type { DoctrinePage } from "@doctrina/core/model/doctrine-page";
 import { plainRich, verseLink } from "@/content/page-views";
 import { objectionHref, traditionHref } from "@/content/routes";
 import { traditionName } from "@/content/site-tree";

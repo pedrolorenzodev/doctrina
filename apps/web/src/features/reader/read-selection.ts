@@ -1,4 +1,4 @@
-import { snapToWords } from "@/lib/word-snap";
+import { snapToWords } from "@doctrina/core/word-snap";
 
 export type VerseRange = { verse: number; from: number; to: number; translationId?: string };
 

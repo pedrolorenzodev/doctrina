@@ -6,7 +6,7 @@ import { PageLink } from "@/components/ui/page-link";
 import { shownPassages } from "@/content/doctrine-rules";
 import { bibleReferenceHref } from "@/content/bible-routes";
 import { formatVerseRef } from "@/content/format-verse";
-import type { TraditionPage } from "@/content/model/page";
+import type { TraditionPage } from "@doctrina/core/model/page";
 import { verseLink } from "@/content/page-views";
 import { getUiText } from "@/content/ui-text/get-ui-text";
 import { shownScripture } from "@/content/shown-passages";

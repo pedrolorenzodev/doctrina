@@ -1,5 +1,5 @@
 import { formatDate } from "@/content/format-date";
-import type { Witness } from "@/content/model/doctrine-page";
+import type { Witness } from "@doctrina/core/model/doctrine-page";
 import type { UiText } from "@/content/ui-text/types";
 import type { CitationView } from "@/lib/citation-view";
 import type { Locale } from "@doctrina/core/locale";

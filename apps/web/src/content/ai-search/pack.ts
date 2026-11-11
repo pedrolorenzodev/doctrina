@@ -26,7 +26,7 @@ import type {
 import { fold, quotedShare, scoreText, windowAround } from "@/content/ai-search/windows";
 import { getBibleBook } from "@/content/bible-books";
 import { bookNames } from "@/content/verse-names";
-import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@/content/model/ids";
+import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@doctrina/core/model/ids";
 import type { Locale } from "@doctrina/core/locale";
 
 type Ranked = Passage & { rank: number };

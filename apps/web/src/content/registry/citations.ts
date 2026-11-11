@@ -1,4 +1,4 @@
-import type { Citation } from "@/content/model/registry";
+import type { Citation } from "@doctrina/core/model/registry";
 
 export const citations = {
   LSCVI_1_2: {

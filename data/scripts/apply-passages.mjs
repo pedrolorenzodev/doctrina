@@ -37,7 +37,7 @@ for (const key of keys) {
   reports[key] = layered.report;
   fs.writeFileSync(
     file,
-    `import type { TraditionPage } from "@/content/model/page";\nimport type { CitationId } from "@/content/registry/citations";\n\nexport const ${name} = ${lit(layered.page)} satisfies TraditionPage<CitationId>;\n`,
+    `import type { TraditionPage } from "@doctrina/core/model/page";\nimport type { CitationId } from "@/content/registry/citations";\n\nexport const ${name} = ${lit(layered.page)} satisfies TraditionPage<CitationId>;\n`,
   );
   touched.push(file);
 }
@@ -45,7 +45,7 @@ const existing = (await import(REGISTRY)).verses;
 const missing = Object.keys(newVerses).filter((k) => !(k in existing));
 if (missing.length) {
   const merged = { ...existing, ...Object.fromEntries(missing.map((k) => [k, newVerses[k]])) };
-  fs.writeFileSync(REGISTRY, `import type { Verse } from "@/content/model/registry";\n\nexport const verses = ${lit(merged)} satisfies Record<string, Verse>;\n\nexport type VerseId = keyof typeof verses;\n`);
+  fs.writeFileSync(REGISTRY, `import type { Verse } from "@doctrina/core/model/registry";\n\nexport const verses = ${lit(merged)} satisfies Record<string, Verse>;\n\nexport type VerseId = keyof typeof verses;\n`);
   touched.push(REGISTRY);
 }
 if (touched.length) execFileSync("npx", ["prettier", "--write", ...touched], { stdio: "ignore" });

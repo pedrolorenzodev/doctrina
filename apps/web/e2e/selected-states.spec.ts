@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { hasCorpus } from "./helpers";
 
 const tradition = "/es/doctrinas/eucaristia/catolica";
 
@@ -50,6 +51,7 @@ for (const scheme of ["light", "dark"] as const) {
     test("a pressed toggle button is lifted too, with the same grey hairline and no accent border", async ({
       page,
     }) => {
+      test.skip(!hasCorpus, "needs the local Bible corpus");
       await page.goto("/es/biblia/juan/6");
       const toggle = page.locator("button[aria-pressed]", { hasText: "Preguntar" }).first();
       await toggle.click();
@@ -171,6 +173,7 @@ test.describe("menus", () => {
 
   for (const slider of sliders) {
     test(`${slider.name} has one pad that slides to the chosen option and never disappears`, async ({ page }) => {
+      test.skip(!hasCorpus, "needs the local Bible corpus");
       await page.goto("/es/biblia/juan/6");
       await page.waitForTimeout(800);
       await page.locator(slider.open).first().click();
@@ -204,6 +207,7 @@ test.describe("menus", () => {
   }
 
   test("switching the theme with the Aa menu open closes it completely before the sweep starts", async ({ page }) => {
+    test.skip(!hasCorpus, "needs the local Bible corpus");
     await page.goto("/es/biblia/juan/6");
     await page.waitForTimeout(800);
     await page.locator('button[aria-haspopup="dialog"]:has-text("Aa")').first().click();

@@ -1,4 +1,4 @@
-import type { DateInfo } from "@/content/model/registry";
+import type { DateInfo } from "@doctrina/core/model/registry";
 import type { Locale } from "@doctrina/core/locale";
 
 const months: Record<Locale, string[]> = {

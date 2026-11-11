@@ -7,7 +7,7 @@ import { PageLink } from "@/components/ui/page-link";
 import type { HistoryIndexGroup } from "@/content/get-history-indexes";
 import { flipList, revealList } from "@/lib/list-motion";
 import { scrollToElement } from "@/lib/scroll";
-import { fold } from "@/lib/search-match";
+import { fold } from "@doctrina/core/search-match";
 
 type HistoryIndexListProps = {
   groups: HistoryIndexGroup[];

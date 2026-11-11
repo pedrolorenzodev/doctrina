@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
-import { horizontalOverflow } from "./helpers";
+import { hasFathers, horizontalOverflow } from "./helpers";
 
 const history = JSON.parse(readFileSync("../../data/site/history.json", "utf8")) as {
   councils: { id: string }[];
@@ -98,7 +98,7 @@ test("the language switch keeps the page on the history routes", async ({ page }
     ["/es/historia/reforma/anabaptist", "/en/history/reformation/anabaptist"],
     ["/es/historia/linea-de-tiempo", "/en/history/timeline"],
   ];
-  for (const [spanish, english] of cases) {
+  for (const [spanish, english] of cases.filter(([route]) => hasFathers || !route.includes("/obras/"))) {
     await page.goto(spanish);
     await page.getByRole("link", { name: "EN", exact: true }).click();
     await expect(page).toHaveURL(english);

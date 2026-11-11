@@ -3,7 +3,7 @@ import { formatYear } from "@/content/format-date";
 import type { FatherWorkRow } from "@/content/father-work-links";
 import { writingWorkIds } from "@/content/father-writing-links";
 import { writingYears } from "@/content/writing-years";
-import type { Father } from "@/content/model/history";
+import type { Father } from "@doctrina/core/model/history";
 import { fatherWorkHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
 import type { Locale } from "@doctrina/core/locale";

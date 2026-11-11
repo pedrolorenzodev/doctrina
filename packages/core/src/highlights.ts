@@ -14,13 +14,11 @@ const sameVerse = (highlight: VerseKey, key: VerseKey) =>
   highlight.chapter === key.chapter &&
   highlight.verse === key.verse;
 
-const newId = () => crypto.randomUUID();
-
 export function highlightsOf(list: Highlight[], key: VerseKey): Highlight[] {
   return list.filter((highlight) => sameVerse(highlight, key)).sort((a, b) => a.from - b.from);
 }
 
-function cut(existing: Highlight[], from: number, to: number): Highlight[] {
+function cut(existing: Highlight[], from: number, to: number, newId: () => string): Highlight[] {
   return existing.flatMap((highlight) => {
     if (highlight.to <= from || highlight.from >= to) return [highlight];
     const parts: Highlight[] = [];
@@ -40,15 +38,21 @@ function merge(runs: Highlight[]): Highlight[] {
   return merged;
 }
 
-export function addHighlight(list: Highlight[], next: Omit<Highlight, "id">): Highlight[] {
+export function addHighlight(list: Highlight[], next: Omit<Highlight, "id">, newId: () => string): Highlight[] {
   const others = list.filter((highlight) => !sameVerse(highlight, next));
-  const mine = cut(highlightsOf(list, next), next.from, next.to);
+  const mine = cut(highlightsOf(list, next), next.from, next.to, newId);
   return [...others, ...merge([...mine, { ...next, id: newId() }])];
 }
 
-export function removeRange(list: Highlight[], key: VerseKey, from: number, to: number): Highlight[] {
+export function removeRange(
+  list: Highlight[],
+  key: VerseKey,
+  from: number,
+  to: number,
+  newId: () => string,
+): Highlight[] {
   const others = list.filter((highlight) => !sameVerse(highlight, key));
-  return [...others, ...cut(highlightsOf(list, key), from, to)];
+  return [...others, ...cut(highlightsOf(list, key), from, to, newId)];
 }
 
 export function removeVerse(list: Highlight[], key: VerseKey): Highlight[] {

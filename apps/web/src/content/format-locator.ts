@@ -1,5 +1,5 @@
-import type { LocatorKind } from "@/content/model/ids";
-import type { Locator } from "@/content/model/registry";
+import type { LocatorKind } from "@doctrina/core/model/ids";
+import type { Locator } from "@doctrina/core/model/registry";
 import { nbspBeforeDigits } from "@/lib/locator";
 import type { Locale } from "@doctrina/core/locale";
 

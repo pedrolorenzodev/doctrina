@@ -3,7 +3,7 @@ import { lifeText } from "@/content/father-life";
 import { personItem } from "@/content/father-timeline";
 import { writingWorkIds } from "@/content/father-writing-links";
 import { councils, heresies } from "@/content/history/timeline-sources";
-import type { Father } from "@/content/model/history";
+import type { Father } from "@doctrina/core/model/history";
 import { councilHref, currentHref, fatherHref, fatherWorkHref } from "@/content/routes";
 import type { UiText } from "@/content/ui-text/types";
 import type { TimelineEntry } from "@/lib/timeline-entry";

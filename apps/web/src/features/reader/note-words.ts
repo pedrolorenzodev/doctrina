@@ -1,4 +1,4 @@
-import type { Note } from "@/lib/notes";
+import type { Note } from "@doctrina/core/notes";
 
 const fadeMs = 280;
 let clearTimer = 0;

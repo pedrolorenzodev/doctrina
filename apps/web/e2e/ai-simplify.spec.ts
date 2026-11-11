@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { hasFathers } from "./helpers";
 
 const ignatius = { kind: "father", work: "ignatius-smyrnaeans", edition: "lightfoot-1889", locator: "6.2" };
 const catholic = { kind: "statement", doctrine: "eucharist", tradition: "catholic", id: "QE-1" };
@@ -22,6 +23,7 @@ test("the test-set paragraphs return their reviewed texts", async ({ request }) 
 });
 
 test("a Father division gets a live aligned simplification, then a cache hit", async ({ request }) => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   const first = await request.post("/api/ai/simplify", { data: { address: unseededFather, locale: "es" } });
   expect(first.status()).toBe(200);
   expect(first.headers()["cache-control"]).toBe("no-store");
@@ -80,6 +82,7 @@ test("the cache-only GET never generates", async ({ request }) => {
 });
 
 test("refusals carry the simplifier's messages", async ({ request }) => {
+  test.skip(!hasFathers, "needs the local Fathers corpus");
   const bible = await request.post("/api/ai/simplify", {
     data: { address: { kind: "bible", book: "John", chapter: 6, verse: 53 }, locale: "es" },
   });

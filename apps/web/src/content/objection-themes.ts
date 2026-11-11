@@ -1,5 +1,5 @@
 import { objectionThemeFilterFrom } from "@/content/doctrine-rules";
-import type { Objection, ObjectionTheme, TraditionPage } from "@/content/model/page";
+import type { Objection, ObjectionTheme, TraditionPage } from "@doctrina/core/model/page";
 import { officialObjections } from "@/content/official-objections";
 
 export type ThemeGroup = { theme: ObjectionTheme; objections: Objection[] };

@@ -1,4 +1,4 @@
-import { fold, fragmentAround, markSegments, searchEntries, searchWords } from "@/lib/search-match";
+import { fold, fragmentAround, markSegments, searchEntries, searchWords } from "@doctrina/core/search-match";
 
 const entry = (id, title, path, texts, extra = {}) => ({
   id,

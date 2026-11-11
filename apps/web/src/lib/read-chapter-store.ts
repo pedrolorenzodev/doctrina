@@ -1,4 +1,4 @@
-import { parseReadChapters, readChapterKey } from "@/lib/read-chapters";
+import { parseReadChapters, readChapterKey } from "@doctrina/core/read-chapters";
 
 export const readChaptersStorageKey = "doctrina-read-chapters";
 

@@ -38,7 +38,7 @@ for (const [name, [type, ids]] of Object.entries(types)) {
   }
   fs.writeFileSync(
     `${existingDir}/${name}.ts`,
-    `import type { ${type} } from "@/content/model/registry";\n\nexport const ${name} = ${literal(merged)} satisfies Record<string, ${type}>;\n\nexport type ${ids} = keyof typeof ${name};\n`,
+    `import type { ${type} } from "@doctrina/core/model/registry";\n\nexport const ${name} = ${literal(merged)} satisfies Record<string, ${type}>;\n\nexport type ${ids} = keyof typeof ${name};\n`,
   );
   console.log(name, Object.keys(existing).length, "->", Object.keys(merged).length);
 }

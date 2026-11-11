@@ -550,7 +550,7 @@ fs.mkdirSync(`${CONTENT}/registry`, { recursive: true });
 const registryFile = (name, type, ids) =>
   fs.writeFileSync(
     `${CONTENT}/registry/${name}.ts`,
-    `import type { ${type} } from "@/content/model/registry";\n\nexport const ${name} = ${lit(registry[name])} satisfies Record<string, ${type}>;\n\nexport type ${ids} = keyof typeof ${name};\n`,
+    `import type { ${type} } from "@doctrina/core/model/registry";\n\nexport const ${name} = ${lit(registry[name])} satisfies Record<string, ${type}>;\n\nexport type ${ids} = keyof typeof ${name};\n`,
   );
 registryFile("works", "Work", "WorkId");
 registryFile("editions", "Edition", "EditionId");
@@ -560,7 +560,7 @@ for (const d of DOCTRINES) {
   fs.mkdirSync(`${CONTENT}/pages/${doctrineOf(d)}`, { recursive: true });
   fs.writeFileSync(
     `${CONTENT}/pages/${doctrineOf(d)}/${traditionOf(d)}.es.ts`,
-    `import type { TraditionPage } from "@/content/model/page";\nimport type { CitationId } from "@/content/registry/citations";\n\nexport const ${camel(doctrineOf(d))}${traditionOf(d)[0].toUpperCase()}${traditionOf(d).slice(1)} = ${lit(pages[d])} satisfies TraditionPage<CitationId>;\n`,
+    `import type { TraditionPage } from "@doctrina/core/model/page";\nimport type { CitationId } from "@/content/registry/citations";\n\nexport const ${camel(doctrineOf(d))}${traditionOf(d)[0].toUpperCase()}${traditionOf(d).slice(1)} = ${lit(pages[d])} satisfies TraditionPage<CitationId>;\n`,
   );
 }
 

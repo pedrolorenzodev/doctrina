@@ -1,4 +1,4 @@
-import type { Work } from "@/content/model/registry";
+import type { Work } from "@doctrina/core/model/registry";
 
 export const works = {
   "small-catechism": {
