@@ -1,6 +1,5 @@
 import "server-only";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import historyJson from "@data/site/history.json" with { type: "json" };
 import { formatYear } from "@/content/format-date";
 import { councilHref, divisionHref, fatherHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
@@ -32,7 +31,7 @@ type History = {
 export type { YearsData } from "@/lib/years-data";
 import type { YearsData, YearsFather, YearsCouncil, YearsDivision } from "@/lib/years-data";
 
-const history = JSON.parse(readFileSync(join(process.cwd(), "data/site/history.json"), "utf8")) as History;
+const history = historyJson as unknown as History;
 
 const workLead = 25;
 const capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);

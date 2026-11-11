@@ -2,8 +2,10 @@ import { existsSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const SRC = fileURLToPath(new URL("../src/", import.meta.url));
+const DATA = fileURLToPath(new URL("../data/", import.meta.url));
 
 export async function resolve(specifier, context, next) {
+  if (specifier.startsWith("@data/")) return next(pathToFileURL(DATA + specifier.slice(6)).href, context);
   if (!specifier.startsWith("@/")) return next(specifier, context);
   const base = SRC + specifier.slice(2);
   const file = [`${base}.ts`, `${base}/index.ts`].find((candidate) => existsSync(candidate));

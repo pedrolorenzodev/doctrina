@@ -1,6 +1,29 @@
+import { readdirSync, readFileSync } from "node:fs";
 import { spanishPages } from "@/content/pages/index";
 import { loadFocus, validateFocus } from "../data/scripts/passage-focus-data.mjs";
 import { hasBibleCorpus } from "../data/scripts/passage-normalize.mjs";
+
+const recordFailures = [];
+const focusDir = new URL("../data/passages/focus/", import.meta.url);
+const onDisk = readdirSync(focusDir)
+  .filter((file) => file.endsWith(".json"))
+  .map((file) => file.slice(0, -5))
+  .sort();
+const recordSource = readFileSync(new URL("../src/content/passage-focus.ts", import.meta.url), "utf8");
+const inRecord = [...recordSource.matchAll(/^ {2}"([a-z-]+)": \w+,$/gm)].map((match) => match[1]).sort();
+const imported = [...recordSource.matchAll(/@data\/passages\/focus\/([a-z-]+)\.json/g)].map((match) => match[1]).sort();
+for (const key of onDisk) {
+  if (!inRecord.includes(key))
+    recordFailures.push(`data/passages/focus/${key}.json is not in the record of passage-focus.ts`);
+  if (!imported.includes(key))
+    recordFailures.push(`data/passages/focus/${key}.json is not imported by passage-focus.ts`);
+}
+for (const key of inRecord)
+  if (!onDisk.includes(key)) recordFailures.push(`passage-focus.ts lists ${key} but no such file`);
+if (recordFailures.length > 0) {
+  for (const failure of recordFailures) console.error(`FAIL ${failure}`);
+  process.exit(1);
+}
 
 if (!hasBibleCorpus) {
   console.log("check-passage-focus.mjs: skipped, no Bible corpus here (the git-only CI)");

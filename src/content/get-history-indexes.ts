@@ -1,6 +1,5 @@
 import "server-only";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import historyJson from "@data/site/history.json" with { type: "json" };
 import { buildFatherView } from "@/content/father-view";
 import { formatYear } from "@/content/format-date";
 import { getPublishedFathers } from "@/content/get-fathers";
@@ -38,7 +37,7 @@ export type HistoryIndexGroup = { title: string; rows: HistoryIndexRow[] };
 
 export type HistoryIndexKind = "fathers" | "councils" | "currents" | "divisions" | "reformation";
 
-const history = JSON.parse(readFileSync(join(process.cwd(), "data/site/history.json"), "utf8")) as History;
+const history = historyJson as unknown as History;
 
 type Entry = { year: number; row: HistoryIndexRow };
 

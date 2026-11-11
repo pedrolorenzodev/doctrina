@@ -1,5 +1,4 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import glossaryJson from "@data/site/glossary.json" with { type: "json" };
 import type { HistoryIndexGroup } from "@/content/get-history-indexes";
 import type { DoctrineId } from "@/content/model/ids";
 import { glossaryTermHref } from "@/content/routes";
@@ -30,7 +29,7 @@ export type GlossaryTerm = {
   notes: string[];
 };
 
-const glossary = JSON.parse(readFileSync(join(process.cwd(), "data/site/glossary.json"), "utf8")) as {
+const glossary = glossaryJson as unknown as {
   status: string;
   terms: GlossaryTerm[];
 };

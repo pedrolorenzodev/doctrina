@@ -1,5 +1,5 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import v1 from "@data/raw/v1.json" with { type: "json" };
+import sourcesExtra from "@data/site/sources.extra.json" with { type: "json" };
 import type { Locale } from "@/lib/locale";
 
 type Localized = Record<Locale, string>;
@@ -39,9 +39,8 @@ export const readerIds: Record<string, string> = {
   "athanasius-on-the-incarnation": "athanasius-de-incarnatione",
 };
 export const canonical = (id: string) => aliases[id] ?? id;
-const read = (path: string) => JSON.parse(readFileSync(join(process.cwd(), path), "utf8"));
-const base = (read("data/raw/v1.json") as { sources: CatalogueSource[] }).sources;
-const extra = read("data/site/sources.extra.json") as CatalogueSource[];
+const base = (v1 as unknown as { sources: CatalogueSource[] }).sources;
+const extra = sourcesExtra as unknown as CatalogueSource[];
 export const catalogue = new Map(
   [...base, ...extra].filter((source) => source.kind !== "scripture").map((source) => [canonical(source.id), source]),
 );

@@ -1,6 +1,5 @@
 import "server-only";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import historyJson from "@data/site/history.json" with { type: "json" };
 import type { Locale } from "@/lib/locale";
 
 type Localized = { es: string; en: string };
@@ -61,7 +60,7 @@ type MovementRecord = {
 
 export type HistoryPage<T> = { item: T; previous: T | null; next: T | null };
 
-const history = JSON.parse(readFileSync(join(process.cwd(), "data/site/history.json"), "utf8")) as {
+const history = historyJson as unknown as {
   councils: CouncilRecord[];
   heresies: CurrentRecord[];
   divisions: DivisionRecord[];

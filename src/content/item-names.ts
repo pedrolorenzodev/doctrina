@@ -1,5 +1,4 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import names from "@data/site/names.json" with { type: "json" };
 import type { Locale } from "@/lib/locale";
 
 export type ItemNameRecord = {
@@ -9,10 +8,7 @@ export type ItemNameRecord = {
   entity?: string;
 };
 
-const records = JSON.parse(readFileSync(join(process.cwd(), "data/site/names.json"), "utf8")) as Record<
-  string,
-  ItemNameRecord
->;
+const records = names as unknown as Record<string, ItemNameRecord>;
 
 function recordOf(id: string): ItemNameRecord {
   const record = records[id];
