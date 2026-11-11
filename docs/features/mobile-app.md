@@ -4,6 +4,7 @@ Approved by Pedro on 2026-11-11 (written in Opus 5.5 plan mode). Agents read thi
 
 ## Phase log (agents append «State / Next exact step» here)
 - 2026-11-11: plan written in Opus 5.5 plan mode (3 Explore agents, 1 Plan agent) and **approved by Pedro**. Planning cost: session 24 % → 34 %, weekly 4 % → 6 %. Next: P0 (Pedro) and M-A, launched by the coordinator on Pedro's go.
+- 2026-11-11 (M-A, A1): seven `src/content` modules now import their JSON through `@data/*` instead of `readFileSync(process.cwd())`; `tools/check-passage-focus.mjs` checks the record against `data/passages/focus/`. Verified in the clone `~/Desktop/dev/doctrina-mobile-a`: 8917 prerendered routes identical before and after, 29,669 prerendered files equal to the baseline build, `npm run verify` green, e2e 1671 passed (3 specs fail the same way on the untouched baseline), lean and git-only builds green. State: A1 ready for the coordinator to merge and for Pedro to commit and push to `main`. Next exact step: wait for «A2 GO» (branch `monorepo` in the real repo).
 
 ---
 
