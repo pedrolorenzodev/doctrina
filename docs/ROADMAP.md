@@ -3,11 +3,11 @@
 ## Current state
 > Overwritten at the end of every session. 15 lines max.
 
-**2026-11-11 (coordinator session `doctrina-cc`):** `doctrina.elpepo.dev` is live from `main` (Vercel Hobby, São Paulo, Supabase `sa-east-1`; real AI chat and Simplifier on: `/api/ai/status` answers on and on). Designs approved and **built briefs ready, none launched**: Bible passage lookup (search box = variant G, stacked view = variant 3 «Riel», https://claude.ai/artifact/6zY5dTSvroMykTqkV8oLuE), Notes page B2, PDDPT import; Torres Amat has no brief yet. Already committed by Pedro: the parser of the lookup (logic only, no UI) and every decision.
-**Pedro, 2026-11-11: none of the pending items is a priority now (lookup build, notes page, PDDPT, Torres Amat, AI loose ends, «ready to share» visual list); all stay listed under «Parked» below. Now: the mobile app (iOS and Android; React Native, TypeScript, Expo) starts.** This session only coordinates: plans, discussions and briefs; code goes to an agent.
-**Usage rule (Pedro):** never past 60 % of the 5-hour session until he says; weekly spent with control (DECISIONS 2026-11-11).
-**Monorepo (M-A, 2026-11-11):** A1 is on `main`; A2 (the move to `apps/web`) is done on branch `monorepo`, verified locally, waiting for Pedro to commit, open the PR and see green CI; then A3 (Vercel Root Directory).
-**Tests:** chromium suite green except one flaky spec (`reader-parallel`); GitHub CI `verify` is red because `npm run e2e` needs git-ignored data (not decided).
+**2026-11-12 (coordinator session `doctrina-mobile-app-plan`; read `docs/features/mobile-app.md` first, then DECISIONS «Mobile: design language, usage plan, saved tasks…»):** `doctrina.elpepo.dev` is live from `main` (Vercel Hobby, Root Directory `apps/web`, Supabase `sa-east-1`; real AI chat and Simplifier on). The repo is an npm-workspaces monorepo: `apps/web`, `packages/core` (`@doctrina/core`: blocks B0–B2 done), and `apps/mobile` (not in the repo yet: M-C1 is verified in a clone and paused).
+**Mobile status:** plan approved; M-A done and live; M-B B0–B2 done (B3–B5 saved); M-C1 paused (never ran in the simulator); M-D redo published (Vidrio): only the bottom nav bar and the reader header direction are approved, Pedro is reviewing the rest and will send all his comments together; the Bible lookup and the Notes page designs are approved, builds parked.
+**Usage rule (Pedro):** 5-hour session ≈ 60 % normally (more only near its reset); **only ONE subagent at a time** until he says to launch two; weekly spent with control. Saved for a «two in parallel» order: M-B B3–B5 and privacy/store drafts (briefs in `~/doctrina-research-prompts/`).
+**Pedro's pending to-dos:** commit and push what the coordinator hands over; send all his Artifact comments; decide the navigation option (A–D) and the 7 open questions; the Xiaomi test with another cable; update macOS then Xcode 27 before installing on his iPhone; confirm the Apple Developer account route (his brother's team); a real contact email before M-E.
+**Tests:** GitHub CI e2e should now be green without the git-ignored data (the fix is in `main` after the push); known flaky under load; `simplifier-loading.spec.ts:181` fails on the base too.
 
 ## Now
 
