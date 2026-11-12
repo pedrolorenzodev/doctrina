@@ -1,5 +1,5 @@
-import { getBibleBook, type BibleBook } from "@/content/bible-books";
-import { defaultTranslationId } from "@/content/bible/default-translation";
+import { getBibleBook, type BibleBook } from "@doctrina/core/bible-books";
+import { defaultTranslationId } from "@doctrina/core/bible/default-translation";
 import { translationMeta, translationOrder } from "@doctrina/core/bible/translation-meta";
 import { getChapterUses, type VerseUse } from "@/content/get-verse-uses";
 import { getChapterWordCounts } from "@/content/get-chapter-word-view";

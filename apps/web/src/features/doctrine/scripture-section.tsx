@@ -4,7 +4,7 @@ import { Section } from "@/components/section";
 import { ActionLink } from "@/components/ui/action";
 import { PageLink } from "@/components/ui/page-link";
 import { shownPassages } from "@/content/doctrine-rules";
-import { bibleReferenceHref } from "@/content/bible-routes";
+import { bibleReferenceHref } from "@doctrina/core/bible-routes";
 import { formatVerseRef } from "@/content/format-verse";
 import type { TraditionPage } from "@doctrina/core/model/page";
 import { verseLink } from "@/content/page-views";

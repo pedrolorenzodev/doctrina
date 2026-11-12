@@ -1,4 +1,4 @@
-import { bibleBooks } from "@/content/bible-books";
+import { bibleBooks } from "@doctrina/core/bible-books";
 
 export type NameLanguage = "es" | "en";
 

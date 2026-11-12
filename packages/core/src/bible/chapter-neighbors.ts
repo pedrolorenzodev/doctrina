@@ -1,4 +1,4 @@
-import { getBibleBook } from "@/content/bible-books";
+import { getBibleBook } from "@doctrina/core/bible-books";
 import type { ChapterRef, ChapterSummary } from "@doctrina/core/model/bible";
 
 function bookOrdinal(book: string): number {

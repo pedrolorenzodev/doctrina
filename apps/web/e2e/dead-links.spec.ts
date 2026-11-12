@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { existsSync } from "node:fs";
-import { bibleReferenceHref } from "@/content/bible-routes";
+import { bibleReferenceHref } from "@doctrina/core/bible-routes";
 import { shownPassages } from "@/content/doctrine-rules";
 import { spanishPages } from "@/content/pages/index";
 import { traditionHref } from "@/content/routes";

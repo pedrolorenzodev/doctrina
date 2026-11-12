@@ -1,6 +1,6 @@
 import { writeFileSync } from "node:fs";
-import { bibleBooks } from "@/content/bible-books";
-import { bibleChapterBase } from "@/content/bible-routes";
+import { bibleBooks } from "@doctrina/core/bible-books";
+import { bibleChapterBase } from "@doctrina/core/bible-routes";
 import { getBibleChapterCounts, getReadableChapters } from "@/content/get-bible";
 
 export const manifestPath = new URL("./warm-cache-bible.json", import.meta.url);

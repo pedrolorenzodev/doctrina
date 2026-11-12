@@ -1,7 +1,7 @@
 import { ANSWER_PROMPT_VERSION, type AnswerKind, type WireAnswer, type WireQuote } from "@/lib/ai/contracts";
 import type { Locale } from "@doctrina/core/locale";
-import { getBibleBook } from "@/content/bible-books";
-import { bibleChapterHref } from "@/content/bible-routes";
+import { getBibleBook } from "@doctrina/core/bible-books";
+import { bibleChapterHref } from "@doctrina/core/bible-routes";
 import { collectionLabels, traditionLabels } from "@/content/ai-search/collections";
 import { passageDate } from "@/content/quote-dating";
 import type { PackPassage } from "@/content/ai-search/types";

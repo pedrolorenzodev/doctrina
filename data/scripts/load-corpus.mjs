@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { bibleBooks } from "@/content/bible-books";
-import { bibleVersification, normalizeBibleFile } from "@/content/bible/normalize-bible";
+import { bibleBooks } from "@doctrina/core/bible-books";
+import { bibleVersification, normalizeBibleFile } from "@doctrina/core/bible/normalize-bible";
 import { validateFatherFile } from "@/content/father-text/validate-father-file";
 import { count, credentials, rest, sha256, upsert } from "./supabase-load.mjs";
 

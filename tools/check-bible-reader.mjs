@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { bibleBooks } from "@/content/bible-books";
-import { bibleChapterHref, bookFromSlug, bookRouteOf, bookSlug } from "@/content/bible-routes";
+import { bibleBooks } from "@doctrina/core/bible-books";
+import { bibleChapterHref, bookFromSlug, bookRouteOf, bookSlug } from "@doctrina/core/bible-routes";
 import { createSupabaseBibleSource } from "@/content/bible/supabase-source";
 import { getBibleChapter, getBibleChapterIndex, getBibleTranslations, getBibleVerse } from "@/content/get-bible";
 

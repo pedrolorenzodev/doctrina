@@ -1,6 +1,6 @@
-import type { NameLanguage } from "@/content/bible-reference/names";
-import type { ParsedPart } from "@/content/bible-reference/parse";
-import { translationDefaults } from "@/content/bible/translation-defaults";
+import type { NameLanguage } from "@doctrina/core/bible-reference/names";
+import type { ParsedPart } from "@doctrina/core/bible-reference/parse";
+import { translationDefaults } from "@doctrina/core/bible/translation-defaults";
 
 export function detectQueryLanguage(parts: ParsedPart[], fallback?: NameLanguage): NameLanguage | "unknown" {
   let es = 0;

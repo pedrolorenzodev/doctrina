@@ -1,4 +1,4 @@
-import type { NameLanguage } from "@/content/bible-reference/names";
+import type { NameLanguage } from "@doctrina/core/bible-reference/names";
 
 export const translationDefaults = {
   es: "rv1909",

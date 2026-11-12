@@ -37,9 +37,9 @@ import {
   traditionHref,
   traditionRoute,
 } from "@/content/routes";
-import { bibleBookRoute, bibleChapterBase, bibleChapterHref } from "@/content/bible-routes";
-import { bibleBooks, bookListName, getBibleBook } from "@/content/bible-books";
-import { bookNames } from "@/content/verse-names";
+import { bibleBookRoute, bibleChapterBase, bibleChapterHref } from "@doctrina/core/bible-routes";
+import { bibleBooks, bookListName, getBibleBook } from "@doctrina/core/bible-books";
+import { bookNames } from "@doctrina/core/verse-names";
 import type { Locale } from "@doctrina/core/locale";
 
 export type TreeNode = {

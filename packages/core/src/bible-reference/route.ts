@@ -1,10 +1,10 @@
-import { bibleBooks, getBibleBook } from "@/content/bible-books";
-import { bibleChapterHref } from "@/content/bible-routes";
-import { bibleSegments } from "@/content/bible-segments";
-import type { BookId, NameLanguage } from "@/content/bible-reference/names";
-import type { ParsedPart, RawRange } from "@/content/bible-reference/parse";
-import type { Position, ResolvedPassage } from "@/content/bible-reference/resolve";
-import { translationForLanguage } from "@/content/bible-reference/language";
+import { bibleBooks, getBibleBook } from "@doctrina/core/bible-books";
+import { bibleChapterHref } from "@doctrina/core/bible-routes";
+import { bibleSegments } from "@doctrina/core/bible-segments";
+import type { BookId, NameLanguage } from "@doctrina/core/bible-reference/names";
+import type { ParsedPart, RawRange } from "@doctrina/core/bible-reference/parse";
+import type { Position, ResolvedPassage } from "@doctrina/core/bible-reference/resolve";
+import { translationForLanguage } from "@doctrina/core/bible-reference/language";
 
 export type ReaderRoute = {
   kind: "reader";

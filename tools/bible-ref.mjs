@@ -1,8 +1,8 @@
-import { detectQueryLanguage } from "@/content/bible-reference/language";
-import { parseReferences } from "@/content/bible-reference/parse";
-import { routeFor } from "@/content/bible-reference/route";
-import { resolveReferences } from "@/content/bible-reference/resolve";
-import { versification } from "@/content/bible-reference/versification";
+import { detectQueryLanguage } from "@doctrina/core/bible-reference/language";
+import { parseReferences } from "@doctrina/core/bible-reference/parse";
+import { routeFor } from "@doctrina/core/bible-reference/route";
+import { resolveReferences } from "@doctrina/core/bible-reference/resolve";
+import { versification } from "@doctrina/core/bible-reference/versification";
 
 const text = process.argv[2] ?? "";
 const parts = parseReferences(text);

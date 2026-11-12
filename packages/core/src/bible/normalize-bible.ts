@@ -1,4 +1,4 @@
-import { bibleBooks } from "@/content/bible-books";
+import { bibleBooks } from "@doctrina/core/bible-books";
 
 export const bibleVersification: Record<string, string> = {
   rv1909: "hebrew-chapters-kjv-verses",

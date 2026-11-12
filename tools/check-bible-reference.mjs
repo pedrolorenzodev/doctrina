@@ -1,10 +1,10 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { detectQueryLanguage } from "@/content/bible-reference/language";
-import { parseReferences } from "@/content/bible-reference/parse";
-import { passageToken, parseRouteTokens, routeFor } from "@/content/bible-reference/route";
-import { resolveReferences } from "@/content/bible-reference/resolve";
-import { versification } from "@/content/bible-reference/versification";
+import { detectQueryLanguage } from "@doctrina/core/bible-reference/language";
+import { parseReferences } from "@doctrina/core/bible-reference/parse";
+import { passageToken, parseRouteTokens, routeFor } from "@doctrina/core/bible-reference/route";
+import { resolveReferences } from "@doctrina/core/bible-reference/resolve";
+import { versification } from "@doctrina/core/bible-reference/versification";
 import { countVersification, translationIds } from "./build-bible-versification.mjs";
 
 const failures = [];

@@ -1,4 +1,4 @@
-import { getBibleBook } from "@/content/bible-books";
+import { getBibleBook } from "@doctrina/core/bible-books";
 import { getReadableChapters } from "@/content/get-bible";
 import { getReaderChapter } from "@/content/get-reader-chapter";
 import { locales } from "@doctrina/core/locale";

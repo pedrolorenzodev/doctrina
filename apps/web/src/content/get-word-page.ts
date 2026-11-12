@@ -1,6 +1,6 @@
-import { bibleBooks, getBibleBook, type BibleBook } from "@/content/bible-books";
-import { bibleChapterHref } from "@/content/bible-routes";
-import { defaultTranslationId } from "@/content/bible/default-translation";
+import { bibleBooks, getBibleBook, type BibleBook } from "@doctrina/core/bible-books";
+import { bibleChapterHref } from "@doctrina/core/bible-routes";
+import { defaultTranslationId } from "@doctrina/core/bible/default-translation";
 import { formatVerseRef } from "@/content/format-verse";
 import { getBibleVerse, getBibleVerseTexts } from "@/content/get-bible";
 import { strongNumber } from "@/content/get-chapter-word-view";

@@ -1,4 +1,4 @@
-import type { BibleBook } from "@/content/bible-books";
+import type { BibleBook } from "@doctrina/core/bible-books";
 import { getChapterWordView, type WordLexiconView, type WordView } from "@/content/get-chapter-word-view";
 import { getChapterUses, type VerseUse } from "@/content/get-verse-uses";
 import { getReaderChapter } from "@/content/get-reader-chapter";

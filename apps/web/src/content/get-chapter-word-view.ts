@@ -1,4 +1,4 @@
-import { getBibleBook } from "@/content/bible-books";
+import { getBibleBook } from "@doctrina/core/bible-books";
 import { getChapterWords, getLexiconBrief, getParseNames } from "@/content/get-words";
 import { parseLabel } from "@/content/parse-label";
 import type { VerseWord, WordLanguage } from "@doctrina/core/model/words";

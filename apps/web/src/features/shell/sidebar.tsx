@@ -1,6 +1,6 @@
 "use client";
 
-import { bookRouteOf } from "@/content/bible-routes";
+import { bookRouteOf } from "@doctrina/core/bible-routes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type MouseEvent } from "react";

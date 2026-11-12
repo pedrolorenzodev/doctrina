@@ -1,4 +1,4 @@
-import { bookNames } from "@/content/verse-names";
+import { bookNames } from "@doctrina/core/verse-names";
 import type { Locale } from "@doctrina/core/locale";
 
 export type BibleSection = "old" | "deuterocanon" | "new";

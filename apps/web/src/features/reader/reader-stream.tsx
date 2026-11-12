@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type ComponentProps, type ReactNode } from "react";
-import { bibleChapterHref } from "@/content/bible-routes";
+import { bibleChapterHref } from "@doctrina/core/bible-routes";
 import type { ReaderChapter } from "@/content/get-reader-chapter";
 import { PageHeader } from "@/components/page-header";
 import { registerChapterScroller, setActiveChapter } from "@/lib/active-chapter";

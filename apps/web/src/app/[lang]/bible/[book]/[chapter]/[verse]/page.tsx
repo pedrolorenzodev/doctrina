@@ -5,7 +5,7 @@ import { NeighborLinks } from "@/components/neighbor-links";
 import { PageHeader } from "@/components/page-header";
 import { PageMain } from "@/components/page-main";
 import { Section } from "@/components/section";
-import { bibleChapterHref, bibleVerseHref, bookFromSlug } from "@/content/bible-routes";
+import { bibleChapterHref, bibleVerseHref, bookFromSlug } from "@doctrina/core/bible-routes";
 import { getVersePage } from "@/content/get-verse-page";
 import type { DoctrineId } from "@doctrina/core/model/ids";
 import { doctrineName } from "@/content/site-tree";

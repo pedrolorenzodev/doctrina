@@ -1,5 +1,5 @@
-import type { BookId, NameLanguage } from "@/content/bible-reference/names";
-import type { ParseError, ParsedPart, RawPassage, RawRange } from "@/content/bible-reference/parse";
+import type { BookId, NameLanguage } from "@doctrina/core/bible-reference/names";
+import type { ParseError, ParsedPart, RawPassage, RawRange } from "@doctrina/core/bible-reference/parse";
 
 export type VersesPerChapter = Record<BookId, number[]>;
 

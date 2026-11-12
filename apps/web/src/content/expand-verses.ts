@@ -1,4 +1,4 @@
-import { bookOrder } from "@/content/verse-names";
+import { bookOrder } from "@doctrina/core/verse-names";
 
 function sortKey(key: string): [number, number, number] {
   const [book = "", chapter = "0", verse = "0"] = key.split(".");

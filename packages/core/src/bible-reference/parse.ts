@@ -4,7 +4,7 @@ import {
   lookupBookName,
   nameKey,
   ordinalsToDigits,
-} from "@/content/bible-reference/names";
+} from "@doctrina/core/bible-reference/names";
 
 export type RawPosition = { chapter: number; verse?: number };
 

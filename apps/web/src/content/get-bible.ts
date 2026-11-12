@@ -1,9 +1,9 @@
 import { supabaseCorpus } from "@/content/corpus-env";
-import { bibleBooks, getBibleBook } from "@/content/bible-books";
+import { bibleBooks, getBibleBook } from "@doctrina/core/bible-books";
 import type { BibleSource, VerseRef } from "@/content/bible/bible-source";
-import { chapterNeighbors } from "@/content/bible/chapter-neighbors";
+import { chapterNeighbors } from "@doctrina/core/bible/chapter-neighbors";
 import { createLocalBibleSource } from "@/content/bible/local-source";
-import { defaultTranslationId } from "@/content/bible/default-translation";
+import { defaultTranslationId } from "@doctrina/core/bible/default-translation";
 import { createSupabaseBibleSource } from "@/content/bible/supabase-source";
 import type {
   BibleChapter,

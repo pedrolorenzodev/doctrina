@@ -1,8 +1,8 @@
 import { access, readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { bibleVersification, normalizeBibleFile, type BibleRow } from "@/content/bible/normalize-bible";
+import { bibleVersification, normalizeBibleFile, type BibleRow } from "@doctrina/core/bible/normalize-bible";
 import type { BibleSource } from "@/content/bible/bible-source";
-import { sortChapters } from "@/content/bible/chapter-neighbors";
+import { sortChapters } from "@doctrina/core/bible/chapter-neighbors";
 import { redSpansOf } from "@doctrina/core/bible/red-letters";
 import { localDataDir } from "@/content/local-data-dir";
 import type { BibleTranslation, ChapterStructure, ChapterSummary } from "@doctrina/core/model/bible";

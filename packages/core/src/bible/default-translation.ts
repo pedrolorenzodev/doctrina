@@ -1,5 +1,5 @@
-import type { BibleBook } from "@/content/bible-books";
-import { translationDefaults } from "@/content/bible/translation-defaults";
+import type { BibleBook } from "@doctrina/core/bible-books";
+import { translationDefaults } from "@doctrina/core/bible/translation-defaults";
 import type { Locale } from "@doctrina/core/locale";
 
 export function defaultTranslationId(locale: Locale, book: BibleBook): string {

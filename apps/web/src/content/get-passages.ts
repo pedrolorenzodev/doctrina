@@ -1,6 +1,6 @@
 import "server-only";
-import { bibleChapterHref } from "@/content/bible-routes";
-import { getBibleBook } from "@/content/bible-books";
+import { bibleChapterHref } from "@doctrina/core/bible-routes";
+import { getBibleBook } from "@doctrina/core/bible-books";
 import { getBibleTranslations, getBibleVerse } from "@/content/get-bible";
 import { translationMeta, translationOrder } from "@doctrina/core/bible/translation-meta";
 import { formatVerseRef } from "@/content/format-verse";

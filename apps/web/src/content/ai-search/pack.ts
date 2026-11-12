@@ -24,8 +24,8 @@ import type {
   VerseTarget,
 } from "@/content/ai-search/types";
 import { fold, quotedShare, scoreText, windowAround } from "@/content/ai-search/windows";
-import { getBibleBook } from "@/content/bible-books";
-import { bookNames } from "@/content/verse-names";
+import { getBibleBook } from "@doctrina/core/bible-books";
+import { bookNames } from "@doctrina/core/verse-names";
 import { doctrineIds, traditionIds, type DoctrineId, type TraditionId } from "@doctrina/core/model/ids";
 import type { Locale } from "@doctrina/core/locale";
 

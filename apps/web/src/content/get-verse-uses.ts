@@ -5,7 +5,7 @@ import type { TraditionPage } from "@doctrina/core/model/page";
 import { doctrineName } from "@/content/site-tree";
 import { traditionHref } from "@/content/routes";
 import { getUiText } from "@/content/ui-text/get-ui-text";
-import { bookOrder } from "@/content/verse-names";
+import { bookOrder } from "@doctrina/core/verse-names";
 import { parseInline } from "@doctrina/core/inline-refs";
 import type { Locale } from "@doctrina/core/locale";
 

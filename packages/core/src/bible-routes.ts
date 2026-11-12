@@ -1,5 +1,5 @@
-import { bibleBooks, getBibleBook, type BibleBook } from "@/content/bible-books";
-import { bibleSegments } from "@/content/bible-segments";
+import { bibleBooks, getBibleBook, type BibleBook } from "@doctrina/core/bible-books";
+import { bibleSegments } from "@doctrina/core/bible-segments";
 import type { Locale } from "@doctrina/core/locale";
 
 function slugify(name: string): string {

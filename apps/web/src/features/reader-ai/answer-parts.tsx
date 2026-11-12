@@ -9,8 +9,8 @@ import { sourceOf, verseLabel } from "@/features/reader-ai/script";
 import { openNoteEvent, type OpenNoteDetail } from "@doctrina/core/notes";
 import { getNotes } from "@/lib/note-store";
 import type { Locale } from "@doctrina/core/locale";
-import { getBibleBook } from "@/content/bible-books";
-import { bibleChapterHref } from "@/content/bible-routes";
+import { getBibleBook } from "@doctrina/core/bible-books";
+import { bibleChapterHref } from "@doctrina/core/bible-routes";
 
 export type CiteHandlers = {
   onVerse: (verse: number, element: HTMLElement) => void;

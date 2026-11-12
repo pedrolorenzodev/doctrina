@@ -1,5 +1,5 @@
 import "server-only";
-import { bibleReferenceHref } from "@/content/bible-routes";
+import { bibleReferenceHref } from "@doctrina/core/bible-routes";
 import type { Objection } from "@doctrina/core/model/page";
 import { buildVerseView, verseLink } from "@/content/page-views";
 import { registry } from "@/content/registry/index";
