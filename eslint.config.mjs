@@ -94,6 +94,7 @@ const eslintConfig = defineConfig([
     },
   },
   globalIgnores([
+    "apps/mobile/**",
     "apps/web/.next/**",
     ".vercel/**",
     "out/**",

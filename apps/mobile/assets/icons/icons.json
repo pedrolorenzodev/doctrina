@@ -1,0 +1,1009 @@
+{
+  "meta": {
+    "generatedFrom": "apps/web/src (41 <svg> elements in 34 files incl. app/icon.svg) + globals.css --external-mark; raw extraction in scripts/raw-svg-dump.txt",
+    "note": "Geometry-distinct icons, 28 entries. Occurrences with the same geometry are merged; per-occurrence stroke width, caps and size differ and are listed. No icon library is used by the web. Only square-pen comes from Lucide (ISC). All other glyphs are hand-written; Lucide has similar-looking icons (search, x, plus, check, chevron-right, clock, ban, sun, moon, menu, columns-2, arrow-down, chevrons-down-up, external-link) but the geometry differs, so they are NOT substitutable without a visible change.",
+    "occurrenceCount": 43
+  },
+  "icons": [
+    {
+      "name": "brand-mark",
+      "viewBox": "8.36 8 15.28 16",
+      "mode": "fill",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M15.54 16.6Q15.54 16.6 15.54 16.3Q15.54 16 15.55 15.68Q15.56 15.37 15.57 15.35L22.56 8L23.62 8.85Q23.62 8.85 23.3 9.57Q22.97 10.29 22.48 11.36Q21.98 12.43 21.5 13.49Q21.01 14.55 20.68 15.26Q20.36 15.98 20.38 15.97L23.64 23.15L22.56 24ZM8.36 16.6Q8.36 16.6 8.36 16.3Q8.36 16 8.37 15.68Q8.38 15.37 8.39 15.35L15.38 8L16.44 8.85Q16.44 8.85 16.12 9.57Q15.79 10.29 15.3 11.36Q14.8 12.43 14.32 13.49Q13.83 14.55 13.5 15.26Q13.18 15.98 13.2 15.97L16.46 23.15L15.38 24Z"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/components/brand-mark.tsx",
+          "line": 9,
+          "renderedSizePx": "height 1cap (class h-cap w-auto), fill=currentColor",
+          "strokeWidth": null,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "inherits the surrounding text colour; fill, no stroke",
+          "note": "source of truth is brandMarkPath/brandMarkBox in this file; also used as the app icon glyph"
+        }
+      ],
+      "license": "project-original",
+      "strokeWidthsUsed": [],
+      "rnSvgHint": {
+        "fill": "currentColor",
+        "stroke": null
+      }
+    },
+    {
+      "name": "app-icon",
+      "viewBox": "0 0 32 32",
+      "mode": "raw",
+      "elements": [
+        {
+          "tag": "rect",
+          "width": 32,
+          "height": 32,
+          "rx": 7,
+          "fill": "#e8e5de"
+        },
+        {
+          "tag": "path",
+          "d": "M15.54 16.6Q15.54 16.6 15.54 16.3Q15.54 16 15.55 15.68Q15.56 15.37 15.57 15.35L22.56 8L23.62 8.85Q23.62 8.85 23.3 9.57Q22.97 10.29 22.48 11.36Q21.98 12.43 21.5 13.49Q21.01 14.55 20.68 15.26Q20.36 15.98 20.38 15.97L23.64 23.15L22.56 24ZM8.36 16.6Q8.36 16.6 8.36 16.3Q8.36 16 8.37 15.68Q8.38 15.37 8.39 15.35L15.38 8L16.44 8.85Q16.44 8.85 16.12 9.57Q15.79 10.29 15.3 11.36Q14.8 12.43 14.32 13.49Q13.83 14.55 13.5 15.26Q13.18 15.98 13.2 15.97L16.46 23.15L15.38 24Z",
+          "fill": "#1c1713"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/app/icon.svg",
+          "line": 1,
+          "renderedSizePx": "favicon (32x32 artboard)",
+          "strokeWidth": null,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "literal colours: tile #e8e5de (= --color-bg light), glyph #1c1713 (= --color-ink light)",
+          "note": "a file, not an inline icon; raw hex values, no currentColor"
+        }
+      ],
+      "license": "project-original",
+      "strokeWidthsUsed": [],
+      "rnSvgHint": {
+        "fill": "literal",
+        "stroke": null
+      }
+    },
+    {
+      "name": "x-14",
+      "viewBox": "0 0 14 14",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "m3 3 8 8M11 3l-8 8"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/components/citation-window/citation-window.tsx",
+          "line": 113,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "IconButton, close"
+        },
+        {
+          "file": "apps/web/src/components/side-panel.tsx",
+          "line": 81,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "IconButton, close"
+        },
+        {
+          "file": "apps/web/src/features/sources/sources-catalogue.tsx",
+          "line": 182,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "IconButton, clear search"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "x-16",
+      "viewBox": "0 0 16 16",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M4 4l8 8M12 4l-8 8"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader-ai/ask-drawer.tsx",
+          "line": 159,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.6,
+          "linecap": "round",
+          "linejoin": null,
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "drawer close"
+        },
+        {
+          "file": "apps/web/src/features/reader-ai/chat.tsx",
+          "line": 88,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.6,
+          "linecap": "round",
+          "linejoin": null,
+          "colorToken": "inherits (function Cross)",
+          "note": "used at chat.tsx:612"
+        }
+      ],
+      "strokeWidthsUsed": [1.6],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "x-12",
+      "viewBox": "0 0 12 12",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M2.5 2.5l7 7M9.5 2.5l-7 7"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader/red-notice.tsx",
+          "line": 34,
+          "renderedSizePx": 12,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96), hover text-ink",
+          "note": "notice dismiss"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "plus-12",
+      "viewBox": "0 0 12 12",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M6 1.5v9M1.5 6h9"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/components/ui/more-button.tsx",
+          "line": 19,
+          "renderedSizePx": 12,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "rotates 45deg to become an x when aria-expanded"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "plus-14",
+      "viewBox": "0 0 14 14",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M7 2v10M2 7h10",
+          "linecap": "round"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader/your-notes-panel.tsx",
+          "line": 288,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": null,
+          "colorToken": "inherits moreButtonClassName (text-ink-2)",
+          "note": "write a note"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "plus-18",
+      "viewBox": "0 0 18 18",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M9 4v10M4 9h10"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader-ai/reader-ask.tsx",
+          "line": 384,
+          "renderedSizePx": 18,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": null,
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "new chat"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "chevron-right-10",
+      "viewBox": "0 0 10 10",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M3.5 1.5 7 5l-3.5 3.5"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/components/ui/chevron.tsx",
+          "line": 3,
+          "renderedSizePx": 10,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "shared Chevron component; used by panel-words, places-list, verse-translation-picker, sources-catalogue, answers-section, answer.tsx:432; rotate-90 when it points down"
+        },
+        {
+          "file": "apps/web/src/features/doctrine/answers-section.tsx",
+          "line": 32,
+          "renderedSizePx": 10,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96), hover text-ink",
+          "note": "row arrow; nudges 2px right on row hover"
+        },
+        {
+          "file": "apps/web/src/features/reader/book-picker.tsx",
+          "line": 81,
+          "renderedSizePx": 10,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "rotate-90 (points down), -rotate-90 when expanded"
+        },
+        {
+          "file": "apps/web/src/features/reader/column-head.tsx",
+          "line": 111,
+          "renderedSizePx": 10,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "same rotate pattern"
+        },
+        {
+          "file": "apps/web/src/features/reader/panel-picker.tsx",
+          "line": 84,
+          "renderedSizePx": 10,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "same rotate pattern"
+        },
+        {
+          "file": "apps/web/src/features/reader/translation-picker.tsx",
+          "line": 108,
+          "renderedSizePx": 10,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "same rotate pattern"
+        },
+        {
+          "file": "apps/web/src/features/shell/sidebar.tsx",
+          "line": 182,
+          "renderedSizePx": 10,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "twisty; rotate-90 when expanded"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "chevron-right-14",
+      "viewBox": "0 0 14 14",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M5 3l4 4-4 4"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/home/row-chevron.tsx",
+          "line": 3,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "RowChevron, used by bible-rows and doctrine-rows"
+        },
+        {
+          "file": "apps/web/src/features/passages/passages-view.tsx",
+          "line": 35,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "inherits (card text-ink)",
+          "note": ""
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "chevron-right-16",
+      "viewBox": "0 0 16 16",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M6 3.5L10.5 8 6 12.5"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader-ai/answer.tsx",
+          "line": 89,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.6,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "inherits",
+          "note": "rotate-90 when aria-expanded"
+        },
+        {
+          "file": "apps/web/src/features/reader/chapter-step.tsx",
+          "line": 19,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "next chapter; path literal is 'M6 3.5 10.5 8 6 12.5' (same geometry)"
+        }
+      ],
+      "strokeWidthsUsed": [1.5, 1.6],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "chevron-left-16",
+      "viewBox": "0 0 16 16",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M10 3.5L5.5 8l4.5 4.5"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader-ai/back-bar.tsx",
+          "line": 76,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.6,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink (--color-ink #1c1713 / dark #f2f2f0)",
+          "note": ""
+        },
+        {
+          "file": "apps/web/src/features/reader/chapter-step.tsx",
+          "line": 19,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "previous chapter; literal 'M10 3.5 5.5 8 10 12.5'"
+        },
+        {
+          "file": "apps/web/src/features/reader/book-picker.tsx",
+          "line": 116,
+          "renderedSizePx": 12,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "back; literal 'M10 3.5 5.5 8 10 12.5'"
+        },
+        {
+          "file": "apps/web/src/features/reader/your-notes-panel.tsx",
+          "line": 370,
+          "renderedSizePx": 12,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "back; same literal"
+        }
+      ],
+      "strokeWidthsUsed": [1.5, 1.6],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "chevron-left-14",
+      "viewBox": "0 0 14 14",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M8.5 3 4.5 7l4 4"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/verse/verse-back-strip.tsx",
+          "line": 37,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink (--color-ink #1c1713 / dark #f2f2f0)",
+          "note": "back strip; no explicit caps"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "chevron-down-12",
+      "viewBox": "0 0 12 12",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M3 4.5L6 7.5l3-3"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader-ai/context-line.tsx",
+          "line": 48,
+          "renderedSizePx": 12,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "rotate-180 when aria-expanded"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "chevrons-collapse-14",
+      "viewBox": "0 0 14 14",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M4 1.75 7 4.75l3-3M4 12.25l3-3 3 3"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/shell/sidebar.tsx",
+          "line": 449,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96), hover text-ink",
+          "note": "collapse all (cf. Lucide chevrons-down-up, geometry differs)"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "arrow-down-16",
+      "viewBox": "0 0 16 16",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M8 3v10M3.5 8.5L8 13l4.5-4.5"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader-ai/chat.tsx",
+          "line": 540,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.6,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "scroll to latest"
+        }
+      ],
+      "strokeWidthsUsed": [1.6],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "check-16",
+      "viewBox": "0 0 16 16",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M3.5 8.5l3 3 6-7"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader-ai/cite-preview.tsx",
+          "line": 26,
+          "renderedSizePx": 13,
+          "strokeWidth": 1.8,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": ""
+        },
+        {
+          "file": "apps/web/src/features/reader/read-marker.tsx",
+          "line": 92,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.6,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink (--color-ink #1c1713 / dark #f2f2f0)",
+          "note": "the 'read' button"
+        }
+      ],
+      "strokeWidthsUsed": [1.6, 1.8],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "clock-18",
+      "viewBox": "0 0 18 18",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "circle",
+          "cx": 9,
+          "cy": 9,
+          "r": 6.5
+        },
+        {
+          "tag": "path",
+          "d": "M9 5.5V9l2.3 1.5"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader-ai/reader-ask.tsx",
+          "line": 410,
+          "renderedSizePx": 18,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "chat history"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "ban-14",
+      "viewBox": "0 0 14 14",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "circle",
+          "cx": 7,
+          "cy": 7,
+          "r": 5.25
+        },
+        {
+          "tag": "path",
+          "d": "M3.3 10.7 10.7 3.3"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader/highlight-colors.tsx",
+          "line": 65,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96), hover text-ink",
+          "note": "remove highlight"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "square-pen",
+      "viewBox": "0 0 24 24",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+        },
+        {
+          "tag": "path",
+          "d": "M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader/note-markers.tsx",
+          "line": 25,
+          "renderedSizePx": 15,
+          "strokeWidth": 1.75,
+          "linecap": "round",
+          "linejoin": "round",
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96), hover/preview text-accent (--color-accent #2c4a9e)",
+          "note": "note marker; no aria-hidden on this svg"
+        }
+      ],
+      "license": "Lucide square-pen, ISC (c) Lucide Icons and Contributors; geometry identical to upstream (verified against lucide-icons/lucide main), stroke-width changed 2 -> 1.75",
+      "strokeWidthsUsed": [1.75],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "columns-16",
+      "viewBox": "0 0 16 16",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "rect",
+          "x": 2,
+          "y": 3,
+          "width": 12,
+          "height": 10,
+          "rx": 2
+        },
+        {
+          "tag": "path",
+          "d": "M8 3v10",
+          "linecap": "round"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader/parallel-menu.tsx",
+          "line": 97,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-2 (--color-ink-2 #2a2620 / dark #d0d0cc), hover text-ink",
+          "note": "parallel translations; cap round only on the divider path"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "search-16-field",
+      "viewBox": "0 0 16 16",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "circle",
+          "cx": 7,
+          "cy": 7,
+          "r": 4.5
+        },
+        {
+          "tag": "path",
+          "d": "m10.5 10.5 3 3",
+          "linecap": "round"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/reader/your-notes-panel.tsx",
+          "line": 419,
+          "renderedSizePx": 14,
+          "strokeWidth": 1.5,
+          "linecap": "round",
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "notes search field; scale-125 and text-ink on focus-within"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "search-16-trigger",
+      "viewBox": "0 0 16 16",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "circle",
+          "cx": 7,
+          "cy": 7,
+          "r": 5
+        },
+        {
+          "tag": "path",
+          "d": "m11 11 3.5 3.5"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/shell/search-trigger.tsx",
+          "line": 34,
+          "renderedSizePx": 15,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "top-bar search trigger"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "search-24",
+      "viewBox": "0 0 24 24",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "circle",
+          "cx": 11,
+          "cy": 11,
+          "r": 7
+        },
+        {
+          "tag": "path",
+          "d": "m20 20-3.5-3.5"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/shell/search-dialog.tsx",
+          "line": 287,
+          "renderedSizePx": 18,
+          "strokeWidth": 1.8,
+          "linecap": "round",
+          "linejoin": null,
+          "colorToken": "text-ink-3 (--color-ink-3 #615c54 / dark #9a9a96)",
+          "note": "search dialog input"
+        }
+      ],
+      "strokeWidthsUsed": [1.8],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "menu-20",
+      "viewBox": "0 0 20 20",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M3 6h14M3 10h14M3 14h14"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/shell/menu-button.tsx",
+          "line": 46,
+          "renderedSizePx": 20,
+          "strokeWidth": 1.5,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "text-ink (--color-ink #1c1713 / dark #f2f2f0) (IconButton tone=primary)",
+          "note": "sidebar toggle"
+        }
+      ],
+      "strokeWidthsUsed": [1.5],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "sun-18",
+      "viewBox": "0 0 18 18",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "circle",
+          "cx": 9,
+          "cy": 9,
+          "r": 3.4
+        },
+        {
+          "tag": "path",
+          "d": "M9 1.5v2M9 14.5v2M1.5 9h2M14.5 9h2M3.7 3.7l1.4 1.4M12.9 12.9l1.4 1.4M3.7 14.3l1.4-1.4M12.9 5.1l1.4-1.4"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/shell/theme-toggle.tsx",
+          "line": 55,
+          "renderedSizePx": 17,
+          "strokeWidth": 1.4,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "inherits the toggle button",
+          "note": "shown only in dark mode (switch to light)"
+        }
+      ],
+      "strokeWidthsUsed": [1.4],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "moon-18",
+      "viewBox": "0 0 18 18",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M14.5 11.2A6.5 6.5 0 0 1 6.8 3.5a6.5 6.5 0 1 0 7.7 7.7z"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/features/shell/theme-toggle.tsx",
+          "line": 68,
+          "renderedSizePx": 16,
+          "strokeWidth": 1.4,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "inherits the toggle button",
+          "note": "shown only in light mode (switch to dark)"
+        }
+      ],
+      "strokeWidthsUsed": [1.4],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    },
+    {
+      "name": "external-link-12",
+      "viewBox": "0 0 12 12",
+      "mode": "stroke",
+      "elements": [
+        {
+          "tag": "path",
+          "d": "M5 2H2v8h8V7"
+        },
+        {
+          "tag": "path",
+          "d": "M7 1.5h3.5V5M10.5 1.5 5.5 6.5"
+        }
+      ],
+      "occurrences": [
+        {
+          "file": "apps/web/src/app/globals.css",
+          "line": 345,
+          "renderedSizePx": "CSS mask 'center / contain' at globals.css:548 (size set by the host element)",
+          "strokeWidth": 1.4,
+          "linecap": null,
+          "linejoin": null,
+          "colorToken": "mask: takes the host element's background colour",
+          "note": "not an inline <svg>: a data-URI --external-mark used as mask-image for external links"
+        }
+      ],
+      "strokeWidthsUsed": [1.4],
+      "rnSvgHint": {
+        "fill": "none",
+        "stroke": "currentColor"
+      }
+    }
+  ]
+}

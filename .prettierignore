@@ -6,3 +6,7 @@
 .claude/
 tools/review-page/
 package-lock.json
+/apps/mobile/.expo/
+/apps/mobile/expo-env.d.ts
+/apps/mobile/ios/
+/apps/mobile/android/

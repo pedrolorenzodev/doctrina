@@ -1,0 +1,35 @@
+name: mobile
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - apps/mobile/**
+      - packages/core/**
+      - apps/web/src/app/globals.css
+      - package-lock.json
+      - .github/workflows/mobile.yml
+  pull_request:
+    paths:
+      - apps/mobile/**
+      - packages/core/**
+      - apps/web/src/app/globals.css
+      - package-lock.json
+      - .github/workflows/mobile.yml
+
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck -w @doctrina/core
+      - run: npm test -w @doctrina/core
+      - run: npm run typecheck -w @doctrina/mobile
+      - run: npm run lint -w @doctrina/mobile
+      - run: npm run format:check -w @doctrina/mobile
+      - run: npm test -w @doctrina/mobile
